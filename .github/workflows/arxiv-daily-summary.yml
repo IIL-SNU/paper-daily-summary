@@ -182,13 +182,14 @@ jobs:
             echo "Slack delivery disabled by workflow input."
             exit 0
           fi
-          # No Slack on weekends (KST): 6=Sat, 7=Sun.
-          if [[ "$(TZ=Asia/Seoul date +%u)" -ge 6 ]]; then
-            echo "Weekend (KST Sat/Sun) — skipping Slack notification."
-            exit 0
-          fi
           if [[ -z "${SLACK_BOT_TOKEN}" ]]; then
             echo "SLACK_BOT_TOKEN is not configured; skipping Slack delivery."
+            exit 0
+          fi
+          # Notify only when a daily report was actually published this run.
+          # No report on weekends / no-op / failure -> out/release_ok.txt absent -> no Slack.
+          if [[ ! -f out/release_ok.txt ]]; then
+            echo "No daily report published this run (out/release_ok.txt absent); skipping Slack."
             exit 0
           fi
           TARGET="${SLACK_CHANNEL_ID:-$SLACK_CHANNEL}"
@@ -199,10 +200,8 @@ jobs:
 
           if [[ -f out/slack_message.txt ]]; then
             MESSAGE="$(cat out/slack_message.txt)"
-          elif [[ "${{ job.status }}" == "success" ]]; then
-            MESSAGE="Imaging Intelligence Daily Briefing finished. Site: ${SITE_URL}"
           else
-            MESSAGE="Imaging Intelligence Daily Briefing failed. Check GitHub Actions run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            MESSAGE="Imaging Intelligence Daily Briefing published. Site: ${SITE_URL}"
           fi
           export MESSAGE TARGET
 
