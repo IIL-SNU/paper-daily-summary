@@ -1,0 +1,9 @@
+# Ephemeral pipeline working directory (fetch/classify outputs)
+out/
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Lab-internal reference data (keep local, do not publish to GitHub Pages)
+*.xlsx
