@@ -1,0 +1,12 @@
+{
+  "date": "2026-06-22",
+  "source_listing_date": "2026-06-19",
+  "source_mode": "weekly-pastweek",
+  "note": "Weekly retrospective for W25 (2026-06-15 to 2026-06-19). No daily /new data for this date (arXiv not yet updated); daily stats row intentionally omitted.",
+  "weekly_aggregate": {
+    "by_cat": {"cs.LG": 1113, "cs.CV": 710, "cs.AI": 1181, "eess.IV": 44, "eess.SP": 135},
+    "scope": "new+cross; replacements excluded",
+    "days_covered": ["2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19"]
+  },
+  "totals": {"total_scanned": 2509, "selected": 460}
+}

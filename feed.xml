@@ -6,14 +6,14 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 22 Jun 2026 12:38:14 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 00:03:09 +0900</lastBuildDate>
     <ttl>720</ttl>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-06-22 (Week 25)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-06-22-weekly.html</link>
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-22-weekly.html</guid>
       <pubDate>Mon, 22 Jun 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[이번 주 가장 뜨거운 흐름은 3D Gaussian Splatting의 기능 분화 입니다. 화요일 가속(Local-GS, TurboGS, Fi-Gaussian)에서 출발해, 수요일 4D 장면 편집(Edit3DGS, Future Dynamic 3D, MoonSplat)으로 전환됐고, 목요일 대규모 분산 학습(Splaxel)과 코딩 조리개 연동(EDoF-NeRF)이 따라붙었으며, 금요일 희소 뷰 기하 제약(VisDom, PSCT-Net, Geometry-Preserving 3DGS)으로 마무리됐습니다. 4일 연속 High confidence 클러스터가 이어진 건 3DGS가 기본 품질 경쟁 단계를 지나 '어떤 응용에'를 묻는 성숙 단계에 들어섰다는 신호입니다. 두 번째 강한 축…]]></description>
+      <description><![CDATA[지난주 가장 뜨거운 흐름은 3D Gaussian Splatting의 기능 분화 입니다. 화요일 가속(Local-GS, TurboGS, Fi-Gaussian)에서 출발해, 수요일 4D 장면 편집(Edit3DGS, Future Dynamic 3D, MoonSplat)으로 전환됐고, 목요일 대규모 분산 학습(Splaxel)과 코딩 조리개 연동(EDoF-NeRF)이 따라붙었으며, 금요일 희소 뷰 기하 제약(VisDom, PSCT-Net, Geometry-Preserving 3DGS)으로 마무리됐습니다. 4일 연속 High confidence 클러스터가 이어진 건 3DGS가 기본 품질 경쟁 단계를 지나 '어떤 응용에'를 묻는 성숙 단계에 들어섰다는 신호입니다. 두 번째 강한 축은…]]></description>
     </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-06-19 (금요일)</title>
@@ -55,7 +55,7 @@
       <link>https://iilab.io/paper-daily-summary/posts/2026-06-13-weekly.html</link>
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-13-weekly.html</guid>
       <pubDate>Sat, 13 Jun 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[이번 주 가장 뜨거운 축은 메타표면(28) 입니다. 편광·천문 계측(Science Advances), 128차원 상태 생성(Laser & Photonics Rev.), 신경망 생성(Optics Comm), THz 벡터 포커싱(Adv Photonics Nexus)까지 — '설계는 모델이, 제어는 다물리량으로'가 한 주 내내 반복됐습니다.]]></description>
+      <description><![CDATA[지난주 가장 뜨거운 축은 메타표면(28) 입니다. 편광·천문 계측(Science Advances), 128차원 상태 생성(Laser & Photonics Rev.), 신경망 생성(Optics Comm), THz 벡터 포커싱(Adv Photonics Nexus)까지 — '설계는 모델이, 제어는 다물리량으로'가 한 주 내내 반복됐습니다.]]></description>
     </item>
     <item>
       <title>🔬 Imaging Intelligence Daily Briefing</title>
