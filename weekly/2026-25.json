@@ -1,0 +1,408 @@
+{
+  "date": "2026-06-22",
+  "iso_week": "2026-25",
+  "week_start": "2026-06-15",
+  "week_end": "2026-06-19",
+  "weekly_thesis": "W24가 Optics/Photonics 저널 기반 메타표면(28편)·홀로그래피(22편) 중심이었다면, W25는 cs.* arXiv 기반 3D Gaussian Splatting과 역문제 풀기가 무게 중심이었습니다. 3DGS는 단일 재구성 방법에서 가속→편집·4D→대규모 분산 학습→코딩 조리개 연동→희소 뷰 기하 제약으로 나흘 연속 다른 방향으로 빠르게 분화됐고, 역문제는 확률론적 추정→Bayesian/PINN→광학 하드웨어 공동 설계→inference-time 왜곡-지각 제어로 매일 다른 계층에서 구체화됐습니다. 반면 랩 핵심 주제인 Fourier ptychography, 렌즈리스, 메타-옵틱스는 arXiv cs.*에서 이번 주 완전히 빠져, 저널 tracking과 arXiv tracking을 병행하는 전략이 얼마나 중요한지 다시 확인해줬습니다.",
+  "hot_vs_cold": {
+    "hot": [
+      {
+        "cluster": "3DGS/3D 재구성 다변화",
+        "why": "나흘 연속 High confidence 클러스터. 가속(Local-GS, TurboGS)→편집·4D(Edit3DGS, Future Dynamic 3D)→대규모 분산 학습(Splaxel)→코딩 조리개 연동(EDoF-NeRF)→희소 뷰 기하 제약(VisDom)으로 매일 다른 응용 방향이 등장했다.",
+        "papers": [
+          "https://arxiv.org/abs/2606.16566",
+          "https://arxiv.org/abs/2606.18826",
+          "https://arxiv.org/abs/2606.18588",
+          "https://arxiv.org/abs/2606.20531"
+        ]
+      },
+      {
+        "cluster": "역문제 방법론 구체화",
+        "why": "5일 연속 등장, 방법론이 계층별로 다름. 플러그앤플레이→Bayesian MRI+PINN→광학 하드웨어 공동 설계→inference-time 왜곡-지각 제어로 진행됐다.",
+        "papers": [
+          "https://arxiv.org/abs/2606.17048",
+          "https://arxiv.org/abs/2606.19802",
+          "https://arxiv.org/abs/2606.18713"
+        ]
+      },
+      {
+        "cluster": "사건 카메라·광 필드 표현 학습 고도화",
+        "why": "월요일 경량화(SED)→수요일 다변 응용(EventDrive, FATE)→금요일 새 이산 표현(Neural Events)·광 필드+VLM 통합(Vision-Reasoning Occlusion)으로 점차 강해졌다.",
+        "papers": [
+          "https://arxiv.org/abs/2606.14631",
+          "https://arxiv.org/abs/2606.19835",
+          "https://arxiv.org/abs/2606.19985"
+        ]
+      }
+    ],
+    "cold": [
+      {
+        "cluster": "Fourier Ptychography",
+        "why": "이번 주 arXiv cs.* 에서 관련 논문 0건. W24에서 Nature Comm 전자 ptychography가 헤드라인을 장식했던 것과 대조적."
+      },
+      {
+        "cluster": "Lensless/Coded Imaging",
+        "why": "EDoF-NeRF(2606.18826) 1건만 목요일에 등장. 렌즈리스 이미징 전문 논문은 arXiv에서 완전히 부재."
+      },
+      {
+        "cluster": "Meta-Optics/Diffractive",
+        "why": "W24에서 저널 28편으로 압도적이었지만, 이번 주 arXiv cs.*에서 0건. 광학 전문 저널과 arXiv cs.* 간 주제 분리가 뚜렷하다는 확인."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "cluster": "3DGS/3D 재구성의 빠른 기능 분화",
+      "papers": [
+        {
+          "title": "Local-GS",
+          "arxiv": "https://arxiv.org/abs/2606.16566",
+          "importance_tags": ["[실사용전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "3D Vision",
+            "class": "Neural Rendering",
+            "order": "Gaussian Splatting",
+            "genus": "Acceleration",
+            "confidence": "High",
+            "rationale": "Core GS speed paper"
+          }
+        },
+        {
+          "title": "EDoF-NeRF",
+          "arxiv": "https://arxiv.org/abs/2606.18826",
+          "importance_tags": ["[방법전환]", "[실사용전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Coded Optics",
+            "order": "NeRF",
+            "genus": "EDoF",
+            "confidence": "High",
+            "rationale": "Coded aperture meets NeRF"
+          }
+        },
+        {
+          "title": "VisDom",
+          "arxiv": "https://arxiv.org/abs/2606.20531",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "3D Vision",
+            "class": "Novel View Synthesis",
+            "order": "Sparse-View",
+            "genus": "Geometry Constraint",
+            "confidence": "High",
+            "rationale": "Geometry-constrained sparse NVS"
+          }
+        },
+        {
+          "title": "Splaxel",
+          "arxiv": "https://arxiv.org/abs/2606.18588",
+          "importance_tags": ["[실사용전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "3D Vision",
+            "class": "Neural Rendering",
+            "order": "Gaussian Splatting",
+            "genus": "Distributed Training",
+            "confidence": "High",
+            "rationale": "Distributed 3DGS training"
+          }
+        }
+      ],
+      "why": "3D Gaussian Splatting이 단일 재구성 방법에서 가속(Local-GS, TurboGS)→편집·4D(Edit3DGS, Future Dynamic 3D)→대규모 분산 학습(Splaxel)→코딩 조리개 연동(EDoF-NeRF)→희소 뷰 기하 제약(VisDom)으로 나흘 연속 다른 방향으로 진화했습니다. 이는 3DGS가 이미 기본 품질에서 벗어나 실제 응용(실시간, 대용량, 하드웨어)을 향하는 성숙 단계에 들어선 신호입니다. 계산 광학 이미징 관점에서는 EDoF-NeRF처럼 광학 하드웨어와 GS를 결합하는 방향이 특히 중요합니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 5편 이상, 4일 연속 High confidence 클러스터",
+      "lab_action": "EDoF-NeRF 코드를 클론해 우리 코딩 조리개 셋업과 같은 depth-of-field 설정으로 재현, PSCT-Net의 differentiable back-projection을 ODT 회절 방정식에 적용하는 PoC 작성"
+    },
+    {
+      "cluster": "역문제 풀기의 방법론 다변화 — 플러그앤플레이에서 inference-time 제어까지",
+      "papers": [
+        {
+          "title": "Exact Posterior Score Estimation",
+          "arxiv": "https://arxiv.org/abs/2606.17048",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Inverse Problems",
+            "class": "Bayesian Inference",
+            "order": "Score-Based Diffusion",
+            "genus": "Posterior Estimation",
+            "confidence": "High",
+            "rationale": "Exact posterior in linear inverse problems"
+          }
+        },
+        {
+          "title": "Flow Map Denoisers",
+          "arxiv": "https://arxiv.org/abs/2606.19802",
+          "importance_tags": ["[방법전환]", "[평가축]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Inverse Problems",
+            "class": "Image Restoration",
+            "order": "Diffusion/Flow Matching",
+            "genus": "D-P Tradeoff Control",
+            "confidence": "High",
+            "rationale": "D-P plane traversal at inference time"
+          }
+        },
+        {
+          "title": "Trainable Photonic Measurement",
+          "arxiv": "https://arxiv.org/abs/2606.18713",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Hardware Learning",
+            "order": "Physics-Informed",
+            "genus": "Photonic Measurement",
+            "confidence": "Medium",
+            "rationale": "Photonic hardware as trainable component"
+          }
+        }
+      ],
+      "why": "화요일 플러그앤플레이부터 시작해 수요일 Bayesian+PINN, 목요일 광학 하드웨어 연동, 금요일 왜곡-지각 트레이드오프 inference-time 제어까지, 역문제 접근법이 매일 다른 계층에서 구체화됐습니다. 특히 Flow Map Denoisers가 '재학습 없이 추론 시점에 품질-충실도 비율을 조정한다'는 새 평가 기준을 제시했고, 이는 위상 복원·광학 단층 촬영처럼 품질과 충실도가 동시에 중요한 계산 광학 문제에 직접 적용될 수 있습니다.",
+      "confidence": "High",
+      "confidence_note": "5일 연속 등장, 방법론이 계층별로 다름 (probabilistic → hardware → inference-time)",
+      "lab_action": "Flow Map Denoisers를 우리 위상 복원 파이프라인에 적용해 NFE(함수 평가 횟수) vs PSNR/SSIM 트레이드오프 곡선 측정, Exact Posterior Score와 비교표 작성"
+    },
+    {
+      "cluster": "사건 카메라·광 필드 표현 학습의 고도화",
+      "papers": [
+        {
+          "title": "Neural Events",
+          "arxiv": "https://arxiv.org/abs/2606.19835",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Sensor Imaging",
+            "class": "Event Camera",
+            "order": "Representation Learning",
+            "genus": "Discrete Autoencoder",
+            "confidence": "High",
+            "rationale": "Event stream tokenization"
+          }
+        },
+        {
+          "title": "Vision-Reasoning-Guided Occlusion Removal from Light Fields",
+          "arxiv": "https://arxiv.org/abs/2606.19985",
+          "importance_tags": ["[방법전환]", "[실사용전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Light Field",
+            "order": "Occlusion Removal",
+            "genus": "VLM Integration",
+            "confidence": "High",
+            "rationale": "LFI + VLM for occlusion-robust recovery"
+          }
+        },
+        {
+          "title": "SED: Lightweight Saliency for Event Data",
+          "arxiv": "https://arxiv.org/abs/2606.14631",
+          "importance_tags": ["[실사용전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Sensor Imaging",
+            "class": "Event Camera",
+            "order": "Saliency Detection",
+            "genus": "Knowledge Distillation",
+            "confidence": "Medium",
+            "rationale": "Lightweight event processing"
+          }
+        }
+      ],
+      "why": "월요일 이벤트 카메라 경량화(SED)→수요일 VLM·탐지·오디오로 응용 확산→금요일 새 이산 표현 학습(Neural Events)과 광 필드+VLM 통합(Vision-Reasoning Occlusion)으로 점점 강해졌습니다. 이 흐름은 단순히 이벤트 카메라를 빠르게 처리하는 것을 넘어, 이벤트 스트림 자체를 의미 있는 토큰으로 만들고 다른 모달리티(광 필드, VLM)와 결합하는 방향입니다. 계산 광학 이미징에서 고속·저전력 센서 데이터를 이미징 파이프라인에 통합할 때 이 표현 방식이 핵심이 됩니다.",
+      "confidence": "High",
+      "confidence_note": "3일에 걸쳐 등장, 방향이 '경량화→응용 확산→표현 학습'으로 발전",
+      "lab_action": "Neural Events의 이산 비동기 오토인코더를 우리 이벤트 카메라 셋업에서 재현해 토큰 품질 vs latency 측정, 광 필드 이미징에서 VLM 기반 폐색 제거 성능을 식물·해부학 샘플로 테스트"
+    },
+    {
+      "cluster": "병리·외과 VLM과 약지도 분할",
+      "papers": [
+        {
+          "title": "SurgVista: Surgical World Modeling",
+          "arxiv": "https://arxiv.org/abs/2606.19889",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Medical Imaging",
+            "class": "Surgical Vision",
+            "order": "World Model",
+            "genus": "Instrument-Tissue Dynamics",
+            "confidence": "Medium",
+            "rationale": "Surgical world model for robot policy"
+          }
+        },
+        {
+          "title": "Single-Stage WSSS for Histopathology",
+          "arxiv": "https://arxiv.org/abs/2606.20250",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Medical Imaging",
+            "class": "Computational Pathology",
+            "order": "Weakly Supervised Segmentation",
+            "genus": "Single-Stage",
+            "confidence": "Medium",
+            "rationale": "Eliminating multi-stage in histopathology"
+          }
+        },
+        {
+          "title": "VLM as Zero-Annotation Oracle in Histopathology",
+          "arxiv": "https://arxiv.org/abs/2606.16658",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Medical Imaging",
+            "class": "Computational Pathology",
+            "order": "Zero-Shot",
+            "genus": "VLM Oracle",
+            "confidence": "Medium",
+            "rationale": "Zero-annotation VLM for pathology"
+          }
+        }
+      ],
+      "why": "화요일 병리 VLM 영지식 분류부터 금요일 단일 단계 조직 분할·외과 세계 모델까지 꾸준히 등장했습니다. 공통 맥락은 비싼 어노테이션이나 다단계 파이프라인 없이 조직 이미지를 분석하는 방향입니다. 가상 염색 파이프라인에서 레이블 효율성을 높이거나, 외과 로봇 훈련에 세계 모델을 활용하는 흐름과 연결됩니다.",
+      "confidence": "Medium",
+      "confidence_note": "3일 걸쳐 등장, 각 논문이 독립적이지만 같은 어노테이션 효율화 방향",
+      "lab_action": "VLM Zero-Annotation 방식을 가상 염색 셋업의 무라벨 평가 baseline으로 설정, Single-Stage WSSS를 H&E 조직 세그멘테이션에 적용 가능성 검토"
+    }
+  ],
+  "predictions": [
+    {
+      "title": "렌즈리스·코딩 조리개 논문 등장",
+      "claim": "다음 주 arXiv에서 렌즈리스 이미징 또는 코딩 조리개 관련 논문이 2편 이상 나올 것",
+      "rationale": "이번 주 EDoF-NeRF 1편이 코딩 조리개를 다뤘고, 이 분야 관심이 높아지는 추세. 다음 주에 후속이 나올 가능성",
+      "hit_condition": "cs.CV/cs.LG/eess.IV에서 'lensless', 'coded aperture', 'PSF engineering' 키워드 논문 2편 이상",
+      "miss_condition": "관련 논문이 1편 이하이거나 광학 주제가 아닌 맥락에서만 키워드 등장"
+    },
+    {
+      "title": "3DGS와 의료 CT/MRI 재구성 결합 사례 등장",
+      "claim": "Gaussian Splatting 또는 NeRF 기반 의료 볼륨 이미징 논문이 나올 것",
+      "rationale": "이번 주 PSCT-Net(sparse X-ray CT), OCT TTA 등 의료 이미징이 꾸준했고, 3DGS가 다양한 도메인에 확산 중",
+      "hit_condition": "3DGS/NeRF + CT/MRI/OCT 조합 논문 1편 이상",
+      "miss_condition": "3DGS 논문이 있어도 모두 자율주행·로봇 도메인에만 있으면 빗나감"
+    },
+    {
+      "title": "Flow Map 스타일 inference-time 역문제 제어 follow-up",
+      "claim": "왜곡-지각 트레이드오프 또는 flow matching 기반 역문제 풀기 관련 논문이 더 나올 것",
+      "rationale": "Flow Map Denoisers가 강한 이론적 기여를 했고, 이 방향의 논문이 다음 주에 더 등장할 가능성",
+      "hit_condition": "'distortion-perception' 또는 'flow matching' + 'inverse problem' 키워드 논문",
+      "miss_condition": "관련 주제 논문이 전혀 없고 완전히 다른 방향의 역문제 논문만 있으면 빗나감"
+    }
+  ],
+  "prediction_review": [],
+  "themes": [
+    {
+      "title": "3DGS의 기술 성숙과 응용 분화",
+      "summary": "이번 주 GS 관련 클러스터가 4일 연속 High confidence로 나왔고, 방향은 가속→편집→분산 학습→희소 뷰·기하 제약으로 매일 달랐다. 3DGS가 기본 품질 경쟁 단계를 지나 '어떤 응용에, 어떤 엔지니어링으로'를 묻는 단계에 들어섰다는 뜻. 다음 주는 의료·광학 도메인 적용이 더 나올지 지켜볼 것.",
+      "confidence": "High"
+    },
+    {
+      "title": "역문제 풀기의 층위별 구체화",
+      "summary": "매일 다른 층위에서 역문제가 구체화됐다: 확률론적 추정 → Bayesian MRI → 하드웨어 공동 설계 → inference-time 제어. 이는 역문제 분야가 단순 성능 경쟁을 넘어 '어느 층위에서 제어할 것인가'를 묻기 시작했다는 신호. Flow Map Denoisers가 이 흐름의 정점.",
+      "confidence": "High"
+    },
+    {
+      "title": "arXiv vs 저널: 랩 핵심 주제의 gap",
+      "summary": "지난주(W24)는 저널 기반 메타표면·홀로그래피가 중심이었고, 이번 주(W25)는 arXiv cs.* 기반 3DGS와 역문제가 중심이었다. 랩의 핵심 광학 주제(FP, 렌즈리스, 메타렌즈)는 arXiv에 거의 없고 광학 전문 저널에 집중된다는 점을 확인. 저널 tracking과 arXiv tracking을 병행하는 전략이 필요.",
+      "confidence": "High"
+    }
+  ],
+  "top5": [
+    {
+      "title": "Flow Map Denoisers",
+      "arxiv": "https://arxiv.org/abs/2606.19802",
+      "why": "역문제 왜곡-지각 트레이드오프를 inference time에 NFE로만 제어한다는 새 평가 기준을 제시. 재학습 없이 blur/sharp 간 이동이 가능해지므로, 위상 복원·압축 센싱 등 계산 광학 역문제에 즉시 적용 가능.",
+      "tag": "[방법전환][평가축]",
+      "phylogeny": {
+        "source": "CVML",
+        "phylum": "Inverse Problems",
+        "class": "Image Restoration",
+        "order": "Flow Matching",
+        "genus": "D-P Tradeoff",
+        "confidence": "High",
+        "rationale": "Novel inference-time control of distortion-perception frontier"
+      }
+    },
+    {
+      "title": "EDoF-NeRF",
+      "arxiv": "https://arxiv.org/abs/2606.18826",
+      "why": "코딩 조리개 카메라와 NeRF를 end-to-end로 결합한 첫 사례. 광학 설계(PSF)와 3D 복원 신경망이 함께 최적화된다는 하드웨어-소프트웨어 공동 설계의 진전을 보여준다.",
+      "tag": "[방법전환][실사용전환]",
+      "phylogeny": {
+        "source": "CVML",
+        "phylum": "Computational Imaging",
+        "class": "Coded Aperture",
+        "order": "Neural Rendering",
+        "genus": "EDoF",
+        "confidence": "High",
+        "rationale": "First coded aperture + NeRF co-design"
+      }
+    },
+    {
+      "title": "Trainable Photonic Measurement",
+      "arxiv": "https://arxiv.org/abs/2606.18713",
+      "why": "포토닉 측정 하드웨어 자체를 물리 정보 PDE 학습의 일부로 학습 가능하게 만든 논문. 광학 측정과 역문제 풀기를 하나의 loop에 넣는 방향의 강한 신호.",
+      "tag": "[방법전환]",
+      "phylogeny": {
+        "source": "CVML",
+        "phylum": "Computational Imaging",
+        "class": "Hardware Learning",
+        "order": "Physics-Informed",
+        "genus": "Photonic Measurement",
+        "confidence": "Medium",
+        "rationale": "Photonic hardware as trainable component"
+      }
+    },
+    {
+      "title": "Vision-Reasoning-Guided Occlusion Removal from Light Fields",
+      "arxiv": "https://arxiv.org/abs/2606.19985",
+      "why": "광 필드 다시점 통합과 VLM 공간 추론을 결합해 자연 환경의 강한 폐색을 제거. 계산 이미징에서 시맨틱 reasoning이 물리 기반 복원을 보완하는 방향의 등장.",
+      "tag": "[방법전환][실사용전환]",
+      "phylogeny": {
+        "source": "CVML",
+        "phylum": "Computational Imaging",
+        "class": "Light Field",
+        "order": "Occlusion Removal",
+        "genus": "VLM-Guided",
+        "confidence": "High",
+        "rationale": "First LF+VLM for occlusion-robust imaging"
+      }
+    },
+    {
+      "title": "AIGS-Net: Compact Illumination Field Modeling via 2D GS",
+      "arxiv": "https://arxiv.org/abs/2606.17998",
+      "why": "2D Gaussian Splatting으로 조명 필드를 컴팩트하게 모델링하고 저조도 향상에 적용. 이 조명 표현은 홀로그래피 illumination prior나 위상 복원 forward model에 직접 쓸 수 있다.",
+      "tag": "[방법전환]",
+      "phylogeny": {
+        "source": "CVML",
+        "phylum": "Computational Imaging",
+        "class": "Illumination Modeling",
+        "order": "Gaussian Splatting",
+        "genus": "2D GS",
+        "confidence": "Medium",
+        "rationale": "Illumination field via 2D GS — transferable to holography"
+      }
+    }
+  ],
+  "next_week_actions": [
+    {
+      "title": "Flow Map Denoisers 위상 복원 적용",
+      "action": "github.com에서 flow map denoiser 코드를 클론해 우리 holographic phase retrieval 파이프라인의 denoising step을 교체. NFE=1(빠름) vs NFE=10(고품질) tradeoff를 PSNR/SSIM/phase error 3축으로 측정",
+      "expected_output": "NFE vs quality curve, 기존 plug-and-play 대비 성능표"
+    },
+    {
+      "title": "EDoF-NeRF 코딩 조리개 재현",
+      "action": "EDoF-NeRF 코드를 클론해 우리 lab의 coded aperture 셋업(PSF 측정값)으로 재현 실험. 기존 non-EDoF baseline과 depth-of-field coverage vs reconstruction quality 비교",
+      "expected_output": "depth 범위 확장 vs 복원 PSNR tradeoff 표, 우리 셋업 PSF 적용 가능성 확인"
+    },
+    {
+      "title": "3DGS + 의료 이미징 리뷰 준비",
+      "action": "이번 주 PSCT-Net + Splaxel + VisDom를 읽고 '의료 이미징에 3DGS를 적용할 때의 주요 제약(메모리, 학습 시간, geometry 정확도)'을 정리한 1페이지 내부 노트 작성. 다음 주 새 논문이 나오면 즉시 비교",
+      "expected_output": "3DGS의 의료 이미징 적용 제약 요약표 + 다음 주 신규 논문 비교 프레임워크"
+    }
+  ]
+}

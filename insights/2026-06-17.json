@@ -1,0 +1,100 @@
+{
+  "date": "2026-06-17",
+  "source_mode": "pastweek-date-section",
+  "source_note": "title/subject 기반 backfill (pastweek, no abstract) — 초록 없이 제목·분야 기준 해석",
+  "clusters": [
+    {
+      "cluster": "사건 카메라·광 필드 응용의 다변 확산",
+      "papers": [
+        {
+          "title": "EventDrive: Event Cameras for Vision-Language Driving Intelligence",
+          "arxiv": "https://arxiv.org/abs/2606.18242"
+        },
+        {
+          "title": "FATE: Pillar Encoding and Frequency-Aware Training for Event-Based Object Detection",
+          "arxiv": "https://arxiv.org/abs/2606.17334"
+        },
+        {
+          "title": "Gaussian Light Field Splatting: A Physical Prior-Driven Vision Transformer for Unsupervised Low-Light Image Enhancement",
+          "arxiv": "https://arxiv.org/abs/2606.17985"
+        },
+        {
+          "title": "A Neuromorphic Trigger for Efficient Audio Event Detection",
+          "arxiv": "https://arxiv.org/abs/2606.17775"
+        }
+      ],
+      "why": "이벤트 카메라가 자율주행 VLM(EventDrive), 객체 탐지(FATE), 그리고 뉴로모픽 오디오 트리거까지 응용 범위를 동시에 넓히고 있다는 점이 인상적입니다. 특히 Gaussian Light Field Splatting이 물리적 사전 정보를 가이드 삼아 저조도 향상을 비지도 방식으로 푼다는 설계는, 이벤트 카메라의 고동적범위(HDR) 특성과 광 필드 표현이 자연스럽게 만나는 지점을 보여줍니다. 이벤트 기반 센싱이 단순한 고속 촬영 도구를 넘어, 장면 표현·VLM 통합·뉴로모픽 하드웨어와 결합되는 방향으로 확산 중임을 보여주는 클러스터입니다.",
+      "confidence": "Medium",
+      "confidence_note": "4편이 이벤트/광필드 주제로 모였지만 초록 미확인 — 제목 기반 해석이라 실제 방법론 깊이는 원문 확인 필요",
+      "lab_action": "EventDrive의 VLM-이벤트 통합 구조와 FATE의 Pillar Encoding이 우리 이벤트 센서 기반 위상 복원 파이프라인의 특징 추출 모듈로 쓸 수 있는지 아키텍처 수준에서 비교 검토"
+    },
+    {
+      "cluster": "동적 4D 장면 복원과 가우시안 스플래팅 편집",
+      "papers": [
+        {
+          "title": "Future Dynamic 3D Reconstruction: A 3D World Model with Disentangled Ego-Motion",
+          "arxiv": "https://arxiv.org/abs/2606.18250"
+        },
+        {
+          "title": "Edit3DGS: Unified Framework for Dynamic Head Editing via 2D Instruction-Guided Diffusion and 3D Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2606.17432"
+        },
+        {
+          "title": "MoonSplat: Monocular Online Gaussian Splatting with Sim(3) Global Optimization",
+          "arxiv": "https://arxiv.org/abs/2606.17935"
+        },
+        {
+          "title": "GASE: Gaussian Splatting-Based Automated System for Reconstructing Embodied-Simulation Environments",
+          "arxiv": "https://arxiv.org/abs/2606.17520"
+        },
+        {
+          "title": "AIGS-Net: Compact Illumination Field Modeling via 2D Gaussian Splatting for Fast Low-Light Image Enhancement",
+          "arxiv": "https://arxiv.org/abs/2606.17998"
+        }
+      ],
+      "why": "5편이 같은 날 3DGS를 정적 장면 재현에서 벗어나, 미래 동역학 예측(Future Dynamic 3D)·실시간 단안 온라인(MoonSplat)·확산 모델 지시 편집(Edit3DGS)·조명 필드 추정(AIGS-Net)·로보틱스 환경 자동 복원(GASE)으로 동시에 확장하고 있습니다. 3DGS가 단순 뷰 합성을 넘어 '편집 가능한 물리 기반 장면 표현'으로 진화 중이며, 특히 조명 필드를 2D GS로 모델링하는 시도는 계산 광학 이미징에서 illumination 분리 문제에 직접 연결됩니다. 어제(Jun 16) GS 클러스터가 가속·확장이었다면, 오늘은 편집·조명·동역학이라는 질적 기능 추가가 핵심입니다.",
+      "confidence": "High",
+      "confidence_note": "5편 모두 3DGS 기반, 방법론적 방향이 명확히 모임 — 초록 미확인이나 제목에서 방향성이 충분히 드러남",
+      "lab_action": "AIGS-Net의 compact 조명 필드 모델링 구조를 우리 홀로그래피 복원의 illumination prior로 차용 가능한지 수식 수준 검토; MoonSplat의 Sim(3) 전역 최적화가 ODT 각도 보정에 적용 가능한지 확인"
+    },
+    {
+      "cluster": "물리 정보 신경망의 역문제 특화·강건화",
+      "papers": [
+        {
+          "title": "A Convex Quasilinearization Method for Solving Nonlinear PDEs with Physics-Informed Neural Networks",
+          "arxiv": "https://arxiv.org/abs/2606.18175"
+        },
+        {
+          "title": "INI-VPINN: A Variational Physics-Informed Neural Network with Implicit Neumann and Interface Handling",
+          "arxiv": "https://arxiv.org/abs/2606.18032"
+        },
+        {
+          "title": "Bayesian Magnetic Resonance Joint Image Reconstruction and Uncertainty Quantification using Sparsity Prior Models and MCMC Sampling",
+          "arxiv": "https://arxiv.org/abs/2606.17343"
+        }
+      ],
+      "why": "PINN(Physics-Informed Neural Network) 계열이 비선형 PDE를 볼록 준선형화(Convex Quasilinearization)로 안정적으로 풀거나, 경계 조건(Neumann·Interface)을 변분적으로 내재화하는 방향으로 동시에 정교해지고 있습니다. Bayesian MRI 재구성 논문은 희소 사전 분포와 MCMC 샘플링을 결합해 불확실성 정량화까지 제공하는데, 이는 어제 확산 모델 기반 사후 추정 클러스터의 'MRI/역문제' 맥락과 이어지면서도 딥러닝 대신 고전 Bayesian 통계를 쓴다는 점에서 결이 다릅니다. 광학 회절 방정식이나 위상 복원처럼 물리 방정식이 지배하는 역문제에서, 볼록화·변분 경계 처리·Bayesian 불확실성 정량화는 모두 우리 재구성 파이프라인의 신뢰도를 높이는 데 직접 쓸 수 있는 도구입니다.",
+      "confidence": "Medium",
+      "confidence_note": "3편이 PINN·Bayesian 역문제 방향으로 묶이며, 주제 일관성은 높지만 초록 미확인으로 세부 방법론 검증 필요",
+      "lab_action": "Convex Quasilinearization PINN을 우리 광학 회절 순전파(forward) 방정식에 적용해, 비선형 위상-진폭 결합 문제에서 기존 Adam 기반 PINN과 수렴 안정성 비교 실험 설계"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "이벤트 카메라 + Gaussian 표현 융합 기반 HDR 위상 복원",
+      "claim": "이벤트 카메라의 높은 동적 범위를 Gaussian Light Field 표현과 결합하면, 기존 프레임 카메라 기반 홀로그래피의 포화 문제를 극복하는 새로운 위상 복원 파이프라인을 만들 수 있다.",
+      "supporting_papers": [
+        {"title": "Gaussian Light Field Splatting", "arxiv": "https://arxiv.org/abs/2606.17985"},
+        {"title": "EventDrive", "arxiv": "https://arxiv.org/abs/2606.18242"}
+      ]
+    },
+    {
+      "title": "조명 필드 2D GS 모델링을 이용한 홀로그래피 illumination 분리",
+      "claim": "AIGS-Net의 compact 2D Gaussian Splatting 조명 모델을 홀로그래피 재구성에 도입하면, 조명 불균일성을 end-to-end로 보정하면서 복원 품질을 높일 수 있다.",
+      "supporting_papers": [
+        {"title": "AIGS-Net", "arxiv": "https://arxiv.org/abs/2606.17998"},
+        {"title": "MoonSplat", "arxiv": "https://arxiv.org/abs/2606.17935"}
+      ]
+    }
+  ]
+}

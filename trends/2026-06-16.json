@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-16",
+  "source_listing_date": "2026-06-16",
+  "source_mode": "pastweek-date-section",
+  "source_note": "title/subject 기반 backfill (pastweek, no abstract)",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 397,
+      "cs.CV": 291,
+      "cs.AI": 431,
+      "eess.IV": 15,
+      "eess.SP": 36
+    },
+    "scope": "new+cross; replacements excluded"
+  },
+  "totals": {
+    "total_scanned": 907,
+    "selected": 124
+  }
+}

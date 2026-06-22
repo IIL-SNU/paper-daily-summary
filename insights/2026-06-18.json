@@ -1,0 +1,67 @@
+{
+  "date": "2026-06-18",
+  "source_note": "title/subject 기반 backfill (pastweek, no abstract)",
+  "clusters": [
+    {
+      "cluster": "코딩 조리개·광학 하드웨어와 학습 기반 신경 복원 연동",
+      "papers": [
+        {
+          "title": "EDoF-NeRF: extended depth-of-field neural radiance fields using a coded aperture camera",
+          "arxiv": "https://arxiv.org/abs/2606.18826"
+        },
+        {
+          "title": "Trainable Photonic Measurement for Physics-Informed PDE Learning",
+          "arxiv": "https://arxiv.org/abs/2606.18713"
+        }
+      ],
+      "why": "EDoF-NeRF는 코딩된 조리개(coded aperture)를 카메라에 달아 심도를 확장하면서 NeRF 복원까지 연결합니다. Trainable Photonic Measurement는 포토닉 하드웨어 자체를 물리 정보 PDE 학습의 파라미터로 넣습니다. 두 연구의 공통 메시지는 '광학 소자가 역전파 루프 안으로 들어온다'는 것입니다. 조리개·렌즈·광자 소자를 신경망과 함께 기울기 하강으로 최적화하는 방향, 즉 하드웨어-소프트웨어 공동 설계(co-design)가 계산 광학의 주류 궤도로 진입하고 있다는 신호입니다.",
+      "confidence": "High",
+      "confidence_note": "두 논문이 독립적인 연구 그룹에서 같은 방향—광학 하드웨어를 학습 루프에 포함—을 보여줌. 랩 핵심 관심과 직결",
+      "lab_action": "EDoF-NeRF 코드 클론 후, 우리 코딩 조리개 셋업에서 coded aperture 패턴을 NeRF 학습과 동시 최적화하는 end-to-end 파이프라인 프로토타입 구현"
+    },
+    {
+      "cluster": "대규모 3DGS 분산 학습과 4D 재구성",
+      "papers": [
+        {
+          "title": "Splaxel: Efficient Distributed Training of 3D Gaussian Splatting for Large-scale Scene Reconstruction via Pixel-level Communication",
+          "arxiv": "https://arxiv.org/abs/2606.18588"
+        },
+        {
+          "title": "Hand-4DGS: Feed-Forward 3D Gaussian Splatting for 4D Hand Reconstruction from Egocentric Videos",
+          "arxiv": "https://arxiv.org/abs/2606.19156"
+        }
+      ],
+      "why": "기존 3DGS는 장면당 수십 분의 최적화가 필요하고 메모리 한계로 대규모 장면에 쓰기 어려웠습니다. Splaxel은 픽셀 단위 통신으로 노드 간 분산 학습을 가능하게 하고, Hand-4DGS는 장면당 최적화 없이 단일 순전파(feed-forward)로 4D 손 재구성을 해냅니다. 이 두 방향이 합쳐지면 실시간·대용량 3D 복원으로 가는 길이 열립니다. 계산 광학 볼륨 이미징에서도 3DGS 기반 표현이 점점 현실적인 선택지가 된다는 의미입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 두 연구 그룹이 3DGS 확장성 문제의 보완적 해법을 같은 날 제시",
+      "lab_action": "Splaxel의 픽셀 단위 통신 방식이 광학 회절 단층 촬영(ODT) 대규모 볼륨 학습에 적용 가능한지 메모리·통신 비용 side-by-side 분석"
+    },
+    {
+      "cluster": "OCT·의료 볼륨 이미징의 도메인 이동 적응",
+      "papers": [
+        {
+          "title": "Test-Time Adaptation in Optical Coherence Tomography Using Trajectory-Aligned Time-Independent Flow",
+          "arxiv": "https://arxiv.org/abs/2606.18876"
+        },
+        {
+          "title": "Low-Rank Tensor Completion Based on Fractional Regularization with Ky Fan p-k Norm",
+          "arxiv": "https://arxiv.org/abs/2606.19046"
+        }
+      ],
+      "why": "OCT 영상은 기기 제조사·프로토콜에 따라 학습 분포와 테스트 분포가 달라지는 도메인 이동 문제가 큽니다. 이 논문은 궤도 정렬 시간 독립 흐름으로 테스트 시점에 적응하는 방법을 제안합니다. Low-Rank Tensor Completion은 노이즈가 많거나 측정이 부족한 상황에서 희소 신호를 복원하는 수학적 틀로, 의료 볼륨 데이터의 희소 측정 복원과 연결됩니다. 의료 이미징 전반에서 '배포 후 적응'과 '측정 불완전성 보상'이 함께 중요해지는 흐름이 있습니다.",
+      "confidence": "Medium",
+      "confidence_note": "두 논문의 연결고리가 '의료 볼륨 이미징의 불완전 측정 및 도메인 이동'으로 간접적. 직접 방법론 연결은 약함",
+      "lab_action": "OCT test-time adaptation 방법론을 우리 Fourier Ptychography 다기기 일반화 실험에 적용하고, TTA 전·후 복원 품질(SSIM·complex error) 비교"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "코딩 조리개 패턴과 NeRF 동시 최적화 파이프라인",
+      "claim": "EDoF-NeRF 방식을 확장해 조리개 패턴을 학습 가능한 파라미터로 두고 양자화 렌즈 설계와 3D 복원을 end-to-end로 공동 최적화하면, 단독 최적화 대비 심도 확장과 복원 품질 모두에서 이득을 볼 수 있다.",
+      "supporting_papers": [
+        {"title": "EDoF-NeRF", "arxiv": "https://arxiv.org/abs/2606.18826"},
+        {"title": "Trainable Photonic Measurement", "arxiv": "https://arxiv.org/abs/2606.18713"}
+      ]
+    }
+  ]
+}

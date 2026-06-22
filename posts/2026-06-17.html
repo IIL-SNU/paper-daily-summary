@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang=ko><head><meta charset=UTF-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Daily Briefing — 2026-06-17</title><style>*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR","Apple SD Gothic Neo",sans-serif;background:#f6f7f9;color:#1f2328;line-height:1.75;font-size:15px;padding:30px 16px;word-break:keep-all}.container{max-width:940px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.06);padding:34px 46px 52px}h1{font-size:26px;margin:0 0 4px;color:#0d1117}h2{font-size:20px;margin:36px 0 12px;padding-bottom:7px;border-bottom:2px solid #e5e7eb;color:#0d1117}h3{font-size:16px;margin:16px 0 6px;color:#0d1117}p{margin:0 0 13px}a{color:#0969da;text-decoration:none}a:hover{text-decoration:underline}.home{display:inline-block;padding:7px 13px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:8px;font-size:13px;font-weight:500;margin:0 0 16px}.sub{color:#656d76;font-size:13.5px;margin:0 0 4px}.meta{font-size:13px;color:#3b434d;padding:13px 17px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:14px 0 24px}.meta div{margin:2px 0}.thesis{background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:16px 22px;margin:14px 0;font-size:15.5px;line-height:1.8;color:#0c4a6e}.thesis strong{color:#0c4a6e}table.cl{width:100%;border-collapse:collapse;font-size:13.5px;margin:14px 0}table.cl th,table.cl td{border:1px solid #d1d5db;padding:9px 11px;text-align:left;vertical-align:top}table.cl th{background:#f3f4f6;font-weight:600}td.conf{white-space:nowrap;font-size:12.5px}.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}.ins h3{margin-top:0;color:#14532d}.ins .conf{font-size:12.5px;color:#166534;margin-top:4px}.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}.dd h3{margin-top:0;color:#713f12}.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}.br{display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}.br .nm{flex:0 0 260px;color:#475569}.br .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}.br .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}.br .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}.ap{font-size:13px;color:#374151}.ap li{margin:3px 0}.footer{margin-top:40px;padding-top:16px;border-top:1px solid #e5e7eb;color:#656d76;font-size:12.5px;line-height:1.7}hr{border:none;border-top:1px solid #e5e7eb;margin:32px 0}</style></head><body><div class=container>
+<a class=home href="../index.html">← 홈으로</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-06-17 (수요일)</h1>
+<p class=sub>계산광학 ROI 브리핑 · SNU IIL</p>
+<div class=meta>
+  <div>📅 발행일: 2026-06-17 (수요일)</div>
+  <div>📚 소스 모드: pastweek-date-section (backfill) — 초록 미포함, 제목·분야 기반 분류</div>
+  <div>⚠️ Backfill 노트: 이 브리핑은 arXiv /pastweek 2026-06-17 섹션 기준으로 생성되었으며, 초록 데이터 없이 제목·subject 기반으로 해석했습니다. 원문 확인 권장.</div>
+  <div>📊 스캔: arXiv 413건 · ROI 선택 57건</div>
+</div>
+
+<h2>🧷 오늘의 결론 (Thesis)</h2>
+<div class=thesis>
+수요일인 오늘은 <strong>이벤트 카메라·Gaussian Splatting·PINN</strong>이 세 개의 큰 축을 이루고 있습니다. 특히 어제 GS 가속·확장이 주제였다면 오늘은 <strong>편집 가능성·조명 분리·동역학 예측</strong>으로 GS 자체가 질적으로 진화하는 양상이고, 이벤트 카메라는 VLM 통합부터 뉴로모픽 오디오까지 뻗어나가며 단일 센서 역할을 넘어서고 있습니다. 계산 광학 이미징 관점에서는 조명 필드 2D GS 모델링과 물리 정보 신경망의 역문제 특화가 가장 직접적으로 닿는 지점입니다.
+</div>
+
+<h2>🔭 주간 동향</h2>
+<p>수요일 arXiv는 413건 스캔에서 57건이 ROI로 선택됐습니다. Deep Learning Methods 버킷이 41건으로 압도적이지만, 우리 핵심 분야에 닿는 신호는 크게 세 흐름으로 읽힙니다.</p>
+<p>첫 번째 흐름은 <strong>이벤트 카메라의 응용 다변화</strong>입니다. 자율주행 VLM 통합(EventDrive), 주파수 인식 객체 탐지(FATE), Gaussian 광 필드와 결합한 저조도 향상, 그리고 뉴로모픽 오디오 트리거까지 — 이벤트 기반 센싱이 단일 목적 센서를 넘어 여러 모달리티와 결합하는 범용 컴퓨팅 요소로 확장되고 있습니다.</p>
+<p>두 번째는 <strong>3D Gaussian Splatting의 기능 추가 단계</strong>입니다. 5편이 같은 날 모였는데, 공통점은 단순 재현에서 편집·조명·미래 예측·온라인 최적화 방향으로 이동한다는 것입니다. 특히 조명 필드를 2D GS로 compact하게 모델링하는 AIGS-Net은 홀로그래피와 직접 연결됩니다.</p>
+<p>세 번째는 <strong>물리 정보 신경망(PINN)의 수치 안정성·경계 조건 처리 강건화</strong>입니다. 비선형 PDE를 볼록화해 수렴을 보장하거나 Neumann/Interface 조건을 변분으로 내재화하는 시도는, 광학 회절 방정식 기반 역문제에 PINN을 실제로 쓸 때 가장 걸리던 문제를 정면에서 다룹니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(Jun 16)는 <strong>가우시안 스플래팅 가속·확장</strong>, <strong>병리 VLM 영지식 분류</strong>, <strong>확산 모델 기반 역문제 사후 추정</strong>이 주요 클러스터였습니다.</p>
+<p>오늘은 GS 클러스터의 무게중심이 '얼마나 빠르게'에서 '무엇을 더 할 수 있나'로 이동했습니다 — 편집, 동역학, 조명 분리. 역문제 클러스터도 어제 확산 모델 기반 확률론적 접근과 달리 오늘은 PINN의 수치 안정성과 Bayesian MCMC라는 고전 통계 방향이 더 강하게 나왔습니다. 병리 분야는 오늘 SegTME-UNI2 하나가 남아 있는데, VLM 영지식 분류보다 다중 세포 분할 + LLM 종양 미세환경 분석 쪽으로 방향이 달라졌습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table class=cl>
+<thead><tr>
+  <th>Cluster</th>
+  <th>대표 논문</th>
+  <th>왜 중요?</th>
+  <th>Confidence</th>
+  <th>Lab action</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><strong>사건 카메라·광 필드 응용의 다변 확산</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.18242">EventDrive</a><br>
+    <a href="https://arxiv.org/abs/2606.17334">FATE</a><br>
+    <a href="https://arxiv.org/abs/2606.17985">Gaussian LF Splatting</a><br>
+    <a href="https://arxiv.org/abs/2606.17775">Neuromorphic Trigger</a>
+  </td>
+  <td>이벤트 카메라가 자율주행 VLM, 객체 탐지, 광 필드 저조도 향상, 뉴로모픽 오디오 트리거로 동시에 확산되고 있습니다. 이는 이벤트 기반 센싱이 특정 응용의 도구를 넘어 '물리 기반 비동기 신호를 처리하는 범용 컴퓨팅 요소'로 진화하고 있다는 신호입니다. Gaussian 표현과 이벤트 카메라가 결합하는 방향은 특히 HDR 조건의 위상 복원에서 우리가 고민하던 포화 문제의 대안 경로가 됩니다.</td>
+  <td class=conf>Medium<br><small>초록 미확인, 제목 기반 해석</small></td>
+  <td>EventDrive·FATE의 특징 추출 모듈이 이벤트 기반 위상 복원 파이프라인에 적용 가능한지 아키텍처 수준 검토</td>
+</tr>
+<tr>
+  <td><strong>동적 4D 장면 복원과 가우시안 스플래팅 편집</strong><span class=pill>HOT</span></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.18250">Future Dynamic 3D</a><br>
+    <a href="https://arxiv.org/abs/2606.17432">Edit3DGS</a><br>
+    <a href="https://arxiv.org/abs/2606.17935">MoonSplat</a><br>
+    <a href="https://arxiv.org/abs/2606.17520">GASE</a><br>
+    <a href="https://arxiv.org/abs/2606.17998">AIGS-Net</a>
+  </td>
+  <td>5편이 같은 날 3DGS를 편집·동역학·조명·온라인 최적화 방향으로 동시에 확장하고 있습니다. 어제 가속 중심에서 오늘은 기능 추가 중심으로 이동한 것입니다. AIGS-Net이 조명 필드를 2D GS로 compact하게 모델링한다는 점은, 홀로그래피 재구성에서 illumination prior를 학습 가능한 형태로 분리하는 데 직접 쓸 수 있는 구조입니다. MoonSplat의 Sim(3) 전역 최적화도 ODT 각도 보정 문제와 연결됩니다.</td>
+  <td class=conf>High<br><small>5편 모두 3DGS 기반, 방향 일관성 높음</small></td>
+  <td>AIGS-Net 조명 필드 모델 수식을 홀로그래피 illumination prior로 차용 가능한지 검토; MoonSplat Sim(3) 최적화의 ODT 각도 보정 적용 가능성 확인</td>
+</tr>
+<tr>
+  <td><strong>물리 정보 신경망의 역문제 특화·강건화</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.18175">Convex Quasilinear PINN</a><br>
+    <a href="https://arxiv.org/abs/2606.18032">INI-VPINN</a><br>
+    <a href="https://arxiv.org/abs/2606.17343">Bayesian MRI Recon</a>
+  </td>
+  <td>비선형 PDE를 볼록 준선형화로 안정화하거나(Convex PINN), Neumann·Interface 경계를 변분적으로 내재화하는(INI-VPINN) 방향이 동시에 나왔습니다. Bayesian MRI 논문은 희소 사전 분포와 MCMC를 결합해 불확실성까지 정량화하는데, 어제 확산 모델 사후 추정과 맥락이 이어지면서도 딥러닝 없는 고전 통계 접근이라는 점에서 결이 다릅니다. 광학 회절 방정식이나 위상 복원처럼 경계 조건과 비선형성이 함께 있는 역문제에서, 이 세 기법은 PINN 수렴 불안정 문제를 실제로 해결하는 도구가 됩니다.</td>
+  <td class=conf>Medium<br><small>3편, 방향 일관성 높지만 초록 미확인</small></td>
+  <td>Convex Quasilinear PINN을 광학 회절 순전파 방정식에 적용해 기존 Adam PINN과 수렴 안정성 비교 실험 설계</td>
+</tr>
+</tbody>
+</table>
+
+<h2>💡 오늘의 인사이트</h2>
+<div class=ins>
+  <h3>① GS가 '얼마나 빠르게'에서 '무엇을 더'로 진화</h3>
+  <p>어제 가속·확장 클러스터는 3DGS의 엔지니어링 단계였다면, 오늘은 편집 가능성·조명 분리·미래 예측이라는 <strong>기능 차원의 확장</strong>입니다. 특히 2D GS로 조명 필드를 compact하게 모델링하는 시도는, 계산 광학에서 '어떤 물리량을 GS로 표현할 수 있나'라는 질문의 범위를 넓혀줍니다. 밀도·SDF·복소 굴절률도 그 다음 후보가 될 수 있습니다.</p>
+  <p class=conf>Confidence: High — 5편이 같은 날 같은 방향, 어제와 무게중심 차이가 명확</p>
+</div>
+<div class=ins>
+  <h3>② PINN 역문제 강건화는 '가져다 쓸 수 있는' 단계</h3>
+  <p>비선형 PDE 볼록화와 경계 조건 내재화는 PINN을 실험실 코드에서 실제 역문제에 쓸 때 가장 먼저 막히는 지점들입니다. 이 두 논문이 같은 날 나왔다는 것은, PINN의 <strong>실용화 병목이 수치 안정성</strong>이라는 커뮤니티 공감이 있다는 신호입니다. 우리 ODT 역문제 코드의 PINN 모듈에 볼록화 기법을 붙이는 것이 이제 구현 가능한 수준이 됐습니다.</p>
+  <p class=conf>Confidence: Medium — 초록 미확인, 실제 수식 확인 후 판단</p>
+</div>
+<div class=ins>
+  <h3>③ 이벤트 카메라가 '모달리티'로 올라오는 중</h3>
+  <p>VLM 통합, 주파수 인식 탐지, 광 필드 결합, 뉴로모픽 오디오까지 — 이벤트 카메라가 단일 목적 속도 센서를 넘어 <strong>다른 모달리티의 입력 공간을 확장하는 요소</strong>가 되고 있습니다. 위상 복원·홀로그래피에서 이벤트 카메라를 쓰는 것이 novelty를 충분히 만들 수 있는 시점입니다.</p>
+  <p class=conf>Confidence: Medium — 4편 모두 제목 기반, 세부 contribution은 원문 확인 필요</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+<p><strong>① 이벤트 카메라 + Gaussian 표현 융합 기반 HDR 위상 복원</strong><br>
+이벤트 카메라의 높은 동적 범위(HDR)와 Gaussian Light Field 표현을 결합하면, 기존 프레임 기반 홀로그래피의 포화 문제를 해결하는 새로운 위상 복원 파이프라인을 만들 수 있습니다. 관련 논문: <a href="https://arxiv.org/abs/2606.17985">Gaussian LF Splatting</a>, <a href="https://arxiv.org/abs/2606.18242">EventDrive</a></p>
+<p><strong>② 조명 필드 2D GS 모델링을 이용한 홀로그래피 illumination 분리</strong><br>
+AIGS-Net의 compact 2D GS 조명 모델을 홀로그래피 재구성에 도입하면, 조명 불균일성을 end-to-end로 보정하면서 복원 품질을 높일 수 있습니다. 관련 논문: <a href="https://arxiv.org/abs/2606.17998">AIGS-Net</a>, <a href="https://arxiv.org/abs/2606.17935">MoonSplat</a></p>
+<p><strong>③ 볼록 준선형화 PINN을 이용한 광학 회절 방정식 역문제</strong><br>
+비선형 회절 방정식의 PINN 수렴 불안정 문제를 Convex Quasilinearization으로 해결하고, Bayesian MCMC로 불확실성을 정량화하는 두 단계 역문제 파이프라인. 관련 논문: <a href="https://arxiv.org/abs/2606.18175">Convex PINN</a>, <a href="https://arxiv.org/abs/2606.17343">Bayesian MRI Recon</a></p>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p style="font-size:13.5px;color:#475569;margin-bottom:8px">총 스캔 413건 · ROI 선택 57건 (비율: ~13.8%)</p>
+<div class=br><span class=nm>Deep Learning Methods</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>41</span></div>
+<div class=br><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:23%"></span></span><span class=n>5</span></div>
+<div class=br><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:23%"></span></span><span class=n>5</span></div>
+<div class=br><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:18%"></span></span><span class=n>4</span></div>
+<div class=br><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:9%"></span></span><span class=n>2</span></div>
+<div class=br><span class=nm>Fourier Ptychography</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0</span></div>
+<div class=br><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0</span></div>
+<div class=br><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0</span></div>
+<div class=br><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0</span></div>
+
+<h2>🌟 오늘의 must-read</h2>
+<div class=dd>
+  <h3><a href="https://arxiv.org/abs/2606.17998">AIGS-Net: Compact Illumination Field Modeling via 2D Gaussian Splatting for Fast Low-Light Image Enhancement</a> <span class=pill>Tier A (우리 랩 직결)</span></h3>
+  <p style="color:#713f12;font-size:13.5px"><em>조명 필드를 2D GS로 모델링한다는 발상 자체가, 홀로그래피·위상 복원에서 illumination prior를 학습 가능한 GS 표현으로 분리하는 새로운 설계 공간을 여는 논문이라 골랐습니다. ※ 제목 기반 해석, 초록 미확인.</em></p>
+  <div class=tag>무엇을</div>
+  <p>2D Gaussian Splatting을 조명 필드 표현에 그대로 가져와, compact하면서도 빠른 저조도 향상 모델을 만든 것으로 보입니다. Gaussian의 공간적 연속성이 조명의 부드러운 변화를 잘 포착할 것이라는 직관이 설계의 핵심입니다.</p>
+  <div class=tag>왜 중요</div>
+  <p>홀로그래피나 위상 복원에서 조명 불균일성은 가장 고질적인 artefact 원인 중 하나입니다. 조명을 별도 GS 필드로 분리해 학습하면, 복원 네트워크가 구조만 집중할 수 있어서 품질이 올라갑니다. 특히 "compact"라는 단어는 실시간 사용 가능성을 시사합니다.</p>
+  <div class=tag>우리 분야</div>
+  <p>FP(Fourier Ptychography)나 홀로그래피 셋업에서 LED 어레이나 레이저 스페클 조명의 비균일성을 2D GS 조명 필드로 모델링하고, 복원 네트워크와 분리해 end-to-end 학습하는 구조를 시도해볼 수 있습니다.</p>
+</div>
+<div class=dd>
+  <h3><a href="https://arxiv.org/abs/2606.18175">A Convex Quasilinearization Method for Solving Nonlinear PDEs with Physics-Informed Neural Networks</a></h3>
+  <p style="color:#713f12;font-size:13.5px"><em>PINN이 실제 역문제에서 수렴 불안정을 겪는 핵심 원인 — 비선형 PDE — 을 볼록화로 정면 해결하는 논문입니다. 우리 ODT·위상 복원 파이프라인에서 PINN을 쓰려 할 때 가장 먼저 만나는 문제입니다. ※ 제목 기반 해석.</em></p>
+  <div class=tag>무엇을</div>
+  <p>비선형 PDE를 준선형화(Quasilinearization)해 볼록 최적화 형태로 변환한 뒤 PINN 학습에 적용하는 방법으로 보입니다. 수렴 안정성과 해의 유일성 보장이 핵심 주장일 것입니다.</p>
+  <div class=tag>왜 중요</div>
+  <p>광학 회절 방정식, 비선형 슈뢰딩거 방정식 등 우리가 다루는 파동 전파 방정식은 대부분 비선형입니다. 이 비선형성을 볼록화로 풀 수 있다면, PINN 기반 역문제 풀이가 실험 데이터에서 실제로 작동하는 수준으로 올라옵니다.</p>
+  <div class=tag>우리 분야</div>
+  <p>ODT의 Born/Rytov 근사를 넘는 비선형 회절 방정식을 PINN으로 풀 때, 이 볼록 준선형화 기법을 직접 적용해볼 수 있습니다. INI-VPINN의 경계 조건 내재화와 조합하면 더 완성도 있는 물리 기반 역문제 솔버가 됩니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+<div class=risk>
+  <p><strong>Backfill — 초록 완전 미포함</strong>: 이 날짜의 모든 해석은 arXiv 제목 + subject 분류 기반입니다. 실제 방법론, contribution, 실험 결과는 원문을 직접 확인해야 합니다. 특히 PINN 클러스터는 수식 수준 검증 없이 Lab action을 실행하면 시간 낭비가 생깁니다.</p>
+  <p><strong>DL 버킷 비중 과대(72%)</strong>: 41/57건이 일반 ML 논문입니다. 광학 직결 신호를 읽을 때는 버킷 비율보다 LF/Tomo/Recon 버킷의 절대 편수(4+5+5=14)에 집중하세요.</p>
+  <p><strong>GS 클러스터 5편 중 일부 우리 분야와 거리 있을 수 있음</strong>: Dynamic 3D / 자율주행 환경 복원은 계산 광학보다 컴퓨터 비전 쪽입니다. AIGS-Net·MoonSplat만 직접 관련으로 보고, 나머지는 간접 참고 수준.</p>
+  <p><strong>이벤트 카메라 클러스터</strong>: Neuromorphic Trigger for Audio는 광학 이미징과 거리가 있습니다. 뉴로모픽 하드웨어 트렌드 참고 수준으로 보세요.</p>
+</div>
+
+<h2>📄 부록 — 전체 ROI 논문 목록</h2>
+<ul class=ap>
+  <li><strong>[LF]</strong> <a href="https://arxiv.org/abs/2606.18242">EventDrive: Event Cameras for Vision-Language Driving Intelligence</a> — 이벤트 카메라를 자율주행 VLM에 결합한 시도. 이벤트 기반 시공간 신호를 언어 모델 입력으로 넘기는 구조로 보임.</li>
+  <li><strong>[LF]</strong> <a href="https://arxiv.org/abs/2606.17985">Gaussian Light Field Splatting: Physical Prior-Driven ViT for Unsupervised Low-Light Enhancement</a> — 물리 사전 정보를 Vision Transformer에 통합해 비지도 저조도 향상. Gaussian 광 필드 표현이 핵심.</li>
+  <li><strong>[LF]</strong> <a href="https://arxiv.org/abs/2606.17334">FATE: Pillar Encoding and Frequency-Aware Training for Event-Based Object Detection</a> — 이벤트 기반 3D pillar 인코딩에 주파수 인식 학습을 결합한 탐지 모델.</li>
+  <li><strong>[LF]</strong> <a href="https://arxiv.org/abs/2606.17775">A Neuromorphic Trigger for Efficient Audio Event Detection</a> — 뉴로모픽 하드웨어를 오디오 이벤트 탐지 트리거로 사용. 이벤트 카메라 생태계의 오디오 확장.</li>
+  <li><strong>[Tomo]</strong> <a href="https://arxiv.org/abs/2606.18250">Future Dynamic 3D Reconstruction: A 3D World Model with Disentangled Ego-Motion</a> — ego-motion을 분리한 미래 동역학 예측 기반 4D 장면 복원.</li>
+  <li><strong>[Tomo]</strong> <a href="https://arxiv.org/abs/2606.17998">AIGS-Net: Compact Illumination Field Modeling via 2D Gaussian Splatting for Fast Low-Light Image Enhancement</a> — 2D GS로 조명 필드를 compact하게 모델링. 홀로그래피 illumination prior로 전용 가능성 높음.</li>
+  <li><strong>[Tomo]</strong> <a href="https://arxiv.org/abs/2606.17935">MoonSplat: Monocular Online Gaussian Splatting with Sim(3) Global Optimization</a> — 단안 카메라 기반 온라인 3DGS에 Sim(3) 전역 최적화 결합. ODT 각도 보정과 연결.</li>
+  <li><strong>[Tomo]</strong> <a href="https://arxiv.org/abs/2606.17520">GASE: Gaussian Splatting-Based Automated System for Embodied-Simulation Environments</a> — 로보틱스 시뮬레이션 환경 자동 복원에 3DGS 적용.</li>
+  <li><strong>[Tomo]</strong> <a href="https://arxiv.org/abs/2606.17432">Edit3DGS: Unified Framework for Dynamic Head Editing via 2D Instruction-Guided Diffusion and 3D Gaussian Splatting</a> — 2D 확산 모델 지시를 3DGS 편집으로 옮기는 통합 프레임워크. 동적 편집 가능성 연구.</li>
+  <li><strong>[VS]</strong> <a href="https://arxiv.org/abs/2606.17572">When Dynamics Models Read the Wrong Time Steps: Label-Free Event Credit Re-Anchoring for Robust Global Readouts</a> — 레이블 없는 이벤트 크레딧 재앵커링으로 동적 모델 강건화. 가상 염색 분야와의 연결은 간접적.</li>
+  <li><strong>[VS]</strong> <a href="https://arxiv.org/abs/2606.17702">SegTME-UNI2: Foundation Model-Based Multiclass Cell Segmentation and LLM-Driven Tumour Microenvironment Characterisation</a> — 파운데이션 모델 기반 다중 세포 분할과 LLM 종양 미세환경 분석. 디지털 병리 파이프라인 참고.</li>
+  <li><strong>[Recon]</strong> <a href="https://arxiv.org/abs/2606.18175">A Convex Quasilinearization Method for Solving Nonlinear PDEs with Physics-Informed Neural Networks</a> — 비선형 PDE를 볼록화해 PINN 수렴 안정화. 광학 역문제 직접 적용 가능.</li>
+  <li><strong>[Recon]</strong> <a href="https://arxiv.org/abs/2606.18032">INI-VPINN: Variational PINN with Implicit Neumann and Interface Handling</a> — Neumann·Interface 경계 조건을 변분적으로 내재화한 VPINN.</li>
+  <li><strong>[Recon]</strong> <a href="https://arxiv.org/abs/2606.17343">Bayesian MRI Joint Image Reconstruction and Uncertainty Quantification using Sparsity Prior and MCMC Sampling</a> — 희소 사전 + MCMC로 MRI 복원 + 불확실성 정량화. 확산 모델 없이 고전 Bayesian 방식.</li>
+  <li><strong>[Recon]</strong> <a href="https://arxiv.org/abs/2606.17235">Physics-Informed Attention Mechanism for Grain Growth Evolution Prediction</a> — 물리 정보를 Attention에 통합. 재료 과학 응용이지만 PINN 설계 참고 가능.</li>
+  <li><strong>[Recon]</strong> <a href="https://arxiv.org/abs/2606.17311">Pilot-Aided MIMO Channel Identification and Linear Deconvolution in Correlated Gaussian Noise</a> — MIMO 채널 역합성곱. 신호 처리 역문제 방법론 참고.</li>
+  <li><strong>[DL Notable]</strong> <a href="https://arxiv.org/abs/2606.18071">Volterra Generative Models</a> — 볼테라 급수 기반 생성 모델. 비선형 시스템 표현 관점에서 광학 forward model에 응용 가능성 검토 여지.</li>
+  <li><strong>[DL Notable]</strong> <a href="https://arxiv.org/abs/2606.14701">RATS! Patches Talk Through Registers: Emergent Parts in Register Attention Transformers</a> — Register Attention Transformer에서 부분(part) 표현이 자발적으로 등장. ViT 내부 표현 이해에 기여.</li>
+  <li><strong>[DL Notable]</strong> <a href="https://arxiv.org/abs/2606.14700">RepFusion: Leveraging Multimodal Priors for Denoising in Representation Space</a> — 다중 모달 사전을 표현 공간 노이즈 제거에 활용. 위상 복원 prior 설계에 아이디어 제공 가능.</li>
+</ul>
+
+<h2>🔗 참고 링크</h2>
+<p>
+  <a href="https://arxiv.org/abs/2606.18242">EventDrive (arXiv)</a> ·
+  <a href="https://arxiv.org/abs/2606.17998">AIGS-Net (arXiv)</a> ·
+  <a href="https://arxiv.org/abs/2606.18175">Convex PINN (arXiv)</a> ·
+  <a href="https://arxiv.org/abs/2606.17343">Bayesian MRI (arXiv)</a>
+</p>
+<a class=home href="../index.html">← 전체 목록으로</a>
+<hr>
+<div class=footer>
+  <p>입력: arXiv /pastweek-date-section 2026-06-17 (backfill, 초록 미포함) — 제목·subject 기반 분류. 원문 확인 권장.</p>
+  <p>버킷: FP 0 · Lens 0 · Phase 0 · Meta 0 · LF 4 · Tomo 5 · VS 2 · Recon 5 · DL 41</p>
+  <p>생성: IIL daily briefing 자동화 파이프라인 (SNU Imaging Intelligence Lab)</p>
+  <p><a href="../feed.xml">RSS feed</a></p>
+</div>
+</div></body></html>

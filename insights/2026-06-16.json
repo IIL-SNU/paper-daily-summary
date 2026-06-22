@@ -1,0 +1,87 @@
+{
+  "date": "2026-06-16",
+  "clusters": [
+    {
+      "cluster": "가우시안 스플래팅 다변 응용 가속·확장",
+      "papers": [
+        {
+          "title": "Local-GS: Accelerating 3D Gaussian Splatting via Tile-Local Warp Coherence",
+          "arxiv": "https://arxiv.org/abs/2606.16566",
+          "importance_tags": ["[실사용전환]"]
+        },
+        {
+          "title": "TurboGS: Accelerating 3D Gaussian Splatting via Error-Guided Sparse Pixel Sampling",
+          "arxiv": "https://arxiv.org/abs/2606.15924",
+          "importance_tags": ["[실사용전환]"]
+        },
+        {
+          "title": "Fi-Gaussian: Frequency-Aware Implicit Gaussian Splatting for Single Image Dehazing",
+          "arxiv": "https://arxiv.org/abs/2606.16168",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "RealityBridge: Bridging Editable 3DGS Driving Simulations and Real-World Videos",
+          "arxiv": "https://arxiv.org/abs/2606.16278",
+          "importance_tags": ["[실사용전환]"]
+        }
+      ],
+      "why": "3D Gaussian Splatting(3DGS)이 단순한 3D 표현 방식을 넘어, 디헤이징·저조도 향상·드라이빙 시뮬레이션 등 다양한 이미징 문제에 빠르게 확산되고 있습니다. 특히 타일 단위 coherence를 이용한 가속이나 희소 픽셀 샘플링을 통한 학습 속도 개선이 동시에 나오는 것은, 3DGS가 실시간·대규모 장면으로 가기 위한 엔지니어링 단계에 진입했다는 신호입니다. 계산 광학 이미징에서 3D 구조 표현을 3DGS로 전환할 때 이 가속 기법들이 직접 활용될 수 있습니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 4편 이상, 같은 방법론적 방향 확인",
+      "lab_action": "Local-GS와 TurboGS 코드를 클론해 우리 광학 볼륨 복원 셋업에서 속도·메모리 tradeoff 측정"
+    },
+    {
+      "cluster": "병리 VLM 영지식 분류와 한계 분석",
+      "papers": [
+        {
+          "title": "Vision-Language Models as Zero-Annotation Oracles in Histopathology",
+          "arxiv": "https://arxiv.org/abs/2606.16658",
+          "importance_tags": ["[방법전환]", "[경고신호]"]
+        },
+        {
+          "title": "Look Again Before You Abstain: Budgeted Conformal Evidence Acquisition for Reliable VLM",
+          "arxiv": "https://arxiv.org/abs/2606.16667",
+          "importance_tags": ["[경고신호]", "[평가축]"]
+        }
+      ],
+      "why": "VLM(비전-언어 모델)을 병리 조직 분류에 어노테이션 없이 쓰는 시도와, VLM이 불확실할 때 섣불리 기권하지 않도록 증거를 추가 획득하는 방법이 같은 날 나왔습니다. 이 두 방향은 상호 보완적입니다. 레이블 없이 VLM으로 분류하되, 불확실한 케이스는 추가 증거를 모아 판단을 미루지 않는 파이프라인입니다. 가상 염색과 디지털 병리를 다루는 랩에서 라벨 효율성과 신뢰도를 동시에 높이는 데 참고할 수 있습니다.",
+      "confidence": "Medium",
+      "confidence_note": "2편이 같은 응용 방향, 독립 검증 추가 필요",
+      "lab_action": "영지식 VLM 분류기를 우리 가상 염색 셋업의 무라벨 평가 기준으로 적용 가능성 검토"
+    },
+    {
+      "cluster": "확산 모델·플러그앤플레이 기반 역문제 사후 추정",
+      "papers": [
+        {
+          "title": "Exact Posterior Score Estimation for Solving Linear Inverse Problems",
+          "arxiv": "https://arxiv.org/abs/2606.17048",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Variance Reduction for Non-Log-Concave Sampling with Applications to Inverse Problems",
+          "arxiv": "https://arxiv.org/abs/2606.16257",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "SP3: Spherical Priors for Plug-and-Play Restoration",
+          "arxiv": "https://arxiv.org/abs/2606.16396",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "선형 역문제를 풀 때 사후 확률(posterior)을 정확하게 추정하거나, 비로그-오목(non-log-concave) 분포에서 분산을 줄이는 샘플링, 구면 사전 정보를 플러그앤플레이로 쓰는 방법이 같은 날 나왔습니다. 공통 맥락은 역문제 풀기에 확률론적 접근이 점점 정교해지고 있다는 점입니다. 위상 복원·홀로그래피·압축 센싱처럼 노이즈와 측정 불확실성이 있는 계산 광학 문제에 이 방향들이 직접 적용될 수 있습니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 3편, 같은 방법론 방향",
+      "lab_action": "Exact Posterior Score 방법을 우리 위상 복원 파이프라인 baseline과 PSNR·uncertainty calibration으로 비교"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "3DGS 가속 기법의 계산 광학 볼륨 이미징 적용",
+      "claim": "타일 단위 coherence와 희소 픽셀 샘플링으로 가속된 3DGS를 광학 회절 단층 촬영(ODT) 복원에 적용하면 계산 비용을 크게 줄일 수 있다.",
+      "supporting_papers": [
+        {"title": "Local-GS", "arxiv": "https://arxiv.org/abs/2606.16566"},
+        {"title": "TurboGS", "arxiv": "https://arxiv.org/abs/2606.15924"}
+      ]
+    }
+  ]
+}

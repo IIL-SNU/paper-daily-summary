@@ -1,0 +1,77 @@
+{
+  "date": "2026-06-15",
+  "clusters": [
+    {
+      "cluster": "사건 카메라 기반 경량 시각 인식",
+      "papers": [
+        {
+          "title": "SED: Lightweight Saliency prediction for Event-based data via Distillation",
+          "arxiv": "https://arxiv.org/abs/2606.14631",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "FEMOT: Multi-Object Tracking using Frame and Event Cameras",
+          "arxiv": "https://arxiv.org/abs/2606.14094",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "사건 카메라(event camera)가 일반 프레임 카메라와 융합되거나 경량화 증류(distillation)로 실시간 처리가 가능해지는 흐름입니다. 기존 프레임 기반 카메라는 고속 장면에서 모션 블러와 높은 전력 소모가 문제인데, 사건 카메라는 변화 픽셀만 비동기로 출력해 이를 완화합니다. 이 흐름이 이미징 랩의 저전력 실시간 센서 응용과 직접 연결됩니다.",
+      "confidence": "Medium",
+      "confidence_note": "두 논문이 같은 방향을 보이나 아직 소수",
+      "lab_action": "SED의 증류 파이프라인을 우리 이벤트 카메라 셋업에 적용해 지연시간·정확도 tradeoff 측정"
+    },
+    {
+      "cluster": "단안 카메라 3D 복원의 구조·분할 통합",
+      "papers": [
+        {
+          "title": "MooMIns: Monocular 3D Reconstruction and Object Pose Estimation from Multiple Instances",
+          "arxiv": "https://arxiv.org/abs/2606.14389",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Pano3D: Unified 3D Reconstruction and Panoptic Segmentation",
+          "arxiv": "https://arxiv.org/abs/2606.14307",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "단안(monocular) 카메라 하나로 3D 구조 복원과 물체 포즈·분할을 동시에 하려는 방향입니다. 기존에는 깊이 추정, 포즈 추정, 파노라마 분할이 별도 파이프라인이었는데, 이를 하나의 프레임워크로 통합하면 실시간 계산 자원이 줄고 정보 일관성도 높아집니다. 계산 광학 이미징에서 단일 카메라로 복잡한 3D 정보를 뽑아야 할 때 참고할 수 있는 구조 설계입니다.",
+      "confidence": "Medium",
+      "confidence_note": "같은 방향 논문 2편, 추가 benchmark 검증 필요",
+      "lab_action": "단안 3D+분할 통합 프레임워크를 우리 렌즈리스·계산 현미경 파이프라인에 적용 가능성 검토"
+    },
+    {
+      "cluster": "딥 언폴딩·물리 제약 역문제 학습",
+      "papers": [
+        {
+          "title": "Scalable Deep Unfolding of Conic Optimizers",
+          "arxiv": "https://arxiv.org/abs/2606.13825",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "C-MambaPose: A Physics-Informed Complex Mamba Framework for Cross-Environment WiFi Human Pose Estimation",
+          "arxiv": "https://arxiv.org/abs/2606.13700",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Korzhinskii-Net: Physics-Informed Neural Network for Sub-Surface Mineral Prospectivity Modelling",
+          "arxiv": "https://arxiv.org/abs/2606.13695",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "물리 법칙이나 수학적 최적화 구조를 신경망에 녹여 역문제를 푸는 방법들이 다양한 도메인으로 확산되고 있습니다. 깊은 언폴딩(deep unfolding)은 iterative 최적화 알고리즘을 신경망 레이어로 펼쳐 gradient로 학습하는 방식으로, 계산 광학에서 위상 복원·압축 센싱에 핵심적으로 쓰입니다. 이번 묶음은 같은 원리를 더 확장 가능한(scalable) 형태로 발전시키는 흐름을 보여줍니다.",
+      "confidence": "Medium",
+      "confidence_note": "도메인은 다르지만 방법론적 방향이 일치",
+      "lab_action": "Scalable Deep Unfolding 방식을 우리 위상 복원 파이프라인에 적용해 convergence speed와 reconstruction error 비교"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "사건 카메라·일반 카메라 융합 기반 고속 계산 이미징",
+      "claim": "이벤트 카메라의 비동기 픽셀 출력을 일반 카메라와 융합하면 고속 현미경·홀로그래피에서 모션 블러 없이 고해상도를 달성할 수 있다.",
+      "supporting_papers": [
+        {"title": "SED: Lightweight Saliency via Distillation", "arxiv": "https://arxiv.org/abs/2606.14631"},
+        {"title": "FEMOT: Frame and Event Camera MOT", "arxiv": "https://arxiv.org/abs/2606.14094"}
+      ]
+    }
+  ]
+}

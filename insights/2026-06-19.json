@@ -1,0 +1,100 @@
+{
+  "date": "2026-06-19",
+  "source_listing_date": "2026-06-19",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "광 필드·사건 카메라의 새 표현 학습과 폐색 강건 복원",
+      "papers": [
+        {
+          "title": "Vision-Reasoning-Guided Occlusion Removal from Light Fields",
+          "arxiv": "https://arxiv.org/abs/2606.19985"
+        },
+        {
+          "title": "Neural Events: Discrete Asynchronous Autoencoders for Event-Based Vision",
+          "arxiv": "https://arxiv.org/abs/2606.19835"
+        }
+      ],
+      "why": "광 필드 폐색 제거는 다시점 관측을 통합해 전경 식물 등 밀한 폐색물을 억제하는 문제인데, 이 논문은 거기에 VLM의 공간 추론을 결합해서 기존 광 필드 통합만으로는 메우기 어려운 의미론적 빈틈까지 채웁니다. Neural Events는 연속 이벤트 스트림을 비동기 자기부호화기로 시공간 토큰으로 압축해서, 기존 이벤트 카메라 처리 구조가 대용량 스트림에 압도되던 병목을 해결합니다. 두 논문 모두 '기존 센서의 데이터 형식을 그대로 쓰지 않고 새로운 중간 표현으로 압축·추론'한다는 공통 방향을 보여주며, 계산 광학에서 센서-알고리즘 공동 설계의 폭이 광 필드와 이벤트 카메라로 넓어지고 있습니다.",
+      "confidence": "High",
+      "confidence_note": "광 필드 논문은 LFI+VLM 결합으로 계산 광학 핵심 과제를 직접 다루고, 이벤트 카메라 논문은 비전통적 센서의 표현 학습 방향으로 랩 관심과 간접 연결됨",
+      "lab_action": "2606.19985 코드 공개 여부 확인 후, 우리 광 필드 셋업에서 VLM 기반 공간 추론을 폐색 후처리 단계로 붙이는 ablation 설계"
+    },
+    {
+      "cluster": "희소 관측 3D 복원과 기하 제약 강화",
+      "papers": [
+        {
+          "title": "PSCT-Net: Geometry-Aware Pediatric Skull CT Reconstruction via Differentiable Back-Projection and Attention-Guided Refinement",
+          "arxiv": "https://arxiv.org/abs/2606.19867"
+        },
+        {
+          "title": "VisDom: Sparse Novel View Synthesis with Visible Domain Constraint",
+          "arxiv": "https://arxiv.org/abs/2606.20531"
+        },
+        {
+          "title": "Geometry-Preserving in 3D Gaussian Splatting for LiDAR-Camera Extrinsic Calibration",
+          "arxiv": "https://arxiv.org/abs/2606.20103"
+        }
+      ],
+      "why": "기존 희소 관측 3D 복원은 투영 기하를 명시적으로 모델링하지 않고 2D 특징을 3D 공간으로 끌어 올리는 방식을 써서, 제한된 시야각에서 아티팩트와 오버피팅이 컸습니다. PSCT-Net은 미분 가능 역투영으로 CT 투영 기하를 end-to-end 복원에 직접 포함하고, VisDom은 최소 한 개 입력 뷰와 기하적으로 일관된 영역에만 Gaussian을 배치하는 학습 가능 가시 도메인 제약을 도입합니다. 두 접근 모두 '기하 불확실성을 사후에 정규화'하는 것이 아니라 '기하를 모델 구조 안에 내재화'한다는 점에서, Fourier Ptychography나 ODT처럼 투영 모델이 명시적인 계산 광학 역문제에 바로 적용 가능한 원리를 담고 있습니다.",
+      "confidence": "High",
+      "confidence_note": "세 논문이 모두 희소 뷰에서의 기하 제약 강화라는 공통 방향을 독립적으로 제시하며, PSCT-Net은 CT 역문제라 랩 핵심 관심과 직접 연결됨",
+      "lab_action": "PSCT-Net의 미분 가능 역투영 모듈을 우리 ODT 재구성 파이프라인의 순전파 투영 연산자와 비교하고, end-to-end 학습 가능성 여부를 코드 레벨에서 검토"
+    },
+    {
+      "cluster": "역문제 왜곡-지각 트레이드오프와 확산 기반 복원의 정밀 제어",
+      "papers": [
+        {
+          "title": "Flow Map Denoisers: Traversing the Distortion-Perception Plane for Inverse Problems",
+          "arxiv": "https://arxiv.org/abs/2606.19802"
+        },
+        {
+          "title": "Single-Stage Hierarchical Rectification for Weakly Supervised Histopathology Segmentation",
+          "arxiv": "https://arxiv.org/abs/2606.20250"
+        }
+      ],
+      "why": "이미지 복원 분야에서 '낮은 왜곡(블러리)'과 '높은 지각 품질(선명하지만 불충실)'은 오래된 트레이드오프였고, 기존 방법들은 이 중 하나를 미리 선택해야 했습니다. Flow Map Denoisers는 flow map 모델의 NFE(함수 평가 횟수)를 조절하는 것만으로 재학습 없이 왜곡-지각 평면 전체를 inference time에 이동할 수 있다는 것을 보여줍니다. 이는 홀로그래픽 복원이나 위상 복원처럼 '특정 응용에서 얼마나 선명하게 볼 것인가'를 사용자가 런타임에 결정해야 하는 계산 광학 파이프라인에 즉시 적용 가능한 아이디어입니다.",
+      "confidence": "High",
+      "confidence_note": "Flow Map Denoisers는 이론적 근거가 명확하고 블라인드 역문제에 직접 적용했다는 점에서 랩 핵심 관심과 강하게 연결됨",
+      "lab_action": "Flow Map Denoisers의 공개 코드를 확인하고, 우리 위상 복원 또는 FP 재구성 문제에 NFE sweeping으로 DP 트레이드오프 곡선을 그리는 실험 설계"
+    },
+    {
+      "cluster": "병리·외과 세계 모델과 영지식 조직 분석",
+      "papers": [
+        {
+          "title": "SurgVista: Long-Horizon Surgical World Modeling with Plausible Instrument-Tissue Dynamics",
+          "arxiv": "https://arxiv.org/abs/2606.19889"
+        },
+        {
+          "title": "Single-Stage Hierarchical Rectification for Weakly Supervised Histopathology Segmentation",
+          "arxiv": "https://arxiv.org/abs/2606.20250"
+        },
+        {
+          "title": "Semantic-Anchored Evidential Fusion for Domain-Robust Whole-Slide Survival Analysis",
+          "arxiv": "https://arxiv.org/abs/2606.19966"
+        }
+      ],
+      "why": "가상 염색(virtual staining)과 전체 슬라이드 분석이 계산 광학 랩의 하류(downstream) 응용인 만큼, 병리 이미지의 도메인 강건성과 약지도 학습 효율화는 직접 연관됩니다. Single-Stage WSSS는 기존 CAM 생성→오프라인 정제→재학습이라는 3단계 파이프라인을 오류 전파 없이 단일 end-to-end 학습으로 통합합니다. Semantic-Anchored WSI는 스캐너·염색 프로토콜 차이로 인한 도메인 이동 문제를 픽셀 특징 대신 고수준 병리 의미(종양 등급, 미세환경 구조)를 앵커로 삼아 극복합니다. SurgVista는 수술 장면의 기구-조직 상호작용을 기하 기반으로 모델링해서 장기 예측 충실도를 높이며, 조직 변형 시뮬레이션이 가상 염색 후처리와 연결될 수 있습니다.",
+      "confidence": "Medium",
+      "confidence_note": "병리 분야 논문은 가상 염색 하류 응용과 간접 연결이며, SurgVista는 직접 연결 고리가 조직 역학 모델링이라는 점에서 중간 수준",
+      "lab_action": "Single-Stage WSSS의 계층적 수정 방식이 우리 가상 염색 파이프라인의 약지도 세그멘테이션 단계에 적용 가능한지 검토하고, CAM 대비 복원 품질 비교 실험 계획"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "Flow Map 모델의 NFE 제어로 위상 복원 왜곡-지각 트레이드오프 정량화",
+      "claim": "Flow Map Denoisers의 NFE sweeping 방식을 Fourier Ptychography 위상 복원에 적용하면, 재학습 없이 런타임에 왜곡-지각 트레이드오프 곡선(DP curve)을 얻을 수 있고, 기존 단일 동작점 복원 대비 사용자 제어성을 크게 높일 수 있다.",
+      "supporting_papers": [
+        {"title": "Flow Map Denoisers", "arxiv": "https://arxiv.org/abs/2606.19802"}
+      ]
+    },
+    {
+      "title": "미분 가능 역투영을 광학 회절 단층 촬영(ODT) 재구성에 통합",
+      "claim": "PSCT-Net의 미분 가능 역투영 모듈을 ODT 파이프라인의 투영 연산자로 교체하면, 각도 제한 희소 관측에서도 기하 정보가 end-to-end 학습에 포함되어 복원 아티팩트가 감소할 것이다.",
+      "supporting_papers": [
+        {"title": "PSCT-Net", "arxiv": "https://arxiv.org/abs/2606.19867"},
+        {"title": "VisDom", "arxiv": "https://arxiv.org/abs/2606.20531"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-06-19</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-06-19 (금요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-06-19 (금요일)</div>
+  <div>📚 소스: arXiv /new 2026-06-19 listing (초록 포함)</div>
+  <div>📊 카테고리: cs.LG / cs.CV / cs.AI / eess.IV / eess.SP</div>
+  <div>🔢 스캔: 452건 · ROI 배정 175건</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 배치에서 가장 눈에 띄는 것은 <strong>역문제 왜곡-지각 트레이드오프를 재학습 없이 inference time에 연속적으로 제어</strong>하는 Flow Map Denoisers의 등장입니다. 기존에 복원 방법이 낮은 오류(블러리) 또는 높은 지각 품질(선명하지만 불충실) 중 하나를 미리 골라야 했던 것과 달리, NFE 하나만 바꾸면 왜곡-지각 평면 위 어느 점이든 도달할 수 있다는 아이디어는 홀로그래픽·위상 복원에 즉시 이식 가능합니다. 두 번째 축은 <strong>광 필드에 VLM 공간 추론을 결합해서 폐색 강건 복원</strong>에 나섰다는 것인데, 광학 센서와 언어 모델이 파이프라인에서 실질적으로 만나기 시작했다는 신호입니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>금요일 arXiv /new 배치는 총 452건으로 cs.AI(220)·cs.LG(201)·cs.CV(124) 세 채널이 대부분을 채웁니다. eess.IV는 5건, eess.SP는 16건으로 광학 전문 채널은 여전히 소수 정예입니다. 이번 주 전체를 돌아보면, 월요일부터 점차 <strong>역문제·희소 관측 복원에서 기하 제약을 명시적으로 내재화</strong>하는 방향이 강화되어 왔고, 오늘 PSCT-Net(미분 가능 역투영)과 VisDom(가시 도메인 제약 Gaussian Splatting)이 그 흐름의 금요일 결산처럼 보입니다.</p>
+<p>이번 주 새롭게 보이는 신호는 <strong>VLM(비전-언어 모델)이 단순 캡셔닝을 넘어서 물리 기반 이미징 파이프라인의 '추론 블록'으로 삽입</strong>되기 시작했다는 것입니다. 광 필드 폐색 제거에서 LFI 통합 이후 VLM이 공간 추론으로 빈틈을 채우는 방식은, 저희 랩의 렌즈리스·FP 셋업에서도 물리 모델이 커버하지 못하는 영역을 언어-추론 루프가 보완하는 가능성을 암시합니다. 당장 구현보다는 설계 개념으로 주목할 만한 방향입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(6월 18일)는 <strong>코딩 조리개·광학 하드웨어를 학습 루프에 직접 포함</strong>(EDoF-NeRF, Trainable Photonic Measurement)하는 하드웨어-소프트웨어 공동 설계가 중심이었고, 3DGS의 대규모·4D 확장(Splaxel, Hand-4DGS)과 OCT 테스트 시점 적응이 나란히 있었습니다.</p>
+<p>오늘은 하드웨어 공동 설계보다 <strong>순수 역문제 알고리즘</strong> 쪽이 강세입니다. Flow Map Denoisers로 대표되는 '복원 품질 제어성', PSCT-Net·VisDom으로 대표되는 '기하 명시적 희소 복원', 그리고 광 필드에 VLM을 붙인 폐색 제거가 새로운 테마로 추가됐습니다. 어제 3DGS 중심에서 오늘은 CT·광 필드·위상 역문제 쪽으로 무게가 이동했네요.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>광 필드·사건 카메라의 새 표현 학습과 폐색 강건 복원</strong><span class=pill>HOT</span></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.19985" target=_blank>Vision-Reasoning Occlusion Removal from LF</a><br>
+    <a href="https://arxiv.org/abs/2606.19835" target=_blank>Neural Events: Async Autoencoder for Event Vision</a>
+  </td>
+  <td>기존 광 필드 통합(LFI)은 다시점 중첩으로 전경 식물 같은 밀한 폐색을 억제할 수 있었지만, 의미론적으로 불완전한 영역을 채우기가 어려웠습니다. 이 논문은 LFI 이후 VLM 공간 추론을 후처리로 연결해서 그 빈틈을 메우는 첫 시도입니다. 이벤트 카메라 논문은 마이크로초 해상도 스트림을 비동기 자기부호화기로 시공간 토큰으로 압축해, 처리 병목 없이 고속 장면 변화를 인식할 수 있게 합니다. 두 방향 모두 '센서 원시 데이터를 그대로 쓰지 않고 새로운 표현으로 변환 후 추론'하는 흐름이어서, 계산 광학에서 표현 학습과 물리 모델이 어떻게 협력할 수 있는지를 보여줍니다.</td>
+  <td>High<br><small>LF 논문은 계산 광학 역문제와 직접 연결</small></td>
+  <td>2606.19985 코드 확인 후, 우리 광 필드 셋업에서 LFI 후 VLM 추론 연결 ablation 설계</td>
+</tr>
+<tr>
+  <td><strong>희소 관측 3D 복원과 기하 제약 강화</strong><span class=pill>HOT</span></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.19867" target=_blank>PSCT-Net: Geometry-Aware Pediatric Skull CT</a><br>
+    <a href="https://arxiv.org/abs/2606.20531" target=_blank>VisDom: Sparse NVS with Visible Domain Constraint</a><br>
+    <a href="https://arxiv.org/abs/2606.20103" target=_blank>Geometry-Preserving 3DGS for LiDAR-Camera Calib.</a>
+  </td>
+  <td>기존 희소 뷰 복원 방법들은 2D 특징을 3D에 투영할 때 투영 기하를 명시적으로 쓰지 않아서, 뷰가 적으면 부동(floating) 아티팩트와 오버피팅이 빈번했습니다. PSCT-Net은 미분 가능 역투영으로 CT 투영 기하를 end-to-end 학습 그래프에 직접 포함하고, VisDom은 '최소 한 입력 뷰에서 보이는 영역에만 Gaussian을 허용'하는 기하 가시 제약을 학습 중에 부과합니다. 이 두 방향은 방법론 차원에서 Fourier Ptychography나 ODT처럼 투영 모델이 명시적으로 있는 계산 광학 역문제에 즉시 이식 가능한 아이디어를 담고 있습니다.</td>
+  <td>High<br><small>세 논문이 독립적으로 같은 방향 제시</small></td>
+  <td>PSCT-Net의 미분 가능 역투영 모듈을 ODT 투영 연산자와 비교, end-to-end 학습 가능성 코드 레벨 검토</td>
+</tr>
+<tr>
+  <td><strong>역문제 왜곡-지각 트레이드오프와 확산 기반 복원의 정밀 제어</strong><span class="pill a">TIER A</span></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.19802" target=_blank>Flow Map Denoisers: Traversing the DP Plane</a>
+  </td>
+  <td>이미지 복원에서 '낮은 오류 = 블러리', '높은 지각 품질 = 선명하지만 불충실'이라는 트레이드오프는 오래된 난제였고, 기존 방법들은 훈련 시점에 한 쪽을 골라야 했습니다. 이 논문은 flow map 모델에서 NFE(함수 평가 횟수)를 inference time에 조절하면 재학습 없이 왜곡-지각 평면의 어느 점이든 도달할 수 있다는 것을 이론과 실험으로 보입니다. 홀로그래픽 복원이나 FP 위상 복원처럼 '얼마나 충실하게 vs. 얼마나 선명하게'를 응용 상황에 따라 런타임에 결정해야 하는 계산 광학 파이프라인에 즉시 이식 가능한 아이디어입니다.</td>
+  <td>High<br><small>이론 근거 명확, 블라인드 역문제 직접 적용</small></td>
+  <td>공개 코드 확인 후 FP 복원에 NFE sweeping 실험, DP 곡선 기록</td>
+</tr>
+<tr>
+  <td><strong>병리·외과 세계 모델과 영지식 조직 분석</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.19889" target=_blank>SurgVista: Surgical World Modeling</a><br>
+    <a href="https://arxiv.org/abs/2606.20250" target=_blank>Single-Stage Hierarchical WSSS (Histopathology)</a><br>
+    <a href="https://arxiv.org/abs/2606.19966" target=_blank>Semantic-Anchored Evidential Fusion for WSI</a>
+  </td>
+  <td>가상 염색과 전체 슬라이드 이미지(WSI) 분석은 저희 랩 계산 광학의 하류 응용이라, 병리 이미지 분야의 방법론 효율화와 도메인 강건성은 직접 영향을 줍니다. Single-Stage WSSS는 3단계 파이프라인(CAM 생성→오프라인 정제→재학습)을 단일 end-to-end 학습으로 통합해서 오류 전파와 연산 비용 모두를 줄입니다. Semantic-Anchored WSI는 스캐너·염색 프로토콜 차이로 인한 도메인 이동을 픽셀 특징 대신 고수준 병리 의미(종양 등급, 미세환경)를 앵커로 극복합니다. SurgVista는 기구-조직 상호작용의 기하 기반 시공간 모델링으로 수술 장면의 장기 예측 충실도를 높입니다.</td>
+  <td>Medium<br><small>가상 염색 하류 응용과 간접 연결</small></td>
+  <td>Single-Stage WSSS 방법을 가상 염색 후 약지도 세그멘테이션 단계에 적용 가능성 검토</td>
+</tr>
+</tbody>
+</table>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>① Flow Map으로 왜곡-지각 평면을 '스위프'한다 — 복원의 새 제어 축</h3>
+  <p>Flow Map Denoisers(2606.19802)의 핵심은 <em>재학습 없이 NFE 하나로 복원 특성이 연속적으로 바뀐다</em>는 점입니다. 기존 확산 기반 복원 방법들은 훈련 목적함수에 따라 단일 동작점에 고정되어 있었는데, 이 논문은 그것이 flow map의 구조적 특성 때문에 극복 가능하다는 이론적 설명을 제시합니다. 계산 광학에서 이 아이디어는 '진단용이라면 충실도 우선, 시각화용이라면 선명도 우선'처럼 같은 모델을 여러 응용에 쓰는 방향으로 이어집니다.</p>
+  <p class=conf-note>Confidence: High — 이론 근거와 블라인드 역문제 실험이 함께 있고, 랩 핵심 과제와 직결</p>
+</div>
+
+<div class=ins>
+  <h3>② 기하를 사후 정규화가 아닌 모델 구조로 — 희소 복원의 새 기준선</h3>
+  <p>PSCT-Net과 VisDom이 같은 날 독립적으로 보여주는 메시지는, 희소 관측에서 아티팩트를 줄이려면 기하 제약을 손실 함수가 아니라 모델 구조 안에 넣어야 한다는 것입니다. 미분 가능 역투영과 가시 도메인 제약은 구현 방식은 다르지만 둘 다 '기하 일관성 위반 가능성을 모델이 처음부터 갖지 못하게 막는' 접근입니다. ODT, FP처럼 투영 모델이 명확한 저희 랩 문제에 바로 연결됩니다.</p>
+  <p class=conf-note>Confidence: High — 두 논문이 독립적으로 같은 방향, 이론적으로도 합리적</p>
+</div>
+
+<div class=ins>
+  <h3>③ VLM이 '추론 블록'으로 계산 광학 파이프라인에 진입</h3>
+  <p>광 필드 폐색 제거(2606.19985)에서 VLM은 최종 복원 레이어의 '의미 추론기'로 쓰입니다. 물리 기반 LFI가 폐색을 억제한 뒤 VLM이 남은 빈틈을 공간 추론으로 채우는 방식은, 물리 모델과 데이터 기반 추론을 직렬로 연결하는 새로운 파이프라인 형태입니다. 당장 저희 렌즈리스·FP 셋업에 적용하기보다는, 물리 모델이 커버하지 못하는 영역을 어떤 추론 블록이 채울 수 있는지라는 설계 문제의 프레임을 바꾸는 논문으로 읽는 게 맞을 것 같습니다.</p>
+  <p class=conf-note>Confidence: Medium — 아직 단일 논문, 방법론 일반화 여부 추가 확인 필요</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=ins>
+  <h3>주제 1: Flow Map Denoisers를 FP 위상 복원에 적용해 DP 트레이드오프 곡선 실증</h3>
+  <p><strong>배경</strong>: FP 복원은 충실도(위상 오류 최소화)와 시각적 선명도(고주파 세부 살리기) 사이에서 매번 파라미터를 조정해야 하는 문제가 있습니다. Flow Map Denoisers는 이 문제를 NFE sweeping으로 해결합니다.</p>
+  <p><strong>1주 실행 프로토콜</strong>:</p>
+  <ol>
+    <li>arxiv 2606.19802 코드 저장소 확인 및 클론</li>
+    <li>FP 데이터셋 또는 위상 이미지 복원 벤치마크에 flow map 모델 적용</li>
+    <li>NFE = {1, 2, 4, 8, 16, 32}로 스위프하며 PSNR vs. LPIPS 곡선 기록</li>
+    <li>기존 단일 동작점 방법(TV 정규화, DnCNN)과 곡선 비교</li>
+  </ol>
+</div>
+
+<div class=ins>
+  <h3>주제 2: 미분 가능 역투영을 ODT 각도 제한 복원에 통합</h3>
+  <p><strong>배경</strong>: ODT는 각도 제한(limited-angle) 측정에서 누락된 콘(missing cone) 아티팩트가 발생하는데, 기존 복원은 투영 기하를 손실 함수 외부에 두는 경우가 많습니다.</p>
+  <p><strong>1주 실행 프로토콜</strong>:</p>
+  <ol>
+    <li>PSCT-Net(2606.19867)의 DBP 모듈 구조 분석</li>
+    <li>우리 ODT 시스템의 투영 각도·파장 파라미터를 DBP에 대입하는 설정 파일 작성</li>
+    <li>제한각 시뮬레이션 데이터에서 DBP 포함/미포함 복원 SSIM 비교</li>
+    <li>결과를 기존 TV 정규화 기준선과 나란히 정리</li>
+  </ol>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<div class=bucket-bar><span class=nm>Deep Learning (general)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>115</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction / Inverse Problems</span><span class=bar><span class=fill style="width:27%"></span></span><span class=n>31</span></div>
+<div class=bucket-bar><span class=nm>Tomography / 3D Imaging</span><span class=bar><span class=fill style="width:7.8%"></span></span><span class=n>9</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining / Pathology</span><span class=bar><span class=fill style="width:4.3%"></span></span><span class=n>5</span></div>
+<div class=bucket-bar><span class=nm>Light Field / Novel Sensors</span><span class=bar><span class=fill style="width:3.5%"></span></span><span class=n>4</span></div>
+<div class=bucket-bar><span class=nm>eess.SP (Signal Processing)</span><span class=bar><span class=fill style="width:3.5%"></span></span><span class=n>4</span></div>
+<div class=bucket-bar><span class=nm>Fourier Ptychography / Phase</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics / Diffractive</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0</span></div>
+<div class=bucket-bar><span class=nm>Lensless / Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0</span></div>
+<p style="font-size:12.5px;color:#666;margin:.5rem 0">SAR 1건(광학 아닌 radar, Tier C 처리), FP·메타·렌즈리스 0건으로 주 전반 대비 광학 전문 신호 감소.</p>
+
+<h2>🌟 오늘의 must-read <span class="pill a">Tier A</span></h2>
+
+<div class=dd>
+  <h3><a href="https://arxiv.org/abs/2606.19802" target=_blank>Flow Map Denoisers: Traversing the Distortion-Perception Plane for Inverse Problems</a> <span class="pill a">TIER A · 이번 주 핵심</span></h3>
+  <p style="color:#713f12;font-size:13.5px"><em>이 논문은 이번 주 전체 배치에서 계산 광학 복원에 가장 직접적으로 적용 가능한 알고리즘 아이디어를 담고 있습니다. 당장 실험에 넣을 수 있는 수준의 구체성이 있습니다.</em></p>
+  <div class=tag>무엇을 했나</div>
+  <p>Flow map 모델(flow matching의 few-step sampling 확장)이 블라인드 역문제에서 NFE(함수 평가 횟수)를 조절하기만 하면 왜곡-지각 평면 전체를 inference time에 이동할 수 있다는 것을 보였습니다. NFE를 늘리면 지각 품질(선명도)이 올라가고, NFE를 줄이면 왜곡(PSNR)이 개선됩니다. 어느 쪽으로도 재학습이 필요 없습니다.</p>
+  <div class=tag>왜 이게 새로운가</div>
+  <p>기존에는 복원 방법이 훈련 목적함수(MSE vs. adversarial/perceptual)에 의해 왜곡-지각 평면 위의 단일 점에 고정되었습니다. 다른 점에 가려면 모델을 다시 학습해야 했고, 쌍방향 감독(paired-data supervision)이나 보조 모델, 하이퍼파라미터 튜닝이 필요했습니다. 이 논문은 flow map의 수학적 특성상 NFE가 자연스럽게 이 트레이드오프를 제어하는 변수가 된다는 것을 이론적으로 설명합니다.</p>
+  <div class=tag>계산 광학에의 함의</div>
+  <p>FP 복원, 홀로그래픽 위상 복원, ODT 볼륨 복원 모두 '진단용 충실도 우선이냐 발표용 선명도 우선이냐'를 응용에 따라 선택해야 하는 상황이 있습니다. Flow Map Denoisers는 하나의 모델로 두 요구를 모두 서비스할 수 있는 경로를 제시합니다. NFE sweeping으로 DP 곡선을 그려서 우리 셋업에서의 최적 동작점을 찾는 것이 1주 실험으로 가능합니다.</p>
+</div>
+
+<div class=dd>
+  <h3><a href="https://arxiv.org/abs/2606.19985" target=_blank>Vision-Reasoning-Guided Occlusion Removal from Light Fields</a> <span class=pill>TIER A</span></h3>
+  <div class=tag>무엇을 했나</div>
+  <p>광 필드 통합(LFI)으로 전경 폐색을 우선 억제한 뒤, VLM(비전-언어 모델)의 공간 추론으로 나머지 의미론적 빈틈을 채우는 2단계 파이프라인을 제안합니다. LFI는 물리 기반 다시점 중첩으로 고주파 전경을 평균화하고, VLM은 그 결과를 해석해 남은 아티팩트의 맥락을 이해합니다.</p>
+  <div class=tag>왜 중요한가</div>
+  <p>광 필드 이미징에서 폐색 제거는 렌즈 설계나 이미지 처리 단독으로는 한계가 있었는데, 이 논문은 '물리 통합 후 언어 추론'이라는 직렬 구조로 두 한계를 보완합니다. VLM이 계산 광학 복원 파이프라인의 정규 블록으로 들어온 첫 사례 중 하나입니다.</p>
+  <div class=tag>우리 분야</div>
+  <p>렌즈리스 셋업이나 FP에서 샘플 폐색이 문제가 되는 경우, LFI 대신 다시점 FP 측정을 통합한 뒤 VLM 추론을 연결하는 유사 구조를 실험해볼 수 있습니다. 코드 공개 여부가 핵심 다음 확인 사항입니다.</p>
+</div>
+
+<div class=dd>
+  <h3><a href="https://arxiv.org/abs/2606.19867" target=_blank>PSCT-Net: Geometry-Aware Pediatric Skull CT Reconstruction via Differentiable Back-Projection</a> <span class=pill>TIER A</span></h3>
+  <div class=tag>무엇을 했나</div>
+  <p>소아 두개골 CT를 희소 양평면 X선 2장으로 3D 복원하는 극도의 저선량 문제를 다룹니다. 기존 방법들은 2D 특징을 3D 공간에 기하 없이 투영(geometry-agnostic lifting)했는데, PSCT-Net은 미분 가능 역투영(DBP)으로 X선 투영 기하를 end-to-end 학습 그래프 안에 명시적으로 포함합니다. Attention 기반 정제 모듈이 추가로 국소 세부를 개선합니다.</p>
+  <div class=tag>왜 중요한가</div>
+  <p>단 2개 뷰에서 3D 볼륨 복원이라는 극단적 희소 관측은, 각도 제한 ODT나 단일 각도 FP 복원처럼 저희 랩 문제와 직결됩니다. 미분 가능 역투영은 투영 기하를 명시적으로 아는 어떤 역문제에도 적용 가능한 모듈입니다.</div>
+  <div class=tag>우리 분야</div>
+  <p>DBP 모듈의 구현을 ODT 순전파 투영 연산자와 비교하고, missing cone 보상 실험에 적용하는 것이 가장 가까운 응용 경로입니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+<div class=risk>
+  <p><strong>[방법 전환 비용]</strong> Flow Map Denoisers는 flow map 모델을 처음부터 학습하거나 pre-trained 모델이 있어야 합니다. FP/위상 복원 도메인의 사전 학습 모델이 없으면 학습 비용이 큽니다. 1주 실험은 공개 모델+도메인 이미지로 시작하는 것을 권장합니다.</p>
+  <p><strong>[VLM 추론 속도]</strong> 2606.19985의 VLM 공간 추론 블록은 inference time이 길 수 있습니다. 실시간 이미징 응용에는 병목이 될 수 있어, 오프라인 후처리로 먼저 실험하는 것이 현실적입니다.</p>
+  <p><strong>[소아 CT 데이터 도메인 특수성]</strong> PSCT-Net은 소아 두개골 특화 데이터로 학습되었을 가능성이 높습니다. ODT 전이 학습 시 도메인 차이를 확인해야 합니다.</p>
+  <p><strong>[eess.IV 5건 소수]</strong> 광학 전문 채널이 매우 적은 날입니다. 오늘 광학 신호는 소수 정예로 읽어야 하며, 전체 흐름은 주간 단위로 보는 것이 정확합니다.</p>
+  <p><strong>[FP·메타·렌즈리스 0건]</strong> 오늘 핵심 버킷이 비어 있습니다. 주 전반 대비 주목할 만한 공백으로, 다음 주 월요일 배치에서 보상될 가능성이 있습니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+<div class=skim>
+  <strong>2606.20074</strong> (Evaluation of EEG Foundation Models for ICU Burst-Suppression) — EEG, 광학 이미징 무관. 제목 확인 후 패스.<br>
+  <strong>2606.20031</strong> (Neuromorphic RL Framework for Robotic Fulfillment) — 로봇 물류, 이미징 무관. 패스.<br>
+  <strong>cs.AI 220건 중 LLM 에이전트 계획·추론 논문</strong> — 방법론 참고용이나 계산 광학 직접 연결 없음. 관심 있으면 주말에 훑기.
+</div>
+
+<h2>📄 부록 — 전체 ROI 논문 목록</h2>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.19802" target=_blank>Flow Map Denoisers: Traversing the Distortion-Perception Plane for Inverse Problems</a></strong> [Reconstruction · TIER A]<br>
+  문제: 역문제 복원에서 왜곡-지각 트레이드오프를 런타임에 연속 제어하는 방법이 없었음 / 방법: flow map 모델 NFE 조절로 재학습 없이 DP 평면 이동 / 의미: FP·홀로그래픽 복원에 즉시 이식 가능한 품질 제어 축 추가
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.19985" target=_blank>Vision-Reasoning-Guided Occlusion Removal from Light Fields</a></strong> [Light Field · TIER A]<br>
+  문제: 밀한 전경 식물 폐색에서 광 필드 통합만으로는 의미론적 빈틈을 채울 수 없음 / 방법: LFI 후 VLM 공간 추론 직렬 연결 / 의미: VLM이 계산 광학 복원 파이프라인의 블록으로 실질적 진입
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.19867" target=_blank>PSCT-Net: Geometry-Aware Pediatric Skull CT Reconstruction via Differentiable Back-Projection</a></strong> [Tomography · TIER A]<br>
+  문제: 양평면 2장 X선에서 소아 두개골 3D 복원 — 극도 희소 관측의 기하 무시 아티팩트 / 방법: 미분 가능 역투영(DBP)으로 기하를 end-to-end 학습에 포함 + Attention 정제 / 의미: ODT 각도 제한 복원에 DBP 직접 이식 가능
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.20531" target=_blank>VisDom: Sparse Novel View Synthesis with Visible Domain Constraint</a></strong> [Tomography · TIER B]<br>
+  문제: 희소 뷰 NeRF·3DGS 오버피팅, 부동 아티팩트 / 방법: 학습 가능 가시 도메인 제약으로 Gaussian을 입력 뷰 기하 일관 영역에만 배치 / 의미: 희소 관측 기하 제약의 새 참조점
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.19835" target=_blank>Neural Events: Discrete Asynchronous Autoencoders for Event-Based Vision</a></strong> [Light Field · TIER B]<br>
+  문제: 이벤트 카메라의 대용량 스트림을 실시간 처리하는 구조적 병목 / 방법: 비동기 자기부호화기로 시공간 토큰으로 압축 / 의미: 고속 동적 이미징 센서 표현 학습의 새 접근
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.20103" target=_blank>Geometry-Preserving in 3D Gaussian Splatting for LiDAR-Camera Extrinsic Calibration</a></strong> [Tomography · TIER B]<br>
+  문제: 다중 모달 보정에서 교차 모달 특징 희소성 / 방법: 기하 보존 3DGS를 차별화 가능 프록시로 LiDAR-카메라 보정 / 의미: 다중 모달 계산 광학 보정 기준선
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.19889" target=_blank>SurgVista: Long-Horizon Surgical World Modeling with Plausible Instrument-Tissue Dynamics</a></strong> [VS/Pathology · TIER B]<br>
+  문제: 수술 세계 모델의 기구-조직 공간 불일관성·장기 텍스처 붕괴 / 방법: 기하 기반 시공간 상호작용 모델링 + 적응형 시간 앵커 / 의미: 조직 변형 시뮬레이션이 가상 염색 후처리와 연결 가능
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.20250" target=_blank>Single-Stage Hierarchical Rectification for Weakly Supervised Histopathology Segmentation</a></strong> [VS/Pathology · TIER B]<br>
+  문제: 병리 WSSS의 3단계 파이프라인 오류 전파·연산 비용 / 방법: CAM 생성·의사 레이블 정제를 단일 end-to-end 학습으로 통합 / 의미: 가상 염색 약지도 세그멘테이션 단계 효율화 직접 참고
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.19966" target=_blank>Semantic-Anchored Evidential Fusion for Domain-Robust Whole-Slide Survival Analysis</a></strong> [VS/Pathology · TIER B]<br>
+  문제: WSI 분석의 스캐너·염색 도메인 이동 취약성 / 방법: 고수준 병리 의미(종양 등급, 미세환경)를 도메인 불변 앵커로 사용한 증거적 다입도 융합 / 의미: 가상 염색 도메인 간 일반화 전략으로 참고
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/abs/2606.19802" target=_blank>Flow Map Denoisers (2606.19802)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.19985" target=_blank>Vision-Reasoning LF Occlusion Removal (2606.19985)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.19867" target=_blank>PSCT-Net (2606.19867)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.20531" target=_blank>VisDom (2606.20531)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.19835" target=_blank>Neural Events (2606.19835)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.19889" target=_blank>SurgVista (2606.19889)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.20250" target=_blank>Single-Stage WSSS Histopathology (2606.20250)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.19966" target=_blank>Semantic-Anchored WSI Survival (2606.19966)</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+  <p>📚 입력: arXiv /new 2026-06-19 (초록 포함, cs.LG/cs.CV/cs.AI/eess.IV/eess.SP) · 스캔 452건, ROI 175건</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+</body>
+</html>
