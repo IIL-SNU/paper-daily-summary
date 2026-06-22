@@ -950,7 +950,7 @@ push 실패 시 Slack 발송도 스킵한다.
 
 ## [17. Slack 발송]
 
-push 성공 직후 발송한다. **daily report 발행 시(`out/release_ok.txt` 존재)** 요약을, **실행 실패 시** 실패 알림을 워크플로우가 **Slack 봇(`chat.postMessage`)**으로 `SLACK_CHANNEL_ID` 채널에 보낸다(주말·no-op은 미발송). 에이전트는 메시지 본문(mrkdwn)을 `out/slack_message.txt`로 작성한다.
+보고서 생성과 Slack 발송은 **시간이 분리**돼 있다: 보고서는 평일 저녁(22:00 KST, arXiv `/new`가 올라온 뒤)에 생성되고, Slack은 **다음 날 아침 10:00 KST**에 발송된다. 에이전트의 책임은 종전과 같다 — **메시지 본문(mrkdwn)을 `out/slack_message.txt`로 작성**하는 것까지다. 워크플로의 저녁 `report` 잡이 발행 성공 시 이 메시지를 대기 파일 `stats/pending_slack.md`로 커밋하고, 아침 `notify` 잡이 그 대기 메시지를 **Slack 봇(`chat.postMessage`)**으로 `SLACK_CHANNEL_ID` 채널에 보낸 뒤 파일을 비운다. **daily report 발행 시** 요약을, **실행 실패 시** 실패 알림을 보내며, **주말·no-op은 대기 파일이 없어 미발송**이다.
 
 ```text
 channel: {SLACK_CHANNEL}

@@ -2,10 +2,22 @@ name: arXiv Daily Summary
 
 on:
   schedule:
-    # 10:00 KST every day (01:00 UTC)
+    # Report generation at 22:00 KST (13:00 UTC) — runs after arXiv's daily /new
+    # listing is reliably posted (arXiv announces ~20:00 ET = morning KST).
+    - cron: "0 13 * * *"
+    # Slack delivery at 10:00 KST (01:00 UTC) — announces the report generated the
+    # evening before. Generation and notification are intentionally decoupled.
     - cron: "0 1 * * *"
   workflow_dispatch:
     inputs:
+      job:
+        description: "report (generate the briefing) or notify (deliver Slack for the latest report)"
+        required: false
+        default: "report"
+        type: choice
+        options:
+          - report
+          - notify
       mode:
         description: "auto, daily, backfill, weekly, or sunday"
         required: false
@@ -22,7 +34,7 @@ on:
         required: false
         type: string
       send_slack:
-        description: "Send Slack notification via Slack bot (SLACK_BOT_TOKEN) if configured"
+        description: "Deliver Slack notification (notify job) if configured"
         required: false
         default: true
         type: boolean
@@ -35,26 +47,28 @@ concurrency:
   group: paper-daily-summary-${{ github.ref }}
   cancel-in-progress: false
 
+env:
+  WORKDIR: ${{ github.workspace }}
+  GITHUB_REPO: IIL-SNU/paper-daily-summary
+  SITE_URL: https://iilab.io/paper-daily-summary
+  SLACK_CHANNEL: "#paper-daily-summary"
+  SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}   # GitHub secret으로 주입(예: C0XXXXXXX). 비우면 SLACK_CHANNEL 이름 사용
+  SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}      # xoxb-... (chat:postMessage scope, 봇이 채널에 초대돼 있어야 함)
+  SEND_SLACK: ${{ github.event.inputs.send_slack || 'true' }}
+  # Evening report run stages the Slack message here; the morning notify run delivers and clears it.
+  PENDING_FILE: stats/pending_slack.md
+
 jobs:
-  run:
-    name: Run arXiv Daily Briefing
+  # ───────────────────────── Evening: generate the briefing ─────────────────────────
+  report:
+    name: Generate briefing (evening, arXiv-aligned)
+    if: ${{ github.event.schedule == '0 13 * * *' || (github.event_name == 'workflow_dispatch' && (github.event.inputs.job == 'report' || github.event.inputs.job == '')) }}
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
-      WORKDIR: ${{ github.workspace }}
-      GITHUB_REPO: IIL-SNU/paper-daily-summary
-      SITE_URL: https://iilab.io/paper-daily-summary
-      SLACK_CHANNEL: "#paper-daily-summary"
-      SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}   # GitHub secret으로 주입(예: C0XXXXXXX). 비우면 SLACK_CHANNEL 이름 사용
       MODE: ${{ github.event.inputs.mode || 'auto' }}
       TARGET_DATE: ${{ github.event.inputs.target_date || '' }}
-      SEND_SLACK: ${{ github.event.inputs.send_slack || 'true' }}
-      # Option 1: authenticate Claude Code with a subscription OAuth token
-      # (generated locally via `claude setup-token`) instead of a metered API key.
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-      # Slack bot token (xoxb-...) with chat:postMessage scope; bot must be invited to the channel.
-      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -82,7 +96,7 @@ jobs:
             exit 1
           fi
           if [[ -z "${SLACK_BOT_TOKEN}" ]]; then
-            echo "::warning::SLACK_BOT_TOKEN is not configured. Slack delivery will be skipped."
+            echo "::warning::SLACK_BOT_TOKEN is not configured. The morning Slack delivery will be skipped."
           fi
 
       - name: Install Claude Code CLI
@@ -144,7 +158,7 @@ jobs:
           # (Safe on GitHub-hosted runners; they run as non-root 'runner'.)
           claude --dangerously-skip-permissions -p "$(cat out/ci_prompt.md)"
 
-      - name: Finalize commit and push if Claude left validated changes
+      - name: Finalize commit, stage Slack message, and push
         shell: bash
         run: |
           set -euo pipefail
@@ -152,12 +166,20 @@ jobs:
           git config user.email "actions@github.com"
 
           if [[ -f out/release_ok.txt ]]; then
-            echo "Release marker found. Ensuring validated changes are pushed."
+            echo "Release marker found. Staging the Slack message for the morning notify job."
+            # The agent writes the human-facing message to out/slack_message.txt (gitignored).
+            # Persist it to a tracked file so the decoupled morning job can deliver it.
+            if [[ -f out/slack_message.txt ]]; then
+              cp out/slack_message.txt "${PENDING_FILE}"
+            else
+              echo "Imaging Intelligence Daily Briefing published. Site: ${SITE_URL}" > "${PENDING_FILE}"
+            fi
             for path in posts trends benchmarks insights weekly feed.xml index.html stats; do
               if [[ -e "$path" ]]; then
                 git add "$path"
               fi
             done
+            git add "${PENDING_FILE}"
             if git diff --cached --quiet; then
               echo "No staged changes remain."
             else
@@ -166,71 +188,26 @@ jobs:
               git push origin HEAD:main
             fi
           elif [[ -f out/no_release.txt ]]; then
-            echo "No-release marker found."
+            echo "No-release marker found (intentional no-op). No Slack pending; morning stays silent."
             cat out/no_release.txt
           else
             echo "::error::Neither out/release_ok.txt nor out/no_release.txt exists."
             exit 1
           fi
 
-      - name: Send Slack notification (bot)
-        if: ${{ always() }}
+      - name: Stage failure alert for the next Slack window
+        if: ${{ failure() }}
         shell: bash
         run: |
           set -euo pipefail
-          if [[ "${SEND_SLACK}" != "true" ]]; then
-            echo "Slack delivery disabled by workflow input."
-            exit 0
-          fi
-          if [[ -z "${SLACK_BOT_TOKEN}" ]]; then
-            echo "SLACK_BOT_TOKEN is not configured; skipping Slack delivery."
-            exit 0
-          fi
-          TARGET="${SLACK_CHANNEL_ID:-$SLACK_CHANNEL}"
-          if [[ -z "${TARGET}" ]]; then
-            echo "::error::No Slack channel set (SLACK_CHANNEL_ID preferred, or SLACK_CHANNEL)."
-            exit 1
-          fi
-
-          # Report published -> summary; run failed -> failure alert;
-          # intentional no-op (weekend / no_release) -> stay silent.
-          if [[ -f out/release_ok.txt ]]; then
-            if [[ -f out/slack_message.txt ]]; then
-              MESSAGE="$(cat out/slack_message.txt)"
-            else
-              MESSAGE="Imaging Intelligence Daily Briefing published. Site: ${SITE_URL}"
-            fi
-          elif [[ "${{ job.status }}" == "failure" ]]; then
-            MESSAGE="⚠️ *Imaging Intelligence Daily Briefing failed* — 점검: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-          else
-            echo "No report published and run did not fail (intentional no-op); skipping Slack."
-            exit 0
-          fi
-          export MESSAGE TARGET
-
-          # Build chat.postMessage payload (mrkdwn text; the agent writes out/slack_message.txt).
-          python - <<'PY'
-          import json, os
-          payload = {
-              "channel": os.environ["TARGET"],
-              "text": os.environ.get("MESSAGE", ""),
-              "mrkdwn": True,
-              "unfurl_links": False,
-          }
-          with open('out/slack_payload.json', 'w', encoding='utf-8') as f:
-              json.dump(payload, f, ensure_ascii=False)
-          PY
-
-          curl -sS -X POST https://slack.com/api/chat.postMessage \
-            -H "Authorization: Bearer ${SLACK_BOT_TOKEN}" \
-            -H 'Content-type: application/json; charset=utf-8' \
-            --data @out/slack_payload.json > out/slack_resp.json
-          echo "Slack API response: $(cat out/slack_resp.json)"
-          # Slack returns HTTP 200 with {"ok":false,"error":...} on failure — check the body.
-          if ! python3 -c "import json,sys; sys.exit(0 if json.load(open('out/slack_resp.json')).get('ok') else 1)"; then
-            ERR="$(python3 -c "import json; print(json.load(open('out/slack_resp.json')).get('error','unknown'))")"
-            echo "::warning::Slack chat.postMessage failed: ${ERR} (run already published; not failing the job)."
-          fi
+          git config user.name "arxiv-daily-bot"
+          git config user.email "actions@github.com"
+          printf '⚠️ *Imaging Intelligence Daily Briefing failed* — 점검: %s/%s/actions/runs/%s' \
+            "${GITHUB_SERVER_URL}" "${GITHUB_REPOSITORY}" "${GITHUB_RUN_ID}" > "${PENDING_FILE}"
+          git add "${PENDING_FILE}"
+          git commit -m "Stage failure alert for next Slack window" || true
+          git pull --rebase origin main || true
+          git push origin HEAD:main || true
 
       - name: Upload run artifacts
         if: ${{ always() }}
@@ -242,3 +219,70 @@ jobs:
             out/*.txt
             out/*.md
           if-no-files-found: ignore
+
+  # ───────────────────────── Morning: deliver Slack ─────────────────────────
+  notify:
+    name: Deliver Slack for latest report (morning)
+    if: ${{ github.event.schedule == '0 1 * * *' || (github.event_name == 'workflow_dispatch' && github.event.inputs.job == 'notify') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Deliver pending Slack message (bot)
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${SEND_SLACK}" != "true" ]]; then
+            echo "Slack delivery disabled by workflow input."
+            exit 0
+          fi
+          if [[ -z "${SLACK_BOT_TOKEN}" ]]; then
+            echo "SLACK_BOT_TOKEN is not configured; skipping Slack delivery."
+            exit 0
+          fi
+          if [[ ! -s "${PENDING_FILE}" ]]; then
+            echo "No pending report (intentional no-op / weekend); staying silent."
+            exit 0
+          fi
+          TARGET="${SLACK_CHANNEL_ID:-$SLACK_CHANNEL}"
+          if [[ -z "${TARGET}" ]]; then
+            echo "::error::No Slack channel set (SLACK_CHANNEL_ID preferred, or SLACK_CHANNEL)."
+            exit 1
+          fi
+          export MESSAGE="$(cat "${PENDING_FILE}")" TARGET
+
+          python - <<'PY'
+          import json, os
+          payload = {
+              "channel": os.environ["TARGET"],
+              "text": os.environ.get("MESSAGE", ""),
+              "mrkdwn": True,
+              "unfurl_links": False,
+          }
+          with open('out_slack_payload.json', 'w', encoding='utf-8') as f:
+              json.dump(payload, f, ensure_ascii=False)
+          PY
+
+          curl -sS -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer ${SLACK_BOT_TOKEN}" \
+            -H 'Content-type: application/json; charset=utf-8' \
+            --data @out_slack_payload.json > out_slack_resp.json
+          echo "Slack API response: $(cat out_slack_resp.json)"
+
+          # Slack returns HTTP 200 with {"ok":false,"error":...} on failure — check the body.
+          if python3 -c "import json,sys; sys.exit(0 if json.load(open('out_slack_resp.json')).get('ok') else 1)"; then
+            echo "Delivered. Clearing the pending message."
+            git config user.name "arxiv-daily-bot"
+            git config user.email "actions@github.com"
+            git rm -q "${PENDING_FILE}"
+            git commit -m "Clear delivered Slack message"
+            git pull --rebase origin main || true
+            git push origin HEAD:main
+          else
+            ERR="$(python3 -c "import json; print(json.load(open('out_slack_resp.json')).get('error','unknown'))")"
+            echo "::warning::Slack chat.postMessage failed: ${ERR}; leaving pending for the next window."
+          fi
