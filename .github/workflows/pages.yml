@@ -3,6 +3,12 @@ name: Deploy static Pages
 on:
   push:
     branches: [main]
+  # The daily workflow pushes content with GITHUB_TOKEN, which does NOT trigger the
+  # push event above (GitHub blocks token pushes from triggering workflows). Run after
+  # the daily workflow completes so newly committed content actually deploys.
+  workflow_run:
+    workflows: ["arXiv Daily Summary"]
+    types: [completed]
   workflow_dispatch: {}
 
 permissions:
@@ -16,6 +22,8 @@ concurrency:
 
 jobs:
   deploy:
+    # On workflow_run, only deploy if the daily run succeeded; push/manual always deploy.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
