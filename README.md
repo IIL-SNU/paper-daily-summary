@@ -224,7 +224,7 @@ Crossref(저널)는 위에 더해 `source:"crossref"`, `doi`, `journal`, `url`, 
 
 기본 스케줄은 매일 `01:00 UTC`(= `10:00 KST`, 아침 10시)이며 `arxiv-daily-summary.yml`의 `cron` 으로 조정합니다.
 **weekly 회고는 매주 월요일** daily와 함께 발행됩니다(지난주 회고). 토·일은 arXiv 미발행이라 skip.
-Slack 알림은 **daily report가 발행될 때마다**(평일 아침 10시경, 발행 성공 시) **Slack 봇(`chat.postMessage`)**으로 `SLACK_CHANNEL_ID` 채널에 보냅니다. 발행이 없는 **주말·no-op·실패 시엔 보내지 않습니다**(`out/release_ok.txt` 기준).
+Slack 알림은 **daily report 발행 시 요약**을, **실행 실패 시 실패 알림**을 **Slack 봇(`chat.postMessage`)**으로 `SLACK_CHANNEL_ID` 채널에 보냅니다(평일 아침 10시경). 발행도 실패도 아닌 **주말·no-op은 미발송**(`out/release_ok.txt` 기준).
 워크플로우는 `mode`(auto/daily/backfill/weekly/sunday)·`target_date`·`send_slack`을 수동 실행 입력으로 받습니다.
 
 > ⚠️ **첫 실행은 `auto` 모드를 피하세요.** `auto`는 빠진 평일을 과거로 거슬러 채우는 Calendar Audit을 수행합니다.

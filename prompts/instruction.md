@@ -940,7 +940,7 @@ push 실패 시 Slack 발송도 스킵한다.
 
 ## [17. Slack 발송]
 
-push 성공 직후, **daily report가 실제로 발행된 경우(`out/release_ok.txt` 존재)에만** 발송한다. 실제 발송은 워크플로우가 **Slack 봇(`chat.postMessage`)**으로 `SLACK_CHANNEL_ID` 채널에 수행하며(주말·no-op·실패 시 미발송), 에이전트는 메시지 본문(mrkdwn)을 `out/slack_message.txt`로 작성한다.
+push 성공 직후 발송한다. **daily report 발행 시(`out/release_ok.txt` 존재)** 요약을, **실행 실패 시** 실패 알림을 워크플로우가 **Slack 봇(`chat.postMessage`)**으로 `SLACK_CHANNEL_ID` 채널에 보낸다(주말·no-op은 미발송). 에이전트는 메시지 본문(mrkdwn)을 `out/slack_message.txt`로 작성한다.
 
 ```text
 channel: {SLACK_CHANNEL}

@@ -186,22 +186,25 @@ jobs:
             echo "SLACK_BOT_TOKEN is not configured; skipping Slack delivery."
             exit 0
           fi
-          # Notify only when a daily report was actually published this run.
-          # No report on weekends / no-op / failure -> out/release_ok.txt absent -> no Slack.
-          if [[ ! -f out/release_ok.txt ]]; then
-            echo "No daily report published this run (out/release_ok.txt absent); skipping Slack."
-            exit 0
-          fi
           TARGET="${SLACK_CHANNEL_ID:-$SLACK_CHANNEL}"
           if [[ -z "${TARGET}" ]]; then
             echo "::error::No Slack channel set (SLACK_CHANNEL_ID preferred, or SLACK_CHANNEL)."
             exit 1
           fi
 
-          if [[ -f out/slack_message.txt ]]; then
-            MESSAGE="$(cat out/slack_message.txt)"
+          # Report published -> summary; run failed -> failure alert;
+          # intentional no-op (weekend / no_release) -> stay silent.
+          if [[ -f out/release_ok.txt ]]; then
+            if [[ -f out/slack_message.txt ]]; then
+              MESSAGE="$(cat out/slack_message.txt)"
+            else
+              MESSAGE="Imaging Intelligence Daily Briefing published. Site: ${SITE_URL}"
+            fi
+          elif [[ "${{ job.status }}" == "failure" ]]; then
+            MESSAGE="⚠️ *Imaging Intelligence Daily Briefing failed* — 점검: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
           else
-            MESSAGE="Imaging Intelligence Daily Briefing published. Site: ${SITE_URL}"
+            echo "No report published and run did not fail (intentional no-op); skipping Slack."
+            exit 0
           fi
           export MESSAGE TARGET
 
