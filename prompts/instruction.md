@@ -923,6 +923,8 @@ git push origin main
 
 > 다크 모드: 모든 페이지는 우상단 🌙/☀️ 토글(OS 설정 기본값 + localStorage 기억)을 가진다. 각 페이지에 직접 CSS를 쓰지 말고, 위 `scripts/inject_dark.py`가 `html[data-theme=dark]` 오버라이드 + 버튼 + 초기화 스크립트를 자동 주입한다(자기완결형·idempotent). weekly·backfill 등 다른 모드의 산출물도 동일하게 이 단계를 거친다.
 
+> 푸터: 이 사이트는 라이브 발행본이다. `index.html`에 "미리보기/발행 전/preview" 같은 비공개 프레이밍 푸터를 넣지 않는다(과거 footer 문구 재생성 금지). 푸터가 필요하면 RSS 링크 정도만 둔다.
+
 Weekly:
 
 ```bash
