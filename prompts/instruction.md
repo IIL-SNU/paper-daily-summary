@@ -591,7 +591,7 @@ TriRelVLA: Triadic Relational Structure for Generalizable Embodied Manipulation 
 9. 💡 오늘의 인사이트 — 각 항목에 Confidence 포함
 10. 🔬 추천 연구주제 — 각 항목에 1주 실행 protocol 포함
 11. 🧭 예측 회고 루프 — 월요일만
-12. 📊 오늘의 버킷 현황
+12. 📊 오늘의 버킷 현황 — 버킷별 막대 그래프. **막대 너비는 catch-all `Deep Learning Methods`를 제외한 버킷의 최댓값을 100%로 정규화**한다(cs.LG/cs.AI 일반 ML이 항상 커서 전체 최댓값으로 잡으면 광학 버킷이 안 보임). catch-all 막대는 100%로 고정하고 라벨엔 실제 편수를 적는다. 0편 버킷도 0% 막대로 표시한다.
 13. 📈 벤치마크 SOTA 추이 — 있으면
 14. 🔀 크로스오버 페어 — 있으면
 15. 🌟 오늘의 must-read — Tier A 3~5편 중 1~2편 deep dive
