@@ -7,3 +7,6 @@ __pycache__/
 
 # Lab-internal reference data (keep local, do not publish to GitHub Pages)
 *.xlsx
+
+# Local preview tooling (dev server config for Claude Code preview)
+.claude/
