@@ -1,0 +1,240 @@
+name: arXiv Daily Summary
+
+on:
+  schedule:
+    # 10:00 KST every day (01:00 UTC)
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "auto, daily, backfill, weekly, or sunday"
+        required: false
+        default: "auto"
+        type: choice
+        options:
+          - auto
+          - daily
+          - backfill
+          - weekly
+          - sunday
+      target_date:
+        description: "Optional target date for backfill/daily, in YYYY-MM-DD"
+        required: false
+        type: string
+      send_slack:
+        description: "Send Slack notification via Slack bot (SLACK_BOT_TOKEN) if configured"
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: paper-daily-summary-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  run:
+    name: Run arXiv Daily Briefing
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      WORKDIR: ${{ github.workspace }}
+      GITHUB_REPO: IIL-SNU/paper-daily-summary
+      SITE_URL: https://iilab.io/paper-daily-summary
+      SLACK_CHANNEL: "#paper-daily-summary"
+      SLACK_CHANNEL_ID: ""   # 봇이 게시할 채널 ID (예: C0XXXXXXX). 비우면 SLACK_CHANNEL 이름 사용
+      MODE: ${{ github.event.inputs.mode || 'auto' }}
+      TARGET_DATE: ${{ github.event.inputs.target_date || '' }}
+      SEND_SLACK: ${{ github.event.inputs.send_slack || 'true' }}
+      # Option 1: authenticate Claude Code with a subscription OAuth token
+      # (generated locally via `claude setup-token`) instead of a metered API key.
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      # Slack bot token (xoxb-...) with chat:postMessage scope; bot must be invited to the channel.
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Verify required secrets
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -z "${CLAUDE_CODE_OAUTH_TOKEN}" ]]; then
+            echo "::error::Missing required repository secret CLAUDE_CODE_OAUTH_TOKEN."
+            echo "::error::Generate it locally with 'claude setup-token' (needs a Claude Pro/Max subscription) and add it under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          if [[ -z "${SLACK_BOT_TOKEN}" ]]; then
+            echo "::warning::SLACK_BOT_TOKEN is not configured. Slack delivery will be skipped."
+          fi
+
+      - name: Install Claude Code CLI
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install -g @anthropic-ai/claude-code
+          claude --version
+
+      - name: Prepare run prompt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          cat > out/ci_prompt.md <<'EOF'
+          Run the arXiv Daily Briefing release workflow inside GitHub Actions.
+
+          Repository: IIL-SNU/paper-daily-summary
+          Workdir: ${WORKDIR}
+          Site URL: ${SITE_URL}
+          Slack channel: ${SLACK_CHANNEL}
+          Slack channel ID: ${SLACK_CHANNEL_ID}
+          Requested mode: ${MODE}
+          Requested target date: ${TARGET_DATE}
+
+          Follow prompts/instruction.md as the authoritative runbook.
+
+          Required behavior:
+          1. Use repository parser scripts for arXiv /new and /pastweek data.
+          2. Do not summarize arXiv list pages manually.
+          3. In auto mode, run Calendar Audit first and fill missing weekdays in chronological order.
+          4. If target_date is older than the current /new listing date, use Backfill mode and scripts/fetch_arxiv_pastweek_date.py.
+          5. Generate or update required artifacts: posts, trends, benchmarks, insights, weekly when applicable, feed.xml, index.html, and stats if present.
+          6. Run the validation/release gates described in the instruction file.
+          7. Commit and push only if all release gates pass.
+          8. Write the Slack message body to out/slack_message.txt after success or intentional no-op.
+          9. Write out/release_ok.txt after a successful release, or out/no_release.txt after an intentional no-op.
+          10. If a required gate fails, exit non-zero and do not claim success.
+
+          Git identity if a commit is needed:
+          - user.name: arxiv-daily-bot
+          - user.email: actions@github.com
+          EOF
+          python - <<'PY'
+          from pathlib import Path
+          import os
+          p = Path('out/ci_prompt.md')
+          text = p.read_text(encoding='utf-8')
+          for key in ['WORKDIR', 'SITE_URL', 'SLACK_CHANNEL', 'SLACK_CHANNEL_ID', 'MODE', 'TARGET_DATE']:
+              text = text.replace('${' + key + '}', os.environ.get(key, ''))
+          p.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Run Claude Code release agent
+        shell: bash
+        run: |
+          set -euo pipefail
+          claude -p "$(cat out/ci_prompt.md)"
+
+      - name: Finalize commit and push if Claude left validated changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "arxiv-daily-bot"
+          git config user.email "actions@github.com"
+
+          if [[ -f out/release_ok.txt ]]; then
+            echo "Release marker found. Ensuring validated changes are pushed."
+            for path in posts trends benchmarks insights weekly feed.xml index.html stats; do
+              if [[ -e "$path" ]]; then
+                git add "$path"
+              fi
+            done
+            if git diff --cached --quiet; then
+              echo "No staged changes remain."
+            else
+              DATE_TAG="${TARGET_DATE:-$(date +%F)}"
+              git commit -m "Update arXiv daily summary (${DATE_TAG})"
+              git push origin HEAD:main
+            fi
+          elif [[ -f out/no_release.txt ]]; then
+            echo "No-release marker found."
+            cat out/no_release.txt
+          else
+            echo "::error::Neither out/release_ok.txt nor out/no_release.txt exists."
+            exit 1
+          fi
+
+      - name: Send Slack notification (bot)
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${SEND_SLACK}" != "true" ]]; then
+            echo "Slack delivery disabled by workflow input."
+            exit 0
+          fi
+          # No Slack on weekends (KST): 6=Sat, 7=Sun.
+          if [[ "$(TZ=Asia/Seoul date +%u)" -ge 6 ]]; then
+            echo "Weekend (KST Sat/Sun) — skipping Slack notification."
+            exit 0
+          fi
+          if [[ -z "${SLACK_BOT_TOKEN}" ]]; then
+            echo "SLACK_BOT_TOKEN is not configured; skipping Slack delivery."
+            exit 0
+          fi
+          TARGET="${SLACK_CHANNEL_ID:-$SLACK_CHANNEL}"
+          if [[ -z "${TARGET}" ]]; then
+            echo "::error::No Slack channel set (SLACK_CHANNEL_ID preferred, or SLACK_CHANNEL)."
+            exit 1
+          fi
+
+          if [[ -f out/slack_message.txt ]]; then
+            MESSAGE="$(cat out/slack_message.txt)"
+          elif [[ "${{ job.status }}" == "success" ]]; then
+            MESSAGE="Imaging Intelligence Daily Briefing finished. Site: ${SITE_URL}"
+          else
+            MESSAGE="Imaging Intelligence Daily Briefing failed. Check GitHub Actions run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          fi
+          export MESSAGE TARGET
+
+          # Build chat.postMessage payload (mrkdwn text; the agent writes out/slack_message.txt).
+          python - <<'PY'
+          import json, os
+          payload = {
+              "channel": os.environ["TARGET"],
+              "text": os.environ.get("MESSAGE", ""),
+              "mrkdwn": True,
+              "unfurl_links": False,
+          }
+          with open('out/slack_payload.json', 'w', encoding='utf-8') as f:
+              json.dump(payload, f, ensure_ascii=False)
+          PY
+
+          curl -sS -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer ${SLACK_BOT_TOKEN}" \
+            -H 'Content-type: application/json; charset=utf-8' \
+            --data @out/slack_payload.json > out/slack_resp.json
+          echo "Slack API response: $(cat out/slack_resp.json)"
+          # Slack returns HTTP 200 with {"ok":false,"error":...} on failure — check the body.
+          if ! python3 -c "import json,sys; sys.exit(0 if json.load(open('out/slack_resp.json')).get('ok') else 1)"; then
+            ERR="$(python3 -c "import json; print(json.load(open('out/slack_resp.json')).get('error','unknown'))")"
+            echo "::warning::Slack chat.postMessage failed: ${ERR} (run already published; not failing the job)."
+          fi
+
+      - name: Upload run artifacts
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: paper-daily-summary-run-${{ github.run_id }}
+          path: |
+            out/*.json
+            out/*.txt
+            out/*.md
+          if-no-files-found: ignore
