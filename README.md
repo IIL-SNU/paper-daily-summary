@@ -7,7 +7,7 @@ GitHub Actions가 정해진 시간에 스스로 실행하므로 **상시 켜둘 
 > 이 프로젝트는 [gisbi-kim/arxiv-daily-summary](https://github.com/gisbi-kim/arxiv-daily-summary)를 기반으로
 > IIL-SNU 환경에 맞게 정리·재구성한 버전입니다.
 
-배포 사이트: `https://iil-snu.github.io/paper-daily-summary`
+배포 사이트: `https://iilab.io/paper-daily-summary`
 
 ---
 
@@ -53,7 +53,7 @@ GitHub Actions가 정해진 시간에 스스로 실행하므로 **상시 켜둘 
       ├─ [분류] classify.py                         ─→ out/classified.json (버킷별 그룹)
       │
       ├─ [요약] Claude Code 에이전트
-      │         (prompts/instruction_v*.md 런북 기반)
+      │         (prompts/instruction.md 런북 기반)
       │         ─→ posts/YYYY-MM-DD.html
       │            trends/ benchmarks/ insights/ weekly/ *.json
       │            index.html
@@ -76,7 +76,7 @@ GitHub Actions가 정해진 시간에 스스로 실행하므로 **상시 켜둘 
 |------|------|
 | `.github/workflows/arxiv-daily-summary.yml` | 매일 실행되는 메인 자동화 워크플로우(cron + 수동 실행) |
 | `.github/workflows/pages.yml` | `main` push 시 GitHub Pages 배포 |
-| `prompts/instruction_v*.md` | Claude Code 에이전트용 instruction 런북. 최신본(`v20260516`)이 권위 문서 |
+| `prompts/instruction.md` | Claude Code 에이전트용 instruction 런북(권위 실행 문서) |
 | `scripts/` | 수집·분류·빌드·검증 스크립트 (아래 표 참고) |
 | `posts/` `trends/` `benchmarks/` `insights/` `weekly/` | 일별 산출물(초기엔 비어 있고 `.gitkeep`만 존재) |
 | `feed.xml` `index.html` | 발행 결과물(파이프라인이 생성) |
@@ -102,7 +102,7 @@ GitHub Actions가 정해진 시간에 스스로 실행하므로 **상시 켜둘 
 | 스크립트 | 역할 |
 |----------|------|
 | `build_feed.py` | `posts/*.html`에서 제목·요약을 추출해 RSS 2.0 `feed.xml` 생성. `SITE_URL`은 환경변수 우선 |
-| `build_weekly.py` | 주간(weekly) pastweek 집계 → `weekly_full.json`·`trends/` (HTML은 에이전트가 런북대로 생성) |
+| `build_preview.py` | `classified.json`을 정적 HTML(`out/preview.html`)로 렌더링하는 결정론적 미리보기(LLM 미사용) |
 | `build_weekday_counts.py` | 요일별 통계(`stats/`) 산출 |
 
 **검증/유틸**
@@ -110,7 +110,6 @@ GitHub Actions가 정해진 시간에 스스로 실행하므로 **상시 켜둘 
 | 스크립트 | 역할 |
 |----------|------|
 | `validate_daily_release.py` | Release Gate 검증(`--date YYYY-MM-DD`). 통과해야 발행 |
-| `fill_archive_insights.py` | 아카이브 insights 보강 유틸 |
 
 ---
 
@@ -181,7 +180,7 @@ Crossref(저널)는 위에 더해 `source:"crossref"`, `doi`, `journal`, `url`, 
 
 ## Instruction(런북) 상세
 
-`prompts/instruction_v20260516.md`는 Claude Code 에이전트가 따르는 **권위 실행 문서**입니다.
+`prompts/instruction.md`는 Claude Code 에이전트가 따르는 **권위 실행 문서**입니다.
 워크플로우는 `out/ci_prompt.md`로 이 파일을 런북으로 지정합니다. 주요 섹션:
 
 | 섹션 | 내용 |
@@ -193,7 +192,7 @@ Crossref(저널)는 위에 더해 `source:"crossref"`, `doi`, `journal`, `url`, 
 | `[4] Mode Resolver` | `Backfill` / `Daily` / `Weekly` / `Sunday` 모드를 명시적으로 결정 |
 | `[5~6] Parser 실행·검증` | 카테고리별 fetch 명령, Windows UTF-8 주의, 파싱 검증 체크리스트 |
 | `[7] 랩 ROI 버킷` | 관심 버킷 정의(분류 기준) |
-| `[8] 톤·문체 / [8.5] 품질 위계` | 오늘의 thesis → 클러스터 우선 → 대표 클러스터 표 → Watch Lens → 중요도/계통도 태그 → confidence |
+| `[8] 톤·문체 / [8.5] 품질 위계` | 오늘의 thesis → 클러스터 우선 → 대표 클러스터 표 → Watch Lens → 중요도 태그 → confidence |
 | `[9] 요약 품질 계층` | Tier A(판 바꾸는 3~5편) / Tier B(대표 8~12편) / Tier C(나머지) |
 | `[10~11] Daily/Weekly 산출물` | 일간·주간 HTML 구성 규칙 |
 | `[12] 벤치마크·인사이트 JSON` | `benchmarks/`·`insights/` 구조화 데이터 규격 |
@@ -204,7 +203,7 @@ Crossref(저널)는 위에 더해 `source:"crossref"`, `doi`, `journal`, `url`, 
 | `[17] Slack 발송` | Daily/Weekly/Catch-up 알림 템플릿 |
 | `[18] 프롬프트 백업 / [19] 국문 자연성 게이트` | 프롬프트 버전 관리, 한국어 표현 품질 검사 |
 
-> 구버전(`v20260423~512`)은 참고용 이력이며, 워크플로우가 참조하는 것은 **`v20260516` 한 개**입니다.
+> 런북은 `prompts/instruction.md` 하나이며, 워크플로우의 ci_prompt가 이를 권위 문서로 지정합니다.
 
 ---
 
@@ -218,11 +217,14 @@ Crossref(저널)는 위에 더해 `source:"crossref"`, `doi`, `journal`, `url`, 
    ```
 2. GitHub repo → **Settings → Secrets and variables → Actions** 에 시크릿 등록:
    - `CLAUDE_CODE_OAUTH_TOKEN` (필수)
-   - `SLACK_WEBHOOK_URL` (선택 — Slack 알림 사용 시)
+   - `SLACK_BOT_TOKEN` (선택 — Slack 알림 사용 시. Slack 앱의 *Bot User OAuth Token* `xoxb-…`, `chat:postMessage` 스코프 필요)
+   - 워크플로우 env의 `SLACK_CHANNEL_ID`에 게시할 채널 ID(예: `C0XXXXXXX`)를 넣고 **봇을 해당 채널에 초대**해야 합니다(`/invite @봇이름`).
 3. **Settings → Actions → General → Workflow permissions** 를 *Read and write* 로 설정
 4. **Settings → Pages → Source** 를 *GitHub Actions* 로 설정
 
-기본 스케줄은 매일 `06:00 UTC`(= `15:00 KST`)이며 `arxiv-daily-summary.yml`의 `cron` 으로 조정합니다.
+기본 스케줄은 매일 `01:00 UTC`(= `10:00 KST`, 아침 10시)이며 `arxiv-daily-summary.yml`의 `cron` 으로 조정합니다.
+**weekly 회고는 매주 월요일** daily와 함께 발행됩니다(지난주 회고). 토·일은 arXiv 미발행이라 skip.
+Slack 알림은 **평일 매 실행(아침 10시)** 마다 **Slack 봇(`chat.postMessage`)**으로 `SLACK_CHANNEL_ID` 채널에 보냅니다. **토·일(KST)은 발송하지 않습니다.**
 워크플로우는 `mode`(auto/daily/backfill/weekly/sunday)·`target_date`·`send_slack`을 수동 실행 입력으로 받습니다.
 
 > ⚠️ **첫 실행은 `auto` 모드를 피하세요.** `auto`는 빠진 평일을 과거로 거슬러 채우는 Calendar Audit을 수행합니다.
@@ -262,7 +264,8 @@ python scripts/fetch_crossref.py \
   --query "light field microscopy" \
   --query "optical diffraction tomography" \
   --query "virtual staining" \
-  --days 30 > out/journal_new.json
+  --days 1 > out/journal_new.json
+# 기준: Crossref 등록일(created-date) · daily는 1일(전날 등록분), 주간/backfill은 더 넓게 · 키워드 관련도순
 
 # 2) 분류
 python scripts/classify.py > out/classified.json
@@ -271,7 +274,7 @@ python scripts/classify.py > out/classified.json
 python scripts/build_feed.py
 ```
 
-요약(HTML) 단계는 `prompts/instruction_v*.md` 런북을 Claude Code에 전달해 수행합니다.
+요약(HTML) 단계는 `prompts/instruction.md` 런북을 Claude Code에 전달해 수행합니다.
 
 ---
 
@@ -282,7 +285,7 @@ python scripts/build_feed.py
 1. **추적 카테고리** — `scripts/classify.py` 상단 `CATEGORIES` 리스트 교체
    (그리고 런북 `[5]`의 fetch 명령 카테고리도 함께. [arXiv category taxonomy](https://arxiv.org/category_taxonomy) 참고)
 2. **관심 버킷/키워드** — `scripts/classify.py`의 `BUCKETS` 딕셔너리 교체. badge가 필요하면 `CAT_BADGE`도 갱신
-3. **런북** — `prompts/instruction_v20260516.md`의 카테고리·버킷·분석 렌즈를 본인 주제에 맞게 조정
+3. **런북** — `prompts/instruction.md`의 카테고리·버킷·분석 렌즈를 본인 주제에 맞게 조정
 4. **저널 쿼리** — `fetch_crossref.py`의 `--query`/`--issn` 값(런북 `[5]`의 호출 포함)을 본인 분야로
 5. **RSS 메타** — `build_feed.py`의 `FEED_TITLE`/`FEED_DESC`
 
