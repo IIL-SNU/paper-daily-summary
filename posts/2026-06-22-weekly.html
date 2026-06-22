@@ -45,43 +45,43 @@ ul.plain li{margin:.3rem 0;font-size:.9rem}
 <h1>Imaging Intelligence Weekly Retrospective — 2026-06-22 (Week 25)</h1>
 <div class=meta>
   <div>발행: 2026-06-22 (월) &nbsp;|&nbsp; 검토 기간: 2026-06-15 ~ 06-19 (Mon–Fri)</div>
-  <div>주간 누적 스캔 약 2,165편 &nbsp;|&nbsp; 5개 daily briefing 클러스터 요약</div>
+  <div>지난주 누적 스캔 약 2,165편 &nbsp;|&nbsp; 5개 daily briefing 클러스터 요약</div>
 </div>
 
 <h2>🗓 Executive Summary</h2>
 <ul class=plain>
-  <li>이번 주(W25)는 <strong>3D Gaussian Splatting이 나흘 연속 다른 응용 방향으로 분화된 주</strong>로 기억하면 됩니다 — 가속에서 편집, 대규모 분산 학습, 코딩 조리개 연동, 희소 뷰 기하 제약까지 매일 바뀌었습니다.</li>
+  <li>지난주(W25)는 <strong>3D Gaussian Splatting이 나흘 연속 다른 응용 방향으로 분화된 주</strong>로 기억하면 됩니다 — 가속에서 편집, 대규모 분산 학습, 코딩 조리개 연동, 희소 뷰 기하 제약까지 매일 바뀌었습니다.</li>
   <li>역문제 풀기가 플러그앤플레이→Bayesian→광학 하드웨어 공동 설계→inference-time 왜곡-지각 제어로 <strong>매일 다른 계층에서 구체화</strong>됐고, 그 정점이 금요일 Flow Map Denoisers(2606.19802)였습니다.</li>
-  <li>반면 랩 핵심 주제인 <strong>Fourier ptychography, 렌즈리스, 메타-옵틱스는 arXiv cs.*에서 이번 주 완전히 부재</strong>해, W24 저널 tracking의 중요성을 다시 확인해줬습니다.</li>
+  <li>반면 랩 핵심 주제인 <strong>Fourier ptychography, 렌즈리스, 메타-옵틱스는 arXiv cs.*에서 지난주 완전히 부재</strong>해, W24 저널 tracking의 중요성을 다시 확인해줬습니다.</li>
 </ul>
 
 <blockquote>
-<strong>Weekly Thesis.</strong> W24가 Optics/Photonics 저널 기반 메타표면(28편)·홀로그래피(22편) 중심이었다면, W25는 cs.* arXiv 기반 3D Gaussian Splatting과 역문제 풀기가 무게 중심이었습니다. 3DGS는 단일 재구성 방법에서 가속→편집·4D→대규모 분산 학습→코딩 조리개 연동→희소 뷰 기하 제약으로 나흘 연속 다른 방향으로 빠르게 분화됐고, 역문제는 확률론적 추정→Bayesian/PINN→광학 하드웨어 공동 설계→inference-time 왜곡-지각 제어로 매일 다른 계층에서 구체화됐습니다. 반면 랩 핵심 주제인 Fourier ptychography, 렌즈리스, 메타-옵틱스는 arXiv cs.*에서 이번 주 완전히 빠져, 저널 tracking과 arXiv tracking을 병행하는 전략이 얼마나 중요한지 다시 확인해줬습니다.
+<strong>Weekly Thesis.</strong> W24가 Optics/Photonics 저널 기반 메타표면(28편)·홀로그래피(22편) 중심이었다면, W25는 cs.* arXiv 기반 3D Gaussian Splatting과 역문제 풀기가 무게 중심이었습니다. 3DGS는 단일 재구성 방법에서 가속→편집·4D→대규모 분산 학습→코딩 조리개 연동→희소 뷰 기하 제약으로 나흘 연속 다른 방향으로 빠르게 분화됐고, 역문제는 확률론적 추정→Bayesian/PINN→광학 하드웨어 공동 설계→inference-time 왜곡-지각 제어로 매일 다른 계층에서 구체화됐습니다. 반면 랩 핵심 주제인 Fourier ptychography, 렌즈리스, 메타-옵틱스는 arXiv cs.*에서 지난주 완전히 빠져, 저널 tracking과 arXiv tracking을 병행하는 전략이 얼마나 중요한지 다시 확인해줬습니다.
 </blockquote>
 
 <h2>🔭 주간 동향</h2>
-<p>이번 주 가장 뜨거운 흐름은 <strong>3D Gaussian Splatting의 기능 분화</strong>입니다. 화요일 가속(Local-GS, TurboGS, Fi-Gaussian)에서 출발해, 수요일 4D 장면 편집(Edit3DGS, Future Dynamic 3D, MoonSplat)으로 전환됐고, 목요일 대규모 분산 학습(Splaxel)과 코딩 조리개 연동(EDoF-NeRF)이 따라붙었으며, 금요일 희소 뷰 기하 제약(VisDom, PSCT-Net, Geometry-Preserving 3DGS)으로 마무리됐습니다. 4일 연속 High confidence 클러스터가 이어진 건 3DGS가 기본 품질 경쟁 단계를 지나 '어떤 응용에'를 묻는 성숙 단계에 들어섰다는 신호입니다. 두 번째 강한 축은 <strong>역문제 방법론의 층위별 구체화</strong>입니다. 화요일 SP3 Plug-and-Play와 Exact Posterior Score Estimation(확률론적 추정)으로 시작해, 수요일 Bayesian MRI·INI-VPINN(물리 제약), 목요일 Trainable Photonic Measurement(광학 하드웨어 공동 설계), 금요일 Flow Map Denoisers(inference-time 왜곡-지각 제어)로 매일 다른 층위에서 나타났습니다.</p>
+<p>지난주 가장 뜨거운 흐름은 <strong>3D Gaussian Splatting의 기능 분화</strong>입니다. 화요일 가속(Local-GS, TurboGS, Fi-Gaussian)에서 출발해, 수요일 4D 장면 편집(Edit3DGS, Future Dynamic 3D, MoonSplat)으로 전환됐고, 목요일 대규모 분산 학습(Splaxel)과 코딩 조리개 연동(EDoF-NeRF)이 따라붙었으며, 금요일 희소 뷰 기하 제약(VisDom, PSCT-Net, Geometry-Preserving 3DGS)으로 마무리됐습니다. 4일 연속 High confidence 클러스터가 이어진 건 3DGS가 기본 품질 경쟁 단계를 지나 '어떤 응용에'를 묻는 성숙 단계에 들어섰다는 신호입니다. 두 번째 강한 축은 <strong>역문제 방법론의 층위별 구체화</strong>입니다. 화요일 SP3 Plug-and-Play와 Exact Posterior Score Estimation(확률론적 추정)으로 시작해, 수요일 Bayesian MRI·INI-VPINN(물리 제약), 목요일 Trainable Photonic Measurement(광학 하드웨어 공동 설계), 금요일 Flow Map Denoisers(inference-time 왜곡-지각 제어)로 매일 다른 층위에서 나타났습니다.</p>
 
 <p>사건 카메라·광 필드 클러스터도 주 내내 존재감을 키웠습니다. 월요일 경량 이벤트 카메라(SED, FEMOT)에서 출발해, 수요일 VLM·탐지·오디오로 응용이 확산됐고, 금요일에는 Neural Events(이산 비동기 오토인코더)와 Vision-Reasoning Occlusion Removal(광 필드+VLM 통합)이라는 표현 학습 단계로 도약했습니다. 이벤트 스트림을 의미 있는 토큰으로 만들고 다른 모달리티와 결합하는 방향이 뚜렷합니다. 병리·외과 VLM은 화요일 VLM Zero-Annotation Oracle 이후 금요일 SurgVista(외과 세계 모델)와 Single-Stage WSSS(약지도 조직 분할)까지, '비싼 어노테이션 없이'라는 공통 코드로 묶입니다.</p>
 
-<p>다음 주 전망: 이번 주 EDoF-NeRF 1편이 코딩 조리개를 다뤘고, PSCT-Net이 희소 X선 CT를 3DGS 방식으로 접근했습니다. 이 두 흐름이 합쳐져 <strong>3DGS + 의료 CT/MRI 재구성</strong> 논문이 나올 가능성이 높습니다. 또한 Flow Map Denoisers가 강한 이론 기여를 남겼으므로, flow matching 기반 역문제 풀기 follow-up이 더 등장할 것으로 봅니다. W24에 거의 없었던 렌즈리스·코딩 조리개 논문도 다음 주 arXiv에서 회복될 수 있습니다.</p>
+<p>다음 주 전망: 지난주 EDoF-NeRF 1편이 코딩 조리개를 다뤘고, PSCT-Net이 희소 X선 CT를 3DGS 방식으로 접근했습니다. 이 두 흐름이 합쳐져 <strong>3DGS + 의료 CT/MRI 재구성</strong> 논문이 나올 가능성이 높습니다. 또한 Flow Map Denoisers가 강한 이론 기여를 남겼으므로, flow matching 기반 역문제 풀기 follow-up이 더 등장할 것으로 봅니다. W24에 거의 없었던 렌즈리스·코딩 조리개 논문도 다음 주 arXiv에서 회복될 수 있습니다.</p>
 
 <h2>⚖️ Hot vs Cold</h2>
 <div class=hot-cold>
   <div class=hot-box>
     <h3>뜨거운 클러스터</h3>
     <ul>
-      <li><strong>3DGS/3D 재구성</strong> — 화→수→목→금 4일 연속 High. 가속·편집·분산·희소 뷰로 매일 다른 방향. 기존에는 하나의 '재구성 방법'이었는데, 이번 주는 응용별 엔지니어링 경쟁으로 무게 중심이 이동했습니다.</li>
-      <li><strong>역문제 방법론</strong> — 5일 내내 등장. 기존에는 플러그앤플레이나 unrolled 방식이 지배적이었는데, 이번 주는 하드웨어 공동 설계와 inference-time 제어라는 새 계층이 추가됐습니다.</li>
-      <li><strong>사건 카메라·광 필드</strong> — 경량화에서 출발해 표현 학습으로 도약. 기존에는 빠른 처리가 목표였는데, 이번 주 Neural Events는 이벤트 스트림을 토큰으로 만드는 단계로 넘어갔습니다.</li>
+      <li><strong>3DGS/3D 재구성</strong> — 화→수→목→금 4일 연속 High. 가속·편집·분산·희소 뷰로 매일 다른 방향. 기존에는 하나의 '재구성 방법'이었는데, 지난주는 응용별 엔지니어링 경쟁으로 무게 중심이 이동했습니다.</li>
+      <li><strong>역문제 방법론</strong> — 5일 내내 등장. 기존에는 플러그앤플레이나 unrolled 방식이 지배적이었는데, 지난주는 하드웨어 공동 설계와 inference-time 제어라는 새 계층이 추가됐습니다.</li>
+      <li><strong>사건 카메라·광 필드</strong> — 경량화에서 출발해 표현 학습으로 도약. 기존에는 빠른 처리가 목표였는데, 지난주 Neural Events는 이벤트 스트림을 토큰으로 만드는 단계로 넘어갔습니다.</li>
     </ul>
   </div>
   <div class=cold-box>
     <h3>식은/빈 클러스터</h3>
     <ul>
-      <li><strong>Fourier Ptychography</strong> — 이번 주 arXiv cs.*에서 0건. W24 저널에서 Nature Comm 전자 ptychography가 헤드라인을 장식했던 것과 대조적입니다.</li>
+      <li><strong>Fourier Ptychography</strong> — 지난주 arXiv cs.*에서 0건. W24 저널에서 Nature Comm 전자 ptychography가 헤드라인을 장식했던 것과 대조적입니다.</li>
       <li><strong>Lensless/Coded Imaging</strong> — EDoF-NeRF 1건이 유일. 렌즈리스 이미징 전문 논문은 arXiv에서 완전히 빠졌습니다.</li>
-      <li><strong>Meta-Optics/Diffractive</strong> — W24 저널에서 28편으로 압도적이었지만, 이번 주 arXiv cs.*에서 0건. 광학 저널과 arXiv cs.* 간 주제 분리가 뚜렷하다는 것을 다시 확인했습니다.</li>
+      <li><strong>Meta-Optics/Diffractive</strong> — W24 저널에서 28편으로 압도적이었지만, 지난주 arXiv cs.*에서 0건. 광학 저널과 arXiv cs.* 간 주제 분리가 뚜렷하다는 것을 다시 확인했습니다.</li>
     </ul>
   </div>
 </div>
@@ -100,7 +100,7 @@ ul.plain li{margin:.3rem 0;font-size:.9rem}
     <a href="https://arxiv.org/abs/2606.18588" target=_blank>Splaxel</a>,
     <a href="https://arxiv.org/abs/2606.20531" target=_blank>VisDom</a>
   </td>
-  <td>기존에는 3DGS가 단일 재구성 방법이었는데, 이번 주는 가속·편집·분산 학습·코딩 조리개 연동·희소 뷰 기하 제약으로 매일 다른 방향이 나왔습니다. 3DGS가 기본 품질 경쟁을 마치고 응용별 엔지니어링 단계로 넘어섰다는 신호이며, 계산 광학 관점에서는 EDoF-NeRF처럼 광학 하드웨어와 GS를 결합하는 방향이 특히 직접적으로 관련됩니다.</td>
+  <td>기존에는 3DGS가 단일 재구성 방법이었는데, 지난주는 가속·편집·분산 학습·코딩 조리개 연동·희소 뷰 기하 제약으로 매일 다른 방향이 나왔습니다. 3DGS가 기본 품질 경쟁을 마치고 응용별 엔지니어링 단계로 넘어섰다는 신호이며, 계산 광학 관점에서는 EDoF-NeRF처럼 광학 하드웨어와 GS를 결합하는 방향이 특히 직접적으로 관련됩니다.</td>
   <td>High (4일 연속)</td>
   <td>EDoF-NeRF 코드를 클론해 우리 코딩 조리개 셋업 PSF로 재현, PSCT-Net의 differentiable back-projection을 ODT 회절 방정식에 적용하는 PoC 작성</td>
 </tr>
@@ -111,7 +111,7 @@ ul.plain li{margin:.3rem 0;font-size:.9rem}
     <a href="https://arxiv.org/abs/2606.18713" target=_blank>Trainable Photonic Measurement</a>,
     <a href="https://arxiv.org/abs/2606.19802" target=_blank>Flow Map Denoisers</a>
   </td>
-  <td>기존에는 플러그앤플레이나 unrolled 네트워크가 역문제의 표준 해법이었는데, 이번 주는 확률론적 추정→하드웨어 공동 설계→inference-time 제어라는 새 계층이 하루씩 추가됐습니다. Flow Map Denoisers는 재학습 없이 추론 시 NFE만으로 왜곡-지각 트레이드오프를 조정할 수 있다는 새 평가 기준을 제시했고, 위상 복원·ODT에 즉시 적용 가능합니다.</td>
+  <td>기존에는 플러그앤플레이나 unrolled 네트워크가 역문제의 표준 해법이었는데, 지난주는 확률론적 추정→하드웨어 공동 설계→inference-time 제어라는 새 계층이 하루씩 추가됐습니다. Flow Map Denoisers는 재학습 없이 추론 시 NFE만으로 왜곡-지각 트레이드오프를 조정할 수 있다는 새 평가 기준을 제시했고, 위상 복원·ODT에 즉시 적용 가능합니다.</td>
   <td>High (5일 연속)</td>
   <td>Flow Map Denoisers를 holographic phase retrieval 파이프라인의 denoising step에 교체해 NFE vs PSNR/SSIM/phase error 3축 측정</td>
 </tr>
@@ -122,7 +122,7 @@ ul.plain li{margin:.3rem 0;font-size:.9rem}
     <a href="https://arxiv.org/abs/2606.19835" target=_blank>Neural Events</a>,
     <a href="https://arxiv.org/abs/2606.19985" target=_blank>Vision-Reasoning Occlusion Removal</a>
   </td>
-  <td>기존에는 이벤트 카메라 처리가 빠른 변환(fast conversion)에 머물렀는데, 이번 주 Neural Events는 이벤트 스트림 자체를 이산 토큰으로 만드는 오토인코더를 제안했습니다. Vision-Reasoning Occlusion은 광 필드에 VLM 추론을 붙여 자연 환경 강한 폐색을 제거해, 계산 이미징에서 시맨틱 reasoning이 물리 기반 복원을 보완하는 방향을 처음 보여줬습니다.</td>
+  <td>기존에는 이벤트 카메라 처리가 빠른 변환(fast conversion)에 머물렀는데, 지난주 Neural Events는 이벤트 스트림 자체를 이산 토큰으로 만드는 오토인코더를 제안했습니다. Vision-Reasoning Occlusion은 광 필드에 VLM 추론을 붙여 자연 환경 강한 폐색을 제거해, 계산 이미징에서 시맨틱 reasoning이 물리 기반 복원을 보완하는 방향을 처음 보여줬습니다.</td>
   <td>High (3일, 상승 추세)</td>
   <td>Neural Events 이산 오토인코더를 우리 이벤트 카메라 셋업에서 재현해 토큰 품질 vs latency 측정, VLM 기반 폐색 제거를 식물·해부학 샘플로 테스트</td>
 </tr>
@@ -133,7 +133,7 @@ ul.plain li{margin:.3rem 0;font-size:.9rem}
     <a href="https://arxiv.org/abs/2606.20250" target=_blank>Single-Stage WSSS</a>,
     <a href="https://arxiv.org/abs/2606.19889" target=_blank>SurgVista</a>
   </td>
-  <td>기존에는 조직 분할에 다단계 파이프라인이나 픽셀 단위 어노테이션이 필요했는데, 이번 주는 VLM을 영지식 분류기로 쓰거나 단일 단계로 분할을 끝내는 방식이 등장했습니다. 가상 염색 파이프라인에서 레이블 없는 평가 baseline으로 직접 활용할 수 있습니다.</td>
+  <td>기존에는 조직 분할에 다단계 파이프라인이나 픽셀 단위 어노테이션이 필요했는데, 지난주는 VLM을 영지식 분류기로 쓰거나 단일 단계로 분할을 끝내는 방식이 등장했습니다. 가상 염색 파이프라인에서 레이블 없는 평가 baseline으로 직접 활용할 수 있습니다.</td>
   <td>Medium (3일, 독립적)</td>
   <td>VLM Zero-Annotation 방식을 가상 염색 무라벨 평가 baseline으로 설정, Single-Stage WSSS를 H&amp;E 세그멘테이션에 적용 가능성 검토</td>
 </tr>
@@ -159,9 +159,9 @@ ul.plain li{margin:.3rem 0;font-size:.9rem}
 
 <h2>🌟 Weekly deep-dive</h2>
 <div class=dd>
-<h3><a href="https://arxiv.org/abs/2606.19802" target=_blank>Flow Map Denoisers</a> — 이번 주를 가장 잘 대표하는 1편</h3>
+<h3><a href="https://arxiv.org/abs/2606.19802" target=_blank>Flow Map Denoisers</a> — 지난주를 가장 잘 대표하는 1편</h3>
 
-<p><em>왜 이번 주 대표인가.</em> 이번 주 역문제 클러스터가 5일 연속 등장했는데, 각 날의 기여가 '어느 층위에서 제어할 것인가'라는 공통 질문으로 모였습니다. Flow Map Denoisers는 그 답을 inference-time NFE 제어로 내놓은 논문으로, 이번 주 역문제 흐름의 정점입니다.</p>
+<p><em>왜 지난주 대표인가.</em> 지난주 역문제 클러스터가 5일 연속 등장했는데, 각 날의 기여가 '어느 층위에서 제어할 것인가'라는 공통 질문으로 모였습니다. Flow Map Denoisers는 그 답을 inference-time NFE 제어로 내놓은 논문으로, 지난주 역문제 흐름의 정점입니다.</p>
 
 <p><em>어떤 문제를 푸는가.</em> 기존 역문제(초해상도·노이즈 제거·위상 복원 등)에서 복원 결과의 '왜곡(distortion)'과 '지각 품질(perceptual quality)'은 서로 반비례 관계에 있습니다. PSNR을 최대화하면 흐리게 되고, 지각 품질을 높이면 hallucination이 생깁니다. 기존에는 이 트레이드오프를 모델 아키텍처나 손실 함수를 바꿔 학습 시에 고정해야 했습니다.</p>
 
@@ -174,7 +174,7 @@ ul.plain li{margin:.3rem 0;font-size:.9rem}
 
 <div class="theme-card">
 <h3>3DGS의 기술 성숙과 응용 분화</h3>
-<p>이번 주 GS 관련 클러스터가 4일 연속 High confidence로 나왔고, 방향은 가속→편집→분산 학습→희소 뷰·기하 제약으로 매일 달랐습니다. 3DGS가 기본 품질 경쟁 단계를 지나 '어떤 응용에, 어떤 엔지니어링으로'를 묻는 단계에 들어섰다는 뜻입니다. 다음 주는 의료·광학 도메인 적용이 더 나올지 지켜볼 것이며, EDoF-NeRF처럼 광학 하드웨어와 GS를 묶는 방향이 우리 랩의 다음 실험 대상입니다.</p>
+<p>지난주 GS 관련 클러스터가 4일 연속 High confidence로 나왔고, 방향은 가속→편집→분산 학습→희소 뷰·기하 제약으로 매일 달랐습니다. 3DGS가 기본 품질 경쟁 단계를 지나 '어떤 응용에, 어떤 엔지니어링으로'를 묻는 단계에 들어섰다는 뜻입니다. 다음 주는 의료·광학 도메인 적용이 더 나올지 지켜볼 것이며, EDoF-NeRF처럼 광학 하드웨어와 GS를 묶는 방향이 우리 랩의 다음 실험 대상입니다.</p>
 </div>
 
 <div class="theme-card">
@@ -195,7 +195,7 @@ ul.plain li{margin:.3rem 0;font-size:.9rem}
 <div class=pred-card>
 <h3>1. 렌즈리스·코딩 조리개 논문 등장</h3>
 <p><strong>주장:</strong> 다음 주 arXiv에서 렌즈리스 이미징 또는 코딩 조리개 관련 논문이 2편 이상 나올 것입니다.</p>
-<p><strong>근거:</strong> 이번 주 EDoF-NeRF 1편이 코딩 조리개를 다뤘고, W25에서 arXiv 부재가 확인된 이 분야의 관심이 W24 저널에서는 높았습니다. 축적된 원고들이 다음 주 공개될 가능성이 있습니다.</p>
+<p><strong>근거:</strong> 지난주 EDoF-NeRF 1편이 코딩 조리개를 다뤘고, W25에서 arXiv 부재가 확인된 이 분야의 관심이 W24 저널에서는 높았습니다. 축적된 원고들이 다음 주 공개될 가능성이 있습니다.</p>
 <div class=cond>적중 조건: cs.CV/cs.LG/eess.IV에서 'lensless', 'coded aperture', 'PSF engineering' 키워드 논문 2편 이상</div>
 <div class=cond>불일치 조건: 관련 논문이 1편 이하이거나 광학 주제가 아닌 맥락에서만 키워드 등장</div>
 </div>
@@ -203,7 +203,7 @@ ul.plain li{margin:.3rem 0;font-size:.9rem}
 <div class=pred-card>
 <h3>2. 3DGS와 의료 CT/MRI 재구성 결합 사례 등장</h3>
 <p><strong>주장:</strong> Gaussian Splatting 또는 NeRF 기반 의료 볼륨 이미징 논문이 1편 이상 나올 것입니다.</p>
-<p><strong>근거:</strong> 이번 주 PSCT-Net(희소 X선 CT)과 OCT Test-Time Adaptation 등 의료 이미징이 꾸준했고, 3DGS가 다양한 도메인에 확산 중입니다. 두 흐름이 다음 주에 만날 가능성이 높습니다.</p>
+<p><strong>근거:</strong> 지난주 PSCT-Net(희소 X선 CT)과 OCT Test-Time Adaptation 등 의료 이미징이 꾸준했고, 3DGS가 다양한 도메인에 확산 중입니다. 두 흐름이 다음 주에 만날 가능성이 높습니다.</p>
 <div class=cond>적중 조건: 3DGS/NeRF + CT/MRI/OCT 조합 논문 1편 이상</div>
 <div class=cond>불일치 조건: 3DGS 논문이 있어도 모두 자율주행·로봇 도메인에만 있으면 빗나감</div>
 </div>
@@ -232,7 +232,7 @@ ul.plain li{margin:.3rem 0;font-size:.9rem}
 
 <div class=action-card>
 <h3>3. 3DGS + 의료 이미징 리뷰 준비</h3>
-<p>이번 주 PSCT-Net + Splaxel + VisDom를 읽고 '의료 이미징에 3DGS를 적용할 때의 주요 제약(메모리, 학습 시간, geometry 정확도)'을 정리한 1페이지 내부 노트를 작성합니다. 다음 주 새 논문이 나오면 즉시 이 프레임워크에서 비교합니다.</p>
+<p>지난주 PSCT-Net + Splaxel + VisDom를 읽고 '의료 이미징에 3DGS를 적용할 때의 주요 제약(메모리, 학습 시간, geometry 정확도)'을 정리한 1페이지 내부 노트를 작성합니다. 다음 주 새 논문이 나오면 즉시 이 프레임워크에서 비교합니다.</p>
 <p><strong>기대 결과물:</strong> 3DGS 의료 이미징 적용 제약 요약표 + 다음 주 신규 논문 비교 프레임워크</p>
 </div>
 
