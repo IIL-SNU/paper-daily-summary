@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Imaging Intelligence Daily Briefing — computational optical imaging</title>
+    <link>https://iilab.io/paper-daily-summary/</link>
+    <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
+    <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
+    <language>ko</language>
+    <lastBuildDate>Tue, 16 Jun 2026 18:20:15 +0900</lastBuildDate>
+    <ttl>720</ttl>
+    <item>
+      <title>🔬 Imaging Intelligence Daily Briefing</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-06-16.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-16.html</guid>
+      <pubDate>Tue, 16 Jun 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 메타표면 키워드는 ' 재구성·능동(programmable) '입니다. GST 상변화 물질로 THz 파면을 전기/광학적으로 코딩하거나(Advanced Materials), IR–마이크로파 양쪽에서 동작하는 투명 스텔스 메타표면(Nanophotonics)이 나왔어요. 정적 소자에서 '상태를 바꾸는' 소자로 무게중심이 이동합니다.]]></description>
+    </item>
+    <item>
+      <title>🔬 Imaging Intelligence Daily Briefing</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-06-15.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-15.html</guid>
+      <pubDate>Mon, 15 Jun 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘의 중심은 complex-amplitude(복소진폭) holography 입니다. Collins 공식 기반 복소진폭 복원(Optics Express), 풀컬러 진폭 홀로그래피(Opt Laser Tech), THz 자성 메타표면 Janus 복소진폭(Advanced Functional Materials)이 같은 날. 진폭·위상을 동시에 정밀 제어/복원하는 쪽으로 holography가 고도화됩니다.]]></description>
+    </item>
+    <item>
+      <title>🗓 Imaging Intelligence Weekly Retrospective</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-06-13-weekly.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-13-weekly.html</guid>
+      <pubDate>Sat, 13 Jun 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[이번 주 가장 뜨거운 축은 메타표면(28) 입니다. 편광·천문 계측(Science Advances), 128차원 상태 생성(Laser & Photonics Rev.), 신경망 생성(Optics Comm), THz 벡터 포커싱(Adv Photonics Nexus)까지 — '설계는 모델이, 제어는 다물리량으로'가 한 주 내내 반복됐습니다.]]></description>
+    </item>
+    <item>
+      <title>🔬 Imaging Intelligence Daily Briefing</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-06-12.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-12.html</guid>
+      <pubDate>Fri, 12 Jun 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 가장 굵은 흐름은 snapshot/compressive 복원 입니다. Serial modulation으로 시간을 압축하는 single-shot 위상 이미징(Laser & Photonics Reviews)과 snapshot compressive 고속 3D 라이트필드(Optics Express)가 같은 날 떨어졌어요. '한 번에 적게 측정하고 복원으로 채운다'는 계산영상의 핵심 설계가 위상·라이트필드 양쪽에서 동시 등장.]]></description>
+    </item>
+    <item>
+      <title>🔬 Imaging Intelligence Daily Briefing</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-06-11.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-11.html</guid>
+      <pubDate>Thu, 11 Jun 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 메타표면은 ' 설계 자동화 + 광대역화 '가 키워드입니다. 편광 무관 광대역 achromatic metalens(Optics Communications), 머신러닝으로 다중공진 응답을 예측하는 메타표면(Materials Research Bulletin), PT-symmetry 굴절률 센싱(Photonics and Nanostructures) — 설계를 모델에 맡기고 대역을 넓히는 흐름.]]></description>
+    </item>
+    <item>
+      <title>🔬 Imaging Intelligence Daily Briefing</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-06-10.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-10.html</guid>
+      <pubDate>Wed, 10 Jun 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[메타표면이 단순 빔 제어를 넘어 편광·고차원 상태 제어 로 확장됩니다. 천문 편광계측(Science Advances), 128차원 편광 생성(Laser & Photonics Reviews), 위성간 빔포밍·NIR 흡수체(Journal of Optics)가 같은 날 떨어졌어요. 정밀 계측 응용에 들어간다는 건 메타표면 성숙도가 올라갔다는 신호입니다.]]></description>
+    </item>
+  </channel>
+</rss>
