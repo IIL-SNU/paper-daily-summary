@@ -140,7 +140,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          claude -p "$(cat out/ci_prompt.md)"
+          # Headless CI: no interactive approver, so bypass permission prompts.
+          # (Safe on GitHub-hosted runners; they run as non-root 'runner'.)
+          claude --dangerously-skip-permissions -p "$(cat out/ci_prompt.md)"
 
       - name: Finalize commit and push if Claude left validated changes
         shell: bash
