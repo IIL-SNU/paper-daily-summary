@@ -45,7 +45,7 @@ jobs:
       GITHUB_REPO: IIL-SNU/paper-daily-summary
       SITE_URL: https://iilab.io/paper-daily-summary
       SLACK_CHANNEL: "#paper-daily-summary"
-      SLACK_CHANNEL_ID: ""   # 봇이 게시할 채널 ID (예: C0XXXXXXX). 비우면 SLACK_CHANNEL 이름 사용
+      SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}   # GitHub secret으로 주입(예: C0XXXXXXX). 비우면 SLACK_CHANNEL 이름 사용
       MODE: ${{ github.event.inputs.mode || 'auto' }}
       TARGET_DATE: ${{ github.event.inputs.target_date || '' }}
       SEND_SLACK: ${{ github.event.inputs.send_slack || 'true' }}
