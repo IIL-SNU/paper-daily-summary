@@ -906,8 +906,12 @@ Weekly:
 cd {WORKDIR}
 python scripts/build_feed.py
 python scripts/build_weekday_counts.py
+# 다크 모드 토글 주입(idempotent). index.html과 모든 포스트가 매 실행 재생성되므로,
+# 모든 HTML 생성이 끝난 뒤 반드시 마지막 스타일 단계로 실행한다. 이미 주입된 파일은 건너뛴다.
+python scripts/inject_dark.py index.html posts/*.html
 python scripts/validate_daily_release.py --date YYYY-MM-DD
-git add posts/YYYY-MM-DD.html \
+git add index.html \
+        posts/YYYY-MM-DD.html \
         trends/YYYY-MM-DD.json \
         benchmarks/YYYY-MM-DD.json \
         insights/YYYY-MM-DD.json \
@@ -916,6 +920,8 @@ git add posts/YYYY-MM-DD.html \
 git commit -m "Add YYYY-MM-DD briefing"
 git push origin main
 ```
+
+> 다크 모드: 모든 페이지는 우상단 🌙/☀️ 토글(OS 설정 기본값 + localStorage 기억)을 가진다. 각 페이지에 직접 CSS를 쓰지 말고, 위 `scripts/inject_dark.py`가 `html[data-theme=dark]` 오버라이드 + 버튼 + 초기화 스크립트를 자동 주입한다(자기완결형·idempotent). weekly·backfill 등 다른 모드의 산출물도 동일하게 이 단계를 거친다.
 
 Weekly:
 
