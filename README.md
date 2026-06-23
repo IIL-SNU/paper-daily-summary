@@ -222,10 +222,10 @@ Crossref(저널)는 위에 더해 `source:"crossref"`, `doi`, `journal`, `url`, 
 3. **Settings → Actions → General → Workflow permissions** 를 *Read and write* 로 설정
 4. **Settings → Pages → Source** 를 *GitHub Actions* 로 설정
 
-스케줄은 두 단계로 분리돼 있습니다(`arxiv-daily-summary.yml`의 `cron`으로 조정): **보고서 생성**은 `13:00 UTC`(= `22:00 KST`, 저녁 — arXiv 당일 `/new`가 올라온 뒤라 no-op을 피함), **Slack 알림**은 `01:00 UTC`(= `10:00 KST`, 다음 날 아침)입니다. 아침 알림에는 전날 저녁 생성된 보고서(직전 영업일 arXiv)가 담깁니다.
+기본 스케줄은 매일 `02:00 UTC`(= `11:00 KST`, 오전 11시)이며 `arxiv-daily-summary.yml`의 `cron`으로 조정합니다. arXiv 당일 `/new`가 한국시간 오전 9~10시에 올라오므로, 11시 단일 실행이 **생성과 Slack 발송을 함께** 처리해 **당일** 발행·공유합니다.
 **weekly 회고는 매주 월요일** daily와 함께 발행됩니다(지난주 회고). 토·일은 arXiv 미발행이라 skip.
-Slack 알림은 아침 10:00 KST의 `notify` 잡이 전날 저녁 생성된 보고서의 요약(또는 실행 실패 알림)을 대기 파일 `stats/pending_slack.md`에서 읽어 **Slack 봇(`chat.postMessage`)**으로 `SLACK_CHANNEL_ID` 채널에 보냅니다. 발행도 실패도 아닌 **주말·no-op은 대기 파일이 없어 미발송**입니다.
-워크플로우는 `job`(report/notify)·`mode`(auto/daily/backfill/weekly/sunday)·`target_date`·`send_slack`을 수동 실행 입력으로 받습니다(`job=report`는 생성, `job=notify`는 최신 보고서 Slack 발송).
+Slack 알림은 같은 실행의 마지막 단계가 **daily report 발행 시 요약**을, **실행 실패 시 실패 알림**을 **Slack 봇(`chat.postMessage`)**으로 `SLACK_CHANNEL_ID` 채널에 보냅니다(push 성공 직후). 발행도 실패도 아닌 **주말·no-op은 미발송**(`out/release_ok.txt` 기준)입니다.
+워크플로우는 `mode`(auto/daily/backfill/weekly/sunday)·`target_date`·`send_slack`을 수동 실행 입력으로 받습니다.
 
 > ⚠️ **첫 실행은 `auto` 모드를 피하세요.** `auto`는 빠진 평일을 과거로 거슬러 채우는 Calendar Audit을 수행합니다.
 > 산출물이 비어 있는 초기에는 **Actions 탭 → 수동 실행(`workflow_dispatch`) → `mode: daily`** 로 당일분만 생성하길 권장합니다.
