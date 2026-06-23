@@ -222,9 +222,9 @@ Crossref(저널)는 위에 더해 `source:"crossref"`, `doi`, `journal`, `url`, 
 3. **Settings → Actions → General → Workflow permissions** 를 *Read and write* 로 설정
 4. **Settings → Pages → Source** 를 *GitHub Actions* 로 설정
 
-기본 스케줄은 매일 `02:00 UTC`(= `11:00 KST`, 오전 11시)이며 `arxiv-daily-summary.yml`의 `cron`으로 조정합니다. arXiv 당일 `/new`가 한국시간 오전 9~10시에 올라오므로, 11시 단일 실행이 **생성과 Slack 발송을 함께** 처리해 **당일** 발행·공유합니다.
-**weekly 회고는 매주 월요일** daily와 함께 발행됩니다(지난주 회고). 토·일은 arXiv 미발행이라 skip.
-Slack 알림은 같은 실행의 마지막 단계가 **daily report 발행 시 요약**을, **실행 실패 시 실패 알림**을 **Slack 봇(`chat.postMessage`)**으로 `SLACK_CHANNEL_ID` 채널에 보냅니다(push 성공 직후). 발행도 실패도 아닌 **주말·no-op은 미발송**(`out/release_ok.txt` 기준)입니다.
+스케줄은 두 가지입니다(`arxiv-daily-summary.yml`의 `cron`으로 조정): **daily 보고서**는 매일 `02:00 UTC`(= `11:00 KST`)에 생성하고 같은 실행에서 Slack까지 보냅니다(arXiv `/new`가 오전 9~10시 KST에 올라오므로 11시면 안전; 주말 포함 매일 실행, 새 글 없으면 no-op). **weekly 회고**는 매주 월요일 `01:00 UTC`(= `10:00 KST`)에 **별도 실행**으로 생성+Slack합니다.
+**weekly 회고는 매주 월요일 오전 10시 KST의 독립 실행**으로 발행됩니다(지난주 회고, daily와 분리). daily는 매일(주말 포함) 11시에 돌며 arXiv에 새 글이 없으면 no-op.
+Slack 알림은 각 실행의 마지막 단계가 보냅니다 — **daily 실행은 daily 요약**, **월요일 weekly 실행은 weekly 요약**, **실행 실패 시 실패 알림**(모두 push 성공 직후 `chat.postMessage`로 `SLACK_CHANNEL_ID` 채널에). 발행도 실패도 아닌 **no-op(주말 daily 등)은 미발송**(`out/release_ok.txt` 기준)입니다.
 워크플로우는 `mode`(auto/daily/backfill/weekly/sunday)·`target_date`·`send_slack`을 수동 실행 입력으로 받습니다.
 
 > ⚠️ **첫 실행은 `auto` 모드를 피하세요.** `auto`는 빠진 평일을 과거로 거슬러 채우는 Calendar Audit을 수행합니다.

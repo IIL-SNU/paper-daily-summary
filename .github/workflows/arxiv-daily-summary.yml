@@ -2,11 +2,13 @@ name: arXiv Daily Summary
 
 on:
   schedule:
-    # 11:00 KST (02:00 UTC). arXiv posts the day's /new listing ~09-10 KST
-    # (20:00 ET the night before), so by 11:00 KST it is reliably up. This single
-    # run generates the briefing AND delivers Slack in the same execution, so the
-    # report is published and announced the same day.
+    # Daily report — 11:00 KST (02:00 UTC), every day incl. weekends. arXiv posts
+    # the day's /new ~09-10 KST, so it is reliably up by 11:00. Generates the daily
+    # (no-ops when arXiv has nothing new) and delivers its Slack in the same run.
     - cron: "0 2 * * *"
+    # Weekly retrospective — Monday 10:00 KST (01:00 UTC). Standalone run that
+    # generates last week's weekly (mode=weekly) and delivers its Slack inline.
+    - cron: "0 1 * * 1"
   workflow_dispatch:
     inputs:
       mode:
@@ -49,7 +51,8 @@ jobs:
       SITE_URL: https://iilab.io/paper-daily-summary
       SLACK_CHANNEL: "#paper-daily-summary"
       SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}   # GitHub secret으로 주입(예: C0XXXXXXX). 비우면 SLACK_CHANNEL 이름 사용
-      MODE: ${{ github.event.inputs.mode || 'auto' }}
+      # Monday 01:00 UTC cron -> weekly; everything else -> auto. Manual input wins.
+      MODE: ${{ github.event.inputs.mode || (github.event.schedule == '0 1 * * 1' && 'weekly' || 'auto') }}
       TARGET_DATE: ${{ github.event.inputs.target_date || '' }}
       SEND_SLACK: ${{ github.event.inputs.send_slack || 'true' }}
       # Authenticate Claude Code with a subscription OAuth token (claude setup-token)
