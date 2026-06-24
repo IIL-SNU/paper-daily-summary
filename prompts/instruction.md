@@ -606,13 +606,14 @@ TriRelVLA: Triadic Relational Structure for Generalizable Embodied Manipulation 
 10. 🔬 추천 연구주제 — 각 항목에 1주 실행 protocol 포함
 11. 🧭 예측 회고 루프 — 월요일만
 12. 📊 오늘의 버킷 현황 — 버킷별 막대 그래프. **막대 너비는 catch-all `Deep Learning Methods`를 제외한 버킷의 최댓값을 100%로 정규화**한다(cs.LG/cs.AI 일반 ML이 항상 커서 전체 최댓값으로 잡으면 광학 버킷이 안 보임). catch-all 막대는 100%로 고정하고 라벨엔 실제 편수를 적는다. 0편 버킷도 0% 막대로 표시한다.
-13. 📈 벤치마크 SOTA 추이 — 있으면
-14. 🔀 크로스오버 페어 — 있으면
-15. 🌟 오늘의 must-read — Tier A 3~5편 중 1~2편 deep dive
-16. ⚠️ 리스크·한계 필터 — risk taxonomy 태그 포함
-17. 🧊 Skim-only 후보 — 있으면
-18. 📄 부록 — 전체 ROI 논문 압축 목록
-19. 🔗 참고 링크 + 하단 홈 버튼
+13. 🗂 버킷별 주요 논문 — 각 ROI 버킷에서 그날의 **주요 논문 1~3편**을 추린다(버킷 현황 그래프 바로 뒤에 배치). 선정 기준: **Tier(중요도) 우선 → 동급이면 OpenAlex `cited_by_count` → 버킷 대표성**. 논문마다 제목(arXiv `abs`/DOI 링크)·badge(`CV`/`JNL`/`OAX`…)·한 줄 "왜 주요"를 적는다. **선택분이 있는 버킷만** 쓰고(빈 버킷 생략), catch-all `Deep Learning Methods`는 최대 1~2편으로 제한한다(과대표 방지). 클러스터 지도·must-read와 논문이 겹쳐도 되지만, 이 섹션은 "9개 버킷을 빠짐없이 훑는" 렌즈를 제공한다(클러스터=주제별, 이 섹션=버킷별).
+14. 📈 벤치마크 SOTA 추이 — 있으면
+15. 🔀 크로스오버 페어 — 있으면
+16. 🌟 오늘의 must-read — Tier A 3~5편 중 1~2편 deep dive
+17. ⚠️ 리스크·한계 필터 — risk taxonomy 태그 포함
+18. 🧊 Skim-only 후보 — 있으면
+19. 📄 부록 — 전체 ROI 논문 압축 목록
+20. 🔗 참고 링크 + 하단 홈 버튼
 
 필수 파일:
 - `posts/YYYY-MM-DD.html`
