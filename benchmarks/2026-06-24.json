@@ -1,0 +1,62 @@
+{
+  "date": "2026-06-24",
+  "source_listing_date": "2026-06-24",
+  "benchmarks": [
+    {
+      "paper_id": "doi:10.1021/acsnano.6c04285",
+      "title": "Breaking the Diffraction-Encoding Limit for High-Capacity Meta-Holography via Multiorder Decoupling",
+      "bucket": "Phase Imaging/Holography",
+      "metric": "holographic information capacity",
+      "claim": "Multiorder decoupling breaks the diffraction-encoding limit for meta-holography, enabling higher information density per unit aperture than single-order designs"
+    },
+    {
+      "paper_id": "doi:10.1002/lpor.71468",
+      "title": "Dynamic Vectorial Holographic Display With Electrically Reconfigurable LC-Integrated Metasurface",
+      "bucket": "Phase Imaging/Holography",
+      "metric": "dynamic range / reconfigurability",
+      "claim": "Electrically reconfigurable LC-metasurface hybrid achieves multi-channel dynamic vectorial holography; static metasurfaces lack post-fabrication tunability"
+    },
+    {
+      "paper_id": "doi:10.1117/1.apn.5.4.046024",
+      "title": "Nonlinear virtual lens for programmable and multispectral infrared upconversion imaging",
+      "bucket": "Meta-Optics/Diffractive",
+      "metric": "spectral bandwidth / IR upconversion efficiency",
+      "claim": "Nonlinear flat optics platform enables tunable-bandwidth IR-to-visible upconversion imaging without cryogenic detectors"
+    },
+    {
+      "paper_id": "2606.24567",
+      "title": "Multilevel Stochastic Plug-and-Play for Sparse-View CT Reconstruction",
+      "bucket": "Tomography/3D Imaging",
+      "metric": "convergence speed / PSNR on sparse-view CT",
+      "claim": "Multilevel stochastic PnP converges faster than standard stochastic PnP while maintaining reconstruction quality on SVCT"
+    },
+    {
+      "paper_id": "2606.24561",
+      "title": "Quantum CT via Dynamic Interval Encoding and Prior-Balanced QUBO Reconstruction",
+      "bucket": "Tomography/3D Imaging",
+      "metric": "QUBO variable budget / grayscale quantization error",
+      "claim": "Dynamic interval encoding reduces QUBO size and quantization error vs fixed global bit-plane encoding for quantum CT"
+    },
+    {
+      "paper_id": "doi:10.1364/oe.601473",
+      "title": "High-fidelity lensless polarization imaging enabled by differentiable mask optimization and second-order regularized reconstruction",
+      "bucket": "Lensless/Coded Imaging",
+      "metric": "reconstruction fidelity / polarization accuracy",
+      "claim": "Differentiable mask optimization combined with second-order regularization improves high-fidelity lensless polarization imaging"
+    },
+    {
+      "paper_id": "doi:10.1016/j.ultramic.2026.114411",
+      "title": "Guided progressive reconstructive imaging for low-dose analytical ptychography",
+      "bucket": "Fourier Ptychography/Microscopy",
+      "metric": "dose efficiency / throughput",
+      "claim": "Quantization-based guided progressive framework enables low-dose, high-throughput real-time analytical ptychography"
+    },
+    {
+      "paper_id": "2606.24737",
+      "title": "VSANet: View-aware Sparse Attention Network for Light Field Image Denoising",
+      "bucket": "Light-Field/Novel Sensors",
+      "metric": "PSNR / complexity on LF denoising",
+      "claim": "Locality-sensitive hashing sparse attention achieves global cross-view aggregation with linear complexity for LF denoising"
+    }
+  ]
+}

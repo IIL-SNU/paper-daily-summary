@@ -6,8 +6,22 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 23 Jun 2026 00:03:09 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2026 12:22:24 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-06-24 (수요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-06-24.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-24.html</guid>
+      <pubDate>Wed, 24 Jun 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[수요일 arXiv /new 배치는 총 804건으로 cs.AI(198)·cs.CV(129)·cs.LG(110)가 주를 이루고, eess.IV(10)·eess.SP(25)가 광학 전문 채널을 채웁니다. 이번 주 흐름을 돌아보면, 메타서피스의 다기능화와 능동 재구성 가능성 이 꾸준히 강화되고 있습니다. 지난주 금요일(6/19)에는 역문제 알고리즘(Flow Map Denoisers, PSCT-Net)이 중심이었고, 화요일(6/23) 배치에서는 홀로그래피·위상의 생물·재료 응용과 이벤트 카메라 표현 체계화, 메타서피스 다기능화가 큰 흐름이었습니다. 오늘은 그 두 흐름이 더 심화됩니다 — 홀로그래피는 용량 한계 돌파로, 이벤트 카메라는 크로스모달 융합 실용화로 이어지고 있습니다.]]></description>
+    </item>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-06-23 (화요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-06-23.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-23.html</guid>
+      <pubDate>Tue, 23 Jun 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[/pastweek 2026-06-23 배치는 총 1,615건으로 평소 /new 배치의 3.5배 규모입니다. cs.AI(569)·cs.LG(511)·cs.CV(358)가 주축이고 eess.IV(29)·eess.SP(53)가 광학 전문 채널을 담당합니다. 이번 주 가장 두드러진 흐름은 메타서피스 응용의 다기능화 입니다. 보안 이미지 처리용 DNN, GSST 상변화 물질 기반 센서, 양자 광자쌍 생성, 바이오분자 감지, 적외선 업컨버전 이미징 등 단일 플랫폼에서 여러 기능을 동시에 수행하려는 시도가 20편이나 쏟아졌습니다.]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-06-22 (Week 25)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-06-22-weekly.html</link>

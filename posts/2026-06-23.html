@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-06-23</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-06-23 (화요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-06-23 (화요일) — BACKFILL (실행일: 2026-06-24)</div>
+  <div>📚 소스: arXiv /pastweek 2026-06-23 listing (날짜 섹션 포함)</div>
+  <div>📊 카테고리: cs.LG / cs.CV / cs.AI / eess.IV / eess.SP</div>
+  <div>🔢 스캔: 1,615건 · ROI 배정 272건</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 배치에서 가장 주목할 것은 두 방향으로 갈라집니다. 하나는 <strong>메타서피스가 단일 기능(빔 성형, 감지)에서 보안·양자·다기능 통합 플랫폼으로 빠르게 이동</strong>하고 있다는 점이고, 다른 하나는 <strong>희소 관측 3DGS 단층촬영에서 투영-볼륨 불일치를 명시적으로 진단·제어하는 방법론</strong>이 등장했다는 것입니다. 위상 이미징 쪽에서는 HoloBio라는 오픈소스 GUI가 출판되어 홀로그래픽 현미경 분석의 접근성 장벽이 낮아졌고, STEM 위상 복원의 여러 알고리즘 계열을 통합 정리한 리뷰도 눈에 띕니다. 이번 주 초반 배치 특성상 양이 많고 스펙트럼이 넓어서 신호 추출이 중요합니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>/pastweek 2026-06-23 배치는 총 1,615건으로 평소 /new 배치의 3.5배 규모입니다. cs.AI(569)·cs.LG(511)·cs.CV(358)가 주축이고 eess.IV(29)·eess.SP(53)가 광학 전문 채널을 담당합니다. 이번 주 가장 두드러진 흐름은 <strong>메타서피스 응용의 다기능화</strong>입니다. 보안 이미지 처리용 DNN, GSST 상변화 물질 기반 센서, 양자 광자쌍 생성, 바이오분자 감지, 적외선 업컨버전 이미징 등 단일 플랫폼에서 여러 기능을 동시에 수행하려는 시도가 20편이나 쏟아졌습니다.</p>
+<p>3DGS 쪽은 tomography 버킷에 48편이 들어오면서 이제 단순한 뷰 합성을 넘어 CT/의료 영상 역문제와 결합하는 방향이 확실해지고 있습니다. Projection-Volume Fidelity Divergence(2606.22525)가 이번 주 3DGS 단층촬영 논문 중 방법론적으로 가장 날카로운 문제 제기를 담고 있어 주목할 만합니다. 이벤트 카메라 서베이(2606.23078)가 eess.IV에 게재되어 이 분야가 체계적 학문으로 정착하는 신호도 읽힙니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>지난 발행일(6월 19일 금요일)은 <strong>역문제 왜곡-지각 트레이드오프의 런타임 제어(Flow Map Denoisers), 기하 명시적 희소 복원(PSCT-Net, VisDom), VLM+광 필드 폐색 제거</strong>가 중심이었습니다. 당시 FP·메타·렌즈리스 버킷이 모두 0건이어서 광학 전문 신호가 부재했습니다.</p>
+<p>오늘은 정반대로 <strong>메타서피스(20건), 위상·홀로그래피(12건), 렌즈리스(1건), FP(2건)</strong>가 모두 채워졌고, 이들 대부분이 저널 논문(JNL)이라는 점이 다릅니다. 6월 19일의 논문들이 arXiv 단독 preprint 중심이었다면, 오늘은 동료 심사를 통과한 광학 저널 결과물들이 대거 포함된 날이네요. 알고리즘 중심의 금요일에서 소재·디바이스·시스템 중심의 주간 배치로 무게가 이동했습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>홀로그래피·위상 복원 생물·소재 응용 확산</strong><span class=pill>HOT</span></td>
+  <td>
+    <a href="https://doi.org/10.1371/journal.pcbi.1013928" target=_blank>HoloBio: DHM 정량 생물 분석 오픈소스 GUI</a><br>
+    <a href="https://doi.org/10.3788/ai.2026.10008" target=_blank>Quantum holography with aberration correction and wavefront shaping</a><br>
+    <a href="https://doi.org/10.1557/s43577-026-01100-3" target=_blank>ABCs of phase retrieval: STEM 위상 복원 알고리즘 통합 정리</a><br>
+    <a href="https://arxiv.org/abs/2606.21504" target=_blank>Deflection-Optimal Spectral Design for Sparse Phase Retrieval</a>
+  </td>
+  <td>위상 이미징이 물리 실험실을 넘어 생물학·재료 분석 실험실로 확산되고 있다는 신호입니다. HoloBio는 파이썬 GUI로 실시간 처리와 오프라인 분석을 모두 지원하면서 진입 장벽을 크게 낮췄고, STEM 위상 복원 리뷰는 수십 개 알고리즘 약어들을 하나의 수학적 틀로 연결해 분야 통합을 도모합니다. 양자 홀로그래피와 희소 위상 복원 초기화 방법까지 더하면, 위상 정보가 '광학 연구자만의 도구'에서 '범용 계측 도구'로 전환되는 국면이 이번 주 선명하게 보입니다.</td>
+  <td>High<br><small>저널 출판 + 오픈소스 공개, 직접 활용 가능</small></td>
+  <td>HoloBio GitHub 클론 후 우리 DHM 데이터 포맷 호환성 확인; ABCs 리뷰로 FP·ODT 알고리즘 계보 정리</td>
+</tr>
+<tr>
+  <td><strong>이벤트 카메라 표현 학습 체계화</strong><span class=pill>HOT</span></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.23078" target=_blank>A Systematic Survey on Event Camera Representation Learning</a><br>
+    <a href="https://arxiv.org/abs/2606.22378" target=_blank>Following the Flow: Advection-Consistent Event-based Small Object Detection</a><br>
+    <a href="https://arxiv.org/abs/2606.21898" target=_blank>Mesh2GS: White-Box 3DGS via Plenoptic Sampling</a><br>
+    <a href="https://arxiv.org/abs/2606.20727" target=_blank>FPGA-Accelerated Neuromorphic Vision for Orbital Object Detection</a>
+  </td>
+  <td>이벤트 카메라는 마이크로초 해상도와 고동적범위라는 강점이 있지만, 데이터 표현이 비정형적이어서 처리 파이프라인이 분야마다 제각각이었습니다. 이번 서베이 논문은 그 표현 학습 방법들을 체계적으로 분류해 공통 비교 틀을 처음으로 제시합니다. Advection-Consistent 검출 논문은 광류(optical flow)로 이벤트 스트림을 정규화해 소형 물체 추적 정확도를 높이며, Mesh2GS는 플레놉틱 샘플링으로 3DGS를 기하학적으로 투명하게 구성합니다. 세 방향 모두 '센서 원시 데이터의 구조화된 표현'이 핵심 병목임을 공통으로 지목하고 있습니다.</td>
+  <td>High<br><small>서베이 논문이 분야 성숙 신호; FPGA 구현까지 제시</small></td>
+  <td>서베이(2606.23078) 분류 체계 정독 후 우리 고속 센서 처리 파이프라인 갭 분석</td>
+</tr>
+<tr>
+  <td><strong>메타서피스 다기능화 경쟁</strong><span class=pill>HOT</span></td>
+  <td>
+    <a href="https://doi.org/10.1364/ome.604856" target=_blank>Metasurface-based diffractive neural networks for security-enhanced image processing</a><br>
+    <a href="https://doi.org/10.3788/col202624.063602" target=_blank>Tunable SEIRA based on GSST metasurface for multiple analyte sensing</a><br>
+    <a href="https://doi.org/10.1364/ol.605823" target=_blank>Dispersion-free photon-pair generation from nonlinear metasurface</a><br>
+    <a href="https://doi.org/10.1038/s41467-026-74749-8" target=_blank>Gradient metasurface sensor for spectrometer-free biomolecule detection</a>
+  </td>
+  <td>메타서피스가 지금까지는 '하나의 광학 기능을 잘하는 초박 광학 소자'로 활용되었는데, 이번 주 논문들은 하나의 소자에서 보안 암호화·환경 감지·양자 광자 생성·생체 분자 검출을 동시에 구현하려는 경쟁을 보여줍니다. 특히 GSST 상변화 메타서피스는 고체 상태 스위칭으로 분광기 없이 여러 분석물을 동시에 감지하고, 비선형 메타서피스에서 무분산 광자쌍을 생성한 결과는 양자 이미징과 메타광학의 접점을 처음으로 실험적으로 보입니다. 저희 랩이 설계하는 DOE가 단일 기능에 고정될 필요가 있는지 재검토할 시점입니다.</td>
+  <td>Medium<br><small>저널 출판 완료, 하지만 우리 FP/DHM 직접 응용까지는 거리 있음</small></td>
+  <td>보안 DNN 메타서피스(ome.604856) 설계 구조 분석; 우리 DOE 다기능화 로드맵 초안 작성 참고</td>
+</tr>
+<tr>
+  <td><strong>희소 관측 3DGS 단층촬영과 물리 제약</strong><span class="pill a">TIER A</span></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.22525" target=_blank>Projection-Volume Fidelity Divergence: Diagnosing Optimization Drift in Sparse-View 3DGS Tomography</a><br>
+    <a href="https://arxiv.org/abs/2606.23212" target=_blank>Temporally Aware Densification for Dynamic 3DGS</a><br>
+    <a href="https://arxiv.org/abs/2606.20842" target=_blank>Sparse-View 3DGS with Fisher Information Guidance</a><br>
+    <a href="https://arxiv.org/abs/2606.21405" target=_blank>Geometry Calibration in Tomography with Differentiable Ray-Based Model</a>
+  </td>
+  <td>기존 3DGS 기반 희소 관측 복원은 투영 공간의 충실도와 볼륨 공간의 충실도가 학습 중에 어긋나는 최적화 드리프트 문제가 있었는데, 아무도 이것을 명시적으로 진단하거나 측정하지 않았습니다. Projection-Volume Fidelity Divergence는 이 드리프트를 정량화하는 새 진단 지표를 제안하고 제어 방법까지 제시합니다. 이는 CT 희소각 복원이나 ODT에서 발생하는 동일한 문제를 3DGS 프레임워크로 바라본 것으로, 우리 랩의 역문제 복원 품질 모니터링에 즉시 연결됩니다. 미분 가능 광선 기반 기하 보정 논문(2606.21405)은 eess.IV에 게재되어 계산 광학과의 직접 연결성이 높습니다.</td>
+  <td>High<br><small>계산 광학 역문제와 직결, 방법론적으로 명확</small></td>
+  <td>2606.22525 코드 확인 후 ODT 희소각 데이터에서 PV-Fidelity Divergence 측정 실험 설계</td>
+</tr>
+<tr>
+  <td><strong>렌즈리스·FP 저선량·고처리량 설계</strong></td>
+  <td>
+    <a href="https://doi.org/10.1016/j.ultramic.2026.114411" target=_blank>Guided progressive reconstructive imaging for analytical ptychography</a><br>
+    <a href="https://doi.org/10.1364/oe.601473" target=_blank>High-fidelity lensless polarization imaging with differentiable mask optimization</a><br>
+    <a href="https://doi.org/10.1088/2040-8986/ae80df" target=_blank>Wavelet-denoising model for color Fourier ptychographic microscopy</a>
+  </td>
+  <td>세 논문 모두 저널에 출판된 성숙한 공학 결과물로, '실제 시스템에서 성능을 어떻게 극한까지 끌어올리는가'에 집중합니다. Guided progressive ptychography는 양자화 기반 프레임워크로 저선량·고처리량·실시간을 동시에 달성하는 접근을 제안하고, 렌즈리스 편광 이미징은 미분 가능 마스크 최적화와 2차 정규화를 결합해 편광 정보를 고충실도로 복원합니다. 색상 FPM의 웨이블릿 노이즈 제거는 컬러 채널 간 주파수 특성 차이를 활용한 실용적 방법을 제시합니다. 이 세 방향은 각각 우리 랩 분석 ptychography, 렌즈리스 편광 현미경, 컬러 FPM 작업과 직결됩니다.</td>
+  <td>High<br><small>저널 출판된 실용 엔지니어링, 직접 벤치마킹 가능</small></td>
+  <td>Guided progressive ptychography 방법론을 우리 FP 저선량 프로토콜과 비교; 렌즈리스 편광 마스크 최적화 코드 확인</td>
+</tr>
+</tbody>
+</table>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>① HoloBio의 등장 — 홀로그래픽 현미경 분석의 접근성 혁명</h3>
+  <p>HoloBio(doi:10.1371/journal.pcbi.1013928)는 오픈소스 Python GUI로, 실시간 홀로그램 처리(비디오 프레임 레이트)와 오프라인 고급 분석을 하나의 인터페이스에 통합합니다. 기존에 DHM 분석은 상용 소프트웨어나 자체 코드에 의존해야 했는데, 표준화된 오픈소스 GUI가 나오면 연구 재현성과 협업 가능성이 크게 높아집니다. 저희 랩에서 DHM 데이터를 처리하는 파이프라인과 호환성을 바로 확인할 수 있고, 기여 개발도 가능한 플랫폼입니다.</p>
+  <p class=conf-note>Confidence: High — PLOS Computational Biology 게재, 오픈소스 공개, 즉시 활용 가능</p>
+</div>
+
+<div class=ins>
+  <h3>② Projection-Volume Fidelity Divergence — 3DGS 단층촬영의 새 진단 척도</h3>
+  <p>2606.22525는 아주 간단하지만 중요한 관찰에서 출발합니다: 3DGS를 CT처럼 희소 투영으로부터 복원할 때, 투영 공간에서의 손실과 볼륨 공간에서의 충실도가 학습 도중에 '드리프트'한다는 것입니다. 이 논문은 그 드리프트를 측정하는 PV-Fidelity Divergence 지표를 정의하고 이를 이용해 최적화를 제어하는 방법을 제안합니다. ODT나 FP처럼 투영 모델이 명확한 역문제에서, 복원 중 알고리즘이 "정말 투영 공간에서 일관된 해를 향하고 있는가"를 실시간으로 진단하는 용도로 직접 빌려올 수 있는 아이디어입니다.</p>
+  <p class=conf-note>Confidence: High — 방법론 명확, ODT/FP 역문제와 수학적으로 직접 연결</p>
+</div>
+
+<div class=ins>
+  <h3>③ 메타서피스의 다기능화 — 우리 DOE 설계 전략을 다시 생각하게 하는 신호</h3>
+  <p>이번 주 메타서피스 논문 20편 중 인상적인 것은 단일 소자에서 여러 기능을 동시에 구현하는 방향입니다. 보안 이미지 처리 DNN, 다분석물 SEIRA 감지, 분광기 없는 바이오 검출이 각각 다른 저널에 독립적으로 게재된 것은 이 방향이 이미 충분히 성숙했다는 신호이기도 합니다. 저희 랩이 설계하는 DOE나 패턴 마스크가 하나의 기능에 최적화되어 있는지, 아니면 동시에 여러 측정 기능을 통합할 수 있는지 검토해볼 타이밍입니다. 당장 구현보다는 설계 철학 차원에서 참고할 만한 흐름입니다.</p>
+  <p class=conf-note>Confidence: Medium — 방향성 명확하지만 우리 랩 직접 적용까지는 추가 검토 필요</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=ins>
+  <h3>주제 1: HoloBio를 우리 DHM 파이프라인에 통합하고 실시간 처리 성능 측정</h3>
+  <p><strong>배경</strong>: HoloBio는 실시간 홀로그램 처리를 비디오 프레임 레이트에서 지원합니다. 현재 우리 DHM 분석 파이프라인이 같은 속도를 달성하는지 비교가 필요합니다.</p>
+  <p><strong>1주 실행 프로토콜</strong>:</p>
+  <ol>
+    <li>GitHub에서 HoloBio 저장소 클론 및 환경 설정 (Python + 의존성)</li>
+    <li>우리 DHM 데이터 포맷(예: .tif 홀로그램 시퀀스)을 HoloBio 입력 형식으로 변환</li>
+    <li>실시간 모드에서 처리 속도(fps)와 위상 복원 품질(SSIM, 위상 오차) 측정</li>
+    <li>우리 기존 자체 처리 코드와 속도·품질 비교 테이블 작성</li>
+  </ol>
+</div>
+
+<div class=ins>
+  <h3>주제 2: Projection-Volume Fidelity Divergence 지표를 ODT 복원 모니터링에 적용</h3>
+  <p><strong>배경</strong>: ODT 희소각 복원에서 알고리즘이 물리적으로 일관된 해로 수렴하고 있는지 진단하는 지표가 없었습니다. PV-Fidelity Divergence는 이 공백을 채울 수 있습니다.</p>
+  <p><strong>1주 실행 프로토콜</strong>:</p>
+  <ol>
+    <li>2606.22525 방법론 섹션에서 PV-Fidelity Divergence 계산식 추출</li>
+    <li>ODT 순전파 투영 연산자로 PV Divergence를 계산하는 모듈 구현</li>
+    <li>제한각(60°) 시뮬레이션 ODT 데이터에서 복원 중 PV Divergence 곡선 기록</li>
+    <li>Divergence가 증가하는 시점과 아티팩트 발생 시점의 상관관계 분석</li>
+  </ol>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<div class=bucket-bar><span class=nm>Deep Learning (general)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>146 (고정)</span></div>
+<div class=bucket-bar><span class=nm>Tomography / 3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>48</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics / Diffractive</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>20</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction / Inverse Problems</span><span class=bar><span class=fill style="width:63%"></span></span><span class=n>25</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging / Holography</span><span class=bar><span class=fill style="width:30%"></span></span><span class=n>12</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining / Pathology</span><span class=bar><span class=fill style="width:15%"></span></span><span class=n>12 (대부분 FP)</span></div>
+<div class=bucket-bar><span class=nm>Light-Field / Novel Sensors</span><span class=bar><span class=fill style="width:15%"></span></span><span class=n>6</span></div>
+<div class=bucket-bar><span class=nm>Fourier Ptychography / Microscopy</span><span class=bar><span class=fill style="width:5%"></span></span><span class=n>2</span></div>
+<div class=bucket-bar><span class=nm>Lensless / Coded Imaging</span><span class=bar><span class=fill style="width:3%"></span></span><span class=n>1</span></div>
+<p style="font-size:12.5px;color:#666;margin:.5rem 0">버킷 바 기준: Meta-Optics(20)를 100%로 정규화. Deep Learning(146)은 100% 고정 표시. Virtual Staining 버킷은 키워드 오탐 포함 — 실제 생의학 논문은 Calcofluor White(doi:10.1038/s41433-026-04661-4), Stokes 편광(doi:10.1364/oe.605543) 2건. Tomography 버킷도 OCT 임상 연구 다수 포함.</p>
+
+<h2>🌟 오늘의 must-read <span class="pill a">Tier A</span></h2>
+
+<div class=dd>
+  <h3><a href="https://arxiv.org/abs/2606.22525" target=_blank>Projection-Volume Fidelity Divergence: Diagnosing and Controlling Optimization Drift in Sparse-View 3D Gaussian Tomography</a> <span class="pill a">TIER A · 계산 광학 역문제 직결</span></h3>
+  <p style="color:#713f12;font-size:13.5px"><em>이 논문은 3DGS를 단층촬영 역문제로 사용할 때 발생하는 구조적 최적화 실패를 처음으로 명시적으로 진단하고 측정 가능한 지표로 만든 논문입니다. 계산 광학 분야에서 직접 활용 가능성이 높습니다.</em></p>
+  <div class=tag>무엇을 했나</div>
+  <p>희소 뷰 3DGS 단층촬영에서 '투영 공간에서의 복원 충실도'와 '볼륨 공간에서의 3D 일관성' 사이의 드리프트를 정량화하는 Projection-Volume Fidelity Divergence(PVF-D) 지표를 정의했습니다. 이 지표를 사용해 학습 중 드리프트가 발생하는 시점을 자동으로 감지하고 정규화 강도를 적응적으로 조절하는 제어 알고리즘을 제안합니다.</p>
+  <div class=tag>왜 이게 새로운가</div>
+  <p>기존 희소 뷰 3DGS 논문들은 최종 재구성 품질(PSNR, SSIM)만 보고했습니다. 학습 도중 어느 시점에 어떤 이유로 아티팩트가 생기는지, 그리고 그것이 투영 공간과 볼륨 공간의 불일치 때문이라는 진단을 아무도 하지 않았습니다. 이 논문은 그 메커니즘을 규명하고 실시간 제어 가능하게 만들었습니다.</p>
+  <div class=tag>계산 광학에의 함의</div>
+  <p>ODT나 FP처럼 물리 투영 모델이 명확한 역문제에서, 복원 알고리즘이 "투영 일관성을 잃지 않았는가"를 학습 도중 실시간으로 확인하는 용도로 PVF-D를 바로 빌려올 수 있습니다. 특히 ODT 제한각 복원에서 missing cone 방향으로 아티팩트가 발생하는 단계를 PVF-D로 조기 감지할 수 있을 것입니다.</p>
+</div>
+
+<div class=dd>
+  <h3><a href="https://doi.org/10.1371/journal.pcbi.1013928" target=_blank>HoloBio: A holographic microscopy tool for quantitative biological analysis</a> <span class=pill>TIER A · 오픈소스 즉시 활용</span></h3>
+  <div class=tag>무엇을 했나</div>
+  <p>디지털 홀로그래픽 현미경(DHM) 데이터를 실시간으로 처리하고 오프라인으로 분석하는 오픈소스 Python GUI를 공개했습니다. 실시간 모드에서 비디오 프레임 레이트 처리를 지원하고, 오프라인 모드에서는 세포 형태 계측, 입자 동역학, 정량 위상 분석을 통합 인터페이스로 제공합니다.</p>
+  <div class=tag>왜 중요한가</div>
+  <p>홀로그래픽 현미경 분야의 진입 장벽은 상용 소프트웨어 비용과 자체 코드 개발 부담이었는데, 표준화된 오픈소스 GUI가 나오면 연구 재현성과 협업 속도가 모두 올라갑니다. PLOS Computational Biology에 게재되어 동료 심사를 통과했습니다.</p>
+  <div class=tag>우리 분야</div>
+  <p>우리 랩 DHM 파이프라인과 직접 비교해서 처리 속도와 위상 복원 품질을 벤치마킹하고, 추가 기능(FP 복원, 위상 언래핑 알고리즘)을 기여 개발하는 방향을 검토할 수 있습니다.</p>
+</div>
+
+<div class=dd>
+  <h3><a href="https://arxiv.org/abs/2606.23078" target=_blank>A Systematic Survey on Event Camera Representation Learning</a> <span class=pill>TIER A · eess.IV 게재</span></h3>
+  <div class=tag>무엇을 했나</div>
+  <p>이벤트 카메라의 비정형 스트림 데이터를 처리하기 위한 표현 학습 방법들을 체계적으로 분류하고 비교 분석하는 서베이를 제시합니다. 프레임 기반 변환, 볼륨 기반 표현, 희소 그래프 표현, 비동기 신경망 처리 등 주요 방향들을 공통 평가 프레임워크 안에서 비교합니다.</p>
+  <div class=tag>왜 중요한가</div>
+  <p>eess.IV 게재는 이 분야가 영상 처리 학문의 정식 분류 안으로 편입되었다는 신호입니다. 이 서베이가 나오면 이후 새 논문들은 이 분류 체계를 기준으로 자신의 방법을 위치시키게 되어, 분야 발전 속도가 빨라질 것입니다. 우리 랩의 고속 이미징 센서 선택 및 처리 파이프라인 설계에 직접적인 참고가 됩니다.</p>
+  <div class=tag>우리 분야</div>
+  <p>고속 현상 촬영이나 DHM 고속 세포 추적에 이벤트 카메라를 도입하는 방향을 검토할 때 이 서베이가 출발점이 됩니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+<div class=risk>
+  <p><strong>[Virtual Staining 버킷 오탐]</strong> 12건 중 실제 생의학 관련 논문은 Calcofluor White(doi:10.1038/s41433-026-04661-4)와 Stokes 편광(doi:10.1364/oe.605543) 2건뿐입니다. 나머지는 경제학 Fourier-ARDL, 치과 재료 염색, 아그로포레스트리 등 키워드 오탐입니다. 분류기 오탐 비율이 약 83%로 이 버킷은 수작업 필터가 필수입니다.</p>
+  <p><strong>[Tomography 버킷 임상 노이즈]</strong> 48건 중 OCT 임상 연구(당뇨망막증, 녹내장, 황반변성 등)가 상당 부분을 차지합니다. 계산 광학 관련 핵심 논문은 arXiv 기반 4-5건(3DGS 단층촬영 계열)과 저널 기반 광학 단층촬영 3-4건입니다.</p>
+  <p><strong>[pastweek 배치 특성]</strong> 평소 /new 배치의 3.5배 규모(1,615건)라 관련 신호 밀도가 낮습니다. 메타서피스 20건도 대부분 단일 기능 소자 논문으로, 모두 같은 무게를 줄 필요 없습니다.</p>
+  <p><strong>[FP·렌즈리스 논문 수 적음]</strong> FP 2건, 렌즈리스 1건으로 핵심 버킷 비중이 낮습니다. 모두 저널 논문으로 성숙도는 높지만, 최신 arXiv 트렌드보다는 완성된 방법론 결과물에 해당합니다.</p>
+  <p><strong>[HoloBio 실시간 처리 한계]</strong> 비디오 프레임 레이트 처리를 지원하지만, 복잡한 위상 언래핑이나 3D 복원은 오프라인 모드에서만 가능할 가능성이 있습니다. 우리 DHM 응용의 요구 사항과 정확히 일치하는지 직접 테스트가 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+<div class=skim>
+  <strong>도이: 10.1097/scs.0000000000012996</strong> (PET-CT for Oral Squamous Cell Carcinoma) — 임상 종양학, 계산 광학 무관. 패스.<br>
+  <strong>도이: 10.4103/joco.joco_131_25</strong> (OCT 내황반 정규화 데이터) — 임상 안과, 방법론 기여 없음. 패스.<br>
+  <strong>도이: 10.3390/math14122230</strong> (Fourier-Triadic Navier-Stokes) — 수학 연속체 역학, 'Fourier' 키워드 오탐. 패스.<br>
+  <strong>2606.23455</strong> (MeGAS: Thermomechanical Dynamic GS) — 열역학 장면 편집 흥미롭지만 계산 광학 연결 간접. 관심 있으면 스키밍.<br>
+  <strong>cs.LG 511건 중 GNN·EHR·언어모델 계열</strong> — 방법론 참고 가능하지만 계산 광학 직접 연결 없음.
+</div>
+
+<h2>📄 부록 — 전체 ROI 논문 목록</h2>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.22525" target=_blank>Projection-Volume Fidelity Divergence: Diagnosing and Controlling Optimization Drift in Sparse-View 3DGS Tomography</a></strong> [Tomography · TIER A]<br>
+  문제: 3DGS 희소각 단층촬영에서 투영-볼륨 불일치로 인한 최적화 드리프트 진단 방법 부재 / 방법: PVF-D 지표 정의 및 적응형 제어 / 의미: ODT·FP 역문제 복원 모니터링에 즉시 적용 가능
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1371/journal.pcbi.1013928" target=_blank>HoloBio: A holographic microscopy tool for quantitative biological analysis</a></strong> [Phase/Holography · TIER A]<br>
+  문제: DHM 분석 소프트웨어 접근성·표준화 부재 / 방법: 실시간+오프라인 통합 오픈소스 Python GUI / 의미: 우리 DHM 파이프라인과 직접 통합 또는 비교 가능
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.23078" target=_blank>A Systematic Survey on Event Camera Representation Learning</a></strong> [Light-Field · TIER A]<br>
+  문제: 이벤트 카메라 표현 학습 방법의 분산·비교 틀 부재 / 방법: 체계적 분류 및 공통 평가 프레임워크 / 의미: eess.IV 게재 — 고속 센서 처리 파이프라인 설계 참고
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.ultramic.2026.114411" target=_blank>Guided progressive reconstructive imaging for analytical ptychography</a></strong> [FP · TIER A]<br>
+  문제: 분석 ptychography의 저선량·고처리량·실시간 달성 / 방법: 양자화 기반 progressive 재구성 프레임워크 / 의미: 우리 FP 저선량 프로토콜 직접 비교 대상
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1557/s43577-026-01100-3" target=_blank>ABCs of phase retrieval: Connecting the acronyms of STEM</a></strong> [Phase · TIER B]<br>
+  문제: STEM 위상 복원 알고리즘 약어들의 분산과 상호관계 불명확 / 방법: 통합 수학 틀로 연결 / 의미: FP·ODT 알고리즘 계보 이해에 직접 활용
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3788/ai.2026.10008" target=_blank>Quantum holography with aberration correction and wavefront shaping</a></strong> [Phase · TIER B]<br>
+  문제: 양자 홀로그래피에서 수차 보정 및 파면 성형 / 방법: 변형 가능 거울 + 파면 센서 통합 / 의미: 고정밀 위상 제어 기술의 새 응용 방향
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.601473" target=_blank>High-fidelity lensless polarization imaging with differentiable mask optimization</a></strong> [Lensless · TIER B]<br>
+  문제: 렌즈리스 편광 이미징의 마스크 설계 최적화 / 방법: 미분 가능 마스크 최적화 + 2차 정규화 / 의미: 편광 렌즈리스 현미경 마스크 설계에 직접 적용 가능
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2040-8986/ae80df" target=_blank>Wavelet-denoising model for color Fourier ptychographic microscopy</a></strong> [FP · TIER B]<br>
+  문제: 컬러 FPM에서 채널별 노이즈 특성 차이로 인한 재구성 품질 저하 / 방법: 웨이블릿 도메인 채널 적응형 노이즈 제거 / 의미: 컬러 FPM 복원 품질 개선 실용 방법
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ome.604856" target=_blank>Metasurface-based diffractive neural networks for security-enhanced image processing</a></strong> [Meta-Optics · TIER B]<br>
+  문제: 이미지 처리 보안 강화를 위한 광학 신경망 설계 / 방법: 메타서피스 기반 회절 신경망 구조 / 의미: 계산 광학 소자의 보안 기능 통합 방향
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.605823" target=_blank>Dispersion-free photon-pair generation from nonlinear metasurface</a></strong> [Meta-Optics · TIER B]<br>
+  문제: 비선형 메타서피스에서 분산으로 인한 양자 광자쌍 품질 저하 / 방법: 다중극 평대역 공명 조절로 무분산 조건 달성 / 의미: 양자 이미징과 메타광학의 접점
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3788/col202624.063602" target=_blank>Tunable SEIRA based on GSST metasurface for multiple analyte sensing</a></strong> [Meta-Optics · TIER B]<br>
+  문제: 분광기 없이 여러 분석물을 동시에 감지하는 소형 센서 / 방법: GSST 상변화 메타서피스로 SEIRA 공명 파장 조절 / 의미: 메타서피스 기반 다기능 센서 참고
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.21405" target=_blank>Geometry Calibration in Tomography with a Differentiable Ray-Based Model</a></strong> [Tomography · TIER B]<br>
+  문제: 단층촬영 기하 보정의 미분 불가능 모델 문제 / 방법: 미분 가능 광선 기반 모델로 기하 파라미터 end-to-end 보정 / 의미: ODT 기하 보정 직접 참고 (eess.IV 게재)
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.23212" target=_blank>Temporally Aware Densification for Dynamic 3D Gaussian Splatting</a></strong> [Tomography · TIER B]<br>
+  문제: 동적 3DGS에서 시간 인식 없는 Gaussian 증밀화로 인한 시간적 불일관성 / 방법: 시간 인식 증밀화 전략 / 의미: 동적 광학 현상 3D 복원 방향 참고
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1137/25m1736062" target=_blank>Efficient Bayesian Computation Using Plug-and-Play Priors for Poisson Inverse Problems</a></strong> [Reconstruction · TIER B]<br>
+  문제: 저광자 Poisson 이미징(천문학, 의학, 생물)에서 베이즈 추론 계산 비용 / 방법: PnP Langevin 샘플링으로 불확실도 정량화까지 포함한 복원 / 의미: FP·DHM 저광자 환경 복원 직접 참고 (SIAM 저널)
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3788/col202624.071101" target=_blank>Deconvolution for 3D microscopy without axial scanning via neural network modeling</a></strong> [Reconstruction · TIER B]<br>
+  문제: 축 방향 스캔 없이 3D 현미경 역컨볼루션 / 방법: 신경망 기반 PSF 모델링으로 단층 측정에서 3D 복원 / 의미: 스캔 없는 3D 광학 현미경 방향
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.22378" target=_blank>Following the Flow: Advection-Consistent Modeling for Event-based Small Object Detection</a></strong> [Light-Field · TIER B]<br>
+  문제: 이벤트 스트림에서 소형 물체 검출의 공간적 불일관성 / 방법: 광류로 이벤트 정규화, 병류 일관성 모델링 / 의미: 고속 이미징에서 이벤트 표현 처리 방법
+</div>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41433-026-04661-4" target=_blank>Calcofluor White staining under UV fluorescence microscopy for Demodex folliculorum detection</a></strong> [VS/Pathology · TIER C]<br>
+  문제: Demodex 기생충 고대비 시각화 / 방법: Calcofluor White UV 형광 염색 / 의미: 계산 광학 관련 간접적
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/abs/2606.22525" target=_blank>Projection-Volume Fidelity Divergence (2606.22525)</a></li>
+  <li><a href="https://doi.org/10.1371/journal.pcbi.1013928" target=_blank>HoloBio (doi:10.1371/journal.pcbi.1013928)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.23078" target=_blank>Event Camera Representation Survey (2606.23078)</a></li>
+  <li><a href="https://doi.org/10.1016/j.ultramic.2026.114411" target=_blank>Guided Progressive Ptychography (doi:10.1016/j.ultramic.2026.114411)</a></li>
+  <li><a href="https://doi.org/10.1557/s43577-026-01100-3" target=_blank>ABCs of Phase Retrieval STEM (doi:10.1557/s43577-026-01100-3)</a></li>
+  <li><a href="https://doi.org/10.1364/oe.601473" target=_blank>Lensless Polarization Imaging (doi:10.1364/oe.601473)</a></li>
+  <li><a href="https://doi.org/10.1364/ome.604856" target=_blank>Metasurface DNN Security (doi:10.1364/ome.604856)</a></li>
+  <li><a href="https://doi.org/10.1364/ol.605823" target=_blank>Dispersion-free Photon-pair Metasurface (doi:10.1364/ol.605823)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.21405" target=_blank>Differentiable Ray-Based Tomography Calibration (2606.21405)</a></li>
+  <li><a href="https://doi.org/10.1137/25m1736062" target=_blank>PnP Priors for Poisson Inverse Problems (doi:10.1137/25m1736062)</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+  <p>📚 입력: arXiv /pastweek 2026-06-23 (날짜 섹션 + 초록, cs.LG/cs.CV/cs.AI/eess.IV/eess.SP) · 스캔 1,615건, ROI 272건</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성) — BACKFILL 2026-06-24</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

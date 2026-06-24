@@ -1,0 +1,146 @@
+{
+  "date": "2026-06-24",
+  "thesis": "오늘 가장 큰 신호는 두 방향입니다. 첫째, 홀로그래피가 회절 한계와 고정 인코딩이라는 두 제약을 동시에 깨는 방향으로 수렴하고 있습니다 — 멀티오더 디커플링으로 정보 용량을 늘리고, LC-메타서피스로 전기 재구성 가능성을 확보한 두 논문이 같은 날 등장한 것은 우연이 아닙니다. 둘째, 이벤트 카메라가 단독 센서에서 RGB/RGB-D와의 크로스모달 융합 시스템으로 전환되고 있으며, 지오메트리 기반 독립 운동 분류까지 확장됩니다. FP/렌즈리스 저널 논문들은 저선량·소형화 방향의 성숙을 보여주는 엔지니어링 결산입니다.",
+  "clusters": [
+    {
+      "id": 1,
+      "title": "메타-홀로그래피의 정보 용량 한계 돌파",
+      "hot": true,
+      "papers": [
+        {
+          "id": "doi:10.1021/acsnano.6c04285",
+          "title": "Breaking the Diffraction-Encoding Limit for High-Capacity Meta-Holography via Multiorder Decoupling"
+        },
+        {
+          "id": "doi:10.1002/lpor.71468",
+          "title": "Dynamic Vectorial Holographic Display With Electrically Reconfigurable LC-Integrated Metasurface"
+        }
+      ],
+      "why_important": "기존 홀로그래피는 단일 회절 차수 인코딩으로 정보 용량이 개구면적에 의해 제한되었고, 메타서피스 디스플레이는 제작 후 재구성이 불가능해서 동적 응용이 어려웠습니다. 멀티오더 디커플링은 회절 차수별로 독립 채널을 활용해 단일 메타서피스에서 기존보다 훨씬 높은 정보 밀도를 달성하고, LC-메타서피스 하이브리드는 전기 신호만으로 벡터 홀로그램을 실시간 재구성합니다. 두 방향이 같은 날 등장했다는 것은 고용량·동적 홀로그래피가 단순 개념에서 실제 구현 단계로 이동하고 있음을 나타냅니다.",
+      "confidence": "High",
+      "lab_action": "멀티오더 디커플링 방법론을 FP 다채널 측정 인코딩과 비교 분석; LC-메타서피스 재구성 속도가 우리 동적 위상 영상 요구사항을 충족하는지 검토",
+      "cluster": "메타-홀로그래피의 정보 용량 한계 돌파",
+      "why": "기존 홀로그래피는 단일 회절 차수 인코딩으로 정보 용량이 개구면적에 의해 제한되었고, 메타서피스 디스플레이는 제작 후 재구성이 불가능해서 동적 응용이 어려웠습니다. 멀티오더 디커플링은 회절 차수별로 독립 채널을 활용해 단일 메타서피스에서 기존보다 훨씬 높은 정보 밀도를 달성하고, LC-메타서피스 하이브리드는 전기 신호만으로 벡터 홀로그램을 실시간 재구성합니다. 두 방향이 같은 날 등장했다는 것은 고용량·동적 홀로그래피가 단순 개념에서 실제 구현 단계로 이동하고 있음을 나타냅니다."
+    },
+    {
+      "id": 2,
+      "title": "비선형 메타서피스로 적외선 업컨버전 이미징 — 냉각 센서 없는 IR 카메라 경로",
+      "hot": true,
+      "papers": [
+        {
+          "id": "doi:10.1117/1.apn.5.4.046024",
+          "title": "Nonlinear virtual lens for programmable and multispectral infrared upconversion imaging"
+        },
+        {
+          "id": "doi:10.1021/acssensors.6c02144",
+          "title": "Fingerprint Spectral Inversion-Enabled THz Metasurface for Multidimensional Detection of Trace Antibiotics"
+        }
+      ],
+      "why_important": "적외선 이미징은 좁은 밴드갭 반도체 기반의 비싼 냉각 센서가 필요했는데, 비선형 플랫 광학으로 적외선 포톤을 가시광선으로 업컨버전하면 일반 실리콘 카메라로 IR 이미지를 직접 획득할 수 있습니다. 이 논문은 조절 가능한 대역폭과 초점 기능을 동시에 구현하는 '가상 렌즈' 개념으로 다스펙트럼 IR 이미징을 가능하게 합니다. THz 지문 스펙트럼 반전 논문은 같은 메타서피스 원리로 항생제 흔적을 다차원 검출하는 방향으로, 두 논문 모두 메타서피스가 새로운 스펙트럼 대역을 여는 도구임을 보여줍니다.",
+      "confidence": "High",
+      "lab_action": "비선형 업컨버전 플랫폼의 변환 효율·대역폭 수치를 확인하고, 우리 IR 샘플 이미징 셋업에서 냉각 카메라 대체 가능성 타당성 평가",
+      "cluster": "비선형 메타서피스로 적외선 업컨버전 이미징 — 냉각 센서 없는 IR 카메라 경로",
+      "why": "적외선 이미징은 좁은 밴드갭 반도체 기반의 비싼 냉각 센서가 필요했는데, 비선형 플랫 광학으로 적외선 포톤을 가시광선으로 업컨버전하면 일반 실리콘 카메라로 IR 이미지를 직접 획득할 수 있습니다. 이 논문은 조절 가능한 대역폭과 초점 기능을 동시에 구현하는 '가상 렌즈' 개념으로 다스펙트럼 IR 이미징을 가능하게 합니다. THz 지문 스펙트럼 반전 논문은 같은 메타서피스 원리로 항생제 흔적을 다차원 검출하는 방향으로, 두 논문 모두 메타서피스가 새로운 스펙트럼 대역을 여는 도구임을 보여줍니다."
+    },
+    {
+      "id": 3,
+      "title": "이벤트 카메라의 크로스모달 융합 시스템화",
+      "hot": false,
+      "papers": [
+        {
+          "id": "2606.24248",
+          "title": "M²C-EvDet: Multi-Domain Multi-Order Cross-Modal Knowledge Distillation for Event-based Object Detection"
+        },
+        {
+          "id": "2606.24282",
+          "title": "UniRED: Unified RGB-D Video Frame Interpolation with Event Guidance"
+        },
+        {
+          "id": "2606.24499",
+          "title": "GeoIMO: Geometry-Driven Independent Motion Classification for Event Cameras"
+        }
+      ],
+      "why_important": "이벤트 카메라는 마이크로초 시간 해상도와 넓은 동적 범위라는 고유 장점이 있지만, 단독으로는 시맨틱이 부족해서 인식 성능이 프레임 카메라에 뒤졌습니다. 이 논문들은 각각 멀티도메인 크로스모달 지식 증류(M²C-EvDet), RGB-D 보간에 이벤트를 가이드로 활용(UniRED), 에고모션 구조에서 독립 운동을 지오메트리로 분류(GeoIMO)하는 방식으로 이벤트 카메라를 프레임 카메라와의 융합 시스템으로 확장합니다. 이전 주 이벤트 카메라 표현 체계화(6월 23일)에서 이번 주 실용 융합 응용으로 자연스럽게 이어지는 흐름입니다.",
+      "confidence": "Medium",
+      "lab_action": "GeoIMO의 어노테이션 없는 지오메트리 기반 분류 프레임워크를 FP 또는 렌즈리스 동적 샘플 이미징의 배경-전경 분리에 적용 가능성 검토",
+      "cluster": "이벤트 카메라의 크로스모달 융합 시스템화",
+      "why": "이벤트 카메라는 마이크로초 시간 해상도와 넓은 동적 범위라는 고유 장점이 있지만, 단독으로는 시맨틱이 부족해서 인식 성능이 프레임 카메라에 뒤졌습니다. 이 논문들은 각각 멀티도메인 크로스모달 지식 증류(M²C-EvDet), RGB-D 보간에 이벤트를 가이드로 활용(UniRED), 에고모션 구조에서 독립 운동을 지오메트리로 분류(GeoIMO)하는 방식으로 이벤트 카메라를 프레임 카메라와의 융합 시스템으로 확장합니다. 이전 주 이벤트 카메라 표현 체계화(6월 23일)에서 이번 주 실용 융합 응용으로 자연스럽게 이어지는 흐름입니다."
+    },
+    {
+      "id": 4,
+      "title": "저선량·소형화 방향의 FP·렌즈리스 저널 성숙",
+      "hot": false,
+      "papers": [
+        {
+          "id": "doi:10.1016/j.ultramic.2026.114411",
+          "title": "Guided progressive reconstructive imaging for low-dose analytical ptychography"
+        },
+        {
+          "id": "doi:10.1088/2040-8986/ae80df",
+          "title": "Wavelet-denoising model for color Fourier ptychographic microscopy"
+        },
+        {
+          "id": "doi:10.1364/oe.601473",
+          "title": "High-fidelity lensless polarization imaging enabled by differentiable mask optimization"
+        },
+        {
+          "id": "doi:10.1109/jphot.2026.3706745",
+          "title": "Mask-based Integrated Miniscope for Large-scale Volumetric Imaging"
+        }
+      ],
+      "why_important": "저널 논문 4편이 모두 같은 방향을 가리킵니다 — FP에서는 저선량·실시간 처리(guided progressive ptychography), 색상 채널 노이즈 제거(wavelet FPM), 렌즈리스에서는 편광 정보 고충실도 복원(미분 가능 마스크 최적화), 대규모 볼륨 이미징(마스크 기반 미니스코프)으로 수렴합니다. 이는 FP·렌즈리스 계산 이미징이 아이디어 단계를 넘어 실용화·소형화·고품질화의 엔지니어링 성숙 단계에 있음을 보여주는 집합적 신호입니다.",
+      "confidence": "High",
+      "lab_action": "guided progressive ptychography의 양자화 기반 프레임워크를 우리 저선량 FP 셋업에 직접 적용 실험; wavelet FPM 노이즈 제거 모듈을 현재 색상 FP 파이프라인에 통합 테스트",
+      "cluster": "저선량·소형화 방향의 FP·렌즈리스 저널 성숙",
+      "why": "저널 논문 4편이 모두 같은 방향을 가리킵니다 — FP에서는 저선량·실시간 처리(guided progressive ptychography), 색상 채널 노이즈 제거(wavelet FPM), 렌즈리스에서는 편광 정보 고충실도 복원(미분 가능 마스크 최적화), 대규모 볼륨 이미징(마스크 기반 미니스코프)으로 수렴합니다. 이는 FP·렌즈리스 계산 이미징이 아이디어 단계를 넘어 실용화·소형화·고품질화의 엔지니어링 성숙 단계에 있음을 보여주는 집합적 신호입니다."
+    },
+    {
+      "id": 5,
+      "title": "광 필드·뉴로모픽 센서 데이터의 효율적 처리",
+      "hot": false,
+      "papers": [
+        {
+          "id": "2606.24737",
+          "title": "VSANet: View-aware Sparse Attention Network for Light Field Image Denoising"
+        },
+        {
+          "id": "2606.23761",
+          "title": "Neuromorphic Speech Enhancement with Dual-Branch Spiking Neural Networks"
+        }
+      ],
+      "why_important": "광 필드 이미지나 뉴로모픽 센서 데이터는 모두 고차원 시공간 구조를 갖고 있어 전통적인 밀집 어텐션이나 연속 신경망 처리에서 계산 복잡도가 폭발적으로 늘어납니다. VSANet은 4D 광 필드를 locality-sensitive hashing 기반 희소 어텐션으로 선형 복잡도에서 처리하고, 이중 브랜치 SNN 기반 뉴로모픽 음성 향상은 스파이킹 네트워크의 희소 활성화로 에너지를 줄이면서 비정상 노이즈까지 처리합니다. 두 방향 모두 '고차원·비정형 센서 데이터를 어떻게 효율적으로 다룰 것인가'라는 공통 병목을 서로 다른 방식으로 해결하며, FP 다각도 측정 스택 처리와 이벤트 스트림 처리에 모두 시사점을 줍니다.",
+      "confidence": "Medium",
+      "lab_action": "VSANet의 LSH 기반 희소 어텐션을 FP 다각도 측정 스택의 교차 각도 어텐션 모듈로 이식 가능성 코드 레벨 검토",
+      "cluster": "광 필드·뉴로모픽 센서 데이터의 효율적 처리",
+      "why": "광 필드 이미지나 뉴로모픽 센서 데이터는 모두 고차원 시공간 구조를 갖고 있어 전통적인 밀집 어텐션이나 연속 신경망 처리에서 계산 복잡도가 폭발적으로 늘어납니다. VSANet은 4D 광 필드를 locality-sensitive hashing 기반 희소 어텐션으로 선형 복잡도에서 처리하고, 이중 브랜치 SNN 기반 뉴로모픽 음성 향상은 스파이킹 네트워크의 희소 활성화로 에너지를 줄이면서 비정상 노이즈까지 처리합니다. 두 방향 모두 '고차원·비정형 센서 데이터를 어떻게 효율적으로 다룰 것인가'라는 공통 병목을 서로 다른 방식으로 해결하며, FP 다각도 측정 스택 처리와 이벤트 스트림 처리에 모두 시사점을 줍니다."
+    }
+  ],
+  "must_reads": [
+    {
+      "rank": 1,
+      "tier": "A",
+      "paper_id": "doi:10.1021/acsnano.6c04285",
+      "title": "Breaking the Diffraction-Encoding Limit for High-Capacity Meta-Holography via Multiorder Decoupling",
+      "reason": "홀로그래피 정보 용량의 근본 한계를 멀티오더 디커플링으로 극복 — 위상 복원·FP 다채널 인코딩 설계에 즉시 참조 가능"
+    },
+    {
+      "rank": 2,
+      "tier": "A",
+      "paper_id": "doi:10.1002/lpor.71468",
+      "title": "Dynamic Vectorial Holographic Display With Electrically Reconfigurable LC-Integrated Metasurface",
+      "reason": "전기 재구성 가능 벡터 홀로그래피 실험 시연 — 동적 위상 이미징 응용의 하드웨어 가능성 확인"
+    },
+    {
+      "rank": 3,
+      "tier": "A",
+      "paper_id": "doi:10.1117/1.apn.5.4.046024",
+      "title": "Nonlinear virtual lens for programmable and multispectral infrared upconversion imaging",
+      "reason": "냉각 센서 없는 IR 이미징 경로 제시 — 다스펙트럼 생물학적 이미징 응용 가능성"
+    }
+  ],
+  "risks": [
+    "Virtual Staining 버킷 25건 중 실제 광학 관련 논문은 2건 수준 (Calcofluor White UV형광, 나노플라스틱 편광계) — 키워드 매칭 위양성 다수. 이 수치를 그대로 해석하지 말 것.",
+    "Tomography/3D Imaging 60건 중 절반 이상이 자율주행 BEV, 3DGS SLAM, 로봇 디지털 트윈 등 계산 광학 무관 논문. 실제 의료·광학 CT/복원 관련은 10건 내외.",
+    "이벤트 카메라 논문들은 자동차 도로 주행 시나리오 기반. 현미경·렌즈리스 셋업으로 전이하려면 시간 해상도와 이벤트 발생 밀도 차이를 별도 검토 필요."
+  ]
+}
