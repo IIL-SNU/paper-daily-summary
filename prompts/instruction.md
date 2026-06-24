@@ -78,7 +78,7 @@ PY
 - `post_date > /new listing_date`이면 arXiv가 아직 올라오지 않은 것이므로 **arXiv 부분은 발행하지 않는다**(저널 처리는 아래 "저널 독립" 참조).
 - 추적 카테고리들의 listing date가 서로 다르면, 가장 많은 카테고리가 가리키는 날짜를 `listing_date`로 삼는다. 절반 이상이 어긋나면 arXiv는 발행하지 않는다. (cs.* 와 eess.* 는 갱신 시점이 다를 수 있다.)
 
-**저널 독립 (arXiv 게이트와 무관).** Crossref·OpenAlex 저널 수집은 arXiv `/new` 유무와 **무관하게 매 실행 수행**한다 — 저널은 Crossref `created`/OpenAlex `publication_date` 기준이라 arXiv listing과 별개다. arXiv가 해당 날짜에 없으면(`post_date > listing_date`), 위 게이트는 arXiv 섹션만 막고, **저널만으로 journal-only daily를 발행**한다: `source_mode=journal-only`, `source_listing_date=post_date`, arXiv 섹션은 "해당일 arXiv 미발행"으로 표기. 단 저널 선택분이 클러스터(≥3개, 각 ≥2편)를 구성하기에 부족하면 no-op하고, 다음 실행에서 더 넓은 `--days` 윈도우로 재수집한다.
+**저널 독립 (arXiv 게이트와 무관).** Crossref·OpenAlex 저널 수집은 arXiv `/new` 유무와 **무관하게 매 실행 수행**한다 — 저널은 Crossref `created`/OpenAlex `publication_date` 기준이라 arXiv listing과 별개다. arXiv가 해당 날짜에 없으면(`post_date > listing_date`), 위 게이트는 arXiv 섹션만 막고, **저널만으로 journal-only daily를 발행**한다: `source_mode=journal-only`, `source_listing_date=post_date`, arXiv 섹션은 "해당일 arXiv 미발행"으로 표기. 단 저널 선택분이 클러스터(≥3개, 각 ≥2편)를 구성하기에 부족하면 no-op하고, 다음 실행에서 더 넓은 `--days` 윈도우로 재수집한다. **journal-only는 잠정 상태다** — 이후 arXiv `/pastweek`에 해당 날짜가 생기면 Calendar Audit이 Backfill로 **덮어써 업그레이드**한다([3]·[4.1]). 따라서 `posts/D.html` 존재만으로 '완료' 판정하지 말고, `source_mode=journal-only`면 미완성으로 취급한다.
 
 `trends/YYYY-MM-DD.json`에는 아래 필드를 반드시 남긴다.
 
@@ -116,10 +116,11 @@ git pull origin main
 절차:
 1. 최근 발행된 daily 날짜를 찾는다.
 2. `execution_date` 기준으로 평일 daily 중 빠진 날짜가 있는지 확인한다.
-3. 빠진 평일 daily가 있으면 오래된 날짜부터 **Backfill mode**로 먼저 채운다.
-4. 월요일 daily 실행이면 지난주 평일 daily(특히 금요일)가 모두 존재하는지 확인하고, 빠졌으면 Backfill로 채운다.
-5. **weekly 자체는 auto/daily 실행에서 만들지 않는다** — 별도의 월요일 오전 weekly 실행(`mode=weekly`)이 담당한다. auto/daily 실행은 weekly가 쓸 지난주 daily를 완비시키는 역할까지만 한다.
-6. 토·일요일은 기본 skip(arXiv 미발행)이지만, 누락 daily가 있거나 사용자가 명시적으로 요청하면 Backfill mode를 수행한다.
+3. **journal-only 업그레이드**: 기존 daily 중 `trends.source_mode == "journal-only"`인 날짜는 *arXiv 미반영 미완성본*이다. arXiv `/pastweek`에 그 날짜 섹션이 생겼으면 **Backfill mode로 덮어써서** arXiv+저널 완성본(`source_mode=pastweek-date-section`)으로 업그레이드한다. (아직 /pastweek에 없으면 그대로 둔다.)
+4. 빠진 평일 daily가 있으면 오래된 날짜부터 **Backfill mode**로 먼저 채운다.
+5. 월요일 daily 실행이면 지난주 평일 daily(특히 금요일)가 모두 존재하는지 확인하고, 빠졌으면 Backfill로 채운다.
+6. **weekly 자체는 auto/daily 실행에서 만들지 않는다** — 별도의 월요일 오전 weekly 실행(`mode=weekly`)이 담당한다. auto/daily 실행은 weekly가 쓸 지난주 daily를 완비시키는 역할까지만 한다.
+7. 토·일요일은 기본 skip(arXiv 미발행)이지만, 누락 daily가 있거나 사용자가 명시적으로 요청하면 Backfill mode를 수행한다.
 
 ---
 
@@ -130,11 +131,12 @@ git pull origin main
 ### 4.1 Backfill mode
 조건:
 - `posts/<missing-weekday>.html` 또는 해당 날짜의 `trends/benchmarks/insights`가 없음.
+- **기존 daily가 `source_mode=journal-only`(arXiv 미반영)인데 arXiv `/pastweek`에 해당 날짜가 생김** → 업그레이드 대상(존재해도 미완성으로 취급).
 - 사용자가 "빠진 날짜 채워", "금요일 했는지 확인", "누락분 복구"라고 지시.
 - `/new`의 `listing_date`가 발행하려는 `post_date`보다 뒤로 넘어갔음.
 
 동작:
-- 빠진 날짜를 오래된 순서대로 backfill source로 생성한다.
+- 빠진 날짜를 오래된 순서대로 backfill source로 생성한다. **journal-only 업그레이드면 기존 HTML/JSON을 덮어쓴다**(저널 내용은 유지·병합하되 arXiv 섹션을 추가, 완성 후 `source_mode`는 `pastweek-date-section`).
 - `/new`를 다시 쓰지 않는다. 반드시 `/pastweek`에서 해당 날짜 섹션만 추출한다.
 - 각 날짜마다 `posts`, `trends`, `benchmarks`, `insights`, `feed.xml`까지 갱신한다.
 - 여러 날짜를 복구한 뒤 마지막에 한 번 commit/push 가능.
