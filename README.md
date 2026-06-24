@@ -30,7 +30,7 @@ GitHub Actions가 정해진 시간에 스스로 실행하므로 **상시 켜둘 
 
 - **수집**: arXiv `/new`·`/pastweek` 목록을 Python 표준 라이브러리만으로 직접 파싱합니다.
   (LLM에게 논문 ID를 묻지 않아 환각으로 인한 잘못된 ID를 원천 차단합니다.)
-  추가로 Crossref REST API로 저널 논문도 같은 스키마로 가져올 수 있습니다.
+  추가로 Crossref REST API로 저널 논문도 같은 스키마로 가져옵니다. 저널 수집은 **arXiv 발행 여부와 무관**하게 동작하며(arXiv 공백일엔 `journal-only` 발행), OpenAlex로 인용수·concepts·초록을 **보강(enrich)**합니다.
 - **분류**: 키워드 매칭으로 논문을 관심 버킷(ROI)에 자동 배정합니다. (LLM·API 키 불필요)
 - **요약**: Claude Code 에이전트가 분류 결과를 읽고, `prompts/`의 instruction 런북을 따라
   자연어 브리핑 HTML과 구조화 JSON(trends/insights/benchmarks/weekly)을 작성합니다.
@@ -89,6 +89,7 @@ GitHub Actions가 정해진 시간에 스스로 실행하므로 **상시 켜둘 
 |----------|------|
 | `fetch_arxiv.py` | arXiv `/new`·`/pastweek` 목록 페이지를 stdlib로 파싱. `new`는 초록 포함, `pastweek`는 미포함. 출력은 JSON 배열 |
 | `fetch_crossref.py` | Crossref REST API로 최근 저널 논문 수집. `--query`(키워드)·`--issn`(특정 저널) 모드 지원. `fetch_arxiv.py`와 **동일 스키마** + 저널 필드(`source`,`doi`,`journal`,`url`,`published`). `classify.py`가 `out/journal_new.json`을 자동으로 함께 분류(저널은 `JNL` badge) |
+| `fetch_openalex.py` | OpenAlex 보강 레이어(무키). `enrich`: Crossref 저널에 `cited_by_count`·`concepts`를 붙이고 빠진 초록(~50%)을 백필. `works`: 저널 보충 소스 수집(`source=openalex`, `OAX` badge, `out/openalex_new.json`). created_date 필터 대신 `publication_date` 사용 |
 | `fetch_arxiv_pastweek_date.py` | 과거 특정 날짜를 `/pastweek`에서 추출(backfill 전용) |
 
 **분류(classify)**

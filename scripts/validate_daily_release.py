@@ -91,7 +91,7 @@ def validate(date: str) -> list[str]:
 
     require(trends.get("date") == date, f"trends.date mismatch: {trends.get('date')} != {date}")
     require(trends.get("source_listing_date") == date, "trends.source_listing_date must match date")
-    require(trends.get("source_mode") in {"new", "pastweek-date-section"}, "trends.source_mode must be new or pastweek-date-section")
+    require(trends.get("source_mode") in {"new", "pastweek-date-section", "journal-only"}, "trends.source_mode must be new, pastweek-date-section, or journal-only")
     counts = trends.get("daily_new_counts") or {}
     require(counts.get("scope") == "new+cross; replacements excluded", "daily_new_counts.scope must exclude replacements")
     require(isinstance(counts.get("by_cat"), dict) and counts["by_cat"], "daily_new_counts.by_cat must be a non-empty dict")

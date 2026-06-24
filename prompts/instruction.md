@@ -75,15 +75,17 @@ PY
 - `post_date == /new listing_date`이면 `/new`를 사용한다.
 - `post_date < /new listing_date`이면 `/new` 사용 금지. 반드시 `/pastweek`의 해당 날짜 h3 섹션만 추출하는 backfill parser를 사용한다.
 - `/pastweek`에 해당 날짜 섹션이 없으면 발행하지 말고 사용자에게 “원본 listing을 repo에 저장하지 않아 복구 불가”라고 보고한다.
-- `post_date > /new listing_date`이면 arXiv가 아직 올라오지 않은 것이므로 발행하지 않는다.
-- 추적 카테고리들의 listing date가 서로 다르면, 가장 많은 카테고리가 가리키는 날짜를 `listing_date`로 삼는다. 절반 이상이 어긋나면 발행하지 않는다. (cs.* 와 eess.* 는 갱신 시점이 다를 수 있다.)
+- `post_date > /new listing_date`이면 arXiv가 아직 올라오지 않은 것이므로 **arXiv 부분은 발행하지 않는다**(저널 처리는 아래 "저널 독립" 참조).
+- 추적 카테고리들의 listing date가 서로 다르면, 가장 많은 카테고리가 가리키는 날짜를 `listing_date`로 삼는다. 절반 이상이 어긋나면 arXiv는 발행하지 않는다. (cs.* 와 eess.* 는 갱신 시점이 다를 수 있다.)
+
+**저널 독립 (arXiv 게이트와 무관).** Crossref·OpenAlex 저널 수집은 arXiv `/new` 유무와 **무관하게 매 실행 수행**한다 — 저널은 Crossref `created`/OpenAlex `publication_date` 기준이라 arXiv listing과 별개다. arXiv가 해당 날짜에 없으면(`post_date > listing_date`), 위 게이트는 arXiv 섹션만 막고, **저널만으로 journal-only daily를 발행**한다: `source_mode=journal-only`, `source_listing_date=post_date`, arXiv 섹션은 "해당일 arXiv 미발행"으로 표기. 단 저널 선택분이 클러스터(≥3개, 각 ≥2편)를 구성하기에 부족하면 no-op하고, 다음 실행에서 더 넓은 `--days` 윈도우로 재수집한다.
 
 `trends/YYYY-MM-DD.json`에는 아래 필드를 반드시 남긴다.
 
 ```json
 {
   "source_listing_date": "YYYY-MM-DD",
-  "source_mode": "new|pastweek-date-section",
+  "source_mode": "new|pastweek-date-section|journal-only",
   "daily_new_counts": {
     "by_cat": {"cs.LG": 0, "cs.CV": 0, "cs.AI": 0, "eess.IV": 0, "eess.SP": 0},
     "scope": "new+cross; replacements excluded"
@@ -91,7 +93,7 @@ PY
 }
 ```
 
-`source_listing_date != date`이면 release 실패다. 단, `source_mode=pastweek-date-section`이고 `source_listing_date == date`이면 backfill로 허용한다.
+`source_listing_date != date`이면 release 실패다. 단, `source_mode=pastweek-date-section`이고 `source_listing_date == date`이면 backfill로 허용한다. `source_mode=journal-only`이면 arXiv listing과 무관하게 `source_listing_date=post_date`로 두고 허용한다(저널은 별도 날짜 기준, arXiv 카운트는 0).
 
 ---
 
@@ -184,6 +186,7 @@ done
 - 오늘 발표: `https://arxiv.org/list/<cat>/new` (카테고리별)
 - 최근 일주일: `https://arxiv.org/list/<cat>/pastweek?skip=0&show=2000` (카테고리별)
 - 저널(선택): Crossref REST API — `scripts/fetch_crossref.py` (arXiv와 동일 스키마)
+- 보강(선택): OpenAlex — `scripts/fetch_openalex.py`. Crossref 저널을 **인용수·concepts·초록**으로 enrich하고, 필요 시 저널 보충 소스(works)도 수집(`source=openalex`, `OAX` 배지)
 
 실행:
 
@@ -201,7 +204,7 @@ for cat in cs.LG cs.CV cs.AI eess.IV eess.SP; do
   python scripts/fetch_arxiv.py pastweek "$cat" > "out/${cat}_pastweek.json"
 done
 
-# 저널(선택) — 랩 키워드로 Crossref 수집 (없으면 건너뜀)
+# 저널 — 랩 키워드로 Crossref 수집. **arXiv /new 유무와 무관하게 항상 수행**한다(저널은 독립).
 python scripts/fetch_crossref.py \
   --query "Fourier ptychography" \
   --query "lensless imaging" \
@@ -212,7 +215,16 @@ python scripts/fetch_crossref.py \
   --query "light field microscopy" \
   --query "optical diffraction tomography" \
   --query "virtual staining" \
-  --days 1 > out/journal_new.json   # daily는 1일(전날 등록분); 주간/backfill은 더 넓게
+  --days 1 > out/journal_new.json   # daily는 1일(전날 등록분); 주간/backfill/arXiv 공백일은 더 넓게
+
+# OpenAlex 보강(enrich) — Crossref 저널에 인용수·concepts를 붙이고, 빠진 초록(~50%)을 백필.
+python scripts/fetch_openalex.py enrich out/journal_new.json > out/journal_enriched.json \
+  && mv out/journal_enriched.json out/journal_new.json
+
+# (선택) OpenAlex 저널 보충 소스 — Crossref가 놓친 저널을 더 모은다(같은 DOI는 classify가 dedup).
+python scripts/fetch_openalex.py works \
+  --query "computational imaging" --query "Fourier ptychography" --query "metasurface optics" \
+  --days 1 > out/openalex_new.json || true
 
 python scripts/classify.py > out/classified.json
 ```

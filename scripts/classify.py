@@ -25,6 +25,8 @@ CAT_BADGE = {
     "eess.SP": "SP",
 }
 JOURNAL_FILE = "out/journal_new.json"
+# Optional OpenAlex supplementary source (fetch_openalex.py works mode).
+OPENALEX_FILE = "out/openalex_new.json"
 
 # Lab ROI buckets for a computational optical imaging group (Imaging Intelligence Lab).
 # Derived from the group's publications + tracked literature: Fourier ptychography,
@@ -96,6 +98,8 @@ def primary_badge(paper) -> str:
     """Short source label: a tracked arXiv category, JNL for journals, else '?'."""
     if paper.get("source") == "crossref":
         return "JNL"
+    if paper.get("source") == "openalex":
+        return "OAX"
     primary = paper.get("primary_cat", "")
     if primary in CAT_BADGE:
         return CAT_BADGE[primary]
@@ -120,8 +124,9 @@ def load_sources():
             papers.extend(json.load(open(path, encoding="utf-8")))
         else:
             print(f"[classify] note: {path} missing, skipping", file=sys.stderr)
-    if os.path.exists(JOURNAL_FILE):
-        papers.extend(json.load(open(JOURNAL_FILE, encoding="utf-8")))
+    for path in (JOURNAL_FILE, OPENALEX_FILE):
+        if os.path.exists(path):
+            papers.extend(json.load(open(path, encoding="utf-8")))
     return papers
 
 
