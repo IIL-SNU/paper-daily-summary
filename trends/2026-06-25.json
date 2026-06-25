@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-25",
+  "source_listing_date": "2026-06-25",
+  "source_mode": "journal-only",
+  "note": "cs.LG showed 2026-06-24 listing (not yet updated); cs.CV and cs.AI showed 2026-06-25 headers but 0 new submissions. Only eess.IV (10 papers) and eess.SP (1 cross) published for 2026-06-25. Majority content from Crossref/OpenAlex journals. Transitional daily: will be upgraded when cs.* appear in /pastweek.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 10,
+      "eess.SP": 1
+    },
+    "scope": "new+cross; replacements excluded"
+  },
+  "totals": {
+    "total_scanned": 440,
+    "selected": 114
+  }
+}
