@@ -9,6 +9,10 @@ on:
     # Weekly retrospective — Monday 10:00 KST (01:00 UTC). Standalone run that
     # generates last week's weekly (mode=weekly) and delivers its Slack inline.
     - cron: "0 1 * * 1"
+    # Journal-only upgrade poll — every 2h. A cheap pre-check (no Claude) looks for a
+    # daily published as journal-only whose date has since appeared in arXiv /pastweek;
+    # only then does it run the agent in backfill mode to upgrade it. Otherwise no-op.
+    - cron: "0 */2 * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -51,9 +55,6 @@ jobs:
       SITE_URL: https://iilab.io/paper-daily-summary
       SLACK_CHANNEL: "#paper-daily-summary"
       SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}   # GitHub secret으로 주입(예: C0XXXXXXX). 비우면 SLACK_CHANNEL 이름 사용
-      # Monday 01:00 UTC cron -> weekly; everything else -> auto. Manual input wins.
-      MODE: ${{ github.event.inputs.mode || (github.event.schedule == '0 1 * * 1' && 'weekly' || 'auto') }}
-      TARGET_DATE: ${{ github.event.inputs.target_date || '' }}
       SEND_SLACK: ${{ github.event.inputs.send_slack || 'true' }}
       # Authenticate Claude Code with a subscription OAuth token (claude setup-token)
       # instead of a metered API key.
@@ -73,12 +74,87 @@ jobs:
         with:
           python-version: "3.11"
 
+      # Decide whether to run the agent at all, and in which mode, BEFORE installing
+      # Claude. The every-2h poll only proceeds when a journal-only daily can be
+      # upgraded; daily/weekly/manual always proceed.
+      - name: Resolve run plan
+        id: plan
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          SCHEDULE: ${{ github.event.schedule }}
+          IN_MODE: ${{ github.event.inputs.mode }}
+          IN_DATE: ${{ github.event.inputs.target_date }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, os, glob, re, datetime, urllib.request
+
+          event = os.environ.get("EVENT_NAME", "")
+          sched = os.environ.get("SCHEDULE", "")
+          in_mode = os.environ.get("IN_MODE", "") or ""
+          in_date = os.environ.get("IN_DATE", "") or ""
+
+          def emit(act, mode="auto", target=""):
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"act={'true' if act else 'false'}\n")
+                  f.write(f"mode={mode}\n")
+                  f.write(f"target_date={target}\n")
+              print(f"plan: act={act} mode={mode} target_date={target!r}")
+              raise SystemExit
+
+          # Manual dispatch and the daily/weekly schedules always run.
+          if event == "workflow_dispatch":
+              emit(True, in_mode or "auto", in_date)
+          if sched == "0 1 * * 1":
+              emit(True, "weekly")
+          if sched == "0 2 * * *":
+              emit(True, "auto")
+
+          # Otherwise this is the every-2h poll: act only to UPGRADE a journal-only
+          # daily once arXiv's data for that date has appeared in /pastweek.
+          pending = []
+          for p in sorted(glob.glob("trends/*.json")):
+              try:
+                  t = json.load(open(p, encoding="utf-8"))
+              except Exception:
+                  continue
+              if t.get("source_mode") == "journal-only":
+                  pending.append(t.get("date") or os.path.basename(p)[:-5])
+          if not pending:
+              print("poll: no journal-only dailies pending")
+              emit(False)
+
+          try:
+              req = urllib.request.Request(
+                  "https://arxiv.org/list/cs.CV/pastweek?skip=0&show=2000",
+                  headers={"User-Agent": "paper-daily-summary upgrade-poll"})
+              html = urllib.request.urlopen(req, timeout=60).read().decode("utf-8", "replace")
+          except Exception as e:
+              print("poll: pastweek fetch failed:", e)
+              emit(False)
+
+          avail = set()
+          for d, mon, yr in re.findall(r"[A-Z][a-z]{2}, (\d{1,2}) ([A-Z][a-z]{2}) (\d{4})", html):
+              try:
+                  avail.add(datetime.datetime.strptime(f"{d} {mon} {yr}", "%d %b %Y").strftime("%Y-%m-%d"))
+              except ValueError:
+                  pass
+          upgradable = sorted(set(pending) & avail)
+          print(f"poll: pending={sorted(set(pending))} upgradable={upgradable}")
+          if upgradable:
+              emit(True, "backfill", upgradable[0])  # oldest first
+          emit(False)
+          PY
+
       - name: Set up Node.js
+        if: ${{ steps.plan.outputs.act == 'true' }}
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
       - name: Verify required secrets
+        if: ${{ steps.plan.outputs.act == 'true' }}
         shell: bash
         run: |
           set -euo pipefail
@@ -92,6 +168,7 @@ jobs:
           fi
 
       - name: Install Claude Code CLI
+        if: ${{ steps.plan.outputs.act == 'true' }}
         shell: bash
         run: |
           set -euo pipefail
@@ -99,7 +176,11 @@ jobs:
           claude --version
 
       - name: Prepare run prompt
+        if: ${{ steps.plan.outputs.act == 'true' }}
         shell: bash
+        env:
+          MODE: ${{ steps.plan.outputs.mode }}
+          TARGET_DATE: ${{ steps.plan.outputs.target_date }}
         run: |
           set -euo pipefail
           mkdir -p out
@@ -143,6 +224,7 @@ jobs:
           PY
 
       - name: Run Claude Code release agent
+        if: ${{ steps.plan.outputs.act == 'true' }}
         shell: bash
         run: |
           set -euo pipefail
@@ -151,7 +233,10 @@ jobs:
           claude --dangerously-skip-permissions -p "$(cat out/ci_prompt.md)"
 
       - name: Finalize commit and push if Claude left validated changes
+        if: ${{ steps.plan.outputs.act == 'true' }}
         shell: bash
+        env:
+          TARGET_DATE: ${{ steps.plan.outputs.target_date }}
         run: |
           set -euo pipefail
           git config user.name "arxiv-daily-bot"
@@ -180,7 +265,7 @@ jobs:
           fi
 
       - name: Send Slack notification (bot)
-        if: ${{ always() }}
+        if: ${{ always() && steps.plan.outputs.act == 'true' }}
         shell: bash
         run: |
           set -euo pipefail
@@ -239,7 +324,7 @@ jobs:
           fi
 
       - name: Upload run artifacts
-        if: ${{ always() }}
+        if: ${{ always() && steps.plan.outputs.act == 'true' }}
         uses: actions/upload-artifact@v4
         with:
           name: paper-daily-summary-run-${{ github.run_id }}

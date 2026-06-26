@@ -78,7 +78,7 @@ PY
 - `post_date > /new listing_date`이면 arXiv가 아직 올라오지 않은 것이므로 **arXiv 부분은 발행하지 않는다**(저널 처리는 아래 "저널 독립" 참조).
 - 추적 카테고리들의 listing date가 서로 다르면, 가장 많은 카테고리가 가리키는 날짜를 `listing_date`로 삼는다. 절반 이상이 어긋나면 arXiv는 발행하지 않는다. (cs.* 와 eess.* 는 갱신 시점이 다를 수 있다.)
 
-**저널 독립 (arXiv 게이트와 무관).** Crossref·OpenAlex 저널 수집은 arXiv `/new` 유무와 **무관하게 매 실행 수행**한다 — 저널은 Crossref `created`/OpenAlex `publication_date` 기준이라 arXiv listing과 별개다. arXiv가 해당 날짜에 없으면(`post_date > listing_date`), 위 게이트는 arXiv 섹션만 막고, **저널만으로 journal-only daily를 발행**한다: `source_mode=journal-only`, `source_listing_date=post_date`, arXiv 섹션은 "해당일 arXiv 미발행"으로 표기. 단 저널 선택분이 클러스터(≥3개, 각 ≥2편)를 구성하기에 부족하면 no-op하고, 다음 실행에서 더 넓은 `--days` 윈도우로 재수집한다. **journal-only는 잠정 상태다** — 이후 arXiv `/pastweek`에 해당 날짜가 생기면 Calendar Audit이 Backfill로 **덮어써 업그레이드**한다([3]·[4.1]). 따라서 `posts/D.html` 존재만으로 '완료' 판정하지 말고, `source_mode=journal-only`면 미완성으로 취급한다.
+**저널 독립 (arXiv 게이트와 무관).** Crossref·OpenAlex 저널 수집은 arXiv `/new` 유무와 **무관하게 매 실행 수행**한다 — 저널은 Crossref `created`/OpenAlex `publication_date` 기준이라 arXiv listing과 별개다. arXiv가 해당 날짜에 없으면(`post_date > listing_date`), 위 게이트는 arXiv 섹션만 막고, **저널만으로 journal-only daily를 발행**한다: `source_mode=journal-only`, `source_listing_date=post_date`, arXiv 섹션은 "해당일 arXiv 미발행"으로 표기. 단 저널 선택분이 클러스터(≥3개, 각 ≥2편)를 구성하기에 부족하면 no-op하고, 다음 실행에서 더 넓은 `--days` 윈도우로 재수집한다. **journal-only는 잠정 상태다** — 이후 arXiv `/pastweek`에 해당 날짜가 생기면 Calendar Audit이 Backfill로 **덮어써 업그레이드**한다([3]·[4.1]). 따라서 `posts/D.html` 존재만으로 '완료' 판정하지 말고, `source_mode=journal-only`면 미완성으로 취급한다. (워크플로는 다음 정기 실행까지 기다리지 않고 **2시간마다 가볍게 폴**한다 — journal-only 날짜의 arXiv가 `/pastweek`에 뜨는 즉시 `mode=backfill`로 그 날짜만 업그레이드 트리거하고, 그 외엔 에이전트를 돌리지 않는다.)
 
 `trends/YYYY-MM-DD.json`에는 아래 필드를 반드시 남긴다.
 
