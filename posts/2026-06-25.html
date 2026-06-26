@@ -79,25 +79,24 @@ html[data-theme=light] body{background-color:#fff}
 
 <div class=meta>
   <div>📅 발행일: 2026-06-25 (목요일)</div>
-  <div>📚 소스: journal-only + eess.IV/SP (잠정본 — cs.LG·cs.CV·cs.AI 미갱신, /pastweek 등장 시 업그레이드)</div>
-  <div>📊 카테고리: eess.IV (10편) · eess.SP (1편) + Crossref/OpenAlex 저널 (429편)</div>
-  <div>🔢 스캔: 440건 · ROI 배정 114건</div>
-  <div>⚠️ cs.LG·cs.CV·cs.AI는 2026-06-25 목록 미갱신(cs.LG는 여전히 2026-06-24 listing, cs.CV·cs.AI는 0건). 이 리포트는 저널 중심 잠정본입니다.</div>
+  <div>📚 소스: arXiv /pastweek 2026-06-25 섹션 + Crossref/OpenAlex 저널 (업그레이드 완료)</div>
+  <div>📊 카테고리: cs.LG(186) / cs.CV(125) / cs.AI(182) / eess.IV(10) / eess.SP(18)</div>
+  <div>🔢 스캔: 855건 (arXiv 521 + 저널 334) · ROI 배정 183건</div>
+  <div>🔄 source_mode: pastweek-date-section (upgraded from journal-only)</div>
 </div>
 
 <h2>📌 오늘의 결론</h2>
 <blockquote>
-오늘은 주요 cs.* 카테고리가 아직 2026-06-25 목록을 올리지 않아 저널 중심 브리핑입니다. 저널에서 두 가지 신호가 눈에 띕니다. 첫째, <strong>나노포토닉 소자 연구가 '실험실에서 작동하는 것' 단계에서 '제품 출시를 위한 자격 인증'이라는 다음 단계로 이동</strong>하고 있습니다. 시뮬레이션 비용을 줄이는 차원 확장 역설계와, 요구사항·모델·제조·신뢰성 검증까지 아우르는 인력 역량 지도 논문이 같은 날 나왔습니다. 둘째, arXiv eess.IV에서 <strong>형광 현미경 RL deconvolution에 diffusion prior를 직접 주입</strong>하는 방법이 등장했고, 같은 날 IEEE TCI에서 PnP MMSE 수렴 이론도 나와서 역문제 방법론이 이론과 응용 두 방향에서 동시에 전진했습니다. 산란 매질 이미징에서는 '산란을 보정한다'와 '산란을 활용한다'는 두 전략이 같은 날 나란히 저널에 게재됐습니다.
+cs.LG·cs.CV·cs.AI arXiv 데이터가 /pastweek 2026-06-25 섹션에서 추가되면서 완전판으로 업그레이드됐습니다. 새로 추가된 arXiv 신호를 포함해 오늘의 핵심은 세 가지입니다. 첫째, <strong>나노포토닉 역설계가 '시뮬레이션 효율화'에서 'EUV 마스크 역리소그래피'까지 실제 제조 프로세스로 연결되는 흐름</strong>이 뚜렷합니다. 차원 확장 신경망 역설계(2606.25226)에 이어, 도파로법과 물리 정보 딥러닝을 결합한 EUV 역리소그래피(2606.25753)가 같은 날 나와서 설계~제조 전 파이프라인 논의가 하루에 모였습니다. 둘째, <strong>역문제 방법론에서 생성 모델이 외부 정규화가 아닌 반복 알고리즘 내부 구성요소로 진입</strong>하고 있습니다 — RL+Diffusion Prior(2606.25924)가 이 패턴을 처음으로 형광 현미경에 보여주고, PINNs의 파라미터 중독 취약성(2606.25151)은 물리 기반 방법에 무조건 의존해선 안 된다는 경고를 동시에 줍니다. 셋째, <strong>딥러닝 기반 파면 재구성(2606.25855)이 위상 다양성 방식에 신경망을 통합</strong>해 파면 센서 없는 AO의 속도 병목을 해결하는 새 경로를 제시합니다. 저널에서는 scattering-enhanced tomography와 PnP MMSE 수렴 이론이 역문제의 이론·응용 양쪽을 강화합니다.
 </blockquote>
 
 <h2>🔭 주간 동향</h2>
-<p>목요일 에너지는 저널 중심입니다. cs.LG·cs.CV·cs.AI가 2026-06-25 목록을 아직 갱신하지 않아 eess.IV(10편)·eess.SP(1편)와 광학·의료 저널(429편)이 이번 리포트의 주요 입력입니다. 이번 주(6월 22일~25일) 저널 흐름을 돌아보면 <strong>메타서피스·나노포토닉스가 응용 고도화</strong> 방향으로 움직입니다. 월요일 weekly 회고에서는 3DGS 분화와 역문제 다층 구체화가 주요 동향이었고, 화요일·수요일 arXiv에서는 홀로그래피 용량 돌파와 이벤트 카메라 크로스모달 융합이 큰 흐름이었습니다. 오늘 저널에서는 그 흐름의 하드웨어 단 — 메타서피스 소자가 어떻게 실제 제품이 되는지 — 이 나타나고 있습니다.</p>
-<p>arXiv eess 측에서 눈에 띄는 신호는 <strong>역문제 방법론의 생성 모델 통합</strong>입니다. RL deconvolution에 diffusion prior를 주입하는 논문은 형광 현미경 복원의 실용 경로를 직접 보여줍니다. 같은 날 PnP MMSE 수렴 속도 이론이 나온 것은 방법론이 이론과 응용 양쪽에서 동시에 성숙하고 있다는 신호입니다. 의료 AI 측에서는 데이터 누수 문제를 체계적으로 분석한 벤치마크 논문 두 편이 나와서 평가 파이프라인 자체의 신뢰성을 묻기 시작했습니다.</p>
-<p>다음 실행에서 cs.LG·cs.CV·cs.AI가 /pastweek에 2026-06-25 섹션을 게재하면 이 리포트는 arXiv 포함 완전판으로 업그레이드됩니다.</p>
+<p>/pastweek 데이터가 추가되면서 오늘 총 855건(arXiv 521 + 저널 334)을 검토했습니다. cs.LG(186)·cs.AI(182)·cs.CV(125)가 주를 이루고, eess.IV(10)·eess.SP(18)가 광학 전문 채널입니다. 이번 주(6월 23일~25일) 흐름을 돌아보면, <strong>역문제 방법론의 생성 모델 통합이 빠르게 가속</strong>되고 있습니다. 수요일(6/24)에는 홀로그래피 용량 돌파(멀티오더 디커플링)와 이벤트 카메라 크로스모달 융합이 중심이었고, 목요일(6/25)에는 그 흐름이 더 구체화됩니다 — 역문제에서 diffusion이 내부로 들어오고, 나노포토닉이 설계에서 제조까지 연결됩니다.</p>
+<p>새 arXiv 신호에서 주목할 점은 <strong>EUV 역리소그래피와 위상 다양성 파면 재구성이 둘 다 '물리 + 딥러닝 하이브리드'라는 공통 구조</strong>를 갖는다는 것입니다. 순수 데이터 기반도, 순수 물리 기반도 아닌 중간 경로가 이 날 두 논문에서 동시에 확인됩니다. 이 흐름은 계산 이미징 전반으로 빠르게 확산될 것으로 보입니다.</p>
 
 <h2>🧭 어제와 달라진 점</h2>
-<p>어제(2026-06-24) 배치에서는 arXiv 전체(804건)를 기반으로 <strong>메타-홀로그래피 정보 용량 돌파(멀티오더 디커플링, LC-메타서피스 하이브리드), 비선형 IR 업컨버전 이미징, 이벤트 카메라 크로스모달 융합, FP·렌즈리스 저널 성숙</strong>이 중심 클러스터였습니다. 논문 방법론 수준의 arXiv 신호가 강했습니다.</p>
-<p>오늘은 cs.* arXiv가 없어 저널 중심으로 전환됩니다. 어제의 '메타서피스 무엇을 할 수 있는가'에서 오늘의 '메타서피스를 어떻게 제품으로 만드는가'로 관점이 이동했습니다. 역문제 측에서도 어제 PnP와 위상 복원이 분산됐다면, 오늘은 형광 현미경이라는 구체적 응용에 diffusion prior를 직접 통합하는 방향이 arXiv에 나왔습니다. 의료 AI 데이터 신뢰성이라는 새 주제가 eess.IV에서 등장한 것도 어제와 달라진 점입니다.</p>
+<p>어제(2026-06-24) 배치에서는 arXiv 전체(804건)를 기반으로 <strong>메타-홀로그래피 정보 용량 돌파(멀티오더 디커플링, LC-메타서피스 하이브리드), 비선형 IR 업컨버전 이미징, 이벤트 카메라 크로스모달 융합, FP·렌즈리스 저널 성숙</strong>이 중심 클러스터였습니다.</p>
+<p>오늘은 어제의 '메타서피스 무엇을 할 수 있는가'에서 '나노포토닉 소자를 어떻게 실제 제품·EUV 마스크로 만드는가'로 이동합니다. 역문제 측에서는 어제 홀로그래피가 '용량'을 돌파했다면, 오늘은 형광 현미경 역문제가 diffusion prior를 반복 알고리즘 내부로 흡수합니다. 딥러닝 파면 재구성과 PINNs 한계 경고도 새로 추가된 arXiv에서만 볼 수 있는 오늘만의 신호입니다.</p>
 
 <h2>🧩 오늘의 클러스터 지도</h2>
 <table>
@@ -106,86 +105,88 @@ html[data-theme=light] body{background-color:#fff}
 </thead>
 <tbody>
 <tr>
-  <td><strong>나노포토닉 역설계 — 시뮬레이션 효율화에서 하드웨어 자격 인증까지</strong></td>
+  <td><strong>나노포토닉 역설계 — 시뮬레이션 효율화에서 EUV 역리소그래피까지</strong><span class=pill>HOT</span></td>
   <td>
     <a href="https://arxiv.org/abs/2606.25226" target=_blank>Dimension expansion for simulation-efficient nanophotonic NNs</a> <span class=pill>IV</span><br>
-    <a href="https://doi.org/10.1117/1.oe.65.10.102007" target=_blank>From flat-optics to qualified hardware: skills map for meta-optics workforce</a> <span class=pill>JNL</span>
+    <a href="https://arxiv.org/abs/2606.25753" target=_blank>Gradient-based inverse lithography for EUV masks via waveguide method + physics-informed DL</a> <span class=pill>LG</span><br>
+    <a href="https://doi.org/10.1117/1.oe.65.10.102007" target=_blank>From flat-optics to qualified hardware: skills map</a> <span class=pill>JNL</span>
   </td>
-  <td>메타서피스·나노포토닉 역설계가 '실험실 시연'에서 '제품 자격 인증' 단계로 이동하고 있습니다. 역설계는 수천 번의 FDTD 시뮬레이션이 필요해서 시간이 오래 걸렸는데, 차원 확장 방법으로 신경망 기반 역설계 시뮬레이션 효율을 크게 올릴 수 있습니다. 그 다음 단계 — 설계한 소자를 실제 제품으로 출시하려면 어떤 역량이 필요한가 — 를 바로 이 날 저널에서 다루고 있습니다. 요구사항 정의, 모델 검증, 제조, 신뢰성 검증까지 포함한 인력 역량 지도는 연구실에서 산업으로의 전환에 필요한 다음 질문을 명확히 합니다.</td>
-  <td>High<br><small>역설계 효율화와 하드웨어 출시 두 논문이 독립적으로 같은 방향 지시</small></td>
-  <td>nanophotonic NN 역설계 속도를 현재 FDTD 대비 정량 비교; Optical Engineering skills map 자격 인증 체크리스트를 랩 메타렌즈 제작 워크플로우에 적용</td>
+  <td>나노포토닉 역설계는 수천 번의 FDTD 반복이 필요했는데, 차원 확장 신경망이 이 시뮬레이션 병목을 줄입니다. EUV 역리소그래피 논문은 여기서 한 걸음 더 나아가 도파로법이라는 물리 근거에 딥러닝을 결합해, 실제 반도체 마스크 제조의 역문제를 풀 수 있음을 보입니다. 스킬맵 저널 논문은 '설계 → 시뮬레이션 → 제조 → 신뢰성 인증'의 전 파이프라인을 한 눈에 담아, 연구실 단계를 넘어 제품 단계로의 전환 경로를 명확히 합니다. 세 논문이 같은 날 나온 것은 나노포토닉 연구 공동체 전체가 배포 가능한 하드웨어를 진지하게 논의하기 시작했다는 신호입니다.</td>
+  <td>High<br><small>역설계 효율화·EUV 제조·자격인증 세 관점에서 독립 논문 확인</small></td>
+  <td>EUV ILT의 도파로법을 메타렌즈 위상 역설계에 이식; skills map 체크리스트를 랩 메타렌즈 제작 단계에 적용</td>
 </tr>
 <tr>
-  <td><strong>형광 현미경 역문제 — Diffusion Prior로 RL Deconvolution 업그레이드</strong></td>
+  <td><strong>형광 현미경 역문제 — Diffusion Prior 내부화, PINNs 한계 경고</strong><span class=pill>HOT</span></td>
   <td>
     <a href="https://arxiv.org/abs/2606.25924" target=_blank>Improving Richardson-Lucy Deconvolution with Diffusion Priors for Fluorescence Microscopy</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2606.25151" target=_blank>Silent Failures in PINNs: Parameter Poisoning and the Limits of PINNs</a> <span class=pill>LG</span><br>
     <a href="https://doi.org/10.1109/tci.2026.3707068" target=_blank>Nonasymptotic Convergence Rates for PnP with MMSE Denoisers</a> <span class=pill>JNL</span>
   </td>
-  <td>형광 현미경에서 회절로 손실된 디테일을 복원할 때, 기존 Richardson-Lucy 방법은 광자 통계(포아송 모델)에만 의존해서 수렴이 느리고 노이즈에 취약했습니다. 이 논문은 diffusion model이 이미지 분포에서 배운 사전지식을 RL 반복에 직접 주입해 품질을 높입니다. 쉽게 말하면 '물리 모델만으로 복원' 대신 '물리 모델 + 이미지다운 이미지란 무엇인지 학습한 생성 모델'을 함께 쓰는 방향입니다. 같은 날 IEEE TCI에서 PnP MMSE 수렴 속도 이론도 나와서, 역문제 방법론이 이론과 응용 두 방향에서 동시에 진전된 날입니다.</td>
-  <td>High<br><small>arXiv + IEEE TCI 저널 논문이 독립적으로 같은 방향 확인</small></td>
-  <td>RL+diffusion prior를 랩 형광 현미경 데이터에 적용해 기존 PnP 대비 FRC·SSIM 비교; PnP MMSE 수렴 조건이 현재 ODT 파이프라인 denoiser 선택에 주는 함의 점검</td>
+  <td>형광 현미경에서 Richardson-Lucy는 광학 현미경의 기본 복원 알고리즘입니다. 이 논문은 각 RL 반복 후에 diffusion denoiser를 직접 주입하는 방식으로, 생성 모델이 외부 정규화가 아니라 반복 알고리즘의 내부 구성요소가 되는 새 패턴을 보여줍니다. 반면 PINNs 파라미터 중독 논문은 물리 기반 방법이 파라미터 교란에 조용히 실패할 수 있다는 경고입니다. PnP MMSE 수렴 이론(IEEE TCI)은 같은 날 역문제 방법론의 이론적 기반도 강화합니다. 세 논문은 함께 '언제 생성 모델을 쓰고 언제 물리 모델을 조심해야 하는가'라는 질문에 답합니다.</td>
+  <td>High<br><small>arXiv(eess.IV, cs.LG) + IEEE TCI 저널이 독립적으로 이론·응용·경고를 동시에 확인</small></td>
+  <td>RL+diffusion prior를 랩 형광 현미경 데이터에 적용; ODT 파이프라인의 PINN 구조에서 파라미터 중독 취약성 점검</td>
 </tr>
 <tr>
-  <td><strong>Phase Retrieval 하이브리드화 — 단일 측정에서 최대 위상 정보 추출</strong></td>
+  <td><strong>Phase Retrieval 하이브리드화 — 딥러닝 파면 재구성 포함</strong></td>
   <td>
     <a href="https://doi.org/10.1016/j.optlastec.2026.115802" target=_blank>Hybrid in-line and off-axis multi-wavelength phase retrieval for single-shot holographic imaging</a> <span class=pill>JNL</span><br>
+    <a href="https://arxiv.org/abs/2606.25855" target=_blank>Hybrid deep learning-based phase diversity method for wavefront reconstruction</a> <span class=pill>CV</span><br>
     <a href="https://doi.org/10.1002/lpor.71474" target=_blank>Cubic-Encoded Moiré Metasurface Zoom System for Depth-Invariant Imaging</a> <span class=pill>JNL</span>
   </td>
-  <td>단일 측정에서 더 많은 위상 정보를 뽑으려는 흐름이 두 논문에서 나타납니다. in-line과 off-axis 방식은 각각 장단점이 달라서 보통 하나를 택했는데, 이 논문은 다파장 구조를 이용해 두 방식을 혼합해 고해상도 단일 샷 홀로그래픽 이미징을 달성합니다. Moiré 기반 메타서피스 줌 시스템은 기계적 렌즈 이동 없이 cubic 위상 인코딩으로 연속 초점 제어를 가능하게 해서, 하드웨어 단순화와 깊이 불변 이미징을 동시에 구현합니다. 공통점은 '추가 측정·하드웨어 없이 한 번에 더 많은 위상 정보'입니다.</td>
-  <td>Medium<br><small>두 논문이 독립적인 저널에서 단일 샷 위상 최대화 방향을 공유하나 원리가 다름</small></td>
-  <td>hybrid in-line/off-axis를 현재 FP 다파장 설정에 이식 가능한지 검토; Moiré 줌 DOF-FOV 트레이드오프 수치를 랩 이미징 요구사항과 대조</td>
+  <td>단일 측정에서 더 많은 위상 정보를 추출하려는 흐름이 세 방향에서 동시에 나타납니다. in-line·off-axis 혼합 다파장 위상 복원은 두 방식의 장단점을 보완하고, 딥러닝 기반 위상 다양성(phase diversity) 파면 재구성은 전통적인 반복 알고리즘을 신경망으로 대체해 속도와 정확도를 동시에 높입니다. Moiré 메타서피스 줌 시스템은 기계 없는 연속 초점 제어로 하드웨어를 단순화합니다. 공통 목표는 '추가 측정 없이 한 번에 위상 정보를 최대화'입니다.</td>
+  <td>Medium<br><small>세 논문이 단일 샷 위상 정보 극대화 방향을 공유하나 적용 도메인과 원리가 다름</small></td>
+  <td>2606.25855 딥러닝 파면 재구성을 파면 센서 없는 AO 설정에 검토; hybrid in-line/off-axis를 FP 다파장 설정에 이식 가능성 평가</td>
 </tr>
 <tr>
-  <td><strong>산란 매질 이미징 — 보정 vs 활용, 두 전략의 동시 등장</strong></td>
+  <td><strong>산란 매질 이미징 — 장애물에서 신호원으로의 전환</strong></td>
   <td>
     <a href="https://doi.org/10.1109/tci.2026.3707064" target=_blank>Scattering-enhanced intensity based tomography</a> <span class=pill>JNL</span><br>
     <a href="https://doi.org/10.1364/boe.596096" target=_blank>Fast volumetric imaging of a zebrafish seizure model with adaptive optics light sheet microscopy</a> <span class=pill>JNL</span>
   </td>
-  <td>산란 매질 속 3D 이미징의 두 전략이 같은 날 나란히 나왔습니다. 적응광학 light sheet 현미경은 AO로 산란을 보정해 제브라피시 발작 모델을 빠르게 볼륨 이미징했습니다. 반면 scattering-enhanced intensity tomography는 산란을 장애물이 아니라 신호로 활용해 복원 정보량을 늘리는 반대 전략입니다. '산란 = 극복 대상'이라는 전통적 관점과 '산란 = 추가 정보원'이라는 새 관점이 IEEE TCI에서 충돌하는 것은, 계산 광학 역문제 연구가 물리 모델 가정을 재검토하기 시작했다는 신호입니다.</td>
-  <td>Medium<br><small>독립적인 IEEE TCI · Biomedical Optics Express 논문에서 확인</small></td>
-  <td>scattering-enhanced 접근을 우리 ODT 시스템의 저~고산란 생물 샘플 스펙트럼에서 stress-test; AO light sheet 코드의 zebrafish 볼륨 이미징 파라미터를 우리 설정과 비교</td>
+  <td>산란 매질 속에서 3D 이미징을 하는 두 전략이 나란히 나왔습니다. 적응광학 light sheet 현미경은 산란을 보정해 제브라피시 발작 모델의 빠른 볼륨 이미징을 달성했습니다. 반면 scattering-enhanced intensity tomography는 산란 자체를 신호로 활용해 복원 정보량을 늘리는 반대 전략입니다. '산란 = 극복 대상'이라는 전통 관점과 '산란 = 추가 정보원'이라는 새 관점이 IEEE TCI에서 충돌하는 것은, 역문제 물리 모델 가정 자체를 재검토하기 시작했다는 신호입니다.</td>
+  <td>Medium<br><small>두 논문이 독립적인 IEEE TCI · Biomedical Optics Express에서 확인</small></td>
+  <td>scattering-enhanced 접근을 ODT 시스템의 저산란~고산란 생물 샘플에 stress-test; AO light sheet 파라미터를 랩 설정과 비교</td>
 </tr>
 <tr>
   <td><strong>의료 AI 벤치마크 — 데이터 누수와 품질 메트릭 신뢰성 재검토</strong></td>
   <td>
     <a href="https://arxiv.org/abs/2606.24944" target=_blank>Leakage-Aware Comparative Benchmark of ML/DL for ALL Classification</a> <span class=pill>IV</span><br>
-    <a href="https://arxiv.org/abs/2606.25128" target=_blank>Benchmarking the Alignment of Data-Quality Metrics, Human Judgment and Model Performance</a> <span class=pill>IV</span>
+    <a href="https://arxiv.org/abs/2606.25128" target=_blank>Benchmarking Alignment of Data-Quality Metrics, Human Judgment and Model Performance</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2606.25546" target=_blank>Disease-Centric Vision-Language Pretraining with Hybrid Visual Encoding for 3D CT</a> <span class=pill>LG</span>
   </td>
-  <td>'거의 완벽한' 성능을 보고하던 의료 이미지 분류 논문들이 데이터 누수(leakage) 문제로 과평가됐을 가능성이 드러나고 있습니다. 급성 림프구성 백혈병 분류 벤치마크는 누수를 막았을 때 성능이 어떻게 달라지는지 보여주고, 데이터 품질 메트릭 정렬 벤치마크는 데이터 품질 점수가 높다고 모델 성능이 좋은 건 아님을 보입니다. 이 흐름의 의미는 모델을 개선하기 전에 평가 파이프라인 자체가 믿을 수 있는지를 먼저 물어야 한다는 것입니다. 계산 이미징 평가에도 같은 질문이 가능합니다.</td>
+  <td>'거의 완벽한' 성능을 보고하던 의료 AI 논문들이 데이터 누수(leakage) 문제로 과평가됐을 가능성이 드러나고 있습니다. 누수를 막았을 때 성능이 어떻게 달라지는지 보여주는 벤치마크와, 데이터 품질 점수가 높다고 모델 성능이 좋지 않다는 정렬 분석이 같은 날 나왔습니다. 3D CT 질병 중심 비전-언어 사전학습 논문은 더 강한 사전학습으로 이 문제를 우회하려는 방향을 제시합니다. 이 흐름은 모델 개선 이전에 평가 파이프라인 자체의 신뢰성을 먼저 물어야 한다는 신호입니다.</td>
   <td>Medium<br><small>두 eess.IV 논문이 독립적으로 같은 날 의료 AI 평가 신뢰성 문제를 다룸</small></td>
-  <td>우리 계산 이미징 결과 평가에서 데이터 누수 가능성 점검(train/test 경계 재확인); SSIM·FRC·PSNR이 실제 이미징 품질과 얼마나 정렬되는지 ablation</td>
+  <td>우리 계산 이미징 평가에서 데이터 누수 가능성 점검; SSIM·FRC·PSNR이 실제 이미징 품질과 정렬되는지 ablation</td>
 </tr>
 </tbody>
 </table>
-<p><small>⚠️ 참고: 오늘은 cs.LG·cs.CV·cs.AI 2026-06-25 목록 미갱신으로 5개 클러스터 모두 저널·eess 논문 기반입니다. cs.* /pastweek에 등장하면 arXiv 클러스터가 추가됩니다.</small></p>
 
-<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
-<p>오늘은 arXiv 비중이 매우 낮습니다(eess.IV 10편 + eess.SP 1편). 그 결과 저널 신호가 평소보다 훨씬 크게 보입니다.</p>
+<h2>📐 arXiv vs 저널 대비</h2>
+<p>업그레이드 후 arXiv 521건(cs.LG 186·cs.CV 125·cs.AI 182·eess.IV 10·eess.SP 18)이 추가됐습니다.</p>
 <ul>
-  <li><strong>arXiv(eess) 전용</strong>: 형광 현미경 RL+diffusion prior 복원, 나노포토닉 역설계 차원 확장, 의료 AI 벤치마크(누수·품질 정렬), 태아 초음파 반지도학습, 이벤트 카메라 로보틱스(1000 Rallies), PE CT 위험 분류</li>
-  <li><strong>저널 전용</strong>: 메타서피스 하드웨어 자격 인증 스킬맵, 위상 복원 하이브리드화, Moiré 메타서피스 줌, PnP MMSE 수렴 이론, scattering-enhanced tomography, AO light sheet 제브라피시</li>
-  <li><strong>공통 키워드</strong>: inverse problem, phase retrieval, diffraction, tomography, metasurface, reconstruction</li>
-  <li><strong>특징</strong>: 오늘 arXiv는 방법론 논문이 아니라 eess.IV 의료·바이오 응용이 중심. 저널은 광학 공학 성숙 단계를 보여줌.</li>
+  <li><strong>arXiv 새 신호</strong>: EUV 역리소그래피(물리+딥러닝 하이브리드), RL+diffusion prior 형광 현미경, PINNs 파라미터 중독 취약성, 딥러닝 파면 재구성(위상 다양성), 의료 AI 벤치마크 누수, 3D CT 질병 중심 VLP, 이벤트 카메라 인지 부하 인식(EveLoad), 3D CT 재구성(PRISM)</li>
+  <li><strong>저널 전용</strong>: 메타서피스 하드웨어 스킬맵, 위상 복원 하이브리드화, Moiré 메타서피스 줌, PnP MMSE 수렴 이론, scattering-enhanced tomography, AO light sheet 제브라피시</li>
+  <li><strong>공통 키워드</strong>: inverse problem, phase retrieval, diffraction, tomography, metasurface, reconstruction, diffusion</li>
 </ul>
 
 <h2>💡 오늘의 인사이트</h2>
 
 <div class=ins>
-  <h3>1. 나노포토닉 역설계 효율화와 하드웨어 출시 — 두 병목의 동시 해결 시도</h3>
-  <p>메타서피스·나노포토닉 역설계는 두 가지 병목이 있었습니다. 첫째, 시뮬레이션 비용(FDTD 기반 역설계는 수천 번의 반복이 필요). 둘째, 설계된 소자를 실제 제품으로 만드는 프로세스(요구사항·제조·신뢰성 검증). 오늘 차원 확장 신경망 역설계 논문은 첫 번째 병목을, Optical Engineering 스킬맵 논문은 두 번째 병목을 다룹니다. 두 논문이 같은 날 나온 것은 우연이 아닐 수 있습니다 — 연구 공동체가 소자 설계를 넘어 배포 가능한 하드웨어로의 전환을 진지하게 논의하기 시작했다는 신호입니다.</p>
-  <p class=conf-note>Confidence: High — 독립적인 두 논문(arXiv + Optical Engineering)이 같은 전환 방향을 지시</p>
+  <h3>1. EUV 역리소그래피 — 나노포토닉 역설계가 반도체 제조 프로세스로 진입</h3>
+  <p>2606.25753 논문의 핵심은 도파로법(waveguide method)으로 EUV 마스크의 전자기장 전파를 모델링하고, 물리 정보 딥러닝으로 역리소그래피 최적화를 가속하는 것입니다. 기존 OPC(Optical Proximity Correction)는 기하학적 경험칙에 의존했지만, 이 논문은 실제 파동 방정식을 역문제로 풀어 마스크 패턴을 최적화합니다. 나노포토닉 역설계(2606.25226의 차원 확장)와 같은 날 나온 것은 우연이 아닙니다 — 메타서피스 설계에서 쌓인 역문제 방법론이 반도체 제조 현장으로 이식되는 흐름을 보여줍니다.</p>
+  <p class=conf-note>Confidence: High — arXiv cs.LG에 게재, 물리 근거(도파로법) 명확, 실험 결과 포함</p>
 </div>
 
 <div class=ins>
   <h3>2. RL Deconvolution + Diffusion Prior — 생성 모델이 역문제 반복 알고리즘 내부로 진입</h3>
-  <p>기존에 diffusion model을 역문제에 쓰는 방식은 주로 '정규화 항으로 활용'하거나 '사후분포 샘플링'이었습니다. 이 논문은 Richardson-Lucy 반복의 각 step에 diffusion prior를 직접 주입하는 방식으로, 생성 모델이 외부 정규화가 아니라 반복 알고리즘 내부 구성요소로 들어오는 패턴을 보여줍니다. PnP MMSE 수렴 이론이 같은 날 나온 것은 이 방향의 이론적 기반도 함께 강화되고 있음을 의미합니다. 형광 현미경을 넘어 FP·ODT·렌즈리스 시스템에서도 같은 패턴을 적용할 수 있습니다.</p>
-  <p class=conf-note>Confidence: High — arXiv eess.IV + IEEE TCI 두 독립 논문</p>
+  <p>기존에 diffusion model을 역문제에 쓰는 방식은 주로 외부 정규화 항이나 사후분포 샘플링이었습니다. 2606.25924는 Richardson-Lucy 반복의 각 step에 diffusion denoiser를 직접 주입합니다 — PnP와 비슷하지만 RL의 포아송 데이터 피델리티를 유지하면서 diffusion 사전 분포를 통합한다는 점이 다릅니다. 이 패턴은 FP·ODT·렌즈리스 시스템으로 이식 가능한 설계 원칙이 됩니다. 다만 2606.25151의 PINNs 파라미터 중독 경고는 물리 기반 항이 외부 교란에 취약할 수 있음을 상기시켜 줍니다 — 두 논문을 함께 읽어야 합니다.</p>
+  <p class=conf-note>Confidence: High — arXiv eess.IV + cs.LG 두 독립 논문 + IEEE TCI 저널 이론 확인</p>
 </div>
 
 <div class=ins>
   <h3>3. Scattering-Enhanced Tomography — 산란을 역문제의 신호로 재정의</h3>
-  <p>계산 광학 분야에서 산란은 오랫동안 극복해야 할 방해 요소였습니다. 적응광학, 산란 보정 알고리즘, 산란 매질 제거 등이 그 방향의 노력입니다. scattering-enhanced intensity tomography는 이 전제를 뒤집어, 산란 패턴 자체가 3D 물체의 정보를 담고 있다는 역문제 관점을 채택합니다. 즉 더 많이 산란할수록 더 많은 정보를 얻을 수 있다는 역발상입니다. IEEE TCI에 게재됐다는 것은 이 방향이 충분한 이론적·실험적 뒷받침을 갖췄다는 신호입니다.</p>
-  <p class=conf-note>Confidence: Medium — 단일 IEEE TCI 논문, 독립 검증 필요</p>
+  <p>계산 광학 분야에서 산란은 오랫동안 극복해야 할 방해 요소였습니다. scattering-enhanced intensity tomography(IEEE TCI)는 이 전제를 뒤집어, 산란 패턴 자체가 3D 물체의 정보를 담고 있다는 역문제 관점을 채택합니다. 더 많이 산란할수록 더 많은 정보가 생긴다는 역발상으로, 기존 AO light sheet(적응광학으로 산란 보정)와 정반대 방향입니다. IEEE TCI 게재는 이론적·실험적 뒷받침이 충분하다는 신호이므로, 고산란 생물 샘플 ODT 시나리오에서 직접 비교 실험을 해볼 만합니다.</p>
+  <p class=conf-note>Confidence: Medium — IEEE TCI 저널 단일 논문, 독립 검증 필요</p>
 </div>
 
 <h2>🔬 추천 연구주제</h2>
@@ -193,292 +194,223 @@ html[data-theme=light] body{background-color:#fff}
 <div class=dd>
   <h3>A. RL Deconvolution + Diffusion Prior를 FP 시스템에 적용</h3>
   <p>형광 현미경에서 검증된 RL+diffusion prior 접근을 Fourier ptychography 재구성에 이식합니다. FP는 다중 측정의 위상 복원 문제인데, RL 방식과 구조가 달라 직접 이식보다 원리 차용이 현실적입니다.</p>
-  <p><strong>실행 1주차:</strong></p>
-  <ul>
+  <p><strong>1주 실행 프로토콜</strong>:</p>
+  <ol>
     <li>2606.25924 코드 clone 후 형광 현미경 → FP 입력 형식 변환</li>
     <li>랩 저선량 FP 데이터셋에서 FRC 기반 정량 비교 (기존 Wirtinger flow vs RL+diffusion)</li>
     <li>수렴 속도·메모리 사용량·결과 해상도 3축 비교표 작성</li>
-    <li>실패해도 남는 결과: FP 역문제와 형광 현미경 역문제의 구조적 차이 분석 → workshop short</li>
-  </ul>
+    <li>실패해도 남는 결과: FP 역문제와 형광 현미경 역문제의 구조적 차이 분석 → workshop short paper</li>
+  </ol>
 </div>
 
 <div class=dd>
-  <h3>B. Scattering-Enhanced ODT — 고산란 생물 샘플에서의 재구성 품질</h3>
-  <p>scattering-enhanced intensity tomography 프레임워크를 우리 ODT 시스템의 다양한 산란 레벨 샘플에 적용합니다. 기존 ODT(산란 보정)와 새 접근(산란 활용)을 같은 샘플에서 비교하는 것이 핵심입니다.</p>
-  <p><strong>실행 1주차:</strong></p>
-  <ul>
-    <li>IEEE TCI 논문 저자 코드 또는 유사 방법론 구현 (intensity tomography forward model)</li>
-    <li>저산란(μs' &lt; 1 mm⁻¹), 중간 산란, 고산란 생물 샘플 3종 준비</li>
-    <li>각 조건에서 재구성 SSIM·Dice 비교; AO 보정 버전과 나란히 비교</li>
-    <li>실패해도 남는 결과: ODT 산란 레짐 별 방법론 선택 가이드라인</li>
-  </ul>
+  <h3>B. 딥러닝 위상 다양성 파면 재구성 → 렌즈리스 AO 이식</h3>
+  <p>2606.25855의 딥러닝 기반 위상 다양성 파면 재구성 방법을 렌즈리스 시스템의 파면 센서 없는 AO 설정에 적용합니다. Phase diversity는 초점 내/외 두 이미지로 파면을 추정하는데, 딥러닝이 이 추정을 가속합니다.</p>
+  <p><strong>1주 실행 프로토콜</strong>:</p>
+  <ol>
+    <li>2606.25855 논문 forward model과 신경망 구조 정리</li>
+    <li>우리 렌즈리스 셋업에서 초점/비초점 이미지 쌍 데이터 수집</li>
+    <li>전통 위상 다양성 vs 딥러닝 위상 다양성 파면 RMSE 비교</li>
+    <li>재구성 속도(처리 시간) 측정 — 실시간 AO 적용 가능성 판단</li>
+  </ol>
 </div>
 
 <div class=dd>
-  <h3>C. 나노포토닉 역설계 출시 자격 인증 체크리스트 내부 적용</h3>
-  <p>Optical Engineering 스킬맵 논문의 자격 인증 프레임워크를 랩 메타렌즈 제작 파이프라인에 실제 적용해 어느 단계까지 왔는지 체크리스트로 만듭니다.</p>
-  <p><strong>실행 1주차:</strong></p>
-  <ul>
-    <li>논문의 workforce skills map 표를 랩 메타렌즈 제작 단계별로 매핑</li>
-    <li>현재 달성 단계(Lab demo → Prototype → Pre-production?) 자가 평가</li>
-    <li>2606.25226 차원 확장 역설계를 현재 FDTD 파이프라인과 속도 비교 실험</li>
-    <li>결과: 출시 경로 갭 분석 문서</li>
-  </ul>
+  <h3>C. EUV 역리소그래피 도파로법 → 메타렌즈 위상 역설계 이식</h3>
+  <p>2606.25753의 도파로법 기반 역리소그래피를 메타렌즈 위상 분포 역설계에 이식합니다. EUV와 광학 메타렌즈는 스케일이 다르지만, 파동 방정식 역문제로서의 수학적 구조는 유사합니다.</p>
+  <p><strong>1주 실행 프로토콜</strong>:</p>
+  <ol>
+    <li>2606.25753 도파로법 forward model을 우리 메타렌즈 파장(가시광~근적외) 스케일로 변환</li>
+    <li>FDTD 결과와 도파로법 근사 사이의 오차 정량화</li>
+    <li>역설계 속도: 현재 adjoint method vs 도파로법+물리 DL 비교</li>
+    <li>실패해도 남는 결과: 도파로법 근사의 유효 조건 분석 문서</li>
+  </ol>
 </div>
 
 <hr>
 
 <h2>📊 오늘의 버킷 현황</h2>
-<p><small>막대 너비: Tomography/3D Imaging(47편, 최대) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+<p><small>막대 너비: Tomography/3D Imaging(61편, 최대) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
 
-<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
-<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
-<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:9%"></span></span><span class=n>4편</span></div>
-<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:21%"></span></span><span class=n>10편</span></div>
-<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:9%"></span></span><span class=n>4편</span></div>
-<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>47편</span></div>
-<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:32%"></span></span><span class=n>15편</span></div>
-<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:15%"></span></span><span class=n>7편</span></div>
-<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>27편</span></div>
-
-<p><small>⚠️ FP·렌즈리스 버킷이 0편인 것은 cs.LG·cs.CV·cs.AI 미갱신 탓입니다. 저널 수집의 쿼리가 FP 키워드를 포함하고 있음에도 오늘 Crossref에서 신규 게재된 FP 관련 저널이 없었습니다. Tomography(47편)는 의료 영상 저널이 많이 포함돼 있어 실제 계산광학 관련성은 그 중 5~10편 수준입니다.</small></p>
+<div class=bucket-bar><span class=nm>Deep Learning (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>89편</span></div>
+<div class=bucket-bar><span class=nm>Tomography / 3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>61편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining / Pathology</span><span class=bar><span class=fill style="width:30%"></span></span><span class=n>18편†</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction / Inverse Problems</span><span class=bar><span class=fill style="width:18%"></span></span><span class=n>11편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics / Diffractive</span><span class=bar><span class=fill style="width:13%"></span></span><span class=n>8편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging / Holography</span><span class=bar><span class=fill style="width:8%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field / Novel Sensors</span><span class=bar><span class=fill style="width:8%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Fourier Ptychography / Microscopy</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless / Coded Imaging</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
+<p style="font-size:12.5px;color:#666;margin:.5rem 0">† Virtual Staining 18편은 위양성 다수. 실제 광학 관련 논문은 3~4편 수준.</p>
+<p style="font-size:12.5px;color:#666;margin:.5rem 0">Tomography/3D 61편은 자율주행 BEV·3DGS SLAM 등 광학 이미징 무관 논문이 절반 이상. 의료·광학 CT 관련 논문은 10편 내외.</p>
 
 <h2>🗂 버킷별 주요 논문</h2>
 
-<h3>Phase Imaging/Holography (4편)</h3>
+<h3>Meta-Optics / Diffractive (8편)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.115802" target=_blank>Hybrid in-line and off-axis multi-wavelength phase retrieval for single-shot high-resolution holographic imaging</a></strong> [JNL · TIER A]<br>
-  문제: in-line(잡음 적음·해상도 한계)·off-axis(해상도 높음·단층촬영 복잡) 중 하나를 선택해야 했던 딜레마 / 방법: 다파장 구조를 이용해 두 방식을 혼합, 단일 샷 고해상도 홀로그래픽 이미징 / 의미: FP와 유사한 다파장 위상 복원 접근 — 단일 샷 고해상도라는 목표 공유
+  <strong><a href="https://arxiv.org/abs/2606.25226" target=_blank>Dimension expansion for simulation-efficient nanophotonic neural networks</a></strong> <span class=pill>IV · TIER A</span><br>
+  문제: 나노포토닉 역설계 EM 시뮬레이션 계산 비용 / 방법: 차원 확장으로 신경망 시뮬레이터 효율·정확도 개선 / 의미: 역설계 속도 병목 직접 해결
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1002/lpor.71474" target=_blank>Cubic-Encoded Moiré Metasurface Zoom System for Depth-Invariant Imaging</a></strong> [JNL · TIER A]<br>
-  문제: 기계적 렌즈 이동 기반 줌 시스템의 복잡성과 깊이 의존성 / 방법: cubic 위상 인코딩 Moiré 패턴 메타서피스로 기계 없는 연속 초점 제어 / 의미: 렌즈리스·계산 광학 시스템 단순화의 새 하드웨어 후보
+  <strong><a href="https://arxiv.org/abs/2606.25753" target=_blank>Gradient-based inverse lithography for EUV masks via the waveguide method and a physics-informed deep learning approach</a></strong> <span class=pill>LG · TIER A</span><br>
+  문제: EUV 마스크 역리소그래피의 높은 계산 비용과 물리 모델 정확도 / 방법: 도파로법 + 물리 정보 딥러닝으로 역리소그래피 최적화 / 의미: 나노포토닉 역설계 방법론의 반도체 제조 응용
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1364/ao.604462" target=_blank>Experimental Zernike-Mode Analysis of Wavefront Distortions in Underwater Rayleigh-Bénard Turbulence</a></strong> [JNL · TIER C]<br>
-  문제: 수중 열 대류(Rayleigh-Bénard) 난류에서의 파면 왜곡 정량화 / 방법: Zernike 모드 분해로 파면 왜곡 실험 분석 / 의미: AO 보정 설계의 환경 왜곡 기준선 제공
-</div>
-
-<h3>Meta-Optics/Diffractive (10편)</h3>
-<div class=roi-item>
-  <strong><a href="https://arxiv.org/abs/2606.25226" target=_blank>Dimension expansion for simulation-efficient nanophotonic neural networks</a></strong> [IV · TIER A]<br>
-  문제: 나노포토닉 역설계에서 대형 설계 공간과 비선형 구조-응답 관계, 반복 EM 시뮬레이션의 높은 계산 비용 / 방법: 차원 확장으로 신경망 기반 시뮬레이터의 효율성과 정확도 개선 / 의미: 역설계 속도 병목 직접 해결 — 랩 메타렌즈 설계 파이프라인에 직접 적용 가능
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1117/1.oe.65.10.102007" target=_blank>From flat-optics concept to qualified hardware: skills map for the meta-optics and diffractive optics workforce</a></strong> [JNL · TIER A]<br>
-  문제: 메타서피스 소자가 실험실 증명에서 제품 출시까지 어떤 역량과 프로세스가 필요한지 불명확 / 방법: 요구사항·모델·제조·신뢰성 검증까지 아우르는 인력 역량 지도 제시 / 의미: 연구 단계에서 산업 단계로의 전환 경로 명확화 — 랩 기술이전 로드맵에 직접 참조
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1364/prj.603184" target=_blank>Microwave Metasurface Encryption Based on Multifrequency Phase Modulation and DNA Encoding</a></strong> [JNL · TIER B]<br>
-  문제: 단일 주파수 메타서피스 암호화의 보안 한계 / 방법: 다주파수 위상 변조와 DNA 인코딩 결합 / 의미: 메타서피스 다기능 활용의 응용 확장 사례
+  <strong><a href="https://doi.org/10.1117/1.oe.65.10.102007" target=_blank>From flat-optics concept to qualified hardware: skills map for the meta-optics and diffractive optics workforce</a></strong> <span class=pill>JNL · TIER A</span><br>
+  문제: 연구 단계 메타서피스의 제품화 경로 불명확 / 방법: 요구사항·모델·제조·신뢰성 검증 인력 역량 지도 / 의미: 연구실 → 산업 전환 체크리스트
 </div>
 
-<h3>Light-Field/Novel Sensors (4편)</h3>
+<h3>Reconstruction / Inverse Problems (11편)</h3>
 <div class=roi-item>
-  <strong><a href="https://arxiv.org/abs/2606.25620" target=_blank>1000 Rallies: An Event-Camera Dataset and Real-Time Learned Ball-State Estimation for Robotic Table Tennis</a></strong> [CV · TIER B]<br>
-  문제: 빠른 구 궤적(탁구)에서 ms 단위 상태 추정의 레이턴시 / 방법: 이벤트 카메라로 공 위치·속도·스핀을 실시간 추정하는 학습 기반 방법 + 1000 랠리 공개 데이터셋 / 의미: 이벤트 카메라의 극한 real-time 응용 검증 — 데이터셋 자체가 이벤트 카메라 방법론 평가 기준선이 될 수 있음
+  <strong><a href="https://arxiv.org/abs/2606.25924" target=_blank>Improving Richardson-Lucy Deconvolution with Diffusion Priors for Fluorescence Microscopy</a></strong> <span class=pill>IV · TIER A</span><br>
+  문제: RL deconvolution의 포아송 노이즈 취약성 / 방법: diffusion prior를 RL 반복에 직접 주입 / 의미: 생성 모델의 역문제 알고리즘 내부 통합 패턴
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1109/tip.2026.3705197" target=_blank>Enhancing Underwater Light Field Images via Global Geometry-aware Diffusion Process</a></strong> [JNL · TIER B]<br>
-  문제: 수중 광 필드 이미지의 색상 편이, 블러, 저콘트라스트 / 방법: 전역 지오메트리 인식 diffusion process로 광 필드 화질 향상 / 의미: diffusion을 광 필드 복원에 적용한 사례 — 우리 광 필드 처리 파이프라인 참조
-</div>
-
-<h3>Reconstruction/Inverse Problems (7편)</h3>
-<div class=roi-item>
-  <strong><a href="https://arxiv.org/abs/2606.25924" target=_blank>Improving Richardson-Lucy Deconvolution with Diffusion Priors for Fluorescence Microscopy</a></strong> [IV · TIER A]<br>
-  문제: RL deconvolution의 포아송 모델 의존성, 노이즈 증폭, 수렴 품질 한계 / 방법: diffusion model 사전 분포를 RL 반복에 직접 주입 / 의미: 생성 모델이 역문제 반복 알고리즘 내부 구성요소로 진입하는 패턴 — FP·ODT로 이식 가능
+  <strong><a href="https://arxiv.org/abs/2606.25151" target=_blank>Silent Failures in Physics-Informed Neural Networks: Parameter Poisoning and the Limits of PINNs</a></strong> <span class=pill>LG · TIER A</span><br>
+  문제: PINNs가 파라미터 교란에 조용히 실패할 수 있다는 취약성 / 방법: 파라미터 중독 시나리오 분석 및 한계 정량화 / 의미: 물리 기반 방법 사용 시 경고 — ODT/FP 파이프라인 점검 필요
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1109/tci.2026.3707068" target=_blank>Nonasymptotic Convergence Rates for Plug-and-Play Methods With MMSE Denoisers</a></strong> [JNL · TIER A]<br>
-  문제: PnP 방법이 실용적으로 쓰이지만 수렴 속도에 대한 비점근적 이론 보장이 부족 / 방법: MMSE denoiser 조건 하에서 비점근적 수렴 속도 분석 / 의미: PnP 방법의 이론적 기반 강화 — denoiser 선택에 수렴 조건 기준이 생긴다는 의미
+  <strong><a href="https://doi.org/10.1109/tci.2026.3707068" target=_blank>Nonasymptotic Convergence Rates for Plug-and-Play Methods With MMSE Denoisers</a></strong> <span class=pill>JNL · TIER A</span><br>
+  문제: PnP 방법의 수렴 속도 이론 부재 / 방법: MMSE denoiser 조건 하 비점근적 수렴 속도 분석 / 의미: PnP 이론 기반 강화 — denoiser 선택 기준 도출
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.cma.2026.119156" target=_blank>Spectral bias in physics-informed and operator learning: Analysis and mitigation guidelines</a></strong> [JNL · TIER B]<br>
-  문제: physics-informed neural network의 고주파 성분 학습 어려움(spectral bias) / 방법: spectral bias 분석 및 완화 가이드라인 / 의미: PINN 기반 역문제 해결 시 고주파 신호 복원 품질 개선에 직접 참조 가능
+  <strong><a href="https://doi.org/10.1109/tci.2026.3707064" target=_blank>Scattering-enhanced intensity based tomography</a></strong> <span class=pill>JNL · TIER A</span><br>
+  문제: 산란 매질에서 단층 촬영 품질 / 방법: 산란 자체를 역문제 신호로 활용 / 의미: ODT 고산란 레짐의 새 접근
 </div>
 
-<h3>Deep Learning Methods — 선별 (27편 중 관련 5편)</h3>
+<h3>Phase Imaging / Holography (5편)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1364/ol.557027" target=_blank>Freeform diffractive deep neural networks with intrinsically smooth layers</a></strong> [JNL · TIER A]<br>
-  문제: 회절 신경망(D²NN)의 이진 위상 레이어로 인한 제조 한계 / 방법: 본질적으로 매끄러운(smooth) 자유형 회절 레이어 / 의미: 물리 구현 가능한 광학 신경망의 제조 가능성 확장 — 우리 메타서피스 DNN 설계와 직결
+  <strong><a href="https://arxiv.org/abs/2606.25855" target=_blank>Hybrid deep learning-based phase diversity method for wavefront reconstruction</a></strong> <span class=pill>CV · TIER A</span><br>
+  문제: 파면 센서 없는 AO의 반복 알고리즘 속도 병목 / 방법: 딥러닝으로 위상 다양성 파면 추정 가속 / 의미: 렌즈리스 AO 시스템의 실시간 파면 재구성 경로
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1088/1361-6560/adeede" target=_blank>Topology-Aware Segmentation for Tubular Structure in 3D Microscopy</a></strong> [JNL · TIER B]<br>
-  문제: 3D 현미경 영상에서 관형 구조(혈관·신경)의 위상 정확성 부족 / 방법: 위상 인식 손실 함수와 세분화 네트워크 / 의미: 3D 현미경 후처리 단계에서 형태학적 정확도 향상 — 생물 샘플 분석에 적용 가능
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.115802" target=_blank>Hybrid in-line and off-axis multi-wavelength phase retrieval for single-shot holographic imaging</a></strong> <span class=pill>JNL · TIER A</span><br>
+  문제: in-line·off-axis 중 하나를 선택해야 했던 딜레마 / 방법: 다파장 구조로 두 방식 혼합 / 의미: 단일 샷 고해상도 위상 복원 기준선
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71474" target=_blank>Cubic-Encoded Moiré Metasurface Zoom System for Depth-Invariant Imaging</a></strong> <span class=pill>JNL · TIER B</span><br>
+  문제: 기계식 줌과 깊이 의존성 / 방법: cubic Moiré 메타서피스로 기계 없는 연속 초점 제어 / 의미: 하드웨어 단순화 계산 광학 소자
+</div>
+
+<h3>Light-Field / Novel Sensors (5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.25177" target=_blank>EveLoad: Cognitive Workload Recognition from Event-Based Eye Movements</a></strong> <span class=pill>LG · TIER B</span><br>
+  문제: 이벤트 카메라 기반 안구 운동에서 인지 부하 인식 / 방법: 이벤트 스트림에서 안구 운동 패턴 학습 기반 인지 부하 분류 / 의미: 이벤트 카메라의 생체 신호 측정 응용 확장
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.25620" target=_blank>1000 Rallies: An Event-Camera Dataset for Real-Time Ball-State Estimation</a></strong> <span class=pill>CV · TIER B</span><br>
+  문제: 빠른 구 궤적 ms 단위 상태 추정 / 방법: 이벤트 카메라로 공 위치·속도·스핀 실시간 추정 / 의미: 이벤트 카메라 극한 real-time 응용 검증
+</div>
+
+<h3>Tomography / 3D Imaging (선별)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.25430" target=_blank>PRISM: Feed-Forward Single-Image 3D Reconstruction via Geometric Warp-Residual Modeling</a></strong> <span class=pill>CV · TIER B</span><br>
+  문제: 단일 이미지 3D 재구성의 기하학적 일관성 / 방법: 기하학적 워프-잔차 모델링으로 피드포워드 3D 재구성 / 의미: 단일 샷 3D 재구성의 새 기준선 — 계산 이미징 3D 복원에 참조
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2606.25546" target=_blank>Disease-Centric Vision-Language Pretraining with Hybrid Visual Encoding for 3D CT</a></strong> <span class=pill>LG · TIER B</span><br>
+  문제: 3D CT 분석에서 의미 정렬 부족 / 방법: 질병 중심 비전-언어 사전학습 + 하이브리드 시각 인코딩 / 의미: CT 이미지 분석의 사전학습 패러다임 전환
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/boe.596096" target=_blank>Fast volumetric imaging of a zebrafish seizure model with adaptive optics light sheet microscopy</a></strong> <span class=pill>JNL · TIER B</span><br>
+  문제: 제브라피시 발작 모델 빠른 볼륨 이미징 / 방법: AO light sheet로 산란 보정 + 빠른 볼륨 캡처 / 의미: AO 통합 light sheet의 동적 생물 이미징
 </div>
 
 <hr>
 
-<h2>🌟 오늘의 must-read</h2>
+<h2>🌟 오늘의 must-read <span class="pill a">Tier A</span></h2>
 
 <div class=dd>
-  <h3>[TIER A] Improving Richardson-Lucy Deconvolution with Diffusion Priors for Fluorescence Microscopy (2606.25924)</h3>
-  <div class=tag>[방법전환] [실사용전환]</div>
-  <p><strong>왜 A급인가:</strong> 형광 현미경 역문제에서 생성 모델이 외부 정규화가 아니라 반복 알고리즘 내부에 통합되는 패턴을 처음 보여준 논문입니다. RL deconvolution은 광학 현미경의 기본 도구인데, diffusion prior를 각 이터레이션에 주입함으로써 포아송 노이즈 조건에서도 수렴 품질을 개선합니다. 이 접근은 FP·ODT·렌즈리스 시스템으로 이식 가능한 패턴으로, 랩 파이프라인에 직접 영향을 줍니다.</p>
-  <p><strong>핵심:</strong> Richardson-Lucy는 최대우도 추정(포아송 데이터)으로 반복을 돌리는데, 각 반복 후 diffusion denoiser를 적용하는 방식입니다. 이는 PnP와 비슷하지만, RL의 포아송 데이터 피델리티를 유지하면서 diffusion 사전 분포를 통합한다는 점이 다릅니다.</p>
-  <p><strong>주의:</strong> 형광 현미경 PSF 가정이 FP·ODT 설정과 다를 수 있으므로 이식 시 forward model 재정의 필요. 본문의 ablation 결과와 실험 조건 확인 필요.</p>
+  <h3><a href="https://arxiv.org/abs/2606.25924" target=_blank>Improving Richardson-Lucy Deconvolution with Diffusion Priors for Fluorescence Microscopy (2606.25924)</a> <span class="pill a">TIER A · 오늘의 핵심</span></h3>
+  <p style="color:#713f12;font-size:13.5px"><em>역문제 방법론에서 생성 모델의 역할이 '외부 정규화'에서 '반복 알고리즘 내부 구성요소'로 이동하는 전환점을 보여주는 논문으로, FP·ODT·렌즈리스 시스템으로의 이식 가능성이 높습니다.</em></p>
+  <div class=tag>무엇을 했나</div>
+  <p>형광 현미경의 기본 복원 알고리즘인 Richardson-Lucy deconvolution의 각 반복 step에 diffusion model을 직접 주입했습니다. 기존 RL은 포아송 데이터 우도(photon counting)에만 의존하는데, 여기에 diffusion model이 학습한 '이미지다운 이미지란 무엇인가'라는 사전 분포를 통합하면 노이즈 조건에서도 수렴 품질이 향상됩니다.</p>
+  <div class=tag>왜 이게 새로운가</div>
+  <p>기존 diffusion 기반 역문제 방법(DPS, RED-diff 등)은 diffusion을 외부 정규화로 쓰거나 완전히 새로운 샘플링 프레임워크로 대체했습니다. 이 논문은 기존 RL 알고리즘의 구조를 유지하면서 diffusion을 각 반복 내부에서 국소적으로 적용하는 점에서 다릅니다. 이 '내부화' 패턴은 다른 반복 역문제 알고리즘(ADMM, gradient descent, conjugate gradient)에도 동일하게 적용 가능한 일반적 원칙입니다.</p>
+  <div class=tag>계산 광학에의 함의</div>
+  <p>Fourier ptychography의 Wirtinger flow나 alternating projection도 반복 알고리즘입니다. RL+diffusion 패턴을 이식하면 저선량 FP 복원의 수렴 품질을 높일 수 있습니다. 단, FP의 포워드 모델(위상 + 진폭 복원)이 형광 현미경(강도만 복원)과 다르므로 forward model 재정의가 필요합니다.</p>
 </div>
 
 <div class=dd>
-  <h3>[TIER A] Scattering-enhanced intensity based tomography — IEEE Transactions on Computational Imaging</h3>
-  <div class=tag>[방법전환] [문제정의]</div>
-  <p><strong>왜 A급인가:</strong> 산란을 역문제의 장애물이 아니라 신호원으로 재정의하는 논문입니다. IEEE Transactions on Computational Imaging에 게재됐다는 것은 이론적·실험적 뒷받침이 충분하다는 신호입니다. 계산 광학 역문제의 기본 가정을 뒤집는 논문이므로, 고산란 생물 샘플에서 ODT를 사용하는 랩에 직접 영향을 줍니다.</p>
-  <p><strong>핵심:</strong> 산란이 많은 매질에서 강도(intensity) 측정값이 산란에 의해 추가 정보를 포함한다는 점을 역문제로 활용. 기존 ODT가 '산란 → 잡음'으로 모델링하는 것과 반대입니다.</p>
-  <p><strong>주의:</strong> 어느 산란 레짐(μs' 범위)에서 적용 가능한지, 필요한 추가 측정이 있는지 본문 확인 필요.</p>
+  <h3><a href="https://arxiv.org/abs/2606.25753" target=_blank>Gradient-based inverse lithography for EUV masks via the waveguide method and a physics-informed deep learning approach (2606.25753)</a> <span class="pill a">TIER A</span></h3>
+  <div class=tag>무엇을 했나</div>
+  <p>EUV(극자외선) 리소그래피 마스크의 역문제를 도파로법(waveguide method)으로 전자기장을 모델링하고, 물리 정보 딥러닝으로 역리소그래피(ILT) 최적화를 가속했습니다. 기존 OPC는 경험칙 기반 보정이었는데, 이 논문은 파동 방정식을 역으로 풀어 목표 패턴을 만들어내는 마스크를 설계합니다.</p>
+  <div class=tag>왜 중요한가</div>
+  <p>나노포토닉 역설계의 방법론(adjoint method, PINN 기반 최적화)이 반도체 제조 현장의 가장 어려운 역문제 — EUV 마스크 설계 — 에 적용됐다는 의미가 있습니다. 메타서피스 설계에서 쌓인 역문제 방법론이 제조 공정으로 역류하는 흐름을 상징합니다.</p>
+  <div class=tag>랩 연결</div>
+  <p>도파로법은 가시광 메타렌즈 스케일에도 적용 가능합니다. FDTD 전체 시뮬레이션 대신 도파로 근사로 속도를 높이면 랩 메타렌즈 역설계 파이프라인의 반복 속도가 크게 향상될 수 있습니다. 유효 파장과 구조 크기 비율(feature/λ)에 따라 도파로 근사의 정확도가 달라지므로, 우리 설계 파라미터에서 유효 범위를 먼저 확인해야 합니다.</p>
 </div>
 
 <h2>⚠️ 리스크·한계 필터</h2>
-
 <div class=risk>
-  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
-  <p>[Dataset risk] cs.LG·cs.CV·cs.AI 2026-06-25 목록이 없어서 오늘 arXiv 신호가 eess 2개 카테고리(11편)에 불과합니다. 평소 대비 90% 이상 정보 누락 상태입니다. /pastweek에 등장 후 업그레이드됩니다.</p>
-  <p>[Dataset risk] Tomography/3D Imaging 47편 중 실제 계산광학 관련 논문은 5~10편으로 추정됩니다. 키워드 기반 분류의 한계로 의료 저널 논문이 다수 포함됐습니다.</p>
-  <p>[Dataset risk] Virtual Staining/Pathology 15편에는 실제 가상 염색과 무관한 논문(항공 추진 엔진, 해저 오일, 언어 교육 등)이 다수 포함됩니다. 오늘 해당 버킷은 신뢰성이 낮습니다.</p>
-</div>
-
-<div class=risk>
-  <p><strong>[개별 논문 리스크]</strong></p>
-  <p>[Claim risk] 2606.25924 (RL+Diffusion Prior): abstract 수준 확인. 본문의 실험 조건, PSF 가정, 데이터셋 규모 확인 필요.</p>
-  <p>[Deployment risk] 10.1117/1.oe.65.10.102007 (Meta-optics qualified hardware): 스킬맵이 구체적 테스트 프로토콜이 아닌 개념 프레임워크일 수 있음. 실제 표준과의 연결 확인 필요.</p>
-  <p>[Baseline risk] 2606.24944 (Leakage-aware benchmark): 어떤 데이터셋에서 어느 방법론을 비교했는지 확인 필요. 누수 방지 방법이 특정 데이터셋에만 적용될 수 있음.</p>
-</div>
-
-<h2>🧊 Skim-only 후보</h2>
-
-<div class=skim>
-  <ul>
-    <li><strong>Hybrid GaAs(111)/GaAs(100) PIN photodiodes for metasurface-assisted nonlinear upconversion detection</strong> [JNL] — 메타서피스 광검출기 구현 세부 사항. 어제 비선형 업컨버전 논문과 방향이 겹치나 GaAs 특화 내용으로 우선순위 낮음.</li>
-    <li><strong>2606.25463 Blasto-Net</strong> [IV] — 배반포 분석을 위한 멀티태스크 학습. 계산 이미징 랩 ROI와 거리가 있음.</li>
-    <li><strong>2606.25579 Cross-Attention Multimodal Learning for GIST</strong> [IV] — 위장관 기질 종양 반응 예측. 의료 AI 응용이나 광학 이미징과 연결 약함.</li>
-    <li><strong>Microwave Metasurface Encryption (Photonics Research)</strong> [JNL] — 메타서피스 보안 응용. 방법론 참조 가능하나 직접 ROI 연관성 낮음.</li>
-    <li><strong>Tomography/3D Imaging 버킷의 다수 임상 저널 논문</strong> — PE 분류, 황반 혈관 등 임상 진단 논문. 알고리즘 참조 가능하나 랩 계산 광학 적용성 낮음.</li>
-  </ul>
+  <p><strong>[업그레이드 주의]</strong> 이 리포트는 /pastweek 2026-06-25 섹션에서 cs.LG(186)·cs.CV(125)·cs.AI(182)를 추가해 업그레이드됐습니다. /pastweek 논문은 초록 없이 제목과 메타데이터만으로 분류됐으므로, 일부 버킷 배정이 /new(초록 포함) 대비 정확도가 낮을 수 있습니다.</p>
+  <p><strong>[PINNs 취약성]</strong> 2606.25151(PINNs 파라미터 중독)은 현재 ODT 파이프라인에서 사용 중인 PINN 구조가 있다면 즉시 점검이 필요합니다. '조용한 실패(silent failure)'는 출력이 그럴듯해 보이지만 실제로는 틀린 케이스를 포함합니다.</p>
+  <p><strong>[EUV ILT 이식 한계]</strong> 2606.25753의 도파로법은 EUV 파장(13.5 nm)과 패턴 크기 비율에 최적화됐습니다. 가시광 메타렌즈(파장 400~700 nm, 서브파장 구조)로 이식 시 유효 조건 재확인이 필요합니다.</p>
+  <p><strong>[Virtual Staining 위양성]</strong> Virtual Staining 버킷 18편에는 계산 이미징 무관 논문이 다수 포함됩니다. 광학 관련 논문은 3~4편 수준으로 버킷 통계를 과신하지 말 것.</p>
+  <p><strong>[Tomography 위양성]</strong> Tomography/3D 61편 중 실제 계산광학 관련 논문은 10편 내외입니다. 자율주행 BEV·NeRF SLAM 논문이 다수 포함됐습니다.</p>
 </div>
 
 <hr>
 
 <h2>📄 부록 — 전체 ROI 논문 선별 목록</h2>
 
-<h3>Phase Imaging / Holography (4편)</h3>
+<h3>Meta-Optics / Diffractive</h3>
+<div class=roi-item><strong><a href="https://arxiv.org/abs/2606.25226" target=_blank>Dimension expansion for simulation-efficient nanophotonic neural networks</a></strong> [eess.IV · TIER A] — 나노포토닉 역설계 시뮬레이션 비용 줄이는 차원 확장 신경망</div>
+<div class=roi-item><strong><a href="https://arxiv.org/abs/2606.25753" target=_blank>Gradient-based inverse lithography for EUV masks via waveguide method + physics-informed DL</a></strong> [cs.LG · TIER A] — EUV 마스크 역리소그래피에 도파로법·물리 DL 적용</div>
+<div class=roi-item><strong><a href="https://doi.org/10.1117/1.oe.65.10.102007" target=_blank>From flat-optics to qualified hardware: skills map</a></strong> [JNL · TIER A] — 연구→제품 전환 역량 지도</div>
+<div class=roi-item><strong><a href="https://doi.org/10.1364/ol.557027" target=_blank>Freeform diffractive deep neural networks with intrinsically smooth layers</a></strong> [JNL · TIER B] — 제조 가능한 smooth 회절 레이어 D²NN</div>
 
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.115802" target=_blank>Hybrid in-line and off-axis multi-wavelength phase retrieval for single-shot high-resolution holographic imaging</a></strong> <span class=pill>JNL</span><br>
-  문제: 단일 측정에서 in-line·off-axis 두 방식의 장단점을 동시에 달성하지 못하는 딜레마 / 방법: 다파장 조명 구조에서 두 모드를 혼합 / 의미: 단일 샷 고해상도 위상 복원의 새 기준선 — FP 시스템 다파장 확장에 참조 / 우선순위: Read
-</div>
+<h3>Reconstruction / Inverse Problems</h3>
+<div class=roi-item><strong><a href="https://arxiv.org/abs/2606.25924" target=_blank>Improving Richardson-Lucy Deconvolution with Diffusion Priors for Fluorescence Microscopy</a></strong> [eess.IV · TIER A] — 생성 모델 내부 통합 역문제 복원 패턴</div>
+<div class=roi-item><strong><a href="https://arxiv.org/abs/2606.25151" target=_blank>Silent Failures in Physics-Informed Neural Networks: Parameter Poisoning and the Limits of PINNs</a></strong> [cs.LG · TIER A] — PINNs 파라미터 중독 취약성 경고</div>
+<div class=roi-item><strong><a href="https://doi.org/10.1109/tci.2026.3707068" target=_blank>Nonasymptotic Convergence Rates for PnP with MMSE Denoisers</a></strong> [IEEE TCI · TIER A] — PnP 수렴 속도 이론 보장</div>
+<div class=roi-item><strong><a href="https://doi.org/10.1109/tci.2026.3707064" target=_blank>Scattering-enhanced intensity based tomography</a></strong> [IEEE TCI · TIER A] — 산란을 신호원으로 재정의하는 ODT 접근</div>
+<div class=roi-item><strong><a href="https://doi.org/10.1016/j.cma.2026.119156" target=_blank>Spectral bias in physics-informed and operator learning: Analysis and mitigation guidelines</a></strong> [JNL · TIER B] — PINN 고주파 학습 어려움 분석</div>
 
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1002/lpor.71474" target=_blank>Cubic-Encoded Moiré Metasurface Zoom System for Depth-Invariant Imaging</a></strong> <span class=pill>JNL</span><br>
-  문제: 기계식 줌과 깊이 의존성 / 방법: cubic Moiré 메타서피스로 기계 없는 연속 초점 제어 / 의미: 하드웨어 단순화 방향 계산 광학 소자 / 주의: 제조 복잡도·수율 본문 확인 필요 / 우선순위: Read
-</div>
+<h3>Phase Imaging / Holography</h3>
+<div class=roi-item><strong><a href="https://arxiv.org/abs/2606.25855" target=_blank>Hybrid deep learning-based phase diversity method for wavefront reconstruction</a></strong> [cs.CV · TIER A] — 딥러닝 위상 다양성으로 파면 재구성 가속</div>
+<div class=roi-item><strong><a href="https://doi.org/10.1016/j.optlastec.2026.115802" target=_blank>Hybrid in-line and off-axis multi-wavelength phase retrieval for single-shot holographic imaging</a></strong> [JNL · TIER A] — 단일 샷 고해상도 홀로그래픽 위상 복원</div>
+<div class=roi-item><strong><a href="https://doi.org/10.1002/lpor.71474" target=_blank>Cubic-Encoded Moiré Metasurface Zoom System for Depth-Invariant Imaging</a></strong> [JNL · TIER B] — 기계 없는 연속 초점 제어</div>
 
-<h3>Meta-Optics / Diffractive (10편)</h3>
+<h3>Light-Field / Novel Sensors</h3>
+<div class=roi-item><strong><a href="https://arxiv.org/abs/2606.25177" target=_blank>EveLoad: Cognitive Workload Recognition from Event-Based Eye Movements</a></strong> [cs.LG · TIER B] — 이벤트 카메라 안구 운동 기반 인지 부하 분류</div>
+<div class=roi-item><strong><a href="https://arxiv.org/abs/2606.25620" target=_blank>1000 Rallies: Event-Camera Dataset + Real-Time Ball-State Estimation</a></strong> [eess.CV · TIER B] — 이벤트 카메라 극한 real-time 응용 벤치마크</div>
+<div class=roi-item><strong><a href="https://doi.org/10.1109/tip.2026.3705197" target=_blank>Enhancing Underwater Light Field Images via Global Geometry-aware Diffusion Process</a></strong> [IEEE TIP · TIER B] — 수중 광 필드 복원에 diffusion 결합</div>
 
-<div class=roi-item>
-  <strong><a href="https://arxiv.org/abs/2606.25226" target=_blank>Dimension expansion for simulation-efficient nanophotonic neural networks</a></strong> <span class=pill>IV</span><br>
-  문제: 나노포토닉 역설계 EM 시뮬레이션 계산 비용 / 방법: 차원 확장으로 신경망 시뮬레이터 효율·정확도 동시 개선 / 의미: 역설계 속도 병목 해결 / 우선순위: Must-read
-</div>
+<h3>Tomography / 3D Imaging (선별)</h3>
+<div class=roi-item><strong><a href="https://arxiv.org/abs/2606.25430" target=_blank>PRISM: Feed-Forward Single-Image 3D Reconstruction via Geometric Warp-Residual Modeling</a></strong> [cs.CV · TIER B] — 단일 이미지 기하학적 일관 3D 재구성</div>
+<div class=roi-item><strong><a href="https://arxiv.org/abs/2606.25546" target=_blank>Disease-Centric Vision-Language Pretraining with Hybrid Visual Encoding for 3D CT</a></strong> [cs.LG · TIER B] — 질병 중심 VLP로 3D CT 분석 향상</div>
+<div class=roi-item><strong><a href="https://doi.org/10.1364/boe.596096" target=_blank>Fast volumetric imaging of a zebrafish seizure model with adaptive optics light sheet</a></strong> [JNL · TIER B] — AO light sheet 동적 생물 이미징</div>
 
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1117/1.oe.65.10.102007" target=_blank>From flat-optics concept to qualified hardware: skills map for the meta-optics workforce</a></strong> <span class=pill>JNL</span><br>
-  문제: 연구 단계에서 제품 출시까지의 역량 갭 / 방법: 인력 역량 지도와 자격 인증 프레임워크 / 의미: 기술이전 로드맵에 직접 참조 / 우선순위: Read
-</div>
-
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1364/ol.557027" target=_blank>Freeform diffractive deep neural networks with intrinsically smooth layers</a></strong> <span class=pill>JNL</span><br>
-  문제: D²NN 이진 위상 레이어의 제조 한계 / 방법: smooth freeform 회절 레이어 / 의미: 광학 신경망 하드웨어 구현 가능성 확장 / 우선순위: Read
-</div>
-
-<h3>Light-Field / Novel Sensors (4편)</h3>
-
-<div class=roi-item>
-  <strong><a href="https://arxiv.org/abs/2606.25620" target=_blank>1000 Rallies: An Event-Camera Dataset and Real-Time Ball-State Estimation for Robotic Table Tennis</a></strong> <span class=pill>CV</span><br>
-  문제: 이벤트 카메라 극한 real-time 응용 / 방법: 1000 랠리 데이터셋 + 학습 기반 실시간 추정 / 의미: 이벤트 카메라 방법론 벤치마크 / 우선순위: Skim-only
-</div>
-
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1109/tip.2026.3705197" target=_blank>Enhancing Underwater Light Field Images via Global Geometry-aware Diffusion Process</a></strong> <span class=pill>JNL</span><br>
-  문제: 수중 광 필드 품질 저하 / 방법: 지오메트리 인식 diffusion process / 의미: 광 필드 + diffusion 결합 패턴 / 우선순위: Skim-only
-</div>
-
-<h3>Tomography / 3D Imaging (47편 중 관련 선별)</h3>
-
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1109/tci.2026.3707064" target=_blank>Scattering-enhanced intensity based tomography</a></strong> <span class=pill>JNL</span><br>
-  문제: 산란 매질에서 단층 촬영 품질 / 방법: 산란 자체를 역문제 신호로 활용 / 의미: ODT에서 고산란 레짐의 새 접근 / 우선순위: Must-read
-</div>
-
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1364/boe.596096" target=_blank>Fast volumetric imaging of a zebrafish seizure model with adaptive optics light sheet microscopy</a></strong> <span class=pill>JNL</span><br>
-  문제: 제브라피시 발작 모델 빠른 볼륨 이미징 / 방법: AO light sheet로 산란 보정 + 빠른 볼륨 캡처 / 의미: AO 통합 light sheet 현미경의 동적 생물 이미징 응용 / 우선순위: Read
-</div>
-
-<div class=roi-item>
-  <strong><a href="https://arxiv.org/abs/2606.25956" target=_blank>Pulmonary Embolism Risk Stratification from CTPA and Medical Records: Vascular Graphs Are Not All You Need</a></strong> <span class=pill>CV</span><br>
-  문제: PE 위험 분류에서 혈관 그래프만의 한계 / 방법: CTPA + 의료 기록 멀티모달 학습 / 의미: CT 이미지 + 비이미지 정보 통합의 필요성 — 계산 이미징 임상 응용에서 참조 / 우선순위: Skim-only
-</div>
-
-<h3>Reconstruction / Inverse Problems (7편)</h3>
-
-<div class=roi-item>
-  <strong><a href="https://arxiv.org/abs/2606.25924" target=_blank>Improving Richardson-Lucy Deconvolution with Diffusion Priors for Fluorescence Microscopy</a></strong> <span class=pill>IV</span><br>
-  문제: RL deconvolution의 노이즈 취약성 / 방법: diffusion prior를 RL 반복에 직접 주입 / 의미: 역문제에서 생성 모델 통합의 새 패턴 / 우선순위: Must-read
-</div>
-
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1109/tci.2026.3707068" target=_blank>Nonasymptotic Convergence Rates for Plug-and-Play Methods With MMSE Denoisers</a></strong> <span class=pill>JNL</span><br>
-  문제: PnP 방법의 수렴 속도 이론 부재 / 방법: MMSE denoiser 조건 하 비점근적 수렴 속도 분석 / 의미: PnP 이론 기반 강화 — denoiser 선택 기준 도출 / 우선순위: Read
-</div>
-
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.3390/jimaging12070276" target=_blank>Hyperelastic Regularization for Near-Diffeomorphic Transformer-Based Brain MRI Registration</a></strong> <span class=pill>JNL</span><br>
-  문제: 변형 등록에서 비양정 야코비안(폴딩) 문제 / 방법: 초탄성 정규화로 위상적으로 유효한 변형 필드 보장 / 의미: 등록 기반 이미지 변환에서 물리적 유효성 보장 방법 / 우선순위: Skim-only
-</div>
-
-<h3>Deep Learning Methods — 광학 관련 선별 (27편 중 4편)</h3>
-
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1364/ol.557027" target=_blank>Freeform diffractive deep neural networks with intrinsically smooth layers</a></strong> <span class=pill>JNL</span><br>
-  문제: D²NN 제조 가능성 / 방법: smooth freeform 회절 레이어 / 의미: 광학 신경망 하드웨어 실현 / 우선순위: Read
-</div>
-
-<div class=roi-item>
-  <strong><a href="https://arxiv.org/abs/2606.24944" target=_blank>Leakage-Aware Comparative Benchmark of ML/DL for ALL Classification</a></strong> <span class=pill>IV</span><br>
-  문제: 의료 AI 벤치마크 데이터 누수로 인한 과평가 / 방법: 누수 방지 공정 비교 / 의미: 평가 파이프라인 신뢰성 문제 — 계산 이미징 평가에도 동일하게 적용 / 우선순위: Read
-</div>
-
-<div class=roi-item>
-  <strong><a href="https://arxiv.org/abs/2606.25128" target=_blank>Benchmarking the Alignment of Data-Quality Metrics, Human Judgment and Model Performance</a></strong> <span class=pill>IV</span><br>
-  문제: 데이터 품질 메트릭과 모델 성능의 불일치 / 방법: 여러 데이터 품질 메트릭과 실제 성능의 정렬 정도 정량화 / 의미: 평가 메트릭 자체의 신뢰성 재검토 / 우선순위: Read
-</div>
-
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1088/1361-6560/adeede" target=_blank>Topology-Aware Segmentation for Tubular Structure in 3D Microscopy</a></strong> <span class=pill>JNL</span><br>
-  문제: 3D 현미경에서 관형 구조 위상 정확도 / 방법: 위상 인식 손실 함수 / 의미: 생물 샘플 3D 분석 품질 향상 / 우선순위: Skim-only
-</div>
+<h3>Medical AI Benchmark</h3>
+<div class=roi-item><strong><a href="https://arxiv.org/abs/2606.24944" target=_blank>Leakage-Aware Comparative Benchmark of ML/DL for ALL Classification</a></strong> [eess.IV · TIER B] — 의료 AI 데이터 누수 공정 비교</div>
+<div class=roi-item><strong><a href="https://arxiv.org/abs/2606.25128" target=_blank>Benchmarking Alignment of Data-Quality Metrics, Human Judgment and Model Performance</a></strong> [eess.IV · TIER B] — 데이터 품질 메트릭 정렬 재검토</div>
 
 <hr>
 
 <h2>🔗 참고 링크</h2>
 <ul>
   <li><a href="https://arxiv.org/abs/2606.25924" target=_blank>RL Deconvolution + Diffusion Priors (2606.25924)</a></li>
-  <li><a href="https://arxiv.org/abs/2606.25226" target=_blank>Dimension Expansion for Nanophotonic NNs (2606.25226)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.25753" target=_blank>EUV Inverse Lithography waveguide+DL (2606.25753)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.25226" target=_blank>Dimension Expansion Nanophotonic NNs (2606.25226)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.25151" target=_blank>Silent Failures in PINNs (2606.25151)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.25855" target=_blank>Hybrid DL Phase Diversity Wavefront (2606.25855)</a></li>
   <li><a href="https://doi.org/10.1117/1.oe.65.10.102007" target=_blank>From flat-optics to qualified hardware — Optical Engineering</a></li>
-  <li><a href="https://doi.org/10.1109/tci.2026.3707064" target=_blank>Scattering-enhanced intensity tomography — IEEE TCI</a></li>
+  <li><a href="https://doi.org/10.1109/tci.2026.3707064" target=_blank>Scattering-enhanced tomography — IEEE TCI</a></li>
   <li><a href="https://doi.org/10.1109/tci.2026.3707068" target=_blank>PnP MMSE Convergence Rates — IEEE TCI</a></li>
   <li><a href="https://doi.org/10.1002/lpor.71474" target=_blank>Cubic-Encoded Moiré Metasurface Zoom — Laser &amp; Photonics Reviews</a></li>
   <li><a href="https://doi.org/10.1016/j.optlastec.2026.115802" target=_blank>Hybrid in-line/off-axis phase retrieval — Optics &amp; Laser Technology</a></li>
   <li><a href="https://doi.org/10.1364/boe.596096" target=_blank>Fast volumetric AO light sheet zebrafish — Biomedical Optics Express</a></li>
-  <li><a href="https://doi.org/10.1364/ol.557027" target=_blank>Freeform diffractive deep NNs — Optics Letters</a></li>
-  <li><a href="https://arxiv.org/abs/2606.24944" target=_blank>Leakage-Aware Benchmark ALL (2606.24944)</a></li>
-  <li><a href="https://arxiv.org/abs/2606.25128" target=_blank>Data-Quality Metric Alignment Benchmark (2606.25128)</a></li>
-  <li><a href="https://arxiv.org/abs/2606.25620" target=_blank>1000 Rallies Event Camera (2606.25620)</a></li>
-  <li><a href="https://arxiv.org/abs/2606.25956" target=_blank>PE Risk Stratification CTPA (2606.25956)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.25430" target=_blank>PRISM 3D Reconstruction (2606.25430)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.25546" target=_blank>Disease-Centric VLP 3D CT (2606.25546)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.25177" target=_blank>EveLoad Cognitive Workload Event Camera (2606.25177)</a></li>
 </ul>
 
 <a class=home href="../index.html">← 홈</a>
 
 <footer>
-  <p>📚 입력: journal-only + eess.IV/SP 2026-06-25 (잠정본) · 스캔 440건, ROI 114건 · cs.LG·cs.CV·cs.AI 미갱신</p>
+  <p>📚 입력: arXiv /pastweek 2026-06-25 섹션 (cs.LG 186·cs.CV 125·cs.AI 182·eess.IV 10·eess.SP 18) + Crossref/OpenAlex 저널 · 스캔 855건, ROI 183건</p>
+  <p>🔄 이 리포트는 journal-only 잠정본에서 pastweek-date-section 완전판으로 업그레이드됐습니다.</p>
   <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
   <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
 </footer>

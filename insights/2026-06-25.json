@@ -1,12 +1,19 @@
 {
   "date": "2026-06-25",
+  "source_mode": "pastweek-date-section",
+  "note": "Upgraded from journal-only. arXiv cs.LG/cs.CV/cs.AI papers added from /pastweek 2026-06-25 section.",
   "clusters": [
     {
-      "cluster": "나노포토닉 역설계 — 시뮬레이션 효율화에서 하드웨어 자격 인증까지",
+      "cluster": "나노포토닉 역설계 — 시뮬레이션 효율화에서 EUV 역리소그래피까지",
       "papers": [
         {
           "title": "Dimension expansion for simulation-efficient nanophotonic neural networks",
           "arxiv": "https://arxiv.org/abs/2606.25226",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "Gradient-based inverse lithography for EUV masks via the waveguide method and a physics-informed deep learning approach",
+          "arxiv": "https://arxiv.org/abs/2606.25753",
           "importance_tags": ["[방법전환]", "[실사용전환]"]
         },
         {
@@ -18,20 +25,15 @@
           "title": "Enhancement of Full-Color Filtering and Sensing Characteristics Using Metasurface Configuration",
           "arxiv": "https://doi.org/10.1021/acsanm.6c00776",
           "importance_tags": ["[방법전환]"]
-        },
-        {
-          "title": "Microwave Metasurface Encryption Based on Multifrequency Phase Modulation and DNA Encoding",
-          "arxiv": "https://doi.org/10.1364/prj.603184",
-          "importance_tags": ["[방법전환]"]
         }
       ],
-      "why": "메타서피스와 나노포토닉 역설계가 '실험실에서 작동하는 소자'를 만드는 단계에서 '실제 제품 출시를 위한 자격 인증 가능한 하드웨어'를 만드는 단계로 이동하고 있습니다. 역설계 시뮬레이션 비용을 차원 확장으로 대폭 줄이는 논문과, 요구사항 정의부터 신뢰성 검증까지의 인력 역량 지도를 그리는 논문이 같은 날 나왔습니다. 이 전환의 의미는 '메타서피스 소자를 만들 수 있는가'를 넘어 '반복 재현 가능한 제품으로 출시할 수 있는가'를 묻기 시작했다는 것입니다.",
+      "why": "메타서피스와 나노포토닉 역설계가 '실험실에서 작동하는 소자'를 만드는 단계에서 '실제 제품 출시를 위한 자격 인증 가능한 하드웨어'를 만드는 단계로 이동하고 있습니다. 역설계 시뮬레이션 비용을 차원 확장으로 대폭 줄이는 논문과, EUV 마스크 역리소그래피에 도파로법과 물리 정보 딥러닝을 결합한 논문이 나란히 등장했습니다. 요구사항 정의부터 신뢰성 검증까지의 인력 역량 지도까지 합쳐지면 '설계 → 시뮬레이션 → 제조 → 인증'의 전 파이프라인 논의가 하루에 모두 등장한 것입니다.",
       "confidence": "High",
-      "confidence_reason": "에너지-효율 역설계와 하드웨어 자격인증 두 관점에서 독립적인 논문들이 같은 방향 지시",
-      "lab_action": "랩 보유 메타렌즈 샘플에 Optical Engineering의 skills map 자격 인증 체크리스트 적용; nanophotonic NN 역설계 속도를 현재 FDTD 파이프라인과 직접 비교"
+      "confidence_reason": "역설계 효율화(차원확장), EUV 역리소그래피(물리기반), 하드웨어 자격인증 세 관점에서 독립적인 논문들이 같은 방향 지시",
+      "lab_action": "랩 보유 메타렌즈 샘플에 Optical Engineering의 skills map 자격 인증 체크리스트 적용; EUV ILT의 도파로법이 일반 나노포토닉 역설계에 이식 가능한지 검토"
     },
     {
-      "cluster": "형광 현미경 역문제 — RL Deconvolution에 Diffusion Prior 직접 주입",
+      "cluster": "형광 현미경 역문제 — RL Deconvolution에 Diffusion Prior 직접 주입, PINNs 한계 경고",
       "papers": [
         {
           "title": "Improving Richardson-Lucy Deconvolution with Diffusion Priors for Fluorescence Microscopy",
@@ -39,23 +41,23 @@
           "importance_tags": ["[방법전환]", "[실사용전환]"]
         },
         {
+          "title": "Silent Failures in Physics-Informed Neural Networks: Parameter Poisoning and the Limits of PINNs",
+          "arxiv": "https://arxiv.org/abs/2606.25151",
+          "importance_tags": ["[경고신호]", "[평가축]"]
+        },
+        {
           "title": "Nonasymptotic Convergence Rates for Plug-and-Play Methods With MMSE Denoisers",
           "arxiv": "https://doi.org/10.1109/tci.2026.3707068",
           "importance_tags": ["[평가축]"]
-        },
-        {
-          "title": "Hyperelastic Regularization for Near-Diffeomorphic Transformer-Based Brain MRI Registration",
-          "arxiv": "https://doi.org/10.3390/jimaging12070276",
-          "importance_tags": ["[방법전환]"]
         }
       ],
-      "why": "형광 현미경에서 회절로 손실된 디테일을 복원할 때, 기존 Richardson-Lucy 방법은 광자 통계(포아송 모델)에만 의존해서 수렴이 느리고 노이즈에 취약했습니다. 이 논문은 diffusion model이 이미지 분포에서 배운 사전지식을 RL 반복에 직접 주입해 품질을 높이는 방향입니다. 같은 날 PnP 방법의 비점근적 수렴 속도 보장(IEEE TCI)도 나와서, 역문제 방법론이 이론과 응용 두 방향에서 동시에 앞으로 나간 날입니다. 함의는 형광·위상 현미경에서 생성 모델이 단순 정규화 항이 아니라 반복 복원 알고리즘의 핵심 구성요소로 자리 잡기 시작했다는 것입니다.",
+      "why": "형광 현미경에서 diffusion prior를 RL 반복에 직접 주입하는 방법이 등장해 역문제 방법론의 생성 모델 통합이 응용 단계로 진입했습니다. 동시에 Physics-Informed Neural Network의 파라미터 중독 취약성을 다루는 논문이 나와, 물리 기반 방법이 무조건 신뢰할 수 없다는 경고 신호도 같이 왔습니다. PnP MMSE 수렴 속도 이론(IEEE TCI)은 방법론의 이론적 기반 강화를 보여줍니다. 역문제 분야에서 이론·응용·경고가 같은 날 나온 것은 이 방향이 빠르게 성숙 중임을 나타냅니다.",
       "confidence": "High",
-      "confidence_reason": "arXiv 논문 + IEEE TCI 저널 논문이 독립적으로 같은 방향의 이론·응용 진전 확인",
-      "lab_action": "RL+diffusion prior를 랩 형광 현미경 데이터에 적용; PnP 수렴 보장 조건을 현재 ODT 재구성 파이프라인 denoiser 설정과 대조"
+      "confidence_reason": "arXiv 논문 + IEEE TCI 저널 논문이 독립적으로 같은 방향의 이론·응용 진전 확인; PINNs 경고 논문도 독립적 검증",
+      "lab_action": "RL+diffusion prior를 랩 형광 현미경 데이터에 적용; PINNs 파라미터 중독 취약성을 ODT forward model에 사용 중인 PINN 구조에서 점검"
     },
     {
-      "cluster": "Phase Retrieval 하이브리드화 — 단일 측정에서 최대 위상 정보 추출",
+      "cluster": "Phase Retrieval 하이브리드화 — 단일 측정에서 최대 위상 정보 추출 + 딥러닝 파면 재구성",
       "papers": [
         {
           "title": "Hybrid in-line and off-axis multi-wavelength phase retrieval for single-shot high-resolution holographic imaging",
@@ -63,20 +65,20 @@
           "importance_tags": ["[방법전환]"]
         },
         {
-          "title": "Cubic-Encoded Moiré Metasurface Zoom System for Depth-Invariant Imaging",
-          "arxiv": "https://doi.org/10.1002/lpor.71474",
+          "title": "Hybrid deep learning-based phase diversity method for wavefront reconstruction",
+          "arxiv": "https://arxiv.org/abs/2606.25855",
           "importance_tags": ["[방법전환]", "[실사용전환]"]
         },
         {
-          "title": "Experimental Zernike-Mode Analysis of Wavefront Distortions in Underwater Rayleigh-Benard Turbulence",
-          "arxiv": "https://doi.org/10.1364/ao.604462",
-          "importance_tags": ["[평가축]"]
+          "title": "Cubic-Encoded Moiré Metasurface Zoom System for Depth-Invariant Imaging",
+          "arxiv": "https://doi.org/10.1002/lpor.71474",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
         }
       ],
-      "why": "단일 측정에서 더 많은 위상 정보를 추출하려는 흐름이 세 논문에서 나타납니다. in-line과 off-axis 방식을 혼합한 다파장 위상 복원은 두 방식의 장단점을 보완해 단일 샷 고해상도 홀로그래픽 이미징을 가능하게 합니다. Moiré 기반 메타서피스 줌 시스템은 기계적 렌즈 이동 없이 cubic 인코딩으로 연속 초점 제어를 구현해, 하드웨어 단순화와 위상 정보 보존을 동시에 달성합니다. 이 흐름의 공통점은 '추가 측정이나 하드웨어 없이 한 번의 측정에서 시스템이 제공하는 위상 정보를 최대화'하는 것입니다.",
+      "why": "단일 측정에서 더 많은 위상 정보를 추출하려는 흐름이 세 논문에서 나타납니다. in-line·off-axis 혼합 다파장 위상 복원은 두 방식의 장단점을 보완하고, 딥러닝 기반 위상 다양성 파면 재구성은 전통적인 반복 알고리즘을 신경망으로 대체해 속도와 정확도를 동시에 높입니다. Moiré 기반 메타서피스 줌 시스템은 기계 없는 연속 초점 제어로 하드웨어 단순화와 위상 정보 보존을 달성합니다. 공통점은 '측정 횟수·하드웨어 추가 없이 한 번에 위상 정보를 최대화'하는 것입니다.",
       "confidence": "Medium",
       "confidence_reason": "세 논문이 단일 샷 위상 정보 극대화 방향을 공유하나 적용 도메인과 원리가 다름",
-      "lab_action": "hybrid in-line/off-axis 방법을 현재 FP 시스템 다파장 설정에 이식; Moiré zoom 시스템의 DOF-FOV 트레이드오프 수치를 우리 설정 요구사항과 비교"
+      "lab_action": "2606.25855 딥러닝 파면 재구성을 우리 파면 센서 없는 AO 시스템에 적용 가능한지 검토; hybrid in-line/off-axis를 현재 FP 시스템 다파장 설정에 이식"
     },
     {
       "cluster": "산란 매질 이미징 — 장애물에서 신호원으로의 전환",
@@ -90,16 +92,11 @@
           "title": "Fast volumetric imaging of a zebrafish seizure model with adaptive optics light sheet microscopy",
           "arxiv": "https://doi.org/10.1364/boe.596096",
           "importance_tags": ["[실사용전환]"]
-        },
-        {
-          "title": "Pulmonary Embolism Risk Stratification from CTPA and Medical Records: Vascular Graphs Are Not All You Need",
-          "arxiv": "https://arxiv.org/abs/2606.25956",
-          "importance_tags": ["[방법전환]", "[평가축]"]
         }
       ],
-      "why": "산란 매질 속에서 3D 이미징을 하는 접근이 두 방향으로 나뉩니다. 적응광학 light sheet 현미경은 산란을 보정해 제브라피시 발작 모델의 빠른 볼륨 이미징을 달성했습니다. 반면 scattering-enhanced intensity tomography는 산란 자체를 신호로 활용해 복원 정보량을 늘리는 반대 전략입니다. '산란은 극복해야 할 장애물'이라는 기존 관점과 '산란은 활용할 수 있는 정보'라는 새로운 관점이 같은 날 IEEE TCI에서 충돌합니다. PE 위험 분류 논문은 혈관 그래프만으로 충분하지 않다는 점을 보여주며, 멀티모달(CT + 의료 기록) 접근의 필요성을 제기합니다.",
+      "why": "산란 매질 속에서 3D 이미징을 하는 접근이 두 방향으로 나뉩니다. 적응광학 light sheet 현미경은 산란을 보정해 제브라피시 발작 모델의 빠른 볼륨 이미징을 달성했습니다. 반면 scattering-enhanced intensity tomography는 산란 자체를 신호로 활용해 복원 정보량을 늘리는 반대 전략입니다. '산란 = 극복해야 할 장애물'이라는 기존 관점과 '산란 = 추가 정보원'이라는 새 관점이 IEEE TCI에서 충돌합니다.",
       "confidence": "Medium",
-      "confidence_reason": "두 산란 이미징 논문이 독립적인 IEEE TCI 및 Biomed Optics Express 저널에서 확인됨",
+      "confidence_reason": "두 산란 이미징 논문이 독립적인 IEEE TCI 및 Biomedical Optics Express 저널에서 확인됨",
       "lab_action": "scattering-enhanced tomography 프레임워크를 우리 ODT 시스템의 저산란~고산란 생물 샘플에 stress-test; AO light sheet 코드를 zebrafish 동적 이미징 setup과 비교"
     },
     {
@@ -116,12 +113,12 @@
           "importance_tags": ["[평가축]", "[경고신호]"]
         },
         {
-          "title": "Dual Agreement Consistency Learning for Semi-Supervised Fetal Ultrasound Segmentation",
-          "arxiv": "https://arxiv.org/abs/2606.25254",
+          "title": "Disease-Centric Vision-Language Pretraining with Hybrid Visual Encoding for 3D CT",
+          "arxiv": "https://arxiv.org/abs/2606.25546",
           "importance_tags": ["[방법전환]"]
         }
       ],
-      "why": "의료 AI에서 '거의 완벽한 분류 성능'을 보고했던 논문들이 데이터 누수(leakage) 문제로 실제보다 과평가됐을 가능성이 드러나고 있습니다. 급성 림프구성 백혈병 분류 벤치마크 논문은 누수를 인식하고 공정한 비교를 구현했을 때 성능이 어떻게 달라지는지 보여줍니다. 데이터 품질 메트릭 정렬 벤치마크는 메트릭이 높다고 모델 성능이 좋은 건 아님을 보이며, 데이터 측 가정 자체를 신뢰할 수 있는지 묻습니다. 이 흐름은 모델 개선이 아니라 평가 파이프라인 자체를 재검토해야 한다는 신호입니다.",
+      "why": "의료 AI에서 '거의 완벽한 분류 성능'을 보고했던 논문들이 데이터 누수(leakage) 문제로 실제보다 과평가됐을 가능성이 드러나고 있습니다. 데이터 품질 메트릭 정렬 벤치마크는 메트릭이 높다고 모델 성능이 좋은 건 아님을 보입니다. 3D CT 질병 중심 비전-언어 사전학습 논문은 임상 이미지 분석의 새 방법론을 제시합니다. 이 흐름은 모델 개선 이전에 평가 파이프라인 자체를 재검토해야 한다는 신호입니다.",
       "confidence": "Medium",
       "confidence_reason": "두 eess.IV 논문이 독립적으로 같은 날 의료 AI 벤치마크 신뢰성 문제를 다룸",
       "lab_action": "우리 계산 이미징 파이프라인의 데이터 분할 방식에서 누수 가능성 점검; 평가 메트릭(SSIM, FRC, PSNR)이 실제 이미징 품질 판단과 얼마나 정렬되는지 ablation"
@@ -137,17 +134,17 @@
       ]
     },
     {
-      "title": "Scattering-enhanced ODT — 산란 신호 활용 3D 복원",
-      "claim": "산란을 정보원으로 활용하는 scattering-enhanced intensity tomography를 ODT 설정에 이식하면 고산란 생물 샘플에서 복원 성능이 향상될 것이다",
+      "title": "딥러닝 파면 재구성 + 이벤트 카메라 — AO 없는 실시간 위상 복원",
+      "claim": "2606.25855의 딥러닝 위상 다양성 파면 재구성을 이벤트 카메라 데이터와 결합하면 고속 동적 샘플 위상 복원이 가능할 것이다",
       "supporting_papers": [
-        {"title": "Scattering-enhanced intensity based tomography", "arxiv": "https://doi.org/10.1109/tci.2026.3707064"}
+        {"title": "Hybrid deep learning-based phase diversity method for wavefront reconstruction", "arxiv": "https://arxiv.org/abs/2606.25855"}
       ]
     },
     {
-      "title": "Nanophotonic 역설계 하드웨어 자격 인증 체크리스트 구축",
-      "claim": "flat-optics workforce skills map의 자격 인증 프레임워크를 랩 메타렌즈 제작 파이프라인에 적용하면 재현성 있는 소자 출시 경로를 도출할 수 있다",
+      "title": "EUV Inverse Lithography → 메타렌즈 역설계로 이식",
+      "claim": "도파로법과 물리 정보 딥러닝을 결합한 EUV 마스크 역리소그래피 접근을 메타렌즈 위상 분포 역설계에 이식하면 FDTD 반복 계산 없이 설계 가능하다",
       "supporting_papers": [
-        {"title": "From flat-optics to qualified hardware", "arxiv": "https://doi.org/10.1117/1.oe.65.10.102007"},
+        {"title": "Gradient-based inverse lithography for EUV masks via waveguide method", "arxiv": "https://arxiv.org/abs/2606.25753"},
         {"title": "Dimension expansion for simulation-efficient nanophotonic neural networks", "arxiv": "https://arxiv.org/abs/2606.25226"}
       ]
     }

@@ -6,14 +6,21 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 25 Jun 2026 12:24:34 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jun 2026 12:29:33 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-06-26 (금요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-06-26.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-26.html</guid>
+      <pubDate>Fri, 26 Jun 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[금요일 arXiv /new 배치는 총 522건(cs.AI 206·cs.LG 162·cs.CV 125·eess.SP 16·eess.IV 13)이고, 저널까지 합산하면 876건입니다. 이번 주(6월 22일~26일) 흐름을 돌아보면 역문제 방법론에서 생성 모델의 통합 깊이가 점점 깊어지는 누적 패턴 이 보입니다. 수요일(6/24) 멀티오더 디커플링·LC-메타서피스로 홀로그래피 용량이 돌파됐고, 목요일(6/25) RL 반복 내부에 diffusion prior가 들어왔으며, 오늘(6/26)은 그 diffusion이 잠재 공간(latent space)까지 확장됩니다. 이 누적 흐름은 단일 주 안에서도 역문제 방법론의 생성 모델 통합이 가속되고 있음을 보여줍니다.]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-06-25 (목요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-06-25.html</link>
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-25.html</guid>
       <pubDate>Thu, 25 Jun 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[목요일 에너지는 저널 중심입니다. cs.LG·cs.CV·cs.AI가 2026-06-25 목록을 아직 갱신하지 않아 eess.IV(10편)·eess.SP(1편)와 광학·의료 저널(429편)이 이번 리포트의 주요 입력입니다. 이번 주(6월 22일~25일) 저널 흐름을 돌아보면 메타서피스·나노포토닉스가 응용 고도화 방향으로 움직입니다. 월요일 weekly 회고에서는 3DGS 분화와 역문제 다층 구체화가 주요 동향이었고, 화요일·수요일 arXiv에서는 홀로그래피 용량 돌파와 이벤트 카메라 크로스모달 융합이 큰 흐름이었습니다. 오늘 저널에서는 그 흐름의 하드웨어 단 — 메타서피스 소자가 어떻게 실제 제품이 되는지 — 이 나타나고 있습니다.]]></description>
+      <description><![CDATA[/pastweek 데이터가 추가되면서 오늘 총 855건(arXiv 521 + 저널 334)을 검토했습니다. cs.LG(186)·cs.AI(182)·cs.CV(125)가 주를 이루고, eess.IV(10)·eess.SP(18)가 광학 전문 채널입니다. 이번 주(6월 23일~25일) 흐름을 돌아보면, 역문제 방법론의 생성 모델 통합이 빠르게 가속 되고 있습니다. 수요일(6/24)에는 홀로그래피 용량 돌파(멀티오더 디커플링)와 이벤트 카메라 크로스모달 융합이 중심이었고, 목요일(6/25)에는 그 흐름이 더 구체화됩니다 — 역문제에서 diffusion이 내부로 들어오고, 나노포토닉이 설계에서 제조까지 연결됩니다.]]></description>
     </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-06-24 (수요일)</title>

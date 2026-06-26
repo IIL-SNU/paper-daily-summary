@@ -1,0 +1,17 @@
+{
+  "date": "2026-06-26",
+  "source_listing_date": "2026-06-26",
+  "source_mode": "new",
+  "note": "arXiv /new 2026-06-26 listing (abstracts included). cs.LG(95 new+67 cross=162)+cs.CV(94+31=125)+cs.AI(74+132=206)+eess.IV(7+6=13)+eess.SP(11+5=16) = 522 arXiv; plus Crossref/OpenAlex journals (354). Total 876 scanned, 272 selected.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 162,
+      "cs.CV": 125,
+      "cs.AI": 206,
+      "eess.IV": 13,
+      "eess.SP": 16
+    },
+    "scope": "new+cross; replacements excluded"
+  },
+  "totals": {"total_scanned": 876, "selected": 272}
+}

@@ -1,0 +1,152 @@
+{
+  "date": "2026-06-26",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "이벤트 카메라 시뮬레이션·응용 다각화 — FracEvent, 스핀 추정, 시간 그래프",
+      "papers": [
+        {
+          "title": "FracEvent: Event-Camera Simulation via Fractional-Relaxation Pixel Dynamics",
+          "arxiv": "https://arxiv.org/abs/2606.26636",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "Event-based Gaze Control System for Accurate Real-time Spin Estimation in Professional Ball Sports",
+          "arxiv": "https://arxiv.org/abs/2606.26780",
+          "importance_tags": ["[실사용전환]"]
+        },
+        {
+          "title": "Explaining Temporal Graph Neural Networks via Feature-induced Information Flow",
+          "arxiv": "https://arxiv.org/abs/2606.27201",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "이벤트 카메라가 단독 센서에서 물리 기반 시뮬레이션 플랫폼과 스포츠 실시간 응용으로 동시에 확장되고 있습니다. FracEvent는 분수 완화(fractional relaxation) 픽셀 동역학 모델로 이벤트 스트림의 현실성을 높이는 시뮬레이션 방법으로, 실제 데이터 수집이 어려운 도메인에서 데이터 증강 기반을 제공합니다. 이벤트 기반 게이즈 제어는 공의 스핀을 실시간으로 추정해 프로 스포츠 분석에 이벤트 카메라를 투입합니다. 시간 그래프 신경망 설명 가능성 논문은 이벤트 기반 비동기 데이터 처리의 이론적 기반을 제공합니다. 세 논문이 독립적으로 이벤트 카메라의 서로 다른 측면(시뮬레이션·응용·이론)을 강화합니다.",
+      "confidence": "High",
+      "confidence_reason": "3편이 시뮬레이션·응용·이론 세 방향에서 독립적으로 이벤트 카메라 생태계를 강화",
+      "lab_action": "FracEvent 시뮬레이션으로 렌즈리스·FP 셋업용 이벤트 카메라 훈련 데이터 생성 가능성 평가; 스핀 추정 게이즈 제어를 동적 생물 샘플 추적에 이식"
+    },
+    {
+      "cluster": "3DGS 도메인 확장 — 위성·파노라마·MRI·스타일",
+      "papers": [
+        {
+          "title": "SatSplatDiff: Geometry-preserving generative refinement for high-fidelity satellite Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2606.27223",
+          "importance_tags": ["[실사용전환]", "[방법전환]"]
+        },
+        {
+          "title": "PanoImager: Geometry-Guided Novel View Synthesis and Reconstruction from Sparse Panoramic Images",
+          "arxiv": "https://arxiv.org/abs/2606.27071",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Rendering Novel Views of MRI Using 3D Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2606.26236",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "Capacity-Controlled Multi-View Stylization of 3D Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2606.26754",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "3D Gaussian Splatting이 오늘 하루에 위성 이미지, 파노라마 희소 뷰, 의료 MRI, 스타일 전이까지 4개 도메인으로 동시에 확장됐습니다. MRI 3DGS는 척추 MRI를 새로운 뷰로 리샘플링해 임상 측정 정확도를 높이는 직접적 의료 응용이고, SatSplatDiff는 생성적 정제(generative refinement)로 위성 3DGS의 기하학적 충실도를 높입니다. PanoImager는 파노라마의 회전 우세·약한 시차 조건에서 희소 뷰 3D 재구성을 해결합니다. 이 집합적 신호는 3DGS가 수렴 완료된 방법론으로서 새 도메인 적응에 진입했음을 나타냅니다.",
+      "confidence": "High",
+      "confidence_reason": "4편이 독립적으로 서로 다른 도메인에서 3DGS 적용을 동시에 보고",
+      "lab_action": "MRI 3DGS 방법론을 계산 이미징 3D 재구성(ODT·FP 볼륨 재구성)에 이식 가능성 평가; SatSplatDiff의 기하 보존 생성적 정제를 OCT 볼륨 품질 향상에 적용"
+    },
+    {
+      "cluster": "잠재 확산 역문제 해결사 — L-DPS와 MRI 초해상도",
+      "papers": [
+        {
+          "title": "Latent Diffusion Posterior Sampling with Surrogate Likelihood Guidance for PDE Inverse Problems",
+          "arxiv": "https://arxiv.org/abs/2606.26592",
+          "importance_tags": ["[방법전환]", "[문제정의]"]
+        },
+        {
+          "title": "Dual-Prior Guided Null-Space Learning with Mixture-of-Splines for Arbitrary Medical Image Super-Resolution",
+          "arxiv": "https://arxiv.org/abs/2606.26716",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        }
+      ],
+      "why": "확산 모델이 역문제 solver 내부로 들어오는 흐름이 오늘도 이어집니다. L-DPS는 고차원 PDE 역문제를 잠재 공간에서 확산 후방 샘플링으로 풀어, 직접 이미지 공간 DPS 대비 계산 효율을 높입니다. Dual-Prior Null-Space 논문은 임의 위치 슬라이스 초해상도를 혼합 스플라인 기반 null-space 학습으로 해결합니다. 어제(6/25) RL+diffusion prior가 형광 현미경 반복 알고리즘에 들어갔다면, 오늘 L-DPS는 잠재 공간까지 진입하는 더 큰 규모의 통합을 보여줍니다.",
+      "confidence": "Medium",
+      "confidence_reason": "두 논문이 독립적으로 확산 기반 역문제 방법론의 서로 다른 측면(고차원 PDE·의료 SR)을 확장",
+      "lab_action": "L-DPS를 ODT(광학 회절 단층 촬영) 역문제에 적용 — PDE governed 역문제라는 공통점; Dual-Prior Null-Space를 FP의 임의 위치 재구성에 이식 가능성 검토"
+    },
+    {
+      "cluster": "나노제조 역설계 — EUV 마스크 역리소그래피에서 다단계 세계 모델까지",
+      "papers": [
+        {
+          "title": "LithoDreamer: A Physics-Informed World Model for Multi-Stage Computational Lithography",
+          "arxiv": "https://arxiv.org/abs/2606.26713",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "Gradient-based inverse lithography for EUV masks via the waveguide method and a physics-informed deep learning approach",
+          "arxiv": "https://arxiv.org/abs/2606.25753",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        }
+      ],
+      "why": "이틀 연속으로 나노제조 역설계에 물리 기반 AI를 적용하는 논문이 나왔습니다. 어제(6/25) 등장한 EUV 마스크 역리소그래피 논문(2606.25753)은 웨이브가이드 방법과 PIDL로 EUV 마스크의 inverse lithography technology를 구현했고, 오늘 LithoDreamer(2606.26713)는 EUV/DUV 공정 전체를 물리 정보 세계 모델로 통합합니다. 이 흐름의 의미는 반도체 나노제조가 '단일 스텝 역최적화'에서 '다단계 공정 전체를 하나의 물리 인식 시뮬레이션으로 묶는 세계 모델' 방향으로 이동하고 있다는 것입니다. 메타렌즈·광학 소자 제작에도 같은 접근을 적용할 수 있습니다.",
+      "confidence": "Medium",
+      "confidence_reason": "이틀에 걸쳐 독립적으로 같은 방향(물리 기반 나노제조 AI)을 지시하는 두 arXiv 논문",
+      "lab_action": "LithoDreamer 세계 모델 설계 원칙을 메타렌즈 제작 공정(ALD·패터닝·식각) 시뮬레이션에 참조; EUV ILT(2606.25753) 역전파 방법론을 광학 역설계 파이프라인에 적용 가능성 검토"
+    },
+    {
+      "cluster": "저널 지속 신호 — 위상·홀로그래피·메타서피스 고성능화",
+      "papers": [
+        {
+          "title": "Fourier pixels for bidirectional light control",
+          "arxiv": "https://doi.org/10.1038/s41586-026-10681-7",
+          "importance_tags": ["[방법전환]", "[표준후보]"]
+        },
+        {
+          "title": "Kramers-Kronig Phase Imaging of High-Contrast Regions",
+          "arxiv": "https://doi.org/10.1088/2515-7647/ae82d1",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Nonasymptotic Convergence Rates for PnP with MMSE Denoisers",
+          "arxiv": "https://doi.org/10.1109/tci.2026.3707068",
+          "importance_tags": ["[평가축]"]
+        },
+        {
+          "title": "From flat-optics to qualified hardware: skills map for meta-optics workforce",
+          "arxiv": "https://doi.org/10.1117/1.oe.65.10.102007",
+          "importance_tags": ["[표준후보]", "[실사용전환]"]
+        }
+      ],
+      "why": "Nature 게재 Fourier pixels 논문은 광학 픽셀이 감지(sensing)와 방출(emission)을 동시에 수행하는 양방향 광 제어를 구현했습니다. 이는 단방향 소자라는 광학 소자의 전통적 전제를 깨는 결과입니다. Kramers-Kronig 위상 이미징은 고대비 영역에서의 위상 복원 정확도를 높여 강한 흡수 샘플 이미징에 직접 응용됩니다. 두 논문은 계산 광학의 기본 원칙(단방향성, 위상-진폭 분리)을 재검토하게 만드는 신호입니다.",
+      "confidence": "Medium",
+      "confidence_reason": "Nature 게재 Fourier pixels는 높은 신뢰도, Kramers-Kronig KPhI는 단일 저널 논문",
+      "lab_action": "Fourier pixels의 양방향 광 제어 원리를 렌즈리스 시스템의 능동 마스크 설계에 참조; Kramers-Kronig 위상 이미징을 고대비 생물 샘플 FP에 적용 가능성 평가"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "FracEvent 시뮬레이션 + 이벤트 카메라 FP/렌즈리스 이미징 응용",
+      "claim": "FracEvent로 생성한 합성 이벤트 스트림을 사용해 렌즈리스 이미징 시스템 학습 데이터를 대량 생성하면 실제 이벤트 카메라 데이터 수집 비용을 줄일 수 있다",
+      "supporting_papers": [
+        {"title": "FracEvent: Event-Camera Simulation via Fractional-Relaxation Pixel Dynamics", "arxiv": "https://arxiv.org/abs/2606.26636"},
+        {"title": "Event-based Gaze Control System for Spin Estimation", "arxiv": "https://arxiv.org/abs/2606.26780"}
+      ]
+    },
+    {
+      "title": "L-DPS를 ODT(광학 회절 단층 촬영) 역문제에 적용",
+      "claim": "PDE governed 역문제인 ODT에 L-DPS의 잠재 확산 후방 샘플링 프레임워크를 적용하면 고차원 3D 복원에서 기존 PnP·DPS 대비 계산 효율이 향상될 것이다",
+      "supporting_papers": [
+        {"title": "Latent Diffusion Posterior Sampling with Surrogate Likelihood Guidance for PDE Inverse Problems", "arxiv": "https://arxiv.org/abs/2606.26592"}
+      ]
+    },
+    {
+      "title": "MRI 3DGS → 계산 이미징 3D 재구성에 Novel View Synthesis 이식",
+      "claim": "척추 MRI에서 검증된 3DGS 기반 novel view synthesis를 ODT·FP 볼륨 재구성에 적용하면 제한각 또는 희소 측정 조건에서 3D 재구성 품질이 향상될 것이다",
+      "supporting_papers": [
+        {"title": "Rendering Novel Views of MRI Using 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2606.26236"},
+        {"title": "PanoImager: Geometry-Guided Novel View Synthesis from Sparse Panoramic Images", "arxiv": "https://arxiv.org/abs/2606.27071"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}
