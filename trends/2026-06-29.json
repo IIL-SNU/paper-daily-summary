@@ -1,19 +1,37 @@
 {
   "date": "2026-06-29",
   "source_listing_date": "2026-06-29",
-  "source_mode": "weekly-pastweek",
-  "weekly_scope": "2026-06-23 ~ 2026-06-26 (Tue-Fri; Mon 2026-06-22 unrecoverable from /pastweek)",
-  "iso_week": "2026-26",
+  "source_mode": "new",
   "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 969,
-      "cs.CV": 737,
-      "cs.AI": 1155,
-      "eess.IV": 62,
-      "eess.SP": 112
+      "cs.LG": 134,
+      "cs.CV": 105,
+      "cs.AI": 131,
+      "eess.IV": 9,
+      "eess.SP": 11
     },
     "scope": "new+cross; replacements excluded",
-    "note": "4-day cumulative (Jun 23-26); Jun 22 unrecoverable"
+    "total_arxiv": 390,
+    "note": "Monday listing — weekend submissions (Fri 2pm - Sun). Lower volume than weekday."
   },
-  "weekly_thesis": "W26: 이벤트 카메라가 표현 학습에서 물리 기반 시뮬레이션 플랫폼으로 도약, 역문제 diffusion prior가 외부 정규화에서 알고리즘 내부 구성요소로 전환, 나노포토닉 역설계는 EUV 마스크 역리소그래피 수준에 진입."
+  "totals": {
+    "total_scanned": 615,
+    "selected": 164
+  },
+  "classified": {
+    "total_scanned": 615,
+    "selected": 164,
+    "by_bucket": {
+      "Deep Learning Methods": 93,
+      "Tomography/3D Imaging": 26,
+      "Virtual Staining/Pathology": 21,
+      "Reconstruction/Inverse Problems": 17,
+      "Phase Imaging/Holography": 3,
+      "Meta-Optics/Diffractive": 1,
+      "Light-Field/Novel Sensors": 1,
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 1
+    }
+  },
+  "daily_thesis": "3DGS가 sparse·uncalibrated 입력 범용화로 이동하고, 광학 설계 목표 함수가 task-aware(frozen VLM 인식 성능)로 전환되는 첫 구체적 신호(CODA) 등장. 물리-정보 신경망은 Calderón 역문제와 주기 광학 구조 예측에서 도구로 자리잡는 중."
 }

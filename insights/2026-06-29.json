@@ -1,0 +1,115 @@
+{
+  "date": "2026-06-29",
+  "clusters": [
+    {
+      "cluster": "3DGS 범용화 — sparse·uncalibrated 뷰에서 재구성으로",
+      "papers": [
+        {"title": "StructSplat: Generalizable 3DGS from Uncalibrated Sparse Views", "arxiv": "https://arxiv.org/abs/2606.28321", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "Structured-Li-GS: Structured 3DGS with LiDAR Incorporation", "arxiv": "https://arxiv.org/abs/2606.27509", "importance_tags": ["[방법전환]"]},
+        {"title": "CoIn: Comprehensive 2D-3D Inpainting with GS Guidance", "arxiv": "https://arxiv.org/abs/2606.27584", "importance_tags": ["[방법전환]"]},
+        {"title": "GeoFace: Geometry-Constrained Multi-View Face Generation", "arxiv": "https://arxiv.org/abs/2606.27659", "importance_tags": ["[방법전환]"]}
+      ],
+      "why": "기존 3DGS는 잘 보정된 multi-view 이미지가 필요했는데, 카메라 파라미터 없이 sparse한 이미지만으로 3D 재구성이 가능해지는 방향으로 이동. 실험실 스튜디오에서 현장·의료 환경으로 적용 범위 확장.",
+      "confidence": "High",
+      "confidence_note": "4편이 독립적으로 sparse/uncalibrated 또는 보완 입력 방향으로 3DGS 확장",
+      "lab_action": "StructSplat과 Structured-Li-GS를 같은 실외 장면(KITTI/ETH3D)에서 sparse·uncalibrated 조건으로 비교 ablation; camera pose 오차의 PSNR/LPIPS 영향 정량화"
+    },
+    {
+      "cluster": "광학-AI 공동 설계 — frozen 모델 인식에 맞는 meta-optic 최적화",
+      "papers": [
+        {"title": "VLM-Aware Meta-Optic Front-End Design for Frozen Vision-Language Models (CODA)", "arxiv": "https://arxiv.org/abs/2606.27646", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "Physics-constrained NN for RCWA Surrogate Modeling (PCNN)", "arxiv": "https://arxiv.org/abs/2606.28119", "importance_tags": ["[방법전환]", "[실사용전환]"]}
+      ],
+      "why": "광학 설계 목표 함수가 '사람이 보기 좋은 이미지'에서 'downstream AI 모델이 잘 인식하는 표현'으로 전환되는 첫 구체적 신호. CODA는 frozen VLM 인식 성능을 최대화하도록 meta-optic을 역설계하고, RCWA PCNN은 에너지 보존을 하드 제약으로 보장하는 미분 가능 surrogate로 메타서피스 역설계 병목을 해결.",
+      "confidence": "High",
+      "confidence_note": "두 논문이 독립적으로 광학-AI 경계에서 물리 제약과 AI 최적화를 결합. 랩 ROI와 직접 연결",
+      "lab_action": "CODA를 lensless/coded aperture PSF task-aware 최적화에 이식; RCWA PCNN을 메타렌즈 inverse design 루프에 통합해 speed vs accuracy ablation"
+    },
+    {
+      "cluster": "이벤트 카메라·AO 파면 센싱 지속 신호",
+      "papers": [
+        {"title": "DeLux: Cross-Modal Artifact Restoration Using Neuromorphic Data", "arxiv": "https://arxiv.org/abs/2606.27576", "importance_tags": ["[방법전환]"]},
+        {"title": "Differentiable Design of PIAA-ZWFS Wavefront Sensor", "arxiv": "https://arxiv.org/abs/2606.28136", "importance_tags": ["[방법전환]"]}
+      ],
+      "why": "DeLux는 이벤트 카메라로 조명 아티팩트 복원. PIAA-ZWFS는 극한 AO 파면 센싱의 물리적 한계를 미분 가능하게 최적화. 두 논문 모두 계산광학 도구 확장 신호.",
+      "confidence": "Medium",
+      "confidence_note": "DeLux는 독립적 응용, PIAA-ZWFS는 천문 AO 전문 분야. 계산광학 이식 가능성 확인 필요",
+      "lab_action": "DeLux를 현미경 overexposure 복원에 이식 가능성 평가; PIAA-ZWFS 미분 가능 최적화 구조를 FP 조명 패턴 최적화에 참조"
+    },
+    {
+      "cluster": "INR 스펙트럼 편향 극복 + 이미지 복원 방법론 분기",
+      "papers": [
+        {"title": "ScaLe-INR: Scale and Learn Implicit Neural Representations", "arxiv": "https://arxiv.org/abs/2606.27862", "importance_tags": ["[방법전환]"]},
+        {"title": "BiDeMem: Bidirectional Degradation Memory for Image Restoration", "arxiv": "https://arxiv.org/abs/2606.28112", "importance_tags": ["[방법전환]", "[해부분석]"]},
+        {"title": "There and Back Again: Flexible-Frame Transformer for Multi-Exposure Fusion", "arxiv": "https://arxiv.org/abs/2606.27905", "importance_tags": ["[방법전환]"]}
+      ],
+      "why": "단일 네트워크의 스펙트럼 편향을 다중 스케일 분해(ScaLe-INR)나 양방향 메모리(BiDeMem)로 극복하는 흐름. 공통 신호는 '단일 모델의 한계를 분해와 구조화로 극복'.",
+      "confidence": "Medium",
+      "confidence_note": "3편이 서로 다른 방법으로 같은 방향을 지시. 랩 역문제 파이프라인과 간접 관련",
+      "lab_action": "ScaLe-INR의 다중 스케일 구조를 ODT 볼륨 INR에 적용 — sharp 굴절률 경계 복원 개선 실험"
+    },
+    {
+      "cluster": "물리-정보 신경망 역문제 체계화 + 벤치마크",
+      "papers": [
+        {"title": "Recovering Sharp Conductivity Features via PINNs (Calderón Problem)", "arxiv": "https://arxiv.org/abs/2606.28158", "importance_tags": ["[방법전환]"]},
+        {"title": "Mosaic: Benchmark Suite for Differentiable PDE Solvers", "arxiv": "https://arxiv.org/abs/2606.27895", "importance_tags": ["[평가축]", "[인프라]"]}
+      ],
+      "why": "PINNs가 Calderón 역문제에서 sharp feature 복원 가능성을 높이고, Mosaic은 미분 가능 PDE 솔버 전체를 처음으로 체계적으로 비교. 물리 정보 역문제가 도구화·체계화 단계에 진입.",
+      "confidence": "Medium",
+      "confidence_note": "두 논문이 물리 정보 역문제의 방법론·평가 인프라를 강화",
+      "lab_action": "Calderón PINNs의 Fourier-feature 인코딩을 ODT 굴절률 복원에 이식; Mosaic으로 ODT forward solver gradient 신뢰도 사전 평가"
+    }
+  ],
+  "insights": [
+    {
+      "title": "CODA — 광학 설계 목표 함수가 task-aware로 전환되는 첫 신호",
+      "claim": "frozen VLM 인식 성능을 최대화하는 방향으로 compact meta-optic front-end를 역설계하는 CODA 프레임워크는, 광학 설계의 목표 함수가 '사람 시각 품질'에서 'AI 모델 인식 성능'으로 전환되는 첫 구체적 신호입니다.",
+      "papers": [
+        {
+          "title": "VLM-Aware Meta-Optic Front-End Design for Frozen Vision-Language Models",
+          "arxiv": "https://arxiv.org/abs/2606.27646",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        }
+      ]
+    },
+    {
+      "title": "StructSplat — 카메라 보정 없이 3DGS",
+      "claim": "uncalibrated sparse view에서 feed-forward로 3DGS를 생성하는 StructSplat은 3DGS의 입력 요구사항을 대폭 완화해, 현장·의료 환경 적용 가능성을 높입니다.",
+      "papers": [
+        {
+          "title": "StructSplat: Generalizable 3DGS from Uncalibrated Sparse Views",
+          "arxiv": "https://arxiv.org/abs/2606.28321",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        }
+      ]
+    },
+    {
+      "title": "PIAA-ZWFS — AO 파면 센싱의 물리 한계를 미분 가능하게 설계",
+      "claim": "PIAA와 Zernike WFS를 결합해 극한 AO 파면 센싱의 물리 한계에 접근하는 설계를 미분 가능하게 최적화한 방법론은, FP·렌즈리스 PSF 최적화에 이식 가능한 일반적 틀을 제공합니다.",
+      "papers": [
+        {
+          "title": "Differentiable Design of the PIAA-ZWFS Wavefront Sensor",
+          "arxiv": "https://arxiv.org/abs/2606.28136",
+          "importance_tags": ["[방법전환]"]
+        }
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "CODA 설계 원칙으로 task-aware lensless PSF 최적화",
+      "claim": "frozen VLM 인식 성능을 최대화하는 meta-optic 최적화(CODA)를 lensless 시스템 PSF 설계에 이식 — downstream task 성능 기준 PSF 최적화",
+      "supporting_papers": [{"title": "VLM-Aware Meta-Optic Front-End Design (CODA)", "arxiv": "https://arxiv.org/abs/2606.27646"}]
+    },
+    {
+      "title": "StructSplat + 제한 각도 ODT — camera-free 재구성 파이프라인",
+      "claim": "uncalibrated sparse view 3DGS(StructSplat)의 geometry/appearance 분리 구조를 ODT 굴절률 분포 재구성에 이식",
+      "supporting_papers": [{"title": "StructSplat", "arxiv": "https://arxiv.org/abs/2606.28321"}]
+    },
+    {
+      "title": "RCWA PCNN을 메타렌즈 inverse design에 forward model로 통합",
+      "claim": "에너지 보존 하드 제약 RCWA surrogate(PCNN)를 메타서피스 역설계 파이프라인 forward model로 통합해 계산 병목 해결",
+      "supporting_papers": [{"title": "Physics-constrained NN for RCWA", "arxiv": "https://arxiv.org/abs/2606.28119"}]
+    }
+  ]
+}

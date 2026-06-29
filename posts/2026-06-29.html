@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-06-29</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<button id=themeToggle aria-label="Toggle dark mode">🌙</button>
+<script>
+(function(){
+  var btn=document.getElementById('themeToggle');
+  function setTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);btn.textContent=t==='dark'?'☀️':'🌙';}
+  btn.addEventListener('click',function(){setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');});
+  var cur=document.documentElement.dataset.theme;btn.textContent=cur==='dark'?'☀️':'🌙';
+})();
+</script>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-06-29 (월요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-06-29 (월요일)</div>
+  <div>📚 소스: arXiv /new 2026-06-29 listing (초록 포함) + Crossref/OpenAlex 저널</div>
+  <div>📊 카테고리: cs.LG(134) / cs.CV(105) / cs.AI(131) / eess.IV(9) / eess.SP(11)</div>
+  <div>🔢 스캔: 615건 · ROI 배정 164건</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 월요일 배치(주말 제출분)에서 두 가지 핵심 신호가 나왔습니다. 첫째, <strong>3D Gaussian Splatting이 "장면 최적화" 단계에서 "sparse·uncalibrated 입력 범용화" 단계로 넘어가고 있습니다.</strong> StructSplat은 카메라 파라미터 없이 정렬되지 않은 소수의 이미지만으로 3DGS를 만들고, Structured-Li-GS는 LiDAR를 결합해 더 적은 가우시안으로 고품질 재구성을 달성합니다. 즉 3DGS를 쓰기 위한 입력 요구사항이 크게 낮아지는 방향입니다. 둘째, <strong>광학 설계의 목표가 "사람이 보기 좋은 이미지"에서 "frozen AI 모델이 잘 이해하는 표현"으로 이동하는 신호가 구체적인 논문으로 나왔습니다.</strong> VLM-Aware Meta-Optic(CODA)은 frozen VLM의 인식 성능을 최대화하는 방향으로 meta-optic front-end를 공동 최적화합니다. 물리 제약을 AI 학습에 녹여 넣는 흐름도 계속됩니다 — RCWA 예측 PCNN이 Stiefel manifold 에너지 보존을 하드 제약으로 강제하고, PINNs가 Calderón 역문제에서 sharp feature 복원 가능성을 높이고 있습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv /new 배치는 월요일 특성상 주말 제출분으로 390건(cs.AI 131·cs.LG 134·cs.CV 105·eess.SP 11·eess.IV 9)으로 지난 금요일(522건)보다 양이 적습니다. 저널까지 합산하면 615건, 그 중 ROI 164건입니다. 이번 주(6월 22~26일) 회고 관점에서 보면, 지난 금요일(6/26)의 이벤트 카메라 시뮬레이션·나노제조 세계 모델·잠재 확산 PDE 역문제라는 세 강신호 중에서 오늘은 나노제조 역설계와 잠재 확산 PDE 쪽은 비어 있고, 대신 <strong>3DGS의 범용화 방향성과 광학-AI 공동 설계라는 새 신호</strong>가 나왔습니다.</p>
+<p>PIAA-ZWFS 파면 센서 논문은 극한 적응광학(AO) 분야에서 파면 센싱의 물리적 한계에 접근하는 설계를 미분 가능하게 최적화했습니다. 계산광학 랩 관점에서 이 논문의 방법론(PIAA 무손실 동공 첨두화 + Zernike 센서 결합 + 미분 가능 최적화)은 FP·렌즈리스 시스템의 PSF 또는 조명 최적화에 직접 이식 가능한 아이디어입니다. 이미지 복원에서는 단일 네트워크의 스펙트럼 편향을 다중 스케일로 분해(ScaLe-INR)하거나 열화 메모리를 양방향으로 추적(BiDeMem)하는 방향이 나왔습니다.</p>
+<p>다음 주를 보면 3DGS 범용화는 더 가속될 것으로 예상됩니다. 광학-AI 공동 설계는 오늘 CODA 한 편으로 시작됐지만, meta-optic inverse design과 task-aware optical design이 결합되는 방향은 앞으로 큰 흐름이 될 가능성이 높습니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>지난 금요일(2026-06-26) 배치는 이벤트 카메라 시뮬레이션(FracEvent)·스핀 추정 응용, 3DGS 도메인 확산(위성·파노라마·MRI·스타일), 잠재 확산 PDE 역문제(L-DPS), 나노제조 세계 모델(LithoDreamer), Nature Fourier pixels가 중심이었습니다.</p>
+<p>오늘은 이벤트 카메라가 DeLux 1편으로 약화됐고(금요일 3편 대비), 잠재 확산 PDE 역문제와 나노제조 역설계 신호는 없습니다. 대신 <strong>3DGS의 초점이 "도메인 확산"에서 "입력 조건 범용화"로 이동</strong>했고, <strong>광학-AI 공동 설계라는 새 신호</strong>가 등장했습니다. 물리 정보 신경망 역문제는 지난주 L-DPS(잠재 확산)에서 오늘 PINNs(경계 데이터 역문제, 주기 구조 예측)로 방향이 바뀌었습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>3DGS 범용화 — sparse·uncalibrated 뷰에서 재구성으로</strong><span class=pill>HOT</span></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.28321" target=_blank>StructSplat: Generalizable 3DGS from Uncalibrated Sparse Views</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2606.27509" target=_blank>Structured-Li-GS: 3DGS with LiDAR Incorporation</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2606.27584" target=_blank>CoIn: Comprehensive 2D-3D Inpainting with GS Guidance</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2606.27659" target=_blank>GeoFace: Geometry-Constrained Multi-View Face Generation</a> <span class=pill>CV</span>
+  </td>
+  <td>기존 3DGS 방법들은 잘 보정된 다수의 multi-view 이미지가 있어야 작동했는데, 이제는 카메라 파라미터 없이 sparse한 이미지만으로 3D 재구성을 하는 방향으로 바뀌고 있습니다. StructSplat은 카메라 pose 추정 없이 feed-forward로 3DGS를 만들고, Structured-Li-GS는 LiDAR-inertial-visual SLAM으로 정확한 dense 포인트 클라우드를 만들어 더 적은 가우시안으로 고품질 재구성을 달성합니다. 즉 실험실 스튜디오 셋업이 아니라 현장 촬영이나 의료·산업 환경에서도 3DGS를 쓸 수 있는 조건이 갖춰지고 있다는 뜻입니다. CoIn은 3DGS를 장면 인페인팅으로 확장해, 가려진 영역이나 제한된 시야각의 복원 문제를 자연스럽게 다룹니다.</td>
+  <td>High<br><small>4편이 독립적으로 sparse/uncalibrated 또는 보완 입력 방향으로 3DGS 확장</small></td>
+  <td>StructSplat과 Structured-Li-GS를 같은 실외 장면(KITTI 또는 ETH3D)에서 sparse·uncalibrated 조건으로 비교 ablation; camera pose 오차가 재구성 품질(PSNR/LPIPS)에 미치는 영향 정량화</td>
+</tr>
+<tr>
+  <td><strong>광학-AI 공동 설계 — frozen 모델 인식에 맞는 meta-optic 최적화</strong><span class=pill>HOT</span></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.27646" target=_blank>VLM-Aware Meta-Optic Front-End Design (CODA)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2606.28119" target=_blank>Physics-constrained NN for Lossless Periodic Structures (RCWA)</a> <span class=pill>LG</span>
+  </td>
+  <td>지금까지 광학 소자 설계는 사람이 보기 좋은 이미지를 만드는 것이 목표였습니다. CODA는 이 전제를 바꿉니다. frozen VLM이 가장 잘 인식하는 표현을 생성하도록 meta-optic front-end를 역으로 최적화합니다. 즉 광학 설계의 목표 함수가 사람의 시각 기준에서 AI 모델의 인식 기준으로 바뀌는 겁니다. 이 방향이 맞다면, 렌즈리스 카메라나 coded aperture 시스템도 "사람이 보기 좋은 이미지 복원"이 아니라 "downstream task의 성능을 최대화하는 측정 방식"으로 설계 목표를 재정의할 수 있습니다. RCWA PCNN은 주기 광학 구조의 Jones matrix를 Stiefel manifold 에너지 보존을 하드 제약으로 강제하며 예측해, 메타서피스 역설계 파이프라인에서 forward model 속도를 획기적으로 높일 수 있습니다.</td>
+  <td>High<br><small>CODA와 RCWA PCNN이 독립적으로 광학-AI 경계에서 물리 제약과 AI 최적화를 결합. 랩 ROI와 직접 연결</small></td>
+  <td>CODA 설계 원칙을 lensless/coded aperture 시스템에 이식 — PSF를 task-aware loss로 최적화하는 실험 설계; RCWA PCNN을 메타렌즈 inverse design 루프에 forward model로 통합해 속도 vs 정확도 ablation</td>
+</tr>
+<tr>
+  <td><strong>이벤트 카메라·AO 파면 센싱 지속 신호</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.27576" target=_blank>DeLux: Cross-Modal Artifact Restoration Using Neuromorphic Data</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2606.28136" target=_blank>Differentiable Design of PIAA-ZWFS Wavefront Sensor</a> <span class=pill>SP</span>
+  </td>
+  <td>DeLux는 이벤트 카메라(neuromorphic sensor)를 조명 아티팩트(flare·glare·overexposure) 복원에 활용합니다. 기존 방법들이 각 아티팩트를 따로 다뤘다면, DeLux는 이벤트 스트림이 갖는 마이크로초 시간 해상도로 공간적으로 복잡하게 분포된 조명 손실을 한 번에 복원합니다. 지난 금요일 FracEvent(이벤트 시뮬레이션)에 이어 오늘 DeLux(이벤트 응용 복원)까지, 이벤트 카메라가 계산 이미징 복원 파이프라인에 점점 더 깊이 들어오는 신호입니다. PIAA-ZWFS는 Zernike wavefront sensor와 PIAA 무손실 첨두화를 결합해 극한 AO 파면 센싱의 물리적 한계에 접근하는 방법을 미분 가능하게 최적화합니다. 계산광학 관점에서 이 미분 가능 설계 접근은 FP·lensless 시스템의 PSF 최적화에도 직접 쓸 수 있는 방법론입니다.</td>
+  <td>Medium<br><small>DeLux는 독립적 응용, PIAA-ZWFS는 전문 천문 AO 분야. 둘 다 계산광학 도구 확장 신호</small></td>
+  <td>DeLux를 현미경 또는 lensless 이미징의 overexposure·flare 복원에 이식 가능성 평가; PIAA-ZWFS 미분 가능 최적화 구조를 FP 조명 패턴 최적화에 참조</td>
+</tr>
+<tr>
+  <td><strong>INR 스펙트럼 편향 극복 + 이미지 복원 방법론 분기</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.27862" target=_blank>ScaLe-INR: Scale and Learn Implicit Neural Representations</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2606.28112" target=_blank>BiDeMem: Bidirectional Degradation Memory for Image Restoration</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2606.27905" target=_blank>There and Back Again: Flexible-Frame Transformer for Multi-Exposure Fusion</a> <span class=pill>CV</span>
+  </td>
+  <td>이미지 복원과 INR 분야에서 "단일 네트워크로 모든 스케일을 동시에 처리하면 저주파 구조가 먼저 학습되고 고주파 디테일이 훼손된다"는 스펙트럼 편향 문제를 다중 스케일 분해로 극복하려는 흐름이 보입니다. ScaLe-INR은 scale 계층적으로 서로 다른 MLP가 다른 주파수 대역을 분담합니다. BiDeMem은 열화 조건을 단일 endpoint가 아니라 양방향 메모리로 추적해 열화가 복원에 어떻게 기여하는지 해석 가능하게 만듭니다. MEF(다중 노출 융합) 논문은 입력 프레임 수가 다른 조건에서도 동작하는 유연한 Transformer를 제안합니다. 셋이 공통으로 보여주는 신호는 "단일 모델의 한계를 분해(decompose)와 메모리로 극복하자"입니다.</td>
+  <td>Medium<br><small>3편이 서로 다른 방법으로 같은 방향(분해·구조화)을 지시. 랩 역문제 파이프라인과 간접 관련</small></td>
+  <td>ScaLe-INR의 다중 스케일 MLP 구조를 ODT 볼륨 INR에 적용 — 섬세한 굴절률 경계 복원 개선 가능성 실험; BiDeMem의 열화 메모리 추적을 lensless 시스템의 PSF 불확실성 모델링에 이식</td>
+</tr>
+<tr>
+  <td><strong>물리-정보 신경망 역문제 체계화 + 벤치마크</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.28158" target=_blank>Recovering Sharp Conductivity via PINNs + Fourier-Feature Encoding (Calderón)</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2606.27895" target=_blank>Mosaic: Benchmark for Differentiable PDE Solvers</a> <span class=pill>LG</span>
+  </td>
+  <td>PINNs가 역문제에 쓰이는 것은 이미 알려진 방향이지만, 오늘은 두 가지 구체적인 진전이 있습니다. Calderón 역문제 논문은 경계 데이터만으로 내부 전도도 분포(sharp edge 포함)를 복원할 때 Fourier-feature 인코딩과 랜덤 wavelet 여기 조합이 스펙트럼 편향을 극복함을 보입니다. 이 결과는 ODT의 굴절률 분포 복원이나 전기 임피던스 단층촬영 같은 계산광학 인접 역문제에 직접 적용 가능합니다. Mosaic은 다양한 미분 가능 PDE 솔버의 gradient 정확도, 수치 조건수, 통합 비용을 체계적으로 비교하는 첫 벤치마크입니다. 역문제 파이프라인을 짤 때 어떤 PDE 솔버가 gradient 측면에서 실제로 믿을 만한지 근거 있게 선택할 수 있게 해줍니다.</td>
+  <td>Medium<br><small>두 논문이 독립적으로 물리 정보 역문제의 서로 다른 측면(방법론·평가 인프라)을 강화</small></td>
+  <td>Calderón PINNs의 Fourier-feature 인코딩 + 랜덤 wavelet 여기를 ODT 굴절률 복원에 이식 — sharp boundary 재현 ablation; Mosaic 벤치마크로 ODT forward solver(RCWA, FD-BPM)의 gradient 신뢰도 사전 평가</td>
+</tr>
+</tbody>
+</table>
+
+<h2>📐 arXiv vs 저널 대비</h2>
+<p>오늘은 arXiv 390건, 저널(Crossref+OpenAlex) 225건(중복 제거 후)입니다.</p>
+<ul>
+  <li><strong>arXiv 강신호</strong>: StructSplat·Structured-Li-GS·CoIn(3DGS 범용화), CODA VLM-Aware Meta-Optic, PIAA-ZWFS(AO 파면 센싱), ScaLe-INR, BiDeMem, DeLux(이벤트 카메라 복원), PINNs Calderón, RCWA PCNN</li>
+  <li><strong>저널 신호</strong>: 오늘 Crossref 수집분은 계산광학 직접 신호보다 임상 CT·MRI·의료 영상 관련 논문(cardiology/dental CBCT)이 대부분. 계산광학 저널 직접 신호는 약함</li>
+  <li><strong>공통 키워드</strong>: Gaussian Splatting, reconstruction, inverse problem, neural network, diffusion</li>
+  <li><strong>오늘의 특징</strong>: 월요일 주말 제출분이라 절대량이 적지만, 계산광학 관련 핵심 논문 밀도는 높은 편. 특히 광학-AI 공동 설계(CODA) 하나가 이번 주 전체에서 가장 중요한 단발 신호가 될 가능성.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. CODA — 광학 설계의 목표 함수가 바뀐다</h3>
+  <p>지금까지 카메라와 광학 소자는 사람이 보기 좋은, 즉 해상도 높고 수차 없는 이미지를 만드는 것이 설계 목표였습니다. CODA는 이 전제를 바꿉니다. 크기·비용·폼팩터 제약이 강한 환경(예: 드론, 웨어러블, 내시경)에서는 고품질 광학을 올리기 어렵기 때문에, CODA는 compact meta-optic이 frozen VLM(Vision-Language Model)이 가장 잘 인식하는 표현을 직접 생성하도록 광학 front-end를 역으로 최적화합니다. 즉 광학 설계 목표 함수가 "사람의 시각적 품질 지표"에서 "downstream AI 모델의 인식 정확도"로 바뀌는 겁니다. 이 방향이 자리잡으면, 렌즈리스 카메라나 coded aperture 시스템의 PSF 설계에서도 "복원된 이미지가 얼마나 예쁜가"보다 "이 측정으로 목표 작업을 얼마나 잘 수행하는가"가 기준이 됩니다.</p>
+  <p class=conf-note>Confidence: High — meta-optic inverse design + task-aware optimization 결합. [방법전환] [실사용전환]. 렌즈리스·FP 랩 파이프라인에 직접 적용 가능한 설계 원칙</p>
+</div>
+
+<div class=ins>
+  <h3>2. StructSplat — 카메라 없이 3DGS</h3>
+  <p>3D Gaussian Splatting은 지금까지 잘 보정된 multi-view 이미지, 즉 카메라 포즈와 내부 파라미터를 알고 있어야 했습니다. StructSplat은 이 전제를 없앱니다. 보정되지 않은 이미지들만 주면 카메라 포즈를 함께 추정하면서 feed-forward로 3DGS를 생성합니다. 핵심 아이디어는 geometry와 appearance를 분리한 백본 구조로, 기하학적 정확도와 외관 충실도를 따로 최적화합니다. 이것이 중요한 이유는 3DGS가 실험실 스튜디오에서 나와 병원·현장·모바일 환경에서 쓰일 수 있게 되기 때문입니다. FP나 ODT처럼 제한된 각도·조명 조건에서 측정하는 시스템도, 측정 과정에서 카메라 파라미터를 별도로 보정하지 않고 재구성을 시도할 수 있는 가능성이 생깁니다.</p>
+  <p class=conf-note>Confidence: High — feed-forward 3DGS, uncalibrated sparse view. [방법전환] [실사용전환]. 카메라 보정 요구를 없애는 방향의 3DGS 일반화</p>
+</div>
+
+<div class=ins>
+  <h3>3. PIAA-ZWFS — AO 파면 센서 설계의 물리적 한계를 미분 가능하게 최적화</h3>
+  <p>극한 적응광학(extreme AO)은 별 주변 생명체 거주 가능 영역 규모의 고대비 촬상을 위해 파면 오차를 피코미터 단위로 제어해야 합니다. 기존 Zernike wavefront sensor(ZWFS)는 민감도가 충분하지 않아서, 더 많은 광자나 더 느린 루프를 써야 했습니다. PIAA-ZWFS는 PIAA(Phase-Induced Amplitude Apodization)로 동공 빛을 무손실로 집중시켜 ZWFS 민감도를 높이고, 이 전체 시스템을 미분 가능 모델로 최적화합니다. 계산광학 랩에 의미가 있는 이유는 방법론 때문입니다 — 미분 가능 광학 설계를 파면 센서에 적용해 물리적 한계에 접근하는 접근 방식 자체가, FP나 렌즈리스에서 조명·마스크 최적화에 쓸 수 있는 일반적인 틀을 보여주기 때문입니다.</p>
+  <p class=conf-note>Confidence: Medium — 천문 AO 전문 논문이지만 방법론은 계산광학 일반에 이식 가능. [방법전환] [실사용전환]. 본문에서 다른 도메인 적용 가능성 직접 언급 여부 확인 필요</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>주제 1: CODA 설계 원칙으로 task-aware lensless PSF 최적화</h3>
+  <p><strong>배경</strong>: CODA(2606.27646)는 frozen VLM의 인식 성능을 최대화하는 방향으로 meta-optic front-end를 최적화합니다. 이 아이디어를 렌즈리스 이미징에 이식하면, PSF(또는 디퓨저 패턴)를 "복원 이미지 품질 최대화"가 아닌 "classification/detection 정확도 최대화"로 설계할 수 있습니다.</p>
+  <p><strong>1주 실행 프로토콜</strong>:</p>
+  <ol>
+    <li>CODA 코드(2606.27646) clone 후 렌즈리스 forward model(PSF convolution)로 optical front-end 교체</li>
+    <li>ImageNet 분류를 frozen ViT/CLIP으로 평가하는 task-aware loss 설정</li>
+    <li>PSF 최적화 전후 분류 정확도 비교 + "PSF-최적화 시스템"과 "이미지 복원 후 분류"의 성능 갭 정량화</li>
+    <li>실패해도 남는 결과: lensless 시스템에서 task-aware vs image-quality-aware 설계 비교 분석 (negative result도 워크숍 논문)</li>
+  </ol>
+</div>
+
+<div class=dd>
+  <h3>주제 2: StructSplat + 제한 각도 ODT — camera-free 재구성 파이프라인</h3>
+  <p><strong>배경</strong>: ODT는 제한된 조명 각도에서 홀로그램 측정으로 굴절률 분포를 재구성하는 문제입니다. StructSplat이 uncalibrated sparse view에서 3DGS를 만드는 것처럼, ODT에서 조명 각도 보정 없이 굴절률 볼륨을 재구성하는 파이프라인을 만들 수 있습니다.</p>
+  <p><strong>1주 실행 프로토콜</strong>:</p>
+  <ol>
+    <li>StructSplat(2606.28321) geometry/appearance 분리 구조를 ODT 복소 굴절률(실수부+허수부) 표현으로 확장</li>
+    <li>시뮬레이션 ODT 데이터(구슬, 세포)에서 조명 각도 ±5% 오차 조건으로 기존 방법 vs StructSplat-ODT 비교</li>
+    <li>굴절률 RMSE, Zernike 모드 오차, 구조 보존도(SSIM) 측정</li>
+    <li>실패해도 남는 결과: ODT에서 uncalibrated 재구성 한계 분석 (각도 오차 허용 범위 정량화)</li>
+  </ol>
+</div>
+
+<div class=dd>
+  <h3>주제 3: RCWA PCNN을 메타렌즈 inverse design에 forward model로 통합</h3>
+  <p><strong>배경</strong>: 메타서피스 역설계에서 가장 큰 병목은 RCWA(Rigorous Coupled-Wave Analysis) 계산 비용입니다. RCWA PCNN(2606.28119)은 에너지 보존(Stiefel manifold 제약)을 하드 조건으로 강제하는 surrogate로, 미분 가능하여 gradient-based 역설계 파이프라인에 직접 쓸 수 있습니다.</p>
+  <p><strong>1주 실행 프로토콜</strong>:</p>
+  <ol>
+    <li>PCNN 코드(2606.28119) clone 후 랩의 metasurface 파라미터(주기, 높이, 재료)로 학습 데이터 생성</li>
+    <li>RCWA(실제)와 PCNN(surrogate)의 Jones matrix 예측 오차 비교 + 역설계 루프에서 수렴 속도 비교</li>
+    <li>에너지 보존 위반 비율 측정 — hard constraint가 실제로 보장되는지 확인</li>
+    <li>실패해도 남는 결과: PCNN surrogate의 한계 각도·파장 범위 맵 (역설계 가능 영역 사전 분석)</li>
+  </ol>
+</div>
+
+<hr>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(26편, 최대) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+<p><small>※ 아래 편수에는 Crossref 저널 위양성(임상 CT/dental/cardiac 관련)이 포함됨. 계산광학 직접 관련 논문은 각 버킷의 실제 수보다 적음.</small></p>
+
+<div class=bucket-bar><span class=nm>Deep Learning (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>93편</span></div>
+<div class=bucket-bar><span class=nm>Tomography / 3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>26편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining / Pathology</span><span class=bar><span class=fill style="width:81%"></span></span><span class=n>21편†</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction / Inverse Problems</span><span class=bar><span class=fill style="width:65%"></span></span><span class=n>17편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging / Holography</span><span class=bar><span class=fill style="width:12%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics / Diffractive</span><span class=bar><span class=fill style="width:4%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field / Novel Sensors</span><span class=bar><span class=fill style="width:4%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Fourier Ptychography / Microscopy</span><span class=bar><span class=fill style="width:4%"></span></span><span class=n>1편†</span></div>
+<div class=bucket-bar><span class=nm>Lensless / Coded Imaging</span><span class=bar><span class=fill style="width:4%"></span></span><span class=n>1편†</span></div>
+<p style="font-size:12.5px;color:#666;margin:.5rem 0">† Virtual Staining 21편은 "staining"/"label-free" 키워드 위양성(임상 조직병리 저널) 다수. 계산광학 직접 관련은 히스토패쏠로지 합성(2606.27935) 1편 수준.</p>
+<p style="font-size:12.5px;color:#666;margin:.5rem 0">† Fourier Ptychography, Lensless 버킷의 1편은 각각 위양성(SAR 관련, RL diffusion planner). 계산광학 직접 신호는 Meta-Optics(CODA, PCNN), Phase Imaging(PIAA-ZWFS), Light-Field(DeLux) 버킷에 집중.</p>
+<p style="font-size:12.5px;color:#666;margin:.5rem 0">도메인 Watch Lens: Lensless/Coded Imaging, Fourier Ptychography 버킷에서 오늘 직접 신호 없음. 오늘 계산광학 핵심 신호는 CODA(Meta-Optics), PIAA-ZWFS(Phase Imaging), DeLux(Light-Field/Novel Sensors).</p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Meta-Optics / Diffractive (1편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.27646" target=_blank>VLM-Aware Meta-Optic Front-End Design for Frozen Vision-Language Models (CODA)</a></strong> <span class=pill>CV</span> <span class=pill>HOT</span><br>
+왜 주요: frozen VLM 인식 성능을 최대화하는 방향으로 meta-optic front-end를 역설계하는 첫 프레임워크. 광학 설계 목표 함수를 task-aware로 바꾸는 직접적 신호. [방법전환] [실사용전환]
+</div>
+
+<h3>Phase Imaging / Holography (3편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.28136" target=_blank>Differentiable Design of the PIAA-ZWFS: Flexible Wavefront Sensor Approaching Fundamental Limits</a></strong> <span class=pill>SP</span><br>
+왜 주요: AO 파면 센싱에서 PIAA 무손실 첨두화 + Zernike WFS를 미분 가능하게 최적화. 물리적 한계 접근 + 미분 가능 설계 방법론이 계산광학 PSF/조명 최적화에 이식 가능. [방법전환]
+</div>
+<div class=roi-item>
+<strong>Access Selection for Finite-SNR Modal Recoverability in Sampled-Wave Receivers</strong> <span class=pill>SP</span><br>
+왜 주요: 대구경 수신기에서 제한된 센서 접근만으로 modal 복원 가능성 분석. 계산광학의 불완전 측정 조건과 유사. abstract 기반 — 본문 확인 필요.
+</div>
+
+<h3>Light-Field / Novel Sensors (1편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.27576" target=_blank>DeLux: Cross-Modal Local Artifact Restoration in Video Using Neuromorphic Data</a></strong> <span class=pill>CV</span><br>
+왜 주요: 이벤트 카메라(neuromorphic)를 조명 아티팩트(flare·glare·overexposure) 복원에 활용하는 첫 크로스모달 프레임워크. 고동적 범위 촬상 병목을 이벤트 스트림으로 해결하는 방향. [방법전환]
+</div>
+
+<h3>Tomography / 3D Imaging (arXiv 5편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.28321" target=_blank>StructSplat: Generalizable 3DGS from Uncalibrated Sparse Views</a></strong> <span class=pill>CV</span> <span class=pill>HOT</span><br>
+왜 주요: 카메라 파라미터 없이 feed-forward로 3DGS 생성. 3DGS 범용화의 직접적 진전. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.27509" target=_blank>Structured-Li-GS: Structured 3DGS with LiDAR Incorporation</a></strong> <span class=pill>CV</span><br>
+왜 주요: LiDAR-inertial-visual SLAM으로 dense colorized point cloud 생성 후 3DGS 앵커링. 더 적은 가우시안으로 고품질 재구성.
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.27584" target=_blank>CoIn: Comprehensive 2D-3D Inpainting with Gaussian Splatting Guidance</a></strong> <span class=pill>CV</span><br>
+왜 주요: 3DGS를 장면 인페인팅으로 확장 — object removal 이상의 일반적 3D 편집 프레임워크.
+</div>
+
+<h3>Reconstruction / Inverse Problems (핵심 3편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.28158" target=_blank>Recovering Sharp Conductivity Features in the Finite-Data Calderón Problem with PINNs</a></strong> <span class=pill>LG</span><br>
+왜 주요: 경계 데이터만으로 sharp feature 복원. Fourier-feature 인코딩 + 랜덤 wavelet 여기 조합이 PINNs 스펙트럼 편향 극복. ODT·EIT 역문제에 이식 가능. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.28119" target=_blank>Physics-constrained NN for RCWA Surrogate Modeling (PCNN)</a></strong> <span class=pill>LG</span><br>
+왜 주요: Stiefel manifold 에너지 보존을 하드 제약으로 강제하는 미분 가능 RCWA surrogate. 메타서피스 역설계 파이프라인에서 forward model 병목 해결. [방법전환] [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.27895" target=_blank>Mosaic: Benchmark Suite for Differentiable Physics Solvers</a></strong> <span class=pill>LG</span><br>
+왜 주요: gradient 정확도·수치 조건수·통합 비용을 다양한 PDE 솔버에 걸쳐 처음으로 체계적 비교. 물리-정보 역문제 솔버 선택의 근거 제공. [평가축] [인프라]
+</div>
+
+<h3>Deep Learning Methods (핵심 2편 — 계산광학 관련)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.27862" target=_blank>ScaLe-INR: Scale and Learn Implicit Neural Representations</a></strong> <span class=pill>LG</span><br>
+왜 주요: 스펙트럼 편향을 다중 스케일 MLP 분해로 극복하는 INR. ODT·lensless 볼륨 신호 표현 품질 개선에 이식 가능. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.27935" target=_blank>Controllable Histopathology Image Synthesis with Training-free Structural Initialization</a></strong> <span class=pill>CV</span><br>
+왜 주요: 전문가 어노테이션 부족 문제를 구조화된 합성으로 해결. 가상 염색(virtual staining) 데이터 증강 파이프라인에 참조 가능.
+</div>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>VLM-Aware Meta-Optic Front-End Design (CODA) — 광학 설계 목표 함수의 전환</h3>
+  <p class=tag>[방법전환] [실사용전환]</p>
+  <p><strong>왜 A급인가</strong>:<br>
+  핵심: 기존 광학 설계가 "사람이 보기 좋은 이미지"를 만드는 것이 목표였다면, CODA는 "frozen VLM이 잘 인식하는 표현"을 만드는 방향으로 compact meta-optic front-end를 역으로 최적화합니다. 이 전환은 계산광학 랩이 "복원 이미지 PSNR"에서 "downstream task 정확도"로 설계 평가 기준을 바꿔야 한다는 신호입니다. 구체적으로, meta-optic이 size·cost·form factor 제약이 강한 환경에서 고품질 이미지를 만들 수 없을 때, 그 손실을 AI 모델이 보완하는 것이 아니라 AI 모델이 잘 이해하는 표현을 만드는 광학을 처음부터 설계하는 접근입니다.<br><br>
+  방법: CODA는 meta-optic의 phase profile을 연속 밀도(continuous density)로 파라미터화하고, frozen VLM의 recognition loss를 역전파해 광학 파라미터를 최적화합니다. VLM이 frozen이므로, 광학 front-end만 학습되며 AI 모델 재학습 없이 여러 VLM에 적용 가능합니다.<br><br>
+  의미: 렌즈리스 이미징·FP·coded aperture 시스템에서도 같은 접근이 가능합니다. PSF나 조명 패턴을 "복원 품질"이 아닌 "classification/detection 성능" 기준으로 최적화하면, 제한된 측정 조건에서도 task 성능을 유지할 수 있습니다. 이 아이디어의 일반화 가능성이 이 논문을 이번 주 가장 중요한 단발 신호로 만드는 이유입니다.</p>
+  <p><strong>한계</strong>: frozen 모델 가정이 VLM이 업데이트될 때 meta-optic을 다시 설계해야 하는 비용을 만듦. [Metric risk] 논문이 쓰는 recognition 지표가 실제 배포 환경을 대표하는지 확인 필요. [Claim risk] compact meta-optic의 물리적 제한(회절 한계, 색수차)이 얼마나 극복 가능한지 본문 확인 필요.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[Metric risk] StructSplat</strong>: uncalibrated sparse view 조건에서 PSNR/LPIPS 수치가 실제 현장 촬영 시나리오를 대표하는지 확인 필요. 합성 데이터 결과 vs 실제 현장 데이터 gap이 핵심 검증 포인트.</p>
+  <p><strong>[Baseline risk] CODA</strong>: frozen VLM이 아닌 fine-tuned VLM 대비 성능 비교가 없을 수 있음. meta-optic 최적화 vs VLM fine-tuning의 비용 대비 효과 비교 본문 확인 필요.</p>
+  <p><strong>[Dataset risk] Calderón PINNs</strong>: 합성 전도도 분포에서의 결과가 실제 EIT·ODT 데이터에 얼마나 적용 가능한지는 추가 실험 필요.</p>
+  <p><strong>[Claim risk] ScaLe-INR</strong>: 스펙트럼 편향 극복을 주장하지만, 다중 스케일 분해가 실제로 3D 볼륨 신호에서 효과적인지 ODT 같은 복잡한 forward model 환경에서 검증이 필요.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <strong>GeoFace (2606.27659)</strong>: geometry-constrained multi-view face generation — 얼굴 생성 특화, 계산광학 적용 범위 제한적. 3DGS 응용 관심이 있을 때만 읽을 것.<br>
+  <strong>SemCityLoc (2606.27444)</strong>: semantic 3D city model 기반 aerial 6DoF localization — localization 전문. 3DGS가 localization에 활용되는 방향 관심 시 참조.<br>
+  <strong>There and Back Again MEF (2606.27905)</strong>: flexible-frame multi-exposure fusion — HDR 촬상 방법론이지만 계산광학 직접 응용 범위는 제한적.<br>
+  <strong>SIFT video diffusion (2606.27741)</strong>: video diffusion의 motion entanglement 문제 해결 — 영상 생성 전문, 계산광학 간접 관련.
+</div>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Phase Imaging / Holography</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.28136" target=_blank>Differentiable design of the PIAA-ZWFS</a></strong> <span class=pill>SP</span><br>
+- 문제: 극한 AO에서 파면 센서가 물리적 한계(광자수 대비 민감도)에 제한됨<br>
+- 방법: PIAA 무손실 첨두화 + ZWFS 결합, 전체 시스템을 미분 가능 모델로 최적화<br>
+- 의미: 물리 한계 접근 + 미분 가능 설계가 FP·렌즈리스 PSF 최적화에 이식 가능
+</div>
+<div class=roi-item>
+<strong>Access Selection for Finite-SNR Modal Recoverability in Sampled-Wave Receivers</strong> <span class=pill>SP</span><br>
+- 문제: 대구경 수신기에서 하드웨어 제약으로 일부 센서 위치만 접근 가능<br>
+- 방법: finite-SNR 조건에서 modal 복원 가능성 이론 분석 + 접근 선택 알고리즘<br>
+- 의미: 불완전 측정 계산광학 시스템의 이론적 한계 분석에 참조 가능. abstract 기반
+</div>
+
+<h3>Meta-Optics / Diffractive</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.27646" target=_blank>VLM-Aware Meta-Optic Front-End Design (CODA)</a></strong> <span class=pill>CV</span><br>
+- 문제: compact meta-optic은 크기·비용 제약으로 이미지 품질이 낮고 downstream AI 성능 저하<br>
+- 방법: frozen VLM의 recognition loss를 역전파해 meta-optic phase profile 최적화 (CODA)<br>
+- 의미: 광학 설계 목표 함수를 task-aware로 바꾸는 직접적 신호. 렌즈리스·coded aperture 이식 가능
+</div>
+
+<h3>Light-Field / Novel Sensors</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.27576" target=_blank>DeLux: Cross-Modal Artifact Restoration Using Neuromorphic Data</a></strong> <span class=pill>CV</span><br>
+- 문제: RGB 카메라의 flare·glare·overexposure 복원이 기존 방법론들이 각 아티팩트를 따로 다뤄 복합 손실 복원이 어려움<br>
+- 방법: 이벤트 카메라의 마이크로초 시간 해상도로 조명 손실 영역의 구조 정보 복원 (크로스모달 프레임워크)<br>
+- 의미: 이벤트 카메라를 계산 이미징 복원에 활용하는 구체적 경로. 동적 범위 확장 랩 응용에 참조 가능
+</div>
+
+<h3>Reconstruction / Inverse Problems (핵심)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.28158" target=_blank>Recovering Sharp Conductivity Features (Calderón + PINNs)</a></strong> <span class=pill>LG</span><br>
+- 문제: 경계 측정 데이터만으로 내부 전도도 분포의 sharp edge 복원이 스펙트럼 편향으로 어려움<br>
+- 방법: 랜덤 wavelet 여기 + Fourier-feature 인코딩으로 PINNs의 고주파 응답 개선<br>
+- 의미: ODT·EIT 등 경계 측정 기반 역문제에 직접 이식 가능한 방법론
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.28119" target=_blank>Physics-constrained NN for RCWA (PCNN)</a></strong> <span class=pill>LG</span><br>
+- 문제: RCWA 계산이 메타서피스 역설계 루프에서 병목<br>
+- 방법: Stiefel manifold 에너지 보존을 하드 제약으로 강제하는 미분 가능 surrogate<br>
+- 의미: 메타서피스 역설계 forward model 병목 해결. 에너지 보존 보장이 기존 NN surrogate 대비 강점
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.27895" target=_blank>Mosaic: Benchmark for Differentiable PDE Solvers</a></strong> <span class=pill>LG</span><br>
+- 문제: 어떤 미분 가능 PDE 솔버가 실제로 gradient가 정확하고 통합이 쉬운지 비교 근거 없음<br>
+- 방법: gradient 정확도·수치 조건수·통합 비용을 여러 솔버에 걸쳐 체계적으로 비교<br>
+- 의미: 역문제 파이프라인 설계 시 PDE 솔버 선택 근거 제공. [평가축] [인프라]
+</div>
+
+<h3>Tomography / 3D Imaging (arXiv)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.28321" target=_blank>StructSplat: Generalizable 3DGS from Uncalibrated Sparse Views</a></strong> <span class=pill>CV</span><br>
+- 문제: 기존 3DGS는 보정된 카메라 파라미터와 충분한 multi-view가 필요<br>
+- 방법: geometry/appearance 분리 백본 + feed-forward로 uncalibrated sparse view에서 3DGS 생성<br>
+- 의미: 3DGS 입력 요구 대폭 완화. 제한 측정 환경(의료·현장) 적용 가능성 확장
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.27509" target=_blank>Structured-Li-GS</a></strong> <span class=pill>CV</span><br>
+- 문제: 고품질 3DGS를 위한 dense point cloud 획득 비용<br>
+- 방법: LiDAR-inertial-visual SLAM으로 정확한 colorized point cloud 생성 후 서브샘플링된 앵커로 3DGS<br>
+- 의미: 더 적은 가우시안으로 고품질 재구성. LiDAR 보조 광학 재구성 방향
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.27584" target=_blank>CoIn: 2D-3D Inpainting with GS Guidance</a></strong> <span class=pill>CV</span><br>
+- 문제: 3DGS 편집이 object removal에 제한됨<br>
+- 방법: 2D 인페인팅 모델과 3DGS를 multi-stage 파이프라인으로 연결<br>
+- 의미: 가려진 영역·제한 시야각 복원을 3DGS로 일반화. ODT missing angle 보완에 참조 가능
+</div>
+
+<h3>Deep Learning Methods (계산광학 관련)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.27862" target=_blank>ScaLe-INR</a></strong> <span class=pill>LG</span><br>
+- 문제: 단일 MLP INR에서 스펙트럼 편향으로 고주파 디테일 손실<br>
+- 방법: scale-hierarchical MLP 분해로 각 주파수 대역을 독립 학습<br>
+- 의미: ODT·lensless 3D 볼륨 신호 INR에서 fine detail 복원 개선 가능성
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.28112" target=_blank>BiDeMem: Bidirectional Degradation Memory</a></strong> <span class=pill>CV</span><br>
+- 문제: 이미지 복원에서 열화 조건이 단일 endpoint 지표로만 평가됨<br>
+- 방법: 열화를 양방향 메모리로 추적 + 어느 경로로 복원에 기여하는지 분석<br>
+- 의미: 복원 모델이 열화를 진짜로 이해하는지 해석 가능성 높임. lensless PSF 불확실성 모델링 참조
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.27635" target=_blank>Denoising ICF Images with Multiplicative Uniform Noise (Log-Domain Noisier2Inverse)</a></strong> <span class=pill>LG</span><br>
+- 문제: 관성 핵융합(ICF) 이미지의 곱셈형 균일 노이즈 제거를 위한 자기지도 프레임워크<br>
+- 방법: 로그 도메인 Noisier2Inverse — 자기지도 손실 최소화가 지도 학습과 동등함을 이론 증명<br>
+- 의미: 고물리 과학 이미징(레이저 융합 진단)의 특수 노이즈 모델 처리. 다른 비표준 노이즈 모델 복원에 이론적 참조
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.27935" target=_blank>Controllable Histopathology Image Synthesis</a></strong> <span class=pill>CV</span><br>
+- 문제: 히스토패쏠로지 딥러닝 모델의 전문가 어노테이션 부족<br>
+- 방법: training-free structural initialization으로 구조 보존 합성 이미지 생성<br>
+- 의미: 가상 염색 분야에서 데이터 증강 파이프라인. [데이터전환]
+</div>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/abs/2606.27646" target=_blank>VLM-Aware Meta-Optic CODA (2606.27646)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.28136" target=_blank>PIAA-ZWFS (2606.28136)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.28321" target=_blank>StructSplat (2606.28321)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.27509" target=_blank>Structured-Li-GS (2606.27509)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.27576" target=_blank>DeLux (2606.27576)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.28119" target=_blank>RCWA PCNN (2606.28119)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.28158" target=_blank>Calderón PINNs (2606.28158)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.27862" target=_blank>ScaLe-INR (2606.27862)</a></li>
+  <li><a href="https://arxiv.org/abs/2606.27895" target=_blank>Mosaic PDE Benchmark (2606.27895)</a></li>
+  <li><a href="https://iilab.io/paper-daily-summary/index.html" target=_blank>← 전체 아카이브</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+소스: arXiv /new cs.LG·cs.CV·cs.AI·eess.IV·eess.SP (2026-06-29 listing) + Crossref/OpenAlex 저널<br>
+RSS: <a href="../feed.xml">feed.xml</a>
+</footer>
+
+</body>
+</html>
