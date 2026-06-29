@@ -1,0 +1,19 @@
+{
+  "date": "2026-06-29",
+  "source_listing_date": "2026-06-29",
+  "source_mode": "weekly-pastweek",
+  "weekly_scope": "2026-06-23 ~ 2026-06-26 (Tue-Fri; Mon 2026-06-22 unrecoverable from /pastweek)",
+  "iso_week": "2026-26",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 969,
+      "cs.CV": 737,
+      "cs.AI": 1155,
+      "eess.IV": 62,
+      "eess.SP": 112
+    },
+    "scope": "new+cross; replacements excluded",
+    "note": "4-day cumulative (Jun 23-26); Jun 22 unrecoverable"
+  },
+  "weekly_thesis": "W26: 이벤트 카메라가 표현 학습에서 물리 기반 시뮬레이션 플랫폼으로 도약, 역문제 diffusion prior가 외부 정규화에서 알고리즘 내부 구성요소로 전환, 나노포토닉 역설계는 EUV 마스크 역리소그래피 수준에 진입."
+}

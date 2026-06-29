@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Weekly Retrospective — 2026-W26</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,sans-serif;line-height:1.7;color:#1a1a1a}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e}
+table{border-collapse:collapse;width:100%;margin:1rem 0}
+th,td{border:1px solid #ccc;padding:.5rem .8rem;vertical-align:top}
+th{background:#f0f0f8;font-size:.85rem}
+td{font-size:.88rem}
+blockquote{border-left:4px solid #2a2a6e;padding:.5rem 1rem;margin:1rem 0;background:#f8f8ff}
+.theme-card{border:1px solid #e0e0ff;border-radius:8px;padding:1rem;margin:.8rem 0;background:#f8f8ff}
+.theme-card h3{margin:0 0 .5rem;font-size:1rem;color:#2a2a6e}
+a{color:#2a2a6e}
+.home{display:inline-block;padding:.4rem .9rem;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;font-size:.875rem;color:#374151;text-decoration:none;margin:.5rem 0}
+.home:hover{background:#e9ecef}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 6px;border-radius:8px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.hot-cold{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+.hot-box{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:.9rem 1.1rem}
+.cold-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:.9rem 1.1rem}
+.hot-box h3{margin:0 0 .5rem;color:#7f1d1d;font-size:.95rem}
+.cold-box h3{margin:0 0 .5rem;color:#1e3a8a;font-size:.95rem}
+.hot-box ul,.cold-box ul{margin:.4rem 0;padding-left:1.2rem;font-size:.88rem}
+.dd{background:#fefce8;border:1px solid #fde047;border-radius:10px;padding:1.1rem 1.3rem;margin:1rem 0}
+.dd h3{margin:0 0 .5rem;color:#713f12;font-size:1rem}
+.action-card{border:1px solid #d1fae5;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#f0fdf4}
+.action-card h3{margin:0 0 .4rem;font-size:.95rem;color:#14532d}
+.pred-card{border:1px solid #e0e7ff;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#eef2ff}
+.pred-card h3{margin:0 0 .4rem;font-size:.95rem;color:#3730a3}
+.pred-card .cond{font-size:.82rem;color:#4338ca;margin:.3rem 0}
+.meta{font-size:.85rem;color:#475569;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:4px;padding:.6rem 1rem;margin:.8rem 0}
+ul.plain{padding-left:1.3rem}
+ul.plain li{margin:.3rem 0;font-size:.9rem}
+.review-hit{color:#166534;font-weight:700}
+.review-partial{color:#92400e;font-weight:700}
+.review-miss{color:#7f1d1d;font-weight:700}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+<button id=themeToggle onclick="(function(){var d=document.documentElement,t=d.dataset.theme==='dark'?'light':'dark';d.dataset.theme=t;try{localStorage.setItem('theme',t)}catch(e){}})()">🌙</button>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Weekly Retrospective — 2026-06-29 (Week 26)</h1>
+<div class=meta>
+  <div>발행: 2026-06-29 (월) &nbsp;|&nbsp; 검토 기간: 2026-06-23 ~ 06-26 (Tue–Fri)</div>
+  <div>누적 스캔 약 3,035편 (cs.LG 969 · cs.CV 737 · cs.AI 1,155 · eess.IV 62 · eess.SP 112) &nbsp;|&nbsp; 4일치 briefing 기반</div>
+  <div style="color:#b45309">⚠️ 주의: 2026-06-22 (월) daily는 arXiv /pastweek 윈도우에서 이미 사라져 복구 불가 — 이번 회고는 Tue–Fri 4일 기준입니다.</div>
+</div>
+
+<h2>🗓 Executive Summary</h2>
+<ul class=plain>
+  <li>지난주(W26)는 <strong>이벤트 카메라가 단순 센서에서 물리 기반 시뮬레이션 플랫폼으로 도약한 주</strong>로 기억하면 됩니다 — 화요일 서베이·표현 학습에서 수요일 크로스모달 융합, 금요일 FracEvent 물리 기반 시뮬레이터까지 사흘 연속 다른 계층에서 High confidence 클러스터가 이어졌습니다.</li>
+  <li>역문제에서는 <strong>diffusion prior가 바깥에서 돕는 방식(외부 정규화)에서 알고리즘 안으로 들어오는 방식(내부 구성요소)으로 전환</strong>됐습니다 — 목요일 RL+Diffusion Prior(2606.25924)가 이 흐름의 전환점이고 금요일 L-DPS가 이어받았습니다.</li>
+  <li><strong>메타-홀로그래피는 회절 인코딩 한계를, 나노포토닉 역설계는 EUV 마스크 역리소그래피</strong>를 이번 주 각각 새로운 경계로 삼았습니다 — 두 분야 모두 실험실 소자 설계에서 공정 제조 수준으로 범위를 넓혔습니다.</li>
+</ul>
+
+<blockquote>
+<strong>Weekly Thesis.</strong> W25가 3DGS의 응용 분화와 역문제의 층위별 구체화로 기억된다면, W26는 이벤트 카메라가 단순 센서에서 물리 기반 시뮬레이션 플랫폼으로 도약하고, 역문제의 diffusion prior 통합이 외부 정규화에서 반복 알고리즘 내부 구성요소로 전환되는 주로 기억할 만합니다. 메타-홀로그래피는 회절 인코딩 한계라는 물리적 상한을 소프트웨어 수준(멀티오더 디커플링)으로 우회하는 방법을 제시했고, 나노포토닉 역설계는 실험실 수준을 넘어 EUV 마스크 역리소그래피라는 공정 제조 수준으로 진입했습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>지난주 가장 뜨거운 흐름은 <strong>이벤트 카메라의 계층적 성숙</strong>입니다. 화요일(Jun 23)에 표현 학습 체계화 서베이(2606.23078)가 나와 이벤트 스트림을 어떻게 표현해야 하는지 지도가 만들어졌고, 수요일(Jun 24)에는 RGB·오디오·깊이와 결합하는 크로스모달 융합 논문 3편(M²C-EvDet, UniRED, GeoIMO)이 한꺼번에 등장해 '이벤트 혼자로는 부족하다'는 문제에 답하기 시작했습니다. 금요일(Jun 26)에는 FracEvent(2606.26636)가 분수 완화 미분 방정식으로 픽셀 동역학을 모델링해 기존 시뮬레이터(vid2e, ESIM)보다 실제 카메라에 훨씬 가까운 합성 이벤트를 생성하는 방법을 제시했습니다. 이 흐름을 한 문장으로 정리하면, 이벤트 카메라는 이번 주를 기점으로 데이터를 수집하는 도구가 아니라 데이터를 시뮬레이션하는 플랫폼으로 위상이 달라졌습니다.</p>
+
+<p>두 번째 강한 축은 <strong>역문제에서 diffusion prior의 내부화</strong>입니다. W25에는 DPS, PnP처럼 diffusion model이 역문제 solver 바깥에서 보조하는 방식이 주를 이뤘습니다. 목요일(Jun 25)에 등장한 RL+Diffusion Prior(2606.25924)는 Richardson-Lucy 반복 알고리즘의 각 step 안에 diffusion model을 직접 집어넣었습니다. 즉 기존에 검증된 알고리즘 구조를 유지하면서 diffusion의 image prior를 활용하는 접근으로, 바깥에서 감독하는 방식보다 더 안정적인 수렴을 기대할 수 있습니다. 금요일 L-DPS는 이 아이디어를 고차원 PDE 역문제까지 확장했습니다. 메타-홀로그래피에서는 수요일(Jun 24)에 단일 개구면적이 담을 수 있는 홀로그래픽 정보량의 물리적 상한을 소프트웨어 수준으로 우회하는 멀티오더 디커플링 논문이, 목금요일(Jun 25-26)에는 나노포토닉 역설계가 EUV 마스크 역리소그래피까지 진입하는 논문이 이틀 연속 나왔습니다.</p>
+
+<p>다음 주 전망: FracEvent가 이벤트 카메라 시뮬레이션의 도메인 갭을 줄였으므로, 이벤트 카메라를 계산 이미징(렌즈리스·FP·ODT)에 직접 결합하는 논문이 등장할 가능성이 높아졌습니다. 역문제에서는 RL+Diffusion Prior의 FP·렌즈리스 적용 follow-up 논문을 기대해볼 수 있습니다. FP·렌즈리스 논문이 저널에만 집중됐고 arXiv cs.*에서 2주 연속 부재했으므로, 다음 주에 이 공백이 채워질지도 관찰 포인트입니다.</p>
+
+<h2>⚖️ Hot vs Cold</h2>
+<div class=hot-cold>
+  <div class=hot-box>
+    <h3>⬆ 가속 클러스터</h3>
+    <ul>
+      <li><strong>이벤트 카메라 (3일 연속 High)</strong><br>서베이→크로스모달 융합→물리 기반 시뮬레이션 순서로 계층이 올라갔습니다. W25에서도 등장했지만 이번 주에 더 구체적인 도구(FracEvent)로 성숙했습니다.</li>
+      <li><strong>역문제 + Diffusion Prior 내부화</strong><br>W25에서 외부 정규화 방식이 주였다면, 이번 주는 반복 알고리즘 내부로 들어오는 방식으로 한 단계 진전됐습니다.</li>
+      <li><strong>나노포토닉 역설계 (목·금 연속 High)</strong><br>W25에서 1편에 머물렀던 이 주제가 이번 주 이틀 연속 다른 접근 방식으로 등장했습니다.</li>
+    </ul>
+  </div>
+  <div class=cold-box>
+    <h3>⬇ 감속 클러스터</h3>
+    <ul>
+      <li><strong>Fourier Ptychography (arXiv 2주 공백)</strong><br>저널에서는 guided progressive ptychography, wavelet FPM이 나왔지만 arXiv cs.*에서 FP 논문은 이번 주도 없었습니다. 3주째 arXiv 공백 패턴입니다.</li>
+      <li><strong>Lensless/Coded Imaging (arXiv 공백)</strong><br>저널 채널에서는 편광 렌즈리스·마스크 기반 미니스코프가 있었지만 arXiv에서는 부재합니다. FP와 동일한 저널-arXiv 분리 패턴이 지속됩니다.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>🧩 주간 클러스터 표</h2>
+<table>
+<thead><tr>
+  <th>Cluster</th>
+  <th>대표 논문</th>
+  <th>왜 중요?</th>
+  <th>Confidence</th>
+  <th>Lab action</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><strong>이벤트 카메라 — 표현 학습에서 시뮬레이션 플랫폼으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.23078">Event Camera Survey (2606.23078)</a><br>
+    <a href="https://arxiv.org/abs/2606.26636">FracEvent (2606.26636)</a><br>
+    M²C-EvDet, UniRED, GeoIMO (Jun 24)
+  </td>
+  <td>이전까지는 이벤트 카메라를 쓰려면 직접 카메라를 설치하고 데이터를 모아야 했습니다. FracEvent는 분수 완화 미분 방정식으로 픽셀의 히스테리시스·메모리 특성을 모델링해, 실제 카메라 없이도 통계적으로 가까운 이벤트 스트림을 합성합니다. 이 변화는 이벤트 카메라를 새 응용 도메인(렌즈리스, FP, ODT)에 투입할 때 '카메라 구매→설치→데이터 수집' 병목을 시뮬레이션으로 우회할 수 있다는 뜻입니다. 사흘 연속 다른 계층에서 등장한 이번 주 가장 일관된 흐름입니다.</td>
+  <td>High<br><small>Jun 23, 24, 26 사흘 연속, 서로 다른 저자군·기관·접근 방식</small></td>
+  <td>FracEvent(2606.26636) 코드를 클론해 렌즈리스/FP 셋업의 움직임 시나리오에서 합성 이벤트 생성; 이벤트 서베이 정독 후 고속 이미징 센서 로드맵 반영</td>
+</tr>
+<tr>
+  <td><strong>역문제 + Diffusion Prior 내부화 — 외부 정규화에서 반복 알고리즘 내부로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.25924">RL+Diffusion Prior (2606.25924)</a><br>
+    L-DPS — Latent Diffusion Posterior Sampling (Jun 26)<br>
+    Dual-Prior Null-Space MRI SR (Jun 26)
+  </td>
+  <td>기존에 diffusion model을 역문제에 쓸 때는 DPS처럼 diffusion 샘플러를 바깥에서 감독하는 방식이 주였습니다. RL+Diffusion Prior는 Richardson-Lucy 반복의 각 step 안에 diffusion model을 직접 집어넣어, 알고리즘 구조를 바꾸지 않고도 image prior를 활용합니다. 이 방식의 장점은 기존 RL의 수렴 보장을 유지하면서 노이즈 조건에서도 품질을 높일 수 있다는 점입니다. 즉 W25의 '바깥에서 돕는 diffusion'에서 W26의 '안쪽 구성요소 diffusion'으로 방법론이 한 단계 진전됐습니다.</td>
+  <td>High<br><small>Jun 25, 26 이틀 연속, 서로 다른 응용 도메인(형광 현미경, PDE 역문제)에서 동일 방향 확인</small></td>
+  <td>RL+Diffusion Prior(2606.25924)를 랩 FP/렌즈리스 저선량 데이터에 적용; L-DPS를 ODT 역문제(PDE governed)에 이식 가능성 검토; 기존 RL / DPS / RL+prior 3-way 비교 표 작성</td>
+</tr>
+<tr>
+  <td><strong>메타-홀로그래피·위상 복원 — 정보 용량 한계 돌파와 생물 응용</strong></td>
+  <td>
+    <a href="https://doi.org/10.1371/journal.pcbi.1013928">HoloBio GUI (Jun 23)</a><br>
+    멀티오더 디커플링 메타-홀로그래피 (Jun 24)<br>
+    비선형 메타서피스 IR 업컨버전 (Jun 24)
+  </td>
+  <td>수요일에 단일 메타서피스가 담을 수 있는 홀로그래픽 정보량의 물리적 한계(회절 인코딩 한계)를 새 재료나 하드웨어 없이 소프트웨어 수준(회절 차수를 독립 채널로 분리)으로 우회하는 방법이 나왔습니다. 이는 같은 하드웨어로 더 많은 정보를 처리할 수 있다는 의미입니다. 비선형 메타서피스 IR 업컨버전은 냉각 센서가 필요한 적외선 이미징의 진입 비용을 실리콘 카메라 수준으로 낮출 수 있는 경로입니다.</td>
+  <td>High<br><small>Jun 23, 24 이틀, 저널+arXiv 혼합, 서로 다른 저자군</small></td>
+  <td>멀티오더 디커플링을 FP 다채널 측정 인코딩과 비교 분석; HoloBio GUI를 랩 DHM 데이터에 직접 시험; IR 업컨버전 플랫폼 변환 효율 수치 확인</td>
+</tr>
+<tr>
+  <td><strong>나노포토닉 역설계 — EUV 마스크 역리소그래피까지</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.25753">EUV ILT + 도파로법·PIDL (2606.25753)</a><br>
+    LithoDreamer 다단계 세계 모델 (Jun 26)
+  </td>
+  <td>나노포토닉 역설계가 '원하는 광학 응답을 내는 소자 구조를 찾는 것'에서 '그 소자를 실제로 만들 수 있는 마스크로 변환하는 것'까지 범위를 넓혔습니다. EUV 마스크 역리소그래피는 반도체 업계에서 수십 년간 쌓인 복잡한 문제인데, 도파로법과 물리 기반 딥러닝이 이 문제에 진입했다는 것 자체가 기술 성숙의 신호입니다. LithoDreamer는 EUV/DUV 공정 전 단계를 세계 모델로 시뮬레이션해 설계→제조 루프를 닫으려는 시도입니다.</td>
+  <td>High<br><small>Jun 25, 26 이틀 연속, 동일 응용 방향(EUV/나노제조)에서 서로 다른 접근 확인</small></td>
+  <td>EUV ILT(2606.25753) 역전파 방법론을 메타렌즈 역설계 파이프라인에 적용 가능성 검토; LithoDreamer 세계 모델 설계 원칙을 ALD·패터닝·식각 공정 시뮬레이션에 참조</td>
+</tr>
+<tr>
+  <td><strong>3DGS 도메인 다변화 2라운드 — 단층촬영·MRI·위성으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.22525">PVF-D 3DGS 단층촬영 (2606.22525)</a><br>
+    MRI 3DGS novel view synthesis (Jun 26)<br>
+    SatSplatDiff 위성 3DGS (Jun 26)
+  </td>
+  <td>W25에 3DGS가 가속·편집·분산 학습으로 분화됐다면, W26에는 의료(MRI·단층촬영)와 원격 탐지(위성)로 응용 도메인이 이동했습니다. PVF-D는 3DGS를 단층촬영에 쓸 때 투영 공간과 볼륨 공간의 최적화 드리프트를 처음으로 명시적으로 진단하는 지표입니다. 기존 PSNR/SSIM 평가에서 '왜 아티팩트가 생기는가'를 설명할 수 있게 된 전환점이고, 이 진단 방법은 ODT 희소각 복원에도 직접 적용 가능합니다.</td>
+  <td>High<br><small>Jun 23, 26 두 날, 서로 다른 도메인(단층촬영, MRI, 위성)에서 동일 방향 확인</small></td>
+  <td>PVF-D(2606.22525)를 ODT 희소각(30/60/90도)에서의 드리프트 진단에 적용; MRI 3DGS를 FP/ODT 볼륨 재구성의 novel view synthesis에 이식 가능성 평가</td>
+</tr>
+</tbody>
+</table>
+
+<h2>📐 arXiv vs 저널 키워드</h2>
+<table>
+<thead><tr><th>채널</th><th>이번 주 주요 키워드</th></tr></thead>
+<tbody>
+<tr><td><strong>공통</strong></td><td>holography, phase retrieval, inverse problem, diffusion, metasurface, event camera</td></tr>
+<tr><td><strong>arXiv cs.* 전용</strong></td><td>3DGS, event camera simulation (FracEvent), EUV inverse lithography, RL+diffusion prior, L-DPS, cross-modal fusion</td></tr>
+<tr><td><strong>저널 전용</strong></td><td>Fourier ptychography, lensless imaging, polarization, wavelet FPM, mini-microscope, guided progressive ptychography, Kramers-Kronig phase imaging</td></tr>
+<tr><td><strong>같은 단어, 다른 맥락</strong></td><td>'diffusion' — arXiv: inverse problem solver (prior injection) / 저널: optical scattering medium. 'metasurface' — arXiv: information encoding / 저널: fabrication &amp; spectroscopy</td></tr>
+</tbody>
+</table>
+
+<h2>🔥 주간 Top 5</h2>
+<ol>
+<li>
+  <strong><a href="https://arxiv.org/abs/2606.25924">RL+Diffusion Prior for Fluorescence Microscopy</a></strong>
+  <span class=tag>[방법전환]</span><br>
+  <em>Phylogeny: CVML / Inverse Problems > Diffusion-Based > RL Integration > Fluorescence Microscopy</em><br>
+  이번 주 방법론적 함의가 가장 큰 논문입니다. diffusion model이 역문제 solver의 외부 정규화가 아니라 반복 알고리즘 내부 구성요소로 들어간 전환점이고, Richardson-Lucy라는 검증된 프레임워크를 유지하면서 image prior를 활용합니다. FP·ODT·렌즈리스로의 이식 경로가 직접적입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2606.26636">FracEvent: Event-Camera Simulation via Fractional-Relaxation Pixel Dynamics</a></strong>
+  <span class=tag>[방법전환]</span><span class=tag>[인프라]</span><br>
+  <em>Phylogeny: CVML / Novel Sensors > Event Camera > Simulation > Physics-Based</em><br>
+  이벤트 카메라 데이터 수집 병목을 물리 기반 시뮬레이션으로 우회하는 도구입니다. 분수 완화 미분 방정식으로 픽셀 동역학을 모델링해 기존 시뮬레이터보다 실제 카메라에 훨씬 가까운 스트림을 생성합니다. 이벤트 카메라를 새 도메인에 즉시 활용 가능한 훈련 데이터 파이프라인을 제공합니다.
+</li>
+<li>
+  <strong>Breaking the Diffraction-Encoding Limit for High-Capacity Meta-Holography via Multiorder Decoupling</strong>
+  <span class=tag>[방법전환]</span><span class=tag>[문제정의]</span><br>
+  <em>Phylogeny: CVML / Meta-Optics > Meta-Holography > Information Encoding > Multi-Order Decoupling</em><br>
+  단일 개구면적이 담을 수 있는 홀로그래픽 정보량의 물리적 상한을 소프트웨어 수준(회절 차수 디커플링)으로 우회한 논문입니다. 새 재료나 하드웨어 없이 인코딩 방식 변경만으로 용량을 높이는 접근이라 FP 다채널 측정 인코딩 설계에도 직접 참조 가능합니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2606.22525">Projection-Volume Fidelity Divergence: Diagnosing Optimization Drift in Sparse-View 3D Gaussian Tomography</a></strong>
+  <span class=tag>[평가축]</span><span class=tag>[방법전환]</span><br>
+  <em>Phylogeny: CVML / Computational Imaging > Tomography > Sparse-View > 3DGS CT</em><br>
+  3DGS를 단층촬영 역문제로 쓸 때 투영 공간과 볼륨 공간의 드리프트를 처음으로 명시적으로 진단하고 지표화한 논문입니다. 기존 PSNR/SSIM 평가에서 '왜 아티팩트가 생기는가'로 넘어가는 평가축 전환이고, ODT 희소각 복원에 직접 적용 가능합니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2606.25753">EUV Inverse Lithography with Wave Guide Method and Physics-Informed Deep Learning</a></strong>
+  <span class=tag>[방법전환]</span><span class=tag>[실사용전환]</span><br>
+  <em>Phylogeny: CVML / Meta-Optics > Nanofabrication > Inverse Lithography > EUV ILT</em><br>
+  나노포토닉 역설계가 EUV 마스크 역리소그래피라는 반도체 공정 제조 수준으로 진입한 논문입니다. 도파로법과 PIDL 조합이 랩 메타렌즈 역설계 파이프라인에 이식 가능한지 검토할 가치가 있습니다.
+</li>
+</ol>
+
+<h2>🌟 Weekly Deep-Dive — 이번 주의 대표 논문</h2>
+<div class=dd>
+  <h3>FracEvent: Event-Camera Simulation via Fractional-Relaxation Pixel Dynamics (2606.26636)</h3>
+  <p><em>왜 이번 주 대표인가</em>: RL+Diffusion Prior가 방법론 전환의 대표였다면, FracEvent는 이번 주 가장 즉시 활용 가능한 인프라 기여입니다. 이벤트 카메라가 사흘 연속 등장한 흐름의 정점이고, 이 논문 덕분에 이후 클러스터들의 '이벤트 카메라 + 계산 이미징'이라는 다음 단계가 현실적으로 보입니다.</p>
+
+  <p><strong>무엇을 했나</strong>: 이벤트 카메라는 각 픽셀이 밝기 변화를 감지할 때 비동기적으로 이벤트를 발생시키는 센서입니다. 기존 시뮬레이터(vid2e, ESIM)는 정수 차수 미분 방정식으로 픽셀 동역학을 모델링했는데, 이 방식은 픽셀의 히스테리시스 효과와 메모리 특성을 제대로 표현하지 못해 실제 카메라와의 도메인 갭이 컸습니다. FracEvent는 분수 완화(fractional relaxation) 미분 방정식을 사용해 이 특성을 포착하고, 실제 이벤트 카메라가 생성하는 스트림과 통계적으로 훨씬 유사한 합성 이벤트를 생성합니다.</p>
+
+  <p><strong>왜 새로운가</strong>: 이벤트 카메라 시뮬레이터와 실제 카메라 사이의 도메인 갭은 수년간 이벤트 카메라 응용의 주요 병목이었습니다. 분수 완화 모델은 픽셀 동역학의 물리적 근거를 가지므로, 단순히 통계를 맞추는 방식보다 새로운 조건(조도, 속도, 노이즈 레벨)으로 일반화될 가능성이 높습니다. 이는 이벤트 카메라를 새 도메인에 투입할 때 실제 센서 없이도 유의미한 훈련 데이터를 만들 수 있다는 의미입니다.</p>
+
+  <p><strong>랩 관련성</strong>: FP·렌즈리스 셋업에 이벤트 카메라를 붙이려는 계획이 있다면, FracEvent로 샘플 움직임 시나리오의 이벤트 스트림을 시뮬레이션해 훈련 데이터를 먼저 만들어볼 수 있습니다. 실제 카메라 구매·설치 전에 가설을 검증하는 도구로 바로 활용 가능합니다.</p>
+
+  <p><strong>주의</strong>: 분수 차수 미분 방정식 파라미터가 특정 카메라 모델에서 얼마나 잘 전이되는지, 다른 조도·속도 조건에서 도메인 갭이 실제로 줄어드는지는 본문 확인 필요 [Dataset risk, Claim risk].</p>
+</div>
+
+<h2>🧭 주간 테마 3개</h2>
+<div class=theme-card>
+  <h3>1. 이벤트 카메라의 플랫폼화 — 데이터 수집 병목 우회</h3>
+  <p>이번 주 이벤트 카메라 논문이 표현 학습 체계화(서베이) → 크로스모달 융합 → 물리 기반 시뮬레이션(FracEvent) 순서로 진화했습니다. 이 진화가 중요한 이유는, 이벤트 카메라를 새 도메인에 투입하려면 기존에는 카메라를 구매하고 설치해서 데이터를 수집해야 했는데, 물리 기반 시뮬레이터가 그 병목을 우회하기 때문입니다. 다음 주에 이벤트 카메라 + 계산 이미징 결합 논문이 나올 가능성이 있고, 랩 입장에서는 FracEvent로 FP/렌즈리스 적용 가능성을 먼저 시뮬레이션으로 검증할 시점입니다.</p>
+  <p><em>Confidence: High — Jun 23, 24, 26 사흘 연속, 서로 다른 저자군·기관에서 동일 방향 확인</em></p>
+</div>
+<div class=theme-card>
+  <h3>2. 역문제 solver의 생성 모델 흡수 — W25 외부화에서 W26 내부화로</h3>
+  <p>W25 역문제는 DPS·PnP처럼 diffusion model을 역문제 solver의 바깥에서 관리하는 방식이 주였습니다. W26에는 RL 반복의 각 step 안에 diffusion prior를 직접 집어넣거나(2606.25924), 잠재 공간 안에서 확산 후방 샘플링을 수행(L-DPS)하는 방식이 나왔습니다. 이 차이가 실제로 무슨 의미인지는 다음 주 FP·렌즈리스 데이터에서 실험해보면 알 수 있습니다. 내부화 방식은 기존 알고리즘의 수렴 보장을 유지하면서 prior를 쓰는 방식이라, 수렴 불안정성이 있는 외부화 방식보다 실용적으로 쓰기 쉬울 수 있습니다.</p>
+  <p><em>Confidence: High — Jun 25, 26 이틀 연속, 서로 다른 응용 도메인(형광 현미경, PDE 역문제)에서 동일 방향</em></p>
+</div>
+<div class=theme-card>
+  <h3>3. arXiv vs 저널 : 랩 핵심 주제의 분리 지속</h3>
+  <p>FP, 렌즈리스, 메타서피스는 이번 주도 arXiv cs.*에서 거의 부재하고 Optica Publishing Group, Nature, Ultramicroscopy 저널에서만 등장했습니다. 이 패턴이 3주째 지속되고 있습니다. 랩 핵심 주제를 추적할 때 arXiv cs.*와 저널 두 채널을 구분해서 봐야 한다는 점이 이제 명확합니다. 다음 주에 FP/렌즈리스 공백이 arXiv에서 채워질지 관찰 포인트이고, 채워지지 않으면 저널 모니터링 주기를 높이는 방향을 검토할 만합니다.</p>
+  <p><em>Confidence: Medium — 3주 연속 패턴이지만 arXiv 제출 주기에 따라 달라질 수 있음</em></p>
+</div>
+
+<h2>🪞 지난 예측 채점 (W25 → W26)</h2>
+<div class=pred-card>
+  <h3><span class=review-hit>✅</span> 렌즈리스·코딩 조리개 논문 등장</h3>
+  <p>Jun 23–24 저널에서 guided progressive ptychography, 편광 렌즈리스 복원, 마스크 기반 미니스코프 등 관련 논문 3편 이상 등장했습니다. Hit condition '2편 이상' 충족. 다만 arXiv cs.*가 아닌 저널 채널이었습니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-hit>✅</span> 3DGS와 의료 CT/MRI 재구성 결합 사례 등장</h3>
+  <p>Jun 23에 희소각 3DGS 단층촬영(PVF-D, 2606.22525), Jun 26에 MRI 3DGS novel view synthesis가 등장했습니다. Hit condition '3DGS/NeRF + CT/MRI 조합 1편 이상' 완전 충족.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-partial>◐</span> Flow Map 스타일 inference-time 역문제 제어 follow-up</h3>
+  <p>Jun 25–26에 역문제+diffusion prior 논문이 High confidence 클러스터로 강하게 등장했으나, 'flow matching + inverse problem' 키워드 조합은 나타나지 않았습니다. W25 Flow Map Denoisers의 직접 follow-up 논문은 없었고, 대신 RL+diffusion prior 방향으로 역문제 solver가 발전했습니다. '왜곡-지각 제어' 방향은 빗나갔고, '역문제+생성 모델' 방향은 적중했습니다 — 부분 적중.</p>
+</div>
+
+<h2>🔮 다음주 예측</h2>
+<div class=pred-card>
+  <h3>1. 이벤트 카메라 + 계산 이미징 직접 결합 논문 등장</h3>
+  <p>FracEvent 등 이벤트 카메라 시뮬레이션 도구를 FP·렌즈리스·ODT 도메인에 직접 적용하는 arXiv 논문이 등장한다.</p>
+  <div class=cond>✅ 적중 조건: arXiv cs.CV/eess.IV에서 event camera + lensless/FP/computational microscopy 키워드 조합 논문 1편 이상</div>
+  <div class=cond>✗ 빗나감 조건: 이벤트 카메라 논문이 있어도 모두 자율주행·로보틱스 응용에만 있으면 빗나감</div>
+</div>
+<div class=pred-card>
+  <h3>2. RL+Diffusion Prior 또는 L-DPS의 광학 이미징 follow-up</h3>
+  <p>이번 주 역문제 내부화(RL+diffusion prior, L-DPS) 방법론이 FP·렌즈리스·OCT 같은 광학 계산 이미징 역문제에 적용된 follow-up 논문이 등장한다.</p>
+  <div class=cond>✅ 적중 조건: arXiv eess.IV 또는 cs.CV에서 diffusion prior + ptychography/lensless/OCT/ODT 키워드 논문 1편 이상</div>
+  <div class=cond>✗ 빗나감 조건: 역문제 논문이 있어도 모두 MRI·CT·자연 이미지 도메인에만 있으면 빗나감</div>
+</div>
+<div class=pred-card>
+  <h3>3. 3DGS + 비가시광/멀티모달리티 이미징 확장</h3>
+  <p>MRI 3DGS(Jun 26)에서 시작된 흐름이 CT·OCT·광학 CBCT 또는 스펙트럼 이미징 도메인으로 확장되는 논문이 등장한다.</p>
+  <div class=cond>✅ 적중 조건: arXiv에서 3DGS + CT/OCT/hyperspectral/non-visible modality 조합 논문 1편 이상</div>
+  <div class=cond>✗ 빗나감 조건: 3DGS 논문이 있어도 모두 RGB 장면 재구성·자율주행에만 있으면 빗나감</div>
+</div>
+
+<h2>🧪 다음 주 1주 실행안</h2>
+<div class=action-card>
+  <h3>1. FracEvent + 렌즈리스/FP 이미징 데이터 생성 파일럿</h3>
+  <p>FracEvent(2606.26636) 코드를 클론하고, 렌즈리스 또는 FP 셋업의 물체 움직임 시나리오에서 이벤트 스트림을 합성 생성. 실제 이벤트 카메라 없이 도메인 적응 훈련 데이터를 만들 수 있는지 확인.</p>
+  <p><em>기대 산출물: 합성 이벤트 스트림 샘플 + 실제 카메라 데이터와의 통계적 비교(이벤트 발생률, 히스테리시스 패턴)</em></p>
+</div>
+<div class=action-card>
+  <h3>2. RL+Diffusion Prior(2606.25924)를 FP 재구성에 적용 실험</h3>
+  <p>저자 코드를 클론해 FP 측정 데이터(저선량 조건)에서 RL iteration step에 diffusion prior를 주입하는 실험. 기존 RL과 DPS 방식과 비교: SSIM/PSNR + 수렴 속도 + 아티팩트 양상.</p>
+  <p><em>기대 산출물: 3-way 비교 표(RL only / DPS / RL+diffusion prior) — negative result도 workshop short paper로 가능</em></p>
+</div>
+<div class=action-card>
+  <h3>3. PVF-D 단층촬영 드리프트 진단을 ODT에 적용</h3>
+  <p>2606.22525의 PVF-D 지표를 계산하는 코드를 ODT 희소각 재구성 실험에 통합. 어느 각도 수 이하에서 드리프트가 시작되는지 mapping.</p>
+  <p><em>기대 산출물: ODT 희소각(30, 60, 90개)에서의 PVF-D vs PSNR scatter plot + 드리프트 발생 threshold</em></p>
+</div>
+
+<h2>🧊 Skim-only / Watch-only 흐름</h2>
+<ul class=plain>
+  <li><strong>[Watch-only] 산란 매질 이미징 (Jun 25)</strong> — '장애물에서 신호원으로' 방향 전환을 주장하는 논문이 1편 나왔지만 아직 단발 신호입니다. scattering-enhanced tomography 방향이 확장되는지 관찰합니다 [Confidence Low].</li>
+  <li><strong>[Watch-only] 의료 AI 벤치마크 데이터 누수 (Jun 25)</strong> — 의료 이미징 분야의 데이터 누수와 메트릭 정렬 문제를 다루는 논문이 나왔습니다. 직접 랩 ROI는 아니지만, 우리 계산 이미징 평가 파이프라인의 데이터 분할 방식 점검 계기로 삼을 만합니다.</li>
+  <li><strong>[Skim-only] 광 필드·뉴로모픽 데이터 효율적 처리 (Jun 24)</strong> — VSANet 등 광 필드 데이터 희소 어텐션 논문이 있었으나 랩 FP 다각도 측정에 이식하기 위한 코드 레벨 검토 이상으로 우선순위를 높이기는 어렵습니다.</li>
+</ul>
+
+<h2>🔗 참고 링크</h2>
+<ul class=plain>
+  <li><a href="../posts/2026-06-23.html">2026-06-23 Daily Briefing (Tue)</a></li>
+  <li><a href="../posts/2026-06-24.html">2026-06-24 Daily Briefing (Wed)</a></li>
+  <li><a href="../posts/2026-06-25.html">2026-06-25 Daily Briefing (Thu)</a></li>
+  <li><a href="../posts/2026-06-26.html">2026-06-26 Daily Briefing (Fri)</a></li>
+  <li><a href="../posts/2026-06-22-weekly.html">2026-W25 Weekly Retrospective</a></li>
+  <li><a href="../feed.xml">RSS Feed</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+</body>
+</html>

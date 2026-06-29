@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 26 Jun 2026 12:29:33 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jun 2026 11:02:05 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Weekly Retrospective — 2026-06-29 (Week 26)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-06-29-weekly.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-29-weekly.html</guid>
+      <pubDate>Mon, 29 Jun 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[지난주 가장 뜨거운 흐름은 이벤트 카메라의 계층적 성숙 입니다. 화요일(Jun 23)에 표현 학습 체계화 서베이(2606.23078)가 나와 이벤트 스트림을 어떻게 표현해야 하는지 지도가 만들어졌고, 수요일(Jun 24)에는 RGB·오디오·깊이와 결합하는 크로스모달 융합 논문 3편(M²C-EvDet, UniRED, GeoIMO)이 한꺼번에 등장해 '이벤트 혼자로는 부족하다'는 문제에 답하기 시작했습니다. 금요일(Jun 26)에는 FracEvent(2606.26636)가 분수 완화 미분 방정식으로 픽셀 동역학을 모델링해 기존 시뮬레이터(vid2e, ESIM)보다 실제 카메라에 훨씬 가까운 합성 이벤트를 생성하는 방법을 제시했습니다. 이 흐름을 한 문장으로 정리하면, 이벤트…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-06-26 (금요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-06-26.html</link>

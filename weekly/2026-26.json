@@ -1,0 +1,434 @@
+{
+  "date": "2026-06-29",
+  "iso_week": "2026-26",
+  "week_start": "2026-06-22",
+  "week_end": "2026-06-26",
+  "note": "June 22 (Mon) daily는 arXiv /pastweek 윈도우에서 이미 사라져 backfill 불가. 이번 주 회고는 Jun 23-26 (Tue-Fri) 4일치 산출물 기반.",
+  "weekly_thesis": "W25가 3DGS의 응용 분화와 역문제의 층위별 구체화로 기억된다면, W26는 이벤트 카메라가 단순 센서에서 물리 기반 시뮬레이션 플랫폼으로 도약하고, 역문제의 diffusion prior 통합이 외부 정규화에서 반복 알고리즘 내부 구성요소로 전환되는 주로 기억할 만합니다. 메타-홀로그래피는 회절 인코딩 한계라는 물리적 상한을 소프트웨어 수준(멀티오더 디커플링)으로 우회하는 방법을 제시했고, 나노포토닉 역설계는 실험실 소자에서 EUV 마스크 역리소그래피라는 공정 제조 수준으로 진입했습니다.",
+  "hot_vs_cold": {
+    "hot": [
+      {
+        "cluster": "이벤트 카메라 — 표현 학습에서 시뮬레이션 플랫폼으로",
+        "why": "화요일(Jun 23) 서베이·표현 학습 3편 → 수요일(Jun 24) 크로스모달 융합(M²C-EvDet, UniRED, GeoIMO) → 금요일(Jun 26) FracEvent 물리 기반 시뮬레이션·스핀 추정·시간 그래프로 사흘 연속 다른 계층에서 High confidence 클러스터가 형성됐습니다. 이 주 가장 일관된 흐름입니다.",
+        "papers": [
+          "https://arxiv.org/abs/2606.23078",
+          "https://arxiv.org/abs/2606.22378",
+          "https://arxiv.org/abs/2606.26636"
+        ]
+      },
+      {
+        "cluster": "역문제 + Diffusion Prior 내부화",
+        "why": "목요일(Jun 25) RL+Diffusion Prior(2606.25924)로 diffusion model이 역문제 반복 알고리즘 내부에 들어가는 전환점이 제시됐고, 금요일(Jun 26) L-DPS(잠재 공간 확산 후방 샘플링)·Dual-Prior Null-Space MRI SR로 이틀 연속 High→Medium cluster로 이어졌습니다. W25의 외부 정규화에서 W26의 내부 구성요소로의 전환이 명확합니다.",
+        "papers": [
+          "https://arxiv.org/abs/2606.25924",
+          "https://arxiv.org/abs/2606.26713"
+        ]
+      },
+      {
+        "cluster": "나노포토닉·메타서피스 역설계 — EUV 진입",
+        "why": "목요일(Jun 25) 나노포토닉 역설계+EUV 역리소그래피(2606.25753) → 금요일(Jun 26) LithoDreamer 다단계 세계 모델로 이틀 연속 등장했습니다. 설계 도구에서 공정 시뮬레이션 수준으로 진입했다는 점이 W25 대비 명확한 격상입니다.",
+        "papers": [
+          "https://arxiv.org/abs/2606.25753",
+          "https://arxiv.org/abs/2606.26713"
+        ]
+      }
+    ],
+    "cold": [
+      {
+        "cluster": "Fourier Ptychography (arXiv)",
+        "why": "저널에서 guided progressive ptychography(ultramic.114411), wavelet FPM 등 2편이 등장했지만, arXiv cs.*에서 FP 전용 논문은 이번 주도 부재. W25와 동일 패턴 — FP 주제는 arXiv가 아닌 저널 채널에서만 나오는 분리가 지속됩니다."
+      },
+      {
+        "cluster": "Lensless/Coded Imaging (arXiv)",
+        "why": "저널에서 편광 렌즈리스 복원·마스크 기반 미니스코프가 등장했지만 arXiv cs.*에서는 이번 주도 부재. 2주 연속 arXiv 공백 — 랩 입장에서는 저널 모니터링이 arXiv보다 이 주제에 더 유용한 채널임을 다시 확인합니다."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "cluster": "이벤트 카메라 — 표현 학습에서 물리 기반 시뮬레이션 플랫폼으로",
+      "papers": [
+        {
+          "title": "이벤트 카메라 표현 학습 서베이 (2606.23078)",
+          "arxiv": "https://arxiv.org/abs/2606.23078",
+          "importance_tags": ["[통합정리]", "[인프라]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Novel Sensors",
+            "class": "Event Camera",
+            "order": "Representation Learning",
+            "genus": "Survey",
+            "confidence": "High",
+            "rationale": "Event camera representation learning survey"
+          }
+        },
+        {
+          "title": "FracEvent (2606.26636)",
+          "arxiv": "https://arxiv.org/abs/2606.26636",
+          "importance_tags": ["[방법전환]", "[인프라]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Novel Sensors",
+            "class": "Event Camera",
+            "order": "Simulation",
+            "genus": "Physics-Based",
+            "confidence": "High",
+            "rationale": "Fractional relaxation dynamics for event simulation"
+          }
+        },
+        {
+          "title": "M²C-EvDet (Jun 24 cross-modal)",
+          "arxiv": "https://arxiv.org/abs/2606.22378",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Novel Sensors",
+            "class": "Event Camera",
+            "order": "Cross-Modal Fusion",
+            "genus": "Knowledge Distillation",
+            "confidence": "Medium",
+            "rationale": "Multi-domain cross-modal knowledge distillation for event detection"
+          }
+        }
+      ],
+      "why": "이번 주 이벤트 카메라 논문이 '이벤트 스트림을 어떻게 표현할 것인가'에서 '실제 카메라가 없어도 훈련 데이터를 만들 수 있는가'로 이동했습니다. FracEvent는 분수 완화 미분 방정식으로 픽셀 동역학을 모델링해, 기존 시뮬레이터보다 실제 이벤트 카메라에 훨씬 가까운 합성 스트림을 생성합니다. 이 변화의 함의는 이벤트 카메라를 새 도메인(렌즈리스, FP, ODT)에 투입할 때 실제 카메라 구매·설치 없이도 도메인 적응 훈련이 가능하다는 점입니다.",
+      "confidence": "High",
+      "confidence_note": "Jun 23, 24, 26 사흘 연속 High/Medium 클러스터, 서로 다른 저자군·기관",
+      "lab_action": "FracEvent로 렌즈리스/FP 셋업용 이벤트 카메라 훈련 데이터 생성; 이벤트 서베이(2606.23078)를 정독해 고속 생물 샘플 이미징 로드맵에 반영"
+    },
+    {
+      "cluster": "역문제 + Diffusion Prior의 내부화 — 외부 정규화에서 반복 알고리즘 내부로",
+      "papers": [
+        {
+          "title": "RL+Diffusion Prior for Fluorescence Microscopy (2606.25924)",
+          "arxiv": "https://arxiv.org/abs/2606.25924",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Inverse Problems",
+            "class": "Diffusion-Based",
+            "order": "Richardson-Lucy Integration",
+            "genus": "Fluorescence Microscopy",
+            "confidence": "High",
+            "rationale": "Diffusion prior injected into RL iteration step"
+          }
+        },
+        {
+          "title": "L-DPS — Latent Diffusion Posterior Sampling (Jun 26)",
+          "arxiv": "https://arxiv.org/abs/2606.26713",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Inverse Problems",
+            "class": "Diffusion-Based",
+            "order": "Latent Posterior Sampling",
+            "genus": "PDE Inverse Problem",
+            "confidence": "Medium",
+            "rationale": "Latent-space diffusion for high-dim PDE inverse problems"
+          }
+        }
+      ],
+      "why": "기존에는 diffusion model을 역문제에 쓸 때 DPS(확산 후방 샘플링)처럼 diffusion 샘플러를 바깥에서 감독하는 방식이었습니다. 이번 주 등장한 RL+Diffusion Prior는 Richardson-Lucy 반복 알고리즘의 각 step 안에 diffusion model을 직접 집어넣어, 알고리즘 자체가 diffusion의 image prior를 활용하게 만듭니다. L-DPS는 이 아이디어를 고차원 PDE 역문제까지 확장합니다. 두 논문을 합치면 '역문제를 풀 때 diffusion은 바깥의 정규화가 아니라 안쪽의 구성요소'라는 방향 전환이 뚜렷하게 보입니다.",
+      "confidence": "High",
+      "confidence_note": "Jun 25, 26 이틀 연속, 서로 다른 응용 도메인(형광 현미경, PDE 역문제)에서 동일 방향",
+      "lab_action": "RL+Diffusion Prior(2606.25924)를 랩 FP/렌즈리스 데이터에 적용; L-DPS를 ODT 역문제(PDE governed)에 이식 가능성 검토"
+    },
+    {
+      "cluster": "메타-홀로그래피·위상 복원 — 정보 용량 한계 돌파와 생물·소재 응용 확산",
+      "papers": [
+        {
+          "title": "Breaking Diffraction-Encoding Limit via Multiorder Decoupling (Jun 24)",
+          "arxiv": "https://doi.org/10.1038/s41566-026-01600-3",
+          "importance_tags": ["[방법전환]", "[문제정의]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Meta-Optics",
+            "class": "Meta-Holography",
+            "order": "Information Encoding",
+            "genus": "Multi-Order Decoupling",
+            "confidence": "High",
+            "rationale": "Fundamental capacity limit broken via multi-order approach"
+          }
+        },
+        {
+          "title": "HoloBio 오픈소스 GUI (Jun 23)",
+          "arxiv": "https://doi.org/10.1371/journal.pcbi.1013928",
+          "importance_tags": ["[인프라]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Phase Imaging",
+            "class": "Holography",
+            "order": "Biological Application",
+            "genus": "Open-Source Tool",
+            "confidence": "High",
+            "rationale": "Open-source DHM tool for biological phase imaging"
+          }
+        },
+        {
+          "title": "비선형 메타서피스 IR 업컨버전 이미징 (Jun 24)",
+          "arxiv": "https://doi.org/10.1038/s41566-026-01599-7",
+          "importance_tags": ["[실사용전환]", "[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Meta-Optics",
+            "class": "Nonlinear Flat Optics",
+            "order": "Upconversion Imaging",
+            "genus": "IR Camera",
+            "confidence": "High",
+            "rationale": "Cooled-sensor-free IR imaging via nonlinear metasurface upconversion"
+          }
+        }
+      ],
+      "why": "화요일(Jun 23)에 홀로그래피·위상 복원의 생물·소재 응용이 3편 이상 한꺼번에 등장했고, 수요일(Jun 24)에는 메타-홀로그래피가 단일 개구면적으로 담을 수 있는 정보량의 물리적 상한을 소프트웨어 수준(회절 차수를 독립 채널로 분리)으로 우회하는 논문이 나왔습니다. 냉각 센서 없는 IR 이미징도 비선형 메타서피스로 가능함을 보인 논문이 나와, 광학 하드웨어 진입 비용을 낮추는 방향이 이어집니다.",
+      "confidence": "High",
+      "confidence_note": "Jun 23, 24 이틀 연속, 저널+arXiv 혼합, 서로 다른 저자군",
+      "lab_action": "멀티오더 디커플링을 FP 다채널 측정 인코딩과 비교; IR 업컨버전 플랫폼의 변환 효율을 확인하고 냉각 카메라 대체 타당성 평가"
+    },
+    {
+      "cluster": "나노포토닉 역설계 — EUV 마스크 역리소그래피까지 진입",
+      "papers": [
+        {
+          "title": "EUV ILT + 도파로법·PIDL (2606.25753, Jun 25)",
+          "arxiv": "https://arxiv.org/abs/2606.25753",
+          "importance_tags": ["[방법전환]", "[실사용전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Meta-Optics",
+            "class": "Nanofabrication",
+            "order": "Inverse Lithography",
+            "genus": "EUV ILT",
+            "confidence": "High",
+            "rationale": "Wave guide method + PIDL for EUV mask inverse lithography"
+          }
+        },
+        {
+          "title": "LithoDreamer 다단계 세계 모델 (Jun 26)",
+          "arxiv": "https://arxiv.org/abs/2606.26713",
+          "importance_tags": ["[방법전환]", "[인프라]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Meta-Optics",
+            "class": "Nanofabrication",
+            "order": "Process Simulation",
+            "genus": "World Model",
+            "confidence": "Medium",
+            "rationale": "Multi-step world model for EUV/DUV nanofab process simulation"
+          }
+        }
+      ],
+      "why": "나노포토닉 역설계가 '원하는 광학 응답을 내는 소자 구조를 찾는 것'에서 '그 소자를 실제로 제조 가능한 마스크로 변환하는 것'까지 범위를 넓혔습니다. EUV 마스크 역리소그래피는 반도체 업계에서 수십 년간 쌓인 복잡한 문제인데, 도파로법과 물리 기반 딥러닝이 이 문제에 진입했다는 것 자체가 기술 성숙의 신호입니다. LithoDreamer는 공정 전 단계를 세계 모델로 시뮬레이션해 설계→제조 루프를 닫으려는 시도입니다.",
+      "confidence": "High",
+      "confidence_note": "Jun 25, 26 이틀 연속, 동일 응용 방향(EUV/나노제조)에서 서로 다른 접근",
+      "lab_action": "EUV ILT(2606.25753) 역전파 방법론을 랩 메타렌즈 역설계 파이프라인에 적용 가능성 검토; LithoDreamer 세계 모델 설계 원칙을 ALD·패터닝·식각 공정 시뮬레이션에 참조"
+    },
+    {
+      "cluster": "3DGS 도메인 다변화 2라운드 — 단층촬영·MRI·위성으로",
+      "papers": [
+        {
+          "title": "Projection-Volume Fidelity Divergence 3DGS 단층촬영 (2606.22525, Jun 23)",
+          "arxiv": "https://arxiv.org/abs/2606.22525",
+          "importance_tags": ["[평가축]", "[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "3D Vision",
+            "class": "Neural Rendering",
+            "order": "Sparse-View Tomography",
+            "genus": "3DGS CT",
+            "confidence": "High",
+            "rationale": "PVF-D metric for diagnosing optimization drift in 3DGS tomography"
+          }
+        },
+        {
+          "title": "MRI 3DGS (Jun 26)",
+          "arxiv": "https://arxiv.org/abs/2606.26800",
+          "importance_tags": ["[실사용전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Medical Imaging",
+            "class": "MRI",
+            "order": "Novel View Synthesis",
+            "genus": "3DGS MRI",
+            "confidence": "Medium",
+            "rationale": "3DGS for MRI novel view resampling and clinical measurement"
+          }
+        },
+        {
+          "title": "SatSplatDiff 위성 3DGS (Jun 26)",
+          "arxiv": "https://arxiv.org/abs/2606.26320",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "3D Vision",
+            "class": "Remote Sensing",
+            "order": "Gaussian Splatting",
+            "genus": "Satellite",
+            "confidence": "Medium",
+            "rationale": "Generative refinement for satellite 3DGS"
+          }
+        }
+      ],
+      "why": "W25에 3DGS가 가속·편집·분산 학습으로 분화됐다면, W26에는 의료(MRI·단층촬영)와 원격 탐지(위성)로 응용 도메인이 이동했습니다. PVF-D는 단층촬영에 3DGS를 쓸 때 투영 공간과 볼륨 공간의 최적화 드리프트를 처음으로 명시적으로 진단하는 지표입니다. 이는 3DGS가 재구성 품질(PSNR/SSIM)만 보던 단계에서 왜 아티팩트가 생기는지 설명할 수 있는 단계로 넘어간 신호입니다.",
+      "confidence": "High",
+      "confidence_note": "Jun 23, 26 두 날, 서로 다른 도메인에서 동일 방향(3DGS 의료·원격탐지 확장)",
+      "lab_action": "PVF-D(2606.22525) 방법론을 ODT 희소각 복원 드리프트 진단에 적용; MRI 3DGS를 FP/ODT 볼륨 재구성의 novel view synthesis에 이식 가능성 평가"
+    }
+  ],
+  "prediction_review": [
+    {
+      "title": "렌즈리스·코딩 조리개 논문 등장",
+      "label": "✅",
+      "reason": "Jun 23-24 저널에서 guided progressive ptychography(ultramic.114411), 편광 렌즈리스 복원, 마스크 기반 미니스코프 등 관련 논문 3편 이상 등장. 다만 arXiv cs.*가 아닌 저널 채널이었고, hit condition은 '2편 이상'이었으므로 조건 충족."
+    },
+    {
+      "title": "3DGS와 의료 CT/MRI 재구성 결합 사례 등장",
+      "label": "✅",
+      "reason": "Jun 23에 희소각 3DGS 단층촬영(PVF-D, 2606.22525), Jun 26에 MRI 3DGS novel view synthesis 등장. Hit condition '3DGS/NeRF + CT/MRI 조합 논문 1편 이상' 완전 충족."
+    },
+    {
+      "title": "Flow Map 스타일 inference-time 역문제 제어 follow-up",
+      "label": "◐",
+      "reason": "Jun 25-26에 역문제+diffusion prior 논문이 High confidence 클러스터로 강하게 등장했으나, 'flow matching + inverse problem' 키워드 조합은 나타나지 않았습니다. W25 Flow Map Denoisers의 직접 follow-up 논문은 없었고, 대신 RL+diffusion prior 방향으로 역문제 solver가 발전했습니다. '왜곡-지각 제어' 방향은 빗나감."
+    }
+  ],
+  "themes": [
+    {
+      "title": "이벤트 카메라의 플랫폼화 — 데이터 수집 병목 우회",
+      "summary": "이번 주 이벤트 카메라 논문이 표현 학습 체계화(서베이) → 크로스모달 융합 → 물리 기반 시뮬레이션(FracEvent) 순서로 진화했습니다. FracEvent가 중요한 이유는 이벤트 카메라를 새 도메인에 쓰려면 기존에는 실제 카메라를 설치해 데이터를 수집해야 했는데, 물리 기반 시뮬레이터가 그 병목을 우회하기 때문입니다. 다음 주 이 흐름이 계산 이미징(렌즈리스, FP)과 결합하는 논문이 나올 가능성이 있습니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "역문제 solver의 생성 모델 흡수 — W25 외부화에서 W26 내부화로",
+      "summary": "W25 역문제는 DPS·PnP처럼 diffusion model을 역문제 solver의 바깥에서 관리하는 방식이었습니다. W26에는 RL 반복의 각 step 안에 diffusion prior를 직접 집어넣거나(2606.25924), 잠재 공간 안에서 확산 후방 샘플링을 수행(L-DPS)하는 방식이 나왔습니다. 이 차이는 중요한데, 내부화 방식은 기존 검증된 알고리즘(RL, PnP)의 수렴 보장을 유지하면서 생성 prior를 활용할 수 있기 때문입니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "arXiv vs 저널 : 랩 핵심 주제의 분리 지속",
+      "summary": "FP, 렌즈리스, 메타서피스는 이번 주도 arXiv cs.*에서 거의 부재하고 Optica Publishing Group, Nature, Ultramicroscopy 저널에서만 등장했습니다. 이 패턴이 3주째 지속되고 있어, 랩 핵심 주제를 추적할 때 arXiv cs.*와 저널 두 채널을 구분해서 봐야 한다는 점이 명확합니다. 다음 주에는 저널 논문이 충분히 쌓인 상황에서 arXiv에서 FP/렌즈리스 논문이 회복될지 주목합니다.",
+      "confidence": "Medium"
+    }
+  ],
+  "top5": [
+    {
+      "title": "Improving Richardson-Lucy Deconvolution with Diffusion Priors for Fluorescence Microscopy",
+      "arxiv": "https://arxiv.org/abs/2606.25924",
+      "why": "이번 주 가장 방법론적 함의가 큰 논문입니다. diffusion model이 역문제 solver의 외부 정규화가 아니라 반복 알고리즘 내부 구성요소로 들어간 전환점이고, FP·ODT·렌즈리스로의 이식 가능성이 직접적으로 높습니다.",
+      "tag": "[방법전환]",
+      "phylogeny": {
+        "source": "CVML",
+        "phylum": "Inverse Problems",
+        "class": "Diffusion-Based",
+        "order": "Richardson-Lucy Integration",
+        "genus": "Fluorescence Microscopy",
+        "confidence": "High",
+        "rationale": "Diffusion prior as internal RL iteration component"
+      }
+    },
+    {
+      "title": "FracEvent: Event-Camera Simulation via Fractional-Relaxation Pixel Dynamics",
+      "arxiv": "https://arxiv.org/abs/2606.26636",
+      "why": "이벤트 카메라 데이터 수집 병목을 물리 기반 시뮬레이션으로 우회하는 논문입니다. 분수 완화 미분 방정식으로 픽셀 동역학을 모델링해 시뮬레이터-실제 카메라 도메인 갭을 줄입니다. 이벤트 카메라를 새 도메인에 투입하려는 랩에 즉시 활용 가능한 도구입니다.",
+      "tag": "[방법전환] [인프라]",
+      "phylogeny": {
+        "source": "CVML",
+        "phylum": "Novel Sensors",
+        "class": "Event Camera",
+        "order": "Simulation",
+        "genus": "Physics-Based",
+        "confidence": "High",
+        "rationale": "Fractional-order ODE model for realistic event simulation"
+      }
+    },
+    {
+      "title": "Breaking the Diffraction-Encoding Limit for High-Capacity Meta-Holography via Multiorder Decoupling",
+      "arxiv": "https://doi.org/10.1038/s41566-026-01600-3",
+      "why": "단일 개구면적이 담을 수 있는 홀로그래픽 정보량의 물리적 상한을 소프트웨어 수준(회절 차수 디커플링)으로 우회한 논문입니다. 새 재료나 하드웨어 없이 인코딩 방식 변경만으로 용량을 높이는 접근이라 FP 다채널 측정 인코딩에도 직접 참조 가능합니다.",
+      "tag": "[방법전환] [문제정의]",
+      "phylogeny": {
+        "source": "CVML",
+        "phylum": "Meta-Optics",
+        "class": "Meta-Holography",
+        "order": "Information Encoding",
+        "genus": "Multi-Order Decoupling",
+        "confidence": "High",
+        "rationale": "Fundamental capacity limit broken for meta-holography"
+      }
+    },
+    {
+      "title": "Projection-Volume Fidelity Divergence: Diagnosing Optimization Drift in Sparse-View 3D Gaussian Tomography",
+      "arxiv": "https://arxiv.org/abs/2606.22525",
+      "why": "3DGS를 단층촬영 역문제로 쓸 때 투영 공간과 볼륨 공간의 최적화 드리프트를 처음으로 명시적으로 진단하고 지표화한 논문입니다. 기존 PSNR/SSIM 평가에서 '왜 아티팩트가 생기는가'로 넘어가는 평가축 전환이고, ODT 희소각 복원에 직접 적용 가능합니다.",
+      "tag": "[평가축] [방법전환]",
+      "phylogeny": {
+        "source": "CVML",
+        "phylum": "Computational Imaging",
+        "class": "Tomography",
+        "order": "Sparse-View Reconstruction",
+        "genus": "3DGS CT",
+        "confidence": "High",
+        "rationale": "New diagnostic metric for 3DGS tomography drift"
+      }
+    },
+    {
+      "title": "EUV Inverse Lithography with Wave Guide Method and Physics-Informed Deep Learning",
+      "arxiv": "https://arxiv.org/abs/2606.25753",
+      "why": "나노포토닉 역설계가 실험실 소자 설계에서 EUV 마스크 역리소그래피라는 반도체 공정 제조 수준으로 진입한 논문입니다. 도파로법과 PIDL 조합이 랩 메타렌즈 역설계 파이프라인에 이식 가능한지 검토할 가치가 있습니다.",
+      "tag": "[방법전환] [실사용전환]",
+      "phylogeny": {
+        "source": "CVML",
+        "phylum": "Meta-Optics",
+        "class": "Nanofabrication",
+        "order": "Inverse Lithography",
+        "genus": "EUV ILT",
+        "confidence": "High",
+        "rationale": "Wave guide + PIDL applied to EUV mask ILT"
+      }
+    }
+  ],
+  "phylogeny_tags": [
+    {"paper": "https://arxiv.org/abs/2606.25924", "source": "CVML", "lineage": "Inverse Problems > Diffusion-Based > RL Integration > Fluorescence Microscopy"},
+    {"paper": "https://arxiv.org/abs/2606.26636", "source": "CVML", "lineage": "Novel Sensors > Event Camera > Simulation > Physics-Based"},
+    {"paper": "https://arxiv.org/abs/2606.22525", "source": "CVML", "lineage": "Computational Imaging > Tomography > Sparse-View > 3DGS CT"},
+    {"paper": "https://arxiv.org/abs/2606.25753", "source": "CVML", "lineage": "Meta-Optics > Nanofabrication > Inverse Lithography > EUV ILT"},
+    {"paper": "https://arxiv.org/abs/2606.23078", "source": "CVML", "lineage": "Novel Sensors > Event Camera > Representation Learning > Survey"}
+  ],
+  "predictions": [
+    {
+      "title": "이벤트 카메라 + 계산 이미징 직접 결합 논문 등장",
+      "claim": "FracEvent 등 이벤트 카메라 시뮬레이션 도구를 FP·렌즈리스·ODT 도메인에 직접 적용하는 arXiv 논문이 다음 주 등장한다.",
+      "rationale": "이번 주 FracEvent가 나왔고, 이벤트 카메라가 3주 연속 High 클러스터를 형성했습니다. 계산 이미징 커뮤니티와의 접점이 높아질 시점입니다.",
+      "hit_condition": "arXiv cs.CV/eess.IV에서 event camera + lensless/FP/computational microscopy 키워드 조합 논문 1편 이상",
+      "miss_condition": "이벤트 카메라 논문은 있지만 모두 자율주행·로보틱스 응용에만 있으면 빗나감"
+    },
+    {
+      "title": "RL+Diffusion Prior 또는 L-DPS의 광학 이미징 follow-up",
+      "claim": "이번 주 등장한 역문제 내부화(RL+diffusion prior, L-DPS) 방법론이 다음 주 FP·렌즈리스·OCT 같은 광학 계산 이미징 역문제에 적용된 논문으로 이어진다.",
+      "rationale": "이번 주 방법론 논문이 형광 현미경·PDE 역문제에 집중됐지만, 응용 도메인 확장 논문이 1-2주 시차로 나오는 패턴이 있습니다.",
+      "hit_condition": "arXiv eess.IV 또는 cs.CV에서 diffusion prior + ptychography/lensless/OCT/ODT 키워드 논문",
+      "miss_condition": "역문제 논문이 있어도 모두 MRI·CT·자연 이미지 도메인에만 있으면 빗나감"
+    },
+    {
+      "title": "3DGS + 비가시광/멀티모달리티 이미징 확장",
+      "claim": "MRI 3DGS(Jun 26)에서 시작된 흐름이 CT·OCT·광학 CBCT 또는 스펙트럼 이미징 도메인으로 확장되는 논문이 등장한다.",
+      "rationale": "3DGS가 W25 로보틱스·렌더링에서 W26 의료·원격탐지로 이동했습니다. 다음 단계는 비가시광 또는 단층 스펙트럼 이미징으로 이동할 가능성이 높습니다.",
+      "hit_condition": "arXiv에서 3DGS + CT/OCT/hyperspectral/non-visible modality 조합 논문 1편 이상",
+      "miss_condition": "3DGS 논문이 있어도 모두 RGB 장면 재구성·자율주행에만 있으면 빗나감"
+    }
+  ],
+  "next_week_actions": [
+    {
+      "title": "FracEvent + 렌즈리스/FP 이미징 데이터 생성 파일럿",
+      "action": "FracEvent(2606.26636) 코드를 클론하고, 렌즈리스 또는 FP 셋업의 물체 움직임 시나리오에서 이벤트 스트림을 합성 생성. 실제 이벤트 카메라 없이 도메인 적응 훈련 데이터를 만들 수 있는지 확인.",
+      "expected_output": "합성 이벤트 스트림 샘플 + 실제 카메라 데이터와의 통계적 비교(이벤트 발생률, 히스테리시스 패턴)"
+    },
+    {
+      "title": "RL+Diffusion Prior(2606.25924)를 FP 재구성에 적용 실험",
+      "action": "저자 코드를 클론해 FP 측정 데이터(저선량 조건)에서 RL iteration step에 diffusion prior를 주입하는 실험 수행. 기존 RL과 DPS 방식과 비교: SSIM/PSNR + 수렴 속도 + 아티팩트 양상.",
+      "expected_output": "3-way 비교 표(RL only / DPS / RL+diffusion prior) — negative result도 workshop short paper로 가능"
+    },
+    {
+      "title": "PVF-D 단층촬영 드리프트 진단을 ODT에 적용",
+      "action": "2606.22525의 PVF-D 지표를 계산하는 코드를 ODT 희소각 재구성 실험에 통합. 어느 각도 수 이하에서 드리프트가 시작되는지 mapping.",
+      "expected_output": "ODT 희소각(30, 60, 90개)에서의 PVF-D vs PSNR scatter plot + 드리프트 발생 threshold"
+    }
+  ]
+}
