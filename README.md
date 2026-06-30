@@ -105,6 +105,7 @@ GitHub Actions가 정해진 시간에 스스로 실행하므로 **상시 켜둘 
 | `build_feed.py` | `posts/*.html`에서 제목·요약을 추출해 RSS 2.0 `feed.xml` 생성. `SITE_URL`은 환경변수 우선 |
 | `build_preview.py` | `classified.json`을 정적 HTML(`out/preview.html`)로 렌더링하는 결정론적 미리보기(LLM 미사용) |
 | `build_weekday_counts.py` | 요일별 통계(`stats/`) 산출 |
+| `reconcile_index.py` | **안전망** — `index.html`이 모든 `posts/*.html`을 링크하는지 점검하고, 에이전트가 빠뜨린 daily/weekly를 자동 삽입(누락 없으면 무동작). 릴리스 단계에서 실행 |
 
 **검증/유틸**
 

@@ -921,6 +921,9 @@ Weekly:
 cd {WORKDIR}
 python scripts/build_feed.py
 python scripts/build_weekday_counts.py
+# index.html 보강(안전망). 에이전트가 index를 직접 큐레이션하지만, 빠뜨린 daily/weekly가 있으면
+# 여기서 자동으로 끼워 넣는다(누락 없으면 무동작). 메인 페이지에서 글이 사라지는 사고를 막는다.
+python scripts/reconcile_index.py
 # 다크 모드 토글 주입(idempotent). index.html과 모든 포스트가 매 실행 재생성되므로,
 # 모든 HTML 생성이 끝난 뒤 반드시 마지막 스타일 단계로 실행한다. 이미 주입된 파일은 건너뛴다.
 python scripts/inject_dark.py index.html posts/*.html
