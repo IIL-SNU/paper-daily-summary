@@ -6,14 +6,14 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 30 Jun 2026 12:19:02 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 14:48:05 +0900</lastBuildDate>
     <ttl>720</ttl>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-06-30 (화요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-06-30.html</link>
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-30.html</guid>
       <pubDate>Tue, 30 Jun 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[이번 주 화요일인 오늘은 arXiv /new 배치가 아직 발행되지 않아 저널 수집 417건, 그 중 ROI 111건으로 구성됩니다. 어제(2026-06-29) 월요일에는 arXiv 390건 포함 615건으로 3DGS 범용화와 VLM-aware meta-optic 공동 설계(CODA)가 핵심이었는데, 오늘은 저널만으로 비교적 조용한 날처럼 보이지만 클러스터 단위로 보면 신호가 분명합니다.]]></description>
+      <description><![CDATA[오늘(2026-06-30 화요일) arXiv /new에는 cs.LG 348편, cs.CV 303편, cs.AI 437편, eess.IV 21편, eess.SP 36편으로 총 1,145편이 발행됐습니다. 전체 스캔 1,312건(저널 포함) 중 ROI 배정 446건(34%)으로, 어제(2026-06-29) 164/615(27%)보다 절대 편수와 비율 모두 올라갔습니다. 오늘 가장 두드러지는 신호는 Gaussian Splatting 27편 동시 등장 으로, SatSplat(위성), DR-GS(역광·변형), Ground4D(동적), Shell-GS(도시 시뮬레이션), SLAM용 모노큘러 GS 등 응용 다양성이 어제의 입력 요구사항 완화(StructSplat)에서 한 단계 더 나…]]></description>
     </item>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-06-29 (Week 26)</title>

@@ -1,30 +1,19 @@
 {
   "date": "2026-06-30",
   "source_listing_date": "2026-06-30",
-  "source_mode": "journal-only",
+  "source_mode": "new",
   "daily_new_counts": {
-    "by_cat": {"cs.LG": 0, "cs.CV": 0, "cs.AI": 0, "eess.IV": 0, "eess.SP": 0},
-    "scope": "new+cross; replacements excluded",
-    "note": "arXiv /new 2026-06-30 listing not yet published — journal-only briefing."
+    "by_cat": {
+      "cs.LG": 348,
+      "cs.CV": 303,
+      "cs.AI": 437,
+      "eess.IV": 21,
+      "eess.SP": 36
+    },
+    "scope": "new+cross; replacements excluded"
   },
   "totals": {
-    "total_scanned": 417,
-    "selected": 111
-  },
-  "journal_counts": {
-    "total_scanned": 417,
-    "selected": 111,
-    "by_bucket": {
-      "Fourier Ptychography/Microscopy": 0,
-      "Lensless/Coded Imaging": 0,
-      "Phase Imaging/Holography": 4,
-      "Meta-Optics/Diffractive": 5,
-      "Light-Field/Novel Sensors": 5,
-      "Tomography/3D Imaging": 4,
-      "Virtual Staining/Pathology": 3,
-      "Reconstruction/Inverse Problems": 3,
-      "Deep Learning Methods": 5
-    }
-  },
-  "daily_thesis": "메타표면 역설계가 THz 파형판(RMCV-MDN 확률적 역설계)과 EIT 감지(신경망 파라미터 역산) 두 방향에서 딥러닝화되는 저널 신호가 동시에 확인됨. 라이트필드 디스플레이가 metalens 어레이(VAC-free 인간 시야각)와 3DGS 실시간 렌더링 두 방향에서 동시에 받쳐지는 XR 수렴 신호 등장."
+    "total_scanned": 1312,
+    "selected": 446
+  }
 }
