@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 29 Jun 2026 12:17:16 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 12:19:02 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-06-30 (화요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-06-30.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-30.html</guid>
+      <pubDate>Tue, 30 Jun 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[이번 주 화요일인 오늘은 arXiv /new 배치가 아직 발행되지 않아 저널 수집 417건, 그 중 ROI 111건으로 구성됩니다. 어제(2026-06-29) 월요일에는 arXiv 390건 포함 615건으로 3DGS 범용화와 VLM-aware meta-optic 공동 설계(CODA)가 핵심이었는데, 오늘은 저널만으로 비교적 조용한 날처럼 보이지만 클러스터 단위로 보면 신호가 분명합니다.]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-06-29 (Week 26)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-06-29-weekly.html</link>

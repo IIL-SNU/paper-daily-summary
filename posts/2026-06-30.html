@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-06-30</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<button id=themeToggle aria-label="Toggle dark mode">🌙</button>
+<script>
+(function(){
+  var btn=document.getElementById('themeToggle');
+  function setTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);btn.textContent=t==='dark'?'☀️':'🌙';}
+  btn.addEventListener('click',function(){setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');});
+  var cur=document.documentElement.dataset.theme;btn.textContent=cur==='dark'?'☀️':'🌙';
+})();
+</script>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-06-30 (화요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-06-30 (화요일)</div>
+  <div>📚 소스: Crossref/OpenAlex 저널 논문만 수록 (journal-only)</div>
+  <div>📌 arXiv: 오늘(2026-06-30) listing 미발행 — 저널 논문만 수록</div>
+  <div>🔢 스캔: 417건 · ROI 배정 111건</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 arXiv가 아직 올라오지 않아 저널 논문만으로 브리핑합니다. 오늘 저널 배치에서 두 가지 신호가 눈에 띕니다. 첫째, <strong>메타표면 설계가 "시뮬레이션 반복" 방식에서 "딥러닝 역설계" 방식으로 넘어가는 흐름이 THz 대역과 감지 응용 두 방향에서 동시에 확인</strong>됩니다. Laser &amp; Photonics Reviews의 THz 쌍층 분할링 메타표면 역설계 논문은 확률적 다중 솔루션 예측(RMCV-MDN)을 쓰고, Smart Materials의 EIT 메타표면 논문은 신경망 보조 파라미터 역산으로 설계 루프를 닫습니다. 둘째, <strong>라이트필드 디스플레이가 3D Gaussian Splatting 렌더링과 metalens 어레이 두 방향에서 동시에 받쳐지면서, XR 디스플레이의 VAC-free + 넓은 시야각 문제가 실제 시스템 수준에서 다뤄지기 시작</strong>했습니다. Light: Science &amp; Applications의 metalens 어레이 XR 디스플레이와 ACM Computer Graphics의 3DGS-on-LFD 렌더링이 같은 날 나왔다는 건 의미 있는 수렴입니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>이번 주 화요일인 오늘은 arXiv /new 배치가 아직 발행되지 않아 저널 수집 417건, 그 중 ROI 111건으로 구성됩니다. 어제(2026-06-29) 월요일에는 arXiv 390건 포함 615건으로 3DGS 범용화와 VLM-aware meta-optic 공동 설계(CODA)가 핵심이었는데, 오늘은 저널만으로 비교적 조용한 날처럼 보이지만 클러스터 단위로 보면 신호가 분명합니다.</p>
+<p>이번 주(6월 29일~7월 4일) 관점에서 보면, <strong>메타표면 딥러닝 역설계</strong>는 어제의 RCWA PCNN(arXiv)에서 오늘의 저널 논문 2편(THz QWP 역설계, EIT 감지 역설계)으로 이어지는 흐름이 확인됩니다. <strong>라이트필드 × 3DGS 통합</strong>은 오늘 처음으로 두 논문이 동시에 나왔다는 점에서 이번 주의 새 신호입니다. 단일샷 초고속 압축 이미징(Light: Sci &amp; Apps)은 반복 불가능한 과도 현상 포착이라는 틈새 분야에서 시스템 완성도가 높아지는 신호를 줍니다.</p>
+<p>내일 arXiv가 나오면 메타표면 역설계와 LF 디스플레이 흐름이 arXiv에서도 이어지는지 확인하는 것이 첫 번째 포인트입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(2026-06-29)는 arXiv 기반으로 3DGS의 입력 요구사항 완화(StructSplat, Li-GS)와 VLM-aware meta-optic 공동 최적화(CODA)가 중심이었습니다. 계산광학 관점에서 arXiv 신호가 강한 날이었습니다.</p>
+<p>오늘은 arXiv가 아직 올라오지 않아 저널 논문 중심입니다. 어제의 meta-optic 흐름이 저널에서는 "딥러닝 역설계" 방향으로 더 구체화되고 있고, 라이트필드 디스플레이가 3DGS와 처음으로 한 파이프라인 안에서 통합되는 논문이 나왔습니다. 가상 염색 쪽에서는 듀얼모달 자가형광 현미경 + CycleGAN으로 라이브 간 조직에서 H&amp;E 유사 이미지를 생성하는 논문이 label-free 병리학의 현실적 경로를 보여줍니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>메타표면 역설계의 딥러닝화</strong><span class=pill>HOT</span></td>
+  <td>
+    <a href="https://doi.org/10.1002/lpor.71477" target=_blank>Deep Learning-Assisted Inverse Design of THz Bilayer Split-Ring Metasurface Wave Plates</a> (Laser &amp; Photonics Reviews)<br>
+    <a href="https://doi.org/10.1088/1361-665x/ae83ef" target=_blank>Multiband EIT-/EIR-Like Metasurface + Neural Network Parameter Retrieval</a> (Smart Materials and Structures)<br>
+    <a href="https://doi.org/10.1002/nap2.70172" target=_blank>Cryogenic Dielectric Metasurface-Integrated SNSPDs</a> (Nanophotonics)
+  </td>
+  <td>예전에는 메타표면 설계가 RCWA 시뮬레이션을 수천 번 반복하는 시행착오 방식이었는데, 이제는 딥러닝이 역방향으로 구조 파라미터를 예측하는 방향으로 이동하고 있습니다. THz QWP 논문은 다층 색수차-보정 파형판 설계에서 RMCV-MDN(확률적 다중 솔루션 예측) 프레임워크로 시행착오를 없앱니다. EIT 메타표면 논문은 스펙트럼 응답에서 신경망이 구조 파라미터를 역산하는 방식으로 감지 루프를 닫습니다. 두 방향이 같은 날 저널에서 동시에 나왔습니다.</td>
+  <td>High<br><small>두 편의 독립적 저널 논문이 같은 방향(DL 역설계)을 가리키며, 어제 arXiv RCWA PCNN 신호와 일관성 있게 이어짐</small></td>
+  <td>RMCV-MDN 프레임워크를 랩의 THz 또는 가시광 메타렌즈 역설계 루프에 적용 — 다중 솔루션 탐색 능력이 단일 솔루션 예측 대비 설계 공간 커버리지에서 얼마나 나은지 ablation; EIT 역산 방법을 meta-optic 분광 센서 파라미터 역산에 이식 가능성 평가</td>
+</tr>
+<tr>
+  <td><strong>라이트필드 디스플레이 × 3DGS 통합</strong><span class=pill>HOT</span></td>
+  <td>
+    <a href="https://doi.org/10.1038/s41377-026-02266-w" target=_blank>Expanded FOV Light-Field XR Display with Metalens Array</a> (Light: Science &amp; Applications)<br>
+    <a href="https://doi.org/10.1145/3820023" target=_blank>Real-time 3D Radiance Fields on Light Field Displays</a> (Proc. ACM Computer Graphics)<br>
+    <a href="https://doi.org/10.1038/s41467-026-74976-z" target=_blank>Real-time Robust Autofocus for Scanning Light Field Microscopy</a> (Nature Communications)
+  </td>
+  <td>예전에는 라이트필드 디스플레이와 3D Gaussian Splatting 렌더링이 각자의 트랙에서 따로 발전했는데, 오늘 처음으로 3DGS/Sparse Voxels를 라이트필드 디스플레이에서 실시간 렌더링하는 논문이 나왔습니다. 동시에 metalens 어레이로 VAC(vergence-accommodation conflict)를 없애고 인간 수준 시야각을 달성하는 XR 디스플레이 논문도 나왔습니다. 두 논문이 합쳐지면 "3D 장면 표현 → 라이트필드 렌더링 → metalens 어레이 출력"으로 이어지는 파이프라인의 윤곽이 보입니다.</td>
+  <td>High<br><small>두 Light/ACM 논문이 독립적으로 같은 수렴 지점을 향하며, Nature Comms 현미경 autofocus 논문이 라이트필드 기술의 생명과학 응용 깊이를 보여줌</small></td>
+  <td>ACM CG 논문의 3DGS-on-LFD 렌더러를 Light:S&amp;A metalens 어레이 FOV 파라미터에 맞춰 통합 시뮬레이션 — 렌더링 충실도(PSNR/시야각)와 지연시간 간 트레이드오프 정량화; LF 현미경 autofocus 알고리즘이 LF XR 디스플레이의 실시간 깊이 추적에 응용 가능한지 평가</td>
+</tr>
+<tr>
+  <td><strong>단일샷 초고속 압축 이미징</strong></td>
+  <td>
+    <a href="https://doi.org/10.1038/s41377-026-02317-2" target=_blank>Multi-dimensional Spatial-Temporal Projection Ultrafast Compressed Imaging</a> (Light: Science &amp; Applications)<br>
+    <a href="https://doi.org/10.3390/opt7040045" target=_blank>Video Compressive Imaging with High-Frequency Encoding</a> (Optics)<br>
+    <a href="https://doi.org/10.1117/1.jrs.20.026516" target=_blank>2D Sparse SAR Imaging via Echo Preprocessing and Deep Equilibrium</a> (J. Applied Remote Sensing)
+  </td>
+  <td>예전에는 초고속 과도 현상을 촬영하려면 반복 가능한 이벤트가 필요했는데, 오늘의 Light: S&amp;A 논문은 단일 샷으로 광합성 에너지 전달·단백질 폴딩 같은 비반복 과도 현상을 다차원 시공간 투영으로 포착합니다. VCI 고주파 인코딩 논문은 세부 정보 손실 없이 압축률을 높이는 방향이고, SAR 논문은 딥 이퀄리브리엄 네트워크로 방위각-거리 결합 문제를 해결합니다. 셋 모두 "단일 측정에서 최대 정보 추출"이라는 같은 원칙 위에 있습니다.</td>
+  <td>Medium<br><small>Light:S&amp;A 논문이 과도 현상 포착의 시스템 완성도를 보여주지만, VCI와 SAR 논문은 서로 다른 응용 도메인이라 클러스터 결속은 중간 수준</small></td>
+  <td>Light:S&amp;A 다차원 시공간 투영 방법을 랩의 압축 감지 이미징 시스템(coded aperture 또는 DMD)에 이식 — 단일샷 포착 가능 이벤트 속도 한계와 재구성 SNR 간 트레이드오프 실험; VCI 고주파 인코딩 패턴을 기존 이진 패턴과 ablation 비교</td>
+</tr>
+<tr>
+  <td><strong>위상 이미징 세 갈래 — CDI, 간섭, ODT</strong></td>
+  <td>
+    <a href="https://doi.org/10.1364/oe.597254" target=_blank>Vision Transformer for Multi-Domain Phase Retrieval in CDI</a> (Optics Express)<br>
+    <a href="https://doi.org/10.59717/j.xinn-life.2026.100231" target=_blank>Interferometric Image Scanning Microscopy for Label-Free Super-Resolution</a> (The Innovation Life)<br>
+    <a href="https://doi.org/10.1364/boe.595965" target=_blank>Wide-Field Real-Time Limited-Angle ODT via Massively Parallel Processing</a> (Biomedical Optics Express)
+  </td>
+  <td>예전에는 CDI(Coherent Diffraction Imaging) 위상 복원이 특정 회절 도메인에 특화된 알고리즘 하나로 다뤄졌는데, 오늘의 ViT 논문은 여러 회절 도메인에 걸쳐 동시에 작동하는 다중 도메인 위상 복원을 제안합니다. 간섭계 이미지 스캐닝 논문은 형광 라벨 없이 살아있는 세포에서 초해상도를 달성하는 경로를 보여주고, ODT 논문은 제한 각도 제약을 GPU 대규모 병렬 처리로 해결해 실시간 광범위 시야 ODT를 가능하게 합니다.</td>
+  <td>Medium<br><small>세 논문이 위상 이미징이라는 큰 우산 아래 있지만 CDI, 간섭, ODT로 서로 다른 하위 분야. ViT-CDI와 실시간 ODT가 랩 ROI와 직접 관련</small></td>
+  <td>ViT 다중 도메인 위상 복원을 FP(Fourier Ptychography) 위상 복원에 이식 — 기존 ADMM/GS 알고리즘 대비 수렴 속도와 노이즈 강건성 비교 ablation; 실시간 ODT의 GPU 병렬화 전략을 랩 ODT 파이프라인에 적용해 재구성 지연시간 감소 가능성 평가</td>
+</tr>
+<tr>
+  <td><strong>Label-free 가상 염색 · 생체광학 센서</strong></td>
+  <td>
+    <a href="https://doi.org/10.3390/diagnostics16131993" target=_blank>Dual-Modal Autofluorescence + CycleGAN for H&amp;E-like Image Generation in Live Liver</a> (Diagnostics)<br>
+    <a href="https://doi.org/10.1016/j.rio.2026.101066" target=_blank>Thermally Stable High-Q 2D Photonic Crystal Sensor for Leukemic Blood Cell Detection</a> (Results in Optics)
+  </td>
+  <td>예전에는 H&amp;E 조직 염색이 병리 진단의 필수 단계였고, 살아있는 세포에 염색 시약을 쓰면 세포 독성 문제가 있었는데, 오늘의 CycleGAN 논문은 라이브 간 조직에서 듀얼모달 자가형광(FAD + NADH)만으로 H&amp;E 유사 이미지를 생성하는 proof-of-concept를 보여줍니다. 광자결정 센서 논문은 백혈구 세포를 라벨 없이 광학 공명으로 감지하는 방향입니다. 두 논문 모두 "시약·라벨 없이 조직 또는 세포 상태를 광학으로 판단"하는 흐름을 보여줍니다.</td>
+  <td>Medium<br><small>CycleGAN 논문이 기술적으로 실현 가능성을 증명하지만 아직 proof-of-concept 수준. 광자결정 센서는 소자 집적도와 실용성 측면에서 추가 검증 필요</small></td>
+  <td>CycleGAN H&amp;E 생성 파이프라인을 랩 보유 자가형광 현미경 데이터에 적용 — FAD/NADH 채널 조합 비율이 H&amp;E 유사도(FID, 병리의 맹검 평가)에 미치는 영향 ablation; 광자결정 센서 Q인자와 감지 한계를 기존 형광 라벨 방법과 정량 비교</td>
+</tr>
+</tbody>
+</table>
+
+<h2>📐 저널 현황</h2>
+<p>오늘은 arXiv 배치가 아직 올라오지 않아 저널(Crossref+OpenAlex) 417건만 수집됐으며, 그 중 ROI 배정 111건입니다. 주요 저널별 신호를 보면:</p>
+<ul>
+  <li><strong>Light: Science &amp; Applications (2편)</strong>: metalens 어레이 XR 디스플레이(VAC-free 인간 시야각), 단일샷 초고속 압축 이미징. 오늘 가장 강한 신호 두 편이 모두 이 저널에서 나왔습니다.</li>
+  <li><strong>Laser &amp; Photonics Reviews (1편)</strong>: THz 쌍층 분할링 메타표면 역설계 — RMCV-MDN 확률적 역설계. 메타표면 역설계 딥러닝화의 주요 신호.</li>
+  <li><strong>Optics Express (2편)</strong>: ViT 다중 도메인 CDI 위상 복원, 자기 전환 메타렌즈. 위상 이미징과 능동 메타광학 방향.</li>
+  <li><strong>Nature Communications (1편)</strong>: 스캐닝 라이트필드 현미경 실시간 강건 자동초점. 생명과학 라이트필드 응용 신호.</li>
+  <li><strong>Biomedical Optics Express (1편)</strong>: 실시간 제한 각도 ODT GPU 병렬화. 계산광학 직접 신호.</li>
+  <li><strong>Nanophotonics (1편)</strong>: 극저온 메타표면 집적 SNSPD. 메타표면 × 양자 광검출 통합 방향.</li>
+  <li><strong>ACM Computer Graphics (1편)</strong>: 3DGS/Sparse Voxels 라이트필드 디스플레이 실시간 렌더링. LF × 3DGS 통합의 첫 논문.</li>
+</ul>
+<p>오늘 계산광학 직접 신호는 Phase Imaging(4편), Meta-Optics(5편), Light-Field(5편), Tomography(4편) 버킷에 집중됩니다. Fourier Ptychography와 Lensless/Coded Imaging 버킷에서는 오늘 직접 신호가 없습니다.</p>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 메타표면 역설계가 확률적 딥러닝으로 이동하는 이중 신호</h3>
+  <p>오늘 저널에서 메타표면 설계에 딥러닝을 쓰는 논문이 두 방향에서 동시에 나왔습니다. THz 쌍층 분할링 파형판 논문(Laser &amp; Photonics Reviews)은 RMCV-MDN(Recurrent Multi-branch Conditional Variational Mixture Density Network)을 써서 하나의 스펙트럼 목표에 대해 여러 가지 구조 해를 동시에 제안합니다. 이건 기존에 역설계가 단일 솔루션을 내놓는 결정론적 방식이었던 것과 다릅니다 — 설계 공간에 여러 해가 있을 때 제조 공정 오차나 재료 가용성에 따라 가장 현실적인 솔루션을 고를 수 있게 됩니다. EIT/EIR 메타표면 논문(Smart Materials)은 감지 응용에서 스펙트럼 응답을 보고 신경망이 구조 파라미터를 역산합니다. 어제 arXiv에서 나온 RCWA PCNN(에너지 보존 하드 제약 surrogate)과 방향이 겹쳐서, arXiv와 저널이 같은 주에 같은 흐름을 동시에 보여준다는 게 신호 강도를 높여줍니다.</p>
+  <p class=conf-note>Confidence: High — 두 편의 독립적 저널 논문 + 어제 arXiv 신호와 일관성. [방법전환] [실사용전환]. 랩의 메타렌즈 역설계 파이프라인에 직접 적용 가능한 프레임워크 후보</p>
+</div>
+
+<div class=ins>
+  <h3>2. 라이트필드 디스플레이 + 3DGS + Metalens — 세 방향이 하나의 시스템으로 수렴하는 신호</h3>
+  <p>오늘은 라이트필드 디스플레이 관련 논문 3편이 같은 날 나왔는데, 이게 우연이 아닌 것 같습니다. ACM Computer Graphics 논문은 3D Gaussian Splatting과 Sparse Voxels를 라이트필드 디스플레이에서 안경 없이 실시간으로 렌더링하는 방법을 다룹니다. 이건 지금까지 3DGS가 모니터나 VR 헤드셋에서만 보여지던 것에서, 실제 3D 공간에서 빛이 다른 방향으로 나가는 라이트필드 디스플레이로 옮겨오는 겁니다. 같은 날 Light: S&amp;A의 metalens 어레이 XR 논문은 VAC(vergence-accommodation conflict, 눈의 수렴-조절 불일치)를 없애고 인간 시야각 수준의 FOV를 달성합니다. Holography 기반 XR이 좁은 회절각과 코히어런트 노이즈 문제를 안고 있던 것에 비해, metalens 어레이 + 라이트필드 방식은 실용적인 경로를 보여줍니다. 두 논문이 합쳐지면 "3DGS 장면 표현 → 라이트필드 렌더링 → metalens 어레이 출력"이라는 파이프라인의 윤곽이 그려지는데, 이게 앞으로 XR 하드웨어 설계 방향에 영향을 줄 수 있습니다.</p>
+  <p class=conf-note>Confidence: High — 두 독립적 논문이 같은 날 같은 수렴 지점을 향하며, Nature Comms autofocus 논문이 라이트필드의 생명과학 응용 가능성을 추가로 보여줌. [방법전환] [실사용전환]. 계산광학 랩의 meta-optic + LF 디스플레이 연구 방향과 직접 연결</p>
+</div>
+
+<div class=ins>
+  <h3>3. 단일샷 초고속 압축 이미징 — 비반복 과도 현상으로 응용 범위 확장</h3>
+  <p>Light: S&amp;A의 다차원 시공간 투영 초고속 압축 이미징 논문은 광합성 에너지 전달, 단백질 폴딩처럼 단 한 번만 일어나는 과도 현상을 단일 샷으로 포착하는 시스템을 다룹니다. 기존 고속 촬상 방법은 이벤트가 반복 가능해야 측정이 되는 제약이 있었는데, 이 논문은 공간-시간 정보를 다차원으로 동시에 투영해 단일 측정으로 과도 이벤트의 시간적 전개를 복원합니다. 계산광학 관점에서 이 논문이 중요한 이유는 압축 감지의 응용 영역이 "반복 가능한 이벤트"를 넘어 "비반복 단일 이벤트"로 확장되는 것을 구체적인 시스템으로 보여주기 때문입니다. 코딩 조리개나 DMD 기반 시스템에서 이 원칙을 적용하면, 폭발·화학 반응·생체 신호처럼 기존에 연속 프레임 카메라가 포착할 수 없었던 이벤트를 다룰 수 있게 됩니다.</p>
+  <p class=conf-note>Confidence: Medium — Light:S&amp;A 단일 논문이 클러스터를 이끌고 있어 신호 강도가 중간 수준. 시스템 검증 실험 결과가 얼마나 다양한 과도 현상에 일반화되는지 본문 확인 필요. [방법전환] [실사용전환]</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>주제 1: RMCV-MDN 확률적 역설계 프레임워크를 가시광 메타렌즈에 이식</h3>
+  <p><strong>배경</strong>: Laser &amp; Photonics Reviews의 THz QWP 역설계 논문(doi:10.1002/lpor.71477)은 RMCV-MDN으로 하나의 목표 스펙트럼에 대해 여러 구조 해를 동시에 제안합니다. 이 확률적 다중 솔루션 접근은 THz에 국한되지 않고, 가시광 메타렌즈 역설계에서 제조 공정 오차나 재료 선택 자유도가 있을 때 더욱 유용합니다.</p>
+  <p><strong>1주 실행 프로토콜</strong>:</p>
+  <ol>
+    <li>논문 코드 또는 방법론 섹션에서 RMCV-MDN 아키텍처 재현 — 입출력을 THz 분할링 파라미터에서 가시광 나노필라(TiO₂ 또는 Si) 기하 파라미터(직경·높이·주기)로 교체</li>
+    <li>RCWA 또는 FDTD로 학습 데이터셋 생성 (파라미터 공간 샘플링 1만 건)</li>
+    <li>단일 솔루션 결정론적 역설계 네트워크 vs RMCV-MDN 비교 — 예측된 여러 해의 위상 오차 분포(RMSE 히스토그램) 비교</li>
+    <li>실패해도 남는 결과: 가시광 메타렌즈 역설계에서 다중 솔루션 탐색이 가능한 파라미터 범위 지도 (어떤 목표 파면에서 역설계가 유일해를 갖는지 파악)</li>
+  </ol>
+</div>
+
+<div class=dd>
+  <h3>주제 2: 3DGS-on-LFD 렌더러를 metalens 어레이 FOV 파라미터에 맞춰 통합</h3>
+  <p><strong>배경</strong>: ACM CG 논문(doi:10.1145/3820023)은 3DGS와 Sparse Voxels를 라이트필드 디스플레이에서 실시간 렌더링하고, Light:S&amp;A 논문(doi:10.1038/s41377-026-02266-w)은 metalens 어레이로 VAC-free 인간 시야각 XR 디스플레이를 구현합니다. 두 시스템을 시뮬레이션 수준에서 연결하면 렌더링 파이프라인의 병목과 광학적 제약을 동시에 평가할 수 있습니다.</p>
+  <p><strong>1주 실행 프로토콜</strong>:</p>
+  <ol>
+    <li>ACM CG 논문의 3DGS-on-LFD 렌더러 코드(또는 재구현) 확인, Light:S&amp;A metalens 어레이 FOV·픽셀 피치·회절각 파라미터 추출</li>
+    <li>렌더러의 시야각 파라미터를 metalens 어레이 스펙에 맞게 조정 후 표준 3DGS 장면(NeRF synthetic 또는 Tanks and Temples)에서 렌더링</li>
+    <li>렌더링 PSNR/SSIM vs 지연시간 트레이드오프 프로파일링 — metalens FOV 제약이 기존 LFD 대비 렌더링 품질에 미치는 영향 정량화</li>
+    <li>실패해도 남는 결과: metalens 어레이 스펙이 3DGS 렌더링 파이프라인의 어느 부분에서 병목을 만드는지 분석 (LFD 설계 시 렌더링 파이프라인을 고려해야 하는 파라미터 식별)</li>
+  </ol>
+</div>
+
+<div class=dd>
+  <h3>주제 3: ViT 다중 도메인 CDI 위상 복원을 FP 위상 복원에 이식</h3>
+  <p><strong>배경</strong>: Optics Express의 ViT 논문(doi:10.1364/oe.597254)은 여러 회절 도메인에서 동시에 작동하는 다중 도메인 위상 복원을 제안합니다. FP(Fourier Ptychography)는 다수의 이미지에서 위상을 복원하는 문제로, 이 다중 도메인 접근이 FP의 수렴 속도와 노이즈 강건성을 개선할 수 있습니다.</p>
+  <p><strong>1주 실행 프로토콜</strong>:</p>
+  <ol>
+    <li>ViT 다중 도메인 위상 복원 아키텍처 재현 — 입력을 CDI 단일 회절 패턴에서 FP 다중 LED 조명 측정 이미지 시퀀스로 교체</li>
+    <li>시뮬레이션 FP 데이터(USAF 타겟 또는 세포 이미지)에서 기존 ADMM/GS vs ViT-FP 비교 — 반복 수 대비 위상 RMSE 수렴 곡선</li>
+    <li>노이즈 조건(SNR 10~40 dB)에서 각 방법의 강건성 비교</li>
+    <li>실패해도 남는 결과: ViT의 self-attention이 FP 다중 조명 패턴 간 상관관계를 어떻게 활용하는지 attention map 시각화 (FP 조명 최적화 방향 힌트)</li>
+  </ol>
+</div>
+
+<hr>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Meta-Optics(5편)·Light-Field(5편)·Deep Learning(5편) 공동 최대 = 100%로 정규화. Tomography(4편)·Phase Imaging(4편)은 80%.</small></p>
+<p><small>※ Deep Learning Methods는 catch-all 버킷으로 100% 고정. 오늘은 저널 수집이라 arXiv 기반 날 대비 DL 버킷 절대 편수가 적습니다.</small></p>
+
+<div class=bucket-bar><span class=nm>Deep Learning (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics / Diffractive</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field / Novel Sensors</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Tomography / 3D Imaging</span><span class=bar><span class=fill style="width:80%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging / Holography</span><span class=bar><span class=fill style="width:80%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining / Pathology</span><span class=bar><span class=fill style="width:60%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction / Inverse Problems</span><span class=bar><span class=fill style="width:60%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Fourier Ptychography / Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Lensless / Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<p style="font-size:12.5px;color:#666;margin:.5rem 0">※ Fourier Ptychography·Lensless 버킷에서 오늘 직접 신호 없음. 내일 arXiv 배치 확인 필요.</p>
+<p style="font-size:12.5px;color:#666;margin:.5rem 0">※ Tomography 버킷 4편 중 ODT 1편·OCTA 1편·내시경 깊이 1편·PCD-CT 1편으로 계산광학 직접 관련은 ODT(실시간 GPU 병렬화) 1편이 핵심.</p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Phase Imaging / Holography (4편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/oe.597254" target=_blank>Vision Transformer for Multi-Domain Phase Retrieval in Coherent Diffraction Imaging</a></strong> (Optics Express)<br>
+왜 주요: 여러 회절 도메인에 걸쳐 동시에 위상을 복원하는 ViT 프레임워크. 기존 단일 도메인 CDI 알고리즘의 한계를 다중 도메인 self-attention으로 극복. FP 위상 복원에 이식 가능. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.59717/j.xinn-life.2026.100231" target=_blank>Interferometric Image Scanning Microscopy: Label-Free Super-Resolution in Live Cells</a></strong> (The Innovation Life)<br>
+왜 주요: 형광 라벨 없이 살아있는 세포에서 초해상도 달성. 세포 독성 없이 구조 정보 획득하는 경로. 간섭계 + 이미지 스캐닝 결합의 실용적 시연. [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/ao.599656" target=_blank>High-Speed 2D Flow Mapping via Imaging Focused Laser Differential Interferometry</a></strong> (Applied Optics)<br>
+왜 주요: 2D 공간에서 고속 유속 벡터 매핑을 간섭계로 달성. 기존 단점 LDI를 2D 이미징으로 확장한 방향. 유체역학·산업 계측 응용.
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/oe.597475" target=_blank>Magnetically Switchable Metalens for Polarization-Dependent Nonreciprocal Wavefront Manipulation</a></strong> (Optics Express)<br>
+왜 주요: 자기장으로 전환되는 능동 메타렌즈. 비상호 파면 제어 기능. Meta-Optics 버킷과도 겹치는 능동 소자 방향. [방법전환]
+</div>
+
+<h3>Meta-Optics / Diffractive (5편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1002/lpor.71477" target=_blank>Deep Learning-Assisted Inverse Design of THz Bilayer Split-Ring Metasurface Wave Plates</a></strong> <span class=pill>HOT</span> (Laser &amp; Photonics Reviews)<br>
+왜 주요: RMCV-MDN 확률적 다중 솔루션 역설계 프레임워크. THz 다층 색수차 보정 파형판 역설계. 제조 오차 허용 가능한 여러 해 동시 탐색. [방법전환] [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1088/1361-665x/ae83ef" target=_blank>Multiband EIT-/EIR-Like Metasurface + Neural Network Parameter Retrieval</a></strong> (Smart Materials and Structures)<br>
+왜 주요: EIT/EIR 효과 메타표면에서 신경망이 스펙트럼 응답으로 구조 파라미터를 역산. 감지·필터링·슬로파 응용에서 설계 루프 자동화. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1002/nap2.70172" target=_blank>Cryogenic Dielectric Metasurface-Integrated Superconducting Nanowire Single-Photon Detectors</a></strong> (Nanophotonics)<br>
+왜 주요: 극저온 메타표면이 SNSPD와 집적되어 온칩 광자 관리. 시스템 검출 효율과 타이밍 정밀도가 동시에 향상됨. 양자 광학 + 메타표면 통합의 실용적 시연. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1021/acsphotonics.6c00565" target=_blank>Frequency Up-conversion of Infrared Radiation in AlGaAs-on-Insulator Nonlocal Metasurface</a></strong> (ACS Photonics)<br>
+왜 주요: 비선형 비국소 메타표면에서 IR→가시광 주파수 변환. 실리콘 CMOS 센서로 IR 감지를 가능하게 하는 업컨버전 방향. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1088/1402-4896/ae83e7" target=_blank>Efficient THz Electromagnetic Shielding via Angle-Robust Graphene Metasurface Absorber</a></strong> (Physica Scripta)<br>
+왜 주요: 0.1~20.16 THz 대역폭 198% FBW, 흡수율 90% 이상, 입사각 강건성. 고소형화 그래핀 메타표면. THz 대역 EMI 차폐 실용화 신호.
+</div>
+
+<h3>Light-Field / Novel Sensors (5편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41377-026-02266-w" target=_blank>Expanded FOV Light-Field XR Display with Metalens Array (VAC-free)</a></strong> <span class=pill>HOT</span> (Light: Science &amp; Applications)<br>
+왜 주요: Metalens 어레이 + 라이트필드 방식으로 VAC 없이 인간 시야각 수준 FOV 달성. Holography 기반 XR의 좁은 회절각·코히어런트 노이즈 한계를 우회하는 실용적 경로. [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1145/3820023" target=_blank>Real-time 3D Radiance Fields on Light Field Displays (3DGS + Sparse Voxels)</a></strong> <span class=pill>HOT</span> (Proc. ACM Computer Graphics)<br>
+왜 주요: 3DGS와 Sparse Voxels를 라이트필드 디스플레이에서 실시간으로 직접 렌더링. 안경 없이 사실적 몰입형 3D 경험. 3DGS + LFD 통합의 첫 논문. [방법전환] [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41467-026-74976-z" target=_blank>Real-time Robust Autofocus for Sustained Intravital Scanning Light Field Microscopy</a></strong> (Nature Communications)<br>
+왜 주요: 생체 내(intravital) 지속 스캐닝 라이트필드 현미경을 위한 실시간 강건 자동초점. 라이브 생명과학 이미징에서 LF 현미경 실용화. [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/ol.600424" target=_blank>FMDL-Net: Fourier Modulation and Dynamic Mixing for Light Field Image Super-Resolution</a></strong> (Optics Letters)<br>
+왜 주요: 푸리에 변조와 동적 믹싱으로 라이트필드 이미지 초해상도. 다중 시점 간 공간-각도 정보 교환 최적화. LF 영상 처리 품질 개선. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41377-026-02298-2" target=_blank>Two-Terminal β-Ga₂O₃ Photo-Synapse for In-Sensor Computing via Self-Trapped Holes Engineering</a></strong> (Light: Science &amp; Applications)<br>
+왜 주요: 태양 맹 UV 뉴로모픽 센서. 자기 포획 정공 조작으로 인센서 AI 컴퓨팅 안정성과 선형성 개선. 엣지 AI 광학 센서 방향. [방법전환]
+</div>
+
+<h3>Tomography / 3D Imaging (4편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/boe.595965" target=_blank>Wide-Field Real-Time Limited-Angle ODT via Massively Parallel GPU Processing</a></strong> (Biomedical Optics Express)<br>
+왜 주요: 제한 각도 제약을 GPU 대규모 병렬 처리로 해결한 실시간 광범위 시야 ODT. 기존 ODT의 속도 병목을 극복하는 직접적 신호. 랩 ODT 파이프라인에 즉시 참조 가능. [방법전환] [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.3390/jcm15135013" target=_blank>Clinical Value of OCT Angiography in Neovascular AMD</a></strong> (Journal of Clinical Medicine)<br>
+왜 주요: OCTA로 신생혈관성 AMD에서 CNV 감지. 형광 혈관조영술과 비교 임상 연구. OCTA가 임상 표준 검사로 자리잡는 신호.
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1186/s12880-026-02515-9" target=_blank>MonoGID: Geometry and Illumination Aware Enhancement for Self-Supervised Monocular Endoscopic Depth</a></strong> (BMC Medical Imaging)<br>
+왜 주요: 내시경에서 정반사·동적 조명을 처리하는 자기지도 단안 깊이 추정 + 지식 증류. 내시경 3D 재구성의 실용화 방향.
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1007/s10554-026-03767-w" target=_blank>Photon-Counting Detector CT in Cardiovascular Imaging</a></strong> (Int'l J Cardiovascular Imaging)<br>
+왜 주요: PCD-CT의 향상된 스펙트럼 해상도와 선량 감소. 심혈관 CT에서 임상 적용 확대 신호.
+</div>
+
+<h3>Virtual Staining / Pathology (3편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.3390/diagnostics16131993" target=_blank>Dual-Modal Autofluorescence Microscopy + CycleGAN for H&amp;E-like Image Generation in Liver</a></strong> (Diagnostics)<br>
+왜 주요: 라이브 간 조직에서 듀얼모달 자가형광(FAD+NADH)으로 H&amp;E 유사 이미지 생성. 염색 시약 없이 병리 진단 이미지 생성하는 label-free 병리학 경로. [방법전환] [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1016/j.rio.2026.101066" target=_blank>Thermally Stable High-Q 2D Photonic Crystal Sensor for Leukemic Blood Cell Detection</a></strong> (Results in Optics)<br>
+왜 주요: 2D 광자결정 공명 센서로 백혈병 혈구 세포 라벨 없이 감지. 열안정성 높은 고Q 공진 설계. 실용적 라벨 없는 혈구 분류 방향.
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1186/s12880-026-02526-6" target=_blank>Multimodal Deep Learning for Papillary Thyroid Carcinoma Diagnosis (Ultrasound + Cytology)</a></strong> (BMC Medical Imaging)<br>
+왜 주요: 초음파 + 세포학 다중모달 딥러닝으로 유두상 갑상선암 진단. 단일 모달리티 한계를 융합으로 극복하는 방향.
+</div>
+
+<h3>Reconstruction / Inverse Problems (3편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41377-026-02317-2" target=_blank>Multi-dimensional Spatial-Temporal Projection Ultrafast Compressed Imaging</a></strong> <span class=pill>HOT</span> (Light: Science &amp; Applications)<br>
+왜 주요: 비반복 과도 현상(광합성·단백질 폴딩)을 단일 샷으로 포착하는 다차원 시공간 투영. 압축 감지 응용 범위를 "비반복 이벤트"로 확장하는 직접적 신호. [방법전환] [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.3390/opt7040045" target=_blank>Video Compressive Imaging with High-Frequency Encoding Patterns</a></strong> (Optics)<br>
+왜 주요: VCI에서 고주파 인코딩 패턴으로 세부 정보 손실 방지. 샘플링 속도 조정으로 구조적 샘플링 효과 균형. 압축 비디오 이미징 품질 개선. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1117/1.jrs.20.026516" target=_blank>2D Sparse SAR Imaging via Echo Preprocessing and Deep Equilibrium Network</a></strong> (J. Applied Remote Sensing)<br>
+왜 주요: SAR 희소 이미징에서 에코 도메인 방위각-거리 결합 문제를 전처리 + 딥 이퀄리브리엄 네트워크로 해결. 역문제 딥러닝 방법의 SAR 응용. [방법전환]
+</div>
+
+<h3>Deep Learning Methods (5편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41524-026-02193-9" target=_blank>ML Pipeline for Denoising Low-SNR and OOD TEM Datasets</a></strong> (npj Computational Materials)<br>
+왜 주요: CMOS 직접전자 검출기 TEM의 극저 SNR 이미지를 분포 외(OOD) 데이터에서도 처리하는 ML 파이프라인. 빔 민감 재료 HRTEM 잡음 제거. 비표준 센서 노이즈 처리 방법론 참조. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.3390/jimaging12070282" target=_blank>Optical System Design for Off-Axis Polarization Super-Resolution with Four Sub-Apertures</a></strong> (Journal of Imaging)<br>
+왜 주요: TIR + DMD 구조로 4개 서브어퍼처에서 편광 상태를 동시에 포착하는 이중 어퍼처 초해상도. 다중 편광 상태 동시 획득 방향. [방법전환]
+</div>
+</div>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>Tier A-1: Expanded FOV Light-Field XR Display with Metalens Array — XR 디스플레이의 실용적 경로</h3>
+  <p class=tag>[방법전환] [실사용전환]</p>
+  <p><strong>왜 A급인가</strong>:<br>
+  핵심: Holography 기반 XR 디스플레이는 VAC(vergence-accommodation conflict)를 이론적으로 해결할 수 있지만, 좁은 회절각과 코히어런트 노이즈 때문에 실용화에 어려움이 있었습니다. 이 논문은 metalens 어레이와 라이트필드 방식을 결합해 두 문제를 동시에 우회합니다 — VAC 없이 인간 수준의 시야각을 달성하는 XR 디스플레이를 실제 시스템 수준에서 구현합니다. 계산광학 랩에서 metalens 설계와 라이트필드 이미징을 모두 다루고 있다면, 이 논문은 두 분야가 수렴하는 지점을 구체적으로 보여주는 중요한 레퍼런스입니다.<br><br>
+  방법: metalens 어레이가 좁은 회절각 문제를 해결하면서 동시에 다수의 시점 이미지를 정확하게 제어합니다. 라이트필드 방식은 다양한 깊이에서 눈의 수렴과 조절이 자연스럽게 일치하도록 빛의 분포를 설계합니다. 두 기술의 결합으로 기존 LF 디스플레이의 좁은 FOV 한계를 극복합니다.<br><br>
+  의미: 오늘 같은 날 ACM CG의 3DGS-on-LFD 논문과 함께 보면, "3DGS 장면 표현 → LF 렌더링 → metalens 어레이 출력"이라는 파이프라인이 부품별로 갖춰지고 있다는 신호입니다. 두 논문을 연결하는 통합 시뮬레이션이나 실험이 이번 주 가장 의미 있는 랩 실험이 될 수 있습니다.</p>
+  <p><strong>한계</strong>: metalens 어레이의 제조 공차와 색수차가 실용화에서 주요 병목인지 본문 확인 필요. [Metric risk] 제시된 시야각·해상도 수치가 어떤 조건(코히어런트 vs 비코히어런트 조명, 온도, 프로토타입 크기)에서 측정됐는지 확인 필요.</p>
+</div>
+
+<div class=dd>
+  <h3>Tier A-2: Multi-dimensional Spatial-Temporal Projection Ultrafast Compressed Imaging — 비반복 과도 현상의 단일샷 포착</h3>
+  <p class=tag>[방법전환] [실사용전환]</p>
+  <p><strong>왜 A급인가</strong>:<br>
+  핵심: 기존의 초고속 촬상 방법들은 반복 가능한 이벤트가 필요했습니다. 빛 속도의 이동이나 플라즈마 진동 같은 과도 현상도, 여러 번 반복해서 각기 다른 시간 윈도우로 측정하는 방식이었죠. 이 논문은 단 한 번의 측정으로 비반복 과도 현상을 포착할 수 있는 시스템을 완성도 있게 시연합니다. 광합성 에너지 전달이나 단백질 폴딩처럼 매번 다르게 진행되는 생물·화학 반응을 연구하는 데 직접 적용할 수 있는 가능성을 보여줍니다.<br><br>
+  방법: 다차원 시공간 투영을 이용해 공간 정보와 시간 정보를 함께 압축된 형태로 단일 센서에 기록합니다. 재구성 알고리즘이 이 압축된 측정에서 시간 전개를 복원합니다. 코딩 조리개나 DMD를 쓰는 랩의 압축 이미징 시스템과 원칙이 같습니다.<br><br>
+  의미: 계산광학 랩에서 압축 감지 이미징 시스템을 개발하고 있다면, 이 논문의 시공간 투영 아이디어를 현재 시스템에 이식해 "비반복 이벤트 포착" 능력을 추가하는 것이 가장 직접적인 랩 액션입니다.</p>
+  <p><strong>한계</strong>: [Claim risk] 광합성·단백질 폴딩 실험이 실제로 진행됐는지, 아니면 시뮬레이션 수준인지 본문에서 확인 필요. [Metric risk] 시간 해상도와 공간 해상도 간 트레이드오프 정량화 데이터가 제시됐는지 확인 필요.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[Metric risk] metalens 어레이 XR 디스플레이</strong>: VAC-free + 인간 수준 FOV 주장이 어떤 프로토타입 크기와 제조 조건에서 측정됐는지 확인 필요. metalens 색수차가 RGB 전 대역에서 어떻게 보정됐는지 본문 확인 필요.</p>
+  <p><strong>[Claim risk] 다차원 초고속 압축 이미징</strong>: "광합성 에너지 전달, 단백질 폴딩" 포착이 실험으로 검증됐는지 vs 가능성을 보여주는 시연 수준인지 확인 필요. 재구성 알고리즘의 수렴 조건과 한계 검토 필요.</p>
+  <p><strong>[Dataset risk] CycleGAN H&amp;E 가상 염색</strong>: 라이브 간 조직 proof-of-concept이기 때문에, 다른 조직 유형이나 다른 자가형광 패턴에서 일반화 가능성은 추가 실험 필요. 병리의 맹검 평가 결과가 포함됐는지 확인.</p>
+  <p><strong>[Baseline risk] ViT CDI 위상 복원</strong>: 다중 도메인 처리 성능 개선이 기존 반복 알고리즘(HIO, RAAR) 대비 얼마나 큰 차이인지, 학습 데이터 도메인 밖 테스트에서 어떻게 작동하는지 확인 필요.</p>
+  <p><strong>[Metric risk] RMCV-MDN THz 역설계</strong>: 제시된 위상 예측 RMSE가 실제 THz 측정 오차 범위 내에서 의미 있는지 확인 필요. 다중 솔루션 중 최적 해를 고르는 기준이 제조 공정 제약을 실제로 반영하는지 검토 필요.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <strong>β-Ga₂O₃ 광시냅스 (Light:S&amp;A)</strong>: 뉴로모픽 UV 센서, 인센서 컴퓨팅 — 계산광학 직접 응용 범위가 제한적. 엣지 AI 센서 방향에 관심 있을 때만 읽을 것.<br>
+  <strong>2D 흐름 속도 매핑 (Applied Optics)</strong>: 레이저 차동 간섭계 유속 측정 — 유체역학 전문. 계산광학 방법론 이식 가능성 낮음.<br>
+  <strong>PCD-CT 심혈관 (Int'l J CV Imaging)</strong>: 임상 CT 리뷰 — 검출기 물리보다 임상 응용에 초점. 계산광학 직접 신호 아님.<br>
+  <strong>갑상선암 다중모달 DL (BMC Medical Imaging)</strong>: 초음파+세포학 융합 진단 — 계산광학보다 임상 AI 쪽. 다중모달 융합 방법론 참조 시에만 읽을 것.<br>
+  <strong>THz 그래핀 메타표면 흡수체 (Physica Scripta)</strong>: EMI 차폐 응용 전문. 메타표면 설계 원리 참조 이외 직접 응용은 제한적.<br>
+  <strong>SAR 희소 이미징 딥 이퀄리브리엄 (J. App. Remote Sensing)</strong>: SAR 도메인 전문 — 역문제 딥러닝 방법론 참조로만 쓸 것.
+</div>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Phase Imaging / Holography</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/oe.597254" target=_blank>Vision Transformer for Multi-Domain Phase Retrieval in CDI</a></strong> (Optics Express 2026-06-29)<br>
+- 문제: CDI 위상 복원이 단일 회절 도메인에 특화된 알고리즘으로 제한됨<br>
+- 방법: ViT를 써서 여러 회절 도메인에 걸친 다중 도메인 위상 복원<br>
+- 의미: FP 다중 조명 위상 복원에 이식 가능한 self-attention 기반 프레임워크
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.59717/j.xinn-life.2026.100231" target=_blank>Interferometric Image Scanning Microscopy: Label-Free Super-Resolution in Live Cells</a></strong> (The Innovation Life 2026-01-01)<br>
+- 문제: 형광 라벨의 세포 독성 없이 살아있는 세포 초해상도 달성<br>
+- 방법: 간섭계 + 이미지 스캐닝 현미경 결합으로 라벨 없이 초해상도<br>
+- 의미: label-free 초해상도 생명과학 이미징의 실용적 경로. [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/ao.599656" target=_blank>High-Speed 2D Flow Mapping via Imaging Focused Laser Differential Interferometry</a></strong> (Applied Optics 2026-06-29)<br>
+- 문제: 기존 레이저 차동 간섭계가 단점(point) 측정에 제한됨<br>
+- 방법: 이미징 기반 집속 레이저 LDI를 2D로 확장해 공간 분포 유속 벡터 맵<br>
+- 의미: 2D 유속 필드 간섭계 측정의 고속화
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/oe.597475" target=_blank>Magnetically Switchable Metalens for Polarization-Dependent Nonreciprocal Wavefront Manipulation</a></strong> (Optics Express 2026-06-29)<br>
+- 문제: 정적 메타렌즈는 파면 제어를 실시간으로 전환할 수 없음<br>
+- 방법: 자기장 인가로 전환되는 능동 메타렌즈, 편광 의존 비상호 파면 제어<br>
+- 의미: 능동 메타광학 소자 방향, 다기능 파면 제어 가능성. [방법전환]
+</div>
+
+<h3>Meta-Optics / Diffractive</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1002/lpor.71477" target=_blank>Deep Learning-Assisted Inverse Design of THz Bilayer Split-Ring Metasurface Wave Plates</a></strong> (Laser &amp; Photonics Reviews 2026-06-29)<br>
+- 문제: THz 다층 색수차 보정 파형판 역설계가 시행착오 반복으로 시간 소모적<br>
+- 방법: RMCV-MDN 확률적 다중 솔루션 프레임워크로 여러 구조 해 동시 탐색<br>
+- 의미: 메타표면 역설계의 딥러닝화 + 다중 솔루션 탐색 접근. [방법전환] [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1088/1361-665x/ae83ef" target=_blank>Multiband EIT-/EIR-Like Metasurface + Neural Network Parameter Retrieval</a></strong> (Smart Materials and Structures 2026-06-29)<br>
+- 문제: EIT/EIR 메타표면의 구조 파라미터 추출이 수작업 피팅에 의존<br>
+- 방법: 스펙트럼 응답에서 신경망이 구조 파라미터를 역산<br>
+- 의미: 메타표면 감지 루프 자동화. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1002/nap2.70172" target=_blank>Cryogenic Dielectric Metasurface-Integrated SNSPDs</a></strong> (Nanophotonics 2026-06-28)<br>
+- 문제: SNSPD의 온칩 광자 관리와 검출 효율 동시 최적화<br>
+- 방법: 다요소 SNSPD와 유전체 메타표면 집적, 시스템 검출 효율 + 타이밍 정밀도 향상<br>
+- 의미: 양자 광학 + 메타표면 통합의 실용적 시연. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1021/acsphotonics.6c00565" target=_blank>IR Frequency Up-conversion in AlGaAs-on-Insulator Nonlocal Metasurface</a></strong> (ACS Photonics 2026-06-29)<br>
+- 문제: IR 대역 광자를 실리콘 CMOS 센서로 직접 감지하기 어려움<br>
+- 방법: 비선형 비국소 메타표면에서 IR→가시광 주파수 업컨버전<br>
+- 의미: CMOS 호환 IR 감지 경로. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1088/1402-4896/ae83e7" target=_blank>Angle-Robust Graphene Metasurface Absorber for THz Shielding</a></strong> (Physica Scripta 2026-06-29)<br>
+- 문제: THz 대역 광대역 전자기 차폐 소자의 소형화와 입사각 강건성<br>
+- 방법: 그래핀 기반 UWB 메타표면 흡수체, 0.1~20 THz 198% FBW, 90% 이상 흡수율<br>
+- 의미: THz EMI 차폐 실용화. 소형 고성능 메타표면 흡수체 방향
+</div>
+
+<h3>Light-Field / Novel Sensors</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41377-026-02266-w" target=_blank>Expanded FOV LF XR Display with Metalens Array</a></strong> (Light: Science &amp; Applications 2026-06-29)<br>
+- 문제: Holography 기반 XR의 좁은 회절각·코히어런트 노이즈, 기존 LF 디스플레이의 좁은 FOV<br>
+- 방법: Metalens 어레이 + 라이트필드 방식 결합, VAC-free 인간 시야각 달성<br>
+- 의미: XR 디스플레이 실용화의 현실적 경로. [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1145/3820023" target=_blank>Real-time 3D Radiance Fields on Light Field Displays</a></strong> (ACM Computer Graphics 2026-06-29)<br>
+- 문제: 3DGS/Sparse Voxels 장면을 라이트필드 디스플레이에서 실시간으로 렌더링하는 파이프라인 부재<br>
+- 방법: 3DGS와 Sparse Voxels를 LFD에 최적화된 실시간 렌더러<br>
+- 의미: 3DGS + LFD 통합의 첫 논문. 안경 없는 몰입형 3D. [방법전환] [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41467-026-74976-z" target=_blank>Real-time Robust Autofocus for Scanning LF Microscopy</a></strong> (Nature Communications 2026-06-29)<br>
+- 문제: 생체 내 지속 스캐닝 LF 현미경에서 실시간 강건 자동초점 부재<br>
+- 방법: 실시간 강건 자동초점 알고리즘으로 생체 내 지속 이미징 가능<br>
+- 의미: LF 현미경 생명과학 응용 실용화. [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/ol.600424" target=_blank>FMDL-Net: Fourier Modulation and Dynamic Mixing for LF Super-Resolution</a></strong> (Optics Letters 2026-06-29)<br>
+- 문제: 라이트필드 초해상도에서 공간-각도 정보 교환 최적화<br>
+- 방법: 푸리에 변조 + 동적 믹싱으로 다중 시점 간 상관관계 활용<br>
+- 의미: LF 영상 처리 품질 개선. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41377-026-02298-2" target=_blank>β-Ga₂O₃ Photo-Synapse for In-Sensor Computing</a></strong> (Light: Science &amp; Applications 2026-06-29)<br>
+- 문제: 뉴로모픽 UV 센서의 안정성·선형성 개선<br>
+- 방법: 자기 포획 정공 조작으로 광시냅스 특성 제어, 인센서 AI 컴퓨팅<br>
+- 의미: 엣지 AI 광학 센서 방향. [방법전환]
+</div>
+
+<h3>Tomography / 3D Imaging</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/boe.595965" target=_blank>Wide-Field Real-Time Limited-Angle ODT</a></strong> (Biomedical Optics Express 2026-06-29)<br>
+- 문제: ODT의 속도 병목이 실시간 광범위 시야 적용을 막음<br>
+- 방법: 대규모 병렬 GPU 처리로 제한 각도 ODT를 실시간 광범위 시야로 확장<br>
+- 의미: 랩 ODT 파이프라인에 즉시 적용 가능한 GPU 병렬화 전략. [방법전환] [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.3390/jcm15135013" target=_blank>OCT Angiography in Neovascular AMD</a></strong> (J. Clinical Medicine 2026-06-27)<br>
+- 문제: 신생혈관성 AMD에서 CNV 감지의 임상 표준 확립<br>
+- 방법: OCTA와 형광 혈관조영술 비교 임상 연구<br>
+- 의미: OCTA 임상 표준화 진행 중임을 보여주는 신호
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1186/s12880-026-02515-9" target=_blank>MonoGID: Self-Supervised Monocular Endoscopic Depth</a></strong> (BMC Medical Imaging 2026-06-29)<br>
+- 문제: 내시경 영상에서 정반사와 동적 조명이 깊이 추정을 방해<br>
+- 방법: 기하·조명 인식 향상 + 지식 증류 기반 자기지도 단안 깊이 추정<br>
+- 의미: 내시경 3D 재구성 실용화 방향
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1007/s10554-026-03767-w" target=_blank>PCD-CT in Cardiovascular Imaging</a></strong> (Int'l J CV Imaging 2026-06-29)<br>
+- 문제: 기존 에너지 통합 검출기 CT의 스펙트럼 해상도·선량 한계<br>
+- 방법: 광자 계수 검출기 CT의 심혈관 응용 기술 진보 리뷰<br>
+- 의미: PCD-CT 임상 적용 확대 신호
+</div>
+
+<h3>Virtual Staining / Pathology</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.3390/diagnostics16131993" target=_blank>Dual-Modal Autofluorescence + CycleGAN for H&amp;E-like Generation</a></strong> (Diagnostics 2026-06-26)<br>
+- 문제: H&amp;E 염색이 라이브 조직에 시약 독성 문제 유발<br>
+- 방법: FAD + NADH 듀얼모달 자가형광 + CycleGAN으로 H&amp;E 유사 이미지 생성<br>
+- 의미: label-free 병리학의 proof-of-concept. 시약 없이 병리 진단 이미지 생성 경로. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1016/j.rio.2026.101066" target=_blank>High-Q 2D Photonic Crystal Sensor for Leukemic Cell Detection</a></strong> (Results in Optics 2026-06-01)<br>
+- 문제: 백혈병 혈구 세포를 라벨 없이 분류하는 실용적 광학 센서 부재<br>
+- 방법: 열안정성 높은 고Q 2D 광자결정 공명 센서<br>
+- 의미: 라벨 없는 혈구 분류 광학 센서 방향. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1186/s12880-026-02526-6" target=_blank>Multimodal DL for Papillary Thyroid Carcinoma Diagnosis</a></strong> (BMC Medical Imaging 2026-06-27)<br>
+- 문제: 초음파 단독 또는 세포학 단독의 갑상선암 진단 한계<br>
+- 방법: 초음파 + 세포학 다중모달 딥러닝 융합 진단<br>
+- 의미: 다중모달 융합 의료 AI 방향
+</div>
+
+<h3>Reconstruction / Inverse Problems</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41377-026-02317-2" target=_blank>Multi-dimensional Spatial-Temporal Projection Ultrafast Compressed Imaging</a></strong> (Light: Science &amp; Applications 2026-06-29)<br>
+- 문제: 비반복 과도 현상(광합성·단백질 폴딩) 포착을 기존 방법으로는 단일 샷으로 할 수 없음<br>
+- 방법: 다차원 시공간 투영으로 공간-시간 정보를 단일 측정에 압축<br>
+- 의미: 압축 감지 응용 범위를 비반복 이벤트로 확장. [방법전환] [실사용전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.3390/opt7040045" target=_blank>Video Compressive Imaging with High-Frequency Encoding</a></strong> (Optics 2026-06-28)<br>
+- 문제: VCI 고주파 인코딩으로 세부 정보 손실 방지<br>
+- 방법: 고주파 패턴 인코딩 + 샘플링 속도 조정으로 구조적 샘플링 효과 균형<br>
+- 의미: 압축 비디오 이미징 품질 향상. [방법전환]
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1117/1.jrs.20.026516" target=_blank>2D Sparse SAR Imaging via Echo Preprocessing + Deep Equilibrium</a></strong> (J. Applied Remote Sensing 2026-06-29)<br>
+- 문제: SAR 에코 도메인 방위각-거리 결합이 희소 이미징 복원을 어렵게 함<br>
+- 방법: 에코 전처리로 결합 문제 완화 + 딥 이퀄리브리엄 네트워크로 희소 복원<br>
+- 의미: 역문제 딥 이퀄리브리엄 네트워크의 SAR 응용. [방법전환]
+</div>
+
+<h3>Deep Learning Methods</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41524-026-02193-9" target=_blank>ML Pipeline for Low-SNR and OOD TEM Denoising</a></strong> (npj Computational Materials 2026-06-27)<br>
+- 문제: 빔 민감 재료 HRTEM 이미지가 CMOS 직접전자 검출기 극저 SNR + 분포 외 데이터<br>
+- 방법: ML 파이프라인으로 저 SNR과 OOD 조건을 동시에 처리<br>
+- 의미: 특수 센서 + OOD 노이즈 조건 처리 방법론. 비표준 이미징 노이즈에 참조 가능
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.3390/jimaging12070282" target=_blank>Optical System for Off-Axis Polarization Super-Resolution with Four Sub-Apertures</a></strong> (J. Imaging 2026-06-26)<br>
+- 문제: 여러 편광 상태를 순차 촬영 없이 동시에 고해상도로 포착<br>
+- 방법: TIR + DMD 4개 서브어퍼처로 다중 편광 동시 초해상도 촬상<br>
+- 의미: 다중 편광 동시 획득 광학 시스템 설계 방향. [방법전환]
+</div>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://doi.org/10.1038/s41377-026-02266-w" target=_blank>Expanded FOV LF XR Display with Metalens Array (Light:S&amp;A)</a></li>
+  <li><a href="https://doi.org/10.1145/3820023" target=_blank>3DGS on Light Field Displays (ACM CG)</a></li>
+  <li><a href="https://doi.org/10.1038/s41377-026-02317-2" target=_blank>Ultrafast Compressed Imaging (Light:S&amp;A)</a></li>
+  <li><a href="https://doi.org/10.1002/lpor.71477" target=_blank>THz Metasurface DL Inverse Design (Laser &amp; Photonics Reviews)</a></li>
+  <li><a href="https://doi.org/10.1088/1361-665x/ae83ef" target=_blank>EIT Metasurface + NN Parameter Retrieval (Smart Materials)</a></li>
+  <li><a href="https://doi.org/10.1364/oe.597254" target=_blank>ViT Multi-Domain Phase Retrieval CDI (Optics Express)</a></li>
+  <li><a href="https://doi.org/10.1364/boe.595965" target=_blank>Real-Time Wide-Field ODT (Biomedical Optics Express)</a></li>
+  <li><a href="https://doi.org/10.3390/diagnostics16131993" target=_blank>CycleGAN H&amp;E from Autofluorescence (Diagnostics)</a></li>
+  <li><a href="https://doi.org/10.1002/nap2.70172" target=_blank>Cryogenic Metasurface-Integrated SNSPDs (Nanophotonics)</a></li>
+  <li><a href="https://iilab.io/paper-daily-summary/index.html" target=_blank>← 전체 아카이브</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+소스: Crossref/OpenAlex 저널 논문 (2026-06-30 수집) — arXiv /new 2026-06-30 listing 미발행<br>
+RSS: <a href="../feed.xml">feed.xml</a>
+</footer>
+
+</body>
+</html>

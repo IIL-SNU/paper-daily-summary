@@ -1,0 +1,208 @@
+{
+  "date": "2026-06-30",
+  "clusters": [
+    {
+      "cluster": "메타표면 역설계의 딥러닝화",
+      "papers": [
+        {
+          "title": "Deep Learning-Assisted Inverse Design of THz Bilayer Split-Ring Metasurface Wave Plates",
+          "doi": "https://doi.org/10.1002/lpor.71477",
+          "journal": "Laser & Photonics Reviews",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "Multiband EIT-/EIR-Like Metasurface for Sensing with Neural-Network-Assisted Parameter Retrieval",
+          "doi": "https://doi.org/10.1088/1361-665x/ae83ef",
+          "journal": "Smart Materials and Structures",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Cryogenic Dielectric Metasurface-Integrated Superconducting Nanowire Single-Photon Detectors",
+          "doi": "https://doi.org/10.1002/nap2.70172",
+          "journal": "Nanophotonics",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "메타표면 설계가 RCWA 시뮬레이션 반복 방식에서 딥러닝 역설계 방식으로 이동하는 흐름이 THz 파형판 역설계(RMCV-MDN 확률적 다중 솔루션)와 EIT 감지 역산(신경망 파라미터 역산) 두 방향에서 동시에 저널에서 확인됨. 어제 arXiv의 RCWA PCNN 신호와 방향이 일관됨.",
+      "confidence": "High",
+      "confidence_note": "두 편의 독립적 저널 논문이 같은 방향(DL 역설계)을 가리키며, 어제 arXiv RCWA PCNN 신호와 일관성 있게 이어짐",
+      "lab_action": "RMCV-MDN 프레임워크를 랩의 THz 또는 가시광 메타렌즈 역설계에 적용 — 다중 솔루션 탐색 능력이 단일 솔루션 결정론적 역설계 대비 설계 공간 커버리지 개선 ablation"
+    },
+    {
+      "cluster": "라이트필드 디스플레이 × 3DGS 통합",
+      "papers": [
+        {
+          "title": "Expanded Field of View Light-Field XR Display with Metalens Array",
+          "doi": "https://doi.org/10.1038/s41377-026-02266-w",
+          "journal": "Light: Science & Applications",
+          "importance_tags": ["[실사용전환]"]
+        },
+        {
+          "title": "Real-time 3D Radiance Fields on Light Field Displays",
+          "doi": "https://doi.org/10.1145/3820023",
+          "journal": "Proc. ACM Computer Graphics",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "Real-time Robust Autofocus for Sustained Intravital Scanning Light Field Microscopy",
+          "doi": "https://doi.org/10.1038/s41467-026-74976-z",
+          "journal": "Nature Communications",
+          "importance_tags": ["[실사용전환]"]
+        }
+      ],
+      "why": "라이트필드 디스플레이가 metalens 어레이(VAC-free 인간 시야각)와 3DGS 실시간 렌더링 두 방향에서 동시에 받쳐지는 수렴 신호. 두 논문을 연결하면 '3DGS → LF 렌더링 → metalens 어레이 출력' 파이프라인 윤곽이 그려짐.",
+      "confidence": "High",
+      "confidence_note": "두 Light/ACM 논문이 독립적으로 같은 수렴 지점을 향하며, Nature Comms 현미경 autofocus 논문이 라이트필드 기술의 생명과학 응용 깊이를 보여줌",
+      "lab_action": "ACM CG 3DGS-on-LFD 렌더러를 Light:S&A metalens 어레이 FOV 파라미터에 맞춰 통합 시뮬레이션 — 렌더링 충실도(PSNR/시야각)와 지연시간 트레이드오프 정량화"
+    },
+    {
+      "cluster": "단일샷 초고속 압축 이미징",
+      "papers": [
+        {
+          "title": "Multi-dimensional Spatial-Temporal Projection Ultrafast Compressed Imaging",
+          "doi": "https://doi.org/10.1038/s41377-026-02317-2",
+          "journal": "Light: Science & Applications",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "Video Compression Imaging Technology Based on High-Frequency Encoding",
+          "doi": "https://doi.org/10.3390/opt7040045",
+          "journal": "Optics",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Two-dimensional Sparse SAR Imaging via Echo Preprocessing and Deep Equilibrium",
+          "doi": "https://doi.org/10.1117/1.jrs.20.026516",
+          "journal": "Journal of Applied Remote Sensing",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "비반복 과도 현상을 단일 샷으로 포착하는 다차원 시공간 투영 초고속 압축 이미징이 핵심 신호. 고주파 VCI 인코딩과 SAR 딥 이퀄리브리엄 논문이 '단일 측정에서 최대 정보 추출' 원칙을 다른 도메인에서 보여줌.",
+      "confidence": "Medium",
+      "confidence_note": "Light:S&A 논문이 클러스터를 이끌지만 VCI와 SAR은 서로 다른 응용 도메인. 클러스터 결속 중간 수준",
+      "lab_action": "Light:S&A 다차원 시공간 투영 방법을 랩의 DMD 기반 압축 이미징 시스템에 이식 — 단일샷 포착 가능 이벤트 속도 한계와 재구성 SNR 간 트레이드오프 실험"
+    },
+    {
+      "cluster": "위상 이미징 세 갈래 — CDI, 간섭, ODT",
+      "papers": [
+        {
+          "title": "Vision Transformer for Multi-Domain Phase Retrieval in Coherent Diffraction Imaging",
+          "doi": "https://doi.org/10.1364/oe.597254",
+          "journal": "Optics Express",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Interferometric Image Scanning Microscopy: Label-Free Super-Resolution in Live Cells",
+          "doi": "https://doi.org/10.59717/j.xinn-life.2026.100231",
+          "journal": "The Innovation Life",
+          "importance_tags": ["[실사용전환]"]
+        },
+        {
+          "title": "Wide-Field Real-Time Limited-Angle ODT via Massively Parallel Processing",
+          "doi": "https://doi.org/10.1364/boe.595965",
+          "journal": "Biomedical Optics Express",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        }
+      ],
+      "why": "CDI 위상 복원이 단일 도메인에서 다중 도메인 ViT로, 간섭계 현미경이 형광 없이 살아있는 세포 초해상도로, ODT가 GPU 병렬화로 실시간 광범위 시야로 이동하는 세 방향의 위상 이미징 진전.",
+      "confidence": "Medium",
+      "confidence_note": "세 논문이 위상 이미징 큰 우산 아래 있지만 CDI, 간섭, ODT로 하위 분야가 다름. ViT-CDI와 실시간 ODT가 랩 ROI와 직접 관련",
+      "lab_action": "ViT 다중 도메인 위상 복원을 FP 위상 복원에 이식 — 기존 ADMM/GS 대비 수렴 속도와 노이즈 강건성 비교 ablation; 실시간 ODT GPU 병렬화 전략을 랩 파이프라인에 적용"
+    },
+    {
+      "cluster": "Label-free 가상 염색 · 생체광학 센서",
+      "papers": [
+        {
+          "title": "Dual-Modal Autofluorescence Microscopy for CycleGAN-Based H&E-like Image Generation in Liver Tissue",
+          "doi": "https://doi.org/10.3390/diagnostics16131993",
+          "journal": "Diagnostics",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "Thermally Stable High-Q 2D Photonic Crystal Sensor for Label-Free Detection of Leukemic Blood Cells",
+          "doi": "https://doi.org/10.1016/j.rio.2026.101066",
+          "journal": "Results in Optics",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "H&E 염색 시약 없이 자가형광으로 병리 이미지를 생성하는 CycleGAN 방법과 라벨 없이 백혈병 세포를 감지하는 광자결정 센서가 모두 '시약·라벨 없이 광학으로 조직·세포 상태 판단'하는 흐름을 보여줌.",
+      "confidence": "Medium",
+      "confidence_note": "CycleGAN 논문은 proof-of-concept 수준, 광자결정 센서는 소자 집적도 측면 추가 검증 필요. 클러스터 신호 강도는 중간",
+      "lab_action": "CycleGAN H&E 생성 파이프라인을 랩 자가형광 현미경 데이터에 적용 — FAD/NADH 채널 비율이 H&E 유사도(FID + 병리의 맹검 평가)에 미치는 영향 ablation"
+    }
+  ],
+  "insights": [
+    {
+      "title": "메타표면 역설계가 확률적 딥러닝으로 이동하는 이중 신호",
+      "claim": "THz QWP 역설계(RMCV-MDN 확률적 다중 솔루션)와 EIT 감지 역산(신경망 파라미터 역산)이 같은 날 독립적 저널에서 나왔고, 어제 arXiv RCWA PCNN 신호와 방향이 일관되어 메타표면 역설계의 딥러닝화가 이번 주의 지속 신호임을 확인.",
+      "papers": [
+        {
+          "title": "Deep Learning-Assisted Inverse Design of THz Bilayer Split-Ring Metasurface Wave Plates",
+          "doi": "https://doi.org/10.1002/lpor.71477",
+          "journal": "Laser & Photonics Reviews",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "Multiband EIT-/EIR-Like Metasurface + Neural Network Parameter Retrieval",
+          "doi": "https://doi.org/10.1088/1361-665x/ae83ef",
+          "journal": "Smart Materials and Structures",
+          "importance_tags": ["[방법전환]"]
+        }
+      ]
+    },
+    {
+      "title": "라이트필드 디스플레이 + 3DGS + Metalens — 세 방향의 XR 수렴 신호",
+      "claim": "ACM CG의 3DGS-on-LFD 렌더링과 Light:S&A의 metalens 어레이 VAC-free XR 디스플레이가 같은 날 나와, '3DGS 장면 표현 → LF 렌더링 → metalens 어레이 출력' 파이프라인 윤곽이 처음으로 그려지는 신호.",
+      "papers": [
+        {
+          "title": "Expanded FOV Light-Field XR Display with Metalens Array",
+          "doi": "https://doi.org/10.1038/s41377-026-02266-w",
+          "journal": "Light: Science & Applications",
+          "importance_tags": ["[실사용전환]"]
+        },
+        {
+          "title": "Real-time 3D Radiance Fields on Light Field Displays",
+          "doi": "https://doi.org/10.1145/3820023",
+          "journal": "Proc. ACM Computer Graphics",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        }
+      ]
+    },
+    {
+      "title": "단일샷 초고속 압축 이미징 — 비반복 과도 현상으로 응용 범위 확장",
+      "claim": "광합성 에너지 전달·단백질 폴딩 같은 비반복 과도 현상을 단일 샷으로 포착하는 다차원 시공간 투영 초고속 압축 이미징이 압축 감지 응용 범위를 '비반복 이벤트'로 확장하는 구체적인 시스템을 시연.",
+      "papers": [
+        {
+          "title": "Multi-dimensional Spatial-Temporal Projection Ultrafast Compressed Imaging",
+          "doi": "https://doi.org/10.1038/s41377-026-02317-2",
+          "journal": "Light: Science & Applications",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        }
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "RMCV-MDN 확률적 역설계 프레임워크를 가시광 메타렌즈에 이식",
+      "claim": "Laser & Photonics Reviews THz QWP 역설계(RMCV-MDN)의 확률적 다중 솔루션 접근을 랩의 가시광 나노필라 메타렌즈 역설계에 적용 — 제조 공정 오차 허용 가능한 여러 설계 해 동시 탐색",
+      "supporting_papers": [
+        {"title": "Deep Learning-Assisted Inverse Design of THz Bilayer Split-Ring Metasurface Wave Plates", "doi": "https://doi.org/10.1002/lpor.71477"}
+      ]
+    },
+    {
+      "title": "3DGS-on-LFD 렌더러를 metalens 어레이 FOV 파라미터에 맞춰 통합",
+      "claim": "ACM CG 3DGS-on-LFD 렌더러와 Light:S&A metalens 어레이 XR 디스플레이 스펙을 통합 시뮬레이션 — 렌더링 충실도와 지연시간 트레이드오프 정량화",
+      "supporting_papers": [
+        {"title": "Real-time 3D Radiance Fields on Light Field Displays", "doi": "https://doi.org/10.1145/3820023"},
+        {"title": "Expanded FOV Light-Field XR Display with Metalens Array", "doi": "https://doi.org/10.1038/s41377-026-02266-w"}
+      ]
+    },
+    {
+      "title": "ViT 다중 도메인 CDI 위상 복원을 FP 위상 복원에 이식",
+      "claim": "Optics Express ViT 다중 도메인 위상 복원 아키텍처를 FP(Fourier Ptychography) 다중 조명 위상 복원에 이식 — 기존 ADMM/GS 알고리즘 대비 수렴 속도와 노이즈 강건성 비교",
+      "supporting_papers": [
+        {"title": "Vision Transformer for Multi-Domain Phase Retrieval in CDI", "doi": "https://doi.org/10.1364/oe.597254"}
+      ]
+    }
+  ]
+}
