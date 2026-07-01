@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T05:48:07+00:00",
+  "generated_at": "2026-07-01T03:16:55+00:00",
   "source": "repo-local saved daily /new metadata only; no external arXiv fetch",
   "note": "Per-category /new counts include cross-listed entries when recorded as new+cross. Replacement/update-only entries are excluded. Weekend reports skipped.",
   "windows": [
@@ -182,6 +182,20 @@
       "scope": "new+cross; replacements excluded",
       "source": "trends/2026-06-30.json",
       "weekday": "Tue"
+    },
+    {
+      "date": "2026-07-01",
+      "total": 591,
+      "by_cat": {
+        "cs.LG": 164,
+        "cs.CV": 169,
+        "cs.AI": 234,
+        "eess.IV": 2,
+        "eess.SP": 22
+      },
+      "scope": "new+cross; replacements excluded",
+      "source": "trends/2026-07-01.json",
+      "weekday": "Wed"
     }
   ]
 }

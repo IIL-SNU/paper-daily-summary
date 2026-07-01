@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-07-01</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] blockquote,html[data-theme=dark] th,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+html[data-theme=dark] .ins{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .dd{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+<button id=themeToggle aria-label="Toggle dark mode">🌙</button>
+<script>(function(){var btn=document.getElementById('themeToggle');function setTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);btn.textContent=t==='dark'?'☀️':'🌙';}btn.addEventListener('click',function(){setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');});btn.textContent=document.documentElement.dataset.theme==='dark'?'☀️':'🌙';})();</script>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-07-01 (수요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-07-01 (수요일)</div>
+  <div>📚 소스: arXiv /new 2026-07-01 + Crossref/OpenAlex 저널 · cs.LG/cs.CV/cs.AI/eess.IV/eess.SP</div>
+  <div>🔢 arXiv: cs.LG 164 · cs.CV 169 · cs.AI 234 · eess.IV 2 · eess.SP 22 (총 591편 new+cross)</div>
+  <div>🔢 분류 결과: 총 902건 스캔(저널 포함) · ROI 배정 273건 (30.3%)</div>
+  <div>⚠️ 오늘 eess.IV(계산광학 핵심 카테고리) arXiv 신규가 단 2편으로 평소보다 매우 적습니다. 오늘의 광학 신호 대부분은 저널(Crossref/OpenAlex)과 cs.CV/AI 크로스리스트에서 나왔습니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 어제(6/30)처럼 하나의 큰 사건이 터진 날이 아니라, 계산광학의 여러 작은 흐름들이 각자 조용히 방향을 트는 날입니다. eess.IV arXiv 신규가 2편뿐이라 오늘 신호는 대부분 저널에서 나왔는데, <strong>Fourier ptychography가 정지 영상 초고해상도라는 원래 용도에서 벗어나 동영상 속도 촬영·극자외선 파장·가상 염색까지 응용을 넓히는 논문 세 편이 같은 날 나왔습니다.</strong> 반대로 <strong>메타표면은 어제 이어지던 "AI 역설계" 신호가 오늘은 끊기고, 10편 모두 특정 광학 기능을 만드는 하드웨어 논문으로만 채워졌습니다</strong> — 3일 연속 신호가 하루 쉬어가는 모양새입니다. 또 하나 눈에 띄는 건 <strong>물리적 제약을 신경망에 명시적으로 넣는 역문제 해법이 단층촬영·핵융합로 온도 측정·컴퓨터 그래픽스 역렌더링이라는 서로 무관한 세 분야에서 동시에 나타난 점</strong>인데, 이건 순수 딥러닝 예측을 그대로 믿지 않고 물리 기반 재검증을 거치는 설계가 도메인을 가리지 않고 퍼지고 있다는 뜻입니다. 어제 27편이었던 3D Gaussian Splatting은 오늘 4편으로 급격히 줄면서 응용 확산이 아니라 압축·효율 쪽으로 관심이 좁아졌습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(2026-07-01 수요일) arXiv /new에는 cs.LG 164편, cs.CV 169편, cs.AI 234편, eess.IV 2편, eess.SP 22편으로 총 591편이 발행됐습니다. 전체 스캔 902건(저널 포함) 중 ROI 배정 273건(30.3%)으로, 어제(2026-06-30) 446/1,312(34%)보다 절대 편수와 비율 모두 낮아졌습니다. 특히 eess.IV가 2편뿐이라는 점이 눈에 띄는데, 계산광학의 핵심 arXiv 카테고리가 하루 조용히 쉬어가면서 오늘 리포트의 무게중심이 저널 쪽으로 확실히 이동했습니다.</p>
+<p>이번 주(2026-06-29~07-04) 관점에서 보면, 어제까지 3일 연속 이어지던 메타표면 딥러닝 역설계 신호(6/29 RCWA PCNN, 6/30 THz RMCV-MDN + EIT 역산)가 오늘은 끊겼습니다. 오늘 저널의 메타표면 10편은 전부 특정 응용(단분자 현미경 콘덴서, 온칩 카이랄 발광, 다채널 정보 인코딩, 홀로그래피 암호화)을 다루는 하드웨어 논문이라, 방법론보다 디바이스 성능 쪽 무게가 실렸습니다. 3DGS는 어제 27편의 정점을 찍은 뒤 오늘 4편으로 급감했는데, 남은 4편이 전부 로봇 매핑·희소 시점·압축 표현처럼 효율화 문제를 다룬다는 점에서, 이번 주 3DGS 흐름이 "얼마나 많은 곳에 쓸 수 있는가"에서 "얼마나 적은 자원으로 쓸 수 있는가"로 갈라지는 신호로 보입니다. Fourier ptychography는 어제는 신호가 없었는데, 오늘 갑자기 세 편이 동시에 나오면서 이번 주 처음으로 뚜렷한 클러스터를 형성했습니다.</p>
+<p>내일(목요일)에는 메타표면 역설계 신호가 다시 나오는지(3일 연속 후 하루 공백이 우연인지 패턴 전환인지 판가름), 그리고 오늘 나온 물리 제약 기반 역문제 해법이 계산광학 도메인(FP, holography, ODT)에서도 등장하는지가 관찰 포인트입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(2026-06-30)는 eess.IV에서 역문제 재구성 4방향(zero-shot DIP, PnP 보정, FBP-Jacobian 딥 언롤링, DRO)이 동시에 나오고, Herculaneum 파피루스 완전 해독이라는 큰 응용 사례가 겹치면서 계산광학 쪽에서 가장 밀도 높은 하루였습니다.</p>
+<p>오늘은 eess.IV 신규가 2편뿐이라 그런 밀집도는 사라졌지만, 대신 <strong>"물리 기반 재검증을 신경망에 넣는" 같은 설계 원칙이 도메인을 넘나드는 모습</strong>이 보입니다. 어제 DECT-DRNet이 CT 재구성에 FBP Jacobian을 넣었다면, 오늘은 Computed Laminography 논문이 diffusion model과 3D 반복 재구성(MBIR)을 결합해 데이터가 불완전한 영역까지 데이터 일관성을 지키면서 복원 범위를 넓히고, 핵융합로 온도장 재구성 논문은 열 확산이라는 물리 관계를 그래프 구조로 신경망에 명시하며, 컴퓨터 그래픽스 역렌더링 논문은 diffusion model의 재질 예측을 그대로 믿지 않고 정규화 항으로만 활용합니다. 메타표면 쪽은 어제의 THz/EIT 역설계 신호가 오늘은 하드웨어 응용 논문 10편으로 대체되면서 방향이 바뀌었고, 3DGS는 어제 27편의 응용 확산에서 오늘 4편의 효율화 논문으로 규모와 방향이 동시에 줄었습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Fourier Ptychography가 video-rate·EUV·가상 염색으로 흩어짐</strong><span class=pill>HOT</span></td>
+  <td>
+    <a href="https://doi.org/10.1038/s41467-026-75092-8" target=_blank>Video-rate gigapixel ptychography via space-time neural field representations</a> (Nature Communications)<br>
+    <a href="https://doi.org/10.37188/lam.2026.112" target=_blank>Table-top EUV grazing-reflection ptychography with full-pose self-calibration</a> (Light: Advanced Manufacturing)<br>
+    <a href="https://doi.org/10.1002/advs.76292" target=_blank>Hardware-Attentive Programmable FP Enables Task-Adaptive Label-Free Virtual Staining</a> (Advanced Science)
+  </td>
+  <td>Fourier ptychography는 원래 저배율 렌즈로 넓은 시야와 높은 해상도를 동시에 얻는 방법인데, 여러 장의 조명 이미지를 순서대로 찍어야 해서 정지된 샘플에만 쓸 수 있다는 한계가 있었습니다. 오늘 나온 세 논문은 이 한계를 각각 다른 방향에서 건드립니다. Nature Communications 논문은 공간과 시간을 함께 표현하는 neural field로 기가픽셀 해상도를 유지하면서 비디오 속도 촬영을 가능하게 했고, Light: Advanced Manufacturing 논문은 같은 원리를 극자외선(EUV) 파장으로 확장해 탁상용 장비에서 자체 보정까지 구현했습니다. Advanced Science 논문은 FP로 얻은 위상 정보를 조직 가상 염색에 쓰면서, 작업 목적에 맞게 광학 하드웨어 자체를 프로그래밍 가능하게 만들었습니다. 세 논문이 같은 날 나왔다는 건 FP가 정지 영상 초고해상도라는 좁은 틀에서 벗어나 동영상, 짧은 파장, 임상 진단까지 응용 범위를 넓히고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>3편, 서로 다른 응용(가시광 동영상·EUV·병리)이지만 모두 저널 발행이라 arXiv 단계의 독립 검증은 아직 없음</small></td>
+  <td>video-rate ptychography의 space-time neural field 구조를 랩 FP 셋업에서 살아있는 세포 등 동적 샘플 촬영에 이식 가능한지 검토. EUV ptychography의 자체 보정 방식을 가시광 FP 조명 오차 교정에 적용. TAPO 하드웨어 적응형 가상 염색 구조와 랩 label-free 파이프라인 비교</td>
+</tr>
+<tr>
+  <td><strong>메타표면 저널 10편, 전부 하드웨어 응용 — arXiv 역설계 신호는 하루 공백</strong></td>
+  <td>
+    <a href="https://doi.org/10.1109/lpt.2026.3708802" target=_blank>High-NA Polarization-Insensitive Metasurface Condenser for Single-Molecule Microscopy</a> (IEEE PTL)<br>
+    <a href="https://doi.org/10.1002/adfm.76732" target=_blank>Spin-Selective Chiral Emission via On-Chip Meta-Optics</a> (Adv. Functional Materials)<br>
+    <a href="https://doi.org/10.1021/acsami.6c08093" target=_blank>Full-Space Janus Metasurface with Six Independent Information Channels</a> (ACS AMI)<br>
+    <a href="https://doi.org/10.3390/photonics13070624" target=_blank>Rotation-Driven Multifunctional Metasurface for Holography Encryption</a> (Photonics)
+  </td>
+  <td>어제(6/30)는 arXiv와 저널 양쪽에서 메타표면을 딥러닝으로 역설계하는 논문(THz 확률적 다중 솔루션, EIT 신경망 역산)이 이어졌는데, 오늘은 결이 다릅니다. 오늘 저널에서 나온 메타표면 논문 10편은 전부 특정 광학 기능(단분자 현미경 콘덴서, 온칩 카이랄 발광, 단일 주파수 다채널 정보 전송, 회전 스위칭 홀로그래피 암호화 등)을 시뮬레이션·제작·측정하는 하드웨어 논문이고, 딥러닝 역설계 언급이 없습니다. 오늘 arXiv에도 메타표면 새 논문이 없어서, 하루만 보면 메타표면 연구의 무게중심이 방법론에서 특정 디바이스 성능 쪽으로 옮겨간 날입니다.</td>
+  <td>Medium<br><small>10편 저널 동시 발행이지만 공통 방법론이 아니라 응용 다양성만 확인됨. 3일 연속이던 역설계 신호가 끊긴 것인지는 추가 관찰 필요</small></td>
+  <td>고개구수 콘덴서 메타표면 설계를 랩 단분자 형광 현미경 조명계에 시뮬레이션 적용. Janus 메타표면의 다채널 정보 인코딩을 홀로그래픽 디스플레이 다중화에 응용 가능성 검토. 다음 2~3일 arXiv에 메타표면 역설계 논문이 재등장하는지 추적</td>
+</tr>
+<tr>
+  <td><strong>물리 제약 내장 역문제 해법이 CT·핵융합로 온도장·역렌더링 세 도메인에서 동시 등장</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.31318" target=_blank>Wavelet-Optimized Pseudo-3D Accelerated Diffusion Model for Truncated Computed Laminography</a> (cs.CV)<br>
+    <a href="https://arxiv.org/abs/2606.31574" target=_blank>Temperature Field Reconstruction via Physics-aware Neural Operator Transformer</a> (cs.CV)<br>
+    <a href="https://arxiv.org/abs/2606.31065" target=_blank>Diffusion-Based Material Regularization for Physics-Based Inverse Rendering</a> (cs.CV)
+  </td>
+  <td>세 논문은 서로 완전히 다른 분야(비파괴 검사용 단층촬영, 핵융합로 온도 측정, 컴퓨터 그래픽스 역렌더링)를 다루지만 공통적으로 "데이터가 부족하거나 시야가 잘린 상태에서 물리적으로 말이 되는 답을 어떻게 복원할 것인가"를 풉니다. Computed Laminography 논문은 큰 평판 시료를 찍을 때 시야가 잘려 생기는 병문제를 2D diffusion model과 3D 반복 재구성을 결합해 완화하고, 온도장 재구성 논문은 느린 유한요소법 대신 열 확산이라는 물리 관계를 그래프로 명시한 신경망 연산자를 쓰며, 역렌더링 논문은 diffusion model의 재질 예측을 정답이 아니라 "이 영역들은 비슷할 것이다"라는 유사도 제약으로만 활용합니다. 세 논문 모두 순수 딥러닝 예측을 그대로 믿지 않고 물리적 제약이나 반복 최적화로 재검증하는 구조라는 공통점이 있어, 랩의 위상 복원·홀로그래피 재구성 설계에도 참고할 만합니다.</td>
+  <td>Medium<br><small>3편이 서로 다른 도메인이라 동일 커뮤니티 신호는 아니지만, 같은 설계 원칙(물리 제약 + diffusion/neural operator)이 독립적으로 반복됨</small></td>
+  <td>wavelet 정규화 + 3D MBIR 결합 구조를 랩 optical diffraction tomography의 제한 각도 재구성에 이식해 아티팩트 감소 비교. diffusion 예측을 유사도 정규화 항으로만 쓰는 역렌더링 트릭을 위상 복원 prior 설계에 응용 가능성 검토</td>
+</tr>
+<tr>
+  <td><strong>3DGS 27편→4편 급감, 응용 확산에서 압축·효율로 초점 이동</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.30809" target=_blank>GaussLite: Online Task-Conditioned 3DGS for Real-Time Robotic Mapping</a> (cs.CV)<br>
+    <a href="https://arxiv.org/abs/2606.31556" target=_blank>AugSplat: Radiance Field-Informed GS for Sparse-View Settings</a> (cs.CV)<br>
+    <a href="https://arxiv.org/abs/2606.32036" target=_blank>PointSplat: Compact GS via Human-Centric Prediction</a> (cs.CV)<br>
+    <a href="https://arxiv.org/abs/2606.31637" target=_blank>Intrinsic decomposition and editing of 3D Gaussian splats</a> (cs.AI)
+  </td>
+  <td>어제(6/30)는 3DGS가 위성 이미지, 도시 시뮬레이션, 동적 4D 장면 등 27편에 걸쳐 응용 도메인을 넓히는 날이었는데, 오늘은 편수도 4편으로 크게 줄었고 방향도 바뀌었습니다. GaussLite는 로봇이 실제로 필요한 작업 영역에만 계산 자원을 집중해서 불필요한 장면까지 정밀하게 표현하는 낭비를 줄이고, PointSplat은 여러 시점에서 같은 사람을 중복 인코딩하는 문제를 압축된 표현으로 해결합니다. 즉 오늘은 3DGS가 "어디에 쓸 수 있는가"보다 "얼마나 적은 자원으로 쓸 수 있는가"를 묻는 날로 좁혀졌습니다.</td>
+  <td>Low<br><small>4편으로 표본이 작고, 어제 27편 대비 급감이 일시적 변동인지 추세 전환인지는 며칠 더 지켜봐야 함</small></td>
+  <td>GaussLite의 task-conditioned 밀도 할당을 랩 볼류메트릭 홀로그래피 재구성에서 관심 영역에만 해상도를 집중하는 방식으로 검토. PointSplat의 중복 인코딩 제거 방식을 다중 시점 위상 이미징 데이터 압축에 참고</td>
+</tr>
+<tr>
+  <td><strong>디지털 병리학이 평평한 분류에서 계층적 진단·목적 적응형 촬영으로 이동</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.31100" target=_blank>TaxoMIL: Taxonomy-Constrained Learning for Hierarchical WSI Analysis</a> (cs.CV)<br>
+    <a href="https://doi.org/10.1002/advs.76292" target=_blank>Hardware-Attentive Programmable FP Virtual Staining</a> (Advanced Science)<br>
+    <a href="https://doi.org/10.1038/s41598-026-57893-5" target=_blank>3D Light Sheet Fluorescence Microscopy + 2D Histology Fusion</a> (Scientific Reports)
+  </td>
+  <td>기존 whole slide image 진단 모델은 여러 후보 중 하나를 고르는 평평한 분류 문제로 다뤄왔는데, 실제 병리 의사는 큰 범주를 먼저 판단하고 세부 진단으로 좁혀가는 계층적 추론을 합니다. TaxoMIL은 이 계층 구조를 모델에 명시적으로 반영합니다. 같은 날 나온 FP 기반 가상 염색 논문도 비슷한 방향을 보이는데, 정해진 하나의 염색 방식을 흉내 내는 대신 목적에 따라 촬영 방식 자체를 조정합니다. Light Sheet-히스톨로지 정합 논문은 얇은 절편 한 장이 아니라 3D 맥락에서 조직을 보려는 시도입니다. 세 논문 모두 병리 진단을 정해진 하나의 절차가 아니라 필요에 따라 구조와 촬영 방식을 조정하는 문제로 다시 보고 있습니다.</td>
+  <td>Low<br><small>세 논문이 서로 다른 저자군·문제 설정이라 직접 연결은 약하지만, 방향성이 겹쳐 관찰 가치가 있음</small></td>
+  <td>TaxoMIL의 계층 제약 학습을 랩 label-free 가상 염색 결과의 다단계 진단(양성/악성 → 세부 아형) 파이프라인에 적용 검토. Light Sheet-히스톨로지 정합 도구를 3D 볼류메트릭 가상 염색 검증에 참고</td>
+</tr>
+</tbody>
+</table>
+<p><small>※ Lensless/Coded Imaging(4편)과 Light-Field/Novel Sensors(1편)는 키워드 매칭 결과 대부분이 false positive(자율주행 3D occupancy, MRI distortion correction, spiking neural network pruning 등)로 확인되어 오늘은 독립 클러스터를 구성하지 못했습니다. 대신 저널의 light field 초해상도 논문(Pattern Recognition)과 terahertz 초해상도 논문(Optics & Laser Technology)은 Deep Learning Methods 버킷에 잘못 배정돼 있어 아래 버킷별 주요 논문에서 별도로 짚었습니다.</small></p>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<p><strong>공통 키워드:</strong> ptychography, metasurface, inverse problem, diffusion model, Gaussian splatting, whole slide image</p>
+<p><strong>arXiv 전용 신호</strong>(방법 중심): wavelet-optimized diffusion for computed laminography, physics-aware neural operator transformer, diffusion-based material regularization for inverse rendering, task-conditioned Gaussian splatting, taxonomy-constrained hierarchical WSI learning</p>
+<p><strong>저널 전용 신호</strong>(응용 중심): video-rate gigapixel ptychography, EUV table-top ptychography, hardware-attentive programmable FP virtual staining, 메타표면 10편(단분자 현미경 콘덴서·카이랄 발광·다채널 정보·홀로그래피 암호화), light sheet-histology fusion</p>
+<p>오늘은 arXiv eess.IV가 거의 비어 있어서 계산광학 신호 자체가 저널 쪽으로 쏠린 날입니다. arXiv의 cs.CV 크로스리스트 논문들이 물리 제약 기반 역문제라는 방법론 신호를 냈다면, 저널은 ptychography와 메타표면에서 완성된 하드웨어·시스템 결과를 보여줬습니다. 특히 메타표면은 어제까지 3일 연속 이어지던 arXiv-저널 동시 신호가 오늘 arXiv 쪽에서 끊기면서, 저널 단독 신호로 남았습니다.</p>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. Fourier ptychography가 정지 영상 초고해상도를 넘어 동영상·EUV·임상 진단으로 응용 확장</h3>
+  <p>오늘 저널에서 FP 관련 논문 세 편이 동시에 나왔는데, 각각 다른 병목을 겨냥합니다. 기존 FP는 여러 조명 각도로 이미지를 순서대로 찍어야 해서 움직이는 샘플에는 쓸 수 없었는데, Nature Communications 논문은 공간과 시간을 함께 표현하는 neural field 방식으로 이 순서 촬영을 비디오 속도까지 압축했습니다. Light: Advanced Manufacturing 논문은 같은 원리를 가시광이 아니라 극자외선(EUV) 파장으로 확장해서, 실험실 규모의 탁상용 장비에서 자체적으로 광학계 오차를 보정하는 기능까지 구현했습니다. Advanced Science 논문은 FP를 아예 다른 목적(염색 없이 조직을 가상으로 염색하는 것)에 써서, 촬영 목적에 맞게 조명 패턴 자체를 프로그래밍 가능하게 만들었습니다. 세 논문이 같은 날 나왔다는 건 FP 연구가 "해상도를 얼마나 높일 것인가"라는 단일 질문에서 벗어나 "어떤 상황에 쓸 수 있는가"로 질문이 넓어지고 있다는 뜻입니다.</p>
+  <p class=conf-note>Confidence: Medium — 저널 3편 동시 등장, 서로 다른 응용(동영상·EUV·병리)이지만 모두 저널 발행이라 arXiv 단계의 독립 검증은 아직 없음. [방법전환] [실사용전환]. 랩 FP 파이프라인에 직접 참고 가능</p>
+</div>
+
+<div class=ins>
+  <h3>2. 메타표면 연구의 무게중심이 하루 동안 딥러닝 역설계에서 하드웨어 응용으로 이동</h3>
+  <p>어제까지 3일 연속(6/29 RCWA PCNN, 6/30 THz RMCV-MDN + EIT 역산) 이어지던 "메타표면을 딥러닝으로 역설계한다"는 흐름이, 오늘은 저널 10편 어디에서도 보이지 않습니다. 대신 오늘 나온 메타표면 논문들은 단분자 현미경용 고개구수 콘덴서, 온칩에서 원하는 방향으로만 빛을 내보내는 카이랄 발광 소자, 하나의 주파수에서 여섯 개의 서로 다른 정보를 동시에 실어 보내는 Janus 메타표면, 회전만으로 여러 홀로그램 이미지를 전환하는 암호화 소자처럼 구체적인 광학 기능을 만드는 데 집중합니다. 이게 흥미로운 이유는, 메타표면 연구가 "어떻게 설계할 것인가"라는 방법론 질문과 "무엇을 만들 것인가"라는 응용 질문 사이를 며칠 단위로 오간다는 걸 보여주기 때문입니다. 하루만 보고 방법론 흐름이 끝났다고 판단하기는 이르고, 며칠 더 지켜봐야 합니다.</p>
+  <p class=conf-note>Confidence: Medium — 10편 저널 동시 발행이지만 오늘은 공통 방법론 신호가 아니라 응용 다양성만 확인됨. [스케일업] [위험보류]. 3일 연속 신호가 하루 끊긴 것이 우연인지 다음 며칠 확인 필요</p>
+</div>
+
+<div class=ins>
+  <h3>3. 물리 제약을 신경망에 명시적으로 넣는 역문제 해법이 서로 무관한 세 도메인에서 독립적으로 등장</h3>
+  <p>오늘 cs.CV에 올라온 세 논문은 비파괴 검사용 단층촬영, 핵융합로 부품 온도 측정, 컴퓨터 그래픽스 역렌더링이라는 전혀 다른 분야를 다루지만, 공통적으로 같은 문제를 풉니다 — 데이터가 부족하거나 시야가 잘려 있을 때 딥러닝이 만든 그럴듯한 답을 그대로 믿지 않고 물리 법칙으로 다시 검증하는 겁니다. Computed Laminography 논문은 diffusion model이 예측한 슬라이스들을 3D 반복 재구성으로 다시 맞춰서 데이터가 실제로 존재하는 부분과 모순되지 않게 만들고, 온도장 재구성 논문은 열이 어떻게 퍼지는지에 대한 물리 관계를 그래프 구조로 신경망 안에 직접 넣습니다. 역렌더링 논문은 diffusion model의 재질 예측값을 정답으로 쓰는 대신 "이 부분들은 재질이 비슷하게 나와야 한다"는 힌트로만 활용해서, 렌더링 방정식을 만족하는 답을 별도로 찾습니다. 세 논문이 서로 몰랐을 가능성이 높은데도 같은 설계 원칙에 도달했다는 건, 이 원칙이 계산 이미징 전반에서 통하는 일반적인 해법이라는 신호로 볼 수 있습니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편이 서로 다른 커뮤니티에서 독립적으로 나왔지만 같은 방법론 원칙을 공유. [방법전환] [해부분석]. 랩의 위상 복원·ODT 재구성에 직접 참고 가능</p>
+</div>
+
+<div class=ins>
+  <h3>4. 3DGS가 응용 확산에서 자원 효율화로 관심을 좁힘</h3>
+  <p>어제 27편이었던 3D Gaussian Splatting 논문이 오늘은 4편으로 줄었는데, 편수만 줄어든 게 아니라 다루는 문제도 달라졌습니다. 어제는 위성 이미지나 도시 시뮬레이션처럼 3DGS를 쓸 수 있는 새로운 장소를 찾는 논문이 많았다면, 오늘 4편은 전부 "이미 쓰기로 한 곳에서 계산과 저장을 얼마나 아낄 수 있는가"를 묻습니다. 로봇이 지도를 만들 때 작업과 무관한 배경까지 똑같이 정밀하게 표현하느라 자원을 낭비하지 않게 하거나, 같은 사람을 여러 각도에서 찍은 정보를 중복 저장하지 않게 압축하는 식입니다. 이런 변화는 3DGS가 "일단 어디에나 써보자"는 실험 단계를 지나 "실제로 로봇이나 실시간 스트리밍에 배포하려면 무엇을 줄여야 하는가"를 묻는 단계로 넘어가고 있다는 뜻일 수 있지만, 표본이 4편으로 적어 하루 관찰만으로 단정하기는 이릅니다.</p>
+  <p class=conf-note>Confidence: Low — 4편으로 표본이 작고, 어제 27편 대비 급감이 일시적 변동인지 추세 전환인지 판단하려면 며칠 더 필요. [실사용전환]</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+<ol>
+  <li>
+    <strong>Space-time neural field 표현을 랩 FP 셋업의 동적 샘플 촬영에 적용</strong><br>
+    Nature Communications의 video-rate gigapixel ptychography 구조를 참고해, 정지 샘플 전용이던 랩 FP 파이프라인이 살아있는 세포처럼 천천히 움직이는 샘플에서도 동작하는지 검증합니다.<br>
+    <em>실행 1주차:</em> 논문의 space-time neural field 표현 방식 문서화(공개 코드 있으면 clone) → 랩 FP 데이터셋 중 시간에 따라 변하는 샘플(세포 배양 등) 선정 → 기존 정지 영상 FP 파이프라인과 나란히 비교 → 프레임 속도·해상도 trade-off 정량화
+  </li>
+  <li>
+    <strong>Diffusion + 3D 반복 재구성 결합을 랩 제한 각도 ODT에 이식</strong><br>
+    Computed Laminography 논문의 2D diffusion model + 3D MBIR(model-based iterative reconstruction) 결합 구조를 optical diffraction tomography의 제한 각도(limited-angle) 문제에 적용해, 데이터가 없는 각도 영역까지 복원 범위를 넓힐 수 있는지 검증합니다.<br>
+    <em>실행 1주차:</em> 랩 ODT 데이터에서 제한 각도 조건 재현 → 논문의 wavelet 정규화 + translation-invariant 메커니즘 이해 → 2D diffusion slice 재구성 후 3D MBIR로 데이터 일관성 보정하는 파이프라인 프로토타입 → 기존 제한 각도 재구성 대비 아티팩트 정성 비교
+  </li>
+  <li>
+    <strong>TaxoMIL의 계층 제약 학습을 label-free 가상 염색 다단계 진단에 적용</strong><br>
+    가상 염색 결과에서 양성/악성이라는 큰 범주를 먼저 판단하고 세부 아형으로 좁혀가는 계층적 분류기를 만들어, 평평한 분류 대비 임상 해석 가능성이 개선되는지 확인합니다.<br>
+    <em>실행 1주차:</em> TaxoMIL 논문의 taxonomy 제약 학습 방식 정리 → 랩 가상 염색 데이터셋에 계층 라벨(대분류/세부분류) 존재 여부 확인 → 없으면 공개 병리 데이터셋으로 먼저 재현 → 계층 제약 유무에 따른 세부 진단 정확도 비교, negative result면 workshop short로 정리
+  </li>
+</ol>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p>※ 막대 너비는 catch-all Deep Learning Methods 버킷을 제외한 최댓값(Tomography/3D Imaging 43편)을 100%로 정규화. arXiv(new+cross) + 저널 합산.</p>
+<div>
+  <div class=bucket-bar><span class=nm>🔭 Fourier Ptychography/Microscopy</span><div class=bar><div class=fill style="width:7.0%"></div></div><span class=n>3</span></div>
+  <div class=bucket-bar><span class=nm>📷 Lensless/Coded Imaging</span><div class=bar><div class=fill style="width:9.3%"></div></div><span class=n>4</span></div>
+  <div class=bucket-bar><span class=nm>🌊 Phase Imaging/Holography</span><div class=bar><div class=fill style="width:32.6%"></div></div><span class=n>14</span></div>
+  <div class=bucket-bar><span class=nm>🔬 Meta-Optics/Diffractive</span><div class=bar><div class=fill style="width:23.3%"></div></div><span class=n>10</span></div>
+  <div class=bucket-bar><span class=nm>💡 Light-Field/Novel Sensors</span><div class=bar><div class=fill style="width:2.3%"></div></div><span class=n>1</span></div>
+  <div class=bucket-bar><span class=nm>🧊 Tomography/3D Imaging</span><div class=bar><div class=fill style="width:100%"></div></div><span class=n>43</span></div>
+  <div class=bucket-bar><span class=nm>🧬 Virtual Staining/Pathology</span><div class=bar><div class=fill style="width:46.5%"></div></div><span class=n>20</span></div>
+  <div class=bucket-bar><span class=nm>⚙️ Reconstruction/Inverse Problems</span><div class=bar><div class=fill style="width:53.5%"></div></div><span class=n>23</span></div>
+  <div class=bucket-bar><span class=nm>🤖 Deep Learning Methods (catch-all)</span><div class=bar><div class=fill style="width:100%"></div></div><span class=n>155</span></div>
+</div>
+<p><small>🔥 TOP3: Tomography/3D Imaging(43) · Reconstruction/Inverse Problems(23) · Virtual Staining/Pathology(20)  ❄️ BOTTOM2: Light-Field/Novel Sensors(1) · Fourier Ptychography/Microscopy(3)</small></p>
+<p>※ Tomography/3D Imaging은 대부분 임상 영상(OCT, PET/CT, CBCT) 저널 논문과 소수의 3DGS 논문으로 구성되며, 대부분 개별 진단·해부학 연구라 오늘 표에서는 클러스터화하지 않았습니다. Reconstruction/Inverse Problems도 클러스터 3에 포함된 3편 외에는 일반 최적화·로봇공학 논문이 다수 포함됩니다.</p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<div class=roi-item>
+  <strong>🔭 Fourier Ptychography/Microscopy</strong> (3편: JNL 3)<br>
+  ▸ <a href="https://doi.org/10.1038/s41467-026-75092-8" target=_blank>Video-rate gigapixel ptychography via space-time neural field representations</a> (Nature Communications) [JNL] — Tier A. 기가픽셀 해상도를 유지하며 비디오 속도 촬영 실현<br>
+  ▸ <a href="https://doi.org/10.37188/lam.2026.112" target=_blank>Table-top EUV grazing-reflection ptychography with full-pose self-calibration</a> (Light: Advanced Manufacturing) [JNL] — 탁상용 EUV ptychography 자체 보정<br>
+  ▸ <a href="https://doi.org/10.1002/advs.76292" target=_blank>Hardware-Attentive Programmable FP Virtual Staining</a> (Advanced Science) [JNL] — FP 하드웨어를 진단 목적에 맞게 프로그래밍
+</div>
+
+<div class=roi-item>
+  <strong>🌊 Phase Imaging/Holography</strong> (14편: AI 1, JNL 13)<br>
+  ▸ <a href="https://doi.org/10.1038/s41377-026-02344-z" target=_blank>Interferometric scattering for optical tomoslicing of transparent solids</a> (Light: Science & Applications) [JNL] — 간섭산란으로 투명 고체 내부를 층별로 절단하듯 관찰<br>
+  ▸ <a href="https://doi.org/10.1016/j.optlastec.2026.115783" target=_blank>Theoretical analysis of modulation design and efficient periodic strategy for phase retrieval</a> (Optics & Laser Technology) [JNL] — 위상 복원 변조 설계 이론 분석<br>
+  ▸ <a href="https://doi.org/10.1364/ao.604146" target=_blank>Focus prediction in time-lapse digital holographic microscopy with cell clusters</a> (Applied Optics) [JNL] — 시간 경과 홀로그래픽 현미경 자동 초점 예측
+</div>
+
+<div class=roi-item>
+  <strong>🔬 Meta-Optics/Diffractive</strong> (10편: JNL 10)<br>
+  ▸ <a href="https://doi.org/10.1109/lpt.2026.3708802" target=_blank>High-NA Polarization-Insensitive Metasurface Condenser for Single-Molecule Microscopy</a> (IEEE PTL) [JNL] — 단분자 현미경용 고개구수 무편광 콘덴서<br>
+  ▸ <a href="https://doi.org/10.1021/acsami.6c08093" target=_blank>Full-Space Janus Metasurface with Six Independent Information Channels</a> (ACS AMI) [JNL] — 단일 주파수 6채널 동시 정보 전송<br>
+  ▸ <a href="https://doi.org/10.1002/adfm.76732" target=_blank>Spin-Selective Chiral Emission via On-Chip Meta-Optics</a> (Adv. Functional Materials) [JNL] — 온칩 카이랄 발광·집속 제어
+</div>
+
+<div class=roi-item>
+  <strong>💡 Light-Field/Novel Sensors</strong> — 오늘 직접 신호 없음(분류된 1편은 spiking neural network pruning으로 false positive). 대신 Deep Learning Methods 버킷에 잘못 배정된 <a href="https://doi.org/10.1016/j.patcog.2026.114330" target=_blank>Light field image blind super-resolution via degradation representation learning</a> (Pattern Recognition) [JNL]이 실제로는 이 버킷에 해당하는 신호입니다 — 열화 표현 학습으로 라이트필드 이미지 블라인드 초해상도를 수행합니다.
+</div>
+
+<div class=roi-item>
+  <strong>🧊 Tomography/3D Imaging</strong> (43편: CV 10, AI 1, JNL 32)<br>
+  ▸ <a href="https://arxiv.org/abs/2606.31502" target=_blank>Fully Automated Segmentation of Retinal Atrophy and Ellipsoid Zone Thickness in OCT</a> (cs.CV) — Tier A. Dice 0.87-0.88, sub-pixel 정확도의 GA 모니터링 도구<br>
+  ▸ <a href="https://arxiv.org/abs/2606.30809" target=_blank>GaussLite: Online Task-Conditioned 3DGS for Real-Time Robotic Mapping</a> (cs.CV) — 작업 조건부 밀도 할당으로 온라인 3DGS 효율화<br>
+  ▸ <a href="https://doi.org/10.1038/s41377-026-02344-z" target=_blank>Interferometric scattering for optical tomoslicing of transparent solids</a> (Light: Science & Applications) [JNL] — 투명 고체 비파괴 단층 관찰
+</div>
+
+<div class=roi-item>
+  <strong>🧬 Virtual Staining/Pathology</strong> (20편: LG 1, CV 3, AI 1, JNL 15)<br>
+  ▸ <a href="https://arxiv.org/abs/2606.31100" target=_blank>TaxoMIL: Taxonomy-Constrained Learning for Hierarchical WSI Analysis</a> (cs.CV) — 계층적 임상 추론을 반영한 WSI 진단 구조<br>
+  ▸ <a href="https://doi.org/10.1002/advs.76292" target=_blank>Hardware-Attentive Programmable FP Virtual Staining</a> (Advanced Science) [JNL] — 목적 적응형 label-free 가상 염색<br>
+  ▸ <a href="https://doi.org/10.1038/s41598-026-57893-5" target=_blank>3D Light Sheet Fluorescence Microscopy + 2D Histology Fusion</a> (Scientific Reports) [JNL] — 3D 라이트시트와 2D 조직 절편 정합 도구
+</div>
+
+<div class=roi-item>
+  <strong>⚙️ Reconstruction/Inverse Problems</strong> (23편: LG 6, CV 8, AI 5, SP 2, JNL 1)<br>
+  ▸ <a href="https://arxiv.org/abs/2606.31318" target=_blank>Wavelet-Optimized Pseudo-3D Accelerated Diffusion Model for Truncated Computed Laminography</a> (cs.CV) — Tier A. diffusion + 3D MBIR로 제한 시야 단층 복원<br>
+  ▸ <a href="https://arxiv.org/abs/2606.31574" target=_blank>Temperature Field Reconstruction via Physics-aware Neural Operator Transformer</a> (cs.CV) — 열 확산 물리를 그래프로 명시한 신경망 연산자<br>
+  ▸ <a href="https://arxiv.org/abs/2606.31065" target=_blank>Diffusion-Based Material Regularization for Physics-Based Inverse Rendering</a> (cs.CV) — diffusion 예측을 유사도 제약으로 활용하는 역렌더링
+</div>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>Tier A — Video-rate gigapixel ptychography via space-time neural field representations [방법전환] [실사용전환]</h3>
+  <p><a href="https://doi.org/10.1038/s41467-026-75092-8" target=_blank>Nature Communications</a> · 저널</p>
+  <p><strong>왜 A급인가:</strong> Fourier ptychography는 여러 각도에서 조명을 바꿔가며 여러 장을 찍고 이를 합성해 고해상도 위상·진폭 이미지를 복원하는 방식인데, 이 순서 촬영 과정이 느려서 움직이는 샘플에는 쓸 수 없다는 게 오래된 병목이었습니다. 이 논문은 공간뿐 아니라 시간까지 함께 표현하는 neural field(연속 함수 형태로 장면을 표현하는 신경망)를 도입해서, 기가픽셀급 해상도를 유지하면서도 비디오 속도로 촬영이 가능하게 만들었습니다. 즉 예전에는 "정지된 샘플을 얼마나 자세히 볼 것인가"만 물었다면, 이제는 "움직이는 샘플을 실시간에 가깝게 볼 수 있는가"까지 답할 수 있게 된 겁니다. 랩에 중요한 이유는, 랩의 FP 파이프라인이 대부분 정지 샘플 전제로 설계돼 있는데 이 space-time neural field 구조를 이식하면 살아있는 세포처럼 천천히 변하는 샘플까지 촬영 범위를 넓힐 수 있기 때문입니다.</p>
+  <p><strong>약점:</strong> 저널 논문이라 abstract만으로는 정확한 프레임 속도·해상도 trade-off 수치를 확인하기 어렵습니다. neural field 학습에 필요한 계산 비용과 실시간성 사이의 균형도 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>메타표면 10편 (저널)</strong> [Claim risk] abstract 상당수가 비어 있거나 짧아(Crossref 메타데이터 한계), 실제 성능 수치와 비교 baseline을 본문에서 직접 확인해야 합니다.</p>
+  <p><strong>Video-rate ptychography (Nature Comms)</strong> [Metric risk] "video-rate"와 "gigapixel"을 동시에 달성했다는 주장의 구체적 프레임레이트·해상도 trade-off가 abstract만으로는 불명확합니다.</p>
+  <p><strong>Wavelet-Optimized CL-DM (2606.31318)</strong> [Baseline risk] "기존 2D 방법 대비 우수"라는 주장이 어떤 baseline·데이터셋 기준인지 abstract에서 구체적으로 드러나지 않습니다. 실제 시뮬레이션·실측 데이터 성능 수치 확인 필요.</p>
+  <p><strong>3DGS 4편 급감</strong> [Dataset risk] 표본이 너무 작아 "응용 확산에서 효율화로 이동"이라는 해석이 하루짜리 노이즈일 가능성을 배제할 수 없습니다.</p>
+  <p><strong>TaxoMIL (2606.31100)</strong> [Baseline risk] 계층 분류기·VLM 기반 방법 대비 우위를 abstract에서만 확인했고, 실제 taxonomy 정의 방식과 clutter case에서의 안정성은 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+<div class=skim>
+  <ul>
+    <li><strong>메타표면 하드웨어 논문 다수 (X-band MIMO 안테나, RCS 저감, 가스 감지 등)</strong> — 개별 응용은 흥미롭지만 계산 이미징·역설계 방법론과 직접 연관은 약합니다. 딥러닝 역설계 신호가 재등장할 때까지 skim.</li>
+    <li><strong>임상 OCT/CT/CBCT 해부학·진단 저널 논문 다수 (mandibular foramen, atlas vertebra, sinus 발달 등)</strong> — 영상 촬영 자체보다 해부학적 계측이 목적이라 랩 ROI(재구성·역문제)와 거리가 있습니다.</li>
+    <li><strong>Temperature Field Reconstruction (2606.31574)</strong> — 핵융합 도메인 특화 그래프 구조라 계산광학 이식 가능성은 있지만, 우선은 관찰만 하고 물리 제약 encoding 방식만 참고.</li>
+    <li><strong>Diffusion-Based Material Regularization (2606.31065)</strong> — 컴퓨터 그래픽스 역렌더링이 본 목적이라 광학 imaging과는 간접 연관. regularization 아이디어만 발췌해 참고.</li>
+  </ul>
+</div>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>저널 — Fourier Ptychography</h3>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41467-026-75092-8" target=_blank>Video-rate gigapixel ptychography via space-time neural field representations</a></strong> <span class=pill>JNL</span> [방법전환] [실사용전환] <em>Must-read</em><br>
+- 문제: FP가 여러 조명 각도 순서 촬영을 요구해 움직이는 샘플에 적용 불가<br>
+- 방법: 공간+시간을 함께 표현하는 neural field로 기가픽셀 해상도를 유지하며 비디오 속도 촬영<br>
+- 의미: 랩 FP 파이프라인을 동적 샘플(세포 배양 등)로 확장할 수 있는 구조<br>
+- 주의: 정확한 프레임레이트·해상도 trade-off는 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.37188/lam.2026.112" target=_blank>Table-top extreme ultraviolet grazing-reflection ptychography with full-pose self-calibration</a></strong> <span class=pill>JNL</span> [방법전환] <em>Read</em><br>
+- 문제: EUV ptychography는 보통 대형 싱크로트론 시설이 필요<br>
+- 방법: 탁상용 장비 + full-pose self-calibration으로 EUV grazing-reflection ptychography 구현<br>
+- 의미: 랩 규모에서 EUV 파장 계산 이미징 접근성 확대 가능성
+</div>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1002/advs.76292" target=_blank>Hardware-Attentive Programmable Fourier Ptychography Enables Task-Adaptive Label-Free Virtual Staining</a></strong> <span class=pill>JNL</span> [방법전환] <em>Read</em><br>
+- 문제: 기존 가상 염색이 수작업 광학 랜드마크와 블랙박스 복원에 의존해 임상 해석성이 낮음<br>
+- 방법: 진단 목적에 맞춰 FP 조명 패턴 자체를 프로그래밍하는 Task-Adaptive Programmable Optics(TAPO)<br>
+- 의미: FP 하드웨어와 딥러닝 복원을 함께 최적화하는 구조. 랩 label-free 염색 파이프라인에 참고 가능
+</div>
+
+<h3>cs.CV — 물리 제약 기반 역문제</h3>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.31318" target=_blank>Wavelet-Optimized Pseudo-3D Accelerated Diffusion Model for Truncated Computed Laminography</a></strong> <span class=pill>CV</span> [방법전환] <em>Read</em><br>
+- 문제: 큰 평판 시료 촬영 시 시야 제한으로 인한 데이터 절단이 병문제를 일으킴<br>
+- 방법: 2D diffusion 기반 슬라이스 재구성 + 3D 반복 재구성(MBIR)으로 데이터 일관성 확보, wavelet 정규화로 슬라이스 간 불연속 완화<br>
+- 의미: 제한 시야 조건에서 데이터가 불완전한 영역까지 복원 범위 확장. 랩 제한 각도 ODT에 이식 가능한 아이디어
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.31574" target=_blank>Temperature Field Reconstruction of Tungsten Monoblock Divertor on EAST using Physics-aware Neural Operator Transformer</a></strong> <span class=pill>CV</span> [방법전환] <em>Read</em><br>
+- 문제: 유한요소법 기반 온도장 시뮬레이션이 정확하지만 실시간 제어에 쓰기엔 너무 느림<br>
+- 방법: 열 확산 관계를 그래프로 명시하고 graph attention + Sobolev 정규화로 물리 일관성을 강제하는 신경망 연산자<br>
+- 의미: 물리 관계를 명시적으로 인코딩하는 방식이 다른 물리 기반 이미징 역문제에도 일반화 가능한 설계 원칙
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.31065" target=_blank>Diffusion-Based Material Regularization for Physics-Based Inverse Rendering</a></strong> <span class=pill>CV</span> [방법전환] <em>Read</em><br>
+- 문제: 물리 기반 역렌더링이 조명·재질·기하를 동시에 풀어야 해서 심하게 underconstrained함<br>
+- 방법: diffusion model의 재질 예측을 정답이 아니라 "이 영역은 재질이 비슷할 것"이라는 정규화 항으로 활용<br>
+- 의미: 생성 모델의 예측을 직접 타깃으로 쓰지 않고 제약으로만 쓰는 방식은 위상 복원 prior 설계에도 응용 가능<br>
+- 근거: Synthetic4Relight, Stanford-ORB, DTC-Synthetic 세 데이터셋에서 baseline 대비 우위
+</div>
+
+<h3>cs.CV — Tomography / OCT</h3>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.31502" target=_blank>Fully Automated High-Precision Segmentation of Retinal Atrophy and Ellipsoid Zone Thickness in OCT</a></strong> <span class=pill>CV</span> [표준후보] <em>Read</em><br>
+- 문제: 노인성 황반변성(AMD) 지리적 위축 모니터링에 필요한 OCT 바이오마커의 정밀 분할 도구 부재<br>
+- 방법: RPE 손실, ellipsoid zone 손실·경계를 각각 특화된 세그멘테이션 모델로 분할<br>
+- 의미: 298개 볼륨 + 외부 43개 검증에서 Dice 0.87-0.88, sub-pixel(2.15um) 정확도 달성. 임상 활용 가능한 벤치마크 수준 결과<br>
+- 근거: Dice RPE loss 0.88, EZ loss 0.87, ICC>0.98
+</div>
+
+<h3>cs.CV — 3D Gaussian Splatting (효율화)</h3>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.30809" target=_blank>GaussLite: Online Task-Conditioned 3D Gaussian Splatting for Real-Time Robotic Mapping</a></strong> <span class=pill>CV</span> [실사용전환] <em>Read</em><br>
+- 문제: 기존 3DGS가 장면 전체에 표현 용량을 균등 배분해, 작업과 무관한 영역에 계산 자원을 낭비함<br>
+- 방법: 자연어로 주어진 작업 사양에 따라 표현 밀도를 조건화하는 온라인 3DGS<br>
+- 의미: 랩 볼류메트릭 재구성에서 관심 영역 우선 자원 배분 아이디어로 참고 가능
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.32036" target=_blank>PointSplat: Compact Gaussian Splatting via Human-Centric Prediction</a></strong> <span class=pill>CV</span> [실사용전환] <em>Skim-only</em><br>
+- 문제: 여러 시점에서 같은 인물을 반복 인코딩해 중복이 심함<br>
+- 방법: 시점 간 중복을 줄이는 압축 표현으로 실시간 스트리밍 최적화<br>
+- 의미: 다중 시점 데이터 압축 아이디어가 다중 시점 위상 이미징에도 참고 가능
+</div>
+
+<h3>cs.CV — 디지털 병리학</h3>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2606.31100" target=_blank>TaxoMIL: Taxonomy-Constrained Learning for Hierarchical Whole Slide Image Analysis</a></strong> <span class=pill>CV</span> [방법전환] <em>Read</em><br>
+- 문제: WSI 진단을 평평한 분류로 다뤄 임상의의 계층적 추론 방식과 어긋남<br>
+- 방법: 진단 taxonomy 제약을 명시적으로 학습에 반영하는 hierarchical MIL<br>
+- 의미: 가상 염색 결과의 다단계 진단(대분류→세부분류) 파이프라인 설계에 참고 가능
+</div>
+
+<h3>저널 — Meta-Optics</h3>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1109/lpt.2026.3708802" target=_blank>A High-NA Polarization-Insensitive Metasurface Condenser for Single-Molecule Microscopy</a></strong> <span class=pill>JNL</span> [실사용전환] <em>Read</em><br>
+- 문제: 단분자 형광 현미경에서 편광 의존적 조명이 신호 불균일을 유발<br>
+- 방법: 고개구수 무편광 메타표면 콘덴서 설계<br>
+- 의미: 랩 단분자·초해상도 형광 현미경 조명계에 직접 적용 가능한 하드웨어
+</div>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1021/acsami.6c08093" target=_blank>Full-Space Janus Metasurface with Six Independent Information Channels at a Single Frequency</a></strong> <span class=pill>JNL</span> [방법전환] <em>Read</em><br>
+- 문제: 단일 주파수에서 다중 정보 채널을 독립적으로 인코딩하기 어려움<br>
+- 방법: Janus(방향 비대칭) 메타표면으로 여섯 채널 동시 인코딩<br>
+- 의미: 다채널 정보 인코딩 방식이 홀로그래픽 디스플레이 다중화에 참고 가능
+</div>
+
+<h3>저널 — Virtual Staining / Pathology</h3>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41598-026-57893-5" target=_blank>Registration-based 3D Light Sheet Fluorescence Microscopy and 2D histology image fusion tool for pathological specimen</a></strong> <span class=pill>JNL</span> [방법전환] <em>Read</em><br>
+- 문제: 얇은 절편 기반 히스톨로지가 조직의 3D 공간 맥락을 담지 못함<br>
+- 방법: 3D 라이트시트 형광 현미경 데이터와 2D 히스톨로지 이미지를 정합하는 도구<br>
+- 의미: 3D 볼류메트릭 가상 염색 결과 검증에 활용 가능한 정합 파이프라인
+</div>
+
+<h3>저널 — Light-Field (Deep Learning Methods 버킷에서 발췌)</h3>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1016/j.patcog.2026.114330" target=_blank>Light field image blind super-resolution via degradation representation learning</a></strong> <span class=pill>JNL</span> [방법전환] <em>Read</em><br>
+- 문제: 라이트필드 이미지의 실제 열화 과정을 모르는 상태에서 초해상도를 수행해야 함<br>
+- 방법: 열화 표현을 별도로 학습해 블라인드 초해상도에 활용<br>
+- 의미: 랩 라이트필드 현미경 데이터의 열화 모델링되지 않은 저해상도 복원에 참고 가능
+</div>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv cs.LG /new: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>arxiv.org/list/cs.LG/new</a></li>
+  <li>arXiv cs.CV /new: <a href="https://arxiv.org/list/cs.CV/new" target=_blank>arxiv.org/list/cs.CV/new</a></li>
+  <li>arXiv eess.IV /new: <a href="https://arxiv.org/list/eess.IV/new" target=_blank>arxiv.org/list/eess.IV/new</a></li>
+  <li>사이트 홈: <a href="../index.html">← 홈으로</a></li>
+  <li>RSS 피드: <a href="../feed.xml" target=_blank>feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+소스: arXiv cs.LG/cs.CV/cs.AI/eess.IV/eess.SP /new 2026-07-01 + Crossref/OpenAlex 저널 · Imaging Intelligence Lab (IIL-SNU) · <a href="../feed.xml">RSS</a>
+</footer>
+
+</body>
+</html>

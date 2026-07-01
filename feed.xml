@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 30 Jun 2026 14:48:05 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2026 12:16:52 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-07-01 (수요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-07-01.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-01.html</guid>
+      <pubDate>Wed, 01 Jul 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘(2026-07-01 수요일) arXiv /new에는 cs.LG 164편, cs.CV 169편, cs.AI 234편, eess.IV 2편, eess.SP 22편으로 총 591편이 발행됐습니다. 전체 스캔 902건(저널 포함) 중 ROI 배정 273건(30.3%)으로, 어제(2026-06-30) 446/1,312(34%)보다 절대 편수와 비율 모두 낮아졌습니다. 특히 eess.IV가 2편뿐이라는 점이 눈에 띄는데, 계산광학의 핵심 arXiv 카테고리가 하루 조용히 쉬어가면서 오늘 리포트의 무게중심이 저널 쪽으로 확실히 이동했습니다.]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-06-30 (화요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-06-30.html</link>

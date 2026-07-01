@@ -1,0 +1,13 @@
+{
+  "date": "2026-07-01",
+  "results": [
+    {
+      "benchmark": "SD-OCT geographic atrophy biomarker segmentation (298 volumes, 43 external)",
+      "metric": "Dice (RPE loss / EZ loss)",
+      "value": 0.88,
+      "value_str": "Dice 0.88 (RPE loss) / 0.87 (EZ loss), EZ thickness deviation 2.15um, ICC>0.98",
+      "paper": "https://arxiv.org/abs/2606.31502",
+      "paper_title": "Fully Automated High-Precision Segmentation of Retinal Atrophy and Ellipsoid Zone Thickness in OCT: A Reliable Tool for Real-World GA Monitoring"
+    }
+  ]
+}

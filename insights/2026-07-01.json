@@ -1,0 +1,63 @@
+{
+  "date": "2026-07-01",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "title": "Fourier Ptychography가 실험실 배율 경쟁에서 벗어나 video-rate·EUV·가상 염색으로 흩어짐",
+      "papers": [
+        {"doi": "10.1038/s41467-026-75092-8", "title": "Video-rate gigapixel ptychography via space-time neural field representations", "journal": "Nature Communications"},
+        {"doi": "10.37188/lam.2026.112", "title": "Table-top extreme ultraviolet grazing-reflection ptychography with full-pose self-calibration", "journal": "Light: Advanced Manufacturing"},
+        {"doi": "10.1002/advs.76292", "title": "Hardware-Attentive Programmable Fourier Ptychography Enables Task-Adaptive Label-Free Virtual Staining", "journal": "Advanced Science"}
+      ],
+      "why": "Fourier ptychography는 원래 낮은 배율 렌즈로 넓은 시야와 높은 해상도를 동시에 얻는 방법인데, 이 방식은 여러 장의 조명 이미지를 찍어야 해서 정지된 샘플에만 쓸 수 있다는 한계가 있었습니다. 오늘 나온 세 논문은 이 한계를 각각 다른 방향에서 건드립니다. Nature Communications 논문은 공간과 시간을 함께 모델링하는 neural field 표현으로 기가픽셀 해상도를 유지하면서 비디오 속도로 촬영할 수 있게 했고, Light: Advanced Manufacturing 논문은 같은 원리를 극자외선(EUV) 파장으로 확장해 탁상용 장비에서 자체 보정까지 가능하게 만들었습니다. Advanced Science 논문은 아예 다른 방향으로, FP로 얻은 위상 정보를 염색 없이 조직을 가상으로 염색하는 데 쓰면서 작업 목적에 맞게 광학 하드웨어 자체를 조정하는 구조를 제안합니다. 세 논문이 같은 날 나왔다는 건 FP가 정지 영상 초고해상도 기법이라는 좁은 틀에서 벗어나 동영상 촬영, 짧은 파장 영역, 임상 활용까지 응용 범위를 넓히고 있다는 뜻입니다.",
+      "confidence": "medium",
+      "lab_action": "video-rate ptychography의 space-time neural field 구조를 랩 FP 셋업의 동적 샘플(살아있는 세포) 촬영에 이식 가능한지 검토. EUV ptychography의 자체 보정(self-calibration) 방식을 가시광 FP 조명 보정 오차 교정에 적용. TAPO 하드웨어 적응형 가상 염색 구조를 랩 label-free 염색 파이프라인과 비교"
+    },
+    {
+      "title": "메타표면 저널 10편이 모두 하드웨어 응용 — 오늘은 arXiv 역설계 신호 없이 센싱·통신·양자광원으로 분산",
+      "papers": [
+        {"doi": "10.1109/lpt.2026.3708802", "title": "A High-NA Polarization-Insensitive Metasurface Condenser for Single-Molecule Microscopy", "journal": "IEEE Photonics Technology Letters"},
+        {"doi": "10.1002/adfm.76732", "title": "Spin-Selective Chiral Emission and Incoherent Focusing via On-Chip Meta-Optics", "journal": "Advanced Functional Materials"},
+        {"doi": "10.1021/acsami.6c08093", "title": "Full-Space Janus Metasurface with Six Independent Information Channels at a Single Frequency", "journal": "ACS Applied Materials & Interfaces"},
+        {"doi": "10.3390/photonics13070624", "title": "Rotation-Driven Multifunctional Metasurface for Holography Encryption", "journal": "Photonics"}
+      ],
+      "why": "어제(6/30)는 arXiv와 저널 양쪽에서 메타표면을 딥러닝으로 역설계하는 논문(THz 확률적 다중 솔루션, EIT 신경망 역산)이 이어졌는데, 오늘은 결이 다릅니다. 오늘 저널에서 나온 메타표면 논문 10편은 전부 특정 광학 기능(단분자 현미경용 고개구수 콘덴서, 온칩 카이랄 발광, 단일 주파수에서 여섯 채널 정보 전송, 회전으로 스위칭되는 홀로그래피 암호화 등)을 시뮬레이션·제작·측정하는 하드웨어 논문이고, 이를 딥러닝으로 역설계했다는 언급이 없습니다. 즉 오늘은 메타표면 쪽에서 어제 같은 'AI 역설계' 신호가 약해지고, 대신 센싱·통신·양자 광검출·정보 암호화처럼 다양한 최종 응용으로 결과물이 갈라지는 날입니다. arXiv 쪽에도 메타표면 관련 새 논문이 없어서, 오늘 하루만 보면 메타표면 연구가 방법론보다 특정 디바이스 성능 쪽에 집중된 것으로 보입니다.",
+      "confidence": "medium",
+      "lab_action": "고개구수 콘덴서 메타표면 설계를 랩 단분자 형광 현미경 조명계에 적용 가능한지 시뮬레이션. Janus 메타표면의 다채널 정보 인코딩 방식을 홀로그래픽 디스플레이 다중화에 응용 가능성 검토. 어제 대비 오늘 arXiv에 메타표면 역설계 논문이 없다는 점은 3일 연속 신호가 끊긴 것인지 다음 며칠 계속 확인"
+    },
+    {
+      "title": "역문제 재구성에 물리 제약을 넣는 방식이 CT/융합로 온도장/역렌더링 세 도메인에서 동시에 나타남",
+      "papers": [
+        {"arxiv_id": "2606.31318", "title": "Wavelet-Optimized Pseudo-3D Accelerated Diffusion Model for Truncated Computed Laminography"},
+        {"arxiv_id": "2606.31574", "title": "Temperature Field Reconstruction of Tungsten Monoblock Divertor on EAST using Physics-aware Neural Operator Transformer"},
+        {"arxiv_id": "2606.31065", "title": "Diffusion-Based Material Regularization for Physics-Based Inverse Rendering"}
+      ],
+      "why": "이 세 논문은 서로 완전히 다른 분야(비파괴 검사용 단층촬영, 핵융합로 온도 측정, 컴퓨터 그래픽스 역렌더링)를 다루지만, 공통적으로 '데이터가 부족하거나 시야가 잘린 상태에서 물리적으로 말이 되는 답을 어떻게 복원할 것인가'라는 같은 문제를 풀고 있습니다. Computed Laminography 논문은 큰 평판 시료를 찍을 때 시야가 잘려서 생기는 병문제(ill-posed problem)를, 2D diffusion model과 3D 반복 재구성을 결합해 데이터가 불완전한 영역까지 복원 범위를 넓힙니다. 온도장 재구성 논문은 핵융합로 부품의 실시간 열 손상 감지를 위해, 유한요소법처럼 정확하지만 느린 물리 시뮬레이션 대신 물리적 열 확산 관계를 그래프로 명시해 넣은 신경망 연산자를 씁니다. 역렌더링 논문은 diffusion model이 예측한 재질값을 그대로 정답으로 쓰지 않고, '이 영역들은 재질이 비슷할 것이다'라는 유사도 제약으로만 활용해 diffusion model의 그럴듯함과 물리 기반 렌더링의 정확함을 동시에 만족시킵니다. 세 논문 모두 순수 딥러닝 예측을 그대로 믿지 않고, 물리적 제약이나 반복 최적화로 재검증하는 구조라는 공통점이 있어, 랩의 위상 복원·홀로그래피 재구성에도 바로 참고할 수 있는 설계 원칙입니다.",
+      "confidence": "medium",
+      "lab_action": "wavelet 정규화 + 3D MBIR 결합 구조를 랩 optical diffraction tomography의 제한 각도(limited-angle) 재구성에 이식해 아티팩트 감소 비교. diffusion 예측을 직접 타깃이 아니라 유사도 정규화 항으로 쓰는 역렌더링 트릭을 위상 복원 prior 설계에 응용 가능성 검토"
+    },
+    {
+      "title": "3D Gaussian Splatting이 '응용 확산'에서 '압축·효율' 쪽으로 관심이 좁아짐",
+      "papers": [
+        {"arxiv_id": "2606.30809", "title": "GaussLite: Online Task-Conditioned 3D Gaussian Splatting for Real-Time Robotic Mapping"},
+        {"arxiv_id": "2606.31556", "title": "AugSplat: Radiance Field-Informed Gaussian Splatting for Sparse-View Settings"},
+        {"arxiv_id": "2606.32036", "title": "PointSplat: Compact Gaussian Splatting via Human-Centric Prediction"},
+        {"arxiv_id": "2606.31637", "title": "Intrinsic decomposition and editing of 3D Gaussian splats"}
+      ],
+      "why": "어제(6/30)는 3D Gaussian Splatting이 위성 이미지, 도시 시뮬레이션, 동적 4D 장면 등 27편에 걸쳐 응용 도메인을 넓히는 날이었는데, 오늘은 편수도 4편으로 크게 줄었고 방향도 바뀌었습니다. 오늘 논문들은 새로운 응용을 찾기보다 기존 3DGS의 계산·저장 비효율을 줄이는 데 집중합니다. GaussLite는 로봇이 실제로 필요한 작업 영역에만 계산 자원을 집중해서 불필요한 장면까지 똑같이 정밀하게 표현하는 낭비를 줄이고, PointSplat은 여러 시점에서 같은 사람 콘텐츠를 중복 인코딩하는 문제를 압축된 표현으로 해결합니다. 즉 오늘은 3DGS가 '어디에 쓸 수 있는가'보다 '어떻게 하면 로봇이나 실시간 스트리밍처럼 자원이 제한된 환경에서도 쓸 수 있는가'를 묻는 날로 좁혀졌습니다.",
+      "confidence": "medium",
+      "lab_action": "GaussLite의 task-conditioned 밀도 할당 아이디어를 랩 볼류메트릭 홀로그래피 재구성에서 관심 영역(ROI)에만 해상도를 집중하는 방식으로 응용 가능성 검토. PointSplat의 중복 인코딩 제거 방식을 다중 시점 위상 이미징 데이터 압축에 참고"
+    },
+    {
+      "title": "디지털 병리학이 '평평한 분류'에서 임상 추론 구조를 반영한 계층적 진단으로 이동",
+      "papers": [
+        {"arxiv_id": "2606.31100", "title": "TaxoMIL: Taxonomy-Constrained Learning for Hierarchical Whole Slide Image Analysis"},
+        {"doi": "10.1002/advs.76292", "title": "Hardware-Attentive Programmable Fourier Ptychography Enables Task-Adaptive Label-Free Virtual Staining", "journal": "Advanced Science"},
+        {"doi": "10.1038/s41598-026-57893-5", "title": "Registration-based 3D Light Sheet Fluorescence Microscopy and 2D histology image fusion tool for pathological specimen", "journal": "Scientific Reports"}
+      ],
+      "why": "기존 whole slide image 진단 모델 대부분은 여러 진단 후보 중 하나를 고르는 평평한 분류 문제로 다뤄왔는데, 실제 병리 의사는 큰 범주(양성/악성)를 먼저 판단하고 세부 진단으로 좁혀가는 계층적 추론을 합니다. TaxoMIL은 이 계층 구조를 모델에 명시적으로 반영해서, 기존 계층 분류기나 언어모델 기반 방법이 겪던 두 문제(관련 진단끼리 의미적 연속성을 놓치거나, 생성된 텍스트가 통제되지 않는 문제)를 동시에 풀려고 합니다. 같은 날 나온 Fourier ptychography 기반 가상 염색 논문도 비슷한 방향성을 보입니다 — 정해진 하나의 염색 방식을 그대로 흉내 내는 대신, 목적에 따라 광학 촬영 방식 자체를 조정하는 task-adaptive 구조입니다. Light Sheet 형광 현미경과 2D 조직 이미지를 정합하는 논문은 얇은 절편 한 장이 아니라 3D 맥락에서 조직을 보려는 시도로, 세 논문 모두 병리 진단을 미리 정해둔 하나의 절차가 아니라 필요에 따라 구조와 촬영 방식을 조정하는 문제로 다시 보고 있다는 공통점이 있습니다.",
+      "confidence": "low",
+      "lab_action": "TaxoMIL의 계층 제약 학습 구조를 랩 label-free 가상 염색 결과의 다단계 진단(양성/악성 → 세부 아형) 파이프라인에 적용 가능성 검토. Light Sheet-히스톨로지 정합 도구를 3D 볼류메트릭 가상 염색 검증에 참고"
+    }
+  ]
+}
