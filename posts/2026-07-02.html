@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-07-02</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] blockquote,html[data-theme=dark] th,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+html[data-theme=dark] .ins{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .dd{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+<button id=themeToggle aria-label="Toggle dark mode">🌙</button>
+<script>(function(){var btn=document.getElementById('themeToggle');function setTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);btn.textContent=t==='dark'?'☀️':'🌙';}btn.addEventListener('click',function(){setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');});btn.textContent=document.documentElement.dataset.theme==='dark'?'☀️':'🌙';})();</script>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-07-02 (목요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-07-02 (목요일)</div>
+  <div>📚 소스: arXiv /new 2026-07-02 + Crossref/OpenAlex 저널 · cs.LG/cs.CV/cs.AI/eess.IV/eess.SP</div>
+  <div>🔢 arXiv: cs.LG 145 · cs.CV 160 · cs.AI 186 · eess.IV 6 · eess.SP 25 (총 522편 new+cross)</div>
+  <div>🔢 분류 결과: 총 819건 스캔(저널 포함) · ROI 배정 261건 (31.9%)</div>
+  <div>⚠️ 오늘도 eess.IV(계산광학 핵심 카테고리) arXiv 신규가 6편뿐입니다. 어제(2편)보다는 늘었지만 여전히 평소보다 매우 적고, 그나마도 대부분 전립선 분할·말라리아 진단 같은 임상 응용이라 계산광학 방법론 신호는 약합니다. 오늘 광학 신호는 저널과 cs.CV/SP 크로스리스트에서 나왔습니다.</div>
+  <div>⚠️ Virtual Staining/Pathology 버킷(29편) 중 저널 20편의 상당수가 "virtual"(가상현실)·"staining"(치아 착색)처럼 단어만 겹치는 false positive입니다. 실제 가상 염색 논문은 MMFVS-Net 1편뿐이라 아래 버킷 현황은 원 편수를 그대로 적되 본문에서 걸러 설명합니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 큼직한 사건보다 <strong>"라이트필드/플레놉틱 촬영"이라는 한 가지 광학 원리가 로봇 주행, 입자물리 검출기, 뇌신경 이미징, 초해상도 알고리즘이라는 서로 전혀 무관한 다섯 개 분야에서 동시에 등장한 날</strong>입니다. 이건 라이트필드 카메라 한 대(마이크로렌즈 배열로 각도 정보까지 한 번에 찍는 카메라)가 깊이 정보와 촬영 속도를 동시에 얻어야 하는 문제 전반에서 쓸모를 인정받고 있다는 신호로 읽힙니다. 한편 <strong>위상(phase) 정보를 신호로 명시적으로 다루는 접근</strong>이 반도체 결함 검출과 영상 디블러링이라는 두 다른 문제에서 독립적으로 재확인됐고, <strong>메타표면 저널 12편은 어제에 이어 오늘도 광학 이미징이 아니라 안테나·6G 통신·무선 전력 전송 쪽으로 쏠려</strong> 있어 이 랩이 당장 참고할 만한 신호는 약합니다. eess.IV가 6편으로 여전히 적어 전반적으로 "조용한 목요일"이지만, 라이트필드 신호와 MRI k-space 재구성에 diffusion prior를 쓰는 흐름은 눈여겨볼 가치가 있습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(2026-07-02 목요일) arXiv /new에는 cs.LG 145편, cs.CV 160편, cs.AI 186편, eess.IV 6편, eess.SP 25편으로 총 522편이 발행됐습니다. 전체 스캔 819건(저널 포함) 중 ROI 배정 261건(31.9%)으로, 어제(2026-07-01) 902건 중 273건(30.3%)보다 절대 스캔량은 줄었지만 배정 비율은 소폭 올랐습니다. 오늘 가장 흥미로운 대목은 편수가 아니라 구성입니다 — 라이트필드/플레놉틱 이미징이라는 하나의 광학 원리가 로봇 시각 주행, 입자검출기 3D 위치추정, 뇌 신경활동 촬영, 라이트필드 초해상도, 수동 스테레오 깊이 추정까지 다섯 갈래에서 동시에 나타나면서, 오늘 하루 안에서는 가장 뚜렷한 클러스터를 형성했습니다.</p>
+<p>이번 주(2026-06-29~07-04) 관점에서 보면, 메타표면은 6/29(RCWA 역설계)~6/30(THz/EIT 역설계)까지 이틀 연속 "AI로 메타표면을 역설계한다"는 방법론 신호를 냈다가, 7/1에 이어 오늘도 하드웨어 응용(안테나, 6G 통신, 무선 전력 전송) 논문만 나오면서 사흘째 방법론 공백이 이어지고 있습니다. 이 정도로 오래 끊기면 우연한 하루 쉼이 아니라 이번 주 초반에만 몰렸던 신호로 봐야 할 가능성이 커집니다. 반대로 Fourier ptychography는 어제 세 편이 한꺼번에 나오며 이번 주 처음 클러스터를 형성했는데 오늘은 저널 2편(초록 없음)만 조용히 이어져, 어제의 응집력 있는 신호가 하루짜리였는지는 다음 주까지 지켜봐야 합니다.</p>
+<p>내일(금요일)에는 메타표면 역설계 신호가 나흘 만에 재등장하는지, 그리고 오늘 다섯 갈래로 흩어진 라이트필드 신호가 계속 이어지며 하나의 공통 방법론(예: 각도-공간 정보를 함께 다루는 신경망 구조)으로 수렴하는지가 관찰 포인트입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(2026-07-01)는 Fourier ptychography가 video-rate·EUV·가상 염색 세 방향으로 갑자기 응용을 넓히는 논문 세 편이 한 번에 나오고, 물리 제약을 명시적으로 넣는 역문제 해법이 단층촬영·핵융합로·역렌더링 세 도메인에서 동시에 등장하며 밀도 높은 하루였습니다.</p>
+<p>오늘은 그 정도로 응집력 있는 광학 클러스터 대신, <strong>같은 촬영 원리(라이트필드)가 서로 무관한 다섯 개 응용 분야에서 독립적으로 재발견되는 더 폭넓은 패턴</strong>이 나타났습니다. 어제 3DGS가 27편에서 4편으로 급감하며 응용 확산에서 효율화로 좁혀졌다면, 오늘은 로봇 주행(PRISM-VO)·입자물리(scintillation detector)·신경과학(광유전학 이미징)처럼 원래 서로 대화하지 않는 커뮤니티들이 같은 카메라 원리를 각자 재발명하고 있다는 점이 다릅니다. 메타표면은 어제에 이어 오늘도 역설계 신호 없이 하드웨어 응용(이번엔 안테나·통신)에 머물러, 방법론 공백이 이제 이틀에서 사흘로 늘었습니다. 위상 정보를 신호로 쓰는 접근도 어제는 CT·역렌더링 맥락이었다면, 오늘은 반도체 결함 검출과 이미지 디블러링이라는 완전히 다른 문제로 옮겨와 재등장했습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>라이트필드/플레놉틱 촬영이 로봇·입자물리·신경과학·초해상도 5갈래에서 동시 재발견</strong><span class=pill>HOT</span></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.00176" target=_blank>PRISM-VO: Scale-Aware Visual Odometry Using Photometric Plenoptic Bundle Adjustment</a> (cs.CV)<br>
+    <a href="https://arxiv.org/abs/2607.01123" target=_blank>Plenoptic imaging of particle interactions in scintillation detectors</a> (eess.SP)<br>
+    <a href="https://doi.org/10.1186/s43074-026-00265-z" target=_blank>Snapshot 3D at the speed frontier: redefining light-field microscopy for neuroimaging</a> (PhotoniX)<br>
+    <a href="https://arxiv.org/abs/2607.00965" target=_blank>Slope-Guided Mamba and Angular-Refined Transformer for Light Field Super-Resolution</a> (cs.CV)<br>
+    <a href="https://doi.org/10.3390/s26134149" target=_blank>Object-Aware Computational Integral Imaging for Improved Object Depth Estimation</a> (Sensors)
+  </td>
+  <td>라이트필드(플레놉틱) 카메라는 마이크로렌즈 배열을 렌즈 앞에 하나 더 붙여서, 한 번의 촬영으로 빛이 어느 방향에서 왔는지까지 함께 기록하는 카메라입니다. 원래는 사진 찍은 뒤 초점을 다시 맞추는 재미있는 기능 정도로 알려졌는데, 오늘 나온 다섯 편은 이 원리를 전혀 다른 문제에 씁니다. PRISM-VO는 로봇이 카메라 한 대로 자기 위치를 추정할 때 흔히 겪는 "실제 거리를 알 수 없다"는 문제를, 라이트필드가 한 장에서 깊이 정보까지 주기 때문에 별도 센서 없이 해결합니다. 입자물리 논문은 방사선이 검출기 안 어디서 부딪혔는지를 3차원으로 찾아내는 데 같은 원리를 쓰고, 신경과학 리뷰 논문은 뇌 신경 활동을 부피 전체에서 한 번에 찍어야 하는데 순차 스캔이 너무 느리다는 문제를 라이트필드의 스냅샷 촬영으로 풉니다. 다섯 편이 서로 몰랐을 가능성이 높은데도 같은 카메라 원리에 도달했다는 건, 라이트필드 이미징이 "속도"와 "깊이 정보"를 동시에 원하는 문제 전반에서 실용적인 해법으로 자리잡고 있다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 5개 커뮤니티(로봇공학·입자물리·신경과학·컴퓨터비전·수중 및 스테레오 이미징)에서 독립적으로 등장, 같은 물리 원리를 공유</small></td>
+  <td>PRISM-VO의 photometric plenoptic bundle adjustment를 랩 라이트필드 현미경 데이터의 자세 추정/드리프트 보정에 이식 가능한지 검토. SMART(라이트필드 초해상도)의 slope-guided 각도-공간 결합 구조를 랩 라이트필드 복원 파이프라인과 비교. scintillation detector 논문의 multifocal microlens 설계(Cramér-Rao 하한 분석 포함)를 랩 라이트필드 현미경의 축방향 해상도 최적화에 참고</td>
+</tr>
+<tr>
+  <td><strong>위상(phase) 신호를 명시적으로 다루는 접근이 결함 검출·디블러링 두 문제에서 재확인</strong></td>
+  <td>
+    <a href="https://doi.org/10.1063/5.0339969" target=_blank>Sub-resolution detectability of nanoscale surface defects in β-Ga2O3 enabled by phase-contrast microscopy</a> (APL Materials)<br>
+    <a href="https://arxiv.org/abs/2607.00251" target=_blank>Leveraging Phase Information to Boost Unrolled Network Learning for Image Deblurring</a> (cs.CV)
+  </td>
+  <td>두 논문은 완전히 다른 문제를 풀지만 같은 통찰을 공유합니다 — 밝기(진폭) 정보만 보면 놓치는 게 있고, 위상 정보를 따로 떼어 봐야 진짜 신호가 드러난다는 것입니다. β-Ga2O3 반도체 결함 검출 논문은 표면이 옆으로는 회절 한계보다 작아도 위상 신호를 point spread function(광학계가 점 하나를 어떻게 퍼뜨려 찍는지 나타내는 함수) 전체에 걸쳐 적분하면 여전히 검출 가능하다는 걸 보였습니다. UPADNet 디블러링 논문은 흐려진 사진을 바로 복원하는 대신, 진폭과 위상을 먼저 각각 추정한 뒤 위상 쪽 정확도가 선명한 디테일 복원에 특히 중요하다는 걸 학습 기반으로 확인했습니다. 두 편 다 "이미지를 하나의 신호로 뭉뚱그리지 않고 위상이라는 별도 축으로 쪼개 보면 더 잘 보인다"는 같은 설계 철학을 독립적으로 재발견한 셈이라, 랩의 위상 복원 연구에도 직접적인 참고가 됩니다.</td>
+  <td>Medium<br><small>2편, 서로 다른 응용(반도체 검사·범용 디블러링)이지만 같은 위상 분리 철학을 공유. 표본이 2편이라 추가 확산 여부는 지켜봐야 함</small></td>
+  <td>UPADNet의 amplitude/phase LMMSE 분리 추정 방식을 랩 위상 복원 알고리즘의 전처리 단계로 이식 가능한지 검토. 반도체 결함 검출 논문의 "위상 신호를 PSF 전체에 적분" 프레임을 랩 위상 현미경의 저대비 결함 검출 감도 분석에 적용</td>
+</tr>
+<tr>
+  <td><strong>메타표면 저널 12편, 사흘째 광학 이미징 아닌 안테나·6G·무선전력으로 쏠림</strong></td>
+  <td>
+    <a href="https://doi.org/10.1109/tcomm.2026.3708504" target=_blank>Metasurface-Enabled Extremely Large-Scale Antenna Systems: Transceiver Architecture, Physical Modeling, and Channel Estimation</a> (IEEE Trans. Communications)<br>
+    <a href="https://doi.org/10.1007/s11468-026-03391-3" target=_blank>Metasurface-Enhanced Graphene Leaf-Inspired Reconfigurable Antenna for High-gain 6G Terahertz Applications</a> (Plasmonics)<br>
+    <a href="https://doi.org/10.1109/jsteap.2026.3708632" target=_blank>A Transmissive-Reflective Programmable Metasurface for Simultaneous Wireless Information and Power</a> (IEEE JSTEAP)
+  </td>
+  <td>6/29~6/30 이틀 동안은 메타표면을 딥러닝으로 역설계하는 방법론 논문이 이어졌는데, 7/1에 이어 오늘까지 사흘 연속 그 신호가 보이지 않습니다. 오늘 저널 12편은 전부 특정 하드웨어 기능(대규모 안테나 시스템, 6G 테라헤르츠 안테나, 무선 정보·전력 동시 전송, 태양광 반사판)을 다루고, 이미징이나 역설계 언급이 없습니다. 즉 메타표면 연구 커뮤니티 안에서 최근 며칠은 "어떻게 설계할 것인가"보다 "통신·전력 전송에 무엇을 만들 것인가" 쪽에 무게가 실려 있다는 뜻인데, 사흘이나 이어지고 있어 이제는 하루짜리 노이즈로 보기 어렵습니다.</td>
+  <td>Medium<br><small>12편 저널 동시 발행, 사흘 연속(6/30→7/1→7/2) 같은 방향(하드웨어 응용, 역설계 신호 없음)이 반복되어 신뢰도가 높아짐</small></td>
+  <td>다음 2~3일 arXiv·저널에 메타표면 역설계 논문이 재등장하는지 추적하고, 계속 공백이면 이번 주 weekly에서 "역설계 흐름이 초반에만 몰렸다"로 판단 근거 마련. 광학 이미징 목적 메타표면 논문이 있는지는 통신 계열과 분리해 저널 쿼리를 세분화하는 것도 검토</td>
+</tr>
+<tr>
+  <td><strong>MRI/k-space 재구성에 diffusion prior + 기하 적응형 연산자 학습이 이어짐</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.01176" target=_blank>High-dimensional Embedding Prior for Noisy K-space Domain MRI Reconstruction</a> (cs.CV)<br>
+    <a href="https://arxiv.org/abs/2607.01128" target=_blank>GAIA: Geometry-Adaptive Operator Learning for Forward and Inverse Problems</a> (cs.LG)<br>
+    <a href="https://doi.org/10.1016/j.mri.2026.110741" target=_blank>Reconstruction of MRI from undersampled k-spaces of double-contrast volume acquisitions using deep neural networks</a> (Magnetic Resonance Imaging)
+  </td>
+  <td>MRI를 빠르게 찍으려면 k-space(주파수 영역 측정값)를 일부러 듬성듬성 측정한 뒤 나머지를 채워 넣어야 하는데, 측정값에 노이즈까지 섞이면 diffusion 모델 같은 생성형 prior도 성능이 떨어진다는 게 알려진 약점이었습니다. 첫 논문은 k-space 표현 자체를 더 높은 차원으로 확장해서 diffusion 기반 복원기가 노이즈가 섞인 상황에서도 더 풍부한 정보를 활용하게 만듭니다. GAIA는 MRI에 국한되지 않는 범용 연산자 학습 논문이지만, 입력과 출력이 서로 다른 공간(경계값 문제·역문제)에 있는 상황을 기하학적으로 적응시키는 구조라 랩의 위상 복원·홀로그래피 역문제처럼 측정 공간과 복원 공간이 다른 문제에도 적용 여지가 있습니다. 세 번째 저널 논문은 이중 조영 MRI라는 구체적 임상 조건에서 비슷한 undersampled k-space 복원을 딥러닝으로 검증한 사례입니다.</td>
+  <td>Medium<br><small>같은 날 cs.CV·cs.LG·저널에서 k-space/연산자 학습 관련 논문 3편, 서로 다른 그룹이지만 문제 설정이 겹침</small></td>
+  <td>k-space embedding prior 확장 아이디어를 랩 홀로그래피 위상 복원의 diffusion 기반 solver에 이식해 노이즈 강건성 비교. GAIA의 geometry token + cross-attention 구조를 제한 각도 ODT처럼 측정·복원 도메인이 어긋나는 역문제에 시험 적용</td>
+</tr>
+<tr>
+  <td><strong>디지털 홀로그래피는 저널에서만, 정지 영상 품질 개선(초해상도·수차보정)에 국한</strong></td>
+  <td>
+    <a href="https://doi.org/10.1364/oe.601742" target=_blank>A Hologram Super-Resolution Network for Improved Fringe Quality toward Higher Phase Reconstruction Accuracy in Digital Holographic Microscopy</a> (Optics Express)<br>
+    <a href="https://doi.org/10.1364/oe.600716" target=_blank>Automatic Phase Aberration Compensation in Digital Holographic Microscopy Based on Adaptive-Threshold M-estimator Sample Consensus</a> (Optics Express)
+  </td>
+  <td>어제 Fourier ptychography가 동영상·EUV·임상 진단으로 응용을 넓히는 화제성 있는 하루였다면, 오늘 디지털 홀로그래픽 현미경(DHM) 쪽은 훨씬 차분합니다. 두 논문 모두 DHM이 원래 갖고 있던 두 가지 고질적 문제, 즉 간섭무늬(fringe) 품질이 나빠서 위상 복원이 부정확해지는 문제와 광학계 자체의 수차 때문에 위상 값이 왜곡되는 문제를 각각 초해상도 신경망과 자동 임계값 기반 강건 추정으로 보정합니다. 응용을 넓히는 논문이 아니라 기존 DHM 파이프라인의 정확도를 한 단계 더 다듬는 논문들이라는 점에서, 오늘 홀로그래피 신호는 "새로운 곳에 쓴다"보다 "이미 쓰는 곳에서 더 정확하게 만든다"는 성격이 강합니다. 다만 두 논문 모두 Crossref 메타데이터에 초록이 없어 구체적 성능 수치는 본문 확인이 필요합니다.</td>
+  <td>Low<br><small>2편 모두 초록이 비어 있어 실제 방법·수치를 제목만으로 추정. 저널 발행이라 독립 검증도 아직 없음</small></td>
+  <td>랩 DHM 파이프라인에서 fringe 품질 저하가 위상 정확도에 미치는 영향을 정량화하는 자체 벤치마크 설계(두 논문의 구체적 방법은 본문 확인 후 재검토). Adaptive-threshold M-estimator 기반 수차 보정 아이디어를 랩 자동 보정 루틴과 비교</td>
+</tr>
+</tbody>
+</table>
+<p><small>※ Virtual Staining/Pathology(29편)와 Tomography/3D Imaging(44편)은 오늘 대부분 키워드 우연 매칭(가상현실 교육, 치아 착색, 부비동 CT 소견 등 개별 임상·비광학 논문)이거나 서로 무관한 단발 진단 연구라 독립 클러스터를 구성하지 못했습니다. Meta-Optics/Diffractive 12편 중 광학 이미징 목적은 사실상 0편이라, 위 표에서는 통신·전력 응용으로만 클러스터화했습니다.</small></p>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<p><strong>공통 키워드:</strong> plenoptic/light field, phase (aberration/deblurring), k-space reconstruction, metasurface, holography</p>
+<p><strong>arXiv 전용 신호</strong>(방법 중심): photometric plenoptic bundle adjustment, plenoptic detector 3D localization, light field super-resolution(slope-guided Mamba), phase-amplitude decomposition deblurring, k-space embedding prior for diffusion reconstruction, geometry-adaptive operator learning</p>
+<p><strong>저널 전용 신호</strong>(응용 중심): light-field neuroimaging 리뷰, computational integral imaging 기반 깊이 추정, phase-contrast 반도체 결함 검출, hologram super-resolution·phase aberration 보정(DHM), 메타표면 12편(안테나·6G·무선전력)</p>
+<p>오늘은 arXiv 쪽이 라이트필드·위상·k-space 재구성이라는 방법론 신호를 균일하게 냈고, 저널은 그 방법론이 실제로 쓰이는 자리(신경과학 이미징, 반도체 공정 검사, 임상 DHM)를 보여줬습니다. 메타표면만은 예외로, 저널 12편 전부가 광학 이미징이 아니라 통신·전력 응용에 쏠려 있어 arXiv와 저널 사이의 접점이 이번 주 들어 계속 옅어지고 있습니다.</p>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 라이트필드 카메라가 "재미있는 후초점" 기능에서 벗어나 5개 무관한 분야의 실질적 해법으로 자리잡음</h3>
+  <p>라이트필드(플레놉틱) 카메라는 렌즈 앞에 마이크로렌즈 배열을 하나 더 붙여서, 한 번의 셔터로 빛이 어느 방향에서 왔는지까지 함께 기록합니다. 예전에는 "찍고 나서 초점을 다시 맞출 수 있다"는 소비자용 기능으로 유명했는데, 오늘 나온 다섯 편은 이 원리를 완전히 다른 목적으로 씁니다. 로봇 시각 주행(PRISM-VO)은 카메라 한 대로 로봇 위치를 추정할 때 실제 거리 축척을 알 수 없다는 문제를, 라이트필드가 한 장에서 깊이까지 주기 때문에 별도 센서 없이 풉니다. 입자물리 검출기 논문은 방사선이 검출기 내부 어디서 부딪혔는지 3차원으로 찾아야 하는데, 여러 초점 거리를 가진 마이크로렌즈를 조합해 광자가 적은 상황에서도 위치 정확도를 높입니다. 신경과학 리뷰 논문은 뇌 신경 활동을 부피 전체에서 한 번에 스냅샷으로 찍어야 순차 스캔의 느린 속도 문제를 피할 수 있다고 주장합니다. 다섯 편이 서로의 존재를 몰랐을 가능성이 높은데도 같은 카메라 원리에 도달했다는 건, 라이트필드 이미징이 "속도"와 "깊이 정보"를 동시에 원하는 문제 전반에서 검증된 해법으로 굳어지고 있다는 뜻입니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 5개 커뮤니티(로봇공학·입자물리·신경과학·컴퓨터비전·스테레오 매칭)에서 독립 등장, 같은 물리 원리 공유. [방법전환] [스케일업]. 랩 라이트필드 현미경 파이프라인에 직접 참고 가능</p>
+</div>
+
+<div class=ins>
+  <h3>2. 위상 정보를 별도 축으로 분리하는 설계가 반도체 검사와 범용 디블러링에서 독립적으로 재확인</h3>
+  <p>이미지를 밝기(진폭) 하나로만 보면 놓치는 신호가, 위상이라는 별도 축으로 쪼개 보면 드러나는 경우가 있습니다. β-Ga2O3 반도체 표면 결함 검출 논문은 결함이 광학 회절 한계보다 옆으로 작아도, 위상 신호를 point spread function(광학계가 점 하나를 어떻게 퍼뜨려 찍는지 나타내는 함수) 전체에 걸쳐 적분하면 여전히 검출할 수 있다는 걸 정량적으로 보였습니다. UPADNet이라는 디블러링 논문은 흐려진 사진을 곧바로 복원하지 않고, 먼저 진폭과 위상을 각각 추정한 뒤 위상 쪽을 정확히 맞추는 게 날카로운 디테일 복원에 특히 중요하다는 걸 학습 기반 반복 알고리즘으로 확인했습니다. 두 논문 모두 서로 다른 문제(반도체 공정 검사 vs 범용 영상 복원)를 풀지만 "위상은 진폭과 다른 정보를 담고 있으니 따로 다뤄야 한다"는 같은 설계 철학에 독립적으로 도달했다는 공통점이 있습니다.</p>
+  <p class=conf-note>Confidence: Medium — 2편이 서로 다른 응용에서 같은 설계 철학을 공유하지만 표본이 작아 추가 확산은 지켜봐야 함. [해부분석] [방법전환]. 랩 위상 복원 연구에 직접 참고 가능</p>
+</div>
+
+<div class=ins>
+  <h3>3. 메타표면의 "AI 역설계" 신호가 사흘째 끊긴 채로 안테나·통신 응용만 이어짐</h3>
+  <p>6/29~6/30 이틀은 메타표면을 딥러닝으로 역설계하는 방법론 논문(THz 확률적 다중 솔루션, EIT 신경망 역산 등)이 이어졌는데, 7/1에 이어 오늘까지 사흘 연속 그런 논문이 보이지 않습니다. 대신 오늘 저널 12편은 전부 대규모 안테나 시스템, 6G 테라헤르츠 통신, 무선 정보·전력 동시 전송처럼 통신·전력 하드웨어 논문이고, 광학 이미징이나 역설계 언급이 전혀 없습니다. 하루 이틀이면 우연한 변동으로 볼 수 있지만 사흘째 같은 방향이 반복되니, 이번 주 초반에 몰렸던 역설계 신호가 이후로는 다시 나타나지 않을 가능성도 염두에 둬야 합니다. 다만 메타표면 연구 자체가 사라진 게 아니라 응용 방향이 이미징에서 통신·전력 쪽으로 옮겨간 것이라는 점은 구분해서 봐야 합니다.</p>
+  <p class=conf-note>Confidence: Medium — 12편 저널 동시 발행이 사흘 연속 같은 패턴(하드웨어 응용, 역설계 없음)을 반복해 신뢰도가 올라감. [스케일업] [위험보류]. 다음 며칠 재확인 필요</p>
+</div>
+
+<div class=ins>
+  <h3>4. MRI k-space 재구성에서 diffusion prior의 노이즈 취약점을 표현 확장으로 보완하려는 시도</h3>
+  <p>MRI를 빠르게 찍으려면 k-space(주파수 영역에서 측정한 원시 데이터)를 일부러 듬성듬성 측정한 뒤 나머지를 채워 넣어야 하는데, 최근에는 diffusion 모델을 이 복원 과정의 생성형 prior(그럴듯한 답의 분포를 미리 학습해둔 것)로 쓰는 방법이 늘고 있습니다. 문제는 측정값에 노이즈까지 섞이면 diffusion 기반 복원기의 성능이 눈에 띄게 떨어진다는 점입니다. 오늘 논문은 k-space 데이터를 더 높은 차원의 표현 공간으로 확장해서, 기존 diffusion 기반 복원 알고리즘이 노이즈가 있는 상황에서도 더 풍부한 정보를 활용할 수 있게 만듭니다. 같은 날 나온 GAIA(범용 연산자 학습 논문)는 MRI에 국한되지 않지만, 측정 공간과 복원 공간이 서로 다른 경계값·역문제를 기하학적으로 적응시키는 구조라 랩의 위상 복원·홀로그래피 역문제처럼 "찍은 공간"과 "보고 싶은 공간"이 다른 문제 전반에 응용 여지가 있습니다.</p>
+  <p class=conf-note>Confidence: Medium — 같은 날 cs.CV/cs.LG/저널에서 k-space·연산자 학습 관련 논문 3편이 겹쳐 나왔지만 서로 독립된 그룹. [방법전환]. 랩 diffusion 기반 위상 복원 solver에 참고 가능</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+<ol>
+  <li>
+    <strong>Photometric plenoptic bundle adjustment를 랩 라이트필드 현미경의 자세·드리프트 보정에 적용</strong><br>
+    PRISM-VO가 로봇 위치 추정에 쓴 라이트필드 기반 깊이·자세 동시 최적화 구조를, 랩의 라이트필드 현미경 데이터에서 시간에 따른 시료 드리프트를 보정하는 문제로 옮겨 검증합니다.<br>
+    <em>실행 1주차:</em> PRISM-VO의 photometric plenoptic bundle adjustment 구조 문서화(공개 코드 있으면 clone) → 랩 라이트필드 현미경 타임랩스 데이터에서 드리프트가 있는 구간 선정 → 기존 프레임별 정합 방식과 나란히 비교 → 축척 정확도·정합 오차로 정량 평가
+  </li>
+  <li>
+    <strong>위상-진폭 분리 LMMSE 추정을 랩 위상 복원 전처리 단계로 이식</strong><br>
+    UPADNet이 디블러링에 쓴 amplitude/phase 분리 LMMSE 추정 방식을, 랩의 위상 현미경 위상 복원 파이프라인 앞단 전처리로 넣었을 때 저대비 결함이나 미세 구조 복원이 개선되는지 확인합니다.<br>
+    <em>실행 1주차:</em> UPADNet 논문의 LMMSE 추정식과 반복 최적화 구조 정리 → 랩 위상 복원 데이터셋 일부에 전처리로 삽입한 파이프라인 프로토타입 → 전처리 유무에 따른 위상 복원 정확도(SSIM/위상 RMSE) 비교 → 실패해도 negative result로 정리 가능
+  </li>
+  <li>
+    <strong>GAIA의 geometry-adaptive 연산자 학습을 제한 각도 ODT 역문제에 시험 적용</strong><br>
+    GAIA가 제안한 "입력과 출력이 서로 다른 도메인에 있는 경계값·역문제"를 기하학적으로 적응시키는 구조를, optical diffraction tomography의 제한 각도(limited-angle) 조건(측정 각도 공간과 복원하려는 3D 공간이 어긋나는 상황)에 적용 가능한지 검토합니다.<br>
+    <em>실행 1주차:</em> GAIA의 geometry token + cross-attention 구조 이해 및 재현 가능성 확인(코드 공개 여부 확인) → 랩 ODT 제한 각도 데이터에서 baseline(FBP/MBIR) 대비 아티팩트 비교 프로토타입 → 학습 데이터 요구량과 일반화 범위 파악, 실패 시 workshop short로 정리
+  </li>
+</ol>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p>※ 막대 너비는 catch-all Deep Learning Methods 버킷을 제외한 최댓값(Tomography/3D Imaging 44편)을 100%로 정규화. arXiv(new+cross) + 저널 합산.</p>
+<div>
+  <div class=bucket-bar><span class=nm>🔭 Fourier Ptychography/Microscopy</span><div class=bar><div class=fill style="width:4.5%"></div></div><span class=n>2</span></div>
+  <div class=bucket-bar><span class=nm>📷 Lensless/Coded Imaging</span><div class=bar><div class=fill style="width:4.5%"></div></div><span class=n>2</span></div>
+  <div class=bucket-bar><span class=nm>🌊 Phase Imaging/Holography</span><div class=bar><div class=fill style="width:15.9%"></div></div><span class=n>7</span></div>
+  <div class=bucket-bar><span class=nm>🔬 Meta-Optics/Diffractive</span><div class=bar><div class=fill style="width:27.3%"></div></div><span class=n>12</span></div>
+  <div class=bucket-bar><span class=nm>💡 Light-Field/Novel Sensors</span><div class=bar><div class=fill style="width:13.6%"></div></div><span class=n>6</span></div>
+  <div class=bucket-bar><span class=nm>🧊 Tomography/3D Imaging</span><div class=bar><div class=fill style="width:100%"></div></div><span class=n>44</span></div>
+  <div class=bucket-bar><span class=nm>🧬 Virtual Staining/Pathology</span><div class=bar><div class=fill style="width:65.9%"></div></div><span class=n>29</span></div>
+  <div class=bucket-bar><span class=nm>⚙️ Reconstruction/Inverse Problems</span><div class=bar><div class=fill style="width:47.7%"></div></div><span class=n>21</span></div>
+  <div class=bucket-bar><span class=nm>🤖 Deep Learning Methods (catch-all)</span><div class=bar><div class=fill style="width:100%"></div></div><span class=n>138</span></div>
+</div>
+<p><small>🔥 TOP3: Tomography/3D Imaging(44) · Virtual Staining/Pathology(29) · Reconstruction/Inverse Problems(21)  ❄️ BOTTOM2: Fourier Ptychography/Microscopy(2) · Lensless/Coded Imaging(2)</small></p>
+<p>※ Virtual Staining/Pathology 29편 중 실제 가상 염색/디지털 병리 논문은 MMFVS-Net 1편뿐이고, 나머지 대부분은 "virtual"(가상현실 교육 플랫폼 등)·"staining"(치아 색 안정성 등) 단어만 겹치는 false positive입니다. Tomography/3D Imaging 44편도 대다수가 개별 임상 CT/OCT 진단·해부학 연구라 오늘 클러스터 표에는 포함하지 않았습니다.</p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<div class=roi-item>
+  <strong>🔭 Fourier Ptychography/Microscopy</strong> (2편: JNL 2)<br>
+  ▸ <a href="https://doi.org/10.1364/optica.603849" target=_blank>Spatially under-sampled spectroscopic ptychography by exploiting cross-energy structural consistency</a> (Optica) [JNL] — 여러 에너지 대역 간 구조적 유사성을 활용해 스펙트로스코픽 ptychography의 샘플링 요구량을 줄임(초록 미제공, 본문 확인 필요)<br>
+  ▸ <a href="https://doi.org/10.1016/j.sbi.2026.103320" target=_blank>A comparative review of cryo-electron ptychography: Biological applications and future perspectives</a> (Current Opinion in Structural Biology) [JNL] — cryo-EM ptychography의 생물학적 응용을 정리한 리뷰
+</div>
+
+<div class=roi-item>
+  <strong>🌊 Phase Imaging/Holography</strong> (7편: AI 1, JNL 6)<br>
+  ▸ <a href="https://doi.org/10.1364/oe.601742" target=_blank>A Hologram Super-Resolution Network for Improved Fringe Quality toward Higher Phase Reconstruction Accuracy in Digital Holographic Microscopy</a> (Optics Express) [JNL] — 간섭무늬 품질을 초해상도 신경망으로 개선해 위상 복원 정확도 향상<br>
+  ▸ <a href="https://doi.org/10.1364/oe.600716" target=_blank>Automatic Phase Aberration Compensation in Digital Holographic Microscopy Based on Adaptive-Threshold M-estimator Sample Consensus</a> (Optics Express) [JNL] — 자동 임계값 기반 강건 추정으로 위상 수차 자동 보정<br>
+  ▸ <a href="https://doi.org/10.1039/d6mh00773b" target=_blank>High-fidelity Cross-media Acoustic Holography through a Passive Meta-projector</a> (Materials Horizons) [JNL] — 서로 다른 매질 경계를 넘나드는 음향 홀로그래피(광학은 아니지만 홀로그래피 원리 참고 가능)
+</div>
+
+<div class=roi-item>
+  <strong>🔬 Meta-Optics/Diffractive</strong> (12편: SP 1, JNL 11)<br>
+  ▸ <a href="https://doi.org/10.1109/tcomm.2026.3708504" target=_blank>Metasurface-Enabled Extremely Large-Scale Antenna Systems</a> (IEEE Trans. Communications) [JNL] — 대규모 안테나 시스템의 트랜시버 구조·채널 추정<br>
+  ▸ <a href="https://doi.org/10.1038/s41467-026-74804-4" target=_blank>Few-atom-thick silver films for enhanced nanoscale nonlinear optics</a> (Nature Communications) [JNL] — 원자 몇 층 두께 은막으로 비선형 나노광학 신호 증폭<br>
+  ▸ <a href="https://arxiv.org/abs/2607.00253" target=_blank>ADC-Aware End-to-End Optimization of a Dynamic Metasurface Antenna with Strong Mutual Coupling for Monostatic Scene Classification</a> (eess.SP) — ADC 제약을 포함해 메타표면 안테나를 end-to-end 최적화, 장면 분류에 활용
+</div>
+
+<div class=roi-item>
+  <strong>💡 Light-Field/Novel Sensors</strong> (6편: CV 1, AI 1, SP 1, JNL 3)<br>
+  ▸ <a href="https://arxiv.org/abs/2607.00176" target=_blank>PRISM-VO: Scale-Aware Visual Odometry Using Photometric Plenoptic Bundle Adjustment</a> (cs.CV) — Tier A. 플레놉틱 카메라 한 대로 축척 모호성 없이 로봇 자세 추정<br>
+  ▸ <a href="https://arxiv.org/abs/2607.01123" target=_blank>Plenoptic imaging of particle interactions in scintillation detectors</a> (eess.SP) — 다중 초점 마이크로렌즈로 광자 제한 상황에서 3D 위치 추정 정밀도 향상<br>
+  ▸ <a href="https://doi.org/10.1186/s43074-026-00265-z" target=_blank>Snapshot 3D at the speed frontier: redefining light-field microscopy for neuroimaging</a> (PhotoniX) [JNL] — 라이트필드 현미경의 신경과학 응용을 속도·광자효율·모션 강건성 기준으로 재평가하는 리뷰
+</div>
+
+<div class=roi-item>
+  <strong>🧊 Tomography/3D Imaging</strong> (44편: LG 2, CV 10, JNL 32)<br>
+  ▸ <a href="https://arxiv.org/abs/2607.01128" target=_blank>GAIA: Geometry-Adaptive Operator Learning for Forward and Inverse Problems</a> (cs.LG) — 서로 다른 입출력 도메인을 기하학적으로 적응시키는 범용 연산자 학습<br>
+  ▸ <a href="https://doi.org/10.1186/s43074-026-00265-z" target=_blank>Snapshot 3D at the speed frontier: redefining light-field microscopy for neuroimaging</a> (PhotoniX) [JNL] — (Light-Field 버킷과 중복 게재) 라이트필드 현미경 스냅샷 볼류메트릭 촬영 리뷰<br>
+  ▸ <a href="https://arxiv.org/abs/2607.00595" target=_blank>GADA: Geometry-Aware Deformable Aggregation for Image-Based Gaussian Splatting</a> (cs.CV) — 기하 불확실성으로 인한 워핑 오차를 변형 가능한 offset으로 보정
+</div>
+
+<div class=roi-item>
+  <strong>🧬 Virtual Staining/Pathology</strong> (29편: LG 5, CV 2, AI 2, JNL 20 — 대부분 키워드 우연 매칭)<br>
+  ▸ <a href="https://doi.org/10.1016/j.cmpb.2026.109536" target=_blank>MMFVS-Net: A Triple-Symmetric Cross-Attention Network for Multimodal Optical Image Fusion and High-accuracy Virtual Staining of Breast Cancer Tissues</a> (Computer Methods and Programs in Biomedicine) [JNL] — 오늘 이 버킷에서 유일하게 실제 가상 염색을 다루는 논문. 여러 광학 모달리티를 대칭형 cross-attention으로 융합해 유방암 조직 가상 염색 정확도를 높임(초록 미제공, 본문 확인 필요)
+</div>
+
+<div class=roi-item>
+  <strong>⚙️ Reconstruction/Inverse Problems</strong> (21편: LG 5, CV 9, AI 2, IV 1, JNL 4)<br>
+  ▸ <a href="https://arxiv.org/abs/2607.00251" target=_blank>Leveraging Phase Information to Boost Unrolled Network Learning for Image Deblurring</a> (cs.CV) — Tier A. 진폭·위상 LMMSE 분리 추정 기반 unrolled 디블러링 네트워크(UPADNet)<br>
+  ▸ <a href="https://arxiv.org/abs/2607.01176" target=_blank>High-dimensional Embedding Prior for Noisy K-space Domain MRI Reconstruction</a> (cs.CV) — k-space 표현을 고차원으로 확장해 diffusion 기반 복원기의 노이즈 강건성 개선<br>
+  ▸ <a href="https://arxiv.org/abs/2607.00370" target=_blank>Enhancing Prostate Cancer Segmentation for Multi-Domain Generalization using Parallel-Route Coherent Mixup Regularization</a> (eess.IV) — 도메인 이동에 강건한 전립선 MRI 분할을 위한 mixup 정규화
+</div>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>Tier A — PRISM-VO: Scale-Aware Visual Odometry Using Photometric Plenoptic Bundle Adjustment [방법전환] [실사용전환]</h3>
+  <p><a href="https://arxiv.org/abs/2607.00176" target=_blank>arXiv:2607.00176</a> · cs.CV</p>
+  <p><strong>왜 A급인가:</strong> 일반 카메라 한 대로 로봇 위치를 추정하는 monocular visual odometry는 오래된 약점이 있습니다 — 영상만으로는 실제 거리(축척)를 알 수 없어서, 별도 센서나 여러 대의 카메라가 있어야 정확한 위치를 구할 수 있었습니다. PRISM-VO는 플레놉틱(라이트필드) 카메라 한 대만 쓰는데, 이 카메라가 한 장의 촬영에서 이미 깊이 정보를 함께 담고 있기 때문에 이 축척 모호성 문제 자체가 사라집니다. 논문은 카메라 자세와 점들의 역깊이 값을 슬라이딩 윈도우 안에서 함께 최적화하는 photometric plenoptic bundle adjustment를 제안하는데, 이는 기존 단안 SLAM처럼 별도의 스케일 보정 단계나 복잡한 초기화 없이도 실제 미터 단위의 신뢰할 수 있는 3D 복원을 가능하게 합니다. 랩에 중요한 이유는, 랩이 다루는 라이트필드 현미경 데이터에도 같은 원리(한 장의 촬영에서 깊이와 자세를 동시에 뽑아내는 것)를 적용해 시간에 따른 시료 위치 드리프트를 보정하는 데 응용할 수 있기 때문입니다.</p>
+  <p><strong>약점:</strong> 초록만으로는 정확한 위치 추정 오차 수치나 어떤 벤치마크(예: 실내/실외, 저조도)에서 평가했는지 확인하기 어렵습니다. 플레놉틱 센서 자체의 해상도 손실이 위치 추정 정확도에 미치는 trade-off도 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>Virtual Staining/Pathology 버킷 29편</strong> [Dataset risk] 키워드 매칭이 "virtual"·"staining"이라는 일반 단어에 걸려 실제 가상 염색/디지털 병리 논문은 MMFVS-Net 1편뿐입니다. 버킷 편수를 그대로 트렌드 신호로 해석하면 안 됩니다.</p>
+  <p><strong>메타표면 저널 12편</strong> [Claim risk] 대부분 초록이 비어 있거나 짧아(Crossref 메타데이터 한계), 실제로 이미징 응용이 전혀 없는지는 본문에서 재확인이 필요합니다.</p>
+  <p><strong>홀로그램 초해상도/수차보정 (Optics Express 2편)</strong> [Claim risk] 둘 다 초록이 제공되지 않아 구체적 방법·성능 수치를 제목만으로 추정했습니다. 본문 확인 전까지는 참고 수준으로만 취급해야 합니다.</p>
+  <p><strong>라이트필드 5편 클러스터</strong> [Baseline risk] 다섯 편이 서로 다른 도메인이라 같은 커뮤니티의 검증된 흐름은 아닙니다. "5갈래 동시 등장"이라는 해석 자체가 우연일 가능성도 배제할 수 없어, 다음 며칠 추가 논문이 나오는지 지켜봐야 합니다.</p>
+  <p><strong>GAIA (2607.01128)</strong> [Baseline risk] 범용 연산자 학습 프레임워크로 제시됐지만 어떤 구체적 PDE/역문제 벤치마크에서 검증했는지 abstract만으로는 부족합니다. 계산광학 도메인 적용 가능성은 본문의 실험 설정 확인 후 판단해야 합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+<div class=skim>
+  <ul>
+    <li><strong>메타표면 하드웨어 논문 다수 (대규모 안테나, 6G 그래핀 안테나, 무선 정보·전력 전송, 태양광 반사판 등)</strong> — 계산광학 이미징과 직접 연관이 없는 통신·전력 응용입니다. 역설계 방법론 신호가 재등장할 때까지 skim.</li>
+    <li><strong>임상 CT/OCT/CBCT 해부학·진단 저널 논문 다수 (하악 신경관, 부비동, 관상동맥 석회화 등)</strong> — 영상 촬영 자체보다 해부학적 계측·진단이 목적이라 랩 ROI(재구성·역문제)와 거리가 있습니다.</li>
+    <li><strong>Virtual Staining/Pathology 버킷 내 false positive 다수 (가상현실 교육 플랫폼, 치아 색 안정성 등)</strong> — 키워드만 겹칠 뿐 계산광학과 무관합니다.</li>
+    <li><strong>GADA: Geometry-Aware Deformable Aggregation (2607.00595)</strong> — 3DGS 워핑 정확도 개선 논문으로 흥미롭지만 일반 3D reconstruction 맥락이라 계산광학 이미징과는 간접 연관. 아이디어만 참고.</li>
+  </ul>
+</div>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>arXiv/저널 — Light-Field/Plenoptic</h3>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.00176" target=_blank>PRISM-VO: Scale-Aware Visual Odometry Using Photometric Plenoptic Bundle Adjustment</a></strong> <span class=pill>CV</span> [방법전환] [실사용전환] <em>Must-read</em><br>
+- 문제: 단안 카메라 기반 visual odometry는 실제 축척(스케일)을 알 수 없어 별도 센서가 필요함<br>
+- 방법: 플레놉틱 카메라 한 대로 자세와 역깊이를 함께 최적화하는 photometric bundle adjustment<br>
+- 의미: 랩 라이트필드 현미경의 시간 경과 자세·드리프트 보정에 이식 가능한 구조<br>
+- 주의: 정확한 위치 추정 오차와 해상도 손실 trade-off는 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.01123" target=_blank>Plenoptic imaging of particle interactions in scintillation detectors</a></strong> <span class=pill>SP</span> [방법전환] [인프라] <em>Read</em><br>
+- 문제: 광자 수가 적은 상황에서 방사선 상호작용의 3D 위치를 정밀하게 찾기 어려움<br>
+- 방법: 서로 다른 초점 거리를 가진 마이크로렌즈 배열(multifocal)로 광자 수집과 깊이 인코딩을 동시에 최적화<br>
+- 의미: multifocal 설계와 Cramér-Rao 하한 분석이 랩 라이트필드 현미경의 축방향 해상도 최적화에 참고 가능<br>
+- 근거: 단초점 대비 광자 제한 조건에서 축방향 민감도 향상(Cramér-Rao 하한 분석)
+</div>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1186/s43074-026-00265-z" target=_blank>Snapshot 3D at the speed frontier: redefining light-field microscopy for neuroimaging</a></strong> <span class=pill>JNL</span> [통합정리] <em>Read</em><br>
+- 문제: 순차 볼륨 스캔 방식 현미경은 빠르고 넓게 퍼진 신경 활동을 놓침<br>
+- 방법: 공간·각도 정보를 한 번의 노출로 인코딩하는 라이트필드 현미경의 신경과학 응용을 리뷰<br>
+- 의미: 정보처리량·지연시간·광자효율·모션강건성이라는 4개 평가축을 제안, 랩 라이트필드 현미경 성능 평가 기준으로 참고 가능
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.00965" target=_blank>Slope-Guided Mamba and Angular-Refined Transformer for Light Field Super-Resolution</a></strong> <span class=pill>CV</span> [방법전환] <em>Read</em><br>
+- 문제: 라이트필드 초해상도가 공간-각도 상관관계를 따로 다뤄 4D 광선 일관성이 깨지기 쉬움<br>
+- 방법: slope-guided Mamba로 공간-각도를 조기에 결합하고, epipolar 기하에 맞춘 각도 정제 transformer(SMART) 결합<br>
+- 의미: 랩 라이트필드 데이터의 저해상도 복원 파이프라인에 공간-각도 결합 구조로 참고 가능
+</div>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.3390/s26134149" target=_blank>Object-Aware Computational Integral Imaging for Improved Object Depth Estimation and Stereo Matching Training</a></strong> <span class=pill>JNL</span> [데이터전환] <em>Read</em><br>
+- 문제: 스테레오 매칭 학습용 깊이 정답값을 얻으려면 보통 능동 센서가 필요함<br>
+- 방법: computational integral imaging(다시점 카메라 배열)으로 수동 촬영만으로 깊이 정답값을 생성<br>
+- 의미: 능동 깊이 센서 없이 라이트필드 계열 데이터로 학습 데이터를 만드는 아이디어, 랩 데이터 파이프라인에 참고 가능
+</div>
+
+<h3>arXiv/저널 — 위상(Phase) 신호 분리</h3>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.00251" target=_blank>Leveraging Phase Information to Boost Unrolled Network Learning for Image Deblurring</a></strong> <span class=pill>CV</span> [방법전환] <em>Read</em><br>
+- 문제: 대부분의 디블러링이 이미지를 공간 변수로만 다뤄 위상 정보를 명시적으로 쓰지 않음<br>
+- 방법: 진폭·위상을 LMMSE로 각각 추정한 뒤 반복 최적화(unrolled network)로 결합하는 UPADNet<br>
+- 의미: 위상 분리 추정 방식이 랩 위상 복원 전처리 단계로 이식 가능한 아이디어
+</div>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1063/5.0339969" target=_blank>Sub-resolution detectability of nanoscale surface defects in β-Ga2O3 enabled by phase-contrast microscopy</a></strong> <span class=pill>JNL</span> [해부분석] <em>Read</em><br>
+- 문제: 회절 한계보다 작은 표면 결함은 일반적으로 검출이 어려움<br>
+- 방법: 위상 신호를 point spread function 전체에 적분해 결함 검출 경계를 이론적으로 재현<br>
+- 의미: "검출 가능성은 공간 해상도가 아니라 적분된 위상 신호로 결정된다"는 원칙이 랩 위상 현미경의 저대비 결함 검출 설계에 참고 가능
+</div>
+
+<h3>arXiv/저널 — MRI/k-space 재구성 및 연산자 학습</h3>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.01176" target=_blank>High-dimensional Embedding Prior for Noisy K-space Domain MRI Reconstruction</a></strong> <span class=pill>CV</span> [방법전환] <em>Read</em><br>
+- 문제: diffusion 기반 생성형 prior가 노이즈 섞인 k-space 복원에서 성능이 떨어짐<br>
+- 방법: k-space 표현을 고차원 임베딩으로 확장해 기존 diffusion solver의 표현력을 높임<br>
+- 의미: 노이즈 강건성을 높이는 표현 확장 아이디어가 랩 홀로그래피 diffusion 기반 위상 복원에도 참고 가능
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.01128" target=_blank>GAIA: Geometry-Adaptive Operator Learning for Forward and Inverse Problems</a></strong> <span class=pill>LG</span> [방법전환] [인프라] <em>Read</em><br>
+- 문제: 기존 geometry-adaptive 연산자 학습은 입출력이 같은 도메인인 forward 문제 위주라 경계값·역문제에 약함<br>
+- 방법: 경계와 내부 필드를 geometry token으로 인코딩하고 cross-attention으로 커널을 국소 적응시키는 통합 아키텍처<br>
+- 의미: 측정 공간과 복원 공간이 다른 제한 각도 ODT 등 랩 역문제에 적용 여지가 있는 범용 구조<br>
+- 주의: 계산광학 도메인 실험은 포함되지 않아 이식 가능성은 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.00370" target=_blank>Enhancing Prostate Cancer Segmentation for Multi-Domain Generalization using Parallel-Route Coherent Mixup Regularization Training</a></strong> <span class=pill>IV</span> [데이터전환] <em>Skim-only</em><br>
+- 문제: MRI 유도 방사선 치료용 분할 모델이 학습 데이터와 다른 도메인에서 성능이 떨어짐<br>
+- 방법: 두 경로를 일관되게 유지하는 mixup 정규화(PaRC-mix)로 도메인 일반화 향상<br>
+- 의미: 임상 분할 중심 논문이라 계산광학 이미징과는 간접 연관, mixup 정규화 아이디어만 참고
+</div>
+
+<h3>저널 — Meta-Optics(통신·전력 응용)</h3>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1109/tcomm.2026.3708504" target=_blank>Metasurface-Enabled Extremely Large-Scale Antenna Systems: Transceiver Architecture, Physical Modeling, and Channel Estimation</a></strong> <span class=pill>JNL</span> [인프라] <em>Skim-only</em><br>
+- 문제: 초대규모 안테나 시스템의 물리 모델링과 채널 추정이 어려움<br>
+- 방법: 메타표면 기반 트랜시버 구조와 채널 추정 프레임워크 제안<br>
+- 의미: 통신 인프라 논문이라 계산광학 이미징과는 무관, 메타표면 물리 모델링 방식만 참고 가치
+</div>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41467-026-74804-4" target=_blank>Few-atom-thick silver films for enhanced nanoscale nonlinear optics</a></strong> <span class=pill>JNL</span> [인프라] <em>Read</em><br>
+- 문제: 나노스케일 비선형 광학 신호가 약해 응용이 제한적<br>
+- 방법: 원자 몇 층 두께의 은막 구조로 비선형 신호를 증폭<br>
+- 의미: 메타표면·비선형 광학 소자 자체는 랩 홀로그래피·구조광 조명 하드웨어에 잠재적 참고 가치
+</div>
+
+<h3>저널 — Digital Holographic Microscopy</h3>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/oe.601742" target=_blank>A Hologram Super-Resolution Network for Improved Fringe Quality toward Higher Phase Reconstruction Accuracy in Digital Holographic Microscopy</a></strong> <span class=pill>JNL</span> [방법전환] <em>Read</em><br>
+- 문제: 간섭무늬 품질 저하가 위상 복원 정확도를 떨어뜨림<br>
+- 방법: 초해상도 신경망으로 홀로그램 프린지 품질을 개선<br>
+- 의미: 랩 DHM 파이프라인의 프린지 전처리 단계에 참고 가능<br>
+- 주의: 초록 미제공, 구체적 성능 수치는 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/oe.600716" target=_blank>Automatic Phase Aberration Compensation in Digital Holographic Microscopy Based on Adaptive-Threshold M-estimator Sample Consensus</a></strong> <span class=pill>JNL</span> [방법전환] <em>Read</em><br>
+- 문제: 광학계 수차로 인한 위상 왜곡을 수동으로 보정해야 하는 번거로움<br>
+- 방법: 적응형 임계값 M-estimator 기반 샘플 컨센서스로 수차를 자동 보정<br>
+- 의미: 랩 DHM 자동 보정 루틴 설계에 참고 가능<br>
+- 주의: 초록 미제공, 구체적 방법·수치는 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/optica.603849" target=_blank>Spatially under-sampled spectroscopic ptychography by exploiting cross-energy structural consistency</a></strong> <span class=pill>JNL</span> [방법전환] <em>Read</em><br>
+- 문제: 스펙트로스코픽 ptychography가 여러 에너지 대역에서 충분한 샘플링을 요구해 촬영 시간이 김<br>
+- 방법: 서로 다른 에너지 대역 간 구조적 유사성을 활용해 공간 샘플링을 줄임<br>
+- 의미: 랩 FP 셋업의 다중 파장/다중 조명 샘플링 효율화에 참고 가능<br>
+- 주의: 초록 미제공, 구체적 샘플링 절감 비율은 본문 확인 필요
+</div>
+
+<h3>저널 — Virtual Staining(실제 매칭 1편)</h3>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1016/j.cmpb.2026.109536" target=_blank>MMFVS-Net: A Triple-Symmetric Cross-Attention Network for Multimodal Optical Image Fusion and High-accuracy Virtual Staining of Breast Cancer Tissues</a></strong> <span class=pill>JNL</span> [방법전환] <em>Read</em><br>
+- 문제: 단일 광학 모달리티만으로는 가상 염색 정확도에 한계가 있음<br>
+- 방법: 여러 광학 모달리티를 대칭형 cross-attention으로 융합하는 MMFVS-Net<br>
+- 의미: 랩 label-free 가상 염색 파이프라인에서 멀티모달 융합 구조로 참고 가능<br>
+- 주의: 초록 미제공, 구체적 정확도 수치는 본문 확인 필요
+</div>
+
+<h3>cs.CV — Tomography/3D Reconstruction (선별)</h3>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.00595" target=_blank>GADA: Geometry-Aware Deformable Aggregation for Image-Based Gaussian Splatting</a></strong> <span class=pill>CV</span> [방법전환] <em>Skim-only</em><br>
+- 문제: 워핑 기반 3DGS가 기하 불확실성 때문에 얇은 구조·고주파 디테일에서 픽셀 정합 오차를 겪음<br>
+- 방법: 변형 가능한 offset으로 반복적으로 정합을 보정하는 Geometry-Aware Deformable Aggregation<br>
+- 의미: 일반 3D reconstruction 맥락이라 계산광학과는 간접 연관, 워핑 오차 보정 아이디어만 참고
+</div>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv cs.LG /new: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>arxiv.org/list/cs.LG/new</a></li>
+  <li>arXiv cs.CV /new: <a href="https://arxiv.org/list/cs.CV/new" target=_blank>arxiv.org/list/cs.CV/new</a></li>
+  <li>arXiv eess.IV /new: <a href="https://arxiv.org/list/eess.IV/new" target=_blank>arxiv.org/list/eess.IV/new</a></li>
+  <li>사이트 홈: <a href="../index.html">← 홈으로</a></li>
+  <li>RSS 피드: <a href="../feed.xml" target=_blank>feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+소스: arXiv cs.LG/cs.CV/cs.AI/eess.IV/eess.SP /new 2026-07-02 + Crossref/OpenAlex 저널 · Imaging Intelligence Lab (IIL-SNU) · <a href="../feed.xml">RSS</a>
+</footer>
+
+</body>
+</html>

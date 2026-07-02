@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 01 Jul 2026 12:16:52 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2026 12:14:46 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-07-02 (목요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-07-02.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-02.html</guid>
+      <pubDate>Thu, 02 Jul 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘(2026-07-02 목요일) arXiv /new에는 cs.LG 145편, cs.CV 160편, cs.AI 186편, eess.IV 6편, eess.SP 25편으로 총 522편이 발행됐습니다. 전체 스캔 819건(저널 포함) 중 ROI 배정 261건(31.9%)으로, 어제(2026-07-01) 902건 중 273건(30.3%)보다 절대 스캔량은 줄었지만 배정 비율은 소폭 올랐습니다. 오늘 가장 흥미로운 대목은 편수가 아니라 구성입니다 — 라이트필드/플레놉틱 이미징이라는 하나의 광학 원리가 로봇 시각 주행, 입자검출기 3D 위치추정, 뇌 신경활동 촬영, 라이트필드 초해상도, 수동 스테레오 깊이 추정까지 다섯 갈래에서 동시에 나타나면서, 오늘 하루 안에서는 가장 뚜렷한…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-07-01 (수요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-07-01.html</link>
