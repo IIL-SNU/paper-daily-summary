@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 02 Jul 2026 12:14:46 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2026 12:12:26 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-07-03 (금요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-07-03.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-03.html</guid>
+      <pubDate>Fri, 03 Jul 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘(2026-07-03 금요일) arXiv /new에는 cs.LG 181편, cs.CV 155편, cs.AI 228편, eess.IV 6편, eess.SP 17편으로 총 587편이 발행됐습니다. 전체 스캔 884건(저널 포함) 중 ROI 배정 229건(25.9%)으로, 어제(2026-07-02) 819건 중 261건(31.9%)보다 스캔량은 늘었지만 배정 비율은 낮아졌습니다. 오늘 가장 뚜렷한 신호는 편수가 아니라 문제 설정의 반복입니다 — 라이트시트 현미경의 압축 측정, 저선량 CT의 노이즈, 치과 파노라마 X-ray의 극단적 정보 부족이라는 서로 다른 세 상황이, 전부 "부족한 측정값을 학습 기반 사전 정보로 메워 3차원 구조를 되살린다"는 같은 재구성 문제로 수렴…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-07-02 (목요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-07-02.html</link>

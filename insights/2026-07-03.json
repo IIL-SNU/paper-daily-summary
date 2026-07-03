@@ -1,0 +1,61 @@
+{
+  "date": "2026-07-03",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "title": "압축측정에서 볼륨/3D 구조를 복원하는 문제가 라이트시트 현미경·저선량 CT·치과 X-ray 3갈래에서 동시에 재확인",
+      "papers": [
+        {"arxiv_id": "2607.01654", "title": "Plug-and-Play Volumetric Reconstruction for Compressive Sensing Light-Sheet Microscopy", "journal_or_source": "arXiv cs.CV"},
+        {"arxiv_id": "2607.01756", "title": "ProSAC-CT: Progressive Spectral-Anatomical Co-Guided Multi-Stage Diffusion Model for Low-Dose CT Denoising", "journal_or_source": "arXiv cs.CV"},
+        {"arxiv_id": "2607.02099", "title": "X-Splat: Gaussian Splatting for 3D CBCT Generation from Single Panoramic Radiograph", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "세 논문은 촬영 방식은 완전히 다르지만 같은 구조의 문제를 풉니다 — 카메라·검출기가 원래 찍어야 할 양보다 훨씬 적은 측정값만 주고, 그 부족한 정보를 학습된 사전 정보로 메워서 3차원 구조를 되살리는 문제입니다. CS-LSM 논문은 라이트시트 현미경이 여러 축 방향 단면을 한 번의 노출에 겹쳐 찍어버린 압축 측정에서, 어떤 디노이저든 끼워 넣을 수 있는 plug-and-play 알고리즘으로 지브라피시 심장의 세포 구조를 실제로 복원해 보입니다. ProSAC-CT는 방사선량을 줄여 더 거칠어진 저선량 CT 영상을, 해부학적 구조를 단계별로 나눠 안내하는 diffusion 모델로 정상 선량 수준까지 복원합니다. X-Splat은 한 걸음 더 나아가 딱 한 장의 2D 파노라마 치과 X-ray만 가지고 3D 치아·턱뼈 구조 전체(CBCT에 해당하는 정보)를 Gaussian Splatting으로 복원합니다. 세 편이 서로 다른 학회·저널·응용 분야에서 나왔는데도 '측정을 극단적으로 줄이고 모델 기반/생성형 사전 정보로 볼륨을 되살린다'는 같은 설계 문제에 도달했다는 점이, 오늘 이 랩이 눈여겨봐야 할 가장 뚜렷한 신호입니다.",
+      "confidence": "high",
+      "lab_action": "CS-LSM의 Woodbury 기반 data-consistency 업데이트와 axial-coupled PnP 구조를 랩의 압축 홀로그래피·optical diffraction tomography 재구성 파이프라인에 이식 가능한지 검토. X-Splat의 Beer-Lambert 재투영 제약(알려진 촬영 기하를 스캐폴드로 쓰는 방식)을 랩의 sparse-view ODT 재구성에 적용해 실제 각도 부족 상황에서 아티팩트가 줄어드는지 비교. ProSAC-CT의 주파수-해부 co-guided 다단계 diffusion 구조를 랩 저선량/저광량 이미징 노이즈 제거 벤치마크와 비교"
+    },
+    {
+      "title": "메타표면·저간섭 광원·액정렌즈, 서로 다른 하드웨어 혁신이 단일 촬영 라벨-프리 정량 위상·3D 이미징이라는 같은 목표로 수렴",
+      "papers": [
+        {"doi": "10.1002/nap2.70190", "title": "Wavelength and Polarization Multiplexed Nonlocal Metasurface for Quantitative Phase Microscopy", "journal_or_source": "Nanophotonics"},
+        {"doi": "10.1063/5.0319792", "title": "Large field-of-view quantitative phase imaging flow cytometry using low coherence SLD based digital holographic microscopy", "journal_or_source": "AIP Advances"},
+        {"doi": "10.1117/1.apn.5.5.056008", "title": "Snap3D-FM: snapshot 3D fluorescence microscopy for live biological imaging", "journal_or_source": "Advanced Photonics Nexus"}
+      ],
+      "why": "세 그룹은 서로 다른 하드웨어를 만들었지만 목표는 놀랍도록 같습니다 — 염색하지 않은 살아있는 세포를 한 번의 촬영만으로 정량적인 위상 또는 3차원 정보까지 얻는 것입니다. 첫 번째 논문은 물체 면에 놓는 비국소(nonlocal) 메타표면 하나로 두 파장·두 편광 방향의 미분 위상 대비 영상을 동시에 얻어, HeLa 세포의 정량 위상을 실측값과 맞는 수준으로 복원했습니다. 두 번째 논문은 비싼 코히런트 레이저 대신 저렴한 저간섭 발광다이오드(SLD)를 광원으로 써서 홀로그래픽 현미경의 코히런스 노이즈를 줄이면서도, 회절 격자로 기준광을 넓혀 넓은 시야에서 여러 세포를 동시에 흐름 속에서 촬영했습니다. 세 번째 논문은 액정(LC) 렌즈 하나로 두 개의 다른 파면 곡률을 만들어, 비간섭성 홀로그래피 원리로 살아있는 세포의 3차원 형광 구조를 한 번의 셔터로 담아냈습니다. 메타표면·저간섭 광원·액정렌즈라는 전혀 다른 소자를 썼지만, 셋 다 '복잡하고 비싼 광학계를 단순화하면서도 라벨 없이 정량 정보를 얻는다'는 같은 방향으로 수렴했다는 점이 이 랩의 위상·형광 이미징 하드웨어 설계에 직접적인 참고가 됩니다.",
+      "confidence": "high",
+      "lab_action": "nonlocal metasurface의 파장·편광 다중화 미분 위상 대비 설계를 랩 QPI 시스템 소형화 검토에 반영. 저간섭 SLD + 회절격자 기준광 확장 구조를 랩 홀로그래피 셋업의 코히런스 노이즈 저감 및 시야 확대 실험에 적용. Snap3D-FM의 LC 렌즈 파면 변조 방식을 랩 스냅샷 3D 형광 이미징 프로토타입의 저비용 대안으로 비교 평가"
+    },
+    {
+      "title": "3D 장면 재구성이 장면별 최적화에서 feed-forward 단일 패스 추론으로 계속 이동",
+      "papers": [
+        {"arxiv_id": "2607.01290", "title": "AnchorSplat: Fast and Structure Consistent Detail Synthesis for Gaussian Splatting", "journal_or_source": "arXiv cs.CV"},
+        {"arxiv_id": "2607.02301", "title": "InvSplat: Inverse Feed-Forward Scene Splatting", "journal_or_source": "arXiv cs.CV"},
+        {"arxiv_id": "2607.01803", "title": "PixGS: Pixel-Space Diffusion for Direct 3D Gaussian Splat Generation", "journal_or_source": "arXiv cs.CV"},
+        {"arxiv_id": "2607.02515", "title": "PointDiT: Pixel-Space Diffusion for Monocular Geometry Estimation", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "예전에는 장면 하나를 3D로 복원하려면 그 장면 전용으로 몇 분에서 몇 시간씩 최적화를 돌려야 했는데, 오늘 나온 네 편은 전부 이 과정을 한 번의 신경망 순전파(feed-forward)로 끝내려는 시도입니다. AnchorSplat은 3D Gaussian Splatting 결과물의 디테일이 부족한 문제를, 2D 후처리 대신 3D 구조에서 직접 동작하는 end-to-end 네트워크로 한 번에 보강합니다. InvSplat은 이미지에서 기하와 재질 속성을 동시에 복원하는 inverse rendering을, 장면별 최적화 없이 feed-forward 멀티뷰 프레임워크로 처리합니다. PixGS와 PointDiT는 둘 다 latent 공간을 거치는 복잡한 캐스케이드 대신, 픽셀 공간에서 바로 동작하는 diffusion transformer로 3D Gaussian이나 기하 정보를 직접 생성합니다. 네 편이 서로 다른 팀에서 나왔는데도 공통적으로 '장면마다 새로 최적화하지 않고, 미리 학습된 모델이 한 번에 결과를 내놓게 한다'는 방향으로 움직이고 있다는 건, 3D 재구성이 연구용 도구에서 실시간·대화형 응용으로 넘어가는 신호로 읽을 수 있습니다.",
+      "confidence": "medium",
+      "lab_action": "PixGS/PointDiT의 픽셀 공간 diffusion transformer 구조가 latent 공간을 거치지 않고도 랩의 3D 재구성 파이프라인 추론 속도를 개선할 수 있는지 소규모 벤치마크로 비교. InvSplat의 feed-forward inverse rendering 구조를 랩의 반복 촬영 없이 빠르게 형상+반사율을 얻어야 하는 프로토타입 실험에 시험 적용"
+    },
+    {
+      "title": "메타표면 저널 14편, 6/30 이후 사흘 연속 광학 이미징 아닌 안테나·통신·양자광원으로 쏠림",
+      "papers": [
+        {"doi": "10.1063/5.0332579", "title": "Miniaturized reconfigurable metasurface: Hybrid resonator design for switchable microwave transmission and shielding", "journal_or_source": "Journal of Applied Physics"},
+        {"doi": "10.1088/1402-4896/ae8589", "title": "Tunable difunctional terahertz metasurface based on vanadium dioxide", "journal_or_source": "Physica Scripta"},
+        {"doi": "10.1038/s41377-026-02345-y", "title": "Spin-photon qubits for scalable quantum network", "journal_or_source": "Light: Science & Applications"}
+      ],
+      "why": "6/29~6/30 이틀은 메타표면을 딥러닝으로 역설계하는 방법론 논문이 이어졌는데, 6/30을 마지막으로 7/1부터 오늘(7/3)까지 사흘 연속 그런 논문이 보이지 않습니다. 오늘 저널 14편은 소형 재구성형 마이크로파 메타표면, 이산화바나듐 기반 테라헤르츠 메타표면, 확장 가능한 양자 네트워크용 스핀-광자 큐비트처럼 전부 통신·양자정보·전자기 차폐 하드웨어를 다루고, 이미징이나 역설계 알고리즘 언급이 없습니다. 사흘째 같은 방향이 반복되는 건 하루 이틀의 우연한 변동이 아니라, 최근 메타표면 연구 커뮤니티의 관심이 '어떻게 설계할 것인가'보다 '통신·양자 하드웨어에 무엇을 만들 것인가'로 옮겨갔을 가능성을 시사합니다.",
+      "confidence": "medium",
+      "lab_action": "다음 2~3일 arXiv·저널에 메타표면 역설계(AI 기반 최적화) 논문이 재등장하는지 계속 추적하고, 계속 공백이면 이번 주 weekly에서 '역설계 흐름이 6월 말에만 몰렸다'로 판단 근거 마련. 광학 이미징 목적 메타표면만 걸러내도록 저널 쿼리를 통신/양자 키워드와 분리하는 방안 검토"
+    },
+    {
+      "title": "단안·듀얼픽셀 깊이 추정이 국소 신호 부족을 비디오 diffusion·범용 사전 정보로 메우기 시작",
+      "papers": [
+        {"arxiv_id": "2607.01900", "title": "FoundDP: Revisiting Weak Disparity Observability in Dual-Pixel Depth Estimation", "journal_or_source": "arXiv cs.CV"},
+        {"arxiv_id": "2607.01677", "title": "ICDepth: Taming Video Diffusion Models for Video Depth Estimation via In-Context Conditioning", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "두 논문 모두 카메라 한 대로 깊이를 알아내려 할 때 신호 자체가 원래 약하다는 물리적 한계에서 출발합니다. FoundDP는 듀얼픽셀(한 렌즈를 두 개의 반쪽 조리개로 나눠 찍는 방식) 센서의 기준선이 워낙 짧아서, 무늬가 없거나 저대비인 영역에서는 깊이 단서(disparity)가 거의 관측되지 않는다는 문제를 다룹니다. ICDepth는 비디오에서 깊이를 뽑을 때 프레임별로 정확하지만 시간이 지나면 어긋나는 방식과, 시간적으로는 일관되지만 기하학적으로 부정확한 생성형 방식 사이의 절충을 다루면서, 사전학습된 비디오 diffusion 모델을 in-context 조건화로 활용합니다. 둘 다 카메라 한 대의 국소적인 신호만으로는 부족하다는 같은 결론에서, 각각 학습된 통합 사전 정보와 비디오 생성 모델이라는 외부 지식을 끌어와 메우려는 시도라는 공통점이 있습니다.",
+      "confidence": "medium",
+      "lab_action": "FoundDP가 제시하는 약한 disparity 관측 가능성 진단 프레임을 랩의 듀얼픽셀 또는 소형 베이스라인 스테레오 셋업의 저대비 영역 실패 사례 분석에 적용. ICDepth의 in-context 비디오 diffusion 조건화 아이디어가 랩 시계열 위상 복원(예: 라이브 세포 촬영)에서 시간적 일관성을 높이는 데 참고 가능한지 검토"
+    }
+  ]
+}
