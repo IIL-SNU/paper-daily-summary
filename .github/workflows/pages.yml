@@ -31,12 +31,33 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      # The every-2h upgrade poll makes "arXiv Daily Summary" complete every 2h, firing
+      # this workflow_run even when the poll was a no-op (no new commit). Deploying the
+      # same content 12x/day is wasteful and occasionally hits transient Pages failures.
+      # On workflow_run, only deploy when HEAD was committed recently (a real content run).
+      - name: Gate redundant deploys
+        id: gate
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_run" ]]; then
+            age=$(( $(date -u +%s) - $(git log -1 --format=%ct) ))
+            if (( age > 900 )); then
+              echo "HEAD is ${age}s old (no new content — no-op poll); skipping deploy."
+              echo "deploy=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            echo "HEAD committed ${age}s ago; deploying."
+          fi
+          echo "deploy=true" >> "$GITHUB_OUTPUT"
       - name: Configure Pages
+        if: ${{ steps.gate.outputs.deploy == 'true' }}
         uses: actions/configure-pages@v5
       - name: Upload artifact
+        if: ${{ steps.gate.outputs.deploy == 'true' }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
       - name: Deploy to GitHub Pages
         id: deployment
+        if: ${{ steps.gate.outputs.deploy == 'true' }}
         uses: actions/deploy-pages@v4
