@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Weekly Retrospective — 2026-W27</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,sans-serif;line-height:1.7;color:#1a1a1a}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e}
+table{border-collapse:collapse;width:100%;margin:1rem 0}
+th,td{border:1px solid #ccc;padding:.5rem .8rem;vertical-align:top}
+th{background:#f0f0f8;font-size:.85rem}
+td{font-size:.88rem}
+blockquote{border-left:4px solid #2a2a6e;padding:.5rem 1rem;margin:1rem 0;background:#f8f8ff}
+.theme-card{border:1px solid #e0e0ff;border-radius:8px;padding:1rem;margin:.8rem 0;background:#f8f8ff}
+.theme-card h3{margin:0 0 .5rem;font-size:1rem;color:#2a2a6e}
+a{color:#2a2a6e}
+.home{display:inline-block;padding:.4rem .9rem;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;font-size:.875rem;color:#374151;text-decoration:none;margin:.5rem 0}
+.home:hover{background:#e9ecef}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 6px;border-radius:8px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.hot-cold{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+.hot-box{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:.9rem 1.1rem}
+.cold-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:.9rem 1.1rem}
+.hot-box h3{margin:0 0 .5rem;color:#7f1d1d;font-size:.95rem}
+.cold-box h3{margin:0 0 .5rem;color:#1e3a8a;font-size:.95rem}
+.hot-box ul,.cold-box ul{margin:.4rem 0;padding-left:1.2rem;font-size:.88rem}
+.dd{background:#fefce8;border:1px solid #fde047;border-radius:10px;padding:1.1rem 1.3rem;margin:1rem 0}
+.dd h3{margin:0 0 .5rem;color:#713f12;font-size:1rem}
+.action-card{border:1px solid #d1fae5;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#f0fdf4}
+.action-card h3{margin:0 0 .4rem;font-size:.95rem;color:#14532d}
+.pred-card{border:1px solid #e0e7ff;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#eef2ff}
+.pred-card h3{margin:0 0 .4rem;font-size:.95rem;color:#3730a3}
+.pred-card .cond{font-size:.82rem;color:#4338ca;margin:.3rem 0}
+.meta{font-size:.85rem;color:#475569;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:4px;padding:.6rem 1rem;margin:.8rem 0}
+ul.plain{padding-left:1.3rem}
+ul.plain li{margin:.3rem 0;font-size:.9rem}
+.review-hit{color:#166534;font-weight:700}
+.review-partial{color:#92400e;font-weight:700}
+.review-miss{color:#7f1d1d;font-weight:700}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+<button id=themeToggle onclick="(function(){var d=document.documentElement,t=d.dataset.theme==='dark'?'light':'dark';d.dataset.theme=t;try{localStorage.setItem('theme',t)}catch(e){}})()">🌙</button>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Weekly Retrospective — 2026-07-06 (Week 27)</h1>
+<div class=meta>
+  <div>발행: 2026-07-06 (월) &nbsp;|&nbsp; 검토 기간: 2026-06-29 ~ 07-03 (Mon–Fri)</div>
+  <div>이번 주 arXiv 신규 약 3,235편 (cs.LG 972 · cs.CV 892 · cs.AI 1,216 · eess.IV 44 · eess.SP 111) + 저널 506편 &nbsp;|&nbsp; ROI 배정 570건 &nbsp;|&nbsp; 5일치 daily briefing 기반</div>
+</div>
+
+<h2>🗓 Executive Summary</h2>
+<ul class=plain>
+  <li>지난주(W27)는 <strong>3D 재구성이 "장면마다 다시 최적화해야 한다"는 전제를 벗어난 주</strong>로 기억하면 됩니다 — 월요일 StructSplat이 카메라 보정 없이도 되는 3DGS를 냈고, 금요일에는 InvSplat·AnchorSplat 등 4편이 feed-forward 추론으로, X-Splat이 X-ray 단일 촬영으로 확장했습니다.</li>
+  <li>역문제 해법은 <strong>diffusion prior라는 한 방향이 아니라 zero-shot·PnP·unrolling·분포 강건성 네 갈래로 다각화</strong>됐습니다 — 화요일 하루에 SDIP, MSC, DECT-DRNet, DRO 프레임워크 네 편이 동시에 나와 지도학습의 각기 다른 약점을 겨냥했습니다.</li>
+  <li><strong>계산광학 핵심 주제(FP·위상·메타표면)는 이번 주도 arXiv가 아닌 저널에서만 움직였지만</strong>, 그 신호들이 처음으로 "단일 촬영·라벨 없이 정량 정보를 얻는다"는 하나의 목표로 수렴하기 시작했습니다. 화요일에는 ESRF 싱크로트론 μCT로 Herculaneum 파피루스를 완전 해독한 논문도 나와, 계산 이미징의 실사용 임팩트를 보여줬습니다.</li>
+</ul>
+
+<blockquote>
+<strong>Weekly Thesis.</strong> W26가 이벤트 카메라의 플랫폼화와 역문제의 diffusion prior 내부화로 기억된다면, W27은 3D 재구성이 "장면별로 다시 최적화해야 한다"는 전제 자체를 벗어나는 주(보정 없는 입력, feed-forward 추론, CBCT 같은 새 촬영 방식 확장)로, 그리고 역문제 해법이 diffusion prior 하나가 아니라 zero-shot·PnP·unrolling·분포 강건성 네 갈래로 동시에 다각화된 주로 기억할 만합니다. 계산광학 핵심 주제(FP·위상·메타표면)는 이번 주에도 arXiv가 아닌 저널에서만 움직였지만, 그 저널 신호들이 처음으로 "단일 촬영·라벨 없이 정량 정보를 얻는다"는 하나의 목표로 수렴하기 시작했습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>지난주 가장 뜨거운 흐름은 <strong>3D 재구성의 진입장벽 완화</strong>입니다. 월요일(Jun 29)에 StructSplat이 카메라 파라미터도 없고 정렬도 안 된 소수 이미지만으로 3DGS를 만드는 방법을 냈습니다. 예전에는 3DGS를 쓰려면 정확한 카메라 위치 정보가 필수였는데, 이 전제가 흔들린 셈입니다. 금요일(Jul 3)에는 InvSplat·AnchorSplat·FoundDP·ICDepth 네 편이 장면마다 새로 최적화하는 대신 한 번의 순전파(feed-forward)로 기하와 디테일을 복원하는 쪽으로 몰렸고, 같은 날 X-Splat은 치과 파노라마 X-ray 한 장에서 CBCT급 3차원 정보를 만들어 3DGS가 가시광 RGB 장면을 넘어 비가시광 모달리티로도 확장된다는 것을 보여줬습니다. 보정 불필요, feed-forward, 모달리티 확장이라는 세 방향이 한 주 안에 동시에 나타났다는 것은, 3DGS가 "장면마다 공들여 최적화하는 도구"에서 "적은 입력으로 바로 쓸 수 있는 범용 재구성 엔진"으로 성격이 바뀌고 있다는 뜻입니다.</p>
+
+<p>두 번째 강한 축은 <strong>역문제 해법의 다각화</strong>입니다. 화요일(Jun 30) 하루에 학습 데이터 없이 되는 zero-shot 방법(SDIP), diffusion 샘플링에 물리적 일관성을 끼워 넣는 방법(MSC), 고전 FBP 알고리즘의 미분을 직접 계산해 네트워크에 통합하는 unrolling(DECT-DRNet), 학습·테스트 조건이 달라져도 성능이 급락하지 않게 하는 분포 강건 학습(DRO) 네 편이 동시에 나왔습니다. 넷 다 기존 지도학습이 각각 다른 이유(paired data 의존, 물리 불일치, nonlinear forward model 무시, distribution shift)로 실패하는 지점을 정면으로 겨냥합니다. 즉 지난주(W26) diffusion prior 하나로 수렴하는 듯 보였던 흐름이, 이번 주는 "우리 문제가 무엇으로 실패하는가"에 따라 해법을 고르는 단계로 접어들었습니다. 한편 목요일(Jul 2)에는 라이트필드/플레놉틱 원리가 로봇 시각 주행(PRISM-VO), 입자물리 검출기, 뇌신경 이미징, 초해상도 알고리즘이라는 서로 무관한 4개 분야에서 동시에 재발견됐고, 화요일에는 ESRF 싱크로트론 μCT와 ML virtual unwrapping으로 Herculaneum 파피루스를 완전 해독한 논문이 arXiv에 올라왔습니다.</p>
+
+<p>다음 주 전망: Lensless/Coded Imaging은 이번 주도 arXiv에서 완전히 공백이라 3주 연속 이 패턴이 이어지는지가 관찰 포인트입니다. SDIP·DRO 같은 zero-shot/분포 강건 방법이 FP·렌즈리스·ODT 도메인으로 넘어가는 후속 논문이 나올지, 그리고 월요일 CODA에서 시작된 "AI 인식 성능을 겨냥한 광학 설계" 문제 설정이 다시 등장할지 지켜볼 만합니다.</p>
+
+<h2>⚖️ Hot vs Cold</h2>
+<div class=hot-cold>
+  <div class=hot-box>
+    <h3>⬆ 가속 클러스터</h3>
+    <ul>
+      <li><strong>3D 재구성 — 장면별 최적화 전제 이탈</strong><br>보정 불필요(StructSplat), feed-forward(InvSplat 등 4편), 비가시광 확장(X-Splat)이 한 주 안에 동시에 나타났습니다.</li>
+      <li><strong>역문제 해법 다각화</strong><br>diffusion prior 한 방향에서 zero-shot·PnP·unrolling·DRO 네 방향으로 갈라졌습니다.</li>
+      <li><strong>라이트필드/플레놉틱 원리 재발견</strong><br>로보틱스·입자물리·신경과학 3개 무관 분야에서 목요일 하루에 동시 등장했습니다.</li>
+    </ul>
+  </div>
+  <div class=cold-box>
+    <h3>⬇ 감속 클러스터</h3>
+    <ul>
+      <li><strong>Meta-Optics AI 인식 성능 설계 (arXiv)</strong><br>월요일 CODA 이후 화~금 나흘간 후속이 없었습니다. 저널 메타표면 46편도 대부분 안테나·6G 응용이었습니다.</li>
+      <li><strong>Lensless/Coded Imaging (arXiv)</strong><br>이번 주도 arXiv cs.*에서 전용 논문이 없었습니다. W26에 이어 2주 연속 공백입니다.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>🧩 주간 클러스터 표</h2>
+<table>
+<thead><tr>
+  <th>Cluster</th>
+  <th>대표 논문</th>
+  <th>왜 중요?</th>
+  <th>Confidence</th>
+  <th>Lab action</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><strong>3D 재구성 — 장면별 최적화라는 전제를 벗어나는 흐름</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.28321">StructSplat (2606.28321)</a><br>
+    <a href="https://arxiv.org/abs/2607.02099">X-Splat (2607.02099)</a><br>
+    InvSplat, AnchorSplat (Jul 3)
+  </td>
+  <td>지난주(W26)에 3DGS가 의료·위성 같은 새 응용 도메인으로 확장됐다면, 이번 주는 "3DGS를 쓰려면 무엇이 필요한가"라는 요구조건 자체가 낮아졌습니다. StructSplat은 카메라 파라미터도 없고 정렬도 안 된 소수 이미지만으로 3DGS를 만들었고, InvSplat·AnchorSplat은 장면마다 새로 최적화하는 대신 한 번의 순전파로 기하와 디테일을 복원합니다. X-Splat은 치과 파노라마 X-ray 한 장에서 CBCT급 3차원 정보를 만들어, 3DGS가 가시광 RGB를 넘어 X-ray로도 확장된다는 것을 보였습니다. 세 방향을 합치면 3DGS가 "장면마다 공들여 최적화하는 도구"에서 "적은 입력으로 바로 쓰는 범용 재구성 엔진"으로 성격이 바뀌고 있습니다.</td>
+  <td>High<br><small>Jun 29, Jul 3 이틀, 서로 다른 응용(일반 장면, 의료 X-ray)에서 6편 이상 연결</small></td>
+  <td>StructSplat·X-Splat의 적은/단일 입력 방법론을 랩 ODT 희소각 재구성에 이식 검토; InvSplat/AnchorSplat의 feed-forward 구조를 FP 다각도 측정 실시간 프리뷰에 참고</td>
+</tr>
+<tr>
+  <td><strong>역문제 해법의 다각화 — 지도학습의 약점을 네 갈래로 각각 공략</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.28431">SDIP (2606.28431)</a><br>
+    <a href="https://arxiv.org/abs/2606.28448">MSC (2606.28448)</a><br>
+    DECT-DRNet, DRO Framework (Jun 30)
+  </td>
+  <td>화요일 하루에 학습 데이터가 필요 없는 zero-shot 방법(SDIP), diffusion 샘플링 각 단계에 물리적 일관성을 넣는 방법(MSC), FBP 알고리즘의 미분을 직접 계산해 통합하는 unrolling(DECT-DRNet), 분포가 달라져도 강건한 학습(DRO) 네 편이 동시에 나왔습니다. 넷 다 기존 지도학습이 각각 다른 이유로 실패하는 지점(paired data 의존, 물리 불일치, forward model 무시, distribution shift)을 정면으로 겨냥합니다. 역문제를 어떻게 풀지가 diffusion prior 하나의 정답이 아니라 문제 상황별로 다른 해법을 고르는 단계로 접어들었다는 뜻입니다.</td>
+  <td>High<br><small>Jun 30 하루, 4편이 서로 다른 저자군·다른 실패 조건을 겨냥</small></td>
+  <td>SDIP를 랩 FP 저선량 데이터에 적용해 기존 지도학습 대비 비교; DRO 프레임워크로 랩 ODT 재구성의 조명 조건 변화 stress test 수행</td>
+</tr>
+<tr>
+  <td><strong>라이트필드/플레놉틱 원리 — 서로 무관한 분야에서 동시 재발견</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.00176">PRISM-VO (2607.00176)</a><br>
+    <a href="https://arxiv.org/abs/2607.01123">Plenoptic 입자 검출기 (2607.01123)</a><br>
+    Snapshot 3D neuroimaging (Jul 2)
+  </td>
+  <td>라이트필드(마이크로렌즈 배열로 각도 정보까지 한 번에 찍는 카메라) 원리가 목요일 하루에 로봇 시각 주행, 입자물리 검출기, 뇌신경 이미징이라는 서로 전혀 무관한 분야에서 각각 독립적으로 등장했습니다. 이 원리가 반복해서 소환되는 이유는 같습니다 — 깊이 정보와 촬영 속도를 한 번의 노출로 동시에 얻어야 하는 문제 전반에서 라이트필드 카메라 한 대가 쓸모를 인정받고 있다는 뜻입니다.</td>
+  <td>High<br><small>Jul 2 하루, 서로 무관한 3개 응용 도메인(로보틱스, 입자물리, 신경과학)에서 동일 원리 확인</small></td>
+  <td>PRISM-VO의 plenoptic bundle adjustment 수식을 랩 광 필드 다각도 FP 캘리브레이션에 참고; neuroimaging 논문의 스냅샷 볼륨 캡처를 랩 광 필드 현미경 프로토타입의 노출시간 단축에 적용 검토</td>
+</tr>
+<tr>
+  <td><strong>물리 제약이 도메인을 가리지 않고 신경망 재구성에 들어가는 흐름</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2606.27576">PIAA-ZWFS (2606.27576)</a><br>
+    <a href="https://arxiv.org/abs/2606.31574">EAST 온도장 재구성 (2606.31574)</a><br>
+    물리기반 역렌더링 (Jul 1)
+  </td>
+  <td>월요일 PIAA-ZWFS는 파면 센서 설계에 에너지 보존이라는 물리 법칙을 하드 제약으로 넣어 미분 가능하게 만들었고, 수요일에는 이 발상이 완전히 다른 도메인(핵융합로 온도 측정, 컴퓨터 그래픽스 역렌더링)에서 독립적으로 재등장했습니다. 순수 딥러닝 예측을 그대로 믿는 대신 물리 방정식을 네트워크 구조나 손실 함수에 명시적으로 새겨 넣어, 예측이 물리적으로 말이 되는 범위를 벗어나지 않도록 강제하는 설계가 도메인을 가리지 않고 퍼지고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>Jun 29, Jul 1 이틀, 3개의 서로 무관한 도메인에서 동일 발상 확인 — 계산광학 코어 논문은 아직 소수</small></td>
+  <td>PIAA-ZWFS의 에너지 보존 하드 제약을 랩 메타렌즈 파면 센서 설계에 참고; 물리 기반 정규화를 랩 ODT/FP 재구성 네트워크의 물리 일관성 손실 항으로 도입해 비교</td>
+</tr>
+<tr>
+  <td><strong>FP·위상·메타표면 — 단일 촬영·라벨 없이 정량 정보를 얻으려는 저널 수렴</strong></td>
+  <td>
+    Video-rate ptychography (Jul 1)<br>
+    <a href="https://doi.org/10.1002/nap2.70190">Nonlocal Metasurface QPI</a><br>
+    Snap3D-FM (Jul 3)
+  </td>
+  <td>이 랩 핵심 ROI인 FP·위상·메타표면은 이번 주도 arXiv cs.*에서 거의 나오지 않고 저널에서만 등장했습니다. 다만 저널 신호를 모으면 방향이 하나로 모입니다 — 수요일에는 FP가 정지 영상 초고해상도를 벗어나 동영상 속도 촬영과 가상 염색까지 응용을 넓혔고, 금요일에는 메타표면·저간섭 광원·액정렌즈라는 서로 다른 세 하드웨어가 모두 "단일 촬영·라벨 없이 정량 위상 또는 3D 정보를 얻는다"는 같은 목표로 수렴했습니다.</td>
+  <td>Medium<br><small>Jul 1, Jul 3 이틀, 저널 전용 신호 6편 이상, 같은 목표로 수렴 확인 — arXiv 부재로 교차 검증은 아직 없음</small></td>
+  <td>video-rate ptychography의 시간 축 표현 방식을 랩 FP 다각도 실시간 재구성에 참고; nonlocal metasurface QPI와 Snap3D-FM의 단일 촬영 설계를 차세대 프로토타입 후보로 비교</td>
+</tr>
+</tbody>
+</table>
+
+<h2>📐 arXiv vs 저널 키워드</h2>
+<table>
+<thead><tr><th>채널</th><th>이번 주 주요 키워드</th></tr></thead>
+<tbody>
+<tr><td><strong>공통</strong></td><td>ptychography, metasurface, phase imaging, holography, diffusion, physics-informed</td></tr>
+<tr><td><strong>arXiv cs.* 전용</strong></td><td>3DGS 보정불필요/feed-forward(StructSplat, InvSplat, X-Splat), zero-shot/DRO 역문제(SDIP, DECT-DRNet), light-field 응용 확산(PRISM-VO), Herculaneum virtual unwrapping</td></tr>
+<tr><td><strong>저널 전용</strong></td><td>video-rate/EUV ptychography, task-adaptive FP virtual staining, nonlocal metasurface QPI, low-coherence SLD holographic cytometry, liquid-crystal snapshot 3D fluorescence</td></tr>
+<tr><td><strong>같은 단어, 다른 맥락</strong></td><td>'metasurface' — arXiv: 거의 등장 안 함 / 저널: 대부분 안테나·6G·양자네트워크 응용, 일부만 정량 위상 이미징. 'diffusion' — arXiv: 역문제 solver 내부 구성요소 또는 재질 정규화 / 저널: 없음(이번 주 저널에는 diffusion 언급 희소)</td></tr>
+</tbody>
+</table>
+
+<h2>🔥 주간 Top 5</h2>
+<ol>
+<li>
+  <strong><a href="https://arxiv.org/abs/2606.29085">Complete virtual unwrapping and reading of a rolled Herculaneum papyrus</a></strong>
+  <span class=tag>[스케일업]</span><span class=tag>[실사용전환]</span><br>
+  <em>Phylogeny: CVML / Computational Imaging &gt; Tomography &gt; Virtual Unwrapping &gt; Cultural Heritage CT</em><br>
+  2천 년간 펼 수 없었던 두루마리를 ESRF 싱크로트론 위상 대비 μCT와 ML 기반 virtual unwrapping으로 완전히 디지털 해독한, 이번 주 계산광학이 만들어낸 가장 임팩트 있는 실사용 성과입니다. 계산 이미징이 실험실 지표를 넘어 실제 문화유산 복원에 쓰인 사례입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2607.02099">X-Splat: Gaussian Splatting for 3D CBCT Generation from Single Panoramic Radiograph</a></strong>
+  <span class=tag>[방법전환]</span><span class=tag>[실사용전환]</span><br>
+  <em>Phylogeny: CVML / Medical Imaging &gt; CBCT &gt; Single-Image Reconstruction &gt; 3DGS X-ray</em><br>
+  3DGS가 가시광 RGB 장면 재구성을 넘어 단일 X-ray 영상에서 CBCT급 3D 정보를 만들어냈습니다. 지난주 예측(3DGS + 비가시광 모달리티 확장)을 정확히 적중시킨 사례이자 이번 주 3D 재구성 클러스터의 가장 구체적인 증거입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2606.28431">SDIP: A Zero-Shot Deep Image Prior Framework for Fluorescence Microscopy</a></strong>
+  <span class=tag>[방법전환]</span><br>
+  <em>Phylogeny: CVML / Inverse Problems &gt; Zero-Shot &gt; Deep Image Prior &gt; Fluorescence Microscopy</em><br>
+  학습 데이터 없이 이미지 한 장만으로 디노이징·디컨볼루션이 되는 zero-shot 방법입니다. 랩의 FP/형광 현미경 데이터처럼 paired ground truth를 구하기 어려운 상황에 가장 즉시 적용 가능한 방법론입니다.
+</li>
+<li>
+  <strong><a href="https://doi.org/10.1186/s43074-026-00265-z">Snapshot 3D at the speed frontier: redefining light-field microscopy for neuroimaging</a></strong>
+  <span class=tag>[실사용전환]</span><br>
+  <em>Phylogeny: CVML / Novel Sensors &gt; Light-Field &gt; Microscopy &gt; Neuroimaging</em><br>
+  라이트필드 원리가 이번 주 여러 무관한 분야에서 재발견된 흐름의 가장 계산광학에 가까운 사례입니다. 살아있는 뇌 조직을 한 번의 노출로 빠르게 볼륨 촬영하는 방법이라 랩의 광 필드 현미경 프로토타입에 직접 참고할 수 있습니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2606.27646">VLM-Aware Meta-Optic Front-End Design for Frozen Vision-Language Models (CODA)</a></strong>
+  <span class=tag>[문제정의]</span><span class=tag>[방법전환]</span><br>
+  <em>Phylogeny: CVML / Meta-Optics &gt; Task-Aware Design &gt; VLM-Optimized &gt; Compact Front-End</em><br>
+  광학 설계의 목표 함수가 "사람이 보기 좋은 이미지"에서 "frozen AI 모델이 잘 인식하는 표현"으로 옮겨가는 첫 구체적 사례입니다. 나머지 나흘 동안 후속이 없었지만, 다시 등장하는지 지켜볼 가치가 있습니다.
+</li>
+</ol>
+
+<h2>🌟 Weekly Deep-Dive — 이번 주의 대표 논문</h2>
+<div class=dd>
+  <h3>Complete virtual unwrapping and reading of a rolled Herculaneum papyrus (2606.29085)</h3>
+  <p><em>왜 이번 주 대표인가</em>: 3D 재구성과 역문제 다각화가 이번 주의 방법론적 대표였다면, 이 논문은 계산광학이 실제로 무엇을 해낼 수 있는지를 가장 극적으로 보여주는 실사용 사례입니다. 화요일 하루 신호였지만, 이 랩이 매일 다루는 재구성·복원 기술이 어디까지 갈 수 있는지를 보여주는 이번 주의 상징적인 논문입니다.</p>
+
+  <p><strong>무엇을 했나</strong>: PHerc. 1667은 79년 베수비오 화산 폭발로 탄화된 채 두루마리 상태로 남아 서기 이후 한 번도 펴지지 못했던 헤르쿨라네움 파피루스입니다. 이 논문은 ESRF(유럽 싱크로트론 방사광 시설)의 위상 대비 마이크로 CT로 탄화된 종이의 미세한 층 구조를 촬영하고, 머신러닝 기반 virtual unwrapping(가상으로 두루마리를 펴는 알고리즘)으로 잉크 흔적을 찾아 처음으로 문서 전체를 완전히 디지털 해독했습니다.</p>
+
+  <p><strong>왜 새로운가</strong>: 기존에는 이런 두루마리를 물리적으로 펴려다 파괴되거나, 부분적인 CT 스캔으로 일부 글자만 복원하는 수준이었습니다. 이 논문은 위상 대비 CT라는 계산 이미징 기법과 ML 기반 3차원 표면 추적을 결합해 두루마리 전체를 실제로 펴지 않고도 완전히 읽어낸 첫 사례입니다. 즉 측정(비파괴 CT)과 계산(가상 펴기)을 함께 설계해야만 풀리는 문제였다는 점에서, 이 랩이 지향하는 "하드웨어와 알고리즘을 같이 설계한다"는 방향과 정확히 맞닿아 있습니다.</p>
+
+  <p><strong>랩 관련성</strong>: 이 논문의 virtual unwrapping 파이프라인(위상 대비 CT → 표면 추적 → 잉크 분류)은 랩의 ODT 희소각 재구성이나 다층 산란 매질 이미징에서 "측정이 제한된 상황에서 3차원 구조를 알고리즘으로 복원한다"는 문제 구조를 그대로 공유합니다. 특히 표면 추적 알고리즘이 노이즈가 많은 CT 볼륨에서 얇은 층을 안정적으로 따라가는 방식은 참고할 가치가 있습니다.</p>
+
+  <p><strong>주의</strong>: 이 논문은 단일 대상(하나의 파피루스)에 대한 사례 연구에 가까워, virtual unwrapping 알고리즘이 다른 손상 정도·다른 두루마리 형태로 얼마나 일반화되는지는 본문 확인이 필요합니다 [Dataset risk].</p>
+</div>
+
+<h2>🧭 주간 테마 3개</h2>
+<div class=theme-card>
+  <h3>1. 3D 재구성의 진입장벽 완화 — 보정·최적화·가시광이라는 세 가지 전제가 동시에 흔들림</h3>
+  <p>이번 주 3DGS/재구성 논문들을 모으면 공통 방향이 보입니다. StructSplat은 카메라 보정이 필요 없다는 것을, InvSplat·AnchorSplat·FoundDP·ICDepth는 장면마다 다시 최적화하지 않아도 된다는 것을, X-Splat은 가시광 RGB가 아니어도(X-ray) 된다는 것을 각각 보여줬습니다. 세 전제가 한 주 안에 동시에 흔들렸다는 게 중요한데, 이는 3DGS를 랩의 새 촬영 셋업(적은 각도, 비가시광, 실시간)에 적용할 때 예전보다 훨씬 낮은 문턱으로 시도해볼 수 있다는 뜻입니다.</p>
+  <p><em>Confidence: High — Jun 29, Jul 3 이틀, 서로 다른 응용에서 6편 이상 연결</em></p>
+</div>
+<div class=theme-card>
+  <h3>2. 역문제 solver의 다각화 — diffusion prior 하나의 정답에서 문제 상황별 해법으로</h3>
+  <p>W26에는 diffusion prior를 역문제 solver 안에 넣는 방식이 유일한 유망주처럼 보였는데, W27 화요일에는 zero-shot(SDIP), diffusion+물리일관성(MSC), FBP 미분 unrolling(DECT-DRNet), 분포 강건 학습(DRO) 네 가지가 같은 날 나왔습니다. 이 차이가 중요한 이유는, 앞으로 역문제 해법을 고를 때 "어떤 diffusion 변형을 쓸까"가 아니라 "우리 문제가 학습 데이터 부족, 물리 불일치, 분포 변화 중 무엇으로 실패하는가"를 먼저 물어야 한다는 뜻이기 때문입니다.</p>
+  <p><em>Confidence: High — Jun 30 하루, 4편이 서로 다른 실패 조건을 겨냥</em></p>
+</div>
+<div class=theme-card>
+  <h3>3. 계산광학 코어 — arXiv 공백은 여전하지만 저널 신호는 하나의 목표로 수렴 시작</h3>
+  <p>FP·렌즈리스·메타표면은 이번 주도 arXiv cs.*에서 거의 나오지 않았습니다. 다만 저널에서 쌓인 신호를 보면, FP는 응용을 넓히고(동영상 속도, 가상 염색) 메타표면·저간섭 광원·액정렌즈는 모두 "단일 촬영·라벨 없이 정량 위상/3D를 얻는다"는 같은 목표로 수렴하고 있습니다. 랩 입장에서는 arXiv만 보면 이 분야가 조용해 보이지만, 저널을 같이 보면 실제로는 방법론이 한 방향으로 정리되고 있다는 것을 알 수 있습니다.</p>
+  <p><em>Confidence: Medium — 저널 신호 6편 이상이지만 arXiv 부재로 교차 검증은 아직 없음</em></p>
+</div>
+
+<h2>🪞 지난 예측 채점 (W26 → W27)</h2>
+<div class=pred-card>
+  <h3><span class=review-miss>✗</span> 이벤트 카메라 + 계산 이미징 직접 결합 논문 등장</h3>
+  <p>이번 주 전체 스캔(arXiv 5개 카테고리 + 저널)에서 event camera 관련 논문이 사실상 부재했습니다. FracEvent 계열의 계산 이미징 결합 follow-up은 나타나지 않았습니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-miss>✗</span> RL+Diffusion Prior 또는 L-DPS의 광학 이미징 follow-up</h3>
+  <p>diffusion prior가 ptychography/lensless/OCT/ODT와 결합된 논문은 발견되지 않았습니다. 대신 화요일에 diffusion 없는 다른 세 갈래(zero-shot DIP, FBP-Jacobian unrolling, DRO)가 새로 등장해, 역문제 다각화가 diffusion 한 방향이 아니라 여러 방향으로 갈라졌습니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-hit>✅</span> 3DGS + 비가시광/멀티모달리티 이미징 확장</h3>
+  <p>금요일(Jul 3) X-Splat이 치과 파노라마 X-ray 한 장에서 CBCT급 3D를 생성하는 논문으로 등장해, hit condition("3DGS + CT/OCT/hyperspectral/non-visible modality 조합 1편 이상")을 정확히 충족했습니다.</p>
+</div>
+
+<h2>🔮 다음주 예측</h2>
+<div class=pred-card>
+  <h3>1. Lensless/Coded Imaging arXiv 공백 회복 여부</h3>
+  <p>2주 연속 arXiv 공백이었던 Lensless/Coded Imaging 주제가 다음 주 arXiv cs.CV/eess.IV에 최소 1편 이상 등장한다.</p>
+  <div class=cond>✅ 적중 조건: arXiv cs.CV 또는 eess.IV에서 lensless/coded aperture/computational camera 키워드 신규 논문 1편 이상</div>
+  <div class=cond>✗ 빗나감 조건: arXiv에서 이번 주도 관련 논문이 전혀 없으면 빗나감</div>
+</div>
+<div class=pred-card>
+  <h3>2. Zero-shot/DRO 역문제 방법의 계산광학 도메인 확장</h3>
+  <p>이번 주 등장한 zero-shot(SDIP) 또는 DRO 스타일 역문제 방법이 다음 주 ptychography·lensless·ODT 같은 계산광학 도메인에 적용된 후속 논문으로 이어진다.</p>
+  <div class=cond>✅ 적중 조건: arXiv eess.IV 또는 cs.CV에서 zero-shot/distributionally-robust 방법이 ptychography/lensless/ODT에 적용된 논문 1편 이상</div>
+  <div class=cond>✗ 빗나감 조건: 역문제 논문이 있어도 모두 MRI·CT·형광현미경 도메인에만 머무르면 빗나감</div>
+</div>
+<div class=pred-card>
+  <h3>3. AI-aware 광학 설계(CODA류)의 후속 논문 등장</h3>
+  <p>월요일 CODA에서 시작된 "frozen VLM 인식 성능을 겨냥한 광학 front-end 설계" 문제 설정이 다음 주 후속 논문으로 이어진다.</p>
+  <div class=cond>✅ 적중 조건: arXiv에서 downstream task 성능을 목표로 광학 하드웨어를 공동 최적화하는 논문 1편 이상</div>
+  <div class=cond>✗ 빗나감 조건: 광학 설계 논문이 있어도 모두 이미지 품질(PSNR/지각 품질)만 목표로 하면 빗나감</div>
+</div>
+
+<h2>🧪 다음 주 1주 실행안</h2>
+<div class=action-card>
+  <h3>1. StructSplat/X-Splat 방법론을 ODT 희소각 데이터에 이식</h3>
+  <p>StructSplat(2606.28321)의 보정 불필요 3DGS 방식과 X-Splat(2607.02099)의 단일 촬영-CBCT 재투영 제약을 랩 ODT 희소각(30/60/90도) 재구성 실험에 적용해 기존 방법 대비 아티팩트 비교.</p>
+  <p><em>기대 산출물: 보정 유무·입력 각도 수에 따른 재구성 품질(PSNR/SSIM) 비교표</em></p>
+</div>
+<div class=action-card>
+  <h3>2. SDIP zero-shot DIP를 FP 저선량 데이터에 적용</h3>
+  <p>SDIP(2606.28431) 코드를 클론해 랩 FP 저선량 측정 데이터에서 기존 지도학습 기반 디노이징/디컨볼루션과 비교. Paired ground truth 없이도 동등한 품질이 나오는지 확인.</p>
+  <p><em>기대 산출물: 지도학습 vs zero-shot SDIP 비교표(PSNR/SSIM/수렴 시간) — negative result도 workshop short paper로 가능</em></p>
+</div>
+<div class=action-card>
+  <h3>3. 라이트필드 스냅샷 볼륨 캡처 방식을 랩 프로토타입에 검토</h3>
+  <p>neuroimaging 라이트필드 논문의 스냅샷 노출 설계와 PRISM-VO의 plenoptic bundle adjustment 수식을 랩 광 필드 다각도 FP 셋업의 캘리브레이션·노출시간 단축에 적용 가능한지 검토.</p>
+  <p><em>기대 산출물: 기존 랩 셋업 대비 노출시간·캘리브레이션 정확도 비교 메모</em></p>
+</div>
+
+<h2>🧊 Skim-only / Watch-only 흐름</h2>
+<ul class=plain>
+  <li><strong>[Watch-only] AI-aware 광학 front-end 설계 (CODA, Jun 29)</strong> — frozen VLM 인식 성능을 목표로 meta-optic을 최적화하는 문제 설정이 처음 구체화됐지만, 화~금 나흘간 후속이 없었습니다. 재등장 여부를 지켜봅니다 [Confidence Medium].</li>
+  <li><strong>[Skim-only] 물리 기반 신경망 재구성 확산 (Jul 1)</strong> — 핵융합로 온도장, 컴퓨터 그래픽스 역렌더링 등 계산광학과 거리가 있는 도메인에서도 물리 제약이 반복 등장했으나, 랩 직접 적용보다는 설계 철학 참고 수준입니다.</li>
+  <li><strong>[Watch-only] 메타표면 저널 46편의 응용 쏠림 (전 주 지속)</strong> — 안테나·6G·양자네트워크 응용이 대부분이라 이 랩의 이미징 ROI와는 거리가 있습니다. 정량 위상 이미징 관련 논문 비중이 다음 주 늘어나는지 관찰합니다.</li>
+</ul>
+
+<h2>🔗 참고 링크</h2>
+<ul class=plain>
+  <li><a href="../posts/2026-06-29.html">2026-06-29 Daily Briefing (Mon)</a></li>
+  <li><a href="../posts/2026-06-30.html">2026-06-30 Daily Briefing (Tue)</a></li>
+  <li><a href="../posts/2026-07-01.html">2026-07-01 Daily Briefing (Wed)</a></li>
+  <li><a href="../posts/2026-07-02.html">2026-07-02 Daily Briefing (Thu)</a></li>
+  <li><a href="../posts/2026-07-03.html">2026-07-03 Daily Briefing (Fri)</a></li>
+  <li><a href="../posts/2026-06-29-weekly.html">2026-W26 Weekly Retrospective</a></li>
+  <li><a href="../feed.xml">RSS Feed</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+</body>
+</html>
