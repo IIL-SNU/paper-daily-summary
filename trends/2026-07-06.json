@@ -1,12 +1,37 @@
 {
   "date": "2026-07-06",
-  "source_listing_date": "2026-07-03",
-  "source_mode": "weekly-pastweek",
-  "note": "Weekly retrospective for W27 (2026-06-29 to 2026-07-03). No daily /new data for this date yet (separate daily execution runs later); daily stats row intentionally omitted.",
-  "weekly_aggregate": {
-    "by_cat": {"cs.LG": 972, "cs.CV": 892, "cs.AI": 1216, "eess.IV": 44, "eess.SP": 111},
+  "source_listing_date": "2026-07-06",
+  "source_mode": "journal-only",
+  "note": "cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 모두 2026-07-03(금) listing에 머물러 있음 (미국 독립기념일 연휴 여파로 추정). arXiv 신규 제출 0건, Crossref/OpenAlex 저널만으로 만든 잠정본. /pastweek에 2026-07-06 섹션이 뜨면 다음 실행에서 arXiv 포함 완전판으로 업그레이드됨. (참고: 같은 날짜 weekly 회고의 weekly_aggregate는 weekly/2026-27.json에 별도 보존돼 있고, 이 필드는 daily 실행이 덮어씀)",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 0,
+      "eess.SP": 0
+    },
     "scope": "new+cross; replacements excluded",
-    "days_covered": ["2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03"]
+    "journal_count": 133
   },
-  "totals": {"total_scanned": 3235, "selected": 570}
+  "totals": {
+    "total_scanned": 135,
+    "selected": 51
+  },
+  "classified": {
+    "total_scanned": 135,
+    "selected": 51,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 2,
+      "Phase Imaging/Holography": 11,
+      "Meta-Optics/Diffractive": 5,
+      "Light-Field/Novel Sensors": 1,
+      "Tomography/3D Imaging": 15,
+      "Virtual Staining/Pathology": 5,
+      "Reconstruction/Inverse Problems": 4,
+      "Deep Learning Methods": 8
+    }
+  },
+  "daily_thesis": "arXiv 5개 카테고리 모두 2026-07-03 이후 갱신이 멈춰(독립기념일 연휴 추정) 저널만으로 만든 잠정본. ptychography 복원 신경망·광학 신경망 학습법·위상 다양성 학습이 같은 날 나오며 '하드웨어 추가 없이 일반화'라는 공통 질문이 부각됐고, 디지털 홀로그래피가 반도체 계측·테라헤르츠파·신소재로 갈라지는 확장도 뚜렷함."
 }

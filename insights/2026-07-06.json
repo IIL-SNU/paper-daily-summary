@@ -1,0 +1,83 @@
+{
+ "date": "2026-07-06",
+ "source_mode": "journal-only",
+ "clusters": [
+  {
+   "title": "Ptychography·광학 신경망이 일반화·학습 가능성 자체를 다시 설계",
+   "papers": [
+    {"arxiv_id": "https://doi.org/10.1038/s41524-026-02198-4", "title": "Towards generalizable deep ptychography neural networks", "journal_or_source": "npj Computational Materials"},
+    {"arxiv_id": "https://doi.org/10.1038/s41377-026-02394-3", "title": "Bio-inspired backpropagation-free training for optical neural networks", "journal_or_source": "Light: Science & Applications"},
+    {"arxiv_id": "https://doi.org/10.1088/2515-7647/ae86a1", "title": "Learning phase diversity for solving ill-posed inverse problems in imaging", "journal_or_source": "Journal of Physics: Photonics"}
+   ],
+   "why": "지금까지 계산 이미징 신경망은 특정 실험 조건 하나에 맞춰 학습하고, 조건이 바뀌면 다시 학습해야 하는 경우가 많았습니다. 오늘 저널에 나온 세 논문은 이 문제를 각각 다른 각도에서 풉니다. ptychography 논문은 실제 측정 probe(조명 패턴)와 인공적으로 생성한 물체를 섞어 학습시켜, 한 번도 본 적 없는 빔라인(beamline, 방사광 실험 장치)에서도 재구성이 되게 만들었습니다. 광학 신경망 논문은 역전파(backpropagation)가 실제 광학 하드웨어에서 구현하기 어렵다는 문제를, 층별로 국소적인 목표 신호만 보고 학습하는 방식으로 우회했습니다. 위상 다양성 논문은 추가 하드웨어 없이 서로 다른 위상 측정 데이터를 신경망으로 만들어내 학습 데이터를 늘리는 방법을 제시했습니다. 세 논문 모두 '더 많은 실측 데이터나 하드웨어를 추가하지 않고도 계산 이미징 시스템이 다양한 조건에 적응하게 만든다'는 같은 목표를 공유합니다.",
+   "confidence": "high",
+   "lab_action": "ptychography probe-conditioning 학습 방식을 랩 Fourier ptychography 파이프라인에 이식해 새 조명 조건에서 재학습 없이 재구성되는지 검증. phase diversity 데이터 증강을 우리 위상 복원 학습 세트에 적용해 필요 실측 데이터량이 줄어드는지 비교."
+  },
+  {
+   "title": "디지털 홀로그래피가 반도체 계측·테라헤르츠파·신소재로 갈라지는 확장",
+   "papers": [
+    {"arxiv_id": "https://doi.org/10.1063/5.0333722", "title": "Reflective lensless through-silicon phase imaging for advanced semiconductor packaging metrology", "journal_or_source": "Applied Physics Letters"},
+    {"arxiv_id": "https://doi.org/10.1364/ol.605240", "title": "Phase-wrapping-free terahertz in-line digital holography via projected refractive index", "journal_or_source": "Optics Letters"},
+    {"arxiv_id": "https://doi.org/10.1002/adom.71428", "title": "Red-Sensitive Photopolymerizable Glass for Fabrication of Holographic Optical Elements", "journal_or_source": "Advanced Optical Materials"}
+   ],
+   "why": "홀로그래피는 원래 하나의 이미징 방법이었는데, 오늘 저널 세 편은 각자 완전히 다른 이유로 홀로그래피를 씁니다. 반사형 렌즈리스 관통-실리콘 위상 이미징 논문은 반도체 패키징 공정에서 칩을 쌓을 때 내부 정렬 상태를 렌즈나 이동 부품 없이 검사하려고 간섭무늬에서 위상을 복원하는 원리를 씁니다. 테라헤르츠 홀로그래피 논문은 위상이 2π마다 반복돼서 생기는 위상 풀림(phase wrapping) 오차를, 굴절률을 직접 투영하는 방식으로 없앴습니다. 감광성 유리 논문은 지금까지 파란색·초록색 빛에만 반응하던 홀로그래피 기록 재료를 빨간색 빛에도 반응하게 만들어, 완전 컬러 홀로그래픽 소자 제작 가능성을 열었습니다. 세 논문의 공통점은 홀로그래피가 더 이상 '위상 영상을 찍는 방법 하나'가 아니라, 반도체·통신파장·디스플레이 재료라는 서로 다른 산업이 각자 필요에 맞게 가져다 쓰는 범용 도구가 되고 있다는 것입니다.",
+   "confidence": "medium",
+   "lab_action": "반사형 렌즈리스 관통-실리콘 위상 이미징의 반복 위상 복원+디노이징 정규화 조합을 우리 렌즈리스 시스템의 불투명 샘플 검사에 적용 가능한지 검토. red-sensitive PHSG 재료 스펙(회절효율 80%, 300~2200 lines/mm)을 우리 HOE 제작 재료와 비교."
+  },
+  {
+   "title": "메타표면이 통신 안테나에서 벗어나 바이오센싱·홀로그래피 합성으로 되돌아옴",
+   "papers": [
+    {"arxiv_id": "https://doi.org/10.1002/lpor.71513", "title": "Amplitude-Only Metasurface Holography for Precise Near-Field Plane-Wave Synthesis", "journal_or_source": "Laser & Photonics Reviews"},
+    {"arxiv_id": "https://doi.org/10.1364/prj.604695", "title": "Robust High Quality-factor Out-of-plane Nonlocal Metasurface-enhanced Microcavity for Multi-scale Biosensing", "journal_or_source": "Photonics Research"},
+    {"arxiv_id": "https://doi.org/10.1364/oe.604866", "title": "Analytical vectorial light-field engineering with fixed-meta-atom interferometric metasurfaces", "journal_or_source": "Optics Express"}
+   ],
+   "why": "지난주 저널에서는 메타표면 관련 논문 대부분이 안테나·통신·양자광원 쪽으로 쏠려 있었습니다. 오늘은 그 흐름이 다시 이미징 쪽으로 돌아온 날입니다. 진폭 전용 메타표면 홀로그래피 논문은, 메타표면 소자를 촘촘히 배치할 때 이웃한 소자끼리 신호가 새어 들어가는 결합(coupling) 오차 문제를 위상 대신 진폭만 바꾸는 방식으로 피해서 근접장 평면파 합성 정밀도를 크게 높였습니다. 다중 스케일 바이오센싱 논문은 메타표면으로 만든 초고품질(high-Q) 마이크로공진기로 여러 크기의 생체 신호를 동시에 감지합니다. 벡터광 필드 엔지니어링 논문은 고정된 메타원자(meta-atom) 배열만으로 복잡한 간섭계 없이 벡터 광 필드를 설계합니다. 세 논문 모두 메타표면을 '얇은 렌즈 대체품'이 아니라 '결합 오차를 견디는 정밀 파면 제어 소자'로 다루고 있다는 공통점이 있습니다.",
+   "confidence": "medium",
+   "lab_action": "진폭 전용 변조 방식을 우리 메타렌즈 위상판 설계에 적용해 소자 간 결합 오차 민감도를 위상 전용 설계와 비교. nonlocal 마이크로공진기 biosensing Q-factor 스펙을 우리 온칩 센서 설계 목표와 대조."
+  },
+  {
+   "title": "디퓨저·편광격자 기반 단일 샷 계산 이미징 하드웨어",
+   "papers": [
+    {"arxiv_id": "https://doi.org/10.1109/tci.2026.3711006", "title": "Structured Random Models for Phase Retrieval with Optical Diffusers", "journal_or_source": "IEEE Transactions on Computational Imaging"},
+    {"arxiv_id": "https://doi.org/10.1364/oe.606393", "title": "Anti-phase snapshot imaging polarimeter with high throughput based on polarization gratings", "journal_or_source": "Optics Express"}
+   ],
+   "why": "두 논문 모두 '측정 한 번으로 원하는 정보를 다 뽑아낸다'는 렌즈리스·단일 샷 계산 이미징의 오랜 목표를 다른 재료로 풉니다. 광학 디퓨저 기반 위상 복원 논문은, 디퓨저를 통과한 빛이 무작위로 흩어지는 패턴이 사실은 구조화된 통계를 따른다는 점을 이용해 복원 알고리즘의 안정성을 높입니다. 편광 격자 기반 스냅샷 편광계 논문은 여러 번 촬영해야 얻을 수 있던 편광 정보를 한 번의 노출로, 그것도 높은 광 처리량(throughput)으로 얻어냅니다. 두 논문은 서로 다른 광학 소자(디퓨저 vs 편광격자)를 쓰지만 '하드웨어를 단순하게 유지하면서 한 번의 측정에서 정보를 최대화한다'는 같은 문제의식을 공유합니다.",
+   "confidence": "low",
+   "lab_action": "structured random diffuser 모델을 우리 렌즈리스 위상 복원 알고리즘의 forward model 가정과 비교해 통계적 구조화 가정이 유효한지 검토. 편광 격자 스냅샷 방식을 다중 편광 촬영이 필요한 현재 세팅에 이식 가능한지 1차 타당성 검토."
+  },
+  {
+   "title": "Physics-informed 신경망이 고주파·불연속 함수까지 다루는 쪽으로 정교해짐",
+   "papers": [
+    {"arxiv_id": "https://doi.org/10.1063/5.0337610", "title": "A Fourier feature physics-informed neural network framework for accurate mesh-free solutions of two-dimensional time-domain Maxwell equations", "journal_or_source": "AIP Advances"},
+    {"arxiv_id": "https://doi.org/10.1016/j.jcp.2026.115185", "title": "Discontinuity-aware KAN-based physics-informed neural networks", "journal_or_source": "Journal of Computational Physics"}
+   ],
+   "why": "physics-informed neural network(물리 법칙을 손실 함수에 직접 넣어 학습하는 신경망, PINN)는 지금까지 매끄러운 함수는 잘 맞히지만 고주파 진동이나 불연속점 근처에서는 정확도가 떨어지는 약점이 있었습니다. Fourier feature 논문은 맥스웰 방정식을 풀 때 이 약점을 Fourier 특징 임베딩으로 줄였고, KAN(Kolmogorov-Arnold Network) 기반 논문은 불연속을 인식하는 구조로 같은 약점을 다른 방식으로 공략합니다. 우리 랩과 직접 관련은 이미징 재구성이 아니라 전자기 시뮬레이션 쪽이지만, PINN 기반 역문제 솔버(예: 굴절률 단층 촬영)에서도 같은 고주파·불연속 문제가 나타나므로 참고할 가치가 있습니다.",
+   "confidence": "low",
+   "lab_action": "Fourier feature embedding을 우리 optical diffraction tomography PINN 솔버의 고주파 굴절률 경계 재구성에 시험 적용."
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "Probe-conditioned 학습을 랩 FP 파이프라인에 이식",
+   "claim": "실측 probe와 합성 물체를 섞어 학습시키는 방식을 Fourier ptychography 재구성 신경망에 적용하면 새 조명 조건에서 재학습 없이도 복원 품질이 유지될 것이다",
+   "supporting_papers": [
+    {"title": "Towards generalizable deep ptychography neural networks", "arxiv": "https://doi.org/10.1038/s41524-026-02198-4"}
+   ]
+  },
+  {
+   "title": "Phase diversity 학습 증강으로 실측 데이터 의존도 감소",
+   "claim": "학습된 phase-diverse pseudo-data 증강을 우리 위상 복원 학습 세트에 적용하면 필요한 실측 데이터량을 줄이면서도 복원 품질을 유지할 수 있다",
+   "supporting_papers": [
+    {"title": "Learning phase diversity for solving ill-posed inverse problems in imaging", "arxiv": "https://doi.org/10.1088/2515-7647/ae86a1"}
+   ]
+  },
+  {
+   "title": "진폭 전용 메타표면 설계의 결합 오차 강건성 검증",
+   "claim": "메타렌즈 위상판을 진폭 전용 변조로 재설계하면 소자 간 결합 오차에 대한 민감도가 위상 전용 설계보다 낮아질 것이다",
+   "supporting_papers": [
+    {"title": "Amplitude-Only Metasurface Holography for Precise Near-Field Plane-Wave Synthesis", "arxiv": "https://doi.org/10.1002/lpor.71513"}
+   ]
+  }
+ ],
+ "phylogeny_tags": []
+}

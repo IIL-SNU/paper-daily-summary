@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-07-06</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-07-06 (월요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-07-06 (월요일)</div>
+  <div>📚 소스: journal-only (잠정본) — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 모두 2026-07-03(금) listing에 머물러 있음</div>
+  <div>🔢 arXiv: cs.LG 0 · cs.CV 0 · cs.AI 0 · eess.IV 0 · eess.SP 0 (신규 제출 없음)</div>
+  <div>🔢 저널: Crossref/OpenAlex 133편 수집(2026-07-06 등록분) · 스캔 135건 · ROI 배정 51건 (37.8%)</div>
+  <div>⚠️ arXiv 5개 카테고리가 모두 2026-07-03 이후 갱신되지 않았습니다(미국 독립기념일 연휴 여파로 추정). 이 리포트는 저널만으로 만든 잠정본이며, /pastweek에 2026-07-06 섹션이 뜨면 다음 실행에서 arXiv 포함 완전판으로 자동 업그레이드됩니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 다섯 카테고리 모두 지난 금요일(7/3) 이후 arXiv에 새 글이 올라오지 않아 저널만으로 만든 잠정본입니다. 저널에서 눈에 띄는 신호는 두 가지입니다. 첫째, <strong>ptychography 복원 신경망·광학 신경망 학습법·위상 다양성 학습이 같은 날 나오면서, 계산 이미징 신경망을 하드웨어나 실측 데이터를 더 추가하지 않고도 다양한 조건에 적응시키는 문제가 세 각도에서 동시에 다뤄졌습니다.</strong> 둘째, <strong>디지털 홀로그래피가 반도체 계측·테라헤르츠파·홀로그래픽 소재라는 서로 무관한 세 산업으로 갈라지고 있어서</strong>, 홀로그래피가 이제 하나의 촬영 방식이 아니라 여러 분야가 각자 필요에 맞춰 가져다 쓰는 범용 도구가 되고 있다는 인상을 줍니다. 다만 오늘은 arXiv 신호가 완전히 끊긴 날이라 전체 정보량 자체는 평소보다 훨씬 적습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 브리핑은 사실상 지난주 arXiv 흐름이 멈춘 자리를 저널이 대신 채운 날입니다. 오늘 아침 발행된 주간 회고에 따르면 지난주(6/29~7/3)는 3D 장면 재구성이 장면별 최적화에서 feed-forward 단일 추론으로 넘어가고, 역문제 해법이 diffusion prior 한 방향에서 zero-shot·PnP·unrolling 등 여러 갈래로 나뉜 한 주였습니다. 계산광학 핵심 주제(FP, 위상, 메타표면)는 지난주에도 arXiv가 아니라 저널에서만 움직였는데, 오늘은 그 arXiv 쪽 신호 자체가 완전히 사라지면서 계산광학 코어 주제가 저널 단독으로 하루 전체를 채우는 극단적인 하루가 됐습니다.</p>
+<p>오늘 저널에서 가장 뚜렷한 흐름은 계산 이미징 신경망의 <strong>일반화(generalization)</strong> 문제입니다. X선 ptychography 복원 신경망은 한 번도 본 적 없는 실험 장치(빔라인)에서도 재구성이 되도록 실측 조명 패턴과 합성 물체를 섞어 학습시켰고, 광학 신경망 학습법 논문은 역전파가 물리적으로 구현하기 어렵다는 문제를 국소 학습 규칙으로 우회했습니다. 위상 다양성 학습 논문은 추가 하드웨어 없이 학습 데이터 자체를 늘리는 방법을 보였습니다. 세 논문이 모두 "적응"을 하드웨어 확장이 아니라 학습 방식 자체의 문제로 다룬다는 점이 오늘의 핵심입니다.</p>
+<p>두 번째로는 디지털 홀로그래피의 응용 확산입니다. 반도체 패키징 계측, 테라헤르츠파 위상 풀림(phase wrapping) 오차 제거, 완전 컬러 홀로그래픽 소자용 감광 재료까지 서로 다른 세 산업이 홀로그래피 원리를 각자 방식으로 가져다 씁니다. 메타표면 쪽도 지난주 안테나·통신 응용에 쏠렸던 흐름이 오늘은 다시 바이오센싱과 진폭 전용 홀로그래피 합성으로 돌아왔습니다. 다음 실행에서 cs.LG·cs.CV·cs.AI가 /pastweek에 2026-07-06 섹션을 올리면 이 리포트는 arXiv 포함 완전판으로 업그레이드됩니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>지난주 후반(금요일 7/3)에는 3D 장면 재구성이 feed-forward 단일 추론으로 이동하고, 메타표면·저간섭 광원·액정렌즈가 단일 촬영·라벨 없는 정량 위상/3D 이미징으로 수렴하는 흐름이 arXiv와 저널 양쪽에서 함께 보였습니다. 오늘은 그 arXiv 신호가 완전히 끊기면서 이 흐름을 이어갈 새 근거가 없고, 대신 저널에서 ptychography·광학 신경망 학습법이라는 전혀 다른 각도가 등장했습니다.</p>
+<p>지난주 저널에서 메타표면이 안테나·통신·양자광원 쪽으로 쏠렸다면(주간 회고 참고), 오늘은 메타표면이 다시 바이오센싱과 진폭 전용 홀로그래피 합성으로 돌아온 점이 다릅니다. 또한 지난주까지 역문제 쪽 다각화는 diffusion prior 기반 방법이 중심이었는데, 오늘은 diffusion 없이 신경망 학습 방식 자체(probe conditioning, backprop-free training, phase diversity augmentation)를 바꾸는 논문들이 나왔다는 점도 새롭습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Ptychography·광학 신경망이 일반화·학습 가능성 자체를 다시 설계</strong></td>
+  <td>
+    <a href="https://doi.org/10.1038/s41524-026-02198-4" target=_blank>Towards generalizable deep ptychography neural networks</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1038/s41377-026-02394-3" target=_blank>Bio-inspired backpropagation-free training for optical neural networks</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1088/2515-7647/ae86a1" target=_blank>Learning phase diversity for solving ill-posed inverse problems in imaging</a> <span class=pill>JNL</span>
+  </td>
+  <td>지금까지 계산 이미징 신경망은 특정 실험 조건 하나에 맞춰 학습하고, 조건이 바뀌면 다시 학습해야 하는 경우가 많았습니다. 오늘 저널 세 편은 이 문제를 각각 다른 각도에서 풉니다. ptychography 논문은 실제 측정 조명 패턴(probe)과 인공적으로 생성한 물체를 섞어 학습시켜, 한 번도 본 적 없는 빔라인에서도 재구성이 되게 만들었습니다. 광학 신경망 논문은 역전파가 실제 광학 하드웨어에서 구현하기 어렵다는 문제를, 층별로 국소적인 목표 신호만 보고 학습하는 방식으로 우회했습니다. 위상 다양성 논문은 추가 하드웨어 없이 서로 다른 위상 측정 데이터를 신경망으로 만들어 학습 데이터를 늘립니다. 세 논문 모두 하드웨어나 실측 데이터를 더 늘리지 않고도 시스템이 다양한 조건에 적응하게 만든다는 같은 목표를 공유합니다.</td>
+  <td>High<br><small>서로 다른 저널(npj Comp Mater, Light Sci Appl, J Phys Photonics) 3편이 독립적으로 같은 방향 지시</small></td>
+  <td>ptychography probe-conditioning 학습 방식을 랩 Fourier ptychography 파이프라인에 이식해 새 조명 조건에서 재학습 없이 재구성되는지 검증; phase diversity 데이터 증강을 우리 위상 복원 학습 세트에 적용해 필요 실측 데이터량 감소 여부 비교</td>
+</tr>
+<tr>
+  <td><strong>디지털 홀로그래피가 반도체 계측·테라헤르츠파·신소재로 갈라지는 확장</strong></td>
+  <td>
+    <a href="https://doi.org/10.1063/5.0333722" target=_blank>Reflective lensless through-silicon phase imaging for advanced semiconductor packaging metrology</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/ol.605240" target=_blank>Phase-wrapping-free terahertz in-line digital holography via projected refractive index</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1002/adom.71428" target=_blank>Red-Sensitive Photopolymerizable Glass for Fabrication of Holographic Optical Elements</a> <span class=pill>JNL</span>
+  </td>
+  <td>홀로그래피는 원래 하나의 이미징 방법이었는데, 오늘 저널 세 편은 각자 완전히 다른 이유로 홀로그래피를 씁니다. 반사형 렌즈리스 관통-실리콘 위상 이미징은 반도체 패키징 공정에서 칩을 쌓을 때 내부 정렬 상태를 렌즈나 이동 부품 없이 검사하려고 간섭무늬에서 위상을 복원하는 원리를 씁니다. 테라헤르츠 홀로그래피는 위상이 2π마다 반복돼서 생기는 위상 풀림(phase wrapping) 오차를 굴절률을 직접 투영하는 방식으로 없앴습니다. 감광성 유리는 지금까지 파란색·초록색 빛에만 반응하던 홀로그래피 기록 재료를 빨간색 빛에도 반응하게 만들어, 완전 컬러 홀로그래픽 소자 제작 가능성을 열었습니다. 공통점은 홀로그래피가 더 이상 "위상 영상을 찍는 방법 하나"가 아니라, 반도체·통신파장·디스플레이 재료라는 서로 다른 산업이 각자 필요에 맞게 가져다 쓰는 범용 도구가 되고 있다는 것입니다.</td>
+  <td>Medium<br><small>세 논문이 독립 저널(APL, OL, Adv Opt Mater)에서 응용 확장을 보이나 서로 다른 산업이라 직접적인 상호 참조는 없음</small></td>
+  <td>반사형 렌즈리스 관통-실리콘 위상 이미징의 반복 위상 복원+디노이징 정규화 조합을 우리 렌즈리스 시스템의 불투명 샘플 검사에 적용 가능한지 검토; red-sensitive PHSG 재료 스펙(회절효율 80%, 300~2200 lines/mm)을 우리 HOE 제작 재료와 비교</td>
+</tr>
+<tr>
+  <td><strong>메타표면이 통신 안테나에서 벗어나 바이오센싱·홀로그래피 합성으로 되돌아옴</strong></td>
+  <td>
+    <a href="https://doi.org/10.1002/lpor.71513" target=_blank>Amplitude-Only Metasurface Holography for Precise Near-Field Plane-Wave Synthesis</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/prj.604695" target=_blank>Robust High Quality-factor Out-of-plane Nonlocal Metasurface-enhanced Microcavity for Multi-scale Biosensing</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/oe.604866" target=_blank>Analytical vectorial light-field engineering with fixed-meta-atom interferometric metasurfaces</a> <span class=pill>JNL</span>
+  </td>
+  <td>지난주 저널에서는 메타표면 논문 대부분이 안테나·통신·양자광원 쪽으로 쏠렸습니다. 오늘은 그 흐름이 다시 이미징 쪽으로 돌아온 날입니다. 진폭 전용 메타표면 홀로그래피는, 메타표면 소자를 촘촘히 배치할 때 이웃한 소자끼리 신호가 새어 들어가는 결합(coupling) 오차 문제를 위상 대신 진폭만 바꾸는 방식으로 피해서 근접장 평면파 합성 정밀도를 크게 높였습니다. 다중 스케일 바이오센싱 논문은 메타표면 기반 초고품질(high-Q) 마이크로공진기로 여러 크기의 생체 신호를 동시에 감지합니다. 벡터광 필드 엔지니어링 논문은 고정된 메타원자 배열만으로 복잡한 간섭계 없이 벡터 광 필드를 설계합니다. 세 논문 모두 메타표면을 "얇은 렌즈 대체품"이 아니라 "결합 오차를 견디는 정밀 파면 제어 소자"로 다루고 있습니다.</td>
+  <td>Medium<br><small>세 논문이 독립 저널에서 메타표면의 이미징/센싱 응용을 보이나, 결합 오차 강건성이 명시적으로 겹치는 것은 진폭 전용 홀로그래피 1편뿐</small></td>
+  <td>진폭 전용 변조 방식을 우리 메타렌즈 위상판 설계에 적용해 소자 간 결합 오차 민감도를 위상 전용 설계와 비교; nonlocal 마이크로공진기 biosensing Q-factor 스펙을 우리 온칩 센서 설계 목표와 대조</td>
+</tr>
+<tr>
+  <td><strong>디퓨저·편광격자 기반 단일 샷 계산 이미징 하드웨어</strong></td>
+  <td>
+    <a href="https://doi.org/10.1109/tci.2026.3711006" target=_blank>Structured Random Models for Phase Retrieval with Optical Diffusers</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/oe.606393" target=_blank>Anti-phase snapshot imaging polarimeter with high throughput based on polarization gratings</a> <span class=pill>JNL</span>
+  </td>
+  <td>두 논문 모두 "측정 한 번으로 원하는 정보를 다 뽑아낸다"는 렌즈리스·단일 샷 계산 이미징의 오랜 목표를 다른 재료로 풉니다. 광학 디퓨저 기반 위상 복원은, 디퓨저를 통과한 빛이 무작위로 흩어지는 패턴이 사실은 구조화된 통계를 따른다는 점을 이용해 복원 알고리즘의 안정성을 높입니다. 편광 격자 기반 스냅샷 편광계는 여러 번 촬영해야 얻을 수 있던 편광 정보를 한 번의 노출로, 그것도 높은 광 처리량으로 얻어냅니다. 서로 다른 광학 소자(디퓨저 vs 편광격자)를 쓰지만 하드웨어를 단순하게 유지하면서 한 번의 측정에서 정보를 최대화한다는 문제의식은 같습니다.</td>
+  <td>Low<br><small>두 논문뿐이고 Crossref 초록이 공개되지 않아 제목·저널 정보로만 판단. 방법론적 연결은 추정</small></td>
+  <td>structured random diffuser 모델을 우리 렌즈리스 위상 복원 알고리즘의 forward model 가정과 비교해 통계적 구조화 가정이 유효한지 검토; 편광 격자 스냅샷 방식을 다중 편광 촬영이 필요한 현재 세팅에 이식 가능한지 1차 타당성 검토</td>
+</tr>
+<tr>
+  <td><strong>Physics-informed 신경망이 고주파·불연속 함수까지 다루는 쪽으로 정교해짐</strong></td>
+  <td>
+    <a href="https://doi.org/10.1063/5.0337610" target=_blank>A Fourier feature physics-informed neural network framework for Maxwell equations</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.jcp.2026.115185" target=_blank>Discontinuity-aware KAN-based physics-informed neural networks</a> <span class=pill>JNL</span>
+  </td>
+  <td>physics-informed neural network(물리 법칙을 손실 함수에 직접 넣어 학습하는 신경망, PINN)는 지금까지 매끄러운 함수는 잘 맞히지만 고주파 진동이나 불연속점 근처에서는 정확도가 떨어지는 약점이 있었습니다. Fourier feature 논문은 맥스웰 방정식을 풀 때 이 약점을 Fourier 특징 임베딩으로 줄였고, KAN(Kolmogorov-Arnold Network) 기반 논문은 불연속을 인식하는 구조로 같은 약점을 다른 방식으로 공략합니다. 우리 랩과 직접 관련은 이미징 재구성이 아니라 전자기 시뮬레이션 쪽이지만, PINN 기반 역문제 솔버(예: 굴절률 단층 촬영)에서도 같은 고주파·불연속 문제가 나타나므로 참고할 가치가 있습니다.</td>
+  <td>Low<br><small>두 논문 모두 이미징이 아닌 일반 PDE 솔버 맥락이라 ROI와의 연결이 간접적</small></td>
+  <td>Fourier feature embedding을 우리 optical diffraction tomography PINN 솔버의 고주파 굴절률 경계 재구성에 시험 적용</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ 참고: Lensless/Coded Imaging(2편), Virtual Staining/Pathology(5편, 전량 "staining" 키워드 오탐), Light-Field/Novel Sensors(1편)는 오늘 독립 클러스터를 만들 만큼의 근거가 부족합니다. 특히 Virtual Staining/Pathology는 면역조직화학 염색(진단병리) 논문이 키워드로 걸린 것으로, 실제 계산 이미징 가상 염색 논문은 0편입니다 — 아래 리스크 필터 참고.</small></p>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 없음 (2026-07-06 신규 제출 0건, 미국 독립기념일 연휴 여파로 추정)</li>
+  <li><strong>저널 전용</strong>: ptychography 신경망 일반화, 광학 신경망 backprop-free 학습, 위상 다양성 학습 증강, 반사형 렌즈리스 관통-실리콘 위상 이미징, THz phase-wrapping-free 홀로그래피, red-sensitive 홀로그래피 유리, 진폭 전용 메타표면 홀로그래피, nonlocal 메타표면 바이오센싱, 디퓨저 위상 복원, 편광격자 스냅샷 편광계, Fourier feature/KAN 기반 PINN</li>
+  <li><strong>공통 키워드</strong>: phase retrieval, holography, metasurface, physics-informed, generalization</li>
+  <li><strong>특징</strong>: 오늘은 계산광학 코어 신호가 전부 저널에서만 나왔고, arXiv 쪽 방법론 논문은 하나도 없습니다. 저널 전용 목록이 곧 오늘의 전체 신호입니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 계산 이미징 신경망의 "적응"을 하드웨어가 아니라 학습 방식으로 푸는 흐름</h3>
+  <p>지금까지 계산 이미징 신경망을 새 실험 조건에 맞추려면 보통 그 조건에서 다시 데이터를 모으고 재학습하는 수밖에 없었습니다. 오늘 세 논문은 이 전제를 흔듭니다. ptychography 논문은 실측 조명 패턴과 합성 물체를 섞은 학습 데이터만으로 한 번도 본 적 없는 빔라인에서도 통하는 모델을 만들었고, 광학 신경망 논문은 역전파 대신 층별 국소 학습으로 물리적 구현 가능성 자체를 높였습니다. 위상 다양성 논문은 추가 촬영 없이 학습 데이터를 늘리는 방법을 보였습니다. 세 논문의 공통된 함의는, 계산 이미징 시스템의 일반화 능력을 올리는 다음 단계가 "더 큰 모델"이나 "더 많은 하드웨어"가 아니라 "학습 데이터와 학습 규칙을 어떻게 설계하는가"에 있다는 것입니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 저널 3편이 독립적으로 같은 방향(일반화·학습 효율)을 지시</p>
+</div>
+
+<div class=ins>
+  <h3>2. 홀로그래피가 "촬영 방식 하나"에서 "산업별 범용 도구"로 갈라지는 중</h3>
+  <p>반도체 패키징 계측, 테라헤르츠파 위상 풀림 오차 제거, 완전 컬러 홀로그래픽 소자 재료까지, 오늘 저널 세 편은 서로 관련 없는 세 산업이 홀로그래피의 위상 복원 원리를 각자 필요에 맞게 가져다 쓰는 모습을 보입니다. 이는 홀로그래피 연구가 이제 "더 좋은 위상 영상을 찍는 방법"을 찾는 단계를 넘어, 이미 확립된 원리를 각 응용 분야의 제약(렌즈 없는 반도체 검사, THz 파장, 컬러 재현)에 맞춰 재구성하는 단계로 옮겨가고 있다는 신호입니다.</p>
+  <p class=conf-note>Confidence: Medium — 세 논문이 독립 저널에서 응용 확장을 보이나 서로 다른 산업이라 상호 참조는 없음</p>
+</div>
+
+<div class=ins>
+  <h3>3. 메타표면이 다시 이미징·센싱으로 돌아온 하루</h3>
+  <p>지난주 저널에서 메타표면은 안테나·통신·양자광원 응용에 쏠려 있었는데, 오늘은 진폭 전용 홀로그래피 합성, 다중 스케일 바이오센싱, 벡터광 필드 엔지니어링처럼 이미징·센싱 쪽 논문 세 편이 한꺼번에 나왔습니다. 특히 진폭 전용 변조가 위상 변조보다 소자 간 결합 오차에 강하다는 결과는, 메타표면 설계에서 "어떤 변조 방식을 쓸지"가 단순한 선택이 아니라 제조 오차에 대한 강건성과 직결된 문제라는 점을 보여줍니다.</p>
+  <p class=conf-note>Confidence: Medium — 세 논문이 독립 저널에서 확인되나 결합 오차 강건성이라는 주제가 명시적으로 겹치는 것은 1편뿐</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. Probe-conditioned 학습을 랩 Fourier Ptychography 파이프라인에 이식</h3>
+  <p>실측 조명 패턴과 합성 물체를 섞어 학습시키는 방식을 우리 FP 재구성 신경망에 적용해, 새 조명 조건에서 재학습 없이도 복원 품질이 유지되는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>논문의 probe-conditioning 학습 워크플로우를 우리 FP 데이터 형식에 맞춰 재구현</li>
+    <li>기존 조명 조건 vs 새 조명 조건(다른 LED 배열/파장)에서 재구성 fidelity 비교</li>
+    <li>비교축: 재학습 없이 새 조건 적응 시 SSIM/PSNR 저하 폭</li>
+    <li>실패해도 남는 결과: FP 시스템에서 probe 변동에 대한 민감도 정량 분석</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. Phase Diversity 데이터 증강으로 실측 의존도 낮추기</h3>
+  <p>학습된 phase-diverse pseudo-data 증강 기법을 우리 위상 복원 학습 세트에 적용해, 필요한 실측 데이터량을 줄이면서도 복원 품질을 유지할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>기존 위상 복원 학습 세트에서 실측 데이터 절반만 사용 + 나머지를 augmentation으로 대체</li>
+    <li>전체 실측 데이터 학습 대비 복원 품질(FRC) 비교</li>
+    <li>vortex phase 외 다른 diversity mechanism(defocus 등) 적용 가능성 검토</li>
+    <li>실패해도 남는 결과: 우리 시스템에서 어떤 diversity mechanism이 학습 가능한 상관관계를 만드는지 분석</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. 진폭 전용 메타표면 설계의 결합 오차 강건성 검증</h3>
+  <p>메타렌즈 위상판을 진폭 전용 변조로 재설계했을 때 소자 간 결합 오차에 대한 민감도가 실제로 낮아지는지, 우리 제작 공정에서 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>기존 위상 전용 메타렌즈 설계와 진폭 전용 설계를 같은 목표 파면에 대해 시뮬레이션 비교</li>
+    <li>제조 오차(치수 편차) 조건에서 두 설계의 파면 정확도 비교</li>
+    <li>diffractive neural network 기반 근접장 검증 셋업을 우리 특성 평가 장비로 재현 가능한지 확인</li>
+    <li>실패해도 남는 결과: 우리 메타렌즈 공정의 결합 오차 스펙 정량화</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(15편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:13%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:73%"></span></span><span class=n>11편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:33%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:7%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>15편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:33%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:27%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>8편</span></div>
+
+<p><small>⚠️ 참고: Phase Imaging/Holography 11편 중 상당수는 근접장 음향 홀로그래피(near-field acoustic holography, 진동공학 저널)로 "holography" 키워드 오탐이며 광학과 무관합니다. 실제 광학 홀로그래피 관련 논문은 5편입니다. Tomography/3D Imaging 15편은 대부분 임상 OCT/CT 진단 저널이고, 계산광학 방법론과 직접 관련된 논문은 1~2편입니다. Virtual Staining/Pathology 5편은 전부 면역조직화학 염색(진단병리) 논문으로 "staining" 키워드 오탐이며, 실제 계산 이미징 가상 염색 논문은 0편입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Lensless/Coded Imaging (2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tci.2026.3711006" target=_blank>Structured Random Models for Phase Retrieval with Optical Diffusers</a></strong> [JNL]<br>
+  왜 주요: 디퓨저 산란 패턴의 구조화된 통계를 이용해 위상 복원 알고리즘 안정성을 높이는 접근 — 우리 렌즈리스 시스템의 forward model 가정과 직접 비교 가능
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.606393" target=_blank>Anti-phase snapshot imaging polarimeter with high throughput based on polarization gratings</a></strong> [JNL]<br>
+  왜 주요: 단일 노출 고처리량 편광 촬영 — 다중 편광 촬영이 필요한 현재 세팅에 이식 가능성 있음
+</div>
+
+<h3>Phase Imaging/Holography (11편 중 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1063/5.0333722" target=_blank>Reflective lensless through-silicon phase imaging for advanced semiconductor packaging metrology</a></strong> [JNL · TIER A]<br>
+  왜 주요: 렌즈·이동 부품 없는 반사형 관통-실리콘 위상 이미징 — 반도체 패키징 검사에 렌즈리스 위상 복원 적용한 실용 사례
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.605240" target=_blank>Phase-wrapping-free terahertz in-line digital holography via projected refractive index</a></strong> [JNL]<br>
+  왜 주요: THz 홀로그래피에서 위상 풀림 오차를 굴절률 투영으로 해결 — 위상 언랩핑 문제의 다른 해법
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/adom.71428" target=_blank>Red-Sensitive Photopolymerizable Glass for Fabrication of Holographic Optical Elements</a></strong> [JNL]<br>
+  왜 주요: 홀로그래픽 소자 재료의 감광 파장대를 적색으로 확장 — 풀컬러 HOE 제작 가능성
+</div>
+
+<h3>Meta-Optics/Diffractive (5편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71513" target=_blank>Amplitude-Only Metasurface Holography for Precise Near-Field Plane-Wave Synthesis</a></strong> [JNL · TIER A]<br>
+  왜 주요: 진폭 전용 변조로 소자 간 결합 오차 강건성 확보 — 메타표면 설계 방식 자체에 대한 새 관점
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/prj.604695" target=_blank>Robust High Quality-factor Out-of-plane Nonlocal Metasurface-enhanced Microcavity for Multi-scale Biosensing</a></strong> [JNL]<br>
+  왜 주요: 메타표면 기반 고-Q 마이크로공진기로 다중 스케일 바이오센싱 — 온칩 센서 설계 참조 가능
+</div>
+
+<h3>Light-Field/Novel Sensors (1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.606622" target=_blank>Focused light-field multispectral radiation thermometry with enhanced spatial resolution</a></strong> [JNL]<br>
+  왜 주요: 광 필드 기반 다분광 열화상 해상도 개선 — 단발 신호라 독립 클러스터로 올리기엔 근거 부족
+</div>
+
+<h3>Tomography/3D Imaging (15편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ao.595486" target=_blank>Self-supervised Learning with Channel Attention Mechanism and Regularization for Retinal Disease Detection in Optical Coherence Tomography Images</a></strong> [JNL]<br>
+  왜 주요: OCT 자기지도학습 + 채널 어텐션 — 나머지 13편은 대부분 임상 진단(녹내장, 망막박리, 피부과) 저널로 계산광학 방법론과 무관
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/tomography12070102" target=_blank>Impact of Different Energy Levels of Virtual Monoenergetic Reconstructions on Radiomic Features Stability in Organic Phantom Imaging Using Photon-Counting CT</a></strong> [JNL]<br>
+  왜 주요: 광자계수 CT 재구성 파라미터가 radiomic feature 안정성에 미치는 영향 — 재구성 방법론 관점에서만 참고
+</div>
+
+<h3>Reconstruction/Inverse Problems (4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2515-7647/ae86a1" target=_blank>Learning phase diversity for solving ill-posed inverse problems in imaging</a></strong> [JNL · TIER A]<br>
+  왜 주요: 학습된 phase-diverse pseudo-data로 역문제 데이터 증강 — 추가 하드웨어 없이 학습 데이터 확장
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1111/coin.70275" target=_blank>Balanced Fidelity Network for Blind Hyperspectral Unmixing</a></strong> [JNL]<br>
+  왜 주요: 블라인드 하이퍼스펙트럴 언믹싱 네트워크 — 스펙트럼 재구성 파이프라인 참조
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1063/5.0337610" target=_blank>A Fourier feature physics-informed neural network framework for accurate mesh-free solutions of two-dimensional time-domain Maxwell equations</a></strong> [JNL]<br>
+  왜 주요: Fourier feature 임베딩으로 PINN의 고주파 스펙트럴 바이어스 완화 — ODT PINN 솔버에 참고 가능
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.jcp.2026.115185" target=_blank>Discontinuity-aware KAN-based physics-informed neural networks</a></strong> [JNL]<br>
+  왜 주요: KAN 구조로 불연속 함수 근사 개선 — 초록 미공개로 세부 확인 필요
+</div>
+
+<h3>Deep Learning Methods — 관련 2편 (8편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41524-026-02198-4" target=_blank>Towards generalizable deep ptychography neural networks</a></strong> [JNL · TIER A]<br>
+  왜 주요: probe-conditioned 학습으로 빔라인 간 일반화 최초 시연 — 오늘의 must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02394-3" target=_blank>Bio-inspired backpropagation-free training for optical neural networks</a></strong> [JNL · TIER A]<br>
+  왜 주요: 역전파 없는 국소 학습으로 물리 구현 가능성 확보 — 오늘의 must-read
+</div>
+
+<hr>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Towards generalizable deep ptychography neural networks — npj Computational Materials</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> X선 ptychography는 차세대 방사광 시설에서 데이터량이 폭증할 것으로 예상되는데, 기존 딥러닝 복원 모델은 학습한 실험 조건을 벗어나면 성능이 떨어지는 문제가 있었습니다. 이 논문은 실측 조명 패턴(probe)과 절차적으로 생성한 합성 물체를 조합한 비지도 학습 워크플로우로, 여러 빔라인에 걸친 일반화를 처음 시연했습니다. FP를 다루는 우리 랩에도 직접 적용 가능한 패턴입니다.</p>
+  <p><strong>핵심:</strong> probe conditioning(실측 조명 패턴을 학습에 반영)이 in-distribution 학습만큼 중요하다는 것을 보였고, 합성 학습 물체의 종류를 바꿔도 실측 데이터만으로 학습한 모델과 비슷한 복원 fidelity를 얻었습니다.</p>
+  <p><strong>주의:</strong> X선 ptychography 특유의 probe 특성이 우리 가시광/근적외선 FP 세팅과 다를 수 있어 이식 시 조명 모델 재정의가 필요합니다. 실험 beamline 수와 다양성이 논문에 정확히 몇 개인지 본문 확인 필요.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Bio-inspired backpropagation-free training for optical neural networks — Light: Science & Applications</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> 광학 신경망(빛의 속도로 행렬 연산을 하는 하드웨어)은 에너지 효율이 높지만, 표준 역전파 알고리즘이 요구하는 정밀한 역방향 광 경로를 물리적으로 구현하기 어렵다는 근본적 문제가 있었습니다. 이 논문은 층별로 국소적인 목표 신호만 보고 학습하는 방식으로 이 문제를 완전히 우회했고, 프로그래머블 SLM 시스템과 칩 스케일 나노 프린팅 양쪽에서 실물 검증까지 마쳤습니다.</p>
+  <p><strong>핵심:</strong> 학습 가능한 오차 컨볼루션 커널로 각 층이 체인룰 그래디언트 대신 국소 목표 신호로 학습하며, MNIST/Fashion-MNIST에서 표준 역전파 ONN과 비슷한 정확도(93.25%/82.28%)를 내면서 위상 노이즈와 정렬 오차에 더 강건합니다.</p>
+  <p><strong>주의:</strong> 검증이 MNIST 수준 분류 태스크에 한정돼 있어, 더 복잡한 이미징 재구성 태스크로 확장될지는 본문·후속 검증이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] arXiv 5개 카테고리가 모두 0건이라 오늘 신호는 전량 저널 데이터입니다. 평소 대비 정보량이 크게 줄었습니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology 5건은 전부 "staining"이라는 키워드가 면역조직화학 염색(진단병리)과 우연히 겹친 오탐이며, 실제 계산 이미징 관련 가상 염색 논문은 0건입니다.</p>
+  <p>[Dataset risk] Phase Imaging/Holography 11건 중 다수는 근접장 음향 홀로그래피(진동공학 저널)로 "holography" 키워드 오탐이며 광학과 무관합니다. Tomography/3D Imaging 15건 대부분도 임상 OCT/CT 진단 저널로, 계산광학 방법론과 직접 관련된 논문은 1~2건입니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] Structured Random Models for Phase Retrieval with Optical Diffusers, Anti-phase snapshot imaging polarimeter, Discontinuity-aware KAN-based PINN: Crossref 초록이 제공되지 않아 제목과 저널명만으로 판단했습니다. 본문 확인 전 클러스터 배치가 부정확할 수 있습니다.</p>
+  <p>[Baseline risk] Amplitude-only metasurface holography의 비교 실험이 diffractive neural network 기반 근접장 검증에 한정돼 있어, 더 넓은 조건에서의 강건성은 본문 확인이 필요합니다.</p>
+  <p>[Claim risk] Bio-inspired backpropagation-free ONN의 검증은 MNIST/Fashion-MNIST 수준 분류 태스크에 한정됩니다. 이미징 재구성처럼 더 복잡한 태스크로의 확장은 abstract만으로 확인할 수 없습니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>A low-profile multibeam antenna based on artificial magnetic conductor metasurface</strong> [JNL] · <strong>A Reconfigurable Radiation Pattern Circular Patch Antenna Using a Square SRR Metasurface for 5G mmWave</strong> [JNL] — 메타표면 키워드로 걸렸으나 RF 통신 안테나 응용으로 이미징 ROI와 거리가 있음.</li>
+    <li><strong>근접장 음향 홀로그래피 3편</strong>(진동공학 저널) — "holography" 키워드 오탐. 음향 신호처리이며 광학과 무관.</li>
+    <li><strong>면역조직화학 염색 진단 저널 다수</strong>(PRAME/Melan-A/SOX10, PD1/PDL-1 등) — "staining" 키워드 오탐. 임상 병리 진단 목적으로 계산 이미징과 무관.</li>
+    <li><strong>다수 임상 OCT/CT 저널</strong>(황반 미세혈관, 녹내장 시야, 골 섭취량 등) — 임상 진단 목적, 계산광학 방법론 기여 없음.</li>
+    <li><strong>Rashba-like spin splitting in inversion symmetric plasmonic metasurface</strong> [JNL] — 기초 물리 현상 연구로 응용 이미징과 거리 있음.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Lensless/Coded Imaging (2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tci.2026.3711006" target=_blank>Structured Random Models for Phase Retrieval with Optical Diffusers</a></strong> <span class=pill>JNL</span><br>
+  문제: 디퓨저 기반 위상 복원의 안정성 / 방법: 산란 패턴의 구조화된 통계를 복원 모델에 반영 / 의미: 렌즈리스 forward model 가정 재검토에 참고 / 주의: 초록 미공개, 본문 확인 필요 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.606393" target=_blank>Anti-phase snapshot imaging polarimeter with high throughput based on polarization gratings</a></strong> <span class=pill>JNL</span><br>
+  문제: 다중 촬영 없이 편광 정보 획득 / 방법: 편광 격자 기반 단일 노출 고처리량 편광계 / 의미: 단일 샷 계산 이미징 하드웨어 확장 / 우선순위: Read
+</div>
+
+<h3>Phase Imaging/Holography — 관련 5편 (11편 중 6편은 근접장 음향 홀로그래피·타 분야로 제외)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1063/5.0333722" target=_blank>Reflective lensless through-silicon phase imaging for advanced semiconductor packaging metrology</a></strong> <span class=pill>JNL</span><br>
+  문제: 반도체 패키징 공정에서 렌즈·이동부 없는 내부 정렬 검사 / 방법: 반사형 렌즈리스 관통-실리콘 위상 이미징(반복 위상 복원+디노이징) / 의미: 렌즈리스 계산 이미징의 산업 적용 사례 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.596972" target=_blank>Investigation of reconstructed image characteristics in multiwavelength common-path in-line digital holography with daily-use light</a></strong> <span class=pill>JNL</span><br>
+  문제: 일상 조명원을 이용한 다파장 in-line 홀로그래피 재구성 특성 / 방법: common-path 구조의 다파장 홀로그래피 / 의미: 저비용 광원 기반 홀로그래피 가능성 / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.605240" target=_blank>Phase-wrapping-free terahertz in-line digital holography via projected refractive index</a></strong> <span class=pill>JNL</span><br>
+  문제: THz 홀로그래피의 위상 풀림 오차 / 방법: 굴절률 직접 투영으로 언랩핑 없는 복원 / 의미: THz 대역 홀로그래피 정확도 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71513" target=_blank>Amplitude-Only Metasurface Holography for Precise Near-Field Plane-Wave Synthesis</a></strong> <span class=pill>JNL</span><br>
+  문제: 메타표면 위상 변조의 소자 간 결합 오차 / 방법: 진폭 전용 변조로 결합 오차 강건성 확보 / 의미: 메타표면 홀로그래피 설계 원칙 재검토 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/adom.71428" target=_blank>Red-Sensitive Photopolymerizable Glass for Fabrication of Holographic Optical Elements</a></strong> <span class=pill>JNL</span><br>
+  문제: 홀로그래픽 기록 재료가 청록색 대역에 한정 / 방법: 적색 감광 photopolymerizable 유리(MB/NPG 광증감) / 의미: 풀컬러 HOE 제작 재료 확보 / 우선순위: Read
+</div>
+
+<h3>Meta-Optics/Diffractive — 관련 3편 (5편 중 2편은 RF 안테나 응용으로 제외)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/prj.604695" target=_blank>Robust High Quality-factor Out-of-plane Nonlocal Metasurface-enhanced Microcavity for Multi-scale Biosensing</a></strong> <span class=pill>JNL</span><br>
+  문제: 다중 스케일 생체 신호 동시 감지 / 방법: 메타표면 강화 out-of-plane nonlocal 고-Q 마이크로공진기 / 의미: 온칩 바이오센서 설계 참조 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.604866" target=_blank>Analytical vectorial light-field engineering with fixed-meta-atom interferometric metasurfaces</a></strong> <span class=pill>JNL</span><br>
+  문제: 벡터 광 필드를 복잡한 간섭계 없이 설계 / 방법: 고정 meta-atom 배열 기반 해석적 설계 / 의미: 메타표면 기반 광 필드 엔지니어링 단순화 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/1361-6633/ae8695" target=_blank>Rashba-like spin splitting in inversion symmetric plasmonic metasurface</a></strong> <span class=pill>JNL</span><br>
+  문제: 반전대칭 플라즈모닉 메타표면의 스핀 분리 현상 / 방법: 이론·실험적 특성 분석 / 의미: 기초 물리 현상, 응용 이미징과는 거리 있음 / 우선순위: Skim-only
+</div>
+
+<h3>Light-Field/Novel Sensors (1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.606622" target=_blank>Focused light-field multispectral radiation thermometry with enhanced spatial resolution</a></strong> <span class=pill>JNL</span><br>
+  문제: 광 필드 열화상의 공간 해상도 한계 / 방법: focused light-field 기반 다분광 복사온도측정 / 의미: 광 필드 센싱 응용 확장, 단발 신호 / 우선순위: Skim-only
+</div>
+
+<h3>Tomography/3D Imaging — 관련 2편 (15편 중 13편은 임상 진단 저널로 제외)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ao.595486" target=_blank>Self-supervised Learning with Channel Attention Mechanism and Regularization for Retinal Disease Detection in Optical Coherence Tomography Images</a></strong> <span class=pill>JNL</span><br>
+  문제: OCT 망막 질환 검출의 라벨 의존성 / 방법: 채널 어텐션 + 정규화 기반 자기지도학습 / 의미: OCT 진단 파이프라인의 라벨 효율화 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/tomography12070102" target=_blank>Impact of Different Energy Levels of Virtual Monoenergetic Reconstructions on Radiomic Features Stability in Organic Phantom Imaging Using Photon-Counting CT</a></strong> <span class=pill>JNL</span><br>
+  문제: 광자계수 CT 재구성 에너지 레벨이 radiomic feature 안정성에 미치는 영향 / 방법: 유기 팬텀 이미징 비교 실험 / 의미: CT 재구성 파라미터 표준화 논의에 참고 / 우선순위: Skim-only
+</div>
+
+<h3>Reconstruction/Inverse Problems (4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2515-7647/ae86a1" target=_blank>Learning phase diversity for solving ill-posed inverse problems in imaging</a></strong> <span class=pill>JNL</span><br>
+  문제: 다중 측정 하드웨어 없이 역문제 강건성 확보 / 방법: 학습된 phase-diverse pseudo-data 증강 / 의미: 하드웨어 확장 없는 데이터 증강 패턴 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1111/coin.70275" target=_blank>Balanced Fidelity Network for Blind Hyperspectral Unmixing</a></strong> <span class=pill>JNL</span><br>
+  문제: 블라인드 하이퍼스펙트럴 언믹싱의 fidelity 불균형 / 방법: balanced fidelity network / 의미: 스펙트럼 재구성 파이프라인 참조 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1063/5.0337610" target=_blank>A Fourier feature physics-informed neural network framework for accurate mesh-free solutions of two-dimensional time-domain Maxwell equations</a></strong> <span class=pill>JNL</span><br>
+  문제: PINN의 고주파 스펙트럴 바이어스 / 방법: Fourier feature 임베딩 + Adam-L-BFGS 하이브리드 최적화 / 의미: PINN 기반 역문제 솔버 고주파 재구성에 참고 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.jcp.2026.115185" target=_blank>Discontinuity-aware KAN-based physics-informed neural networks</a></strong> <span class=pill>JNL</span><br>
+  문제: PINN의 불연속 함수 근사 한계 / 방법: KAN(Kolmogorov-Arnold Network) 기반 불연속 인식 구조 / 의미: 굴절률 불연속이 있는 역문제에 참고 가능 / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+
+<h3>Deep Learning Methods — 관련 2편 (8편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41524-026-02198-4" target=_blank>Towards generalizable deep ptychography neural networks</a></strong> <span class=pill>JNL</span><br>
+  문제: ptychography 복원 신경망의 실험 조건 간 일반화 부족 / 방법: probe-conditioned 비지도 학습(실측+합성 데이터 결합) / 의미: FP 신경망 재학습 없는 조건 적응의 직접 참조 사례 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02394-3" target=_blank>Bio-inspired backpropagation-free training for optical neural networks</a></strong> <span class=pill>JNL</span><br>
+  문제: 광학 신경망의 역전파 물리 구현 불가능성 / 방법: 층별 국소 목표 신호 기반 학습(target propagation) / 의미: 광학 신경망 하드웨어 구현 가능성 확장 / 우선순위: Must-read
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://doi.org/10.1038/s41524-026-02198-4" target=_blank>Towards generalizable deep ptychography neural networks — npj Computational Materials</a></li>
+  <li><a href="https://doi.org/10.1038/s41377-026-02394-3" target=_blank>Bio-inspired backpropagation-free training for optical neural networks — Light: Science &amp; Applications</a></li>
+  <li><a href="https://doi.org/10.1088/2515-7647/ae86a1" target=_blank>Learning phase diversity for solving ill-posed inverse problems in imaging — J. Phys. Photonics</a></li>
+  <li><a href="https://doi.org/10.1063/5.0333722" target=_blank>Reflective lensless through-silicon phase imaging — Applied Physics Letters</a></li>
+  <li><a href="https://doi.org/10.1364/ol.605240" target=_blank>Phase-wrapping-free terahertz in-line digital holography — Optics Letters</a></li>
+  <li><a href="https://doi.org/10.1002/adom.71428" target=_blank>Red-Sensitive Photopolymerizable Glass for HOE — Advanced Optical Materials</a></li>
+  <li><a href="https://doi.org/10.1002/lpor.71513" target=_blank>Amplitude-Only Metasurface Holography — Laser &amp; Photonics Reviews</a></li>
+  <li><a href="https://doi.org/10.1364/prj.604695" target=_blank>Nonlocal Metasurface Microcavity for Biosensing — Photonics Research</a></li>
+  <li><a href="https://doi.org/10.1109/tci.2026.3711006" target=_blank>Structured Random Models for Phase Retrieval with Optical Diffusers — IEEE TCI</a></li>
+  <li><a href="https://doi.org/10.1364/oe.606393" target=_blank>Anti-phase snapshot imaging polarimeter — Optics Express</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+  <p>📚 입력: journal-only 2026-07-06 (잠정본) · 스캔 135건, ROI 51건 (37.8%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 2026-07-03 이후 미갱신</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

@@ -6,7 +6,7 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 06 Jul 2026 10:56:52 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2026 12:14:37 +0900</lastBuildDate>
     <ttl>720</ttl>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-07-06 (Week 27)</title>
@@ -14,6 +14,13 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-06-weekly.html</guid>
       <pubDate>Mon, 06 Jul 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[지난주 가장 뜨거운 흐름은 3D 재구성의 진입장벽 완화 입니다. 월요일(Jun 29)에 StructSplat이 카메라 파라미터도 없고 정렬도 안 된 소수 이미지만으로 3DGS를 만드는 방법을 냈습니다. 예전에는 3DGS를 쓰려면 정확한 카메라 위치 정보가 필수였는데, 이 전제가 흔들린 셈입니다. 금요일(Jul 3)에는 InvSplat·AnchorSplat·FoundDP·ICDepth 네 편이 장면마다 새로 최적화하는 대신 한 번의 순전파(feed-forward)로 기하와 디테일을 복원하는 쪽으로 몰렸고, 같은 날 X-Splat은 치과 파노라마 X-ray 한 장에서 CBCT급 3차원 정보를 만들어 3DGS가 가시광 RGB 장면을 넘어 비가시광 모달리티로도 확장된다는 것을…]]></description>
+    </item>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-07-06 (월요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-07-06.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-06.html</guid>
+      <pubDate>Mon, 06 Jul 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 브리핑은 사실상 지난주 arXiv 흐름이 멈춘 자리를 저널이 대신 채운 날입니다. 오늘 아침 발행된 주간 회고에 따르면 지난주(6/29~7/3)는 3D 장면 재구성이 장면별 최적화에서 feed-forward 단일 추론으로 넘어가고, 역문제 해법이 diffusion prior 한 방향에서 zero-shot·PnP·unrolling 등 여러 갈래로 나뉜 한 주였습니다. 계산광학 핵심 주제(FP, 위상, 메타표면)는 지난주에도 arXiv가 아니라 저널에서만 움직였는데, 오늘은 그 arXiv 쪽 신호 자체가 완전히 사라지면서 계산광학 코어 주제가 저널 단독으로 하루 전체를 채우는 극단적인 하루가 됐습니다.]]></description>
     </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-07-03 (금요일)</title>
