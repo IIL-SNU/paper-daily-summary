@@ -1,0 +1,30 @@
+{
+  "date": "2026-07-07",
+  "results": [
+    {
+      "benchmark": "Fluorescence microscopy out-of-focus background suppression (spoke-like sample + real tissue)",
+      "metric": "Contrast improvement",
+      "value": 5.5,
+      "value_str": "약 5.5배 contrast 개선",
+      "paper": "https://doi.org/10.1063/5.0338959",
+      "paper_title": "Physics-guided training-free neural network for suppressing out-of-focus background in fluorescence microscopy"
+    },
+    {
+      "benchmark": "Interferometric measurement fringe-density optimization (helical tooth flank profile)",
+      "metric": "Phase residue point reduction",
+      "value": 83,
+      "value_str": "phase residue point 76~83% 감소, RMS phase gradient 30~34% 감소",
+      "paper": "https://doi.org/10.1117/1.oe.65.7.074102",
+      "paper_title": "Multiconstrained optical path optimization of interferometric measurement system based on fringe-density characteristics"
+    },
+    {
+      "benchmark": "Amplitude-only metasurface near-field plane-wave synthesis",
+      "metric": "Magnitude/phase fluctuation",
+      "value": 1,
+      "value_str": "magnitude fluctuation < 1 dB, phase fluctuation < 10도",
+      "paper": "https://doi.org/10.1002/lpor.71513",
+      "paper_title": "Amplitude-Only Metasurface Holography for Precise Near-Field Plane-Wave Synthesis"
+    }
+  ],
+  "note": "2026-07-07은 pastweek 백필로 arXiv 항목에 초록이 없어 SOTA 수치는 초록이 남아있는 저널(Crossref/OpenAlex) 논문에서만 추출했다. 위 3건 모두 랩 ROI 핵심(형광 현미경 배경 억제, 간섭계 프린지 품질, 메타표면 근접장 파면 합성)과 직접 연관된 수치만 골랐고, SCAGC-UNet(의료영상 분할 Dice 92.28%)·EchoHMIL(심초음파 AUC 0.957)·YOLO11 gonial angle(mAP 0.995) 등은 초록에 수치가 있지만 계산광학 핵심 ROI가 아닌 일반 의료 딥러닝이라 제외했다."
+}

@@ -1,0 +1,36 @@
+{
+  "date": "2026-07-07",
+  "source_listing_date": "2026-07-07",
+  "source_mode": "pastweek-date-section",
+  "note": "2026-07-07(화)은 backfill 대상 평일이다. arXiv /pastweek의 'Tue, 7 Jul 2026' 날짜 섹션만 추출하는 scripts/fetch_arxiv_pastweek_date.py로 5개 카테고리를 복구했고, 이 백필 경로는 abstract를 제공하지 않아 arXiv 항목은 title/subject 기반으로만 분류·요약했다(초록 기반 주장은 만들지 않음). 또한 /pastweek 날짜 섹션은 new/cross/replace를 하위 구분하지 않고 통째로 태깅되므로 daily_new_counts는 replacement를 완전히 배제했다고 보장할 수 없다(스크립트 한계, 파서 버그 아님). classify.py 선택 비율(18.4%)이 평소(25~39%) 대비 낮은 것도 title-only 매칭 정밀도 저하 때문이며 파서 오류가 아니다. 저널(out_0707/journal_new.json)은 --days 2 윈도우(07-06~07-08 등록분)로 07-07 등록분을 근사 수집했고 OpenAlex enrich로 초록을 약 50% 보강했다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 427,
+      "cs.CV": 389,
+      "cs.AI": 451,
+      "eess.IV": 25,
+      "eess.SP": 67
+    },
+    "scope": "new+cross; replacements excluded"
+  },
+  "totals": {
+    "total_scanned": 1476,
+    "selected": 272
+  },
+  "classified": {
+    "total_scanned": 1476,
+    "selected": 272,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 4,
+      "Phase Imaging/Holography": 21,
+      "Meta-Optics/Diffractive": 14,
+      "Light-Field/Novel Sensors": 10,
+      "Tomography/3D Imaging": 52,
+      "Virtual Staining/Pathology": 20,
+      "Reconstruction/Inverse Problems": 23,
+      "Deep Learning Methods": 127
+    }
+  },
+  "daily_thesis": "arXiv 쪽 title/subject만 봤을 때 이날 가장 뚜렷한 반복은 3D Gaussian Splatting을 장면별 최적화 없이 feed-forward·스트리밍으로 돌리려는 논문 다수가 Tomography/3D Imaging 버킷에 동시에 몰린 것이고, 저널 쪽은 초록이 남아있는 소수의 논문에서 '위상/정량 정보를 하드웨어 추가 없이 학습으로 복원'하는 문제(halo-free QPI, ptychography 일반화, 위상 다양성 역문제)가 반복됐다. Virtual Staining/Pathology와 Reconstruction/Inverse Problems 두 버킷은 07-03과 마찬가지로 키워드 우연 매칭(virtual/staining, physics-informed 일반 ML)이 대부분이라 편수를 그대로 트렌드로 읽으면 안 된다."
+}

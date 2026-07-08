@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-07-07</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] blockquote,html[data-theme=dark] th,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+html[data-theme=dark] .ins{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .dd{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+<button id=themeToggle aria-label="Toggle dark mode">🌙</button>
+<script>(function(){var btn=document.getElementById('themeToggle');function setTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);btn.textContent=t==='dark'?'☀️':'🌙';}btn.addEventListener('click',function(){setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');});btn.textContent=document.documentElement.dataset.theme==='dark'?'☀️':'🌙';})();</script>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-07-07 (화요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-07-07 (화요일) · 실제 실행일 2026-07-08 backfill</div>
+  <div>🛠 모드: Backfill (source_mode=pastweek-date-section) — arXiv /pastweek의 "Tue, 7 Jul 2026" 날짜 섹션만 추출</div>
+  <div>⚠️ arXiv 항목은 이 백필 경로 특성상 <strong>초록이 제공되지 않아 title/subject 기반으로만 분류·요약</strong>했습니다. 초록 기반 주장은 만들지 않았고, 더 깊은 해석이 필요한 곳은 저널(Crossref/OpenAlex, 초록 보유) 논문에 의존했습니다.</div>
+  <div>📚 소스: arXiv /pastweek 2026-07-07 섹션 + Crossref/OpenAlex 저널(--days 2, 07-06~07-08 등록분으로 07-07 근사 수집) · cs.LG/cs.CV/cs.AI/eess.IV/eess.SP</div>
+  <div>🔢 arXiv: cs.LG 427 · cs.CV 389 · cs.AI 451 · eess.IV 25 · eess.SP 67 (총 1,359편 new+cross, /pastweek 특성상 replacement 완전 배제는 보장 안 됨)</div>
+  <div>🔢 분류 결과: 총 1,476건 스캔(저널 포함) · ROI 배정 272건 (18.4%) — title-only 매칭 정밀도 저하로 평소(25~39%)보다 낮음, 파서 오류 아님</div>
+  <div>⚠️ Virtual Staining/Pathology(20편) 대부분이 "virtual"·"staining" 단어만 겹치는 false positive이고, Reconstruction/Inverse Problems(23편)도 다수가 일반 물리 정보 신경망(PINN) 논문이라 원 편수를 그대로 트렌드로 읽으면 안 됩니다.</div>
+  <div>🗓 이전 실제 arXiv 발행일은 2026-07-03(금)입니다. 07-04/05는 주말, 07-06(월, 미국 독립기념일 연휴 여파로 arXiv 신규 제출 0건)은 저널만으로 만든 잠정본(journal-only)이 이미 발행돼 있어, 오늘이 07-03 이후 첫 실제 arXiv 배치입니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+title/subject만 볼 수 있는 이번 백필에서 가장 뚜렷하게 반복된 신호는 <strong>3D Gaussian Splatting이 "장면마다 새로 최적화"에서 "포즈 정보 없이도, 실시간으로도, 가볍게도" 되는 쪽으로 한꺼번에 갈라진 것</strong>입니다 — Tomography/3D Imaging 버킷에서만 관련 논문이 5편 넘게 동시에 잡혔습니다. 한편 <strong>초록이 남아있는 저널 논문들에서는 위상·정량 정보를 하드웨어 추가 없이 학습만으로 복원하려는 흐름</strong>이 QPI·ptychography·형광 배경 억제 세 갈래에서 반복됐고, 그중 ptychography 복원 신경망의 일반화 문제를 정면으로 다룬 논문이 특히 눈에 띕니다. 다만 오늘은 arXiv 항목 대부분에 초록이 없어 이런 해석은 저널 소수 논문에 크게 의존했고, Virtual Staining/Pathology와 Reconstruction/Inverse Problems 두 버킷은 여전히 키워드 우연 매칭이 압도적이라는 점을 07-03에 이어 오늘도 다시 확인했습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>2026-07-07(화) arXiv /pastweek 해당 날짜 섹션에는 cs.LG 427편, cs.CV 389편, cs.AI 451편, eess.IV 25편, eess.SP 67편으로 총 1,359편이 잡혔습니다(pastweek 백필 특성상 이 편수는 new+cross를 겨냥했지만 replacement를 완전히 배제했다고 보장할 수는 없습니다). 저널을 더한 전체 스캔 1,476건 중 ROI 배정은 272건(18.4%)으로, 07-03의 25.9%보다 크게 낮은데 이건 백필 파서가 초록 없이 제목·subject 문자열만으로 키워드 매칭을 해야 해서 정밀도가 떨어졌기 때문이지 실제 관련 논문이 줄어든 게 아닙니다. 오늘 가장 뚜렷한 반복 신호는 Tomography/3D Imaging 버킷(52편, 오늘 최대 버킷) 안에서 3D Gaussian Splatting을 feed-forward·스트리밍·경량화 방향으로 확장하려는 논문이 5편 이상 몰린 것입니다.</p>
+<p>이번 주(2026-06-29~07-07) 관점에서 보면, 07-03에는 압축측정에서 3D 볼륨을 복원하는 문제(라이트시트 현미경·저선량 CT·치과 X-ray)와 장면별 최적화 없는 feed-forward 3D 재구성 4편이 동시에 나왔는데, 오늘은 그 feed-forward 3D 재구성 흐름이 더 세분화돼 포즈 없는 입력(unposed), 스트리밍, 경량화까지 갈라지는 방향으로 이어지고 있습니다. 메타표면 저널은 07-03에 이미 사흘 연속 통신·양자 하드웨어로 쏠려 있다고 짚었는데, 오늘도 이미징 특화 역설계 신호는 나오지 않아 공백이 계속되고 있습니다.</p>
+<p>다음 관찰 포인트는 (1) feed-forward 3D Gaussian Splatting 확산이 이번 주 후반까지 이어지는지, (2) ptychography 복원 신경망의 일반화 문제가 저널에서 후속 논문으로 이어지는지, (3) 메타표면 저널이 언제 이미징 응용으로 돌아오는지입니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>직전으로 확인 가능한 실제 arXiv 배치는 07-03(금)입니다. 07-04·05는 주말이라 arXiv가 없었고, 07-06(월)은 미국 독립기념일 연휴 여파로 5개 카테고리 모두 신규 제출이 0건이라 저널만으로 만든 잠정본이 발행돼 있습니다. 따라서 오늘(07-07)은 07-03 이후 나흘 만의 첫 실제 arXiv 신규 배치입니다.</p>
+<p>07-03에는 압축측정에서 볼륨을 복원하는 문제(라이트시트 현미경·저선량 CT·치과 X-ray)와 장면별 최적화를 없애는 feed-forward 3D 재구성 4편이 대표 클러스터였는데, 오늘은 그 feed-forward 3D 재구성 흐름이 한 단계 더 나가서 "포즈 정보까지 없어도 되는가", "실시간 스트리밍으로 되는가", "가볍게 만들 수 있는가"라는 세 가지 하위 질문으로 갈라지는 모습입니다. 07-03에 메타표면·저간섭 광원·액정렌즈가 "단일 촬영 라벨-프리 정량 위상·3D"로 수렴했다면, 오늘은 그 자리에 halo-free QPI·ptychography 일반화·형광 배경 억제라는 조금 더 좁은 계산 기반 복원 문제가 들어왔습니다. 다만 오늘은 arXiv 항목 대부분에 초록이 없어 이 비교의 신뢰도는 07-03보다 낮고, 본문 확인 전까지는 잠정적으로 읽어야 합니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>3D Gaussian Splatting이 장면별 최적화·오프라인 배치에서 feed-forward·스트리밍·경량화로 한꺼번에 갈라짐</strong><span class=pill>HOT</span></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.03612" target=_blank>SAF3R: Dynamic Sparse Attention for Feed-Forward 3D Reconstruction Transformers</a> (cs.CV)<br>
+    <a href="https://arxiv.org/abs/2607.05356" target=_blank>ReCal3R: Reliability-Calibrated Learning Rates for Streaming 3D Reconstruction</a> (cs.CV)<br>
+    <a href="https://arxiv.org/abs/2607.05347" target=_blank>WildSplat: Feedforward Gaussian Splatting from Unposed In-the-Wild Images</a> (cs.CV)<br>
+    <a href="https://arxiv.org/abs/2607.03209" target=_blank>Fast 3D Foundation Model Initialized Gaussian Splatting</a> (cs.CV)<br>
+    <a href="https://arxiv.org/abs/2607.02721" target=_blank>Provable Pruning for Efficient 3D Gaussian Splatting via Coresets</a> (cs.CV)
+  </td>
+  <td>예전에는 3D Gaussian Splatting으로 장면을 복원하려면 카메라 위치를 미리 정확히 알고 그 장면 하나에만 맞춰 최적화를 오래 돌려야 했는데, 오늘 제목만 봐도 그 전제 세 가지(포즈 사전 지식, 장면별 최적화, 무거운 연산)를 각각 깨려는 논문이 동시에 5편 나왔습니다. SAF3R와 Fast 3D Foundation Model Initialized GS는 학습된 모델이 한 번의 순전파로 결과를 내는 feed-forward 쪽이고, ReCal3R은 그 결과를 스트리밍으로 확장하는 쪽이며, WildSplat은 카메라 위치 정보 없이 아무렇게나 찍은 사진 모음에서도 되게 하려는 쪽이고, Provable Pruning은 학습이 끝난 Gaussian을 이론적 보장이 있는 방식으로 솎아내 가볍게 만드는 쪽입니다. 다섯 편이 같은 날 같은 버킷에 몰렸다는 건, 3D 장면 복원이 연구실 벤치마크용 도구에서 실시간·모바일·인터넷 사진처럼 실제 조건에 바로 쓰는 도구로 넘어가는 흐름이 이번 주에도 계속되고 있다는 뜻입니다. 다만 이 5편은 title/subject만 확인했고 초록은 없어 구체적 정량 결과는 본문 확인이 필요합니다.</td>
+  <td>Medium<br><small>같은 버킷에서 5편 동시 등장·서로 다른 세부 문제로 분화하지만 title/subject 기준이라 초록 기반 검증은 아직 없음</small></td>
+  <td>SAF3R의 dynamic sparse attention 구조와 Provable Pruning의 coreset 기반 가지치기를 랩 실시간 3D 재구성 파이프라인에 이식했을 때 렌더링 속도·메모리 대비 복원 품질을 Mip-NeRF360/Tanks-and-Temples에서 비교. WildSplat의 unposed 입력 처리 방식이 랩 필드 촬영(카메라 캘리브레이션이 불완전한 현장 데이터)에서도 동작하는지 소규모로 재현</td>
+</tr>
+<tr>
+  <td><strong>위상·정량 정보를 추가 하드웨어 없이 학습으로 복원하려는 흐름이 QPI·ptychography·역문제 세 갈래에서 반복</strong></td>
+  <td>
+    <a href="https://doi.org/10.1117/1.jbo.31.7.076503" target=_blank>Halo-free quantitative phase imaging via physics-constrained self-supervised network</a> (J. Biomedical Optics)<br>
+    <a href="https://doi.org/10.1038/s41524-026-02198-4" target=_blank>Towards generalizable deep ptychography neural networks</a> (npj Computational Materials)<br>
+    <a href="https://doi.org/10.1088/2515-7647/ae86a1" target=_blank>Learning phase diversity for solving ill-posed inverse problems in imaging</a> (J. Physics: Photonics)<br>
+    <a href="https://doi.org/10.1063/5.0338959" target=_blank>Physics-guided training-free neural network for suppressing out-of-focus background in fluorescence microscopy</a> (APL Photonics)
+  </td>
+  <td>네 논문 모두 광학계를 더 복잡하게 만드는 대신, 이미 찍은 영상에서 학습이나 신경망으로 정보를 더 짜내려는 쪽입니다. 첫 번째 논문은 위상 현미경에서 빛이 번지는 halo 현상을 광학적으로 막는 대신, 물리 법칙을 제약 조건으로 넣은 자기지도학습 네트워크로 사후에 제거합니다. 두 번째 논문은 ptychography(여러 장 겹쳐 찍은 회절 패턴에서 물체를 복원하는 기법) 복원 신경망이 학습 때 못 본 시료·측정 조건에서도 일반화되는지를 정면으로 다룹니다 — 지금까지 이 분야 신경망들이 흔히 겪던 "학습 데이터를 벗어나면 무너진다"는 문제를 이름 붙이고 검증하려는 시도라는 점에서 다른 복원 논문과 결이 다릅니다. 세 번째 논문은 위상 다양성(같은 장면을 살짝 다른 초점으로 여러 번 찍어 위상을 추정하는 기법) 역문제가 원래 정답이 여러 개 있을 수 있는 ill-posed 문제라는 점을 학습 기반으로 다룹니다. 네 번째 논문은 형광 현미경에서 초점이 안 맞은 배경 신호를 별도 학습 데이터 없이 물리 모델만으로 제거해 대비를 약 5.5배 개선했습니다. 넷 다 "하드웨어를 더 얹지 않고 계산으로 해결한다"는 계산광학의 핵심 문제의식을 공유합니다.</td>
+  <td>Medium<br><small>서로 다른 4개 저널에서 독립 등장, 초록 확보돼 있어 신뢰도는 있으나 같은 날 동시 등장이 아니라 --days 2 근사 수집 결과일 수 있음</small></td>
+  <td>generalizable deep ptychography 논문의 train/test 시료·측정 조건 분리 방식과 일반화 성능 평가 프로토콜을 랩 QPI/홀로그래피 복원 신경망에 동일 적용해 분포 밖 시료에서 붕괴 여부를 점검. halo-free QPI의 물리 제약 자기지도학습 손실 항을 랩 위상 복원 파이프라인의 halo 아티팩트 저감에 시험 적용</td>
+</tr>
+<tr>
+  <td><strong>메타표면 저널, 이미징·역설계 신호 없이 통신·양자·음향 하드웨어 응용으로 계속 쏠림(07-03 이후 지속)</strong></td>
+  <td>
+    <a href="https://doi.org/10.1080/02726343.2026.2700030" target=_blank>A low-profile multibeam antenna based on artificial magnetic conductor metasurface</a> (JEWA)<br>
+    <a href="https://doi.org/10.1098/rspa.2025.1021" target=_blank>Acoustic Willis metasurface for perfect transmedia wave manipulation</a> (Proc. Royal Society A)<br>
+    <a href="https://doi.org/10.1038/s41467-026-75346-5" target=_blank>Two-dimensional pixel-level addressable mid-infrared metasurface spatial light modulator</a> (Nature Communications)<br>
+    <a href="https://doi.org/10.1002/lpor.71513" target=_blank>Amplitude-Only Metasurface Holography for Precise Near-Field Plane-Wave Synthesis</a> (Laser & Photonics Reviews)
+  </td>
+  <td>07-03 daily에서 이미 메타표면 저널 14편이 사흘 연속 통신·양자 하드웨어로 쏠려 있다고 짚었는데, 오늘도 저널 메타표면 14편 중 이미징용 역설계·QPI 응용을 명시한 논문이 없고 대부분 안테나(5G/6G 빔포밍), 음향 메타표면, 적외선 공간광변조기, 근접장 평면파 합성 같은 순수 전자기 제어 문제입니다. 다만 두 논문(2차원 화소 단위 중적외선 메타표면 공간광변조기, 진폭 전용 메타표면 홀로그래피)은 광 정보를 화소 단위로 제어한다는 점에서 향후 QPI·홀로그래픽 디스플레이 쪽으로 이어질 잠재력이 있어 계속 지켜볼 필요가 있습니다. 공백이 나흘째(영업일 기준 07-01~07-07)로 길어지고 있다는 건, 이미징 목적 메타표면 역설계 연구의 관심이 실제로 통신·양자 하드웨어 쪽으로 옮겨간 것인지, 아니면 단순히 저널 쿼리가 그 신호를 못 잡는 것인지 판단이 필요한 시점이라는 뜻입니다.</td>
+  <td>Medium<br><small>14편 저널 동시 발행, 나흘 연속(07-01~07-07) 같은 방향(하드웨어 응용, 역설계 신호 없음) 반복</small></td>
+  <td>저널 쿼리에 'metalens quantitative phase', 'metasurface inverse design imaging'처럼 이미징 특화 키워드를 추가해 통신/음향 응용과 분리 수집. 2D 픽셀 단위 중적외선 메타표면 SLM 논문의 화소 어드레싱 구조가 랩 홀로그래픽 디스플레이·SLM 기반 위상 변조 실험에 참고 가능한지 본문 확인</td>
+</tr>
+<tr>
+  <td><strong>이벤트 카메라·뉴로모픽 센서가 저전력 컴퓨팅 하드웨어 논문과 실제 촬영·추적 응용 논문으로 갈라짐</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.02866" target=_blank>E-TraMamba: A New Paradigm for Efficient Long-Term 3D Feature Tracking with Event Cameras</a> (cs.CV)<br>
+    <a href="https://arxiv.org/abs/2607.04921" target=_blank>Efficient Perception in Automotive Detection and Tracking Using Neuromorphic Computing</a> (cs.CV)<br>
+    <a href="https://doi.org/10.1364/ao.603236" target=_blank>Event-based imaging for optical diagnostics of energetic materials</a> (Applied Optics)<br>
+    <a href="https://arxiv.org/abs/2607.02608" target=_blank>Towards transferable lightweight neuromorphic computing through a model-free temporal-switch framework</a> (cs.AR)
+  </td>
+  <td>Light-Field/Novel Sensors 버킷 10편 중 절반이 이벤트 카메라·뉴로모픽 관련인데, 그 안에서도 목적이 둘로 나뉩니다. E-TraMamba와 Event-based imaging 논문은 이벤트 카메라(밝기 변화가 있을 때만 픽셀 단위로 신호를 내는 센서)를 실제 촬영 문제(장시간 3D 특징 추적, 에너지 물질의 광학 진단)에 쓰는 응용 쪽이고, 자동차 인식 논문과 경량 뉴로모픽 프레임워크는 뉴로모픽 컴퓨팅 자체를 저전력 하드웨어 설계 문제로 다루는 쪽입니다. 같은 센서·컴퓨팅 방식이 "이걸로 무엇을 찍을까"와 "이 계산 방식을 어떻게 더 가볍게 만들까"라는 서로 다른 질문으로 갈라지고 있다는 뜻이고, 랩 입장에서는 전자(촬영 응용) 쪽이 더 직접적으로 참고할 만합니다.</td>
+  <td>Low<br><small>4편 title/subject 기준, 서로 다른 목적으로 갈라진다는 관찰은 있으나 abstract 검증 전이라 단발 관찰에 가까움</small></td>
+  <td>E-TraMamba의 장기 3D 특징 추적 구조를 랩 이벤트 카메라 기반 고속 현상(캐비테이션, 충격파 등) 촬영 실험의 특징점 추적 안정성 비교에 시험 적용. 4편 모두 초록·본문 확인 후 클러스터 편입 여부 재검토</td>
+</tr>
+<tr>
+  <td><strong>Virtual Staining/Pathology·Reconstruction/Inverse Problems 두 버킷이 오늘도 키워드 우연 매칭 위주 — 실 신호는 단발</strong><span class=pill>COLD</span></td>
+  <td>
+    <a href="https://doi.org/10.5114/pjp.2026.162577" target=_blank>Generation of virtual stains - can AI imitate chemistry?</a> (Polish J. Pathology)<br>
+    <a href="https://arxiv.org/abs/2607.03299" target=_blank>Piecewise Dynamic Diffusion Regularization for Reconstruction of Cardiac Cine MRI</a> (eess.IV)<br>
+    <a href="https://arxiv.org/abs/2607.03611" target=_blank>Two-dimensional Fourier compressed sensing under a fixed readout budget per channel</a> (eess.SP)
+  </td>
+  <td>Virtual Staining/Pathology는 20편 중 실제 가상 염색 논문이 딱 1편(가상 염색이 화학적 염색을 얼마나 모사할 수 있는지를 묻는 리뷰성 논문)이고 나머지는 "Gram stain 분류", "스테인리스강 부식", "가상현실 지속가능성 캠페인"처럼 virtual이나 staining 단어만 겹치는 false positive입니다. Reconstruction/Inverse Problems 23편도 마찬가지로 다리 손상 진단, 결함 분류처럼 일반 물리 정보 신경망(PINN, 물리 법칙을 손실 함수에 넣어 학습을 돕는 방법) 논문이 대다수고, 계산영상 핵심 재구성 문제는 심장 시네 MRI 확산 정규화 복원과 채널당 판독 예산이 고정된 2차원 푸리에 압축센싱 2편 정도만 실제로 해당합니다. 두 버킷 모두 편수(20편, 23편)를 그대로 트렌드로 읽으면 과대평가하게 됩니다.</td>
+  <td>Low<br><small>버킷 편수는 크지만(20편, 23편) 실제 ROI 신호는 각각 1~2편 수준</small></td>
+  <td>Virtual Staining 쿼리에 histopathology/H&amp;E/whole-slide 같은 병리 특화 키워드를 추가하고 virtual/staining 단독 매칭을 제외하는 필터를 classify.py 키워드 리스트에 검토 요청. 심장 시네 MRI 확산 정규화 논문의 조각별(piecewise) 정규화 방식이 랩 시계열 위상 복원의 시간적 아티팩트 억제에 참고될 수 있는지 본문 확인 후 판단</td>
+</tr>
+</tbody>
+</table>
+<p><small>※ Fourier Ptychography/Microscopy는 오늘 1편뿐(Mueller matrix Fourier ptychography, 초록은 있으나 단발이라 별도 클러스터로 묶지 않았습니다). Lensless/Coded Imaging(4편)은 "Integrated Forward-Inverse Network for Lensless Image Reconstruction"(cs.CV, title-only) 1편만 실제 렌즈리스 이미징이고 나머지 3편은 RL의 mask-based representation, phase retrieval 관련 저널 2편으로 편수가 너무 적어 독립 클러스터를 만들지 않았습니다 — 아래 8.5.3.c Watch Lens 참고.</small></p>
+
+<h3>🔎 도메인 Watch Lens — 묻히기 쉬운 핵심 신호</h3>
+<p>랩 핵심 ROI인 Lensless/Coded Imaging(4편), Meta-Optics/Diffractive(14편, 위 클러스터로 다룸), Virtual Staining/Pathology(20편, 위 클러스터로 다룸)를 다시 훑었습니다. Lensless/Coded Imaging은 오늘도 실질 신호가 "Integrated Forward-Inverse Network for Lensless Image Reconstruction"(2607.04608, cs.CV, title-only) 1편에 그쳐 독립 클러스터를 구성하기엔 부족합니다. Lab action: 이 논문의 forward-inverse 통합 네트워크 구조를 본문 확인 후 랩 렌즈리스 이미징 재구성 파이프라인과 직접 비교할 가치가 있는지 판단.</p>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<p><strong>공통 키워드:</strong> feed-forward reconstruction, physics-constrained/physics-guided network, self-supervised, phase retrieval, quantitative phase</p>
+<p><strong>arXiv 전용 신호</strong>(방법 중심, title/subject 기준): feed-forward·unposed·streaming·경량 3D Gaussian Splatting 5편, 이벤트 카메라 기반 장기 3D 추적, 심장 시네 MRI 확산 정규화 복원, 채널당 판독 예산 고정 2D 푸리에 압축센싱</p>
+<p><strong>저널 전용 신호</strong>(응용·검증 중심, 초록 확보): halo-free 자기지도학습 QPI, ptychography 복원 신경망의 일반화 검증, 형광 현미경 배경 억제(대비 5.5배 개선), 진폭 전용 메타표면 홀로그래피(파면 오차 1dB/10도 이내), 메타표면 14편(대부분 통신·음향·양자 하드웨어)</p>
+<p>오늘은 arXiv 쪽이 "3D 재구성을 실시간·모바일 조건에 맞게 재설계한다"는 3D 비전 방법론에 집중됐고, 저널은 그 방법론과는 결이 다른 "계산으로 위상·정량 정보를 더 짜낸다"는 계산광학 핵심 복원 문제(QPI, ptychography, 형광 배경 억제)에서 실제 수치 검증을 보여줬습니다. 메타표면만은 07-03과 마찬가지로 예외로, 저널 대부분이 광학 이미징이 아니라 통신·양자·음향 응용에 쏠려 있어 arXiv 방법론과 저널 응용 사이의 접점이 옅은 상태가 계속되고 있습니다.</p>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 3D Gaussian Splatting이 장면별 최적화·오프라인 배치에서 feed-forward·스트리밍·경량화로 한꺼번에 갈라짐</h3>
+  <p>예전에는 3D Gaussian Splatting으로 장면을 복원하려면 카메라 위치를 미리 정확히 알고 그 장면 하나에만 맞춰 최적화를 오래 돌려야 했는데, 오늘 제목만 봐도 그 전제 세 가지(포즈 사전 지식, 장면별 최적화, 무거운 연산)를 각각 깨려는 논문이 동시에 5편 나왔습니다. SAF3R와 Fast 3D Foundation Model Initialized GS는 학습된 모델이 한 번의 순전파로 결과를 내는 feed-forward 쪽이고, ReCal3R은 그 결과를 스트리밍으로 확장하는 쪽이며, WildSplat은 카메라 위치 정보 없이 아무렇게나 찍은 사진 모음에서도 되게 하려는 쪽이고, Provable Pruning은 학습이 끝난 Gaussian을 이론적 보장이 있는 방식으로 솎아내 가볍게 만드는 쪽입니다. 다섯 편이 같은 날 같은 버킷에 몰렸다는 건 3D 장면 복원이 연구실 벤치마크용 도구에서 실시간·모바일·인터넷 사진처럼 실제 조건에 바로 쓰는 도구로 넘어가는 흐름이 계속되고 있다는 뜻입니다.</p>
+  <p class=conf-note>Confidence: Medium — 같은 버킷에서 5편 동시 등장·서로 다른 세부 문제로 분화하지만 title/subject 기준. [방법전환] [스케일업]. 랩 실시간 3D 재구성 파이프라인 설계에 참고 가능</p>
+</div>
+
+<div class=ins>
+  <h3>2. 위상·정량 정보를 추가 하드웨어 없이 학습으로 복원하려는 흐름이 QPI·ptychography·역문제 세 갈래에서 반복</h3>
+  <p>네 논문 모두 광학계를 더 복잡하게 만드는 대신, 이미 찍은 영상에서 학습이나 신경망으로 정보를 더 짜내려는 쪽입니다. halo-free QPI 논문은 위상 현미경에서 빛이 번지는 현상을 물리 제약 자기지도학습으로 사후에 제거하고, generalizable ptychography 논문은 복원 신경망이 학습 때 못 본 시료·측정 조건에서도 일반화되는지를 정면으로 검증합니다. phase diversity 학습 논문은 정답이 여러 개 있을 수 있는 위상 역문제를 학습 기반으로 다루고, 형광 배경 억제 논문은 별도 학습 데이터 없이 물리 모델만으로 배경 신호를 제거해 대비를 약 5.5배 개선했습니다. 넷 다 "하드웨어를 더 얹지 않고 계산으로 해결한다"는 계산광학의 핵심 문제의식을 공유합니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 4개 저널에서 독립 등장, 초록 확보. [방법전환] [해부분석]. 랩 QPI·홀로그래피·형광 이미징 파이프라인에 직접 참고 가능</p>
+</div>
+
+<div class=ins>
+  <h3>3. 메타표면 저널, 이미징·역설계 신호 없이 통신·양자·음향 하드웨어 응용으로 계속 쏠림</h3>
+  <p>07-03 daily에서 이미 메타표면 저널 14편이 사흘 연속 통신·양자 하드웨어로 쏠려 있다고 짚었는데, 오늘도 저널 14편 중 이미징용 역설계·QPI 응용을 명시한 논문이 없습니다. 대부분 안테나 빔포밍, 음향 메타표면, 적외선 공간광변조기, 근접장 평면파 합성 같은 순수 전자기 제어 문제입니다. 다만 2차원 화소 단위 중적외선 메타표면 SLM과 진폭 전용 메타표면 홀로그래피 두 편은 광 정보를 화소 단위로 제어한다는 점에서 향후 QPI·홀로그래픽 디스플레이로 이어질 잠재력이 있어 계속 지켜볼 필요가 있습니다.</p>
+  <p class=conf-note>Confidence: Medium — 14편 저널 동시 발행, 나흘 연속(07-01~07-07) 같은 방향 반복. [경고신호]. 저널 쿼리 재설계가 필요한 시점</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+<ol>
+  <li>
+    <strong>SAF3R/Provable Pruning 경량화 구조를 랩 실시간 3D 재구성 파이프라인에 이식</strong><br>
+    dynamic sparse attention과 coreset 기반 가지치기를 결합하면 feed-forward 3D 재구성의 속도-품질 트레이드오프를 개선할 수 있는지 검증합니다.<br>
+    <em>실행 1주차:</em> 두 논문의 공개 코드(있으면) clone 및 구조 문서화 → 랩 3D 재구성 벤치마크 데이터로 dynamic sparse attention 재현 → 기존 dense attention 대비 렌더링 속도·메모리·PSNR/SSIM 비교 → coreset 가지치기를 후처리로 추가했을 때 품질 손실 정도 측정 → 실패해도 negative result 또는 workshop short로 정리
+  </li>
+  <li>
+    <strong>Ptychography 복원 신경망의 일반화 평가 프로토콜을 랩 QPI/홀로그래피 신경망에 적용</strong><br>
+    학습 때 못 본 시료·측정 조건에서 복원 신경망이 얼마나 무너지는지 정량화하는 프로토콜을 랩 파이프라인에도 도입합니다.<br>
+    <em>실행 1주차:</em> 논문의 train/test 시료·측정 조건 분리 기준 정리(본문 확인) → 랩 QPI/홀로그래피 복원 신경망에 동일한 분포 밖(out-of-distribution) 시료 세트 구성 → 분포 내/밖 복원 오차 비교 → 붕괴 정도가 크면 물리 제약 항 추가로 완화되는지 후속 실험
+  </li>
+  <li>
+    <strong>메타표면 저널 쿼리를 이미징 특화 키워드로 재분리</strong><br>
+    'metalens quantitative phase', 'metasurface inverse design imaging' 같은 키워드를 추가해 통신/음향 응용과 이미징 응용을 분리 수집합니다.<br>
+    <em>실행 1주차:</em> 최근 2주 메타표면 저널 검색 결과에서 이미징 vs 비이미징 비율 수기 태깅 → 이미징 특화 키워드 후보 5~6개 초안 → scripts/fetch_crossref.py 쿼리에 시험 추가해 1주간 병행 수집 → 이미징 신호 검출률 비교 후 정식 반영 여부 결정
+  </li>
+</ol>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p>※ 막대 너비는 catch-all Deep Learning Methods 버킷을 제외한 최댓값(Tomography/3D Imaging 52편)을 100%로 정규화. arXiv(new+cross, title/subject 기준) + 저널 합산.</p>
+<div>
+  <div class=bucket-bar><span class=nm>🔭 Fourier Ptychography/Microscopy</span><div class=bar><div class=fill style="width:1.92%"></div></div><span class=n>1</span></div>
+  <div class=bucket-bar><span class=nm>📷 Lensless/Coded Imaging</span><div class=bar><div class=fill style="width:7.69%"></div></div><span class=n>4</span></div>
+  <div class=bucket-bar><span class=nm>🌊 Phase Imaging/Holography</span><div class=bar><div class=fill style="width:40.38%"></div></div><span class=n>21</span></div>
+  <div class=bucket-bar><span class=nm>🔬 Meta-Optics/Diffractive</span><div class=bar><div class=fill style="width:26.92%"></div></div><span class=n>14</span></div>
+  <div class=bucket-bar><span class=nm>💡 Light-Field/Novel Sensors</span><div class=bar><div class=fill style="width:19.23%"></div></div><span class=n>10</span></div>
+  <div class=bucket-bar><span class=nm>🧊 Tomography/3D Imaging</span><div class=bar><div class=fill style="width:100%"></div></div><span class=n>52</span></div>
+  <div class=bucket-bar><span class=nm>🧬 Virtual Staining/Pathology</span><div class=bar><div class=fill style="width:38.46%"></div></div><span class=n>20</span></div>
+  <div class=bucket-bar><span class=nm>⚙️ Reconstruction/Inverse Problems</span><div class=bar><div class=fill style="width:44.23%"></div></div><span class=n>23</span></div>
+  <div class=bucket-bar><span class=nm>🤖 Deep Learning Methods (catch-all)</span><div class=bar><div class=fill style="width:100%"></div></div><span class=n>127</span></div>
+</div>
+<p><small>🔥 TOP3: Tomography/3D Imaging(52) · Reconstruction/Inverse Problems(23) · Phase Imaging/Holography(21)  ❄️ BOTTOM2: Fourier Ptychography/Microscopy(1) · Lensless/Coded Imaging(4)</small></p>
+<p>※ Virtual Staining/Pathology 20편 중 실제 가상 염색/디지털 병리 논문은 1편뿐이고 나머지는 "virtual"·"staining" 단어만 겹치는 false positive입니다. Reconstruction/Inverse Problems 23편도 다수가 일반 물리 정보 신경망(다리 손상 진단, 결함 분류 등) 논문이라 오늘 클러스터 표에는 계산영상 핵심 재구성 논문 소수만 포함했습니다. Tomography/3D Imaging 52편 중 절반 이상도 임상 CT/OCT 진단 사례 보고라 클러스터 표에는 3D Gaussian Splatting 관련 5편만 포함했습니다.</p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<div class=roi-item>
+  <strong>🔭 Fourier Ptychography/Microscopy</strong> (1편: JNL 1)<br>
+  ▸ <a href="https://doi.org/10.1063/5.0333888" target=_blank>Wide-field high-resolution Mueller matrix imaging via Fourier ptychography</a> (AIP journal) [JNL] — 라벨 없이 넓은 시야에서 조직의 미세구조를 편광 특성까지 함께 보는 Mueller matrix 이미징을 Fourier ptychography로 확장
+</div>
+
+<div class=roi-item>
+  <strong>📷 Lensless/Coded Imaging</strong> (4편: LG 1, CV 1, JNL 2)<br>
+  ▸ <a href="https://arxiv.org/abs/2607.04608" target=_blank>Integrated Forward-Inverse Network for Lensless Image Reconstruction</a> (cs.CV) — title/subject 기준. 렌즈리스 이미징의 순방향·역방향 모델을 하나의 네트워크로 통합, 본문 확인 필요<br>
+  ▸ <a href="https://doi.org/10.1109/tci.2026.3711006" target=_blank>Structured Random Models for Phase Retrieval with Optical Diffusers</a> (IEEE TCI) [JNL] — 광학 디퓨저 기반 위상 복원을 구조화된 랜덤 모델로 정식화(초록 미제공, 본문 확인 필요)
+</div>
+
+<div class=roi-item>
+  <strong>🌊 Phase Imaging/Holography</strong> (21편: JNL 21)<br>
+  ▸ <a href="https://doi.org/10.1117/1.jbo.31.7.076503" target=_blank>Halo-free quantitative phase imaging via physics-constrained self-supervised network</a> (J. Biomedical Optics) [JNL] — Tier A. 물리 제약 자기지도학습으로 위상 현미경 halo 아티팩트 제거<br>
+  ▸ <a href="https://doi.org/10.1002/lpor.71513" target=_blank>Amplitude-Only Metasurface Holography for Precise Near-Field Plane-Wave Synthesis</a> (Laser & Photonics Reviews) [JNL] — 진폭 전용 메타표면으로 커플링 오차에 강인한 근접장 파면 합성, 오차 1dB/10도 이내<br>
+  ▸ <a href="https://doi.org/10.1002/qute.70355" target=_blank>Noise Resilient Real-Time Phase Imaging via Undetected Light</a> (Advanced Quantum Technologies) [JNL] — 검출되지 않은 빛의 양자 상관관계를 이용한 노이즈 강인 실시간 위상 이미징
+</div>
+
+<div class=roi-item>
+  <strong>🔬 Meta-Optics/Diffractive</strong> (14편: SP 1, JNL 13 — 대부분 통신·음향·양자 하드웨어)<br>
+  ▸ <a href="https://doi.org/10.1038/s41467-026-75346-5" target=_blank>Two-dimensional pixel-level addressable mid-infrared metasurface spatial light modulator</a> (Nature Communications) [JNL] — 2차원 화소 단위로 전기적 제어 가능한 중적외선 메타표면 SLM, 빔 조향·픽셀 홀로그래피 응용<br>
+  ▸ <a href="https://arxiv.org/abs/2607.02634" target=_blank>Metasurface embodied intelligence through electromagnetic world model</a> (eess.SP) — title/subject 기준. 메타표면을 전자기 world model과 결합, 본문 확인 필요
+</div>
+
+<div class=roi-item>
+  <strong>💡 Light-Field/Novel Sensors</strong> (10편: LG 2, CV 4, JNL 4)<br>
+  ▸ <a href="https://arxiv.org/abs/2607.02866" target=_blank>E-TraMamba: A New Paradigm for Efficient Long-Term 3D Feature Tracking with Event Cameras</a> (cs.CV) — title/subject 기준. Mamba 구조로 이벤트 카메라의 장기 3D 특징 추적 효율화<br>
+  ▸ <a href="https://arxiv.org/abs/2607.04635" target=_blank>Aperture-aware Dispersion 5-D Light-field Imaging Spectrometer</a> (cs.CV) — title/subject 기준. 조리개 인식 분산 모델을 결합한 5차원 라이트필드 이미징 분광기<br>
+  ▸ <a href="https://doi.org/10.1364/oe.604533" target=_blank>High-quality medical content rendering for glasses-free 3D light-field interactive display based on anti-aliased 3D Gaussian splatting</a> (Optics Express) [JNL] — 안경 없는 3D 라이트필드 의료 디스플레이에 안티앨리어싱 3DGS 적용
+</div>
+
+<div class=roi-item>
+  <strong>🧊 Tomography/3D Imaging</strong> (52편: LG 1, CV 13, AI 1, JNL 37)<br>
+  ▸ <a href="https://arxiv.org/abs/2607.03612" target=_blank>SAF3R: Dynamic Sparse Attention for Feed-Forward 3D Reconstruction Transformers</a> (cs.CV) — Tier A. dynamic sparse attention으로 feed-forward 3D 재구성 transformer 효율화<br>
+  ▸ <a href="https://arxiv.org/abs/2607.05347" target=_blank>WildSplat: Feedforward Gaussian Splatting from Unposed In-the-Wild Images</a> (cs.CV) — 카메라 포즈 없이 실제 환경 사진에서 feed-forward Gaussian Splatting<br>
+  ▸ <a href="https://arxiv.org/abs/2607.05356" target=_blank>ReCal3R: Reliability-Calibrated Learning Rates for Streaming 3D Reconstruction</a> (cs.CV) — 신뢰도 기반 학습률 보정으로 스트리밍 3D 재구성 안정화
+</div>
+
+<div class=roi-item>
+  <strong>🧬 Virtual Staining/Pathology</strong> (20편: LG 2, CV 3, JNL 15 — 대부분 키워드 우연 매칭)<br>
+  ▸ <a href="https://doi.org/10.5114/pjp.2026.162577" target=_blank>Generation of virtual stains - can AI imitate chemistry?</a> (Polish J. Pathology) [JNL] — 오늘 유일한 실제 가상 염색 논문. AI가 화학적 염색 과정을 얼마나 모사할 수 있는지 리뷰
+</div>
+
+<div class=roi-item>
+  <strong>⚙️ Reconstruction/Inverse Problems</strong> (23편: LG 10, IV 1, SP 4, CV 1, AI 1, JNL 6 — 대부분 일반 PINN)<br>
+  ▸ <a href="https://arxiv.org/abs/2607.03299" target=_blank>Piecewise Dynamic Diffusion Regularization for Reconstruction of Cardiac Cine MRI</a> (eess.IV) — title/subject 기준. 조각별 동적 diffusion 정규화로 심장 시네 MRI 복원<br>
+  ▸ <a href="https://doi.org/10.1063/5.0338959" target=_blank>Physics-guided training-free neural network for suppressing out-of-focus background in fluorescence microscopy</a> (APL Photonics) [JNL] — Tier A. 학습 데이터 없이 물리 모델만으로 형광 현미경 배경 억제, 대비 5.5배 개선
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<p>오늘은 arXiv 항목에 초록이 없어 새 SOTA 수치는 초록이 남아있는 저널 논문 3건에서만 확보했습니다. 모두 랩 ROI 핵심(형광 현미경 배경 억제, 간섭계 프린지 품질, 메타표면 근접장 파면 합성)과 직접 연관됩니다.</p>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>결과</th><th>논문</th></tr></thead>
+<tbody>
+<tr><td>형광 현미경 배경 억제(spoke-like 샘플 + 실제 생체 조직)</td><td>Contrast improvement</td><td>약 5.5배</td><td><a href="https://doi.org/10.1063/5.0338959" target=_blank>Physics-guided training-free NN</a></td></tr>
+<tr><td>간섭계 나선 치형 프로파일 측정</td><td>Phase residue point 감소</td><td>76~83%</td><td><a href="https://doi.org/10.1117/1.oe.65.7.074102" target=_blank>Multiconstrained optical path optimization</a></td></tr>
+<tr><td>진폭 전용 메타표면 근접장 평면파 합성</td><td>파면 오차(진폭/위상)</td><td>&lt;1dB / &lt;10도</td><td><a href="https://doi.org/10.1002/lpor.71513" target=_blank>Amplitude-Only Metasurface Holography</a></td></tr>
+</tbody>
+</table>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>Tier A — Towards generalizable deep ptychography neural networks [해부분석] [평가축]</h3>
+  <p><a href="https://doi.org/10.1038/s41524-026-02198-4" target=_blank>npj Computational Materials</a> · Crossref/OpenAlex</p>
+  <p><strong>왜 A급인가:</strong> X-ray ptychography는 여러 장 겹쳐 찍은 회절 패턴에서 물체의 미세구조를 복원하는 기법인데, 최근 차세대 광원이 훨씬 더 많은 빛을 더 빨리 쏟아내면서 실시간으로 결과를 되돌려줄 대체 복원 모델(신경망 기반 surrogate)이 필요해졌습니다. 문제는 지금까지 나온 신경망 복원기들이 학습에 쓴 시료·촬영 조건과 조금만 달라져도 성능이 크게 떨어지는 경향이 있었는데, 이 문제를 정면으로 측정하고 이름 붙인 논문이 거의 없었다는 점입니다. 이 논문은 그 일반화 격차를 체계적으로 진단하고, 어떤 조건에서 신경망 복원기가 실패하는지를 정량적으로 보여줍니다. 랩에 중요한 이유는, 이 논문이 제시하는 일반화 평가 방식이 ptychography뿐 아니라 랩이 쓰는 QPI·홀로그래피 복원 신경망 전체에도 그대로 적용 가능한 진단 도구이기 때문입니다 — "우리 복원 신경망도 새로운 시료에서 이런 식으로 무너지는가"를 먼저 확인해볼 수 있게 해줍니다.</p>
+  <p><strong>약점:</strong> 초록만으로는 정확히 어떤 일반화 격차 지표를 썼는지, 그리고 그 격차를 줄이기 위해 구체적으로 어떤 구조·학습 전략을 제안했는지까지는 확인하기 어렵습니다. 본문에서 실제 벤치마크 시료 종류와 정량적 성능 저하 수치를 확인할 필요가 있습니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>Virtual Staining/Pathology 버킷 20편</strong> [Dataset risk] 오늘은 실제 가상 염색/디지털 병리 논문이 1편뿐이고 나머지는 "virtual"·"staining" 일반 단어에 걸린 false positive입니다. 버킷 편수를 트렌드 신호로 해석하면 안 됩니다.</p>
+  <p><strong>3D Gaussian Splatting 클러스터(SAF3R 외 4편)</strong> [Claim risk] arXiv /pastweek 백필 특성상 초록이 전혀 없어, 제목만으로 "장면별 최적화를 없앤다"는 해석을 내렸습니다. 실제 정량적 개선 폭·baseline 비교는 본문 확인 전까지 확정할 수 없습니다.</p>
+  <p><strong>Reconstruction/Inverse Problems 버킷 23편</strong> [Metric risk] 대다수가 물리 정보 신경망(PINN) 일반론(다리 손상 진단, 결함 분류, DoA 추정 등)이라 계산광학 재구성과 무관합니다. 버킷 편수를 그대로 재구성 트렌드로 읽으면 과대평가입니다.</p>
+  <p><strong>메타표면 저널 14편</strong> [Baseline risk] 이미징 응용이 전혀 없다는 판단은 초록이 짧거나 비어 있는 논문들(Crossref 메타데이터 한계)에 기반해, 본문에서 재확인이 필요합니다.</p>
+  <p><strong>generalizable ptychography 논문(10.1038/s41524-026-02198-4)</strong> [Claim risk] "일반화 문제를 다뤘다"는 초록 수준 설명이고, 구체적으로 어떤 정량 지표로 일반화를 측정했는지는 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+<div class=skim>
+  <ul>
+    <li><strong>메타표면 하드웨어 논문 다수(다중빔 안테나, 음향 Willis 메타표면, 플라즈모닉 스핀 분리 등)</strong> — 계산광학 이미징과 직접 연관이 없는 통신·음향·양자정보 응용입니다. 역설계 방법론 신호가 재등장할 때까지 skim.</li>
+    <li><strong>임상 CT/OCT 해부학·진단 저널 논문 다수(비장 동맥 공급, IVC 기형, 각막 병증 등)</strong> — 영상 촬영 자체보다 해부학적 계측·진단이 목적이라 랩 ROI(재구성·역문제)와 거리가 있습니다.</li>
+    <li><strong>Reconstruction/Inverse Problems 버킷 내 일반 PINN 논문 다수(교량 손상, 결함 진단, DoA 추정)</strong> — 물리 정보 신경망이라는 방법론만 겹칠 뿐 계산영상 재구성과 무관합니다.</li>
+    <li><strong>Virtual Staining/Pathology 버킷 전체(Gram stain 분류, 스테인리스강 부식 등)</strong> — 키워드만 겹칠 뿐 계산광학과 무관합니다.</li>
+    <li><strong>이벤트 카메라 저전력 하드웨어 논문(자동차 인식, 경량 뉴로모픽 프레임워크)</strong> — 촬영·이미징보다 컴퓨팅 하드웨어 설계가 목적이라 우선순위를 낮춥니다.</li>
+  </ul>
+</div>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>arXiv(title/subject 기준) — 3D Gaussian Splatting feed-forward/스트리밍/경량화</h3>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.03612" target=_blank>SAF3R: Dynamic Sparse Attention for Feed-Forward 3D Reconstruction Transformers</a></strong> <span class=pill>CV</span> [방법전환] <em>Must-read</em><br>
+- 문제: feed-forward 3D 재구성 transformer의 연산량이 커서 실시간 적용이 어려움<br>
+- 방법: dynamic sparse attention으로 불필요한 attention 연산을 줄임(제목 기준, 세부 구조는 본문 확인 필요)<br>
+- 의미: 3D 재구성이 실시간·경량 방향으로 이동하는 오늘 클러스터의 핵심 evidence<br>
+- 주의: 초록 없음, title/subject 기준 backfill이라 정량 결과 확인 불가
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.05356" target=_blank>ReCal3R: Reliability-Calibrated Learning Rates for Streaming 3D Reconstruction</a></strong> <span class=pill>CV</span> [방법전환] <em>Read</em><br>
+- 문제: 스트리밍(순차 입력) 3D 재구성에서 프레임별 신뢰도가 다른데 이를 학습률에 반영하지 못함<br>
+- 방법: 신뢰도 기반으로 학습률을 보정하는 방식(제목 기준)<br>
+- 의미: feed-forward 3D 재구성이 실시간 스트리밍 조건으로 확장되는 흐름의 한 축<br>
+- 주의: 초록 없음, 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.05347" target=_blank>WildSplat: Feedforward Gaussian Splatting from Unposed In-the-Wild Images</a></strong> <span class=pill>CV</span> [방법전환] [데이터전환] <em>Read</em><br>
+- 문제: 기존 feed-forward Gaussian Splatting은 카메라 포즈 정보가 필요해 인터넷 사진 모음 등 실제 조건에 바로 쓰기 어려움<br>
+- 방법: 포즈 없는(unposed) 입력에서도 동작하는 feed-forward 구조(제목 기준)<br>
+- 의미: 3D 재구성이 통제된 촬영 환경을 벗어나 실제 조건으로 확장되는 신호<br>
+- 주의: 초록 없음, 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.03209" target=_blank>Fast 3D Foundation Model Initialized Gaussian Splatting</a></strong> <span class=pill>CV</span> [방법전환] <em>Skim-only</em><br>
+- 문제: Gaussian Splatting 초기화가 무작위/SfM 기반이라 수렴이 느림<br>
+- 방법: 3D foundation model로 초기화를 대체(제목 기준)<br>
+- 의미: 오늘 클러스터의 보조 evidence, foundation model 활용 방향<br>
+- 주의: 초록 없음, 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.02721" target=_blank>Provable Pruning for Efficient 3D Gaussian Splatting via Coresets</a></strong> <span class=pill>CV</span> [방법전환] <em>Read</em><br>
+- 문제: 학습된 Gaussian Splatting 모델이 무겁고, 기존 가지치기는 이론적 보장이 없음<br>
+- 방법: coreset 이론 기반 pruning으로 이론적 보장이 있는 경량화(제목 기준)<br>
+- 의미: 경량화 축에서 오늘 클러스터를 뒷받침<br>
+- 주의: 초록 없음, 본문 확인 필요
+</div>
+
+<h3>저널 — 위상·정량 정보를 하드웨어 추가 없이 학습으로 복원</h3>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41524-026-02198-4" target=_blank>Towards generalizable deep ptychography neural networks</a></strong> <span class=pill>JNL</span> [해부분석] [평가축] <em>Must-read</em><br>
+- 문제: ptychography 복원 신경망이 학습 시료·조건을 벗어나면 성능이 크게 떨어짐<br>
+- 방법: 일반화 격차를 체계적으로 진단·정량화<br>
+- 의미: 랩 QPI/홀로그래피 복원 신경망에도 동일 진단 프로토콜 적용 가능<br>
+- 주의: 구체적 지표·완화 전략은 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1117/1.jbo.31.7.076503" target=_blank>Halo-free quantitative phase imaging via physics-constrained self-supervised network</a></strong> <span class=pill>JNL</span> [방법전환] <em>Read</em><br>
+- 문제: 백색광 회절 위상 현미경의 halo 효과가 정량 위상 정확도를 떨어뜨림<br>
+- 방법: 물리 제약을 넣은 자기지도학습 네트워크(PC-HFSSN)로 halo 사후 제거<br>
+- 의미: 라벨 없는 자기지도학습으로 광학적 결함을 계산으로 보정하는 대표 사례<br>
+- 근거: 초록에 "halo-free" 성능 확보를 명시(정량 수치는 본문 확인 필요)
+</div>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1063/5.0338959" target=_blank>Physics-guided training-free neural network for suppressing out-of-focus background in fluorescence microscopy</a></strong> <span class=pill>JNL</span> [방법전환] <em>Read</em><br>
+- 문제: 형광 현미경에서 초점이 안 맞은 배경 신호가 대비를 떨어뜨리고, 기존 방법은 노이즈 증폭이나 신호 손실이 있음<br>
+- 방법: 형광 이미징의 물리적 전파 모델을 네트워크 구조에 내장해 학습 데이터 없이 자가 최적화<br>
+- 의미: 랩 저조도·저신호 이미징 노이즈/배경 제거에 직접 참고 가능<br>
+- 근거: spoke-like 샘플과 실제 생체 조직 영상에서 대비 약 5.5배 개선
+</div>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1088/2515-7647/ae86a1" target=_blank>Learning phase diversity for solving ill-posed inverse problems in imaging</a></strong> <span class=pill>JNL</span> [방법전환] <em>Read</em><br>
+- 문제: 위상 다양성 기반 역문제는 정답이 여러 개 있을 수 있는 ill-posed 문제<br>
+- 방법: 학습 기반 접근으로 ill-posedness를 다루는 프레임워크<br>
+- 의미: 랩 위상 복원 역문제의 불확정성 처리에 참고 가능<br>
+- 주의: 구체적 학습 구조는 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1002/lpor.71513" target=_blank>Amplitude-Only Metasurface Holography for Precise Near-Field Plane-Wave Synthesis</a></strong> <span class=pill>JNL</span> [방법전환] <em>Read</em><br>
+- 문제: 위상 중심 메타표면 홀로그래피는 소자 간 결합(coupling) 오차에 취약함<br>
+- 방법: 결합 오차에 원천적으로 강인한 진폭 전용 변조 프레임워크<br>
+- 의미: 메타표면 파면 제어 정밀도를 높이는 대안적 설계 축으로 랩 메타표면 QPI 설계에 참고 가능<br>
+- 근거: 진폭·위상 오차 각각 1dB, 10도 이내로 실험·시뮬레이션 일치 검증
+</div>
+
+<h3>arXiv/저널 — Fourier Ptychography, Lensless, Light-Field 소수 신호</h3>
+
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1063/5.0333888" target=_blank>Wide-field high-resolution Mueller matrix imaging via Fourier ptychography</a></strong> <span class=pill>JNL</span> [방법전환] <em>Read</em><br>
+- 문제: 기존 전체 슬라이드 Mueller matrix 이미징은 시야와 해상도를 동시에 만족하기 어려움<br>
+- 방법: Fourier ptychography로 넓은 시야에서 고해상도 편광 정보를 복원<br>
+- 의미: 랩 Fourier ptychography 파이프라인에 편광 정보 채널을 추가하는 아이디어로 참고 가능<br>
+- 주의: 정량 해상도·시야 수치는 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.04608" target=_blank>Integrated Forward-Inverse Network for Lensless Image Reconstruction</a></strong> <span class=pill>CV</span> [방법전환] <em>Read</em><br>
+- 문제: 렌즈리스 이미징의 순방향(광학 모델)과 역방향(복원) 과정이 따로 다뤄지는 경우가 많음<br>
+- 방법: 순방향·역방향을 하나의 네트워크로 통합(제목 기준)<br>
+- 의미: 랩 렌즈리스 이미징 재구성 파이프라인과 직접 비교 가치가 있는 후보<br>
+- 주의: 초록 없음, 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.02866" target=_blank>E-TraMamba: A New Paradigm for Efficient Long-Term 3D Feature Tracking with Event Cameras</a></strong> <span class=pill>CV</span> [방법전환] <em>Skim-only</em><br>
+- 문제: 이벤트 카메라 기반 장기 3D 특징 추적이 연산 효율 면에서 어려움<br>
+- 방법: Mamba(상태공간 모델) 구조로 효율적인 장기 추적(제목 기준)<br>
+- 의미: 랩 이벤트 카메라 고속 현상 촬영 실험의 특징 추적 안정성 참고<br>
+- 주의: 초록 없음, 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.04635" target=_blank>Aperture-aware Dispersion 5-D Light-field Imaging Spectrometer</a></strong> <span class=pill>CV</span> [방법전환] <em>Skim-only</em><br>
+- 문제: 라이트필드 분광 이미징에서 조리개에 따른 분산 효과가 정확도를 제한<br>
+- 방법: 조리개 인식 분산 모델을 결합한 5차원(공간+각도+파장) 라이트필드 스펙트로미터(제목 기준)<br>
+- 의미: 랩 Light-Field/Novel Sensors 버킷의 하드웨어 확장 후보<br>
+- 주의: 초록 없음, 본문 확인 필요
+</div>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+<li>arXiv cs.LG: <a href="https://arxiv.org/list/cs.LG/recent" target=_blank>https://arxiv.org/list/cs.LG/recent</a></li>
+<li>arXiv cs.CV: <a href="https://arxiv.org/list/cs.CV/recent" target=_blank>https://arxiv.org/list/cs.CV/recent</a></li>
+<li>arXiv cs.AI: <a href="https://arxiv.org/list/cs.AI/recent" target=_blank>https://arxiv.org/list/cs.AI/recent</a></li>
+<li>arXiv eess.IV: <a href="https://arxiv.org/list/eess.IV/recent" target=_blank>https://arxiv.org/list/eess.IV/recent</a></li>
+<li>arXiv eess.SP: <a href="https://arxiv.org/list/eess.SP/recent" target=_blank>https://arxiv.org/list/eess.SP/recent</a></li>
+</ul>
+
+<footer>
+Imaging Intelligence Daily Briefing은 arXiv(cs.LG/cs.CV/cs.AI/eess.IV/eess.SP)와 Crossref/OpenAlex 저널 데이터를 매일 자동 수집·분류해 만듭니다. RSS: <a href="../feed.xml">feed.xml</a>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+{
+  "date": "2026-07-08",
+  "insights": [
+    {
+      "title": "3D Gaussian Splatting 클러스터가 '속도'에서 '신뢰도'로 재편 — 어제의 feed-forward/스트리밍 축과는 다른 축",
+      "claim": "어제(07-07) backfill에서는 3D Gaussian Splatting이 카메라 포즈 없이도, 실시간으로도, 가볍게도 되게 만드는 속도·연산 축으로 갈라졌는데, 오늘 abstract를 확보한 6편은 오히려 그 결과를 얼마나 믿을 수 있는지, 실제 촬영에서 흔한 결함을 어떻게 걷어내는지를 다룬다.",
+      "papers": [
+        {
+          "title": "Rendering-Aware Bayesian 3D Gaussian Splatting with Native Uncertainty and Adaptive Complexity Control",
+          "arxiv": "https://arxiv.org/abs/2607.05522",
+          "importance_tags": ["[방법전환]", "[평가축]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Gaussian Splatting", "genus": "Uncertainty Quantification", "confidence": "High", "rationale": "초록에서 Normal-Inverse-Wishart 사후분포로 불확실성을 명시적으로 추정한다고 밝힘"}
+        },
+        {
+          "title": "SSA-3DGS: Unsupervised Removal of Screen-Space Artifacts for 3D Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2607.05598",
+          "importance_tags": ["[경고신호]", "[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Gaussian Splatting", "genus": "Artifact Removal", "confidence": "High", "rationale": "초록에서 렌즈 오염·워터마크 등 실촬영 결함을 명시적으로 다룸"}
+        },
+        {
+          "title": "GaussFusion: Towards Multimodal 3D Gaussian Pretraining",
+          "arxiv": "https://arxiv.org/abs/2607.05906",
+          "importance_tags": ["[방법전환]", "[인프라]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Gaussian Splatting", "genus": "Multimodal Pretraining", "confidence": "Medium", "rationale": "초록에서 이미지·텍스트를 결합한 마스킹 사전학습을 제시"}
+        }
+      ]
+    },
+    {
+      "title": "메타렌즈 FOV-NA 트레이드오프를 깨는 저널 논문이 실제 수치와 함께 등장",
+      "claim": "메타표면 저널 전반이 이미징 응용 공백을 이어가는 와중에도, 위상 메타렌즈 계열에서 FOV(시야각)와 NA(개구수)를 동시에 확보하려는 논문이 정량 결과와 함께 나왔다.",
+      "papers": [
+        {
+          "title": "Regionally-Composite Phase Metalens: Breaking the Field-of-View Limitation for High-NA Imaging",
+          "arxiv": "https://doi.org/10.1002/lpor.71520",
+          "importance_tags": ["[방법전환]", "[스케일업]"],
+          "phylogeny": {"source": "CVML", "phylum": "Photonics", "class": "Meta-Optics", "order": "Metalens", "genus": "FOV-NA Tradeoff", "confidence": "High", "rationale": "초록에 NA 0.8, 20%p 효율 향상, 0.775µm 분해능 수치 명시"}
+        },
+        {
+          "title": "HoloSpec: Dispersion-Based 4D Computational Holographic Hyperspectral Imaging",
+          "arxiv": "https://doi.org/10.1002/lpor.71516",
+          "importance_tags": ["[방법전환]", "[인프라]"],
+          "phylogeny": {"source": "CVML", "phylum": "Photonics", "class": "Computational Holography", "order": "Hyperspectral Imaging", "genus": "Snapshot 4D", "confidence": "High", "rationale": "초록에 스냅샷 2장으로 430채널, 분해능 10~20배 향상 수치 명시"}
+        }
+      ]
+    },
+    {
+      "title": "메타표면 저널의 이미징 응용 공백이 5일째(07-01~07-08 영업일 기준) 이어짐",
+      "claim": "07-03에 처음 짚었던 메타표면 저널의 통신·양자·음향 하드웨어 쏠림이 오늘도 동일 패턴으로 반복돼, 이제 5영업일 연속 관찰이다.",
+      "papers": [
+        {
+          "title": "Acoustic Willis metasurface for perfect transmedia wave manipulation",
+          "arxiv": "https://doi.org/10.1098/rspa.2025.1021",
+          "importance_tags": ["[경고신호]"],
+          "phylogeny": {"source": "CVML", "phylum": "Photonics", "class": "Meta-Optics", "order": "Acoustic Metasurface", "genus": "Wave Manipulation", "confidence": "Medium", "rationale": "초록 확보, 이미징과 무관한 음향 응용"}
+        },
+        {
+          "title": "Eigenvalue-engineered metasurface antenna for broadband circular polarization based on characteristic mode theory",
+          "arxiv": "https://doi.org/10.1080/02726343.2026.2699416",
+          "importance_tags": ["[경고신호]"],
+          "phylogeny": {"source": "CVML", "phylum": "Photonics", "class": "Meta-Optics", "order": "Antenna", "genus": "RF/Microwave", "confidence": "Medium", "rationale": "초록 확보, 통신 안테나 응용"}
+        }
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "Bayesian 3DGS의 불확실성 추정을 랩 sparse-view 3D 재구성 파이프라인 품질 관리에 도입",
+      "claim": "렌더링 기반 사후분포로 Gaussian의 기하 불확실성을 뽑아내면, sparse-view나 촬영 예산이 제한된 상황에서 어느 영역을 더 찍어야 하는지(active view selection)를 자동으로 판단할 수 있는지 검증한다.",
+      "supporting_papers": [
+        {"title": "Rendering-Aware Bayesian 3D Gaussian Splatting with Native Uncertainty and Adaptive Complexity Control", "arxiv": "https://arxiv.org/abs/2607.05522", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+      ]
+    },
+    {
+      "title": "SSA-3DGS의 화면공간 아티팩트 분리 방식을 랩 필드 촬영 데이터 전처리에 적용",
+      "claim": "렌즈 오염·야외 촬영 방해물처럼 3D 세계가 아니라 2D 이미지 평면에 고정된 아티팩트를 비지도 방식으로 걸러내는 절차가, 랩이 보유한 비정형 필드 촬영 데이터셋에서도 재구성 품질을 개선하는지 확인한다.",
+      "supporting_papers": [
+        {"title": "SSA-3DGS: Unsupervised Removal of Screen-Space Artifacts for 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2607.05598", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+      ]
+    },
+    {
+      "title": "RCPM의 구역별 위상 프로파일 설계를 랩 메타렌즈 역설계 파이프라인에 벤치마크로 추가",
+      "claim": "단일 평면 메타렌즈를 여러 구역으로 나눠 입사각별로 다른 위상 프로파일을 최적화하는 전략이, 랩이 목표로 하는 QPI용 메타렌즈의 FOV 확장에도 재현 가능한지 시뮬레이션으로 먼저 검증한다.",
+      "supporting_papers": [
+        {"title": "Regionally-Composite Phase Metalens: Breaking the Field-of-View Limitation for High-NA Imaging", "arxiv": "https://doi.org/10.1002/lpor.71520", "phylogeny": {"source": "CVML", "phylum": "Photonics"}}
+      ]
+    }
+  ],
+  "phylogeny_tags": [
+    {"paper": "https://arxiv.org/abs/2607.05522", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Gaussian Splatting > Uncertainty Quantification"},
+    {"paper": "https://arxiv.org/abs/2607.05598", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Gaussian Splatting > Artifact Removal"},
+    {"paper": "https://arxiv.org/abs/2607.05906", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Gaussian Splatting > Multimodal Pretraining"},
+    {"paper": "https://doi.org/10.1002/lpor.71520", "source": "CVML", "lineage": "Photonics > Meta-Optics > Metalens > FOV-NA Tradeoff"},
+    {"paper": "https://doi.org/10.1002/lpor.71516", "source": "CVML", "lineage": "Photonics > Computational Holography > Hyperspectral Imaging > Snapshot 4D"},
+    {"paper": "https://doi.org/10.1002/qute.70355", "source": "CVML", "lineage": "Computational Imaging > Phase Imaging > Quantum Imaging > Undetected Light"},
+    {"paper": "https://doi.org/10.1117/1.jbo.31.7.076503", "source": "CVML", "lineage": "Computational Imaging > Phase Imaging > QPI > Self-supervised"},
+    {"paper": "https://arxiv.org/abs/2607.06408", "source": "CVML", "lineage": "Computational Imaging > Holography > Security Document Verification > Temporal Modeling"},
+    {"paper": "https://arxiv.org/abs/2607.06466", "source": "CVML", "lineage": "Computational Imaging > Holography > Security Document Verification > Dynamic Fraud Detection"},
+    {"paper": "https://doi.org/10.1063/5.0333888", "source": "CVML", "lineage": "Computational Imaging > Fourier Ptychography > Mueller Matrix Imaging > Wide-field"}
+  ]
+}

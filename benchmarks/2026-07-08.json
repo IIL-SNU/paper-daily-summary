@@ -1,0 +1,45 @@
+{
+  "date": "2026-07-08",
+  "results": [
+    {
+      "benchmark": "Regionally-Composite Phase Metalens (2mm 지름, NA 0.8, 수직입사)",
+      "metric": "Focusing efficiency improvement vs. quadratic design",
+      "value": 20.0,
+      "value_str": "약 20%p 향상",
+      "paper": "https://doi.org/10.1002/lpor.71520",
+      "paper_title": "Regionally-Composite Phase Metalens: Breaking the Field-of-View Limitation for High-NA Imaging"
+    },
+    {
+      "benchmark": "Regionally-Composite Phase Metalens 해상력(45도 경사입사)",
+      "metric": "Resolved feature size",
+      "value": 0.775,
+      "value_str": "0.775 µm 선폭 분해",
+      "paper": "https://doi.org/10.1002/lpor.71520",
+      "paper_title": "Regionally-Composite Phase Metalens: Breaking the Field-of-View Limitation for High-NA Imaging"
+    },
+    {
+      "benchmark": "Fourier Ptychographic Mueller Matrix Imaging (FPMMI)",
+      "metric": "Spatial resolution over FOV",
+      "value": 1.53,
+      "value_str": "1.53 µm 해상도 · 5.18 mm² 시야",
+      "paper": "https://doi.org/10.1063/5.0333888",
+      "paper_title": "Wide-field high-resolution Mueller matrix imaging via Fourier ptychography"
+    },
+    {
+      "benchmark": "HoloSpec 4D 계산 홀로그래픽 초분광 이미징",
+      "metric": "Spectral channels reconstructed / resolution gain",
+      "value": 430,
+      "value_str": "스냅샷 2장으로 430개 스펙트럴 채널 복원, 파장 분해능 10~20배 향상",
+      "paper": "https://doi.org/10.1002/lpor.71516",
+      "paper_title": "HoloSpec: Dispersion-Based 4D Computational Holographic Hyperspectral Imaging"
+    },
+    {
+      "benchmark": "Quantum imaging with undetected light (off-axis holography)",
+      "metric": "Real-time acquisition rate under high noise",
+      "value": 4.0,
+      "value_str": "노이즈가 신호의 10배 이상인 환경에서도 4 Hz 실시간 위상·진폭 영상",
+      "paper": "https://doi.org/10.1002/qute.70355",
+      "paper_title": "Noise Resilient Real-Time Phase Imaging via Undetected Light"
+    }
+  ]
+}

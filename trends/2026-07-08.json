@@ -1,0 +1,36 @@
+{
+  "date": "2026-07-08",
+  "source_listing_date": "2026-07-08",
+  "source_mode": "new",
+  "note": "2026-07-08(수)은 정상 daily다. 5개 추적 카테고리 arXiv /new listing이 모두 'Wednesday, 8 July 2026'을 가리켜 source_mode=new로 확정했다. 어제(07-07)와 달리 arXiv 항목 전체에 abstract가 있어 title-only backfill보다 훨씬 깊은 해석이 가능했다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 117,
+      "cs.CV": 120,
+      "cs.AI": 184,
+      "eess.IV": 3,
+      "eess.SP": 15
+    },
+    "scope": "new+cross; replacements excluded"
+  },
+  "totals": {
+    "total_scanned": 766,
+    "selected": 201
+  },
+  "classified": {
+    "total_scanned": 766,
+    "selected": 201,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 10,
+      "Meta-Optics/Diffractive": 8,
+      "Light-Field/Novel Sensors": 4,
+      "Tomography/3D Imaging": 44,
+      "Virtual Staining/Pathology": 13,
+      "Reconstruction/Inverse Problems": 18,
+      "Deep Learning Methods": 103
+    }
+  },
+  "daily_thesis": "오늘은 abstract를 온전히 볼 수 있어서, 어제 title만으로 갈랐던 3D Gaussian Splatting 흐름이 실제로는 '속도'가 아니라 '신뢰도'(불확실성 정량화, 화면공간 아티팩트 제거, 멀티모달 사전학습)로 재편되고 있다는 걸 확인할 수 있었다. 메타렌즈 FOV-NA 트레이드오프를 깨는 저널 논문 2편(RCPM, HoloSpec)이 구체적 수치와 함께 나왔고, 신분증 홀로그램(OVD) 위변조 검증이라는 새 클러스터가 처음 잡혔다. 메타표면 저널의 이미징 응용 공백은 5일째 이어지고 있다."
+}
