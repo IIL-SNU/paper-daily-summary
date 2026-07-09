@@ -1,0 +1,98 @@
+{
+  "date": "2026-07-09",
+  "insights": [
+    {
+      "title": "ImagingBench가 '그럴듯한 이미지'와 '물리적으로 맞는 역문제 풀이' 사이의 간극을 처음 벤치마크로 못박음",
+      "claim": "VLM과 agentic AI가 의미 이해가 필요한 시각 과제에서는 강하지만, 렌즈리스 이미징·이벤트 기반 복원·ToF·홀로그래피처럼 물리 법칙과 역문제 풀이가 필요한 계산영상 과제에서는 특화 방법 대비 일관되게 약하다는 것을 20개 과제, 5개 카테고리에 걸쳐 정량적으로 확인한 첫 벤치마크다.",
+      "papers": [
+        {
+          "title": "Does AI Understand Imaging? A Systematic Benchmark of Agentic AI for Computational Imaging Tasks",
+          "arxiv": "https://arxiv.org/abs/2607.07189",
+          "importance_tags": ["[평가축]", "[인프라]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Evaluation",
+            "order": "Agentic AI Benchmark",
+            "genus": "Physics-Grounded Inverse Problems",
+            "confidence": "High",
+            "rationale": "초록에서 20개 과제·5개 카테고리(ray/wave optics, ISP, inverse reconstruction, computational sensing, calibration)와 Expert/Planner/Forward 3개 설정을 명시하고, lensless/event-based/ToF/holography에서 특화 방법 대비 낮은 성능을 구체적으로 지적함"
+          }
+        }
+      ]
+    },
+    {
+      "title": "3D Gaussian Splatting '신뢰도' 축이 오늘은 장시간 시퀀스 포즈 드리프트 강건성으로 이동",
+      "claim": "어제(07-08)는 3DGS 재구성의 신뢰도 문제가 불확실성 정량화와 화면공간 아티팩트 제거로 나타났는데, 오늘은 같은 신뢰도 계열의 다른 갈래로 긴 이미지 시퀀스에서 카메라 포즈 추정이 누적으로 틀어지는(drift) 문제를 정면으로 다루는 논문이 나왔다. 두 날 모두 '빠르게 되는가'보다 '오래 찍어도, 촬영이 부족해도 결과를 믿을 수 있는가'를 묻는다는 공통점이 있다.",
+      "papers": [
+        {
+          "title": "NoDrift3R: Raymap-Guided Coupling for Drift-Robust Unposed Feed-Forward 3D Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2607.07168",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "3D Reconstruction",
+            "order": "Gaussian Splatting",
+            "genus": "Pose Drift Robustness",
+            "confidence": "Medium",
+            "rationale": "초록에서 raymap 기반 geometry-appearance 결합과 dual-frequency viewpoint scheduling으로 장시퀀스 포즈 드리프트를 완화한다고 명시. 07-08의 3DGS 신뢰도 클러스터와 연속성 있으나 오늘은 단발"
+          }
+        }
+      ]
+    },
+    {
+      "title": "라벨 없는 QPI를 두꺼운 조직에서도 쓰게 만드는 가역적 광학 투명화 시약",
+      "claim": "정량 위상 영상(QPI)은 얇은 시료에서는 잘 되지만, 조직이 두꺼워지면 산란·감쇠로 위상 맵이 심하게 무너진다. 이 논문은 글리세롤-타트라진 용액으로 상온에서 조직을 투명하게 만들었다가 15분 안에 씻어 되돌릴 수 있는 시약을 제안해서, 같은 절편에 대해 QPI로 먼저 관찰하고 이후 염색 등 다른 분석도 이어서 할 수 있게 했다.",
+      "papers": [
+        {
+          "title": "A Reversible Clearing Strategy Enables Robust Label-Free Phase Imaging of Thick Tissues",
+          "arxiv": "https://doi.org/10.1002/lpor.71514",
+          "importance_tags": ["[방법전환]", "[실사용전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Photonics",
+            "class": "Phase Imaging",
+            "order": "Quantitative Phase Imaging",
+            "genus": "Optical Clearing",
+            "confidence": "Medium",
+            "rationale": "초록에서 Fourier ptychographic microscopy와 lensless digital holographic microscopy 양쪽에 적용해 정량적으로(1-pixel-lag autocorrelation) 개선을 확인했다고 명시. 랩의 두 핵심 버킷(FP, Lensless)에 동시에 걸리는 드문 사례"
+          }
+        }
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "ImagingBench를 랩 파이프라인의 '방법 대 에이전트' 하한선 측정 도구로 재현",
+      "claim": "agentic AI가 렌즈리스 이미징과 홀로그래피 역문제에서 특화 방법 대비 얼마나 뒤처지는지를 랩이 이미 가진 재구성 파이프라인 결과와 나란히 놓고, 어떤 과제 카테고리에서 격차가 가장 큰지 재현해본다.",
+      "supporting_papers": [
+        {"title": "Does AI Understand Imaging? A Systematic Benchmark of Agentic AI for Computational Imaging Tasks", "arxiv": "https://arxiv.org/abs/2607.07189", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+      ]
+    },
+    {
+      "title": "NoDrift3R의 raymap 결합 구조를 랩 장시간 스캔 3D 재구성에 이식",
+      "claim": "raymap 기반 geometry-appearance 결합이 실제로 포즈 드리프트를 줄이는지, 랩이 보유한 긴 시퀀스 촬영 데이터(예: 롱테이크 필드 스캔)에서 재현되는지 확인한다.",
+      "supporting_papers": [
+        {"title": "NoDrift3R: Raymap-Guided Coupling for Drift-Robust Unposed Feed-Forward 3D Reconstruction", "arxiv": "https://arxiv.org/abs/2607.07168", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+      ]
+    },
+    {
+      "title": "가역적 광학 투명화 시약을 랩 두꺼운 시료 QPI 전처리로 시험",
+      "claim": "글리세롤-타트라진 기반 가역적 투명화가 랩의 Fourier ptychography·lensless holographic microscopy 파이프라인에서도 위상 아티팩트를 줄이는지, 저비용 시약만으로 재현 가능한지 검증한다.",
+      "supporting_papers": [
+        {"title": "A Reversible Clearing Strategy Enables Robust Label-Free Phase Imaging of Thick Tissues", "arxiv": "https://doi.org/10.1002/lpor.71514", "phylogeny": {"source": "CVML", "phylum": "Photonics"}}
+      ]
+    }
+  ],
+  "phylogeny_tags": [
+    {"paper": "https://arxiv.org/abs/2607.07189", "source": "CVML", "lineage": "Computational Imaging > Evaluation > Agentic AI Benchmark > Physics-Grounded Inverse Problems"},
+    {"paper": "https://arxiv.org/abs/2607.07168", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Gaussian Splatting > Pose Drift Robustness"},
+    {"paper": "https://doi.org/10.1002/lpor.71514", "source": "CVML", "lineage": "Photonics > Phase Imaging > Quantitative Phase Imaging > Optical Clearing"},
+    {"paper": "https://arxiv.org/abs/2607.06600", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > SLAM > Line Segment Detection"},
+    {"paper": "https://arxiv.org/abs/2607.07039", "source": "CVML", "lineage": "Computational Imaging > Tomography > Cone-Beam CT > Task-Driven Sampling"},
+    {"paper": "https://doi.org/10.1117/1.jbo.31.7.076002", "source": "CVML", "lineage": "Computational Imaging > Reconstruction > Photoacoustic Imaging > Dual-Domain Learning"},
+    {"paper": "https://arxiv.org/abs/2607.07581", "source": "CVML", "lineage": "Computational Imaging > Reconstruction > MRI Super-Resolution > Reference-Guided"},
+    {"paper": "https://doi.org/10.1109/access.2026.3710671", "source": "CVML", "lineage": "Computational Imaging > Fourier Ptychography > Microscopy > Noise Sensitivity"}
+  ]
+}

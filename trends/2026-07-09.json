@@ -1,0 +1,36 @@
+{
+  "date": "2026-07-09",
+  "source_listing_date": "2026-07-09",
+  "source_mode": "new",
+  "note": "2026-07-09(목)은 정상 daily다. 5개 추적 카테고리 arXiv /new listing이 모두 'Thursday, 9 July 2026'을 가리켜 source_mode=new로 확정했다. classify.py 선택 비율은 26.7%(206/771)로 이 repo의 평소 밴드(18~39%)에 안정적으로 들어온다. 다만 오늘은 저널 쪽 버킷(Meta-Optics 9편, Tomography 20편 중 다수)이 통신·음향 하드웨어와 심장 CT 임상 논문에 쏠려 있어, 버킷 편수를 그대로 트렌드로 읽으면 과대평가된다 — 아래 클러스터·부록은 실제 계산광학 신호만 추렸다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 180,
+      "cs.CV": 99,
+      "cs.AI": 145,
+      "eess.IV": 7,
+      "eess.SP": 20
+    },
+    "scope": "new+cross; replacements excluded"
+  },
+  "totals": {
+    "total_scanned": 771,
+    "selected": 206
+  },
+  "classified": {
+    "total_scanned": 771,
+    "selected": 206,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 3,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 8,
+      "Meta-Optics/Diffractive": 9,
+      "Light-Field/Novel Sensors": 4,
+      "Tomography/3D Imaging": 20,
+      "Virtual Staining/Pathology": 14,
+      "Reconstruction/Inverse Problems": 22,
+      "Deep Learning Methods": 126
+    }
+  },
+  "daily_thesis": "오늘 가장 중요한 신호는 편수가 아니라 질문 자체를 바꾸는 논문 한 편이었다 — ImagingBench는 VLM·agentic AI가 렌즈리스 이미징, 이벤트 기반 복원, ToF, 홀로그래피 같은 물리 기반 계산영상 문제에서 특화 방법 대비 일관되게 약하다는 걸 20개 과제로 정량화했고, 이건 '그럴듯해 보이는 이미지를 만드는 능력'과 '물리적으로 맞는 역문제를 푸는 능력' 사이의 간극을 처음 벤치마크로 못박은 사례다. 한편 3D Gaussian Splatting은 어제 짚은 '신뢰도' 축(불확실성·아티팩트)에 이어 오늘은 장시간 시퀀스에서의 포즈 드리프트 강건성(NoDrift3R)으로 초점이 옮겨갔고, Lensless/Coded Imaging은 오늘도 0편이라 랩 저널 쿼리 공백이 이어지고 있다."
+}

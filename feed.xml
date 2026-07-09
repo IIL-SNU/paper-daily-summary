@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 08 Jul 2026 12:24:07 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2026 12:13:37 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-07-09 (목요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-07-09.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-09.html</guid>
+      <pubDate>Thu, 09 Jul 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[2026-07-09(목) arXiv /new에는 cs.LG 180편(new 109 + cross 71), cs.CV 99편(new 82 + cross 17), cs.AI 145편(new 28 + cross 117), eess.IV 7편, eess.SP 20편으로 총 451편이 잡혔습니다. 저널을 더한 전체 스캔 771건 중 ROI 배정은 206건(26.7%)으로 평소 밴드(18~39%) 안에 들어옵니다. 오늘 가장 뚜렷한 신호는 편수가 아니라 질문의 종류였습니다. ImagingBench는 최신 VLM·agentic AI(Gemini, GPT, Qwen 계열)를 ray/wave optics, image signal processing, inverse reconstructi…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-07-08 (수요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-07-08.html</link>

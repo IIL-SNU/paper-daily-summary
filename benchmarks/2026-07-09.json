@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-09",
+  "results": [
+    {
+      "benchmark": "Dual SwinUNet 광음향 이미징 재구성 (100 transducer, 135도 커버리지)",
+      "metric": "SSIM 향상 (FDUNet 대비)",
+      "value": 7.5,
+      "value_str": "SSIM +7.5%, UIQI(universal image quality index) +18%",
+      "paper": "https://doi.org/10.1117/1.jbo.31.7.076002",
+      "paper_title": "Dual SwinUNet architecture for enhanced photoacoustic imaging: a contrastive learning approach in image and sinogram domains"
+    },
+    {
+      "benchmark": "Dual SwinUNet 광음향 이미징 — in vivo 마우스 데이터(100 transducer)",
+      "metric": "SSIM 향상",
+      "value": 6.8,
+      "value_str": "in vivo 마우스 데이터에서 SSIM +6.8%",
+      "paper": "https://doi.org/10.1117/1.jbo.31.7.076002",
+      "paper_title": "Dual SwinUNet architecture for enhanced photoacoustic imaging: a contrastive learning approach in image and sinogram domains"
+    }
+  ]
+}
