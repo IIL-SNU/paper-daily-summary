@@ -1,0 +1,191 @@
+{
+  "date": "2026-07-10",
+  "insights": [
+    {
+      "title": "Feed-forward 3D 재구성이 '표준 촬영 가정이 깨지는 환경' 네 곳에서 동시에 검증받음",
+      "claim": "카메라 위치를 미리 몰라도 영상만으로 바로 장면을 복원하는 feed-forward 3D Gaussian Splatting은 지금까지 주로 일반적인 실내·야외 정적 장면에서 속도와 정확도를 겨뤄왔다. 오늘 나온 네 편은 그 방법이 장면 안 물체마다 다르게 움직이는 경우(Mixture-of-Experts), 카메라 궤적 정보가 없는 수술 중 내시경 영상(Track2Map), 빛이 흩어지고 색이 바래는 수중 환경(Wat3R), 360도 어디서든 다 보이는 파노라마 촬영(PanoLOG)이라는 서로 다른 네 조건에서 각각 무엇이 깨지고 어떻게 고쳐야 하는지를 보여준다.",
+      "papers": [
+        {
+          "title": "Track2Map: Online Deformable SLAM with Motion-Aware Pose Optimization in Robotic Surgery",
+          "arxiv": "https://arxiv.org/abs/2607.08408",
+          "importance_tags": ["[방법전환]", "[실사용전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "3D Reconstruction",
+            "order": "Gaussian Splatting",
+            "genus": "Surgical SLAM without Pose Priors",
+            "confidence": "High",
+            "rationale": "StereoMIS 데이터셋에서 기존 SLAM 및 궤적 사전정보 활용 방법 대비 재구성 품질·궤적 정확도 개선을 abstract에 명시"
+          }
+        },
+        {
+          "title": "Wat3R: Underwater 3D Geometry Learning without Annotations",
+          "arxiv": "https://arxiv.org/abs/2607.08772",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "3D Reconstruction",
+            "order": "Domain Adaptation",
+            "genus": "Underwater Geometry",
+            "confidence": "High",
+            "rationale": "Water3D라는 새 평가 데이터셋을 직접 구축하고 수중 다시점 깊이 추정·점군 재구성에서 SOTA를 abstract에 명시"
+          }
+        },
+        {
+          "title": "On the Design of Mixture-of-Experts for Dynamic Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2607.08250",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "3D Reconstruction",
+            "order": "Gaussian Splatting",
+            "genus": "Dynamic Scene Multi-Deformation",
+            "confidence": "Medium",
+            "rationale": "MoDE/MoE-GS 두 통합 전략을 명확히 대비하지만 abstract에는 정량 비교 수치가 없음"
+          }
+        },
+        {
+          "title": "Geometry and Gradient-based Partitioning for Panoramic Outdoor Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2607.08769",
+          "importance_tags": ["[방법전환]", "[인프라]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "3D Reconstruction",
+            "order": "Large-Scale Gaussian Splatting",
+            "genus": "Panoramic Scene Partitioning",
+            "confidence": "High",
+            "rationale": "Pano360이라는 첫 대규모 파노라마 실외 재구성 벤치마크를 구축했고 SOTA 렌더링 품질을 abstract에 명시"
+          }
+        }
+      ]
+    },
+    {
+      "title": "디지털 홀로그래피·QPI가 '예쁜 이미지'에서 '신뢰할 수 있는 정량 측정 장비'로 검증받는 단계로",
+      "claim": "세 편의 저널 논문이 각각 다른 응용(MEMS 진동 계측, 3차원 입자 위치 추정, 유방암 세포 전이 가능성 진단)에서 디지털 홀로그래피·정량 위상 영상이 실제로 몇 피코미터, 몇 퍼센트 정확도로 무언가를 측정하고 있는지를 검증했다. 이미지가 그럴듯한가가 아니라 이 수치를 믿고 진단·계측에 써도 되는가를 정면으로 묻는다는 공통점이 있다.",
+      "papers": [
+        {
+          "title": "Floor noise of vibration amplitude maps measured by digital holography microscopy (DHM)",
+          "arxiv": "https://doi.org/10.1088/2515-7647/ae88a0",
+          "importance_tags": ["[평가축]", "[해부분석]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Photonics",
+            "class": "Phase Imaging",
+            "order": "Digital Holography Microscopy",
+            "genus": "Noise Floor Metrology",
+            "confidence": "High",
+            "rationale": "포노닉 결정 진동 모드 측정으로 피코미터 단위 검출 한계를 정량 검증한다고 abstract에 명시"
+          }
+        },
+        {
+          "title": "Investigation of the physical properties of breast cancer cells via statistical thermodynamics, quantitative phase microscopy, and machine learning algorithms",
+          "arxiv": "https://doi.org/10.15593/rjbiomech/2026.2.06",
+          "importance_tags": ["[해부분석]", "[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Photonics",
+            "class": "Phase Imaging",
+            "order": "Quantitative Phase Microscopy",
+            "genus": "Label-Free Cancer Diagnostics",
+            "confidence": "Medium",
+            "rationale": "MobileNetV2 분류 정확도 90% 초과를 abstract에 명시했으나 테스트셋 구성과 교차검증 방식은 본문 확인 필요"
+          }
+        }
+      ]
+    },
+    {
+      "title": "이벤트 카메라 파이프라인이 데이터 생성·응용·복원 전 구간에서 동시에 채워짐",
+      "claim": "라벨링된 이벤트 카메라 데이터가 적어서 개발이 느렸던 분야에서, 오늘은 그 문제를 파이프라인 전 구간에서 동시에 다루는 논문 세 편이 나왔다. EVIS는 물리 법칙에 맞는 이벤트 신호를 시뮬레이터에서 대량 생성하고, TVTA는 그 데이터를 실제 입술 읽기 응용에 적용하며, LongE2V는 희소한 이벤트 스트림에서 긴 영상을 diffusion 모델로 복원·예측·보간까지 한 번에 처리한다.",
+      "papers": [
+        {
+          "title": "LongE2V: Long-Horizon Event-based Video Reconstruction, Prediction, and Frame Interpolation with Video Diffusion Models",
+          "arxiv": "https://arxiv.org/abs/2607.08770",
+          "importance_tags": ["[방법전환]", "[인프라]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Novel Sensors",
+            "order": "Event-Based Vision",
+            "genus": "Diffusion-Based Reconstruction",
+            "confidence": "High",
+            "rationale": "실제 벤치마크에서 SOTA 대비 복원·예측·프레임보간 세 과제 모두 우수, zero-shot 일반화까지 abstract에 명시"
+          }
+        },
+        {
+          "title": "EVIS: A Physics-Grounded Event Camera Plugin for NVIDIA Isaac Sim",
+          "arxiv": "https://arxiv.org/abs/2607.08098",
+          "importance_tags": ["[인프라]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Novel Sensors",
+            "order": "Event-Based Vision",
+            "genus": "Simulation Data Generation",
+            "confidence": "Medium",
+            "rationale": "물리 기반 log-intensity contrast 이벤트 모델을 시뮬레이터에 구현했다고 명시하나 실제 카메라와의 도메인 갭은 abstract에서 다루지 않음"
+          }
+        },
+        {
+          "title": "TVTA: Trajectory-Aware Viseme-Guided Temporal Aggregation for Event-Based Lip Reading",
+          "arxiv": "https://arxiv.org/abs/2607.08236",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Novel Sensors",
+            "order": "Event-Based Vision",
+            "genus": "Application-Level Temporal Modeling",
+            "confidence": "Low",
+            "rationale": "조음 구조를 더 세밀하게 반영한다는 방법상 개선은 명시되나 정량 인식률 수치는 abstract에 없음"
+          }
+        }
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "Track2Map·Wat3R의 '표준 가정 없이 3D 복원' 구조를 랩 비정형 촬영 데이터에 재현",
+      "claim": "카메라 궤적 정보 없이도 변형을 함께 추정하는 Track2Map 구조와, 라벨 없이 도메인 적응하는 Wat3R 구조가 랩이 보유한 산란·왜곡이 있는 촬영 데이터에서도 통하는지 확인한다.",
+      "supporting_papers": [
+        {"title": "Track2Map: Online Deformable SLAM with Motion-Aware Pose Optimization in Robotic Surgery", "arxiv": "https://arxiv.org/abs/2607.08408", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}},
+        {"title": "Wat3R: Underwater 3D Geometry Learning without Annotations", "arxiv": "https://arxiv.org/abs/2607.08772", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+      ]
+    },
+    {
+      "title": "DHM 노이즈 정의 방식을 랩 QPI 셋업 간 비교 기준으로 도입",
+      "claim": "피코미터 단위 최소 검출 한계를 정의하는 DHM 논문의 방법론을 랩이 보유한 서로 다른 홀로그래피 셋업에 적용해, 셋업 간 비교 가능한 노이즈 바닥선을 만든다.",
+      "supporting_papers": [
+        {"title": "Floor noise of vibration amplitude maps measured by digital holography microscopy (DHM)", "arxiv": "https://doi.org/10.1088/2515-7647/ae88a0", "phylogeny": {"source": "CVML", "phylum": "Photonics"}}
+      ]
+    },
+    {
+      "title": "LongE2V의 diffusion 기반 이벤트 영상 복원을 랩 이벤트 스트림에 시험",
+      "claim": "희소한 이벤트 스트림에서 diffusion 모델로 복원·예측·보간을 함께 처리하는 LongE2V 구조가 랩이 보유한 실제 이벤트 카메라 데이터에서도 기존 회귀 기반 복원 대비 텍스처 흐림을 줄이는지 확인한다.",
+      "supporting_papers": [
+        {"title": "LongE2V: Long-Horizon Event-based Video Reconstruction, Prediction, and Frame Interpolation with Video Diffusion Models", "arxiv": "https://arxiv.org/abs/2607.08770", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+      ]
+    }
+  ],
+  "phylogeny_tags": [
+    {"paper": "https://arxiv.org/abs/2607.08408", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Gaussian Splatting > Surgical SLAM without Pose Priors"},
+    {"paper": "https://arxiv.org/abs/2607.08772", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Domain Adaptation > Underwater Geometry"},
+    {"paper": "https://arxiv.org/abs/2607.08250", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Gaussian Splatting > Dynamic Scene Multi-Deformation"},
+    {"paper": "https://arxiv.org/abs/2607.08769", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Large-Scale Gaussian Splatting > Panoramic Scene Partitioning"},
+    {"paper": "https://arxiv.org/abs/2607.08398", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Mesh Reconstruction > Physics-Ready Tetrahedral Mesh"},
+    {"paper": "https://doi.org/10.1088/2515-7647/ae88a0", "source": "CVML", "lineage": "Photonics > Phase Imaging > Digital Holography Microscopy > Noise Floor Metrology"},
+    {"paper": "https://doi.org/10.15593/rjbiomech/2026.2.06", "source": "CVML", "lineage": "Photonics > Phase Imaging > Quantitative Phase Microscopy > Label-Free Cancer Diagnostics"},
+    {"paper": "https://doi.org/10.1364/optcon.605236", "source": "CVML", "lineage": "Photonics > Phase Imaging > Digital Holography > 3D Particle Tracking"},
+    {"paper": "https://arxiv.org/abs/2607.08770", "source": "CVML", "lineage": "Computational Imaging > Novel Sensors > Event-Based Vision > Diffusion-Based Reconstruction"},
+    {"paper": "https://arxiv.org/abs/2607.08098", "source": "CVML", "lineage": "Computational Imaging > Novel Sensors > Event-Based Vision > Simulation Data Generation"},
+    {"paper": "https://arxiv.org/abs/2607.08236", "source": "CVML", "lineage": "Computational Imaging > Novel Sensors > Event-Based Vision > Application-Level Temporal Modeling"},
+    {"paper": "https://doi.org/10.1117/1.jbo.31.7.076504", "source": "CVML", "lineage": "Computational Imaging > Virtual Staining/Pathology > Multiplexed Imaging > Hyperspectral Marker Detection"},
+    {"paper": "https://arxiv.org/abs/2607.08162", "source": "CVML", "lineage": "Computational Imaging > Virtual Staining/Pathology > Representation Learning > Multi-Source Pretraining"},
+    {"paper": "https://doi.org/10.1093/mictod/qaag072", "source": "CVML", "lineage": "Computational Imaging > Virtual Staining/Pathology > Label-Free Microscopy > Polarization Imaging"},
+    {"paper": "https://arxiv.org/abs/2607.08360", "source": "CVML", "lineage": "Photonics > Meta-Optics > Inverse Design > Near-Field Photonic Computing"},
+    {"paper": "https://doi.org/10.1364/oe.601699", "source": "CVML", "lineage": "Photonics > Lensless/Coded Imaging > Coded Aperture Holography > Resolution Enhancement"}
+  ]
+}

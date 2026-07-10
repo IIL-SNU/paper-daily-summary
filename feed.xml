@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 09 Jul 2026 12:13:37 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2026 12:13:45 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-07-10 (금요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-07-10.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-10.html</guid>
+      <pubDate>Fri, 10 Jul 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[2026-07-10(금) arXiv /new에는 cs.LG 162편(new 93 + cross 69), cs.CV 87편(new 72 + cross 15), cs.AI 157편(new 56 + cross 101), eess.IV 9편(new 6 + cross 3), eess.SP 21편(new 15 + cross 6)으로 총 436편이 잡혔습니다. 저널을 더한 전체 스캔 757건 중 ROI 배정은 217건(28.7%)입니다. 오늘 가장 뚜렷한 신호는 Tomography/3D Imaging 버킷(46편) 안에 숨어 있었습니다 — 버킷 편수 대부분은 관상동맥 석회화, 망막 OCT 혈관조영, 담낭염 진단 같은 임상 영상 논문이지만, 그 사이에 feed-forward 3D 재구…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-07-09 (목요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-07-09.html</link>

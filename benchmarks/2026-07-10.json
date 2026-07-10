@@ -1,0 +1,29 @@
+{
+  "date": "2026-07-10",
+  "results": [
+    {
+      "benchmark": "유방암 세포 QPI+ML 분류 (MCF-10A/MCF-7/MDA-MB-231 세포주)",
+      "metric": "MobileNetV2 위상 영상 분류 정확도",
+      "value": 90,
+      "value_str": "정확도 90% 초과",
+      "paper": "https://doi.org/10.15593/rjbiomech/2026.2.06",
+      "paper_title": "Investigation of the physical properties of breast cancer cells via statistical thermodynamics, quantitative phase microscopy, and machine learning algorithms"
+    },
+    {
+      "benchmark": "근접장 광컴퓨팅 유닛(MPU) 4x4 복소 행렬 연산",
+      "metric": "연산 fidelity",
+      "value": 92.7,
+      "value_str": "fidelity 92.7%",
+      "paper": "https://arxiv.org/abs/2607.08360",
+      "paper_title": "Inverse-designed meta processing units for multi-task near-field photonic computing"
+    },
+    {
+      "benchmark": "근접장 광컴퓨팅 유닛(MPU) EMNIST 대규모 시뮬레이션 (뉴런 단위 MPU 교체)",
+      "metric": "평균 분류 정확도",
+      "value": 87.64,
+      "value_str": "90% 공유 MPU 교체 시 평균 정확도 87.64% (레이어 단위 baseline 대비 +7.26%p)",
+      "paper": "https://arxiv.org/abs/2607.08360",
+      "paper_title": "Inverse-designed meta processing units for multi-task near-field photonic computing"
+    }
+  ]
+}

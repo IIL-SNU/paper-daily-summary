@@ -1,0 +1,36 @@
+{
+  "date": "2026-07-10",
+  "source_listing_date": "2026-07-10",
+  "source_mode": "new",
+  "note": "2026-07-10(금)은 정상 daily다. 5개 추적 카테고리 arXiv /new listing이 모두 오늘 날짜를 가리켜 source_mode=new로 확정했다. classify.py 선택 비율은 28.7%(217/757)로 이 repo의 평소 밴드보다 약간 낮지만 QA 참고용 수치라 발행을 막지 않았다. 오늘은 Tomography/3D Imaging(46편) 안에 feed-forward 3D 재구성 논문 4편이 몰려 있었고, Meta-Optics/Diffractive(17편)는 전부 안테나·레이더 하드웨어라 이미징 역설계 신호가 0편이었다(진짜 광학 역설계 신호는 Deep Learning Methods 버킷에 분류된 근접장 광컴퓨팅 논문 1편). Virtual Staining/Pathology(19편)도 실제 병리·다중화 이미징 신호는 3편 정도이고 나머지는 키워드 우연 매칭이다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 162,
+      "cs.CV": 87,
+      "cs.AI": 157,
+      "eess.IV": 9,
+      "eess.SP": 21
+    },
+    "scope": "new+cross; replacements excluded"
+  },
+  "totals": {
+    "total_scanned": 757,
+    "selected": 217
+  },
+  "classified": {
+    "total_scanned": 757,
+    "selected": 217,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 13,
+      "Meta-Optics/Diffractive": 17,
+      "Light-Field/Novel Sensors": 5,
+      "Tomography/3D Imaging": 46,
+      "Virtual Staining/Pathology": 19,
+      "Reconstruction/Inverse Problems": 17,
+      "Deep Learning Methods": 98
+    }
+  },
+  "daily_thesis": "오늘 가장 중요한 신호는 feed-forward 3D 재구성(카메라 포즈 없이 영상만으로 바로 장면을 복원하는 3D Gaussian Splatting 계열 방법)이 일반적인 정적 장면을 넘어 수술실, 수중, 파노라마, 동적 장면처럼 표준 촬영 가정이 각각 다르게 깨지는 네 개 도메인에서 동시에 검증받은 하루였다는 점이다 — 실험실 조건을 벗어나 실제 현장에 나가려면 무엇이 깨지고 어떻게 대응해야 하는지가 하루 만에 네 가지 사례로 쌓였다. 한편 디지털 홀로그래피·정량 위상 영상 쪽은 '예쁜 이미지를 만드는 도구'에서 '신뢰할 수 있는 정량 측정 장비'로 검증 단계가 넘어가는 신호가 3편 동시에 나왔고, 이벤트 카메라 관련 논문 3편이 데이터 생성·응용·복원 파이프라인 전 구간을 한 번에 채웠다. 반대로 Lensless/Coded Imaging과 Meta-Optics/Diffractive 두 핵심 버킷은 오늘도 사실상 공백에 가까웠고, 진짜 광학 역설계 신호는 Meta-Optics 버킷이 아니라 Deep Learning Methods 버킷에 묻혀 있어 분류 경계 자체를 점검할 필요가 있다."
+}
