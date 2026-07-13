@@ -1,0 +1,88 @@
+{
+  "date": "2026-07-13",
+  "insights": [
+    {
+      "title": "Feed-forward 3D 재구성 연구가 \"어디에 쓸까\"에서 \"왜 흔들리는가\"로 방향을 틀었다",
+      "claim": "지난주 후반까지 feed-forward 3D 재구성은 수술실·수중·파노라마 같은 새 촬영 환경에 적용하는 확장 단계였는데, 오늘은 VGGT류 기하 파운데이션 모델 내부의 층별 특화(Co-VGGT), 장시퀀스 스케일 드리프트 보정(Glob3R, DGSfM), 입력 최소화(StereoSplat+)처럼 방법 자체의 신뢰도를 안쪽에서부터 점검하는 논문 네 편이 동시에 나왔다.",
+      "papers": [
+        {
+          "title": "What VGGT Knows About Overlap: Probing Geometric Foundation Models for Co-Visibility",
+          "arxiv": "https://arxiv.org/abs/2607.09503",
+          "importance_tags": ["[해부분석]", "[방법전환]"]
+        },
+        {
+          "title": "Glob3R: Global Structure-from-Motion with 3D Foundation Models",
+          "arxiv": "https://arxiv.org/abs/2607.09225",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "DGSfM: Depth-Guided Scale-Aware Global Structure-from-Motion",
+          "arxiv": "https://arxiv.org/abs/2607.09507",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "StereoSplat+: Feed-Forward Stereo Gaussian Splatting with Diffusion-Assisted Progressive Inference",
+          "arxiv": "https://arxiv.org/abs/2607.08808",
+          "importance_tags": ["[방법전환]"]
+        }
+      ]
+    },
+    {
+      "title": "이벤트 카메라 파이프라인이 갖춰지자마자 안전성 취약점이 먼저 드러났다",
+      "claim": "지난주 금요일 시뮬레이터·응용·복원까지 파이프라인 전 구간이 채워진 이벤트 카메라 연구가, 오늘은 그 파이프라인을 믿고 배포해도 되는지를 묻는 쪽으로 좁혀졌다 — 특히 Event Burst Trigger는 이벤트 기반 SNN 탐지 모델에 대한 가용성 백도어 공격을 처음 제시했다.",
+      "papers": [
+        {
+          "title": "Event Burst Trigger: An Availability Backdoor Attack on Event-Based SNN Object Detection",
+          "arxiv": "https://arxiv.org/abs/2607.09115",
+          "importance_tags": ["[경고신호]"]
+        },
+        {
+          "title": "Event Stream based Multi-Modal Video Anomaly Detection: A Benchmark Dataset and Algorithms",
+          "arxiv": "https://arxiv.org/abs/2607.09114",
+          "importance_tags": ["[인프라]", "[평가축]"]
+        },
+        {
+          "title": "Equivariant Filter for High Performance Image Tracking using an Event Camera",
+          "arxiv": "https://arxiv.org/abs/2607.09103",
+          "importance_tags": ["[방법전환]"]
+        }
+      ]
+    },
+    {
+      "title": "랩 핵심 계산광학 세 버킷(Ptychography·Meta-Optics·Lensless)이 오늘 동시에 전멸에 가까웠다",
+      "claim": "Fourier Ptychography/Microscopy와 Meta-Optics/Diffractive는 오늘 arXiv·저널을 통틀어 정확히 0편이었고, Lensless/Coded Imaging도 이미징 응용 신호는 대기 난류 관측용 조리개 마스킹 논문 1편뿐이었다. 지난주까지 저널에서 꾸준히 나오던 홀로그래피·QPI 정량 측정 신호도 오늘은 끊겼다.",
+      "papers": [
+        {
+          "title": "Co-design approach to aperture masking for imaging through atmospheric turbulence",
+          "arxiv": "https://arxiv.org/abs/2607.09265",
+          "importance_tags": ["[방법전환]"]
+        }
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "Co-VGGT의 layer-wise co-visibility probing을 랩 feed-forward 3D 파이프라인에 이식",
+      "claim": "VGGT류 백본의 특정 층이 이미 이미지 쌍의 겹침 여부를 암묵적으로 인코딩한다는 발견이 랩이 쓰는 feed-forward 재구성 백본에서도 재현되는지 확인하고 view selection/outlier filtering에 활용한다.",
+      "supporting_papers": [
+        {"title": "What VGGT Knows About Overlap: Probing Geometric Foundation Models for Co-Visibility", "arxiv": "https://arxiv.org/abs/2607.09503"}
+      ]
+    },
+    {
+      "title": "DGSfM/Glob3R의 스케일 보정 구조를 랩 장시퀀스 촬영 데이터에 시험",
+      "claim": "긴 시퀀스나 대규모 이미지 집합에서 스케일이 어긋나고 오차가 누적되는 문제를 단안 깊이 정보로 바로잡는 구조가 랩이 다루는 장시퀀스 스파스뷰 촬영에서도 통하는지 확인한다.",
+      "supporting_papers": [
+        {"title": "Glob3R: Global Structure-from-Motion with 3D Foundation Models", "arxiv": "https://arxiv.org/abs/2607.09225"},
+        {"title": "DGSfM: Depth-Guided Scale-Aware Global Structure-from-Motion", "arxiv": "https://arxiv.org/abs/2607.09507"}
+      ]
+    },
+    {
+      "title": "Event Burst Trigger의 가용성 공격 패턴을 랩 이벤트 기반 후처리 모델에 재현",
+      "claim": "이벤트 폭주를 유도해 연산 부하를 부풀리는 백도어 공격이 랩이 이벤트 기반 이미징에 쓰는 후처리 모델(특히 SNN 기반이라면)에도 통하는지 확인해 배포 전 취약점을 점검한다.",
+      "supporting_papers": [
+        {"title": "Event Burst Trigger: An Availability Backdoor Attack on Event-Based SNN Object Detection", "arxiv": "https://arxiv.org/abs/2607.09115"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

@@ -1,13 +1,36 @@
 {
   "date": "2026-07-13",
-  "source_listing_date": "2026-07-10",
-  "source_mode": "weekly-pastweek",
-  "note": "Weekly retrospective for W28 (2026-07-06 to 2026-07-10). No daily /new data for this date (today's daily runs separately at 11:00 KST); daily stats row intentionally omitted.",
-  "weekly_aggregate": {
-    "by_cat": {"cs.LG": 886, "cs.CV": 695, "cs.AI": 937, "eess.IV": 44, "eess.SP": 123},
-    "scope": "new+cross; replacements excluded",
-    "days_covered": ["2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10"],
-    "note": "2026-07-06은 미국 독립기념일 연휴 여파로 arXiv 갱신 없이 저널만(journal-only) 집계됨"
+  "source_listing_date": "2026-07-13",
+  "source_mode": "new",
+  "note": "2026-07-13(월)은 정상 daily다. 5개 추적 카테고리 arXiv /new listing이 모두 오늘 날짜(Monday, 13 July 2026)를 가리켜 source_mode=new로 확정했다. 같은 날짜의 주간 회고(weekly/2026-28.json, posts/2026-07-13-weekly.html)는 이미 별도 실행으로 먼저 발행됐고, 이 trends 레코드는 그것과 독립된 당일 daily용이라 이전에 저장돼 있던 weekly-pastweek 스키마를 daily 스키마로 덮어썼다. classify.py 선택 비율은 25.1%(120/478)로 최근 밴드(26~29%)보다 낮지만, 오늘 저널 수집 221건 대부분이 계산광학과 무관한 교육·농업·법학·임상의학 저널로 쏠린 영향이라 QA 참고용 수치로만 남긴다. Fourier Ptychography/Microscopy와 Meta-Optics/Diffractive는 오늘 정확히 0편, Lensless/Coded Imaging도 이미징 응용 신호는 대기 난류 관측용 조리개 마스킹 논문 1편뿐이다. arXiv 쪽 가장 뚜렷한 신호는 feed-forward 3D 재구성/기하 파운데이션 모델(VGGT류)의 내부 진단·스케일 보정 논문 4편(Glob3R, DGSfM, Co-VGGT, StereoSplat+)과 이벤트 카메라 안전성·견고성 점검 논문 3편(Event Burst Trigger, EVAD, Equivariant Filter)이었다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 113,
+      "cs.CV": 77,
+      "cs.AI": 116,
+      "eess.IV": 4,
+      "eess.SP": 20
+    },
+    "scope": "new+cross; replacements excluded"
   },
-  "totals": {"total_scanned": 3905, "selected": 947}
+  "totals": {
+    "total_scanned": 478,
+    "selected": 120
+  },
+  "classified": {
+    "total_scanned": 478,
+    "selected": 120,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 2,
+      "Meta-Optics/Diffractive": 0,
+      "Light-Field/Novel Sensors": 3,
+      "Tomography/3D Imaging": 10,
+      "Virtual Staining/Pathology": 20,
+      "Reconstruction/Inverse Problems": 12,
+      "Deep Learning Methods": 72
+    }
+  },
+  "daily_thesis": "오늘 가장 중요한 신호는 feed-forward 3D 재구성에 대한 관심이 '새로운 촬영 도메인에 적용해보기'에서 '이 방법 내부가 왜 흔들리고 어떻게 고쳐야 하는가'로 옮겨간 것이다 — VGGT류 기하 파운데이션 모델의 내부 층 진단(Co-VGGT), 장시퀀스 스케일 드리프트 보정(DGSfM, Glob3R), 스테레오 한 쌍만으로도 되는 causal 재구성(StereoSplat+)까지 네 편이 한꺼번에 나왔다. 이벤트 카메라 연구는 지난 금요일의 데이터 생성·응용·복원 파이프라인 확장 흐름에서, 그 파이프라인이 얼마나 안전하고 견고한지를 묻는 쪽(Event Burst Trigger의 가용성 백도어 공격, EVAD의 이상 탐지 견고성, Equivariant Filter의 추적 정확도)으로 좁혀졌다. 반대로 Lensless/Coded Imaging·Fourier Ptychography/Microscopy·Meta-Optics/Diffractive 세 랩 핵심 계산광학 버킷은 오늘 사실상 전멸에 가까웠다."
 }

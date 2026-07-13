@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-07-13</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] blockquote,html[data-theme=dark] th,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+html[data-theme=dark] .ins{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .dd{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+<button id=themeToggle aria-label="Toggle dark mode">🌙</button>
+<script>(function(){var btn=document.getElementById('themeToggle');function setTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem('theme',t);btn.textContent=t==='dark'?'☀️':'🌙';}btn.addEventListener('click',function(){setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');});btn.textContent=document.documentElement.dataset.theme==='dark'?'☀️':'🌙';})();</script>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-07-13 (월요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-07-13 (월요일) · 실행일 2026-07-13 (정상 daily)</div>
+  <div>🛠 모드: Daily (source_mode=new) — arXiv 5개 추적 카테고리 /new listing이 모두 오늘 날짜(Monday, 13 July 2026)를 가리켜 정상 daily로 확정. 오늘은 같은 날짜의 주간 회고(posts/2026-07-13-weekly.html)가 이미 별도 실행으로 먼저 발행됐고, 이 daily는 그것과 독립된 당일 논문 브리핑입니다.</div>
+  <div>✅ arXiv 항목 전체에 abstract가 있어 abstract 기준으로 깊게 해석했습니다.</div>
+  <div>📚 소스: arXiv /new 2026-07-13 · cs.LG/cs.CV/cs.AI/eess.IV/eess.SP + Crossref/OpenAlex 저널(--days 1)</div>
+  <div>🔢 arXiv: cs.LG 113(new 72 + cross 41) · cs.CV 77(new 70 + cross 7) · cs.AI 116(new 27 + cross 89) · eess.IV 4(new 2 + cross 2) · eess.SP 20(new 13 + cross 7) (new+cross, replacement 제외, 총 330편)</div>
+  <div>🔢 분류 결과: 총 478건 스캔(저널 포함) · ROI 배정 120건 (25.1%) — 평소 밴드(26~29%)보다 낮지만 QA 참고용 수치이며 발행을 막는 기준은 아닙니다</div>
+  <div>⚠️ 오늘은 저널 수집(221건) 대부분이 계산광학과 무관한 교육·농업·법학·의료 임상 저널이라 신호가 매우 약했고, Fourier Ptychography/Microscopy·Meta-Optics/Diffractive 두 버킷은 오늘 아예 0편입니다. Virtual Staining/Pathology(20편)·Reconstruction/Inverse Problems(12편)도 대다수가 키워드 우연 매칭입니다. 아래 클러스터·부록에서는 실제 계산광학·3D 재구성 신호만 추립니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 <strong>feed-forward 3D 재구성(카메라 포즈 없이 영상만으로 바로 장면을 복원하는 방식)에 대한 관심이 "새로운 촬영 도메인에 적용해보기"에서 "이 방법 내부가 왜 흔들리고 어떻게 고쳐야 하는가"로 옮겨간 날</strong>이었습니다. VGGT 같은 3D 기하 파운데이션 모델의 내부 표현을 직접 들여다보거나(Co-VGGT), 장시퀀스에서 스케일이 어긋나는 문제를 깊이 정보로 바로잡거나(DGSfM, Glob3R), 스테레오 한 쌍만으로도 되게 만드는(StereoSplat+) 논문 네 편이 한꺼번에 나왔습니다. 한편 <strong>이벤트 카메라 연구는 지난 금요일의 "데이터 생성·응용·복원 파이프라인 확장" 흐름에서 "이 센서 기반 시스템이 얼마나 안전하고 믿을 만한가"를 묻는 쪽으로 급격히 좁혀졌고</strong>, Lensless/Coded Imaging·Fourier Ptychography·Meta-Optics 같은 랩 핵심 계산광학 버킷은 오늘 사실상 전멸에 가깝습니다 — 유일하게 눈에 띄는 예외는 대기 난류를 뚫고 촬영하기 위한 조리개 마스크 설계 논문 한 편뿐입니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>2026-07-13(월) arXiv /new에는 cs.LG 113편(new 72 + cross 41), cs.CV 77편(new 70 + cross 7), cs.AI 116편(new 27 + cross 89), eess.IV 4편(new 2 + cross 2), eess.SP 20편(new 13 + cross 7)으로 총 330편이 잡혔습니다. 저널을 더한 전체 스캔 478건 중 ROI 배정은 120건(25.1%)으로, 지난 며칠(26~29%대)보다 조금 낮은 편이지만 이건 저널 쿼리 결과 자체가 오늘 유독 계산광학과 무관한 분야(교육학, 농업, 법학, 임상의학)로 쏠렸기 때문이지 파서 오류는 아닙니다. 오늘 arXiv 쪽에서 가장 뚜렷한 신호는 cs.CV의 feed-forward 3D 재구성/기하 파운데이션 모델 쪽입니다. Glob3R은 VGGT 같은 3D 파운데이션 모델이 긴 시퀀스나 순서 없는 대규모 이미지 집합으로 확장될 때 청크 단위로 처리하면서 생기는 드리프트(누적 오차)와 스케일 불일치 문제를, 프레임 간 조밀한 매칭에서 뽑은 correspondence로 전역 번들 조정을 다시 걸어 잡습니다. DGSfM은 비슷한 문제를 다른 각도에서 풉니다 — 전역 SfM(구조로부터 운동 복원)이 스케일이 모호한 에피폴라 기하에 의존하다 보니 잡음 섞인 baseline 추정이나 시각적으로 헷갈리는 이미지 쌍에서 성능이 무너지는데, 단안 깊이 추정 결과를 스케일 인식 사전 정보로 넣어서 이 문제를 바로잡습니다. What VGGT Knows About Overlap 논문은 아예 VGGT의 내부 층을 하나씩 열어봐서, 어떤 이미지 쌍이 실제로 겹쳐 찍혔는지(co-visibility)를 판단하는 역할이 특정 층(17번째 층)에 이미 암묵적으로 학습돼 있다는 걸 찾아내고, 이걸 가벼운 헤드 하나로 뽑아 쓰는 Co-VGGT를 제안합니다. StereoSplat+는 아예 입력을 극단적으로 줄여서, 스테레오 카메라 한 쌍의 영상만으로도 diffusion 기반 점진적 추론으로 3D Gaussian Splatting 장면을 causal하게(미래 프레임을 미리 보지 않고) 복원합니다. 즉 지난 금요일까지는 "이 방법이 수술실·수중·파노라마 같은 새 도메인에서도 되는가"를 물었다면, 오늘은 "이 방법 자체가 왜 흔들리고, 내부 어디를 고치면 더 안정적인가"를 묻는 논문들이 나온 셈입니다.</p>
+<p>두 번째 흐름은 이벤트 카메라 쪽인데, 지난 금요일(EVIS·TVTA·LongE2V)의 "데이터 생성-응용-복원 파이프라인을 통째로 채운다"는 방향과는 결이 다릅니다. 오늘 나온 세 편(Equivariant Filter, EVAD, Event Burst Trigger)은 모두 "이 센서 기반 시스템이 실제로 믿을 만한가"를 검증하는 쪽입니다. Equivariant Filter는 이벤트 카메라로 평면 이미지의 움직임을 추적할 때 기존 트래커의 특징점 측정값에 등변 필터(equivariant filter)를 결합해 고성능 추적을 시도하고, EVAD는 일반 영상만으로는 조명 변화나 빠른 움직임에서 놓치는 이상 행동을, 이벤트 스트림을 함께 써서 더 안정적으로 잡아내는 벤치마크와 데이터셋을 새로 만듭니다. 그리고 가장 눈에 띄는 건 Event Burst Trigger인데, 이벤트 기반 스파이킹 신경망(SNN, 뇌의 뉴런처럼 비동기 스파이크로 신호를 처리하는 신경망) 객체 탐지 모델에 정교하게 설계된 이벤트 트리거를 학습 데이터에 심으면, 추론 시점에 시간적으로 밀집된 이벤트 폭주를 유도해서 가짜 객체 후보를 대량으로 만들어내고 결국 시스템이 감당 못 할 정도로 연산 비용을 부풀리는 가용성 백도어 공격을 처음으로 보여줍니다. 세 편을 나란히 놓으면, 이벤트 카메라 파이프라인이 이제 막 갖춰지기 시작하자마자 바로 "이 파이프라인을 믿고 실제 감시·엣지 디바이스에 배포해도 되는가"라는 안전성 질문이 따라붙기 시작했다는 뜻입니다.</p>
+<p>다음 관찰 포인트는 (1) 기하 파운데이션 모델의 내부 진단(층별 특화, 스케일 보정)이 다음에는 어떤 하위 문제(예: 동적 장면, 반사면)로 확장되는지, (2) 이벤트 카메라 안전성 검증이 SNN 외 다른 아키텍처로도 이어지는지, (3) Lensless/Coded Imaging·Fourier Ptychography·Meta-Optics 세 핵심 버킷의 공백이 언제까지 이어지는지입니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>지난 영업일(07-10, 금)은 feed-forward 3D 재구성이 수술실·수중·파노라마·동적 장면이라는 "표준 촬영 가정이 깨지는 네 현장"에 적용되는 걸 보여준 날이었습니다. 오늘은 같은 feed-forward 3D 재구성 계열 논문이 다시 몰렸지만 방향이 다릅니다 — 새 도메인을 더 찾는 대신, VGGT 같은 기존 파운데이션 모델의 내부(어느 층이 co-visibility를 판단하는지)를 열어보거나, 장시퀀스에서 스케일이 왜 어긋나는지를 깊이 정보로 바로잡는 등 방법 자체의 신뢰도를 안쪽에서부터 점검하는 쪽으로 넘어갔습니다. 이벤트 카메라도 마찬가지 패턴입니다. 금요일에는 시뮬레이터(EVIS)·응용(TVTA)·복원(LongE2V)까지 파이프라인 전 구간을 채우는 확장의 하루였다면, 오늘은 그렇게 갖춰진 파이프라인이 추적 정확도(Equivariant Filter), 이상 탐지 견고성(EVAD), 그리고 무엇보다 백도어 공격에 대한 취약성(Event Burst Trigger)까지 버텨내는지를 점검하는 하루였습니다. 즉 금요일이 "넓히기"였다면 오늘은 두 클러스터 모두에서 "그 결과를 믿고 써도 되는지 안쪽부터 점검하기"로 무게중심이 옮겨간 셈입니다. 또한 지난주 내내 이어졌던 Lensless/Coded Imaging arXiv 공백은 오늘도 계속되고 있고(eess.SP 유일한 관련 논문은 대기 난류 촬영용 조리개 마스크 설계), Meta-Optics/Diffractive와 Fourier Ptychography/Microscopy는 지난주 금요일의 17편·1편에서 오늘은 나란히 0편으로 떨어져 공백이 더 깊어졌습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Feed-forward 3D 재구성이 "새 도메인 적용"에서 "모델 내부 진단·보정"으로</strong><span class=pill>HOT</span></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.09503" target=_blank>What VGGT Knows About Overlap (Co-VGGT)</a>,
+    <a href="https://arxiv.org/abs/2607.09225" target=_blank>Glob3R</a>,
+    <a href="https://arxiv.org/abs/2607.09507" target=_blank>DGSfM</a>,
+    <a href="https://arxiv.org/abs/2607.08808" target=_blank>StereoSplat+</a> (모두 cs.CV)
+  </td>
+  <td>지난 금요일까지 feed-forward 3D 재구성(카메라 포즈를 미리 몰라도 영상만으로 바로 장면을 복원하는 방법)은 "이 방법이 수술실이나 수중처럼 어려운 새 환경에서도 되는가"를 주로 물었습니다. 오늘 나온 네 편은 질문 방향이 다릅니다. What VGGT Knows About Overlap은 VGGT라는 대표적인 3D 기하 파운데이션 모델을 열어서, 두 이미지가 실제로 같은 장면을 찍었는지 판단하는 능력이 이미 특정 층(17번째 층)에 스스로 학습돼 있다는 걸 찾아내고, 이 사실을 이용해 가벼운 헤드만 얹어 co-visibility 판단 성능을 사람 기준보다 높입니다. Glob3R과 DGSfM은 같은 계열 모델이 긴 시퀀스나 순서 없는 대규모 이미지 집합으로 확장될 때 스케일이 어긋나고 오차가 누적되는 문제를, 각각 조밀한 매칭 기반 전역 번들 조정과 단안 깊이 정보를 이용한 스케일 보정으로 바로잡습니다. StereoSplat+는 반대로 입력을 극단적으로 줄여서 스테레오 한 쌍만으로도 diffusion 기반 점진적 추론으로 causal 재구성이 되게 만듭니다. 즉 예전에는 이 방법을 "어디에 적용할 수 있는가"로 넓혀갔다면, 이제는 "이 방법이 왜 흔들리고 내부 어디를 고치면 더 안정적인가"를 파고들기 시작했다는 뜻이고, 이는 이 방법론이 연구실 데모를 넘어 실제 신뢰할 수 있는 도구로 자리잡기 위한 다음 단계로 볼 수 있습니다.</td>
+  <td>High<br><small>서로 다른 저자군 4편이 서로 다른 내부 문제(층별 특화 진단/스케일 드리프트 보정/입력 최소화)를 다루면서도 모두 VGGT류 feed-forward 기하 파운데이션 모델이라는 같은 기반을 공유</small></td>
+  <td>랩 비정형 촬영 파이프라인에서 쓰는 feed-forward 3DGS/SfM 백본에 Co-VGGT의 layer-wise co-visibility probing을 적용해, 랩 데이터에서도 특정 층이 겹침 여부를 암묵적으로 인코딩하는지 확인하고 이를 view selection이나 outlier 필터링에 활용할 수 있는지 검토</td>
+</tr>
+<tr>
+  <td><strong>이벤트 카메라가 "파이프라인 확장"에서 "안전성·견고성 점검"으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.09115" target=_blank>Event Burst Trigger</a>,
+    <a href="https://arxiv.org/abs/2607.09114" target=_blank>EVAD</a>,
+    <a href="https://arxiv.org/abs/2607.09103" target=_blank>Equivariant Filter for Event Camera Tracking</a> (모두 cs.CV)
+  </td>
+  <td>지난 금요일 이벤트 카메라 연구는 시뮬레이터·실응용·복원까지 파이프라인 전 구간을 채우는 확장의 하루였습니다. 오늘은 그렇게 갖춰지기 시작한 파이프라인이 얼마나 믿을 만한지를 점검하는 논문 세 편이 나왔습니다. 가장 주목할 건 Event Burst Trigger인데, 이벤트 기반 스파이킹 신경망(뇌의 뉴런처럼 비동기 신호로 동작하는 신경망) 객체 탐지 모델에 정교한 이벤트 트리거를 학습 데이터에 몰래 심어두면, 실제 추론 시점에 이벤트가 한꺼번에 몰리는 상황을 유도해서 가짜 객체를 대량으로 만들어내고 시스템이 감당 못 할 정도로 연산이 부풀려지는 가용성 공격이 가능하다는 걸 처음 보여줍니다. EVAD는 조명이 바뀌거나 움직임이 빠를 때 일반 영상만으로는 놓치는 이상 행동을, 이벤트 스트림을 함께 써서 더 안정적으로 잡아내는 벤치마크를 만들어 견고성을 정면으로 다루고, Equivariant Filter는 이벤트 기반 이미지 추적의 정확도 자체를 등변 필터 설계로 끌어올립니다. 즉 데이터가 부족해서 개발이 느렸던 분야가 이제 막 파이프라인을 갖추자마자, 그 파이프라인을 실제 엣지 디바이스나 감시 시스템에 배포해도 안전한지를 묻는 단계로 곧바로 넘어갔다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 3편이 이벤트 카메라라는 같은 센서를 다루지만, 하나는 공격(취약점 노출), 둘은 방어적 견고성 개선이라 방향이 완전히 같지는 않음. 공통 벤치마크도 없음</small></td>
+  <td>랩이 이벤트 기반 이미징 파이프라인을 실제 배포 단계로 가져가기 전에, Event Burst Trigger가 보인 가용성 공격 패턴(이벤트 폭주 유도)이 랩이 쓰는 SNN 기반 후처리 모델에도 적용되는지 재현 실험으로 먼저 점검</td>
+</tr>
+<tr>
+  <td><strong>Lensless/Coded Imaging·Fourier Ptychography·Meta-Optics 세 핵심 버킷이 사실상 전멸</strong><span class=pill>COLD</span></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.09265" target=_blank>Co-design approach to aperture masking for imaging through atmospheric turbulence</a> (eess.SP)
+  </td>
+  <td>오늘 arXiv/저널을 통틀어 Fourier Ptychography/Microscopy와 Meta-Optics/Diffractive는 정확히 0편이고, Lensless/Coded Imaging도 실제 이미징 신호로 볼 만한 건 이 논문 한 편뿐입니다. 이 논문은 지상 망원경이 대기 난류 때문에 흐려지는 상을 코딩된 조리개 마스크(aperture masking interferometry)로 보정하는 문제를, 마스크를 미리 최적화하는 광학/디지털 공동 설계(co-design) 방식으로 풉니다. 실제 이미지를 매번 복원하지 않고도 복원 오차를 마스크 함수만으로 미리 계산할 수 있게 만들어서 최적화 비용을 크게 줄인다는 점이 핵심입니다. 랩 핵심 버킷 세 개가 동시에 텅 빈 날은 이번 주 들어 흔치 않은 일이라, 단순히 arXiv 공백이 이어지는 정도를 넘어 이번 주 초반 신호 자체가 유독 약하다는 신호로 봐야 합니다.</td>
+  <td>Low<br><small>Lensless/Coded Imaging 유일한 신호가 이미징 응용이 아니라 천문 관측 최적화 논문 한 편뿐이고, 나머지 두 버킷은 완전한 공백이라 클러스터라기보다 "관찰 중" 항목에 가까움</small></td>
+  <td>이번 주 남은 평일 daily에서 세 버킷의 공백이 계속되면, 저널 쿼리 문구('Fourier ptychography', 'metasurface optics')가 최근 실제 발행 트렌드와 맞는지 재점검하고, 필요하면 'computational imaging metasurface', 'coded aperture microscopy' 같은 보조 쿼리 추가를 검토</td>
+</tr>
+</tbody>
+</table>
+<p><small>※ 오늘 Phase Imaging/Holography 버킷 2편(OAM 홀로그래픽 MIMO 통신, 조리개 마스킹)은 각각 통신 하드웨어와 위 클러스터 표에 이미 포함한 논문이라 별도 클러스터로 만들지 않았습니다. 기본 목표인 5행 대신 보조 클러스터 근거 부족으로 3행만 표시합니다 — Fourier Ptychography/Microscopy·Meta-Optics/Diffractive가 0편이고 Virtual Staining/Pathology 20편이 전부 키워드 우연 매칭이라, 2편 이상 연결되는 진짜 신호가 오늘은 이 세 클러스터 밖에 없었습니다.</small></p>
+
+<h3>🔎 도메인 Watch Lens — 묻히기 쉬운 핵심 신호</h3>
+<p>랩 핵심 ROI인 Lensless/Coded Imaging(1편), Virtual Staining/Pathology(20편), Light-Field/Novel Sensors(3편), Meta-Optics/Diffractive(0편)를 다시 훑었습니다. Lensless/Coded Imaging의 유일한 논문(대기 난류 조리개 마스킹)은 위 클러스터 표에 이미 포함했고, 천문 관측이라는 응용 도메인이지만 코딩된 조리개 설계라는 방법론 자체는 랩 핵심 버킷과 정확히 일치합니다. Virtual Staining/Pathology 20편 중 실제 병리·염색 이미징 신호는 0편이고 전부 대형 언어모델 자원 효율, 유전자 발현 예측, MRI-가속기 하이브리드 장비, 미국 세금 정책, 그린 물류 관리처럼 "staining"·"virtual"·"pathology" 단어만 우연히 겹치는 false positive입니다. 지난 며칠과 비교해도 오늘은 유독 병리 영상 관련 진짜 신호가 전무합니다. Light-Field/Novel Sensors 3편은 모두 이벤트 카메라 관련(Equivariant Filter, EVAD, Event Burst Trigger)으로 위 클러스터 표에서 이미 다뤘습니다. Meta-Optics/Diffractive는 오늘 0편으로, 지난주 금요일 17편(대부분 안테나·레이더 응용)에서 완전한 공백으로 떨어졌습니다 — 저널 쿼리 자체가 오늘 계산광학과 무관한 분야로 쏠린 영향이 커 보이지만, 광학 역설계 관련 논문이 arXiv에도 전혀 없었다는 점은 별개로 짚어둘 필요가 있습니다. Lab action: 다음 실행에서 Meta-Optics·Fourier Ptychography 공백이 이틀 연속 이어지면, 저널 쿼리 문구를 점검하고 'optical inverse design', 'metalens imaging' 같은 이미징 특화 보조 쿼리 추가를 검토.</p>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<p><strong>공통 키워드:</strong> feed-forward 3D reconstruction, geometric foundation models, event-based robustness, reflective surface reconstruction (Gaussian Splatting)</p>
+<p><strong>arXiv 전용 신호</strong>(방법 중심, abstract 확보): Glob3R/DGSfM(전역 SfM 스케일·드리프트 보정), Co-VGGT(기하 파운데이션 모델 내부 진단), StereoSplat+(스테레오 한 쌍 causal 재구성), Event Burst Trigger/EVAD/Equivariant Filter(이벤트 카메라 안전성·견고성), 대기 난류 조리개 마스킹 co-design</p>
+<p><strong>저널 전용 신호</strong>(응용 중심, abstract 미확보 다수): PGSR-DR(반사면 재구성, 평면 기반 Gaussian + deferred rendering), OCTA 기반 당뇨망막증 관류 평가 2편(임상 진단, 재구성 방법론과 무관), 임상 CT/파노라마 방사선 진단 다수</p>
+<p>오늘은 arXiv 쪽이 feed-forward 3D 재구성/기하 파운데이션 모델의 내부 신뢰도 진단과 이벤트 카메라 안전성 검증에 집중됐고, 저널 쪽은 그에 대응할 만한 뚜렷한 응용 신호가 거의 없었습니다. 유일한 저널 방법론 신호(PGSR-DR)조차 abstract가 확보되지 않아 제목만으로 판단해야 합니다. 지난주까지 저널이 꾸준히 채워주던 홀로그래피·QPI 정량 측정 신호가 오늘은 완전히 끊겼다는 점이, arXiv/저널 대비에서 가장 눈에 띄는 변화입니다.</p>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. Feed-forward 3D 재구성 연구가 "어디에 쓸까"에서 "왜 흔들리는가"로 방향을 틀었다</h3>
+  <p>지난주 후반까지 feed-forward 3D 재구성은 수술실, 수중, 파노라마 같은 새로운 촬영 환경에 얼마나 잘 적용되는지를 주로 검증했습니다. 오늘 나온 네 편은 그 방법 자체의 내부를 열어봅니다. VGGT라는 대표적인 3D 기하 파운데이션 모델의 특정 층이 이미 "두 이미지가 겹쳐 찍혔는지"를 스스로 판단하고 있다는 걸 찾아낸 Co-VGGT, 긴 시퀀스로 확장할 때 스케일이 어긋나고 오차가 쌓이는 문제를 깊이 정보와 전역 번들 조정으로 바로잡는 Glob3R·DGSfM, 그리고 입력을 스테레오 한 쌍까지 줄여도 되게 만드는 StereoSplat+까지, 모두 "이 방법이 왜 실패하고 어디를 고치면 더 안정적인가"를 파고듭니다. 즉 이 방법론이 넓은 적용 범위를 확인하는 단계를 지나, 이제는 안쪽부터 신뢰도를 다지는 단계로 넘어가고 있다는 뜻입니다. 랩이 이 방법을 실제 파이프라인에 들여올 때는 "어디에 쓸 수 있는가"보다 "어느 조건에서 스케일이 틀어지고 어떻게 보정하는가"를 먼저 참고해야 할 시점입니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 저자군 4편이 서로 다른 내부 문제를 다루면서도 같은 VGGT류 feed-forward 기하 파운데이션 모델 기반을 공유. [해부분석] [방법전환]. 랩 3D 재구성 파이프라인 신뢰도 진단에 바로 참고 가능</p>
+</div>
+
+<div class=ins>
+  <h3>2. 이벤트 카메라 파이프라인이 갖춰지자마자 안전성 취약점이 먼저 드러났다</h3>
+  <p>지난주 금요일 이벤트 카메라 연구는 시뮬레이터·응용·복원까지 파이프라인 전 구간이 한꺼번에 채워진 확장의 날이었습니다. 그런데 채워지자마자 곧바로 나온 게 "이 파이프라인을 믿고 배포해도 되는가"를 묻는 논문들입니다. 특히 Event Burst Trigger는 이벤트 기반 스파이킹 신경망 객체 탐지 모델에 정교한 이벤트 트리거를 학습 데이터에 심어두면, 실제 사용 시점에 이벤트가 한꺼번에 몰리는 상황을 유도해서 시스템이 감당 못 할 정도로 연산 부하를 부풀리는 가용성 공격이 가능하다는 걸 처음 보여줬습니다. 데이터가 부족해서 느리게 발전하던 분야가 파이프라인을 갖추자마자 곧바로 보안 취약점이 지적됐다는 건, 이 분야가 연구 단계를 넘어 실제 엣지 디바이스나 감시 시스템 배포를 염두에 두기 시작했다는 방증이기도 합니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 저자군 3편이 이벤트 카메라를 다루지만 하나는 공격, 둘은 방어적 견고성이라 방향이 완전히 일치하지는 않고 공통 벤치마크도 없음. [경고신호] [평가축]. 랩 이벤트 기반 파이프라인을 배포 전 재현 검증할 때 참고 가능</p>
+</div>
+
+<div class=ins>
+  <h3>3. 랩 핵심 계산광학 세 버킷(Ptychography·Meta-Optics·Lensless)이 오늘 동시에 전멸에 가까웠다</h3>
+  <p>Fourier Ptychography/Microscopy와 Meta-Optics/Diffractive는 오늘 arXiv·저널을 통틀어 정확히 0편이었고, Lensless/Coded Imaging도 이미징 응용으로 볼 만한 신호는 대기 난류 관측용 조리개 마스킹 논문 한 편뿐이었습니다. 지난주까지는 최소한 저널에서 홀로그래피·QPI 정량 측정 신호가 꾸준히 나왔는데, 오늘은 그마저도 끊겼습니다. 저널 수집 자체가 오늘 유독 교육학·농업·법학처럼 계산광학과 무관한 분야로 쏠린 영향이 커 보이지만, 이 정도로 세 버킷이 한꺼번에 비는 건 최근 며칠과 비교해도 이례적이라 앞으로 며칠간 이 공백이 이어지는지 지켜볼 필요가 있습니다.</p>
+  <p class=conf-note>Confidence: Low — 단일 실행일의 관찰이라 저널 쿼리 결과의 일시적 편중인지, 실제 연구 흐름의 공백인지 구분하려면 며칠 더 지켜봐야 함. [경고신호]. 랩 저널 쿼리 문구 점검의 트리거로 참고</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+<ol>
+  <li>
+    <strong>Co-VGGT의 layer-wise co-visibility probing을 랩 feed-forward 3D 파이프라인에 이식</strong><br>
+    VGGT류 백본의 특정 층이 이미 이미지 쌍의 겹침 여부를 암묵적으로 인코딩한다는 발견이, 랩이 쓰는 feed-forward 재구성 백본에서도 재현되는지 확인하고 view selection/outlier filtering에 활용합니다.<br>
+    <em>실행 1주차:</em> Co-VGGT 공개 코드 clone 및 재현 환경 구축 → 랩 보유 feed-forward 백본(또는 VGGT 자체)에 동일한 layer probing 적용 → 랩 비정형 촬영 데이터셋에서 co-visibility 판단 정확도와 기존 heuristic 방식(feature matching 기반) 비교 → 개선폭이 확인되면 랩 view selection 파이프라인에 통합 검토
+  </li>
+  <li>
+    <strong>DGSfM/Glob3R의 스케일 보정 구조를 랩 장시퀀스 촬영 데이터에 시험</strong><br>
+    긴 시퀀스나 대규모 이미지 집합에서 스케일이 어긋나고 오차가 누적되는 문제를 단안 깊이 정보로 바로잡는 구조가, 랩이 다루는 장시퀀스 스파스뷰 촬영에서도 통하는지 확인합니다.<br>
+    <em>실행 1주차:</em> DGSfM/Glob3R 공개 코드 확보 → 랩 보유 장시퀀스 촬영 데이터셋(있다면 산란/왜곡 조건 포함) 선별 → 기존 classical SfM 및 feed-forward baseline 대비 포즈 정확도·스케일 일관성 비교 → 개선이 확인되면 랩 표준 파이프라인 전처리 단계로 통합 검토
+  </li>
+  <li>
+    <strong>Event Burst Trigger의 가용성 공격 패턴을 랩 이벤트 기반 후처리 모델에 재현</strong><br>
+    이벤트 폭주를 유도해 연산 부하를 부풀리는 백도어 공격이, 랩이 이벤트 기반 이미징에 쓰는 후처리 모델(특히 SNN 기반이라면)에도 통하는지 확인해 배포 전 취약점을 점검합니다.<br>
+    <em>실행 1주차:</em> Event Burst Trigger 논문의 트리거 설계 방식 문서화(본문 확인) → 랩 이벤트 기반 모델에 유사한 합성 트리거 삽입 실험 환경 구축 → 정상 입력 대비 연산 비용·지연시간 증가폭 측정 → 취약점이 확인되면 방어 기법(이벤트 레이트 제한, 이상 탐지) 검토
+  </li>
+</ol>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘 발행된 주간 회고(2026-28주차)가 이번 주(07-13~07-17)에 대해 내놓은 예측 3개를 하루 치 신호로 가볍게 점검합니다. 예측 발효 첫날이라 대부분은 아직 이르지만, 관련성이 보이는 부분은 짚어둡니다.</p>
+<ul>
+<li><strong>① Feed-forward 3D 재구성의 새 도메인 확장</strong> (항공/위성, 야간·저조도, 내시경 이외 의료 영상으로 확장될지) — ⏳ 아직 이르다. 오늘 나온 feed-forward 3D 재구성 논문 4편(Glob3R, DGSfM, Co-VGGT, StereoSplat+)은 모두 새 도메인 적용이 아니라 방법 내부 진단·보정에 집중돼 있어서, 이 예측이 겨냥한 "새 도메인 확장"과는 결이 다른 방향입니다. 오히려 오늘 신호는 확산보다 내실 다지기 쪽이라, 예측이 그리는 그림과는 다른 하루였습니다. 다음 며칠 새 도메인 적용 논문이 나오는지 계속 지켜볼 필요가 있습니다.</li>
+<li><strong>② 메타표면 저널 이미징 역설계 공백 해소 여부</strong> — ⏳ 아직 이르다. 오히려 오늘은 Meta-Optics/Diffractive가 지난주 금요일 17편에서 0편으로 떨어져 공백이 더 깊어졌습니다. 6영업일째 이어진 공백에 하루가 더해진 셈이라, 이번 주 안에 해소되려면 앞으로 나머지 평일에 최소 1편이 나와야 합니다.</li>
+<li><strong>③ ImagingBench 후속 논문 등장</strong> (agentic AI/VLM을 물리 기반 계산영상 역문제에 적용하거나 벤치마크를 확장하는 논문) — ⏳ 아직 이르다. 오늘 arXiv/저널 어디에서도 ImagingBench를 직접 언급하거나 유사한 agentic AI 계산영상 평가를 다루는 논문은 발견되지 않았습니다. 새 벤치마크 후속 논문은 보통 1~2주 내 등장하는 패턴이 있으니, 이번 주 나머지 평일을 계속 지켜봐야 합니다.</li>
+</ul>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p>※ 막대 너비는 catch-all Deep Learning Methods 버킷을 제외한 최댓값(Deep Learning Methods 제외 시 Virtual Staining/Pathology 20편)을 100%로 정규화. arXiv(new+cross, abstract 기준) + 저널 합산.</p>
+<div>
+  <div class=bucket-bar><span class=nm>🔭 Fourier Ptychography/Microscopy</span><div class=bar><div class=fill style="width:0%"></div></div><span class=n>0</span></div>
+  <div class=bucket-bar><span class=nm>📷 Lensless/Coded Imaging</span><div class=bar><div class=fill style="width:5%"></div></div><span class=n>1</span></div>
+  <div class=bucket-bar><span class=nm>🌊 Phase Imaging/Holography</span><div class=bar><div class=fill style="width:10%"></div></div><span class=n>2</span></div>
+  <div class=bucket-bar><span class=nm>🔬 Meta-Optics/Diffractive</span><div class=bar><div class=fill style="width:0%"></div></div><span class=n>0</span></div>
+  <div class=bucket-bar><span class=nm>💡 Light-Field/Novel Sensors</span><div class=bar><div class=fill style="width:15%"></div></div><span class=n>3</span></div>
+  <div class=bucket-bar><span class=nm>🧊 Tomography/3D Imaging</span><div class=bar><div class=fill style="width:50%"></div></div><span class=n>10</span></div>
+  <div class=bucket-bar><span class=nm>🧬 Virtual Staining/Pathology</span><div class=bar><div class=fill style="width:100%"></div></div><span class=n>20</span></div>
+  <div class=bucket-bar><span class=nm>⚙️ Reconstruction/Inverse Problems</span><div class=bar><div class=fill style="width:60%"></div></div><span class=n>12</span></div>
+  <div class=bucket-bar><span class=nm>🤖 Deep Learning Methods (catch-all)</span><div class=bar><div class=fill style="width:100%"></div></div><span class=n>72</span></div>
+</div>
+<p><small>🔥 TOP3: Deep Learning Methods(72, catch-all) · Virtual Staining/Pathology(20) · Deep Learning 제외 시 Reconstruction/Inverse Problems(12)  ❄️ BOTTOM2: Fourier Ptychography/Microscopy(0) · Meta-Optics/Diffractive(0)</small></p>
+<p>※ Virtual Staining/Pathology 20편은 위 도메인 Watch Lens에서 짚었듯 실제 병리·염색 이미징 신호가 0편이고 전부 키워드 우연 매칭(LLM 자원 효율, 유전자 발현 예측, 세금 정책 등)입니다. Reconstruction/Inverse Problems 12편도 실제 계산영상 역문제와 겹치는 건 HemoPIC(뇌 관류 물리 기반 디지털 트윈) 정도이고 나머지는 지식 증류, 연속학습, 강화학습 이론입니다. Tomography/3D Imaging 10편 중 실제 재구성 방법론 신호는 위 클러스터 표에 담은 기하 파운데이션 모델 계열 논문들이고, 저널 5편은 관상동맥·안저·구강악안면 임상 진단이 대부분입니다.</p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<div class=roi-item>
+  <strong>📷 Lensless/Coded Imaging</strong> (1편: SP 1)<br>
+  ▸ <a href="https://arxiv.org/abs/2607.09265" target=_blank>Co-design approach to aperture masking for imaging through atmospheric turbulence</a> (eess.SP) — 대기 난류를 뚫고 촬영하기 위한 조리개 마스크를 광학/디지털 공동 설계로 최적화, 이미지를 매번 복원하지 않고도 복원 오차를 마스크 함수로 미리 계산해 최적화 비용을 줄임
+</div>
+
+<div class=roi-item>
+  <strong>🌊 Phase Imaging/Holography</strong> (2편: SP 2)<br>
+  ▸ <a href="https://arxiv.org/abs/2607.09265" target=_blank>Co-design approach to aperture masking for imaging through atmospheric turbulence</a> (eess.SP) — 위 Lensless/Coded Imaging과 중복 배정. 아래 부록에서는 한 번만 다룸<br>
+  ▸ <a href="https://arxiv.org/abs/2607.09479" target=_blank>OAM-Enabled Holographic MIMO Communications with Stacked Intelligent Metasurfaces</a> (eess.SP) — "holographic" 키워드만 겹치는 통신 하드웨어(다중 안테나 무선 통신) 논문, 이미징과 무관한 false positive
+</div>
+
+<div class=roi-item>
+  <strong>💡 Light-Field/Novel Sensors</strong> (3편: CV 3)<br>
+  ▸ <a href="https://arxiv.org/abs/2607.09115" target=_blank>Event Burst Trigger: An Availability Backdoor Attack on Event-Based SNN Object Detection</a> (cs.CV) — Tier A. 이벤트 기반 스파이킹 신경망 탐지 모델에 이벤트 폭주를 유도하는 가용성 백도어 공격을 처음 제시<br>
+  ▸ <a href="https://arxiv.org/abs/2607.09114" target=_blank>Event Stream based Multi-Modal Video Anomaly Detection (EVAD)</a> (cs.CV) — 이벤트 스트림과 일반 영상을 함께 써서 조명 변화·빠른 움직임에서도 견고한 이상 탐지 벤치마크·데이터셋 구축<br>
+  ▸ <a href="https://arxiv.org/abs/2607.09103" target=_blank>Equivariant Filter for High Performance Image Tracking using an Event Camera</a> (cs.CV) — 등변 필터로 이벤트 카메라 기반 평면 이미지 추적 정확도 개선
+</div>
+
+<div class=roi-item>
+  <strong>🧊 Tomography/3D Imaging</strong> (10편: CV 5, JNL 5)<br>
+  ▸ <a href="https://arxiv.org/abs/2607.09503" target=_blank>What VGGT Knows About Overlap</a> (cs.CV) — Tier A. VGGT 내부 층이 co-visibility를 암묵적으로 인코딩한다는 걸 찾아내 경량 헤드로 뽑아 씀<br>
+  ▸ <a href="https://arxiv.org/abs/2607.09225" target=_blank>Glob3R: Global Structure-from-Motion with 3D Foundation Models</a> (cs.CV) — 3D 파운데이션 모델의 장시퀀스 드리프트·스케일 불일치를 전역 번들 조정으로 보정<br>
+  ▸ <a href="https://arxiv.org/abs/2607.09507" target=_blank>DGSfM: Depth-Guided Scale-Aware Global Structure-from-Motion</a> (cs.CV) — 단안 깊이 정보로 스케일 모호한 에피폴라 기하 문제를 바로잡는 전역 SfM 파이프라인<br>
+  ▸ <a href="https://doi.org/10.1007/s00371-026-04610-y" target=_blank>PGSR-DR: high-fidelity reflective surface reconstruction with planar-based Gaussians and deferred rendering</a> [JNL] — 평면 기반 Gaussian과 지연 렌더링으로 반사면 3D 재구성 품질 개선, abstract 미확보로 본문 확인 필요
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<p>오늘 abstract가 확보된 논문 중 정량 수치가 명확히 제시된 건 1건입니다.</p>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>결과</th><th>논문</th></tr></thead>
+<tbody>
+<tr><td>TUM-RGBD 온라인 Gaussian Splatting SLAM</td><td>PSNR/SSIM/LPIPS 개선폭</td><td>+11.7% PSNR, +7.8% SSIM, -21.6% LPIPS (자체 데이터셋은 +14.5%/+8.6%/-14.3%)</td><td><a href="https://arxiv.org/abs/2607.09260" target=_blank>AnythingReality</a></td></tr>
+</tbody>
+</table>
+<p><small>※ Co-VGGT(Co-VisiON 벤치마크에서 사람 기준 상회, pairwise 25% 이상·multiview 10% 이상 개선, ECE=0.030)와 Event Burst Trigger(연산 비용 부풀림 정량화)도 abstract에 구체적 수치가 있었지만, 두 논문 모두 baseline 대비 상대 개선폭 표기가 벤치마크마다 달라 표 형식에 억지로 맞추기보다 위 클러스터 표·인사이트 본문에서 서술했습니다. DGSfM·Glob3R·StereoSplat+는 abstract에 정성적 개선(포즈 정확도 향상, 렌더링 품질 향상)만 언급하고 baseline 대비 정확한 수치는 본문 확인이 필요해 표에는 포함하지 않았습니다.</small></p>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>오늘 뚜렷한 크로스오버 페어는 없습니다. 다만 Co-VGGT(co-visibility를 내부 층에서 뽑아내는 방법)와 DGSfM/Glob3R(전역 최적화로 스케일·드리프트를 보정하는 방법)을 이어 붙이면, Co-VGGT가 만든 신뢰도 높은 visibility graph를 DGSfM/Glob3R의 view-graph filtering 단계에 그대로 edge weight로 넣어 전역 SfM 파이프라인 전체의 견고성을 함께 높이는 조합 실험이 가능해 보입니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>Tier A — What VGGT Knows About Overlap: Probing Geometric Foundation Models for Co-Visibility [해부분석] [방법전환]</h3>
+  <p><a href="https://arxiv.org/abs/2607.09503" target=_blank>arXiv:2607.09503</a> · cs.CV</p>
+  <p><strong>왜 A급인가:</strong> 3D 재구성이나 로봇 위치 추정에서 근본적인 문제 중 하나는 co-visibility, 즉 두 이미지가 실제로 같은 장면을 겹쳐 찍었는지를 판단하는 일입니다. 특히 겹치는 부분이 거의 없는 상황에서는 이 판단이 훨씬 어려워집니다. 이 논문은 VGGT라는 대표적인 3D 기하 파운데이션 모델을 별도의 co-visibility 지도 학습 없이도 열어봤더니, 초기 층은 3D를 인식하는 장면 표현을 만들고 후반 층은 사실상 co-visibility를 전담해서 판단하는 역할로 이미 특화돼 있다는 걸 발견했습니다. 특히 17번째 층은 겹치지 않는 이미지 쌍을 일관되게 걸러내는 "부정 앵커" 역할을 한다는 것도 확인했습니다. 이 발견을 바탕으로 VGGT를 얼려두고 층별로 특화된 전문가처럼 다루는 가벼운 mixture-of-experts 헤드(750만 파라미터 미만)만 학습시킨 Co-VGGT를 제안했는데, Co-VisiON 벤치마크에서 사람이 직접 라벨링한 기준보다 더 높은 성능을 냈고 기존 방법 대비 pairwise 판단은 25% 이상, multiview 판단은 10% 이상 개선됐습니다. 예측 신뢰도도 잘 보정돼 있어서(ECE=0.030) 후처리 보정 없이 바로 visibility graph의 edge weight로 쓸 수 있다고 저자들은 밝힙니다. 랩에 중요한 이유는 두 가지입니다. 첫째, 랩이 쓰는 feed-forward 3D 재구성 파이프라인에도 같은 종류의 내부 특화 구조가 숨어 있을 가능성이 높고, 이를 찾아내면 새 헤드를 얹는 것만으로 view selection이나 outlier 필터링 성능을 끌어올릴 수 있습니다. 둘째, "모델을 더 키우거나 다시 학습시키지 않고도 이미 배운 내부 표현을 다시 읽어내기만 해도 새 능력을 뽑아낼 수 있다"는 방법론 자체가, 랩이 보유한 다른 사전학습 모델에도 적용할 수 있는 일반적인 접근입니다.</p>
+  <p><strong>약점:</strong> 이 발견이 VGGT라는 특정 백본에 국한된 현상인지, 다른 3D 기하 파운데이션 모델에서도 비슷한 층별 특화가 나타나는지는 abstract만으로는 확인하기 어렵습니다. 또한 17번째 층이라는 구체적 위치가 모델 크기나 학습 데이터가 달라지면 이동할 수 있는지, 그리고 co-visibility가 거의 0에 가까운 극단적으로 겹치지 않는 이미지 쌍에서도 이 방법이 계속 안정적인지는 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>Fourier Ptychography/Microscopy·Meta-Optics/Diffractive 두 버킷 0편</strong> [Dataset risk] 오늘 저널 쿼리 결과가 유독 계산광학과 무관한 분야(교육학, 농업, 법학)로 쏠린 영향이 커서, 이 공백을 곧바로 "계산광학 연구가 줄었다"는 트렌드로 해석하면 과도합니다. 며칠 더 지켜봐야 합니다.</p>
+  <p><strong>Virtual Staining/Pathology 버킷 20편</strong> [Metric risk] 실제 병리·염색 이미징 신호가 0편이고 전부 키워드 우연 매칭입니다. 편수를 그대로 병리 영상 트렌드로 읽으면 완전히 잘못된 해석입니다.</p>
+  <p><strong>feed-forward 3D 재구성 내부 진단 4편</strong> [Baseline risk] Glob3R·DGSfM·StereoSplat+가 제시하는 개선폭이 각 논문이 직접 고른 벤치마크(ETH3D, IMC2021, KITTI-360 등) 기준이라, 서로 다른 논문 간 수치를 직접 비교하기는 어렵습니다.</p>
+  <p><strong>Event Burst Trigger</strong> [Deployment risk] abstract 수준에서는 공격이 가능하다는 것만 확인되고, 실제 방어 기법의 효과나 공격 탐지 난이도는 본문 확인이 필요합니다. 랩이 이벤트 기반 시스템을 배포할 계획이라면 이 공격 벡터를 먼저 점검할 필요가 있습니다.</p>
+  <p><strong>Co-VGGT의 Co-VisiON 벤치마크 결과</strong> [Claim risk] "사람 기준을 상회"라는 표현이 abstract 수준 요약이라, 사람 라벨링 기준이 어떻게 수집됐는지와 테스트셋 구성은 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Virtual Staining/Pathology 버킷 20편 전부(LLM 자원 효율, 유전자 발현 예측, MRI-가속기 하이브리드 장비, 세금 정책, 그린 물류 등)</strong> — 키워드만 겹칠 뿐 계산광학·병리 이미징과 무관합니다.</li>
+    <li><strong>Reconstruction/Inverse Problems 버킷 내 일반 이론 논문 다수(지식 증류, 연속학습, 오프라인 강화학습, 그래프 정규화 행렬 완성 등)</strong> — 역문제라는 방법론만 겹칠 뿐 계산영상 재구성과 무관합니다.</li>
+    <li><strong>Phase Imaging/Holography 버킷 내 OAM 홀로그래픽 MIMO 통신 논문</strong> — "holographic" 키워드만 겹치는 무선 통신 하드웨어 논문이라 이미징과 무관합니다.</li>
+    <li><strong>Tomography/3D Imaging 버킷 내 저널 임상 진단 논문 다수(급성 충수염 진단, 당뇨망막증 OCTA 관류 평가, 하악 매복치 방사선 평가 등)</strong> — 영상 재구성 자체보다 임상 진단이 목적이라 랩 ROI(재구성·역문제)와 거리가 있습니다.</li>
+  </ul>
+</div>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Feed-forward 3D 재구성 — 새 도메인에서 모델 내부 진단·보정으로</h3>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.09503" target=_blank>What VGGT Knows About Overlap: Probing Geometric Foundation Models for Co-Visibility</a></strong> <span class=pill>CV</span> [해부분석] [방법전환] <em>Must-read</em><br>
+- 문제: 3D 재구성·로봇 위치 추정에서 두 이미지가 실제로 겹쳐 찍혔는지(co-visibility) 판단하기 어려움, 특히 겹침이 적을 때<br>
+- 방법: VGGT 내부 층을 프로빙해 특정 층(17번째)이 이미 co-visibility 판단을 전담한다는 걸 찾아내고, 이를 이용한 경량 mixture-of-experts 헤드(Co-VGGT)로 뽑아냄<br>
+- 의미: 모델을 다시 학습시키지 않고도 이미 학습된 내부 표현을 재해석해 새 능력을 뽑아내는 접근<br>
+- 근거: Co-VisiON 벤치마크에서 사람 기준 상회, pairwise 25%↑·multiview 10%↑ 개선, ECE=0.030으로 잘 보정됨, 코드·데이터 공개<br>
+- 주의: 다른 백본으로의 일반화, 극단적 저겹침 상황에서의 안정성은 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.09225" target=_blank>Glob3R: Global Structure-from-Motion with 3D Foundation Models</a></strong> <span class=pill>CV</span> [방법전환] <em>Read</em><br>
+- 문제: VGGT류 3D 파운데이션 모델을 긴 시퀀스·대규모 이미지 집합으로 확장하면 청크 단위 처리 때문에 드리프트와 스케일 불일치 발생<br>
+- 방법: 조밀한 이미지 워프를 sparse feature track으로 변환해 correspondence 제약을 만들고, 키프레임 기반 슬라이딩 윈도우로 전역 motion averaging·번들 조정 수행<br>
+- 의미: feed-forward 파운데이션 모델 예측을 explicit하게 재최적화해 classical SfM보다 강건하면서 feed-forward 속도 이점도 유지<br>
+- 근거: 실내외·대규모 주행·비정형 SfM 벤치마크에서 feed-forward baseline과 최근 확장형 방법 대비 일관된 개선<br>
+- 주의: 정확한 정량 수치는 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.09507" target=_blank>DGSfM: Depth-Guided Scale-Aware Global Structure-from-Motion</a></strong> <span class=pill>CV</span> [방법전환] <em>Read</em><br>
+- 문제: 전역 SfM이 스케일 모호한 에피폴라 기하에 의존해 잡음 섞인 baseline이나 시각적으로 헷갈리는 이미지 쌍에서 성능 저하<br>
+- 방법: 단안 깊이 맵을 스케일 인식 사전 정보로 써서 에피폴라 제약을 스케일 인식 상대 포즈 제약으로 변환, view-graph filtering과 깊이 일관성 기반 correspondence pruning 추가<br>
+- 의미: 파운데이션 모델의 깊이 추정을 explicit multi-view 최적화와 결합해 전역 SfM의 약점을 보완<br>
+- 근거: ETH3D·IMC2021에서 강력한 전역 SfM baseline 대비 포즈 정확도 상당폭 개선, 코드 공개<br>
+- 주의: sparse/dense matching front-end별 세부 성능차는 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.08808" target=_blank>StereoSplat+: Feed-Forward Stereo Gaussian Splatting with Diffusion-Assisted Progressive Inference</a></strong> <span class=pill>CV</span> [방법전환] <em>Read</em><br>
+- 문제: 대부분의 3DGS 파이프라인이 다중 뷰나 미래 프레임 접근을 필요로 해, 온디바이스 로봇·AR처럼 스테레오 한 쌍만 쓸 수 있는 상황에서는 가림·시야 제한으로 재구성이 어려움<br>
+- 방법: 코스트 볼륨과 triplane 3D 볼륨을 결합한 feed-forward Gaussian 추정기(StereoSplat)에, 예측된 3DGS에서 새 뷰를 렌더링해 diffusion으로 정제하고 다시 입력으로 넣는 점진적 추론(StereoSplat+) 결합<br>
+- 의미: 입력을 스테레오 한 쌍까지 극단적으로 줄이면서도 causal하게(미래를 미리 보지 않고) 재구성 가능<br>
+- 근거: KITTI-360에서 가림 영역·강한 시야 외삽에서 최근 feed-forward 3DGS baseline 대비 렌더링 품질·기하 정확도 개선<br>
+- 주의: 구체적 정량 지표는 본문 확인 필요
+</div>
+
+<h3>이벤트 카메라 — 파이프라인 확장에서 안전성 점검으로</h3>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.09115" target=_blank>Event Burst Trigger: An Availability Backdoor Attack on Event-Based SNN Object Detection</a></strong> <span class=pill>CV</span> [경고신호] <em>Must-read</em><br>
+- 문제: 이벤트 기반 스파이킹 신경망(SNN) 객체 탐지 모델의 가용성 백도어 공격 취약점이 충분히 연구되지 않음<br>
+- 방법: 정교하게 설계된 이벤트 트리거를 학습 데이터에 심어, 추론 시 시간적으로 밀집된 이벤트 폭주를 유도해 가짜 객체 후보를 늘리고 연산 비용을 부풀림<br>
+- 의미: 엣지 디바이스에 배포되는 이벤트 기반 저지연 시스템의 새로운 보안 위협을 처음 정의<br>
+- 주의: 실제 방어 기법의 효과, 공격 탐지 난이도는 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.09114" target=_blank>Event Stream based Multi-Modal Video Anomaly Detection: A Benchmark Dataset and Algorithms</a></strong> <span class=pill>CV</span> [인프라] [평가축] <em>Read</em><br>
+- 문제: 일반 영상만으로는 조명 변화·빠른 움직임·복잡한 배경에서 이상 행동 탐지가 취약함<br>
+- 방법: 이벤트 스트림과 일반 영상을 함께 쓰는 이벤트 강화 이상 탐지 프레임워크(EVAD)와 대규모 벤치마크·데이터셋 구축<br>
+- 의미: 이벤트 카메라의 견고성을 실제 감시 응용 시나리오에서 정량 검증<br>
+- 주의: 구체적 성능 수치는 본문 확인 필요
+</div>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.09103" target=_blank>Equivariant Filter for High Performance Image Tracking using an Event Camera</a></strong> <span class=pill>CV</span> [방법전환] <em>Skim-only</em><br>
+- 문제: 이벤트 카메라 기반 평면 이미지 변환 추적의 정확도 개선 필요<br>
+- 방법: Asynchronous Event Blob 트래커로 특징점 위치를 뽑고 등변 필터(equivariant filter)로 affine 변환을 추정<br>
+- 의미: 자율주행·로봇 제어에 쓰이는 이벤트 기반 추적의 기초 알고리즘 개선<br>
+- 주의: 정량 성능 비교는 본문 확인 필요
+</div>
+
+<h3>Lensless/Coded Imaging — 유일한 신호</h3>
+
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.09265" target=_blank>Co-design approach to aperture masking for imaging through atmospheric turbulence</a></strong> <span class=pill>SP</span> [방법전환] <em>Read</em><br>
+- 문제: 지상 망원경 촬영이 대기 난류로 흐려지는 문제를 조리개 마스킹 간섭법(aperture masking interferometry)으로 보정하려면 마스크 설계 최적화가 필요<br>
+- 방법: 실제 이미지를 매번 복원하지 않고도 복원 오차를 마스크 함수·관측 대상의 파워 스펙트럼·노이즈 수준의 함수로 표현해 광학/디지털 공동 설계로 최적화<br>
+- 의미: 코딩된 조리개 설계라는 방법론이 이미징 응용(천문 관측)에서 계산 비용을 크게 줄이며 실용화되는 사례<br>
+- 근거: 다중 프레임 myopic 알고리즘으로 관측 대상·피스톤·틸트를 동시 추정, 시뮬레이션으로 만족스러운 복원 확인<br>
+- 주의: 실제 망원경 실험 데이터에서의 검증 여부는 abstract에 명시되지 않아 본문 확인 필요
+</div>
+
+<h3>Deep Learning Methods(catch-all) — 계산영상 인접 신호만 발췌</h3>
+<p>이 버킷은 72편 중 절대다수가 일반 LLM·그래프학습·시계열·양자컴퓨팅 방법론이라 계산광학과 무관합니다. 그중 이미징에 인접한 신호만 추리면: <strong>Video Generation Models are General-Purpose Vision Learners</strong>(CV) — 비디오 생성 모델을 범용 비전 표현 학습기로 재해석, 랩이 다루는 표현학습 파이프라인에 참고 가능; <strong>PolarNet: enhanced polar-coordinate lane detection via feature fusion and geometry-aware adaptive weighting</strong>[JNL] — 극좌표 기반 기하 인식 특징 융합, 자율주행 인지 쪽이라 이미징 재구성과는 거리가 있음. 나머지는 Skim-only로 분류합니다.</p>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+<li>arXiv cs.LG: <a href="https://arxiv.org/list/cs.LG/recent" target=_blank>https://arxiv.org/list/cs.LG/recent</a></li>
+<li>arXiv cs.CV: <a href="https://arxiv.org/list/cs.CV/recent" target=_blank>https://arxiv.org/list/cs.CV/recent</a></li>
+<li>arXiv cs.AI: <a href="https://arxiv.org/list/cs.AI/recent" target=_blank>https://arxiv.org/list/cs.AI/recent</a></li>
+<li>arXiv eess.IV: <a href="https://arxiv.org/list/eess.IV/recent" target=_blank>https://arxiv.org/list/eess.IV/recent</a></li>
+<li>arXiv eess.SP: <a href="https://arxiv.org/list/eess.SP/recent" target=_blank>https://arxiv.org/list/eess.SP/recent</a></li>
+</ul>
+
+<footer>
+Imaging Intelligence Daily Briefing은 arXiv(cs.LG/cs.CV/cs.AI/eess.IV/eess.SP)와 Crossref/OpenAlex 저널 데이터를 매일 자동 수집·분류해 만듭니다. RSS: <a href="../feed.xml">feed.xml</a>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+</body>
+</html>
