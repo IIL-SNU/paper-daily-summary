@@ -1,0 +1,219 @@
+{
+  "date": "2026-07-13",
+  "iso_week": "2026-28",
+  "week_start": "2026-07-06",
+  "week_end": "2026-07-10",
+  "weekly_thesis": "지난주 초반(화요일)에는 3D 재구성이 얼마나 빠르고 가볍게 되는가가 중심이었는데, 주 후반(목~금)에는 그 결과를 얼마나 믿을 수 있고 실제 현장(수술실, 수중, 파노라마)에서도 버티는가로 무게중심이 옮겨갔습니다. 계산광학 핵심 주제(위상 영상, ptychography, 홀로그래피)는 이번 주도 arXiv가 아닌 저널에서만 움직였지만, 그 저널 신호들은 '일반화되는가'와 '정량 수치를 믿고 써도 되는가'라는 하나의 질문으로 수렴하기 시작했고, 목요일 ImagingBench는 이 질문 전체에 '아직 범용 AI로는 안 된다'는 첫 정량적 답을 냈습니다.",
+  "hot_vs_cold": {
+    "hot": [
+      {
+        "cluster": "Feed-forward 3D 재구성 — 속도에서 신뢰도로, 신뢰도에서 실전 환경으로",
+        "why": "화요일 포즈 없는 feed-forward/스트리밍 5편, 수-목요일 불확실성 정량화·아티팩트 제거·포즈 드리프트 강건성, 금요일 수술실·수중·동적 장면·파노라마 네 도메인 동시 검증까지 닷새 내내 이어진 가장 뚜렷한 흐름입니다.",
+        "papers": [
+          "https://arxiv.org/abs/2607.03612",
+          "https://arxiv.org/abs/2607.05522",
+          "https://arxiv.org/abs/2607.07168",
+          "https://arxiv.org/abs/2607.08408",
+          "https://arxiv.org/abs/2607.08772"
+        ]
+      },
+      {
+        "cluster": "계산광학 학습 복원이 '일반화·신뢰성 검증' 단계로",
+        "why": "ptychography/QPI/홀로그래피 저널 논문들이 월요일부터 금요일까지 반복적으로 '학습 때 못 본 조건에서도 되는가'와 '이 수치를 믿고 진단·계측에 써도 되는가'를 묻기 시작했습니다.",
+        "papers": [
+          "https://doi.org/10.1038/s41524-026-02198-4",
+          "https://doi.org/10.1002/lpor.71514",
+          "https://doi.org/10.1088/2515-7647/ae88a0"
+        ]
+      },
+      {
+        "cluster": "이벤트 카메라 파이프라인 — 데이터 생성부터 응용, 복원까지",
+        "why": "화요일에는 저전력 컴퓨팅과 실촬영 응용으로 갈라졌던 이벤트 카메라 연구가, 금요일에는 시뮬레이터(EVIS)·응용(TVTA)·복원(LongE2V)까지 전 구간을 하루 만에 채웠습니다.",
+        "papers": [
+          "https://arxiv.org/abs/2607.08098",
+          "https://arxiv.org/abs/2607.08236",
+          "https://arxiv.org/abs/2607.08770"
+        ]
+      }
+    ],
+    "cold": [
+      {
+        "cluster": "메타표면 저널의 이미징 역설계 공백 (6영업일째 지속)",
+        "why": "07-03부터 이번 주 금요일까지 메타표면 저널 논문 대부분이 안테나·6G·음향·양자 하드웨어에 쏠려 있고, 목요일에는 예외 신호조차 없었습니다. 수요일 RCPM/HoloSpec 정도가 유일한 예외였습니다."
+      },
+      {
+        "cluster": "Lensless/Coded Imaging arXiv 공백 (지난주 예측 실패)",
+        "why": "지난주 weekly에서 회복을 예측했지만 이번 주도 수·목요일 arXiv 신규가 0편이었고, 금요일 1편도 저널(코드화 조리개 홀로그래피)일 뿐 arXiv는 여전히 비어 있습니다."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "cluster": "Feed-forward 3D 재구성 — 속도에서 신뢰도로, 신뢰도에서 실전 환경 확장으로",
+      "papers": [
+        {"title": "SAF3R: Dynamic Sparse Attention for Feed-Forward 3D Reconstruction Transformers", "arxiv": "https://arxiv.org/abs/2607.03612", "importance_tags": ["[방법전환]"], "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Gaussian Splatting", "genus": "Feed-forward", "confidence": "Medium", "rationale": "화요일 backfill, title/subject 기준"}},
+        {"title": "Rendering-Aware Bayesian 3D Gaussian Splatting with Native Uncertainty and Adaptive Complexity Control", "arxiv": "https://arxiv.org/abs/2607.05522", "importance_tags": ["[방법전환]", "[평가축]"], "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Gaussian Splatting", "genus": "Uncertainty Quantification", "confidence": "High", "rationale": "Normal-Inverse-Wishart 사후분포로 불확실성을 명시적으로 추정"}},
+        {"title": "NoDrift3R: Raymap-Guided Coupling for Drift-Robust Unposed Feed-Forward 3D Reconstruction", "arxiv": "https://arxiv.org/abs/2607.07168", "importance_tags": ["[방법전환]"], "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Gaussian Splatting", "genus": "Pose Drift Robustness", "confidence": "Medium", "rationale": "raymap 기반 geometry-appearance 결합으로 장시퀀스 드리프트 완화"}},
+        {"title": "Track2Map: Online Deformable SLAM with Motion-Aware Pose Optimization in Robotic Surgery", "arxiv": "https://arxiv.org/abs/2607.08408", "importance_tags": ["[방법전환]", "[실사용전환]"], "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Gaussian Splatting", "genus": "Surgical SLAM without Pose Priors", "confidence": "High", "rationale": "StereoMIS 데이터셋에서 SOTA 대비 개선을 abstract에 명시"}},
+        {"title": "Wat3R: Underwater 3D Geometry Learning without Annotations", "arxiv": "https://arxiv.org/abs/2607.08772", "importance_tags": ["[방법전환]"], "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Domain Adaptation", "genus": "Underwater Geometry", "confidence": "High", "rationale": "Water3D 데이터셋 직접 구축, 수중 다시점 깊이추정 SOTA"}}
+      ],
+      "why": "화요일에는 카메라 포즈 사전 지식, 장면별 최적화, 무거운 연산이라는 3DGS의 세 전제를 깨는 feed-forward·스트리밍·경량화 논문 5편이 몰렸습니다. 수·목요일에는 그 결과를 얼마나 믿을 수 있는지가 중심이 됐는데, Bayesian 3DGS는 렌더링 사후분포로 기하 불확실성을 직접 추정했고 NoDrift3R은 긴 시퀀스에서 카메라 포즈가 누적으로 틀어지는 문제를 정면으로 다뤘습니다. 금요일에는 이 '빠르고 믿을 만한' 방법이 실제로 표준 촬영 가정이 깨지는 네 현장(카메라 궤적 없는 수술 내시경, 빛이 흩어지는 수중, 물체마다 다르게 움직이는 동적 장면, 360도 파노라마)에서 동시에 검증받았습니다. 속도 → 신뢰도 → 실전 검증이라는 사흘짜리 전개가 한 주 안에 완결됐다는 점에서, feed-forward 3D 재구성이 이제 연구실 벤치마크를 벗어나 실제 현장에 나갈 준비 단계에 들어섰다고 볼 수 있습니다.",
+      "confidence": "High",
+      "lab_action": "Track2Map/Wat3R의 '표준 촬영 가정 없이 3D 복원' 구조를 랩이 보유한 산란·왜곡이 있는 비정형 촬영 데이터에 재현해 포즈 사전 정보 유무에 따른 재구성 품질(PSNR/SSIM) 비교표 작성. Bayesian 3DGS의 불확실성 추정을 랩 sparse-view 재구성 파이프라인의 active view selection 판단 기준으로 시험 적용"
+    },
+    {
+      "cluster": "계산광학 학습 기반 위상/정량 복원이 '일반화·신뢰성 검증' 단계로 이동",
+      "papers": [
+        {"title": "Towards generalizable deep ptychography neural networks", "arxiv": "https://doi.org/10.1038/s41524-026-02198-4", "importance_tags": ["[해부분석]", "[평가축]"], "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Phase Retrieval", "order": "Ptychography", "genus": "Generalization", "confidence": "High", "rationale": "학습 신경망의 분포 밖 일반화를 명시적으로 검증"}},
+        {"title": "Halo-free quantitative phase imaging via physics-constrained self-supervised network", "arxiv": "https://doi.org/10.1117/1.jbo.31.7.076503", "importance_tags": ["[방법전환]"], "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Phase Imaging", "order": "QPI", "genus": "Self-supervised", "confidence": "Medium", "rationale": "물리 제약 자기지도학습으로 halo 아티팩트 제거"}},
+        {"title": "A Reversible Clearing Strategy Enables Robust Label-Free Phase Imaging of Thick Tissues", "arxiv": "https://doi.org/10.1002/lpor.71514", "importance_tags": ["[방법전환]", "[실사용전환]"], "phylogeny": {"source": "CVML", "phylum": "Photonics", "class": "Phase Imaging", "order": "Quantitative Phase Imaging", "genus": "Optical Clearing", "confidence": "Medium", "rationale": "Fourier ptychography와 lensless holographic microscopy 양쪽에 적용해 정량 개선 확인"}},
+        {"title": "Floor noise of vibration amplitude maps measured by digital holography microscopy (DHM)", "arxiv": "https://doi.org/10.1088/2515-7647/ae88a0", "importance_tags": ["[평가축]", "[해부분석]"], "phylogeny": {"source": "CVML", "phylum": "Photonics", "class": "Phase Imaging", "order": "Digital Holography Microscopy", "genus": "Noise Floor Metrology", "confidence": "High", "rationale": "피코미터 단위 검출 한계를 정량 검증"}},
+        {"title": "Investigation of the physical properties of breast cancer cells via statistical thermodynamics, quantitative phase microscopy, and machine learning algorithms", "arxiv": "https://doi.org/10.15593/rjbiomech/2026.2.06", "importance_tags": ["[해부분석]", "[방법전환]"], "phylogeny": {"source": "CVML", "phylum": "Photonics", "class": "Phase Imaging", "order": "Quantitative Phase Microscopy", "genus": "Label-Free Cancer Diagnostics", "confidence": "Medium", "rationale": "MobileNetV2 분류 정확도 90% 초과, 테스트셋 구성은 본문 확인 필요"}}
+      ],
+      "why": "월요일 ptychography 복원 신경망이 새 빔라인에서도 재학습 없이 되는지를 물었던 문제의식이 닷새 내내 이어졌습니다. 화요일에는 halo 제거·위상 다양성 역문제가 같은 질문(하드웨어를 더 얹지 않고 계산으로 일반화를 얻는다)을 반복했고, 목요일에는 QPI를 얇은 시료 너머 두꺼운 조직에도 쓰게 만드는 가역적 투명화 시약이 랩의 두 핵심 버킷(Fourier ptychography, lensless holography)에 동시에 적용됐습니다. 금요일에는 디지털 홀로그래피·QPI가 아예 '예쁜 이미지를 만드는 도구'에서 벗어나 몇 피코미터 단위로 진동을 재는지, 몇 퍼센트 정확도로 암세포를 구분하는지를 따지는 정량 측정 장비로 검증받는 단계에 들어섰습니다. 다섯 편을 나란히 놓으면, 이 분야의 질문이 '복원이 되는가'에서 '다른 조건에서도 되는가'와 '그 숫자를 믿고 써도 되는가'로 바뀌고 있다는 것이 보입니다.",
+      "confidence": "High",
+      "lab_action": "ptychography 논문의 학습/평가 시료-조건 분리 프로토콜을 랩 QPI/홀로그래피 복원 신경망에 적용해 분포 밖 시료에서 붕괴 여부 점검. 가역적 투명화 시약(글리세롤-타트라진)을 랩 두꺼운 시료 QPI 전처리에 시험 적용해 위상 아티팩트 감소 여부 확인. DHM 노이즈 바닥선 정의 방식을 랩 홀로그래피 셋업 간 비교 기준으로 도입"
+    },
+    {
+      "cluster": "이벤트 카메라 파이프라인이 데이터 생성·응용·복원 전 구간에서 동시에 채워짐",
+      "papers": [
+        {"title": "Efficient Perception in Automotive Detection and Tracking Using Neuromorphic Computing", "arxiv": "https://arxiv.org/abs/2607.04921", "importance_tags": ["[실사용전환]"], "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Novel Sensors", "order": "Event-Based Vision", "genus": "Low-Power Compute", "confidence": "Low", "rationale": "화요일 backfill, title/subject 기준"}},
+        {"title": "EVIS: A Physics-Grounded Event Camera Plugin for NVIDIA Isaac Sim", "arxiv": "https://arxiv.org/abs/2607.08098", "importance_tags": ["[인프라]"], "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Novel Sensors", "order": "Event-Based Vision", "genus": "Simulation Data Generation", "confidence": "Medium", "rationale": "물리 기반 log-intensity contrast 이벤트 모델을 시뮬레이터에 구현"}},
+        {"title": "TVTA: Trajectory-Aware Viseme-Guided Temporal Aggregation for Event-Based Lip Reading", "arxiv": "https://arxiv.org/abs/2607.08236", "importance_tags": ["[방법전환]"], "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Novel Sensors", "order": "Event-Based Vision", "genus": "Application-Level Temporal Modeling", "confidence": "Low", "rationale": "정량 인식률 수치는 abstract에 없음"}},
+        {"title": "LongE2V: Long-Horizon Event-based Video Reconstruction, Prediction, and Frame Interpolation with Video Diffusion Models", "arxiv": "https://arxiv.org/abs/2607.08770", "importance_tags": ["[방법전환]", "[인프라]"], "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Novel Sensors", "order": "Event-Based Vision", "genus": "Diffusion-Based Reconstruction", "confidence": "High", "rationale": "복원·예측·프레임보간 세 과제 모두 SOTA, zero-shot 일반화까지 abstract에 명시"}}
+      ],
+      "why": "화요일에는 이벤트 카메라(밝기 변화가 있을 때만 픽셀 단위로 신호를 내는 센서) 관련 연구가 저전력 컴퓨팅 하드웨어 설계 쪽과 실제 촬영 응용 쪽으로 갈라져 있었는데, 금요일에는 그 갈림이 오히려 전체 파이프라인을 채우는 방향으로 이어졌습니다. EVIS는 물리 법칙에 맞는 이벤트 신호를 시뮬레이터에서 대량으로 만들어내고, TVTA는 그 데이터를 실제 입술 읽기 응용에 쓰고, LongE2V는 희소한 이벤트 스트림에서 긴 영상을 diffusion 모델로 복원·예측·보간까지 한 번에 처리합니다. 데이터가 부족해서 개발이 느렸던 분야가 데이터 생성부터 다시 쌓이기 시작했다는 뜻입니다.",
+      "confidence": "Medium",
+      "lab_action": "LongE2V의 diffusion 기반 복원 구조를 랩 실제 이벤트 카메라 데이터에 시험해 기존 회귀 기반 복원 대비 텍스처 흐림 감소 여부 확인. EVIS의 물리 기반 이벤트 시뮬레이션이 랩 고속 현상(캐비테이션, 충격파) 촬영 실험의 학습 데이터 증강으로 쓸 수 있는지 검토"
+    },
+    {
+      "cluster": "메타표면 저널의 이미징 역설계 공백 지속 — Watch Lens",
+      "papers": [
+        {"title": "Regionally-Composite Phase Metalens: Breaking the Field-of-View Limitation for High-NA Imaging", "arxiv": "https://doi.org/10.1002/lpor.71520", "importance_tags": ["[방법전환]", "[스케일업]"], "phylogeny": {"source": "CVML", "phylum": "Photonics", "class": "Meta-Optics", "order": "Metalens", "genus": "FOV-NA Tradeoff", "confidence": "High", "rationale": "NA 0.8, 효율 20%p 향상, 분해능 0.775µm 수치 명시"}},
+        {"title": "Inverse-designed meta processing units for multi-task near-field photonic computing", "arxiv": "https://arxiv.org/abs/2607.08360", "importance_tags": ["[방법전환]"], "phylogeny": {"source": "CVML", "phylum": "Photonics", "class": "Meta-Optics", "order": "Inverse Design", "genus": "Near-Field Photonic Computing", "confidence": "Medium", "rationale": "9.6µm x 4.8µm 칩에서 4x4 행렬 연산 92.7% 정확도, 이미징이 아니라 광컴퓨팅 목적"}}
+      ],
+      "why": "07-03부터 이번 주 금요일까지 6영업일째, 메타표면 저널 논문 대부분이 안테나(5G/6G), 음향, 양자 하드웨어에 쏠려 있고 이미징 목적 역설계 신호는 거의 없습니다. 수요일 RCPM(시야각-개구수 트레이드오프를 깨는 메타렌즈)이 구체적 수치와 함께 나온 게 이번 주 유일한 예외였고, 목요일에는 예외 신호조차 없었습니다. 금요일에 등장한 근접장 광컴퓨팅 역설계 논문도 행렬 연산 정확도를 목표로 한 것이라 이미징 응용과는 결이 다릅니다. 계산광학 랩 입장에서 이 버킷이 계속 비어 있는 것 자체가, 메타표면 연구 커뮤니티의 관심이 최근 통신·컴퓨팅 하드웨어 쪽으로 옮겨간 것인지 아니면 저널 쿼리가 이미징 신호를 놓치고 있는 것인지 판단이 필요한 지점입니다.",
+      "confidence": "Low",
+      "lab_action": "저널 쿼리에 'metalens quantitative phase', 'metasurface inverse design imaging' 같은 이미징 특화 키워드를 추가해 통신/컴퓨팅 응용과 분리 수집. RCPM의 구역별 위상 프로파일 설계를 랩 메타렌즈 역설계 파이프라인에 벤치마크로 추가해 QPI용 FOV 확장 재현 가능성 시뮬레이션으로 먼저 검증"
+    },
+    {
+      "cluster": "신분증 홀로그램(OVD) 위변조 검증이 정지 영상에서 동영상 시간축 판별로",
+      "papers": [
+        {"title": "Temporal modeling for OVD hologram forgery detection", "arxiv": "https://arxiv.org/abs/2607.06408", "importance_tags": ["[평가축]"], "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Holography", "order": "Security Document Verification", "genus": "Temporal Modeling", "confidence": "Low", "rationale": "수요일 단발 관찰, 초록 기준 상세 확인 필요"}},
+        {"title": "Dynamic fraud detection for optically variable devices", "arxiv": "https://arxiv.org/abs/2607.06466", "importance_tags": ["[경고신호]"], "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Holography", "order": "Security Document Verification", "genus": "Dynamic Fraud Detection", "confidence": "Low", "rationale": "수요일 단발 관찰, 초록 기준 상세 확인 필요"}}
+      ],
+      "why": "신분증이나 지폐에 쓰이는 OVD(optically variable device, 보는 각도에 따라 색·무늬가 바뀌는 홀로그램 보안 소자)의 위변조를 판별할 때, 지금까지는 정지 사진 한 장의 무늬가 진짜인지만 봤는데 수요일에 나온 두 논문은 나란히 '각도를 바꾸며 촬영한 동영상에서 시간에 따른 변화 패턴 자체가 진짜인지'를 봅니다. 정지 이미지 위변조는 이미 흉내 내기 쉬워졌지만, 시간에 따라 정확히 어떻게 바뀌는지까지 재현하기는 훨씬 어렵기 때문에 판별 기준을 한 단계 끌어올리는 방향입니다. 다만 하루 이틀 뿐인 신호라 다음 주에도 이어지는지 지켜볼 필요가 있습니다.",
+      "confidence": "Low",
+      "lab_action": "두 논문의 시간축 특징 추출 방식을 랩 홀로그래픽 소자 품질 검사 파이프라인에 참고 가능한지 본문 확인 후 판단 — 우선순위는 낮음"
+    }
+  ],
+  "predictions": [
+    {
+      "title": "Feed-forward 3D 재구성의 새 도메인 확장",
+      "claim": "이번 주 수술실·수중·동적 장면·파노라마로 확장된 feed-forward 3D 재구성이 다음 주에는 또 다른 표준 촬영 가정이 깨지는 도메인(항공/위성, 야간·저조도, 내시경 이외 의료 영상)으로 이어진다.",
+      "rationale": "금요일 하루에 4개 도메인이 동시에 나온 확산 속도를 보면, 같은 패턴이 다음 주에도 새로운 도메인으로 반복될 가능성이 높습니다.",
+      "hit_condition": "arXiv에서 feed-forward/pose-free 3DGS가 이번 주 다루지 않은 새 도메인(항공/위성, 야간·저조도, 내시경 이외 의료 영상 등)에 적용된 논문 1편 이상",
+      "miss_condition": "새 3DGS 논문이 있어도 모두 이번 주와 같은 도메인(수술/수중/동적 장면/파노라마) 반복이거나, 관련 논문이 없으면 빗나감"
+    },
+    {
+      "title": "메타표면 저널 이미징 역설계 공백의 해소 여부",
+      "claim": "6영업일째 이어진 메타표면 저널의 이미징 역설계 공백이 다음 주에는 최소 1편(위상판·홀로그래피·초점 제어처럼 이미징 목적을 abstract에 명시)으로 깨진다.",
+      "rationale": "수요일 RCPM처럼 간헐적으로 예외가 나오는 패턴을 보면 완전히 사라진 주제는 아니라, 다음 주 재등장 가능성이 있습니다.",
+      "hit_condition": "저널 또는 arXiv에서 메타표면이 위상·홀로그래피·초점·이미지 역설계 목적을 abstract에 명시한 논문 1편 이상",
+      "miss_condition": "이번 주처럼 안테나·음향·양자·통신·광컴퓨팅 응용만 나오면 빗나감"
+    },
+    {
+      "title": "ImagingBench 후속 논문 등장",
+      "claim": "목요일 ImagingBench가 정의한 '범용 AI vs 물리 기반 특화 방법'이라는 질문에, 다음 주 후속 논문(같은 벤치마크 확장 또는 유사한 문제의식의 새 벤치마크)이 나온다.",
+      "rationale": "새 벤치마크 논문은 보통 공개 직후 1~2주 내에 인용·비교 시도가 따라붙는 패턴이 있어, 다음 주가 그 첫 관찰 구간입니다.",
+      "hit_condition": "arXiv에서 agentic AI/VLM을 렌즈리스·이벤트 기반·ToF·홀로그래피 등 물리 기반 역문제에 적용하거나 ImagingBench를 확장/비교하는 논문 1편 이상",
+      "miss_condition": "관련 후속 논문이 전혀 없으면 빗나감"
+    }
+  ],
+  "prediction_review": [
+    {
+      "title": "Lensless/Coded Imaging arXiv 공백 회복 여부",
+      "label": "✗",
+      "reason": "이번 주 arXiv Lensless/Coded Imaging 버킷은 수·목요일 0편, 금요일 1편도 실제로는 저널(코드화 조리개 홀로그래피)이라 arXiv 신규는 이번 주도 없었습니다. 화요일 backfill에서 버킷 편수가 4로 잡히긴 했지만 title-only 분류의 낮은 정밀도(같은 날 다른 버킷의 키워드 우연 매칭 문제와 동일한 한계) 때문에 실제 신호로 확인되지 않았고, 이후 사흘 연속 명시적 공백이 재확인돼 회복으로 보기 어렵습니다."
+    },
+    {
+      "title": "Zero-shot/DRO 역문제 방법의 계산광학 도메인 확장",
+      "label": "✗",
+      "reason": "이번 주 5일 동안 zero-shot 또는 distributionally-robust 방법이 ptychography·lensless·ODT에 적용된 논문은 발견되지 않았습니다. 대신 일반화 문제는 지도학습 신경망의 분포 밖 성능 검증(ptychography, QPI)이라는 다른 방식으로 다뤄졌습니다."
+    },
+    {
+      "title": "AI-aware 광학 설계(CODA류)의 후속 논문 등장",
+      "label": "✗",
+      "reason": "금요일 근접장 광컴퓨팅 역설계 논문(2607.08360)이 유일하게 관련성 있는 후보였지만, 목표가 인식·분류·분할 같은 downstream task 성능이 아니라 광학 칩 위 행렬 연산 정확도였습니다. CODA가 정의한 'downstream AI 인식 성능을 겨냥한 광학 하드웨어 공동 최적화'라는 문제 설정 자체의 후속은 이번 주에도 나타나지 않았습니다."
+    }
+  ],
+  "themes": [
+    {
+      "title": "3D 재구성이 '빠름'에서 '믿을 수 있음'으로, 그리고 '실전에서 버팀'으로 — 사흘 만에 세 단계",
+      "summary": "화요일 feed-forward/스트리밍/경량화, 수-목요일 불확실성 정량화·아티팩트 제거·포즈 드리프트 강건성, 금요일 수술실·수중·동적 장면·파노라마 네 도메인 검증까지, 3DGS/feed-forward 3D 재구성이 한 주 안에 '되는가 → 믿을 수 있는가 → 현장에서 버티는가'라는 세 질문을 순서대로 통과했습니다. 랩이 이 방법을 실제 촬영 파이프라인에 가져올 때 어느 단계 증거를 봐야 하는지 판단하는 데 참고할 만합니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "계산광학 핵심 주제가 arXiv 공백 속에서도 저널로 '일반화·신뢰성 검증'에 수렴",
+      "summary": "ptychography, QPI, 디지털 홀로그래피는 이번 주도 arXiv에서 거의 보이지 않았지만, 저널에 쌓인 신호를 모으면 방향이 하나로 모입니다 — 학습 신경망이 새 조건에서도 일반화되는지, 그리고 복원한 수치를 실제 진단·계측에 믿고 써도 되는지를 검증하는 단계로 넘어가고 있습니다. arXiv만 보면 이 분야가 조용해 보이지만 저널을 같이 보면 방법론이 성숙 단계로 접어들고 있다는 걸 알 수 있습니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "범용 AI vs 특화 방법 — ImagingBench가 처음 그은 경계선",
+      "summary": "목요일 ImagingBench는 VLM과 agentic AI가 의미 이해가 필요한 과제에서는 강하지만, 렌즈리스·이벤트 기반·ToF·홀로그래피처럼 물리 법칙과 역문제 풀이가 필요한 계산영상 과제에서는 특화 방법에 못 미친다는 걸 20개 과제로 정량화했습니다. 이 랩이 매일 다루는 문제(물리 기반 역문제)가 범용 AI로 쉽게 대체되지 않는다는 근거를 처음 숫자로 확인한 셈이라, 랩 방향의 존재 이유를 뒷받침하는 신호이기도 합니다.",
+      "confidence": "Medium"
+    }
+  ],
+  "top5": [
+    {
+      "title": "Does AI Understand Imaging? A Systematic Benchmark of Agentic AI for Computational Imaging Tasks",
+      "arxiv": "https://arxiv.org/abs/2607.07189",
+      "why": "VLM과 agentic AI가 물리 기반 계산영상 과제(렌즈리스, 이벤트 기반 복원, ToF, 홀로그래피)에서 특화 방법 대비 일관되게 약하다는 걸 20개 과제, 5개 카테고리로 처음 정량화한 landmark 벤치마크입니다.",
+      "tag": "[평가축]",
+      "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Evaluation", "order": "Agentic AI Benchmark", "genus": "Physics-Grounded Inverse Problems", "confidence": "High", "rationale": "20개 과제·5개 카테고리·3개 설정을 명시"}
+    },
+    {
+      "title": "Track2Map: Online Deformable SLAM with Motion-Aware Pose Optimization in Robotic Surgery",
+      "arxiv": "https://arxiv.org/abs/2607.08408",
+      "why": "카메라 궤적 정보 없이도 변형을 함께 추정하는 feed-forward 3D 재구성을, 수술 내시경이라는 가장 어려운 실전 조건에서 검증한 사례입니다.",
+      "tag": "[실사용전환]",
+      "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Gaussian Splatting", "genus": "Surgical SLAM without Pose Priors", "confidence": "High", "rationale": "StereoMIS 데이터셋 SOTA 대비 개선"}
+    },
+    {
+      "title": "A Reversible Clearing Strategy Enables Robust Label-Free Phase Imaging of Thick Tissues",
+      "arxiv": "https://doi.org/10.1002/lpor.71514",
+      "why": "랩의 두 핵심 버킷(Fourier ptychography, lensless holography)에 동시에 적용되는 드문 사례이자, 광학계 없이 시약만으로 QPI의 적용 범위를 얇은 시료 너머로 넓힌 논문입니다.",
+      "tag": "[실사용전환]",
+      "phylogeny": {"source": "CVML", "phylum": "Photonics", "class": "Phase Imaging", "order": "Quantitative Phase Imaging", "genus": "Optical Clearing", "confidence": "Medium", "rationale": "1-pixel-lag autocorrelation으로 정량 개선 확인"}
+    },
+    {
+      "title": "Rendering-Aware Bayesian 3D Gaussian Splatting with Native Uncertainty and Adaptive Complexity Control",
+      "arxiv": "https://arxiv.org/abs/2607.05522",
+      "why": "3DGS 재구성의 신뢰도를 '느낌'이 아니라 렌더링 사후분포로 정량화한 논문으로, 이번 주 3D 재구성 신뢰도 축 전환의 시작점입니다.",
+      "tag": "[평가축]",
+      "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Gaussian Splatting", "genus": "Uncertainty Quantification", "confidence": "High", "rationale": "Normal-Inverse-Wishart 사후분포 명시"}
+    },
+    {
+      "title": "LongE2V: Long-Horizon Event-based Video Reconstruction, Prediction, and Frame Interpolation with Video Diffusion Models",
+      "arxiv": "https://arxiv.org/abs/2607.08770",
+      "why": "이벤트 카메라 파이프라인 전 구간이 채워진 금요일의 대표 사례로, 희소한 이벤트 스트림에서 복원·예측·보간을 한 모델로 처리합니다.",
+      "tag": "[방법전환]",
+      "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Novel Sensors", "order": "Event-Based Vision", "genus": "Diffusion-Based Reconstruction", "confidence": "High", "rationale": "복원·예측·프레임보간 세 과제 SOTA, zero-shot 일반화 명시"}
+    }
+  ],
+  "phylogeny_tags": [
+    {"paper": "https://arxiv.org/abs/2607.07189", "source": "CVML", "lineage": "Computational Imaging > Evaluation > Agentic AI Benchmark > Physics-Grounded Inverse Problems"},
+    {"paper": "https://arxiv.org/abs/2607.08408", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Gaussian Splatting > Surgical SLAM without Pose Priors"},
+    {"paper": "https://doi.org/10.1002/lpor.71514", "source": "CVML", "lineage": "Photonics > Phase Imaging > Quantitative Phase Imaging > Optical Clearing"},
+    {"paper": "https://arxiv.org/abs/2607.05522", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Gaussian Splatting > Uncertainty Quantification"},
+    {"paper": "https://arxiv.org/abs/2607.08770", "source": "CVML", "lineage": "Computational Imaging > Novel Sensors > Event-Based Vision > Diffusion-Based Reconstruction"},
+    {"paper": "https://arxiv.org/abs/2607.08772", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Domain Adaptation > Underwater Geometry"},
+    {"paper": "https://doi.org/10.1038/s41524-026-02198-4", "source": "CVML", "lineage": "Computational Imaging > Phase Retrieval > Ptychography > Generalization"},
+    {"paper": "https://doi.org/10.1088/2515-7647/ae88a0", "source": "CVML", "lineage": "Photonics > Phase Imaging > Digital Holography Microscopy > Noise Floor Metrology"}
+  ],
+  "next_week_actions": [
+    {"title": "Track2Map/Wat3R 구조를 랩 비정형 촬영 데이터에 재현", "action": "포즈 사전 정보 없이 변형·도메인 적응을 동시에 처리하는 구조를 랩이 보유한 산란·왜곡 촬영 데이터셋에 적용", "expected_output": "포즈 사전 정보 유무·도메인 적응 여부에 따른 재구성 품질(PSNR/SSIM) 비교표"},
+    {"title": "ImagingBench를 랩 파이프라인 하한선 측정 도구로 재현", "action": "agentic AI가 렌즈리스·홀로그래피 역문제에서 특화 방법 대비 얼마나 뒤처지는지를 랩 재구성 결과와 나란히 놓고 격차가 가장 큰 과제 카테고리 확인", "expected_output": "과제 카테고리별 agentic AI vs 랩 특화 방법 성능 격차표"},
+    {"title": "가역적 광학 투명화 시약을 랩 QPI 전처리로 시험", "action": "글리세롤-타트라진 기반 가역적 투명화를 랩 Fourier ptychography·lensless holographic microscopy 파이프라인의 두꺼운 시료 전처리에 적용", "expected_output": "투명화 적용 전후 위상 아티팩트(1-pixel-lag autocorrelation) 비교 메모"}
+  ]
+}

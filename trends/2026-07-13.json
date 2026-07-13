@@ -1,0 +1,13 @@
+{
+  "date": "2026-07-13",
+  "source_listing_date": "2026-07-10",
+  "source_mode": "weekly-pastweek",
+  "note": "Weekly retrospective for W28 (2026-07-06 to 2026-07-10). No daily /new data for this date (today's daily runs separately at 11:00 KST); daily stats row intentionally omitted.",
+  "weekly_aggregate": {
+    "by_cat": {"cs.LG": 886, "cs.CV": 695, "cs.AI": 937, "eess.IV": 44, "eess.SP": 123},
+    "scope": "new+cross; replacements excluded",
+    "days_covered": ["2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10"],
+    "note": "2026-07-06은 미국 독립기념일 연휴 여파로 arXiv 갱신 없이 저널만(journal-only) 집계됨"
+  },
+  "totals": {"total_scanned": 3905, "selected": 947}
+}
