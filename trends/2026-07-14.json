@@ -1,37 +1,37 @@
 {
   "date": "2026-07-14",
   "source_listing_date": "2026-07-14",
-  "source_mode": "journal-only",
-  "note": "cs.LG/cs.CV/cs.AI/eess.IV/eess.SP arXiv /new이 실행 시점까지 어제(2026-07-13, 월) listing에 머물러 있어 오늘 신규 제출 0건. arXiv 신규 제출 없이 Crossref/OpenAlex 저널만으로 만든 잠정본. /pastweek에 2026-07-14 섹션이 뜨면 다음 실행에서 Calendar Audit이 arXiv 포함 완전판으로 자동 업그레이드한다. 저널 스캔 418건 중 대다수(특히 Tomography/3D Imaging 27건, Virtual Staining/Pathology 14건, Deep Learning Methods 26건)는 임상 방사선·면역조직화학·농업·마케팅 등 키워드 우연 매칭이며, 실제 계산광학 신호는 소수다.",
+  "source_mode": "new",
+  "note": "2026-07-14(화) 잠정본(journal-only)을 arXiv /new 재확인 후 완전판으로 업그레이드. 실행 시점에 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 /new listing이 모두 'Tuesday, 14 July 2026'을 가리켜 source_mode=new로 확정했다(listing_date == post_date, /pastweek backfill 불필요). classify.py 선택 비율은 32.2%(374/1160)로 최근 밴드(25~32%)와 비슷하다. 오늘 가장 뚜렷한 arXiv 신호는 3D Gaussian Splatting이 렌더링 품질보다 압축·적응형 밀도·온라인 증분 재구성 같은 배포 효율 쪽으로 옮겨간 것(CoSAG/DP-Splat/AsySplat/SalientGS/HyperGS/Incremental Online Scene Reconstruction 6편)과, 디지털 병리·세포진단이 annotation 효율·calibration·공정성 쪽으로 이동한 것(LaGuadia/SHAL/MeCaMIL 등 5편)이다. 여기에 물리 제약 기반 재구성 방법론이 PET(FlowPET)·CT(Quantum CS CT)로 번지고 이를 표준화해서 재는 벤치마크(Imaging-101)까지 같은 날 나왔다. 저널 쪽은 오전 잠정본에서 정리한 Fourier ptychography 확장·메타옵틱스 실용화·OCT 계측 개선·산란매질/난류 복원 신호를 그대로 유지한다. Tomography/3D Imaging(49건) 중 다수는 임상 CT/PET/OCT 진단 저널이고, Virtual Staining/Pathology(38건) 중 다수도 staining/virtual 키워드 우연 매칭이라 클러스터·부록에서는 실제 계산광학·계산이미징 신호만 추렸다.",
   "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 0,
-      "cs.CV": 0,
-      "cs.AI": 0,
-      "eess.IV": 0,
-      "eess.SP": 0
+      "cs.LG": 312,
+      "cs.CV": 223,
+      "cs.AI": 335,
+      "eess.IV": 23,
+      "eess.SP": 48
     },
     "scope": "new+cross; replacements excluded",
-    "journal_count": 418
+    "journal_count": 422
   },
   "totals": {
-    "total_scanned": 418,
-    "selected": 87
+    "total_scanned": 1160,
+    "selected": 374
   },
   "classified": {
-    "total_scanned": 418,
-    "selected": 87,
+    "total_scanned": 1160,
+    "selected": 374,
     "by_bucket": {
-      "Fourier Ptychography/Microscopy": 2,
-      "Lensless/Coded Imaging": 1,
-      "Phase Imaging/Holography": 5,
-      "Meta-Optics/Diffractive": 7,
-      "Light-Field/Novel Sensors": 3,
-      "Tomography/3D Imaging": 27,
-      "Virtual Staining/Pathology": 14,
-      "Reconstruction/Inverse Problems": 2,
-      "Deep Learning Methods": 26
+      "Fourier Ptychography/Microscopy": 3,
+      "Lensless/Coded Imaging": 4,
+      "Phase Imaging/Holography": 6,
+      "Meta-Optics/Diffractive": 10,
+      "Light-Field/Novel Sensors": 8,
+      "Tomography/3D Imaging": 49,
+      "Virtual Staining/Pathology": 38,
+      "Reconstruction/Inverse Problems": 34,
+      "Deep Learning Methods": 222
     }
   },
-  "daily_thesis": "arXiv 5개 카테고리가 모두 실행 시점까지 어제(7/13, 월) listing에 머물러 있어(아직 오늘자 /new가 올라오지 않음) 저널만으로 만든 잠정본. 메타옵틱스가 통신/센싱 응용에서 다시 실제 이미징 광학계 설계(색수차 보정, 가변초점, 재구성 가능한 THz 빔 성형)로 돌아왔고, OCT·산란매질 통과 복원처럼 기존 계측의 신호 품질 자체를 개선하는 방법론 논문이 여러 편 겹쳤다. 디지털 병리·생물영상 쪽에서는 염색·절편 없이 세균 콜로니와 뇌 오가노이드 핵을 각각 홀로그래피·광음향으로 직접 정량화하는 두 편이 눈에 띈다."
+  "daily_thesis": "arXiv 5개 카테고리 /new listing이 실행 시점에 오늘(7/14, 화) 날짜로 갱신되면서, 아침에 저널만으로 냈던 잠정본이 arXiv 포함 완전판으로 업그레이드됐다. 오늘 나온 논문들의 핵심은 3D Gaussian Splatting이 '더 예쁜 렌더링'에서 '압축·적응형 복잡도·온라인 증분 재구성'으로 옮겨가는 흐름과, 디지털 병리가 더 큰 모델보다 annotation 효율·calibration·공정성 쪽으로 무게를 옮기는 흐름이다. 물리 제약을 반영한 재구성 방법론은 PET·CT·산란매질·난류까지 여러 모달리티로 동시에 번지고 있고, 이를 표준화해서 재는 벤치마크(Imaging-101)까지 오늘 같이 나왔다."
 }

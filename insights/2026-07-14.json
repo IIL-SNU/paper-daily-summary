@@ -1,143 +1,114 @@
 {
   "date": "2026-07-14",
-  "source_mode": "journal-only",
+  "source_mode": "new",
   "clusters": [
+    {
+      "title": "3D Gaussian Splatting이 렌더링 품질 경쟁에서 압축·적응형 밀도·온라인 증분 재구성으로 무게중심 이동",
+      "papers": [
+        {"title": "CoSAG: Compact Semantic Anchor Gaussians via Training-Free Rate-Distortion Coding", "arxiv_id": "https://arxiv.org/abs/2607.10237", "journal_or_source": "arXiv cs.CV"},
+        {"title": "DP-Splat: Bayesian Nonparametric Complexity Control for Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2607.10912", "journal_or_source": "arXiv cs.CV"},
+        {"title": "AsySplat: Efficient Asymmetric 3D Gaussian Splatting for Long-Sequence Scene Modeling", "arxiv_id": "https://arxiv.org/abs/2607.10995", "journal_or_source": "arXiv cs.CV"},
+        {"title": "HyperGS: Fast and Generalizable Gaussian Video Representation", "arxiv_id": "https://arxiv.org/abs/2607.11500", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Incremental Online Scene Reconstruction by 3D Gaussian Triangulation", "arxiv_id": "https://arxiv.org/abs/2607.10690", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "예전 3DGS(3D Gaussian Splatting) 논문들은 '더 정확하고 예쁜 렌더링'을 목표로 삼았는데, 오늘 나온 논문 중 5편은 전부 '그 렌더링을 실제로 쓰려면 무엇을 줄이거나 빠르게 해야 하는가'를 다룹니다. CoSAG는 장면 하나가 기가바이트에 이르게 만드는 semantic feature를 별도 학습 없이 압축하는 방법을, DP-Splat은 Gaussian 개수를 사람이 미리 정하지 않고 데이터에 맞게 자동으로 늘리고 줄이는 방법을, AsySplat은 기하 학습과 외형 학습을 분리해 중복 연산을 없애는 방법을, HyperGS는 영상마다 다시 최적화하지 않고 한 번의 순전파로 Gaussian을 예측하는 방법을, Incremental Online Scene Reconstruction은 오프라인 변환 없이 바로 메쉬를 온라인으로 갱신하는 방법을 각각 제안합니다. 즉 3DGS가 '연구실 데모'에서 '실제로 배포 가능한 표현'으로 넘어가는 데 필요한 병목(저장 용량, Gaussian 개수 튜닝, 계산 중복, 온라인성)을 서로 다른 축에서 동시에 공략하고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "같은 날 서로 다른 문제(압축·밀도 제어·비대칭 구조·feedforward·온라인 재구성)를 겨냥한 5편이 '효율/배포'라는 같은 방향을 지시",
+      "lab_action": "우리 랩 3DGS 파이프라인에 CoSAG의 학습-불필요 rate-distortion 압축과 DP-Splat의 stick-breaking Dirichlet process 밀도 제어를 각각 적용해 같은 장면에서 저장 용량 대 렌더링 품질 trade-off를 비교하는 ablation 표 작성; HyperGS의 feedforward Gaussian 예측을 우리 장시퀀스 촬영 데이터에 시험해 per-scene 최적화 대비 인코딩 속도·화질 손실 측정"
+    },
+    {
+      "title": "디지털 병리·세포진단이 정확도 경쟁에서 annotation 효율·calibration·공정성으로 이동",
+      "papers": [
+        {"title": "LaGuadia: Language-Guided Adaptive Distillation from Pathology Foundation Models", "arxiv_id": "https://arxiv.org/abs/2607.11257", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Slide-Level Active Learning Reduces Annotation Burden in H&E images (SHAL)", "arxiv_id": "https://arxiv.org/abs/2607.09831", "journal_or_source": "arXiv eess.IV"},
+        {"title": "Geometry-aware Gaussian Prior and Axial Attention for Cervical Cytology Image Classification", "arxiv_id": "https://arxiv.org/abs/2607.10278", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Reliability-Aware Ensemble Classification Under Class Imbalance: A Calibration Study on Liquid-Based Cervical Cytology", "arxiv_id": "https://arxiv.org/abs/2607.09837", "journal_or_source": "arXiv cs.CV"},
+        {"title": "MeCaMIL: Causality-Aware Multiple Instance Learning for Fair and Interpretable Whole Slide Image Diagnosis", "arxiv_id": "https://doi.org/10.1109/tmi.2026.3711803", "journal_or_source": "IEEE Transactions on Medical Imaging"}
+      ],
+      "why": "예전 디지털 병리 논문들은 '얼마나 정확하게 분류하는가'를 주로 겨루었는데, 오늘 나온 5편은 각각 다른 병목을 겨냥합니다. LaGuadia는 거대한 병리 foundation model을 그대로 쓰는 대신 언어 지침으로 여러 teacher 모델의 지식을 상황에 맞게 골라 증류해 계산 비용을 줄이고, SHAL(Slide-Level Active Learning)은 슬라이드 전체를 다 라벨링하지 않고도 annotation 부담을 줄이는 능동학습 방법을 제안합니다. 두 편의 자궁경부 세포진단 논문은 각각 기하 정보를 반영한 attention 구조와 클래스 불균형·calibration을 함께 고려한 앙상블로, 작고 불균형한 실제 임상 데이터셋(Mendeley LBC)에서의 신뢰도를 높이려 합니다. MeCaMIL은 WSI(whole slide image) 진단 모델이 인과관계를 반영하지 않으면 특정 하위집단에서 불공정한 예측을 낼 수 있다는 문제를 정면으로 다룹니다. 다섯 편을 합쳐 보면, 디지털 병리의 다음 경쟁축이 '정확도 몇 % 더'가 아니라 '라벨을 얼마나 아껴 쓰는가, 불균형한 실제 데이터에서도 믿을 만한가, 특정 집단에 불공정하지 않은가'로 옮겨가고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 하위 태스크(증류·능동학습·세포진단·WSI 공정성) 5편이 annotation 효율·calibration·공정성이라는 세 축에서 동시에 나타남",
+      "lab_action": "SHAL의 slide-level active learning acquisition 전략을 우리 H&E 세그멘테이션 라벨링 파이프라인에 적용해, 목표 성능 도달까지 필요한 annotation 양을 random/patch-level uncertainty baseline 대비 비교; LaGuadia의 언어 지침 기반 적응적 distillation을 우리 pathology foundation model 경량화 실험에 재현"
+    },
+    {
+      "title": "Lensless 이미징이 복원 품질 경쟁에서 실사용 인식 태스크·데이터셋으로 이동",
+      "papers": [
+        {"title": "LFD: Enabling Real-World Lensless Face Recognition with a Large-Scale Dataset", "arxiv_id": "https://arxiv.org/abs/2607.10094", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Emergent Semantics in Lensless Imaging: Decoupled Segmentation With Physics-Guided Feature Inversion", "arxiv_id": "https://doi.org/10.1109/tetci.2026.3704931", "journal_or_source": "IEEE Trans. Emerging Topics in Computational Intelligence"},
+        {"title": "Investigating the performance of regular two-dimensional grating in a lensless system", "arxiv_id": "https://doi.org/10.1016/j.optlaseng.2026.108812", "journal_or_source": "Optics and Lasers in Engineering"}
+      ],
+      "why": "렌즈리스 카메라 연구는 그동안 '복원된 영상이 얼마나 선명한가'를 주로 따졌는데, 오늘 나온 3편은 그다음 단계, 즉 복원된 신호로 실제 무엇을 할 수 있는가를 겨냥합니다. LFD는 렌즈리스 카메라로 찍은 대규모 실제 얼굴 인식 데이터셋을 공개해 얼굴 인식이라는 구체적 다운스트림 태스크에서 렌즈리스 시스템을 평가할 수 있게 했고, Emergent Semantics 논문은 복원과 분할(segmentation)을 분리해 물리 기반 특징 역변환만으로 원신호에서 바로 의미 있는 분할을 뽑아냅니다. 격자 기반 렌즈리스 시스템 논문은 회절격자를 인코더로 쓰는 구성의 성능을 실측으로 검증합니다. 세 편을 묶으면 렌즈리스 이미징이 '이 마스크로 얼마나 잘 복원되는가'라는 광학 설계 질문에서 '이 시스템으로 인식·분할 같은 실제 다운스트림 태스크를 얼마나 잘 수행하는가'라는 응용 질문으로 넘어가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "arXiv 1편(LFD)은 abstract로 확인했으나 저널 2편은 Crossref 초록 미공개로 제목 기반 판단이라 근거 강도가 섞여 있음",
+      "lab_action": "LFD 데이터셋으로 우리 렌즈리스 파이프라인의 얼굴 인식 다운스트림 성능을 기존 렌즈 기반 카메라 대비 벤치마크; Emergent Semantics의 복원-분할 분리 구조를 우리 렌즈리스 분할 실험 baseline으로 재현해 end-to-end 복원 후 분할 대비 정확도·속도 비교"
+    },
+    {
+      "title": "물리 제약 재구성 방법론이 PET·CT·산란매질·난류로 동시에 번지고, 이를 재는 벤치마크까지 등장",
+      "papers": [
+        {"title": "Imaging-101: Benchmarking LLM Coding Agents on Scientific Computational Imaging", "arxiv_id": "https://arxiv.org/abs/2607.10789", "journal_or_source": "arXiv cs.AI"},
+        {"title": "FlowPET: Physics-Informed Symplectic Flow Matching for Low-Count PET Reconstruction", "arxiv_id": "https://arxiv.org/abs/2607.11104", "journal_or_source": "arXiv eess.IV"},
+        {"title": "Quantum Compressed Sensing CT Reconstruction Algorithm Based on Penalized Weighted Least Squares and Guided Total Variation", "arxiv_id": "https://arxiv.org/abs/2607.10566", "journal_or_source": "arXiv eess.IV"},
+        {"title": "High-fidelity reconstruction of vortex beams through dynamic scattering media using a physically constrained deep neural network", "arxiv_id": "https://doi.org/10.1364/ol.606199", "journal_or_source": "Optics Letters"},
+        {"title": "Turbulent Super-Resolution Reconstruction Based on Residual Convolutional Attention Mechanism", "arxiv_id": "https://doi.org/10.1016/j.cpc.2026.110306", "journal_or_source": "Computer Physics Communications"}
+      ],
+      "why": "오늘 저널에서는 산란매질을 통과한 vortex beam을 물리 제약 신경망으로 복원하는 논문과 잔차 어텐션 구조로 대기 난류 영상을 초해상도 복원하는 논문이 나왔는데, 같은 날 arXiv를 보면 이 '물리 제약을 신경망에 어떻게 넣을 것인가'라는 방법론이 완전히 다른 모달리티로도 동시에 번지고 있습니다. FlowPET는 저선량 PET 재구성에서 기존 생성 모델이 약한 병변 신호를 지워버리는(wash-out) 문제를, 위상공간 부피를 보존하는 symplectic flow로 풀고, Quantum Compressed Sensing CT는 광자 계수 통계와 해부학적 이질성을 반영한 정규화 항을 희소뷰 CT 재구성에 추가합니다. 그리고 Imaging-101은 이런 물리 기반 재구성 파이프라인 57개 태스크를 6개 과학 분야에 걸쳐 표준 4단계(전처리·forward physics modeling·inverse solver·visualization)로 정리한 벤치마크를 제안해, 이 흩어진 방법론들을 같은 잣대로 비교할 수 있는 기준을 처음으로 제공합니다. 즉 오늘은 물리 제약 재구성이 산란매질·난류·PET·CT까지 동시에 번지고, 그걸 재는 벤치마크까지 같은 날 나온 하루입니다.",
+      "confidence": "High",
+      "confidence_note": "arXiv 방법론 2편+벤치마크 1편, 저널 응용 2편이 서로 다른 모달리티에서 같은 축(물리 제약 재구성)을 지시",
+      "lab_action": "Imaging-101의 4단계 표준 파이프라인 스키마를 우리 재구성 코드베이스 문서화에 적용해 내부 파이프라인 비교 가능성을 높이고, 57개 태스크 중 우리 도메인(산란매질/위상 이미징)과 겹치는 태스크가 있는지 확인; FlowPET의 symplectic flow matching을 우리 저선량 계산 이미징 복원 baseline과 PSNR·약한 신호 보존율 축으로 비교"
+    },
     {
       "title": "Fourier ptychography가 진폭 복원을 넘어 위상 지형·컬러 병리 영상으로 확장",
       "papers": [
-        {
-          "title": "Dual-wavelength Fourier Ptychographic Topography",
-          "arxiv_id": "https://doi.org/10.1109/tci.2026.3712486",
-          "journal_or_source": "IEEE Transactions on Computational Imaging"
-        },
-        {
-          "title": "Fast Full-Color Pathological Imaging via Optimized Illumination Pattern with Color Transfer in Fourier Ptychographic Microscopy (OIP-CTFPM)",
-          "arxiv_id": "https://doi.org/10.1364/boe.608075",
-          "journal_or_source": "Biomedical Optics Express"
-        }
+        {"title": "Dual-wavelength Fourier Ptychographic Topography", "arxiv_id": "https://doi.org/10.1109/tci.2026.3712486", "journal_or_source": "IEEE Transactions on Computational Imaging"},
+        {"title": "Fast Full-Color Pathological Imaging via Optimized Illumination Pattern with Color Transfer in Fourier Ptychographic Microscopy (OIP-CTFPM)", "arxiv_id": "https://doi.org/10.1364/boe.608075", "journal_or_source": "Biomedical Optics Express"}
       ],
-      "why": "Fourier ptychography(FPM)는 원래 렌즈 없이 저해상도 여러 장을 합성해 고해상도 진폭 영상을 만드는 기법인데, 오늘 저널 두 편은 그 다음 단계를 보여준다. 하나는 두 파장을 함께 써서 진폭이 아니라 표면 높이(topography) 정보까지 뽑아내려 하고, 다른 하나는 조명 패턴 최적화와 색 정보 이식(color transfer)으로 병리 슬라이드를 완전 컬러로, 더 빠르게 재구성한다. 둘 다 FPM을 '고해상도 진폭 영상 하나'가 아니라 표면 정보·색 정보라는 추가 축으로 확장하는 방향을 가리킨다.",
+      "why": "Fourier ptychography(FPM)는 원래 렌즈 없이 저해상도 여러 장을 합성해 고해상도 진폭 영상을 만드는 기법인데, 오늘 저널 두 편은 그다음 단계를 보여줍니다. 하나는 두 파장을 함께 써서 진폭이 아니라 표면 높이(topography) 정보까지 뽑아내려 하고, 다른 하나는 조명 패턴 최적화와 색 정보 이식(color transfer)으로 병리 슬라이드를 완전 컬러로, 더 빠르게 재구성합니다. 둘 다 FPM을 '고해상도 진폭 영상 하나'가 아니라 표면 정보·색 정보라는 추가 축으로 확장하는 방향을 가리킨다는 점에서 우리 랩 핵심 기술의 응용 범위 확장 신호입니다.",
       "confidence": "Medium",
       "confidence_note": "제목/저널 정보 기반(Crossref 초록 미공개), 서로 다른 저널 2편이 같은 확장 방향을 지시",
-      "lab_action": "dual-wavelength illumination sequence를 우리 FP 재구성 파이프라인에 추가해 topography(표면 높이) 채널을 함께 복원할 수 있는지 시뮬레이션으로 먼저 검증; OIP-CTFPM의 조명 패턴 최적화+color transfer 조합을 우리 병리 슬라이드 컬러 재구성 속도 벤치마크와 비교"
+      "lab_action": "dual-wavelength illumination sequence를 우리 FP 재구성 파이프라인에 추가해 topography 채널을 함께 복원할 수 있는지 시뮬레이션으로 먼저 검증; OIP-CTFPM의 조명 패턴 최적화+color transfer 조합을 우리 병리 슬라이드 컬러 재구성 속도 벤치마크와 비교"
     },
     {
-      "title": "메타옵틱스가 다시 실제 이미징 광학계 설계(색수차 보정·가변초점)로 수렴",
+      "title": "메타옵틱스가 재구성 가능한 실용 광학 부품으로 수렴",
       "papers": [
-        {
-          "title": "Achromatic meta-optics for full-color near-eye displays and beyond: Opinion",
-          "arxiv_id": "https://doi.org/10.1364/ome.608741",
-          "journal_or_source": "Optical Materials Express"
-        },
-        {
-          "title": "Compact infrared varifocal optics enabled by hybrid refractive lenses and freeform cascade metalenses",
-          "arxiv_id": "https://doi.org/10.1364/optica.606206",
-          "journal_or_source": "Optica"
-        }
+        {"title": "Achromatic meta-optics for full-color near-eye displays and beyond: Opinion", "arxiv_id": "https://doi.org/10.1364/ome.608741", "journal_or_source": "Optical Materials Express"},
+        {"title": "Compact infrared varifocal optics enabled by hybrid refractive lenses and freeform cascade metalenses", "arxiv_id": "https://doi.org/10.1364/optica.606206", "journal_or_source": "Optica"},
+        {"title": "VO2-enabled Reconfigurable Terahertz Metasurface for Airy Beam Generation and OAM Multiplexing", "arxiv_id": "https://doi.org/10.1364/oe.599151", "journal_or_source": "Optics Express"},
+        {"title": "Spin-selective metasurface for terahertz focusing with multi-focal length or multi-focus", "arxiv_id": "https://doi.org/10.1016/j.infrared.2026.106759", "journal_or_source": "Infrared Physics & Technology"}
       ],
-      "why": "메타렌즈는 얇고 가볍다는 장점으로 늘 주목받았지만, 색수차(파장마다 초점이 다르게 맺히는 문제)와 초점 거리를 기계적으로 바꾸기 어렵다는 두 약점이 실제 이미징 시스템 채택을 막아왔다. 오늘 저널 두 편은 각각 이 문제를 정면으로 다룬다. 근안 디스플레이용 achromatic meta-optics 리뷰는 색수차 보정 전략을 정리하고, 적외선 가변초점 광학계 논문은 굴절 렌즈와 프리폼(비대칭 자유곡면) 캐스케이드 메타렌즈를 결합해 기계적 초점 이동 없이 소형 가변초점 구조를 구현한다. 두 편 모두 메타렌즈를 신기한 소자 하나가 아니라 기존 굴절 광학계를 보완하는 실용 부품으로 다룬다.",
+      "why": "메타렌즈는 얇고 가볍다는 장점으로 늘 주목받았지만, 색수차(파장마다 초점이 다르게 맺히는 문제)와 초점 거리를 기계적으로 바꾸기 어렵다는 두 약점이 실제 이미징 시스템 채택을 막아왔습니다. 오늘 저널 네 편은 이 두 약점을 가시광/근적외선과 테라헤르츠 두 대역에서 동시에 다룹니다. 근안 디스플레이용 achromatic 리뷰와 적외선 가변초점 광학계 논문은 색수차 보정과 기계식 초점 이동 제거를 실제 광학계 설계 관점에서 다루고, VO2 기반 재구성 가능한 테라헤르츠 메타표면과 spin-selective 다중 초점 메타표면은 '소자 하나에 빔 형태 하나'였던 테라헤르츠 메타표면을 외부 신호나 입력 편광으로 재구성 가능하게 만듭니다. 네 편 모두 메타렌즈를 신기한 소자 하나가 아니라 기존 광학계를 보완하는 실용 부품으로 다룬다는 공통점이 있습니다.",
       "confidence": "Medium",
-      "confidence_note": "제목/저널 정보 기반, 서로 다른 저널 2편이 같은 실용화 방향을 지시",
-      "lab_action": "프리폼 캐스케이드 메타렌즈 설계 원칙을 우리 소형 이미징 모듈(내시경/모바일 렌즈)의 가변초점 요구사항에 적용 가능한지 시뮬레이션으로 1차 검토; achromatic 메타옵틱스 리뷰가 정리한 색수차 보정 전략을 우리 메타렌즈 설계 체크리스트에 반영"
-    },
-    {
-      "title": "디지털 병리·생물영상이 염색·절편 없이 세포/집락 단위 정보를 직접 뽑아내는 쪽으로",
-      "papers": [
-        {
-          "title": "Non-destructive label-free automated identification of bacterial colonies at the species level directly on agar media using digital holography and convolutional neural network algorithms",
-          "arxiv_id": "https://doi.org/10.1128/spectrum.00080-26",
-          "journal_or_source": "Microbiology Spectrum"
-        },
-        {
-          "title": "A Label-Free Ultraviolet Photoacoustic Microscopy Enables Nuclear Imaging and Toxicity Assessment in an Intact Brain Organoid",
-          "arxiv_id": "https://doi.org/10.1002/smll.202600048",
-          "journal_or_source": "Small"
-        }
-      ],
-      "why": "두 논문은 완전히 다른 생물학적 대상(세균 콜로니 vs 뇌 오가노이드)을 다루지만 같은 질문에 답한다. BAIO-DX는 형광 염색이나 MALDI-TOF 질량분석 같은 기존 배양 기반 동정법 대신, 한천 배지 위 콜로니를 30분마다 18시간 동안 디지털 홀로그래피로 촬영(전체 플레이트당 530 MPx)하고 그 영상을 CNN에 학습시켰다. 276개 임상 균주·49,490장의 홀로그램으로 학습한 뒤 학습에 없던 균주까지 포함해 테스트한 결과 종 수준 식별률 86.6%, 양성 일치율 96.5%를 달성했다. UV 광음향 현미경 논문은 형광 염색·절편화가 필요했던 기존 방식 대신 266nm 자외선으로 핵산을 직접 여기시켜 살아있는 뇌 오가노이드 내부를 물리적으로 자르지 않고 278nm 해상도로 촬영했고, 에탄올에 노출된 오가노이드에서 핵 면적·지름·원형도가 각각 46.1%·20.8%·6.0% 줄어드는 것을 라벨 없이 잡아냈다. 두 논문 모두 '염색하거나 파괴하지 않고도 세포/집락 단위 정보를 정량적으로 뽑아낼 수 있는가'라는 같은 질문에 홀로그래피와 광음향이라는 서로 다른 계산 이미징 방식으로 답한다.",
-      "confidence": "Medium",
-      "confidence_note": "두 논문 모두 abstract에 구체적 수치(정확도, 해상도, 처리량)가 있어 근거는 명확하나, 대상 도메인이 완전히 달라 방법론적 직접 비교는 어려움",
-      "lab_action": "BAIO-DX의 홀로그램+phylogenetic 분류 결합 전략을 우리 라벨-프리 병리/미생물 이미징 파이프라인의 분류기 설계에 참고; UV-PAM의 266nm 여기 파장·278nm 해상도 스펙을 우리 라벨-프리 핵 이미징 세팅의 목표 스펙과 비교해 재현 가능성 검토"
-    },
-    {
-      "title": "OCT가 신호 품질(SNR·편광 정보) 자체를 보강하는 계측 방법론으로",
-      "papers": [
-        {
-          "title": "A spectral upsampled optical coherence tomography for a high signal-to-noise ratio at deeper range",
-          "arxiv_id": "https://doi.org/10.1109/tim.2026.3712883",
-          "journal_or_source": "IEEE Transactions on Instrumentation and Measurement"
-        },
-        {
-          "title": "Polarization-Sensitive Module for Optical Coherence Tomography Instruments",
-          "arxiv_id": "https://doi.org/10.1109/tmi.2026.3713071",
-          "journal_or_source": "IEEE Transactions on Medical Imaging"
-        }
-      ],
-      "why": "OCT(광간섭단층촬영)는 이미 임상에서 널리 쓰이지만, 오늘 저널 두 편은 임상 진단이 아니라 계측 자체의 품질을 올리는 방법론에 집중한다. 스펙트럼 업샘플링 OCT는 깊은 곳까지 촬영할 때 신호대잡음비(SNR)가 떨어지는 문제를 스펙트럼 도메인 보간으로 개선하고, 편광 감응 모듈 논문은 기존 OCT 장비에 편광 정보를 추가로 얻을 수 있는 모듈을 결합하는 방법을 다룬다. 둘 다 OCT 하드웨어·신호처리 단(SNR, 편광 채널)을 개선해 같은 장비로 더 많은 정보를 뽑아내려는 계측 방법론 논문이다.",
-      "confidence": "Medium",
-      "confidence_note": "제목/저널 정보 기반, 같은 이미징 모달리티(OCT)에서 서로 다른 축(SNR·편광)의 계측 개선을 지시",
-      "lab_action": "스펙트럼 업샘플링 기법을 우리 OCT/OCT-유사 계산 이미징 파이프라인의 깊은 영역 SNR 개선에 적용 가능한지 시뮬레이션 비교; 편광 감응 모듈 설계를 참고해 우리 위상·편광 복합 계측 세팅에 이식할 수 있는 부분이 있는지 검토"
-    },
-    {
-      "title": "산란매질·난류를 통과한 영상 복원에 물리 제약 신경망을 접목",
-      "papers": [
-        {
-          "title": "High-fidelity reconstruction of vortex beams through dynamic scattering media using a physically constrained deep neural network",
-          "arxiv_id": "https://doi.org/10.1364/ol.606199",
-          "journal_or_source": "Optics Letters"
-        },
-        {
-          "title": "Turbulent Super-Resolution Reconstruction Based on Residual Convolutional Attention Mechanism",
-          "arxiv_id": "https://doi.org/10.1016/j.cpc.2026.110306",
-          "journal_or_source": "Computer Physics Communications"
-        }
-      ],
-      "why": "빛이 산란매질이나 대기 난류를 통과하면 정보가 뒤섞여 복원이 어렵다는 건 계산 이미징의 오랜 난제다. 오늘 저널 두 편은 이 문제를 신경망으로 풀되, 순수 데이터 기반 학습이 아니라 물리적 제약을 접목한다는 공통점이 있다. 소용돌이 빔(vortex beam) 복원 논문은 동적으로 변하는 산란매질을 통과한 뒤에도 물리적으로 타당한 해만 나오도록 제약을 건 신경망으로 고정밀 복원을 시도하고, 난류 초해상도 복원 논문은 잔차 합성곱 어텐션 구조로 난류에 흐려진 영상의 초해상도 복원을 시도한다. '매질/난류로 망가진 신호를 신경망으로 복원한다'는 목표는 같지만 물리 제약을 어떻게 넣는지에서 접근이 갈린다.",
-      "confidence": "Medium",
-      "confidence_note": "제목/저널 정보 기반, 서로 다른 왜곡원(산란매질 vs 대기 난류)이지만 물리 제약 신경망이라는 같은 방법론 축을 공유",
-      "lab_action": "물리 제약 조건(forward scattering model)을 우리 산란매질 통과 이미징 복원 신경망 손실 함수에 추가했을 때 fidelity가 얼마나 개선되는지 ablation; 잔차 합성곱 어텐션 구조를 대기 난류 촬영 초해상도 복원 baseline으로 재현해 우리 turbulence dataset에서 성능 비교"
-    },
-    {
-      "title": "테라헤르츠 메타표면이 재구성 가능한 빔 성형·다중 초점으로",
-      "papers": [
-        {
-          "title": "VO2-enabled Reconfigurable Terahertz Metasurface for Airy Beam Generation and OAM Multiplexing",
-          "arxiv_id": "https://doi.org/10.1364/oe.599151",
-          "journal_or_source": "Optics Express"
-        },
-        {
-          "title": "Spin-selective metasurface for terahertz focusing with multi-focal length or multi-focus",
-          "arxiv_id": "https://doi.org/10.1016/j.infrared.2026.106759",
-          "journal_or_source": "Infrared Physics & Technology"
-        }
-      ],
-      "why": "테라헤르츠파는 통신·비파괴 이미징에 유용하지만 메타표면 소자는 보통 한 번 설계하면 빔 모양이나 초점이 고정된다는 한계가 있다. 오늘 저널 두 편은 이 고정성을 깨는 시도다. VO2(이산화바나듐, 온도에 따라 금속-절연체 상전이가 일어나는 소재) 기반 메타표면은 이 상전이를 스위치처럼 이용해 하나의 소자로 Airy 빔을 만들거나 궤도각운동량(OAM) 다중화를 전환할 수 있게 했고, spin-selective 메타표면은 입사광의 편광(spin) 상태에 따라 여러 초점 거리·초점 위치를 골라 쓸 수 있게 했다. 둘 다 '소자 하나, 빔 형태 하나'였던 테라헤르츠 메타표면을 외부 신호나 입력 편광으로 재구성 가능하게 만든다.",
-      "confidence": "Low",
-      "confidence_note": "2편뿐이고 제목 기반 판단(초록 미공개), 재구성 방식(상전이 vs 편광 선택)이 서로 달라 직접적 방법론 연결은 약함",
-      "lab_action": "VO2 상전이 스위칭 메타표면의 응답 속도·구동 조건을 우리 THz 이미징 프로토타입의 동적 빔 성형 요구사항과 비교; spin-selective 다중 초점 설계 원칙을 광학 대역 다중 초점 메타렌즈 설계로 옮겨 적용 가능한지 검토"
+      "confidence_note": "제목/저널 정보 기반, 서로 다른 파장 대역(가시광/근적외선, 테라헤르츠) 4편이 같은 실용화·재구성성 방향을 지시",
+      "lab_action": "프리폼 캐스케이드 메타렌즈 설계 원칙을 우리 소형 이미징 모듈(내시경/모바일 렌즈)의 가변초점 요구사항에 적용 가능한지 시뮬레이션으로 1차 검토; VO2 상전이 스위칭 메타표면의 응답 속도·구동 조건을 우리 THz 이미징 프로토타입의 동적 빔 성형 요구사항과 비교"
     }
   ],
   "research_topics": [
     {
-      "title": "Dual-wavelength FP topography 채널을 랩 FP 파이프라인에 이식",
-      "claim": "두 파장 조명을 추가하면 기존 FPM 진폭 복원 파이프라인에 표면 높이(topography) 채널을 추가로 얻을 수 있을 것이다",
+      "title": "3DGS 압축·밀도 제어 방법 비교표를 우리 파이프라인에 이식",
+      "claim": "CoSAG의 학습-불필요 압축과 DP-Splat의 Bayesian nonparametric 밀도 제어를 같은 장면에서 비교하면, 저장 용량 대비 렌더링 품질 trade-off에서 우리 파이프라인에 맞는 조합을 찾을 수 있다.",
       "supporting_papers": [
-        {"title": "Dual-wavelength Fourier Ptychographic Topography", "arxiv": "https://doi.org/10.1109/tci.2026.3712486"}
+        {"title": "CoSAG: Compact Semantic Anchor Gaussians via Training-Free Rate-Distortion Coding", "arxiv": "https://arxiv.org/abs/2607.10237"},
+        {"title": "DP-Splat: Bayesian Nonparametric Complexity Control for Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2607.10912"}
       ]
     },
     {
-      "title": "물리 제약 조건을 우리 산란매질 복원 신경망 손실 함수에 추가",
-      "claim": "forward scattering model 기반 물리 제약을 손실 함수에 넣으면 동적 산란매질을 통과한 영상의 복원 fidelity가 순수 데이터 기반 학습보다 개선될 것이다",
+      "title": "SHAL의 slide-level active learning을 랩 H&E 라벨링 파이프라인에 재현",
+      "claim": "slide-level 단위 acquisition 전략이 patch-level uncertainty 기반 방법보다 목표 성능 도달까지 필요한 annotation 양을 더 줄일 수 있다.",
       "supporting_papers": [
-        {"title": "High-fidelity reconstruction of vortex beams through dynamic scattering media using a physically constrained deep neural network", "arxiv": "https://doi.org/10.1364/ol.606199"}
+        {"title": "Slide-Level Active Learning Reduces Annotation Burden in H&E images (SHAL)", "arxiv": "https://arxiv.org/abs/2607.09831"}
       ]
     },
     {
-      "title": "라벨-프리 핵/집락 이미징 스펙 재현성 검토",
-      "claim": "BAIO-DX(디지털 홀로그래피+CNN)와 UV-PAM(266nm 광음향)의 해상도·처리량 스펙을 우리 라벨-프리 이미징 세팅에 적용하면 염색 없이도 비교 가능한 정량 정보를 얻을 수 있을 것이다",
+      "title": "Imaging-101 4단계 파이프라인 스키마로 랩 재구성 코드베이스 재문서화",
+      "claim": "전처리·forward physics modeling·inverse solver·visualization 4단계로 코드베이스를 재정리하면, 서로 다른 모달리티(산란매질, 위상 이미징) 파이프라인 간 비교와 재사용이 쉬워진다.",
       "supporting_papers": [
-        {"title": "Non-destructive label-free automated identification of bacterial colonies at the species level directly on agar media using digital holography and convolutional neural network algorithms", "arxiv": "https://doi.org/10.1128/spectrum.00080-26"},
-        {"title": "A Label-Free Ultraviolet Photoacoustic Microscopy Enables Nuclear Imaging and Toxicity Assessment in an Intact Brain Organoid", "arxiv": "https://doi.org/10.1002/smll.202600048"}
+        {"title": "Imaging-101: Benchmarking LLM Coding Agents on Scientific Computational Imaging", "arxiv": "https://arxiv.org/abs/2607.10789"}
+      ]
+    },
+    {
+      "title": "LFD 데이터셋으로 렌즈리스 얼굴 인식 다운스트림 벤치마크 구축",
+      "claim": "대규모 실제 렌즈리스 얼굴 인식 데이터셋에서 우리 복원 파이프라인의 다운스트림 인식 성능을 렌즈 기반 카메라 대비 정량 비교할 수 있다.",
+      "supporting_papers": [
+        {"title": "LFD: Enabling Real-World Lensless Face Recognition with a Large-Scale Dataset", "arxiv": "https://arxiv.org/abs/2607.10094"}
       ]
     }
   ],
