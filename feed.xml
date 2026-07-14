@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 13 Jul 2026 12:13:36 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 12:10:54 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-07-14 (화요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-07-14.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-14.html</guid>
+      <pubDate>Tue, 14 Jul 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 브리핑은 어제(7/13, 월) arXiv 흐름이 아직 갱신되지 않은 자리를 저널이 대신 채운 날입니다. 어제 daily에 따르면 어제는 feed-forward 3D 재구성 연구가 "새 촬영 도메인 적용"에서 "기하 파운데이션 모델 내부 진단·스케일 보정"으로 무게중심을 옮기고, 이벤트 카메라 연구가 "파이프라인 확장"에서 "그 파이프라인이 안전하고 견고한가"를 묻는 쪽으로 좁혀진 하루였습니다. 계산광학 핵심 버킷(Lensless/Coded Imaging·Fourier Ptychography·Meta-Optics)은 어제도 사실상 공백에 가까웠는데, 오늘은 그 arXiv 신호 자체가 아직 올라오지 않으면서 저널이 하루 전체를 채우는 날이 됐습니다.]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-07-13 (Week 28)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-07-13-weekly.html</link>

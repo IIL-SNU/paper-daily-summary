@@ -1,0 +1,145 @@
+{
+  "date": "2026-07-14",
+  "source_mode": "journal-only",
+  "clusters": [
+    {
+      "title": "Fourier ptychography가 진폭 복원을 넘어 위상 지형·컬러 병리 영상으로 확장",
+      "papers": [
+        {
+          "title": "Dual-wavelength Fourier Ptychographic Topography",
+          "arxiv_id": "https://doi.org/10.1109/tci.2026.3712486",
+          "journal_or_source": "IEEE Transactions on Computational Imaging"
+        },
+        {
+          "title": "Fast Full-Color Pathological Imaging via Optimized Illumination Pattern with Color Transfer in Fourier Ptychographic Microscopy (OIP-CTFPM)",
+          "arxiv_id": "https://doi.org/10.1364/boe.608075",
+          "journal_or_source": "Biomedical Optics Express"
+        }
+      ],
+      "why": "Fourier ptychography(FPM)는 원래 렌즈 없이 저해상도 여러 장을 합성해 고해상도 진폭 영상을 만드는 기법인데, 오늘 저널 두 편은 그 다음 단계를 보여준다. 하나는 두 파장을 함께 써서 진폭이 아니라 표면 높이(topography) 정보까지 뽑아내려 하고, 다른 하나는 조명 패턴 최적화와 색 정보 이식(color transfer)으로 병리 슬라이드를 완전 컬러로, 더 빠르게 재구성한다. 둘 다 FPM을 '고해상도 진폭 영상 하나'가 아니라 표면 정보·색 정보라는 추가 축으로 확장하는 방향을 가리킨다.",
+      "confidence": "Medium",
+      "confidence_note": "제목/저널 정보 기반(Crossref 초록 미공개), 서로 다른 저널 2편이 같은 확장 방향을 지시",
+      "lab_action": "dual-wavelength illumination sequence를 우리 FP 재구성 파이프라인에 추가해 topography(표면 높이) 채널을 함께 복원할 수 있는지 시뮬레이션으로 먼저 검증; OIP-CTFPM의 조명 패턴 최적화+color transfer 조합을 우리 병리 슬라이드 컬러 재구성 속도 벤치마크와 비교"
+    },
+    {
+      "title": "메타옵틱스가 다시 실제 이미징 광학계 설계(색수차 보정·가변초점)로 수렴",
+      "papers": [
+        {
+          "title": "Achromatic meta-optics for full-color near-eye displays and beyond: Opinion",
+          "arxiv_id": "https://doi.org/10.1364/ome.608741",
+          "journal_or_source": "Optical Materials Express"
+        },
+        {
+          "title": "Compact infrared varifocal optics enabled by hybrid refractive lenses and freeform cascade metalenses",
+          "arxiv_id": "https://doi.org/10.1364/optica.606206",
+          "journal_or_source": "Optica"
+        }
+      ],
+      "why": "메타렌즈는 얇고 가볍다는 장점으로 늘 주목받았지만, 색수차(파장마다 초점이 다르게 맺히는 문제)와 초점 거리를 기계적으로 바꾸기 어렵다는 두 약점이 실제 이미징 시스템 채택을 막아왔다. 오늘 저널 두 편은 각각 이 문제를 정면으로 다룬다. 근안 디스플레이용 achromatic meta-optics 리뷰는 색수차 보정 전략을 정리하고, 적외선 가변초점 광학계 논문은 굴절 렌즈와 프리폼(비대칭 자유곡면) 캐스케이드 메타렌즈를 결합해 기계적 초점 이동 없이 소형 가변초점 구조를 구현한다. 두 편 모두 메타렌즈를 신기한 소자 하나가 아니라 기존 굴절 광학계를 보완하는 실용 부품으로 다룬다.",
+      "confidence": "Medium",
+      "confidence_note": "제목/저널 정보 기반, 서로 다른 저널 2편이 같은 실용화 방향을 지시",
+      "lab_action": "프리폼 캐스케이드 메타렌즈 설계 원칙을 우리 소형 이미징 모듈(내시경/모바일 렌즈)의 가변초점 요구사항에 적용 가능한지 시뮬레이션으로 1차 검토; achromatic 메타옵틱스 리뷰가 정리한 색수차 보정 전략을 우리 메타렌즈 설계 체크리스트에 반영"
+    },
+    {
+      "title": "디지털 병리·생물영상이 염색·절편 없이 세포/집락 단위 정보를 직접 뽑아내는 쪽으로",
+      "papers": [
+        {
+          "title": "Non-destructive label-free automated identification of bacterial colonies at the species level directly on agar media using digital holography and convolutional neural network algorithms",
+          "arxiv_id": "https://doi.org/10.1128/spectrum.00080-26",
+          "journal_or_source": "Microbiology Spectrum"
+        },
+        {
+          "title": "A Label-Free Ultraviolet Photoacoustic Microscopy Enables Nuclear Imaging and Toxicity Assessment in an Intact Brain Organoid",
+          "arxiv_id": "https://doi.org/10.1002/smll.202600048",
+          "journal_or_source": "Small"
+        }
+      ],
+      "why": "두 논문은 완전히 다른 생물학적 대상(세균 콜로니 vs 뇌 오가노이드)을 다루지만 같은 질문에 답한다. BAIO-DX는 형광 염색이나 MALDI-TOF 질량분석 같은 기존 배양 기반 동정법 대신, 한천 배지 위 콜로니를 30분마다 18시간 동안 디지털 홀로그래피로 촬영(전체 플레이트당 530 MPx)하고 그 영상을 CNN에 학습시켰다. 276개 임상 균주·49,490장의 홀로그램으로 학습한 뒤 학습에 없던 균주까지 포함해 테스트한 결과 종 수준 식별률 86.6%, 양성 일치율 96.5%를 달성했다. UV 광음향 현미경 논문은 형광 염색·절편화가 필요했던 기존 방식 대신 266nm 자외선으로 핵산을 직접 여기시켜 살아있는 뇌 오가노이드 내부를 물리적으로 자르지 않고 278nm 해상도로 촬영했고, 에탄올에 노출된 오가노이드에서 핵 면적·지름·원형도가 각각 46.1%·20.8%·6.0% 줄어드는 것을 라벨 없이 잡아냈다. 두 논문 모두 '염색하거나 파괴하지 않고도 세포/집락 단위 정보를 정량적으로 뽑아낼 수 있는가'라는 같은 질문에 홀로그래피와 광음향이라는 서로 다른 계산 이미징 방식으로 답한다.",
+      "confidence": "Medium",
+      "confidence_note": "두 논문 모두 abstract에 구체적 수치(정확도, 해상도, 처리량)가 있어 근거는 명확하나, 대상 도메인이 완전히 달라 방법론적 직접 비교는 어려움",
+      "lab_action": "BAIO-DX의 홀로그램+phylogenetic 분류 결합 전략을 우리 라벨-프리 병리/미생물 이미징 파이프라인의 분류기 설계에 참고; UV-PAM의 266nm 여기 파장·278nm 해상도 스펙을 우리 라벨-프리 핵 이미징 세팅의 목표 스펙과 비교해 재현 가능성 검토"
+    },
+    {
+      "title": "OCT가 신호 품질(SNR·편광 정보) 자체를 보강하는 계측 방법론으로",
+      "papers": [
+        {
+          "title": "A spectral upsampled optical coherence tomography for a high signal-to-noise ratio at deeper range",
+          "arxiv_id": "https://doi.org/10.1109/tim.2026.3712883",
+          "journal_or_source": "IEEE Transactions on Instrumentation and Measurement"
+        },
+        {
+          "title": "Polarization-Sensitive Module for Optical Coherence Tomography Instruments",
+          "arxiv_id": "https://doi.org/10.1109/tmi.2026.3713071",
+          "journal_or_source": "IEEE Transactions on Medical Imaging"
+        }
+      ],
+      "why": "OCT(광간섭단층촬영)는 이미 임상에서 널리 쓰이지만, 오늘 저널 두 편은 임상 진단이 아니라 계측 자체의 품질을 올리는 방법론에 집중한다. 스펙트럼 업샘플링 OCT는 깊은 곳까지 촬영할 때 신호대잡음비(SNR)가 떨어지는 문제를 스펙트럼 도메인 보간으로 개선하고, 편광 감응 모듈 논문은 기존 OCT 장비에 편광 정보를 추가로 얻을 수 있는 모듈을 결합하는 방법을 다룬다. 둘 다 OCT 하드웨어·신호처리 단(SNR, 편광 채널)을 개선해 같은 장비로 더 많은 정보를 뽑아내려는 계측 방법론 논문이다.",
+      "confidence": "Medium",
+      "confidence_note": "제목/저널 정보 기반, 같은 이미징 모달리티(OCT)에서 서로 다른 축(SNR·편광)의 계측 개선을 지시",
+      "lab_action": "스펙트럼 업샘플링 기법을 우리 OCT/OCT-유사 계산 이미징 파이프라인의 깊은 영역 SNR 개선에 적용 가능한지 시뮬레이션 비교; 편광 감응 모듈 설계를 참고해 우리 위상·편광 복합 계측 세팅에 이식할 수 있는 부분이 있는지 검토"
+    },
+    {
+      "title": "산란매질·난류를 통과한 영상 복원에 물리 제약 신경망을 접목",
+      "papers": [
+        {
+          "title": "High-fidelity reconstruction of vortex beams through dynamic scattering media using a physically constrained deep neural network",
+          "arxiv_id": "https://doi.org/10.1364/ol.606199",
+          "journal_or_source": "Optics Letters"
+        },
+        {
+          "title": "Turbulent Super-Resolution Reconstruction Based on Residual Convolutional Attention Mechanism",
+          "arxiv_id": "https://doi.org/10.1016/j.cpc.2026.110306",
+          "journal_or_source": "Computer Physics Communications"
+        }
+      ],
+      "why": "빛이 산란매질이나 대기 난류를 통과하면 정보가 뒤섞여 복원이 어렵다는 건 계산 이미징의 오랜 난제다. 오늘 저널 두 편은 이 문제를 신경망으로 풀되, 순수 데이터 기반 학습이 아니라 물리적 제약을 접목한다는 공통점이 있다. 소용돌이 빔(vortex beam) 복원 논문은 동적으로 변하는 산란매질을 통과한 뒤에도 물리적으로 타당한 해만 나오도록 제약을 건 신경망으로 고정밀 복원을 시도하고, 난류 초해상도 복원 논문은 잔차 합성곱 어텐션 구조로 난류에 흐려진 영상의 초해상도 복원을 시도한다. '매질/난류로 망가진 신호를 신경망으로 복원한다'는 목표는 같지만 물리 제약을 어떻게 넣는지에서 접근이 갈린다.",
+      "confidence": "Medium",
+      "confidence_note": "제목/저널 정보 기반, 서로 다른 왜곡원(산란매질 vs 대기 난류)이지만 물리 제약 신경망이라는 같은 방법론 축을 공유",
+      "lab_action": "물리 제약 조건(forward scattering model)을 우리 산란매질 통과 이미징 복원 신경망 손실 함수에 추가했을 때 fidelity가 얼마나 개선되는지 ablation; 잔차 합성곱 어텐션 구조를 대기 난류 촬영 초해상도 복원 baseline으로 재현해 우리 turbulence dataset에서 성능 비교"
+    },
+    {
+      "title": "테라헤르츠 메타표면이 재구성 가능한 빔 성형·다중 초점으로",
+      "papers": [
+        {
+          "title": "VO2-enabled Reconfigurable Terahertz Metasurface for Airy Beam Generation and OAM Multiplexing",
+          "arxiv_id": "https://doi.org/10.1364/oe.599151",
+          "journal_or_source": "Optics Express"
+        },
+        {
+          "title": "Spin-selective metasurface for terahertz focusing with multi-focal length or multi-focus",
+          "arxiv_id": "https://doi.org/10.1016/j.infrared.2026.106759",
+          "journal_or_source": "Infrared Physics & Technology"
+        }
+      ],
+      "why": "테라헤르츠파는 통신·비파괴 이미징에 유용하지만 메타표면 소자는 보통 한 번 설계하면 빔 모양이나 초점이 고정된다는 한계가 있다. 오늘 저널 두 편은 이 고정성을 깨는 시도다. VO2(이산화바나듐, 온도에 따라 금속-절연체 상전이가 일어나는 소재) 기반 메타표면은 이 상전이를 스위치처럼 이용해 하나의 소자로 Airy 빔을 만들거나 궤도각운동량(OAM) 다중화를 전환할 수 있게 했고, spin-selective 메타표면은 입사광의 편광(spin) 상태에 따라 여러 초점 거리·초점 위치를 골라 쓸 수 있게 했다. 둘 다 '소자 하나, 빔 형태 하나'였던 테라헤르츠 메타표면을 외부 신호나 입력 편광으로 재구성 가능하게 만든다.",
+      "confidence": "Low",
+      "confidence_note": "2편뿐이고 제목 기반 판단(초록 미공개), 재구성 방식(상전이 vs 편광 선택)이 서로 달라 직접적 방법론 연결은 약함",
+      "lab_action": "VO2 상전이 스위칭 메타표면의 응답 속도·구동 조건을 우리 THz 이미징 프로토타입의 동적 빔 성형 요구사항과 비교; spin-selective 다중 초점 설계 원칙을 광학 대역 다중 초점 메타렌즈 설계로 옮겨 적용 가능한지 검토"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "Dual-wavelength FP topography 채널을 랩 FP 파이프라인에 이식",
+      "claim": "두 파장 조명을 추가하면 기존 FPM 진폭 복원 파이프라인에 표면 높이(topography) 채널을 추가로 얻을 수 있을 것이다",
+      "supporting_papers": [
+        {"title": "Dual-wavelength Fourier Ptychographic Topography", "arxiv": "https://doi.org/10.1109/tci.2026.3712486"}
+      ]
+    },
+    {
+      "title": "물리 제약 조건을 우리 산란매질 복원 신경망 손실 함수에 추가",
+      "claim": "forward scattering model 기반 물리 제약을 손실 함수에 넣으면 동적 산란매질을 통과한 영상의 복원 fidelity가 순수 데이터 기반 학습보다 개선될 것이다",
+      "supporting_papers": [
+        {"title": "High-fidelity reconstruction of vortex beams through dynamic scattering media using a physically constrained deep neural network", "arxiv": "https://doi.org/10.1364/ol.606199"}
+      ]
+    },
+    {
+      "title": "라벨-프리 핵/집락 이미징 스펙 재현성 검토",
+      "claim": "BAIO-DX(디지털 홀로그래피+CNN)와 UV-PAM(266nm 광음향)의 해상도·처리량 스펙을 우리 라벨-프리 이미징 세팅에 적용하면 염색 없이도 비교 가능한 정량 정보를 얻을 수 있을 것이다",
+      "supporting_papers": [
+        {"title": "Non-destructive label-free automated identification of bacterial colonies at the species level directly on agar media using digital holography and convolutional neural network algorithms", "arxiv": "https://doi.org/10.1128/spectrum.00080-26"},
+        {"title": "A Label-Free Ultraviolet Photoacoustic Microscopy Enables Nuclear Imaging and Toxicity Assessment in an Intact Brain Organoid", "arxiv": "https://doi.org/10.1002/smll.202600048"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}
