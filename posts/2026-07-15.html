@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-07-15</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-07-15 (수요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-07-15 (수요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Wednesday, 15 July 2026"으로 확인됨</div>
+  <div>🔢 arXiv: cs.LG 144 · cs.CV 116 · cs.AI 157 · eess.IV 13 · eess.SP 22 (합계 452편, new+cross, replacement 제외)</div>
+  <div>🔢 저널: Crossref/OpenAlex 425편 수집(2026-07-14 등록분) · arXiv+저널 병합 스캔 789건 · ROI 배정 228건 (28.9%)</div>
+  <div>⚠️ Tomography/3D Imaging(37건)·Virtual Staining/Pathology(28건)·Deep Learning Methods(109건, catch-all)는 상당수가 임상 진단·키워드 우연 매칭입니다. Fourier Ptychography(4건)·Meta-Optics(12건)·Light-Field(3건)·Lensless(2건)도 오늘은 SAR/sonar aperture synthesis, RF/THz 안테나, Raman 분광 등과 우연히 겹친 논문이 대부분입니다. 아래 클러스터·부록에서는 실제 계산광학·계산이미징 신호만 추립니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 3D Gaussian Splatting이 사진 여러 장으로 예쁜 장면을 재현하는 원래 문제를 벗어나, 저선량 CT의 희소뷰 재구성, 수술 내시경의 좁은 시야 보완, 무선 VR 전송, 심지어 레이더 신호까지 서로 다른 촬영 조건과 센서로 동시에 번진 하루입니다. <strong>같은 3D 표현 하나가 사진 기반 렌더링을 넘어 계산 이미징 전반의 공통 도구로 자리잡고 있다는 신호</strong>입니다. 두 번째로 뚜렷한 흐름은 디지털 병리 WSI(whole-slide image) 분류입니다. 오늘은 <strong>정확도 경쟁에서 "그 정확도를 믿어도 되는가"를 검증하는 방향으로 무게중심이 옮겨갔습니다</strong> — 데이터 유출을 감사하는 논문과 분류 근거가 실제 병리학적 특징에서 나왔는지 확인하는 논문이 같은 날 나왔습니다. 계산광학 코어 버킷(Fourier Ptychography, Lensless, Meta-Optics, Light-Field)은 오늘은 신호가 약해서, 저널 관찰 대상으로만 짧게 짚고 넘어갑니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>이번 주는 화요일(7/14)에 3D Gaussian Splatting(3DGS)이 "정확도"에서 "저장·계산·온라인성"이라는 배포 축으로 넘어가는 흐름(CoSAG, DP-Splat, AsySplat 등 압축·밀도 제어 5편)을 보인 데 이어, 수요일인 오늘은 그 배포 효율화가 다음 단계로 넘어갑니다. 어제가 "3DGS를 어떻게 더 가볍게 만들 것인가"를 물었다면, 오늘은 "3DGS를 사진이 아닌 다른 촬영 조건과 센서에도 쓸 수 있는가"를 묻는 논문 6편이 나왔습니다. 빠른 움직임(SPIN-4DGS), 좁은 내시경 시야(ExtraGS), 무선 대역폭 제약(GeoFovea-GS), 희소뷰 CT(GR-Gaussian), 레이더 신호(RNSplat)까지 응용이 넓어졌고, SpeedyGS는 최대 160배 압축이라는 구체적인 수치로 배포 효율화 흐름을 이어갑니다. 이틀을 합쳐 보면 3DGS 연구가 "더 가볍게"에서 "더 넓은 데이터/센서에도"로 확장되는 이주짜리 흐름이 이어지고 있습니다.</p>
+<p>두 번째로 뜨거운 흐름은 디지털 병리 WSI 분류의 신뢰성 검증입니다. 어제(7/14)는 annotation 효율과 calibration, 공정성이 화두였다면, 오늘은 그보다 더 근본적인 질문인 "지금까지 보고된 높은 정확도 자체를 믿을 수 있는가"가 나왔습니다. 데이터 유출 감사 논문 한 편과 분류 근거의 인과적·개념적 타당성을 검증하는 논문 두 편이 같은 날 나왔다는 점에서, 디지털 병리 연구가 "정확도"라는 숫자 자체의 신뢰도를 재검토하는 단계로 넘어가고 있습니다. 세 번째 흐름은 저선량/희소뷰 재구성과 초해상도, 깊이 추정에서 diffusion·flow matching 기반 방법들이 "특정 조건에서만 잘 작동한다"는 한계를 정면으로 다루는 논문 3편이 동시에 나온 것입니다.</p>
+<p>다음 관찰 포인트는 (1) 3DGS의 비사진 센서(레이더, CT) 적용이 이번 주 후반에도 이어지는지, (2) WSI 데이터 유출 감사가 다른 병리 벤치마크로 확산돼 기존 SOTA 수치들이 재검토되는지, (3) 저선량/희소뷰 재구성의 조건 일반화 문제가 다음 주에 표준 벤치마크로 정리되는지입니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>어제(7/14, 화)는 3DGS 논문 5편이 모두 "같은 사진 기반 촬영 조건에서 저장 용량·계산량·온라인성을 어떻게 줄일 것인가"를 물었습니다. 오늘은 질문이 한 걸음 더 나아가서, "3DGS라는 표현 자체를 사진이 아닌 다른 촬영 조건과 센서에도 쓸 수 있는가"를 묻는 논문 6편이 나왔습니다. 같은 3DGS 효율화라도 어제는 압축·밀도 제어처럼 표현 내부를 줄이는 문제였고, 오늘은 CT나 레이더처럼 아예 다른 물리 신호에 그 표현을 이식하는 문제로 갈립니다. 병리 쪽도 결이 달라졌습니다 — 어제는 annotation 효율·calibration·공정성이라는 "더 잘 학습시키는 법"이 중심이었다면, 오늘은 "지금까지의 결과 자체를 믿어도 되는가"를 감사하는 논문이 나왔습니다. 계산광학 코어 버킷(Fourier Ptychography, Meta-Optics, Lensless)은 어제는 저널에서 확장·실용화 신호가 있었지만, 오늘은 이 버킷에 걸린 논문 대부분이 SAR/sonar aperture synthesis나 RF 안테나처럼 키워드만 겹치는 논문이라 별도 클러스터를 만들지 않았습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>3D Gaussian Splatting이 렌더링 대회용 데모를 벗어나 CT·내시경·VR 전송·레이더로 동시에 번짐</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.12362" target=_blank>SPIN-4DGS: Implicit 4D Gaussian Splatting for Fast Motion</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.12785" target=_blank>ExtraGS: Diffusion-Guided 3DGS for Endoscopic View Extrapolation</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.12641" target=_blank>GeoFovea-GS: Geometry-Aware 3DGS for Wireless Aerial VR</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2607.12656" target=_blank>SpeedyGS: Content-Aware 3DGS Compression</a> <span class=pill>SP</span><br>
+    <a href="https://doi.org/10.1109/tci.2026.3701585" target=_blank>GR-Gaussian: Sparse-View Tomographic Reconstruction</a> <span class=pill>JNL</span>
+  </td>
+  <td>지금까지 3D Gaussian Splatting(3DGS) 연구는 대부분 사진 여러 장으로 얼마나 예쁜 장면을 다시 그려내는가를 겨루는 렌더링 대회에 머물러 있었습니다. 오늘 나온 6편은 그 틀을 벗어나 완전히 다른 촬영 조건과 응용에 3DGS를 이식합니다. SPIN-4DGS는 스포츠처럼 프레임 사이 움직임이 큰 영상에서 기존 방식이 놓치던 빠른 물체를 잡아내고, ExtraGS는 수술 내시경처럼 시야가 좁아 못 본 부분을 diffusion 모델로 채워 넣으며, GeoFovea-GS는 무선 VR 전송처럼 대역폭이 부족한 상황에서 기하 오차가 큰 영역에만 통신 자원을 몰아줍니다. SpeedyGS는 저장 용량을 최대 160배 줄이고, GR-Gaussian은 촬영 각도가 적은 CT 희소뷰 재구성에, RNSplat(부록 참고)은 아예 광학 카메라가 아닌 레이더 영상에 3DGS를 적용합니다. 즉 3DGS가 "사진 몇 장으로 예쁜 3D 만들기"라는 원래 문제를 넘어, 촬영 조건이 나쁘거나 전송·저장이 어렵거나 아예 다른 센서를 쓰는 상황까지 공통 3D 표현으로 자리잡고 있다는 뜻입니다.</td>
+  <td>High<br><small>arXiv 4편 + 저널 2편이 서로 다른 촬영 조건(빠른 움직임·좁은 시야·희소뷰·비광학 센서)과 배포 제약(대역폭·저장 용량)에서 동시에 3DGS를 확장</small></td>
+  <td>SpeedyGS의 2단계 압축(구조 최적화 후 통계적 부호화)을 우리 3DGS 파이프라인에 이식해 저장 용량 대비 PSNR/SSIM trade-off 곡선을 직접 그려보고, GR-Gaussian의 희소뷰 단층촬영 재구성 구조를 우리 산란매질/위상 이미징 데이터의 제한된 각도 촬영 시나리오에 이식 가능한지 시뮬레이션으로 1차 검토</td>
+</tr>
+<tr>
+  <td><strong>디지털 병리 WSI 분류가 정확도 경쟁에서 "그 정확도를 믿어도 되는가"를 검증하는 방향으로 이동</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.12278" target=_blank>Auditing Data Leakage in Whole-Slide Image Multimodal Benchmarks</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.12376" target=_blank>Dual-Channel Feature Decoupling in Front-Door Mediation Causal Inference for WSI</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.12556" target=_blank>CGRL: Concept-Guided Pruning and Representation Learning for WSI</a> <span class=pill>CV</span>
+  </td>
+  <td>그동안 whole-slide image(WSI, 병리 슬라이드 전체를 스캔한 초고해상도 영상) 분류 논문들은 "분류 정확도를 몇 % 더 올렸는가"로 서로를 비교해 왔습니다. 오늘 나온 3편은 결이 다릅니다. Auditing Data Leakage 논문은 최근 vision-language model들이 WSI 질의응답에서 보인 놀라운 zero-shot 성능이 사실은 같은 환자의 슬라이드가 학습·평가 데이터에 동시에 섞여 들어가거나, 서로 다른 병원의 슬라이드가 같은 염색·스캐너 특성을 공유해서 생긴 착시일 수 있다는 것을 데이터 유출 감사로 밝혀냅니다. 나머지 두 편은 정반대 방향에서 신뢰성을 높이려는 시도로, 인과추론 기반 MIL(multiple instance learning) 논문은 슬라이드 안의 어떤 영역이 실제로 진단에 기여했는지 인과관계로 걸러내고, CGRL은 질병 개념과 무관한 패치를 걸러내 분류 근거를 병리학적 의미와 정렬시킵니다. 세 편을 같이 보면, WSI 분류 연구가 정확도 숫자만으로는 설득력을 얻기 어렵고 그 숫자가 진짜 병리학적 근거에서 나왔는지 증명해야 하는 단계로 넘어가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>같은 날 서로 다른 저자군 3편이 신뢰성 검증(데이터 유출 감사·인과 근거·개념 정렬)이라는 같은 방향을 지시하지만, 다른 벤치마크로 확산됐는지는 추가 관찰 필요</small></td>
+  <td>Auditing Data Leakage의 patient-level·institutional-level 유출 검사 스크립트를 우리 보유 WSI 데이터셋 split에 그대로 적용해 학습/평가 분리가 안전한지 먼저 점검하고, CGRL의 개념 프로토타입 기반 패치 가지치기를 우리 label-free 병리 파이프라인의 관심영역 선별 전처리로 재현</td>
+</tr>
+<tr>
+  <td><strong>저선량·희소뷰 재구성이 diffusion/flow matching으로 수렴하며, "한 조건에서만 잘 되는 문제"를 정면으로 다룸</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.11941" target=_blank>GenDiff: Dose and Anatomy Aware Diffusion for Low-Dose CT</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.12753" target=_blank>RFMSR: Residual Flow Matching for Image Super-Resolution</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.12433" target=_blank>ARDepth: Auto-regressive Monocular Depth Estimation</a> <span class=pill>CV</span>
+  </td>
+  <td>diffusion 모델과 flow matching은 이미 영상 복원의 표준 도구가 됐지만, 오늘 나온 3편은 공통적으로 "기존 diffusion/flow 방식이 특정 촬영 조건에서만 잘 작동하고 다른 조건에서는 무너진다"는 문제를 정면으로 짚습니다. GenDiff는 기존 저선량 CT 복원 모델들이 특정 방사선량이나 특정 신체 부위에 맞춰 최적화돼 있어 실제 임상 환경처럼 조건이 계속 바뀌면 성능이 떨어진다는 점을 지적하고, 방사선량과 해부학적 구조를 함께 반영해 여러 조건에 걸쳐 일반화되게 만듭니다. RFMSR은 기존 flow matching 초해상도 기법들이 순수 가우시안 노이즈에서 출발하는 표준 공식을 그대로 가져다 쓰다 보니 비효율적이라는 점을 지적하고, 저해상도 영상 자체에서 출발하는 잔차 형태로 바꿉니다. ARDepth는 diffusion 기반 단안 깊이 추정이 장면을 한 번에 매끈하게 복원한다고 암묵적으로 가정하지만, 실제 장면 구조는 큰 틀에서 세부로 점진적으로 드러난다는 점을 지적하며 순서를 명시적으로 반영합니다. 세 편 모두 "더 좋은 생성 모델을 붙였다"가 아니라 기존 생성 모델의 가정이 실제 촬영 조건이나 장면 구조와 맞지 않는 지점을 하나씩 찾아 고친다는 공통점이 있습니다.</td>
+  <td>Medium<br><small>서로 다른 태스크(저선량 CT·초해상도·깊이 추정) 3편이 같은 방법론적 문제의식(생성 모델의 조건 일반화 실패)을 공유하지만, 태스크가 달라 직접 비교는 어려움</small></td>
+  <td>GenDiff의 dose-and-anatomy aware 구조를 우리 저선량 계산 이미징(산란매질 통과) 복원 실험에 이식해 서로 다른 신호 대 잡음비 조건에서 단일 모델의 일반화 성능을 측정하고, RFMSR의 저해상도 영상 출발 잔차 flow matching을 우리 초해상도 후처리 baseline과 PSNR·추론 속도로 비교</td>
+</tr>
+<tr>
+  <td><strong>거대 foundation model을 자원 제한 환경에 맞게 줄이는 경량화 논문이 세그멘테이션·분광·병리로 동시에 퍼짐</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.12297" target=_blank>MobileSAM2: Lightweight Segment Anything for Spatial Intelligence</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.12782" target=_blank>MBTI: Multi-Branch Efficient Fine-Tuning for Hyperspectral Foundation Models</a> <span class=pill>CV</span><br>
+    <a href="https://doi.org/10.1016/j.cmpb.2026.109527" target=_blank>Semi-supervised IoMT Framework for Prostate Cancer Grading</a> <span class=pill>JNL</span>
+  </td>
+  <td>영상 기반 foundation model들이 커질수록 정확도는 오르지만 휴대폰이나 현장 장비 같은 자원 제한 환경에서는 그대로 쓰기 어렵다는 문제가 계속 쌓여 왔습니다. 오늘 나온 3편은 이 문제를 서로 다른 영상 도메인에서 동시에 풀어냅니다. MobileSAM2는 영상·동영상 모두에서 무엇이든 분할하는 대형 모델 SAM2를 모바일 기기에서도 돌아가도록 증류하고, MBTI는 센서마다 파장 대역 구성이 달라 그대로 옮겨 쓰기 어려운 hyperspectral(초분광) foundation model을 적은 라벨로도 여러 센서에 재사용할 수 있게 다중 분기 구조로 조정하며, 병리 논문은 라벨이 부족하고 데이터 품질이 들쭉날쭉한 실제 임상 현장에서도 전립선암 등급 판정 모델이 안정적으로 돌아가도록 반지도학습과 경량 IoMT(의료 사물인터넷) 프레임워크를 결합합니다. 세 편 모두 더 큰 모델이 아니라, 이미 잘 만들어진 큰 모델을 실제 현장 제약(연산 자원, 센서 차이, 라벨 부족)에 맞게 줄이고 재사용하는 방법을 다룬다는 공통점이 있습니다.</td>
+  <td>Medium<br><small>서로 다른 영상 도메인(범용 분할·초분광·병리) 3편이 대형 모델 경량화·재사용이라는 같은 방향을 지시하지만, 표준 경량화 벤치마크로 묶이지는 않아 근거가 태스크별로 흩어져 있음</small></td>
+  <td>MobileSAM2의 distillation 전략을 우리 렌즈리스/산란매질 복원 후처리 분할 모듈에 적용해 모바일급 연산 자원에서의 추론 속도·정확도 trade-off를 측정하고, MBTI의 다중 분기 어댑터 구조가 우리 hyperspectral 계산 이미징 파이프라인의 센서 간 전이에도 통하는지 1차 검증</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ Watch-lens 점검: Fourier Ptychography/Microscopy(4편), Lensless/Coded Imaging(2편), Meta-Optics/Diffractive(12편), Light-Field/Novel Sensors(3편)은 오늘 신호가 약합니다. Fourier Ptychography 4편은 전부 SAR/sonar의 "aperture synthesis"나 메타표면 안테나로 실제 ptychography와 무관하고, Meta-Optics 12편도 대부분 THz/RF 안테나·열복사체 설계로 이미징과 직접 연결되지 않습니다(예외: "Bridging the gap in flat optics: partially nonlocal metasurfaces"는 이미징 응용을 명시). Lensless 2편 중 격자 기반 렌즈리스 시스템 실측 논문 1편만 관련 있고, Light-Field 3편도 Raman 분광·시냅스 소재 논문이라 이미징 ROI와 거리가 있습니다. 독립 클러스터로 묶을 근거가 부족해 표에는 올리지 않았습니다 — 아래 버킷별 주요 논문 참고.</small></p>
+
+<h2>📐 arXiv vs 저널 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: SPIN-4DGS·ExtraGS·GeoFovea-GS·SpeedyGS(3DGS 확장), Auditing Data Leakage·Dual-Channel Feature Decoupling·CGRL(WSI 신뢰성), GenDiff·RFMSR·ARDepth(생성 기반 재구성/복원), MobileSAM2·MBTI(경량화), DermDepth·Uncertainty-Aware Retinal Fluid Segmentation(단안/의료 3D)</li>
+  <li><strong>저널 전용</strong>: GR-Gaussian·RNSplat(비광학 센서 3DGS), 반지도 전립선암 등급 판정 IoMT, THz/RF 메타표면·안테나 다수, 광섬유 굴절률 센서, digital holography review</li>
+  <li><strong>공통 키워드</strong>: reconstruction(3DGS 확장 vs 임상 CT/MRI 재구성으로 맥락이 다름), tomography(3DGS 기반 sparse-view vs 임상 진단 저널), aperture synthesis(SAR/sonar 레이더 vs 계산광학 원래 의미가 다름 — 오탐 사례)</li>
+  <li><strong>특징</strong>: 오늘은 arXiv 쪽이 3DGS의 응용 확장과 방법론적 문제 제기(신뢰성 감사, 조건 일반화, 경량화)를 주도하고, 저널 쪽은 3DGS를 비광학 센서(레이더)에 이식하는 사례와 임상 응용 리뷰가 대부분입니다. 계산광학 코어(FP, 메타옵틱스, lensless)는 오늘 저널에서도 뚜렷한 신호가 없어 arXiv-저널 대비가 약한 하루입니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 3DGS가 "예쁜 렌더링"에서 "어디서나 쓰는 3D 표현"으로 확장</h3>
+  <p>SPIN-4DGS, ExtraGS, GeoFovea-GS, SpeedyGS, GR-Gaussian, RNSplat까지 6편이 같은 날 3DGS를 빠른 움직임, 좁은 시야, 무선 전송 제약, 희소뷰 CT, 레이더 신호로 각각 확장했습니다. 압축·밀도 제어처럼 표현 내부를 줄이던 어제(7/14)의 흐름과 달리, 오늘은 3DGS라는 표현 자체를 사진이 아닌 다른 촬영 조건·센서에도 쓸 수 있는지 시험하는 논문들입니다. 계산 이미징에서 3DGS가 특정 렌더링 태스크의 도구를 넘어 여러 모달리티에서 재사용 가능한 공통 3D 표현으로 자리잡고 있다는 뜻입니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 촬영 조건과 센서(빠른 움직임·좁은 시야·희소뷰·비광학 레이더) 6편이 같은 방향을 지시</p>
+</div>
+
+<div class=ins>
+  <h3>2. WSI 분류의 다음 질문은 "정확도"가 아니라 "그 정확도가 진짜인가"</h3>
+  <p>Auditing Data Leakage 논문은 최근 vision-language model들의 인상적인 WSI 성능 상당 부분이 환자·기관 단위 데이터 유출에서 나온 착시일 수 있음을 보이고, 나머지 두 편은 분류 근거를 인과관계와 질병 개념으로 검증하려 합니다. 세 편을 합치면, WSI 분류 연구 공동체가 그동안 쌓아온 SOTA 수치 자체를 재검토해야 할 수도 있다는 경고성 신호입니다.</p>
+  <p class=conf-note>Confidence: Medium — 같은 날 3편이 신뢰성 검증이라는 같은 방향을 지시하지만, 다른 벤치마크·기관으로 확산된 증거는 아직 없음</p>
+</div>
+
+<div class=ins>
+  <h3>3. 생성 기반 복원 모델의 "조건 일반화 실패"를 정면으로 짚는 논문들이 늘어남</h3>
+  <p>GenDiff, RFMSR, ARDepth는 diffusion/flow matching이 특정 촬영 조건(방사선량, 노이즈 분포, 장면 구조)에 맞춰 최적화된 나머지 조건이 바뀌면 성능이 떨어진다는 공통 문제를 각각 다른 태스크에서 지적합니다. "더 큰 생성 모델"보다 "그 모델이 어떤 가정 위에서 작동하는지"를 다시 점검하는 쪽으로 관심이 옮겨가는 신호로 읽힙니다.</p>
+  <p class=conf-note>Confidence: Medium — 태스크가 저선량 CT·초해상도·깊이 추정으로 서로 달라 직접 비교는 어렵지만, 문제의식은 뚜렷하게 겹침</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. SpeedyGS 압축 파이프라인을 랩 3DGS 재구성에 이식해 저장·전송 비용 절감폭 측정</h3>
+  <p>2단계(구조 최적화 후 통계적 부호화) 압축 방식이 우리 데이터에서도 렌더링 품질 손실 없이 저장 용량을 크게 줄일 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>SpeedyGS 코드 공개 여부 확인 후 재현 가능하면 clone, 아니면 논문 기술을 바탕으로 자체 구현</li>
+    <li>공통 benchmark: 우리 랩 보유 3DGS 장면 2~3개</li>
+    <li>비교축: 압축 전후 저장 용량(MB/scene), PSNR/SSIM, 디코딩 지연시간</li>
+    <li>실패해도 남는 결과: 우리 장면 특성에서 rate-distortion 곡선과 SpeedyGS 논문의 160배 수치가 재현되는지에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. GR-Gaussian의 희소뷰 단층촬영 재구성 구조를 산란매질/위상 이미징에 이식</h3>
+  <p>그래프 기반 radiative Gaussian splatting 구조가 촬영 각도가 제한된 우리 계산 이미징 데이터에서도 재구성 품질을 유지할 수 있는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>GR-Gaussian 논문의 그래프 기반 방사 강도 표현을 우리 순방향 물리 모델에 맞게 재구성</li>
+    <li>공통 benchmark: 우리 보유 산란매질/위상 이미징 데이터셋(제한된 각도 촬영)</li>
+    <li>비교축: 촬영 각도 수 대비 재구성 PSNR, 기존 반복 최적화 대비 수렴 속도</li>
+    <li>실패해도 남는 결과: 우리 도메인에서 3DGS 기반 재구성이 통하는 촬영 각도 범위에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. WSI 데이터 유출 감사 스크립트를 우리 병리 데이터셋 split에 적용</h3>
+  <p>patient-level·institutional-level 유출 검사를 우리 보유 데이터셋에 적용해, 우리 학습/평가 분리가 실제로 안전한지 사전에 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>Auditing Data Leakage 논문의 유출 탐지 방법론(환자 ID·염색-스캐너 시그니처 교차 확인) 재현</li>
+    <li>공통 benchmark: 우리 보유 WSI 데이터셋의 기존 train/test split</li>
+    <li>비교축: 유출 탐지 전후 실제 held-out 성능 차이</li>
+    <li>실패해도 남는 결과: 우리 데이터셋의 split 안전성에 대한 문서화된 baseline</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(37편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:11%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:5%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:32%"></span></span><span class=n>12편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:32%"></span></span><span class=n>12편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:8%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>37편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:76%"></span></span><span class=n>28편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:57%"></span></span><span class=n>21편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>109편</span></div>
+
+<p><small>⚠️ 참고: Tomography/3D Imaging 37편 중 실제 계산광학·계산이미징 신호는 3DGS 확장 클러스터 9편(대표 5편+보조 4편) 정도이며 나머지는 대부분 임상 CT/MRI/OCT 진단 저널입니다. Virtual Staining/Pathology 28편 중 관련 신호는 WSI 신뢰성 클러스터 3편 정도이며 나머지는 staining/virtual 키워드 우연 매칭(치약 미백, 금속 합금, 가상 정치·화폐 등)입니다. Reconstruction/Inverse Problems 21편도 대부분 EEG/PINN/federated learning으로 이미징 ROI와 간접 연결입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (4편 중 관련 0편)</h3>
+<div class=roi-item>
+  <strong>오늘은 관련 논문 없음</strong><br>
+  왜 주요: 4편 모두 SAR/sonar의 "aperture synthesis"(TerraLogic 지리공간 추론, bistatic circular SAR, synthetic aperture sonar) 또는 메타표면 RLSA 안테나로, Fourier ptychography와 키워드만 겹치는 오탐입니다.
+</div>
+
+<h3>Lensless/Coded Imaging (2편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.heliyon.2026.e45173" target=_blank>Investigating the performance of regular two-dimensional grating in a lensless system</a></strong> [JNL]<br>
+  왜 주요: 격자 기반 렌즈리스 인코더의 실측 성능 검증 — 나머지 1편(심장 3D 초음파 국소화 현미경 벤치마킹)은 렌즈리스 이미징과 무관해 제외
+</div>
+
+<h3>Phase Imaging/Holography (12편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02362-x" target=_blank>Background-free quantitative phase imaging with adaptive-optics surface plasmon resonance holographic microscopy</a></strong> [JNL]<br>
+  왜 주요: 적응광학 기반 위상 수차 보정으로 근접장 QPI 배경 잡음 제거 — 저해상도 재료·세포 이미징에 직접 적용 가능
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02357-8" target=_blank>Optical singularity protractor for rotating metrology with neuromorphic sensing</a></strong> [JNL]<br>
+  왜 주요: 소용돌이(vortex) 빔 기반 회전 계측을 신경모방 센싱과 결합 — 나머지 10편(감쇠 광전자 홀로그래피, JHEP 이론물리 holography 2편, THz 메타표면, 광섬유 센서 등)은 계산 이미징 ROI와 무관해 제외
+</div>
+
+<h3>Meta-Optics/Diffractive (12편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02397-0" target=_blank>Bridging the gap in flat optics: the dawn of partially nonlocal metasurfaces</a></strong> [JNL]<br>
+  왜 주요: 공간 제어와 고품질 계수(Q-factor) 사이 trade-off를 깨는 부분 비국소 메타표면 — 논문이 명시적으로 advanced imaging 응용을 언급. 나머지 11편(열복사체, THz 안테나, 편광 필터, 액정 필름 등)은 통신·센싱·열관리 응용으로 이미징과 거리가 있어 제외
+</div>
+
+<h3>Light-Field/Novel Sensors (3편 중 관련 0편)</h3>
+<div class=roi-item>
+  <strong>오늘은 관련 논문 없음</strong><br>
+  왜 주요: 3편 모두 뉴로모픽 채널 디코딩(통신), 원통형 벡터 광필드 기반 Raman 분광, 아조폴리머 시냅스 소자로 광필드/plenoptic 이미징과 무관합니다.
+</div>
+
+<h3>Tomography/3D Imaging (37편 중 관련 9편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.12362" target=_blank>SPIN-4DGS</a> · <a href="https://arxiv.org/abs/2607.12785" target=_blank>ExtraGS</a> · <a href="https://arxiv.org/abs/2607.12641" target=_blank>GeoFovea-GS</a> · <a href="https://arxiv.org/abs/2607.12656" target=_blank>SpeedyGS</a></strong> [CV/IV/SP]<br>
+  왜 주요: 오늘의 대표 클러스터(3DGS의 촬영조건·센서 확장) — 위 클러스터 표 참고
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tci.2026.3701585" target=_blank>GR-Gaussian</a> · <a href="https://doi.org/10.1109/tci.2026.3712500" target=_blank>RNSplat</a> · <a href="https://arxiv.org/abs/2607.13010" target=_blank>DermDepth</a></strong> [JNL/CV]<br>
+  왜 주요: GR-Gaussian은 희소뷰 CT용 그래프 기반 3DGS, RNSplat은 ISAR 레이더 시퀀스에 3DGS를 적용한 사례, DermDepth는 단안 카메라로 피부과 병변의 실제 크기(metric scale)를 측정하는 첫 3D 모델 — 나머지 28편은 대부분 임상 CT/MRI/OCT 진단 저널
+</div>
+
+<h3>Virtual Staining/Pathology (28편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.12278" target=_blank>Auditing Data Leakage in Whole-Slide Image Multimodal Benchmarks</a></strong> [CV · TIER A]<br>
+  왜 주요: WSI VQA 벤치마크의 환자·기관 단위 데이터 유출을 감사 — 오늘의 must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.12556" target=_blank>CGRL: Concept-Guided Pruning and Representation Learning for WSI</a></strong> [CV]<br>
+  왜 주요: 질병 개념 프로토타입으로 무관한 패치를 걸러내 WSI 분류 근거의 병리학적 타당성 확보 — 나머지 25편은 대부분 "staining"/"virtual" 키워드 우연 매칭(치약 미백, 금속 합금, 가상 화폐 법적 분석 등)
+</div>
+
+<h3>Reconstruction/Inverse Problems (21편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.11941" target=_blank>GenDiff</a> · <a href="https://arxiv.org/abs/2607.12753" target=_blank>RFMSR</a></strong> [CV]<br>
+  왜 주요: 저선량 CT 재구성과 초해상도에서 생성 모델의 조건 일반화 문제를 다룸 — 위 클러스터 표 참고
+</div>
+<div class=roi-item>
+  <strong>Repairing Shape-Prior Shortcuts in Long-Range Single-Shot Fringe Projection Profilometry</strong> [LG]<br>
+  왜 주요: 단일 프레임 fringe projection 3D 계측에서 형상 사전지식이 만드는 지름길(shortcut) 문제를 수정 — 나머지 18편은 대부분 PINN(물리정보신경망) 일반 응용, federated learning, EEG로 이미징 ROI와 간접 연결
+</div>
+
+<h3>Deep Learning Methods — 관련 2편 (109편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.12297" target=_blank>MobileSAM2: Lightweight Segment Anything for Spatial Intelligence</a></strong> [CV]<br>
+  왜 주요: 대형 분할 모델 SAM2를 모바일 환경에 맞게 경량화 — 우리 렌즈리스/산란매질 파이프라인의 후처리 분할 모듈 후보
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.12433" target=_blank>ARDepth: Auto-regressive Monocular Depth Estimation with Progressive Visual Conditioning</a></strong> [CV]<br>
+  왜 주요: diffusion 기반 단안 깊이 추정에 장면 구조의 점진적 위계를 명시적으로 반영
+</div>
+
+<hr>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Auditing Data Leakage in Whole-Slide Image Multimodal Benchmarks — arXiv cs.CV</h3>
+  <div class=tag>[경고신호] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 최근 vision-language model들이 whole-slide image(WSI, 병리 슬라이드 전체 스캔) 질의응답에서 보인 놀라운 zero-shot 성능은 그동안 "병리 foundation model이 정말 잘 작동한다"는 근거로 자주 인용돼 왔습니다. 이 논문은 그 성능 상당 부분이 실제 진단 능력이 아니라 데이터 유출에서 나왔을 가능성을 체계적으로 파헤칩니다. 환자 단위 유출(같은 환자의 슬라이드가 학습·평가에 동시에 들어감)뿐 아니라, 서로 다른 병원의 슬라이드가 같은 염색·스캐너 특성을 공유해서 생기는 기관 단위 유출까지 두 계층으로 나눠 감사한다는 점이 새롭습니다. 우리 랩이 label-free 병리 파이프라인을 검증할 때, 우리 데이터셋의 split이 이런 방식으로 오염돼 있지 않은지 반드시 확인해야 한다는 경고이기도 합니다.</p>
+  <p><strong>핵심:</strong> WSI 멀티모달 벤치마크 여러 개를 대상으로 환자 ID와 염색-스캐너 시그니처를 교차 확인하는 감사 방법론을 제시하고, 기존에 보고된 zero-shot 성능이 유출을 제거하면 상당히 낮아짐을 정량적으로 보입니다.</p>
+  <p><strong>주의:</strong> 어떤 구체적인 벤치마크·모델 조합에서 성능이 얼마나 떨어지는지는 abstract만으로 확인하기 어려워 본문의 표를 직접 봐야 합니다. 우리가 참고할 벤치마크가 이 논문의 감사 대상에 포함돼 있는지도 확인이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] SpeedyGS: Content-Aware 3D Gaussian Splatting Compression via Two-Stage Optimization — arXiv eess.SP</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> 기존 3DGS 압축 코덱들은 압축률은 높여도 디코딩에 수 초가 걸려 실시간 상호작용 응용에는 쓰기 어려웠습니다. 이 논문은 구조 형성(적응형 양자화·가지치기)과 통계적 부호화(엔트로피 코딩)를 분리해 각각 최적화함으로써, 압축률과 디코딩 속도를 동시에 개선합니다. 우리 랩의 3DGS 기반 계산 이미징 파이프라인이 실제로 저장·전송해야 하는 상황이 온다면, 이 논문의 2단계 구조가 가장 먼저 검토할 만한 참고점입니다.</p>
+  <p><strong>핵심:</strong> 구조 형성 단계에서 다음 단계의 엔트로피 코딩 비용을 가볍게 추정하는 rate proxy로 통합 rate-distortion 목적함수를 최적화하고, 통계적 코딩 단계에서는 기하 정보를 희소 octree 토큰으로, 속성 정보를 1D 토큰 스트림으로 변환해 부호화합니다. 기존 3DGS 대비 최대 160배 모델 크기 축소를 화질 저하 없이 달성하고, 소비자급 하드웨어에서 최적화 속도도 9배 빨라졌습니다.</p>
+  <p><strong>주의:</strong> 160배라는 수치는 "일반적인 데이터셋"에서 나온 결과로 abstract에 구체적인 데이터셋명이 명시돼 있지 않아, 우리 도메인(계산 이미징) 장면에서도 같은 비율이 나올지는 직접 검증이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] Tomography/3D Imaging 37건, Virtual Staining/Pathology 28건, Meta-Optics/Diffractive 12건, Fourier Ptychography/Microscopy 4건 중 다수는 "tomography"/"staining"/"metasurface"/"aperture synthesis" 키워드가 임상 진단·RF 통신·재료공학·가상 화폐 콘텐츠와 우연히 겹친 오탐입니다. Deep Learning Methods 109건 중 실제 계산광학·계산이미징 ROI와 직접 관련된 논문은 소수입니다.</p>
+  <p>[Dataset risk] classify.py 선택 비율은 28.9%(228/789)로 최근 밴드(25~32%)와 일치합니다. parser 오류가 아니라 저널 --days 1 쿼리 특성상 넓은 학술 데이터베이스를 그대로 훑기 때문입니다.</p>
+  <p>[Dataset risk] 오늘은 계산광학 코어 버킷(Fourier Ptychography, Lensless, Meta-Optics, Light-Field)에서 독립 클러스터를 구성할 만한 신호가 부족했습니다. 이는 오늘 하루의 arXiv/저널 등록 분포 특성일 뿐 랩 ROI 자체의 변화는 아닙니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] SpeedyGS의 "최대 160배 압축"은 abstract 기준 수치로, 어떤 데이터셋·baseline에서 나온 결과인지 본문 확인이 필요합니다.</p>
+  <p>[Baseline risk] 3DGS 확장 클러스터의 6편은 서로 다른 데이터셋·평가 지표를 쓰고 있어, 압축률·PSNR 수치를 논문 간에 직접 비교하기는 어렵습니다.</p>
+  <p>[Claim risk] Auditing Data Leakage 논문이 어떤 구체적 벤치마크에서 유출을 발견했는지, 성능 하락폭이 얼마인지는 abstract만으로는 확인되지 않아 본문 확인이 필요합니다.</p>
+  <p>[Deployment risk] MobileSAM2·MBTI의 경량화 논문들은 모바일/현장 배포를 목표로 하지만, 실제 배터리·발열 등 하드웨어 제약 조건까지 검증했는지는 abstract에 명시되지 않았습니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>TerraLogic: A Benchmark for Hierarchical Geospatial Reasoning in Earth Observation</strong> [CV] — Fourier Ptychography 버킷에 "aperture synthesis" 근접 매칭으로 걸렸으나 실제로는 위성영상 기반 지리공간 추론 벤치마크로 계산 이미징과 무관.</li>
+    <li><strong>Meta-Optics 버킷 내 THz/RF 안테나·열복사체 다수</strong>(nonreciprocal thermal emitter, MIMO filtering antenna, inverse design metasurface absorber 등) — 통신·열관리 응용, 이미징 방법론 기여 없음.</li>
+    <li><strong>다수 임상 CT/MRI/OCT 저널</strong>(대동맥 지름 평가, 두개골 골절 CT, 치주 생체형 CBCT 등) — 임상 진단 목적, 계산광학 방법론 기여 없음.</li>
+    <li><strong>Virtual Staining/Pathology 버킷 내 비의료 논문 다수</strong>(치약 미백 효능, 스테인리스강 합금, 가상 화폐 법적 분석 등) — "staining"/"virtual" 키워드 우연 매칭.</li>
+    <li><strong>Repairing Shape-Prior Shortcuts in Fringe Projection Profilometry</strong> [LG] — 단일 프레임 3D 계측 방법론은 참고할 만하지만 abstract 정보가 제한적이라 본문 확인 전까지 우선순위를 낮춤.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy (4편 중 관련 0편)</h3>
+<div class=roi-item>
+  문제: 없음 / 방법: 없음 / 의미: 4편 모두 SAR/sonar aperture synthesis·메타표면 안테나로 실제 Fourier ptychography와 무관 / 우선순위: Skim-only
+</div>
+
+<h3>Lensless/Coded Imaging (2편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.heliyon.2026.e45173" target=_blank>Investigating the performance of regular two-dimensional grating in a lensless system</a></strong> <span class=pill>JNL</span><br>
+  문제: 격자 기반 렌즈리스 인코더의 실측 성능 불확실 / 방법: 규칙적 2D 격자 인코더 성능 실측 / 의미: 렌즈리스 하드웨어 설계 참고 / 주의: 초록 요약 정보 제한 / 우선순위: Skim-only
+</div>
+
+<h3>Phase Imaging/Holography (12편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02362-x" target=_blank>Background-free QPI with adaptive-optics SPR holographic microscopy</a></strong> <span class=pill>JNL</span><br>
+  문제: 근접장 QPI의 광학계 위상 수차가 정확도를 제한 / 방법: 공간광변조기 기반 적응광학으로 배경 잡음 제거 / 의미: 나노 구조·세포 QPI 정밀도 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02357-8" target=_blank>Optical singularity protractor for rotating metrology</a></strong> <span class=pill>JNL</span><br>
+  문제: 기존 회전 도플러 센싱이 엄격한 축 정렬을 요구 / 방법: vortex 빔 특이점 기반 신경모방 센싱 / 의미: 정렬 제약이 적은 회전 계측 / 우선순위: Read
+</div>
+
+<h3>Meta-Optics/Diffractive (12편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02397-0" target=_blank>Bridging the gap in flat optics: partially nonlocal metasurfaces</a></strong> <span class=pill>JNL</span><br>
+  문제: 메타표면의 공간 제어와 고품질 계수 사이 근본적 trade-off / 방법: 부분 비국소성을 이용한 새로운 설계 공간 제시 / 의미: 이미징·통신·아날로그 광연산에 걸친 flat optics 설계 원칙 확장 / 우선순위: Read
+</div>
+
+<h3>Light-Field/Novel Sensors (3편 중 관련 0편)</h3>
+<div class=roi-item>
+  문제: 없음 / 방법: 없음 / 의미: 3편 모두 뉴로모픽 통신 디코딩·Raman 분광·시냅스 소재로 광필드/plenoptic 이미징과 무관 / 우선순위: Skim-only
+</div>
+
+<h3>Tomography/3D Imaging — 3DGS 확장 대표 6편 + 관련 3편 (37편 중)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.12362" target=_blank>SPIN-4DGS</a></strong> <span class=pill>CV</span><br>
+  문제: 4DGS가 빠른 움직임에서 큰 프레임간 변위를 놓침 / 방법: 시공간 위치를 명시적으로 학습하는 feedforward 네트워크 / 의미: 빠른 동작 장면의 4D 재구성 안정화 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.12785" target=_blank>ExtraGS</a></strong> <span class=pill>CV</span><br>
+  문제: 내시경의 좁은 시야로 미관측 해부 구조가 많음 / 방법: 불확실성 기반 가상 카메라 샘플링 + diffusion 보정 / 의미: 수술 내비게이션용 3D 재구성 확장 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.12641" target=_blank>GeoFovea-GS</a></strong> <span class=pill>IV</span><br>
+  문제: 무선 VR 전송이 대역폭·지연·전력에 동시에 제약됨 / 방법: 기하 인식 왜곡 지표 기반 교차계층 자원 할당 / 의미: 3DGS 기반 몰입형 VR의 통신 효율화 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.12656" target=_blank>SpeedyGS</a></strong> <span class=pill>SP · TIER A</span><br>
+  문제: 3DGS 코덱의 디코딩 속도가 느려 실시간 응용에 부적합 / 방법: 구조 형성-통계 코딩 분리 최적화 / 의미: 최대 160배 압축 + 저지연 디코딩 — 오늘의 must-read / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tci.2026.3701585" target=_blank>GR-Gaussian</a></strong> <span class=pill>JNL</span><br>
+  문제: 희소뷰 CT 재구성의 정확도·속도 trade-off / 방법: 그래프 기반 radiative Gaussian splatting / 의미: sparse-view 단층촬영 재구성에 3DGS 적용 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tci.2026.3712500" target=_blank>RNSplat</a></strong> <span class=pill>JNL</span><br>
+  문제: ISAR 레이더 시퀀스의 3D 재구성·새 시점 합성이 어려움 / 방법: 레이더 특화 neural Gaussian splatting / 의미: 3DGS를 비광학 센서(레이더)로 확장 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13010" target=_blank>DermDepth</a></strong> <span class=pill>CV</span><br>
+  문제: 피부과 병변 크기 측정이 대부분 2D에 머물러 실측 오차가 큼 / 방법: 단안 카메라 기반 실제 크기(metric scale) 3D 복원 + 합성 데이터셋 D-Synth / 의미: 추가 하드웨어 없이 병변 크기 정밀 측정 / 우선순위: Read
+</div>
+
+<h3>Virtual Staining/Pathology (28편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.12278" target=_blank>Auditing Data Leakage in Whole-Slide Image Multimodal Benchmarks</a></strong> <span class=pill>CV · TIER A</span><br>
+  문제: WSI VQA 벤치마크의 높은 zero-shot 성능이 데이터 유출에서 비롯됐을 가능성 / 방법: 환자·기관 단위 2계층 유출 감사 / 의미: 기존 SOTA 수치 신뢰도 재검토 필요성 제기 — 오늘의 must-read / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.12556" target=_blank>CGRL</a></strong> <span class=pill>CV</span><br>
+  문제: MIL 기반 WSI 분류가 무관한 패치까지 포함해 근거가 흐려짐 / 방법: 질병 개념 프로토타입 기반 패치 가지치기 / 의미: 분류 근거의 병리학적 정렬 강화 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Dual-Channel Feature Decoupling in Front-Door Mediation Causal Inference for WSI</strong> <span class=pill>CV</span><br>
+  문제: 인과추론 기반 MIL의 실제 작동 원리가 불명확 / 방법: 이중 채널 특징 분리 특성을 가설로 세워 검증 / 의미: 인과 MIL 방법론의 이론적 근거 보강 / 우선순위: Read
+</div>
+
+<h3>Reconstruction/Inverse Problems (21편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.11941" target=_blank>GenDiff</a></strong> <span class=pill>CV</span><br>
+  문제: 저선량 CT 복원 모델이 특정 방사선량·부위에 과적합 / 방법: 용량·해부학 인식 diffusion + 구조 사전지식 정제 / 의미: 여러 임상 조건에 걸친 일반화 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.12753" target=_blank>RFMSR</a></strong> <span class=pill>CV</span><br>
+  문제: flow matching 초해상도가 순수 노이즈 출발 공식을 그대로 써 비효율적 / 방법: 저해상도 영상 출발 잔차 flow matching / 의미: 초해상도 flow matching 효율화 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Repairing Shape-Prior Shortcuts in Fringe Projection Profilometry</strong> <span class=pill>LG</span><br>
+  문제: 단일 프레임 fringe projection 3D 계측이 형상 사전지식에 지름길로 의존 / 방법: shortcut 문제 진단 및 수정 / 의미: 장거리 단일 촬영 3D 계측 신뢰도 개선 / 우선순위: Skim-only
+</div>
+
+<h3>Deep Learning Methods — 관련 2편 (109편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong>MobileSAM2: Lightweight Segment Anything for Spatial Intelligence</strong> <span class=pill>CV</span><br>
+  문제: SAM2가 모바일 등 자원 제한 환경에서 쓰기 어려움 / 방법: hypergraph 기반 경량 distillation / 의미: 계산 이미징 후처리 분할 모듈 경량화 참고
+</div>
+<div class=roi-item>
+  <strong>ARDepth: Auto-regressive Monocular Depth Estimation with Progressive Visual Conditioning</strong> <span class=pill>CV</span><br>
+  문제: diffusion 기반 깊이 추정이 장면 구조의 위계적 형성을 반영하지 못함 / 방법: 거친 구조에서 세부로 진행하는 autoregressive 조건화 / 의미: 단안 깊이 추정 정밀도 개선
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/abs/2607.12278" target=_blank>Auditing Data Leakage in Whole-Slide Image Multimodal Benchmarks — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.12656" target=_blank>SpeedyGS — arXiv eess.SP</a></li>
+  <li><a href="https://arxiv.org/abs/2607.12362" target=_blank>SPIN-4DGS — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.12785" target=_blank>ExtraGS — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.12641" target=_blank>GeoFovea-GS — arXiv eess.IV</a></li>
+  <li><a href="https://doi.org/10.1109/tci.2026.3701585" target=_blank>GR-Gaussian — IEEE TCI</a></li>
+  <li><a href="https://doi.org/10.1109/tci.2026.3712500" target=_blank>RNSplat — IEEE TCI</a></li>
+  <li><a href="https://arxiv.org/abs/2607.12556" target=_blank>CGRL — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.11941" target=_blank>GenDiff — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.12753" target=_blank>RFMSR — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.12297" target=_blank>MobileSAM2 — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.13010" target=_blank>DermDepth — arXiv cs.CV</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+  <p>📚 입력: arXiv /new(2026-07-15, new+cross 452편) + Crossref/OpenAlex 저널(425편) · 병합 스캔 789건, ROI 228건 (28.9%)</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

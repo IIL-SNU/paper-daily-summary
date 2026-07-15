@@ -1,0 +1,37 @@
+{
+  "date": "2026-07-15",
+  "source_listing_date": "2026-07-15",
+  "source_mode": "new",
+  "note": "2026-07-15(수) arXiv 5개 카테고리(cs.LG 144·cs.CV 116·cs.AI 157·eess.IV 13·eess.SP 22, 합계 452편, new+cross)와 Crossref/OpenAlex 저널 425편(2026-07-14 등록분)을 병합 스캔 789건 중 228건(28.9%)을 ROI로 선정했다. 이 비율은 최근 밴드(25~32%)와 일치해 parser 오류가 아니다. 오늘 arXiv 쪽 핵심 신호는 3D Gaussian Splatting이 렌더링 품질보다 압축·온라인 재구성·용도 확장(저선량 CT, 내시경 뷰 외삽, 무선 VR 전송, ISAR 레이더) 쪽으로 계속 번지는 흐름이다(Tomography/3D Imaging 37건 중 9편). 디지털 병리 쪽은 WSI(whole-slide image) MIL(multiple instance learning) 분류기의 데이터 유출 감사와 인과적 특징 분리 논문이 같이 나와, '정확도'보다 '그 정확도를 믿어도 되는가'를 묻는 신호가 뚜렷했다. 경량화 방향에서는 SAM2 distillation, hyperspectral foundation model 어댑터처럼 큰 foundation model을 자원 제한 환경에 맞게 줄이는 논문이 여러 도메인에서 동시에 나왔다. 계산광학 코어 버킷(Fourier Ptychography 4건, Lensless 2건, Meta-Optics 12건, Light-Field 3건)은 오늘 대부분 SAR/sonar 'aperture synthesis', RF/THz 안테나, Raman 분광 등 키워드 우연 매칭이라 실질 신호가 약했다 — 저널 전용 관찰 대상으로만 표시했다. Virtual Staining/Pathology(28건)와 Reconstruction/Inverse Problems(21건)도 각각 staining/reconstruction 키워드 오탐(치약 미백, 금속 합금, EEG 재구성 등)이 다수라 실제 관련 논문만 추려 클러스터·부록에 반영했다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 144,
+      "cs.CV": 116,
+      "cs.AI": 157,
+      "eess.IV": 13,
+      "eess.SP": 22
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 425
+  },
+  "totals": {
+    "total_scanned": 789,
+    "selected": 228
+  },
+  "classified": {
+    "total_scanned": 789,
+    "selected": 228,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 4,
+      "Lensless/Coded Imaging": 2,
+      "Phase Imaging/Holography": 12,
+      "Meta-Optics/Diffractive": 12,
+      "Light-Field/Novel Sensors": 3,
+      "Tomography/3D Imaging": 37,
+      "Virtual Staining/Pathology": 28,
+      "Reconstruction/Inverse Problems": 21,
+      "Deep Learning Methods": 109
+    }
+  },
+  "daily_thesis": "오늘은 3D Gaussian Splatting이 렌더링 품질 경쟁을 넘어 저선량 CT, 내시경, 무선 VR 전송, 레이더 재구성까지 서로 다른 응용으로 동시에 번지면서 '어디에나 쓰는 공통 3D 표현'으로 자리잡는 신호가 뚜렷한 하루였다. 동시에 디지털 병리 WSI 분류는 정확도 경쟁에서 '그 정확도를 믿어도 되는가'를 검증하는 방향(데이터 유출 감사, 인과적 특징 분리)으로 무게중심이 옮겨갔다."
+}

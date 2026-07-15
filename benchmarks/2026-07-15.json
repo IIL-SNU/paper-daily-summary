@@ -1,0 +1,37 @@
+{
+  "date": "2026-07-15",
+  "results": [
+    {
+      "benchmark": "CMU Panoptic (Basketball scene, fast-motion 4DGS)",
+      "metric": "PSNR delta vs D3DGS baseline",
+      "value": 1.83,
+      "value_str": "+1.83 dB PSNR",
+      "paper": "https://arxiv.org/abs/2607.12362",
+      "paper_title": "Implicit 4D Gaussian Splatting for Fast Motion with Large Inter-Frame Displacements (SPIN-4DGS)"
+    },
+    {
+      "benchmark": "3DGS model size reduction vs vanilla 3DGS",
+      "metric": "compression ratio",
+      "value": 160,
+      "value_str": "최대 160배 모델 크기 축소",
+      "paper": "https://arxiv.org/abs/2607.12656",
+      "paper_title": "SpeedyGS: Content-Aware 3D Gaussian Splatting Compression via Two-Stage Optimization"
+    },
+    {
+      "benchmark": "D-Synth dermoscopic metric-scale 3D reconstruction",
+      "metric": "metric scale error reduction",
+      "value": 16,
+      "value_str": "16배 초과 오차를 1.1배 이내로 축소",
+      "paper": "https://arxiv.org/abs/2607.13010",
+      "paper_title": "DermDepth: Toward Monocular Metric Scale 3D Reconstruction Models for Dermatology"
+    },
+    {
+      "benchmark": "4-source OCT retinal fluid segmentation",
+      "metric": "mean Dice",
+      "value": 0.78,
+      "value_str": "mean Dice 0.78",
+      "paper": "https://arxiv.org/abs/2607.12212",
+      "paper_title": "Uncertainty-Aware Multi-Source Retinal Fluid Segmentation in OCT"
+    }
+  ]
+}

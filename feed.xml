@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 14 Jul 2026 14:13:56 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2026 12:13:37 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-07-15 (수요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-07-15.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-15.html</guid>
+      <pubDate>Wed, 15 Jul 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[이번 주는 화요일(7/14)에 3D Gaussian Splatting(3DGS)이 "정확도"에서 "저장·계산·온라인성"이라는 배포 축으로 넘어가는 흐름(CoSAG, DP-Splat, AsySplat 등 압축·밀도 제어 5편)을 보인 데 이어, 수요일인 오늘은 그 배포 효율화가 다음 단계로 넘어갑니다. 어제가 "3DGS를 어떻게 더 가볍게 만들 것인가"를 물었다면, 오늘은 "3DGS를 사진이 아닌 다른 촬영 조건과 센서에도 쓸 수 있는가"를 묻는 논문 6편이 나왔습니다. 빠른 움직임(SPIN-4DGS), 좁은 내시경 시야(ExtraGS), 무선 대역폭 제약(GeoFovea-GS), 희소뷰 CT(GR-Gaussian), 레이더 신호(RNSplat)까지 응용이 넓어졌고, Sp…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-07-14 (화요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-07-14.html</link>

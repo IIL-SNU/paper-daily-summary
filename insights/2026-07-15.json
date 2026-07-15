@@ -1,0 +1,88 @@
+{
+  "date": "2026-07-15",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "title": "3D Gaussian Splatting이 렌더링 대회용 데모를 벗어나 CT·내시경·VR 전송·레이더로 동시에 번짐",
+      "papers": [
+        {"title": "Implicit 4D Gaussian Splatting for Fast Motion with Large Inter-Frame Displacements (SPIN-4DGS)", "arxiv_id": "https://arxiv.org/abs/2607.12362", "journal_or_source": "arXiv cs.CV"},
+        {"title": "ExtraGS: Enhancing Endoscopic View Extrapolation via Diffusion-Guided 3D Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2607.12785", "journal_or_source": "arXiv cs.CV"},
+        {"title": "GeoFovea-GS: Geometry-Aware Cross-Layer Gaussian Splatting for Wireless Aerial VR", "arxiv_id": "https://arxiv.org/abs/2607.12641", "journal_or_source": "arXiv eess.IV"},
+        {"title": "SpeedyGS: Content-Aware 3D Gaussian Splatting Compression via Two-Stage Optimization", "arxiv_id": "https://arxiv.org/abs/2607.12656", "journal_or_source": "arXiv eess.SP"},
+        {"title": "GR-Gaussian: Graph-Based Radiative Gaussian Splatting for Sparse-View Tomographic Reconstruction", "arxiv_id": "https://doi.org/10.1109/tci.2026.3701585", "journal_or_source": "IEEE Transactions on Computational Imaging"},
+        {"title": "RNSplat: Radar Neural Splatting for 3D Reconstruction and Novel View Synthesis From ISAR Image Sequences", "arxiv_id": "https://doi.org/10.1109/tci.2026.3712500", "journal_or_source": "IEEE Transactions on Computational Imaging"}
+      ],
+      "why": "지금까지 3D Gaussian Splatting(3DGS) 연구는 대부분 '실내외 사진 여러 장으로 얼마나 예쁜 장면을 다시 그려내는가'를 겨루는 사진 기반 렌더링 대회에 머물러 있었습니다. 오늘 나온 6편은 그 틀을 벗어나 완전히 다른 촬영 조건과 응용에 3DGS를 이식합니다. SPIN-4DGS는 스포츠처럼 프레임 사이 움직임이 큰 영상에서 기존 4D 방식이 놓치던 빠른 물체를 잡아내고, ExtraGS는 수술 내시경처럼 시야가 좁아 못 본 부분을 diffusion 모델로 채워 넣으며, GeoFovea-GS는 무선 VR 전송처럼 대역폭이 부족한 상황에서 기하 오차가 큰 영역에만 통신 자원을 몰아줍니다. SpeedyGS는 저장 용량을 최대 160배 줄이는 압축을, GR-Gaussian은 CT처럼 촬영 각도가 적은 희소뷰 단층촬영 재구성에, RNSplat은 아예 광학 카메라가 아닌 ISAR 레이더 영상 시퀀스에 3DGS를 적용합니다. 즉 3DGS가 '사진 몇 장으로 예쁜 3D 만들기'라는 원래 문제를 넘어, 촬영 조건이 나쁘거나(빠른 움직임, 좁은 시야, 희소뷰) 전송·저장이 어렵거나(VR, 압축) 아예 다른 센서(레이더)를 쓰는 상황까지 공통 3D 표현으로 자리잡고 있다는 뜻입니다. 우리 랩이 CT나 레이더처럼 사진이 아닌 물리 신호로 3D를 재구성하는 문제에도 3DGS 표현을 후보로 검토할 수 있다는 의미이기도 합니다.",
+      "confidence": "High",
+      "confidence_note": "arXiv 4편 + 저널 2편이 서로 다른 촬영 조건(빠른 움직임·좁은 시야·희소뷰·비광학 센서)과 배포 제약(대역폭·저장 용량)에서 동시에 3DGS를 확장 적용",
+      "lab_action": "SpeedyGS의 2단계 압축(구조 최적화 후 통계적 부호화)을 우리 3DGS 파이프라인에 이식해 저장 용량 대비 렌더링 품질(PSNR/SSIM) trade-off 곡선을 직접 그려보고, GR-Gaussian의 희소뷰 단층촬영 재구성 구조를 우리 산란매질/위상 이미징 데이터의 제한된 각도 촬영 시나리오에 이식 가능한지 시뮬레이션으로 1차 검토"
+    },
+    {
+      "title": "디지털 병리 WSI 분류가 정확도 경쟁에서 '그 정확도를 믿어도 되는가'를 검증하는 방향으로 이동",
+      "papers": [
+        {"title": "Auditing Data Leakage in Whole-Slide Image Multimodal Benchmarks", "arxiv_id": "https://arxiv.org/abs/2607.12278", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Demonstration of the common dual-channel feature decoupling characteristic of front-door mediation causal inference methods in whole-slice image classification", "arxiv_id": "https://arxiv.org/abs/2607.12376", "journal_or_source": "arXiv cs.CV"},
+        {"title": "CGRL: Concept-Guided Pruning and Representation Learning for Whole-Slide Image Classification", "arxiv_id": "https://arxiv.org/abs/2607.12556", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "그동안 whole-slide image(WSI, 병리 슬라이드 전체를 스캔한 초고해상도 영상) 분류 논문들은 '분류 정확도를 몇 % 더 올렸는가'로 서로를 비교해 왔습니다. 오늘 나온 3편은 결이 다릅니다. Auditing Data Leakage 논문은 최근 vision-language model들이 WSI 질의응답에서 보인 놀라운 zero-shot 성능이 사실은 같은 환자의 슬라이드가 학습·평가 데이터에 동시에 섞여 들어가거나, 서로 다른 병원의 슬라이드가 같은 염색·스캐너 특성을 공유해서 생긴 착시일 수 있다는 것을 데이터 유출 감사로 밝혀냅니다. 나머지 두 편은 정반대 방향에서 신뢰성을 높이려는 시도로, 인과추론 기반 MIL(multiple instance learning) 논문은 슬라이드 안의 어떤 작은 영역이 실제로 진단에 기여했는지 인과관계로 걸러내고, CGRL은 질병 개념과 무관한 패치를 걸러내는 방식으로 분류 근거를 질병 의미와 정렬시킵니다. 세 편을 같이 보면, WSI 분류 연구가 '더 높은 정확도'만으로는 더 이상 설득력을 얻기 어렵고, 그 정확도가 진짜 병리학적 근거에서 나온 것인지 증명해야 하는 단계로 넘어가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "같은 날 서로 다른 저자군 3편이 신뢰성 검증(데이터 유출 감사·인과 근거·개념 정렬)이라는 같은 방향을 지시하지만, 아직 벤치마크 전체로 확산됐는지는 추가 관찰 필요",
+      "lab_action": "Auditing Data Leakage의 patient-level·institutional-level 유출 검사 스크립트를 우리 보유 WSI 데이터셋 split에 그대로 적용해 우리 학습/평가 분리가 안전한지 먼저 점검하고, CGRL의 개념 프로토타입 기반 패치 가지치기를 우리 label-free 병리 파이프라인의 관심영역 선별 전처리로 재현"
+    },
+    {
+      "title": "저선량·희소뷰 재구성이 diffusion/flow matching으로 수렴하며, '한 조건에서만 잘 되는 문제'를 정면으로 다루기 시작",
+      "papers": [
+        {"title": "GenDiff: A Dose and Anatomy Aware Diffusion Model with Structural Prior Refinement for Low-Dose CT Reconstruction and Generalization", "arxiv_id": "https://arxiv.org/abs/2607.11941", "journal_or_source": "arXiv cs.CV"},
+        {"title": "RFMSR: Residual Flow Matching for Image Super-Resolution", "arxiv_id": "https://arxiv.org/abs/2607.12753", "journal_or_source": "arXiv cs.CV"},
+        {"title": "ARDepth: Auto-regressive Monocular Depth Estimation with Progressive Visual Conditioning", "arxiv_id": "https://arxiv.org/abs/2607.12433", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "diffusion 모델과 flow matching은 이미 영상 복원의 표준 도구가 됐지만, 오늘 나온 3편은 공통적으로 '기존 diffusion/flow 방식이 특정 조건에서만 잘 작동하고 다른 조건에서는 무너진다'는 문제를 정면으로 짚습니다. GenDiff는 기존 저선량 CT 복원 모델들이 특정 방사선량이나 특정 신체 부위에 맞춰 최적화돼 있어 실제 임상 환경처럼 조건이 계속 바뀌면 성능이 떨어진다는 점을 지적하고, 용량과 해부학적 구조를 함께 반영해 여러 조건에 걸쳐 일반화되게 만듭니다. RFMSR은 기존 flow matching 초해상도 기법들이 순수 가우시안 노이즈에서 출발하는 표준 공식을 그대로 가져다 쓰다 보니 비효율적이라는 점을 지적하고, 저해상도 영상 자체에서 출발하는 잔차 형태로 바꿉니다. ARDepth는 diffusion 기반 단안 깊이 추정이 장면을 한 번에 매끈하게 복원한다고 암묵적으로 가정하지만, 실제 장면 구조는 큰 틀에서 세부로 점진적으로 드러난다는 점을 지적하며 순서를 명시적으로 반영합니다. 세 편 모두 '더 좋은 생성 모델을 붙였다'가 아니라 '기존 생성 모델의 가정이 실제 촬영 조건이나 장면 구조와 맞지 않는 지점'을 하나씩 찾아 고친다는 공통점이 있습니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 태스크(저선량 CT·초해상도·깊이 추정) 3편이 같은 방법론적 문제의식(생성 모델의 조건 일반화 실패)을 공유하지만, 태스크 자체가 달라 직접적인 벤치마크 비교는 어려움",
+      "lab_action": "GenDiff의 dose-and-anatomy aware 구조를 우리 저선량 계산 이미징(산란매질 통과) 복원 실험에 이식해 서로 다른 신호 대 잡음비 조건에서 단일 모델의 일반화 성능을 측정하고, RFMSR의 저해상도 영상 출발 잔차 flow matching을 우리 초해상도 후처리 baseline과 PSNR/추론 속도로 비교"
+    },
+    {
+      "title": "거대 foundation model을 자원 제한 환경에 맞게 줄이는 경량화 논문이 세그멘테이션·분광·병리로 동시에 퍼짐",
+      "papers": [
+        {"title": "MobileSAM2: Lightweight Segment Anything for Spatial Intelligence", "arxiv_id": "https://arxiv.org/abs/2607.12297", "journal_or_source": "arXiv cs.CV"},
+        {"title": "MBTI: A Multi-Branch Efficient Fine-Tuning Framework for Hyperspectral Image Classification with Foundation Models", "arxiv_id": "https://arxiv.org/abs/2607.12782", "journal_or_source": "arXiv cs.CV"},
+        {"title": "A semi-supervised deep learning and IoMT framework for robust prostate cancer grading under imperfect histopathology data conditions", "arxiv_id": "https://doi.org/10.1016/j.cmpb.2026.109527", "journal_or_source": "Computer Methods and Programs in Biomedicine"}
+      ],
+      "why": "영상 기반 foundation model들이 커질수록 정확도는 오르지만 휴대폰이나 현장 장비 같은 자원 제한 환경에서는 그대로 쓰기 어렵다는 문제가 계속 쌓여 왔습니다. 오늘 나온 3편은 이 문제를 서로 다른 영상 도메인에서 동시에 풀어냅니다. MobileSAM2는 영상·동영상 모두에서 무엇이든 분할하는 대형 모델 SAM2를 모바일 기기에서도 돌아가도록 증류하고, MBTI는 센서마다 파장 대역 구성이 달라 그대로 옮겨 쓰기 어려운 hyperspectral(초분광) foundation model을 적은 라벨로도 여러 센서에 재사용할 수 있게 다중 분기 구조로 조정하며, 병리 논문은 라벨이 부족하고 데이터 품질이 들쭉날쭉한 실제 임상 현장에서도 전립선암 등급 판정 모델이 안정적으로 돌아가도록 반지도학습과 경량 IoMT(의료 사물인터넷) 프레임워크를 결합합니다. 세 편 모두 '더 큰 모델'이 아니라 '이미 잘 만들어진 큰 모델을 실제 현장 제약(연산 자원, 센서 차이, 라벨 부족)에 맞게 줄이고 재사용하는 방법'을 다룬다는 공통점이 있어, 계산 이미징 파이프라인을 실제 장비에 올릴 때 참고할 만한 흐름입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 영상 도메인(범용 분할·초분광·병리) 3편이 대형 모델 경량화·재사용이라는 같은 방향을 지시하지만, 표준 경량화 벤치마크로 묶이지는 않아 근거가 태스크별로 흩어져 있음",
+      "lab_action": "MobileSAM2의 distillation 전략을 우리 렌즈리스/산란매질 복원 후처리 분할 모듈에 적용해 모바일급 연산 자원에서의 추론 속도·정확도 trade-off를 측정하고, MBTI의 다중 분기 어댑터 구조가 우리 hyperspectral 계산 이미징 파이프라인의 센서 간 전이에도 통하는지 1차 검증"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "SpeedyGS 압축 파이프라인을 랩 3DGS 재구성에 이식해 저장·전송 비용 절감폭 측정",
+      "claim": "2단계(구조 최적화 후 통계적 부호화) 압축 방식을 우리 3DGS 파이프라인에 적용하면, 렌더링 품질 손실을 최소화하면서 저장 용량을 크게 줄일 수 있다.",
+      "supporting_papers": [
+        {"title": "SpeedyGS: Content-Aware 3D Gaussian Splatting Compression via Two-Stage Optimization", "arxiv": "https://arxiv.org/abs/2607.12656"}
+      ]
+    },
+    {
+      "title": "GR-Gaussian의 희소뷰 단층촬영 재구성 구조를 산란매질 복원에 이식",
+      "claim": "그래프 기반 radiative Gaussian splatting 구조가 촬영 각도가 제한된 우리 산란매질/위상 이미징 데이터에서도 재구성 품질을 유지할 수 있다.",
+      "supporting_papers": [
+        {"title": "GR-Gaussian: Graph-Based Radiative Gaussian Splatting for Sparse-View Tomographic Reconstruction", "arxiv": "https://doi.org/10.1109/tci.2026.3701585"}
+      ]
+    },
+    {
+      "title": "WSI 데이터 유출 감사 스크립트를 우리 병리 데이터셋 split에 적용",
+      "claim": "patient-level·institutional-level 유출 검사를 우리 보유 데이터셋에 적용하면, 학습/평가 분리가 실제로 안전한지 사전에 확인할 수 있다.",
+      "supporting_papers": [
+        {"title": "Auditing Data Leakage in Whole-Slide Image Multimodal Benchmarks", "arxiv": "https://arxiv.org/abs/2607.12278"}
+      ]
+    },
+    {
+      "title": "GenDiff의 dose-and-anatomy aware 구조를 저선량 계산 이미징 복원에 이식",
+      "claim": "촬영 조건(신호 대 잡음비, 해부학적 구조)을 명시적으로 반영하는 diffusion 구조가 단일 모델로 여러 조건에 걸쳐 일반화 성능을 유지할 수 있다.",
+      "supporting_papers": [
+        {"title": "GenDiff: A Dose and Anatomy Aware Diffusion Model with Structural Prior Refinement for Low-Dose CT Reconstruction and Generalization", "arxiv": "https://arxiv.org/abs/2607.11941"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}
