@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-07-16</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-07-16 (목요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-07-16 (목요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Thursday, 16 July 2026"으로 확인됨</div>
+  <div>🔢 arXiv: cs.LG 140 · cs.CV 102 · cs.AI 148 · eess.IV 6 · eess.SP 24 (합계 420편, new+cross, replacement 제외)</div>
+  <div>🔢 저널: Crossref/OpenAlex 376편 수집(2026-07-15 등록분) · arXiv+저널 병합 스캔 699건 · ROI 배정 193건 (27.6%)</div>
+  <div>⚠️ 오늘은 계산광학 코어 버킷이 유독 얇습니다 — Fourier Ptychography/Microscopy 0건, Lensless/Coded Imaging 2건, Meta-Optics/Diffractive 8건, Light-Field/Novel Sensors 5건 대부분이 THz 안테나, 레이더 산란단면적, 열복사체, 초분광 무관 저널 등 키워드 우연 매칭입니다. Tomography/3D Imaging(38건)·Virtual Staining/Pathology(13건)·Deep Learning Methods(90건, catch-all)도 상당수가 임상 진단·LLM/로보틱스 논문입니다. 아래 클러스터·부록에서는 실제 계산광학·계산이미징 신호만 추립니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 3D Gaussian splatting과 neural implicit surface 재구성 연구가 "얼마나 예쁘게 렌더링하는가"라는 기준을 넘어, <strong>"이 재구성 결과를 믿을 수 있는가"와 "얼마나 빨리 뽑아낼 수 있는가"를 같이 묻기 시작한 하루</strong>입니다. 희소뷰 CT를 3DGS로 복원할 때 픽셀마다 불확실성까지 계산하는 논문, 실내 장면의 평면·얇은 구조를 영역별로 다르게 규제하는 논문, 질감과 기하를 분리해 렌더링을 최대 5배 빠르게 만드는 논문이 같은 날 나왔습니다. 두 번째로 뚜렷한 흐름은 <strong>3D 의료 영상 foundation model이 진단 추론, 장기별 정합, 병원 간 연합학습으로 동시에 확장</strong>된 것입니다. 세 번째는 <strong>라벨이 부족한 임상·세포 영상에서 "라벨 없이도 어디를 봐야 하는지" 판단하는 방법들</strong>이 세포 검사, 미세 분류, 수술 영상에서 같이 나왔다는 점입니다. 계산광학 코어 버킷(Fourier Ptychography, Lensless, Meta-Optics, Light-Field)은 오늘은 신호가 거의 없어 저널 관찰 대상으로만 짧게 짚고 넘어갑니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>어제(7/15, 수)는 3D Gaussian splatting(3DGS)이 사진 기반 렌더링을 넘어 CT·내시경·VR 전송·레이더까지 서로 다른 촬영 조건과 센서로 번지는 응용 확장이 중심이었습니다. 오늘(7/16, 목)은 그 응용 확장이 한 단계 더 들어가서, 3DGS와 neural implicit 재구성이 "결과를 어디까지 믿을 수 있는가"와 "얼마나 빨리 뽑아낼 수 있는가"를 정면으로 묻는 논문 3편으로 이어졌습니다. 희소뷰 CT 재구성에서 픽셀 단위 불확실성을 닫힌 형태로 계산하는 논문, 실내 표면 재구성에서 평면과 얇은 구조를 다르게 다루는 논문, 3DGS 렌더링을 질감 아틀라스로 구워 최대 5배 빠르게 만드는 논문이 같은 날 나왔습니다. 이틀을 합쳐 보면 3D 표현 연구가 "어디에 쓸 수 있는가"에서 "얼마나 믿을 수 있고 얼마나 빠른가"로 판이 넘어가는 흐름이 이어지고 있습니다.</p>
+<p>두 번째로 뜨거운 흐름은 3D 의료 영상 foundation model의 다면적 확장입니다. 어제는 디지털 병리 WSI(whole-slide image) 분류의 신뢰성 검증이 화두였다면, 오늘은 3D 볼륨 영상을 다루는 의료 MLLM·VLM·diffusion 모델 4편이 각자 다른 현실적 병목(3D 판독 추론 데이터 결여, 장기별 소견 정렬, 병원 간 데이터 격리, 생성 메모리 한계)을 겨냥했습니다. 세 번째 흐름은 라벨이 부족한 임상·세포 영상에서 라벨 없이도 어디를 볼지 판단하는 방법들이 세포 검사·미세 분류·수술 영상에서 동시에 나온 것입니다. 계산광학 코어(Fourier Ptychography, Meta-Optics, Lensless, Light-Field)는 오늘은 arXiv·저널 모두에서 뚜렷한 신호가 거의 없었습니다.</p>
+<p>다음 관찰 포인트는 (1) 3DGS의 "신뢰도·속도" 축이 내일도 이어져 표준 calibration/속도 벤치마크로 정리되는지, (2) 3D 의료 foundation model의 연합학습·조직 정렬 흐름이 다른 모달리티(MRI, PET)로 확산되는지, (3) 계산광학 코어 버킷의 침묵이 하루짜리 변동인지 아니면 이번 주 전체의 패턴인지입니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>어제(7/15, 수)는 3DGS 논문 6편이 모두 "3DGS라는 표현을 사진이 아닌 다른 촬영 조건·센서에도 쓸 수 있는가"를 물었습니다. 오늘은 질문이 한 걸음 더 들어가서, "3DGS/neural implicit 표현이 이미 여러 곳에 쓰이고 있다면, 그 결과를 얼마나 믿을 수 있고 얼마나 빨리 뽑아낼 수 있는가"를 묻는 논문 3편으로 이어졌습니다. 같은 3D 재구성이라도 어제는 응용 범위를 넓히는 문제였고, 오늘은 이미 넓어진 응용을 실제로 신뢰하고 배포할 수 있게 다듬는 문제로 갈립니다. 의료 영상 쪽도 결이 달라졌습니다 — 어제는 디지털 병리 WSI 분류에서 "그 정확도를 믿어도 되는가"를 감사하는 논문이 중심이었다면, 오늘은 3D 볼륨 영상을 다루는 foundation model들이 진단 추론·장기 정렬·병원 간 데이터 격리라는 서로 다른 병목을 각각 겨냥했습니다. 계산광학 코어 버킷(Fourier Ptychography, Meta-Optics, Lensless, Light-Field)은 어제도 신호가 약했지만, 오늘은 Fourier Ptychography가 0건으로 아예 걸리는 논문이 없었다는 점에서 이번 주 초반의 침묵이 계속되고 있습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>3D Gaussian splatting/neural implicit 재구성이 "더 예쁘게"에서 "믿을 수 있는가·얼마나 빨리 뽑아내는가"로 이동</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.13682" target=_blank>Calibrated Closed-Form Uncertainty for Radiative Gaussian Splatting in Sparse-View CT</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.13492" target=_blank>CASA-SDF: Curriculum-Aware Spatial Adaptation for Neural Implicit Surface Reconstruction</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.13808" target=_blank>Bake It Till You Make It: Ultrafast Spatial Texture-Atlas Splatting</a> <span class=pill>CV</span>
+  </td>
+  <td>지금까지 3D Gaussian splatting(3DGS)이나 neural implicit surface 같은 3D 재구성 연구는 대부분 "얼마나 예쁘게 렌더링하는가"로 서로를 비교해 왔습니다. 오늘 나온 3편은 그 기준을 두 방향으로 넓힙니다. Calibrated Closed-Form Uncertainty 논문은 희소뷰 CT를 3DGS로 재구성할 때 지금까지는 픽셀값 하나만 내놓고 그 값을 얼마나 믿어도 되는지는 알려주지 않았다는 점을 지적하고, X선 영상이 Gaussian 밀도에 대해 선형이라는 물리적 성질을 이용해 픽셀마다 불확실성까지 한 번에 계산해냅니다. CASA-SDF는 실내 장면을 neural implicit 표면으로 복원할 때 넓고 평평한 벽은 부드럽게, 얇은 구조물은 날카롭게 표현해야 하는데 기존 방법이 장면 전체에 같은 규제를 걸어 둘 중 하나를 희생시킨다는 문제를 짚고, 영역별로 규제 강도를 다르게 줍니다. Bake It Till You Make It은 3DGS가 색을 세밀하게 표현할수록 렌더링이 느려지는 문제를 겨냥해, 기하 정보와 질감 정보를 분리하고 질감을 미리 구워둔 아틀라스로 처리해 최대 5배 빠르게 만듭니다. 세 편을 같이 보면, 3D 재구성 연구가 "결과가 얼마나 그럴듯한가"만으로는 부족하고 "이 결과를 어디까지 믿을 수 있는가"와 "얼마나 빨리 뽑아낼 수 있는가"까지 답해야 하는 단계로 넘어가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 응용(CT 재구성·실내 표면·질감 렌더링) 3편이 같은 방향(신뢰도 정량화 또는 속도 개선)을 지시하지만, 표준 벤치마크로 묶여 직접 비교되지는 않음</small></td>
+  <td>Calibrated Closed-Form Uncertainty의 per-voxel 분산 전파 공식을 우리 산란매질/위상 이미징의 희소뷰 재구성 파이프라인에 적용해 재구성 신뢰도가 낮은 영역을 자동 표시하는 실험을 1주일 안에 돌려보고, Bake It Till You Make It의 기하-질감 분리 구조가 우리 3DGS 후처리 렌더링 속도를 어느 정도 줄여주는지 PSNR·프레임률 trade-off로 측정</td>
+</tr>
+<tr>
+  <td><strong>3D 의료 영상 foundation model이 진단 추론·기관별 정합·병원 간 연합학습으로 동시에 확장</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.13860" target=_blank>Towards Enhancing 3D Spatial Reasoning in Medical MLLMs</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.13892" target=_blank>OCP-CT: Organ-Conditioned Pattern Tokens for CT Understanding</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.13386" target=_blank>FM²: Unified Federated Foundation Models for Heterogeneous Multimodal Medical Imaging</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.13812" target=_blank>TCAM-Diff: Triplane-Aware Cross-Attention Medical Diffusion Model</a> <span class=pill>IV</span>
+  </td>
+  <td>3D 의료 영상에 큰 vision-language 모델이나 diffusion 모델을 적용하려는 시도는 계속 있었지만, 각 시도가 겪는 병목은 서로 달랐습니다. 오늘 나온 4편은 그 병목을 각각 정면으로 다룹니다. 3D Spatial Reasoning 논문은 기존 의료 MLLM들이 2D 영상 질의응답에는 강하지만 3D 볼륨을 방사선과 전문의처럼 슬라이스를 따라가며 단계적으로 판독하는 추론 과정 자체는 배우지 못했다는 점을 지적하고, 그 판독 과정을 그대로 학습 데이터로 합성합니다. OCP-CT는 CT 영상과 판독문을 통째로 대조 학습시키면 특정 장기의 미세한 소견이 묻힌다는 문제를 짚고, 장기 단위로 조건화된 패턴 토큰으로 더 세밀하게 정렬시킵니다. FM²는 여러 병원의 CT·MRI 데이터를 한곳에 모아 foundation model을 학습시킬 수 없다는 개인정보 제약 아래, 병원마다 보유한 영상 종류가 겹치거나 아예 다른 상황을 모두 다루는 연합학습 구조를 제안합니다. TCAM-Diff는 3D 볼륨을 그대로 생성하려면 메모리가 너무 많이 든다는 문제를 triplane이라는 압축된 표현으로 우회합니다. 네 편 모두 "더 큰 모델"이 아니라, 3D 의료 영상이 가진 각기 다른 현실적 제약을 하나씩 겨냥한다는 공통점이 있습니다.</td>
+  <td>High<br><small>서로 다른 문제(추론 데이터·정렬 단위·연합학습·생성 메모리) 4편이 3D 의료 영상 foundation model이라는 같은 응용 축에서 동시에 나왔고, 서로 다른 저자군·모달리티(CT 위주 3편 + MRI/PET 1편)에서 반복됨</small></td>
+  <td>OCP-CT의 organ-conditioned pattern token 정렬 방식을 우리 label-free 병리·의료 영상 파이프라인의 장기/조직 단위 특징 정렬에 이식해 보고, FM²의 overlapped/non-overlapped 연합학습 설정을 우리 랩이 보유한 서로 다른 촬영 조건의 계산 이미징 데이터셋에 시뮬레이션으로 적용해 볼 수 있는지 1차 검토</td>
+</tr>
+<tr>
+  <td><strong>라벨이 부족한 임상·세포 영상 인식에서 "라벨 없이도 어디를 봐야 하는지" 판단하는 방법들이 병리·세포·수술 영상에서 동시에 등장</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.13116" target=_blank>C-Norm: Cell-Distribution Normalization for Precision Recognition of Medical-Cell Image</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.13437" target=_blank>CLIP-Guided Label-Free Discriminative Region Scoring for Fine-Grained Classification</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.13237" target=_blank>Active Learning for Efficient Annotation of Surgical Videos with Weak Supervision</a> <span class=pill>CV</span>
+  </td>
+  <td>의료·생물 영상에서 라벨링은 항상 전문가의 시간이 드는 병목이었는데, 오늘 나온 3편은 이 병목을 각자 다른 위치에서 줄이려 합니다. C-Norm은 자궁경부암 세포 검사 슬라이드에서 세포가 한쪽에 몰려 찍히는 불균형한 분포 때문에 기존 AI 검출 모델이 실제 병원 환경에서는 잘 안 맞는다는 점을 지적하고, 세포 분포 자체를 정규화해 라벨링 부담을 늘리지 않고도 인식 정확도를 높입니다. CLIP-Guided Label-Free Region Scoring은 정답 라벨이 전혀 없어도 CLIP 같은 범용 비전-언어 모델이 이미지의 어느 영역이 분류에 중요한지 스스로 짚어낼 수 있는지를 검증합니다. Active Learning for Surgical Videos는 복강경 수술 영상에 시간·공간 라벨을 다는 데 전문 지식이 필요해 비용이 크다는 문제를 겨냥해, 모델이 스스로 확신이 낮은 구간만 골라 사람에게 확인받는 방식으로 라벨링 작업량을 줄입니다. 세 편 모두 "더 많은 라벨을 모으자"가 아니라 "라벨이 없어도 또는 최소한의 라벨만으로 어디를 봐야 하는지 모델 스스로 판단하게 만들자"는 같은 방향을 겨냥합니다.</td>
+  <td>Medium<br><small>서로 다른 임상 영상 도메인(세포 검사·미세 분류·수술 영상) 3편이 라벨 절감이라는 같은 방향을 지시하지만, 표준 라벨-효율성 벤치마크로 묶이지는 않음</small></td>
+  <td>CLIP-Guided Label-Free Region Scoring의 영역 점수화 방식을 우리 label-free 병리/현미경 영상의 관심영역 자동 선별 전처리로 재현해 기존 수작업 ROI 지정과 일치도를 비교하고, C-Norm의 세포 분포 정규화 기법이 우리 계산 이미징 세포 검출 파이프라인의 클래스 불균형 문제에도 통하는지 1차 검증</td>
+</tr>
+<tr>
+  <td><strong>영상 생성·world model 계열이 "픽셀 예측"에서 "상호작용 가능한 상태 표현"으로 계속 확장 (관찰 중)</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.14076" target=_blank>From Pixels to States: Rethinking Interactive World Models as Game Engines</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.14005" target=_blank>M⁴World: Multi-view Multimodal Driving World Model</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.14088" target=_blank>VideoRAE: Taming Video Foundation Models via Representation Autoencoders</a> <span class=pill>CV</span>
+  </td>
+  <td>Deep Learning Methods(catch-all) 버킷에서 눈에 띈 보조 신호입니다. From Pixels to States는 기존 영상 생성 기반 world model이 다음 프레임 픽셀을 예측하는 데 머물러 있어 게임 엔진처럼 실제 상호작용에 쓰기엔 상태 관리가 약하다는 점을 지적하고, M⁴World는 자율주행 시뮬레이션에서 여러 시점·LiDAR까지 함께 오래 스트리밍하며 물체 단위로 조작 가능한 세계 모델을 만듭니다. VideoRAE는 영상 생성 모델의 잠재 공간이 픽셀 복원에만 최적화돼 있어 의미 있는 시공간 구조를 놓친다는 문제를 짚고 표현 학습 기반 오토인코더로 바꿉니다. 세 편 모두 계산 이미징의 핵심 ROI는 아니지만, 저선량·희소뷰 재구성에 쓰이는 생성 모델 설계에 참고가 될 수 있어 관찰 중 항목으로 남깁니다.</td>
+  <td>Low<br><small>3편 모두 로보틱스·자율주행·범용 영상 생성 맥락이라 계산 이미징 ROI와 직접 연결은 약하고, 방법론적 참고 신호로만 관찰</small></td>
+  <td>VideoRAE의 표현 학습 기반 오토인코더 구조가 우리 저선량 CT/산란매질 diffusion 복원 모델의 잠재 공간 설계에 참고가 되는지, 픽셀 복원 손실 대신 구조적 표현 손실을 추가했을 때 재구성 품질이 달라지는지 소규모 ablation으로만 확인</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ Watch-lens 점검: Fourier Ptychography/Microscopy(0편), Lensless/Coded Imaging(2편), Meta-Optics/Diffractive(8편), Light-Field/Novel Sensors(5편)은 오늘 신호가 매우 약합니다. Fourier Ptychography는 아예 걸린 논문이 없고, Lensless 2편은 모두 metasurface PSF 엔지니어링·편광 선택 확산판 저널로 실제 lensless 이미징과는 거리가 있습니다(단 metasurface PSF 논문은 coded-aperture 설계와 인접). Meta-Optics 8편은 대부분 THz 안테나·Q-factor 광공진기·레이더 산란단면적으로 이미징과 직접 연결되지 않습니다. Light-Field 5편 중 2편(RainDancer, Visual Place Recognition)은 event camera/spiking 관련이지만 서로 다른 문제(우천 영상 복원 vs 위치 인식)라 독립 클러스터로 묶기엔 근거가 약합니다. 대신 저널에서 두 편의 진짜 신호를 확인했습니다 — <a href="https://doi.org/10.1088/2515-7647/ae8b49" target=_blank>HoLLoApp</a>(lensless holographic microscopy 재구성 도구, Phase Imaging 버킷)와 <a href="https://doi.org/10.1371/journal.pone.0353845" target=_blank>light field angular super-resolution</a> 논문은 각각 1편씩이라 클러스터 요건(2편 이상)을 못 채워 표에는 올리지 않았습니다 — 아래 버킷별 주요 논문 참고.</small></p>
+
+<h2>📐 arXiv vs 저널 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: Calibrated Closed-Form Uncertainty·CASA-SDF·Bake It Till You Make It(3DGS/implicit 신뢰도·속도), 3D Spatial Reasoning MLLM·OCP-CT·FM²·TCAM-Diff(3D 의료 foundation model), C-Norm·CLIP-Guided Region Scoring·Active Learning Surgical Videos(라벨 절감), From Pixels to States·M⁴World·VideoRAE(world model/영상 생성)</li>
+  <li><strong>저널 전용</strong>: HoLLoApp(lensless holographic microscopy 재구성 도구), light field angular super-resolution, THz/RF 메타표면·안테나 다수, 신경모방 소자, digital holography 관련 correction/이론물리 holography(계산 이미징과 무관한 동명이의)</li>
+  <li><strong>공통 키워드</strong>: reconstruction(3DGS/implicit surface 재구성 vs 임상 CT/MRI 재구성 저널로 맥락이 다름), holography(디지털 홀로그래피 계산 이미징 vs 이론물리 holography 2편 — 오탐 사례), staining(WSI 염색 vs 자가면역질환 조직염색·수의학 염색 비교 저널로 맥락이 다름)</li>
+  <li><strong>특징</strong>: 오늘은 arXiv 쪽이 3D 재구성의 신뢰도·효율 문제 제기와 의료 foundation model 확장을 주도하고, 저널 쪽은 계산광학 코어(lensless, light-field)에서 소수의 진짜 신호만 남기고 대부분 통신·재료·이론물리 논문입니다. 계산광학 코어 버킷 전체가 오늘은 arXiv·저널 모두에서 조용한 하루였습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 3D 재구성이 "예쁜 결과"에서 "믿을 수 있고 빠른 결과"로 기준이 넓어짐</h3>
+  <p>Calibrated Closed-Form Uncertainty, CASA-SDF, Bake It Till You Make It 3편이 같은 날 3DGS·neural implicit 재구성의 신뢰도 정량화와 속도 개선을 각각 다른 각도에서 다뤘습니다. 어제(7/15)의 3DGS 흐름이 "어디에 쓸 수 있는가"라는 응용 확장이었다면, 오늘은 이미 넓어진 응용을 실제로 신뢰하고 배포하는 데 필요한 조건을 채우는 단계로 보입니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 응용(CT·실내 표면·질감 렌더링) 3편이 같은 방향을 지시하지만 표준 벤치마크로 묶이지는 않음</p>
+</div>
+
+<div class=ins>
+  <h3>2. 3D 의료 영상 foundation model이 하나의 병목이 아니라 여러 병목을 동시에 겨냥하기 시작</h3>
+  <p>3D Spatial Reasoning MLLM, OCP-CT, FM², TCAM-Diff 4편은 각각 추론 데이터 결여, 장기별 소견 정렬, 병원 간 데이터 격리, 생성 메모리 한계라는 서로 다른 현실적 제약을 다룹니다. 3D 의료 영상 foundation model 연구가 "일단 크게 학습시키자"에서 "실제 임상 배포를 막는 구체적 병목을 하나씩 없애자"는 방향으로 넘어가고 있다는 뜻입니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 문제의식 4편이 동시에 나왔고 모달리티(CT 3편 + MRI/PET 1편)도 겹치지 않아 독립적으로 같은 방향을 가리킴</p>
+</div>
+
+<div class=ins>
+  <h3>3. 라벨 절감이 세포 검사·미세 분류·수술 영상에서 동시에 화두로 떠오름</h3>
+  <p>C-Norm, CLIP-Guided Region Scoring, Active Learning for Surgical Videos는 라벨이 부족한 임상 영상에서 "라벨을 더 모으자"가 아니라 "라벨 없이도 어디를 봐야 하는지 모델이 스스로 판단하게 하자"는 같은 방향을 겨냥합니다. 우리 label-free 계산 이미징 파이프라인에도 바로 참고할 수 있는 흐름입니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 임상 영상 도메인 3편이 라벨 절감이라는 같은 방향을 지시하지만 표준 벤치마크로 확산됐는지는 추가 관찰 필요</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. Calibrated Closed-Form Uncertainty의 분산 전파 공식을 산란매질/위상 이미징 희소뷰 재구성에 이식</h3>
+  <p>X선 투과 영상처럼 관측이 Gaussian 밀도에 선형인 계산 이미징 모달리티에서도, per-voxel 불확실성을 한 번의 forward pass로 정확히 계산할 수 있는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>논문의 변분 밀도 posterior·분산 전파 공식(volume space·projection space) 재현</li>
+    <li>공통 benchmark: 우리 보유 산란매질/위상 이미징 희소뷰 데이터셋</li>
+    <li>비교축: 재구성 신뢰도 calibration(Spearman/AUSE/ECE), 기존 point-estimate 대비 추가 연산 비용</li>
+    <li>실패해도 남는 결과: 우리 도메인에서 불확실성 정량화가 유의미한 영역(경계·저신호 영역)을 표시하는 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. OCP-CT의 organ-conditioned pattern token 정렬을 label-free 병리 파이프라인에 이식</h3>
+  <p>장기/조직 단위로 조건화된 패턴 토큰 정렬 방식이 우리 label-free 병리 영상의 세밀한 특징 정렬에도 성능 향상을 주는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>OCP-CT의 organ-conditioned pattern token 구조를 우리 조직 유형 분류 체계에 맞게 재구성</li>
+    <li>공통 benchmark: 우리 보유 병리 영상-소견 텍스트 페어 데이터셋</li>
+    <li>비교축: 전역 대조학습 대비 장기/조직 단위 정렬 정확도, 소수 샷 전이 성능</li>
+    <li>실패해도 남는 결과: 우리 데이터에서 전역 정렬과 국소 정렬의 차이에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. CLIP-Guided Label-Free Region Scoring을 label-free 현미경 영상 ROI 자동 선별에 재현</h3>
+  <p>정답 라벨 없이도 CLIP 기반 영역 점수화가 우리 label-free 계산 이미징 파이프라인에서 관심영역을 사람이 지정한 것과 비슷하게 골라낼 수 있는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>CLIP-Guided Region Scoring의 영역 분할-점수화 파이프라인 재현</li>
+    <li>공통 benchmark: 우리 보유 label-free 현미경 영상 + 소수 수작업 ROI 어노테이션</li>
+    <li>비교축: 자동 ROI와 수작업 ROI의 IoU, 다운스트림 분류 정확도 차이</li>
+    <li>실패해도 남는 결과: 우리 도메인에서 label-free 영역 점수화가 신뢰할 수 있는 영상 유형에 대한 baseline</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(38편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:5%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:37%"></span></span><span class=n>14편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:21%"></span></span><span class=n>8편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:13%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>38편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:34%"></span></span><span class=n>13편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:61%"></span></span><span class=n>23편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>90편</span></div>
+
+<p><small>⚠️ 참고: Tomography/3D Imaging 38편 중 실제 계산광학·계산이미징 신호는 3DGS/implicit 신뢰도·속도 클러스터 3편과 3D 의료 foundation model 클러스터 4편 정도이며 나머지는 대부분 임상 CT/MRI/OCT 진단 저널입니다. Virtual Staining/Pathology 13편 중 관련 신호는 라벨 절감 클러스터 2편(C-Norm, CLIP-Guided Region Scoring) 정도이며 나머지는 LLM/로보틱스 논문이거나 staining 키워드 우연 매칭(자가면역질환 염색, 수의학 염색 비교 등)입니다. Reconstruction/Inverse Problems 23편도 대부분 PINN(물리정보신경망) 일반 응용, 재고 수요 예측, RL로 이미징 ROI와 간접 연결입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (0편)</h3>
+<div class=roi-item>
+  <strong>오늘은 해당 논문 없음</strong><br>
+  왜 주요: arXiv·저널 어느 쪽에서도 Fourier ptychography/computational microscopy 관련 논문이 걸리지 않았습니다.
+</div>
+
+<h3>Lensless/Coded Imaging (2편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02229-1" target=_blank>Spin-multiplexed point spread function engineering via dielectric metasurface for simultaneous optical multiplexing</a></strong> [JNL]<br>
+  왜 주요: metasurface 기반 PSF(point spread function) 엔지니어링으로 coded-imaging 하드웨어 설계에 인접 — 나머지 1편(편광 선택 액정 확산판)은 재료 제작 위주로 이미징 방법론 기여가 약해 제외
+</div>
+
+<h3>Phase Imaging/Holography (14편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2515-7647/ae8b49" target=_blank>HoLLoApp: a reconstruction tool for high-throughput label-free complex-field imaging in lensless holographic microscopy</a></strong> [JNL]<br>
+  왜 주요: lensless holographic microscopy의 재초점·정합·위상 복원을 하나의 파이프라인으로 통합한 도구 — 나머지 13편(광전자 홀로그래피 correction, 이론물리 holography 2편, THz 메타표면 다수, 광섬유 wavefront 계측 등)은 계산 이미징 ROI와 무관해 제외
+</div>
+
+<h3>Meta-Optics/Diffractive (8편 중 관련 0편)</h3>
+<div class=roi-item>
+  <strong>오늘은 관련 논문 없음</strong><br>
+  왜 주요: 8편 모두 THz 안테나 변조, 재구성 가능 편광 변환, Q-factor 광공진기, 레이더 산란단면적 등 통신·센싱·재료 응용으로 이미징과 직접 연결되지 않습니다.
+</div>
+
+<h3>Light-Field/Novel Sensors (5편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1371/journal.pone.0353845" target=_blank>Robust light field angular super-resolution via multi-dimensional feature fusion and attention-guided refinement</a></strong> [JNL]<br>
+  왜 주요: 희소 뷰에서 dense light field를 복원하는 각도 초해상도 방법 — 나머지 4편(event camera 우천 복원, spiking 위치 인식, attosecond light field 합성, 유기 뉴로모픽 소자)은 광필드 이미징과 거리가 있어 제외
+</div>
+
+<h3>Tomography/3D Imaging (38편 중 관련 7편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13682" target=_blank>Calibrated Closed-Form Uncertainty</a> · <a href="https://arxiv.org/abs/2607.13492" target=_blank>CASA-SDF</a> · <a href="https://arxiv.org/abs/2607.13808" target=_blank>Bake It Till You Make It</a></strong> [CV]<br>
+  왜 주요: 오늘의 대표 클러스터(3DGS/implicit 신뢰도·속도) — 위 클러스터 표 참고
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13860" target=_blank>3D Spatial Reasoning MLLM</a> · <a href="https://arxiv.org/abs/2607.13892" target=_blank>OCP-CT</a> · <a href="https://arxiv.org/abs/2607.13386" target=_blank>FM²</a> · <a href="https://arxiv.org/abs/2607.13812" target=_blank>TCAM-Diff</a></strong> [CV/IV]<br>
+  왜 주요: 오늘의 대표 클러스터(3D 의료 foundation model 확장) — 위 클러스터 표 참고
+</div>
+
+<h3>Virtual Staining/Pathology (13편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13116" target=_blank>C-Norm</a> · <a href="https://arxiv.org/abs/2607.13437" target=_blank>CLIP-Guided Label-Free Region Scoring</a></strong> [CV]<br>
+  왜 주요: 오늘의 대표 클러스터(라벨 절감 병리·세포 인식) — 위 클러스터 표 참고. 나머지 11편은 대부분 LLM/로보틱스/사회과학 논문이거나 "staining" 키워드 우연 매칭(자가면역질환 조직염색, 수의학 염색법 비교 등)
+</div>
+
+<h3>Reconstruction/Inverse Problems (23편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13237" target=_blank>Active Learning for Efficient Annotation of Surgical Videos</a></strong> [CV · TIER A]<br>
+  왜 주요: 라벨 절감 클러스터의 대표 논문 — 오늘의 must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13601" target=_blank>Video to All-in-focus Image Reconstruction for Automated Microscopic Urinalysis</a> · <a href="https://doi.org/10.1364/oe.606234" target=_blank>Non-rigid Registration Guided Blind Deconvolution for Moving Target Imaging through Turbulence</a></strong> [IV/JNL]<br>
+  왜 주요: 첫 논문은 현미경 다층 시료의 all-in-focus 영상 복원, 두번째는 대기 난류를 통과한 이동 표적의 blind deconvolution — 나머지 21편은 대부분 PINN 일반 응용, 재고 수요 예측, RL로 이미징 ROI와 간접 연결
+</div>
+
+<h3>Deep Learning Methods — 관련 2편 (90편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14088" target=_blank>VideoRAE: Taming Video Foundation Models via Representation Autoencoders</a></strong> [CV]<br>
+  왜 주요: 영상 생성 모델의 잠재 공간을 픽셀 복원이 아닌 표현 학습 기반으로 재설계 — 우리 diffusion 기반 재구성 모델의 잠재 공간 설계 참고
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14076" target=_blank>From Pixels to States: Rethinking Interactive World Models as Game Engines</a></strong> [CV]<br>
+  왜 주요: 영상 생성 기반 world model을 상호작용 가능한 상태 표현으로 재구성하려는 시도 — 계산 이미징 직접 응용은 아니나 방법론적 참고
+</div>
+
+<hr>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Calibrated Closed-Form Uncertainty for Radiative Gaussian Splatting in Sparse-View CT — arXiv cs.CV</h3>
+  <div class=tag>[방법전환] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 희소뷰 CT를 3D Gaussian splatting(3DGS)으로 재구성하는 연구는 최근 빠르게 늘었지만, 지금까지는 재구성된 픽셀값 하나만 내놓을 뿐 그 값을 어디까지 믿어도 되는지는 알려주지 않았습니다. 이 논문은 X선 투과 영상이 Gaussian 밀도에 대해 선형이라는 물리적 성질(RGB 렌더링과 달리 CT는 이 성질을 정확히 만족)을 이용해, 별도의 샘플링이나 근사 없이 한 번의 forward pass 안에서 픽셀마다 불확실성을 정확하게 계산해냅니다. 우리 랩이 산란매질이나 위상 이미징처럼 관측이 선형인 계산 이미징 모달리티에 3DGS 기반 재구성을 적용하려 할 때, 재구성 결과의 신뢰 구간을 함께 제공할 수 있는 첫 참고 사례입니다.</p>
+  <p><strong>핵심:</strong> variational density posterior를 도입해 volume space와 projection space 양쪽에서 분산이 닫힌 형태로 전파되도록 설계하고, Spearman 상관계수·AUSE·ECE(temperature scaling 포함) 세 지표로 3DGS-CT 재구성의 첫 체계적 calibration 연구를 수행합니다.</p>
+  <p><strong>주의:</strong> 어떤 CT 촬영 조건(방사선량, 뷰 개수)에서 calibration 품질이 유지되는지는 abstract만으로 확인하기 어려워 본문의 실험 설정을 직접 봐야 합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Active Learning for Efficient Annotation of Surgical Videos with Weak Supervision — arXiv cs.CV</h3>
+  <div class=tag>[데이터전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> 복강경 수술 영상에 시간·공간 라벨을 정확히 다는 작업은 외과 전문 지식이 필요해 라벨링 자체가 병목이었습니다. 이 논문은 사람이 처음부터 끝까지 모든 프레임을 라벨링하게 하는 대신, 모델이 스스로 확신이 낮은 구간만 골라 사람에게 확인받는 human-in-the-loop 구조를 제안합니다. 우리 랩의 label-free·저라벨 계산 이미징 파이프라인을 구축할 때, "어떤 데이터에 사람의 확인을 우선 배분할지" 결정하는 전략으로 바로 참고할 수 있습니다.</p>
+  <p><strong>핵심:</strong> foundation model로 영상에서 시간적으로 일관된 class activation map(CAM)을 만들고, 이를 active learning의 dual-loss 최적화와 결합해 라벨링이 필요한 구간을 우선순위화합니다.</p>
+  <p><strong>주의:</strong> 어느 정도의 라벨링 시간이 실제로 절감되는지 구체적 수치는 abstract에 명시되지 않아 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 계산광학 코어 버킷(Fourier Ptychography 0건, Lensless 2건, Meta-Optics 8건, Light-Field 5건)은 오늘 arXiv·저널 모두에서 신호가 거의 없었습니다. 이는 오늘 하루의 등록 분포 특성일 뿐 랩 ROI 자체의 변화는 아닙니다.</p>
+  <p>[Dataset risk] Tomography/3D Imaging 38건, Reconstruction/Inverse Problems 23건, Deep Learning Methods 90건(catch-all) 중 다수는 "tomography"/"reconstruction" 키워드가 임상 진단·PINN 일반 응용·재고 수요 예측과 우연히 겹친 오탐입니다.</p>
+  <p>[Dataset risk] classify.py 선택 비율은 27.6%(193/699)로 최근 밴드(25~32%)와 일치합니다. parser 오류가 아니라 cs.LG/cs.AI가 일반 ML 논문으로 채워지는 오늘 하루의 특성입니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] Bake It Till You Make It의 "최대 5배 속도 향상"은 abstract 기준 수치로, 어떤 하드웨어·데이터셋에서 나온 결과인지 본문 확인이 필요합니다.</p>
+  <p>[Baseline risk] 3D 재구성 신뢰도·속도 클러스터의 3편은 서로 다른 응용(CT·실내 표면·질감 렌더링)과 평가 지표를 쓰고 있어, 논문 간 직접 비교는 어렵습니다.</p>
+  <p>[Claim risk] FM²의 연합학습 성능이 실제 병원 간 데이터 이질성(스캐너·프로토콜 차이)까지 반영한 것인지, 시뮬레이션 수준의 이질성만 다룬 것인지는 abstract만으로 확인되지 않습니다.</p>
+  <p>[Deployment risk] C-Norm·CLIP-Guided Region Scoring은 실제 임상 배포 환경에서의 처리 속도나 병원 워크플로 통합 검증까지는 abstract에 명시되지 않았습니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Meta-Optics 버킷 8편 전체</strong>(THz 안테나 변조, Q-factor 광공진기, 레이더 산란단면적 등) — 통신·센싱·재료 응용, 이미징 방법론 기여 없음.</li>
+    <li><strong>다수 임상 CT/MRI/OCT 저널</strong>(대동맥 평가, 두개골 CT, 안과 OCT 등) — 임상 진단 목적, 계산광학 방법론 기여 없음.</li>
+    <li><strong>Reconstruction/Inverse Problems 버킷 내 PINN 일반 응용 다수</strong>(재고 수요 예측, 회로 최적화 RL, 전기 임피던스 등) — 물리정보신경망 방법론은 흥미롭지만 이미징 ROI와 간접 연결.</li>
+    <li><strong>From Pixels to States·M⁴World</strong> [CV] — world model/자율주행 시뮬레이션 방법론은 참고할 만하지만 계산 이미징 응용과는 거리가 있어 우선순위를 낮춤.</li>
+    <li><strong>Virtual Staining/Pathology 버킷 내 비의료 논문 다수</strong>(가정 사회학 연구, 수질 정화 로봇 리뷰 등) — "staining" 키워드 우연 매칭.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy (0편)</h3>
+<div class=roi-item>
+  문제: 없음 / 방법: 없음 / 의미: 오늘은 관련 논문 없음 / 우선순위: 해당 없음
+</div>
+
+<h3>Lensless/Coded Imaging (2편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02229-1" target=_blank>Spin-multiplexed PSF engineering via dielectric metasurface</a></strong> <span class=pill>JNL</span><br>
+  문제: 단일 광학계로 여러 채널을 동시에 다중화하기 어려움 / 방법: spin 상태별로 다른 point spread function을 갖는 유전체 metasurface 설계 / 의미: coded-aperture/계산 이미징 하드웨어 설계에 인접 / 우선순위: Read
+</div>
+
+<h3>Phase Imaging/Holography (14편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2515-7647/ae8b49" target=_blank>HoLLoApp</a></strong> <span class=pill>JNL</span><br>
+  문제: lensless holographic microscopy의 재구성 워크플로가 파편화돼 수작업 개입이 많음 / 방법: 재초점·정합·위상 복원을 통합한 재구성 도구 / 의미: 고처리량 label-free 이미징의 실용성 개선 / 우선순위: Read
+</div>
+
+<h3>Meta-Optics/Diffractive (8편 중 관련 0편)</h3>
+<div class=roi-item>
+  문제: 없음 / 방법: 없음 / 의미: 8편 모두 THz 통신·센싱·재료 응용으로 이미징과 무관 / 우선순위: Skim-only
+</div>
+
+<h3>Light-Field/Novel Sensors (5편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1371/journal.pone.0353845" target=_blank>Robust light field angular super-resolution</a></strong> <span class=pill>JNL</span><br>
+  문제: 희소 뷰에서 dense light field 복원 시 가림·큰 시차 영역에서 일관성이 깨짐 / 방법: 다차원 특징 융합과 attention 기반 정제 네트워크 / 의미: light-field 이미징의 뷰 밀도 제약 완화 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging — 신뢰도·속도 클러스터 3편 + 의료 foundation model 클러스터 4편 (38편 중)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13682" target=_blank>Calibrated Closed-Form Uncertainty</a></strong> <span class=pill>CV · TIER A</span><br>
+  문제: 3DGS 기반 희소뷰 CT 재구성이 신뢰도 정보 없이 point estimate만 제공 / 방법: 선형 관측 모델을 이용한 닫힌 형태 분산 전파 / 의미: 재구성 신뢰도를 정량화한 첫 calibration 연구 — 오늘의 must-read / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13492" target=_blank>CASA-SDF</a></strong> <span class=pill>CV</span><br>
+  문제: 실내 장면의 평면·얇은 구조가 균일한 규제로는 동시에 잘 표현되지 않음 / 방법: 곡률 기반 밀도로 영역별 규제 강도 조절 / 의미: neural implicit surface 재구성의 디테일-평활성 trade-off 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13808" target=_blank>Bake It Till You Make It</a></strong> <span class=pill>CV</span><br>
+  문제: 3DGS의 세밀한 질감 표현이 렌더링 속도를 크게 늦춤 / 방법: 기하-질감 분리 후 텍스처 아틀라스로 베이킹 / 의미: 최대 5배 빠른 렌더링 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13860" target=_blank>3D Spatial Reasoning MLLM</a></strong> <span class=pill>CV</span><br>
+  문제: 의료 MLLM이 3D 볼륨의 단계적 판독 추론을 학습하지 못함 / 방법: 슬라이스 단위 데이터 합성으로 구조화된 추론 데이터셋 구축 / 의미: 3D 의료 영상 판독 추론 능력 향상 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13892" target=_blank>OCP-CT</a></strong> <span class=pill>CV</span><br>
+  문제: 전역 CT-판독문 대조학습이 장기별 미세 소견을 놓침 / 방법: organ-conditioned pattern token 정렬 / 의미: 세밀한 정렬 단위로 CT VLM 성능 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13386" target=_blank>FM²</a></strong> <span class=pill>CV</span><br>
+  문제: 병원 간 데이터 통합 없이 의료 foundation model 학습이 어려움 / 방법: overlapped/non-overlapped 모달리티를 다루는 연합학습 구조 / 의미: 프라이버시 제약 아래 다기관 의료 foundation model 학습 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13812" target=_blank>TCAM-Diff</a></strong> <span class=pill>IV</span><br>
+  문제: 3D 볼륨 생성 모델의 메모리 요구량이 과도함 / 방법: triplane 표현 + cross-attention diffusion / 의미: 고해상도 3D 의료 영상 생성의 메모리 효율화 / 우선순위: Read
+</div>
+
+<h3>Virtual Staining/Pathology (13편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13116" target=_blank>C-Norm</a></strong> <span class=pill>CV</span><br>
+  문제: 자궁경부암 세포 검사 슬라이드의 세포 분포 불균형이 실제 임상 정확도를 낮춤 / 방법: 세포 분포 정규화 / 의미: 라벨 추가 없이 인식 정확도 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13437" target=_blank>CLIP-Guided Label-Free Region Scoring</a></strong> <span class=pill>CV · TIER A</span><br>
+  문제: 라벨 없이 미세 분류에 중요한 영역을 찾기 어려움 / 방법: CLIP 기반 영역 점수화 전략 비교 / 의미: label-free 판별 영역 선별의 신뢰성 검증 / 우선순위: Must-read
+</div>
+
+<h3>Reconstruction/Inverse Problems (23편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13237" target=_blank>Active Learning for Surgical Videos</a></strong> <span class=pill>CV · TIER A</span><br>
+  문제: 수술 영상 라벨링에 전문 지식과 많은 시간이 필요 / 방법: active learning + weak supervision human-in-the-loop / 의미: 라벨링 비용 절감 — 오늘의 must-read / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.13601" target=_blank>Video to All-in-focus Image Reconstruction</a></strong> <span class=pill>IV</span><br>
+  문제: 요검사 슬라이드의 다층 구조로 모든 세포가 한 초점면에 잡히지 않음 / 방법: 비디오 프레임에서 all-in-focus 영상 합성 / 의미: 자동 요검사 정확도 개선 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.606234" target=_blank>Non-rigid Registration Guided Blind Deconvolution</a></strong> <span class=pill>JNL</span><br>
+  문제: 대기 난류를 통과한 이동 표적 영상이 시공간적으로 왜곡됨 / 방법: 비강체 정합 기반 blind deconvolution / 의미: 난류 영상 복원 정확도 개선 / 우선순위: Skim-only
+</div>
+
+<h3>Deep Learning Methods — 관련 2편 (90편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong>VideoRAE: Taming Video Foundation Models via Representation Autoencoders</strong> <span class=pill>CV</span><br>
+  문제: 영상 생성 모델의 잠재 공간이 픽셀 복원에만 최적화돼 의미 구조를 놓침 / 방법: 표현 학습 기반 오토인코더로 잠재 공간 재설계 / 의미: 생성 모델 잠재 공간 설계 참고
+</div>
+<div class=roi-item>
+  <strong>From Pixels to States: Rethinking Interactive World Models as Game Engines</strong> <span class=pill>CV</span><br>
+  문제: 픽셀 예측 기반 world model이 실제 상호작용에 필요한 상태 관리가 약함 / 방법: 상태 표현 중심으로 world model 재구성 / 의미: 계산 이미징 직접 응용은 아니나 생성 모델 설계 참고
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/abs/2607.13682" target=_blank>Calibrated Closed-Form Uncertainty for Radiative Gaussian Splatting — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.13237" target=_blank>Active Learning for Efficient Annotation of Surgical Videos — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.13492" target=_blank>CASA-SDF — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.13808" target=_blank>Bake It Till You Make It — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.13860" target=_blank>3D Spatial Reasoning in Medical MLLMs — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.13892" target=_blank>OCP-CT — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.13386" target=_blank>FM² — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.13812" target=_blank>TCAM-Diff — arXiv eess.IV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.13116" target=_blank>C-Norm — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.13437" target=_blank>CLIP-Guided Label-Free Region Scoring — arXiv cs.CV</a></li>
+  <li><a href="https://doi.org/10.1088/2515-7647/ae8b49" target=_blank>HoLLoApp — IOP Multifunctional Materials</a></li>
+  <li><a href="https://doi.org/10.1371/journal.pone.0353845" target=_blank>Light field angular super-resolution — PLOS ONE</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+  <p>📚 입력: arXiv /new(2026-07-16, new+cross 420편) + Crossref/OpenAlex 저널(376편) · 병합 스캔 699건, ROI 193건 (27.6%)</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

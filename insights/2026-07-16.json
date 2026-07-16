@@ -1,0 +1,86 @@
+{
+  "date": "2026-07-16",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "title": "3D Gaussian splatting/neural implicit 재구성이 '더 예쁘게'에서 '믿을 수 있는가·얼마나 빨리 뽑아내는가'로 이동",
+      "papers": [
+        {"title": "Calibrated Closed-Form Uncertainty for Radiative Gaussian Splatting in Sparse-View CT", "arxiv_id": "https://arxiv.org/abs/2607.13682", "journal_or_source": "arXiv cs.CV"},
+        {"title": "CASA-SDF: Curriculum-Aware Spatial Adaptation with Curvature-Guided Density for Neural Implicit Surface Reconstruction", "arxiv_id": "https://arxiv.org/abs/2607.13492", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Bake It Till You Make It: Ultrafast Spatial Texture-Atlas Splatting", "arxiv_id": "https://arxiv.org/abs/2607.13808", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "지금까지 3D Gaussian splatting(3DGS)이나 neural implicit surface 같은 3D 재구성 연구는 대부분 '얼마나 예쁘게 렌더링하는가'로 서로를 비교해 왔습니다. 오늘 나온 3편은 그 기준을 두 방향으로 넓힙니다. Calibrated Closed-Form Uncertainty 논문은 희소뷰 CT를 3DGS로 재구성할 때 지금까지는 픽셀값 하나만 내놓고 그 값을 얼마나 믿어도 되는지는 알려주지 않았다는 점을 지적하고, X선 영상이 Gaussian 밀도에 대해 선형이라는 물리적 성질을 이용해 픽셀마다 불확실성까지 한 번에 계산해냅니다. CASA-SDF는 실내 장면을 neural implicit 표면으로 복원할 때 넓고 평평한 벽은 부드럽게, 얇은 구조물은 날카롭게 표현해야 하는데 기존 방법이 장면 전체에 같은 규제를 걸어 둘 중 하나를 희생시킨다는 문제를 짚고, 영역별로 규제 강도를 다르게 줍니다. Bake It Till You Make It은 3DGS가 색을 세밀하게 표현할수록 렌더링이 느려지는 문제를 겨냥해, 기하 정보와 질감 정보를 분리하고 질감을 미리 구워둔 아틀라스로 처리해 최대 5배 빠르게 만듭니다. 세 편을 같이 보면, 3D 재구성 연구가 '결과가 얼마나 그럴듯한가'만으로는 부족하고 '이 결과를 어디까지 믿을 수 있는가'와 '얼마나 빨리 뽑아낼 수 있는가'까지 답해야 하는 단계로 넘어가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 응용(CT 재구성·실내 표면·질감 렌더링) 3편이 같은 방향(신뢰도 정량화 또는 속도 개선)을 지시하지만, 표준 벤치마크로 묶여 직접 비교되지는 않음",
+      "lab_action": "Calibrated Closed-Form Uncertainty의 per-voxel 분산 전파 공식을 우리 산란매질/위상 이미징의 희소뷰 재구성 파이프라인에 적용해, 재구성 신뢰도가 낮은 영역을 자동으로 표시하는 실험을 1주일 안에 돌려보고, Bake It Till You Make It의 기하-질감 분리 구조가 우리 3DGS 후처리 렌더링 속도를 어느 정도 줄여주는지 PSNR·프레임률 trade-off로 측정"
+    },
+    {
+      "title": "3D 의료 영상 foundation model이 진단 추론·기관별 정합·병원 간 연합학습으로 동시에 확장",
+      "papers": [
+        {"title": "Towards Enhancing 3D Spatial Reasoning in Medical Multimodal Large Language Models", "arxiv_id": "https://arxiv.org/abs/2607.13860", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Fine-Grained Vision-Language Pretraining with Organ-Conditioned Pattern Tokens for CT Understanding", "arxiv_id": "https://arxiv.org/abs/2607.13892", "journal_or_source": "arXiv cs.CV"},
+        {"title": "FM$^2$: Unified Federated Foundation Models for Heterogeneous Multimodal Medical Imaging", "arxiv_id": "https://arxiv.org/abs/2607.13386", "journal_or_source": "arXiv cs.CV"},
+        {"title": "TCAM-Diff: Triplane-Aware Cross-Attention Medical Diffusion Model", "arxiv_id": "https://arxiv.org/abs/2607.13812", "journal_or_source": "arXiv eess.IV"}
+      ],
+      "why": "3D 의료 영상에 큰 vision-language 모델이나 diffusion 모델을 적용하려는 시도는 계속 있었지만, 각 시도가 겪는 병목은 서로 달랐습니다. 오늘 나온 4편은 그 병목을 각각 정면으로 다룹니다. 3D Spatial Reasoning 논문은 기존 의료 MLLM들이 2D 영상 질의응답에는 강하지만 3D 볼륨을 방사선과 전문의처럼 슬라이스를 따라가며 단계적으로 판독하는 추론 과정 자체는 배우지 못했다는 점을 지적하고, 그 판독 과정을 그대로 학습 데이터로 합성합니다. OCP-CT는 CT 영상과 판독문을 통째로 대조 학습시키면 특정 장기의 미세한 소견이 묻힌다는 문제를 짚고, 장기 단위로 조건화된 패턴 토큰으로 더 세밀하게 정렬시킵니다. FM²는 여러 병원의 CT·MRI 데이터를 한곳에 모아 foundation model을 학습시킬 수 없다는 개인정보 제약 아래, 병원마다 보유한 영상 종류(모달리티)가 겹치거나 아예 다른 상황을 모두 다루는 연합학습 구조를 제안합니다. TCAM-Diff는 3D 볼륨을 그대로 생성하려면 메모리가 너무 많이 든다는 문제를 triplane이라는 압축된 표현으로 우회합니다. 네 편 모두 '더 큰 모델'이 아니라, 3D 의료 영상이 가진 각기 다른 현실적 제약(추론 과정 결여, 장기별 소견 뭉개짐, 병원 간 데이터 격리, 메모리 한계)을 하나씩 겨냥한다는 공통점이 있습니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 문제(추론 데이터·정렬 단위·연합학습·생성 메모리) 4편이 3D 의료 영상 foundation model이라는 같은 응용 축에서 동시에 나왔고, 서로 다른 저자군·서로 다른 모달리티(CT 위주 3편 + MRI/PET 1편)에서 반복됨",
+      "lab_action": "OCP-CT의 organ-conditioned pattern token 정렬 방식을 우리 label-free 병리·의료 영상 파이프라인의 장기/조직 단위 특징 정렬에 이식해 보고, FM²의 overlapped/non-overlapped 연합학습 설정을 우리 랩이 보유한 서로 다른 촬영 조건의 계산 이미징 데이터셋(장비·기관 차이)에 시뮬레이션으로 적용해 볼 수 있는지 1차 검토"
+    },
+    {
+      "title": "라벨이 부족한 임상·세포 영상 인식에서 '라벨 없이도 어디를 봐야 하는지' 판단하는 방법들이 병리·세포·수술 영상에서 동시에 등장",
+      "papers": [
+        {"title": "C-Norm: Cell-Distribution Normalization Enables Precision Recognition of Medical-Cell Image", "arxiv_id": "https://arxiv.org/abs/2607.13116", "journal_or_source": "arXiv cs.CV"},
+        {"title": "CLIP-Guided Label-Free Discriminative Region Scoring for Fine-Grained Classification", "arxiv_id": "https://arxiv.org/abs/2607.13437", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Active Learning for Efficient Annotation of Surgical Videos with Weak Supervision", "arxiv_id": "https://arxiv.org/abs/2607.13237", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "의료·생물 영상에서 라벨링은 항상 전문가의 시간이 드는 병목이었는데, 오늘 나온 3편은 이 병목을 각자 다른 위치에서 줄이려 합니다. C-Norm은 자궁경부암 세포 검사 슬라이드에서 세포가 한쪽에 몰려 찍히는 불균형한 분포 때문에 기존 AI 검출 모델이 실제 병원 환경에서는 잘 안 맞는다는 점을 지적하고, 세포 분포 자체를 정규화해 라벨링 부담을 늘리지 않고도 인식 정확도를 높입니다. CLIP-Guided Label-Free Region Scoring은 정답 라벨이 전혀 없어도 CLIP 같은 범용 비전-언어 모델이 이미지의 어느 영역이 분류에 중요한지 스스로 짚어낼 수 있는지를 검증합니다. Active Learning for Surgical Videos는 복강경 수술 영상에 시간·공간 라벨을 다는 데 전문 지식이 필요해 비용이 크다는 문제를 겨냥해, 모델이 스스로 확신이 낮은 구간만 골라 사람에게 확인받는 방식으로 라벨링 작업량을 줄입니다. 세 편 모두 '더 많은 라벨을 모으자'가 아니라 '라벨이 없어도 또는 최소한의 라벨만으로 어디를 봐야 하는지 모델 스스로 판단하게 만들자'는 같은 방향을 겨냥하고 있어, 우리 랩의 label-free 계산 이미징 파이프라인에도 바로 참고할 수 있는 흐름입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 임상 영상 도메인(세포 검사·미세 분류·수술 영상) 3편이 라벨 절감이라는 같은 방향을 지시하지만, 표준 라벨-효율성 벤치마크로 묶이지는 않아 근거가 태스크별로 흩어져 있음",
+      "lab_action": "CLIP-Guided Label-Free Region Scoring의 영역 점수화 방식을 우리 label-free 병리/현미경 영상의 관심영역 자동 선별 전처리로 재현해 기존 수작업 ROI 지정과 일치도를 비교하고, C-Norm의 세포 분포 정규화 기법이 우리 계산 이미징 세포 검출 파이프라인의 클래스 불균형 문제에도 통하는지 1차 검증"
+    },
+    {
+      "title": "영상 생성·world model 계열이 '픽셀 예측'에서 '상호작용 가능한 상태 표현'으로 계속 확장 (관찰 중)",
+      "papers": [
+        {"title": "From Pixels to States: Rethinking Interactive World Models as Game Engines", "arxiv_id": "https://arxiv.org/abs/2607.14076", "journal_or_source": "arXiv cs.CV"},
+        {"title": "M$^4$World: A Multi-view Multimodal Driving World Model for Interactive Object Manipulation and Minute-long Streaming", "arxiv_id": "https://arxiv.org/abs/2607.14005", "journal_or_source": "arXiv cs.CV"},
+        {"title": "VideoRAE: Taming Video Foundation Models for Generative Modeling via Representation Autoencoders", "arxiv_id": "https://arxiv.org/abs/2607.14088", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "오늘 Deep Learning Methods(catch-all) 버킷에서 눈에 띈 보조 신호입니다. From Pixels to States는 기존 영상 생성 기반 world model이 다음 프레임 픽셀을 예측하는 데 머물러 있어 게임 엔진처럼 실제 상호작용에 쓰기엔 상태 관리가 약하다는 점을 지적하고, M⁴World는 자율주행 시뮬레이션에서 여러 시점·LiDAR까지 함께 오래 스트리밍하며 물체 단위로 조작 가능한 세계 모델을 만듭니다. VideoRAE는 영상 생성 모델의 잠재 공간이 픽셀 복원에만 최적화돼 있어 의미 있는 시공간 구조를 놓친다는 문제를 짚고 표현 학습 기반 오토인코더로 바꿉니다. 세 편 모두 영상 생성 연구가 계산 이미징의 핵심 ROI는 아니지만, 저선량·희소뷰 재구성에 쓰이는 diffusion/생성 모델 설계에 참고가 될 수 있어 관찰 중 항목으로 남깁니다. 아직 계산 이미징 응용으로 직접 연결되는 논문은 없어 독립 클러스터로 올리지 않았습니다.",
+      "confidence": "Low",
+      "confidence_note": "3편 모두 로보틱스·자율주행·범용 영상 생성 맥락이라 계산 이미징 ROI와 직접 연결은 약하고, 방법론적 참고 신호로만 관찰",
+      "lab_action": "VideoRAE의 표현 학습 기반 오토인코더 구조가 우리 저선량 CT/산란매질 diffusion 복원 모델의 잠재 공간 설계에 참고가 되는지, 픽셀 복원 손실 대신 구조적 표현 손실을 추가했을 때 재구성 품질이 달라지는지 소규모 ablation으로만 확인"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "Calibrated Closed-Form Uncertainty의 분산 전파 공식을 산란매질/위상 이미징 희소뷰 재구성에 이식",
+      "claim": "X선 투과 영상처럼 관측이 Gaussian 밀도에 선형인 계산 이미징 모달리티(산란매질 통과, 위상 이미징)에서도, per-voxel 불확실성을 한 번의 forward pass로 정확히 계산할 수 있다.",
+      "supporting_papers": [
+        {"title": "Calibrated Closed-Form Uncertainty for Radiative Gaussian Splatting in Sparse-View CT", "arxiv": "https://arxiv.org/abs/2607.13682"}
+      ]
+    },
+    {
+      "title": "OCP-CT의 organ-conditioned pattern token 정렬을 label-free 병리 파이프라인에 이식",
+      "claim": "장기/조직 단위로 조건화된 패턴 토큰 정렬 방식이 우리 label-free 병리 영상의 세밀한 특징 정렬에도 성능 향상을 줄 수 있다.",
+      "supporting_papers": [
+        {"title": "Fine-Grained Vision-Language Pretraining with Organ-Conditioned Pattern Tokens for CT Understanding", "arxiv": "https://arxiv.org/abs/2607.13892"}
+      ]
+    },
+    {
+      "title": "FM²의 overlapped/non-overlapped 연합학습 설정을 랩 보유 계산 이미징 데이터셋에 시뮬레이션",
+      "claim": "서로 다른 촬영 조건·장비의 계산 이미징 데이터를 병원 간 데이터처럼 취급해 연합학습 구조로 학습하면, 중앙 집중 학습 없이도 도메인 간 일반화 성능을 확보할 수 있다.",
+      "supporting_papers": [
+        {"title": "FM$^2$: Unified Federated Foundation Models for Heterogeneous Multimodal Medical Imaging", "arxiv": "https://arxiv.org/abs/2607.13386"}
+      ]
+    },
+    {
+      "title": "CLIP-Guided Label-Free Region Scoring을 label-free 현미경 영상 ROI 자동 선별에 재현",
+      "claim": "정답 라벨 없이도 CLIP 기반 영역 점수화가 우리 label-free 계산 이미징 파이프라인에서 관심영역을 사람이 지정한 것과 비슷하게 골라낼 수 있다.",
+      "supporting_papers": [
+        {"title": "CLIP-Guided Label-Free Discriminative Region Scoring for Fine-Grained Classification", "arxiv": "https://arxiv.org/abs/2607.13437"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

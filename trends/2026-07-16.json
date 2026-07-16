@@ -1,0 +1,37 @@
+{
+  "date": "2026-07-16",
+  "source_listing_date": "2026-07-16",
+  "source_mode": "new",
+  "note": "2026-07-16(목) arXiv 5개 카테고리(cs.LG 140·cs.CV 102·cs.AI 148·eess.IV 6·eess.SP 24, 합계 420편, new+cross)와 Crossref/OpenAlex 저널 376편(2026-07-15 등록분)을 병합 스캔 699건 중 193건(27.6%)을 ROI로 선정했다. 이 비율은 최근 밴드(25~32%)와 일치해 parser 오류가 아니다. 오늘은 계산광학 코어 버킷이 유독 얇은 하루다 — Fourier Ptychography/Microscopy는 0건, Lensless/Coded Imaging 2건·Meta-Optics/Diffractive 8건·Light-Field/Novel Sensors 5건도 대부분 THz 안테나, 레이더 산란단면적, 초분광 무관 저널 등 키워드 우연 매칭이라 독립 클러스터를 만들 근거가 부족했다. 대신 오늘 arXiv 쪽 실질 신호는 (1) 3D Gaussian Splatting/neural implicit 재구성이 렌더링 속도·품질 경쟁에서 '이 재구성을 얼마나 믿을 수 있는가'와 '얼마나 빨리 뽑아낼 수 있는가'를 같이 묻는 방향으로 이동, (2) 3D 의료 영상 foundation model이 진단 추론·기관별 정합·병원 간 연합학습으로 동시에 확장, (3) 라벨이 부족한 임상·세포 영상 인식에서 '라벨 없이도 어디를 봐야 할지'를 판단하는 방법들이 병리·세포·수술 영상에서 동시에 나온 것이다. Tomography/3D Imaging(38건)·Virtual Staining/Pathology(13건)·Reconstruction/Inverse Problems(23건)·Deep Learning Methods(90건, catch-all)는 상당수가 임상 진단 저널, PINN 일반 응용, LLM/로보틱스 논문의 키워드 우연 매칭이라 클러스터·부록에는 실제 관련 논문만 추렸다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 140,
+      "cs.CV": 102,
+      "cs.AI": 148,
+      "eess.IV": 6,
+      "eess.SP": 24
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 376
+  },
+  "totals": {
+    "total_scanned": 699,
+    "selected": 193
+  },
+  "classified": {
+    "total_scanned": 699,
+    "selected": 193,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 2,
+      "Phase Imaging/Holography": 14,
+      "Meta-Optics/Diffractive": 8,
+      "Light-Field/Novel Sensors": 5,
+      "Tomography/3D Imaging": 38,
+      "Virtual Staining/Pathology": 13,
+      "Reconstruction/Inverse Problems": 23,
+      "Deep Learning Methods": 90
+    }
+  },
+  "daily_thesis": "오늘은 3D Gaussian splatting/neural implicit 재구성 연구가 '더 예쁘게'에서 '이 결과를 믿을 수 있는가'와 '얼마나 빨리 뽑아내는가'를 같이 묻는 쪽으로 넘어간 하루였다. 동시에 3D 의료 영상 foundation model이 진단 추론·기관별 정합·병원 간 연합학습으로 동시에 확장되고, 라벨이 부족한 임상·세포 영상에서는 '라벨 없이도 어디를 봐야 하는지' 판단하는 방법들이 병리·세포·수술 영상에서 함께 나왔다. 계산광학 코어(Fourier ptychography, lensless, meta-optics, light-field)는 오늘은 신호가 거의 없어 저널 관찰 대상으로만 짧게 짚었다."
+}
