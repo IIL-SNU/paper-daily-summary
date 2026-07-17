@@ -1,0 +1,29 @@
+{
+  "date": "2026-07-17",
+  "results": [
+    {
+      "benchmark": "Waymo Open Dataset (feed-forward driving scene 3DGS)",
+      "metric": "PSNR gain over strongest baseline",
+      "value": 2.01,
+      "value_str": "+2.01 dB vs strongest baseline",
+      "paper": "https://arxiv.org/abs/2607.14203",
+      "paper_title": "Instant NuRec: Feed-Forward 3D Gaussian Reconstruction for Driving Scene Simulation"
+    },
+    {
+      "benchmark": "Abdomen CBCT, K=3 materials (multi-material sparse-view CT)",
+      "metric": "3D PSNR",
+      "value": 33.28,
+      "value_str": "33.28 dB (+1.88 dB vs single-material NeAS baseline)",
+      "paper": "https://arxiv.org/abs/2607.14415",
+      "paper_title": "K-NeAS: Scalable Multi-Material CT Reconstruction Using Neural SDFs"
+    },
+    {
+      "benchmark": "AE-UAV air-to-air event tracking (CPU-only)",
+      "metric": "Speed (FPS) / accuracy retention vs GPU SOTA",
+      "value": 420,
+      "value_str": "420 FPS on CPU, 5.32x speedup, 93.97% of GPU-based SOTA accuracy",
+      "paper": "https://arxiv.org/abs/2607.14726",
+      "paper_title": "AE-UAV: An Air-to-Air Event-Based UAV Tracking Benchmark and a Real-Time Frequency-Domain Tracker"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "date": "2026-07-17",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "title": "3DGS/neural reconstruction이 \"장면마다 다시 최적화\"에서 \"한 번에 즉시 재구성 + 압축\"으로 이동",
+      "papers": [
+        {"title": "G²SR: Geometric Methods for Fast and Memory-Efficient Gaussian-based Surface Reconstruction", "arxiv_id": "https://arxiv.org/abs/2607.14470", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Immediate 3D Gaussian Splat Reconstruction of Unordered Input with Global Consistency", "arxiv_id": "https://arxiv.org/abs/2607.14481", "journal_or_source": "arXiv cs.CV"},
+        {"title": "MAGiSt3R: Multi-Agent Feed-forward 3D Reconstruction from Monocular RGB Videos", "arxiv_id": "https://arxiv.org/abs/2607.15211", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Instant NuRec: Feed-Forward 3D Gaussian Reconstruction for Driving Scene Simulation", "arxiv_id": "https://arxiv.org/abs/2607.14203", "journal_or_source": "arXiv cs.GR/cs.AI/cs.CV"},
+        {"title": "Compression of 3D Gaussian Splatting Data Using GPU-friendly Graphics Texture Coding", "arxiv_id": "https://arxiv.org/abs/2607.14513", "journal_or_source": "arXiv cs.CV/eess.IV"}
+      ],
+      "why": "지금까지 3D Gaussian splatting(3DGS)이나 비슷한 3D 재구성 방법들은 대부분 장면 하나를 볼 때마다 처음부터 다시 최적화를 돌려야 했습니다. 그래서 정확도는 높아도 로봇이나 자율주행차처럼 그 자리에서 바로 3D 지도를 써야 하는 상황에는 느려서 쓰기 어려웠습니다. 오늘 나온 5편은 이 \"매번 다시 최적화\"라는 전제 자체를 없애려는 시도들입니다. G²SR은 몇 장의 사진만으로 표면을 복원할 때 신경망이 splat을 통째로 추정하는 대신 2D 대응점만 찾고 나머지는 기하학 공식으로 계산해서, GPU 메모리를 최대 107배 줄이고 초당 69~89번 재구성을 돌립니다. Immediate 3D Gaussian Splat Reconstruction은 사진을 순서 없이 마구 찍어도 바로 3DGS를 만들어내면서 장면 전체의 일관성까지 맞춥니다. MAGiSt3R은 영상만 넣으면 별도의 최적화 과정 없이 거의 초당 10프레임으로 3D 지도와 카메라 위치를 동시에 뽑아냅니다. Instant NuRec은 자율주행 시뮬레이션용 3D 장면을 만들 때 기존엔 장면마다 튜닝이 필요했던 것을, 여러 카메라 영상을 한 번의 순전파(forward pass)에 통째로 넣어 1.5초 만에 시뮬레이션 가능한 3D 세계로 바꿔버립니다. Compression 논문은 이렇게 빨리 만든 3DGS 장면을 실제로 배포하려면 데이터 용량도 줄여야 한다는 문제를 겨냥해, GPU가 바로 병렬로 풀 수 있는 텍스처 압축 방식으로 화질 손실 없이 용량을 줄입니다. 다섯 편을 같이 보면, 3DGS 연구가 \"어떻게 더 정확하게 만들까\"를 넘어 \"애초에 매번 최적화가 필요한가\"와 \"이걸 실제로 배포 가능한 크기로 만들 수 있는가\"를 동시에 묻는 단계로 넘어가고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 응용(로봇 표면 복원·대규모 캡처·단안 비디오·자율주행 시뮬레이션·압축) 5편이 서로 다른 저자군에서 모두 \"매 장면 재최적화 제거·즉시성·배포 효율\"이라는 같은 방향을 가리킴",
+      "lab_action": "MAGiSt3R·Instant NuRec의 feed-forward 아키텍처(point-map 회귀 + 단일 forward pass)를 우리 계산 이미징 다시점 데이터(산란매질, 위상 이미징 스택)에 적용해 기존 장면별 최적화 대비 재구성 속도·PSNR을 함께 측정하는 벤치마크를 만들고, Compression 논문의 GPU 친화적 텍스처 압축이 우리 3DGS 재구성 결과물의 저장·전송 용량을 얼마나 줄이는지 BC1/BC7 포맷으로 1차 테스트"
+    },
+    {
+      "title": "역문제(inverse problem) 솔버들이 정확도 경쟁을 넘어 도메인 불일치·불확실성을 스스로 재기 시작",
+      "papers": [
+        {"title": "Probabilistic Physics-Informed Neural Networks for Estimating Heterogeneous Elastic Properties from Low-Resolution and Noisy Displacement Data (PIE-PINN)", "arxiv_id": "https://arxiv.org/abs/2607.14563", "journal_or_source": "arXiv cs.LG"},
+        {"title": "Operator-Informed Gaussian Processes for Complex Helmholtz Wavefields: From Synthetic Benchmarks to In Vivo Brain Elastography", "arxiv_id": "https://arxiv.org/abs/2607.14193", "journal_or_source": "arXiv stat.ML/cs.LG/physics.med-ph"},
+        {"title": "Domain Adaptation of Mismatched Proximal Denoiser for Plug-and-Play Image Reconstruction", "arxiv_id": "https://arxiv.org/abs/2607.14894", "journal_or_source": "arXiv eess.IV"},
+        {"title": "FORCE-Interior: A Poisson Flow Generative Prior for Interior Tomography Reconstruction", "arxiv_id": "https://arxiv.org/abs/2607.14320", "journal_or_source": "arXiv eess.IV"}
+      ],
+      "why": "계산 이미징에서 물리 제약을 반영한 재구성 방법(PINN, plug-and-play, 생성모델 기반 복원)은 그동안 대부분 \"정답에 얼마나 가깝게 복원했는가\"로만 평가받아 왔습니다. 오늘 나온 4편은 조금 다른 질문을 던집니다 — \"이 방법이 언제, 얼마나 믿을 수 없어지는가\"를 방법 자체가 스스로 알려주게 만드는 것입니다. PIE-PINN은 저해상도에 잡음까지 낀 변위 측정만으로 조직의 탄성 특성(영률·포아송비)을 복원할 때, 기존 PINN이 잡음이 심한 영역까지 똑같은 비중으로 맞추려다 오히려 망가진다는 문제를 지적하고, 잡음이 심한 부분은 자동으로 덜 믿도록 손실 가중치를 계층적으로 조절합니다. Operator-Informed Gaussian Process 논문은 뇌 자기공명 탄성영상(MR elastography)에서 파동장을 복원할 때 점 추정값 하나만 내놓는 대신, 그 추정이 어디서 얼마나 불확실한지 사후분포로 함께 내놓습니다. 실제로 저주파 대역에서는 모델 자체의 한계로 정확도 천장이 있고, 아직 불확실성 추정이 완전히 보정되지는 않았다는 점까지 솔직하게 밝힙니다. Domain Adaptation of Mismatched Proximal Denoiser 논문은 plug-and-play 복원에서 학습 도메인 밖의 denoiser를 그대로 갖다 쓰면 왜, 얼마나 수렴이 느려지는지를 \"proximal mismatch\"라는 개념으로 처음 정량화하고, MSE만 맞추는 기존 적응 대신 이 mismatch 자체를 줄이는 적응이 특히 데이터가 적을 때 더 잘 통한다는 것을 보입니다. FORCE-Interior는 관심 영역만 잘라 찍은 CT(interior tomography)를 생성모델로 복원할 때, 생성모델이 그럴듯하지만 실제 측정값과는 안 맞는 구조를 만들어낼 위험을 겨냥해 매 생성 단계마다 실제 측정값과 일치하도록 강제하는 제약을 넣습니다. 네 편 모두 계산 이미징의 핵심 방법론이 \"이 결과가 왜 틀릴 수 있는지\", \"어디까지 일반화되는지\"를 방법 안에 내장하는 쪽으로 움직이고 있다는 공통점이 있습니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 모달리티(탄성영상 2편·plug-and-play 복원·interior CT) 4편이 서로 다른 저자군에서 \"정확도를 넘어 불확실성/일반화 한계를 스스로 정량화\"라는 같은 방향을 가리킴",
+      "lab_action": "Operator-Informed GP의 multiscale prior 구조를 우리 위상 이미징/산란매질 파동장 복원 문제에 적용해 posterior 불확실성을 실제로 뽑아보고 ECE로 calibration 품질을 측정하고, Domain Adaptation of Mismatched Proximal Denoiser의 proximal matching 적응 방식을 우리 plug-and-play 기반 위상 복원 파이프라인의 few-shot 도메인 전환 실험에 적용해 기존 MSE 기반 미세조정 대비 수렴 속도·복원 품질을 비교"
+    },
+    {
+      "title": "이벤트 카메라·light-field 센싱이 추적을 넘어 디블러링·synthetic aperture 같은 기하학적 역문제로 확장",
+      "papers": [
+        {"title": "AE-UAV: An Air-to-Air Event-Based UAV Tracking Benchmark and a Real-Time Frequency-Domain Tracker", "arxiv_id": "https://arxiv.org/abs/2607.14726", "journal_or_source": "arXiv cs.CV"},
+        {"title": "JADE-GS: Joint Alternating Deblurring Guided by Events in 3D Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2607.14990", "journal_or_source": "arXiv cs.CV"},
+        {"title": "ESAR: Event-Based Synthetic Aperture Reconstruction", "arxiv_id": "https://arxiv.org/abs/2607.15073", "journal_or_source": "arXiv eess.IV/cs.CV/eess.SP"},
+        {"title": "Frequency-Structured Field Learning for Light-Field Disparity Estimation (FreqLF)", "arxiv_id": "https://arxiv.org/abs/2607.14941", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "이벤트 카메라는 원래 빠른 움직임에서도 끊기지 않는 추적(tracking) 용도로 많이 쓰였는데, 오늘 나온 4편을 보면 그 쓰임새가 추적을 넘어 3D 재구성·영상 복원 같은 정통 계산 이미징 역문제 쪽으로 넓어지고 있습니다. AE-UAV는 공중에서 다른 드론을 쫓아야 하는 상황(저조도·역광·고속 이동)에서 기존 프레임 카메라가 못 버티는 지점을 이벤트 카메라로 메우면서, GPU 없이 CPU만으로 초당 420프레임을 내는 추적기를 만들어 실제 배포 가능성을 보여줍니다. JADE-GS는 카메라가 노출 중 빠르게 움직여 블러가 생길 때 이벤트 카메라가 잡아낸 미세한 움직임 정보를 3D Gaussian Splatting 복원 과정에 양방향으로 엮어서, 기존엔 한쪽 방향(전처리 → 복원)으로만 쓰이던 이벤트 정보를 복원 결과가 다시 전처리기를 교정하는 구조로 바꿉니다. ESAR은 이벤트 카메라 신호를 아예 synthetic-aperture(합성 개구) 역문제로 새로 세워서, 픽셀-시간 볼륨을 통째로 복원하는 대신 장면 자체의 밝기 필드 하나만 복원하도록 문제를 단순화합니다. FreqLF는 light-field 카메라로 찍은 여러 시점 영상에서 깊이(disparity)를 구할 때, 기존처럼 명시적인 disparity volume을 만드는 대신 주파수 영역에서 전역적인 특징을 업데이트하는 방식으로 메모리 부담 없이 정확도를 유지합니다. 넷을 같이 보면, 이벤트 카메라·light-field 같은 비전통적 센서들이 \"남들이 못 찍는 걸 빠르게 찍는다\"는 하드웨어 장점에서 한 걸음 더 나아가, 그 신호를 계산 이미징의 언어(역문제·정규화·복원)로 다시 세우는 논문들이 늘고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "4편이 서로 다른 응용(UAV 추적·3DGS 디블러링·synthetic aperture·light-field disparity)에서 \"이벤트/광필드 센서를 역문제로 재정식화\"라는 방향을 반복하지만, 표준 벤치마크로 서로 비교되지는 않음",
+      "lab_action": "ESAR의 synthetic-aperture 역문제 정식화(v=Pθ, 시간차분 연산자 A)가 우리 이벤트 카메라 기반 위상/산란매질 이미징 실험에도 적용 가능한지, 특히 near-nadir가 아닌 임의 모션 조건에서 얼마나 깨지는지 소규모 시뮬레이션으로 확인하고, JADE-GS의 양방향(복원↔전처리 교정) 루프 구조를 우리 저조도/블러 보정 파이프라인에 이식해 단방향 전처리 대비 최종 복원 품질(LPIPS)이 얼마나 개선되는지 ablation"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "feed-forward 3DGS 아키텍처를 다시점 계산 이미징 데이터의 즉시 재구성에 이식",
+      "claim": "MAGiSt3R·Instant NuRec 계열의 feed-forward point-map/3DGS 회귀 구조가 산란매질·위상 이미징 다시점 데이터에도 적용 가능하며, 장면별 최적화 없이도 실용적인 재구성 품질을 낼 수 있다.",
+      "supporting_papers": [
+        {"title": "MAGiSt3R: Multi-Agent Feed-forward 3D Reconstruction from Monocular RGB Videos", "arxiv": "https://arxiv.org/abs/2607.15211"},
+        {"title": "Instant NuRec: Feed-Forward 3D Gaussian Reconstruction for Driving Scene Simulation", "arxiv": "https://arxiv.org/abs/2607.14203"}
+      ]
+    },
+    {
+      "title": "Operator-Informed Gaussian Process의 불확실성 정량화를 위상/산란매질 파동장 복원에 적용",
+      "claim": "물리 연산자 조건화 Gaussian Process 회귀가 복소수 값을 갖는 위상 이미징 파동장에도 확장 가능하며, 점 추정값 대신 calibration된 posterior 불확실성을 제공할 수 있다.",
+      "supporting_papers": [
+        {"title": "Operator-Informed Gaussian Processes for Complex Helmholtz Wavefields", "arxiv": "https://arxiv.org/abs/2607.14193"}
+      ]
+    },
+    {
+      "title": "Proximal matching 기반 도메인 적응을 plug-and-play 위상 복원 파이프라인에 이식",
+      "claim": "MSE 기반 미세조정 대신 proximal mismatch를 직접 줄이는 적응 방식이, 우리 plug-and-play 위상 복원 파이프라인의 few-shot 도메인 전환 상황에서 더 빠르게 수렴하고 더 높은 복원 품질을 낼 수 있다.",
+      "supporting_papers": [
+        {"title": "Domain Adaptation of Mismatched Proximal Denoiser for Plug-and-Play Image Reconstruction", "arxiv": "https://arxiv.org/abs/2607.14894"}
+      ]
+    },
+    {
+      "title": "ESAR의 synthetic-aperture 역문제 정식화를 이벤트 카메라 기반 위상/산란매질 이미징에 확장",
+      "claim": "이벤트 카메라 신호를 픽셀-시간 볼륨이 아니라 정적 밝기 필드에 대한 synthetic-aperture 역문제로 재정식화하는 방식이, near-nadir가 아닌 일반적인 모션 조건의 계산 이미징 설정에서도 유효하게 확장될 수 있다.",
+      "supporting_papers": [
+        {"title": "ESAR: Event-Based Synthetic Aperture Reconstruction", "arxiv": "https://arxiv.org/abs/2607.15073"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

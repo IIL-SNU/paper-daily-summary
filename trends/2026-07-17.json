@@ -1,0 +1,37 @@
+{
+  "date": "2026-07-17",
+  "source_listing_date": "2026-07-17",
+  "source_mode": "new",
+  "note": "2026-07-17(금) arXiv 5개 카테고리(cs.LG 143·cs.CV 114·cs.AI 204·eess.IV 11·eess.SP 17, 합계 489편, new+cross)와 Crossref/OpenAlex 저널 435편을 병합 스캔 828건 중 237건(28.6%)을 ROI로 선정했다. 이 비율은 최근 밴드(25~32%)와 일치해 parser 오류가 아니다. 계산광학 코어 버킷은 오늘도 얇다 — Fourier Ptychography/Microscopy 2건(관련 1건, 나머지는 SAR 홍수 탐지 키워드 오탐), Lensless/Coded Imaging 2건(모두 저널, PSF/deconvolution 인접), Meta-Optics/Diffractive 14건 중 상당수가 THz 안테나·RCS 저감·통신용 metasurface로 이미징과 무관하다. 대신 arXiv 쪽에서 세 가지 뚜렷한 신호가 나왔다 — (1) 3D Gaussian splatting/neural reconstruction이 매 장면 재최적화에서 feed-forward 즉시 재구성과 배포용 압축으로 이동(G²SR, Immediate 3DGS Reconstruction, MAGiSt3R, Instant NuRec, Compression 5편), (2) PINN/Gaussian Process/plug-and-play/생성모델 기반 역문제 솔버들이 정확도 경쟁을 넘어 도메인 불일치와 불확실성을 스스로 정량화하기 시작(PIE-PINN, Operator-Informed GP, Domain Adaptation of Mismatched Proximal Denoiser, FORCE-Interior 4편), (3) 이벤트 카메라·light-field 센싱이 추적을 넘어 디블러링·synthetic aperture 같은 기하학적 역문제로 확장(AE-UAV, JADE-GS, ESAR, FreqLF 4편). Tomography/3D Imaging(40건)·Reconstruction/Inverse Problems(30건)·Virtual Staining/Pathology(25건)·Deep Learning Methods(106건, catch-all)는 상당수가 임상 진단 저널, LLM/로보틱스 논문, 일반 ML 방법론의 키워드 우연 매칭이라 클러스터·부록에는 실제 관련 논문만 추렸다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 143,
+      "cs.CV": 114,
+      "cs.AI": 204,
+      "eess.IV": 11,
+      "eess.SP": 17
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 435
+  },
+  "totals": {
+    "total_scanned": 828,
+    "selected": 237
+  },
+  "classified": {
+    "total_scanned": 828,
+    "selected": 237,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 2,
+      "Lensless/Coded Imaging": 2,
+      "Phase Imaging/Holography": 10,
+      "Meta-Optics/Diffractive": 14,
+      "Light-Field/Novel Sensors": 8,
+      "Tomography/3D Imaging": 40,
+      "Virtual Staining/Pathology": 25,
+      "Reconstruction/Inverse Problems": 30,
+      "Deep Learning Methods": 106
+    }
+  },
+  "daily_thesis": "오늘은 3D Gaussian splatting/neural reconstruction 연구가 '장면마다 다시 최적화'를 없애고 한 번의 forward pass로 즉시 재구성 + 배포용 압축까지 끝내는 쪽으로 넘어간 하루였다. 동시에 PINN·Gaussian Process·plug-and-play·생성모델 기반 역문제 솔버들이 정확도 경쟁을 넘어 도메인 불일치와 불확실성을 스스로 정량화하기 시작했고, 이벤트 카메라·light-field 센싱은 추적을 넘어 디블러링·synthetic aperture 같은 정통 계산 이미징 역문제로 확장됐다. 계산광학 코어(Fourier ptychography, lensless, meta-optics)는 오늘도 신호가 얇아 저널 관찰 대상으로만 짧게 짚었다."
+}

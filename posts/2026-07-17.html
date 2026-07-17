@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-07-17</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-07-17 (금요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-07-17 (금요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Friday, 17 July 2026"으로 확인됨</div>
+  <div>🔢 arXiv: cs.LG 143 · cs.CV 114 · cs.AI 204 · eess.IV 11 · eess.SP 17 (합계 489편, new+cross, replacement 제외)</div>
+  <div>🔢 저널: Crossref/OpenAlex 435편 수집 · arXiv+저널 병합 스캔 828건 · ROI 배정 237건 (28.6%)</div>
+  <div>⚠️ 오늘도 계산광학 코어 버킷이 얇습니다 — Fourier Ptychography/Microscopy 2건(관련 1건), Lensless/Coded Imaging 2건(모두 저널), Meta-Optics/Diffractive 14건 대부분이 THz 안테나·RCS 저감·통신용 metasurface로 이미징과 무관합니다. Tomography/3D Imaging(40건)·Reconstruction/Inverse Problems(30건)·Virtual Staining/Pathology(25건)·Deep Learning Methods(106건, catch-all)도 상당수가 임상 진단 저널이거나 LLM/로보틱스 논문입니다. 아래 클러스터·부록에서는 실제 계산광학·계산이미징 신호만 추립니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 3D Gaussian splatting(3DGS)과 neural reconstruction 연구가 <strong>"장면마다 다시 최적화"라는 전제 자체를 없애고, 한 번의 forward pass로 즉시 재구성한 뒤 곧바로 배포 가능한 크기로 압축</strong>하는 쪽으로 넘어간 하루입니다. 몇 장의 사진만으로 표면을 복원하는 논문, 순서 없이 찍은 사진에서 바로 3DGS를 만드는 논문, 영상만 넣으면 최적화 없이 3D 지도와 카메라 위치를 동시에 뽑는 논문, 자율주행 시뮬레이션용 장면을 1.5초 만에 만드는 논문, 그리고 이렇게 빨리 만든 장면을 GPU 친화적으로 압축하는 논문까지 다섯 편이 같은 날 나왔습니다. 두 번째로 뚜렷한 흐름은 <strong>PINN·Gaussian Process·plug-and-play·생성모델 기반 역문제 솔버들이 정확도 경쟁을 넘어 도메인 불일치와 불확실성을 스스로 정량화</strong>하기 시작했다는 것입니다. 세 번째는 <strong>이벤트 카메라와 light-field 센싱이 추적을 넘어 디블러링·synthetic aperture 같은 정통 계산 이미징 역문제로 확장</strong>된 것입니다. 계산광학 코어(Fourier Ptychography, Lensless, Meta-Optics)는 오늘도 신호가 얇아 저널 관찰 대상으로만 짧게 짚고 넘어갑니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>이번 주 3DGS/neural reconstruction 흐름을 하루씩 되짚어 보면 뚜렷한 계단식 진행이 보입니다. 월요일(7/13)엔 feed-forward 3D 재구성이 "새 도메인에 적용해보기"에서 "내부가 왜 흔들리는지 진단하고 고치기"로, 화요일(7/14)엔 "더 예쁜 렌더링"에서 "압축·적응형 복잡도·온라인 증분 재구성"으로, 수요일(7/15)엔 CT·내시경·무선 VR 전송·레이더까지 여러 응용으로 번지며 "어디에나 쓰는 공통 3D 표현"으로 자리잡았고, 목요일(7/16)엔 그 결과를 "믿을 수 있는가"와 "얼마나 빨리 뽑아낼 수 있는가"를 정면으로 묻는 논문들이 나왔습니다. 오늘(7/17, 금)은 이 질문이 논리적 끝까지 밀고 나가, "애초에 장면마다 다시 최적화할 필요가 있는가"를 묻는 feed-forward 즉시 재구성 논문 4편과 배포용 압축 논문 1편으로 이어졌습니다. 화요일의 압축 흐름과 수요일의 다응용 확산, 목요일의 속도 개선이 오늘 하나로 합류한 셈입니다.</p>
+<p>두 번째 흐름은 계산 이미징의 핵심 방법론(PINN, Gaussian Process, plug-and-play, 생성모델 기반 복원)이 "정답에 얼마나 가까운가"를 넘어 "이 결과가 언제 얼마나 틀릴 수 있는가"를 방법 안에 내장하기 시작한 것입니다. 저해상도·잡음 변위 데이터에서 조직 탄성을 복원하는 논문, 뇌 MR 탄성영상의 파동장을 불확실성과 함께 복원하는 논문, plug-and-play 복원에서 도메인 불일치를 정량화하는 논문, interior CT 복원에서 생성모델이 측정값과 안 맞는 구조를 만들 위험을 제약으로 막는 논문까지 네 편이 같은 날 나왔습니다. 세 번째 흐름은 이벤트 카메라·light-field 센싱이 추적을 넘어 디블러링·synthetic aperture 역문제로 확장된 것으로, 공중 드론 추적·3DGS 디블러링·이벤트 기반 synthetic aperture·light-field disparity 추정 네 편이 동시에 나왔습니다.</p>
+<p>다음 관찰 포인트는 (1) feed-forward 3DGS의 "즉시성·압축" 축이 다음 주에도 이어져 표준 속도/압축률 벤치마크로 정리되는지, (2) 역문제 솔버의 불확실성 정량화가 계산 이미징 벤치마크(예: 우리 랩이 참고할 만한 calibration metric)로 확산되는지, (3) 이벤트 카메라·light-field가 이번 주에 걸쳐 계속 관측된 만큼 다음 주에도 독립 클러스터 규모로 유지되는지입니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>어제(7/16, 목)는 3DGS/neural implicit 재구성 논문 3편이 모두 "이미 만든 결과를 얼마나 믿을 수 있고 얼마나 빨리 뽑아낼 수 있는가"를 정량화하는 데 초점을 맞췄습니다(불확실성 계산, 영역별 규제, 텍스처 베이킹 가속). 오늘은 질문이 한 걸음 더 나아가 "애초에 장면마다 다시 최적화가 필요한가"를 묻는 feed-forward 논문 4편과 압축 논문 1편으로 이어졌습니다. 같은 3D 재구성이라도 어제는 이미 만든 결과의 신뢰도·속도를 개선하는 문제였다면, 오늘은 결과를 만드는 과정 자체에서 최적화 단계를 통째로 없애는 문제로 갈립니다. 어제 중심이었던 3D 의료 영상 foundation model 확장 흐름은 오늘은 눈에 띄지 않았고, 대신 이벤트 카메라·light-field 센싱이 새로운 축으로 떠올랐습니다 — 어제는 이 버킷(Light-Field/Novel Sensors)이 5편 중 대부분 THz/재료 논문으로 신호가 약했지만, 오늘은 8편 중 4편이 실제 이벤트/광필드 기하 역문제 논문으로 채워지며 이번 주 들어 가장 뚜렷한 신호를 보였습니다. 계산광학 코어 버킷(Fourier Ptychography, Meta-Optics, Lensless)은 어제에 이어 오늘도 신호가 약해, 이번 주 중반 이후 침묵이 계속되고 있습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>3DGS/neural reconstruction이 "장면마다 다시 최적화"에서 "즉시 재구성 + 압축"으로 이동</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.14470" target=_blank>G²SR: Geometric Methods for Fast and Memory-Efficient Gaussian-based Surface Reconstruction</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.14481" target=_blank>Immediate 3D Gaussian Splat Reconstruction of Unordered Input</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.15211" target=_blank>MAGiSt3R: Multi-Agent Feed-forward 3D Reconstruction</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.14203" target=_blank>Instant NuRec: Feed-Forward 3D Gaussian Reconstruction for Driving Scene Simulation</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.14513" target=_blank>Compression of 3D Gaussian Splatting Data Using GPU-friendly Graphics Texture Coding</a> <span class=pill>CV</span>
+  </td>
+  <td>지금까지 3DGS나 비슷한 3D 재구성 방법들은 대부분 장면 하나를 볼 때마다 처음부터 다시 최적화를 돌려야 했습니다. 그래서 정확도는 높아도 로봇이나 자율주행차처럼 그 자리에서 바로 3D 지도를 써야 하는 상황엔 느려서 쓰기 어려웠습니다. 오늘 나온 5편은 이 "매번 다시 최적화"라는 전제 자체를 없애려는 시도들입니다. G²SR은 몇 장의 사진만으로 표면을 복원할 때 신경망이 splat을 통째로 추정하는 대신 2D 대응점만 찾고 나머지는 기하학 공식으로 계산해서, GPU 메모리를 최대 107배 줄이고 초당 69~89번 재구성을 돌립니다. Immediate 3D Gaussian Splat Reconstruction은 사진을 순서 없이 마구 찍어도 바로 3DGS를 만들면서 장면 전체의 일관성까지 맞춥니다. MAGiSt3R은 영상만 넣으면 별도 최적화 없이 거의 초당 10프레임으로 3D 지도와 카메라 위치를 동시에 뽑아냅니다. Instant NuRec은 자율주행 시뮬레이션용 3D 장면을 만들 때 기존엔 장면마다 튜닝이 필요했던 것을, 여러 카메라 영상을 한 번의 순전파에 통째로 넣어 1.5초 만에 시뮬레이션 가능한 3D 세계로 바꿔버립니다. Compression 논문은 이렇게 빨리 만든 장면을 실제로 배포하려면 데이터 용량도 줄여야 한다는 문제를 겨냥해, GPU가 바로 병렬로 풀 수 있는 텍스처 압축 방식으로 화질 손실 없이 용량을 줄입니다. 다섯 편을 같이 보면, 3DGS 연구가 "더 정확하게"를 넘어 "애초에 매번 최적화가 필요한가"와 "실제로 배포 가능한 크기로 만들 수 있는가"를 동시에 묻는 단계로 넘어가고 있다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 응용(로봇 표면 복원·대규모 캡처·단안 비디오·자율주행 시뮬레이션·압축) 5편이 서로 다른 저자군에서 모두 같은 방향을 가리킴</small></td>
+  <td>MAGiSt3R·Instant NuRec의 feed-forward 아키텍처를 우리 계산 이미징 다시점 데이터(산란매질, 위상 이미징 스택)에 적용해 기존 장면별 최적화 대비 재구성 속도·PSNR을 함께 측정하는 벤치마크를 만들고, Compression 논문의 GPU 친화적 텍스처 압축이 우리 3DGS 재구성 결과물의 저장·전송 용량을 얼마나 줄이는지 BC1/BC7 포맷으로 1차 테스트</td>
+</tr>
+<tr>
+  <td><strong>역문제 솔버들이 정확도 경쟁을 넘어 도메인 불일치·불확실성을 스스로 재기 시작</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.14563" target=_blank>PIE-PINN: Probabilistic PINN for Heterogeneous Elastic Properties</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2607.14193" target=_blank>Operator-Informed Gaussian Processes for Complex Helmholtz Wavefields</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2607.14894" target=_blank>Domain Adaptation of Mismatched Proximal Denoiser for PnP Reconstruction</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2607.14320" target=_blank>FORCE-Interior: Poisson Flow Generative Prior for Interior Tomography</a> <span class=pill>IV</span>
+  </td>
+  <td>계산 이미징에서 물리 제약을 반영한 재구성 방법(PINN, plug-and-play, 생성모델 기반 복원)은 그동안 대부분 "정답에 얼마나 가깝게 복원했는가"로만 평가받아 왔습니다. 오늘 나온 4편은 "이 방법이 언제, 얼마나 믿을 수 없어지는가"를 방법 자체가 스스로 알려주게 만듭니다. PIE-PINN은 저해상도·잡음 변위 측정만으로 조직 탄성을 복원할 때, 잡음이 심한 영역은 자동으로 덜 믿도록 손실 가중치를 계층적으로 조절합니다. Operator-Informed GP는 뇌 MR 탄성영상의 파동장을 점 추정값 대신 불확실성 있는 사후분포로 복원하고, 저주파에서는 모델 한계로 정확도 천장이 있으며 불확실성 추정이 아직 완전히 보정되지 않았다는 점까지 밝힙니다. Domain Adaptation of Mismatched Proximal Denoiser는 plug-and-play 복원에서 학습 도메인 밖 denoiser를 쓰면 왜 수렴이 느려지는지를 "proximal mismatch"로 처음 정량화하고, 이를 직접 줄이는 적응이 MSE 기반 적응보다 특히 데이터가 적을 때 더 잘 통함을 보입니다. FORCE-Interior는 관심 영역만 잘라 찍은 CT를 생성모델로 복원할 때 그럴듯하지만 측정값과 안 맞는 구조가 나올 위험을 막기 위해 매 생성 단계마다 실제 측정값과 일치하도록 강제합니다. 네 편 모두 계산 이미징 방법론이 "왜 틀릴 수 있는지"를 방법 안에 내장하는 쪽으로 움직이고 있다는 공통점이 있습니다.</td>
+  <td>High<br><small>서로 다른 모달리티(탄성영상 2편·plug-and-play 복원·interior CT) 4편이 서로 다른 저자군에서 같은 방향을 가리킴</small></td>
+  <td>Operator-Informed GP의 multiscale prior를 우리 위상 이미징/산란매질 파동장 복원에 적용해 posterior 불확실성을 ECE로 calibration 측정하고, Domain Adaptation of Mismatched Proximal Denoiser의 proximal matching 적응을 우리 plug-and-play 위상 복원 파이프라인의 few-shot 도메인 전환 실험에 적용해 기존 MSE 기반 미세조정과 수렴 속도·복원 품질을 비교</td>
+</tr>
+<tr>
+  <td><strong>이벤트 카메라·light-field 센싱이 추적을 넘어 디블러링·synthetic aperture 역문제로 확장</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.14726" target=_blank>AE-UAV: Air-to-Air Event-Based UAV Tracking Benchmark</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.14990" target=_blank>JADE-GS: Joint Alternating Deblurring Guided by Events in 3DGS</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.15073" target=_blank>ESAR: Event-Based Synthetic Aperture Reconstruction</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2607.14941" target=_blank>FreqLF: Frequency-Structured Field Learning for Light-Field Disparity Estimation</a> <span class=pill>CV</span>
+  </td>
+  <td>이벤트 카메라는 원래 빠른 움직임에서도 끊기지 않는 추적 용도로 많이 쓰였는데, 오늘 나온 4편을 보면 그 쓰임새가 3D 재구성·영상 복원 같은 정통 계산 이미징 역문제 쪽으로 넓어지고 있습니다. AE-UAV는 저조도·역광·고속 이동 상황에서 프레임 카메라의 한계를 이벤트 카메라로 메우면서, GPU 없이 CPU만으로 초당 420프레임을 내는 추적기로 실제 배포 가능성을 보여줍니다. JADE-GS는 노출 중 블러가 생길 때 이벤트가 잡아낸 미세 움직임 정보를 3DGS 복원과 양방향으로 엮어서, 기존엔 한쪽 방향(전처리→복원)으로만 쓰이던 이벤트 정보를 복원 결과가 다시 전처리기를 교정하는 구조로 바꿉니다. ESAR은 이벤트 신호를 아예 synthetic-aperture 역문제로 새로 세워, 픽셀-시간 볼륨 대신 장면의 정적 밝기 필드 하나만 복원하도록 문제를 단순화합니다. FreqLF는 light-field 깊이 추정에서 명시적 disparity volume 없이 주파수 영역 전역 특징으로 메모리 부담 없이 정확도를 유지합니다. 넷을 같이 보면, 이벤트·광필드 센서가 "빠르게 찍는다"는 하드웨어 장점을 넘어 그 신호를 계산 이미징의 언어(역문제·정규화·복원)로 다시 세우는 논문들이 늘고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>4편이 서로 다른 응용에서 같은 방향을 반복하지만 표준 벤치마크로 서로 비교되지는 않음</small></td>
+  <td>ESAR의 synthetic-aperture 정식화가 우리 이벤트 카메라 기반 위상/산란매질 이미징에도 적용 가능한지, near-nadir가 아닌 임의 모션 조건에서 얼마나 깨지는지 소규모 시뮬레이션으로 확인하고, JADE-GS의 양방향 루프 구조를 우리 저조도/블러 보정 파이프라인에 이식해 단방향 전처리 대비 LPIPS 개선폭을 ablation</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ Watch-lens 점검: Fourier Ptychography/Microscopy(2편 중 관련 1편)는 electron ptychography로 hydrogen atom을 3D 이미징한 저널 논문이 유일한 신호이고, 나머지 1편(SAR 홍수 탐지)은 "synthetic aperture" 키워드 우연 매칭입니다. Lensless/Coded Imaging(2편)은 둘 다 저널로, PSF 모델 기반 3D 공간가변 deconvolution과 lensless fan-in 광연산 논문이라 클러스터 요건(2편 이상 같은 방향)은 충족하지 못해 표에는 못 올렸습니다. Meta-Optics/Diffractive(14편)는 대부분 THz 안테나·RCS 저감·통신용 metasurface로, 유일하게 이미징에 인접한 것은 Full-Color Multifocal Plane Display(dielectric metasurface 기반) 1편뿐입니다. 세 버킷 모두 오늘은 독립 클러스터를 만들 근거가 부족해 아래 버킷별 주요 논문에서만 짚습니다.</small></p>
+
+<h2>📐 arXiv vs 저널 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: G²SR·Immediate 3DGS Reconstruction·MAGiSt3R·Instant NuRec·Compression(feed-forward 3DGS/압축), PIE-PINN·Operator-Informed GP·Domain Adaptation of Mismatched Proximal Denoiser·FORCE-Interior(역문제 불확실성/일반화), AE-UAV·JADE-GS·ESAR·FreqLF(이벤트/광필드 기하 역문제), XCT-SAM·K-NeAS(산업/의료 CT 재구성)</li>
+  <li><strong>저널 전용</strong>: Direct 3D Imaging of Hydrogen Atoms via Electron Ptychography, (PD)² 물리 기반 phase diversity wavefront sensing, blind phase shifts 기반 phase imaging, Full-Color Multifocal Plane Display metasurface, HoLLoApp류는 오늘 없었고 THz/RF metasurface·안테나 다수, H&E-IHC 변환·histopathology 이미지 해싱 검색(virtual staining 소수 신호)</li>
+  <li><strong>공통 키워드</strong>: reconstruction(3DGS/CT/interior tomography 재구성 vs 임상 진단 저널로 맥락이 다름), phase(디지털 phase imaging/wavefront sensing vs 재료과학 phase-field PINN — 오탐 사례), staining(H&E-IHC 변환 vs 조직 절편 염색 프로토콜·수의학 염색 비교 저널로 맥락이 다름)</li>
+  <li><strong>특징</strong>: 오늘은 arXiv 쪽이 feed-forward 3D 재구성, 역문제 불확실성 정량화, 이벤트/광필드 기하 역문제라는 세 흐름을 주도하고, 저널 쪽은 계산광학 코어에서 electron ptychography·phase imaging·metasurface display 소수 신호만 남기고 대부분 통신·재료·임상 진단 논문입니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 3DGS/neural reconstruction이 "매 장면 재최적화"를 없애는 feed-forward 단계로 넘어감</h3>
+  <p>G²SR, Immediate 3DGS Reconstruction, MAGiSt3R, Instant NuRec, Compression 5편이 같은 날 "장면마다 다시 최적화"라는 전제를 없애거나(feed-forward) 결과를 배포 가능한 크기로 줄이는(압축) 문제를 각각 다른 응용에서 다뤘습니다. 이번 주 내내 이어진 3DGS 신뢰도·속도·다응용 확산 흐름이 오늘 "애초에 최적화가 필요한가"라는 질문으로 수렴한 모습입니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 응용(로봇·대규모 캡처·단안 비디오·자율주행·압축) 5편이 서로 다른 저자군에서 같은 방향을 가리킴</p>
+</div>
+
+<div class=ins>
+  <h3>2. 역문제 솔버가 정확도 대신 "왜 틀릴 수 있는가"를 스스로 재는 쪽으로 이동</h3>
+  <p>PIE-PINN, Operator-Informed GP, Domain Adaptation of Mismatched Proximal Denoiser, FORCE-Interior 4편은 각각 잡음 강건성, 불확실성 정량화, 도메인 불일치 정량화, 측정 일관성 제약이라는 서로 다른 각도에서 "이 복원 결과를 어디까지 믿을 수 있는가"를 방법 안에 내장합니다. 정확도 경쟁만으로는 부족하다는 문제의식이 계산 이미징 핵심 방법론 전반에 퍼지고 있다는 뜻입니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 모달리티 4편이 동시에 나왔고 서로 다른 저자군에서 독립적으로 같은 방향을 가리킴</p>
+</div>
+
+<div class=ins>
+  <h3>3. 이벤트 카메라·light-field가 추적을 넘어 계산 이미징 역문제의 언어로 재정식화됨</h3>
+  <p>AE-UAV, JADE-GS, ESAR, FreqLF 4편은 이벤트/광필드 센서를 단순 고속 센싱 하드웨어가 아니라, synthetic aperture·디블러링·disparity 추정 같은 정통 역문제로 formulate합니다. 이번 주 초반엔 신호가 약했던 Light-Field/Novel Sensors 버킷이 오늘 가장 뚜렷한 새 축으로 떠올랐습니다.</p>
+  <p class=conf-note>Confidence: Medium — 4편이 같은 방향을 지시하지만 표준 벤치마크로 서로 비교되지는 않음, 다음 주 지속 여부 확인 필요</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. feed-forward 3DGS 아키텍처를 다시점 계산 이미징 데이터의 즉시 재구성에 이식</h3>
+  <p>MAGiSt3R·Instant NuRec 계열의 feed-forward point-map/3DGS 회귀 구조가 산란매질·위상 이미징 다시점 데이터에도 적용 가능한지, 장면별 최적화 없이도 실용적인 재구성 품질을 낼 수 있는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>MAGiSt3R의 3R 계열 feed-forward point-map 회귀 구조 재현 또는 공개 체크포인트 확보</li>
+    <li>공통 benchmark: 우리 보유 산란매질/위상 이미징 다시점 데이터셋</li>
+    <li>비교축: 기존 장면별 최적화 3DGS 대비 재구성 속도(FPS)·PSNR·메모리 사용량</li>
+    <li>실패해도 남는 결과: 우리 도메인에서 feed-forward 회귀가 깨지는 조건(뷰 개수, 베이스라인)에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. Operator-Informed Gaussian Process의 불확실성 정량화를 위상/산란매질 파동장 복원에 적용</h3>
+  <p>물리 연산자 조건화 GP 회귀가 복소수 값을 갖는 위상 이미징 파동장에도 확장 가능하며, 점 추정값 대신 calibration된 posterior 불확실성을 제공할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>Operator-Informed GP의 realify(복소 연산자 → 결합 실수 블록) 구성 재현</li>
+    <li>공통 benchmark: 우리 보유 위상 이미징/산란매질 파동장 시뮬레이션 데이터</li>
+    <li>비교축: 점 추정 기준선 대비 posterior 정확도, ECE 기반 calibration 품질</li>
+    <li>실패해도 남는 결과: 우리 도메인에서 GP 기반 불확실성 정량화가 유효한 주파수/노이즈 범위에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. Proximal matching 기반 도메인 적응을 plug-and-play 위상 복원 파이프라인에 이식</h3>
+  <p>MSE 기반 미세조정 대신 proximal mismatch를 직접 줄이는 적응 방식이 우리 plug-and-play 위상 복원 파이프라인의 few-shot 도메인 전환 상황에서 더 빠르게 수렴하고 더 높은 복원 품질을 내는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>학습된 proximal network/gradient-step denoiser 중 하나로 proximal matching 적응 재현</li>
+    <li>공통 benchmark: 우리 plug-and-play 위상 복원 파이프라인 + 소수 target-domain 샘플</li>
+    <li>비교축: MSE 기반 미세조정 대비 PnP-PGD 수렴 속도, few-shot 규모별 복원 품질</li>
+    <li>실패해도 남는 결과: 우리 도메인의 proximal mismatch 크기에 대한 baseline 측정치</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(40편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:5%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:5%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:25%"></span></span><span class=n>10편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:35%"></span></span><span class=n>14편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:20%"></span></span><span class=n>8편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>40편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:63%"></span></span><span class=n>25편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:75%"></span></span><span class=n>30편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>106편</span></div>
+
+<p><small>⚠️ 참고: Tomography/3D Imaging 40편 중 실제 계산광학·계산이미징 신호는 feed-forward 3DGS 클러스터 5편과 XCT-SAM·K-NeAS 2편 정도이며 나머지는 대부분 임상 CT/MRI/OCT 진단 저널입니다. Virtual Staining/Pathology 25편 중 관련 신호는 H&E-IHC 변환·histopathology 이미지 해싱 검색·pathology foundation model 증류 3편 정도이며 나머지는 LLM/사회과학/재료 논문이거나 staining 키워드 우연 매칭입니다. Reconstruction/Inverse Problems 30편도 대부분 world model·양자화·LLM RL 논문으로, 역문제 불확실성 클러스터 4편 외 이미징 ROI와 직접 연결되는 논문은 소수입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (2편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1149/ma2026-01412053mtgabs" target=_blank>Direct 3D Imaging of Hydrogen Atoms and Their Spatial Heterogeneity in Palladium Hydride Nanoparticles with Electron Ptychography</a></strong> [JNL]<br>
+  왜 주요: electron ptychography로 기존에는 관측이 극히 어려웠던 수소 원자의 3D 분포를 직접 이미징 — 나머지 1편(SAR 홍수 탐지)은 "synthetic aperture" 키워드 우연 매칭이라 제외
+</div>
+
+<h3>Lensless/Coded Imaging (2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.596161" target=_blank>Versatile 3D space-variant deconvolution with measurement-free point spread function models</a></strong> [JNL]<br>
+  왜 주요: 실측 없이 모델링한 PSF만으로 공간가변 3D deconvolution을 수행 — coded/lensless 이미징의 PSF 엔지니어링과 인접. 나머지 1편(lensless fan-in 광연산)은 광컴퓨팅 응용으로 이미징 방법론과는 결이 달라 부록 참고용으로만 표시
+</div>
+
+<h3>Phase Imaging/Holography (10편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.606688" target=_blank>(PD)²: physics-driven phase diversity neural network for wavefront sensing</a></strong> [JNL]<br>
+  왜 주요: 물리 기반 phase diversity를 신경망과 결합한 wavefront sensing — 나머지 8편(THz 메타표면, vortex 홀로그래피, 간섭계측 다수)은 통신·재료 응용 위주
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s10043-026-01064-4" target=_blank>Efficient phase imaging method with blind phase shifts based on fast average operation</a></strong> [JNL]<br>
+  왜 주요: 위상 천이량을 사전에 몰라도(blind) 빠른 평균 연산만으로 위상 영상을 복원하는 실용적 방법
+</div>
+
+<h3>Meta-Optics/Diffractive (14편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/acsnano.6c04417" target=_blank>Full-Color Multifocal Plane Display Based on a Dielectric Stereoscopic Metasurface</a></strong> [JNL]<br>
+  왜 주요: 유전체 metasurface로 다초점면 풀컬러 디스플레이를 구현 — 나머지 13편은 THz 안테나 변조, RCS 저감, 통신용 편광 변환기 등 이미징과 무관
+</div>
+
+<h3>Light-Field/Novel Sensors (8편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14726" target=_blank>AE-UAV</a> · <a href="https://arxiv.org/abs/2607.14990" target=_blank>JADE-GS</a> · <a href="https://arxiv.org/abs/2607.15073" target=_blank>ESAR</a> · <a href="https://arxiv.org/abs/2607.14941" target=_blank>FreqLF</a></strong> [CV/IV]<br>
+  왜 주요: 오늘의 대표 클러스터(이벤트 카메라·light-field 기하 역문제 확장) — 위 클러스터 표 참고
+</div>
+
+<h3>Tomography/3D Imaging (40편 중 관련 7편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14470" target=_blank>G²SR</a> · <a href="https://arxiv.org/abs/2607.14481" target=_blank>Immediate 3DGS Reconstruction</a> · <a href="https://arxiv.org/abs/2607.15211" target=_blank>MAGiSt3R</a> · <a href="https://arxiv.org/abs/2607.14203" target=_blank>Instant NuRec</a> · <a href="https://arxiv.org/abs/2607.14513" target=_blank>Compression</a></strong> [CV]<br>
+  왜 주요: 오늘의 대표 클러스터(feed-forward 즉시 재구성 + 압축) — 위 클러스터 표 참고
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14415" target=_blank>K-NeAS: Scalable Multi-Material CT Reconstruction Using Neural SDFs</a></strong> [CV]<br>
+  왜 주요: 희소뷰 CT를 K개 물질까지 자동으로 확장해 재구성하는 neural SDF 방법, Abdomen에서 3D PSNR +1.88dB — 아래 벤치마크 참고
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14287" target=_blank>XCT-SAM: Sequential Parameter-Efficient Domain Adaptation of SAM for Industrial XCT Defect Segmentation</a></strong> [CV]<br>
+  왜 주요: SAM을 합금 미세구조 데이터로 중간 적응시킨 뒤 산업 XCT 결함 분할로 옮기는 2단계 도메인 적응 — 라벨 부족한 산업 이미징에 참고
+</div>
+
+<h3>Virtual Staining/Pathology (25편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s10278-026-02043-6" target=_blank>Enhancing Translation of H&amp;E to IHC with Robust Tumor-Infiltrating Lymphocytes Quantification Using Deep Generative Models</a></strong> [JNL]<br>
+  왜 주요: H&E-IHC 가상 염색 변환을 종양침윤림프구 정량화 성능으로 검증한 feasibility study
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14703" target=_blank>Pretraining Multiple Instance Learning Networks with Multi-Teacher Distillation from Pathology Slide Foundation Models</a></strong> [CV]<br>
+  왜 주요: 매 downstream task마다 처음부터 학습하던 MIL aggregator를 여러 병리 foundation model에서 증류해 사전학습 — 나머지 22편은 대부분 LLM/사회과학/재료 논문이거나 staining 키워드 우연 매칭(수의학 염색, 조직 절편 프로토콜 등)
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/jimaging12070321" target=_blank>An Adaptive Attention-Driven Quadruplet Deep Hashing Method for Retrieving Histopathological Images</a></strong> [JNL]<br>
+  왜 주요: quadruplet deep hashing으로 histopathology 이미지 검색을 고차원 특징 대신 이진 코드로 처리
+</div>
+
+<h3>Reconstruction/Inverse Problems (30편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14563" target=_blank>PIE-PINN</a> · <a href="https://arxiv.org/abs/2607.14193" target=_blank>Operator-Informed GP</a> · <a href="https://arxiv.org/abs/2607.14894" target=_blank>Domain Adaptation of Mismatched Proximal Denoiser</a> · <a href="https://arxiv.org/abs/2607.14320" target=_blank>FORCE-Interior</a></strong> [LG/IV · TIER A]<br>
+  왜 주요: 오늘의 대표 클러스터(역문제 솔버의 불확실성·도메인 불일치 정량화) — 위 클러스터 표 참고. 나머지 26편은 대부분 world model 강건성, LLM 양자화, RL 논문으로 이미징 ROI와 무관
+</div>
+
+<h3>Deep Learning Methods — 관련 1편 (106편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15097" target=_blank>QuReC: All-in-One Image Restoration with Query-Specific Guidance and Local-Global Response Calibration</a></strong> [CV]<br>
+  왜 주요: 한 이미지 안에 여러 종류의 손상이 공간적으로 섞여 있을 때, 이미지 전체에 균일한 프롬프트 대신 위치별로 다른 복원 지침을 주는 query-specific 접근 — 다중 열화 계산 이미징 복원 파이프라인 설계에 참고
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<ul>
+  <li><strong>Waymo Open Dataset (feed-forward driving scene 3DGS)</strong>: Instant NuRec이 강한 baseline 대비 PSNR <strong>+2.01 dB</strong>, 10~20초 장면을 약 1.5초에 재구성 (<a href="https://arxiv.org/abs/2607.14203" target=_blank>arXiv:2607.14203</a>)</li>
+  <li><strong>Abdomen CBCT, K=3 물질 (다물질 희소뷰 CT)</strong>: K-NeAS가 단일물질 NeAS baseline 대비 3D PSNR <strong>33.28 dB(+1.88 dB)</strong> (<a href="https://arxiv.org/abs/2607.14415" target=_blank>arXiv:2607.14415</a>)</li>
+  <li><strong>AE-UAV 공중 이벤트 추적 (CPU-only)</strong>: <strong>420 FPS</strong>, GPU 기반 SOTA 대비 5.32배 빠르면서 정확도의 93.97% 유지 (<a href="https://arxiv.org/abs/2607.14726" target=_blank>arXiv:2607.14726</a>)</li>
+</ul>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Instant NuRec: Feed-Forward 3D Gaussian Reconstruction for Driving Scene Simulation — arXiv cs.GR/cs.AI/cs.CV</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> 자율주행 3D 시뮬레이션은 정책 평가에 필수적인데, 지금까지 신경망 기반 시뮬레이션(NuRec 계열)은 장면 하나를 시뮬레이션 가능하게 만들려면 매번 최적화를 새로 돌려야 해서 느렸습니다. Instant NuRec은 여러 카메라로 찍은 10~20초짜리 주행 로그 하나를 통째로 신경망에 넣으면, 단 한 번의 순전파만으로 정적/동적 3DGS 레이어, 하늘 큐브맵, 카메라별 ISP 보정까지 한꺼번에 뽑아내는 완전한 feed-forward 파이프라인을 보여줍니다. 우리 랩이 다시점 계산 이미징 데이터를 시뮬레이션 가능한 3D 표현으로 즉시 바꾸고 싶을 때, "어떻게 하면 매 장면 최적화를 없앨 수 있는가"에 대한 구체적인 아키텍처 참고 사례입니다.</p>
+  <p><strong>핵심:</strong> 다시점 카메라 입력을 받아 정적/동적 3DGS 레이어·하늘 큐브맵·카메라별 ISP 보정을 한 번의 forward pass로 동시에 출력하는 구조를 제안하고, 비-핀홀 카메라 모델까지 3DGUT로 지원합니다. Waymo Open Dataset에서 약 1.5초 만에 10~20초 장면을 재구성하면서 가장 강한 baseline보다 PSNR 2.01dB 높은 결과를 보입니다.</p>
+  <p><strong>주의:</strong> PSNR 2.01dB 향상이 어떤 baseline·조건에서 나온 수치인지, 동적 물체가 많은 복잡한 도심 장면에서도 같은 정도의 향상이 유지되는지는 abstract만으로 확인이 어렵습니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] ESAR: Event-Based Synthetic Aperture Reconstruction — arXiv eess.IV/cs.CV/eess.SP</h3>
+  <div class=tag>[방법전환] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 이벤트 카메라는 빛의 변화량만 비동기적으로 기록하기 때문에, 지금까지는 이 신호를 프레임처럼 픽셀-시간 볼륨으로 복원하려는 시도가 많았고 계산량과 모호성이 컸습니다. 이 논문은 문제를 완전히 다시 세워, 장면이 고정돼 있고 카메라만 움직인다는 가정 아래 이벤트 신호를 "합성 개구(synthetic aperture)" 역문제로 formulate합니다. 즉 시간에 따라 변하는 여러 시점을 복원하는 대신, 그 시점들을 만들어내는 단 하나의 정적인 밝기 필드만 복원하면 된다는 뜻입니다. 우리 랩의 synthetic-aperture·coded-imaging 관련 역문제 정식화 경험을 이벤트 카메라라는 새 센서 모달리티로 확장할 수 있는 직접적인 다리 역할을 합니다.</p>
+  <p><strong>핵심:</strong> 이벤트를 유한 시간 구간에 누적해 부호 있는 이진 카운트로 만들고, 이를 시간차분 연산자 A와 장면-투영 연산자 P의 합성 AP로 선형화한 뒤 정규화된 역변환으로 밝기 필드 θ를 복원합니다. 실제 근-천정(near-nadir) 이벤트 데이터에서 기존 동적 잠재영상·학습 기반 이벤트 복원 baseline보다 큰 스케일의 공간 구조를 더 일관되게 복원합니다.</p>
+  <p><strong>주의:</strong> 미세한 텍스처는 억제되는 경향이 있다고 명시돼 있어, 어떤 해상도의 세부 구조까지 이 방법으로 살릴 수 있는지는 본문의 정량 비교를 봐야 합니다. 또한 near-nadir(거의 수직 하강) 모션이라는 특정 기하 조건을 가정하고 있어 임의 모션까지 일반화되는지는 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 계산광학 코어 버킷(Fourier Ptychography 2건 중 관련 1건, Lensless 2건, Meta-Optics 14건 중 관련 1건)은 오늘도 신호가 얇습니다. 이는 오늘 하루의 등록 분포 특성일 뿐 랩 ROI 자체의 변화는 아닙니다.</p>
+  <p>[Dataset risk] Tomography/3D Imaging 40건, Reconstruction/Inverse Problems 30건, Virtual Staining/Pathology 25건, Deep Learning Methods 106건(catch-all) 중 다수는 "tomography"/"reconstruction"/"staining" 키워드가 임상 진단·LLM·재료과학 논문과 우연히 겹친 오탐입니다.</p>
+  <p>[Dataset risk] classify.py 선택 비율은 28.6%(237/828)로 최근 밴드(25~32%)와 일치합니다. parser 오류가 아니라 cs.LG/cs.AI가 일반 ML 논문으로 채워지는 오늘 하루의 특성입니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] G²SR의 "GPU 메모리 최대 107배 절감"과 Instant NuRec의 "PSNR +2.01dB"는 abstract 기준 수치로, 어떤 baseline·하드웨어·데이터셋 조건에서 나온 결과인지 본문 확인이 필요합니다.</p>
+  <p>[Baseline risk] feed-forward 3DGS 클러스터 5편은 서로 다른 응용(로봇 표면 복원·대규모 캡처·단안 비디오·자율주행·압축)과 평가 지표를 쓰고 있어, 논문 간 직접 비교는 어렵습니다.</p>
+  <p>[Claim risk] Operator-Informed GP는 스스로 "저주파 정확도 천장"과 "불확실성 추정이 아직 완전히 보정되지 않음"을 명시하고 있어, calibration 품질을 그대로 신뢰하기보다 본문의 한계 논의를 함께 봐야 합니다.</p>
+  <p>[Deployment risk] ESAR·JADE-GS는 near-nadir 모션이나 특정 blur 조건 등 제한된 기하 가정 아래에서 검증됐고, 우리 랩의 일반적인 촬영 조건까지 일반화되는지는 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Meta-Optics 버킷 13편(Full-Color Multifocal Display 제외)</strong>(THz 안테나 변조, RCS 저감, 통신용 편광 변환기 등) — 통신·센싱·재료 응용, 이미징 방법론 기여 없음.</li>
+    <li><strong>다수 임상 CT/MRI/OCT/PET 저널</strong>(대동맥 평가, 안과 OCT, 종양 PET 등) — 임상 진단 목적, 계산광학 방법론 기여 없음.</li>
+    <li><strong>Reconstruction/Inverse Problems 버킷 내 world model·LLM 양자화 다수</strong>(RENEW, BadWAM, PolyQ 등) — 로보틱스/LLM 방법론은 흥미롭지만 이미징 ROI와 간접 연결.</li>
+    <li><strong>XCT-SAM</strong> [CV] — 산업 XCT 결함 분할 도메인 적응은 참고할 만하지만 오늘의 대표 클러스터만큼 뚜렷한 신호는 아님.</li>
+    <li><strong>Virtual Staining/Pathology 버킷 내 비의료 논문 다수</strong>(수의학 염색법, 조직 절편 프로토콜 등) — "staining" 키워드 우연 매칭.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy (2편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1149/ma2026-01412053mtgabs" target=_blank>Direct 3D Imaging of Hydrogen Atoms via Electron Ptychography</a></strong> <span class=pill>JNL</span><br>
+  문제: 수소 원자는 산란 단면적이 작아 직접 이미징이 극히 어려움 / 방법: electron ptychography로 팔라듐 수소화물 나노입자 내 수소 원자의 공간 분포를 직접 3D 이미징 / 의미: 계산 이미징 기법이 재료과학의 근본적 관측 한계를 여는 사례 / 우선순위: Read
+</div>
+
+<h3>Lensless/Coded Imaging (2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.596161" target=_blank>Versatile 3D space-variant deconvolution with measurement-free PSF models</a></strong> <span class=pill>JNL</span><br>
+  문제: 공간에 따라 달라지는 PSF를 매번 실측하기 어려움 / 방법: 측정 없이 모델링한 PSF로 3D 공간가변 deconvolution 수행 / 의미: PSF 엔지니어링 기반 coded/lensless 이미징의 실용성 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.596414" target=_blank>Free-Space Coherent Optical Dot-Product Multiplier With Lensless Fan-In</a></strong> <span class=pill>JNL</span><br>
+  문제: 광학 연산에서 렌즈 없이 다중 입력을 결합하기 어려움 / 방법: lensless fan-in 구조로 자유공간 코히런트 광 내적 연산 구현 / 의미: 광컴퓨팅 응용, 이미징 방법론 기여는 간접적 / 우선순위: Skim-only
+</div>
+
+<h3>Phase Imaging/Holography (10편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.606688" target=_blank>(PD)²: physics-driven phase diversity neural network for wavefront sensing</a></strong> <span class=pill>JNL</span><br>
+  문제: 전통적 phase diversity wavefront sensing이 물리 모델과 신경망을 분리해 쓰는 경우가 많음 / 방법: 물리 기반 phase diversity를 신경망 안에 통합 / 의미: wavefront sensing의 정확도·속도 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s10043-026-01064-4" target=_blank>Efficient phase imaging with blind phase shifts based on fast average operation</a></strong> <span class=pill>JNL</span><br>
+  문제: 위상 천이 간섭법은 정확한 천이량을 알아야 하는 제약이 있음 / 방법: 천이량을 몰라도(blind) 빠른 평균 연산으로 위상 복원 / 의미: 실용적 위상 이미징 파이프라인 단순화 / 우선순위: Read
+</div>
+
+<h3>Meta-Optics/Diffractive (14편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/acsnano.6c04417" target=_blank>Full-Color Multifocal Plane Display Based on a Dielectric Stereoscopic Metasurface</a></strong> <span class=pill>JNL</span><br>
+  문제: 다초점면 디스플레이를 풀컬러로 구현하기 어려움 / 방법: 유전체 stereoscopic metasurface 설계 / 의미: 메타표면 기반 디스플레이/이미징 응용 확장 / 우선순위: Read
+</div>
+
+<h3>Light-Field/Novel Sensors — 이벤트/광필드 기하 역문제 클러스터 4편 (8편 중)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14726" target=_blank>AE-UAV</a></strong> <span class=pill>CV</span><br>
+  문제: 공중 드론 추적이 저조도·고속 이동에서 프레임 카메라로는 성능이 급락 / 방법: 이벤트 카메라 + CPU 전용 주파수영역 추적기 / 의미: 자원 제약 UAV에서도 실시간 이벤트 기반 추적 가능 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14990" target=_blank>JADE-GS</a></strong> <span class=pill>CV</span><br>
+  문제: 노출 중 블러가 3DGS 복원에 필요한 미세 움직임 정보를 파괴함 / 방법: 이벤트 기반 디블러링과 3DGS 복원을 양방향 루프로 결합 / 의미: 이벤트 정보 활용을 전처리에서 복원-교정 상호작용으로 확장 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15073" target=_blank>ESAR</a></strong> <span class=pill>IV · TIER A</span><br>
+  문제: 이벤트 신호를 픽셀-시간 볼륨으로 복원하면 계산량과 모호성이 큼 / 방법: synthetic-aperture 역문제로 재정식화해 정적 밝기 필드만 복원 / 의미: 이벤트 이미징을 계산 이미징 역문제의 언어로 재정립 — 오늘의 must-read / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14941" target=_blank>FreqLF</a></strong> <span class=pill>CV</span><br>
+  문제: light-field disparity 추정이 명시적 disparity volume 구성에 의존해 메모리 부담이 큼 / 방법: EPI 기반 주파수-지역 잠재 필드 학습 / 의미: 메모리 효율적인 light-field 깊이 추정 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging — feed-forward 3DGS 클러스터 5편 + CT 재구성 2편 (40편 중)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14470" target=_blank>G²SR</a></strong> <span class=pill>CV</span><br>
+  문제: few-view 3DGS 표면 복원이 정확하려면 무겁고 느린 end-to-end 신경망이 필요 / 방법: 2D 대응점 검출 + 다시점 기하학 삼각측량으로 3D splat 계산 / 의미: 최대 107배 메모리 절감, 초당 69~89회 재구성 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14481" target=_blank>Immediate 3D Gaussian Splat Reconstruction</a></strong> <span class=pill>CV</span><br>
+  문제: 순서 없이 찍은 대규모 이미지 집합의 3DGS 복원이 느리고 전역 일관성이 깨짐 / 방법: 장소 인식 기반 빠른 매칭 + 클러스터 기반 loop closure / 의미: 수천 장 규모에서도 즉시 피드백 3DGS 재구성 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15211" target=_blank>MAGiSt3R</a></strong> <span class=pill>CV</span><br>
+  문제: 단안 RGB 비디오의 3D 재구성·카메라 추적이 느리고 드리프트가 누적 / 방법: multi-agent feed-forward point-map 회귀 + pose graph 최적화 / 의미: 거의 초당 10프레임의 feed-forward 3D 재구성 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14203" target=_blank>Instant NuRec</a></strong> <span class=pill>CV · TIER A</span><br>
+  문제: 자율주행 시뮬레이션용 3DGS 장면 생성이 장면마다 튜닝이 필요해 느림 / 방법: 다시점 주행 로그를 한 번의 forward pass로 3DGS 월드로 변환 / 의미: 1.5초 재구성, Waymo에서 PSNR +2.01dB — 오늘의 must-read / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14513" target=_blank>Compression of 3DGS Data</a></strong> <span class=pill>CV</span><br>
+  문제: 3DGS의 SH 색상 계수가 메모리를 많이 차지하고 기존 압축은 GPU 병렬 디코딩을 활용 못 함 / 방법: GPU 친화적 그래픽스 텍스처 압축(BC1/BC7) 적용 / 의미: 화질 손실 거의 없이 배포용 용량 절감 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14415" target=_blank>K-NeAS</a></strong> <span class=pill>CV</span><br>
+  문제: 다물질 희소뷰 CT 재구성이 수동 튜닝된 감쇠 범위와 2물질 제약에 묶여 있음 / 방법: 공유 잠재 백본 + K-물질 미분가능 소프트 선택기, GMM 기반 자동 감쇠 범위 추정 / 의미: Abdomen에서 3D PSNR +1.88dB — 아래 벤치마크 참고 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14287" target=_blank>XCT-SAM</a></strong> <span class=pill>CV</span><br>
+  문제: SAM의 자연영상 사전학습이 산업 XCT 결함(미세구조 이상)에는 잘 전이되지 않음 / 방법: 합금 미세구조 데이터로 중간 적응 후 XCT로 순차 전이하는 Conv-LoRA 어댑터 / 의미: 라벨 부족한 산업 이미징 도메인 적응 사례 / 우선순위: Skim-only
+</div>
+
+<h3>Virtual Staining/Pathology (25편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s10278-026-02043-6" target=_blank>H&amp;E to IHC Translation</a></strong> <span class=pill>JNL</span><br>
+  문제: IHC 염색은 비용·시간이 크고 H&E만으로는 종양침윤림프구 정량화가 어려움 / 방법: 생성모델로 H&E→IHC 가상 변환 후 정량화 검증 / 의미: 가상 염색의 임상 활용 가능성 feasibility study / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14703" target=_blank>Pretraining MIL Networks with Multi-Teacher Distillation</a></strong> <span class=pill>CV</span><br>
+  문제: WSI 분석용 MIL aggregator가 매 downstream task마다 처음부터 학습돼 불안정·과적합 / 방법: 여러 병리 slide foundation model에서 다중 교사 증류로 사전학습 / 의미: MIL의 안정성·전이성 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/jimaging12070321" target=_blank>Quadruplet Deep Hashing for Histopathological Image Retrieval</a></strong> <span class=pill>JNL</span><br>
+  문제: 고차원 병리 이미지 특징으로 검색하면 느리고 비효율적 / 방법: quadruplet deep hashing으로 이진 코드 인코딩, gradient vanishing 완화 / 의미: 대규모 병리 이미지 검색의 실용성 개선 / 우선순위: Skim-only
+</div>
+
+<h3>Reconstruction/Inverse Problems — 역문제 불확실성 클러스터 4편 (30편 중)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14563" target=_blank>PIE-PINN</a></strong> <span class=pill>LG</span><br>
+  문제: 저해상도·잡음 변위 데이터에서 이질적 탄성 특성 추정이 잡음에 취약 / 방법: B-spline 안내 변위 네트워크 + 계층적 half-Cauchy 잔차 스케일 모델 / 의미: 잡음 영역을 자동으로 덜 신뢰하는 강건한 역문제 추정 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14193" target=_blank>Operator-Informed GP</a></strong> <span class=pill>LG</span><br>
+  문제: 복소수 Helmholtz 파동장 추정은 대부분 점 추정값만 제공, 불확실성 정량화가 실수장 위주 / 방법: 복소 연산자를 결합 실수 블록으로 realify한 GP 회귀 / 의미: in vivo 뇌 MR 탄성영상에서 불확실성 포함 복원, calibration 한계까지 명시 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14894" target=_blank>Domain Adaptation of Mismatched Proximal Denoiser</a></strong> <span class=pill>IV</span><br>
+  문제: plug-and-play 복원에서 도메인 밖 denoiser 사용 시 수렴 저하 원인이 정량화되지 않음 / 방법: proximal mismatch 개념 정의 + O(1/K) 정상성 경계 도출, proximal matching 적응 / 의미: MSE 기반 적응보다 few-shot에서 더 큰 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.14320" target=_blank>FORCE-Interior</a></strong> <span class=pill>IV</span><br>
+  문제: interior tomography 생성모델 복원이 측정값과 안 맞는 그럴듯한 구조를 만들 위험 / 방법: Poisson flow 생성 프라이어 + 매 단계 데이터 일관성 제약 / 의미: truncation 패턴·ROI 크기에 강건한 interior CT 복원 / 우선순위: Read
+</div>
+
+<h3>Deep Learning Methods — 관련 1편 (106편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong>QuReC</strong> <span class=pill>CV</span><br>
+  문제: 여러 종류의 손상이 한 이미지 안에 공간적으로 섞여 있으면 이미지 단위 프롬프트로는 부족 / 방법: 위치별 query-specific guidance + local-global response calibration / 의미: 다중 열화 복원 파이프라인 설계 참고
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/abs/2607.14203" target=_blank>Instant NuRec — arXiv cs.GR/cs.AI/cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.15073" target=_blank>ESAR: Event-Based Synthetic Aperture Reconstruction — arXiv eess.IV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.14470" target=_blank>G²SR — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.14481" target=_blank>Immediate 3D Gaussian Splat Reconstruction — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.15211" target=_blank>MAGiSt3R — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.14513" target=_blank>Compression of 3DGS Data — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.14563" target=_blank>PIE-PINN — arXiv cs.LG</a></li>
+  <li><a href="https://arxiv.org/abs/2607.14193" target=_blank>Operator-Informed Gaussian Processes — arXiv stat.ML</a></li>
+  <li><a href="https://arxiv.org/abs/2607.14894" target=_blank>Domain Adaptation of Mismatched Proximal Denoiser — arXiv eess.IV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.14320" target=_blank>FORCE-Interior — arXiv eess.IV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.14726" target=_blank>AE-UAV — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.14990" target=_blank>JADE-GS — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.14941" target=_blank>FreqLF — arXiv cs.CV</a></li>
+  <li><a href="https://doi.org/10.1149/ma2026-01412053mtgabs" target=_blank>Electron Ptychography Hydrogen Imaging — ECS Meeting Abstracts</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+  <p>📚 입력: arXiv /new(2026-07-17, new+cross 489편) + Crossref/OpenAlex 저널(435편) · 병합 스캔 828건, ROI 237건 (28.6%)</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>
