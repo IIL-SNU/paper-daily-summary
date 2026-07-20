@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 17 Jul 2026 12:12:28 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 10:57:47 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Weekly Retrospective — 2026-07-20 (Week 29)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-07-20-weekly.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-20-weekly.html</guid>
+      <pubDate>Mon, 20 Jul 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[지난주 가장 뜨거운 흐름은 feed-forward 3D 재구성이 닷새 동안 네 단계를 순서대로 통과한 것 입니다. 월요일에는 VGGT류 기하 파운데이션 모델이 왜 co-visibility 판단에서 흔들리는지 안쪽 층을 들여다보는 논문(What VGGT Knows About Overlap)과 장시퀀스에서 스케일이 누적으로 틀어지는 문제를 고치는 논문(Glob3R, DGSfM)이 함께 나와 "이 방법을 믿어도 되는가"라는 질문을 먼저 던졌습니다. 화요일과 수요일에는 그 결과가 저선량 CT, 내시경, 무선 항공 VR 전송, 자율주행 시뮬레이션까지 서로 다른 촬영 조건으로 번지면서 "어디에나 쓸 수 있는 공통 3D 표현"이라는 신호가 뚜렷해졌습니다. 목요일에는 희소뷰 CT를 3…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-07-17 (금요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-07-17.html</link>

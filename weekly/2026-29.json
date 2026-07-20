@@ -1,0 +1,138 @@
+{
+  "date": "2026-07-20",
+  "iso_week": "2026-29",
+  "week_start": "2026-07-13",
+  "week_end": "2026-07-17",
+  "weekly_thesis": "지난주 초반(월요일)에는 feed-forward 3D 재구성이 \"내부적으로 왜 흔들리는가\"를 점검하는 데 머물렀는데, 주 후반(목~금)에는 그 점검을 통과한 방법들이 CT·자율주행·항공 VR 같은 새 도메인으로 번지면서 한 번의 촬영만으로 즉시 재구성하고 바로 배포 가능한 크기로 압축하는 단계까지 도달했습니다. 같은 기간 의료·병리 영상은 정확도 경쟁에서 \"그 수치를 믿고 실제 임상에 써도 되는가\"를 검증하는 쪽으로 넘어갔고, 계산광학 핵심 3버킷(Fourier ptychography·메타옵틱스·lensless)은 화요일 하루 저널 신호 이후 다시 조용해졌습니다.",
+  "hot_vs_cold": {
+    "hot": [
+      {
+        "cluster": "Feed-forward 3D 재구성 — 신뢰성 점검 → 도메인 확장 → 불확실성 → 즉시 배포",
+        "why": "월요일 내부 진단부터 금요일 즉시 재구성·압축까지 닷새 내내 이어졌다.",
+        "papers": ["https://arxiv.org/abs/2607.09503", "https://arxiv.org/abs/2607.13682", "https://arxiv.org/abs/2607.14203"]
+      },
+      {
+        "cluster": "의료·병리 영상의 신뢰성 검증 축",
+        "why": "정확도 경쟁에서 데이터 유출 감사·calibration·연합학습·라벨 없는 판단으로 무게중심이 옮겨갔다.",
+        "papers": ["https://arxiv.org/abs/2607.11257", "https://arxiv.org/abs/2607.12278", "https://arxiv.org/abs/2607.13386"]
+      },
+      {
+        "cluster": "물리 기반 역문제 솔버의 자기 불확실성 정량화",
+        "why": "화요일 Imaging-101 벤치마크 등장을 시작으로, 금요일에는 PINN·Gaussian Process·plug-and-play가 나란히 도메인 불일치를 스스로 재기 시작했다.",
+        "papers": ["https://arxiv.org/abs/2607.10789", "https://arxiv.org/abs/2607.11941", "https://arxiv.org/abs/2607.14193"]
+      }
+    ],
+    "cold": [
+      {
+        "cluster": "계산광학 핵심 3버킷(FP·메타옵틱스·lensless)",
+        "why": "화요일 저널 네 편이 유일한 신호였고, 나머지 나흘은 편수만 크고 실제로는 THz 안테나·통신 응용 우연 매칭이 대부분이었다."
+      },
+      {
+        "cluster": "렌더링 품질 자체만 겨루는 3DGS 논문",
+        "why": "이번 주 나온 3DGS 관련 논문은 거의 전부 압축·불확실성·즉시재구성·도메인 확장 중 하나를 반드시 얹었고, 순수 품질 경쟁만 다루는 논문은 찾기 어려웠다."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "cluster": "Feed-forward 3D 재구성 — 신뢰성 점검에서 즉시 배포까지",
+      "papers": [
+        {"title": "What VGGT Knows About Overlap: Probing Geometric Foundation Models for Co-Visibility", "arxiv": "https://arxiv.org/abs/2607.09503", "importance_tags": ["[해부분석]", "[방법전환]"]},
+        {"title": "Calibrated Closed-Form Uncertainty for Radiative Gaussian Splatting in Sparse-View CT", "arxiv": "https://arxiv.org/abs/2607.13682", "importance_tags": ["[평가축]"]},
+        {"title": "Instant NuRec: Feed-Forward 3D Gaussian Reconstruction for Driving Scene Simulation", "arxiv": "https://arxiv.org/abs/2607.14203", "importance_tags": ["[스케일업]", "[실사용전환]"]}
+      ],
+      "why": "월요일에는 VGGT류 기하 파운데이션 모델이 co-visibility 판단에서 왜 흔들리는지 내부 층을 들여다보는 논문과, 장시퀀스에서 스케일이 누적으로 틀어지는 문제를 고치는 논문이 함께 나와 방법 자체의 신뢰도를 먼저 물었다. 화·수요일에는 그 방법이 저선량 CT, 항공 VR 전송, 자율주행 시뮬레이션까지 번졌고, 목요일에는 희소뷰 CT 복원에 픽셀 단위 불확실성까지 붙었다. 금요일에는 장면마다 다시 최적화해야 했던 전제 자체가 사라지고 한 번의 forward pass로 즉시 재구성 후 바로 압축하는 단계에 도달했다.",
+      "confidence": "High",
+      "lab_action": "Instant NuRec/G²SR의 feed-forward 즉시 재구성 코드를 랩 다시점 계산 이미징 데이터에 적용해 기존 최적화 기반 파이프라인 대비 처리 속도·메모리·PSNR을 같은 표로 비교"
+    },
+    {
+      "cluster": "의료·병리 영상이 정확도 경쟁에서 신뢰성·효율성 검증으로",
+      "papers": [
+        {"title": "LaGuadia: Language-Guided Adaptive Distillation from Pathology Foundation Models", "arxiv": "https://arxiv.org/abs/2607.11257", "importance_tags": ["[데이터전환]"]},
+        {"title": "Auditing Data Leakage in Whole-Slide Image Multimodal Benchmarks", "arxiv": "https://arxiv.org/abs/2607.12278", "importance_tags": ["[경고신호]"]},
+        {"title": "FM²: Unified Federated Foundation Models for Heterogeneous Multimodal Medical Imaging", "arxiv": "https://arxiv.org/abs/2607.13386", "importance_tags": ["[인프라]", "[스케일업]"]}
+      ],
+      "why": "LaGuadia는 거대 병리 foundation model 대신 언어 지침으로 지식을 골라 증류해 계산 비용을 줄였고, Auditing Data Leakage 논문은 최근 vision-language model들의 WSI 질의응답 벤치마크에 정답이 새어 들어간 사례를 감사했으며, FM²는 병원마다 다른 데이터 분포를 그대로 둔 채 여러 병원이 함께 학습할 수 있는 연합학습 구조를 제안했다. 질문이 '정확도가 얼마나 높은가'에서 '그 정확도가 믿을 만한 방식으로 만들어졌는가'로 바뀌고 있다.",
+      "confidence": "High",
+      "lab_action": "Auditing Data Leakage의 감사 스크립트를 랩이 보유한 병리·현미경 데이터셋 split에 적용해 train/test 유출 여부를 우선 점검"
+    },
+    {
+      "cluster": "물리 기반 역문제 솔버가 정확도에서 도메인 불일치·불확실성 자기 정량화로",
+      "papers": [
+        {"title": "Imaging-101: Benchmarking LLM Coding Agents on Scientific Computational Imaging", "arxiv": "https://arxiv.org/abs/2607.10789", "importance_tags": ["[표준후보]", "[인프라]"]},
+        {"title": "GenDiff: A Dose and Anatomy Aware Diffusion Model with Structural Prior Refinement for Low-Dose CT Reconstruction and Generalization", "arxiv": "https://arxiv.org/abs/2607.11941", "importance_tags": ["[방법전환]", "[데이터전환]"]},
+        {"title": "Operator-Informed Gaussian Processes for Complex Helmholtz Wavefields: From Synthetic Benchmarks to In Vivo Brain Elastography", "arxiv": "https://arxiv.org/abs/2607.14193", "importance_tags": ["[평가축]"]}
+      ],
+      "why": "Imaging-101은 LLM coding agent가 계산 이미징 문제를 얼마나 스스로 코드로 풀어내는지 처음 벤치마크로 쟀고, GenDiff는 저선량 CT 복원 diffusion 모델이 특정 조건에서만 잘 되는 문제를 짚었으며, Operator-Informed Gaussian Processes는 합성 데이터로 학습한 모델이 실제 생체 데이터에서 얼마나 못 미더워지는지를 모델 스스로 알려주게 만들었다.",
+      "confidence": "Medium",
+      "lab_action": "GenDiff의 dose-and-anatomy aware 구조와 Operator-Informed GP의 불확실성 추정을 랩 산란매질·저선량 계산 이미징 복원에 이식해 조건별 캘리브레이션 비교표 작성"
+    },
+    {
+      "cluster": "이벤트 카메라가 안전성 경고에서 정통 계산 이미징 역문제로 확장",
+      "papers": [
+        {"title": "Event Burst Trigger: An Availability Backdoor Attack on Event-Based SNN Object Detection", "arxiv": "https://arxiv.org/abs/2607.09115", "importance_tags": ["[경고신호]"]},
+        {"title": "ESAR: Event-Based Synthetic Aperture Reconstruction", "arxiv": "https://arxiv.org/abs/2607.15073", "importance_tags": ["[방법전환]"]},
+        {"title": "AE-UAV: An Air-to-Air Event-Based UAV Tracking Benchmark and a Real-Time Frequency-Domain Tracker", "arxiv": "https://arxiv.org/abs/2607.14726", "importance_tags": ["[인프라]", "[실사용전환]"]}
+      ],
+      "why": "월요일 Event Burst Trigger는 이벤트 기반 SNN 탐지 모델에 대한 가용성 백도어 공격을 처음 보여주며 배포 신뢰성 경고를 던졌다. 금요일에는 관심이 추적을 넘어 디블러링, synthetic aperture 재구성 같은 정통 계산 이미징 역문제로 넓어졌다.",
+      "confidence": "Medium",
+      "lab_action": "Event Burst Trigger의 가용성 백도어 공격 패턴을 랩이 쓰는 이벤트 기반 후처리 모델에 재현해 취약점 유무 우선 점검"
+    },
+    {
+      "cluster": "계산광학 코어(FP·메타옵틱스·lensless) — 화요일 하루만 반짝 (Watch)",
+      "papers": [
+        {"title": "Dual-wavelength Fourier Ptychographic Topography", "arxiv": "https://doi.org/10.1109/tci.2026.3712486", "importance_tags": ["[방법전환]"]},
+        {"title": "Achromatic meta-optics for full-color near-eye displays and beyond: Opinion", "arxiv": "https://doi.org/10.1364/ome.608741", "importance_tags": ["[실사용전환]"]},
+        {"title": "Compact infrared varifocal optics enabled by hybrid refractive lenses and freeform cascade metalenses", "arxiv": "https://doi.org/10.1364/optica.606206", "importance_tags": ["[실사용전환]"]}
+      ],
+      "why": "화요일 저널에서 Fourier ptychography가 두 파장으로 표면 높이까지 뽑아내는 논문과, 메타렌즈의 색수차·고정 초점 거리 문제를 각각 achromatic 근안 디스플레이와 적외선 varifocal 광학계로 푸는 논문이 나왔다. 하지만 나머지 나흘 이 버킷의 하루 8~14건은 대부분 THz 안테나·통신용 metasurface로 이미징과 무관했다.",
+      "confidence": "Low",
+      "lab_action": "저널 쿼리에 'metalens achromatic imaging', 'ptychography topography' 같은 이미징 특화 키워드를 추가해 통신/레이더 응용과 분리 수집; achromatic 근안 디스플레이 설계를 랩 메타렌즈 역설계 벤치마크 참고 사례로 추가"
+    }
+  ],
+  "predictions": [
+    {
+      "title": "Feed-forward 3DGS 즉시 재구성이 실시간 로봇/AR-VR 배포 사례로 이어짐",
+      "claim": "이번 주 즉시 재구성 + 압축까지 도달한 feed-forward 3DGS가 다음 주에는 로봇 SLAM, AR/VR 실시간 스트리밍, 자율주행 온보드 처리처럼 실제 실시간 배포 조건을 명시한 논문으로 이어진다.",
+      "rationale": "월~금 닷새간 신뢰성 검증에서 즉시 재구성/압축까지 도달한 속도로 볼 때 다음 단계는 실시간 배포 시나리오다.",
+      "hit_condition": "로봇 SLAM, AR/VR 스트리밍, 자율주행 온보드 등 실시간 배포를 abstract에 명시한 feed-forward 3DGS/GS 압축 논문 1편 이상",
+      "miss_condition": "계속 오프라인 벤치마크·압축률 비교에만 머물거나, 관련 논문이 없으면 빗나감"
+    },
+    {
+      "title": "불확실성 정량화가 계산광학 코어(FP·위상·홀로그래피)로 번짐",
+      "claim": "목요일 CT에서 강화된 불확실성 정량화 흐름이 다음 주에는 Fourier ptychography, 정량 위상 영상, 홀로그래피 중 하나로 확장된다.",
+      "rationale": "3DGS/CT에서 시작된 불확실성 정량화 흐름이 다른 계산 이미징 모달리티로 번지는 패턴이 최근 반복되고 있다.",
+      "hit_condition": "FP·QPI·홀로그래피 중 하나에서 uncertainty quantification/calibration을 다룬 논문 1편 이상",
+      "miss_condition": "불확실성 정량화가 CT·MRI 등 의료영상에만 머물고 계산광학 코어로 번지지 않으면 빗나감"
+    },
+    {
+      "title": "WSI 신뢰성 검증 흐름이 병리 외 다른 임상 영상 모달리티로 확장",
+      "claim": "이번 주 병리 WSI에서 나타난 데이터 유출 감사·calibration·연합학습 흐름이 다음 주에는 방사선영상, 안과, 피부과 등 다른 임상 영상 모달리티로도 번진다.",
+      "rationale": "병리에서 시작된 신뢰성 검증 축이 다른 임상 영상으로 확산되는 것은 최근 의료 AI 전반의 공통 흐름이다.",
+      "hit_condition": "방사선영상·안과·피부과 등에서 데이터 유출 감사, calibration, 또는 연합학습을 다룬 논문 1편 이상",
+      "miss_condition": "계속 WSI/병리에만 국한되면 빗나감"
+    }
+  ],
+  "prediction_review": [
+    {"title": "Feed-forward 3D 재구성의 새 도메인 확장", "label": "✅", "reason": "저선량 CT, 항공 VR 전송, 자율주행 시뮬레이션까지 이전 주(수술실·수중·동적 장면·파노라마)와 겹치지 않는 새 도메인 3개 이상이 나옴"},
+    {"title": "메타표면 저널 이미징 역설계 공백의 해소 여부", "label": "✅", "reason": "화요일 achromatic 근안 디스플레이와 적외선 varifocal 광학계로 색수차·고정초점 문제를 다룬 저널 2편 등장, 다만 나머지 나흘은 다시 공백"},
+    {"title": "ImagingBench 후속 논문 등장", "label": "✅", "reason": "화요일 Imaging-101이 LLM coding agent의 계산 이미징 능력을 벤치마크로 잼, ImagingBench의 문제의식을 코딩 에이전트 관점에서 이음"}
+  ],
+  "themes": [
+    {"title": "Feed-forward 3D 재구성 — 신뢰성 점검에서 즉시 배포까지, 닷새 만에", "summary": "월요일 기하 파운데이션 모델 내부 진단, 화·수요일 CT·항공 VR·자율주행 도메인 확장, 목요일 픽셀 단위 불확실성 정량화, 금요일 즉시 재구성 + 압축까지, feed-forward 3D 재구성이 한 주 안에 세 질문을 순서대로 통과했다.", "confidence": "High"},
+    {"title": "의료·병리 영상이 정확도 경쟁에서 신뢰성·효율성 검증으로", "summary": "annotation 비용을 줄이는 지식 증류, 벤치마크 데이터 유출 감사, 병원 간 연합학습까지, 이번 주 의료·병리 영상 논문들은 정확도가 아니라 그 정확도가 믿을 만한 방식으로 만들어졌는지를 검증했다.", "confidence": "High"},
+    {"title": "역문제 솔버가 정확도 경쟁을 넘어 스스로 불확실성을 재기 시작", "summary": "Imaging-101, GenDiff, Operator-Informed Gaussian Processes가 각자 다른 모달리티에서 '정답에 가깝게 복원했는가'를 넘어 '언제 못 믿을지 아는가'로 평가 기준을 넓혔다.", "confidence": "Medium"}
+  ],
+  "top5": [
+    {"title": "Imaging-101: Benchmarking LLM Coding Agents on Scientific Computational Imaging", "arxiv": "https://arxiv.org/abs/2607.10789", "why": "지난주 weekly가 예측한 ImagingBench 후속 논문이 정확히 이 자리에서 나옴 — LLM coding agent가 계산 이미징 문제를 스스로 코드로 풀어내는 능력을 처음 벤치마크로 잼", "tag": "[표준후보]"},
+    {"title": "What VGGT Knows About Overlap: Probing Geometric Foundation Models for Co-Visibility", "arxiv": "https://arxiv.org/abs/2607.09503", "why": "월요일 이 논문이 던진 신뢰성 질문이 이번 주 feed-forward 3D 재구성 전체 흐름의 출발점", "tag": "[해부분석]"},
+    {"title": "GenDiff: A Dose and Anatomy Aware Diffusion Model with Structural Prior Refinement for Low-Dose CT Reconstruction and Generalization", "arxiv": "https://arxiv.org/abs/2607.11941", "why": "저선량 CT diffusion 복원이 특정 조건에서만 잘 되는 문제를 짚어 '정확도에서 일반화로' 전환하는 흐름의 대표 사례", "tag": "[방법전환]"},
+    {"title": "Calibrated Closed-Form Uncertainty for Radiative Gaussian Splatting in Sparse-View CT", "arxiv": "https://arxiv.org/abs/2607.13682", "why": "3DGS 재구성의 신뢰도를 픽셀 단위 불확실성으로 정량화해 목요일 신뢰도 축을 CT라는 실제 진단 도메인에서 강화", "tag": "[평가축]"},
+    {"title": "Instant NuRec: Feed-Forward 3D Gaussian Reconstruction for Driving Scene Simulation", "arxiv": "https://arxiv.org/abs/2607.14203", "why": "Waymo Open Dataset 기준 +2.01dB, 약 1.5초 만에 즉시 재구성해 한 주의 흐름을 즉시 배포 가능 지점에서 마무리", "tag": "[스케일업]"}
+  ],
+  "next_week_actions": [
+    {"title": "불확실성/도메인 일반화 기법을 랩 저선량·산란매질 복원에 이식", "action": "Calibrated Closed-Form Uncertainty의 픽셀 단위 불확실성 추정과 GenDiff의 dose-and-anatomy aware 구조를 랩 저선량·산란매질 계산 이미징 복원 파이프라인에 적용", "expected_output": "촬영 조건별(선량, 산란 강도) 캘리브레이션 오차·불확실성 커버리지 비교표"},
+    {"title": "Imaging-101을 랩 코드베이스 재현율 측정 도구로 활용", "action": "Imaging-101 벤치마크를 랩이 보유한 Fourier ptychography·lensless 복원 코드베이스에 적용해 LLM coding agent의 재현 성공률 측정", "expected_output": "과제별(광학 시뮬레이션, 역문제 복원, calibration) agentic AI 재현 성공률표"},
+    {"title": "Feed-forward 즉시 재구성 코드를 랩 다시점 데이터에 시험", "action": "Instant NuRec/G²SR류 feed-forward 즉시 재구성 구조를 랩 다시점 촬영 데이터에 적용해 기존 최적화 기반 파이프라인과 비교", "expected_output": "최적화 기반 vs feed-forward 즉시 재구성 처리시간·메모리·품질 비교표"}
+  ]
+}

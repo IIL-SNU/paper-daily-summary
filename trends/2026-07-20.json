@@ -1,0 +1,13 @@
+{
+  "date": "2026-07-20",
+  "source_listing_date": "2026-07-17",
+  "source_mode": "weekly-pastweek",
+  "note": "Weekly retrospective for W29 (2026-07-13 to 2026-07-17). No daily /new data for this date (today's daily runs separately at 11:00 KST); daily stats row intentionally omitted.",
+  "weekly_aggregate": {
+    "by_cat": {"cs.LG": 852, "cs.CV": 632, "cs.AI": 960, "eess.IV": 57, "eess.SP": 131},
+    "scope": "new+cross; replacements excluded",
+    "days_covered": ["2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17"],
+    "note": "5영업일 모두 arXiv+저널 완전판(source_mode=new)"
+  },
+  "totals": {"total_scanned": 3954, "selected": 1152}
+}
