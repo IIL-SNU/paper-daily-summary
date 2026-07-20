@@ -1,0 +1,68 @@
+{
+  "date": "2026-07-20",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "title": "이벤트 카메라가 '빠르게 추적하는 센서'에서 '기하를 직접 재구성하는 센서'로 넘어감",
+      "papers": [
+        {"title": "GoStop: Reinforcement Learning for Adaptive Temporal Aggregation in Event-Based Feature Tracking", "arxiv_id": "https://arxiv.org/abs/2607.15699", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Event3R: Asynchronous-to-Global 3D Reconstruction from Event Camera via Spatial-Temporal Feature Aggregation", "arxiv_id": "https://arxiv.org/abs/2607.15727", "journal_or_source": "arXiv cs.CV"},
+        {"title": "On the Geometry of Learned Representations in Event-Based Multi-Modal Egomotion Estimation", "arxiv_id": "https://arxiv.org/abs/2607.15794", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "이벤트 카메라는 빛의 변화만 비동기적으로 기록하기 때문에, 지금까지 대부분의 연구는 '이 신호를 어떻게 잘 묶어서 특징점을 놓치지 않고 계속 따라가는가(tracking)'에 집중했습니다. 오늘 나온 세 편은 질문을 한 단계 더 밀어붙입니다. GoStop은 이벤트를 얼마나 오래 모아서 하나의 관측으로 쓸지를 고정된 규칙이 아니라 강화학습으로 그때그때 정하게 만들어, 빠른 움직임과 느린 움직임이 섞인 장면에서도 특징점을 안정적으로 붙잡습니다. Event3R은 한 걸음 더 나아가 DUSt3R류 feed-forward 3D 재구성(사진 여러 장을 넣으면 신경망이 한 번에 3D 구조를 뽑아내는 최근 방법론)을 이벤트 카메라에 옮겨, 비동기적이고 성긴 이벤트 스트림에서도 전역적으로 일관된 3D 구조를 바로 복원하려 시도합니다. On the Geometry of Learned Representations는 아예 한 걸음 물러서서, 이벤트 기반 자기운동 추정(egomotion estimation) 신경망 내부에 기존의 기하학적 최적화 방법들(contrast maximization, homography 추정 등)과 비슷한 구조가 실제로 학습되는지를 들여다봅니다. 세 편을 같이 보면, 이벤트 카메라 연구가 '이 센서로 무엇을 더 빨리 잡아낼 수 있는가'를 넘어 '이 신호로 장면의 3D 구조 자체를 복원하고, 그 복원이 내부적으로 왜 되는지'를 묻는 계산 이미징의 언어로 옮겨가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "같은 Light-Field/Novel Sensors 버킷의 오늘 선택분 3편 전부가 이벤트 카메라 기하 문제를 다루지만, 표준 벤치마크로 서로 직접 비교되지는 않고 저자군도 확인되지 않아 서로 다른 기관인지는 abstract만으로 단정하기 어려움",
+      "lab_action": "Event3R의 feed-forward 3D 복원 구조가 우리 랩의 이벤트 카메라 기반 위상/산란매질 실험 데이터에서도 전역 일관성을 유지하는지 소규모로 재현하고, GoStop의 적응형 시간 집계(adaptive temporal aggregation)를 우리 이벤트 전처리 파이프라인에 적용해 고정 시간창 대비 특징점 유지율이 얼마나 개선되는지 ablation"
+    },
+    {
+      "title": "PINN 커뮤니티가 '어떤 방정식을 푸는가'보다 '이 방법론 자체가 왜, 언제 깨지는가'를 다시 손보기 시작",
+      "papers": [
+        {"title": "Trainable Spline Representations for Physics-Informed Learning (PI-Splines)", "arxiv_id": "https://arxiv.org/abs/2607.15751", "journal_or_source": "arXiv cs.LG"},
+        {"title": "A Physics-Informed Neural Network with a Modified Lorentzian Activation for Nonlocal Gradient-Flow Equations in Dynamic Density Functional Theory", "arxiv_id": "https://arxiv.org/abs/2607.15291", "journal_or_source": "arXiv cs.LG"},
+        {"title": "A Statistical Formulation Gap for Nonlinear Multiscale Physics-Informed Learning", "arxiv_id": "https://arxiv.org/abs/2607.15702", "journal_or_source": "arXiv cs.LG"},
+        {"title": "Evolutionary Algorithm-Guided LLMs for Physics-Informed Neural Network Design", "arxiv_id": "https://arxiv.org/abs/2607.15560", "journal_or_source": "arXiv cs.AI"}
+      ],
+      "why": "PINN(physics-informed neural network)은 미분방정식의 해를 신경망으로 근사하는 방법인데, 그동안은 주로 '이 특정 방정식을 PINN으로 얼마나 잘 풀었는가'를 보여주는 개별 응용 논문이 많았습니다. 오늘 나온 네 편은 결이 다릅니다. PI-Splines는 아예 신경망 대신 학습 가능한 B-스플라인으로 미지의 장(field)을 표현해, 기존 PINN의 잔차(residual) 기반 학습 틀은 그대로 유지하면서 표현 방식만 바꾸면 무엇이 달라지는지를 봅니다. Lorentzian PINN 논문은 국소적이지 않은(nonlocal) 상호작용 항이 있는 방정식에서 표준 PINN이 왜 느리게 수렴하고 최적화가 어려운지를 짚고, 활성함수를 수정해 이 문제를 완화합니다. Statistical Formulation Gap은 한 걸음 더 이론적으로 들어가, 비선형 다중스케일 방정식을 풀 때 PINN의 유한 샘플·유한 반복 오차를 수식으로 증명해, '어디까지는 이론적으로 보장되고 어디부터는 안 되는지'의 경계선을 그립니다. Evolutionary LLM-guided PINN Design은 아키텍처·활성함수·손실 가중치 같은 PINN 설계 선택지를 대규모 언어모델이 제안하게 하되, 매번 독립적으로 제안하는 대신 이전에 학습된 PINN들의 경험이 누적되도록 진화 알고리즘으로 묶습니다. 네 편을 같이 보면, PINN이 '이 방정식도 풀립니다'라는 개별 성공 사례 단계를 지나, 표현 방식·활성함수·이론적 한계·설계 자동화라는 방법론의 구성요소 하나하나를 검증하는 성숙기로 들어섰다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "같은 날 서로 다른 각도(표현·활성함수·이론·자동화)에서 4편이 PINN 방법론 자체를 다루지만, 저자군이 겹치는지 확인되지 않았고 공통 벤치마크로 서로 비교되지는 않음",
+      "lab_action": "PI-Splines의 B-스플라인 표현이 우리 위상 이미징 파동장 복원에 쓰는 물리 제약 신경망(PINN 기반 forward model)에도 적용 가능한지 소규모로 대체해 수렴 속도와 메모리 사용량을 기존 MLP 기반 PINN과 비교하고, Statistical Formulation Gap의 오차 경계 분석 틀을 우리 다중스케일 산란매질 복원 문제에 적용해 이론적으로 보장되는 정확도 구간을 먼저 확인"
+    },
+    {
+      "title": "3D Gaussian Splatting이 '더 예쁜 렌더링'에서 '실시간·온라인·불확실성까지 견디는 배포 조건'으로 다시 시험대에 오름",
+      "papers": [
+        {"title": "E3DGS: Unified Geometric-Photometric Equivariance for 3D Gaussian Splatting via Color-as-Geometry Embedding", "arxiv_id": "https://arxiv.org/abs/2607.15536", "journal_or_source": "arXiv cs.CV"},
+        {"title": "ImprovedVBGS: Real-time Continual Variational Bayes Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2607.15542", "journal_or_source": "arXiv cs.CV"},
+        {"title": "CSS-BA: Gate-Guided Column Space Search for Bundle Adjustment", "arxiv_id": "https://arxiv.org/abs/2607.15652", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Toward Semantic Communication for Real-time Mobile 3D Reconstruction", "arxiv_id": "https://arxiv.org/abs/2607.16128", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "지난주 금요일(7/17)까지의 3DGS 흐름은 '장면마다 처음부터 다시 최적화하지 않고 한 번의 순전파로 즉시 재구성'하는 feed-forward 쪽이 중심이었습니다. 오늘 나온 네 편은 조금 다른 각도에서 3DGS를 다시 시험합니다. E3DGS는 3DGS에서 색상을 그동안 단순한 신호로만 다뤘던 것을 지적하고, 색상도 기하와 함께 회전·이동에 같이 반응하는 구조로 묶어야 로봇이 시점을 바꿔가며 관측할 때도 일관된 표현을 유지할 수 있다고 봅니다. ImprovedVBGS는 매 프레임마다 관측된 점 전체를 다시 훑어야 했던 기존 continual(점진 학습) Gaussian Splatting 방식이 로봇 환경처럼 실시간·저지연이 필수적인 상황에서는 느리다는 문제를 겨냥해 속도를 개선합니다. CSS-BA는 카메라가 거의 회전만 하거나 시차가 거의 없는 상황에서 기존 번들 조정(bundle adjustment, 카메라 위치와 3D 점을 동시에 정밀화하는 고전 최적화)이 불안정해지는 문제를 solver 안에 게이트를 넣어 완화합니다. Toward Semantic Communication은 이동 플랫폼이 영상을 서버로 실시간 전송하며 3D 재구성을 해야 하는 상황에서, 대역폭 제약 아래 멀티뷰 일관성을 어떻게 유지할지를 통신 관점에서 다룹니다. 네 편을 같이 보면, 3DGS 연구의 초점이 렌더링 품질 경쟁에서 로봇·모바일 환경의 실시간성·저지연·기하 불안정 조건까지 견디는 배포 조건으로 넓어지고 있다는 뜻입니다.",
+      "confidence": "Low",
+      "confidence_note": "4편이 모두 3DGS/번들 조정을 다루지만 응용 맥락(로봇 표현·continual learning·순수 기하 최적화·통신)이 서로 갈라져 있어 하나의 흐름이라기보다 같은 기반 기술 위에서 각자 다른 배포 조건을 겨냥한 병렬 시도에 가까움",
+      "lab_action": "ImprovedVBGS의 실시간 continual Gaussian Splatting 구조를 우리 계산 이미징 스트리밍 재구성 파이프라인(다시점 위상/산란매질 데이터를 순차적으로 받는 상황)에 적용해 프레임당 갱신 지연시간을 측정하고, CSS-BA의 게이트 기반 번들 조정을 저시차(low-parallax) 촬영 조건이 흔한 우리 근접 촬영 셋업에 적용해 기존 Levenberg-Marquardt 대비 수렴 안정성을 비교"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "Event3R의 feed-forward 이벤트 3D 재구성을 계산 이미징 산란매질/위상 데이터에 이식",
+      "claim": "DUSt3R류 feed-forward 3D 재구성 구조를 이벤트 카메라 신호에 적용한 Event3R의 접근이, 우리 랩의 이벤트 카메라 기반 산란매질/위상 이미징 다시점 데이터에도 전역 기하 일관성을 유지하며 확장될 수 있다.",
+      "supporting_papers": [
+        {"title": "Event3R: Asynchronous-to-Global 3D Reconstruction from Event Camera via Spatial-Temporal Feature Aggregation", "arxiv": "https://arxiv.org/abs/2607.15727", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+      ]
+    },
+    {
+      "title": "PI-Splines 표현을 위상 이미징 물리 제약 복원 파이프라인에 대체 적용",
+      "claim": "MLP 기반 PINN 대신 학습 가능한 B-스플라인으로 미지의 장을 표현하는 PI-Splines 방식이, 우리 위상 이미징/산란매질 파동장 복원의 물리 제약 신경망 forward model에서 기존 대비 수렴 속도와 메모리 사용량을 개선할 수 있다.",
+      "supporting_papers": [
+        {"title": "Trainable Spline Representations for Physics-Informed Learning", "arxiv": "https://arxiv.org/abs/2607.15751", "phylogeny": {"source": "CVML", "phylum": "Physics-Informed Learning"}}
+      ]
+    },
+    {
+      "title": "ImprovedVBGS의 실시간 continual Gaussian Splatting을 스트리밍 계산 이미징 재구성에 적용",
+      "claim": "매 프레임 전체 점을 다시 훑지 않고도 온라인으로 갱신되는 continual Variational Bayes Gaussian Splatting 구조가, 우리 랩의 순차 다시점 계산 이미징 스트리밍 재구성 상황에서도 저지연 갱신을 유지할 수 있다.",
+      "supporting_papers": [
+        {"title": "ImprovedVBGS: Real-time Continual Variational Bayes Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2607.15542", "phylogeny": {"source": "CVML", "phylum": "3D Reconstruction"}}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-07-20</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-07-20 (월요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-07-20 (월요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Monday, 20 July 2026"으로 확인됨</div>
+  <div>🔢 arXiv: cs.LG 124 · cs.CV 88 · cs.AI 105 · eess.IV 7 · eess.SP 17 (합계 341편, new+cross, replacement 제외)</div>
+  <div>🔢 병합: arXiv+저널 병합 스캔 539건 · ROI 배정 137건 (25.4%)</div>
+  <div>⚠️ 오늘은 계산광학 코어 버킷이 사실상 전멸입니다 — Fourier Ptychography/Microscopy·Lensless/Coded Imaging·Phase Imaging/Holography 세 버킷 모두 0편이고, Meta-Optics/Diffractive 3편도 실제로는 통신용 stacked intelligent metasurface 2편과 바이오센서 저널 1편이라 이미징 방법론 기여는 없습니다. Virtual Staining/Pathology(22편)도 "staining"이 "sustaining" 등과 우연히 겹친 오탐이 대부분이라 실제 병리·가상염색 신호는 오늘 0편입니다. 아래 클러스터·부록에서는 실제 계산광학·계산이미징 신호만 추립니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 <strong>이벤트 카메라 연구가 "빠르게 추적하는 센서"에서 "장면의 3D 기하를 직접 재구성하는 센서"로 넘어가는 신호</strong>와, <strong>PINN(physics-informed neural network) 커뮤니티가 "이 방정식도 풀립니다"라는 개별 성공 사례 단계를 지나 표현 방식·활성함수·이론적 한계·설계 자동화 같은 방법론의 구성요소 자체를 다시 손보는 신호</strong>가 뚜렷했습니다. 이벤트 카메라 쪽은 적응형 시간 집계로 추적을 개선하는 논문, feed-forward 3D 재구성을 이벤트 신호로 옮기는 논문, 학습된 표현이 기존 기하 최적화와 얼마나 닮았는지 들여다보는 논문 세 편이 같은 날 나왔습니다. PINN 쪽은 스플라인 표현·비국소 활성함수·통계적 오차 경계·LLM 기반 설계 자동화까지 네 편이 서로 다른 각도에서 방법론 자체를 검증했습니다. 반면 계산광학 코어(Fourier Ptychography, Lensless, Phase Imaging, Meta-Optics)는 오늘 사실상 전멸에 가까워, 지난주 후반부터 이어진 침묵이 이번 주로 그대로 넘어왔습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(7/20, 월)은 새로운 한 주의 시작이라 지난주 흐름과 바로 이어보기는 조심스럽지만, 이벤트 카메라 신호는 지난주 금요일(7/17)의 연장선에 가깝습니다. 지난주 금요일엔 이벤트 카메라가 UAV 추적·3DGS 디블러링·synthetic aperture·light-field disparity처럼 서로 다른 네 개 응용에서 동시에 등장하며 "센서 신호를 계산 이미징의 언어로 다시 세우는" 흐름을 보여줬는데, 오늘은 그 흐름이 한 걸음 더 좁혀져 이벤트 신호로 직접 3D 구조를 복원하고 그 복원이 내부적으로 어떻게 작동하는지를 들여다보는 세 편으로 응축됐습니다. 단발성 응용 확장에서 방법론의 내부 구조를 검증하는 단계로 넘어가는 모습입니다.</p>
+<p>두 번째 흐름인 PINN 방법론 재정비는 오늘 처음 뚜렷하게 관측된 축입니다. 지난주에는 PINN이 등장할 때 대부분 특정 문제(탄성 특성 복원, 파동장 복원 등)를 얼마나 잘 푸는지를 보여주는 응용 논문이었는데, 오늘은 표현 방식(스플라인) · 활성함수(Lorentzian) · 이론적 오차 경계 · 설계 자동화(LLM 기반)까지 네 편이 동시에 PINN이라는 방법론 자체의 구성요소를 하나씩 재점검했습니다. 이는 PINN이 개별 응용 성공 사례를 쌓는 단계를 지나, 방법론으로서 성숙해가는 신호로 읽힙니다.</p>
+<p>다음 관찰 포인트는 (1) 이벤트 카메라의 "기하 재구성" 축이 이번 주에도 이어져 표준 3D 재구성 벤치마크(예: DUSt3R 계열 지표)로 이벤트 방법들이 직접 비교되기 시작하는지, (2) PINN 방법론 재정비가 우리 랩이 참고할 만한 물리 제약 계산 이미징 복원(위상 이미징, 산란매질)에도 확산되는지, (3) 오늘 사실상 전멸한 계산광학 코어(Fourier Ptychography, Lensless, Phase Imaging, Meta-Optics)가 이번 주 안에 신호를 회복하는지입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>가장 최근 daily였던 지난 금요일(7/17)은 3DGS/neural reconstruction이 "장면마다 다시 최적화"를 없애는 feed-forward·압축 논문 5편, 역문제 솔버의 불확실성·도메인 불일치 정량화 논문 4편, 이벤트/광필드 센서의 기하 역문제 확장 논문 4편, 이렇게 세 클러스터가 뚜렷했습니다. 오늘은 그중 이벤트 카메라 흐름만 이어졌고, 나머지 두 흐름은 새로운 형태로 대체됐습니다 — 지난주 금요일의 "즉시 재구성+압축" feed-forward 3DGS 논문들은 오늘은 "실시간·온라인·저시차 조건에서도 안정적인가"를 묻는 논문들(E3DGS, ImprovedVBGS, CSS-BA)로 이어졌고, 지난주 금요일의 "역문제 솔버가 불확실성을 재는" 흐름은 오늘은 PINN 방법론 자체의 표현·활성함수·이론적 한계를 재정비하는 흐름으로 한 단계 더 근본적인 층위로 내려갔습니다. 계산광학 코어 버킷은 지난주 금요일에도 얇았지만(Fourier Ptychography 2편 중 관련 1편, Meta-Optics 14편 중 관련 1편), 오늘은 그 1편씩 남아있던 신호마저 사라져 세 버킷이 동시에 0편이 됐습니다 — 침묵이 더 깊어진 셈입니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>이벤트 카메라가 "빠르게 추적하는 센서"에서 "기하를 직접 재구성하는 센서"로 넘어감</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.15699" target=_blank>GoStop: RL for Adaptive Temporal Aggregation in Event-Based Feature Tracking</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.15727" target=_blank>Event3R: Asynchronous-to-Global 3D Reconstruction from Event Camera</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.15794" target=_blank>On the Geometry of Learned Representations in Event-Based Egomotion</a> <span class=pill>CV</span>
+  </td>
+  <td>이벤트 카메라는 빛의 변화만 비동기적으로 기록하기 때문에, 지금까지 대부분의 연구는 "이 신호를 어떻게 잘 묶어서 특징점을 계속 따라가는가(tracking)"에 집중했습니다. 오늘 나온 세 편은 질문을 한 단계 더 밀어붙입니다. GoStop은 이벤트를 얼마나 오래 모아서 하나의 관측으로 쓸지를 고정 규칙이 아니라 강화학습으로 그때그때 정해, 빠른 움직임과 느린 움직임이 섞인 장면에서도 특징점을 안정적으로 붙잡습니다. Event3R은 한 걸음 더 나아가 DUSt3R류 feed-forward 3D 재구성(사진 여러 장을 넣으면 신경망이 한 번에 3D 구조를 뽑아내는 최근 방법론)을 이벤트 카메라에 옮겨, 비동기적이고 성긴 이벤트 스트림에서도 전역적으로 일관된 3D 구조를 바로 복원하려 시도합니다. On the Geometry of Learned Representations는 아예 한 걸음 물러서서, 이벤트 기반 자기운동 추정(egomotion estimation) 신경망 내부에 기존 기하 최적화 방법들(contrast maximization, homography 추정 등)과 비슷한 구조가 실제로 학습되는지를 들여다봅니다. 세 편을 같이 보면, 이벤트 카메라 연구가 "무엇을 더 빨리 잡아낼 수 있는가"를 넘어 "이 신호로 장면의 3D 구조 자체를 복원하고, 그 복원이 왜 되는지"를 묻는 계산 이미징의 언어로 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>같은 버킷의 오늘 선택분 3편 전부가 이벤트 카메라 기하 문제를 다루지만, 표준 벤치마크로 서로 비교되지는 않음</small></td>
+  <td>Event3R의 feed-forward 3D 복원 구조를 우리 이벤트 카메라 기반 산란매질/위상 이미징 실험 데이터로 소규모 재현해 전역 일관성이 유지되는지 확인하고, GoStop의 적응형 시간 집계를 우리 이벤트 전처리 파이프라인에 적용해 고정 시간창 대비 특징점 유지율 개선폭을 ablation</td>
+</tr>
+<tr>
+  <td><strong>PINN이 개별 응용 성공담을 넘어 표현·활성함수·이론·설계 자동화를 재정비</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.15751" target=_blank>Trainable Spline Representations for Physics-Informed Learning</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2607.15291" target=_blank>PINN with Modified Lorentzian Activation for Nonlocal Gradient-Flow Equations</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2607.15702" target=_blank>A Statistical Formulation Gap for Nonlinear Multiscale PI Learning</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2607.15560" target=_blank>Evolutionary Algorithm-Guided LLMs for PINN Design</a> <span class=pill>AI</span>
+  </td>
+  <td>PINN(physics-informed neural network)은 미분방정식의 해를 신경망으로 근사하는 방법인데, 그동안은 주로 "이 특정 방정식을 PINN으로 얼마나 잘 풀었는가"를 보여주는 개별 응용 논문이 많았습니다. 오늘 나온 네 편은 결이 다릅니다. PI-Splines는 신경망 대신 학습 가능한 B-스플라인으로 미지의 장(field)을 표현해, 기존 잔차(residual) 기반 학습 틀은 유지하면서 표현 방식만 바꾸면 무엇이 달라지는지를 봅니다. Lorentzian PINN 논문은 국소적이지 않은(nonlocal) 상호작용 항이 있는 방정식에서 표준 PINN이 왜 느리게 수렴하는지를 짚고 활성함수 수정으로 완화합니다. Statistical Formulation Gap은 비선형 다중스케일 방정식에서 PINN의 유한 샘플·유한 반복 오차를 수식으로 증명해 "어디까지는 이론적으로 보장되고 어디부터는 아닌지"의 경계선을 그립니다. Evolutionary LLM-guided PINN Design은 아키텍처·활성함수·손실 가중치 같은 설계 선택지를 LLM이 제안하되, 매번 독립 제안이 아니라 이전 PINN들의 경험이 누적되도록 진화 알고리즘으로 묶습니다. 네 편을 같이 보면, PINN이 "이 방정식도 풀립니다"라는 개별 성공 사례 단계를 지나 표현·활성함수·이론·설계 자동화라는 방법론의 구성요소를 검증하는 성숙기로 들어섰다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 각도(표현·활성함수·이론·자동화) 4편이 같은 날 나왔지만 저자군이 겹치는지 확인되지 않았고 공통 벤치마크로 비교되지는 않음</small></td>
+  <td>PI-Splines의 B-스플라인 표현을 우리 위상 이미징 파동장 복원용 PINN forward model에 대체 적용해 기존 MLP 기반 PINN 대비 수렴 속도·메모리 사용량을 비교하고, Statistical Formulation Gap의 오차 경계 분석 틀을 우리 다중스케일 산란매질 복원 문제에 적용해 이론적으로 보장되는 정확도 구간을 먼저 확인</td>
+</tr>
+<tr>
+  <td><strong>3D Gaussian Splatting이 "예쁜 렌더링"에서 "실시간·저시차 조건까지 견디는 배포"로 다시 시험대에 오름</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.15536" target=_blank>E3DGS: Unified Geometric-Photometric Equivariance for 3DGS</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.15542" target=_blank>ImprovedVBGS: Real-time Continual Variational Bayes Gaussian Splatting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.15652" target=_blank>CSS-BA: Gate-Guided Column Space Search for Bundle Adjustment</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.16128" target=_blank>Toward Semantic Communication for Real-time Mobile 3D Reconstruction</a> <span class=pill>CV</span>
+  </td>
+  <td>지난주 금요일까지의 3DGS 흐름은 "장면마다 처음부터 다시 최적화하지 않고 한 번의 순전파로 즉시 재구성"하는 feed-forward 쪽이 중심이었습니다. 오늘 나온 네 편은 조금 다른 각도에서 3DGS를 다시 시험합니다. E3DGS는 3DGS에서 색상을 그동안 단순한 신호로만 다뤘던 것을 지적하고, 색상도 기하와 함께 회전·이동에 같이 반응하는 구조로 묶어야 로봇이 시점을 바꿔가며 관측할 때도 일관된 표현을 유지할 수 있다고 봅니다. ImprovedVBGS는 매 프레임마다 관측된 점 전체를 다시 훑어야 했던 기존 continual(점진 학습) Gaussian Splatting 방식이 실시간·저지연이 필수적인 로봇 환경에서는 느리다는 문제를 겨냥해 속도를 개선합니다. CSS-BA는 카메라가 거의 회전만 하거나 시차가 거의 없는 상황에서 기존 번들 조정(bundle adjustment)이 불안정해지는 문제를 solver 안에 게이트를 넣어 완화합니다. Toward Semantic Communication은 이동 플랫폼이 영상을 서버로 실시간 전송하며 3D 재구성을 해야 하는 상황에서, 대역폭 제약 아래 멀티뷰 일관성을 어떻게 유지할지를 통신 관점에서 다룹니다. 네 편을 같이 보면, 3DGS 연구의 초점이 렌더링 품질 경쟁에서 로봇·모바일 환경의 실시간성·저지연·기하 불안정 조건까지 견디는 배포 조건으로 넓어지고 있다는 뜻입니다.</td>
+  <td>Low<br><small>4편 모두 3DGS/번들 조정을 다루지만 응용 맥락(로봇 표현·continual learning·순수 기하 최적화·통신)이 갈라져 있어 하나의 흐름보다는 같은 기반 기술 위의 병렬 시도에 가까움</small></td>
+  <td>ImprovedVBGS의 실시간 continual Gaussian Splatting을 우리 계산 이미징 스트리밍 재구성 파이프라인에 적용해 프레임당 갱신 지연시간을 측정하고, CSS-BA의 게이트 기반 번들 조정을 저시차 촬영이 흔한 우리 근접 촬영 셋업에 적용해 기존 Levenberg-Marquardt 대비 수렴 안정성을 비교</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ Watch-lens 점검: Fourier Ptychography/Microscopy·Lensless/Coded Imaging·Phase Imaging/Holography는 오늘 정확히 0편으로, 세 핵심 계산광학 버킷이 동시에 비었습니다. Meta-Optics/Diffractive(3편)는 통신용 stacked intelligent metasurface 2편(FSIM, Energy Efficient Active SIM)과 바이오센서 저널 1편으로, 셋 다 이미징 방법론과는 무관해 클러스터 요건(2편 이상 같은 방향)을 충족하지 못합니다. Virtual Staining/Pathology(22편)도 "staining"이 "sustaining"·"data sustaining" 등과 우연히 겹친 오탐이 대부분이라 실제 병리·가상염색 신호는 오늘 0편입니다. 네 버킷 모두 오늘은 독립 클러스터를 만들 근거가 없어 아래 리스크·한계 필터에서만 짚습니다.</small></p>
+
+<h2>📐 arXiv vs 저널 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: GoStop·Event3R·On the Geometry of Learned Representations(이벤트 카메라 기하 재구성), PI-Splines·Lorentzian PINN·Statistical Formulation Gap·Evolutionary LLM-guided PINN Design(PINN 방법론 재정비), E3DGS·ImprovedVBGS·CSS-BA·Toward Semantic Communication(3DGS 실시간·배포 조건)</li>
+  <li><strong>저널 전용</strong>: 오늘은 계산광학·계산이미징에 직접 연결되는 저널 논문이 사실상 없었습니다. 고Q계수 THz metasurface 바이오센서(numerical study) 1편이 Meta-Optics 버킷에 걸렸지만 이미징 방법론 기여는 없고, 나머지 저널 수집분(435건 중 대부분)은 임상 영상의학(CT/MRI/PET 진단), 통신·에너지, 사회과학 저널입니다.</li>
+  <li><strong>공통 키워드</strong>: tomography(3DGS/CT 재구성 vs 임상 PET/CT 진단 저널 — 맥락이 다름), staining(오늘은 실제 가상염색 신호 없이 "sustaining" 등과 우연 매칭), reconstruction(3DGS/이벤트 기하 재구성 vs 저류층 물성 재구성 저널 — 오탐 사례)</li>
+  <li><strong>특징</strong>: 오늘은 arXiv 쪽이 이벤트 카메라 기하 재구성, PINN 방법론 재정비, 3DGS 배포 조건이라는 세 흐름을 전적으로 주도했고, 저널 쪽은 계산광학 코어에서 사실상 관측 가능한 신호가 없었던 하루입니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 이벤트 카메라가 추적 센서에서 3D 기하 재구성 센서로 무게중심을 옮김</h3>
+  <p>GoStop, Event3R, On the Geometry of Learned Representations 세 편이 같은 날 이벤트 카메라를 "빠르게 특징점을 잡는 센서"에서 "장면의 3D 구조를 직접 복원하고 그 복원 과정을 기하학적으로 설명할 수 있는 센서"로 다루기 시작했습니다. 지난주 금요일의 이벤트/광필드 기하 역문제 확장 흐름이 오늘 더 좁고 깊은 형태로 이어진 모습입니다.</p>
+  <p class=conf-note>Confidence: Medium — 같은 버킷 3편이 같은 방향을 가리키지만 저자군·벤치마크 중첩은 확인되지 않음</p>
+</div>
+
+<div class=ins>
+  <h3>2. PINN 커뮤니티가 개별 응용 성공담에서 방법론 자체의 구성요소 재정비로 이동</h3>
+  <p>Trainable Spline Representations, Lorentzian PINN, Statistical Formulation Gap, Evolutionary LLM-guided PINN Design 네 편이 각각 표현 방식, 활성함수, 이론적 오차 경계, 설계 자동화라는 서로 다른 각도에서 PINN이라는 방법론 자체를 다시 손봤습니다. "이 방정식도 풀립니다"를 넘어 "왜, 언제, 어디까지 이 방법이 유효한가"를 묻는 성숙기 신호로 읽힙니다.</p>
+  <p class=conf-note>Confidence: Medium — 4편이 같은 방법론(PINN)의 서로 다른 구성요소를 겨냥하지만 공통 벤치마크로 직접 비교되지는 않음</p>
+</div>
+
+<div class=ins>
+  <h3>3. 계산광학 코어 4개 버킷이 오늘 동시에 침묵</h3>
+  <p>Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography가 0편, Meta-Optics/Diffractive도 이미징 관련 신호는 0편입니다. 지난주 후반부터 이어진 계산광학 코어 약세가 이번 주 첫날에도 그대로 이어진 것으로, 우연한 하루의 편차인지 며칠 더 지켜볼 필요가 있는 추세인지는 이번 주 중반까지 관찰해야 판단할 수 있습니다.</p>
+  <p class=conf-note>Confidence: Low — 단 하루의 관측이라 추세인지 단순 편차인지 아직 판단하기 이릅니다</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. Event3R의 feed-forward 이벤트 3D 재구성을 계산 이미징 산란매질/위상 데이터에 이식</h3>
+  <p>DUSt3R류 feed-forward 3D 재구성 구조를 이벤트 카메라 신호에 적용한 Event3R의 접근이, 우리 랩의 이벤트 카메라 기반 산란매질/위상 이미징 다시점 데이터에도 전역 기하 일관성을 유지하며 확장될 수 있는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>Event3R의 spatial-temporal feature aggregation 구조 재현 또는 공개 코드/체크포인트 확보</li>
+    <li>공통 benchmark: 우리 보유 이벤트 카메라 기반 산란매질/위상 이미징 다시점 데이터셋</li>
+    <li>비교축: 기존 이벤트 기반 3D 재구성 baseline 대비 전역 기하 일관성, 재구성 속도</li>
+    <li>실패해도 남는 결과: 우리 도메인에서 feed-forward 이벤트 재구성이 깨지는 조건(이벤트 밀도, 모션 범위)에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. PI-Splines 표현을 위상 이미징 물리 제약 복원 파이프라인에 대체 적용</h3>
+  <p>MLP 기반 PINN 대신 학습 가능한 B-스플라인으로 미지의 장을 표현하는 PI-Splines 방식이, 우리 위상 이미징/산란매질 파동장 복원의 물리 제약 신경망 forward model에서 기존 대비 수렴 속도와 메모리 사용량을 개선할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>PI-Splines의 tensor-product B-spline 확장 구성 재현</li>
+    <li>공통 benchmark: 우리 보유 위상 이미징/산란매질 파동장 시뮬레이션 데이터</li>
+    <li>비교축: 기존 MLP 기반 PINN 대비 수렴 속도(iteration 수), 메모리 사용량, 최종 복원 정확도</li>
+    <li>실패해도 남는 결과: 우리 도메인에서 스플라인 표현이 유효한 문제 규모/해상도 범위에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. ImprovedVBGS의 실시간 continual Gaussian Splatting을 스트리밍 계산 이미징 재구성에 적용</h3>
+  <p>매 프레임 전체 점을 다시 훑지 않고도 온라인으로 갱신되는 continual Variational Bayes Gaussian Splatting 구조가, 우리 랩의 순차 다시점 계산 이미징 스트리밍 재구성 상황에서도 저지연 갱신을 유지할 수 있는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>ImprovedVBGS의 Coordinate Ascent Variational Inference(CAVI) 가속 구조 재현</li>
+    <li>공통 benchmark: 우리 순차 다시점 계산 이미징 스트리밍 데이터(위상 이미징 또는 산란매질 시계열)</li>
+    <li>비교축: 기존 프레임 전체 재방문 방식 대비 프레임당 갱신 지연시간, 메모리 사용량</li>
+    <li>실패해도 남는 결과: 우리 도메인 데이터 특성(포인트 밀도, 갱신 빈도)에서 continual VBGS가 버티는 한계에 대한 baseline</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Virtual Staining/Pathology(22편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:14%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:14%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:77%"></span></span><span class=n>17편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>22편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:68%"></span></span><span class=n>15편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>77편</span></div>
+
+<p><small>⚠️ 참고: Virtual Staining/Pathology 22편은 오늘 전부가 "staining" 키워드 우연 매칭(sustaining, data sustaining 등)이거나 무관한 AI/사회과학 논문으로, 실제 가상염색·병리 신호는 0편입니다. Tomography/3D Imaging 17편 중 실제 계산광학·계산이미징 신호는 3DGS/번들 조정 클러스터 4편 정도이며 나머지는 대부분 임상 CT/MRI/PET 진단 저널입니다. Reconstruction/Inverse Problems 15편 중에서도 PINN 방법론 클러스터 4편을 빼면 나머지는 대부분 무관한 ML 이론·통신·양자 컴퓨팅 논문입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Meta-Optics/Diffractive (3편 중 이미징 관련 0편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15651" target=_blank>FSIM: Fluid Element Stacked Intelligent Metasurface for Multiuser Downlink Networks</a></strong> [SP]<br>
+  왜 주요: metasurface 키워드로 걸렸지만 무선 통신 다운링크 채널 최적화 논문 — 이미징 방법론과 무관해 참고용으로만 표시. 나머지 2편(Energy Efficient Active SIM, THz 바이오센서 저널)도 각각 통신·재료과학 응용으로 이미징과 직접 연결되지 않음
+</div>
+
+<h3>Light-Field/Novel Sensors (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15727" target=_blank>Event3R: Asynchronous-to-Global 3D Reconstruction from Event Camera</a></strong> [CV]<br>
+  왜 주요: 오늘의 대표 클러스터(이벤트 카메라의 추적→기하 재구성 전환) — 위 클러스터 표 참고
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15699" target=_blank>GoStop</a> · <a href="https://arxiv.org/abs/2607.15794" target=_blank>On the Geometry of Learned Representations</a></strong> [CV]<br>
+  왜 주요: 같은 클러스터의 보조 논문 — 적응형 시간 집계로 추적을 개선하는 논문과, 이벤트 egomotion 신경망 내부 표현을 기하학적으로 분석하는 논문
+</div>
+
+<h3>Tomography/3D Imaging (17편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15536" target=_blank>E3DGS</a> · <a href="https://arxiv.org/abs/2607.15542" target=_blank>ImprovedVBGS</a> · <a href="https://arxiv.org/abs/2607.15652" target=_blank>CSS-BA</a> · <a href="https://arxiv.org/abs/2607.16128" target=_blank>Toward Semantic Communication for Real-time Mobile 3D Reconstruction</a></strong> [CV]<br>
+  왜 주요: 오늘의 대표 클러스터(3DGS의 실시간·저시차·배포 조건 재시험) — 위 클러스터 표 참고
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.16065" target=_blank>Spatial Normalization for Cross-Domain Retinal Layer Segmentation in OCT</a></strong> [CV]<br>
+  왜 주요: 서로 다른 OCT 장비·기관 간 도메인 격차 문제를 공간 정규화로 완화하는 망막층 분할 방법 — 임상 OCT 파이프라인 일반화에 참고
+</div>
+
+<h3>Reconstruction/Inverse Problems (15편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15751" target=_blank>Trainable Spline Representations (PI-Splines)</a> · <a href="https://arxiv.org/abs/2607.15291" target=_blank>Lorentzian PINN</a> · <a href="https://arxiv.org/abs/2607.15702" target=_blank>Statistical Formulation Gap</a> · <a href="https://arxiv.org/abs/2607.15560" target=_blank>Evolutionary LLM-guided PINN Design</a></strong> [LG/AI]<br>
+  왜 주요: 오늘의 대표 클러스터(PINN 방법론 자체의 재정비) — 위 클러스터 표 참고. 나머지 11편은 대부분 순수 통계학습 이론, 통신, 양자 컴퓨팅 논문으로 이미징 ROI와 무관
+</div>
+
+<h3>Deep Learning Methods — 관련 2편 (77편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15711" target=_blank>Efficient Difficulty-Aware Dynamic Routing for Diffusion-Based Real-World Image Super-Resolution</a></strong> [CV]<br>
+  왜 주요: 모든 입력을 동일한 diffusion step으로 처리하던 기존 실사 초해상도 방식과 달리, 입력 난이도에 따라 처리 경로를 다르게 배정 — 다양한 열화 조건의 계산 이미징 복원 파이프라인 효율화에 참고
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15604" target=_blank>WREN: Low Light Image Enhancement Using Retinex Theory-based Double U-Net-like Structures</a></strong> [CV]<br>
+  왜 주요: Retinex 이론(반사율·조도 분리)에 기반한 이중 U-Net 구조로 저조도 영상을 향상 — 저조도 계산 이미징 전처리에 직접 참고 가능
+</div>
+
+<hr>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Event3R: Asynchronous-to-Global 3D Reconstruction from Event Camera via Spatial-Temporal Feature Aggregation — arXiv cs.CV</h3>
+  <div class=tag>[방법전환] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> DUSt3R 같은 feed-forward 3D 재구성 방법들은 RGB 이미지에서는 인상적인 성과를 보였지만, 이벤트 카메라의 비동기적이고 성기며 고도로 시간에 민감한 신호로 확장하는 건 쉽지 않았습니다. 이벤트는 프레임처럼 정해진 시점에 한 번에 오지 않고, 픽셀마다 독립적으로 빛의 변화가 있을 때만 신호를 냅니다. Event3R은 이 비동기 신호를 시공간적으로 집계해 전역적으로 일관된 3D 구조를 복원하는 첫 시도 중 하나로, 우리 랩이 이벤트 카메라를 단순 고속 추적 센서가 아니라 계산 이미징의 새로운 입력 모달리티로 쓰고 싶을 때 직접적인 아키텍처 참고 사례가 됩니다.</p>
+  <p><strong>핵심:</strong> 로보틱스·임바디드 인식에서 강건한 3D 재구성이 중요하다는 문제의식에서 출발해, RGB 기반 feed-forward 방법(DUSt3R 계열)을 이벤트 카메라로 확장할 때 발생하는 비동기·희소·고시간해상도 신호의 특성을 다루기 위해 spatial-temporal feature aggregation을 제안합니다. 개별 이벤트를 그대로 쓰는 대신 시공간적으로 묶어 전역 기하 일관성을 갖는 3D 구조를 복원합니다.</p>
+  <p><strong>주의:</strong> abstract만으로는 정량적 비교 수치나 어떤 벤치마크에서 검증했는지가 명확하지 않아, 기존 이벤트 기반 3D 재구성 baseline 대비 실제 개선폭은 본문 확인이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] A Statistical Formulation Gap for Nonlinear Multiscale Physics-Informed Learning — arXiv cs.LG</h3>
+  <div class=tag>[해부분석] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> PINN은 계산 이미징의 물리 제약 복원(위상 이미징, 산란매질 역문제 등)에서도 널리 쓰이지만, 지금까지는 "이 문제에서 잘 됐다"는 실험적 성공 사례가 많았을 뿐 "얼마나, 왜 잘 되는지"에 대한 이론적 보장은 부족했습니다. 이 논문은 비선형 다중스케일 타원형 방정식(계수가 미세 스케일 ε에서 진동하는 문제)이라는 어려운 세팅에서, 유한 폭·유한 샘플·유한 반복이라는 현실적 제약 아래 PINN의 오차 경계를 처음으로 엄밀하게 증명합니다. 우리 랩이 물리 제약 신경망을 계산 이미징 복원에 쓸 때 "이 정도 데이터·반복 횟수면 이론적으로 어느 정도 정확도를 기대할 수 있는가"를 가늠할 수 있는 드문 이론적 기준점을 제공합니다.</p>
+  <p><strong>핵심:</strong> 균일하게 단조로운(uniformly monotone) 발산형 비선형 다중스케일 타원 방정식 클래스에 대해, 경계 조건과 호환되는 변분 신경망 solver의 유한 폭·유한 샘플·유한 반복 오차 경계를 유도합니다. 안정성·샘플링·최적화 상수가 미세 스케일 ε에 독립적임을 보여, 다중스케일 문제에서도 오차가 스케일에 따라 무한정 커지지 않는다는 것을 이론적으로 뒷받침합니다.</p>
+  <p><strong>주의:</strong> 이론적 결과가 성립하는 방정식 클래스(균일 단조 발산형)가 우리 랩이 실제로 다루는 위상 이미징·산란매질 역문제의 정확한 수식 형태와 일치하는지는 본문에서 조건을 하나씩 대조해봐야 합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 계산광학 핵심 4개 버킷(Fourier Ptychography, Lensless, Phase Imaging, Meta-Optics)이 오늘 사실상 전멸입니다. 이는 오늘 하루의 등록 분포 특성이며, 하루 관측만으로 추세로 단정하지 않습니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology 22편은 전부 "staining" 키워드가 다른 단어(sustaining 등)와 우연히 겹친 오탐이거나 무관한 AI/사회과학 논문입니다. Tomography/3D Imaging 17편, Reconstruction/Inverse Problems 15편도 각각 다수가 임상 진단 저널이나 무관한 ML 이론 논문입니다.</p>
+  <p>[Dataset risk] classify.py 선택 비율은 25.4%(137/539)로 최근 밴드보다 낮지만, 지난 월요일(2026-07-13, 25.1%)과 거의 같은 수준이라 parser 오류가 아니라 월요일 특유의 패턴(주말 제출량 감소 + 저널 수집이 비관련 분야로 쏠림)으로 판단합니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] Event3R의 "전역 기하 일관성" 주장은 abstract 기준 서술로, 어떤 벤치마크·정량 지표로 검증했는지 본문 확인이 필요합니다.</p>
+  <p>[Baseline risk] 이벤트 카메라 클러스터 3편은 서로 다른 하위 문제(추적·3D 재구성·표현 분석)를 다뤄 논문 간 직접 비교는 어렵습니다.</p>
+  <p>[Claim risk] PINN 방법론 클러스터 4편 중 Statistical Formulation Gap을 제외한 나머지 세 편은 아직 이론적 보장 없이 실험적 개선만 보고하고 있어, "왜 되는지"에 대한 설명은 Statistical Formulation Gap 한 편에 국한됩니다.</p>
+  <p>[Deployment risk] 3DGS 클러스터(E3DGS, ImprovedVBGS, CSS-BA, Toward Semantic Communication)는 응용 맥락이 서로 갈라져 있어(로봇 표현·continual learning·순수 기하 최적화·통신), 하나의 배포 시나리오로 통합해 평가하기 어렵습니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Meta-Optics 버킷 3편 전체</strong>(FSIM, Energy Efficient Active SIM, THz 바이오센서) — 통신·재료 응용, 이미징 방법론 기여 없음.</li>
+    <li><strong>Virtual Staining/Pathology 버킷 22편 전체</strong> — "staining" 키워드 우연 매칭, 실제 가상염색·병리 신호 없음.</li>
+    <li><strong>다수 임상 CT/MRI/PET 저널</strong>(Tomography/3D Imaging 버킷 내, 뇌출혈·전립선암·아ortic stenosis 등) — 임상 진단 목적, 계산광학 방법론 기여 없음.</li>
+    <li><strong>Reconstruction/Inverse Problems 버킷 내 순수 통계학습 이론 다수</strong>(In-context learning of linear regression, Prediction-Only Distillation, Retraining Seeks Stable Signals 등) — 흥미로운 이론이지만 이미징 ROI와 간접 연결.</li>
+    <li><strong>Spatial Normalization for Cross-Domain Retinal Layer Segmentation</strong> [CV] — 임상 OCT 도메인 적응은 참고할 만하지만 오늘의 대표 클러스터만큼 뚜렷한 신호는 아님.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Meta-Optics/Diffractive (3편, 이미징 관련 0편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15651" target=_blank>FSIM: Fluid Element Stacked Intelligent Metasurface for Multiuser Downlink Networks</a></strong> <span class=pill>SP</span><br>
+  문제: 고정된 메타원자 배치로는 무선 다운링크 채널 최적화에 한계 / 방법: 각 층의 메타원자가 유체 영역 내에서 움직일 수 있는 fluid element 기반 stacked intelligent metasurface 제안 / 의미: metasurface 키워드로 걸렸으나 무선 통신 응용, 이미징과 무관 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15654" target=_blank>Energy Efficient Active Stacked Intelligent Metasurfaces</a></strong> <span class=pill>SP</span><br>
+  문제: 수동형 지능형 표면은 신호 증폭이 안 돼 에너지 효율에 한계 / 방법: 능동 증폭과 다층 투과형 metasurface를 결합한 에너지 효율적 다운링크 프레임워크 / 의미: 통신 응용, 이미징과 무관 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong>High Q-factor multiband terahertz metasurface biosensor</strong> <span class=pill>JNL</span><br>
+  문제: 생체 굴절률 센싱에서 다중 대역·고Q계수 응답이 동시에 필요 / 방법: THz metasurface 구조를 수치 시뮬레이션으로 설계 / 의미: 바이오센싱 응용, 이미징 재구성 방법론과는 결이 다름 / 우선순위: Skim-only
+</div>
+
+<h3>Light-Field/Novel Sensors (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15699" target=_blank>GoStop: RL for Adaptive Temporal Aggregation in Event-Based Feature Tracking</a></strong> <span class=pill>CV</span><br>
+  문제: 기존 이벤트 기반 특징 추적은 고정된 휴리스틱으로 이벤트를 묶어 빠른/느린 모션이 섞이면 성능이 떨어짐 / 방법: 강화학습으로 시간 집계 창을 그때그때 적응적으로 조정 / 의미: 오늘의 대표 클러스터(이벤트 카메라의 추적→기하 재구성 전환) 첫 단계 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15727" target=_blank>Event3R: Asynchronous-to-Global 3D Reconstruction from Event Camera</a></strong> <span class=pill>CV</span><br>
+  문제: feed-forward 3D 재구성(DUSt3R류)이 RGB에서는 성공했지만 비동기·희소한 이벤트 신호로 확장이 어려움 / 방법: 시공간 특징 집계로 이벤트 스트림에서 전역 일관된 3D 구조를 직접 복원 / 의미: 오늘의 must-read, 이벤트 카메라를 계산 이미징 입력으로 쓰는 직접 참고 사례 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15794" target=_blank>On the Geometry of Learned Representations in Event-Based Multi-Modal Egomotion Estimation</a></strong> <span class=pill>CV</span><br>
+  문제: 이벤트 기반 자기운동 추정 신경망이 내부적으로 무엇을 학습하는지 불명확 / 방법: 학습된 표현의 기하학적 구조를 기존 고전 최적화 방법(contrast maximization, homography)과 비교 분석 / 의미: 이벤트 신경망이 왜 작동하는지 이해하는 해부분석 논문 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging (17편 중 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15536" target=_blank>E3DGS: Unified Geometric-Photometric Equivariance for 3D Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: 3DGS에서 색상이 기하와 분리된 신호로 취급돼 SE(3)-equivariant 구조를 만들기 어려움 / 방법: 색상을 기하학적 개체로 재정의해(Color-as-Geometry) 기하-색상 대칭성을 통합 / 의미: 시점 변화에도 일관된 3DGS 표현을 위한 구조적 재정식화 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15542" target=_blank>ImprovedVBGS: Real-time Continual Variational Bayes Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: 기존 continual VBGS는 매 프레임 전체 관측점을 재방문해 실시간 요구조건을 못 맞춤 / 방법: Coordinate Ascent Variational Inference 가속으로 온더플라이 재구성 속도 개선 / 의미: 로봇·자율주행처럼 저지연이 필수인 스트리밍 재구성에 참고 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15652" target=_blank>CSS-BA: Gate-Guided Column Space Search for Bundle Adjustment</a></strong> <span class=pill>CV</span><br>
+  문제: 저시차·근회전 조건에서 고전 Schur 기반 Levenberg-Marquardt 번들 조정이 불안정 / 방법: solver 내부에 게이트를 둬 열악한 조건에서도 안정적으로 수렴하도록 유도 / 의미: 근접 촬영·좁은 베이스라인 계산 이미징 셋업에 참고 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.16128" target=_blank>Toward Semantic Communication for Real-time Mobile 3D Reconstruction</a></strong> <span class=pill>CV</span><br>
+  문제: 이동 플랫폼이 영상을 서버로 실시간 전송하며 3D 재구성할 때 대역폭 제약이 병목 / 방법: semantic communication 관점에서 멀티뷰 일관성을 유지하며 전송 데이터를 압축 / 의미: 원격 계산 이미징 파이프라인의 통신 병목 설계에 참고 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.16065" target=_blank>Spatial Normalization for Cross-Domain Retinal Layer Segmentation in OCT</a></strong> <span class=pill>CV</span><br>
+  문제: 서로 다른 OCT 장비·기관에서 촬영한 영상 간 도메인 격차로 망막층 분할 성능이 떨어짐 / 방법: 공간 정규화로 장비 간 격차를 완화 / 의미: 임상 OCT 파이프라인의 일반화 문제, 계산광학 코어와는 간접 연결 / 우선순위: Skim-only
+</div>
+
+<h3>Reconstruction/Inverse Problems (15편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15751" target=_blank>Trainable Spline Representations for Physics-Informed Learning (PI-Splines)</a></strong> <span class=pill>LG</span><br>
+  문제: 신경망 기반 PINN 표현이 불투명하고 특정 조건에서 최적화가 어려움 / 방법: 신경망 대신 학습 가능한 tensor-product B-스플라인으로 미지의 장을 직접 파라미터화 / 의미: 오늘의 대표 클러스터(PINN 방법론 재정비), 물리 제약 계산 이미징 복원의 forward model 대안 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15291" target=_blank>PINN with Modified Lorentzian Activation for Nonlocal Gradient-Flow Equations</a></strong> <span class=pill>LG</span><br>
+  문제: 비국소 상호작용 항이 있는 방정식(동적 밀도범함수이론)에서 표준 PINN이 느리게 수렴 / 방법: Lorentzian 형태로 수정한 활성함수로 최적화 안정성 개선 / 의미: 비국소 물리 제약 문제에 PINN을 적용할 때의 구체적 해법 사례 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15702" target=_blank>A Statistical Formulation Gap for Nonlinear Multiscale Physics-Informed Learning</a></strong> <span class=pill>LG</span><br>
+  문제: PINN이 다중스케일 비선형 방정식에서 얼마나 정확한지에 대한 이론적 보장 부재 / 방법: 유한 폭·유한 샘플·유한 반복 조건에서 오차 경계를 수학적으로 증명 / 의미: 오늘의 must-read, 물리 제약 신경망의 이론적 신뢰 구간을 제공하는 드문 논문 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15560" target=_blank>Evolutionary Algorithm-Guided LLMs for Physics-Informed Neural Network Design</a></strong> <span class=pill>AI</span><br>
+  문제: LLM이 PINN 설계(아키텍처·활성함수·손실 가중치)를 제안할 수 있지만 이전 시도의 경험이 축적되지 않음 / 방법: 진화 알고리즘으로 LLM의 PINN 설계 제안을 폐루프로 반복·개선 / 의미: PINN 설계 자동화, 계산 이미징 물리 모델 튜닝 시간 단축에 참고 / 우선순위: Read
+</div>
+
+<h3>Deep Learning Methods — 관련 2편 (77편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15711" target=_blank>Efficient Difficulty-Aware Dynamic Routing for Diffusion-Based Real-World Image Super-Resolution</a></strong> <span class=pill>CV</span><br>
+  문제: 기존 diffusion 기반 실사 초해상도는 모든 입력을 동일한 처리 경로로 다뤄 쉬운 샘플에도 과도한 연산을 씀 / 방법: 입력 난이도를 판단해 처리 경로(step 수·경로)를 동적으로 배정 / 의미: 다양한 열화 조건이 섞인 계산 이미징 복원 파이프라인의 연산 효율화에 참고 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.15604" target=_blank>WREN: Low Light Image Enhancement Using Retinex Theory-based Double U-Net-like Structures</a></strong> <span class=pill>CV</span><br>
+  문제: 저조도 영상 향상이 다양한 동적 범위 장면에서 강건하지 못함 / 방법: Retinex 이론(반사율/조도 분리)에 기반한 이중 U-Net 구조 / 의미: 저조도 계산 이미징 전처리 단계에 직접 참고 가능 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/abs/2607.15727" target=_blank>Event3R — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.15699" target=_blank>GoStop — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.15794" target=_blank>On the Geometry of Learned Representations — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.15702" target=_blank>A Statistical Formulation Gap — arXiv cs.LG</a></li>
+  <li><a href="https://arxiv.org/abs/2607.15751" target=_blank>Trainable Spline Representations (PI-Splines) — arXiv cs.LG</a></li>
+  <li><a href="https://arxiv.org/abs/2607.15291" target=_blank>Lorentzian PINN — arXiv cs.LG</a></li>
+  <li><a href="https://arxiv.org/abs/2607.15560" target=_blank>Evolutionary LLM-guided PINN Design — arXiv cs.AI</a></li>
+  <li><a href="https://arxiv.org/abs/2607.15536" target=_blank>E3DGS — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.15542" target=_blank>ImprovedVBGS — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.15652" target=_blank>CSS-BA — arXiv cs.CV</a></li>
+  <li><a href="https://arxiv.org/abs/2607.16128" target=_blank>Toward Semantic Communication for Real-time Mobile 3D Reconstruction — arXiv cs.CV</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+  <p>📚 입력: arXiv /new(2026-07-20, new+cross 341편) + Crossref/OpenAlex 저널 · 병합 스캔 539건, ROI 137건 (25.4%)</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

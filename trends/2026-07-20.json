@@ -1,13 +1,36 @@
 {
   "date": "2026-07-20",
-  "source_listing_date": "2026-07-17",
-  "source_mode": "weekly-pastweek",
-  "note": "Weekly retrospective for W29 (2026-07-13 to 2026-07-17). No daily /new data for this date (today's daily runs separately at 11:00 KST); daily stats row intentionally omitted.",
-  "weekly_aggregate": {
-    "by_cat": {"cs.LG": 852, "cs.CV": 632, "cs.AI": 960, "eess.IV": 57, "eess.SP": 131},
-    "scope": "new+cross; replacements excluded",
-    "days_covered": ["2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17"],
-    "note": "5영업일 모두 arXiv+저널 완전판(source_mode=new)"
+  "source_listing_date": "2026-07-20",
+  "source_mode": "new",
+  "note": "2026-07-20(월)은 정상 daily다. 5개 추적 카테고리 arXiv /new listing이 모두 오늘 날짜(Monday, 20 July 2026)를 가리켜 source_mode=new로 확정했다. 같은 날짜의 주간 회고(weekly/2026-29.json, posts/2026-07-20-weekly.html)는 이미 오늘 오전 별도 실행으로 먼저 발행됐고, 이 trends 레코드는 그것과 독립된 당일 daily용이라 이전에 저장돼 있던 weekly-pastweek 스키마(source_mode=weekly-pastweek)를 daily 스키마로 덮어썼다. classify.py 선택 비율은 25.4%(137/539)로 최근 밴드(25~29%)보다 낮은 쪽이지만, 지난 월요일(2026-07-13, 25.1%)과 거의 같은 수준이라 월요일 특유의 패턴으로 본다 — 주말 동안 arXiv 신규 제출이 적어 월요일 /new가 상대적으로 얇고, 저널 수집 역시 계산광학과 무관한 임상 영상의학·통신·에너지 저널로 쏠렸다. Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography는 오늘 정확히 0편으로 3개 핵심 계산광학 버킷이 동시에 비었고, Meta-Optics/Diffractive도 3편 중 실제 이미징 관련은 0편(통신용 stacked intelligent metasurface 2편 + 바이오센서 저널 1편)이다. arXiv 쪽 가장 뚜렷한 신호는 이벤트 카메라가 추적에서 3D 재구성/기하 표현 분석으로 넘어가는 논문 3편(GoStop, Event3R, On the Geometry of Learned Representations)과 물리 정보 신경망(PINN) 방법론 자체를 다시 설계하는 논문 4편(Trainable Spline PI-Splines, Lorentzian PINN, Evolutionary LLM-guided PINN design, Statistical Formulation Gap)이었다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 124,
+      "cs.CV": 88,
+      "cs.AI": 105,
+      "eess.IV": 7,
+      "eess.SP": 17
+    },
+    "scope": "new+cross; replacements excluded"
   },
-  "totals": {"total_scanned": 3954, "selected": 1152}
+  "totals": {
+    "total_scanned": 539,
+    "selected": 137
+  },
+  "classified": {
+    "total_scanned": 539,
+    "selected": 137,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 0,
+      "Meta-Optics/Diffractive": 3,
+      "Light-Field/Novel Sensors": 3,
+      "Tomography/3D Imaging": 17,
+      "Virtual Staining/Pathology": 22,
+      "Reconstruction/Inverse Problems": 15,
+      "Deep Learning Methods": 77
+    }
+  },
+  "daily_thesis": "오늘 가장 뚜렷한 신호는 이벤트 카메라 연구가 '얼마나 빠르고 안정적으로 추적하는가'에서 '내부 표현을 기하학적으로 다시 세워 3D 재구성까지 하는가'로 넘어간 것과, PINN(physics-informed neural network) 커뮤니티가 특정 방정식을 더 잘 푸는 개별 논문 대신 스플라인 구조·활성함수·설계 자동화·이론적 한계처럼 방법론 자체의 구성요소를 하나씩 다시 손보기 시작한 것이다. 반대로 Fourier Ptychography, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics 네 개 핵심 계산광학 버킷은 오늘 사실상 전멸에 가까워, 지난주 후반부터 이어진 계산광학 코어 침묵이 이번 주로 그대로 넘어왔다."
 }
