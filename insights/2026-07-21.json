@@ -1,0 +1,79 @@
+{
+  "date": "2026-07-21",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "3D Gaussian Splatting이 '더 정교한 렌더링'에서 '얼마나 압축되고 얼마나 안전하게 버티는가'로 시험 축이 옮겨감",
+      "papers": [
+        {"title": "SPARE-GS: Structural Parsimony and Resource Efficiency for 3D Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2607.16624", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Exploration Matters for Escaping the Blur Trap in 3D Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2607.17965", "journal_or_source": "arXiv cs.CV"},
+        {"title": "QIRF: Quantum-Inspired Non-Orthogonal Function-Space Compression for 3D Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2607.18067", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Packet-Loss Robust 3D Gaussian Compression via Atomic Packaging and GNN-based Error Concealment", "arxiv_id": "https://arxiv.org/abs/2607.17916", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Splat-based 3D Scene Reconstruction with Extreme Motion-blur", "arxiv_id": "https://arxiv.org/abs/2607.16926", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "3D Gaussian Splatting(3DGS)은 장면을 수많은 3차원 가우시안 조각으로 표현해 실시간으로 새로운 시점의 영상을 만들어내는 방법입니다. 그동안은 주로 '얼마나 사진처럼 정교하게 렌더링하느냐'를 겨루는 경쟁이었는데, 오늘 같은 날 나온 다섯 편은 전부 다른 질문을 던집니다. SPARE-GS와 QIRF, Packet-Loss Robust 3D Gaussian Compression은 가우시안 개수가 많아질수록 저장 공간과 전송 대역폭이 감당하기 어려워진다는 문제를 각각 예산 제약 최적화, 겹치는 가우시안 사이의 중복 제거, 네트워크 전송 중 패킷이 유실돼도 복구 가능한 인코딩으로 풀었습니다. Exploration Matters는 3DGS의 최적화 과정 자체가 국소 최적점(흐릿한 결과)에 잘 빠진다는 근본적인 약점을 지적하고, 이를 '흐림의 함정(Blur Trap)'이라 이름 붙여 탐색 전략으로 벗어나는 법을 제안합니다. Splat-based 3D Scene Reconstruction with Extreme Motion-blur는 저조도에서 노출 시간이 길어져 카메라 포즈 추정 자체가 무너지는 극한 상황을 다룹니다. 다섯 편을 같이 보면, 3DGS 연구가 '보기 좋은 장면을 더 잘 만드는가'를 넘어 '저장·전송·촬영 조건이 나빠져도 계속 쓸 수 있는가'를 검증하는 실사용 단계로 넘어가고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "같은 버킷(Tomography/3D Imaging)의 오늘 선택분 중 3DGS 관련 논문이 8편이나 되고, 그중 압축·강건성·최적화 안정성이라는 같은 방향을 가리키는 논문이 5편 이상 모여 있어 근거가 두터움",
+      "lab_action": "SPARE-GS의 예산 제약 최적화와 QIRF의 겹침 제거 압축을 우리 계산 이미징 다시점 재구성 파이프라인(가우시안 표현을 쓰는 위상/산란매질 3D 복원)에 적용해 가우시안 개수 대비 복원 정확도(PSNR/SSIM) 곡선을 그리고, Blur Trap 논문의 탐색 전략을 우리 저조도·저시차 촬영 데이터셋에서 기존 표준 3DGS 최적화 대비 국소 최적점 탈출 빈도로 비교"
+    },
+    {
+      "cluster": "이미지 초해상도의 평가 기준이 '보기 좋은가'에서 '원래 있어야 할 증거/정보가 남아 있는가'로 이동",
+      "papers": [
+        {"title": "Does Super-Resolution Preserve Defect Evidence? A Low-False-Call Benchmark for Semiconductor Inspection", "arxiv_id": "https://arxiv.org/abs/2607.17401", "journal_or_source": "arXiv cs.CV"},
+        {"title": "DRIFT: Difficulty-aware Rectified Flows for Through-plane MRI Super-Resolution", "arxiv_id": "https://arxiv.org/abs/2607.16649", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Rarity-Aware Discrete Diffusion with Spatially Consistent Decoding for Photo-Realistic Image Super-Resolution", "arxiv_id": "https://arxiv.org/abs/2607.17612", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "지금까지 초해상도(super-resolution) 연구는 흐릿한 저해상도 영상을 얼마나 원본과 비슷하게 복원하느냐(PSNR, SSIM 같은 지표)를 주로 봤습니다. 그런데 'Does Super-Resolution Preserve Defect Evidence?'는 뼈아픈 사실을 실험으로 보여줍니다 — 반도체 검사 영상에서 구조적 유사도(SSIM) 점수가 가장 높았던 두 학습 기반 복원 모델이, 오히려 단순 보간법(bicubic)보다 실제 결함 픽셀을 더 적게 검출했습니다. 즉 영상이 육안으로는 더 선명해 보여도 결함을 판정하는 데 필요한 증거는 오히려 사라질 수 있다는 뜻입니다. DRIFT는 비슷한 문제의식을 MRI에 적용해, 슬라이스 두께가 다양한 임상 스캔에서 단순히 매끈하게 채우는 대신 두께 조건에 맞춰 복원 난이도를 조절하는 방법을 제안합니다. Rarity-Aware Discrete Diffusion은 실사 초해상도에서 자주 나오는 질감만 잘 복원하고 드물지만 지각적으로 중요한 질감(가장자리, 세부 패턴)을 놓치는 문제를 지적합니다. 세 편을 같이 보면, 초해상도 평가가 '얼마나 원본과 비슷해 보이는가'에서 '복원된 영상이 실제 다운스트림 작업(결함 판정, 진단, 세부 판별)에 필요한 정보를 보존하는가'로 기준이 옮겨가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "세 편이 서로 다른 응용(반도체 검사, MRI, 일반 실사)에서 같은 방향의 문제의식을 보이지만, 공통 벤치마크나 공통 저자군으로 연결되지는 않음",
+      "lab_action": "우리 계산 이미징 초해상도 파이프라인(위상 이미징/현미경 복원)에 Does SR Preserve Defect Evidence의 평가 프로토콜(재구성 지표와 다운스트림 검출 지표를 분리해 같은 모델을 이중 평가)을 적용해, 기존에 PSNR/SSIM 기준으로 골랐던 모델이 실제 특징 검출·정량 분석에서도 최선인지 재검증"
+    },
+    {
+      "cluster": "메타옵틱스가 '더 좋은 렌즈 하나'에서 '계산과 함께 설계되는 센싱 시스템'으로 다시 자리잡음",
+      "papers": [
+        {"title": "Broadband Content-Adaptive Moiré Meta-spectrometer", "arxiv_id": "https://arxiv.org/abs/2607.17256", "journal_or_source": "arXiv eess.SP"},
+        {"title": "Process-aware design and optimization of silicon metalenses under DRIE-induced depth non-uniformity", "journal_or_source": "Optical Engineering (저널)"},
+        {"title": "High dynamic range lensless on-chip microscopy via an overexposure inverse-projection operator", "journal_or_source": "Journal of Applied Physics (저널)"}
+      ],
+      "why": "오늘은 계산광학 코어 버킷(Fourier Ptychography, Lensless, Phase Imaging, Meta-Optics)에 절대적인 편수는 적었지만, 그 안에서 실제로 이미징 방법론에 기여하는 신호를 추려보면 세 편이 뚜렷한 방향을 가리킵니다. Moiré Meta-spectrometer는 두 장의 메타렌즈를 서로 돌려가며 초점이 맞는 파장을 바꾸는 색수차(chromatic aberration)를 '결함'이 아니라 '신호'로 재활용해, 회전 각도만으로 파장을 스캔하는 초소형 분광계를 만들고, 여기에 스펙트럼이 성긴 부분은 성기게, 정보가 많은 부분은 촘촘하게 샘플링하는 적응형 알고리즘을 결합해 측정 횟수를 최대 7배 줄였습니다. Process-aware metalens 논문은 메타렌즈를 실제로 반도체 공정(Bosch deep RIE)으로 찍어낼 때 생기는 식각 깊이 불균일을 설계 단계에서 미리 보정해, 보정 없이는 초점 효율이 13~44%까지 떨어지던 것을 99% 이상으로 되살립니다. HDR lensless microscopy는 렌즈 없는 온칩 현미경에서 센서가 포화될 때 생기는 신호 손실을 노출 시간을 여러 번 바꿔 찍지 않고도 역투영 연산자로 복원합니다. 세 편을 같이 보면, 메타옵틱스·렌즈리스 연구가 '광학 요소 하나를 더 정교하게 만드는가'를 넘어 '광학 요소의 물리적 한계(색수차, 제작 오차, 센서 포화)를 계산으로 미리 보정하거나 오히려 활용하는가'를 묻는 쪽으로 가고 있습니다.",
+      "confidence": "Medium",
+      "confidence_note": "도메인 Watch Lens로 계산광학 코어 4개 버킷(29편)을 직접 재검토해 확보한 3편 — 광학 하드웨어(메타렌즈)와 계산 복원(스펙트럼 샘플링, 포화 보정)이 함께 설계된다는 공통점은 뚜렷하지만, 절대 편수가 적어 High로 올리지 않음",
+      "lab_action": "Moiré Meta-spectrometer의 content-adaptive recursive sampling 알고리즘을 우리 Fourier ptychography 조명 패턴 설계에 이식해, 균일 샘플링 대비 필요한 조명 패턴 수를 몇 배 줄일 수 있는지 시뮬레이션으로 확인하고, Process-aware metalens의 식각 깊이 보정 방법론을 우리 메타옵틱스 공동연구 마스크 설계 리뷰 체크리스트에 반영"
+    },
+    {
+      "cluster": "산란·왜곡 환경에서의 광학 복원이 조용히 다시 등장 (관찰 중)",
+      "papers": [
+        {"title": "Deep learning based restoration of partially coherent Bessel beams in atmospheric turbulence", "journal_or_source": "Optics & Laser Technology (저널)"},
+        {"title": "Dual-Domain Self-Supervised Artifact Removal Framework for Photoacoustic Computed Tomography", "arxiv_id": "https://arxiv.org/abs/2607.16304", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "두 편 모두 '측정 과정에서 생긴 왜곡을 물리 모델과 학습을 결합해 지운다'는 공통 문제의식을 갖고 있습니다. Bessel beam restoration은 대기 난류를 통과하며 일관성이 흐트러진 빔을 딥러닝으로 복원하는 문제를 다루고, Photoacoustic CT 논문은 광음향 단층촬영에서 검출기가 드문드문 배치된 조건(sparse detection)에서 생기는 재구성 아티팩트를, 역투영 기반과 푸리에 기반 두 재구성 방식의 아티팩트 패턴이 다르다는 점을 활용해 자기지도학습으로 제거합니다. 둘 다 계산광학의 핵심 문제(측정 물리 모델을 활용한 아티팩트 제거)를 다루지만 응용 분야(자유공간 광학 전달 vs 의료 영상)가 갈라져 있어, 아직 하나의 흐름이라 부르기엔 이릅니다.",
+      "confidence": "Low",
+      "confidence_note": "2편뿐이고 응용 도메인이 서로 달라 클러스터라기보다 관찰 중인 신호로 표시",
+      "lab_action": "Photoacoustic CT의 dual-domain(역투영/푸리에 재구성 간 아티팩트 패턴 차이) self-supervised 프레임워크를, 우리 산란매질 이미징에서 서로 다른 두 재구성 알고리즘(예: 역산란 모델 기반 vs 데이터 기반) 사이의 아티팩트 불일치를 자기지도 신호로 쓸 수 있는지 소규모 실험으로 확인"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "Does SR Preserve Defect Evidence의 이중 평가 프로토콜을 계산 이미징 초해상도 파이프라인에 도입",
+      "claim": "재구성 지표(PSNR/SSIM)와 다운스트림 검출·정량 분석 지표를 분리해 같은 초해상도 모델을 이중 평가하면, 우리 위상 이미징/현미경 초해상도 파이프라인에서도 지금까지 최선으로 골랐던 모델이 실제로는 미세 구조 정보를 잃고 있을 가능성을 확인할 수 있다.",
+      "supporting_papers": [
+        {"title": "Does Super-Resolution Preserve Defect Evidence? A Low-False-Call Benchmark for Semiconductor Inspection", "arxiv": "https://arxiv.org/abs/2607.17401"}
+      ]
+    },
+    {
+      "title": "SPARE-GS/QIRF의 예산 제약 압축을 계산 이미징 3DGS 기반 다시점 복원에 적용",
+      "claim": "가우시안 primitive 예산을 공간적으로 재배분하는 SPARE-GS와, 겹치는 가우시안 사이의 비직교 중복을 제거하는 QIRF의 압축 방식이, 우리 다시점 위상/산란매질 3D 복원에서도 가우시안 개수 대비 복원 정확도를 개선할 수 있다.",
+      "supporting_papers": [
+        {"title": "SPARE-GS: Structural Parsimony and Resource Efficiency for 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2607.16624"},
+        {"title": "QIRF: Quantum-Inspired Non-Orthogonal Function-Space Compression for 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2607.18067"}
+      ]
+    },
+    {
+      "title": "Moiré Meta-spectrometer의 적응형 샘플링을 Fourier ptychography 조명 설계에 이식",
+      "claim": "스펙트럼의 정보 밀도에 따라 측정 횟수를 그때그때 조절하는 content-adaptive recursive sampling 알고리즘이, 우리 Fourier ptychography의 LED 조명 패턴 설계에도 적용되어 균일 조명 스캔 대비 필요한 촬영 수를 줄일 수 있다.",
+      "supporting_papers": [
+        {"title": "Broadband Content-Adaptive Moiré Meta-spectrometer", "arxiv": "https://arxiv.org/abs/2607.17256"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "date": "2026-07-21",
+  "results": [
+    {
+      "benchmark": "Mip-NeRF 360 / Tanks and Temples / Deep Blending (13 scenes)",
+      "metric": "storage compression",
+      "value": 3.54,
+      "value_str": "71.7% storage 절감 (약 3.54배 압축), PSNR +0.10dB, 렌더링 속도 +34.3%",
+      "paper": "https://arxiv.org/abs/2607.18067",
+      "paper_title": "QIRF: Quantum-Inspired Non-Orthogonal Function-Space Compression for 3D Gaussian Splatting"
+    },
+    {
+      "benchmark": "표준/가속/구조개선 3DGS 파이프라인 전반",
+      "metric": "Gaussian count / training time reduction",
+      "value": 30.38,
+      "value_str": "Gaussian 개수 평균 30.38% 감소, 학습 시간 평균 23.81% 감소 (PSNR은 오히려 개선)",
+      "paper": "https://arxiv.org/abs/2607.16624",
+      "paper_title": "SPARE-GS: Structural Parsimony and Resource Efficiency for 3D Gaussian Splatting"
+    },
+    {
+      "benchmark": "BungeeNeRF / Mip-NeRF 360 / Tanks and Temples (20% random packet loss)",
+      "metric": "PSNR degradation vs lossless reference",
+      "value": 3.0,
+      "value_str": "무손실 HAC++ 대비 평균 PSNR 저하를 약 3dB로 제한 (패킷 20% 유실 조건)",
+      "paper": "https://arxiv.org/abs/2607.17916",
+      "paper_title": "Packet-Loss Robust 3D Gaussian Compression via Atomic Packaging and GNN-based Error Concealment"
+    }
+  ]
+}
