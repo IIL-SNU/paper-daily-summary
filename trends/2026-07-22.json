@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-22",
+  "source_listing_date": "2026-07-22",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 177,
+      "cs.CV": 93,
+      "cs.AI": 209,
+      "eess.IV": 8,
+      "eess.SP": 18
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 422
+  },
+  "totals": {
+    "total_scanned": 809,
+    "selected": 220
+  },
+  "classified": {
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 6,
+      "Meta-Optics/Diffractive": 10,
+      "Light-Field/Novel Sensors": 3,
+      "Tomography/3D Imaging": 36,
+      "Virtual Staining/Pathology": 19,
+      "Reconstruction/Inverse Problems": 24,
+      "Deep Learning Methods": 122
+    }
+  },
+  "note": "2026-07-22(수)는 5개 추적 카테고리 arXiv /new listing이 모두 'Wednesday, 22 July 2026'을 가리켜 source_mode=new로 확정했다. arXiv 505편(new+cross)과 Crossref/OpenAlex 저널 422편을 병합 스캔 809건 중 220건(27.2%)을 ROI로 선정했다 — 최근 밴드(25~32%) 안에는 들지만 하단에 가깝다. 계산광학 코어 4개 버킷 중 Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 오늘 정확히 0편으로 비었고, Phase Imaging/Holography(6편)·Meta-Optics/Diffractive(10편)도 대부분(Phase 5/6, Meta-Optics 7/10)이 통신용 metasurface·MIMO 채널·THz 안테나·뇌파 홀로그래피 비유처럼 이미징과 무관한 키워드 우연 매칭이다. Virtual Staining/Pathology(19편)는 관련 신호가 사실상 0편으로, 'staining'이 DNA/파라핀 염색 기법·조직학 실습·가상 관광 같은 무관한 저널과 우연히 겹쳤다. 대신 오늘 뚜렷한 축은 세 가지다 — (1) Tomography/3D Imaging(36편) 안에서 3D Gaussian Splatting이 정적 재구성을 넘어 장면 애니메이션(AniGS)·언어 지칭 분할(ZeroSplat)·부분 가시성 아바타(FlexiAvatar)·압축 표현(ECoNGS)으로 활용 범위를 넓힌 4편, (2) Deep Learning Methods 안에서 다중모드 광섬유·epsilon-near-zero 산란매질을 통과하는 이미징을 딥러닝으로 복원하는 저널 2편이 조용히 재부상, (3) Reconstruction/Inverse Problems(24편) 안에서 선형 역문제의 diffusion posterior sampling 이론(DDIM 기반)과 의료영상 결측 모달리티 생성 응용이 같은 날 나와 역문제 solver가 반복 최적화에서 diffusion/flow 기반 posterior sampling으로 수렴하는 신호. classify.py 선택 비율(27.2%)은 정상 범위이므로 parser 오류는 아니며, 오늘은 계산광학 코어 자체가 절대적으로 얇았던 조용한 하루로 판단한다."
+}

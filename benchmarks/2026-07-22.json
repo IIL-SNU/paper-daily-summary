@@ -1,0 +1,29 @@
+{
+  "date": "2026-07-22",
+  "results": [
+    {
+      "benchmark": "iVR-GS 대비 univariate/multivariate VolVis 장면",
+      "metric": "PSNR / model size / training time",
+      "value": 2.2,
+      "value_str": "PSNR 최대 +2.2dB, 모델 크기 최대 6.1배 축소, 학습 시간 최대 5.9배 단축 (iVR-GS 대비)",
+      "paper": "https://arxiv.org/abs/2607.18466",
+      "paper_title": "ECoNGS: Efficient Compressive Neural Gaussian Splats for Volume Visualization"
+    },
+    {
+      "benchmark": "NeuMan / ZJU-MoCap / WildAvatar / talk-show clips / INSTA",
+      "metric": "PSNR improvement over SOTA",
+      "value": 3.0,
+      "value_str": "관측 영역만 최적화해 데이터셋 평균 PSNR 약 3% 개선, 실행시간·메모리도 절감",
+      "paper": "https://arxiv.org/abs/2607.19100",
+      "paper_title": "FlexiAvatar: Unified 3D Gaussian Human Avatars Under Arbitrary Body Visibility"
+    },
+    {
+      "benchmark": "53x53x53x28 텐서 볼륨, parallel-beam X선 산란 텐서 토모그래피",
+      "metric": "reconstruction time reduction",
+      "value": 10.0,
+      "value_str": "반복 재구성 대비 10배 이상 빠른 직접 재구성으로 상용 하드웨어에서 1초 안에 복원",
+      "paper": "https://arxiv.org/abs/2607.19124",
+      "paper_title": "Fast reconstruction of tensor tomographic X-ray scattering data for real-time applications"
+    }
+  ]
+}

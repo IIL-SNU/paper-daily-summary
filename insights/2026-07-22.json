@@ -1,0 +1,94 @@
+{
+  "date": "2026-07-22",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "3D Gaussian Splatting이 '한 장면을 잘 재구성하는가'에서 '재구성한 장면을 움직이고, 지칭하고, 부분만 봐도 완성하는가'로 활용 범위를 넓힘",
+      "papers": [
+        {"title": "ECoNGS: Efficient Compressive Neural Gaussian Splats for Volume Visualization", "arxiv_id": "https://arxiv.org/abs/2607.18466", "journal_or_source": "arXiv cs.CV"},
+        {"title": "AniGS: Bridging Rendering and Diffusion Prior for 3D Scene Animation", "arxiv_id": "https://arxiv.org/abs/2607.18539", "journal_or_source": "arXiv cs.CV"},
+        {"title": "ZeroSplat: Generalized Referring Segmentation in 3D Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2607.18801", "journal_or_source": "arXiv cs.CV"},
+        {"title": "FlexiAvatar: Unified 3D Gaussian Human Avatars Under Arbitrary Body Visibility", "arxiv_id": "https://arxiv.org/abs/2607.19100", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "3D Gaussian Splatting(3DGS)은 장면을 수많은 3차원 가우시안 조각으로 표현해 새 시점의 영상을 실시간으로 만들어내는 방법입니다. 어제(7/21)는 이 표현을 압축하고 전송 손실에 견디게 만드는 배포 조건 검증이 중심이었는데, 오늘은 결이 다릅니다. ECoNGS는 대용량 볼륨 데이터를 시각화할 때 가우시안을 명시적으로 다 저장하는 대신 앵커 점에서 필요할 때마다 예측해내는 방식으로 저장 공간과 학습 시간을 함께 줄였고, AniGS는 원래 정지 화면이던 재구성 장면에 사전학습된 영상 diffusion 모델의 사전지식을 빌려 초목이 흔들리는 것 같은 미세한 움직임을 입힙니다. ZeroSplat은 '이 물체를 가리켜줘' 같은 언어 지시를 3D 공간에서 여러 개, 심지어 0개까지 처리할 수 있게 확장했고, FlexiAvatar는 사람 아바타를 재구성할 때 실제로 카메라에 보인 신체 부위만 최적화해 안 보인 팔다리 때문에 전체 품질이 같이 떨어지는 문제를 없앴습니다. 네 편을 같이 보면, 3DGS 연구의 무게중심이 '한 장면을 얼마나 예쁘게 재구성하는가'에서 '재구성한 장면을 어떻게 계속 편집·조작·활용할 수 있는가'로 넘어가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "같은 버킷(Tomography/3D Imaging)에서 오늘만 4편이 나왔고 방향(재구성 이후의 활용성 확장)이 뚜렷하지만, 서로 다른 하위 문제(압축·애니메이션·분할·아바타)라 하나의 기술적 돌파라기보다는 병렬적 확장 흐름에 가까움",
+      "lab_action": "ECoNGS의 앵커 기반 압축 방식을 우리 계산 이미징 다시점 위상/산란매질 3DGS 재구성 파이프라인에 적용해 iVR-GS 스타일 baseline 대비 PSNR·모델 크기·학습 시간 곡선을 그리고, FlexiAvatar의 '관측 영역만 최적화' 전략이 우리 부분 시야(occlusion) 촬영 데이터에서도 동일하게 런타임·메모리를 줄이는지 검증"
+    },
+    {
+      "cluster": "산란매질을 통과하는 이미징이 광섬유 내시경과 비선형 업컨버전 두 갈래에서 딥러닝으로 조용히 재부상",
+      "papers": [
+        {"title": "Prior-enhanced deep learning for anti-disturbance imaging through dynamic multimode fibers", "arxiv_id": "https://doi.org/10.1117/1.apn.5.5.056015", "journal_or_source": "Journal (Advanced Photonics Nexus)"},
+        {"title": "Hybrid deep reconstruction for vignetting-free upconversion imaging through scattering in epsilon-near-zero materials", "arxiv_id": "https://doi.org/10.1038/s41377-026-02375-6", "journal_or_source": "Journal (Light: Science & Applications)"}
+      ],
+      "why": "두 논문 모두 '빛이 매질을 통과하면서 흩어지고 뒤섞여 원래 영상이 사라진다'는 계산광학의 오래된 문제를 딥러닝으로 다시 다룹니다. 다중모드 광섬유(MMF) 내시경 논문은 광섬유가 살짝만 휘거나 흔들려도 스펙클 패턴이 완전히 달라져 영상 복원이 무너지는 문제를, 사전 지식을 모델에 주입한 딥러닝으로 이런 흔들림에 강건하게 만듭니다. epsilon-near-zero(굴절률이 거의 0에 가까운 특수 물질) 업컨버전 이미징 논문은 산란매질 너머의 물체를 비선형 광학 효과로 다른 파장으로 변환해 찍는 과정에서 생기는 비네팅(가장자리 어두워짐) 왜곡을, 물리 모델과 학습을 결합한 하이브리드 재구성으로 없앱니다. 두 편은 응용(내시경 vs 비선형 분광 이미징)과 물리적 메커니즘(모드 혼합 vs 비선형 업컨버전)이 다르지만, '측정 과정에서 생긴 물리적 왜곡을 모델 기반과 딥러닝을 결합해 지운다'는 계산광학 핵심 문제의식을 공유합니다.",
+      "confidence": "Low",
+      "confidence_note": "2편뿐이고 둘 다 저널(JNL)이라 방법론 세부는 abstract 기준입니다. 다만 둘 다 계산광학 코어 문제(산란매질 통과 이미징)를 정면으로 다뤄, 도메인 Watch Lens 규칙(2편 이상 시 독립 클러스터 후보)에 따라 상단으로 올렸습니다",
+      "lab_action": "다중모드 광섬유 내시경 논문의 사전지식 주입 방식을 우리 렌즈리스/산란매질 이미징 파이프라인의 동적 매질 변화(진동·온도 드리프트) 강건성 실험에 이식하고, ENZ 업컨버전 논문의 비네팅 보정 하이브리드 재구성을 우리 비선형 업컨버전 실험 셋업의 가장자리 왜곡 정량 평가에 참고"
+    },
+    {
+      "cluster": "역문제를 푸는 기본 도구가 반복 최적화에서 diffusion/flow 기반 posterior sampling으로 넘어가는 신호가 이론과 응용 양쪽에서 동시에 등장",
+      "papers": [
+        {"title": "Provable diffusion-based posterior sampling for linear inverse problems via DDIM", "arxiv_id": "https://arxiv.org/abs/2607.19333", "journal_or_source": "arXiv cs.LG"},
+        {"title": "Posterior Samplings are Missing Modalities Generators for Medical Image Translation", "arxiv_id": "https://arxiv.org/abs/2607.18763", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Blind Hyperspectral and Multispectral Images Fusion: A Unified Tensor Fusion Framework from Coupled Inverse Problem Perspective", "arxiv_id": "https://doi.org/10.1137/25m1814098", "journal_or_source": "Journal (SIAM)"},
+        {"title": "Operator learning in nonlinear optics beyond perturbation theory", "arxiv_id": "https://doi.org/10.1088/1402-4896/ae8e57", "journal_or_source": "Journal (Physica Scripta)"}
+      ],
+      "why": "지금까지 선형/비선형 역문제(측정값에서 원래 신호를 복원하는 문제)는 대개 반복적으로 값을 조금씩 고쳐나가는 최적화나, 미리 정해둔 물리 모델을 그대로 쓰는 방식이 주류였습니다. 오늘 나온 네 편은 이 틀을 두 방향으로 벗어납니다. Provable Posterior Sampling via DDIM은 diffusion 모델을 사전지식(prior)으로 써서 선형 역문제를 푸는 posterior sampling 방법에 '실제로 참값 분포에 수렴한다'는 수학적 보장을 처음으로 붙였고, Posterior Samplings are Missing Modalities Generators는 같은 아이디어(측정값과 일치하도록 생성 과정을 유도하는 posterior sampling)를 MRI에서 촬영하지 못한 영상 모달리티를 만들어내는 실제 임상 문제에 적용해, 모달리티 조합이 바뀔 때마다 다시 학습할 필요 없이 하나의 모델로 대응합니다. 반면 Hyperspectral/Multispectral Fusion과 Operator Learning in Nonlinear Optics는 diffusion이 아니라 '물리 연산자 자체를 데이터로부터 학습'하는 쪽입니다 — 전자는 흐림 정도를 모른 채로 두 해상도의 영상을 결합하는 연산자를, 후자는 강한 레이저와 기체 사이의 비선형 반응을 지배하는 연산자를 학습합니다. 네 편을 같이 보면, 역문제 solver가 '고정된 물리 모델 + 반복 최적화'라는 단일 틀에서 벗어나, diffusion posterior sampling과 학습된 연산자라는 두 갈래로 다양화되고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "diffusion posterior sampling 2편은 이론과 임상 응용으로 성격이 다르지만 같은 방법론 계열이라 근거가 뚜렷하고, 나머지 2편(연산자 학습)은 응용 도메인이 갈려 있어 '역문제 solver 다양화'라는 상위 주장은 Medium으로 제한",
+      "lab_action": "Provable Posterior Sampling via DDIM의 좌표별(coordinate-wise) 업데이트 규칙을 우리 위상 복원/산란매질 역문제 파이프라인에 적용해 기존 반복 최적화 기반 solver 대비 복원 정확도와 수렴 속도를 비교하고, Missing Modalities 논문의 many-to-one 샘플링 전략을 우리 다중 파장/다중 조명 조건 복원에서 일부 측정이 누락됐을 때의 강건성 실험에 이식"
+    },
+    {
+      "cluster": "메타옵틱스·위상 이미징이 색수차 보정과 광학 미분 같은 아날로그 연산으로 다시 좁게 얼굴을 비침 (관찰 중, 대부분 title-only)",
+      "papers": [
+        {"title": "Design of mid-infrared broadband achromatic metalens via phase-intensity radially partitioned cooperative regulation", "arxiv_id": "https://doi.org/10.1016/j.optlaseng.2026.110020", "journal_or_source": "Journal (Optics and Lasers in Engineering)"},
+        {"title": "Low-loss amorphous silicon dielectrics expand visible metasurface design space", "arxiv_id": "https://doi.org/10.1557/s43577-026-01151-6", "journal_or_source": "Journal (MRS Bulletin)"},
+        {"title": "Metasurface-based optical differentiation: principles, applications, and advances", "arxiv_id": "https://doi.org/10.1117/1.apn.5.5.054001", "journal_or_source": "Journal (Advanced Photonics Nexus)"},
+        {"title": "Single-Scan Multiplexed Optical Scanning Holography Using Dual Off-Axis Time-Dependent Fresnel Zone Plates", "arxiv_id": "https://doi.org/10.1364/oe.607143", "journal_or_source": "Journal (Optics Express)"}
+      ],
+      "why": "오늘 Meta-Optics/Diffractive(10편)와 Phase Imaging/Holography(6편) 두 버킷은 대부분 통신용 안테나·THz 변조기처럼 이미징과 무관했지만, 그 안에서 네 편이 계산광학 코어에 실제로 닿는 신호를 냅니다. 광대역 achromatic metalens 논문은 여러 파장의 초점이 어긋나는 색수차를 위상-강도를 함께 조절해 중적외선 대역에서 줄이는 설계를 다루고, 저손실 비정질 실리콘 유전체 논문은 가시광 메타표면을 설계할 수 있는 재료·형상의 폭을 넓힙니다. Metasurface-based Optical Differentiation은 메타표면으로 미분 같은 수학 연산을 빛의 전파만으로 수행해, 전자회로 없이 아날로그 광학 컴퓨팅으로 실시간 영상 처리를 하려는 흐름을 정리합니다. Single-Scan Multiplexed Holography는 두 개의 시간에 따라 달라지는 Fresnel zone plate를 조합해 한 번의 스캔으로 여러 홀로그램 채널을 동시에 얻습니다. 다만 이 중 세 편은 abstract가 제공되지 않아 제목/저널 정보만으로 판단한 title-only backfill이라, 방향성은 있지만 본문 확인 전까지는 '관찰 중'으로 남겨둡니다.",
+      "confidence": "Low",
+      "confidence_note": "4편 중 3편이 abstract 없이 제목만으로 분류된 title-only 신호라 근거가 약함. 방향성(색수차 보정, 아날로그 광학 연산, 홀로그래피 다중화)은 계산광학 코어와 맞닿아 있어 Watch Lens로 남겨두되 상단 클러스터로 올리지 않음",
+      "lab_action": "Metasurface-based Optical Differentiation 리뷰를 본문까지 확인해 우리 Fourier ptychography 조명계에 아날로그 광학 미분을 전처리 단으로 넣을 수 있는지 타당성만 우선 검토하고, 나머지 title-only 3편은 다음 실행에서 OpenAlex enrich로 abstract 백필이 되는지 재확인"
+    },
+    {
+      "cluster": "이미지 복원·초해상도 방법이 다목적 통합, 실시간 하드웨어, 신호처리 특화로 갈라짐",
+      "papers": [
+        {"title": "One Unified Image Restoration Network for Deblurring, Deraining, Desnowing, and Low-Light Enhancement", "arxiv_id": "https://doi.org/10.1016/j.asoc.2026.115995", "journal_or_source": "Journal (Applied Soft Computing)"},
+        {"title": "Computational Physics Framework for Real-Time Imaging Denoising: FPGA-Based DRAM Optimization with High-Level Synthesis", "arxiv_id": "https://doi.org/10.1016/j.cpc.2026.110312", "journal_or_source": "Journal (Computer Physics Communications)"},
+        {"title": "Fluctuation-based Image Scanning Microscopy based on Multiple Signal Classification for Three-dimensional Super-resolution Imaging", "arxiv_id": "https://doi.org/10.1109/jphot.2026.3715545", "journal_or_source": "Journal (IEEE Photonics Journal)"},
+        {"title": "Think Sparse, Predict Dense: Continuous Thought Machines for Image Super-Resolution", "arxiv_id": "https://arxiv.org/abs/2607.18856", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "네 편은 모두 이미지 복원·초해상도를 다루지만 지향점이 서로 다릅니다. Unified Image Restoration Network는 디블러링·디레이닝·디스노잉·저조도 개선을 하나의 네트워크로 처리해 응용마다 모델을 따로 두지 않으려 하고, FPGA 기반 실시간 디노이징 논문은 반대로 모델 범용성보다 DRAM 접근을 최적화해 하드웨어에서 실시간으로 돌아가는 속도를 우선합니다. Fluctuation-based ISM은 이미지 스캐닝 현미경에서 신호의 통계적 변동(fluctuation)을 다중 신호 분류(MUSIC) 알고리즘으로 분석해 3차원 초해상도를 얻는 신호처리 특화 접근이고, Think Sparse Predict Dense는 반복적으로 생각을 이어가는 continuous thought machine 구조를 초해상도에 적용한 새로운 아키텍처 실험입니다. 네 편을 같이 보면, 이미지 복원 연구가 '하나의 최선의 모델'을 향해 수렴하기보다 다목적 통합, 하드웨어 실시간성, 신호처리 특화, 새 아키텍처 탐색이라는 서로 다른 축으로 갈라지고 있다는 뜻입니다.",
+      "confidence": "Low",
+      "confidence_note": "4편이 모두 이미지 복원/초해상도라는 큰 우산 아래 있지만 각각 지향점이 달라 하나의 흐름이라기보다 병렬적 다변화로 봄. Deep Learning Methods catch-all에서 뽑은 신호라 버킷 편향 가능성 있음",
+      "lab_action": "Unified Image Restoration Network의 멀티태스크 구조가 우리 계산 이미징 파이프라인의 여러 열화 유형(산란·저조도·블러)을 하나의 모델로 통합할 수 있는지 소규모 비교 실험을 하고, FPGA 실시간 디노이징의 DRAM 최적화 아이디어를 우리 현장 실험 장비의 실시간 전처리 보드 설계 검토에 참고"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "ECoNGS의 앵커 기반 압축 표현을 계산 이미징 다시점 3DGS 재구성 파이프라인에 적용",
+      "claim": "명시적 가우시안을 다 저장하지 않고 앵커 점에서 필요할 때 예측하는 압축 전략이, 위상/산란매질 3D 복원에서도 iVR-GS급 baseline 대비 PSNR·모델 크기·학습 시간을 함께 개선하는지 검증한다.",
+      "supporting_papers": [
+        {"title": "ECoNGS: Efficient Compressive Neural Gaussian Splats for Volume Visualization", "arxiv": "https://arxiv.org/abs/2607.18466"}
+      ]
+    },
+    {
+      "title": "Provable Posterior Sampling via DDIM을 우리 역문제 solver의 대안으로 벤치마크",
+      "claim": "좌표별 posterior sampling 규칙이 우리 위상 복원/산란매질 역문제에서 기존 반복 최적화 solver 대비 정확도·수렴 속도 면에서 실제로 우위가 있는지 확인한다.",
+      "supporting_papers": [
+        {"title": "Provable diffusion-based posterior sampling for linear inverse problems via DDIM", "arxiv": "https://arxiv.org/abs/2607.19333"},
+        {"title": "Posterior Samplings are Missing Modalities Generators for Medical Image Translation", "arxiv": "https://arxiv.org/abs/2607.18763"}
+      ]
+    },
+    {
+      "title": "다중모드 광섬유·ENZ 산란매질 이미징의 강건성 전략을 우리 렌즈리스 파이프라인에 이식",
+      "claim": "동적 매질 변화에 강건한 사전지식 주입 방식과 비네팅 보정 하이브리드 재구성이, 우리 산란매질 촬영 환경의 진동·드리프트 조건에서도 효과가 있는지 소규모 실험으로 확인한다.",
+      "supporting_papers": [
+        {"title": "Prior-enhanced deep learning for anti-disturbance imaging through dynamic multimode fibers", "arxiv": "https://doi.org/10.1117/1.apn.5.5.056015"},
+        {"title": "Hybrid deep reconstruction for vignetting-free upconversion imaging through scattering in epsilon-near-zero materials", "arxiv": "https://doi.org/10.1038/s41377-026-02375-6"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-07-22</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-07-22 (수요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-07-22 (수요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Wednesday, 22 July 2026"으로 확인됨</div>
+  <div>🔢 arXiv: cs.LG 177 · cs.CV 93 · cs.AI 209 · eess.IV 8 · eess.SP 18 (합계 505편, new+cross, replacement 제외)</div>
+  <div>🔢 병합: arXiv+저널 병합 스캔 809건 · ROI 배정 220건 (27.2%)</div>
+  <div>⚠️ 오늘은 계산광학 코어가 특히 얇습니다. Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 정확히 0편이고, Phase Imaging/Holography(6편)·Meta-Optics/Diffractive(10편)도 대부분 통신용 metasurface·MIMO 채널 논문이라 실제 이미징 신호는 4편뿐입니다. Virtual Staining/Pathology(19편)도 관련 신호가 사실상 0편입니다. 아래 클러스터·부록에서는 실제 신호만 추립니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 가장 뚜렷한 축은 <strong>3D Gaussian Splatting(3DGS) 연구가 "한 장면을 잘 재구성하는가"를 넘어 "재구성한 장면을 움직이고, 언어로 지칭하고, 일부만 보여도 완성하는가"로 활용 범위를 넓히는 것</strong>입니다. 어제(7/21)는 3DGS를 압축하고 전송 손실에 견디게 만드는 배포 조건 검증이 중심이었다면, 오늘은 재구성 이후 그 표현을 어떻게 계속 편집·조작할 수 있는지를 묻는 네 편(ECoNGS, AniGS, ZeroSplat, FlexiAvatar)이 나왔습니다. 두 번째 축은 <strong>산란매질을 통과하는 이미징이 광섬유 내시경과 비선형 업컨버전 두 갈래에서 저널을 통해 조용히 재부상</strong>한 것이고, 세 번째 축은 <strong>역문제를 푸는 기본 도구가 반복 최적화에서 diffusion/flow 기반 posterior sampling으로 넘어가는 신호</strong>가 이론(선형 역문제의 수렴 증명)과 응용(MRI 결측 모달리티 생성) 양쪽에서 같은 날 나온 것입니다. 다만 오늘은 전체 ROI 선정이 220건(27.2%)으로 최근 밴드(25~32%)의 하단이라, 위 세 축 모두 절대 편수가 많지 않은 조용한 하루였습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(7/22, 수)은 어제(7/21, 화)와 이어서 보면 3DGS라는 표현 자체는 계속 화두지만 질문이 완전히 바뀌었습니다. 어제는 3DGS 8편이 몰리면서 "저장·전송·촬영 조건이 나빠져도 계속 쓸 수 있는가"라는 배포 조건 검증이 중심이었는데, 오늘은 3DGS 4편이 "재구성한 장면을 어떻게 계속 편집·조작·활용할 수 있는가"를 묻습니다. 대표 논문 겹침은 없습니다. 계산광학 코어(Fourier Ptychography, Lensless, Phase Imaging, Meta-Optics)는 어제도 얇았지만(6~7편) 오늘은 더 얇아져(4편) 최근 며칠 중 가장 조용한 날입니다.</p>
+<p>오늘 새로 뚜렷해진 흐름은 역문제 solver의 다양화입니다. 그동안 계산 이미징의 역문제(측정값에서 원래 신호를 복원하는 문제)는 물리 모델을 고정해두고 반복적으로 최적화하는 방식이 표준이었는데, 오늘 diffusion 기반 posterior sampling에 수학적 수렴 보장을 붙인 이론 논문과, 같은 아이디어를 MRI 결측 모달리티 생성이라는 실제 임상 문제에 적용한 응용 논문이 같은 날 나왔습니다. 산란매질 통과 이미징(다중모드 광섬유, epsilon-near-zero 업컨버전)도 계산광학 코어가 얇은 와중에 저널을 통해 조용히 재부상한 신호입니다.</p>
+<p>다음 관찰 포인트는 (1) 3DGS의 "재구성 이후 활용" 흐름(애니메이션·언어 지칭·부분 가시성)이 이번 주 안에 표준 벤치마크로 서로 비교되기 시작하는지, (2) diffusion posterior sampling이 계산 이미징 역문제(위상 복원, 산란매질 복원)에도 직접 적용되는 논문이 나오는지, (3) 계산광학 코어(Fourier Ptychography, Lensless, Phase Imaging)가 이번 주 안에 절대 편수를 회복하는지입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(7/21, 화)는 3DGS 8편이 압축·강건성·최적화 안정성이라는 배포 조건 검증에 몰렸고, 초해상도 평가 기준이 "보기 좋은가"에서 "원래 있어야 할 정보가 남아 있는가"로 이동하는 흐름, 메타옵틱스의 하드웨어 한계 계산 보정 흐름이 뚜렷했습니다. 오늘은 이 세 흐름 모두 후속 논문이 이어지지 않았습니다. 대신 3DGS는 4편으로 편수는 줄었지만 성격이 바뀌어 "배포 조건"에서 "재구성 이후 활용(편집·언어 지칭·부분 완성)"으로 질문이 넘어갔고(대표 논문 겹침 없음), 어제는 없던 역문제 solver 다양화(diffusion posterior sampling)와 산란매질 통과 이미징 재부상이라는 두 개의 새 신호가 생겼습니다. 계산광학 코어 절대 편수는 어제(6~7편 실질 신호)보다 오늘(4편)이 더 적어, 이번 주 들어 가장 얇은 하루입니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>3D Gaussian Splatting이 "한 장면을 잘 재구성하는가"에서 "재구성한 장면을 움직이고, 지칭하고, 부분만 봐도 완성하는가"로 활용 범위를 넓힘</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.18466" target=_blank>ECoNGS: Efficient Compressive Neural Gaussian Splats</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.18539" target=_blank>AniGS: Bridging Rendering and Diffusion Prior for 3D Scene Animation</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.18801" target=_blank>ZeroSplat: Generalized Referring Segmentation in 3DGS</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.19100" target=_blank>FlexiAvatar: Unified 3D Gaussian Human Avatars</a> <span class=pill>CV</span>
+  </td>
+  <td>3D Gaussian Splatting(3DGS)은 장면을 수많은 3차원 가우시안 조각으로 표현해 새 시점의 영상을 실시간으로 만들어내는 방법입니다. 어제(7/21)는 이 표현을 압축하고 전송 손실에 견디게 만드는 배포 조건 검증이 중심이었는데, 오늘은 결이 다릅니다. ECoNGS는 볼륨 데이터를 시각화할 때 가우시안을 다 저장하는 대신 앵커 점에서 필요할 때마다 예측해내 저장 공간과 학습 시간을 함께 줄였고, AniGS는 원래 정지 화면이던 재구성 장면에 사전학습된 영상 diffusion 모델의 사전지식을 빌려 초목이 흔들리는 것 같은 미세한 움직임을 입힙니다. ZeroSplat은 "이 물체를 가리켜줘" 같은 언어 지시를 3D 공간에서 여러 개, 심지어 0개까지 처리할 수 있게 확장했고, FlexiAvatar는 사람 아바타를 재구성할 때 실제로 카메라에 보인 신체 부위만 최적화해 안 보인 팔다리 때문에 전체 품질이 같이 떨어지는 문제를 없앴습니다. 네 편을 같이 보면, 3DGS 연구의 무게중심이 "한 장면을 얼마나 예쁘게 재구성하는가"에서 "재구성한 장면을 어떻게 계속 편집·조작·활용할 수 있는가"로 넘어가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>같은 버킷에서 오늘만 4편이 나왔고 방향(재구성 이후 활용성 확장)이 뚜렷하지만, 서로 다른 하위 문제(압축·애니메이션·분할·아바타)라 병렬적 확장 흐름에 가까움</small></td>
+  <td>ECoNGS의 앵커 기반 압축 방식을 우리 계산 이미징 다시점 위상/산란매질 3DGS 재구성 파이프라인에 적용해 iVR-GS급 baseline 대비 PSNR·모델 크기·학습 시간 곡선을 그리고, FlexiAvatar의 "관측 영역만 최적화" 전략이 우리 부분 시야(occlusion) 촬영 데이터에서도 런타임·메모리를 줄이는지 검증</td>
+</tr>
+<tr>
+  <td><strong>산란매질을 통과하는 이미징이 광섬유 내시경과 비선형 업컨버전 두 갈래에서 딥러닝으로 조용히 재부상</strong></td>
+  <td>
+    <span>Prior-enhanced deep learning for anti-disturbance imaging through dynamic multimode fibers</span> <span class=pill>JNL</span><br>
+    <span>Hybrid deep reconstruction for vignetting-free upconversion imaging through scattering in ENZ materials</span> <span class=pill>JNL</span>
+  </td>
+  <td>두 논문 모두 "빛이 매질을 통과하면서 흩어지고 뒤섞여 원래 영상이 사라진다"는 계산광학의 오래된 문제를 딥러닝으로 다시 다룹니다. 다중모드 광섬유(MMF) 내시경 논문은 광섬유가 살짝만 휘거나 흔들려도 스펙클 패턴이 완전히 달라져 영상 복원이 무너지는 문제를, 사전 지식을 모델에 주입해 이런 흔들림에 강건하게 만듭니다. epsilon-near-zero(굴절률이 거의 0에 가까운 특수 물질) 업컨버전 이미징 논문은 산란매질 너머의 물체를 비선형 광학 효과로 다른 파장으로 변환해 찍는 과정에서 생기는 비네팅(가장자리 어두워짐) 왜곡을, 물리 모델과 학습을 결합한 하이브리드 재구성으로 없앱니다. 두 편은 응용(내시경 vs 비선형 분광 이미징)과 물리적 메커니즘(모드 혼합 vs 비선형 업컨버전)이 다르지만, "측정 과정에서 생긴 물리적 왜곡을 모델 기반과 딥러닝을 결합해 지운다"는 계산광학 핵심 문제의식을 공유합니다.</td>
+  <td>Low<br><small>2편뿐이고 둘 다 저널(JNL)이라 방법론 세부는 abstract 기준. 계산광학 코어 문제를 정면으로 다뤄 도메인 Watch Lens 규칙에 따라 상단으로 올림</small></td>
+  <td>다중모드 광섬유 내시경 논문의 사전지식 주입 방식을 우리 렌즈리스/산란매질 이미징 파이프라인의 동적 매질 변화(진동·온도 드리프트) 강건성 실험에 이식하고, ENZ 업컨버전 논문의 비네팅 보정 하이브리드 재구성을 우리 비선형 업컨버전 실험 셋업의 가장자리 왜곡 정량 평가에 참고</td>
+</tr>
+<tr>
+  <td><strong>역문제를 푸는 기본 도구가 반복 최적화에서 diffusion/flow 기반 posterior sampling으로 넘어가는 신호가 이론과 응용 양쪽에서 동시에 등장</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.19333" target=_blank>Provable diffusion-based posterior sampling for linear inverse problems via DDIM</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2607.18763" target=_blank>Posterior Samplings are Missing Modalities Generators for Medical Image Translation</a> <span class=pill>CV</span><br>
+    <span>Blind Hyperspectral and Multispectral Images Fusion (coupled inverse problem)</span> <span class=pill>JNL</span><br>
+    <span>Operator learning in nonlinear optics beyond perturbation theory</span> <span class=pill>JNL</span>
+  </td>
+  <td>지금까지 선형/비선형 역문제(측정값에서 원래 신호를 복원하는 문제)는 대개 반복적으로 값을 조금씩 고쳐나가는 최적화나, 미리 정해둔 물리 모델을 그대로 쓰는 방식이 주류였습니다. 오늘 나온 네 편은 이 틀을 두 방향으로 벗어납니다. Provable Posterior Sampling via DDIM은 diffusion 모델을 사전지식으로 써서 선형 역문제를 푸는 posterior sampling 방법에 "실제로 참값 분포에 수렴한다"는 수학적 보장을 처음으로 붙였고, Posterior Samplings are Missing Modalities Generators는 같은 아이디어를 MRI에서 촬영하지 못한 영상 모달리티를 만들어내는 실제 임상 문제에 적용해, 모달리티 조합이 바뀔 때마다 다시 학습할 필요 없이 하나의 모델로 대응합니다. 반면 Hyperspectral/Multispectral Fusion과 Operator Learning in Nonlinear Optics는 diffusion이 아니라 물리 연산자 자체를 데이터로부터 학습하는 쪽입니다. 네 편을 같이 보면, 역문제 solver가 "고정된 물리 모델 + 반복 최적화"라는 단일 틀에서 벗어나, diffusion posterior sampling과 학습된 연산자라는 두 갈래로 다양화되고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>diffusion posterior sampling 2편은 이론과 임상 응용으로 성격이 다르지만 같은 방법론 계열이라 근거가 뚜렷하고, 나머지 2편은 응용 도메인이 갈려 있어 상위 주장은 Medium으로 제한</small></td>
+  <td>Provable Posterior Sampling via DDIM의 좌표별 업데이트 규칙을 우리 위상 복원/산란매질 역문제 파이프라인에 적용해 기존 반복 최적화 solver 대비 복원 정확도·수렴 속도를 비교하고, Missing Modalities 논문의 many-to-one 샘플링 전략을 우리 다중 파장/다중 조명 조건 복원에서 일부 측정이 누락됐을 때의 강건성 실험에 이식</td>
+</tr>
+<tr>
+  <td><strong>메타옵틱스·위상 이미징이 색수차 보정과 광학 미분 같은 아날로그 연산으로 다시 좁게 얼굴을 비침 (관찰 중)</strong></td>
+  <td>
+    <span>Design of mid-infrared broadband achromatic metalens</span> <span class=pill>JNL</span><br>
+    <span>Low-loss amorphous silicon dielectrics expand visible metasurface design space</span> <span class=pill>JNL</span><br>
+    <span>Metasurface-based optical differentiation: principles, applications, and advances</span> <span class=pill>JNL</span><br>
+    <span>Single-Scan Multiplexed Optical Scanning Holography</span> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 Meta-Optics/Diffractive(10편)와 Phase Imaging/Holography(6편) 두 버킷은 대부분 통신용 안테나·THz 변조기처럼 이미징과 무관했지만, 그 안에서 네 편이 계산광학 코어에 실제로 닿는 신호를 냅니다. 광대역 achromatic metalens 논문은 여러 파장의 초점이 어긋나는 색수차를 위상-강도를 함께 조절해 중적외선 대역에서 줄이는 설계를 다루고, 저손실 비정질 실리콘 유전체 논문은 가시광 메타표면을 설계할 수 있는 재료·형상의 폭을 넓힙니다. Metasurface-based Optical Differentiation은 메타표면으로 미분 같은 수학 연산을 빛의 전파만으로 수행해, 전자회로 없이 아날로그 광학 컴퓨팅으로 실시간 영상 처리를 하려는 흐름을 정리합니다. Single-Scan Multiplexed Holography는 두 개의 시간에 따라 달라지는 Fresnel zone plate를 조합해 한 번의 스캔으로 여러 홀로그램 채널을 동시에 얻습니다. 다만 이 중 세 편은 abstract가 제공되지 않아 제목/저널 정보만으로 판단한 title-only backfill이라, 방향성은 있지만 본문 확인 전까지는 "관찰 중"으로 남겨둡니다.</td>
+  <td>Low<br><small>4편 중 3편이 abstract 없이 제목만으로 분류된 title-only 신호라 근거가 약함. 방향성은 계산광학 코어와 맞닿아 있어 Watch Lens로 남겨두되 상단 클러스터로 올리지 않음</small></td>
+  <td>Metasurface-based Optical Differentiation 리뷰를 본문까지 확인해 우리 Fourier ptychography 조명계에 아날로그 광학 미분을 전처리 단으로 넣을 수 있는지 타당성만 우선 검토하고, 나머지 title-only 3편은 다음 실행에서 OpenAlex enrich로 abstract 백필이 되는지 재확인</td>
+</tr>
+<tr>
+  <td><strong>이미지 복원·초해상도 방법이 다목적 통합, 실시간 하드웨어, 신호처리 특화로 갈라짐</strong></td>
+  <td>
+    <span>One Unified Image Restoration Network (Deblurring/Deraining/Desnowing/Low-Light)</span> <span class=pill>JNL</span><br>
+    <span>Computational Physics Framework for Real-Time Imaging Denoising (FPGA)</span> <span class=pill>JNL</span><br>
+    <span>Fluctuation-based Image Scanning Microscopy (MUSIC 3D super-resolution)</span> <span class=pill>JNL</span><br>
+    <a href="https://arxiv.org/abs/2607.18856" target=_blank>Think Sparse, Predict Dense: Continuous Thought Machines for SR</a> <span class=pill>CV</span>
+  </td>
+  <td>네 편은 모두 이미지 복원·초해상도를 다루지만 지향점이 서로 다릅니다. Unified Image Restoration Network는 디블러링·디레이닝·디스노잉·저조도 개선을 하나의 네트워크로 처리해 응용마다 모델을 따로 두지 않으려 하고, FPGA 기반 실시간 디노이징 논문은 반대로 모델 범용성보다 DRAM 접근을 최적화해 하드웨어에서 실시간으로 돌아가는 속도를 우선합니다. Fluctuation-based ISM은 이미지 스캐닝 현미경에서 신호의 통계적 변동을 다중 신호 분류(MUSIC) 알고리즘으로 분석해 3차원 초해상도를 얻는 신호처리 특화 접근이고, Think Sparse Predict Dense는 반복적으로 생각을 이어가는 continuous thought machine 구조를 초해상도에 적용한 새로운 아키텍처 실험입니다. 네 편을 같이 보면, 이미지 복원 연구가 하나의 최선 모델로 수렴하기보다 다목적 통합, 하드웨어 실시간성, 신호처리 특화, 새 아키텍처 탐색으로 갈라지고 있다는 뜻입니다.</td>
+  <td>Low<br><small>4편이 모두 이미지 복원/초해상도라는 큰 우산 아래 있지만 지향점이 달라 병렬적 다변화로 봄. Deep Learning Methods catch-all에서 뽑은 신호라 버킷 편향 가능성 있음</small></td>
+  <td>Unified Image Restoration Network의 멀티태스크 구조가 우리 계산 이미징의 여러 열화 유형(산란·저조도·블러)을 하나의 모델로 통합할 수 있는지 소규모 비교 실험을 하고, FPGA 실시간 디노이징의 DRAM 최적화 아이디어를 우리 현장 실험 장비의 실시간 전처리 보드 설계 검토에 참고</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ Watch-lens 점검: 계산광학 코어 4개 버킷(Fourier Ptychography 0편, Lensless 0편, Phase Imaging 6편, Meta-Optics 10편, 총 16편)을 전수 재확인한 결과 실제 이미징 방법론 신호는 4편입니다(위 4번째 클러스터). Phase Imaging 6편 중 5편은 이미지 압축·MIMO 채널·THz 안테나·뇌파 홀로그래피 비유처럼 "holography"·"wavefront" 키워드가 우연히 겹친 오탐이고, Meta-Optics 10편 중 7편은 통신 안테나·열 제어·THz 변조기용 metasurface로 이미징과 무관합니다. Tomography/3D Imaging(36편)은 오늘 3D/Scene 게이트(10편 이상) 기준을 충족해 위 1번째 클러스터(3DGS 4편)로 상단에 올렸으며, 나머지 대부분은 임상 CT/OCT 진단 저널입니다. Virtual Staining/Pathology(19편)는 관련 신호가 사실상 0편으로, "staining"이 DNA/파라핀 염색 기법·조직학 실습·가상 관광 저널과 우연히 겹쳤습니다.</small></p>
+
+<h2>📐 arXiv vs 저널 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: ECoNGS·AniGS·ZeroSplat·FlexiAvatar(3DGS 활용 확장), Provable Posterior Sampling via DDIM·Missing Modalities Generator(diffusion posterior sampling), Think Sparse Predict Dense(초해상도), Fast reconstruction of tensor tomographic X-ray scattering data(실시간 텐서 토모그래피)</li>
+  <li><strong>저널 전용</strong>: 다중모드 광섬유 내시경·ENZ 업컨버전 이미징(산란매질 통과), achromatic metalens·비정질 실리콘 메타표면·metasurface 광학 미분·multiplexed holography(메타옵틱스/홀로그래피), Blind Hyperspectral Fusion·Hybrid Deconvolution 3D Fluorescence Microscopy·Operator Learning Nonlinear Optics(고전 계산광학 역문제), Unified Image Restoration Network·FPGA Real-Time Denoising·Fluctuation-based ISM(이미지 복원/초해상도) — 오늘은 계산광학 코어 신호 대부분이 저널 쪽에서 나왔습니다.</li>
+  <li><strong>공통 키워드</strong>: tomography(3DGS/X선 산란 텐서 토모그래피 vs 임상 CT/OCT 진단 — 맥락이 다름), staining(오늘은 병리 가상염색 신호 없이 DNA/파라핀 염색 기법과 우연 매칭), metasurface(오늘 실제 이미징 신호는 achromatic metalens·optical differentiation 2편, 나머지는 대부분 통신·열제어용)</li>
+  <li><strong>특징</strong>: 오늘은 arXiv 쪽이 3DGS 활용 확장과 diffusion posterior sampling이라는 방법론 흐름을 주도했고, 계산광학 코어(산란매질 통과, 메타옵틱스, 고전 역문제)는 저널 쪽에서 편수는 적지만 직접 관련된 신호를 냈습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 3DGS 연구가 "재구성 품질"에서 "재구성 이후의 편집·조작·활용 가능성"으로 무게중심을 옮김</h3>
+  <p>ECoNGS, AniGS, ZeroSplat, FlexiAvatar 네 편이 같은 날 3DGS를 "장면을 예쁘게 재구성하는가"가 아니라 "재구성한 장면을 압축·편집·언어로 지칭·부분 완성할 수 있는가"로 다뤘습니다. ECoNGS는 iVR-GS 대비 PSNR을 최대 2.2dB 개선하면서 모델 크기는 최대 6.1배, 학습 시간은 최대 5.9배 줄였고, FlexiAvatar는 관측 영역만 최적화해 데이터셋 평균 PSNR을 약 3% 개선했습니다 — 압축·부분관측 대응과 품질 개선이 상충하지 않는다는 결과가 같은 날 두 편에서 나온 셈입니다.</p>
+  <p class=conf-note>Confidence: Medium — 같은 버킷의 3DGS 논문이 오늘 4편이고 방향(재구성 이후 활용성 확장)이 뚜렷하지만 하위 문제가 갈려 있음</p>
+</div>
+
+<div class=ins>
+  <h3>2. 역문제 solver의 기본값이 diffusion/flow 기반 posterior sampling으로 옮겨가는 신호가 이론과 임상 응용에서 동시에 등장</h3>
+  <p>Provable Posterior Sampling via DDIM은 선형 역문제를 diffusion prior로 푸는 posterior sampling에 수학적 수렴 보장을 붙였고, Posterior Samplings are Missing Modalities Generators는 같은 아이디어를 MRI 결측 모달리티 생성이라는 실제 임상 문제에 적용해 모달리티 조합이 바뀔 때마다 재학습할 필요를 없앴습니다. 두 편 모두 "측정값과 일치하도록 생성 과정을 유도한다"는 같은 원리를 이론과 응용 양쪽에서 보여줍니다.</p>
+  <p class=conf-note>Confidence: Medium — 이론·응용 두 편이 같은 방법론 계열이라 근거는 뚜렷하나 오늘 신규 등장이라 반복 관찰 필요</p>
+</div>
+
+<div class=ins>
+  <h3>3. 산란매질을 통과하는 이미징이 계산광학 코어가 얇은 와중에도 저널을 통해 조용히 재부상</h3>
+  <p>다중모드 광섬유 내시경 논문과 ENZ 업컨버전 이미징 논문이 "측정 과정에서 생긴 물리적 왜곡(모드 혼합, 비네팅)을 물리 모델과 딥러닝을 결합해 지운다"는 계산광학 핵심 문제의식을 공유합니다. 오늘 Fourier Ptychography·Lensless가 0편으로 비었지만, 이 두 편이 계산광학 코어의 명맥을 이었습니다.</p>
+  <p class=conf-note>Confidence: Low — 2편뿐이고 둘 다 저널(JNL)이라 abstract 기준 판단, 방법론 세부는 본문 확인 필요</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. ECoNGS의 앵커 기반 압축 표현을 계산 이미징 다시점 3DGS 재구성 파이프라인에 적용</h3>
+  <p>명시적 가우시안을 다 저장하지 않고 앵커 점에서 필요할 때 예측하는 압축 전략이, 우리 위상/산란매질 3D 복원에서도 iVR-GS급 baseline 대비 PSNR·모델 크기·학습 시간을 함께 개선하는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>ECoNGS의 앵커 기반 신경망 예측 + 엔트로피 코딩 압축 구조 재현 또는 공개 코드 확보</li>
+    <li>공통 benchmark: 우리 보유 다시점 위상/산란매질 3DGS 재구성 데이터 + iVR-GS 스타일 baseline</li>
+    <li>비교축: PSNR, 모델 크기, 학습 시간</li>
+    <li>실패해도 남는 결과: 우리 도메인(투명/반투명 매질) 데이터에서 앵커 기반 압축이 유효한 범위에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. Provable Posterior Sampling via DDIM을 우리 역문제 solver의 대안으로 벤치마크</h3>
+  <p>diffusion prior 기반 좌표별 posterior sampling이 우리 위상 복원/산란매질 역문제에서 기존 반복 최적화 solver 대비 정확도·수렴 속도 면에서 실제로 우위가 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>DDIM 기반 좌표별 posterior sampling 알고리즘 재현(공개 코드 있으면 확보)</li>
+    <li>공통 benchmark: 우리 위상 복원/산란매질 역문제 데이터셋 + 기존 반복 최적화 solver</li>
+    <li>비교축: 복원 정확도(PSNR/SSIM), 수렴 속도(반복 횟수/시간)</li>
+    <li>실패해도 남는 결과: 우리 도메인에서 diffusion posterior sampling이 반복 최적화 대비 우위가 있는/없는 조건에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. 다중모드 광섬유·ENZ 산란매질 이미징의 강건성 전략을 우리 렌즈리스 파이프라인에 이식</h3>
+  <p>동적 매질 변화에 강건한 사전지식 주입 방식과 비네팅 보정 하이브리드 재구성이, 우리 산란매질 촬영 환경의 진동·드리프트 조건에서도 효과가 있는지 소규모 실험으로 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>두 논문의 방법론 본문 확인(현재는 abstract 기준) 후 재현 가능한 부분 파악</li>
+    <li>공통 benchmark: 우리 산란매질 이미징 데이터셋(진동·드리프트 조건 포함)</li>
+    <li>비교축: 매질 변화 강도별 복원 품질, 비네팅/가장자리 왜곡 정량 지표</li>
+    <li>실패해도 남는 결과: 우리 촬영 환경에서 동적 매질 변화의 영향 범위에 대한 baseline</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(36편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:17%"></span></span><span class=n>6편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:28%"></span></span><span class=n>10편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:8%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>36편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:53%"></span></span><span class=n>19편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:67%"></span></span><span class=n>24편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>122편</span></div>
+
+<p><small>⚠️ 참고: Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 오늘 정확히 0편입니다. Tomography/3D Imaging 36편 중 실제 계산광학·컴퓨터비전 신호는 3DGS 클러스터 4편 + 실시간 텐서 토모그래피 1편 정도이며, 나머지 대부분은 임상 CT/OCT 진단 저널입니다. Virtual Staining/Pathology 19편 중 실제 병리·가상염색 신호는 사실상 0편이고, "staining"·"virtual" 키워드가 DNA/파라핀 염색 기법·조직학 실습·가상 관광 저널과 우연히 겹쳤습니다. Meta-Optics/Diffractive 10편 중 이미징 관련은 3편이며 나머지 7편은 통신·열제어용 metasurface입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Phase Imaging/Holography (6편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong>Single-Scan Multiplexed Optical Scanning Holography Using Dual Off-Axis Time-Dependent Fresnel Zone Plates</strong> [JNL]<br>
+  왜 주요: 오늘 유일하게 실제 홀로그래피 방법론을 다루는 논문 — 두 개의 시간에 따라 달라지는 Fresnel zone plate로 한 번의 스캔에서 여러 홀로그램 채널을 동시에 얻음. 나머지 5편은 이미지 압축·MIMO 채널·THz 안테나·뇌파 홀로그래피 비유로 "wavefront"·"holography" 키워드 우연 매칭
+</div>
+
+<h3>Meta-Optics/Diffractive (10편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong>Design of mid-infrared broadband achromatic metalens · Low-loss amorphous silicon dielectrics · Metasurface-based optical differentiation</strong> [JNL]<br>
+  왜 주요: 오늘의 Watch-lens 클러스터(색수차 보정·아날로그 광학 연산) — 위 클러스터 표 참고. 나머지 7편은 통신 안테나·열제어·THz 변조기용 metasurface로 이미징과 무관
+</div>
+
+<h3>Tomography/3D Imaging (36편 중 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.18466" target=_blank>ECoNGS</a> · <a href="https://arxiv.org/abs/2607.18539" target=_blank>AniGS</a> · <a href="https://arxiv.org/abs/2607.18801" target=_blank>ZeroSplat</a> · <a href="https://arxiv.org/abs/2607.19100" target=_blank>FlexiAvatar</a></strong> [CV]<br>
+  왜 주요: 오늘의 대표 클러스터(3DGS 활용 확장) — 위 클러스터 표 참고
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19124" target=_blank>Fast reconstruction of tensor tomographic X-ray scattering data for real-time applications</a></strong> [IV]<br>
+  왜 주요: X선 산란 텐서 토모그래피의 느린 반복 재구성을, 토모그래피 투영 연산자와 뷰 의존 혼합 연산자를 분리한 직접 재구성으로 대체 — 53x53x53x28 텐서 볼륨을 상용 하드웨어에서 1초 안에 복원(반복 재구성 대비 10배 이상 가속). 실시간 나노스케일 구조 분석에 직접 참고 가능
+</div>
+
+<h3>Reconstruction/Inverse Problems (24편 중 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19333" target=_blank>Provable Posterior Sampling via DDIM</a> · <a href="https://arxiv.org/abs/2607.18763" target=_blank>Missing Modalities Generator</a></strong> [LG/CV]<br>
+  왜 주요: 오늘의 대표 클러스터(diffusion posterior sampling) — 위 클러스터 표 참고
+</div>
+<div class=roi-item>
+  <strong>Blind Hyperspectral and Multispectral Images Fusion · A Hybrid Deconvolution Algorithm in 3D Fluorescence Microscopy · Operator learning in nonlinear optics</strong> [JNL]<br>
+  왜 주요: 고전적인 계산광학 역문제(블라인드 융합, 3D 형광현미경 디컨볼루션, 비선형 광학 연산자 학습)가 저널에서 조용히 이어짐. 나머지 19편은 대부분 순수 RL/PINN 이론, 배터리/기후 응용 논문으로 이미징 ROI와 무관
+</div>
+
+<h3>Deep Learning Methods — 관련 5편 (122편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong>Prior-enhanced deep learning for anti-disturbance imaging through dynamic multimode fibers · Hybrid deep reconstruction for vignetting-free upconversion imaging (ENZ)</strong> [JNL]<br>
+  왜 주요: 오늘의 대표 클러스터(산란매질 통과 이미징 재부상) — 위 클러스터 표 참고
+</div>
+<div class=roi-item>
+  <strong>One Unified Image Restoration Network · Computational Physics Framework for Real-Time Imaging Denoising (FPGA) · Fluctuation-based Image Scanning Microscopy</strong> [JNL]<br>
+  왜 주요: 오늘의 Watch-lens 클러스터(이미지 복원·초해상도의 다목적화) — 위 클러스터 표 참고
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<ul>
+  <li><strong>ECoNGS</strong> — iVR-GS 대비 PSNR 최대 +2.2dB, 모델 크기 최대 6.1배 축소, 학습 시간 최대 5.9배 단축 (VolVis 장면)</li>
+  <li><strong>FlexiAvatar</strong> — NeuMan/ZJU-MoCap/WildAvatar/talk-show/INSTA 데이터셋 평균 PSNR 약 3% 개선 (SOTA 대비), 부분 가시성 조건에서 런타임·메모리도 절감</li>
+  <li><strong>Fast reconstruction of tensor tomographic X-ray scattering data</strong> — 반복 재구성 대비 10배 이상 빠른 직접 재구성으로 53x53x53x28 텐서 볼륨을 상용 하드웨어에서 1초 안에 복원</li>
+</ul>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>오늘은 diffusion 계열 생성 모델이 서로 다른 두 문제에 같은 원리로 쓰이는 크로스오버가 눈에 띕니다. AniGS는 사전학습된 영상 diffusion 모델의 사전지식을 빌려 정적인 3DGS 장면에 움직임을 입히고, Missing Modalities Generator는 flow matching 모델의 사전지식을 빌려 MRI에서 촬영하지 못한 모달리티를 만들어냅니다. 응용(3D 장면 애니메이션 vs 의료영상 결측 모달리티 생성)은 완전히 다르지만, 둘 다 "생성 모델의 사전지식으로 관측되지 않은 부분을 관측된 부분과 일관되게 채운다"는 같은 원리를 쓰고 있습니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] ECoNGS: Efficient Compressive Neural Gaussian Splats for Volume Visualization — arXiv cs.CV</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> 3DGS 압축 연구는 지금까지 개별 가우시안을 가지치기하거나 속성을 양자화하는 방식이 주류였는데, 이 논문은 명시적 가우시안을 다 저장하는 대신 소수의 앵커 점에서 경량 신경망으로 필요할 때마다 예측해내는 방식으로 압축률과 렌더링 성능을 동시에 잡습니다. 우리 랩이 계산 이미징 다시점 복원에 3DGS 계열 표현을 쓸 때, 저장 공간과 학습 시간이 제약된 환경(대용량 볼륨 데이터, 현장 실험)에서 바로 참고할 수 있는 구체적인 압축 전략입니다.</p>
+  <p><strong>핵심:</strong> 앵커 점에서 이웃 가우시안의 속성을 예측하는 경량 신경망과, 기하학적으로 비슷한 장면들을 묶어 파라미터를 공유하는 joint learning 전략을 결합했습니다. 앵커 속성 자체도 확률분포를 추정하는 신경 엔트로피 모델로 다시 압축합니다. iVR-GS 대비 PSNR을 최대 2.2dB 개선하면서 모델 크기는 최대 6.1배, 학습 시간은 최대 5.9배 줄였습니다.</p>
+  <p><strong>주의:</strong> 결과는 일반적인 volume visualization 장면(단변량/다변량) 기준이라, 계산 이미징에서 흔한 반투명·산란 매질처럼 가우시안 표현 자체가 물리적으로 다르게 동작하는 장면에서도 같은 압축률이 나올지는 본문 확인과 별도 실험이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Provable diffusion-based posterior sampling for linear inverse problems via DDIM — arXiv cs.LG</h3>
+  <div class=tag>[방법전환] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 계산 이미징에서 diffusion 모델을 사전지식으로 쓰는 posterior sampling은 이미 널리 쓰이지만, 대부분 경험적 성능만 보고할 뿐 "실제로 참값 분포에 수렴하는가"에 대한 수학적 보장은 부족했습니다. 이 논문은 표준 DDIM 업데이트에 좌표별(coordinate-wise) 수정만 가해 posterior consistency를 증명하면서도 구현이 단순한 알고리즘을 제시해, 우리 랩의 위상 복원/산란매질 역문제 solver를 고를 때 "경험적으로 잘 되더라"를 넘어선 근거를 제공합니다.</p>
+  <p><strong>핵심:</strong> 측정 연산자의 특이값(singular value) 방향마다 다르게 동작하는 sampler를 제안합니다 — 관측 신호대잡음비(SNR)가 해당 방향의 diffusion SNR보다 낮으면 학습된 diffusion prior를 따르고, 높으면 측정 기반 predictor로 전환합니다. 이 방식이 측정값에 조건화된 베이지안 posterior에 수렴함을 증명했고, 다양한 이미지 복원 과제에서 기존 diffusion 기반 posterior sampler들과 비교해 대부분의 평가 지표에서 최고 성능을 보였습니다.</p>
+  <p><strong>주의:</strong> "대부분의 평가 지표에서 최고 성능"이라는 표현은 abstract 기준이며, 구체적인 수치와 비교 대상 baseline 목록은 본문 확인이 필요합니다. 또한 선형 역문제에 한정된 이론이라, 우리 도메인의 비선형 산란 역문제에 그대로 확장되는지는 별도 검증이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 계산광학 핵심 4개 버킷(Fourier Ptychography 0편, Lensless 0편, Phase Imaging 6편, Meta-Optics 10편) 중 실제 이미징 방법론 신호는 4편뿐입니다. Phase Imaging 6편 중 5편, Meta-Optics 10편 중 7편이 통신·MIMO·THz 안테나·열제어용으로 이미징과 무관한 키워드 우연 매칭입니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology 19편 중 실제 가상염색·병리 신호는 사실상 0편입니다. "staining"·"virtual" 키워드가 DNA/파라핀 염색 기법, 조직학 실습, 가상 관광 저널과 우연히 겹친 것입니다.</p>
+  <p>[Dataset risk] classify.py 선택 비율은 27.2%(220/809)로 최근 밴드(25~32%) 안에 들지만 하단이며, 오늘은 계산광학 코어 자체의 절대 편수가 이번 주 들어 가장 얇았습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Baseline risk] ECoNGS의 "PSNR +2.2dB, 6.1배 압축" 결과는 iVR-GS라는 단일 baseline과의 비교로, 다른 3DGS 압축 방법(SPARE-GS, QIRF 등 어제 소개된 논문들)과의 직접 비교는 본문 확인이 필요합니다.</p>
+  <p>[Claim risk] Provable Posterior Sampling via DDIM의 "대부분의 평가 지표에서 최고 성능" 주장은 abstract 표현이며, 어떤 baseline·데이터셋 대비인지 본문 확인이 필요합니다.</p>
+  <p>[Claim risk] 산란매질 통과 이미징 2편(다중모드 광섬유, ENZ 업컨버전)과 메타옵틱스 Watch-lens 4편은 모두 저널이라 abstract만 확인했고 본문 수치는 검증하지 못했습니다. 특히 메타옵틱스 3편은 abstract 자체가 없는 title-only 신호입니다.</p>
+  <p>[Deployment risk] FlexiAvatar의 "평균 PSNR 약 3% 개선"은 특정 5개 데이터셋 조건이며, 우리가 다루는 산란매질/투명 매질 촬영처럼 표준 인물 아바타와 물리적 성질이 다른 장면에도 같은 정도로 적용되는지는 별도 검증이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Phase Imaging 버킷 내 통신/무관 5편</strong>(이미지 압축, XL-MIMO 채널 특성, THz 메타표면 빔 조향, 근접장 안테나, 뇌파-홀로그래피 비유) — "wavefront"·"holography" 키워드 우연 매칭.</li>
+    <li><strong>Meta-Optics 버킷 내 통신/열제어 7편</strong>(THz 빔조향, 근접장 안테나, 5G 안테나, 우주선 열제어 등) — 무선통신·열관리 응용, 이미징 방법론 기여 없음.</li>
+    <li><strong>Virtual Staining/Pathology 버킷 19편 전체</strong> — "staining"·"virtual" 키워드 우연 매칭, 실제 병리·가상염색 신호 없음.</li>
+    <li><strong>SkyEV: RGB-Event UAV detection and tracking dataset</strong> [CV] — Light-Field/Novel Sensors 버킷에서 이벤트 카메라를 다루지만 UAV 탐지·추적 응용이라 계산 이미징 방법론보다는 로보틱스 센싱에 가까움.</li>
+    <li><strong>Seeing Before Generating: Object Perception Enhances Single-View 3D Reconstruction</strong> [CV] — 단일 시점 3D 재구성에 객체 지각을 결합하는 아이디어는 흥미롭지만 오늘의 3DGS 클러스터와 방법론 결이 달라 보조로 남김.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Phase Imaging/Holography (6편, 관련 1편)</h3>
+<div class=roi-item>
+  <strong>Single-Scan Multiplexed Optical Scanning Holography Using Dual Off-Axis Time-Dependent Fresnel Zone Plates</strong> <span class=pill>JNL</span><br>
+  문제: 여러 홀로그램 채널을 얻으려면 여러 번 스캔해야 해 속도가 느림 / 방법: 시간에 따라 위상이 달라지는 두 개의 off-axis Fresnel zone plate를 조합해 한 번의 스캔으로 다중화 / 의미: 홀로그래피 스캔 속도를 근본적으로 줄이는 광학 하드웨어 설계 / 우선순위: Skim-only(본문 확인 필요, abstract 미제공)
+</div>
+
+<h3>Meta-Optics/Diffractive (10편, 관련 3편)</h3>
+<div class=roi-item>
+  <strong>Design of mid-infrared broadband achromatic metalens via phase-intensity radially partitioned cooperative regulation</strong> <span class=pill>JNL</span><br>
+  문제: 메타렌즈는 파장마다 초점이 달라지는 색수차가 심함 / 방법: 위상과 강도를 반경 방향으로 나눠 협조적으로 조절하는 설계로 중적외선 광대역 achromatic 특성 확보 / 의미: 계산 없이 광학 설계만으로 색수차를 줄이는 접근, 우리 메타옵틱스 공동연구에 참고 / 우선순위: Skim-only(abstract 미제공, 본문 확인 필요)
+</div>
+<div class=roi-item>
+  <strong>Low-loss amorphous silicon dielectrics expand visible metasurface design space</strong> <span class=pill>JNL</span><br>
+  문제: 가시광 대역 메타표면은 재료 손실 때문에 설계 자유도가 제한됨 / 방법: 저손실 비정질 실리콘 유전체로 설계 가능한 형상·구조의 폭을 넓힘 / 의미: 가시광 메타렌즈·메타표면 제작의 재료 옵션 확장 / 우선순위: Skim-only(abstract 미제공)
+</div>
+<div class=roi-item>
+  <strong>Metasurface-based optical differentiation: principles, applications, and advances</strong> <span class=pill>JNL</span><br>
+  문제: 전자회로 기반 아날로그 컴퓨팅은 속도·전력 병목에 부딪힘 / 방법: 메타표면으로 빛의 전파만으로 미분 같은 수학 연산을 수행하는 원리·응용을 정리한 리뷰 / 의미: 실시간 영상 처리를 광학 자체에서 수행하려는 아날로그 광학 컴퓨팅 흐름 정리 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging (36편, 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.18466" target=_blank>ECoNGS</a></strong> <span class=pill>CV</span><br>
+  문제: 3DGS 기반 volume visualization은 장면마다 개별 최적화해 저장·전송이 비효율적 / 방법: 앵커 점에서 경량 신경망으로 가우시안을 동적으로 예측하고 신경 엔트로피 모델로 재압축 / 의미: 3DGS 표현의 압축률과 렌더링 품질을 동시에 개선 / 근거: iVR-GS 대비 PSNR +2.2dB, 모델 크기 6.1배 축소, 학습 시간 5.9배 단축 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.18539" target=_blank>AniGS</a></strong> <span class=pill>CV</span><br>
+  문제: 3DGS 재구성 장면은 대부분 정적이라 몰입감이 떨어짐 / 방법: 사전학습된 영상 diffusion 모델의 사전지식으로 시간 조건부 변형 필드를 학습해 장면 전체에 미세한 움직임 부여 / 의미: 3DGS를 정적 재구성에서 동적 콘텐츠로 확장 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.18801" target=_blank>ZeroSplat</a></strong> <span class=pill>CV</span><br>
+  문제: 기존 언어 지칭 3DGS 분할은 단일 대상 쿼리에만 대응 가능 / 방법: 학습 없이 2D VLM 사전지식을 멀티뷰 기하 제약으로 3D에 끌어올려 0/1/N개 대상을 동적으로 분할 / 의미: 3DGS의 언어 기반 장면 이해를 현실적인 모호한 지시문 상황으로 확장 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19100" target=_blank>FlexiAvatar</a></strong> <span class=pill>CV</span><br>
+  문제: monocular 비디오 기반 3D 아바타 재구성은 안 보이는 신체 부위 때문에 보이는 부위의 품질까지 떨어짐 / 방법: 관측된 영역만 명시적으로 최적화하고, 완전히 안 보이는 영역은 diffusion 기반으로 텍스처 생성 / 의미: 부분 관측 조건에서도 고품질 재구성을 유지하는 전략 / 근거: 5개 데이터셋 평균 PSNR 약 3% 개선, 런타임·메모리도 절감 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19124" target=_blank>Fast reconstruction of tensor tomographic X-ray scattering data</a></strong> <span class=pill>IV</span><br>
+  문제: X선 산란 텐서 토모그래피는 반복 재구성이 느려 실시간 활용이 어려움 / 방법: 토모그래피 투영 연산자와 뷰 의존 혼합 연산자를 분리해 여러 반복 업데이트를 근사하는 대수적 필터로 직접 재구성 / 의미: 나노스케일 구조 방향 정보를 실시간에 가깝게 얻을 수 있게 함 / 근거: 53x53x53x28 텐서 볼륨을 상용 하드웨어에서 1초 안에 복원(10배 이상 가속) / 우선순위: Read
+</div>
+
+<h3>Reconstruction/Inverse Problems (24편, 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19333" target=_blank>Provable diffusion-based posterior sampling for linear inverse problems via DDIM</a></strong> <span class=pill>LG</span><br>
+  문제: diffusion 기반 posterior sampler는 경험적 성능은 좋지만 수렴 보장이 부족하거나 계산 비용이 큼 / 방법: 측정 연산자의 특이값 방향별로 diffusion prior와 측정 기반 predictor를 전환하는 좌표별 DDIM 수정 / 의미: 이론적 수렴 보장과 구현 단순성을 동시에 확보 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.18763" target=_blank>Posterior Samplings are Missing Modalities Generators for Medical Image Translation</a></strong> <span class=pill>CV</span><br>
+  문제: MRI 모달리티 조합이 데이터마다 달라 기존 변환 모델은 조합이 바뀔 때마다 재학습 필요 / 방법: 결측 모달리티 생성을 선형 역문제로 정식화해 flow matching 기반 posterior sampling으로 임의 조합에 대응 / 의미: 재학습 없이 다양한 결측 조합에 대응하는 통합 프레임워크 / 근거: BraTS·IXI 데이터셋에서 baseline 대비 대부분 시나리오 최고 성능, 다운스트림 종양 분할 성능도 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Blind Hyperspectral and Multispectral Images Fusion</strong> <span class=pill>JNL</span><br>
+  문제: 저해상도 hyperspectral과 고해상도 multispectral 영상을 결합할 때 흐림·응답 연산자를 미리 안다고 가정하는 게 비현실적 / 방법: blind fusion을 결합 역문제로 정식화하는 통합 tensor fusion 프레임워크 / 의미: 연산자를 모르는 실제 촬영 조건에서도 쓸 수 있는 융합 방법론 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>A Hybrid Deconvolution Algorithm in Three-Dimensional Fluorescence Microscopy</strong> <span class=pill>JNL</span><br>
+  문제: 3D 형광현미경 영상은 광학계의 point spread function 때문에 흐려짐 / 방법: 물리 모델 기반과 데이터 기반을 결합한 하이브리드 디컨볼루션 / 의미: 고전적 계산현미경 문제에 대한 새 알고리즘 / 우선순위: Skim-only(abstract 미제공)
+</div>
+<div class=roi-item>
+  <strong>Operator learning in nonlinear optics beyond perturbation theory</strong> <span class=pill>JNL</span><br>
+  문제: 강한 전자기장과 기체의 비선형 반응은 섭동 이론으로는 잘 근사되지 않음 / 방법: 미리 계산한 시간의존 슈뢰딩거 방정식 해로부터 전기장을 반응으로 매핑하는 연산자를 신경망으로 학습 / 의미: 비섭동적 비선형 광학 반응을 데이터 기반으로 빠르게 계산하는 첫걸음 / 우선순위: Skim-only(이론 중심, 이미징 응용은 간접적)
+</div>
+
+<h3>Deep Learning Methods — 계산광학 관련 5편</h3>
+<div class=roi-item>
+  <strong>Prior-enhanced deep learning for anti-disturbance imaging through dynamic multimode fibers</strong> <span class=pill>JNL</span><br>
+  문제: 다중모드 광섬유 내시경은 광섬유가 조금만 움직여도 스펙클 패턴이 바뀌어 복원이 무너짐 / 방법: 사전 지식을 주입한 딥러닝으로 동적 변형에 강건한 이미지 복원 / 의미: 렌즈 없는 초소형 내시경의 실사용 안정성 확보 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Hybrid deep reconstruction for vignetting-free upconversion imaging through scattering in epsilon-near-zero materials</strong> <span class=pill>JNL</span><br>
+  문제: ENZ 물질의 4파 혼합 업컨버전 이미징은 가장자리가 어두워지는 비네팅 왜곡이 생김 / 방법: 물리 모델과 학습을 결합한 하이브리드 재구성으로 왜곡 제거 / 의미: 산란매질 너머를 비선형 파장 변환으로 보는 이미징의 화질 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>One Unified Image Restoration Network for Deblurring, Deraining, Desnowing, and Low-Light Enhancement</strong> <span class=pill>JNL</span><br>
+  문제: 열화 유형(블러·비·눈·저조도)마다 별도 복원 모델을 두면 유지보수가 어려움 / 방법: 여러 열화 유형을 하나의 네트워크로 통합 처리 / 의미: 다목적 이미지 복원의 실사용 편의성 개선 / 우선순위: Skim-only(abstract 확인 필요)
+</div>
+<div class=roi-item>
+  <strong>Computational Physics Framework for Real-Time Imaging Denoising: FPGA-Based DRAM Optimization with High-Level Synthesis</strong> <span class=pill>JNL</span><br>
+  문제: 실시간 이미징 디노이징은 하드웨어 메모리 접근이 병목 / 방법: FPGA에서 DRAM 접근을 최적화하는 계산물리 프레임워크를 고수준 합성으로 구현 / 의미: 이미징 디노이징의 실시간·현장 배포 가능성 / 우선순위: Skim-only(abstract 확인 필요)
+</div>
+<div class=roi-item>
+  <strong>Fluctuation-based Image Scanning Microscopy based on Multiple Signal Classification for Three-dimensional Super-resolution Imaging</strong> <span class=pill>JNL</span><br>
+  문제: 이미지 스캐닝 현미경의 3D 초해상도는 신호 처리 알고리즘에 따라 성능이 갈림 / 방법: 신호 변동을 다중 신호 분류(MUSIC) 알고리즘으로 분석해 3D 초해상도 획득 / 의미: 광학 하드웨어를 바꾸지 않고 신호처리만으로 초해상도 성능 개선 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv 카테고리: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>cs.LG</a> · <a href="https://arxiv.org/list/cs.CV/new" target=_blank>cs.CV</a> · <a href="https://arxiv.org/list/cs.AI/new" target=_blank>cs.AI</a> · <a href="https://arxiv.org/list/eess.IV/new" target=_blank>eess.IV</a> · <a href="https://arxiv.org/list/eess.SP/new" target=_blank>eess.SP</a></li>
+  <li>RSS: <a href="../feed.xml">feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+Imaging Intelligence Daily Briefing · cs.LG · cs.CV · cs.AI · eess.IV · eess.SP 기반 자동 생성 · 입력 출처: arXiv, Crossref, OpenAlex
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+
+</body>
+</html>
