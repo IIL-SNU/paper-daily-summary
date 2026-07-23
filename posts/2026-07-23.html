@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-07-23</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-07-23 (목요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-07-23 (목요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Thursday, 23 July 2026"으로 확인됨</div>
+  <div>🔢 arXiv: cs.LG 160 · cs.CV 88 · cs.AI 156 · eess.IV 7 · eess.SP 25 (합계 436편, new+cross, replacement 제외)</div>
+  <div>🔢 병합: arXiv+저널 병합 스캔 800건 · ROI 배정 223건 (27.9%)</div>
+  <div>⚠️ 오늘도 계산광학 코어가 얇습니다. Fourier Ptychography/Microscopy(1편)와 Lensless/Coded Imaging(1편)은 사실상 이미징과 무관한 논문(PolSAR 분류, 로봇 시퀀스 예측)이 우연히 걸린 것이고, Meta-Optics/Diffractive(13편)도 대부분 통신 안테나·플라즈모닉 센서용입니다. 대신 Tomography/3D Imaging(48편) 안의 3DGS/뷰 합성 클러스터와 Reconstruction/Inverse Problems(25편)의 물리 정보 신경망 계열에서 실제 신호가 나왔습니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 가장 뚜렷한 축은 <strong>3D 재구성 연구의 관심사가 "장면을 재구성한 다음 무엇을 할 수 있는가"에서 다시 "재구성 자체를 얼마나 빠르고 가볍게, 그리고 얼마나 일반화되게 만들 수 있는가"로 되돌아온 것</strong>입니다. 어제(7/22)는 3DGS(3D Gaussian Splatting, 장면을 수많은 3차원 조각으로 표현해 새 시점 영상을 만드는 방법) 4편이 압축·애니메이션·언어 지칭·부분 아바타처럼 "재구성 이후의 활용"을 다뤘다면, 오늘은 ATSplat·STEREOFLOW·LB-Edit·뷰 합성 기반 분할까지 4편이 "재구성 파이프라인 자체의 속도·압축률·일반화"를 다시 문제 삼습니다. 대표 논문 겹침은 없습니다. 두 번째 축은 <strong>물리 정보 신경망(PINN, 물리 법칙을 손실 함수에 직접 반영해 학습하는 신경망)이 "더 정확한가"라는 단일 질문에서 "믿을 수 있는가, 불확실성을 정량화할 수 있는가, 비선형 근사 방식 자체를 바꿀 수 있는가"로 질문을 넓힌 것</strong>이고, 세 번째 축은 <strong>물리 모델과 implicit neural representation(좌표를 입력받아 신호값을 내놓는 연속 함수로 이미지를 표현하는 방식)을 결합한 재구성이 태아 MRI, 확산 MRI, 가속 MRI, 은하 중력렌즈까지 서로 다른 이미징 도메인에서 같은 날 동시에 나온 것</strong>입니다. 오늘 ROI 선정은 223건(27.9%)으로 최근 밴드 안에서 평이한 수준이라, 절대적인 뉴스량보다는 세 흐름의 방향성이 오늘의 핵심입니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(7/23, 목)을 어제(7/22, 수)와 이어보면 3DGS라는 화두 자체는 계속 이어지지만 질문이 다시 한 번 바뀌었습니다. 어제는 "재구성한 장면을 어떻게 계속 편집·조작·활용할 수 있는가"가 중심이었는데, 오늘은 "그 재구성 자체를 얼마나 빠르고 가볍게, 얼마나 일반화되게 만들 수 있는가"로 초점이 되돌아왔습니다. ATSplat은 장면 복잡도에 맞춰 가우시안 개수를 조절해 촘촘한 feed-forward 3DGS 대비 가우시안 개수를 5.7배 넘게 줄였고, STEREOFLOW는 스테레오 매칭을 결정론적 회귀가 아니라 생성 모델링으로 다시 풀어 애매한 영역에서의 부정확성을 줄였습니다. 계산광학 코어(Fourier Ptychography, Lensless, Phase Imaging, Meta-Optics)는 어제(4편)에 이어 오늘도 매우 얇습니다.</p>
+<p>오늘 새로 뚜렷해진 흐름은 물리 정보 신경망(PINN) 연구의 문제의식 확장입니다. 그동안 PINN 연구는 대개 "기존 방법보다 오차가 얼마나 줄었는가"를 보고하는 데 집중했는데, 오늘 나온 네 편은 신뢰도(불확실성 구간), 비선형 근사 아키텍처(Kolmogorov-Arnold Network), 약한 형식(weak form) 손실 설계, 국소적으로 어려운 영역에 대한 적응형 변조까지 서로 다른 방향으로 문제를 넓혔습니다. 또한 물리 모델과 implicit neural representation을 결합한 재구성이 태아 뇌 MRI(PRIME-SVR), 확산 MRI 초해상도(SIINR), 가속 MRI 재구성(SHFormer), 은하 중력렌즈 역추론(diffusion+RIM)까지 네 개의 서로 다른 이미징 도메인에서 같은 날 동시에 등장한 것도 눈에 띕니다.</p>
+<p>다음 관찰 포인트는 (1) 3DGS 연구가 "활용 확장"과 "재구성 효율화"를 번갈아 오가는 게 우연인지 아니면 두 흐름이 이번 주 안에 하나로 합쳐지는지, (2) PINN의 신뢰도·불확실성 정량화 흐름이 계산 이미징의 위상 복원/산란매질 역문제에도 적용되는 논문이 나오는지, (3) 계산광학 코어(Fourier Ptychography, Lensless, Phase Imaging)가 이번 주 안에 절대 편수를 회복하는지입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(7/22, 수)는 3DGS 4편(ECoNGS, AniGS, ZeroSplat, FlexiAvatar)이 "재구성한 장면을 어떻게 압축·애니메이션·언어 지칭·부분 아바타로 계속 활용할 수 있는가"를 물었고, 산란매질 통과 이미징이 저널 2편으로 조용히 재부상했으며, 역문제 solver가 diffusion posterior sampling으로 넘어가는 이론·응용 신호가 있었습니다. 오늘은 이 세 흐름 모두 직접적인 후속 논문이 이어지지 않았습니다. 대신 3DGS는 다시 4편이 나왔지만 성격이 정반대에 가깝습니다 — "재구성 이후 활용"에서 "재구성 자체의 속도·압축률·일반화"로 초점이 돌아왔고(대표 논문 겹침 없음), 어제는 없던 PINN 문제의식 확장(정확도에서 신뢰도·불확실성으로)과 implicit neural representation 기반 의료영상 재구성이 여러 모달리티에서 동시에 나오는 새 신호가 생겼습니다. 계산광학 코어 절대 편수는 어제(4편 실질 신호)와 비슷하게 오늘도 얇아, 이틀 연속 계산광학 코어 자체가 조용한 한 주 초반입니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>3D 재구성 연구가 "재구성 이후 활용"에서 다시 "재구성 자체의 속도·압축률·일반화"로 초점을 되돌림</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.20417" target=_blank>ATSplat: Compact Feed-forward 3D Gaussian Splatting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.19986" target=_blank>STEREOFLOW: Progressive Stereo Matching</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.19777" target=_blank>Look Before You Edit: 3DGS Editing 카메라 배치</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.19765" target=_blank>Extending a Large View Synthesis Model for Panoptic Segmentation</a> <span class=pill>CV</span>
+  </td>
+  <td>어제(7/22)는 3DGS를 압축·애니메이션·언어 지칭·부분 아바타로 계속 활용하는 쪽에 무게가 실렸는데, 오늘은 결이 다시 바뀝니다. ATSplat은 지금까지 feed-forward 3DGS(카메라를 입력하면 학습 없이 바로 3D 장면을 만들어내는 방식)가 픽셀마다 가우시안을 똑같이 배치해 정작 복잡한 영역에는 밀도가 부족하고 단순한 영역에는 낭비가 생기던 문제를, 장면 복잡도에 따라 토큰을 적응적으로 늘리는 방식으로 고쳐 가우시안 개수를 5.7배 넘게 줄이면서도 화질은 오히려 최고 수준을 유지합니다. STEREOFLOW는 스테레오 매칭(두 카메라 영상에서 깊이를 추정하는 문제)을 "정답은 하나"라고 가정하는 결정론적 회귀 대신 여러 가능성을 다루는 생성 모델링으로 다시 풀어, 안개나 반사처럼 정답이 모호한 영역에서의 평균으로 뭉개지는 오류를 줄입니다. LB-Edit은 3DGS를 텍스트로 편집할 때 어느 카메라 위치에서 편집해야 국소적으로 정확하게 되는지를 attention으로 미리 찾아내는 방법이고, 뷰 합성 논문은 3D 재구성을 아예 하지 않고도 새 시점 영상을 만드는 모델이 우연히 분할 라벨까지 일관되게 옮겨준다는 사실을 보여줍니다. 네 편을 같이 보면, 3DGS/뷰 합성 연구가 "재구성한 걸로 뭘 더 할 수 있나"와 "재구성 자체를 더 빠르고 가볍게 만들 수 있나"를 번갈아 오가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>같은 버킷(Tomography/3D Imaging)에서 오늘 4편이 나왔고 방향(재구성 효율화·일반화로 회귀)이 뚜렷하지만, 서로 다른 하위 문제(압축·스테레오·편집·뷰 합성 전이)라 병렬적 확장에 가까움</small></td>
+  <td>ATSplat의 적응형 토큰 확장 방식을 우리 계산 이미징 다시점 위상/산란매질 3DGS 재구성 파이프라인에 적용해 균일 밀도 baseline 대비 가우시안 개수·렌더링 속도·화질 곡선을 그리고, 뷰 합성 모델의 라벨 전파 아이디어가 우리 산란매질 분할 마스크를 새 시점으로 옮기는 데도 별도 학습 없이 통하는지 소규모로 검증</td>
+</tr>
+<tr>
+  <td><strong>물리 정보 신경망(PINN)의 문제의식이 "더 정확한가"에서 "믿을 수 있는가·불확실성을 알 수 있는가·비선형 근사 방식 자체를 바꿀 수 있는가"로 넓어짐</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.19377" target=_blank>Reliability-Aware Hard-Soft PINN (RA-HSPINN)</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2607.20339" target=_blank>Interval/Fuzzy Physics-Augmented NN (iPANN/fPANN)</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2607.20378" target=_blank>PG-KINN: Petrov-Galerkin Kolmogorov-Arnold Network</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2607.20230" target=_blank>PIER: Physics-Informed Environmental Retrieval</a> <span class=pill>LG</span>
+  </td>
+  <td>PINN(물리 법칙을 손실 함수에 직접 넣어 학습하는 신경망)은 지금까지 대개 "기존 수치해석이나 이전 PINN보다 오차가 얼마나 줄었는가" 하나로 평가돼 왔습니다. 오늘 나온 네 편은 이 질문을 넓힙니다. RA-HSPINN은 정확도 자체보다, 국소적으로 날카롭거나 조건이 나쁜 영역에서 기존 hard-soft PINN이 최적화에 실패하는 문제를 학습 가능한 신뢰도 필드로 보완해 뾰족한 Burgers 방정식 오차를 98.65% 줄였습니다. iPANN/fPANN은 한 개의 정답값 대신 노이즈가 섞인 관측을 감싸는 상한·하한 구간을 학습해, 신경망 예측이 "이 범위 안에서는 확실하다"고 말할 수 있게 불확실성 정량화를 구조 자체에 넣었습니다. PG-KINN은 PDE(편미분방정식)를 신경망 손실로 바꿀 때 흔히 쓰는 MLP 대신 국소적인 분할 다항식 기반 테스트 함수를 결합한 Petrov-Galerkin 형식을 써서, 크랙이나 역문제처럼 비선형성이 강한 문제에서 기존 강한 형식(strong-form) 손실이 잘 안 통하던 한계를 우회합니다. PIER는 물리 기반 검색(retrieval)이 임베딩만으로는 비슷해 보이지만 실제로는 다른 물리 메커니즘을 가진 사례를 구분하지 못하는 문제를, 물리량 기반 유사도로 보완합니다. 네 편을 같이 보면, PINN 연구가 정확도 경쟁 하나에서 신뢰도·불확실성·근사 방식 자체의 재설계로 문제의식이 넓어지고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>4편 모두 이번 배치에서 나온 PINN/물리 정보 신경망 계열이고 각기 다른 신뢰도 문제(수렴 조건, 불확실성 구간, 근사 함수 형태, 검색 신뢰도)를 다뤄 방향은 뚜렷하나, 계산 이미징 응용과는 아직 거리가 있어 확산 여부는 추가 관찰 필요</small></td>
+  <td>RA-HSPINN의 학습 가능한 신뢰도 필드를 우리 위상 복원 역문제의 날카로운 경계(edge) 영역 재구성에 적용해 기존 PINN 기반 solver 대비 오차 감소폭을 비교하고, iPANN/fPANN의 구간 기반 불확실성 정량화를 우리 산란매질 복원 결과에 붙여 "어디를 못 믿을지"를 지도로 만드는 실험을 1주 안에 시작</td>
+</tr>
+<tr>
+  <td><strong>물리 모델과 implicit neural representation을 결합한 재구성이 태아 MRI·확산 MRI·가속 MRI·은하 중력렌즈까지 서로 다른 이미징 도메인에서 동시에 등장</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.20136" target=_blank>PRIME-SVR: 태아 T2 매핑 slice-to-volume 재구성</a> <span class=pill>AI</span><br>
+    <a href="https://arxiv.org/abs/2607.19943" target=_blank>SIINR: 확산 MRI 초해상도</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.20159" target=_blank>SHFormer: 가속 MRI 재구성</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.19459" target=_blank>Strong Gravitational Lensing Posterior Sampling</a> <span class=pill>LG</span>
+  </td>
+  <td>네 편은 모두 "측정이 부족하거나 저해상도인 상황에서, 물리 모델을 신경망에 직접 결합해 원래 신호를 복원한다"는 계산 이미징의 핵심 문제의식을 서로 다른 도메인에서 반복합니다. PRIME-SVR은 좌표를 입력받아 신호값을 내놓는 implicit neural representation(INR) 하나로 여러 echo time(TE)에 걸친 태아 뇌 MRI를 동시에 표현하면서, 자기공명 신호가 시간에 따라 감쇠하는 물리 법칙(Bloch 방정식)을 정합성 조건으로 걸어 기존 slice-to-volume 재구성 대비 선명도를 47%, 해부학적 정확도를 30% 개선했습니다. SIINR은 지도학습된 3D U-net을 사전지식으로 쓰고 여기에 자기지도 INR을 결합해 확산 MRI의 낮은 해상도를 보완하면서, 결과가 얼마나 불확실한지까지 함께 추정합니다. SHFormer는 가속 MRI 재구성에서 어텐션 메커니즘이 저주파 정보는 잘 잡지만 고주파(경계·질감) 정보를 놓치는 문제를, 주파수 대역을 나눠 처리하는 구조로 보완합니다. Strong Gravitational Lensing 논문은 diffusion 모델과 recurrent inference machine을 결합해 은하 중력렌즈 관측에서 배경 은하의 밝기와 전경 은하의 질량 분포를 함께 복원합니다. 네 편을 같이 보면, "물리 모델 + 신경망 결합 재구성"이라는 계산 이미징의 오래된 문제의식이 의료영상과 천체물리 양쪽에서 동시에 계속 이어지고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>4편이 모두 물리 모델과 신경망 결합이라는 같은 방법론 계열이지만 응용 도메인(태아 MRI, 확산 MRI, 가속 MRI, 천체물리)이 완전히 갈려 있어 하나의 기술적 돌파라기보다 병렬적 재현에 가까움</small></td>
+  <td>PRIME-SVR의 Bloch 방정식 기반 정합성 손실을 우리 다중 파장/다중 노출 조건 위상 복원 INR 파이프라인에 이식해 파장별 물리 제약이 재구성 정확도를 개선하는지 검증하고, SIINR의 불확실성 지도 추정 방식을 우리 저해상도 산란매질 복원 결과에 붙여 신뢰 구간을 함께 보고하는 실험 설계</td>
+</tr>
+<tr>
+  <td><strong>계산광학 코어에서 유일하게 실제 신호를 낸 두 편 — 홀로그래피 렌더링 속도와 병리 리포트 생성 (Watch Lens)</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.19731" target=_blank>Fast Wave-optics Rendering for 3D Holographic Displays</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2607.19624" target=_blank>Pathologist Attention-Aligned Report Generation</a> <span class=pill>CV</span>
+  </td>
+  <td>오늘 Phase Imaging/Holography(8편)와 Virtual Staining/Pathology(16편) 두 버킷은 대부분 무관한 키워드 우연 매칭이었지만, 각각 한 편씩 계산광학 코어에 실제로 닿는 신호를 냈습니다. Fast Wave-optics Rendering은 3D 장면을 여러 겹의 이미지(multiplane image)로 표현한 뒤, 파동광학 기반으로 홀로그램을 계산하는 기존 방식이 장면의 기본 단위(primitive)마다 일일이 계산해 느렸던 문제를, 미리 겹쳐진 이미지 층 구조를 활용해 최대 250,000배 빠르게 만들면서도 화질은 비슷하게 유지합니다. Pathologist Attention-Aligned Report Generation은 전립선 조직 슬라이드를 볼 때 병리 전문의가 실제로 어디를 오래 들여다보는지(시선 궤적)를 데이터로 모아, 리포트 생성 모델의 주의(attention)가 그 분포를 따라가도록 학습시켜 진단 리포트 품질을 개선합니다. 응용(홀로그래피 디스플레이 vs 병리 리포트 생성)은 완전히 다르지만, 둘 다 "계산 속도 또는 신뢰성을 실제 임상/디스플레이 배포 조건에 맞춘다"는 실사용 지향 문제의식을 공유합니다.</td>
+  <td>Low<br><small>버킷당 각 1편씩이라 근거는 약하지만, 두 편 모두 abstract가 확인 가능하고 계산광학/병리 코어 문제를 직접 다뤄 Watch Lens 규칙에 따라 표에 남김</small></td>
+  <td>Fast Wave-optics Rendering의 multiplane image 기반 홀로그램 계산 방식을 우리 3D 홀로그래피 디스플레이 프로토타입의 렌더링 속도 병목 검토에 참고하고, Pathologist Attention 논문의 attention-alignment loss 구조를 우리 가상 염색/병리 보조 진단 파이프라인의 관심 영역(ROI) 지도 학습에 이식할 수 있는지 소규모로 검토</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ Watch-lens 점검: 계산광학 코어 4개 버킷(Fourier Ptychography 1편, Lensless 1편, Phase Imaging 8편, Meta-Optics 13편, 총 23편)을 전수 재확인한 결과 실제 이미징 방법론 신호는 2편뿐입니다(위 4번째 클러스터). Fourier Ptychography의 1편(PolSAR 이미지 분류)과 Lensless의 1편(로봇 시퀀스 예측용 diffusion)은 각각 "aperture synthesis"·"diffuser" 계열 키워드가 우연히 겹친 오탐입니다. Phase Imaging 8편 중 7편은 홀로그래피의 스프레드 복잡도(이론물리), THz 메타표면, 위성 파면 제어, 나노입자 정량 위상 등 이미징 방법론과 무관하고, Meta-Optics 13편은 전부 통신 안테나·플라즈모닉 센서·바이오센서용으로 이미징과 무관합니다. Tomography/3D Imaging(48편)은 오늘 3D/Scene 게이트(10편 이상) 기준을 충족해 위 1번째 클러스터(3DGS/뷰 합성 4편)로 상단에 올렸으며, 나머지 대부분은 임상 CT/PET/OCT 진단 저널입니다. Virtual Staining/Pathology(16편)는 관련 신호가 1편(Pathologist Attention)뿐이고, 나머지는 언러닝·월드모델·다중 에이전트 RL 논문에 "staining"·"virtual" 키워드가 우연히 매칭된 것입니다.</small></p>
+
+<h2>📐 arXiv vs 저널 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: ATSplat·STEREOFLOW·LB-Edit·뷰 합성 기반 분할(3DGS/뷰 합성 효율화), RA-HSPINN·iPANN/fPANN·PG-KINN·PIER(PINN 신뢰도 확장), PRIME-SVR·SIINR·SHFormer·Strong Gravitational Lensing(물리+INR 재구성), Fast Wave-optics Rendering(홀로그래피 렌더링), Pathologist Attention Report Generation(병리 리포트)</li>
+  <li><strong>저널 전용</strong>: 오늘은 계산광학 코어에 직접 닿는 저널 신호가 사실상 없었습니다. Phase Imaging/Meta-Optics 저널 다수는 통신 안테나·THz 변조기·바이오센서용 metasurface이고, Tomography 저널 다수는 임상 CT/PET/OCT 진단 사례 보고입니다.</li>
+  <li><strong>공통 키워드</strong>: staining(오늘은 병리 신호 1편 외 나머지는 unlearning/RL 논문과 우연 매칭), tomography(3DGS/뷰 합성 vs 임상 CT/PET 진단 — 맥락이 다름), holography(홀로그래피 디스플레이 렌더링 1편 vs 스프레드 복잡도 이론물리 1편 — 완전히 다른 분야)</li>
+  <li><strong>특징</strong>: 오늘은 arXiv 쪽이 3DGS 효율화, PINN 신뢰도 확장, 물리+INR 의료영상 재구성이라는 세 방법론 흐름을 모두 주도했고, 저널 쪽은 계산광학 코어에 직접 기여하는 신호가 거의 없이 대부분 통신·임상 진단 응용에 머물렀습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 3DGS/뷰 합성 연구의 초점이 "재구성 이후 활용"에서 다시 "재구성 자체의 속도·압축률·일반화"로 돌아옴</h3>
+  <p>ATSplat, STEREOFLOW, LB-Edit, 뷰 합성 기반 분할 네 편이 같은 날 3D 재구성의 효율성과 일반화를 다뤘습니다. ATSplat은 균일 밀도 feed-forward 3DGS 대비 가우시안 개수를 5.7배 넘게 줄이면서도 RealEstate10K/DL3DV 데이터셋에서 최고 화질을 유지했고, 12장의 입력 영상만으로 1초 안에 재구성을 끝내며 초당 1136프레임으로 렌더링합니다. 뷰 합성 기반 분할 논문은 3D 재구성이나 분할 전용 학습 없이도 ScanNet에서 명시적 3D 재구성 기반 방법과 대등한 분할 품질을 내면서 새 시점 영상 품질은 7dB 이상 앞섰습니다. 어제(7/22)의 "재구성 이후 활용 확장"과 오늘의 "재구성 자체의 효율화"가 서로 다른 날 번갈아 나온다는 점에서, 3DGS 연구판이 두 질문을 순환하며 발전하고 있다고 볼 수 있습니다.</p>
+  <p class=conf-note>Confidence: Medium — 같은 버킷에서 오늘 4편이 나왔고 방향(효율화·일반화로 회귀)이 뚜렷하지만 하위 문제가 갈려 있음</p>
+</div>
+
+<div class=ins>
+  <h3>2. PINN 연구가 "얼마나 정확한가"를 넘어 "얼마나 믿을 수 있는가"를 묻기 시작함</h3>
+  <p>RA-HSPINN, iPANN/fPANN, PG-KINN, PIER 네 편이 물리 정보 신경망의 정확도 경쟁을 넘어선 문제(수렴 신뢰도, 불확실성 구간, 비선형 근사 아키텍처, 검색 신뢰도)를 각각 다뤘습니다. RA-HSPINN은 뾰족한 기울기를 가진 Burgers 방정식에서 기존 hard-soft PINN 대비 오차를 98.65% 줄였고, 노이즈가 섞인 비호환 초기조건에서도 72.42% 줄였습니다 — 정확도 개선의 원천이 "더 큰 모델"이 아니라 "어디를 못 믿을지 아는 모듈"이라는 점이 특징적입니다.</p>
+  <p class=conf-note>Confidence: Medium — 4편이 이번 배치에서 같은 날 나왔고 방향이 뚜렷하나, 계산 이미징 응용으로의 직접 연결은 아직 관찰되지 않음</p>
+</div>
+
+<div class=ins>
+  <h3>3. 물리 모델과 implicit neural representation을 결합한 재구성이 의료영상과 천체물리에서 동시에 이어짐</h3>
+  <p>PRIME-SVR, SIINR, SHFormer, Strong Gravitational Lensing 네 편이 "측정이 부족한 상황에서 물리 법칙을 신경망에 직접 결합해 복원한다"는 같은 원리를 태아 MRI, 확산 MRI, 가속 MRI, 중력렌즈라는 서로 다른 도메인에서 보여줍니다. PRIME-SVR은 자기공명 신호 감쇠의 물리 법칙(Bloch 방정식)을 정합성 조건으로 걸어 태아 뇌 T2 매핑의 선명도를 47%, 해부학적 정확도를 30% 개선했고, 촬영 시간도 15분에서 5~10분으로 줄였습니다.</p>
+  <p class=conf-note>Confidence: Medium — 같은 방법론 계열 4편이 오늘 동시에 나왔지만 응용 도메인이 완전히 갈려 있어 하나의 흐름이라기보다 병렬적 재현</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. ATSplat의 적응형 토큰 확장을 계산 이미징 다시점 3DGS 재구성 파이프라인에 적용</h3>
+  <p>장면 복잡도에 따라 가우시안 밀도를 적응적으로 조절하는 방식이, 우리 위상/산란매질 3D 복원에서도 균일 밀도 baseline 대비 가우시안 개수·렌더링 속도·화질을 함께 개선하는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>ATSplat의 3D 앵커 토큰 + 적응형 확장 모듈 재현 또는 공개 코드 확보</li>
+    <li>공통 benchmark: 우리 보유 다시점 위상/산란매질 3DGS 재구성 데이터 + 균일 밀도 feed-forward 3DGS baseline</li>
+    <li>비교축: 가우시안 개수, 렌더링 FPS, 재구성 화질(PSNR/SSIM)</li>
+    <li>실패해도 남는 결과: 우리 도메인(투명/반투명 매질) 데이터에서 적응형 밀도 조절이 유효한 범위에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. RA-HSPINN/iPANN의 신뢰도·불확실성 정량화를 우리 위상 복원 역문제에 이식</h3>
+  <p>학습 가능한 신뢰도 필드와 구간 기반 불확실성 정량화가, 우리 위상 복원/산란매질 역문제에서 "어디를 못 믿을지"를 실제로 알려주는지, 그리고 정확도 자체도 개선하는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>RA-HSPINN의 신뢰도 필드 모듈과 iPANN의 구간 기반 학습 절차 재현</li>
+    <li>공통 benchmark: 우리 위상 복원/산란매질 역문제 데이터셋(날카로운 경계·저신호 영역 포함)</li>
+    <li>비교축: 복원 오차, 불확실성 지도와 실제 오차의 상관관계</li>
+    <li>실패해도 남는 결과: 우리 도메인에서 신뢰도 필드가 유효한/무효한 조건에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. PRIME-SVR의 물리 정합성 손실을 우리 다중 파장/다중 노출 위상 복원 INR 파이프라인에 이식</h3>
+  <p>Bloch 방정식 기반 정합성 손실처럼, 파장별/노출별 물리 법칙을 명시적 정합성 조건으로 거는 방식이 우리 다중 조건 복원에서도 재구성 정확도와 촬영 시간을 함께 개선하는지 소규모 실험으로 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>PRIME-SVR 논문 본문 확인(현재는 abstract 기준) 후 물리 정합성 손실 설계 재현 가능한 부분 파악</li>
+    <li>공통 benchmark: 우리 다중 파장/다중 노출 위상 복원 데이터셋</li>
+    <li>비교축: 재구성 선명도, 물리 정합성 위반 정도, 필요한 측정 횟수</li>
+    <li>실패해도 남는 결과: 우리 촬영 조건에서 물리 정합성 손실이 기여하는 범위에 대한 baseline</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(48편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:17%"></span></span><span class=n>8편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:27%"></span></span><span class=n>13편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:4%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>48편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:33%"></span></span><span class=n>16편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:52%"></span></span><span class=n>25편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>109편</span></div>
+
+<p><small>⚠️ 참고: Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 오늘 각 1편이지만 둘 다 실제로는 PolSAR 이미지 분류와 로봇 시퀀스 예측 논문으로 이미징 방법론과 무관합니다. Tomography/3D Imaging 48편 중 실제 계산광학·컴퓨터비전 신호는 3DGS/뷰 합성 클러스터 4편 정도이며, 나머지 대부분은 임상 CT/PET/OCT 진단 저널입니다. Virtual Staining/Pathology 16편 중 실제 병리 신호는 1편(Pathologist Attention)뿐이고, 나머지는 unlearning·world model·다중 에이전트 RL 논문과 "staining"·"virtual" 키워드가 우연히 겹쳤습니다. Meta-Optics/Diffractive 13편은 전부 통신 안테나·플라즈모닉 바이오센서용으로 이미징과 무관합니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Phase Imaging/Holography (8편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19731" target=_blank>Fast Wave-optics Rendering of Multiplane Images for 3D Holographic Displays</a></strong> <span class=pill>IV</span><br>
+  왜 주요: 오늘 유일하게 실제 홀로그래피 방법론을 다루는 논문 — multiplane image 기반 파동광학 렌더링으로 기존 primitive 기반 CGH 대비 최대 250,000배 빠른 홀로그램 합성. 나머지 7편은 스프레드 복잡도 이론물리, THz 메타표면, 위성 파면 제어 등 키워드 우연 매칭
+</div>
+
+<h3>Virtual Staining/Pathology (16편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19624" target=_blank>Pathologist Attention-Aligned Report Generation for Prostate Histopathology</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 병리 전문의의 실제 시선 궤적 데이터로 리포트 생성 모델의 attention을 정렬해, NLP 지표 평균 10.9%·5개 임상 리포트 구성요소 정확도 19.3% 개선. 나머지 15편은 unlearning·world model·RL 논문에 "staining"·"virtual" 키워드가 우연히 매칭된 것
+</div>
+
+<h3>Tomography/3D Imaging (48편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.20417" target=_blank>ATSplat</a> · <a href="https://arxiv.org/abs/2607.19986" target=_blank>STEREOFLOW</a> · <a href="https://arxiv.org/abs/2607.19777" target=_blank>Look Before You Edit</a> · <a href="https://arxiv.org/abs/2607.19765" target=_blank>뷰 합성 기반 파노픽 분할</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(3DGS/뷰 합성의 효율화·일반화 회귀) — 위 클러스터 표 참고
+</div>
+
+<h3>Reconstruction/Inverse Problems (25편 중 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19377" target=_blank>RA-HSPINN</a> · <a href="https://arxiv.org/abs/2607.20339" target=_blank>iPANN/fPANN</a> · <a href="https://arxiv.org/abs/2607.20378" target=_blank>PG-KINN</a> · <a href="https://arxiv.org/abs/2607.20230" target=_blank>PIER</a></strong> <span class=pill>LG</span><br>
+  왜 주요: 오늘의 대표 클러스터(PINN 신뢰도·불확실성 확장) — 위 클러스터 표 참고
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.20136" target=_blank>PRIME-SVR</a></strong> <span class=pill>AI</span><br>
+  왜 주요: 오늘의 대표 클러스터(물리+INR 재구성) — Bloch 방정식 정합성 손실로 태아 뇌 T2 매핑 재구성 선명도 47%·해부학적 정확도 30% 개선, 촬영 시간도 15분→5~10분으로 단축
+</div>
+
+<h3>Deep Learning Methods — 관련 4편 (109편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19943" target=_blank>SIINR</a> · <a href="https://arxiv.org/abs/2607.20159" target=_blank>SHFormer</a> · <a href="https://arxiv.org/abs/2607.19459" target=_blank>Strong Gravitational Lensing Posterior Sampling</a></strong> <span class=pill>CV/LG</span><br>
+  왜 주요: 오늘의 대표 클러스터(물리+INR 재구성이 의료영상·천체물리에서 동시 등장) — 위 클러스터 표 참고
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<ul>
+  <li><strong>ATSplat</strong> — RealEstate10K/DL3DV에서 균일 밀도 feed-forward 3DGS 대비 가우시안 개수 5.7배 이상 축소, 12장 입력 영상 기준 1초 안에 재구성 완료, 512×960 해상도에서 1136 FPS 렌더링</li>
+  <li><strong>뷰 합성 기반 파노픽 분할</strong> — ScanNet에서 명시적 3D 재구성 기반(Gaussian) 방법과 대등한 분할 품질, 새 시점 영상 품질은 7dB 이상 우위, Replica로 파인튜닝 없이 전이 시에도 우위 유지</li>
+  <li><strong>RA-HSPINN</strong> — 기존 hard-soft PINN 대비 상대 오차 감소: 뾰족한 기울기 Burgers 방정식 98.65%, 노이즈 섞인 비호환 초기조건 72.42%, 부드러운 주기적 대류 61.18%, 국소 주기적 대류 60.02%, 혼합 경계 Poisson 29.36%, 다중모드 Poisson 시스템 82.17%</li>
+  <li><strong>PRIME-SVR</strong> — 기존 slice-to-volume 재구성 대비 선명도 47%, 해부학적 정확도 30%, 다중 echo time 구조적 일관성 14% 개선. 촬영 시간을 15분에서 10분(T2 오차 1.7% 이내)까지, 고품질 촬영 조건에서는 5분(오차 2.3%)까지 단축</li>
+  <li><strong>SHFormer</strong> — 미확인 도메인(unseen scenario)에서 PSNR 약 1dB, SSIM 약 0.01 개선</li>
+  <li><strong>Fast Wave-optics Rendering</strong> — 기존 primitive 기반 CGH 대비 최대 250,000배 빠른 렌더링, 화질은 비슷한 수준 유지</li>
+</ul>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>오늘은 "생성 모델을 posterior sampling에 써서 관측되지 않은 부분을 복원한다"는 원리가 완전히 다른 두 도메인에서 같은 방식으로 반복되는 크로스오버가 눈에 띕니다. STEREOFLOW는 pixel diffusion transformer와 flow matching을 결합해 스테레오 매칭에서 애매한 영역의 여러 가능성을 다루고, Strong Gravitational Lensing Posterior Sampling은 diffusion 모델과 recurrent inference machine을 결합해 은하 중력렌즈 관측에서 배경 은하와 전경 질량 분포의 결합 posterior를 샘플링합니다. 응용(스테레오 깊이 추정 vs 천체물리 역추론)은 완전히 다르지만, 둘 다 "단일 정답을 회귀하는 대신 관측과 일치하는 여러 가능성을 생성 모델로 샘플링한다"는 같은 원리를 쓰고 있습니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] ATSplat: Compact Feed-forward 3D Gaussian Splatting with Adaptive Token Expansion — arXiv cs.CV</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> 기존 feed-forward 3DGS(카메라만 입력하면 학습 없이 바로 3D 장면을 만들어내는 방식)는 입력 픽셀마다 가우시안을 똑같이 배치해, 정작 복잡한 영역에는 밀도가 부족하고 단순한 영역에는 불필요하게 많은 가우시안이 쌓이는 문제가 있었습니다. 이 논문은 장면의 복잡도에 따라 가우시안 배치를 다시 적응적으로 만들어, 압축률과 렌더링 속도를 동시에 크게 개선합니다. 우리 랩이 계산 이미징 현장에서 빠른 3D 미리보기나 실시간 다시점 복원이 필요할 때, 저장 공간과 연산 시간이 제약된 환경에서 바로 참고할 수 있는 구체적인 전략입니다.</p>
+  <p><strong>핵심:</strong> 카메라와 깊이 정보로부터 성긴 3D 앵커 토큰을 먼저 만들어 장면의 뼈대만 압축해서 잡고, 각 토큰을 학습 가능한 3D 오프셋으로 국소 가우시안으로 확장합니다. 여기에 렌더링 오차 지도로 학습되는 "적응형 토큰 확장" 모듈을 추가해, 오차가 큰(즉 복잡한) 영역의 토큰만 선택적으로 더 세분화합니다. 그 결과 RealEstate10K와 DL3DV 데이터셋에서 밀집한 feed-forward 3DGS 대비 가우시안 개수를 5.7배 넘게 줄이면서도 최고 수준의 화질을 유지했고, 12장의 512×960 입력 영상만으로 상용 GPU 한 대에서 1초 안에 재구성을 마치며 초당 1136프레임으로 렌더링합니다.</p>
+  <p><strong>주의:</strong> 실험은 실내외 일반 장면(RealEstate10K, DL3DV) 기준이라, 계산 이미징에서 흔한 반투명·산란매질처럼 깊이 신호 자체가 불안정한 장면에서도 적응형 토큰 확장이 같은 압축률을 낼지는 본문 확인과 별도 실험이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Reliability-Aware Hard-Soft Physics-Informed Neural Networks for Robust Learning of Challenging Partial Differential Equations — arXiv cs.LG (math.NA cross)</h3>
+  <div class=tag>[방법전환] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 물리 정보 신경망(PINN)은 계산 이미징의 위상 복원, 파동 전파 시뮬레이션 등 여러 역문제에서 널리 쓰이지만, 경계조건을 신경망 구조에 직접 박아 넣는 hard-soft PINN조차 날카로운 기울기나 여러 모드가 섞인 해에서는 여전히 최적화가 잘 안 되는 경우가 많았습니다. 이 논문은 "경계조건은 고정하되, 내부 표현을 얼마나 신뢰할지"를 신경망이 스스로 학습하게 만드는 방식으로 이 문제를 정면으로 다뤄, 우리 랩의 위상 복원/산란매질 역문제 solver를 고를 때 정확도뿐 아니라 "어디서 실패하기 쉬운지"까지 미리 알 수 있는 근거를 제공합니다.</p>
+  <p><strong>핵심:</strong> 경계조건을 trial space(신경망이 표현 가능한 함수 공간)에 직접 임베딩하는 기존 hard-soft PINN 구조는 그대로 유지하면서, 내부 영역의 표현을 조절하는 "신뢰도 필드"라는 학습 가능한 변조 변수를 추가합니다. 이 신뢰도 필드는 물리량이나 확률이 아니라 순수하게 수치적인 변조 변수이며, 여기에 손실 항목들의 크기를 자동으로 맞추는 global loss balancing을 결합했습니다. 뾰족한 기울기를 가진 Burgers 방정식에서 기존 hard-soft PINN 대비 상대 오차를 98.65% 줄였고, 노이즈가 섞이고 초기조건이 서로 안 맞는 어려운 조건에서도 72.42% 줄였습니다.</p>
+  <p><strong>주의:</strong> 실험은 Burgers 방정식, 주기적 대류, Poisson 문제 등 표준 PDE 벤치마크에 한정돼 있어, 우리 도메인의 비선형 산란·회절 방정식에도 같은 정도의 개선이 나올지는 별도 검증이 필요합니다. 또한 "신뢰도 필드"가 실제 물리적 불확실성과 얼마나 대응하는지는 저자들도 명시적으로 "물리 변수가 아니다"라고 선을 그어, 해석에 주의가 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 계산광학 핵심 4개 버킷(Fourier Ptychography 1편, Lensless 1편, Phase Imaging 8편, Meta-Optics 13편) 중 실제 이미징 방법론 신호는 2편뿐입니다. Fourier Ptychography와 Lensless의 각 1편은 PolSAR 이미지 분류와 로봇 시퀀스 예측 논문으로 키워드만 우연히 겹쳤고, Phase Imaging 8편 중 7편, Meta-Optics 13편 중 13편(전부)이 이미징과 무관합니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology 16편 중 실제 병리 신호는 1편뿐입니다. 나머지 15편은 unlearning·world model·다중 에이전트 RL 논문에 "staining"·"virtual" 키워드가 우연히 겹친 것입니다.</p>
+  <p>[Dataset risk] classify.py 선택 비율은 27.9%(223/800)로 최근 밴드(25~32%) 안에 들지만, 오늘도 계산광학 코어 자체의 절대 편수가 이번 주 들어 계속 얇은 상태입니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Baseline risk] ATSplat의 "가우시안 개수 5.7배 축소" 결과는 밀집 feed-forward 3DGS라는 baseline군과의 비교로, 최적화 기반 3DGS(어제 소개된 ECoNGS 등)와의 직접 비교는 본문 확인이 필요합니다.</p>
+  <p>[Claim risk] RA-HSPINN의 "신뢰도 필드"는 저자들도 "물리 변수나 확률이 아니라 수치적 변조 변수"라고 명시하고 있어, 실제 불확실성 정량화로 해석하기보다는 최적화 보조 장치로 봐야 합니다.</p>
+  <p>[Claim risk] Fast Wave-optics Rendering의 "최대 250,000배 가속"은 abstract 표현이며, 어떤 3D 장면 조건에서 이 최댓값이 나오는지와 최소 가속비는 본문 확인이 필요합니다.</p>
+  <p>[Deployment risk] PRIME-SVR의 "촬영 시간 15분→5분" 단축은 "고품질 촬영 조건"에 한정된 결과이며, 저품질/모션 아티팩트가 심한 실제 임상 조건에서도 같은 단축이 가능한지는 별도 검증이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Phase Imaging 버킷 내 무관 7편</strong>(스프레드 복잡도 이론물리, THz 메타표면, 위성 파면 제어, 액정 편광 격자 등) — "holography"·"wavefront" 키워드 우연 매칭.</li>
+    <li><strong>Meta-Optics 버킷 13편 전체</strong>(통신 안테나, THz 변조기, 플라즈모닉 바이오센서, MIMO 통신 등) — 무선통신·바이오센싱 응용, 이미징 방법론 기여 없음.</li>
+    <li><strong>Virtual Staining/Pathology 버킷 내 무관 15편</strong> — unlearning·world model·다중 에이전트 RL 논문에 "staining"·"virtual" 키워드 우연 매칭.</li>
+    <li><strong>PG-KINN, PIER, iPANN/fPANN</strong> [LG] — PINN 클러스터의 대표 논문 중 일부지만 응용 도메인(구조역학, 환경 시계열)이 계산 이미징과 직접 연결되지 않아, 방법론 아이디어만 참고하고 본문 전체를 깊게 읽기보다는 요약 수준에서 확인.</li>
+    <li><strong>SHFormer</strong> [CV] — 가속 MRI 재구성 개선폭(PSNR 약 1dB)이 크지 않아, 방법론 구조(주파수 대역 분리)만 참고하고 본문 세부 실험은 후순위로 둠.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편)</h3>
+<div class=roi-item>
+  <strong>Physics-Aware Complex-Valued State Space Model for PolSAR Image Classification</strong> <span class=pill>CV</span><br>
+  문제: 편광 SAR 영상 분류에서 기존 복소값 신경망이 편광 산란 정보를 얕은 입력 특징으로만 쓰고 장거리 공간 의존성을 잘 못 잡음 / 방법: 복소값 상태공간모델(SSM)에 7개의 물리적 산란 사전지식을 FiLM 방식으로 주입 / 의미: "aperture synthesis" 키워드로 이 버킷에 들어왔지만 실제로는 레이더 원격탐사 분류 논문이라 계산 이미징 방법론과는 거리가 있음 / 우선순위: Skim-only(버킷 오탐)
+</div>
+
+<h3>Lensless/Coded Imaging (1편)</h3>
+<div class=roi-item>
+  <strong>Diffusion ReRoll: Revisable Denoising for Robotic Sequential Prediction</strong> <span class=pill>LG</span><br>
+  문제: 로봇 순차 예측용 diffusion 모델이 한 번 정해진 순서로만 디노이징을 진행해 이미 안정된 구간도 다시 고칠 수 없음 / 방법: 국소적으로 안정된 영역을 선택적으로 다시 노이즈를 씌워 나머지 구간의 맥락으로 재정제 / 의미: "diffuser" 키워드로 이 버킷에 들어왔지만 실제로는 로보틱스 시퀀스 예측 논문이라 렌즈리스 이미징과 무관 / 우선순위: Skim-only(버킷 오탐)
+</div>
+
+<h3>Phase Imaging/Holography (8편, 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19731" target=_blank>Fast Wave-optics Rendering of Multiplane Images for 3D Holographic Displays</a></strong> <span class=pill>IV</span><br>
+  문제: 3D 장면을 파동광학 기반으로 홀로그램으로 변환하는 기존 계산은 장면의 기본 단위(primitive)마다 개별 계산해야 해 매우 느림 / 방법: 3D 장면을 여러 겹의 이미지(multiplane image)로 미리 표현해 두고 이를 바탕으로 홀로그램을 합성 / 의미: 신경 렌더링으로 만든 3D 장면을 실제 홀로그래픽 디스플레이용으로 변환하는 병목을 해소 / 근거: 기존 primitive 기반 CGH 대비 최대 250,000배 빠른 렌더링, 화질은 비슷한 수준 유지 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong>Quantitative phase imaging analysis of silica nanoparticle-induced macrophage recovery</strong> <span class=pill>JNL</span><br>
+  문제: 실리카 나노입자가 대식세포 기능 회복에 미치는 영향을 정량적으로 추적하기 어려움 / 방법: 정량 위상 이미징으로 세포 반응을 관찰 / 의미: 계산광학 방법론 자체보다는 생물학적 응용 사례 연구에 가까움 / 우선순위: Skim-only(abstract 미제공)
+</div>
+<div class=roi-item>
+  <strong>The holography of spread complexity: A story of observers</strong> <span class=pill>JNL</span><br>
+  문제: 2D CFT(등각장론)에서 스프레드 복잡도(quantum complexity 지표)의 시간에 따른 변화를 홀로그래피적으로 해석하기 어려움 / 방법: SL(2,R) 대칭을 이용해 Krylov 기저를 구성하고 AdS/CFT로 벌크 운동학 변수와 연결 / 의미: "holography" 키워드는 겹치지만 이론물리(양자정보/끈이론)이라 계산 이미징과 무관 / 우선순위: Skim-only(버킷 오탐)
+</div>
+<div class=roi-item>
+  <strong>Investigation of detonation induced breakup of small droplets using digital off-axis holography</strong> <span class=pill>JNL</span><br>
+  문제: 폭발로 인한 작은 액적 파열 과정을 정량적으로 관찰하기 어려움 / 방법: 디지털 off-axis 홀로그래피로 액적 파열을 3차원 정량 관찰 / 의미: 홀로그래피 방법론을 유체역학 진단에 적용한 응용 사례 / 우선순위: Skim-only(abstract 미제공)
+</div>
+<div class=roi-item>
+  <strong>Multifunctional terahertz broadband metasurface based on Ge₂Sb₂Te₅</strong> <span class=pill>JNL</span><br>
+  문제: THz 대역에서 파장판·흡수체 기능을 각각 다른 소자로 구현해야 해 통합이 어려움 / 방법: 상변화물질 GST 기반 메타표면으로 파장판과 편광 의존 흡수 기능을 하나의 소자에서 전환 / 의미: 통신·센싱용 THz 소자 설계로 이미징과 무관 / 우선순위: Skim-only(버킷 오탐)
+</div>
+<div class=roi-item>
+  <strong>Multifunctional Flipping-Based Mechanical Metasurface</strong> <span class=pill>JNL</span><br>
+  문제: 기존 지능형 메타표면은 전력 소모가 크고 제작이 복잡해 확장이 어려움 / 방법: 기계적으로 뒤집는 방식으로 서로 다른 전자기 응답을 가진 메타원자를 전환 / 의미: 무선통신·센싱용 소자로 이미징과 무관 / 우선순위: Skim-only(버킷 오탐)
+</div>
+<div class=roi-item>
+  <strong>Demonstration of wavefront control for segmented optics using laser metrology</strong> <span class=pill>JNL</span><br>
+  문제: 분할 거울 우주망원경(HWO)은 파면 오차가 넓은 시공간 주파수 대역에서 발생해 안정화가 어려움 / 방법: 레이저 계측 기반 실시간 정렬 측정으로 능동 제어 루프 구성 / 의미: 우주망원경 하드웨어 제어로 계산 이미징 알고리즘과는 결이 다름 / 우선순위: Skim-only(abstract 확인했으나 하드웨어 중심)
+</div>
+<div class=roi-item>
+  <strong>Diffraction Wavefront Optimization of Liquid Crystal Polarization Gratings</strong> <span class=pill>JNL</span><br>
+  문제: 액정 편광 격자의 회절 파면을 최적화하기 어려움 / 방법: 기하학적 위상 미분 보상을 통한 파면 최적화 / 의미: 광학 소자 설계로 계산 이미징 알고리즘과는 거리가 있음 / 우선순위: Skim-only(abstract 미제공)
+</div>
+
+<h3>Meta-Optics/Diffractive (13편, 관련 0편)</h3>
+<div class=roi-item>
+  <strong>Metasurface-Based Optical Fractional Fourier Transform · Reconfigurable Graphene-VO₂ THz Metasurface · Broadband spin-decoupled metasurface · Stacked Intelligent Metasurface MIMO OFDM-IM · Plasmonic THz 바이오센서 다수</strong> <span class=pill>JNL</span><br>
+  왜 주요하지 않음: 13편 전부가 통신(MIMO, OFDM-IM), THz 바이오센서, 편광 검출, 반도체 공정 등 이미징과 무관한 메타표면 응용입니다. 오늘은 이 버킷에서 계산광학 코어로 연결되는 신호가 없었습니다 / 우선순위: Skim-only(버킷 전체)
+</div>
+
+<h3>Light-Field/Novel Sensors (2편, 관련 0편)</h3>
+<div class=roi-item>
+  <strong>Self-organizing Architecture of Receptron Units (Edge Intelligence) · Quaternary-squeeze Quantum Identity Authentication</strong> <span class=pill>LG/JNL</span><br>
+  문제/의미: 각각 엣지 뉴로모픽 분류기와 양자 신원 인증 프로토콜로, "neuromorphic"·"squeeze" 키워드가 우연히 겹쳤을 뿐 광필드/이벤트 카메라 이미징과는 무관 / 우선순위: Skim-only(버킷 오탐)
+</div>
+
+<h3>Tomography/3D Imaging (48편, 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.20417" target=_blank>ATSplat</a></strong> <span class=pill>CV</span><br>
+  문제: feed-forward 3DGS는 픽셀 정렬 방식 때문에 가우시안 배치가 장면 복잡도가 아니라 입력 해상도·시점 개수에 좌우돼 밀집하고 낭비가 많음 / 방법: 성긴 3D 앵커 토큰으로 장면 뼈대를 잡고, 렌더링 오차 기반 적응형 토큰 확장으로 복잡한 영역만 세분화 / 의미: 3DGS 압축과 실시간성을 동시에 잡는 구체적 전략 / 근거: RealEstate10K/DL3DV에서 가우시안 개수 5.7배 이상 축소, 1초 안에 재구성, 1136 FPS 렌더링 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19986" target=_blank>STEREOFLOW</a></strong> <span class=pill>CV</span><br>
+  문제: 스테레오 매칭을 결정론적 회귀로 풀면 애매한 영역에서 여러 가능성이 평균으로 뭉개지는 regression-to-mean 편향이 생김 / 방법: 점진적 캐스케이드 매칭과 픽셀 diffusion transformer, few-step flow matching을 결합한 생성적 모델링 / 의미: 반사·안개처럼 정답이 모호한 영역의 스테레오 매칭 정확도 개선 / 근거: Scene Flow, KITTI, ETH3D, Middlebury 등 다수 벤치마크에서 SOTA 달성 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19777" target=_blank>Look Before You Edit</a></strong> <span class=pill>CV</span><br>
+  문제: 3DGS 텍스트 편집은 고정된 학습 카메라 시점에서만 2D 편집기를 적용해 공간적 커버리지와 편집 대상 지정이 제한됨 / 방법: attention 기반으로 편집에 적합한 카메라 위치를 찾고, 여러 시점의 편집이 서로 어긋나지 않도록 attention을 3D로 끌어올려 정렬 / 의미: 3DGS 편집의 정확도와 속도를 동시에 개선 / 근거: 5개 편집 시점만으로 기존 방법 대비 최대 7배 빠른 지연시간 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19765" target=_blank>Extending a Large View Synthesis Model for Multi-view Panoptic Segmentation</a></strong> <span class=pill>CV</span><br>
+  문제: 명시적 3D 재구성 없이 뷰 합성만으로 학습한 모델이 분할 라벨 같은 비사진적 신호도 일관되게 새 시점으로 옮길 수 있는지는 확인되지 않았음 / 방법: 파노픽 라벨을 이진 채널로 인코딩해 동결된 뷰 합성 모델에 통과시켜 새 시점으로 전파 / 의미: 3D 재구성이나 분할 전용 학습 없이도 뷰 합성 모델이 장면 이해까지 확장될 수 있음을 보임 / 근거: ScanNet에서 Gaussian 기반 방법과 대등한 분할 품질, 새 시점 화질은 7dB 이상 우위, Replica 전이에서도 파인튜닝 없이 우위 / 우선순위: Read
+</div>
+
+<h3>Reconstruction/Inverse Problems (25편, 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19377" target=_blank>RA-HSPINN</a></strong> <span class=pill>LG</span><br>
+  문제: hard-soft PINN은 경계조건을 신경망에 직접 임베딩해도 날카롭거나 조건이 나쁜 잔차 필드에서는 여전히 최적화가 잘 안 됨 / 방법: 임베딩된 경계조건은 유지한 채 내부 표현을 조절하는 학습 가능한 신뢰도 필드를 추가 / 의미: PINN의 정확도 문제를 "더 큰 모델"이 아니라 "어디를 못 믿을지 아는 구조"로 접근 / 근거: 뾰족한 Burgers 방정식에서 오차 98.65% 감소 등 여러 PDE에서 대폭 개선 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.20339" target=_blank>iPANN/fPANN</a></strong> <span class=pill>LG</span><br>
+  문제: 구성 법칙 모델링에서 관측 데이터가 성기고 노이즈가 섞여 있을 때 불확실성을 정량화하기 어려움 / 방법: 노이즈를 감싸는 상한·하한 자유에너지 분기를 학습하고, 이를 퍼지 집합으로 확장해 중첩된 허용 범위를 구성 / 의미: 불확실성 정량화를 신경망 구조 자체에 내장하는 방식 / 근거: 합성 데이터에서 학습된 경계가 노이즈 관측을 감싸면서 테스트셋에도 일반화 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.20378" target=_blank>PG-KINN</a></strong> <span class=pill>LG</span><br>
+  문제: 강한 형식 PDE 잔차 최소화는 고차 미분이 필요하고, 에너지 형식은 자기수반 연산자에만 적용 가능해 역문제에는 한계가 있음 / 방법: Kolmogorov-Arnold Network를 trial space로, 국소 분할다항식을 test space로 쓰는 Petrov-Galerkin 형식 결합 / 의미: 비자기수반·비선형·역문제까지 아우르는 물리 정보 신경망 설계 / 근거: 크랙 특이점, 응력 집중, 비선형 초탄성, 역파라미터 추정 등 다양한 벤치마크에서 기존 PINN/PIKAN 대비 우위 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.20230" target=_blank>PIER</a></strong> <span class=pill>LG</span><br>
+  문제: 임베딩 기반 검색은 겉보기엔 비슷하지만 실제로는 다른 물리 메커니즘을 가진 사례를 구분하지 못함 / 방법: 물리 기반 플럭스-반응 일관성으로 후보를 재채점하는 물리 인지 스트림을 임베딩 검색에 결합 / 의미: 물리 시스템 간 지식 전이에서 "겉보기 유사"와 "물리적 유사"를 분리 / 근거: 미국 중서부 356개 호수 41년 데이터에서 수온·용존산소 예측 일관되게 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.20136" target=_blank>PRIME-SVR</a></strong> <span class=pill>AI</span><br>
+  문제: 태아 뇌 다중 echo time MRI의 slice-to-volume 재구성은 임상 범위 TE에만 최적화돼 있어 정량 T2 매핑에는 못 씀 / 방법: 좌표-신호 함수를 표현하는 implicit neural representation에 Bloch 방정식 기반 T2 감쇠 정합성 손실을 결합 / 의미: 여러 도메인(태아 MRI)에서 물리 모델+INR 재구성이 실제 임상 활용까지 이어짐을 보임 / 근거: 재구성 선명도 47%, 해부학적 정확도 30%, 교차 TE 일관성 14% 개선, 촬영 시간 15분→5~10분 단축 / 우선순위: Must-read
+</div>
+
+<h3>Deep Learning Methods — 계산 이미징 관련 4편</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19943" target=_blank>SIINR</a></strong> <span class=pill>CV</span><br>
+  문제: 임상 확산 MRI는 평면 밖 해상도가 낮아 미세구조 분석 활용도가 떨어짐 / 방법: 지도학습 3D U-net을 사전지식으로 쓰고 자기지도 INR과 결합해 초해상도와 불확실성 정량화를 동시에 수행 / 의미: 물리+INR 재구성 흐름의 또 다른 사례, 임상 병변 케이스에서도 불확실 영역을 표시 가능 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.20159" target=_blank>SHFormer</a></strong> <span class=pill>CV</span><br>
+  문제: 가속 MRI 재구성에서 attention 기반 모델이 저주파는 잘 잡지만 고주파(경계·질감) 정보를 놓쳐 매끈한 재구성에 그침 / 방법: 스펙트럼 필터링 CNN과 고주파 커널 생성 트랜스포머를 결합해 모달리티 간 전이 가능한 특징을 잡음 / 의미: 다중 모달리티 MRI 재구성의 일반화 문제에 신호처리적으로 접근 / 근거: 미확인 도메인에서 PSNR 약 1dB, SSIM 약 0.01 개선 / 우선순위: Skim-only(개선폭이 크지 않음)
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.19459" target=_blank>Strong Gravitational Lensing Posterior Sampling</a></strong> <span class=pill>LG</span><br>
+  문제: 은하 중력렌즈 관측에서 배경 은하 밝기와 전경 질량 분포를 함께 복원하는 문제는 고차원·비선형이라 계산이 매우 어려움 / 방법: diffusion 기반 생성 모델링과 recurrent inference machine을 결합해 픽셀 공간에서 결합 posterior를 샘플링 / 의미: 물리+생성모델 결합 posterior sampling이 천체물리 역문제에도 적용되는 사례 / 근거: 우주론적 유체역학 시뮬레이션 기반 배경·전경 은하로 노이즈 수준까지 사실적으로 모델링 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv 카테고리: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>cs.LG</a> · <a href="https://arxiv.org/list/cs.CV/new" target=_blank>cs.CV</a> · <a href="https://arxiv.org/list/cs.AI/new" target=_blank>cs.AI</a> · <a href="https://arxiv.org/list/eess.IV/new" target=_blank>eess.IV</a> · <a href="https://arxiv.org/list/eess.SP/new" target=_blank>eess.SP</a></li>
+  <li>RSS: <a href="../feed.xml">feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+Imaging Intelligence Daily Briefing · cs.LG · cs.CV · cs.AI · eess.IV · eess.SP 기반 자동 생성 · 입력 출처: arXiv, Crossref, OpenAlex
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-23",
+  "source_listing_date": "2026-07-23",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 160,
+      "cs.CV": 88,
+      "cs.AI": 156,
+      "eess.IV": 7,
+      "eess.SP": 25
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 442
+  },
+  "totals": {
+    "total_scanned": 800,
+    "selected": 223
+  },
+  "classified": {
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 8,
+      "Meta-Optics/Diffractive": 13,
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 48,
+      "Virtual Staining/Pathology": 16,
+      "Reconstruction/Inverse Problems": 25,
+      "Deep Learning Methods": 109
+    }
+  },
+  "note": "2026-07-23(목)은 5개 추적 카테고리 arXiv /new listing이 모두 'Thursday, 23 July 2026'을 가리켜 source_mode=new로 확정했다. arXiv 436편(new+cross)과 Crossref/OpenAlex 저널 442편을 병합 스캔 800건 중 223건(27.9%)을 ROI로 선정했다 — 최근 밴드(25~32%) 안에서 평이한 수준이다. 계산광학 코어 4개 버킷 중 Fourier Ptychography/Microscopy(1편)와 Lensless/Coded Imaging(1편)은 실제로는 각각 PolSAR 이미지 분류와 로봇 시퀀스 예측 논문으로 키워드만 우연히 겹친 오탐이었고, Phase Imaging/Holography(8편)도 7편이, Meta-Optics/Diffractive(13편)는 13편 전부가 통신 안테나·THz 변조기·플라즈모닉 바이오센서 등 이미징과 무관했다. 계산광학 코어에서 실제 신호를 낸 것은 Fast Wave-optics Rendering of Multiplane Images for 3D Holographic Displays(eess.IV, 홀로그램 렌더링을 최대 250,000배 가속) 1편뿐이다. Virtual Staining/Pathology(16편)도 실제 병리 신호는 Pathologist Attention-Aligned Report Generation for Prostate Histopathology 1편뿐이고 나머지 15편은 unlearning·world model·다중 에이전트 RL 논문과 'staining'·'virtual' 키워드가 우연히 겹쳤다. 대신 오늘 뚜렷한 축은 세 가지다 — (1) Tomography/3D Imaging(48편) 안에서 3D Gaussian Splatting과 뷰 합성 모델 연구가 어제(7/22)의 '재구성 이후 활용 확장'에서 다시 '재구성 자체의 속도·압축률·일반화'로 초점을 되돌린 4편(ATSplat, STEREOFLOW, Look Before You Edit, 뷰 합성 기반 파노픽 분할), (2) Reconstruction/Inverse Problems(25편) 안에서 물리 정보 신경망(PINN)이 정확도 경쟁을 넘어 신뢰도·불확실성 정량화·비선형 근사 아키텍처로 문제의식을 넓힌 4편(RA-HSPINN, iPANN/fPANN, PG-KINN, PIER), (3) 물리 모델과 implicit neural representation을 결합한 재구성이 태아 MRI(PRIME-SVR), 확산 MRI(SIINR), 가속 MRI(SHFormer), 은하 중력렌즈(diffusion+RIM)까지 서로 다른 이미징 도메인에서 동시에 등장한 것. classify.py 선택 비율(27.9%)은 어제(27.2%)와 비슷한 정상 범위이므로 parser 오류는 아니며, 이틀 연속 계산광학 코어 자체가 얇았던 조용한 주 초반으로 판단한다."
+}

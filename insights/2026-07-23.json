@@ -1,0 +1,81 @@
+{
+  "date": "2026-07-23",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "3D 재구성 연구가 '재구성 이후 활용'에서 다시 '재구성 자체의 속도·압축률·일반화'로 초점을 되돌림",
+      "papers": [
+        {"title": "ATSplat: Compact Feed-forward 3D Gaussian Splatting with Adaptive Token Expansion", "arxiv_id": "https://arxiv.org/abs/2607.20417", "journal_or_source": "arXiv cs.CV"},
+        {"title": "STEREOFLOW: Progressive Stereo Matching with StereoDiT and Transition Flow Matching", "arxiv_id": "https://arxiv.org/abs/2607.19986", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Look Before You Edit: Attention-Guided Camera Placement and Multi-View Alignment for 3D Gaussian Splatting Editing", "arxiv_id": "https://arxiv.org/abs/2607.19777", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Extending a Large View Synthesis Model for Multi-view Panoptic Segmentation", "arxiv_id": "https://arxiv.org/abs/2607.19765", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "어제(7/22)는 3DGS를 압축·애니메이션·언어 지칭·부분 아바타로 계속 활용하는 쪽에 무게가 실렸는데, 오늘은 결이 다시 바뀝니다. ATSplat은 지금까지 feed-forward 3DGS(카메라를 입력하면 학습 없이 바로 3D 장면을 만들어내는 방식)가 픽셀마다 가우시안을 똑같이 배치해 정작 복잡한 영역에는 밀도가 부족하고 단순한 영역에는 낭비가 생기던 문제를, 장면 복잡도에 따라 토큰을 적응적으로 늘리는 방식으로 고쳐 가우시안 개수를 5.7배 넘게 줄이면서도 화질은 오히려 최고 수준을 유지합니다. STEREOFLOW는 스테레오 매칭(두 카메라 영상에서 깊이를 추정하는 문제)을 '정답은 하나'라고 가정하는 결정론적 회귀 대신 여러 가능성을 다루는 생성 모델링으로 다시 풀어, 안개나 반사처럼 정답이 모호한 영역에서의 평균으로 뭉개지는 오류를 줄입니다. LB-Edit은 3DGS를 텍스트로 편집할 때 어느 카메라 위치에서 편집해야 국소적으로 정확하게 되는지를 attention으로 미리 찾아내는 방법이고, 뷰 합성 논문은 3D 재구성을 아예 하지 않고도 새 시점 영상을 만드는 모델이 우연히 분할 라벨까지 일관되게 옮겨준다는 사실을 보여줍니다. 네 편을 같이 보면, 3DGS/뷰 합성 연구가 '재구성한 걸로 뭘 더 할 수 있나'와 '재구성 자체를 더 빠르고 가볍게 만들 수 있나'를 번갈아 오가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "같은 버킷(Tomography/3D Imaging)에서 오늘 4편이 나왔고 방향(재구성 효율화·일반화로 회귀)이 뚜렷하지만, 서로 다른 하위 문제(압축·스테레오·편집·뷰 합성 전이)라 병렬적 확장에 가까움",
+      "lab_action": "ATSplat의 적응형 토큰 확장 방식을 우리 계산 이미징 다시점 위상/산란매질 3DGS 재구성 파이프라인에 적용해 균일 밀도 baseline 대비 가우시안 개수·렌더링 속도·화질 곡선을 그리고, 뷰 합성 모델의 라벨 전파 아이디어가 우리 산란매질 분할 마스크를 새 시점으로 옮기는 데도 별도 학습 없이 통하는지 소규모로 검증"
+    },
+    {
+      "cluster": "물리 정보 신경망(PINN)의 문제의식이 '더 정확한가'에서 '믿을 수 있는가·불확실성을 알 수 있는가·비선형 근사 방식 자체를 바꿀 수 있는가'로 넓어짐",
+      "papers": [
+        {"title": "Reliability-Aware Hard-Soft Physics-Informed Neural Networks for Robust Learning of Challenging Partial Differential Equations", "arxiv_id": "https://arxiv.org/abs/2607.19377", "journal_or_source": "arXiv cs.LG (math.NA cross)"},
+        {"title": "Interval and fuzzy physics-augmented neural networks (iPANN and fPANN) for uncertainty quantification and propagation in constitutive modeling", "arxiv_id": "https://arxiv.org/abs/2607.20339", "journal_or_source": "arXiv cs.LG"},
+        {"title": "PG-KINN: A Physics-Informed Petrov-Galerkin Kolmogorov-Arnold Network for Solving Forward and Inverse PDEs", "arxiv_id": "https://arxiv.org/abs/2607.20378", "journal_or_source": "arXiv cs.LG"},
+        {"title": "PIER: Physics-Informed Environmental Retrieval for Time-Series Modeling", "arxiv_id": "https://arxiv.org/abs/2607.20230", "journal_or_source": "arXiv cs.LG"}
+      ],
+      "why": "PINN(물리 법칙을 손실 함수에 직접 넣어 학습하는 신경망)은 지금까지 대개 '기존 수치해석이나 이전 PINN보다 오차가 얼마나 줄었는가' 하나로 평가돼 왔습니다. 오늘 나온 네 편은 이 질문을 넓힙니다. RA-HSPINN은 정확도 자체보다, 국소적으로 날카롭거나 조건이 나쁜 영역에서 기존 hard-soft PINN이 최적화에 실패하는 문제를 학습 가능한 신뢰도 필드로 보완해 뾰족한 Burgers 방정식 오차를 98.65% 줄였습니다. iPANN/fPANN은 한 개의 정답값 대신 노이즈가 섞인 관측을 감싸는 상한·하한 구간을 학습해, 신경망 예측이 '이 범위 안에서는 확실하다'고 말할 수 있게 불확실성 정량화를 구조 자체에 넣었습니다. PG-KINN은 PDE(편미분방정식)를 신경망 손실로 바꿀 때 흔히 쓰는 MLP 대신 국소적인 분할 다항식 기반 테스트 함수를 결합한 Petrov-Galerkin 형식을 써서, 크랙이나 역문제처럼 비선형성이 강한 문제에서 기존 강한 형식(strong-form) 손실이 잘 안 통하던 한계를 우회합니다. PIER는 물리 기반 검색(retrieval)이 임베딩만으로는 비슷해 보이지만 실제로는 다른 물리 메커니즘을 가진 사례를 구분하지 못하는 문제를, 물리량 기반 유사도로 보완합니다. 네 편을 같이 보면, PINN 연구가 정확도 경쟁 하나에서 신뢰도·불확실성·근사 방식 자체의 재설계로 문제의식이 넓어지고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "4편 모두 이번 배치에서 나온 PINN/물리 정보 신경망 계열이고 각기 다른 신뢰도 문제(수렴 조건, 불확실성 구간, 근사 함수 형태, 검색 신뢰도)를 다뤄 방향은 뚜렷하나, 계산 이미징 응용과는 아직 거리가 있어 확산 여부는 추가 관찰 필요",
+      "lab_action": "RA-HSPINN의 학습 가능한 신뢰도 필드를 우리 위상 복원 역문제의 날카로운 경계(edge) 영역 재구성에 적용해 기존 PINN 기반 solver 대비 오차 감소폭을 비교하고, iPANN/fPANN의 구간 기반 불확실성 정량화를 우리 산란매질 복원 결과에 붙여 '어디를 못 믿을지'를 지도로 만드는 실험을 1주 안에 시작"
+    },
+    {
+      "cluster": "물리 모델과 implicit neural representation을 결합한 재구성이 태아 MRI·확산 MRI·가속 MRI·은하 중력렌즈까지 서로 다른 이미징 도메인에서 동시에 등장",
+      "papers": [
+        {"title": "PRIME-SVR: Physics-infoRmed Implicit Multi-Echo Slice-to-Volume Reconstruction for Fetal T2 mapping", "arxiv_id": "https://arxiv.org/abs/2607.20136", "journal_or_source": "arXiv cs.AI"},
+        {"title": "SIINR: Structurally Informed Implicit Neural Representations for super-resolution with uncertainty quantification of clinical quality diffusion MRI datasets", "arxiv_id": "https://arxiv.org/abs/2607.19943", "journal_or_source": "arXiv cs.CV"},
+        {"title": "SHFormer: Dynamic Spectral Filtering Convolutional Neural Network and High-pass Kernel Generation Transformer for Adaptive MRI Reconstruction", "arxiv_id": "https://arxiv.org/abs/2607.20159", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Strong Gravitational Lensing Posterior Sampling in Pixel-Space Using Diffusion Models and Recurrent Inference Machines", "arxiv_id": "https://arxiv.org/abs/2607.19459", "journal_or_source": "arXiv astro-ph.IM"}
+      ],
+      "why": "네 편은 모두 '측정이 부족하거나 저해상도인 상황에서, 물리 모델을 신경망에 직접 결합해 원래 신호를 복원한다'는 계산 이미징의 핵심 문제의식을 서로 다른 도메인에서 반복합니다. PRIME-SVR은 좌표를 입력받아 신호값을 내놓는 implicit neural representation(INR) 하나로 여러 echo time(TE)에 걸친 태아 뇌 MRI를 동시에 표현하면서, 자기공명 신호가 시간에 따라 감쇠하는 물리 법칙(Bloch 방정식)을 정합성 조건으로 걸어 기존 slice-to-volume 재구성 대비 선명도를 47%, 해부학적 정확도를 30% 개선했습니다. SIINR은 지도학습된 3D U-net을 사전지식으로 쓰고 여기에 자기지도 INR을 결합해 확산 MRI의 낮은 해상도를 보완하면서, 결과가 얼마나 불확실한지까지 함께 추정합니다. SHFormer는 가속 MRI 재구성에서 어텐션 메커니즘이 저주파 정보는 잘 잡지만 고주파(경계·질감) 정보를 놓치는 문제를, 주파수 대역을 나눠 처리하는 구조로 보완합니다. Strong Gravitational Lensing 논문은 diffusion 모델과 recurrent inference machine을 결합해 은하 중력렌즈 관측에서 배경 은하의 밝기와 전경 은하의 질량 분포를 함께 복원합니다. 네 편을 같이 보면, '물리 모델 + 신경망 결합 재구성'이라는 계산 이미징의 오래된 문제의식이 의료영상과 천체물리 양쪽에서 동시에 계속 이어지고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "4편이 모두 물리 모델과 신경망 결합이라는 같은 방법론 계열이지만 응용 도메인(태아 MRI, 확산 MRI, 가속 MRI, 천체물리)이 완전히 갈려 있어 하나의 기술적 돌파라기보다 병렬적 재현에 가까움",
+      "lab_action": "PRIME-SVR의 Bloch 방정식 기반 정합성 손실을 우리 다중 파장/다중 노출 조건 위상 복원 INR 파이프라인에 이식해 파장별 물리 제약이 재구성 정확도를 개선하는지 검증하고, SIINR의 불확실성 지도 추정 방식을 우리 저해상도 산란매질 복원 결과에 붙여 신뢰 구간을 함께 보고하는 실험 설계"
+    },
+    {
+      "cluster": "계산광학 코어에서 유일하게 실제 신호를 낸 두 편 — 홀로그래피 렌더링 속도와 병리 리포트 생성 (관찰 중, Watch Lens)",
+      "papers": [
+        {"title": "Fast Wave-optics Rendering of Multiplane Images for 3D Holographic Displays", "arxiv_id": "https://arxiv.org/abs/2607.19731", "journal_or_source": "arXiv eess.IV (cs.GR cross)"},
+        {"title": "Pathologist Attention-Aligned Report Generation for Prostate Histopathology", "arxiv_id": "https://arxiv.org/abs/2607.19624", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "오늘 Phase Imaging/Holography(8편)와 Virtual Staining/Pathology(16편) 두 버킷은 대부분 무관한 키워드 우연 매칭이었지만, 각각 한 편씩 계산광학 코어에 실제로 닿는 신호를 냈습니다. Fast Wave-optics Rendering은 3D 장면을 여러 겹의 이미지(multiplane image)로 표현한 뒤, 파동광학 기반으로 홀로그램을 계산하는 기존 방식이 장면의 기본 단위(primitive)마다 일일이 계산해 느렸던 문제를, 미리 겹쳐진 이미지 층 구조를 활용해 최대 250,000배 빠르게 만들면서도 화질은 비슷하게 유지합니다. Pathologist Attention-Aligned Report Generation은 전립선 조직 슬라이드를 볼 때 병리 전문의가 실제로 어디를 오래 들여다보는지(시선 궤적)를 데이터로 모아, 리포트 생성 모델의 주의(attention)가 그 분포를 따라가도록 학습시켜 진단 리포트 품질을 개선합니다. 응용(홀로그래피 디스플레이 vs 병리 리포트 생성)은 완전히 다르지만, 둘 다 '계산 속도 또는 신뢰성을 실제 임상/디스플레이 배포 조건에 맞춘다'는 실사용 지향 문제의식을 공유합니다.",
+      "confidence": "Low",
+      "confidence_note": "버킷당 각 1편씩이라 근거는 약하지만, 두 편 모두 abstract가 확인 가능하고 계산광학/병리 코어 문제를 직접 다뤄 Watch Lens 규칙에 따라 표에 남김",
+      "lab_action": "Fast Wave-optics Rendering의 multiplane image 기반 홀로그램 계산 방식을 우리 3D 홀로그래피 디스플레이 프로토타입의 렌더링 속도 병목 검토에 참고하고, Pathologist Attention 논문의 attention-alignment loss 구조를 우리 가상 염색/병리 보조 진단 파이프라인의 관심 영역(ROI) 지도 학습에 이식할 수 있는지 소규모로 검토"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "ATSplat의 적응형 토큰 확장을 계산 이미징 다시점 3DGS 재구성 파이프라인에 적용",
+      "claim": "장면 복잡도에 따라 가우시안 밀도를 적응적으로 조절하는 방식이, 위상/산란매질 3D 복원에서도 균일 밀도 baseline 대비 가우시안 개수·렌더링 속도·화질을 함께 개선하는지 검증한다.",
+      "supporting_papers": [
+        {"title": "ATSplat: Compact Feed-forward 3D Gaussian Splatting with Adaptive Token Expansion", "arxiv": "https://arxiv.org/abs/2607.20417"}
+      ]
+    },
+    {
+      "title": "RA-HSPINN/iPANN의 신뢰도·불확실성 정량화를 우리 위상 복원 역문제에 이식",
+      "claim": "학습 가능한 신뢰도 필드와 구간 기반 불확실성 정량화가, 위상 복원/산란매질 역문제에서 '어디를 못 믿을지'를 실제로 알려주는지, 그리고 정확도 자체도 개선하는지 확인한다.",
+      "supporting_papers": [
+        {"title": "Reliability-Aware Hard-Soft Physics-Informed Neural Networks for Robust Learning of Challenging Partial Differential Equations", "arxiv": "https://arxiv.org/abs/2607.19377"},
+        {"title": "Interval and fuzzy physics-augmented neural networks (iPANN and fPANN) for uncertainty quantification and propagation in constitutive modeling", "arxiv": "https://arxiv.org/abs/2607.20339"}
+      ]
+    },
+    {
+      "title": "PRIME-SVR의 물리 정합성 손실을 우리 다중 파장/다중 노출 위상 복원 INR 파이프라인에 이식",
+      "claim": "Bloch 방정식 기반 정합성 손실처럼, 파장별/노출별 물리 법칙을 명시적 정합성 조건으로 거는 방식이 다중 조건 복원에서도 재구성 정확도와 촬영 시간을 함께 개선하는지 소규모 실험으로 확인한다.",
+      "supporting_papers": [
+        {"title": "PRIME-SVR: Physics-infoRmed Implicit Multi-Echo Slice-to-Volume Reconstruction for Fetal T2 mapping", "arxiv": "https://arxiv.org/abs/2607.20136"},
+        {"title": "SIINR: Structurally Informed Implicit Neural Representations for super-resolution with uncertainty quantification of clinical quality diffusion MRI datasets", "arxiv": "https://arxiv.org/abs/2607.19943"}
+      ]
+    }
+  ]
+}

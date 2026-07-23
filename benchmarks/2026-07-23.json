@@ -1,0 +1,61 @@
+{
+  "date": "2026-07-23",
+  "results": [
+    {
+      "benchmark": "RealEstate10K / DL3DV, feed-forward 3DGS 대비",
+      "metric": "Gaussian count reduction / rendering FPS",
+      "value": 5.7,
+      "value_str": "밀집 feed-forward 3DGS 대비 가우시안 개수 5.7배 이상 축소, 12장 입력 영상 기준 1초 안에 재구성, 512x960 해상도에서 1136 FPS 렌더링",
+      "paper": "https://arxiv.org/abs/2607.20417",
+      "paper_title": "ATSplat: Compact Feed-forward 3D Gaussian Splatting with Adaptive Token Expansion"
+    },
+    {
+      "benchmark": "ScanNet / Replica, 뷰 합성 기반 라벨 전파",
+      "metric": "novel view synthesis PSNR improvement over Gaussian-based methods",
+      "value": 7.0,
+      "value_str": "ScanNet에서 Gaussian 기반 명시적 3D 재구성 방법과 대등한 분할 품질을 유지하면서 새 시점 영상 화질은 7dB 이상 우위, Replica 전이에서도 파인튜닝 없이 우위 유지",
+      "paper": "https://arxiv.org/abs/2607.19765",
+      "paper_title": "Extending a Large View Synthesis Model for Multi-view Panoptic Segmentation"
+    },
+    {
+      "benchmark": "Burgers / periodic convection / Poisson PDE 벤치마크, 기존 HSPINN 대비",
+      "metric": "relative error reduction",
+      "value": 98.65,
+      "value_str": "뾰족한 기울기 Burgers 방정식 오차 98.65% 감소, 노이즈 섞인 비호환 초기조건 72.42%, 부드러운 주기적 대류 61.18%, 국소 주기적 대류 60.02%, 혼합 경계 Poisson 29.36%, 다중모드 Poisson 시스템 82.17% 감소",
+      "paper": "https://arxiv.org/abs/2607.19377",
+      "paper_title": "Reliability-Aware Hard-Soft Physics-Informed Neural Networks for Robust Learning of Challenging Partial Differential Equations"
+    },
+    {
+      "benchmark": "39건 태아 뇌 다중 echo time MRI (2개 기관, 2개 벤더, 1.5T/0.55T), 기존 SVR 대비",
+      "metric": "reconstruction sharpness / anatomical accuracy / cross-TE consistency",
+      "value": 47.0,
+      "value_str": "기존 slice-to-volume 재구성 대비 선명도 47%, 해부학적 정확도 30%, 교차 TE 구조적 일관성 14% 개선. 촬영 시간을 15분에서 10분(T2 오차 1.7% 이내)까지, 고품질 조건에서는 5분(오차 2.3%)까지 단축",
+      "paper": "https://arxiv.org/abs/2607.20136",
+      "paper_title": "PRIME-SVR: Physics-infoRmed Implicit Multi-Echo Slice-to-Volume Reconstruction for Fetal T2 mapping"
+    },
+    {
+      "benchmark": "미확인 도메인(unseen scenario) 다중모달 MRI 재구성",
+      "metric": "PSNR / SSIM improvement",
+      "value": 1.0,
+      "value_str": "미확인 도메인 일반화 조건에서 PSNR 약 1dB, SSIM 약 0.01 개선",
+      "paper": "https://arxiv.org/abs/2607.20159",
+      "paper_title": "SHFormer: Dynamic Spectral Filtering Convolutional Neural Network and High-pass Kernel Generation Transformer for Adaptive MRI Reconstruction"
+    },
+    {
+      "benchmark": "3D 장면 데이터셋, primitive 기반 CGH 대비",
+      "metric": "hologram rendering speedup",
+      "value": 250000.0,
+      "value_str": "기존 primitive 기반 CGH 알고리즘 대비 최대 250,000배 빠른 렌더링, 화질은 비슷한 수준 유지",
+      "paper": "https://arxiv.org/abs/2607.19731",
+      "paper_title": "Fast Wave-optics Rendering of Multiplane Images for 3D Holographic Displays"
+    },
+    {
+      "benchmark": "121건 전립선 WSI 리포트 생성, baseline 대비",
+      "metric": "NLP metric / clinical component accuracy improvement",
+      "value": 10.9,
+      "value_str": "attention-alignment 학습 후 NLP 기반 지표 평균 10.9% 개선, 5개 임상 리포트 구성요소 정확도 평균 19.3% 개선",
+      "paper": "https://arxiv.org/abs/2607.19624",
+      "paper_title": "Pathologist Attention-Aligned Report Generation for Prostate Histopathology"
+    }
+  ]
+}
