@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 23 Jul 2026 12:12:48 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 12:11:17 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-07-24 (금요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-07-24.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-24.html</guid>
+      <pubDate>Fri, 24 Jul 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘(7/24, 금)을 어제(7/23, 목)와 이어보면 3D 재구성이라는 화두 자체는 계속 이어지지만 질문이 또 한 번 바뀌었습니다. 어제는 "재구성한 장면을 어떻게 압축·편집·활용할 수 있는가"와 "재구성 자체를 얼마나 빠르고 가볍게 만들 수 있는가"가 번갈아 나왔는데, 오늘은 그 재구성이 "이상적인 조건을 벗어난 상황에서도 버티는가"로 초점이 한 단계 더 나아갔습니다. SubSplat은 고해상도 입력에서 연산량이 제곱으로 느는 문제를 sub-pixel 단위로 가우시안을 쪼개는 방식으로 우회했고, WAT3R은 빛이 심하게 산란·감쇠되는 수중 영상에서도 한 번의 순전파로 3D 점과 카메라 자세를 뽑아냅니다. 계산광학 코어(Fourier Ptychography, Lensl…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-07-23 (목요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-07-23.html</link>
