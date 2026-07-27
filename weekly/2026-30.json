@@ -1,0 +1,207 @@
+{
+  "date": "2026-07-27",
+  "iso_week": "2026-30",
+  "week_start": "2026-07-20",
+  "week_end": "2026-07-24",
+  "weekly_thesis": "지난주 초반(월요일)에는 3DGS가 실시간성·연속학습 같은 배포 조건을 하나씩 개별적으로 점검하는 데 머물렀는데, 주 후반(목~금)에는 그 점검을 통과한 방법들이 다섯 가지 서로 다른 열화 조건을 동시에 버티는 단계를 지나 KITTI Odometry 같은 실제 대규모 SLAM 벤치마크에서 실시간 성능을 내는 지점까지 도달했다. 같은 기간 물리 정보 신경망과 의료·병리 영상은 정확도 경쟁에서 신뢰성·불확실성 검증으로 계속 이동했지만, 그 신뢰성 검증이 랩이 기대했던 계산광학 핵심 3버킷(FP·위상·홀로그래피)으로는 아직 번지지 않았다.",
+  "hot_vs_cold": {
+    "hot": [
+      {
+        "cluster": "3D Gaussian Splatting — 배포 조건 점검에서 실시간 SLAM까지",
+        "why": "월요일 실시간·연속학습 조건 점검에서 시작해 화요일 압축·안전성, 수요일 활용 확장, 목요일 재구성 자체로의 복귀를 거쳐 금요일 다섯 갈래 스트레스 테스트와 GLAM-SLAM의 실시간 대규모 SLAM까지 닷새 내내 이어졌다.",
+        "papers": [
+          "https://arxiv.org/abs/2607.16624",
+          "https://arxiv.org/abs/2607.20417",
+          "https://arxiv.org/abs/2607.21416"
+        ]
+      },
+      {
+        "cluster": "물리 정보 신경망(PINN)·물리 결합 복원의 신뢰성 축",
+        "why": "월요일 이론적 오차 경계 분석에서 시작해 수요일 posterior sampling 이론 보장, 목요일 구간·퍼지 불확실성 정량화, 금요일 형광 현미경 물리 정보 초해상도까지 정확도보다 신뢰성을 재는 논문이 반복됐다.",
+        "papers": [
+          "https://arxiv.org/abs/2607.15702",
+          "https://arxiv.org/abs/2607.19333",
+          "https://arxiv.org/abs/2607.19377"
+        ]
+      }
+    ],
+    "cold": [
+      {
+        "cluster": "계산광학 핵심 3버킷(FP·위상·홀로그래피)",
+        "why": "5영업일 합산으로도 Fourier Ptychography/Microscopy 8편, Lensless/Coded Imaging 2편에 그쳤고, 그나마도 대부분 하루짜리 저널 title-only 신호였다."
+      },
+      {
+        "cluster": "순수 렌더링 품질만 겨루는 3DGS 논문",
+        "why": "이번 주 3DGS 관련 논문은 거의 전부 압축·안전성·활용확장·SLAM·수중·인페인팅 중 하나의 스트레스 조건을 반드시 얹었고, 순수 품질 경쟁만 다루는 논문은 찾기 어려웠다."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "cluster": "3D Gaussian Splatting이 배포 조건 스트레스 테스트를 통과하며 실시간 SLAM에 도달",
+      "papers": [
+        {"title": "SPARE-GS: Structural Parsimony and Resource Efficiency for 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2607.16624", "importance_tags": ["[방법전환]"]},
+        {"title": "ZeroSplat: Generalized Referring Segmentation in 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2607.18801", "importance_tags": ["[방법전환]"]},
+        {"title": "ATSplat: Compact Feed-forward 3D Gaussian Splatting with Adaptive Token Expansion", "arxiv": "https://arxiv.org/abs/2607.20417", "importance_tags": ["[방법전환]", "[스케일업]"]},
+        {"title": "GLAM-SLAM: Real-time Gaussian Large-scale Mapping via Flow Densification and Spatial Decomposition", "arxiv": "https://arxiv.org/abs/2607.21416", "importance_tags": ["[스케일업]", "[실사용전환]"]}
+      ],
+      "why": "월요일에는 E3DGS·ImprovedVBGS·CSS-BA가 색상-기하 결합, 실시간 연속학습, 저시차 번들 조정처럼 배포 조건을 하나씩 개별적으로 점검했다. 화요일에는 SPARE-GS·QIRF·패킷 손실 강건 압축까지 다섯 편이 가우시안 개수와 저장 용량을 줄이면서도 패킷 유실·모션 블러에도 버티는지를 함께 물었다. 수요일에는 ZeroSplat·AniGS·FlexiAvatar처럼 재구성한 장면을 언어로 지칭하거나 움직이거나 일부만 봐도 완성하는 활용 범위 확장으로 넘어갔고, 목요일 ATSplat은 다시 재구성 자체의 압축률·속도·일반화로 초점을 되돌렸다. 금요일에는 SubSplat·GrainGS·WAT3R·GLAM-SLAM·3D-GIMP 다섯 편이 초해상도·동적 장면·수중·대규모 SLAM·인페인팅이라는 서로 다른 이상 조건에서 동시에 버티는지를 시험했고, 그중 GLAM-SLAM은 KITTI Odometry·Oxford RobotCar·Malaga라는 실제 대규모 야외 주행 SLAM 벤치마크 3종에서 2위 방법 대비 재구성 품질 15% 개선을 실시간으로 유지하며 한 주의 흐름을 실제 로봇 배포 조건까지 밀어붙였다.",
+      "confidence": "High",
+      "lab_action": "GLAM-SLAM의 flow densification + spatial decomposition 구조를 랩 다시점 계산 이미징/산란매질 캡처 데이터에 적용해 대규모 시퀀스에서 재구성 품질·지연시간을 기존 3DGS-SLAM 베이스라인과 비교하고, SPARE-GS/QIRF의 압축 기법을 랩 3DGS 파이프라인에 적용해 Gaussian 개수·저장 용량 대비 PSNR 손실 비교표 작성"
+    },
+    {
+      "cluster": "물리 정보 신경망과 물리 결합 복원이 정확도에서 신뢰성·불확실성 검증으로",
+      "papers": [
+        {"title": "A Statistical Formulation Gap for Nonlinear Multiscale Physics-Informed Learning", "arxiv": "https://arxiv.org/abs/2607.15702", "importance_tags": ["[해부분석]", "[평가축]"]},
+        {"title": "Provable diffusion-based posterior sampling for linear inverse problems via DDIM", "arxiv": "https://arxiv.org/abs/2607.19333", "importance_tags": ["[방법전환]", "[표준후보]"]},
+        {"title": "Reliability-Aware Hard-Soft Physics-Informed Neural Networks for Robust Learning of Challenging Partial Differential Equations", "arxiv": "https://arxiv.org/abs/2607.19377", "importance_tags": ["[방법전환]", "[평가축]"]},
+        {"title": "Interval and fuzzy physics-augmented neural networks (iPANN and fPANN) for uncertainty quantification and propagation in constitutive modeling", "arxiv": "https://arxiv.org/abs/2607.20339", "importance_tags": ["[평가축]"]}
+      ],
+      "why": "월요일 Statistical Formulation Gap은 비선형 다중스케일 PINN이 어디까지는 이론적으로 오차가 보장되고 어디부터는 보장되지 않는지 경계선을 수식으로 그렸다. 수요일 Provable DDIM posterior sampling은 역문제 solver로 diffusion 기반 posterior sampling을 쓸 때 이론적 수렴 보장을 증명해, 반복 최적화를 대체할 근거를 마련했다. 목요일에는 Reliability-Aware HSPINN이 기울기가 뾰족하거나 초기조건이 노이즈에 오염된 어려운 방정식에서도 안정적으로 학습하는 구조를 냈고, iPANN/fPANN은 구성 모델링에 구간·퍼지 불확실성 정량화를 붙였다. 금요일에는 형광 현미경 초해상도에 물리 정보 학습을 적용한 논문이 같은 원리를 실제 이미징 장비 데이터에 적용했다. 네 편을 같이 보면, 물리 정보 학습 커뮤니티가 '이 방정식도 풀린다'는 개별 성공 사례에서 벗어나 이론적 한계·수렴 보장·불확실성까지 방법론 구성요소 하나하나를 신뢰성 관점에서 다시 검증하고 있다는 뜻이다.",
+      "confidence": "Medium",
+      "lab_action": "Reliability-Aware HSPINN과 iPANN/fPANN의 불확실성 정량화 기법을 랩 위상 복원·산란매질 역문제 solver에 적용해 예측 신뢰구간 비교표를 만들고, Provable DDIM posterior sampling을 랩 lensless/위상 복원 파이프라인의 대안 solver로 반복 최적화 대비 uncertainty coverage와 수렴 속도를 비교"
+    },
+    {
+      "cluster": "계산광학 코어(FP·lensless·위상·메타옵틱스)가 이번 주도 거의 잠잠 (Watch Lens)",
+      "papers": [
+        {"title": "Broadband Content-Adaptive Moiré Meta-spectrometer", "arxiv": "https://arxiv.org/abs/2607.17256", "importance_tags": ["[인프라]"]},
+        {"title": "High dynamic range lensless on-chip microscopy via an overexposure inverse-projection operator", "arxiv": "", "importance_tags": ["[방법전환]"]},
+        {"title": "Fast Wave-optics Rendering of Multiplane Images for 3D Holographic Displays", "arxiv": "https://arxiv.org/abs/2607.19731", "importance_tags": ["[실사용전환]"]},
+        {"title": "Aperiodic error correction for illumination array in Fourier ptychographic microscopy", "arxiv": "https://doi.org/10.1016/j.optlastec.2026.116012", "importance_tags": ["[방법전환]"]}
+      ],
+      "why": "화요일에는 적응형 모아레 메타분광계와 노출 과다를 역투영으로 보정하는 렌즈리스 온칩 현미경이 저널에서 나와 계산광학 코어에 하루짜리 신호를 냈다. 수요일에는 색수차 보정 중적외선 메타렌즈, 광학 미분 연산 메타표면, 홀로그래피 스캐닝처럼 제목만으로 확인되는 저널 논문 넷이 나왔지만 서로 다른 세부 응용으로 흩어져 있었다. 목요일에는 홀로그래피 렌더링 속도를 다룬 논문 한 편만 계산광학 코어에서 실제 신호를 냈고, 금요일에는 Fourier ptychography 조명 배열 오차 보정 논문이 한 편 더 나왔다. 5영업일을 합산해도 Fourier Ptychography/Microscopy 8편, Lensless/Coded Imaging 2편에 그쳤고, Meta-Optics/Diffractive는 49편으로 편수만 보면 커 보이지만 그중 상당수가 통신·레이더용 metasurface로 이미징과 무관했다. 랩 핵심 ROI가 매일 하루씩 흩어진 신호로만 존재한다는 뜻이라, 편수 그래프만 보면 이 공백을 놓치기 쉽다.",
+      "confidence": "Low",
+      "lab_action": "저널 수집 쿼리에 'lensless microscopy HDR', 'Fourier ptychography illumination array correction' 같은 랩 특화 키워드를 추가해 통신·레이더 THz 우연 매칭과 분리 수집하고, HDR 렌즈리스 온칩 현미경의 overexposure inverse-projection 연산자를 랩 렌즈리스 파이프라인의 포화 픽셀 처리에 참고 사례로 검토"
+    },
+    {
+      "cluster": "병리·의료 영상이 정확도 숫자보다 그 숫자를 믿을 수 있는가를 같이 요구",
+      "papers": [
+        {"title": "Pathologist Attention-Aligned Report Generation for Prostate Histopathology", "arxiv": "https://arxiv.org/abs/2607.19624", "importance_tags": ["[평가축]"]},
+        {"title": "SIINR: Structurally Informed Implicit Neural Representations for super-resolution with uncertainty quantification of clinical quality diffusion MRI datasets", "arxiv": "https://arxiv.org/abs/2607.19943", "importance_tags": ["[평가축]"]},
+        {"title": "HistoFID: Calibrating Frechet-distance evaluation across pathology foundation models", "arxiv": "https://arxiv.org/abs/2607.20584", "importance_tags": ["[경고신호]", "[평가축]"]},
+        {"title": "HierarchicalDAEW: Domain-Aware Edge-Weighted Graph Convolution with Evidential Uncertainty for Multi-Section Spatial Gene Expression Prediction from H&E Histology", "arxiv": "https://arxiv.org/abs/2607.20896", "importance_tags": ["[평가축]"]}
+      ],
+      "why": "목요일 Pathologist Attention-Aligned Report Generation은 생성된 병리 리포트가 실제 병리의사의 시선(attention)과 맞는지를 검증 기준으로 삼았고, SIINR은 임상 품질 확산 MRI 초해상도에 불확실성 정량화를 붙였다. 금요일 HistoFID는 같은 병리 타일 쌍이라도 평가에 쓰는 인코더를 6개 바꾸면 Frechet distance 값이 최대 30배까지 벌어진다는 사실을 드러내 병리 AI 평가지표 자체의 신뢰성 문제를 짚었고, HierarchicalDAEW는 유전자 발현 예측에 evidential uncertainty를 붙여 예측값과 함께 얼마나 못 미더운지도 같이 내놓게 했다. 네 편을 같이 보면, 병리·의료 영상 AI가 '숫자가 얼마나 높은가'에서 '그 숫자를 어떤 조건에서 믿을 수 있는가'로 평가의 초점을 옮기고 있다는 뜻이다.",
+      "confidence": "Medium",
+      "lab_action": "HistoFID의 인코더별 Frechet distance 변동성 측정 방법을 랩이 쓰는 가상 염색 평가 파이프라인에 적용해 현재 사용 중인 인코더가 실제로 얼마나 민감한지 재검증하고, HierarchicalDAEW의 evidential uncertainty 기법을 랩 병리·현미경 예측 모델에 이식해 신뢰구간 제공 여부를 비교"
+    },
+    {
+      "cluster": "이미지 복원·초해상도 평가가 보기 좋음에서 과제-관련 증거 보존으로",
+      "papers": [
+        {"title": "Does Super-Resolution Preserve Defect Evidence? A Low-False-Call Benchmark for Semiconductor Inspection", "arxiv": "https://arxiv.org/abs/2607.17401", "importance_tags": ["[평가축]", "[인프라]"]},
+        {"title": "DRIFT: Difficulty-aware Rectified Flows for Through-plane MRI Super-Resolution", "arxiv": "https://arxiv.org/abs/2607.16649", "importance_tags": ["[방법전환]"]},
+        {"title": "Physics-Informed Deep Learning Model for Cross-Modality Super-Resolution in Fluorescence Microscopy", "arxiv": "https://arxiv.org/abs/2607.21190", "importance_tags": ["[방법전환]"]},
+        {"title": "MedDiT4SR: Tri-Stream Joint Adaptation of Pre-Trained Diffusion Transformers for Medical Image Super-Resolution", "arxiv": "https://arxiv.org/abs/2607.20598", "importance_tags": ["[방법전환]"]}
+      ],
+      "why": "화요일 Does SR Preserve Defect Evidence는 반도체 결함 검사에서 초해상도를 쓸 때 화면이 보기 좋아지는 것과 실제 결함 증거가 남아 있는 것이 다른 문제라는 점을 저오탐(low-false-call) 벤치마크로 정면으로 짚었고, 같은 날 DRIFT는 난이도를 인식하는 rectified flow로 MRI 단면 초해상도를 개선했다. 금요일에는 형광 현미경 교차 모달리티 초해상도와 MedDiT4SR이 각각 물리 정보와 사전학습 diffusion transformer를 의료 영상 초해상도에 적용했다. 화·금 이틀에 걸쳐 서로 다른 도메인(반도체 검사, MRI, 형광 현미경)에서 5편이 같은 방향을 보였지만, 아직 서로 직접 비교되지는 않았다 — 방향은 '지각적으로 그럴듯한가'에서 '과제에 실제로 필요한 증거·해부학적 정보가 남아 있는가'로 옮겨가고 있다.",
+      "confidence": "Medium",
+      "lab_action": "Does SR Preserve Defect Evidence의 저오탐 벤치마크 설계를 랩 Fourier ptychography/QPI 초해상도 결과에 적용해, 기존 PSNR/SSIM만으로는 드러나지 않는 물리적 증거 보존 여부를 별도 지표로 측정"
+    }
+  ],
+  "predictions": [
+    {
+      "title": "GLAM-SLAM류 실시간 대규모 Gaussian SLAM의 실제 로봇/임베디드 배포 후속 등장",
+      "claim": "이번 주 GLAM-SLAM이 보여준 실시간 대규모 SLAM이 다음 주에는 오프라인 궤적 벤치마크를 넘어 실제 로봇 플랫폼 또는 시뮬레이션 폐루프(closed-loop) 주행·탐사에 적용한 후속 논문으로 이어진다.",
+      "rationale": "이번 주 3DGS가 배포 조건 점검에서 실시간 SLAM까지 닷새 만에 도달한 속도로 볼 때, 다음 단계는 오프라인 벤치마크가 아니라 실제 폐루프 로봇 적용이다.",
+      "hit_condition": "로봇 플랫폼 또는 시뮬레이션 폐루프 주행·탐사에서 Gaussian 기반 SLAM/매핑을 실제로 실행한 논문 1편 이상",
+      "miss_condition": "계속 KITTI류 오프라인 궤적 벤치마크·재구성 품질 비교에만 머물거나 관련 논문이 없으면 빗나감"
+    },
+    {
+      "title": "불확실성 정량화가 계산광학 코어(FP·위상·홀로그래피·lensless)로 직접 번짐",
+      "claim": "이번 주 PINN·MRI·병리로 확장된 불확실성 정량화 흐름이 다음 주에는 Fourier ptychography, 정량 위상 영상, 홀로그래피, lensless 이미징 중 하나로 직접 번진다.",
+      "rationale": "지난 두 주 연속으로 이 예측이 빗나갔지만, 신뢰성 검증 흐름 자체가 계속 강해지고 있어 랩 핵심 ROI로 옮겨붙을 가능성을 계속 추적할 필요가 있다.",
+      "hit_condition": "FP·QPI·홀로그래피·lensless 중 하나에서 uncertainty quantification/calibration을 직접 다룬 논문 1편 이상",
+      "miss_condition": "불확실성 정량화가 계속 PINN 방법론·MRI·병리에만 머물고 계산광학 코어로 번지지 않으면 빗나감"
+    },
+    {
+      "title": "HistoFID류 평가지표 신뢰성 점검이 병리를 넘어 다른 이미징 평가 지표로 확장",
+      "claim": "이번 주 HistoFID가 드러낸 '평가 인코더에 따라 지표 값이 크게 달라진다'는 문제의식이 다음 주에는 3DGS 렌더링 품질 지표나 다른 의료 영상 합성 평가 지표로도 확장된다.",
+      "rationale": "평가지표 자체의 신뢰성을 의심하는 흐름은 한 도메인에 머물지 않고 비슷한 평가 구조를 가진 다른 생성/합성 평가로 번지는 경우가 최근 반복되고 있다.",
+      "hit_condition": "병리 외 도메인(3DGS 렌더링 품질, 의료 영상 합성 등)에서 평가 지표·인코더 간 불일치나 신뢰성 문제를 다룬 논문 1편 이상",
+      "miss_condition": "평가지표 신뢰성 문제 제기가 계속 병리 FID/foundation model 비교에만 머물면 빗나감"
+    }
+  ],
+  "prediction_review": [
+    {
+      "title": "Feed-forward 3DGS 즉시 재구성이 실시간 로봇/AR-VR 배포 사례로 이어짐",
+      "label": "✅",
+      "reason": "금요일 GLAM-SLAM이 KITTI Odometry·Oxford RobotCar·Malaga 같은 실제 대규모 야외 주행 SLAM 벤치마크에서 2위 방법 대비 재구성 품질 15% 개선을 실시간으로 유지하며 로봇 SLAM 배포 조건을 정확히 명시했다. 적중입니다."
+    },
+    {
+      "title": "불확실성 정량화가 계산광학 코어(FP·위상·홀로그래피)로 번짐",
+      "label": "✗",
+      "reason": "이번 주 불확실성 정량화는 PINN 구성 모델링(iPANN/fPANN), 확산 MRI 초해상도(SIINR), 병리 유전자 발현 예측(HierarchicalDAEW)으로는 번졌지만 Fourier ptychography·정량 위상 영상·홀로그래피에서는 등장하지 않았습니다. 빗나갔습니다."
+    },
+    {
+      "title": "WSI 신뢰성 검증 흐름이 병리 외 다른 임상 영상 모달리티로 확장",
+      "label": "◐",
+      "reason": "SIINR이 확산 MRI 초해상도에 불확실성 정량화를 붙이며 병리 밖으로 신뢰성 검증이 번지긴 했지만, 이는 데이터 유출 감사·calibration·연합학습 같은 예측 조건이 아니라 재구성 불확실성이라는 다른 축이었고, 방사선영상 자체의 분류/진단 신뢰성 검증으로는 이어지지 않았습니다. 부분 적중으로 봅니다."
+    }
+  ],
+  "themes": [
+    {
+      "title": "3D Gaussian Splatting — 배포 조건 점검에서 실시간 SLAM까지, 닷새 만에",
+      "summary": "월요일 실시간·연속학습 조건을 개별 점검하던 3DGS가 화요일 압축·안전성, 수요일 활용 확장, 목요일 재구성 자체로의 복귀를 거쳐 금요일 다섯 갈래 스트레스 테스트와 GLAM-SLAM의 실시간 대규모 SLAM까지 도달했다. 랩이 이 방법을 파이프라인에 들일 때 어느 단계 증거를 먼저 확인해야 하는지 판단하는 데 참고할 만하다.",
+      "confidence": "High"
+    },
+    {
+      "title": "물리 정보 신경망과 물리 결합 복원이 정확도 경쟁에서 신뢰성·불확실성 검증으로",
+      "summary": "Statistical Formulation Gap의 이론적 오차 경계, Provable DDIM posterior sampling의 수렴 보장, Reliability-Aware HSPINN과 iPANN/fPANN의 불확실성 정량화까지, PINN·물리 결합 복원 커뮤니티가 개별 방정식을 더 잘 푸는 경쟁에서 벗어나 방법론 자체를 신뢰성 관점에서 다시 검증하고 있다.",
+      "confidence": "Medium"
+    },
+    {
+      "title": "계산광학 코어는 이번 주도 조용했다 — 랩이 반드시 확인해야 할 Watch Lens",
+      "summary": "Fourier ptychography, lensless, 위상 영상, 메타옵틱스는 5영업일 합산으로도 FP 8편·lensless 2편에 그쳤고, 그나마 대부분 하루짜리 저널 title-only 신호였다. 벌써 세 번째 주째 반복되는 공백이라, 편수 그래프만 보면 놓치기 쉬운 랩 핵심 ROI의 침묵을 계속 별도로 추적해야 한다.",
+      "confidence": "Low"
+    }
+  ],
+  "top5": [
+    {
+      "title": "GLAM-SLAM: Real-time Gaussian Large-scale Mapping via Flow Densification and Spatial Decomposition",
+      "arxiv": "https://arxiv.org/abs/2607.21416",
+      "why": "지난주 weekly가 예측했던 '실시간 로봇 배포 사례'가 정확히 이 자리에서 나왔다 — KITTI Odometry·Oxford RobotCar·Malaga 실제 대규모 야외 주행 SLAM 벤치마크 3종에서 2위 방법 대비 재구성 품질 15% 개선을 실시간으로 유지했다.",
+      "tag": "[스케일업]"
+    },
+    {
+      "title": "A Statistical Formulation Gap for Nonlinear Multiscale Physics-Informed Learning",
+      "arxiv": "https://arxiv.org/abs/2607.15702",
+      "why": "PINN이 어디까지 이론적으로 오차가 보장되고 어디부터 보장되지 않는지 경계선을 수식으로 그려, 이번 주 물리 정보 학습 신뢰성 축의 이론적 기반을 놓았다.",
+      "tag": "[해부분석]"
+    },
+    {
+      "title": "Does Super-Resolution Preserve Defect Evidence? A Low-False-Call Benchmark for Semiconductor Inspection",
+      "arxiv": "https://arxiv.org/abs/2607.17401",
+      "why": "초해상도 평가를 '보기 좋은가'에서 '결함 증거가 실제로 남아 있는가'로 옮기는 저오탐 벤치마크를 제안해, 이번 주 SR 평가축 전환 흐름의 출발점이 됐다.",
+      "tag": "[평가축]"
+    },
+    {
+      "title": "Provable diffusion-based posterior sampling for linear inverse problems via DDIM",
+      "arxiv": "https://arxiv.org/abs/2607.19333",
+      "why": "반복 최적화를 대체할 diffusion 기반 posterior sampling에 이론적 수렴 보장을 붙여, 역문제 solver 선택의 근거를 이론 쪽으로 넓혔다.",
+      "tag": "[방법전환]"
+    },
+    {
+      "title": "HistoFID: Calibrating Frechet-distance evaluation across pathology foundation models",
+      "arxiv": "https://arxiv.org/abs/2607.20584",
+      "why": "같은 병리 타일 쌍도 평가 인코더를 바꾸면 Frechet distance가 30배까지 벌어진다는 사실을 드러내, 병리 AI 평가지표 자체의 신뢰성 문제를 경고했다.",
+      "tag": "[경고신호]"
+    }
+  ],
+  "next_week_actions": [
+    {
+      "title": "GLAM-SLAM 구조를 랩 대규모 시퀀스 데이터에 재현",
+      "action": "GLAM-SLAM의 flow densification + spatial decomposition 구조를 랩 다시점 계산 이미징/산란매질 캡처 데이터에 적용해 기존 3DGS-SLAM 베이스라인 대비 재구성 품질·지연시간을 비교",
+      "expected_output": "대규모 시퀀스에서의 처리 지연시간·메모리·재구성 품질 비교표"
+    },
+    {
+      "title": "SR 결함 증거 보존 벤치마크를 랩 계산광학 결과에 적용",
+      "action": "Does SR Preserve Defect Evidence의 저오탐 벤치마크 설계를 랩 Fourier ptychography/QPI 초해상도 결과에 적용해 PSNR/SSIM 외에 물리적 증거 보존 여부를 별도로 측정",
+      "expected_output": "PSNR/SSIM vs 결함·증거 보존율을 나란히 비교하는 표"
+    },
+    {
+      "title": "PINN 불확실성 정량화 기법을 위상 복원 solver에 이식",
+      "action": "Reliability-Aware HSPINN과 iPANN/fPANN의 불확실성 정량화, Provable DDIM posterior sampling을 랩 위상 복원·lensless 역문제 solver에 각각 적용해 신뢰구간과 수렴 속도를 비교",
+      "expected_output": "solver별(기존 반복 최적화 vs DDIM posterior sampling vs 불확실성 인식 PINN) 신뢰구간 커버리지·수렴 속도 비교표"
+    }
+  ]
+}

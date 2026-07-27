@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Weekly Retrospective — 2026-W30</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.7;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+table{border-collapse:collapse;width:100%;margin:1rem 0}
+th,td{border:1px solid #ccc;padding:.5rem .8rem;vertical-align:top}
+th{background:#f0f0f8;font-size:.85rem}
+td{font-size:.88rem}
+blockquote{border-left:4px solid #2a2a6e;padding:.5rem 1rem;margin:1rem 0;background:#f8f8ff}
+.theme-card{border:1px solid #e0e0ff;border-radius:8px;padding:1rem;margin:.8rem 0;background:#f8f8ff}
+.theme-card h3{margin:0 0 .5rem;font-size:1rem;color:#2a2a6e}
+a{color:#2a2a6e}
+.home{display:inline-block;padding:.4rem .9rem;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;font-size:.875rem;color:#374151;text-decoration:none;margin:.5rem 0}
+.home:hover{background:#e9ecef}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 6px;border-radius:8px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.hot-cold{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+.hot-box{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:.9rem 1.1rem}
+.cold-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:.9rem 1.1rem}
+.hot-box h3{margin:0 0 .5rem;color:#7f1d1d;font-size:.95rem}
+.cold-box h3{margin:0 0 .5rem;color:#1e3a8a;font-size:.95rem}
+.hot-box ul,.cold-box ul{margin:.4rem 0;padding-left:1.2rem;font-size:.88rem}
+.dd{background:#fefce8;border:1px solid #fde047;border-radius:10px;padding:1.1rem 1.3rem;margin:1rem 0}
+.dd h3{margin:0 0 .5rem;color:#713f12;font-size:1rem}
+.action-card{border:1px solid #d1fae5;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#f0fdf4}
+.action-card h3{margin:0 0 .4rem;font-size:.95rem;color:#14532d}
+.pred-card{border:1px solid #e0e7ff;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#eef2ff}
+.pred-card h3{margin:0 0 .4rem;font-size:.95rem;color:#3730a3}
+.pred-card .cond{font-size:.82rem;color:#4338ca;margin:.3rem 0}
+.meta{font-size:.85rem;color:#475569;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:4px;padding:.6rem 1rem;margin:.8rem 0}
+ul.plain{padding-left:1.3rem}
+ul.plain li{margin:.3rem 0;font-size:.9rem}
+.review-hit{color:#166534;font-weight:700}
+.review-partial{color:#92400e;font-weight:700}
+.review-miss{color:#7f1d1d;font-weight:700}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Weekly Retrospective — 2026-07-27 (Week 30)</h1>
+<div class=meta>
+  <div>발행: 2026-07-27 (월) &nbsp;|&nbsp; 검토 기간: 2026-07-20 ~ 07-24 (Mon–Fri)</div>
+  <div>지난주 arXiv 신규 약 2,757편 (cs.LG 932 · cs.CV 595 · cs.AI 1072 · eess.IV 35 · eess.SP 123) + 저널 다수 &nbsp;|&nbsp; ROI 배정 1,143건 &nbsp;|&nbsp; 5일치 daily briefing 기반(월~금 모두 arXiv+저널 완전판)</div>
+</div>
+
+<h2>🗓 Executive Summary</h2>
+<ul class=plain>
+  <li>지난주는 <strong>3D Gaussian Splatting이 월요일 배포 조건 하나하나를 개별적으로 점검하는 데서 시작해, 금요일에는 다섯 갈래 이상 조건을 동시에 버티고 실제 대규모 SLAM 벤치마크에서 실시간 성능까지 낸 한 주</strong>로 기억하면 됩니다. 특히 금요일 GLAM-SLAM이 KITTI Odometry 같은 실제 야외 주행 데이터셋에서 실시간 SLAM 성능을 보여, 지난주 예측했던 로봇 배포 신호가 그대로 나타났습니다.</li>
+  <li>물리 정보 신경망(PINN)과 물리 결합 복원은 <strong>"더 정확한가"를 겨루는 경쟁에서 벗어나 "이 방법을 얼마나 믿을 수 있는가"를 스스로 재는 쪽</strong>으로 계속 무게중심을 옮겼습니다 — 다만 그 신뢰성 검증은 지난주 예측과 달리 계산광학 코어가 아니라 PINN 방법론 자체와 MRI·병리 쪽으로 번졌습니다.</li>
+  <li>랩의 핵심 ROI인 <strong>계산광학 코어(Fourier ptychography·lensless·위상 영상·메타옵틱스)는 이번 주도 거의 잠잠</strong>했습니다 — 5일 합산으로도 FP 8편, lensless 2편에 그쳐, 이 공백이 벌써 세 번째 주째 반복되고 있다는 점을 랩이 계속 주시해야 합니다.</li>
+</ul>
+
+<blockquote>
+<strong>Weekly Thesis.</strong> 지난주 초반(월요일)에는 3DGS가 실시간성·연속학습 같은 배포 조건을 하나씩 개별적으로 점검하는 데 머물렀는데, 주 후반(목~금)에는 그 점검을 통과한 방법들이 다섯 가지 서로 다른 열화 조건을 동시에 버티는 단계를 지나 KITTI Odometry 같은 실제 대규모 SLAM 벤치마크에서 실시간 성능을 내는 지점까지 도달했습니다. 같은 기간 물리 정보 신경망과 의료·병리 영상은 정확도 경쟁에서 신뢰성·불확실성 검증으로 계속 이동했지만, 그 신뢰성 검증이 랩이 기대했던 계산광학 핵심 3버킷(FP·위상·홀로그래피)으로는 아직 번지지 않았습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>지난주 가장 뜨거운 흐름은 <strong>3D Gaussian Splatting(3DGS, 장면을 수많은 3차원 조각으로 표현해 새 시점 영상을 만드는 방법)이 닷새 동안 다섯 단계를 순서대로 통과해 실시간 SLAM(동시적 위치추정 및 지도작성, 로봇이 움직이면서 주변 지도를 만들고 자기 위치를 동시에 계산하는 문제)까지 도달한 것</strong>입니다. 월요일에는 E3DGS·ImprovedVBGS·CSS-BA가 색상-기하 결합, 실시간 연속학습, 저시차 번들 조정처럼 배포 조건을 하나씩 개별적으로 점검했습니다. 화요일에는 SPARE-GS·QIRF·패킷 손실 강건 압축까지 다섯 편이 가우시안 개수와 저장 용량을 줄이면서도 패킷 유실·모션 블러에 버티는지를 함께 물었고, 수요일에는 ZeroSplat·AniGS·FlexiAvatar처럼 재구성한 장면을 언어로 지칭하거나 움직이거나 일부만 봐도 완성하는 활용 범위 확장으로 넘어갔습니다. 목요일 ATSplat은 다시 재구성 자체의 압축률·속도·일반화로 초점을 되돌렸고, 금요일에는 SubSplat·GrainGS·WAT3R·GLAM-SLAM·3D-GIMP 다섯 편이 초해상도·동적 장면·수중·대규모 SLAM·인페인팅이라는 서로 다른 이상 조건에서 동시에 버티는지를 시험했습니다. 그중 GLAM-SLAM은 KITTI Odometry·Oxford RobotCar·Malaga라는 실제 대규모 야외 주행 SLAM 벤치마크 3종에서 2위 방법 대비 재구성 품질 15% 개선을 실시간으로 유지해, 월요일의 "이 조건 하나를 버티는가"에서 금요일의 "실제 로봇 배포 조건에서 실시간으로 돌아가는가"까지 닷새 만에 도달했습니다.</p>
+
+<p>두 번째 흐름은 <strong>물리 정보 신경망과 물리 결합 복원이 정확도 경쟁에서 신뢰성·불확실성 검증으로 계속 이동한 것</strong>입니다. 월요일 Statistical Formulation Gap은 비선형 다중스케일 PINN이 어디까지는 이론적으로 오차가 보장되고 어디부터는 보장되지 않는지 경계선을 수식으로 그렸고, 수요일 Provable diffusion posterior sampling은 반복 최적화 대신 diffusion 기반 posterior sampling을 역문제 solver로 쓸 때의 이론적 수렴 보장을 증명했습니다. 목요일에는 Reliability-Aware HSPINN이 기울기가 뾰족하거나 초기조건이 오염된 어려운 방정식에서도 안정적으로 학습하는 구조를 냈고, iPANN/fPANN은 구성 모델링에 구간·퍼지 불확실성 정량화를 붙였습니다. 다만 이 신뢰성 검증 흐름은 지난주 weekly가 예측했던 계산광학 코어(FP·위상·홀로그래피)가 아니라, PINN 방법론 자체와 MRI·병리 쪽으로 번졌습니다. 계산광학 핵심 3버킷은 5영업일 합산으로도 Fourier Ptychography/Microscopy 8편, Lensless/Coded Imaging 2편에 그쳤고, 그나마 대부분 하루짜리 저널 title-only 신호였습니다 — 랩 핵심 ROI의 이 공백이 벌써 세 번째 주째 반복되고 있습니다.</p>
+
+<p>다음 주 전망: GLAM-SLAM류 실시간 대규모 Gaussian SLAM이 오프라인 궤적 벤치마크를 넘어 실제 로봇 플랫폼이나 시뮬레이션 폐루프 주행·탐사로 이어지는지가 첫 번째 관찰 포인트입니다. 이번 주에도 계산광학 코어로 번지지 않은 불확실성 정량화가 다음 주에는 FP·위상·홀로그래피·lensless로 직접 번지는지, 그리고 HistoFID가 드러낸 평가지표 신뢰성 문제(인코더에 따라 Frechet distance가 30배까지 벌어짐)가 병리를 넘어 다른 이미징 평가 지표로도 확장되는지 지켜볼 만합니다.</p>
+
+<h2>⚖️ Hot vs Cold</h2>
+<div class=hot-cold>
+  <div class=hot-box>
+    <h3>⬆ 가속 클러스터</h3>
+    <ul>
+      <li><strong>3D Gaussian Splatting — 배포 조건 점검에서 실시간 SLAM까지</strong><br>월요일 실시간·연속학습 조건 점검부터 금요일 GLAM-SLAM의 실시간 대규모 SLAM까지 닷새 내내 이어졌습니다.</li>
+      <li><strong>물리 정보 신경망(PINN)·물리 결합 복원의 신뢰성 축</strong><br>이론적 오차 경계, posterior sampling 수렴 보장, 구간·퍼지 불확실성 정량화까지 방법론 자체를 신뢰성 관점에서 다시 검증하기 시작했습니다.</li>
+    </ul>
+  </div>
+  <div class=cold-box>
+    <h3>⬇ 감속 클러스터</h3>
+    <ul>
+      <li><strong>계산광학 핵심 3버킷(FP·위상·홀로그래피)</strong><br>5영업일 합산으로도 FP 8편, lensless 2편에 그쳤고, 그나마 대부분 하루짜리 저널 title-only 신호였습니다.</li>
+      <li><strong>"순수 렌더링 품질"만 겨루는 3DGS 논문</strong><br>이번 주 3DGS 관련 논문은 거의 전부 압축·안전성·활용확장·SLAM·수중·인페인팅 중 하나의 스트레스 조건을 반드시 얹었고, 순수 품질 경쟁만 다루는 논문은 찾기 어려웠습니다.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>🧩 주간 클러스터 표</h2>
+<table>
+<thead><tr>
+  <th>Cluster</th>
+  <th>대표 논문</th>
+  <th>왜 중요?</th>
+  <th>Confidence</th>
+  <th>Lab action</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><strong>3D Gaussian Splatting이 배포 조건 스트레스 테스트를 통과하며 실시간 SLAM에 도달</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.16624">SPARE-GS</a><br>
+    <a href="https://arxiv.org/abs/2607.18801">ZeroSplat</a><br>
+    <a href="https://arxiv.org/abs/2607.20417">ATSplat</a><br>
+    <a href="https://arxiv.org/abs/2607.21416">GLAM-SLAM</a>
+  </td>
+  <td>월요일에는 E3DGS·ImprovedVBGS·CSS-BA가 색상-기하 결합, 실시간 연속학습, 저시차 번들 조정처럼 배포 조건을 하나씩 개별적으로 점검했습니다. 화요일에는 SPARE-GS·QIRF·패킷 손실 강건 압축까지 다섯 편이 가우시안 개수와 저장 용량을 줄이면서도 패킷 유실·모션 블러에 버티는지를 함께 물었습니다. 수요일에는 ZeroSplat·AniGS·FlexiAvatar처럼 재구성한 장면을 언어로 지칭하거나 움직이거나 일부만 봐도 완성하는 활용 범위 확장으로 넘어갔고, 목요일 ATSplat은 다시 재구성 자체의 압축률·속도·일반화로 초점을 되돌렸습니다. 금요일에는 SubSplat·GrainGS·WAT3R·GLAM-SLAM·3D-GIMP 다섯 편이 초해상도·동적 장면·수중·대규모 SLAM·인페인팅이라는 서로 다른 이상 조건에서 동시에 버티는지를 시험했고, 그중 GLAM-SLAM은 KITTI Odometry·Oxford RobotCar·Malaga 실제 대규모 야외 주행 SLAM 벤치마크 3종에서 2위 방법 대비 재구성 품질 15% 개선을 실시간으로 유지하며 한 주의 흐름을 실제 로봇 배포 조건까지 밀어붙였습니다.</td>
+  <td>High<br><small>월~금 닷새, 서로 다른 스트레스 조건(압축, 안전성, 편집, SLAM, 수중)에서 20편 이상 연결</small></td>
+  <td>GLAM-SLAM의 flow densification + spatial decomposition 구조를 랩 다시점 계산 이미징/산란매질 캡처 데이터에 적용해 대규모 시퀀스에서 재구성 품질·지연시간을 기존 3DGS-SLAM 베이스라인과 비교하고, SPARE-GS/QIRF의 압축 기법을 랩 3DGS 파이프라인에 적용해 Gaussian 개수·저장 용량 대비 PSNR 손실 비교표 작성</td>
+</tr>
+<tr>
+  <td><strong>물리 정보 신경망과 물리 결합 복원이 정확도에서 신뢰성·불확실성 검증으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.15702">Statistical Formulation Gap</a><br>
+    <a href="https://arxiv.org/abs/2607.19333">Provable DDIM posterior sampling</a><br>
+    <a href="https://arxiv.org/abs/2607.19377">Reliability-Aware HSPINN</a><br>
+    <a href="https://arxiv.org/abs/2607.20339">iPANN/fPANN</a>
+  </td>
+  <td>월요일 Statistical Formulation Gap은 비선형 다중스케일 PINN이 어디까지는 이론적으로 오차가 보장되고 어디부터는 보장되지 않는지 경계선을 수식으로 그렸습니다. 수요일 Provable DDIM posterior sampling은 역문제 solver로 diffusion 기반 posterior sampling을 쓸 때의 이론적 수렴 보장을 증명해, 반복 최적화를 대체할 근거를 마련했습니다. 목요일에는 Reliability-Aware HSPINN이 기울기가 뾰족하거나 초기조건이 노이즈에 오염된 어려운 방정식에서도 안정적으로 학습하는 구조를 냈고, iPANN/fPANN은 구성 모델링에 구간·퍼지 불확실성 정량화를 붙였습니다. 금요일에는 형광 현미경 초해상도에 물리 정보 학습을 적용한 논문이 같은 원리를 실제 이미징 장비 데이터에 적용했습니다. 네 편을 같이 보면, 물리 정보 학습 커뮤니티가 "이 방정식도 풀린다"는 개별 성공 사례에서 벗어나 이론적 한계·수렴 보장·불확실성까지 방법론의 구성요소 하나하나를 신뢰성 관점에서 다시 검증하고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>월·수·목·금 나흘, 서로 다른 각도(이론적 오차 경계, 수렴 보장, 학습 안정성, 구간/퍼지 불확실성)에서 10편 이상 연결</small></td>
+  <td>Reliability-Aware HSPINN과 iPANN/fPANN의 불확실성 정량화 기법을 랩 위상 복원·산란매질 역문제 solver에 적용해 예측 신뢰구간 비교표를 만들고, Provable DDIM posterior sampling을 랩 lensless/위상 복원 파이프라인의 대안 solver로 반복 최적화 대비 uncertainty coverage와 수렴 속도를 비교</td>
+</tr>
+<tr>
+  <td><strong>계산광학 코어(FP·lensless·위상·메타옵틱스) — 이번 주도 거의 잠잠 <span class=tag>WATCH</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.17256">Moiré Meta-spectrometer</a><br>
+    HDR lensless on-chip microscopy<br>
+    <a href="https://arxiv.org/abs/2607.19731">홀로그래피 렌더링 속도</a><br>
+    <a href="https://doi.org/10.1016/j.optlastec.2026.116012">FP 조명 배열 오차 보정</a>
+  </td>
+  <td>화요일에는 적응형 모아레 메타분광계와 노출 과다를 역투영으로 보정하는 렌즈리스 온칩 현미경이 저널에서 나와 계산광학 코어에 하루짜리 신호를 냈습니다. 수요일에는 색수차 보정 중적외선 메타렌즈, 광학 미분 연산 메타표면, 홀로그래피 스캐닝처럼 제목만으로 확인되는 저널 논문 넷이 나왔지만 서로 다른 세부 응용으로 흩어져 있었습니다. 목요일에는 홀로그래피 렌더링 속도를 다룬 논문 한 편만 계산광학 코어에서 실제 신호를 냈고, 금요일에는 Fourier ptychography 조명 배열 오차 보정 논문이 한 편 더 나왔습니다. 5영업일을 합산해도 Fourier Ptychography/Microscopy 8편, Lensless/Coded Imaging 2편에 그쳤고, Meta-Optics/Diffractive는 49편으로 편수만 보면 커 보이지만 그중 상당수가 통신·레이더용 metasurface로 이미징과 무관했습니다. 랩 핵심 ROI가 매일 하루씩 흩어진 신호로만 존재한다는 뜻이라, 편수 그래프만 보면 이 공백을 놓치기 쉽습니다.</td>
+  <td>Low<br><small>화·수·목·금 나흘, 매일 1~2편씩 흩어진 저널 신호 — 서로 연결되지 않음</small></td>
+  <td>저널 수집 쿼리에 'lensless microscopy HDR', 'Fourier ptychography illumination array correction' 같은 랩 특화 키워드를 추가해 통신·레이더 THz 우연 매칭과 분리 수집하고, HDR 렌즈리스 온칩 현미경의 overexposure inverse-projection 연산자를 랩 렌즈리스 파이프라인의 포화 픽셀 처리에 참고 사례로 검토</td>
+</tr>
+<tr>
+  <td><strong>병리·의료 영상이 정확도 숫자보다 그 숫자를 믿을 수 있는가를 같이 요구</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.19624">Pathologist Attention Report Gen</a><br>
+    <a href="https://arxiv.org/abs/2607.19943">SIINR</a><br>
+    <a href="https://arxiv.org/abs/2607.20584">HistoFID</a><br>
+    <a href="https://arxiv.org/abs/2607.20896">HierarchicalDAEW</a>
+  </td>
+  <td>목요일 Pathologist Attention-Aligned Report Generation은 생성된 병리 리포트가 실제 병리의사의 시선(attention)과 맞는지를 검증 기준으로 삼았고, SIINR은 임상 품질 확산 MRI 초해상도에 불확실성 정량화를 붙였습니다. 금요일 HistoFID는 같은 병리 타일 쌍이라도 평가에 쓰는 인코더를 6개 바꾸면 Frechet distance 값이 최대 30배까지 벌어진다는 사실을 드러내 병리 AI 평가지표 자체의 신뢰성 문제를 짚었고, HierarchicalDAEW는 유전자 발현 예측에 evidential uncertainty를 붙여 예측값과 함께 얼마나 못 미더운지도 같이 내놓게 했습니다. 네 편을 같이 보면, 병리·의료 영상 AI가 "숫자가 얼마나 높은가"에서 "그 숫자를 어떤 조건에서 믿을 수 있는가"로 평가의 초점을 옮기고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>목·금 이틀, 서로 다른 병목(리포트 정합성, 재구성 불확실성, 평가지표 신뢰성, 예측 불확실성)에서 4편 연결</small></td>
+  <td>HistoFID의 인코더별 Frechet distance 변동성 측정 방법을 랩이 쓰는 가상 염색 평가 파이프라인에 적용해 현재 사용 중인 인코더가 실제로 얼마나 민감한지 재검증하고, HierarchicalDAEW의 evidential uncertainty 기법을 랩 병리·현미경 예측 모델에 이식해 신뢰구간 제공 여부를 비교</td>
+</tr>
+<tr>
+  <td><strong>이미지 복원·초해상도 평가가 보기 좋음에서 과제-관련 증거 보존으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.17401">Does SR Preserve Defect Evidence?</a><br>
+    <a href="https://arxiv.org/abs/2607.16649">DRIFT</a><br>
+    <a href="https://arxiv.org/abs/2607.21190">형광 현미경 물리 정보 SR</a><br>
+    <a href="https://arxiv.org/abs/2607.20598">MedDiT4SR</a>
+  </td>
+  <td>화요일 Does SR Preserve Defect Evidence는 반도체 결함 검사에서 초해상도를 쓸 때 화면이 보기 좋아지는 것과 실제 결함 증거가 남아 있는 것이 다른 문제라는 점을 저오탐(low-false-call) 벤치마크로 정면으로 짚었고, 같은 날 DRIFT는 난이도를 인식하는 rectified flow로 MRI 단면 초해상도를 개선했습니다. 금요일에는 형광 현미경 교차 모달리티 초해상도와 MedDiT4SR이 각각 물리 정보와 사전학습 diffusion transformer를 의료 영상 초해상도에 적용했습니다. 화·금 이틀에 걸쳐 서로 다른 도메인(반도체 검사, MRI, 형광 현미경)에서 5편이 같은 방향을 보였지만, 아직 서로 직접 비교되지는 않았습니다 — 방향은 "지각적으로 그럴듯한가"에서 "과제에 실제로 필요한 증거·해부학적 정보가 남아 있는가"로 옮겨가고 있습니다.</td>
+  <td>Medium<br><small>화·금 이틀, 서로 다른 도메인(반도체, MRI, 형광 현미경)에서 5편 같은 방향, 직접 비교는 아직 없음</small></td>
+  <td>Does SR Preserve Defect Evidence의 저오탐 벤치마크 설계를 랩 Fourier ptychography/QPI 초해상도 결과에 적용해, 기존 PSNR/SSIM만으로는 드러나지 않는 물리적 증거 보존 여부를 별도 지표로 측정</td>
+</tr>
+</tbody>
+</table>
+
+<h2>📐 arXiv vs 저널 키워드</h2>
+<table>
+<thead><tr><th>채널</th><th>지난주 주요 키워드</th></tr></thead>
+<tbody>
+<tr><td><strong>공통</strong></td><td>gaussian splatting, physics-informed learning, super-resolution, uncertainty quantification/calibration, reconstruction</td></tr>
+<tr><td><strong>arXiv 전용</strong></td><td>3DGS 스트레스 테스트(SPARE-GS, ZeroSplat, ATSplat, GLAM-SLAM, WAT3R, 3D-GIMP), PINN 신뢰성/불확실성(Statistical Formulation Gap, Reliability-Aware HSPINN, iPANN/fPANN, PG-KINN), diffusion/flow posterior sampling 역문제 solver(Provable DDIM), MRI+INR 재구성(PRIME-SVR, SIINR, SHFormer), 병리 리포트 생성·평가지표 신뢰성(HistoFID, Pathologist Attention Report Gen)</td></tr>
+<tr><td><strong>저널 전용</strong></td><td>메타옵틱스 설계(achromatic 중적외선 metalens, 가시광 metasurface 유전체), 광학 미분 연산 metasurface, 홀로그래피 스캐닝(dual off-axis Fresnel zone plate), 산란매질 광섬유·업컨버전 이미징, FPGA 기반 실시간 디노이징, Fourier ptychography 조명 배열 오차 보정</td></tr>
+<tr><td><strong>같은 단어, 다른 맥락</strong></td><td>'reconstruction' — 3DGS의 장면 수준 재구성과 MRI/CT 볼륨 재구성이 같은 단어로 섞여 나와 도메인 구분이 필요합니다. 'physics-informed' — arXiv 쪽은 PDE solver 방법론 자체(PINN 설계·이론적 한계)를 다루는 반면, 저널 쪽은 형광 현미경 초해상도처럼 이미 정해진 응용에 physics-informed 학습을 그대로 적용하는 쪽입니다. 'metasurface'/'metalens' — 대부분 저널에만 등장하고, 이미징 응용(achromatic, 가변초점)과 통신·레이더용 우연 매칭이 섞여 있어 구분이 필요합니다.</td></tr>
+</tbody>
+</table>
+
+<h2>🔥 주간 Top 5</h2>
+<ol>
+<li>
+  <strong><a href="https://arxiv.org/abs/2607.21416">GLAM-SLAM: Real-time Gaussian Large-scale Mapping via Flow Densification and Spatial Decomposition</a></strong>
+  <span class=tag>[스케일업]</span><span class=tag>[실사용전환]</span><br>
+  지난주 weekly가 예측했던 "실시간 로봇 배포 사례"가 정확히 이 자리에서 나왔습니다 — KITTI Odometry·Oxford RobotCar·Malaga 실제 대규모 야외 주행 SLAM 벤치마크 3종에서 2위 방법 대비 재구성 품질 15% 개선을 실시간으로 유지했습니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2607.15702">A Statistical Formulation Gap for Nonlinear Multiscale Physics-Informed Learning</a></strong>
+  <span class=tag>[해부분석]</span><span class=tag>[평가축]</span><br>
+  PINN이 어디까지 이론적으로 오차가 보장되고 어디부터 보장되지 않는지 경계선을 수식으로 그려, 이번 주 물리 정보 학습 신뢰성 축의 이론적 기반을 놓았습니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2607.17401">Does Super-Resolution Preserve Defect Evidence? A Low-False-Call Benchmark for Semiconductor Inspection</a></strong>
+  <span class=tag>[평가축]</span><span class=tag>[인프라]</span><br>
+  초해상도 평가를 "보기 좋은가"에서 "결함 증거가 실제로 남아 있는가"로 옮기는 저오탐 벤치마크를 제안해, 이번 주 SR 평가축 전환 흐름의 출발점이 됐습니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2607.19333">Provable diffusion-based posterior sampling for linear inverse problems via DDIM</a></strong>
+  <span class=tag>[방법전환]</span><span class=tag>[표준후보]</span><br>
+  반복 최적화를 대체할 diffusion 기반 posterior sampling에 이론적 수렴 보장을 붙여, 역문제 solver 선택의 근거를 이론 쪽으로 넓혔습니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2607.20584">HistoFID: Calibrating Frechet-distance evaluation across pathology foundation models</a></strong>
+  <span class=tag>[경고신호]</span><br>
+  같은 병리 타일 쌍도 평가 인코더를 바꾸면 Frechet distance가 30배까지 벌어진다는 사실을 드러내, 병리 AI 평가지표 자체의 신뢰성 문제를 경고했습니다.
+</li>
+</ol>
+
+<h2>🌟 Weekly Deep-Dive — 이번 주의 대표 논문</h2>
+<div class=dd>
+  <h3>GLAM-SLAM: Real-time Gaussian Large-scale Mapping via Flow Densification and Spatial Decomposition (2607.21416)</h3>
+  <p><em>왜 주간 대표인가</em>: 이번 주 3DGS는 월요일 배포 조건 하나하나를 개별 점검하는 데서 시작해 닷새 만에 "실제 로봇 배포 조건에서 실시간으로 돌아가는가"라는 지점까지 도달했습니다. GLAM-SLAM은 그 여정의 종착점을 가장 구체적인 벤치마크 숫자로 보여주는 논문이자, 지난주 weekly가 냈던 "실시간 로봇/AR-VR 배포 사례로 이어짐" 예측을 정확히 적중시킨 논문이라, 특정 요일의 단발 신호가 아니라 한 주 전체 서사를 대표합니다.</p>
+
+  <p><strong>무엇을 했나</strong>: 실외 대규모 환경에서 카메라가 이동하며 촬영한 영상으로부터, Gaussian 표현을 실시간으로 갱신하며 지도를 만드는 SLAM(동시적 위치추정 및 지도작성) 시스템입니다. 흐름(flow) 정보로 어디에 Gaussian을 더 촘촘히 배치할지 정하고, 넓은 지도를 여러 구역으로 나눠 관리하는 공간 분할 방식을 씁니다. KITTI Odometry·Oxford RobotCar·Malaga 세 벤치마크 모두에서 2위 방법 대비 재구성 품질을 15% 개선하면서도 실시간성을 유지합니다.</p>
+
+  <p><strong>왜 새로운가</strong>: 지금까지 3D Gaussian Splatting은 장면 하나를 볼 때마다 반복 최적화를 돌려야 해서, 실외처럼 넓고 계속 움직이는 환경에서 실시간으로 지도를 갱신하기가 어려웠습니다. 이 논문은 월요일부터 이어진 "이 배포 조건 하나를 버티는가"라는 질문들을 통과한 뒤, 그 결과를 대규모·실시간이라는 가장 어려운 조합에서 실제 자율주행급 벤치마크로 증명했다는 점에서 이번 주 흐름의 자연스러운 종착점입니다.</p>
+
+  <p><strong>랩 관련성</strong>: 랩이 다루는 다시점 계산 이미징/산란매질 캡처 데이터에도 이 flow densification + spatial decomposition 구조를 적용해볼 수 있습니다. 특히 기존 3DGS-SLAM 베이스라인과 대규모 시퀀스에서 처리 지연시간·메모리·재구성 품질을 나란히 비교하면, 어느 지점에서 이 구조가 랩 데이터에도 통하는지 바로 확인할 수 있습니다.</p>
+
+  <p><strong>주의</strong>: KITTI Odometry·Oxford RobotCar·Malaga는 모두 비교적 정형화된 실외 자율주행 촬영 조건이라, 랩이 다루는 산란매질·근접 촬영 같은 비정형 조건에서도 같은 속도·품질이 유지되는지는 본문의 ablation과 실패 사례 확인이 필요합니다 [Dataset risk].</p>
+</div>
+
+<h2>🧭 주간 테마 3개</h2>
+<div class=theme-card>
+  <h3>1. 3D Gaussian Splatting — 배포 조건 점검에서 실시간 SLAM까지, 닷새 만에</h3>
+  <p>월요일 실시간·연속학습 조건을 개별 점검하던 3DGS가 화요일 압축·안전성, 수요일 활용 확장, 목요일 재구성 자체로의 복귀를 거쳐 금요일 다섯 갈래 스트레스 테스트와 GLAM-SLAM의 실시간 대규모 SLAM까지 도달했습니다. 랩이 이 방법을 파이프라인에 들일 때 어느 단계 증거를 먼저 확인해야 하는지 판단하는 데 참고할 만합니다.</p>
+  <p><em>Confidence: High — 월~금 닷새, 20편 이상이 서로 다른 스트레스 조건으로 자연스럽게 이어짐</em></p>
+</div>
+<div class=theme-card>
+  <h3>2. 물리 정보 신경망과 물리 결합 복원이 정확도 경쟁에서 신뢰성·불확실성 검증으로</h3>
+  <p>Statistical Formulation Gap의 이론적 오차 경계, Provable DDIM posterior sampling의 수렴 보장, Reliability-Aware HSPINN과 iPANN/fPANN의 불확실성 정량화까지, PINN·물리 결합 복원 커뮤니티가 개별 방정식을 더 잘 푸는 경쟁에서 벗어나 방법론 자체를 신뢰성 관점에서 다시 검증하고 있습니다.</p>
+  <p><em>Confidence: Medium — 월·수·목·금 나흘, 방향은 같지만 서로 다른 각도라 직접 비교는 아직 없음</em></p>
+</div>
+<div class=theme-card>
+  <h3>3. 계산광학 코어는 이번 주도 조용했다 — 랩이 반드시 확인해야 할 Watch Lens</h3>
+  <p>Fourier ptychography, lensless, 위상 영상, 메타옵틱스는 5영업일 합산으로도 FP 8편·lensless 2편에 그쳤고, 그나마 대부분 하루짜리 저널 title-only 신호였습니다. 벌써 세 번째 주째 반복되는 공백이라, 편수 그래프만 보면 놓치기 쉬운 랩 핵심 ROI의 침묵을 계속 별도로 추적해야 합니다.</p>
+  <p><em>Confidence: Low — 화·수·목·금 나흘, 매일 1~2편씩 흩어진 저널 신호만 존재</em></p>
+</div>
+
+<h2>🪞 지난 예측 채점 (W29 → W30)</h2>
+<div class=pred-card>
+  <h3><span class=review-hit>✅</span> Feed-forward 3DGS 즉시 재구성이 실시간 로봇/AR-VR 배포 사례로 이어짐</h3>
+  <p>금요일 GLAM-SLAM이 KITTI Odometry·Oxford RobotCar·Malaga 같은 실제 대규모 야외 주행 SLAM 벤치마크에서 2위 방법 대비 재구성 품질 15% 개선을 실시간으로 유지하며 로봇 SLAM 배포 조건을 정확히 명시했습니다. 적중입니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-miss>✗</span> 불확실성 정량화가 계산광학 코어(FP·위상·홀로그래피)로 번짐</h3>
+  <p>이번 주 불확실성 정량화는 PINN 구성 모델링(iPANN/fPANN), 확산 MRI 초해상도(SIINR), 병리 유전자 발현 예측(HierarchicalDAEW)으로는 번졌지만 Fourier ptychography·정량 위상 영상·홀로그래피에서는 등장하지 않았습니다. 빗나갔습니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-partial>◐</span> WSI 신뢰성 검증 흐름이 병리 외 다른 임상 영상 모달리티로 확장</h3>
+  <p>SIINR이 확산 MRI 초해상도에 불확실성 정량화를 붙이며 병리 밖으로 신뢰성 검증이 번지긴 했지만, 이는 데이터 유출 감사·calibration·연합학습 같은 예측 조건이 아니라 재구성 불확실성이라는 다른 축이었고, 방사선영상 자체의 분류·진단 신뢰성 검증으로는 이어지지 않았습니다. 부분 적중으로 봅니다.</p>
+</div>
+
+<h2>🔮 다음주 예측</h2>
+<div class=pred-card>
+  <h3>1. GLAM-SLAM류 실시간 대규모 Gaussian SLAM의 실제 로봇/임베디드 배포 후속 등장</h3>
+  <p>이번 주 GLAM-SLAM이 보여준 실시간 대규모 SLAM이 다음 주에는 오프라인 궤적 벤치마크를 넘어 실제 로봇 플랫폼 또는 시뮬레이션 폐루프(closed-loop) 주행·탐사에 적용한 후속 논문으로 이어진다.</p>
+  <div class=cond>✅ 적중 조건: 로봇 플랫폼 또는 시뮬레이션 폐루프 주행·탐사에서 Gaussian 기반 SLAM/매핑을 실제로 실행한 논문 1편 이상</div>
+  <div class=cond>✗ 빗나감 조건: 계속 KITTI류 오프라인 궤적 벤치마크·재구성 품질 비교에만 머물거나 관련 논문이 없으면 빗나감</div>
+</div>
+<div class=pred-card>
+  <h3>2. 불확실성 정량화가 계산광학 코어(FP·위상·홀로그래피·lensless)로 직접 번짐</h3>
+  <p>이번 주 PINN·MRI·병리로 확장된 불확실성 정량화 흐름이 다음 주에는 Fourier ptychography, 정량 위상 영상, 홀로그래피, lensless 이미징 중 하나로 직접 번진다.</p>
+  <div class=cond>✅ 적중 조건: FP·QPI·홀로그래피·lensless 중 하나에서 uncertainty quantification/calibration을 직접 다룬 논문 1편 이상</div>
+  <div class=cond>✗ 빗나감 조건: 불확실성 정량화가 계속 PINN 방법론·MRI·병리에만 머물고 계산광학 코어로 번지지 않으면 빗나감</div>
+</div>
+<div class=pred-card>
+  <h3>3. HistoFID류 평가지표 신뢰성 점검이 병리를 넘어 다른 이미징 평가 지표로 확장</h3>
+  <p>이번 주 HistoFID가 드러낸 "평가 인코더에 따라 지표 값이 크게 달라진다"는 문제의식이 다음 주에는 3DGS 렌더링 품질 지표나 다른 의료 영상 합성 평가 지표로도 확장된다.</p>
+  <div class=cond>✅ 적중 조건: 병리 외 도메인(3DGS 렌더링 품질, 의료 영상 합성 등)에서 평가 지표·인코더 간 불일치나 신뢰성 문제를 다룬 논문 1편 이상</div>
+  <div class=cond>✗ 빗나감 조건: 평가지표 신뢰성 문제 제기가 계속 병리 FID/foundation model 비교에만 머물면 빗나감</div>
+</div>
+
+<h2>🧪 다음 주 1주 실행안</h2>
+<div class=action-card>
+  <h3>1. GLAM-SLAM 구조를 랩 대규모 시퀀스 데이터에 재현</h3>
+  <p>GLAM-SLAM의 flow densification + spatial decomposition 구조를 랩 다시점 계산 이미징/산란매질 캡처 데이터에 적용해 기존 3DGS-SLAM 베이스라인 대비 재구성 품질·지연시간을 비교.</p>
+  <p><em>기대 산출물: 대규모 시퀀스에서의 처리 지연시간·메모리·재구성 품질 비교표</em></p>
+</div>
+<div class=action-card>
+  <h3>2. SR 결함 증거 보존 벤치마크를 랩 계산광학 결과에 적용</h3>
+  <p>Does SR Preserve Defect Evidence의 저오탐 벤치마크 설계를 랩 Fourier ptychography/QPI 초해상도 결과에 적용해 PSNR/SSIM 외에 물리적 증거 보존 여부를 별도로 측정.</p>
+  <p><em>기대 산출물: PSNR/SSIM vs 결함·증거 보존율을 나란히 비교하는 표</em></p>
+</div>
+<div class=action-card>
+  <h3>3. PINN 불확실성 정량화 기법을 위상 복원 solver에 이식</h3>
+  <p>Reliability-Aware HSPINN과 iPANN/fPANN의 불확실성 정량화, Provable DDIM posterior sampling을 랩 위상 복원·lensless 역문제 solver에 각각 적용해 신뢰구간과 수렴 속도를 비교.</p>
+  <p><em>기대 산출물: solver별(기존 반복 최적화 vs DDIM posterior sampling vs 불확실성 인식 PINN) 신뢰구간 커버리지·수렴 속도 비교표</em></p>
+</div>
+
+<h2>🧊 Skim-only / Watch-only 흐름</h2>
+<ul class=plain>
+  <li><strong>[Watch-only] 계산광학 코어(FP·lensless·위상·메타옵틱스) 저널 신호</strong> — 화~금 나흘 동안 매일 1~2편씩 흩어져 나왔지만 서로 연결되지 않았습니다. 세 번째 주째 반복되는 패턴이라 계속 별도로 추적합니다 [Confidence Low].</li>
+  <li><strong>[Watch-only] 산란매질·광섬유 내시경 이미징</strong> — 화·수 이틀에만 딥러닝 기반 복원 논문이 나왔고, 나머지 사흘은 조용했습니다. 후속 논문이 붙는지 확인이 필요합니다.</li>
+  <li><strong>[Skim-only] Meta-Optics/Diffractive 버킷의 키워드 노이즈 지속</strong> — 한 주 49편 중 상당수가 THz 안테나·레이더 산란단면적·통신용 metasurface와의 키워드 우연 매칭이라, 편수를 그대로 트렌드로 읽으면 과대평가됩니다.</li>
+</ul>
+
+<h2>🔗 참고 링크</h2>
+<ul class=plain>
+  <li><a href="../posts/2026-07-20.html">2026-07-20 Daily Briefing (Mon)</a></li>
+  <li><a href="../posts/2026-07-21.html">2026-07-21 Daily Briefing (Tue)</a></li>
+  <li><a href="../posts/2026-07-22.html">2026-07-22 Daily Briefing (Wed)</a></li>
+  <li><a href="../posts/2026-07-23.html">2026-07-23 Daily Briefing (Thu)</a></li>
+  <li><a href="../posts/2026-07-24.html">2026-07-24 Daily Briefing (Fri)</a></li>
+  <li><a href="../posts/2026-07-20-weekly.html">2026-W29 Weekly Retrospective</a></li>
+  <li><a href="../feed.xml">RSS Feed</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>
