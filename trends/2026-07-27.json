@@ -1,13 +1,35 @@
 {
   "date": "2026-07-27",
-  "source_listing_date": "2026-07-24",
-  "source_mode": "weekly-pastweek",
-  "note": "Weekly retrospective for W30 (2026-07-20 to 2026-07-24). No daily /new data for this date (today's daily runs separately at 11:00 KST); daily stats row intentionally omitted.",
-  "weekly_aggregate": {
-    "by_cat": {"cs.LG": 932, "cs.CV": 595, "cs.AI": 1072, "eess.IV": 35, "eess.SP": 123},
+  "source_listing_date": "2026-07-27",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 137,
+      "cs.CV": 67,
+      "cs.AI": 143,
+      "eess.IV": 6,
+      "eess.SP": 28
+    },
     "scope": "new+cross; replacements excluded",
-    "days_covered": ["2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24"],
-    "note": "5영업일 모두 arXiv+저널 완전판(source_mode=new)"
+    "journal_count": 318
   },
-  "totals": {"total_scanned": 4041, "selected": 1143}
+  "totals": {
+    "total_scanned": 615,
+    "selected": 189
+  },
+  "classified": {
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 5,
+      "Meta-Optics/Diffractive": 3,
+      "Light-Field/Novel Sensors": 1,
+      "Tomography/3D Imaging": 23,
+      "Virtual Staining/Pathology": 20,
+      "Reconstruction/Inverse Problems": 25,
+      "Deep Learning Methods": 110
+    }
+  },
+  "note": "2026-07-27(월)은 정상 daily다. 5개 추적 카테고리 arXiv /new listing이 모두 오늘 날짜(Monday, 27 July 2026)를 가리켜 source_mode=new로 확정했다. 이 레코드는 오늘 오전 이미 발행된 주간 회고(weekly/2026-30.json, posts/2026-07-27-weekly.html)가 남겨둔 weekly-pastweek 스키마 trends 레코드(source_mode=weekly-pastweek, 지난주 7/20~7/24 집계)를 daily 스키마로 완전히 덮어쓴 것이다 — 지난주 회고와 오늘 당일 daily는 서로 독립된 산출물이며, 이 trends 파일은 오늘 daily 전용이다. classify.py 선택 비율은 30.7%(189/615)로 최근 밴드(25~32%) 안에서 다소 높은 쪽이지만 정상 범위이며 parser 오류가 아니다. 계산광학 핵심 4개 버킷(Fourier Ptychography 1편, Lensless 1편, Phase Imaging 5편, Meta-Optics 3편)은 실사 확인 결과 사실상 전부 키워드 우연 매칭이다 — Fourier Ptychography 유일한 논문은 위성 SAR 레이더 단면적 모델링, Lensless 유일한 논문은 패션 가상 피팅(virtual try-on) 모델이고, Phase Imaging 5편은 대부분 신호처리·IoT 인증·THz metasurface, Meta-Optics 3편도 전부 무선통신/열변조/빔조향 하드웨어다. 실제 광학 저널로 보이는 유일한 신호는 Optics Express의 홀로그래피 기반 영상 암호화 논문(초록 미제공, 제목 기준)뿐이다. Tomography/3D Imaging(23편)도 저널 다수가 임상 CT/PET/OCT 진단 사례 보고이고, 3D 기하 재구성 방법론 신호는 arXiv cs.CV 소수(SM4RT 4D 재구성 등)에 그친다. Virtual Staining/Pathology(20편)는 실질 병리·염색 신호가 사실상 0편으로 농업·지속가능경제·블록체인 등과의 키워드 우연 매칭이 대부분이다. 대신 오늘 뚜렷한 축은 (1) 학습된 사전 기반 역문제 solver가 불확실성 신뢰성을 따지기 시작한 것(Prior laundering, Quantum Adaptive Sensing MRI, Hierarchical Likelihood Model), (2) diffusion 기반 초해상도·복원이 오차 누적·연산 효율·도메인 벤치마크로 평가축을 세분화한 것(Spectral Prior, TRaM-VSR, IR275K), (3) 의료영상 딥러닝이 전체 지표보다 임상적으로 중요한 국소 정확도·해석가능성을 요구하기 시작한 것(CT-to-PET 합성, Risk-Routed Ultrasound, CARDIAG, Bowel Obstruction CT)이다. 계산광학 코어 4버킷 동시 공백은 지난 월요일(2026-07-20)에도 관찰된 패턴으로, 주간 회고(weekly/2026-30.json)의 두 번째 예측('불확실성 정량화가 계산광학 코어로 직접 번짐')이 오늘도 아직 적중하지 않았음을 시사한다 — 오늘 나온 불확실성 정량화 신호(Prior laundering 등)도 MRI·일반 역문제 이론에 머물렀고 FP/QPI/홀로그래피/lensless에는 직접 닿지 않았다.",
+  "daily_thesis": "오늘 가장 뚜렷한 축은 학습된 사전(prior) 기반 역문제 solver 연구가 '복원이 더 정확한가'에서 '그 복원과 함께 나온 불확실성 추정치를 믿어도 되는가'로 질문을 옮긴 것이고, 두 번째 축은 diffusion 기반 초해상도·복원이 지각 품질이라는 단일 지표에서 벗어나 오차 누적 보정·연산 효율·도메인별 벤치마크로 평가축을 세분화한 것이다. 계산광학 코어(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics) 4개 버킷은 오늘 사실상 전멸에 가까워, 지난 월요일(7/20)과 같은 침묵 패턴이 이번 주에도 반복됐다."
 }

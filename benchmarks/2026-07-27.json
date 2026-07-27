@@ -1,0 +1,29 @@
+{
+  "date": "2026-07-27",
+  "results": [
+    {
+      "benchmark": "QIN-HEADNECK, CT-to-PET synthesis",
+      "metric": "MAE / PSNR / SSIM (재구성 3D PET 볼륨)",
+      "value": 39.19,
+      "value_str": "5-fold cross-validation, MAE 0.00395, PSNR 39.19dB, SSIM 0.9634 — 단 대사 활동이 높은 종양 영역의 SUV는 체계적으로 과소추정",
+      "paper": "https://arxiv.org/abs/2607.21800",
+      "paper_title": "A Dual Path Framework with Hotspot Guided Fusion for Three Dimensional CT to PET Synthesis in Head and Neck Cancer"
+    },
+    {
+      "benchmark": "IR275K infrared multi-frame super-resolution (X4)",
+      "metric": "PSNR (CGMamba, 10.90M params)",
+      "value": 33.19,
+      "value_str": "CGMamba가 PSNR 33.19dB로 기존 적외선 단일영상 초해상도 대비 0.35~0.52dB 우위, 2D RoPE 제거 시 1.53dB 하락과 격자형 아티팩트 발생",
+      "paper": "https://arxiv.org/abs/2607.22380",
+      "paper_title": "IR275K: A Benchmark for Infrared Multi-Frame Super-Resolution Toward Efficient Remote Sensing"
+    },
+    {
+      "benchmark": "Spectral Alignment (SPA), 여러 diffusion 아키텍처(DDPM/ADM/SD2.0/SDXL/SD3.5/FLUX)",
+      "metric": "연산 오버헤드 대비 exposure bias 개선폭",
+      "value": 4.0,
+      "value_str": "픽셀 공간 모델부터 latent diffusion, flow-matching 모델까지 일관된 개선을 보이면서 연산 오버헤드는 3~4%에 불과 (개선폭 구체 수치는 본문 확인 필요)",
+      "paper": "https://arxiv.org/abs/2607.22091",
+      "paper_title": "Spectral Prior for Reducing Exposure Bias in Diffusion Models"
+    }
+  ]
+}
