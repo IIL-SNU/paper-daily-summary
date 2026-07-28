@@ -1,0 +1,34 @@
+{
+ "date": "2026-07-28",
+ "source_listing_date": "2026-07-28",
+ "source_mode": "new",
+ "daily_new_counts": {
+  "by_cat": {
+   "cs.LG": 326,
+   "cs.CV": 243,
+   "cs.AI": 406,
+   "eess.IV": 28,
+   "eess.SP": 39
+  },
+  "scope": "new+cross; replacements excluded",
+  "journal_count": 459
+ },
+ "totals": {
+  "total_scanned": 1280,
+  "selected": 396
+ },
+ "classified": {
+  "by_bucket": {
+   "Fourier Ptychography/Microscopy": 45,
+   "Lensless/Coded Imaging": 1,
+   "Phase Imaging/Holography": 9,
+   "Meta-Optics/Diffractive": 16,
+   "Light-Field/Novel Sensors": 2,
+   "Tomography/3D Imaging": 43,
+   "Virtual Staining/Pathology": 35,
+   "Reconstruction/Inverse Problems": 49,
+   "Deep Learning Methods": 196
+  }
+ },
+ "note": "2026-07-28(화)은 정상 daily다. 5개 추적 카테고리 arXiv /new listing이 모두 오늘 날짜(Tuesday, 28 July 2026)를 가리켜 source_mode=new로 확정했다. arXiv new+cross 합계는 1042편(cs.LG 326·cs.CV 243·cs.AI 406·eess.IV 28·eess.SP 39)이고, 저널(Crossref+OpenAlex) 459건을 더한 병합 스캔 1280건 중 396건(30.9%)이 ROI로 선정됐다 — 어제(30.7%, 189/615)와 거의 같은 비율로 최근 밴드(25~32%) 안에 들어 parser 오류가 아니다. 오늘 가장 중요한 관찰은 계산광학 핵심 4개 버킷(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics) 중 Meta-Optics/Diffractive가 3주 만에 처음으로 실질적인 신호를 냈다는 점이다 — 16편 중 6편이 실제 메타표면/메타렌즈 광학 이미징·센싱 하드웨어(메타렌즈 통합 카메라의 6-DoF pose sensing, 중적외선 다채널 편광 검출, 원자탐침 수소화 기반 재구성형 평판광학, 넓은 각도 빔조향+주파수 필터링 메타표면, BIC 초고Q 공진, 편광 분리 구조색 메타미러)로 확인됐고, 나머지 10편은 여전히 무선통신 RIS/6G·THz 바이오센서용 메타표면과의 키워드 우연 매칭이다. Fourier Ptychography/Microscopy(45편)는 실제 광학 FP 신호가 3편뿐이고 나머지 35편은 단일 학회(Microscopy & Microanalysis) 초록집의 전자현미경 ptychography(다른 물리 modality)이며 7편은 SAR/원격탐사 'synthetic aperture' 우연 매칭이다. Lensless/Coded Imaging(1편)은 여전히 실질 신호 0편(자유공간 빔 성형 논문), Phase Imaging/Holography(9편)도 실질 신호 1편(Optics Express 영상 암호화, 초록 미제공)에 그쳐 이 두 버킷의 침묵은 이어지고 있다. Tomography/3D Imaging(43편) 안에서는 광학 회절 단층촬영(optical diffraction tomography) 논문 1편(MLB-DIP-IDT)이 두꺼운 산란 생체 시편 재구성에 multilayer Born 모델과 deep image prior를 결합해 눈에 띄었고, 이는 Reconstruction/Inverse Problems(49편)의 PnP/RED 안정성 논문 2편과 '물리 모델+학습된 사전 결합이 실제로 안정적인가'라는 문제의식을 공유한다. Virtual Staining/Pathology(35편)는 6편이 실제 디지털 병리 신호(전립선 조직 등급 판정, 병리 파운데이션 모델 강건성, 기가픽셀 WSI 토큰 선택, H&E 기반 유전자 발현 예측 등)였다. 그 외 Deep Learning Methods(196편, catch-all) 안에서는 diffusion 모델의 샘플링·guidance·캐싱을 학습과 분리해 추론 단계에서 제어하는 논문 6편이 동시에 나왔고, 이미지 노이즈 제거 연구 5편이 새 아키텍처보다 '노이즈 모델 가정이 언제 깨지는가'를 규명하는 쪽으로 모였으며, 캘리브레이션 없는 다중 센서/모달 융합 논문 4편도 관찰됐다."
+}

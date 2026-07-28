@@ -1,0 +1,112 @@
+{
+ "date": "2026-07-28",
+ "source_mode": "new",
+ "clusters": [
+  {
+   "cluster": "역문제/영상 복원이 물리 모델과 학습된 사전을 결합했을 때 실제로 안정적으로 수렴하는가를 따지기 시작함",
+   "papers": [
+    {
+     "title": "Intensity diffraction tomography based on multi-layer born model and deep image prior",
+     "arxiv_id": "https://doi.org/10.1088/2040-8986/ae90c0",
+     "journal_or_source": "Journal of Optics"
+    },
+    {
+     "title": "Stabilizing Deep Reconstruction Operators with Contractive Anchoring",
+     "arxiv_id": "https://arxiv.org/abs/2607.23341",
+     "journal_or_source": "arXiv eess.IV"
+    },
+    {
+     "title": "Trainable Nonexpansive Denoisers for Contractive Image Reconstruction",
+     "arxiv_id": "https://arxiv.org/abs/2607.23347",
+     "journal_or_source": "arXiv eess.IV"
+    }
+   ],
+   "why": "두껍고 강하게 빛을 산란시키는 생체 시편을 광학 회절 단층촬영(여러 각도에서 빛을 비춰 얻은 산란 패턴으로 시편 내부의 3차원 굴절률 분포를 복원하는 기법)으로 찍으려면, 빛이 한 번만 산란한다고 가정하는 단순한 근사로는 정확도가 떨어지고 복잡한 산란 모델을 그대로 쓰면 역문제를 풀기가 매우 어려워집니다. MLB-DIP-IDT는 산란 과정을 여러 층으로 쪼개 각 층에서는 단순한 근사를 쓰되, 정답 데이터 없이 신경망 구조 자체가 그럴듯한 영상의 사전 지식 역할을 하는 deep image prior로 부족한 정보를 채워 넣어 재구성 품질을 끌어올렸습니다. 같은 날 나온 두 편은 이 결합의 안정성 쪽을 파고듭니다. Stabilizing Deep Reconstruction Operators는 압축센싱이나 위상 복원처럼 학습된 사전을 반복적으로 이용하는 Plug-and-Play/RED 알고리즘이 왜 초반에는 화질이 좋아지다가 갑자기 무너지는지를 규명하고 이를 막는 보조 연산자를 제안하고, Trainable Nonexpansive Denoisers는 신경망 구조 자체를 수학적으로 '출력이 입력보다 더 벌어지지 않는다'는 성질이 항상 보장되도록 설계해 학습 데이터 밖에서도 복원 알고리즘이 반드시 수렴한다는 걸 증명 가능하게 만들었습니다. 세 편을 같이 보면, 물리 기반 순방향 모델과 학습된 영상 사전을 결합하는 역문제 solver 연구가 복원 품질 하나만이 아니라 그 결합이 정말로 안정적으로 수렴하는지를 정면으로 검증하는 단계로 넘어가고 있다는 뜻입니다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저자군 3편(MLB-DIP-IDT는 저널, 나머지 둘은 arXiv eess.IV)이 같은 날 나왔고 '물리 모델+학습된 사전 결합의 안정성'이라는 문제의식을 공유하지만, 두 arXiv 논문은 제출 창구와 어휘(contractive/nonexpansive)가 겹쳐 완전히 독립된 두 그룹이라기보다는 인접 연구로 보일 여지가 있음",
+   "lab_action": "MLB-DIP-IDT의 multilayer Born + deep image prior 결합 방식을 우리 랩의 Fourier ptychography/두꺼운 산란 시편 위상 복원 파이프라인에 적용해 기존 단일층 근사 대비 재구성 정확도를 비교하고, Trainable Nonexpansive Denoisers의 nonexpansive 구조를 우리 PnP 기반 역문제 solver의 학습된 사전에 이식해 peak-and-collapse 현상이 재현되는지 확인"
+  },
+  {
+   "cluster": "메타표면·메타렌즈 광학 하드웨어가 3주 만에 처음으로 실질적인 계산 이미징 신호를 냄",
+   "papers": [
+    {
+     "title": "Accurate 6-DoF Pose Sensing and Dynamic Tracking Enabled by a Metalens-Integrated Camera",
+     "arxiv_id": "https://doi.org/10.1364/ol.610051",
+     "journal_or_source": "Optics Letters"
+    },
+    {
+     "title": "Double-Layer Sandwich Metasurface for Mid-Infrared Multi-Channel Polarization Detection",
+     "arxiv_id": "https://doi.org/10.3390/photonics13080708",
+     "journal_or_source": "Photonics"
+    },
+    {
+     "title": "Atomic-Probe-Controlled Hydrogenation for Configurable Flat Optics",
+     "arxiv_id": "https://doi.org/10.1021/acs.nanolett.6c01826",
+     "journal_or_source": "Nano Letters"
+    },
+    {
+     "title": "Sliding metasurface for wide-angle beam steering with sharp frequency filtering",
+     "arxiv_id": "https://doi.org/10.1038/s41377-026-02422-2",
+     "journal_or_source": "Light: Science & Applications"
+    }
+   ],
+   "why": "지난 3주 동안 이 리포트는 계산광학 핵심 4개 버킷(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics)이 거의 매일 비어 있다고 반복해서 짚었는데, 오늘은 그중 Meta-Optics/Diffractive 버킷에서 16편 중 6편이 실제 광학 이미징·센싱 하드웨어 논문으로 확인됐습니다(나머지 10편은 여전히 무선통신 RIS/6G·THz 바이오센서용 메타표면과의 키워드 우연 매칭). 메타렌즈 통합 카메라 논문은 평평한 메타렌즈 하나만으로 물체의 6자유도(3축 위치+3축 회전) 자세를 정확히 센싱하고 동적으로 추적할 수 있다는 걸 보여, 메타렌즈가 얇은 렌즈 대체재를 넘어 자체적으로 자세 정보를 인코딩하는 계산 광학 소자로 쓰일 수 있음을 시사합니다. 중적외선 다채널 편광 검출용 이중층 샌드위치 메타표면과, 원자탐침 수소화로 기능을 사용 중에 바꿀 수 있는 재구성형 평판 광학 소자는 메타표면이 한 가지 기능만 고정해서 수행하던 단계에서 벗어나 다채널·다기능 또는 튜닝 가능한 방향으로 가고 있다는 걸 보여줍니다. 넓은 각도 빔 조향과 날카로운 주파수 필터링을 동시에 하는 sliding metasurface까지 더하면, 오늘 메타광학 신호는 이미징·센싱에 실제로 쓰일 수 있는 하드웨어 성숙도를 보여주는 쪽으로 모여 있습니다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저자군 6편이 같은 날 나왔고 메타표면/메타렌즈 광학 하드웨어라는 공통 물리 플랫폼을 공유하지만, 각각 다루는 기능(자세 센싱·편광 검출·재구성형 소자·빔 조향)이 달라 하나의 연구 질문으로 수렴하지는 않음. 다만 4개 핵심 버킷이 3주 연속 거의 비어 있던 패턴을 처음으로 깬 신호라 관찰 우선순위를 높임",
+   "lab_action": "메탈렌즈 통합 카메라의 6-DoF pose sensing 원리를 우리 계산 이미징 세팅의 시편-카메라 정렬 자동화(자동 초점/틸트 보정)에 시험 적용할 수 있는지 원리 검토하고, 원자탐침 수소화 기반 재구성형 평판광학 개념이 우리 랩이 쓰는 고정형 메타렌즈/부호화 조리개를 사용 중 튜닝 가능한 형태로 바꿀 여지가 있는지 문헌조사"
+  },
+  {
+   "cluster": "이미지 노이즈 제거 연구가 새 아키텍처 경쟁보다 노이즈 모델 가정이 언제 깨지는가를 규명하는 쪽으로 이동",
+   "papers": [
+    {
+     "title": "RPG-VST: Robust Poisson-Gaussian Variance Stabilization for Blind RAW Denoising",
+     "arxiv_id": "https://arxiv.org/abs/2607.24291",
+     "journal_or_source": "arXiv eess.SP"
+    },
+    {
+     "title": "LoTA-N2N: Local Trace Adaptation for Zero-Shot Self-Supervised Image Denoising",
+     "arxiv_id": "https://arxiv.org/abs/2607.24135",
+     "journal_or_source": "arXiv cs.CV"
+    },
+    {
+     "title": "Small, Bias-Free, Blind and Convolutional Denoiser (BF-ConvUNeXt)",
+     "arxiv_id": "https://arxiv.org/abs/2607.22793",
+     "journal_or_source": "arXiv eess.IV"
+    },
+    {
+     "title": "Frequency-Aware Dual-Stream Learning for Balanced Realism and Fidelity in Electron Microscopy Imaging",
+     "arxiv_id": "https://arxiv.org/abs/2607.22765",
+     "journal_or_source": "arXiv eess.IV"
+    }
+   ],
+   "why": "RAW 영상을 blind(잡음 특성을 모르는 채)로 노이즈 제거할 때 흔히 쓰는 방법은, 신호에 비례해 세지는 Poisson 잡음과 일정한 세기의 Gaussian 잡음이 섞인 걸 하나의 균일한 Gaussian처럼 보이게 변환(variance stabilization)한 뒤 일반 Gaussian 노이즈 제거망에 넣는 것입니다. RPG-VST는 이 변환에 필요한 잡음 파라미터를 저텍스처 영역 통계로 추정할 때, 잔여 텍스처·클리핑·불량 화소가 섞이면 추정이 크게 틀어져 평균 PSNR은 괜찮아 보여도 일부 이미지에서 심하게 실패하는 '꼬리' 사례가 생긴다는 걸 보이고, 강건한 추정과 신뢰도 신호로 이를 크게 줄였습니다. LoTA-N2N은 정답 없이 노이즈 낀 영상끼리만으로 학습하는 자기지도 노이즈 제거(Noise2Noise 계열)가 잡음이 공간적으로 균일하지 않거나 상관관계를 가질 때 왜 지도학습과 어긋나는지를 수식으로 분해해 보이고, BF-ConvUNeXt는 반대로 아키텍처 쪽에서 '입력을 정수배로 늘리면 출력도 정수배로 늘어난다'는 성질(bias-free, 동차성)을 끝까지 지켜 다양한 잡음 세기에 하나의 모델로 대응하는 작은 네트워크를 만들었습니다. Frequency-Aware Dual-Stream Learning은 전자현미경 영상에서 화질을 개선할수록 오히려 실제로 없는 구조를 만들어내는(hallucination) 문제를, 주파수 대역을 나눠 저주파는 생성 모델로 고주파는 별도 경로로 복원하는 이중 스트림 구조로 분리해 다룹니다. 네 편을 같이 보면, 노이즈 제거 연구가 '어떤 네트워크가 더 정확한가'보다 '내가 가정한 노이즈 모델이나 학습 방식이 실제 데이터에서 언제 깨지는가'를 먼저 규명하는 쪽으로 무게중심이 옮겨가고 있다는 뜻입니다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저자군 4편이 같은 날 나왔고 노이즈 모델/학습 방식의 실패 조건을 규명한다는 문제의식을 공유하지만, 다루는 구체적 실패 모드(잡음 파라미터 추정·자기지도 목적함수 불일치·동차성 유지·주파수별 사실성-충실도 트레이드오프)가 서로 달라 하나의 공통 지표로 직접 비교되지는 않음",
+   "lab_action": "RPG-VST의 강건한 Poisson-Gaussian 파라미터 추정과 신뢰도 게이팅을 우리 랩의 lensless/저조도 계산 이미징 RAW 전처리 단계에 적용해 기존 OLS 기반 추정 대비 실패 사례(severe tail) 감소를 측정하고, BF-ConvUNeXt의 동차성 유지 설계를 우리 위상 복원 파이프라인의 경량 노이즈 제거 모듈에 시험 적용"
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "MLB-DIP-IDT의 multilayer Born + deep image prior 결합을 우리 두꺼운 산란 시편 위상 복원에 적용",
+   "claim": "단일층 First-Born 근사로는 부정확한 두꺼운 산란 생체 시편 복원에, multilayer Born 모델과 deep image prior를 결합한 방식이 우리 Fourier ptychography/위상 복원 파이프라인에서도 재구성 정확도를 개선하는지 확인한다.",
+   "supporting_papers": [
+    {"title": "Intensity diffraction tomography based on multi-layer born model and deep image prior", "arxiv": "https://doi.org/10.1088/2040-8986/ae90c0"}
+   ]
+  },
+  {
+   "title": "Trainable Nonexpansive Denoisers의 증명 가능한 수렴 보장을 우리 PnP 역문제 solver에 이식",
+   "claim": "우리 lensless/위상 복원 파이프라인이 쓰는 PnP 기반 학습된 사전을, 출력이 입력보다 더 벌어지지 않는다는 성질이 항상 보장되는 nonexpansive 구조로 바꿨을 때 peak-and-collapse 현상이 실제로 사라지는지 검증한다.",
+   "supporting_papers": [
+    {"title": "Trainable Nonexpansive Denoisers for Contractive Image Reconstruction", "arxiv": "https://arxiv.org/abs/2607.23347"},
+    {"title": "Stabilizing Deep Reconstruction Operators with Contractive Anchoring", "arxiv": "https://arxiv.org/abs/2607.23341"}
+   ]
+  },
+  {
+   "title": "RPG-VST의 강건한 Poisson-Gaussian 파라미터 추정을 우리 저조도 RAW 전처리에 적용",
+   "claim": "잔여 텍스처·클리핑이 섞인 우리 랩의 저조도/lensless RAW 데이터에서, 강건한 파라미터 추정과 신뢰도 게이팅이 기존 OLS 기반 variance stabilization 대비 실패 사례(severe tail)를 줄이는지 확인한다.",
+   "supporting_papers": [
+    {"title": "RPG-VST: Robust Poisson-Gaussian Variance Stabilization for Blind RAW Denoising", "arxiv": "https://arxiv.org/abs/2607.24291"}
+   ]
+  }
+ ]
+}

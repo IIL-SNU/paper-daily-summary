@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-07-28</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-07-28 (화요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-07-28 (화요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Tuesday, 28 July 2026"으로 확인됨</div>
+  <div>🔢 arXiv: cs.LG 326 · cs.CV 243 · cs.AI 406 · eess.IV 28 · eess.SP 39 (합계 1042편, new+cross, replacement 제외)</div>
+  <div>🔢 병합: arXiv+저널(459건) 병합 스캔 1280건 · ROI 배정 396건 (30.9%) — 어제(30.7%, 189/615)와 거의 같은 비율로 최근 밴드(25~32%) 안의 정상 범위</div>
+  <div>⚠️ 오늘은 계산광학 핵심 4개 버킷 중 Meta-Optics/Diffractive가 3주 만에 처음으로 실질 신호(16편 중 6편)를 냈고, Tomography 버킷 안에서도 광학 회절 단층촬영 논문 1편이 눈에 띕니다. 반면 Fourier Ptychography(45편 중 3편)·Lensless(1편 중 0편)·Phase Imaging(9편 중 1편)은 여전히 대부분 키워드 우연 매칭입니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 가장 뚜렷한 두 축이 있습니다. 하나는 <strong>계산광학 코어가 3주 만에 처음으로 실질적인 신호를 냈다는 것</strong>입니다 — 메타표면/메타렌즈 광학 하드웨어 6편(메타렌즈 통합 카메라의 6자유도 자세 센싱, 다채널 편광 검출, 원자탐침 수소화 기반 재구성형 소자 등)과, 광학 회절 단층촬영 논문 1편(multilayer Born 모델 + deep image prior)이 그 신호입니다. 다른 하나는 <strong>영상 복원 연구 전반이 "더 정확한가"보다 "물리 모델과 학습된 사전을 결합한 복원 파이프라인이 실제로 안정적으로 수렴하는가"를 검증하는 쪽으로 계속 옮겨가고 있다는 것</strong>입니다. 이 축은 어제의 "불확실성을 믿어도 되는가"라는 질문에서 한 걸음 더 나아가, 아예 복원 알고리즘의 수렴 자체를 수학적으로 보장하려는 시도(PnP/RED contractive anchoring, nonexpansive denoiser)로 이어졌습니다. 또한 diffusion 모델에서는 학습이 끝난 가중치는 그대로 둔 채 guidance 스케일·초기 노이즈·캐시·attention처럼 추론 단계 요소를 학습하거나 점검하는 연구 6편이 동시에 나와, "샘플러 제어"가 그 자체로 독립된 연구 주제가 되고 있음을 보여줍니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(7/28, 화)은 arXiv /new에 cs.LG 326편, cs.CV 243편, cs.AI 406편, eess.IV 28편, eess.SP 39편으로 총 1042편이 잡혔고, 저널 459건을 더한 전체 스캔 1280건 중 396건(30.9%)이 ROI로 선정됐습니다. 어제(7/27, 월)가 학습된 사전 기반 역문제 solver의 불확실성 신뢰성, diffusion 초해상도 평가 세분화, 의료영상 국소 정확도라는 세 축으로 마무리됐다면, 오늘은 그 첫 번째 축이 한 단계 더 구체화됐습니다. Stabilizing Deep Reconstruction Operators with Contractive Anchoring과 Trainable Nonexpansive Denoisers for Contractive Image Reconstruction 두 편은 Plug-and-Play(PnP)/RED 알고리즘이 반복 복원 중 초반에는 화질이 좋아지다가 갑자기 무너지는 peak-and-collapse 현상을 규명하고, 이를 막기 위해 학습된 사전 자체가 수학적으로 항상 안정적으로 수렴하도록 설계하는 방법을 각각 제안했습니다. 같은 날 저널에서는 광학 회절 단층촬영 논문(MLB-DIP-IDT)이 두꺼운 산란 생체 시편을 multilayer Born 모델과 deep image prior 결합으로 복원하는 방법을 냈는데, 이 역시 "물리 모델과 학습된 사전을 어떻게 안정적으로 결합할 것인가"라는 같은 질문 선상에 있습니다.</p>
+<p>오늘 새로 뚜렷해진 흐름은 메타표면/메타렌즈 광학 하드웨어의 신호 회복입니다. 지난 3주 동안 이 리포트가 반복해서 지적한 계산광학 코어 4개 버킷의 침묵이 Meta-Optics/Diffractive 버킷에서 처음 깨졌습니다. 메탈렌즈 하나로 물체의 6자유도 자세를 센싱·추적하는 카메라, 중적외선 다채널 편광 검출용 이중층 메타표면, 원자탐침 수소화로 기능을 사후에 바꿀 수 있는 재구성형 평판광학 소자 등 6편이 실제 광학 이미징·센싱 하드웨어로 확인됐습니다(나머지 10편은 여전히 무선통신 RIS/6G·THz 바이오센서용 메타표면과의 우연한 키워드 매칭입니다). 또한 diffusion 기반 이미지·비디오 생성에서 guidance 스케일, 초기 노이즈, feature 캐시, attention 패턴처럼 추론 단계 요소를 학습하거나 이론적으로 점검하는 논문 6편이 동시에 나온 것도 눈에 띕니다 — classifier-free guidance가 distillation·다양성·캐싱과 서로 얽혀 있다는 지적이 두 편 이상에서 독립적으로 나왔습니다.</p>
+<p>다음 관찰 포인트는 (1) 메타광학의 신호 회복이 하루짜리 우연인지 다음 주에도 이어지는지, (2) "복원 파이프라인의 안정성 보장"이라는 문제의식이 어제의 "불확실성 신뢰성" 축과 결국 하나로 합쳐질지, (3) diffusion 샘플러 제어 연구가 계산 이미징에서 실제로 쓰는 diffusion 기반 사전(위상 복원, 초해상도)에도 적용될 수치를 내놓는지입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(7/27, 월)는 학습된 사전 기반 역문제 solver가 "복원이 정확한가"에서 "그 불확실성 추정치를 믿어도 되는가"로 질문을 옮긴 하루였고, diffusion 기반 초해상도·복원은 지각적 품질 하나에서 오차 누적·연산 효율·도메인 벤치마크로 평가축을 세분화했으며, 의료영상 딥러닝은 전체 화질 지표보다 임상적으로 중요한 국소 정확도를 요구하기 시작했습니다. 오늘은 이 흐름들의 다음 단계가 이어졌습니다 — "불확실성을 믿을 수 있는가"라는 이론적 질문이 "복원 알고리즘 자체가 반드시 수렴하는가"라는 더 구체적이고 실용적인 질문(contractive anchoring, nonexpansive denoiser)으로 좁혀졌고, diffusion 연구는 초해상도 평가축 세분화를 넘어 아예 샘플러(guidance, 노이즈, 캐시)를 독립된 연구 대상으로 다루기 시작했습니다. 가장 큰 차이는 계산광학 코어입니다. 어제는 4개 핵심 버킷이 거의 전멸이라고 짚었는데, 오늘은 그중 Meta-Optics/Diffractive가 3주 만에 처음으로 6편의 실질 신호를 냈습니다. 다만 Fourier Ptychography·Lensless·Phase Imaging 세 버킷은 여전히 침묵이 이어지고 있어, 코어 전체가 회복됐다기보다는 한 버킷에서 국소적으로 신호가 돌아온 것으로 보는 게 정확합니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>역문제/영상 복원이 물리 모델과 학습된 사전을 결합했을 때 실제로 안정적으로 수렴하는가를 따지기 시작</strong></td>
+  <td>
+    <a href="https://doi.org/10.1088/2040-8986/ae90c0" target=_blank>MLB-DIP-IDT (광학 회절 단층촬영)</a> <span class=pill>JNL</span><br>
+    <a href="https://arxiv.org/abs/2607.23341" target=_blank>Stabilizing Deep Reconstruction Operators</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2607.23347" target=_blank>Trainable Nonexpansive Denoisers</a> <span class=pill>IV</span>
+  </td>
+  <td>두껍고 강하게 빛을 산란시키는 생체 시편을 광학 회절 단층촬영(여러 각도에서 빛을 비춰 얻은 산란 패턴으로 시편 내부의 3차원 굴절률 분포를 복원하는 기법)으로 찍으려면, 빛이 한 번만 산란한다고 가정하는 단순한 근사로는 정확도가 떨어지고 복잡한 산란 모델을 그대로 쓰면 역문제를 풀기가 매우 어려워집니다. MLB-DIP-IDT는 산란 과정을 여러 층으로 쪼개 각 층에서는 단순한 근사를 쓰되, 정답 데이터 없이 신경망 구조 자체가 그럴듯한 영상의 사전 지식 역할을 하는 deep image prior로 부족한 정보를 채워 넣어 재구성 품질을 끌어올렸습니다. 같은 날 나온 두 편은 이 결합의 안정성 쪽을 파고듭니다. Stabilizing Deep Reconstruction Operators는 압축센싱이나 위상 복원처럼 학습된 사전을 반복적으로 이용하는 Plug-and-Play/RED 알고리즘이 왜 초반에는 화질이 좋아지다가 갑자기 무너지는지를 규명하고 이를 막는 보조 연산자를 제안하고, Trainable Nonexpansive Denoisers는 신경망 구조 자체를 수학적으로 "출력이 입력보다 더 벌어지지 않는다"는 성질이 항상 보장되도록 설계해 학습 데이터 밖에서도 복원 알고리즘이 반드시 수렴한다는 걸 증명 가능하게 만들었습니다. 세 편을 같이 보면, 물리 기반 순방향 모델과 학습된 영상 사전을 결합하는 역문제 solver 연구가 복원 품질 하나만이 아니라 그 결합이 정말로 안정적으로 수렴하는지를 정면으로 검증하는 단계로 넘어가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 3편이 같은 날 나왔고 문제의식(물리 모델+학습된 사전 결합의 안정성)을 공유하지만, 두 arXiv 논문은 제출 창구와 어휘(contractive/nonexpansive)가 겹쳐 완전히 독립된 두 그룹이라기보다는 인접 연구로 보일 여지가 있음</small></td>
+  <td>MLB-DIP-IDT의 multilayer Born + deep image prior 결합 방식을 우리 랩의 Fourier ptychography/두꺼운 산란 시편 위상 복원 파이프라인에 적용해 기존 단일층 근사 대비 재구성 정확도를 비교하고, Trainable Nonexpansive Denoisers의 nonexpansive 구조를 우리 PnP 기반 역문제 solver의 학습된 사전에 이식해 peak-and-collapse 현상이 재현되는지 확인</td>
+</tr>
+<tr>
+  <td><strong>메타표면·메타렌즈 광학 하드웨어가 3주 만에 처음으로 실질적인 계산 이미징 신호를 냄</strong><span class=pill>WATCH</span></td>
+  <td>
+    <a href="https://doi.org/10.1364/ol.610051" target=_blank>메탈렌즈 통합 카메라 6-DoF Pose Sensing</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.3390/photonics13080708" target=_blank>이중층 중적외선 편광 검출 메타표면</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1021/acs.nanolett.6c01826" target=_blank>원자탐침 수소화 재구성형 평판광학</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1038/s41377-026-02422-2" target=_blank>Sliding metasurface 빔 조향</a> <span class=pill>JNL</span>
+  </td>
+  <td>지난 3주 동안 이 리포트는 계산광학 핵심 4개 버킷(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics)이 거의 매일 비어 있다고 반복해서 짚었는데, 오늘은 그중 Meta-Optics/Diffractive 버킷에서 16편 중 6편이 실제 광학 이미징·센싱 하드웨어 논문으로 확인됐습니다(나머지 10편은 여전히 무선통신 RIS/6G·THz 바이오센서용 메타표면과의 키워드 우연 매칭). 메타렌즈 통합 카메라 논문은 평평한 메타렌즈 하나만으로 물체의 6자유도(3축 위치+3축 회전) 자세를 정확히 센싱하고 동적으로 추적할 수 있다는 걸 보여, 메타렌즈가 얇은 렌즈 대체재를 넘어 자체적으로 자세 정보를 인코딩하는 계산 광학 소자로 쓰일 수 있음을 시사합니다. 중적외선 다채널 편광 검출용 이중층 샌드위치 메타표면과, 원자탐침 수소화로 기능을 사용 중에 바꿀 수 있는 재구성형 평판 광학 소자는 메타표면이 한 가지 기능만 고정해서 수행하던 단계에서 벗어나 다채널·다기능 또는 튜닝 가능한 방향으로 가고 있다는 걸 보여줍니다. 넓은 각도 빔 조향과 날카로운 주파수 필터링을 동시에 하는 sliding metasurface까지 더하면, 오늘 메타광학 신호는 이미징·센싱에 실제로 쓰일 수 있는 하드웨어 성숙도를 보여주는 쪽으로 모여 있습니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 6편이 같은 날 나왔고 메타표면/메타렌즈 광학 하드웨어라는 공통 물리 플랫폼을 공유하지만, 각각 다루는 기능이 달라 하나의 연구 질문으로 수렴하지는 않음. 다만 4개 핵심 버킷이 3주 연속 거의 비어 있던 패턴을 처음으로 깬 신호라 관찰 우선순위를 높임</small></td>
+  <td>메탈렌즈 통합 카메라의 6-DoF pose sensing 원리를 우리 계산 이미징 세팅의 시편-카메라 정렬 자동화(자동 초점/틸트 보정)에 시험 적용할 수 있는지 원리 검토하고, 원자탐침 수소화 기반 재구성형 평판광학 개념이 우리 랩이 쓰는 고정형 메타렌즈/부호화 조리개를 사용 중 튜닝 가능한 형태로 바꿀 여지가 있는지 문헌조사</td>
+</tr>
+<tr>
+  <td><strong>이미지 노이즈 제거 연구가 새 아키텍처 경쟁보다 노이즈 모델 가정이 언제 깨지는가를 규명하는 쪽으로 이동</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.24291" target=_blank>RPG-VST</a> <span class=pill>SP</span><br>
+    <a href="https://arxiv.org/abs/2607.24135" target=_blank>LoTA-N2N</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.22793" target=_blank>BF-ConvUNeXt</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2607.22765" target=_blank>Frequency-Aware Dual-Stream (전자현미경)</a> <span class=pill>IV</span>
+  </td>
+  <td>RAW 영상을 blind(잡음 특성을 모르는 채)로 노이즈 제거할 때 흔히, 신호에 비례해 세지는 Poisson 잡음과 일정한 세기의 Gaussian 잡음이 섞인 걸 하나의 균일한 Gaussian처럼 보이게 변환(variance stabilization)한 뒤 일반 노이즈 제거망에 넣습니다. RPG-VST는 이 변환에 필요한 잡음 파라미터를 저텍스처 영역 통계로 추정할 때 잔여 텍스처·클리핑·불량 화소가 섞이면 추정이 크게 틀어져, 평균 PSNR은 괜찮아 보여도 일부 이미지에서 심하게 실패하는 "꼬리" 사례가 생긴다는 걸 보이고 강건한 추정으로 이를 크게 줄였습니다. LoTA-N2N은 정답 없이 노이즈 낀 영상끼리만으로 학습하는 자기지도 노이즈 제거가 잡음이 공간적으로 균일하지 않거나 상관관계를 가질 때 왜 지도학습과 어긋나는지를 수식으로 분해해 보이고, BF-ConvUNeXt는 반대로 아키텍처 쪽에서 "입력을 정수배로 늘리면 출력도 정수배로 늘어난다"는 동차성을 끝까지 지켜 다양한 잡음 세기에 하나의 모델로 대응하는 작은 네트워크를 만들었습니다. Frequency-Aware Dual-Stream Learning은 전자현미경 영상에서 화질을 개선할수록 오히려 실제로 없는 구조를 만들어내는 hallucination 문제를, 주파수 대역을 나눠 저주파는 생성 모델로 고주파는 별도 경로로 복원하는 이중 스트림 구조로 분리해 다룹니다. 네 편을 같이 보면, 노이즈 제거 연구가 "어떤 네트워크가 더 정확한가"보다 "내가 가정한 노이즈 모델이나 학습 방식이 실제 데이터에서 언제 깨지는가"를 먼저 규명하는 쪽으로 무게중심이 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 4편이 같은 날 나왔고 노이즈 모델/학습 방식의 실패 조건을 규명한다는 문제의식을 공유하지만, 구체적 실패 모드가 서로 달라 하나의 공통 지표로 직접 비교되지는 않음</small></td>
+  <td>RPG-VST의 강건한 Poisson-Gaussian 파라미터 추정과 신뢰도 게이팅을 우리 랩의 lensless/저조도 계산 이미징 RAW 전처리 단계에 적용해 실패 사례(severe tail) 감소를 측정하고, BF-ConvUNeXt의 동차성 유지 설계를 우리 위상 복원 파이프라인의 경량 노이즈 제거 모듈에 시험 적용</td>
+</tr>
+<tr>
+  <td><strong>캘리브레이션 없는 다중 센서·모달 융합이 하드웨어 정렬 문제를 소프트웨어로 떠넘김</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.24110" target=_blank>BeyondFusion (IR-가시광 융합)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.24701" target=_blank>Modality-Missing RGBT Tracking</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.24249" target=_blank>SILICA (유리 깊이 추정)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.22731" target=_blank>Calibration-Free 3D Multi-Camera Tracking</a> <span class=pill>CV</span>
+  </td>
+  <td>적외선-가시광 카메라를 같이 쓰는 이동형 촬영 장치는 광학계·시점·화각·노출 타이밍이 서로 달라 두 영상이 어긋나는 문제가 흔한데, 기존에는 정밀한 기하 캘리브레이션으로 이를 미리 맞춰둬야 했습니다. BeyondFusion은 이 정렬 작업 자체를 latent diffusion 모델 안의 attention 연산으로 대체해, 명시적인 정합이나 기하 왜곡 보정 없이도 서로 다른 센서의 잠재 표현을 같은 attention 공간에서 대응시킵니다. Modality-Missing RGBT Tracking은 RGB-열화상 추적에서 한쪽 모달리티가 아예 없어질 때 없는 스트림을 그대로 복원하려 하기보다 diffusion 스타일의 조건부 노이즈 제거로 필요한 정보만 채워 넣고, SILICA는 유리처럼 투명한 표면에서 깊이 센서가 실패하는 문제를 diffusion 사전으로 우회해서 풉니다. Calibration-Free 3D Multi-Camera Tracking은 여러 대의 카메라로 실내 사람을 추적할 때 수동으로 카메라 내부·외부 파라미터를 재는 대신 시각 파운데이션 모델이 이미 알고 있는 기하 정보를 직접 활용합니다. 네 편을 같이 보면, 설치·촬영 시점에 정밀하게 맞춰둬야 했던 카메라 간 정렬과 캘리브레이션이라는 하드웨어 전제 조건을, 학습된 모델이 사후에 소프트웨어로 대신 처리하는 쪽으로 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 4편이 같은 날 나왔고 "캘리브레이션 없는 다중 센서/모달 정렬"이라는 문제의식을 공유하지만, 응용 대상이 서로 달라 공통 벤치마크로 직접 비교되지는 않음</small></td>
+  <td>BeyondFusion의 cross-modal self-aligning 모듈을 우리 랩의 다중 파장/다중 센서 계산 이미징 세팅(가시광-적외선 또는 다중 카메라 lensless 어레이)에서 기하 캘리브레이션 없이도 채널 정합이 가능한지 시험하고, Calibration-Free 3D Multi-Camera Tracking의 파운데이션 모델 기반 기하 추정을 우리 다중 카메라 계산 이미징 리그의 초기 캘리브레이션 단축에 적용 검토</td>
+</tr>
+<tr>
+  <td><strong>디지털 병리 AI가 기가픽셀 슬라이드 처리 효율과 파운데이션 모델 강건성, 염색 정보 너머의 생물학적 예측까지 동시에 넓힘</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.23631" target=_blank>PathSelect</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.22861" target=_blank>Robustifying pathology foundation models</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.22703" target=_blank>Prostate Stratification</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.23594" target=_blank>Weakly Supervised Gleason Estimation</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.24364" target=_blank>HistoGPA</a> <span class=pill>CV</span>
+  </td>
+  <td>디지털 병리 슬라이드는 한 장이 기가픽셀급으로 커서, 슬라이드 전체를 그대로 모델에 넣을 수 없다는 게 오랜 병목이었습니다. 오늘 나온 다섯 편은 이 병목을 서로 다른 각도에서 다룹니다. PathSelect는 슬라이드 전체를 다 보는 대신 중요한 토큰만 순차적으로 골라 시각-언어 모델에 넣는 방식으로 연산량을 줄이고, Robustifying pathology foundation models는 병리 파운데이션 모델이 스캐너나 염색 조건이 바뀌면 성능이 흔들리는 문제를 미세조정으로 보완합니다. Histopathological Spectrum-Guided Prostate Stratification과 Weakly Supervised Gleason Pattern Estimation은 둘 다 전립선암 조직을 다루는데, 전자는 분할 결과를 보조 신호로 쓰는 진단 트랜스포머로 위험도를 나누고, 후자는 슬라이드 단위 라벨만 있어도 종양의 세부 패턴을 추정하는 약지도 학습을 씁니다. HistoGPA는 한발 더 나아가 H&E 염색 이미지만 보고 조직 내 공간적 유전자 발현까지 예측하려 합니다. 다섯 편을 같이 보면, 디지털 병리 AI가 슬라이드를 얼마나 빠르고 강건하게 처리하느냐와, 염색된 형태 정보만으로 얼마나 깊은 생물학적 정보까지 끌어낼 수 있느냐를 동시에 넓히고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 5편이 같은 날 나왔고 디지털 병리라는 공통 도메인을 공유하지만, 하위 문제(효율적 토큰 선택·파운데이션 모델 강건성·전립선 등급 판정 2편·유전자 발현 예측)가 갈라져 있어 하나의 평가축으로 수렴하지는 않음</small></td>
+  <td>PathSelect의 순차 토큰 선택 방식을 우리 가상 염색 파이프라인의 대형 슬라이드 추론 단계에 적용해 연산량 대비 진단 정확도 손실을 측정하고, Robustifying pathology foundation models의 미세조정 절차를 우리 랩이 쓰는 병리/현미경 파운데이션 모델에 적용해 스캐너·염색 조건 변화에 대한 강건성을 정량 평가</td>
+</tr>
+<tr>
+  <td><strong>diffusion 모델의 가중치는 고정한 채 guidance·노이즈·캐시·attention 같은 샘플러 요소가 독립된 연구 대상이 됨</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.24731" target=_blank>Rethinking CFG in Distillation</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.23488" target=_blank>LeSAMP</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2607.23937" target=_blank>Manifold-Constrained Noise Optimization</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.23844" target=_blank>OmniCache</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.24027" target=_blank>Sol-Attn</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.23159" target=_blank>CachedSearch</a> <span class=pill>AI</span>
+  </td>
+  <td>diffusion 모델을 학습시키는 일과, 학습이 끝난 모델에서 실제로 영상을 뽑아내는 샘플링 단계를 별개의 문제로 보기 시작했다는 게 오늘 가장 뚜렷한 흐름입니다. classifier-free guidance(조건 없는 예측과 조건부 예측의 차이를 증폭해 결과를 조건에 더 강하게 맞추는 샘플링 기법)는 그동안 고정된 스케일로 써왔는데, Rethinking CFG 논문은 이 스케일이 distillation(느린 다단계 모델을 빠른 소수단계 모델로 압축하는 과정) 목적함수와 부딪혀 학습이 제대로 정의되지 않는다는 걸 보이고, LeSAMP는 CFG 스케일과 노이즈 스케줄 자체를 프롬프트와 시간 단계에 따라 학습으로 정하자고 제안합니다. Manifold-Constrained Noise Optimization은 소수 단계로 압축된 모델이 같은 프롬프트에 대해 항상 비슷한 결과만 내는 다양성 손실 문제를, 초기 노이즈를 Gaussian 사전이 정의하는 다양체 위에서 최적화해 되살립니다. OmniCache와 Sol-Attn은 반대로 속도를 겨냥해 여러 축의 중복 계산을 캐싱하거나 움직임이 큰 영역에만 attention을 집중시켜 추론을 가속하고, CachedSearch는 이런 캐싱이 여러 후보를 탐색해 더 좋은 걸 고르는 test-time search의 순위 매기기 자체를 흐트러뜨리지는 않는지 처음으로 점검합니다. 여섯 편을 같이 보면, diffusion 모델의 가중치는 고정해 둔 채로 guidance 스케일·초기 노이즈·캐시·attention 패턴처럼 샘플러 쪽 요소들을 학습하거나 이론적으로 점검하는 것이 그 자체로 독립된 연구 주제가 됐다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 저자군 6편이 같은 날 나왔고, guidance·노이즈·캐싱·attention이라는 서로 다른 샘플러 구성요소를 다루면서도 같은 질문(추론 단계 제어)을 공유하며, CFG가 distillation/다양성/캐싱과 얽혀 있다는 지적이 두 편 이상에서 독립적으로 나옴</small></td>
+  <td>우리 랩이 위상 복원/초해상도에 쓰는 diffusion 기반 사전의 guidance 스케일을 LeSAMP 방식으로 측정 조건별로 학습시켜 고정 스케일 대비 복원 안정성을 비교하고, OmniCache/Sol-Attn의 추론 가속 기법을 우리 계산 이미징 diffusion 파이프라인에 적용해 속도-정확도 트레이드오프를 측정</td>
+</tr>
+</tbody>
+</table>
+
+<h2>📐 arXiv vs 저널 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: Stabilizing Deep Reconstruction Operators·Trainable Nonexpansive Denoisers(복원 안정성), RPG-VST·LoTA-N2N·BF-ConvUNeXt·Frequency-Aware Dual-Stream(노이즈 모델 실패 분석), BeyondFusion·Modality-Missing RGBT·SILICA·Calibration-Free Multi-Camera(캘리브레이션 없는 융합), PathSelect·Robustifying pathology FM·Prostate Stratification·Gleason Estimation·HistoGPA(디지털 병리), Rethinking CFG·LeSAMP·Manifold Noise·OmniCache·Sol-Attn·CachedSearch(diffusion 샘플러 제어)</li>
+  <li><strong>저널 전용</strong>: 메타표면/메타렌즈 광학 하드웨어 6편(메탈렌즈 pose sensing 카메라, 중적외선 편광 검출, 재구성형 평판광학, sliding metasurface 등)과 광학 회절 단층촬영 논문(MLB-DIP-IDT)이 오늘 저널 쪽의 핵심 신호였습니다. 다만 이 중 메탈렌즈 pose sensing 카메라를 포함한 다수가 초록이 제공되지 않아 제목 기준으로 판단했습니다.</li>
+  <li><strong>공통 키워드</strong>: tomography(3D 재구성/광학 회절 단층촬영 방법론 vs 임상 CT/PET/OCT 진단 사례 — 맥락이 다름), ptychography(광학 Fourier ptychography 3편 vs 전자현미경 ptychography 35편 — 같은 학회 초록집이 다른 물리 modality로 대량 오탐 유발), metasurface(광학 이미징 메타표면 6편 vs 무선통신 RIS/6G 메타표면 10편 — 오늘도 절반 이상이 통신 응용)</li>
+  <li><strong>특징</strong>: 오늘은 저널 쪽이 계산광학 코어(메타광학·회절 단층촬영)의 유일한 신호원이었고, arXiv 쪽은 영상 복원 안정성·노이즈 모델 실패 분석·캘리브레이션 없는 융합·디지털 병리·diffusion 샘플러 제어라는 다섯 방법론 흐름을 모두 주도했습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 역문제 solver가 물리 모델+학습된 사전 결합의 수렴 안정성을 정면으로 검증하기 시작</h3>
+  <p>MLB-DIP-IDT, Stabilizing Deep Reconstruction Operators, Trainable Nonexpansive Denoisers 세 편이 같은 날 "복원 파이프라인이 실제로 안정적으로 수렴하는가"를 다뤘습니다. MLB-DIP-IDT는 두꺼운 산란 생체 시편의 광학 회절 단층촬영에서, 산란 과정을 여러 층의 단순 근사로 쪼개고 정답 데이터 없이 신경망 구조 자체가 사전 지식 역할을 하는 deep image prior로 부족한 정보를 채워 재구성 품질을 끌어올렸습니다. Stabilizing Deep Reconstruction Operators는 Plug-and-Play/RED 알고리즘이 초반엔 화질이 좋아지다 갑자기 무너지는 peak-and-collapse 현상을 규명하고 이를 막는 안정화 연산자를 제안했고, Trainable Nonexpansive Denoisers는 신경망을 permutation 대칭 구조로 제약해 "출력이 입력보다 더 벌어지지 않는다"는 성질을 학습 데이터 밖에서도 수학적으로 보장했습니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 저자군 3편이 같은 날 나왔지만, 두 arXiv 논문은 제출 창구와 어휘가 겹쳐 완전히 독립된 검증이라기보다는 인접 연구로 보일 여지가 있음</p>
+</div>
+
+<div class=ins>
+  <h3>2. 메타표면·메타렌즈 광학 하드웨어가 3주 만에 계산광학 코어의 침묵을 국소적으로 깸</h3>
+  <p>Meta-Optics/Diffractive 버킷 16편 중 6편이 실제 광학 이미징·센싱 하드웨어로 확인됐습니다. 메탈렌즈 통합 카메라는 렌즈 하나로 물체의 6자유도 자세를 센싱·추적하고, 이중층 중적외선 메타표면은 다채널 편광을 검출하며, 원자탐침 수소화 소자는 평판 광학의 기능을 사용 중에 바꿀 수 있게 합니다. sliding metasurface는 넓은 각도 빔 조향과 날카로운 주파수 필터링을 동시에 해냅니다. Fourier Ptychography(3/45편)·Lensless(0/1편)·Phase Imaging(1/9편)은 여전히 대부분 우연 매칭이라 코어 전체의 회복이라기보다 한 버킷의 국소적 신호 회복입니다.</p>
+  <p class=conf-note>Confidence: Medium — 6편이 광학 하드웨어라는 공통 플랫폼은 공유하지만 각각의 기능이 달라 단일 연구 질문으로 수렴하지는 않음. 3주 연속 침묵을 처음 깬 신호라 관찰 우선순위는 높음</p>
+</div>
+
+<div class=ins>
+  <h3>3. diffusion 샘플러(guidance·노이즈·캐시·attention)가 학습과 분리된 독립 연구 대상으로 떠오름</h3>
+  <p>Rethinking CFG, LeSAMP, Manifold-Constrained Noise Optimization, OmniCache, Sol-Attn, CachedSearch 여섯 편이 diffusion 모델의 가중치는 고정한 채 추론 단계 요소를 다뤘습니다. classifier-free guidance 스케일이 distillation 목적함수와 부딪힌다는 지적(Rethinking CFG)과, 이 스케일 자체를 프롬프트별로 학습하자는 제안(LeSAMP)이 같은 날 나왔고, 초기 노이즈 최적화로 소수단계 모델의 다양성 손실을 되살리는 연구(Manifold-Constrained Noise Optimization)와, 추론을 가속하는 캐싱·attention 희소화 기법 두 편(OmniCache, Sol-Attn), 그 캐싱이 test-time search 순위를 흐트러뜨리지 않는지 점검하는 연구(CachedSearch)까지 이어졌습니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 저자군 6편이 같은 날 나왔고 서로 다른 샘플러 구성요소를 다루면서도 "추론 단계 제어"라는 같은 질문을 공유하며, CFG가 다른 요소와 얽혀 있다는 지적이 두 편 이상에서 독립적으로 나옴</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. MLB-DIP-IDT의 multilayer Born + deep image prior 결합을 우리 두꺼운 산란 시편 위상 복원에 적용</h3>
+  <p>단일층 First-Born 근사로는 부정확한 두꺼운 산란 생체 시편 복원에, multilayer Born 모델과 deep image prior를 결합한 방식이 우리 Fourier ptychography/위상 복원 파이프라인에서도 재구성 정확도를 개선하는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>MLB-DIP-IDT 논문 본문 확인(초록만으로는 층 개수·최적화 절차 불명) 후 재현 가능한 부분 파악</li>
+    <li>공통 benchmark: 우리 랩이 보유한 강산란 생체 시편 위상 복원 데이터셋</li>
+    <li>비교축: 기존 단일층 First-Born 근사 vs multilayer Born + deep image prior 결합 시 재구성 정확도</li>
+    <li>실패해도 남는 결과: 우리 산란 조건(산란 강도, 시편 두께)에서 단일층 근사가 깨지는 지점에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. Trainable Nonexpansive Denoisers의 증명 가능한 수렴 보장을 우리 PnP 역문제 solver에 이식</h3>
+  <p>우리 lensless/위상 복원 파이프라인이 쓰는 PnP 기반 학습된 사전을, 출력이 입력보다 더 벌어지지 않는 nonexpansive 구조로 바꿨을 때 peak-and-collapse 현상이 실제로 사라지는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>Trainable Nonexpansive Denoisers의 permutation 기반 구조 재현(공개 코드 또는 논문 수식 기반 구현)</li>
+    <li>공통 benchmark: 우리 PnP 기반 역문제 solver가 현재 쓰는 학습된 사전 및 데이터셋</li>
+    <li>비교축: 기존 경험적 Lipschitz 제약 사전 vs nonexpansive 사전의 반복 횟수별 PSNR 곡선(collapse 발생 여부)</li>
+    <li>실패해도 남는 결과: 우리 사전이 peak-and-collapse를 일으키는 반복 횟수·조건에 대한 baseline 보고서</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. RPG-VST의 강건한 Poisson-Gaussian 파라미터 추정을 우리 저조도 RAW 전처리에 적용</h3>
+  <p>잔여 텍스처·클리핑이 섞인 우리 랩의 저조도/lensless RAW 데이터에서, 강건한 파라미터 추정과 신뢰도 게이팅이 기존 OLS 기반 variance stabilization 대비 실패 사례(severe tail)를 줄이는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>RPG-VST의 Student-t 기반 tile 통계 추정 절차 재현</li>
+    <li>공통 benchmark: 우리 lensless/저조도 계산 이미징 RAW 데이터셋(CFA 평면별)</li>
+    <li>비교축: 기존 OLS 기반 PG 파라미터 추정 vs RPG-VST 강건 추정의 PSNR 분포(특히 하위 꼬리)</li>
+    <li>실패해도 남는 결과: 우리 데이터에서 잔여 텍스처·클리핑이 파라미터 추정에 미치는 영향에 대한 baseline</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Reconstruction/Inverse Problems(49편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:92%"></span></span><span class=n>45편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:18%"></span></span><span class=n>9편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:33%"></span></span><span class=n>16편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:4%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:88%"></span></span><span class=n>43편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:71%"></span></span><span class=n>35편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>49편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>196편</span></div>
+
+<p><small>⚠️ 참고 — Domain Watch Lens: Fourier Ptychography/Microscopy 45편 중 실제 광학 FP 신호는 3편뿐이고, 35편은 단일 학회(Microscopy & Microanalysis) 초록집의 전자현미경 ptychography(광학이 아닌 전자빔 modality)이며 7편은 SAR/원격탐사 "synthetic aperture" 키워드 우연 매칭입니다. Lensless/Coded Imaging 1편은 자유공간 빔 성형 논문으로 계산 이미징과 무관합니다. Phase Imaging/Holography 9편 중 실제 신호는 Optics Express 영상 암호화 논문 1편(초록 미제공)뿐이고 나머지 8편은 무선통신 HMIMO·THz 근접장 위치추정·DOA 추정 등 RF 신호처리 쪽 "phase"·"wavefront" 우연 매칭입니다. Meta-Optics/Diffractive 16편 중 6편은 실제 광학 이미징·센싱 하드웨어(위 클러스터 표 참고)이고 10편은 무선통신 RIS/6G·THz 바이오센서용 메타표면입니다. Virtual Staining/Pathology 35편 중 6편은 실제 디지털 병리 신호(위 클러스터 표 참고)이고 나머지는 농업·산업 결함진단·금융·교육 등 "label-free"·"virtual" 키워드 우연 매칭이거나, 계산 병리와 무관한 고전 생물학 염색 프로토콜입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (45편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/josaa.600840" target=_blank>Random Encoding Illuminates Fourier Ptychography</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 무작위 부호화 조명으로 Fourier ptychography의 위상 전달 특성을 균일하게 만들어 정량 위상 이미징 품질을 높이는 방법론 논문 — 오늘 유일한 정통 FP 기법 개선 신호 / 우선순위: Read
+</div>
+
+<h3>Lensless/Coded Imaging (1편 중 관련 0편)</h3>
+<div class=roi-item>
+  <strong>Lensless Formation and Turbulence Response of Airy-Type Beams via Direct Fresnel Propagation</strong> <span class=pill>JNL</span><br>
+  왜 주요하지 않음: 자유공간 빔 성형·난류 응답 연구로, "lensless"가 렌즈 없는 빔 전파를 뜻할 뿐 lensless 컴퓨테이셔널 카메라와는 무관합니다 / 우선순위: Skim-only(버킷 오탐)
+</div>
+
+<h3>Phase Imaging/Holography (9편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.607271" target=_blank>Full-Color Image Encryption via OAM-Multiplexed Holography</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 오늘도 유일하게 진짜 홀로그래피 방법론(Fourier 단일화소 이미징 + OAM 다중화 홀로그래피)을 다루는 논문(초록 미제공, 제목 기준). 나머지 8편은 RF 신호처리·이론물리·교육학 논문으로 키워드 우연 매칭 / 우선순위: Read(본문 확인 필요)
+</div>
+
+<h3>Meta-Optics/Diffractive (16편 중 관련 6편)</h3>
+<div class=roi-item>
+  <strong>메탈렌즈 pose sensing 카메라 · 이중층 편광 검출 메타표면 · 재구성형 평판광학 · sliding metasurface 등 6편</strong> <span class=pill>JNL</span><br>
+  왜 주요: 오늘의 대표 클러스터(메타표면·메타렌즈 하드웨어의 3주 만의 신호 회복) — 위 클러스터 표 참고. 나머지 10편은 무선통신 RIS/6G·THz 바이오센서 메타표면으로 계산 이미징과 무관 / 우선순위: Read
+</div>
+
+<h3>Light-Field/Novel Sensors (2편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.23576" target=_blank>Neuromorphic Object Detection: An In-Depth Study and Future Directions</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 이벤트 카메라 기반 객체 탐지를 정리한 survey로, 신경모방 이미지 센서 응용 동향 파악에 참고할 만합니다. 나머지 1편(SpiNNaker2 칩)은 범용 뉴로모픽 컴퓨팅 하드웨어로 이미징 센서와는 거리가 있습니다 / 우선순위: Skim-only(survey, 신규 방법론 아님)
+</div>
+
+<h3>Tomography/3D Imaging (43편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2040-8986/ae90c0" target=_blank>MLB-DIP-IDT (광학 회절 단층촬영)</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 오늘의 대표 클러스터(물리 모델+학습된 사전 결합의 안정성) — 위 클러스터 표 참고. 43편 대부분은 원자탐침 단층촬영(재료과학 학회 초록) 또는 임상 CT/PET/OCT 진단 사례 보고로 3D 재구성 방법론과는 거리가 있습니다 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.24403" target=_blank>GenSplatCodec</a> · <a href="https://arxiv.org/abs/2607.22780" target=_blank>Inter-Reflective Gaussian Splatting (IRGS++)</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 3D Gaussian Splatting을 렌더링 품질 경쟁을 넘어 압축(diffusion 기반 저비트레이트 복원)과 물리 기반 역렌더링(간접광 반사 추적)으로 확장하는 흐름 — 계산 이미징보다는 그래픽스 쪽에 가까워 클러스터 표에는 넣지 않았지만 참고할 만합니다 / 우선순위: Skim-only(그래픽스 응용, 계산 이미징과 간접 연결)
+</div>
+
+<h3>Virtual Staining/Pathology (35편 중 관련 6편)</h3>
+<div class=roi-item>
+  <strong>PathSelect · Robustifying pathology foundation models · Prostate Stratification · Gleason Estimation · HistoGPA 등 5편</strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(기가픽셀 슬라이드 효율·파운데이션 모델 강건성·염색 너머 생물학적 예측) — 위 클러스터 표 참고. 나머지 29편은 농업·산업·금융·교육 논문의 "label-free"·"virtual" 키워드 우연 매칭이거나 계산 방법론이 없는 고전 염색 프로토콜입니다 / 우선순위: Read
+</div>
+
+<h3>Reconstruction/Inverse Problems (49편 중 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.23341" target=_blank>Stabilizing Deep Reconstruction Operators</a> · <a href="https://arxiv.org/abs/2607.23347" target=_blank>Trainable Nonexpansive Denoisers</a></strong> <span class=pill>IV</span><br>
+  왜 주요: 오늘의 대표 클러스터(PnP/RED 복원 안정성) — 위 클러스터 표 참고
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.22867" target=_blank>AI-interpreted Optical Scattering for Focal Depth-Aware Imaging</a></strong> <span class=pill>AI</span><br>
+  왜 주요: 산란을 방해물이 아니라 깊이·초점 정보를 담은 신호로 재해석하는 새 문제 설정 — "산란은 적"이라는 계산 이미징의 통념을 뒤집는 관점이라 눈여겨볼 만합니다 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.24441" target=_blank>Rapid Quantitative Chemical Composition Mapping (MRI)</a></strong> <span class=pill>IV</span><br>
+  왜 주요: 화학 이동 영상(MR spectroscopic imaging)의 오랜 병목인 촬영 시간을, field inhomogeneity를 재구성 모델에 함께 반영하는 model-based 방법으로 단축 / 우선순위: Read
+</div>
+
+<h3>Deep Learning Methods — 계산 이미징 관련 10편 (196편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong>RPG-VST · LoTA-N2N · BF-ConvUNeXt · Frequency-Aware Dual-Stream · Reference-Free ISP 평가</strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(노이즈 모델 실패 분석) — 위 클러스터 표 참고
+</div>
+<div class=roi-item>
+  <strong>BeyondFusion · Modality-Missing RGBT Tracking · SILICA · Calibration-Free 3D Multi-Camera Tracking</strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(캘리브레이션 없는 다중 센서 융합) — 위 클러스터 표 참고
+</div>
+<div class=roi-item>
+  <strong>Rethinking CFG · LeSAMP</strong> <span class=pill>CV/LG</span><br>
+  왜 주요: 오늘의 대표 클러스터(diffusion 샘플러 제어)의 핵심 두 편 — 위 클러스터 표 참고. 나머지 4편(Manifold Noise·OmniCache·Sol-Attn·CachedSearch)은 부록 참고
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<ul>
+  <li><strong>The Intruder Threshold (LoRA)</strong> — 82%의 레이어에서 예측 임계값이 실측값의 2배 이내로 들어맞고, threshold-crossing 여부 판별 AUC 0.89(외부 어댑터에서는 0.997). spike-budget 규칙으로 가장 취약한 모델에서 forgetting을 62% 줄임</li>
+  <li><strong>RPG-VST</strong> — SIDD에서 PSNR +1.83/+1.92dB, PSNR 손실이 -1dB 미만인 severe tail 사례를 44/36건에서 7/4건으로 감소</li>
+  <li><strong>BF-ConvUNeXt</strong> — 0.82M 파라미터로 CBSD68/Kodak24/McMaster/Urban100 전 구간에서 DnCNN·FFDNet과 동등 이상(평균 +0.7dB), σ=150/200까지 완만하게 성능 저하(22.8dB/20.0dB)</li>
+</ul>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>메타표면 하드웨어 쪽에서는 원자탐침 수소화로 광학 소자의 기능 자체를 사용 중에 바꿀 수 있게 만들고(Atomic-Probe-Controlled Hydrogenation), 센서 융합 쪽에서는 카메라 간 기하 캘리브레이션을 촬영 이후 소프트웨어로 대체하려 합니다(BeyondFusion, Calibration-Free 3D Multi-Camera Tracking). 방식은 완전히 다르지만(전자는 소자 제작 단계의 물리적 재구성, 후자는 학습된 모델의 사후 보정) 둘 다 "설계·설치 시점에 고정해야 했던 것을 배포 이후에도 조정 가능하게 만든다"는 같은 방향을 가리킵니다. 이 크로스오버가 눈에 띄는 이유는, 계산 이미징 시스템을 설계할 때 흔히 광학 하드웨어와 후처리 소프트웨어를 서로 다른 고정된 단계로 나눠 생각하는데, 오늘 나온 두 흐름은 그 경계 자체가 점점 유연해지고 있다는 걸 보여주기 때문입니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Trainable Nonexpansive Denoisers for Contractive Image Reconstruction — arXiv eess.IV</h3>
+  <div class=tag>[방법전환] [해부분석]</div>
+  <p><strong>왜 A급인가:</strong> Plug-and-Play(PnP)나 RED 알고리즘으로 압축센싱·위상 복원 같은 역문제를 풀 때, 학습된 신경망 노이즈 제거기를 반복적으로 사용하는 방식은 우리 랩을 포함한 계산 이미징 커뮤니티가 널리 씁니다. 문제는 이 노이즈 제거기가 원래 한 번의 노이즈 제거만을 위해 학습됐다는 점입니다 — 반복 과정에 넣었을 때 정말로 수렴하는지는 그동안 경험적으로만(Lipschitz 상수를 학습 중에 벌점으로 눌러서) 확인해왔고, 학습 데이터를 벗어난 입력에서는 보장이 없었습니다. 이 논문은 신경망 구조 자체를, 이미지 격자에 대한 순열(permutation) 대칭을 이용해 "출력이 입력보다 더 벌어지지 않는다"는 성질(비확장성, nonexpansive)이 항상 성립하도록 설계했습니다. 우리 랩이 PnP 기반 위상 복원이나 lensless 재구성에 딥러닝 사전을 도입할 때, 이 구조를 쓰면 "이 복원이 수렴할지 안 할지"를 실험해보기 전에 수학적으로 보장할 수 있다는 뜻이라 실용적 가치가 큽니다.</p>
+  <p><strong>핵심:</strong> 저자들은 순방향 이미징 연산자와 이 비확장 노이즈 제거기를 결합하면 전체 복원 연산이 반드시 수축(contractive)한다는 걸 보이고, 이를 통해 PnP/RED 알고리즘의 전역 수렴을 증명 가능하게 만들었습니다. 실험은 초해상도·디블러링 같은 표준 역문제에서 이뤄졌는데, Lipschitz 제약을 경험적으로만 거는 기존 방법들과 비교해 복원 성능은 경쟁력을 유지하면서도 수렴 보장이라는 성질을 추가로 얻었다고 보고합니다.</p>
+  <p><strong>주의:</strong> 실험 도메인이 자연 영상 기반 초해상도·디블러링 위주라, 우리 랩이 다루는 위상 복원이나 Fourier ptychography처럼 순방향 연산자가 비선형이고 조건수가 나쁜 문제에서도 같은 비확장 구조가 화질 손실 없이 유지되는지는 별도 실험이 필요합니다. 또한 nonexpansive 제약이 표현력을 어느 정도 희생시키는지(대안 대비 상한선 손실)는 abstract만으로는 확인되지 않아 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] Fourier Ptychography/Microscopy 45편 중 35편이 단일 학회(Microscopy & Microanalysis) 초록집의 전자현미경 ptychography로, 광학 FP와는 다른 물리 modality임에도 같은 버킷에 섞여 실제 신호(3편)를 가려내기 어렵게 만듭니다.</p>
+  <p>[Claim risk] 메타광학 클러스터 6편 중 다수가 초록이 제공되지 않는 저널 DOI 항목(Crossref만, OpenAlex enrich 실패)이라 제목만으로 클러스터에 배정했습니다. 실제 방법론 세부사항은 본문 확인 전까지 잠정적입니다.</p>
+  <p>[Dataset risk] classify.py 선택 비율은 30.9%(396/1280)로 최근 밴드(25~32%) 안에 들지만, Lensless·Phase Imaging 두 버킷은 여전히 실질 신호가 사실상 0~1편에 그칩니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] 메탈렌즈 통합 카메라 6-DoF pose sensing 논문(Optics Letters)은 초록이 제공되지 않아 제목만으로 판단했습니다. 정량적 추적 정확도, 작동 범위, 실시간성 여부는 본문 확인이 필요합니다.</p>
+  <p>[Baseline risk] Trainable Nonexpansive Denoisers의 "경쟁력 있는 복원 성능"이라는 주장은 abstract 수준에서 정성적으로만 설명되고, 어떤 baseline 대비 얼마나 차이나는지(수치)는 본문 확인이 필요합니다.</p>
+  <p>[Dataset risk] MLB-DIP-IDT는 abstract에 학습/평가 시편의 산란 강도 범위나 정량 지표(PSNR 등)가 제시되지 않아, 우리 랩의 산란 조건과 얼마나 가까운지는 본문 확인이 필요합니다.</p>
+  <p>[Deployment risk] diffusion 샘플러 제어 클러스터의 OmniCache·Sol-Attn이 보고하는 가속 배수는 대형 이미지/비디오 DiT 기준이며, 우리 랩이 쓰는 소규모 diffusion 기반 복원 사전에서도 같은 이득이 나올지는 별도 검증이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy 42편</strong>(전자현미경 ptychography 35편, SAR/원격탐사 7편) — "ptychography"·"synthetic aperture" 키워드 우연 매칭.</li>
+    <li><strong>Lensless/Coded Imaging 1편 전체</strong>(자유공간 빔 성형) — lensless 컴퓨테이셔널 카메라와 무관.</li>
+    <li><strong>Phase Imaging/Holography 8편</strong>(RF 신호처리, 이론물리, 교육학) — "phase"·"holography" 키워드 우연 매칭.</li>
+    <li><strong>Meta-Optics/Diffractive 10편</strong>(무선통신 RIS/6G, THz 바이오센서) — 통신·센싱 응용, 계산 이미징과 무관.</li>
+    <li><strong>Virtual Staining/Pathology 29편</strong> — 농업·산업·금융·교육 논문에 "label-free"·"virtual" 키워드 우연 매칭이거나 계산 방법론이 없는 고전 염색 프로토콜.</li>
+    <li><strong>GenSplatCodec · Inter-Reflective Gaussian Splatting(IRGS++)</strong> [CV] — 3DGS 압축·역렌더링의 흥미로운 발전이지만 그래픽스 응용이라 계산 이미징과 간접 연결. 방법론 아이디어만 참고.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>역문제/복원 안정성 (3편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1088/2040-8986/ae90c0" target=_blank>Intensity diffraction tomography based on multi-layer born model and deep image prior</a></strong> <span class=pill>JNL</span><br>
+- 문제: 두껍고 강하게 산란하는 생체 시편은 단순한 단일층 산란 근사로 정확히 복원하기 어려움 / 방법: 산란 과정을 여러 층의 단순 근사로 분해(multilayer Born)하고 deep image prior로 부족한 정보를 채움 / 의미: 광학 회절 단층촬영의 두꺼운 시편 적용 범위 확장 / 근거: 약산란·강산란 생체 시편 모두에서 재구성 품질 개선 확인 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.23341" target=_blank>Stabilizing Deep Reconstruction Operators with Contractive Anchoring</a></strong> <span class=pill>IV</span><br>
+- 문제: PnP/RED 복원이 반복 중 초반엔 좋아지다 갑자기 무너지는 peak-and-collapse 현상 / 방법: 불안정성을 국소량으로 정식화하고, 수축 연산자로 안정된 지점에 고정 / 의미: 재학습·수정 없이 기존 사전에 바로 적용 가능한 안정화 프레임워크 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.23347" target=_blank>Trainable Nonexpansive Denoisers for Contractive Image Reconstruction</a></strong> <span class=pill>IV</span><br>
+- 문제: Lipschitz 제약을 경험적으로만 거는 기존 학습된 노이즈 제거기는 학습 데이터 밖에서 수렴을 보장하지 못함 / 방법: 순열 대칭을 이용해 신경망을 전역적으로 비확장(nonexpansive)하게 구성 / 의미: PnP/RED 알고리즘의 증명 가능한 전역 수렴 / 우선순위: Must-read
+</div>
+
+<h3>메타표면·메타렌즈 광학 하드웨어 (4편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/ol.610051" target=_blank>Accurate 6-DoF Pose Sensing and Dynamic Tracking Enabled by a Metalens-Integrated Camera</a></strong> <span class=pill>JNL</span><br>
+- 문제: 물체의 6자유도 자세를 정확히 센싱·추적하려면 보통 복잡한 광학계나 다중 카메라가 필요 / 방법: 메탈렌즈 하나를 카메라에 통합해 자세 정보를 직접 인코딩(초록 미제공, 제목 기준) / 의미: 메타렌즈가 얇은 렌즈 대체재를 넘어 계산 광학 센싱 소자로 확장 / 주의: 정량 정확도·작동 범위는 본문 확인 필요 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.3390/photonics13080708" target=_blank>Double-Layer Sandwich Metasurface for Mid-Infrared Multi-Channel Polarization Detection</a></strong> <span class=pill>JNL</span><br>
+- 문제: 중적외선 대역에서 다채널 편광 정보를 동시에 검출하기 어려움 / 방법: 이중층 샌드위치 구조 메타표면 설계 / 의미: 메타표면의 단일 기능에서 다채널 검출로의 확장 / 우선순위: Skim-only(제목 기준, 세부 검증 필요)
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1021/acs.nanolett.6c01826" target=_blank>Atomic-Probe-Controlled Hydrogenation for Configurable Flat Optics</a></strong> <span class=pill>JNL</span><br>
+- 문제: 기존 평판 광학 소자는 제작 시점에 기능이 고정됨 / 방법: 원자탐침 제어 수소화로 소자 특성을 사용 중에 바꿀 수 있게 함 / 의미: 재구성형(reconfigurable) 메타광학 소자로의 전환 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41377-026-02422-2" target=_blank>Sliding metasurface for wide-angle beam steering with sharp frequency filtering</a></strong> <span class=pill>JNL</span><br>
+- 문제: 넓은 각도 빔 조향과 날카로운 주파수 필터링을 하나의 수동 소자로 동시에 구현하기 어려움 / 방법: 슬라이딩 메타표면 구조 / 의미: 다기능 수동 광학 소자 설계의 진전 / 우선순위: Skim-only(제목 기준)
+</div>
+
+<h3>노이즈 모델 실패 분석 (4편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.24291" target=_blank>RPG-VST: Robust Poisson-Gaussian Variance Stabilization for Blind RAW Denoising</a></strong> <span class=pill>SP</span><br>
+- 문제: blind RAW 노이즈 제거용 잡음 파라미터를 저텍스처 통계로 추정할 때 클리핑·불량화소로 추정이 크게 틀어짐 / 방법: 색필터 평면별 강건한 Student-t 통계 추정과 신뢰도 기반 게이팅 / 의미: 평균 지표 뒤에 숨은 실패 사례(severe tail) 감소 / 근거: SIDD +1.83/+1.92dB, severe tail 44/36건→7/4건 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.24135" target=_blank>LoTA-N2N: Local Trace Adaptation for Zero-Shot Self-Supervised Image Denoising</a></strong> <span class=pill>CV</span><br>
+- 문제: 자기지도 노이즈 제거의 surrogate 목적함수가 상관 잡음·비정상 잡음에서 지도학습 목적함수와 어긋남 / 방법: 잔차-예측오차 상호작용을 국소적으로 추정해 공간적 상쇄를 방지 / 의미: 재촬영·정답 없이도 다양한 잡음 조건에 적응 가능 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.22793" target=_blank>Small, Bias-Free, Blind and Convolutional Denoiser (BF-ConvUNeXt)</a></strong> <span class=pill>IV</span><br>
+- 문제: 다양한 잡음 세기에 하나의 모델로 대응하려면 동차성(homogeneity) 유지가 필요하지만 일반 아키텍처는 이를 깨뜨림 / 방법: bias-free 설계를 끝까지 유지하는 0.82M 파라미터 ConvNeXt U-Net / 의미: 경량 모델로도 무거운 SOTA에 근접하는 blind denoising / 근거: CBSD68/Kodak24/McMaster/Urban100 평균 +0.7dB(DnCNN 대비) / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.22765" target=_blank>Frequency-Aware Dual-Stream Learning (전자현미경 영상)</a></strong> <span class=pill>IV</span><br>
+- 문제: 전자현미경 영상 복원에서 화질 개선이 오히려 없는 구조를 만들어내는 hallucination으로 이어짐 / 방법: 저주파(생성 모델)·고주파(별도 경로) 이중 스트림으로 분리 복원 / 의미: 사실성-충실도 트레이드오프의 명시적 해소 / 우선순위: Read
+</div>
+
+<h3>캘리브레이션 없는 다중 센서 융합 (4편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.24110" target=_blank>BeyondFusion: Self-Aligned Latent Diffusion for Calibration-Free IR-Visible Fusion</a></strong> <span class=pill>CV</span><br>
+- 문제: 적외선-가시광 카메라 간 광학계·시점·화각 차이로 인한 정렬 오류 / 방법: latent diffusion의 attention 공간에서 cross-modal self-aligning 모듈로 정렬 / 의미: 명시적 기하 캘리브레이션 없는 다중 센서 융합 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.24701" target=_blank>Spatio-Temporal Conditional Denoising Transformer for Modality-Missing RGBT Tracking</a></strong> <span class=pill>CV</span><br>
+- 문제: RGB-열화상 추적에서 한쪽 모달리티가 아예 없어지는 상황 / 방법: diffusion 스타일 조건부 노이즈 제거로 누락 정보 보완 / 의미: 모달리티 완전 소실에도 강건한 추적 / 우선순위: Skim-only(추적 응용, 계산 이미징과 간접 연결)
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.24249" target=_blank>SILICA: Repurposing Diffusion Priors for Joint Glass Segmentation and Depth Estimation</a></strong> <span class=pill>CV</span><br>
+- 문제: 유리처럼 투명한 표면에서 깊이 센서가 실패 / 방법: diffusion 사전을 재활용해 분할과 깊이 추정을 동시에 수행 / 의미: 센서 하드웨어 개선 없이 소프트웨어로 특정 실패 모드를 우회 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.22731" target=_blank>Calibration-Free 3D Multi-Camera People Tracking for Indoor Environment</a></strong> <span class=pill>CV</span><br>
+- 문제: 다중 카메라 추적에 필요한 수동 내부/외부 파라미터 캘리브레이션의 번거로움 / 방법: 시각 파운데이션 모델의 기하 정보를 직접 활용 / 의미: 설치 즉시 사용 가능한 다중 카메라 시스템 / 우선순위: Skim-only(추적 응용, 계산 이미징과 간접 연결)
+</div>
+
+<h3>디지털 병리 — 효율·강건성·생물학적 예측 (5편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.23631" target=_blank>PathSelect: Sequential Token Selection for Whole Slide Pathology</a></strong> <span class=pill>CV</span><br>
+- 문제: 기가픽셀 WSI를 시각-언어 모델에 그대로 넣을 수 없음 / 방법: 중요한 토큰만 순차 선택해 처리 / 의미: 대형 슬라이드의 실사용 가능한 추론 속도 확보 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.22861" target=_blank>Robustifying pathology foundation models via fine-tuning</a></strong> <span class=pill>CV</span><br>
+- 문제: 병리 파운데이션 모델이 스캐너·염색 조건 변화에 취약 / 방법: 미세조정 기반 강건성 보완 / 의미: 파운데이션 모델의 실사용 신뢰성 확보 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.22703" target=_blank>Histopathological Spectrum-Guided Prostate Stratification</a></strong> <span class=pill>CV</span><br>
+- 문제: 전립선암 위험도 분류의 신뢰성 향상 필요 / 방법: 분할 결과를 보조 신호로 쓰는 진단 트랜스포머 / 의미: 분할-진단 결합 구조의 유효성 / 우선순위: Skim-only(단일 암종, 일반화 검증 필요)
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.23594" target=_blank>Weakly Supervised Instance-Level Gleason Pattern Estimation</a></strong> <span class=pill>CV</span><br>
+- 문제: 픽셀 단위 정답 없이 Gleason 패턴을 추정해야 함 / 방법: 슬라이드 단위 라벨만으로 약지도 학습 / 의미: 라벨링 비용을 줄이는 병리 등급 판정 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.24364" target=_blank>HistoGPA: Gene-Prior Attention for Histology-Based Spatial Gene Expression Prediction</a></strong> <span class=pill>CV</span><br>
+- 문제: H&E 염색 이미지만으로 공간적 유전자 발현까지 예측하기는 어려움 / 방법: 맥락 조건부 유전자 사전 attention 프레임워크 / 의미: 염색 형태 정보를 넘어선 분자 수준 예측 / 우선순위: Read
+</div>
+
+<h3>diffusion 샘플러 제어 (6편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.24731" target=_blank>Rethinking Classifier-Free Guidance in On-Policy Diffusion Distillation</a></strong> <span class=pill>CV</span><br>
+- 문제: on-policy diffusion distillation에서 CFG 스케일이 학습 목적함수와 부딪힘 / 방법: teacher-student 매칭을 branch 단위로 재정식화 / 의미: distillation·guidance 결합의 이론적 정합성 확보 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.23488" target=_blank>Learning Sampling Parameters for Diffusion Models (LeSAMP)</a></strong> <span class=pill>LG</span><br>
+- 문제: guidance 스케일·노이즈 스케줄을 고정값으로 손수 설정해야 함 / 방법: 프롬프트·시간 단계 조건부로 샘플링 파라미터 자체를 학습 / 의미: 샘플러 하이퍼파라미터 튜닝의 자동화 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.23937" target=_blank>Manifold-Constrained Noise Optimization for Diverse Diffusion Sampling</a></strong> <span class=pill>CV</span><br>
+- 문제: 소수단계로 distillation된 모델이 같은 프롬프트에 비슷한 결과만 냄(다양성 손실) / 방법: 초기 노이즈를 Gaussian 사전 다양체 위에서 최적화 / 의미: 속도를 유지하며 다양성 회복 / 우선순위: Skim-only(다양성 지표 본문 확인 필요)
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.23844" target=_blank>OmniCache: Multidimensional Hierarchical Feature Caching For Diffusion Models</a></strong> <span class=pill>CV</span><br>
+- 문제: diffusion 추론의 중복 계산이 많음 / 방법: 여러 축에서 계층적으로 feature를 캐싱 / 의미: 재학습 없는 추론 가속 / 우선순위: Skim-only(가속 배수 본문 확인 필요)
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.24027" target=_blank>Sol-Attn: Accelerating Video Generation Inference via On-the-Fly Attention Sparsification</a></strong> <span class=pill>CV</span><br>
+- 문제: 비디오 diffusion transformer의 attention 연산량이 큼 / 방법: 움직임이 큰 영역에 적응적으로 attention을 집중 / 의미: 고정 예산이 아닌 적응형 희소화로 속도-품질 균형 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.23159" target=_blank>CachedSearch: Training-Free Cached Exploration for Test-Time Search in Video Diffusion</a></strong> <span class=pill>AI</span><br>
+- 문제: 추론 캐싱이 test-time search의 후보 순위 매기기를 왜곡할 수 있음 / 방법: 캐싱-검증 상호작용을 최초로 체계적으로 점검 / 의미: 가속 기법과 test-time scaling을 같이 쓸 때의 함정을 규명 / 우선순위: Read
+</div>
+
+<h3>기타 역문제/재구성 (2편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.22867" target=_blank>AI-interpreted Optical Scattering for Robust and Focal Depth-Aware Imaging</a></strong> <span class=pill>AI</span><br>
+- 문제: 산란은 계산 이미징에서 흔히 제거해야 할 방해 요소로만 다뤄짐 / 방법: 스펙클 패턴을 깊이·초점 정보를 담은 신호로 재해석 / 의미: "산란은 적"이라는 통념을 뒤집는 문제 설정 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.24441" target=_blank>Rapid Quantitative Chemical Composition Mapping using Model-Based MRI Reconstruction</a></strong> <span class=pill>IV</span><br>
+- 문제: MR spectroscopic imaging의 긴 촬영 시간 / 방법: field inhomogeneity 보정을 재구성 모델에 함께 반영 / 의미: 화학 이동 영상의 실사용 가능성 향상 / 우선순위: Skim-only(정량 결과 본문 확인 필요)
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv 카테고리: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>cs.LG</a> · <a href="https://arxiv.org/list/cs.CV/new" target=_blank>cs.CV</a> · <a href="https://arxiv.org/list/cs.AI/new" target=_blank>cs.AI</a> · <a href="https://arxiv.org/list/eess.IV/new" target=_blank>eess.IV</a> · <a href="https://arxiv.org/list/eess.SP/new" target=_blank>eess.SP</a></li>
+  <li>RSS: <a href="../feed.xml">feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+Imaging Intelligence Daily Briefing · cs.LG · cs.CV · cs.AI · eess.IV · eess.SP 기반 자동 생성 · 입력 출처: arXiv, Crossref, OpenAlex
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+
+</body>
+</html>

@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 27 Jul 2026 12:13:46 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 12:17:15 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-07-28 (화요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-07-28.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-28.html</guid>
+      <pubDate>Tue, 28 Jul 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘(7/28, 화)은 arXiv /new에 cs.LG 326편, cs.CV 243편, cs.AI 406편, eess.IV 28편, eess.SP 39편으로 총 1042편이 잡혔고, 저널 459건을 더한 전체 스캔 1280건 중 396건(30.9%)이 ROI로 선정됐습니다. 어제(7/27, 월)가 학습된 사전 기반 역문제 solver의 불확실성 신뢰성, diffusion 초해상도 평가 세분화, 의료영상 국소 정확도라는 세 축으로 마무리됐다면, 오늘은 그 첫 번째 축이 한 단계 더 구체화됐습니다. Stabilizing Deep Reconstruction Operators with Contractive Anchoring과 Trainable Nonexpansive Denois…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-07-27 (Week 30)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-07-27-weekly.html</link>

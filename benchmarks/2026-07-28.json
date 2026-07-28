@@ -1,0 +1,29 @@
+{
+ "date": "2026-07-28",
+ "results": [
+  {
+   "benchmark": "LoRA intruder-dimension threshold prediction",
+   "metric": "AUC / factor-of-2 localization",
+   "value": 0.89,
+   "value_str": "AUC 0.89 (layer 82%는 예측 임계값의 2배 이내), forgetting -62%",
+   "paper": "https://arxiv.org/abs/2607.23711",
+   "paper_title": "The Intruder Threshold: A Spectral Law for LoRA Fine-Tuning"
+  },
+  {
+   "benchmark": "SIDD blind RAW denoising (RPG-VST + SwinIR/Restormer)",
+   "metric": "PSNR gain / severe-tail count",
+   "value": 1.92,
+   "value_str": "+1.83/+1.92dB, severe-tail 44/36건 -> 7/4건",
+   "paper": "https://arxiv.org/abs/2607.24291",
+   "paper_title": "RPG-VST: Robust Poisson-Gaussian Variance Stabilization for Blind RAW Denoising"
+  },
+  {
+   "benchmark": "CBSD68/Kodak24/McMaster/Urban100 blind Gaussian denoising (BF-ConvUNeXt vs DnCNN)",
+   "metric": "PSNR",
+   "value": 0.7,
+   "value_str": "평균 +0.7dB (0.82M 파라미터, DnCNN/FFDNet과 동등 이상)",
+   "paper": "https://arxiv.org/abs/2607.22793",
+   "paper_title": "Small, Bias-Free, Blind and Convolutional Denoiser (BF-ConvUNeXt)"
+  }
+ ]
+}
