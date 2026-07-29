@@ -1,0 +1,29 @@
+{
+ "date": "2026-07-29",
+ "results": [
+  {
+   "benchmark": "Photoacoustic tomography sparse-view reconstruction (SAN vs ISTA/SBTV/LISTA, 46 held-out samples)",
+   "metric": "SSIM / PSNR / NMSE",
+   "value": 22.09,
+   "value_str": "SSIM 0.522, PSNR 22.09dB, NMSE 0.233 (LISTA/ISTA/SBTV 대비 전 지표 우위, p<1e-8), 재구성 시간 한 자릿수 이상 단축",
+   "paper": "https://arxiv.org/abs/2607.25576",
+   "paper_title": "Matrix-Free Photoacoustic Image Reconstruction via Sensor-Token Self-Attention"
+  },
+  {
+   "benchmark": "Analytical k-space H-matrix vs k-Wave pseudo-spectral solver validation",
+   "metric": "Pearson correlation / energy mismatch reduction",
+   "value": 0.919,
+   "value_str": "평균 센서별 Pearson correlation 0.919±0.049, k-space apodization+Gaussian temporal damping으로 에너지 정규화 오차 49% 감소",
+   "paper": "https://arxiv.org/abs/2607.25576",
+   "paper_title": "Matrix-Free Photoacoustic Image Reconstruction via Sensor-Token Self-Attention"
+  },
+  {
+   "benchmark": "Diffractive-multiplexed compressive microscopy (48-sensor array)",
+   "metric": "resolution / FOV / throughput",
+   "value": 25.2,
+   "value_str": "~3μm 해상도, >5.2cm² 시야각, 최대 120fps, 초당 25.2기가픽셀 spatiotemporal throughput",
+   "paper": "https://doi.org/10.1038/s41566-026-01974-4",
+   "paper_title": "Large-scale compressive microscopy via diffractive multiplexing across a sensor array"
+  }
+ ]
+}

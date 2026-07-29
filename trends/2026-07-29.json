@@ -1,0 +1,34 @@
+{
+ "date": "2026-07-29",
+ "source_listing_date": "2026-07-29",
+ "source_mode": "new",
+ "daily_new_counts": {
+  "by_cat": {
+   "cs.LG": 152,
+   "cs.CV": 104,
+   "cs.AI": 260,
+   "eess.IV": 7,
+   "eess.SP": 24
+  },
+  "scope": "new+cross; replacements excluded",
+  "journal_count": 414
+ },
+ "totals": {
+  "total_scanned": 846,
+  "selected": 240
+ },
+ "classified": {
+  "by_bucket": {
+   "Fourier Ptychography/Microscopy": 3,
+   "Lensless/Coded Imaging": 5,
+   "Phase Imaging/Holography": 12,
+   "Meta-Optics/Diffractive": 10,
+   "Light-Field/Novel Sensors": 1,
+   "Tomography/3D Imaging": 41,
+   "Virtual Staining/Pathology": 35,
+   "Reconstruction/Inverse Problems": 24,
+   "Deep Learning Methods": 109
+  }
+ },
+ "note": "2026-07-29(수)은 정상 daily다. 5개 추적 카테고리 arXiv /new listing이 모두 오늘 날짜(Wednesday, 29 July 2026)를 가리켜 source_mode=new로 확정했다. arXiv new+cross 합계는 547편(cs.LG 152·cs.CV 104·cs.AI 260·eess.IV 7·eess.SP 24)으로 어제(1042편)보다 큰 폭으로 줄었는데, 이는 5개 카테고리 모두에서 공통으로 나타난 감소라 parser 오류로 보이지 않는다. 저널(Crossref+OpenAlex) 415건(journal 414 + openalex 1)을 더한 원천 스캔 962건이 dedup을 거쳐 846건으로 병합됐고, 이 중 240건(28.4%)이 ROI로 선정됐다 — 어제(30.9%, 396/1280)와 비슷한 최근 밴드(25~32%) 안이라 정상 범위다. 오늘 가장 뚜렷한 신호는 Lensless/Coded Imaging 버킷이 5편으로 뛴 것이다 — 최근 며칠 0~1편에 그쳤던 버킷에서 Nature Photonics의 대규모 압축 현미경(48-센서 배열 + 회절 다중화, 초당 25.2기가픽셀), Annular Fresnel Zone Aperture(단일 파라미터 마스크), McLDI-INR(동적 lensless 이미징) 등 실제 lensless 계산 이미징 신호가 확인됐다. Fourier Ptychography(3편)·Phase Imaging(12편 중 실질 신호는 소수)·Meta-Optics(10편 중 광학 이미징 신호는 소수)는 여전히 침묵에 가깝다. Tomography/3D Imaging(41편)은 대부분 임상 CT/PET/OCT 진단 사례 보고이지만, 그 안에서 Fourier-domain Quantum OCT·δ-SPN 근사 형광 광학 단층촬영·k-calibration 등 OCT/광학 단층촬영 방법론 논문들이 산란·분산·파장 보정 가정을 벗어나는 방향으로 세분화된 점이 눈에 띈다. Virtual Staining/Pathology(35편)에서는 병리 파운데이션 모델의 비생물학적 교란요인 강건성(CRoMa), 신뢰 가능한 염색 변환(DMCoStain), 회전/반전 불변 이상 탐지(D4-equivariant diffusion) 세 편이 '진단 정확도'에서 '기관·스캐너 조건에 대한 강건성'으로 평가축이 이동하는 흐름을 보였다. Reconstruction/Inverse Problems(24편) 안에서는 Matrix-Free Photoacoustic Reconstruction(SAN)이 시스템 행렬 없이 센서 토큰을 트랜스포머에 직접 매핑해 재구성 시간을 한 자릿수 이상 줄인 정량 결과(SSIM 0.522, PSNR 22.09dB)를 냈다."
+}

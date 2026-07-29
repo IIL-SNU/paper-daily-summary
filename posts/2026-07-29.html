@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-07-29</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-07-29 (수요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-07-29 (수요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Wednesday, 29 July 2026"으로 확인됨</div>
+  <div>🔢 arXiv: cs.LG 152 · cs.CV 104 · cs.AI 260 · eess.IV 7 · eess.SP 24 (합계 547편, new+cross, replacement 제외) — 어제(1042편) 대비 큰 폭 감소지만 5개 카테고리 모두 같은 방향이라 parser 오류로 보이지 않음</div>
+  <div>🔢 병합: arXiv+저널(415건) 병합 스캔 962건 · dedup 후 846건 · ROI 배정 240건 (28.4%) — 어제(30.9%, 396/1280)와 비슷한 최근 밴드(25~32%) 안의 정상 범위</div>
+  <div>⚠️ 오늘은 Lensless/Coded Imaging 버킷이 최근 며칠 0~1편이던 자리에서 5편으로 뛴 게 가장 눈에 띕니다. 반면 Fourier Ptychography·Phase Imaging·Meta-Optics는 여전히 대부분 키워드 우연 매칭입니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 가장 뚜렷한 신호는 <strong>Lensless 컴퓨테이셔널 카메라 하드웨어가 오랜만에 한꺼번에 등장했다는 것</strong>입니다 — Nature Photonics에 실린 48-센서 배열 + 회절 다중화 압축 현미경(초당 25.2기가픽셀), 단일 파라미터로 설계를 단순화한 마스크(Annular Fresnel Zone Aperture), 동적 장면용 lensless 복원(McLDI-INR)까지 실제 광학 하드웨어·방법론 신호가 5편 모였습니다. 두 번째 축은 <strong>디지털 병리 AI의 검증 기준이 "진단 정확도"에서 "기관·스캐너 조건이 달라져도 안정적인가"로 옮겨가고 있다는 것</strong>입니다. 병리 파운데이션 모델의 비생물학적 교란요인 강건성을 재는 새 지표(CRoMa), 전문가 판단을 모사해 학습 데이터를 반복 정제하는 염색 변환(DMCoStain), 회전·반전에 흔들리지 않는 이상 탐지(D4-equivariant diffusion)가 같은 날 나왔습니다. 세 번째는 <strong>광학 단층촬영·광음향 이미징이 산란·분산·계산 비용 같은 개별 근사 가정을 하나씩 벗어나려는 시도</strong>로, 그중 Matrix-Free Photoacoustic Reconstruction은 시스템 행렬 없이 트랜스포머로 직접 재구성해 SSIM 0.522·PSNR 22.09dB에 재구성 시간을 한 자릿수 이상 줄인 정량 결과를 냈습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(7/29, 수)은 arXiv /new에 cs.LG 152편, cs.CV 104편, cs.AI 260편, eess.IV 7편, eess.SP 24편으로 총 547편이 잡혔습니다. 어제(1042편)보다 크게 줄었지만 5개 카테고리 전부가 같이 줄어든 형태라 parser 문제라기보다 자연스러운 등록량 변동으로 보입니다. 저널 415건(Crossref 414 + OpenAlex 1)을 더한 원천 스캔 962건이 dedup을 거쳐 846건으로 병합됐고, 이 중 240건(28.4%)이 ROI로 선정됐습니다. 어제가 계산광학 코어 4개 버킷 중 Meta-Optics/Diffractive가 3주 만에 처음 신호를 낸 하루였다면, 오늘은 그 바통을 Lensless/Coded Imaging이 이어받았습니다. 이 버킷은 최근 며칠 0~1편에 머물던 자리인데, 오늘은 실제 lensless 계산 이미징 논문이 5편 모였습니다 — 특히 Nature Photonics 논문은 렌즈 없이 회절 소자와 48개 센서 배열을 조합해 해상도·시야각·프레임레이트를 동시에 포기하지 않는 압축 현미경을 제시했습니다.</p>
+<p>오늘 새로 뚜렷해진 두 번째 흐름은 디지털 병리 AI의 신뢰성 검증입니다. 어제는 디지털 병리 클러스터가 "기가픽셀 슬라이드를 얼마나 빠르고 강건하게 처리하는가"와 "염색 정보를 넘어 생물학적 정보를 얼마나 뽑아내는가"를 동시에 넓히는 쪽이었는데, 오늘은 한 걸음 더 들어가 "그 모델이 기관·스캐너·염색 조건이 바뀌어도 정말 믿을 만한가"를 재는 논문 세 편(Beyond Counts, Towards Reliable Stain Transfer, Group Equivariant Diffusion)이 나왔습니다. 특히 Beyond Counts는 20개 타일 단위 인코더와 4개 슬라이드 단위 인코더 전체를 대상으로 비생물학적 교란요인에 대한 하위 꼬리(worst-case) 강건성을 측정해, 평균 지표만으로는 보이지 않던 모델 간 차이를 드러냈습니다. 세 번째로는 광학 단층촬영·광음향 이미징 쪽에서 기존 근사 가정(단일 산란, 파장 선형성, 시스템 행렬 필요)을 하나씩 벗어나려는 논문들이 흩어져 나왔는데, 그중 Matrix-Free Photoacoustic Reconstruction은 시스템 행렬 없이 센서 시계열을 트랜스포머 토큰으로 바로 매핑해 재구성 시간을 한 자릿수 이상 줄이면서도 기존 반복 solver(ISTA/SBTV/LISTA)보다 나은 화질(SSIM 0.522, PSNR 22.09dB)을 보였습니다.</p>
+<p>다음 관찰 포인트는 (1) 오늘의 lensless 신호 회복이 어제 Meta-Optics처럼 하루짜리 반등인지 다음 주에도 이어지는지, (2) 병리 AI 신뢰성 검증(CRoMa 류 지표)이 다른 의료영상 도메인(방사선, 안과)으로 확산되는지, (3) 광학 단층촬영의 "행렬 없는 재구성" 아이디어가 우리 랩이 다루는 산란 매체 위상 복원에도 적용 가능한 수치를 내놓는지입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(7/28, 화)는 계산광학 코어 4개 버킷 중 Meta-Optics/Diffractive가 3주 만에 처음으로 6편의 실질 신호를 낸 하루였고, 역문제 solver 연구는 "불확실성을 믿을 수 있는가"에서 "복원 알고리즘 자체가 반드시 수렴하는가"로 질문이 좁혀졌으며, diffusion 모델은 가중치를 고정한 채 guidance·노이즈·캐시 같은 샘플러 요소를 독립적으로 다루는 연구 6편이 동시에 나왔습니다. 오늘은 계산광학 코어의 신호 회복 바통이 Meta-Optics에서 Lensless/Coded Imaging으로 넘어갔습니다 — 최근 며칠 거의 비어 있던 이 버킷에서 대규모 압축 현미경(Nature Photonics)을 포함한 5편이 확인됐습니다. 디지털 병리 쪽은 어제의 "효율·강건성·생물학적 예측 확장"이라는 넓은 흐름에서, 오늘은 "비생물학적 교란요인에 대한 강건성 검증"이라는 더 구체적인 질문으로 좁혀졌습니다. 역문제/재구성 연구는 어제의 "PnP/RED 수렴 안정성"이라는 이론적 질문 대신, 오늘은 "시스템 행렬 계산 자체를 없애 실시간 재구성을 가능하게 하는가"라는 실용적 질문(Matrix-Free Photoacoustic)으로 초점이 옮겨갔습니다. 가장 큰 차이는 전체 규모입니다 — arXiv 신규 편수가 1042편에서 547편으로 절반 가까이 줄었지만, ROI 선정 비율(28.4% vs 30.9%)은 크게 다르지 않아 최근 밴드 안에 있습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Lensless 컴퓨테이셔널 카메라 하드웨어가 오랜만에 한꺼번에 5편 등장</strong><span class=pill>WATCH</span></td>
+  <td>
+    <a href="https://doi.org/10.1038/s41566-026-01974-4" target=_blank>대규모 압축 현미경 (센서 배열+회절 다중화)</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/ol.609052" target=_blank>Annular Fresnel Zone Aperture</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.67704/ioe.2026.260002" target=_blank>McLDI-INR</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1063/5.0325955" target=_blank>Physics-constrained autofocus (single-pixel microscopy)</a> <span class=pill>JNL</span>
+  </td>
+  <td>Lensless/Coded Imaging 버킷은 최근 며칠 하루에 0~1편만 걸리던 자리였는데, 오늘은 실제 lensless 계산 이미징 논문이 5편이나 모였습니다. Nature Photonics 논문은 렌즈 없이 회절 소자와 48개 센서 배열을 조합해, 해상도·시야각·프레임레이트 중 하나를 포기해야 했던 기존 현미경의 트레이드오프를 센서 사이 빈틈까지 압축센싱으로 채워 넣는 방식으로 깨고 초당 25.2기가픽셀급 촬영을 보였습니다. Annular Fresnel Zone Aperture는 마스크 설계에 필요한 변수를 하나로 줄여 lensless 시스템을 더 쉽게 설계·재현할 수 있게 하고, McLDI-INR은 정지 장면 복원을 넘어 움직이는 장면까지 마스크 제약과 implicit neural representation으로 복원합니다. 세 편을 같이 보면, lensless 이미징이 대규모 병렬화·설계 단순화·동적 장면 대응이라는 서로 다른 세 방향으로 동시에 확장되고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 4편 이상이 같은 날 나왔고 lensless 계산 이미징이라는 공통 문제의식은 뚜렷하지만, 다수가 초록 미제공 저널 DOI 항목이라 제목 기준 판단이고 세부 방법론은 본문 확인 전까지 잠정적</small></td>
+  <td>Nature Photonics 논문의 회절 다중화 + 센서 배열 gap-filling 복원 알고리즘을 재현해 우리 lensless 리그(다중 센서 세팅이 있다면)에 시험 적용하고, Annular Fresnel Zone Aperture의 단일 파라미터 마스크 패밀리를 우리 마스크 설계 파이프라인에 적용해 기존 다중 파라미터 마스크 대비 설계·최적화 시간을 비교</td>
+</tr>
+<tr>
+  <td><strong>병리 AI 신뢰성 검증이 진단 정확도에서 비생물학적 교란요인 강건성으로 이동</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.25497" target=_blank>Beyond Counts (CRoMa)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.25393" target=_blank>Towards Reliable Stain Transfer (DMCoStain)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.25503" target=_blank>Group Equivariant Diffusion (Computational Cytology)</a> <span class=pill>CV</span>
+  </td>
+  <td>예전에는 병리 파운데이션 모델이나 염색 변환 모델을 평가할 때 진단 정확도 하나만 보면 충분하다고 여겼는데, 오늘 나온 세 편은 그 정확도 뒤에 숨은 함정을 각각 다른 각도에서 짚습니다. Beyond Counts는 병리 파운데이션 모델이 조직 준비·염색·스캐너 차이 같은 생물학과 무관한 요인을 학습해버리는 문제를, 20개 타일 단위 인코더와 4개 슬라이드 단위 인코더 전체에 새 지표(CRoMa)를 적용해 모델마다 최악의 경우(하위 꼬리) 강건성이 크게 다르다는 걸 보였습니다. Towards Reliable Stain Transfer는 H&E에서 IHC 염색을 컴퓨터로 생성할 때 병리 전문가의 판단 기준을 모사한 비전-언어 모델로 학습 데이터를 반복 정제해 염색 정확도와 해석 가능성을 함께 높였고, Group Equivariant Diffusion은 세포 이미지를 회전·반전해도 진단이 바뀌면 안 된다는 원칙을 diffusion 모델 구조에 직접 넣어 이상 탐지 점수가 촬영 각도에 따라 흔들리는 문제를 줄였습니다. 세 편을 같이 보면, 디지털 병리 AI를 검증하는 기준이 평균 정확도에서 기관·스캐너·촬영 조건이 달라져도 안정적인지로 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 3편이 같은 날 나왔고 abstract에 정량 실험(20+4개 인코더 벤치마크, AUC/top-K 비교)이 모두 포함돼 신뢰도는 높지만, 다루는 하위 문제(강건성 지표·염색 변환·이상 탐지)가 갈라져 있어 공통 벤치마크로 직접 비교되지는 않음</small></td>
+  <td>Beyond Counts의 CRoMa 지표를 우리 랩이 쓰는 가상 염색/병리 파운데이션 모델 인코더에 적용해 기관·스캐너 조건을 바꿔가며 하위 꼬리 강건성을 측정하고, Group Equivariant Diffusion의 D4-equivariant U-Net 구조를 우리 세포/타일 단위 이상 탐지 모듈에 이식해 회전·반전에 따른 점수 분산이 줄어드는지 검증</td>
+</tr>
+<tr>
+  <td><strong>생체 광학 단층촬영이 산란·분산·계산 비용 가정을 하나씩 벗어나는 방향으로 세분화</strong></td>
+  <td>
+    <a href="https://doi.org/10.1038/s41598-026-63503-1" target=_blank>Fourier-domain Quantum OCT</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/josaa.593274" target=_blank>δ-SPN 근사 형광 광학 단층촬영</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.measurement.2026.122701" target=_blank>k-calibration (spectral-domain OCT)</a> <span class=pill>JNL</span><br>
+    <a href="https://arxiv.org/abs/2607.25576" target=_blank>Matrix-Free Photoacoustic Reconstruction (SAN)</a> <span class=pill>AI</span>
+  </td>
+  <td>생체 조직을 광학적으로 단층촬영할 때 흔히 쓰는 전제들 — 빛은 한 번만 산란한다, 파장은 화소에 선형으로 대응한다, 역문제를 풀려면 시스템 행렬을 매번 곱해야 한다 — 를 오늘 나온 네 편이 각각 다른 지점에서 느슨하게 풉니다. Fourier-domain Quantum OCT는 양자 얽힘 광원의 분산을 능동적으로 제어해 빠른 촬영과 분산 보정을 동시에 얻으려 하고, δ-SPN 근사 형광 광학 단층촬영은 광원에 가까운 얕은 깊이에서 기존 확산 근사가 깨지는 문제를 다른 근사식으로 보완합니다. k-calibration 논문은 스펙트럴 도메인 OCT에서 파장이 화소에 비선형으로 대응하는 문제를 회절격자 방정식으로 보정하는 실용적 방법을 냈고, Matrix-Free Photoacoustic Reconstruction(SAN)은 아예 시스템 행렬 없이 센서 신호를 트랜스포머에 직접 매핑해 실시간에 가까운 재구성 속도를 냅니다. 네 편을 같이 보면, 광학 단층촬영 연구가 더 정확한 영상 하나보다 기존 근사가 깨지는 지점을 하나씩 없애는 방향으로 흩어져 진행되고 있다는 뜻입니다.</td>
+  <td>Low<br><small>4편이 광학 단층촬영이라는 공통 도메인을 공유하지만 다루는 물리적 한계(양자 분산·근사 오차·파장 보정·계산 비용)가 서로 달라 하나의 연구 질문으로 수렴하지 않고, 저널 3편은 초록이 제공되지 않아 제목 기준 판단임</small></td>
+  <td>Matrix-Free Photoacoustic Reconstruction(SAN)의 sensor-token self-attention 구조를 우리 랩의 광학 단층촬영/산란 매체 역문제 solver에 이식해 k-Wave 스타일 forward model 없이도 SSIM 0.522·PSNR 22.09dB 수준을 재현할 수 있는지 확인하고, k-calibration 논문의 회절격자 기반 보정을 우리 spectral-domain 계측 파이프라인에 적용해 파장-화소 비선형성 보정 효과를 정량 비교</td>
+</tr>
+<tr>
+  <td><strong>3D 재구성이 "품질을 어떻게 올릴까"보다 "결과를 어떻게 신뢰·전송할까"를 묻기 시작</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.24852" target=_blank>Track-Leakage-Free Hold-Out Self-Validation</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.25971" target=_blank>SplatStream</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2607.25569" target=_blank>CORF-GS</a> <span class=pill>SP</span>
+  </td>
+  <td>사진측량(photogrammetry) 기반 3D 재구성은 보통 결과의 정확도를 외부 실측(ground truth) 없이는 알 수 없다는 게 오랜 한계였는데, Track-Leakage-Free Hold-Out Self-Validation은 재구성에 쓰인 이미지 일부를 미리 떼어내 "재구성이 스스로 자기 신뢰도를 매길 수 있는가"라는 질문에 답하는 검증 프로토콜을 제안합니다. SplatStream과 CORF-GS는 반대로 3D Gaussian Splatting(점 구름 형태의 3D 장면을 실시간 렌더링하는 방법)의 결과를 어떻게 효율적으로 전송·갱신할지를 다루는데, 다만 두 논문 모두 계산 이미징보다는 무선 스트리밍·통신 채널 모델링 응용에 가까워 우리 랩 ROI와는 간접적으로만 연결됩니다. 세 편을 같이 보면, 3D 재구성 연구의 관심이 "복원 품질 자체"에서 "그 결과를 어떻게 검증하고 실사용 환경(스트리밍, 무선)에 배포할 것인가"로 번지고 있다는 뜻입니다.</td>
+  <td>Low<br><small>3편이 3D 재구성이라는 큰 우산 아래 있지만 검증(self-validation)과 전송(streaming) 응용이 서로 다른 질문이라 단일 클러스터로 묶기엔 근거가 약함. 참고용으로 표에 올림</small></td>
+  <td>Track-Leakage-Free Hold-Out 프로토콜의 track-level barrier 아이디어(테스트 뷰가 자신이 만든 3D 구조에 대해 검증되지 않도록 분리)를 우리 계산 이미징 파이프라인의 self-supervised 품질 평가 단계에 적용할 수 있는지 검토</td>
+</tr>
+</tbody>
+</table>
+
+<p><small>⚠️ Domain Watch Lens 메모 — Meta-Optics/Diffractive(10편)와 Phase Imaging/Holography(12편)는 오늘도 편수 대비 실제 계산 이미징 신호가 적어(대부분 무선통신 RIS/메타표면, RF 위상/홀로그래피 우연 매칭) 별도 클러스터로 올리지 않았습니다. Fourier Ptychography/Microscopy(3편)는 표본 자체가 작아 관찰만 이어갑니다.</small></p>
+
+<h2>📐 arXiv vs 저널 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: Beyond Counts·Towards Reliable Stain Transfer·Group Equivariant Diffusion(병리 AI 신뢰성), Matrix-Free Photoacoustic Reconstruction(행렬 없는 재구성), Track-Leakage-Free Hold-Out·SplatStream·CORF-GS(3D 재구성 검증·전송)</li>
+  <li><strong>저널 전용</strong>: Lensless 컴퓨테이셔널 카메라 하드웨어 4편(대규모 압축 현미경, Annular Fresnel Zone Aperture, McLDI-INR, single-pixel microscopy autofocus)과 광학 단층촬영 방법론 3편(Quantum OCT, δ-SPN 형광 단층촬영, k-calibration)이 오늘 저널 쪽의 핵심 신호였습니다. 다만 이 중 다수가 초록이 제공되지 않아 제목 기준으로 판단했습니다.</li>
+  <li><strong>공통 키워드</strong>: tomography(광학 단층촬영 방법론 소수 vs 임상 CT/PET/OCT 진단 사례 다수 — 맥락이 다름), metasurface(광학 이미징 메타표면 소수 vs 무선통신 RIS/6G 메타표면 다수 — 오늘도 절반 이상이 통신 응용), reconstruction(계산 이미징 역문제 재구성 vs 정형외과/치과 CT 형태 계측 — 같은 단어가 완전히 다른 임상 맥락에서 반복)</li>
+  <li><strong>특징</strong>: 오늘은 저널 쪽이 계산광학 코어(lensless·광학 단층촬영)의 유일한 신호원이었고, arXiv 쪽은 병리 AI 신뢰성 검증과 행렬 없는 역문제 재구성이라는 두 방법론 흐름을 주도했습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. Lensless 컴퓨테이셔널 카메라 하드웨어가 최근 침묵을 깨고 5편 등장</h3>
+  <p>Lensless/Coded Imaging 버킷은 최근 며칠 0~1편에 그쳤는데, 오늘은 대규모 압축 현미경(Nature Photonics), Annular Fresnel Zone Aperture, McLDI-INR, 단일화소 현미경 자동초점까지 5편이 모였습니다. Nature Photonics 논문은 48개 센서 배열과 회절 다중화 소자를 조합해 해상도·시야각·프레임레이트를 동시에 확보하는 압축 현미경으로, 센서 사이 빈틈까지 압축센싱으로 채워 넣어 초당 25.2기가픽셀급 촬영을 보였습니다. 나머지 세 편은 마스크 설계 단순화, 동적 장면 대응, 물리 기반 자동초점처럼 서로 다른 실용적 병목을 겨냥합니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 저자군 4편 이상이 같은 날 나왔지만, 다수가 초록 미제공 저널 항목이라 세부 방법론은 본문 확인 전까지 잠정적</p>
+</div>
+
+<div class=ins>
+  <h3>2. 병리 AI 검증 기준이 "정확도"에서 "비생물학적 교란요인 강건성"으로 이동</h3>
+  <p>Beyond Counts, Towards Reliable Stain Transfer, Group Equivariant Diffusion 세 편이 병리 AI를 진단 정확도가 아니라 조건 변화에 대한 안정성으로 재검증했습니다. Beyond Counts는 20개 타일 인코더와 4개 슬라이드 인코더 전체에서 기관·스캐너·염색 차이에 취약한 하위 꼬리를 CRoMa 지표로 드러냈고, Towards Reliable Stain Transfer는 병리 전문가 판단을 모사한 비전-언어 모델로 학습 데이터를 반복 정제해 염색 변환의 신뢰도를 높였습니다. Group Equivariant Diffusion은 세포를 회전·반전해도 진단이 바뀌지 않아야 한다는 원칙을 diffusion 구조에 직접 넣어 이상 탐지 점수의 촬영 각도 의존성을 줄였습니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편 모두 abstract에 정량 실험이 포함돼 신뢰도는 있지만, 하위 문제가 갈라져 있어 공통 벤치마크로 수렴하지는 않음</p>
+</div>
+
+<div class=ins>
+  <h3>3. Matrix-Free Photoacoustic Reconstruction이 시스템 행렬 없는 실시간 재구성에서 정량 우위를 보임</h3>
+  <p>SAN(Sensor Attention Network)은 광음향 단층촬영에서 시스템 행렬을 추론 시점에 곱하지 않고, 각 센서의 전체 시계열을 하나의 토큰으로 취급해 트랜스포머가 직접 영상으로 매핑하게 했습니다. ISTA·split-Bregman TV·learned ISTA와 비교해 SSIM 0.522, PSNR 22.09dB, NMSE 0.233으로 전 지표에서 우위(p&lt;1e-8)를 보였고, 시스템 행렬을 안 쓰는 덕분에 재구성 시간을 한 자릿수 이상 줄였습니다.</p>
+  <p class=conf-note>Confidence: Low — 단일 논문이며 학습/평가 샘플 수(488/46)가 많지 않아 데이터셋 범위를 벗어난 일반화는 본문 확인이 더 필요함</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. 대규모 압축 현미경의 센서 배열 gap-filling 복원을 우리 lensless 리그에 적용</h3>
+  <p>48개 센서와 회절 다중화 소자로 센서 사이 빈틈까지 채우는 압축센싱 복원 방식이, 우리 랩의 lensless 이미징 세팅에서도 시야각·해상도 트레이드오프를 개선하는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>Nature Photonics 논문 본문 확인(초록에 없는 diffractive optical element 설계·PSF 엔지니어링 세부사항 파악) 후 재현 가능한 부분 파악</li>
+    <li>공통 benchmark: 우리 랩의 lensless 이미징 데이터셋(단일 센서 기준으로 gap-filling 시뮬레이션)</li>
+    <li>비교축: 단일 센서 lensless 복원 vs gap-filling 압축센싱 적용 시 유효 해상도·시야각</li>
+    <li>실패해도 남는 결과: 우리 세팅에서 센서 배열 확장이 실제로 이득이 있는지에 대한 baseline 보고서</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. CRoMa 강건성 지표를 우리 병리/가상 염색 파운데이션 모델에 적용</h3>
+  <p>기관·스캐너·염색 조건 차이 같은 비생물학적 교란요인에 대해 우리가 쓰는 병리 인코더가 하위 꼬리에서 얼마나 취약한지 CRoMa로 측정해 모델 선택 기준을 마련합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>Beyond Counts의 CRoMa 계산 절차(cross-confounder biological match vs same-confounder distractor 거리 비교) 재현</li>
+    <li>공통 benchmark: 우리 랩이 보유한 다기관/다스캐너 병리 슬라이드 데이터셋(있는 만큼)</li>
+    <li>비교축: 기존 pooled Robustness Index vs CRoMa의 sample-level 분포(하위 꼬리 비율)</li>
+    <li>실패해도 남는 결과: 우리 인코더의 기관·스캐너 조건별 shortcut 취약점에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. Matrix-Free Photoacoustic Reconstruction(SAN)의 sensor-token self-attention을 우리 역문제 solver에 이식</h3>
+  <p>시스템 행렬을 추론 시점에 곱하지 않는 트랜스포머 구조가, 우리 광학 단층촬영/광음향 이미징 파이프라인에서도 재구성 속도를 크게 줄이면서 화질을 유지하는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>SAN의 sensor-token 구조와 k-space H-matrix 검증 절차(k-Wave 대비 Pearson correlation 0.919) 재현</li>
+    <li>공통 benchmark: 우리 랩의 광음향/산란 매체 역문제 solver가 현재 쓰는 데이터셋</li>
+    <li>비교축: 기존 ISTA/LISTA 기반 반복 solver vs SAN 방식의 SSIM/PSNR/추론 시간</li>
+    <li>실패해도 남는 결과: 우리 세팅에서 시스템 행렬 제거가 화질에 미치는 영향에 대한 baseline</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(41편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:7%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:12%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:29%"></span></span><span class=n>12편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:24%"></span></span><span class=n>10편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>41편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:85%"></span></span><span class=n>35편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:59%"></span></span><span class=n>24편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>109편</span></div>
+
+<p><small>⚠️ 참고 — Domain Watch Lens: Fourier Ptychography/Microscopy 3편 중 실제 광학 FP 신호는 확인이 더 필요하고(전자현미경 ptychography 1편 포함), Lensless/Coded Imaging 5편은 오늘 모두 실제 lensless 계산 이미징 신호로 확인됐습니다(위 클러스터 표 참고). Phase Imaging/Holography 12편 중 실질 신호는 소수이고 나머지는 무선통신 HMIMO·THz 근접장 위치추정 등 RF 신호처리 쪽 "phase"·"holography" 우연 매칭입니다. Meta-Optics/Diffractive 10편 중 광학 이미징·센싱 하드웨어는 BIC metasurface·미니어처 중적외선 분광계 등 소수이고 나머지는 무선통신 RIS/6G·THz 바이오센서용 메타표면입니다. Virtual Staining/Pathology 35편 중 실제 디지털 병리 신호는 3편(위 클러스터 표 참고)이고 나머지는 금융·생태·교육 등 무관 분야의 "label-free"·"virtual" 키워드 우연 매칭입니다. Tomography/3D Imaging 41편 중 광학 단층촬영 방법론 신호는 3~4편(위 클러스터 표 참고)이고 나머지는 임상 CT/PET/OCT 진단 사례 보고입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.67704/ioe.2025.250004" target=_blank>Concept, developments, and applications of ptychography</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: ptychography 방법론 전반을 정리한 리뷰 논문으로 개념·발전사·응용을 훑을 수 있습니다. 나머지 2편은 전자현미경 ptychography(1편)와 무관한 랜덤 금속 메시 시뮬레이션(1편)으로 광학 FP와는 거리가 있습니다 / 우선순위: Skim-only(리뷰, 신규 방법론 아님)
+</div>
+
+<h3>Lensless/Coded Imaging (5편 모두 관련)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41566-026-01974-4" target=_blank>Large-scale compressive microscopy via diffractive multiplexing across a sensor array</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 오늘의 대표 클러스터(lensless 하드웨어 신호 회복)의 핵심 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.609052" target=_blank>Annular Fresnel Zone Aperture</a> · <a href="https://doi.org/10.67704/ioe.2026.260002" target=_blank>McLDI-INR</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 오늘의 대표 클러스터의 나머지 핵심 논문 — 위 클러스터 표 참고 / 우선순위: Read
+</div>
+
+<h3>Phase Imaging/Holography (12편 중 관련 소수)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.67704/ioe.2025.250005" target=_blank>Physics-informed deep learning transport-of-intensity quantitative phase imaging</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 부분 가간섭 조명에서도 정확한 위상 복원을 목표로 한 physics-informed 방법론으로, 오늘 유일하게 정통 정량 위상 이미징을 다루는 논문(초록 미제공, 제목 기준) / 우선순위: Read(본문 확인 필요)
+</div>
+
+<h3>Meta-Optics/Diffractive (10편 중 관련 소수)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.608347" target=_blank>Robust and High Q-factor BIC Metasurface with Polarization Independence</a> · <a href="https://doi.org/10.1364/oe.605535" target=_blank>미니어처 중적외선 분광계</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 편광 무관 고Q 공진 메타표면과 MEMS 마이크로미러+메타표면 필터 기반 소형 분광계로, 실제 광학 이미징·센싱 하드웨어에 해당합니다. 나머지 8편은 무선통신 RIS/6G·THz 바이오센서용 메타표면입니다 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging (41편 중 관련 3~4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41598-026-63503-1" target=_blank>Fourier-domain Quantum OCT</a> · <a href="https://doi.org/10.1364/josaa.593274" target=_blank>δ-SPN 근사 형광 광학 단층촬영</a> · <a href="https://doi.org/10.1016/j.measurement.2026.122701" target=_blank>k-calibration (spectral-domain OCT)</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 오늘의 대표 클러스터(광학 단층촬영 근사 가정 세분화) — 위 클러스터 표 참고. 41편 대부분은 임상 CT/PET/OCT 진단 사례 보고로 방법론과는 거리가 있습니다 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.24852" target=_blank>Track-Leakage-Free Hold-Out Self-Validation</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 사진측량 3D 재구성이 외부 실측 없이 스스로 신뢰도를 매기는 검증 프로토콜 — 계산 이미징 파이프라인의 self-supervised 품질 평가에 참고할 만합니다 / 우선순위: Read
+</div>
+
+<h3>Virtual Staining/Pathology (35편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.25497" target=_blank>Beyond Counts</a> · <a href="https://arxiv.org/abs/2607.25393" target=_blank>Towards Reliable Stain Transfer</a> · <a href="https://arxiv.org/abs/2607.25503" target=_blank>Group Equivariant Diffusion</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(병리 AI 신뢰성 검증) — 위 클러스터 표 참고. 나머지 32편은 금융·생태·교육 논문의 "label-free"·"virtual" 키워드 우연 매칭이거나 계산 방법론이 없는 고전 염색 프로토콜입니다 / 우선순위: Must-read(Beyond Counts) / Read(나머지 2편)
+</div>
+
+<h3>Reconstruction/Inverse Problems (24편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.25576" target=_blank>Matrix-Free Photoacoustic Image Reconstruction via Sensor-Token Self-Attention</a></strong> <span class=pill>AI</span><br>
+  왜 주요: 오늘의 대표 클러스터(광학 단층촬영 근사 가정 세분화)에 속하는 정량 결과 논문 — 위 클러스터 표·오늘의 인사이트 참고. 나머지 23편은 대부분 "physics-informed"·"deconvolution" 키워드가 금융·기상·구조공학 등 무관 도메인에 붙은 우연 매칭입니다 / 우선순위: Must-read
+</div>
+
+<h3>Deep Learning Methods — 계산 이미징 관련 소수 (109편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/jimaging12080341" target=_blank>Uncertainty Quantification in Medical Image Segmentation: A Comprehensive Survey</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 의료영상 분할의 불확실성 정량화 방법론을 정리한 서베이로, 우리 랩의 복원·분할 파이프라인에 신뢰도 추정을 도입할 때 참고할 지도 역할을 합니다 / 우선순위: Skim-only(서베이, 신규 방법론 아님)
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1063/5.0331605" target=_blank>Non-line-of-sight super-resolution imaging with quasi-constant-delay circular pattern</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 비가시선(non-line-of-sight) 초해상도 이미징으로, 직접 시야가 없는 대상을 산란·반사를 이용해 복원하는 계산 이미징 문제 설정입니다 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<ul>
+  <li><strong>Matrix-Free Photoacoustic Reconstruction (SAN)</strong> — ISTA/split-Bregman TV/learned ISTA 대비 SSIM 0.522, PSNR 22.09dB, NMSE 0.233으로 전 지표 우위(p&lt;1e-8), 시스템 행렬 미사용으로 재구성 시간 한 자릿수 이상 단축</li>
+  <li><strong>SAN의 forward model 검증</strong> — 해석적 k-space H-matrix가 k-Wave pseudo-spectral solver 대비 평균 센서별 Pearson correlation 0.919±0.049, apodization+temporal damping으로 에너지 정규화 오차 49% 감소</li>
+  <li><strong>대규모 압축 현미경(Nature Photonics)</strong> — 48-센서 배열 기준 ~3μm 해상도, >5.2cm² 시야각, 최대 120fps, 초당 25.2기가픽셀 spatiotemporal throughput</li>
+</ul>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>병리 AI 쪽에서는 학습 데이터와 모델을 반복적으로 함께 정제해 염색 변환의 신뢰도를 높이고(Towards Reliable Stain Transfer), 광음향 이미징 쪽에서는 시스템 행렬 자체를 없애 재구성 파이프라인의 계산 병목을 통째로 제거합니다(Matrix-Free Photoacoustic Reconstruction). 응용 분야는 다르지만(전자는 학습 데이터 정제 반복 루프, 후자는 추론 구조 단순화) 둘 다 "기존 파이프라인의 중간 단계 하나를 아예 다른 것으로 대체해 신뢰성이나 속도를 얻는다"는 같은 방향을 가리킵니다. 이 크로스오버가 눈에 띄는 이유는, 계산 이미징 파이프라인을 개선할 때 흔히 각 단계(전처리·모델·후처리)를 따로 최적화하는데, 오늘 나온 두 흐름은 파이프라인의 특정 단계를 통째로 재정의하는 접근이 서로 다른 도메인에서 독립적으로 나타났다는 걸 보여주기 때문입니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Matrix-Free Photoacoustic Image Reconstruction via Sensor-Token Self-Attention — arXiv cs.AI</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> 광음향 단층촬영(photoacoustic tomography)은 조직의 광 흡수 대비와 초음파의 공간 해상도를 결합한 이미징 기법인데, sparse-view(적은 수의 센서) 측정에서 초기 압력 분포를 복원하는 문제는 원래 잘못 정의된(ill-posed) 역문제입니다. 기존의 반복 압축센싱 solver나 unrolled deep network는 모두 추론 시점에 시스템 행렬(측정과 이미지 사이의 물리적 관계를 나타내는 큰 행렬)을 반복해서 곱해야 해서, 임상 현장에서 실시간으로 쓰기엔 연산량이 부담스러웠습니다. 이 논문은 각 센서가 시간에 따라 기록한 전체 신호를 하나의 토큰으로 취급해, 트랜스포머의 self-attention이 센서 신호에서 이미지로 직접 매핑을 학습하게 만들어 시스템 행렬을 추론 시점에서 아예 없앴습니다. 우리 랩이 광음향이나 다른 산란 매체 이미징에서 실시간 역문제 solver를 고민할 때, "학습 후 추론 단계에서 물리 모델 행렬 연산을 완전히 제거할 수 있는가"라는 질문 자체가 새로운 설계 축이 될 수 있어 파이프라인 영향이 큽니다.</p>
+  <p><strong>핵심:</strong> 학습·검증을 위해 해석적 k-space H-matrix를 구성하고 k-Wave 유사분광법(pseudo-spectral) solver와 대조해 평균 센서별 Pearson 상관계수 0.919±0.049를 확인했으며, k-space apodization과 Gaussian 시간 감쇠를 함께 적용해 에너지 정규화 불일치를 49% 줄였습니다. 488개 증강 샘플로 학습하고 46개 held-out 샘플로 평가한 결과, ISTA·split-Bregman TV·learned ISTA 대비 SSIM 0.522, PSNR 22.09dB, NMSE 0.233으로 전 지표에서 앞섰고(대응표본 t-검정·Wilcoxon 부호순위 검정 모두 p&lt;1e-8), 시스템 행렬을 안 쓰는 덕분에 재구성 시간이 한 자릿수 이상 줄었다고 보고합니다.</p>
+  <p><strong>주의:</strong> 학습 488개·평가 46개 샘플은 규모가 크지 않아, 우리 랩이 다루는 것처럼 산란이 훨씬 강하거나 센서 배치가 다른 조건에서도 같은 정확도가 유지될지는 별도 검증이 필요합니다. 또한 비교 대상이 고전적 반복 solver(ISTA/SBTV/LISTA) 위주라, 최근의 다른 학습 기반 photoacoustic reconstruction과의 비교는 abstract만으로 확인되지 않아 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] arXiv 신규 편수가 어제(1042편)보다 절반 가까이 줄어(547편) 전체 표본 크기가 작아졌고, 이로 인해 계산광학 코어 버킷의 편수 변동(예: Lensless 5편)이 실제 연구 흐름 변화인지 단순 등록량 변동에 따른 잡음인지 구분하기 더 어려워졌습니다.</p>
+  <p>[Claim risk] Lensless/Coded Imaging 클러스터 4편 중 다수가 초록이 제공되지 않는 저널 DOI 항목(Crossref만, OpenAlex enrich 실패)이라 제목만으로 클러스터에 배정했습니다. 실제 방법론 세부사항은 본문 확인 전까지 잠정적입니다.</p>
+  <p>[Dataset risk] 광학 단층촬영 클러스터도 저널 3편 중 다수가 초록 미제공이라 "산란·분산·계산 비용 가정을 벗어난다"는 해석이 제목 기반 추정에 가깝습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Baseline risk] Matrix-Free Photoacoustic Reconstruction(SAN)의 비교 대상이 ISTA·SBTV·LISTA 등 고전 반복 solver 위주라, 최근 다른 학습 기반 photoacoustic reconstruction 방법과의 직접 비교는 abstract에 없어 본문 확인이 필요합니다.</p>
+  <p>[Dataset risk] Beyond Counts(CRoMa)는 abstract에 정량 스코어 수치를 제시하지 않고 "모든 tile encoder가 confounder-dominated lower tail을 보유"라고만 설명해, 실제 강건성 격차의 크기는 본문 확인이 필요합니다.</p>
+  <p>[Claim risk] 대규모 압축 현미경(Nature Photonics) 논문은 abstract 기준으로는 정성적 촬영 예시(구조 이미징, 형광 이미징)만 언급돼, 재구성 정확도를 정량 지표(PSNR/SSIM)로 확인하려면 본문이 필요합니다.</p>
+  <p>[Deployment risk] Track-Leakage-Free Hold-Out Self-Validation은 사진측량 3D 재구성에 특화된 프로토콜이라, 계산 이미징의 다른 역문제(위상 복원, 단층촬영)에 그대로 옮길 수 있을지는 검증이 더 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy 2편</strong>(리뷰 1편, 무관 시뮬레이션 1편) — 신규 방법론이 아니거나 광학 FP와 무관.</li>
+    <li><strong>Phase Imaging/Holography 11편</strong> — RF 신호처리·이론물리·의료(신경외과 조명)·교육 논문에 "phase"·"holography" 키워드 우연 매칭.</li>
+    <li><strong>Meta-Optics/Diffractive 8편</strong>(무선통신 RIS/6G, THz 바이오센서) — 통신·센싱 응용, 계산 이미징과 무관.</li>
+    <li><strong>Virtual Staining/Pathology 32편</strong> — 금융·생태·교육 논문의 "label-free"·"virtual" 키워드 우연 매칭이거나 계산 방법론이 없는 고전 염색·유세포분석 프로토콜.</li>
+    <li><strong>SplatStream · CORF-GS</strong> [IV/SP] — 3D Gaussian Splatting의 흥미로운 발전이지만 무선 스트리밍·통신 채널 모델링 응용이라 계산 이미징과 간접 연결. 방법론 아이디어만 참고.</li>
+    <li><strong>Uncertainty Quantification in Medical Image Segmentation (survey)</strong> [JNL] — 서베이 논문으로 신규 방법론은 아니지만 참고 자료로 유용.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Lensless 컴퓨테이셔널 카메라 하드웨어 (4편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41566-026-01974-4" target=_blank>Large-scale compressive microscopy via diffractive multiplexing across a sensor array</a></strong> <span class=pill>JNL</span><br>
+- 문제: 현미경은 해상도·시야각·프레임레이트 중 하나를 포기해야 나머지를 높일 수 있었음 / 방법: 48개 센서 배열 + 회절 소자로 센서 사이 빈틈까지 압축센싱으로 채움 / 의미: 세 성능을 동시에 확보하는 스냅샷 기가픽셀급 현미경 / 근거: ~3μm 해상도, >5.2cm² 시야각, 120fps, 초당 25.2기가픽셀 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/ol.609052" target=_blank>Annular Fresnel Zone Aperture: A Single-Parameter Mask Family for Lensless Imaging</a></strong> <span class=pill>JNL</span><br>
+- 문제: lensless 이미징 마스크 설계에 여러 변수를 동시에 튜닝해야 하는 번거로움 / 방법: 단일 파라미터로 정의되는 환형 프레넬 존 마스크 패밀리 제안(초록 미제공, 제목 기준) / 의미: 설계·재현이 쉬운 lensless 마스크 표준 후보 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.67704/ioe.2026.260002" target=_blank>McLDI-INR: mask-constraint lensless dynamic imaging by dual-domain collaborative implicit neural representation</a></strong> <span class=pill>JNL</span><br>
+- 문제: 기존 lensless 이미징은 대부분 정지 장면 복원에 초점 / 방법: 마스크 제약과 이중 도메인 implicit neural representation 결합(초록 미제공, 제목 기준) / 의미: 동적 장면까지 다루는 lensless 복원으로 확장 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1063/5.0325955" target=_blank>Physics-constrained autofocus in fiber-coupled single-pixel microscopy</a></strong> <span class=pill>JNL</span><br>
+- 문제: 단일화소 이미징의 재구성 없는 자동초점은 보통 전체 시야 기준이라 특정 대상 선택 초점이 어려움 / 방법: 회절한계 PSF의 defocus 모델을 측정 도메인에서 직접 제약으로 사용 / 의미: 영상 재구성 없이 1% 샘플링률에서도 정확한 초점 결정 / 근거: 해상도 표적·생체 시료 실험에서 강건성 확인 / 우선순위: Read
+</div>
+
+<h3>병리 AI 신뢰성 검증 (3편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.25497" target=_blank>Beyond Counts: A Distributional Robustness Margin For Pathology Foundation Models</a></strong> <span class=pill>CV</span><br>
+- 문제: 병리 파운데이션 모델이 조직 준비·염색·스캐너 차이 같은 비생물학적 요인을 학습해 shortcut에 취약함 / 방법: 생물학적으로 같은 샘플과 다른 confounder 샘플 사이 거리를 비교하는 sample-resolved 지표(CRoMa) 제안 / 의미: 평균 지표 뒤에 숨은 모델별 하위 꼬리 취약성을 드러냄 / 근거: 20개 tile encoder + 4개 slide encoder 전수 평가 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.25393" target=_blank>Towards Reliable Stain Transfer (DMCoStain)</a></strong> <span class=pill>CV</span><br>
+- 문제: H&E→IHC 염색 변환이 여러 biomarker에 걸쳐 통일되고 해석 가능한 모델링을 하기 어려움 / 방법: 병리 전문가 판단을 모사한 비전-언어 모델로 학습 데이터를 반복적으로 정제(Data-Model Co-optimization) / 의미: 염색 변환의 정확도와 해석 가능성을 함께 개선 / 근거: 다수 조직·biomarker에서 SOTA 정확도, 15만 개 VQA 데이터셋(ImmunoInstruction) 공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.25503" target=_blank>Group Equivariant Diffusion for Anomaly Detection in Computational Cytology</a></strong> <span class=pill>CV</span><br>
+- 문제: 세포 이미지를 회전·반전해도 진단이 바뀌지 않아야 하는데 일반 diffusion 모델은 변환마다 다른 재구성을 내 이상 탐지 점수가 불안정함 / 방법: D4-equivariant U-Net 구조와 equivariant noise coupling으로 회전·반전 불변성을 구조적으로 강제 / 의미: 촬영 각도에 흔들리지 않는 안정적인 이상 탐지 / 근거: 골수·말초혈액 도말 데이터셋에서 AUC 및 top-K 탐지 개선, 회전/반전에 대한 점수 분산 감소 / 우선순위: Read
+</div>
+
+<h3>광학 단층촬영·광음향 이미징 근사 가정 세분화 (4편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.25576" target=_blank>Matrix-Free Photoacoustic Image Reconstruction via Sensor-Token Self-Attention</a></strong> <span class=pill>AI</span><br>
+- 문제: 광음향 단층촬영의 sparse-view 재구성이 시스템 행렬 반복 연산 때문에 실시간 임상 적용에 부담 / 방법: 센서별 전체 시계열을 토큰으로 취급하는 트랜스포머로 시스템 행렬 없이 직접 매핑 / 의미: 재구성 속도와 화질을 동시에 개선 / 근거: SSIM 0.522, PSNR 22.09dB, NMSE 0.233(ISTA/SBTV/LISTA 대비 우위, p&lt;1e-8) / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41598-026-63503-1" target=_blank>Fast and dispersion-controllable quantum imaging with Fourier-domain Quantum Optical Coherence Tomography</a></strong> <span class=pill>JNL</span><br>
+- 문제: 양자 OCT는 촬영 속도와 분산 보정을 동시에 만족하기 어려움 / 방법: Fourier 도메인에서 양자 얽힘 광원의 분산을 능동 제어(초록 미제공, 제목 기준) / 의미: 빠르고 분산 제어 가능한 양자 이미징 / 우선순위: Skim-only(제목 기준, 세부 검증 필요)
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/josaa.593274" target=_blank>Near-source imaging with δ-SPN approximation based fluorescence optical tomography</a></strong> <span class=pill>JNL</span><br>
+- 문제: 형광 광학 단층촬영에서 광원에 가까운 얕은 깊이는 확산 근사가 깨져 정확도가 떨어짐 / 방법: δ-SPN 근사식으로 근접 소스 영역의 광 전달을 더 정확히 모델링(초록 미제공, 제목 기준) / 의미: 확산 근사의 한계를 보완하는 근접장 광학 단층촬영 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1016/j.measurement.2026.122701" target=_blank>Diffraction grating equation-based k-calibration for spectral-domain OCT</a></strong> <span class=pill>JNL</span><br>
+- 문제: 스펙트럴 도메인 OCT는 파장이 화소에 비선형으로 대응해 보정이 필요함 / 방법: 회절격자 방정식 기반의 간단하고 강건한 k-calibration 방법(초록 미제공, 제목 기준) / 의미: 실용적인 파장-화소 보정 도구 / 우선순위: Skim-only(제목 기준)
+</div>
+
+<h3>3D 재구성 검증·전송 (3편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.24852" target=_blank>Track-Leakage-Free Hold-Out Self-Validation for Photogrammetric Reconstruction</a></strong> <span class=pill>CV</span><br>
+- 문제: 사진측량 3D 재구성은 외부 실측 없이 자기 신뢰도를 매기기 어려움 / 방법: 재구성에 사용되지 않은 뷰 조합만으로 검증하는 track-level barrier 프로토콜 / 의미: ground truth 없는 신뢰도 자기평가 프레임워크 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.25971" target=_blank>SplatStream</a></strong> <span class=pill>IV</span><br>
+- 문제: 동적 3D Gaussian Splatting의 큰 표현 크기가 적응형 스트리밍에 부담 / 방법: 품질·해상도 계층 분해 + 계층 간 예측 코딩 / 의미: 실시간 렌더링의 적응형 전송 확장 / 우선순위: Skim-only(무선 스트리밍 응용, 계산 이미징과 간접 연결)
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.25569" target=_blank>CORF-GS</a></strong> <span class=pill>SP</span><br>
+- 문제: 기존 무선 radiance field 재구성은 사전 수집·오프라인 최적화에 의존해 실시간 채널 정보 제공이 어려움 / 방법: 광학·RF 키프레임을 결합한 통합 Gaussian 표현 / 의미: 실시간 무선 채널 모델링으로 확장 / 우선순위: Skim-only(무선 통신 응용, 계산 이미징과 간접 연결)
+</div>
+
+<h3>기타 계산 이미징 관련 (2편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1063/5.0331605" target=_blank>Non-line-of-sight super-resolution imaging with quasi-constant-delay circular pattern</a></strong> <span class=pill>JNL</span><br>
+- 문제: 직접 시야가 없는 대상을 고해상도로 복원하기 어려움 / 방법: 준등지연 원형 패턴 기반 비가시선 초해상도 이미징(초록 미제공, 제목 기준) / 의미: NLOS 이미징의 해상도 한계 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.3390/jimaging12080341" target=_blank>Uncertainty Quantification in Medical Image Segmentation: A Comprehensive Survey</a></strong> <span class=pill>JNL</span><br>
+- 문제: 의료영상 분할의 불확실성 정량화 방법이 여러 갈래로 흩어져 있음 / 방법: 기존 방법론을 체계적으로 정리한 서베이 / 의미: 우리 랩의 복원·분할 파이프라인에 신뢰도 추정을 도입할 때 참고 지도 / 우선순위: Skim-only(서베이)
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv 카테고리: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>cs.LG</a> · <a href="https://arxiv.org/list/cs.CV/new" target=_blank>cs.CV</a> · <a href="https://arxiv.org/list/cs.AI/new" target=_blank>cs.AI</a> · <a href="https://arxiv.org/list/eess.IV/new" target=_blank>eess.IV</a> · <a href="https://arxiv.org/list/eess.SP/new" target=_blank>eess.SP</a></li>
+  <li>RSS: <a href="../feed.xml">feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+Imaging Intelligence Daily Briefing · cs.LG · cs.CV · cs.AI · eess.IV · eess.SP 기반 자동 생성 · 입력 출처: arXiv, Crossref, OpenAlex
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+
+</body>
+</html>
