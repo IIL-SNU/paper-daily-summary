@@ -1,0 +1,103 @@
+{
+ "date": "2026-07-30",
+ "source_mode": "new",
+ "clusters": [
+  {
+   "cluster": "3D Gaussian Splatting이 압축·품질평가·관절체 분해라는 다음 단계 병목으로 갈라지기 시작",
+   "papers": [
+    {
+     "title": "3DGBGS: 3D Granular Ball Gaussian Splatting for Compact Novel View Synthesis",
+     "arxiv_id": "https://arxiv.org/abs/2607.26578",
+     "journal_or_source": "arXiv cs.CV"
+    },
+    {
+     "title": "SpatialQ: Understanding 3D Gaussian Splatting Scene Quality via Visual-based MLLM",
+     "arxiv_id": "https://arxiv.org/abs/2607.26595",
+     "journal_or_source": "arXiv cs.CV"
+    },
+    {
+     "title": "StructureGS: Structure-aware Gaussian Splatting for Articulated Object Reconstruction",
+     "arxiv_id": "https://arxiv.org/abs/2607.26889",
+     "journal_or_source": "arXiv cs.GR/cs.CV"
+    }
+   ],
+   "why": "3D Gaussian Splatting은 지금까지 주로 '더 빠르고 더 선명하게 렌더링하는가'를 놓고 경쟁했는데, 오늘 나온 세 편은 그 다음 단계의 실용적 병목을 각각 다른 각도에서 다룹니다. 3DGBGS는 앵커를 균일한 격자가 아니라 크기가 다른 알갱이(granular ball) 단위로 나눠, 평평한 영역은 큰 알갱이 하나로 압축하고 복잡한 구조만 작은 알갱이로 세밀하게 표현해 저장 용량을 평균 9.8% 줄였습니다. SpatialQ는 3DGS 장면을 렌더링된 2D 이미지 하나만으로는 제대로 판단할 수 없다는 문제를 짚고, 깊이·점군·카메라 정보까지 함께 보는 멀티모달 대형 언어모델로 장면 전체의 품질을 평가하는 틀을 만들었습니다. StructureGS는 서랍장처럼 여러 부위가 따로 움직이는 물체를 재구성할 때 기하·외형·움직임이 뒤엉켜 부위 경계가 흐려지는 문제를, 부위별 경계 상자로 공간적 응집성과 물리적으로 말이 되는 접촉 관계를 강제해 해결합니다. 세 편을 같이 보면, 3DGS가 '한 장면을 어떻게 잘 그리는가'를 넘어 '그 결과를 어떻게 압축하고, 평가하고, 부위 단위로 쪼갤 것인가'라는 다음 단계 질문으로 넘어가고 있다는 뜻입니다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저자군 3편이 같은 날 나왔고 3DGS라는 공통 표현을 공유하지만, 압축·품질평가·관절체 분해라는 하위 문제가 서로 달라 공통 벤치마크로 수렴하지는 않음",
+   "lab_action": "3DGBGS의 granular ball anchor 초기화 아이디어를 우리 랩의 3DGS 기반 재구성 파이프라인에 적용해 저장 용량 대비 렌더링 품질을 비교하고, SpatialQ의 깊이+점군 기반 품질 평가 프레임워크를 우리 3D 재구성 결과의 자동 QA 단계에 도입"
+  },
+  {
+   "cluster": "diffusion 모델을 재학습 없이 추론 시점에서만 조종해 그림자 제거·HDR 생성·텍스트-이미지 정합까지 풀기 시작",
+   "papers": [
+    {
+     "title": "LumaGuide: Distribution Shaping for Training-Free HDR Generation in Diffusion Models",
+     "arxiv_id": "https://arxiv.org/abs/2607.26237",
+     "journal_or_source": "arXiv cs.CV"
+    },
+    {
+     "title": "FreeShadow: Training-Free Shadow Removal via Illumination Transfer and Selective Content Preservation in Diffusion Models",
+     "arxiv_id": "https://arxiv.org/abs/2607.26715",
+     "journal_or_source": "arXiv cs.CV"
+    },
+    {
+     "title": "Anchoring and Steering Diffusion: Enhancing the Faithfulness of Text-to-Image Generation at Inference Time",
+     "arxiv_id": "https://arxiv.org/abs/2607.26647",
+     "journal_or_source": "arXiv cs.CV"
+    }
+   ],
+   "why": "지금까지 diffusion 모델을 특정 목적에 맞게 쓰려면 보통 추가 데이터로 다시 학습시키거나 최소한 LoRA 같은 가벼운 미세조정이 필요하다고 여겼는데, 오늘 나온 세 편은 모델 가중치를 아예 건드리지 않고 추론 과정만 바꿔 서로 다른 세 문제를 풉니다. LumaGuide는 밝기 분포를 목표 히스토그램에 맞추도록 샘플링 과정을 미분 가능한 에너지로 유도해, 별도 학습 없이 저다이나믹레인지 모델에서 고다이나믹레인지(HDR) 이미지를 뽑아냅니다. FreeShadow는 그림자가 없는 영역의 조명 정보를 self-attention 맵을 통해 그림자 영역으로 옮기는 방식으로 그림자를 지우면서도, 조명과 무관한 성분은 그대로 보존해 원본 질감을 지킵니다. AnchorSteer는 처음 주는 노이즈를 텍스트와 미리 맞춰 두고, 생성 중간에도 비전-언어 모델로 의미가 틀어졌는지 진단해 그 부분만 고쳐 쓰는 방식으로 복잡한 문장형 프롬프트를 더 정확히 따르게 합니다. 세 편을 같이 보면, diffusion 모델을 다루는 방식이 '내 문제에 맞게 다시 학습시키기'에서 '이미 학습된 모델의 추론 과정을 목적에 맞게 조종하기'로 옮겨가고 있다는 뜻입니다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저자군 3편이 같은 날 나왔고 가중치 고정+추론 시점 조종이라는 같은 접근을 공유하지만, 응용(HDR·그림자·텍스트 정합)이 달라 같은 평가축으로 직접 비교되지는 않음",
+   "lab_action": "FreeShadow의 illumination transfer attention 방식을 우리 랩의 그림자·비네팅 아티팩트 제거 후처리 단계에 재학습 없이 적용해보고, LumaGuide의 분포 정합 가이던스 방식을 우리 HDR/톤매핑 복원 파이프라인의 톤 분포 보정에 이식해 재학습 없이도 목표 밝기 분포를 맞출 수 있는지 검증"
+  },
+  {
+   "cluster": "계산광학 코어(FP·Phase·Meta-Optics)에서 오늘 유일하게 실제 신호를 낸 세 편",
+   "papers": [
+    {
+     "title": "FA-PIE: focus-adaptive ptychographic iterative engine",
+     "arxiv_id": "https://doi.org/10.1364/ol.610646",
+     "journal_or_source": "Optics Letters"
+    },
+    {
+     "title": "Dielectric Diatomic Metasurface for Simultaneous Continuous Grayscale Nanoprinting and Vectorial Holography",
+     "arxiv_id": "https://doi.org/10.1002/lpor.71669",
+     "journal_or_source": "Laser & Photonics Reviews"
+    },
+    {
+     "title": "Ultrasensitive mid-infrared metasurface sensing governed by quasi-bound states in the continuum",
+     "arxiv_id": "https://doi.org/10.1016/j.physleta.2026.132053",
+     "journal_or_source": "Physics Letters A"
+    }
+   ],
+   "why": "오늘 계산광학 코어 4개 버킷(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics) 중 Lensless는 완전히 비었고, 나머지 세 버킷에서도 편수 대비 실제 광학 신호는 각각 한 편씩뿐입니다. FA-PIE는 초점이 흔들리는 상황에서도 반복적으로 초점을 재조정하며 위상을 복원하는 ptychographic iterative engine으로, 시료나 렌즈가 흔들리는 실제 실험 환경에서 Fourier ptychography를 더 강건하게 만드는 실용적 개선입니다. Dielectric Diatomic Metasurface는 하나의 메타표면 안에 그레이스케일 나노프린팅과 벡터 홀로그래피를 동시에 넣는 데 성공해, 편광 상태 전환과 위상 제어를 독립적으로 다뤄 근접장·원거리장 광학 디스플레이를 한 소자로 구현했습니다. BIC 기반 중적외선 메타표면은 편광에 무관하게 높은 Q factor 공진을 얻어 초민감 화학·가스 센싱에 활용할 수 있는 신호 검출 하드웨어입니다. 세 편의 공통점은 하나의 방법론적 흐름으로 수렴한다기보다, 오늘 계산광학 코어에서 진짜 광학 하드웨어·방법론 신호가 이 세 편 말고는 사실상 없었다는 사실 자체입니다.",
+   "confidence": "Low",
+   "confidence_note": "세 편이 계산광학 코어라는 공통 영역을 공유할 뿐 서로 다른 하위 분야(ptychography·메타표면 디스플레이·메타표면 센싱)라 하나의 연구 질문으로 수렴하지 않고, 그중 두 편은 초록이 제공되지 않아 제목 기준 판단",
+   "lab_action": "Dielectric Diatomic Metasurface의 편광 회전 기반 위상 제어 방식을 우리 메타표면 설계 파이프라인에서 벡터 홀로그래피와 나노프린팅을 동시에 구현하는 데 참고하고, FA-PIE의 focus-adaptive 반복 알고리즘을 우리 FP 세팅에서 시료 진동·초점 변화가 있는 조건에 시험 적용"
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "3DGBGS의 granular ball 압축과 SpatialQ의 품질평가 프레임워크를 우리 3DGS 파이프라인에 적용",
+   "claim": "영역별로 크기가 다른 알갱이 단위 앵커 초기화가 우리 랩의 3D 재구성 결과에서도 저장 용량 대비 렌더링 품질을 개선하는지, 그리고 깊이+점군 기반 품질 평가가 기존 2D 지표보다 더 신뢰할 만한지 확인한다.",
+   "supporting_papers": [
+    {"title": "3DGBGS: 3D Granular Ball Gaussian Splatting for Compact Novel View Synthesis", "arxiv": "https://arxiv.org/abs/2607.26578"},
+    {"title": "SpatialQ: Understanding 3D Gaussian Splatting Scene Quality via Visual-based MLLM", "arxiv": "https://arxiv.org/abs/2607.26595"}
+   ]
+  },
+  {
+   "title": "FreeShadow·LumaGuide의 재학습 없는 추론 시점 조종을 우리 이미지 복원 후처리에 이식",
+   "claim": "가중치를 그대로 둔 채 self-attention 맵이나 분포 정합 가이던스만으로 원치 않는 아티팩트(그림자·톤 왜곡)를 제거하는 방식이, 우리 계산 이미징 파이프라인의 후처리 단계에서도 재학습 없이 통하는지 검증한다.",
+   "supporting_papers": [
+    {"title": "FreeShadow: Training-Free Shadow Removal via Illumination Transfer and Selective Content Preservation in Diffusion Models", "arxiv": "https://arxiv.org/abs/2607.26715"},
+    {"title": "LumaGuide: Distribution Shaping for Training-Free HDR Generation in Diffusion Models", "arxiv": "https://arxiv.org/abs/2607.26237"}
+   ]
+  },
+  {
+   "title": "CoRAS의 적응적 정지 기준을 우리 압축센싱/Fourier ptychography 촬영 파이프라인에 적용",
+   "claim": "목표 복원 오차 이하를 통계적으로 보장하는 정지 시점 추정 방식이, 우리 랩의 반복 촬영 세팅(조명 패턴 수, 센서 측정 횟수 결정)에서도 고정 비율 방식보다 평균 측정 횟수를 줄이는지 확인한다.",
+   "supporting_papers": [
+    {"title": "Conformalized Rate-Adaptive Sensing", "arxiv": "https://arxiv.org/abs/2607.26887"}
+   ]
+  }
+ ]
+}

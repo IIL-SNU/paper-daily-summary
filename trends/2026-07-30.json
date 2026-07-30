@@ -1,0 +1,34 @@
+{
+ "date": "2026-07-30",
+ "source_listing_date": "2026-07-30",
+ "source_mode": "new",
+ "daily_new_counts": {
+  "by_cat": {
+   "cs.LG": 153,
+   "cs.CV": 96,
+   "cs.AI": 157,
+   "eess.IV": 9,
+   "eess.SP": 24
+  },
+  "scope": "new+cross; replacements excluded",
+  "journal_count": 411
+ },
+ "totals": {
+  "total_scanned": 765,
+  "selected": 223
+ },
+ "classified": {
+  "by_bucket": {
+   "Fourier Ptychography/Microscopy": 2,
+   "Lensless/Coded Imaging": 0,
+   "Phase Imaging/Holography": 3,
+   "Meta-Optics/Diffractive": 7,
+   "Light-Field/Novel Sensors": 4,
+   "Tomography/3D Imaging": 39,
+   "Virtual Staining/Pathology": 39,
+   "Reconstruction/Inverse Problems": 18,
+   "Deep Learning Methods": 111
+  }
+ },
+ "note": "2026-07-30(목)은 정상 daily다. 5개 추적 카테고리 arXiv /new listing이 모두 오늘 날짜(Thursday, 30 July 2026)를 가리켜 source_mode=new로 확정했다. arXiv new+cross 합계는 439편(cs.LG 153·cs.CV 96·cs.AI 157·eess.IV 9·eess.SP 24)으로 어제(547편)보다 줄었는데, 특정 카테고리 하나가 아니라 대체로 고르게 줄어든 형태라 parser 오류로 보이지 않는다. 저널(Crossref+OpenAlex) 411건(journal 410 + openalex 1)을 더한 원천 스캔 850건이 dedup을 거쳐 765건으로 병합됐고, 이 중 223건(29.2%)이 ROI로 선정됐다 — 어제(28.4%, 240/846)와 비슷한 최근 밴드(25~32%) 안이라 정상 범위다. 오늘 가장 뚜렷한 특징은 어제 5편까지 올라왔던 Lensless/Coded Imaging이 다시 0편으로 돌아가며 계산광학 코어 4개 버킷(FP·Lensless·Phase·Meta-Optics)이 또 침묵에 가까웠다는 점이다. 대신 실제 신호는 Tomography/3D Imaging(39편) 안의 3D Gaussian Splatting 방법론 세 편(3DGBGS의 압축·SpatialQ의 품질평가·StructureGS의 관절체 분해)과, Deep Learning Methods(111편) 안에서 diffusion 모델을 재학습 없이 추론 시점에서만 조종하는 논문 세 편(LumaGuide의 HDR·FreeShadow의 그림자 제거·AnchorSteer의 텍스트-이미지 정합)에서 나왔다. Reconstruction/Inverse Problems(18편) 안에서는 Conformalized Rate-Adaptive Sensing(CoRAS)이 압축센싱 기반 촬영에서 '측정을 언제 멈출지'를 통계적으로 보장하는 정지 기준을 제시했다. Fourier Ptychography(FA-PIE)·Phase Imaging(Dielectric Diatomic Metasurface holography)·Meta-Optics(BIC metasurface mid-IR sensing)에서는 각 버킷당 1편씩 실제 계산광학 신호가 확인됐지만 공통된 흐름으로 수렴하지는 않는다."
+}

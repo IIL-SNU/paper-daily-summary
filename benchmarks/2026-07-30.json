@@ -1,0 +1,37 @@
+{
+ "date": "2026-07-30",
+ "results": [
+  {
+   "benchmark": "3DGS anchor-based novel-view synthesis (4 benchmarks avg)",
+   "metric": "Storage reduction",
+   "value": 9.8,
+   "value_str": "9.8% avg storage reduction (comparable rendering quality)",
+   "paper": "https://arxiv.org/abs/2607.26578",
+   "paper_title": "3DGBGS: 3D Granular Ball Gaussian Splatting for Compact Novel View Synthesis"
+  },
+  {
+   "benchmark": "3DGS anchor-based novel-view synthesis (4 benchmarks avg)",
+   "metric": "Initial anchor reduction",
+   "value": 37.1,
+   "value_str": "37.1% fewer initial anchors, 10.0% fewer final anchors",
+   "paper": "https://arxiv.org/abs/2607.26578",
+   "paper_title": "3DGBGS: 3D Granular Ball Gaussian Splatting for Compact Novel View Synthesis"
+  },
+  {
+   "benchmark": "Gen1 Automotive Detection Dataset",
+   "metric": "mAP",
+   "value": 26.88,
+   "value_str": "mAP 23.38 (single-interval) -> 26.88 (sequence-aware + event augmentation)",
+   "paper": "https://arxiv.org/abs/2607.26703",
+   "paper_title": "Sequence-SOD: Bio-inspired Sequence-aware Spiking ObjectDetection for Event Cameras"
+  },
+  {
+   "benchmark": "Multimode optical fiber mode separation",
+   "metric": "Accuracy",
+   "value": 93.7,
+   "value_str": "CNN mode separation accuracy 93.7%, 62% reduction in mode error rate vs conventional reconstruction",
+   "paper": "https://doi.org/10.3390/photonics13080715",
+   "paper_title": "Multimode Optical Fiber Materials for Enhanced Mode Conversion and Holographic Reconstruction Using Machine Learning and Spatial Division Multiplexing"
+  }
+ ]
+}

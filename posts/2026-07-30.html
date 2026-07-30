@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-07-30</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-07-30 (목요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-07-30 (목요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Thursday, 30 July 2026"으로 확인됨</div>
+  <div>🔢 arXiv: cs.LG 153 · cs.CV 96 · cs.AI 157 · eess.IV 9 · eess.SP 24 (합계 439편, new+cross, replacement 제외) — 어제(547편) 대비 줄었지만 특정 카테고리 하나가 아니라 대체로 고르게 줄어든 형태라 parser 오류로 보이지 않음</div>
+  <div>🔢 병합: arXiv+저널(411건) 병합 스캔 850건 · dedup 후 765건 · ROI 배정 223건 (29.2%) — 어제(28.4%, 240/846)와 비슷한 최근 밴드(25~32%) 안의 정상 범위</div>
+  <div>⚠️ 오늘은 어제 5편까지 올라왔던 Lensless/Coded Imaging이 다시 0편으로 돌아간 게 가장 눈에 띕니다. 계산광학 코어 4개 버킷을 통틀어 실제 광학 신호는 FA-PIE·메타표면 홀로그래피·중적외선 메타표면 센싱 세 편뿐이었습니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 계산광학 코어(Fourier ptychography·Lensless·Phase Imaging·Meta-Optics)는 어제 반짝 살아났던 Lensless 신호가 다시 사라지며 또 침묵에 가까웠습니다. 대신 진짜 움직임은 다른 두 갈래에서 보였습니다 — <strong>3D Gaussian Splatting이 "더 잘 그리기" 경쟁을 넘어 압축·품질평가·관절체 분해라는 다음 단계 병목으로 갈라지기 시작</strong>했고(3DGBGS·SpatialQ·StructureGS), <strong>diffusion 모델을 재학습 없이 추론 시점에서만 조종해 그림자 제거·HDR 생성·텍스트-이미지 정합까지 푸는 논문이 같은 날 세 편</strong> 나왔습니다(LumaGuide·FreeShadow·AnchorSteer). 그리고 <strong>Conformalized Rate-Adaptive Sensing(CoRAS)</strong> 한 편이 우리 랩이 압축센싱·Fourier ptychography 같은 반복 촬영 세팅에서 매번 마주치는 "측정을 언제 멈춰야 하는가"라는 질문에, 목표 오차 이하를 통계적으로 보장하는 정지 기준으로 처음 답했습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(7/30, 목)은 arXiv /new에 cs.LG 153편, cs.CV 96편, cs.AI 157편, eess.IV 9편, eess.SP 24편으로 총 439편이 잡혔습니다. 어제(547편)보다 줄었지만 특정 카테고리 하나가 아니라 대체로 고르게 줄어든 형태라 parser 문제로 보이지 않습니다. 저널 411건(Crossref 410 + OpenAlex 1)을 더한 원천 스캔 850건이 dedup을 거쳐 765건으로 병합됐고, 이 중 223건(29.2%)이 ROI로 선정됐습니다 — 최근 밴드(25~32%) 안이라 정상 범위입니다. 오늘 가장 눈에 띄는 변화는 어제 5편까지 올라왔던 Lensless/Coded Imaging이 다시 0편으로 돌아갔다는 점입니다 — 계산광학 코어 4개 버킷(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics) 전체를 통틀어 실제 광학 신호는 FA-PIE(초점 적응형 ptychography 반복 알고리즘)·메타표면 홀로그래피·중적외선 메타표면 센싱, 딱 세 편뿐이었습니다.</p>
+<p>대신 오늘 진짜 움직임은 두 갈래 방법론에서 보였습니다. 첫째는 3D Gaussian Splatting(3DGS)입니다. 3DGBGS는 장면을 균일한 격자가 아니라 크기가 다른 알갱이(granular ball) 단위로 나눠, 평평한 영역은 큰 알갱이 하나로 압축하고 복잡한 구조만 작은 알갱이로 세밀하게 표현해 앵커 수를 최대 37.1%, 저장 용량을 평균 9.8% 줄였습니다. SpatialQ는 렌더링된 2D 이미지 하나만으로는 3DGS 장면의 품질을 제대로 판단할 수 없다는 문제를 짚고, 깊이·점군·카메라 정보까지 함께 보는 멀티모달 대형 언어모델로 장면 전체의 품질을 평가하는 틀을 만들었습니다. StructureGS는 서랍장처럼 여러 부위가 따로 움직이는 물체를 재구성할 때 기하·외형·움직임이 뒤엉켜 부위 경계가 흐려지는 문제를, 부위별 경계 상자로 공간적 응집성과 물리적으로 말이 되는 접촉 관계를 강제해 깨끗하게 분해했습니다. 둘째는 diffusion 모델을 재학습 없이 추론 과정만 바꿔 쓰는 연구입니다. LumaGuide는 밝기 분포를 목표 히스토그램에 맞추도록 샘플링 과정을 미분 가능한 에너지로 유도해 별도 학습 없이 고다이나믹레인지(HDR) 이미지를 뽑아내고, FreeShadow는 그림자 없는 영역의 조명 정보를 self-attention 맵을 통해 그림자 영역으로 옮겨 학습 없이 그림자를 지우며, AnchorSteer는 초기 노이즈를 텍스트와 미리 맞춰 두고 생성 중간에도 비전-언어 모델로 의미가 틀어졌는지 진단해 그 부분만 고쳐 쓰는 방식으로 복잡한 프롬프트 정합도를 높였습니다. 여기에 더해 CoRAS는 압축센싱 기반 촬영에서 목표 오차 이하를 통계적으로 보장하는 정지 시점을 계산해, 어려운 이미지에는 측정을 더 쓰고 쉬운 이미지에는 덜 쓰는 적응적 촬영을 가능하게 했습니다.</p>
+<p>다음 관찰 포인트는 (1) Lensless 신호가 어제 5편에서 오늘 0편으로 오간 것이 하루 단위 등록량 변동인지, 아니면 주 단위로 반복되는 패턴인지, (2) diffusion 모델을 재학습 없이 조종하는 연구가 이번 주 계속 다른 응용(그림자 제거·HDR·텍스트 정합)으로 번지는지, (3) CoRAS류의 통계적 정지 기준이 압축센싱을 넘어 우리 랩이 다루는 다른 반복 촬영·역문제 세팅(예: Fourier ptychography의 조명 패턴 수 결정)에도 적용될 수 있는지입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(7/29, 수)는 Lensless/Coded Imaging이 최근 침묵을 깨고 5편(대규모 압축 현미경 등)을 냈고, 병리 AI는 진단 정확도에서 비생물학적 교란요인 강건성으로 검증 기준이 좁혀졌으며, 광학 단층촬영·광음향 이미징은 산란·분산·계산 비용 가정을 하나씩 벗어나는 방향으로 흩어졌습니다. 오늘은 그 흐름이 대부분 사그라들었습니다 — Lensless는 다시 0편으로 돌아갔고, 병리 AI 쪽에서는 실제 계산 병리 신호가 히스토병리 그래프 구조 학습 1편에 그쳐 어제 같은 세 편짜리 클러스터를 만들 근거가 없습니다. 대신 어제는 전혀 보이지 않았던 두 흐름이 새로 나타났습니다 — 3D Gaussian Splatting이 압축·품질평가·관절체 분해로 갈라지는 방법론과, diffusion 모델을 재학습 없이 추론 시점에서만 조종하는 연구입니다. 계산광학 코어 자체는 어제도 오늘도 소수 신호(각 1~5편)에 머물러, 이 랩의 핵심 관심사가 매일 등장하기보다는 간헐적으로 나타난다는 패턴이 이번 주에도 이어지고 있습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>3D Gaussian Splatting이 압축·품질평가·관절체 분해라는 다음 단계 병목으로 갈라지기 시작</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.26578" target=_blank>3DGBGS</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.26595" target=_blank>SpatialQ</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.26889" target=_blank>StructureGS</a> <span class=pill>CV</span>
+  </td>
+  <td>3D Gaussian Splatting은 지금까지 주로 "더 빠르고 더 선명하게 렌더링하는가"를 놓고 경쟁했는데, 오늘 나온 세 편은 그 다음 단계의 실용적 병목을 각각 다른 각도에서 다룹니다. 3DGBGS는 앵커를 균일한 격자가 아니라 크기가 다른 알갱이(granular ball) 단위로 나눠, 평평한 영역은 큰 알갱이 하나로 압축하고 복잡한 구조만 작은 알갱이로 세밀하게 표현해 저장 용량을 평균 9.8% 줄였습니다. SpatialQ는 3DGS 장면을 렌더링된 2D 이미지 하나만으로는 제대로 판단할 수 없다는 문제를 짚고, 깊이·점군·카메라 정보까지 함께 보는 멀티모달 대형 언어모델로 장면 전체의 품질을 평가하는 틀을 만들었습니다. StructureGS는 서랍장처럼 여러 부위가 따로 움직이는 물체를 재구성할 때 기하·외형·움직임이 뒤엉켜 부위 경계가 흐려지는 문제를, 부위별 경계 상자로 공간적 응집성과 물리적으로 말이 되는 접촉 관계를 강제해 해결합니다. 세 편을 같이 보면, 3DGS가 "한 장면을 어떻게 잘 그리는가"를 넘어 "그 결과를 어떻게 압축하고, 평가하고, 부위 단위로 쪼갤 것인가"라는 다음 단계 질문으로 넘어가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 3편이 같은 날 나왔고 3DGS라는 공통 표현을 공유하지만, 압축·품질평가·관절체 분해라는 하위 문제가 서로 달라 공통 벤치마크로 수렴하지는 않음</small></td>
+  <td>3DGBGS의 granular ball anchor 초기화 아이디어를 우리 랩의 3DGS 기반 재구성 파이프라인에 적용해 저장 용량 대비 렌더링 품질을 비교하고, SpatialQ의 깊이+점군 기반 품질 평가 프레임워크를 우리 3D 재구성 결과의 자동 QA 단계에 도입</td>
+</tr>
+<tr>
+  <td><strong>diffusion 모델을 재학습 없이 추론 시점에서만 조종해 그림자 제거·HDR 생성·텍스트-이미지 정합까지 풀기 시작</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.26237" target=_blank>LumaGuide</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.26715" target=_blank>FreeShadow</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.26647" target=_blank>AnchorSteer</a> <span class=pill>CV</span>
+  </td>
+  <td>지금까지 diffusion 모델을 특정 목적에 맞게 쓰려면 보통 추가 데이터로 다시 학습시키거나 최소한 LoRA 같은 가벼운 미세조정이 필요하다고 여겼는데, 오늘 나온 세 편은 모델 가중치를 아예 건드리지 않고 추론 과정만 바꿔 서로 다른 세 문제를 풉니다. LumaGuide는 밝기 분포를 목표 히스토그램에 맞추도록 샘플링 과정을 미분 가능한 에너지로 유도해, 별도 학습 없이 저다이나믹레인지 모델에서 고다이나믹레인지(HDR) 이미지를 뽑아냅니다. FreeShadow는 그림자가 없는 영역의 조명 정보를 self-attention 맵을 통해 그림자 영역으로 옮기는 방식으로 그림자를 지우면서도, 조명과 무관한 성분은 그대로 보존해 원본 질감을 지킵니다. AnchorSteer는 처음 주는 노이즈를 텍스트와 미리 맞춰 두고, 생성 중간에도 비전-언어 모델로 의미가 틀어졌는지 진단해 그 부분만 고쳐 쓰는 방식으로 복잡한 문장형 프롬프트를 더 정확히 따르게 합니다. 세 편을 같이 보면, diffusion 모델을 다루는 방식이 "내 문제에 맞게 다시 학습시키기"에서 "이미 학습된 모델의 추론 과정을 목적에 맞게 조종하기"로 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 3편이 같은 날 나왔고 가중치 고정+추론 시점 조종이라는 같은 접근을 공유하지만, 응용(HDR·그림자·텍스트 정합)이 달라 같은 평가축으로 직접 비교되지는 않음</small></td>
+  <td>FreeShadow의 illumination transfer attention 방식을 우리 랩의 그림자·비네팅 아티팩트 제거 후처리 단계에 재학습 없이 적용해보고, LumaGuide의 분포 정합 가이던스 방식을 우리 HDR/톤매핑 복원 파이프라인의 톤 분포 보정에 이식해 재학습 없이도 목표 밝기 분포를 맞출 수 있는지 검증</td>
+</tr>
+<tr>
+  <td><strong>계산광학 코어(FP·Phase·Meta-Optics)에서 오늘 유일하게 실제 신호를 낸 세 편</strong><span class=pill>WATCH</span></td>
+  <td>
+    <a href="https://doi.org/10.1364/ol.610646" target=_blank>FA-PIE (focus-adaptive ptychographic iterative engine)</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1002/lpor.71669" target=_blank>Dielectric Diatomic Metasurface (nanoprinting + vectorial holography)</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.physleta.2026.132053" target=_blank>BIC 중적외선 메타표면 센싱</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 계산광학 코어 4개 버킷(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics) 중 Lensless는 완전히 비었고, 나머지 세 버킷에서도 편수 대비 실제 광학 신호는 각각 한 편씩뿐입니다. FA-PIE는 초점이 흔들리는 상황에서도 반복적으로 초점을 재조정하며 위상을 복원하는 ptychographic iterative engine으로, 시료나 렌즈가 흔들리는 실제 실험 환경에서 Fourier ptychography를 더 강건하게 만드는 실용적 개선입니다. Dielectric Diatomic Metasurface는 하나의 메타표면 안에 그레이스케일 나노프린팅과 벡터 홀로그래피를 동시에 넣는 데 성공해, 편광 상태 전환과 위상 제어를 독립적으로 다뤄 근접장·원거리장 광학 디스플레이를 한 소자로 구현했습니다. BIC 기반 중적외선 메타표면은 편광에 무관하게 높은 Q factor 공진을 얻어 초민감 화학·가스 센싱에 활용할 수 있는 신호 검출 하드웨어입니다. 세 편의 공통점은 하나의 방법론적 흐름으로 수렴한다기보다, 오늘 계산광학 코어에서 진짜 광학 하드웨어·방법론 신호가 이 세 편 말고는 사실상 없었다는 사실 자체입니다.</td>
+  <td>Low<br><small>세 편이 계산광학 코어라는 공통 영역을 공유할 뿐 서로 다른 하위 분야(ptychography·메타표면 디스플레이·메타표면 센싱)라 하나의 연구 질문으로 수렴하지 않고, 그중 두 편은 초록이 제공되지 않아 제목 기준 판단</small></td>
+  <td>Dielectric Diatomic Metasurface의 편광 회전 기반 위상 제어 방식을 우리 메타표면 설계 파이프라인에서 벡터 홀로그래피와 나노프린팅을 동시에 구현하는 데 참고하고, FA-PIE의 focus-adaptive 반복 알고리즘을 우리 FP 세팅에서 시료 진동·초점 변화가 있는 조건에 시험 적용</td>
+</tr>
+</tbody>
+</table>
+
+<p><small>⚠️ Domain Watch Lens 메모 — 오늘은 3개 클러스터로 표를 마쳤습니다(보조 클러스터 근거 부족). Virtual Staining/Pathology(39편)는 실제 계산 병리 신호가 히스토병리 그래프 구조 학습 1편뿐이라 클러스터를 만들 근거가 없고, Reconstruction/Inverse Problems(18편) 안의 CoRAS(Conformalized Rate-Adaptive Sensing)도 함께 묶을 두 번째 논문이 없어 클러스터 대신 아래 오늘의 인사이트·오늘의 must-read에서 단일 논문으로 다뤘습니다.</small></p>
+
+<h2>📐 arXiv vs 저널 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 3DGBGS·SpatialQ·StructureGS(3DGS 세분화), LumaGuide·FreeShadow·AnchorSteer(diffusion 추론 시점 조종), Conformalized Rate-Adaptive Sensing(적응적 압축센싱 정지 기준)</li>
+  <li><strong>저널 전용</strong>: FA-PIE·Dielectric Diatomic Metasurface·BIC 중적외선 메타표면(계산광학 코어 신호 3편), Harmonic-Generated Comb Interferometry(거리·진동 동시 계측), Multimode Optical Fiber ML 홀로그래픽 복원이 오늘 저널 쪽의 핵심 신호였습니다.</li>
+  <li><strong>공통 키워드</strong>: holography(계산 이미징 홀로그래피 소수 vs 다중모드 광섬유 통신의 mode-division multiplexing 응용 — 맥락이 다름), metasurface(이미징·센싱용 메타표면 소수 vs 무선통신 RIS/6G·레이더 재밍용 메타표면 다수 — 오늘도 절반 이상이 통신·레이더 응용), reconstruction(3DGS·역문제 계산 이미징 방법론 vs 정형외과/치과 CT 형태 계측 — 같은 단어가 다른 임상 맥락에서 반복)</li>
+  <li><strong>특징</strong>: 오늘은 arXiv 쪽이 3DGS 세분화·diffusion 추론 시점 조종·적응적 센싱이라는 세 방법론 흐름을 전부 주도했고, 저널 쪽은 계산광학 코어의 유일한 신호원 역할에 그쳤습니다(어제는 반대로 저널이 Lensless·광학 단층촬영의 핵심 신호원이었음).</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 3D Gaussian Splatting이 압축·품질평가·관절체 분해라는 다음 단계 병목으로 갈라지기 시작</h3>
+  <p>3DGBGS는 장면을 크기가 다른 알갱이(granular ball) 단위로 나눠 앵커 수를 최대 37.1%, 저장 용량을 평균 9.8% 줄였습니다. SpatialQ는 렌더링된 2D 이미지만으로는 판단할 수 없는 3DGS 장면 품질을, 깊이·점군까지 함께 보는 멀티모달 모델로 평가하는 틀을 만들었습니다. StructureGS는 여러 부위가 따로 움직이는 물체를 부위별 경계 상자 제약으로 깨끗하게 분해했습니다. 세 편 모두 "더 잘 그리기"보다 그 다음 단계 실용 문제(압축·평가·분해)를 겨냥합니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 저자군 3편이 같은 날 나왔고 3DGS라는 공통 표현을 공유하지만, 하위 문제가 갈라져 공통 벤치마크로 수렴하지는 않음</p>
+</div>
+
+<div class=ins>
+  <h3>2. diffusion 모델을 재학습 없이 추론 시점에서 조종하는 연구가 세 가지 다른 응용에서 동시에 나옴</h3>
+  <p>LumaGuide(HDR 생성)·FreeShadow(그림자 제거)·AnchorSteer(텍스트-이미지 정합)는 모델 가중치를 그대로 둔 채 샘플링 과정·attention 맵·초기 노이즈만 조종해 각자의 목표를 달성합니다. 셋 다 "재학습 없이"라는 제약을 명시적으로 내세우며, 이미 학습된 diffusion prior를 목적에 맞게 조종하는 것으로 충분하다는 걸 서로 다른 문제에서 독립적으로 보여줍니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편이 가중치 고정+추론 시점 조종이라는 같은 접근을 공유하지만 응용이 달라 같은 평가축으로 직접 비교되지는 않음</p>
+</div>
+
+<div class=ins>
+  <h3>3. Conformalized Rate-Adaptive Sensing — 압축센싱 촬영의 "언제 멈출까" 문제에 통계적 보장 제시 (관찰 중, 단일 논문)</h3>
+  <p>CoRAS는 측정을 쌓아가며 이미지를 복원하는 과정에서, 목표 오차 이하로 내려가는 시점을 이른 단계의 복원 경로만 보고 추정한 뒤, 비슷한 초기 복원 양상을 보인 다른 이미지들로 이 추정치를 통계적으로 보정합니다. 그 결과 고정 비율로 멈추는 규칙보다 평균 측정 횟수는 줄이면서도 목표 커버리지는 달성했다고 보고합니다. 함께 묶을 두 번째 논문이 없어 클러스터가 아니라 관찰 중 항목으로 둡니다.</p>
+  <p class=conf-note>Confidence: Low — 단일 논문이며 abstract에 구체적 데이터셋·절감폭 수치가 없어 본문 확인 필요</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. 3DGBGS의 granular ball 압축과 SpatialQ의 품질평가 프레임워크를 우리 3DGS 파이프라인에 적용</h3>
+  <p>영역별로 크기가 다른 알갱이 단위 앵커 초기화가 우리 랩의 3D 재구성 결과에서도 저장 용량 대비 렌더링 품질을 개선하는지, 그리고 깊이+점군 기반 품질 평가가 기존 2D 지표보다 더 신뢰할 만한지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>3DGBGS의 Granular Ball Anchor Initialization·Granular Ball Scale Prior 절차 재현</li>
+    <li>공통 benchmark: 우리 랩이 보유한 3DGS 재구성 데이터셋(4개 벤치마크 기준 비교)</li>
+    <li>비교축: 기존 균일 voxelization 앵커 vs granular ball 앵커의 앵커 수·저장 용량·렌더링 품질(PSNR/SSIM)</li>
+    <li>실패해도 남는 결과: 우리 세팅에서 앵커 압축이 품질 저하 없이 가능한 한계에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. FreeShadow·LumaGuide의 재학습 없는 추론 시점 조종을 우리 이미지 복원 후처리에 이식</h3>
+  <p>가중치를 그대로 둔 채 self-attention 맵이나 분포 정합 가이던스만으로 원치 않는 아티팩트(그림자·톤 왜곡)를 제거하는 방식이, 우리 계산 이미징 파이프라인의 후처리 단계에서도 재학습 없이 통하는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>FreeShadow의 illumination transfer attention·local texture-preserving relighting 절차 재현</li>
+    <li>공통 benchmark: 우리 랩의 그림자·비네팅 아티팩트가 포함된 촬영 데이터셋</li>
+    <li>비교축: 기존 학습 기반 아티팩트 제거 vs 재학습 없는 추론 시점 조종의 제거 품질·처리 시간</li>
+    <li>실패해도 남는 결과: 우리 아티팩트 유형에 diffusion prior 기반 training-free 방법이 통하는지에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. CoRAS의 적응적 정지 기준을 우리 압축센싱/Fourier ptychography 촬영 파이프라인에 적용</h3>
+  <p>목표 복원 오차 이하를 통계적으로 보장하는 정지 시점 추정 방식이, 우리 랩의 반복 촬영 세팅(조명 패턴 수, 센서 측정 횟수 결정)에서도 고정 비율 방식보다 평균 측정 횟수를 줄이는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>CoRAS의 reconstruction path 기반 정지 시점 추정·conformal calibration 절차 재현</li>
+    <li>공통 benchmark: 우리 랩의 압축센싱 또는 Fourier ptychography 촬영 데이터셋</li>
+    <li>비교축: 고정 rate 정지 규칙 vs CoRAS 적응적 정지 규칙의 평균 측정 횟수·목표 오차 커버리지</li>
+    <li>실패해도 남는 결과: 우리 세팅에서 이미지별 난이도에 따른 측정 배분이 실제로 유효한지에 대한 baseline</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging·Virtual Staining/Pathology(각 39편, catch-all 제외 공동 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:5%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:8%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:18%"></span></span><span class=n>7편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:10%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>39편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>39편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:46%"></span></span><span class=n>18편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>111편</span></div>
+
+<p><small>⚠️ 참고 — Domain Watch Lens: Fourier Ptychography/Microscopy 2편 중 FA-PIE만 실제 FP 신호이고 나머지 1편(HAPS 위성 통신 빔포밍)은 "Fourier" 키워드 우연 매칭입니다. Lensless/Coded Imaging은 오늘 0편입니다. Phase Imaging/Holography 3편은 오늘 모두 실제 광학 신호로 확인됐습니다(홀로그래피 메타표면·간섭계측·광섬유 홀로그래픽 복원). Meta-Optics/Diffractive 7편 중 광학 이미징·센싱 하드웨어는 BIC 중적외선 메타표면 1편이고 나머지 6편은 무선통신 RIS/6G·레이더 재밍·바이오센서용 메타표면입니다. Virtual Staining/Pathology 39편 중 실제 계산 병리 신호는 히스토병리 그래프 구조 학습 1편뿐이고 나머지는 금융·농업·치과·면역조직화학 임상 프로토콜의 "staining"·"label-free"·"virtual" 키워드 우연 매칭입니다. Tomography/3D Imaging 39편 중 실질 신호는 3DGS 세분화 클러스터 3편이고 나머지는 대부분 임상 CT/PET/OCT 진단 사례 보고입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (2편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.610646" target=_blank>FA-PIE: focus-adaptive ptychographic iterative engine</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 오늘의 대표 클러스터(계산광학 코어 유일 신호) — 위 클러스터 표 참고. 나머지 1편은 HAPS 위성 통신 빔포밍 논문으로 FP와 무관합니다 / 우선순위: Read(본문 확인 필요, 초록 미제공)
+</div>
+
+<h3>Phase Imaging/Holography (3편 모두 관련)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71669" target=_blank>Dielectric Diatomic Metasurface</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 오늘의 대표 클러스터(계산광학 코어 유일 신호) — 위 클러스터 표 참고 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71588" target=_blank>Harmonic-Generated Comb Interferometry</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 레이저 피드백 효과로 거리와 진동을 하나의 probe beam에서 동시에 분리 계측하는 간섭계측 방법으로, 9.1m 거리에서 최대 3kHz 진동까지 오차 0.06%/1.93% 이하로 측정합니다 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/photonics13080715" target=_blank>Multimode Optical Fiber ML 홀로그래픽 복원</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 다중모드 광섬유의 모드 결합·분산 문제를 머신러닝으로 보완해 모드 분리 정확도 93.7%, 기존 대비 모드 오차율 62% 감소를 보고합니다. 통신 응용이 중심이지만 홀로그래픽 복원 정확도 개선은 계산 이미징에도 참고할 만합니다 / 우선순위: Skim-only(통신 응용 중심)
+</div>
+
+<h3>Meta-Optics/Diffractive (7편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.physleta.2026.132053" target=_blank>BIC 중적외선 메타표면 센싱</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 오늘의 대표 클러스터(계산광학 코어 유일 신호) — 위 클러스터 표 참고. 나머지 6편은 무선통신 RIS/6G·레이더 재밍·바이오센서용 메타표면입니다 / 우선순위: Read
+</div>
+
+<h3>Light-Field/Novel Sensors (4편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.26703" target=_blank>Sequence-SOD</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 이벤트 카메라의 연속 이벤트 스트림에서 막 전위(membrane potential)를 구간 사이에 유지하며 시간 정보를 활용하는 spiking object detector로, Gen1 Automotive Detection Dataset에서 mAP를 23.38→26.88로 끌어올렸습니다. 나머지 3편은 축구 전술 예측·memristor 시뮬레이션·액정 탄성체로 광필드/이벤트 센서와는 거리가 있습니다 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging (39편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.26578" target=_blank>3DGBGS</a> · <a href="https://arxiv.org/abs/2607.26595" target=_blank>SpatialQ</a> · <a href="https://arxiv.org/abs/2607.26889" target=_blank>StructureGS</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(3DGS 세분화) — 위 클러스터 표 참고. 39편 대부분은 임상 CT/PET/OCT 진단 사례 보고로 방법론과는 거리가 있습니다 / 우선순위: Must-read(3DGBGS) / Read(나머지 2편)
+</div>
+
+<h3>Virtual Staining/Pathology (39편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.26153" target=_blank>$G_2^*$-Net (히스토병리 그래프 구조 학습)</a></strong> <span class=pill>IV</span><br>
+  왜 주요: 조직 슬라이드를 세포 단위 그래프와 패치 단위 그래프로 나눠 계층적으로 학습하는 구조로, 고정된 휴리스틱 그래프 대신 검증 성능에 맞춰 그래프 연결 구조 자체를 학습합니다. 나머지 38편은 금융·농업·치과·면역조직화학 임상 프로토콜의 "staining"·"label-free"·"virtual" 키워드 우연 매칭입니다 / 우선순위: Read
+</div>
+
+<h3>Reconstruction/Inverse Problems (18편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.26887" target=_blank>Conformalized Rate-Adaptive Sensing</a></strong> <span class=pill>LG</span><br>
+  왜 주요: 오늘의 must-read — 아래 참고. 나머지 17편은 대부분 RLHF·causal world model·PID 튜닝 등 "physics-informed"·"reconstruction" 키워드가 계산 이미징과 무관한 도메인에 붙은 우연 매칭입니다 / 우선순위: Must-read
+</div>
+
+<h3>Deep Learning Methods — 계산 이미징 관련 소수 (111편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.26715" target=_blank>FreeShadow</a> · <a href="https://arxiv.org/abs/2607.26237" target=_blank>LumaGuide</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(diffusion 추론 시점 조종) — 위 클러스터 표 참고 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<ul>
+  <li><strong>3DGBGS (granular ball anchor 초기화)</strong> — 4개 벤치마크 평균 기준, 초기 앵커 수 37.1% 감소·최종 앵커 수 10.0% 감소·모델 저장 용량 9.8% 감소, 렌더링 품질은 기존 anchor 기반 3DGS와 comparable 수준 유지</li>
+  <li><strong>Sequence-SOD (이벤트 카메라 spiking object detection)</strong> — Gen1 Automotive Detection Dataset에서 mAP 23.38(단일 구간 학습) → 25.30(시퀀스 인식 학습, 증강 없음) → 26.88(이벤트 데이터 증강 포함), 이론상 40Hz 예측 주기</li>
+  <li><strong>Multimode Optical Fiber ML 홀로그래픽 복원</strong> — CNN 기반 모드 분리 정확도 93.7%, 기존 복원 방법 대비 모드 오차율 62% 감소, 얕은 신경망의 복원 정확도·정보 전송 용량 예측 오차 4% 미만</li>
+</ul>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>오늘 그림자 제거 논문 두 편이 diffusion prior를 정반대 방식으로 가져다 씁니다. WildShadowRemover는 사전학습된 video diffusion 모델을 LoRA로 가볍게 미세조정하고 전용 대규모 데이터셋(WildShadow)까지 새로 구축해 비디오 그림자 제거의 시간적 일관성을 잡는 반면, FreeShadow는 이미지 diffusion 모델의 self-attention 맵만 재가중치해 추가 학습이나 데이터셋 없이 조명 정보를 옮깁니다. 같은 문제(그림자 제거)를 같은 도구(diffusion prior)로 풀면서도 한쪽은 "적게라도 학습시킨다"를, 다른 한쪽은 "전혀 학습시키지 않는다"를 선택한 셈입니다. 이 대비가 흥미로운 이유는, 계산 이미징 파이프라인에서도 새 아티팩트 제거 모듈을 만들 때 매번 데이터를 모아 미세조정할지, 아니면 기존 생성 모델의 추론 과정만 조종해 쓸지가 실제로 성능·구축 비용 사이의 선택지가 될 수 있다는 걸 보여주기 때문입니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Conformalized Rate-Adaptive Sensing — arXiv stat.ML/cs.LG</h3>
+  <div class=tag>[방법전환] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 많은 고해상도 촬영 시스템은 같은 질문에 부딪힙니다 — 측정을 몇 번 더 하면 이 이미지를 정확하게 복원했다고 믿을 수 있는가? 지금까지는 보통 모든 이미지에 똑같이 정해진 측정 횟수(고정 rate)를 쓰거나, 경험적으로 "이 정도면 충분하다"는 기준을 썼습니다. 이 논문은 압축(또는 획득) 비율을 이미지마다 다르게 정하되, 목표 복원 오차 이하를 일정 확률 이상으로 보장하는 정지 시점을 계산하는 CoRAS(Conformalized Rate-Adaptive Sensing)를 제안합니다. 측정이 쌓이면서 복원 모델이 이미지를 점점 더 정확하게 복원하는 경로(reconstruction path)가 생기는데, CoRAS는 이 경로를 이른 시점까지만 보고 "목표 오차 아래로 내려가는 시점"을 추정한 뒤, 초기 복원 양상이 비슷한 다른 이미지들로 이 추정치를 보정해 통계적으로 보장된 상한(marginal 및 근사 conditional coverage)을 냅니다. 우리 랩이 압축센싱·Fourier ptychography처럼 측정을 반복해서 쌓아가는 계산 이미징 세팅을 설계할 때, "평균적으로 몇 번 찍을까"가 아니라 "각 샘플마다 통계적으로 보장된 정지 기준을 어떻게 줄 것인가"라는 질문 자체가 새로운 설계 축이 될 수 있어 파이프라인 영향이 큽니다.</p>
+  <p><strong>핵심:</strong> 여러 이미지 데이터셋 실험에서 CoRAS는 목표로 삼은 정지 시점 커버리지(coverage)를 실제로 달성했고, 고정 비율로 멈추는 규칙보다 평균적으로 더 적은 측정 횟수를 쓰면서도 복원이 어려운 이미지에는 자동으로 더 많은 측정을 배정하고 쉬운 이미지에는 더 적게 배정했다고 보고합니다.</p>
+  <p><strong>주의:</strong> abstract 기준으로는 어떤 이미지 데이터셋과 어떤 복원 모델(reconstruction backbone)로 실험했는지, coverage 목표치와 실제 측정 횟수 절감폭이 구체적으로 몇 %인지가 나오지 않아 본문 확인이 필요합니다. marginal coverage와 approximate conditional coverage의 차이가 우리 랩처럼 이질적인 샘플 집합(다양한 산란 매체·시료)에서 얼마나 벌어지는지도 검증이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 계산광학 코어 신호 3편(FA-PIE·BIC 메타표면·Harmonic-Generated Comb Interferometry 중 2편) 중 다수가 초록 미제공 저널 항목이라 제목만으로 클러스터에 배정했습니다. 실제 방법론 세부사항은 본문 확인 전까지 잠정적입니다.</p>
+  <p>[Claim risk] 3DGS 클러스터의 SpatialQ·StructureGS는 abstract에 "state-of-the-art 성능" 주장만 있고 구체적 정량 비교 수치(PSNR/SSIM 격차 등)가 없어 본문 확인이 필요합니다.</p>
+  <p>[Metric risk] 오늘 ROI 선정 비율(29.2%)이 여전히 목표치(40%)를 밑돌지만 최근 며칠(25~32%) 밴드 안에 있어 이 repo의 구조적 특성(계산광학 코어가 원래 arXiv/저널 등록량 대비 소수)으로 보이며, parser 오류로 판단하지 않았습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Baseline risk] Conformalized Rate-Adaptive Sensing은 abstract에 정지 시점 커버리지 달성과 평균 측정 횟수 감소를 정성적으로만 언급해, 구체적 절감폭과 베이스라인 대비 수치는 본문 확인이 필요합니다.</p>
+  <p>[Claim risk] Dielectric Diatomic Metasurface는 abstract 기준으로 그레이스케일 나노프린팅과 벡터 홀로그래피를 동시에 시연했다는 정성적 확인만 있고, 해상도·효율 등 정량 지표는 본문 확인이 필요합니다.</p>
+  <p>[Deployment risk] WildShadowRemover는 LoRA 미세조정과 전용 데이터셋(WildShadow) 구축이 필요해, FreeShadow처럼 완전히 학습 없이 바로 쓸 수 있는 방법은 아닙니다 — 두 방법의 배포 난이도 차이를 구분해서 봐야 합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy 1편</strong>(HAPS 위성 통신 빔포밍) — "Fourier" 키워드 우연 매칭, FP와 무관.</li>
+    <li><strong>Meta-Optics/Diffractive 6편</strong>(무선통신 RIS/6G, THz 바이오센서, 레이더 재밍용 메타표면) — 통신·레이더 응용, 계산 이미징과 무관.</li>
+    <li><strong>Virtual Staining/Pathology 38편</strong> — 금융·농업·치과·면역조직화학 임상 프로토콜의 "staining"·"label-free"·"virtual" 키워드 우연 매칭.</li>
+    <li><strong>Convergence behaviour of Gaussian Splatting in heritage environments</strong> [JNL] — 3DGS 응용이지만 문화유산 디지털화 도메인이라 오늘의 3DGS 방법론 클러스터와는 간접 연결.</li>
+    <li><strong>Rad-JEPA 3D</strong> [CV] — 방사선 self-supervised 파운데이션 모델로, 계산 이미징 재구성보다는 진단 표현학습에 가까운 문제 설정.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>3D Gaussian Splatting 방법론 세분화 (3편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.26578" target=_blank>3DGBGS: 3D Granular Ball Gaussian Splatting for Compact Novel View Synthesis</a></strong> <span class=pill>CV</span><br>
+- 문제: 기존 anchor 기반 3DGS는 고정 voxelization으로 앵커를 만들어 공간적으로 불균일한 점 분포에 적응하지 못함 / 방법: SfM 점군을 크기가 다른 3D granular ball 단위로 나눠 앵커 위치·스케일을 초기화 / 의미: 압축률과 렌더링 품질 사이 트레이드오프를 개선하는 다음 단계 3DGS 표현 / 근거: 4개 벤치마크에서 초기 앵커 37.1%·최종 앵커 10.0%·저장 용량 9.8% 감소, 품질은 comparable / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.26595" target=_blank>SpatialQ: Understanding 3D Gaussian Splatting Scene Quality via Visual-based MLLM</a></strong> <span class=pill>CV</span><br>
+- 문제: 3DGS 장면 품질은 2D 지각 품질뿐 아니라 공간 구조·뷰 간 일관성에도 좌우되는데 기존 IQA는 2D 단서에만 의존 / 방법: VGGT 기반 인코더에 품질 헤드를 더해 뷰별 특징을 집계하고, 이미지·깊이맵·점군 렌더링·카메라 파라미터를 함께 Qwen 기반 MLLM에 입력 / 의미: 구조 인식형 3DGS 품질 평가 프레임워크 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.26889" target=_blank>StructureGS: Structure-aware Gaussian Splatting for Articulated Object Reconstruction</a></strong> <span class=pill>CV</span><br>
+- 문제: 여러 부위가 움직이는 물체 재구성 시 기하·외형·움직임이 뒤엉켜 부위 경계가 흐려짐 / 방법: 부위별 oriented bounding box로 공간적 응집성과 물리적 접촉 관계를 구조적 손실 함수로 강제 / 의미: 부위 단위로 명확히 분해된 관절체 3D 재구성 / 우선순위: Read
+</div>
+
+<h3>diffusion 모델 추론 시점 조종 (4편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.26237" target=_blank>LumaGuide: Distribution Shaping for Training-Free HDR Generation in Diffusion Models</a></strong> <span class=pill>CV</span><br>
+- 문제: 사전학습 diffusion 모델은 학습 데이터의 통계적 편향 때문에 HDR 콘텐츠 생성이 어려움 / 방법: 모델 파라미터는 그대로 두고 PQ 색공간에서 휘도 분포를 미분 가능한 에너지로 유도해 샘플링 과정만 조종 / 의미: 재학습 없이 하이라이트·그림자 디테일을 함께 보존하는 HDR 생성 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.26715" target=_blank>FreeShadow: Training-Free Shadow Removal via Illumination Transfer and Selective Content Preservation in Diffusion Models</a></strong> <span class=pill>CV</span><br>
+- 문제: 지도학습 기반 그림자 제거는 데이터셋 다양성 부족으로 일반화가 약하고, 제로샷 방법은 테스트 시점 최적화가 오래 걸림 / 방법: self-attention 맵을 재가중치해 비그림자 영역의 조명 정보를 그림자 영역으로 옮기고, 조명과 무관한 고주파 성분은 선택적으로 보존 / 의미: 추가 학습·최적화 없는 그림자 제거 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.26647" target=_blank>Anchoring and Steering Diffusion (AnchorSteer)</a></strong> <span class=pill>CV</span><br>
+- 문제: 복잡한 구성형 프롬프트에서 text-to-image diffusion 모델의 정합도가 떨어짐 / 방법: CLIP 기반 사전으로 초기 노이즈를 텍스트에 맞게 앵커링하고, 생성 중간에 VLM으로 의미 오류를 진단해 국소적으로 재보정 / 의미: 초기화와 디노이징 궤적을 함께 조종하는 추론 시점 정합 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.26203" target=_blank>WildShadowRemover</a></strong> <span class=pill>CV</span><br>
+- 문제: 실사용 환경의 비디오 그림자 제거는 다양한 조명·그림자 형태와 학습 데이터 부족으로 어려움 / 방법: 사전학습 video diffusion 모델을 LoRA로 미세조정하고 디테일 주입 모듈·그림자 마스크 기반 주파수 분해 변조로 텍스처를 보존 / 의미: FreeShadow와 대비되는 "가볍게 미세조정" 접근(위 크로스오버 페어 참고) / 우선순위: Read
+</div>
+
+<h3>계산광학 코어 신호 (3편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/ol.610646" target=_blank>FA-PIE: focus-adaptive ptychographic iterative engine</a></strong> <span class=pill>JNL</span><br>
+- 문제: 초점이 흔들리는 실험 조건에서 기존 ptychographic iterative engine의 위상 복원 정확도가 떨어짐 / 방법: 초점을 적응적으로 재조정하며 반복 복원(초록 미제공, 제목 기준) / 의미: 실제 실험 환경에 더 강건한 Fourier ptychography 반복 알고리즘 / 우선순위: Read(본문 확인 필요)
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1002/lpor.71669" target=_blank>Dielectric Diatomic Metasurface for Simultaneous Continuous Grayscale Nanoprinting and Vectorial Holography</a></strong> <span class=pill>JNL</span><br>
+- 문제: 그레이스케일 나노프린팅과 벡터 홀로그래피를 하나의 메타표면에 동시에 구현하기 어려움 / 방법: 이중 나노기둥으로 임의 편광을 선형 편광으로 변환하면서 독립적으로 전파 위상을 제어 / 의미: 근접장·원거리장 광학 디스플레이를 한 소자로 구현 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1016/j.physleta.2026.132053" target=_blank>Ultrasensitive mid-infrared metasurface sensing governed by quasi-bound states in the continuum</a></strong> <span class=pill>JNL</span><br>
+- 문제: 중적외선 센싱에서 높은 Q factor와 편광 무관성을 동시에 만족하기 어려움 / 방법: quasi-BIC 공진 모드 기반 메타표면 설계(초록 미제공, 제목 기준) / 의미: 초민감 화학·가스 센싱용 계산 이미징 하드웨어 후보 / 우선순위: Read(본문 확인 필요)
+</div>
+
+<h3>적응적 압축센싱 (1편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.26887" target=_blank>Conformalized Rate-Adaptive Sensing</a></strong> <span class=pill>LG</span><br>
+- 문제: 압축센싱 기반 촬영에서 목표 복원 오차를 만족하면서도 측정을 최소화하는 정지 시점을 정하기 어려움 / 방법: 이른 시점의 reconstruction path로 정지 시점을 추정하고 유사 이미지로 conformal calibration / 의미: 통계적으로 보장된 적응적 촬영 정지 기준 / 우선순위: Must-read
+</div>
+
+<h3>기타 계산 이미징 관련 (2편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.26703" target=_blank>Sequence-SOD: Bio-inspired Sequence-aware Spiking ObjectDetection for Event Cameras</a></strong> <span class=pill>CV</span><br>
+- 문제: 기존 SNN object detector는 구간마다 상태를 초기화해 이벤트 스트림의 시간 정보를 충분히 활용하지 못함 / 방법: 여러 시점의 라벨을 포함한 긴 이벤트 시퀀스를 막 전위를 유지하며 순차 처리 / 의미: 이벤트 카메라 기반 검출의 시간 정보 활용 개선 / 근거: Gen1 Automotive Detection Dataset mAP 23.38→26.88 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.26153" target=_blank>$G_2^*$-Net: 히스토병리 이미지 분류를 위한 계층적 그래프 구조 학습</a></strong> <span class=pill>IV</span><br>
+- 문제: 기존 그래프 기반 병리 이미지 분석은 고정·휴리스틱 그래프 구조에 의존해 실제 조직 연결성을 제대로 반영하지 못함 / 방법: 세포 단위·패치 단위 2단계 그래프를 이차 bilevel 최적화로 함께 학습 / 의미: 검증 성능에 맞춰 그래프 연결 구조 자체를 학습하는 병리 이미지 분류 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv 카테고리: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>cs.LG</a> · <a href="https://arxiv.org/list/cs.CV/new" target=_blank>cs.CV</a> · <a href="https://arxiv.org/list/cs.AI/new" target=_blank>cs.AI</a> · <a href="https://arxiv.org/list/eess.IV/new" target=_blank>eess.IV</a> · <a href="https://arxiv.org/list/eess.SP/new" target=_blank>eess.SP</a></li>
+  <li>RSS: <a href="../feed.xml">feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+Imaging Intelligence Daily Briefing · cs.LG · cs.CV · cs.AI · eess.IV · eess.SP 기반 자동 생성 · 입력 출처: arXiv, Crossref, OpenAlex
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+
+</body>
+</html>
