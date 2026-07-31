@@ -1,0 +1,34 @@
+{
+ "date": "2026-07-31",
+ "source_listing_date": "2026-07-31",
+ "source_mode": "new",
+ "daily_new_counts": {
+  "by_cat": {
+   "cs.LG": 196,
+   "cs.CV": 131,
+   "cs.AI": 245,
+   "eess.IV": 7,
+   "eess.SP": 16
+  },
+  "scope": "new+cross; replacements excluded",
+  "journal_count": 436
+ },
+ "totals": {
+  "total_scanned": 1031,
+  "selected": 265
+ },
+ "classified": {
+  "by_bucket": {
+   "Fourier Ptychography/Microscopy": 1,
+   "Lensless/Coded Imaging": 0,
+   "Phase Imaging/Holography": 8,
+   "Meta-Optics/Diffractive": 7,
+   "Light-Field/Novel Sensors": 3,
+   "Tomography/3D Imaging": 48,
+   "Virtual Staining/Pathology": 24,
+   "Reconstruction/Inverse Problems": 26,
+   "Deep Learning Methods": 148
+  }
+ },
+ "note": "2026-07-31(금)은 정상 daily다. 5개 추적 카테고리 arXiv /new listing이 모두 오늘 날짜(Friday, 31 July 2026)를 가리켜 source_mode=new로 확정했다. arXiv new+cross 합계는 595편(cs.LG 196·cs.CV 131·cs.AI 245·eess.IV 7·eess.SP 16)으로 어제(439편)보다 크게 늘었는데, 다섯 카테고리 모두 고르게 늘어난 형태라 parser 오류로 보이지 않는다. 저널(Crossref+OpenAlex) 436건(crossref 434 + openalex 2)을 더한 원천 스캔 1031건이 dedup을 거쳐 924건으로 병합됐고, 이 중 265건(28.7%)이 ROI로 선정됐다 — 어제(29.2%, 223/765)와 비슷한 최근 밴드(25~32%) 안이라 정상 범위다. 오늘 계산광학 코어 4개 버킷(FP·Lensless·Phase·Meta-Optics) 중 Lensless는 다시 0편이고 Meta-Optics 7편은 전부 무선통신/레이더용 메타표면이라 실제 이미징 신호가 없으며, Phase Imaging/Holography 8편 중에서도 실제 계산 이미징 신호는 quantized computer-generated holography와 noise-robust holographic data storage 단 2편뿐이다. 대신 오늘 가장 뚜렷한 신호는 Tomography/3D Imaging(48편) 안에서 두 갈래로 나타났다 — 단일 이미지/텍스트만으로 3D/4D Gaussian Splatting 아바타를 바로 만드는 논문 세 편(4DHumanDiff·SpiD·S-Avatar)과, All-in-one 통합 이미지 복원이 결합 열화 인지·모호성 해소·학습 데이터 없는 최적화로 갈라지는 논문 세 편(CoRE-UIR·DAR-Net·MG-SpaIR, 이 중 CoRE-UIR와 MG-SpaIR는 Deep Learning Methods/Reconstruction 버킷에 걸쳐 있음)이다."
+}

@@ -1,0 +1,37 @@
+{
+ "date": "2026-07-31",
+ "results": [
+  {
+   "benchmark": "All-in-one image restoration (UAV/satellite, MDVD-108K)",
+   "metric": "PSNR / speed / memory vs strongest baseline (BaryIR)",
+   "value": 1.05,
+   "value_str": "avg PSNR +1.05 dB, 11.83x faster inference, 85.3% less peak memory",
+   "paper": "https://arxiv.org/abs/2607.27898",
+   "paper_title": "CoRE-UIR: Prior-guided common and residual experts for efficient all-in-one remote sensing image restoration"
+  },
+  {
+   "benchmark": "All-in-one image restoration (three/five-degradation benchmarks, CDD-11, WeatherBench)",
+   "metric": "avg PSNR gain vs strongest competitor",
+   "value": 0.34,
+   "value_str": "avg PSNR +0.14 dB (3-degradation) / +0.34 dB (5-degradation)",
+   "paper": "https://arxiv.org/abs/2607.28526",
+   "paper_title": "What to Remove, What to Preserve: Dual-Ambiguity Rectification for All-in-One Image Restoration (DAR-Net)"
+  },
+  {
+   "benchmark": "4DGS avatar generation (text-to-4DGS)",
+   "metric": "generation time / inference speedup",
+   "value": 10,
+   "value_str": "consistent 360-degree dynamic human in under 1 minute, >10x inference time reduction vs video-then-fit pipelines",
+   "paper": "https://arxiv.org/abs/2607.27634",
+   "paper_title": "4DHumanDiff: Direct Text-to-4DGS Generation for Consistent 360-Degree Dynamic Humans"
+  },
+  {
+   "benchmark": "4DGS compact format (PLYs / FreeTimeGS baselines)",
+   "metric": "file size reduction",
+   "value": 90,
+   "value_str": "file size reduction >90%, PSNR delta -0.42 to +0.85 dB",
+   "paper": "https://arxiv.org/abs/2607.28049",
+   "paper_title": "TSOG: A Format For Temporally And Spatially Ordered Gaussians"
+  }
+ ]
+}

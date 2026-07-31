@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-07-31</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-07-31 (금요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-07-31 (금요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Friday, 31 July 2026"으로 확인됨</div>
+  <div>🔢 arXiv: cs.LG 196 · cs.CV 131 · cs.AI 245 · eess.IV 7 · eess.SP 16 (합계 595편, new+cross, replacement 제외) — 어제(439편) 대비 크게 늘었지만 다섯 카테고리 모두 고르게 늘어난 형태라 parser 오류로 보이지 않음</div>
+  <div>🔢 병합: arXiv+저널(436건) 병합 스캔 1031건 · dedup 후 924건 · ROI 배정 265건 (28.7%) — 어제(29.2%, 223/765)와 비슷한 최근 밴드(25~32%) 안의 정상 범위</div>
+  <div>⚠️ 오늘은 계산광학 코어(FP·Lensless·Phase·Meta-Optics) 4개 버킷을 통틀어 실제 이미징 신호가 홀로그래피 2편(디스플레이용 quantized CGH, 데이터 저장용 noise-robust holographic storage)뿐이고, 대신 3D Gaussian Splatting 아바타 생성 3편과 all-in-one 이미지 복원 3편이라는 두 개의 뚜렷한 방법론 클러스터가 나왔습니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 계산광학 코어는 여전히 조용했고 실제 신호는 홀로그래피 2편(디스플레이용 quantized CGH, 데이터 저장용 noise-robust holographic storage)뿐이었습니다. 대신 진짜 움직임은 다른 두 갈래에서 보였습니다 — <strong>사람 아바타를 3D/4D Gaussian Splatting으로 만들 때 "영상을 찍고 나서 3D로 맞추는" 두 단계 대신 텍스트나 이미지 한 장에서 곧바로 3D 표현을 생성하는 방식이 세 편 동시에 등장</strong>했고(4DHumanDiff·SpiD·S-Avatar), <strong>All-in-one 통합 이미지 복원이 "더 많은 열화를 한 모델에 넣기" 경쟁을 넘어 열화-콘텐츠 분리와 학습 데이터 없는 최적화라는 다음 단계 문제로 갈라지기 시작</strong>했습니다(CoRE-UIR·DAR-Net·MG-SpaIR). 특히 CoRE-UIR(학습 기반)와 MG-SpaIR(학습 데이터 없는 최적화)가 같은 문제를 정반대 전략으로 푼다는 점이, 우리 랩이 새 촬영 세팅마다 데이터를 모을지 물리 기반 최적화를 쓸지 고를 때 참고할 만한 대비를 보여줍니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(7/31, 금)은 arXiv /new에 cs.LG 196편, cs.CV 131편, cs.AI 245편, eess.IV 7편, eess.SP 16편으로 총 595편이 잡혔습니다. 어제(439편)보다 크게 늘었지만 다섯 카테고리 모두 고르게 늘어난 형태라 parser 문제로 보이지 않습니다. 저널 436건(Crossref 434 + OpenAlex 2)을 더한 원천 스캔 1031건이 dedup을 거쳐 924건으로 병합됐고, 이 중 265건(28.7%)이 ROI로 선정됐습니다 — 최근 밴드(25~32%) 안이라 정상 범위입니다. 오늘 가장 눈에 띄는 특징은 계산광학 코어 4개 버킷(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics) 전체를 통틀어 실제 이미징 신호가 홀로그래피 2편뿐이라는 점입니다 — Lensless는 0편, Meta-Optics 7편은 전부 무선통신 RIS·레이더 재밍용이라 이미징과 무관하고, Phase Imaging/Holography 8편 중에서도 실제 신호는 quantized computer-generated holography(디스플레이용)와 noise-robust holographic data storage(데이터 저장용) 단 두 편뿐입니다.</p>
+<p>대신 오늘 진짜 움직임은 두 갈래 방법론에서 보였습니다. 첫째는 사람 아바타를 3D/4D Gaussian Splatting(3DGS/4DGS, 장면을 수많은 반투명 타원체로 표현해 빠르게 렌더링하는 방식)으로 만드는 방식입니다. 지금까지는 보통 영상을 여러 장 찍거나 만든 다음 그 영상에 맞춰 3D 표현을 다시 맞추는 두 단계 과정을 거쳤는데, 오늘 나온 세 편은 이 중간 단계를 건너뛰고 텍스트나 이미지 한 장에서 곧바로 3D 표현을 만들어냅니다. 4DHumanDiff는 텍스트 프롬프트만으로 360도 전신 동작을 갖춘 4DGS를 직접 생성해 추론 속도를 10배 이상 줄였고, SpiD(Split and Drive)는 얼굴 한 장으로 애니메이션 가능한 머리 아바타를 만들 때 표정 추적 지연을 모델 안으로 흡수해 속도와 표현력을 동시에 높였으며, S-Avatar는 diffusion 모델로 얼굴 한 장에서 고해상도 3DGS를 바로 합성한 뒤 표준 얼굴 모델(FLAME)과 정렬해 시점이 달라져도 얼굴 형태가 흐트러지지 않게 만듭니다. 둘째는 All-in-one 통합 이미지 복원입니다. CoRE-UIR는 위성·드론 영상의 여러 기상·조명 열화를 공통 전문가와 열화별 저용량 전문가로 나눠 처리해 기존 최강 baseline 대비 속도 11.83배·메모리 85.3% 절감을 보고했고, DAR-Net은 "무엇을 지우고 무엇을 남길지" 헷갈리는 문제를 채널 방향·공간 방향 모호성으로 나눠 바로잡으며, MG-SpaIR는 아예 학습 데이터 없이 손상된 이미지 한 장만 보고 implicit neural representation으로 점진적으로 복원합니다. 특히 CoRE-UIR(학습 기반)와 MG-SpaIR(학습 데이터 없는 최적화)가 같은 all-in-one 복원 문제를 정반대 전략으로 푼다는 대비가 눈에 띕니다.</p>
+<p>다음 관찰 포인트는 (1) 오늘 처음 뚜렷해진 "적은 입력에서 3DGS/4DGS 직접 생성" 흐름이 전신·머리를 넘어 다른 대상(손, 물체)까지 번지는지, (2) All-in-one 복원의 열화-콘텐츠 분리·학습 데이터 없는 최적화가 다음 주에도 계속 다른 팀에서 재현되는지, (3) 계산광학 코어의 침묵이 이번 주 내내 이어지는 하루 단위 등록량 패턴인지 아니면 우연인지입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(7/30, 목)는 3D Gaussian Splatting이 압축·품질평가·관절체 분해라는 실용 병목으로 갈라졌고, diffusion 모델을 재학습 없이 추론 시점에서만 조종하는 연구가 그림자 제거·HDR·텍스트 정합 세 응용에서 동시에 나왔으며, 계산광학 코어는 FA-PIE·메타표면 홀로그래피·중적외선 메타표면 센싱 세 편으로 근근이 신호를 냈습니다. 오늘은 3DGS 관련 관심이 "압축·평가·분해"에서 "적은 입력에서 곧바로 생성하기(아바타)"로 초점이 옮겨갔고, diffusion 모델을 다루는 방식도 "재학습 없이 조종"에서 "학습 기반과 학습 데이터 없는 방식이 같은 복원 문제를 두고 경쟁"하는 구도로 바뀌었습니다. 계산광학 코어는 어제 3편이었던 신호가 오늘 2편으로 더 줄었고, 그마저도 둘 다 초록이 없어 제목 기준 판단에 그쳤습니다. 어제·오늘 이틀 연속으로 계산광학 코어 자체는 소수 신호(2~3편)에 머물러, 이 랩의 핵심 관심사가 매일 등장하기보다는 간헐적으로 나타난다는 패턴이 이어지고 있습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>단일 이미지·텍스트 한 장만으로 3D/4D Gaussian Splatting 아바타를 바로 만드는 흐름</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.27634" target=_blank>4DHumanDiff</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.28032" target=_blank>SpiD (Split and Drive)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.28164" target=_blank>S-Avatar</a> <span class=pill>CV</span>
+  </td>
+  <td>지금까지 사람 모습을 3DGS로 움직이게 만들려면 보통 영상을 먼저 찍거나 만든 다음, 그 영상에 맞춰 3D 표현을 다시 맞추는 두 단계 과정을 거쳤습니다. 오늘 나온 세 편은 이 중간 단계를 건너뛰고 텍스트나 이미지 한 장에서 곧바로 3D/4D 표현을 만들어냅니다. 4DHumanDiff는 텍스트만으로 360도 전신 동작을 갖춘 4DGS를 직접 생성해, 영상을 먼저 만들고 3D로 맞추던 기존 방식보다 추론 속도를 10배 이상 줄였습니다. SpiD는 얼굴 한 장으로 애니메이션 가능한 머리 아바타를 만들 때 표정 추적 파이프라인의 지연을 모델 안으로 흡수하고 얼굴 부위별로 Gaussian 그룹을 나눠 표현력과 속도를 함께 높였습니다. S-Avatar는 diffusion 모델로 얼굴 한 장에서 고해상도 3DGS를 바로 합성한 뒤 표준 얼굴 모델(FLAME)과 정렬해 시점이 바뀌어도 얼굴 형태가 흐트러지지 않게 만듭니다. 세 편을 같이 보면, 아바타 생성의 병목이 "어떻게 3D로 재구성할까"에서 "입력 한 장에서 3D 표현을 얼마나 빠르고 일관되게 바로 뽑아낼까"로 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 3편이 같은 날 나왔고 "입력 최소화 + 3DGS/4DGS 직접 생성"이라는 접근을 공유하지만, 전신(4DHumanDiff)과 얼굴만(SpiD·S-Avatar)으로 대상 범위가 갈려 같은 벤치마크로 수렴하지 않음</small></td>
+  <td>4DHumanDiff의 텍스트-to-4DGS 직접 생성 구조와 S-Avatar의 diffusion 기반 3DGS 초기 합성 모듈을 비교해, 우리 랩의 인체/조직 3D 재구성 파이프라인에서 "촬영 후 재구성" 대신 "적은 입력에서 직접 생성"이 어디까지 대체 가능한지 확인</td>
+</tr>
+<tr>
+  <td><strong>All-in-one 통합 이미지 복원이 열화-콘텐츠 분리·학습 데이터 없는 최적화로 갈라짐</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.27898" target=_blank>CoRE-UIR</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2607.28526" target=_blank>DAR-Net</a> <span class=pill>CV</span><br>
+    <a href="https://doi.org/10.1007/s10851-026-01329-2" target=_blank>MG-SpaIR</a> <span class=pill>JNL</span>
+  </td>
+  <td>All-in-one 이미지 복원은 흐림·노이즈·저조도 같은 서로 다른 열화를 하나의 모델로 한꺼번에 처리하려는 흐름인데, 지금까지는 여러 열화 조건을 하나의 공유 표현 공간에 욱여넣다 보니 "무엇이 열화 때문에 생긴 것이고 무엇이 원래 장면 내용인지"가 뒤섞이는 문제가 있었습니다. CoRE-UIR는 위성·드론 영상에서 여러 기상·조명 열화가 겹치는 상황을, 열화 종류와 무관하게 쓰는 공통 전문가와 열화별로만 보정하는 저용량 전문가로 나눠 처리해 기존 최강 baseline 대비 속도 11.83배·메모리 85.3%를 줄였습니다. DAR-Net은 "무엇을 지우고 무엇을 남길지"가 헷갈리는 현상을 채널 방향의 의미적 모호성과 공간 방향의 복원 반응 모호성으로 정확히 나눠 각각 다른 모듈로 바로잡습니다. MG-SpaIR는 아예 학습 데이터 없이 손상된 이미지 한 장만 보고 implicit neural representation으로 점진적으로 복원해, 데이터를 모으기 어려운 새 촬영 상황에도 바로 쓸 수 있습니다. 세 편을 같이 보면, all-in-one 복원의 경쟁 축이 "더 많은 열화를 한 모델에 넣기"가 아니라 "열화 정보와 장면 정보를 얼마나 깔끔하게 분리하고, 학습 데이터 없이도 얼마나 안정적으로 복원하는가"로 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 3편(2편은 정량적 PSNR 개선 수치 보고)이 all-in-one 복원이라는 같은 문제 설정을 공유하지만, MG-SpaIR는 학습 데이터 없는 방식이라 다른 두 편과 직접 비교되지는 않음</small></td>
+  <td>MG-SpaIR의 multi-grade sparse-guided INR 복원 절차를 우리 랩의 학습 데이터가 부족한 촬영 세팅(새 광학계 프로토타입 등)에 적용해보고, DAR-Net의 semantic/spatial ambiguity rectification 아이디어를 우리 복원 파이프라인의 아티팩트-콘텐츠 분리 단계에 이식</td>
+</tr>
+<tr>
+  <td><strong>계산광학 핵심 신호는 오늘도 극소: 홀로그래피 2편이 사실상 전부</strong><span class=pill>WATCH</span></td>
+  <td>
+    <a href="https://doi.org/10.1364/ol.608138" target=_blank>Statistically constrained optimization for quantized CGH</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/ol.607861" target=_blank>Noise-robust holographic data storage (INR)</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 계산광학 코어 4개 버킷 중 Lensless는 완전히 비었고, Meta-Optics 7편은 전부 무선통신 RIS·레이더 재밍용이라 이미징과 무관합니다. Phase Imaging/Holography 8편 중에서도 실제 계산 이미징 신호는 이 두 편뿐입니다. Statistically constrained optimization for quantized CGH는 디스플레이용 컴퓨터 생성 홀로그램을 낮은 비트수로 표현해도 화질이 무너지지 않도록 최적화에 통계적 제약을 거는 연구이고, Noise-robust holographic data storage는 홀로그래픽 매체에 데이터를 저장할 때 생기는 잡음에 강건하도록 implicit neural representation을 결합한 연구입니다. 둘 다 초록이 없어 제목 기준 판단이며, 응용은 디스플레이 대 데이터 저장으로 서로 다릅니다. 두 편의 공통점은 하나의 흐름으로 수렴한다기보다, 오늘 계산광학 코어에서 진짜 신호가 이 두 편 말고는 사실상 없었다는 사실 자체입니다.</td>
+  <td>Low<br><small>2편뿐이고 둘 다 초록이 없어 제목만으로 배정했으며, 응용(디스플레이 vs 데이터 저장)도 달라 하나의 연구 질문으로 수렴하지 않음</small></td>
+  <td>두 논문 모두 본문을 확인해 quantization 제약 방식과 INR 기반 잡음 강건화 방식이 우리 랩의 CGH/홀로그래픽 저장 실험에 바로 적용 가능한 수준인지부터 판단</td>
+</tr>
+</tbody>
+</table>
+
+<p><small>⚠️ Domain Watch Lens 메모 — 오늘은 3개 클러스터로 표를 마쳤습니다(보조 클러스터 근거 부족). Lensless/Coded Imaging은 오늘 0편입니다. Light-Field/Novel Sensors 3편 중 실제 신호는 이벤트 카메라로 비디오 압축의 모션 추정을 보완하는 ENCORE 1편뿐이라 클러스터를 만들 근거가 없고, 아래 버킷별 주요 논문에서 관찰 중 항목으로 다뤘습니다. Virtual Staining/Pathology 24편 중 실제 계산 병리 신호는 핵/조직 분할 논문 SAFViT 1편뿐입니다.</small></p>
+
+<h2>📐 arXiv vs 저널 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 4DHumanDiff·SpiD·S-Avatar(3DGS/4DGS 아바타 직접 생성), CoRE-UIR·DAR-Net(all-in-one 복원 학습 기반), TSOG·Query-Efficient Stochastic Volume Rendering(시간에 따라 변하는 볼륨/4D 표현 압축·렌더링), ENCORE(이벤트 카메라 기반 비디오 압축)</li>
+  <li><strong>저널 전용</strong>: quantized computer-generated holography·noise-robust holographic data storage(계산광학 코어 신호 2편), MG-SpaIR(학습 데이터 없는 INR 복원), Physics-Informed Deep Optics(색수차 기반 단안 깊이 추정), SURE-Net(전기저항 단층촬영 구조보존 복원)이 오늘 저널 쪽의 핵심 신호였습니다.</li>
+  <li><strong>공통 키워드</strong>: holography(계산 이미징 홀로그래피 2편 vs 없음 — 오늘은 저널 쪽에만 홀로그래피 신호 존재), metasurface(이미징용 메타표면 0편 vs 무선통신 RIS/6G·레이더 재밍용 메타표면 7편 전부 — 오늘은 이미징 응용이 하나도 없음), reconstruction/restoration(3DGS 아바타·all-in-one 복원 방법론 vs 정형외과/치과 CT·PET 형태 계측 임상 사례 — 같은 단어가 다른 임상 맥락에서 반복)</li>
+  <li><strong>특징</strong>: 오늘은 arXiv 쪽이 3DGS 아바타 생성·all-in-one 복원 학습 기반·시간 가변 볼륨 렌더링이라는 세 방법론 흐름을 전부 주도했고, 저널 쪽은 계산광학 코어의 유일한 신호원이자 학습 데이터 없는 복원(MG-SpaIR) 한 편을 냈습니다(어제는 저널이 계산광학 코어 신호 3편을 모두 냈던 것과 비슷한 패턴이 이어짐).</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 단일 이미지·텍스트 한 장만으로 3D/4D Gaussian Splatting 아바타를 바로 만드는 흐름</h3>
+  <p>4DHumanDiff는 텍스트만으로 360도 전신 동작을 갖춘 4DGS를 직접 생성해 추론 시간을 10배 이상 줄였습니다. SpiD는 얼굴 한 장으로 애니메이션 가능한 머리 아바타를 만들 때 표정 추적 지연을 모델 안으로 흡수했습니다. S-Avatar는 diffusion 모델로 얼굴 한 장에서 고해상도 3DGS를 바로 합성한 뒤 표준 얼굴 모델(FLAME)로 시점 일관성을 지켰습니다. 세 편 모두 "촬영 후 재구성"보다 "적은 입력에서 직접 생성"을 겨냥합니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 저자군 3편이 같은 날 나왔고 입력 최소화 접근을 공유하지만, 전신과 얼굴로 대상 범위가 갈려 같은 벤치마크로 수렴하지 않음</p>
+</div>
+
+<div class=ins>
+  <h3>2. All-in-one 이미지 복원이 열화-콘텐츠 분리와 학습 데이터 없는 최적화라는 다음 단계 문제로 갈라짐</h3>
+  <p>CoRE-UIR는 공통 전문가와 열화별 저용량 전문가를 나눠 기존 최강 baseline 대비 속도 11.83배·메모리 85.3%를 줄였습니다. DAR-Net은 채널 방향 의미적 모호성과 공간 방향 복원 반응 모호성을 나눠 바로잡습니다. MG-SpaIR는 학습 데이터 없이 손상된 이미지 한 장만으로 implicit neural representation 기반 점진적 복원을 수행합니다. 셋 다 "더 많은 열화를 한 모델에 넣기"보다 열화 정보와 장면 정보를 깔끔히 분리하는 쪽을 겨냥합니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편이 all-in-one 복원이라는 같은 문제 설정을 공유하지만 MG-SpaIR는 학습 데이터 없는 방식이라 다른 두 편과 직접 비교되지는 않음</p>
+</div>
+
+<div class=ins>
+  <h3>3. 계산광학 핵심 신호는 오늘도 극소: 홀로그래피 2편이 사실상 전부 (관찰 중)</h3>
+  <p>Statistically constrained optimization for quantized CGH는 디스플레이용 컴퓨터 생성 홀로그램을 낮은 비트수로도 화질 저하 없이 표현하려는 최적화이고, Noise-robust holographic data storage는 홀로그래픽 데이터 저장의 잡음 강건성을 implicit neural representation으로 높이려는 연구입니다. 두 편뿐이고 초록이 없어 제목 기준 판단이라 클러스터라기보다 오늘 계산광학 코어의 신호 부재 자체를 보여주는 관찰 항목으로 둡니다.</p>
+  <p class=conf-note>Confidence: Low — 2편뿐이고 초록 미제공, 응용(디스플레이 vs 데이터 저장)도 달라 본문 확인 필요</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. 4DHumanDiff·S-Avatar의 "적은 입력에서 3DGS 직접 생성" 접근을 우리 3D 재구성 파이프라인에 시험</h3>
+  <p>텍스트 또는 이미지 한 장에서 3DGS/4DGS를 직접 생성하는 방식이, 우리 랩의 다중 촬영 기반 3D 재구성 세팅에서 초기 형상 추정 단계를 얼마나 대체할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>4DHumanDiff의 diffusion 기반 text-to-4DGS 생성 파이프라인과 S-Avatar의 diffusion 기반 3DGS 초기 합성 모듈 재현</li>
+    <li>공통 benchmark: 우리 랩이 보유한 다중 촬영 기반 3D 재구성 데이터셋(인체/조직 스캔)</li>
+    <li>비교축: 기존 촬영-후-재구성 파이프라인 vs 적은 입력 직접 생성의 초기 형상 정확도·처리 시간</li>
+    <li>실패해도 남는 결과: 우리 세팅에서 direct-generation 접근이 대체 가능한 조건(대상 형태 복잡도 등)에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. CoRE-UIR·DAR-Net의 열화-콘텐츠 분리 모듈을 우리 all-in-one 복원 실험에 이식</h3>
+  <p>공통/잔차 전문가 분리(CoRE-UIR)와 채널·공간 모호성 분리(DAR-Net) 방식이, 우리 계산 이미징 파이프라인에서 여러 열화가 동시에 발생하는 촬영 조건의 복원 품질과 속도를 함께 개선하는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>CoRE-UIR의 Common-and-Residual Expert Block·Degradation Prior Embedding 절차 재현</li>
+    <li>공통 benchmark: 우리 랩의 복합 열화(흐림+노이즈+저조도) 촬영 데이터셋</li>
+    <li>비교축: 기존 단일 열화 전용 복원 모델 vs all-in-one 통합 모델의 PSNR·추론 속도·메모리</li>
+    <li>실패해도 남는 결과: 우리 열화 조합에서 공통/잔차 전문가 분리가 유효한 한계에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. MG-SpaIR의 학습 데이터 없는 INR 복원을 새 광학계 프로토타입 촬영 데이터에 적용</h3>
+  <p>multi-grade sparse-guided implicit neural representation 방식이, 학습 데이터를 아직 충분히 모으지 못한 우리 랩의 새 광학계 프로토타입 촬영 결과에서도 안정적으로 복원되는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>MG-SpaIR의 multi-grade residual hierarchy·sparse proximal regularization 절차 재현</li>
+    <li>공통 benchmark: 우리 랩의 새 광학계 프로토타입 촬영 데이터(혼합 열화: 흐림+다운샘플링+노이즈+결측 픽셀)</li>
+    <li>비교축: Deep Image Prior 등 기존 학습 데이터 없는 baseline vs MG-SpaIR의 복원 품질·수렴 안정성</li>
+    <li>실패해도 남는 결과: 우리 세팅에서 학습 데이터 없는 INR 복원이 통하는 열화 조합에 대한 baseline</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(48편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:17%"></span></span><span class=n>8편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:15%"></span></span><span class=n>7편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:6%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>48편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:50%"></span></span><span class=n>24편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:54%"></span></span><span class=n>26편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>148편</span></div>
+
+<p><small>⚠️ 참고 — Domain Watch Lens: Fourier Ptychography/Microscopy 1편은 실제로는 자율 수중 로봇의 synthetic aperture sonar 해저 조사 논문으로 "aperture synthesis" 키워드 우연 매칭입니다(FP와 무관). Lensless/Coded Imaging은 오늘 0편입니다. Phase Imaging/Holography 8편 중 실제 계산 이미징 신호는 quantized CGH·noise-robust holographic storage 2편뿐이고, 나머지 6편은 테라헤르츠 메타표면 파장 조작·X선 위상 대조 영상·HUD 홀로그래픽 광학소자 등으로 응용이 갈립니다. Meta-Optics/Diffractive 7편은 전부 무선통신 RIS/6G·레이더 재밍·에너지 하베스팅용 메타표면으로 이미징 응용이 없습니다. Light-Field/Novel Sensors 3편 중 실제 신호는 이벤트 카메라 기반 비디오 압축 ENCORE 1편이고 나머지 2편(나노입자 뉴로모픽 컴퓨팅·SNN sponge attack)은 광필드/이벤트 이미징과 거리가 있습니다. Virtual Staining/Pathology 24편 중 실제 계산 병리 신호는 핵 분할 SAFViT 1편이고 나머지는 금융·부동산·해양생물·치과 임상 프로토콜의 "staining"·"label-free" 키워드 우연 매칭입니다. Tomography/3D Imaging 48편 중 실질 신호는 3DGS 아바타 생성 클러스터 3편과 시간 가변 볼륨/4D 포맷 2편이고 나머지는 대부분 임상 CT/OCT/PET 진단 사례 보고입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편 중 관련 0편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/rob.70310" target=_blank>Dumpsite Seabed Characterization (San Pedro Basin AUV)</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: FP 신호가 아니라 자율 수중 로봇의 synthetic aperture sonar 해저 조사 논문입니다. "aperture synthesis" 키워드 우연 매칭으로, FP와 무관합니다 / 우선순위: Skim-only(무관)
+</div>
+
+<h3>Phase Imaging/Holography (8편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.608138" target=_blank>Statistically constrained optimization for quantized CGH</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 오늘의 대표 클러스터(계산광학 코어 유일 신호) — 위 클러스터 표 참고 / 우선순위: Read(본문 확인 필요, 초록 미제공)
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.607861" target=_blank>Noise-robust holographic data storage with implicit neural representation</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 오늘의 대표 클러스터(계산광학 코어 유일 신호) — 위 클러스터 표 참고. 나머지 6편은 테라헤르츠 메타표면·X선 위상 대조·HUD 홀로그래픽 광학소자 등으로 응용이 갈립니다 / 우선순위: Read(본문 확인 필요, 초록 미제공)
+</div>
+
+<h3>Meta-Optics/Diffractive (7편 중 관련 0편)</h3>
+<div class=roi-item>
+  <strong>무선통신·레이더용 메타표면 7편</strong> <span class=pill>JNL</span> <span class=pill>SP</span><br>
+  왜 주요: 오늘은 RIS 무선망 설계, 위상변화 흡수체, RF 에너지 하베스팅 rectenna, 테라헤르츠 고Q 공진, 편광변환 메타표면 등 전부 통신·레이더 응용이라 계산 이미징과 무관합니다 / 우선순위: Skim-only(전부 무관)
+</div>
+
+<h3>Light-Field/Novel Sensors (3편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.28020" target=_blank>ENCORE</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 이벤트 카메라가 RGB 프레임 사이의 미세한 밝기 변화를 비동기로 포착해, 빠른 움직임·블러·저조도 상황에서 기존 학습 기반 비디오 압축의 모션 추정이 흔들리는 문제를 보완합니다. 나머지 2편(나노입자 뉴로모픽 컴퓨팅·SNN sponge attack)은 광필드/이벤트 이미징과 거리가 있어 관찰 중으로 둡니다 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging (48편 중 관련 6편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.27634" target=_blank>4DHumanDiff</a> · <a href="https://arxiv.org/abs/2607.28032" target=_blank>SpiD</a> · <a href="https://arxiv.org/abs/2607.28164" target=_blank>S-Avatar</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(3DGS/4DGS 아바타 직접 생성) — 위 클러스터 표 참고 / 우선순위: Must-read(4DHumanDiff) / Read(나머지 2편)
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.28049" target=_blank>TSOG</a> · <a href="https://arxiv.org/abs/2607.28047" target=_blank>Query-Efficient Stochastic Volume Rendering</a></strong> <span class=pill>IV</span> <span class=pill>LG</span><br>
+  왜 주요: 시간에 따라 변하는 4DGS·볼륨 데이터를 효율적으로 저장·렌더링하는 포맷/엔진 연구로, TSOG는 4DGS 파일 크기를 90% 이상 줄이고 Query-Efficient 프레임워크는 동적 CT 같은 time-varying INR을 RTX 4090에서 초당 30~40프레임으로 렌더링합니다. 2편뿐이라 클러스터로 올리지 않고 관찰 중으로 둡니다. 나머지 39편은 대부분 임상 CT/OCT/PET 진단 사례 보고입니다 / 우선순위: Read
+</div>
+
+<h3>Virtual Staining/Pathology (24편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.27835" target=_blank>SAFViT</a></strong> <span class=pill>CV</span><br>
+  왜 주요: encoder-decoder 구조의 skip connection이 모든 위치를 동등하게 취급해 중복·상충 정보가 decoder로 전달되는 문제를, 공간 attention 기반 게이팅으로 걸러내는 핵 분할·분류 방법입니다. 나머지 23편은 금융·부동산·해양생물·치과 임상 프로토콜의 "staining"·"label-free" 키워드 우연 매칭입니다 / 우선순위: Read
+</div>
+
+<h3>Reconstruction/Inverse Problems (26편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.608898" target=_blank>Physics-Informed Deep Optics</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 렌즈의 색수차(파장별로 초점이 어긋나는 현상)를 오히려 깊이 단서로 활용해 단안 카메라로 깊이를 추정하는 physics-informed 방법입니다 / 우선순위: Read(본문 확인 필요, 초록 미제공)
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/1361-6501/ae92a3" target=_blank>SURE-Net (전기저항 단층촬영)</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 전극에서 측정한 전압만으로 내부 전도도 분포를 복원하는 전기저항 단층촬영(ERT)의 불안정한 역문제를, 공간적으로 업샘플링된 residual encoder 구조로 구조 보존 복원을 개선합니다 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.28487" target=_blank>AuricularWorld</a> · <a href="https://arxiv.org/abs/2607.27741" target=_blank>Three-Photon Bayesian Imaging of Ortho-Positronium</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 각각 CT에서 귀 연골 구조를 world-model 기반으로 미세 분할하는 연구와, PET에서 3광자 붕괴 채널의 추가 정보를 베이지안 방식으로 활용하는 연구입니다. 둘 다 단발 논문이라 클러스터로 묶지 않았습니다. 나머지 22편은 대부분 world model·RL·LLM 등 계산 이미징과 무관한 도메인에 "reconstruction"·"physics-informed" 키워드가 우연 매칭된 사례입니다 / 우선순위: Read
+</div>
+
+<h3>Deep Learning Methods — 계산 이미징 관련 소수 (148편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2607.27898" target=_blank>CoRE-UIR</a> · <a href="https://arxiv.org/abs/2607.28526" target=_blank>DAR-Net</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(all-in-one 이미지 복원) — 위 클러스터 표 참고 / 우선순위: Must-read(둘 다)
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<ul>
+  <li><strong>CoRE-UIR (all-in-one 원격탐사 이미지 복원)</strong> — 최강 baseline(BaryIR) 대비 평균 PSNR +1.05dB, 추론 속도 11.83배, peak 메모리 85.3% 감소</li>
+  <li><strong>DAR-Net (all-in-one 이미지 복원)</strong> — 최강 경쟁 모델 대비 평균 PSNR +0.14dB(3종 열화 설정) / +0.34dB(5종 열화 설정), CDD-11·WeatherBench에서도 우수</li>
+  <li><strong>4DHumanDiff (텍스트-to-4DGS 아바타 생성)</strong> — 1분 이내 360도 동적 휴먼 에셋 생성, 영상 선생성 후 재구성 방식 대비 추론 시간 10배 이상 단축</li>
+  <li><strong>TSOG (4DGS 압축 포맷)</strong> — PLYs·FreeTimeGS 대비 파일 크기 90% 이상 감소, PSNR 변화폭 -0.42~+0.85dB</li>
+</ul>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>오늘 all-in-one 이미지 복원 논문 두 편이 정반대 전략을 씁니다. CoRE-UIR는 MDVD-108K라는 대규모 UAV 복원 데이터셋을 새로 구축하고, 공통 전문가와 열화별 저용량 전문가를 학습시켜 위성·드론 영상의 복합 열화를 처리합니다. 반면 MG-SpaIR는 학습 데이터를 전혀 쓰지 않고, 손상된 이미지 한 장만으로 implicit neural representation을 점진적으로 최적화해 같은 종류의 문제(흐림·다운샘플링·노이즈·결측 픽셀이 섞인 복원)를 풉니다. 같은 문제(다중 열화 이미지 복원)를 같은 최근 도구(신경망 기반 복원)로 풀면서도 한쪽은 "대규모 데이터로 미리 배운다"를, 다른 한쪽은 "그 이미지 하나만 보고 그 자리에서 최적화한다"를 선택한 셈입니다. 이 대비가 흥미로운 이유는, 계산 이미징 파이프라인에서도 새 촬영 세팅마다 매번 데이터를 모아 학습시킬지, 아니면 물리 기반 최적화로 그 자리에서 복원할지가 실제로 데이터 확보 비용과 복원 성능 사이의 선택지가 될 수 있다는 걸 보여주기 때문입니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] 4DHumanDiff: Direct Text-to-4DGS Generation for Consistent 360-Degree Dynamic Humans — arXiv cs.CV</h3>
+  <div class=tag>[방법전환] [스케일업]</div>
+  <p><strong>왜 A급인가:</strong> 텍스트만으로 360도로 움직이는 동적 사람을 만들려는 시도는 지금까지 보통 두 단계를 거쳤습니다 — 먼저 텍스트로 단안 또는 다시점 영상을 생성한 다음, 그 영상에 맞춰 4D 표현(3D Gaussian Splatting에 시간축을 더한 4DGS)을 다시 맞추는 방식입니다. 문제는 이 과정이 비용이 크고, 영상 생성 단계의 오차가 그대로 기하학적 불완전성이나 시점 간 불일치로 이어진다는 점입니다. 이 논문은 영상을 거치지 않고, diffusion 모델이 4DGS라는 구조화된 4D 표현 공간 자체를 텍스트로부터 곧바로 생성하도록 end-to-end로 학습시킵니다. 시간에 따른 움직임을 인식하는 3D U-Net 백본에 temporal attention을 결합해 동작을 함께 생성하고, 6만 개의 고품질 text-to-4DGS 쌍으로 이루어진 대규모 데이터셋을 새로 구축했습니다. 우리 랩이 다루는 3D/4D 재구성 파이프라인의 관점에서 보면, "촬영하고 나서 재구성한다"는 전제 자체를 건너뛸 수 있는 사례를 보여준다는 점에서 파이프라인 설계에 참고할 만합니다.</p>
+  <p><strong>핵심:</strong> 2D 정규화와 학습 없는(training-free) 4D 보간 기법을 함께 도입해 렌더링 품질과 동작의 매끄러움을 개선했고, 실험에서 1분 이내에 일관된 360도 동적 사람 에셋을 생성하며 시간적·다시점 일관성이 기존 방식보다 좋아졌고, 추론 시간을 10배 이상 줄였다고 보고합니다.</p>
+  <p><strong>주의:</strong> abstract 기준으로는 어떤 정량 지표(FID, 다시점 일관성 점수 등)로 "더 좋다"를 측정했는지, 6만 쌍 데이터셋의 다양성(체형·의상·동작 범위)이 얼마나 되는지가 나오지 않아 본문 확인이 필요합니다. 텍스트 프롬프트가 구체적인 물리 동작(예: 특정 스포츠 동작)을 지시할 때도 견고한지는 별도 검증이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] MG-SpaIR: Multi-Grade Sparse-Guided Implicit Representation for Training-Data-Free Image Restoration — Journal of Mathematical Imaging and Vision</h3>
+  <div class=tag>[방법전환] [위험보류]</div>
+  <p><strong>왜 A급인가:</strong> 대부분의 딥러닝 기반 이미지 복원 방법은 대량의 깨끗한/손상된 이미지 쌍으로 미리 학습을 해야 하는데, 우리 랩처럼 새로운 광학계 프로토타입을 시험할 때는 이런 학습 데이터가 애초에 존재하지 않는 경우가 많습니다. 이 논문은 학습 데이터 없이, 흐림·다운샘플링·노이즈·결측 픽셀이 뒤섞인 손상 이미지 단 한 장만 보고 implicit neural representation(좌표를 입력하면 픽셀값을 내놓는 신경망)으로 복원합니다. 핵심 아이디어는 낮은 공간 주파수에서 높은 공간 주파수로 점진적으로 정교화하는 multi-grade residual hierarchy와, 고해상도 영역에 직접 거는 명시적 sparse proximal 정규화(가짜 고주파 패턴을 억제하면서 실제 선명한 구조는 보존)입니다. 우리 랩이 학습 데이터를 아직 갖추지 못한 새 촬영 세팅에서 즉시 시험해볼 수 있는 대안이라는 점에서 실용적 가치가 큽니다.</p>
+  <p><strong>핵심:</strong> multi-grade proximal alternating 방식으로 최적화를 풀고, 표준 정규성 조건 아래 수렴성을 이론적으로 보였으며, 혼합 열화 벤치마크 실험에서 Deep Image Prior 같은 강한 학습 데이터 없는 baseline보다 일관되게 나은 성능을 보고합니다.</p>
+  <p><strong>주의:</strong> abstract 기준으로는 정확히 어떤 데이터셋과 어떤 열화 강도 조합으로 실험했는지, Deep Image Prior 대비 구체적인 PSNR/SSIM 격차가 몇인지가 나오지 않아 본문 확인이 필요합니다. 학습 기반 방법(CoRE-UIR·DAR-Net) 대비 절대적인 복원 품질 격차와 처리 시간도 검증이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 계산광학 코어 신호 2편(quantized CGH·noise-robust holographic storage)이 모두 초록 미제공 저널 항목이라 제목만으로 클러스터에 배정했습니다. 실제 방법론 세부사항은 본문 확인 전까지 잠정적입니다.</p>
+  <p>[Claim risk] 3DGS 아바타 클러스터의 SpiD·S-Avatar는 abstract에 "state-of-the-art 대비 강력한 성능" 주장만 있고 구체적 정량 비교 수치(PSNR/FID 격차 등)가 없어 본문 확인이 필요합니다.</p>
+  <p>[Metric risk] 오늘 ROI 선정 비율(28.7%)이 여전히 목표치(40%)를 밑돌지만 최근 며칠(25~32%) 밴드 안에 있어 이 repo의 구조적 특성(계산광학 코어가 원래 arXiv/저널 등록량 대비 소수)으로 보이며, parser 오류로 판단하지 않았습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Baseline risk] MG-SpaIR는 abstract에서 Deep Image Prior를 "consistently outperforms"라고만 언급해, 구체적 격차 수치는 본문 확인이 필요합니다.</p>
+  <p>[Claim risk] quantized CGH·noise-robust holographic storage 두 편 모두 초록이 제공되지 않아, 제목에서 유추한 방법론 설명이 본문과 다를 수 있습니다.</p>
+  <p>[Deployment risk] 4DHumanDiff는 대규모(6만 쌍) 자체 구축 데이터셋에 의존해 학습되므로, 데이터셋이 공개되지 않으면 재현·검증이 어려울 수 있습니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy 1편</strong>(자율 수중 로봇 synthetic aperture sonar 해저 조사) — "aperture synthesis" 키워드 우연 매칭, FP와 무관.</li>
+    <li><strong>Meta-Optics/Diffractive 7편</strong>(무선통신 RIS/6G, RF 에너지 하베스팅, 레이더 재밍용 메타표면) — 통신·레이더 응용, 계산 이미징과 무관.</li>
+    <li><strong>Virtual Staining/Pathology 23편</strong> — 금융·부동산·해양생물·치과 임상 프로토콜의 "staining"·"label-free" 키워드 우연 매칭.</li>
+    <li><strong>Light-Field/Novel Sensors 2편</strong>(나노입자 뉴로모픽 컴퓨팅, SNN sponge attack) — 광필드/이벤트 이미징과 거리가 있는 인접 분야.</li>
+    <li><strong>Universal low-light image restoration</strong> [JNL] — all-in-one 복원 클러스터와 인접하지만 초록이 제공되지 않아 본문 확인 전까지 보류.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>3D/4D Gaussian Splatting 아바타 직접 생성 (3편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.27634" target=_blank>4DHumanDiff: Direct Text-to-4DGS Generation for Consistent 360-Degree Dynamic Humans</a></strong> <span class=pill>CV</span><br>
+- 문제: 텍스트로 동적 사람을 만들 때 영상을 먼저 생성하고 4D로 재구성하는 두 단계 방식은 비용이 크고 기하 불완전성을 낳음 / 방법: diffusion 모델이 4DGS 표현 공간 자체를 텍스트에서 end-to-end로 직접 생성 / 의미: 촬영·재구성 단계를 건너뛰는 아바타 생성 방식 / 근거: 1분 이내 생성, 추론 시간 10배 이상 단축 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.28032" target=_blank>Split and Drive (SpiD): Dual-Axis Disentanglement for Real-Time Gaussian Head Avatars</a></strong> <span class=pill>CV</span><br>
+- 문제: 기존 3DGS 머리 아바타는 외부 추적 파이프라인 지연이 빠지고, 얼굴 부위가 하나의 표현에 뒤엉켜 표현력이 제한됨 / 방법: 추적을 모델 내부화하는 compute axis와 얼굴 부위별 Gaussian 분기로 나누는 feature axis / 의미: 단일 이미지에서 실시간 애니메이션 가능한 머리 아바타 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.28164" target=_blank>S-Avatar: Diffusion-Guided Gaussian Head Avatars from a Single Image</a></strong> <span class=pill>CV</span><br>
+- 문제: 단일 이미지 기반 머리 아바타는 보지 못한 시점에서 3D 일관성이 흔들림 / 방법: diffusion 기반 3DGS 합성 후 FLAME 파라메트릭 모델과 정렬해 바인딩 템플릿 구성 / 의미: diffusion 생성과 파라메트릭 제어를 결합한 3D 일관성 강화 아바타 생성 / 우선순위: Read
+</div>
+
+<h3>All-in-one 이미지 복원 (4편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.27898" target=_blank>CoRE-UIR: Prior-guided common and residual experts for efficient all-in-one remote sensing image restoration</a></strong> <span class=pill>CV</span><br>
+- 문제: 위성·드론 영상의 복합 열화를 처리하는 all-in-one 복원은 열화 단서가 약하고 다중 전문가 설계로 파라미터가 중복됨 / 방법: 공통 전문가와 열화별 저용량 잔차 전문가를 분리하고 CLIP 기반 열화 prior로 조건화 / 의미: 정확도-속도-메모리를 함께 개선한 통합 복원 프레임워크 / 근거: 최강 baseline 대비 PSNR +1.05dB, 속도 11.83배, 메모리 85.3% 감소 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.28526" target=_blank>What to Remove, What to Preserve: Dual-Ambiguity Rectification for All-in-One Image Restoration (DAR-Net)</a></strong> <span class=pill>CV</span><br>
+- 문제: 여러 열화를 공유 잠재공간에 인코딩하면 열화 단서와 장면 내용이 뒤섞임 / 방법: 채널 방향 의미적 모호성과 공간 방향 복원 반응 모호성을 각각 다른 모듈로 정정 / 의미: 열화 제거와 콘텐츠 보존을 명시적으로 분리한 복원 / 근거: 최강 경쟁 모델 대비 PSNR +0.14~0.34dB / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1007/s10851-026-01329-2" target=_blank>MG-SpaIR: Multi-Grade Sparse-Guided Implicit Representation for Training-Data-Free Image Restoration</a></strong> <span class=pill>JNL</span><br>
+- 문제: 학습 데이터가 없는 새 촬영 상황에서 혼합 열화 이미지를 복원하기 어려움 / 방법: multi-grade residual hierarchy INR + 명시적 sparse proximal 정규화 / 의미: 데이터 없이 즉시 쓸 수 있는 물리 기반 복원 대안 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong>Universal low-light image restoration based on adaptive enhancement diffusion model</strong> <span class=pill>JNL</span><br>
+- 문제: 저조도 영상 복원을 다양한 조명 조건에 범용적으로 대응하기 어려움 / 방법: 적응적 향상 diffusion 모델(초록 미제공, 제목 기준) / 의미: all-in-one 복원 클러스터와 인접한 저조도 특화 연구 / 우선순위: Read(본문 확인 필요)
+</div>
+
+<h3>계산광학 코어 신호 (2편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/ol.608138" target=_blank>Statistically constrained optimization for quantized computer-generated holography</a></strong> <span class=pill>JNL</span><br>
+- 문제: 디스플레이용 컴퓨터 생성 홀로그램을 낮은 비트수로 표현하면 화질이 무너짐 / 방법: 양자화 제약 하에서 통계적으로 제약된 최적화(초록 미제공, 제목 기준) / 의미: 저비트 CGH의 화질 저하를 줄이는 최적화 방법 / 우선순위: Read(본문 확인 필요)
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/ol.607861" target=_blank>Noise-robust holographic data storage with implicit neural representation</a></strong> <span class=pill>JNL</span><br>
+- 문제: 홀로그래픽 매체에 데이터를 저장할 때 잡음에 취약함 / 방법: implicit neural representation을 결합한 잡음 강건화(초록 미제공, 제목 기준) / 의미: 홀로그래픽 데이터 저장의 신뢰성을 높이는 방법 / 우선순위: Read(본문 확인 필요)
+</div>
+
+<h3>시간 가변 볼륨/4D 표현 압축·렌더링 (2편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.28049" target=_blank>TSOG: A Format For Temporally And Spatially Ordered Gaussians</a></strong> <span class=pill>eess.IV</span><br>
+- 문제: 4DGS 콘텐츠는 저장·전송에 필요한 파일 크기가 큼 / 방법: Spatially Ordered Gaussians를 시간축으로 확장해 인덱스 정렬된 이미지 데이터로 인코딩 / 의미: 동적 장면을 위한 모델-불특정 압축 포맷 / 근거: 파일 크기 90% 이상 감소, PSNR 변화 -0.42~+0.85dB / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.28047" target=_blank>A Query-Efficient Stochastic Volume Rendering Framework for Time-Varying Implicit Neural Volumes</a></strong> <span class=pill>LG</span><br>
+- 문제: 동적 X선 CT 같은 time-varying INR은 신경망 추론 비용 때문에 대화형 볼륨 렌더링이 어려움 / 방법: delta tracking 기반 stochastic 렌더링 + ray budgeting·query pruning으로 INR 질의 수 절감 / 의미: 동적 과학 볼륨 데이터의 실시간 탐색 가능 렌더링 / 근거: RTX 4090에서 1024×1024 해상도 약 30~40FPS / 우선순위: Read
+</div>
+
+<h3>기타 계산 이미징 관련 (4편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.28020" target=_blank>ENCORE: Event-Assisted Complementary Motion Refinement for Learned Video Compression</a></strong> <span class=pill>CV</span><br>
+- 문제: 학습 기반 비디오 압축의 모션 추정이 RGB 프레임만으로는 빠른 움직임·저조도에서 취약함 / 방법: 이벤트 카메라의 비동기 밝기 변화 정보로 모션 추정을 보완 / 의미: 이벤트-RGB 융합 기반 비디오 압축 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2607.27835" target=_blank>SAFViT: Spatial Attention Fusion Gating for Vision Transformer-Based Nucleus Segmentation and Classification</a></strong> <span class=pill>CV</span><br>
+- 문제: encoder-decoder skip connection이 모든 위치를 동등하게 취급해 중복·상충 정보가 decoder에 전달됨 / 방법: 공간 attention 기반 게이팅으로 skip 정보를 선택적으로 융합 / 의미: 핵 분할·분류 정확도를 높이는 디지털 병리 방법 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/oe.608898" target=_blank>Physics-Informed Deep Optics: Chromatic Aberrations for Monocular Depth Estimation</a></strong> <span class=pill>JNL</span><br>
+- 문제: 단안 카메라로 깊이를 추정하려면 보통 추가 센서나 다시점이 필요함 / 방법: 렌즈의 색수차를 깊이 단서로 활용하는 physics-informed 최적화(초록 미제공, 제목 기준) / 의미: 하드웨어 추가 없이 색수차 자체를 깊이 신호로 재활용 / 우선순위: Read(본문 확인 필요)
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1088/1361-6501/ae92a3" target=_blank>SURE-Net: 전기저항 단층촬영 구조보존 복원</a></strong> <span class=pill>JNL</span><br>
+- 문제: 전기저항 단층촬영(ERT)은 불안정하고 비선형적인 역문제 특성 때문에 고해상도 전도도 분포 복원이 어려움 / 방법: 공간적으로 업샘플링된 residual encoder 신경망 구조 / 의미: 구조 보존형 ERT 이미지 복원 개선 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv 카테고리: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>cs.LG</a> · <a href="https://arxiv.org/list/cs.CV/new" target=_blank>cs.CV</a> · <a href="https://arxiv.org/list/cs.AI/new" target=_blank>cs.AI</a> · <a href="https://arxiv.org/list/eess.IV/new" target=_blank>eess.IV</a> · <a href="https://arxiv.org/list/eess.SP/new" target=_blank>eess.SP</a></li>
+  <li>RSS: <a href="../feed.xml">feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+Imaging Intelligence Daily Briefing · cs.LG · cs.CV · cs.AI · eess.IV · eess.SP 기반 자동 생성 · 입력 출처: arXiv, Crossref, OpenAlex
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+
+</body>
+</html>

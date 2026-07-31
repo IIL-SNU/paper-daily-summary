@@ -1,0 +1,66 @@
+{
+ "date": "2026-07-31",
+ "source_mode": "new",
+ "clusters": [
+  {
+   "cluster": "단일 이미지·텍스트 한 장만으로 3D/4D Gaussian Splatting 아바타를 바로 만드는 흐름",
+   "papers": [
+    {"title": "4DHumanDiff: Direct Text-to-4DGS Generation for Consistent 360-Degree Dynamic Humans", "arxiv_id": "https://arxiv.org/abs/2607.27634", "journal_or_source": "arXiv cs.CV"},
+    {"title": "Split and Drive (SpiD): Dual-Axis Disentanglement for Real-Time Gaussian Head Avatars", "arxiv_id": "https://arxiv.org/abs/2607.28032", "journal_or_source": "arXiv cs.CV"},
+    {"title": "S-Avatar: Diffusion-Guided Gaussian Head Avatars from a Single Image", "arxiv_id": "https://arxiv.org/abs/2607.28164", "journal_or_source": "arXiv cs.CV/cs.GR"}
+   ],
+   "why": "지금까지 사람 모습을 3D Gaussian Splatting(3DGS, 장면을 수많은 반투명 타원체로 표현해 빠르게 렌더링하는 방식)으로 움직이게 만들려면 보통 먼저 영상을 여러 장 찍거나 만든 다음, 그 영상에 맞춰 3D 표현을 다시 맞추는 두 단계 과정을 거쳤습니다. 오늘 나온 세 편은 이 중간 단계를 건너뛰고 텍스트나 이미지 한 장에서 곧바로 3D/4D 표현을 만들어냅니다. 4DHumanDiff는 텍스트 프롬프트만으로 360도 전신 동작을 갖춘 4D Gaussian Splatting을 직접 생성해, 영상을 먼저 만들고 그 다음 3D로 맞추던 기존 방식보다 추론 속도를 10배 이상 줄였습니다. SpiD(Split and Drive)는 얼굴 한 장으로 애니메이션 가능한 머리 아바타를 만들 때, 표정을 추적하는 외부 파이프라인 지연을 아예 모델 안으로 흡수하고 얼굴 부위별로 별도의 Gaussian 그룹을 나눠 표현력과 속도를 동시에 높였습니다. S-Avatar는 diffusion 모델로 얼굴 한 장에서 고해상도 3DGS를 바로 합성한 뒤, 표준 얼굴 모델(FLAME)과 정렬해 시점이 달라져도 얼굴 형태가 흐트러지지 않게 만듭니다. 세 편을 같이 보면, 사람 아바타를 만드는 병목이 '어떻게 3D로 재구성할까'에서 '입력 한 장에서 3D 표현을 얼마나 빠르고 일관되게 바로 뽑아낼까'로 옮겨가고 있다는 뜻입니다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저자군 3편이 같은 날 나왔고 '입력을 최소화하고 3DGS/4DGS를 직접 생성'한다는 접근을 공유하지만, 전신(4DHumanDiff)과 얼굴만(SpiD·S-Avatar)으로 대상 범위가 갈려 같은 벤치마크로 수렴하지는 않음",
+   "lab_action": "4DHumanDiff의 텍스트-to-4DGS 직접 생성 구조와 S-Avatar의 diffusion 기반 3DGS 초기 합성 모듈을 비교해, 우리 랩이 다루는 인체/조직 3D 재구성 파이프라인에서 '영상 촬영 후 재구성' 대신 '적은 입력에서 직접 생성'이 어디까지 대체 가능한지 확인"
+  },
+  {
+   "cluster": "All-in-one 통합 이미지 복원이 결합 열화 인지·모호성 해소·학습 데이터 없는 최적화로 갈라짐",
+   "papers": [
+    {"title": "CoRE-UIR: Prior-guided common and residual experts for efficient all-in-one remote sensing image restoration", "arxiv_id": "https://arxiv.org/abs/2607.27898", "journal_or_source": "arXiv cs.CV"},
+    {"title": "What to Remove, What to Preserve: Dual-Ambiguity Rectification for All-in-One Image Restoration (DAR-Net)", "arxiv_id": "https://arxiv.org/abs/2607.28526", "journal_or_source": "arXiv cs.CV/cs.AI"},
+    {"title": "MG-SpaIR: Multi-Grade Sparse-Guided Implicit Representation for Training-Data-Free Image Restoration", "arxiv_id": "https://doi.org/10.1007/s10851-026-01329-2", "journal_or_source": "Journal of Mathematical Imaging and Vision"}
+   ],
+   "why": "All-in-one 이미지 복원은 흐림·노이즈·저조도 같은 서로 다른 열화를 하나의 모델로 한꺼번에 처리하려는 흐름인데, 지금까지는 여러 열화 조건을 하나의 공유 표현 공간에 욱여넣다 보니 '무엇이 열화 때문에 생긴 것이고 무엇이 원래 장면 내용인지'가 뒤섞이는 문제가 있었습니다. 오늘 나온 세 편은 이 문제를 각자 다른 방식으로 풉니다. CoRE-UIR는 위성·드론 영상에서 다양한 기상·조명 열화가 동시에 겹치는 상황을, 열화 종류에 상관없이 공통으로 쓰는 전문가 모듈과 열화별로만 따로 보정하는 저용량 전문가 모듈로 나눠 처리해 기존 최강 baseline 대비 속도는 11.83배 빠르면서 메모리는 85.3% 줄였습니다. DAR-Net은 '무엇을 지우고 무엇을 남길지'가 헷갈리는 현상을 채널 방향의 의미적 모호성과 공간 방향의 복원 반응 모호성 두 가지로 정확히 나누고, 각각을 다른 모듈로 바로잡습니다. MG-SpaIR는 아예 학습 데이터 없이, 손상된 이미지 한 장만 보고 implicit neural representation(좌표를 입력하면 픽셀값을 내놓는 신경망 표현)으로 점진적으로 복원하는 방식이라, 데이터를 모으기 어려운 새로운 촬영 상황에도 바로 쓸 수 있습니다. 세 편을 같이 보면, all-in-one 복원의 다음 경쟁 축이 '더 많은 열화를 한 모델에 넣기'가 아니라 '열화 정보와 장면 정보를 얼마나 깔끔하게 분리하고, 학습 데이터 없이도 얼마나 안정적으로 복원하는가'로 옮겨가고 있다는 뜻입니다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저자군 3편(2편은 정량적 PSNR 개선 수치 보고)이 all-in-one 복원이라는 같은 문제 설정을 공유하지만, MG-SpaIR는 학습 데이터 없는 최적화 방식이라 CoRE-UIR·DAR-Net의 학습 기반 방식과 직접 비교되지는 않음",
+   "lab_action": "MG-SpaIR의 multi-grade sparse-guided INR 복원 절차를 우리 랩의 학습 데이터가 부족한 촬영 세팅(새 광학계 프로토타입 등)에 적용해보고, DAR-Net의 semantic/spatial ambiguity rectification 아이디어를 우리 복원 파이프라인의 아티팩트-콘텐츠 분리 단계에 이식"
+  },
+  {
+   "cluster": "계산광학 핵심 신호는 오늘도 극소: 홀로그래피 2편이 사실상 전부",
+   "papers": [
+    {"title": "Statistically constrained optimization for quantized computer-generated holography", "arxiv_id": "https://doi.org/10.1364/ol.608138", "journal_or_source": "Optics Letters"},
+    {"title": "Noise-robust holographic data storage with implicit neural representation", "arxiv_id": "https://doi.org/10.1364/ol.607861", "journal_or_source": "Optics Letters"}
+   ],
+   "why": "오늘 계산광학 코어 4개 버킷(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics) 중 Lensless는 완전히 비었고, Meta-Optics 7편은 전부 무선통신 RIS·레이더 재밍용이라 이미징과 무관합니다. Phase Imaging/Holography 8편 중에서도 실제 계산 이미징 신호는 이 두 편뿐입니다. Statistically constrained optimization for quantized CGH는 디스플레이용 컴퓨터 생성 홀로그램을 낮은 비트수(quantized)로 표현해도 화질이 무너지지 않도록 최적화 과정에 통계적 제약을 거는 연구이고, Noise-robust holographic data storage with implicit neural representation은 홀로그래픽 매체에 데이터를 저장할 때 생기는 잡음에 강건하도록 implicit neural representation을 결합한 연구입니다. 둘 다 초록이 제공되지 않아 제목 기준 판단이지만, 응용은 디스플레이용 홀로그램 대 데이터 저장용 홀로그램으로 서로 다릅니다. 두 편의 공통점은 하나의 방법론적 흐름으로 수렴한다기보다, 오늘 계산광학 코어에서 진짜 신호가 이 두 편 말고는 사실상 없었다는 사실 자체입니다.",
+   "confidence": "Low",
+   "confidence_note": "2편뿐이고 둘 다 초록이 제공되지 않아 제목만으로 배정했으며, 응용(디스플레이 vs 데이터 저장)도 달라 하나의 연구 질문으로 수렴하지 않음",
+   "lab_action": "두 논문 모두 본문을 확인해 quantization 제약 방식과 INR 기반 잡음 강건화 방식이 우리 랩의 CGH/홀로그래픽 저장 실험에 바로 적용 가능한 수준인지부터 판단"
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "4DHumanDiff·S-Avatar의 '적은 입력에서 3DGS 직접 생성' 접근을 우리 3D 재구성 파이프라인에 시험",
+   "claim": "텍스트 또는 이미지 한 장에서 3DGS/4DGS를 직접 생성하는 방식이, 우리 랩의 다중 촬영 기반 3D 재구성 세팅에서 초기 형상 추정 단계를 얼마나 대체할 수 있는지 확인한다.",
+   "supporting_papers": [
+    {"title": "4DHumanDiff: Direct Text-to-4DGS Generation for Consistent 360-Degree Dynamic Humans", "arxiv": "https://arxiv.org/abs/2607.27634"},
+    {"title": "S-Avatar: Diffusion-Guided Gaussian Head Avatars from a Single Image", "arxiv": "https://arxiv.org/abs/2607.28164"}
+   ]
+  },
+  {
+   "title": "CoRE-UIR·DAR-Net의 열화-콘텐츠 분리 모듈을 우리 all-in-one 복원 실험에 이식",
+   "claim": "공통 전문가/잔차 전문가 분리(CoRE-UIR)와 채널·공간 모호성 분리(DAR-Net) 방식이, 우리 계산 이미징 파이프라인에서 여러 열화가 동시에 발생하는 촬영 조건의 복원 품질과 속도를 함께 개선하는지 확인한다.",
+   "supporting_papers": [
+    {"title": "CoRE-UIR: Prior-guided common and residual experts for efficient all-in-one remote sensing image restoration", "arxiv": "https://arxiv.org/abs/2607.27898"},
+    {"title": "What to Remove, What to Preserve: Dual-Ambiguity Rectification for All-in-One Image Restoration (DAR-Net)", "arxiv": "https://arxiv.org/abs/2607.28526"}
+   ]
+  },
+  {
+   "title": "MG-SpaIR의 학습 데이터 없는 INR 복원을 새 광학계 프로토타입 촬영 데이터에 적용",
+   "claim": "multi-grade sparse-guided implicit neural representation 방식이, 학습 데이터를 아직 충분히 모으지 못한 우리 랩의 새 광학계 프로토타입 촬영 결과에서도 안정적으로 복원되는지 확인한다.",
+   "supporting_papers": [
+    {"title": "MG-SpaIR: Multi-Grade Sparse-Guided Implicit Representation for Training-Data-Free Image Restoration", "arxiv": "https://doi.org/10.1007/s10851-026-01329-2"}
+   ]
+  }
+ ]
+}

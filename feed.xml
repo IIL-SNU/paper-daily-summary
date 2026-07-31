@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 30 Jul 2026 12:14:46 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2026 12:10:39 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-07-31 (금요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-07-31.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-31.html</guid>
+      <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘(7/31, 금)은 arXiv /new에 cs.LG 196편, cs.CV 131편, cs.AI 245편, eess.IV 7편, eess.SP 16편으로 총 595편이 잡혔습니다. 어제(439편)보다 크게 늘었지만 다섯 카테고리 모두 고르게 늘어난 형태라 parser 문제로 보이지 않습니다. 저널 436건(Crossref 434 + OpenAlex 2)을 더한 원천 스캔 1031건이 dedup을 거쳐 924건으로 병합됐고, 이 중 265건(28.7%)이 ROI로 선정됐습니다 — 최근 밴드(25~32%) 안이라 정상 범위입니다. 오늘 가장 눈에 띄는 특징은 계산광학 코어 4개 버킷(Fourier Ptychography·Lensless·Phase Imaging·Meta-O…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-07-30 (목요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-07-30.html</link>
