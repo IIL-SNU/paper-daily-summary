@@ -1,0 +1,165 @@
+{
+  "date": "2026-08-03",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "AI 생성 이미지·영상 판별이 '진짜냐 가짜냐'에서 '누가 만들었고 어디를 근거로 판단했는지'로 확장",
+      "papers": [
+        {
+          "title": "Explaining AI-Image Detection: What the Heatmap Actually Shows",
+          "arxiv_id": "https://arxiv.org/abs/2607.29581",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Retrieval-Driven Training-Free AI-Generated Video Attribution",
+          "arxiv_id": "https://arxiv.org/abs/2607.28955",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "The K-Space Signature: Frequency-Domain Representation Learning for Medical Deepfake Detection",
+          "arxiv_id": "https://arxiv.org/abs/2607.29541",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "DiffAttack: Evasion Attacks Against Face Recognition via Latent Diffusion Models",
+          "arxiv_id": "https://arxiv.org/abs/2607.28936",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "AI가 만든 이미지·영상을 걸러내는 문제는 지금까지 주로 '진짜냐 가짜냐'를 이진으로 판정하는 데 머물렀는데, 오늘 나온 여섯 편(대표 4편 + Progressive Decision-Making, Uncertainty-Aware Deepfake Detection)을 같이 보면 그 다음 단계 질문들로 넘어가고 있다는 게 보입니다. Retrieval-Driven AI-Generated Video Attribution은 가짜인지 판정하는 데서 그치지 않고 어떤 생성 모델이 그 영상을 만들었는지까지 검색 기반으로 추적하려 하고, K-Space Signature는 같은 문제를 의료영상으로 가져가 MRI 등에서 생성된 가짜 데이터(Medical Deepfake)를 주파수 영역에서 잡아냅니다. Explaining AI-Image Detection은 탐지기가 내놓는 히트맵(어디를 보고 가짜라고 판단했는지 표시하는 지도)이 실제로 믿을 만한 근거인지 18만 장이 넘는 이미지로 검증했는데, 압축 방식 차이 같은 이미지 처리 흔적에 속아 넘어가는 탐지기가 많다는 걸 인과적 통제 실험으로 보여줬습니다. DiffAttack은 반대 방향에서, diffusion 모델로 얼굴 인식 시스템을 실제로 속이는 적대적 이미지를 만들어내 이 판별 문제가 공격 쪽에서도 정교해지고 있음을 보여줍니다. 여섯 편을 같이 보면, AI 생성 콘텐츠 연구가 '가짜냐 아니냐'라는 단순 판정에서 '누가 만들었는지, 어디를 근거로 판단했는지, 그 판단을 얼마나 믿을 수 있는지'까지 요구하는 쪽으로 옮겨가고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 6편이 같은 날 나왔고, 이미지·영상·의료영상으로 응용이 확산되면서 귀속(attribution)·설명가능성·불확실성·공격이라는 네 가지 다른 축에서 같은 문제를 다룸",
+      "lab_action": "K-Space Signature의 주파수 영역 기반 탐지 방식을 우리 랩의 virtual staining/합성 현미경 영상 파이프라인에 적용해, 생성된 영상이 실제 촬영 영상과 주파수 특성에서 구별되는 아티팩트를 남기는지 점검"
+    },
+    {
+      "cluster": "3D Gaussian Splatting이 '어떻게 만들까'에서 '만든 자산을 어떻게 고치고 채우고 다음에 뭘 찍을지'로 옮겨감",
+      "papers": [
+        {
+          "title": "FocusGS: Spatial Delta Layers for Local Repair and Deterministic Editing of Trained 3D Gaussian Assets",
+          "arxiv_id": "https://arxiv.org/abs/2607.28834",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "FillGS: Filling Observation Gaps in 4D Gaussian Splatting via Viewpoint-Time Selection and Generative Refinement",
+          "arxiv_id": "https://arxiv.org/abs/2607.29284",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "GO-PRE: Goal-Oriented Next-Best-View Selection via Predictive Rendering Entropy for Active 3D Reconstruction",
+          "arxiv_id": "https://arxiv.org/abs/2607.29037",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "OASIS: Occlusion-aware Single-image Hand Avatar Reconstruction via 3D Gaussian Splatting",
+          "arxiv_id": "https://arxiv.org/abs/2607.29633",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "3D Gaussian Splatting(3DGS)은 장면을 수많은 반투명 타원체로 표현해 빠르게 렌더링하는 방식인데, 지금까지 연구는 대부분 '어떻게 하면 3DGS를 잘 만들까(재구성·생성)'에 집중했습니다. 오늘 나온 네 편은 질문을 한 단계 옮겨, 이미 만든 3DGS 자산을 실제로 쓰는 과정에서 생기는 문제를 다룹니다. FocusGS는 다 만든 3DGS 장면의 일부가 잘못됐을 때 전체를 다시 만들지 않고 그 부분만 국소적으로 고치거나 편집하는 방법을 제안해, 목표 영역 화질을 최대 11dB 이상 끌어올렸습니다. FillGS는 시간에 따라 움직이는 4DGS 장면에서 카메라가 충분히 찍지 못한 시공간 구간을 능동적으로 찾아내 생성 모델로 채워 넣고, GO-PRE는 아예 다음에 어디를 찍어야 재구성 품질이 가장 많이 좋아질지를 미리 계산해서 알려줍니다. OASIS는 손처럼 스스로 가려지는 부위를 한 장의 사진만으로 3DGS 아바타로 복원할 때 가려진 영역과 보이는 영역을 구분해서 처리합니다. 네 편을 같이 보면, 3DGS가 '한 번 만들고 끝나는 결과물'이 아니라 '계속 고치고, 빈 곳을 채우고, 다음 촬영을 계획해야 하는 유지보수 대상'으로 다뤄지기 시작했다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 4편이 3DGS라는 같은 표현을 공유하되 local repair/gap-filling/active-view-selection/occlusion-aware reconstruction이라는 네 개의 서로 다른 유지보수 하위문제를 각각 다루며 같은 날 등장",
+      "lab_action": "FocusGS의 local repair 연산자와 GO-PRE의 next-best-view 획득 함수를 우리 랩의 다중 촬영 기반 3D/4D 재구성 파이프라인에 이식해, 촬영 중간에 재구성 품질이 낮은 영역을 실시간으로 찾아 추가 촬영을 유도하는 실험 설계"
+    },
+    {
+      "cluster": "SAM·DINO 같은 범용 비전 foundation model을 의료 모달리티별로 파라미터 효율적으로 특화",
+      "papers": [
+        {
+          "title": "SAM+D: Parameter-Efficient Dimensional Lifting of SAM-Family Models via Depth-Routed LoRA and Depth Shifting",
+          "arxiv_id": "https://arxiv.org/abs/2607.29033",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "UltraSAM3: A Concept-Driven Foundation Model for Universal Ultrasound Image Segmentation",
+          "arxiv_id": "https://arxiv.org/abs/2607.29200",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "DynoDINO: Harnessing Dynamic Latent Information from DINO Features for Multi-Phase Medical Image Segmentation",
+          "arxiv_id": "https://arxiv.org/abs/2607.29568",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "ReMoE: Report-Guided Mixture-of-Experts for Multimodal OCT/OCTA Anomaly Detection",
+          "arxiv_id": "https://arxiv.org/abs/2607.29039",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "SAM(Segment Anything Model)이나 DINO 같은 범용 비전 foundation model은 자연 이미지에는 강하지만, 초음파나 CT처럼 잡음 특성과 해부학적 구조가 크게 다른 의료 영상에 그대로 쓰면 성능이 떨어집니다. 오늘 나온 논문들(대표 4편 + MoPET)은 모델 전체를 새로 학습시키는 대신, 아주 적은 파라미터만 추가로 학습해 범용 모델을 각 모달리티에 맞게 특화시킵니다. SAM+D는 2D 이미지용으로 학습된 SAM을 CT 같은 3D 볼륨이나 동영상 같은 4D(3D+시간) 데이터에 쓸 수 있도록, 전체 파라미터의 3% 정도만 추가 학습해 차원을 하나 더 늘립니다. UltraSAM3는 초음파 영상에 특화된 개념(장기·병변 이름)을 SAM3에 학습시켜, 사용자가 그림 대신 글로 지시해도 여러 장기를 분할할 수 있게 만듭니다. DynoDINO는 조영 CT처럼 여러 시점(phase)에 걸쳐 찍은 영상에서 DINO가 뽑은 특징을 시점 간에 정렬·융합해 병변을 더 정확히 분할하고, ReMoE는 정상 소견 리포트에 담긴 의미 정보까지 함께 활용해 망막 OCT 이상을 탐지합니다. 네 편을 같이 보면, 의료영상 딥러닝의 경쟁 축이 '모델을 얼마나 크게 새로 학습시키는가'가 아니라 '범용 모델이 가진 지식을 각 모달리티·태스크에 얼마나 적은 비용으로 옮겨 붙이는가'로 옮겨가고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 4편 이상이 CT/초음파/OCT/조영CT라는 서로 다른 모달리티에서 같은 파라미터 효율적 적응 전략을 반복해서 검증함",
+      "lab_action": "SAM+D의 Depth-Routed LoRA 방식을 우리 랩이 다루는 3D 단층촬영/현미경 볼륨 데이터의 분할 파이프라인에 적용해, 전체 재학습 대비 파라미터 3% 수준의 미세조정만으로 분할 정확도를 얼마나 유지하는지 확인"
+    },
+    {
+      "cluster": "Physics-informed 신경망이 배터리·강재 피로·PDE 근사를 넘어 계속 응용 도메인을 넓힘",
+      "papers": [
+        {
+          "title": "PiDDM: Physics-Informed Differentiable Degradation Modeling for Lithium-Ion Battery State-of-Health Prediction",
+          "arxiv_id": "https://arxiv.org/abs/2607.29095",
+          "journal_or_source": "arXiv cs.LG"
+        },
+        {
+          "title": "Predicting Steel Fatigue Life from Micrographs Using Physics-Informed Deep Learning",
+          "arxiv_id": "https://arxiv.org/abs/2607.28695",
+          "journal_or_source": "arXiv cs.LG"
+        },
+        {
+          "title": "DFSC: Error-Controlled Differentiable Mittag-Leffler Propagation for Fractional Scientific Machine Learning",
+          "arxiv_id": "https://arxiv.org/abs/2607.29038",
+          "journal_or_source": "arXiv cs.LG"
+        },
+        {
+          "title": "Feature Interaction Modeling for Physics-Informed Neural Networks and Neural Operators",
+          "arxiv_id": "https://arxiv.org/abs/2607.28762",
+          "journal_or_source": "arXiv cs.LG"
+        }
+      ],
+      "why": "Physics-informed neural network(PINN, 물리 법칙을 손실 함수에 직접 넣어 학습하는 신경망)는 이미 널리 쓰이는 방법이지만, 오늘은 이 접근이 서로 전혀 다른 응용 도메인 네 곳에서 동시에 등장했습니다. PiDDM은 리튬이온 배터리의 열화 반응식(Arrhenius 식)을 학습 목표에 직접 넣어 배터리 수명 예측이 물리적으로 말이 되지 않는 방향으로 학습되는 것을 막고, Steel Fatigue 논문은 강재 현미경 사진만으로 수십~수백 시간 걸리는 피로 시험 없이 피로 수명을 추정합니다. DFSC는 물리 법칙이 이미 알려진 부분(분수차 확산 방정식)은 굳이 데이터로 다시 배우지 않고 신경망은 나머지 모르는 부분만 배우도록 역할을 나누고, Feature Interaction PINN은 변수들이 서로 어떻게 얽히는지를 명시적으로 모델링해 편미분방정식 계열 문제의 근사 정확도를 높입니다. 네 편을 같이 보면, PINN이 새로운 방법론이라기보다는 이미 성숙한 도구로 자리잡아 배터리·재료·수치해석 전반의 실무 문제에 계속 옮겨붙고 있다는 뜻입니다. 저널 쪽에서도 같은 날 Stress-Constrained Physics-Informed UNet(의료영상 역문제)과 물리 정보 기반 이산 손실 프레임워크(전산역학)가 같은 흐름을 뒷받침합니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 응용 도메인 4편(+저널 2편)이 같은 날 나왔지만, PINN 자체는 이미 성숙한 방법론이라 새로운 흐름이라기보다 꾸준한 확산 신호로 판단",
+      "lab_action": "DFSC의 '알려진 물리는 고정 연산자로, 모르는 부분만 신경망으로' 분리 전략이 우리 광학계 forward model(알려진 회절/산란 물리)과 미지 보정 항을 분리하는 구조에 적용 가능한지 검토"
+    },
+    {
+      "cluster": "계산광학 코어 4버킷은 오늘도 실신호 0편 — 전부 키워드 우연 매칭 (관찰 중)",
+      "papers": [
+        {
+          "title": "Multi-User MIMO Enhancement using Metasurface Wavefront Bending (MWB)",
+          "arxiv_id": "https://arxiv.org/abs/2607.29542",
+          "journal_or_source": "arXiv eess.SP"
+        },
+        {
+          "title": "When 5G MIMO Scaling Breaks: Toward 6G Upper-Mid-Band Extreme MIMO",
+          "arxiv_id": "https://arxiv.org/abs/2607.28965",
+          "journal_or_source": "arXiv eess.SP"
+        }
+      ],
+      "why": "오늘 계산광학 코어 4개 버킷(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics) 중 Fourier Ptychography는 아예 0편이고, 나머지 세 버킷(Lensless 2편, Phase Imaging 3편, Meta-Optics 3편)도 실사 확인 결과 전부 키워드 우연 매칭입니다. Lensless의 'diffuser' 매칭은 소형 풍력터빈 디퓨저 유동 해석 논문이고, Phase Imaging의 'quantitative phase' 매칭은 X선 회절 분말 분석(재료과학)이며, Meta-Optics 3편은 전부 5G/6G MIMO나 무선 전력 전송용 메타표면으로 이미징과 무관합니다. 계산광학 코어에서 실제 이미징 신호가 완전히 0편인 날은 최근 며칠(7/27·7/31에는 1~2편의 희미한 신호가 있었음) 중에서도 드뭅니다.",
+      "confidence": "Low",
+      "confidence_note": "실신호 0편, 표에 올린 항목은 전부 무선통신 응용의 우연 매칭 사례",
+      "lab_action": "다음 며칠 계산광학 코어가 계속 0편에 가깝다면, classify.py의 core bucket 키워드가 이번 주 등록 트렌드(6G/RIS 무선 논문 급증)에 밀려 recall이 낮아진 건 아닌지 keyword 재점검"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "FocusGS·GO-PRE의 3DGS 유지보수·능동 촬영 계획을 우리 3D/4D 재구성 파이프라인에 이식",
+      "claim": "국소 복구(FocusGS)와 next-best-view 획득 함수(GO-PRE)를 결합하면, 우리 랩의 다중 촬영 기반 3D/4D 재구성에서 촬영 중간에 품질이 낮은 영역을 실시간으로 찾아 추가 촬영을 유도할 수 있는지 확인한다.",
+      "supporting_papers": [
+        {"title": "FocusGS: Spatial Delta Layers for Local Repair and Deterministic Editing of Trained 3D Gaussian Assets", "arxiv": "https://arxiv.org/abs/2607.28834"},
+        {"title": "GO-PRE: Goal-Oriented Next-Best-View Selection via Predictive Rendering Entropy for Active 3D Reconstruction", "arxiv": "https://arxiv.org/abs/2607.29037"}
+      ]
+    },
+    {
+      "title": "SAM+D의 Depth-Routed LoRA를 우리 3D 단층촬영/현미경 볼륨 분할 파이프라인에 적용",
+      "claim": "2D SAM을 3D/4D로 확장하는 파라미터 효율적 방식이, 우리 랩의 3D 단층촬영·현미경 볼륨 데이터에서 전체 재학습 대비 얼마나 적은 비용으로 분할 정확도를 유지하는지 확인한다.",
+      "supporting_papers": [
+        {"title": "SAM+D: Parameter-Efficient Dimensional Lifting of SAM-Family Models via Depth-Routed LoRA and Depth Shifting", "arxiv": "https://arxiv.org/abs/2607.29033"}
+      ]
+    },
+    {
+      "title": "K-Space Signature의 주파수 영역 위조 탐지를 우리 virtual staining/합성 현미경 영상 데이터 무결성 점검에 적용",
+      "claim": "주파수 영역(K-space) 기반 위조 탐지 방식이, 우리 랩이 생성하는 합성 현미경/virtual staining 영상에서 실제 촬영 영상과 구별되는 스펙트럼 아티팩트를 남기는지 확인한다.",
+      "supporting_papers": [
+        {"title": "The K-Space Signature: Frequency-Domain Representation Learning for Medical Deepfake Detection", "arxiv": "https://arxiv.org/abs/2607.29541"}
+      ]
+    }
+  ]
+}

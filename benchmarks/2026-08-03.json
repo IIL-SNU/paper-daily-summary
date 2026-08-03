@@ -1,0 +1,37 @@
+{
+  "date": "2026-08-03",
+  "results": [
+    {
+      "benchmark": "3DGS local repair (93 evaluation views)",
+      "metric": "target-region PSNR gain vs base model",
+      "value": 7.91,
+      "value_str": "+7.91 dB PSNR in repaired region",
+      "paper": "https://arxiv.org/abs/2607.28834",
+      "paper_title": "FocusGS: Spatial Delta Layers for Local Repair and Deterministic Editing of Trained 3D Gaussian Assets"
+    },
+    {
+      "benchmark": "3DGS deterministic editing (83 trials + 5 public cases)",
+      "metric": "mean edited-ROI PSNR gain / target-mask PSNR",
+      "value": 11.05,
+      "value_str": "trial-averaged mean +11.05 dB gain; on public cases EIF reaches 33.17 dB target-mask PSNR (text-driven baselines fail to complete the edits)",
+      "paper": "https://arxiv.org/abs/2607.28834",
+      "paper_title": "FocusGS: Spatial Delta Layers for Local Repair and Deterministic Editing of Trained 3D Gaussian Assets"
+    },
+    {
+      "benchmark": "Adversarial face-recognition evasion (FFHQ, CelebA-HQ)",
+      "metric": "average attack success rate across FR models",
+      "value": 84.86,
+      "value_str": "84.86% avg attack success rate; +15.28pp over noise-based methods, +5.21pp over semantic-based methods (transferability)",
+      "paper": "https://arxiv.org/abs/2607.28936",
+      "paper_title": "DiffAttack: Evasion Attacks Against Face Recognition via Latent Diffusion Models"
+    },
+    {
+      "benchmark": "2D SAM/SAM2 to 3D/4D lifting (KiTS, Pancreas, LiTS, Colon CT; cell-tracking CTC)",
+      "metric": "trainable parameter fraction vs full retraining",
+      "value": 2.8,
+      "value_str": "competitive-or-superior segmentation while tuning only ~2.8% of SAM parameters (~3.7% for SAM2)",
+      "paper": "https://arxiv.org/abs/2607.29033",
+      "paper_title": "SAM+D: Parameter-Efficient Dimensional Lifting of SAM-Family Models via Depth-Routed LoRA and Depth Shifting"
+    }
+  ]
+}

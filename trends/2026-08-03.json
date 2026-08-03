@@ -1,13 +1,34 @@
 {
   "date": "2026-08-03",
-  "source_listing_date": "2026-07-31",
-  "source_mode": "weekly-pastweek",
-  "note": "Weekly retrospective for W31 (2026-07-27 to 2026-07-31). No daily /new data for this date (today's daily runs separately at 11:00 KST); daily stats row intentionally omitted.",
-  "weekly_aggregate": {
-    "by_cat": {"cs.LG": 964, "cs.CV": 641, "cs.AI": 1211, "eess.IV": 57, "eess.SP": 131},
+  "source_listing_date": "2026-08-03",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 137,
+      "cs.CV": 98,
+      "cs.AI": 146,
+      "eess.IV": 5,
+      "eess.SP": 18
+    },
     "scope": "new+cross; replacements excluded",
-    "days_covered": ["2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31"],
-    "note": "5영업일 모두 arXiv+저널 완전판(source_mode=new)"
+    "journal_count": 285
   },
-  "totals": {"total_scanned": 4537, "selected": 1313}
+  "totals": {
+    "total_scanned": 607,
+    "selected": 162
+  },
+  "classified": {
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 2,
+      "Phase Imaging/Holography": 3,
+      "Meta-Optics/Diffractive": 3,
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 24,
+      "Virtual Staining/Pathology": 16,
+      "Reconstruction/Inverse Problems": 19,
+      "Deep Learning Methods": 93
+    }
+  },
+  "note": "2026-08-03(월)은 정상 daily다. 5개 추적 카테고리 arXiv /new listing이 모두 오늘 날짜(Monday, 3 August 2026)를 가리켜 source_mode=new로 확정했다. 이 레코드는 오늘 오전 이미 발행된 주간 회고(weekly/2026-31.json, posts/2026-08-03-weekly.html)가 남겨둔 weekly-pastweek 스키마 trends 레코드(source_mode=weekly-pastweek, 지난주 7/27~7/31 집계)를 daily 스키마로 완전히 덮어쓴 것이다 — 지난주 회고와 오늘 당일 daily는 서로 독립된 산출물이며, 이 trends 파일은 오늘 daily 전용이다. 오늘 신규 공지 논문의 arXiv ID는 전부 2607(7월) prefix인데, 이는 주말 직전 금요일(7/31) 제출분이 월요일 공지로 넘어온 정상적인 현상이며 지난 월요일(7/27)에도 동일 패턴이 확인됐다 — parser 오류가 아니다. arXiv new+cross 합계는 404편(cs.LG 137·cs.CV 98·cs.AI 146·eess.IV 5·eess.SP 18)으로 지난 영업일(7/31, 595편)보다 크게 줄었는데, 다섯 카테고리 모두 고르게 줄어든 형태이고 월요일 특유의 주말 공백 효과로 보여 parser 오류로 보이지 않는다. 저널(Crossref) 285건을 더한 원천 스캔 689건이 dedup을 거쳐 607건으로 병합됐고, 이 중 162건(26.7%)이 ROI로 선정됐다 — 최근 며칠(25~32%) 밴드 하단이지만 정상 범위다. 오늘 계산광학 코어 4개 버킷(FP·Lensless·Phase·Meta-Optics) 중 Fourier Ptychography는 아예 0편이고 나머지 세 버킷(Lensless 2·Phase 3·Meta-Optics 3)도 실사 확인 결과 전부 무선통신/재료과학 키워드 우연 매칭이라 실제 이미징 신호가 완전히 0편이다 — 최근 관찰된 침묵 패턴 중에서도 가장 얇다. 대신 오늘 가장 뚜렷한 신호는 세 갈래로 나타났다: (1) AI 생성 이미지·영상 판별이 이진 판정에서 귀속(attribution)·설명가능성·불확실성·공격까지 확장된 논문 6편(Explaining AI-Image Detection·Retrieval-Driven Video Attribution·K-Space Signature·DiffAttack 외), (2) 3D Gaussian Splatting이 생성에서 국소 복구·gap-filling·active-view-selection 같은 유지보수 문제로 옮겨간 논문 4편(FocusGS·FillGS·GO-PRE·OASIS), (3) SAM/DINO 같은 범용 비전 foundation model을 초음파·CT·OCT 등 의료 모달리티별로 파라미터 효율적으로 특화하는 논문 4편 이상(SAM+D·UltraSAM3·DynoDINO·ReMoE). 오늘 오전 이미 발행된 주간 회고(weekly/2026-31.json)의 예측 3개는 모두 검증 첫날이라 ⏳로 유보했다(posts/2026-08-03.html '예측 회고 루프' 참고)."
 }
