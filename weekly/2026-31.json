@@ -1,0 +1,328 @@
+{
+  "date": "2026-08-03",
+  "iso_week": "2026-31",
+  "week_start": "2026-07-27",
+  "week_end": "2026-07-31",
+  "weekly_thesis": "지난주 초반(월~화)에는 계산 이미징 역문제가 학습된 사전의 불확실성 신뢰성에서 출발해 화요일에는 복원 알고리즘 자체의 수렴 보장으로 한 단계 더 좁혀졌고, 주 중반(수~목)에는 계산광학 코어 버킷(메타옵틱스 화요일 → lensless 수요일)이 사흘 간격으로 번갈아 반짝 살아났다가 다시 꺼지는 패턴을 반복했으며, 주 후반(목~금)에는 3D Gaussian Splatting이 압축·품질평가·관절체 분해를 거쳐 최소 입력(텍스트 한 줄·이미지 한 장)만으로 3D/4D 아바타를 바로 생성하는 지점까지 도달했다. 지난주 weekly가 예측했던 GLAM-SLAM류의 실제 로봇 배포 후속과 계산광학 코어로의 불확실성 정량화 확산은 둘 다 나타나지 않았고, 대신 HistoFID류 평가지표 신뢰성 문제의식은 병리를 벗어나 3DGS 렌더링 품질 평가(SpatialQ)로 부분적으로 번졌다.",
+  "hot_vs_cold": {
+    "hot": [
+      {
+        "cluster": "3D Gaussian Splatting — 다음 단계 병목(압축·평가·분해)을 거쳐 최소 입력 직접 생성으로",
+        "why": "목요일 3DGBGS·SpatialQ·StructureGS가 압축률·품질평가·관절체 분해라는 실용 병목으로 갈라섰고, 금요일에는 4DHumanDiff·SpiD·S-Avatar가 텍스트 한 줄 또는 이미지 한 장만으로 3D/4D 아바타를 바로 생성해, '어떻게 더 잘 그릴까'에서 '어떻게 최소한의 입력으로 빠르게 뽑아낼까'로 질문 자체가 옮겨갔다.",
+        "papers": [
+          "https://arxiv.org/abs/2607.26578",
+          "https://arxiv.org/abs/2607.26595",
+          "https://arxiv.org/abs/2607.27634",
+          "https://arxiv.org/abs/2607.28164"
+        ]
+      },
+      {
+        "cluster": "역문제/영상 복원 신뢰성 축 — 불확실성 신뢰에서 수렴 보장·실시간 재구성·통계적 정지 기준으로",
+        "why": "월요일 '불확실성을 믿어도 되는가'라는 질문이 화요일 '알고리즘이 반드시 수렴하는가'로 구체화됐고, 수요일에는 시스템 행렬 계산 자체를 없앤 실시간 광음향 재구성(SAN)으로, 목요일에는 '측정을 언제 멈출지'를 통계적으로 보장하는 CoRAS로 이어져, 나흘 연속 신뢰성 문제의식이 서로 다른 각도에서 구체화됐다.",
+        "papers": [
+          "https://arxiv.org/abs/2607.21721",
+          "https://arxiv.org/abs/2607.23347",
+          "https://arxiv.org/abs/2607.25576"
+        ]
+      }
+    ],
+    "cold": [
+      {
+        "cluster": "계산광학 코어(FP·Lensless·Phase·Meta-Optics)의 지속적 신호",
+        "why": "화요일 메타옵틱스(6편), 수요일 lensless(5편)가 각각 3주 만의 반짝 회복을 보였지만 둘 다 다음날 바로 사그라들었다 — 목요일 3편, 금요일 2편으로 다시 줄어 계산광학 코어 전체가 매일 이어지는 흐름이 아니라 요일마다 버킷을 바꿔가며 하루짜리로만 존재한다는 패턴이 이번 주에도 반복됐다."
+      },
+      {
+        "cluster": "디지털 병리 AI의 클러스터급 신호",
+        "why": "화요일 5편(효율·강건성·유전자 발현 예측), 수요일 3편(비생물학적 교란요인 강건성)으로 이틀 연속 클러스터를 이뤘지만, 목·금 이틀은 각각 1편(히스토병리 그래프 구조 학습, 핵 분할)에 그쳐 클러스터를 유지하지 못했다."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "cluster": "3D Gaussian Splatting이 압축·품질평가·관절체 분해를 거쳐 최소 입력 직접 생성으로",
+      "papers": [
+        {
+          "title": "3DGBGS: 3D Granular Ball Gaussian Splatting for Compact Novel View Synthesis",
+          "arxiv": "https://arxiv.org/abs/2607.26578",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "3D Representation", "class": "Gaussian Splatting", "order": "Compression", "genus": "Anchor-based", "confidence": "Medium", "rationale": "같은 주 안에서 압축·평가·분해·직접생성으로 이어지는 3DGS 계열의 한 갈래"}
+        },
+        {
+          "title": "SpatialQ: Multimodal Quality Assessment for 3D Gaussian Splatting Scenes",
+          "arxiv": "https://arxiv.org/abs/2607.26595",
+          "importance_tags": ["[평가축]"],
+          "phylogeny": {"source": "CVML", "phylum": "3D Representation", "class": "Gaussian Splatting", "order": "Evaluation", "genus": "Multimodal-LLM-judge", "confidence": "Medium", "rationale": "3DGS 품질을 2D 렌더링만으로 판단할 수 없다는 문제의식을 처음 정면으로 제기"}
+        },
+        {
+          "title": "StructureGS: Articulated Object Decomposition for 3D Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2607.26889",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "3D Representation", "class": "Gaussian Splatting", "order": "Decomposition", "genus": "Part-aware", "confidence": "Medium", "rationale": "부위별 경계 상자로 관절체를 분해하는 구조적 접근"}
+        },
+        {
+          "title": "4DHumanDiff: Direct Text-to-4DGS Generation for Consistent 360-Degree Dynamic Humans",
+          "arxiv": "https://arxiv.org/abs/2607.27634",
+          "importance_tags": ["[방법전환]", "[스케일업]"],
+          "phylogeny": {"source": "CVML", "phylum": "3D Representation", "class": "Gaussian Splatting", "order": "Direct Generation", "genus": "Text-to-4DGS", "confidence": "Medium", "rationale": "촬영-피팅 2단계를 건너뛰고 텍스트에서 4DGS를 바로 생성"}
+        },
+        {
+          "title": "S-Avatar: Single-Image Diffusion-Based 3DGS Face Synthesis with FLAME Alignment",
+          "arxiv": "https://arxiv.org/abs/2607.28164",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "3D Representation", "class": "Gaussian Splatting", "order": "Direct Generation", "genus": "Single-image-to-3DGS", "confidence": "Medium", "rationale": "이미지 한 장에서 3DGS를 바로 합성 후 파라메트릭 얼굴 모델로 정렬"}
+        }
+      ],
+      "why": "목요일 3DGBGS·SpatialQ·StructureGS 세 편은 '더 잘 그리기' 경쟁에서 벗어나 각각 압축률(앵커 최대 37.1% 감소, 저장 용량 평균 9.8% 감소), 평가 방법(2D 렌더링만으로는 3DGS 장면 품질을 제대로 못 봄, 깊이·점군까지 함께 보는 멀티모달 평가 필요), 관절체 분해(서랍장처럼 부위가 따로 움직이는 물체를 부위별 경계 상자로 깨끗하게 나눔)라는 서로 다른 다음 단계 병목을 다뤘다. 금요일에는 4DHumanDiff와 S-Avatar가 아예 그 전 단계 자체를 건너뛰었다 — 예전에는 사람이 움직이는 3DGS를 만들려면 먼저 영상을 촬영하거나 생성한 뒤 거기에 3D 표현을 피팅하는 2단계를 거쳐야 했는데, 이제는 텍스트 한 줄 또는 이미지 한 장에서 바로 360도 전신 4DGS나 얼굴 3DGS를 생성한다(추론 속도 10배 이상 향상). 즉 닷새 동안 3DGS 연구의 질문 자체가 '한 장면을 어떻게 더 잘 재구성할까'에서 '그 결과를 어떻게 압축·평가·분해할까'를 거쳐 '애초에 촬영 없이 최소 입력만으로 얼마나 빠르게 만들어낼 수 있을까'로 옮겨갔다는 뜻이다.",
+      "confidence": "Medium",
+      "lab_action": "SpatialQ의 깊이+점군 기반 멀티모달 품질 평가 프레임워크를 랩 3D 재구성 결과의 자동 QA 단계에 도입해 기존 PSNR/SSIM 단독 평가와 비교하고, 4DHumanDiff/S-Avatar의 '최소 입력 직접 생성' 구조가 랩의 촬영 기반 3D 재구성 파이프라인 중 어느 단계를 대체할 수 있는지 스캐닝 없는 조직/시편 3D 표현 실험으로 검증"
+    },
+    {
+      "cluster": "역문제/영상 복원 신뢰성 축이 불확실성 신뢰에서 수렴 보장·실시간 재구성·통계적 정지 기준으로",
+      "papers": [
+        {
+          "title": "Prior laundering: learned priors with inherited, undetectable overconfidence",
+          "arxiv": "https://arxiv.org/abs/2607.21721",
+          "importance_tags": ["[경고신호]", "[해부분석]"],
+          "phylogeny": {"source": "CVML", "phylum": "Inverse Problems", "class": "Learned Priors", "order": "Uncertainty Quantification", "genus": "Posterior-bias-diagnosis", "confidence": "High", "rationale": "이 주간 신뢰성 축의 출발점이자 오늘의 must-read"}
+        },
+        {
+          "title": "Trainable Nonexpansive Denoisers for Contractive Image Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2607.23347",
+          "importance_tags": ["[방법전환]", "[해부분석]"],
+          "phylogeny": {"source": "CVML", "phylum": "Inverse Problems", "class": "PnP/RED", "order": "Convergence Guarantee", "genus": "Nonexpansive-denoiser", "confidence": "High", "rationale": "불확실성 신뢰 질문을 수렴 보장이라는 더 구체적인 질문으로 좁힘"}
+        },
+        {
+          "title": "Matrix-Free Photoacoustic Image Reconstruction via Sensor-Token Self-Attention",
+          "arxiv": "https://arxiv.org/abs/2607.25576",
+          "importance_tags": ["[방법전환]", "[실사용전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Inverse Problems", "class": "Photoacoustic Tomography", "order": "Real-time Reconstruction", "genus": "Matrix-free-transformer", "confidence": "High", "rationale": "SSIM 0.522/PSNR 22.09dB, 재구성 시간 한 자릿수 이상 단축이라는 구체 수치로 신뢰성 축을 실용 단계로 이동"}
+        },
+        {
+          "title": "Conformalized Rate-Adaptive Sensing (CoRAS)",
+          "arxiv": "https://arxiv.org/abs/2607.26887",
+          "importance_tags": ["[방법전환]", "[평가축]"],
+          "phylogeny": {"source": "CVML", "phylum": "Inverse Problems", "class": "Compressed Sensing", "order": "Adaptive Stopping", "genus": "Conformal-calibration", "confidence": "High", "rationale": "'측정을 언제 멈출지'를 통계적으로 보장한 이 주간 신뢰성 축의 종착점"}
+        }
+      ],
+      "why": "월요일 Prior laundering은 학습된 사전이 정답 데이터 대신 과거 복원 archive로 학습되면, 측정이 부족한 방향에서는 그 archive의 편향을 그대로 물려받으면서도 겉보기엔 데이터 기반 불확실성처럼 보인다는 것을 수식으로 보여 '이 불확실성 추정치를 믿어도 되는가'라는 질문을 처음 정면으로 제기했다. 화요일 Trainable Nonexpansive Denoisers는 이 질문을 한 단계 더 구체화해, PnP/RED 알고리즘이 반복 복원 초반엔 좋아지다 갑자기 무너지는 현상(peak-and-collapse)을 막기 위해 신경망 구조 자체가 항상 안정적으로 수렴하도록 수학적으로 보장하는 설계를 냈다. 수요일 Matrix-Free Photoacoustic Reconstruction(SAN)은 광음향 단층촬영에서 시스템 행렬 계산 자체를 아예 없애고 센서 신호를 트랜스포머로 영상에 직접 매핑해, 기존 반복 최적화 solver 대비 SSIM 0.522·PSNR 22.09dB로 전 지표 우위를 내면서 재구성 시간을 한 자릿수 이상 줄였다. 목요일 CoRAS는 압축센싱 기반 촬영에서 '측정을 언제 멈춰야 하는가'라는 반복 촬영 세팅의 오래된 질문에, 목표 오차 이하를 통계적으로 보장하는 정지 기준으로 처음 답했다. 네 편을 이어보면, 신뢰성이라는 하나의 질문이 나흘에 걸쳐 '이 불확실성을 믿을 수 있는가' → '알고리즘이 수렴하는가' → '시스템 모델 없이도 실시간으로 되는가' → '언제 측정을 멈춰야 통계적으로 안전한가'로 점점 구체적이고 실행 가능한 형태로 좁혀졌다는 뜻이다.",
+      "confidence": "High",
+      "lab_action": "Trainable Nonexpansive Denoisers의 nonexpansive 구조를 랩 PnP 기반 위상 복원/lensless 역문제 solver의 학습된 사전에 이식해 peak-and-collapse 재현 여부를 확인하고, CoRAS의 통계적 정지 기준을 랩 Fourier ptychography 조명 패턴 수 결정 파이프라인에 적용해 고정 촬영 횟수 대비 평균 측정량과 오차 커버리지를 비교"
+    },
+    {
+      "cluster": "계산광학 코어(FP·Lensless·Phase·Meta-Optics) — 버킷을 바꿔가며 하루짜리로만 존재",
+      "papers": [
+        {
+          "title": "메타렌즈 통합 카메라 6-DoF Pose Sensing (외 5편 메타옵틱스 신호)",
+          "arxiv": "https://doi.org/10.1364/ol.610051",
+          "importance_tags": ["[인프라]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "Meta-Optics", "order": "Hardware", "genus": "Metalens-camera", "confidence": "Low", "rationale": "화요일 하루짜리 회복 신호"}
+        },
+        {
+          "title": "대규모 압축 현미경 (Nature Photonics, 48-센서 배열)",
+          "arxiv": "https://doi.org/10.1038/s41566-026-01974-4",
+          "importance_tags": ["[인프라]", "[스케일업]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "Lensless Imaging", "order": "Parallelization", "genus": "Sensor-array-multiplexing", "confidence": "Low", "rationale": "수요일 하루짜리 회복 신호, 초당 25.2기가픽셀"}
+        },
+        {
+          "title": "FA-PIE (focus-adaptive ptychographic iterative engine)",
+          "arxiv": "https://doi.org/10.1364/ol.610646",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "Fourier Ptychography", "order": "Robustness", "genus": "Focus-drift-correction", "confidence": "Low", "rationale": "목요일 유일한 FP 실신호"}
+        },
+        {
+          "title": "Statistically constrained optimization for quantized CGH",
+          "arxiv": "https://doi.org/10.1364/ol.608138",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "Holography", "order": "Display", "genus": "Quantized-CGH", "confidence": "Low", "rationale": "금요일 홀로그래피 2편 중 하나"}
+        }
+      ],
+      "why": "이번 주는 계산광학 코어가 완전히 침묵하지는 않았지만, 매일 다른 버킷이 하루씩 돌아가며 반짝였다가 다음 날 바로 꺼지는 패턴을 반복했다. 화요일에는 메타옵틱스가 3주 만에 처음으로 6편의 실질 신호(메타렌즈 통합 카메라의 6자유도 자세 센싱 등)를 냈지만, 수요일에는 그 신호가 사라지고 대신 lensless가 5편(Nature Photonics의 48-센서 배열 압축 현미경, 초당 25.2기가픽셀)으로 반짝였다. 목요일에는 그마저 사그라들어 FP·위상·메타옵틱스에서 각 1편씩만 실신호가 났고, 금요일에는 홀로그래피 2편이 사실상 전부였다. 즉 계산광학 코어 전체를 놓고 보면 '이번 주도 조용했다'고 뭉뚱그리기보다, '매일 버킷을 바꿔가며 하루짜리 신호만 내고 있다'는 게 더 정확한 진단이다 — 이 패턴이 이어지면 편수 그래프의 주간 합산만 봐서는 어느 버킷이 언제 살아나는지 놓치기 쉽다.",
+      "confidence": "Medium",
+      "lab_action": "요일별로 흩어진 계산광학 코어 신호(화=메타옵틱스, 수=lensless, 목=FP, 금=홀로그래피)를 별도 주간 타임라인으로 기록해 반복 주기가 있는지 4주 이상 추적하고, 수요일 Nature Photonics 압축 현미경의 센서 배열 gap-filling 복원 알고리즘을 랩 lensless 리그에 우선 재현"
+    },
+    {
+      "cluster": "디지털 병리 AI — 효율·강건성 확장에서 비생물학적 교란요인 검증으로, 이후 신호 급감",
+      "papers": [
+        {
+          "title": "PathSelect",
+          "arxiv": "https://arxiv.org/abs/2607.23631",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Digital Pathology", "class": "Efficiency", "order": "Token Selection", "genus": "Sequential-VLM-token-select", "confidence": "Medium", "rationale": "화요일 병리 클러스터의 효율 축"}
+        },
+        {
+          "title": "Robustifying pathology foundation models",
+          "arxiv": "https://arxiv.org/abs/2607.22861",
+          "importance_tags": ["[평가축]"],
+          "phylogeny": {"source": "CVML", "phylum": "Digital Pathology", "class": "Foundation Model", "order": "Robustness", "genus": "Scanner-staining-finetune", "confidence": "Medium", "rationale": "화요일 병리 클러스터의 강건성 축"}
+        },
+        {
+          "title": "Beyond Counts (CRoMa)",
+          "arxiv": "https://arxiv.org/abs/2607.25497",
+          "importance_tags": ["[평가축]", "[경고신호]"],
+          "phylogeny": {"source": "CVML", "phylum": "Digital Pathology", "class": "Foundation Model", "order": "Robustness Metric", "genus": "Non-biological-confounder", "confidence": "Medium", "rationale": "수요일 병리 신뢰성 검증의 must-read급 신호"}
+        },
+        {
+          "title": "Towards Reliable Stain Transfer (DMCoStain)",
+          "arxiv": "https://arxiv.org/abs/2607.25393",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Digital Pathology", "class": "Stain Transfer", "order": "Reliability", "genus": "VLM-guided-refinement", "confidence": "Medium", "rationale": "수요일 병리 클러스터의 염색 변환 축"}
+        }
+      ],
+      "why": "화요일 PathSelect·Robustifying pathology FM·Prostate Stratification·Gleason Estimation·HistoGPA 다섯 편은 기가픽셀 슬라이드 처리 효율, 파운데이션 모델의 스캐너/염색 조건 강건성, 염색 정보 너머의 생물학적(유전자 발현) 예측까지 병리 AI가 다루는 범위를 동시에 넓혔다. 수요일에는 그 범위가 '비생물학적 교란요인에 대한 강건성'이라는 더 구체적인 질문으로 좁혀졌다 — Beyond Counts(CRoMa)는 20개 타일 인코더·4개 슬라이드 인코더를 대상으로 조직 준비·염색·스캐너 차이 같은 생물학과 무관한 요인에 얼마나 흔들리는지 재는 지표를 새로 냈고, Towards Reliable Stain Transfer는 병리의사의 판단을 흉내 내는 비전-언어 모델로 학습 데이터를 반복 정제해 H&E→IHC 염색 변환의 정확도와 해석가능성을 함께 높였다. 하지만 목·금 이틀은 각각 실질 신호가 1편(히스토병리 그래프 구조 학습, 핵 분할)에 그쳐 클러스터를 유지할 근거가 사라졌다 — 화·수 이틀의 뚜렷한 흐름이 나흘째부터 급격히 식었다는 뜻이다.",
+      "confidence": "Medium",
+      "lab_action": "Beyond Counts의 CRoMa 지표를 랩 가상 염색/병리 파운데이션 모델 인코더에 적용해 스캐너·기관 조건별 하위 꼬리(worst-case) 강건성을 측정하고, DMCoStain의 VLM 기반 반복 데이터 정제 절차를 랩 염색 변환 파이프라인의 학습 데이터 품질 개선에 시범 적용"
+    },
+    {
+      "cluster": "diffusion 모델을 재학습 없이 추론 시점에서만 조종하는 연구가 요일마다 다른 응용으로 반복",
+      "papers": [
+        {
+          "title": "Rethinking CFG in Distillation (외 5편 샘플러 제어)",
+          "arxiv": "https://arxiv.org/abs/2607.24731",
+          "importance_tags": ["[해부분석]"],
+          "phylogeny": {"source": "CVML", "phylum": "Diffusion Models", "class": "Sampler Control", "order": "Guidance", "genus": "CFG-distillation-conflict", "confidence": "Medium", "rationale": "화요일 6편 동시 등장의 대표 논문"}
+        },
+        {
+          "title": "LumaGuide",
+          "arxiv": "https://arxiv.org/abs/2607.26237",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Diffusion Models", "class": "Sampler Control", "order": "Inference-time Steering", "genus": "Histogram-guidance", "confidence": "Medium", "rationale": "목요일 HDR 응용"}
+        },
+        {
+          "title": "FreeShadow",
+          "arxiv": "https://arxiv.org/abs/2607.26715",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Diffusion Models", "class": "Sampler Control", "order": "Inference-time Steering", "genus": "Attention-reweighting", "confidence": "Medium", "rationale": "목요일 그림자 제거 응용"}
+        }
+      ],
+      "why": "화요일에는 diffusion 모델의 학습된 가중치는 그대로 둔 채 guidance 스케일·초기 노이즈·캐시·attention 같은 추론 단계 요소만 다루는 논문 6편이 한꺼번에 나와, '샘플러 제어'가 그 자체로 독립된 연구 주제가 되고 있음을 보여줬다. 목요일에는 같은 접근(가중치 고정, 추론 과정만 변경)이 그림자 제거(FreeShadow)·HDR 생성(LumaGuide)·텍스트-이미지 정합(AnchorSteer) 세 가지 전혀 다른 실용 문제를 동시에 풀었다. 예전에는 diffusion 모델을 특정 목적에 쓰려면 추가 데이터로 재학습하거나 최소한 LoRA 같은 경량 미세조정이 필요했는데, 이 흐름은 그 전제 자체를 건드린다 — '이미 학습된 모델의 추론 과정을 내가 원하는 방향으로 조종할 수 있는가'가 재학습 여부와 별개의 독립된 설계 축이 됐다는 뜻이다.",
+      "confidence": "Medium",
+      "lab_action": "LumaGuide의 분포 매칭 guidance를 랩 HDR/톤매핑 복원 파이프라인의 밝기 분포 보정 단계에 이식해 재학습 없이 목표 밝기 분포를 맞출 수 있는지 검증하고, FreeShadow의 조명 정보 전이(self-attention 재가중치) 방식을 랩 그림자/비네팅 아티팩트 제거 후처리 단계에 시범 적용"
+    }
+  ],
+  "predictions": [
+    {
+      "title": "3D Gaussian Splatting 최소 입력 직접 생성이 사람을 넘어 조직·시편 3D 표현으로 확장",
+      "claim": "이번 주 4DHumanDiff·S-Avatar가 보여준 '텍스트/이미지 한 장에서 3DGS 직접 생성'이 다음 주에는 사람 아바타를 넘어 계산 이미징 도메인(현미경 시편, 의료 영상 3D 재구성 등)으로 확장된 논문으로 이어진다.",
+      "rationale": "이번 주 3DGS 흐름이 압축·평가·분해를 거쳐 최소 입력 직접 생성까지 닷새 만에 도달한 속도로 볼 때, 다음 단계는 응용 도메인의 확장이다.",
+      "hit_condition": "사람 아바타가 아닌 도메인(현미경/의료/산업 시편 등)에서 최소 입력(단일 이미지 또는 텍스트)으로 3D/4D Gaussian 표현을 직접 생성한 논문 1편 이상",
+      "miss_condition": "계속 인간 아바타/캐릭터 생성에만 머물거나 관련 논문이 없으면 빗나감"
+    },
+    {
+      "title": "역문제 신뢰성 축(수렴 보장·통계적 정지 기준)이 계산광학 코어로 직접 번짐",
+      "claim": "이번 주 나흘에 걸쳐 구체화된 역문제 신뢰성 축(수렴 보장, 실시간 재구성, 통계적 정지 기준)이 다음 주에는 Fourier ptychography, 정량 위상 영상, 홀로그래피, lensless 이미징 중 하나로 직접 적용된 논문으로 이어진다.",
+      "rationale": "3주 연속 이 예측이 계산광학 코어로 번지지 않아 빗나갔지만, 신뢰성 검증 흐름 자체가 이번 주에도 구체적 실행 형태(nonexpansive denoiser, CoRAS)로 계속 강해지고 있어 랩 핵심 ROI로 옮겨붙을 가능성을 계속 추적할 필요가 있다.",
+      "hit_condition": "FP·QPI·홀로그래피·lensless 중 하나에서 수렴 보장, 실시간 matrix-free 재구성, 또는 통계적 정지 기준(conformal 등)을 직접 다룬 논문 1편 이상",
+      "miss_condition": "계속 PINN 방법론·MRI·광음향 등 계산광학 코어 밖에만 머물면 빗나감"
+    },
+    {
+      "title": "계산광학 코어의 '요일별 버킷 순환' 패턴이 4주 연속 반복되는지 확인",
+      "claim": "이번 주 화(메타옵틱스)→수(lensless)→목(FP)→금(홀로그래피) 순으로 매일 다른 버킷이 하루짜리 신호를 내고 사라지는 패턴이 다음 주에도 비슷한 순환 구조로 반복된다.",
+      "rationale": "3주 연속 관찰된 '계산광학 코어 침묵'이 사실은 완전한 침묵이 아니라 버킷을 바꿔가며 하루씩 반짝이는 패턴일 수 있다는 이번 주 관찰을 검증할 필요가 있다.",
+      "hit_condition": "다음 주에도 계산광학 코어 4버킷 중 최소 2개 버킷이 서로 다른 요일에 3편 이상의 실질 신호를 내는 순환 패턴이 재현됨",
+      "miss_condition": "다음 주는 계산광학 코어 전체가 5일 내내 고르게 1편 이하로 완전히 조용하거나, 반대로 특정 하루에만 전체가 몰리는 등 순환 패턴이 재현되지 않으면 빗나감"
+    }
+  ],
+  "prediction_review": [
+    {
+      "title": "GLAM-SLAM류 실시간 대규모 Gaussian SLAM의 실제 로봇/임베디드 배포 후속 등장",
+      "label": "✗",
+      "reason": "이번 주 3DGS는 목요일 압축·품질평가·관절체 분해(3DGBGS·SpatialQ·StructureGS), 금요일 최소 입력 직접 생성(4DHumanDiff·SpiD·S-Avatar)으로 이어졌지만, 로봇 플랫폼이나 시뮬레이션 폐루프 주행·탐사에서 Gaussian 기반 SLAM/매핑을 실제로 실행한 논문은 나오지 않았습니다. 흐름 자체가 SLAM에서 압축·아바타 생성 쪽으로 방향을 틀어 빗나갔습니다."
+    },
+    {
+      "title": "불확실성 정량화가 계산광학 코어(FP·위상·홀로그래피·lensless)로 직접 번짐",
+      "label": "✗",
+      "reason": "이번 주 신뢰성 축은 학습된 사전의 과신 문제(Prior laundering, 월), PnP/RED 수렴 보장(화), 실시간 matrix-free 재구성(SAN, 수), 통계적 정지 기준(CoRAS, 목)으로 구체화됐지만 모두 일반 역문제·광음향·압축센싱 이론 차원에 머물렀고, Fourier ptychography·정량 위상 영상·홀로그래피·lensless에서 직접 다룬 논문은 없었습니다. 4주 연속으로 이 예측이 빗나갔습니다."
+    },
+    {
+      "title": "HistoFID류 평가지표 신뢰성 점검이 병리를 넘어 다른 이미징 평가 지표로 확장",
+      "label": "◐",
+      "reason": "목요일 SpatialQ가 '렌더링된 2D 이미지 하나만으로는 3DGS 장면 품질을 제대로 판단할 수 없다'는 문제를 정면으로 제기하며 깊이·점군·카메라 정보까지 함께 보는 멀티모달 평가 프레임워크를 냈습니다. 이는 지난주 예측이 명시했던 '3DGS 렌더링 품질 지표' 확장에 해당하지만, HistoFID처럼 여러 인코더 간 수치 불일치를 정량적으로 드러내는 방식이 아니라 새 평가 방법론을 제안하는 방식이라 완전한 적중으로 보기는 어렵습니다. 부분 적중으로 판단합니다."
+    }
+  ],
+  "themes": [
+    {
+      "title": "역문제/영상 복원 신뢰성 축이 나흘 연속 점점 더 구체적인 실행 형태로 좁혀짐",
+      "summary": "월요일 '이 불확실성을 믿을 수 있는가'(Prior laundering)에서 시작해 화요일 '알고리즘이 수렴하는가'(Trainable Nonexpansive Denoisers), 수요일 '시스템 모델 없이 실시간이 되는가'(Matrix-Free Photoacoustic), 목요일 '언제 측정을 멈춰야 통계적으로 안전한가'(CoRAS)까지, 신뢰성이라는 하나의 질문이 나흘에 걸쳐 이론에서 실행 가능한 설계 축으로 점점 구체화됐습니다. 랩이 이 흐름을 눈여겨봐야 하는 이유는, 이제 이 신뢰성 검증 방법들이 그대로 가져다 쓸 수 있는 구체적 알고리즘 형태로 나오고 있기 때문입니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "3D Gaussian Splatting이 '더 잘 그리기'에서 '최소 입력으로 얼마나 빠르게'로 질문을 바꿈",
+      "summary": "목요일 3DGBGS·SpatialQ·StructureGS가 압축·평가·분해라는 다음 단계 실용 병목을 각각 다뤘고, 금요일 4DHumanDiff·S-Avatar는 촬영 후 피팅이라는 전제 자체를 건너뛰고 텍스트 한 줄 또는 이미지 한 장에서 3D/4D 표현을 바로 생성했습니다(추론 속도 10배 이상). 랩의 3D 재구성 파이프라인이 어느 단계까지 촬영에 의존해야 하는지 다시 판단해볼 시점입니다.",
+      "confidence": "Medium"
+    },
+    {
+      "title": "계산광학 코어는 완전한 침묵이 아니라 '요일마다 버킷을 바꿔가며 하루짜리로 반짝이는' 패턴",
+      "summary": "화요일 메타옵틱스(6편), 수요일 lensless(5편)가 각각 3주 만에 반짝 회복했지만 둘 다 다음날 바로 사그라들어, 목요일엔 FP·위상·메타옵틱스 각 1편, 금요일엔 홀로그래피 2편만 남았습니다. '이번 주도 조용했다'는 진단은 정확하지 않을 수 있습니다 — 매주 합산 편수만 보면 놓치기 쉬운, 버킷이 순환하며 나타나는 패턴일 가능성을 다음 주에도 계속 추적해야 합니다.",
+      "confidence": "Low"
+    }
+  ],
+  "top5": [
+    {
+      "title": "Prior laundering: learned priors with inherited, undetectable overconfidence",
+      "arxiv": "https://arxiv.org/abs/2607.21721",
+      "why": "학습된 사전이 archive 편향을 물려받으면서도 데이터 기반 불확실성처럼 보인다는 점을 수식으로 증명해, 이번 주 역문제 신뢰성 축 전체의 출발점이 됐습니다. 표준 자기진단 테스트(simulation-based calibration)로도 이 과신을 걸러낼 수 없다는 경고가 랩의 DL-prior 기반 UQ 계획에 직접적인 위험 신호입니다.",
+      "tag": "[경고신호]",
+      "phylogeny": {"source": "CVML", "phylum": "Inverse Problems", "class": "Learned Priors", "order": "Uncertainty Quantification", "genus": "Posterior-bias-diagnosis", "confidence": "High", "rationale": "이론적으로 엄밀하고 이번 주 신뢰성 축 전체를 여는 논문"}
+    },
+    {
+      "title": "4DHumanDiff: Direct Text-to-4DGS Generation for Consistent 360-Degree Dynamic Humans",
+      "arxiv": "https://arxiv.org/abs/2607.27634",
+      "why": "텍스트만으로 360도 전신 동적 인간 4DGS를 1분 안에 생성하며 기존 영상-후-피팅 파이프라인 대비 추론 속도를 10배 이상 높여, 금요일 3DGS 흐름의 종착점을 가장 구체적인 수치로 보여줬습니다. '촬영 후 재구성'이라는 전제 자체를 건너뛸 수 있다는 것을 처음 실증한 사례입니다.",
+      "tag": "[방법전환]",
+      "phylogeny": {"source": "CVML", "phylum": "3D Representation", "class": "Gaussian Splatting", "order": "Direct Generation", "genus": "Text-to-4DGS", "confidence": "Medium", "rationale": "10배 이상 속도 향상이라는 구체적 벤치마크 수치를 제시"}
+    },
+    {
+      "title": "Matrix-Free Photoacoustic Image Reconstruction via Sensor-Token Self-Attention",
+      "arxiv": "https://arxiv.org/abs/2607.25576",
+      "why": "시스템 행렬 계산을 아예 없애고 센서 신호를 트랜스포머로 영상에 직접 매핑해 SSIM 0.522·PSNR 22.09dB로 기존 반복 최적화 solver 전 지표를 앞서면서 재구성 시간을 한 자릿수 이상 줄였습니다. 랩의 실시간 역문제 solver 설계에 '추론 시 물리 모델 행렬 연산을 완전히 제거할 수 있는가'라는 새 설계 축을 제시합니다.",
+      "tag": "[실사용전환]",
+      "phylogeny": {"source": "CVML", "phylum": "Inverse Problems", "class": "Photoacoustic Tomography", "order": "Real-time Reconstruction", "genus": "Matrix-free-transformer", "confidence": "High", "rationale": "정량 벤치마크와 통계 검정(p<1e-8)까지 갖춘 구체적 결과"}
+    },
+    {
+      "title": "Conformalized Rate-Adaptive Sensing (CoRAS)",
+      "arxiv": "https://arxiv.org/abs/2607.26887",
+      "why": "압축센싱 기반 반복 촬영에서 '측정을 언제 멈출지'를 목표 오차 확률로 통계적으로 보장하는 정지 기준을 처음 제시했습니다. 랩이 Fourier ptychography처럼 반복 촬영을 쓰는 모든 세팅에서 바로 적용해볼 수 있는, 이론과 실행이 동시에 갖춰진 드문 사례입니다.",
+      "tag": "[평가축]",
+      "phylogeny": {"source": "CVML", "phylum": "Inverse Problems", "class": "Compressed Sensing", "order": "Adaptive Stopping", "genus": "Conformal-calibration", "confidence": "High", "rationale": "통계적 보장(coverage guarantee)이 있는 정지 기준을 제시"}
+    },
+    {
+      "title": "SpatialQ: Multimodal Quality Assessment for 3D Gaussian Splatting Scenes",
+      "arxiv": "https://arxiv.org/abs/2607.26595",
+      "why": "2D 렌더링 이미지 하나만으로는 3DGS 장면 품질을 제대로 판단할 수 없다는 문제를 정면으로 제기해, 지난주 weekly가 예측했던 'HistoFID류 평가지표 신뢰성 문제가 병리를 넘어 확장'되는 흐름의 부분 적중 근거가 됐습니다. 깊이·점군·카메라 정보까지 함께 보는 평가 프레임워크가 필요하다는 주장은 랩의 3D 재구성 결과 평가 방식에도 직접 영향을 줍니다.",
+      "tag": "[평가축]",
+      "phylogeny": {"source": "CVML", "phylum": "3D Representation", "class": "Gaussian Splatting", "order": "Evaluation", "genus": "Multimodal-LLM-judge", "confidence": "Medium", "rationale": "새 평가 프레임워크를 제안했지만 아직 독립 검증/벤치마크 확산 전"}
+    }
+  ],
+  "phylogeny_tags": [
+    {"paper": "https://arxiv.org/abs/2607.21721", "source": "CVML", "lineage": "Inverse Problems > Learned Priors > Uncertainty Quantification > Posterior-bias-diagnosis"},
+    {"paper": "https://arxiv.org/abs/2607.23347", "source": "CVML", "lineage": "Inverse Problems > PnP/RED > Convergence Guarantee > Nonexpansive-denoiser"},
+    {"paper": "https://arxiv.org/abs/2607.25576", "source": "CVML", "lineage": "Inverse Problems > Photoacoustic Tomography > Real-time Reconstruction > Matrix-free-transformer"},
+    {"paper": "https://arxiv.org/abs/2607.26578", "source": "CVML", "lineage": "3D Representation > Gaussian Splatting > Compression > Anchor-based"},
+    {"paper": "https://arxiv.org/abs/2607.26595", "source": "CVML", "lineage": "3D Representation > Gaussian Splatting > Evaluation > Multimodal-LLM-judge"},
+    {"paper": "https://arxiv.org/abs/2607.26889", "source": "CVML", "lineage": "3D Representation > Gaussian Splatting > Decomposition > Part-aware"},
+    {"paper": "https://arxiv.org/abs/2607.27634", "source": "CVML", "lineage": "3D Representation > Gaussian Splatting > Direct Generation > Text-to-4DGS"},
+    {"paper": "https://arxiv.org/abs/2607.28164", "source": "CVML", "lineage": "3D Representation > Gaussian Splatting > Direct Generation > Single-image-to-3DGS"},
+    {"paper": "https://arxiv.org/abs/2607.25497", "source": "CVML", "lineage": "Digital Pathology > Foundation Model > Robustness Metric > Non-biological-confounder"},
+    {"paper": "https://arxiv.org/abs/2607.25393", "source": "CVML", "lineage": "Digital Pathology > Stain Transfer > Reliability > VLM-guided-refinement"},
+    {"paper": "https://arxiv.org/abs/2607.24731", "source": "CVML", "lineage": "Diffusion Models > Sampler Control > Guidance > CFG-distillation-conflict"},
+    {"paper": "https://arxiv.org/abs/2607.26237", "source": "CVML", "lineage": "Diffusion Models > Sampler Control > Inference-time Steering > Histogram-guidance"},
+    {"paper": "https://arxiv.org/abs/2607.26715", "source": "CVML", "lineage": "Diffusion Models > Sampler Control > Inference-time Steering > Attention-reweighting"}
+  ],
+  "next_week_actions": [
+    {
+      "title": "역문제 신뢰성 축 4편을 랩 위상 복원/lensless/Fourier ptychography solver에 순차 이식",
+      "action": "Trainable Nonexpansive Denoisers의 nonexpansive 구조를 랩 PnP 기반 phase retrieval solver에 이식해 peak-and-collapse 재현 여부를 확인하고, Matrix-Free Photoacoustic의 sensor-token self-attention을 산란매질 역문제 solver에 시범 적용하며, CoRAS의 통계적 정지 기준을 Fourier ptychography 조명 패턴 수 결정에 적용",
+      "expected_output": "solver별(기존 반복 최적화 vs matrix-free vs nonexpansive-constrained vs CoRAS 적응적 정지) 수렴 안정성·재구성 시간·평균 측정량 비교표"
+    },
+    {
+      "title": "SpatialQ 스타일 멀티모달 품질 평가를 랩 3D 재구성 QA에 도입",
+      "action": "SpatialQ의 깊이+점군+카메라 정보 기반 멀티모달 평가 프레임워크를 랩 3DGS/계산 이미징 3D 재구성 결과의 자동 QA 단계에 시범 도입해 기존 PSNR/SSIM 단독 평가와 판정이 갈리는 사례를 수집",
+      "expected_output": "PSNR/SSIM 단독 평가 vs 멀티모달 평가가 서로 다른 판정을 내리는 사례 목록과 빈도"
+    },
+    {
+      "title": "계산광학 코어 요일별 순환 패턴 4주 추적 로그 구축",
+      "action": "화(메타옵틱스)-수(lensless)-목(FP)-금(홀로그래피) 순으로 관찰된 이번 주 순환 패턴을 다음 3주간의 daily trends 데이터로 계속 기록해 우연인지 반복 구조인지 확인",
+      "expected_output": "4주간 계산광학 코어 4버킷의 요일별 실신호 편수 히트맵"
+    }
+  ]
+}

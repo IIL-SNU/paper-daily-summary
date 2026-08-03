@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Weekly Retrospective — 2026-W31</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.7;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+table{border-collapse:collapse;width:100%;margin:1rem 0}
+th,td{border:1px solid #ccc;padding:.5rem .8rem;vertical-align:top}
+th{background:#f0f0f8;font-size:.85rem}
+td{font-size:.88rem}
+blockquote{border-left:4px solid #2a2a6e;padding:.5rem 1rem;margin:1rem 0;background:#f8f8ff}
+.theme-card{border:1px solid #e0e0ff;border-radius:8px;padding:1rem;margin:.8rem 0;background:#f8f8ff}
+.theme-card h3{margin:0 0 .5rem;font-size:1rem;color:#2a2a6e}
+a{color:#2a2a6e}
+.home{display:inline-block;padding:.4rem .9rem;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;font-size:.875rem;color:#374151;text-decoration:none;margin:.5rem 0}
+.home:hover{background:#e9ecef}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 6px;border-radius:8px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.hot-cold{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+.hot-box{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:.9rem 1.1rem}
+.cold-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:.9rem 1.1rem}
+.hot-box h3{margin:0 0 .5rem;color:#7f1d1d;font-size:.95rem}
+.cold-box h3{margin:0 0 .5rem;color:#1e3a8a;font-size:.95rem}
+.hot-box ul,.cold-box ul{margin:.4rem 0;padding-left:1.2rem;font-size:.88rem}
+.dd{background:#fefce8;border:1px solid #fde047;border-radius:10px;padding:1.1rem 1.3rem;margin:1rem 0}
+.dd h3{margin:0 0 .5rem;color:#713f12;font-size:1rem}
+.action-card{border:1px solid #d1fae5;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#f0fdf4}
+.action-card h3{margin:0 0 .4rem;font-size:.95rem;color:#14532d}
+.pred-card{border:1px solid #e0e7ff;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#eef2ff}
+.pred-card h3{margin:0 0 .4rem;font-size:.95rem;color:#3730a3}
+.pred-card .cond{font-size:.82rem;color:#4338ca;margin:.3rem 0}
+.meta{font-size:.85rem;color:#475569;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:4px;padding:.6rem 1rem;margin:.8rem 0}
+ul.plain{padding-left:1.3rem}
+ul.plain li{margin:.3rem 0;font-size:.9rem}
+.review-hit{color:#166534;font-weight:700}
+.review-partial{color:#92400e;font-weight:700}
+.review-miss{color:#7f1d1d;font-weight:700}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Weekly Retrospective — 2026-08-03 (Week 31)</h1>
+<div class=meta>
+  <div>발행: 2026-08-03 (월) &nbsp;|&nbsp; 검토 기간: 2026-07-27 ~ 07-31 (Mon–Fri)</div>
+  <div>지난주 arXiv 신규 약 4,004편 (cs.LG 964 · cs.CV 641 · cs.AI 1211 · eess.IV 57 · eess.SP 131) + 저널 다수 &nbsp;|&nbsp; ROI 배정 1,313건 &nbsp;|&nbsp; 5일치 daily briefing 기반(월~금 모두 arXiv+저널 완전판)</div>
+</div>
+
+<h2>🗓 Executive Summary</h2>
+<ul class=plain>
+  <li>지난주는 <strong>역문제·영상 복원 신뢰성 검증이 나흘 연속으로 점점 더 구체적인 실행 형태로 좁혀진 한 주</strong>로 기억하면 됩니다. 월요일 "이 불확실성을 믿을 수 있는가"라는 질문이 화요일 "알고리즘이 수렴하는가", 수요일 "시스템 모델 없이 실시간이 되는가", 목요일 "언제 측정을 멈춰야 통계적으로 안전한가"까지 매일 한 단계씩 더 실행 가능한 형태로 바뀌었습니다.</li>
+  <li>3D Gaussian Splatting은 <strong>목요일 압축·품질평가·관절체 분해라는 다음 단계 병목을 거쳐, 금요일에는 촬영 자체를 건너뛰고 텍스트 한 줄·이미지 한 장에서 3D/4D 아바타를 바로 만드는 지점까지 도달</strong>했습니다. 지난주 예측했던 실제 로봇 SLAM 배포 대신, 전혀 다른 방향(최소 입력 직접 생성)으로 흐름이 꺾였습니다.</li>
+  <li>랩의 핵심 ROI인 <strong>계산광학 코어(FP·lensless·위상·메타옵틱스)는 완전한 침묵이 아니라 요일마다 버킷을 바꿔가며 하루짜리로 반짝이는 패턴</strong>이었습니다 — 화요일 메타옵틱스(6편), 수요일 lensless(5편)가 각각 3주 만에 회복했지만 둘 다 다음날 바로 사그라들었고, 목·금은 각 버킷당 1~2편에 그쳤습니다.</li>
+</ul>
+
+<blockquote>
+<strong>Weekly Thesis.</strong> 지난주 초반(월~화)에는 계산 이미징 역문제가 학습된 사전의 불확실성 신뢰성에서 출발해 화요일에는 복원 알고리즘 자체의 수렴 보장으로 한 단계 더 좁혀졌고, 주 중반(수~목)에는 계산광학 코어 버킷(메타옵틱스 화요일 → lensless 수요일)이 사흘 간격으로 번갈아 반짝 살아났다가 다시 꺼지는 패턴을 반복했으며, 주 후반(목~금)에는 3D Gaussian Splatting이 압축·품질평가·관절체 분해를 거쳐 최소 입력(텍스트 한 줄·이미지 한 장)만으로 3D/4D 아바타를 바로 생성하는 지점까지 도달했습니다. 지난주 weekly가 예측했던 GLAM-SLAM류의 실제 로봇 배포 후속과 계산광학 코어로의 불확실성 정량화 확산은 둘 다 나타나지 않았고, 대신 HistoFID류 평가지표 신뢰성 문제의식은 병리를 벗어나 3DGS 렌더링 품질 평가(SpatialQ)로 부분적으로 번졌습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>지난주 가장 뜨거운 흐름은 <strong>역문제(inverse problem, 측정값만으로 원래 영상을 복원하는 문제)와 영상 복원 연구가 신뢰성이라는 하나의 질문을 나흘에 걸쳐 점점 더 구체적인 형태로 좁혀간 것</strong>입니다. 월요일 Prior laundering은 신경망이 학습한 사전(prior, 그럴듯한 영상이 어떻게 생겼는지에 대한 사전 지식)이 정답 데이터 대신 과거 복원 결과 archive로 학습되면, 측정값이 부족한 방향에서는 그 archive의 편향을 그대로 물려받으면서도 겉보기엔 데이터에서 나온 불확실성처럼 보인다는 것을 수식으로 보였습니다. 즉 "이 복원과 함께 나온 불확실성 추정치를 믿어도 되는가"라는 질문을 처음 정면으로 던진 것입니다. 화요일에는 이 질문이 한 단계 더 구체화됐습니다 — Trainable Nonexpansive Denoisers는 Plug-and-Play(PnP)/RED 알고리즘이 반복 복원 초반엔 화질이 좋아지다 갑자기 무너지는 현상(peak-and-collapse)을 막기 위해, 신경망 구조 자체가 "출력이 입력보다 절대 더 벌어지지 않는다"는 성질을 항상 만족하도록 설계해 수렴을 수학적으로 보장했습니다. 수요일 Matrix-Free Photoacoustic Reconstruction(SAN)은 광음향 단층촬영에서 시스템 행렬 계산 자체를 아예 없애고 센서 신호를 트랜스포머로 영상에 직접 매핑해, 기존 반복 최적화 solver 대비 SSIM 0.522·PSNR 22.09dB로 전 지표에서 앞서면서 재구성 시간을 한 자릿수 이상 줄였습니다. 목요일 CoRAS(Conformalized Rate-Adaptive Sensing)는 압축센싱 기반 촬영에서 "측정을 언제 멈춰야 하는가"라는, 랩이 반복 촬영 세팅(압축센싱, Fourier ptychography)에서 늘 마주치는 질문에 목표 오차 이하를 통계적으로 보장하는 정지 기준으로 처음 답했습니다. 네 편을 이어보면, "이 결과를 믿을 수 있는가"라는 이론적 질문이 나흘 만에 "언제 멈춰야 통계적으로 안전한가"라는 바로 실행할 수 있는 설계 축으로 바뀌었다는 뜻입니다.</p>
+
+<p>두 번째 흐름은 <strong>계산광학 코어(Fourier ptychography·lensless·위상 영상·메타옵틱스)가 완전히 조용했던 것이 아니라, 요일마다 버킷을 바꿔가며 하루짜리로만 신호를 내고 사라지는 패턴을 반복한 것</strong>입니다. 화요일에는 메타옵틱스가 3주 만에 처음으로 6편의 실질 신호(메타렌즈 통합 카메라의 6자유도 자세 센싱, 다채널 편광 검출 메타표면 등)를 냈지만, 수요일에는 그 신호가 사라지고 대신 lensless가 5편(Nature Photonics의 48-센서 배열 압축 현미경, 초당 25.2기가픽셀 처리량)으로 반짝였습니다. 목요일에는 그마저 사그라들어 FP·위상·메타옵틱스 각 1편씩만 실신호가 났고, 금요일에는 홀로그래피 2편이 사실상 전부였습니다. 같은 기간 3D Gaussian Splatting은 목요일 3DGBGS·SpatialQ·StructureGS가 압축·품질평가·관절체 분해라는 다음 단계 병목으로 갈라졌고, 금요일에는 4DHumanDiff·S-Avatar가 촬영 후 3D 피팅이라는 2단계 전제 자체를 건너뛰어 텍스트 한 줄이나 이미지 한 장에서 바로 360도 동적 인간 4DGS를 만들어냈습니다(추론 속도 10배 이상). 디지털 병리 AI도 비슷한 흐름을 보였습니다 — 화·수 이틀은 효율·강건성·비생물학적 교란요인 검증이라는 뚜렷한 클러스터를 이뤘지만, 목·금 이틀은 각 1편에 그쳐 클러스터가 급격히 식었습니다.</p>
+
+<p>다음 주 전망: 첫째, 4DHumanDiff·S-Avatar류의 "최소 입력에서 3D/4D 직접 생성"이 사람 아바타를 넘어 현미경 시편·의료 영상 같은 계산 이미징 도메인으로 확장되는지가 관찰 포인트입니다. 둘째, 지난주 나흘에 걸쳐 구체화된 역문제 신뢰성 축(수렴 보장, 실시간 재구성, 통계적 정지 기준)이 다음 주에는 드디어 계산광학 코어(FP·위상·홀로그래피·lensless)로 직접 번지는지 — 4주 연속 이 예측이 빗나갔지만 신뢰성 검증 자체는 계속 구체적인 실행 형태로 강해지고 있어 계속 지켜볼 필요가 있습니다. 셋째, 화(메타옵틱스)→수(lensless)→목(FP)→금(홀로그래피) 순으로 관찰된 계산광학 코어의 "요일별 버킷 순환" 패턴이 다음 주에도 비슷한 구조로 재현되는지 확인해, 이 패턴이 우연인지 반복 구조인지 가늠할 만합니다.</p>
+
+<h2>⚖️ Hot vs Cold</h2>
+<div class=hot-cold>
+  <div class=hot-box>
+    <h3>⬆ 가속 클러스터</h3>
+    <ul>
+      <li><strong>3D Gaussian Splatting — 다음 단계 병목을 거쳐 최소 입력 직접 생성으로</strong><br>목요일 압축·평가·분해, 금요일 텍스트/이미지 한 장에서 3D/4D 아바타 직접 생성까지 닷새 동안 질문 자체가 바뀌었습니다.</li>
+      <li><strong>역문제/영상 복원 신뢰성 축</strong><br>불확실성 신뢰(월)에서 수렴 보장(화)·실시간 재구성(수)·통계적 정지 기준(목)까지 나흘 연속 점점 구체화됐습니다.</li>
+    </ul>
+  </div>
+  <div class=cold-box>
+    <h3>⬇ 감속 클러스터</h3>
+    <ul>
+      <li><strong>계산광학 코어의 지속적 신호</strong><br>화요일 메타옵틱스(6편), 수요일 lensless(5편)가 각각 반짝 회복했지만 둘 다 다음날 바로 사그라들었습니다.</li>
+      <li><strong>디지털 병리 AI의 클러스터급 신호</strong><br>화·수 이틀은 5편·3편으로 뚜렷한 클러스터였지만, 목·금은 각 1편에 그쳐 클러스터를 유지하지 못했습니다.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>🧩 주간 클러스터 표</h2>
+<table>
+<thead><tr>
+  <th>Cluster</th>
+  <th>대표 논문</th>
+  <th>왜 중요?</th>
+  <th>Confidence</th>
+  <th>Lab action</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><strong>3D Gaussian Splatting이 압축·품질평가·관절체 분해를 거쳐 최소 입력 직접 생성으로</strong><br><small>Phylogeny: CVML / 3D Representation &gt; Gaussian Splatting &gt; Direct Generation &gt; Text-to-4DGS</small></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.26578">3DGBGS</a><br>
+    <a href="https://arxiv.org/abs/2607.26595">SpatialQ</a><br>
+    <a href="https://arxiv.org/abs/2607.26889">StructureGS</a><br>
+    <a href="https://arxiv.org/abs/2607.27634">4DHumanDiff</a><br>
+    <a href="https://arxiv.org/abs/2607.28164">S-Avatar</a>
+  </td>
+  <td>목요일 3DGBGS·SpatialQ·StructureGS 세 편은 "더 잘 그리기" 경쟁에서 벗어나 각각 압축률(앵커 최대 37.1% 감소, 저장 용량 평균 9.8% 감소), 평가 방법(2D 렌더링만으로는 3DGS 장면 품질을 제대로 못 봄, 깊이·점군까지 함께 보는 멀티모달 평가 필요), 관절체 분해(서랍장처럼 부위가 따로 움직이는 물체를 부위별 경계 상자로 깨끗하게 나눔)라는 서로 다른 다음 단계 병목을 다뤘습니다. 금요일에는 4DHumanDiff와 S-Avatar가 아예 그 전 단계 자체를 건너뛰었습니다 — 예전에는 사람이 움직이는 3DGS를 만들려면 먼저 영상을 촬영하거나 생성한 뒤 거기에 3D 표현을 피팅하는 2단계를 거쳐야 했는데, 이제는 텍스트 한 줄 또는 이미지 한 장에서 바로 360도 전신 4DGS나 얼굴 3DGS를 생성합니다(추론 속도 10배 이상 향상). 즉 닷새 동안 3DGS 연구의 질문 자체가 "한 장면을 어떻게 더 잘 재구성할까"에서 "그 결과를 어떻게 압축·평가·분해할까"를 거쳐 "애초에 촬영 없이 최소 입력만으로 얼마나 빠르게 만들어낼 수 있을까"로 옮겨갔다는 뜻입니다.</td>
+  <td>Medium<br><small>목·금 이틀, 서로 다른 하위 문제(압축/평가/분해/직접생성) 5편이 자연스럽게 이어짐, 벤치마크 확산은 아직 부족</small></td>
+  <td>SpatialQ의 깊이+점군 기반 멀티모달 품질 평가 프레임워크를 랩 3D 재구성 결과의 자동 QA 단계에 도입해 기존 PSNR/SSIM 단독 평가와 비교하고, 4DHumanDiff/S-Avatar의 "최소 입력 직접 생성" 구조가 랩의 촬영 기반 3D 재구성 파이프라인 중 어느 단계를 대체할 수 있는지 스캐닝 없는 조직/시편 3D 표현 실험으로 검증</td>
+</tr>
+<tr>
+  <td><strong>역문제/영상 복원 신뢰성 축이 불확실성 신뢰에서 수렴 보장·실시간 재구성·통계적 정지 기준으로</strong><br><small>Phylogeny: CVML / Inverse Problems &gt; Compressed Sensing &gt; Adaptive Stopping &gt; Conformal-calibration</small></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.21721">Prior laundering</a><br>
+    <a href="https://arxiv.org/abs/2607.23347">Trainable Nonexpansive Denoisers</a><br>
+    <a href="https://arxiv.org/abs/2607.25576">Matrix-Free Photoacoustic (SAN)</a><br>
+    <a href="https://arxiv.org/abs/2607.26887">CoRAS</a>
+  </td>
+  <td>월요일 Prior laundering은 학습된 사전이 정답 데이터 대신 과거 복원 archive로 학습되면, 측정이 부족한 방향에서는 그 archive의 편향을 그대로 물려받으면서도 겉보기엔 데이터 기반 불확실성처럼 보인다는 것을 수식으로 보여 "이 불확실성 추정치를 믿어도 되는가"라는 질문을 처음 정면으로 제기했습니다. 화요일 Trainable Nonexpansive Denoisers는 이 질문을 한 단계 더 구체화해, PnP/RED 알고리즘의 peak-and-collapse(반복 복원 초반엔 좋아지다 갑자기 무너지는 현상)를 막기 위해 신경망 구조 자체가 항상 안정적으로 수렴하도록 수학적으로 보장하는 설계를 냈습니다. 수요일 SAN은 광음향 단층촬영에서 시스템 행렬 계산 자체를 아예 없애고 센서 신호를 트랜스포머로 영상에 직접 매핑해, 기존 반복 최적화 solver 대비 SSIM 0.522·PSNR 22.09dB로 전 지표 우위를 내면서 재구성 시간을 한 자릿수 이상 줄였습니다. 목요일 CoRAS는 "측정을 언제 멈춰야 하는가"라는 반복 촬영 세팅의 오래된 질문에, 목표 오차 이하를 통계적으로 보장하는 정지 기준으로 처음 답했습니다. 네 편을 이어보면, 신뢰성이라는 하나의 질문이 나흘에 걸쳐 "이 불확실성을 믿을 수 있는가" → "알고리즘이 수렴하는가" → "시스템 모델 없이도 실시간으로 되는가" → "언제 측정을 멈춰야 통계적으로 안전한가"로 점점 구체적이고 실행 가능한 형태로 좁혀졌다는 뜻입니다.</td>
+  <td>High<br><small>월·화·수·목 나흘, 서로 다른 각도(과신 진단, 수렴 보장, 실시간 재구성, 통계적 정지 기준)에서 4편이 자연스럽게 이어짐</small></td>
+  <td>Trainable Nonexpansive Denoisers의 nonexpansive 구조를 랩 PnP 기반 위상 복원/lensless 역문제 solver의 학습된 사전에 이식해 peak-and-collapse 재현 여부를 확인하고, CoRAS의 통계적 정지 기준을 랩 Fourier ptychography 조명 패턴 수 결정 파이프라인에 적용해 고정 촬영 횟수 대비 평균 측정량과 오차 커버리지를 비교</td>
+</tr>
+<tr>
+  <td><strong>계산광학 코어(FP·Lensless·Phase·Meta-Optics) — 버킷을 바꿔가며 하루짜리로만 존재 <span class=tag>WATCH</span></strong><br><small>Phylogeny: CVML / Computational Optics &gt; Lensless Imaging &gt; Parallelization &gt; Sensor-array-multiplexing</small></td>
+  <td>
+    <a href="https://doi.org/10.1364/ol.610051">메타렌즈 6-DoF Pose Sensing</a><br>
+    <a href="https://doi.org/10.1038/s41566-026-01974-4">대규모 압축 현미경</a><br>
+    <a href="https://doi.org/10.1364/ol.610646">FA-PIE</a><br>
+    <a href="https://doi.org/10.1364/ol.608138">Quantized CGH</a>
+  </td>
+  <td>이번 주는 계산광학 코어가 완전히 침묵하지는 않았지만, 매일 다른 버킷이 하루씩 돌아가며 반짝였다가 다음 날 바로 꺼지는 패턴을 반복했습니다. 화요일에는 메타옵틱스가 3주 만에 처음으로 6편의 실질 신호(메타렌즈 통합 카메라의 6자유도 자세 센싱 등)를 냈지만, 수요일에는 그 신호가 사라지고 대신 lensless가 5편(Nature Photonics의 48-센서 배열 압축 현미경, 초당 25.2기가픽셀)으로 반짝였습니다. 목요일에는 그마저 사그라들어 FP·위상·메타옵틱스에서 각 1편씩만 실신호가 났고, 금요일에는 홀로그래피 2편이 사실상 전부였습니다. 즉 계산광학 코어 전체를 놓고 보면 "이번 주도 조용했다"고 뭉뚱그리기보다, "매일 버킷을 바꿔가며 하루짜리 신호만 내고 있다"는 게 더 정확한 진단입니다 — 이 패턴이 이어지면 편수 그래프의 주간 합산만 봐서는 어느 버킷이 언제 살아나는지 놓치기 쉽습니다.</td>
+  <td>Medium<br><small>화·수·목·금 나흘, 요일마다 다른 버킷에서 신호가 나지만 서로 연결되지는 않음 — 순환 구조인지는 추가 관찰 필요</small></td>
+  <td>요일별로 흩어진 계산광학 코어 신호(화=메타옵틱스, 수=lensless, 목=FP, 금=홀로그래피)를 별도 주간 타임라인으로 기록해 반복 주기가 있는지 4주 이상 추적하고, 수요일 Nature Photonics 압축 현미경의 센서 배열 gap-filling 복원 알고리즘을 랩 lensless 리그에 우선 재현</td>
+</tr>
+<tr>
+  <td><strong>디지털 병리 AI — 효율·강건성 확장에서 비생물학적 교란요인 검증으로, 이후 신호 급감</strong><br><small>Phylogeny: CVML / Digital Pathology &gt; Foundation Model &gt; Robustness Metric &gt; Non-biological-confounder</small></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.23631">PathSelect</a><br>
+    <a href="https://arxiv.org/abs/2607.22861">Robustifying pathology FM</a><br>
+    <a href="https://arxiv.org/abs/2607.25497">Beyond Counts (CRoMa)</a><br>
+    <a href="https://arxiv.org/abs/2607.25393">DMCoStain</a>
+  </td>
+  <td>화요일 PathSelect·Robustifying pathology FM·Prostate Stratification·Gleason Estimation·HistoGPA 다섯 편은 기가픽셀 슬라이드 처리 효율, 파운데이션 모델의 스캐너/염색 조건 강건성, 염색 정보 너머의 생물학적(유전자 발현) 예측까지 병리 AI가 다루는 범위를 동시에 넓혔습니다. 수요일에는 그 범위가 "비생물학적 교란요인에 대한 강건성"이라는 더 구체적인 질문으로 좁혀졌습니다 — Beyond Counts(CRoMa)는 20개 타일 인코더·4개 슬라이드 인코더를 대상으로 조직 준비·염색·스캐너 차이 같은 생물학과 무관한 요인에 얼마나 흔들리는지 재는 지표를 새로 냈고, DMCoStain은 병리의사의 판단을 흉내 내는 비전-언어 모델로 학습 데이터를 반복 정제해 H&amp;E→IHC 염색 변환의 정확도와 해석가능성을 함께 높였습니다. 하지만 목·금 이틀은 각각 실질 신호가 1편(히스토병리 그래프 구조 학습, 핵 분할)에 그쳐 클러스터를 유지할 근거가 사라졌습니다 — 화·수 이틀의 뚜렷한 흐름이 나흘째부터 급격히 식었다는 뜻입니다.</td>
+  <td>Medium<br><small>화·수 이틀, 각 3~5편이 뚜렷한 방향(효율/강건성/평가지표)으로 연결되지만 목·금 이틀은 근거가 급감</small></td>
+  <td>Beyond Counts의 CRoMa 지표를 랩 가상 염색/병리 파운데이션 모델 인코더에 적용해 스캐너·기관 조건별 하위 꼬리(worst-case) 강건성을 측정하고, DMCoStain의 VLM 기반 반복 데이터 정제 절차를 랩 염색 변환 파이프라인의 학습 데이터 품질 개선에 시범 적용</td>
+</tr>
+<tr>
+  <td><strong>diffusion 모델을 재학습 없이 추론 시점에서만 조종하는 연구가 요일마다 다른 응용으로 반복</strong><br><small>Phylogeny: CVML / Diffusion Models &gt; Sampler Control &gt; Inference-time Steering &gt; Attention-reweighting</small></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.24731">Rethinking CFG in Distillation</a><br>
+    <a href="https://arxiv.org/abs/2607.26237">LumaGuide</a><br>
+    <a href="https://arxiv.org/abs/2607.26715">FreeShadow</a>
+  </td>
+  <td>화요일에는 diffusion 모델의 학습된 가중치는 그대로 둔 채 guidance 스케일·초기 노이즈·캐시·attention 같은 추론 단계 요소만 다루는 논문 6편이 한꺼번에 나와, "샘플러 제어"가 그 자체로 독립된 연구 주제가 되고 있음을 보여줬습니다. 목요일에는 같은 접근(가중치 고정, 추론 과정만 변경)이 그림자 제거(FreeShadow)·HDR 생성(LumaGuide)·텍스트-이미지 정합(AnchorSteer) 세 가지 전혀 다른 실용 문제를 동시에 풀었습니다. 예전에는 diffusion 모델을 특정 목적에 쓰려면 추가 데이터로 재학습하거나 최소한 LoRA 같은 경량 미세조정이 필요했는데, 이 흐름은 그 전제 자체를 건드립니다 — "이미 학습된 모델의 추론 과정을 내가 원하는 방향으로 조종할 수 있는가"가 재학습 여부와 별개의 독립된 설계 축이 됐다는 뜻입니다.</td>
+  <td>Medium<br><small>화·목 이틀, 6편+3편이 같은 "가중치 고정 + 추론 조종" 접근을 공유하지만 응용은 서로 달라 직접 비교는 없음</small></td>
+  <td>LumaGuide의 분포 매칭 guidance를 랩 HDR/톤매핑 복원 파이프라인의 밝기 분포 보정 단계에 이식해 재학습 없이 목표 밝기 분포를 맞출 수 있는지 검증하고, FreeShadow의 조명 정보 전이(self-attention 재가중치) 방식을 랩 그림자/비네팅 아티팩트 제거 후처리 단계에 시범 적용</td>
+</tr>
+</tbody>
+</table>
+
+<h2>📐 arXiv vs 저널 키워드</h2>
+<table>
+<thead><tr><th>채널</th><th>지난주 주요 키워드</th></tr></thead>
+<tbody>
+<tr><td><strong>공통</strong></td><td>gaussian splatting, inverse problem reliability/uncertainty, digital pathology robustness, diffusion inference-time control, photoacoustic/tomographic reconstruction</td></tr>
+<tr><td><strong>arXiv 전용</strong></td><td>역문제 신뢰성 축(Prior laundering, Trainable Nonexpansive Denoisers, Matrix-Free Photoacoustic, CoRAS), 3DGS 다음 단계(3DGBGS, SpatialQ, StructureGS, 4DHumanDiff, S-Avatar), diffusion 샘플러 제어(Rethinking CFG, LumaGuide, FreeShadow, AnchorSteer), 병리 강건성(Beyond Counts/CRoMa, DMCoStain, PathSelect)</td></tr>
+<tr><td><strong>저널 전용</strong></td><td>메타옵틱스 하드웨어(메타렌즈 6-DoF pose sensing, 이중층 중적외선 편광 검출, 원자탐침 재구성형 평판광학, sliding metasurface), 대규모 lensless 압축 현미경(Nature Photonics), Fourier ptychography 초점 적응(FA-PIE), 정량화된 CGH(computer-generated holography) 최적화</td></tr>
+<tr><td><strong>같은 단어, 다른 맥락</strong></td><td>'reconstruction' — 3DGS의 장면 수준 재구성과 광음향/OCT의 물리 신호 재구성이 같은 단어로 섞여 나와 도메인 구분이 필요합니다. 'uncertainty' — 역문제 solver 쪽은 학습된 사전의 posterior 신뢰성을 가리키는 반면, 병리 쪽은 예측값의 evidential uncertainty를 가리켜 같은 단어라도 재는 대상이 다릅니다. 'metasurface' — 이미징/센싱 응용(화요일 다수)과 무선통신 RIS/6G·레이더용 우연 매칭(금요일 대부분)이 계속 섞여 있어 매주 재확인이 필요합니다.</td></tr>
+</tbody>
+</table>
+
+<h2>🔥 주간 Top 5</h2>
+<ol>
+<li>
+  <strong><a href="https://arxiv.org/abs/2607.21721">Prior laundering: learned priors with inherited, undetectable overconfidence</a></strong>
+  <span class=tag>[경고신호]</span><br>
+  학습된 사전이 archive 편향을 물려받으면서도 데이터 기반 불확실성처럼 보인다는 점을 수식으로 증명해, 지난주 역문제 신뢰성 축 전체의 출발점이 됐습니다. 표준 자기진단 테스트(simulation-based calibration)로도 이 과신을 걸러낼 수 없다는 경고가 랩의 DL-prior 기반 불확실성 정량화 계획에 직접적인 위험 신호입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2607.27634">4DHumanDiff: Direct Text-to-4DGS Generation for Consistent 360-Degree Dynamic Humans</a></strong>
+  <span class=tag>[방법전환]</span><br>
+  텍스트만으로 360도 전신 동적 인간 4DGS를 1분 안에 생성하며 기존 영상-후-피팅 파이프라인 대비 추론 속도를 10배 이상 높여, 금요일 3DGS 흐름의 종착점을 가장 구체적인 수치로 보여줬습니다. "촬영 후 재구성"이라는 전제 자체를 건너뛸 수 있다는 것을 처음 실증한 사례입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2607.25576">Matrix-Free Photoacoustic Image Reconstruction via Sensor-Token Self-Attention</a></strong>
+  <span class=tag>[실사용전환]</span><br>
+  시스템 행렬 계산을 아예 없애고 센서 신호를 트랜스포머로 영상에 직접 매핑해 SSIM 0.522·PSNR 22.09dB로 기존 반복 최적화 solver 전 지표를 앞서면서 재구성 시간을 한 자릿수 이상 줄였습니다. 랩의 실시간 역문제 solver 설계에 "추론 시 물리 모델 행렬 연산을 완전히 제거할 수 있는가"라는 새 설계 축을 제시합니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2607.26887">Conformalized Rate-Adaptive Sensing (CoRAS)</a></strong>
+  <span class=tag>[평가축]</span><br>
+  압축센싱 기반 반복 촬영에서 "측정을 언제 멈출지"를 목표 오차 확률로 통계적으로 보장하는 정지 기준을 처음 제시했습니다. 랩이 Fourier ptychography처럼 반복 촬영을 쓰는 모든 세팅에서 바로 적용해볼 수 있는, 이론과 실행이 동시에 갖춰진 드문 사례입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2607.26595">SpatialQ: Multimodal Quality Assessment for 3D Gaussian Splatting Scenes</a></strong>
+  <span class=tag>[평가축]</span><br>
+  2D 렌더링 이미지 하나만으로는 3DGS 장면 품질을 제대로 판단할 수 없다는 문제를 정면으로 제기해, 지난주 weekly가 예측했던 "HistoFID류 평가지표 신뢰성 문제가 병리를 넘어 확장"되는 흐름의 부분 적중 근거가 됐습니다. 깊이·점군·카메라 정보까지 함께 보는 평가 프레임워크가 필요하다는 주장은 랩의 3D 재구성 결과 평가 방식에도 직접 영향을 줍니다.
+</li>
+</ol>
+
+<h2>🌟 Weekly Deep-Dive — 지난주의 대표 논문</h2>
+<div class=dd>
+  <h3>Prior laundering: learned priors with inherited, undetectable overconfidence (2607.21721)</h3>
+  <p><em>왜 주간 대표인가</em>: 지난주 역문제 신뢰성 축은 월요일 이 논문에서 시작해 화요일 수렴 보장, 수요일 실시간 재구성, 목요일 통계적 정지 기준까지 나흘 내내 이어진 지난주 전체에서 가장 길게 유지된 흐름입니다. 그중에서도 Prior laundering은 이 신뢰성 축이 왜 필요한지에 대한 근본적인 경고를 던진 논문이라, 특정 요일의 단발 신호가 아니라 한 주 전체 서사의 출발점이자 문제의식의 뿌리를 대표합니다.</p>
+
+  <p><strong>무엇을 했나</strong>: 압축센싱이나 위상 복원처럼 정답 영상 없이 측정값만으로 영상을 복원하는 역문제에서, 신경망이 학습한 사전(prior)이 정답 데이터 대신 과거에 복원해 둔 영상 archive로 학습됐을 때 어떤 일이 생기는지를 분석했습니다. 측정값이 정보를 충분히 주지 못하는 방향(blind subspace)에서는 posterior(사후 분포)가 그 archive의 편향을 그대로 반영하는데도, 겉보기엔 데이터에서 나온 불확실성처럼 보인다는 것을 수식으로 증명했습니다. 심지어 simulation-based calibration 같은 표준 자기진단 테스트로도 이 과신을 걸러낼 수 없다는 점까지 보였습니다.</p>
+
+  <p><strong>왜 새로운가</strong>: 지금까지 학습된 사전 기반 역문제 solver 연구는 "복원 화질이 얼마나 좋아졌는가"를 주로 따졌습니다. 이 논문은 그 화질 경쟁의 다음 단계 질문 — "이 복원과 함께 나온 불확실성 추정치를 실제로 믿어도 되는가" — 을 처음 정면으로 던졌고, 그 답이 "겉보기엔 믿을 만해 보여도 실제로는 archive 편향일 수 있고, 배포 시점에는 이를 구분할 방법이 없다"는 불편한 결론이었다는 점에서 이 주의 신뢰성 축 전체를 여는 역할을 했습니다.</p>
+
+  <p><strong>랩 관련성</strong>: 랩이 위상 복원이나 lensless 재구성 파이프라인에 딥러닝 사전 기반 불확실성 정량화를 도입할 계획이 있다면, 이 논문의 "posterior가 archive 편향을 물려받는다"는 현상을 랩의 학습된 사전에도 simulation-based calibration으로 재현해볼 필요가 있습니다. 특히 랩의 순방향 모델(forward model)이 조명 패턴이나 마스크 설계에 따라 특정 방향의 정보를 구조적으로 덜 주는 경우, 같은 문제가 발생할 가능성이 높습니다.</p>
+
+  <p><strong>주의</strong>: 실험 도메인은 대부분 지진파·지하수·의료 영상 시뮬레이션으로, 랩이 다루는 광학 역문제(위상 복원, Fourier ptychography)가 비슷한 구조의 순방향 모델 조건수·blind subspace를 갖는지는 별도 검증이 필요합니다. 저자들이 제안한 "측정이 실제로 어느 방향을 해결하는지 보고하라"는 권고를 랩 파이프라인에 구체적으로 어떻게 구현할지도 추가 설계가 필요합니다 [Claim risk].</p>
+</div>
+
+<h2>🧭 주간 테마 3개</h2>
+<div class=theme-card>
+  <h3>1. 역문제/영상 복원 신뢰성 축이 나흘 연속 점점 더 구체적인 실행 형태로 좁혀짐</h3>
+  <p>월요일 "이 불확실성을 믿을 수 있는가"(Prior laundering)에서 시작해 화요일 "알고리즘이 수렴하는가"(Trainable Nonexpansive Denoisers), 수요일 "시스템 모델 없이 실시간이 되는가"(Matrix-Free Photoacoustic), 목요일 "언제 측정을 멈춰야 통계적으로 안전한가"(CoRAS)까지, 신뢰성이라는 하나의 질문이 나흘에 걸쳐 이론에서 실행 가능한 설계 축으로 점점 구체화됐습니다. 랩이 이 흐름을 눈여겨봐야 하는 이유는, 이제 이 신뢰성 검증 방법들이 그대로 가져다 쓸 수 있는 구체적 알고리즘 형태로 나오고 있기 때문입니다.</p>
+  <p><em>Confidence: High — 월~목 나흘, 서로 다른 각도에서 4편이 자연스럽게 이어짐</em></p>
+</div>
+<div class=theme-card>
+  <h3>2. 3D Gaussian Splatting이 "더 잘 그리기"에서 "최소 입력으로 얼마나 빠르게"로 질문을 바꿈</h3>
+  <p>목요일 3DGBGS·SpatialQ·StructureGS가 압축·평가·분해라는 다음 단계 실용 병목을 각각 다뤘고, 금요일 4DHumanDiff·S-Avatar는 촬영 후 피팅이라는 전제 자체를 건너뛰고 텍스트 한 줄 또는 이미지 한 장에서 3D/4D 표현을 바로 생성했습니다(추론 속도 10배 이상). 랩의 3D 재구성 파이프라인이 어느 단계까지 촬영에 의존해야 하는지 다시 판단해볼 시점입니다.</p>
+  <p><em>Confidence: Medium — 목·금 이틀, 5편이 자연스럽게 이어지지만 벤치마크 확산은 아직 부족</em></p>
+</div>
+<div class=theme-card>
+  <h3>3. 계산광학 코어는 완전한 침묵이 아니라 "요일마다 버킷을 바꿔가며 하루짜리로 반짝이는" 패턴</h3>
+  <p>화요일 메타옵틱스(6편), 수요일 lensless(5편)가 각각 3주 만에 반짝 회복했지만 둘 다 다음날 바로 사그라들어, 목요일엔 FP·위상·메타옵틱스 각 1편, 금요일엔 홀로그래피 2편만 남았습니다. "이번 주도 조용했다"는 진단은 정확하지 않을 수 있습니다 — 매주 합산 편수만 보면 놓치기 쉬운, 버킷이 순환하며 나타나는 패턴일 가능성을 다음 주에도 계속 추적해야 합니다.</p>
+  <p><em>Confidence: Low — 화~금 나흘, 요일마다 다른 버킷에서 신호가 나지만 순환 구조인지는 추가 관찰 필요</em></p>
+</div>
+
+<h2>🪞 지난 예측 채점 (W30 → W31)</h2>
+<div class=pred-card>
+  <h3><span class=review-miss>✗</span> GLAM-SLAM류 실시간 대규모 Gaussian SLAM의 실제 로봇/임베디드 배포 후속 등장</h3>
+  <p>지난주 3DGS는 목요일 압축·품질평가·관절체 분해(3DGBGS·SpatialQ·StructureGS), 금요일 최소 입력 직접 생성(4DHumanDiff·SpiD·S-Avatar)으로 이어졌지만, 로봇 플랫폼이나 시뮬레이션 폐루프 주행·탐사에서 Gaussian 기반 SLAM/매핑을 실제로 실행한 논문은 나오지 않았습니다. 흐름 자체가 SLAM에서 압축·아바타 생성 쪽으로 방향을 틀어 빗나갔습니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-miss>✗</span> 불확실성 정량화가 계산광학 코어(FP·위상·홀로그래피·lensless)로 직접 번짐</h3>
+  <p>지난주 신뢰성 축은 학습된 사전의 과신 문제(Prior laundering, 월), PnP/RED 수렴 보장(화), 실시간 matrix-free 재구성(SAN, 수), 통계적 정지 기준(CoRAS, 목)으로 구체화됐지만 모두 일반 역문제·광음향·압축센싱 이론 차원에 머물렀고, Fourier ptychography·정량 위상 영상·홀로그래피·lensless에서 직접 다룬 논문은 없었습니다. 4주 연속으로 이 예측이 빗나갔습니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-partial>◐</span> HistoFID류 평가지표 신뢰성 점검이 병리를 넘어 다른 이미징 평가 지표로 확장</h3>
+  <p>목요일 SpatialQ가 "렌더링된 2D 이미지 하나만으로는 3DGS 장면 품질을 제대로 판단할 수 없다"는 문제를 정면으로 제기하며 깊이·점군·카메라 정보까지 함께 보는 멀티모달 평가 프레임워크를 냈습니다. 이는 지난주 예측이 명시했던 "3DGS 렌더링 품질 지표" 확장에 해당하지만, HistoFID처럼 여러 인코더 간 수치 불일치를 정량적으로 드러내는 방식이 아니라 새 평가 방법론을 제안하는 방식이라 완전한 적중으로 보기는 어렵습니다. 부분 적중으로 판단합니다.</p>
+</div>
+
+<h2>🔮 다음주 예측</h2>
+<div class=pred-card>
+  <h3>1. 3D Gaussian Splatting 최소 입력 직접 생성이 사람을 넘어 조직·시편 3D 표현으로 확장</h3>
+  <p>이번 주 4DHumanDiff·S-Avatar가 보여준 "텍스트/이미지 한 장에서 3DGS 직접 생성"이 다음 주에는 사람 아바타를 넘어 계산 이미징 도메인(현미경 시편, 의료 영상 3D 재구성 등)으로 확장된 논문으로 이어진다.</p>
+  <div class=cond>✅ 적중 조건: 사람 아바타가 아닌 도메인(현미경/의료/산업 시편 등)에서 최소 입력(단일 이미지 또는 텍스트)으로 3D/4D Gaussian 표현을 직접 생성한 논문 1편 이상</div>
+  <div class=cond>✗ 빗나감 조건: 계속 인간 아바타/캐릭터 생성에만 머물거나 관련 논문이 없으면 빗나감</div>
+</div>
+<div class=pred-card>
+  <h3>2. 역문제 신뢰성 축(수렴 보장·통계적 정지 기준)이 계산광학 코어로 직접 번짐</h3>
+  <p>이번 주 나흘에 걸쳐 구체화된 역문제 신뢰성 축(수렴 보장, 실시간 재구성, 통계적 정지 기준)이 다음 주에는 Fourier ptychography, 정량 위상 영상, 홀로그래피, lensless 이미징 중 하나로 직접 적용된 논문으로 이어진다.</p>
+  <div class=cond>✅ 적중 조건: FP·QPI·홀로그래피·lensless 중 하나에서 수렴 보장, 실시간 matrix-free 재구성, 또는 통계적 정지 기준(conformal 등)을 직접 다룬 논문 1편 이상</div>
+  <div class=cond>✗ 빗나감 조건: 계속 PINN 방법론·MRI·광음향 등 계산광학 코어 밖에만 머물면 빗나감</div>
+</div>
+<div class=pred-card>
+  <h3>3. 계산광학 코어의 "요일별 버킷 순환" 패턴이 4주 연속 반복되는지 확인</h3>
+  <p>지난주 화(메타옵틱스)→수(lensless)→목(FP)→금(홀로그래피) 순으로 매일 다른 버킷이 하루짜리 신호를 내고 사라지는 패턴이 다음 주에도 비슷한 순환 구조로 반복된다.</p>
+  <div class=cond>✅ 적중 조건: 다음 주에도 계산광학 코어 4버킷 중 최소 2개 버킷이 서로 다른 요일에 3편 이상의 실질 신호를 내는 순환 패턴이 재현됨</div>
+  <div class=cond>✗ 빗나감 조건: 다음 주는 계산광학 코어 전체가 5일 내내 고르게 1편 이하로 완전히 조용하거나, 반대로 특정 하루에만 전체가 몰리는 등 순환 패턴이 재현되지 않으면 빗나감</div>
+</div>
+
+<h2>🧪 다음 주 1주 실행안</h2>
+<div class=action-card>
+  <h3>1. 역문제 신뢰성 축 4편을 랩 위상 복원/lensless/Fourier ptychography solver에 순차 이식</h3>
+  <p>Trainable Nonexpansive Denoisers의 nonexpansive 구조를 랩 PnP 기반 phase retrieval solver에 이식해 peak-and-collapse 재현 여부를 확인하고, Matrix-Free Photoacoustic의 sensor-token self-attention을 산란매질 역문제 solver에 시범 적용하며, CoRAS의 통계적 정지 기준을 Fourier ptychography 조명 패턴 수 결정에 적용.</p>
+  <p><em>기대 산출물: solver별(기존 반복 최적화 vs matrix-free vs nonexpansive-constrained vs CoRAS 적응적 정지) 수렴 안정성·재구성 시간·평균 측정량 비교표</em></p>
+</div>
+<div class=action-card>
+  <h3>2. SpatialQ 스타일 멀티모달 품질 평가를 랩 3D 재구성 QA에 도입</h3>
+  <p>SpatialQ의 깊이+점군+카메라 정보 기반 멀티모달 평가 프레임워크를 랩 3DGS/계산 이미징 3D 재구성 결과의 자동 QA 단계에 시범 도입해 기존 PSNR/SSIM 단독 평가와 판정이 갈리는 사례를 수집.</p>
+  <p><em>기대 산출물: PSNR/SSIM 단독 평가 vs 멀티모달 평가가 서로 다른 판정을 내리는 사례 목록과 빈도</em></p>
+</div>
+<div class=action-card>
+  <h3>3. 계산광학 코어 요일별 순환 패턴 4주 추적 로그 구축</h3>
+  <p>화(메타옵틱스)-수(lensless)-목(FP)-금(홀로그래피) 순으로 관찰된 이번 주 순환 패턴을 다음 3주간의 daily trends 데이터로 계속 기록해 우연인지 반복 구조인지 확인.</p>
+  <p><em>기대 산출물: 4주간 계산광학 코어 4버킷의 요일별 실신호 편수 히트맵</em></p>
+</div>
+
+<h2>🧊 Skim-only / Watch-only 흐름</h2>
+<ul class=plain>
+  <li><strong>[Watch-only] 계산광학 코어(FP·lensless·위상·메타옵틱스)의 요일별 순환 신호</strong> — 화~금 나흘 동안 매일 다른 버킷이 반짝였다 사라졌습니다. 4주 이상 데이터가 쌓이면 순환 구조인지 우연인지 판단할 수 있을 것으로 보입니다 [Confidence Medium].</li>
+  <li><strong>[Watch-only] 디지털 병리 AI의 비생물학적 교란요인 강건성 흐름</strong> — 화·수 이틀만 뚜렷했고 목·금은 급감했습니다. 다음 주 다시 살아나는지 확인이 필요합니다.</li>
+  <li><strong>[Skim-only] diffusion 샘플러 제어 논문군</strong> — 화요일 6편이 한꺼번에 나왔지만 서로 다른 세부 요소(guidance, 노이즈, 캐시, attention)를 다뤄 아직 하나의 표준 벤치마크로 수렴하지 않았습니다. 개별 기법의 우선순위는 랩 파이프라인 적용 시점에 재판단이 필요합니다.</li>
+</ul>
+
+<h2>🔗 참고 링크</h2>
+<ul class=plain>
+  <li><a href="../posts/2026-07-27.html">2026-07-27 Daily Briefing (Mon)</a></li>
+  <li><a href="../posts/2026-07-28.html">2026-07-28 Daily Briefing (Tue)</a></li>
+  <li><a href="../posts/2026-07-29.html">2026-07-29 Daily Briefing (Wed)</a></li>
+  <li><a href="../posts/2026-07-30.html">2026-07-30 Daily Briefing (Thu)</a></li>
+  <li><a href="../posts/2026-07-31.html">2026-07-31 Daily Briefing (Fri)</a></li>
+  <li><a href="../posts/2026-07-27-weekly.html">2026-W30 Weekly Retrospective</a></li>
+  <li><a href="../feed.xml">RSS Feed</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>
