@@ -1,0 +1,37 @@
+{
+  "date": "2026-08-04",
+  "source_listing_date": "2026-08-04",
+  "source_mode": "journal-only",
+  "note": "cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 추적 카테고리의 arXiv /new listing을 실행 시점(대략 11:59 KST)에 반복 재확인했으나 모두 여전히 \"Monday, 3 August 2026\"을 가리키고 있었다 — 화요일(2026-08-04)로 아직 넘어가지 않았다. 지연 원인은 이번 실행에서 확인·추정하지 않는다(휴일 등 특정 원인을 단정할 근거 없음, 원인 불명 상태로 기록). 규칙(prompts/instruction.md 2.1 저널 독립)에 따라 arXiv 섹션은 이번 실행에서 발행하지 않고, Crossref/OpenAlex 저널 수집은 arXiv listing과 무관하게 정상 수행했다 — 419편을 스캔해 112편을 ROI 버킷에 배정했다(26.7%). 다음 정기 실행(2시간 폴링)에서 /pastweek에 2026-08-04 섹션이 뜨는 즉시 Backfill로 arXiv 포함 완전판으로 업그레이드한다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 0,
+      "eess.SP": 0
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 419
+  },
+  "totals": {
+    "total_scanned": 419,
+    "selected": 112
+  },
+  "classified": {
+    "total_scanned": 419,
+    "selected": 112,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 2,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 8,
+      "Meta-Optics/Diffractive": 19,
+      "Light-Field/Novel Sensors": 0,
+      "Tomography/3D Imaging": 34,
+      "Virtual Staining/Pathology": 22,
+      "Reconstruction/Inverse Problems": 3,
+      "Deep Learning Methods": 23
+    }
+  },
+  "daily_thesis": "오늘은 arXiv가 아직 넘어오지 않아 저널만으로 만든 잠정본이고, 저널 내부 신호는 정량 위상 이미징·홀로그래피 복원 신경망 5편이 하드웨어를 늘리기보다 학습 기반 복원으로 수렴하는 쪽이 가장 뚜렷했다. 반면 버킷 편수 상위인 Tomography(34편)·Virtual Staining(22편)·Meta-Optics(19편)는 실사 확인 결과 대부분 임상 진단·RF 통신·염색 병리 키워드 오탐이라, 편수와 실제 신호가 크게 어긋난 하루였다."
+}
