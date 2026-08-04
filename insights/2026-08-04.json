@@ -1,92 +1,139 @@
 {
   "date": "2026-08-04",
-  "source_mode": "journal-only",
+  "source_mode": "new",
   "clusters": [
     {
-      "cluster": "정량 위상 이미징·홀로그래피 복원이 광학계를 늘리기보다 학습된 복원 모델로 무게중심을 옮김",
+      "cluster": "3D Gaussian Splatting이 '예쁘게 렌더링되는가'에서 '그 결과와 불확실성을 믿을 수 있는가'로 넘어감",
       "papers": [
-        {"title": "prNet: Data-Driven Phase Retrieval via Stochastic Refinement", "arxiv_id": "https://doi.org/10.1109/tci.2026.3719489", "journal_or_source": "IEEE Transactions on Computational Imaging"},
-        {"title": "Noise-adaptive label-free adaptation for robust Fourier phase retrieval from experimental diffraction patterns", "arxiv_id": "https://doi.org/10.1364/ao.605722", "journal_or_source": "Applied Optics"},
-        {"title": "Quantitative Phase Imaging via Spin-Hall Differential Microscopy", "arxiv_id": "https://doi.org/10.1002/lpor.71655", "journal_or_source": "Laser & Photonics Reviews"},
-        {"title": "LiftHolo: Lifted Amplitude-Guided Deep Learning for Accelerated High-Quality Computer-Generated Holography", "arxiv_id": "https://doi.org/10.1364/ol.604078", "journal_or_source": "Optics Letters"},
-        {"title": "Neural Architecture Search Generated Phase Retrieval Network and its Application in Laser Wireless Power Transmission", "arxiv_id": "https://doi.org/10.1364/oe.605670", "journal_or_source": "Optics Express"}
+        {
+          "title": "Posterior Variance Is a Constraint Map, Not an Error Map: Closed-Form Uncertainty for Radiative Gaussian Splatting in Sparse-View CT",
+          "arxiv_id": "https://arxiv.org/abs/2607.13682",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Manifold-GS: Certified Hybrid Assets via Varifold-Conservative Gaussian Splatting",
+          "arxiv_id": "https://arxiv.org/abs/2608.00214",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "DynActiveGS: Active Gaussian Splatting for Dynamic Scene Reconstruction",
+          "arxiv_id": "https://arxiv.org/abs/2608.01178",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Swimm3R: Splatting with Medium-aware SfM for Underwater 3D Reconstruction",
+          "arxiv_id": "https://arxiv.org/abs/2608.00950",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "GSRAIN: Physically Calibrated High-/Low-Frequency Rainfall Synthesis for 3D Gaussian Driving Scenes",
+          "arxiv_id": "https://arxiv.org/abs/2608.02177",
+          "journal_or_source": "arXiv cs.CV"
+        }
       ],
-      "why": "지금까지 위상 정보를 얻으려면 보통 여러 번 축을 옮겨 찍거나(다중 축 스캔) 복잡한 간섭계를 새로 짜야 했는데, 오늘 저널 다섯 편은 하드웨어를 더 정교하게 만드는 대신 복원 단계의 신경망을 바꿔서 같은 문제를 풉니다. prNet은 위상 복원을 반복적으로 다듬는 확산모델 스타일 정제(stochastic refinement)로 풀고, spin-Hall 미분 현미경 논문은 복잡한 간섭계나 다중 축 스캔 없이 스핀-홀 효과만으로 정량 위상을 얻습니다. LiftHolo는 컴퓨터생성홀로그램(CGH) 생성 속도를 딥러닝으로 가속하고, NAS 기반 논문은 신경망 구조 자체를 자동 탐색해 위상 복원 성능을 올렸습니다. 다섯 편을 같이 보면, 위상 이미징의 다음 개선 지점이 렌즈나 광학계 추가가 아니라 복원 신경망의 학습 방식과 구조 탐색에 있다는 공통된 방향을 보여줍니다.",
+      "why": "지금까지 3D Gaussian Splatting(3DGS) 논문 대부분은 '얼마나 사실적으로 렌더링되는가'를 화질 지표(PSNR 등) 하나로 따졌는데, 오늘은 그 결과 자체를 얼마나 믿을 수 있는지를 검증하는 논문들이 한꺼번에 나왔습니다. Posterior Variance 논문은 최근 CT 재구성용 3DGS에 붙이기 시작한 '불확실성 지도'(모델이 스스로 얼마나 자신 없는지 표시하는 지도)를 실제로 검증했는데, 결과가 상당히 뼈아픕니다 — 장면 전체로 보면 이 지도가 실제 오차를 14개 시나리오 중 14개에서 잘 예측하지만, 정작 의사가 실제로 들여다보는 조직 내부 영역으로 좁히면 그 예측력이 거의 사라집니다(순위 상관 0.11, 15개 중 0개 통과). 즉 겉보기엔 잘 작동하는 신뢰도 지표가 정작 중요한 영역에서는 장식에 가깝다는 뜻이라, 우리 랩이 재구성 결과에 불확실성 지도를 붙일 때도 전체 평균 성능만 보고 안심하면 안 된다는 경고입니다. 나머지 네 편은 같은 문제의식을 실제 환경 조건으로 확장합니다. DynActiveGS는 로봇이 스스로 탐색하며 3DGS를 만들 때 장면 자체가 움직이는 물체 때문에 왜곡되는 걸 막기 위해 '구조적 불확실성'과 '움직임 때문에 생긴 불확실성'을 구분해서 다루고, Swimm3R은 빛이 산란·감쇠되는 수중 환경에서도 안정적으로 3차원 구조를 복원하도록 물리 기반 보정을 추가합니다. GSRAIN은 반대로 비가 오는 상황을 물리적으로 정밀하게 재현해, 자율주행 알고리즘이 실제로 나쁜 날씨에서 얼마나 흔들리는지 테스트할 수 있는 환경을 만듭니다. Manifold-GS는 3DGS를 로봇 충돌 감지 같은 실사용에 쓰려면 기하 정보 자체가 확실한 부분과 불확실한 부분을 구분해서 내보내야 한다는 문제를 다룹니다. 다섯 편을 같이 보면, 3DGS 연구의 다음 경쟁 축이 '더 예쁘게'가 아니라 '언제 이 결과를 믿어도 되는지'로 옮겨가고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 5편(+같은 축의 D²-4DGS, ASTRA, DerainSplat, CLEAR 등 추가 다수)이 같은 날 나왔고, 의료·로보틱스·수중·자율주행이라는 서로 다른 응용에서 신뢰성/불확실성/열화조건 강건성이라는 공통 질문을 반복 검증함",
+      "lab_action": "Posterior Variance 논문이 공개한 masked calibration·seed-wise bias decomposition 프로토콜을 우리 랩의 sparse-view 단층촬영 3DGS 재구성 파이프라인에 적용해, 우리가 쓰는 불확실성 지도도 조직 내부 영역에서 같은 붕괴가 나타나는지 먼저 점검"
+    },
+    {
+      "cluster": "AI 생성 이미지·영상 탐지가 '한 번 학습하고 끝'에서 '계속 새 생성기에 적응해야 하는 문제'로 재정의됨",
+      "papers": [
+        {
+          "title": "Test-Time Curriculum for Open-Set AIGC Detection",
+          "arxiv_id": "https://arxiv.org/abs/2608.00559",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "SphereVideo: Prototype-anchored Hyperspherical Boundary for Continual AI-generated Video Detection",
+          "arxiv_id": "https://arxiv.org/abs/2608.01334",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Generated Images Are Easier to Forget: A Machine Unlearning Perspective for Synthetic Image Detection",
+          "arxiv_id": "https://arxiv.org/abs/2608.00716",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "FairForensics: Seeing Expressions and Parsing Demographics via Vision-Language Modeling for Generalizable Fair Deepfake Detection",
+          "arxiv_id": "https://arxiv.org/abs/2608.01661",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "어제(8/3)는 AI 생성 콘텐츠 탐지 논문들이 '누가 만들었고 어디를 근거로 판단했는지'를 묻는 쪽으로 움직였는데, 오늘은 같은 문제를 다른 각도에서 봅니다 — 탐지기를 한 번 학습시켜 배포하면 끝이 아니라, 새로운 생성 모델이 계속 등장하는 상황에서 탐지기가 스스로 계속 적응해야 한다는 문제의식입니다. Test-Time Curriculum은 탐지기를 배포한 뒤에도 라벨 없는 테스트 데이터만으로 계속 학습을 갱신하는 방법을 제안하고, SphereVideo는 영상 탐지기가 새 생성기를 하나씩 배울 때 예전에 배운 걸 잊어버리는 문제(파국적 망각)를 막기 위해 '진짜 영상은 특징 공간에서 뭉쳐 있다'는 성질을 이용합니다. Generated Images Are Easier to Forget는 반대로 '머신 언러닝'(모델이 특정 지식을 일부러 잊게 만드는 기법) 관점에서, 대형 범용 비전 모델이 생성 이미지의 특징을 자연 이미지보다 더 쉽게 잊는다는 관찰을 탐지에 활용합니다. FairForensics는 여기에 공정성 문제를 더해, 탐지기가 특정 인구집단에서만 유독 틀리는 편향을 줄이면서도 새로운 조작 기법에 일반화되는지를 함께 봅니다. 네 편을 같이 보면, AI 생성 콘텐츠 탐지 연구의 핵심 질문이 '지금 있는 데이터로 얼마나 정확한가'에서 '내일 나올 모르는 생성기에도 계속 버틸 수 있는가'로 옮겨가고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 4편이 같은 날 나왔고, 테스트 시점 적응·지속학습·머신언러닝·공정성이라는 서로 다른 기법으로 동일하게 '배포 후 적응'이라는 문제를 다룸",
+      "lab_action": "Test-Time Curriculum의 라벨 없는 적응 절차를 우리 랩이 virtual staining 파이프라인에서 쓰는 합성 영상 탐지/품질관리 모듈에 적용해, 새로운 생성 모델 버전으로 바뀔 때마다 재학습 없이 탐지 성능이 유지되는지 확인"
+    },
+    {
+      "cluster": "병리 Foundation Model이 '정말로 조직에서 무엇을 읽어내고 있는지'를 캐묻는 논문들이 동시에 등장",
+      "papers": [
+        {
+          "title": "What Carries the Signal in Pathology Foundation-Model Atlases? A Patient-Level Controlled Benchmark in Breast Cancer",
+          "arxiv_id": "https://arxiv.org/abs/2608.00105",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Harnessing Adversarial Distillation to Customise Debiased, Disease-Specific Pathology Foundation Models for Breast Cancer",
+          "arxiv_id": "https://arxiv.org/abs/2608.01356",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Understanding Synergistic Interactions among Pathology Foundation Models via Adaptive Fusion",
+          "arxiv_id": "https://arxiv.org/abs/2608.01370",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "병리 조직 영상으로 학습한 대형 foundation model들은 최근 몇 년 사이 빠르게 늘었는데, 지금까지는 대부분 '이 모델이 진단 성능을 얼마나 올려주는가'만 보고 그 안에서 실제로 무엇을 학습했는지는 크게 검증하지 않았습니다. 오늘 나온 세 편은 이 부분을 정면으로 파고듭니다. What Carries the Signal는 병리 foundation model이 조직 사진만 보고 유전자 발현 패턴까지 맞힌다는 기존 주장을, 환자 단위로 엄격하게 다시 검증했습니다. 결과는 신호 자체는 진짜지만(순열 검정으로 확인), 그 신호의 상당 부분이 복잡한 딥러닝 표현이 아니라 세포 개수를 세는 것 같은 단순하고 해석 가능한 특징만으로도 거의 따라잡을 수 있었고, 논문이 흔히 자랑하는 '기하학적 구조 활용'은 실제로는 아무 이득이 없었다는 걸 보여줬습니다. Harnessing Adversarial Distillation은 반대 방향에서, 거대한 범용 병리 모델이 특정 암종에 특화되지 않고 여러 기관의 촬영 특성 같은 '진단과 무관한 단서'까지 같이 배운다는 문제를 지적하고, 이런 잡음을 걸러내면서 크기는 30배 이상 줄인 모델을 만들었습니다. Understanding Synergistic Interactions는 여러 병리 foundation model을 나란히 놓고 이들이 서로 다른 정보를 배웠는지, 아니면 겹치는 정보만 배웠는지를 검증합니다. 세 편을 같이 보면, 병리 foundation model 연구의 다음 단계가 '더 큰 모델을 더 많이 학습'하는 게 아니라 '지금 있는 모델이 실제로 무엇을 배웠고 그중 무엇이 진짜 필요한지'를 가려내는 쪽으로 넘어가고 있다는 뜻입니다.",
       "confidence": "Medium",
-      "confidence_note": "서로 다른 저널 5편이 같은 날 나왔으나 3편은 Crossref 초록이 비어 있어 제목·저널명 기준 판단이 섞여 있음",
-      "lab_action": "spin-Hall differential microscopy의 단일 촬영 정량 위상 취득 방식을 우리 랩 QPI 세팅과 비교해 다중 축 스캔 없이도 얻을 수 있는 위상 정확도(RMSE) 벤치마크를 만들고, prNet의 stochastic refinement 복원 모듈을 우리 위상 복원 파이프라인의 후처리 단계로 붙여 기존 복원 대비 노이즈 강건성을 비교"
+      "confidence_note": "서로 다른 저자군 3편이 같은 날 나왔고 모두 병리 foundation model의 내부 신호를 검증한다는 공통점이 있지만, 셋 다 유방암이라는 같은 암종에 몰려 있어 다른 암종·모달리티로의 일반화는 아직 확인되지 않음",
+      "lab_action": "What Carries the Signal의 환자 단위 permutation test + 단순 해석 가능 특징(cell-count) 대조군 설계를 우리 랩이 쓰는 계산 병리/virtual staining 모델 평가에 그대로 적용해, 우리 모델의 성능이 실제로 학습된 표현에서 오는지 단순 통계량으로도 재현 가능한지 먼저 확인"
     },
     {
-      "cluster": "메타표면 19편 중 실제 이미징·센싱용은 소수 — 대부분 통신 안테나·THz 소자로 쏠림",
+      "cluster": "계산광학 코어 4버킷은 오늘도 매우 얇음 — 저널의 위상 복원 신경망 5편만이 유일한 실신호",
       "papers": [
-        {"title": "All-Dielectric Stochastically Encoded Metasurface for Multifunctional Imaging Across Six-Polarization Channels", "arxiv_id": "https://doi.org/10.3390/photonics13080740", "journal_or_source": "Photonics"},
-        {"title": "Design of a monolithically integrated chiral metasurface on InGaAs for broadband circular polarization detection", "arxiv_id": "https://doi.org/10.1088/1361-6463/ae93cc", "journal_or_source": "Journal of Physics D: Applied Physics"},
-        {"title": "Nonlinear harmonic generation enabled by symmetry-breaking BICs in an all-dielectric split-ring metasurface", "arxiv_id": "https://doi.org/10.1088/2040-8986/ae93d9", "journal_or_source": "Journal of Optics"}
+        {
+          "title": "prNet: Data-Driven Phase Retrieval via Stochastic Refinement",
+          "arxiv_id": "https://doi.org/10.1109/tci.2026.3719489",
+          "journal_or_source": "IEEE Transactions on Computational Imaging"
+        },
+        {
+          "title": "Quantitative Phase Imaging via Spin-Hall Differential Microscopy",
+          "arxiv_id": "https://doi.org/10.1002/lpor.71655",
+          "journal_or_source": "Laser & Photonics Reviews"
+        },
+        {
+          "title": "LiftHolo: Lifted Amplitude-Guided Deep Learning for Accelerated High-Quality Computer-Generated Holography",
+          "arxiv_id": "https://doi.org/10.1364/ol.604078",
+          "journal_or_source": "Optics Letters"
+        }
       ],
-      "why": "메타표면 버킷은 오늘 19편으로 편수만 보면 제일 커 보이지만, 실제로 읽어보면 12편 이상이 5G/6G 안테나 이득 향상, THz 변조기, 수중 음향 전달처럼 이미징과 무관한 무선통신·음향 응용입니다. 진짜 이미징·센싱과 관련된 세 편만 추리면, 스토캐스틱 인코딩 메타표면은 6채널 편광을 한 장의 소자로 동시에 다루고, InGaAs 카이럴 메타표면은 원형편광을 검출기에 바로 집적해 별도 편광 광학계를 없앴으며, BIC 기반 비선형 고조파 논문은 메타표면으로 신호를 증폭하는 새 방식을 보여줍니다. 즉 메타표면 자체는 계속 활발히 연구되고 있지만, 오늘 하루만 보면 그 활력의 대부분이 이미징이 아니라 통신·음향 쪽으로 흘러갔다는 뜻입니다.",
+      "why": "오늘도 계산광학 코어 4개 버킷(Fourier Ptychography 4편·Lensless 3편·Phase Imaging 9편·Meta-Optics 20편)은 편수만 보면 적지 않지만, 실제로 읽어보면 대부분 이미징과 무관합니다. Fourier Ptychography 4편 중 실제 계산 이미징 논문은 EUV 포토마스크 검사와 시멘트 재료 나노이미징 2편뿐이고, Meta-Optics 20편 중 19편이 5G/6G 안테나·THz 변조기·수중 음향 전달 같은 무선통신·음향 응용입니다. 그나마 뚜렷한 신호는 저널 쪽 위상 이미징·홀로그래피 복원 신경망 5편입니다 — prNet은 위상 복원을 확산모델식으로 반복 정제하고, spin-Hall differential microscopy는 복잡한 간섭계 없이 스핀-홀 효과만으로 정량 위상을 얻으며, LiftHolo는 컴퓨터생성홀로그램(CGH) 생성을 딥러닝으로 가속합니다. 세 편을 같이 보면, 위상 이미징의 개선 지점이 광학계를 더 정교하게 만드는 쪽이 아니라 복원 신경망 쪽에 쏠려 있다는 최근 며칠간의 흐름이 오늘도 반복됐다는 뜻입니다. 다만 arXiv 쪽에서는 이 흐름을 뒷받침할 새 신호가 없었습니다.",
       "confidence": "Low",
-      "confidence_note": "이미징 관련 신호가 3편뿐이고 서로 다른 하위주제(다채널 편광·카이럴 검출·비선형 증폭)라 하나의 흐름으로 묶기엔 근거가 약함",
-      "lab_action": "All-Dielectric Stochastically Encoded Metasurface의 shared-aperture 6-채널 편광 인코딩 방식을 우리 편광 현미경 모듈에 시뮬레이션으로 적용해, 기존 순차 촬영 대비 단일 노출로 채널 수를 늘렸을 때 정확도 손실이 어느 정도인지 정량화"
-    },
-    {
-      "cluster": "의료영상 딥러닝이 '병변을 분류'하는 문제와 '영상 자체를 고치는' 재구성 문제로 갈라짐",
-      "papers": [
-        {"title": "Asymmetric decoupled dual-domain learning for CT metal artifact reduction: Integrating Fast Fourier Convolution and vision transformers", "arxiv_id": "https://doi.org/10.1016/j.compmedimag.2026.102801", "journal_or_source": "Computerized Medical Imaging and Graphics"},
-        {"title": "Small-Data Deep Learning for Alzheimer-Spectrum Classification from Structural MRI: A Feasibility Study Using OASIS", "arxiv_id": "https://doi.org/10.3390/jimaging12080352", "journal_or_source": "Journal of Imaging"},
-        {"title": "Biomarker-Conditioned Vision Transformers with Deformable Biomarker Attention for Alzheimer's Disease Classification", "arxiv_id": "https://doi.org/10.1007/s10278-026-02152-2", "journal_or_source": "Journal of Imaging Informatics in Medicine"},
-        {"title": "A Hybrid Multi-Scale Phase-Correlation Framework for Subpixel Registration of Multi-Temporal Very-High-Resolution Remote Sensing Images", "arxiv_id": "https://doi.org/10.3390/jimaging12080347", "journal_or_source": "Journal of Imaging"}
-      ],
-      "why": "오늘 Deep Learning Methods 버킷(23편) 대부분은 계산 이미징과 무관한 도메인(피싱 메일 탐지, IoT 침입 탐지, 자동차 검출 등)이었는데, 실제로 이미징에 걸쳐 있는 소수 논문을 추리면 두 갈래로 나뉩니다. 하나는 CT 금속 아티팩트 제거처럼 '손상된 영상 자체를 복원'하는 문제로, 이 논문은 Fast Fourier Convolution(주파수 영역 전역 정보)과 비전 트랜스포머(공간 영역 지역 정보)를 비대칭적으로 분리해 결합했습니다. 다른 하나는 구조 MRI에서 알츠하이머 단계를 분류하는 문제로, 두 논문이 각각 적은 데이터로 학습하는 방법과 바이오마커 조건부 어텐션으로 미묘한 구조 변화를 잡아내는 방법을 다뤘습니다. 위상 상관관계 기반 원격탐사 정합 논문까지 더하면, 의료·위성 영상 모두에서 '복원'과 '분류/정합'이라는 서로 다른 하위 목표가 각자 다른 아키텍처 선택으로 이어지고 있다는 걸 보여줍니다.",
-      "confidence": "Low",
-      "confidence_note": "이미징 관련 신호가 4편뿐이고 그마저 재구성/분류/정합으로 흩어져 있어 단일 흐름이라기보다는 관찰 중 수준",
-      "lab_action": "Fast Fourier Convolution + ViT의 비대칭 dual-domain 구조를 우리 랩 단층촬영 재구성 후처리(아티팩트 제거) 모듈에 시험 적용해, 기존 순수 CNN 기반 후처리 대비 아티팩트 억제·구조 보존 트레이드오프를 PSNR/SSIM으로 비교"
-    },
-    {
-      "cluster": "역문제 재구성이 산란매질 통과 촬영과 불확실성 정량화라는 서로 다른 방향으로 계속 갈라짐",
-      "papers": [
-        {"title": "Array beam-driven computational imaging through thin scattering layer", "arxiv_id": "https://doi.org/10.1016/j.rio.2026.101109", "journal_or_source": "Results in Optics"},
-        {"title": "A Plug-and-Play Method with Inpainting Network for Bayesian Uncertainty Quantification in Imaging", "arxiv_id": "https://doi.org/10.1007/s10851-026-01330-9", "journal_or_source": "Journal of Mathematical Imaging and Vision"},
-        {"title": "Mask-side Hyper-NA Fourier-Ptychographic EUV photomask imaging", "arxiv_id": "https://doi.org/10.1117/1.jmm.25.4.041802", "journal_or_source": "Journal of Micro/Nanopatterning, Materials, and Metrology"}
-      ],
-      "why": "오늘 나온 역문제 계열 세 편은 같은 재구성 문제를 서로 다른 각도에서 다룹니다. Array beam-driven computational imaging은 얇은 산란매질(예: 조직·연기) 뒤의 물체를 배열 빔으로 조명해 산란으로 흐트러진 신호에서 원본을 복원하고, Bayesian uncertainty quantification 논문은 복원 결과에서 어떤 부분이 실제 구조이고 어떤 부분이 알고리즘이 만들어낸 인공물(artifact)인지 픽셀 단위 신뢰구간 없이도 가설검정으로 구분하는 방법(BUQO)에 인페인팅 네트워크를 결합했습니다. Hyper-NA EUV 포토마스크 이미징은 차세대 반도체 리소그래피용 마스크를 고개구수 조건에서 신테크로트론 기반 프티코그래피로 검사하는 사례로, 초점심도가 줄어들고 마스크 3차원 효과가 커지는 문제를 다룹니다. 세 편 모두 '복원 결과를 얼마나 믿을 수 있는가'와 '더 어려운 조건(산란·고개구수)에서도 복원이 되는가'라는, 역문제 연구가 정확도 경쟁을 넘어 신뢰성과 조건 확장으로 옮겨가는 흐름을 보여줍니다.",
-      "confidence": "Low",
-      "confidence_note": "세 편이 서로 다른 응용(산란매질 통과·불확실성 정량화·반도체 계측)이라 직접적인 상호 참조는 없고 방법론적 유사성만으로 묶은 관찰 수준",
-      "lab_action": "BUQO의 가설검정 기반 인공물 판별 절차를 우리 랩의 위상 복원 파이프라인 출력에 적용해, 복원된 미세구조가 실제 신호인지 알고리즘 인공물인지 구분하는 자체 진단 단계를 시범 구축"
-    },
-    {
-      "cluster": "계산광학 코어(FP·Lensless) 버킷은 오늘도 편수가 극히 적고 나머지 대형 버킷은 실신호가 크게 희석됨",
-      "papers": [
-        {"title": "High-resolution nanoimaging reference study of a cement paste by near-field ptychographic X-ray computed tomography", "arxiv_id": "https://doi.org/10.1016/j.tmater.2026.100092", "journal_or_source": "Tomography of Materials and Structures"},
-        {"title": "Multi-Contextual State Space Models for Compressive Light Field Reconstruction over Coded Aperture", "arxiv_id": "https://doi.org/10.1109/tci.2026.3719486", "journal_or_source": "IEEE Transactions on Computational Imaging"},
-        {"title": "Spatially resolved tissue architecture and computational pathology in pancreatic cancer", "arxiv_id": "https://doi.org/10.1038/s12276-026-01782-4", "journal_or_source": "Experimental & Molecular Medicine"}
-      ],
-      "why": "Fourier Ptychography/Microscopy는 2편, Lensless/Coded Imaging은 1편으로 오늘도 계산광학 코어 버킷 자체가 매우 얇습니다. 근접장 프티코그래피 X선 CT 논문은 시멘트 페이스트 내부 구조를 나노 해상도로 보는 재료과학 응용이라 우리 랩의 생물학적 시료 이미징과는 결이 다르고, 코딩 애퍼처 압축 광필드 재구성 논문은 state space model(순차 데이터를 효율적으로 처리하는 최근 신경망 구조)을 광필드 압축 복원에 처음 적용한 사례로 보이나 초록이 없어 세부 확인이 필요합니다. Virtual Staining/Pathology 버킷은 22편 중 실제 계산 병리·가상 염색 논문이 사실상 1편(pancreatic cancer의 spatially resolved computational pathology 리뷰)뿐이고 나머지는 면역조직화학 염색 진단 사례나 무관 분야에서 'staining' 키워드가 우연히 걸린 경우입니다. 세 편을 나란히 두면, 오늘은 계산광학 코어와 가상 염색 모두 버킷 편수와 실제 방법론 신호 사이의 괴리가 특히 큰 하루였다는 걸 보여줍니다.",
-      "confidence": "Low",
-      "confidence_note": "세 편이 서로 다른 응용(재료 CT·광필드 압축센싱·계산 병리 리뷰)이라 단일 클러스터로 보기보다 '오늘 코어 버킷이 얇았다'는 관찰 기록에 가까움",
-      "lab_action": "Multi-Contextual State Space Models의 코딩 애퍼처 압축 광필드 복원 코드/본문을 확인해 state space model이 우리 랩 lensless 압축센싱 복원 대비 파라미터 수 대비 복원 품질에서 이점이 있는지 1차 재현 실험 설계"
+      "confidence_note": "저널 3편이 위상 복원 신경망이라는 방향은 일치하지만 arXiv 쪽 신규 신호가 없어 단발 관찰에 가까움",
+      "lab_action": "spin-Hall differential microscopy의 단일 촬영 정량 위상 취득 방식과 prNet의 stochastic refinement 복원 모듈을 우리 랩 QPI 세팅 대비 광학계 단순화·복원 정확도 트레이드오프로 비교하는 벤치마크를 이번 주 안에 설계"
     }
   ],
   "research_topics": [
     {
-      "title": "spin-Hall differential microscopy 방식의 단일 촬영 QPI를 우리 랩 위상 이미징 파이프라인과 벤치마크",
-      "claim": "복잡한 간섭계나 다중 축 스캔 없이 스핀-홀 효과만으로 정량 위상을 얻는 방식이, 우리 랩 QPI 세팅 대비 광학계 단순화와 정확도 트레이드오프에서 실용적 이점이 있는지 확인한다.",
+      "title": "Posterior Variance 논문의 masked calibration 프로토콜을 우리 sparse-view 재구성 불확실성 지도에 적용",
+      "claim": "우리 랩이 sparse-view 단층촬영/현미경 재구성에 3DGS 기반 불확실성 지도를 쓸 때, 전체 평균에서는 잘 작동해 보여도 실제로 판독하는 관심 영역 내부에서는 같은 붕괴가 나타나는지 먼저 검증한다.",
       "supporting_papers": [
-        {"title": "Quantitative Phase Imaging via Spin-Hall Differential Microscopy", "arxiv": "https://doi.org/10.1002/lpor.71655"},
-        {"title": "prNet: Data-Driven Phase Retrieval via Stochastic Refinement", "arxiv": "https://doi.org/10.1109/tci.2026.3719489"}
+        {"title": "Posterior Variance Is a Constraint Map, Not an Error Map: Closed-Form Uncertainty for Radiative Gaussian Splatting in Sparse-View CT", "arxiv": "https://arxiv.org/abs/2607.13682"}
       ]
     },
     {
-      "title": "BUQO 가설검정 기반 인공물 판별을 우리 위상 복원 결과 자체 진단에 적용",
-      "claim": "Bayesian Uncertainty Quantification by Optimization(BUQO)의 가설검정 절차가 우리 랩 위상/단층 복원 결과에서 실제 미세구조와 알고리즘 인공물을 구분하는 실용적 진단 도구가 될 수 있는지 검증한다.",
+      "title": "Test-Time Curriculum의 라벨 없는 배포 후 적응을 합성 영상 품질관리 모듈에 이식",
+      "claim": "우리 랩의 virtual staining 결과물에 대한 합성 영상 탐지/품질관리 모듈이, 생성 모델 버전이 바뀔 때마다 재학습 없이도 Test-Time Curriculum 방식으로 성능을 유지할 수 있는지 확인한다.",
       "supporting_papers": [
-        {"title": "A Plug-and-Play Method with Inpainting Network for Bayesian Uncertainty Quantification in Imaging", "arxiv": "https://doi.org/10.1007/s10851-026-01330-9"}
+        {"title": "Test-Time Curriculum for Open-Set AIGC Detection", "arxiv": "https://arxiv.org/abs/2608.00559"}
       ]
     },
     {
-      "title": "Fast Fourier Convolution + ViT 비대칭 dual-domain 구조를 단층촬영 재구성 후처리에 이식",
-      "claim": "주파수 영역 전역 정보(FFC)와 공간 영역 지역 정보(ViT)를 비대칭적으로 분리·결합하는 구조가, 우리 랩의 단층촬영 재구성 후처리에서 기존 순수 CNN 기반 아티팩트 제거보다 구조 보존과 아티팩트 억제를 동시에 개선하는지 확인한다.",
+      "title": "What Carries the Signal의 환자/샘플 단위 permutation test를 우리 계산 병리 모델 평가에 적용",
+      "claim": "우리 랩이 계산 병리·virtual staining에서 쓰는 딥러닝 표현이, 단순 해석 가능 특징(세포 개수, 형태 통계량) 대비 통계적으로 유의미한 추가 정보를 주는지 환자 단위 permutation test로 재검증한다.",
       "supporting_papers": [
-        {"title": "Asymmetric decoupled dual-domain learning for CT metal artifact reduction: Integrating Fast Fourier Convolution and vision transformers", "arxiv": "https://doi.org/10.1016/j.compmedimag.2026.102801"}
+        {"title": "What Carries the Signal in Pathology Foundation-Model Atlases? A Patient-Level Controlled Benchmark in Breast Cancer", "arxiv": "https://arxiv.org/abs/2608.00105"}
       ]
     }
   ]

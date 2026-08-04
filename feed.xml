@@ -6,14 +6,14 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 04 Aug 2026 12:10:18 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 14:18:05 +0900</lastBuildDate>
     <ttl>720</ttl>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-08-04 (화요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-08-04.html</link>
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-04.html</guid>
       <pubDate>Tue, 04 Aug 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘(8/4, 화)은 arXiv 5개 카테고리 모두 여전히 지난 월요일(8/3) listing에 머물러 있어, 주간 관점에서 arXiv 쪽 신규 신호는 아직 확보하지 못했습니다. 대신 어제 daily(8/3)에서는 계산광학 코어 4버킷이 실신호 0편으로 완전히 조용했던 반면, AI 생성 콘텐츠 판별·3DGS 유지보수·의료 foundation model 특화라는 arXiv 발 방법론 세 갈래가 뚜렷했습니다. 오늘은 그 arXiv 발 신호를 이어갈 새 데이터가 없는 대신, 저널이 어제와는 결이 다른 계산광학 코어 신호(정량 위상·홀로그래피 복원 신경망 5편)를 내놓았다는 점이 다릅니다.]]></description>
+      <description><![CDATA[오늘(8/4, 화)은 arXiv /new에 cs.LG 340편, cs.CV 331편, cs.AI 464편, eess.IV 19편, eess.SP 71편으로 총 1,225편이 잡혔습니다. 어젯밤까지 listing이 월요일에 멈춰 있어 오전에는 저널만으로 잠정본을 냈었는데, 이번 실행에서 다섯 카테고리 모두 "Tuesday, 4 August 2026"으로 넘어온 걸 확인해 arXiv를 포함한 완전판으로 다시 발행합니다. 저널 420건을 더한 원천 스캔 1,402건 중 469건(33.5%)이 ROI로 선정됐습니다. 오늘 가장 눈에 띄는 특징은 Tomography/3D Imaging 버킷(65편) 안에서 3D Gaussian Splatting(3DGS, 장면을 수많은 반투명 타…]]></description>
     </item>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-08-03 (Week 31)</title>

@@ -1,1 +1,53 @@
-{"date": "2026-08-04", "results": []}
+{
+  "date": "2026-08-04",
+  "results": [
+    {
+      "benchmark": "Radiative Gaussian splatting uncertainty ranking (official 15-scene sparse-view CT benchmark, full-volume)",
+      "metric": "scenes where posterior variance correctly ranks true error",
+      "value": 14,
+      "value_str": "14/15 scenes ranked correctly (full volume), but collapses to median Spearman 0.11 / 0 of 15 scenes inside the clinically-read object interior",
+      "paper": "https://arxiv.org/abs/2607.13682",
+      "paper_title": "Posterior Variance Is a Constraint Map, Not an Error Map: Closed-Form Uncertainty for Radiative Gaussian Splatting in Sparse-View CT"
+    },
+    {
+      "benchmark": "Radiative Gaussian splatting uncertainty compute cost",
+      "metric": "cost vs sampling-based posterior estimator",
+      "value": 8,
+      "value_str": "closed-form estimator matches the infinite-sample sampling limit at ~8x lower cost",
+      "paper": "https://arxiv.org/abs/2607.13682",
+      "paper_title": "Posterior Variance Is a Constraint Map, Not an Error Map: Closed-Form Uncertainty for Radiative Gaussian Splatting in Sparse-View CT"
+    },
+    {
+      "benchmark": "Underwater 3D reconstruction (Barbados underwater video dataset)",
+      "metric": "PSNR gain vs WaterSplatting",
+      "value": 1.47,
+      "value_str": "+1.47 dB PSNR over WaterSplatting; +2.0pp / +2.4pp on RRA@15 / RTA@15 localization",
+      "paper": "https://arxiv.org/abs/2608.00950",
+      "paper_title": "Swimm3R: Splatting with Medium-aware SfM for Underwater 3D Reconstruction"
+    },
+    {
+      "benchmark": "Rainy driving-scene synthesis for 3DGS (FID)",
+      "metric": "Frechet Inception Distance vs baselines",
+      "value": 149.09,
+      "value_str": "FID 149.09 vs CycleGAN-Turbo 155.71 and WeatherEdit 157.94; controllable rainfall intensity 0-13 mm/h",
+      "paper": "https://arxiv.org/abs/2608.02177",
+      "paper_title": "GSRAIN: Physically Calibrated High-/Low-Frequency Rainfall Synthesis for 3D Gaussian Driving Scenes"
+    },
+    {
+      "benchmark": "Pathology foundation-model gene-programme prediction (TCGA-BRCA, 285 patients, patient-level held-out)",
+      "metric": "Spearman correlation range across 11 frozen backbones / 4 gene programmes",
+      "value": 0.56,
+      "value_str": "Spearman rho 0.25-0.56 (best: UNI2, immune programme 0.556); simple interpretable cell-count features come within 0.043-0.085 of embeddings on every programme",
+      "paper": "https://arxiv.org/abs/2608.00105",
+      "paper_title": "What Carries the Signal in Pathology Foundation-Model Atlases? A Patient-Level Controlled Benchmark in Breast Cancer"
+    },
+    {
+      "benchmark": "Breast-cancer-specific pathology foundation model distillation (Yale HER2, SLN-Breast, BRACS)",
+      "metric": "model size reduction vs general PFM while preserving/improving bAcc & AUC",
+      "value": 30,
+      "value_str": "over 30x smaller than general pathology foundation models while largely preserving, and sometimes improving, balanced accuracy / AUC",
+      "paper": "https://arxiv.org/abs/2608.01356",
+      "paper_title": "Harnessing Adversarial Distillation to Customise Debiased, Disease-Specific Pathology Foundation Models for Breast Cancer"
+    }
+  ]
+}
