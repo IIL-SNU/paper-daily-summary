@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-08-05</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-08-05 (수요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-08-05 (수요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Wednesday, 5 August 2026"으로 일치하는 걸 확인하고 정상 Daily로 발행합니다. 저널(Crossref/OpenAlex) 수집은 평소대로 독립 수행됐습니다.</div>
+  <div>🔢 arXiv: cs.LG 181 · cs.CV 146 · cs.AI 292 · eess.IV 8 · eess.SP 20 (new+cross, replacement 제외)</div>
+  <div>🔢 병합: arXiv+저널(439건) 병합 스캔 968건 · ROI 배정 255건 (26.3%) — 최근 2주 밴드(25~34%) 안쪽의 정상 범위</div>
+  <div>⚠️ 어제 압도적이던 3D Gaussian Splatting 물결은 오늘 가라앉았습니다. 대신 확산·스코어 생성 사전을 역문제에 붙이는 흐름, 계산 병리의 분자·공간 통합, 물리 삽입형 재구성이 각각 뚜렷했습니다. Meta-Optics·Phase Imaging 저널 버킷이 각각 10편으로 두꺼워졌지만 실제 이미징 신호는 여전히 얇습니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+어제를 뒤덮었던 3D Gaussian Splatting 물결이 오늘은 눈에 띄게 잦아들었고, 대신 <strong>학습된 확산·스코어 생성 사전(prior)이 어려운 계산 이미징 역문제의 '기본 엔진'으로 자리잡는 날</strong>이었습니다 — 예전엔 사람이 손으로 정한 정규화 항(부드러움·희소성)으로 넣던 사전 지식을 이제는 사전 학습된 확산 모델이 통째로 대신하는데, 역산란(ScoreField)·sparse-view CT·병리 초해상도(S3-Diff)에서 동시에 나왔고, 같은 날 나온 두 편(MRI 조영 PEC·합성 병리 평가)이 그 결합의 함정(latent 스케일 충돌)과 평가 지표 문제(ImageNet FID의 부적절함)까지 같이 드러냈습니다. 둘째 축은 <strong>계산 병리가 '조직 사진 → 진단 라벨'에서 '조직 사진 → 분자·공간 상태 예측'으로 넘어간 것</strong>입니다(H&amp;E 유도 공간 프로테오믹스, 방사선-병리-유전체 통합 벤치마크 OncoTriad-QA). 셋째 축은 <strong>물리를 신경망 '안에' 심는 재구성(unrolling·neural operator·PINN)이 나노재료·CBCT·전력자성 등 서로 다른 도메인에서 같은 날 동시에 나온 것</strong>입니다. 계산광학 코어는 Meta-Optics·Phase Imaging 저널 버킷이 각각 10편으로 두꺼워졌지만 실제 이미징 신호는 Meta 2편·Phase 3편으로 여전히 얇고, 나머지는 무선통신·열복사·음향 응용이었습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(8/5, 수)은 arXiv /new에 cs.LG 181편, cs.CV 146편, cs.AI 292편, eess.IV 8편, eess.SP 20편이 잡혔고, 저널 439건을 더한 원천 스캔 968건 중 255건(26.3%)이 ROI로 선정됐습니다. 어제(8/4)를 압도했던 3D Gaussian Splatting(3DGS, 장면을 수많은 반투명 타원체로 표현해 빠르게 렌더링하는 방식) 신뢰성 물결이 오늘은 거의 잦아들었고, Tomography/3D Imaging 버킷(32편)도 절반 이상이 3DGS가 아니라 임상 OCT·CBCT 사례 보고로 채워졌습니다. 대신 오늘 가장 또렷한 신호는 방법론 쪽에서 나왔습니다. 예전에는 재구성·초해상도 같은 역문제를 풀 때 '이 영상이 자연스러우려면 어떠해야 하는가'라는 사전 지식을 사람이 손으로 정한 정규화 항으로 넣었는데, 오늘은 그 자리를 학습된 확산·스코어 모델이 통째로 대신하는 논문이 서로 다른 응용에서 한꺼번에 나왔습니다.</p>
+<p>대표적으로 ScoreField는 전자기 역산란(보이지 않는 물체의 유전율을 파동 물리로 역추정하는 문제)에서, 물리 방정식(Lippmann-Schwinger)은 그대로 강하게 지키되 '이 유전율 지도가 그럴듯한가'라는 판단만 사전 학습된 스코어 모델이 기울기로 밀어주도록 설계했습니다. 저널 쪽 sparse-view CT 논문은 적은 각도로 찍은 CT의 빈 정보를 확산 생성 사전으로 메우고, S3-Diff는 병리 슬라이드 초해상도에서 SAM 기반 조직 구조 앵커로 확산 모델이 세포 형태를 뭉개지 않게 잡습니다. 재밌는 건 같은 날 이 흐름의 '함정'도 같이 드러났다는 점입니다 — Predictive Enhancement Calibration은 자연영상용 latent 오토인코더의 값 범위가 MRI의 비표준 밝기 스케일과 충돌해 생성 전에 이미 방사선학적 충실도가 망가질 수 있음을 지적했고, 합성 병리 영상 평가 논문은 FID·IS 같은 표준 지표가 ImageNet 특징에 의존해 병리 영상엔 부적절하다며 병리 파운데이션 모델 기반 지표로 갈아끼울 것을 제안했습니다. 둘째 축인 계산 병리에서는, 딥러닝이 만든 재발 위험 히트맵을 그냥 점수로 쓰지 않고 그 좌표를 실제 질량분석 기반 공간 프로테오믹스 측정 위치로 삼아 '왜 이 패치가 위험한가'를 단백질 발현으로 설명하는 논문(TNBC 156명)과, 환자 한 명 단위로 CT/MRI·병리·유전체를 한 문제에 묶은 8.6만 문항 벤치마크(OncoTriad-QA)가 나왔습니다. 셋째 축은 물리를 신경망 안에 직접 박아 넣는 재구성입니다 — 전자 단층촬영의 missing-wedge를 물리 구동 unrolling으로 푼 NanoMorph-3D, U-Net의 skip 연결을 아예 역투영 연산자로 바꾼 4D CBCT 논문, 에너지 일관성을 규제로 넣은 신경 연산자(PI-HNO), 그리고 '궤적이 잘 맞아도 파라미터는 식별 안 될 수 있다'는 함정을 짚은 GeoID-PINN이 같은 날 나왔습니다.</p>
+<p>다음 관찰 포인트는 (1) 오늘 또렷해진 '확산 생성 사전을 역문제에 붙이되 물리·스케일 결합과 평가를 제대로 하자'는 흐름이 이번 주 다른 날에도 이어지는지, (2) 계산 병리의 '분자·공간 좌표 대응' 축이 유방암을 넘어 다른 암종으로 퍼지는지, (3) Meta-Optics·Phase 저널 버킷의 편수 증가가 실제 이미징 신호로 이어지는지 아니면 오늘처럼 무선통신·열복사 잡음에 그치는지입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(8/4, 화)는 arXiv가 정상 규모(1,225편)로 돌아오면서 3D Gaussian Splatting 신뢰성이 압도적 축이었고, AI 생성 콘텐츠 탐지가 '배포 후 지속 적응' 문제로, 병리 foundation model이 '이 모델이 실제로 무엇을 배웠는지 자기 검증'으로 모였습니다. 오늘은 arXiv 규모가 절반 수준(647편 합산)으로 줄면서 3DGS 물결이 크게 가라앉았고, 초점이 렌더링 신뢰성에서 '역문제를 푸는 엔진 자체'로 옮겨갔습니다 — 어제가 3DGS 결과를 믿을 수 있느냐였다면, 오늘은 그 재구성을 만드는 확산 생성 사전과 물리 삽입형 구조를 어떻게 설계·평가하느냐로 한 층 안쪽으로 들어간 셈입니다. 병리 쪽도 어제의 '모델이 무엇을 배웠나(자기 검증)'에서 오늘은 '그 예측을 실제 분자·공간 측정과 좌표 단위로 이어 붙일 수 있나'로 질문이 이어졌습니다. 계산광학 코어는 어제(Meta 20편·Phase 9편, 대부분 무선통신)와 편수 구성이 비슷하게 얇지만, 오늘은 저가 다중모달 조명 하드웨어(COSMIC)와 위상 복원 신경망(NAS 자동 설계) 쪽으로 실신호가 좁게 뭉쳤다는 점이 조금 다릅니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>확산·스코어 생성 사전(prior)이 어려운 계산 이미징 역문제의 '기본 엔진'으로 자리잡음</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.02937" target=_blank>ScoreField</a> <span class=pill>IV</span><br>
+    <a href="https://doi.org/10.1016/j.compmedimag.2026.102802" target=_blank>Diffusion prior for sparse-view CT</a> <span class=pill>JNL</span><br>
+    <a href="https://arxiv.org/abs/2608.03540" target=_blank>S3-Diff (병리 SR)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.03612" target=_blank>PEC (MRI 조영)</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2608.03990" target=_blank>Conditional Diffusion 합성 병리 평가</a> <span class=pill>LG</span>
+  </td>
+  <td>예전에는 재구성·초해상도 같은 역문제를 풀 때 '이 영상이 자연스러우려면 어떠해야 하는가'라는 사전 지식을 사람이 손으로 정한 정규화 항(부드러움·희소성)으로 넣었습니다. 오늘 논문들은 그 자리를 학습된 확산·스코어 모델이 통째로 대신하는 흐름을 한꺼번에 보여줍니다. ScoreField는 전자기 역산란에서 물리 방정식은 그대로 강하게 지키되 '이 유전율 지도가 그럴듯한가'만 스코어 모델이 기울기로 밀어주고, 저널 sparse-view CT 논문은 적은 각도로 찍은 CT의 빈 정보를 확산 사전으로 메우며, S3-Diff는 병리 슬라이드 초해상도에서 SAM 구조 앵커로 형태 뭉개짐을 막습니다. 특히 같은 날 나온 두 편이 이 흐름의 함정도 드러낸 게 중요합니다 — PEC는 자연영상용 latent 값 범위가 MRI 밝기 스케일과 충돌해 생성 전에 이미 충실도가 깨질 수 있음을, 합성 병리 평가 논문은 ImageNet 기반 FID가 병리엔 부적절함을 짚습니다. 즉 논점이 '확산 사전이 되냐'를 넘어 '물리·도메인 스케일과 어떻게 안전하게 붙이고 어떻게 제대로 평가하느냐'로 올라갔다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 저자군 5편이 역산란·CT·병리 SR·MRI 조영·합성 평가라는 서로 다른 응용에서 '학습된 생성 사전을 역문제에 결합'을 다루고, 2편은 그 결합의 실패 조건·평가 함정까지 짚음</small></td>
+  <td>ScoreField의 INR+스코어 사전 결합과 PEC의 case-adaptive 좌표 보정을 우리 랩 sparse-view 단층촬영/QPI 복원에 이식해, 물리 잔차(측정 일관성)와 생성 사전 강도를 분리한 ablation을 돌리고, 합성 평가 논문의 병리-파운데이션-모델 기반 FID로 우리 virtual staining 품질지표를 교체했을 때 순위가 바뀌는지 비교</td>
+</tr>
+<tr>
+  <td><strong>계산 병리가 '조직 사진 → 진단 라벨'에서 '조직 사진 → 분자·공간 상태 예측'으로 축을 옮김</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.03145" target=_blank>Spatial proteomics guided by H&amp;E AI</a> <span class=pill>AI</span><br>
+    <a href="https://arxiv.org/abs/2608.02615" target=_blank>OncoTriad-QA</a> <span class=pill>AI</span><br>
+    <a href="https://doi.org/10.1038/s12276-026-01782-4" target=_blank>Spatial architecture in pancreatic cancer</a> <span class=pill>JNL</span><br>
+    <a href="https://arxiv.org/abs/2608.03664" target=_blank>Morph-ISR</a> <span class=pill>CV</span>
+  </td>
+  <td>지금까지 계산 병리의 성공 사례는 대부분 'H&amp;E 슬라이드를 넣으면 재발 위험이나 아형 라벨을 맞힌다'였고, 그 예측이 조직 안에서 실제로 무엇과 대응하는지는 블랙박스로 남는 경우가 많았습니다. 오늘 논문들은 그 다음 칸, 즉 영상 예측을 분자·공간 정보와 좌표 단위로 이어 붙이는 쪽으로 넘어갑니다. Spatial proteomics 논문은 딥러닝 재발 위험 히트맵을 그냥 점수로 쓰지 않고 그 좌표를 질량분석 기반 공간 프로테오믹스 측정 위치로 삼아 '왜 이 패치가 위험한가'를 실제 단백질 발현(세포주기·유전체 유지 대 면역 활성)으로 설명합니다(TNBC 156명, AUC 0.77). OncoTriad-QA는 환자 한 명 단위로 CT/MRI·전체 슬라이드 병리·돌연변이·메틸화·RNA-seq를 한 문제에 묶은 8.6만 문항 벤치마크로, 모달리티 하나씩만 재던 평가를 '여러 증거를 통합 추론하는가'로 바꿉니다. 췌장암 리뷰가 이 방향이 분야 차원임을 받쳐주고, Morph-ISR은 이 모든 게 성립하려면 애초에 세포 형태가 살아 있는 고해상 입력이 필요하다는 전제를 초해상도로 받칩니다. 즉 병리 AI의 평가 질문이 '얼마나 잘 분류하는가'에서 '조직의 어느 위치가 어떤 분자 상태와 대응하는가를 검증 가능하게 내놓는가'로 옮겨간다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 저자군 4편(arXiv 3 + 저널 리뷰 1)이 공간 프로테오믹스 결합·멀티모달 통합 벤치마크·공간 구조 리뷰·형태 보존 SR이라는 서로 다른 진입점에서 모두 '영상↔분자·공간 대응'으로 수렴</small></td>
+  <td>Spatial proteomics 논문의 '위험 히트맵을 측정 좌표로 쓰는' 절차를 우리 virtual staining/계산 병리 출력에 적용해, 관심 영역이 실제 분자·형태 특징과 좌표 단위로 일치하는지 환자 단위 GroupKFold로 검증하고, OncoTriad-QA에서 병리 파트만 떼어 우리 인코더를 zero-shot 채점해 멀티모달 통합 대비 단일 모달 격차를 기록</td>
+</tr>
+<tr>
+  <td><strong>물리를 신경망 '안에' 심는 재구성(unrolling·neural operator·PINN)이 서로 다른 도메인에서 동시 등장</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.03257" target=_blank>NanoMorph-3D</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.03430" target=_blank>Dual-domain U-Net 4D CBCT</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.02965" target=_blank>PI-HNO</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2608.02633" target=_blank>GeoID-PINN</a> <span class=pill>LG</span><br>
+    <a href="https://doi.org/10.1007/s11831-026-10754-w" target=_blank>Physics-Informed Digital Twins 리뷰</a> <span class=pill>JNL</span>
+  </td>
+  <td>앞 클러스터가 '학습된 사전을 밖에서 붙이는' 쪽이라면, 이쪽은 정반대로 물리 방정식이나 측정 연산자 자체를 신경망 구조 안에 직접 박아 넣습니다. 예전엔 재구성을 순수 데이터 학습(입력→출력 블랙박스)으로 풀거나 반대로 물리 반복 알고리즘만 손으로 돌렸는데, 오늘 논문들은 그 반복 알고리즘의 각 단계를 학습 가능한 층으로 펼쳐(unroll) 물리와 학습을 한 몸으로 만듭니다. NanoMorph-3D는 전자 단층촬영의 고질적 missing-wedge(찍을 수 없는 각도) 문제를 proximal gradient descent를 펼친 물리 구동 unrolling으로 풀고, 4D CBCT 논문은 U-Net의 skip 연결을 아예 역투영 연산자로 바꿔 투영 영역과 볼륨 영역을 물리적으로 오가게 합니다. PI-HNO는 B-H 에너지 일관성을 규제로 넣은 하이브리드 신경 연산자이고, GeoID-PINN은 물리를 지키면서도 '궤적이 잘 맞아도 지역별 파라미터는 식별 안 될 수 있다'는 함정을 정면으로 드러냅니다. 저널 리뷰는 이 조각들(물리 학습·신경 연산자·불확실성 정량화·실시간 갱신)을 한 지도로 묶으며 '배포 준비도'라는 축을 던집니다. 즉 물리 삽입형 재구성이 개별 트릭을 지나 '어떤 물리를, 어디에, 얼마나 강하게 박아야 식별성과 배포가 함께 되는가'로 성숙하고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 5편이 unrolling·연산자 삽입·PINN·리뷰로 같은 방향을 가리키지만, 도메인(나노재료·CBCT·전력자성·역학)이 넓게 퍼져 이미징 코어로의 직접 전이는 논문별 확인 필요</small></td>
+  <td>4D CBCT 논문의 '역투영 연산자를 skip 연결로 대체'하는 이중 도메인 U-Net을 우리 sparse-view 재구성 백본에 적용해 순수 데이터 U-Net 대비 아티팩트·일반화를 같은 팬텀에서 비교하고, GeoID-PINN의 식별성 진단(궤적 적합도 vs 파라미터 회복)을 붙여 '잘 맞는데 파라미터는 못 맞히는' 구간이 있는지 점검</td>
+</tr>
+<tr>
+  <td><strong>초해상도 평가 기준이 '사람 눈에 선명한가'에서 '뒤 작업에 쓸 수 있는 진짜 정보인가'로 이동</strong><span class=pill>WATCH</span></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.03106" target=_blank>FaithIR</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.03540" target=_blank>S3-Diff</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.03664" target=_blank>Morph-ISR</a> <span class=pill>CV</span>
+  </td>
+  <td>초해상도는 오랫동안 '얼마나 선명하고 그럴듯해 보이는가'(PSNR·지각 화질)로 경쟁했는데, 오늘 세 편은 그 기준 자체를 의심합니다. 예전엔 없던 텍스처를 만들어 붙여도 눈에 예쁘면 점수가 올랐지만, 이제는 '그 만들어낸 디테일이 뒤에 붙는 판독·검출·진단을 왜곡하지 않는가'를 묻습니다. FaithIR는 적외선 초해상도가 인공 텍스처와 과도한 엣지로 실제 열 구조를 왜곡한다는 문제를 짚고 검출·분할 같은 기계 인식에 충실한 픽셀 도메인 복원을 제안하며, S3-Diff와 Morph-ISR은 같은 문제의식을 병리 슬라이드로 가져와 진단에 중요한 세포 형태가 뭉개지지 않도록 각각 SAM 구조 앵커와 형태 인지 커널을 넣습니다. 세 편을 같이 보면 초해상도의 성공 기준이 '보기 좋은 샘플'에서 'downstream 작업이 신뢰할 수 있는 정보 복원'으로 재정의되고 있다는 뜻이라, 우리 랩이 virtual staining·현미경 업샘플링 결과를 화질 지표만으로 평가하면 안 된다는 직접적 경고입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 3편이 적외선·병리 두 도메인에서 '지각 화질 대신 작업 충실도'라는 같은 문제의식을 보이지만, 공통 벤치마크 없이 각자 데이터셋을 써서 축의 확산은 추가 확인 필요</small></td>
+  <td>FaithIR의 '작업 관련 충실도' 관점을 우리 현미경/병리 초해상도 평가에 적용해, PSNR·SSIM 외에 복원본으로 downstream 세포 검출·분할을 돌린 성능을 함께 재는 이중 지표 grid를 만들고, S3-Diff의 SAM 구조 앵커 유무에 따른 형태 왜곡을 세포 경계 IoU로 정량화</td>
+</tr>
+<tr>
+  <td><strong>Meta-Optics·Phase 저널 버킷이 10+10으로 두꺼워졌지만 실제 이미징 신호는 여전히 얇음</strong><span class=pill>WATCH</span></td>
+  <td>
+    <a href="https://doi.org/10.1111/jmi.70156" target=_blank>COSMIC 다중모달 조명</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1128/msphere.00304-26" target=_blank>Digital holographic tomography (바이러스)</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/oe.605670" target=_blank>NAS 위상 복원 네트워크</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1021/acs.nanolett.6c02725" target=_blank>OAM 판독 메타표면</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 Meta-Optics/Diffractive와 Phase Imaging/Holography 저널 버킷이 각각 10편으로 어제보다 눈에 띄게 두꺼워져서 한 번 더 들여다봤는데, 편수 증가의 대부분은 이미징이 아닌 무선통신·열복사·음향입니다. Meta-Optics 10편 중 실제 이미징·광학 판독에 가까운 건 OAM 빔 배열을 한 번에 읽는 나노임프린트 비대칭 메타표면(Nano Letters)과 비대칭 Bessel 빔 정도이고, 나머지는 CubeSat 안테나·이중편광 열복사·수중 음향 전달·THz 바이오센서로 우리 ROI와 거리가 있습니다. Phase 쪽 실신호는 세 편입니다 — COSMIC은 콘덴서 없이 명시야·암시야·형광·미분위상대비를 한 모듈로 얻는 저가 오픈소스 조명계, 디지털 홀로그래픽 단층촬영으로 살아 있는 세포의 바이러스 초기 반응을 라벨 없이 정량화한 논문, 위상 복원 신경망을 NAS로 자동 설계한 논문입니다. 편수만 보고 '메타광학·위상 이미징이 살아났다'고 읽으면 안 되고, 실제 신호는 저가·다중모달 조명 하드웨어와 위상 복원 신경망 두 갈래로 좁게 뭉쳐 있습니다.</td>
+  <td>Low<br><small>저널 버킷 편수는 늘었으나 이미징 관련은 Meta 2편·Phase 3편으로 좁고, arXiv 쪽 계산광학 코어 신규 신호는 오늘도 사실상 부재(FP 1편은 ptychography 신경망, Lensless 2편 중 실신호 0)</small></td>
+  <td>COSMIC의 콘덴서리스 다중모달 조명 설계도를 우리 저가 현미경 조명 모듈 후보로 재현성 검토하고, NAS 기반 위상 복원 네트워크의 탐색 공간을 우리 QPI 데이터에 좁혀 적용해 수작업 설계 대비 복원 정확도·추론 지연을 비교하는 벤치마크를 이번 주 안에 스케치</td>
+</tr>
+</tbody>
+</table>
+
+<p><small>⚠️ Domain Watch Lens 메모 — 오늘은 5개 행으로 표를 마쳤습니다(마지막 두 행은 WATCH). 계산광학 코어에서 arXiv 신규 신호가 거의 없어(FP 1편은 out-of-distribution 스케일 문제를 다룬 ptychography 신경망, Lensless 2편은 이미징과 무관) 저널 버킷 5행을 별도 WATCH로 남겼습니다. Tomography/3D Imaging 32편은 절반 이상이 임상 OCT·CBCT 사례 보고라 어제의 3DGS 클러스터를 오늘 재현할 근거는 없었습니다.</small></p>
+
+<h2>📐 arXiv vs 저널 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: ScoreField·S3-Diff·PEC 등 확산 생성 사전 클러스터, Spatial proteomics·OncoTriad-QA 등 계산 병리의 분자·공간 통합, NanoMorph-3D·4D CBCT·PI-HNO·GeoID-PINN 등 물리 삽입형 재구성, FaithIR 등 초해상도 충실도 재정의가 오늘 arXiv 쪽의 핵심 신호였습니다.</li>
+  <li><strong>저널 전용</strong>: sparse-view CT 확산 사전, 췌장암 공간 조직 구조 리뷰, Physics-Informed Digital Twins 리뷰, COSMIC 다중모달 조명·디지털 홀로그래픽 단층촬영·NAS 위상 복원 네트워크(위상 이미징) 정도가 실질 신호였고, 나머지 저널은 대부분 임상 진단 사례 보고나 무선통신·열복사용 메타표면입니다.</li>
+  <li><strong>공통 키워드</strong>: diffusion/generative prior(arXiv는 역산란·병리 SR 같은 방법론 깊이 vs 저널은 sparse-view CT 응용), pathology(arXiv는 분자·공간 통합·SR vs 저널은 조직 구조 리뷰), metasurface(이미징용 2편 vs 무선통신·열복사·음향용 8편 — 오늘도 이미징 응용이 소수), phase retrieval(저널 NAS 자동 설계 vs arXiv 부재).</li>
+  <li><strong>특징</strong>: 오늘은 arXiv 쪽이 방법론 흐름 세 축(확산 사전·분자공간 병리·물리 삽입 재구성)을 전부 주도했고, 저널은 그 흐름을 응용·리뷰·하드웨어로 받치는 역할이었습니다. 계산광학 코어의 실신호는 arXiv·저널 모두에서 얇았습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 확산·스코어 생성 사전이 어려운 계산 이미징 역문제의 '기본 엔진'으로 자리잡음</h3>
+  <p>ScoreField는 전자기 역산란에서 물리 방정식은 강하게 지키되 사전 학습된 스코어 모델이 유전율 지도의 그럴듯함만 기울기로 밀어주고, 저널 sparse-view CT 논문은 빈 각도 정보를 확산 사전으로 메우며, S3-Diff는 병리 SR에서 SAM 구조 앵커로 형태를 지킵니다. 같은 날 PEC(latent 스케일 충돌)와 합성 병리 평가 논문(ImageNet FID 부적절)이 결합의 함정까지 드러낸 게 핵심입니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 저자군 5편이 역산란·CT·병리 SR·MRI 조영·합성 평가라는 서로 다른 응용에서 '학습된 생성 사전을 역문제에 결합'이라는 공통 문제를 다룸</p>
+</div>
+
+<div class=ins>
+  <h3>2. 계산 병리가 '조직 사진 → 진단 라벨'에서 '조직 사진 → 분자·공간 상태 예측'으로 축을 옮김</h3>
+  <p>Spatial proteomics 논문은 재발 위험 히트맵 좌표를 실제 질량분석 측정 위치로 삼아 예측 근거를 단백질 발현으로 설명하고(TNBC 156명, AUC 0.77), OncoTriad-QA는 환자 단위로 방사선·병리·유전체를 묶은 8.6만 문항 통합 추론 벤치마크를 제시합니다. 췌장암 공간 구조 리뷰와 Morph-ISR이 이 방향을 받칩니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 저자군 4편이 공간 프로테오믹스·멀티모달 벤치마크·공간 구조 리뷰·형태 보존 SR이라는 서로 다른 진입점에서 '영상↔분자·공간 대응'으로 수렴</p>
+</div>
+
+<div class=ins>
+  <h3>3. 물리를 신경망 안에 심는 재구성(unrolling·neural operator·PINN)이 여러 도메인에서 동시 등장</h3>
+  <p>NanoMorph-3D는 missing-wedge를 물리 구동 unrolling으로, 4D CBCT 논문은 역투영 연산자를 skip 연결로 대체해 물리와 학습을 한 몸으로 만듭니다. PI-HNO는 에너지 일관성 규제 신경 연산자, GeoID-PINN은 '궤적이 맞아도 파라미터는 식별 안 될 수 있다'는 함정을 짚습니다.</p>
+  <p class=conf-note>Confidence: Medium — 방향은 5편이 일치하나 도메인(나노재료·CBCT·전력자성·역학)이 넓어 이미징 코어로의 직접 전이는 논문별 확인 필요</p>
+</div>
+
+<div class=ins>
+  <h3>4. 초해상도 평가 기준이 '선명함'에서 '작업 충실도'로 이동 (관찰 중)</h3>
+  <p>FaithIR는 적외선 SR의 인공 텍스처가 열 구조를 왜곡한다는 문제를 짚고 기계 인식에 충실한 복원을 목표로 하며, S3-Diff·Morph-ISR은 병리 SR에서 진단에 중요한 세포 형태를 지키는 데 초점을 둡니다. PSNR만 보면 안 된다는 경고입니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편이 같은 문제의식을 보이나 공통 벤치마크 없이 각자 데이터셋을 씀</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. 확산·스코어 생성 사전을 우리 sparse-view 복원에 결합할 때 물리 잔차와 사전 강도를 분리한 ablation</h3>
+  <p>우리 랩이 sparse-view 단층촬영/QPI 복원에 확산 사전을 붙일 때, 측정 일관성(물리 잔차)과 학습된 생성 사전의 기여를 분리해 각각 얼마나 성능을 올리는지, 그리고 PEC가 지적한 latent 스케일 충돌이 우리 데이터에서도 충실도를 깨는지 먼저 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>ScoreField의 INR+스코어 사전 결합, PEC의 case-adaptive 좌표 보정 절차 재현</li>
+    <li>공통 benchmark: 우리 랩의 sparse-view CT/현미경 복원 데이터셋(도메인 밝기 스케일 명시)</li>
+    <li>비교축: 물리 잔차만 / 생성 사전만 / 둘 결합의 복원 정확도 + latent 스케일 보정 유무에 따른 방사선학적 충실도</li>
+    <li>실패해도 남는 결과: 우리 세팅에서 확산 사전이 실제로 기여하는 조건과 latent 스케일 충돌이 나타나는 임계점 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. H&amp;E 예측 히트맵을 분자·공간 측정 좌표로 쓰는 절차를 우리 계산 병리 출력 검증에 이식</h3>
+  <p>Spatial proteomics 논문처럼, 우리 모델의 관심 영역·위험 히트맵을 그냥 점수로 두지 않고 실제 형태·분자 특징과 좌표 단위로 대조해, 환자 단위 split에서 예측 근거가 검증 가능한지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>우리 virtual staining/계산 병리 모델의 히트맵 추출 + 좌표 단위 형태·분자 특징 대조 파이프라인 구성</li>
+    <li>공통 benchmark: 우리 랩의 병리 데이터셋(환자 단위 GroupKFold split) + OncoTriad-QA 병리 파트 zero-shot 채점</li>
+    <li>비교축: 히트맵 관심 영역과 형태·분자 특징의 좌표 일치도 / 멀티모달 통합 대비 단일 모달 성능 격차</li>
+    <li>실패해도 남는 결과: 우리 모델 예측이 검증 가능한 근거를 갖는지에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. 역투영 연산자 삽입형 이중 도메인 U-Net을 우리 sparse-view 재구성 백본으로 벤치마크</h3>
+  <p>4D CBCT 논문의 '물리 연산자를 skip 연결로 대체'하는 설계를 우리 재구성 파이프라인에 적용해, 순수 데이터 학습 대비 아티팩트·일반화·식별성이 실제로 좋아지는지 같은 팬텀에서 비교합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>역투영 연산자를 skip 연결로 넣은 이중 도메인 U-Net 재현 + GeoID-PINN 식별성 진단 이식</li>
+    <li>공통 benchmark: 우리 랩의 sparse-view 재구성 팬텀(정답 볼륨 보유)</li>
+    <li>비교축: 순수 데이터 U-Net vs 연산자 삽입 U-Net의 아티팩트·미보임 각도 일반화 / 궤적 적합도 vs 파라미터 회복</li>
+    <li>실패해도 남는 결과: 물리 삽입이 우리 세팅에서 실제로 도움이 되는 조건에 대한 baseline</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Virtual Staining/Pathology(33편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:3%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:6%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:30%"></span></span><span class=n>10편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:30%"></span></span><span class=n>10편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:6%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:97%"></span></span><span class=n>32편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>33편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:70%"></span></span><span class=n>23편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>142편</span></div>
+
+<p><small>⚠️ 참고 — Domain Watch Lens: Fourier Ptychography 1편은 out-of-distribution 스케일 불일치를 다룬 ptychography 신경망(대비 불변 학습)으로 방법론 신호이나 단발입니다. Lensless/Coded Imaging 2편(성형수술 미리보기 편집 제어, X선 SPO 광학 PSF 복원)은 우리 lensless ROI와 거리가 있습니다. Phase 10편 중 실제 계산 이미징은 3편(COSMIC·디지털 홀로그래픽 단층촬영·NAS 위상 복원)이고 나머지는 AdS/CFT 홀로그래피·구름챔버 응결처럼 키워드만 겹친 물리 논문입니다. Meta-Optics 10편 중 이미징 관련은 2편(OAM 판독·Bessel 빔)이고 나머지는 무선통신·열복사·음향입니다. Light-Field 2편은 이벤트 카메라 캘리브레이션·라이트필드 디스플레이로 응용이 갈렸습니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.02869" target=_blank>Contrast-invariant deep ptychography neural networks</a></strong> <span class=pill>LG</span><br>
+  왜 주요: ptychography 신경망이 out-of-distribution에서 스케일 불일치로 무너지는 문제를, 대비(진폭 스케일)와 구조를 분리하는 factorization으로 완화해 실사용 일반화를 노립니다 / 우선순위: Read(단발 신호)
+</div>
+
+<h3>Phase Imaging/Holography (10편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1111/jmi.70156" target=_blank>COSMIC 다중모달 조명</a> · <a href="https://doi.org/10.1128/msphere.00304-26" target=_blank>Digital holographic tomography</a> · <a href="https://doi.org/10.1364/oe.605670" target=_blank>NAS 위상 복원 네트워크</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 오늘의 WATCH 클러스터 대표 — 위 클러스터 표 참고. 저가 다중모달 조명 하드웨어와 위상 복원 신경망이 오늘 위상 이미징의 실신호입니다 / 우선순위: Read
+</div>
+
+<h3>Meta-Optics/Diffractive (10편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/acs.nanolett.6c02725" target=_blank>Tilt-Free Astigmatic Metasurface for One-Shot OAM Readout</a> · <a href="https://doi.org/10.1016/j.optlaseng.2026.110052" target=_blank>Asymmetric Bessel beam by conformal Janus metasurface</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 10편 중 이미징·광학 판독에 가까운 사실상 유일한 2편으로, 나머지는 무선통신·열복사·음향 응용입니다 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging (32편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.compmedimag.2026.102802" target=_blank>Diffusion-based generative prior for sparse-view CT</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 오늘의 대표 클러스터(확산 생성 사전) 저널 evidence — 적은 각도 CT의 빈 정보를 확산 사전으로 메웁니다 / 우선순위: Read(초록 없음, 본문 확인 필요)
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.03107" target=_blank>Unified Resolution-Conditioned Framework for Orthogonal Line-Scanning Image Fusion</a> · <a href="https://doi.org/10.1088/1361-6560/ae94d8" target=_blank>Frequency-domain model-based fast transcranial photoacoustic imaging</a></strong> <span class=pill>CV</span> <span class=pill>JNL</span><br>
+  왜 주요: 임상 사례 보고가 대부분인 이 버킷에서 드문 계산 이미징 신호 — 라인스캐닝 현미경의 이방성 해상도를 한 모델로 등방 복원, 물리 모델 기반 광음향 가속 / 우선순위: Read
+</div>
+
+<h3>Virtual Staining/Pathology (33편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.03145" target=_blank>Spatial proteomics guided by H&amp;E AI</a> · <a href="https://arxiv.org/abs/2608.02615" target=_blank>OncoTriad-QA</a> · <a href="https://doi.org/10.1038/s12276-026-01782-4" target=_blank>Spatial architecture in pancreatic cancer</a> · <a href="https://arxiv.org/abs/2608.03664" target=_blank>Morph-ISR</a></strong> <span class=pill>AI</span> <span class=pill>JNL</span> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(계산 병리의 분자·공간 통합) — 위 클러스터 표 참고. 나머지 29편은 대부분 무관 도메인(에너지·재료 등)에서 "staining"·"computational" 키워드가 우연히 겹친 경우입니다 / 우선순위: Must-read(Spatial proteomics) / Read(나머지)
+</div>
+
+<h3>Reconstruction/Inverse Problems (23편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.03257" target=_blank>NanoMorph-3D</a> · <a href="https://arxiv.org/abs/2608.02965" target=_blank>PI-HNO</a> · <a href="https://arxiv.org/abs/2608.02633" target=_blank>GeoID-PINN</a> · <a href="https://doi.org/10.1007/s11831-026-10754-w" target=_blank>Physics-Informed Digital Twins 리뷰</a></strong> <span class=pill>CV</span> <span class=pill>LG</span> <span class=pill>JNL</span><br>
+  왜 주요: 오늘의 대표 클러스터(물리 삽입형 재구성) — 위 클러스터 표 참고. unrolling·신경 연산자·PINN·리뷰가 같은 방향을 가리킵니다 / 우선순위: Read(NanoMorph-3D 우선)
+</div>
+
+<h3>Deep Learning Methods — 계산 이미징 관련 소수 (142편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.02937" target=_blank>ScoreField</a> · <a href="https://arxiv.org/abs/2608.03430" target=_blank>Dual-domain U-Net 4D CBCT</a></strong> <span class=pill>IV</span> <span class=pill>CV</span><br>
+  왜 주요: 각각 오늘의 확산 생성 사전 클러스터(역산란)와 물리 삽입형 재구성 클러스터(역투영 연산자 삽입)의 arXiv 대표 — 위 클러스터 표 참고 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<ul>
+  <li><strong>Spatial proteomics guided by H&amp;E AI (TNBC 156명, 독립 테스트 코호트)</strong> — 고점수 패치의 분포 기반 집계로 재발 예측 AUC 0.77 / C-index 0.77; 고위험은 세포주기·유전체 유지 프로그램, 저위험은 면역 활성과 연관되며 같은 종양 구획 안에서 고·저위험 패치가 공존</li>
+  <li><small>그 외 오늘 대표 논문들(ScoreField·NanoMorph-3D·S3-Diff·4D CBCT 등)은 abstract에 단일 공식 벤치마크의 명확한 SOTA 수치를 제시하지 않았거나(본문 확인 필요), 각자 자체 데이터셋을 써 비교 가능한 표준 지표가 없어 로그에서 제외했습니다.</small></li>
+</ul>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>오늘은 '학습된 사전을 밖에서 붙이는' 방향과 '물리를 안에 심는' 방향이 정반대에서 만나는 대비가 흥미로웠습니다. ScoreField는 물리 방정식(Lippmann-Schwinger)을 강하게 지키면서 학습된 스코어 사전을 기울기로만 더하는, 즉 물리를 뼈대로 두고 학습 사전을 얹는 쪽입니다. 반대로 4D CBCT의 이중 도메인 U-Net은 아예 역투영 연산자를 신경망의 skip 연결 자리에 물리적으로 박아 넣어, 학습 구조 안에 물리를 녹여 넣는 쪽입니다. 같은 '물리+학습'이라는 재료를 한쪽은 '물리 위에 학습 사전을 얹는' 방식으로, 다른 쪽은 '학습 구조에 물리 연산자를 심는' 방식으로 쓰는 셈입니다. 이 대비가 우리 랩에 중요한 이유는, sparse-view 복원 파이프라인을 설계할 때 '어디까지를 물리로 고정하고 어디부터 학습에 맡길지'라는 선택지를 두 극단에서 동시에 보여주기 때문입니다. 우리 세팅에서는 어느 쪽이 아티팩트와 일반화에 더 유리한지 같은 팬텀에서 직접 비교해볼 가치가 있습니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] ScoreField: Neural Inverse Scattering with Score-Based Generative Priors — arXiv eess.IV</h3>
+  <div class=tag>[방법전환] [문제정의]</div>
+  <p><strong>왜 A급인가:</strong> 전자기 역산란은 '밖에서 관측한 산란파만 보고 안 보이는 물체의 유전율 분포를 되찾는' 대표적인 비선형 역문제인데, 다중 산란(파동이 물체 안에서 여러 번 튕기는 현상)이 강할수록 물리가 심하게 비선형이 되어 풀기 어렵습니다. 이 논문은 물리와 학습된 사전을 붙이는 방식을 새로 정리합니다. 유전율 대비와 유도 전류장을 각각 암시적 신경 표현(INR)으로 두 개 파라미터화하고, 이 둘을 Lippmann-Schwinger 방정식(엄밀한 전파동 물리)으로 묶어 함께 최적화하는데, 여기에 사전 학습된 스코어 기반 생성 모델이 '이 유전율 지도가 그럴듯한가'라는 판단을 기울기로 대비 INR에 전달합니다. 예전엔 이런 사전을 손으로 짠 정규화(전변동·희소성)로 넣었다면, 이제는 학습된 데이터 사전이 그 자리를 대신하되 물리 방정식은 그대로 강하게 지킨다는 점이 핵심 전환입니다. 강한 다중 산란처럼 순수 데이터 학습이 물리를 무시해 무너지기 쉬운 구간에서, 물리(측정 일관성)와 학습 사전(그럴듯함)을 분리해 각각의 몫을 명확히 한 설계라, 우리 랩이 sparse-view 단층촬영·QPI 복원에 확산 사전을 붙일 때 '물리를 어디까지 고정하고 사전을 어떻게 얹을지'의 참고 틀이 됩니다.</p>
+  <p><strong>핵심:</strong> 핵심 아이디어는 두 가지입니다 — (1) 미지의 대비와 전류장을 모두 좌표 기반 INR로 두어 이산 격자 없이 연속적으로 표현하고, (2) 스코어 모델의 사전 기울기를 chain rule로 대비 INR에 전파해 INR 자체의 암시적 정규화 위에 학습된 데이터 사전을 겹칩니다. 즉 '물리 잔차를 줄이는 힘'과 '데이터 사전이 미는 힘'이 명시적으로 분리돼 있어, 두 힘의 균형을 실험적으로 조절할 수 있게 만든 구조입니다.</p>
+  <p><strong>주의:</strong> abstract 기준으로는 스코어 사전이 학습된 데이터 분포에 의존하므로, 그 분포에서 벗어난 물체(도메인 이동)에서 사전이 오히려 잘못된 형태로 끌고 갈 위험은 본문과 추가 검증이 필요합니다. 정량 벤치마크 수치가 abstract에 명시되지 않아 baseline 대비 개선폭은 본문 확인이 필요합니다. [Claim risk]</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Spatial proteomics guided by H&amp;E-based AI reveals recurrence-risk niches in triple-negative breast cancer — arXiv cs.AI</h3>
+  <div class=tag>[문제정의] [평가축] [데이터전환]</div>
+  <p><strong>왜 A급인가:</strong> 딥러닝이 H&amp;E 슬라이드만 보고 암 재발 위험을 예측할 수 있다는 건 이미 여러 번 보여졌지만, 그 예측이 조직 안에서 실제로 '무엇' 때문인지는 대부분 블랙박스로 남아 있었습니다. 이 논문은 그 간극을 물리적 측정으로 메웁니다. 삼중음성 유방암(TNBC)에서 AI가 만든 재발 위험 히트맵을 그냥 점수로 쓰지 않고, 그 히트맵의 고위험 좌표를 질량분석 기반 공간 프로테오믹스(조직의 특정 위치에서 단백질 발현을 실제로 측정하는 기법)의 측정 위치로 삼았습니다. 즉 '모델이 여기가 위험하다고 한 자리에서 실제로 어떤 단백질이 켜져 있는가'를 좌표 단위로 직접 확인한 겁니다. 결과적으로 고위험 영역은 세포주기·유전체 유지 프로그램과, 저위험 영역은 면역 활성과 연관됐고, 놀랍게도 고위험과 저위험 패치가 같은 종양 구획 안에 공존하며 서로 다른 핵·구조 특징을 보였습니다 — 조직 구획 정체성만으로는 안 보이던 종양 내 이질성을 드러낸 것입니다. 156명 코호트에서 고점수 패치의 분포 기반 집계로 독립 테스트 AUC 0.77·C-index 0.77을 얻었습니다. 우리 랩이 계산 병리·virtual staining 모델을 낼 때, 예측을 정당화하는 근거를 실제 분자·형태 측정과 좌표 단위로 대조하는 검증 틀로 바로 참고할 수 있습니다.</p>
+  <p><strong>핵심:</strong> 방법론의 새로움은 '예측 히트맵을 설명의 대상이 아니라 다음 측정의 좌표 안내로 재사용'했다는 점입니다. 벌크 프로테오믹스로 영상 유래 고위험을 세포주기·유전체 유지와, 저위험을 면역 활성과 연결한 뒤, 히트맵을 좌표 안내로 써서 같은 종양 안의 이질적 니치(niche)를 공간적으로 분리해냈습니다.</p>
+  <p><strong>주의:</strong> abstract 기준으로 TNBC 한 아형, 156명 코호트에 한정된 결과라 다른 암종·아형으로의 일반화는 본문과 후속 연구 확인이 필요합니다. AUC 0.77은 강력하다기보다 견고한 수준이라, 임상 적용 전에 더 큰 다기관 코호트 검증이 필요합니다. [Dataset risk]</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Claim risk] 오늘 대표 클러스터의 상당수 arXiv 논문(ScoreField·NanoMorph-3D·S3-Diff 등)이 abstract에 정량 벤치마크 수치를 명확히 제시하지 않아, "이 방법이 얼마나 더 낫다"를 하나의 숫자로 비교하기 어렵습니다. 개선폭은 본문 확인이 필요합니다.</p>
+  <p>[Dataset risk] 계산 병리의 분자·공간 통합 클러스터에서 정량 근거가 있는 Spatial proteomics는 TNBC 156명 단일 아형이라, "병리 AI가 분자 상태로 넘어갔다"는 결론으로 일반화하기엔 아직 이릅니다.</p>
+  <p>[Metric risk] 계산광학 코어(FP·Lensless·Phase·Meta-Optics) 실신호가 오늘도 거의 없고(arXiv 신규 0에 가까움), Meta·Phase 저널 버킷의 편수 증가는 대부분 무선통신·열복사·음향이라 랩 핵심 ROI에 대한 신규 정보가 제한적입니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] ScoreField의 스코어 사전은 학습 데이터 분포에 의존하므로, 분포 밖 물체에서 사전이 오히려 잘못된 형태로 복원을 끌고 갈 위험이 abstract에서 정량화되지 않았습니다.</p>
+  <p>[Metric risk] 합성 병리 평가 논문이 지적하듯, 오늘 확산 생성 사전 클러스터의 여러 논문이 여전히 ImageNet 기반 FID·IS로 품질을 재고 있어, 병리·의료 영상에서는 그 숫자가 실제 진단 유용성을 대표하지 못할 수 있습니다.</p>
+  <p>[Deployment risk] 물리 삽입형 재구성 클러스터의 PI-HNO·Physics-Informed Digital Twins는 배포·실시간 갱신을 겨냥하지만, GeoID-PINN이 보여준 '궤적은 맞아도 파라미터는 식별 안 되는' 함정이 다른 물리 삽입 모델에도 있는지는 각각 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Meta-Optics/Diffractive 8편(무선통신·열복사·음향)</strong> — CubeSat 안테나·이중편광 열복사·수중 음향 전달·THz 바이오센서 등으로 이미징 ROI와 거리가 있습니다.</li>
+    <li><strong>Phase Imaging 7편(비이미징 물리)</strong> — AdS/CFT 홀로그래피, 구름챔버 물방울 응결, 스핀 양자상태 단층촬영 등 "holography"·"tomography" 키워드만 겹친 논문입니다.</li>
+    <li><strong>Virtual Staining/Pathology 29편(무관 도메인)</strong> — 에너지·재료·행정 등에서 "staining"·"computational" 키워드가 우연히 매칭된 논문이 대부분입니다.</li>
+    <li><strong>Tomography/3D Imaging 임상 사례 보고 다수</strong>(OCT·CBCT 치과·안과 등) — 계산 이미징 방법론이 아니라 임상 진단 사례라 우리 ROI와는 거리가 있습니다.</li>
+    <li><strong>물리 삽입 재구성 클러스터의 비이미징 응용</strong>(PI-HNO 전력자성, GeoID-PINN 역학) — 방법론 참고용이며, 이미징 전이는 대표 논문 확인 후 필요시에만 읽어도 됩니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>확산·스코어 생성 사전을 역문제에 결합 (핵심 5편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.02937" target=_blank>ScoreField: Neural Inverse Scattering with Score-Based Generative Priors</a></strong> <span class=pill>IV</span><br>
+- 문제: 강한 다중 산란의 비선형 역산란에서 물리와 표현력 있는 사전을 동시에 충족하기 어려움 / 방법: 대비·전류장을 두 INR로 두고 Lippmann-Schwinger로 묶은 뒤 스코어 사전을 기울기로 주입 / 의미: 손수 짠 정규화를 학습 사전으로 대체하되 물리는 강하게 유지 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1016/j.compmedimag.2026.102802" target=_blank>A diffusion-based generative prior approach to sparse-view computed tomography</a></strong> <span class=pill>JNL</span><br>
+- 문제: 적은 각도 CT는 정보가 비어 아티팩트가 심함 / 방법: 확산 생성 사전으로 빈 정보를 메우는 복원 / 의미: 확산 사전이 임상 CT 재구성으로 넘어온 저널 신호 / 우선순위: Read(초록 없음, 본문 확인)
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.03540" target=_blank>S3-Diff: Structural Semantic Synergy Diffusion Model for High Fidelity SR of Pathological Images</a></strong> <span class=pill>CV</span><br>
+- 문제: 병리 SR에서 확산 모델이 진단에 중요한 세포 형태를 뭉갬 / 방법: 고정 SAM 기반 조직 구조 앵커 + 구조 유도 의미 정렬로 형태 보존 / 의미: 확산 사전을 도메인 구조로 제약하는 방향 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.03612" target=_blank>Predictive Enhancement Calibration for Latent Breast MRI Virtual Contrast Enhancement</a></strong> <span class=pill>IV</span><br>
+- 문제: 자연영상용 latent 오토인코더 값 범위가 MRI 비표준 밝기와 충돌해 생성 전에 충실도가 깨짐 / 방법: case-adaptive 공유 좌표로 표현 후 상단 끝점을 예측하는 보정(PEC) / 의미: 확산 사전 결합의 스케일 함정을 정면으로 드러냄 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.03990" target=_blank>Assessment of Conditional Diffusion Model for Synthetic Histopathology Image Generation</a></strong> <span class=pill>LG</span><br>
+- 문제: FID·IS가 ImageNet 특징에 의존해 병리 합성 영상 품질을 제대로 못 잼 / 방법: 병리 파운데이션 모델 기반 FID·IS + downstream 검증 제안 / 의미: 확산 생성 사전 흐름의 평가 지표 함정을 짚음 / 우선순위: Read
+</div>
+
+<h3>계산 병리의 분자·공간 통합 (4편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.03145" target=_blank>Spatial proteomics guided by H&amp;E-based AI (TNBC)</a></strong> <span class=pill>AI</span><br>
+- 문제: 영상 기반 재발 예측의 분자적 근거가 블랙박스로 남음 / 방법: AI 위험 히트맵 좌표를 공간 프로테오믹스 측정 위치로 재사용 / 의미: 예측 히트맵을 다음 측정의 좌표 안내로 전환 / 근거: 156명, AUC 0.77·C-index 0.77 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.02615" target=_blank>OncoTriad-QA: Patient-Level Radiology-Pathology-Genomics Benchmark</a></strong> <span class=pill>AI</span><br>
+- 문제: 대부분의 의료 VLM 벤치마크가 단일 모달·좁은 이미지-텍스트에 그침 / 방법: 환자 단위로 CT/MRI·병리·돌연변이·메틸화·RNA-seq를 묶은 8.6만 문항 QA / 의미: 평가를 '여러 증거 통합 추론'으로 확장 / 근거: 9,281 TCGA 환자·32개 암 코호트 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s12276-026-01782-4" target=_blank>Spatially resolved tissue architecture and computational pathology in pancreatic cancer</a></strong> <span class=pill>JNL</span><br>
+- 문제: PDAC의 세포 이질성·미세환경 변화를 영상·분자 통합으로 이해하기 어려움 / 방법: 공간 조직 구조와 계산 병리를 묶은 리뷰 / 의미: 분자·공간 통합이 분야 차원 방향임을 정리 / 우선순위: Skim(리뷰)
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.03664" target=_blank>Morphology-Aware Implicit Super-Resolution Network for Pathological Images (Morph-ISR)</a></strong> <span class=pill>CV</span><br>
+- 문제: 하드웨어 비용으로 고해상 WSI 확보가 어려운데 기존 SR은 세포 형태를 뭉갬 / 방법: SR을 연속 좌표 재구성으로 재정의 + 위치 인지 커널로 공간 가변 형태 모델링 / 의미: 분자·공간 분석의 전제인 고해상 입력을 형태 보존으로 확보 / 우선순위: Read
+</div>
+
+<h3>물리 삽입형 재구성 — unrolling·neural operator·PINN (5편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.03257" target=_blank>NanoMorph-3D: End-to-End Physics-Driven Unrolling for Nanomaterial Reconstruction</a></strong> <span class=pill>CV</span><br>
+- 문제: 전자 단층촬영의 missing-wedge로 기하 왜곡·노이즈가 심함 / 방법: proximal gradient descent를 펼친 물리 구동 unrolling + 비선형 감쇠를 모델링한 합성 데이터 / 의미: 물리 무시 후처리 대신 물리·학습을 한 몸으로 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.03430" target=_blank>Dual-domain U-Nets with embedded back projection operators for 4D CBCT</a></strong> <span class=pill>CV</span><br>
+- 문제: 4D CBCT는 스캔이 길고 모션·희소 샘플링 아티팩트가 큼 / 방법: skip 연결을 역투영 연산자로 대체해 투영·볼륨 도메인을 물리적으로 연결, 정적 볼륨+10개 변위장 예측 / 의미: 물리 연산자를 학습 구조에 직접 삽입 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.02965" target=_blank>Physics-Informed Hybrid Neural Operator for Transient Magnetization (PI-HNO)</a></strong> <span class=pill>LG</span><br>
+- 문제: 정상상태 코어손실 공식이 과도·비정현 자속 응답을 못 담음 / 방법: B-H 에너지 일관성 규제 + 국소 순환 분기의 하이브리드 신경 연산자 / 의미: 물리 규제 신경 연산자의 재구성 응용 / 우선순위: Skim(비이미징)
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.02633" target=_blank>GeoID-PINN: Identifiability-Aware Regional Epidemic Inference</a></strong> <span class=pill>LG</span><br>
+- 문제: 물리(SIRD)를 지켜도 지역별 파라미터가 식별 안 될 수 있음 / 방법: 행-확률 소스 구성 행렬 + 공간 사전 규제 / 의미: '궤적 적합도 ≠ 파라미터 회복'이라는 PINN 함정을 정량화 / 우선순위: Skim(방법 참고)
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1007/s11831-026-10754-w" target=_blank>Physics-Informed Digital Twins: a PRISMA-ScR Review</a></strong> <span class=pill>JNL</span><br>
+- 문제: 물리 삽입 학습·연산자·UQ·실시간 갱신이 흩어져 있음 / 방법: 6개 축으로 묶은 스코핑 리뷰 / 의미: '배포 준비도'라는 새 평가 축 제시 / 우선순위: Skim(리뷰)
+</div>
+
+<h3>초해상도 충실도 재정의 (핵심 1편 + 병리 SR 2편은 위 클러스터 참고)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.03106" target=_blank>FaithIR: Task-Relevant Fidelity Infrared Super-Resolution</a></strong> <span class=pill>CV</span><br>
+- 문제: 적외선 SR이 인공 텍스처·과도한 엣지로 실제 열 구조·의미 정보를 왜곡 / 방법: 패치 조건 분기 + 픽셀 복원 분기를 픽셀 도메인에서 결합 / 의미: SR 성공 기준을 '선명함'에서 'downstream 작업 충실도'로 이동 / 근거: FLIR-IISR·M3FD·FMB 교차 데이터셋 일반화 / 우선순위: Read
+</div>
+
+<h3>계산광학 코어 Watch — 저가 조명·위상 복원 신경망 (저널 3편 + arXiv 1편)</h3>
+<div class=roi-item>
+<strong>Multimodal illumination for quantitative transmitted-light microscopy (COSMIC)</strong> <span class=pill>JNL</span><br>
+- 문제: 정량 투과광 현미경에 여러 대비 모달리티를 얻으려면 장비가 복잡·고가 / 방법: 콘덴서 없는 오픈소스 조명 모듈로 명시야·암시야·형광·DPC 통합 / 의미: 저가 다중모달 조명 하드웨어의 실사용 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong>Label-free quantification of early virus-induced cellular responses by digital holographic tomography</strong> <span class=pill>JNL</span><br>
+- 문제: 살아 있는 세포의 바이러스 초기 반응을 라벨 없이 관찰하기 어려움 / 방법: 디지털 홀로그래픽 단층촬영으로 정량 위상 기반 세포 반응 측정 / 의미: 라벨-프리 정량 위상의 바이러스학 응용 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong>Neural Architecture Search Generated Phase Retrieval Network</strong> <span class=pill>JNL</span><br>
+- 문제: 위상 복원 네트워크를 수작업 설계하면 최적 구조를 놓치기 쉬움 / 방법: NAS로 위상 복원 네트워크 구조를 자동 탐색(레이저 무선 전력 전송 응용) / 의미: 위상 복원의 개선 지점이 광학계가 아니라 복원 신경망 설계에 쏠림 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.02869" target=_blank>Contrast-invariant deep ptychography neural networks</a></strong> <span class=pill>LG</span><br>
+- 문제: ptychography 신경망이 분포 밖에서 진폭 스케일 불일치로 무너짐 / 방법: 대비와 구조를 분리하는 factorization / 의미: 계산 이미징 신경망의 일반화 한계를 겨냥 / 우선순위: Read(단발)
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv 카테고리: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>cs.LG</a> · <a href="https://arxiv.org/list/cs.CV/new" target=_blank>cs.CV</a> · <a href="https://arxiv.org/list/cs.AI/new" target=_blank>cs.AI</a> · <a href="https://arxiv.org/list/eess.IV/new" target=_blank>eess.IV</a> · <a href="https://arxiv.org/list/eess.SP/new" target=_blank>eess.SP</a></li>
+  <li>RSS: <a href="../feed.xml">feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+Imaging Intelligence Daily Briefing · cs.LG · cs.CV · cs.AI · eess.IV · eess.SP 기반 자동 생성 · 입력 출처: arXiv, Crossref, OpenAlex
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+
+</body>
+</html>

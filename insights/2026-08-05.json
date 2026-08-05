@@ -1,0 +1,181 @@
+{
+  "date": "2026-08-05",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "확산·스코어 기반 생성 사전(prior)이 어려운 계산 이미징 역문제의 '기본 엔진'으로 자리잡는 날",
+      "papers": [
+        {
+          "title": "ScoreField: Neural Inverse Scattering with Score-Based Generative Priors",
+          "arxiv_id": "https://arxiv.org/abs/2608.02937",
+          "journal_or_source": "arXiv eess.IV"
+        },
+        {
+          "title": "A diffusion-based generative prior approach to sparse-view computed tomography",
+          "arxiv_id": "https://doi.org/10.1016/j.compmedimag.2026.102802",
+          "journal_or_source": "Computerized Medical Imaging and Graphics"
+        },
+        {
+          "title": "S3-Diff: Structural Semantic Synergy Diffusion Model for High Fidelity Super Resolution of Pathological Images",
+          "arxiv_id": "https://arxiv.org/abs/2608.03540",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Predictive Enhancement Calibration for Latent Breast MRI Virtual Contrast Enhancement",
+          "arxiv_id": "https://arxiv.org/abs/2608.03612",
+          "journal_or_source": "arXiv eess.IV"
+        },
+        {
+          "title": "Assessment of Conditional Diffusion Model for Synthetic Histopathology Image Generation",
+          "arxiv_id": "https://arxiv.org/abs/2608.03990",
+          "journal_or_source": "arXiv cs.LG"
+        }
+      ],
+      "why": "예전에는 재구성이나 초해상도 같은 역문제를 풀 때 '이 영상이 어떠해야 자연스러운가'라는 사전 지식을 사람이 손으로 정한 정규화 항(예: 부드러움, 희소성)으로 넣었습니다. 오늘 잡힌 논문들은 그 자리를 학습된 확산·스코어 모델이 통째로 대신하는 흐름을 한꺼번에 보여줍니다. ScoreField는 전자기 역산란(안 보이는 물체의 유전율을 파동 물리로 역추정)에서, 물리 방정식(Lippmann-Schwinger)은 그대로 강하게 지키되 '이 유전율 지도가 그럴듯한가'라는 판단만 사전 학습된 스코어 모델이 기울기로 밀어주도록 설계했습니다. 저널 쪽 sparse-view CT 논문은 적은 각도로 찍은 CT를 확산 생성 사전으로 메우고, S3-Diff는 병리 슬라이드 초해상도에서 SAM 기반 조직 구조 앵커로 확산 모델이 형태를 뭉개지 않게 잡습니다. 여기서 재밌는 건, 같은 날 나온 두 편이 이 흐름의 '함정'도 같이 드러냈다는 점입니다 — Predictive Enhancement Calibration은 자연영상용 latent 오토인코더의 값 범위가 MRI의 비표준 밝기 스케일과 충돌해 생성 전에 이미 방사선학적 충실도가 망가질 수 있음을 지적하고, 합성 병리 영상 평가 논문은 FID·IS 같은 표준 지표가 ImageNet 특징에 의존해 병리 영상엔 부적절하다며 병리 파운데이션 모델 기반 지표로 갈아끼울 것을 제안합니다. 다섯 편을 같이 보면, 확산 사전이 '되냐 안 되냐'를 넘어 '그 사전을 물리·도메인 스케일과 어떻게 안전하게 붙이고 어떻게 제대로 평가하느냐'로 논점이 한 단계 올라갔다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 5편이 역산란·CT·병리 SR·MRI 조영·합성 데이터 평가라는 서로 다른 응용에서 동일하게 '학습된 생성 사전을 역문제에 결합'하는 문제를 다루고, 그중 2편은 그 결합의 실패 조건과 평가 함정까지 짚음",
+      "lab_action": "ScoreField의 INR+스코어 사전 결합 방식과 PEC의 case-adaptive 좌표 보정을 우리 랩 sparse-view 단층촬영/QPI 복원 파이프라인에 이식해, 물리 잔차(측정 일관성)와 생성 사전 강도를 분리한 ablation을 돌리고, 합성 평가 논문의 병리-파운데이션-모델 기반 FID를 우리 virtual staining 품질지표로 교체했을 때 순위가 바뀌는지 비교"
+    },
+    {
+      "cluster": "계산 병리가 '조직 사진 → 진단 라벨'에서 '조직 사진 → 분자·공간 상태 예측'으로 축을 옮김",
+      "papers": [
+        {
+          "title": "Spatial proteomics guided by H&E-based AI reveals recurrence-risk niches in triple-negative breast cancer",
+          "arxiv_id": "https://arxiv.org/abs/2608.03145",
+          "journal_or_source": "arXiv cs.AI"
+        },
+        {
+          "title": "OncoTriad-QA: A Patient-Level Radiology-Pathology-Genomics Benchmark for Pan-Cancer Reasoning",
+          "arxiv_id": "https://arxiv.org/abs/2608.02615",
+          "journal_or_source": "arXiv cs.CL"
+        },
+        {
+          "title": "Spatially resolved tissue architecture and computational pathology in pancreatic cancer",
+          "arxiv_id": "https://doi.org/10.1038/s12276-026-01782-4",
+          "journal_or_source": "Experimental & Molecular Medicine"
+        },
+        {
+          "title": "Morphology-Aware Implicit Super-Resolution Network for Pathological Images",
+          "arxiv_id": "https://arxiv.org/abs/2608.03664",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "지금까지 계산 병리의 성공 사례는 대부분 'H&E 슬라이드를 넣으면 재발 위험이나 아형 라벨을 맞힌다'는 식이었고, 그 예측이 조직 안에서 실제로 '무엇'과 대응하는지는 블랙박스로 남겨두는 경우가 많았습니다. 오늘 묶인 논문들은 그 다음 칸, 즉 영상 예측을 분자·공간 정보와 좌표 단위로 이어 붙이는 쪽으로 넘어갑니다. Spatial proteomics guided by H&E-based AI는 딥러닝이 만든 재발 위험 히트맵을 그냥 점수로 쓰지 않고, 그 히트맵 좌표를 질량분석 기반 공간 프로테오믹스 측정 위치로 삼아 '왜 이 패치가 위험한가'를 실제 단백질 발현(세포주기·유전체 유지 대 면역 활성)으로 설명합니다(156명, AUC 0.77). OncoTriad-QA는 아예 환자 한 명 단위로 CT/MRI·전체 슬라이드 병리·돌연변이·메틸화·RNA-seq를 한 문제 안에 묶은 8.6만 문항 벤치마크를 만들어, 지금까지 모달리티 하나씩만 재던 평가를 '여러 증거를 통합 추론하는가'로 바꿉니다. 췌장암 리뷰는 이 공간·분자 통합이 특정 논문의 트릭이 아니라 분야 차원의 방향임을 보여주고, Morph-ISR은 이 모든 게 성립하려면 애초에 세포 형태가 살아 있는 고해상 입력이 필요하다는 전제를 초해상도로 받칩니다. 네 편을 같이 보면, 병리 AI의 평가 질문이 '얼마나 잘 분류하는가'에서 '조직의 어느 위치가 어떤 분자 상태와 대응하는가를 검증 가능하게 내놓는가'로 옮겨간다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 4편(arXiv 3 + 저널 리뷰 1)이 같은 날 나왔고, 공간 프로테오믹스 결합·멀티모달 통합 벤치마크·공간 조직 구조 리뷰·형태 보존 초해상도라는 서로 다른 진입점에서 모두 '영상↔분자·공간 대응'이라는 공통 축으로 수렴",
+      "lab_action": "Spatial proteomics 논문의 '위험 히트맵을 측정 좌표로 쓰는' 절차를 우리 랩 virtual staining/계산 병리 출력에 적용해, 우리 모델의 관심 영역이 실제 분자·형태 특징과 좌표 단위로 일치하는지 GroupKFold(환자 단위)로 검증하고, OncoTriad-QA에서 병리 파트만 떼어 우리 인코더를 zero-shot으로 채점해 멀티모달 통합 대비 단일 모달 성능 격차를 기록"
+    },
+    {
+      "cluster": "물리를 신경망 '안에' 심는 재구성(unrolling·neural operator·PINN)이 서로 다른 도메인에서 같은 날 동시 등장",
+      "papers": [
+        {
+          "title": "NanoMorph-3D: An End-to-End Physics-Driven Unrolling Framework for Nanomaterial Reconstruction",
+          "arxiv_id": "https://arxiv.org/abs/2608.03257",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Dual-domain U-Nets with embedded back projection operators for motion-resolved 4D CBCT reconstruction",
+          "arxiv_id": "https://arxiv.org/abs/2608.03430",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "A Physics-Informed Hybrid Neural Operator for Transient Magnetization Prediction in Power Magnetics",
+          "arxiv_id": "https://arxiv.org/abs/2608.02965",
+          "journal_or_source": "arXiv cs.LG"
+        },
+        {
+          "title": "GeoID-PINN: Identifiability-Aware Regional Epidemic Inference with Geographic Coupling",
+          "arxiv_id": "https://arxiv.org/abs/2608.02633",
+          "journal_or_source": "arXiv cs.LG"
+        },
+        {
+          "title": "Physics-Informed Digital Twins in Computational Engineering: a PRISMA-ScR Review",
+          "arxiv_id": "https://doi.org/10.1007/s11831-026-10754-w",
+          "journal_or_source": "Archives of Computational Methods in Engineering"
+        }
+      ],
+      "why": "앞 클러스터가 '학습된 사전을 밖에서 붙이는' 쪽이라면, 이쪽은 정반대로 물리 방정식이나 측정 연산자 자체를 신경망 구조 안에 직접 박아 넣는 흐름입니다. 예전엔 재구성을 순수 데이터 학습(입력→출력 블랙박스)으로 풀거나, 반대로 물리 반복 알고리즘만 손으로 돌렸는데, 오늘 논문들은 그 반복 알고리즘의 각 단계를 학습 가능한 층으로 '펼쳐(unroll)' 물리와 학습을 한 몸으로 만듭니다. NanoMorph-3D는 전자 단층촬영의 고질적 missing-wedge(찍을 수 없는 각도) 문제를 proximal gradient descent를 펼친 물리 구동 unrolling으로 풀고, 4D CBCT 논문은 U-Net의 skip 연결을 아예 '역투영 연산자(back-projection)'로 바꿔 넣어 투영 영역과 볼륨 영역을 물리적으로 오가게 합니다. PI-HNO는 자성체의 B-H 에너지 일관성을 규제항으로 넣은 하이브리드 신경 연산자이고, GeoID-PINN은 물리(SIRD 방정식)를 지키면서도 '궤적이 잘 맞아도 지역별 파라미터는 식별 안 될 수 있다'는 식별성 함정을 정면으로 드러냅니다. 저널 리뷰(Physics-Informed Digital Twins)는 이 모든 조각—물리 학습·신경 연산자·불확실성 정량화·실시간 갱신—을 한 지도로 묶으며 '배포 준비도'라는 새 축을 던집니다. 다섯 편을 같이 보면, 물리 삽입형 재구성이 개별 트릭 단계를 지나 '어떤 물리를, 어디에, 얼마나 강하게 박아야 식별성과 배포가 함께 되는가'라는 공통 질문으로 성숙하고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 저자군 5편이 unrolling·연산자 삽입·PINN·리뷰로 같은 방향을 가리키지만, 응용 도메인(나노재료·CBCT·전력자성·역학·엔지니어링)이 넓게 퍼져 있어 이미징 코어로의 직접 전이는 논문별 확인 필요",
+      "lab_action": "4D CBCT 논문의 '역투영 연산자를 skip 연결로 대체하는' 이중 도메인 U-Net 설계를 우리 랩 sparse-view 재구성 백본에 적용해, 순수 데이터 U-Net 대비 아티팩트·일반화 격차를 같은 팬텀에서 비교하고, GeoID-PINN의 식별성 진단(궤적 적합도 vs 파라미터 회복)을 우리 물리 삽입 모델에 붙여 '잘 맞는데 파라미터는 못 맞히는' 구간이 있는지 점검"
+    },
+    {
+      "cluster": "초해상도 평가 기준이 '사람 눈에 선명한가'에서 '뒤에 붙는 작업에 쓸 수 있는 진짜 정보인가'로 이동",
+      "papers": [
+        {
+          "title": "FaithIR: Rethinking Infrared Image Super-Resolution from Perceptual Sharpness to Task Relevant Fidelity",
+          "arxiv_id": "https://arxiv.org/abs/2608.03106",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "S3-Diff: Structural Semantic Synergy Diffusion Model for High Fidelity Super Resolution of Pathological Images",
+          "arxiv_id": "https://arxiv.org/abs/2608.03540",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Morphology-Aware Implicit Super-Resolution Network for Pathological Images",
+          "arxiv_id": "https://arxiv.org/abs/2608.03664",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "초해상도는 오랫동안 '얼마나 선명하고 그럴듯해 보이는가'(PSNR·지각 화질)로 경쟁했는데, 오늘 잡힌 세 편은 그 기준 자체를 의심합니다. 예전엔 없던 텍스처를 만들어 붙여도 눈에 예쁘면 점수가 올랐지만, 이제는 '그 만들어낸 디테일이 뒤에 붙는 판독·검출·진단을 왜곡하지 않는가'를 묻는 쪽으로 옮겨갑니다. FaithIR는 적외선 초해상도가 인공 텍스처와 과도한 엣지로 실제 열 구조를 왜곡한다는 문제를 정면으로 짚고, 검출·분할 같은 기계 인식에 충실한 복원을 목표로 픽셀 도메인 복원 구조를 제안합니다. S3-Diff와 Morph-ISR은 같은 문제의식을 병리 슬라이드로 가져와, 확산·암시적 표현이 진단에 중요한 세포 형태를 뭉개지 않도록 각각 SAM 기반 구조 앵커와 형태 인지 커널을 넣습니다. 세 편을 같이 보면, 초해상도의 성공 기준이 '보기 좋은 샘플'에서 'downstream 작업이 신뢰할 수 있는 정보 복원'으로 재정의되고 있다는 뜻이고, 이는 우리 랩이 virtual staining·현미경 업샘플링 결과를 평가할 때 화질 지표만 보면 안 된다는 직접적 경고입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 저자군 3편이 적외선·병리 두 도메인에서 '지각 화질 대신 작업 충실도'라는 같은 문제의식을 보이지만, 공통 벤치마크 없이 각자 데이터셋을 써서 축의 확산은 추가 확인 필요",
+      "lab_action": "FaithIR의 '작업 관련 충실도' 관점을 우리 랩 현미경/병리 초해상도 평가에 적용해, PSNR·SSIM 외에 복원본으로 downstream 세포 검출·분할을 돌린 성능을 함께 재는 이중 지표 grid를 만들고, S3-Diff의 SAM 구조 앵커 유무에 따른 형태 왜곡을 세포 경계 IoU로 정량화"
+    },
+    {
+      "cluster": "Meta-Optics·Phase Imaging 저널 버킷이 10+10으로 두꺼워졌지만 실제 이미징 신호는 여전히 얇음 — 오늘의 도메인 Watch Lens",
+      "papers": [
+        {
+          "title": "Multimodal illumination for quantitative transmitted-light microscopy (COSMIC)",
+          "arxiv_id": "https://doi.org/10.1111/jmi.70156",
+          "journal_or_source": "Journal of Microscopy"
+        },
+        {
+          "title": "Label-free quantification of early virus-induced cellular responses by digital holographic tomography",
+          "arxiv_id": "https://doi.org/10.1128/msphere.00304-26",
+          "journal_or_source": "mSphere"
+        },
+        {
+          "title": "Neural Architecture Search Generated Phase Retrieval Network and its Application in Laser Wireless Power Transmission",
+          "arxiv_id": "https://doi.org/10.1364/oe.605670",
+          "journal_or_source": "Optics Express"
+        },
+        {
+          "title": "Nanoimprinted Tilt-Free Astigmatic Metasurface for One-Shot Orbital Angular Momentum Beam-Array Readout",
+          "arxiv_id": "https://doi.org/10.1021/acs.nanolett.6c02725",
+          "journal_or_source": "Nano Letters"
+        }
+      ],
+      "why": "오늘 Meta-Optics/Diffractive와 Phase Imaging/Holography 저널 버킷이 각각 10편으로 어제(각각 얇았음)보다 눈에 띄게 두꺼워져서 한 번 더 들여다봤는데, 편수 증가의 대부분은 이미징이 아닌 무선통신·열복사·음향 쪽입니다. 예를 들어 Meta-Optics 10편 중 실제 이미징·광학 판독에 가까운 건 OAM 빔 배열을 한 번에 읽는 나노임프린트 비대칭 메타표면(Nano Letters)과 비대칭 Bessel 빔 정도이고, 나머지는 CubeSat 안테나·이중편광 열복사·수중 음향 전달·THz 바이오센서처럼 우리 ROI와 거리가 있습니다. Phase 쪽에서 진짜 계산 이미징 신호는 세 편입니다 — COSMIC은 콘덴서 없이 명시야·암시야·형광·미분위상대비를 한 모듈로 얻는 저가 오픈소스 조명계이고, 디지털 홀로그래픽 단층촬영으로 살아 있는 세포의 바이러스 초기 반응을 라벨 없이 정량화한 논문, 그리고 위상 복원 신경망을 NAS로 자동 설계한 논문입니다. 편수만 보고 '메타광학·위상 이미징이 살아났다'고 읽으면 안 되고, 실제 신호는 저가·다중모달 조명 하드웨어와 위상 복원 신경망 두 갈래로 좁게 뭉쳐 있다는 게 오늘의 관찰입니다.",
+      "confidence": "Low",
+      "confidence_note": "저널 버킷 편수는 늘었으나 이미징 관련은 Meta 2편·Phase 3편으로 좁고, arXiv 쪽 계산광학 코어 신규 신호는 오늘도 사실상 부재(FP 1편은 ptychography 신경망, Lensless 2편 중 실신호 0)",
+      "lab_action": "COSMIC의 콘덴서리스 다중모달 조명 설계도를 우리 랩 저가 현미경 조명 모듈 후보로 재현성 검토하고, NAS 기반 위상 복원 네트워크의 탐색 공간을 우리 QPI 데이터에 좁혀 적용해 수작업 설계 대비 복원 정확도·추론 지연을 비교하는 벤치마크를 이번 주 안에 스케치"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "확산·스코어 생성 사전을 우리 sparse-view 복원에 결합할 때 물리 잔차와 사전 강도를 분리한 ablation 설계",
+      "claim": "우리 랩이 sparse-view 단층촬영/QPI 복원에 확산 사전을 붙일 때, 측정 일관성(물리 잔차)과 학습된 생성 사전의 기여를 분리해 각각 얼마나 성능을 올리는지, 그리고 PEC가 지적한 latent 스케일 충돌이 우리 데이터에서도 충실도를 깨는지 먼저 검증한다.",
+      "supporting_papers": [
+        {"title": "ScoreField: Neural Inverse Scattering with Score-Based Generative Priors", "arxiv": "https://arxiv.org/abs/2608.02937"},
+        {"title": "Predictive Enhancement Calibration for Latent Breast MRI Virtual Contrast Enhancement", "arxiv": "https://arxiv.org/abs/2608.03612"}
+      ]
+    },
+    {
+      "title": "H&E 예측 히트맵을 분자·공간 측정 좌표로 쓰는 절차를 우리 virtual staining/계산 병리 출력 검증에 이식",
+      "claim": "Spatial proteomics 논문처럼, 우리 모델의 관심 영역·위험 히트맵을 그냥 점수로 두지 않고 실제 형태·분자 특징과 좌표 단위로 대조해, 환자 단위 split에서 예측 근거가 검증 가능한지 확인한다.",
+      "supporting_papers": [
+        {"title": "Spatial proteomics guided by H&E-based AI reveals recurrence-risk niches in triple-negative breast cancer", "arxiv": "https://arxiv.org/abs/2608.03145"}
+      ]
+    },
+    {
+      "title": "역투영 연산자 삽입형 이중 도메인 U-Net을 우리 sparse-view 재구성 백본으로 벤치마크",
+      "claim": "4D CBCT 논문의 '물리 연산자를 skip 연결로 대체'하는 설계를 우리 재구성 파이프라인에 적용해, 순수 데이터 학습 대비 아티팩트·일반화·식별성이 실제로 좋아지는지 같은 팬텀에서 비교한다.",
+      "supporting_papers": [
+        {"title": "Dual-domain U-Nets with embedded back projection operators for motion-resolved 4D CBCT reconstruction", "arxiv": "https://arxiv.org/abs/2608.03430"},
+        {"title": "GeoID-PINN: Identifiability-Aware Regional Epidemic Inference with Geographic Coupling", "arxiv": "https://arxiv.org/abs/2608.02633"}
+      ]
+    }
+  ]
+}

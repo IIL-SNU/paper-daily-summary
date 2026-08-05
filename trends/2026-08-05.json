@@ -1,0 +1,34 @@
+{
+  "date": "2026-08-05",
+  "source_listing_date": "2026-08-05",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 181,
+      "cs.CV": 146,
+      "cs.AI": 292,
+      "eess.IV": 8,
+      "eess.SP": 20
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 439
+  },
+  "totals": {
+    "total_scanned": 968,
+    "selected": 255
+  },
+  "classified": {
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 2,
+      "Phase Imaging/Holography": 10,
+      "Meta-Optics/Diffractive": 10,
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 32,
+      "Virtual Staining/Pathology": 33,
+      "Reconstruction/Inverse Problems": 23,
+      "Deep Learning Methods": 142
+    }
+  },
+  "daily_thesis": "오늘(8/5, 수) arXiv /new는 968편 스캔 중 255편(26.3%)이 ROI로 잡혔고, 어제를 압도했던 3D Gaussian Splatting 물결은 가라앉았다. 대신 세 방향의 방법론 신호가 또렷했다. (1) 확산·스코어 기반 생성 사전이 역산란·sparse-view CT·병리 초해상도·MRI 조영 같은 어려운 계산 이미징 역문제의 기본 엔진으로 자리잡되, 물리·도메인 스케일과의 결합 함정과 평가 지표 문제까지 같이 드러났다. (2) 계산 병리가 '조직 사진→진단 라벨'에서 '조직 사진→분자·공간 상태 예측'으로 축을 옮겼다(H&E 유도 공간 프로테오믹스, 방사선-병리-유전체 통합 벤치마크). (3) 물리를 신경망 안에 심는 재구성(unrolling·neural operator·PINN)이 나노재료·CBCT·전력자성 등 서로 다른 도메인에서 동시에 등장했다. 계산광학 코어는 Meta-Optics·Phase Imaging 저널 버킷이 각각 10편으로 두꺼워졌지만 실제 이미징 신호는 여전히 얇아(Meta 2편·Phase 3편), 나머지는 무선통신·열복사·음향 응용이었다."
+}

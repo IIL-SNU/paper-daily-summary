@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 04 Aug 2026 14:18:05 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 12:15:05 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-08-05 (수요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-08-05.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-05.html</guid>
+      <pubDate>Wed, 05 Aug 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘(8/5, 수)은 arXiv /new에 cs.LG 181편, cs.CV 146편, cs.AI 292편, eess.IV 8편, eess.SP 20편이 잡혔고, 저널 439건을 더한 원천 스캔 968건 중 255건(26.3%)이 ROI로 선정됐습니다. 어제(8/4)를 압도했던 3D Gaussian Splatting(3DGS, 장면을 수많은 반투명 타원체로 표현해 빠르게 렌더링하는 방식) 신뢰성 물결이 오늘은 거의 잦아들었고, Tomography/3D Imaging 버킷(32편)도 절반 이상이 3DGS가 아니라 임상 OCT·CBCT 사례 보고로 채워졌습니다. 대신 오늘 가장 또렷한 신호는 방법론 쪽에서 나왔습니다. 예전에는 재구성·초해상도 같은 역문제를 풀 때 '이 영상이…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-08-04 (화요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-08-04.html</link>

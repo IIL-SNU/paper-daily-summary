@@ -1,0 +1,13 @@
+{
+  "date": "2026-08-05",
+  "results": [
+    {
+      "benchmark": "TNBC recurrence-risk prediction from H&E (156 patients, independent test cohort)",
+      "metric": "AUC / C-index",
+      "value": 0.77,
+      "value_str": "AUC 0.77 and C-index 0.77 on an independent test cohort using distribution-based aggregation of high-scoring patches",
+      "paper": "https://arxiv.org/abs/2608.03145",
+      "paper_title": "Spatial proteomics guided by H&E-based AI reveals recurrence-risk niches in triple-negative breast cancer"
+    }
+  ]
+}
