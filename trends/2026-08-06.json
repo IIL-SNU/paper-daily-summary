@@ -1,0 +1,34 @@
+{
+  "date": "2026-08-06",
+  "source_listing_date": "2026-08-06",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 172,
+      "cs.CV": 131,
+      "cs.AI": 176,
+      "eess.IV": 4,
+      "eess.SP": 25
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 431
+  },
+  "totals": {
+    "total_scanned": 825,
+    "selected": 236
+  },
+  "classified": {
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 3,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 6,
+      "Meta-Optics/Diffractive": 8,
+      "Light-Field/Novel Sensors": 4,
+      "Tomography/3D Imaging": 54,
+      "Virtual Staining/Pathology": 24,
+      "Reconstruction/Inverse Problems": 21,
+      "Deep Learning Methods": 115
+    }
+  },
+  "daily_thesis": "오늘(8/6, 목) arXiv /new는 825편 병합 스캔 중 236편(28.6%)이 ROI로 잡혔다. 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field)는 어제에 이어 이틀 연속 arXiv 신규가 사실상 없어 얇았고, 대신 로봇 학습 쪽에서 두 신뢰성 흐름이 동시에 성숙했다. video world model은 '그럴듯한 미래 예측'에서 '긴 시퀀스를 거쳐도 상태를 정확히 되돌릴 수 있는가'로 검증 기준을 옮겼고(WorldCycle·Faster-WAM·MobileWAM·Overcoming Statistical Bias·HelloWorld), VLA는 '일단 그럴듯한 행동을 내놓고 보는' 정책을 사후에 실패 탐지하는 쪽으로 이동했다(GUARD·SAFECAST·CofactVLA·Suppression Sticks). 계산 이미징에서는 Gaussian splatting 기반 CT 재구성이 포즈 오차·금속 아티팩트라는 실제 장비의 물리적 실패를 다루기 시작했고, AI 생성·조작 이미지 탐지가 의료 CT 볼륨·위성 영상으로 번지는 신호(HexMIL 등)가 나타났다."
+}

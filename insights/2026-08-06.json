@@ -1,0 +1,167 @@
+{
+  "date": "2026-08-06",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "Video world model이 '그럴듯한 미래'에서 '끝까지 믿을 수 있는 상태'로 검증 기준을 옮김",
+      "papers": [
+        {
+          "title": "WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models",
+          "arxiv_id": "https://arxiv.org/abs/2608.04964",
+          "journal_or_source": "arXiv cs.LG/cs.AI"
+        },
+        {
+          "title": "Faster-WAM: Efficient Inference-Time Future Conditioning for Robust World Action Models",
+          "arxiv_id": "https://arxiv.org/abs/2608.04404",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "MobileWAM: Bridging World Action Models to Mobile Manipulation with Chain-of-Foresight",
+          "arxiv_id": "https://arxiv.org/abs/2608.04657",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Overcoming Statistical Bias in Action-Controllable World Models",
+          "arxiv_id": "https://arxiv.org/abs/2608.04653",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "HelloWorld: Enabling Socially Interactive Characters in Video World Models",
+          "arxiv_id": "https://arxiv.org/abs/2608.05070",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "Video world model은 카메라 행동을 입력하면 그 행동을 따라 미래 장면이 어떻게 바뀔지 생성해주는 모델입니다. 예전에는 이 모델의 성능을 '생성된 미래 장면이 얼마나 그럴듯하고 자연스러운가'로 주로 평가했는데, 오늘 나온 다섯 편은 그 기준을 '긴 행동 시퀀스를 거쳐도 모델이 계산한 상태가 실제로 맞물려 돌아가는가'로 옮깁니다. WorldCycle은 행동을 했다가 정확히 반대로 되돌리면 원래 상태로 돌아와야 한다는 물리적 사실(가역 행동 순환)을 검증 신호로 써서, 모델이 행동을 진짜로 이해했는지 아니면 자주 본 패턴을 외웠는지를 정답 라벨 없이 구분합니다(상태 복귀 오차 최대 44% 감소, 복합 행동 정확도 약 4배 향상). Overcoming Statistical Bias는 반대 각도에서 같은 문제를 짚습니다 — 화면이 관성처럼 저절로 움직이는 지름길 때문에 실제로는 어떤 행동을 넣어도 비슷한 미래가 나오는 경우가 있다는 겁니다. Faster-WAM과 MobileWAM은 이 신뢰성 요구를 실제 로봇에 붙일 수 있게 만드는 쪽으로, 각각 추론 계산 비용과 탁상 조작에서 이동+조작이 동시에 필요한 모바일 로봇으로의 확장을 다룹니다. 즉 오늘 흐름은 video world model이 '보기 좋은 미래 영상을 만드는 생성기'에서 '로봇이 행동을 계획할 때 실제로 믿고 쓸 수 있는 시뮬레이터'로 넘어가는 중이라는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 5편이 검증 방법론(WorldCycle)·효율화(Faster-WAM)·응용 확장(MobileWAM)·편향 진단(Overcoming Statistical Bias)·상호작용(HelloWorld)이라는 서로 다른 각도에서 모두 world model의 행동 반응성/신뢰성을 다루고, WorldCycle은 CycleBench라는 진단 벤치마크까지 공개함",
+      "lab_action": "WorldCycle의 가역 행동 순환 검증(행동-역행동 왕복 시 상태 복귀 오차)을 우리 랩의 시간 시퀀스 재구성(예: 4D CT·동적 홀로그래피) 평가에 이식해, '복원된 시간 시퀀스가 왕복 조건에서도 일관된 상태로 되돌아오는가'를 정량 지표로 추가하고 Overcoming Statistical Bias의 진단 방식으로 우리 시계열 모델이 조건(입력)에 실제로 반응하는지 대조군 대비 검증"
+    },
+    {
+      "cluster": "VLA가 '잘 작동하게 만들기'에서 '언제 실패하는지 실행 중에 잡아내기'로 무게중심 이동",
+      "papers": [
+        {
+          "title": "GUARD: Grounding Uncertainty and Ablation-Based Risk Detection for Diffusion-Based VLAs",
+          "arxiv_id": "https://arxiv.org/abs/2608.04510",
+          "journal_or_source": "arXiv cs.AI"
+        },
+        {
+          "title": "SAFECAST: Robust Failure Detection for VLA Policies with Contrast-Set Training and Calibration",
+          "arxiv_id": "https://arxiv.org/abs/2608.04246",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "CofactVLA: Deconfounding Vision-Language-Action Models via Counterfactual Intervention",
+          "arxiv_id": "https://arxiv.org/abs/2608.04396",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Suppression Sticks, Locality Is Fragile: A Closed-Loop Target-and-Control Audit of Task-Vector Negation in VLA Policies",
+          "arxiv_id": "https://arxiv.org/abs/2608.04692",
+          "journal_or_source": "arXiv cs.LG"
+        }
+      ],
+      "why": "VLA(카메라 영상과 언어 지시를 보고 로봇 행동을 직접 출력하는 모델)는 훈련 때 보지 못한 상황에서도 일단 그럴듯해 보이는 행동을 내놓는 경향이 있는데, 문제는 그 행동이 실제로는 지시나 장면 근거와 무관하게 나온 것일 수 있다는 점입니다. 오늘 묶인 네 편은 이 문제를 정책 자체를 바꾸기보다 '언제 그런 신뢰할 수 없는 행동이 나오는지 실행 중에 탐지'하는 쪽으로 접근합니다. GUARD는 diffusion 기반 VLA 내부의 key-value 캐시를 일부러 없애보고(counterfactual ablation) 그 전후로 행동 생성이 얼마나 달라지는지를 봐서 '이 행동이 실제로 시각·언어 근거에 의존해서 나온 것인지'를 판별하며, 다섯 개 정책·벤치마크 조합 중 네 개에서 기존 최고 실행중 모니터링 방법보다 평균 5.73%p 높은 탐지 성능(ROC-AUC)을 보였습니다. SAFECAST는 실제 배포에서 흔히 생기는 변화(어질러진 장면, 낯선 물체, 조명 변화, 다르게 표현된 지시문)를 미리 인위적으로 만들어 실패 탐지기를 훈련·보정하는 방법으로 실물 로봇(DROID)과 시뮬레이션(LIBERO) 모두에서 통계적으로 유의미한 개선을 보였습니다. CofactVLA는 애초에 왜 이런 문제가 생기는지를 짚습니다 — 시각 정보가 언어 지시보다 압도적으로 많다 보니 모델이 지시를 무시하고 눈에 띄는 물체나 익숙한 배치 같은 시각적 우연에 의존해버리는 현상(vision-override)을 인과적 개입으로 줄입니다. Suppression Sticks는 VLA에서 특정 스킬 하나만 없애려는 수정(task-vector 연산)이 얼마나 부작용 없이 국소적인지 감사했는데, 다섯 개 스킬은 깔끔히 분리됐지만 나머지는 저항하거나 전체 성능이 무너지는 등 '국소성이 생각보다 깨지기 쉽다'는 걸 보였습니다. 네 편을 같이 보면, VLA 연구의 무게중심이 '더 잘 작동하게 만들기'에서 '언제, 왜 믿을 수 없는지를 배포 전에 미리 알아내고 통제하기'로 옮겨가고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 4편이 탐지(GUARD·SAFECAST)·원인 분석(CofactVLA)·수정 안전성 감사(Suppression Sticks)라는 서로 다른 진입점에서 모두 VLA의 실행 중 신뢰성 문제를 다루고, GUARD·SAFECAST는 LIBERO 등 공통 벤치마크에서 정량 수치까지 제시",
+      "lab_action": "GUARD의 KV 캐시 ablation 기반 grounding 진단과 SAFECAST의 contrast-set 보정 절차를 우리 랩 로봇 현미경/광학계 자동 정렬 정책(있다면 VLA 유사 제어 루프)에 이식해, 실행 중 실패 신호를 조명·장면 변화 조건별로 ROC-AUC로 비교하는 표를 이번 주 안에 만들기"
+    },
+    {
+      "cluster": "Gaussian splatting 기반 CT 재구성이 '빠르고 화질 좋다'를 넘어 실제 장비의 물리적 실패를 다루기 시작",
+      "papers": [
+        {
+          "title": "Revisiting Pose Sensitivity in Splat-based Computed Tomography under Sparse-view Reconstruction",
+          "arxiv_id": "https://arxiv.org/abs/2608.04752",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Splat-Based Metal Artifact Reduction in Cone-Beam CT via Compact Attenuation Modeling",
+          "arxiv_id": "https://arxiv.org/abs/2608.04764",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "Gaussian splatting을 X선 CT 재구성에 쓰는 연구는 최근 '적은 각도로 찍어도 빠르고 화질 좋게 복원된다'는 feasibility 단계 주장이 많았습니다. 오늘 나온 두 편은 그 다음 단계, 즉 실제 CT 장비에서 흔히 생기는 두 가지 구체적 실패를 다룹니다. 첫 번째 논문은 sparse-view CT에서 splat 방식이 기존 방법보다 훨씬 심한 줄무늬·띠 아티팩트를 만든다는 걸 발견했는데, 원인을 파헤쳐보니 각도가 적어서가 아니라 촬영 기하(카메라 포즈) 자체의 미세한 오차가 splat 재구성에 유난히 크게 증폭되기 때문이었습니다. 그래서 포즈 오차를 재구성과 함께 보정하는 방법을 제안합니다. 두 번째 논문은 치과 충전재나 정형외과 임플란트 같은 금속이 있을 때 X선 에너지에 따라 감쇠가 달라지는 물리 현상(다색성)을 각 Gaussian에 직접 반영해, 별도의 금속 마스크 없이도 금속 아티팩트를 줄입니다. 두 편을 같이 보면, splat 기반 CT 연구가 '빠른 렌더링 기법을 CT에 옮겨봤다'는 초기 단계를 지나 '실제 임상 장비에서 마주치는 기하·물질 조건까지 물리적으로 감당할 수 있는가'를 검증하는 단계로 넘어가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "같은 날 서로 다른 저자군 2편이 sparse-view CT의 포즈 민감도와 금속 아티팩트라는 서로 다른 실패 조건에서 공통적으로 'splat 표현을 실제 CT 물리에 맞게 보정'하는 방향을 보이지만, 아직 2편뿐이라 이 방향이 다른 실패 모드(산란, 빔 경화 등)로 확산되는지는 추가 확인 필요",
+      "lab_action": "두 논문의 포즈 공동최적화·물질별 감쇠 파라미터화를 우리 랩 sparse-view CT/CBCT 재구성 파이프라인에 이식해, 순수 splat 대비 실제 팬텀에서 포즈 오차·금속 유무 조건별 아티팩트 정량 비교(PSNR/SSIM + 아티팩트 영역 시각 검사) 실험을 이번 주 안에 세팅"
+    },
+    {
+      "cluster": "AI 생성·조작 이미지 탐지가 자연 사진을 넘어 의료 볼륨·위성 영상으로 번짐",
+      "papers": [
+        {
+          "title": "HexMIL: Hierarchical Attention MIL for Ante-Hoc Explainable Detection of AI-Manipulated CT Volumes",
+          "arxiv_id": "https://arxiv.org/abs/2608.05101",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Unleashing the Potential of Vision-Language Models for Generalizable AI-Generated Image Detection",
+          "arxiv_id": "https://arxiv.org/abs/2608.04935",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Towards a satellite image manipulation and deepfake localization benchmark dataset",
+          "arxiv_id": "https://arxiv.org/abs/2608.04840",
+          "journal_or_source": "arXiv cs.CV/cs.AI"
+        },
+        {
+          "title": "Wavelet-based features to improve cross-forgery generalization in deepfake detection",
+          "arxiv_id": "https://doi.org/10.3389/fimag.2026.1845480",
+          "journal_or_source": "Frontiers in Imaging"
+        }
+      ],
+      "why": "AI 생성 이미지 탐지는 그동안 주로 얼굴 딥페이크 같은 자연 사진 도메인에서 다뤄졌는데, 오늘 묶인 논문들은 그 문제의식이 우리 랩과 더 가까운 의료·원격탐사 도메인으로 번지는 걸 보여줍니다. HexMIL은 CT 볼륨이 생성 모델로 조작된 '의료 딥페이크'를 탐지하는데, 픽셀 단위 정답 라벨 없이도 어텐션 가중치 자체가 실제 판단 근거가 되도록 설계해(사후 설명이 아니라 판단 과정 자체가 설명이 되는 ante-hoc 방식) 학습 때 보지 못한 생성 모델에서도 기존 대비 AUC +9.1, F1 +9.4를 얻었습니다. 위성 영상 조작 벤치마크 논문은 원격탐사 이미지 위조가 과학·재난 대응·물류 판단에 실제 피해를 줄 수 있다며 이 도메인 전용 벤치마크를 처음 제안하고, PE-SPC는 자연 이미지 탐지에서 비전-언어 정렬 표현이 기존 DINOv3 기반 방법보다 일반화가 낫다는 걸 보였습니다. 저널의 wavelet 기반 방법은 서로 다른 생성기로 만든 딥페이크에도 일반화되는 저수준 주파수 특징을 찾습니다. 네 편을 같이 보면, '이 이미지가 AI로 만들어졌거나 조작됐는가'를 판별하는 문제가 이제 우리 랩이 다루는 CT·현미경·위성 같은 과학·의료 영상 도메인에서도 독자적인 벤치마크와 방법이 필요한 단계로 들어섰다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 저자군 4편이 의료 CT·위성·자연 이미지·범용 저수준 특징이라는 서로 다른 도메인에서 같은 문제(생성·조작 이미지 탐지의 도메인 일반화)를 다루지만, 의료 도메인 전용 신호는 HexMIL 1편뿐이라 이 방향이 병리·현미경으로도 퍼지는지는 추가 확인 필요",
+      "lab_action": "HexMIL의 ante-hoc attention 기반 판단(픽셀 라벨 없이 어텐션이 곧 근거가 되는 구조)을 우리 랩 virtual staining/합성 현미경 영상 신뢰성 검증에 적용해, 실제 vs AI 생성 조직 영상을 학습 때 보지 못한 생성기 기준 cross-generator 프로토콜로 구분할 수 있는지 baseline 실험을 이번 주 안에 돌리기"
+    },
+    {
+      "cluster": "계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field)가 이틀 연속 arXiv 신규 사실상 0 — 오늘의 도메인 Watch Lens",
+      "papers": [
+        {
+          "title": "Frequency‐Aware Fourier Ptychography for Imaging Beyond Spatial Coherence Constraints",
+          "arxiv_id": "https://doi.org/10.1002/lpor.71632",
+          "journal_or_source": "Laser & Photonics Reviews"
+        },
+        {
+          "title": "AI-based single-shot structured-light depth reconstruction for real-time laparoscopic surgical guidance",
+          "arxiv_id": "https://arxiv.org/abs/2608.05109",
+          "journal_or_source": "arXiv eess.IV"
+        },
+        {
+          "title": "Revealing nanoscale motion under photon limited coherent x-ray diffraction",
+          "arxiv_id": "https://doi.org/10.1063/5.0332495",
+          "journal_or_source": "Journal of Applied Physics"
+        }
+      ],
+      "why": "오늘 Fourier Ptychography(3)·Lensless(1)·Phase Imaging(6)·Meta-Optics(8)·Light-Field(4) 저널 버킷 편수를 다시 훑었는데, 어제(Meta 10·Phase 10)보다도 전반적으로 더 얇아졌고 arXiv 쪽 계산광학 코어 신규는 사실상 없습니다. 실제 이미징 신호로 볼 만한 건 세 편 정도입니다 — Frequency-Aware Fourier Ptychography는 광원 크기 때문에 공간 결맞음이 약해지는 매크로 스케일 촬영에서도 FP의 고해상도 합성 개구 복원이 가능하도록 재구성 모델을 확장했고, eess.IV의 단일 샷 구조광 라플라로스코프 깊이 추정 논문은 LED로 만든 수동 이진 패턴 하나만으로(동기화 장치 없이) 26Hz 실시간으로 깊이를 복원해 MAE 3.70mm를 달성했습니다(코드화된 조명 패턴을 쓴다는 점에서 Lensless/Coded Imaging과 맞닿아 있습니다). 광자 제한 결맞음 X선 회절 논문은 나노스케일 움직임을 낮은 광자 수 조건에서도 잡아내는 위상 복원 신호입니다. 나머지 대부분은 무선통신·바이오센서·비이미징 물리(홀로그래피의 다른 의미 등)로 우리 ROI와 거리가 있습니다. 편수가 적다고 그냥 넘기지 않고, 이런 날에는 오히려 단일 신호(구조광 라플라로스코프)의 실사용 수치가 더 눈에 띈다는 게 오늘의 관찰입니다.",
+      "confidence": "Low",
+      "confidence_note": "버킷 편수 자체가 FP 3·Lensless 1·Phase 6·Meta 8·Light-Field 4로 어제보다 더 줄었고, 실제 이미징 관련은 3편 정도로 좁으며 arXiv 신규가 거의 없어 이 방향이 이어질지는 내일 이후 편수 회복 여부로 판단 필요",
+      "lab_action": "단일 샷 구조광 라플라로스코프 논문의 VQ-VAE 잠재공간 + U-Net 깊이 헤드 구조를 우리 랩 저가 lensless/coded-aperture 깊이 추정 실험에 이식성 검토하고, Frequency-Aware FP의 결맞음 완화 모델을 우리 FP 현미경 세팅에서 광원 크기를 의도적으로 키운 조건에 적용해 해상도 열화 폭을 정량 비교"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "WorldCycle의 가역성 검증을 우리 랩 시간 시퀀스 재구성(4D CT/동적 홀로그래피) 평가에 이식",
+      "claim": "WorldCycle이 로봇 행동에 쓴 '행동-역행동 왕복 시 상태가 원래대로 돌아오는가'라는 검증 원리를, 우리 랩의 시간에 따라 변하는 재구성 파이프라인에 적용한다. 4D CBCT나 동적 홀로그래피에서 순방향·역방향 시퀀스를 왕복시켰을 때 복원된 상태가 얼마나 일관되게 되돌아오는지를 정답 라벨 없는 품질 지표로 쓸 수 있는지 검증한다.",
+      "supporting_papers": [
+        {"title": "WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models", "arxiv": "https://arxiv.org/abs/2608.04964"},
+        {"title": "Overcoming Statistical Bias in Action-Controllable World Models", "arxiv": "https://arxiv.org/abs/2608.04653"}
+      ]
+    },
+    {
+      "title": "GUARD/SAFECAST식 실행중 실패 탐지를 우리 랩 로봇 제어/자동 정렬 루프에 이식",
+      "claim": "우리 랩에 VLA 유사 폐루프 제어(로봇 현미경 자동 정렬, 자동 초점 등)가 있다면, GUARD의 내부 신호 ablation 기반 grounding 진단과 SAFECAST의 contrast-set 보정 절차를 적용해 조명·장면 변화 조건에서 실패를 실행 중에 미리 잡아낼 수 있는지 검증한다.",
+      "supporting_papers": [
+        {"title": "GUARD: Grounding Uncertainty and Ablation-Based Risk Detection for Diffusion-Based VLAs", "arxiv": "https://arxiv.org/abs/2608.04510"},
+        {"title": "SAFECAST: Robust Failure Detection for VLA Policies with Contrast-Set Training and Calibration", "arxiv": "https://arxiv.org/abs/2608.04246"}
+      ]
+    },
+    {
+      "title": "Splat 기반 CT의 포즈 공동최적화·물질별 감쇠 파라미터화를 우리 sparse-view CT 백본에 벤치마크",
+      "claim": "두 논문의 포즈 오차 공동최적화와 에너지별 감쇠 파라미터화를 우리 랩 sparse-view CT/CBCT 재구성 파이프라인에 적용해, 순수 splat 대비 실제 팬텀에서 포즈 오차·금속 유무 조건별 아티팩트가 실제로 줄어드는지 비교한다.",
+      "supporting_papers": [
+        {"title": "Revisiting Pose Sensitivity in Splat-based Computed Tomography under Sparse-view Reconstruction", "arxiv": "https://arxiv.org/abs/2608.04752"},
+        {"title": "Splat-Based Metal Artifact Reduction in Cone-Beam CT via Compact Attenuation Modeling", "arxiv": "https://arxiv.org/abs/2608.04764"}
+      ]
+    }
+  ]
+}

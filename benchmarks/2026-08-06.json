@@ -1,0 +1,37 @@
+{
+  "date": "2026-08-06",
+  "results": [
+    {
+      "benchmark": "CycleBench (state-return drift)",
+      "metric": "drift reduction",
+      "value": 44.0,
+      "value_str": "up to 44% drift reduction",
+      "paper": "https://arxiv.org/abs/2608.04964",
+      "paper_title": "WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models"
+    },
+    {
+      "benchmark": "GUARD unseen-task failure detection (LIBERO/SimplerEnv/MetaWorld/PhysicalAI-AV)",
+      "metric": "ROC-AUC improvement",
+      "value": 5.73,
+      "value_str": "+5.73 pp average ROC-AUC over strongest runtime monitor baseline",
+      "paper": "https://arxiv.org/abs/2608.04510",
+      "paper_title": "GUARD: Grounding Uncertainty and Ablation-Based Risk Detection for Diffusion-Based VLAs"
+    },
+    {
+      "benchmark": "HexMIL cross-generator detection (M3DSynth/CT-GAN)",
+      "metric": "AUC improvement",
+      "value": 9.1,
+      "value_str": "+9.1 AUC / +9.4 F1 over baselines in out-of-domain classification",
+      "paper": "https://arxiv.org/abs/2608.05101",
+      "paper_title": "HexMIL: Hierarchical Attention MIL for Ante-Hoc Explainable Detection of AI-Manipulated CT Volumes"
+    },
+    {
+      "benchmark": "Single-shot structured-light laparoscopic depth (722 paired phantom images, Zivid reference)",
+      "metric": "MAE",
+      "value": 3.70,
+      "value_str": "3.70 mm MAE, AbsRel 0.0326, delta1.1 acc 0.962, 26.0 Hz on A100",
+      "paper": "https://arxiv.org/abs/2608.05109",
+      "paper_title": "AI-based single-shot structured-light depth reconstruction for real-time laparoscopic surgical guidance"
+    }
+  ]
+}

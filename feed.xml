@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 05 Aug 2026 12:15:05 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 06 Aug 2026 12:11:49 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-08-06 (목요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-08-06.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-06.html</guid>
+      <pubDate>Thu, 06 Aug 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘(8/6, 목)은 arXiv /new에 cs.LG 172편, cs.CV 131편, cs.AI 176편, eess.IV 4편, eess.SP 25편(합계 508편)이 잡혔고, 저널 431건을 더한 원천 스캔 825건 중 236건(28.6%)이 ROI로 선정됐습니다. 오늘 arXiv 쪽에서 가장 또렷했던 흐름은 로봇 학습의 "신뢰성" 문제입니다. 예전에는 video world model(카메라 행동을 입력하면 그 행동을 따라 미래 장면이 어떻게 바뀔지 생성하는 모델)의 품질을 "그 미래 장면이 얼마나 그럴듯한가"로 주로 평가했는데, 오늘 나온 논문들은 그 대신 "긴 시퀀스를 거쳐도 모델이 만든 상태가 실제로 맞물려 돌아가는가"를 검증하는 쪽으로 움직였습니다. WorldC…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-08-05 (수요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-08-05.html</link>

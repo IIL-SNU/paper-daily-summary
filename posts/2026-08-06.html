@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-08-06</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-08-06 (목요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-08-06 (목요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Thursday, 6 August 2026"으로 일치하는 걸 확인하고 정상 Daily로 발행합니다. 저널(Crossref/OpenAlex) 수집은 평소대로 독립 수행됐습니다.</div>
+  <div>🔢 arXiv: cs.LG 172 · cs.CV 131 · cs.AI 176 · eess.IV 4 · eess.SP 25 (new+cross, replacement 제외, 합계 508)</div>
+  <div>🔢 병합: arXiv+저널(431건) 병합 스캔 825건 · ROI 배정 236건 (28.6%) — 최근 밴드(25~35%) 안쪽의 정상 범위</div>
+  <div>⚠️ 오늘은 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) arXiv 신규가 사실상 0에 가깝고, 저널 버킷도 얇습니다(FP 3·Lens 1·Phase 6·Meta 8). 대신 로봇 쪽 video world model이 "그럴듯한 미래 예측"에서 "행동을 끝까지 믿을 수 있는가"로, VLA는 "왜 실패했는지 사후에 탐지"하는 쪽으로 뚜렷하게 움직였고, Gaussian splatting이 CT 하드웨어의 실제 아티팩트(포즈 오차·금속 아티팩트)를 다루기 시작했습니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 가장 뚜렷한 축은 계산 이미징 코어가 아니라 <strong>로봇 학습 쪽에서 두 개의 신뢰성 질문이 동시에 성숙한 것</strong>입니다 — video world model(카메라 행동을 넣으면 미래 장면을 예측하는 생성 모델)은 "장면이 그럴듯하게 보이는가"를 넘어 "긴 시퀀스를 거쳐도 상태를 정확히 되돌릴 수 있는가"를 스스로 검증하는 쪽으로(WorldCycle·Faster-WAM·MobileWAM·Overcoming Statistical Bias·HelloWorld 5편), VLA(Vision-Language-Action, 카메라 영상과 언어 지시를 보고 로봇 행동을 직접 출력하는 모델)는 "일단 그럴듯한 행동을 내놓고 보는" 문제를 사후에 잡아내는 실패 탐지 쪽으로(GUARD·SAFECAST·CofactVLA·Suppression Sticks 4편) 옮겨갔습니다. 계산 이미징 쪽에서는 Gaussian splatting 기반 CT 재구성이 이제 "빠르고 화질 좋다"는 초기 주장을 넘어, 실제 CT 장비에서 나오는 포즈 오차와 금속 아티팩트라는 구체적 실패 조건을 다루기 시작했다는 점이 눈에 띕니다(2편). 계산광학 코어(Fourier Ptychography·Lensless·Phase·Meta-Optics·Light-Field)는 오늘도 arXiv 신규 신호가 사실상 없어 어제에 이어 이틀 연속 Watch 상태입니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(8/6, 목)은 arXiv /new에 cs.LG 172편, cs.CV 131편, cs.AI 176편, eess.IV 4편, eess.SP 25편(합계 508편)이 잡혔고, 저널 431건을 더한 원천 스캔 825건 중 236건(28.6%)이 ROI로 선정됐습니다. 오늘 arXiv 쪽에서 가장 또렷했던 흐름은 로봇 학습의 "신뢰성" 문제입니다. 예전에는 video world model(카메라 행동을 입력하면 그 행동을 따라 미래 장면이 어떻게 바뀔지 생성하는 모델)의 품질을 "그 미래 장면이 얼마나 그럴듯한가"로 주로 평가했는데, 오늘 나온 논문들은 그 대신 "긴 시퀀스를 거쳐도 모델이 만든 상태가 실제로 맞물려 돌아가는가"를 검증하는 쪽으로 움직였습니다. WorldCycle이 대표적입니다 — 행동을 실행했다가 정확히 반대로 되돌리면 원래 상태로 돌아와야 한다는 물리적 사실(가역 행동 순환)을 이용해, 정답 라벨 없이도 모델이 "행동을 일관된 상태 변환으로 배웠는지" 아니면 "그냥 자주 본 패턴을 외웠는지"를 검증하는 학습 신호로 씁니다. 그 결과 상태 복귀 오차를 최대 44% 줄이고 복합 행동 정확도를 기존 대비 거의 4배로 끌어올렸다고 밝혔습니다.</p>
+<p>같은 날 나온 Faster-WAM·MobileWAM·Overcoming Statistical Bias·HelloWorld까지 묶어보면, video world model이 두 방향에서 동시에 성숙하고 있습니다. 하나는 "미래를 내다보는 계산을 실제 로봇에 쓸 수 있을 만큼 가볍게 만드는" 실사용 쪽(Faster-WAM은 추론 시점에 미래를 고려하는 계산을 값싸게 유지하는 문제를, MobileWAM은 탁상 조작에만 머물던 world model을 이동+조작이 동시에 필요한 모바일 로봇으로 확장하는 문제를 다룹니다), 다른 하나는 "모델이 진짜로 행동에 반응하는지" 확인하는 쪽입니다(Overcoming Statistical Bias는 화면이 가만히 있어도 관성처럼 움직이는 지름길 학습 때문에 실제로는 어떤 행동을 넣어도 비슷한 미래를 내놓는 문제를 짚습니다). VLA 쪽에서는 반대로 "일단 그럴듯한 행동을 내놓고 보는" 정책 자체를 고치기보다, 그 정책이 언제 실패할지를 실행 중에 잡아내는 사후 탐지 흐름이 뚜렷했습니다. GUARD는 diffusion 기반 VLA가 시각·언어 근거와 무관하게 그럴듯한 행동을 만들어내는 경우를 KV 캐시 내부 신호로 잡아, 다섯 개 정책·벤치마크 조합 중 네 개에서 최고 ROC-AUC를 기록하며 기존 최고 대비 평균 5.73%p를 개선했습니다. SAFECAST는 실제 배포 환경에서 흔한 변화(어질러진 장면, 낯선 물체, 조명 변화, 문구를 바꾼 지시)를 대조 세트로 미리 흉내 내 실패 탐지기를 보정하는 방법으로 DROID 실물 로봇과 LIBERO 시뮬레이션 모두에서 유의미한 개선을 보였습니다.</p>
+<p>계산 이미징 코어에서는 Gaussian splatting(장면을 반투명 3D 타원체 다발로 표현해 빠르게 렌더링하는 방식)을 CT 재구성에 쓰는 두 논문이 눈에 띕니다. 하나는 splat 기반 sparse-view CT에서 나타나는 줄무늬 아티팩트가 사실 view 부족이 아니라 촬영 기하(포즈) 오차 때문임을 밝히고 이를 함께 최적화하는 방법을, 다른 하나는 금속 임플란트가 있을 때 생기는 아티팩트를 에너지에 따라 감쇠가 달라지는 물리 모델을 Gaussian 표현 안에 직접 넣어 줄이는 방법을 냈습니다. 두 편 모두 "빠르고 화질 좋다"는 초기 feasibility 단계를 지나 실제 CT 장비 조건의 구체적 실패를 다룬다는 공통점이 있습니다. 계산광학 코어(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics·Light-Field)는 arXiv 신규가 사실상 없고 저널도 얇아(FP 3·Lensless 1·Phase 6·Meta 8) 어제에 이어 이틀 연속 Watch 상태입니다.</p>
+<p>다음 관찰 포인트는 (1) video world model의 "상태 복귀 검증" 방식이 WorldCycle 이후 다른 팀에서도 채택되는지, (2) VLA 실패 탐지 흐름이 탐지에서 그치지 않고 실제 복구 행동(재시도·안전 정지)으로 이어지는 논문이 나오는지, (3) splat 기반 CT의 물리 아티팩트 대응이 다른 의료 영상 모달리티로 퍼지는지입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(8/5, 수)는 확산·스코어 생성 사전이 계산 이미징 역문제의 기본 엔진으로 자리잡는 흐름과 계산 병리의 분자·공간 통합이 중심이었고, 계산광학 코어는 얇지만 저널 버킷(Meta·Phase 각 10편)이 두꺼워진 게 관찰 포인트였습니다. 오늘은 그 흐름이 자연스럽게 이어지기보다, arXiv 논문 구성 자체가 로봇 학습 쪽(video world model·VLA)으로 크게 쏠리면서 계산 이미징 관련 신호가 상대적으로 더 얇아졌습니다. 어제가 "이미지를 어떻게 잘 만들어낼까"에 대한 이야기였다면, 오늘은 "생성·행동 모델을 실제로 믿고 써도 되는가"라는 신뢰성 질문이 로봇 쪽에서 훨씬 강하게 나왔다는 점이 다릅니다. 계산광학 코어는 어제(저널 편수는 늘었지만 이미징 실신호는 Meta 2편·Phase 3편)와 비슷하게, 오늘도 arXiv 신규가 거의 없고 저널 버킷 자체도 더 얇아졌습니다(Meta 8·Phase 6). Gaussian splatting은 어제 3D Imaging 버킷에서 대부분 임상 사례 보고에 묻혀 있었는데, 오늘은 CT 재구성의 구체적 실패 조건(포즈·금속 아티팩트)을 다루는 논문 2편으로 다시 눈에 띄었습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Video world model이 '그럴듯한 미래'에서 '끝까지 믿을 수 있는 상태'로 검증 기준을 옮김</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.04964" target=_blank>WorldCycle</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2608.04404" target=_blank>Faster-WAM</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.04657" target=_blank>MobileWAM</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.04653" target=_blank>Overcoming Statistical Bias in Action-Controllable World Models</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.05070" target=_blank>HelloWorld</a> <span class=pill>CV</span>
+  </td>
+  <td>Video world model은 카메라 행동을 입력하면 그 행동을 따라 미래 장면이 어떻게 바뀔지 생성해주는 모델입니다. 예전에는 이 모델의 성능을 "생성된 미래 장면이 얼마나 그럴듯하고 자연스러운가"로 주로 평가했는데, 오늘 나온 다섯 편은 그 기준을 "긴 행동 시퀀스를 거쳐도 모델이 계산한 상태가 실제로 맞물려 돌아가는가"로 옮깁니다. WorldCycle은 행동을 했다가 정확히 반대로 되돌리면 원래 상태로 돌아와야 한다는 물리적 사실을 검증 신호로 써서, 모델이 행동을 진짜로 이해했는지 아니면 자주 본 패턴을 외웠는지를 정답 라벨 없이 구분합니다(상태 복귀 오차 최대 44% 감소, 복합 행동 정확도 약 4배 향상). Overcoming Statistical Bias는 반대 각도에서 같은 문제를 짚습니다 — 화면이 관성처럼 저절로 움직이는 지름길 때문에 실제로는 어떤 행동을 넣어도 비슷한 미래가 나오는 경우가 있다는 겁니다. Faster-WAM과 MobileWAM은 이 신뢰성 요구를 실제 로봇에 붙일 수 있게 만드는 쪽으로, 각각 추론 계산 비용과 탁상 조작에서 이동+조작이 동시에 필요한 모바일 로봇으로의 확장을 다룹니다. 즉 오늘 흐름은 video world model이 "보기 좋은 미래 영상을 만드는 생성기"에서 "로봇이 행동을 계획할 때 실제로 믿고 쓸 수 있는 시뮬레이터"로 넘어가는 중이라는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 저자군 5편이 검증 방법론(WorldCycle)·효율화(Faster-WAM)·응용 확장(MobileWAM)·편향 진단(Overcoming Statistical Bias)·상호작용(HelloWorld)이라는 서로 다른 각도에서 모두 "world model의 행동 반응성/신뢰성"을 다루고, WorldCycle은 CycleBench라는 진단 벤치마크까지 공개함</small></td>
+  <td>WorldCycle의 가역 행동 순환 검증(행동-역행동 왕복 시 상태 복귀 오차)을 우리 랩의 시간 시퀀스 재구성(예: 4D CT·동적 홀로그래피) 평가에 이식해, "복원된 시간 시퀀스가 왕복 조건에서도 일관된 상태로 되돌아오는가"를 정량 지표로 추가하고 Overcoming Statistical Bias의 진단 방식으로 우리 시계열 모델이 조건(입력)에 실제로 반응하는지 대조군 대비 검증</td>
+</tr>
+<tr>
+  <td><strong>VLA가 '잘 작동하게 만들기'에서 '언제 실패하는지 실행 중에 잡아내기'로 무게중심 이동</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.04510" target=_blank>GUARD</a> <span class=pill>AI</span><br>
+    <a href="https://arxiv.org/abs/2608.04246" target=_blank>SAFECAST</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.04396" target=_blank>CofactVLA</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.04692" target=_blank>Suppression Sticks</a> <span class=pill>LG</span>
+  </td>
+  <td>VLA(카메라 영상과 언어 지시를 보고 로봇 행동을 직접 출력하는 모델)는 훈련 때 보지 못한 상황에서도 일단 그럴듯해 보이는 행동을 내놓는 경향이 있는데, 문제는 그 행동이 실제로는 지시나 장면 근거와 무관하게 나온 것일 수 있다는 점입니다. 오늘 묶인 네 편은 이 문제를 정책 자체를 바꾸기보다 "언제 그런 신뢰할 수 없는 행동이 나오는지 실행 중에 탐지"하는 쪽으로 접근합니다. GUARD는 diffusion 기반 VLA 내부의 key-value 캐시를 일부러 없애보고(counterfactual ablation) 그 전후로 행동 생성이 얼마나 달라지는지를 봐서 "이 행동이 실제로 시각·언어 근거에 의존해서 나온 것인지"를 판별하며, 다섯 개 정책·벤치마크 조합 중 네 개에서 기존 최고 실행중 모니터링 방법보다 평균 5.73%p 높은 탐지 성능(ROC-AUC)을 보였습니다. SAFECAST는 실제 배포에서 흔히 생기는 변화(어질러진 장면, 낯선 물체, 조명 변화, 다르게 표현된 지시문)를 미리 인위적으로 만들어 실패 탐지기를 훈련·보정하는 방법으로 실물 로봇(DROID)과 시뮬레이션(LIBERO) 모두에서 통계적으로 유의미한 개선을 보였습니다. CofactVLA는 애초에 왜 이런 문제가 생기는지를 짚습니다 — 시각 정보가 언어 지시보다 압도적으로 많다 보니 모델이 지시를 무시하고 눈에 띄는 물체나 익숙한 배치 같은 시각적 우연에 의존해버리는 현상(vision-override)을 인과적 개입으로 줄입니다. Suppression Sticks는 VLA에서 특정 스킬 하나만 없애려는 수정(task-vector 연산)이 얼마나 부작용 없이 국소적인지 감사했는데, 다섯 개 스킬은 깔끔히 분리됐지만 나머지는 저항하거나 전체 성능이 무너지는 등 "국소성이 생각보다 깨지기 쉽다"는 걸 보였습니다. 네 편을 같이 보면, VLA 연구의 무게중심이 "더 잘 작동하게 만들기"에서 "언제, 왜 믿을 수 없는지를 배포 전에 미리 알아내고 통제하기"로 옮겨가고 있다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 저자군 4편이 탐지(GUARD·SAFECAST)·원인 분석(CofactVLA)·수정 안전성 감사(Suppression Sticks)라는 서로 다른 진입점에서 모두 VLA의 실행 중 신뢰성 문제를 다루고, GUARD·SAFECAST는 LIBERO 등 공통 벤치마크에서 정량 수치까지 제시</small></td>
+  <td>GUARD의 KV 캐시 ablation 기반 grounding 진단과 SAFECAST의 contrast-set 보정 절차를 우리 랩 로봇 현미경/광학계 자동 정렬 정책(있다면 VLA 유사 제어 루프)에 이식해, 실행 중 실패 신호를 조명·장면 변화 조건별로 ROC-AUC로 비교하는 표를 이번 주 안에 만들기</td>
+</tr>
+<tr>
+  <td><strong>Gaussian splatting 기반 CT 재구성이 '빠르고 화질 좋다'를 넘어 실제 장비의 물리적 실패를 다루기 시작</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.04752" target=_blank>Revisiting Pose Sensitivity in Splat-based CT</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.04764" target=_blank>Splat-Based Metal Artifact Reduction in CBCT</a> <span class=pill>CV</span>
+  </td>
+  <td>Gaussian splatting을 X선 CT 재구성에 쓰는 연구는 최근 "적은 각도로 찍어도 빠르고 화질 좋게 복원된다"는 feasibility 단계 주장이 많았습니다. 오늘 나온 두 편은 그 다음 단계, 즉 실제 CT 장비에서 흔히 생기는 두 가지 구체적 실패를 다룹니다. 첫 번째 논문은 sparse-view CT에서 splat 방식이 기존 방법보다 훨씬 심한 줄무늬·띠 아티팩트를 만든다는 걸 발견했는데, 원인을 파헤쳐보니 각도가 적어서가 아니라 촬영 기하(카메라 포즈) 자체의 미세한 오차가 splat 재구성에 유난히 크게 증폭되기 때문이었습니다. 그래서 포즈 오차를 재구성과 함께 보정하는 방법을 제안합니다. 두 번째 논문은 치과 충전재나 정형외과 임플란트 같은 금속이 있을 때 X선 에너지에 따라 감쇠가 달라지는 물리 현상(다색성)을 각 Gaussian에 직접 반영해, 별도의 금속 마스크 없이도 금속 아티팩트를 줄입니다. 두 편을 같이 보면, splat 기반 CT 연구가 "빠른 렌더링 기법을 CT에 옮겨봤다"는 초기 단계를 지나 "실제 임상 장비에서 마주치는 기하·물질 조건까지 물리적으로 감당할 수 있는가"를 검증하는 단계로 넘어가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>같은 날 서로 다른 저자군 2편이 sparse-view CT의 포즈 민감도와 금속 아티팩트라는 서로 다른 실패 조건에서 공통적으로 "splat 표현을 실제 CT 물리에 맞게 보정"하는 방향을 보이지만, 아직 2편뿐이라 이 방향이 다른 실패 모드(산란, 빔 경화 등)로 확산되는지는 추가 확인 필요</small></td>
+  <td>두 논문의 포즈 공동최적화·물질별 감쇠 파라미터화를 우리 랩 sparse-view CT/CBCT 재구성 파이프라인에 이식해, 순수 splat 대비 실제 팬텀에서 포즈 오차·금속 유무 조건별 아티팩트 정량 비교(PSNR/SSIM + 아티팩트 영역 시각 검사) 실험을 이번 주 안에 세팅</td>
+</tr>
+<tr>
+  <td><strong>AI 생성·조작 이미지 탐지가 자연 사진을 넘어 의료 볼륨·위성 영상으로 번짐</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.05101" target=_blank>HexMIL</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.04935" target=_blank>PE-SPC (AIGI Detection)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.04840" target=_blank>satellite manipulation/deepfake benchmark</a> <span class=pill>CV</span><br>
+    <a href="https://doi.org/10.3389/fimag.2026.1845480" target=_blank>Wavelet-based cross-forgery deepfake detection</a> <span class=pill>JNL</span>
+  </td>
+  <td>AI 생성 이미지 탐지는 그동안 주로 얼굴 딥페이크 같은 자연 사진 도메인에서 다뤄졌는데, 오늘 묶인 논문들은 그 문제의식이 우리 랩과 더 가까운 의료·원격탐사 도메인으로 번지는 걸 보여줍니다. HexMIL은 CT 볼륨이 생성 모델로 조작된 "의료 딥페이크"를 탐지하는데, 픽셀 단위 정답 라벨 없이도 어텐션 가중치 자체가 실제 판단 근거가 되도록 설계해(사후 설명이 아니라 판단 과정 자체가 설명이 되는 ante-hoc 방식) 학습 때 보지 못한 생성 모델에서도 기존 대비 AUC +9.1, F1 +9.4를 얻었습니다. 위성 영상 조작 벤치마크 논문은 원격탐사 이미지 위조가 과학·재난 대응·물류 판단에 실제 피해를 줄 수 있다며 이 도메인 전용 벤치마크를 처음 제안하고, PE-SPC는 자연 이미지 탐지에서 비전-언어 정렬 표현이 기존 DINOv3 기반 방법보다 일반화가 낫다는 걸 보였습니다. 저널의 wavelet 기반 방법은 서로 다른 생성기로 만든 딥페이크에도 일반화되는 저수준 주파수 특징을 찾습니다. 네 편을 같이 보면, "이 이미지가 AI로 만들어졌거나 조작됐는가"를 판별하는 문제가 이제 우리 랩이 다루는 CT·현미경·위성 같은 과학·의료 영상 도메인에서도 독자적인 벤치마크와 방법이 필요한 단계로 들어섰다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 4편이 의료 CT·위성·자연 이미지·범용 저수준 특징이라는 서로 다른 도메인에서 같은 문제(생성·조작 이미지 탐지의 도메인 일반화)를 다루지만, 의료 도메인 전용 신호는 HexMIL 1편뿐이라 이 방향이 병리·현미경으로도 퍼지는지는 추가 확인 필요</small></td>
+  <td>HexMIL의 ante-hoc attention 기반 판단(픽셀 라벨 없이 어텐션이 곧 근거가 되는 구조)을 우리 랩 virtual staining/합성 현미경 영상 신뢰성 검증에 적용해, 실제 vs AI 생성 조직 영상을 학습 때 보지 못한 생성기 기준 cross-generator 프로토콜로 구분할 수 있는지 baseline 실험을 이번 주 안에 돌리기</td>
+</tr>
+<tr>
+  <td><strong>계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field)가 이틀 연속 arXiv 신규 사실상 0 — 오늘의 도메인 Watch Lens</strong><span class=pill>WATCH</span></td>
+  <td>
+    <a href="https://doi.org/10.1002/lpor.71632" target=_blank>Frequency-Aware Fourier Ptychography</a> <span class=pill>JNL</span><br>
+    <a href="https://arxiv.org/abs/2608.05109" target=_blank>Single-shot structured-light laparoscopic depth</a> <span class=pill>IV</span><br>
+    <a href="https://doi.org/10.1063/5.0332495" target=_blank>Photon-limited coherent X-ray diffraction nanoscale motion</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 Fourier Ptychography(3)·Lensless(1)·Phase Imaging(6)·Meta-Optics(8)·Light-Field(4) 저널 버킷 편수를 다시 훑었는데, 어제(Meta 10·Phase 10)보다도 전반적으로 더 얇아졌고 arXiv 쪽 계산광학 코어 신규는 사실상 없습니다. 실제 이미징 신호로 볼 만한 건 세 편 정도입니다 — Frequency-Aware Fourier Ptychography는 광원 크기 때문에 공간 결맞음이 약해지는 매크로 스케일 촬영에서도 FP의 고해상도 합성 개구 복원이 가능하도록 재구성 모델을 확장했고, eess.IV의 단일 샷 구조광 라플라로스코프 깊이 추정 논문은 LED로 만든 수동 이진 패턴 하나만으로(동기화 장치 없이) 26Hz 실시간으로 깊이를 복원해 MAE 3.70mm를 달성했습니다(코드화된 조명 패턴을 쓴다는 점에서 Lensless/Coded Imaging과 맞닿아 있습니다). 광자 제한 결맞음 X선 회절 논문은 나노스케일 움직임을 낮은 광자 수 조건에서도 잡아내는 위상 복원 신호입니다. 나머지 대부분은 무선통신·바이오센서·비이미징 물리(홀로그래피의 다른 의미 등)로 우리 ROI와 거리가 있습니다. 편수가 적다고 그냥 넘기지 않고, 이런 날에는 오히려 단일 신호(구조광 라플라로스코프)의 실사용 수치가 더 눈에 띈다는 게 오늘의 관찰입니다.</td>
+  <td>Low<br><small>버킷 편수 자체가 FP 3·Lensless 1·Phase 6·Meta 8·Light-Field 4로 어제보다 더 줄었고, 실제 이미징 관련은 3편 정도로 좁으며 arXiv 신규가 거의 없어 이 방향이 이어질지는 내일 이후 편수 회복 여부로 판단 필요</small></td>
+  <td>단일 샷 구조광 라플라로스코프 논문의 VQ-VAE 잠재공간 + U-Net 깊이 헤드 구조를 우리 랩 저가 lensless/coded-aperture 깊이 추정 실험에 이식성 검토하고, Frequency-Aware FP의 결맞음 완화 모델을 우리 FP 현미경 세팅에서 광원 크기를 의도적으로 키운 조건에 적용해 해상도 열화 폭을 정량 비교</td>
+</tr>
+</tbody>
+</table>
+
+<p><small>⚠️ Domain Watch Lens 메모 — 오늘은 5개 행으로 표를 마쳤습니다(마지막 행은 WATCH). 계산광학 코어 5개 버킷(FP·Lensless·Phase·Meta-Optics·Light-Field) 합계가 22편으로 어제(Meta·Phase만 20편)보다 오히려 더 얇아졌고, 그중 이미징과 직접 관련된 신호는 3~4편 정도입니다. Tomography/3D Imaging 54편은 어제와 마찬가지로 대부분(50편 이상) 임상 OCT·CBCT 사례 보고이고, Virtual Staining/Pathology 24편도 실제 병리 관련은 소수이며 나머지는 "virtual"·"staining" 키워드가 우연히 겹친 무관 도메인(가상현실 교육, 목재 염색 등) 논문입니다.</small></p>
+
+<h2>📐 arXiv vs 저널 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: WorldCycle·Faster-WAM·MobileWAM·Overcoming Statistical Bias·HelloWorld 등 video world model 신뢰성 클러스터, GUARD·SAFECAST·CofactVLA·Suppression Sticks 등 VLA 실행중 실패 탐지 클러스터, Splat 기반 CT 포즈/금속 아티팩트 2편, HexMIL·PE-SPC·위성 딥페이크 벤치마크 등 AI 생성·조작 이미지 탐지 확장이 오늘 arXiv 쪽 핵심 신호였습니다.</li>
+  <li><strong>저널 전용</strong>: Frequency-Aware Fourier Ptychography, 광자 제한 X선 회절 나노스케일 움직임, wavelet 기반 cross-forgery 딥페이크 탐지 정도가 실질 계산 이미징 신호였고, 나머지 저널(Meta-Optics 8편·Phase 6편 대부분)은 무선통신·바이오센서·비이미징 물리이거나 임상 사례 보고였습니다.</li>
+  <li><strong>공통 키워드</strong>: deepfake/AI-generated detection(arXiv는 CT 볼륨·위성 등 새 도메인 확장 vs 저널은 자연 이미지 cross-forgery 일반화), tomography(arXiv는 splat 기반 물리 아티팩트 대응 vs 저널은 대부분 임상 진단 사례), phase/holography(저널 소수 실신호 vs arXiv 부재).</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 로봇 학습(world model·VLA)이라는 계산 이미징 코어 밖의 주제를 강하게 주도했고, 계산 이미징 코어 자체는 arXiv·저널 모두에서 이틀 연속 얇았습니다. 이런 날은 로봇 학습 쪽 방법론(가역성 검증, 실행중 실패 탐지)이 오히려 우리 랩의 재구성·현미경 파이프라인에 아이디어를 역수입할 기회로 볼 수 있습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. Video world model이 '그럴듯한 미래'에서 '끝까지 믿을 수 있는 상태'로 검증 기준을 옮김</h3>
+  <p>WorldCycle은 행동-역행동 왕복 시 상태가 원래대로 돌아와야 한다는 물리적 사실을 정답 라벨 없는 검증 신호로 써서 상태 복귀 오차를 최대 44% 줄였고, Overcoming Statistical Bias는 반대로 화면이 저절로 움직이는 지름길 때문에 모델이 실제 행동에 반응하지 않는 문제를 짚습니다. Faster-WAM·MobileWAM은 이 신뢰성 요구를 실제 로봇(효율화·모바일 확장)에 붙이는 쪽입니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 저자군 5편이 검증·효율화·응용 확장·편향 진단·상호작용이라는 서로 다른 각도에서 모두 world model의 행동 반응성/신뢰성을 다루고, CycleBench라는 진단 벤치마크도 공개됨</p>
+</div>
+
+<div class=ins>
+  <h3>2. VLA가 '잘 작동하게 만들기'에서 '언제 실패하는지 실행 중에 잡아내기'로 무게중심 이동</h3>
+  <p>GUARD는 KV 캐시 ablation으로 행동이 실제 시각·언어 근거에 의존하는지 판별해 평균 5.73%p ROC-AUC 개선을 보였고, SAFECAST는 배포시 흔한 변화를 대조 세트로 미리 흉내 내 실패 탐지기를 보정합니다. CofactVLA는 시각 정보 과잉이 지시 무시로 이어지는 원인을, Suppression Sticks는 스킬 하나만 지우는 수정의 국소성이 생각보다 깨지기 쉽다는 걸 보입니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 저자군 4편이 탐지·원인분석·수정 안전성 감사라는 다른 진입점에서 모두 VLA 실행중 신뢰성을 다루고, 두 편은 LIBERO 등 공통 벤치마크 수치를 제시</p>
+</div>
+
+<div class=ins>
+  <h3>3. Gaussian splatting 기반 CT 재구성이 실제 장비의 포즈·금속 아티팩트를 정면으로 다루기 시작</h3>
+  <p>한 편은 sparse-view CT의 심한 줄무늬 아티팩트가 view 부족이 아니라 촬영 포즈 오차 때문임을 밝히고 이를 함께 최적화하는 방법을, 다른 한 편은 금속의 에너지별 감쇠 차이를 각 Gaussian에 직접 반영해 마스크 없이 금속 아티팩트를 줄이는 방법을 냈습니다.</p>
+  <p class=conf-note>Confidence: Medium — 같은 날 2편이 공통적으로 "splat 표현을 CT 물리에 맞게 보정"하는 방향을 보이지만 아직 2편뿐이라 다른 실패 모드로의 확산은 추가 확인 필요</p>
+</div>
+
+<div class=ins>
+  <h3>4. AI 생성·조작 이미지 탐지가 의료 볼륨·위성 영상으로 번짐 (관찰 중)</h3>
+  <p>HexMIL은 CT 볼륨의 의료 딥페이크를 픽셀 라벨 없이 어텐션 자체가 근거가 되는 구조로 탐지해 미본 생성기 기준 AUC +9.1을 얻었고, 위성 영상 조작 벤치마크와 자연 이미지용 PE-SPC·wavelet 기반 방법이 같은 문제의식을 다른 도메인에서 보여줍니다.</p>
+  <p class=conf-note>Confidence: Medium — 4편이 서로 다른 도메인에서 같은 문제를 다루지만 의료 도메인 신호는 HexMIL 1편뿐</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. WorldCycle의 가역성 검증을 우리 랩 시간 시퀀스 재구성(4D CT/동적 홀로그래피) 평가에 이식</h3>
+  <p>WorldCycle이 로봇 행동에 쓴 "행동-역행동 왕복 시 상태가 원래대로 돌아오는가"라는 검증 원리를, 우리 랩의 시간에 따라 변하는 재구성 파이프라인에 적용합니다. 예를 들어 4D CBCT나 동적 홀로그래피에서 순방향·역방향 시퀀스를 왕복시켰을 때 복원된 상태가 얼마나 일관되게 되돌아오는지를 정답 라벨 없는 품질 지표로 쓸 수 있는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>WorldCycle의 공간 폐쇄(spatial closure)·시간 일관성(temporal consistency) reward 정의 재현</li>
+    <li>공통 benchmark: 우리 랩의 4D CBCT 또는 동적 QPI(정량 위상 이미징) 시퀀스 데이터셋(왕복 가능한 프로토콜)</li>
+    <li>비교축: 기존 지표(PSNR/SSIM) vs 왕복 상태 복귀 오차의 상관관계, 두 지표가 갈리는 실패 사례 유무</li>
+    <li>실패해도 남는 결과: 우리 도메인에서 "왕복 가능성"이 재구성 품질의 유효한 대리 지표인지에 대한 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. GUARD/SAFECAST식 실행중 실패 탐지를 우리 랩 로봇 제어/자동 정렬 루프에 이식</h3>
+  <p>우리 랩에 VLA 유사 폐루프 제어(예: 로봇 현미경 자동 정렬, 자동 초점)가 있다면, GUARD의 내부 신호 ablation 기반 grounding 진단과 SAFECAST의 contrast-set 보정 절차를 적용해 조명·장면 변화 조건에서 실패를 실행 중에 미리 잡아낼 수 있는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>GUARD의 counterfactual KV ablation 진단 스트림(민감도·어텐션 엔트로피) 재현</li>
+    <li>공통 benchmark: 우리 제어 루프의 정상/비정상(조명 변화·낯선 시료) 롤아웃 데이터셋 구축</li>
+    <li>비교축: 탐지 ROC-AUC를 조명 변화·시료 변화·지시 변경 조건별로 분리 측정</li>
+    <li>실패해도 남는 결과: 우리 제어 루프의 실패 조건 taxonomy와 baseline 탐지 성능</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. Splat 기반 CT의 포즈 공동최적화·물질별 감쇠 파라미터화를 우리 sparse-view CT 백본에 벤치마크</h3>
+  <p>두 논문의 포즈 오차 공동최적화와 에너지별 감쇠 파라미터화를 우리 랩 sparse-view CT/CBCT 재구성 파이프라인에 적용해, 순수 splat 대비 실제 팬텀에서 포즈 오차·금속 유무 조건별 아티팩트가 실제로 줄어드는지 비교합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>포즈 공동최적화 gradient 프레임워크 + 물질별 감쇠 파라미터화 재현</li>
+    <li>공통 benchmark: 우리 랩의 sparse-view CT/CBCT 팬텀(포즈 오차·금속 삽입물 조건 포함)</li>
+    <li>비교축: 순수 splat vs 포즈 보정 splat vs 물질 파라미터화 splat의 아티팩트 정량(PSNR/SSIM + 아티팩트 영역 시각 검사)</li>
+    <li>실패해도 남는 결과: 우리 CT 세팅에서 splat 기반 재구성이 실제로 강건한 조건에 대한 baseline</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(54편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:5.6%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:1.9%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:11.1%"></span></span><span class=n>6편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:14.8%"></span></span><span class=n>8편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:7.4%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>54편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:44.4%"></span></span><span class=n>24편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:38.9%"></span></span><span class=n>21편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>115편</span></div>
+
+<p><small>⚠️ 참고 — Domain Watch Lens: Fourier Ptychography 3편 중 실이미징 신호는 Frequency-Aware FP 1편이고 나머지는 InSAR 소프트웨어·X선 나노스케일 회절입니다. Lensless/Coded Imaging 1편(플라즈마 활성수 논문)은 우리 ROI와 무관한 키워드 매칭입니다. Phase 6편 중 이미징 관련은 홀로그래픽 마이크로유체·THz 편광 홀로그래피 정도이고 나머지는 무선통신·비이미징 물리입니다. Meta-Optics 8편 중 이미징 관련은 증기 센싱 메타표면·인라인 디지털 홀로그래픽 현미경 정도이고 나머지는 무선통신·바이오센서입니다. Tomography/3D Imaging 54편 중 50편 이상이 OCT·CBCT 임상 사례 보고이며, 계산 이미징 방법론 신호는 splat 기반 CT 2편과 광음향/EIT 재구성 소수입니다. Virtual Staining/Pathology 24편 중 실제 병리 관련은 소수이고 나머지는 "virtual"·"staining" 키워드가 우연히 겹친 가상현실 교육·목재 염색 같은 무관 도메인입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71632" target=_blank>Frequency-Aware Fourier Ptychography for Imaging Beyond Spatial Coherence Constraints</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 광원 크기 때문에 공간 결맞음이 약해지는 매크로 스케일 촬영까지 FP의 고해상도 합성 개구 복원을 확장한, 오늘의 도메인 Watch Lens 대표 신호 / 우선순위: Read
+</div>
+
+<h3>Lensless/Coded Imaging (1편, 계산 이미징 관련은 이 버킷 밖 eess.IV 1편으로 대체 표기)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.05109" target=_blank>AI-based single-shot structured-light depth reconstruction for real-time laparoscopic surgical guidance</a></strong> <span class=pill>IV</span><br>
+  왜 주요: 분류상 이 버킷의 유일한 논문은 무관 도메인이라, 코드화된 단일 조명 패턴으로 동기화 장치 없이 26Hz 실시간 깊이를 복원한(MAE 3.70mm) 이 논문을 대신 표시합니다. Lensless/Coded Imaging ROI와 방법론적으로 맞닿아 있습니다 / 우선순위: Read
+</div>
+
+<h3>Phase Imaging/Holography (6편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110044" target=_blank>Lab-on-a-chip QPI with off-axis digital holographic microscopy</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 미세유체 칩 위에서 정량 위상 이미징을 구현한 하드웨어 신호 / 우선순위: Read
+</div>
+
+<h3>Meta-Optics/Diffractive (8편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/acsphotonics.6c00988" target=_blank>Meta-Optics Enabled Compact Scan-Free In-Line Digital Holographic Microscopy for 3D Tracking</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 메타광학으로 스캔 없이 3D 추적이 가능한 인라인 홀로그래픽 현미경을 구현한, 오늘 Meta-Optics 버킷의 드문 실이미징 신호 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging (54편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.04752" target=_blank>Revisiting Pose Sensitivity in Splat-based Computed Tomography</a> · <a href="https://arxiv.org/abs/2608.04764" target=_blank>Splat-Based Metal Artifact Reduction in Cone-Beam CT</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(splat 기반 CT의 물리적 실패 대응) — 위 클러스터 표 참고. 54편 중 계산 이미징 방법론 신호는 사실상 이 2편입니다 / 우선순위: Read
+</div>
+
+<h3>Virtual Staining/Pathology (24편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.05101" target=_blank>HexMIL: Hierarchical Attention MIL for Ante-Hoc Explainable Detection of AI-Manipulated CT Volumes</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(AI 생성·조작 이미지 탐지의 의료 도메인 확장) 대표 논문 — 위 클러스터 표 참고. 나머지 23편은 대부분 무관 도메인에서 "virtual"·"staining" 키워드가 우연히 겹친 경우입니다 / 우선순위: Must-read
+</div>
+
+<h3>Reconstruction/Inverse Problems (21편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.04752" target=_blank>Revisiting Pose Sensitivity in Splat-based CT</a></strong> <span class=pill>CV</span><br>
+  왜 주요: sparse-view 역문제에서 splat 표현의 실패 원인을 기하 오차로 재규명 — 위 클러스터 표 참고 / 우선순위: Read
+</div>
+
+<h3>Deep Learning Methods — 계산 이미징 관련 소수 (115편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.04935" target=_blank>PE-SPC (AIGI Detection)</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(AI 생성·조작 이미지 탐지)의 자연 이미지 도메인 evidence — 위 클러스터 표 참고 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<ul>
+  <li><strong>WorldCycle (CycleBench, 자체 진단 벤치마크)</strong> — base model 대비 상태 복귀 드리프트 최대 44% 감소, 복합 행동(composite-action) 정확도 약 4배 향상</li>
+  <li><strong>GUARD (LIBERO/SimplerEnv/MetaWorld/PhysicalAI-AV, unseen-task 분할)</strong> — 5개 정책·벤치마크 조합 중 4개에서 최고 ROC-AUC, 기존 최고 실행중 모니터링 대비 평균 +5.73%p, seen-task 평균과는 0.19점차 이내 유지</li>
+  <li><strong>HexMIL (M3DSynth/CT-GAN, cross-generator 일반화 프로토콜)</strong> — out-of-domain 분류에서 +9.1 AUC · +9.4 F1, 국소화에서 최고 평균 IoU·Pointing Game 점수</li>
+  <li><strong>단일 샷 구조광 라플라로스코프 깊이 추정 (722쌍 팬텀 이미지, Zivid 기준)</strong> — MAE 3.70mm, AbsRel 0.0326, δ=1.1 정확도 0.962, NVIDIA A100에서 26.0Hz 실시간 처리</li>
+  <li><small>그 외 오늘 대표 논문들(SAFECAST·CofactVLA·Splat 기반 CT 2편 등)은 abstract에 정성적 개선만 밝혔거나 baseline 대비 절대 수치를 abstract에서 확인할 수 없어 로그에서 제외했습니다(본문 확인 필요).</small></li>
+</ul>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>오늘 흥미로운 대비는 video world model 클러스터와 VLA 실패 탐지 클러스터가 사실 같은 문제를 반대 지점에서 겨냥한다는 점이었습니다. WorldCycle 등은 "생성 모델이 만든 미래가 얼마나 물리적으로 일관된가"를 학습 단계에서 검증해 애초에 신뢰할 수 있는 모델을 만들려는 접근이고, GUARD·SAFECAST 등은 "이미 학습된 정책이 지금 이 순간 신뢰할 수 있는 행동을 내놓고 있는가"를 배포 단계에서 실시간으로 감시하려는 접근입니다. 즉 한쪽은 모델을 더 잘 만들어서 신뢰성 문제를 학습 단계에서 줄이려 하고, 다른 쪽은 모델은 그대로 두고 신뢰할 수 없는 순간을 실행 단계에서 걸러내려 합니다. 이 대비는 우리 랩에도 그대로 적용됩니다 — 재구성·복원 모델을 개선해서 애초에 아티팩트가 덜 생기게 할지(splat 기반 CT의 포즈·물질 보정처럼), 아니면 모델은 그대로 두고 결과물이 신뢰할 수 없는 경우를 사후에 탐지하는 계층을 따로 둘지(HexMIL의 조작 탐지처럼)는 같은 신뢰성 문제를 어느 단계에서 풀지에 대한 선택이라, 우리 파이프라인에서도 두 접근을 동시에 검토할 가치가 있습니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models — arXiv cs.LG/cs.AI</h3>
+  <div class=tag>[평가축] [방법전환]</div>
+  <p><strong>왜 A급인가:</strong> Video world model(카메라 행동을 입력하면 그 행동에 따라 미래 장면을 예측·생성하는 모델)은 로봇이 실제로 행동하기 전에 결과를 미리 시뮬레이션해보는 용도로 쓰이는데, 긴 시퀀스를 거치면 오차가 계속 쌓이는(compounding error) 문제가 있었습니다. 강화학습으로 이 모델을 후처리 개선하려 해도, 임의의 행동 시퀀스에 대해서는 "정답 미래"가 없어서 얼마나 틀렸는지 잴 기준 자체가 없다는 게 근본 문제였습니다. 이 논문의 핵심 통찰은, 어떤 행동을 했다가 정확히 반대로 되돌리면(가역 행동 순환) 원래 상태로 돌아와야 한다는 물리적으로 당연한 사실을 이용하면, 정답 라벨 없이도 "이 모델이 긴 시퀀스에서 얼마나 정확한가"를 검증할 수 있다는 점입니다. 예전에는 world model 평가가 "생성된 프레임이 실제 미래와 얼마나 비슷한가"라는 재구성 정확도 위주였다면, 이 논문은 "행동을 왕복시켰을 때 모델이 계산한 상태가 실제로 되돌아오는가"라는 자기 검증 가능한 기준으로 옮겨간다는 점에서 평가축 자체를 바꿉니다. 우리 랩이 시간에 따라 변하는 복원 파이프라인(4D CT, 동적 홀로그래피 등)을 평가할 때도, 정답 시퀀스가 없는 상황에서 "왕복 가능성"을 품질의 대리 지표로 쓸 수 있는지 참고할 만한 틀입니다.</p>
+  <p><strong>핵심:</strong> 핵심 아이디어는 두 가지 보상을 함께 최적화하는 것입니다 — (1) 공간 폐쇄 보상: 정방향-역방향으로 대칭을 이루는 구간끼리 서로 일치해야 한다는 대칭성을 강제하고, (2) 시간 일관성 보상: 같은 행동 순환을 반복 실행했을 때 상태가 매번 일관돼야 한다는 조건을 강제합니다. 이렇게 하면 모델이 "행동을 일관된 상태 변환 규칙으로" 배우게 되고, 훈련 때 보지 못한 복합적인 행동 순환에도 이 규칙이 자연스럽게 확장됩니다. 저자들은 상태 복귀 드리프트를 최대 44% 줄이고 복합 행동 정확도를 기존 대비 거의 4배로 끌어올렸다고 보고했으며, 이 능력을 진단하는 CycleBench도 함께 공개했습니다.</p>
+  <p><strong>주의:</strong> abstract 기준으로 가역 행동 순환이라는 검증 신호는 실제로 되돌릴 수 있는 행동(예: 이동)에는 잘 맞지만, 비가역적 행동(예: 물체 파괴·변형)에는 적용하기 어려울 수 있어 적용 범위는 본문 확인이 필요합니다. CycleBench 자체가 저자들이 새로 만든 벤치마크라 독립적인 재현·검증은 아직 이뤄지지 않았습니다. [Baseline risk]</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Metric risk] 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) 실신호가 이틀 연속 거의 없어(arXiv 신규 사실상 0), 오늘 리포트의 무게중심이 로봇 학습(video world model·VLA) 쪽으로 쏠렸습니다. 이는 오늘 실제 논문 구성을 반영한 것이지만, 계산 이미징 코어에 대한 정보 밀도는 낮습니다.</p>
+  <p>[Claim risk] video world model·VLA 클러스터의 정량 수치(WorldCycle 44%·4배, GUARD +5.73%p)는 각 논문의 자체 벤치마크·자체 baseline 기준이라, 서로 다른 논문 간 직접 비교는 불가능합니다.</p>
+  <p>[Dataset risk] Splat 기반 CT 클러스터는 2편뿐이라 아직 "클러스터"라기보다 초기 신호에 가깝습니다. 다른 실패 모드(산란, 빔 경화)나 다른 모달리티로 이어지는지는 추가 관찰이 필요합니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Baseline risk] WorldCycle의 CycleBench는 저자 자체 제작 벤치마크로, 독립적인 재현·검증이 아직 없습니다.</p>
+  <p>[Deployment risk] GUARD·SAFECAST 모두 시뮬레이션(LIBERO 등) 또는 제한된 실물 로봇(DROID) 환경에서 검증됐고, 더 넓은 실배포 환경에서의 안정성은 abstract 기준으로 확인되지 않습니다.</p>
+  <p>[Claim risk] HexMIL의 +9.1 AUC 개선은 M3DSynth/CT-GAN이라는 특정 데이터셋·생성기 조합 기준이라, 임상에서 실제로 쓰이는 다양한 생성 도구에 대한 일반화는 본문과 후속 검증이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Meta-Optics/Diffractive 8편 중 6편(무선통신·바이오센서)</strong> — IoT 안테나, 6G 인체 팬텀, THz 펩타이드 바이오센서 등으로 이미징 ROI와 거리가 있습니다.</li>
+    <li><strong>Tomography/3D Imaging 임상 사례 보고 다수(50편 이상)</strong> — OCT·CBCT 안과·치과 사례 보고로, 계산 이미징 방법론이 아니라 임상 진단 사례입니다.</li>
+    <li><strong>Virtual Staining/Pathology 23편(무관 도메인)</strong> — 가상현실 교육, 목재 염색, 사회적 학습 등 "virtual"·"staining" 키워드만 겹친 논문입니다.</li>
+    <li><strong>Suppression Sticks (task-vector 감사)</strong> — 방법론적으로 흥미롭지만 LIBERO-Goal 10개 스킬이라는 제한된 세팅이라, 더 넓은 정책·태스크로의 일반화는 확인 전 보류할 만합니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Video world model 신뢰성 (핵심 5편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.04964" target=_blank>WorldCycle</a></strong> <span class=pill>LG</span><br>
+- 문제: 긴 행동 시퀀스에서 world model 오차가 누적되는데 정답 미래가 없어 검증이 어려움 / 방법: 가역 행동 순환(행동-역행동 왕복)을 정답 없는 검증 신호로 활용 / 의미: world model 평가축을 재구성 정확도에서 자기 검증 가능한 왕복 일관성으로 이동 / 근거: 상태 복귀 드리프트 최대 44%↓, 복합 행동 정확도 약 4배↑, CycleBench 공개 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.04404" target=_blank>Faster-WAM</a></strong> <span class=pill>CV</span><br>
+- 문제: 미래를 고려하는 World Action Model이 정확하려면 계산 비용이 너무 큼 / 방법: 추론 시점 미래 조건화를 값싸게 유지하는 효율화 설계 / 의미: world model 신뢰성 요구를 실제 로봇 지연시간 제약 안에서 충족 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.04657" target=_blank>MobileWAM</a></strong> <span class=pill>CV</span><br>
+- 문제: World Action Model이 탁상 조작에만 머물러 이동+조작이 동시에 필요한 모바일 로봇에 못 씀 / 방법: 사전학습 video diffusion transformer + 경량 action expert를 layerwise attention으로 융합 / 의미: world model의 실사용 범위를 모바일 조작으로 확장 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.04653" target=_blank>Overcoming Statistical Bias in Action-Controllable World Models</a></strong> <span class=pill>CV</span><br>
+- 문제: 화면이 관성처럼 저절로 움직이는 지름길 때문에 어떤 행동을 넣어도 비슷한 미래가 나올 수 있음 / 방법: 행동 조건화가 실제로 동역학에 반영되도록 일관성을 강제 / 의미: world model이 행동에 진짜 반응하는지 진단하는 축 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.05070" target=_blank>HelloWorld</a></strong> <span class=pill>CV</span><br>
+- 문제: video world model 안에서 사용자와 캐릭터의 사회적 상호작용이 지원되지 않음 / 방법: 자기증류(self-distillation)로 사회적 반응·카메라 모션을 함께 학습 / 의미: world model 응용 범위를 상호작용형 콘텐츠로 확장 / 우선순위: Skim(응용 확장, 로봇 신뢰성과는 결이 다름)
+</div>
+
+<h3>VLA 실행중 실패 탐지 (핵심 4편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.04510" target=_blank>GUARD</a></strong> <span class=pill>AI</span><br>
+- 문제: diffusion 기반 VLA가 시각·언어 근거 없이도 그럴듯한 행동을 만들어낼 수 있음 / 방법: KV 캐시 counterfactual ablation으로 grounding 정도를 진단, 경량 시간 분류기로 실시간 판별 / 의미: 정책 수정 없이 실행중 신뢰성을 감시하는 방법 / 근거: 5개 정책·벤치마크 중 4개 최고 ROC-AUC, 평균 +5.73%p / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.04246" target=_blank>SAFECAST</a></strong> <span class=pill>CV</span><br>
+- 문제: 실패 탐지기의 신뢰성이 보정 데이터가 실제 배포 조건과 얼마나 맞는지에 좌우됨 / 방법: 대조 세트 변화(장면·언어)로 탐지기 훈련·보정을 강화 / 의미: 배포시 분포 이동에 강건한 실패 탐지 / 근거: DROID 실물 로봇·LIBERO 시뮬레이션 모두에서 통계적으로 유의미한 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.04396" target=_blank>CofactVLA</a></strong> <span class=pill>CV</span><br>
+- 문제: 시각 정보가 언어 지시보다 압도적으로 많아 VLA가 지시를 무시하고 시각적 우연에 의존(vision-override) / 방법: 인과 그래프(Dual-path Deconfounding Graph)로 반사실 개입 / 의미: 실패 탐지가 아니라 원인 자체를 줄이는 접근 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.04692" target=_blank>Suppression Sticks</a></strong> <span class=pill>LG</span><br>
+- 문제: VLA에서 스킬 하나만 지우려는 수정(task-vector 연산)이 다른 스킬에 부작용을 줄 수 있음 / 방법: LIBERO-Goal 10개 스킬 전체에 대한 target-and-control 감사 / 의미: 모델 수정의 "국소성"이 생각보다 깨지기 쉽다는 경고 / 근거: 5개 스킬 분리 성공, 3개 저항, 2개 전체 붕괴, control retention 52% / 우선순위: Read
+</div>
+
+<h3>Splat 기반 CT의 물리적 실패 대응 (2편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.04752" target=_blank>Revisiting Pose Sensitivity in Splat-based CT</a></strong> <span class=pill>CV</span><br>
+- 문제: splat 기반 sparse-view CT에서 기존보다 훨씬 심한 줄무늬 아티팩트 발생 / 방법: 원인이 view 부족이 아니라 촬영 포즈 오차임을 규명하고 포즈를 함께 최적화 / 의미: splat CT를 feasibility에서 실제 장비 조건 대응으로 진전 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.04764" target=_blank>Splat-Based Metal Artifact Reduction in CBCT</a></strong> <span class=pill>CV</span><br>
+- 문제: 금속 임플란트의 다색성 감쇠가 CT 재구성을 왜곡함 / 방법: 각 Gaussian에 에너지별 감쇠를 담는 컴팩트 물질 파라미터화 / 의미: 금속 마스크 없이 물리 기반으로 아티팩트 완화 / 우선순위: Read
+</div>
+
+<h3>AI 생성·조작 이미지 탐지의 도메인 확장 (4편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.05101" target=_blank>HexMIL</a></strong> <span class=pill>CV</span><br>
+- 문제: 생성 모델로 조작된 CT 볼륨(의료 딥페이크)을 픽셀 라벨 없이 탐지·설명해야 함 / 방법: 계층적 어텐션 MIL로 어텐션 자체가 판단 근거가 되는 ante-hoc 구조 / 의미: 의료 영상 조작 탐지를 병리·현미경으로 확장할 참고 틀 / 근거: cross-generator 프로토콜에서 +9.1 AUC·+9.4 F1 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.04935" target=_blank>PE-SPC</a></strong> <span class=pill>CV</span><br>
+- 문제: 자연 이미지 AIGI 탐지에서 DINOv3 선형 프로브가 지배적 baseline이지만 일반화 한계 / 방법: 비전-언어 정렬 표현(Perception Encoder)에 의미 프로토타입 보정 추가 / 의미: 언어 정렬 표현이 탐지 일반화에 더 유리할 수 있음 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.04840" target=_blank>Satellite manipulation/deepfake benchmark</a></strong> <span class=pill>CV</span><br>
+- 문제: 위성 영상 조작이 과학·재난 대응·물류 판단에 실제 피해를 줄 수 있는데 전용 벤치마크가 없음 / 방법: 원격탐사 도메인 전용 조작·딥페이크 국소화 벤치마크 데이터셋 구축 / 의미: 탐지 연구를 자연 이미지 밖 과학 영상으로 확장 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.3389/fimag.2026.1845480" target=_blank>Wavelet-based cross-forgery deepfake detection</a></strong> <span class=pill>JNL</span><br>
+- 문제: 딥페이크 탐지기가 훈련 때 본 생성기에만 잘 작동하고 새 생성기엔 취약 / 방법: 여러 생성기에 공통적인 저수준 주파수(wavelet) 특징 활용 / 의미: 조작 탐지 일반화를 저수준 신호 관점에서 접근 / 우선순위: Skim
+</div>
+
+<h3>계산광학 코어 Watch (3편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1002/lpor.71632" target=_blank>Frequency-Aware Fourier Ptychography</a></strong> <span class=pill>JNL</span><br>
+- 문제: 광원 크기로 공간 결맞음이 약해지는 매크로 촬영에 표준 FP 모델이 안 맞음 / 방법: 결맞음 제약을 완화한 재구성 모델 확장 / 의미: FP의 적용 범위를 매크로 스케일로 확대 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.05109" target=_blank>단일 샷 구조광 라플라로스코프 깊이 추정</a></strong> <span class=pill>IV</span><br>
+- 문제: 라플라로스코프 깊이 센싱이 동기화 장치·복수 촬영을 요구해 소형화가 어려움 / 방법: LED 수동 이진 패턴 단일 샷 + VQ-VAE 잠재공간 U-Net 깊이 헤드 / 의미: 코드화된 조명 기반 실시간 깊이 센싱의 실사용 수치 제시 / 근거: MAE 3.70mm, 26.0Hz(A100) / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1063/5.0332495" target=_blank>Photon-limited coherent X-ray diffraction nanoscale motion</a></strong> <span class=pill>JNL</span><br>
+- 문제: 낮은 광자 수 조건에서 나노스케일 움직임을 결맞음 회절로 잡아내기 어려움 / 방법: 광자 제한 조건에 맞춘 위상 복원 접근 / 의미: 저선량 계산 이미징의 위상 복원 신호 / 우선순위: Skim
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv 카테고리: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>cs.LG</a> · <a href="https://arxiv.org/list/cs.CV/new" target=_blank>cs.CV</a> · <a href="https://arxiv.org/list/cs.AI/new" target=_blank>cs.AI</a> · <a href="https://arxiv.org/list/eess.IV/new" target=_blank>eess.IV</a> · <a href="https://arxiv.org/list/eess.SP/new" target=_blank>eess.SP</a></li>
+  <li>RSS: <a href="../feed.xml">feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+Imaging Intelligence Daily Briefing · cs.LG · cs.CV · cs.AI · eess.IV · eess.SP 기반 자동 생성 · 입력 출처: arXiv, Crossref, OpenAlex
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+
+</body>
+</html>
