@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 06 Aug 2026 12:11:49 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2026 12:15:52 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-08-07 (금요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-08-07.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-07.html</guid>
+      <pubDate>Fri, 07 Aug 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘(8/7, 금)은 arXiv /new에 cs.LG 162편, cs.CV 132편, cs.AI 201편, eess.IV 7편, eess.SP 12편(합계 514편)이 잡혔고, 저널 420건을 더한 원천 스캔 838건 중 209건(24.9%)이 ROI로 선정됐습니다. 오늘 가장 뚜렷했던 흐름은 "그동안 별생각 없이 믿어온 신호를 정면으로 감사하는" 논문들이 여러 도메인에서 동시에 나왔다는 점입니다. World model(카메라 행동을 입력하면 미래 상태를 예측하는 모델) 연구에서는 JEPA(Joint-Embedding Predictive Architecture) 계열이 그동안 "잠재표현이 하나의 점으로 뭉개지지만 않으면 학습이 잘 된 것"이라는 기준으로 평가돼 왔는데,…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-08-06 (목요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-08-06.html</link>

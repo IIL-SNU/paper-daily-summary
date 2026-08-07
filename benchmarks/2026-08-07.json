@@ -1,0 +1,53 @@
+{
+  "date": "2026-08-07",
+  "results": [
+    {
+      "benchmark": "PhyLatent (OGBench-Cube / TwoRooms MPC)",
+      "metric": "collapse rate reduction + MPC success",
+      "value": 78.1,
+      "value_str": "collapse 실패율 15.60/6.71/8.41% → 7.53/0.95/4.62%, MPC 성공률 OGBench-Cube 70.0%→78.1%, TwoRooms 81.0%→98.0%",
+      "paper": "https://arxiv.org/abs/2608.05720",
+      "paper_title": "PhyLatent: Learning Dynamics-Relevant Representations for JEPA World Models"
+    },
+    {
+      "benchmark": "Kastor (The Well benchmark, PDE forecasting)",
+      "metric": "forecasting error reduction (VRMSE)",
+      "value": 42.9,
+      "value_str": "Walrus fine-tuning 기준 대비 평균 42.9% 오차 감소, 10개 데이터셋 중 8개에서 우위",
+      "paper": "https://arxiv.org/abs/2608.06107",
+      "paper_title": "Kastor: An efficient fine-tuning strategy for generative emulation of PDE simulations"
+    },
+    {
+      "benchmark": "FALM-PINN (high-frequency/nonlinear PDE benchmarks)",
+      "metric": "relative L2 error",
+      "value": 100.0,
+      "value_str": "SOTA baseline 대비 상대 L2 오차 최대 두 자릿수(약 100배) 감소",
+      "paper": "https://arxiv.org/abs/2608.05892",
+      "paper_title": "Alternating Levenberg-Marquardt Training of Physics-Informed Neural Networks with Fourier-Enhanced Features"
+    },
+    {
+      "benchmark": "EvReflection (synthetic/real reflection removal benchmark, EVR²)",
+      "metric": "PSNR gain",
+      "value": 1.6,
+      "value_str": "최고 경쟁 방법 대비 합성 벤치마크 +1.6dB, 실측 벤치마크 +1.2dB PSNR, 최초의 실사용 벤치마크 EVR² 공개",
+      "paper": "https://arxiv.org/abs/2608.06184",
+      "paper_title": "EvReflection: Event-Driven Micro-Dynamics for Reflection Removal"
+    },
+    {
+      "benchmark": "Domain-Grounded shadow removal (ShadowRemovalRefine)",
+      "metric": "CDD",
+      "value": 0.0075,
+      "value_str": "CDD 0.0075, 최고 기존 방법 대비 최소 47% 감소",
+      "paper": "https://arxiv.org/abs/2608.06075",
+      "paper_title": "Domain-Grounded Candidate Selection for Agentic Image Editing: A Shadow Removal Case"
+    },
+    {
+      "benchmark": "Text-guided glioma subregion segmentation refinement (BraTS-GLI)",
+      "metric": "DSC",
+      "value": 0.796,
+      "value_str": "내부 테스트 DSC 0.774→0.796 (p<0.001), cross-dataset 전이 0.527→0.550",
+      "paper": "https://arxiv.org/abs/2608.05389",
+      "paper_title": "Text-Guided Refinement of Multi-sequence Glioma Subregion Segmentation with a Vision-Language Foundation Model"
+    }
+  ]
+}
