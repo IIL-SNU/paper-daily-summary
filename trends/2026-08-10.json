@@ -1,0 +1,24 @@
+{
+  "date": "2026-08-10",
+  "source_mode": "weekly-pastweek",
+  "weekly": {
+    "iso_week": "2026-32",
+    "week_start": "2026-08-03",
+    "week_end": "2026-08-07",
+    "daily_dates_reviewed": ["2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07"],
+    "aggregate_new_counts": {
+      "by_cat": {
+        "cs.LG": 992,
+        "cs.CV": 838,
+        "cs.AI": 1279,
+        "eess.IV": 43,
+        "eess.SP": 146
+      },
+      "scope": "new+cross; replacements excluded",
+      "total": 3298,
+      "journal_count_sum": 1995,
+      "roi_selected_sum": 1331
+    }
+  },
+  "note": "이 레코드는 2026-08-10(월) weekly 전용 실행이 남긴 것이다. 오늘은 daily(11:00 KST)가 별도로 돌지 않는 weekly 단독 실행(mode=weekly, 10:00 KST)이라 arXiv /new를 새로 조회하지 않았고, source_mode=weekly-pastweek로 지난주(2026-08-03~08-07) 5일치 daily trends/insights를 집계해 posts/2026-08-10-weekly.html과 weekly/2026-32.json을 발행했다. Calendar Audit 결과 지난주 월~금 daily(posts/trends/benchmarks/insights)가 모두 존재하고 전부 source_mode=new(정상 daily, journal-only 업그레이드 대상 없음)로 확인돼 backfill 없이 바로 weekly를 생성했다. 집계 수치(cs.LG 992·cs.CV 838·cs.AI 1279·eess.IV 43·eess.SP 146, 합계 3,298편 신규+교차)는 5일치 trends/YYYY-MM-DD.json의 daily_new_counts.by_cat을 그대로 합산한 것이며, 저널 합계 1,995건과 ROI 배정 합계 1,331건도 같은 방식으로 집계했다. 오늘자 daily(posts/2026-08-10.html)는 이 실행의 범위가 아니며, 별도의 11:00 KST daily 실행이 담당한다."
+}

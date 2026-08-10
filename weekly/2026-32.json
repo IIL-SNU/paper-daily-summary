@@ -1,0 +1,222 @@
+{
+  "date": "2026-08-10",
+  "iso_week": "2026-32",
+  "week_start": "2026-08-03",
+  "week_end": "2026-08-07",
+  "weekly_thesis": "지난주 초반(월~화)에는 3D Gaussian Splatting의 신뢰성 감사, AI 생성 콘텐츠 탐지의 확장, 병리 파운데이션 모델이 실제로 무엇을 배웠는지 캐묻는 감사가 각각 서로 다른 개별 도메인 안에서 따로 진행됐다면, 주 중반(수)에는 역문제 복원의 엔진 자체(학습된 확산 사전 vs 물리를 신경망 안에 심는 접근)를 놓고 방법론 차원의 갈림이 나타났고, 주 후반(목~금)에는 이 '검증해보자'는 태도가 로봇·에이전트 시스템(video world model의 상태 가역성, VLA의 실행 중 실패)과 그 검증 기준 자체(합의·일관성·확신도 같은 무라벨 신뢰 신호, latent가 붕괴하지 않았다는 것만으로는 충분치 않다는 진단)로까지 번졌다. 즉 한 주 전체를 관통하는 흐름은 새 방법론 하나가 아니라, 지금까지 별다른 의심 없이 믿어온 여러 신호(불확실성 지도, 파운데이션 모델의 고정 특징, latent 표현, 합의·확신도)를 하나씩 정량적으로 재검증하는 쪽이었다. 지난주 weekly가 내놓은 예측 세 가지(3DGS 최소 입력 생성의 도메인 확장, 역문제 신뢰성 축의 계산광학 코어 전이, 계산광학 코어의 요일별 버킷 순환)는 모두 빗나갔고, 특히 계산광학 코어는 순환이 아니라 한 주 내내 고르게 얇은 가뭄에 더 가까웠다.",
+  "hot_vs_cold": {
+    "hot": [
+      {
+        "cluster": "AI 생성·조작 콘텐츠 탐지가 자연 사진 판별을 넘어 의료 CT·위성 영상으로 사흘 내내 확장",
+        "why": "월요일 귀속(누가 만들었는지)·설명가능성·공격이라는 세 갈래로 문제를 넓힌 뒤, 화요일에는 '한 번 학습시키고 끝'이 아니라 배포 후에도 새 생성기에 계속 적응해야 한다는 쪽으로, 목요일에는 이 문제의식이 의료 CT 볼륨과 위성 영상까지 번져 우리 랩과 가까운 도메인에 독자적인 벤치마크가 필요하다는 신호가 나왔다.",
+        "papers": ["https://arxiv.org/abs/2607.29541", "https://arxiv.org/abs/2607.28936", "https://arxiv.org/abs/2608.00559", "https://arxiv.org/abs/2608.05101", "https://arxiv.org/abs/2608.04840"]
+      },
+      {
+        "cluster": "'공짜로 믿어온 신뢰 신호'를 정면으로 캐묻는 감사가 목~금 급부상",
+        "why": "목요일 video world model의 가역성 검증(WorldCycle)과 VLA의 실행 중 실패 탐지(GUARD·SAFECAST)로 시작된 이 흐름이 금요일에는 검증 기준 자체를 겨냥했다 — latent가 붕괴하지 않았다는 것만으로는 world model이 물리를 안다고 볼 수 없다는 진단(PhyLatent), 합의·일관성·확신도라는 무라벨 신뢰 신호가 실제 정확도와 따로 논다는 감사, 의료 파운데이션 모델의 고정 특징이 작고 흐린 병변을 구조적으로 놓친다는 벤치마크가 같은 날 동시에 나왔다.",
+        "papers": ["https://arxiv.org/abs/2608.04964", "https://arxiv.org/abs/2608.04510", "https://arxiv.org/abs/2608.05720", "https://arxiv.org/abs/2608.05670", "https://arxiv.org/abs/2608.05960"]
+      }
+    ],
+    "cold": [
+      {
+        "cluster": "3D Gaussian Splatting 신뢰성 축 — 화요일 정점을 찍고 수요일 급격히 식음",
+        "why": "월요일 유지보수(국소 복구·gap-filling·next-best-view) 4편, 화요일 신뢰성·불확실성 감사 5편으로 이틀 연속 랩 3D 재구성과 직결되는 뚜렷한 클러스터를 이뤘지만, 수요일에는 이 물결이 눈에 띄게 잦아들었고 목요일에는 CT 재구성이라는 좁은 응용에서 포즈 오차·금속 아티팩트라는 구체적 실패 조건 2편만 남았다."
+      },
+      {
+        "cluster": "계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) — 순환이 아니라 한 주 내내 가뭄",
+        "why": "지난주 weekly는 화(메타옵틱스)→수(lensless)→목(FP)→금(홀로그래피) 순으로 버킷이 돌아가며 반짝이는 순환 패턴을 예측했지만, 이번 주는 어느 버킷도 하루 3편 이상의 실질 신호를 낸 날이 없었다 — 월요일 사실상 0편, 화~금도 매일 0~3편 사이에서 고르게 얇았다. 순환 가설 대신 '그냥 가뭄'이라는 진단이 더 정확하다."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "cluster": "AI 생성·조작 콘텐츠 탐지가 자연 사진 판별에서 배포 후 지속 적응, 의료 CT·위성 영상으로 사흘 내내 확장",
+      "papers": [
+        {"title": "The K-Space Signature: Frequency-Domain Representation Learning for Medical Deepfake Detection", "arxiv": "https://arxiv.org/abs/2607.29541", "importance_tags": ["[방법전환]"]},
+        {"title": "DiffAttack: Evasion Attacks Against Face Recognition via Latent Diffusion Models", "arxiv": "https://arxiv.org/abs/2607.28936", "importance_tags": ["[경고신호]"]},
+        {"title": "Test-Time Curriculum for Open-Set AIGC Detection", "arxiv": "https://arxiv.org/abs/2608.00559", "importance_tags": ["[방법전환]"]},
+        {"title": "HexMIL: Hierarchical Attention MIL for Ante-Hoc Explainable Detection of AI-Manipulated CT Volumes", "arxiv": "https://arxiv.org/abs/2608.05101", "importance_tags": ["[평가축]", "[인프라]"]},
+        {"title": "Towards a satellite image manipulation and deepfake localization benchmark dataset", "arxiv": "https://arxiv.org/abs/2608.04840", "importance_tags": ["[인프라]"]}
+      ],
+      "why": "월요일에는 AI가 만든 이미지·영상을 걸러내는 문제가 '진짜냐 가짜냐'라는 이진 판정을 넘어, K-Space Signature처럼 어떤 생성기가 만들었는지 주파수 영역에서 추적하거나 DiffAttack처럼 반대로 diffusion 모델로 얼굴 인식을 실제로 속이는 공격까지 확장됐습니다. 화요일에는 같은 문제를 배포 시점 이후로 옮겨, Test-Time Curriculum이 라벨 없는 테스트 데이터만으로 탐지기를 계속 갱신하는 방법을 냈습니다 — 탐지기를 한 번 학습시켜 배포하면 끝이 아니라 새로운 생성 모델이 계속 나오는 상황에서 스스로 적응해야 한다는 문제의식입니다. 목요일에는 이 문제의식이 우리 랩과 더 가까운 도메인으로 번졌습니다. HexMIL은 CT 볼륨이 생성 모델로 조작된 '의료 딥페이크'를 픽셀 단위 정답 라벨 없이도 어텐션 가중치 자체가 판단 근거가 되도록 탐지했고(학습 때 보지 못한 생성기 기준 AUC +9.1), 위성 영상 조작 벤치마크는 원격탐사 이미지 위조가 재난 대응이나 물류 판단에 실제 피해를 줄 수 있다며 이 도메인 전용 벤치마크를 처음 제안했습니다. 다섯 편을 이어보면, '이 콘텐츠가 AI로 만들어졌는가'라는 질문이 자연 사진 하나의 문제가 아니라 우리가 다루는 CT·현미경·위성 같은 과학·의료 영상 도메인에서도 독자적인 방법과 벤치마크가 필요한 단계로 들어섰다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "월·화·목 사흘, 서로 다른 저자군 5편 이상이 귀속·지속적응·의료볼륨·위성이라는 서로 다른 진입점에서 같은 문제(AI 생성·조작 콘텐츠 탐지의 도메인 일반화)로 수렴하고, HexMIL은 정량 벤치마크(AUC +9.1)까지 제시",
+      "lab_action": "HexMIL의 ante-hoc attention 기반 판단(픽셀 라벨 없이 어텐션이 곧 근거가 되는 구조)과 K-Space Signature의 주파수 영역 탐지를 우리 랩 virtual staining/합성 현미경 영상 신뢰성 검증에 적용해, 실제 vs AI 생성 조직 영상을 학습 때 보지 못한 생성기 기준 cross-generator 프로토콜로 구분할 수 있는지 baseline 실험을 이번 주 안에 돌리기"
+    },
+    {
+      "cluster": "3D Gaussian Splatting이 자산 유지보수(월)에서 신뢰성 감사(화)로, 식은 뒤(수) CT 재구성의 물리적 실패 조건으로 좁혀짐(목)",
+      "papers": [
+        {"title": "FocusGS: Spatial Delta Layers for Local Repair and Deterministic Editing of Trained 3D Gaussian Assets", "arxiv": "https://arxiv.org/abs/2607.28834", "importance_tags": ["[방법전환]"]},
+        {"title": "Posterior Variance Is a Constraint Map, Not an Error Map: Closed-Form Uncertainty for Radiative Gaussian Splatting in Sparse-View CT", "arxiv": "https://arxiv.org/abs/2607.13682", "importance_tags": ["[경고신호]", "[해부분석]"]},
+        {"title": "Manifold-GS: Certified Hybrid Assets via Varifold-Conservative Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2608.00214", "importance_tags": ["[방법전환]"]},
+        {"title": "Revisiting Pose Sensitivity in Splat-based Computed Tomography under Sparse-view Reconstruction", "arxiv": "https://arxiv.org/abs/2608.04752", "importance_tags": ["[해부분석]"]},
+        {"title": "Splat-Based Metal Artifact Reduction in Cone-Beam CT via Compact Attenuation Modeling", "arxiv": "https://arxiv.org/abs/2608.04764", "importance_tags": ["[방법전환]"]}
+      ],
+      "why": "월요일에는 FocusGS가 다 만든 3DGS 장면의 일부가 잘못됐을 때 전체를 다시 만들지 않고 그 부분만 국소적으로 고치는 방법을 냈습니다(목표 영역 화질 최대 11dB 이상 향상) — 3DGS를 '한 번 만들고 끝'이 아니라 계속 고쳐야 하는 유지보수 대상으로 다루기 시작한 신호였습니다. 화요일에는 질문이 한 단계 더 나아가, Posterior Variance가 CT 재구성용 3DGS의 불확실성 지도를 검증했는데 결과가 뼈아팠습니다 — 장면 전체로 보면 이 지도가 실제 오차를 14개 시나리오 중 14개에서 잘 예측하지만, 정작 의사가 들여다보는 조직 내부 영역으로 좁히면 그 예측력이 거의 사라졌습니다(순위 상관 0.11, 15개 중 0개 통과). 겉보기엔 잘 작동하는 신뢰도 지표가 정작 중요한 영역에서는 장식에 가깝다는 뜻입니다. 수요일에는 이 물결이 눈에 띄게 잦아들어 3DGS 관련 클러스터급 신호가 거의 나오지 않았고, 목요일에는 Gaussian splatting 기반 CT 재구성이라는 좁은 응용에서 실제 장비의 물리적 실패 두 가지(촬영 기하 오차가 splat 재구성에 유난히 크게 증폭되는 문제, 금속 임플란트가 있을 때의 에너지별 감쇠 아티팩트)만 남았습니다. 나흘을 이어보면, 3DGS 연구의 관심이 화요일 정점에서 이틀 만에 CT라는 한 응용의 구체적 물리 조건으로 좁아진, 전형적인 '뜨거워졌다 식는' 곡선을 그렸다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "월·화·목 나흘, 서로 다른 저자군 5편 이상이 유지보수·신뢰성·CT 물리 실패라는 흐름으로 자연스럽게 이어지지만, 수요일 하루 신호가 사실상 끊겨 지속성은 화·목 사이에 단절이 있음",
+      "lab_action": "Posterior Variance가 공개한 masked calibration·seed-wise bias decomposition 프로토콜을 우리 랩 sparse-view 단층촬영 3DGS 재구성 파이프라인에 적용해 조직 내부 영역에서 같은 붕괴가 나타나는지 먼저 점검하고, 목요일 두 논문의 포즈 공동최적화·물질별 감쇠 파라미터화를 우리 sparse-view CT/CBCT 백본에 이식해 실제 팬텀에서 아티팩트 정량 비교 실험을 이번 주 안에 세팅"
+    },
+    {
+      "cluster": "역문제 복원 엔진이 학습된 확산 사전과 물리 내장형 신경망(unrolling·neural operator·PINN)으로 갈라졌다가, 금요일엔 표현과 물리 제약을 분리하는 쪽으로 정교화",
+      "papers": [
+        {"title": "ScoreField: Neural Inverse Scattering with Score-Based Generative Priors", "arxiv": "https://arxiv.org/abs/2608.02937", "importance_tags": ["[방법전환]"]},
+        {"title": "NanoMorph-3D: An End-to-End Physics-Driven Unrolling Framework for Nanomaterial Reconstruction", "arxiv": "https://arxiv.org/abs/2608.03257", "importance_tags": ["[방법전환]"]},
+        {"title": "Dual-domain U-Nets with embedded back projection operators for motion-resolved 4D CBCT reconstruction", "arxiv": "https://arxiv.org/abs/2608.03430", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "Alternating Levenberg-Marquardt Training of Physics-Informed Neural Networks with Fourier-Enhanced Features", "arxiv": "https://arxiv.org/abs/2608.05892", "importance_tags": ["[방법전환]", "[해부분석]"]},
+        {"title": "Kastor: An efficient fine-tuning strategy for generative emulation of PDE simulations", "arxiv": "https://arxiv.org/abs/2608.06107", "importance_tags": ["[방법전환]"]}
+      ],
+      "why": "수요일에는 역문제를 푸는 두 가지 정반대 접근이 같은 날 동시에 나왔습니다. 하나는 '학습된 사전을 밖에서 붙이는' 쪽으로, ScoreField가 전자기 역산란에서 물리 방정식은 그대로 강하게 지키되 '이 결과가 그럴듯한가'라는 판단만 사전 학습된 스코어 모델이 대신하도록 설계했습니다. 다른 하나는 정반대로 '물리 방정식 자체를 신경망 구조 안에 박아 넣는' 쪽으로, NanoMorph-3D는 전자 단층촬영의 missing-wedge 문제를 물리 구동 unrolling으로 풀고 4D CBCT 논문은 U-Net의 skip 연결을 아예 역투영 연산자로 바꿔 넣었습니다. 즉 같은 날 '사전을 어디까지 밖에서 빌려올 것인가'와 '물리를 얼마나 깊이 안에 박아 넣을 것인가'라는 두 개의 반대 답이 나온 셈입니다. 금요일에는 이 물리 내장형 접근이 한 단계 더 정교해졌습니다 — FALM-PINN은 PINN이 고주파·비선형 문제에서 잘 안 맞는 이유가 표현 학습과 계수 맞추기가 하나의 비볼록 최적화에 뒤엉켜 있기 때문이라고 짚고, 이 둘을 번갈아 최적화해 오차를 최대 100배까지 줄였습니다. Kastor도 PDE 시뮬레이션을 흉내 내는 생성 모델에서 큰 스텝을 건너뛰는 부분과 그 사이를 채우는 부분을 2단계로 분리해 예측 오차를 평균 42.9% 줄였습니다. 닷새를 이어보면, 역문제 복원 연구가 '하나의 큰 네트워크로 다 풀기'에서 '어떤 요소를 밖에서 빌리고 어떤 요소를 안에 박을지, 그리고 그 둘을 어떻게 분리해서 최적화할지'를 다투는 방향으로 옮겨가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "수·금 사흘, 서로 다른 저자군 5편이 사전 결합·물리 내장·표현-계수 분리라는 세 갈래로 나뉘지만 응용 도메인(전자기 역산란·나노재료·CBCT·PDE 시뮬레이션)이 넓게 퍼져 있어 계산광학 코어로의 직접 전이는 논문별 확인 필요",
+      "lab_action": "FALM-PINN의 표현-계수 분리 최적화(Fourier 강화 basis 학습 + Levenberg-Marquardt 계수 맞추기)를 우리 랩 위상 복원/sparse-view CT solver에 적용해 고주파 성분 복원 오차가 실제로 줄어드는지 비교하고, ScoreField의 물리 잔차-생성 사전 분리 ablation을 우리 QPI 복원 파이프라인에 이식해 두 접근(사전 결합 vs 물리 내장 unrolling) 중 어느 쪽이 우리 세팅에서 더 나은지 벤치마크"
+    },
+    {
+      "cluster": "파운데이션 모델이 '무엇을 정말로 배웠는지' 캐묻는 감사가 화요일 병리에서 시작해 금요일 CT/MRI로 확장",
+      "papers": [
+        {"title": "What Carries the Signal in Pathology Foundation-Model Atlases? A Patient-Level Controlled Benchmark in Breast Cancer", "arxiv": "https://arxiv.org/abs/2608.00105", "importance_tags": ["[해부분석]", "[경고신호]"]},
+        {"title": "Harnessing Adversarial Distillation to Customise Debiased, Disease-Specific Pathology Foundation Models for Breast Cancer", "arxiv": "https://arxiv.org/abs/2608.01356", "importance_tags": ["[방법전환]"]},
+        {"title": "Big, Bright, or Invisible: A Frozen-Feature Benchmark of 3D CT Foundation Models", "arxiv": "https://arxiv.org/abs/2608.05960", "importance_tags": ["[평가축]", "[경고신호]"]},
+        {"title": "Curia-MAE: Multi-Modal Multi-Anatomy MAE Pre-Training for 3D Medical Image Segmentation", "arxiv": "https://arxiv.org/abs/2608.05844", "importance_tags": ["[경고신호]", "[방법전환]"]},
+        {"title": "Does FLAIR super-resolution erase or hallucinate small white-matter lesions?", "arxiv": "https://arxiv.org/abs/2608.06311", "importance_tags": ["[경고신호]"]}
+      ],
+      "why": "화요일 What Carries the Signal는 병리 foundation model이 조직 사진만 보고 유전자 발현 패턴까지 맞힌다는 기존 주장을 환자 단위로 엄격하게 재검증했습니다 — 신호 자체는 진짜였지만, 그 신호의 상당 부분을 세포 개수를 세는 것 같은 단순하고 해석 가능한 특징만으로도 거의 따라잡을 수 있었고, 논문들이 흔히 자랑하는 '기하학적 구조 활용'은 실제로는 아무 이득이 없었습니다. Harnessing Adversarial Distillation은 거대한 범용 병리 모델이 진단과 무관한 촬영 기관별 단서까지 같이 배운다는 문제를 지적하며 이런 잡음을 걸러낸 30배 작은 모델을 만들었습니다. 이 감사하는 태도가 금요일에는 CT·MRI 파운데이션 모델로 옮겨갔습니다. Big, Bright, or Invisible은 흉부 CT 인코더 10개를 벤치마크했는데, 병변이 잘 잡히는지를 가르는 건 모델 구조가 아니라 '병변의 명암 대비 × 크기'라는 물리적 병목이었습니다 — 작고 대비가 약한 병변은 인코더 10개 전부에서 놓쳤습니다. Curia-MAE는 고정 인코더 기반 파운데이션 모델이 아직도 scratch부터 학습한 표준 baseline보다 못하다는 걸 정직하게 인정한 뒤 격차를 좁히려 했고, FLAIR 초해상도 논문은 널리 쓰이는 전처리 단계에서 작은 병변을 '없는데 만들어내는' 것보다 '있는데 지워버리는' 실패가 더 지배적이라는 걸 정량화했습니다. 다섯 편을 이어보면, 파운데이션 모델에 대한 낙관이 지나고 '이 모델이 정말로 무엇을 배웠고, 어떤 조건에서 무엇을 놓치는지'를 정량적으로 감사하는 단계가 화요일 병리에서 금요일 CT/MRI까지 도메인을 넓히며 이어졌다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "화·금 나흘 간격을 두고 서로 다른 저자군 5편이 병리→CT/MRI로 도메인을 넓히며 모두 '고정 특징이 실제로 무엇을 놓치는지'를 정량 감사한다는 같은 결론에 도달",
+      "lab_action": "What Carries the Signal의 환자 단위 permutation test + 단순 해석 가능 특징(cell-count) 대조군 설계와 Big Bright or Invisible의 '명암 대비 × 크기' 병목 프레임을 우리 랩 계산 병리/저선량 CT 재구성 모델 평가에 적용해, 우리 모델의 성능이 실제로 학습된 표현에서 오는지, 복원 실패가 모델 구조 문제인지 신호가 약한 물리적 병목 때문인지 구분하는 진단 지표를 이번 주 안에 설계"
+    },
+    {
+      "cluster": "Video world model·VLA의 실행 신뢰성 검증이 목요일 급부상해, 금요일엔 검증 기준 자체(latent·무라벨 신뢰 신호)를 캐묻는 메타 감사로 이어짐",
+      "papers": [
+        {"title": "WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models", "arxiv": "https://arxiv.org/abs/2608.04964", "importance_tags": ["[평가축]", "[방법전환]"]},
+        {"title": "GUARD: Grounding Uncertainty and Ablation-Based Risk Detection for Diffusion-Based VLAs", "arxiv": "https://arxiv.org/abs/2608.04510", "importance_tags": ["[평가축]", "[실사용전환]"]},
+        {"title": "SAFECAST: Robust Failure Detection for VLA Policies with Contrast-Set Training and Calibration", "arxiv": "https://arxiv.org/abs/2608.04246", "importance_tags": ["[실사용전환]"]},
+        {"title": "PhyLatent: Learning Dynamics-Relevant Representations for JEPA World Models", "arxiv": "https://arxiv.org/abs/2608.05720", "importance_tags": ["[해부분석]", "[방법전환]"]},
+        {"title": "When Does Consensus Mean Correctness? Measuring the Agreement-Accuracy Coupling with Semantics-Preserving Re-Rendering", "arxiv": "https://arxiv.org/abs/2608.05670", "importance_tags": ["[경고신호]", "[해부분석]"]}
+      ],
+      "why": "목요일에는 video world model(카메라 행동을 넣으면 미래 장면을 예측하는 모델)의 평가 기준이 '장면이 그럴듯하게 보이는가'에서 '긴 행동 시퀀스를 거쳐도 상태를 정확히 되돌릴 수 있는가'로 옮겨갔습니다 — WorldCycle은 행동을 했다가 정확히 반대로 되돌리면 원래 상태로 돌아와야 한다는 물리적 사실을 검증 신호로 써서 상태 복귀 오차를 최대 44% 줄였습니다. 같은 날 VLA(카메라 영상과 언어 지시로 로봇 행동을 내놓는 모델) 쪽에서는 GUARD와 SAFECAST가 정책 자체를 바꾸기보다 '언제 그 행동을 믿을 수 없는지'를 실행 중에 탐지하는 쪽으로 접근해, 공통 벤치마크에서 기존 최고 방법보다 평균 5.73%p 높은 탐지 성능을 냈습니다. 금요일에는 이 '검증해보자'는 태도가 검증 기준 자체를 겨냥했습니다. PhyLatent는 world model의 latent 표현이 '하나의 점으로 뭉개지지 않았다(collapse하지 않았다)'는 것만으로는 부족하다고 못박고, 물리적 상태·행동 결과를 실제로 담고 있는지를 세 가지 실패 유형으로 나눠 진단해 모델예측제어 성공률을 최대 17%p 끌어올렸습니다. 같은 날 다른 논문은 '입력을 살짝 바꿔도 답이 그대로면 믿을 만하다'는 무라벨 신뢰도 신호(합의)를 감사했는데, 이 일치도를 학습 신호로 쓰면 다섯 번의 독립 재현 실험 모두에서 오히려 정확도가 떨어졌습니다. 다섯 편을 이어보면, 목요일까지는 '이 시스템이 실행 중에 실패하는지'를 탐지하는 문제였다면, 금요일에는 '애초에 우리가 실패를 판단하는 데 쓰는 신호(latent 안정성, 합의, 확신도) 자체가 믿을 만한가'라는 한 단계 더 근본적인 질문으로 넘어갔다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "목·금 이틀, 서로 다른 저자군 5편 이상이 world model 가역성·VLA 실행 탐지·latent 감사·무라벨 신뢰 신호 감사라는 서로 다른 진입점에서 모두 '검증 방법 자체를 검증한다'는 같은 메타 질문에 도달했고, 다수가 정량 벤치마크(ROC-AUC, MPC 성공률)까지 제시",
+      "lab_action": "GUARD의 내부 신호 ablation 기반 grounding 진단과 PhyLatent가 정의한 physical invariance/identifiability/counterfactual dynamics collapse 진단 절차를 우리 랩의 복원 latent 표현(위상복원·압축센싱에서 쓰는 diffusion prior latent)에 이식해, 복원된 latent가 실제 물리량(위상, 굴절률, 산란계수)을 counterfactual 개입에도 식별 가능한 형태로 담고 있는지 정량 검증하는 probe 실험을 이번 주 안에 설계"
+    },
+    {
+      "cluster": "계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) — 순환이 아니라 한 주 내내 가뭄 (WATCH)",
+      "papers": [
+        {"title": "COSMIC: Multimodal illumination for quantitative transmitted-light microscopy", "arxiv": "https://doi.org/10.1111/jmi.70156", "importance_tags": ["[인프라]"]},
+        {"title": "Frequency‐Aware Fourier Ptychography for Imaging Beyond Spatial Coherence Constraints", "arxiv": "https://doi.org/10.1002/lpor.71632", "importance_tags": ["[방법전환]"]},
+        {"title": "AI-based single-shot structured-light depth reconstruction for real-time laparoscopic surgical guidance", "arxiv": "https://arxiv.org/abs/2608.05109", "importance_tags": ["[실사용전환]"]},
+        {"title": "EvReflection: Event-Driven Micro-Dynamics for Reflection Removal", "arxiv": "https://arxiv.org/abs/2608.06184", "importance_tags": ["[방법전환]", "[인프라]"]}
+      ],
+      "why": "지난주 weekly는 계산광학 코어가 화(메타옵틱스)→수(lensless)→목(FP)→금(홀로그래피) 순으로 버킷을 바꿔가며 반짝이는 순환 패턴을 예측했는데, 이번 주는 그 가설이 맞지 않았습니다. 월요일은 실제 이미징 신호가 완전히 0편이었고, 화요일은 저널 위상 복원 신경망 3편만이 유일한 신호였습니다. 수요일에는 COSMIC(콘덴서 없이 명시야·암시야·형광·미분위상대비를 한 모듈로 얻는 저가 오픈소스 조명계)처럼 실제로 쓸모 있는 신호가 나왔지만 편수 자체는 여전히 얇았고, 목요일에는 Frequency-Aware Fourier Ptychography가 광원 크기 때문에 공간 결맞음이 약해지는 조건에서도 고해상도 합성 개구 복원이 가능하도록 모델을 확장했지만 역시 단발 신호였습니다. 금요일 EvReflection은 반사·투과가 섞인 영상을 이벤트 카메라로 포착한 미세한 움직임 차이로 분리하는, 계산광학 코어에 새로운 센서 모달리티를 끌어온 흥미로운 단일 신호였지만 이 역시 하루짜리였습니다. 5일을 이어보면, 특정 버킷이 하루 몰아서 반짝이고 다음 날 다른 버킷으로 넘어가는 순환이 아니라, 모든 버킷이 매일 0~3편 사이에서 고르게 얇았다는 게 더 정확한 진단입니다.",
+      "confidence": "Low",
+      "confidence_note": "월~금 닷새 내내 실질 신호가 버킷당 0~3편으로 낮고 뚜렷한 순환·집중 패턴이 없어, 지난주 순환 가설은 기각에 가까움",
+      "lab_action": "COSMIC의 콘덴서리스 다중모달 조명 설계를 우리 랩 저가 현미경 조명 모듈 후보로 재현성 검토하고, EvReflection의 이벤트 스트림 기반 층 분리 구조를 우리 lensless/coded imaging 세팅에서 이벤트 카메라를 보조 센서로 결합했을 때 반사·산란 아티팩트 제거에 쓸 수 있는지 이식성 검토를 이번 주 안에 진행"
+    }
+  ],
+  "predictions": [
+    {
+      "title": "AI 생성·조작 콘텐츠 탐지의 도메인 확장이 계산 이미징 핵심 도메인(현미경·병리·QPI)으로 직접 들어온다",
+      "claim": "월·화·목 사흘에 걸쳐 자연 사진에서 의료 CT·위성 영상으로 번진 AI 생성·조작 콘텐츠 탐지 문제의식이, 다음 주에는 현미경·병리·정량 위상 영상처럼 우리 랩이 직접 다루는 도메인을 정면으로 겨냥한 논문으로 이어진다.",
+      "rationale": "이미 자연 사진 → 의료 CT → 위성 영상으로 사흘 만에 도메인이 확장된 속도로 볼 때, 다음 논리적 확장은 우리 랩과 더 가까운 현미경/병리 영상이다.",
+      "hit_condition": "가상 염색(virtual staining)·현미경·병리·QPI 등에서 AI 생성/합성 영상 탐지 또는 진위 판별을 직접 다룬 논문 1편 이상",
+      "miss_condition": "계속 자연 사진·의료 CT·위성 영상에만 머물거나 관련 논문이 없으면 빗나감"
+    },
+    {
+      "title": "'공짜 신뢰 신호 감사'가 계산 이미징 역문제의 불확실성 정량화로 직접 이어진다",
+      "claim": "목~금 급부상한 '검증 기준 자체를 캐묻는' 감사(latent collapse 진단, 무라벨 신뢰도 신호 감사, 파운데이션 모델 고정 특징 감사)의 논리가, 다음 주에는 계산 이미징 역문제(위상복원·CT·lensless)에서 쓰는 불확실성 지도나 학습된 사전에 직접 적용된 논문으로 이어진다.",
+      "rationale": "이번 주 이미 Posterior Variance(화)가 3DGS-CT 불확실성 지도의 붕괴를 보였고, PhyLatent(금)가 같은 감사 논리를 world model latent로 확장했다 — 다음 확장은 계산 이미징 역문제의 학습된 사전/불확실성 지도가 유력하다.",
+      "hit_condition": "FP·QPI·CT·lensless 등 계산 이미징 역문제에서 학습된 사전이나 불확실성 지도가 실제 오차와 얼마나 일치하는지를 정량 감사한 논문 1편 이상",
+      "miss_condition": "계속 로봇/VLM/일반 의료 파운데이션 모델 도메인에만 머물면 빗나감"
+    },
+    {
+      "title": "계산광학 코어의 가뭄이 다음 주에도 이어진다",
+      "claim": "이번 주 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) 5개 버킷 모두 하루 3편을 넘긴 날이 없었던 가뭄 패턴이, 다음 주에도 순환이나 회복 없이 이어진다.",
+      "rationale": "지난주 weekly의 '요일별 버킷 순환' 예측이 이번 주 빗나갔고, 대신 전 버킷이 고르게 얇은 상태가 관찰됐다 — 이 가뭄이 일시적인지 지속적인 추세인지 다음 주로 검증을 이어간다.",
+      "hit_condition": "다음 주에도 계산광학 코어 5개 버킷 모두 매일 실질 신호 2편 이하에 머무름",
+      "miss_condition": "5개 버킷 중 하나라도 특정 하루에 3편 이상의 실질 신호를 내면 빗나감(가뭄이 아니라 회복 또는 순환으로 판단)"
+    }
+  ],
+  "prediction_review": [
+    {
+      "title": "3D Gaussian Splatting 최소 입력 직접 생성이 사람을 넘어 조직·시편 3D 표현으로 확장",
+      "label": "✗",
+      "reason": "이번 주 3DGS 흐름은 월요일 자산 유지보수, 화요일 신뢰성 감사, 목요일 CT 재구성의 물리적 실패 조건으로 이어졌지만, 사람 아바타를 넘어 현미경 시편이나 의료 영상 도메인에서 최소 입력(단일 이미지/텍스트)으로 3D/4D Gaussian 표현을 직접 생성한 논문은 나오지 않았습니다. 흐름 자체가 '직접 생성'에서 '신뢰성 감사'와 '물리적 실패 조건'으로 방향을 틀어 빗나갔습니다."
+    },
+    {
+      "title": "역문제 신뢰성 축(수렴 보장·통계적 정지 기준)이 계산광학 코어로 직접 번짐",
+      "label": "✗",
+      "reason": "이번 주 신뢰성 관련 논문(Posterior Variance, PhyLatent, GUARD 등)은 3DGS-CT·world model·VLA 도메인에 머물렀고, Fourier ptychography·정량 위상 영상·홀로그래피·lensless에서 수렴 보장이나 통계적 정지 기준을 직접 다룬 논문은 없었습니다. 5주 연속으로 이 예측이 빗나갔습니다."
+    },
+    {
+      "title": "계산광학 코어의 '요일별 버킷 순환' 패턴이 4주 연속 반복되는지 확인",
+      "label": "✗",
+      "reason": "지난주처럼 특정 버킷이 하루 3편 이상 반짝였다가 다음 날 다른 버킷으로 넘어가는 순환은 관찰되지 않았습니다. 대신 5개 버킷 모두 월~금 내내 0~3편 사이에서 고르게 얇았습니다 — 순환이 아니라 가뭄에 가까운 패턴으로, 예측이 빗나갔습니다."
+    }
+  ],
+  "themes": [
+    {
+      "title": "'공짜로 믿어온 신뢰 신호'를 캐묻는 감사가 화요일부터 금요일까지 점점 넓은 시스템으로 번짐",
+      "summary": "화요일 3DGS 불확실성 지도 감사(Posterior Variance)와 병리 파운데이션 모델 신호 감사(What Carries the Signal)에서 시작해, 목요일 video world model 가역성과 VLA 실행 중 실패 탐지를 거쳐, 금요일에는 latent collapse 기준·무라벨 신뢰도 신호(합의·일관성·확신도)·의료 파운데이션 모델 고정 특징까지 검증 대상이 넓어졌습니다. 랩이 이 흐름을 눈여겨봐야 하는 이유는, 우리가 쓰는 불확실성 지도·학습된 사전·latent 표현도 같은 방식으로 감사받을 수 있고 또 받아야 한다는 뜻이기 때문입니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "AI 생성·조작 콘텐츠 탐지가 자연 사진에서 의료·위성 영상으로 사흘 내내 확장",
+      "summary": "월요일 귀속·설명가능성·공격이라는 세 갈래로 넓어진 뒤, 화요일 배포 후 지속 적응, 목요일 의료 CT 볼륨과 위성 영상까지 도메인이 계속 확장됐습니다. 다음 확장 지점이 우리 랩이 다루는 현미경·병리·virtual staining 영상인지가 다음 주 관찰 포인트입니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "계산광학 코어는 순환이 아니라 한 주 내내 고르게 얇은 가뭄",
+      "summary": "지난주 weekly가 예측한 '요일별 버킷 순환'은 이번 주 나타나지 않았고, 5개 핵심 버킷 모두 월~금 내내 0~3편 사이에 머물렀습니다. 5주 연속 계산광학 코어로의 신뢰성 축 전이 예측도 빗나가, 이 도메인의 관찰 방식 자체를 재점검할 필요가 있습니다.",
+      "confidence": "Low"
+    }
+  ],
+  "top5": [
+    {
+      "title": "PhyLatent: Learning Dynamics-Relevant Representations for JEPA World Models",
+      "arxiv": "https://arxiv.org/abs/2608.05720",
+      "why": "world model latent 표현이 '하나의 점으로 뭉개지지만 않으면 된다'는 오래된 평가 기준을 정면으로 반박하고, 물리적 상태·행동 결과를 실제로 담고 있는지를 세 가지 구체적 실패 유형으로 나눠 진단해 모델예측제어 성공률을 최대 17%p 끌어올렸습니다. 이번 주 전체를 관통하는 '검증 기준 자체를 캐묻는' 메타 감사 흐름을 가장 정량적으로 보여준 논문입니다.",
+      "tag": "[해부분석]"
+    },
+    {
+      "title": "Posterior Variance Is a Constraint Map, Not an Error Map: Closed-Form Uncertainty for Radiative Gaussian Splatting in Sparse-View CT",
+      "arxiv": "https://arxiv.org/abs/2607.13682",
+      "why": "3DGS 기반 CT 재구성의 불확실성 지도가 전체 평균으로는 잘 작동하는 것처럼 보이지만, 정작 의사가 읽는 조직 내부 영역에서는 순위 상관이 0.11로 무너진다는 걸 보였습니다. 랩이 재구성 결과에 불확실성 지도를 붙일 때 전체 평균 성능만 보고 안심하면 안 된다는 직접적 경고입니다.",
+      "tag": "[경고신호]"
+    },
+    {
+      "title": "WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models",
+      "arxiv": "https://arxiv.org/abs/2608.04964",
+      "why": "행동을 했다가 정확히 반대로 되돌리면 원래 상태로 돌아와야 한다는 물리적 사실을 검증 신호로 써서, 정답 라벨 없이도 world model이 행동을 진짜로 이해했는지 확인하는 방법을 냈습니다(상태 복귀 오차 최대 44% 감소). 랩의 시간 시퀀스 재구성(4D CT, 동적 홀로그래피) 평가에도 그대로 옮겨볼 수 있는 드문 사례입니다.",
+      "tag": "[평가축]"
+    },
+    {
+      "title": "GUARD: Grounding Uncertainty and Ablation-Based Risk Detection for Diffusion-Based VLAs",
+      "arxiv": "https://arxiv.org/abs/2608.04510",
+      "why": "VLA 내부 신호를 일부러 없애보고 행동 생성이 얼마나 달라지는지를 봐서, 그 행동이 실제 시각·언어 근거에 의존해 나온 것인지를 실행 중에 판별합니다. 다섯 개 정책·벤치마크 조합 중 네 개에서 기존 최고 방법보다 평균 5.73%p 높은 탐지 성능을 냈다는 구체적 수치가 이 방향의 실용성을 뒷받침합니다.",
+      "tag": "[실사용전환]"
+    },
+    {
+      "title": "ScoreField: Neural Inverse Scattering with Score-Based Generative Priors",
+      "arxiv": "https://arxiv.org/abs/2608.02937",
+      "why": "전자기 역산란에서 물리 방정식은 강하게 그대로 지키면서 '이 결과가 그럴듯한가'라는 판단만 사전 학습된 스코어 모델이 대신하도록 설계해, 물리 잔차와 생성 사전을 분리하는 이번 주 역문제 복원 갈림의 한쪽 축을 대표합니다. 랩의 sparse-view 단층촬영·QPI 복원 파이프라인에 바로 이식해볼 수 있는 설계입니다.",
+      "tag": "[방법전환]"
+    }
+  ],
+  "next_week_actions": [
+    {
+      "title": "Posterior Variance·PhyLatent의 진단 절차를 랩 복원 latent/불확실성 지도에 이식",
+      "action": "Posterior Variance의 masked calibration·seed-wise bias decomposition 프로토콜을 우리 랩 sparse-view 단층촬영 3DGS 재구성 파이프라인에 적용하고, PhyLatent의 physical invariance/identifiability/counterfactual dynamics collapse 진단 절차를 위상복원·압축센싱에서 쓰는 diffusion prior latent 표현에 이식",
+      "expected_output": "우리 불확실성 지도/latent 표현이 조직 내부 영역·counterfactual 개입에서도 신뢰도를 유지하는지 보여주는 정량 비교표"
+    },
+    {
+      "title": "HexMIL·K-Space Signature식 생성 콘텐츠 탐지를 virtual staining 파이프라인에 baseline 적용",
+      "action": "HexMIL의 ante-hoc attention 기반 판단과 K-Space Signature의 주파수 영역 탐지를 우리 랩 virtual staining/합성 현미경 영상 신뢰성 검증에 적용해, 실제 vs AI 생성 조직 영상을 cross-generator 프로토콜로 구분할 수 있는지 baseline 실험",
+      "expected_output": "생성기별(학습에 쓴 생성기 vs 처음 보는 생성기) 탐지 AUC/F1 비교표"
+    },
+    {
+      "title": "계산광학 코어 5개 버킷의 요일별 실신호 로그를 3주 이상 지속 추적",
+      "action": "이번 주 관찰된 '순환이 아니라 가뭄' 진단을 검증하기 위해, daily trends 데이터에서 FP·Lensless·Phase·Meta-Optics·Light-Field 5개 버킷의 요일별 실신호(키워드 우연 매칭 제외) 편수를 다음 3주간 계속 기록",
+      "expected_output": "3주간 계산광학 코어 5버킷의 요일별 실신호 편수 히트맵과 가뭄/회복/순환 여부 판정"
+    }
+  ]
+}

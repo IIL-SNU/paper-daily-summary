@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Weekly Retrospective — 2026-W32</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.7;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+table{border-collapse:collapse;width:100%;margin:1rem 0}
+th,td{border:1px solid #ccc;padding:.5rem .8rem;vertical-align:top}
+th{background:#f0f0f8;font-size:.85rem}
+td{font-size:.88rem}
+blockquote{border-left:4px solid #2a2a6e;padding:.5rem 1rem;margin:1rem 0;background:#f8f8ff}
+.theme-card{border:1px solid #e0e0ff;border-radius:8px;padding:1rem;margin:.8rem 0;background:#f8f8ff}
+.theme-card h3{margin:0 0 .5rem;font-size:1rem;color:#2a2a6e}
+a{color:#2a2a6e}
+.home{display:inline-block;padding:.4rem .9rem;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;font-size:.875rem;color:#374151;text-decoration:none;margin:.5rem 0}
+.home:hover{background:#e9ecef}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 6px;border-radius:8px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.hot-cold{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+.hot-box{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:.9rem 1.1rem}
+.cold-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:.9rem 1.1rem}
+.hot-box h3{margin:0 0 .5rem;color:#7f1d1d;font-size:.95rem}
+.cold-box h3{margin:0 0 .5rem;color:#1e3a8a;font-size:.95rem}
+.hot-box ul,.cold-box ul{margin:.4rem 0;padding-left:1.2rem;font-size:.88rem}
+.dd{background:#fefce8;border:1px solid #fde047;border-radius:10px;padding:1.1rem 1.3rem;margin:1rem 0}
+.dd h3{margin:0 0 .5rem;color:#713f12;font-size:1rem}
+.action-card{border:1px solid #d1fae5;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#f0fdf4}
+.action-card h3{margin:0 0 .4rem;font-size:.95rem;color:#14532d}
+.pred-card{border:1px solid #e0e7ff;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#eef2ff}
+.pred-card h3{margin:0 0 .4rem;font-size:.95rem;color:#3730a3}
+.pred-card .cond{font-size:.82rem;color:#4338ca;margin:.3rem 0}
+.meta{font-size:.85rem;color:#475569;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:4px;padding:.6rem 1rem;margin:.8rem 0}
+ul.plain{padding-left:1.3rem}
+ul.plain li{margin:.3rem 0;font-size:.9rem}
+.review-hit{color:#166534;font-weight:700}
+.review-partial{color:#92400e;font-weight:700}
+.review-miss{color:#7f1d1d;font-weight:700}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Weekly Retrospective — 2026-08-10 (Week 32)</h1>
+<div class=meta>
+  <div>발행: 2026-08-10 (월) &nbsp;|&nbsp; 검토 기간: 2026-08-03 ~ 08-07 (Mon–Fri)</div>
+  <div>지난주 arXiv 신규 약 3,298편 (cs.LG 992 · cs.CV 838 · cs.AI 1279 · eess.IV 43 · eess.SP 146) + 저널 약 1,995건 &nbsp;|&nbsp; ROI 배정 1,331건 &nbsp;|&nbsp; 5일치 daily briefing 기반(월~금 모두 arXiv+저널 완전판)</div>
+</div>
+
+<h2>🗓 Executive Summary</h2>
+<ul class=plain>
+  <li>지난주는 <strong>지금까지 별다른 의심 없이 믿어온 여러 신호를 하나씩 정량적으로 재검증한 한 주</strong>로 기억하면 됩니다. 화요일 3DGS 불확실성 지도와 병리 파운데이션 모델 신호를 캐묻던 감사가, 목요일 video world model의 상태 가역성과 VLA의 실행 중 실패 탐지를 거쳐, 금요일에는 latent가 붕괴하지 않았다는 것만으로는 부족하다는 진단과 합의·확신도 같은 무라벨 신뢰 신호 자체를 감사하는 데까지 번졌습니다.</li>
+  <li>AI 생성·조작 콘텐츠 탐지는 <strong>월요일 귀속·설명가능성 확장에서 화요일 배포 후 지속 적응, 목요일 의료 CT 볼륨·위성 영상 진출까지 사흘 내내 도메인을 넓혔습니다</strong>. 다음 확장 지점이 우리 랩이 다루는 현미경·병리 영상인지가 다음 주 관찰 포인트입니다.</li>
+  <li>랩의 핵심 ROI인 <strong>계산광학 코어(FP·lensless·위상·메타옵틱스·light-field)는 지난주 weekly가 예측한 "요일별 버킷 순환" 대신, 5개 버킷 모두 월~금 내내 하루 3편을 넘기지 못한 가뭄에 가까웠습니다</strong>. 3DGS 신뢰성 축도 화요일 정점을 찍은 뒤 이틀 만에 눈에 띄게 식었습니다.</li>
+</ul>
+
+<blockquote>
+<strong>Weekly Thesis.</strong> 지난주 초반(월~화)에는 3D Gaussian Splatting의 신뢰성 감사, AI 생성 콘텐츠 탐지의 확장, 병리 파운데이션 모델이 실제로 무엇을 배웠는지 캐묻는 감사가 각각 서로 다른 개별 도메인 안에서 따로 진행됐다면, 주 중반(수)에는 역문제 복원의 엔진 자체(학습된 확산 사전 vs 물리를 신경망 안에 심는 접근)를 놓고 방법론 차원의 갈림이 나타났고, 주 후반(목~금)에는 이 "검증해보자"는 태도가 로봇·에이전트 시스템(video world model의 상태 가역성, VLA의 실행 중 실패)과 그 검증 기준 자체(합의·일관성·확신도 같은 무라벨 신뢰 신호, latent가 붕괴하지 않았다는 것만으로는 충분치 않다는 진단)로까지 번졌습니다. 즉 한 주 전체를 관통하는 흐름은 새 방법론 하나가 아니라, 지금까지 별다른 의심 없이 믿어온 여러 신호(불확실성 지도, 파운데이션 모델의 고정 특징, latent 표현, 합의·확신도)를 하나씩 정량적으로 재검증하는 쪽이었습니다. 지난주 weekly가 내놓은 예측 세 가지(3DGS 최소 입력 생성의 도메인 확장, 역문제 신뢰성 축의 계산광학 코어 전이, 계산광학 코어의 요일별 버킷 순환)는 모두 빗나갔고, 특히 계산광학 코어는 순환이 아니라 한 주 내내 고르게 얇은 가뭄에 더 가까웠습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>지난주 가장 뜨거웠던 흐름은 <strong>"지금까지 검증 없이 믿어온 신호를 하나씩 정량적으로 캐묻는" 감사</strong>였습니다. 화요일 Posterior Variance는 CT 재구성용 3D Gaussian Splatting의 불확실성 지도가 장면 전체로는 실제 오차를 잘 예측하지만, 정작 의사가 읽는 조직 내부 영역으로 좁히면 그 예측력이 거의 사라진다는 걸 보였고(순위 상관 0.11), 같은 날 What Carries the Signal은 병리 파운데이션 모델이 조직 사진에서 유전자 발현까지 맞힌다는 주장의 상당 부분이 세포 개수를 세는 단순한 특징만으로도 따라잡을 수 있다는 걸 환자 단위로 재검증했습니다. 목요일에는 이 감사하는 태도가 로봇·에이전트 시스템으로 옮겨가, WorldCycle이 행동을 했다가 정확히 되돌리면 원래 상태로 돌아와야 한다는 물리적 사실로 video world model의 상태 가역성을 검증했고(상태 복귀 오차 최대 44% 감소), GUARD와 SAFECAST는 VLA가 실제 시각·언어 근거에 의존해 행동하는지를 실행 중에 탐지했습니다. 금요일에는 이 태도가 검증 기준 자체를 겨냥했습니다 — PhyLatent는 world model의 latent 표현이 "붕괴하지 않았다"는 것만으로는 부족하다고 못박고 물리적 의미를 세 가지 실패 유형으로 나눠 진단했고(모델예측제어 성공률 최대 17%p 향상), 다른 논문은 "답이 일치하면 믿을 만하다"는 합의 신호를 학습에 쓰면 오히려 정확도가 떨어진다는 걸 다섯 번의 재현 실험 모두에서 확인했습니다. 같은 기간 AI 생성·조작 콘텐츠 탐지도 월요일 귀속·설명가능성 확장에서 화요일 배포 후 지속 적응, 목요일 의료 CT 볼륨·위성 영상 진출까지 사흘 내내 도메인을 넓혔습니다.</p>
+
+<p>반대로 눈에 띄게 식은 흐름은 두 가지였습니다. 3D Gaussian Splatting은 월요일 자산 유지보수(FocusGS 등)와 화요일 신뢰성 감사(Posterior Variance 등)로 이틀 연속 뚜렷한 클러스터를 이뤘지만, 수요일에는 이 물결이 눈에 띄게 잦아들었고 목요일에는 CT 재구성이라는 좁은 응용에서 포즈 오차·금속 아티팩트라는 구체적 실패 조건 2편만 남았습니다 — 화요일 정점에서 이틀 만에 좁아진 전형적인 "뜨거워졌다 식는" 곡선입니다. 랩의 핵심 ROI인 계산광학 코어(Fourier ptychography·lensless·위상 영상·메타옵틱스·light-field)는 지난주 weekly가 예측한 "요일별 버킷 순환"이 나타나지 않았습니다 — 월요일은 실제 이미징 신호가 완전히 0편이었고, 화~금도 매일 버킷당 0~3편 사이에서 고르게 얇았습니다. 특정 버킷이 하루 몰아서 반짝이고 다음 날 다른 버킷으로 넘어가는 순환이 아니라, 모든 버킷이 가뭄에 가까웠다는 게 더 정확한 진단입니다.</p>
+
+<p>다음 주 전망: 첫째, AI 생성·조작 콘텐츠 탐지의 도메인 확장(자연 사진 → 의료 CT → 위성)이 다음 주에는 우리 랩이 직접 다루는 현미경·병리·virtual staining 영상으로 들어오는지가 관찰 포인트입니다. 둘째, "공짜 신뢰 신호를 감사하는" 이번 주 메타 흐름(latent collapse 진단, 무라벨 신뢰도 감사, 파운데이션 모델 고정 특징 감사)이 계산 이미징 역문제의 불확실성 지도나 학습된 사전으로 직접 이어지는지 지켜볼 필요가 있습니다. 셋째, 계산광학 코어의 가뭄이 다음 주에도 이어지는지, 아니면 순환이나 회복으로 돌아서는지가 랩 ROI 관점에서 가장 직접적인 확인 대상입니다.</p>
+
+<h2>⚖️ Hot vs Cold</h2>
+<div class=hot-cold>
+  <div class=hot-box>
+    <h3>⬆ 가속 클러스터</h3>
+    <ul>
+      <li><strong>AI 생성·조작 콘텐츠 탐지 — 자연 사진에서 의료 CT·위성으로 사흘 내내 확장</strong><br>월요일 귀속·설명가능성, 화요일 배포 후 지속 적응, 목요일 의료 CT·위성까지 도메인이 계속 넓어졌습니다.</li>
+      <li><strong>"공짜 신뢰 신호"를 캐묻는 감사 — 목~금 급부상</strong><br>video world model 가역성·VLA 실행 탐지(목)에서 latent 감사·무라벨 신뢰도 감사(금)로 검증 대상 자체가 넓어졌습니다.</li>
+    </ul>
+  </div>
+  <div class=cold-box>
+    <h3>⬇ 감속 클러스터</h3>
+    <ul>
+      <li><strong>3D Gaussian Splatting 신뢰성 축</strong><br>화요일 정점을 찍었지만 수요일 눈에 띄게 식었고, 목요일엔 CT 재구성이라는 좁은 응용 2편만 남았습니다.</li>
+      <li><strong>계산광학 코어 — 순환이 아니라 가뭄</strong><br>지난주 예측했던 요일별 버킷 순환 대신, 5개 버킷 모두 월~금 내내 0~3편 사이에서 고르게 얇았습니다.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>🧩 주간 클러스터 표</h2>
+<table>
+<thead><tr>
+  <th>Cluster</th>
+  <th>대표 논문</th>
+  <th>왜 중요?</th>
+  <th>Confidence</th>
+  <th>Lab action</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><strong>AI 생성·조작 콘텐츠 탐지가 자연 사진 판별에서 배포 후 지속 적응, 의료 CT·위성 영상으로 사흘 내내 확장</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.29541">K-Space Signature</a><br>
+    <a href="https://arxiv.org/abs/2607.28936">DiffAttack</a><br>
+    <a href="https://arxiv.org/abs/2608.00559">Test-Time Curriculum</a><br>
+    <a href="https://arxiv.org/abs/2608.05101">HexMIL</a><br>
+    <a href="https://arxiv.org/abs/2608.04840">위성 조작 벤치마크</a>
+  </td>
+  <td>월요일에는 AI가 만든 이미지·영상을 걸러내는 문제가 '진짜냐 가짜냐'라는 이진 판정을 넘어, K-Space Signature처럼 어떤 생성기가 만들었는지 주파수 영역에서 추적하거나 DiffAttack처럼 반대로 diffusion 모델로 얼굴 인식을 실제로 속이는 공격까지 확장됐습니다. 화요일에는 같은 문제를 배포 시점 이후로 옮겨, Test-Time Curriculum이 라벨 없는 테스트 데이터만으로 탐지기를 계속 갱신하는 방법을 냈습니다 — 탐지기를 한 번 학습시켜 배포하면 끝이 아니라 새로운 생성 모델이 계속 나오는 상황에서 스스로 적응해야 한다는 문제의식입니다. 목요일에는 이 문제의식이 우리 랩과 더 가까운 도메인으로 번졌습니다. HexMIL은 CT 볼륨이 생성 모델로 조작된 '의료 딥페이크'를 픽셀 단위 정답 라벨 없이도 어텐션 가중치 자체가 판단 근거가 되도록 탐지했고(학습 때 보지 못한 생성기 기준 AUC +9.1), 위성 영상 조작 벤치마크는 원격탐사 이미지 위조가 실제 피해를 줄 수 있다며 이 도메인 전용 벤치마크를 처음 제안했습니다. 다섯 편을 이어보면, 'AI로 만들어졌는가'라는 질문이 자연 사진 하나의 문제가 아니라 우리가 다루는 CT·현미경·위성 같은 과학·의료 영상 도메인에서도 독자적인 방법과 벤치마크가 필요한 단계로 들어섰다는 뜻입니다.</td>
+  <td>High<br><small>월·화·목 사흘, 서로 다른 저자군 5편 이상이 귀속·지속적응·의료볼륨·위성으로 확장, HexMIL은 AUC +9.1 정량 수치까지 제시</small></td>
+  <td>HexMIL의 ante-hoc attention 기반 판단과 K-Space Signature의 주파수 영역 탐지를 우리 랩 virtual staining/합성 현미경 영상 신뢰성 검증에 적용해, 실제 vs AI 생성 조직 영상을 cross-generator 프로토콜로 구분할 수 있는지 baseline 실험을 이번 주 안에 돌리기</td>
+</tr>
+<tr>
+  <td><strong>3D Gaussian Splatting이 자산 유지보수(월)에서 신뢰성 감사(화)로, 식은 뒤(수) CT 재구성의 물리적 실패 조건으로 좁혀짐(목) <span class=tag>COOLING</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2607.28834">FocusGS</a><br>
+    <a href="https://arxiv.org/abs/2607.13682">Posterior Variance</a><br>
+    <a href="https://arxiv.org/abs/2608.00214">Manifold-GS</a><br>
+    <a href="https://arxiv.org/abs/2608.04752">Splat CT Pose Sensitivity</a><br>
+    <a href="https://arxiv.org/abs/2608.04764">Splat Metal Artifact Reduction</a>
+  </td>
+  <td>월요일에는 FocusGS가 다 만든 3DGS 장면의 일부가 잘못됐을 때 그 부분만 국소적으로 고치는 방법을 냈습니다(목표 영역 화질 최대 11dB 이상 향상) — 3DGS를 '한 번 만들고 끝'이 아니라 계속 고쳐야 하는 유지보수 대상으로 다루기 시작한 신호였습니다. 화요일에는 Posterior Variance가 CT 재구성용 3DGS의 불확실성 지도를 검증했는데, 장면 전체로는 실제 오차를 14개 시나리오 중 14개에서 잘 예측하지만 의사가 들여다보는 조직 내부 영역으로 좁히면 그 예측력이 거의 사라졌습니다(순위 상관 0.11, 15개 중 0개 통과). 수요일에는 이 물결이 눈에 띄게 잦아들었고, 목요일에는 Gaussian splatting 기반 CT 재구성이라는 좁은 응용에서 촬영 기하 오차 증폭 문제와 금속 임플란트 에너지별 감쇠 아티팩트라는 구체적 물리 실패 2편만 남았습니다. 나흘을 이어보면, 3DGS 연구의 관심이 화요일 정점에서 이틀 만에 CT라는 한 응용의 구체적 물리 조건으로 좁아진, 전형적인 '뜨거워졌다 식는' 곡선을 그렸다는 뜻입니다.</td>
+  <td>High<br><small>월·화·목 나흘, 5편 이상이 유지보수→신뢰성→CT 물리 실패로 이어지지만 수요일 신호가 사실상 끊겨 화·목 사이 단절 있음</small></td>
+  <td>Posterior Variance의 masked calibration·seed-wise bias decomposition 프로토콜을 우리 랩 sparse-view 단층촬영 3DGS 재구성 파이프라인에 적용해 조직 내부 영역에서 같은 붕괴가 나타나는지 점검하고, 목요일 두 논문의 포즈 공동최적화·물질별 감쇠 파라미터화를 sparse-view CT/CBCT 백본에 이식해 실제 팬텀 아티팩트 비교 실험을 이번 주 안에 세팅</td>
+</tr>
+<tr>
+  <td><strong>역문제 복원 엔진이 학습된 확산 사전과 물리 내장형 신경망으로 갈라졌다가, 금요일엔 표현-계수 분리로 정교화</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.02937">ScoreField</a><br>
+    <a href="https://arxiv.org/abs/2608.03430">4D CBCT Dual-domain U-Net</a><br>
+    <a href="https://arxiv.org/abs/2608.05892">FALM-PINN</a><br>
+    <a href="https://arxiv.org/abs/2608.06107">Kastor</a>
+  </td>
+  <td>수요일에는 역문제를 푸는 두 가지 정반대 접근이 같은 날 나왔습니다. ScoreField는 전자기 역산란에서 물리 방정식은 그대로 강하게 지키되 '이 결과가 그럴듯한가'라는 판단만 사전 학습된 스코어 모델이 대신하도록 설계했고(사전을 밖에서 빌리는 쪽), 4D CBCT 논문은 반대로 U-Net의 skip 연결을 아예 역투영 연산자로 바꿔 넣었습니다(물리를 안에 박는 쪽). 금요일에는 물리 내장형 접근이 한 단계 더 정교해졌습니다 — FALM-PINN은 PINN이 고주파·비선형 문제에서 잘 안 맞는 이유가 표현 학습과 계수 맞추기가 하나의 최적화에 뒤엉켜 있기 때문이라고 짚고 이 둘을 번갈아 최적화해 오차를 최대 100배까지 줄였고, Kastor는 PDE 시뮬레이션에서 큰 스텝을 건너뛰는 부분과 그 사이를 채우는 부분을 2단계로 분리해 예측 오차를 평균 42.9% 줄였습니다. 나흘을 이어보면, 역문제 복원 연구가 '하나의 큰 네트워크로 다 풀기'에서 '어떤 요소를 밖에서 빌리고 어떤 요소를 안에 박을지, 그 둘을 어떻게 분리해 최적화할지'를 다투는 쪽으로 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>수·금 사흘, 4편이 사전 결합·물리 내장·표현-계수 분리로 나뉘지만 응용 도메인이 넓게 퍼져 있어 계산광학 코어 전이는 확인 필요</small></td>
+  <td>FALM-PINN의 표현-계수 분리 최적화를 우리 랩 위상 복원/sparse-view CT solver에 적용해 고주파 성분 복원 오차가 실제로 줄어드는지 비교하고, ScoreField의 물리 잔차-생성 사전 분리 ablation을 QPI 복원 파이프라인에 이식해 사전 결합 vs 물리 내장 unrolling 중 어느 쪽이 나은지 벤치마크</td>
+</tr>
+<tr>
+  <td><strong>파운데이션 모델이 '무엇을 정말로 배웠는지' 캐묻는 감사가 화요일 병리에서 시작해 금요일 CT/MRI로 확장</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.00105">What Carries the Signal</a><br>
+    <a href="https://arxiv.org/abs/2608.01356">Adversarial Distillation</a><br>
+    <a href="https://arxiv.org/abs/2608.05960">Big, Bright, or Invisible</a><br>
+    <a href="https://arxiv.org/abs/2608.05844">Curia-MAE</a><br>
+    <a href="https://arxiv.org/abs/2608.06311">FLAIR SR erase/hallucinate</a>
+  </td>
+  <td>화요일 What Carries the Signal는 병리 foundation model이 조직 사진만 보고 유전자 발현까지 맞힌다는 주장을 환자 단위로 재검증했습니다 — 신호 자체는 진짜였지만 그 상당 부분을 세포 개수를 세는 단순한 특징만으로도 따라잡을 수 있었습니다. Adversarial Distillation은 거대한 범용 병리 모델이 진단과 무관한 촬영 기관별 단서까지 같이 배운다는 문제를 지적하며 이런 잡음을 걸러낸 30배 작은 모델을 만들었습니다. 이 감사하는 태도가 금요일에는 CT·MRI로 옮겨갔습니다. Big, Bright, or Invisible은 흉부 CT 인코더 10개를 벤치마크했는데, 병변이 잘 잡히는지를 가르는 건 모델 구조가 아니라 '병변의 명암 대비 × 크기'라는 물리적 병목이었습니다. Curia-MAE는 고정 인코더 기반 모델이 아직도 scratch부터 학습한 표준 baseline보다 못하다는 걸 인정했고, FLAIR 초해상도 논문은 작은 병변을 '있는데 지워버리는' 실패가 '없는데 만들어내는' 것보다 더 지배적이라는 걸 정량화했습니다. 다섯 편을 이어보면, 파운데이션 모델에 대한 낙관이 지나고 '이 모델이 정말로 무엇을 배웠고 무엇을 놓치는지'를 감사하는 단계가 병리에서 CT/MRI까지 도메인을 넓히며 이어졌다는 뜻입니다.</td>
+  <td>High<br><small>화·금 간격을 두고 5편이 병리→CT/MRI로 도메인을 넓히며 모두 '고정 특징이 무엇을 놓치는지' 정량 감사에 도달</small></td>
+  <td>What Carries the Signal의 환자 단위 permutation test와 Big Bright or Invisible의 '명암 대비 × 크기' 병목 프레임을 우리 랩 계산 병리/저선량 CT 재구성 모델 평가에 적용해, 성능이 실제 학습된 표현에서 오는지, 복원 실패가 모델 구조 문제인지 물리적 병목 때문인지 구분하는 진단 지표를 이번 주 안에 설계</td>
+</tr>
+<tr>
+  <td><strong>Video world model·VLA의 실행 신뢰성 검증이 목요일 급부상해, 금요일엔 검증 기준 자체를 캐묻는 메타 감사로 이어짐 <span class=tag>HOT</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.04964">WorldCycle</a><br>
+    <a href="https://arxiv.org/abs/2608.04510">GUARD</a><br>
+    <a href="https://arxiv.org/abs/2608.04246">SAFECAST</a><br>
+    <a href="https://arxiv.org/abs/2608.05720">PhyLatent</a><br>
+    <a href="https://arxiv.org/abs/2608.05670">Consensus-Accuracy Coupling</a>
+  </td>
+  <td>목요일에는 video world model의 평가 기준이 '장면이 그럴듯하게 보이는가'에서 '긴 행동 시퀀스를 거쳐도 상태를 정확히 되돌릴 수 있는가'로 옮겨갔습니다 — WorldCycle은 행동을 했다가 정확히 반대로 되돌리면 원래 상태로 돌아와야 한다는 물리적 사실을 검증 신호로 써서 상태 복귀 오차를 최대 44% 줄였습니다. 같은 날 GUARD와 SAFECAST는 VLA 정책 자체를 바꾸기보다 '언제 그 행동을 믿을 수 없는지'를 실행 중에 탐지하는 쪽으로 접근해 기존 최고 방법보다 평균 5.73%p 높은 탐지 성능을 냈습니다. 금요일에는 이 태도가 검증 기준 자체를 겨냥했습니다. PhyLatent는 world model latent 표현이 '붕괴하지 않았다'는 것만으로는 부족하다고 못박고 물리적 상태·행동 결과를 실제로 담고 있는지를 세 가지 실패 유형으로 나눠 진단해 모델예측제어 성공률을 최대 17%p 끌어올렸고, 다른 논문은 '답이 일치하면 믿을 만하다'는 합의 신호를 학습 신호로 쓰면 오히려 정확도가 떨어진다는 걸 다섯 번의 재현 실험 모두에서 확인했습니다. 다섯 편을 이어보면, 목요일까지는 '이 시스템이 실행 중에 실패하는지'를 탐지하는 문제였다면, 금요일에는 '애초에 우리가 실패를 판단하는 데 쓰는 신호 자체가 믿을 만한가'라는 한 단계 더 근본적인 질문으로 넘어갔다는 뜻입니다.</td>
+  <td>High<br><small>목·금 이틀, 5편 이상이 world model 가역성·VLA 실행 탐지·latent 감사·무라벨 신뢰 신호 감사로 같은 메타 질문에 도달, ROC-AUC/MPC 성공률 등 정량 수치 다수</small></td>
+  <td>GUARD의 내부 신호 ablation 기반 grounding 진단과 PhyLatent의 physical invariance/identifiability/counterfactual dynamics collapse 진단을 우리 랩 복원 latent 표현(위상복원·압축센싱 diffusion prior latent)에 이식해, 복원된 latent가 실제 물리량을 counterfactual 개입에도 식별 가능한 형태로 담고 있는지 정량 검증하는 probe 실험을 이번 주 안에 설계</td>
+</tr>
+<tr>
+  <td><strong>계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) — 순환이 아니라 한 주 내내 가뭄 <span class=tag>WATCH</span></strong></td>
+  <td>
+    <a href="https://doi.org/10.1111/jmi.70156">COSMIC</a><br>
+    <a href="https://doi.org/10.1002/lpor.71632">Frequency-Aware FP</a><br>
+    <a href="https://arxiv.org/abs/2608.05109">단일샷 구조광 라플라로스코프</a><br>
+    <a href="https://arxiv.org/abs/2608.06184">EvReflection</a>
+  </td>
+  <td>지난주 weekly는 계산광학 코어가 화(메타옵틱스)→수(lensless)→목(FP)→금(홀로그래피) 순으로 버킷을 바꿔가며 반짝이는 순환 패턴을 예측했는데, 이번 주는 그 가설이 맞지 않았습니다. 월요일은 실제 이미징 신호가 완전히 0편이었고, 화요일은 저널 위상 복원 신경망 3편만이 유일한 신호였습니다. 수요일에는 COSMIC(콘덴서 없이 명시야·암시야·형광·미분위상대비를 한 모듈로 얻는 저가 오픈소스 조명계)처럼 쓸모 있는 신호가 나왔지만 편수 자체는 여전히 얇았고, 목요일 Frequency-Aware Fourier Ptychography와 금요일 EvReflection(이벤트 카메라로 반사·투과 층을 분리)도 각각 하루짜리 단일 신호에 그쳤습니다. 5일을 이어보면, 특정 버킷이 하루 몰아서 반짝이고 다음 날 다른 버킷으로 넘어가는 순환이 아니라, 모든 버킷이 매일 0~3편 사이에서 고르게 얇았다는 게 더 정확한 진단입니다.</td>
+  <td>Low<br><small>월~금 닷새 내내 버킷당 0~3편으로 뚜렷한 순환·집중 패턴 없음, 지난주 순환 가설은 기각에 가까움</small></td>
+  <td>COSMIC의 콘덴서리스 다중모달 조명 설계를 랩 저가 현미경 조명 모듈 후보로 재현성 검토하고, EvReflection의 이벤트 스트림 기반 층 분리 구조를 lensless/coded imaging 세팅에서 이벤트 카메라 보조 센서 결합으로 반사·산란 아티팩트 제거에 쓸 수 있는지 이식성 검토를 이번 주 안에 진행</td>
+</tr>
+</tbody>
+</table>
+
+<h2>📐 arXiv vs 저널 키워드</h2>
+<table>
+<thead><tr><th>채널</th><th>지난주 주요 키워드</th></tr></thead>
+<tbody>
+<tr><td><strong>공통</strong></td><td>gaussian splatting reliability/uncertainty, world model verification, diffusion inference-time/generative priors, foundation model auditing, physics-informed reconstruction</td></tr>
+<tr><td><strong>arXiv 전용</strong></td><td>video world model·VLA 실행 신뢰성(WorldCycle, GUARD, SAFECAST, PhyLatent), 무라벨 신뢰 신호 감사(Consensus-Accuracy Coupling, Consistency Blind Spot, Zero-Shot Uncertainty), 의료 파운데이션 모델 감사(Big Bright or Invisible, Curia-MAE), 병리 FM 감사(What Carries the Signal), AI 생성 콘텐츠 탐지 확장(K-Space Signature, Test-Time Curriculum, HexMIL)</td></tr>
+<tr><td><strong>저널 전용</strong></td><td>계산광학 코어 하드웨어·복원 신경망(COSMIC 조명계, prNet 위상 복원, spin-Hall QPI, LiftHolo CGH, Frequency-Aware Fourier Ptychography, OptoMPGD 코드화 회절 위상 복원, 홀로그래픽 마이크로 유동세포계수기)</td></tr>
+<tr><td><strong>같은 단어, 다른 맥락</strong></td><td>'uncertainty' — world model 쪽은 latent가 물리적 상태를 얼마나 식별 가능하게 담는지를 가리키는 반면, 3DGS-CT 쪽은 posterior calibration을, VLM 쪽은 답변 확신도(confidence)를 가리켜 같은 단어라도 재는 대상이 다릅니다. 'reconstruction' — 3DGS/CT splat의 장면 수준 재구성과 photoacoustic/CBCT의 물리 신호 재구성, PDE 에뮬레이션이 같은 단어로 섞여 나와 도메인 구분이 필요합니다. '감사(정말 무엇을 배웠는가 캐묻기)' — 이번 주는 병리·CT·world model·VLM 네 도메인 모두에서 같은 의미로 쓰였지만, 검증 대상(표현/latent/신뢰도 신호)이 도메인마다 다릅니다.</td></tr>
+</tbody>
+</table>
+
+<h2>🔥 주간 Top 5</h2>
+<ol>
+<li>
+  <strong><a href="https://arxiv.org/abs/2608.05720">PhyLatent: Learning Dynamics-Relevant Representations for JEPA World Models</a></strong>
+  <span class=tag>[해부분석]</span><br>
+  world model latent 표현이 "하나의 점으로 뭉개지지만 않으면 된다"는 오래된 평가 기준을 정면으로 반박하고, 물리적 상태·행동 결과를 실제로 담고 있는지를 세 가지 구체적 실패 유형으로 나눠 진단해 모델예측제어 성공률을 최대 17%p 끌어올렸습니다. 이번 주 전체를 관통하는 "검증 기준 자체를 캐묻는" 메타 감사 흐름을 가장 정량적으로 보여준 논문입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2607.13682">Posterior Variance Is a Constraint Map, Not an Error Map: Closed-Form Uncertainty for Radiative Gaussian Splatting in Sparse-View CT</a></strong>
+  <span class=tag>[경고신호]</span><br>
+  3DGS 기반 CT 재구성의 불확실성 지도가 전체 평균으로는 잘 작동하는 것처럼 보이지만, 정작 의사가 읽는 조직 내부 영역에서는 순위 상관이 0.11로 무너진다는 걸 보였습니다. 랩이 재구성 결과에 불확실성 지도를 붙일 때 전체 평균 성능만 보고 안심하면 안 된다는 직접적 경고입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2608.04964">WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models</a></strong>
+  <span class=tag>[평가축]</span><br>
+  행동을 했다가 정확히 반대로 되돌리면 원래 상태로 돌아와야 한다는 물리적 사실을 검증 신호로 써서, 정답 라벨 없이도 world model이 행동을 진짜로 이해했는지 확인하는 방법을 냈습니다(상태 복귀 오차 최대 44% 감소). 랩의 시간 시퀀스 재구성(4D CT, 동적 홀로그래피) 평가에도 그대로 옮겨볼 수 있는 드문 사례입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2608.04510">GUARD: Grounding Uncertainty and Ablation-Based Risk Detection for Diffusion-Based VLAs</a></strong>
+  <span class=tag>[실사용전환]</span><br>
+  VLA 내부 신호를 일부러 없애보고 행동 생성이 얼마나 달라지는지를 봐서, 그 행동이 실제 시각·언어 근거에 의존해 나온 것인지를 실행 중에 판별합니다. 다섯 개 정책·벤치마크 조합 중 네 개에서 기존 최고 방법보다 평균 5.73%p 높은 탐지 성능을 냈다는 구체적 수치가 이 방향의 실용성을 뒷받침합니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2608.02937">ScoreField: Neural Inverse Scattering with Score-Based Generative Priors</a></strong>
+  <span class=tag>[방법전환]</span><br>
+  전자기 역산란에서 물리 방정식은 강하게 그대로 지키면서 "이 결과가 그럴듯한가"라는 판단만 사전 학습된 스코어 모델이 대신하도록 설계해, 물리 잔차와 생성 사전을 분리하는 이번 주 역문제 복원 갈림의 한쪽 축을 대표합니다. 랩의 sparse-view 단층촬영·QPI 복원 파이프라인에 바로 이식해볼 수 있는 설계입니다.
+</li>
+</ol>
+
+<h2>🌟 Weekly Deep-Dive — 지난주의 대표 논문</h2>
+<div class=dd>
+  <h3>PhyLatent: Learning Dynamics-Relevant Representations for JEPA World Models (2608.05720)</h3>
+  <p><em>왜 주간 대표인가</em>: 지난주는 화요일 3DGS 불확실성 감사에서 시작해 목요일 world model·VLA 실행 검증을 거쳐 금요일 "검증 기준 자체를 캐묻는" 메타 감사로 이어진 한 주였습니다. PhyLatent는 이 흐름의 종착점이자 가장 정량적인 증거를 제시한 논문이라, 특정 요일의 단발 신호가 아니라 한 주 전체 서사가 도달한 결론을 대표합니다.</p>
+
+  <p><strong>무엇을 했나</strong>: JEPA(Joint-Embedding Predictive Architecture) 계열 world model은 그동안 "잠재표현이 하나의 점으로 뭉개지지(collapse) 않으면 학습이 잘 된 것"이라는 기준으로 평가됐습니다. PhyLatent는 이 기준이 충분하지 않다고 못박고, physical invariance collapse(물리적으로 같은 상태인데 표현이 달라지는 실패)·physical identifiability collapse(서로 다른 물리 상태인데 표현이 같아지는 실패)·counterfactual dynamics collapse(행동을 바꿔도 예측이 달라지지 않는 실패)라는 세 가지 구체적 실패 유형을 정의해 각각을 진단하는 학습 경로를 추가했습니다. 그 결과 세 실패율을 15.60%·6.71%·8.41%에서 7.53%·0.95%·4.62%로 낮췄고, OGBench-Cube에서 모델예측제어(MPC) 성공률을 70.0%에서 78.1%로, TwoRooms에서는 81.0%에서 98.0%로 끌어올렸습니다.</p>
+
+  <p><strong>왜 새로운가</strong>: 지금까지 JEPA/world model 연구는 "표현이 붕괴하지 않았는가"라는 하나의 기준으로 학습 성공 여부를 판단했습니다. PhyLatent는 그 기준을 통과한 표현도 실제로는 물리적 의미를 담지 못할 수 있다는 걸 세 가지 구체적 진단으로 쪼개 보여줬다는 점에서, "학습이 안정적으로 됐는가"에서 "그 안정적인 표현이 실제로 무엇을 담고 있는가"로 검증의 층위를 한 단계 끌어올렸습니다.</p>
+
+  <p><strong>랩 관련성</strong>: 랩이 압축센싱이나 위상 복원처럼 diffusion prior latent를 쓰는 파이프라인을 갖고 있다면, 이 논문의 세 가지 collapse 진단(불변성/식별성/counterfactual dynamics)을 그대로 가져와 우리 복원 latent가 실제 물리량(위상, 굴절률, 산란계수)을 담고 있는지 정량 검증할 수 있습니다. 특히 "입력을 의도적으로 바꿔봤을 때 latent도 그에 맞게 바뀌는가"라는 counterfactual 진단은, 우리가 아직 눈으로만 확인해 온 복원 결과의 물리적 타당성을 수치로 바꿔줄 수 있습니다.</p>
+
+  <p><strong>주의</strong>: 실험 도메인은 OGBench-Cube·TwoRooms·Reacher·PushT 등 로봇 조작·내비게이션 시뮬레이션으로, 계산 이미징 역문제의 forward model과 구조가 상당히 다릅니다. 세 가지 collapse 정의를 광학 역문제의 "물리적으로 같은 상태"·"서로 다른 물리 상태"에 어떻게 대응시킬지는 별도 설계가 필요하고, counterfactual 개입(행동을 바꿔보는 것)에 대응하는 광학 역문제의 개입 방식(조명 패턴 변경, 마스크 재설계 등)도 랩에서 새로 정의해야 합니다 [Claim risk].</p>
+</div>
+
+<h2>🧭 주간 테마 3개</h2>
+<div class=theme-card>
+  <h3>1. "공짜로 믿어온 신뢰 신호"를 캐묻는 감사가 화요일부터 금요일까지 점점 넓은 시스템으로 번짐</h3>
+  <p>화요일 3DGS 불확실성 지도 감사와 병리 파운데이션 모델 신호 감사에서 시작해, 목요일 video world model 가역성과 VLA 실행 중 실패 탐지를 거쳐, 금요일에는 latent collapse 기준·무라벨 신뢰도 신호(합의·일관성·확신도)·의료 파운데이션 모델 고정 특징까지 검증 대상이 넓어졌습니다. 랩이 이 흐름을 눈여겨봐야 하는 이유는, 우리가 쓰는 불확실성 지도·학습된 사전·latent 표현도 같은 방식으로 감사받을 수 있고 또 받아야 한다는 뜻이기 때문입니다.</p>
+  <p><em>Confidence: High — 화~금 나흘, 서로 다른 도메인 5편 이상이 같은 메타 질문으로 수렴</em></p>
+</div>
+<div class=theme-card>
+  <h3>2. AI 생성·조작 콘텐츠 탐지가 자연 사진에서 의료·위성 영상으로 사흘 내내 확장</h3>
+  <p>월요일 귀속·설명가능성이라는 세 갈래로 넓어진 뒤, 화요일 배포 후 지속 적응, 목요일 의료 CT 볼륨과 위성 영상까지 도메인이 계속 확장됐습니다. 다음 확장 지점이 우리 랩이 다루는 현미경·병리·virtual staining 영상인지가 다음 주 관찰 포인트입니다.</p>
+  <p><em>Confidence: High — 월·화·목 사흘, 5편 이상이 서로 다른 진입점에서 도메인을 계속 넓힘</em></p>
+</div>
+<div class=theme-card>
+  <h3>3. 계산광학 코어는 순환이 아니라 한 주 내내 고르게 얇은 가뭄</h3>
+  <p>지난주 weekly가 예측한 "요일별 버킷 순환"은 이번 주 나타나지 않았고, 5개 핵심 버킷 모두 월~금 내내 0~3편 사이에 머물렀습니다. 역문제 신뢰성 축의 계산광학 코어 전이 예측도 5주 연속 빗나가, 이 도메인의 관찰 방식 자체를 재점검할 필요가 있습니다.</p>
+  <p><em>Confidence: Low — 월~금 닷새 내내 뚜렷한 순환·집중 패턴이 없음</em></p>
+</div>
+
+<h2>🪞 지난 예측 채점 (W31 → W32)</h2>
+<div class=pred-card>
+  <h3><span class=review-miss>✗</span> 3D Gaussian Splatting 최소 입력 직접 생성이 사람을 넘어 조직·시편 3D 표현으로 확장</h3>
+  <p>이번 주 3DGS 흐름은 월요일 자산 유지보수, 화요일 신뢰성 감사, 목요일 CT 재구성의 물리적 실패 조건으로 이어졌지만, 사람 아바타를 넘어 현미경 시편이나 의료 영상 도메인에서 최소 입력(단일 이미지/텍스트)으로 3D/4D Gaussian 표현을 직접 생성한 논문은 나오지 않았습니다. 흐름 자체가 "직접 생성"에서 "신뢰성 감사"와 "물리적 실패 조건"으로 방향을 틀어 빗나갔습니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-miss>✗</span> 역문제 신뢰성 축(수렴 보장·통계적 정지 기준)이 계산광학 코어로 직접 번짐</h3>
+  <p>이번 주 신뢰성 관련 논문(Posterior Variance, PhyLatent, GUARD 등)은 3DGS-CT·world model·VLA 도메인에 머물렀고, Fourier ptychography·정량 위상 영상·홀로그래피·lensless에서 수렴 보장이나 통계적 정지 기준을 직접 다룬 논문은 없었습니다. 5주 연속으로 이 예측이 빗나갔습니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-miss>✗</span> 계산광학 코어의 "요일별 버킷 순환" 패턴이 4주 연속 반복되는지 확인</h3>
+  <p>지난주처럼 특정 버킷이 하루 3편 이상 반짝였다가 다음 날 다른 버킷으로 넘어가는 순환은 관찰되지 않았습니다. 대신 5개 버킷 모두 월~금 내내 0~3편 사이에서 고르게 얇았습니다 — 순환이 아니라 가뭄에 가까운 패턴으로, 예측이 빗나갔습니다.</p>
+</div>
+
+<h2>🔮 다음주 예측</h2>
+<div class=pred-card>
+  <h3>1. AI 생성·조작 콘텐츠 탐지의 도메인 확장이 계산 이미징 핵심 도메인으로 직접 들어온다</h3>
+  <p>월·화·목 사흘에 걸쳐 자연 사진에서 의료 CT·위성 영상으로 번진 AI 생성·조작 콘텐츠 탐지 문제의식이, 다음 주에는 현미경·병리·정량 위상 영상처럼 우리 랩이 직접 다루는 도메인을 정면으로 겨냥한 논문으로 이어진다.</p>
+  <div class=cond>✅ 적중 조건: 가상 염색(virtual staining)·현미경·병리·QPI 등에서 AI 생성/합성 영상 탐지 또는 진위 판별을 직접 다룬 논문 1편 이상</div>
+  <div class=cond>✗ 빗나감 조건: 계속 자연 사진·의료 CT·위성 영상에만 머물거나 관련 논문이 없으면 빗나감</div>
+</div>
+<div class=pred-card>
+  <h3>2. "공짜 신뢰 신호 감사"가 계산 이미징 역문제의 불확실성 정량화로 직접 이어진다</h3>
+  <p>목~금 급부상한 "검증 기준 자체를 캐묻는" 감사(latent collapse 진단, 무라벨 신뢰도 신호 감사, 파운데이션 모델 고정 특징 감사)의 논리가, 다음 주에는 계산 이미징 역문제(위상복원·CT·lensless)에서 쓰는 불확실성 지도나 학습된 사전에 직접 적용된 논문으로 이어진다.</p>
+  <div class=cond>✅ 적중 조건: FP·QPI·CT·lensless 등에서 학습된 사전이나 불확실성 지도가 실제 오차와 얼마나 일치하는지 정량 감사한 논문 1편 이상</div>
+  <div class=cond>✗ 빗나감 조건: 계속 로봇/VLM/일반 의료 파운데이션 모델 도메인에만 머물면 빗나감</div>
+</div>
+<div class=pred-card>
+  <h3>3. 계산광학 코어의 가뭄이 다음 주에도 이어진다</h3>
+  <p>이번 주 계산광학 코어 5개 버킷 모두 하루 3편을 넘긴 날이 없었던 가뭄 패턴이, 다음 주에도 순환이나 회복 없이 이어진다.</p>
+  <div class=cond>✅ 적중 조건: 다음 주에도 5개 버킷 모두 매일 실질 신호 2편 이하에 머무름</div>
+  <div class=cond>✗ 빗나감 조건: 5개 버킷 중 하나라도 특정 하루에 3편 이상의 실질 신호를 내면 빗나감(가뭄이 아니라 회복 또는 순환으로 판단)</div>
+</div>
+
+<h2>🧪 다음 주 1주 실행안</h2>
+<div class=action-card>
+  <h3>1. Posterior Variance·PhyLatent의 진단 절차를 랩 복원 latent/불확실성 지도에 이식</h3>
+  <p>Posterior Variance의 masked calibration·seed-wise bias decomposition 프로토콜을 우리 랩 sparse-view 단층촬영 3DGS 재구성 파이프라인에 적용하고, PhyLatent의 physical invariance/identifiability/counterfactual dynamics collapse 진단 절차를 위상복원·압축센싱에서 쓰는 diffusion prior latent 표현에 이식.</p>
+  <p><em>기대 산출물: 우리 불확실성 지도/latent 표현이 조직 내부 영역·counterfactual 개입에서도 신뢰도를 유지하는지 보여주는 정량 비교표</em></p>
+</div>
+<div class=action-card>
+  <h3>2. HexMIL·K-Space Signature식 생성 콘텐츠 탐지를 virtual staining 파이프라인에 baseline 적용</h3>
+  <p>HexMIL의 ante-hoc attention 기반 판단과 K-Space Signature의 주파수 영역 탐지를 우리 랩 virtual staining/합성 현미경 영상 신뢰성 검증에 적용해, 실제 vs AI 생성 조직 영상을 cross-generator 프로토콜로 구분할 수 있는지 baseline 실험.</p>
+  <p><em>기대 산출물: 생성기별(학습에 쓴 생성기 vs 처음 보는 생성기) 탐지 AUC/F1 비교표</em></p>
+</div>
+<div class=action-card>
+  <h3>3. 계산광학 코어 5개 버킷의 요일별 실신호 로그를 3주 이상 지속 추적</h3>
+  <p>이번 주 관찰된 "순환이 아니라 가뭄" 진단을 검증하기 위해, daily trends 데이터에서 FP·Lensless·Phase·Meta-Optics·Light-Field 5개 버킷의 요일별 실신호(키워드 우연 매칭 제외) 편수를 다음 3주간 계속 기록.</p>
+  <p><em>기대 산출물: 3주간 계산광학 코어 5버킷의 요일별 실신호 편수 히트맵과 가뭄/회복/순환 여부 판정</em></p>
+</div>
+
+<h2>🧊 Skim-only / Watch-only 흐름</h2>
+<ul class=plain>
+  <li><strong>[Watch-only] 계산 병리가 "조직 사진 → 진단 라벨"에서 "조직 사진 → 분자·공간 상태 예측"으로 옮겨가는 신호</strong> — 수요일 하루(공간 프로테오믹스 결합, 방사선-병리-유전체 통합 벤치마크 OncoTriad-QA)만 뚜렷했습니다. 다음 주 다시 나타나는지 확인이 필요합니다 [Confidence Low].</li>
+  <li><strong>[Skim-only] 긴 영상/스트리밍 diffusion의 노출편향 대응이 서로 반대 방향으로 갈리는 논쟁적 신호</strong> — 금요일 네 편이 "과거 맥락을 깨끗하게 유지"와 "일부러 노이즈를 섞기"라는 정반대 해법을 동시에 내놓아, 아직 어느 쪽이 맞는지 정리되지 않았습니다. 랩 파이프라인 적용은 다음 라운드 검증 이후로 미룹니다.</li>
+  <li><strong>[Watch-only] diffusion 사전이 도메인 스케일과 충돌하는 함정(latent 스케일 불일치, 부적절한 평가지표)</strong> — 수요일 두 편이 지적했지만 단발 관찰이라, 이 함정이 다른 도메인에서도 반복되는지 계속 지켜볼 필요가 있습니다.</li>
+</ul>
+
+<h2>🔗 참고 링크</h2>
+<ul class=plain>
+  <li><a href="../posts/2026-08-03.html">2026-08-03 Daily Briefing (Mon)</a></li>
+  <li><a href="../posts/2026-08-04.html">2026-08-04 Daily Briefing (Tue)</a></li>
+  <li><a href="../posts/2026-08-05.html">2026-08-05 Daily Briefing (Wed)</a></li>
+  <li><a href="../posts/2026-08-06.html">2026-08-06 Daily Briefing (Thu)</a></li>
+  <li><a href="../posts/2026-08-07.html">2026-08-07 Daily Briefing (Fri)</a></li>
+  <li><a href="../posts/2026-08-03-weekly.html">2026-W31 Weekly Retrospective</a></li>
+  <li><a href="../feed.xml">RSS Feed</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>
