@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-08-10</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-08-10 (월요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-08-10 (월요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Monday, 10 August 2026"으로 일치하는 걸 확인하고 정상 Daily로 발행합니다. 오늘 오전 별도의 weekly 실행(지난주 2026-08-03~08-07 회고)이 이미 발행됐고, 이 daily는 그와 독립적으로 오늘자 신규 논문을 다룹니다. 저널(Crossref/OpenAlex) 수집은 평소대로 독립 수행됐습니다.</div>
+  <div>🔢 arXiv: cs.LG 144 · cs.CV 102 · cs.AI 201 · eess.IV 4 · eess.SP 15 (new+cross, replacement 제외, 합계 466)</div>
+  <div>🔢 병합: arXiv+저널(246건) 병합 스캔 623건 · ROI 배정 169건 (27.1%) — 최근 밴드(25~33%)와 비슷한 정상 범위</div>
+  <div>⚠️ 오늘 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) 5개 버킷을 다시 훑었는데, 실제 이미징과 관련된 논문이 사실상 0편입니다(전파천문학 안테나, 중력이론의 "holographic" 상전이, 무선통신용 메타표면, 열복사 소자 등 키워드 우연 매칭). 대신 diffusion 기반 이미지 복원이 "열화가 공간적으로 균일하다"는 전제를 버리는 쪽으로 4편이 한꺼번에 나왔고, 의료·과학 파운데이션 모델의 강건성을 직접 재는 논문들, world model을 반복 rollout 없이 학습·통합하려는 흐름이 눈에 띕니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 arXiv의 무게중심은 <strong>"diffusion 기반 이미지 복원과 생성이 균일한 가정을 하나씩 버리는 날"</strong>입니다 — 이미지 복원 쪽에서는 고정된 step size·고정된 patch·고정된 제약이 실제 사진의 공간적으로 불균일한 열화를 못 따라간다는 진단이 4편(LEADer·WaveFreqAnchor·FIT·HazeSpikeMamba) 동시에 나왔고, diffusion 생성을 강화학습으로 정렬할 때도 "마지막 보상 하나를 모든 denoising 단계에 똑같이 뿌리는" 관행이 문제라는 지적이 2편(SGPO·PAST) 나왔습니다. 의료·과학 파운데이션 모델 쪽에서는 "크게 학습했으니 강건할 것"이라는 가정을 MRI 아티팩트·심장 MRI·PDE 세 도메인에서 각각 직접 측정했고, world model 연구는 반복 rollout으로 오차를 쌓는 대신 종단점을 한 번에 예측하거나(DPWM) 여러 JEPA 변형을 하나로 합치는(UniJEPA) 쪽으로 움직였습니다. 계산광학 코어(Fourier Ptychography·Lensless·Phase·Meta-Optics·Light-Field)는 오늘 실제 이미징 신호가 사실상 0편으로, 지난주보다도 더 얇은 하루입니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(8/10, 월)은 arXiv /new에 cs.LG 144편, cs.CV 102편, cs.AI 201편, eess.IV 4편, eess.SP 15편(합계 466편)이 잡혔고, 저널 246건을 더한 병합 스캔 623건 중 169건(27.1%)이 ROI로 선정됐습니다. 오늘 가장 뚜렷했던 흐름은 diffusion 모델이 여러 층위에서 "모든 곳에 같은 규칙을 적용한다"는 단순화를 걷어내고 있다는 점입니다. 이미지 복원에서는 LEADer가 diffusion 기반 이미지 복원(DMIR, Diffusion Model-based Image Restoration)이 흔히 쓰는 고정 step size·고정 데이터 제약이 사진의 특정 영역에만 열화가 몰려 있는 경우(공간적으로 불균일한 열화)에 취약하다는 걸 짚었습니다. 픽셀별 불확실성으로 prior 세기와 step 크기를 그때그때 조절하는 방식을 제안해, 여러 기존 DMIR 방법에 꽂아 넣기만 해도(plug-and-play) 성능이 오르고 샘플링 시간이 줄었다고 보고합니다.</p>
+<p>같은 날 나온 WaveFreqAnchor(재학습 없이 얼굴 복원 궤적을 파형 구조로 고정)·FIT(열화 정도에 따라 이미지를 자르는 방식 자체를 바꾸는 all-in-one 복원 모델, 5개 벤치마크에서 기존 대비 +0.5~1.1dB PSNR)·HazeSpikeMamba(합성 안개-실제 안개의 간극을 자기지도 방식으로 메우는 안개 제거 모델, 실사진 벤치마크 3종에서 무참조 화질 지표 개선)까지 묶어보면, "복원 모델이 사진 전체를 하나의 규칙으로 다뤄서는 안 된다"는 진단이 서로 다른 응용(얼굴·범용 복원·안개 제거)에서 동시에 나온 셈입니다. 한편 diffusion 생성을 강화학습으로 정렬하는 쪽에서도 비슷한 얘기가 나왔습니다 — SGPO와 PAST 두 편은 denoising 과정의 초반(혼돈에서 벗어나는 단계)·중반(구조가 잡히면서 다양성을 유지해야 하는 단계)·후반(디테일만 다듬는 단계)이 서로 다른 일을 하는데도, 기존 RL 정렬 방법이 최종 보상 하나를 모든 단계에 그대로 되풀이해서 배분한다는 걸 짚고, 단계별로 다른 목적함수·보상을 주는 방식으로 생성 품질과 학습 효율을 모두 끌어올렸습니다.</p>
+<p>의료·과학 영상 쪽에서는 "파운데이션 모델이니까 새 도메인에도 잘 통하겠지"라는 낙관을 직접 재는 논문들이 나왔습니다. 3D 의료 파운데이션 인코더 5종을 MRI 아티팩트 7종·5단계 손상 조건에서 비교한 논문은, 어떤 인코더는 안정적이고 어떤 인코더는 특정 아티팩트에 유난히 취약하다는 걸 보였고, 표현 기하학이 흔들려도 차원 붕괴는 없는 경우가 많아 기존에 흔히 쓰는 지표 하나만으로는 강건성을 판단하기 어렵다는 점도 드러났습니다. 심장 MRI 파운데이션 모델을 여러 시점·여러 시퀀스에 적용한 챌린지 논문은 일반 분할은 잘 되지만(Dice 0.86~0.90) 흉터 조직을 보는 LGE 분할은 여전히 어렵다(Dice 0.62~0.85)는 걸 수치로 보여줬습니다. World model 연구에서는 DPWM이 "짧은 구간 예측 손실로 학습하고 실제로는 여러 번 반복해서 먼 미래까지 굴린다"는 기존 관행의 어긋남을 지적하고, 행동 시퀀스를 통째로 넣어 종단점을 한 번에 예측하도록 학습 목표 자체를 바꿨습니다. 같은 목적함수를 기존 반복형 모델에 그대로 적용해도 성능이 오른다는 걸 보여, "구조보다 학습 목표가 핵심"이라는 주장을 뒷받침했습니다. UniJEPA는 이미지용·영상용으로 흩어져 있던 JEPA(Joint-Embedding Predictive Architecture, 원본 픽셀 대신 잠재공간에서 다음 상태를 예측하도록 학습하는 self-supervised 구조) 변형들을 하나의 공유 latent 공간으로 합쳤습니다. 계산광학 코어(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics·Light-Field) 5개 버킷은 오늘 다시 훑었지만 실제 이미징 신호가 사실상 없었습니다 — 전파천문학 안테나 설계, 중력이론의 "holographic" 상전이(광학과 무관한 AdS/CFT 이론), 무선통신용 메타표면, 열복사 소자처럼 키워드만 겹치는 논문들이었습니다.</p>
+<p>다음 관찰 포인트는 (1) diffusion 복원의 "공간 불균일 열화 대응" 흐름이 의료 영상(저선량 CT, sparse-view 재구성)처럼 열화가 훨씬 구조적인 도메인으로 확산되는지, (2) 파운데이션 모델 강건성 감사가 벤치마크 수준을 넘어 실제 배포 파이프라인의 사전 점검 절차로 자리 잡는지, (3) world model의 "종단점 직접 예측" 학습 목표가 로봇 조작을 넘어 다른 시계열 예측 도메인(영상 생성, 재구성)으로 옮겨가는지입니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>지난주 금요일(8/7)은 world model의 잠재표현이 "붕괴하지 않으면 OK"에서 "물리적으로 의미 있어야 한다"로 검증 기준이 세분화된 하루였고, VLM(비전-언어 모델)의 무라벨 신뢰도 신호(합의·일관성·확신도)가 정확도와 따로 논다는 걸 감사하는 논문 3편, 의료 파운데이션 모델의 고정 특징이 작고 드문 구조를 놓치는 조건을 정량 감사하는 논문 4편이 중심이었습니다. 오늘(8/10, 월)은 world model 얘기가 완전히 새로운 각도로 다시 나왔습니다 — 지난주가 "표현이 실제로 뭘 담고 있나"를 캐물었다면, 오늘은 "그 표현/모델을 어떻게 학습·조합해야 반복 rollout의 오차 누적 없이 먼 미래까지 갈 수 있나"를 묻는 쪽으로(DPWM·UniJEPA·AtlasVLA) 옮겨갔습니다. 의료 파운데이션 모델 감사도 이어지긴 했지만, 지난주가 "작은 병변을 놓치는 조건"에 집중했다면 오늘은 "아티팩트·다중 시퀀스에서 표현/성능이 얼마나 흔들리는가"로 각도가 달라졌습니다. 오늘 가장 새롭게 등장한 축은 diffusion 기반 이미지 복원·생성이 "균일한 가정"을 버리는 흐름(복원 4편 + RL 정렬 2편)인데, 이는 지난주 금요일에는 없던 신호입니다. 계산광학 코어는 지난주(16편 중 실이미징 4~5편, EvReflection 1편이 유일한 arXiv 신규)보다 오늘이 더 얇습니다 — 오늘은 8개 버킷 편수 자체는 지난주와 비슷하지만, 실제로 읽어보면 이미징 신호가 거의 남지 않았습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Diffusion 기반 이미지 복원이 "열화는 공간적으로 균일하다"는 전제를 버림</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.06981" target=_blank>LEADer</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.06717" target=_blank>WaveFreqAnchor</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.06832" target=_blank>FIT</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.06886" target=_blank>HazeSpikeMamba</a> <span class=pill>CV</span>
+  </td>
+  <td>Diffusion으로 사진을 복원하는 기존 방법들은 "고장 난 부분이 사진 전체에 고르게 퍼져 있다"고 가정하고, 어디서나 같은 step 크기·같은 patch 크기·같은 제약을 적용해 왔습니다. 그런데 실제 저품질 사진은 특정 영역에만 노이즈가 심하거나, 일부만 흐릿하거나, 안개가 불균일하게 낀 경우가 훨씬 많습니다. 오늘 나온 네 편은 이 문제를 서로 다른 응용(범용 복원·얼굴 복원·안개 제거)에서 짚습니다. LEADer는 픽셀별 불확실성을 계산해서 어디를 더 세게 복원하고 어디는 그대로 둘지, 그리고 몇 스텝을 쓸지를 그때그때 정합니다. FIT는 아예 사진을 잘라서 토큰으로 만드는 단계부터 열화 정도에 따라 자르는 방식 자체를 바꿉니다(5개 벤치마크에서 기존 대비 최대 +1.1dB PSNR). WaveFreqAnchor는 얼굴 복원에서 구조가 무너지지 않도록 파형 기반으로 궤적을 고정하고, HazeSpikeMamba는 합성 안개로 학습한 모델이 실제 안개 사진에서 성능이 떨어지는 문제를 정답 없이(자기지도) 실사진에 맞춰가는 방식으로 풉니다. 네 편을 같이 보면, "모델 하나로 모든 열화를 똑같이 다룬다"는 접근에서 "사진 안에서도, 사진마다도 다르게 반응한다"는 접근으로 복원 연구가 옮겨가고 있다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 저자군 4편이 범용 복원·얼굴 복원·안개 제거라는 다른 응용에서 같은 진단(고정 스케줄은 불균일한 열화를 못 따라간다)에 도달했고, FIT는 5개 벤치마크 수치까지 제시</small></td>
+  <td>LEADer의 픽셀별 불확실성 기반 step 조절을 우리 랩 위상복원/압축센싱 diffusion prior 파이프라인에 적용해, 산란이 심한 영역과 약한 영역이 섞인 실제 촬영 데이터에서 복원 품질·샘플링 시간이 균일 스케줄 대비 실제로 개선되는지 ablation 비교</td>
+</tr>
+<tr>
+  <td><strong>Diffusion 강화학습 정렬이 "denoising 단계별로 다른 목적"을 인정하기 시작</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.06768" target=_blank>SGPO</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.06794" target=_blank>PAST</a> <span class=pill>CV</span>
+  </td>
+  <td>Diffusion 모델을 사람 선호도에 맞춰 강화학습(RL)으로 미세조정할 때, 지금까지는 최종 결과물에 대한 보상 하나를 만들어서 denoising 전 과정의 모든 단계에 똑같이 되돌려 배분하는 방식이 표준이었습니다. 문제는 denoising 초반(아직 형태가 안 잡힌 혼돈 상태를 벗어나는 단계)과 후반(이미 구조는 정해지고 디테일만 다듬는 단계)이 하는 일이 전혀 다른데도 같은 보상 신호를 받는다는 겁니다. 그러면 모델이 최종 보상만 노리는 지름길을 학습(reward hacking)하거나, 어느 단계에서 무엇을 잘했는지 구분할 수 없게 됩니다. SGPO는 신호 대 잡음비와 의미 변화량으로 지금이 초반·중반·후반 중 어디인지 자동으로 판단해서 단계마다 다른 목적(초반은 혼돈 탈출, 중반은 다양성 유지, 후반은 안정적 수렴)을 부여했고, PAST는 한 걸음 더 나가 "이 프롬프트는 몇 스텝이면 충분한지"까지 자동으로 판단해서 학습 길이 자체를 줄입니다. 두 편을 같이 보면, diffusion RL 정렬 연구가 "언제 보상을 줄지"뿐 아니라 "각 단계가 실제로 무슨 역할을 하는지"까지 학습 설계에 반영하는 방향으로 가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>2편만 동시 등장했지만 둘 다 "보상을 모든 step에 균일 배분하는 게 문제"라는 정확히 같은 진단에서 출발했고, 둘 다 정량 개선 수치(SGPO +26.7%/+36.7%, PAST 효율 +66.7%)를 제시</small></td>
+  <td>SGPO의 단계 판별 지표(신호 대 잡음비 + 의미 변화량)를 우리 랩이 diffusion prior로 학습한 재구성 모델의 학습 스케줄 설계에 적용해, 재구성 loss를 전체 denoising에 균일하게 줄지 단계별로 다르게 줄지 비교</td>
+</tr>
+<tr>
+  <td><strong>"파운데이션 모델이니 강건하겠지"라는 가정을 의료·과학 영상에서 직접 재는 흐름</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.06613" target=_blank>MRI Foundation Robustness</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.07291" target=_blank>Cardiac MRI Foundation Adaptation</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.07053" target=_blank>PDE Foundation Model Adaptation</a> <span class=pill>AI</span>
+  </td>
+  <td>대규모 데이터로 미리 학습한 파운데이션 모델을 가져다 쓰면 새 도메인에도 어느 정도 잘 통할 거라는 낙관이 널리 퍼져 있는데, 오늘 나온 세 편은 이 낙관을 직접 측정합니다. MRI 파운데이션 인코더 5종을 아티팩트 7종·손상 5단계로 흔들어본 논문은, 어떤 인코더는 비교적 안정적이고 어떤 인코더는 특정 아티팩트에 유난히 취약하다는 걸 보였고, 표현이 흔들려도 차원 자체는 안 무너지는 경우가 많아서 흔히 쓰는 지표 하나만으로는 강건성을 판단할 수 없다는 것도 드러났습니다. 심장 MRI 파운데이션 모델을 여러 시점·시퀀스에 적용한 챌린지 제출 논문은, 일반적인 심장 구조 분할은 잘 되지만(Dice 0.86~0.90) 흉터 조직을 보는 LGE 분할은 여전히 어렵다(Dice 0.62~0.85)는 걸 수치로 보였습니다. PDE 파운데이션 모델 논문은 정답 solution 데이터 없이도 새로운 방정식 계열에 적응할 수 있는지를 다룹니다. 세 편을 같이 보면, "크게 학습했으니 전이가 잘 될 것"이라는 가정이 이제는 검증 없이 통과되지 않고, 도메인·조건별로 하나하나 직접 재보는 단계로 넘어가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 3편이 MRI·심장 MRI·PDE라는 다른 영역에서 같은 결론(전이 가능성은 가정이 아니라 측정 대상)에 도달했지만, 세 논문이 서로 인용하거나 같은 벤치마크를 쓰지는 않음</small></td>
+  <td>MRI 파운데이션 강건성 논문의 CKA·RankMe·UMAP 다축 평가 절차를 우리 랩이 재구성 앞단에서 쓰는 사전학습 인코더(있다면)에 적용해, 언더샘플링·모션 아티팩트 조건별로 표현이 실제로 얼마나 흔들리는지 측정</td>
+</tr>
+<tr>
+  <td><strong>World model이 "반복 rollout으로 미래를 쌓기"에서 "종단점 직접 예측·표현 통합"으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.07420" target=_blank>DPWM</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2608.07409" target=_blank>UniJEPA</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.06729" target=_blank>AtlasVLA</a> <span class=pill>CV</span>
+  </td>
+  <td>기존 world model은 한 스텝씩 미래를 예측하는 손실로 학습한 뒤, 실제로 쓸 때는 그 한 스텝짜리 모델을 여러 번 반복해서 먼 미래까지 굴렸습니다. 문제는 학습 때 최적화하는 목표(짧은 구간에서 잘 맞히기)와 실제 쓰임(긴 시퀀스를 반복해서 굴렸을 때도 안 어긋나기)이 다르다는 점입니다 — 짧게는 맞아도 여러 번 반복하면 작은 오차가 계속 쌓입니다. DPWM은 이 어긋남을 정면으로 지적하고, 행동 시퀀스 전체를 하나의 임베딩으로 압축해서 종단점을 한 번에 예측하도록 학습 목표 자체를 바꿨습니다. 흥미로운 건 같은 목적함수를 기존의 반복형(재귀) 모델에 그대로 적용해도 성능이 올랐다는 점인데, 이는 "어떤 구조를 쓰느냐"보다 "무엇을 최적화하느냐"가 긴 시퀀스 예측 정확도를 좌우한다는 뜻입니다. UniJEPA는 다른 각도에서 비슷한 문제를 다룹니다 — 이미지 한 장 안에서 가려진 부분을 맞히는 JEPA, 영상에서 다음 장면을 예측하는 JEPA가 서로 다른 설계로 나뉘어 있었는데, 이를 하나의 공유 latent 공간으로 합쳐서 이미지·영상·제어 벤치마크 전반에서 개별 설계와 동급 이상의 성능을 냈습니다. AtlasVLA는 로봇 조작에서 비슷한 문제(손목 카메라만 쓰면 화면 밖으로 나간 물체나 지금까지의 진행 상황을 잊어버림)를 지속적인 4D 월드-자기 상태 메모리로 풀어, 장기 과제에서 성공률을 크게 끌어올렸습니다. 세 편을 같이 보면, world model 연구가 "얼마나 자주 반복해서 굴릴 것인가"라는 설계에서 벗어나 "애초에 학습·표현을 어떻게 짜야 반복 없이도 먼 미래·긴 과제를 다룰 수 있는가"로 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>3편이 world model 학습 목표(DPWM)·표현 통합(UniJEPA)·응용(AtlasVLA)이라는 다른 층위에서 "반복 rollout에 의존하지 않는 표현/학습"이라는 같은 방향을 가리키지만, 서로 다른 벤치마크·서로 다른 팀이라 직접 비교는 어려움</small></td>
+  <td>DPWM의 "종단점 직접 예측" 목적함수를 우리 랩의 시계열 재구성(4D CT, 동적 홀로그래피 등) 순차적 디코딩 파이프라인에 적용해, 긴 시퀀스에서 오차 누적이 실제로 줄어드는지 기존 스텝별 손실 대비 비교</td>
+</tr>
+<tr>
+  <td><strong>계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field)가 오늘 사실상 0편 — 지난주보다 더 얇음</strong><span class=pill>WATCH</span></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.06574" target=_blank>Implicit Neural Speckle Denoising</a> <span class=pill>IV</span><br>
+    <a href="https://doi.org/10.1002/lpor.71701" target=_blank>Twin-Image Free Vectorial Holography (metasurface)</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 계산광학 코어 5개 버킷(FP 1·Lensless 1·Phase 2·Meta-Optics 4·Light-Field 0) 총 8편을 다시 하나씩 읽었는데, 실제 이미징과 관련된 신호는 사실상 0편입니다. Fourier Ptychography 1편은 전파천문학용 안테나 설계(레이더 원격탐사), Lensless 1편은 이미지 편집 diffusion 논문("MaskFlow")이 "coded"류 키워드에 우연히 걸린 것, Phase Imaging 2편 중 1편은 중력이론(AdS/CFT)의 "holographic" 상전이로 광학과 완전히 무관하고, Meta-Optics 4편은 전부 무선통신용 OAM 빔·플라즈모닉 안테나·열복사 냉각 소자로 이미징과 무관합니다. 그나마 눈에 띄는 건 두 가지입니다. 하나는 분류기에 걸리지 않았지만 직접 찾은 "Implicit Neural Speckle Denoising"으로, 동적 장면에서 스페클(간섭성 이미징 특유의 곱셈성 노이즈)을 재학습 없이 시공간 implicit neural representation과 조리개 인식 최대우도 방법으로 제거합니다 — 홀로그래피·초음파처럼 간섭성 이미징을 쓰는 우리 랩과 직결됩니다. 다른 하나는 저널 쪽 Phase Imaging 2편 중 나머지 1편으로, 비선형 카이랄 광학 메타표면으로 트윈 이미지 문제(홀로그래피 위상 복원의 고전적 모호성) 없는 다채널 벡터 홀로그래피를 구현한 하드웨어 논문입니다(초록 미제공, 제목 기준). 편수만 보면 지난주(16편 중 실신호 4~5편)보다도 더 얇지만, 스페클 제거 논문 하나는 방법론적으로 우리 랩과 직접 맞닿아 있어 놓치지 않을 가치가 있습니다.</td>
+  <td>Low<br><small>실이미징 신호가 스페클 제거 1편(arXiv)과 홀로그래피 메타표면 1편(저널, 초록 없음)뿐이라 이 상태가 이어질지는 편수 회복 여부로 판단 필요</small></td>
+  <td>Implicit Neural Speckle Denoising의 조리개 인식 최대우도 정식화를 우리 랩 디지털 홀로그래피/QPI(정량 위상 이미징) 파이프라인의 동적 장면(살아있는 세포 등) 스페클 제거에 이식성 검토 — 특히 관습적 스페클 평균화를 쓸 수 없는 단일 프레임·실시간 촬영 조건에서 비교</td>
+</tr>
+</tbody>
+</table>
+
+<p><small>⚠️ Domain Watch Lens 메모 — 오늘은 5개 행으로 표를 마쳤습니다(마지막 행은 WATCH). 계산광학 코어 5개 버킷 합계는 8편으로 지난주(16편)보다도 적고, 실이미징 신호는 위 표에서 다룬 2편(스페클 제거 arXiv 1편 + 홀로그래피 메타표면 저널 1편)이 사실상 전부입니다. Tomography/3D Imaging 13편은 PET 산란 보정·갈비뼈 골절 3D 위치추정·측두하악골 재건 등록·ZTE-MRI 형태 측정 4편 정도가 실질 의료영상 신호이고 나머지는 UAV 작물 3D 재구성, 적대적 위장복, Gaussian splatting 등 비의료 CV이거나 순수 임상 사례 보고입니다. Virtual Staining/Pathology 27편은 병리 관련이 test-time adaptation 설명가능성 논문 1편뿐이고 나머지는 관개 IoT·토양 안정화·진통제 약동학·직물 순환경제 등 "stain/label" 키워드가 우연히 겹친 완전 무관 도메인입니다.</small></p>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: diffusion 복원 균일-가정 탈피 클러스터(LEADer·WaveFreqAnchor·FIT·HazeSpikeMamba), diffusion RL 정렬 단계 분리(SGPO·PAST), 의료·과학 파운데이션 모델 강건성 감사(MRI·심장 MRI·PDE), world model 종단점 예측·표현 통합(DPWM·UniJEPA·AtlasVLA), Implicit Neural Speckle Denoising이 오늘 arXiv 쪽 핵심 신호였습니다.</li>
+  <li><strong>저널 전용</strong>: 홀로그래피 메타표면(트윈 이미지 억제, 초록 미제공) 정도가 실질 계산 이미징 신호였고, 나머지 저널(Meta-Optics 3편·Phase Imaging 1편 등)은 무선통신 안테나, 열복사 냉각, 중력이론 등 무관 도메인이었습니다. Virtual Staining/Pathology 저널 14건도 관개·토양·약학·섬유 등 완전히 다른 산업 분야였습니다.</li>
+  <li><strong>공통 키워드</strong>: "holographic"이 arXiv/CV 쪽에서는 등장하지 않았지만 저널 쪽에서는 광학 홀로그래피(메타표면)와 이론물리(AdS/CFT 상전이)로 완전히 다른 두 맥락에 갈라져 매칭됐습니다. "label-free"·"stain"도 저널 쪽에서 병리와 무관한 화학·농업 논문에 우연히 걸리는 사례가 이어졌습니다.</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 diffusion 방법론(복원·생성 정렬·world model)이라는 계산 이미징 코어 밖의 주제를 강하게 주도했고, 계산 이미징 코어 자체는 arXiv·저널 모두에서 지난주보다 더 얇았습니다. 이런 날은 diffusion 복원의 "불균일 열화 대응" 아이디어(LEADer·FIT)를 우리 랩의 재구성 파이프라인에 역수입할 기회로 볼 수 있습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. Diffusion 기반 이미지 복원이 "열화는 공간적으로 균일하다"는 전제를 버림</h3>
+  <p>LEADer는 픽셀별 불확실성으로 prior 세기·step 크기를 동적으로 조절하고, FIT는 patch 단계부터 열화 인식 tokenization을 적용해 5개 벤치마크에서 기존 대비 +0.5~1.1dB PSNR을 얻었으며, WaveFreqAnchor·HazeSpikeMamba는 각각 얼굴 복원·실사진 안개 제거에서 같은 문제의식(고정 규칙의 한계)을 공유합니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 저자군 4편이 다른 응용에서 같은 진단에 도달, FIT는 벤치마크 수치까지 제시</p>
+</div>
+
+<div class=ins>
+  <h3>2. Diffusion 강화학습 정렬이 "denoising 단계별로 다른 목적"을 인정하기 시작</h3>
+  <p>SGPO는 신호 대 잡음비·의미 변화량으로 denoising 단계를 자동 판별해 단계별 목적을 다르게 주고(생성 품질 +26.7%, 수렴 속도 +36.7%), PAST는 프롬프트 난이도까지 반영해 학습 episode 길이를 적응적으로 줄입니다(효율 +최대66.7%).</p>
+  <p class=conf-note>Confidence: Medium — 2편이 같은 진단(보상 균일 배분의 문제)에서 출발했지만 아직 더 확산되지는 않음</p>
+</div>
+
+<div class=ins>
+  <h3>3. "파운데이션 모델이니 강건하겠지"라는 가정을 의료·과학 영상에서 직접 재는 흐름</h3>
+  <p>MRI 파운데이션 인코더 5종은 아티팩트 종류에 따라 강건성이 모델마다 다르게 무너지고, 심장 MRI 파운데이션 모델은 일반 분할(Dice 0.86~0.90)은 잘 되지만 흉터 조직 LGE 분할(Dice 0.62~0.85)은 여전히 어려우며, PDE 파운데이션 모델은 정답 데이터 없이 새 방정식 계열로 적응하는 방법을 모색합니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편이 다른 영역(MRI·심장 MRI·PDE)에서 같은 결론(전이 가능성은 측정 대상)에 도달했지만 서로 인용·비교는 없음</p>
+</div>
+
+<div class=ins>
+  <h3>4. World model이 "반복 rollout"에서 "종단점 직접 예측·표현 통합"으로</h3>
+  <p>DPWM은 짧은 구간 예측 손실 대신 행동 시퀀스를 통째로 넣어 종단점을 한 번에 예측하도록 학습 목표를 바꿔 긴 horizon일수록 이득이 커졌고, UniJEPA는 이미지·영상 JEPA 변형을 하나의 공유 latent 공간으로 통합했으며, AtlasVLA는 지속적 4D 월드-자기 메모리로 장기 로봇 조작 성공률을 크게 끌어올렸습니다(LIBERO-Long +9.4%p, 실물 로봇 +17.5%p).</p>
+  <p class=conf-note>Confidence: Medium — 3편이 학습 목표·표현 통합·응용이라는 다른 층위에서 같은 방향을 가리키지만 직접 비교는 어려움</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. LEADer의 불확실성 기반 step 조절을 우리 랩 위상복원/압축센싱 diffusion prior에 이식</h3>
+  <p>LEADer가 이미지 복원에서 픽셀별 불확실성으로 prior 세기와 step size를 동적으로 조절한 절차를, 우리 랩의 위상복원·압축센싱 diffusion prior 파이프라인에 적용합니다. 공간적으로 불균일한 노이즈(산란·언더샘플링이 몰린 영역)가 섞인 실제 촬영 데이터에서 복원 품질과 샘플링 시간이 균일 스케줄 대비 실제로 개선되는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>LEADer의 공간적 불확실성 계산 절차(pixel-wise epistemic uncertainty)와 시간적 trajectory pruning 절차 재현</li>
+    <li>공통 benchmark: 우리 랩 위상복원/압축센싱 복원 파이프라인의 실촬영 데이터셋(불균일 노이즈 포함)</li>
+    <li>비교축: 균일 step 스케줄 vs 불확실성 기반 적응 스케줄의 복원 품질(PSNR/SSIM)·샘플링 시간</li>
+    <li>실패해도 남는 결과: 우리 도메인 데이터의 열화가 실제로 공간적으로 불균일한지에 대한 정량 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. MRI 파운데이션 모델 강건성 감사 프로토콜을 우리 랩 사전학습 인코더에 적용</h3>
+  <p>"Do 3D Medical Foundation Models See Through MRI Artifacts?"가 쓴 CKA·RankMe·UMAP 다축 강건성 평가와 분할 일치도 분석 절차를, 우리 랩이 재구성·복원 파이프라인 앞단에서 쓰는 사전학습 인코더(있다면)에 적용해 촬영 조건별 표현 흔들림을 정량화합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>CKA·RankMe 계산 파이프라인 재현, 우리 데이터에 적용 가능한 손상/아티팩트 5단계 설계(언더샘플링률, 모션 등)</li>
+    <li>공통 benchmark: 우리 랩이 보유한 사전학습 인코더 + 손상 조건별 재구성 결과 데이터셋</li>
+    <li>비교축: 손상 조건별 CKA/RankMe 변화, 표현 붕괴 여부와 다운스트림(재구성 품질) 성능 저하의 상관관계</li>
+    <li>실패해도 남는 결과: 우리 인코더의 촬영 조건별 강건성 프로파일 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. DPWM의 종단점 직접 예측 목적함수를 시계열 재구성 파이프라인에 적용</h3>
+  <p>DPWM이 world model 학습에서 짧은 스텝 손실 대신 종단점을 직접 예측하도록 목적함수를 바꾼 결과가 기존 재귀 baseline에도 그대로 적용됨을 보여준 것을, 우리 랩의 4D CT·동적 홀로그래피처럼 여러 프레임을 순차적으로 재구성하는 파이프라인에 적용합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>DPWM의 행동/조건 시퀀스 압축 + 종단점 직접 예측 구조를 우리 시계열 재구성 디코더에 이식</li>
+    <li>공통 benchmark: 우리 랩 4D CT 또는 동적 홀로그래피 시퀀스 데이터셋(긴 horizon 포함)</li>
+    <li>비교축: 스텝별 손실(기존) vs 종단점 직접 예측(신규)의 horizon별 오차 누적 곡선</li>
+    <li>실패해도 남는 결과: 우리 파이프라인에서 오차 누적이 학습 목표 문제인지 구조 문제인지에 대한 baseline</li>
+  </ul>
+</div>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘 아침 별도의 weekly 실행(지난주 2026-08-03~08-07 회고, <a href="../posts/2026-08-10-weekly.html" target=_blank>posts/2026-08-10-weekly.html</a>)이 다음주 예측을 이미 남겼습니다. 이 daily는 지난주 5일치 daily의 예측을 채점하는 역할이 아니라 오늘자 신규 논문을 다루는 실행이므로, 예측 채점은 weekly 문서를 참고해 주세요. 다만 지난주 금요일 인사이트에서 다음 관찰 포인트로 제시했던 "PhyLatent식 물리적 의미 검증이 다른 world model 계열로 확산되는지"는, 오늘 DPWM·UniJEPA가 다른 각도(반복 rollout 회피, 표현 통합)로 world model을 다뤘을 뿐 "물리적 의미 검증"이라는 축 자체는 오늘 논문에서 직접 이어지지 않았습니다 — 부분 확산(◐)으로 봅니다.</p>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Virtual Staining/Pathology(27편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:3.7%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:3.7%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:7.4%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:14.8%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:48.1%"></span></span><span class=n>13편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>27편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:70.4%"></span></span><span class=n>19편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>102편</span></div>
+
+<p><small>⚠️ 참고 — Domain Watch Lens: Fourier Ptychography 1편은 전파천문학 안테나 설계로 우리 ROI와 무관합니다. Lensless/Coded Imaging 1편(MaskFlow)은 이미지 편집 diffusion 논문으로 키워드 우연 매칭입니다. Phase Imaging 2편 중 1편은 중력이론(AdS/CFT) 상전이 논문으로 광학과 무관하고, 나머지 1편(홀로그래피 메타표면)만 실질 신호입니다. Meta-Optics 4편은 전부 무선통신·열복사 소자로 이미징과 무관합니다. Tomography/3D Imaging 13편 중 실질 의료영상/재구성 신호는 PET 산란 보정·갈비뼈 골절 3D 위치추정·측두하악골 재건 등록·ZTE-MRI 형태 측정 4편 정도이고 나머지는 UAV 작물 재구성, 적대적 위장복 등 비의료 CV이거나 순수 임상 사례 보고입니다. Virtual Staining/Pathology 27편 중 실제 병리 관련은 test-time adaptation 설명가능성 논문 1편뿐이고, 나머지는 관개 IoT·토양 안정화·진통제 약동학 등 완전히 무관한 산업/의학 논문입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편, 무관 도메인)</h3>
+<div class=roi-item>
+  <strong>이 버킷의 유일한 논문은 전파천문학용 안테나 설계 논문으로 우리 ROI와 무관합니다.</strong><br>
+  왜 표시: "aperture synthesis" 키워드가 전파 원격탐사 용어와 우연히 겹친 사례로, 오늘 이 버킷에는 실제 계산 이미징 신호가 없습니다.
+</div>
+
+<h3>Lensless/Coded Imaging (1편, 무관 도메인)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.06929" target=_blank>MaskFlow: Precise, Consistent and Seamless Regional Image Editing</a></strong> <span class=pill>CV</span><br>
+  왜 표시: 지역 이미지 편집 diffusion 논문이 "mask-based" 키워드에 우연히 걸린 사례로, lensless/coded imaging 하드웨어와는 무관합니다.
+</div>
+
+<h3>Phase Imaging/Holography (2편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71701" target=_blank>Twin-Image Free Multichannel Vectorial Holography With Nonlinear Chiroptical Metasurfaces</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 비선형 카이랄 메타표면으로 홀로그래피의 고전적 모호성(트윈 이미지)을 없앤 하드웨어 신호, 우리 랩 위상 이미징/홀로그래피 응용과 맞닿음(초록 미제공, 제목 기준) / 우선순위: Read
+</div>
+
+<h3>Meta-Optics/Diffractive (4편, 무관 도메인)</h3>
+<div class=roi-item>
+  <strong>4편 전부 무선통신용 OAM 빔·플라즈모닉 안테나·열복사 냉각 소자로, 이미징과 무관합니다.</strong><br>
+  왜 표시: "metasurface" 키워드가 통신·열공학 용어와 우연히 겹친 사례입니다.
+</div>
+
+<h3>Tomography/3D Imaging (13편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.07155" target=_blank>Machine Learning-Based Inter-Crystal Scatter Recovery for Ultra-High Resolution PET Imaging</a></strong> <span class=pill>LG</span><br>
+  왜 주요: 초고해상도 PET에서 결정 간 산란으로 잘못 위치추정된 이벤트를 신경망으로 복구하는 재구성 방법론, Monte Carlo·실측 데이터로 검증 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.06914" target=_blank>RibAssist 3D: Biplanar Rib-Fracture Detection, Addressing, and Selective 3D Localization from CT-Derived Projections</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 전신 CT 대신 두 방향 투영만으로 갈비뼈 골절을 3D로 위치추정하는 저선량 대안, 3D 위치 오차 중앙값 약 4mm 보고 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.07368" target=_blank>Measurements Automatically Extracted from Zero Echo Time MRI Using Deep Learning Image Segmentation and Geometric Modeling</a></strong> <span class=pill>AI</span><br>
+  왜 주요: 뼈를 보여주는 ZTE-MRI에서 자동 분할+기하 모델링으로 임상 각도를 측정, 73명 환자에서 전문가 수기 측정과 일치 검증 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.06599" target=_blank>Toward surface-based registration of a virtual preoperative cutting guide onto the mandible</a></strong> <span class=pill>CV</span><br>
+  왜 주요: CT 기반 수술 계획을 3D 프린트 없이 마커리스 AR로 실시간 등록하는 수술 가이드 대안 / 우선순위: Skim
+</div>
+
+<h3>Virtual Staining/Pathology (27편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.07062" target=_blank>Explanation Stability of Test-Time Adaptation in Computational Pathology: A Large-Scale Benchmark</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 병리 영상에서 test-time adaptation이 정확도뿐 아니라 모델 설명(attribution)까지 흔든다는 걸 2,958회 적응 실험으로 정량화 — 확신도만 보고 정확도를 놓치는 "조용한 실패"를 드러냄 / 우선순위: Must-read
+</div>
+
+<h3>Reconstruction/Inverse Problems (19편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.06981" target=_blank>LEADer</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(diffusion 복원 균일-가정 탈피)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.06893" target=_blank>PRISM: Principled Reference Identification for Schrodinger Bridge Model</a></strong> <span class=pill>LG</span><br>
+  왜 주요: Schrödinger bridge 기반 복원에서 관습적으로 정하던 reference process 선택을 이론적으로 규명하고, 실제 이미지(FFHQ)에서 이론과 어긋나는 지점까지 찾아낸 분석 논문 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.eswa.2026.133889" target=_blank>Information-Preserving Sparse Kernel Learning via Hybrid Regularization for Millimeter-Wave Imaging</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 밀리미터파 영상의 실시간 강건 재구성을 위한 희소 커널 학습 알고리즘(초록 요약 기준), 우리 랩 역문제 재구성 방법론과 맞닿음 / 우선순위: Skim
+</div>
+
+<h3>Deep Learning Methods — 계산 이미징 관련 대표 2편 (102편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.06574" target=_blank>Implicit Neural Speckle Denoising</a></strong> <span class=pill>IV</span><br>
+  왜 주요: 오늘 유일한 실질 계산광학 코어 arXiv 신호 — 동적 장면의 스페클을 재학습 없이 제거, 홀로그래피/QPI/초음파처럼 간섭성 이미징을 쓰는 우리 랩과 직결 — 위 Domain Watch Lens 클러스터 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.07420" target=_blank>DPWM (Beyond Myopic World Models)</a></strong> <span class=pill>LG</span><br>
+  왜 주요: 오늘의 대표 클러스터(world model 종단점 직접 예측)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<ul>
+  <li><strong>FIT (BSD68/Rain100L/SOTS/GoPro/LOLv1, all-in-one restoration)</strong> — 5-degradation 평균 30.72dB, 3-degradation 32.83dB, 기존 통합 복원 방법 대비 +0.5~1.1dB PSNR</li>
+  <li><strong>HazeSpikeMamba (RTTS 실사진 안개 제거)</strong> — BRISQUE 30.13→27.72, NIMA 4.13→4.87 (전이형 적응 프로토콜 기준)</li>
+  <li><strong>SGPO (16개 비교 실험, text-to-image diffusion 정렬)</strong> — 평균 생성 품질 +26.7%, 수렴 속도 +36.7%</li>
+  <li><strong>PAST (RL fine-tuning 효율)</strong> — 계산 효율 최대 +66.7%, 선호 정렬 품질 최대 +29.5%</li>
+  <li><strong>CMR-Multi Challenge (심장 MRI 분할·LVEF 추정)</strong> — cine Dice 0.862/0.883/0.902(SAX/2ch/4ch), LGE Dice 0.621~0.846, LVEF MAE 4.96%p(r=0.91)</li>
+  <li><strong>AtlasVLA (LIBERO-Long / 실물 로봇 장기 과제)</strong> — 성공률 절대 개선 +9.4%p(LIBERO-Long), +17.5%p(실물 로봇)</li>
+  <li><small>그 외 오늘 대표 논문들(WaveFreqAnchor·PRISM·MRI Foundation Robustness·UniJEPA 등)은 abstract에 baseline 대비 절대 수치를 명시하지 않았거나 자체 벤치마크 기준이라 로그에서 제외했습니다(본문 확인 필요).</small></li>
+</ul>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>오늘 흥미로운 대비는 diffusion 복원 클러스터와 diffusion RL 정렬 클러스터가 사실 같은 통찰을 다른 대상에 적용한다는 점이었습니다. LEADer·FIT 등은 "복원할 때 이미지 안에서도 위치마다 다르게 반응해야 한다"고 말하고, SGPO·PAST는 "생성할 때 denoising 단계마다 다르게 반응해야 한다"고 말합니다. 즉 한쪽은 공간(spatial) 축에서, 다른 쪽은 시간(diffusion timestep) 축에서 "균일하게 다루면 손해"라는 같은 원칙을 발견한 셈입니다. 이 대비는 우리 랩에도 그대로 적용됩니다 — 재구성 파이프라인에서 diffusion prior를 쓸 때, 공간적으로 열화가 심한 영역(위상 wrap이 심한 곳, 언더샘플링이 몰린 곳)과 denoising 단계별로 각각 다른 반응을 설계하면 두 클러스터의 아이디어를 동시에 적용할 수 있는 지점이 생깁니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Local Epistemic Uncertainty Guided Active Sampling for Plug-and-play Diffusive Image Restoration (LEADer) — arXiv cs.CV</h3>
+  <div class=tag>[방법전환] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> Diffusion 모델로 이미지를 복원하는 기존 방법(DMIR, Diffusion Model-based Image Restoration)들은 사진 전체에 걸쳐 같은 step 크기와 같은 데이터 제약을 적용해 왔습니다. 이 논문의 핵심 통찰은 실제 저품질 이미지의 열화가 공간적으로 고르지 않다는 겁니다 — 어떤 영역은 심하게 망가지고 어떤 영역은 멀쩡한데, 고정된 규칙을 쓰면 심한 곳은 여전히 뭉개지고 멀쩡한 곳은 과도하게 손대는 문제가 생깁니다. 예전에는 복원 품질을 "얼마나 잘 복원했나"로만 평가했다면, 이 논문은 "복원 강도를 영역별로 얼마나 잘 조절했나"까지 평가축에 넣습니다. 우리 랩이 위상복원·압축센싱에서 diffusion prior를 쓸 때도, 산란이 심한 영역과 약한 영역이 섞인 실제 촬영 데이터에서는 이런 공간 적응형 접근이 균일 스케줄보다 나을 가능성이 있다는 점에서 참고할 만합니다.</p>
+  <p><strong>핵심:</strong> LEADer는 공간 축에서 픽셀별 불확실성(local epistemic uncertainty)을 계산해 null space 안에서 prior 세기를 동적으로 조절함으로써 디테일 보존과 아티팩트 억제 사이의 균형을 잡습니다. 시간 축에서는 불확실성의 변화 추이(uncertainty trace)로 샘플링이 얼마나 안정됐는지를 측정해 궤적을 적응적으로 가지치기(trajectory pruning)함으로써 수렴을 앞당깁니다. 저자들은 이 방법이 엄격한 데이터 일관성을 만족한다는 이론적 증명과, skip sampling에서도 결정론적 오차 상한을 갖는다는 증명을 함께 제시합니다. plug-and-play 방식이라 기존 여러 DMIR baseline에 그대로 꽂아 넣을 수 있고, 실험에서는 여러 SOTA DMIR 방법의 성능을 개선하면서 샘플링 시간을 크게 줄이고 메모리 오버헤드는 거의 없다고 보고합니다.</p>
+  <p><strong>주의:</strong> abstract 기준으로 "여러 SOTA 방법 개선"이라는 표현에 구체적인 PSNR/SSIM 수치나 어떤 벤치마크·열화 유형에서 검증했는지가 명시되지 않아, 개선 폭과 일반화 범위는 본문 확인이 필요합니다. 코드는 공개된다고 명시돼 있어 재현 검증이 가능할 것으로 보입니다. [Claim risk]</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Do 3D Medical Foundation Models See Through MRI Artifacts? A Controlled Study of Representation Robustness — arXiv cs.CV</h3>
+  <div class=tag>[해부분석] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 최근 의료 영상 파이프라인은 자기지도로 미리 학습된 3D 파운데이션 인코더를 범용 특징 추출기로 가져다 쓰는 방식이 표준처럼 자리 잡고 있습니다. 그런데 이 논문의 핵심 지적은, "많이 학습됐으니 강건할 것"이라는 가정이 실제로는 거의 검증되지 않은 채 통용돼 왔다는 겁니다. 저자들은 서로 다른 구조·학습 목표·사전학습 도메인·데이터 규모를 가진 5개 인코더를 가져와, MRI에서 흔히 생기는 7종의 주파수/이미지 도메인 아티팩트(고스팅, Rician 노이즈 등)를 5단계 강도로 인위적으로 만들어 표현이 얼마나 흔들리는지 정면으로 측정합니다. 우리 랩이 재구성 파이프라인 앞단에 파운데이션 인코더를 쓸 일이 생긴다면, "사전학습이 잘 됐다"는 것과 "우리 촬영 조건의 아티팩트에도 강건하다"는 것은 다른 질문이라는 점을 이 논문이 분명히 보여줍니다.</p>
+  <p><strong>핵심:</strong> 강건성은 CKA(linear centered kernel alignment)·RankMe·UMAP이라는 세 가지 표현 기하학 지표와, 별도의 분할 일치도(segmentation-consistency) 분석으로 다각도로 측정됩니다. 결과는 인코더마다, 아티팩트마다 다릅니다 — 3DINO는 비교적 일관되게 안정적인 반면 BrainIAC는 여러 손상에 유난히 취약하고, NeuroVFM·BrainFM·Neuro-SimCLR은 중간 수준이지만 아티팩트별로 다른 프로파일을 보입니다. 흥미로운 발견은 많은 조건에서 CKA(표현이 얼마나 달라졌는지)는 크게 떨어지는데 RankMe(표현의 유효 차원)는 비교적 안정적이라는 점으로, 이는 아티팩트가 표현을 차원 붕괴 없이 기하학적으로만 왜곡한다는 뜻입니다. 분할 일치도도 고스팅·Rician 노이즈에서 특히 나빠지지만 표현 수준 강건성과는 부분적으로만 맞아떨어집니다.</p>
+  <p><strong>주의:</strong> BraTS-Africa라는 특정 데이터셋·4개 MRI 시퀀스에 한정된 controlled study이므로, 다른 해부학적 부위나 다른 스캐너 프로토콜로의 일반화는 별도 검증이 필요합니다. 또한 인위적으로 합성한 아티팩트가 실제 임상 환경의 아티팩트 분포를 얼마나 대표하는지도 abstract만으로는 확인할 수 없습니다. [Dataset risk]</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Metric risk] 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) 실신호가 오늘 사실상 0~2편으로, 오늘 리포트의 무게중심이 diffusion 방법론이라는 범용 ML 쪽으로 강하게 쏠렸습니다. 이는 오늘 실제 논문 구성을 반영한 것이지만, 계산 이미징 코어에 대한 정보 밀도는 매우 낮습니다.</p>
+  <p>[Claim risk] diffusion 복원·정렬 클러스터의 정량 수치(FIT +0.5~1.1dB, SGPO +26.7%, PAST +66.7% 등)는 각 논문의 자체 벤치마크·자체 baseline 기준이라, 서로 다른 논문 간 직접 비교는 불가능합니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology(27편) 버킷은 실제 병리 관련 논문이 1편뿐이고 나머지는 완전히 무관한 산업/의학 도메인이라, 이 버킷 이름만으로 오늘의 병리 신호를 판단하면 안 됩니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] LEADer의 "여러 SOTA DMIR 방법 개선" 주장은 abstract에 구체적 벤치마크·수치가 없어, 개선 폭과 일반화 범위는 본문·코드 확인이 필요합니다.</p>
+  <p>[Dataset risk] "Do 3D Medical Foundation Models See Through MRI Artifacts?"는 BraTS-Africa 단일 데이터셋·합성 아티팩트에 기반해, 실제 임상 아티팩트 분포·다른 해부학 부위로의 일반화는 별도 검증이 필요합니다.</p>
+  <p>[Baseline risk] DPWM의 "구조보다 목적함수가 핵심"이라는 주장은 연속제어·픽셀 기반 벤치마크에 한정돼 있어, 더 복잡한 실물 로봇/영상 생성 도메인으로의 일반화는 확인 전 보류할 만합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Meta-Optics/Diffractive 4편 전부(무선통신·열복사 소자)</strong> — OAM 빔 다중화, 플라즈모닉 리키웨이브 안테나, 열복사 냉각 메타표면 등으로 이미징 ROI와 무관합니다.</li>
+    <li><strong>Tomography/3D Imaging 임상 사례 보고 다수</strong> — 수두신증 사례, 파킨슨병 SPECT/PET-CT 진단 비교, CT 기반 근육-연하곤란 연관 연구 등 계산 이미징 방법론이 아니라 임상 진단 사례입니다.</li>
+    <li><strong>Virtual Staining/Pathology 대부분(26편, 무관 도메인)</strong> — 관개 IoT·토양 안정화·약동학·직물 순환경제 등 키워드만 겹친 논문들입니다.</li>
+    <li><strong>UniJEPA·AtlasVLA (world model 클러스터 내 응용 논문)</strong> — 방법론적으로 흥미롭지만 로봇 조작·VLN 도메인 특화적이라, 우리 랩 이미징 파이프라인으로의 직접 적용은 DPWM보다 우선순위가 낮다고 봅니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Diffusion 이미지 복원 균일-가정 탈피 (핵심 4편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.06981" target=_blank>LEADer</a></strong> <span class=pill>CV</span><br>
+- 문제: DMIR이 고정 step·고정 제약으로 공간적으로 불균일한 열화에 취약함 / 방법: 픽셀별 불확실성으로 prior 세기와 step을 동적 조절, 궤적 가지치기로 수렴 가속 / 의미: 복원 강도를 영역별로 조절하는 평가축 추가 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.06717" target=_blank>WaveFreqAnchor</a></strong> <span class=pill>CV</span><br>
+- 문제: diffusion 얼굴 복원이 심한 열화에서 identity 구조가 무너짐 / 방법: 파형 기반 구조 앵커링 + 다중스케일 웨이블릿-푸리에 주입으로 재학습 없이 궤적 제약 / 의미: 같은 열화-불균일 문제를 얼굴이라는 좁은 도메인에서 재확인 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.06832" target=_blank>FIT (Bend the Basics)</a></strong> <span class=pill>CV</span><br>
+- 문제: all-in-one 복원 Transformer가 고정 patch tokenization을 써서 열화 불인식 / 방법: 열화 인코더가 예측한 전역/공간 열화 맵으로 patch 임베딩을 적응적으로 변형 / 의미: tokenization 단계부터 열화 인식을 넣는 설계 / 근거: 5개 벤치마크에서 SOTA, +0.5~1.1dB PSNR / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.06886" target=_blank>HazeSpikeMamba</a></strong> <span class=pill>CV</span><br>
+- 문제: 합성 안개로 학습한 모델이 실제 안개 사진에서 성능 저하 / 방법: spiking 기반 지역 특징 + state-space 전역 특징 결합, 동결된 열화 재합성으로 라벨 없이 타깃 도메인 적응 / 의미: 합성-실측 간극을 정답 없이 메우는 접근 / 근거: RTTS BRISQUE 30.13→27.72, NIMA 4.13→4.87 / 우선순위: Read
+</div>
+
+<h3>Diffusion RL 정렬 단계 분리 (핵심 2편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.06768" target=_blank>SGPO</a></strong> <span class=pill>CV</span><br>
+- 문제: diffusion RL 정렬이 최종 보상을 모든 denoising 단계에 균일 배분해 reward hacking 유발 / 방법: 신호대잡음비+의미변화로 단계를 판별해 단계별 다른 목적 부여 / 의미: 시간축에서 "균일 배분"을 깨는 첫 시도 / 근거: 생성 품질 +26.7%, 수렴 속도 +36.7% / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.06794" target=_blank>PAST</a></strong> <span class=pill>CV</span><br>
+- 문제: diffusion RL fine-tuning이 저효율·희소 보상에 시달림 / 방법: 내재적 보상 + denoising 진행도·프롬프트 난이도 기반 적응적 episode 종료 / 의미: 학습 길이 자체를 난이도에 맞춰 조절 / 근거: 효율 +최대66.7%, 선호 품질 +최대29.5% / 우선순위: Read
+</div>
+
+<h3>파운데이션 모델 강건성·적응 감사 (핵심 3편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.06613" target=_blank>MRI Foundation Robustness</a></strong> <span class=pill>CV</span><br>
+- 문제: 3D 의료 파운데이션 인코더의 MRI 아티팩트 민감도가 불명확 / 방법: 5개 인코더 × 7종 아티팩트 × 5단계로 CKA/RankMe/UMAP + 분할 일치도 다축 평가 / 의미: "학습 규모가 크면 강건하다"는 가정에 대한 정면 반박 데이터 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.07291" target=_blank>Cardiac MRI Foundation Adaptation</a></strong> <span class=pill>CV</span><br>
+- 문제: 심장 MRI 파운데이션 모델이 여러 시점·시퀀스에서 얼마나 통하는지 불명확 / 방법: CineMA 파인튜닝 + 동결 인코더 임베딩의 attention 기반 다중 인스턴스 학습 / 의미: 일반 분할은 통하지만 LGE 흉터 분할은 여전히 난제임을 수치로 확인 / 근거: cine Dice 0.86~0.90, LGE Dice 0.62~0.85, LVEF MAE 4.96%p / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.07053" target=_blank>Unsupervised Adaptation of PDE Foundation Models</a></strong> <span class=pill>AI</span><br>
+- 문제: PDE 파운데이션 모델을 새 방정식에 적응시키려면 정답 solution 데이터가 필요 / 방법: neighborhood attention Transformer 사전학습 + 비지도 파인튜닝 / 의미: 물리 기반 신경망 계열과 맞닿는 적응 전략 / 우선순위: Skim
+</div>
+
+<h3>World model 종단점 예측·표현 통합 (핵심 3편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.07420" target=_blank>DPWM</a></strong> <span class=pill>LG</span><br>
+- 문제: world model이 짧은 구간 손실로 학습하고 반복 rollout으로 배포돼 학습-배포 목표가 어긋남 / 방법: 행동 시퀀스를 하나의 임베딩으로 압축해 종단점을 단일 forward pass로 직접 예측 / 의미: "구조보다 학습 목표"가 핵심이라는 주장, 기존 재귀 baseline도 같은 목적함수로 개선됨을 보임 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.07409" target=_blank>UniJEPA</a></strong> <span class=pill>CV</span><br>
+- 문제: 이미지용·영상용 JEPA가 서로 다른 인코더·예측기·정규화로 파편화됨 / 방법: 광도 예측(이미지)과 시간 예측(영상)을 하나의 공유 latent와 단일 목적함수로 통합 / 의미: task-specific JEPA와 동급 이상 성능, planning 속도 대폭 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.06729" target=_blank>AtlasVLA</a></strong> <span class=pill>CV</span><br>
+- 문제: 손목 카메라 단일 시점 VLA가 시야 밖 물체·진행 상황을 잊어버림 / 방법: 4D 지속 월드 상태 메모리 + ego 작업 진행 메모리를 diffusion transformer에 조건화 / 의미: 반응형에서 사전 추론형 조작으로 전환 / 근거: LIBERO-Long +9.4%p, 실물 로봇 장기과제 +17.5%p / 우선순위: Read
+</div>
+
+<h3>계산광학 코어 Watch (2편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.06574" target=_blank>Implicit Neural Speckle Denoising</a></strong> <span class=pill>IV</span><br>
+- 문제: 동적 장면에서 관습적 스페클 평균화를 쓸 수 없어 간섭성 이미징 노이즈 제거가 어려움 / 방법: 시공간 implicit neural representation + 조리개 인식 최대우도 정식화, FFT 가속 최적화 / 의미: 재학습 없이 임의 조리개 형태에 적응 가능한 스페클 제거 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1002/lpor.71701" target=_blank>Twin-Image Free Vectorial Holography</a></strong> <span class=pill>JNL</span><br>
+- 문제: 홀로그래피 위상 복원의 고전적 트윈 이미지 모호성 / 방법: 비선형 카이랄 메타표면 기반 다채널 벡터 홀로그래피(제목 기준) / 의미: 오늘 저널 쪽 유일한 실질 계산광학 신호 / 우선순위: Skim
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv 카테고리: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>cs.LG</a> · <a href="https://arxiv.org/list/cs.CV/new" target=_blank>cs.CV</a> · <a href="https://arxiv.org/list/cs.AI/new" target=_blank>cs.AI</a> · <a href="https://arxiv.org/list/eess.IV/new" target=_blank>eess.IV</a> · <a href="https://arxiv.org/list/eess.SP/new" target=_blank>eess.SP</a></li>
+  <li>RSS: <a href="../feed.xml">feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+Imaging Intelligence Daily Briefing · cs.LG · cs.CV · cs.AI · eess.IV · eess.SP 기반 자동 생성 · 입력 출처: arXiv, Crossref, OpenAlex
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+
+</body>
+</html>

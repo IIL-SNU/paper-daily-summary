@@ -1,0 +1,53 @@
+{
+  "date": "2026-08-10",
+  "results": [
+    {
+      "benchmark": "BSD68/Rain100L/SOTS/GoPro/LOLv1 (5-degradation all-in-one restoration)",
+      "metric": "avg PSNR",
+      "value": 30.72,
+      "value_str": "30.72 dB (5-degradation), 32.83 dB (3-degradation)",
+      "paper": "https://arxiv.org/abs/2608.06832",
+      "paper_title": "Bend the Basics: Degradation-Aware Deformable Tokenization for All-in-One Image Restoration"
+    },
+    {
+      "benchmark": "RTTS real-world dehazing",
+      "metric": "BRISQUE / NIMA",
+      "value": 27.72,
+      "value_str": "BRISQUE 30.13→27.72, NIMA 4.13→4.87",
+      "paper": "https://arxiv.org/abs/2608.06886",
+      "paper_title": "HazeSpikeMamba: Coupling Spiking-Inspired and State-Space Features for Self-Supervised Real-World Dehazing"
+    },
+    {
+      "benchmark": "16 comparative RL-alignment experiments (text-to-image diffusion)",
+      "metric": "generation quality / convergence speed",
+      "value": 26.7,
+      "value_str": "+26.7% avg generative quality, +36.7% convergence speed",
+      "paper": "https://arxiv.org/abs/2608.06768",
+      "paper_title": "Explore or Converge? Stage-Guided Per-Step Optimization for Diffusion Models"
+    },
+    {
+      "benchmark": "RL fine-tuning efficiency (text-to-image diffusion)",
+      "metric": "compute efficiency / preference quality",
+      "value": 66.7,
+      "value_str": "efficiency +up to 66.7%, preference quality +up to 29.5%",
+      "paper": "https://arxiv.org/abs/2608.06794",
+      "paper_title": "PAST: Prompt-Adaptive Sampling Termination for Efficient Diffusion Model"
+    },
+    {
+      "benchmark": "CMR-Multi challenge (cardiac MRI segmentation + LVEF)",
+      "metric": "Dice / MAE",
+      "value": 4.96,
+      "value_str": "cine Dice 0.862/0.883/0.902 (SAX/2ch/4ch), LGE Dice 0.621~0.846, LVEF MAE 4.96pp (r=0.91)",
+      "paper": "https://arxiv.org/abs/2608.07291",
+      "paper_title": "Foundation Models Adaptation for Multi-View Multi-modal Cardiac MRI Segmentation and Direct Ejection Fraction Estimation"
+    },
+    {
+      "benchmark": "LIBERO-Long / real-world long-horizon manipulation",
+      "metric": "success rate absolute gain",
+      "value": 17.5,
+      "value_str": "+9.4pp (LIBERO-Long), +17.5pp (real-world long-horizon)",
+      "paper": "https://arxiv.org/abs/2608.06729",
+      "paper_title": "AtlasVLA: Persistent World-Ego State Modeling for Vision-Language-Action Models"
+    }
+  ]
+}

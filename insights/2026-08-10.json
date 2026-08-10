@@ -1,0 +1,133 @@
+{
+  "date": "2026-08-10",
+  "insights": [
+    {
+      "title": "Diffusion 기반 이미지 복원이 '균일한 열화'라는 전제를 버리고 공간별로 다르게 반응하는 쪽으로",
+      "claim": "LEADer·WaveFreqAnchor·FIT·HazeSpikeMamba 4편이 diffusion 복원 모델의 고정된 step size·고정된 patch·고정된 제약이 실제 사진에서는 잘 안 맞는다는 걸 짚고, 각기 다른 방식(불확실성 기반 step 조절, 파형 구조 앵커링, 열화 인식 tokenization, 실사진 자기지도 적응)으로 공간·시간에 따라 다르게 반응하는 복원을 제안합니다.",
+      "papers": [
+        {
+          "title": "Local Epistemic Uncertainty Guided Active Sampling for Plug-and-play Diffusive Image Restoration (LEADer)",
+          "arxiv": "https://arxiv.org/abs/2608.06981",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Reconstruction/Inverse Problems", "order": "Diffusion-guided restoration", "genus": "Uncertainty-adaptive sampling", "confidence": "Medium", "rationale": "plug-and-play 방식으로 여러 DMIR baseline에 이식 가능함을 자체 실험으로 보임"}
+        },
+        {
+          "title": "WaveFreqAnchor: Wave-Structural Anchoring and Frequency Correction Diffusion for Training-Free Face Restoration",
+          "arxiv": "https://arxiv.org/abs/2608.06717",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Reconstruction/Inverse Problems", "order": "Diffusion-guided restoration", "genus": "Training-free trajectory constraint", "confidence": "Medium", "rationale": "얼굴 복원이라는 좁은 도메인이지만 같은 문제의식(고정 제약의 한계)을 공유"}
+        },
+        {
+          "title": "Bend the Basics: Degradation-Aware Deformable Tokenization for All-in-One Image Restoration",
+          "arxiv": "https://arxiv.org/abs/2608.06832",
+          "importance_tags": ["[방법전환]", "[평가축]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Reconstruction/Inverse Problems", "order": "All-in-one restoration", "genus": "Degradation-aware tokenization", "confidence": "High", "rationale": "5개 표준 벤치마크에서 정량 수치(PSNR)로 기존 대비 우위 제시"}
+        },
+        {
+          "title": "HazeSpikeMamba: Coupling Spiking-Inspired and State-Space Features for Self-Supervised Real-World Dehazing",
+          "arxiv": "https://arxiv.org/abs/2608.06886",
+          "importance_tags": ["[데이터전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Reconstruction/Inverse Problems", "order": "Real-world domain adaptation", "genus": "Self-supervised dehazing", "confidence": "Medium", "rationale": "실사진 3개 데이터셋(RTTS·URHI·HSTS)에서 무참조 지표(BRISQUE/NIMA) 개선을 보임"}
+        }
+      ],
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 4편이 얼굴 복원·범용 all-in-one 복원·실사진 안개 제거라는 다른 응용에서 공통적으로 '고정 스케줄/고정 패치는 공간적으로 다른 열화를 못 따라간다'는 진단에 도달"
+    },
+    {
+      "title": "Diffusion 샘플링을 '균일한 궤적'이 아니라 '단계별로 다른 목적'으로 다루는 RL 정렬 흐름",
+      "claim": "SGPO와 PAST 두 편이, diffusion 모델을 사람 선호에 맞게 강화학습으로 미세조정할 때 마지막 보상 하나를 모든 denoising 단계에 그대로 뿌리는 관행이 문제라고 짚습니다. 초반(혼돈 탈출)·중반(다양성 탐색)·후반(안정화)이 서로 다른 일을 하므로, 단계마다 다른 목적함수와 보상을 줘야 한다는 겁니다.",
+      "papers": [
+        {
+          "title": "Explore or Converge? Stage-Guided Per-Step Optimization for Diffusion Models (SGPO)",
+          "arxiv": "https://arxiv.org/abs/2608.06768",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Generative Models", "class": "Diffusion alignment", "order": "RL fine-tuning", "genus": "Stage-aware credit assignment", "confidence": "Medium", "rationale": "16개 비교 실험, 평균 26.7% 생성 품질·36.7% 수렴 속도 개선 수치 제시"}
+        },
+        {
+          "title": "PAST: Prompt-Adaptive Sampling Termination for Efficient Diffusion Model",
+          "arxiv": "https://arxiv.org/abs/2608.06794",
+          "importance_tags": ["[방법전환]", "[실사용전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Generative Models", "class": "Diffusion alignment", "order": "RL fine-tuning", "genus": "Adaptive episode termination", "confidence": "Medium", "rationale": "기존 RL fine-tuning 대비 효율 최대 66.7% 개선 수치 제시"}
+        }
+      ],
+      "confidence": "Medium",
+      "confidence_note": "2편만 동시 등장했지만 둘 다 '보상을 모든 step에 균일하게 배분하는 게 문제'라는 정확히 같은 진단에서 출발하고, 정량 개선 수치를 함께 제시"
+    },
+    {
+      "title": "'파운데이션 모델이라 강건할 것'이라는 가정을 의료·과학 영상에서 하나씩 직접 재는 흐름",
+      "claim": "예전에는 대규모로 미리 학습된 파운데이션 인코더를 가져다 쓰면 새 도메인에도 잘 통할 거라고 낙관했는데, 오늘 나온 논문들은 그 강건성을 직접 측정합니다. MRI 파운데이션 인코더 5종은 아티팩트 종류에 따라 강건성이 모델마다 다르게 무너지고, 심장 MRI 파운데이션 모델은 분할(segmentation)은 잘 되지만 흉터 조직(LGE) 분할은 여전히 어렵다는 걸 챌린지 데이터로 보여줍니다.",
+      "papers": [
+        {
+          "title": "Do 3D Medical Foundation Models See Through MRI Artifacts? A Controlled Study of Representation Robustness",
+          "arxiv": "https://arxiv.org/abs/2608.06613",
+          "importance_tags": ["[해부분석]", "[평가축]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Foundation model robustness", "order": "Representation auditing", "genus": "Artifact robustness benchmark", "confidence": "High", "rationale": "5개 인코더 × 7종 아티팩트 × 5단계 손상, CKA/RankMe/UMAP·분할 일치도까지 다축 정량 평가"}
+        },
+        {
+          "title": "Foundation Models Adaptation for Multi-View Multi-modal Cardiac MRI Segmentation and Direct Ejection Fraction Estimation",
+          "arxiv": "https://arxiv.org/abs/2608.07291",
+          "importance_tags": ["[스케일업]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Foundation model robustness", "order": "Multi-view adaptation", "genus": "Challenge submission", "confidence": "Medium", "rationale": "공개 챌린지 검증셋에서 Dice 0.621~0.902, LVEF MAE 4.96%p 수치 제시"}
+        },
+        {
+          "title": "Unsupervised Adaptation of PDE Foundation Models",
+          "arxiv": "https://arxiv.org/abs/2608.07053",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Scientific ML", "class": "Foundation model adaptation", "order": "Unsupervised finetuning", "genus": "PDE foundation model", "confidence": "Medium", "rationale": "정답 solution 데이터 없이도 새 PDE 계열로 적응 가능함을 주장, 물리 기반 신경망 계열과 맞닿음"}
+        }
+      ],
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 저자군 3편이 MRI·심장 MRI·PDE라는 다른 영역에서 '파운데이션 모델의 전이 가능성은 검증 없이 가정할 수 없다'는 같은 결론에 도달했지만, 세 편이 서로 인용하거나 같은 벤치마크를 쓰지는 않음"
+    },
+    {
+      "title": "World model이 '반복 rollout으로 미래를 쌓아가기'에서 '종단점을 한 번에 예측하거나 여러 JEPA를 하나로 합치기'로",
+      "claim": "예전에는 world model을 학습할 때 한 스텝씩 예측하는 손실을 쓰고, 실제로 쓸 때는 그 한 스텝짜리 모델을 여러 번 반복해서 먼 미래까지 굴렸는데, 이러면 학습 목표와 실제 사용 방식이 어긋나 오차가 쌓입니다. DPWM은 반복 없이 행동 시퀀스를 통째로 넣어 종단점을 한 번에 예측하도록 학습을 바꾸고, UniJEPA는 이미지용 JEPA와 영상용 JEPA로 나뉘어 있던 설계를 하나의 공유 latent 공간으로 통합합니다.",
+      "papers": [
+        {
+          "title": "Beyond Myopic World Models: Long-Horizon End-to-End Training for Direct Future Prediction (DPWM)",
+          "arxiv": "https://arxiv.org/abs/2608.07420",
+          "importance_tags": ["[방법전환]", "[평가축]"],
+          "phylogeny": {"source": "CVML", "phylum": "World Models", "class": "Long-horizon prediction", "order": "Non-recursive architecture", "genus": "Endpoint prediction", "confidence": "Medium", "rationale": "연속제어·픽셀 기반 벤치마크에서 horizon이 길어질수록 이득이 커진다는 추세를 보이고, 같은 목적함수로 재학습한 재귀 baseline도 함께 개선됨을 보여 '구조보다 목적함수'라는 주장을 뒷받침"}
+        },
+        {
+          "title": "UniJEPA: A Unified Joint-Embedding Predictive Architecture for Task-Agnostic Visual World Modeling",
+          "arxiv": "https://arxiv.org/abs/2608.07409",
+          "importance_tags": ["[통합정리]", "[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "World Models", "class": "Representation learning", "order": "JEPA unification", "genus": "Shared latent space", "confidence": "Medium", "rationale": "이미지·영상·제어 벤치마크에서 task-specific JEPA와 동급 이상 성능, planning 속도 수십 배 개선 주장"}
+        },
+        {
+          "title": "AtlasVLA: Persistent World-Ego State Modeling for Vision-Language-Action Models",
+          "arxiv": "https://arxiv.org/abs/2608.06729",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "ROBOTICS", "phylum": "Learning for Robotics", "class": "Vision-Language-Action", "order": "Memory-augmented VLA", "genus": "4D world-ego memory", "confidence": "Medium", "rationale": "LIBERO-Long +9.4%p, 실물 로봇 장기 과제 +17.5%p 성공률 개선 수치 제시"}
+        }
+      ],
+      "confidence": "Medium",
+      "confidence_note": "3편이 world model 대표성 확보(DPWM)·표현 통합(UniJEPA)·응용(AtlasVLA)이라는 다른 층위에서 '반복 rollout에 의존하지 않는 표현/학습'이라는 같은 방향을 가리키지만, 서로 다른 벤치마크·서로 다른 팀이라 직접 비교는 안 됨"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "LEADer의 불확실성 기반 step 조절을 우리 랩 위상복원/압축센싱 diffusion prior에 이식",
+      "claim": "LEADer가 이미지 복원에서 픽셀별 불확실성으로 prior 세기와 step size를 동적으로 조절한 절차를, 우리 랩의 위상복원·압축센싱 diffusion prior 파이프라인에 적용해 공간적으로 불균일한 노이즈(산란·언더샘플링 영역)에서 복원 품질과 샘플링 시간이 실제로 개선되는지 검증한다.",
+      "supporting_papers": [
+        {"title": "Local Epistemic Uncertainty Guided Active Sampling for Plug-and-play Diffusive Image Restoration", "arxiv": "https://arxiv.org/abs/2608.06981", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}},
+        {"title": "Bend the Basics: Degradation-Aware Deformable Tokenization for All-in-One Image Restoration", "arxiv": "https://arxiv.org/abs/2608.06832", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+      ]
+    },
+    {
+      "title": "MRI 파운데이션 모델 아티팩트 강건성 감사 프로토콜을 우리 랩 영상 파운데이션 인코더에 적용",
+      "claim": "\"Do 3D Medical Foundation Models See Through MRI Artifacts?\"가 쓴 CKA·RankMe·UMAP 다축 강건성 평가 프로토콜을, 우리 랩이 재구성·복원 파이프라인 앞단에서 쓰는 사전학습 인코더(있다면)에 적용해 언더샘플링·모션 아티팩트 등 촬영 조건별로 표현이 실제로 얼마나 흔들리는지 정량화한다.",
+      "supporting_papers": [
+        {"title": "Do 3D Medical Foundation Models See Through MRI Artifacts? A Controlled Study of Representation Robustness", "arxiv": "https://arxiv.org/abs/2608.06613", "phylogeny": {"source": "CVML", "phylum": "Medical Imaging"}}
+      ]
+    },
+    {
+      "title": "DPWM의 종단점 직접 예측 목적함수를 우리 랩 시계열 재구성 파이프라인에 적용",
+      "claim": "DPWM이 world model 학습에서 짧은 스텝 손실 대신 종단점을 직접 예측하도록 목적함수를 바꾼 결과가 재귀 baseline에도 그대로 적용되는지 보여준 것을, 우리 랩의 4D CT/동적 홀로그래피처럼 여러 프레임을 순차적으로 재구성하는 파이프라인에 적용해 긴 시퀀스에서 오차 누적이 실제로 줄어드는지 비교한다.",
+      "supporting_papers": [
+        {"title": "Beyond Myopic World Models: Long-Horizon End-to-End Training for Direct Future Prediction", "arxiv": "https://arxiv.org/abs/2608.07420", "phylogeny": {"source": "CVML", "phylum": "World Models"}}
+      ]
+    }
+  ]
+}
