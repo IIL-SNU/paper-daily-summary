@@ -6,8 +6,22 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 10 Aug 2026 11:57:40 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 12:18:02 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-08-12 (수요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-08-12.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-12.html</guid>
+      <pubDate>Wed, 12 Aug 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘(8/12, 수)은 arXiv /new에 cs.LG 164편, cs.CV 148편, cs.AI 211편, eess.IV 19편, eess.SP 20편(합계 562편)이 잡혔고, 저널 293건을 더한 병합 스캔 855건 중 229건(26.8%)이 ROI로 선정됐습니다. 오늘 가장 뚜렷했던 흐름은 3D Gaussian Splatting이 렌더링 품질 경쟁을 넘어 다른 문제의 백엔드로 쓰이기 시작했다는 점입니다. Gaussian Sculpting은 가우시안을 signed distance field(물체 표면까지의 거리를 나타내는 함수)에 붙들어 매서, 렌더링이 끝난 뒤 후처리로 표면을 뽑아내는 대신 최적화 도중에 표면을 직접 조각합니다. GS-CPE는 3DGS를 렌더링 결…]]></description>
+    </item>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-08-11 (화요일, Backfill)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-08-11.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-11.html</guid>
+      <pubDate>Tue, 11 Aug 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[2026-08-11(화)은 arXiv 원본 listing이 실행 시점 기준 이미 다음 날짜로 넘어가 있어서, 정상적인 /new 대신 /pastweek 에서 8/11 날짜 섹션만 따로 추출하는 backfill 절차로 채운 날입니다. cs.LG 320편·cs.CV 313편·cs.AI 486편·eess.IV 18편·eess.SP 44편(합계 1181편)에 저널 154건을 더한 병합 스캔 1424건 중 258건(18.1%)이 ROI로 잡혔는데, 이 비율은 최근 정상 /new 날짜들의 25~33% 밴드보다 뚜렷하게 낮습니다. 원인은 명확합니다 — /pastweek 의 날짜별 섹션에는 abstract가 실려 있지 않고 제목과 주제 분류만 있어서, 분류기가 abstract 문구에서…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-08-10 (Week 32)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-08-10-weekly.html</link>

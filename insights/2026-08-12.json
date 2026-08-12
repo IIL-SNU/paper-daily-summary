@@ -1,0 +1,169 @@
+{
+  "date": "2026-08-12",
+  "insights": [
+    {
+      "title": "3D Gaussian Splatting이 '더 빠르고 예쁘게 렌더링'에서 '표면·좌표·추론까지 책임지는 표현'으로",
+      "claim": "오늘 Tomography/3D Imaging 버킷에서 3D Gaussian Splatting(3DGS, 장면을 수많은 작은 가우시안 덩어리로 표현해 실시간으로 새 시점을 렌더링하는 3D 재구성 방법) 관련 논문이 9편 나왔는데, 예전처럼 '어떻게 더 선명하게 그리는가'를 묻는 논문은 거의 없고 대신 3DGS를 표면 추출·카메라 자세 추정·장면 그래프 추론 같은 다른 문제의 백엔드로 쓰려는 시도가 많았습니다. Gaussian Sculpting은 가우시안을 SDF(signed distance field, 물체 표면까지의 거리를 나타내는 함수)에 붙들어 매서 후처리로 표면을 뽑아내지 않고 최적화 도중에 직접 표면을 조각하듯 다듬고, GS-CPE는 3DGS를 렌더링 결과물이 아니라 카메라 6-자유도 자세를 추정하는 좌표계로 쓰며, CausalSplat은 3DGS 위에 상식 추론과 반사실적 질의까지 얹으려 합니다. VGGD는 카메라 시야가 서로 거의 겹치지 않는 자율주행 서라운드뷰 한 프레임만으로도 기하학적으로 안정된 3DGS를 만들기 위해 사전학습된 기하 파운데이션 모델(VGGT)을 앞단에 붙였습니다. 즉 3DGS가 이제 '렌더링 품질'이라는 단일 축이 아니라, 표면 정확도·자세 추정 정확도·추론 능력이라는 서로 다른 하위 과제의 공통 표현으로 쓰이고 있다는 뜻입니다.",
+      "papers": [
+        {
+          "title": "Gaussian Sculpting: End-to-End Controllable Surface Reconstruction via Field Optimization",
+          "arxiv": "https://arxiv.org/abs/2608.10602",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Gaussian Splatting", "genus": "Surface-anchored SDF optimization", "confidence": "Medium", "rationale": "object-level scene 실험에서 낮은 해상도에서도 강한 재구성 품질을 보고하나 대규모 장면 검증은 abstract에 없음"}
+        },
+        {
+          "title": "GS-CPE: Unified 6-Degree-of-Freedom Camera Pose Estimation via 3D Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2608.10938",
+          "importance_tags": ["[방법전환]", "[평가축]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Gaussian Splatting", "genus": "Pose estimation via warping refinement", "confidence": "Medium", "rationale": "7Scenes/Cambridge Landmarks/FAST-LIVO2 등 4개 벤치마크에서 SOTA를 주장, 실내외 모두 검증"}
+        },
+        {
+          "title": "CausalSplat: Towards Comprehensive Hierarchical Reasoning in 3D Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2608.11150",
+          "importance_tags": ["[평가축]", "[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Gaussian Splatting", "genus": "Reasoning-augmented segmentation", "confidence": "Medium", "rationale": "새 벤치마크(Causal-LERF, Causal-ScanNet)를 직접 만들어 기존 SOTA가 이 reasoning 과제에서 성능이 나쁘다는 걸 먼저 보이고 방법을 제안"}
+        },
+        {
+          "title": "Visual Geometry Foundation-Aware Gaussians for Single-Frame Surround-View Driving Reconstruction (VGGD)",
+          "arxiv": "https://arxiv.org/abs/2608.10682",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Gaussian Splatting", "genus": "Foundation-prior-guided feed-forward", "confidence": "Medium", "rationale": "nuScenes 단일 프레임 벤치마크에서 최고 렌더링 품질을 보고하나 자율주행이라는 좁은 도메인 한정"}
+        }
+      ],
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 4편 이상(+ LEGO, CasDeblurGS, Compact Feed-Forward Gaussians, TRACE-GS까지 포함하면 9편)이 같은 날 3DGS를 표면·자세·추론·자율주행이라는 서로 다른 하위 문제의 백엔드로 확장했고, 각각 실측 벤치마크(PSNR, Chamfer distance, 성공률)를 제시함"
+    },
+    {
+      "title": "Physics-informed ML이 '물리를 넣으면 무조건 좋다'는 전제를 스스로 감사하기 시작",
+      "claim": "오늘 Reconstruction/Inverse Problems 버킷에 물리 기반 신경망(PINN, Physics-Informed Neural Network) 관련 논문이 여러 편 몰렸는데, 흥미로운 건 새 응용을 제안하는 논문보다 기존 PIML 관행을 점검하는 논문이 더 도드라졌다는 점입니다. 212편을 리뷰한 서베이는 PIML이 실제로 성능을 올린다는 증거는 있지만 '해석 가능해진다', '일반화가 좋아진다' 같은 다른 주장은 근거가 부족하다고 정리했고, PINN에서 미분을 자동미분(automatic differentiation) 대신 유한차분(finite difference)으로 계산해도 정확도는 같으면서 속도와 메모리에서 이긴다는 걸 보인 논문도 나왔습니다. 즉 예전에는 '물리 법칙을 손실 함수에 넣으면 좋아진다'는 걸 당연하게 받아들이고 새 방정식·새 도메인에 적용하는 논문이 많았다면, 오늘은 그 관행 자체(어떤 claim이 실제로 증명됐는지, 미분을 어떻게 계산하는 게 최선인지)를 다시 재는 쪽으로 무게가 실렸습니다.",
+      "papers": [
+        {
+          "title": "Physics-Informed Machine Learning in Prognostics and Health Management: A Systematic Literature Review",
+          "arxiv": "https://arxiv.org/abs/2608.10047",
+          "importance_tags": ["[통합정리]", "[경고신호]"],
+          "phylogeny": {"source": "CVML", "phylum": "Scientific ML", "class": "Physics-informed learning", "order": "Systematic review", "genus": "Claim auditing taxonomy", "confidence": "High", "rationale": "212편을 4개 클래스(observational/inductive/learning bias, hybrid)로 분류, 성능 개선은 일관되지만 해석가능성·일반화 개선 주장은 근거 부족하다고 명시"}
+        },
+        {
+          "title": "Derivative Computation in PINNs: Automatic Differentiation, Finite Differences and Beyond",
+          "arxiv": "https://arxiv.org/abs/2608.11020",
+          "importance_tags": ["[해부분석]", "[평가축]"],
+          "phylogeny": {"source": "CVML", "phylum": "Scientific ML", "class": "Physics-informed learning", "order": "PINN internals", "genus": "Finite-difference derivative estimation", "confidence": "High", "rationale": "3개 벤치마크 PDE에서 정확도는 AD와 동급, 속도·메모리는 전 구간에서 우위, BatchNorm/self-attention에서 표준 autograd가 조용히 틀린다는 걸 지적"}
+        },
+        {
+          "title": "HIPNO: Symmetry-Aware Physics-Informed Neural Operators for Noninvasive Hemodynamic Inference",
+          "arxiv": "https://arxiv.org/abs/2608.10011",
+          "importance_tags": ["[방법전환]", "[실사용전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Scientific ML", "class": "Physics-informed learning", "order": "Neural operator", "genus": "Symmetry-quotient parameterization", "confidence": "Medium", "rationale": "2562명 환자 94만여 구간에서 population baseline 대비 32% 낮은 오차를 실측 수치로 제시"}
+        },
+        {
+          "title": "Efficient Weak-Entropy PINN for Solving Hyperbolic Conservation Laws",
+          "arxiv": "https://arxiv.org/abs/2608.10389",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Scientific ML", "class": "Physics-informed learning", "order": "PINN for discontinuous PDE", "genus": "Weak-form entropy condition", "confidence": "Medium", "rationale": "여러 scalar/system 보존법칙에서 불연속(충격파) 해를 정확히 잡아낸다고 보고하나 baseline 비교 수치는 abstract에 없음"}
+        }
+      ],
+      "confidence": "Medium",
+      "confidence_note": "4편이 서로 다른 저자군에서 물리 기반 학습의 '전제 재검토'라는 같은 방향을 보이지만, 서베이 1편을 빼면 나머지 3편은 서로 다른 응용(혈역학·보존법칙·미분 계산)이라 직접 비교되지는 않음"
+    },
+    {
+      "title": "파운데이션 인코더가 해부학이 아니라 '어느 병원 장비로 찍었는지'를 먼저 배운다는 사실이 정면으로 드러남",
+      "claim": "Frozen Brain-MRI Foundation Models Are Site Fingerprints는 흔히 '사전학습된 인코더 임베딩은 해부학적 구조를 담고 있다'고 가정하고 그대로 갖다 쓰는 관행을 직접 검증했는데, 결과가 꽤 충격적입니다 — 어떤 인코더를 쓰든, 심지어 학습을 전혀 하지 않은 무작위 초기화 인코더조차 촬영 병원(site)을 약 90% 정확도로 구분해내고, 이는 나이·성별·자폐 진단 같은 임상적으로 의미 있는 변수보다 더 잘 읽힙니다. 즉 예전에는 '사전학습이 잘 됐으니 이 임베딩엔 유용한 해부학 정보가 담겨 있겠지'라고 넘겨짚었다면, 이 논문은 그 임베딩의 상당 부분이 실제로는 '이 영상이 어느 스캐너·어느 병원에서 찍혔는지'를 담고 있으며, 이는 사전학습과 무관하게 원본 이미지의 저수준 통계에서부터 이미 존재한다는 걸 보여줍니다. 같은 날 나온 SSRL-MAR(모션 아티팩트 없는 3D 뇌 MRI 표현을 자기지도로 학습)과 Longitudinal 3D Foundation Modeling(유방암 치료 반응 예측에 파운데이션 인코더+시간 정보를 결합)도, 파운데이션 인코더를 그냥 특징 추출기로 쓰는 게 아니라 그 인코더가 실제로 무엇을 배우고 무엇을 놓치는지를 하나씩 짚어가며 도메인에 맞게 보정하려는 흐름을 공유합니다.",
+      "papers": [
+        {
+          "title": "Frozen Brain-MRI Foundation Models Are Site Fingerprints",
+          "arxiv": "https://arxiv.org/abs/2608.10295",
+          "importance_tags": ["[해부분석]", "[경고신호]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Foundation model auditing", "order": "Representation forensics", "genus": "Acquisition-site leakage", "confidence": "High", "rationale": "2개 독립 코호트(ABIDE-I/II) × 3개 인코더 × 3개 아키텍처군에서 site 디코딩 정확도 ~0.9를 일관되게 재현, 무작위 초기화 인코더도 동일 현상 확인"}
+        },
+        {
+          "title": "Motion Artifact-Aware Self-Supervised Representation Learning for 3D Brain MRI Motion Artifact Reduction (SSRL-MAR)",
+          "arxiv": "https://arxiv.org/abs/2608.10170",
+          "importance_tags": ["[방법전환]", "[데이터전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Foundation model auditing", "order": "Unpaired representation learning", "genus": "Motion-aware contrastive pretraining", "confidence": "Medium", "rationale": "실측(in-vivo) MR-ART 데이터셋에서 PSNR +최대2.0dB, oracle 지도학습 대비 0.25~0.47dB 이내로 근접함을 수치로 제시"}
+        },
+        {
+          "title": "Longitudinal 3D Foundation Modeling for Neoadjuvant Breast Cancer Response Prediction from Serial DCE-MRI",
+          "arxiv": "https://arxiv.org/abs/2608.09991",
+          "importance_tags": ["[스케일업]", "[해부분석]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Foundation model auditing", "order": "Temporal representation fusion", "genus": "Frozen-encoder + temporal dynamics network", "confidence": "Medium", "rationale": "982명 환자 4개 시점 데이터에서 AUROC 73.6%를 보고, 임상변수 단독보다 영상+임상 결합이 낫다는 걸 정량 비교"}
+        }
+      ],
+      "confidence": "High",
+      "confidence_note": "핵심 논문(Site Fingerprints)이 2개 독립 코호트·3개 인코더·3개 아키텍처군에서 재현되는 강한 정량 근거를 제시하고, 같은 날 나온 다른 2편도 '파운데이션 인코더를 그대로 믿지 않는다'는 같은 감사(audit) 태도를 공유함"
+    },
+    {
+      "title": "Diffusion bridge가 '노이즈에서 시작'을 버리고 '측정된 물리 신호에서 시작'하는 쪽으로 의료·물리 영상에 번짐",
+      "claim": "일반적인 diffusion 모델은 순수 가우시안 노이즈에서 출발해 원하는 이미지로 점점 다가가는데, diffusion bridge는 노이즈 대신 실제로 측정 가능한 손상된 신호(조영 전 MRI, CT, 안개 낀 사진 등)에서 출발해 목표 이미지로 가는 경로를 학습합니다. 오늘 이 방식을 쓰는 논문이 서로 다른 임상 응용에서 동시에 나왔습니다 — DoseBridge는 CT를 방사선 치료 선량 예측의 시작점(bridge endpoint)으로 삼아 빔 형상 정보를 결합했고, Pre- to Post-Contrast Synthesis는 조영 전 유방 MRI를 시작점 삼아 조영 후 영상을 합성했으며, HNDiff는 안개 낀 사진 자체의 물리 모델(대기 산란 모델)을 diffusion 과정에 녹여 순수 노이즈보다 훨씬 정보가 많은 지점에서 복원을 시작합니다. 세 편을 같이 보면, diffusion 기반 복원·합성 연구가 '어디서 출발하든 결국 도착지는 같다'는 가정을 버리고, 시작점 자체를 실제 측정 신호와 물리 법칙에 최대한 가깝게 두려는 쪽으로 수렴하고 있다는 뜻입니다.",
+      "papers": [
+        {
+          "title": "DoseBridge: Denoising Diffusion Bridge Model for Dose Prediction in Lung Intensity-Modulated Proton Therapy",
+          "arxiv": "https://arxiv.org/abs/2608.10173",
+          "importance_tags": ["[방법전환]", "[실사용전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Reconstruction/Inverse Problems", "order": "Diffusion bridge", "genus": "Beam-aware dose prediction", "confidence": "Medium", "rationale": "52명 환자 데이터에서 MAE 4.170Gy, SSIM 0.798로 기존 2개 딥러닝 모델 대비 우위를 실측 수치로 제시, 최초의 diffusion bridge 기반 선량 예측 모델이라 주장"}
+        },
+        {
+          "title": "Pre- to Post-Contrast Synthesis of Breast DCE-MRI using Latent Bridge Matching",
+          "arxiv": "https://arxiv.org/abs/2608.10000",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Reconstruction/Inverse Problems", "order": "Diffusion bridge", "genus": "Latent bridge matching", "confidence": "Medium", "rationale": "91명 검증 코호트에서 종양 조건화 시 MSE 1.023→0.940, SSIM 0.355→0.429로 개선, 기존 latent diffusion baseline 대비 우위"}
+        },
+        {
+          "title": "HNDiff: Haze-Noise Diffusion for Image Dehazing",
+          "arxiv": "https://arxiv.org/abs/2608.10995",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Reconstruction/Inverse Problems", "order": "Physics-embedded diffusion", "genus": "Atmospheric scattering prior", "confidence": "Medium", "rationale": "대기 산란 모델을 순방향 확산 스케줄에 직접 결합, 기존 dehazing backbone에 꽂아 SOTA를 달성한다고 보고하나 벤치마크 수치는 abstract에 구체적으로 없음"}
+        }
+      ],
+      "confidence": "Medium",
+      "confidence_note": "3편이 서로 다른 응용(방사선 치료·유방 MRI·안개 제거)에서 '노이즈가 아니라 측정 신호/물리 모델에서 출발'이라는 같은 설계를 공유하지만, 서로 다른 팀이며 직접 비교나 공통 벤치마크는 없음"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "Gaussian Sculpting의 SDF-앵커링 최적화를 우리 랩 저선량 CT/제한 시야각 재구성의 표면 추출 단계에 적용",
+      "claim": "Gaussian Sculpting이 후처리로 표면을 뽑지 않고 최적화 도중에 가우시안을 SDF에 붙들어 표면을 직접 조각하는 절차를, 우리 랩의 sparse-view/제한 시야각 CT 재구성에서 표면(장기 경계, 병변 윤곽) 추출 단계에 적용해 시야가 제한된 조건에서도 기존 후처리 표면 추출 대비 경계가 더 정확한지 비교한다.",
+      "supporting_papers": [
+        {"title": "Gaussian Sculpting: End-to-End Controllable Surface Reconstruction via Field Optimization", "arxiv": "https://arxiv.org/abs/2608.10602", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}},
+        {"title": "GS-CPE: Unified 6-Degree-of-Freedom Camera Pose Estimation via 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2608.10938", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+      ]
+    },
+    {
+      "title": "PINN 유한차분 미분 계산을 우리 랩 물리 기반 재구성 파이프라인에 이식해 속도·메모리 비교",
+      "claim": "Derivative Computation in PINNs가 제시한 유한차분 기반 미분 계산(자동미분 대체)이 정확도를 유지하면서 속도·메모리에서 이긴다는 결과를, 우리 랩이 물리 기반 손실(파동방정식, 산란 모델 등)을 쓰는 diffusion prior 재구성 파이프라인에 이식해 학습 시간·GPU 메모리·최종 복원 품질을 자동미분 대비 정량 비교한다.",
+      "supporting_papers": [
+        {"title": "Derivative Computation in PINNs: Automatic Differentiation, Finite Differences and Beyond", "arxiv": "https://arxiv.org/abs/2608.11020", "phylogeny": {"source": "CVML", "phylum": "Scientific ML"}}
+      ]
+    },
+    {
+      "title": "Site Fingerprint 감사 프로토콜을 우리 랩이 쓰는 사전학습 영상 인코더에 적용해 촬영 장비 정보 누출 정량화",
+      "claim": "Frozen Brain-MRI Foundation Models Are Site Fingerprints가 쓴 선형 디코딩 + null-space projection/ComBat 제거 절차를, 우리 랩이 재구성·복원 앞단에서 쓰는 사전학습 인코더(있다면)에 적용해 촬영 장비/프로토콜 정보가 얼마나 선형적으로 새어나오는지 측정하고, 그 정보를 제거했을 때 다운스트림(재구성/분할) 성능이 실제로 얼마나 떨어지는지 함께 확인한다.",
+      "supporting_papers": [
+        {"title": "Frozen Brain-MRI Foundation Models Are Site Fingerprints", "arxiv": "https://arxiv.org/abs/2608.10295", "phylogeny": {"source": "CVML", "phylum": "Medical Imaging"}}
+      ]
+    },
+    {
+      "title": "DoseBridge/HNDiff의 '측정 신호에서 출발하는 diffusion bridge' 설계를 우리 랩 위상복원 파이프라인 시작점 재설계에 적용",
+      "claim": "DoseBridge와 HNDiff가 순수 노이즈가 아니라 각각 CT·안개 낀 이미지처럼 정보가 이미 담긴 지점에서 diffusion 역과정을 시작하도록 설계한 것을, 우리 랩의 위상복원/홀로그래피 diffusion prior가 언더샘플링된 원신호(raw hologram, 부분 위상 측정치)를 시작점으로 쓰도록 재설계해 순수 노이즈 시작 대비 샘플링 스텝 수와 복원 품질을 비교한다.",
+      "supporting_papers": [
+        {"title": "DoseBridge: Denoising Diffusion Bridge Model for Dose Prediction in Lung Intensity-Modulated Proton Therapy", "arxiv": "https://arxiv.org/abs/2608.10173", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}},
+        {"title": "HNDiff: Haze-Noise Diffusion for Image Dehazing", "arxiv": "https://arxiv.org/abs/2608.10995", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+      ]
+    }
+  ],
+  "phylogeny_tags": [
+    {"paper": "https://arxiv.org/abs/2608.10602", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Gaussian Splatting > Surface-anchored SDF optimization"},
+    {"paper": "https://arxiv.org/abs/2608.10938", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Gaussian Splatting > Pose estimation via warping refinement"},
+    {"paper": "https://arxiv.org/abs/2608.11150", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Gaussian Splatting > Reasoning-augmented segmentation"},
+    {"paper": "https://arxiv.org/abs/2608.10682", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Gaussian Splatting > Foundation-prior-guided feed-forward"},
+    {"paper": "https://arxiv.org/abs/2608.10047", "source": "CVML", "lineage": "Scientific ML > Physics-informed learning > Systematic review > Claim auditing taxonomy"},
+    {"paper": "https://arxiv.org/abs/2608.11020", "source": "CVML", "lineage": "Scientific ML > Physics-informed learning > PINN internals > Finite-difference derivative estimation"},
+    {"paper": "https://arxiv.org/abs/2608.10011", "source": "CVML", "lineage": "Scientific ML > Physics-informed learning > Neural operator > Symmetry-quotient parameterization"},
+    {"paper": "https://arxiv.org/abs/2608.10389", "source": "CVML", "lineage": "Scientific ML > Physics-informed learning > PINN for discontinuous PDE > Weak-form entropy condition"},
+    {"paper": "https://arxiv.org/abs/2608.10295", "source": "CVML", "lineage": "Medical Imaging > Foundation model auditing > Representation forensics > Acquisition-site leakage"},
+    {"paper": "https://arxiv.org/abs/2608.10170", "source": "CVML", "lineage": "Medical Imaging > Foundation model auditing > Unpaired representation learning > Motion-aware contrastive pretraining"},
+    {"paper": "https://arxiv.org/abs/2608.09991", "source": "CVML", "lineage": "Medical Imaging > Foundation model auditing > Temporal representation fusion > Frozen-encoder + temporal dynamics network"},
+    {"paper": "https://arxiv.org/abs/2608.10173", "source": "CVML", "lineage": "Computational Imaging > Reconstruction/Inverse Problems > Diffusion bridge > Beam-aware dose prediction"},
+    {"paper": "https://arxiv.org/abs/2608.10000", "source": "CVML", "lineage": "Computational Imaging > Reconstruction/Inverse Problems > Diffusion bridge > Latent bridge matching"},
+    {"paper": "https://arxiv.org/abs/2608.10995", "source": "CVML", "lineage": "Computational Imaging > Reconstruction/Inverse Problems > Physics-embedded diffusion > Atmospheric scattering prior"}
+  ]
+}

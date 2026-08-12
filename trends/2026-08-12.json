@@ -1,0 +1,35 @@
+{
+  "date": "2026-08-12",
+  "source_listing_date": "2026-08-12",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 164,
+      "cs.CV": 148,
+      "cs.AI": 211,
+      "eess.IV": 19,
+      "eess.SP": 20
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 293
+  },
+  "totals": {
+    "total_scanned": 855,
+    "selected": 229
+  },
+  "classified": {
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 2,
+      "Phase Imaging/Holography": 7,
+      "Meta-Optics/Diffractive": 7,
+      "Light-Field/Novel Sensors": 6,
+      "Tomography/3D Imaging": 51,
+      "Virtual Staining/Pathology": 19,
+      "Reconstruction/Inverse Problems": 22,
+      "Deep Learning Methods": 114
+    }
+  },
+  "daily_thesis": "오늘(8/12, 수) arXiv /new는 cs.LG 164·cs.CV 148·cs.AI 211·eess.IV 19·eess.SP 20(합계 562편)에 저널 293건을 더한 병합 스캔 855편 중 229편(26.8%)이 ROI로 선정됐다. 어제(8/11) 백필과 달리 오늘은 abstract가 전부 확보된 정상 /new 실행으로, 가장 뚜렷한 신호는 3D Gaussian Splatting이 '렌더링 품질'을 넘어 표면 추출·카메라 자세 추정·상식 추론의 공통 백엔드로 확장된 것(9편), physics-informed ML이 자기 관행(어떤 claim이 실제로 증명됐는지, 미분을 어떻게 계산할지)을 감사하기 시작한 것, 파운데이션 인코더가 해부학보다 촬영 병원 정보를 먼저 담는다는 걸 정면으로 보인 감사 논문, diffusion bridge가 순수 노이즈 대신 측정 신호에서 출발하는 쪽으로 의료·물리 영상에 번진 것이다. 계산광학 코어 5개 버킷은 편수(23편)만 보면 어제 백필보다 늘었지만, 실제로 읽어보면 대부분 전파천문학·통신용 메타표면·무선 라이파이 등 키워드 우연 매칭이었다.",
+  "note": "2026-08-12(수) 정상 daily 실행. 5개 추적 카테고리 arXiv /new listing이 모두 \"Wednesday, 12 August 2026\"으로 일치함을 확인하고 source_mode=new로 발행한다. 어제(8/11)는 /new가 이미 다음 날짜로 넘어가 있어 /pastweek 날짜 섹션만 파싱한 backfill(title/subject-only)이었던 반면, 오늘은 abstract가 모두 확보돼 판단의 해상도가 어제보다 뚜렷이 높다 — 어제 Low confidence로 남겨뒀던 3DGS·파운데이션 모델 관찰들을 오늘 실제 abstract로 재확인한 결과, 오늘 새로 나온 3DGS 9편은 어제의 '입력이 망가진 조건에서도 버틴다'는 로버스트니스 축이 아니라 '3DGS를 다른 문제(표면·자세·추론)의 표현으로 확장한다'는 다른 축이라 별도 클러스터로 다뤘다."
+}

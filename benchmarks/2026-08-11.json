@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-11",
+  "results": [
+    {
+      "benchmark": "USAF 1951 resolution target, 0.8 NA objective (common-path digital holographic microscopy)",
+      "metric": "half-pitch resolution",
+      "value": 308,
+      "value_str": "half-pitch resolution 308 nm",
+      "paper": "https://doi.org/10.1002/lpor.71702",
+      "paper_title": "Learning to Self-Interfere: Zero-Shot Deconvolution Enables Replica-Free, Low-Coherence Common-Path Quantitative Phase Microscopy"
+    }
+  ],
+  "note": "오늘은 backfill(title/subject-only) 날이라 arXiv 쪽에는 abstract가 없어 정량 SOTA 수치를 아예 추출할 수 없었습니다. 저널(Crossref/OpenAlex) 154건 중에서도 OpenAlex enrich로 abstract가 붙은 논문은 일부뿐이고, 그중 계산 이미징 코어와 직접 관련되면서 baseline 대비가 아닌 실측 수치(해상도)를 명시한 논문은 RF-CPDHM(정량위상현미경) 1편뿐이었습니다. 나머지 저널 논문들의 수치(Dice, AUC 등)는 대부분 순수 임상/진단 연구이거나 우리 ROI 버킷과 무관한 도메인(무선통신, 재료과학)이라 제외했습니다. 이 sparsity는 파서 오류가 아니라 backfill의 구조적 한계입니다."
+}

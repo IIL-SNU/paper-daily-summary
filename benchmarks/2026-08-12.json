@@ -1,0 +1,117 @@
+{
+  "date": "2026-08-12",
+  "results": [
+    {
+      "benchmark": "Deblur-NeRF (real-world + synthetic, two blurry images, pose-free 3DGS)",
+      "metric": "PSNR gain",
+      "value": 2.11,
+      "value_str": "+1.19 dB (real-world), +2.11 dB (synthetic) over strong baselines",
+      "paper": "https://arxiv.org/abs/2608.10345",
+      "paper_title": "CasDeblurGS: Cascaded 2D-to-3D Multi-View Consistency for 3D Gaussian Splatting from Two Blurry Images"
+    },
+    {
+      "benchmark": "7Scenes / Cambridge Landmarks / FAST-LIVO2 (6-DoF camera pose estimation)",
+      "metric": "pose accuracy (SOTA claim)",
+      "value": 0,
+      "value_str": "실내외 4개 벤치마크에서 정확도·일반화 모두 SOTA 달성 주장 (절대 수치는 abstract에 미기재, 본문 확인 필요)",
+      "paper": "https://arxiv.org/abs/2608.10938",
+      "paper_title": "GS-CPE: Unified 6-Degree-of-Freedom Camera Pose Estimation via 3D Gaussian Splatting"
+    },
+    {
+      "benchmark": "Compact Feed-Forward Gaussian merging (primitive count reduction)",
+      "metric": "primitive compression ratio",
+      "value": 20,
+      "value_str": "1/20 수준의 Gaussian 개수로 시각 품질 대부분 유지",
+      "paper": "https://arxiv.org/abs/2608.10712",
+      "paper_title": "Compact Feed-Forward 3D Gaussians via Saliency-Guided Primitive Merging"
+    },
+    {
+      "benchmark": "Real-robot mobile manipulation (50-trial evaluation, long-horizon + cluttered)",
+      "metric": "success rate",
+      "value": 60,
+      "value_str": "장기과제 성공률 60% (PointVLA 40%, DexVLA 28%), 혼잡 조작 74% (단일뷰 52%, PointVLA 46%), 75cm 높이 변화에서도 75% 유지",
+      "paper": "https://arxiv.org/abs/2608.10756",
+      "paper_title": "Embodied Multimodal Grounding for Open-Vocabulary Mobile Manipulation via Semantic 3D Gaussian Splatting"
+    },
+    {
+      "benchmark": "PHM systematic review (212 studies, physics-informed ML)",
+      "metric": "review scope",
+      "value": 212,
+      "value_str": "212편 리뷰, 4개 클래스(observational/inductive/learning bias, hybrid)로 분류, 성능 개선은 일관되나 해석가능성·일반화 개선 주장은 근거 부족",
+      "paper": "https://arxiv.org/abs/2608.10047",
+      "paper_title": "Physics-Informed Machine Learning in Prognostics and Health Management: A Systematic Literature Review"
+    },
+    {
+      "benchmark": "PINN derivative computation (3 benchmark PDEs)",
+      "metric": "accuracy parity / speed·memory gain",
+      "value": 0,
+      "value_str": "정확도는 자동미분과 동급, 전 배치 크기 구간에서 속도 우위 + GPU 메모리 절감 (구체적 배수는 abstract 미기재)",
+      "paper": "https://arxiv.org/abs/2608.11020",
+      "paper_title": "Derivative Computation in PINNs: Automatic Differentiation, Finite Differences and Beyond"
+    },
+    {
+      "benchmark": "Intraoperative hemodynamic monitoring (945,499 windows, 2,562 patients)",
+      "metric": "log-scale error reduction",
+      "value": 32,
+      "value_str": "population baseline 대비 tau_wave 오차 32% 감소(log scale), 반사실적 섭동에 90% 이상 구간에서 기대 방향 반응",
+      "paper": "https://arxiv.org/abs/2608.10011",
+      "paper_title": "HIPNO: Symmetry-Aware Physics-Informed Neural Operators for Noninvasive Hemodynamic Inference"
+    },
+    {
+      "benchmark": "ABIDE-I / ABIDE-II (frozen brain-MRI encoder site decodability)",
+      "metric": "balanced accuracy",
+      "value": 90,
+      "value_str": "촬영 병원(site) 선형 디코딩 정확도 ~0.9 (딥레이어), 무작위 초기화 인코더도 동일 수준; ComBat/null-space projection으로 0.94→0.07/0.00까지 제거 가능",
+      "paper": "https://arxiv.org/abs/2608.10295",
+      "paper_title": "Frozen Brain-MRI Foundation Models Are Site Fingerprints"
+    },
+    {
+      "benchmark": "MR-ART in-vivo brain MRI motion correction",
+      "metric": "PSNR gain",
+      "value": 2.0,
+      "value_str": "source-only 지도학습 대비 PSNR +최대2.0dB, oracle 지도학습과 0.25~0.47dB 이내로 근접 (in-silico: PSNR 23.81dB, SSIM 91.55%, NMSE 0.79%)",
+      "paper": "https://arxiv.org/abs/2608.10170",
+      "paper_title": "Motion Artifact-Aware Self-Supervised Representation Learning for 3D Brain MRI Motion Artifact Reduction"
+    },
+    {
+      "benchmark": "I-SPY2 + ACRIN-6698 cohort (982 patients, pCR prediction from serial DCE-MRI)",
+      "metric": "AUROC / balanced accuracy",
+      "value": 73.6,
+      "value_str": "AUROC 73.6%, balanced accuracy 69.1% (영상+임상 결합 시), 임상변수 단독보다 종단 영상 결합이 우수",
+      "paper": "https://arxiv.org/abs/2608.09991",
+      "paper_title": "Longitudinal 3D Foundation Modeling for Neoadjuvant Breast Cancer Response Prediction from Serial DCE-MRI"
+    },
+    {
+      "benchmark": "Lung IMPT dose prediction (52 patients, 42 train/10 test)",
+      "metric": "MAE / PSNR / SSIM",
+      "value": 4.17,
+      "value_str": "MAE 4.170 Gy, PSNR 23.06 dB, SSIM 0.798 (기존 2개 딥러닝 모델 대비 우위); CTV D95 오차 0.62±1.6 Gy",
+      "paper": "https://arxiv.org/abs/2608.10173",
+      "paper_title": "DoseBridge: Denoising Diffusion Bridge Model for Dose Prediction in Lung Intensity-Modulated Proton Therapy"
+    },
+    {
+      "benchmark": "DUKE validation cohort (91 cases, breast DCE-MRI contrast synthesis)",
+      "metric": "MSE / FRD / tumor SSIM",
+      "value": 0.94,
+      "value_str": "종양 조건화 시 MSE 1.023→0.940, FRD 7.523→4.716, tumor SSIM 0.355→0.429 (조영전 조건화 대비 개선)",
+      "paper": "https://arxiv.org/abs/2608.10000",
+      "paper_title": "Pre- to Post-Contrast Synthesis of Breast DCE-MRI using Latent Bridge Matching"
+    },
+    {
+      "benchmark": "TCIA PSMA-PET-CT-Lesions (CT-to-PSMA PET synthesis, prostate cancer)",
+      "metric": "SSIM / lesion activity error",
+      "value": 0.960,
+      "value_str": "전체 SSIM 0.960(18F)/0.938(68Ga), 병변 총활성도(TLA) 오차 48.3%(18F)/64.0%(68Ga)로 감소, 종양중심부 radiomics 재현성 최고",
+      "paper": "https://arxiv.org/abs/2608.10429",
+      "paper_title": "Lesion-Aware Adaptive Fourier Neural Operator for CT-to-PSMA PET Synthesis in Prostate Cancer"
+    },
+    {
+      "benchmark": "π-SUB underwater image enhancement (6 real benchmark datasets, 4 UIE architectures)",
+      "metric": "UIQM / NIQE improvement",
+      "value": 9.46,
+      "value_str": "UIQM +4.18%(vs PHISWID)~+9.46%(vs Syrea), NIQE -48.78%~-23.98%, FID 46% 낮음(vs Syrea)",
+      "paper": "https://arxiv.org/abs/2608.10589",
+      "paper_title": "π-SUB: A Physics-Informed Synthetic Underwater Benchmark Dataset for Underwater Image Enhancement"
+    }
+  ]
+}

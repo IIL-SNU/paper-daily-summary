@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-08-12</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-08-12 (수요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-08-12 (수요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Wednesday, 12 August 2026"으로 일치하는 걸 확인하고 정상 Daily로 발행합니다. 어제(8/11)는 /pastweek 날짜 섹션만 파싱한 backfill(title/subject-only)이었던 반면, 오늘은 abstract가 전부 확보돼 판단 해상도가 정상 수준입니다. 저널(Crossref/OpenAlex) 수집은 평소대로 독립 수행됐습니다.</div>
+  <div>🔢 arXiv: cs.LG 164 · cs.CV 148 · cs.AI 211 · eess.IV 19 · eess.SP 20 (new+cross, replacement 제외, 합계 562)</div>
+  <div>🔢 병합: arXiv+저널(293건) 병합 스캔 855건 · ROI 배정 229건 (26.8%) — 최근 밴드(25~33%)와 비슷한 정상 범위</div>
+  <div>⚠️ 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) 5개 버킷은 편수(23편)만 보면 어제보다 늘었지만 다시 하나씩 읽어보면 대부분 전파천문학 안테나, 통신용 메타표면, 무선 라이파이 등 키워드 우연 매칭입니다. 대신 오늘의 실제 무게중심은 3D Gaussian Splatting이 렌더링을 넘어 표면·자세·추론의 표현으로 확장된 것, physics-informed ML이 자기 관행을 감사하기 시작한 것, 파운데이션 인코더의 "촬영 병원 지문" 문제, diffusion bridge가 측정 신호에서 출발하는 쪽으로 번진 것입니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 arXiv의 무게중심은 <strong>"표현과 모델을 있는 그대로 믿지 않고, 그 안에 실제로 무엇이 담겨 있는지 하나씩 재보는 날"</strong>입니다 — 3D Gaussian Splatting(3DGS, 장면을 수많은 작은 가우시안 덩어리로 표현해 실시간 렌더링하는 3D 재구성 방법)은 "얼마나 예쁘게 그리는가"를 넘어 표면 추출(Gaussian Sculpting)·카메라 자세 추정(GS-CPE)·상식 추론(CausalSplat)까지 책임지는 공용 표현으로 확장됐고, physics-informed ML은 "물리를 넣으면 무조건 좋다"는 관행 자체를 212편 리뷰로 감사하거나(PIML 서베이) 미분 계산 방식(자동미분 vs 유한차분)의 숨은 함정을 짚었습니다(Derivative Computation in PINNs). 가장 눈에 띈 건 Frozen Brain-MRI Foundation Models Are Site Fingerprints로, 널리 쓰이는 뇌 MRI 파운데이션 인코더 임베딩이 해부학보다 "어느 병원 장비로 찍었는지"를 훨씬 더 잘 담고 있다는 걸 무작위 초기화 인코더까지 포함해 정면으로 보였습니다. Diffusion bridge 계열(DoseBridge·Pre-to-Post-Contrast LBM·HNDiff)은 순수 노이즈 대신 실제 측정 신호나 물리 모델에서 출발하는 쪽으로 의료·물리 영상 전반에 번지고 있습니다. 계산광학 코어(Fourier Ptychography·Lensless·Phase·Meta-Optics·Light-Field)는 오늘도 실제 이미징 신호가 희박했습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(8/12, 수)은 arXiv /new에 cs.LG 164편, cs.CV 148편, cs.AI 211편, eess.IV 19편, eess.SP 20편(합계 562편)이 잡혔고, 저널 293건을 더한 병합 스캔 855건 중 229건(26.8%)이 ROI로 선정됐습니다. 오늘 가장 뚜렷했던 흐름은 3D Gaussian Splatting이 렌더링 품질 경쟁을 넘어 다른 문제의 백엔드로 쓰이기 시작했다는 점입니다. Gaussian Sculpting은 가우시안을 signed distance field(물체 표면까지의 거리를 나타내는 함수)에 붙들어 매서, 렌더링이 끝난 뒤 후처리로 표면을 뽑아내는 대신 최적화 도중에 표면을 직접 조각합니다. GS-CPE는 3DGS를 렌더링 결과물이 아니라 카메라 6-자유도 자세를 추정하는 좌표계로 쓰고, CausalSplat은 3DGS 위에 상식 추론과 반사실적 질의까지 얹으려 하며, VGGD는 서로 거의 겹치지 않는 자율주행 서라운드뷰 카메라 한 프레임만으로도 기하학적으로 안정된 3DGS를 만들기 위해 사전학습된 기하 파운데이션 모델을 앞단에 붙였습니다. 이 네 편에 LEGO(언어-계층 3D 분할), TRACE-GS(sparse-view 복원), CasDeblurGS(흐릿한 2장으로 3D 복원), Compact Feed-Forward Gaussians(가우시안 개수 압축), 로봇 조작용 Semantic-3DGS까지 더하면 오늘 하루에만 9편이 3DGS를 다른 하위 문제의 공통 표현으로 확장했습니다.</p>
+<p>같은 날 물리 기반 머신러닝(PIML, physics-informed machine learning) 쪽에서도 비슷한 자기 점검이 나왔습니다. 212편을 리뷰한 서베이는 PIML이 실제로 예측 성능을 올린다는 증거는 일관되게 있지만, "해석 가능해진다"거나 "일반화가 좋아진다"는 흔한 주장은 뒷받침하는 근거가 충분하지 않다고 정리했습니다. Derivative Computation in PINNs는 한 걸음 더 들어가, PINN(Physics-Informed Neural Network, 물리 방정식을 손실 함수에 직접 넣어 학습하는 신경망)에서 미분을 계산할 때 표준으로 쓰는 자동미분 대신 유한차분을 쓰면 정확도는 똑같이 유지하면서 속도와 메모리에서 이긴다는 걸 보였고, 특히 BatchNorm이나 self-attention처럼 샘플 간 의존성이 있는 구조에서는 흔히 쓰는 PyTorch autograd 방식이 조용히 틀린 값을 낸다는 걸 지적했습니다. HIPNO(비침습 혈역학 추정)와 Efficient Weak-Entropy PINN(불연속 해를 갖는 보존법칙)은 각자의 응용에서 물리 기반 정식화를 더 정교하게 다듬는 논문들입니다.</p>
+<p>오늘 가장 인상적인 단일 논문은 파운데이션 모델 감사 쪽에서 나왔습니다. Frozen Brain-MRI Foundation Models Are Site Fingerprints는 "사전학습이 잘 된 인코더 임베딩은 해부학 정보를 담고 있을 것"이라는, 거의 검증 없이 통용되던 가정을 정면으로 반박합니다. 두 개 독립 코호트(ABIDE-I, ABIDE-II)와 세 개의 서로 다른 인코더(뇌 사전학습·CT 사전학습·무작위 초기화)로 실험한 결과, 깊은 레이어에서 촬영 병원(site)이 약 90% 정확도로 선형 디코딩되는데, 이는 성별·나이·자폐 진단 같은 임상 변수보다 훨씬 잘 읽힙니다. 더 놀라운 건 이 효과가 사전학습과 무관하다는 점 — 무작위 초기화 인코더조차 이미 90% 수준의 site 분류기이고, 인코더 없이 원본 이미지를 그냥 다운샘플링만 해도 95% 수준으로 site가 읽힙니다. 즉 이건 사전학습이 만든 게 아니라 저수준 이미지 통계 자체가 담고 있는 정보라는 뜻입니다. 저자들은 null-space projection이나 ComBat으로 이 정보를 사후에 제거할 수 있다는 것도 보였지만, 분할(segmentation) 과제에서는 site와 해부학 정보가 얽혀 있어 제거가 공짜가 아니라는 점도 함께 지적했습니다. 비슷한 감사 정신을 공유하는 SSRL-MAR(모션 아티팩트를 자기지도로 학습해 제거)와 Longitudinal 3D Foundation Modeling(유방암 반응 예측에 시간 정보를 결합)도 같은 날 나왔습니다.</p>
+<p>Diffusion bridge 계열(순수 가우시안 노이즈가 아니라 실제 측정 가능한 손상 신호에서 출발해 목표 이미지로 가는 diffusion 변형)은 오늘 서로 다른 의료·물리 응용 3편에서 동시에 나왔습니다. DoseBridge는 CT를 방사선 치료 선량 예측의 시작점으로 삼아 빔 형상 정보를 결합했고(폐암 IMPT 52명 환자, MAE 4.170Gy), Pre-to-Post-Contrast Synthesis는 조영 전 유방 MRI를 시작점 삼아 조영 후 영상을 합성했으며(91명 검증, 종양 조건화 시 SSIM 0.355→0.429), HNDiff는 안개의 대기 산란 물리 모델을 diffusion 순방향 과정에 직접 녹여 순수 노이즈보다 훨씬 정보가 많은 지점에서 복원을 시작합니다. 계산광학 코어 5개 버킷(FP·Lensless·Phase·Meta-Optics·Light-Field, 총 23편)은 오늘도 다시 훑었지만 실제 이미징 신호는 희박했습니다 — 전파천문학용 안테나 알고리즘, 통신용 라이파이(LiFi), 통신·바이오센싱용 메타표면 등 키워드만 겹치는 논문이 대부분이었고, 이벤트 카메라를 다루는 arXiv 논문 2편과 광 필드 디스플레이 저널 1편 정도가 실질 신호였습니다.</p>
+<p>다음 관찰 포인트는 (1) 3DGS가 표면·자세·추론이라는 세 갈래로 확장되는 흐름이 다음 주에도 이어져 "3DGS 백엔드화"가 실제 트렌드인지 확인되는지, (2) 파운데이션 모델의 "숨은 정보 누출" 감사(site fingerprint류)가 뇌 MRI를 넘어 다른 의료 영상 도메인으로 확산되는지, (3) diffusion bridge의 "측정 신호에서 출발" 설계가 우리 랩과 직결되는 위상 이미징·홀로그래피 재구성으로 옮겨오는지입니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>어제(8/11, 화)는 arXiv /new가 이미 다음 날짜로 넘어가 있어 /pastweek 날짜 섹션만 title/subject 기준으로 복구한 backfill이었습니다 — abstract가 없어 3DGS 클러스터("입력이 이미 망가진 상태를 견디는 3DGS", EndoMD-SLAM·JSGS·EvTrajGS·FlexSplat·XClipGS 5편)도, 초해상도 trajectory 클러스터도, 좁은 도메인 파운데이션 모델 클러스터도 전부 Low confidence로 제목만 보고 내린 잠정 판단이었습니다. 오늘은 abstract가 전부 확보돼 판단 해상도가 뚜렷이 올라갔고, 실제로 확인해보니 오늘 새로 나온 3DGS 9편은 어제 관찰했던 "저품질/비이상적 입력에서도 버틴다"는 로버스트니스 축이 아니라 "3DGS를 표면·자세·추론이라는 다른 문제의 공용 표현으로 확장한다"는 다른 축이었습니다 — 즉 3DGS 연구가 확실히 여러 방향으로 뻗어나가고 있지만, 어제와 오늘이 같은 흐름의 연속은 아닙니다. 어제 저널 쪽 유일한 실질 신호였던 홀로그래픽 현미경 반사 이미지 제거(RF-CPDHM) 같은 단발 강한 신호는 오늘은 나타나지 않았고, 대신 오늘은 파운데이션 모델 감사라는 새로운 축(Site Fingerprints)이 abstract와 두 개 코호트 재현으로 뒷받침되는 강한 신호로 등장했습니다. 지난주 금요일부터 이어지던 "파운데이션 모델의 강건성을 직접 재는" 흐름(8/10 MRI 아티팩트 강건성, 심장 MRI, PDE)은 오늘 "강건성"에서 한 단계 더 나아가 "애초에 이 임베딩이 담고 있는 게 해부학이 맞는가"라는 더 근본적인 질문으로 이어졌습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>3D Gaussian Splatting이 "렌더링"에서 "표면·자세·추론의 공용 표현"으로 (geometry/recon)</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.10602" target=_blank>Gaussian Sculpting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.10938" target=_blank>GS-CPE</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.11150" target=_blank>CausalSplat</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.10682" target=_blank>VGGD</a> <span class=pill>CV</span>
+  </td>
+  <td>지금까지 3DGS 연구는 대체로 "같은 장면을 얼마나 빠르고 선명하게 다시 그려내는가"를 경쟁했습니다. 오늘 나온 네 편은 그 경쟁축을 벗어나 3DGS를 다른 문제를 푸는 도구로 씁니다. Gaussian Sculpting은 렌더링이 끝난 뒤 표면을 따로 뽑는 대신, 가우시안을 물체 표면까지의 거리를 나타내는 함수(SDF)에 붙들어 매서 최적화 중에 표면 자체를 직접 다듬습니다. GS-CPE는 3DGS 장면을 카메라가 지금 어디 있는지 알아내는 좌표계로 쓰고, CausalSplat은 3DGS 위에 "이 컵을 잡으려면 어느 손잡이가 나은가" 같은 상식적 추론까지 얹으려 합니다. VGGD는 자율주행 차량의 서라운드뷰 카메라들이 서로 거의 겹치지 않는 극단적 조건에서도, 사전학습된 기하 파운데이션 모델(VGGT)의 도움을 받아 안정적인 3DGS를 한 프레임만으로 만들어냅니다. 네 편을 같이 보면, 3DGS가 "장면을 어떻게 예쁘게 그릴까"라는 좁은 질문에서 "장면 표현 하나로 표면·위치·추론까지 다 풀 수 있을까"라는 훨씬 넓은 질문으로 이동하고 있다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 저자군 4편(+ LEGO·CasDeblurGS·Compact Feed-Forward Gaussians·TRACE-GS까지 포함하면 9편)이 표면·자세·추론·자율주행이라는 서로 다른 하위 문제에서 3DGS를 공용 표현으로 확장했고, 각각 실측 벤치마크(PSNR, 4개 pose 벤치마크, 신규 reasoning 벤치마크)를 제시</small></td>
+  <td>Gaussian Sculpting의 SDF-앵커링 최적화를 우리 랩 sparse-view/제한 시야각 CT 재구성의 표면(장기 경계) 추출 단계에 이식해, 기존 후처리 표면 추출 대비 경계 정확도를 비교하는 ablation 실험 설계</td>
+</tr>
+<tr>
+  <td><strong>Physics-informed ML이 "물리를 넣으면 무조건 좋다"는 전제를 스스로 감사</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.10047" target=_blank>PIML Systematic Review</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2608.11020" target=_blank>Derivative Computation in PINNs</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2608.10011" target=_blank>HIPNO</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2608.10389" target=_blank>Weak-Entropy PINN</a> <span class=pill>LG</span>
+  </td>
+  <td>물리 법칙을 손실 함수에 직접 넣는 PINN(Physics-Informed Neural Network) 계열은 그동안 "물리를 넣었으니 더 잘 될 것"이라는 전제가 당연하게 통용됐습니다. 오늘 나온 네 편은 그 전제를 하나씩 재검증합니다. 212편을 리뷰한 서베이는 PIML이 예측 성능을 올린다는 증거는 일관되게 확인되지만, "모델이 해석 가능해진다"거나 "일반화가 더 잘 된다"는 흔한 주장은 뒷받침하는 근거가 부족하다고 결론 내립니다. Derivative Computation in PINNs는 물리 손실을 계산할 때 표준으로 쓰는 자동미분(automatic differentiation) 대신 유한차분(finite difference)을 쓰면 정확도는 그대로 유지하면서 속도와 메모리에서 이긴다는 걸 보였고, 특히 배치 내 샘플끼리 서로 영향을 주는 구조(BatchNorm, self-attention 등)에서는 흔히 쓰는 자동미분 구현이 눈에 띄지 않게 잘못된 값을 낸다는 것도 지적합니다. HIPNO와 Weak-Entropy PINN은 각자의 응용(혈역학 추정, 불연속 해를 갖는 보존법칙)에서 물리 기반 정식화 자체를 더 정교하게 다듬습니다. 네 편을 같이 보면, PIML 연구가 "새 응용에 물리를 넣어보자"는 확산 단계에서 "우리가 정말 물리를 제대로, 효율적으로 넣고 있는가"를 점검하는 단계로 넘어가고 있다는 뜻입니다.</td>
+  <td>High<br><small>서베이 1편(212편 종합)과 서로 다른 저자군 3편이 "물리 기반 학습의 전제 재검토"라는 같은 방향을 가리키고, 서베이는 종합적 근거를, 나머지는 각자 실측 수치(HIPNO 오차 32% 감소 등)를 제시</small></td>
+  <td>Derivative Computation in PINNs의 유한차분 미분 계산을 우리 랩의 물리 기반(파동방정식·산란 모델) diffusion prior 재구성 파이프라인에 이식해, 자동미분 대비 학습 시간·GPU 메모리·최종 복원 품질을 정량 비교</td>
+</tr>
+<tr>
+  <td><strong>파운데이션 인코더가 해부학보다 "촬영 병원 지문"을 먼저 담고 있다는 사실이 정면으로 드러남</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.10295" target=_blank>Frozen Brain-MRI Foundation Models Are Site Fingerprints</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.10170" target=_blank>SSRL-MAR</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.09991" target=_blank>Longitudinal 3D Foundation Modeling</a> <span class=pill>IV</span>
+  </td>
+  <td>파운데이션 인코더 임베딩을 그대로 특징 추출기로 갖다 쓰는 관행은 "사전학습이 잘 됐으니 해부학적으로 의미 있는 정보를 담고 있을 것"이라는 가정에 기대고 있습니다. Site Fingerprints 논문은 이 가정을 정면으로 반박합니다 — 두 개의 독립 코호트와 세 개의 서로 다른 인코더(뇌 사전학습·CT 사전학습·무작위 초기화)에서, 깊은 레이어의 임베딩은 촬영 병원(site)을 약 90% 정확도로 읽어내는데, 이는 성별·나이·자폐 진단 같은 임상 변수보다 더 잘 읽힙니다. 더 중요한 건 무작위 초기화 인코더조차 이미 90% 수준의 site 분류기라는 점 — 즉 이건 사전학습이 만든 정보가 아니라, 원본 이미지의 저수준 통계 자체가 이미 담고 있는 정보라는 뜻입니다. 같은 날 나온 SSRL-MAR(모션 아티팩트 표현을 정답 없이 자기지도로 학습해 제거)와 Longitudinal 3D Foundation Modeling(파운데이션 인코더에 시간 정보를 결합해 유방암 치료 반응을 예측)도, 파운데이션 인코더를 그대로 믿지 않고 무엇을 실제로 배우고 무엇을 놓치는지 하나씩 짚어가며 도메인에 맞게 보정하려는 같은 태도를 공유합니다.</td>
+  <td>High<br><small>핵심 논문이 2개 독립 코호트 × 3개 인코더 × 3개 아키텍처군에서 일관되게 재현되는 강한 정량 근거를 제시하고, 같은 날 다른 2편도 파운데이션 인코더 감사라는 같은 태도를 공유</small></td>
+  <td>Site Fingerprints의 선형 디코딩 + null-space projection/ComBat 제거 절차를 우리 랩이 재구성/복원 앞단에서 쓰는 사전학습 인코더(있다면)에 적용해, 촬영 장비/프로토콜 정보 누출을 정량화하고 제거 시 다운스트림 성능 저하를 함께 측정</td>
+</tr>
+<tr>
+  <td><strong>Diffusion bridge가 "노이즈에서 시작"을 버리고 "측정 신호에서 시작"하는 쪽으로 의료·물리 영상에 번짐</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.10173" target=_blank>DoseBridge</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.10000" target=_blank>Pre-to-Post-Contrast LBM</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2608.10995" target=_blank>HNDiff</a> <span class=pill>CV</span>
+  </td>
+  <td>일반적인 diffusion 모델은 순수 가우시안 노이즈에서 출발해 점점 원하는 이미지로 다가갑니다. diffusion bridge는 그 시작점을 노이즈가 아니라 실제로 측정 가능한, 정보가 이미 담긴 신호로 바꿉니다. 오늘 이 방식이 서로 다른 임상·물리 응용 세 곳에서 동시에 나왔습니다. DoseBridge는 CT 영상을 방사선 치료 선량 예측의 시작점으로 삼고 빔 형상 정보를 함께 넣었고, Pre-to-Post-Contrast Synthesis는 조영제를 넣기 전 유방 MRI를 시작점 삼아 조영 후 영상을 합성하며, HNDiff는 안개 낀 사진 자체의 물리 법칙(대기 산란 모델)을 diffusion 순방향 과정에 녹여 순수 노이즈보다 훨씬 유용한 지점에서 복원을 시작합니다. 세 편을 같이 보면, diffusion 기반 복원·합성 연구가 "어디서 출발하든 결국 같은 곳에 도착한다"는 가정을 버리고, 시작점 자체를 실제 측정값과 물리 법칙에 최대한 가깝게 두려는 쪽으로 수렴하고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>3편이 방사선 치료·유방 MRI·안개 제거라는 서로 다른 응용에서 "노이즈가 아니라 측정 신호/물리 모델에서 출발"이라는 같은 설계를 공유하지만, 서로 다른 팀이며 공통 벤치마크는 없음</small></td>
+  <td>DoseBridge·HNDiff의 "측정 신호에서 시작하는 diffusion bridge" 설계를 우리 랩 위상복원/홀로그래피 diffusion prior가 언더샘플링된 원신호(raw hologram)를 시작점으로 쓰도록 재설계해, 순수 노이즈 시작 대비 샘플링 스텝 수와 복원 품질 비교</td>
+</tr>
+<tr>
+  <td><strong>계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field)는 오늘도 실신호 희박 — 이벤트 카메라 2편만 실질 신호</strong><span class=pill>WATCH</span></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.10479" target=_blank>Event-Guided Video Frame Interpolation</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.11075" target=_blank>Static in Frames, Dynamic in Events</a> <span class=pill>CV</span><br>
+    <a href="https://doi.org/10.1364/oe.603301" target=_blank>Video-Rate Light-Field Display (LCD)</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 계산광학 코어 5개 버킷(FP 1·Lensless 2·Phase 7·Meta-Optics 7·Light-Field 6) 총 23편을 다시 하나씩 읽었는데, 실제 이미징과 직결되는 신호는 소수입니다. Fourier Ptychography 1편은 태양 관측용 전파간섭계 알고리즘, Lensless 2편 중 1편은 라이파이(LiFi) 무선통신 시스템 모델링, Phase Imaging 7편은 전부 통신용 메타표면·수술 계획 3D 홀로그램(초록 없음)·음향-광학 진동 측정처럼 계산 위상 이미징 방법론과는 결이 다르고, Meta-Optics 7편도 전부 통신·바이오센싱·기계공학용 메타표면으로 이미징과 무관합니다. Light-Field/Novel Sensors 6편 중에는 이벤트 카메라(빛의 밝기 변화만 비동기적으로 기록하는 센서)를 다루는 arXiv 2편이 실질 신호입니다 — 하나는 이벤트 스트림으로 비디오 프레임을 보간하고, 다른 하나는 정적/동적 장면에서 이벤트 카메라 특징을 모션 단서로 재해석합니다. 저널 쪽에서는 계산된 필드-시퀀셜 컬러 LCD로 비디오 속도 광 필드 디스플레이를 구현한 논문 1편이 실질 신호입니다.</td>
+  <td>Low<br><small>실이미징 신호가 이벤트 카메라 arXiv 2편과 광 필드 디스플레이 저널 1편뿐이라, 이 상태가 이어질지는 편수 회복 여부로 판단 필요</small></td>
+  <td>이벤트 카메라 특징 재해석(Static in Frames, Dynamic in Events) 논문의 정적/동적 분리 방식을 우리 랩 간섭성 이미징(홀로그래피·QPI)의 동적 장면 스페클 제거 파이프라인에 참고 자료로 검토 — 이벤트 카메라 자체는 없지만 "정적 성분과 동적 성분을 분리해서 다룬다"는 문제의식이 겹침</td>
+</tr>
+</tbody>
+</table>
+
+<p><small>⚠️ Domain Watch Lens 메모 — 오늘은 5개 행으로 표를 마쳤습니다(마지막 행은 WATCH). Virtual Staining/Pathology(19편)는 실제 병리 관련 신호가 백혈병 세포 분류(Retrieval-Augmented VFM)와 WSI 병리 AI 정보이론 분석 2편뿐이고, 나머지 17편은 LLM 행동 분석·탄소발자국 리뷰·태양열 증기 발생기·화장품 AR 트라이온 등 "stain/label" 키워드가 우연히 겹친 완전 무관 도메인입니다. Tomography/3D Imaging(51편)은 3DGS/의료 등록 관련 실질 CV·IV 신호가 13편이고 나머지 38편은 저널 쪽 순수 임상 사례·진단 연구(무릎 CT 계측, 신장 종괴 노모그램 등)라 계산 이미징 방법론과는 결이 다릅니다.</small></p>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 3DGS의 표면·자세·추론 확장 클러스터(Gaussian Sculpting·GS-CPE·CausalSplat·VGGD 등 9편), physics-informed ML 자기 감사(PIML 서베이·Derivative Computation in PINNs·HIPNO·Weak-Entropy PINN), 파운데이션 인코더 site fingerprint 감사(Site Fingerprints·SSRL-MAR·Longitudinal 3D Foundation), diffusion bridge 확산(DoseBridge·Pre-to-Post-Contrast LBM·HNDiff)이 오늘 arXiv 쪽 핵심 신호였습니다.</li>
+  <li><strong>저널 전용</strong>: 광 필드 디스플레이(계산된 필드-시퀀셜 컬러 LCD) 1편 정도가 실질 계산 이미징 신호였고, 나머지 저널(Phase 7편·Meta-Optics 7편 등)은 통신용 메타표면, 수술 계획 3D 홀로그램(초록 미제공), 음향-광학 진동 측정 등 계산 위상 이미징 방법론과는 결이 다른 응용이었습니다. Virtual Staining/Pathology 저널 9건도 항체 결합 마이크로버블·솔라 스팀 발생기 등 완전히 다른 산업 분야였습니다.</li>
+  <li><strong>공통 키워드</strong>: "metasurface"가 arXiv 쪽에서는 오늘 전혀 등장하지 않았지만 저널 쪽에서는 통신·바이오센싱·기계공학 메타표면 7편에 모두 걸렸습니다. "light field"도 저널 쪽에서는 디스플레이 하드웨어(실질 신호)와 방사선 치료 콜리메이터 검사(무관)로 완전히 다른 두 맥락에 갈라져 매칭됐습니다.</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 3DGS 확장·physics-informed ML 감사·파운데이션 모델 감사라는 계산 이미징 코어 밖의 방법론 성찰을 강하게 주도했고, 계산 이미징 코어 자체는 arXiv·저널 모두에서 여전히 얇았습니다. 이런 날은 Gaussian Sculpting의 SDF-앵커링이나 Site Fingerprints의 감사 프로토콜을 우리 랩 파이프라인에 역수입할 기회로 볼 수 있습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 3D Gaussian Splatting이 "더 빠르고 예쁘게 렌더링"에서 "표면·좌표·추론까지 책임지는 표현"으로</h3>
+  <p>Gaussian Sculpting은 가우시안을 SDF에 앵커링해 표면을 최적화 도중 직접 조각하고, GS-CPE는 3DGS 워핑 기반 정밀 보정으로 4개 벤치마크(7Scenes·Cambridge Landmarks·FAST-LIVO2 등)에서 SOTA를 달성했으며, CausalSplat은 3DGS 위에 상식·공간·행위유발성·반사실적 추론을 얹는 새 과제와 벤치마크(Causal-LERF, Causal-ScanNet)를 제안하고, VGGD는 자율주행 서라운드뷰 한 프레임만으로도 안정적인 3DGS를 만듭니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 저자군 4편(넓게는 9편)이 표면·자세·추론·자율주행이라는 다른 하위 문제에서 3DGS를 공용 표현으로 확장</p>
+</div>
+
+<div class=ins>
+  <h3>2. Physics-informed ML이 "물리를 넣으면 무조건 좋다"는 전제를 스스로 감사하기 시작</h3>
+  <p>212편을 리뷰한 서베이는 PIML의 성능 개선은 일관되지만 해석가능성·일반화 개선 주장은 근거 부족이라고 정리했고, Derivative Computation in PINNs는 자동미분 대신 유한차분을 쓰면 정확도는 동급이면서 속도·메모리에서 이기고 BatchNorm/self-attention에서 표준 autograd가 조용히 틀린다는 걸 지적했습니다.</p>
+  <p class=conf-note>Confidence: Medium — 4편이 물리 기반 학습 관행의 재검토라는 같은 방향이지만 서베이를 빼면 서로 다른 응용이라 직접 비교는 어려움</p>
+</div>
+
+<div class=ins>
+  <h3>3. 파운데이션 인코더가 해부학이 아니라 "어느 병원 장비로 찍었는지"를 먼저 배운다는 사실이 정면으로 드러남</h3>
+  <p>Frozen Brain-MRI Foundation Models Are Site Fingerprints는 두 코호트·세 인코더에서 촬영 병원이 ~90% 정확도로 디코딩되고 이는 무작위 초기화 인코더에서도 동일하다는 걸 보였습니다(임상 변수보다 더 잘 읽힘). SSRL-MAR과 Longitudinal 3D Foundation Modeling도 파운데이션 인코더를 그대로 믿지 않고 도메인에 맞게 감사·보정하려는 흐름을 공유합니다.</p>
+  <p class=conf-note>Confidence: High — 핵심 논문이 2개 코호트 × 3개 인코더 × 3개 아키텍처군에서 일관 재현되는 강한 정량 근거를 제시</p>
+</div>
+
+<div class=ins>
+  <h3>4. Diffusion bridge가 "노이즈에서 시작"을 버리고 "측정된 물리 신호에서 시작"하는 쪽으로 의료·물리 영상에 번짐</h3>
+  <p>DoseBridge는 CT를 방사선 치료 선량 예측의 시작점으로 삼아 빔 형상 정보를 결합했고(MAE 4.170Gy), Pre-to-Post-Contrast LBM은 조영 전 MRI를 시작점 삼아 조영 후 영상을 합성했으며(SSIM 0.355→0.429), HNDiff는 안개의 물리 산란 모델을 diffusion 스케줄에 직접 결합했습니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편이 방사선 치료·유방 MRI·안개 제거라는 다른 응용에서 같은 설계 원칙을 공유하지만 공통 벤치마크나 직접 비교는 없음</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. Gaussian Sculpting의 SDF-앵커링 최적화를 우리 랩 sparse-view CT 표면 추출에 적용</h3>
+  <p>Gaussian Sculpting이 렌더링 후처리 대신 최적화 도중 가우시안을 SDF에 붙들어 표면을 직접 조각하는 절차를, 우리 랩의 sparse-view/제한 시야각 CT 재구성에서 장기·병변 경계 추출 단계에 적용합니다. 시야가 제한된 조건에서 기존 후처리 방식 대비 경계 정확도가 실제로 개선되는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>Gaussian Sculpting의 bi-level 학습(외부 루프: SDF 최적화, 내부 루프: 가우시안 업데이트) 재현</li>
+    <li>공통 benchmark: 우리 랩 sparse-view CT 데이터셋(제한 시야각 시나리오 포함)</li>
+    <li>비교축: 기존 후처리 표면 추출 vs SDF-앵커링 동시 최적화의 경계 정확도(Chamfer distance)·재구성 시간</li>
+    <li>실패해도 남는 결과: 우리 도메인 데이터에서 시야각 제한이 표면 오차에 미치는 영향에 대한 정량 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. Derivative Computation in PINNs의 유한차분 미분 계산을 물리 기반 재구성 파이프라인에 이식</h3>
+  <p>PINN에서 자동미분 대신 유한차분을 쓰면 정확도를 유지하면서 속도·메모리에서 이긴다는 결과를, 우리 랩이 물리 기반 손실(파동방정식, 산란 모델 등)을 쓰는 diffusion prior 재구성 파이프라인에 적용해 학습 시간·GPU 메모리·최종 복원 품질을 정량 비교합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>유한차분 미분 계산 모듈(적정 step size 캘리브레이션 포함) 재현 및 우리 파이프라인에 통합</li>
+    <li>공통 benchmark: 우리 랩 물리 기반 손실을 쓰는 재구성 모델의 기존 학습 스크립트</li>
+    <li>비교축: 자동미분 vs 유한차분의 학습 시간·GPU 메모리·최종 PSNR/SSIM</li>
+    <li>실패해도 남는 결과: 우리 아키텍처(attention·정규화 포함 여부)에서 자동미분이 실제로 정확한지에 대한 진단 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. Site Fingerprint 감사 프로토콜을 우리 랩 사전학습 인코더에 적용해 촬영 장비 정보 누출 정량화</h3>
+  <p>Frozen Brain-MRI Foundation Models Are Site Fingerprints가 쓴 선형 디코딩 + null-space projection/ComBat 제거 절차를, 우리 랩이 재구성·복원 앞단에서 쓰는 사전학습 인코더(있다면)에 적용해 촬영 장비/프로토콜 정보가 얼마나 새어나오는지 측정하고, 제거 시 다운스트림 성능이 얼마나 떨어지는지 함께 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>선형 프로브 + null-space projection 파이프라인 재현</li>
+    <li>공통 benchmark: 우리 랩이 보유한 사전학습 인코더 + 촬영 장비/프로토콜 라벨이 있는 데이터셋</li>
+    <li>비교축: 장비 정보 디코딩 정확도(제거 전/후), 제거 후 다운스트림(재구성/분할) 성능 변화</li>
+    <li>실패해도 남는 결과: 우리 인코더의 장비 정보 누출 정도에 대한 baseline 프로파일</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(51편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:2.0%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:3.9%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:13.7%"></span></span><span class=n>7편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:13.7%"></span></span><span class=n>7편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:11.8%"></span></span><span class=n>6편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>51편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:37.3%"></span></span><span class=n>19편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:43.1%"></span></span><span class=n>22편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>114편</span></div>
+
+<p><small>⚠️ 참고 — Domain Watch Lens: Fourier Ptychography 1편은 태양 관측용 전파간섭계 알고리즘으로 우리 ROI와 무관합니다. Lensless/Coded Imaging 2편 중 1편은 라이파이(LiFi) 무선통신 시스템 모델링입니다. Phase Imaging 7편은 전부 통신용 메타표면·수술 계획 홀로그램(초록 없음)·음향-광학 진동 측정 등으로 계산 위상 이미징 방법론과 결이 다릅니다. Meta-Optics 7편은 전부 통신·바이오센싱·기계공학용 메타표면으로 이미징과 무관합니다. Light-Field/Novel Sensors 6편 중 실질 신호는 이벤트 카메라 arXiv 2편과 광 필드 디스플레이 저널 1편뿐입니다. Virtual Staining/Pathology 19편 중 실제 병리 관련은 백혈병 세포 분류·WSI 병리 AI 정보이론 분석 2편뿐이고, 나머지는 LLM 행동 분석·탄소발자국 리뷰·솔라 스팀 발생기 등 완전히 무관한 도메인입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편, 무관 도메인)</h3>
+<div class=roi-item>
+  <strong>이 버킷의 유일한 논문은 태양 관측용 전파간섭계 이미징 알고리즘으로 우리 ROI와 무관합니다.</strong><br>
+  왜 표시: "synthetic aperture" 키워드가 전파천문학 안테나 어레이 처리 용어와 우연히 겹친 사례입니다.
+</div>
+
+<h3>Lensless/Coded Imaging (2편 중 관련 여부 불명 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/jphot.2026.3722892" target=_blank>Photonics Breakthroughs 2025: Programmable Lensless Imaging with a Fresnel Zone Aperture</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 프레넬 존 조리개 기반 프로그래머블 렌즈리스 이미징이라는 제목상 실질 신호이나 초록이 제공되지 않아 본문 확인이 필요합니다 / 우선순위: Skim
+</div>
+
+<h3>Phase Imaging/Holography (7편, 대부분 무관 도메인)</h3>
+<div class=roi-item>
+  <strong>7편 대부분이 통신용 메타표면 홀로그래픽 렌티큘러 이미징, 수술 계획용 3D 홀로그램(초록 없음), 음향-광학 진동 재구성 등으로 계산 위상 이미징 방법론과는 결이 다릅니다.</strong><br>
+  왜 표시: "holographic"·"wavefront" 키워드가 메타표면 하드웨어·의료 영상 응용·음향 계측과 우연히 겹친 사례가 다수입니다.
+</div>
+
+<h3>Meta-Optics/Diffractive (7편, 무관 도메인)</h3>
+<div class=roi-item>
+  <strong>7편 전부 통신용 메타표면(원형 편광 빔 다중화), 바이오센싱용 플라즈모닉 메타표면, 기계공학용 탄성 메타표면으로 이미징과 무관합니다.</strong><br>
+  왜 표시: "metasurface" 키워드가 통신·센싱·기계공학 용어와 우연히 겹친 사례입니다.
+</div>
+
+<h3>Light-Field/Novel Sensors (6편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.10479" target=_blank>Bridging Event Streams and DiT: Event-Guided Video Frame Interpolation</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 이벤트 카메라(밝기 변화만 비동기 기록하는 센서) 스트림을 diffusion transformer와 결합해 비디오 프레임을 보간, 간섭성 이미징의 동적 장면 처리와 방법론적으로 맞닿음 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.11075" target=_blank>Static in Frames, Dynamic in Events: Rethinking Features in Event Cameras as Motion Cues</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 정적/동적 성분을 이벤트 카메라 특징으로 분리해 모션 단서로 재해석 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.603301" target=_blank>High-Resolution, Video-Rate Light-Field Displays Enabled by a Field-Sequential-Color LCD</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 계산된 필드-시퀀셜 컬러 LCD로 비디오 속도 광 필드 디스플레이 구현, 저널 쪽 유일한 실질 계산 이미징 하드웨어 신호(초록 미제공, 제목 기준) / 우선순위: Skim
+</div>
+
+<h3>Tomography/3D Imaging (51편 중 관련 13편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.10602" target=_blank>Gaussian Sculpting: End-to-End Controllable Surface Reconstruction via Field Optimization</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(3DGS의 표면·자세·추론 확장)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.10938" target=_blank>GS-CPE: Unified 6-Degree-of-Freedom Camera Pose Estimation via 3D Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 3DGS를 카메라 자세 추정 좌표계로 쓰는 coarse-to-fine 프레임워크, 4개 벤치마크에서 SOTA 주장 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.10002" target=_blank>LoRCA: LoRA Cycle Adaptation for Histology to HiP-CT Translation with DINOv3</a></strong> <span class=pill>IV</span><br>
+  왜 주요: 동결된 DINOv3 백본에 modality별 LoRA를 붙여 조직 절편-HiP-CT(동기가속 X선 위상대조 단층촬영) 간 구조 보존 변환, 우리 랩 다중 모달 정합 파이프라인과 맞닿음 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.09993" target=_blank>APCReg: Anatomical-Prior-Guided Coarse-to-Fine CBCT–IOS Registration</a></strong> <span class=pill>IV</span><br>
+  왜 주요: CBCT-구강스캔 정합에서 서브밀리미터 정확도(Chamfer 0.87mm)를 60쌍 held-out 데이터로 검증 / 우선순위: Read
+</div>
+
+<h3>Virtual Staining/Pathology (19편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.10657" target=_blank>Retrieval-Augmented Vision Foundation Models for Robust Leukemia Cell Classification across Multiple Microscopy Datasets</a></strong> <span class=pill>IV</span><br>
+  왜 주요: 서로 다른 현미경 5개 데이터셋(19만여 셀 이미지)에서 도메인 이동에 강건한 백혈병 세포 분류를 위해 검색 증강 분류 모듈을 도입, held-out 프로토콜로 "데이터셋 특유 아티팩트 vs 실제 세포형태 특징"을 구분 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.10846" target=_blank>An Information Theory Analysis of Whole Slide Image Pathology AI and Diagnostic Field Selection AI Under Limited Resources</a></strong> <span class=pill>IV</span><br>
+  왜 주요: 전체 슬라이드를 AI가 통째로 압축(WSI-AI)할지, 전문가가 먼저 진단 시야를 고른 뒤 AI가 분석(DFS-AI)할지를 병변 위치·배경 이질성·공간 구조에 따라 정보이론으로 비교 / 우선순위: Read
+</div>
+
+<h3>Reconstruction/Inverse Problems (22편 중 관련 7편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.10047" target=_blank>PIML Systematic Review</a></strong> <span class=pill>LG</span><br>
+  왜 주요: 오늘의 대표 클러스터(physics-informed ML 자기 감사)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.11020" target=_blank>Derivative Computation in PINNs</a></strong> <span class=pill>LG</span><br>
+  왜 주요: PINN 미분 계산의 표준 관행(자동미분)이 특정 아키텍처에서 조용히 틀린다는 걸 지적, 실사용 파이프라인 설계에 직접 영향 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.10173" target=_blank>DoseBridge</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(diffusion bridge의 측정 신호 시작점 확산)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Read
+</div>
+
+<h3>Deep Learning Methods — 계산 이미징 관련 대표 2편 (114편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.10295" target=_blank>Frozen Brain-MRI Foundation Models Are Site Fingerprints</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(파운데이션 인코더 site fingerprint)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.10001" target=_blank>Implicit representations are dead. Long live explicit primitives!</a></strong> <span class=pill>IV</span><br>
+  왜 주요: 의료 영상(2D 현미경 조직학·3D 폐 CT)에서 explicit Gaussian 기반 표현이 implicit neural representation 대비 재구성 지표는 동급 이상이면서 최적화 시간·메모리는 훨씬 적게 든다는 걸 교차 차원으로 벤치마크 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<ul>
+  <li><strong>CasDeblurGS (Deblur-NeRF real-world/synthetic, 두 장의 흐릿한 이미지로 3D 복원)</strong> — PSNR +1.19dB(실측), +2.11dB(합성), 강한 baseline 대비</li>
+  <li><strong>Compact Feed-Forward Gaussians (가우시안 개수 압축)</strong> — 1/20 수준의 가우시안으로 시각 품질 대부분 유지</li>
+  <li><strong>Embodied Semantic-3DGS (실물 로봇 50회 시행, 장기 조작)</strong> — 성공률 60%(PointVLA 40%, DexVLA 28%), 혼잡 조작 74%(단일뷰 52%), 75cm 높이 변화에도 75% 유지</li>
+  <li><strong>HIPNO (94.5만 구간, 2562명 환자, 비침습 혈역학 추정)</strong> — population baseline 대비 오차(log scale) 32% 감소, 반사실적 섭동 방향 일치 90%+</li>
+  <li><strong>Site Fingerprints (ABIDE-I/II, 뇌 MRI 인코더 감사)</strong> — 촬영 병원 디코딩 정확도 ~0.9(딥레이어, 무작위 초기화 인코더도 동일), ComBat 제거 시 0.94→0.00</li>
+  <li><strong>SSRL-MAR (MR-ART 실측 뇌 MRI 모션 보정)</strong> — PSNR +최대2.0dB(source-only 대비), oracle 지도학습과 0.25~0.47dB 이내</li>
+  <li><strong>Longitudinal 3D Foundation Modeling (982명, 유방암 pCR 예측)</strong> — AUROC 73.6%, balanced accuracy 69.1%(영상+임상 결합)</li>
+  <li><strong>DoseBridge (52명 환자, 폐암 IMPT 선량 예측)</strong> — MAE 4.170Gy, PSNR 23.06dB, SSIM 0.798, CTV D95 오차 0.62±1.6Gy</li>
+  <li><strong>Pre-to-Post-Contrast LBM (91명, 유방 DCE-MRI 조영 합성)</strong> — 종양 조건화 시 MSE 1.023→0.940, SSIM 0.355→0.429</li>
+  <li><strong>LAFNO (TCIA PSMA-PET-CT, 전립선암 CT-to-PET 합성)</strong> — SSIM 0.960(18F)/0.938(68Ga), 병변 활성도 오차 48.3%/64.0% 감소</li>
+  <li><strong>π-SUB (수중 영상 개선, 6개 실측 벤치마크)</strong> — UIQM +4.18~9.46%, NIQE -23.98~48.78%, FID -46%(vs Syrea)</li>
+  <li><small>그 외 오늘 대표 논문들(Gaussian Sculpting·GS-CPE·PIML 서베이·Derivative Computation in PINNs·HNDiff 등)은 abstract에 baseline 대비 절대 수치를 명시하지 않았거나 정성적 SOTA 주장에 그쳐 로그에서 제외했습니다(본문 확인 필요).</small></li>
+</ul>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>오늘 흥미로운 대비는 3DGS 클러스터와 파운데이션 인코더 감사 클러스터가 사실 같은 질문을 다른 층위에서 던진다는 점이었습니다. Gaussian Sculpting·GS-CPE 등은 "3DGS라는 표현이 렌더링을 넘어 표면·자세·추론까지 정말 책임질 수 있는가"를 묻고, Site Fingerprints는 "파운데이션 인코더 임베딩이 정말 해부학을 담고 있는가, 아니면 다른 걸 담고 있는가"를 묻습니다. 즉 둘 다 "이 표현이 우리가 생각하는 그 정보를 실제로 담고 있는가"라는 표현 감사(representation audit) 질문을 서로 다른 대상(3D 장면 표현 vs 사전학습 임베딩)에 던진 셈입니다. 이 대비는 우리 랩에도 그대로 적용됩니다 — 재구성 파이프라인에서 3DGS나 사전학습 인코더를 블랙박스로 갖다 쓰기 전에, "이 표현이 실제로 어떤 정보를 담고 있고 어떤 정보는 담고 있지 않은지"를 먼저 감사하는 단계를 표준 절차로 넣을 만한 근거가 오늘 두 클러스터에서 동시에 나온 셈입니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Frozen Brain-MRI Foundation Models Are Site Fingerprints — arXiv cs.CV</h3>
+  <div class=tag>[해부분석] [경고신호] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 사전학습된 파운데이션 인코더 임베딩을 특징 추출기로 그대로 갖다 쓰는 건 이제 의료 영상 파이프라인에서 거의 표준 관행입니다. 이 논문의 핵심은 그 관행이 기대는 암묵적 가정 — "사전학습이 잘 됐으니 임베딩은 해부학적으로 의미 있는 정보를 담고 있을 것" — 을 정면으로 검증했다는 점입니다. 예전에는 파운데이션 인코더의 품질을 다운스트림 과제 성능으로만 간접 평가했다면, 이 논문은 "그 임베딩이 실제로 무엇을 인코딩하는지"를 직접 감사(audit)하는 평가축을 세웠습니다. 우리 랩이 재구성·복원 파이프라인 앞단에 사전학습 인코더를 쓸 일이 생긴다면, 그 인코더가 우리가 원하는 정보(조직 구조, 병변)를 담고 있는지 아니면 촬영 장비·프로토콜 같은 원치 않는 정보를 더 많이 담고 있는지부터 확인해야 한다는 걸 이 논문이 분명히 보여줍니다.</p>
+  <p><strong>핵심:</strong> 저자들은 ABIDE-I·ABIDE-II라는 두 개의 독립 코호트에, 뇌 사전학습·CT 사전학습·무작위 초기화라는 세 종류의 3D 인코더(Swin·ViT·ResNet 세 아키텍처군에 걸쳐)를 적용해, 매 레이어에서 촬영 병원(site)이 선형적으로 얼마나 잘 디코딩되는지 측정합니다. 결과는 놀랍습니다 — 깊은 레이어에서 site는 약 0.9 balanced accuracy로 디코딩되는데, 이는 성별·나이·자폐 진단 같은 임상적으로 의미 있는 변수보다 모든 레이어에서 더 잘 읽힙니다. 더 결정적인 건 무작위 초기화 인코더조차 이미 두 코호트·세 아키텍처군에서 ~0.9 수준의 site 분류기라는 점, 그리고 인코더 없이 원본 이미지를 그냥 다운샘플링만 해도 site가 ~0.95로 읽힌다는 점입니다. 즉 이 "지문"은 사전학습이 만든 게 아니라 어떤 인코더를 거치든 보존되는 저수준 이미지 통계 자체입니다. 측정된 인구통계학적 공변량을 회귀 제거해도 site 디코딩은 거의 그대로 유지돼, 이 효과가 인구 구성이 아니라 촬영 장비/프로토콜 자체에서 온다는 것도 확인됩니다. Iterative null-space projection이나 ComBat으로 site 정보를 사후 제거하면 디코딩 정확도가 0.94에서 0.07~0.00까지 떨어지지만, 분할(segmentation) 과제에서는 이 제거가 공짜가 아닙니다 — site와 해부학 정보가 얽힌 선형 부분공간을 차지하고 있어서, 무작위 방향으로 같은 rank만큼 지우면 Dice 점수에 영향이 없는데 site 방향을 정확히 지우면 Dice가 떨어집니다.</p>
+  <p><strong>주의:</strong> 이 연구는 ABIDE-I/II라는 자폐 스펙트럼 연구용 코호트에 한정돼 있어, 다른 임상 코호트나 다른 신체 부위(뇌 외 장기)로 결과가 그대로 일반화될지는 별도 검증이 필요합니다. 또한 site 제거가 분할 성능에 미치는 정확한 trade-off 곡선은 abstract만으로는 확인할 수 없어 본문 확인이 필요합니다. [Dataset risk]</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Gaussian Sculpting: End-to-End Controllable Surface Reconstruction via Field Optimization — arXiv cs.CV</h3>
+  <div class=tag>[방법전환]</div>
+  <p><strong>왜 A급인가:</strong> 3D Gaussian Splatting(3DGS)은 실시간 새 시점 렌더링에서 인상적인 품질을 보여줬지만, 정작 표면(물체의 정확한 경계)을 뽑아내는 데는 약했습니다. 시점이 제한되거나 가우시안 배치가 불규칙하면 표면에 구멍이 뚫리거나 여분의 표면이 생기는데, 이런 오차는 사람이 수작업으로 고치기도 어렵습니다. 예전에는 이 문제를 "렌더링을 먼저 하고, 다 끝난 뒤에 표면을 뽑아내는" 후처리로 다뤘다면, 이 논문은 렌더링과 표면 추출을 애초에 하나의 최적화 과정으로 묶습니다. 우리 랩이 sparse-view 재구성(제한된 촬영 각도의 CT, 홀로그래피 등)에서 표면·경계 정보가 중요한 문제를 다룰 때, "먼저 그리고 나중에 경계를 뽑는" 방식이 "경계를 처음부터 같이 최적화하는" 방식보다 못할 수 있다는 걸 시사합니다.</p>
+  <p><strong>핵심:</strong> 핵심 아이디어는 가우시안들을 계속 변화하는 signed distance field(SDF, 공간의 각 점에서 물체 표면까지의 부호 있는 거리를 나타내는 함수)에 "앵커링"해서, 가우시안이 SDF 최적화를 이끌도록 만드는 겁니다. 안정적인 학습을 위해 두 단계 최적화 전략을 씁니다 — 바깥 루프는 SDF로 표현된 기하 구조를 최적화하고, 안쪽 루프는 기하를 고정한 채 가우시안 파라미터만 업데이트합니다. 이렇게 하면 그래디언트가 서로 얽혀 불안정해지는 걸 막을 수 있습니다. 여기에 가우시안 파라미터가 SDF가 나타내는 표면과 일관되도록 추가 제약을 걸어 기하·외관 충실도를 함께 개선하고, 옥트리 방식의 다중 해상도 세분화로 세부는 살리면서 메모리는 아낍니다. 오브젝트 단위 장면 실험에서 불필요한 표면을 효과적으로 제거하고, 제한된 시점 때문에 생긴 누락 구조를 복원하며, 비교적 낮은 해상도에서도 강한 재구성 품질을 얻는다고 보고합니다.</p>
+  <p><strong>주의:</strong> 실험이 오브젝트 단위 장면에 한정돼 있어, 방이나 야외처럼 훨씬 큰 장면으로 일반화되는지는 abstract만으로 확인할 수 없습니다. 또한 정량 비교 수치(Chamfer distance 등 구체적 값)가 abstract에 명시되지 않아 기존 SOTA 표면 재구성 방법 대비 개선 폭은 본문 확인이 필요합니다. [Claim risk]</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Metric risk] 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) 실신호가 오늘도 이벤트 카메라 2편·광 필드 디스플레이 1편 정도로, 오늘 리포트의 무게중심이 3DGS·physics-informed ML·파운데이션 모델 감사라는 범용 CV/ML 쪽으로 강하게 쏠렸습니다. 이는 오늘 실제 논문 구성을 반영한 것이지만, 계산 이미징 코어에 대한 정보 밀도는 여전히 낮습니다.</p>
+  <p>[Claim risk] 3DGS 클러스터·diffusion bridge 클러스터의 정량 수치는 각 논문의 자체 벤치마크·자체 baseline 기준이라, 서로 다른 논문 간 직접 비교는 불가능합니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology(19편) 버킷은 실제 병리 관련 논문이 2편뿐이고 나머지는 완전히 무관한 도메인이라, 이 버킷 이름만으로 오늘의 병리 신호를 판단하면 안 됩니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Dataset risk] Site Fingerprints는 ABIDE-I/II라는 자폐 스펙트럼 연구 코호트에 한정돼 있어, 다른 임상 코호트·다른 신체 부위로의 일반화는 별도 검증이 필요합니다.</p>
+  <p>[Claim risk] Gaussian Sculpting의 "낮은 해상도에서도 강한 재구성 품질" 주장은 abstract에 구체적 정량 수치(Chamfer distance 등)가 없어, 개선 폭은 본문·코드 확인이 필요합니다.</p>
+  <p>[Baseline risk] CausalSplat의 새 reasoning 벤치마크(Causal-LERF, Causal-ScanNet)는 저자 그룹이 직접 설계한 것이라, 기존 SOTA가 "성능이 나쁘다"는 비교의 공정성은 독립 검증 전까지 보류할 만합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Meta-Optics/Diffractive 7편 전부(통신·바이오센싱·기계공학 메타표면)</strong> — 원형 편광 빔 다중화 통신, 플라즈모닉 바이오센싱, 탄성 메타표면 모드 변환 등으로 이미징 ROI와 무관합니다.</li>
+    <li><strong>Phase Imaging/Holography 저널 6편(초록 없는 응용 하드웨어 논문 다수)</strong> — 통신용 메타표면 홀로그램, 수술 계획용 3D 홀로그램은 계산 위상 이미징 방법론이 아니라 응용 하드웨어 보고이며 초록도 없습니다.</li>
+    <li><strong>Tomography/3D Imaging 순수 임상 사례·진단 연구 다수(38편)</strong> — 무릎 CT 계측, 신장 종괴 노모그램, 담석 검출 등 계산 이미징 방법론이 아니라 임상 진단 사례입니다.</li>
+    <li><strong>Virtual Staining/Pathology 대부분(17편, 무관 도메인)</strong> — LLM 행동 분석·탄소발자국 리뷰·솔라 스팀 발생기 등 키워드만 겹친 논문들입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>3D Gaussian Splatting의 표면·자세·추론 확장 (핵심 4편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.10602" target=_blank>Gaussian Sculpting</a></strong> <span class=pill>CV</span><br>
+- 문제: 3DGS가 후처리로 표면을 뽑을 때 제한된 시점과 가우시안 불규칙성 때문에 표면 오차가 생기고 수작업 보정도 어려움 / 방법: 가우시안을 SDF에 앵커링해 최적화 도중 표면을 직접 조각, bi-level 학습으로 안정화 / 의미: 렌더링과 표면 추출을 하나의 과정으로 통합 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.10938" target=_blank>GS-CPE</a></strong> <span class=pill>CV</span><br>
+- 문제: 시각 위치추정이 강건한 일반화와 높은 정확도를 동시에 잡기 어려움 / 방법: 3DGS 장면에서 retrieval 기반 대략적 자세 추정 후 워핑 기반 정밀 보정 / 의미: 3DGS를 렌더링이 아니라 좌표 추정 표현으로 사용 / 근거: 4개 벤치마크(7Scenes 등)에서 SOTA 주장 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.11150" target=_blank>CausalSplat</a></strong> <span class=pill>CV</span><br>
+- 문제: 기존 3DGS 장면 이해가 명시적 질의만 처리하고 암묵적 의도·상식 추론을 다루지 못함 / 방법: VLM과 3D 장면 그래프를 결합해 명시적 구조 인식과 암묵적 논리 추론을 분리 / 의미: 3DGS를 추론 가능한 표현으로 확장, 새 벤치마크(Causal-LERF/ScanNet) 제안 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.10682" target=_blank>VGGD</a></strong> <span class=pill>CV</span><br>
+- 문제: 자율주행 서라운드뷰는 카메라 간 겹침이 거의 없어 단일 프레임 3DGS가 기하학적으로 불안정함 / 방법: 사전학습된 기하 파운데이션 모델(VGGT)의 다중뷰 기하 prior를 프론트엔드에 이식 / 의미: 극단적 sparse-view 조건에서도 3DGS 안정화 / 근거: nuScenes 단일 프레임 벤치마크 최고 렌더링 품질 / 우선순위: Read
+</div>
+
+<h3>Physics-informed ML 자기 감사 (핵심 4편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.10047" target=_blank>PIML Systematic Review</a></strong> <span class=pill>LG</span><br>
+- 문제: PIML 관행에 대한 "해석가능성/일반화 개선" 등 흔한 주장의 근거가 체계적으로 검토된 적이 없음 / 방법: 212편을 observational/inductive/learning bias/hybrid 4개 클래스로 분류 리뷰 / 의미: 성능 개선은 확인되나 다른 주장은 근거 부족이라는 감사 결과 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.11020" target=_blank>Derivative Computation in PINNs</a></strong> <span class=pill>LG</span><br>
+- 문제: PINN의 표준 미분 계산(자동미분)이 특정 아키텍처에서 검증 없이 쓰임 / 방법: 유한차분과 확률적 변형을 자동미분과 체계적으로 비교, 샘플 간 의존 구조에서의 오류 규명 / 의미: 속도·메모리 이점과 함께 표준 관행의 숨은 함정을 지적 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.10011" target=_blank>HIPNO</a></strong> <span class=pill>LG</span><br>
+- 문제: 비침습 신호에서 혈역학 상태를 추정할 때 유량·저항·컴플라이언스 조합이 같은 압력을 만드는 척도 대칭 문제 / 방법: 관측 모델의 대칭군을 규명하고 몫공간(quotient space)에서 신경망을 파라미터화 / 의미: 물리적으로 식별 가능한 좌표로 재정식화 / 근거: 94.5만 구간에서 오차 32% 감소 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.10389" target=_blank>Weak-Entropy PINN</a></strong> <span class=pill>LG</span><br>
+- 문제: 불연속 해(충격파)를 갖는 쌍곡 보존법칙을 PINN으로 풀기 어려움 / 방법: 약형식(적분형)으로 방정식을 강제하고 엔트로피 조건으로 물리적으로 타당한 해를 선택 / 의미: 불연속 위치를 사전에 몰라도 정확히 포착 / 우선순위: Skim
+</div>
+
+<h3>파운데이션 인코더 site fingerprint 감사 (핵심 3편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.10295" target=_blank>Frozen Brain-MRI Foundation Models Are Site Fingerprints</a></strong> <span class=pill>CV</span><br>
+- 문제: 파운데이션 인코더 임베딩이 해부학을 담고 있다는 가정이 검증되지 않음 / 방법: 2개 코호트 × 3개 인코더에서 site 선형 디코딩 정확도 측정, null-space projection/ComBat 제거 실험 / 의미: 임베딩의 주성분이 실제로는 촬영 장비 지문임을 규명 / 근거: site 디코딩 ~0.9, 임상 변수보다 우세 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.10170" target=_blank>SSRL-MAR</a></strong> <span class=pill>CV</span><br>
+- 문제: 뇌 MRI 모션 아티팩트 보정이 짝지어진 깨끗한-손상 데이터나 k-space 접근을 요구해 임상 적용이 어려움 / 방법: 3단계 자기지도 학습(대조학습·모션 합성·복원)으로 짝 데이터 없이 학습 / 의미: 파운데이션 인코더 대신 자체 표현을 도메인 맞춤으로 학습하는 대안 / 근거: MR-ART 실측에서 PSNR +최대2.0dB / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.09991" target=_blank>Longitudinal 3D Foundation Modeling</a></strong> <span class=pill>IV</span><br>
+- 문제: 유방암 치료반응 예측이 단일 시점 영상에 의존해 치료 중 변화를 못 담음 / 방법: 동결 파운데이션 인코더(Pillar-0) + 시간 인식 네트워크로 4개 시점 결합 / 의미: 파운데이션 인코더를 그대로 쓰지 않고 시간 축 정보로 보완 / 근거: 982명, AUROC 73.6% / 우선순위: Read
+</div>
+
+<h3>Diffusion bridge의 측정 신호 시작점 확산 (핵심 3편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.10173" target=_blank>DoseBridge</a></strong> <span class=pill>CV</span><br>
+- 문제: 방사선치료 선량 예측이 CT·해부구조만 쓰고 빔 형상 정보를 놓침 / 방법: CT를 diffusion bridge 시작점으로 쓰고 빔 마스크를 다중스케일 융합 / 의미: 노이즈가 아니라 측정 가능한 구조화된 신호에서 출발 / 근거: 52명, MAE 4.170Gy / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.10000" target=_blank>Pre-to-Post-Contrast LBM</a></strong> <span class=pill>IV</span><br>
+- 문제: 조영증강 유방 MRI가 조영제 투여 부담을 증가시킴 / 방법: 조영 전 latent를 시작점 삼아 조영 후 latent로 가는 조건부 bridge 학습 / 의미: 환자 고유 해부 구조에 궤적을 고정하는 가상 조영 증강 / 근거: 91명, 종양조건화 SSIM 0.355→0.429 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.10995" target=_blank>HNDiff</a></strong> <span class=pill>CV</span><br>
+- 문제: 기존 diffusion 안개 제거가 안개 형성의 물리(대기 산란)를 무시하고 순수 노이즈에서 시작 / 방법: 대기 산란 모델을 순방향 확산 스케줄에 직접 결합, 안개 밀도에 따라 노이즈 강도 조절 / 의미: 물리 원리를 확산 과정 자체에 귀납 편향으로 심음 / 우선순위: Read
+</div>
+
+<h3>계산광학 코어 Watch (2편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.10479" target=_blank>Event-Guided Video Frame Interpolation</a></strong> <span class=pill>CV</span><br>
+- 문제: 이벤트 카메라 스트림을 diffusion transformer 기반 비디오 보간에 결합하는 방법이 미비 / 방법: 이벤트 스트림과 DiT를 연결하는 아키텍처 / 의미: 우리 랩 간섭성 이미징의 동적 장면 처리와 방법론적으로 맞닿음 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/oe.603301" target=_blank>Video-Rate Light-Field Display (LCD)</a></strong> <span class=pill>JNL</span><br>
+- 문제: 고해상도 비디오 속도 광 필드 디스플레이 구현이 어려움 / 방법: 계산된 필드-시퀀셜 컬러 LCD 구동(제목 기준) / 의미: 오늘 저널 쪽 유일한 실질 계산광학 하드웨어 신호 / 우선순위: Skim
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv 카테고리: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>cs.LG</a> · <a href="https://arxiv.org/list/cs.CV/new" target=_blank>cs.CV</a> · <a href="https://arxiv.org/list/cs.AI/new" target=_blank>cs.AI</a> · <a href="https://arxiv.org/list/eess.IV/new" target=_blank>eess.IV</a> · <a href="https://arxiv.org/list/eess.SP/new" target=_blank>eess.SP</a></li>
+  <li>RSS: <a href="../feed.xml">feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+Imaging Intelligence Daily Briefing · cs.LG · cs.CV · cs.AI · eess.IV · eess.SP 기반 자동 생성 · 입력 출처: arXiv, Crossref, OpenAlex
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+
+</body>
+</html>

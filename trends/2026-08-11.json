@@ -1,0 +1,35 @@
+{
+  "date": "2026-08-11",
+  "source_listing_date": "2026-08-11",
+  "source_mode": "pastweek-date-section",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 320,
+      "cs.CV": 313,
+      "cs.AI": 486,
+      "eess.IV": 18,
+      "eess.SP": 44
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 154
+  },
+  "totals": {
+    "total_scanned": 1424,
+    "selected": 258
+  },
+  "classified": {
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 3,
+      "Lensless/Coded Imaging": 2,
+      "Phase Imaging/Holography": 17,
+      "Meta-Optics/Diffractive": 17,
+      "Light-Field/Novel Sensors": 7,
+      "Tomography/3D Imaging": 39,
+      "Virtual Staining/Pathology": 18,
+      "Reconstruction/Inverse Problems": 21,
+      "Deep Learning Methods": 134
+    }
+  },
+  "daily_thesis": "2026-08-11(화)은 arXiv listing이 이미 그다음 날짜로 넘어가 버려서 /pastweek의 8/11 날짜 섹션만 따로 뽑아 복구한 날입니다 — cs.LG 320·cs.CV 313·cs.AI 486·eess.IV 18·eess.SP 44(합계 1181편)에 저널 154건을 더한 병합 스캔 1424편 중 258편(18.1%)이 ROI로 잡혔습니다. abstract가 없는 title/subject 기준 복구라 판단의 해상도는 평소보다 낮지만, Gaussian Splatting이 저조도·이벤트 스트림·JPEG 압축·포인트클라우드 없는 조건처럼 '입력이 이미 망가진 상태'를 다루는 쪽으로 5편이 몰렸고, 이미지 복원·초해상도 계열도 diffusion 궤적/trajectory 학습으로 재구성하려는 제목이 여럿 보였으며, 저널 쪽에서는 정량위상현미경(QPI) 논문 한 편이 abstract와 실측 해상도 수치(308nm half-pitch)를 갖춘 유일한 실질 벤치마크 후보였습니다.",
+  "note": "2026-08-11(화) 누락 daily를 Calendar Audit 복구 절차로 채우는 backfill 실행입니다. arXiv /new는 이미 8/11을 지나쳐 있어 /pastweek의 2026-08-11 날짜 섹션만 파싱했고(source_mode=pastweek-date-section), 이 섹션에는 abstract가 없어 title/subject 정보만으로 분류·클러스터링을 진행했습니다(instruction.md 4.1 backfill 주의사항). classify.py는 title+abstract+subjects를 함께 매칭하는데 abstract가 통째로 빠지면서 recall이 자연히 낮아졌고, 그 결과 오늘 ROI 선정비(18.1%)는 최근 /new 정상일 밴드(25~33%)보다 뚜렷하게 낮습니다 — 이는 parser 실패가 아니라 backfill의 구조적 한계이며, HTML meta 박스와 리스크 섹션에도 동일하게 명시했습니다. 저널(Crossref/OpenAlex)은 arXiv listing 공백과 무관하게 독립 수집됐고(--days 3 윈도우, backfill이라 확장), OpenAlex enrich로 abstract가 붙은 저널 논문 중 실측 수치를 포함한 것은 1편(RF-CPDHM, 정량위상현미경)뿐이라 benchmarks.json은 그 1건만 포함한 매우 sparse한 상태로 둡니다."
+}
