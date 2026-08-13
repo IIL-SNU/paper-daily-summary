@@ -1,0 +1,36 @@
+{
+  "date": "2026-08-13",
+  "source_listing_date": "2026-08-13",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 182,
+      "cs.CV": 126,
+      "cs.AI": 211,
+      "eess.IV": 18,
+      "eess.SP": 20
+    },
+    "scope": "new+cross; replacements excluded",
+    "exclude": "replace",
+    "journal_count": 423
+  },
+  "totals": {
+    "total_scanned": 836,
+    "selected": 224
+  },
+  "classified": {
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 12,
+      "Meta-Optics/Diffractive": 10,
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 32,
+      "Virtual Staining/Pathology": 16,
+      "Reconstruction/Inverse Problems": 24,
+      "Deep Learning Methods": 127
+    }
+  },
+  "daily_thesis": "오늘(8/13, 목) arXiv /new는 cs.LG 182·cs.CV 126·cs.AI 211·eess.IV 18·eess.SP 20(합계 557편)에 저널 원천 423건을 더해 병합 스캔 836건 중 224건(26.8%)이 ROI로 선정됐다. 가장 뚜렷한 신호는 diffusion/flow 생성 모델을 '측정값과 물리적으로 일치하는 결과를 학습 없이 강제하는' inverse solver로 쓰는 흐름이 PET·하이퍼스펙트럴·범용 inverse problem 세 응용에서 동시에 나온 것, 3DGS가 렌더링 도구를 넘어 물체 단위로 골라내고 편집하고 반사실적으로 설명할 수 있는 파라미터 공간으로 쓰이기 시작한 것(Seed2GS·COGENT), 실시간 스트리밍 비디오 diffusion이 초당 20프레임대 처리량을 내기 시작한 것(LiveAnimate·UniSwap·Avatar-Forever·LoSA), 의료 영상 딥러닝의 불확실성 추정 자체가 표준 방법으로는 신뢰할 수 없다는 감사 결과가 잇달아 나온 것이다. 계산광학 코어 5개 버킷(FP·Lensless·Phase·Meta-Optics·Light-Field, 총 25편)은 오늘도 대부분 통신용 메타표면·RIS·디스플레이 하드웨어 등 키워드 우연 매칭이었고, Virtual Staining/Pathology(16편)에서는 diffusion 기반 병리 분할 정제 클러스터(CoDiR·ProBAG) 2편만 실질 신호였다.",
+  "note": "2026-08-13(목) 정상 daily 실행. 5개 추적 카테고리 arXiv /new listing이 모두 2026-08-13(목요일)로 일치함을 확인하고 source_mode=new로 발행한다. 병합 스캔 836편 중 224편(26.8%) 선정 비율은 최근 며칠(18~33%) 밴드 안에 있는 정상 범위이며 parser 오류를 시사하지 않는다. 계산광학 코어 버킷은 편수만 보면 어제(23편)와 비슷한 25편이지만, Phase Imaging 12편 중 실질 신호는 QPI 약물 감수성 논문·각막 간섭계 논문 2편, Meta-Optics 10편 중 실질 신호는 나노광자 흡수체 역설계·회절 신경망 2편 정도이고 나머지는 통신·바이오센싱·RF 응용이라 지난 며칠과 같은 패턴이 이어졌다."
+}

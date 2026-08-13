@@ -1,0 +1,85 @@
+{
+  "date": "2026-08-13",
+  "results": [
+    {
+      "benchmark": "LERF-MASK",
+      "metric": "mIoU",
+      "value": 92.1,
+      "value_str": "92.1% mIoU",
+      "paper": "https://arxiv.org/abs/2608.11928",
+      "paper_title": "Seed2GS: Camera-Free, Training-Free Object Extraction from 3D Gaussian Scenes via a Single Reference-View Grounding"
+    },
+    {
+      "benchmark": "3D-OVS",
+      "metric": "mIoU",
+      "value": 95.7,
+      "value_str": "95.7% mIoU",
+      "paper": "https://arxiv.org/abs/2608.11928",
+      "paper_title": "Seed2GS: Camera-Free, Training-Free Object Extraction from 3D Gaussian Scenes via a Single Reference-View Grounding"
+    },
+    {
+      "benchmark": "GlaS/CRAG (10% labels)",
+      "metric": "mDice",
+      "value": 88.09,
+      "value_str": "88.09% / 89.83% mDice",
+      "paper": "https://arxiv.org/abs/2608.11807",
+      "paper_title": "CoDiR: Confidence-Guided Diffusion Refinement for Semi-Supervised Histopathology Segmentation"
+    },
+    {
+      "benchmark": "GlaS/CRAG (20% labels)",
+      "metric": "mDice",
+      "value": 90.29,
+      "value_str": "89.19% / 90.29% mDice",
+      "paper": "https://arxiv.org/abs/2608.11807",
+      "paper_title": "CoDiR: Confidence-Guided Diffusion Refinement for Semi-Supervised Histopathology Segmentation"
+    },
+    {
+      "benchmark": "Nanophotonic absorber inverse design (spectrum-to-geometry)",
+      "metric": "PSNR",
+      "value": 20.79,
+      "value_str": "20.79±0.31 dB",
+      "paper": "https://arxiv.org/abs/2608.11860",
+      "paper_title": "Two-Stage Deformable-Convolutional Inverse Design of Nanophotonic Absorbers from Optical Spectra"
+    },
+    {
+      "benchmark": "Nanophotonic absorber inverse design (spectrum-to-geometry)",
+      "metric": "Dice",
+      "value": 0.9623,
+      "value_str": "Dice 0.9623±0.0027",
+      "paper": "https://arxiv.org/abs/2608.11860",
+      "paper_title": "Two-Stage Deformable-Convolutional Inverse Design of Nanophotonic Absorbers from Optical Spectra"
+    },
+    {
+      "benchmark": "3-minute streaming rollout perceptual quality",
+      "metric": "IQA (30s vs final minute)",
+      "value": 4.026,
+      "value_str": "IQA 4.047 → 4.026",
+      "paper": "https://arxiv.org/abs/2608.11745",
+      "paper_title": "LiveAnimate: Stable Long-Form Streaming Human Animation in Real-Time"
+    },
+    {
+      "benchmark": "Streaming inference throughput (2×H100)",
+      "metric": "FPS",
+      "value": 19.63,
+      "value_str": "19.63 FPS",
+      "paper": "https://arxiv.org/abs/2608.11745",
+      "paper_title": "LiveAnimate: Stable Long-Form Streaming Human Animation in Real-Time"
+    },
+    {
+      "benchmark": "Streaming avatar throughput (1×H100, 768x512)",
+      "metric": "FPS",
+      "value": 27.2,
+      "value_str": "27.2 FPS",
+      "paper": "https://arxiv.org/abs/2608.12107",
+      "paper_title": "Avatar-Forever: Decoupled Parallel Training for High-Quality Real-Time Infinite Avatars"
+    },
+    {
+      "benchmark": "Wan2.1-1.3B / HunyuanVideo sparse-attention acceleration",
+      "metric": "speedup at VBench drop",
+      "value": 3.2,
+      "value_str": "3.2x speedup at 0.02pt VBench drop",
+      "paper": "https://arxiv.org/abs/2608.12032",
+      "paper_title": "LoSA: Near-Lossless Sparse Attention for Training-Free Video Diffusion Acceleration"
+    }
+  ]
+}

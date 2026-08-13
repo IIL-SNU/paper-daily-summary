@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 12 Aug 2026 12:18:02 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 12:05:53 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-08-13 (목요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-08-13.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-13.html</guid>
+      <pubDate>Thu, 13 Aug 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘(8/13, 목)은 arXiv /new에 cs.LG 182편, cs.CV 126편, cs.AI 211편, eess.IV 18편, eess.SP 20편(합계 557편)이 잡혔고, 저널 423건을 더한 병합 스캔 836건 중 224건(26.8%)이 ROI로 선정됐습니다. 오늘 가장 뚜렷했던 흐름은 diffusion과 flow 생성 모델을 "그럴듯한 이미지를 만드는 도구"가 아니라 "실제 측정값과 물리적으로 들어맞아야 하는 inverse solver"로 쓰는 논문이 서로 다른 이미징 응용 세 곳에서 동시에 나왔다는 점입니다. Making Every Step Count는 초해상도·디블러링·인페인팅에 flow 기반 prior를 학습 없이 바로 적용할 때, 지금까지 균등하게 나…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-08-12 (수요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-08-12.html</link>

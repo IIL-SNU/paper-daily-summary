@@ -1,0 +1,168 @@
+{
+  "date": "2026-08-13",
+  "insights": [
+    {
+      "title": "실시간 스트리밍 아바타/영상 diffusion이 '한 클립에 몇 분씩'에서 '초당 20프레임 이상 생성'으로",
+      "claim": "예전에는 diffusion 기반 인물 영상 생성이 한 클립을 만드는 데 몇 분에서 몇 시간이 걸려서, 라이브 스트리밍이나 화상 통화처럼 즉시 반응해야 하는 상황에는 아예 쓸 수 없었습니다. 오늘 나온 세 편은 이 문제를 정면으로 풉니다. LiveAnimate는 140억 파라미터급 비디오 diffusion transformer를 양방향 구조에서 블록 단위로 하나씩 순차 생성하는 구조로 바꾸고 3단계로 압축한 뒤, 포즈가 반복될 때 예전에 만든 장면을 다시 불러오는 캐시 기법(PR-Sink)을 더해 H100 GPU 두 장으로 초당 19.63프레임을 냅니다. UniSwap은 영상과 음성을 따로 모델을 돌리지 않고 하나의 오디오-비주얼 diffusion transformer로 묶어서 얼굴과 목소리를 동시에 바꾸면서도 30단계였던 생성 과정을 3단계로 줄였고, Avatar-Forever는 220억 파라미터 모델로 효율과 긴 영상에서의 안정성을 아예 별도 학습 갈래로 분리해 동시에 학습시켜서 H100 한 장으로 초당 27.2프레임을 냅니다. 여기에 LoSA는 특정 모델 하나가 아니라 범용 기법으로, attention 연산의 약 40%를 정보 손실 거의 없이(VBench 점수 0.02~0.06점 하락) 건너뛰어 최대 3.2배 속도를 냅니다. 네 편을 같이 보면, 비디오 diffusion 연구의 무게중심이 '더 그럴듯한 한 클립'에서 '지연 없이 계속 이어지는 스트림'으로 옮겨가고 있다는 뜻입니다. 이건 인물 아바타뿐 아니라 우리 랩이 다루는 실시간 재구성·복원 파이프라인(예: 라이브 현미경 스트림에 diffusion prior를 적용하는 경우)에도 같은 지연시간 문제가 있으므로, 여기서 쓰인 블록 단위 순차 생성·캐시·증류 기법을 그대로 참고할 수 있습니다.",
+      "papers": [
+        {
+          "title": "LiveAnimate: Stable Long-Form Streaming Human Animation in Real-Time",
+          "arxiv": "https://arxiv.org/abs/2608.11745",
+          "importance_tags": ["[방법전환]", "[실사용전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Generative Imaging", "class": "Video Diffusion", "order": "Streaming autoregressive DiT", "genus": "Sink-cache pose retrieval", "confidence": "Medium", "rationale": "3분 벤치마크에서 IQA 4.047 vs 4.026(초반-후반 거의 유지)으로 자체 비교는 명확하나 외부 baseline 대비 절대 우위 수치는 abstract에 제한적"}
+        },
+        {
+          "title": "UniSwap: Streaming Audio-Visual Identity Swapping for Talking Videos",
+          "arxiv": "https://arxiv.org/abs/2608.11752",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Generative Imaging", "class": "Video Diffusion", "order": "Streaming autoregressive DiT", "genus": "Joint audio-visual identity transfer", "confidence": "Low", "rationale": "정성적 비교('강한 동기화', '경쟁력 있는 정체성 보존')만 abstract에 제시되고 구체 수치는 없음"}
+        },
+        {
+          "title": "Avatar-Forever: Decoupled Parallel Training for High-Quality Real-Time Infinite Avatars",
+          "arxiv": "https://arxiv.org/abs/2608.12107",
+          "importance_tags": ["[방법전환]", "[실사용전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Generative Imaging", "class": "Video Diffusion", "order": "Streaming autoregressive DiT", "genus": "Decoupled distillation + long-horizon adapter", "confidence": "Medium", "rationale": "220억 파라미터 모델에서 768x512 해상도 27.2 FPS라는 구체 처리량 수치를 제시"}
+        },
+        {
+          "title": "LoSA: Near-Lossless Sparse Attention for Training-Free Video Diffusion Acceleration",
+          "arxiv": "https://arxiv.org/abs/2608.12032",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Generative Imaging", "class": "Video Diffusion", "order": "Training-free acceleration", "genus": "Retained-mass sparse attention", "confidence": "High", "rationale": "3개 서로 다른 비디오 diffusion transformer(Wan2.1, HunyuanVideo 포함)에서 최대 3.2배 속도, VBench 점수 하락 0.02점이라는 정량 비교를 baseline과 직접 대조해 제시"}
+        }
+      ],
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 저자군 4편이 같은 날 '블록 단위 순차 생성 + 증류 + 캐시'라는 같은 설계 원칙을 공유하지만, 응용 도메인이 인물 아바타/라이브 스트리밍에 집중돼 있어 계산 이미징 코어와는 간접적으로만 연결됨"
+    },
+    {
+      "title": "Diffusion/flow 생성 모델을 '측정값과 일치하게 만드는' inverse solver로 쓰는 흐름이 이미징 응용 세 곳에서 동시 등장",
+      "claim": "diffusion이나 flow로 학습한 생성 모델을 이미 알려진 물리 관측 모델(측정 과정)과 결합해서, 순수 생성이 아니라 '측정값과 들어맞으면서도 그럴듯한' 영상을 복원하는 접근이 오늘 세 개의 서로 다른 이미징 문제에서 동시에 나왔습니다. Making Every Step Count는 초해상도·디블러링·인페인팅처럼 서로 다른 inverse problem에 flow 기반 prior를 학습 없이(training-free) 바로 적용할 때, 지금까지는 각 denoising 단계에서 얼마나 계산을 쓸지 균등하게 나눴다면 이 논문은 초반에는 큰 그림을 탐색하고 후반에는 세부를 다듬는 식으로 계산 배분 자체를 최적화합니다. SinoDiff는 저선량 PET을 표준 선량 PET으로 복원할 때, 측정 과정에서 실제로 일어나는 광자 감쇠 현상(Poisson thinning)을 diffusion의 순방향 과정 자체에 그대로 반영해서, 지도학습 데이터 없이도 여러 선량 수준에 하나의 모델로 대응합니다. 하이퍼스펙트럴 팬샤프닝 논문(DIDM)은 팬크로매틱·저해상도 하이퍼스펙트럴 두 영상을 동시에 diffusion prior에 조건으로 주는 이중 modality 프롬프팅으로 학습 데이터 없이 고해상도 하이퍼스펙트럴 영상을 복원합니다. 세 편을 같이 보면, '생성 모델이 그럴듯한 이미지를 만든다'는 것만으로는 부족하고, '그 생성 결과가 실제 측정값과 물리적으로 일치하는가'를 학습 없이도 강제하는 방향으로 연구가 수렴하고 있다는 뜻입니다. 이는 우리 랩의 위상 복원·홀로그래피 재구성처럼 측정 모델이 명확한 문제에 직접 적용할 수 있는 설계 원칙입니다.",
+      "papers": [
+        {
+          "title": "Making Every Step Count: Spatio-Temporal Information Allocation for Imaging Inverse Problems",
+          "arxiv": "https://arxiv.org/abs/2608.11747",
+          "importance_tags": ["[방법전환]", "[평가축]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Inverse Problems", "order": "Training-free flow-based solver", "genus": "Spatio-temporal NFE allocation", "confidence": "Medium", "rationale": "초해상도·디블러링·인페인팅 세 과제에 걸쳐 개선을 주장하나 abstract에 절대 수치는 제시되지 않음"}
+        },
+        {
+          "title": "SinoDiff: Physics-Consistent Self-Supervised Diffusion for Unified Low-Dose to Standard-Dose PET Sinogram Recovery",
+          "arxiv": "https://arxiv.org/abs/2608.11514",
+          "importance_tags": ["[방법전환]", "[데이터전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Inverse Problems", "order": "Physics-consistent diffusion", "genus": "Poisson-thinning forward process", "confidence": "Medium", "rationale": "여러 선량 수준을 하나의 자기지도 모델로 통합했다는 설계는 명확하나 abstract에 PSNR 등 정량 비교 수치는 없음"}
+        },
+        {
+          "title": "Dual Modality Prompted Diffusion Priors for Zero Shot Hyperspectral Pansharpening",
+          "arxiv": "https://arxiv.org/abs/2608.11748",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Inverse Problems", "order": "Zero-shot diffusion prior", "genus": "Dual-modality cross-attention prompting", "confidence": "Low", "rationale": "'모든 평가 지표에서 최고 성능'이라고만 주장하고 abstract에 구체 수치가 없어 본문 확인 필요"}
+        }
+      ],
+      "confidence": "Medium",
+      "confidence_note": "3편이 서로 다른 이미징 응용(일반 inverse problem·PET·하이퍼스펙트럴)에서 '측정 일관성을 학습 없이 강제'라는 같은 설계 원칙을 공유하지만, 서로 다른 팀이고 abstract에 구체적 정량 비교 수치가 부족해 근거 강도는 중간 수준"
+    },
+    {
+      "title": "3D Gaussian Splatting이 렌더링 도구를 넘어 '편집 가능하고 설명 가능한 파라미터 공간'으로 쓰이기 시작",
+      "claim": "어제는 3DGS(장면을 수많은 작은 가우시안 덩어리로 표현해 실시간 렌더링하는 3D 재구성 방법)가 표면 추출·카메라 자세 추정·상식 추론이라는 다른 하위 문제의 표현으로 확장되는 흐름이었는데, 오늘은 같은 3DGS 표현을 '그 안의 특정 가우시안들을 직접 골라내고 조작할 수 있는 파라미터 공간'으로 쓰는 두 편이 나왔습니다. Seed2GS는 이미 만들어진 3DGS 장면에서 원하는 물체 하나만 골라내는 문제를 풉니다 — 기존 방법은 장면마다 다시 학습시키거나 원래 촬영에 쓴 카메라 정보가 있어야 했는데, 이 논문은 참조 이미지 한 장으로 물체의 정체성만 고정한 뒤 카메라 없이도 장면을 돌려보며 그 물체가 차지하는 가우시안들을 추적해서, 학습이나 카메라 정보 없이도 최고 수준의 정확도(LERF-MASK 92.1% mIoU)를 냅니다. COGENT는 한 걸음 더 나아가, 폐암 위험 예측 모델이 CT 영상의 어느 부분을 보고 그런 판단을 내렸는지 설명하려고 할 때, 기존처럼 복셀 하나하나에 중요도 점수를 매기는 대신 3DGS로 표현된 폐 영상에서 어떤 가우시안 덩어리를 바꾸면 모델의 예측이 바뀌는지(반사실적 설명)를 직접 최적화로 찾아냅니다. 두 편을 같이 보면, 3DGS가 이제 '장면을 어떻게 그릴까'라는 렌더링 문제를 넘어 '그 장면 표현 안의 특정 부분을 골라내고, 바꾸고, 왜 중요한지 설명하는' 조작 가능한 매체로 쓰이기 시작했다는 뜻입니다. 특히 COGENT는 3DGS가 복셀 그리드를 대체하는 의료 영상 표현으로 실제 쓰일 수 있다는 걸 보여준 사례라, 우리 랩의 단층촬영·재구성 파이프라인에서 복셀 대신 3DGS 표현을 쓸 때 얻는 이점(가우시안 단위의 직접 편집·설명 가능성)을 참고할 만합니다.",
+      "papers": [
+        {
+          "title": "Seed2GS: Camera-Free, Training-Free Object Extraction from 3D Gaussian Scenes via a Single Reference-View Grounding",
+          "arxiv": "https://arxiv.org/abs/2608.11928",
+          "importance_tags": ["[방법전환]", "[평가축]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Gaussian Splatting", "genus": "Camera-free object grounding", "confidence": "High", "rationale": "LERF-MASK 92.1% mIoU(기존 scene-trained baseline 대비 +3.7점, camera-free baseline 대비 +7.6점), 3D-OVS 95.7% mIoU를 명시적으로 제시"}
+        },
+        {
+          "title": "COGENT: Counterfactual Gaussian Explanations for Volumetric Medical Images",
+          "arxiv": "https://arxiv.org/abs/2608.11422",
+          "importance_tags": ["[방법전환]", "[해부분석]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Explainability", "order": "Gaussian-splatting representation", "genus": "Counterfactual optimization over Gaussian primitives", "confidence": "Medium", "rationale": "폐 CT + Sybil 폐암 위험 예측 모델로 정량·정성 비교를 모두 수행했다고 명시하나 abstract에 구체 수치는 없음"}
+        }
+      ],
+      "confidence": "Medium",
+      "confidence_note": "2편이 '3DGS를 편집·설명 가능한 파라미터 공간으로 쓴다'는 같은 방향을 보이지만 응용(범용 3D 편집 vs 의료 영상 설명)이 달라 직접 비교는 어려움. Seed2GS는 강한 정량 근거, COGENT는 정성적 근거 위주"
+    },
+    {
+      "title": "의료 영상 딥러닝의 '불확실성 추정'이 표준 방법으로는 신뢰할 수 없다는 감사 결과가 잇달아 나옴",
+      "claim": "딥러닝 모델이 낸 예측에 '이 예측이 얼마나 확실한지'까지 같이 알려주면 의료 현장에서 훨씬 안전하게 쓸 수 있을 거라는 기대가 있는데, 오늘 나온 논문들은 지금 흔히 쓰는 불확실성 추정 방법들이 실제로는 그 기대를 충족하지 못한다는 걸 구체적으로 보여줍니다. Decodable but Not Accessible은 표현 공간에서의 거리로 신뢰도를 추정하는 방법(distance-based reliability estimation)을 정면으로 감사했는데, 도메인 적대적 학습으로 표현의 기하 구조를 인위적으로 바꿔가며 8가지 표준 신뢰도 추정 방법을 테스트한 결과 7가지가 무작위 추측보다도 못한 성능(AUROC 약 0.40)을 보였습니다 — 심지어 필요한 정보가 표현 안에 선형적으로 존재하는데도 그 정보를 신뢰도 추정에는 못 쓴다는 뜻입니다. 정량 MRI 매핑 논문은 diffusion 모델이 여러 번 추론해서 만들어내는 불확실성 지도가 오차와 어느 정도 상관은 있지만 그대로 믿을 수는 없고 사후 보정(calibration)이 반드시 필요하다는 걸 보였고, 피부 병변 분류 앙상블 논문은 반대로 여러 모델을 앙상블하고 MC Dropout으로 불확실성을 재는 방식이 불확실성이 높은 샘플을 걸러내면 정확도 96%·AUC 99%까지 끌어올릴 수 있다는 긍정적 사례도 함께 보여줍니다. 세 편을 같이 보면, '불확실성을 그냥 계산해서 붙이면 된다'는 단계에서 '이 불확실성 수치를 실제로 믿어도 되는지부터 검증해야 한다'는 단계로 넘어가고 있다는 뜻입니다. 우리 랩이 재구성·복원 결과에 신뢰도 점수를 붙이는 파이프라인을 만든다면, 그 점수 자체가 실제로 오차와 상관관계가 있는지를 별도로 검증하는 단계를 반드시 넣어야 한다는 경고 신호입니다.",
+      "papers": [
+        {
+          "title": "Decodable but Not Accessible: Auditing Distance-Based Reliability Estimation on Disentangled Skin-Lesion Representations",
+          "arxiv": "https://arxiv.org/abs/2608.11267",
+          "importance_tags": ["[경고신호]", "[해부분석]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Reliability auditing", "order": "Representation geometry analysis", "genus": "Disentanglement dose-response ladder", "confidence": "High", "rationale": "동일 아키텍처·같은 16차원 표현에서 disentanglement 강도만 다른 3개 체크포인트군으로 통제 실험, 8개 표준 방법 중 7개가 AUROC 약 0.40(우연 이하)이라는 구체 수치 제시"}
+        },
+        {
+          "title": "Evaluating and Calibrating Diffusion Model-derived Uncertainty for Quantitative MRI Mapping",
+          "arxiv": "https://arxiv.org/abs/2608.11942",
+          "importance_tags": ["[해부분석]", "[평가축]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Reliability auditing", "order": "Diffusion-derived uncertainty", "genus": "Post-hoc calibration for qMRI", "confidence": "Medium", "rationale": "합성 테스트 데이터에서 오차 인지·고오차 검출·선택적 예측·구간 보정을 체계적으로 평가했다고 명시하나 절대 수치는 abstract에 부족"}
+        },
+        {
+          "title": "Uncertainty-Aware and Explainable Ensemble Deep Learning Framework for Multi-Class Skin Lesion Classification",
+          "arxiv": "https://arxiv.org/abs/2608.11280",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Reliability auditing", "order": "Uncertainty-filtered ensemble", "genus": "MC Dropout + Grad-CAM ensemble", "confidence": "Medium", "rationale": "정확도 96%·ROC-AUC 99%라는 구체 수치를 제시하나 단일 데이터셋 기준이라 일반화는 별도 확인 필요"}
+        }
+      ],
+      "confidence": "Medium",
+      "confidence_note": "3편이 '불확실성 추정을 그대로 믿을 수 없다'는 같은 경고를 공유하지만 서로 다른 응용(피부 병변·정량 MRI)이고, 그중 하나(Decodable but Not Accessible)만 통제된 정량 근거가 강함"
+    },
+    {
+      "title": "병리 조직 분할에서 diffusion 기반 pseudo-label 정제가 라벨 부족 문제를 푸는 새 표준으로 자리잡는 중",
+      "claim": "병리 조직 분할(암세포·선(gland) 등 조직 구조를 픽셀 단위로 구분하는 문제)은 전문 병리의가 픽셀 단위로 라벨을 달아야 해서 데이터가 항상 부족한데, 오늘 나온 두 편은 라벨이 적거나 아예 이미지 단위 라벨만 있는 상황에서 diffusion 모델로 불확실한 영역의 pseudo-label을 정제하는 같은 전략을 씁니다. CoDiR은 라벨이 10~20%만 있는 준지도 학습 상황에서, teacher 모델이 낮은 확신으로 예측한 영역만 골라 diffusion 모델로 그럴듯한 마스크 구조를 다시 그리게 해서 정제하는데, 이 정제 단계만으로 mDice가 6.36%p 오르고 GlaS·CRAG 두 데이터셋에서 라벨 10%만으로도 88~90% mDice를 냅니다. ProBAG는 한 단계 더 나아가 이미지 단위 라벨(이 이미지에 암세포가 있다/없다)만으로 픽셀 단위 분할을 해야 하는 더 어려운 상황을 다루는데, 병리 특화 파운데이션 모델(CONCH, UNI)이 뽑은 시각·텍스트 프로토타입과 그래프 기반 diffusion을 결합해 조직 경계 근처의 애매한 영역을 더 정확하게 잡아냅니다. 두 편을 같이 보면, 병리 분할 연구가 '라벨이 부족하면 어떻게든 데이터를 늘리자'는 방향에서 '적은 라벨로 만든 초기 예측 중 애매한 부분만 diffusion으로 골라 정제하자'는 더 정교한 방향으로 옮겨가고 있다는 뜻입니다. 이는 오늘 계산광학 코어 버킷 중 Virtual Staining/Pathology(16편)에서 실제로 관련 있는 몇 안 되는 신호이고, 우리 랩의 병리 이미징·label-free 조직 분류 파이프라인에서 라벨 부족 문제를 겪을 때 바로 참고할 수 있는 설계입니다.",
+      "papers": [
+        {
+          "title": "CoDiR: Confidence-Guided Diffusion Refinement for Semi-Supervised Histopathology Segmentation",
+          "arxiv": "https://arxiv.org/abs/2608.11807",
+          "importance_tags": ["[방법전환]", "[표준후보]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Histopathology segmentation", "order": "Semi-supervised diffusion refinement", "genus": "Confidence-gated pseudo-label diffusion", "confidence": "Medium", "rationale": "GlaS/CRAG에서 라벨 10%·20% 조건 각각 mDice 88.09%/89.83%, 89.19%/90.29%, 정제 모듈 단독 기여 +6.36%p를 구체 수치로 제시"}
+        },
+        {
+          "title": "ProBAG: Prototype-Guided Boundary-Aware Graph Diffusion for Weakly Supervised Histopathology Segmentation",
+          "arxiv": "https://arxiv.org/abs/2608.11765",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Histopathology segmentation", "order": "Weakly-supervised pseudo-mask generation", "genus": "Prototype-guided boundary-aware graph diffusion", "confidence": "Low", "rationale": "BCSS-WSSS/LUAD-HistoSeg에서 기존 CAM 기반 방법 대비 개선을 주장하나 abstract에 절대 수치가 없어 본문 확인 필요"}
+        }
+      ],
+      "confidence": "Medium",
+      "confidence_note": "저자군이 겹치는 2편이 같은 벤치마크 계열(병리 파운데이션 모델 CONCH/UNI/Phikon 활용)에서 같은 diffusion 정제 전략을 공유하지만, 편수가 2편뿐이고 서로 다른 지도 강도(준지도 vs 약지도)를 다뤄 완전히 같은 클러스터로 보기엔 조심스러움"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "LoSA의 retained-mass sparse attention을 우리 랩 diffusion 기반 실시간 재구성 파이프라인에 적용해 지연시간·품질 트레이드오프 측정",
+      "claim": "LoSA가 attention 연산의 약 40%를 정보 손실 거의 없이 건너뛰어 최대 3.2배 속도를 낸 training-free 기법을, 우리 랩이 diffusion prior를 쓰는 재구성/복원 모델(예: 위상 복원, 홀로그래피 디노이징)에 학습 없이 바로 적용해 봅니다. 실행 1주차: (1) LoSA의 block attention mass 측정 코드를 재현하고 우리 diffusion 재구성 모델에 연결, (2) 공통 benchmark: 우리 랩이 보유한 위상 복원 또는 홀로그래피 디노이징 diffusion 모델과 테스트셋, (3) 비교축: 적용 전/후 추론 속도, PSNR/SSIM 하락폭, (4) 실패해도 남는 결과: 우리 모델의 attention mass 분포가 LoSA가 가정하는 '초반 단계 안정성'을 실제로 만족하는지에 대한 진단 baseline.",
+      "supporting_papers": [
+        {"title": "LoSA: Near-Lossless Sparse Attention for Training-Free Video Diffusion Acceleration", "arxiv": "https://arxiv.org/abs/2608.12032", "phylogeny": {"source": "CVML", "phylum": "Generative Imaging"}}
+      ]
+    },
+    {
+      "title": "SinoDiff의 Poisson-thinning 순방향 과정을 우리 랩 광자 제한 이미징(저조도 형광 현미경 등) diffusion 재구성에 이식",
+      "claim": "SinoDiff가 저선량 PET의 실제 측정 물리(광자 감쇠를 Poisson thinning으로 모델링)를 diffusion 순방향 과정에 직접 반영해 여러 선량 수준을 하나의 자기지도 모델로 통합한 설계를, 우리 랩의 광자 제한(low-photon) 이미징 문제(저조도 형광 현미경, 약한 신호 위상 이미징 등)에 이식합니다. 실행 1주차: (1) Poisson thinning forward process 모듈 재현, (2) 공통 benchmark: 우리 랩 저조도/저선량 이미징 데이터셋(여러 노출·신호 수준 포함), (3) 비교축: 기존 지도학습 디노이징 대비 자기지도 모델의 노출 수준별 PSNR/SSIM, 짝 데이터 없이 학습 가능 여부, (4) 실패해도 남는 결과: 우리 데이터의 노이즈 통계가 Poisson thinning 가정에 얼마나 맞는지에 대한 baseline 분석.",
+      "supporting_papers": [
+        {"title": "SinoDiff: Physics-Consistent Self-Supervised Diffusion for Unified Low-Dose to Standard-Dose PET Sinogram Recovery", "arxiv": "https://arxiv.org/abs/2608.11514", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+      ]
+    },
+    {
+      "title": "COGENT의 반사실적 Gaussian 설명 절차를 우리 랩 3DGS 기반 단층촬영 재구성에 적용해 어떤 가우시안이 진단에 기여하는지 규명",
+      "claim": "COGENT가 폐 CT를 3DGS로 표현하고 특정 가우시안을 바꿔가며 폐암 위험 예측 모델의 판단이 어떻게 바뀌는지 최적화로 찾아낸 반사실적 설명 절차를, 우리 랩이 3DGS 표현을 실험 중인 단층촬영/재구성 파이프라인에 적용해 어떤 영역의 가우시안이 다운스트림 판단(병변 검출 등)에 실제로 기여하는지 규명합니다. 실행 1주차: (1) MedGS 기반 반사실적 최적화 파이프라인 재현, (2) 공통 benchmark: 우리 랩 3DGS 재구성 결과물 + 다운스트림 분류/검출 모델, (3) 비교축: 복셀 기반 기존 설명 방법(Grad-CAM 등) 대비 반사실적 Gaussian 설명의 공간적 국소성·해부학적 일관성, (4) 실패해도 남는 결과: 우리 3DGS 표현에서 가우시안 단위 편집이 다운스트림 예측에 미치는 민감도 프로파일.",
+      "supporting_papers": [
+        {"title": "COGENT: Counterfactual Gaussian Explanations for Volumetric Medical Images", "arxiv": "https://arxiv.org/abs/2608.11422", "phylogeny": {"source": "CVML", "phylum": "Medical Imaging"}}
+      ]
+    }
+  ],
+  "phylogeny_tags": [
+    {"paper": "https://arxiv.org/abs/2608.11745", "source": "CVML", "lineage": "Generative Imaging > Video Diffusion > Streaming autoregressive DiT > Sink-cache pose retrieval"},
+    {"paper": "https://arxiv.org/abs/2608.11752", "source": "CVML", "lineage": "Generative Imaging > Video Diffusion > Streaming autoregressive DiT > Joint audio-visual identity transfer"},
+    {"paper": "https://arxiv.org/abs/2608.12107", "source": "CVML", "lineage": "Generative Imaging > Video Diffusion > Streaming autoregressive DiT > Decoupled distillation + long-horizon adapter"},
+    {"paper": "https://arxiv.org/abs/2608.12032", "source": "CVML", "lineage": "Generative Imaging > Video Diffusion > Training-free acceleration > Retained-mass sparse attention"},
+    {"paper": "https://arxiv.org/abs/2608.11747", "source": "CVML", "lineage": "Computational Imaging > Inverse Problems > Training-free flow-based solver > Spatio-temporal NFE allocation"},
+    {"paper": "https://arxiv.org/abs/2608.11514", "source": "CVML", "lineage": "Computational Imaging > Inverse Problems > Physics-consistent diffusion > Poisson-thinning forward process"},
+    {"paper": "https://arxiv.org/abs/2608.11748", "source": "CVML", "lineage": "Computational Imaging > Inverse Problems > Zero-shot diffusion prior > Dual-modality cross-attention prompting"},
+    {"paper": "https://arxiv.org/abs/2608.11928", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Gaussian Splatting > Camera-free object grounding"},
+    {"paper": "https://arxiv.org/abs/2608.11422", "source": "CVML", "lineage": "Medical Imaging > Explainability > Gaussian-splatting representation > Counterfactual optimization over Gaussian primitives"},
+    {"paper": "https://arxiv.org/abs/2608.11267", "source": "CVML", "lineage": "Medical Imaging > Reliability auditing > Representation geometry analysis > Disentanglement dose-response ladder"},
+    {"paper": "https://arxiv.org/abs/2608.11942", "source": "CVML", "lineage": "Medical Imaging > Reliability auditing > Diffusion-derived uncertainty > Post-hoc calibration for qMRI"},
+    {"paper": "https://arxiv.org/abs/2608.11280", "source": "CVML", "lineage": "Medical Imaging > Reliability auditing > Uncertainty-filtered ensemble > MC Dropout + Grad-CAM ensemble"},
+    {"paper": "https://arxiv.org/abs/2608.11807", "source": "CVML", "lineage": "Medical Imaging > Histopathology segmentation > Semi-supervised diffusion refinement > Confidence-gated pseudo-label diffusion"},
+    {"paper": "https://arxiv.org/abs/2608.11765", "source": "CVML", "lineage": "Medical Imaging > Histopathology segmentation > Weakly-supervised pseudo-mask generation > Prototype-guided boundary-aware graph diffusion"}
+  ]
+}

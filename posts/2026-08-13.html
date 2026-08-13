@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-08-13</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-08-13 (목요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-08-13 (목요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Thursday, 13 August 2026"으로 일치하는 걸 확인하고 정상 Daily로 발행합니다. abstract가 전부 확보된 정상 실행이고, 저널(Crossref/OpenAlex) 수집도 평소대로 독립 수행됐습니다.</div>
+  <div>🔢 arXiv: cs.LG 182 · cs.CV 126 · cs.AI 211 · eess.IV 18 · eess.SP 20 (new+cross, replacement 제외, 합계 557)</div>
+  <div>🔢 병합: arXiv+저널(423건) 병합 스캔 836건 · ROI 배정 224건 (26.8%) — 최근 밴드(18~33%)와 비슷한 정상 범위</div>
+  <div>⚠️ 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) 5개 버킷은 총 25편이지만 다시 하나씩 읽어보면 대부분 통신용 RIS·메타표면 바이오센싱·근안 디스플레이 등 키워드 우연 매칭입니다. 오늘의 실제 무게중심은 diffusion/flow 생성 모델을 측정값과 물리적으로 일치시키는 inverse solver로 쓰는 흐름이 PET·하이퍼스펙트럴·범용 inverse problem에서 동시에 나온 것, 3DGS가 렌더링을 넘어 물체 단위로 골라내고 반사실적으로 설명하는 파라미터 공간이 된 것, 실시간 스트리밍 비디오 diffusion이 초당 20프레임대에 도달한 것, 의료 영상 딥러닝의 불확실성 추정 자체가 못 미덥다는 감사 결과입니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 arXiv의 무게중심은 <strong>"생성 모델을 믿지 않고 측정값·구조와 대조하며 검증하는 날"</strong>입니다 — diffusion·flow 생성 모델을 그럴듯한 이미지를 만드는 도구가 아니라 실제 측정 물리와 반드시 들어맞아야 하는 inverse solver로 쓰는 논문이 PET 저선량 복원(SinoDiff)·하이퍼스펙트럴 팬샤프닝(DIDM)·범용 inverse problem(Making Every Step Count)에서 동시에 나왔고, 3D Gaussian Splatting(3DGS, 장면을 수많은 작은 가우시안 덩어리로 표현해 실시간 렌더링하는 3D 재구성 방법)은 렌더링 품질 경쟁을 넘어 물체 하나만 골라내거나(Seed2GS) 어떤 가우시안이 진단 판단에 영향을 주는지 반사실적으로 설명하는(COGENT) 조작 가능한 매체로 쓰이기 시작했습니다. 실시간 스트리밍 비디오 diffusion 쪽에서는 LiveAnimate·UniSwap·Avatar-Forever가 블록 단위 순차 생성과 증류를 결합해 H100 한두 장으로 초당 20~27프레임을 냈고, LoSA는 그 위에 얹을 수 있는 범용 가속 기법(최대 3.2배, 품질 손실 0.02점)을 내놨습니다. 가장 인상적인 경고 신호는 Decodable but Not Accessible로, 딥러닝의 불확실성 추정 방법 8가지 중 7가지가 표현 안에 필요한 정보가 실제로 있는데도 우연 수준(AUROC ~0.40) 성능을 보였다는 걸 통제 실험으로 정면 증명했습니다. 계산광학 코어(Fourier Ptychography·Lensless·Phase·Meta-Optics·Light-Field)는 오늘도 실제 이미징 신호가 희박했고, 병리 분할 쪽은 CoDiR·ProBAG 두 편이 diffusion 기반 pseudo-label 정제라는 같은 전략을 공유했습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(8/13, 목)은 arXiv /new에 cs.LG 182편, cs.CV 126편, cs.AI 211편, eess.IV 18편, eess.SP 20편(합계 557편)이 잡혔고, 저널 423건을 더한 병합 스캔 836건 중 224건(26.8%)이 ROI로 선정됐습니다. 오늘 가장 뚜렷했던 흐름은 diffusion과 flow 생성 모델을 "그럴듯한 이미지를 만드는 도구"가 아니라 "실제 측정값과 물리적으로 들어맞아야 하는 inverse solver"로 쓰는 논문이 서로 다른 이미징 응용 세 곳에서 동시에 나왔다는 점입니다. Making Every Step Count는 초해상도·디블러링·인페인팅에 flow 기반 prior를 학습 없이 바로 적용할 때, 지금까지 균등하게 나눴던 denoising 단계별 계산량을 초반 탐색과 후반 정제로 나눠 배분합니다. SinoDiff는 저선량 PET을 표준 선량으로 복원할 때 실제 측정 과정에서 일어나는 광자 감쇠(Poisson thinning)를 diffusion의 순방향 과정 자체에 반영해서 지도학습 데이터 없이 여러 선량 수준에 하나의 모델로 대응하고, 하이퍼스펙트럴 팬샤프닝 논문(DIDM)은 팬크로매틱·저해상도 하이퍼스펙트럴 두 입력을 동시에 diffusion prior에 조건으로 주는 이중 modality 프롬프팅으로 학습 데이터 없이 고해상도 영상을 복원합니다. 세 편을 같이 보면 "생성 모델이 그럴듯한 이미지를 만든다"는 것만으로는 부족하고 그 결과가 실제 측정값과 일치하는지를 학습 없이도 강제하는 방향으로 연구가 수렴하고 있다는 뜻입니다.</p>
+<p>같은 날 3D Gaussian Splatting 쪽에서도 흥미로운 전환이 보였습니다. Seed2GS는 이미 만들어진 3DGS 장면에서 참조 이미지 한 장만으로 원하는 물체 하나의 정체성을 고정한 뒤, 카메라 정보나 재학습 없이도 그 물체가 차지하는 가우시안들을 추적해 골라내는데, LERF-MASK에서 92.1% mIoU로 기존 scene-trained 방법보다 3.7점, 카메라 없는 다른 방법보다 7.6점 높습니다. COGENT는 한 걸음 더 나아가 폐암 위험 예측 모델이 CT 영상의 어느 부분을 보고 판단했는지 설명하려고 할 때, 복셀 하나하나에 중요도를 매기는 대신 3DGS로 표현된 폐 영상에서 어떤 가우시안 덩어리를 바꾸면 예측이 바뀌는지(반사실적 설명)를 직접 최적화로 찾아냅니다. 어제(8/12) 3DGS 클러스터가 "표면·자세·추론이라는 다른 문제로 확장"이라는 축이었다면, 오늘은 "이미 만들어진 3DGS 장면 안에서 특정 부분을 골라내고 조작하고 설명한다"는 다른 축이라, 3DGS 연구가 여러 방향에서 동시에 확장되고 있다는 걸 다시 확인시켜줍니다.</p>
+<p>실시간 스트리밍 비디오 diffusion 쪽은 오늘 하루에만 네 편이 몰렸습니다. LiveAnimate는 140억 파라미터급 비디오 diffusion transformer를 블록 단위 순차 생성 구조로 바꾸고 3단계로 압축한 뒤, 포즈가 반복될 때 예전 장면을 다시 불러오는 캐시(PR-Sink)를 더해 H100 두 장으로 초당 19.63프레임을 냈고, UniSwap은 영상과 음성을 하나의 diffusion transformer로 묶어 얼굴·목소리를 동시에 바꾸면서 30단계였던 생성을 3단계로 줄였습니다. Avatar-Forever는 220억 파라미터 모델의 효율과 긴 영상에서의 안정성을 별도 갈래로 나눠 병렬 학습시켜 H100 한 장으로 초당 27.2프레임을 냈고, LoSA는 특정 모델이 아니라 범용 기법으로 attention 연산의 약 40%를 정보 손실 거의 없이 건너뛰어 최대 3.2배 속도를 냅니다. 네 편을 같이 보면 비디오 diffusion 연구의 무게중심이 "더 그럴듯한 한 클립"에서 "지연 없이 이어지는 스트림"으로 옮겨가고 있다는 뜻이고, 이건 우리 랩이 diffusion prior를 실시간 재구성 파이프라인에 쓸 때도 그대로 참고할 수 있는 지연시간 해법입니다.</p>
+<p>오늘 가장 인상적인 단일 결과는 의료 영상 딥러닝의 신뢰성 감사 쪽에서 나왔습니다. Decodable but Not Accessible은 "표현 공간에서의 거리로 신뢰도를 추정하면 된다"는, 거의 검증 없이 통용되던 가정을 정면으로 반박합니다. 도메인 적대적 학습으로 표현의 기하 구조를 인위적으로 통제하며 8가지 표준 신뢰도 추정 방법을 테스트한 결과, 7가지가 무작위 추측보다도 못한 성능(AUROC 약 0.40)을 보였는데, 심지어 필요한 정보가 표현 안에 선형적으로 존재하는데도 그 정보를 신뢰도 추정에는 못 쓴다는 게 핵심입니다. 정량 MRI 매핑 논문(Evaluating and Calibrating Diffusion Model-derived Uncertainty)도 diffusion 모델이 여러 번 추론해서 만든 불확실성 지도가 오차와 어느 정도 상관은 있지만 사후 보정 없이는 그대로 믿을 수 없다고 정리했습니다. 반대로 피부 병변 분류 앙상블 논문은 MC Dropout과 Grad-CAM을 결합한 방식이 불확실성 높은 샘플을 걸러내면 정확도 96%·AUC 99%까지 오른다는 긍정적 사례도 보여줘서, "불확실성 추정을 무조건 못 믿는다"가 아니라 "방법마다 검증이 반드시 필요하다"는 균형 잡힌 메시지를 남겼습니다. 계산광학 코어 5개 버킷(FP·Lensless·Phase·Meta-Optics·Light-Field, 총 25편)은 오늘도 다시 훑었지만 실제 이미징 신호는 희박했습니다 — 통신용 RIS·메타표면 바이오센싱·근안 디스플레이 등 키워드만 겹치는 논문이 대부분이었고, 나노광자 흡수체 역설계와 회절 신경망 광컴퓨팅 정도가 실질 신호였습니다.</p>
+<p>다음 관찰 포인트는 (1) "diffusion을 측정 일관성 있는 inverse solver로 쓴다"는 흐름이 다음 주에도 이어져 우리 랩의 위상 복원·홀로그래피 재구성에 직접 옮겨올 만한 설계 원칙으로 굳어지는지, (2) 3DGS가 "편집 가능한 파라미터 공간"으로 쓰이는 사례(Seed2GS·COGENT류)가 의료 영상 표현으로 더 확산되는지, (3) 불확실성 추정 감사(Decodable but Not Accessible류)가 의료 영상을 넘어 다른 고위험 도메인으로 번지는지입니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>어제(8/12, 수)는 3D Gaussian Splatting이 "렌더링을 넘어 표면 추출·카메라 자세 추정·상식 추론이라는 다른 문제의 공용 표현으로 확장"되는 축이었고, physics-informed ML이 자기 관행(어떤 claim이 실제로 증명됐는지, 미분을 어떻게 계산할지)을 감사하는 흐름, 파운데이션 인코더가 해부학보다 촬영 병원 정보를 먼저 담는다는 감사 결과, diffusion bridge가 노이즈 대신 측정 신호에서 출발하는 흐름이 중심이었습니다. 오늘은 3DGS가 다시 등장했지만 축이 다릅니다 — 어제는 "3DGS로 다른 문제(표면·자세·추론)를 풀 수 있는가"였다면, 오늘은 "이미 만들어진 3DGS 장면 안에서 특정 부분을 골라내고 조작하고 설명할 수 있는가"(Seed2GS·COGENT)로, 3DGS 연구가 하루 만에 또 다른 방향으로 뻗어나가고 있다는 뜻입니다. 어제 diffusion bridge 클러스터가 "노이즈 대신 측정 신호에서 출발"이라는 시작점 설계에 집중했다면, 오늘의 diffusion inverse solver 클러스터(Making Every Step Count·SinoDiff·DIDM)는 시작점보다 "생성 과정 전체가 측정 물리와 계속 일치하도록 강제하는" 더 넓은 문제를 다뤄, 같은 "측정 신호를 존중하는 diffusion" 정신이 시작점 설계에서 과정 전체 설계로 한 단계 더 나아간 걸로 볼 수 있습니다. 어제의 파운데이션 인코더 감사(Site Fingerprints)와 오늘의 불확실성 추정 감사(Decodable but Not Accessible)도 같은 "블랙박스로 믿지 말고 직접 검증하자"는 감사 정신을 공유하지만, 어제는 "이 임베딩이 정말 해부학을 담고 있는가"를, 오늘은 "이 불확실성 수치가 정말 믿을 만한가"를 물어 대상이 다릅니다. 지난주부터 이어지던 "파운데이션 모델·생성 모델을 그대로 믿지 않고 감사한다"는 큰 흐름은 오늘도 이어졌지만, 감사 대상이 매일 조금씩 옮겨가고 있습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Diffusion/flow 생성 모델을 "측정값과 물리적으로 일치시키는" inverse solver로 쓰는 흐름</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.11747" target=_blank>Making Every Step Count</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.11514" target=_blank>SinoDiff</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.11748" target=_blank>DIDM (하이퍼스펙트럴 팬샤프닝)</a> <span class=pill>CV</span>
+  </td>
+  <td>diffusion·flow 생성 모델은 그럴듯한 이미지를 만드는 데는 강하지만, 그 결과가 실제 측정값과 물리적으로 들어맞는지는 별개 문제입니다. 오늘 나온 세 편은 각각 다른 이미징 문제(범용 inverse problem, 저선량 PET, 하이퍼스펙트럴 팬샤프닝)에서 생성 과정 자체를 측정 모델과 묶어, 학습 데이터 없이도 결과가 측정값을 존중하도록 만듭니다. Making Every Step Count는 denoising 단계별로 계산을 얼마나 쓸지 균등 배분하던 관행을 버리고 초반엔 큰 그림 탐색, 후반엔 세부 정제로 배분을 최적화합니다. SinoDiff는 저선량 PET의 실제 광자 감쇠 물리(Poisson thinning)를 diffusion 순방향 과정에 그대로 반영해 여러 선량 수준에 하나의 모델로 대응하고, DIDM은 팬크로매틱·저해상도 하이퍼스펙트럴 두 측정을 동시에 조건으로 줘서 학습 데이터 없이 고해상도 영상을 복원합니다. 즉 "생성 모델이 그럴듯한 결과를 낸다"는 것에서 "그 결과가 실제 측정 과정과 물리적으로 일치한다"는 것으로 검증 기준이 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>3편이 서로 다른 이미징 응용에서 같은 설계 원칙(측정 일관성을 학습 없이 강제)을 공유하지만 서로 다른 팀이고, abstract에 절대 정량 비교 수치가 충분하지 않아 근거 강도는 중간</small></td>
+  <td>SinoDiff의 Poisson-thinning 순방향 과정을 우리 랩의 광자 제한 이미징(저조도 형광 현미경, 약한 위상 신호) diffusion 재구성에 이식해, 여러 노출 수준을 하나의 자기지도 모델로 통합할 수 있는지 비교 실험</td>
+</tr>
+<tr>
+  <td><strong>3D Gaussian Splatting이 "렌더링"에서 "편집 가능하고 설명 가능한 파라미터 공간"으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.11928" target=_blank>Seed2GS</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.11422" target=_blank>COGENT</a> <span class=pill>CV</span>
+  </td>
+  <td>3DGS는 장면을 수많은 작은 가우시안 덩어리로 표현해 실시간으로 새 시점을 렌더링하는 방법인데, 오늘 나온 두 편은 이 표현을 "그리는 도구"가 아니라 "그 안의 특정 부분을 골라내고 조작할 수 있는 파라미터 공간"으로 씁니다. Seed2GS는 이미 만들어진 3DGS 장면에서 원하는 물체 하나만 골라내는 문제를 풀어, 참조 이미지 한 장으로 물체 정체성을 고정한 뒤 카메라 정보나 재학습 없이도 그 물체가 차지하는 가우시안들을 추적합니다. COGENT는 폐암 위험 예측 모델이 CT 영상의 어디를 보고 판단했는지 설명할 때, 복셀 하나하나에 점수를 매기는 대신 3DGS로 표현된 폐 영상에서 어떤 가우시안을 바꾸면 예측이 바뀌는지를 직접 최적화로 찾아내는 반사실적 설명을 만듭니다. 두 편을 같이 보면 3DGS가 "장면을 어떻게 그릴까"라는 좁은 질문에서 "그 표현 안의 특정 부분을 골라내고 바꾸고 왜 중요한지 설명하는" 훨씬 넓은 질문으로 이동하고 있다는 뜻이고, 특히 COGENT는 3DGS가 복셀 그리드를 대체하는 의료 영상 표현으로 실제 쓰일 수 있다는 걸 보여준 사례입니다.</td>
+  <td>Medium<br><small>2편이 "3DGS를 편집·설명 가능한 파라미터 공간으로 쓴다"는 같은 방향을 보이지만 응용(범용 3D 편집 vs 의료 영상 설명)이 달라 직접 비교는 어려움. Seed2GS는 LERF-MASK 92.1% mIoU라는 강한 정량 근거를 제시</small></td>
+  <td>COGENT의 반사실적 Gaussian 설명 절차를 우리 랩 3DGS 기반 단층촬영 재구성에 적용해, 복셀 기반 Grad-CAM 대비 병변 국소화 정확도와 해부학적 일관성을 비교하는 ablation 설계</td>
+</tr>
+<tr>
+  <td><strong>실시간 스트리밍 비디오 diffusion이 "한 클립에 몇 분"에서 "초당 20프레임대"로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.11745" target=_blank>LiveAnimate</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.11752" target=_blank>UniSwap</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.12107" target=_blank>Avatar-Forever</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.12032" target=_blank>LoSA</a> <span class=pill>CV</span>
+  </td>
+  <td>예전에는 diffusion 기반 인물 영상 생성이 한 클립에 몇 분에서 몇 시간이 걸려서 라이브 스트리밍처럼 즉시 반응해야 하는 상황에는 쓸 수 없었습니다. 오늘 나온 네 편은 이 문제를 정면으로 풉니다. LiveAnimate와 UniSwap은 각각 140억 파라미터급 모델을 블록 단위로 순차 생성하는 구조로 바꾸고 30단계였던 생성 과정을 3단계로 압축해 H100 GPU 두 장으로 초당 19.63프레임을 냈고, Avatar-Forever는 220억 파라미터 모델의 생성 효율과 긴 영상에서의 안정성을 별도 갈래로 나눠 병렬 학습시켜 H100 한 장으로 초당 27.2프레임을 냅니다. LoSA는 특정 모델이 아니라 범용 기법으로, attention 연산의 약 40%를 정보 손실 거의 없이 건너뛰어 최대 3.2배 속도를 냅니다. 네 편을 같이 보면 비디오 diffusion 연구의 무게중심이 "더 그럴듯한 한 클립"에서 "지연 없이 이어지는 스트림"으로 옮겨가고 있다는 뜻이고, 이는 우리 랩이 diffusion prior를 라이브 현미경 스트림 같은 실시간 재구성에 쓸 때 참고할 수 있는 지연시간 해법입니다.</td>
+  <td>High<br><small>서로 다른 저자군 4편이 같은 날 "블록 단위 순차 생성 + 증류 + 캐시"라는 같은 설계 원칙을 공유하고, 각각 구체적 처리량(FPS)·품질 유지 수치를 제시</small></td>
+  <td>LoSA의 retained-mass sparse attention을 우리 랩 diffusion 기반 위상 복원/홀로그래피 재구성 모델에 학습 없이 적용해, 추론 속도와 PSNR/SSIM 하락폭을 정량 비교</td>
+</tr>
+<tr>
+  <td><strong>의료 영상 딥러닝의 "불확실성 추정"이 표준 방법으로는 못 미덥다는 감사 결과가 잇달아 나옴</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.11267" target=_blank>Decodable but Not Accessible</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.11942" target=_blank>Diffusion Uncertainty Calibration for qMRI</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2608.11280" target=_blank>Uncertainty-Aware Skin Lesion Ensemble</a> <span class=pill>CV</span>
+  </td>
+  <td>딥러닝 모델이 예측과 함께 "이 예측이 얼마나 확실한지"까지 알려주면 의료 현장에서 훨씬 안전하게 쓸 수 있을 거라는 기대가 있는데, 오늘 나온 논문들은 지금 흔히 쓰는 방법들이 실제로는 그 기대를 채우지 못한다는 걸 구체적으로 보여줍니다. Decodable but Not Accessible은 표현 공간에서의 거리로 신뢰도를 추정하는 방법을 도메인 적대적 학습으로 통제된 실험을 통해 감사했는데, 8가지 표준 방법 중 7가지가 무작위 추측보다도 못한 성능(AUROC 약 0.40)을 보였습니다 — 필요한 정보가 표현 안에 분명히 있는데도 신뢰도 추정에는 못 쓴다는 뜻입니다. 정량 MRI 매핑 논문은 diffusion 모델이 여러 번 추론해서 만든 불확실성 지도가 오차와 어느 정도 상관은 있지만 사후 보정 없이는 그대로 믿을 수 없다고 정리했고, 피부 병변 분류 앙상블 논문은 반대로 MC Dropout과 Grad-CAM을 결합해 불확실성 높은 샘플을 걸러내면 정확도 96%·AUC 99%까지 오른다는 긍정적 사례도 보여줍니다. 세 편을 같이 보면 "불확실성을 계산해서 붙이면 된다"는 단계에서 "그 수치를 실제로 믿어도 되는지부터 검증해야 한다"는 단계로 넘어가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>3편이 "불확실성 추정을 그대로 믿을 수 없다"는 같은 경고를 공유하지만 서로 다른 응용(피부 병변·정량 MRI)이고, Decodable but Not Accessible만 통제된 정량 근거가 강함</small></td>
+  <td>Decodable but Not Accessible의 disentanglement dose-response 통제 실험 설계를 우리 랩 재구성 모델의 불확실성 추정(있다면)에 적용해, 신뢰도 점수가 실제 재구성 오차와 상관관계가 있는지 검증</td>
+</tr>
+<tr>
+  <td><strong>병리 조직 분할에서 diffusion 기반 pseudo-label 정제가 라벨 부족 문제의 새 표준으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.11807" target=_blank>CoDiR</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.11765" target=_blank>ProBAG</a> <span class=pill>CV</span>
+  </td>
+  <td>병리 조직 분할은 전문 병리의가 픽셀 단위로 라벨을 달아야 해서 데이터가 항상 부족한데, 오늘 나온 두 편은 라벨이 적거나 이미지 단위 라벨만 있는 상황에서 diffusion 모델로 애매한 영역의 pseudo-label을 정제하는 같은 전략을 씁니다. CoDiR은 라벨 10~20%만 있는 준지도 상황에서 teacher 모델이 낮은 확신으로 예측한 영역만 diffusion으로 다시 그려 정제하는데, 이 정제 단계만으로 mDice가 6.36%p 오르고 라벨 10%만으로도 88~90% mDice를 냅니다. ProBAG는 이미지 단위 라벨만으로 픽셀 단위 분할을 해야 하는 더 어려운 상황에서, 병리 특화 파운데이션 모델(CONCH, UNI)이 뽑은 프로토타입과 그래프 기반 diffusion을 결합해 조직 경계 근처를 더 정확히 잡아냅니다. 두 편을 같이 보면 병리 분할 연구가 "라벨을 어떻게든 늘리자"에서 "적은 라벨의 초기 예측 중 애매한 부분만 diffusion으로 정제하자"는 더 정교한 방향으로 옮겨가고 있다는 뜻이며, 오늘 Virtual Staining/Pathology(16편) 버킷에서 실제로 관련 있는 몇 안 되는 신호입니다.</td>
+  <td>Medium<br><small>저자군이 겹치는 2편이 같은 병리 파운데이션 모델(CONCH/UNI/Phikon) 계열에서 같은 diffusion 정제 전략을 공유하지만, 편수가 2편뿐이고 지도 강도(준지도 vs 약지도)가 달라 조심스러움</small></td>
+  <td>CoDiR의 confidence-gated diffusion refinement를 우리 랩 label-free 조직 분류/virtual staining 파이프라인의 애매 영역 후처리 단계에 적용해, 라벨 비율별 mDice 개선폭 비교</td>
+</tr>
+</tbody>
+</table>
+
+<p><small>⚠️ Domain Watch Lens 메모 — 오늘은 5개 행으로 표를 마쳤습니다. Meta-Optics/Diffractive(10편)는 실제 이미징 신호가 나노광자 흡수체 역설계(2608.11860)·회절 신경망 광컴퓨팅(10.1364/oe.605087) 2편뿐이고 나머지 8편은 테라헤르츠 바이오센서·레이더 리플렉트어레이·드론 식별용 RF 태그·MRI 코일 강화 등 통신·센싱 응용입니다. Phase Imaging/Holography(12편)도 QPI 약물 감수성 논문(BMC Cancer)·각막 백색광 간섭계 논문(BJO) 2편이 실질 신호이고, 나머지 10편은 근접장 통신 RIS·근안 디스플레이·편광 홀로그램 그레이팅 제작 등입니다. Fourier Ptychography(1편)는 SAR 압축·스펙클 제거 FPGA 논문으로 실제 ptychography와 무관하고, Light-Field/Novel Sensors(2편)는 plenoptic point cloud 압축 1편이 실질 신호이고 volumetric inverse rendering 1편은 그래픽스 렌더링 논문이라 경계선입니다.</small></p>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: diffusion/flow inverse solver 클러스터(Making Every Step Count·SinoDiff·DIDM), 3DGS 편집·설명가능성 클러스터(Seed2GS·COGENT), 실시간 스트리밍 비디오 diffusion(LiveAnimate·UniSwap·Avatar-Forever·LoSA), 불확실성 추정 감사(Decodable but Not Accessible·qMRI uncertainty), 병리 분할 diffusion 정제(CoDiR·ProBAG)가 오늘 arXiv 쪽 핵심 신호였습니다.</li>
+  <li><strong>저널 전용</strong>: QPI 약물 감수성(BMC Cancer)·각막 백색광 간섭계(BJO) 정도가 실질 계산 이미징 신호였고, 나머지 저널(Meta-Optics 9편, Phase Imaging 10편 등)은 통신용 메타표면, 근안 디스플레이, 웨어러블 청진 간섭계 등 계산 위상 이미징·메타광학 방법론과는 결이 다른 응용이었습니다.</li>
+  <li><strong>공통 키워드</strong>: "metasurface"가 arXiv 쪽에서는 나노광자 흡수체 역설계 1편에 걸렸지만, 저널 쪽에서는 통신·바이오센싱·레이더·MRI 코일 등 9편 전부에 걸렸습니다. "staining"도 arXiv 쪽에서는 병리 분할 논문 2편에 정확히 매칭됐지만, 저널 쪽에서는 세라믹 타일 유약 결함 논문 1편에 완전히 무관하게 매칭됐습니다.</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 diffusion inverse solver·3DGS 편집·불확실성 감사라는 계산 이미징 코어 밖의 방법론 심화를 강하게 주도했고, 계산 이미징 코어 자체(Phase·Meta-Optics)는 arXiv·저널 모두에서 여전히 얇았습니다. 이런 날은 SinoDiff의 측정-일관성 diffusion 설계나 COGENT의 반사실적 설명 절차를 우리 랩 파이프라인에 역수입할 기회로 볼 수 있습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. Diffusion/flow 생성 모델을 "측정값과 물리적으로 일치시키는" inverse solver로 쓰는 흐름</h3>
+  <p>Making Every Step Count는 flow 기반 prior를 초해상도·디블러링·인페인팅에 학습 없이 적용할 때 denoising 단계별 계산 배분을 최적화했고, SinoDiff는 저선량 PET의 광자 감쇠 물리를 diffusion 순방향 과정에 반영해 여러 선량 수준에 하나의 자기지도 모델로 대응하며, DIDM은 팬크로매틱·저해상도 하이퍼스펙트럴 두 측정을 동시에 조건으로 줘서 학습 데이터 없이 고해상도 영상을 복원합니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편이 서로 다른 이미징 응용에서 같은 설계 원칙(측정 일관성을 학습 없이 강제)을 공유하지만 abstract에 절대 정량 비교 수치가 충분하지 않음</p>
+</div>
+
+<div class=ins>
+  <h3>2. 3D Gaussian Splatting이 "렌더링"에서 "편집 가능하고 설명 가능한 파라미터 공간"으로</h3>
+  <p>Seed2GS는 참조 이미지 한 장으로 3DGS 장면에서 물체 하나만 카메라·재학습 없이 골라내(LERF-MASK 92.1% mIoU), COGENT는 폐 CT를 3DGS로 표현해 어떤 가우시안을 바꾸면 폐암 위험 예측이 바뀌는지 반사실적 최적화로 찾아냅니다.</p>
+  <p class=conf-note>Confidence: Medium — 2편이 "3DGS를 편집·설명 가능한 파라미터 공간으로 쓴다"는 같은 방향이지만 응용이 달라 직접 비교는 어려움. Seed2GS는 강한 정량 근거, COGENT는 정성적 근거 위주</p>
+</div>
+
+<div class=ins>
+  <h3>3. 실시간 스트리밍 비디오 diffusion이 초당 20프레임대에 도달</h3>
+  <p>LiveAnimate(H100 2장, 19.63 FPS)·UniSwap·Avatar-Forever(H100 1장, 27.2 FPS)가 블록 단위 순차 생성과 증류로 30단계였던 생성을 3단계로 압축했고, LoSA는 특정 모델에 국한되지 않는 범용 sparse attention 기법으로 최대 3.2배 속도(VBench 점수 하락 0.02점)를 냈습니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 저자군 4편이 같은 날 같은 설계 원칙을 공유하고 각각 구체적 처리량·품질 유지 수치를 제시</p>
+</div>
+
+<div class=ins>
+  <h3>4. 의료 영상 딥러닝의 불확실성 추정이 표준 방법으로는 못 미덥다는 감사 결과</h3>
+  <p>Decodable but Not Accessible은 8가지 표준 신뢰도 추정 방법 중 7가지가 통제 실험에서 무작위 추측보다도 못한 성능(AUROC ~0.40)을 보였다는 걸 증명했고, qMRI 불확실성 논문은 diffusion 기반 불확실성이 사후 보정 없이는 못 믿는다고 정리했으며, 피부 병변 앙상블 논문은 반대로 잘 설계된 불확실성 필터링이 정확도 96%·AUC 99%까지 끌어올린다는 긍정적 사례를 보였습니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편이 같은 경고를 공유하지만 응용이 다르고, 그중 1편만 통제된 강한 정량 근거</p>
+</div>
+
+<div class=ins>
+  <h3>5. 병리 조직 분할에서 diffusion 기반 pseudo-label 정제가 새 표준으로</h3>
+  <p>CoDiR은 준지도 상황(라벨 10~20%)에서 낮은 확신 영역만 diffusion으로 재정제해 mDice를 6.36%p 올렸고(라벨 10%로 88~90% mDice), ProBAG는 이미지 단위 라벨만으로 병리 파운데이션 모델(CONCH·UNI) 프로토타입과 그래프 diffusion을 결합해 약지도 분할의 경계 정확도를 높였습니다.</p>
+  <p class=conf-note>Confidence: Medium — 저자군이 겹치는 2편이 같은 전략을 공유하지만 편수가 적고 지도 강도가 달라 완전한 클러스터로 보기엔 조심스러움</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. LoSA의 sparse attention을 우리 랩 diffusion 기반 실시간 재구성 파이프라인에 적용</h3>
+  <p>LoSA가 attention 연산의 약 40%를 정보 손실 거의 없이 건너뛰어 최대 3.2배 속도를 낸 training-free 기법을, 우리 랩이 diffusion prior를 쓰는 재구성/복원 모델(위상 복원, 홀로그래피 디노이징)에 학습 없이 바로 적용해 지연시간·품질 트레이드오프를 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>LoSA의 block attention mass 측정 코드 재현, 우리 diffusion 재구성 모델에 연결</li>
+    <li>공통 benchmark: 우리 랩 위상 복원 또는 홀로그래피 디노이징 diffusion 모델 + 테스트셋</li>
+    <li>비교축: 적용 전/후 추론 속도, PSNR/SSIM 하락폭</li>
+    <li>실패해도 남는 결과: 우리 모델의 attention mass 분포가 LoSA의 "초반 단계 안정성" 가정을 만족하는지에 대한 진단 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. SinoDiff의 Poisson-thinning 순방향 과정을 광자 제한 이미징 diffusion 재구성에 이식</h3>
+  <p>SinoDiff가 저선량 PET의 광자 감쇠 물리를 diffusion 순방향 과정에 직접 반영해 여러 선량 수준을 하나의 자기지도 모델로 통합한 설계를, 우리 랩의 저조도 형광 현미경·약한 신호 위상 이미징처럼 광자 제한(low-photon) 문제에 이식합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>Poisson thinning forward process 모듈 재현</li>
+    <li>공통 benchmark: 우리 랩 저조도/저선량 이미징 데이터셋(여러 노출·신호 수준 포함)</li>
+    <li>비교축: 기존 지도학습 디노이징 대비 자기지도 모델의 노출 수준별 PSNR/SSIM, 짝 데이터 없이 학습 가능 여부</li>
+    <li>실패해도 남는 결과: 우리 데이터의 노이즈 통계가 Poisson thinning 가정에 얼마나 맞는지에 대한 baseline 분석</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. COGENT의 반사실적 Gaussian 설명 절차를 우리 랩 3DGS 기반 단층촬영 재구성에 적용</h3>
+  <p>COGENT가 폐 CT를 3DGS로 표현하고 특정 가우시안을 바꿔가며 폐암 위험 예측 모델의 판단이 어떻게 바뀌는지 최적화로 찾아낸 반사실적 설명 절차를, 우리 랩이 3DGS 표현을 실험 중인 단층촬영/재구성 파이프라인에 적용해 어떤 영역의 가우시안이 다운스트림 판단에 실제로 기여하는지 규명합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>MedGS 기반 반사실적 최적화 파이프라인 재현</li>
+    <li>공통 benchmark: 우리 랩 3DGS 재구성 결과물 + 다운스트림 분류/검출 모델</li>
+    <li>비교축: 복셀 기반 기존 설명 방법(Grad-CAM 등) 대비 반사실적 Gaussian 설명의 공간적 국소성·해부학적 일관성</li>
+    <li>실패해도 남는 결과: 우리 3DGS 표현에서 가우시안 단위 편집이 다운스트림 예측에 미치는 민감도 프로파일</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(32편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:3.1%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:37.5%"></span></span><span class=n>12편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:31.2%"></span></span><span class=n>10편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:6.2%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>32편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:50.0%"></span></span><span class=n>16편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:75.0%"></span></span><span class=n>24편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>127편</span></div>
+
+<p><small>⚠️ 참고 — Domain Watch Lens: Fourier Ptychography 1편은 SAR(합성개구레이더) 압축·스펙클 제거 FPGA 구현 논문으로 실제 Fourier ptychography와 무관합니다. Phase Imaging 12편 중 실질 신호는 QPI 약물 감수성·각막 간섭계 2편뿐이고 나머지는 근접장 통신 RIS·근안 디스플레이·편광 홀로그램 그레이팅 제작 등입니다. Meta-Optics 10편 중 실질 신호는 나노광자 흡수체 역설계·회절 신경망 광컴퓨팅 2편뿐이고 나머지 8편은 테라헤르츠 바이오센서·레이더·드론 RF 태그·MRI 코일 강화 등입니다. Light-Field/Novel Sensors 2편 중 plenoptic point cloud 압축 1편이 실질 신호이고 volumetric inverse rendering 1편은 그래픽스 렌더링 논문이라 경계선입니다. Virtual Staining/Pathology 16편 중 실제 병리 관련은 CoDiR·ProBAG 2편(위 클러스터 표 참고)이고 나머지는 원격탐사·온라인교육 RL·건축공학 QA·세라믹 타일 유약 결함 등 완전히 무관한 도메인입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편, 무관 도메인)</h3>
+<div class=roi-item>
+  <strong>이 버킷의 유일한 논문은 SAR(합성개구레이더) 압축·스펙클 제거 FPGA 구현 논문으로 우리 ROI와 무관합니다.</strong><br>
+  왜 표시: "aperture synthesis" 계열 키워드가 레이더 신호처리 용어와 우연히 겹친 사례입니다.
+</div>
+
+<h3>Phase Imaging/Holography (12편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1186/s12885-026-16752-2" target=_blank>Determination of drug sensitivity in patient derived models of breast cancer by multiparametric quantitative phase imaging</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 환자 유래 유방암 오가노이드에서 다중 파라미터 정량 위상 이미징(QPI)으로 약물 감수성을 단일세포 단위로 측정, 우리 랩 QPI 응용과 직결 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1136/bjo-2026-330189" target=_blank>Three-dimensional topography of Descemet's membrane in Fuchs endothelial corneal dystrophy using laser scanning confocal microscopy and white-light interferometry</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 백색광 간섭계로 각막 후면막의 3차원 표면 형상을 정량화(Sa 거칠기 지표), label-free 간섭계 이미징 방법론 참고 가치 / 우선순위: Skim
+</div>
+
+<h3>Meta-Optics/Diffractive (10편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.11860" target=_blank>Two-Stage Deformable-Convolutional Inverse Design of Nanophotonic Absorbers from Optical Spectra</a></strong> <span class=pill>AI</span><br>
+  왜 주요: 80차원 흡수 스펙트럼에서 금속-절연체-금속 공진기 형상을 역설계, PSNR 20.79dB·Dice 0.9623 등 구체 정량 지표를 제시하는 메타광학 역설계 방법론 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.605087" target=_blank>Simulated task-decomposed multi-channel diffractive neural networks for scalable and robust shallow-layer optical multiclass classification</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 회절 신경망(D²NN)으로 광학적 다중클래스 분류를 수행하는 optical computing 논문, 계산광학 코어(회절 광학) 방법론과 직결 / 우선순위: Skim
+</div>
+
+<h3>Light-Field/Novel Sensors (2편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.11273" target=_blank>Geometry-Based Compression of Plenoptic Point Clouds</a></strong> <span class=pill>IV</span><br>
+  왜 주요: 다중 시점 색상 정보를 가진 plenoptic point cloud를 기하학 기반으로 압축, 광 필드 데이터 표현·저장 문제와 직결 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging (32편 중 관련 6편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.11928" target=_blank>Seed2GS: Camera-Free, Training-Free Object Extraction from 3D Gaussian Scenes via a Single Reference-View Grounding</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(3DGS의 편집 가능한 파라미터 공간화)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.11422" target=_blank>COGENT: Counterfactual Gaussian Explanations for Volumetric Medical Images</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(3DGS의 편집 가능한 파라미터 공간화)의 대표 논문, 3DGS와 의료 영상 설명가능성을 잇는 사례 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.11282" target=_blank>Physics-Informed Implicit Neural Representations for Improved Myocardial Perfusion MRI Quantification</a></strong> <span class=pill>IV</span><br>
+  왜 주요: 시공간 implicit neural representation과 PINN을 결합해 심근 관류 MRI에서 tracer-kinetic 모델 파라미터를 연속적으로 피팅, 우리 랩 INR 기반 재구성 파이프라인과 방법론적으로 맞닿음 / 우선순위: Read
+</div>
+
+<h3>Virtual Staining/Pathology (16편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.11807" target=_blank>CoDiR: Confidence-Guided Diffusion Refinement for Semi-Supervised Histopathology Segmentation</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(병리 분할 diffusion 정제)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.11765" target=_blank>ProBAG: Prototype-Guided Boundary-Aware Graph Diffusion for Weakly Supervised Histopathology Segmentation</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(병리 분할 diffusion 정제)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Read
+</div>
+
+<h3>Reconstruction/Inverse Problems (24편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.11747" target=_blank>Making Every Step Count</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(diffusion/flow 측정-일관성 inverse solver)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.11514" target=_blank>SinoDiff</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(diffusion/flow 측정-일관성 inverse solver)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.11748" target=_blank>Dual Modality Prompted Diffusion Priors for Zero Shot Hyperspectral Pansharpening</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(diffusion/flow 측정-일관성 inverse solver)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Read
+</div>
+
+<h3>Deep Learning Methods — 계산 이미징 관련 대표 2편 (127편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.11745" target=_blank>LiveAnimate: Stable Long-Form Streaming Human Animation in Real-Time</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(실시간 스트리밍 비디오 diffusion)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.11267" target=_blank>Decodable but Not Accessible: Auditing Distance-Based Reliability Estimation on Disentangled Skin-Lesion Representations</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(불확실성 추정 감사)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<ul>
+  <li><strong>Seed2GS (LERF-MASK, 카메라 없는 3DGS 물체 추출)</strong> — 92.1% mIoU(기존 scene-trained 대비 +3.7점, camera-free 대비 +7.6점), 3D-OVS 95.7% mIoU</li>
+  <li><strong>CoDiR (GlaS/CRAG, 준지도 병리 분할)</strong> — 라벨 10%: 88.09%/89.83% mDice, 라벨 20%: 89.19%/90.29% mDice, 정제 모듈 단독 기여 +6.36%p</li>
+  <li><strong>Two-Stage Deformable-Conv Inverse Design (나노광자 흡수체 역설계)</strong> — PSNR 20.79±0.31dB, SSIM 0.8501±0.0082, Dice 0.9623±0.0027, IoU 0.9342±0.0038</li>
+  <li><strong>LiveAnimate (3분 스트리밍 인물 애니메이션)</strong> — 19.63 FPS(H100 2장), IQA 4.047→4.026(30초-최종 1분 거의 유지)</li>
+  <li><strong>Avatar-Forever (실시간 아바타 생성, H100 1장 768x512)</strong> — 27.2 FPS</li>
+  <li><strong>LoSA (Wan2.1-1.3B/HunyuanVideo, training-free 가속)</strong> — 1.36배(VBench -0.06점) 단독, 조합 시 3.2배(VBench -0.02점, 최강 sparse baseline은 동일 속도에서 -0.32점)</li>
+  <li><strong>Decodable but Not Accessible (피부 병변 표현 신뢰도 감사)</strong> — 8개 표준 방법 중 7개가 AUROC ~0.40(우연 이하)로 실패</li>
+  <li><strong>Uncertainty-Aware Skin Lesion Ensemble (MC Dropout + Grad-CAM++)</strong> — 정확도 96%, ROC-AUC 99%(불확실성 필터링 적용 시)</li>
+  <li><small>그 외 오늘 대표 논문들(SinoDiff·DIDM·COGENT·UniSwap·qMRI uncertainty·ProBAG 등)은 abstract에 baseline 대비 절대 수치를 명시하지 않았거나 정성적 SOTA 주장에 그쳐 로그에서 제외했습니다(본문 확인 필요).</small></li>
+</ul>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>오늘 흥미로운 대비는 diffusion inverse solver 클러스터와 3DGS 편집 클러스터가 사실 비슷한 태도를 다른 대상에 적용한다는 점이었습니다. SinoDiff·Making Every Step Count는 "diffusion 생성 결과가 실제 측정값과 물리적으로 일치하는가"를 묻고, Seed2GS·COGENT는 "3DGS 표현 안의 특정 부분(가우시안)이 실제로 무엇을 의미하고 어떻게 조작할 수 있는가"를 묻습니다. 즉 둘 다 "이 표현/생성 결과를 블랙박스로 믿지 말고, 그 안에 담긴 정보를 구체적으로 검증하거나 분해해서 쓰자"는 같은 태도를 서로 다른 대상(diffusion 생성 과정 vs 3D 장면 표현)에 적용한 셈입니다. 여기에 Decodable but Not Accessible의 불확실성 추정 감사까지 더하면, 오늘 하루는 "모델이 내놓는 결과물(생성 이미지·3D 표현·불확실성 점수)을 있는 그대로 받아들이지 않고 그 안에 실제로 무엇이 담겨 있는지 재검증한다"는 공통된 실험 설계 철학이 이미징·의료·설명가능성 세 영역에서 동시에 나타난 날로 볼 수 있습니다. 이 대비는 우리 랩에도 그대로 적용됩니다 — 재구성 파이프라인에서 diffusion prior나 3DGS 표현, 불확실성 점수를 블랙박스로 갖다 쓰기 전에, "이게 정말 우리가 기대하는 정보를 담고 있는가"를 먼저 검증하는 단계를 표준 절차로 넣을 만한 근거가 오늘 세 클러스터에서 동시에 나온 셈입니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Decodable but Not Accessible: Auditing Distance-Based Reliability Estimation on Disentangled Skin-Lesion Representations — arXiv cs.CV</h3>
+  <div class=tag>[해부분석] [경고신호] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 딥러닝 모델이 자기 예측에 대한 신뢰도까지 같이 알려주면 의료 현장에서 훨씬 안전하게 쓸 수 있을 거라는 기대는 이제 거의 당연하게 통용됩니다. 그리고 그 신뢰도를 재는 방법 중 가장 널리 쓰이는 게 "표현 공간에서 이 샘플이 정상 분포에서 얼마나 멀리 떨어져 있는가"를 보는 거리 기반 방법입니다. 이 논문의 핵심은 그 방법이 기대는 암묵적 가정 — "표현의 기하 구조가 신뢰도를 반영한다" — 을 정면으로 검증했다는 점입니다. 예전에는 신뢰도 추정 방법의 품질을 다운스트림 성능으로만 간접 평가했다면, 이 논문은 표현의 기하 구조 자체를 실험적으로 통제하면서 "이 방법이 실제로 무엇을 재고 있는지"를 직접 검증하는 평가축을 세웠습니다. 우리 랩이 재구성·복원 결과에 신뢰도 점수를 붙이는 파이프라인을 만든다면, 그 점수가 실제로 오차와 상관관계가 있는지부터 확인해야 한다는 걸 이 논문이 분명히 보여줍니다.</p>
+  <p><strong>핵심:</strong> 저자들은 같은 아키텍처와 같은 16차원 표현을 공유하되 직교성(orthogonality) 강도만 다른(lambda = 0, 1, 5) 세 개의 체크포인트 군을 만들어서, 도메인 적대적 학습이 표현의 기하 구조를 어떻게 바꾸는지 통제된 "용량-반응(dose-response)" 실험으로 관찰합니다. disentanglement 강도가 세질수록 표현의 condition number(기하학적 안정성 지표)가 두 자릿수 넘게 바뀔 정도로 구조가 크게 변하는데, 이렇게 통제된 조건에서 8가지 표준 거리 기반 신뢰도 추정 방법을 테스트한 결과 7가지가 무작위 추측보다도 못한 성능(AUROC 약 0.40)을 보였습니다. 더 놀라운 건 신뢰도 추정에 필요한 정보(어떤 샘플이 실제로 애매한지)가 표현 안에 선형적으로 분명히 존재하는데도(선형 분류기로는 잘 디코딩됨), 거리 기반 방법들은 그 정보에 전혀 접근하지 못한다는 점입니다. 즉 정보가 "디코딩 가능(decodable)"하다는 것과 "거리 기반 방법으로 접근 가능(accessible)"하다는 것이 완전히 다른 문제라는 걸 정량적으로 증명한 셈입니다.</p>
+  <p><strong>주의:</strong> 이 연구는 피부 병변 분류라는 단일 도메인·단일 아키텍처·16차원이라는 특정 표현 차원에 한정돼 있어, 다른 의료 영상 도메인이나 훨씬 고차원인 표현(예: 파운데이션 모델 임베딩)에서도 같은 정도로 실패하는지는 별도 검증이 필요합니다. 또한 "왜" 거리 기반 방법이 이 정보에 접근하지 못하는지에 대한 메커니즘적 설명은 abstract만으로는 확인할 수 없어 본문 확인이 필요합니다. [Metric risk]</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Seed2GS: Camera-Free, Training-Free Object Extraction from 3D Gaussian Scenes via a Single Reference-View Grounding — arXiv cs.CV</h3>
+  <div class=tag>[방법전환] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 3D Gaussian Splatting(3DGS)으로 이미 만들어진 장면에서 물체 하나만 골라내는 건 인터랙티브 3D 편집의 기본 단계인데, 기존 방법은 장면마다 몇십 분씩 다시 학습시키거나, 정확도를 포기하거나, 원래 촬영에 쓴 카메라 정보가 있어야 했습니다. 예전에는 이 세 가지 중 하나를 반드시 희생해야 한다고 여겨졌다면, 이 논문은 물체의 "정체성"과 물체가 "3D 공간에서 차지하는 범위"를 분리해서 생각하는 방식으로 셋 다 잃지 않는 해법을 제시합니다. 우리 랩이 3DGS를 재구성 표현으로 실험할 때, "장면을 다시 학습시키지 않고도 특정 구조물만 골라내 편집하거나 분석할 수 있는가"라는 질문에 바로 참고할 수 있는 실용적 답을 줍니다.</p>
+  <p><strong>핵심:</strong> 핵심 아이디어는 물체의 정체성을 한 번만 고정하고, 그 다음엔 그 정체성이 3D 공간에서 어디까지 뻗어 있는지를 별도로 탐색하는 겁니다. QD-SAM3라는 모듈이 여러 개방형 어휘(open-vocabulary) 후보 마스크 중 신뢰할 만한 참조 마스크 하나를 골라 물체 정체성을 고정하고, 그 다음 "seed lift"와 가시성에 따라 스스로 조절되는 가상 궤도(virtual orbit)가 새로운 시점에서 그 물체를 드러내며, 추적 알고리즘이 반복 탐지 없이도 이 시드를 계속 전파합니다. 장면 자체는 그대로 얼려둔 채로, 이 마스크들은 각 가우시안마다 임시 전경 로짓(foreground logit) 하나만 지도학습합니다. 그 결과 LERF-MASK 벤치마크에서 원래 재구성 카메라도, 장면별 표현 학습도 없이 92.1% mIoU라는 역대 최고 정확도를 달성했고, 이는 기존에 장면별로 학습시킨 가장 강한 baseline보다 3.7점, 카메라 없는 방법 중 가장 근접한 baseline보다 7.6점 높은 수치입니다. 고정된 테스트 참조 하나만 써도 전체 파이프라인이 91.1% mIoU를 유지하고, 실제 정답 마스크로 시드를 바꿔도 겨우 0.72점만 오르는 걸 보면 이 방법의 시드 선택 단계 자체가 이미 충분히 견고하다는 뜻입니다.</p>
+  <p><strong>주의:</strong> LERF-MASK와 3D-OVS라는 비교적 통제된 벤치마크에서의 결과라, 훨씬 복잡하거나 물체 경계가 애매한 실제 장면(예: 의료 영상의 병변 경계)에서도 같은 정확도가 유지될지는 별도 검증이 필요합니다. 또한 "reliable reference mask"를 고르는 QD-SAM3의 신뢰도 판단 기준이 abstract만으로는 구체적으로 드러나지 않아 실패 사례(신뢰할 만한 후보가 아예 없는 경우)에 대한 처리는 본문 확인이 필요합니다. [Baseline risk]</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Metric risk] 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) 실신호가 오늘도 QPI·간섭계·역설계·회절 신경망 등 소수(약 5편)에 그쳐, 오늘 리포트의 무게중심이 diffusion inverse solver·3DGS 편집·불확실성 감사라는 범용 CV/ML 쪽으로 강하게 쏠렸습니다. 이는 오늘 실제 논문 구성을 반영한 것이지만, 계산 이미징 코어에 대한 정보 밀도는 여전히 낮습니다.</p>
+  <p>[Claim risk] diffusion inverse solver 클러스터·3DGS 편집 클러스터의 정량 수치는 각 논문의 자체 벤치마크·자체 baseline 기준이라, 서로 다른 논문 간 직접 비교는 불가능합니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology(16편) 버킷은 실제 병리 관련 논문이 2편뿐이고 나머지는 완전히 무관한 도메인이라, 이 버킷 이름만으로 오늘의 병리 신호를 판단하면 안 됩니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Dataset risk] Decodable but Not Accessible은 피부 병변 분류라는 단일 도메인·16차원 표현에 한정돼 있어, 다른 의료 영상 도메인이나 고차원 표현으로의 일반화는 별도 검증이 필요합니다.</p>
+  <p>[Baseline risk] Seed2GS의 LERF-MASK 92.1% mIoU는 비교적 통제된 벤치마크 결과라, 병변 경계처럼 훨씬 애매한 실제 의료 영상 장면에서도 같은 정확도가 유지될지는 확인이 필요합니다.</p>
+  <p>[Claim risk] DIDM(하이퍼스펙트럴 팬샤프닝)의 "모든 평가 지표에서 최고 성능" 주장은 abstract에 구체적 정량 수치가 없어, 개선 폭은 본문·코드 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Meta-Optics/Diffractive 8편(통신·바이오센싱·레이더·MRI 코일 메타표면)</strong> — 테라헤르츠 아세톤 바이오센서, 리플렉트어레이 안테나, 드론 식별용 RF 태그, MRI 코일 강화용 무선 메타표면 등으로 이미징 ROI와 무관합니다.</li>
+    <li><strong>Phase Imaging/Holography 저널 10편(통신·디스플레이·웨어러블 센싱 응용)</strong> — 근접장 통신 RIS, 근안 3D 디스플레이, 편광 홀로그램 그레이팅 제작, 웨어러블 청진 간섭계는 계산 위상 이미징 방법론이 아니라 응용 하드웨어 보고입니다.</li>
+    <li><strong>Tomography/3D Imaging 순수 임상 사례·비영상 "tomography" 다수(26편)</strong> — 부비동 진균 감염 CT 진단, 지진파 tomography, 은하수 항성 "tomography" 등 계산 이미징 방법론과 무관한 임상/비광학 신호입니다.</li>
+    <li><strong>Virtual Staining/Pathology 대부분(14편, 무관 도메인)</strong> — 원격탐사 토지이용 분석, 온라인교육 강화학습, 건축공학 QA, 세라믹 타일 유약 결함 등 키워드만 겹친 논문들입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Diffusion/flow 측정-일관성 inverse solver (핵심 3편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.11747" target=_blank>Making Every Step Count</a></strong> <span class=pill>CV</span><br>
+- 문제: flow 기반 prior를 학습 없이 inverse problem에 적용할 때 denoising 단계별 계산 배분이 최적이 아님 / 방법: 초반 탐색·후반 정제로 시공간 정보 배분을 최적화 / 의미: 같은 계산량으로 더 정확한 복원, 초해상도·디블러링·인페인팅 전반에 적용 가능 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.11514" target=_blank>SinoDiff</a></strong> <span class=pill>CV</span><br>
+- 문제: 저선량 PET 복원이 짝 데이터를 요구하거나 여러 선량 수준에 일반화하지 못함 / 방법: 광자 감쇠(Poisson thinning)를 diffusion 순방향 과정에 직접 반영, 자기지도 학습 / 의미: 짝 데이터 없이 여러 선량 수준을 하나의 모델로 통합 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.11748" target=_blank>DIDM (Dual Modality Prompted Diffusion Priors)</a></strong> <span class=pill>CV</span><br>
+- 문제: 하이퍼스펙트럴 팬샤프닝에서 기존 diffusion 방법이 측정값을 외부 제약으로만 느슨하게 반영 / 방법: 팬크로매틱·저해상도 하이퍼스펙트럴 두 modality를 동시에 조건으로 주는 cross-attention 프롬프팅 / 의미: 학습 데이터 없이 공간·분광 정보를 동시에 보존 / 우선순위: Read
+</div>
+
+<h3>3DGS의 편집 가능한 파라미터 공간화 (핵심 2편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.11928" target=_blank>Seed2GS</a></strong> <span class=pill>CV</span><br>
+- 문제: 3DGS 장면에서 물체를 골라내려면 재학습·정확도·카메라 정보 중 하나를 희생해야 함 / 방법: 물체 정체성 고정과 3D 커버리지 탐색을 분리, 가상 궤도로 새 시점 노출 / 의미: 카메라·재학습 없이 최고 정확도 달성 / 근거: LERF-MASK 92.1% mIoU / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.11422" target=_blank>COGENT</a></strong> <span class=pill>CV</span><br>
+- 문제: 볼륨 의료 영상의 설명가능성 방법이 복셀 단위에 머물러 3D 장면 표현의 구조를 활용하지 못함 / 방법: 3DGS(MedGS) 파라미터 공간에서 미분 가능 렌더링을 통해 반사실적 최적화 / 의미: 가우시안 단위로 국소화되고 해부학적으로 일관된 설명 생성 / 우선순위: Must-read
+</div>
+
+<h3>실시간 스트리밍 비디오 diffusion (핵심 4편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.11745" target=_blank>LiveAnimate</a></strong> <span class=pill>CV</span><br>
+- 문제: diffusion 기반 인물 애니메이션이 한 클립에 몇 분~몇 시간 걸려 실시간 상호작용 불가능 / 방법: 블록 단위 순차 생성 적응 + 3단계 증류 + 포즈 재검색 캐시(PR-Sink) / 의미: 긴 스트림에서도 메모리·지연시간이 일정하게 유지 / 근거: H100 2장, 19.63 FPS / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.11752" target=_blank>UniSwap</a></strong> <span class=pill>CV</span><br>
+- 문제: 인물 교체가 영상·음성 모델을 따로 최적화해 오디오-비주얼 일관성이 어려움 / 방법: 단일 오디오-비주얼 diffusion transformer + 스왑-재구성 파이프라인 + 30→3단계 증류 / 의미: 하나의 모델로 스트리밍 정체성 교체 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.12107" target=_blank>Avatar-Forever</a></strong> <span class=pill>CV</span><br>
+- 문제: 순차적 증류 파이프라인이 초반 실패가 후반에 전파되고 장시간 롤아웃에서 품질이 떨어짐 / 방법: 효율과 장기 안정성을 별도 갈래로 분리해 병렬 학습, 청크 단위 특징 캐싱 / 의미: 220억 파라미터 모델로 무제한 길이 아바타 생성 / 근거: H100 1장, 768x512에서 27.2 FPS / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.12032" target=_blank>LoSA</a></strong> <span class=pill>CV</span><br>
+- 문제: 비디오 diffusion transformer의 self-attention이 해상도·길이에 따라 2차로 비용 증가 / 방법: 99% attention mass 보존 임계값으로 블록별 최소 key/value 집합 고정, 초기 dense step에서 측정 후 재사용 / 의미: 특정 모델에 국한되지 않는 범용 training-free 가속 / 근거: 최대 3.2배(VBench -0.02점) / 우선순위: Read
+</div>
+
+<h3>불확실성 추정 감사 (핵심 3편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.11267" target=_blank>Decodable but Not Accessible</a></strong> <span class=pill>CV</span><br>
+- 문제: 거리 기반 신뢰도 추정이 표현의 기하 구조를 신뢰도로 해석할 수 있다는 검증 안 된 가정에 의존 / 방법: disentanglement 강도를 통제한 3개 체크포인트 군으로 8개 표준 방법 감사 / 의미: 정보가 디코딩 가능해도 거리 기반으로는 접근 불가능함을 증명 / 근거: 7/8 방법 AUROC ~0.40 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.11942" target=_blank>Evaluating and Calibrating Diffusion Model-derived Uncertainty for Quantitative MRI Mapping</a></strong> <span class=pill>IV</span><br>
+- 문제: qMRI 딥러닝 매핑의 신뢰성이 명시적으로 특성화되지 않음 / 방법: 여러 번 추론한 diffusion 모델 불확실성 지도를 오차 인지·고오차 검출·선택적 예측·구간 보정 4가지 축으로 평가 / 의미: 원시 불확실성은 오차와 상관은 있지만 사후 보정이 필수 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.11280" target=_blank>Uncertainty-Aware Skin Lesion Ensemble</a></strong> <span class=pill>CV</span><br>
+- 문제: 피부 병변 분류가 클래스 불균형·해석 불가능성으로 신뢰하기 어려움 / 방법: ViT+CNN 앙상블 + MC Dropout + Grad-CAM++ / 의미: 불확실성 필터링이 실제로 정확도를 끌어올리는 긍정적 사례 / 근거: 정확도 96%, ROC-AUC 99% / 우선순위: Read
+</div>
+
+<h3>병리 분할 diffusion 정제 (핵심 2편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.11807" target=_blank>CoDiR</a></strong> <span class=pill>CV</span><br>
+- 문제: 준지도 병리 분할이 라벨 부족·애매한 선(gland) 영역의 신뢰 못할 pseudo-label로 어려움 / 방법: Mean Teacher + 낮은 확신 영역만 diffusion으로 재정제 / 의미: 정제 단계 하나로 mDice 6.36%p 개선 / 근거: 라벨 10%로 88~90% mDice / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.11765" target=_blank>ProBAG</a></strong> <span class=pill>CV</span><br>
+- 문제: 약지도 병리 분할이 CAM 기반 방법으로는 판별력 높은 영역만 잡고 조직 경계 근처에서 불안정 / 방법: 데이터셋 특화 시각 프로토타입 + CONCH 텍스트 프로토타입 + 경계 인식 그래프 diffusion / 의미: 병리 파운데이션 모델(UNI)과 diffusion을 결합한 pseudo-mask 생성 / 우선순위: Read
+</div>
+
+<h3>계산광학 코어 Watch (2편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1186/s12885-026-16752-2" target=_blank>QPI 유방암 약물 감수성</a></strong> <span class=pill>JNL</span><br>
+- 문제: 환자 유래 오가노이드에서 약물 반응을 빠르게 정량화하기 어려움 / 방법: 다중 파라미터 정량 위상 이미징(QPI)으로 단일세포 생체물리 측정 / 의미: 우리 랩 QPI 응용과 직결되는 label-free 약물 스크리닝 사례 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.11860" target=_blank>Two-Stage Deformable-Conv Inverse Design</a></strong> <span class=pill>AI</span><br>
+- 문제: 스펙트럼-형상 역설계가 비유일성과 미세 형상 재현의 어려움을 가짐 / 방법: 2단계 변형가능 컨볼루션으로 잠재 표현을 형상 마스크로 디코딩 / 의미: 구체적 정량 지표(PSNR·Dice)를 갖춘 메타광학 역설계 방법론 / 우선순위: Skim
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv 카테고리: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>cs.LG</a> · <a href="https://arxiv.org/list/cs.CV/new" target=_blank>cs.CV</a> · <a href="https://arxiv.org/list/cs.AI/new" target=_blank>cs.AI</a> · <a href="https://arxiv.org/list/eess.IV/new" target=_blank>eess.IV</a> · <a href="https://arxiv.org/list/eess.SP/new" target=_blank>eess.SP</a></li>
+  <li>RSS: <a href="../feed.xml">feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+Imaging Intelligence Daily Briefing · cs.LG · cs.CV · cs.AI · eess.IV · eess.SP 기반 자동 생성 · 입력 출처: arXiv, Crossref, OpenAlex
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+
+</body>
+</html>
