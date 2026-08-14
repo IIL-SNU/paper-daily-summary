@@ -1,0 +1,36 @@
+{
+ "date": "2026-08-14",
+ "source_listing_date": "2026-08-14",
+ "source_mode": "new",
+ "daily_new_counts": {
+  "by_cat": {
+   "cs.LG": 157,
+   "cs.CV": 107,
+   "cs.AI": 204,
+   "eess.IV": 4,
+   "eess.SP": 23
+  },
+  "scope": "new+cross; replacements excluded",
+  "exclude": "replace",
+  "journal_count": 426
+ },
+ "totals": {
+  "total_scanned": 838,
+  "selected": 229
+ },
+ "classified": {
+  "by_bucket": {
+   "Fourier Ptychography/Microscopy": 1,
+   "Lensless/Coded Imaging": 0,
+   "Phase Imaging/Holography": 10,
+   "Meta-Optics/Diffractive": 9,
+   "Light-Field/Novel Sensors": 5,
+   "Tomography/3D Imaging": 32,
+   "Virtual Staining/Pathology": 33,
+   "Reconstruction/Inverse Problems": 15,
+   "Deep Learning Methods": 124
+  }
+ },
+ "daily_thesis": "오늘(8/14, 금) arXiv /new는 cs.LG 157·cs.CV 107·cs.AI 204·eess.IV 4·eess.SP 23(합계 495편)에 저널 원천 426건을 더해 병합 스캔 838건 중 229건(27.3%)이 ROI로 선정됐다. 가장 뚜렷한 신호는 3D Gaussian Splatting이 정상적인 다중 시점 사진을 그리는 표현을 넘어 CBCT 금속 아티팩트·스냅샷 압축 이미징처럼 물리적으로 왜곡되거나 정보가 극히 부족한 측정값을 되살리는 재구성 엔진으로 쓰이기 시작한 것(Splat-based Metal Artifact Reduction·GS2CI·LocusGS), 의료 volumetric VLM이 단일 시점 질문 응답을 넘어 숨겨진 환자 상태를 추론하는 world model로 옮겨가면서 그 능력을 재는 대규모 종단 벤치마크가 동시에 나온 것(HounsWorld·Mr3D-VL·Time-Aware Multi-View MRI Benchmark), 비디오/멀티뷰 diffusion 가속 연구가 단순 시간축 캐싱에서 기하·인과 정합을 지키는 가속으로 기준이 옮겨간 것(GeoCache·Context-Matched Distillation)이다. 계산광학 코어 5개 버킷(FP·Lensless·Phase·Meta-Optics·Light-Field, 총 25편)은 오늘도 대부분 통신·바이오센싱 응용 키워드 우연 매칭이었고, 실질 신호는 in-line holography 학습 기반 phase retrieval(YOSO)·Brewster각 ptychographic QPI·디지털 홀로그래픽 현미경 생존율 추정·metasurface agentic inverse design 정도였다.",
+ "note": "2026-08-14(금) 정상 daily 실행. 5개 추적 카테고리 arXiv /new listing이 모두 2026-08-14(금요일)로 일치함을 확인하고 source_mode=new로 발행한다. 병합 스캔 838편 중 229편(27.3%) 선정 비율은 전일(26.8%)과 거의 동일해 정상 범위이며 parser 오류를 시사하지 않는다. 계산광학 코어 버킷은 편수만 보면 어제(25편)와 비슷한 25편이지만, Phase Imaging 10편 중 실질 신호는 YOSO 홀로그래피 phase retrieval·Brewster각 ptychography QPI·디지털 홀로그래픽 현미경 생존율 추정·label-free 백혈병 phase imaging 4편, Meta-Optics 9편 중 실질 신호는 metasurface agentic inverse design 1편 정도이고 나머지는 통신·바이오센싱·RF 응용이라 지난 며칠과 같은 패턴이 이어졌다."
+}

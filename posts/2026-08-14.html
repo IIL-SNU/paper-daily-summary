@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-08-14</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-08-14 (금요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-08-14 (금요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Friday, 14 August 2026"으로 일치하는 걸 확인하고 정상 Daily로 발행합니다. abstract가 전부 확보된 정상 실행이고, 저널(Crossref/OpenAlex) 수집도 평소대로 독립 수행됐습니다.</div>
+  <div>🔢 arXiv: cs.LG 157 · cs.CV 107 · cs.AI 204 · eess.IV 4 · eess.SP 23 (new+cross, replacement 제외, 합계 495)</div>
+  <div>🔢 병합: arXiv+저널(426건) 병합 스캔 838건 · ROI 배정 229건 (27.3%) — 어제(26.8%)와 거의 동일한 정상 범위</div>
+  <div>⚠️ 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) 5개 버킷은 총 25편이지만 다시 하나씩 읽어보면 대부분 통신용 RIS·메타표면 바이오센싱·근안 디스플레이 등 키워드 우연 매칭입니다. 오늘의 실제 무게중심은 3D Gaussian Splatting이 정상 다중 시점 사진을 넘어 CBCT 금속 아티팩트·스냅샷 압축 이미징처럼 손상되거나 정보가 부족한 측정값을 되살리는 재구성 엔진으로 쓰이기 시작한 것, 의료 volumetric VLM이 단일 시점 질문 응답을 넘어 숨겨진 환자 상태를 추론하는 world model로 이동한 것, 비디오/멀티뷰 diffusion 가속이 시간축 캐싱에서 기하·인과 정합을 지키는 가속으로 넘어간 것입니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 arXiv의 무게중심은 <strong>"정상적인 입력을 잘 그리던 표현들이, 왜곡되거나 부족한 입력에서도 버티는지 시험받는 날"</strong>입니다 — 3D Gaussian Splatting(3DGS, 장면을 수많은 작은 가우시안 덩어리로 표현해 실시간으로 새 시점을 렌더링하는 방법)은 깨끗한 다중 시점 사진 대신 원뿔빔 CT(CBCT)의 금속 아티팩트(Splat-based Metal Artifact Reduction)나 한 장의 스냅샷 압축 측정값(GS²CI)처럼 물리적으로 왜곡되거나 정보가 극히 부족한 입력을 되살리는 재구성 엔진으로 쓰였고, feed-forward 3DGS 자체의 공간 비일관성 문제를 3D 앵커로 잡는 기반 연구(LocusGS)도 같은 날 나왔습니다. 의료 volumetric 영상 VLM 쪽에서는 HounsWorld·Mr3D-VL이 스캔에 질문하면 답하는 모델을 넘어 리포트 작성·저선량 노이즈 제거·조영증강 시뮬레이션까지 하나의 숨겨진 환자 상태에서 뽑아내는 world model로 이동했고, 같은 날 나온 Time-Aware Multi-View MRI Benchmark는 890명 환자·3,920문항으로 16개 VLM을 테스트해 시간에 따른 변화 방향 인식과 부피 정량화에서 여전히 체계적으로 실패한다는 걸 보여줬습니다. 비디오/멀티뷰 diffusion 가속 쪽은 GeoCache가 멀티뷰 텍스처 생성에서 기하학적으로 대응하는 시점끼리 계산을 옮겨 2.21배 가속(MV-PSNR 33.60dB)을 냈고, Context-Matched Distillation은 실시간 비디오 생성에서 teacher가 미래 정보를 보고 학생을 지도하는 인과성 불일치를 바로잡았습니다. 흥미로운 경고 신호로는 망막 영상 생성(Evaluation of Clinically Steerable Retinal Image Generation)과 3D 생성(PixSDS)에서 각각 "latent space 안에서는 좋아 보이지만 실제 데이터·픽셀로 넘어가면 문제가 드러난다"는 같은 패턴이 반복됐습니다. 계산광학 코어(Fourier Ptychography·Lensless·Phase·Meta-Optics·Light-Field)는 오늘도 실제 이미징 신호가 희박했지만, in-line holography용 학습 기반 phase retrieval(YOSO)과 Brewster각 ptychographic QPI 정도가 실질 신호였습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(8/14, 금)은 arXiv /new에 cs.LG 157편, cs.CV 107편, cs.AI 204편, eess.IV 4편, eess.SP 23편(합계 495편)이 잡혔고, 저널 426건을 더한 병합 스캔 838건 중 229건(27.3%)이 ROI로 선정됐습니다. 오늘 가장 뚜렷했던 흐름은 3D Gaussian Splatting이 정상적인 다중 시점 사진을 그리는 표현에서, 물리적으로 왜곡되거나 정보가 극히 부족한 측정값을 되살리는 재구성 엔진으로 쓰이기 시작했다는 점입니다. Splat-based Metal Artifact Reduction은 CBCT에서 금속 때문에 생기는 빔 하드닝 왜곡을, X선이 여러 파장이 섞인 다색광이라는 실제 물리를 3DGS 최적화 안에 그대로 반영해 사람이 금속 부위를 마스킹하지 않아도 교정합니다. GS²CI는 한 장의 스냅샷 압축 이미징 측정값만으로 3D 장면 전체를 복원하는데, 정보가 워낙 부족해 불안정해지는 가우시안 밀도 조절 문제를 별도 정규화로 잡았고, LocusGS는 여러 이미지를 한 번에 인코딩하는 feed-forward 3DGS에서 하나의 쿼리가 만드는 가우시안들이 장면 여기저기로 흩어지는 공간 비일관성을 3D 앵커로 줄입니다. 세 편을 같이 보면 3DGS 연구가 "깨끗한 사진에서 장면을 잘 그린다"는 단계를 넘어 "측정 자체가 왜곡되거나 부족할 때도 신뢰할 수 있게 복원한다"는 단계로 넘어가고 있다는 뜻입니다.</p>
+<p>같은 날 의료 volumetric 영상 VLM 쪽에서도 흥미로운 전환이 보였습니다. 예전에는 스캔을 넣으면 답이나 리포트를 내놓는 식으로 입력과 출력을 직접 잇는 매핑을 학습시키는 경우가 많았다면, HounsWorld는 CT 영상을 중심으로 "관찰되지 않은 환자의 실제 상태"를 하나의 잠재 변수로 두고 질문 응답·리포트 작성·저선량 노이즈 제거·조영증강 시뮬레이션을 전부 그 상태에서 나오는 출력으로 취급합니다. Mr3D-VL은 뇌종양 진단에 쓰는 다중 파라미터 3D MRI를 다루는 40억 파라미터 모델로 리포트 생성 BERTScore 0.856, 객관식 정확도 91.2%를 냈습니다. 같은 날 나온 Time-Aware Multi-View MRI Benchmark는 이런 시도들이 실제로 얼마나 잘 되는지 검증하는 잣대인데, 890명 환자·3,200개 이상 시점에서 모은 3,920개 문제로 16개 VLM을 테스트한 결과 시간에 따른 변화 방향을 맞히거나 부피를 정량화하는 데는 여전히 체계적으로 실패한다는 걸 보여줬습니다. 세 편을 같이 보면 의료 영상 VLM 연구가 "이 스캔에 뭐가 보이나요"라는 단일 시점 질문에서 "이 환자가 시간에 따라 어떻게 변하고 있는가"라는 훨씬 어려운 문제로 넘어가고 있다는 뜻입니다.</p>
+<p>비디오/멀티뷰 diffusion 가속 쪽은 오늘 두 편이 같은 문제의식을 공유했습니다. 지금까지 diffusion 생성을 빠르게 만드는 가장 흔한 방법은 이전 denoising 단계의 계산 결과를 다음 단계에서 재사용하는 시간축 캐싱이었는데, GeoCache는 여러 시점에서 같은 3D 표면에 텍스처를 입히는 멀티뷰 diffusion에서 단순히 단계를 건너뛰면 시점끼리 계속 맞춰가는 상호작용 자체가 사라진다는 걸 지적하고, 대신 기하학적으로 같은 표면 지점끼리는 예측이 비슷하게 진화한다는 점을 이용해 일부 시점만 계산하고 나머지에 옮겨줍니다(Hunyuan3D-2.1에서 2.21배 가속, MV-PSNR 33.60dB로 2배 이상 가속 구간에서 최고 화질 유지). Context-Matched Distillation은 실시간 대화형 비디오 생성에서, 빠른 학생 모델을 학습시킬 때 미래 프레임까지 보고 점수를 매기는 양방향 teacher를 쓰면 학생이 실제 생성 시점에는 알 수 없는 정보로 지도받는 인과성 불일치가 생긴다는 걸 짚고 teacher도 학생과 똑같이 과거만 보도록 맞췄습니다. 두 편을 같이 보면 diffusion 가속 연구의 기준이 "계산을 얼마나 아끼는가"에서 "아끼는 계산이 원래 모델의 기하학적·시간적 정합성을 깨지 않는가"로 옮겨가고 있다는 뜻입니다.</p>
+<p>오늘 흥미로운 경고 신호는 생성 모델의 latent space를 그대로 믿어도 되는지를 다시 확인한 두 편에서 나왔습니다. Evaluation of Clinically Steerable Retinal Image Generation은 망막 foundation model의 latent 표현으로 만든 합성 영상이 그 모델 자기 자신의 평가 기준으로는 기존 latent diffusion보다 나았지만, 실제 이미지로 학습한 별도 분류기로 평가하면 그 우위가 대부분 사라진다는 "합성-실제 표현 격차"를 정량적으로 드러냈습니다. PixSDS는 3D 생성에 흔히 쓰이는 Score Distillation Sampling이 latent space에서는 깨끗해 보여도 실제 픽셀로 디코딩하면 노이즈가 쌓이는 원인을, VAE 인코더가 특정 방향의 변화는 거의 신경 쓰지 않는다는 구조적 허점으로 밝혀냈습니다. 계산광학 코어 5개 버킷(FP·Lensless·Phase·Meta-Optics·Light-Field, 총 25편)은 오늘도 다시 훑었지만 실제 이미징 신호는 희박했습니다 — 대부분 통신용 RIS·메타표면 바이오센싱·근안 디스플레이 등 키워드만 겹치는 논문이었고, in-line holography용 학습 기반 phase retrieval(YOSO)과 Brewster각 ptychographic QPI, metasurface agentic inverse design 정도가 실질 신호였습니다.</p>
+<p>다음 관찰 포인트는 (1) "3DGS를 왜곡·압축된 측정값의 재구성 엔진으로 쓴다"는 흐름이 다음 주에도 이어져 우리 랩의 위상 복원·홀로그래피 재구성에 직접 옮겨올 만한 설계 원칙으로 굳어지는지, (2) 의료 volumetric VLM의 world model화가 CT·MRI를 넘어 다른 시계열 이미징 도메인으로 확산되는지, (3) "latent space 안에서는 좋아 보이지만 실제 데이터로 넘어가면 문제가 드러난다"는 경고가 diffusion 기반 재구성 파이프라인 전반의 표준 검증 절차로 자리잡는지입니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>어제(8/13, 목)는 diffusion·flow 생성 모델을 "그럴듯한 이미지를 만드는 도구"가 아니라 "실제 측정값과 물리적으로 들어맞아야 하는 inverse solver"로 쓰는 흐름(Making Every Step Count·SinoDiff·DIDM), 3DGS가 렌더링을 넘어 물체 단위로 골라내거나 반사실적으로 설명하는 편집 가능한 파라미터 공간이 되는 흐름(Seed2GS·COGENT), 실시간 스트리밍 비디오 diffusion이 초당 20프레임대에 도달한 것, 의료 영상 딥러닝의 불확실성 추정 자체가 못 미덥다는 감사 결과가 중심이었습니다. 오늘도 3DGS가 다시 등장했지만 축이 또 다릅니다 — 어제는 "이미 만들어진 3DGS 장면 안에서 특정 부분을 골라내고 조작하고 설명할 수 있는가"였다면, 오늘은 "3DGS가 애초에 손상되거나 정보가 부족한 측정값에서도 장면을 제대로 복원할 수 있는가"(Splat-based Metal Artifact Reduction·GS²CI·LocusGS)로, 3DGS 연구가 이틀 연속 서로 다른 방향으로 뻗어나가고 있다는 뜻입니다. 어제의 diffusion inverse solver 클러스터가 "생성 결과가 측정값과 물리적으로 일치하는가"를 물었다면, 오늘의 3DGS 재구성 엔진 클러스터는 같은 질문을 3D 장면 표현에 적용한 셈이라, "생성/재구성 결과를 그냥 받아들이지 말고 측정 물리와 대조하며 검증한다"는 정신이 대상(diffusion 생성 vs 3D 장면 표현)만 바뀌어 이틀째 이어지고 있습니다. 어제의 불확실성 추정 감사(Decodable but Not Accessible)와 오늘의 latent space 감사(Evaluation of Clinically Steerable Retinal Image Generation·PixSDS)도 같은 "모델이 내놓는 결과물을 블랙박스로 믿지 말고 재검증하자"는 정신을 공유하지만, 어제는 "신뢰도 점수가 믿을 만한가"를, 오늘은 "latent space 안에서의 우위가 실제 데이터로도 이어지는가"를 물어 검증 대상이 다릅니다. 지난주부터 이어지던 "생성 모델·표현을 그대로 믿지 않고 감사한다"는 큰 흐름은 오늘도 이어졌지만, 감사 대상이 매일 조금씩 옮겨가고 있습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>3D Gaussian Splatting이 "정상 입력을 그리는 표현"에서 "왜곡·압축된 측정값을 되살리는 재구성 엔진"으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.13159" target=_blank>Splat-based Metal Artifact Reduction</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.13502" target=_blank>GS²CI</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.12825" target=_blank>LocusGS</a> <span class=pill>CV</span>
+  </td>
+  <td>3DGS는 원래 이미 잘 찍힌 다중 시점 사진에서 장면을 재구성하는 데 강점이 있었는데, 오늘 나온 세 편은 이 표현을 정상 입력이 아니라 물리적으로 왜곡되거나 정보가 크게 부족한 측정값을 되살리는 재구성 엔진으로 씁니다. Splat-based Metal Artifact Reduction는 CBCT에서 금속 때문에 생기는 빔 하드닝 왜곡을 X선이 여러 파장 섞인 다색광이라는 실제 물리를 3DGS 최적화 안에 반영해 사람 개입 없이 교정하고, GS²CI는 한 장의 스냅샷 압축 이미징 측정값만으로 3D 장면 전체를 복원하며, LocusGS는 여러 이미지를 한 번에 인코딩하는 feed-forward 3DGS에서 하나의 쿼리가 만드는 가우시안들이 장면 여기저기로 흩어지는 공간 비일관성 문제를 3D 앵커로 잡습니다. 즉 3DGS 연구가 "깨끗한 사진에서 장면을 잘 그린다"는 단계를 넘어 "측정 자체가 왜곡되거나 정보량이 극히 적을 때도 신뢰할 수 있게 복원한다"는 단계로 넘어가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 3편이 "3DGS를 왜곡·압축된 측정값의 재구성 엔진으로 쓴다"는 같은 방향을 공유하지만, abstract에 절대 정량 비교 수치가 충분하지 않아 근거 강도는 중간</small></td>
+  <td>Splat-based Metal Artifact Reduction의 polychromatic X-ray projection 모델링 방식을 우리 랩 3DGS 기반 위상/홀로그래피 재구성에서 파장별 광학 응답을 다루는 문제에 이식해, 단색광 가정 대비 복원 정확도를 비교</td>
+</tr>
+<tr>
+  <td><strong>의료 volumetric VLM이 "질문에 정답을 맞히는 모델"에서 "숨겨진 환자 상태를 함께 추론하는 world model"로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.12904" target=_blank>HounsWorld</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.12689" target=_blank>Mr3D-VL</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.13309" target=_blank>Time-Aware Multi-View MRI Benchmark</a> <span class=pill>CV</span>
+  </td>
+  <td>예전에는 의료 영상 VLM을 만들 때 스캔을 넣으면 리포트나 답을 내놓는 식으로 입력·출력을 직접 잇는 매핑을 학습시키는 경우가 많았습니다. 오늘 나온 두 모델 논문은 그 대신 "관찰되지 않은 환자의 실제 상태"를 하나의 잠재 변수로 두고, 질문 응답·리포트 작성·영상 재생성을 전부 그 상태에서 나오는 출력으로 취급합니다. HounsWorld는 CT를 중심으로 질문 응답·리포트·저선량 노이즈 제거·조영증강 시뮬레이션을 한 모델로 통합했고, Mr3D-VL은 뇌종양 진단용 다중 파라미터 3D MRI에서 리포트 생성 BERTScore 0.856, 객관식 정확도 91.2%를 냈습니다. 같은 날 나온 Time-Aware Multi-View MRI Benchmark는 890명 환자·3,920문항으로 16개 VLM을 테스트해 시간에 따른 변화 방향 인식과 부피 정량화에서 여전히 체계적으로 실패한다는 걸 보여줘서, 이런 시도가 아직 갈 길이 멀다는 잣대 역할을 합니다. 즉 의료 영상 VLM 연구가 "이 스캔에 뭐가 보이나요"에서 "이 환자가 시간에 따라 어떻게 변하고 있고 그 근거가 되는 숨겨진 상태는 무엇인가"로 이동하고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 3편이 "관찰-상태-생성을 하나의 잠재 상태로 묶는다"는 방향을 공유하고 벤치마크 논문은 890명·3,920문항이라는 대규모 정량 근거가 강하지만, 두 모델 논문은 abstract 수치가 제한적</small></td>
+  <td>Time-Aware Multi-View MRI Benchmark의 시간 변화 방향 인식·부피 정량화 태스크를 우리 랩 종단 재구성 파이프라인(예: 시계열 위상 이미징) 평가에 이식해, 우리 모델이 같은 실패 패턴을 보이는지 확인</td>
+</tr>
+<tr>
+  <td><strong>비디오/멀티뷰 diffusion 가속이 "시간축 재사용"에서 "기하·인과 정합을 지키는 가속"으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.13255" target=_blank>GeoCache</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.13391" target=_blank>Context-Matched Distillation</a> <span class=pill>CV</span>
+  </td>
+  <td>지금까지 diffusion 영상 생성을 빠르게 만드는 가장 흔한 방법은 이전 denoising 단계의 계산 결과를 다음 단계에서 재사용하는 시간축 캐싱이었습니다. 오늘 나온 두 편은 이 방식이 놓치는 구조적 정보를 짚습니다. GeoCache는 멀티뷰 텍스처 diffusion에서 단순히 단계를 건너뛰면 시점끼리 같은 표면을 맞춰가는 상호작용이 사라진다는 걸 지적하고, 기하학적으로 대응하는 시점끼리 예측을 옮겨서 Hunyuan3D-2.1에서 2.21배 가속(MV-PSNR 33.60dB)을 냈습니다. Context-Matched Distillation은 실시간 비디오 생성에서 빠른 학생 모델을 미래 정보까지 보는 양방향 teacher로 가르치면 학생이 실제 생성 시점에는 알 수 없는 정보로 지도받는 인과성 불일치가 생긴다는 걸 짚고 이를 바로잡았습니다. 즉 diffusion 가속 연구의 기준이 "계산을 얼마나 아끼는가"에서 "아끼는 계산이 원래 모델의 기하학적·시간적 정합성을 깨지 않는가"로 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 응용(멀티뷰 텍스처 vs 자기회귀 비디오) 2편이 같은 "구조 정합을 지키는 가속" 원칙을 공유하지만 편수가 적어 조심스러움. GeoCache는 3개 파이프라인 교차검증으로 근거가 상대적으로 강함</small></td>
+  <td>GeoCache의 geometry-aligned delta transport를 우리 랩 다중 조명각 위상 이미징 diffusion 재구성에 적용해, 조명각 간 대응 지점끼리 계산을 옮겼을 때 속도·정합도 트레이드오프를 비교</td>
+</tr>
+<tr>
+  <td><strong>생성 모델의 latent space가 자기 도메인 안에서는 그럴듯해도 독립 잣대로 넘어가면 문제가 드러남</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.13455" target=_blank>Evaluation of Clinically Steerable Retinal Image Generation</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.12997" target=_blank>PixSDS</a> <span class=pill>CV</span>
+  </td>
+  <td>diffusion이나 foundation model의 latent space를 그대로 믿고 쓰는 게 안전한지 다시 확인하는 논문 두 편이 서로 다른 각도에서 나왔습니다. Evaluation of Clinically Steerable Retinal Image Generation은 망막 foundation model latent로 만든 합성 영상이 그 모델 자기 평가 기준으로는 기존 latent diffusion보다 나았지만, 실제 이미지로 학습한 별도 분류기로 평가하면 그 우위가 대부분 사라지는 "합성-실제 표현 격차"를 처음 정량적으로 드러냈습니다. PixSDS는 3D 생성에 흔히 쓰이는 Score Distillation Sampling이 latent space에서는 깨끗해 보여도 실제 픽셀로 디코딩하면 노이즈가 쌓이는 원인을, VAE 인코더가 특정 방향의 변화는 거의 신경 쓰지 않는다는 구조적 허점으로 밝혀냈습니다. 즉 "latent space 안에서의 평가가 좋다"는 것이 "실제 출력·실제 데이터로 넘어가도 좋다"는 뜻은 아니라는 경고가 서로 다른 응용에서 동시에 나온 셈입니다.</td>
+  <td>Low<br><small>2편이 서로 다른 응용(의료 영상 생성 vs 3D 형태 최적화)에서 같은 경고 방향을 공유하지만 직접적인 방법론적 연결은 약해 관찰 단계로 취급</small></td>
+  <td>PixSDS의 VAE-only 최적화 진단 절차를 우리 랩 diffusion latent 기반 위상 복원 파이프라인에 적용해, latent space 지표(FID 등)와 실제 픽셀 오차(PSNR/SSIM) 사이에 같은 drift가 있는지 통제 실험으로 확인</td>
+</tr>
+</tbody>
+</table>
+
+<p><small>⚠️ Domain Watch Lens 메모 — 오늘은 4개 행으로 표를 마쳤습니다. Meta-Optics/Diffractive(9편)는 실제 이미징 신호가 metasurface agentic inverse design(10.1002/lpor.71739) 1편뿐이고 나머지 8편은 마이크로파 빔 조향·자기장 센싱·액정 엘라스토머 액추에이터·표면 플라즈몬 공명 현미경 등 통신·센싱·재료 응용입니다. Phase Imaging/Holography(10편)는 실질 신호가 4편으로 상대적으로 많았습니다 — YOSO(학습 기반 in-line holography phase retrieval), Brewster각 ptychographic QPI, 디지털 홀로그래픽 현미경 세포 생존율 추정, label-free 백혈병 phase imaging입니다. 나머지 6편은 파장가변 적응광학·간섭계 wavefront reconstruction·홀로그래픽 암흑에너지 관측 등으로 계산 위상 이미징 방법론과는 결이 다릅니다. Fourier Ptychography(1편)는 Brewster각 반사모드 ptychographic microscopy로 실제 QPI와 직결됩니다. Lensless/Coded Imaging은 오늘 0편입니다. Light-Field/Novel Sensors(5편)는 이벤트-프레임 하이브리드 센싱 1편이 실질 신호이고 나머지는 핸드볼 득점 확률·뉴로모픽 시냅스 소자 등 이미징 ROI와 거리가 있습니다.</small></p>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 3DGS 재구성 엔진화 클러스터(Splat-based Metal Artifact Reduction·GS²CI·LocusGS), 의료 volumetric VLM world model화(HounsWorld·Mr3D-VL·Time-Aware Multi-View MRI Benchmark), 구조 정합형 diffusion 가속(GeoCache·Context-Matched Distillation), latent space 경고(Evaluation of Clinically Steerable Retinal Image Generation·PixSDS)가 오늘 arXiv 쪽 핵심 신호였습니다.</li>
+  <li><strong>저널 전용</strong>: YOSO(in-line holography phase retrieval)·Brewster각 ptychographic QPI·디지털 홀로그래픽 현미경 생존율 추정·metasurface agentic inverse design 정도가 실질 계산 이미징 신호였고, 나머지 저널(Meta-Optics 9편, Phase Imaging 나머지 6편 등)은 통신용 메타표면, 웨어러블 센싱, 재료과학 응용 등 계산 위상 이미징·메타광학 방법론과는 결이 다른 응용이었습니다.</li>
+  <li><strong>공통 키워드</strong>: "metasurface"가 arXiv 쪽에서는 아예 매칭이 없었고 저널 쪽에서만 9편 전부에 걸렸는데, 그중 실제 계산 메타광학 설계 방법론은 agentic inverse design 1편뿐이고 나머지는 통신·센싱·재료 응용이었습니다. "reconstruction"도 arXiv 쪽에서는 3DGS 재구성 클러스터 3편에 정확히 매칭됐지만, 저널 쪽에서는 임상 CT 리포트·지진파 tomography 등 완전히 다른 도메인에 걸렸습니다.</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 3DGS 재구성·의료 world model·diffusion 가속이라는 계산 이미징 코어 밖의 방법론 심화를 강하게 주도했고, 계산 이미징 코어 자체(Phase·Meta-Optics)는 arXiv에서는 거의 신호가 없고 저널에서만 소수 나왔습니다. 이런 날은 Splat-based Metal Artifact Reduction의 다색광 모델링이나 GeoCache의 기하 정합형 가속을 우리 랩 파이프라인에 역수입할 기회로 볼 수 있습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 3D Gaussian Splatting이 "정상 입력을 그리는 표현"에서 "왜곡·압축된 측정값을 되살리는 재구성 엔진"으로</h3>
+  <p>Splat-based Metal Artifact Reduction은 CBCT의 다색광 X선 물리를 3DGS 최적화에 직접 반영해 금속 아티팩트를 사람 개입 없이 교정했고, GS²CI는 한 장의 스냅샷 압축 이미징 측정값만으로 3D 장면을 복원하며, LocusGS는 feed-forward 3DGS의 공간 비일관성을 3D 앵커로 잡습니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편이 서로 다른 이미징 응용에서 같은 방향(3DGS를 왜곡·압축된 측정값의 재구성 엔진으로 씀)을 공유하지만 abstract에 절대 정량 비교 수치가 충분하지 않음</p>
+</div>
+
+<div class=ins>
+  <h3>2. 의료 volumetric VLM이 질문 응답 모델에서 숨겨진 환자 상태를 추론하는 world model로</h3>
+  <p>HounsWorld는 CT를 중심으로 질문 응답·리포트·저선량 노이즈 제거·조영증강 시뮬레이션을 하나의 잠재 환자 상태에서 뽑아내고, Mr3D-VL은 다중 파라미터 3D MRI에서 리포트 생성 BERTScore 0.856·객관식 정확도 91.2%를 냈으며, Time-Aware Multi-View MRI Benchmark는 890명 환자·3,920문항으로 16개 VLM을 테스트해 시간 변화 인식·부피 정량화의 체계적 실패를 드러냈습니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편이 같은 방향을 공유하고 벤치마크 논문은 대규모 정량 근거가 강하지만, 두 모델 논문은 abstract 수치가 제한적</p>
+</div>
+
+<div class=ins>
+  <h3>3. 비디오/멀티뷰 diffusion 가속이 시간축 캐싱에서 기하·인과 정합을 지키는 가속으로</h3>
+  <p>GeoCache는 멀티뷰 텍스처 diffusion에서 기하학적으로 대응하는 시점끼리 denoising 예측을 옮겨 Hunyuan3D-2.1에서 2.21배 가속(MV-PSNR 33.60dB)을 냈고, Context-Matched Distillation은 실시간 비디오 생성에서 teacher가 미래 정보로 학생을 지도하는 인과성 불일치를 바로잡았습니다.</p>
+  <p class=conf-note>Confidence: Medium — 2편이 같은 원칙(구조 정합을 지키는 가속)을 공유하지만 응용이 다르고 편수가 적음. GeoCache는 3개 파이프라인 교차검증으로 근거가 상대적으로 강함</p>
+</div>
+
+<div class=ins>
+  <h3>4. 생성 모델의 latent space가 자기 도메인 안에서는 그럴듯해도 독립 잣대로 넘어가면 문제가 드러남</h3>
+  <p>Evaluation of Clinically Steerable Retinal Image Generation은 망막 foundation model latent로 만든 합성 영상이 실제 이미지 분류기로 평가하면 우위가 대부분 사라지는 합성-실제 표현 격차를 드러냈고, PixSDS는 3D 생성용 Score Distillation Sampling이 latent space에서는 깨끗해도 실제 픽셀에는 노이즈가 쌓이는 원인을 VAE 구조적 허점으로 밝혀냈습니다.</p>
+  <p class=conf-note>Confidence: Low — 2편이 서로 다른 응용에서 같은 경고 방향을 공유하지만 직접적인 방법론적 연결은 약해 관찰 단계로 취급</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. Splat-based Metal Artifact Reduction의 다색광 X선 모델링을 우리 랩 3DGS 재구성 파이프라인에 이식</h3>
+  <p>CBCT 빔 하드닝 교정에 쓰인 polychromatic X-ray projection 모델과 물질별 감쇠 프로파일 결합 방식을, 우리 랩이 실험 중인 3DGS 기반 위상/홀로그래피 재구성에서 파장에 따라 달라지는 광학 응답을 다루는 데 적용할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>polychromatic projection 모델 + 물질별 감쇠 프로파일 결합 모듈 재현</li>
+    <li>공통 benchmark: 우리 랩 3DGS 기반 위상/홀로그래피 재구성 합성·실측 데이터셋</li>
+    <li>비교축: 단색광 가정 baseline 대비 파장가변 반영 시 복원 PSNR/SSIM, 사람 개입(마스킹) 필요 여부</li>
+    <li>실패해도 남는 결과: 우리 광학계의 파장 의존 응답이 CBCT 다색광 가정과 얼마나 다른지에 대한 진단 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. GeoCache의 기하 정합형 가속을 우리 랩 다중 조명각 위상 이미징 diffusion 재구성에 적용</h3>
+  <p>GeoCache가 같은 표면 지점끼리 denoising 예측을 공유해 멀티뷰 texture diffusion을 가속한 방식을, 우리 랩이 여러 조명 각도에서 찍은 위상 이미징 diffusion 재구성 파이프라인에 적용해 속도·정합도 트레이드오프를 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>geometric delta transport 모듈 재현, 우리 diffusion 재구성 모델에 연결</li>
+    <li>공통 benchmark: 우리 랩 다중 조명각 위상 이미징 diffusion 재구성 데이터셋</li>
+    <li>비교축: 시간축 캐싱 대비 가속 배율, PSNR/SSIM 하락폭</li>
+    <li>실패해도 남는 결과: 우리 데이터의 조명각 간 대응 지점 예측이 GeoCache의 "geometrically corresponding" 가정을 만족하는지에 대한 진단 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. PixSDS의 VAE pixel drift 진단 절차를 우리 랩 diffusion latent 기반 재구성 검증에 적용</h3>
+  <p>PixSDS가 latent space 지표는 깨끗한데 실제 픽셀에는 노이즈가 쌓이는 현상을 VAE 인코더 구조로 진단한 통제 실험(2D SDS 실험, VAE-only 최적화)을, 우리 랩의 diffusion latent 기반 위상 복원 결과에도 같은 drift가 있는지 확인하는 데 적용합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>VAE-only 최적화 진단 실험 재현</li>
+    <li>공통 benchmark: 우리 랩 diffusion latent 기반 위상 복원 파이프라인 + 테스트셋</li>
+    <li>비교축: latent space 지표(FID 등) vs 실제 픽셀 오차(PSNR/SSIM) 사이의 상관관계, drift 발생 여부</li>
+    <li>실패해도 남는 결과: 우리 VAE 인코더의 방향별 민감도 프로파일(어떤 변화에 둔감한지)</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Virtual Staining/Pathology(33편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:3.0%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:30.3%"></span></span><span class=n>10편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:27.3%"></span></span><span class=n>9편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:15.2%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:97.0%"></span></span><span class=n>32편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>33편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:45.5%"></span></span><span class=n>15편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>124편</span></div>
+
+<p><small>⚠️ 참고 — Domain Watch Lens: Fourier Ptychography 1편은 Brewster각 반사모드 ptychographic microscopy로 실제 QPI와 직결되는 실질 신호입니다. Phase Imaging 10편 중 실질 신호는 YOSO·Brewster각 ptychography·DHM 생존율 추정·label-free 백혈병 phase imaging 4편이고 나머지는 파장가변 적응광학·wavefront reconstruction·홀로그래픽 암흑에너지 관측 등입니다. Meta-Optics 9편 중 실질 신호는 metasurface agentic inverse design 1편뿐이고 나머지 8편은 마이크로파 빔 조향·자기장 센싱·액정 엘라스토머 액추에이터 등입니다. Light-Field/Novel Sensors 5편 중 이벤트-프레임 하이브리드 센싱 1편이 실질 신호이고 나머지는 핸드볼 득점 확률·뉴로모픽 시냅스 소자 등입니다. Virtual Staining/Pathology 33편 중 실제 병리·virtual staining 관련은 IQA 가이드라인 1편뿐이고 나머지는 cs.AI/cs.LG 일반 논문(LLM reasoning, multi-agent 등)과 완전히 무관한 저널 응용(직물 얼룩 검출, 식품과학 등)입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/optcon.598919" target=_blank>Reflection-mode Brewster angle Ptychographic Microscopy for Quantitative Phase Imaging of Dielectric Patterns</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: Brewster각 반사모드 배치로 유전체 패턴의 정량 위상 이미징을 수행하는 ptychographic microscopy 논문으로, 우리 랩 Fourier ptychography 방법론과 직결 / 우선순위: Read
+</div>
+
+<h3>Phase Imaging/Holography (10편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2515-7647/ae99bb" target=_blank>YOSO: single-frame gerchberg-saxton phase retrieval with AI-based data augmentation for in-line holography</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 딥러닝으로 defocus 거리별 hologram을 합성해 Gerchberg-Saxton 알고리즘에 넣는 in-line holography phase retrieval 방법, 컴퓨터 합성 데이터만으로 학습해 2시간 안에 학습 완료 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41598-026-63795-3" target=_blank>Automated viability estimation from digital holographic microscopy</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 산업 규모 CHO 세포 배양 40건에서 label-free DHM 기반 생존율 추정 파이프라인을 재보정 없이 검증, 우리 랩 홀로그래피 응용과 직결 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110042" target=_blank>A label-free light scattering and phase imaging multimodal system for patient-derived leukemia single-cell analysis</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 광산란과 위상 이미징을 결합한 멀티모달 시스템으로 백혈병 환자 유래 단일세포를 label-free 분석, 우리 랩 QPI 응용과 맞닿음 / 우선순위: Read
+</div>
+
+<h3>Meta-Optics/Diffractive (9편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71739" target=_blank>A Self-Evolving Agentic Framework for Metasurface Inverse Design</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 코딩 에이전트와 미분 가능 물리 솔버를 결합해 metasurface 역설계 코드를 자동 생성·개선, 계산 메타광학 설계 워크플로 자동화 참고 가치 / 우선순위: Skim
+</div>
+
+<h3>Light-Field/Novel Sensors (5편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.13245" target=_blank>SoM-MTM: Synesthesia of Machines-Driven Masked Token Model for Cooperative Perception</a></strong> <span class=pill>IV</span><br>
+  왜 주요: 이벤트-프레임 하이브리드 센싱을 다루는 협력 인지(cooperative perception) 프레임워크, 패킷 손실 채널에서도 강건한 시각 데이터 전송을 다루는 novel sensor 응용 / 우선순위: Skim
+</div>
+
+<h3>Tomography/3D Imaging (32편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.13159" target=_blank>Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(3DGS 재구성 엔진화)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.13502" target=_blank>GS²CI: Robust Gaussian Splatting For Snapshot Compressive Imaging</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(3DGS 재구성 엔진화)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.12825" target=_blank>LocusGS: Spatially Grounded Tokens for Feed-Forward 3D Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(3DGS 재구성 엔진화)의 기반 연구 — 위 클러스터 표 참고 / 우선순위: Read
+</div>
+
+<h3>Virtual Staining/Pathology (33편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.jmi.13.s1.s11209" target=_blank>Context-specific image quality assessment for virtual histologic staining: checklist and guideline</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: virtual staining 평가에 널리 쓰이는 지표들이 실제 임상·과학적 맥락을 충분히 반영하지 못한다고 지적하며 맥락별 IQA 체크리스트를 제안, 우리 랩 virtual staining 파이프라인 평가 설계에 직결 / 우선순위: Read
+</div>
+
+<h3>Reconstruction/Inverse Problems (15편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.13194" target=_blank>Fidelity-Constrained Anchoring for Black-Box Denoisers</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 재학습 없이 블랙박스 디노이저 출력을 입력에 앵커링해 PSNR/SSIM 기준 fidelity를 보장하는 폐쇄형 해法, 우리 랩 디노이징 후처리 단계에 바로 적용 가능 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1111/cgf.70489" target=_blank>Differentiable Randers-Finsler Eikonal Solvers</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 미분 가능 Eikonal solver로 비등방 매질에서의 경로 계획을 다루는 방법론, 광 전파 모델링과 방법론적으로 맞닿음 / 우선순위: Skim
+</div>
+
+<h3>Deep Learning Methods — 계산 이미징 관련 대표 2편 (124편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.12904" target=_blank>HounsWorld: A Multimodal World Model for Hidden Patient-State Readout, Reconstruction, and Simulation</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(의료 volumetric VLM world model화)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.13255" target=_blank>GeoCache: Training-Free Acceleration of Multi-View Texture Diffusion via Geometric Delta Transport</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(구조 정합형 diffusion 가속)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<ul>
+  <li><strong>GeoCache (Hunyuan3D-2.1, 2배 이상 가속 구간)</strong> — 2.21배 denoiser-loop 가속, MV-PSNR 33.60dB, MV-LPIPS 0.0293(2배 이상 가속 구간 중 최고 fidelity)</li>
+  <li><strong>Mr3D-VL (mpMRI 리포트 생성/QA, 4B 파라미터)</strong> — BERTScore 0.856, QA 정확도 71.3%, 객관식 정확도 91.2%(4B/7B/30B 비교군 대비 우위 주장)</li>
+  <li><strong>Time-Aware Multi-View MRI Benchmark (16개 VLM 평가)</strong> — 890명 환자·3,200개 이상 종단 시점·3,920문항 규모, 변화 방향 인식·부피 정량화에서 체계적 실패 확인</li>
+  <li><small>그 외 오늘 대표 논문들(Splat-based Metal Artifact Reduction·GS²CI·LocusGS·HounsWorld·Context-Matched Distillation·Evaluation of Clinically Steerable Retinal Image Generation·PixSDS 등)은 abstract에 baseline 대비 절대 수치를 명시하지 않았거나 정성적 SOTA 주장에 그쳐 로그에서 제외했습니다(본문 확인 필요).</small></li>
+</ul>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>오늘 흥미로운 대비는 3DGS 재구성 엔진 클러스터와 latent space 경고 클러스터가 사실 반대 방향에서 같은 질문을 던진다는 점이었습니다. Splat-based Metal Artifact Reduction·GS²CI는 "3DGS가 왜곡되거나 부족한 측정값에서도 신뢰할 수 있는 결과를 낼 수 있는가"를 긍정적으로 보여주려 하고, Evaluation of Clinically Steerable Retinal Image Generation·PixSDS는 "생성/재구성 결과가 자기 평가 기준 안에서는 좋아 보여도 실제 데이터·픽셀로 넘어가면 문제가 드러날 수 있다"는 경고를 던집니다. 즉 한쪽은 "제한된 측정에서도 표현이 버틸 수 있다"는 낙관적 증거를, 다른 쪽은 "표현이 좋아 보이는 것과 실제로 신뢰할 수 있는 것은 다르다"는 신중론을 같은 날 나란히 제시한 셈입니다. 이 대비는 우리 랩에도 그대로 적용됩니다 — 3DGS나 diffusion latent를 제한된 측정값의 재구성 표현으로 쓸 때, "복원이 잘 됐다"는 자체 지표만 보지 말고 독립적인 실제 데이터 검증 단계를 반드시 거쳐야 한다는 근거가 오늘 두 클러스터에서 동시에 나온 셈입니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling — arXiv cs.CV</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> CBCT(원뿔빔 컴퓨터단층촬영)로 임플란트나 금속 보형물이 있는 환자를 찍으면, X선이 여러 파장이 섞인 다색광이라는 사실 때문에 금속 주변에 심한 빔 하드닝 왜곡이 생깁니다. 예전에는 이 문제를 사람이 직접 금속 부위를 마스킹해주거나, 계산 비용이 큰 신경 표현 기반 방법으로 우회하는 수밖에 없었습니다. 이 논문은 3DGS 최적화 안에 다색광 X선 투영 모델과 물질별 감쇠 프로파일을 직접 넣어서, 사람 개입이나 강한 사전 가정 없이 금속 아티팩트를 교정합니다. 우리 랩이 3DGS를 재구성 표현으로 실험할 때, "측정 물리가 명확한 이미징 문제라면 그 물리를 3DGS 최적화 목적함수에 직접 넣어 왜곡을 교정할 수 있다"는 설계 원칙을 그대로 참고할 수 있습니다.</p>
+  <p><strong>핵심:</strong> 핵심 아이디어는 CBCT의 X선 흡수 물리를 단색광으로 근사하지 않고, 다색광 투영 모델과 물질별 감쇠 프로파일, 시스템 응답 모델을 3DGS 프레임워크 안에 그대로 통합하는 겁니다. 재구성 파라미터(가우시안들)와 X선 스펙트럼 특성을 동시에 최적화하기 때문에, 기존 방법처럼 금속 마스크를 수동으로 지정하거나 강한 사전 가정에 의존할 필요가 없습니다. 저자들은 Monte-Carlo X선 시뮬레이션 툴박스로 검증한 고충실도 합성 CBCT 데이터 생성 파이프라인을 만들고, 심한 금속 아티팩트가 있는 새 데이터셋을 공개했습니다. 이 논문은 빔 하드닝 교정에 3DGS를 쓴 첫 사례라고 저자들은 밝히고 있고, 합성·실제 데이터셋 모두에서 기존 최고 수준 방법 대비 아티팩트 억제와 재구성 정확도에서 우위를 주장합니다.</p>
+  <p><strong>주의:</strong> abstract에는 "기존 SOTA 대비 우위"라는 정성적 주장만 있고 PSNR/SSIM 같은 절대 정량 수치는 제시되지 않아, 개선 폭이 실제로 어느 정도인지는 본문·코드 확인이 필요합니다. 또한 공개한 합성 데이터셋이 Monte-Carlo 시뮬레이션 기반이라, 실제 임상 CBCT 스캐너의 노이즈·산란 특성과 완전히 일치하는지도 별도 검증이 필요합니다. [Claim risk]</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] HounsWorld: A Multimodal World Model for Hidden Patient-State Readout, Reconstruction, and Simulation — arXiv cs.CV</h3>
+  <div class=tag>[방법전환] [인프라] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 지금까지 의료 영상 AI 모델은 대개 "이 CT 스캔을 보고 이 질문에 답하라" 또는 "이 스캔으로 리포트를 써라"처럼, 입력과 출력을 직접 잇는 매핑 하나씩을 따로 학습시켰습니다. 이 논문은 그 대신 환자의 실제 상태(장기 구조, 병변, 밀도 분포 등)를 겉으로 드러나지 않는 하나의 잠재 변수로 보고, 질문 응답·리포트 작성·저선량 노이즈 제거·조영증강 시뮬레이션을 전부 그 잠재 상태에서 나오는 서로 다른 예측 문제로 재정의합니다. 우리 랩이 재구성 파이프라인을 설계할 때, "복원"과 "이해"를 서로 다른 모델로 따로 만들 필요 없이 하나의 공유 상태에서 함께 다룰 수 있다는 설계 원칙을 보여주는 사례입니다.</p>
+  <p><strong>핵심:</strong> 저자들은 먼저 HounsBench라는 CT 중심 벤치마크를 만들어, 질문 응답(readout)·리포트/캡션 생성(reconstruction)·조건부 CT 볼륨 생성(simulation) 세 task family를 환자 단위로 분리된 split과 각 family별 지표로 통일했습니다. HounsWorld는 30억 파라미터 규모의 멀티모달 world model로, volumetric CT 스캔과 임상 언어를 모두 같은 잠재 환자 상태의 관측치로 취급하는 Joint Understanding-Generation Learning으로 학습됩니다. 공유 transformer가 암묵적 환자 상태 추정치를 만들고, 이를 바탕으로 질문에 답하거나(readout), 언어로 리포트를 쓰거나(reconstruction), 저선량 노이즈 제거·가상 조영증강·해부학적 제약을 지키는 텍스트+마스크 조건부 볼륨 생성(simulation)까지 수행합니다. Zero-initialized CT adapter로 사전학습된 멀티모달 매핑을 보존하고, Hounsfield 단위 윈도우를 조건으로 명시적으로 샘플링해서 임상적으로 의미 있는 밀도 관측치를 노출시킵니다.</p>
+  <p><strong>주의:</strong> "세 task family 전반에서 강한 성능"이라는 abstract 주장에 구체적인 벤치마크 수치가 없어, readout·reconstruction·simulation 각각에서 기존 특화 모델 대비 얼마나 개선됐는지는 본문 확인이 필요합니다. 또한 CT 한 modality에 특화된 설계라, MRI나 초음파 같은 다른 volumetric modality로의 일반화 가능성은 별도 검증이 필요합니다. [Claim risk] [Dataset risk]</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Metric risk] 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) 실신호가 오늘도 홀로그래피 phase retrieval·ptychographic QPI·metasurface 역설계 등 소수(약 6편)에 그쳐, 오늘 리포트의 무게중심이 3DGS 재구성 엔진화·의료 world model·diffusion 가속이라는 범용 CV/ML 쪽으로 강하게 쏠렸습니다. 이는 오늘 실제 논문 구성을 반영한 것이지만, 계산 이미징 코어에 대한 정보 밀도는 여전히 낮습니다.</p>
+  <p>[Claim risk] 3DGS 재구성 엔진화 클러스터·의료 world model 클러스터의 정량 수치는 각 논문의 자체 벤치마크·자체 baseline 기준이라, 서로 다른 논문 간 직접 비교는 불가능합니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology(33편) 버킷은 실제 병리·virtual staining 관련 논문이 1편뿐이고 나머지는 cs.AI/cs.LG 일반 논문과 완전히 무관한 저널 응용이라, 이 버킷 이름만으로 오늘의 병리 신호를 판단하면 안 됩니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Baseline risk] Splat-based Metal Artifact Reduction과 GS²CI 모두 "기존 SOTA 대비 우위"를 주장하지만 abstract에 절대 정량 수치가 없어, 개선 폭과 비교 baseline의 강도는 본문·코드 확인이 필요합니다.</p>
+  <p>[Dataset risk] HounsWorld·Mr3D-VL 모두 CT 또는 MRI 한 modality에 특화돼 있어, 다른 volumetric modality나 서로 다른 병원 장비에서도 같은 성능이 유지될지는 별도 검증이 필요합니다.</p>
+  <p>[Claim risk] Evaluation of Clinically Steerable Retinal Image Generation의 "합성-실제 표현 격차" 주장은 abstract에 구체 정량 수치가 없어, 격차의 크기는 본문·코드 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Meta-Optics/Diffractive 8편(통신·센싱·재료 응용 메타표면)</strong> — 마이크로파 빔 조향용 Moiré metasurface, 자기장 센싱용 quasi-BIC metasurface, 액정 엘라스토머 액추에이터, 테라헤르츠 편광 변환 등으로 이미징 ROI와 무관합니다.</li>
+    <li><strong>Phase Imaging/Holography 저널 6편(적응광학·wavefront·우주론 응용)</strong> — 파장가변 SPGD 적응광학, 단일 간섭도로부터의 wavefront reconstruction, 홀로그래픽 암흑에너지 관측 제약은 계산 위상 이미징 방법론이 아니라 인접 물리학/천문학 응용입니다.</li>
+    <li><strong>Tomography/3D Imaging 순수 임상 사례·비영상 "tomography" 다수(26편)</strong> — 부비동 진균 감염 CT 진단, 지진파 tomography, 치과 CBCT 임상 연구 등 계산 이미징 방법론과 무관한 임상/비광학 신호입니다.</li>
+    <li><strong>Virtual Staining/Pathology 대부분(32편, 무관 도메인)</strong> — LLM reasoning, multi-agent 시스템, 직물 얼룩 검출, 식품과학 등 키워드만 겹친 cs.AI/cs.LG 논문과 저널 논문들입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>3DGS 재구성 엔진화 (핵심 3편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.13159" target=_blank>Splat-based Metal Artifact Reduction</a></strong> <span class=pill>CV</span><br>
+- 문제: CBCT 금속 아티팩트(빔 하드닝)를 기존 방법은 수동 마스킹이나 고비용 신경 표현으로만 다룸 / 방법: 다색광 X선 투영 모델·물질별 감쇠 프로파일을 3DGS 최적화에 직접 통합 / 의미: 사람 개입 없이 물리 기반 아티팩트 교정, 3DGS를 빔 하드닝 교정에 쓴 첫 사례 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.13502" target=_blank>GS²CI</a></strong> <span class=pill>CV</span><br>
+- 문제: 스냅샷 압축 이미징(SCI) 한 장의 측정값만으로 3D 장면을 복원하기엔 정보 손실·시점 다양성 부족이 심함 / 방법: 대규모 vision foundation model prior + SCI 특화 densification 정규화(OSGR) / 의미: 극도로 제한된 측정에서도 3DGS 최적화를 안정화 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.12825" target=_blank>LocusGS</a></strong> <span class=pill>CV</span><br>
+- 문제: feed-forward 3DGS에서 같은 쿼리가 만든 가우시안들이 장면 여기저기로 흩어지는 공간 비일관성 / 방법: 각 쿼리에 3D 앵커(중심+반경)를 부여해 디코딩 전 과정에서 유지 / 의미: 재구성 표현의 공간 구조화 개선, 3DGS 재구성 엔진화의 기반 기술 / 우선순위: Read
+</div>
+
+<h3>의료 volumetric VLM world model화 (핵심 3편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.12904" target=_blank>HounsWorld</a></strong> <span class=pill>CV</span><br>
+- 문제: 의료 영상 AI가 스캔→답 매핑을 따로 학습해 관찰 간 상태 공유가 없음 / 방법: 질문 응답·리포트·조건부 볼륨 생성을 하나의 잠재 환자 상태에서 예측하는 world model / 의미: CT 중심 지능을 상태 추론 문제로 통합 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.12689" target=_blank>Mr3D-VL</a></strong> <span class=pill>CV</span><br>
+- 문제: mpMRI는 여러 modality를 함께 봐야 하는데 기존 3D VLM은 2D 중심이거나 단일 modality(CT)에 그침 / 방법: 4D rotational positional embedding + 다중 해상도 feature implantation / 의미: 4B 모델로 더 큰 비교군 대비 우위 / 근거: BERTScore 0.856, 객관식 91.2% / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.13309" target=_blank>Time-Aware Multi-View MRI Benchmark</a></strong> <span class=pill>CV</span><br>
+- 문제: 기존 의료 VLM 벤치마크가 단일 시점·단일 뷰에 그쳐 종단 추론 능력을 못 잼 / 방법: 890명 환자·3,920문항의 다중 뷰·종단 시점 벤치마크 / 의미: 변화 방향 인식·부피 정량화의 체계적 실패를 드러냄 / 우선순위: Must-read
+</div>
+
+<h3>구조 정합형 diffusion 가속 (핵심 2편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.13255" target=_blank>GeoCache</a></strong> <span class=pill>CV</span><br>
+- 문제: 멀티뷰 texture diffusion에서 시간축 캐싱은 시점 간 상호작용을 깨뜨려 정합성이 떨어짐 / 방법: 기하학적으로 대응하는 시점끼리 denoising 예측을 전송(geometric delta transport) / 의미: 순수 시간축 가속보다 나은 속도-정합성 트레이드오프 / 근거: 2.21배 가속, MV-PSNR 33.60dB / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.13391" target=_blank>Context-Matched Distillation</a></strong> <span class=pill>CV</span><br>
+- 문제: 자기회귀 비디오 증류에서 양방향 teacher가 미래 정보로 학생을 지도해 인과성이 어긋남 / 방법: teacher도 과거만 보는 causal DMD + Prefix Scoring/Corruption / 의미: 실시간 제어 가능한 비디오 생성의 인과 정합 확보 / 우선순위: Read
+</div>
+
+<h3>Latent space 경고 (핵심 2편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.13455" target=_blank>Evaluation of Clinically Steerable Retinal Image Generation</a></strong> <span class=pill>CV</span><br>
+- 문제: foundation model latent 기반 조종 가능 생성이 실제로 신뢰할 만한지 검증 부족 / 방법: 4개 망막 foundation model을 자기평가 vs 실제 이미지 분류기 평가로 교차검증 / 의미: 합성-실제 표현 격차를 처음 정량적으로 드러냄 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.12997" target=_blank>PixSDS</a></strong> <span class=pill>CV</span><br>
+- 문제: latent SDS가 latent space에서는 깨끗해도 실제 픽셀에는 노이즈·색 얼룩이 생김 / 방법: VAE-induced pixel drift로 원인 진단(통제된 2D SDS 실험, VAE-only 최적화) / 의미: latent 기반 3D 생성 파이프라인의 숨은 실패 원인 규명 / 우선순위: Read
+</div>
+
+<h3>계산광학 코어 Watch (4편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1088/2515-7647/ae99bb" target=_blank>YOSO (in-line holography phase retrieval)</a></strong> <span class=pill>JNL</span><br>
+- 문제: in-line holography의 single-frame phase retrieval이 multi-height 데이터를 실측으로 얻기 어려움 / 방법: 딥러닝으로 defocus hologram을 합성해 Gerchberg-Saxton에 투입 / 의미: 컴퓨터 합성 데이터만으로 학습, 2시간 내 학습 완료 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/optcon.598919" target=_blank>Brewster각 반사모드 Ptychographic Microscopy</a></strong> <span class=pill>JNL</span><br>
+- 문제: 유전체 패턴의 반사모드 정량 위상 이미징이 어려움 / 방법: Brewster각 배치의 반사모드 ptychography / 의미: 우리 랩 Fourier ptychography 방법론과 직결 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1038/s41598-026-63795-3" target=_blank>DHM 기반 세포 생존율 자동 추정</a></strong> <span class=pill>JNL</span><br>
+- 문제: 바이오생산 현장의 세포 생존율 측정이 대부분 수동·오프라인 방식 / 방법: label-free 디지털 홀로그래픽 현미경(DHM) 파이프라인, 40건 산업 배양에서 재보정 없이 검증 / 의미: 산업 규모 label-free 생존율 모니터링 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1002/lpor.71739" target=_blank>Self-Evolving Agentic Framework for Metasurface Inverse Design</a></strong> <span class=pill>JNL</span><br>
+- 문제: metasurface 역설계를 실행 가능한 최적화 코드로 옮기려면 전자기 시뮬레이션·솔버 전문성이 필요 / 방법: 코딩 에이전트 + 사람이 읽을 수 있는 skill 파일 + 결정론적 물리 평가자의 self-evolving 결합 / 의미: 모델 가중치 대신 skill 파일을 갱신해 전문성 장벽을 낮춤 / 우선순위: Skim
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv 카테고리: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>cs.LG</a> · <a href="https://arxiv.org/list/cs.CV/new" target=_blank>cs.CV</a> · <a href="https://arxiv.org/list/cs.AI/new" target=_blank>cs.AI</a> · <a href="https://arxiv.org/list/eess.IV/new" target=_blank>eess.IV</a> · <a href="https://arxiv.org/list/eess.SP/new" target=_blank>eess.SP</a></li>
+  <li>RSS: <a href="../feed.xml">feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+Imaging Intelligence Daily Briefing · cs.LG · cs.CV · cs.AI · eess.IV · eess.SP 기반 자동 생성 · 입력 출처: arXiv, Crossref, OpenAlex
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+ "date": "2026-08-14",
+ "results": [
+  {
+   "benchmark": "Hunyuan3D-2.1 (multi-view texture diffusion, >2x speedup regime)",
+   "metric": "MV-PSNR / speedup",
+   "value": 33.60,
+   "value_str": "33.60 dB MV-PSNR @ 2.21x speedup",
+   "paper": "https://arxiv.org/abs/2608.13255",
+   "paper_title": "GeoCache: Training-Free Acceleration of Multi-View Texture Diffusion via Geometric Delta Transport"
+  },
+  {
+   "benchmark": "Hunyuan3D-2.1 (multi-view texture diffusion)",
+   "metric": "MV-LPIPS",
+   "value": 0.0293,
+   "value_str": "0.0293 MV-LPIPS",
+   "paper": "https://arxiv.org/abs/2608.13255",
+   "paper_title": "GeoCache: Training-Free Acceleration of Multi-View Texture Diffusion via Geometric Delta Transport"
+  },
+  {
+   "benchmark": "mpMRI report generation (Mr3D-VL, 4B params)",
+   "metric": "BERTScore",
+   "value": 0.856,
+   "value_str": "0.856 BERTScore",
+   "paper": "https://arxiv.org/abs/2608.12689",
+   "paper_title": "Mr3D-VL: A generalist vision language foundation model for Multiparametric 3D Magnetic Resonance Imaging"
+  },
+  {
+   "benchmark": "mpMRI multiple-choice QA (Mr3D-VL, 4B params)",
+   "metric": "Accuracy",
+   "value": 91.2,
+   "value_str": "91.2% multiple-choice accuracy",
+   "paper": "https://arxiv.org/abs/2608.12689",
+   "paper_title": "Mr3D-VL: A generalist vision language foundation model for Multiparametric 3D Magnetic Resonance Imaging"
+  },
+  {
+   "benchmark": "Time-Aware Multi-View MRI Benchmark (16 VLMs tested)",
+   "metric": "scale",
+   "value": 3920,
+   "value_str": "3,920 QA pairs / 890 patients / 3,200+ longitudinal timepoints",
+   "paper": "https://arxiv.org/abs/2608.13309",
+   "paper_title": "How Good are Foundation Models in Longitudinal MRI Disease Progression Reasoning?"
+  }
+ ]
+}
