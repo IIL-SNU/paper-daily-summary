@@ -1,0 +1,215 @@
+{
+  "date": "2026-08-17",
+  "iso_week": "2026-33",
+  "week_start": "2026-08-10",
+  "week_end": "2026-08-14",
+  "weekly_thesis": "지난주 초반(월~화)에는 diffusion 복원과 3D Gaussian Splatting(3DGS)이 각각 '입력은 균일하고 깨끗하다'는 전제를 버리는 흐름이 따로 진행됐다면, 주 중반(수)에는 그 의심이 표현 자체로 옮겨가 3DGS가 렌더링을 넘어 표면·자세·추론까지 책임지는 표현으로 확장되는 동시에 파운데이션 인코더가 해부학이 아니라 '어느 병원 장비로 찍었는지'를 먼저 배운다는 사실이 드러났고, 주 후반(목~금)에는 이 의심이 검증 도구 자체(불확실성 추정, latent space 신뢰성)를 겨냥하는 데까지 번졌다. 즉 한 주 전체를 관통한 흐름은 '입력·표현·검증 기준을 있는 그대로 믿지 않고 하나씩 재보는' 감사였고, 지난주(W32) weekly가 내놓은 예측 세 가지 중 계산광학 코어의 가뭄 지속은 실질 신호 기준으로 다시 확인됐지만, AI 생성 콘텐츠 탐지의 현미경·병리 진출과 신뢰 신호 감사의 계산광학 역문제 전이는 여전히 일어나지 않았다.",
+  "hot_vs_cold": {
+    "hot": [
+      {
+        "cluster": "3D Gaussian Splatting이 렌더링 도구에서 '표면·자세·추론·손상 복원까지 책임지는 범용 표현'으로 매일 다른 축으로 확장",
+        "why": "화요일 로버스트니스(망가진 입력 견디기)에서 수요일 표면·좌표·추론 확장, 목요일 편집 가능한 파라미터 공간, 금요일 손상된 측정값을 되살리는 재구성 엔진까지, 3DGS가 매일 다른 문제 설정으로 옮겨가며 5일 내내 최소 2~5편씩 새 클러스터를 형성했다.",
+        "papers": ["https://arxiv.org/abs/2608.08949", "https://arxiv.org/abs/2608.10602", "https://arxiv.org/abs/2608.11928", "https://arxiv.org/abs/2608.13159"]
+      },
+      {
+        "cluster": "'있는 그대로 믿어온 신호'를 캐묻는 감사가 수요일 파운데이션 인코더에서 금요일 불확실성·latent 신뢰성까지 확장",
+        "why": "수요일 Site Fingerprints가 뇌 MRI 인코더가 해부학이 아니라 촬영 병원을 먼저 배운다는 걸 보인 뒤, 목요일에는 의료 영상 불확실성 추정 표준 방법 다수가 신뢰할 수 없다는 감사 결과가 잇달아 나왔고, 금요일에는 생성 모델의 latent space가 원래 도메인 안에서는 그럴듯해도 독립적인 잣대로 넘어가면 문제가 드러난다는 관찰로 이어졌다.",
+        "papers": ["https://arxiv.org/abs/2608.10295", "https://arxiv.org/abs/2608.11267", "https://arxiv.org/abs/2608.11942", "https://arxiv.org/abs/2608.13455"]
+      }
+    ],
+    "cold": [
+      {
+        "cluster": "월요일 diffusion 복원 '비균일 열화' 축과 RL 정렬 축 — 하루짜리로 끝나고 이어지지 않음",
+        "why": "월요일에는 diffusion 기반 이미지 복원이 공간별로 다르게 반응하는 쪽(LEADer 등 4편)과 diffusion 샘플링을 단계별로 다른 목적으로 다루는 RL 정렬(SGPO, PAST)이 뚜렷한 클러스터를 이뤘지만, 화요일 이후 같은 축의 후속 논문이 인사이트 클러스터에 다시 잡히지 않았다 — 하루짜리 반짝임에 그쳤다."
+      },
+      {
+        "cluster": "계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) — 5일 내내 실질 신호 2~4편 수준의 가뭄 지속",
+        "why": "raw 버킷 카운트는 화요일 backfill일(title-only 분류라 노이즈 급증) 이후 Phase Imaging·Meta-Optics가 매일 7~17편으로 잡히지만, 각 날짜 trends.json의 note가 명시하듯 이 중 실제 이미징 신호는 통신·바이오센싱·레이더·신경모방 소자 키워드 우연 매칭을 걸러내면 하루 2~4편 수준으로 줄어들고, 어느 버킷도 같은 날 3편 이상의 진짜 클러스터를 형성하지 못했다."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "cluster": "3D Gaussian Splatting이 렌더링에서 '망가진 입력을 견디고, 표면·자세·추론을 책임지고, 편집 가능하고, 손상된 측정값을 되살리는' 범용 표현으로 매일 다른 축을 노출",
+      "papers": [
+        {"title": "EndoMD-SLAM: Endoscopic Gaussian Splatting SLAM under Optical Degradation", "arxiv": "https://arxiv.org/abs/2608.08949", "importance_tags": ["[방법전환]"]},
+        {"title": "Gaussian Sculpting: End-to-End Controllable Surface Reconstruction via Field Optimization", "arxiv": "https://arxiv.org/abs/2608.10602", "importance_tags": ["[방법전환]"]},
+        {"title": "Seed2GS: Camera-Free, Training-Free Object Extraction from 3D Gaussian Scenes", "arxiv": "https://arxiv.org/abs/2608.11928", "importance_tags": ["[방법전환]", "[평가축]"]},
+        {"title": "Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling", "arxiv": "https://arxiv.org/abs/2608.13159", "importance_tags": ["[방법전환]", "[인프라]"]},
+        {"title": "GS²CI: Robust Gaussian Splatting For Snapshot Compressive Imaging", "arxiv": "https://arxiv.org/abs/2608.13502", "importance_tags": ["[방법전환]"]}
+      ],
+      "why": "화요일(backfill)에는 EndoMD-SLAM처럼 내시경 광학 열화나 JPEG 압축, event stream처럼 '입력이 이미 망가진 상태'에서도 3DGS 재구성이 버티게 만드는 논문 5편이 몰렸습니다. 수요일에는 축이 완전히 바뀌어, Gaussian Sculpting이 3DGS를 표면 추출의 엔진으로, GS-CPE가 카메라 자세 추정의 백엔드로, CausalSplat이 계층적 추론의 표현으로 쓰기 시작했습니다 — '더 빠르고 예쁘게 렌더링'하는 도구에서 다른 문제를 푸는 데 필요한 범용 표현으로 넘어간 겁니다. 목요일에는 Seed2GS가 카메라 자세나 재학습 없이 참조 이미지 한 장만으로 3DGS 장면에서 원하는 물체를 뽑아내는 방법을 냈고(LERF-MASK 92.1% mIoU), COGENT는 의료 볼륨 영상에서 3DGS를 반사실적 설명을 만드는 파라미터 공간으로 썼습니다 — 3DGS가 '보여주는' 도구를 넘어 '설명하고 편집 가능한' 표현으로 옮겨간 신호입니다. 금요일에는 Splat-based Metal Artifact Reduction이 금속 임플란트가 있는 CBCT에서 다색 X선 감쇠를 물리적으로 모델링해 아티팩트를 줄였고, GS²CI는 스냅샷 압축 이미징처럼 애초에 정보가 부족한 측정값을 대형 비전 모델의 사전으로 보완해 복원했습니다 — 3DGS가 이제 손상되거나 압축된 측정값 자체를 되살리는 재구성 엔진으로 쓰이기 시작했다는 뜻입니다. 닷새를 이어보면, 3DGS 연구가 매일 다른 문제 설정(로버스트니스 → 표현 확장 → 편집 가능성 → 재구성 엔진)으로 옮겨가며 랩이 다루는 CT·현미경 재구성과 점점 더 가까운 응용으로 좁혀지고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "화~금 나흘, 서로 다른 저자군 12편 이상이 매일 다른 문제 설정(로버스트니스/표현 확장/편집 가능성/재구성 엔진)으로 3DGS를 확장, 여러 논문이 정량 벤치마크(mIoU, PSNR) 제시",
+      "lab_action": "Splat-based Metal Artifact Reduction의 다색 X선 감쇠 모델링과 GS²CI의 대형 비전 모델 사전 결합을 우리 랩 sparse-view/저선량 CT 재구성 3DGS 파이프라인에 이식해, 정보가 부족한 측정값에서도 재구성 품질이 유지되는지 비교 실험을 이번 주 안에 세팅하고, Seed2GS의 참조 이미지 기반 물체 추출을 현미경 3D 시편 재구성에서 관심 영역만 뽑아내는 용도로 이식 가능한지 검토"
+    },
+    {
+      "cluster": "'있는 그대로 믿어온 신호'를 캐묻는 감사가 수요일 파운데이션 인코더 정체성에서 금요일 불확실성·latent 신뢰성까지 확장",
+      "papers": [
+        {"title": "Frozen Brain-MRI Foundation Models Are Site Fingerprints", "arxiv": "https://arxiv.org/abs/2608.10295", "importance_tags": ["[해부분석]", "[경고신호]"]},
+        {"title": "Decodable but Not Accessible: Auditing Distance-Based Reliability Estimation on Disentangled Skin-Lesion Representations", "arxiv": "https://arxiv.org/abs/2608.11267", "importance_tags": ["[경고신호]", "[해부분석]"]},
+        {"title": "Evaluating and Calibrating Diffusion Model-derived Uncertainty for Quantitative MRI Mapping", "arxiv": "https://arxiv.org/abs/2608.11942", "importance_tags": ["[해부분석]", "[평가축]"]},
+        {"title": "Evaluation of Clinically Steerable Retinal Image Generation from Foundation Model Latent Spaces", "arxiv": "https://arxiv.org/abs/2608.13455", "importance_tags": ["[경고신호]", "[평가축]"]}
+      ],
+      "why": "수요일 Site Fingerprints는 뇌 MRI 파운데이션 인코더가 실제로 무엇을 배웠는지 캐물었는데, 답이 뼈아팠습니다 — 깊은 층에서 촬영 병원(어느 장비로 찍었는지)을 약 90% 정확도로 맞힐 수 있었고, 심지어 학습을 전혀 하지 않은 무작위 초기화 인코더도 비슷한 정확도를 냈습니다. 즉 '해부학을 배웠다'고 믿었던 표현의 상당 부분이 사실은 장비 지문이었다는 뜻입니다. 목요일에는 이 캐묻는 태도가 불확실성 추정으로 옮겨가, Decodable but Not Accessible이 피부 병변 분류에서 널리 쓰는 거리 기반 신뢰도 추정 방법 8개 중 7개가 ROC-AUC 0.40 안팎(우연 수준 이하)이라는 걸 보였고, qMRI 논문은 diffusion 모델이 내놓는 불확실성 지도가 실제 오차와 얼마나 일치하는지 검증한 뒤 후처리 보정이 필요하다는 결론을 냈습니다. 금요일에는 이 감사가 생성 모델의 latent space 자체로 번져, 망막 영상 생성 평가 논문이 latent space 안에서는 그럴듯해 보이는 합성 영상이 임상적으로 독립적인 잣대(실제 진단 가능성)로 넘어가면 문제가 드러난다는 걸 보였습니다. 나흘을 이어보면, '파운데이션 모델·불확실성 지도·latent space가 겉보기엔 잘 작동한다'는 낙관이 걷히고, 이 신호들이 실제로 무엇을 담고 있고 어디서 무너지는지를 정량적으로 재검증하는 단계로 들어섰다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "수·목·금 사흘, 서로 다른 도메인(MRI 인코더/피부병변 신뢰도/qMRI 불확실성/망막 생성) 4편이 모두 '겉보기엔 작동하는 신호가 실제로는 무너진다'는 같은 결론에 도달, 정량 수치(AUC, 정확도) 다수 제시",
+      "lab_action": "Site Fingerprints의 site-decoding 진단 프로토콜을 우리 랩 파운데이션 인코더 기반 재구성/분류 모델에 적용해 장비·기관 지문을 얼마나 배우는지 점검하고, Decodable but Not Accessible의 8개 거리 기반 신뢰도 추정 방법 벤치마크를 우리 복원 파이프라인의 불확실성 지도 검증에 재사용해 어느 방법이 실제 오차와 상관을 유지하는지 이번 주 안에 비교"
+    },
+    {
+      "cluster": "Diffusion/flow 생성 모델을 '측정값과 끝까지 일치시키는' inverse solver로 쓰는 흐름이 세 이미징 응용에서 동시 등장",
+      "papers": [
+        {"title": "Making Every Step Count: Spatio-Temporal Information Allocation for Imaging Inverse Problems", "arxiv": "https://arxiv.org/abs/2608.11747", "importance_tags": ["[방법전환]", "[평가축]"]},
+        {"title": "SinoDiff: Physics-Consistent Self-Supervised Diffusion for Unified Low-Dose to Standard-Dose PET Sinogram Recovery", "arxiv": "https://arxiv.org/abs/2608.11514", "importance_tags": ["[방법전환]", "[데이터전환]"]},
+        {"title": "Dual Modality Prompted Diffusion Priors for Zero Shot Hyperspectral Pansharpening", "arxiv": "https://arxiv.org/abs/2608.11748", "importance_tags": ["[방법전환]"]}
+      ],
+      "why": "목요일 세 논문은 서로 다른 이미징 응용(일반 역문제, 저선량 PET, 하이퍼스펙트럴 팬샤프닝)에서 같은 문제의식을 공유했습니다 — diffusion/flow 생성 모델을 그냥 '그럴듯한 이미지를 뽑는' 샘플러로 쓰지 않고, 매 생성 단계마다 실제 측정값과 일치하는지를 계속 확인하며 진행하는 쪽으로 설계했습니다. Making Every Step Count는 복원 과정의 각 단계마다 시간·공간적으로 정보를 어떻게 배분할지를 최적화했고, SinoDiff는 저선량에서 표준선량 PET sinogram을 물리적 일관성을 유지하며 자기지도 방식으로 복원했으며, 하이퍼스펙트럴 팬샤프닝 논문은 두 모달리티(팬크로매틱+저해상도 스펙트럴)를 동시에 프롬프트로 써서 학습 없이 융합했습니다. 세 편을 이어보면, 생성 모델을 역문제에 쓸 때 '그럴듯한 결과 하나를 뽑는' 단계에서 '매 단계 측정값과 얼마나 일치하는지를 계속 확인하는' 단계로 설계 기준이 옮겨가고 있다는 뜻이고, 이는 랩이 QPI·CT 복원에 diffusion prior를 쓸 때도 그대로 적용할 수 있는 설계 원칙입니다.",
+      "confidence": "Medium",
+      "confidence_note": "목요일 하루, 서로 다른 이미징 응용 3편이 같은 축(측정값 일관성 유지)으로 수렴했지만 다른 요일에 후속 신호가 이어지지 않아 지속성은 하루짜리",
+      "lab_action": "Making Every Step Count의 단계별 정보 배분 최적화를 우리 랩 QPI/sparse-view CT diffusion 기반 복원 파이프라인에 적용해, 매 denoising 단계마다 측정값과의 일치도를 추적하는 ablation을 이번 주 안에 설계"
+    },
+    {
+      "cluster": "실시간 스트리밍 아바타·영상 diffusion이 '분 단위 생성'에서 '초당 20프레임 이상 생성'으로 목요일 하루 집중 부상",
+      "papers": [
+        {"title": "LiveAnimate: Stable Long-Form Streaming Human Animation in Real-Time", "arxiv": "https://arxiv.org/abs/2608.11745", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "UniSwap: Streaming Audio-Visual Identity Swapping for Talking Videos", "arxiv": "https://arxiv.org/abs/2608.11752", "importance_tags": ["[방법전환]"]},
+        {"title": "Avatar-Forever: Decoupled Parallel Training for High-Quality Real-Time Infinite Avatars", "arxiv": "https://arxiv.org/abs/2608.12107", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "LoSA: Near-Lossless Sparse Attention for Training-Free Video Diffusion Acceleration", "arxiv": "https://arxiv.org/abs/2608.12032", "importance_tags": ["[방법전환]"]}
+      ],
+      "why": "목요일 네 논문은 모두 영상 diffusion 생성을 '몇 분짜리 클립을 오프라인으로 만드는' 문제에서 '실시간으로 계속 흘러나오는' 문제로 옮겼습니다. LiveAnimate는 3분 스트리밍 동안 화질 저하 없이(IQA 4.047→4.026) 안정적으로 인간 애니메이션을 유지했고, Avatar-Forever는 학습을 분리·병렬화해 H100 한 장에서 27.2 FPS를 냈으며, LoSA는 학습 없이 sparse attention만으로 3.2배 가속을 달성하면서 품질 저하를 0.02점 이내로 눌렀습니다. 랩의 실시간 이미징 파이프라인과 직접 관련은 낮지만, '생성 품질을 유지하며 실시간 처리량을 확보하는' 가속 기법 자체는 랩의 대용량 재구성 파이프라인에도 참고할 수 있는 엔지니어링 패턴입니다.",
+      "confidence": "Medium",
+      "confidence_note": "목요일 하루, 서로 다른 저자군 4편이 동시에 실시간 스트리밍이라는 같은 목표로 수렴, FPS·품질 수치 다수 제시되었으나 다른 요일에 후속 신호 없음",
+      "lab_action": "LoSA의 학습 없는 sparse attention 가속 기법을 랩의 대용량 3D 재구성/diffusion 기반 복원 파이프라인 추론 단계에 적용 가능한지 처리량-품질 trade-off를 이번 주 안에 벤치마크"
+    },
+    {
+      "cluster": "계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) — 5일 내내 실질 신호 2~4편 수준의 가뭄이 지난주에 이어 지속",
+      "papers": [
+        {"title": "Learning to Self-Interfere: Zero-Shot Deconvolution Enables Replica-Free, Low-Coherence Common-Path QPI", "arxiv": "https://doi.org/10.1002/lpor.71702", "importance_tags": ["[방법전환]", "[평가축]"]},
+        {"title": "Two-Stage Deformable-Convolutional Inverse Design of Nanophotonic Absorbers", "arxiv": "https://arxiv.org/abs/2608.11860", "importance_tags": ["[방법전환]"]},
+        {"title": "Reflection-mode Brewster angle Ptychographic Microscopy for Quantitative Phase Imaging", "arxiv": "https://doi.org/10.1364/optcon.598919", "importance_tags": ["[방법전환]"]}
+      ],
+      "why": "화요일(backfill)에는 abstract 없는 title-only 분류 때문에 raw 버킷 카운트가 급증했지만(Phase 17편, Meta-Optics 17편), 실제로 검증 가능한 실질 신호는 RF-CPDHM(2607.71702) 한 편뿐이었습니다 — 반사 이미지 없이 공통경로 정량위상현미경을 학습 기반 비지도 방식으로 복원해 308nm half-pitch 해상도를 실측으로 제시한, 이번 주 계산광학 코어에서 유일하게 abstract와 정량 수치를 갖춘 논문이었습니다. 수·목·금에는 raw 카운트가 여전히 7~10편대로 잡혔지만, 각 날짜 trends 기록에 따르면 실제 이미징 신호는 나노광자 흡수체 역설계(2608.11860, PSNR 20.79dB)나 Brewster각 ptychography QPI처럼 하루 2~4편으로 좁혀지고, 나머지는 통신 RIS·레이더·바이오센싱·신경모방 소자 같은 키워드 우연 매칭이었습니다. 닷새를 이어보면, 지난주(W32) weekly가 진단한 '순환이 아니라 가뭄'이 이번 주에도 그대로 이어졌고, 특히 어느 버킷도 abstract 기반으로 검증 가능한 3편 이상의 같은 날 클러스터를 만들지 못했습니다.",
+      "confidence": "Medium",
+      "confidence_note": "월~금 닷새, raw 카운트는 화요일 backfill 이후 부풀었지만 각 날짜 trends note가 명시한 실질 신호는 하루 2~4편으로 일관되게 얇음 — 가뭄 진단은 raw count가 아니라 실질 신호 기준",
+      "lab_action": "RF-CPDHM의 zero-shot 비지도 반사 이미지 제거 구조를 우리 랩 공통경로 QPI 세팅에 재현성 검토하고, 나노광자 역설계 논문의 spectrum-to-geometry 2단계 파이프라인을 메타옵틱스 설계 자동화 후보로 이번 주 안에 스크리닝"
+    }
+  ],
+  "predictions": [
+    {
+      "title": "3DGS의 '망가진 입력 견디기' 축이 의료·현미경 재구성의 물리적 아티팩트 보정으로 수렴한다",
+      "claim": "이번 주 3DGS가 로버스트니스(화)에서 편집 가능성(목)을 거쳐 손상된 측정값 복원(금)으로 옮겨간 흐름이, 다음 주에는 CT·현미경처럼 랩이 직접 다루는 도메인의 구체적 물리 아티팩트(산란, 모션, 노이즈) 보정 논문으로 더 좁혀진다.",
+      "rationale": "이번 주 금요일 이미 CBCT 금속 아티팩트, snapshot compressive imaging으로 좁혀지는 신호가 나왔다 — 이 좁혀짐이 다음 주에도 이어지는지 확인한다.",
+      "hit_condition": "CT/MRI/현미경 등 의료·과학 영상에서 3DGS 기반 재구성이 특정 물리 아티팩트(모션, 산란, 노이즈, 결측 데이터)를 보정하는 논문이 2편 이상",
+      "miss_condition": "3DGS가 다시 일반 장면 렌더링·자율주행·로보틱스 등 비-의료/현미경 도메인으로 흩어지면 빗나감"
+    },
+    {
+      "title": "'신호를 캐묻는 감사'가 계산 이미징 역문제의 학습된 사전으로 직접 이어진다 (3주 연속 추적)",
+      "claim": "이번 주 파운데이션 인코더 정체성(수)과 불확실성·latent 신뢰성(목~금) 감사가, 다음 주에는 FP·QPI·CT·lensless 역문제에서 쓰는 학습된 사전이나 불확실성 지도를 정량 감사한 논문으로 직접 이어진다.",
+      "rationale": "W32 weekly부터 2주 연속 이 예측을 냈지만 두 번 다 로봇/VLM/일반 의료 도메인에 머물렀다 — 3주째 계속 추적해 이 전이가 정말 일어나는지, 아니면 이 감사 흐름이 계산 이미징 역문제와는 구조적으로 분리된 별도 궤적인지 판별한다.",
+      "hit_condition": "FP·QPI·CT·lensless 등 계산 이미징 역문제에서 학습된 사전이나 불확실성 지도가 실제 오차와 얼마나 일치하는지 정량 감사한 논문 1편 이상",
+      "miss_condition": "계속 로봇/VLM/일반 의료 파운데이션 모델 도메인에만 머물면 3주 연속 빗나감"
+    },
+    {
+      "title": "계산광학 코어의 가뭄이 다음 주에도 실질 신호 기준으로 이어진다",
+      "claim": "이번 주 계산광학 코어 5개 버킷 모두 raw 카운트와 무관하게 실질 신호가 하루 2~4편에 머물렀던 가뭄이, 다음 주에도 이어진다.",
+      "rationale": "2주 연속(W32, W33) 같은 가뭄 패턴이 관찰됐다 — 3주 연속 반복되면 계산광학 코어가 구조적으로 이 시기 arXiv/저널에서 편수 자체가 적은 분야라는 진단이 굳어진다.",
+      "hit_condition": "다음 주에도 5개 버킷 모두 매일 abstract 기반으로 검증 가능한 실질 신호 2편 이하에 머무름",
+      "miss_condition": "5개 버킷 중 하나라도 특정 하루에 abstract로 검증 가능한 실질 신호 3편 이상을 내면 빗나감(가뭄 종료 또는 회복으로 판단)"
+    }
+  ],
+  "prediction_review": [
+    {
+      "title": "AI 생성·조작 콘텐츠 탐지의 도메인 확장이 계산 이미징 핵심 도메인(현미경·병리·QPI)으로 직접 들어온다",
+      "label": "✗",
+      "reason": "이번 주 5일 인사이트·클러스터·must-read를 모두 훑었지만, 현미경·병리·QPI에서 AI 생성/합성 영상 탐지나 진위 판별을 직접 다룬 논문은 없었습니다. 가장 근접한 후보는 목요일 CoDiR/ProBAG(병리 diffusion 기반 pseudo-label 정제)이지만 이는 라벨링 기법이지 위조/생성 탐지가 아니고, 금요일 망막 영상 생성 평가 논문도 생성 품질 감사이지 진위 판별이 아니라 적중 조건을 충족하지 못했습니다. 2주 연속 빗나감."
+    },
+    {
+      "title": "'공짜 신뢰 신호 감사'가 계산 이미징 역문제의 불확실성 정량화로 직접 이어진다",
+      "label": "◐",
+      "reason": "목요일 'Evaluating and Calibrating Diffusion Model-derived Uncertainty for Quantitative MRI Mapping'이 qMRI라는 정량 이미징 역문제에서 diffusion 기반 불확실성 지도가 실제 오차와 얼마나 일치하는지 정량 감사했습니다 — qMRI는 예측이 명시한 FP·QPI·CT·lensless 목록에 문자 그대로 속하지는 않지만 구조적으로 가장 가까운 인접 도메인입니다. 완전한 hit로 보기엔 도메인이 정확히 일치하지 않고, 완전한 miss로 보기엔 감사의 논리와 대상(학습된 불확실성 지도 vs 실제 오차)이 예측이 말한 그대로 재현됐습니다. 부분 적중으로 판정합니다."
+    },
+    {
+      "title": "계산광학 코어의 가뭄이 다음 주에도 이어진다",
+      "label": "✅",
+      "reason": "raw 버킷 카운트만 보면 화요일 backfill 이후 Phase Imaging·Meta-Optics가 7~17편으로 잡혀 미달 조건(하루 3편 이상)을 여러 번 넘긴 것처럼 보이지만, 각 날짜 trends.json의 note가 명시하듯 이는 title-only 분류와 통신/레이더/바이오센싱 키워드 우연 매칭이 섞인 결과입니다. abstract로 검증 가능한 실질 신호만 추리면 5개 버킷 모두 매일 2~4편 수준에 머물렀고 같은 날 3편 이상의 진짜 클러스터를 형성한 버킷은 없었습니다. 예측이 명시한 '실질 신호' 기준으로 적중입니다."
+    }
+  ],
+  "themes": [
+    {
+      "title": "3D Gaussian Splatting이 매일 다른 문제 설정을 흡수하며 랩의 재구성 응용과 점점 가까워짐",
+      "summary": "화요일 로버스트니스, 수요일 표현 확장, 목요일 편집 가능성, 금요일 손상된 측정값 복원까지, 3DGS가 나흘 연속 다른 축으로 확장됐습니다. 특히 금요일 CBCT 금속 아티팩트·snapshot compressive imaging은 랩이 다루는 CT/저선량 재구성과 거의 겹치는 응용이라, 다음 주 이 좁혀짐이 계속되는지가 관찰 포인트입니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "'있는 그대로 믿어온 신호'를 캐묻는 감사가 파운데이션 인코더에서 불확실성·latent까지 확장",
+      "summary": "수요일 MRI 인코더가 해부학이 아니라 촬영 병원을 배운다는 진단에서 시작해, 목요일 불확실성 추정 방법 대다수가 신뢰할 수 없다는 감사, 금요일 latent space가 도메인 안에서만 그럴듯하다는 관찰까지 이어졌습니다. 랩이 쓰는 불확실성 지도·latent 표현도 같은 방식으로 재검증받을 수 있다는 뜻입니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "계산광학 코어는 raw count와 실질 신호가 크게 어긋나는 2주째 가뭄",
+      "summary": "화요일 backfill로 raw 버킷 카운트가 급증했지만 실제 abstract 기반 검증 가능한 신호는 하루 2~4편 수준을 벗어나지 못했습니다. W32에 이어 2주 연속 같은 패턴이 확인돼, 이 시기 계산광학 코어 자체의 편수가 구조적으로 적다는 진단이 점점 굳어지고 있습니다.",
+      "confidence": "Medium"
+    }
+  ],
+  "top5": [
+    {
+      "title": "Frozen Brain-MRI Foundation Models Are Site Fingerprints",
+      "arxiv": "https://arxiv.org/abs/2608.10295",
+      "why": "뇌 MRI 파운데이션 인코더의 깊은 층 표현이 해부학이 아니라 촬영 병원(장비)을 약 90% 정확도로 맞힌다는 걸 보였고, 놀랍게도 학습을 전혀 하지 않은 무작위 초기화 인코더도 비슷한 정확도를 냈습니다. '파운데이션 모델이니까 의미 있는 표현을 배웠을 것'이라는 이번 주 전체를 관통한 낙관을 가장 날카롭게 반박한 논문입니다.",
+      "tag": "[경고신호]",
+      "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Foundation Model Auditing", "order": "Representation Analysis", "genus": "Site/Domain Confound Detection", "confidence": "High", "rationale": "ABIDE-I/II 두 개 독립 코호트, ComBat/null-space projection 정량 검증, 무작위 초기화 대조군까지 포함한 통제 실험"}
+    },
+    {
+      "title": "Decodable but Not Accessible: Auditing Distance-Based Reliability Estimation on Disentangled Skin-Lesion Representations",
+      "arxiv": "https://arxiv.org/abs/2608.11267",
+      "why": "피부 병변 분류에서 널리 쓰는 거리 기반 신뢰도 추정 방법 8개 중 7개가 ROC-AUC 0.40 안팎, 즉 우연 수준 이하로 작동한다는 걸 보였습니다. 랩이 복원·분류 결과에 불확실성 신호를 붙일 때, 그 신호가 실제로 신뢰할 만한지 먼저 검증해야 한다는 직접적 경고입니다.",
+      "tag": "[경고신호]",
+      "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Uncertainty Quantification", "order": "Reliability Auditing", "genus": "Distance-Based Confidence Estimation", "confidence": "High", "rationale": "8개 방법 체계적 비교, disentangled representation 기반 통제된 진단 프로토콜"}
+    },
+    {
+      "title": "Gaussian Sculpting: End-to-End Controllable Surface Reconstruction via Field Optimization",
+      "arxiv": "https://arxiv.org/abs/2608.10602",
+      "why": "3DGS를 렌더링 결과물이 아니라 표면을 직접 제어하는 필드 최적화 엔진으로 재정의했습니다. 이번 주 3DGS가 매일 다른 문제 설정을 흡수한 흐름 중, '렌더링에서 표현으로'라는 전환을 가장 명확하게 보여준 대표 사례입니다.",
+      "tag": "[방법전환]",
+      "phylogeny": {"source": "CVML", "phylum": "3D Reconstruction", "class": "Gaussian Splatting", "order": "Surface Representation", "genus": "Field-Optimized Surface Extraction", "confidence": "Medium", "rationale": "같은 날 GS-CPE, CausalSplat, VGGD와 함께 4편이 표현 확장이라는 같은 축을 공유"}
+    },
+    {
+      "title": "Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling",
+      "arxiv": "https://arxiv.org/abs/2608.13159",
+      "why": "3DGS 기반 CBCT 재구성에서 금속 임플란트가 있을 때 다색(polychromatic) X선 감쇠를 물리적으로 모델링해 아티팩트를 줄였습니다. 랩의 CT/저선량 재구성 파이프라인과 가장 직접적으로 맞닿는 이번 주 논문입니다.",
+      "tag": "[인프라]",
+      "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "CT Reconstruction", "order": "Gaussian Splatting for CT", "genus": "Metal Artifact Correction", "confidence": "Medium", "rationale": "같은 날 GS²CI와 함께 손상된 측정값 복원이라는 축을 공유하지만 임상 응용 구체성에서 우위"}
+    },
+    {
+      "title": "Learning to Self-Interfere: Zero-Shot Deconvolution Enables Replica-Free, Low-Coherence Common-Path Quantitative Phase Microscopy",
+      "arxiv": "https://doi.org/10.1002/lpor.71702",
+      "why": "이번 주 계산광학 코어 5개 버킷을 통틀어 abstract와 실측 수치(308nm half-pitch 해상도)를 갖춘 사실상 유일한 논문입니다. 공통경로 정량위상현미경에서 반사 이미지를 제거하는 문제를 학습 기반 비지도 방식으로 정면 돌파해, 랩의 QPI 파이프라인에 바로 참고할 수 있는 드문 신호입니다.",
+      "tag": "[방법전환]",
+      "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "Quantitative Phase Imaging", "order": "Common-Path Holography", "genus": "Self-Supervised Deconvolution", "confidence": "Medium", "rationale": "화요일(backfill, title-only) 유일한 abstract 보유 저널 논문, 실측 해상도 수치 제시"}
+    }
+  ],
+  "phylogeny_tags": [
+    {"paper": "https://arxiv.org/abs/2608.10295", "source": "CVML", "lineage": "Medical Imaging > Foundation Model Auditing > Representation Analysis > Site/Domain Confound Detection"},
+    {"paper": "https://arxiv.org/abs/2608.11267", "source": "CVML", "lineage": "Medical Imaging > Uncertainty Quantification > Reliability Auditing > Distance-Based Confidence Estimation"},
+    {"paper": "https://arxiv.org/abs/2608.10602", "source": "CVML", "lineage": "3D Reconstruction > Gaussian Splatting > Surface Representation > Field-Optimized Surface Extraction"},
+    {"paper": "https://arxiv.org/abs/2608.13159", "source": "CVML", "lineage": "Medical Imaging > CT Reconstruction > Gaussian Splatting for CT > Metal Artifact Correction"},
+    {"paper": "https://doi.org/10.1002/lpor.71702", "source": "CVML", "lineage": "Computational Optics > Quantitative Phase Imaging > Common-Path Holography > Self-Supervised Deconvolution"}
+  ],
+  "next_week_actions": [
+    {
+      "title": "3DGS 손상 측정값 복원(Splat Metal Artifact Reduction, GS²CI)을 랩 CT/저선량 재구성 파이프라인에 이식",
+      "action": "Splat-based Metal Artifact Reduction의 다색 X선 감쇠 모델링과 GS²CI의 대형 비전 모델 사전 결합을 우리 랩 sparse-view/저선량 CT 3DGS 재구성 파이프라인에 적용해 금속 아티팩트/압축 손실 조건에서 재구성 품질이 유지되는지 비교",
+      "expected_output": "정보 손실 조건별(금속 아티팩트 유/무, 압축률) 재구성 PSNR/SSIM 비교표"
+    },
+    {
+      "title": "파운데이션 인코더 site-fingerprint 진단과 신뢰도 추정 8종 벤치마크를 랩 모델에 적용",
+      "action": "Site Fingerprints의 site-decoding 진단 프로토콜을 랩 파운데이션 인코더 기반 재구성/분류 모델에 적용해 장비·기관 지문 의존도를 점검하고, Decodable but Not Accessible의 8개 거리 기반 신뢰도 추정 방법 벤치마크를 랩 복원 파이프라인 불확실성 지도 검증에 재사용",
+      "expected_output": "장비/기관 지문 의존도 정량 지표 + 8개 신뢰도 추정 방법 중 랩 세팅에서 실제 오차와 상관을 유지하는 방법 순위표"
+    },
+    {
+      "title": "계산광학 코어 5버킷의 raw count vs 실질 신호 괴리를 3주째 로그로 추적",
+      "action": "daily trends 데이터에서 FP·Lensless·Phase·Meta-Optics·Light-Field 5개 버킷의 raw 분류 카운트와 abstract 기반 실질 신호 편수를 분리해 다음 3주간 계속 기록 (backfill일의 title-only 분류로 인한 노이즈를 별도 표시)",
+      "expected_output": "raw count vs 실질 신호 편수 비교 히트맵과, 3주 누적 후 가뭄이 구조적 편수 부족인지 판정"
+    }
+  ]
+}
