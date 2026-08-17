@@ -1,26 +1,56 @@
 {
   "date": "2026-08-17",
   "source_listing_date": "2026-08-17",
-  "source_mode": "weekly-pastweek",
-  "week_start": "2026-08-10",
-  "week_end": "2026-08-14",
-  "weekly_new_counts_sum": {
+  "source_mode": "new",
+  "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 967,
-      "cs.CV": 796,
-      "cs.AI": 1313,
-      "eess.IV": 63,
-      "eess.SP": 122
+      "cs.LG": 138,
+      "cs.CV": 89,
+      "cs.AI": 185,
+      "eess.IV": 9,
+      "eess.SP": 16
     },
-    "scope": "sum of Mon-Fri 2026-08-10~2026-08-14 daily_new_counts.by_cat (new+cross; replacements excluded); not a same-day /new count and intentionally NOT stored under daily_new_counts to avoid polluting stats/weekday_counts.json's daily chart",
-    "journal_count": 1542
+    "scope": "new+cross; replacements excluded"
   },
   "totals": {
-    "total_scanned": 4576,
-    "selected": 1109
+    "total_scanned": 582,
+    "selected": 168
   },
   "classified": {
     "by_bucket": {
+      "Fourier Ptychography/Microscopy": 3,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 1,
+      "Meta-Optics/Diffractive": 6,
+      "Light-Field/Novel Sensors": 5,
+      "Tomography/3D Imaging": 13,
+      "Virtual Staining/Pathology": 21,
+      "Reconstruction/Inverse Problems": 16,
+      "Deep Learning Methods": 103
+    }
+  },
+  "daily_thesis": "cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 arXiv /new listing이 모두 \"Monday, 17 August 2026\"으로 일치함을 확인하고 정상 Daily로 발행. arXiv new+cross 437편(replacement 제외) + 저널(Crossref/OpenAlex enrich) 241건을 병합·중복제거한 582건 중 168건(28.9%)이 ROI로 선정됨. 오늘의 핵심 신호는 의료 영상 판독에 언어/VLM/LLM을 판독 과정 깊숙이 결합하는 4편(CT·MR 분할, 초음파, 병리 WSI, PET)이었고, 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field)는 지난주 2026-33 weekly가 예측한 가뭄이 오늘도 이어짐(Lensless 0편, Phase 1편, FP는 3편 중 1편이 SAR 키워드 우연매칭).",
+  "note": "2026-08-17(월) daily 실행. 오전 동일 날짜 weekly 실행(mode=weekly, 지난주 2026-08-10~08-14 회고)이 이 파일을 먼저 만들었고, 당시 source_mode=weekly-pastweek·daily_new_counts 비움 상태였다. 이번 daily 실행이 위 필드(source_mode/daily_new_counts/totals/classified/daily_thesis)를 오늘자 /new 실측값으로 덮어썼다. 이전 weekly 집계값은 아래 weekly_retrospective_context에 보존한다.",
+  "weekly_retrospective_context": {
+    "iso_week": "2026-33",
+    "week_start": "2026-08-10",
+    "week_end": "2026-08-14",
+    "weekly_new_counts_sum": {
+      "by_cat": {
+        "cs.LG": 967,
+        "cs.CV": 796,
+        "cs.AI": 1313,
+        "eess.IV": 63,
+        "eess.SP": 122
+      },
+      "scope": "sum of Mon-Fri 2026-08-10~2026-08-14 daily_new_counts.by_cat (new+cross; replacements excluded)",
+      "journal_count": 1542
+    },
+    "weekly_totals": {
+      "total_scanned": 4576,
+      "selected": 1109
+    },
+    "weekly_classified_by_bucket": {
       "Fourier Ptychography/Microscopy": 8,
       "Lensless/Coded Imaging": 4,
       "Phase Imaging/Holography": 29,
@@ -31,7 +61,5 @@
       "Reconstruction/Inverse Problems": 43,
       "Deep Learning Methods": 277
     }
-  },
-  "daily_thesis": "이번 weekly 실행(발행 2026-08-17 월요일)은 지난주(2026-08-10~08-14) 5일치 daily 완성본을 회고하는 것과 별개로, arXiv /pastweek 5개 카테고리 재수집 + Crossref/OpenAlex 저널 재수집(--days 7)으로 주간 classify를 다시 수행했다. pastweek 재수집 결과(cs.LG 967·cs.CV 796·cs.AI 1313·eess.IV 63·eess.SP 122, 합계 3261편)는 5일치 daily trends.json의 daily_new_counts 합계와 정확히 일치해 daily 산출물의 정합성을 재확인했다. classify.py 재실행 결과 total 3129 scanned / selected 510(16.3%)은 daily별 classify 결과를 병합한 total_scanned 4576 / selected 1109와 스코프가 다르다(주간 재수집은 dedup 이후 스냅샷, daily 누적은 날짜별 개별 스캔 합) — 위 표의 classified.by_bucket과 totals는 5일치 daily trends.json의 합산값이다.",
-  "note": "2026-08-17(월) weekly 실행. 회고 대상은 지난주 2026-08-10(월)~2026-08-14(금), 5일 모두 완성본(월/수/목/금 source_mode=new, 화 source_mode=pastweek-date-section backfill). 이 파일은 daily_new_counts 필드를 의도적으로 비워둔다 — 오늘(8/17)의 실제 daily /new 실행(11:00 KST)이 별도로 이 파일을 당일자 daily_new_counts로 덮어써야 stats/weekday_counts.json 홈페이지 차트가 정확해진다. 주간 재수집 합계는 weekly_new_counts_sum 필드에 별도로 남겨 homepage 일간 차트 오염을 방지했다."
+  }
 }

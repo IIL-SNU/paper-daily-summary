@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-08-17</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-08-17 (월요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-08-17 (월요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Monday, 17 August 2026"으로 일치하는 걸 확인하고 정상 Daily로 발행합니다. abstract가 전부 확보된 정상 실행이고, 저널(Crossref/OpenAlex) 수집도 평소대로 독립 수행됐습니다. 참고로 오늘 오전에는 지난주(2026-08-10~08-14) 회고 weekly가 별도 실행으로 먼저 발행됐습니다.</div>
+  <div>🔢 arXiv: cs.LG 138 · cs.CV 89 · cs.AI 185 · eess.IV 9 · eess.SP 16 (new+cross, replacement 제외, 합계 437)</div>
+  <div>🔢 병합: arXiv+저널(241건) 병합 스캔 582건 · ROI 배정 168건 (28.9%) — 최근 5거래일 평균(약 25%대)과 비슷한 정상 범위</div>
+  <div>⚠️ 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) 5개 버킷은 raw 카운트로 15편이지만, 다시 훑어보면 실질 이미징 신호는 3~4편뿐입니다(4D-STEM ptychography 자동화, FPM 워터마킹, 이벤트 카메라 특징 검출 정도). 지난주 2026-33 weekly가 예측한 "계산광학 코어 가뭄"이 오늘도 그대로 이어졌습니다. 오늘의 실제 무게중심은 의료 영상 판독이 픽셀만 보는 모델에서 언어를 통해 추론하는 모델로 넘어간 것, 3D 장면 표현이 지역별로 세밀하게 통제하는 쪽으로 확장된 것입니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 arXiv의 무게중심은 <strong>"의료 영상 판독이 픽셀만 보고 직접 답을 내는 모델에서, 언어를 통해 추론을 거치는 모델로 넘어가는 날"</strong>입니다 — CT/MR 분할(MedPlex), 갑상선 초음파(CMCNet), 병리 whole slide 판독(Spatial Language Message Passing), PET denoising(VLM/LLM 멀티에이전트)까지 서로 다른 4개 modality에서 동시에 텍스트·VLM·LLM을 판독 파이프라인 한가운데로 끌어들인 논문이 나왔습니다. 3D 장면 표현 쪽에서는 Owner3D가 대형 재구성 모델의 스타일 주입을 특정 부위에만 묶어두는 "소유권" 개념을, HiCo-GS가 옥트리 계층 간 정보를 양방향으로 흘려보내는 구조를, Fast Implicit Neural Light Field가 4D 광선 공간을 평면별로 쪼개 압축하는 방식을 각각 제안해 "장면 전체를 한 번에 다룬다"는 전제에서 "지역·계층별로 따로 통제한다"는 쪽으로 이동했습니다. Video world model 쪽은 ForgeWM이 게임 조작 신호(키보드·마우스)를 압축 latent와 정렬한 채로 1~4단계짜리 causal 생성을 만들고, Beyond Text Conditioning(BiVidGen)이 MLLM이 만든 의미 토큰을 diffusion transformer에 직접 조건으로 넣어, 텍스트 프롬프트만 따라가던 데서 벗어났습니다. OCT 쪽에서는 TRIAGE가 환자 단위 conformal risk control로 라벨 20%만으로 89.66% 정확도를 냈고, NerveDetNet이 라벨 없이 조직 아래 1.3~1.4mm까지 말초신경을 찾아내 label-free 자동 판독 쪽으로 이동했습니다. 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field)는 지난주 weekly(2026-33)가 예측한 대로 오늘도 가뭄이 이어졌습니다 — Lensless 0편, Phase 1편(양자 홀로그래피로 QPI 방법론과는 결이 다름), Meta-Optics는 6편 모두 통신·센싱용 응용에 가까워 실질 계산 이미징 신호는 사실상 없었습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(8/17, 월)은 arXiv /new에 cs.LG 138편, cs.CV 89편, cs.AI 185편, eess.IV 9편, eess.SP 16편(합계 437편)이 잡혔고, 저널 241건을 더한 병합 스캔 582건 중 168건(28.9%)이 ROI로 선정됐습니다. 오늘 가장 뚜렷했던 흐름은 의료 영상 판독이 픽셀만 보고 곧바로 답을 내는 모델에서, 언어를 판독 과정 한가운데로 끌어들이는 모델로 넘어갔다는 점입니다. MedPlex는 의료 영상 분할이 사실 해부학적 위치·모양·주변 맥락 같은 텍스트 지식을 함께 쓰는 문제라는 데 착안해 언어 신호를 인코더 전 구간에서 시각 표현과 함께 진화시켰고, CMCNet은 갑상선 결절 진단의 TI-RADS 다섯 가지 특징 범주를 텍스트 임베딩으로 바꿔서 이미지 임베딩을 거기에 정렬시켰습니다. Spatial Language Message Passing(SLMP)은 기가픽셀 병리 슬라이드가 MLLM의 시야 한계를 넘어선다는 문제를, 타일마다 만든 설명 문장을 노드로 삼아 인접 타일끼리 그 설명을 언어 그대로 주고받으며 다듬는 방식으로 풀었고, HER2·CAMELYON16에서 +3.3~+19.6%p 개선을 보였습니다. VLM/LLM 기반 PET denoising 멀티에이전트는 영상 품질 평가부터 잡음 제거 모델·파라미터 선택, 병변 중심 검증까지 전문가 워크플로 전체를 에이전트 파이프라인으로 옮겼습니다. 네 편을 같이 보면, 의료 영상 AI가 "이 픽셀 패턴이 무엇인가"를 맞히는 단계를 넘어 "임상적으로 왜 그렇게 판단하는가"를 언어로 명시적으로 다루기 시작했다는 뜻입니다.</p>
+<p>3D 장면 표현 쪽에서도 흥미로운 전환이 보였습니다. 예전에는 3D Gaussian Splatting이나 신경 표현이 장면 전체를 하나의 압축 표현으로 뭉뚱그려 다루는 경향이 있었는데, 오늘 나온 세 편은 이 표현을 지역·계층별로 쪼개 따로 통제하려 합니다. Owner3D는 대형 재구성 모델에서 특정 부위만 스타일을 바꾸려 하면 스타일 신호가 압축된 triplane 표현 전체에 스며드는 문제를, 대상 영역에만 스타일을 주입하는 "소유권" 개념과 경계면용 이중 슬롯 구조로 잡아 스타일 유출을 86.4~89.9% 줄였습니다. HiCo-GS는 도시 규모 옥트리 Gaussian Splatting에서 각 계층의 앵커 특징이 서로 소통 없이 최적화되며 생기는 색 번짐·과도한 매끈함 문제를, 부모-자신-자식 삼중 구조로 계층 간 정보를 양방향으로 흘려보내 해결하고 8개 파고다 데이터셋(China-Pagoda)을 새로 공개했습니다. Fast Implicit Neural Light Field Representation은 4차원 광선 좌표 전체를 하나의 신경망으로 학습하는 대신, 광선 공간을 수평 시차·공간 텍스처·수직 시차 세 평면으로 나눠 각각 저해상도 격자와 다중 해상도 1차원 특징의 곱으로 압축했습니다. 세 편을 같이 보면 3D 장면 표현 연구가 "장면 전체를 하나의 매끈한 함수로 근사한다"는 전제에서 벗어나 "구성 요소별로 쪼개 따로 통제·최적화한다"는 쪽으로 이동하고 있다는 뜻입니다.</p>
+<p>Video world model 쪽은 오늘 두 편이 같은 문제의식을 서로 다른 방향에서 풀었습니다. ForgeWM은 키보드·마우스 같은 게임 조작 신호를 시간적으로 압축된 latent 청크와 정렬한 채로 학생 모델을 학습시켜, Minecraft와 FPS 게임 모두에서 1~4단계 만에 낮은 지연시간으로 조작에 반응하는 영상을 만들었습니다. Beyond Text Conditioning(BiVidGen)은 텍스트-투-비디오 생성에서 MLLM을 그냥 얼어붙은 특징 추출기로 쓰는 대신, MLLM이 먼저 의미 있는 시각 토큰을 만들고 diffusion transformer가 텍스트와 그 토큰을 함께 조건으로 받아 렌더링하도록 했습니다. 두 편을 같이 보면 video generation이 "텍스트 한 줄을 그럴듯한 영상으로 바꾼다"는 단계를 넘어 "행동이나 의미 계획처럼 더 구조화된 신호를 직접 조건으로 받아들인다"는 단계로 넘어가고 있다는 뜻입니다. 같은 날 OCT 쪽에서는 TRIAGE가 망막 OCT 분류에서 환자 단위 conformal risk control과 비대칭 비용 행렬로 라벨의 20%만 쓰고도 스캔 단위 정확도 89.66%·과소진단율 8.34%를 냈고, Label-Free Deep-Tissue Peripheral Nerve Detection(NerveDetNet)이 라벨링·조영제 없이 OCT 신호 세기 패턴만으로 조직 아래 1.3~1.4mm까지 말초신경 위치를 찾아냈습니다. 두 편은 OCT 판독이 "전문의가 한 장씩 라벨을 다는 영상"에서 "적은 라벨이나 라벨 없이도 통계적으로 위험을 통제하며 자동 판독하는 영상"으로 옮겨가고 있다는 신호입니다.</p>
+<p>다음 관찰 포인트는 (1) 의료 영상 VLM/LLM 언어 결합 흐름이 다음 주에도 이어져 다른 modality(초음파 외 다른 응용, 안과 영상 등)로 확산되는지, (2) 3D 장면 표현의 "지역별 세밀 통제" 축이 우리 랩이 다루는 위상/홀로그래피 재구성처럼 조명·물질별로 표현을 분리하는 문제에 실제로 옮겨올 만한 설계 원칙으로 굳어지는지, (3) 지난주 weekly가 예측한 계산광학 코어 가뭄이 다음 주에도 계속되는지입니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>지난 daily(8/14, 금)는 3D Gaussian Splatting이 "정상 입력을 그리는 표현"에서 "왜곡·압축된 측정값을 되살리는 재구성 엔진"으로 넘어간 것, 의료 volumetric VLM이 "질문에 정답을 맞히는 모델"에서 "숨겨진 환자 상태를 함께 추론하는 world model"로 이동한 것, 생성 모델의 latent space가 자기 도메인 안에서는 그럴듯해도 독립 잣대로 넘어가면 문제가 드러난다는 경고가 중심이었습니다. 주말을 건너뛴 오늘(8/17, 월)도 3D 장면 표현과 의료 영상 AI가 다시 등장했지만 축이 또 다릅니다 — 금요일 3DGS는 "손상되거나 정보가 부족한 측정값을 얼마나 잘 복원하는가"를 물었다면, 오늘은 "이미 잘 복원된 장면을 지역·계층별로 얼마나 세밀하게 통제할 수 있는가"(Owner3D·HiCo-GS·Fast Implicit Neural Light Field)를 물어, 3DGS/신경 표현 연구가 "버티기"에서 "세밀한 통제"로 관심사가 옮겨갔습니다. 의료 영상 쪽도 마찬가지입니다 — 금요일 HounsWorld·Mr3D-VL은 "관찰되지 않은 환자 상태를 하나의 잠재 변수로 추론하는 world model"을 만드는 데 집중했다면, 오늘은 그 대신 "판독 근거를 언어로 명시화해서 사람이 검토할 수 있게 만드는 것"(MedPlex·CMCNet·SLMP·PET denoising 에이전트)에 집중해, "숨겨진 상태를 잘 추론하는가"에서 "추론 근거를 사람이 확인할 수 있는가"로 질문이 바뀌었습니다. 오늘 오전 별도로 발행된 지난주(2026-33) weekly는 "계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) 가뭄이 다음 주에도 이어진다"고 예측했는데, 오늘 Lensless 0편·Phase 1편으로 그 예측이 첫날부터 그대로 들어맞았습니다. 같은 weekly가 예측한 "신호를 캐묻는 감사가 계산 이미징 역문제의 학습된 사전으로 이어진다"는 쪽은 오늘 정확히 들어맞지는 않았지만, UMPIRE-Net이 MRI 복원에서 magnitude/phase를 분리 정규화하고 TRIAGE가 pseudo-label 채택에 비대칭 비용을 명시하는 방식에서 "모델이 내놓는 결과를 뭉뚱그리지 않고 구성 요소별로 따로 검증한다"는 비슷한 결이 보입니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>의료 영상 판독이 "픽셀만 보고 직접 답을 내는 모델"에서 "언어를 통해 추론을 거치는 모델"로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.13690" target=_blank>MedPlex</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.13939" target=_blank>CMCNet</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.14309" target=_blank>Spatial Language Message Passing</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.13791" target=_blank>VLM/LLM PET Denoising</a> <span class=pill>IV</span>
+  </td>
+  <td>예전에는 의료 영상 딥러닝이 CT/MR 볼륨이나 초음파, 병리 슬라이드를 입력으로 받아 곧바로 분할 마스크나 분류 라벨을 뽑아내는 순수 비전 파이프라인이 많았습니다. 오늘 나온 네 편은 서로 다른 4개 modality(CT/MR 분할, 갑상선 초음파, 병리 whole slide, PET)에서 동시에 언어를 판독 과정 한가운데로 끌어들였습니다. MedPlex는 언어 신호를 인코더 전 구간에서 시각 표현과 함께 진화시키고, CMCNet은 TI-RADS 특징 범주를 텍스트 임베딩으로 바꿔 이미지 임베딩을 정렬시키며, SLMP는 기가픽셀 병리 슬라이드를 타일별 설명 문장의 네트워크로 바꿔 언어 그대로 계산합니다. PET denoising 멀티에이전트는 전문가 워크플로 자체를 VLM/LLM 에이전트로 옮겼습니다. 즉 의료 영상 AI가 "이 픽셀 패턴이 무엇인가"를 맞히는 단계를 넘어 "임상적으로 왜 그렇게 판단하는가"를 언어로 명시적으로 다루기 시작했다는 뜻이고, 그만큼 판독 근거를 사람이 검토·수정할 수 있는 통로가 넓어졌다는 의미입니다.</td>
+  <td>High<br><small>서로 다른 기관·저자군 4편이 CT/MR·초음파·병리·PET 네 개의 서로 다른 modality에서 동시에 같은 방향(언어를 판독 과정에 명시적으로 결합)을 보임</small></td>
+  <td>SLMP의 spatial text graph 방식을 우리 랩 QPI/홀로그래피 파이프라인의 대형 시야(wide-FOV) 이미지 판독에 적용해, 타일 단위 설명을 인접 타일과 언어로 주고받았을 때 국소 아티팩트 설명 정확도가 개선되는지 확인</td>
+</tr>
+<tr>
+  <td><strong>3D 장면 표현이 "전체를 한 번에 렌더링"에서 "지역별로 세밀하게 통제하는 표현"으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.14078" target=_blank>Owner3D</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.14136" target=_blank>HiCo-GS</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.13949" target=_blank>Fast Implicit Neural Light Field</a> <span class=pill>CV</span>
+  </td>
+  <td>3D Gaussian Splatting과 신경 표현 기반 장면 재구성은 원래 장면 전체를 하나의 표현으로 뭉뚱그려 다루는 경향이 있었습니다. 오늘 나온 세 편은 그 표현을 지역·계층별로 쪼개서 따로 통제하려는 시도입니다. Owner3D는 스타일 신호가 압축된 triplane 표현 전체에 스며드는 문제를 대상 영역에만 스타일을 주입하는 "소유권" 개념으로 잡아 스타일 유출을 86.4~89.9% 줄였고, HiCo-GS는 옥트리 계층 간 정보를 부모-자신-자식 삼중 구조로 양방향으로 흘려보내 도시 규모 렌더링의 색 번짐·과도한 매끈함을 줄였습니다. Fast Implicit Neural Light Field는 4차원 광선 공간을 세 평면으로 나눠 각각 저해상도 격자와 다중 해상도 1차원 특징의 곱으로 압축해 학습 속도를 크게 높였습니다. 즉 3D 장면 표현 연구가 "장면 전체를 하나의 매끈한 함수로 근사한다"는 전제에서 벗어나 "구성 요소별로 쪼개고 각 부분을 따로 통제·최적화한다"는 쪽으로 이동하고 있다는 뜻이며, 우리 랩의 위상/홀로그래피 재구성에서도 조명 조건·물질별로 표현을 분리해 다루는 설계가 유효할 수 있다는 근거입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 3편이 "장면 표현을 지역/계층별로 쪼개 따로 통제한다"는 방향을 공유하지만 응용(스타일화·도시 스케일 재구성·라이트필드)이 서로 달라 직접 비교는 어려움</small></td>
+  <td>HiCo-GS의 부모-자신-자식 계층 간 정보 교환 구조를 우리 랩 다중 스케일(저해상도 전체 형태 + 고해상도 미세 구조) 위상/홀로그래피 재구성에 적용해, 스케일 간 정보 공유가 없을 때 대비 아티팩트 감소를 비교</td>
+</tr>
+<tr>
+  <td><strong>Video world model이 "텍스트 프롬프트만 따라가기"에서 "행동 신호와 의미 토큰을 직접 넣는 쪽"으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.14022" target=_blank>ForgeWM</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.14043" target=_blank>Beyond Text Conditioning (BiVidGen)</a> <span class=pill>CV</span>
+  </td>
+  <td>video generation을 상호작용 가능한 world model로 쓰려면 텍스트 조건만으로는 부족합니다. ForgeWM은 키보드·마우스 같은 게임 조작 신호를 압축된 latent 청크와 정렬한 채로 몇 단계짜리 causal 생성 모델을 학습시켜 Minecraft·FPS 게임에서 낮은 지연시간으로 조작에 반응하는 영상을 만듭니다. Beyond Text Conditioning(BiVidGen)은 MLLM을 얼어붙은 특징 추출기로만 쓰는 대신, MLLM이 먼저 의미 있는 시각 토큰을 만들고 diffusion transformer가 텍스트와 그 토큰을 함께 조건으로 받아 렌더링하게 합니다. 즉 video generation이 "텍스트 한 줄을 그럴듯한 영상으로 바꾼다"는 단계를 넘어 "행동이나 의미 계획처럼 더 구조화된 신호를 직접 조건으로 받아들인다"는 단계로 넘어가고 있다는 뜻입니다.</td>
+  <td>Low<br><small>2편이 "텍스트를 넘어서는 조건화 신호를 직접 넣는다"는 방향을 공유하지만 응용(게임 조작 vs 텍스트-투-비디오)이 달라 관찰 단계로 취급</small></td>
+  <td>ForgeWM의 행동 신호-latent 청크 정렬 방식을 우리 랩 실험 조건(조명 각도·노출 시간 등) 조건부 시뮬레이션 생성기에 적용해, 조건 변화에 대한 반응 지연시간과 정합도를 측정</td>
+</tr>
+<tr>
+  <td><strong>OCT가 "전문의가 한 장씩 판독하는 영상"에서 "준지도·label-free로 자동 판독하는 영상"으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.14321" target=_blank>TRIAGE</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.13807" target=_blank>NerveDetNet</a> <span class=pill>CV</span>
+  </td>
+  <td>OCT는 판독에 전문의의 라벨링이 많이 필요해 자동화가 더뎠던 영역입니다. TRIAGE는 신뢰도만으로 pseudo-label을 채택하면 오류 종류별 비용이 다르다는 걸 무시한다는 문제를, 환자 단위 conformal risk controller에 비대칭 비용 행렬을 결합해 풀어 라벨의 20%만 쓰고도 스캔 단위 정확도 89.66%·과소진단율 8.34%를 냈습니다. NerveDetNet은 수술 중 조직 아래 묻힌 말초신경을 라벨링이나 조영제 없이 OCT 신호 세기 패턴만으로 검출해 피부 아래 1.3~1.4mm까지 깊이 정보를 포함해 위치를 찾아냈습니다. 즉 OCT 활용이 "전문의가 한 장씩 라벨을 달아야 쓸 수 있는 영상"에서 "적은 라벨이나 라벨 없이도 통계적으로 위험을 통제하며 자동 판독하는 영상"으로 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>2편이 "OCT 판독을 적은/무 라벨로 자동화한다"는 방향을 공유하고 TRIAGE는 대규모 정량 근거가 강하지만, 서로 다른 임상 태스크(망막 분류 vs 신경 검출)라 방법론 연결은 느슨함</small></td>
+  <td>TRIAGE의 환자 단위 비대칭 비용 conformal risk control을 우리 랩 label-free 위상/형광 이미징 분류 파이프라인에 적용해, 적은 라벨에서 오탐/과소판정 비용을 분리 통제했을 때 정확도-안전성 트레이드오프를 비교</td>
+</tr>
+</tbody>
+</table>
+
+<p><small>⚠️ 오늘은 4개 행으로 표를 마쳤습니다. 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field)는 총 15편이 잡혔지만 실질 신호가 3~4편(4D-STEM ptychography 자동화, FPM 워터마킹, 이벤트 카메라 특징 검출)에 그치고 서로 방법론적 연결이 약해 독립 클러스터를 구성하지 못했습니다. Reconstruction/Inverse Problems(16편)와 Virtual Staining/Pathology(21편)도 실질 신호는 이미 위 4개 클러스터에 흡수된 UMPIRE-Net·Calibration-Free SR Fluorescence Microscopy·NerveDetNet·SLMP 정도이고 나머지는 이미징 ROI와 무관한 논문이라 5번째 독립 클러스터를 만들 근거가 부족했습니다.</small></p>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 의료 영상 언어 결합 클러스터(MedPlex·CMCNet·SLMP·VLM/LLM PET Denoising), 3D 장면 표현 지역 통제(Owner3D·HiCo-GS·Fast Implicit Neural Light Field), video world model 조건화(ForgeWM·BiVidGen), OCT label-free 자동화(TRIAGE·NerveDetNet)까지 오늘 4개 클러스터 전부가 arXiv 쪽에서 나왔습니다.</li>
+  <li><strong>저널 전용</strong>: Calibration-Free Single-Frame Super-Resolution Fluorescence Microscopy(35nm 분리 해상도, Rayleigh 기준 7배 개선) 정도가 오늘 저널 쪽 실질 계산 이미징 신호였고, 나머지 저널 241건(Meta-Optics 6편 전부 통신·센싱용, Tomography 대부분 순수 임상 사례 리포트, Virtual Staining 대부분 완전히 무관한 도메인)은 계산 이미징 방법론과 결이 다른 응용이었습니다.</li>
+  <li><strong>공통 키워드</strong>: "reconstruction"이 arXiv 쪽에서는 3D 장면 표현 클러스터와 UMPIRE-Net(MRI 복원)에 정확히 매칭됐지만, 저널 쪽에서는 임상 CT 병변 진단·골밀도 정량화 등 완전히 다른 도메인에 걸렸습니다. "label-free"는 arXiv에서 NerveDetNet 1편에만 걸렸는데 저널 쪽 Calibration-Free SR Fluorescence Microscopy도 사실상 같은 정신(계측·조영제 없이 복원)을 공유해, 서로 다른 modality(OCT vs 형광 현미경)에서 같은 원칙이 독립적으로 등장한 셈입니다.</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 의료 영상 언어 결합·3D 장면 지역 통제·video world model이라는 계산 이미징 코어 밖의 방법론 심화를 강하게 주도했고, 계산 이미징 코어 자체(FP·Lensless·Phase·Meta-Optics)는 arXiv·저널 모두에서 거의 신호가 없었습니다. Calibration-Free SR Fluorescence Microscopy의 synthetic-only 학습 레시피는 이런 가뭄 속에서도 우리 랩 파이프라인에 바로 역수입할 수 있는 흔치 않은 기회입니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 의료 영상 판독이 "픽셀만 보고 직접 답을 내는 모델"에서 "언어를 통해 추론을 거치는 모델"로</h3>
+  <p>MedPlex는 텍스트 지식을 인코더 전 구간에서 시각 표현과 함께 진화시켜 CT/MR 분할을 하고, CMCNet은 TI-RADS 특징 범주 텍스트 임베딩에 초음파 이미지 임베딩을 정렬시키며, Spatial Language Message Passing은 병리 whole slide를 타일별 설명 문장의 네트워크로 바꿔 언어 그대로 추론합니다(HER2·CAMELYON16에서 +3.3~+19.6%p). VLM/LLM PET Denoising 멀티에이전트는 영상 품질 평가부터 모델 선택까지 전문가 워크플로 전체를 에이전트로 옮겼습니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 기관·저자군 4편이 CT/MR·초음파·병리·PET 네 개의 서로 다른 modality에서 동시에 같은 방향을 보임</p>
+</div>
+
+<div class=ins>
+  <h3>2. 3D 장면 표현이 "전체를 한 번에 렌더링"에서 "지역별로 세밀하게 통제하는 표현"으로</h3>
+  <p>Owner3D는 스타일 신호를 대상 영역에만 주입하는 "소유권" 개념으로 스타일 유출을 86.4~89.9% 줄였고, HiCo-GS는 옥트리 계층 간 정보를 양방향으로 흘려보내 도시 규모 렌더링의 색 번짐을 줄였으며, Fast Implicit Neural Light Field는 4D 광선 공간을 세 평면으로 나눠 압축해 학습 속도를 높였습니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편이 "지역/계층별 통제"라는 방향을 공유하지만 응용이 서로 달라 직접 비교는 어려움</p>
+</div>
+
+<div class=ins>
+  <h3>3. Video world model이 텍스트 프롬프트를 넘어 행동 신호·의미 토큰을 직접 조건으로 받아들이는 쪽으로</h3>
+  <p>ForgeWM은 게임 조작 신호를 압축 latent와 정렬해 1~4단계짜리 causal 생성으로 낮은 지연시간을 달성했고, Beyond Text Conditioning(BiVidGen)은 MLLM이 만든 의미 시각 토큰을 diffusion transformer의 명시적 조건으로 넣어 의미 정렬과 시간적 일관성을 높였습니다.</p>
+  <p class=conf-note>Confidence: Low — 2편이 같은 방향(텍스트를 넘어서는 구조화된 조건화)을 공유하지만 응용이 달라 관찰 단계로 취급</p>
+</div>
+
+<div class=ins>
+  <h3>4. OCT가 전문의 판독 영상에서 준지도·label-free 자동 판독 영상으로</h3>
+  <p>TRIAGE는 환자 단위 conformal risk control과 비대칭 비용 행렬로 라벨 20%만 쓰고도 스캔 단위 정확도 89.66%·과소진단율 8.34%를 냈고, NerveDetNet은 라벨링·조영제 없이 OCT 신호 세기 패턴만으로 조직 아래 1.3~1.4mm까지 말초신경 위치를 찾아냈습니다.</p>
+  <p class=conf-note>Confidence: Medium — 2편이 같은 방향을 공유하고 TRIAGE는 대규모 정량 근거가 강하지만, 서로 다른 임상 태스크라 방법론 연결은 느슨함</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. Calibration-Free Single-Frame Super-Resolution Fluorescence Microscopy의 synthetic-only 학습 레시피를 우리 랩 FP/QPI 복원 네트워크에 이식</h3>
+  <p>이 논문은 광학·시료 파라미터를 폭넓게 아우르는 합성 데이터만으로 학습해도 실제 현미경 여러 대에 걸쳐 일반화되는 단일 프레임 초해상도 모델을 만들었습니다(35nm 분리 해상도, Rayleigh 기준 대비 7배 개선). 우리 랩의 Fourier ptychography·QPI 복원 네트워크도 실측 데이터 확보가 병목이라, 같은 synthetic-only 학습 전략과 일반화 검증 프로토콜을 이식할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>합성 데이터 생성 파이프라인 재현(다양한 광학계 파라미터·노이즈 레벨·수차 범위)</li>
+    <li>공통 benchmark: 우리 랩 FP/QPI 복원 실측 데이터셋(여러 현미경 세팅)</li>
+    <li>비교축: 실측 학습 baseline 대비 synthetic-only 학습의 일반화 성능(PSNR/SSIM), 미지의 현미경 세팅에서의 강건성</li>
+    <li>실패해도 남는 결과: 우리 광학계 파라미터 범위가 이 논문의 synthetic 분포와 얼마나 겹치는지에 대한 진단 baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. HiCo-GS의 계층 간 양방향 정보 교환 구조를 우리 랩 다중 스케일 위상/홀로그래피 재구성에 적용</h3>
+  <p>HiCo-GS가 옥트리 계층 간 정보를 부모-자신-자식 삼중 구조로 양방향 교환해 도시 스케일 렌더링에서 색 번짐·과도한 매끈함을 줄인 방식을, 우리 랩이 저해상도 전체 형태와 고해상도 미세 구조를 함께 다루는 위상/홀로그래피 재구성 파이프라인에 적용해 스케일 간 정보 공유의 효과를 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>Cross-Level Context Aggregation(CLCA) 모듈 재현</li>
+    <li>공통 benchmark: 우리 랩 다중 스케일 위상/홀로그래피 재구성 데이터셋</li>
+    <li>비교축: 스케일 간 정보 공유 없음(baseline) 대비 아티팩트 감소·재구성 정확도</li>
+    <li>실패해도 남는 결과: 우리 재구성 파이프라인에서 스케일 간 정보가 실제로 얼마나 상호보완적인지에 대한 ablation baseline</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. TRIAGE의 환자 단위 비대칭 비용 conformal risk control을 우리 랩 label-free 분류 파이프라인에 적용</h3>
+  <p>TRIAGE가 OCT 분류에서 오류 종류별 비용을 구분해 pseudo-label을 통계적으로 통제하며 채택한 방식을, 우리 랩의 label-free 위상/형광 이미징 분류(예: 세포 생존율 판정)에서도 적용해 적은 라벨로도 안전한 자동 판정이 가능한지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>patient-grouped conformal risk controller + 비대칭 비용 행렬 모듈 재현</li>
+    <li>공통 benchmark: 우리 랩 label-free 분류 데이터셋(라벨 20%/10%/5% 서브샘플)</li>
+    <li>비교축: 고정 임계값 pseudo-labeling 대비 과소/과대판정률, 라벨 비율별 정확도 곡선</li>
+    <li>실패해도 남는 결과: 우리 데이터에서 오류 유형별 비용이 실제로 비대칭적인지에 대한 진단 baseline</li>
+  </ul>
+</div>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘은 daily 실행이라 예측 회고는 생략합니다(예측 회고는 매주 월요일 별도 weekly 실행이 담당하며, 오늘 오전 발행된 2026-33 weekly에서 이미 지난주 2026-32 weekly 예측 3건을 채점했습니다).</p>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Virtual Staining/Pathology(21편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:14.3%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:4.8%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:28.6%"></span></span><span class=n>6편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:23.8%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:61.9%"></span></span><span class=n>13편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>21편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:76.2%"></span></span><span class=n>16편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>103편</span></div>
+
+<p><small>⚠️ 참고 — Domain Watch Lens: Fourier Ptychography 3편 중 1편("Weakly Supervised Polar Low Segmentation in Sentinel-1 SAR Imagery")은 "synthetic aperture"(SAR, 위성 레이더)와 "aperture synthesis" 키워드가 우연히 겹친 오분류로, 실제 이미징 신호는 4D-STEM ptychography 자동화 데이터 수집 파이프라인과 FPM 워터마킹 2편뿐입니다. Phase Imaging 1편(양자 홀로그래피)은 QPI 계산 방법론과는 결이 다른 양자광학 응용입니다. Meta-Optics 6편은 전부 마이크로파/테라헤르츠 통신·비침습 혈당 센싱·카이랄 물성 등 통신·센싱·재료 응용이라 계산 이미징 신호는 사실상 0편입니다. Light-Field/Novel Sensors 5편 중 이벤트 카메라 특징 검출(E-S2Feat) 1편만 실질 신호이고 나머지는 BCI·통신용 뉴로모픽 센싱·플라즈몬 메모리 소자입니다. Virtual Staining/Pathology 21편 중 실제 병리·label-free 이미징 관련은 NerveDetNet과 Spatial Language Message Passing 2편뿐이고 나머지는 "label" 키워드만 겹친 cs.AI/cs.LG 논문과 완전히 무관한 저널(교육학·농업·전통의학 등)입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (3편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.13752" target=_blank>An Interactive, Automated 4D-STEM data acquisition and analysis routine for Scanning Electron Nanobeam Diffraction and Ptychography experiments</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 전자현미경 ptychography 실험의 데이터 수집·분석을 자동화하는 워크플로로, 대량 실험 처리량을 높이는 계측 자동화 참고 사례 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.609347" target=_blank>Dual-Layer Watermarking for Secure Fourier Ptychographic Microscopy</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: FPM 재구성 이미지에 보안 워터마킹을 적용하는 방법으로, 우리 랩 FPM 데이터 파이프라인의 무결성 보호에 참고 가치 / 우선순위: Skim
+</div>
+
+<h3>Phase Imaging/Holography (1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/josab.603293" target=_blank>Quantum Holography based on Multi-modes Bessel-Gaussian-Orbital Angular Momentum Beams</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: 오늘 유일한 Phase Imaging/Holography 신호지만 양자광학 응용으로 계산 QPI 방법론과는 결이 다름, 참고용으로만 표시 / 우선순위: Skim
+</div>
+
+<h3>Light-Field/Novel Sensors (5편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.14027" target=_blank>E-S2Feat: Semantic-Guided Spiking Local Feature Detection and Description for Event Cameras</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 이벤트 카메라(비동기적으로 밝기 변화만 기록하는 novel 센서)를 위한 spiking 기반 지역 특징 검출·기술 방법, 우리 랩 novel sensor 관심 영역과 직결 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging (13편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.14136" target=_blank>HiCo-GS</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(3D 장면 표현 지역 통제)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.14078" target=_blank>Owner3D</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(3D 장면 표현 지역 통제)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.14321" target=_blank>TRIAGE</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(OCT label-free 자동화)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+
+<h3>Virtual Staining/Pathology (21편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.13807" target=_blank>NerveDetNet</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(OCT label-free 자동화)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.14309" target=_blank>Spatial Language Message Passing</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(의료 영상 언어 결합)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+
+<h3>Reconstruction/Inverse Problems (16편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.14422" target=_blank>UMPIRE-Net</a></strong> <span class=pill>LG</span><br>
+  왜 주요: 가속 MRI에서 magnitude/phase를 분리 정규화하는 unrolled 재구성 네트워크, 우리 랩 위상 복원 네트워크 설계에 직접 참고 가치 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71690" target=_blank>Calibration-Free Single-Frame Super-Resolution Fluorescence Microscopy</a></strong> <span class=pill>JNL</span><br>
+  왜 주요: synthetic-only 학습으로 여러 현미경에 일반화되는 단일 프레임 초해상도 복원, 오늘 계산광학 코어 가뭄 속 가장 강한 실질 신호 / 우선순위: Must-read
+</div>
+
+<h3>Deep Learning Methods — 대표 2편 (103편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.13690" target=_blank>MedPlex</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(의료 영상 언어 결합)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.14022" target=_blank>ForgeWM</a></strong> <span class=pill>CV</span><br>
+  왜 주요: 오늘의 대표 클러스터(video world model 조건화)의 대표 논문 — 위 클러스터 표 참고 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<ul>
+  <li><strong>TRIAGE (OCT-C8/Noor Eye Hospital 데이터셋, 라벨 20%)</strong> — 스캔 단위 정확도 89.66%, macro-F1 0.8805, macro-AUC 0.9641, 과소진단율 8.34%(고정 임계값 방법 대비 42.7% 개선)</li>
+  <li><strong>NerveDetNet (ex vivo 조직, 최소 프레임 간격)</strong> — Dice 0.725, 6개 2D baseline 대비 최고 성능이면서 파라미터 약 절반</li>
+  <li><strong>Owner3D (Google Scanned Objects·PartNet)</strong> — 스타일 유출 86.4%(vs StyleSplat)·89.9%(vs LAENeRF) 감소</li>
+  <li><strong>Calibration-Free Single-Frame Super-Resolution Fluorescence Microscopy</strong> — 580nm 파장에서 35nm 분리 해상도, Rayleigh 기준 대비 7배 개선</li>
+  <li><small>그 외 오늘 대표 논문들(MedPlex·CMCNet·SLMP·HiCo-GS·ForgeWM·BiVidGen·UMPIRE-Net 등)은 abstract에 baseline 대비 절대 수치를 명시하지 않았거나 정성적 SOTA 주장에 그쳐 로그에서 제외했습니다(본문 확인 필요).</small></li>
+</ul>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>오늘 흥미로운 대비는 "3D 장면 표현 지역 통제" 클러스터와 "video world model 조건화" 클러스터가 사실 같은 설계 원칙을 서로 다른 표현에 적용한다는 점이었습니다. Owner3D·HiCo-GS는 3D 장면 표현을 지역·계층별로 쪼개 "이 부분은 이 신호로, 저 부분은 저 신호로" 통제할 수 있게 만들었고, ForgeWM·BiVidGen은 video generation의 조건화 신호를 텍스트라는 뭉뚱그린 하나의 축에서 행동·의미 토큰이라는 더 구조화된 여러 축으로 쪼갰습니다. 즉 한쪽은 공간(3D 장면)을, 다른 쪽은 조건(생성 신호)을 각각 더 잘게 쪼개 통제 가능하게 만든 셈입니다. 이 대비는 우리 랩에도 적용됩니다 — 재구성 파이프라인을 설계할 때 "장면/신호를 하나의 뭉뚱그린 표현으로 다룰 것인가, 아니면 물리적으로 의미 있는 구성 요소(조명 파장, 물질, 조작 신호)별로 쪼개 따로 통제할 것인가"라는 질문이 오늘 두 클러스터에서 각각 다른 도메인으로 반복해서 나온 셈입니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Spatial Message Passing in Language Space for Pathology Image Interpretation — arXiv cs.CV</h3>
+  <div class=tag>[방법전환] [해부분석]</div>
+  <p><strong>왜 A급인가:</strong> 기가픽셀 병리 whole slide image(WSI)는 MLLM(이미지와 텍스트를 함께 다루는 대형 언어모델)이 한 번에 볼 수 있는 시야를 훨씬 넘어섭니다. 지금까지는 이미지를 타일로 잘라 각각 따로 넣는 방식으로 이 한계를 우회했는데, 이러면 종양-기질 경계처럼 여러 타일에 걸쳐 있는 조직 이웃 관계 정보가 끊깁니다. 이 논문은 그 정보를 임베딩이 아니라 사람이 읽을 수 있는 문장 그대로 주고받아 복원한다는 점에서, 판독 근거를 사람이 직접 검토·수정할 수 있는 통로를 열어줍니다. 우리 랩이 넓은 시야(wide-FOV) 위상/홀로그래피 영상을 타일 단위로 처리할 때도, 인접 타일 간 정보를 이렇게 해석 가능한 형태로 주고받을 수 있다는 설계 원칙을 참고할 수 있습니다.</p>
+  <p><strong>핵심:</strong> WSI 영역을 "공간 텍스트 그래프"로 표현합니다 — 각 타일은 MLLM이 만든 설명 문장으로 초기화된 노드이고, 인접한 타일끼리는 엣지로 연결됩니다. 각 타일에 대해 LLM이 이웃 타일의 "언어 메시지"를 통합해 자신의 설명을 다듬는데, 이 통합 정책은 타일 격자 위에서 학습된 임베딩이 아니라 텍스트에 작동하는 일종의 적응형 지역 커널 역할을 합니다. 이 정책은 사람이 검사할 수 있는 프롬프트라서, 모델이 실제로 관찰한 조직 표현형으로부터 텍스트 그래디언트를 이용해 자동으로 다듬을 수 있고, MLLM 가중치를 파인튜닝하지 않고도 이 과정을 개선할 수 있습니다. HER2·CAMELYON16 대표 영역에서 범용·병리 특화 두 종류 backbone 모두에 대해 타일 단위 종양 설명 정확도를 3.3~19.6%p 개선했고, 무작위 이웃으로 바꾼 ablation에서 성능이 떨어지는 걸 확인해 개선이 실제로 공간 맥락에서 온다는 걸 검증했습니다.</p>
+  <p><strong>주의:</strong> HER2·CAMELYON16 두 대표 영역에서만 검증돼 더 다양한 암종·염색 프로토콜로 일반화되는지는 별도 확인이 필요합니다. 또한 반복적인 언어 메시지 전달이 추론 시간과 비용을 얼마나 늘리는지 abstract에는 나오지 않아 실사용 지연시간은 본문 확인이 필요합니다. [Claim risk] [Deployment risk]</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Calibration-Free Single-Frame Super-Resolution Fluorescence Microscopy — Laser &amp; Photonics Reviews</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> 형광 초해상도 현미경(단일 분자를 초저해상도 한계 너머로 찾아내는 기법)은 지금까지 현미경마다 시스템별 보정이 필요하고, 드문드문 깜빡이는 분자들을 오래 찍어야 한다는 게 병목이었습니다. 이 논문은 광학·시료 파라미터를 폭넓게 아우르는 합성 데이터만으로 학습한 딥러닝 모델이, 단 한 장의 회절 한계 카메라 프레임에서 곧바로 초해상도 이미지를 복원하도록 만들었습니다. 계산광학 코어 신호가 오늘도 희박한 가운데, 이 논문은 계측·보정 병목이라는 우리 랩이 직접 마주하는 문제를 정면으로 다룬다는 점에서 오늘 가장 실질적인 Watch Lens 신호입니다.</p>
+  <p><strong>핵심:</strong> 모델은 실측 데이터가 아니라 다양한 광학·시료 파라미터를 아우르는 합성 데이터만으로 학습돼, 여러 현미경과 실험 조건에 걸쳐 견고하게 일반화됩니다. 밀집한 terrylene 시료에 150ms 노출로 적용했을 때, Richardson-Lucy 역컨볼루션·ThunderSTORM 다중 방출체 피팅·딥러닝 기반 DECODE 대비 복원 오차를 크게 줄였습니다. 580nm 파장에서 35nm 떨어진 방출체를 분리해냈는데, 이는 Rayleigh 기준(회절 한계) 대비 약 7배의 해상도 개선입니다. 노이즈 레벨, 개구수(numerical aperture), 광학 수차 전반에 걸쳐 강한 일반화를 보였고, 조밀하게 packed된 염색질 구조 같은 복잡한 생물학적 데이터에도 적용했습니다.</p>
+  <p><strong>주의:</strong> "다양한 광학·시료 파라미터"의 정확한 범위와 실제 우리 랩 현미경 세팅과의 중첩 정도는 abstract만으로는 알기 어려워 본문·코드 확인이 필요합니다. 또한 150ms라는 단일 노출 시간·단일 파장(580nm) 조건에서의 결과라, 다른 파장대나 훨씬 짧은/긴 노출에서도 같은 성능이 유지되는지는 별도 검증이 필요합니다. [Dataset risk] [Claim risk]</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Metric risk] 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) 실신호가 오늘 3~4편에 그쳐, 오늘 리포트의 무게중심이 의료 영상 언어 결합·3D 장면 지역 통제·video world model이라는 범용 CV/ML 쪽으로 강하게 쏠렸습니다. 지난주 weekly가 예측한 계산광학 코어 가뭄이 첫날부터 그대로 재현된 셈입니다.</p>
+  <p>[Claim risk] 의료 영상 언어 결합 클러스터·3D 장면 지역 통제 클러스터의 정량 수치는 각 논문의 자체 벤치마크·자체 baseline 기준이라, 서로 다른 논문 간 직접 비교는 불가능합니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology(21편) 버킷은 실제 병리·label-free 이미징 관련 논문이 2편뿐이고 나머지는 "label" 키워드만 겹친 cs.AI/cs.LG 논문과 완전히 무관한 저널 응용이라, 이 버킷 이름만으로 오늘의 병리 신호를 판단하면 안 됩니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Baseline risk] MedPlex·HiCo-GS·ForgeWM 모두 "SOTA 달성"을 주장하지만 abstract에 절대 정량 수치가 없어, 개선 폭과 비교 baseline의 강도는 본문·코드 확인이 필요합니다.</p>
+  <p>[Dataset risk] TRIAGE·NerveDetNet 모두 각각 단일 병원(Noor Eye Hospital)·ex vivo 조직에서만 검증돼, 서로 다른 병원 장비·in vivo 환경에서도 같은 성능이 유지될지는 별도 검증이 필요합니다.</p>
+  <p>[Claim risk] Spatial Message Passing의 "+3.3~+19.6%p 개선"은 HER2·CAMELYON16 두 대표 영역에 한정된 수치라, 더 넓은 범위의 암종·염색 프로토콜에서도 유지되는지는 본문·코드 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Meta-Optics/Diffractive 6편(통신·센싱·재료 응용 메타표면)</strong> — 테라헤르츠 편광 변환·OAM 다중화, 비침습 혈당 센싱용 RF 메타표면, SIM-보조 UAV 빔포밍, Smith-Purcell 방사 등으로 이미징 ROI와 무관합니다.</li>
+    <li><strong>Phase Imaging/Holography 1편(양자광학 응용)</strong> — Bessel-Gaussian-OAM 빔 기반 양자 홀로그래피는 계산 위상 이미징 방법론이 아니라 양자정보 인접 물리학 응용입니다.</li>
+    <li><strong>Tomography/3D Imaging 순수 임상 사례·비영상 "tomography" 다수(9편)</strong> — 호지킨 림프종 영상 진단, 와전류 결함 tomography, LPBF 스테인리스강 기공률 CT 분석, 무릎 골밀도 정량화 등 계산 이미징 방법론과 무관한 임상/재료과학 신호입니다.</li>
+    <li><strong>Virtual Staining/Pathology 대부분(19편, 무관 도메인)</strong> — 코딩 능력 평가, 재무 QA 멀티에이전트, 작곡 LLM, 의사 추천 알고리즘 감사, 전통의학, 교육학, 미생물 비료 등 키워드만 겹친 cs.AI/cs.LG 논문과 저널 논문들입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>의료 영상 언어 결합 (핵심 4편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.13690" target=_blank>MedPlex</a></strong> <span class=pill>CV</span><br>
+- 문제: 의료 영상 분할이 사실 텍스트 지식을 함께 쓰는 문제인데 기존 VLM 분할은 언어를 late conditioning으로만 씀 / 방법: Bi-Fusion으로 시각·텍스트 표현을 인코더 전 구간에서 함께 진화, class/region 이중 정렬 / 의미: 언어가 인코더 내내 구조적 지도 신호로 작동 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.13939" target=_blank>CMCNet</a></strong> <span class=pill>CV</span><br>
+- 문제: 갑상선 초음파 다중 클래스 진단은 라벨 데이터가 적어 feature-level 지도가 어려움 / 방법: TI-RADS 다섯 특징의 텍스트 임베딩에 이미지 임베딩을 Center-Margin Contrastive Loss로 정렬 / 의미: 추론 시 이미지만으로도 데이터 효율적인 다중 클래스 분류 가능 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.14309" target=_blank>Spatial Language Message Passing</a></strong> <span class=pill>CV</span><br>
+- 문제: 기가픽셀 WSI가 MLLM 시야 한계를 넘어 타일링하면 조직 이웃 관계가 끊김 / 방법: 타일을 설명 문장 노드로 삼아 인접 타일과 언어로 메시지 전달 / 의미: 파인튜닝 없이 범용 MLLM을 병리 특화 수준에 근접시킴 / 근거: HER2·CAMELYON16에서 +3.3~19.6%p / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.13791" target=_blank>VLM/LLM PET Denoising</a></strong> <span class=pill>IV</span><br>
+- 문제: PET denoising 실사용은 여러 특화 모델·전문가 개입이 필요해 자동화가 어려움 / 방법: VLM이 화질·병변 평가, LLM이 모델·파라미터 선택, closed-loop rollback / 의미: 전문가 워크플로 전체를 에이전트로 자동화 / 우선순위: Read
+</div>
+
+<h3>3D 장면 표현 지역 통제 (핵심 3편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.14078" target=_blank>Owner3D</a></strong> <span class=pill>CV</span><br>
+- 문제: LRM 기반 지역 3D 스타일화가 압축 triplane 공유로 스타일이 비대상 영역까지 유출됨 / 방법: 소유권 기반 스타일 주입 + 경계 이중 슬롯 / 의미: 학습 없이 지역별 스타일 통제, 유출 86.4~89.9% 감소 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.14136" target=_blank>HiCo-GS</a></strong> <span class=pill>CV</span><br>
+- 문제: 옥트리 앵커 GS의 계층 간 특징 고립으로 도시 스케일 재구성에서 색 번짐·과매끈함 발생 / 방법: 부모-자신-자식 삼중 구조 양방향 정보 교환 + 깊이-법선 기하 일관성 정규화 / 의미: 새 China-Pagoda 데이터셋 공개, 도시 스케일 SOTA 주장 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.13949" target=_blank>Fast Implicit Neural Light Field</a></strong> <span class=pill>CV</span><br>
+- 문제: 4D 광선 좌표를 직접 신경망으로 학습하면 학습 시간이 크게 늘어남 / 방법: 광선 공간을 3개 평면으로 기하 분해 + 다중 해상도 저계수(low-rank) 특징 / 의미: 파라미터·학습시간·추론속도 트레이드오프 개선 / 우선순위: Read
+</div>
+
+<h3>Video world model 조건화 (핵심 2편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.14022" target=_blank>ForgeWM</a></strong> <span class=pill>CV</span><br>
+- 문제: 행동 조건부 video world model에서 causal distillation을 상호작용형으로 확장하기 어려움 / 방법: 도메인 적응+teacher-forced causal training+causal consistency distillation+on-policy distribution matching / 의미: 1~4단계 causal 생성으로 낮은 지연시간 달성 / 우선순위: Read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.14043" target=_blank>Beyond Text Conditioning (BiVidGen)</a></strong> <span class=pill>CV</span><br>
+- 문제: MLLM-DiT 결합에서 MLLM을 얼어붙은 특징 추출기로만 쓰면 고수준 의미 계획 능력이 제한됨 / 방법: EMA 기반 이산 의미 시각 토큰 생성 + 텍스트+토큰 다층 cross-attention 조건화 / 의미: VBench-Long에서 의미 정렬·시간적 일관성 개선 / 우선순위: Read
+</div>
+
+<h3>OCT label-free 자동화 (핵심 2편)</h3>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.14321" target=_blank>TRIAGE</a></strong> <span class=pill>CV</span><br>
+- 문제: OCT 준지도 분류의 pseudo-label 채택이 신뢰도만 보고 오류 비용 비대칭을 무시함 / 방법: 환자 단위 conformal risk controller + 비대칭 비용 행렬 + cross-slice Transformer teacher / 의미: 라벨 20%만으로 정확도 89.66% / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.13807" target=_blank>NerveDetNet</a></strong> <span class=pill>CV</span><br>
+- 문제: 조직 아래 말초신경은 수술 중 육안·표면 광학 이미징으로 보기 어려움 / 방법: 핸드헬드 멀티모달 OCT 프로브 + 2.5D 공간-시간 상관 네트워크 / 의미: 라벨·조영제 없이 1.3~1.4mm 깊이까지 신경 검출 / 근거: Dice 0.725 / 우선순위: Must-read
+</div>
+
+<h3>계산광학 코어 Watch (3편)</h3>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1002/lpor.71690" target=_blank>Calibration-Free Single-Frame Super-Resolution Fluorescence Microscopy</a></strong> <span class=pill>JNL</span><br>
+- 문제: 초해상도 형광 현미경이 시스템별 보정과 긴 촬영 시간에 의존함 / 방법: 폭넓은 광학·시료 파라미터의 합성 데이터만으로 학습 / 의미: 단일 프레임에서 35nm 분리, Rayleigh 기준 7배 개선 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+<strong><a href="https://arxiv.org/abs/2608.13752" target=_blank>4D-STEM ptychography 자동화</a></strong> <span class=pill>CV</span><br>
+- 문제: 전자현미경 ptychography 실험이 수동 조작에 의존해 처리량이 낮음 / 방법: 프로그래밍 인터페이스로 자동 데이터 수집·의사결정 루틴 구축 / 의미: 나노입자 대량 데이터셋 수집·분석 자동화 / 우선순위: Skim
+</div>
+<div class=roi-item>
+<strong><a href="https://doi.org/10.1364/ol.609347" target=_blank>Dual-Layer Watermarking for Secure FPM</a></strong> <span class=pill>JNL</span><br>
+- 문제: FPM 재구성 이미지의 무결성·저작권 보호 수단이 부족함 / 방법: 이중 레이어 워터마킹 삽입 / 의미: 계산 이미징 파이프라인의 보안 계층 참고 사례 / 우선순위: Skim
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv 카테고리: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>cs.LG</a> · <a href="https://arxiv.org/list/cs.CV/new" target=_blank>cs.CV</a> · <a href="https://arxiv.org/list/cs.AI/new" target=_blank>cs.AI</a> · <a href="https://arxiv.org/list/eess.IV/new" target=_blank>eess.IV</a> · <a href="https://arxiv.org/list/eess.SP/new" target=_blank>eess.SP</a></li>
+  <li>지난주 회고: <a href="2026-08-17-weekly.html">2026-08-17 Weekly Retrospective</a></li>
+  <li>RSS: <a href="../feed.xml">feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+Imaging Intelligence Daily Briefing · cs.LG · cs.CV · cs.AI · eess.IV · eess.SP 기반 자동 생성 · 입력 출처: arXiv, Crossref, OpenAlex
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+
+</body>
+</html>

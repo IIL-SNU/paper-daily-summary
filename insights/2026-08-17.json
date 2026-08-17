@@ -1,0 +1,229 @@
+{
+ "date": "2026-08-17",
+ "insights": [
+  {
+   "title": "의료 영상 판독이 \"픽셀만 보고 직접 답을 내는 모델\"에서 \"언어를 통해 추론을 거치는 모델\"로",
+   "claim": "예전에는 의료 영상 딥러닝 모델이 CT/MR 볼륨이나 초음파, 병리 슬라이드를 입력으로 받아서 곧바로 분할 마스크나 분류 라벨을 뽑아내는 순수 비전 파이프라인이 많았습니다. 오늘 서로 다른 4개 modality(CT/MR 분할, 갑상선 초음파, 병리 whole slide, PET)에서 동시에 언어를 판독 과정 한가운데로 끌어들인 논문이 나왔습니다. MedPlex는 의료 영상 분할이 사실 임상의가 해부학적 위치·모양·주변 맥락 같은 텍스트 지식을 함께 쓰는 문제라는 점에 착안해, 언어 신호를 마지막에 살짝 곁들이는 게 아니라 인코더 전 구간에서 시각 표현과 함께 진화시킵니다. CMCNet은 갑상선 결절 진단에 널리 쓰는 ACR TI-RADS 다섯 가지 특징 범주를 텍스트 임베딩으로 바꿔서, 이미지 임베딩이 그 텍스트 임베딩에 가까워지도록 대조학습으로 정렬합니다. Spatial Language Message Passing(SLMP)은 기가픽셀 병리 슬라이드가 MLLM(Multimodal Large Language Model, 이미지와 텍스트를 함께 다루는 대형 언어모델)의 시야 한계를 넘어선다는 문제를, 타일마다 MLLM이 만든 설명 문장을 노드로 삼고 인접 타일끼리 그 설명을 주고받으며 다듬는 방식으로 풉니다 — 계산을 임베딩이 아니라 사람이 읽을 수 있는 문장 위에서 그대로 수행하는 겁니다. VLM/LLM 기반 PET denoising 멀티에이전트 시스템은 영상 품질 평가와 잡음 제거 모델·파라미터 선택, 병변 중심 검증까지 전문가 워크플로를 통째로 에이전트 파이프라인으로 옮겼습니다. 네 편을 같이 보면, 의료 영상 AI가 \"이 픽셀 패턴이 무엇인가\"를 맞히는 단계를 넘어 \"임상적으로 왜 그렇게 판단하는가\"를 언어로 명시적으로 다루기 시작했다는 뜻이고, 그만큼 판독 근거를 사람이 검토·수정할 수 있는 통로가 넓어졌다는 의미입니다.",
+   "papers": [
+    {
+     "title": "MedPlex: Deep Vision-Language Co-Adaptation for Clinically Grounded Medical Segmentation",
+     "arxiv": "https://arxiv.org/abs/2608.13690",
+     "importance_tags": ["[방법전환]"],
+     "phylogeny": {
+      "source": "CVML",
+      "phylum": "Medical Imaging",
+      "class": "Vision-Language Segmentation",
+      "order": "Text-grounded multi-organ segmentation",
+      "genus": "Bi-Fusion class/region concept alignment",
+      "confidence": "Medium",
+      "rationale": "CT/MR 다중 벤치마크에서 SOTA를 주장하나 abstract에 절대 수치는 없어 개선 폭 확인 필요"
+     }
+    },
+    {
+     "title": "CMCNet: Aligning Ultrasound Image Embeddings with Textual TI-RADS Representations for Fine-Grained Thyroid Classification",
+     "arxiv": "https://arxiv.org/abs/2608.13939",
+     "importance_tags": ["[인프라]", "[방법전환]"],
+     "phylogeny": {
+      "source": "CVML",
+      "phylum": "Medical Imaging",
+      "class": "Vision-Language Alignment",
+      "order": "Ultrasound feature-guided classification",
+      "genus": "Center-Margin Contrastive text-image alignment",
+      "confidence": "Medium",
+      "rationale": "새 600건 STN 데이터셋을 공개하고 여러 baseline 대비 우위를 주장하나 상대 비교 수치가 abstract에 구체적이지 않음"
+     }
+    },
+    {
+     "title": "Spatial Message Passing in Language Space for Pathology Image Interpretation",
+     "arxiv": "https://arxiv.org/abs/2608.14309",
+     "importance_tags": ["[방법전환]", "[해부분석]"],
+     "phylogeny": {
+      "source": "CVML",
+      "phylum": "Medical Imaging",
+      "class": "MLLM-based Pathology Analysis",
+      "order": "Language-space spatial reasoning",
+      "genus": "Text-graph neighbor message passing",
+      "confidence": "High",
+      "rationale": "HER2·CAMELYON16 두 데이터셋, 범용/병리 특화 두 backbone에서 +3.3~+19.6%p 개선과 random-neighbor ablation까지 abstract에 구체적으로 명시됨"
+     }
+    },
+    {
+     "title": "VLM- and LLM-Driven Multi-Agent System for PET Image Denoising",
+     "arxiv": "https://arxiv.org/abs/2608.13791",
+     "importance_tags": ["[실사용전환]", "[인프라]"],
+     "phylogeny": {
+      "source": "CVML",
+      "phylum": "Medical Imaging",
+      "class": "Agentic Image Quality Pipeline",
+      "order": "PET denoising workflow automation",
+      "genus": "Closed-loop VLM/LLM model-selection agent",
+      "confidence": "Medium",
+      "rationale": "Siemens Biograph Vision Quadra 1/20·1/50 저선량 데이터에서 UNet/GAN/DDPM 대비 PSNR/SSIM 우위를 주장하나 절대 수치는 abstract에 없음"
+     }
+    }
+   ],
+   "confidence": "High",
+   "confidence_note": "서로 다른 기관·저자군 4편이 CT/MR·초음파·병리·PET 네 개의 서로 다른 modality에서 동시에 \"언어를 판독 과정에 명시적으로 결합\"하는 같은 방향을 보임"
+  },
+  {
+   "title": "3D 장면 표현이 \"전체를 한 번에 렌더링\"에서 \"지역별로 세밀하게 통제하는 표현\"으로",
+   "claim": "3D Gaussian Splatting과 신경 표현 기반 장면 재구성은 원래 장면 전체를 하나의 표현으로 뭉뚱그려 다루는 경향이 있었습니다. 오늘 나온 세 편은 그 표현을 지역·계층별로 쪼개서 따로 통제하려는 시도입니다. Owner3D는 대형 재구성 모델(LRM)에서 물체의 특정 부분만 스타일을 바꾸려 하면, 스타일 신호가 압축된 triplane 표현 전체에 스며들어 바꾸지 말아야 할 표면까지 오염되는 문제를 짚고, 대상 영역에만 스타일을 주입하는 \"소유권\" 개념과 경계면 근처를 위한 이중 슬롯 구조로 스타일 유출을 82.4~89.9% 줄였습니다. HiCo-GS는 도시 규모 장면을 옥트리(계층적 공간 분할 구조) 기반 앵커 Gaussian Splatting으로 다룰 때, 각 계층의 앵커 특징이 서로 소통 없이 따로 최적화되면서 건물 외벽에 색이 번지거나 texture가 뭉개지는 문제를, 부모-자신-자식 삼중 구조로 계층 간 정보를 양방향으로 흘려보내 해결합니다. Fast Implicit Neural Light Field Representation은 4차원 광선 좌표 전체를 하나의 신경망으로 학습하는 대신, 광선 공간을 수평 시차·공간 텍스처·수직 시차 세 평면으로 나누고 각 평면을 저해상도 격자와 다중 해상도 1차원 특징의 곱으로 압축해 학습 속도를 크게 높입니다. 세 편을 같이 보면, 3D 장면 표현 연구가 \"장면 전체를 하나의 매끈한 함수로 근사한다\"는 전제에서 벗어나 \"장면을 구성 요소별로 쪼개고 각 부분을 따로 통제·최적화한다\"는 쪽으로 이동하고 있다는 뜻이고, 이는 우리 랩이 다루는 위상 이미징·홀로그래피 재구성에서도 조명 조건이나 물질별로 표현을 분리해 다루는 설계가 유효할 수 있다는 근거가 됩니다.",
+   "papers": [
+    {
+     "title": "Owner3D: Ownership-Guided Style Writing for Training-Free Localized 3D Stylization",
+     "arxiv": "https://arxiv.org/abs/2608.14078",
+     "importance_tags": ["[방법전환]"],
+     "phylogeny": {
+      "source": "CVML",
+      "phylum": "Computational Imaging",
+      "class": "3D Scene Representation",
+      "order": "Localized appearance control",
+      "genus": "Ownership-guided style injection",
+      "confidence": "Medium",
+      "rationale": "Google Scanned Objects·PartNet 벤치마크에서 leakage 86.4%/89.9% 감소라는 구체 수치를 제시함"
+     }
+    },
+    {
+     "title": "HiCo-GS: Hierarchical Context Aggregation and Geometric Consistency for Octree Gaussian Splatting",
+     "arxiv": "https://arxiv.org/abs/2608.14136",
+     "importance_tags": ["[방법전환]", "[인프라]"],
+     "phylogeny": {
+      "source": "CVML",
+      "phylum": "Computational Imaging",
+      "class": "3D Scene Representation",
+      "order": "City-scale novel view synthesis",
+      "genus": "Cross-level context aggregation + geometric consistency regularization",
+      "confidence": "Medium",
+      "rationale": "Mill19·UrbanScene3D·MatrixCity·자체 공개 China-Pagoda 4개 데이터셋에서 SOTA를 주장하나 절대 수치는 abstract에 없음"
+     }
+    },
+    {
+     "title": "Fast Implicit Neural Light Field Representation via Geometric Decomposition and Multi-Resolution Low-Rank Features",
+     "arxiv": "https://arxiv.org/abs/2608.13949",
+     "importance_tags": ["[방법전환]"],
+     "phylogeny": {
+      "source": "CVML",
+      "phylum": "Computational Imaging",
+      "class": "Light-Field Representation",
+      "order": "Implicit neural light field reconstruction",
+      "genus": "Geometric plane decomposition + low-rank multi-resolution features",
+      "confidence": "Low",
+      "rationale": "공개 light field 데이터셋에서 파라미터·학습시간·추론속도 트레이드오프 개선을 주장하나 절대 화질 수치는 abstract에 없음"
+     }
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저자군 3편이 \"장면 표현을 지역/계층별로 쪼개 따로 통제한다\"는 방향을 공유하지만 응용(스타일화·도시 스케일 재구성·라이트필드)이 서로 달라 직접 비교는 어려움"
+  },
+  {
+   "title": "Video world model이 \"텍스트 프롬프트만 따라가기\"에서 \"행동 신호와 의미 토큰을 직접 넣는 쪽\"으로",
+   "claim": "video generation을 상호작용 가능한 world model로 쓰려면 텍스트 조건만으로는 부족합니다. ForgeWM은 키보드 입력이나 마우스 움직임처럼 게임 조작에 필요한 연속·이산 행동 신호를 압축된 latent 청크와 정렬한 채로 몇 단계짜리 causal 생성 모델을 학습시켜, Minecraft와 FPS 게임 모두에서 1~4단계 만에 낮은 지연시간으로 조작에 반응하는 영상을 만듭니다. Beyond Text Conditioning(BiVidGen)은 반대로 텍스트-투-비디오 생성에서 MLLM을 그냥 얼어붙은 특징 추출기로 쓰는 대신, MLLM이 먼저 의미 있는 시각 토큰을 만들고 diffusion transformer가 텍스트와 그 시각 토큰을 함께 조건으로 받아 렌더링하게 해서 의미적 정렬과 시간적 일관성을 높입니다. 두 편을 같이 보면, video generation이 \"텍스트 한 줄을 그럴듯한 영상으로 바꾼다\"는 단계를 넘어 \"행동이나 의미 계획처럼 더 구조화된 신호를 직접 조건으로 받아들인다\"는 단계로 넘어가고 있다는 뜻이며, 우리 랩이 실험 데이터 시뮬레이션이나 조명·측정 조건 변화를 조건으로 넣는 생성 파이프라인을 설계할 때 참고할 수 있는 조건화 전략입니다.",
+   "papers": [
+    {
+     "title": "ForgeWM: Progressive Causal Training for Few-Step Action-Conditioned Video World Models",
+     "arxiv": "https://arxiv.org/abs/2608.14022",
+     "importance_tags": ["[방법전환]", "[실사용전환]"],
+     "phylogeny": {
+      "source": "CVML",
+      "phylum": "Video Generation",
+      "class": "Action-Conditioned World Model",
+      "order": "Few-step causal distillation",
+      "genus": "Domain adaptation + causal consistency distillation + on-policy distribution matching",
+      "confidence": "Medium",
+      "rationale": "Minecraft·FPS 두 도메인에서 Imaging Quality·motion agreement·LPIPS 등 여러 지표에서 최고를 주장하나 baseline 대비 절대 격차 수치는 abstract에 없음"
+     }
+    },
+    {
+     "title": "Beyond Text Conditioning: A Systematic Study of MLLM-DiT Fusion for Video Generation",
+     "arxiv": "https://arxiv.org/abs/2608.14043",
+     "importance_tags": ["[해부분석]", "[방법전환]"],
+     "phylogeny": {
+      "source": "CVML",
+      "phylum": "Video Generation",
+      "class": "MLLM-DiT Fusion",
+      "order": "Semantic visual token conditioning",
+      "genus": "EMA-based discrete visual tokenizer + multi-layer cross-attention",
+      "confidence": "Medium",
+      "rationale": "VBench-Long에서 fine-tuned DiT baseline 대비 개선을 주장하고 세 가지 설계 질문에 대한 체계적 ablation을 abstract에서 명시함"
+     }
+    }
+   ],
+   "confidence": "Low",
+   "confidence_note": "2편이 \"텍스트를 넘어서는 조건화 신호를 직접 넣는다\"는 방향을 공유하지만 응용(게임 조작 vs 텍스트-투-비디오)이 달라 관찰 단계로 취급"
+  },
+  {
+   "title": "OCT가 \"전문의가 한 장씩 판독하는 영상\"에서 \"준지도·label-free로 자동 판독하는 영상\"으로",
+   "claim": "광 간섭 단층촬영(OCT, optical coherence tomography)은 판독에 전문의의 라벨링이 많이 필요해 자동화가 더뎠던 영역입니다. 오늘 나온 두 편은 이 병목을 서로 다른 방향에서 줄입니다. TRIAGE는 망막 OCT B-scan 분류에서 신뢰도만으로 pseudo-label을 채택하면 오류 종류별 비용이 다르다는 걸 무시한다는 문제를 짚고, 환자 단위 conformal risk controller(위험을 통계적으로 통제하면서 pseudo-label을 받아들이는 방법)에 비대칭 비용 행렬을 결합해, 라벨의 20%만 쓰고도 스캔 단위 정확도 89.66%·과소진단율 8.34%를 달성했습니다. Label-Free Deep-Tissue Peripheral Nerve Detection은 수술 중 조직 아래 묻힌 말초신경을 눈으로도, 기존 표면 광학 이미징으로도 보기 어렵다는 문제를, 라벨링이나 조영제 없이 OCT 신호의 세기 패턴만으로 신경을 검출하는 경량 2.5D 네트워크(NerveDetNet)로 풀어 피부 아래 1.3~1.4mm까지 깊이 정보를 포함해 위치를 찾아냈습니다. 두 편을 같이 보면, OCT 활용이 \"전문의가 한 장씩 라벨을 달아야 쓸 수 있는 영상\"에서 \"적은 라벨이나 라벨 없이도 통계적으로 위험을 통제하며 자동 판독하는 영상\"으로 옮겨가고 있다는 뜻이고, 이는 우리 랩의 label-free 위상·형광 이미징 파이프라인에도 적은 지도(supervision)로 신뢰할 수 있는 판독을 만드는 설계 원칙으로 참고할 수 있습니다.",
+   "papers": [
+    {
+     "title": "TRIAGE: Risk-Controlled Pseudo-Label Admission for Annotation-Efficient Semi-Supervised Retinal OCT Classification",
+     "arxiv": "https://arxiv.org/abs/2608.14321",
+     "importance_tags": ["[평가축]", "[방법전환]"],
+     "phylogeny": {
+      "source": "CVML",
+      "phylum": "Medical Imaging",
+      "class": "Semi-Supervised OCT Classification",
+      "order": "Conformal risk-controlled pseudo-labeling",
+      "genus": "Patient-grouped asymmetric-cost conformal risk controller",
+      "confidence": "High",
+      "rationale": "Noor Eye Hospital 16,822 B-scan·161명 환자·554볼륨 데이터셋에서 라벨 비율별(20%·5%·1%·10%) 정확도·F1·AUC·과소진단율을 abstract에 구체적으로 명시하고 6개 SOTA 대비 우위 폭(42.7%)까지 제시함"
+     }
+    },
+    {
+     "title": "Label-Free Deep-Tissue Peripheral Nerve Detection with a Handheld Multimodal OCT Probe and NerveDetNet",
+     "arxiv": "https://arxiv.org/abs/2608.13807",
+     "importance_tags": ["[방법전환]", "[실사용전환]"],
+     "phylogeny": {
+      "source": "CVML",
+      "phylum": "Medical Imaging",
+      "class": "Label-Free OCT Detection",
+      "order": "Subsurface structure segmentation",
+      "genus": "2.5D spatial-temporal correlation network",
+      "confidence": "Medium",
+      "rationale": "ex vivo 실험에서 6개 2D baseline 대비 Dice 0.725(최소 파라미터)를 구체적으로 제시하나 in vivo·임상 검증은 아직 없음"
+     }
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_note": "2편이 \"OCT 판독을 적은/무 라벨로 자동화한다\"는 방향을 공유하고 TRIAGE는 대규모 정량 근거가 강하지만, 서로 다른 임상 태스크(망막 분류 vs 신경 검출)라 방법론 연결은 느슨함"
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "Calibration-Free Single-Frame Super-Resolution Fluorescence Microscopy의 synthetic-only 학습 레시피를 우리 랩 FP/QPI 복원 네트워크에 이식",
+   "claim": "이 논문은 광학·시료 파라미터를 폭넓게 아우르는 합성 데이터만으로 학습해도 실제 현미경 여러 대에 걸쳐 일반화되는 단일 프레임 초해상도 복원 모델을 만들었습니다(35nm 분리 해상도, Rayleigh 기준 대비 7배 개선). 우리 랩의 Fourier ptychography·QPI 복원 네트워크도 실측 데이터 확보가 병목이라, 같은 synthetic-only 학습 전략과 일반화 검증 프로토콜을 이식할 수 있는지 확인할 가치가 있습니다.",
+   "supporting_papers": [
+    {"title": "Calibration-Free Single-Frame Super-Resolution Fluorescence Microscopy", "arxiv": "https://doi.org/10.1002/lpor.71690", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+   ]
+  },
+  {
+   "title": "HiCo-GS의 계층 간 정보 교환 구조를 우리 랩 3DGS 기반 위상/홀로그래피 재구성에 적용",
+   "claim": "HiCo-GS가 옥트리 계층 간 정보를 부모-자신-자식 삼중 구조로 양방향 교환해 도시 스케일 렌더링에서 색 번짐·과도한 매끈함을 줄인 방식을, 우리 랩이 다중 스케일(예: 저해상도 전체 형태 + 고해상도 미세 구조)로 위상/홀로그래피 재구성을 할 때 스케일 간 정보 공유 구조로 적용할 수 있는지 확인합니다.",
+   "supporting_papers": [
+    {"title": "HiCo-GS: Hierarchical Context Aggregation and Geometric Consistency for Octree Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2608.14136", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+   ]
+  },
+  {
+   "title": "UMPIRE-Net의 magnitude/phase 분리 정규화를 우리 랩 위상 복원 네트워크에 적용",
+   "claim": "UMPIRE-Net이 가속 MRI의 partial Fourier 복원에서 magnitude와 phase를 하나의 복소수 표현으로 뭉뚱그리지 않고 별도의 학습된 정규화기로 분리한 방식을, 우리 랩의 quantitative phase imaging 복원 네트워크에서도 진폭·위상을 분리 정규화했을 때 복원 품질이 개선되는지 검증합니다.",
+   "supporting_papers": [
+    {"title": "UMPIRE-Net: Unrolled Magnitude-Phase Regularization Network for Accelerated MRI", "arxiv": "https://arxiv.org/abs/2608.14422", "phylogeny": {"source": "CVML", "phylum": "Reconstruction/Inverse Problems"}}
+   ]
+  }
+ ],
+ "phylogeny_tags": [
+  {"paper": "https://arxiv.org/abs/2608.13690", "source": "CVML", "lineage": "Medical Imaging > Vision-Language Segmentation > Text-grounded multi-organ segmentation > Bi-Fusion concept alignment"},
+  {"paper": "https://arxiv.org/abs/2608.13939", "source": "CVML", "lineage": "Medical Imaging > Vision-Language Alignment > Ultrasound feature-guided classification > Center-Margin Contrastive alignment"},
+  {"paper": "https://arxiv.org/abs/2608.14309", "source": "CVML", "lineage": "Medical Imaging > MLLM-based Pathology Analysis > Language-space spatial reasoning > Text-graph message passing"},
+  {"paper": "https://arxiv.org/abs/2608.13791", "source": "CVML", "lineage": "Medical Imaging > Agentic Image Quality Pipeline > PET denoising workflow automation > Closed-loop model-selection agent"},
+  {"paper": "https://arxiv.org/abs/2608.14078", "source": "CVML", "lineage": "Computational Imaging > 3D Scene Representation > Localized appearance control > Ownership-guided style injection"},
+  {"paper": "https://arxiv.org/abs/2608.14136", "source": "CVML", "lineage": "Computational Imaging > 3D Scene Representation > City-scale novel view synthesis > Cross-level context aggregation"},
+  {"paper": "https://arxiv.org/abs/2608.13949", "source": "CVML", "lineage": "Computational Imaging > Light-Field Representation > Implicit neural light field reconstruction > Geometric plane decomposition"},
+  {"paper": "https://arxiv.org/abs/2608.14022", "source": "CVML", "lineage": "Video Generation > Action-Conditioned World Model > Few-step causal distillation > Causal consistency distillation"},
+  {"paper": "https://arxiv.org/abs/2608.14043", "source": "CVML", "lineage": "Video Generation > MLLM-DiT Fusion > Semantic visual token conditioning > EMA discrete tokenizer"},
+  {"paper": "https://arxiv.org/abs/2608.14321", "source": "CVML", "lineage": "Medical Imaging > Semi-Supervised OCT Classification > Conformal risk-controlled pseudo-labeling > Patient-grouped asymmetric-cost controller"},
+  {"paper": "https://arxiv.org/abs/2608.13807", "source": "CVML", "lineage": "Medical Imaging > Label-Free OCT Detection > Subsurface structure segmentation > 2.5D spatial-temporal correlation network"},
+  {"paper": "https://doi.org/10.1002/lpor.71690", "source": "CVML", "lineage": "Computational Imaging > Fluorescence Super-Resolution Microscopy > Single-frame reconstruction > Synthetic-only generalization"},
+  {"paper": "https://arxiv.org/abs/2608.14422", "source": "CVML", "lineage": "Reconstruction/Inverse Problems > Physics-Driven Deep Learning > Accelerated MRI reconstruction > Magnitude-phase separate regularization"}
+ ]
+}

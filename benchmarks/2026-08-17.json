@@ -1,0 +1,45 @@
+{
+ "date": "2026-08-17",
+ "results": [
+  {
+   "benchmark": "OCT-C8 retinal disease classification (20% labeled data)",
+   "metric": "Scan-level accuracy",
+   "value": 89.66,
+   "value_str": "89.66% accuracy / macro-F1 0.8805 / macro-AUC 0.9641",
+   "paper": "https://arxiv.org/abs/2608.14321",
+   "paper_title": "TRIAGE: Risk-Controlled Pseudo-Label Admission for Annotation-Efficient Semi-Supervised Retinal OCT Classification"
+  },
+  {
+   "benchmark": "OCT-C8 under-grading rate reduction vs fixed-threshold pseudo-labeling",
+   "metric": "Relative improvement",
+   "value": 42.7,
+   "value_str": "42.7% under-grading rate 개선 (ablation)",
+   "paper": "https://arxiv.org/abs/2608.14321",
+   "paper_title": "TRIAGE: Risk-Controlled Pseudo-Label Admission for Annotation-Efficient Semi-Supervised Retinal OCT Classification"
+  },
+  {
+   "benchmark": "Ex vivo peripheral nerve segmentation (sparsest sampling)",
+   "metric": "Dice score",
+   "value": 0.725,
+   "value_str": "Dice 0.725 (6개 2D baseline 대비 최고, 파라미터 약 절반)",
+   "paper": "https://arxiv.org/abs/2608.13807",
+   "paper_title": "Label-Free Deep-Tissue Peripheral Nerve Detection with a Handheld Multimodal OCT Probe and NerveDetNet"
+  },
+  {
+   "benchmark": "Localized 3D stylization appearance leakage reduction vs StyleSplat",
+   "metric": "Leakage reduction",
+   "value": 86.4,
+   "value_str": "86.4% (vs StyleSplat), 89.9% (vs LAENeRF)",
+   "paper": "https://arxiv.org/abs/2608.14078",
+   "paper_title": "Owner3D: Ownership-Guided Style Writing for Training-Free Localized 3D Stylization"
+  },
+  {
+   "benchmark": "Single-frame fluorescence super-resolution lateral resolution (580nm)",
+   "metric": "Resolvable separation",
+   "value": 35,
+   "value_str": "35nm 분리 해상도 (Rayleigh 기준 대비 7배 개선)",
+   "paper": "https://doi.org/10.1002/lpor.71690",
+   "paper_title": "Calibration-Free Single-Frame Super-Resolution Fluorescence Microscopy"
+  }
+ ]
+}
