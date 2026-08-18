@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-08-18</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-08-18 (화요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-08-18 (화요일)</div>
+  <div>📚 소스: journal-only (잠정본) — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 모두 실행 시점에 2026-08-17(월) listing에 머물러 있음</div>
+  <div>🔢 arXiv: cs.LG 0 · cs.CV 0 · cs.AI 0 · eess.IV 0 · eess.SP 0 (신규 제출 확인 불가)</div>
+  <div>🔢 저널: Crossref/OpenAlex 425편 수집(2026-08-18 등록분) · 스캔 425건 · ROI 배정 96건 (22.6%)</div>
+  <div>⚠️ arXiv 5개 카테고리가 모두 어제(8/17) listing에 머물러 있습니다(연휴 없음, 단순 갱신 지연으로 추정). 이 리포트는 저널만으로 만든 잠정본이며, /pastweek에 2026-08-18 섹션이 뜨면 다음 실행에서 arXiv 포함 완전판으로 자동 업그레이드됩니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 다섯 카테고리 모두 실행 시점에 어제(8/17) listing에 머물러 있어 저널만으로 만든 잠정본입니다. 그런데 최근 2주간 이어지던 계산광학 코어(FP·Lensless·Phase·Meta-Optics·Light-Field)의 가뭄과는 다르게, 저널 쪽에서는 뚜렷한 신호 세 갈래가 동시에 나왔습니다. <strong>Fourier ptychography·TEM·전립선암 광학 바이오마커가 화학 염색 없이 진단용 대비를 얻는 문제를 각자 다른 모달리티에서 풀었고</strong>, <strong>홀로그래피는 촬영이라는 원래 목적을 넘어 디스플레이·데이터 저장·능동 소자로 갈라졌으며</strong>, <strong>메타표면은 통신·RF 응용을 벗어나 실측 스펙(화각·F수·무게)을 갖춘 냉각형 적외선 촬상 하드웨어로 옮겨갔습니다.</strong> 여기에 CT 금속 아티팩트 제거와 광음향 단층촬영이 물리 모델을 재구성 신경망에 명시적으로 박아 넣는 흐름도 같이 나왔습니다. arXiv가 빠진 날이라 전체 정보량은 평소보다 훨씬 적지만, 저널만 놓고 보면 계산광학 코어에 오랜만에 좋은 하루였습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 브리핑은 어제까지 arXiv가 만들던 하루 정보량의 대부분을 저널이 대신 채운 날입니다. 어제(8/17, 월) daily에 따르면 arXiv 쪽 핵심 신호는 의료 영상 판독에 언어·VLM·LLM을 판독 과정 깊숙이 결합하는 4편(CT·MR 분할, 초음파, 병리 WSI, PET)이었고, 계산광학 코어 5개 버킷은 지난주 weekly(2026-33)가 예측한 대로 실질 신호 기준 가뭄이 2주 연속 이어지고 있었습니다(Lensless 0편, Phase 1편). 오늘은 그 arXiv 신호 자체가 통째로 사라졌는데, 흥미롭게도 저널 쪽에서는 정반대로 계산광학 코어 클러스터가 세 개나 나오면서 최근 2주의 가뭄이 저널 쪽에서는 일시적으로 해갈된 모습입니다.</p>
+<p>오늘 저널에서 가장 뚜렷한 흐름은 <strong>화학 염색 없이 진단용 대비를 만드는 문제</strong>입니다. Fourier ptychography 논문은 조명 패턴을 태스크에 맞춰 바꾸는 하드웨어 자체를 label-free virtual staining에 맞췄고, TEM 이미지용 frequency-aware CycleGAN(WAFMGAN)은 정량 지표(FID 23% 개선)까지 명시하며 비지도 가상 염색을 보였으며, 전립선암 논문은 아예 화학 염색 대신 광학 신호 자체를 바이오마커로 씁니다. 세 논문이 모두 "물리적 염색·시약을 더 쓰지 않고도 진단 대비를 만든다"는 같은 목표를 서로 다른 이미징 모달리티에서 겨냥한다는 점이 핵심입니다.</p>
+<p>두 번째로는 홀로그래피의 용도 확산입니다. 근접장 나노프린팅과 원거리 홀로그래픽 디스플레이를 한 메타표면에 통합한 논문, 저장 밀도를 노리는 홀로그래픽 데이터 저장 논문, 광유도 복굴절로 홀로그램 자체를 스위칭하는 논문까지 서로 다른 세 저널에서 나왔습니다. 여기에 메타표면이 통신·RF를 벗어나 굴절 렌즈 개수를 8개에서 4개로, 무게를 79% 줄이면서 냉각형 MWIR 촬상계의 색수차를 보정하는 실측 설계로 이어진 점도 눈에 띕니다. 물리 모델을 재구성 신경망에 명시적으로 박아 넣는 흐름(CT 금속 아티팩트 deep unrolling, 광음향 단층촬영 CNN-guided 수치 역산)도 같은 날 확인됐습니다. 다음 실행에서 cs.LG·cs.CV·cs.AI가 /pastweek에 2026-08-18 섹션을 올리면 이 리포트는 arXiv 포함 완전판으로 업그레이드됩니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>어제(8/17, 월)는 arXiv 5개 카테고리가 모두 정상 갱신돼 new+cross 437편이 있었고, 핵심은 의료 영상 판독 파이프라인에 언어 모델을 깊숙이 결합하는 흐름이었습니다. 계산광학 코어는 그날도 가뭄이었고(FP 3편 중 1편은 SAR 키워드 우연매칭), 지난주 weekly(2026-33)는 이 가뭄이 다음 주에도 실질 신호 기준으로 이어질 것으로 예측했습니다. 오늘은 그 예측과 다르게, arXiv가 아니라 저널 쪽에서 계산광학 코어 클러스터가 세 개(label-free 대비 생성, 홀로그래피 다각화, MWIR 메타옵틱스)나 나오면서 가뭄이 일시적으로 풀린 모습입니다. 다만 arXiv 자체가 없는 날이라 오늘의 정보량은 어제보다 훨씬 적고, 이 완화가 저널만의 일시적 현상인지 다음 주 weekly가 계속 추적할 대상입니다.</p>
+<p>또한 weekly가 3주째 추적 중인 "신호를 캐묻는 감사가 FP·QPI·CT·lensless 같은 계산 이미징 역문제로 전이된다"는 예측은 오늘 저널에서도 확인되지 않았습니다(계속 미스). CT·광음향 재구성 논문 두 편은 있었지만, 둘 다 "학습된 사전이 실제 오차와 얼마나 일치하는지 감사"하는 논문이 아니라 물리 모델을 재구성 파이프라인에 새로 박아 넣는 방법론 논문이라, 이 예측이 요구하는 신뢰성 감사와는 결이 다릅니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>FP·TEM·전립선암 진단이 "화학 염색 없이 대비를 만드는" 문제를 각자 모달리티에서 풀다</strong></td>
+  <td>
+    <a href="https://doi.org/10.1002/advs.76871" target=_blank>Hardware-Attentive Programmable Fourier Ptychography Enables Task-Adaptive Label-Free Virtual Staining</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1111/jmi.70155" target=_blank>WAFMGAN: frequency-aware CycleGAN for virtual staining of TEM images</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1186/s10020-026-01605-2" target=_blank>Label-free optical biomarker for prostate cancer diagnosis</a> <span class=pill>JNL</span>
+  </td>
+  <td>지금까지 조직·세포를 들여다보려면 대부분 화학 염색이나 형광 표지 같은 물리적 처리가 필요했고, 이 처리는 시약을 소모하고 샘플을 변형시킬 수 있었습니다. 오늘 저널 세 편은 이 문제를 각자 다른 이미징 모달리티에서 공략합니다. Fourier ptychography 논문은 조명 패턴 자체를 태스크에 맞춰 프로그래밍 가능하게 만들어 label-free virtual staining을 겨냥했고, WAFMGAN은 투과전자현미경(TEM) 이미지에 대해 저주파 전역 염색 전이와 후단 경계·텍스처 보강을 분리한 2단계 구조로 비지도 가상 염색을 수행하면서 CycleGAN 대비 FID를 23% 낮췄습니다. 세 번째 논문은 아예 화학 염색을 거치지 않고 광학 신호 자체를 전립선암 진단 바이오마커로 씁니다. 세 논문 모두 "물리적 염색·시약을 더 쓰지 않고도 진단에 필요한 대비를 만든다"는 같은 목표를 서로 다른 모달리티에서 겨냥한다는 점이 공통점입니다.</td>
+  <td>Medium<br><small>초록 있는 논문 1편(WAFMGAN, 정량 지표 명시) + 제목 기반 2편, 서로 다른 저널 3개(Adv. Sci., J. Microscopy, Molecular Medicine)가 같은 방향을 지시</small></td>
+  <td>WAFMGAN의 Wavelet 기반 저주파 전역 전이 + 후단 경계 보강 2단계 구조를 우리 FP 파이프라인의 label-free virtual staining 출력 품질 개선에 이식 가능한지 1차 타당성 검토; Hardware-Attentive Programmable FP의 task-adaptive 조명 설계를 우리 FP 시스템의 가상 염색 타겟에 맞춰 재현 가능한지 본문 확인</td>
+</tr>
+<tr>
+  <td><strong>홀로그래피가 "위상 영상을 찍는 방법"을 넘어 디스플레이·데이터 저장·능동 소자로 갈라짐</strong></td>
+  <td>
+    <a href="https://doi.org/10.1088/1402-4896/ae9ada" target=_blank>Four-Channel Metasurface for Synergistic Near-Field Nanoprinting and Far-Field Holographic Display</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/oe.605987" target=_blank>Multidimensional holographic data storage under the paraxial approximation condition based on deep learning</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.optlastec.2026.116211" target=_blank>Spin-selective holographic switching of grafted scalar and vector vortex beams via photoinduced birefringence</a> <span class=pill>JNL</span>
+  </td>
+  <td>홀로그래피는 원래 위상 정보를 기록해서 영상을 재현하는 방법 하나였는데, 오늘 저널 세 편은 각자 다른 이유로 이 원리를 가져다 씁니다. 첫 번째 논문은 진폭-위상 결합 변조로 근접장 나노프린팅 채널 하나와 편광 다중화된 원거리 홀로그래픽 채널 세 개를 한 메타표면에 동시에 넣어, 서로 다른 거리에서 다른 정보를 보여주는 디스플레이 소자를 만듭니다. 두 번째 논문은 홀로그래피를 이미지 재현이 아니라 정보를 다차원으로 압축해서 저장하는 매체로 씁니다. 세 번째 논문은 빛으로 유도한 복굴절을 이용해 이미 기록된 홀로그램의 스핀(편광) 응답을 스위칭 가능하게 만듭니다. 공통점은 홀로그래피가 더 이상 "위상 영상을 찍는 방법"이 아니라, 디스플레이·저장·능동 소자라는 서로 다른 최종 용도에 맞춰 재설계되고 있다는 것입니다.</td>
+  <td>Medium<br><small>초록 있는 논문 1편 + 제목 기반 2편, 서로 다른 저널(Physica Scripta, Optics Express, Opt. Laser Technol.) 3개에서 독립적으로 확인</small></td>
+  <td>진폭-위상 결합 변조로 근접장/원거리 채널을 분리하는 설계 원리를 우리 메타표면 홀로그래피 시제품의 다채널 인코딩에 적용 가능한지 시뮬레이션 검토; 광유도 복굴절 스위칭 메커니즘을 우리 홀로그래픽 소자의 재구성 가능성(reconfigurability) 실험에 참고</td>
+</tr>
+<tr>
+  <td><strong>물리 모델을 내장한 재구성 신경망·수치해석이 CT·광음향으로 번짐</strong></td>
+  <td>
+    <a href="https://doi.org/10.1016/j.patcog.2026.114664" target=_blank>DSDNet: Dynamic Structured Dictionary-based Deep Unrolling Network for CT metal artifact reduction</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1137/25m1824215" target=_blank>Photoacoustic Tomography with Time-Dependent Damping: Theoretical and a CNN-Guided Numerical Inversion Procedure</a> <span class=pill>JNL · TIER A</span>
+  </td>
+  <td>딥러닝 기반 영상 재구성은 흔히 물리 모델을 무시한 채 데이터만으로 입력-출력 매핑을 학습하는 블랙박스로 흐르기 쉽습니다. 오늘 두 논문은 그 반대 방향을 보여줍니다. DSDNet은 CT 금속 아티팩트 제거를, 딕셔너리 학습이라는 전통적 희소 표현 기법을 신경망의 각 층으로 풀어내는 deep unrolling으로 접근해 사전 정보를 명시적으로 유지합니다. 광음향 단층촬영 논문은 한 걸음 더 나아가, 조직마다 다른 음속과 시간에 따라 변하는 감쇠(damping)까지 반영한 파동방정식을 엄밀하게 유도한 뒤, 그 물리 모델 위에서 CNN이 안내하는 그래디언트-프리 수치 역산 절차를 제시합니다. 두 논문 모두 "데이터만 믿는 신경망"이 아니라 물리 모델을 재구성 파이프라인에 명시적으로 박아 넣는다는 공통점이 있습니다.</td>
+  <td>Medium<br><small>초록 있는 논문 1편(이론+수치 검증) + 제목 기반 1편, 최소 기준(2편)만 확보돼 근거는 다소 약함</small></td>
+  <td>감쇠 파동방정식의 damping term 정식화를 우리 랩의 산란·감쇠가 심한 매질 복원 문제(광음향/난류 매질)에 그대로 적용 가능한지 검토; DSDNet의 dictionary-as-network-layer 구조를 우리 CT 또는 X선 재구성 파이프라인의 아티팩트 제거 모듈에 이식 가능한지 1차 비교</td>
+</tr>
+<tr>
+  <td><strong>메타옵틱스가 통신·RF를 벗어나 적외선 촬상·센싱 하드웨어로 이동</strong></td>
+  <td>
+    <a href="https://doi.org/10.3390/photonics13080774" target=_blank>Refractive-Metalens Hybrid Design for Cooled MWIR Imaging System</a> <span class=pill>JNL · TIER A</span><br>
+    <a href="https://doi.org/10.1016/j.optlastec.2026.116218" target=_blank>High-Performance Multiresonant All-Dielectric Metasurface for Gas and Liquid Refractive-Index Sensing in the Mid-Infrared</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 저널에 걸린 메타표면 8편 중 6편은 RF 안테나·전자파 흡수체·복사냉각처럼 이미징과 무관한 응용이었지만, 나머지 2편은 실제 촬상·센싱 하드웨어를 겨냥합니다. 첫 번째 논문은 냉각형 중적외선(MWIR) 촬상 시스템에서 굴절 렌즈만으로 색수차를 보정하던 기존 방식 대신 메타렌즈를 결합해, 굴절 렌즈 개수를 8개에서 4개로, 전체 무게를 79% 줄이면서도 화각 126˚·F수 2 스펙에서 변조전달함수(MTF) 0.4 이상을 유지했습니다. 두 번째 논문은 같은 중적외선 대역에서 기체·액체의 굴절률을 감지하는 전유전체 메타표면입니다. 두 논문 모두 메타표면이 실험실 데모용 광학 소자를 넘어, 화각·F수·MTF 같은 실측 촬상계 스펙을 직접 갖춘 하드웨어로 옮겨가고 있다는 신호를 보여줍니다.</td>
+  <td>Low<br><small>2편뿐이지만 1편은 정량 스펙(렌즈 개수·무게·MTF)을 명시한 실측 설계라 신뢰도가 있음. 독립 검증은 아직 부족</small></td>
+  <td>Refractive-Metalens Hybrid의 achromatic 위상 정식화를 우리 메타옵틱스 촬상계(현재 굴절 렌즈 기반)의 색수차 보정 재설계에 적용 가능한지 시뮬레이션으로 1차 검토; 중적외선 굴절률 센싱 메타표면 스펙을 우리 랩의 가스/액체 감지 응용과 비교</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ 참고: Lensless/Coded Imaging(1편, 광섬유 도파관 산란 시뮬레이션으로 렌즈리스 이미징과 무관한 키워드 오탐), Light-Field/Novel Sensors(1편, Ge-Sb-Te 상변화 메모리 소재로 "neuromorphic" 키워드 우연매칭)는 오늘 독립 클러스터를 만들 만큼의 근거가 없습니다. Tomography/3D Imaging(26편)과 Virtual Staining/Pathology(18편)는 대부분 임상 진단·키워드 오탐(각각 임상 CT/PET/OCT 진단, "staining" 단어의 면역조직화학·비이미징 분야 우연매칭)이라 클러스터에서는 제외했습니다 — 아래 리스크 필터 참고.</small></p>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 없음 (2026-08-18 실행 시점 신규 제출 확인 불가, 어제 listing에 머묾)</li>
+  <li><strong>저널 전용</strong>: FP 기반 label-free virtual staining, TEM 가상 염색 CycleGAN, 전립선암 광학 바이오마커, 근접장/원거리 통합 홀로그래픽 메타표면, 홀로그래픽 데이터 저장, 광유도 복굴절 홀로그램 스위칭, CT 금속 아티팩트 deep unrolling, 광음향 단층촬영 CNN-guided 수치 역산, 냉각형 MWIR 메탈렌즈 하이브리드, 중적외선 굴절률 센싱 메타표면, sparse-scan ptychography</li>
+  <li><strong>공통 키워드</strong>: label-free, virtual staining, holography, metasurface, deep unrolling, ptychography</li>
+  <li><strong>특징</strong>: 오늘은 계산광학 코어 신호가 전부 저널에서만 나왔고, arXiv 쪽 방법론 논문은 하나도 없습니다. 저널 전용 목록이 곧 오늘의 전체 신호입니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. FP·TEM·전립선암 진단이 "화학 염색 없이 대비를 만드는" 문제를 각자 모달리티에서 풀다</h3>
+  <p>지금까지 조직·세포를 관찰하려면 대부분 화학 염색이나 형광 표지 같은 물리적 처리가 필요했고, 이 과정은 시약을 소모하고 때로는 샘플을 변형시켰습니다. 오늘 저널 세 편은 이 전제를 각자 다른 이미징 모달리티에서 흔듭니다. Fourier ptychography 논문은 조명 패턴을 태스크에 맞춰 프로그래밍 가능하게 만들어 label-free virtual staining을 겨냥했고, WAFMGAN은 TEM 이미지에 대해 저주파 전역 염색 전이와 후단 경계 보강을 분리한 2단계 CycleGAN 구조로 CycleGAN 대비 FID를 23% 낮췄습니다. 전립선암 논문은 화학 염색 자체를 건너뛰고 광학 신호를 바로 진단 바이오마커로 씁니다. 세 논문의 공통된 함의는, "가상 염색"이 이제 특정 현미경 하나의 기법이 아니라 여러 이미징 모달리티가 동시에 수렴하고 있는 문제 설정이라는 것입니다.</p>
+  <p class=conf-note>Confidence: Medium — 초록 있는 논문 1편(정량 지표 명시) + 제목 기반 2편, 서로 다른 저널 3개가 같은 방향을 지시</p>
+</div>
+
+<div class=ins>
+  <h3>2. 홀로그래피가 "촬영 방식 하나"에서 "디스플레이·저장·능동 소자"로 갈라지는 중</h3>
+  <p>근접장 나노프린팅과 원거리 홀로그래픽 디스플레이를 한 메타표면에 통합한 논문, 정보를 다차원으로 압축해 저장하는 홀로그래픽 데이터 저장 논문, 광유도 복굴절로 이미 기록된 홀로그램의 편광 응답을 스위칭 가능하게 만드는 논문까지, 오늘 저널 세 편은 홀로그래피의 위상 복원 원리를 각자 다른 최종 용도에 맞춰 재구성합니다. 이는 홀로그래피 연구가 "더 좋은 위상 영상을 찍는 방법"을 찾는 단계를 넘어, 이미 확립된 원리를 디스플레이·저장·능동 소자라는 서로 다른 응용의 제약에 맞춰 재설계하는 단계로 옮겨가고 있다는 신호입니다.</p>
+  <p class=conf-note>Confidence: Medium — 세 논문이 독립 저널에서 확인되나 초록이 공개된 논문은 1편뿐</p>
+</div>
+
+<div class=ins>
+  <h3>3. 물리 모델을 내장한 재구성이 CT·광음향으로 번지는 흐름</h3>
+  <p>DSDNet은 CT 금속 아티팩트 제거를 딕셔너리 학습이라는 전통 희소 표현 기법을 신경망 층으로 풀어내는 deep unrolling으로 접근하고, 광음향 단층촬영 논문은 조직별로 다른 음속과 시간에 따라 변하는 감쇠까지 반영한 파동방정식을 엄밀히 유도한 뒤 CNN이 안내하는 그래디언트-프리 수치 역산을 제시합니다. 두 논문 모두 데이터만 믿는 블랙박스 신경망이 아니라, 물리 모델(사전 정보·감쇠 파동방정식)을 재구성 파이프라인에 명시적으로 박아 넣는다는 공통점이 있습니다. 다만 오늘은 이 방향을 지지하는 논문이 두 편뿐이라 근거는 아직 넓지 않습니다.</p>
+  <p class=conf-note>Confidence: Medium — 초록 있는 논문 1편 + 제목 기반 1편, 최소 클러스터 기준(2편)만 확보</p>
+</div>
+
+<div class=ins>
+  <h3>4. 메타옵틱스가 통신·RF를 벗어나 적외선 촬상·센싱 하드웨어로 이동</h3>
+  <p>오늘 메타표면 8편 중 6편은 RF 안테나·전자파 흡수체·복사냉각처럼 이미징과 무관했지만, 2편은 실제 촬상·센싱 하드웨어를 겨냥합니다. 냉각형 MWIR 촬상계에서 굴절 렌즈 개수를 8개에서 4개로, 무게를 79% 줄이면서도 화각 126˚·F수 2에서 MTF 0.4 이상을 유지한 메탈렌즈 하이브리드 설계와, 같은 중적외선 대역에서 기체·액체 굴절률을 감지하는 전유전체 메타표면이 같이 나왔습니다. 메타표면 설계가 실험실 데모 소자에서 실측 촬상계 스펙(화각·F수·MTF)을 갖춘 하드웨어로 옮겨가고 있다는 뜻입니다.</p>
+  <p class=conf-note>Confidence: Low — 2편뿐이지만 1편은 정량 스펙을 명시한 실측 설계라 신뢰도가 있음. 독립 검증은 부족</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. Reference-guided hybrid-overlap 스캔 전략을 우리 FP 스캔 프로토콜에 적용</h3>
+  <p>고겹침 국소 스캔으로 얻은 신뢰도 높은 probe 추정치를 저겹침 광역 스캔의 ePIE probe 업데이트에 정규화 항으로 넣는 방식을 우리 Fourier ptychography 시스템에 이식해, 해상도 저하 없이 획득 속도를 높일 수 있는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>논문의 hybrid-overlap 스캔 패턴(고겹침 국소 + 저겹침 광역)을 우리 FP 스캔 소프트웨어에 맞춰 재구현</li>
+    <li>기존 균일 스캔 대비 획득 속도(2배 목표) 및 해상도(SSIM/PSNR) 비교</li>
+    <li>비교축: probe 재구성 정확도, sparse-scan artifact 발생 빈도</li>
+    <li>실패해도 남는 결과: 우리 FP 시스템에서 겹침률-해상도 트레이드오프 곡선</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. 감쇠 파동방정식 기반 CNN-guided 수치 역산을 산란매질 복원에 이식</h3>
+  <p>공간적으로 변하는 음속과 시간에 따라 변하는 damping term을 명시적으로 모델링한 뒤 CNN이 안내하는 gradient-free 수치 역산 절차를, 우리 랩의 산란·감쇠가 심한 매질 복원 문제(광음향 또는 난류 매질)에 같은 정식화가 적용 가능한지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>논문의 damped wave equation 정식화를 우리 forward model에 맞춰 재유도</li>
+    <li>기존 감쇠 무시 모델 대비 재구성 정확도(경계 측정값 기반) 비교</li>
+    <li>비교축: 감쇠 파라미터 추정 민감도, gradient-free 최적화 수렴 속도</li>
+    <li>실패해도 남는 결과: 우리 매질에서 damping term의 크기와 재구성 오차 간 상관관계</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. WAFMGAN의 frequency-aware 가상 염색 구조를 FP 기반 label-free virtual staining에 이식</h3>
+  <p>저주파 전역 염색 전이를 담당하는 Wavelet Mamba 블록과 후단 경계·텍스처 보강을 분리한 2단계 구조를, 우리 FP 파이프라인의 label-free virtual staining 출력 품질 개선에 적용 가능한지 검토합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>WAFMGAN의 2단계 구조(WAFM 블록 + FAGR 블록)를 우리 가상 염색 모델에 이식</li>
+    <li>기존 CycleGAN baseline 대비 FID/SSIM 비교</li>
+    <li>비교축: 저주파 전역 색조 일치도, 고주파 경계·텍스처 보존도</li>
+    <li>실패해도 남는 결과: 우리 FP 가상 염색 출력의 주파수 대역별 오차 분석</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(26편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:12%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:4%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:27%"></span></span><span class=n>7편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:31%"></span></span><span class=n>8편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:4%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>26편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:69%"></span></span><span class=n>18편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:19%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>27편</span></div>
+
+<p><small>⚠️ 참고: Tomography/3D Imaging 26편 중 대다수는 임상 CT/PET/OCT/MRI 진단·증례보고 저널이고, 계산광학 방법론과 직접 관련된 논문은 DSDNet·Photoacoustic Tomography 2편입니다. Virtual Staining/Pathology 18편 중 다수는 "staining"이 전기부하 예측·XRF 분석·치의학 등과 우연히 겹친 키워드 오탐이며, 실제 계산 이미징 가상 염색 관련 논문은 2~3편입니다. Meta-Optics/Diffractive 8편 중 6편은 RF 안테나·전자파 흡수체·복사냉각 응용으로 이미징과 무관합니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (3편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/advs.76871" target=_blank>Hardware-Attentive Programmable Fourier Ptychography Enables Task-Adaptive Label-Free Virtual Staining</a></strong> [JNL]<br>
+  왜 주요: FP 조명 하드웨어를 태스크에 맞춰 프로그래밍해 label-free virtual staining을 겨냥 — 랩 핵심 버킷과 응용 버킷의 직접 교차점
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/s26165168" target=_blank>Sparse-Scan Ptychography with Hybrid-Overlap Scanning and Reference-Guided Probe Updates</a></strong> [JNL · TIER A]<br>
+  왜 주요: 고겹침 국소 스캔의 probe 추정을 저겹침 광역 스캔에 정규화 항으로 이식해 획득 속도를 2배 이상 높임 — FP 스캔 프로토콜에 직접 참고 가능
+</div>
+
+<h3>Phase Imaging/Holography (7편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/1402-4896/ae9ada" target=_blank>Four-Channel Metasurface for Synergistic Near-Field Nanoprinting and Far-Field Holographic Display</a></strong> [JNL]<br>
+  왜 주요: 진폭-위상 결합 변조로 근접장 나노프린팅 1채널 + 편광다중화 원거리 홀로그래픽 3채널을 한 메타표면에 통합
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.605987" target=_blank>Multidimensional holographic data storage under the paraxial approximation condition based on deep learning</a></strong> [JNL]<br>
+  왜 주요: 홀로그래피를 이미지 재현이 아니라 다차원 정보 저장 매체로 사용 — 딥러닝 결합 저장 밀도 개선
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116211" target=_blank>Spin-selective holographic switching of grafted scalar and vector vortex beams via photoinduced birefringence</a></strong> [JNL]<br>
+  왜 주요: 광유도 복굴절로 이미 기록된 홀로그램의 편광 응답을 스위칭 가능하게 만듦 — 능동 홀로그래픽 소자
+</div>
+
+<h3>Meta-Optics/Diffractive (8편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/photonics13080774" target=_blank>Refractive-Metalens Hybrid Design for Cooled MWIR Imaging System</a></strong> [JNL · TIER A]<br>
+  왜 주요: 굴절 렌즈 8개→4개, 무게 79% 감소, 화각 126˚·F수 2에서 MTF 0.4 이상 유지 — 실측 촬상계 스펙을 갖춘 메타렌즈 하이브리드
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116218" target=_blank>High-Performance Multiresonant All-Dielectric Metasurface for Gas and Liquid Refractive-Index Sensing in the Mid-Infrared</a></strong> [JNL]<br>
+  왜 주요: 중적외선 대역 기체·액체 굴절률 센싱 — 나머지 6편은 RF 안테나·흡수체로 이미징과 무관
+</div>
+
+<h3>Tomography/3D Imaging (26편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.patcog.2026.114664" target=_blank>DSDNet: Dynamic Structured Dictionary-based Deep Unrolling Network for CT metal artifact reduction</a></strong> [JNL]<br>
+  왜 주요: 딕셔너리 학습을 신경망 층으로 풀어내는 deep unrolling으로 CT 금속 아티팩트 제거 — 나머지 24편은 대부분 임상 진단 저널
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1137/25m1824215" target=_blank>Photoacoustic Tomography with Time-Dependent Damping: Theoretical and a CNN-Guided Numerical Inversion Procedure</a></strong> [JNL · TIER A]<br>
+  왜 주요: 감쇠 파동방정식을 엄밀히 유도한 뒤 CNN이 안내하는 gradient-free 수치 역산 — 오늘의 must-read
+</div>
+
+<h3>Virtual Staining/Pathology (18편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1111/jmi.70155" target=_blank>WAFMGAN: A frequency-aware CycleGAN for structure-consistent virtual staining of transmission electron microscopy images</a></strong> [JNL]<br>
+  왜 주요: TEM 이미지 비지도 가상 염색에서 CycleGAN 대비 FID 23% 개선, SSIM 0.98 — 정량 지표가 명시된 몇 안 되는 논문
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1186/s10020-026-01605-2" target=_blank>Label-free optical biomarker for prostate cancer diagnosis</a></strong> [JNL]<br>
+  왜 주요: 화학 염색 없이 광학 신호를 바로 진단 바이오마커로 사용 — 나머지 16편은 대부분 "staining" 키워드 오탐
+</div>
+
+<h3>Reconstruction/Inverse Problems (5편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/optcon.607190" target=_blank>Simulation-based computational imaging for a compact catadioptric singlet with full-field PSF modeling</a></strong> [JNL]<br>
+  왜 주요: 컴팩트 반사굴절 단일 렌즈계의 전체 시야 PSF를 물리 기반으로 모델링 — 나머지 4편은 일반 PDE 솔버용 PINN 논문으로 이미징과는 간접적
+</div>
+
+<h3>Deep Learning Methods — 관련 1편 (27편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tmi.2026.3724112" target=_blank>Motion Artifact-Aware Self-Supervised Representation Learning for 3D Brain MRI Motion Artifact Reduction</a></strong> [JNL]<br>
+  왜 주요: 3D 뇌 MRI 모션 아티팩트를 자기지도학습으로 줄이는 접근 — 초록 미공개, 제목 기반 판단
+</div>
+
+<hr>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Sparse-Scan Ptychography with Hybrid-Overlap Scanning and Reference-Guided Probe Updates — Sensors</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> ptychography는 겹침이 많은 스캔일수록 재구성이 안정적이지만, 그만큼 촬영 시간이 늘어나는 근본적인 트레이드오프가 있었습니다. 이 논문은 스캔 영역을 고겹침 국소 영역과 저겹침 광역 영역으로 나눠, 국소 영역에서 얻은 신뢰도 높은 probe 추정치를 광역 영역의 ePIE probe 업데이트에 정규화 항으로 넣는 하이브리드 전략을 제안합니다. 우리 랩의 FP 파이프라인에도 스캔 프로토콜 수준에서 바로 적용해볼 수 있는 아이디어입니다.</p>
+  <p><strong>핵심:</strong> 저겹침 영역에서 물체 오차가 probe 업데이트로 전이되며 생기는 크로스토크·아티팩트 문제를, 고겹침 국소 스캔에서 얻은 probe 추정치를 quadratic regularization term으로 저겹침 영역 probe 업데이트에 안정화 사전으로 넣어 해결했습니다. 수치 시뮬레이션과 연X선 ptychography 실험 양쪽에서, 해상도 저하 없이 획득 효율을 최소 2배 높였습니다.</p>
+  <p><strong>주의:</strong> 연X선(soft X-ray) 환경에서의 검증이라, 우리 가시광/근적외선 FP 세팅에서 같은 정규화 강도가 그대로 통할지는 재현 실험이 필요합니다. 고겹침 국소 영역을 얼마나 넓게 잡아야 하는지에 대한 기준은 본문 확인이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Photoacoustic Tomography with Time-Dependent Damping: Theoretical and a CNN-Guided Numerical Inversion Procedure — SIAM Journal on Imaging Sciences</h3>
+  <div class=tag>[방법전환] [해부분석]</div>
+  <p><strong>왜 A급인가:</strong> 광음향 단층촬영(PAT)은 생체 조직의 강한 음향 감쇠 때문에 신호가 크게 왜곡되는데, 기존 방법 다수는 이 감쇠를 단순화하거나 무시했습니다. 이 논문은 공간적으로 변하는 음속과 시간에 따라 변하는 damping term을 포함한 파동방정식으로 PAT를 정식화하고, 경계 측정값으로부터 초기 압력이 유일하게 결정된다는 것을 조화확장(harmonic extension)으로 증명한 뒤, Pontryagin 최대 원리에 기반한 gradient-free 수치 역산법을 CNN으로 안내하는 방식을 제시합니다. 이론적 엄밀성과 실용적 수치해를 함께 갖췄다는 점에서 우리 랩의 산란매질 복원 문제에도 참고할 가치가 있습니다.</p>
+  <p><strong>핵심:</strong> 상수 감쇠 조건에서는 디리클레 고유함수 전개로 초기 압력의 명시적 급수 재구성 공식을 유도했고, 일반적인 시간 의존 감쇠에서는 CNN이 안내하는 gradient-free 수치 방법으로 강건하고 계산적으로 실현 가능한 역산을 제공합니다.</p>
+  <p><strong>주의:</strong> 이론 증명은 특정 감쇠 모델(harmonic extension, energy decay 가정)에 의존하므로, 우리 매질의 감쇠 특성이 이 가정을 만족하는지 먼저 확인해야 합니다. CNN이 정확히 어떤 역할로 수치 역산을 "안내"하는지 구체적인 아키텍처는 abstract만으로는 확인할 수 없습니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] arXiv 5개 카테고리가 모두 실행 시점에 어제(8/17) listing에 머물러 있어 오늘 신호는 전량 저널 데이터입니다. 평소 대비 정보량이 크게 줄었습니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology 18건 중 다수는 "staining"이라는 키워드가 전기부하 예측, XRF 분석, 치의학 등과 우연히 겹친 오탐이며, 실제 계산 이미징 관련 가상 염색 논문은 2~3건입니다.</p>
+  <p>[Dataset risk] Tomography/3D Imaging 26건 대부분은 임상 CT/PET/OCT/MRI 진단·증례보고 저널로, 계산광학 방법론과 직접 관련된 논문은 2건뿐입니다. Meta-Optics/Diffractive 8건 중 6건도 RF 안테나·흡수체·복사냉각 응용으로 이미징과 무관합니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] Hardware-Attentive Programmable FP, 전립선암 label-free 바이오마커, 홀로그래픽 데이터 저장, 광유도 복굴절 스위칭, DSDNet, 중적외선 굴절률 센싱 메타표면: Crossref 초록이 제공되지 않아 제목과 저널명만으로 판단했습니다. 본문 확인 전 클러스터 배치가 부정확할 수 있습니다.</p>
+  <p>[Baseline risk] WAFMGAN의 정량 비교는 CycleGAN 계열 baseline에 한정돼 있어, 최신 diffusion 기반 virtual staining 방법과의 비교는 본문 확인이 필요합니다.</p>
+  <p>[Claim risk] Refractive-Metalens Hybrid Design의 79% 무게 감소·MTF 0.4 스펙은 시뮬레이션/설계 단계 수치로 보이며, 실물 제작·측정 검증 여부는 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>RF 안테나·전자파 흡수체 메타표면 6편</strong>(Quad-Band Absorber, VO2 Terahertz Metasurface, Photothermal/Superhydrophobic Metasurface 등) — 메타표면 키워드로 걸렸으나 통신·복사냉각 응용으로 이미징 ROI와 거리가 있음.</li>
+    <li><strong>임상 CT/PET/OCT/MRI 진단·증례보고 다수</strong>(갑상선 우연종, 전립선 종양, 망막 질환 등) — 임상 진단 목적, 계산광학 방법론 기여 없음.</li>
+    <li><strong>"staining" 키워드 오탐 다수</strong>(전기부하 예측, XRF 분석, 치의학 논문 등) — 계산 이미징 가상 염색과 무관.</li>
+    <li><strong>PINN 일반 PDE 솔버 3편</strong>(반도체 진동 안정성, boundary layer, curvature-aware 최적화) — 이미징이 아닌 일반 물리 시뮬레이션 맥락이라 ROI와의 연결이 간접적.</li>
+    <li><strong>Pair distribution analysis of metallic glasses</strong> [JNL] — "diffraction" 키워드로 Fourier Ptychography 버킷에 걸렸으나 실제로는 X선/전자 회절 기반 소재 특성 분석으로 계산 이미징 방법론과 무관.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy — 관련 2편 (3편 중 1편은 소재 특성 분석으로 제외)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/advs.76871" target=_blank>Hardware-Attentive Programmable Fourier Ptychography Enables Task-Adaptive Label-Free Virtual Staining</a></strong> <span class=pill>JNL</span><br>
+  문제: 화학 염색 없이 조직 대비를 얻는 label-free 이미징 / 방법: 태스크에 맞춰 조명 패턴을 바꾸는 programmable FP 하드웨어 / 의미: FP와 virtual staining 두 버킷의 직접 교차점 / 주의: 초록 미공개, 본문 확인 필요 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/s26165168" target=_blank>Sparse-Scan Ptychography with Hybrid-Overlap Scanning and Reference-Guided Probe Updates</a></strong> <span class=pill>JNL</span><br>
+  문제: 저겹침 스캔에서 물체 오차가 probe 업데이트로 전이되는 크로스토크 / 방법: 고겹침 국소 스캔의 probe 추정을 저겹침 영역에 정규화 사전으로 이식 / 의미: 획득 속도 2배, 해상도 유지 / 우선순위: Must-read
+</div>
+
+<h3>Phase Imaging/Holography — 관련 3편 (7편 중 4편은 음향 홀로그래피·비광학 분야로 제외)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/1402-4896/ae9ada" target=_blank>Four-Channel Metasurface for Synergistic Near-Field Nanoprinting and Far-Field Holographic Display</a></strong> <span class=pill>JNL</span><br>
+  문제: 근접장 나노프린팅과 원거리 홀로그래픽 채널의 독립적 통합 한계 / 방법: 진폭-위상 결합 변조 기반 4채널 메타표면 / 의미: 다채널 홀로그래픽 디스플레이 소자 설계 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.605987" target=_blank>Multidimensional holographic data storage under the paraxial approximation condition based on deep learning</a></strong> <span class=pill>JNL</span><br>
+  문제: 홀로그래픽 매체의 정보 저장 밀도 한계 / 방법: 파라시얼 근사 조건 + 딥러닝 기반 다차원 저장 / 의미: 홀로그래피를 촬영이 아닌 저장 매체로 사용 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116211" target=_blank>Spin-selective holographic switching of grafted scalar and vector vortex beams via photoinduced birefringence</a></strong> <span class=pill>JNL</span><br>
+  문제: 고정된 홀로그램의 편광 응답을 사후에 바꿀 수 없는 한계 / 방법: 광유도 복굴절 기반 스핀-선택적 스위칭 / 의미: 재구성 가능한 능동 홀로그래픽 소자 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+
+<h3>Meta-Optics/Diffractive — 관련 2편 (8편 중 6편은 RF/열관리 응용으로 제외)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/photonics13080774" target=_blank>Refractive-Metalens Hybrid Design for Cooled MWIR Imaging System</a></strong> <span class=pill>JNL</span><br>
+  문제: 냉각형 MWIR 촬상계의 색수차 보정과 부피·무게 트레이드오프 / 방법: 광대역 achromatic 위상 정식화 기반 굴절-메타렌즈 하이브리드 / 의미: 렌즈 개수 8→4, 무게 79% 감소, 실측 스펙 확보 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116218" target=_blank>High-Performance Multiresonant All-Dielectric Metasurface for Gas and Liquid Refractive-Index Sensing in the Mid-Infrared</a></strong> <span class=pill>JNL</span><br>
+  문제: 중적외선 대역 기체·액체 굴절률의 고감도 검출 / 방법: 다중공진 전유전체 메타표면 / 의미: 메타옵틱스 기반 화학·환경 센싱 하드웨어 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging — 관련 2편 (26편 중 24편은 임상 진단 저널로 제외)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.patcog.2026.114664" target=_blank>DSDNet: Dynamic Structured Dictionary-based Deep Unrolling Network for computed tomography metal artifact reduction</a></strong> <span class=pill>JNL</span><br>
+  문제: CT 금속 아티팩트로 인한 재구성 화질 저하 / 방법: 딕셔너리 학습을 신경망 층으로 풀어낸 deep unrolling / 의미: 사전 정보를 명시적으로 유지하는 재구성 구조 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1137/25m1824215" target=_blank>Photoacoustic Tomography with Time-Dependent Damping: Theoretical and a Convolutional Neural Network-Guided Numerical Inversion Procedure</a></strong> <span class=pill>JNL</span><br>
+  문제: 생체 조직의 강한 음향 감쇠로 인한 PAT 신호 왜곡 / 방법: 시간 의존 감쇠 파동방정식 + CNN-guided gradient-free 수치 역산 / 의미: 이론적 유일성 증명과 실용적 수치해를 함께 제공 / 우선순위: Must-read
+</div>
+
+<h3>Virtual Staining/Pathology — 관련 2편 (18편 중 16편은 키워드 오탐으로 제외)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1111/jmi.70155" target=_blank>WAFMGAN: A frequency-aware CycleGAN for structure-consistent virtual staining of transmission electron microscopy images</a></strong> <span class=pill>JNL</span><br>
+  문제: TEM 비지도 가상 염색의 구조 일관성 부족 / 방법: Wavelet 기반 저주파 전역 전이(WAFM) + 후단 경계 보강(FAGR) 2단계 CycleGAN / 근거: CycleGAN 대비 FID 23%↓, KID 47.3%↓, SSIM 0.98 / 의미: 정량 지표가 명시된 가상 염색 방법론 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1186/s10020-026-01605-2" target=_blank>Label-free optical biomarker for prostate cancer diagnosis</a></strong> <span class=pill>JNL</span><br>
+  문제: 화학 염색에 의존하는 전립선암 진단의 시약·시간 비용 / 방법: 광학 신호 기반 label-free 바이오마커 / 의미: 염색 없는 진단 파이프라인의 직접 사례 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+
+<h3>Reconstruction/Inverse Problems (5편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/optcon.607190" target=_blank>Simulation-based computational imaging for a compact catadioptric singlet with full-field PSF modeling</a></strong> <span class=pill>JNL</span><br>
+  문제: 컴팩트 반사굴절 광학계의 전체 시야 성능 예측 / 방법: 물리 기반 full-field PSF 시뮬레이션 / 의미: 계산 이미징 시스템 설계 단계의 forward model 참고 / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+
+<h3>Deep Learning Methods — 관련 1편 (27편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tmi.2026.3724112" target=_blank>Motion Artifact-Aware Self-Supervised Representation Learning for 3D Brain MRI Motion Artifact Reduction</a></strong> <span class=pill>JNL</span><br>
+  문제: 3D 뇌 MRI 모션 아티팩트로 인한 진단 정확도 저하 / 방법: 모션 아티팩트를 인식하는 자기지도 표현 학습 / 의미: 라벨 없는 아티팩트 저감 파이프라인 / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://doi.org/10.3390/s26165168" target=_blank>Sparse-Scan Ptychography with Hybrid-Overlap Scanning and Reference-Guided Probe Updates — Sensors</a></li>
+  <li><a href="https://doi.org/10.1137/25m1824215" target=_blank>Photoacoustic Tomography with Time-Dependent Damping — SIAM Journal on Imaging Sciences</a></li>
+  <li><a href="https://doi.org/10.1002/advs.76871" target=_blank>Hardware-Attentive Programmable Fourier Ptychography Enables Task-Adaptive Label-Free Virtual Staining — Advanced Science</a></li>
+  <li><a href="https://doi.org/10.1111/jmi.70155" target=_blank>WAFMGAN — Journal of Microscopy</a></li>
+  <li><a href="https://doi.org/10.1186/s10020-026-01605-2" target=_blank>Label-free optical biomarker for prostate cancer diagnosis — Molecular Medicine</a></li>
+  <li><a href="https://doi.org/10.1088/1402-4896/ae9ada" target=_blank>Four-Channel Metasurface for Synergistic Near-Field Nanoprinting and Far-Field Holographic Display — Physica Scripta</a></li>
+  <li><a href="https://doi.org/10.1364/oe.605987" target=_blank>Multidimensional holographic data storage — Optics Express</a></li>
+  <li><a href="https://doi.org/10.1016/j.optlastec.2026.116211" target=_blank>Spin-selective holographic switching — Optics & Laser Technology</a></li>
+  <li><a href="https://doi.org/10.1016/j.patcog.2026.114664" target=_blank>DSDNet: Deep Unrolling Network for CT metal artifact reduction — Pattern Recognition</a></li>
+  <li><a href="https://doi.org/10.3390/photonics13080774" target=_blank>Refractive-Metalens Hybrid Design for Cooled MWIR Imaging System — Photonics</a></li>
+  <li><a href="https://doi.org/10.1016/j.optlastec.2026.116218" target=_blank>High-Performance Multiresonant All-Dielectric Metasurface — Optics & Laser Technology</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+  <p>📚 입력: journal-only 2026-08-18 (잠정본) · 스캔 425건, ROI 96건 (22.6%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 2026-08-17 listing에 머묾</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

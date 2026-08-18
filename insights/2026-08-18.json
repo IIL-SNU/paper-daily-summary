@@ -1,0 +1,103 @@
+{
+  "date": "2026-08-18",
+  "insights": [
+    {
+      "title": "FP·TEM·전립선암 진단이 \"화학 염색 없이 대비를 만드는\" 문제를 각자 모달리티에서 풀다",
+      "claim": "Fourier ptychography 기반 label-free virtual staining, TEM 이미지용 frequency-aware CycleGAN 가상 염색, 광학 신호만으로 만드는 전립선암 바이오마커까지, 오늘 저널 세 편이 서로 다른 이미징 모달리티에서 같은 문제(물리적 염색·시약 없이 진단용 대비를 얻는 것)를 각자 방식으로 풀었다.",
+      "papers": [
+        {
+          "title": "Hardware-Attentive Programmable Fourier Ptychography Enables Task-Adaptive Label-Free Virtual Staining",
+          "arxiv": "https://doi.org/10.1002/advs.76871",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "WAFMGAN: A frequency-aware CycleGAN for structure-consistent virtual staining of transmission electron microscopy images",
+          "arxiv": "https://doi.org/10.1111/jmi.70155",
+          "importance_tags": ["[방법전환]", "[표준후보]"]
+        },
+        {
+          "title": "Label-free optical biomarker for prostate cancer diagnosis",
+          "arxiv": "https://doi.org/10.1186/s10020-026-01605-2",
+          "importance_tags": ["[문제정의]"]
+        }
+      ]
+    },
+    {
+      "title": "홀로그래피가 \"위상 영상을 찍는 방법\"을 넘어 디스플레이·데이터 저장·능동 소자로 갈라짐",
+      "claim": "근접장 나노프린팅과 원거리 홀로그래픽 디스플레이를 한 메타표면에 통합한 논문, 파라미터 저장 밀도를 노리는 홀로그래픽 데이터 저장 논문, 광유도 복굴절로 홀로그램 자체를 스위칭하는 논문까지, 홀로그래피 원리가 촬영이 아니라 각자 다른 최종 용도에 맞춰 재설계되고 있다.",
+      "papers": [
+        {
+          "title": "Four-Channel Metasurface for Synergistic Near-Field Nanoprinting Image and Far-Field Holographic Display",
+          "arxiv": "https://doi.org/10.1088/1402-4896/ae9ada",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Multidimensional holographic data storage under the paraxial approximation condition based on deep learning",
+          "arxiv": "https://doi.org/10.1364/oe.605987",
+          "importance_tags": ["[스케일업]"]
+        },
+        {
+          "title": "Spin-selective holographic switching of grafted scalar and vector vortex beams via photoinduced birefringence",
+          "arxiv": "https://doi.org/10.1016/j.optlastec.2026.116211",
+          "importance_tags": ["[방법전환]"]
+        }
+      ]
+    },
+    {
+      "title": "물리 모델을 내장한 재구성 신경망·수치해석이 CT·광음향으로 번짐",
+      "claim": "CT 금속 아티팩트 제거를 dictionary learning을 신경망 층으로 풀어낸 deep unrolling으로 접근한 DSDNet과, 감쇠가 있는 파동방정식을 엄밀히 유도한 뒤 CNN이 안내하는 수치 역산을 제시한 광음향 단층촬영 논문이 같은 날 나왔다. 두 논문 모두 블랙박스 신경망이 아니라 물리 모델(사전 정보·감쇠 파동방정식)을 재구성 파이프라인에 명시적으로 박아 넣는 접근이라는 공통점이 있다.",
+      "papers": [
+        {
+          "title": "DSDNet: Dynamic Structured Dictionary-based Deep Unrolling Network for computed tomography metal artifact reduction",
+          "arxiv": "https://doi.org/10.1016/j.patcog.2026.114664",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Photoacoustic Tomography with Time-Dependent Damping: Theoretical and a Convolutional Neural Network-Guided Numerical Inversion Procedure",
+          "arxiv": "https://doi.org/10.1137/25m1824215",
+          "importance_tags": ["[방법전환]", "[해부분석]"]
+        }
+      ]
+    },
+    {
+      "title": "메타옵틱스가 통신·RF를 벗어나 적외선 촬상·센싱 하드웨어로 이동",
+      "claim": "오늘 메타표면 8편 중 6편은 RF 안테나·전자파 흡수체·복사냉각처럼 이미징과 무관했지만, 2편은 실제 촬상·센싱 하드웨어였다. 굴절 렌즈 개수를 8개에서 4개로 줄이고 무게를 79% 낮추면서 냉각형 MWIR 촬상계의 색수차를 보정한 설계와, 중적외선 대역에서 기체·액체 굴절률을 감지하는 전유전체 메타표면이 같이 나오면서, 메타표면이 실험실 데모 소자에서 실측 촬상계 스펙(화각·F수·MTF)을 갖춘 하드웨어로 옮겨가는 신호를 보였다.",
+      "papers": [
+        {
+          "title": "Refractive-Metalens Hybrid Design for Cooled MWIR Imaging System",
+          "arxiv": "https://doi.org/10.3390/photonics13080774",
+          "importance_tags": ["[실사용전환]", "[스케일업]"]
+        },
+        {
+          "title": "High-Performance Multiresonant All-Dielectric metasurface for gas and liquid Refractive-Index sensing in the Mid-Infrared",
+          "arxiv": "https://doi.org/10.1016/j.optlastec.2026.116218",
+          "importance_tags": ["[실사용전환]"]
+        }
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "Reference-guided hybrid-overlap 스캔 전략을 우리 FP 스캔 프로토콜에 적용",
+      "claim": "고겹침 국소 스캔으로 얻은 신뢰도 높은 probe 추정치를 저겹침 광역 스캔의 ePIE probe 업데이트에 정규화 항으로 넣는 방식을 우리 Fourier ptychography 시스템에 이식해, 해상도 저하 없이 획득 속도를 높일 수 있는지 검증한다.",
+      "supporting_papers": [
+        {"title": "Sparse-Scan Ptychography with Hybrid-Overlap Scanning and Reference-Guided Probe Updates", "arxiv": "https://doi.org/10.3390/s26165168"}
+      ]
+    },
+    {
+      "title": "감쇠 파동방정식 기반 CNN-guided 수치 역산을 우리 산란매질 복원 파이프라인에 이식",
+      "claim": "공간적으로 변하는 음속과 시간에 따라 변하는 damping term을 명시적으로 모델링한 뒤 CNN이 안내하는 gradient-free 수치 역산 절차를 검토해, 우리 랩의 산란·감쇠가 심한 매질 복원 문제에 같은 정식화가 적용 가능한지 확인한다.",
+      "supporting_papers": [
+        {"title": "Photoacoustic Tomography with Time-Dependent Damping: Theoretical and a Convolutional Neural Network-Guided Numerical Inversion Procedure", "arxiv": "https://doi.org/10.1137/25m1824215"}
+      ]
+    },
+    {
+      "title": "WAFMGAN의 frequency-aware 가상 염색 구조를 FP 기반 label-free virtual staining에 이식",
+      "claim": "저주파 전역 염색 전이를 담당하는 Wavelet Mamba 블록과 후단 경계·텍스처 보강을 분리한 2단계 구조를, 우리 FP 파이프라인의 label-free virtual staining 출력 품질 개선에 적용 가능한지 검토한다.",
+      "supporting_papers": [
+        {"title": "WAFMGAN: A frequency-aware CycleGAN for structure-consistent virtual staining of transmission electron microscopy images", "arxiv": "https://doi.org/10.1111/jmi.70155"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}
