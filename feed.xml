@@ -6,14 +6,14 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 18 Aug 2026 11:33:36 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 13:28:49 +0900</lastBuildDate>
     <ttl>720</ttl>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-08-18 (화요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-08-18.html</link>
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-18.html</guid>
       <pubDate>Tue, 18 Aug 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘 브리핑은 어제까지 arXiv가 만들던 하루 정보량의 대부분을 저널이 대신 채운 날입니다. 어제(8/17, 월) daily에 따르면 arXiv 쪽 핵심 신호는 의료 영상 판독에 언어·VLM·LLM을 판독 과정 깊숙이 결합하는 4편(CT·MR 분할, 초음파, 병리 WSI, PET)이었고, 계산광학 코어 5개 버킷은 지난주 weekly(2026-33)가 예측한 대로 실질 신호 기준 가뭄이 2주 연속 이어지고 있었습니다(Lensless 0편, Phase 1편). 오늘은 그 arXiv 신호 자체가 통째로 사라졌는데, 흥미롭게도 저널 쪽에서는 정반대로 계산광학 코어 클러스터가 세 개나 나오면서 최근 2주의 가뭄이 저널 쪽에서는 일시적으로 해갈된 모습입니다.]]></description>
+      <description><![CDATA[오늘은 어제(8/18 실행 시점) journal-only로 낸 잠정본을 arXiv 포함 완전판으로 업그레이드하는 날입니다. cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 2026-08-18 listing이 정상적으로 올라와 있는 것을 재확인했고, new+cross 기준 1192편이 새로 잡혔습니다. 여기에 어제와 마찬가지로 Crossref/OpenAlex 저널 426편을 더해 arXiv+저널 통합 스캔 1357건(cross-listing 중복 제거 후) 중 424건(31.2%)이 랩 ROI 버킷에 배정됐습니다.]]></description>
     </item>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-08-17 (Week 33)</title>

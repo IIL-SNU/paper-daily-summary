@@ -1,37 +1,37 @@
 {
   "date": "2026-08-18",
   "source_listing_date": "2026-08-18",
-  "source_mode": "journal-only",
-  "note": "cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 실행 시점(2026-08-18 02:22 UTC)에 'Monday, 17 August 2026' listing에 머물러 있어(연휴 없음, 단순 갱신 지연으로 추정) arXiv 신규 제출을 확인할 수 없었다. Crossref/OpenAlex 저널만으로 만든 잠정본. /pastweek에 2026-08-18 섹션이 뜨면 다음 실행에서 arXiv 포함 완전판으로 업그레이드된다. 저널 425건 스캔, ROI 96건(22.6%) 선정. 오늘 뚜렷한 신호는 (1) Fourier ptychography·TEM·전립선암 광학 바이오마커가 화학 염색 없이 대비를 얻는 문제를 각자 모달리티에서 다룬 것, (2) 홀로그래피가 근접장 나노프린팅+원거리 디스플레이, 데이터 저장, 광유도 복굴절 스위칭으로 갈라진 것, (3) CT 금속 아티팩트 deep unrolling과 광음향 단층촬영 CNN-guided 수치 역산이 물리 모델을 재구성 신경망에 내장하는 흐름을 이은 것, (4) 메타표면이 RF/안테나 응용을 벗어나 실측 스펙을 갖춘 냉각형 MWIR 촬상 하드웨어로 이동한 것. Tomography/3D Imaging(26건)과 Virtual Staining/Pathology(18건)는 대부분 임상 진단·키워드 오탐이라 클러스터·부록에서는 실제 계산광학·계산이미징 신호만 추렸다.",
+  "source_mode": "new",
+  "note": "어제(8/18 실행 시점) cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리가 모두 전날(8/17) listing에 머물러 있어 저널만으로 journal-only 잠정본을 냈으나, 오늘 재확인 결과 5개 카테고리 모두 정상적으로 2026-08-18 listing이 올라와 있어 arXiv를 포함한 완전판으로 교체 발행한다(journal-only 업그레이드). arXiv new+cross 1192편 + Crossref/OpenAlex 저널 426편을 합쳐 통합 스캔(cross-listing dedup) 1357건 중 424건(31.2%)을 ROI 버킷에 배정했다. 오늘 가장 뚜렷한 신호는 (1) 3D Gaussian Splatting(3DGS)이 그래픽스 렌더링 표현을 넘어 물리 시뮬레이션, 로봇 인식/기억, sparse-view CT 재구성, 이벤트 카메라 기반 SLAM까지 14편 가까이 퍼진 것 — 특히 TR-GS·Shared-Structure 4D Spectral Gaussian의 sparse-view CT 재구성 2편은 지난주 weekly(2026-33) 예측('3DGS 로버스트니스 축이 의료·현미경 재구성의 물리적 아티팩트 보정으로 수렴') 적중 사례, (2) 디지털 병리(WSI) 분석이 그래프 조건화(Path2ST)·반사실 추론(DeCo-MIL)·foundation model(CytoFormer)·상태공간모델(KHiM-Mamba)로 동시다발 분화, (3) 어제 저널이 보여준 '화학 염색·조영제 없이 대비 만들기' 흐름이 contrast-free 초음파 논문으로 한 번 더 확인, (4) 홀로그래피·메타옵틱스 응용 다각화는 어제와 동일하게 지속, (5) 이벤트 카메라가 강화학습 제어(FLEET)·SLAM(MotionGS-SLAM)으로 확장.",
   "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 0,
-      "cs.CV": 0,
-      "cs.AI": 0,
-      "eess.IV": 0,
-      "eess.SP": 0
+      "cs.LG": 374,
+      "cs.CV": 269,
+      "cs.AI": 465,
+      "eess.IV": 20,
+      "eess.SP": 64
     },
     "scope": "new+cross; replacements excluded",
-    "journal_count": 425
+    "journal_count": 426
   },
   "totals": {
-    "total_scanned": 425,
-    "selected": 96
+    "total_scanned": 1357,
+    "selected": 424
   },
   "classified": {
-    "total_scanned": 425,
-    "selected": 96,
+    "total_scanned": 1357,
+    "selected": 424,
     "by_bucket": {
-      "Fourier Ptychography/Microscopy": 3,
-      "Lensless/Coded Imaging": 1,
-      "Phase Imaging/Holography": 7,
+      "Fourier Ptychography/Microscopy": 5,
+      "Lensless/Coded Imaging": 3,
+      "Phase Imaging/Holography": 8,
       "Meta-Optics/Diffractive": 8,
-      "Light-Field/Novel Sensors": 1,
-      "Tomography/3D Imaging": 26,
-      "Virtual Staining/Pathology": 18,
-      "Reconstruction/Inverse Problems": 5,
-      "Deep Learning Methods": 27
+      "Light-Field/Novel Sensors": 3,
+      "Tomography/3D Imaging": 51,
+      "Virtual Staining/Pathology": 52,
+      "Reconstruction/Inverse Problems": 47,
+      "Deep Learning Methods": 247
     }
   },
-  "daily_thesis": "오늘은 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 다섯 카테고리 모두 실행 시점에 어제(8/17) listing에 머물러 있어 저널만으로 만든 잠정본입니다. 그런데 최근 2주간 이어지던 계산광학 코어의 가뭄과 다르게, 저널 쪽에서는 뚜렷한 신호 세 갈래가 동시에 나왔습니다. Fourier ptychography·TEM·전립선암 광학 바이오마커가 화학 염색 없이 대비를 얻는 문제를 각자 모달리티에서 풀었고, 홀로그래피는 촬영을 넘어 디스플레이·데이터 저장·능동 소자로 갈라졌으며, 메타표면은 통신·RF 응용을 벗어나 실제 촬상계 스펙(화각·F수·무게)을 갖춘 적외선 이미징 하드웨어로 옮겨갔습니다. arXiv가 빠진 날이라 전체 정보량은 적지만, 저널만 놓고 보면 계산광학 코어에 오랜만에 좋은 하루였습니다."
+  "daily_thesis": "오늘은 어제 저널만으로 냈던 journal-only 잠정본을 arXiv 포함 완전판으로 교체 발행하는 날입니다. arXiv가 돌아오면서 가장 큰 신호는 3D Gaussian Splatting(3DGS)이 그래픽스 렌더링용 표현을 넘어 로봇 인식, sparse-view CT 재구성, 이벤트 카메라 기반 SLAM까지 열네 편 가까이 퍼진 것입니다 — 이는 지난주 weekly가 예측한 '3DGS 로버스트니스 축이 의료·현미경 재구성으로 좁혀진다'는 예상이 실제로 맞아떨어진 사례이기도 합니다. 여기에 어제 저널이 보여준 '화학 염색 없이 대비를 만드는' 흐름이 오늘 contrast-free 초음파 논문으로 한 번 더 확인됐고, 디지털 병리(WSI) 분석이 그래프 기반 다중 인스턴스 학습·강화학습·상태공간모델·foundation model로 동시에 갈라지는 새 흐름도 나타났습니다."
 }

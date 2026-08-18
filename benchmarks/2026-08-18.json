@@ -1,4 +1,45 @@
 {
   "date": "2026-08-18",
-  "results": []
+  "results": [
+    {
+      "benchmark": "VLABench Track1/Track6",
+      "metric": "success rate delta vs pi0-FAST",
+      "value": 6.0,
+      "value_str": "+5.2% (Track1) / +6.0% (Track6) vs pi0-FAST",
+      "paper": "https://arxiv.org/abs/2608.14986",
+      "paper_title": "GaussMemory: Task-Driven 3D Gaussian Scene Memory for Long-Horizon Robotic Manipulation"
+    },
+    {
+      "benchmark": "Sparse-view spectral CT reconstruction (6 datasets, 50 views)",
+      "metric": "PSNR",
+      "value": 36.61,
+      "value_str": "35.56 dB -> 36.61 dB vs strongest Gaussian baseline",
+      "paper": "https://arxiv.org/abs/2608.16463",
+      "paper_title": "Shared-Structure 4D Spectral Gaussian Representation for Sparse-View Spectral CT Reconstruction"
+    },
+    {
+      "benchmark": "Prostate mpMRI sequence completion (10 tasks)",
+      "metric": "SSIM",
+      "value": 0.818,
+      "value_str": "0.818 (MSCNet) vs 0.798 (strongest task-matched comparator)",
+      "paper": "https://arxiv.org/abs/2608.16233",
+      "paper_title": "A cross-modal generative model for incomplete and degraded prostate MRI with multicentre clinical validation"
+    },
+    {
+      "benchmark": "Histopathology cell classification (16 organs, Xenium-paired H&E)",
+      "metric": "macro-F1",
+      "value": 0.78,
+      "value_str": "accuracy 0.85 / macro-F1 0.78 across 16 organs",
+      "paper": "https://arxiv.org/abs/2608.16718",
+      "paper_title": "CytoFormer: A Molecularly Supervised Cell Foundation Model for Histopathology Cell Classification"
+    },
+    {
+      "benchmark": "TEM virtual staining vs CycleGAN baseline",
+      "metric": "FID reduction",
+      "value": 23,
+      "value_str": "FID -23%, KID -47.3%, SSIM 0.98",
+      "paper": "https://doi.org/10.1111/jmi.70155",
+      "paper_title": "WAFMGAN: A frequency-aware CycleGAN for structure-consistent virtual staining of transmission electron microscopy images"
+    }
+  ]
 }

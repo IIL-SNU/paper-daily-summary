@@ -2,100 +2,75 @@
   "date": "2026-08-18",
   "insights": [
     {
-      "title": "FP·TEM·전립선암 진단이 \"화학 염색 없이 대비를 만드는\" 문제를 각자 모달리티에서 풀다",
-      "claim": "Fourier ptychography 기반 label-free virtual staining, TEM 이미지용 frequency-aware CycleGAN 가상 염색, 광학 신호만으로 만드는 전립선암 바이오마커까지, 오늘 저널 세 편이 서로 다른 이미징 모달리티에서 같은 문제(물리적 염색·시약 없이 진단용 대비를 얻는 것)를 각자 방식으로 풀었다.",
+      "title": "3D Gaussian Splatting가 그래픽스 렌더링을 넘어 로봇 인식·CT 재구성·SLAM으로 확산",
+      "claim": "3D Gaussian Splatting(3DGS)은 원래 여러 장의 사진으로 정적인 3차원 장면을 빠르게 렌더링하는 표현 기법이었는데, 오늘 arXiv에서 3DGS를 쓴 논문이 열네 편 가까이 나왔다. 물리 시뮬레이션(LaGSplat), 로봇 장기 조작 작업의 장면 기억(GaussMemory), 조명이 불안정한 환경의 로봇 인식(SpotlessGS), sparse-view CT 재구성(TR-GS, Shared-Structure 4D Spectral Gaussian), 이벤트 카메라 기반 모션 블러 강건 SLAM(MotionGS-SLAM)까지 용도가 서로 다르다. 특히 CT 재구성 2편은 지난주 weekly(2026-33)가 예측한 '3DGS 로버스트니스 축이 의료·현미경 재구성의 물리적 아티팩트 보정으로 수렴한다'는 조건을 정확히 충족한다.",
       "papers": [
-        {
-          "title": "Hardware-Attentive Programmable Fourier Ptychography Enables Task-Adaptive Label-Free Virtual Staining",
-          "arxiv": "https://doi.org/10.1002/advs.76871",
-          "importance_tags": ["[방법전환]"]
-        },
-        {
-          "title": "WAFMGAN: A frequency-aware CycleGAN for structure-consistent virtual staining of transmission electron microscopy images",
-          "arxiv": "https://doi.org/10.1111/jmi.70155",
-          "importance_tags": ["[방법전환]", "[표준후보]"]
-        },
-        {
-          "title": "Label-free optical biomarker for prostate cancer diagnosis",
-          "arxiv": "https://doi.org/10.1186/s10020-026-01605-2",
-          "importance_tags": ["[문제정의]"]
-        }
+        {"title": "LaGSplat: Inferring Physics-Governed Interactive Simulation from Monocular Video Using Latent Lagrangian Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2608.16324", "importance_tags": ["[방법전환]"]},
+        {"title": "GaussMemory: Task-Driven 3D Gaussian Scene Memory for Long-Horizon Robotic Manipulation", "arxiv": "https://arxiv.org/abs/2608.14986", "importance_tags": ["[방법전환]", "[스케일업]"]},
+        {"title": "TR-GS: High-Fidelity Sparse-View CT Volumetric Rendering via t-Distribution Gaussian Splatting and Ray-Confidence Modeling", "arxiv": "https://arxiv.org/abs/2608.16042", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "Shared-Structure 4D Spectral Gaussian Representation for Sparse-View Spectral CT Reconstruction", "arxiv": "https://arxiv.org/abs/2608.16463", "importance_tags": ["[방법전환]"]},
+        {"title": "MotionGS-SLAM: Event-Modulated Gaussian Splatting for Motion-Blur Robust SLAM", "arxiv": "https://arxiv.org/abs/2608.15024", "importance_tags": ["[방법전환]", "[해부분석]"]}
       ]
     },
     {
-      "title": "홀로그래피가 \"위상 영상을 찍는 방법\"을 넘어 디스플레이·데이터 저장·능동 소자로 갈라짐",
-      "claim": "근접장 나노프린팅과 원거리 홀로그래픽 디스플레이를 한 메타표면에 통합한 논문, 파라미터 저장 밀도를 노리는 홀로그래픽 데이터 저장 논문, 광유도 복굴절로 홀로그램 자체를 스위칭하는 논문까지, 홀로그래피 원리가 촬영이 아니라 각자 다른 최종 용도에 맞춰 재설계되고 있다.",
+      "title": "화학 염색·조영제 없이 진단용 대비를 만드는 문제가 네 가지 모달리티에서 반복",
+      "claim": "Fourier ptychography 기반 label-free virtual staining, TEM 이미지용 frequency-aware CycleGAN, 광학 신호만으로 만드는 전립선암 바이오마커에 이어, 오늘 새로 확인된 contrast-free 초음파 논문까지 네 편이 '진단에 필요한 대비를 얻으려면 물리적 시약(염색·조영제)을 넣어야 한다'는 전제를 각자 다른 이미징 장비에서 깨고 있다.",
       "papers": [
-        {
-          "title": "Four-Channel Metasurface for Synergistic Near-Field Nanoprinting Image and Far-Field Holographic Display",
-          "arxiv": "https://doi.org/10.1088/1402-4896/ae9ada",
-          "importance_tags": ["[방법전환]"]
-        },
-        {
-          "title": "Multidimensional holographic data storage under the paraxial approximation condition based on deep learning",
-          "arxiv": "https://doi.org/10.1364/oe.605987",
-          "importance_tags": ["[스케일업]"]
-        },
-        {
-          "title": "Spin-selective holographic switching of grafted scalar and vector vortex beams via photoinduced birefringence",
-          "arxiv": "https://doi.org/10.1016/j.optlastec.2026.116211",
-          "importance_tags": ["[방법전환]"]
-        }
+        {"title": "Hardware-Attentive Programmable Fourier Ptychography Enables Task-Adaptive Label-Free Virtual Staining", "arxiv": "https://doi.org/10.1002/advs.76871", "importance_tags": ["[방법전환]"]},
+        {"title": "WAFMGAN: A frequency-aware CycleGAN for structure-consistent virtual staining of transmission electron microscopy images", "arxiv": "https://doi.org/10.1111/jmi.70155", "importance_tags": ["[방법전환]", "[표준후보]"]},
+        {"title": "Label-free optical biomarker for prostate cancer diagnosis", "arxiv": "https://doi.org/10.1186/s10020-026-01605-2", "importance_tags": ["[문제정의]"]},
+        {"title": "Contrast-free super-resolution ultrasound imaging for microvascular assessment of murine subcutaneous tumour models in preclinical oncology", "arxiv": "https://doi.org/10.1007/s44352-026-00028-3", "importance_tags": ["[방법전환]"]}
       ]
     },
     {
-      "title": "물리 모델을 내장한 재구성 신경망·수치해석이 CT·광음향으로 번짐",
-      "claim": "CT 금속 아티팩트 제거를 dictionary learning을 신경망 층으로 풀어낸 deep unrolling으로 접근한 DSDNet과, 감쇠가 있는 파동방정식을 엄밀히 유도한 뒤 CNN이 안내하는 수치 역산을 제시한 광음향 단층촬영 논문이 같은 날 나왔다. 두 논문 모두 블랙박스 신경망이 아니라 물리 모델(사전 정보·감쇠 파동방정식)을 재구성 파이프라인에 명시적으로 박아 넣는 접근이라는 공통점이 있다.",
+      "title": "디지털 병리(WSI) 분석이 그래프 조건화·반사실 추론·상태공간모델·foundation model로 동시다발 분화",
+      "claim": "Whole slide image(WSI) 분석 방법이 오늘 하루에만 다섯 갈래로 나뉘어 나왔다. Path2ST는 세포-조직 위계 구조를 조건으로 넣어 공간 유전자 발현을 예측하고, DeCo-MIL은 반사실적 추론으로 long-tail 편향을 바로잡고, CytoFormer는 1540만 개 세포에 공간전사체 라벨을 붙여 학습한 foundation model로 기존 6개 병리 foundation model을 능가하며, KHiM-Mamba는 상태공간모델(Mamba)의 내부 상태 갱신에 병리 지식을 주입한다. 방법론이 이렇게 갈라진다는 것은 WSI 분석이 아직 표준 파이프라인으로 수렴하지 않고 서로 다른 병목을 겨냥해 경쟁하고 있다는 뜻이다.",
       "papers": [
-        {
-          "title": "DSDNet: Dynamic Structured Dictionary-based Deep Unrolling Network for computed tomography metal artifact reduction",
-          "arxiv": "https://doi.org/10.1016/j.patcog.2026.114664",
-          "importance_tags": ["[방법전환]"]
-        },
-        {
-          "title": "Photoacoustic Tomography with Time-Dependent Damping: Theoretical and a Convolutional Neural Network-Guided Numerical Inversion Procedure",
-          "arxiv": "https://doi.org/10.1137/25m1824215",
-          "importance_tags": ["[방법전환]", "[해부분석]"]
-        }
+        {"title": "Path2ST: Hierarchical Cell-Tissue Grounded Cross-Modal Translation for Spatial Transcriptomics", "arxiv": "https://arxiv.org/abs/2608.14710", "importance_tags": ["[방법전환]"]},
+        {"title": "DeCo-MIL: Debiased Counterfactual Reasoning for Long-Tailed Whole Slide Image Analysis", "arxiv": "https://arxiv.org/abs/2608.14719", "importance_tags": ["[평가축]", "[해부분석]"]},
+        {"title": "CytoFormer: A Molecularly Supervised Cell Foundation Model for Histopathology Cell Classification", "arxiv": "https://arxiv.org/abs/2608.16718", "importance_tags": ["[인프라]", "[표준후보]"]},
+        {"title": "KHiM-Mamba: Injecting Pathology Knowledge into Mamba via Hidden-State Modulation for Whole Slide Image Analysis", "arxiv": "https://arxiv.org/abs/2608.14757", "importance_tags": ["[방법전환]"]}
       ]
     },
     {
-      "title": "메타옵틱스가 통신·RF를 벗어나 적외선 촬상·센싱 하드웨어로 이동",
-      "claim": "오늘 메타표면 8편 중 6편은 RF 안테나·전자파 흡수체·복사냉각처럼 이미징과 무관했지만, 2편은 실제 촬상·센싱 하드웨어였다. 굴절 렌즈 개수를 8개에서 4개로 줄이고 무게를 79% 낮추면서 냉각형 MWIR 촬상계의 색수차를 보정한 설계와, 중적외선 대역에서 기체·액체 굴절률을 감지하는 전유전체 메타표면이 같이 나오면서, 메타표면이 실험실 데모 소자에서 실측 촬상계 스펙(화각·F수·MTF)을 갖춘 하드웨어로 옮겨가는 신호를 보였다.",
+      "title": "홀로그래피·메타옵틱스가 촬영을 넘어 디스플레이·저장·적외선 하드웨어로 다각화",
+      "claim": "근접장 나노프린팅과 원거리 홀로그래픽 디스플레이를 한 메타표면에 통합한 논문, 홀로그래픽 데이터 저장 논문, 광유도 복굴절로 홀로그램 편광 응답을 스위칭하는 논문, 냉각형 MWIR 촬상계 무게를 79% 줄인 메탈렌즈 하이브리드까지, 홀로그래피·메타옵틱스 원리가 각자 다른 최종 용도에 맞춰 재설계되고 있다. 어제 저널에서 이미 확인된 흐름이 오늘도 그대로 이어졌다.",
       "papers": [
-        {
-          "title": "Refractive-Metalens Hybrid Design for Cooled MWIR Imaging System",
-          "arxiv": "https://doi.org/10.3390/photonics13080774",
-          "importance_tags": ["[실사용전환]", "[스케일업]"]
-        },
-        {
-          "title": "High-Performance Multiresonant All-Dielectric metasurface for gas and liquid Refractive-Index sensing in the Mid-Infrared",
-          "arxiv": "https://doi.org/10.1016/j.optlastec.2026.116218",
-          "importance_tags": ["[실사용전환]"]
-        }
+        {"title": "Four-Channel Metasurface for Synergistic Near-Field Nanoprinting and Far-Field Holographic Display", "arxiv": "https://doi.org/10.1088/1402-4896/ae9ada", "importance_tags": ["[방법전환]"]},
+        {"title": "Multidimensional holographic data storage under the paraxial approximation condition based on deep learning", "arxiv": "https://doi.org/10.1364/oe.605987", "importance_tags": ["[스케일업]"]},
+        {"title": "Refractive-Metalens Hybrid Design for Cooled MWIR Imaging System", "arxiv": "https://doi.org/10.3390/photonics13080774", "importance_tags": ["[실사용전환]", "[스케일업]"]}
+      ]
+    },
+    {
+      "title": "이벤트 카메라가 센싱을 넘어 강화학습 제어·SLAM으로 확장",
+      "claim": "이벤트 카메라는 화소 밝기가 바뀔 때만 비동기적으로 신호를 내는 센서라 일반 카메라보다 빠르고 데이터가 적지만, 그 장점을 제어·재구성에 실제로 연결한 연구는 드물었다. FLEET는 이벤트 스트림을 랜덤 푸리에 특징과 교차 어텐션으로 고정 크기 표현으로 압축해 강화학습 제어에 바로 쓰고, MotionGS-SLAM은 이벤트 카메라의 마이크로초 해상도를 3DGS 가우시안 형태에 반영해 심한 모션 블러에서도 SLAM이 동작하게 만든다.",
+      "papers": [
+        {"title": "FLEET: Token-Based Feature Extraction for Event Camera-based Reinforcement Learning", "arxiv": "https://arxiv.org/abs/2608.16523", "importance_tags": ["[방법전환]"]},
+        {"title": "MotionGS-SLAM: Event-Modulated Gaussian Splatting for Motion-Blur Robust SLAM", "arxiv": "https://arxiv.org/abs/2608.15024", "importance_tags": ["[방법전환]", "[해부분석]"]}
       ]
     }
   ],
   "research_topics": [
     {
-      "title": "Reference-guided hybrid-overlap 스캔 전략을 우리 FP 스캔 프로토콜에 적용",
-      "claim": "고겹침 국소 스캔으로 얻은 신뢰도 높은 probe 추정치를 저겹침 광역 스캔의 ePIE probe 업데이트에 정규화 항으로 넣는 방식을 우리 Fourier ptychography 시스템에 이식해, 해상도 저하 없이 획득 속도를 높일 수 있는지 검증한다.",
+      "title": "TR-GS/Shared-Structure 4D Spectral Gaussian의 sparse-view 재구성 구조를 우리 sparse-view 단층촬영·FP 재구성에 이식",
+      "claim": "t-분포 프리미티브와 ray-confidence 모델(TR-GS), 공유 구조 4D 스펙트럴 표현(Shared-Structure 4D Spectral Gaussian)이 sparse-view CT 재구성에서 기존 3DGS 대비 성능을 높인 원리를, 우리 랩의 sparse-view 단층촬영 또는 FP 재구성 파이프라인에 적용할 수 있는지 검토한다.",
       "supporting_papers": [
-        {"title": "Sparse-Scan Ptychography with Hybrid-Overlap Scanning and Reference-Guided Probe Updates", "arxiv": "https://doi.org/10.3390/s26165168"}
+        {"title": "TR-GS: High-Fidelity Sparse-View CT Volumetric Rendering via t-Distribution Gaussian Splatting and Ray-Confidence Modeling", "arxiv": "https://arxiv.org/abs/2608.16042"},
+        {"title": "Shared-Structure 4D Spectral Gaussian Representation for Sparse-View Spectral CT Reconstruction", "arxiv": "https://arxiv.org/abs/2608.16463"}
       ]
     },
     {
-      "title": "감쇠 파동방정식 기반 CNN-guided 수치 역산을 우리 산란매질 복원 파이프라인에 이식",
-      "claim": "공간적으로 변하는 음속과 시간에 따라 변하는 damping term을 명시적으로 모델링한 뒤 CNN이 안내하는 gradient-free 수치 역산 절차를 검토해, 우리 랩의 산란·감쇠가 심한 매질 복원 문제에 같은 정식화가 적용 가능한지 확인한다.",
+      "title": "MotionGS-SLAM의 event-modulated Gaussian kernel을 handheld FP/홀로그래피 스캐닝 모션 보정에 적용",
+      "claim": "이벤트 카메라의 마이크로초 시간 해상도를 Gaussian 프리미티브의 형태·노출 적분에 직접 반영하는 dual-modulation 메커니즘을, 손떨림·스캔 모션이 있는 우리 FP·홀로그래피 장비의 모션 보정에 이식할 수 있는지 검증한다.",
       "supporting_papers": [
-        {"title": "Photoacoustic Tomography with Time-Dependent Damping: Theoretical and a Convolutional Neural Network-Guided Numerical Inversion Procedure", "arxiv": "https://doi.org/10.1137/25m1824215"}
+        {"title": "MotionGS-SLAM: Event-Modulated Gaussian Splatting for Motion-Blur Robust SLAM", "arxiv": "https://arxiv.org/abs/2608.15024"}
       ]
     },
     {
-      "title": "WAFMGAN의 frequency-aware 가상 염색 구조를 FP 기반 label-free virtual staining에 이식",
-      "claim": "저주파 전역 염색 전이를 담당하는 Wavelet Mamba 블록과 후단 경계·텍스처 보강을 분리한 2단계 구조를, 우리 FP 파이프라인의 label-free virtual staining 출력 품질 개선에 적용 가능한지 검토한다.",
+      "title": "CytoFormer의 분자 라벨 지도학습 아이디어를 label-free virtual staining 정량 평가에 적용",
+      "claim": "공간전사체로 얻은 분자 정체성을 H&E 형태 특징의 지도 신호로 쓰는 방식을, 우리 FP 기반 label-free virtual staining 결과가 실제 분자 정체성과 얼마나 일치하는지 정량 검증하는 평가 프로토콜에 적용할 수 있는지 검토한다.",
       "supporting_papers": [
-        {"title": "WAFMGAN: A frequency-aware CycleGAN for structure-consistent virtual staining of transmission electron microscopy images", "arxiv": "https://doi.org/10.1111/jmi.70155"}
+        {"title": "CytoFormer: A Molecularly Supervised Cell Foundation Model for Histopathology Cell Classification", "arxiv": "https://arxiv.org/abs/2608.16718"}
       ]
     }
   ],
