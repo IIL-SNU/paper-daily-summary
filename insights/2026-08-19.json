@@ -1,0 +1,155 @@
+{
+  "date": "2026-08-19",
+  "insights": [
+    {
+      "title": "3D Gaussian Splatting이 렌더링 품질 경쟁을 넘어 워터마킹·초기화 검증·학습 가속 같은 시스템 문제로 이동",
+      "claim": "오늘 arXiv에 올라온 3DGS 관련 논문 7편은 전부 렌더링 품질이 아니라 이 결과물을 실제로 서비스에 쓰기 위한 주변 문제를 다룬다. NGS-Marker는 부분 침해에도 견디는 워터마킹을, Initialization-Free Bundle Adjustment 논문은 초기화 없는 카메라 복원 방법들이 최적화 성공률만 볼 뿐 실제 정확한 3D 복원인지는 검증하지 않았다는 것을, GeoWeaver는 긴 비디오 조각 처리 시 누적 오차를 test-time 정렬로, VoroTracing과 3DGART는 렌더링·학습 속도 병목을 각각 623 FPS·3~3.5배 가속으로 해결한다.",
+      "papers": [
+        {
+          "title": "NGS-Marker: Robust Native Watermarking for 3D Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2608.17447",
+          "importance_tags": ["[인프라]", "[경고신호]"]
+        },
+        {
+          "title": "GeoWeaver: Accurate Long-Sequence 3D Reconstruction via Hierarchical Geometric Assembly",
+          "arxiv": "https://arxiv.org/abs/2608.17389",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Initialization-Free Bundle Adjustment Revisited: A Controlled Experimental Study",
+          "arxiv": "https://arxiv.org/abs/2608.18028",
+          "importance_tags": ["[평가축]", "[위험보류]"]
+        },
+        {
+          "title": "Differentiable Voronoi Ray Tracing Beyond Rasterization Speeds",
+          "arxiv": "https://arxiv.org/abs/2608.17682",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "3D Gaussian Accelerated Ray Tracing (3DGART)",
+          "arxiv": "https://arxiv.org/abs/2608.17298",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        }
+      ]
+    },
+    {
+      "title": "디지털 병리 AI가 \"정확도\"에서 \"이 판단을 믿어도 되는가\"로 검증 축이 이동",
+      "claim": "Pathology Transport는 optimal transport 기반 설명 히트맵이 인공 병변에서는 그럴듯해 보이지만 실제 방사선전문의 라벨에서는 무작위 수준으로 무너진다는 정직한 실패를 보고한다. MagViT는 배율 강건성으로 환자 단위 정확도 96.4%를, DistillPath는 29배 적은 파라미터로 최상위 foundation model과 0.015점 차이까지 경량화했다.",
+      "papers": [
+        {
+          "title": "Pathology Transport: Optimal-Transport Explanations for Clinical Data, and When Their Heatmaps (Fail to) Localize Disease",
+          "arxiv": "https://arxiv.org/abs/2608.17370",
+          "importance_tags": ["[경고신호]", "[평가축]"]
+        },
+        {
+          "title": "MagViT: Interpretable Multi-Magnification Transformers with Patient-Level Model Selection for Breast Histopathology",
+          "arxiv": "https://arxiv.org/abs/2608.16959",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "DistillPath: An Efficient 22M Distilled Pathology Encoder Approaching Large Foundation Model Performance",
+          "arxiv": "https://arxiv.org/abs/2608.17872",
+          "importance_tags": ["[인프라]", "[실사용전환]"]
+        },
+        {
+          "title": "Learning latent progression states from spatial heterogeneity in uterine histopathology (SpaTIE)",
+          "arxiv": "https://arxiv.org/abs/2608.17337",
+          "importance_tags": ["[해부분석]"]
+        }
+      ]
+    },
+    {
+      "title": "Score-based/물리 결합 베이지안 역문제 추론이 속도·검증가능성 문제를 각자 다르게 공략",
+      "claim": "Picard Proximal Monte Carlo는 diffusion 기반 posterior 샘플링의 순차적 병목을 시간축 병렬화로, Composing Flow-Matching Energies는 물리 법칙과 결합 가능한 명시적 에너지 함수로 생성·이상탐지·역문제를 하나로 묶고, Operator Misspecification 논문은 하이브리드 물리-데이터 추정이 애초에 틀린 물리 모델을 가정하고 있는지 정답 없이 검출한다.",
+      "papers": [
+        {
+          "title": "Picard Proximal Monte Carlo for Parallel Bayesian Imaging with Score-Based Generative Priors",
+          "arxiv": "https://arxiv.org/abs/2608.17666",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "Composing Flow-Matching Energies with Known Physics: Generation, OOD Detection, and Inversion on PDE Fields",
+          "arxiv": "https://arxiv.org/abs/2608.18004",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Detecting and Discriminating Operator Misspecification in Hybrid PDE-Parameter Learning",
+          "arxiv": "https://arxiv.org/abs/2608.16925",
+          "importance_tags": ["[평가축]", "[해부분석]"]
+        },
+        {
+          "title": "Inductively Scalable, Single-Step Neural Surrogates for Wave-Scattering Inverse Problems",
+          "arxiv": "https://arxiv.org/abs/2608.17344",
+          "importance_tags": ["[스케일업]"]
+        }
+      ]
+    },
+    {
+      "title": "메타표면 기반 계산 이미징이 \"요소 하나\"가 아니라 \"시스템 통합\"을 향해 재정리되는 중",
+      "claim": "저널 리뷰 논문은 메타표면과 계산 이미징이 '메타표면이 압축·인코딩을 담당하고 알고리즘이 나머지를 복원한다'는 시스템 수준 관계로 수렴하고 있다고 정리한다. All-Metasurface Interferometer는 부피가 큰 간섭계를 메타표면 하나로 압축했다.",
+      "papers": [
+        {
+          "title": "System-Level Evolution of Optoelectronic Imaging Systems Enabled by Metasurfaces and Computational Imaging",
+          "arxiv": "https://doi.org/10.1021/acsphotonics.6c01104",
+          "importance_tags": ["[통합정리]"]
+        },
+        {
+          "title": "Compact All-Metasurface Interferometer for High-Precision Displacement Sensing",
+          "arxiv": "https://doi.org/10.1109/lpt.2026.3724846",
+          "importance_tags": ["[실사용전환]"]
+        },
+        {
+          "title": "Differentiable Generative Design of Broadband Si-on-Glass Metasurface Deflectors",
+          "arxiv": "https://doi.org/10.1364/ome.610650",
+          "importance_tags": ["[방법전환]"]
+        }
+      ]
+    },
+    {
+      "title": "극한 저광량 transient/streak 이미징 재구성이 pretrained prior와 적응형 노이즈 모델로 갈라짐",
+      "claim": "MARMOT은 masked autoencoder 방식으로 transient imaging 하위 문제 전반에 쓸 수 있는 pretrained prior를 만들고, streak imaging denoising 논문은 시간·공간·스펙트럼 다차원 신호 구조를 활용한 적응형 노이즈 제거를 제안한다.",
+      "papers": [
+        {
+          "title": "MARMOT: masked autoencoder for modeling transient imaging",
+          "arxiv": "https://doi.org/10.1007/s44267-026-00125-1",
+          "importance_tags": ["[방법전환]", "[인프라]"]
+        },
+        {
+          "title": "An adaptive multidimensional denoising and reconstruction framework for ultrafast single-photon-level streak imaging",
+          "arxiv": "https://doi.org/10.1016/j.optlastec.2026.116209",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Computational deconvolution microscopy by Multi-PSFs and Zernike-based aberration reconstruction",
+          "arxiv": "https://doi.org/10.1016/j.optlastec.2026.116234",
+          "importance_tags": ["[방법전환]"]
+        }
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "VoroTracing·3DGART의 3DGS 학습/렌더링 가속 기법을 우리 sparse-view 3DGS 재구성 파이프라인에 이식",
+      "claim": "VoroTracing의 fixed-budget voxel 표현과 조기 종료, 3DGART의 primitive-centric backward propagation을 우리 랩의 sparse-view CT/FP 3DGS 재구성에 적용해 학습 시간을 줄일 수 있는지 검토한다.",
+      "supporting_papers": [
+        {"title": "Differentiable Voronoi Ray Tracing Beyond Rasterization Speeds", "arxiv": "https://arxiv.org/abs/2608.17682"},
+        {"title": "3D Gaussian Accelerated Ray Tracing (3DGART)", "arxiv": "https://arxiv.org/abs/2608.17298"}
+      ]
+    },
+    {
+      "title": "Pathology Transport의 synthetic-to-real 검증 벤치마크를 우리 label-free virtual staining 신뢰성 평가에 적용",
+      "claim": "설명가능 AI 히트맵이 인공 병변에서는 그럴듯하지만 실제 라벨에서 무너지는 gap을 드러낸 벤치마크 설계를, 우리 FP 기반 label-free virtual staining 결과가 실제 분자/조직 라벨과 얼마나 일치하는지 검증하는 프로토콜로 이식한다.",
+      "supporting_papers": [
+        {"title": "Pathology Transport", "arxiv": "https://arxiv.org/abs/2608.17370"}
+      ]
+    },
+    {
+      "title": "Picard Proximal Monte Carlo의 시간-병렬 posterior 샘플링을 위상 복원 diffusion prior에 적용",
+      "claim": "diffusion 기반 posterior 샘플링의 순차적 지연시간 문제를 Picard 반복으로 병렬화하는 구조를, 우리 위상 복원/FP 역문제에서 diffusion prior를 쓸 때의 샘플링 지연시간 병목에 적용할 수 있는지 검토한다.",
+      "supporting_papers": [
+        {"title": "Picard Proximal Monte Carlo", "arxiv": "https://arxiv.org/abs/2608.17666"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

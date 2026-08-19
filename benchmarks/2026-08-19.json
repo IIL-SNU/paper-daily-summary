@@ -1,0 +1,45 @@
+{
+  "date": "2026-08-19",
+  "results": [
+    {
+      "benchmark": "Mip-NeRF 360 (RTX 5090)",
+      "metric": "FPS / throughput",
+      "value": 623,
+      "value_str": "623 FPS, ray 기반 SOTA 대비 3.2배, 3DGS 대비 2.8배",
+      "paper": "https://arxiv.org/abs/2608.17682",
+      "paper_title": "Differentiable Voronoi Ray Tracing Beyond Rasterization Speeds"
+    },
+    {
+      "benchmark": "Mip-NeRF 360 training speed",
+      "metric": "training speedup",
+      "value": 3.5,
+      "value_str": "per-pixel baseline 대비 3~3.5배, 3DGRT 대비 약 4배",
+      "paper": "https://arxiv.org/abs/2608.17298",
+      "paper_title": "3D Gaussian Accelerated Ray Tracing (3DGART)"
+    },
+    {
+      "benchmark": "BreakHis breast histopathology (patient-level)",
+      "metric": "accuracy / macro-F1",
+      "value": 0.9643,
+      "value_str": "image acc 0.9191 / patient acc 0.9643 / macro-F1 0.9042",
+      "paper": "https://arxiv.org/abs/2608.16959",
+      "paper_title": "MagViT: Interpretable Multi-Magnification Transformers with Patient-Level Model Selection for Breast Histopathology"
+    },
+    {
+      "benchmark": "EVA 7-task mean (pathology encoder)",
+      "metric": "score / parameter efficiency",
+      "value": 0.795,
+      "value_str": "0.795 (Virchow2 대비 0.015점 차, 파라미터 29배 적음)",
+      "paper": "https://arxiv.org/abs/2608.17872",
+      "paper_title": "DistillPath: An Efficient 22M Distilled Pathology Encoder Approaching Large Foundation Model Performance"
+    },
+    {
+      "benchmark": "Chest X-ray lesion localization (RSNA real labels)",
+      "metric": "pointing game",
+      "value": 0.52,
+      "value_str": "합성 병변 0.52 -> 실제 라벨에서는 무작위 수준으로 붕괴",
+      "paper": "https://arxiv.org/abs/2608.17370",
+      "paper_title": "Pathology Transport: Optimal-Transport Explanations for Clinical Data, and When Their Heatmaps (Fail to) Localize Disease"
+    }
+  ]
+}

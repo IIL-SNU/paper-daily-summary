@@ -1,0 +1,37 @@
+{
+  "date": "2026-08-19",
+  "source_listing_date": "2026-08-19",
+  "source_mode": "new",
+  "note": "cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 2026-08-19 listing 정상 확인. arXiv new+cross 446편 + Crossref/OpenAlex 저널 427편을 합쳐 통합 스캔(cross-listing dedup) 797건 중 231건(29.0%)을 ROI 버킷에 배정했다. 오늘 가장 뚜렷한 신호는 (1) 3D Gaussian Splatting(3DGS)이 렌더링 품질 경쟁에서 워터마킹·초기화 검증·학습 가속 같은 시스템 인프라 문제로 초점 이동(NGS-Marker, GeoWeaver, Initialization-Free BA, VoroTracing, 3DGART), (2) 디지털 병리 AI가 정확도에서 신뢰성/경량화 검증으로 이동 — 특히 Pathology Transport는 설명가능 AI 히트맵이 실제 방사선전문의 라벨에서 무작위 수준으로 무너진다는 정직한 부정적 결과를 보고, (3) score-based/물리 결합 베이지안 역문제 추론이 속도·검증가능성 문제를 각자 공략(Picard Proximal Monte Carlo, Composing Flow-Matching Energies, Operator Misspecification 검출), (4) 메타표면 계산 이미징이 시스템 통합 리뷰로 재정리, (5) 극한 저광량 transient/streak 이미징 재구성이 pretrained prior/적응형 노이즈 모델로 갈라짐. Lensless/Coded Imaging은 0편으로 Watch Lens 공백이 이어짐.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 142,
+      "cs.CV": 103,
+      "cs.AI": 170,
+      "eess.IV": 10,
+      "eess.SP": 21
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 427
+  },
+  "totals": {
+    "total_scanned": 797,
+    "selected": 231
+  },
+  "classified": {
+    "total_scanned": 797,
+    "selected": 231,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 4,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 9,
+      "Meta-Optics/Diffractive": 10,
+      "Light-Field/Novel Sensors": 1,
+      "Tomography/3D Imaging": 44,
+      "Virtual Staining/Pathology": 22,
+      "Reconstruction/Inverse Problems": 31,
+      "Deep Learning Methods": 110
+    }
+  },
+  "daily_thesis": "오늘 arXiv에서 가장 눈에 띄는 흐름은 3D Gaussian Splatting(3DGS)이 렌더링 품질 경쟁에서 워터마킹·초기화 검증·학습 가속 같은 시스템 인프라 문제로 넘어간 것입니다. 두 번째로는 디지털 병리 AI가 정확도에서 '이 판단을 믿어도 되는가'로 무게중심이 옮겨간 것인데, 한 논문은 설명가능 AI 히트맵이 실제 방사선전문의 라벨에서 무작위 수준으로 무너진다는 정직한 실패 사례를 보고합니다. 계산광학 코어는 물량이 적지만 메타표면 계산 이미징 시스템 리뷰와 극한 저광량 transient 이미징 재구성이 이어지고 있습니다."
+}
