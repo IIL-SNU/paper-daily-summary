@@ -1,0 +1,37 @@
+{
+  "date": "2026-08-20",
+  "source_listing_date": "2026-08-20",
+  "source_mode": "new",
+  "note": "cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 2026-08-20 listing 정상 확인. arXiv new+cross 467편 + Crossref/OpenAlex 저널 415편을 합쳐 통합 스캔(cross-listing dedup) 780건 중 211건(27.1%)을 ROI 버킷에 배정했다. 오늘 가장 뚜렷한 신호는 (1) 3D Gaussian Splatting(3DGS) 관련 논문들이 렌더링 방법 자체가 아니라 4D 동적 장면·표면 복원·단일 이미지 재촬영·VLA 시점 강건성·스트리밍 압축처럼 실제 하위 응용에서 얼마나 견고한지를 검증하는 쪽으로 이동, (2) 의료 vision-language 모델의 신뢰성 문제(과신, 안전 정렬이 시각 근거를 덮어씀, 적은 라벨로도 충분한 적응)가 여러 편에서 동시에 다뤄짐, (3) 계산광학 핵심 버킷(Fourier Ptychography, Phase Imaging, Meta-Optics, Light-Field)이 대부분 키워드 우연 매칭으로 채워져 실질 신호가 거의 없는 공백일. Lensless/Coded Imaging에서만 렌즈리스 형광 현미경 해상도 개선 논문 1편이 실질 신호로 확인됨.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 169,
+      "cs.CV": 94,
+      "cs.AI": 186,
+      "eess.IV": 4,
+      "eess.SP": 14
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 415
+  },
+  "totals": {
+    "total_scanned": 780,
+    "selected": 211
+  },
+  "classified": {
+    "total_scanned": 780,
+    "selected": 211,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 4,
+      "Phase Imaging/Holography": 9,
+      "Meta-Optics/Diffractive": 12,
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 32,
+      "Virtual Staining/Pathology": 29,
+      "Reconstruction/Inverse Problems": 16,
+      "Deep Learning Methods": 106
+    }
+  },
+  "daily_thesis": "오늘 arXiv에서 가장 눈에 띄는 흐름은 3D Gaussian Splatting(3DGS) 논문들의 무게중심이 \"어떻게 더 잘 렌더링할까\"에서 \"이 표현이 동적 장면, VLA 로봇 정책, 스트리밍처럼 실제 활용 상황에서 얼마나 잘 버티는가\"로 옮겨간 것입니다. 동시에 의료 vision-language 모델 쪽에서는 모델이 언제 답을 유보해야 하는지, 안전 정렬이 오히려 멀쩡한 시각 근거를 무시하게 만드는지를 다루는 신뢰성 논문이 여럿 나왔습니다. 계산광학 핵심 버킷은 오늘 대부분 키워드 우연 매칭으로 채워져 실질 신호가 매우 적은 공백일에 가깝습니다."
+}

@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 19 Aug 2026 11:33:36 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2026 11:34:10 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-08-20 (목요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-08-20.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-20.html</guid>
+      <pubDate>Thu, 20 Aug 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 2026-08-20 listing이 정상적으로 올라온 것을 확인했습니다. new+cross 기준 467편이 새로 잡혔고, 어제(8/19, 446편)와 비슷한 수준을 유지했습니다. 여기에 Crossref/OpenAlex 저널 415편을 더해 arXiv+저널 통합 스캔 780건(cross-listing 중복 제거 후) 중 211건(27.1%)이 랩 ROI 버킷에 배정됐습니다.]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-08-19 (수요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-08-19.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-11.html</guid>
       <pubDate>Thu, 11 Jun 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[오늘 메타표면은 ' 설계 자동화 + 광대역화 '가 키워드입니다. 편광 무관 광대역 achromatic metalens(Optics Communications), 머신러닝으로 다중공진 응답을 예측하는 메타표면(Materials Research Bulletin), PT-symmetry 굴절률 센싱(Photonics and Nanostructures) — 설계를 모델에 맡기고 대역을 넓히는 흐름.]]></description>
-    </item>
-    <item>
-      <title>🔬 Imaging Intelligence Daily Briefing</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-06-10.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-10.html</guid>
-      <pubDate>Wed, 10 Jun 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[메타표면이 단순 빔 제어를 넘어 편광·고차원 상태 제어 로 확장됩니다. 천문 편광계측(Science Advances), 128차원 편광 생성(Laser & Photonics Reviews), 위성간 빔포밍·NIR 흡수체(Journal of Optics)가 같은 날 떨어졌어요. 정밀 계측 응용에 들어간다는 건 메타표면 성숙도가 올라갔다는 신호입니다.]]></description>
     </item>
   </channel>
 </rss>

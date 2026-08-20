@@ -1,0 +1,123 @@
+{
+  "date": "2026-08-20",
+  "insights": [
+    {
+      "title": "3D Gaussian Splatting이 렌더링 경쟁에서 벗어나 동적 장면·로봇 정책·스트리밍 같은 실사용 조건에서의 강건성 검증으로 옮겨감",
+      "claim": "오늘 arXiv에 올라온 3DGS 관련 논문 5편은 새로운 렌더링 품질 기록을 세우기보다, 3DGS를 실제 응용에 넣었을 때 버티는지를 검증합니다. Depth Anything V4는 4D 동적 장면 복원에서 리만 다양체 위에 확률 경로를 정의해 F-score를 0.762에서 0.806으로 끌어올렸고, GS-VLA는 카메라 위치가 조금만 틀어져도 LIBERO 로봇 조작 성공률이 90%에서 10%까지 떨어지는 문제를 재학습 없이 4M 파라미터짜리 시점 보정 모듈로 되돌립니다. QuARC-GS는 동적 장면 스트리밍에서 프레임당 저장 용량을 최대 11배 줄이고, CoMVS-GS와 ReX-Shot은 각각 표면 복원 정확도와 초점거리·시점을 함께 바꾸는 재촬영 품질을 끌어올립니다.",
+      "papers": [
+        {
+          "title": "Depth Anything V4: Dynamic 4D Scene Reconstruction via Riemannian Flow Matching on 4D Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2608.18388",
+          "importance_tags": ["[방법전환]", "[평가축]"]
+        },
+        {
+          "title": "GS-VLA: Plug-and-Play Viewpoint Canonicalization for Frozen VLA Policies via Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2608.19066",
+          "importance_tags": ["[경고신호]", "[실사용전환]"]
+        },
+        {
+          "title": "QuARC-GS: Quantized Anchored Residual Coding for Compact Dynamic Scene Streaming with Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2608.18285",
+          "importance_tags": ["[실사용전환]"]
+        },
+        {
+          "title": "CoMVS-GS: Collaborative Multi-View Stereo and 3D Gaussian Splatting for Surface Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2608.18413",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "ReX-Shot: Single-Image Rephotography via Geometry- and Camera-Grounded Generation",
+          "arxiv": "https://arxiv.org/abs/2608.18593",
+          "importance_tags": ["[방법전환]"]
+        }
+      ]
+    },
+    {
+      "title": "의료 vision-language 모델이 \"정답을 맞히는가\"보다 \"언제 답을 유보해야 하는가\"를 다루기 시작",
+      "claim": "EVADE는 진단 VLM이 확대 영상과 원본 영상의 답이 일치할 때만 답을 확정하고 그렇지 않으면 유보하게 만들어 보정 오차를 최대 45% 줄였고, When Safety Overrides Vision은 안전 정렬 때문에 모델이 답변을 거부할 때도 내부적으로는 시각 근거를 여전히 참고하고 있다는 것을 활성화 개입으로 보여줍니다. A Few Cases Are All You Need는 라벨 10개만으로도 장기 분할에서 기존 전문 도구를 능가하는 성능(쓸개 Dice 0.68 대 기존 도구 0.0004)이 나온다는 것을, Colorist는 딥러닝 스타일 변환 없이 통계적 색상 매칭만으로 병리·피부과·망막 데이터셋에서 도메인 강건성을 최대 13%p 개선한다는 것을 보여줍니다.",
+      "papers": [
+        {
+          "title": "EVADE: Evidence-Verified Agentic Diagnosis with Escape",
+          "arxiv": "https://arxiv.org/abs/2608.18833",
+          "importance_tags": ["[방법전환]", "[평가축]"]
+        },
+        {
+          "title": "When Safety Overrides Vision: Exploring Dynamics between Vision Influence and Safety Alignment in Vision-Language Models",
+          "arxiv": "https://arxiv.org/abs/2608.18628",
+          "importance_tags": ["[경고신호]", "[해부분석]"]
+        },
+        {
+          "title": "A Few Cases Are All You Need: An Empirical Study of Annotation-Efficient LoRA Fine-Tuning of MedSAM3",
+          "arxiv": "https://arxiv.org/abs/2608.18731",
+          "importance_tags": ["[데이터전환]", "[실사용전환]"]
+        },
+        {
+          "title": "Simple, Safe, and Overlooked: Reclaiming Sustainable Domain Generalization with Statistical Color Matching",
+          "arxiv": "https://arxiv.org/abs/2608.18915",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "A Critical Synthesis of Uncertainty Quantification and Foundation Models for Semantic Segmentation",
+          "arxiv": "https://arxiv.org/abs/2608.18709",
+          "importance_tags": ["[평가축]", "[통합정리]"]
+        }
+      ]
+    },
+    {
+      "title": "계산광학 핵심 버킷이 오늘 대부분 키워드 우연 매칭으로만 채워진 신호 공백일",
+      "claim": "Fourier Ptychography/Microscopy 1편은 SAR(합성개구레이더) 물체 탐지 논문이 제목에 무관한 단어가 겹쳐 잘못 걸린 것이고, Phase Imaging/Holography 9편 대부분과 Meta-Optics/Diffractive 12편 중 다수도 홀로그래피 이론물리·5G/6G 통신용 메타표면 안테나처럼 이미징과 무관합니다. 실질적으로 남는 신호는 렌즈리스 형광 현미경 해상도를 5.6에서 3.1마이크로미터로 개선한 논문 1편뿐입니다.",
+      "papers": [
+        {
+          "title": "Super-resolving lensless microscopy via optimized multi-depth fractional Talbot modulation",
+          "arxiv": "https://doi.org/10.1063/5.0336226",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "SED-FOD: Scattering-Aware Expert Decomposition for Few-Shot Cross-Sensor SAR Object Detection",
+          "arxiv": "https://arxiv.org/abs/2608.18755",
+          "importance_tags": ["[위험보류]"]
+        }
+      ]
+    },
+    {
+      "title": "동일 배율 촬영으로도 안 되던 조직 분할이 임상 배포 조건(라벨 10개, 3~5시간 학습)에서 재현되는지가 새 기준으로 떠오름",
+      "claim": "SPARC 파이프라인은 태아 심장 MRI에서 슬라이스를 3D+시간 볼륨으로 재구성하는 시간을 기존 49분에서 4.8분으로 줄이면서도 재구성 품질(Dice 84.7% 대 81.4%)은 오히려 임상 판독자 간 일치도보다 높였고, 121명 규모의 held-out 코호트에서 82.6%가 완전 자동으로 처리됐습니다. 이는 계산 이미징 재구성 알고리즘의 평가 기준이 오프라인 정확도 숫자에서 실제 임상 워크플로에 배포 가능한 처리 시간·자동화율로 넓어지고 있다는 신호입니다.",
+      "papers": [
+        {
+          "title": "SPARC: Slice-to-volume Pipeline for Automated Reconstruction of gated 3D+time fetal Cardiac MRI",
+          "arxiv": "https://arxiv.org/abs/2608.18616",
+          "importance_tags": ["[실사용전환]", "[평가축]"]
+        },
+        {
+          "title": "A Few Cases Are All You Need: An Empirical Study of Annotation-Efficient LoRA Fine-Tuning of MedSAM3",
+          "arxiv": "https://arxiv.org/abs/2608.18731",
+          "importance_tags": ["[데이터전환]", "[실사용전환]"]
+        }
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "GS-VLA의 시점 보정 모듈을 우리 sparse-view FP/CT 3DGS 재구성 파이프라인의 카메라 오차 강건성 실험에 이식",
+      "claim": "GS-VLA가 4M 파라미터짜리 경량 3D Gaussian 모듈로 카메라 시점 변화에 대한 정책 강건성을 재학습 없이 회복한 방식을, 우리 sparse-view 3DGS 재구성에서 카메라 캘리브레이션 오차가 있을 때 재구성 품질이 얼마나 깨지는지와 이를 경량 모듈로 보정할 수 있는지 검토한다.",
+      "supporting_papers": [
+        {"title": "GS-VLA: Plug-and-Play Viewpoint Canonicalization for Frozen VLA Policies via Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2608.19066"}
+      ]
+    },
+    {
+      "title": "EVADE의 다중 시야 일치 게이트를 우리 label-free virtual staining 결과의 자동 신뢰도 판단에 적용",
+      "claim": "EVADE가 원본 영상과 확대 영상의 답이 일치할 때만 확정하고 불일치하면 유보하는 방식을, 우리 가상 염색 파이프라인에서 저배율/고배율 예측이 일치하지 않는 영역을 자동으로 플래그해 검수 우선순위를 매기는 데 적용할 수 있는지 검토한다.",
+      "supporting_papers": [
+        {"title": "EVADE: Evidence-Verified Agentic Diagnosis with Escape", "arxiv": "https://arxiv.org/abs/2608.18833"}
+      ]
+    },
+    {
+      "title": "SPARC의 물리 기반 slice-to-volume 재구성 + 딥러닝 분할 결합 구조를 우리 동적 3D 이미징 재구성 시간 단축에 적용",
+      "claim": "SPARC가 물리 기반 slice-to-volume 재구성과 딥러닝 분할을 결합해 재구성 시간을 10배 줄인 구조를, 우리 랩의 동적 tomography/light-field 재구성에서 물리 기반 최적화와 딥러닝 전처리를 분리해 계산 시간을 줄일 수 있는지 검토한다.",
+      "supporting_papers": [
+        {"title": "SPARC: Slice-to-volume Pipeline for Automated Reconstruction of gated 3D+time fetal Cardiac MRI", "arxiv": "https://arxiv.org/abs/2608.18616"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

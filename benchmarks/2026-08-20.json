@@ -1,0 +1,69 @@
+{
+  "date": "2026-08-20",
+  "results": [
+    {
+      "benchmark": "4D 동적 장면 복원 (RFM 단독 기여, TTO/pretraining 분리)",
+      "metric": "F-score",
+      "value": 0.806,
+      "value_str": "0.806 (MLP baseline 0.762 대비 +0.044)",
+      "paper": "https://arxiv.org/abs/2608.18388",
+      "paper_title": "Depth Anything V4: Dynamic 4D Scene Reconstruction via Riemannian Flow Matching on 4D Gaussian Splatting"
+    },
+    {
+      "benchmark": "LIBERO (카메라 시점 변화 최악 조건)",
+      "metric": "success rate",
+      "value": 10.0,
+      "value_str": "정상 시점 약 90% → 시점 변화 시 약 10%까지 하락, GS-VLA 적용 시 대부분 회복",
+      "paper": "https://arxiv.org/abs/2608.19066",
+      "paper_title": "GS-VLA: Plug-and-Play Viewpoint Canonicalization for Frozen VLA Policies via Gaussian Splatting"
+    },
+    {
+      "benchmark": "동적 장면 스트리밍 프레임당 저장 용량",
+      "metric": "compression ratio",
+      "value": 11.0,
+      "value_str": "SOTA 대비 최대 11배 절감, 재구성 품질·학습 속도는 경쟁력 유지",
+      "paper": "https://arxiv.org/abs/2608.18285",
+      "paper_title": "QuARC-GS: Quantized Anchored Residual Coding for Compact Dynamic Scene Streaming with Gaussian Splatting"
+    },
+    {
+      "benchmark": "VQA-RAD / SLAKE / PathVQA (Qwen2.5-VL-7B, zero-shot 대비)",
+      "metric": "ECE 감소율",
+      "value": 45.0,
+      "value_str": "기대 보정 오차(ECE) 최대 45% 감소, calibration·selective risk 동시 개선은 EVADE가 유일",
+      "paper": "https://arxiv.org/abs/2608.18833",
+      "paper_title": "EVADE: Evidence-Verified Agentic Diagnosis with Escape"
+    },
+    {
+      "benchmark": "AMOS22 복부 장기 분할 (쓸개, 라벨 10개)",
+      "metric": "Dice",
+      "value": 0.68,
+      "value_str": "CT 0.68 / MRI 0.59 — 기존 전문 도구(MRSegmentator)는 동일 조건에서 Dice 0.0004",
+      "paper": "https://arxiv.org/abs/2608.18731",
+      "paper_title": "A Few Cases Are All You Need: An Empirical Study of Annotation-Efficient LoRA Fine-Tuning of MedSAM3"
+    },
+    {
+      "benchmark": "OOD 병리·혈액·피부과·망막 데이터셋 (도메인 일반화)",
+      "metric": "balanced accuracy 개선폭",
+      "value": 13.0,
+      "value_str": "무증강 baseline 대비 +13%p, SOTA 도메인 일반화 정규화 기법 대비 +9%p",
+      "paper": "https://arxiv.org/abs/2608.18915",
+      "paper_title": "Simple, Safe, and Overlooked: Reclaiming Sustainable Domain Generalization with Statistical Color Matching"
+    },
+    {
+      "benchmark": "태아 심장 MRI 3D+시간 재구성 시간",
+      "metric": "처리 시간",
+      "value": 4.8,
+      "value_str": "4.8±1.0분 (기존 프레임 단위 방식 49.0±14.1분 대비 약 10배 단축), 흉곽 분할 Dice 84.7% (판독자 간 일치도 81.4% 상회)",
+      "paper": "https://arxiv.org/abs/2608.18616",
+      "paper_title": "SPARC: Slice-to-volume Pipeline for Automated Reconstruction of gated 3D+time fetal Cardiac MRI"
+    },
+    {
+      "benchmark": "렌즈리스 형광 현미경 공간 해상도 (FWHM)",
+      "metric": "resolution",
+      "value": 3.1,
+      "value_str": "5.6μm → 3.1μm, SBP(공간대역곱) 3배 이상 향상",
+      "paper": "https://doi.org/10.1063/5.0336226",
+      "paper_title": "Super-resolving lensless microscopy via optimized multi-depth fractional Talbot modulation"
+    }
+  ]
+}
