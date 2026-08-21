@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 20 Aug 2026 11:34:10 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2026 11:45:12 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-08-21 (금요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-08-21.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-21.html</guid>
+      <pubDate>Fri, 21 Aug 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 2026-08-21 listing이 정상적으로 올라온 것을 확인했습니다. new+cross 기준 388편으로 어제(8/20, 467편)보다 줄었는데, 금요일이라 물량이 자연스럽게 줄어든 것으로 보이며 5개 카테고리 h3 배너도 모두 정상적으로 확인했습니다. 여기에 Crossref/OpenAlex 저널 406편을 더해 arXiv+저널 통합 스캔 715건(cross-listing 중복 제거 후) 중 197건(27.5%)이 랩 ROI 버킷에 배정됐습니다.]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-08-20 (목요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-08-20.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-12.html</guid>
       <pubDate>Fri, 12 Jun 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[오늘 가장 굵은 흐름은 snapshot/compressive 복원 입니다. Serial modulation으로 시간을 압축하는 single-shot 위상 이미징(Laser & Photonics Reviews)과 snapshot compressive 고속 3D 라이트필드(Optics Express)가 같은 날 떨어졌어요. '한 번에 적게 측정하고 복원으로 채운다'는 계산영상의 핵심 설계가 위상·라이트필드 양쪽에서 동시 등장.]]></description>
-    </item>
-    <item>
-      <title>🔬 Imaging Intelligence Daily Briefing</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-06-11.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-11.html</guid>
-      <pubDate>Thu, 11 Jun 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘 메타표면은 ' 설계 자동화 + 광대역화 '가 키워드입니다. 편광 무관 광대역 achromatic metalens(Optics Communications), 머신러닝으로 다중공진 응답을 예측하는 메타표면(Materials Research Bulletin), PT-symmetry 굴절률 센싱(Photonics and Nanostructures) — 설계를 모델에 맡기고 대역을 넓히는 흐름.]]></description>
     </item>
   </channel>
 </rss>

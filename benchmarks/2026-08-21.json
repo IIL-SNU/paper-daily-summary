@@ -1,0 +1,37 @@
+{
+ "date": "2026-08-21",
+ "results": [
+  {
+   "benchmark": "하이퍼스펙트로-편광 실시간 이미징 (1150-1650nm, 167채널)",
+   "metric": "처리 시간/프레임률",
+   "value": 55,
+   "value_str": "18ms 처리, 초당 55프레임",
+   "paper": "https://doi.org/10.1038/s41377-026-02407-1",
+   "paper_title": "High-accuracy hyperspectro-polarimetric real-time imaging via a deep learning empowered infrared meta-sensor"
+  },
+  {
+   "benchmark": "3D LGE MRI 재구성 언더샘플링 가속",
+   "metric": "가속 배율",
+   "value": 1000,
+   "value_str": "1,000배 초과 가속에서도 실현 가능",
+   "paper": "https://arxiv.org/abs/2608.19506",
+   "paper_title": "MOSAIC"
+  },
+  {
+   "benchmark": "ULM 혈관 특성화 (325개 혈관, 4개 전임상 데이터셋)",
+   "metric": "물리 정합성",
+   "value": 325,
+   "value_str": "설치류 미세순환 문헌값과 일치하는 거듭제곱 법칙 스케일링 확인 (325개 혈관 검증)",
+   "paper": "https://doi.org/10.1088/1361-6560/ae9c85",
+   "paper_title": "물리 기반 ULM 혈관 특성화"
+  },
+  {
+   "benchmark": "Point-Based 3D Reconstruction from Sparse Views (5개 합성 물체)",
+   "metric": "Chamfer distance 감소율",
+   "value": 28.5,
+   "value_str": "최강 점 기반 베이스라인 대비 28.5% 감소, 서펠 수 약 161개 적음(267개 평균)",
+   "paper": "https://arxiv.org/abs/2608.20000",
+   "paper_title": "Point-Based 3D Reconstruction from Sparse Views under Known Illumination"
+  }
+ ]
+}

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-08-21</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-08-21 (금요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-08-21 (금요일)</div>
+  <div>📚 소스: new — arXiv 5개 카테고리 모두 2026-08-21 listing 정상 확인</div>
+  <div>🔢 arXiv: cs.LG 127 · cs.CV 86 · cs.AI 145 · eess.IV 8 · eess.SP 22 (new+cross 합계 388편, replacement 제외)</div>
+  <div>🔢 저널: Crossref/OpenAlex 406편 수집 · arXiv+저널 통합 스캔(cross-listing dedup) 715건 · ROI 배정 197건 (27.5%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>오늘 가장 뚜렷한 흐름은 <strong>비디오 디퓨전 모델이 영상을 만드는 도구가 아니라, 영상 속에 숨어 있는 3D/4D 기하 구조를 뽑아내는 엔진으로 재활용되는 사례</strong>가 여럿 동시에 나온 것입니다. Stream4D는 3D Gaussian Splatting 기반 정적 비평자(critic)가 움직이는 물체를 "복원 오차"로 오인해 영상을 얼려버리는 문제를 발견하고, 4D 복원 보상으로 바꿔 이를 고칩니다. DreamHand와 4DAnyone은 아예 디퓨전 모델의 중간 표현 자체를 기하 인코더나 다시점 생성기로 씁니다. 두 번째로는 <strong>정답 영상 없이 스스로 학습하는 의료 영상 재구성·복원 논문</strong>이 MRI, PET, CBCT, 원자현미경(AFM)까지 서로 다른 모달리티에서 동시에 나왔다는 점입니다. 한편 계산광학 핵심 버킷은 최근 며칠 대부분 키워드 우연 매칭으로 채워졌던 것과 달리, 오늘은 렌즈리스 이미징·메타표면 카메라·라이트필드 초해상 논문들이 실제로 이미징 방법론을 다루는, 근래 보기 드문 신호가 몰린 날이었습니다.</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 2026-08-21 listing이 정상적으로 올라온 것을 확인했습니다. new+cross 기준 388편으로 어제(8/20, 467편)보다 줄었는데, 금요일이라 물량이 자연스럽게 줄어든 것으로 보이며 5개 카테고리 h3 배너도 모두 정상적으로 확인했습니다. 여기에 Crossref/OpenAlex 저널 406편을 더해 arXiv+저널 통합 스캔 715건(cross-listing 중복 제거 후) 중 197건(27.5%)이 랩 ROI 버킷에 배정됐습니다.</p><p>오늘 arXiv에서 가장 눈에 띄는 신호는 비디오 디퓨전 모델을 3D/4D 기하 구조 복원에 재활용하는 논문 4편입니다. Stream4D는 스트리밍 자기회귀 디퓨전 비디오 모델이 장면의 기하와 동역학이 아니라 프레임 단위 예측만 최적화하다 보니, 긴 롤아웃에서 기하 오차가 누적돼 영상이 정지 화면처럼 굳어버리는 문제를 짚습니다. 기존 해법은 3D Gaussian Splatting 기반 정적 복원 비평자(critic)를 보상 신호로 쓰는데, 이 방식은 정적인 장면 하나만 가정하기 때문에 물체가 실제로 움직이는 것조차 "복원이 틀렸다"고 벌점을 매겨 결국 영상을 얼리는 쪽으로 학습이 유도되는 역설이 생깁니다. Stream4D는 이 비평자를 매 프레임 새로 4D 복원을 수행하는 피드포워드 보상으로 바꿔 이 문제를 해결합니다. DreamHand는 한 걸음 더 나아가 디퓨전 모델을 아예 영상 생성기가 아니라 결정론적 기하 인코더로 씁니다. 손이 가려지거나 화면 밖으로 나가는 1인칭 영상에서, 디퓨전 모델의 정제된 잠재 표현 한 번의 순전파만으로 가려진 손의 위치까지 복원해내는 방식인데, 기존 방식처럼 여러 단계 샘플링을 반복할 필요가 없어졌습니다. 4DAnyone도 카메라 제어 비디오 디퓨전 모델이 만든 다시점 영상을 4D Gaussian Splatting으로 끌어올리는 과정에서, 시점이 늘어날수록 이전 시점과의 외형 일관성이 흐려지는 병목을 짚고 이를 해결합니다. 세 논문을 같이 보면, 비디오 디퓨전 모델이 "그럴듯한 영상을 만드는 도구"에서 "영상 안에 숨어 있는 3D 기하와 시간에 따른 움직임을 뽑아내는 엔진"으로 역할이 넓어지고 있다는 인상을 줍니다.</p><p>두 번째로 눈에 띄는 것은 정답 영상(fully-sampled ground truth) 없이 스스로 학습하는 의료 영상 재구성·복원 논문이 서로 다른 모달리티에서 동시에 나온 것입니다. MOSAIC은 3D 지연조영증강(LGE) 심장 MRI를 1000배 넘게 언더샘플링한 상태에서, 완전 샘플링된 학습 데이터나 정확한 코일 민감도 지도 없이도 다중 에코 영상·코일 민감도·심박별 움직임을 데이터 자체에서 동시에 모델링해, 기존 압축 센싱·저랭크 딥러닝 사전보다 높은 영상 품질 점수를 받았습니다. 원자현미경(AFM) 자기지도 잡음 제거 논문도 같은 방향에서, 별도의 깨끗한 정답 영상 없이 잡음 제거와 복원을 동시에 수행합니다. HARU-Net은 저선량 콘빔 CT(CBCT)에서 엣지를 보존하면서 잡음을 제거하는데 고해상도 학습 데이터가 부족한 문제를 하이브리드 어텐션 구조로 우회하고, MUST-PET은 서로 다른 방사성추적자(FDG, PSMA)로 찍은 PET-CT를 마스킹-복원 방식의 자기지도 학습으로 사전학습해 라벨이 적어도 병변 분할 성능이 좋아진다는 것을 보입니다. 네 논문 모두 "정답이 있어야 학습할 수 있다"는 가정에서 벗어나, 데이터 자체의 물리적 일관성(코일 민감도, 방사성추적자 간 상보성, 마스킹된 영역 복원)을 학습 신호로 쓴다는 공통점이 있어, 계산 이미징 재구성 연구가 라벨 확보 비용이 큰 임상 데이터에 맞춰 방법론 자체를 바꾸고 있다는 신호로 읽힙니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제는 3DGS 관련 논문들이 4D 동적 장면·로봇 정책·스트리밍처럼 "이미 만들어진 3DGS 표현을 실제 응용에 넣었을 때 버티는가"를 검증하는 데 집중했다면, 오늘은 한 단계 더 앞으로 가서 "비디오 디퓨전 모델 자체를 3D/4D 기하 복원의 엔진으로 재활용할 수 있는가"를 묻는 논문들이 나왔습니다. 즉 3DGS라는 완성된 표현의 강건성을 검증하던 어제와 달리, 오늘은 디퓨전 모델이라는 별개의 생성 도구를 기하 복원에 동원하는 더 이른 단계의 방법론 전환입니다. 의료 AI 쪽도 어제는 의료 VLM이 "언제 답을 유보해야 하는가"라는 신뢰성 평가축에 집중했다면, 오늘은 그보다 상류인 재구성·복원 단계에서 "정답 영상 없이도 학습할 수 있는가"라는 질문으로 초점이 이동했습니다. 계산광학 핵심 버킷은 어제(그리고 최근 며칠)는 대부분 키워드 우연 매칭으로 채워진 신호 공백일이었는데, 오늘은 정반대로 렌즈리스 이미징·메타표면 컴퓨테이셔널 카메라·라이트필드 초해상 논문이 실제로 이미징 방법론을 다루는, 근래 가장 신호가 밀도 높은 날이었습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>비디오 디퓨전 모델을 3D/4D 기하 복원 엔진으로 재활용</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.19556" target=_blank>Stream4D</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.20308" target=_blank>DreamHand</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.20335" target=_blank>4DAnyone</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.19900" target=_blank>AvatarDynamizer</a> <span class=pill>CV</span>
+  </td>
+  <td>지금까지 비디오 디퓨전 모델은 주로 "그럴듯한 영상을 새로 만드는 생성기"로 쓰였습니다. 오늘 나온 4편은 그 대신 디퓨전 모델의 내부 표현이나 학습 신호를 3D/4D 기하 정보를 뽑아내는 데 씁니다. 특히 Stream4D는 기존에 쓰던 3D Gaussian Splatting 기반 정적 복원 비평자가 움직이는 물체조차 "복원이 틀렸다"고 벌점을 매겨 영상을 얼리는 방향으로 학습을 유도하는 역설을 짚어내고, 이를 매 프레임 새로 4D 복원을 수행하는 보상으로 바꿔 해결합니다. 즉 생성 모델 연구의 다음 단계가 "더 예쁜 영상"이 아니라 "영상 생성 과정에서 기하학적으로 일관된 3D/4D 구조를 얼마나 잘 뽑아내는가"로 옮겨가고 있다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 하위 응용(스트리밍 비디오 생성, 1인칭 손 동작 복원, 단안 비디오 4D 인간, 아바타 동적 텍스처) 4편이 같은 날 독립적으로 확인, 방법론적 공통점(디퓨전 표현을 기하 신호로 전용)이 명확함</small></td>
+  <td>Stream4D의 피드포워드 4D 복원 보상 구조를 우리 동적 tomography/light-field 재구성 파이프라인의 시간적 일관성 손실 함수로 이식해, 정적 복원 기반 손실 대비 움직이는 구조물(혈류, 장기 운동)의 복원 정확도가 개선되는지 측정</td>
+</tr>
+<tr>
+  <td><strong>정답 영상 없이 스스로 배우는 의료 영상 재구성·복원이 모달리티를 가로질러 동시 등장</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.19506" target=_blank>MOSAIC</a> <span class=pill>IV</span><br>
+    <a href="https://doi.org/10.1038/s41467-026-76973-8" target=_blank>AFM 자기지도 복원</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1088/2057-1976/ae9c46" target=_blank>HARU-Net</a> <span class=pill>JNL</span><br>
+    <a href="https://arxiv.org/abs/2608.19666" target=_blank>MUST-PET</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.20112" target=_blank>Flow Matching PET 재구성</a> <span class=pill>IV</span>
+  </td>
+  <td>계산 이미징 재구성은 오랫동안 완전 샘플링된 정답 영상이 있어야 지도학습이 가능하다고 여겨졌습니다. 오늘 나온 5편은 MRI, PET, CBCT, 원자현미경까지 서로 다른 모달리티에서, 정답 영상 대신 데이터 자체의 물리적 일관성(코일 민감도, 마스킹 복원, 방사성추적자 간 상보 정보, 디퓨전 사전 확률)을 학습 신호로 씁니다. MOSAIC은 1000배 넘는 언더샘플링에서도 완전 샘플링 학습 데이터 없이 코일 민감도와 심박별 움직임까지 데이터에서 직접 추정해 기존 압축 센싱보다 나은 영상 품질을 냈습니다. 이는 라벨(정답 영상) 확보 비용이 큰 임상 데이터 환경에 맞춰 재구성 알고리즘 자체의 학습 방식이 바뀌고 있다는 신호입니다.</td>
+  <td>Medium<br><small>5편이 같은 방향(정답 없는 자기지도 재구성/복원)이지만 모달리티가 MRI·PET·CBCT·AFM으로 흩어져 있어 직접 비교 가능한 공통 벤치마크는 없음</small></td>
+  <td>MOSAIC의 코일 민감도·움직임 동시 추정 자기지도 구조를 우리 랩의 언더샘플링 tomography 재구성 파이프라인에 적용해, 완전 샘플링 정답 없이 학습했을 때와 기존 지도학습 대비 PSNR/SSIM 격차를 측정</td>
+</tr>
+<tr>
+  <td><strong>계산광학 핵심 버킷 — 최근 며칠의 신호 공백과 달리 오늘은 렌즈리스·메타표면·라이트필드 실질 신호가 몰린 날</strong></td>
+  <td>
+    <a href="https://doi.org/10.1364/oe.608614" target=_blank>ConvRML</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/oe.610853" target=_blank>Resolution-Agnostic Lensless Imaging</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/oe.599584" target=_blank>MetaTele</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1038/s41377-026-02407-1" target=_blank>하이퍼스펙트로-편광 메타센서</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1109/tci.2026.3725928" target=_blank>FP 구조텐서 TV 복원</a> <span class=pill>JNL</span>
+  </td>
+  <td>지난 며칠간 이 리포트는 계산광학 핵심 버킷(Fourier Ptychography, Lensless, Meta-Optics, Light-Field)이 대부분 키워드 우연 매칭으로 채워진 신호 공백일이라고 반복해서 기록했습니다. 오늘은 정반대입니다. ConvRML(Laura Waller 그룹)은 무작위 다초점 렌즈릿 배열로 고품질 렌즈리스 이미징을 구현하고, Resolution-Agnostic Lensless Imaging은 푸리에 신경 연산자로 해상도에 무관한 렌즈리스 복원을 제안합니다. MetaTele은 얇은 굴절형 메타표면으로 망원 계산 카메라를 구현하고, 하이퍼스펙트로-편광 메타센서는 메타표면과 딥러닝을 결합해 단일 노출로 초당 55프레임의 다차원(강도·편광·스펙트럼) 실시간 이미징을 시연합니다. Fourier Ptychography/Microscopy도 3편 전부 실제 푸리에 타이코그래피 복원·자동초점 방법론입니다. 계산광학 코어 버킷이 물량은 적어도 신호 밀도가 하루 단위로 크게 요동친다는 것을 보여주는 사례로, 이 버킷을 매일 다시 훑어봐야 하는 이유이기도 합니다.</td>
+  <td>High<br><small>서로 다른 기관(Waller 그룹 포함)의 렌즈리스·메타표면·타이코그래피 논문 5편이 모두 초록/제목에서 실제 이미징 방법론임을 확인, 오늘 처음으로 4개 세부 버킷 모두에서 동시에 실질 신호 확인</small></td>
+  <td>ConvRML의 무작위 다초점 렌즈릿 배열 설계를 우리 랩의 렌즈리스 이미징 하드웨어 프로토타입에 시뮬레이션으로 재현하고, 기존 단일 초점 마스크 대비 복원 PSNR/공간대역곱(SBP) 향상폭을 비교</td>
+</tr>
+<tr>
+  <td><strong>작지만 특화된 모델이 대형 범용 모델을 압도 — 의료 영상에서 파라미터 절감과 성능이 같이 감</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.20069" target=_blank>V-REX</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.19813" target=_blank>Energy-Mamba</a> <span class=pill>IV</span>
+  </td>
+  <td>일반적으로는 도메인 특화 모델을 만들려면 더 큰 범용 파운데이션 모델을 미세조정해야 한다고 가정합니다. V-REX는 이 가정이 수의학 방사선 영상에서는 틀렸다는 것을 보여주는데, 토큰화·사전학습·grounding 전체 파이프라인을 다시 설계해 훨씬 적은 파라미터·데이터·연산으로 기존 개방형 파운데이션 모델을 크게 앞서는 최초의 수의학 방사선 판독 보고서 생성 VLM을 만들었습니다. Energy-Mamba도 같은 방향에서, 물리 기반 에너지 제약을 상태공간모델(SSM)에 결합해 망막 OCT·흉부 X선·현미경·복부 CT 4개 데이터셋에서 훨씬 적은 파라미터로 최고 수준 분류 성능을 냈습니다. 두 논문 모두 "의료 영상 특화 모델 = 대형 파운데이션 모델의 미세조정"이라는 공식에서 벗어나, 도메인 구조를 아키텍처에 명시적으로 새겨 넣는 쪽이 더 효율적일 수 있다는 것을 보입니다.</td>
+  <td>Medium<br><small>2편이 같은 방향(소형 특화 아키텍처가 대형 범용 모델을 능가)을 보이지만 모달리티(수의학 X선 VLM, 다중 모달리티 분류)가 달라 직접 비교 벤치마크는 없음</small></td>
+  <td>Energy-Mamba의 물리 기반 에너지 제약 SSM 블록을 우리 랩의 경량 재구성/분류 백본에 이식해, 동일 파라미터 예산에서 기존 Mamba 대비 분류·복원 정확도가 개선되는지 ablation으로 검증</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ 표 5행 원칙 관련: 오늘은 위 4개 클러스터 외에 Reconstruction/Inverse Problems(19편) 전체와 Deep Learning Methods(96편) 나머지 부분에서 추가로 2편 이상이 묶이는 보조 클러스터를 찾지 못했습니다 — 두 버킷 모두 강화학습·시계열 예측·양자 컴퓨팅·로봇 안전성처럼 서로 다른 주제가 흩어져 있어 억지로 묶으면 근거 없는 압축 구문이 됩니다. 4행에는 V-REX·Energy-Mamba 2편만 Medium confidence로 넣어 실제 근거가 있는 관찰만 반영했습니다.</small></p><p><small>⚠️ Watch Lens 참고: 오늘은 이례적으로 계산광학 4개 세부 버킷(Fourier Ptychography 3편, Lensless 2편, Meta-Optics 11편 중 2편, Light-Field 4편 중 2편) 모두에서 실질 이미징 신호가 확인됐습니다. 다만 Virtual Staining/Pathology 20편은 오늘도 실제 병리·가상염색 논문이 사실상 1편(H&E 종양연관대식세포 정량화)뿐이고 나머지는 강화학습·문화유산 데이터·건물 에너지·언어학 논문에서 "staining"이 우연히 매칭된 오탐입니다. Tomography/3D Imaging 36편 중 3DGS/기하 복원·비디오 디퓨전 계열은 6편이고 나머지 30편은 대부분 임상 CT/OCT/PET 진단 저널입니다.</small></p>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 비디오 디퓨전 기반 3D/4D 기하 복원(Stream4D, DreamHand, 4DAnyone, AvatarDynamizer), 자기지도 재구성 중 일부(MOSAIC, MUST-PET, Flow Matching PET 재구성), 소형 특화 모델 우위(V-REX, Energy-Mamba)</li>
+  <li><strong>저널 전용</strong>: 렌즈리스 이미징(ConvRML, Resolution-Agnostic Lensless Imaging), 메타표면 컴퓨테이셔널 카메라(MetaTele, 하이퍼스펙트로-편광 메타센서), Fourier Ptychography 복원·자동초점 3편, 자기지도 AFM 복원, CBCT 잡음 제거(HARU-Net), 다수의 임상 OCT/CT/PET 진단 논문</li>
+  <li><strong>공통 키워드</strong>: reconstruction, self-supervised, diffusion, metasurface</li>
+  <li><strong>특징</strong>: 오늘은 저널 쪽이 계산광학 하드웨어(렌즈리스, 메타표면, 타이코그래피) 신호를 arXiv보다 훨씬 많이 냈다는 점이 최근 며칠과 다른 특징입니다. arXiv는 비디오 생성 모델을 기하 복원에 재활용하는 방법론적 전환과, 라벨 없는 재구성이라는 두 흐름을 주도했습니다. "정답/라벨 없이도 학습 가능한가"라는 문제의식이 arXiv의 자기지도 재구성 클러스터와 저널의 AFM/CBCT 자기지도 복원 논문 양쪽에서 공통으로 보입니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 비디오 디퓨전 모델을 3D/4D 기하 복원 엔진으로 재활용하는 흐름이 등장</h3>
+  <p>Stream4D는 스트리밍 비디오 생성에서 3D Gaussian Splatting 기반 정적 복원 비평자가 움직이는 물체를 "복원 오차"로 오인해 영상을 얼리는 역설을 짚고, 매 프레임 새로 4D 복원을 수행하는 피드포워드 보상으로 이를 고칩니다. DreamHand는 디퓨전 모델을 영상 생성기가 아니라 결정론적 기하 인코더로 써서, 손이 가려지거나 화면 밖으로 나가는 1인칭 영상에서도 한 번의 순전파로 손 위치를 복원합니다. 4DAnyone은 카메라 제어 비디오 디퓨전이 만든 다시점 영상을 4D Gaussian Splatting으로 끌어올리는 과정에서 생기는 시점 간 외형 불일치 문제를 해결하고, AvatarDynamizer는 정적 아바타를 생성형 동적 텍스처로 움직이게 만듭니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 하위 응용(스트리밍 생성, 손 동작 복원, 4D 인간, 아바타 동역학) 4편이 같은 날 독립적으로 확인, 방법론적 공통점이 명확</p>
+</div>
+
+<div class=ins>
+  <h3>2. 정답 영상 없이 스스로 배우는 의료 영상 재구성·복원이 모달리티를 가로질러 동시 등장</h3>
+  <p>MOSAIC은 1000배 넘는 언더샘플링 3D 심장 MRI에서 완전 샘플링 정답 없이 코일 민감도와 심박별 움직임을 데이터에서 직접 추정해 기존 압축 센싱·저랭크 딥러닝 사전보다 나은 영상 품질을 냈습니다. AFM 자기지도 복원 논문도 별도 정답 영상 없이 잡음 제거와 복원을 동시에 수행하고, HARU-Net은 저선량 CBCT에서 고해상도 학습 데이터 부족 문제를 하이브리드 어텐션 구조로 우회합니다. MUST-PET은 서로 다른 방사성추적자로 찍은 PET-CT를 마스킹-복원 자기지도 학습으로 사전학습해 라벨이 적어도 병변 분할 성능이 좋아진다는 것을 보이고, Flow Matching 기반 PET 재구성은 diffusion 대비 적은 샘플링 단계로 데이터 일관성 보정을 분리해 수행합니다.</p>
+  <p class=conf-note>Confidence: Medium — 5편이 같은 방향이지만 모달리티(MRI·PET·CBCT·AFM)가 흩어져 있어 직접 비교 벤치마크는 없음</p>
+</div>
+
+<div class=ins>
+  <h3>3. 계산광학 핵심 버킷 — 최근 며칠의 신호 공백과 달리 오늘은 렌즈리스·메타표면·라이트필드 실질 신호가 몰린 날</h3>
+  <p>ConvRML(Laura Waller 그룹)은 무작위 다초점 렌즈릿 배열로 고품질 렌즈리스 이미징을 구현하고, Resolution-Agnostic Lensless Imaging은 푸리에 신경 연산자로 해상도 무관 렌즈리스 복원을 제안합니다. MetaTele은 얇은 굴절형 메타표면으로 망원 계산 카메라를, 하이퍼스펙트로-편광 메타센서는 메타표면과 딥러닝을 결합해 초당 55프레임의 다차원 실시간 이미징을 시연합니다. Fourier Ptychography/Microscopy 3편도 전부 실제 타이코그래피 복원·자동초점 방법론이라, 최근 며칠 이 버킷을 채우던 키워드 우연 매칭과는 뚜렷이 대비됩니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 기관의 렌즈리스·메타표면·타이코그래피 논문 5편이 모두 실제 이미징 방법론임을 확인, 4개 세부 버킷 전체에서 동시에 신호 확인</p>
+</div>
+
+<div class=ins>
+  <h3>4. 작지만 특화된 모델이 대형 범용 모델을 압도 — 의료 영상에서 파라미터 절감과 성능이 같이 감</h3>
+  <p>V-REX는 토큰화·사전학습·grounding 파이프라인을 처음부터 다시 설계해, 훨씬 적은 파라미터·데이터·연산으로 기존 개방형 파운데이션 모델을 크게 앞서는 최초의 수의학 방사선 판독 보고서 생성 VLM을 만들었습니다. Energy-Mamba는 물리 기반 에너지 제약을 상태공간모델에 결합해 망막 OCT·흉부 X선·현미경·복부 CT 4개 데이터셋에서 훨씬 적은 파라미터로 최고 수준 분류 성능을 냈습니다. 둘 다 대형 파운데이션 모델 미세조정이라는 공식 대신 도메인 구조를 아키텍처에 새겨 넣는 방향입니다.</p>
+  <p class=conf-note>Confidence: Medium — 2편이 같은 방향을 보이지만 모달리티가 달라 직접 비교 벤치마크는 없음</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. Stream4D의 4D 복원 보상 구조를 우리 동적 tomography/light-field 재구성 파이프라인의 시간 일관성 손실로 이식</h3>
+  <p>Stream4D가 정적 복원 비평자 대신 매 프레임 새로 4D 복원을 수행하는 피드포워드 보상으로 바꿔 움직이는 구조가 벌점을 받지 않게 만든 방식을, 우리 랩의 동적 3D 이미징 재구성(예: 시간에 따라 변하는 혈류·장기 운동)에서 정적 복원 기반 손실이 실제 움직임을 왜곡하는지, 4D 복원 보상으로 바꾸면 개선되는지 검토합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>Stream4D의 피드포워드 4D 복원 보상 모듈을 논문 코드/의사코드 기준으로 우리 재구성 코드베이스에 재구현</li>
+    <li>공통 실험: 우리 동적 tomography 데이터셋 중 움직임이 큰 구간(심장/호흡 주기)만 선별한 held-out 세트 구성</li>
+    <li>비교축: 정적 복원 손실 대비 4D 복원 보상 적용 시 시간적 일관성 지표(temporal PSNR variance) 및 움직임 보존율</li>
+    <li>실패해도 남는 결과: 우리 데이터셋에서 정적 복원 손실이 실제로 움직임을 얼마나 억제하는지에 대한 정량 프로파일</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. MOSAIC의 코일 민감도·움직임 동시 추정 자기지도 구조를 우리 언더샘플링 재구성 파이프라인에 적용</h3>
+  <p>MOSAIC이 완전 샘플링 학습 데이터 없이 코일 민감도와 심박별 움직임을 언더샘플링 데이터 자체에서 직접 추정한 방식을, 우리 랩의 언더샘플링 tomography/MRI 재구성에서 정답 영상 없이 학습했을 때 기존 지도학습 대비 성능 격차가 얼마나 되는지 검토합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>MOSAIC의 다중 에코·코일 민감도·움직임 공동 모델링 구조를 우리 재구성 파이프라인의 전처리 단계에 시범 적용</li>
+    <li>공통 실험: 기존에 확보한 완전 샘플링 정답이 있는 데이터셋을 인위적으로 언더샘플링해 자기지도 학습과 지도학습을 나란히 비교</li>
+    <li>비교축: 언더샘플링 배율별 PSNR/SSIM 격차, 완전 샘플링 정답 없이 학습했을 때의 성능 저하폭</li>
+    <li>실패해도 남는 결과: 우리 데이터셋에서 자기지도 재구성이 실패하는 언더샘플링 배율의 임계값</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. ConvRML의 무작위 다초점 렌즈릿 설계를 우리 렌즈리스 이미징 하드웨어 프로토타입에 재현</h3>
+  <p>ConvRML이 무작위 다초점 렌즈릿 배열로 렌즈리스 이미징 품질을 높인 방식을, 우리 랩의 렌즈리스 형광/컴퓨테이셔널 이미징 하드웨어에 시뮬레이션 및 소규모 실물 프로토타입으로 재현해 기존 단일 초점 마스크 대비 이득이 있는지 검토합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>ConvRML의 다초점 렌즈릿 마스크 패턴을 시뮬레이션으로 재현하고 우리 기존 렌즈리스 파이프라인의 순전파 모델에 대입</li>
+    <li>공통 실험: 우리 렌즈리스 이미징 검증 데이터셋(또는 표준 테스트 타겟)에서 단일 초점 대비 다초점 마스크 복원 비교</li>
+    <li>비교축: 복원 PSNR/SSIM, 공간대역곱(SBP), 재구성 계산 시간</li>
+    <li>실패해도 남는 결과: 우리 렌즈리스 하드웨어 설정에서 다초점 마스크 시뮬레이션이 실물과 얼마나 차이나는지에 대한 캘리브레이션 데이터</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(36편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:8%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:6%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:17%"></span></span><span class=n>6편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:31%"></span></span><span class=n>11편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:11%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>36편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:56%"></span></span><span class=n>20편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:53%"></span></span><span class=n>19편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>96편</span></div>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (3편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tci.2026.3725928" target=_blank>Fourier Ptychographic Microscopy Reconstruction via Structure Tensor Total Variation Regularization</a></strong> [JNL]<br>
+  왜 주요: 구조 텐서 기반 전변동 정규화로 FP 복원 품질 개선 — 초록 미공개, 본문 확인 필요하나 IEEE TCI 게재로 방법론 신뢰도 있음
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1557/s43579-026-01027-5" target=_blank>Pty-co-SAXSNN</a></strong> [JNL]<br>
+  왜 주요: CNN 기반 디컨볼루션으로 X선 타이코그래피와 SAXS 나노구조 특성화를 동시 수행 — 초록 미공개, 본문 확인 필요
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.measurement.2026.122949" target=_blank>Fast autofocusing in ptychography</a></strong> [JNL]<br>
+  왜 주요: 와류 강화 엣지 검출과 선택적 선형 피팅으로 타이코그래피 자동초점 속도 개선 — 초록 미공개, 본문 확인 필요
+</div>
+
+<h3>Lensless/Coded Imaging (2편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.608614" target=_blank>ConvRML: high-quality lensless imaging with random multi-focal lenslets</a></strong> [JNL · TIER A]<br>
+  왜 주요: Laura Waller 그룹(UC Berkeley) 발표, 무작위 다초점 렌즈릿 배열로 렌즈리스 이미징 품질 개선 — 오늘 계산광학 코어 버킷의 대표 신호
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.610853" target=_blank>Resolution-Agnostic Lensless Imaging via Fourier Neural Operators</a></strong> [JNL]<br>
+  왜 주요: 푸리에 신경 연산자로 해상도에 무관한 렌즈리스 이미지 복원 제안 — 초록 미공개, 본문 확인 필요
+</div>
+
+<h3>Meta-Optics/Diffractive (11편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02407-1" target=_blank>High-accuracy hyperspectro-polarimetric real-time imaging via a deep learning empowered infrared meta-sensor</a></strong> [JNL · TIER A]<br>
+  왜 주요: 메타표면(편광 다중화+분광)과 잔차 어텐션 딥러닝 네트워크 결합, 1150-1650nm 대역 167개 분광 채널을 18ms(초당 55프레임)로 실시간 재구성, 기존 최고 사양 대비 수 배~한 자릿수 개선
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.599584" target=_blank>MetaTele: Compact Refractive Metasurface Computational Telephoto Camera</a></strong> [JNL]<br>
+  왜 주요: 얇은 굴절형 메타표면 기반 소형 망원 계산 카메라 — 초록 미공개, 본문 확인 필요
+</div>
+
+<h3>Light-Field/Novel Sensors (4편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tci.2026.3725880" target=_blank>Real-World Light Field Image Spatial Super-Resolution</a></strong> [JNL]<br>
+  왜 주요: 다시점 고차원 기하 일관성 제약 기반 실사용 라이트필드 초해상 — 초록 미공개, 본문 확인 필요
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.610473" target=_blank>End-to-end super-resolution computational imaging with super-oscillatory light field</a></strong> [JNL]<br>
+  왜 주요: 초진동 라이트필드 기반 종단간 초해상 계산 이미징 — 초록 미공개, 본문 확인 필요
+</div>
+
+<h3>Tomography/3D Imaging (36편 중 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.19556" target=_blank>Stream4D</a></strong> [CV · TIER A]<br>
+  왜 주요: 정적 3DGS 복원 비평자가 움직임을 오차로 오인하는 문제를 4D 복원 보상으로 해결, 다양한 자기회귀 비디오 백본에서 4D 복원 품질·모션 보존 개선
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20335" target=_blank>4DAnyone</a></strong> [CV]<br>
+  왜 주요: 카메라 제어 비디오 디퓨전의 다시점 생성을 4D Gaussian Splatting으로 끌어올릴 때 생기는 시점 간 외형 불일치(bounded-attention-context) 문제 해결
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20308" target=_blank>DreamHand</a></strong> [CV]<br>
+  왜 주요: 비디오 디퓨전 모델을 결정론적 기하 인코더로 재해석해 가려진/화면 밖 손의 3D 위치를 단일 순전파로 복원
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.19828" target=_blank>Simulation-to-Real First-Break Segmentation for USCT</a></strong> [IV]<br>
+  왜 주요: 근골격 초음파 CT의 전파형 역산 초기 모델 구성을 위한 학습 기반 첫 도달 시간 분할, 시뮬레이션-실측 전이
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.19900" target=_blank>AvatarDynamizer</a></strong> [CV]<br>
+  왜 주요: 정적 3D 아바타를 생성형 동적 텍스처로 옷 주름 등 표면 동역학까지 제어 가능하게 확장
+</div>
+
+<h3>Reconstruction/Inverse Problems (19편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20112" target=_blank>Flow Matching-Based PET Image Reconstruction</a></strong> [IV]<br>
+  왜 주요: Flow matching으로 디퓨전 기반 PET 재구성의 반복 샘플링 부담을 줄이고 데이터 일관성 보정을 분리, FDG 뇌 PET에서 선량별 편향-분산 트레이드오프 개선
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.19813" target=_blank>Energy-Mamba</a></strong> [IV]<br>
+  왜 주요: 물리 기반 에너지 제약을 상태공간모델에 결합해 4개 의료 영상 데이터셋에서 적은 파라미터로 SOTA 분류 성능
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/1361-6560/ae9c85" target=_blank>물리 기반 ULM 혈관 특성화</a></strong> [JNL]<br>
+  왜 주요: 초음파 국소화 현미경(ULM)에 유체역학 모델을 결합해 혈관 기하·혈류를 재구성하고 물리 정합성 점수로 신뢰도 정량화, 325개 혈관 검증
+</div>
+
+<h3>Deep Learning Methods — 관련 2편 (96편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.19506" target=_blank>MOSAIC</a></strong> [IV · TIER A]<br>
+  왜 주요: 완전 샘플링 정답 없이 코일 민감도·심박별 움직임을 동시 추정하는 자기지도 3D LGE MRI 재구성, 1000배 초과 가속에서도 기존 압축 센싱 대비 우수한 영상 품질
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20069" target=_blank>V-REX</a></strong> [CV]<br>
+  왜 주요: 토큰화·사전학습·grounding 전체 파이프라인 재설계로 훨씬 적은 자원으로 대형 파운데이션 모델을 능가하는 최초의 수의학 방사선 VLM
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>결과</th><th>논문</th></tr></thead>
+<tbody>
+<tr><td>하이퍼스펙트로-편광 실시간 이미징 (1150-1650nm, 167채널)</td><td>처리 시간 / 프레임률</td><td>18ms 처리, 초당 55프레임, 기존 최고 사양 대비 수 배~한 자릿수 향상</td><td><a href="https://doi.org/10.1038/s41377-026-02407-1" target=_blank>하이퍼스펙트로-편광 메타센서</a></td></tr>
+<tr><td>3D LGE MRI 재구성 (언더샘플링 가속)</td><td>가속 배율</td><td>1,000배 초과 가속에서도 실현 가능, 기존 압축센싱/저랭크 딥러닝 사전 대비 높은 PSNR/SSIM 및 판독자 품질 점수</td><td><a href="https://arxiv.org/abs/2608.19506" target=_blank>MOSAIC</a></td></tr>
+<tr><td>ULM 혈관 특성화 (325개 혈관, 4개 전임상 데이터셋)</td><td>물리 정합성</td><td>희소·짧은 촬영 데이터에서도 물리적으로 타당한 혈류 복원, 설치류 미세순환 문헌값과 일치하는 거듭제곱 법칙 스케일링</td><td><a href="https://doi.org/10.1088/1361-6560/ae9c85" target=_blank>물리 기반 ULM 혈관 특성화</a></td></tr>
+<tr><td>Point-Based 3D Reconstruction from Sparse Views (5개 합성 물체)</td><td>Chamfer distance 감소율</td><td>최강 점 기반 베이스라인 대비 28.5% 감소, 서펠 수 약 161개 적음(267개 평균)</td><td><a href="https://arxiv.org/abs/2608.20000" target=_blank>Point-Based 3D Reconstruction</a></td></tr>
+</tbody>
+</table>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Stream4D: 4D-Consistency for Streaming Autoregressive Diffusion Video Models — arXiv cs.CV</h3>
+  <div class=tag>[방법전환] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 실시간 스트리밍 비디오 생성 모델은 프레임 단위 예측 손실로 학습되기 때문에, 긴 롤아웃에서 기하 오차가 누적돼 영상이 점점 정지 화면처럼 굳어버리는 문제가 잘 알려져 있었습니다. 최근 이를 고치려고 3D Gaussian Splatting 기반 정적 복원 비평자를 보상으로 쓰는 방법이 제안됐는데, 이 논문은 그 해법 자체가 새로운 역설을 만든다는 것을 짚습니다. 정적 장면 하나만 가정하는 비평자는 물체가 실제로 움직이는 것조차 "복원이 틀렸다"고 벌점을 매기기 때문에, 보상을 최대화하는 가장 쉬운 방법이 영상을 아예 얼려버리는 것이 되어버립니다. 특히 자기회귀 방식에서는 이렇게 한 번 얼어붙은 구성이 다음 청크로 계속 전파돼 문제가 더 심해집니다. "평가 지표를 잘 설계하지 않으면 모델이 지표를 속이는 방향으로 학습된다"는 일반적인 교훈을, 계산 이미징에서 익숙한 3D 복원 비평자라는 구체적 맥락에서 명확하게 보여준 사례입니다.</p>
+  <p><strong>핵심:</strong> Stream4D는 정적 복원 비평자를 매 프레임 새로 4D 복원을 수행하는 피드포워드 보상으로 교체해, 장면의 동역학을 명시적으로 모델링합니다. 일관된 움직임에는 높은 일관성 보상을 주도록 설계했고, 움직임의 크기와 품질을 더 정교하게 유도하기 위해 자연스러운 장면 흐름(scene-flow) 크기에는 보상을 주고 떨림·비강체 왜곡에는 벌점을 주는 모션 사전(prior)도 추가했습니다. 두 항에 가벼운 지각적 앵커까지 결합한 최종 레시피는, 여러 자기회귀 비디오 백본과 다양한 생성 길이(horizon)에서 4D 복원 품질과 모션 보존, 사람이 평가한 선호도를 모두 개선했습니다.</p>
+  <p><strong>주의:</strong> "다양한 자기회귀 비디오 백본에서 개선"이라는 주장이 abstract 수준 요약이라, 백본별로 개선 폭이 얼마나 차이 나는지는 본문 표 확인이 필요합니다. 또한 4D 복원 보상 자체의 계산 비용이 기존 정적 비평자 대비 얼마나 늘어나는지, 실시간 스트리밍 요구사항(지연시간)과 트레이드오프가 있는지도 본문에서 재확인해야 합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] MOSAIC: A Self-supervised Dynamic Multi-encoding Reconstruction Framework for 3D Late Gadolinium Enhancement MRI — eess.IV</h3>
+  <div class=tag>[방법전환] [데이터전환]</div>
+  <p><strong>왜 A급인가:</strong> 3D 지연조영증강(LGE) 심장 MRI는 심근 반흔을 진단하는 핵심 시퀀스지만, 자유호흡 상태에서 고배율로 언더샘플링하면 코일 민감도·심박별 움직임·다중 에코 영상 내용을 동시에 풀어야 하는 어려운 역문제가 됩니다. 기존 방법들은 완전 샘플링된 학습 데이터나 정확히 미리 계산된 코일 민감도 지도가 있어야 지도학습이 가능했는데, 이는 임상 현장에서 구하기 매우 어려운 조건입니다. MOSAIC은 이 전제 자체를 버리고, 획득된 언더샘플링 데이터만으로 코일 민감도·움직임·영상 내용을 동시에 추정합니다. 계산 이미징 재구성 알고리즘이 "정답이 있어야 학습 가능하다"는 가정에서 벗어나는 흐름을 가장 명확하게 보여주는 사례 중 하나입니다.</p>
+  <p><strong>핵심:</strong> MOSAIC은 이중 에코 3D LGE MRI에서 다중 에코 영상 내용, 코일 민감도 지도, 심박별 비강체 움직임을 획득된 데이터로부터 직접 공동 모델링합니다. 기존 방법들이 데이터를 여러 움직임 상태로 구간화(binning)하는 것과 달리, MOSAIC은 매 심박마다 움직임이 보정된 3D LGE 영상을 재구성합니다. 디지털 팬텀에 시뮬레이션된 심근 반흔으로 실험한 결과, 저랭크 딥러닝 사전 재구성 및 MOSAIC 자체의 ablation 변형들보다 높은 최대 신호 대 잡음비와 구조적 유사도 지수를 기록했고, 동물·사람 실험에서도 인라인 영상 내비게이션 압축센싱 및 저랭크 딥러닝 사전 재구성보다 블라인드 전문가 영상 품질 점수가 높았습니다. 1,000배를 초과하는 가속 배율에서도 자유호흡 이중 에코 3D LGE 촬영이 가능하다는 것을 보였습니다.</p>
+  <p><strong>주의:</strong> "1,000배 초과 가속"이 어떤 기준선 대비 배율인지, 그리고 팬텀·동물·사람 실험 각각에서 정량 지표(PSNR/SSIM 구체 수치)가 얼마나 되는지는 abstract만으로는 확인되지 않아 본문 확인이 필요합니다. 또한 사람 실험의 피험자 수와 반흔 유형 다양성도 재현 가능성 평가를 위해 확인해야 합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] Virtual Staining/Pathology 20편 중 실제 병리·가상염색과 직접 관련된 논문은 사실상 1편(H&E 종양연관대식세포 정량화)뿐입니다 — 나머지는 강화학습·문화유산 데이터·건물 에너지·언어학 논문 등에서 "staining" 키워드가 우연히 겹친 것으로, 이 버킷의 편수(20편)를 병리 AI 활동량으로 해석하면 안 됩니다.</p>
+  <p>[Dataset risk] Fourier Ptychography/Microscopy, Meta-Optics/Diffractive, Light-Field/Novel Sensors 저널 논문 대부분이 초록 미공개(Crossref API 한계)라 제목 기반 판단 비중이 큽니다. 오늘 이 버킷들을 "신호가 몰린 날"로 평가한 근거도 상당 부분 제목·저자·저널명(Optics Express, Light: Science & Applications 등)에 의존했습니다.</p>
+  <p>[Dataset risk] Tomography/3D Imaging 36편 중 3DGS/비디오 디퓨전 기하 복원 계열은 5편이고, 나머지 31편은 대부분 임상 CT/OCT/PET 진단 저널로 계산 이미징 방법론 기여와는 거리가 있습니다.</p>
+  <p>[Dataset risk] Reconstruction/Inverse Problems 19편 중 이미징과 직접 관련된 논문은 3편뿐이며, 나머지는 강화학습·시계열 예측·양자 컴퓨팅 등 일반 ML/물리 문제라 클러스터 표에서 별도 행으로 다루지 못했습니다.</p>
+  <p>[Metric risk] 오늘 arXiv 신규 편수(388편)가 어제(467편)보다 줄었는데, 5개 카테고리 h3 배너를 모두 재확인해 파서 오류가 아니라 금요일 자연 감소로 판단했지만, 완전히 배제할 수는 없습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] Stream4D의 "다양한 자기회귀 비디오 백본에서 개선"이라는 주장은 abstract 수준 요약이며, 백본별 개선 폭 편차는 본문 표 확인이 필요합니다.</p>
+  <p>[Claim risk] MOSAIC의 "1,000배 초과 가속"과 구체적 PSNR/SSIM 수치는 abstract에 명시되지 않아 본문 확인이 필요합니다.</p>
+  <p>[Baseline risk] V-REX가 비교한 "개방형 파운데이션 모델"이 구체적으로 어떤 모델·크기인지, 동일 평가 프로토콜을 썼는지는 abstract만으로 확인되지 않습니다.</p>
+  <p>[Dataset risk] 하이퍼스펙트로-편광 메타센서 논문의 성능 수치(18ms, 55fps)는 abstract 기준이며, 단일 실험실 조건에서의 결과일 가능성이 있어 재현 시 환경 조건 확인이 필요합니다.</p>
+  <p>[Claim risk] Energy-Mamba의 "SOTA 수준 분류 성능"은 abstract에 구체적 수치가 없어 "본문 확인 필요"로 표시했으며, 벤치마크 테이블에도 추정치를 넣지 않았습니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>임상 CT/PET/OCT/MRI 진단·증례보고 다수</strong> — 임상 진단 목적, 계산 이미징 방법론 기여 없음.</li>
+    <li><strong>"staining"/"pathology" 키워드 오탐 다수</strong>(강화학습, 문화유산 디지털화, 건물 에너지, 언어학 논문 등) — 계산 이미징과 무관.</li>
+    <li><strong>5G/6G 통신·전자기 흡수체·레이더 단면적용 메타표면 다수</strong> — 메타표면 키워드로 걸렸으나 이미징 ROI와 거리가 있음.</li>
+    <li><strong>Deep Learning Methods 내 시계열 예측·강화학습·양자 컴퓨팅 논문</strong> — 이미징이 아닌 일반 ML 맥락이라 ROI와의 연결이 간접적.</li>
+    <li><strong>Fourier Ptychography 3편, Reconstruction 저널 2편</strong>(Rotating electrode ECT, 세포 굴절률) — 실제 계산 이미징 방법론이지만 초록 미공개로 제목 기반 우선순위 낮춤, Skim-only로 분류.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy — 관련 3편 (3편 전부 실제 FP/타이코그래피 방법론)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tci.2026.3725928" target=_blank>Fourier Ptychographic Microscopy Reconstruction via Structure Tensor Total Variation Regularization</a></strong> <span class=pill>JNL</span><br>
+  문제: FP 복원에서 기존 정규화 방식이 세부 구조를 흐리게 만듦 / 방법: 구조 텐서 기반 전변동(TV) 정규화 도입 / 의미: FP 복원 품질·수렴 안정성 개선 시도 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1557/s43579-026-01027-5" target=_blank>Pty-co-SAXSNN</a></strong> <span class=pill>JNL</span><br>
+  문제: X선 타이코그래피와 SAXS를 동시에 처리해 나노구조를 특성화하는 통합 파이프라인 부재 / 방법: CNN 기반 디컨볼루션으로 두 모달리티 동시 복원 / 의미: X선 계산 이미징과 산란 분석의 결합 사례 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.measurement.2026.122949" target=_blank>Fast autofocusing in ptychography</a></strong> <span class=pill>JNL</span><br>
+  문제: 타이코그래피 자동초점의 속도·정확도 한계 / 방법: 와류 강화 엣지 검출 + 선택적 선형 피팅 / 의미: 타이코그래피 획득 파이프라인의 실용성 개선 / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+
+<h3>Lensless/Coded Imaging — 관련 2편 (2편 전부 실제 렌즈리스 이미징 방법론)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.608614" target=_blank>ConvRML: high-quality lensless imaging with random multi-focal lenslets</a></strong> <span class=pill>JNL</span><br>
+  문제: 렌즈리스 이미징이 넓은 시야·소형화 이점은 있지만 화질이 하드웨어 마스크 설계에 크게 좌우됨 / 방법: 무작위 다초점 렌즈릿 배열로 인코딩 다양성 확보 / 의미: Waller 그룹의 렌즈리스 이미징 하드웨어 설계 최신 사례 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.610853" target=_blank>Resolution-Agnostic Lensless Imaging via Fourier Neural Operators</a></strong> <span class=pill>JNL</span><br>
+  문제: 기존 렌즈리스 복원 신경망이 특정 해상도에 고정돼 다른 해상도로 일반화가 어려움 / 방법: 푸리에 신경 연산자(FNO)로 해상도 무관 복원 / 의미: 렌즈리스 복원의 일반화 가능성 확장 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+
+<h3>Phase Imaging/Holography — 관련 0편 (6편 전부 이미징과 무관한 오탐)</h3>
+<div class=roi-item>
+  <strong>6편 전체 Skim-only 처리</strong> <span class=pill>JNL/SP</span><br>
+  문제: 없음 / 방법: 없음 / 의미: OFDM-ISAC 레이더 빔포밍, 구상흑연주철 상분석, FPGA 홀로그램 프로세서(응용은 무관 도메인), 이론물리 q-홀로그래피, 멜라민 검출 간섭계, 원자시계 물리 등 전부 계산 이미징과 무관한 "holography"/"phase" 키워드 우연 매칭 / 우선순위: Skim-only
+</div>
+
+<h3>Meta-Optics/Diffractive — 관련 2편 (11편 중 나머지는 통신·센서·흡수체 응용)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02407-1" target=_blank>하이퍼스펙트로-편광 메타센서</a></strong> <span class=pill>JNL</span><br>
+  문제: 강도·편광·스펙트럼을 동시에 실시간으로 정확히 포착하는 소형 장치의 부재 / 방법: 편광 다중화+분광 메타표면 인코더 + 잔차 어텐션 딥러닝 복원 / 근거: 167채널, 18ms 처리, 초당 55프레임, 기존 최고 사양 대비 수 배~한 자릿수 향상 / 의미: 메타표면-딥러닝 결합 다차원 실시간 이미징의 강한 사례 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.599584" target=_blank>MetaTele</a></strong> <span class=pill>JNL</span><br>
+  문제: 소형 망원 카메라의 광학계 부피·무게 제약 / 방법: 얇은 굴절형 메타표면 기반 계산 카메라 설계 / 의미: 메타표면 기반 컴퓨테이셔널 카메라의 소형화 사례 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+
+<h3>Light-Field/Novel Sensors — 관련 2편 (4편 중 나머지 2편은 스파이킹 트랜스포머·이벤트 카메라 시뮬레이션으로 응용 도메인 상이)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tci.2026.3725880" target=_blank>Real-World Light Field Image Spatial Super-Resolution</a></strong> <span class=pill>JNL</span><br>
+  문제: 실사용 라이트필드 영상의 공간 해상도 한계 / 방법: 다시점 고차원 기하 일관성 제약 활용 / 의미: 실사용 조건에서의 라이트필드 초해상 방법론 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.610473" target=_blank>End-to-end super-resolution computational imaging with super-oscillatory light field</a></strong> <span class=pill>JNL</span><br>
+  문제: 회절 한계를 넘는 초해상 계산 이미징의 종단간 파이프라인 부재 / 방법: 초진동(super-oscillatory) 라이트필드 기반 종단간 학습 / 의미: 광학 초해상과 계산 복원의 결합 사례 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging — 관련 6편 (36편 중 나머지 30편은 임상 CT/OCT/PET 진단 저널 또는 이미징과 무관한 방법론)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.19556" target=_blank>Stream4D</a></strong> <span class=pill>CV</span><br>
+  문제: 스트리밍 비디오 생성에서 3DGS 기반 정적 복원 비평자가 움직임을 오차로 오인해 영상을 얼리는 역설 / 방법: 피드포워드 4D 복원 보상 + 모션 사전 결합 / 의미: 생성 모델 평가/보상 설계가 기하 복원 품질을 좌우한다는 것을 보임 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20335" target=_blank>4DAnyone</a></strong> <span class=pill>CV</span><br>
+  문제: 카메라 제어 비디오 디퓨전의 다시점 생성이 4DGS에 필요한 수십 개 시점으로 확장될 때 외형 일관성이 깨짐 / 방법: bounded-attention-context 문제로 정식화해 해결 / 의미: 비디오 디퓨전을 4D 인간 재구성에 활용하는 스케일링 사례 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20308" target=_blank>DreamHand</a></strong> <span class=pill>CV</span><br>
+  문제: 1인칭 영상에서 손이 가려지거나 화면 밖으로 나갈 때 기존 회귀 모델이 실패 / 방법: 비디오 디퓨전을 결정론적 기하 인코더로 재해석 / 의미: 디퓨전 표현을 생성이 아닌 기하 추정에 활용 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.19828" target=_blank>Simulation-to-Real First-Break Segmentation</a></strong> <span class=pill>IV</span><br>
+  문제: 근골격 초음파 CT 전파형 역산의 초기 모델이 뼈 산란·감쇠로 부정확 / 방법: U-Net 기반 첫 도달 시간 분할 + 하이브리드 전파형 역산 / 의미: 시뮬레이션-실측 전이로 USCT 역산 효율 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.19900" target=_blank>AvatarDynamizer</a></strong> <span class=pill>CV</span><br>
+  문제: 정적 3D 아바타의 스켈레톤 기반 애니메이션이 옷 주름 등 실제 표면 동역학을 반영하지 못함 / 방법: 생성형 동적 텍스처로 정적 아바타를 동적으로 변환 / 의미: 3D 인간 표현의 동역학 확장 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20000" target=_blank>Point-Based 3D Reconstruction from Sparse Views under Known Illumination</a></strong> <span class=pill>CV</span><br>
+  문제: 희소 시점 3D 복원에서 기존 점 기반 표현이 물리 기반 광 전달을 충분히 반영하지 못함 / 방법: 불투명도 명시적 adjoint 광 전달로 서펠 기하·외형 그래디언트 계산 / 근거: 5개 합성 물체에서 최강 점 기반 베이스라인 대비 평균 Chamfer distance 28.5% 감소, 서펠 수는 약 161개 적음(267개 평균) / 우선순위: Read
+</div>
+
+<h3>Virtual Staining/Pathology — 관련 1편 (20편 중 나머지 19편은 키워드 우연 매칭 오탐)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.19283" target=_blank>Deep Learning for Automated Quantification of TAMs from H&E-Stained Slides in DLBCL</a></strong> <span class=pill>IV</span><br>
+  문제: 미만성 거대B세포림프종에서 M2 대식세포 정량화가 자원 집약적인 IHC에 의존 / 방법: H&E 염색 슬라이드에서 딥러닝 기반 자동 정량화 / 의미: 표준 염색으로 IHC를 대체하는 저비용 병리 AI 사례 / 우선순위: Read
+</div>
+
+<h3>Reconstruction/Inverse Problems — 관련 3편 (19편 중 나머지 16편은 강화학습·시계열·양자컴퓨팅 등 이미징과 무관)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20112" target=_blank>Flow Matching-Based PET Image Reconstruction</a></strong> <span class=pill>IV</span><br>
+  문제: 디퓨전 기반 PET 재구성이 많은 역방향 샘플링 단계와 데이터 일관성 업데이트를 필요로 함 / 방법: Flow matching으로 깨끗한 영상을 직접 추정, 데이터 일관성 보정과 흐름 전파를 분리 / 근거: FDG 뇌 PET에서 선량별 편향-분산 트레이드오프 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.19813" target=_blank>Energy-Mamba</a></strong> <span class=pill>IV</span><br>
+  문제: 상태공간모델을 2D 의료 영상에 적용할 때 제약 없는 상태 진화로 표현 드리프트 발생 / 방법: 물리 기반 에너지 함수로 상태를 저에너지 구성으로 유도하는 그래디언트 강제항 도입 / 근거: 망막 OCT·흉부 X선·현미경·복부 CT 4개 데이터셋에서 적은 파라미터로 SOTA 분류 성능(구체 수치는 본문 확인 필요) / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/1361-6560/ae9c85" target=_blank>물리 기반 ULM 혈관 특성화</a></strong> <span class=pill>JNL</span><br>
+  문제: 초음파 국소화 현미경(ULM) 측정의 물리적 신뢰도 검증이 어려워 임상 전이가 제한됨 / 방법: 포아죄유 유동 모델을 국소적으로 피팅하는 물리 기반 혈관 재구성 + 4개 제약 기반 정합성 점수 / 근거: 325개 혈관, 4개 전임상 데이터셋에서 설치류 미세순환 문헌값과 일치하는 거듭제곱 스케일링 확인 / 우선순위: Read
+</div>
+
+<h3>Deep Learning Methods — 관련 2편 (96편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.19506" target=_blank>MOSAIC</a></strong> <span class=pill>IV</span><br>
+  문제: 3D LGE MRI 자유호흡 고배율 언더샘플링 재구성이 완전 샘플링 정답과 정확한 코일 민감도 지도를 필요로 함 / 방법: 다중 에코·코일 민감도·심박별 비강체 움직임을 데이터에서 직접 공동 추정하는 자기지도 프레임워크 / 근거: 1,000배 초과 가속에서도 기존 압축센싱·저랭크 딥러닝 사전 대비 우수한 PSNR/SSIM 및 판독자 품질 점수 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20069" target=_blank>V-REX</a></strong> <span class=pill>CV</span><br>
+  문제: 도메인 특화 VLM은 대형 파운데이션 모델 미세조정이 필수라는 통념 / 방법: 토큰화·사전학습·grounding·추론 파이프라인 전체 재설계 / 근거: 훨씬 적은 파라미터·데이터·연산으로 기존 개방형 파운데이션 모델을 크게 앞서는 최초의 수의학 방사선 판독 보고서 생성 VLM / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/abs/2608.19556" target=_blank>Stream4D — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.19506" target=_blank>MOSAIC — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.20335" target=_blank>4DAnyone — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.20308" target=_blank>DreamHand — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.19900" target=_blank>AvatarDynamizer — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.19666" target=_blank>MUST-PET — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.20112" target=_blank>Flow Matching-Based PET Image Reconstruction — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.19813" target=_blank>Energy-Mamba — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.20069" target=_blank>V-REX — arXiv</a></li>
+  <li><a href="https://doi.org/10.1364/oe.608614" target=_blank>ConvRML — Optics Express</a></li>
+  <li><a href="https://doi.org/10.1364/oe.610853" target=_blank>Resolution-Agnostic Lensless Imaging — Optics Express</a></li>
+  <li><a href="https://doi.org/10.1364/oe.599584" target=_blank>MetaTele — Optics Express</a></li>
+  <li><a href="https://doi.org/10.1038/s41377-026-02407-1" target=_blank>하이퍼스펙트로-편광 메타센서 — Light: Science &amp; Applications</a></li>
+  <li><a href="https://doi.org/10.1088/2057-1976/ae9c46" target=_blank>HARU-Net — Biomedical Physics &amp; Engineering Express</a></li>
+  <li><a href="https://doi.org/10.1038/s41467-026-76973-8" target=_blank>AFM 자기지도 복원 — Nature Communications</a></li>
+  <li><a href="https://doi.org/10.1088/1361-6560/ae9c85" target=_blank>물리 기반 ULM 혈관 특성화 — Physics in Medicine &amp; Biology</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+  <p>📚 입력: arXiv 2026-08-21(new+cross 388편, cs.LG 127·cs.CV 86·cs.AI 145·eess.IV 8·eess.SP 22) + Crossref/OpenAlex 저널 406편 · 통합 스캔 715건, ROI 197건(27.5%)</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

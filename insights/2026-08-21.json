@@ -1,0 +1,180 @@
+{
+ "date": "2026-08-21",
+ "insights": [
+  {
+   "title": "비디오 디퓨전 모델을 3D/4D 기하 복원 엔진으로 재활용하는 흐름이 등장",
+   "claim": "Stream4D는 스트리밍 비디오 생성에서 3D Gaussian Splatting 기반 정적 복원 비평자가 움직이는 물체를 복원 오차로 오인해 영상을 얼리는 역설을 짚고, 매 프레임 새로 4D 복원을 수행하는 피드포워드 보상으로 이를 고칩니다. DreamHand는 디퓨전 모델을 영상 생성기가 아니라 결정론적 기하 인코더로 써서 가려지거나 화면 밖으로 나가는 손의 위치를 한 번의 순전파로 복원하고, 4DAnyone은 카메라 제어 비디오 디퓨전이 만든 다시점 영상을 4D Gaussian Splatting으로 끌어올릴 때 생기는 시점 간 외형 불일치 문제를 해결하며, AvatarDynamizer는 정적 아바타를 생성형 동적 텍스처로 움직이게 만듭니다.",
+   "papers": [
+    {
+     "title": "Stream4D: 4D-Consistency for Streaming Autoregressive Diffusion Video Models",
+     "arxiv": "https://arxiv.org/abs/2608.19556",
+     "importance_tags": [
+      "[방법전환]",
+      "[평가축]"
+     ]
+    },
+    {
+     "title": "DreamHand: Repurposing Video Diffusion Models for Occlusion-Robust Egocentric 3D Hand Motion Recovery",
+     "arxiv": "https://arxiv.org/abs/2608.20308",
+     "importance_tags": [
+      "[방법전환]"
+     ]
+    },
+    {
+     "title": "4DAnyone: Create Anyone in 4D from a Casual Monocular Video",
+     "arxiv": "https://arxiv.org/abs/2608.20335",
+     "importance_tags": [
+      "[스케일업]"
+     ]
+    },
+    {
+     "title": "AvatarDynamizer: From Static to Dynamic Human Avatars via Generative Dynamic Textures",
+     "arxiv": "https://arxiv.org/abs/2608.19900",
+     "importance_tags": [
+      "[방법전환]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "정답 영상 없이 스스로 배우는 의료 영상 재구성·복원이 모달리티를 가로질러 동시 등장",
+   "claim": "MOSAIC은 1000배 넘는 언더샘플링 3D 심장 MRI에서 완전 샘플링 정답 없이 코일 민감도와 심박별 움직임을 데이터에서 직접 추정해 기존 압축 센싱·저랭크 딥러닝 사전보다 나은 영상 품질을 냈습니다. AFM 자기지도 복원 논문도 별도 정답 영상 없이 잡음 제거와 복원을 동시에 수행하고, HARU-Net은 저선량 CBCT에서 고해상도 학습 데이터 부족 문제를 하이브리드 어텐션 구조로 우회합니다. MUST-PET은 서로 다른 방사성추적자로 찍은 PET-CT를 마스킹-복원 자기지도 학습으로 사전학습해 라벨이 적어도 병변 분할 성능이 좋아진다는 것을 보이고, Flow Matching 기반 PET 재구성은 diffusion 대비 적은 샘플링 단계로 데이터 일관성 보정을 분리해 수행합니다.",
+   "papers": [
+    {
+     "title": "MOSAIC: A Self-supervised Dynamic Multi-encoding Reconstruction Framework for 3D Late Gadolinium Enhancement MRI",
+     "arxiv": "https://arxiv.org/abs/2608.19506",
+     "importance_tags": [
+      "[데이터전환]",
+      "[방법전환]"
+     ]
+    },
+    {
+     "title": "Self-supervised image denoising and restoration method for atomic force microscopy",
+     "arxiv": "https://doi.org/10.1038/s41467-026-76973-8",
+     "importance_tags": [
+      "[데이터전환]"
+     ]
+    },
+    {
+     "title": "HARU-Net: Hybrid Attention Residual U-Net for Edge-Preserving Denoising in Cone-Beam Computed Tomography",
+     "arxiv": "https://doi.org/10.1088/2057-1976/ae9c46",
+     "importance_tags": [
+      "[실사용전환]"
+     ]
+    },
+    {
+     "title": "MUST-PET: MUltimodal Self-supervised learning across Tracers for whole-body PET/CT-based lesion segmentation",
+     "arxiv": "https://arxiv.org/abs/2608.19666",
+     "importance_tags": [
+      "[데이터전환]",
+      "[평가축]"
+     ]
+    },
+    {
+     "title": "Flow Matching-Based PET Image Reconstruction",
+     "arxiv": "https://arxiv.org/abs/2608.20112",
+     "importance_tags": [
+      "[방법전환]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "계산광학 핵심 버킷 — 최근 며칠의 신호 공백과 달리 오늘은 렌즈리스·메타표면·라이트필드 실질 신호가 몰린 날",
+   "claim": "ConvRML(Laura Waller 그룹)은 무작위 다초점 렌즈릿 배열로 고품질 렌즈리스 이미징을 구현하고, Resolution-Agnostic Lensless Imaging은 푸리에 신경 연산자로 해상도 무관 렌즈리스 복원을 제안합니다. MetaTele은 얇은 굴절형 메타표면으로 망원 계산 카메라를, 하이퍼스펙트로-편광 메타센서는 메타표면과 딥러닝을 결합해 초당 55프레임의 다차원 실시간 이미징을 시연합니다. Fourier Ptychography/Microscopy 3편도 전부 실제 타이코그래피 복원·자동초점 방법론이라, 최근 며칠 이 버킷을 채우던 키워드 우연 매칭과는 뚜렷이 대비됩니다.",
+   "papers": [
+    {
+     "title": "ConvRML: high-quality lensless imaging with random multi-focal lenslets",
+     "arxiv": "https://doi.org/10.1364/oe.608614",
+     "importance_tags": [
+      "[방법전환]",
+      "[인프라]"
+     ]
+    },
+    {
+     "title": "Resolution-Agnostic Lensless Imaging via Fourier Neural Operators",
+     "arxiv": "https://doi.org/10.1364/oe.610853",
+     "importance_tags": [
+      "[방법전환]"
+     ]
+    },
+    {
+     "title": "MetaTele: Compact Refractive Metasurface Computational Telephoto Camera",
+     "arxiv": "https://doi.org/10.1364/oe.599584",
+     "importance_tags": [
+      "[인프라]"
+     ]
+    },
+    {
+     "title": "High-accuracy hyperspectro-polarimetric real-time imaging via a deep learning empowered infrared meta-sensor",
+     "arxiv": "https://doi.org/10.1038/s41377-026-02407-1",
+     "importance_tags": [
+      "[스케일업]",
+      "[표준후보]"
+     ]
+    },
+    {
+     "title": "Fourier Ptychographic Microscopy Reconstruction via Structure Tensor Total Variation Regularization",
+     "arxiv": "https://doi.org/10.1109/tci.2026.3725928",
+     "importance_tags": [
+      "[방법전환]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "작지만 특화된 모델이 대형 범용 모델을 압도 — 의료 영상에서 파라미터 절감과 성능이 같이 감",
+   "claim": "V-REX는 토큰화·사전학습·grounding 파이프라인을 처음부터 다시 설계해, 훨씬 적은 파라미터·데이터·연산으로 기존 개방형 파운데이션 모델을 크게 앞서는 최초의 수의학 방사선 판독 보고서 생성 VLM을 만들었습니다. Energy-Mamba는 물리 기반 에너지 제약을 상태공간모델에 결합해 망막 OCT·흉부 X선·현미경·복부 CT 4개 데이터셋에서 훨씬 적은 파라미터로 최고 수준 분류 성능을 냈습니다.",
+   "papers": [
+    {
+     "title": "V-REX: Efficient Specialist VLM Training for Veterinary X-Rays",
+     "arxiv": "https://arxiv.org/abs/2608.20069",
+     "importance_tags": [
+      "[스케일업]",
+      "[실사용전환]"
+     ]
+    },
+    {
+     "title": "Energy-Mamba: A Physics-Constrained State-Space Model for Medical Image Classification",
+     "arxiv": "https://arxiv.org/abs/2608.19813",
+     "importance_tags": [
+      "[방법전환]"
+     ]
+    }
+   ]
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "Stream4D의 4D 복원 보상 구조를 우리 동적 tomography/light-field 재구성 파이프라인의 시간 일관성 손실로 이식",
+   "claim": "Stream4D가 정적 복원 비평자 대신 매 프레임 새로 4D 복원을 수행하는 피드포워드 보상으로 바꿔 움직이는 구조가 벌점을 받지 않게 만든 방식을, 우리 랩의 동적 3D 이미징 재구성에서 정적 복원 기반 손실이 실제 움직임을 왜곡하는지, 4D 복원 보상으로 바꾸면 개선되는지 검토합니다.",
+   "supporting_papers": [
+    {
+     "title": "Stream4D: 4D-Consistency for Streaming Autoregressive Diffusion Video Models",
+     "arxiv": "https://arxiv.org/abs/2608.19556"
+    }
+   ]
+  },
+  {
+   "title": "MOSAIC의 코일 민감도·움직임 동시 추정 자기지도 구조를 우리 언더샘플링 재구성 파이프라인에 적용",
+   "claim": "MOSAIC이 완전 샘플링 학습 데이터 없이 코일 민감도와 심박별 움직임을 언더샘플링 데이터 자체에서 직접 추정한 방식을, 우리 랩의 언더샘플링 tomography/MRI 재구성에서 정답 영상 없이 학습했을 때 기존 지도학습 대비 성능 격차가 얼마나 되는지 검토합니다.",
+   "supporting_papers": [
+    {
+     "title": "MOSAIC: A Self-supervised Dynamic Multi-encoding Reconstruction Framework for 3D Late Gadolinium Enhancement MRI",
+     "arxiv": "https://arxiv.org/abs/2608.19506"
+    }
+   ]
+  },
+  {
+   "title": "ConvRML의 무작위 다초점 렌즈릿 설계를 우리 렌즈리스 이미징 하드웨어 프로토타입에 재현",
+   "claim": "ConvRML이 무작위 다초점 렌즈릿 배열로 렌즈리스 이미징 품질을 높인 방식을, 우리 랩의 렌즈리스 형광/컴퓨테이셔널 이미징 하드웨어에 시뮬레이션 및 소규모 실물 프로토타입으로 재현해 기존 단일 초점 마스크 대비 이득이 있는지 검토합니다.",
+   "supporting_papers": [
+    {
+     "title": "ConvRML: high-quality lensless imaging with random multi-focal lenslets",
+     "arxiv": "https://doi.org/10.1364/oe.608614"
+    }
+   ]
+  }
+ ],
+ "phylogeny_tags": []
+}

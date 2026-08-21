@@ -1,0 +1,37 @@
+{
+ "date": "2026-08-21",
+ "source_listing_date": "2026-08-21",
+ "source_mode": "new",
+ "note": "cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 2026-08-21 listing 정상 확인. arXiv new+cross 388편 + Crossref/OpenAlex 저널 406편을 합쳐 통합 스캔(cross-listing dedup) 715건 중 197건(27.5%)을 ROI 버킷에 배정했다. 오늘 가장 뚜렷한 신호는 (1) 비디오 디퓨전 모델이 영상 생성기가 아니라 3D/4D 기하 복원 엔진으로 재활용되는 사례(Stream4D, DreamHand, 4DAnyone, AvatarDynamizer) 4편 동시 등장, (2) 정답 영상 없이 스스로 배우는 의료 영상 재구성·복원 논문이 MRI/PET/CBCT/AFM 등 여러 모달리티에서 동시 등장, (3) 계산광학 핵심 버킷(Fourier Ptychography, Lensless, Meta-Optics, Light-Field)이 최근 며칠의 신호 공백과 달리 오늘은 실제 이미징 방법론 신호로 채워진 드문 날. arXiv 신규 편수(388편)는 어제(467편)보다 줄었으나 5개 카테고리 h3 배너 재확인으로 파서 오류가 아닌 금요일 자연 감소로 판단.",
+ "daily_new_counts": {
+  "by_cat": {
+   "cs.LG": 127,
+   "cs.CV": 86,
+   "cs.AI": 145,
+   "eess.IV": 8,
+   "eess.SP": 22
+  },
+  "scope": "new+cross; replacements excluded",
+  "journal_count": 406
+ },
+ "totals": {
+  "total_scanned": 715,
+  "selected": 197
+ },
+ "classified": {
+  "total_scanned": 715,
+  "selected": 197,
+  "by_bucket": {
+   "Fourier Ptychography/Microscopy": 3,
+   "Lensless/Coded Imaging": 2,
+   "Phase Imaging/Holography": 6,
+   "Meta-Optics/Diffractive": 11,
+   "Light-Field/Novel Sensors": 4,
+   "Tomography/3D Imaging": 36,
+   "Virtual Staining/Pathology": 20,
+   "Reconstruction/Inverse Problems": 19,
+   "Deep Learning Methods": 96
+  }
+ },
+ "daily_thesis": "오늘 arXiv에서 가장 뚜렷한 흐름은 비디오 디퓨전 모델이 렌더링 도구가 아니라 3D/4D 기하 구조를 뽑아내는 엔진으로 재활용되는 사례가 여럿 나온 것과, 라벨이나 완전한 정답 영상 없이 스스로 학습하는 의료 영상 재구성·복원 논문이 동시에 여러 편 등장한 것입니다. 한편 계산광학 핵심 버킷(Fourier Ptychography, Lensless, Meta-Optics, Light-Field)은 최근 며칠과 달리 오늘은 실제 이미징 신호가 몰린 드문 날이었습니다."
+}
