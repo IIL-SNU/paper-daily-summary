@@ -1,0 +1,65 @@
+{
+  "date": "2026-08-24",
+  "source_listing_date": "2026-08-24",
+  "source_mode": "weekly-pastweek",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 0,
+      "eess.SP": 0
+    },
+    "scope": "not applicable — this is the weekly-run stub; today's (2026-08-24) daily /new counts are not yet collected and will be filled by the later 11:00 KST daily execution"
+  },
+  "totals": {
+    "total_scanned": 0,
+    "selected": 0
+  },
+  "classified": {
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 0,
+      "Meta-Optics/Diffractive": 0,
+      "Light-Field/Novel Sensors": 0,
+      "Tomography/3D Imaging": 0,
+      "Virtual Staining/Pathology": 0,
+      "Reconstruction/Inverse Problems": 0,
+      "Deep Learning Methods": 0
+    }
+  },
+  "daily_thesis": "",
+  "note": "2026-08-24(월) 오전 weekly 실행(mode=weekly)이 이 파일을 먼저 생성했다. 지난주(2026-08-17~08-21) 회고 결과는 아래 weekly_retrospective_context에 집계돼 있다. source_mode=weekly-pastweek이며 daily_new_counts/totals/classified/daily_thesis는 아직 비어 있다 — 오늘자 arXiv /new가 나온 뒤 같은 날 11:00 KST daily 실행이 이 필드들을 오늘자 실측값으로 덮어써 완성한다(2026-08-17 파일이 지난 주 같은 방식으로 덮어써진 선례를 따름).",
+  "weekly_retrospective_context": {
+    "iso_week": "2026-34",
+    "week_start": "2026-08-17",
+    "week_end": "2026-08-21",
+    "weekly_new_counts_sum": {
+      "by_cat": {
+        "cs.LG": 950,
+        "cs.CV": 641,
+        "cs.AI": 1151,
+        "eess.IV": 51,
+        "eess.SP": 137
+      },
+      "scope": "sum of Mon-Fri 2026-08-17~2026-08-21 daily_new_counts.by_cat (new+cross; replacements excluded)",
+      "journal_count": 1915
+    },
+    "weekly_totals": {
+      "total_scanned": 4231,
+      "selected": 1231
+    },
+    "weekly_classified_by_bucket": {
+      "Fourier Ptychography/Microscopy": 16,
+      "Lensless/Coded Imaging": 9,
+      "Phase Imaging/Holography": 33,
+      "Meta-Optics/Diffractive": 47,
+      "Light-Field/Novel Sensors": 15,
+      "Tomography/3D Imaging": 176,
+      "Virtual Staining/Pathology": 144,
+      "Reconstruction/Inverse Problems": 129,
+      "Deep Learning Methods": 662
+    }
+  }
+}

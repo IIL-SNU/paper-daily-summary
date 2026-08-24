@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Weekly Retrospective — 2026-W34</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.7;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+table{border-collapse:collapse;width:100%;margin:1rem 0}
+th,td{border:1px solid #ccc;padding:.5rem .8rem;vertical-align:top}
+th{background:#f0f0f8;font-size:.85rem}
+td{font-size:.88rem}
+blockquote{border-left:4px solid #2a2a6e;padding:.5rem 1rem;margin:1rem 0;background:#f8f8ff}
+.theme-card{border:1px solid #e0e0ff;border-radius:8px;padding:1rem;margin:.8rem 0;background:#f8f8ff}
+.theme-card h3{margin:0 0 .5rem;font-size:1rem;color:#2a2a6e}
+a{color:#2a2a6e}
+.home{display:inline-block;padding:.4rem .9rem;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;font-size:.875rem;color:#374151;text-decoration:none;margin:.5rem 0}
+.home:hover{background:#e9ecef}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 6px;border-radius:8px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.hot-cold{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+.hot-box{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:.9rem 1.1rem}
+.cold-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:.9rem 1.1rem}
+.hot-box h3{margin:0 0 .5rem;color:#7f1d1d;font-size:.95rem}
+.cold-box h3{margin:0 0 .5rem;color:#1e3a8a;font-size:.95rem}
+.hot-box ul,.cold-box ul{margin:.4rem 0;padding-left:1.2rem;font-size:.88rem}
+.dd{background:#fefce8;border:1px solid #fde047;border-radius:10px;padding:1.1rem 1.3rem;margin:1rem 0}
+.dd h3{margin:0 0 .5rem;color:#713f12;font-size:1rem}
+.action-card{border:1px solid #d1fae5;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#f0fdf4}
+.action-card h3{margin:0 0 .4rem;font-size:.95rem;color:#14532d}
+.pred-card{border:1px solid #e0e7ff;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#eef2ff}
+.pred-card h3{margin:0 0 .4rem;font-size:.95rem;color:#3730a3}
+.pred-card .cond{font-size:.82rem;color:#4338ca;margin:.3rem 0}
+.meta{font-size:.85rem;color:#475569;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:4px;padding:.6rem 1rem;margin:.8rem 0}
+ul.plain{padding-left:1.3rem}
+ul.plain li{margin:.3rem 0;font-size:.9rem}
+.review-hit{color:#166534;font-weight:700}
+.review-partial{color:#92400e;font-weight:700}
+.review-miss{color:#7f1d1d;font-weight:700}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Weekly Retrospective — 2026-08-24 (Week 34)</h1>
+<div class=meta>
+  <div>발행: 2026-08-24 (월) &nbsp;|&nbsp; 검토 기간: 2026-08-17 ~ 08-21 (Mon–Fri)</div>
+  <div>지난주 arXiv 신규 약 2,930편 (cs.LG 950 · cs.CV 641 · cs.AI 1,151 · eess.IV 51 · eess.SP 137) + 저널 약 1,915건 &nbsp;|&nbsp; ROI 배정 1,231건 &nbsp;|&nbsp; 5일치 daily briefing 기반(월~금 모두 arXiv+저널 완전판, 화요일은 전날 journal-only 잠정본을 당일 완전판으로 업그레이드)</div>
+</div>
+
+<h2>🗓 Executive Summary</h2>
+<ul class=plain>
+  <li>지난주는 <strong>'3D Gaussian Splatting(3DGS)의 응용 도메인이 하루도 가만있지 않은 한 주'</strong>로 기억하면 됩니다. 화요일에는 CT/스펙트럴 CT 재구성으로 좁혀지며 지난주(W33) 예측이 맞아떨어졌지만, 수요일에는 워터마킹·초기화 검증 같은 인프라 문제로, 목요일에는 VLA 로봇 정책 강건성 검증으로 하루 만에 다시 흩어졌습니다.</li>
+  <li>랩의 핵심 ROI인 <strong>계산광학 코어는 3주째 이어지던 가뭄 진단이 금요일 하루 만에 뒤집혔습니다.</strong> 월~목에는 실질 신호가 하루 2~4편에 머물렀지만, 금요일에는 렌즈리스·메타표면·Fourier Ptychography 4개 세부 버킷에서 동시에 5편 이상이 나와, '가뭄'이 구조적 결핍이 아니라 하루 단위로 크게 요동치는 신호 밀도였다는 게 드러났습니다.</li>
+  <li>지난주(W33) weekly가 낸 예측 세 가지 중 <strong>계산광학 코어 가뭄 지속 예측은 금요일 반전으로 빗나갔고</strong>, 3DGS의 의료·현미경 수렴과 '신호를 캐묻는 감사'의 계산 이미징 전이는 둘 다 화요일·목요일 하루씩만 부분적으로 확인돼 3주 연속 부분 적중에 머물렀습니다.</li>
+</ul>
+
+<blockquote>
+<strong>Weekly Thesis.</strong> 지난주 초반(월)에는 의료 영상 판독에 언어를 깊숙이 끌어들이는 흐름이 4개 모달리티(CT/MR·초음파·병리·PET)에서 동시에 나왔고, 화요일부터는 3D Gaussian Splatting이 로봇 인식·sparse-view CT 재구성·이벤트 SLAM까지 열네 편 가까이 퍼지며 지난주(W33) 예측했던 "의료·현미경 재구성으로 수렴"이 실제로 확인됐지만, 수요일부터는 그 무게중심이 다시 렌더링 품질에서 워터마킹·초기화 검증 같은 시스템 인프라 문제로, 목요일에는 동적 장면·VLA 로봇 정책·스트리밍이라는 실사용 강건성 검증으로 옮겨가며 랩이 겨냥한 의료·CT 도메인에서 다시 멀어졌습니다. 계산광학 코어는 월~목 나흘 동안 2주 연속 가뭄이 그대로 이어지는 것처럼 보였지만, 금요일 렌즈리스·메타표면·라이트필드에서 실질 신호 5편이 한꺼번에 몰리며 가뭄 진단이 하루 만에 뒤집혔습니다. 즉 지난주는 "3DGS의 응용 도메인이 매일 옮겨 다니고, 계산광학 코어는 하루 단위로 신호 밀도가 요동친다"는 점을 함께 보여준 한 주였습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>지난주 가장 뜨거웠던 흐름은 <strong>3D Gaussian Splatting이 매일 다른 응용 도메인으로 무게중심을 옮긴 것</strong>입니다. 화요일에는 3DGS를 쓴 논문이 열네 편 가까이 나왔는데, TR-GS와 Shared-Structure 4D Spectral Gaussian 두 편이 각각 sparse-view CT 볼륨 렌더링과 스펙트럴 CT 재구성을 3DGS로 직접 풀어, 지난주(W33) weekly가 냈던 "3DGS의 로버스트니스 축이 의료·현미경 재구성의 물리적 아티팩트 보정으로 수렴한다"는 예측을 실제로 확인시켜 줬습니다. 그런데 수요일에는 이 흐름이 다시 방향을 틀어, NGS-Marker가 3DGS 결과물의 소유권을 지키는 워터마킹을, Initialization-Free Bundle Adjustment 논문이 카메라 자세 복원 방법들의 실제 정확도를 재검증하는 인프라·검증 문제로 옮겨갔습니다 — CT 재구성이라는 랩 직결 응용에서 서비스화 문제로 한 걸음 물러난 셈입니다. 목요일에는 다시 축이 바뀌어 Depth Anything V4가 4D 동적 장면 복원 정확도를 끌어올리고, GS-VLA가 카메라 위치가 조금만 틀어져도 VLA(Vision-Language-Action, 시각·언어 입력으로 로봇 행동을 만드는 모델) 로봇 정책이 무너지는 문제를 3DGS 기반 시점 정규화로 고쳤습니다. 같은 기간 별개로, 의료 영상 판독에 언어를 깊이 통합하는 흐름이 월요일 CT/MR·초음파·병리·PET 네 모달리티에서 동시에 나왔다가, 목요일부터는 "언어를 얼마나 잘 통합했는가"에서 "그 판단을 믿어도 되는가"로 초점이 옮겨갔습니다 — 수요일 Pathology Transport는 설명가능 AI 히트맵이 실제 방사선전문의 라벨에서는 무작위 수준으로 무너진다는 정직한 실패를 보고했고, 목요일 EVADE는 확대 영상과 원본 영상의 답이 일치할 때만 진단을 확정하는 방식으로 보정 오차를 최대 45% 줄였습니다.</p>
+
+<p>반대로 눈에 띄게 반전된 흐름은 랩의 핵심 ROI인 계산광학 코어(Fourier ptychography·lensless·위상 영상·메타옵틱스·light-field)입니다. 월요일부터 목요일까지는 raw 카운트가 매일 7~19편으로 잡혔지만 실제 abstract로 검증 가능한 신호는 하루 2~4편에 머물러, W32·W33에 이어 3주째 가뭄이 이어지는 것처럼 보였습니다. 그런데 금요일에는 정반대의 하루가 왔습니다 — Waller 그룹의 ConvRML이 무작위 다초점 렌즈릿 배열로 고품질 렌즈리스 이미징을 구현했고, Resolution-Agnostic Lensless Imaging은 푸리에 신경 연산자로 해상도 무관 렌즈리스 복원을 제안했으며, MetaTele은 얇은 굴절형 메타표면으로 망원 계산 카메라를 만들었고, Fourier Ptychography 3편 전부가 실제 타이코그래피 복원·자동초점 방법론이었습니다. 3주 연속 가뭄으로 봤던 진단이 하루 만에 뒤집힌 셈입니다. 이 밖에 목요일 diffusion 기반 posterior 샘플링을 시간축으로 병렬화하는 Picard Proximal Monte Carlo 등 4편이 "역문제 추론을 실제 대규모 파이프라인에 넣으려면 속도·검증가능성이 먼저 필요하다"는 문제의식을 냈지만, 금요일에는 후속 신호 없이 하루짜리로 끝났습니다.</p>
+
+<p>다음 주 전망: 첫째, 계산광학 코어가 정말 "가뭄"이 아니라 "특정 요일에 몰아서 신호가 나오는 변동성"이라는 정정된 진단이 다음 주에도 반복되는지가 첫 번째 관찰 포인트입니다. 둘째, 3DGS가 지난주 화요일 CT 재구성으로 잠깐 좁혀졌다가 바로 흩어진 것처럼, 이 응용 도메인이 다음 주에도 계속 여러 곳을 오가는지, 아니면 CT/의료 재구성이 독립적인 하위 흐름으로 자리잡는지 확인이 필요합니다. 셋째, 목~금 의료 VLM·병리 AI의 신뢰성 검증 흐름이 다음 주에는 계산 이미징 재구성의 불확실성 정량화로 이어지는지, 3주 연속 부분 적중에 그친 이 예측이 이번에는 완전히 확인되는지가 랩 ROI 관점에서 가장 직접적인 확인 대상입니다.</p>
+
+<h2>⚖️ Hot vs Cold</h2>
+<div class=hot-cold>
+  <div class=hot-box>
+    <h3>⬆ 가속 클러스터</h3>
+    <ul>
+      <li><strong>3D Gaussian Splatting — CT 재구성(화)에서 인프라 검증(수), 강건성 검증(목)까지 매일 무게중심 이동</strong><br>화요일 열네 편 가까이 로봇·CT로 퍼진 뒤, 수요일 워터마킹·초기화 검증, 목요일 동적 장면·VLA 강건성 검증으로 사흘 연속 다른 축을 형성했습니다.</li>
+      <li><strong>계산광학 코어 — 나흘의 가뭄을 깨고 금요일 하루 5편 실질 신호로 반전</strong><br>Waller 그룹 ConvRML을 포함해 렌즈리스·메타표면·타이코그래피 4개 세부 버킷에서 동시에 실질 신호가 확인된 건 최근 3주 중 처음입니다.</li>
+    </ul>
+  </div>
+  <div class=cold-box>
+    <h3>⬇ 감속 클러스터</h3>
+    <ul>
+      <li><strong>월요일 의료 VLM/LLM 판독 통합 축</strong><br>월요일 하루 CT/MR·초음파·병리·PET 4개 모달리티에서 뚜렷한 클러스터를 이뤘지만, 화요일 이후 같은 축의 후속 논문이 인사이트에 다시 잡히지 않았습니다.</li>
+      <li><strong>목요일 score-based/물리 결합 베이지안 역문제 추론 축</strong><br>목요일 하루 4편이 속도·검증가능성이라는 같은 병목을 겨냥했지만, 금요일에는 후속 신호가 나타나지 않았습니다.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>🧩 주간 클러스터 표</h2>
+<table>
+<thead><tr>
+  <th>Cluster</th>
+  <th>대표 논문</th>
+  <th>왜 중요?</th>
+  <th>Confidence</th>
+  <th>Lab action</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><strong>3D Gaussian Splatting이 로봇 인식·CT 재구성 확산(화)에서 워터마킹·검증 인프라(수)를 거쳐 동적 장면·VLA 강건성 검증(목)으로 매일 무게중심 이동 <span class=tag>HOT</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.16042">TR-GS</a><br>
+    <a href="https://arxiv.org/abs/2608.16463">Shared-Structure 4D Spectral Gaussian</a><br>
+    <a href="https://arxiv.org/abs/2608.17447">NGS-Marker</a><br>
+    <a href="https://arxiv.org/abs/2608.18028">Initialization-Free Bundle Adjustment</a><br>
+    <a href="https://arxiv.org/abs/2608.18388">Depth Anything V4</a><br>
+    <a href="https://arxiv.org/abs/2608.19066">GS-VLA</a>
+  </td>
+  <td>화요일에는 3DGS를 쓴 논문이 열네 편 가까이 나왔는데, 그중 TR-GS와 Shared-Structure 4D Spectral Gaussian 두 편은 각각 sparse-view CT 볼륨 렌더링과 sparse-view 스펙트럴 CT 재구성을 3DGS로 직접 풀어, 지난주(W33) weekly가 냈던 "3DGS의 로버스트니스 축이 의료·현미경 재구성의 물리적 아티팩트 보정으로 수렴한다"는 예측을 실제로 확인시켜 줬습니다. 그런데 수요일에는 이 흐름이 다시 방향을 틀어, NGS-Marker가 3DGS 결과물의 소유권을 지키는 워터마킹을, Initialization-Free Bundle Adjustment 논문이 카메라 자세 복원 방법들의 실제 정확도를 재검증하는 인프라·검증 문제로 옮겨갔습니다 — CT 재구성이라는 랩 직결 응용에서 서비스화 문제로 한 걸음 물러난 셈입니다. 목요일에는 다시 축이 바뀌어 Depth Anything V4가 4D 동적 장면 복원에서 리만 다양체 위의 확률 경로로 정확도를 끌어올리고, GS-VLA가 카메라 위치가 조금만 틀어져도 VLA 로봇 정책이 무너지는 문제를 3DGS 기반 시점 정규화로 고쳤습니다 — 이제는 "완성된 3DGS 표현이 동적 장면과 로봇 배포 조건에서 버티는가"를 검증하는 단계입니다. 나흘을 이어보면, 3DGS 연구가 랩이 원하는 CT/현미경 응용으로 잠깐 좁혀졌다가도 하루 만에 다시 인프라·강건성 검증으로 흩어지는, "응용 도메인이 고정되지 않고 매일 옮겨 다니는" 흐름이라는 뜻입니다.</td>
+  <td>High<br><small>화~목 사흘, 서로 다른 저자군 20편 이상이 매일 다른 문제 설정(재구성 응용/인프라 검증/강건성 검증)으로 3DGS를 확장, 여러 논문이 정량 벤치마크(F-score, PSNR, LIBERO 성공률) 제시</small></td>
+  <td>TR-GS의 t-분포 Gaussian 모델링과 ray-confidence 가중치를 우리 랩 sparse-view CT 3DGS 재구성 파이프라인에 이식해 저선량·결측 뷰 조건에서 재구성 품질이 개선되는지 이번 주 안에 비교하고, Initialization-Free Bundle Adjustment의 통제된 평가 프로토콜(최적화 성공률이 아니라 실제 3D 정확도로 검증)을 우리 랩 카메라 자세 추정 벤치마크에 그대로 적용</td>
+</tr>
+<tr>
+  <td><strong>계산광학 코어가 나흘의 가뭄(월~목)을 깨고 금요일 렌즈리스·메타표면·타이코그래피 실질 신호 5편으로 반전 <span class=tag>HOT</span></strong></td>
+  <td>
+    <a href="https://doi.org/10.1364/oe.608614">ConvRML</a><br>
+    <a href="https://doi.org/10.1364/oe.610853">Resolution-Agnostic Lensless Imaging</a><br>
+    <a href="https://doi.org/10.1364/oe.599584">MetaTele</a><br>
+    <a href="https://doi.org/10.1109/tci.2026.3725928">FP 구조텐서 TV 복원</a>
+  </td>
+  <td>월요일부터 목요일까지 계산광학 코어(Fourier Ptychography·Lensless·Phase·Meta-Optics·Light-Field) 5개 버킷은 raw 카운트가 매일 7~19편으로 잡혔지만, 각 날짜 trends 기록이 명시하듯 실제 abstract로 검증 가능한 신호는 하루 2~4편에 머물러 W32·W33에 이어 3주째 가뭄이 이어지는 것처럼 보였습니다. 그런데 금요일에는 정반대의 하루가 왔습니다 — ConvRML(Laura Waller 그룹)이 무작위 다초점 렌즈릿 배열로 고품질 렌즈리스 이미징을 구현했고, Resolution-Agnostic Lensless Imaging은 푸리에 신경 연산자로 해상도에 무관한 렌즈리스 복원을 제안했으며, MetaTele은 얇은 굴절형 메타표면으로 망원 계산 카메라를 만들었고, Fourier Ptychography 3편 전부가 실제 타이코그래피 복원·자동초점 방법론이었습니다. 나흘을 이어보면, 계산광학 코어의 "가뭄"은 매일 일정하게 이어지는 구조적 결핍이 아니라, 하루 단위로 신호 밀도가 크게 요동치는 변동성에 가깝다는 뜻입니다 — 그래서 이 버킷은 하루라도 건너뛰면 안 되는 버킷입니다.</td>
+  <td>High<br><small>금요일 하루, 서로 다른 기관(Waller 그룹 포함) 5편이 4개 세부 버킷(Lensless·Meta-Optics·FP·Light-Field)에서 동시에 실질 신호를 냄 — 하루짜리지만 4개 세부 버킷 동시 확인은 최근 3주 중 처음</small></td>
+  <td>ConvRML의 무작위 다초점 렌즈릿 배열 설계를 우리 랩 렌즈리스 이미징 하드웨어 프로토타입에 시뮬레이션으로 재현해 기존 단일 초점 마스크 대비 PSNR·공간대역곱(SBP) 향상폭을 비교하고, Resolution-Agnostic Lensless Imaging의 푸리에 신경 연산자 구조가 우리 랩 다양한 센서 해상도 환경에서도 재학습 없이 이식 가능한지 이번 주 안에 검토</td>
+</tr>
+<tr>
+  <td><strong>의료 영상 판독에 언어를 깊이 통합(월)한 뒤, 목~금 신뢰성·불확실성 검증으로 초점이 옮겨감</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.13690">MedPlex</a><br>
+    <a href="https://arxiv.org/abs/2608.14309">SLMP</a><br>
+    <a href="https://arxiv.org/abs/2608.17370">Pathology Transport</a><br>
+    <a href="https://arxiv.org/abs/2608.18833">EVADE</a><br>
+    <a href="https://arxiv.org/abs/2608.18628">When Safety Overrides Vision</a>
+  </td>
+  <td>월요일에는 CT/MR 분할·초음파·병리·PET 네 모달리티에서 동시에 언어를 판독 과정 한가운데로 끌어들인 논문이 나왔습니다. MedPlex는 시각 표현과 언어 신호를 인코더 전 구간에서 함께 진화시켰고, SLMP는 기가픽셀 병리 슬라이드를 사람이 읽을 수 있는 문장 단위로 타일 간 정보를 주고받는 방식으로 다뤘습니다. 그런데 목요일부터는 초점이 "언어를 얼마나 잘 통합했는가"에서 "그 판단을 믿어도 되는가"로 바뀝니다. 수요일 Pathology Transport는 설명가능 AI 히트맵이 인공 병변에서는 그럴듯해도 실제 방사선전문의 라벨에서는 무작위 수준으로 무너진다는 정직한 실패를 보고했고, 목요일 EVADE는 확대 영상과 원본 영상의 답이 일치할 때만 진단을 확정하고 그렇지 않으면 유보하게 만들어 보정 오차를 최대 45% 줄였으며, When Safety Overrides Vision은 안전 정렬 때문에 모델이 답변을 거부할 때도 내부적으로는 시각 근거를 여전히 참고한다는 걸 활성화 개입으로 보였습니다. 닷새를 이어보면, 의료 VLM 연구가 "언어로 판독 근거를 명시화"하는 단계에서 "그 근거·설명·유보 판단이 실제로 신뢰할 만한가"를 검증하는 단계로 넘어갔다는 뜻입니다.</td>
+  <td>High<br><small>월·수·목 사흘, 서로 다른 모달리티(병리/영상 전반/의료 VLM 안전성) 5편이 "언어 통합 → 신뢰성 검증"이라는 같은 순서로 이동, 정량 지표(mIoU, 보정 오차 감소율) 다수 제시</small></td>
+  <td>Pathology Transport의 synthetic-to-real 히트맵 검증 벤치마크를 우리 랩 label-free virtual staining·복원 결과의 설명가능성 평가에 적용하고, EVADE의 다중 시야 일치 게이트를 우리 복원 파이프라인 출력의 자동 신뢰도 판단(재구성 결과를 확정할지 유보할지)에 이식해 이번 주 안에 오탐 감소 효과를 측정</td>
+</tr>
+<tr>
+  <td><strong>정답 없이 스스로 배우는 재구성이 diffusion inverse solver(목)를 거쳐 라벨 없는 의료 영상 재구성·복원(금)으로 도메인이 넓어짐</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.17666">Picard Proximal Monte Carlo</a><br>
+    <a href="https://arxiv.org/abs/2608.19506">MOSAIC</a><br>
+    <a href="https://doi.org/10.1088/2057-1976/ae9c46">HARU-Net</a><br>
+    <a href="https://arxiv.org/abs/2608.19666">MUST-PET</a>
+  </td>
+  <td>목요일 Picard Proximal Monte Carlo는 diffusion 기반 posterior 샘플링이 본질적으로 순차적이라 대규모 이미징에서 느리다는 문제를 시간축 병렬화로 풀며, "역문제 추론을 실제 파이프라인에 넣으려면 속도·검증가능성이 먼저 필요하다"는 문제의식을 냈습니다. 금요일에는 이 문제의식이 다른 방향으로 넓어져, MOSAIC이 1000배 넘게 언더샘플링한 3D 심장 MRI에서 완전 샘플링 정답 없이 코일 민감도와 심박별 움직임을 데이터 자체에서 동시에 추정했고, HARU-Net은 저선량 CBCT에서 고해상도 학습 데이터 없이 엣지를 보존하며 잡음을 제거했으며, MUST-PET은 서로 다른 방사성추적자로 찍은 PET-CT를 마스킹-복원 방식으로 사전학습해 라벨이 적어도 병변 분할 성능을 끌어올렸습니다. 두 날을 이어보면, "정답이 있어야 학습할 수 있다"는 전제를 깨는 흐름이 diffusion 역문제 추론의 속도·검증가능성 문제(목)에서 임상 데이터의 라벨 확보 비용 문제(금)로 넓어지고 있다는 뜻이고, 이는 랩이 CT·QPI 복원에 diffusion prior를 쓸 때도, 완전 샘플링 정답 없이 학습하는 파이프라인을 설계할 때도 그대로 참고할 수 있는 방향입니다.</td>
+  <td>Medium<br><small>목·금 이틀, 서로 다른 이미징 응용(일반 역문제/MRI/CBCT/PET) 4편이 같은 축(정답 없이 학습)으로 수렴했지만 다른 요일에 후속 신호가 없어 지속성은 이틀짜리</small></td>
+  <td>MOSAIC의 코일 민감도·움직임 동시 추정 자기지도 구조를 우리 랩 언더샘플링 tomography 재구성 파이프라인에 적용해, 완전 샘플링 정답 없이 학습했을 때와 기존 지도학습 대비 PSNR/SSIM 격차를 이번 주 안에 측정</td>
+</tr>
+<tr>
+  <td><strong>비디오 디퓨전 모델이 영상 생성기에서 3D/4D 기하 복원 엔진으로 재활용되는 흐름이 금요일 하루 집중 부상 <span class=tag>WATCH</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.19556">Stream4D</a><br>
+    <a href="https://arxiv.org/abs/2608.20308">DreamHand</a><br>
+    <a href="https://arxiv.org/abs/2608.20335">4DAnyone</a>
+  </td>
+  <td>금요일 세 논문은 모두 비디오 디퓨전 모델을 "그럴듯한 영상을 새로 만드는 생성기"가 아니라 "영상 속에 숨어 있는 3D/4D 기하 구조를 뽑아내는 엔진"으로 씁니다. Stream4D는 기존에 쓰던 3D Gaussian Splatting 기반 정적 복원 비평자가 움직이는 물체조차 "복원이 틀렸다"고 벌점을 매겨 영상을 얼리는 역설을 짚어내고, 매 프레임 새로 4D 복원을 수행하는 피드포워드 보상으로 이를 고쳤습니다. DreamHand는 디퓨전 모델의 잠재 표현 한 번의 순전파만으로 가려진 손의 위치를 복원하는 결정론적 기하 인코더로 썼고, 4DAnyone은 카메라 제어 비디오 디퓨전 모델의 다시점 출력을 4D Gaussian Splatting으로 끌어올리는 과정의 외형 일관성 문제를 풀었습니다. 하루짜리지만 세 편이 독립적으로 같은 방법론적 전환(디퓨전 표현을 생성이 아니라 기하 신호로 전용)에 도달했다는 점에서, 다음 주 이 흐름이 이어지는지 지켜볼 가치가 있습니다.</td>
+  <td>Medium<br><small>금요일 하루, 서로 다른 하위 응용(스트리밍 비디오/1인칭 손 동작/단안 비디오 4D 인간) 3편이 같은 방법론적 전환으로 수렴, 다른 요일에 후속 신호는 아직 없음</small></td>
+  <td>Stream4D의 피드포워드 4D 복원 보상 구조를 우리 랩 동적 tomography/light-field 재구성 파이프라인의 시간적 일관성 손실 함수로 이식해, 정적 복원 기반 손실 대비 움직이는 구조물(혈류, 장기 운동)의 복원 정확도가 개선되는지 다음 주 안에 벤치마크</td>
+</tr>
+</tbody>
+</table>
+
+<h2>📐 arXiv vs 저널 키워드</h2>
+<table>
+<thead><tr><th>채널</th><th>지난주 주요 키워드</th></tr></thead>
+<tbody>
+<tr><td><strong>공통</strong></td><td>gaussian splatting 응용 도메인 이동, 의료 VLM 신뢰성 검증, 정답 없는 자기지도 재구성, diffusion inverse solver 속도·검증가능성, 렌즈리스/메타표면 실질 신호 반등</td></tr>
+<tr><td><strong>arXiv 전용</strong></td><td>3DGS CT 재구성·인프라·강건성 검증(TR-GS, NGS-Marker, Initialization-Free BA, GS-VLA), 의료 VLM 언어 통합·신뢰성(MedPlex, SLMP, Pathology Transport, EVADE), 비디오 디퓨전 기하 복원 재활용(Stream4D, DreamHand, 4DAnyone), 베이지안 역문제 추론(Picard Proximal Monte Carlo)</td></tr>
+<tr><td><strong>저널 전용</strong></td><td>계산광학 코어 하드웨어·복원(ConvRML 렌즈리스, MetaTele 메타표면, FP 구조텐서 TV 복원), 자기지도 CBCT/AFM 복원(HARU-Net, AFM 자기지도 잡음 제거)</td></tr>
+<tr><td><strong>같은 단어, 다른 맥락</strong></td><td>"reconstruction" — 3DGS 기반 CT/스펙트럴 CT의 물리 신호 재구성과 비디오 디퓨전의 4D 기하 복원, 계산광학 코어의 렌즈리스·타이코그래피 복원이 같은 단어로 섞여 나와 도메인 구분이 필요합니다. "self-supervised" — MOSAIC·MUST-PET 쪽은 정답 영상 없이 학습 신호를 데이터 자체의 물리적 일관성에서 뽑는다는 뜻이고, HARU-Net·AFM 쪽은 깨끗한 정답 없이 잡음 제거를 학습한다는 뜻이라 세부 대상이 다릅니다. "신뢰성" — 의료 VLM 쪽은 답을 유보해야 하는 상황을, 설명가능 AI 쪽은 히트맵이 실제 병변을 가리키는지를 가리켜 같은 단어라도 검증 대상이 다릅니다.</td></tr>
+</tbody>
+</table>
+
+<h2>🔥 주간 Top 5</h2>
+<ol>
+<li>
+  <strong><a href="https://arxiv.org/abs/2608.19556">Stream4D: 4D-Consistency for Streaming Autoregressive Diffusion Video Models</a></strong>
+  <span class=tag>[해부분석]</span><br>
+  3D Gaussian Splatting 기반 정적 복원 비평자가 움직이는 물체조차 "복원이 틀렸다"고 벌점을 매겨 영상을 얼리는 역설을 발견하고, 매 프레임 4D 복원을 다시 수행하는 피드포워드 보상으로 고쳤습니다. 지난주 마지막 날 비디오 디퓨전이 기하 복원 엔진으로 전용되는 흐름을 가장 명확하게 보여준 논문입니다.<br>
+  <small>Phylogeny: CVML / Video Generation &gt; Streaming Diffusion &gt; 4D Consistency &gt; Feedforward Geometric Reward</small>
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2608.17370">Pathology Transport: Optimal-Transport Explanations for Clinical Data, and When Their Heatmaps (Fail to) Localize Disease</a></strong>
+  <span class=tag>[경고신호]</span><br>
+  설명가능 AI 히트맵이 인공 병변에서는 그럴듯해 보여도 실제 방사선전문의 라벨에서는 무작위 수준으로 무너진다는 정직한 실패를 보고했습니다. 랩이 복원·분류 결과에 설명 가능성을 붙일 때, 그 설명이 실제로 병변 위치를 가리키는지 먼저 검증해야 한다는 직접적 경고입니다.<br>
+  <small>Phylogeny: CVML / Medical Imaging &gt; Explainability Auditing &gt; Heatmap Localization Validation &gt; Optimal-Transport Explanation</small>
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2608.16042">TR-GS: High-Fidelity Sparse-View CT Volumetric Rendering via t-Distribution Gaussian Splatting and Ray-Confidence Modeling</a></strong>
+  <span class=tag>[방법전환]</span><br>
+  3DGS를 sparse-view CT 볼륨 렌더링에 직접 적용해, t-분포 기반 모델링과 ray-confidence로 결측 뷰 조건에서도 고해상도 재구성을 유지했습니다. 지난주 3DGS가 CT 응용으로 좁혀졌던 순간을 대표하는 논문으로, 랩의 sparse-view CT 파이프라인과 가장 직접 맞닿습니다.<br>
+  <small>Phylogeny: CVML / Medical Imaging &gt; CT Reconstruction &gt; Gaussian Splatting for CT &gt; Sparse-View Volumetric Rendering</small>
+</li>
+<li>
+  <strong><a href="https://doi.org/10.1364/oe.608614">ConvRML: high-quality lensless imaging with random multi-focal lenslets</a></strong>
+  <span class=tag>[방법전환]</span><br>
+  무작위 다초점 렌즈릿 배열로 고품질 렌즈리스 이미징을 구현한 Waller 그룹 논문입니다. 3주 연속 가뭄으로 진단됐던 계산광학 코어에서, 금요일 하루 만에 반전을 보여준 대표 사례이자 랩의 렌즈리스 이미징 하드웨어와 직접 관련된 신호입니다.<br>
+  <small>Phylogeny: CVML / Computational Optics &gt; Lensless Imaging &gt; Coded Aperture Design &gt; Multi-Focal Lenslet Array</small>
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2608.18833">EVADE: Evidence-Verified Agentic Diagnosis with Escape</a></strong>
+  <span class=tag>[평가축]</span><br>
+  확대 영상과 원본 영상의 답이 일치할 때만 진단을 확정하고, 일치하지 않으면 유보하게 만들어 보정 오차를 최대 45% 줄였습니다. 지난주 목요일부터 이어진 "언제 답을 유보해야 하는가" 흐름을 가장 구체적인 수치로 보여준 논문입니다.<br>
+  <small>Phylogeny: CVML / Medical Imaging &gt; Diagnostic VLM Reliability &gt; Selective Prediction &gt; Multi-View Consistency Gating</small>
+</li>
+</ol>
+
+<h2>🌟 Weekly Deep-Dive — 지난주의 대표 논문</h2>
+<div class=dd>
+  <h3>Stream4D: 4D-Consistency for Streaming Autoregressive Diffusion Video Models (2608.19556)</h3>
+  <p><em>왜 주간 대표인가</em>: 지난주는 3DGS의 응용 도메인이 매일 옮겨 다니고 계산광학 코어가 하루 단위로 요동친 한 주였습니다. Stream4D는 그 흐름의 연장선에서, 지금까지 3DGS가 담당하던 "복원 결과를 평가하는 잣대" 역할 자체가 움직이는 장면에서는 오히려 방해가 된다는 걸 짚어낸 논문이라, 특정 요일의 단발 신호가 아니라 3DGS를 둘러싼 한 주 전체의 재평가 흐름을 대표합니다.</p>
+
+  <p><strong>무엇을 했나</strong>: 스트리밍 방식으로 계속 영상을 만들어내는 자기회귀 디퓨전 비디오 모델은 장면의 기하와 움직임을 직접 최적화하지 않고 프레임 단위 예측만 최적화하다 보니, 긴 롤아웃(rollout, 모델이 스스로 만든 출력을 다시 입력으로 넣어가며 이어서 생성하는 과정)에서 기하 오차가 쌓여 영상이 정지 화면처럼 굳어버리는 문제가 있었습니다. 기존 해법은 3D Gaussian Splatting으로 장면을 한 번 복원해두고, 그 복원과 얼마나 다른지를 벌점(보상)으로 주는 방식이었는데, 이 복원이 정적인 장면 하나만 가정하기 때문에 물체가 실제로 움직이는 것조차 "복원이 틀렸다"고 벌점을 매겨 모델이 아예 움직임을 없애는 쪽으로 학습되는 역설이 생겼습니다. Stream4D는 이 정적 비평자를 매 프레임 새로 4D(3D+시간) 복원을 수행하는 피드포워드 보상으로 바꿔, 움직이는 물체를 정확히 반영하면서도 기하적으로 일관된 영상을 계속 만들어내게 했습니다.</p>
+
+  <p><strong>왜 새로운가</strong>: 지금까지 3D Gaussian Splatting은 "장면을 있는 그대로 재현하는 안정적인 잣대"로 여겨져 왔습니다. 이 논문은 그 잣대 자체가 정적 장면을 가정하고 있어서, 움직이는 물체가 있는 실제 영상에서는 오히려 학습을 잘못된 방향으로 이끈다는 걸 보였습니다. 즉 "3DGS로 복원해서 비교하면 정답에 가까워진다"는 가정이 동적 장면에서는 성립하지 않으며, 평가·보상에 쓰는 표현 자체도 대상 장면의 성질(정적 vs 동적)에 맞춰 다시 설계해야 한다는 방법론적 교훈을 남겼습니다.</p>
+
+  <p><strong>랩 관련성</strong>: 랩이 동적 tomography나 light-field 재구성 파이프라인에서 시간적 일관성을 잣대로 손실 함수를 설계할 때, 그 잣대가 혈류·장기 운동처럼 실제로 움직이는 구조물을 "오차"로 오인하고 있지는 않은지 점검할 필요가 있습니다. Stream4D의 피드포워드 4D 복원 보상 구조는, 정적 복원 기반 손실 대신 매 시점 새로 복원한 결과와 비교하는 방식으로 이 문제를 우회할 수 있는 실마리를 제공합니다.</p>
+
+  <p><strong>주의</strong>: 검증 도메인은 일반 스트리밍 비디오 생성(게임·자연 영상)으로, 랩이 다루는 의료·현미경 도메인과는 움직임의 물리적 성격(관류, 호흡, 심박)이 다릅니다. 피드포워드 4D 복원의 정확도 자체가 낮으면 오히려 잘못된 보상 신호가 될 수 있어, 우리 세팅에 적용할 때는 4D 복원 모듈의 정확도를 먼저 별도로 검증해야 합니다 [Baseline risk].</p>
+  <p><small>Phylogeny: CVML / Video Generation &gt; Streaming Diffusion &gt; 4D Consistency &gt; Feedforward Geometric Reward</small></p>
+</div>
+
+<h2>🧭 주간 테마 3개</h2>
+<div class=theme-card>
+  <h3>1. 3D Gaussian Splatting의 응용 도메인이 CT 재구성과 로봇·인프라 사이를 매일 오가며 고정되지 않음</h3>
+  <p>화요일 CT/스펙트럴 CT 재구성으로 좁혀졌던 3DGS가 수요일 워터마킹·초기화 검증, 목요일 VLA 로봇 정책 강건성으로 다시 흩어졌습니다. 지난주(W33) 예측했던 "의료·현미경 수렴"이 화요일 하루는 확인됐지만 주 전체로 이어지지는 않아, 3DGS 연구는 특정 응용에 정착하기보다 매주 여러 도메인을 오가는 탐색 단계에 가깝다는 뜻입니다.</p>
+  <p><em>Confidence: High — 화~목 사흘, 20편 이상이 매일 다른 축으로 3DGS를 확장</em></p>
+</div>
+<div class=theme-card>
+  <h3>2. 계산광학 코어는 "가뭄"이 아니라 "하루 단위로 크게 요동치는 신호 밀도"였다는 진단으로 정정</h3>
+  <p>3주 연속 가뭄 진단을 내렸지만, 금요일 렌즈리스·메타표면·타이코그래피 5편이 한꺼번에 나오며 그 진단을 스스로 뒤집었습니다. 이 버킷은 매일 편수가 적어 보여도 특정 하루에 몰아서 신호가 나올 수 있다는 뜻이라, 매일 빠짐없이 훑어야 놓치지 않는 버킷이라는 게 확인됐습니다.</p>
+  <p><em>Confidence: High — raw count는 낮았지만 금요일 하루 4개 세부 버킷 동시 확인</em></p>
+</div>
+<div class=theme-card>
+  <h3>3. 의료 AI의 초점이 "언어로 판독 근거를 설명"에서 "그 설명·유보 판단이 실제로 신뢰할 만한가"로 이동</h3>
+  <p>월요일 언어를 판독 과정에 통합하는 흐름에서 시작해, 수요일 설명가능 AI 히트맵의 실패 사례, 목요일 진단 유보 게이트와 안전 정렬이 시각 근거를 무시하는지 검증하는 논문까지 이어졌습니다. 랩이 재구성 결과에 불확실성·설명을 붙일 때도 같은 잣대로 검증해야 한다는 뜻입니다.</p>
+  <p><em>Confidence: Medium — 월·수·목 사흘, 서로 다른 모달리티 5편이 같은 방향으로 이동</em></p>
+</div>
+
+<h2>🪞 지난 예측 채점 (W33 → W34)</h2>
+<div class=pred-card>
+  <h3><span class=review-partial>◐</span> 3DGS의 '망가진 입력 견디기' 축이 의료·현미경 재구성의 물리적 아티팩트 보정으로 수렴한다</h3>
+  <p>화요일 TR-GS(sparse-view CT 볼륨 렌더링)와 Shared-Structure 4D Spectral Gaussian(sparse-view 스펙트럴 CT 재구성) 두 편이 CT라는 랩 직결 도메인에서 3DGS 기반 재구성을 실제로 보여줘, 적중 조건(2편 이상)을 화요일 하루 만에 충족했습니다. 하지만 예측이 기대한 "다음 주 내내 더 좁혀지는" 흐름과 달리, 수요일부터는 3DGS의 무게중심이 바로 워터마킹·초기화 검증 같은 인프라 문제로, 목요일에는 동적 장면·VLA 로봇 정책 강건성 검증으로 다시 옮겨가 의료·현미경 도메인에서 멀어졌습니다. 화요일 하루의 좁혀짐은 실제로 일어났지만 주 전체로 이어지는 수렴은 아니었기에 부분 적중으로 판정합니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-partial>◐</span> '신호를 캐묻는 감사'가 계산 이미징 역문제의 학습된 사전으로 직접 이어진다 (3주 연속 추적)</h3>
+  <p>목요일 Operator Misspecification 검출 논문이 하이브리드 물리-데이터 파라미터 추정에서 잘못된 물리 방정식을 정답 데이터 없이 검출하는 통계량을 제시해, "학습된 사전/모델이 실제로 맞는지 캐묻는다"는 예측의 정신과 맞닿아 있습니다. 다만 이는 물리 모델 오설정 검출이지, 예측이 명시한 "학습된 사전이나 불확실성 지도가 실제 오차와 얼마나 일치하는지" 감사는 아니라 도메인·검증 대상이 정확히 일치하지는 않습니다. W32부터 3주 연속 이 예측을 추적했는데, 매주 인접 도메인에서 부분적으로만 확인되는 패턴이 반복돼 3주 연속 부분 적중으로 판정합니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-miss>✗</span> 계산광학 코어의 가뭄이 다음 주에도 실질 신호 기준으로 이어진다</h3>
+  <p>월~목 나흘은 예측대로 실질 신호가 하루 2~4편에 머무는 가뭄이 이어졌지만, 금요일 렌즈리스(ConvRML, Resolution-Agnostic Lensless Imaging)·메타표면(MetaTele, 하이퍼스펙트로-편광 메타센서)·Fourier Ptychography(구조텐서 TV 복원 포함 3편) 등 4개 세부 버킷에서 abstract로 검증 가능한 실질 신호가 총 5편 이상 동시에 나와, 예측이 명시한 빗나감 조건("5개 버킷 중 하나라도 특정 하루에 실질 신호 3편 이상")을 정확히 충족했습니다. 3주 연속 이어지던 가뭄이 금요일 하루 만에 깨졌습니다.</p>
+</div>
+
+<h2>🔮 다음주 예측</h2>
+<div class=pred-card>
+  <h3>1. 계산광학 코어의 '가뭄'이 실제로는 하루 단위 변동성이라는 진단이 다음 주에도 반복된다</h3>
+  <p>지난주 3주 연속 가뭄처럼 보이던 계산광학 코어가 금요일 하루 만에 5편 실질 신호로 반전된 것이, 다음 주에도 특정 하루(들)에 몰아서 신호가 터지는 패턴으로 반복된다.</p>
+  <div class=cond>✅ 적중 조건: 다음 주 5영업일 중 최소 하루, 계산광학 코어 5개 버킷 중 2개 이상 세부 버킷에서 abstract로 검증 가능한 실질 신호 3편 이상이 동시에 나옴</div>
+  <div class=cond>✗ 빗나감 조건: 다음 주 5일 내내 모든 버킷이 하루 2편 이하로 균일하게 낮으면(반전 없이 계속 가뭄) 빗나감</div>
+</div>
+<div class=pred-card>
+  <h3>2. 3DGS의 CT/현미경 재구성 응용이 다음 주에는 로봇·인프라 축과 명확히 분리된 하위 흐름으로 자리잡는다</h3>
+  <p>지난주 3DGS가 CT 재구성(화)과 로봇/인프라 검증(수~목) 사이를 매일 오갔던 것이, 다음 주에는 두 축이 서로 다른 논문군으로 뚜렷이 분리되어 CT/의료 재구성 응용만의 독립적인 하위 클러스터가 최소 2일 이상 반복해서 나타난다.</p>
+  <div class=cond>✅ 적중 조건: 다음 주 CT/MRI/현미경 응용의 3DGS 기반 재구성 논문이 최소 2일에 걸쳐 총 3편 이상 나옴</div>
+  <div class=cond>✗ 빗나감 조건: 다음 주 3DGS 논문이 CT/현미경 도메인에서 1편 이하로 다시 로봇·그래픽스·인프라 도메인에 압도적으로 쏠리면 빗나감</div>
+</div>
+<div class=pred-card>
+  <h3>3. 의료 VLM/병리 AI의 '신뢰성 검증' 축이 계산 이미징 재구성의 불확실성 정량화로 이어진다</h3>
+  <p>지난주 목~금 의료 VLM의 설명가능성·유보 판단 검증(EVADE, Pathology Transport, When Safety Overrides Vision)이, 다음 주에는 CT/MRI/QPI 등 계산 이미징 재구성 결과물의 불확실성 지도나 신뢰도 추정을 정량 검증하는 논문으로 이어진다.</p>
+  <div class=cond>✅ 적중 조건: CT·MRI·QPI 등 계산 이미징 재구성에서 불확실성 지도나 신뢰도 추정이 실제 오차와 얼마나 일치하는지 정량 검증한 논문 1편 이상</div>
+  <div class=cond>✗ 빗나감 조건: 계속 일반 의료 VLM·병리 도메인에만 머물면 빗나감</div>
+</div>
+
+<h2>🧪 다음 주 1주 실행안</h2>
+<div class=action-card>
+  <h3>1. TR-GS/Shared-Structure 4D Spectral Gaussian의 CT 재구성 구조를 랩 sparse-view CT 파이프라인에 이식</h3>
+  <p>TR-GS의 t-분포 Gaussian 모델링·ray-confidence 가중치와 Shared-Structure 4D Spectral Gaussian의 스펙트럴 CT 공유 구조를 우리 랩 sparse-view/저선량 CT 3DGS 재구성 파이프라인에 적용해 결측 뷰·저선량 조건에서 재구성 품질이 개선되는지 비교.</p>
+  <p><em>기대 산출물: 결측 뷰 비율별(25/50/75%) 재구성 PSNR/SSIM 비교표</em></p>
+</div>
+<div class=action-card>
+  <h3>2. 계산광학 코어 5버킷의 일별 신호 밀도를 히트맵으로 4주째 추적</h3>
+  <p>daily trends 데이터에서 FP·Lensless·Phase·Meta-Optics·Light-Field 5개 버킷의 raw 카운트와 abstract 기반 실질 신호 편수를 요일별로 분리 기록해, 특정 요일(예: 금요일)에 신호가 몰리는 패턴이 반복되는지 다음 4주간 계속 추적.</p>
+  <p><em>기대 산출물: 요일 × 버킷 실질 신호 히트맵, 반복 패턴 유무 판정</em></p>
+</div>
+<div class=action-card>
+  <h3>3. EVADE/Pathology Transport의 신뢰성 검증 도구를 랩 복원·설명가능성 파이프라인에 적용</h3>
+  <p>EVADE의 다중 시야 일치 게이트를 랩 복원 파이프라인 출력의 자동 신뢰도 판단(결과를 확정할지 유보할지)에 이식하고, Pathology Transport의 synthetic-to-real 히트맵 검증 벤치마크를 랩 label-free virtual staining 설명가능성 평가에 적용.</p>
+  <p><em>기대 산출물: 유보 게이트 적용 전후 오탐률 비교 + 히트맵 검증 벤치마크 점수표</em></p>
+</div>
+
+<h2>🧊 Skim-only / Watch-only 흐름</h2>
+<ul class=plain>
+  <li><strong>[Watch-only] 비디오 디퓨전 모델을 3D/4D 기하 복원 엔진으로 재활용하는 흐름</strong> — 금요일 Stream4D·DreamHand·4DAnyone 세 편이 독립적으로 같은 방법론적 전환에 도달했습니다. 하루짜리 신호라 다음 주 다시 나타나는지 확인이 필요합니다 [Confidence Low].</li>
+  <li><strong>[Skim-only] 실시간 스트리밍 아바타·영상 생성 가속 기법이 계속 이어지는지</strong> — W33 목요일 LiveAnimate·Avatar-Forever·LoSA 등 실시간 스트리밍 클러스터가 있었는데, 지난주에는 후속 신호가 뚜렷하지 않았습니다. 랩 ROI와 직접 관련은 낮아 트렌드 관찰 수준으로만 남깁니다.</li>
+  <li><strong>[Watch-only] 작지만 특화된 모델이 대형 범용 모델을 압도하는 사례</strong> — 금요일 V-REX(수의영상 VLM)·Energy-Mamba(물리 제약 상태공간모델)가 파라미터를 크게 줄이면서도 성능을 유지·개선했습니다. 랩이 경량 특화 모델을 설계할 때 참고할 수 있는 방향이라 다음 주 후속 신호를 지켜봅니다.</li>
+</ul>
+
+<h2>🔗 참고 링크</h2>
+<ul class=plain>
+  <li><a href="../posts/2026-08-17.html">2026-08-17 Daily Briefing (Mon)</a></li>
+  <li><a href="../posts/2026-08-18.html">2026-08-18 Daily Briefing (Tue, journal-only→완전판 업그레이드)</a></li>
+  <li><a href="../posts/2026-08-19.html">2026-08-19 Daily Briefing (Wed)</a></li>
+  <li><a href="../posts/2026-08-20.html">2026-08-20 Daily Briefing (Thu)</a></li>
+  <li><a href="../posts/2026-08-21.html">2026-08-21 Daily Briefing (Fri)</a></li>
+  <li><a href="../posts/2026-08-17-weekly.html">2026-W33 Weekly Retrospective</a></li>
+  <li><a href="../feed.xml">RSS Feed</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

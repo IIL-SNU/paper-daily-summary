@@ -1,0 +1,218 @@
+{
+  "date": "2026-08-24",
+  "iso_week": "2026-34",
+  "week_start": "2026-08-17",
+  "week_end": "2026-08-21",
+  "weekly_thesis": "지난주 초반(월)에는 의료 영상 판독에 언어를 깊숙이 끌어들이는 흐름이 4개 모달리티(CT/MR·초음파·병리·PET)에서 동시에 나왔고, 화요일부터는 3D Gaussian Splatting(3DGS)이 로봇 인식·sparse-view CT 재구성·이벤트 SLAM까지 열네 편 가까이 퍼지며 지난주(W33) 예측했던 '의료·현미경 재구성으로 수렴'이 실제로 확인됐지만, 수요일부터는 그 무게중심이 다시 렌더링 품질에서 워터마킹·초기화 검증·학습 가속 같은 시스템 인프라 문제로, 목요일에는 동적 장면·VLA 로봇 정책·스트리밍이라는 실사용 강건성 검증으로 옮겨가며 랩이 겨냥한 의료·CT 도메인에서 다시 멀어졌다. 계산광학 코어는 월~목 나흘 동안 2주 연속 가뭄이 그대로 이어지는 것처럼 보였지만, 금요일 렌즈리스·메타표면·라이트필드에서 실질 신호 5편이 한꺼번에 몰리며 가뭄 진단이 하루 만에 뒤집혔다 — 즉 지난주는 '3DGS의 응용 도메인이 매일 옮겨 다니고, 계산광학 코어는 하루 단위로 신호 밀도가 요동친다'는 점을 함께 보여준 한 주였다.",
+  "hot_vs_cold": {
+    "hot": [
+      {
+        "cluster": "3D Gaussian Splatting이 로봇·CT 재구성으로 급속히 퍼졌다가(화~수) 인프라·강건성 검증(수~목)으로 무게중심을 다시 옮김",
+        "why": "화요일 열네 편 가까이 로봇 인식·sparse-view CT·이벤트 SLAM으로 퍼진 뒤, 수요일에는 워터마킹·초기화 없는 번들 조정·학습 가속 같은 서비스화 문제로, 목요일에는 4D 동적 장면·VLA 로봇 정책·스트리밍 강건성 검증으로 이동했다. 나흘 연속 매일 다른 축에서 5편 이상씩 클러스터를 형성했다.",
+        "papers": ["https://arxiv.org/abs/2608.16042", "https://arxiv.org/abs/2608.16463", "https://arxiv.org/abs/2608.17447", "https://arxiv.org/abs/2608.18388"]
+      },
+      {
+        "cluster": "계산광학 코어가 나흘의 가뭄을 깨고 금요일 하루 렌즈리스·메타표면·라이트필드 실질 신호 5편으로 반전",
+        "why": "월~목에는 raw count와 무관하게 abstract로 검증 가능한 신호가 하루 2~4편에 머무는 2주 연속 가뭄이 이어지는 듯 보였지만, 금요일에는 Waller 그룹의 ConvRML을 포함해 렌즈리스·메타표면·타이코그래피 5편이 모두 실제 이미징 방법론으로 확인돼 가뭄 진단을 하루 만에 뒤집었다.",
+        "papers": ["https://doi.org/10.1364/oe.608614", "https://doi.org/10.1364/oe.610853", "https://doi.org/10.1364/oe.599584", "https://doi.org/10.1109/tci.2026.3725928"]
+      }
+    ],
+    "cold": [
+      {
+        "cluster": "월요일 의료 VLM/LLM 판독 통합 축 — 하루짜리로 끝나고 이어지지 않음",
+        "why": "월요일 MedPlex·CMCNet·SLMP·PET denoising 멀티에이전트 4편이 CT/MR·초음파·병리·PET 전 모달리티에서 언어를 판독 과정에 통합하는 뚜렷한 클러스터를 이뤘지만, 화요일 이후 같은 축(판독에 언어 신호를 깊이 통합)의 후속 논문이 인사이트 클러스터에 다시 잡히지 않았다."
+      },
+      {
+        "cluster": "목요일 score-based/물리 결합 베이지안 역문제 추론 축 — 하루 반짝이고 후속 없음",
+        "why": "목요일 Picard Proximal Monte Carlo·Composing Flow-Matching Energies·Operator Misspecification·Wave-Scattering Surrogate 4편이 '역문제 추론을 실제 대규모 파이프라인에 넣으려면 속도·검증가능성이 먼저 필요하다'는 같은 문제의식을 보였지만, 금요일에는 이 축의 후속 신호가 나타나지 않았다."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "cluster": "3D Gaussian Splatting이 로봇 인식·CT 재구성 확산(화)에서 워터마킹·검증 인프라(수)를 거쳐 동적 장면·VLA 강건성 검증(목)으로 매일 무게중심 이동",
+      "papers": [
+        {"title": "TR-GS: High-Fidelity Sparse-View CT Volumetric Rendering via t-Distribution Gaussian Splatting and Ray-Confidence Modeling", "arxiv": "https://arxiv.org/abs/2608.16042", "importance_tags": ["[방법전환]", "[인프라]"]},
+        {"title": "Shared-Structure 4D Spectral Gaussian Representation for Sparse-View Spectral CT Reconstruction", "arxiv": "https://arxiv.org/abs/2608.16463", "importance_tags": ["[방법전환]"]},
+        {"title": "NGS-Marker: Robust Native Watermarking for 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2608.17447", "importance_tags": ["[인프라]", "[경고신호]"]},
+        {"title": "Initialization-Free Bundle Adjustment Revisited: A Controlled Experimental Study", "arxiv": "https://arxiv.org/abs/2608.18028", "importance_tags": ["[평가축]", "[해부분석]"]},
+        {"title": "Depth Anything V4: Dynamic 4D Scene Reconstruction via Riemannian Flow Matching on 4D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2608.18388", "importance_tags": ["[방법전환]", "[스케일업]"]},
+        {"title": "GS-VLA: Plug-and-Play Viewpoint Canonicalization for Frozen VLA Policies via Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2608.19066", "importance_tags": ["[실사용전환]"]}
+      ],
+      "why": "화요일에는 3DGS를 쓴 논문이 열네 편 가까이 나왔는데, 그중 TR-GS와 Shared-Structure 4D Spectral Gaussian 두 편은 각각 sparse-view CT 볼륨 렌더링과 sparse-view 스펙트럴 CT 재구성을 3DGS로 직접 풀어, 지난주(W33) weekly가 냈던 '3DGS의 로버스트니스 축이 의료·현미경 재구성의 물리적 아티팩트 보정으로 수렴한다'는 예측을 실제로 확인시켜 줬습니다. 그런데 수요일에는 이 흐름이 다시 방향을 틀어, NGS-Marker가 3DGS 결과물의 소유권을 지키는 워터마킹을, Initialization-Free Bundle Adjustment 논문이 카메라 자세 복원 방법들의 실제 정확도를 재검증하는 인프라·검증 문제로 옮겨갔습니다 — CT 재구성이라는 랩 직결 응용에서 서비스화 문제로 한 걸음 물러난 셈입니다. 목요일에는 다시 축이 바뀌어 Depth Anything V4가 4D 동적 장면 복원에서 리만 다양체 위의 확률 경로로 정확도를 끌어올리고, GS-VLA가 카메라 위치가 조금만 틀어져도 VLA(Vision-Language-Action, 시각·언어 입력으로 로봇 행동을 만드는 모델) 로봇 정책이 무너지는 문제를 3DGS 기반 시점 정규화로 고쳤습니다 — 이제는 '완성된 3DGS 표현이 동적 장면과 로봇 배포 조건에서 버티는가'를 검증하는 단계입니다. 나흘을 이어보면, 3DGS 연구가 랩이 원하는 CT/현미경 응용으로 잠깐 좁혀졌다가도 하루 만에 다시 인프라·강건성 검증으로 흩어지는, '응용 도메인이 고정되지 않고 매일 옮겨 다니는' 흐름이라는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "화~목 사흘, 서로 다른 저자군 20편 이상이 매일 다른 문제 설정(재구성 응용/인프라 검증/강건성 검증)으로 3DGS를 확장, 여러 논문이 정량 벤치마크(F-score, PSNR, LIBERO 성공률) 제시",
+      "lab_action": "TR-GS의 t-분포 Gaussian 모델링과 ray-confidence 가중치를 우리 랩 sparse-view CT 3DGS 재구성 파이프라인에 이식해 저선량·결측 뷰 조건에서 재구성 품질이 개선되는지 이번 주 안에 비교하고, Initialization-Free Bundle Adjustment의 통제된 평가 프로토콜(최적화 성공률이 아니라 실제 3D 정확도로 검증)을 우리 랩 카메라 자세 추정 벤치마크에 그대로 적용"
+    },
+    {
+      "cluster": "계산광학 코어가 나흘의 가뭄(월~목)을 깨고 금요일 렌즈리스·메타표면·타이코그래피 실질 신호 5편으로 반전",
+      "papers": [
+        {"title": "ConvRML: high-quality lensless imaging with random multi-focal lenslets", "arxiv": "https://doi.org/10.1364/oe.608614", "importance_tags": ["[방법전환]", "[인프라]"]},
+        {"title": "Resolution-Agnostic Lensless Imaging via Fourier Neural Operators", "arxiv": "https://doi.org/10.1364/oe.610853", "importance_tags": ["[방법전환]"]},
+        {"title": "MetaTele: Compact Refractive Metasurface Computational Telephoto Camera", "arxiv": "https://doi.org/10.1364/oe.599584", "importance_tags": ["[인프라]"]},
+        {"title": "Fourier Ptychographic Microscopy Reconstruction via Structure Tensor Total Variation Regularization", "arxiv": "https://doi.org/10.1109/tci.2026.3725928", "importance_tags": ["[방법전환]"]}
+      ],
+      "why": "월요일부터 목요일까지 계산광학 코어(Fourier Ptychography·Lensless·Phase·Meta-Optics·Light-Field) 5개 버킷은 raw 카운트가 매일 7~19편으로 잡혔지만, 각 날짜 trends 기록이 명시하듯 실제 abstract로 검증 가능한 신호는 하루 2~4편에 머물러 W32·W33에 이어 3주째 가뭄이 이어지는 것처럼 보였습니다. 그런데 금요일에는 정반대의 하루가 왔습니다 — ConvRML(Laura Waller 그룹)이 무작위 다초점 렌즈릿 배열로 고품질 렌즈리스 이미징을 구현했고, Resolution-Agnostic Lensless Imaging은 푸리에 신경 연산자로 해상도에 무관한 렌즈리스 복원을 제안했으며, MetaTele은 얇은 굴절형 메타표면으로 망원 계산 카메라를 만들었고, Fourier Ptychography 3편 전부가 실제 타이코그래피 복원·자동초점 방법론이었습니다. 나흘을 이어보면, 계산광학 코어의 '가뭄'은 매일 일정하게 이어지는 구조적 결핍이 아니라, 하루 단위로 신호 밀도가 크게 요동치는 변동성에 가깝다는 뜻입니다 — 그래서 이 버킷은 하루라도 건너뛰면 안 되는 버킷입니다.",
+      "confidence": "High",
+      "confidence_note": "금요일 하루, 서로 다른 기관(Waller 그룹 포함) 5편이 4개 세부 버킷(Lensless·Meta-Optics·FP·Light-Field)에서 동시에 실질 신호를 냄 — 하루짜리지만 4개 세부 버킷 동시 확인은 최근 3주 중 처음",
+      "lab_action": "ConvRML의 무작위 다초점 렌즈릿 배열 설계를 우리 랩 렌즈리스 이미징 하드웨어 프로토타입에 시뮬레이션으로 재현해 기존 단일 초점 마스크 대비 PSNR·공간대역곱(SBP) 향상폭을 비교하고, Resolution-Agnostic Lensless Imaging의 푸리에 신경 연산자 구조가 우리 랩 다양한 센서 해상도 환경에서도 재학습 없이 이식 가능한지 이번 주 안에 검토"
+    },
+    {
+      "cluster": "의료 영상 판독에 언어를 깊이 통합(월)한 뒤, 목~금 신뢰성·불확실성 검증으로 초점이 옮겨감",
+      "papers": [
+        {"title": "MedPlex: Deep Vision-Language Co-Adaptation for Clinically Grounded Medical Segmentation", "arxiv": "https://arxiv.org/abs/2608.13690", "importance_tags": ["[방법전환]"]},
+        {"title": "Spatial Message Passing in Language Space for Pathology Image Interpretation", "arxiv": "https://arxiv.org/abs/2608.14309", "importance_tags": ["[방법전환]", "[인프라]"]},
+        {"title": "Pathology Transport: Optimal-Transport Explanations for Clinical Data, and When Their Heatmaps (Fail to) Localize Disease", "arxiv": "https://arxiv.org/abs/2608.17370", "importance_tags": ["[경고신호]", "[해부분석]"]},
+        {"title": "EVADE: Evidence-Verified Agentic Diagnosis with Escape", "arxiv": "https://arxiv.org/abs/2608.18833", "importance_tags": ["[평가축]", "[방법전환]"]},
+        {"title": "When Safety Overrides Vision: Exploring Dynamics between Vision Influence and Safety Alignment in Vision-Language Models", "arxiv": "https://arxiv.org/abs/2608.18628", "importance_tags": ["[경고신호]", "[해부분석]"]}
+      ],
+      "why": "월요일에는 CT/MR 분할·초음파·병리·PET 네 모달리티에서 동시에 언어를 판독 과정 한가운데로 끌어들인 논문이 나왔습니다. MedPlex는 시각 표현과 언어 신호를 인코더 전 구간에서 함께 진화시켰고, SLMP는 기가픽셀 병리 슬라이드를 사람이 읽을 수 있는 문장 단위로 타일 간 정보를 주고받는 방식으로 다뤘습니다. 그런데 목요일부터는 초점이 '언어를 얼마나 잘 통합했는가'에서 '그 판단을 믿어도 되는가'로 바뀝니다. 수요일 Pathology Transport는 설명가능 AI 히트맵이 인공 병변에서는 그럴듯해도 실제 방사선전문의 라벨에서는 무작위 수준으로 무너진다는 정직한 실패를 보고했고, 목요일 EVADE는 확대 영상과 원본 영상의 답이 일치할 때만 진단을 확정하고 그렇지 않으면 유보하게 만들어 보정 오차를 최대 45% 줄였으며, When Safety Overrides Vision은 안전 정렬 때문에 모델이 답변을 거부할 때도 내부적으로는 시각 근거를 여전히 참고한다는 걸 활성화 개입으로 보였습니다. 닷새를 이어보면, 의료 VLM 연구가 '언어로 판독 근거를 명시화'하는 단계에서 '그 근거·설명·유보 판단이 실제로 신뢰할 만한가'를 검증하는 단계로 넘어갔다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "월·수·목 사흘, 서로 다른 모달리티(병리/영상 전반/의료 VLM 안전성) 5편이 '언어 통합 → 신뢰성 검증'이라는 같은 순서로 이동, 정량 지표(mIoU, 보정 오차 감소율) 다수 제시",
+      "lab_action": "Pathology Transport의 synthetic-to-real 히트맵 검증 벤치마크를 우리 랩 label-free virtual staining·복원 결과의 설명가능성 평가에 적용하고, EVADE의 다중 시야 일치 게이트를 우리 복원 파이프라인 출력의 자동 신뢰도 판단(재구성 결과를 확정할지 유보할지)에 이식해 이번 주 안에 오탐 감소 효과를 측정"
+    },
+    {
+      "cluster": "정답 없이 스스로 배우는 재구성이 diffusion inverse solver(목)를 거쳐 라벨 없는 의료 영상 재구성·복원(금)으로 도메인이 넓어짐",
+      "papers": [
+        {"title": "Picard Proximal Monte Carlo for Parallel Bayesian Imaging with Score-Based Generative Priors", "arxiv": "https://arxiv.org/abs/2608.17666", "importance_tags": ["[방법전환]", "[평가축]"]},
+        {"title": "MOSAIC: A Self-supervised Dynamic Multi-encoding Reconstruction Framework for 3D Late Gadolinium Enhancement MRI", "arxiv": "https://arxiv.org/abs/2608.19506", "importance_tags": ["[방법전환]", "[데이터전환]"]},
+        {"title": "HARU-Net: Hybrid Attention Residual U-Net for Edge-Preserving Denoising in Cone-Beam Computed Tomography", "arxiv": "https://doi.org/10.1088/2057-1976/ae9c46", "importance_tags": ["[방법전환]"]},
+        {"title": "MUST-PET: MUltimodal Self-supervised learning across Tracers for whole-body PET/CT-based lesion segmentation", "arxiv": "https://arxiv.org/abs/2608.19666", "importance_tags": ["[데이터전환]", "[방법전환]"]}
+      ],
+      "why": "목요일 Picard Proximal Monte Carlo는 diffusion 기반 posterior 샘플링이 본질적으로 순차적이라 대규모 이미징에서 느리다는 문제를 시간축 병렬화로 풀며, '역문제 추론을 실제 파이프라인에 넣으려면 속도·검증가능성이 먼저 필요하다'는 문제의식을 냈습니다. 금요일에는 이 문제의식이 다른 방향으로 넓어져, MOSAIC이 1000배 넘게 언더샘플링한 3D 심장 MRI에서 완전 샘플링 정답 없이 코일 민감도와 심박별 움직임을 데이터 자체에서 동시에 추정했고, HARU-Net은 저선량 CBCT에서 고해상도 학습 데이터 없이 엣지를 보존하며 잡음을 제거했으며, MUST-PET은 서로 다른 방사성추적자로 찍은 PET-CT를 마스킹-복원 방식으로 사전학습해 라벨이 적어도 병변 분할 성능을 끌어올렸습니다. 두 날을 이어보면, '정답이 있어야 학습할 수 있다'는 전제를 깨는 흐름이 diffusion 역문제 추론의 속도·검증가능성 문제(목)에서 임상 데이터의 라벨 확보 비용 문제(금)로 넓어지고 있다는 뜻이고, 이는 랩이 CT·QPI 복원에 diffusion prior를 쓸 때도, 완전 샘플링 정답 없이 학습하는 파이프라인을 설계할 때도 그대로 참고할 수 있는 방향입니다.",
+      "confidence": "Medium",
+      "confidence_note": "목·금 이틀, 서로 다른 이미징 응용(일반 역문제/MRI/CBCT/PET) 4편이 같은 축(정답 없이 학습)으로 수렴했지만 다른 요일에 후속 신호가 없어 지속성은 이틀짜리",
+      "lab_action": "MOSAIC의 코일 민감도·움직임 동시 추정 자기지도 구조를 우리 랩 언더샘플링 tomography 재구성 파이프라인에 적용해, 완전 샘플링 정답 없이 학습했을 때와 기존 지도학습 대비 PSNR/SSIM 격차를 이번 주 안에 측정"
+    },
+    {
+      "cluster": "비디오 디퓨전 모델이 영상 생성기에서 3D/4D 기하 복원 엔진으로 재활용되는 흐름이 금요일 하루 집중 부상",
+      "papers": [
+        {"title": "Stream4D: 4D-Consistency for Streaming Autoregressive Diffusion Video Models", "arxiv": "https://arxiv.org/abs/2608.19556", "importance_tags": ["[방법전환]", "[해부분석]"]},
+        {"title": "DreamHand: Repurposing Video Diffusion Models for Occlusion-Robust Egocentric 3D Hand Motion Recovery", "arxiv": "https://arxiv.org/abs/2608.20308", "importance_tags": ["[방법전환]"]},
+        {"title": "4DAnyone: Create Anyone in 4D from a Casual Monocular Video", "arxiv": "https://arxiv.org/abs/2608.20335", "importance_tags": ["[방법전환]", "[스케일업]"]}
+      ],
+      "why": "금요일 세 논문은 모두 비디오 디퓨전 모델을 '그럴듯한 영상을 새로 만드는 생성기'가 아니라 '영상 속에 숨어 있는 3D/4D 기하 구조를 뽑아내는 엔진'으로 씁니다. Stream4D는 기존에 쓰던 3D Gaussian Splatting 기반 정적 복원 비평자가 움직이는 물체조차 '복원이 틀렸다'고 벌점을 매겨 영상을 얼리는 역설을 짚어내고, 매 프레임 새로 4D 복원을 수행하는 피드포워드 보상으로 이를 고쳤습니다. DreamHand는 디퓨전 모델의 잠재 표현 한 번의 순전파만으로 가려진 손의 위치를 복원하는 결정론적 기하 인코더로 썼고, 4DAnyone은 카메라 제어 비디오 디퓨전 모델의 다시점 출력을 4D Gaussian Splatting으로 끌어올리는 과정의 외형 일관성 문제를 풀었습니다. 하루짜리지만 세 편이 독립적으로 같은 방법론적 전환(디퓨전 표현을 생성이 아니라 기하 신호로 전용)에 도달했다는 점에서, 다음 주 이 흐름이 이어지는지 지켜볼 가치가 있습니다.",
+      "confidence": "Medium",
+      "confidence_note": "금요일 하루, 서로 다른 하위 응용(스트리밍 비디오/1인칭 손 동작/단안 비디오 4D 인간) 3편이 같은 방법론적 전환으로 수렴, 다른 요일에 후속 신호는 아직 없음",
+      "lab_action": "Stream4D의 피드포워드 4D 복원 보상 구조를 우리 랩 동적 tomography/light-field 재구성 파이프라인의 시간적 일관성 손실 함수로 이식해, 정적 복원 기반 손실 대비 움직이는 구조물(혈류, 장기 운동)의 복원 정확도가 개선되는지 다음 주 안에 벤치마크"
+    }
+  ],
+  "predictions": [
+    {
+      "title": "계산광학 코어의 '가뭄'이 실제로는 하루 단위 변동성이라는 진단이 다음 주에도 반복된다",
+      "claim": "지난주 3주 연속 가뭄처럼 보이던 계산광학 코어가 금요일 하루 만에 5편 실질 신호로 반전된 것이, 다음 주에도 특정 하루(들)에 몰아서 신호가 터지는 패턴으로 반복된다.",
+      "rationale": "3주 연속 raw count와 실질 신호가 어긋나는 가뭄 진단을 이어오다, 지난주 금요일 처음으로 4개 세부 버킷이 동시에 실질 신호를 낸 사례가 나왔다 — 이게 우연한 하루였는지 반복되는 패턴인지 확인이 필요하다.",
+      "hit_condition": "다음 주 5영업일 중 최소 하루, 계산광학 코어 5개 버킷 중 2개 이상 세부 버킷에서 abstract로 검증 가능한 실질 신호 3편 이상이 동시에 나옴",
+      "miss_condition": "다음 주 5일 내내 모든 버킷이 하루 2편 이하로 균일하게 낮으면(반전 없이 계속 가뭄) 빗나감"
+    },
+    {
+      "title": "3DGS의 CT/현미경 재구성 응용이 다음 주에는 로봇·인프라 축과 명확히 분리된 하위 흐름으로 자리잡는다",
+      "claim": "지난주 3DGS가 CT 재구성(화)과 로봇/인프라 검증(수~목) 사이를 매일 오갔던 것이, 다음 주에는 두 축이 서로 다른 논문군으로 뚜렷이 분리되어 CT/의료 재구성 응용만의 독립적인 하위 클러스터가 최소 2일 이상 반복해서 나타난다.",
+      "rationale": "지난주 화요일 TR-GS·Shared-Structure 4D Spectral Gaussian이 CT 재구성으로 좁혀지는 신호를 냈지만 수요일 바로 인프라 문제로 흩어졌다 — 이 응용 도메인이 정말 독립적으로 자리잡는지, 아니면 매주 반복되는 일회성 좁혀짐인지 확인한다.",
+      "hit_condition": "다음 주 CT/MRI/현미경 응용의 3DGS 기반 재구성 논문이 최소 2일에 걸쳐 총 3편 이상 나옴",
+      "miss_condition": "다음 주 3DGS 논문이 CT/현미경 도메인에서 1편 이하로 다시 로봇·그래픽스·인프라 도메인에 압도적으로 쏠리면 빗나감"
+    },
+    {
+      "title": "의료 VLM/병리 AI의 '신뢰성 검증' 축이 계산 이미징 재구성의 불확실성 정량화로 이어진다",
+      "claim": "지난주 목~금 의료 VLM의 설명가능성·유보 판단 검증(EVADE, Pathology Transport, When Safety Overrides Vision)이, 다음 주에는 CT/MRI/QPI 등 계산 이미징 재구성 결과물의 불확실성 지도나 신뢰도 추정을 정량 검증하는 논문으로 이어진다.",
+      "rationale": "W33에 이미 파운데이션 인코더·불확실성 감사가 있었고 지난주는 그 초점이 의료 VLM의 유보 판단으로 좁혀졌다 — 이 감사 흐름이 재구성 역문제의 불확실성 정량화로 계속 전이되는지 4주째 추적한다.",
+      "hit_condition": "CT·MRI·QPI 등 계산 이미징 재구성에서 불확실성 지도나 신뢰도 추정이 실제 오차와 얼마나 일치하는지 정량 검증한 논문 1편 이상",
+      "miss_condition": "계속 일반 의료 VLM·병리 도메인에만 머물면 빗나감"
+    }
+  ],
+  "prediction_review": [
+    {
+      "title": "3DGS의 '망가진 입력 견디기' 축이 의료·현미경 재구성의 물리적 아티팩트 보정으로 수렴한다",
+      "label": "◐",
+      "reason": "화요일 TR-GS(sparse-view CT 볼륨 렌더링)와 Shared-Structure 4D Spectral Gaussian(sparse-view 스펙트럴 CT 재구성) 두 편이 CT라는 랩 직결 도메인에서 3DGS 기반 재구성을 실제로 보여줘, 적중 조건(2편 이상)을 화요일 하루 만에 충족했습니다. 하지만 예측이 기대한 '다음 주 내내 더 좁혀지는' 흐름과 달리, 수요일부터는 3DGS의 무게중심이 바로 워터마킹·초기화 검증 같은 인프라 문제로, 목요일에는 동적 장면·VLA 로봇 정책 강건성 검증으로 다시 옮겨가 의료·현미경 도메인에서 멀어졌습니다. 화요일 하루의 좁혀짐은 실제로 일어났지만 주 전체로 이어지는 수렴은 아니었기에 부분 적중으로 판정합니다."
+    },
+    {
+      "title": "'신호를 캐묻는 감사'가 계산 이미징 역문제의 학습된 사전으로 직접 이어진다 (3주 연속 추적)",
+      "label": "◐",
+      "reason": "목요일 Operator Misspecification 검출 논문이 하이브리드 물리-데이터 파라미터 추정에서 잘못된 물리 방정식을 정답 데이터 없이 검출하는 통계량을 제시해, '학습된 사전/모델이 실제로 맞는지 캐묻는다'는 예측의 정신과 맞닿아 있습니다. 다만 이는 물리 모델 오설정(misspecification) 검출이지, 예측이 명시한 '학습된 사전이나 불확실성 지도가 실제 오차와 얼마나 일치하는지' 감사는 아니라 도메인·검증 대상이 정확히 일치하지는 않습니다. W32부터 3주 연속 이 예측을 추적했는데, 매주 인접 도메인에서 부분적으로만 확인되는 패턴이 반복돼 3주 연속 부분 적중으로 판정합니다."
+    },
+    {
+      "title": "계산광학 코어의 가뭄이 다음 주에도 실질 신호 기준으로 이어진다",
+      "label": "✗",
+      "reason": "월~목 나흘은 예측대로 실질 신호가 하루 2~4편에 머무는 가뭄이 이어졌지만, 금요일 렌즈리스(ConvRML, Resolution-Agnostic Lensless Imaging)·메타표면(MetaTele, 하이퍼스펙트로-편광 메타센서)·Fourier Ptychography(구조텐서 TV 복원 포함 3편) 등 4개 세부 버킷에서 abstract로 검증 가능한 실질 신호가 총 5편 이상 동시에 나와, 예측이 명시한 빗나감 조건('5개 버킷 중 하나라도 특정 하루에 실질 신호 3편 이상')을 정확히 충족했습니다. 3주 연속 이어지던 가뭄이 금요일 하루 만에 깨졌습니다."
+    }
+  ],
+  "themes": [
+    {
+      "title": "3D Gaussian Splatting의 응용 도메인이 CT 재구성과 로봇·인프라 사이를 매일 오가며 고정되지 않음",
+      "summary": "화요일 CT/스펙트럴 CT 재구성으로 좁혀졌던 3DGS가 수요일 워터마킹·초기화 검증, 목요일 VLA 로봇 정책 강건성으로 다시 흩어졌습니다. 지난주(W33) 예측했던 '의료·현미경 수렴'이 화요일 하루는 확인됐지만 주 전체로 이어지지는 않아, 3DGS 연구는 특정 응용에 정착하기보다 매주 여러 도메인을 오가는 탐색 단계에 가깝다는 뜻입니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "계산광학 코어는 '가뭄'이 아니라 '하루 단위로 크게 요동치는 신호 밀도'였다는 진단으로 정정",
+      "summary": "3주 연속 가뭄 진단을 내렸지만, 금요일 렌즈리스·메타표면·타이코그래피 5편이 한꺼번에 나오며 그 진단을 스스로 뒤집었습니다. 이 버킷은 매일 편수가 적어 보여도 특정 하루에 몰아서 신호가 나올 수 있다는 뜻이라, 매일 빠짐없이 훑어야 놓치지 않는 버킷이라는 게 확인됐습니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "의료 AI의 초점이 '언어로 판독 근거를 설명'에서 '그 설명·유보 판단이 실제로 신뢰할 만한가'로 이동",
+      "summary": "월요일 언어를 판독 과정에 통합하는 흐름에서 시작해, 수요일 설명가능 AI 히트맵의 실패 사례, 목요일 진단 유보 게이트와 안전 정렬이 시각 근거를 무시하는지 검증하는 논문까지 이어졌습니다. 랩이 재구성 결과에 불확실성·설명을 붙일 때도 같은 잣대로 검증해야 한다는 뜻입니다.",
+      "confidence": "Medium"
+    }
+  ],
+  "top5": [
+    {
+      "title": "Stream4D: 4D-Consistency for Streaming Autoregressive Diffusion Video Models",
+      "arxiv": "https://arxiv.org/abs/2608.19556",
+      "why": "3D Gaussian Splatting 기반 정적 복원 비평자가 움직이는 물체조차 '복원이 틀렸다'고 벌점을 매겨 영상을 얼리는 역설을 발견하고, 매 프레임 4D 복원을 다시 수행하는 피드포워드 보상으로 고쳤습니다. 지난주 마지막 날 비디오 디퓨전이 기하 복원 엔진으로 전용되는 흐름을 가장 명확하게 보여준 논문입니다.",
+      "tag": "[해부분석]",
+      "phylogeny": {"source": "CVML", "phylum": "Video Generation", "class": "Streaming Diffusion", "order": "4D Consistency", "genus": "Feedforward Geometric Reward", "confidence": "High", "rationale": "정적 비평자의 실패 모드를 명시적으로 진단하고 대안 보상 구조로 정량 개선을 보임"}
+    },
+    {
+      "title": "Pathology Transport: Optimal-Transport Explanations for Clinical Data, and When Their Heatmaps (Fail to) Localize Disease",
+      "arxiv": "https://arxiv.org/abs/2608.17370",
+      "why": "설명가능 AI 히트맵이 인공 병변에서는 그럴듯해 보여도 실제 방사선전문의 라벨에서는 무작위 수준으로 무너진다는 정직한 실패를 보고했습니다. 랩이 복원·분류 결과에 설명 가능성을 붙일 때, 그 설명이 실제로 병변 위치를 가리키는지 먼저 검증해야 한다는 직접적 경고입니다.",
+      "tag": "[경고신호]",
+      "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Explainability Auditing", "order": "Heatmap Localization Validation", "genus": "Optimal-Transport Explanation", "confidence": "High", "rationale": "인공 병변과 실제 방사선전문의 라벨 두 조건에서 히트맵 성능을 대조 검증"}
+    },
+    {
+      "title": "TR-GS: High-Fidelity Sparse-View CT Volumetric Rendering via t-Distribution Gaussian Splatting and Ray-Confidence Modeling",
+      "arxiv": "https://arxiv.org/abs/2608.16042",
+      "why": "3DGS를 sparse-view CT 볼륨 렌더링에 직접 적용해, t-분포 기반 모델링과 ray-confidence로 결측 뷰 조건에서도 고해상도 재구성을 유지했습니다. 지난주 3DGS가 CT 응용으로 좁혀졌던 순간을 대표하는 논문으로, 랩의 sparse-view CT 파이프라인과 가장 직접 맞닿습니다.",
+      "tag": "[방법전환]",
+      "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "CT Reconstruction", "order": "Gaussian Splatting for CT", "genus": "Sparse-View Volumetric Rendering", "confidence": "Medium", "rationale": "같은 날 Shared-Structure 4D Spectral Gaussian과 함께 CT 재구성이라는 축을 공유하지만 정량 벤치마크 구체성에서 우위"}
+    },
+    {
+      "title": "ConvRML: high-quality lensless imaging with random multi-focal lenslets",
+      "arxiv": "https://doi.org/10.1364/oe.608614",
+      "why": "무작위 다초점 렌즈릿 배열로 고품질 렌즈리스 이미징을 구현한 Waller 그룹 논문입니다. 3주 연속 가뭄으로 진단됐던 계산광학 코어에서, 금요일 하루 만에 반전을 보여준 대표 사례이자 랩의 렌즈리스 이미징 하드웨어와 직접 관련된 신호입니다.",
+      "tag": "[방법전환]",
+      "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "Lensless Imaging", "order": "Coded Aperture Design", "genus": "Multi-Focal Lenslet Array", "confidence": "Medium", "rationale": "저명 연구그룹(Waller lab) 발표, 같은 날 4개 세부 버킷에서 동시에 실질 신호 확인된 맥락 속 대표 사례"}
+    },
+    {
+      "title": "EVADE: Evidence-Verified Agentic Diagnosis with Escape",
+      "arxiv": "https://arxiv.org/abs/2608.18833",
+      "why": "확대 영상과 원본 영상의 답이 일치할 때만 진단을 확정하고, 일치하지 않으면 유보하게 만들어 보정 오차를 최대 45% 줄였습니다. 지난주 목요일부터 이어진 '언제 답을 유보해야 하는가' 흐름을 가장 구체적인 수치로 보여준 논문입니다.",
+      "tag": "[평가축]",
+      "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Diagnostic VLM Reliability", "order": "Selective Prediction", "genus": "Multi-View Consistency Gating", "confidence": "Medium", "rationale": "정량 보정 오차 감소율(최대 45%) 제시, 같은 축의 후속 논문(When Safety Overrides Vision)과 같은 날 동시 확인"}
+    }
+  ],
+  "phylogeny_tags": [
+    {"paper": "https://arxiv.org/abs/2608.19556", "source": "CVML", "lineage": "Video Generation > Streaming Diffusion > 4D Consistency > Feedforward Geometric Reward"},
+    {"paper": "https://arxiv.org/abs/2608.17370", "source": "CVML", "lineage": "Medical Imaging > Explainability Auditing > Heatmap Localization Validation > Optimal-Transport Explanation"},
+    {"paper": "https://arxiv.org/abs/2608.16042", "source": "CVML", "lineage": "Medical Imaging > CT Reconstruction > Gaussian Splatting for CT > Sparse-View Volumetric Rendering"},
+    {"paper": "https://doi.org/10.1364/oe.608614", "source": "CVML", "lineage": "Computational Optics > Lensless Imaging > Coded Aperture Design > Multi-Focal Lenslet Array"},
+    {"paper": "https://arxiv.org/abs/2608.18833", "source": "CVML", "lineage": "Medical Imaging > Diagnostic VLM Reliability > Selective Prediction > Multi-View Consistency Gating"}
+  ],
+  "next_week_actions": [
+    {
+      "title": "TR-GS/Shared-Structure 4D Spectral Gaussian의 CT 재구성 구조를 랩 sparse-view CT 파이프라인에 이식",
+      "action": "TR-GS의 t-분포 Gaussian 모델링·ray-confidence 가중치와 Shared-Structure 4D Spectral Gaussian의 스펙트럴 CT 공유 구조를 우리 랩 sparse-view/저선량 CT 3DGS 재구성 파이프라인에 적용해 결측 뷰·저선량 조건에서 재구성 품질이 개선되는지 비교",
+      "expected_output": "결측 뷰 비율별(25/50/75%) 재구성 PSNR/SSIM 비교표"
+    },
+    {
+      "title": "계산광학 코어 5버킷의 일별 신호 밀도를 히트맵으로 4주째 추적",
+      "action": "daily trends 데이터에서 FP·Lensless·Phase·Meta-Optics·Light-Field 5개 버킷의 raw 카운트와 abstract 기반 실질 신호 편수를 요일별로 분리 기록해, 특정 요일(예: 금요일)에 신호가 몰리는 패턴이 반복되는지 다음 4주간 계속 추적",
+      "expected_output": "요일 × 버킷 실질 신호 히트맵, 반복 패턴 유무 판정"
+    },
+    {
+      "title": "EVADE/Pathology Transport의 신뢰성 검증 도구를 랩 복원·설명가능성 파이프라인에 적용",
+      "action": "EVADE의 다중 시야 일치 게이트를 랩 복원 파이프라인 출력의 자동 신뢰도 판단(결과를 확정할지 유보할지)에 이식하고, Pathology Transport의 synthetic-to-real 히트맵 검증 벤치마크를 랩 label-free virtual staining 설명가능성 평가에 적용",
+      "expected_output": "유보 게이트 적용 전후 오탐률 비교 + 히트맵 검증 벤치마크 점수표"
+    }
+  ]
+}

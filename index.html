@@ -54,6 +54,8 @@ html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color
 <p class="lead">arXiv 신규 논문 + Crossref 저널을 매일 수집·분류·요약하는 계산광학 ROI 브리핑.</p>
 <p class="cats">추적: cs.LG · cs.CV · cs.AI · eess.IV · eess.SP + 광학 저널 · <a href="feed.xml">📡 RSS</a></p>
 
+<a class="entry wk" href="posts/2026-08-24-weekly.html"><div class="d">2026-W34 · 08-17 ~ 08-21<span class="tag w">Weekly</span></div><div class="t">🗓 주간 회고</div><div class="s">지난주는 &#x27;3D Gaussian Splatting(3DGS)의 응용 도메인이 하루도 가만있지 않은 한 주&#x27; 로 기억하면 됩니다. 화요일에는 CT/스펙트럴 CT 재구성으로 좁혀지며 지난주(W33) 예측이 맞아떨어졌지만, 수요일에는 워터마킹·초기화 검증 같은 인프라 문제로, 목요일에는 VLA 로봇 정책 강건성 검증으로 하루 만에 다시 흩어졌습니다. 랩의 핵심 ROI인 계산광학 코어는 3주째 이어지던 가뭄 진단이 금요일 하루 만에 뒤집혔습니다. 월~목에는 실질 신호가 하루 2~4편에 머물렀지만, 금요일에는 렌즈리스·메타표면·Fourier</div></a>
+
 <a class="entry" href="posts/2026-08-21.html"><div class="d">2026-08-21 (금)<span class="tag">Daily</span></div><div class="t">2026-08-21 브리핑</div><div class="s">오늘 가장 뚜렷한 흐름은 비디오 디퓨전 모델이 영상을 만드는 도구가 아니라, 영상 속에 숨어 있는 3D/4D 기하 구조를 뽑아내는 엔진으로 재활용되는 사례 가 여럿 동시에 나온 것입니다. Stream4D는 3D Gaussian Splatting 기반 정적 비평자(critic)가 움직이는 물체를 &quot;복원 오차&quot;로 오인해 영상을 얼려버리는 문제를 발견하고, 4D 복원 보상으로 바꿔 이를 고칩니다. DreamHand와 4DAnyone은 아예 디퓨전 모델의 중간 표현 자체를 기하 인코더나 다시점 생성기로 씁니다. 두 번째로는 정답 영상 없이</div></a>
 
 <a class="entry" href="posts/2026-08-20.html"><div class="d">2026-08-20 (목)<span class="tag">Daily</span></div><div class="t">2026-08-20 브리핑</div><div class="s">오늘 가장 뚜렷한 흐름은 3D Gaussian Splatting(3DGS, 장면을 수많은 작은 3차원 가우시안 함수로 표현해 빠르게 렌더링하는 기법) 연구의 무게중심이 &quot;얼마나 잘 그리는가&quot;에서 &quot;이 표현을 동적 장면·로봇 정책·스트리밍 같은 실제 상황에 넣었을 때 얼마나 버티는가&quot;로 넘어간 것 입니다. 카메라 위치가 살짝 틀어지는 것만으로 로봇 조작 성공률이 90%에서 10%까지 떨어진다는 관찰이 대표적입니다. 두 번째로는 의료 vision-language 모델(VLM) 논문들이 &quot;정답을 맞히는가&quot;보다 &quot;이 모델이 언제 답을 유보</div></a>
