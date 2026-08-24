@@ -1,0 +1,107 @@
+{
+  "date": "2026-08-24",
+  "insights": [
+    {
+      "title": "2D 비전 파운데이션 모델을 3D 기하 파이프라인에 \"어떻게\" 이식할지가 새로운 연구 대상으로",
+      "claim": "\"Lift, Associate, and Fuse\"는 2D 파운데이션 모델을 3D로 옮기는 기존 161개 시스템을 감사해, 어느 단계에서 정보가 버려지면 되돌릴 수 없어지는지를 생성-연결-조정-융합-저장/질의 다섯 단계로 정리한 감사 프로토콜을 제안합니다. M2Depth는 단안 깊이 파운데이션 모델과 멀티뷰 스테레오를 한쪽 방향으로만 정보를 흘려보내던 기존 방식 대신, 서로 양방향으로 보정하게 만드는 구조로 바꿉니다. Stream3Dv2는 스트리밍 RGB-D 입력에서 노이즈 있는 2D 세그멘테이션 마스크를 견디면서 실시간으로 3D 장면을 이해하는 프레임워크를, MV2GF는 시각 기하 파운데이션 모델을 다시점 보행자 탐지에 붙여 학습에서 못 본 카메라 배치에도 일반화되게 만듭니다.",
+      "papers": [
+        {
+          "title": "Lift, Associate, and Fuse: A Decision-Centric Framework for 2D-to-3D Foundation Model Transfer",
+          "arxiv": "https://arxiv.org/abs/2608.20659",
+          "importance_tags": ["[통합정리]", "[평가축]"]
+        },
+        {
+          "title": "M2Depth: Unifying Monocular Depth Foundation Priors with Multi-View Stereo",
+          "arxiv": "https://arxiv.org/abs/2608.20788",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Stream3Dv2: Geometric-Semantic Fusion Enhanced Streaming Zero-Shot 3D Scene Understanding",
+          "arxiv": "https://arxiv.org/abs/2608.21136",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "MV2GF: Multi-view Pedestrian Detection with a Visual Geometric Foundation Model",
+          "arxiv": "https://arxiv.org/abs/2608.20639",
+          "importance_tags": ["[방법전환]"]
+        }
+      ]
+    },
+    {
+      "title": "의료 파운데이션 모델이 도메인 시프트에서 정확히 어디서 무너지는지 정밀 진단",
+      "claim": "\"When Adaptation Hurts\"는 MedSAM을 미세조정하면 가까운 도메인에서는 성능이 오르지만, 초음파·유방 촬영처럼 아예 다른 모달리티로 가면 미세조정이 오히려 원래 모델보다 나빠질 수 있다는 것을 보이고, 전체 미세조정이 가장 나은 트레이드오프를, 인코더 전용 LoRA가 가장 나은 파라미터 효율적 대안임을 비교합니다. ANT는 병원의 초음파 장비 세대가 바뀌면 전립선암 탐지 정확도가 떨어지는 문제를, 테스트 시점에 전립선 해부학 구조에 인코더를 다시 정렬해 교정합니다. CellPath-Bench는 병리 파운데이션 모델이 세포 단위 정보를 실제로 얼마나 담고 있고, 그 정보가 조직·데이터셋·장기를 넘나들어도 유지되는지를 평가하는 세포 해상도 벤치마크를 새로 제안합니다.",
+      "papers": [
+        {
+          "title": "When Adaptation Hurts: Connecting Representational Drift to OOD Failures in MedSAM Fine-Tuning",
+          "arxiv": "https://arxiv.org/abs/2608.21300",
+          "importance_tags": ["[경고신호]", "[평가축]"]
+        },
+        {
+          "title": "Learning Prostate Anatomy at Test Time for Cancer Detection in Micro-Ultrasound",
+          "arxiv": "https://arxiv.org/abs/2608.20557",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "CellPath-Bench: A Multidimensional Benchmark for Whole-Slide Cellular Representations in Pathology Foundation Models",
+          "arxiv": "https://arxiv.org/abs/2608.21060",
+          "importance_tags": ["[평가축]", "[인프라]"]
+        }
+      ]
+    },
+    {
+      "title": "AI 생성 영상·이미지를 외형이 아니라 물리적 일관성으로 잡아내는 탐지 흐름",
+      "claim": "MotionPhys는 AI 생성 영상이 짧은 구간에서는 그럴듯해 보여도, 물체 하나가 완전한 동작을 마칠 때까지 관성·연속적인 힘·궤적의 기하학적 일관성을 지키지 못한다는 것을 광학 흐름 궤적의 다중 시간 스케일 분석으로 보여줍니다. AGIDefect-4K는 이미지 쪽에서 15개 생성 모델이 만든 4천 장에 픽셀 단위 결함 위치·원인·품질 점수까지 주석을 단 데이터셋을 만들고, 멀티모달 언어모델 기반 베이스라인으로 결함 탐지·설명이 아직 어렵다는 것을 보입니다.",
+      "papers": [
+        {
+          "title": "MotionPhys: Detecting AI-Generated Videos via Physical Consistency of Optical-Flow Trajectories",
+          "arxiv": "https://arxiv.org/abs/2608.20770",
+          "importance_tags": ["[평가축]", "[방법전환]"]
+        },
+        {
+          "title": "AGIDefect-4K: A Richly Annotated Dataset for AI-Generated Image Defect Detection, Localization and Explanation",
+          "arxiv": "https://arxiv.org/abs/2608.20713",
+          "importance_tags": ["[인프라]", "[평가축]"]
+        }
+      ]
+    },
+    {
+      "title": "자기지도 역문제 복원이 직접 학습 대신 파운데이션 프라이어를 빌려 쓰는 쪽으로",
+      "claim": "Frozen CLIP Priors 논문은 웹 규모로 학습된 CLIP의 동결된 특징을 광자가 부족한 촬영(포아송 잡음) 환경의 복원 사전으로 그대로 가져다 쓰고, 가벼운 디코더만 새로 학습시켜 학습 파라미터 수를 크게 줄입니다. Consistency Models 논문은 디퓨전 모델 기반 MRI 재구성이 반복 샘플링 때문에 느리다는 문제를, 한 번의 순전파로 디퓨전 궤적을 근사하는 consistency model로 대체해 4번의 신경망 호출만으로 빠른 재구성을 시연합니다.",
+      "papers": [
+        {
+          "title": "Frozen CLIP Priors for Robust Self-Supervised Poisson Inverse Problems",
+          "arxiv": "https://arxiv.org/abs/2608.20524",
+          "importance_tags": ["[방법전환]", "[데이터전환]"]
+        },
+        {
+          "title": "Consistency Models for Fast MRI Reconstruction Using Regularization by Denoising",
+          "arxiv": "https://arxiv.org/abs/2608.20561",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        }
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "Lift-Associate-Fuse의 5단계 감사 프로토콜을 우리 랩의 파운데이션 프라이어 융합 파이프라인에 적용",
+      "claim": "2D 파운데이션 모델의 예측을 3D로 옮길 때 정보가 버려지는 지점을 다섯 단계로 감사하는 프로토콜을, 우리 랩의 라이트필드·광학 단층촬영 재구성 파이프라인에서 파운데이션 프라이어를 붙이는 지점에 적용해 정보 손실 지점을 점검합니다.",
+      "supporting_papers": [
+        {"title": "Lift, Associate, and Fuse", "arxiv": "https://arxiv.org/abs/2608.20659"}
+      ]
+    },
+    {
+      "title": "ANT의 테스트 시점 해부학 재정렬을 우리 도메인 적응 실험에 적용",
+      "claim": "병원 장비 세대가 바뀔 때 해부학 구조에 인코더를 다시 정렬해 성능 저하를 교정한 방식을, 우리 랩의 위상 이미징/단층촬영 재구성 모델의 장비·조건 강건성 검증 실험에 적용합니다.",
+      "supporting_papers": [
+        {"title": "Learning Prostate Anatomy at Test Time for Cancer Detection in Micro-Ultrasound", "arxiv": "https://arxiv.org/abs/2608.20557"}
+      ]
+    },
+    {
+      "title": "Frozen CLIP Priors 구조를 광량 제한 형광 현미경 복원에 시범 적용",
+      "claim": "동결된 CLIP 특징을 광자 부족 환경의 복원 사전으로 재활용하고 가벼운 디코더만 학습시킨 구조를, 우리 랩의 저조도 형광 현미경 복원 파이프라인에 적용해 데이터 요구량과 복원 품질 트레이드오프를 비교합니다.",
+      "supporting_papers": [
+        {"title": "Frozen CLIP Priors for Robust Self-Supervised Poisson Inverse Problems", "arxiv": "https://arxiv.org/abs/2608.20524"}
+      ]
+    }
+  ]
+}

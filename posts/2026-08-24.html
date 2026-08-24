@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-08-24</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-08-24 (월요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-08-24 (월요일)</div>
+  <div>📚 소스: new — arXiv 5개 카테고리 모두 2026-08-24 listing 정상 확인</div>
+  <div>🔢 arXiv: cs.LG 112 · cs.CV 103 · cs.AI 200 · eess.IV 4 · eess.SP 13 (new+cross 합계 432편, replacement 제외)</div>
+  <div>🔢 저널: Crossref/OpenAlex 251편 수집 · arXiv+저널 통합 스캔 614건 · ROI 배정 146건 (23.8%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>오늘 arXiv를 관통하는 흐름은 <strong>2D 비전 파운데이션 모델(깊이 추정, 세그멘테이션, 기하 인코더)을 그대로 3D 파이프라인에 이식하되, "어떻게 잘 이식할지"를 별도 연구 주제로 다루기 시작했다</strong>는 점입니다. 예전에는 파운데이션 모델을 붙이면 대체로 성능이 오른다고 가정했는데, 오늘 나온 4편은 오히려 "어느 단계에서 붙이고, 어떻게 융합하고, 언제 정보가 되돌릴 수 없이 사라지는지"를 명시적으로 설계 대상으로 삼습니다. 두 번째로 뚜렷한 신호는 <strong>의료 영상 파운데이션 모델이 도메인이 바뀌면 정확히 어디서, 왜 무너지는지를 정밀하게 진단하는 논문</strong>들입니다. MedSAM 미세조정은 가까운 도메인에서는 좋아지지만 먼 도메인에서는 오히려 나빠진다는 트레이드오프를 보여주고, 전립선 미세초음파 논문은 병원이 바뀔 때 생기는 성능 저하를 테스트 시점에 해부학 구조로 교정합니다. 계산광학 핵심 버킷은 오늘도 대부분 키워드 우연 매칭이었지만, 메타표면 하나로 나노프린팅과 홀로그램을 동시에 인코딩하는 저널 논문 2편이 눈에 띄는 예외였습니다.</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 2026-08-24 listing이 정상적으로 확인됐습니다. new+cross 기준 432편으로, 지난주 마지막 평일(8/21, 388편)보다 소폭 늘었습니다. 월요일이라 주말 동안 쌓인 제출물이 반영된 것으로 보이며 5개 카테고리 h3 배너도 모두 정상 확인했습니다. 여기에 Crossref/OpenAlex 저널 251편을 더해 arXiv+저널 통합 스캔 614건 중 146건(23.8%)이 랩 ROI 버킷에 배정됐습니다. 지난주(8/17~8/21) 평균 선정률(29.1%)보다는 낮은데, 이는 오늘 cs.AI 카테고리가 200편으로 유난히 많고 그중 상당수가 LLM 에이전트·강화학습·이론 논문이라 이미징 ROI와 거리가 있었기 때문으로 보입니다.</p><p>오늘 arXiv에서 가장 뚜렷한 신호는 2D 비전 파운데이션 모델을 3D 기하 파이프라인에 붙이는 방식 자체를 연구 대상으로 삼은 논문 4편입니다. "Lift, Associate, and Fuse"는 2D 파운데이션 모델의 예측을 3D로 옮기는 기존 161개 시스템을 감사해, 어느 지점에서 정보가 버려지면 되돌릴 수 없어지는지를 다섯 단계(생성, 연결, 조정, 융합, 저장/질의)로 정리합니다. M2Depth는 단안 깊이 파운데이션 모델과 멀티뷰 스테레오를 붙일 때, 기존처럼 한쪽에서 다른 쪽으로 한 번만 정보를 흘려보내는 방식 대신 양방향으로 서로 보정하게 만듭니다. Stream3Dv2와 MV2GF도 각각 스트리밍 3D 장면 이해와 다시점 보행자 탐지에서, 파운데이션 모델이 주는 기하 정보를 노이즈 없이 안정적으로 융합하는 방법을 다룹니다. 네 논문을 같이 보면, "파운데이션 모델을 붙이면 좋아진다"는 단계를 지나 "어떻게 붙여야 정보 손실 없이 좋아지는지"가 새로운 연구 질문이 됐다는 인상을 줍니다.</p><p>두 번째로 눈에 띄는 것은 의료 영상 파운데이션 모델이 도메인이 바뀔 때 정확히 어디서 무너지는지를 정밀하게 짚는 논문들입니다. "When Adaptation Hurts"는 MedSAM을 미세조정하면 가까운 도메인(피부 병변 사진끼리)에서는 성능이 오르지만, 먼 도메인(초음파, 유방 촬영)으로 가면 오히려 원래 모델보다 나빠지는 경우가 있다는 것을 보이고, 어떤 미세조정 방식이 이 트레이드오프를 가장 덜 겪는지 비교합니다. 전립선 미세초음파 암 탐지 논문(ANT)은 병원의 초음파 장비가 바뀌면 성능이 떨어지는 문제를, 테스트 시점에 전립선 해부학 구조에 맞춰 인코더를 다시 정렬하는 방식으로 교정합니다. CellPath-Bench는 병리 파운데이션 모델이 세포 단위 정보를 실제로 얼마나 잘 담고 있는지, 그 정보가 조직·장기를 넘나들어도 유지되는지를 평가하는 벤치마크를 새로 만듭니다. 세 논문 모두 "파운데이션 모델이 일반화를 잘한다"는 주장을 그대로 받아들이지 않고, 정확히 어떤 조건에서 깨지는지를 데이터로 보여준다는 공통점이 있습니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>지난주 초반(8/17~8/18) daily에서는 3D Gaussian Splatting이 로봇 인식·sparse-view CT·이벤트 카메라 SLAM으로 응용 도메인을 넓혀가는 "확산" 국면이 중심이었고, 지난주 후반(8/20~8/21)에는 그 무게중심이 다시 렌더링 품질(워터마킹·초기화 검증·학습 가속) 같은 시스템 인프라 문제로 좁혀졌습니다. 오늘은 한 단계 더 상류로 올라가, "3DGS 자체"가 아니라 "2D 파운데이션 모델을 3D로 어떻게 옮길 것인가"라는 더 근본적인 설계 문제로 초점이 이동했습니다. 즉 지난주가 이미 만들어진 3D 표현을 여러 응용에 밀어 넣는 확장 단계였다면, 오늘은 그 확장이 딛고 서 있는 "2D→3D 정보 이식 방식" 자체를 재점검하는 단계입니다. 의료 AI 쪽도 지난주 금요일(8/21)에는 정답 영상 없이 스스로 배우는 재구성 논문들이 여러 모달리티에서 동시에 나왔다면, 오늘은 그렇게 학습된(또는 파운데이션 모델 기반) 시스템이 실제 배포 환경에서 도메인이 바뀔 때 어디서 실패하는지를 정밀 진단하는 쪽으로 질문이 옮겨갔습니다. 계산광학 핵심 버킷은 지난 금요일(렌즈리스·메타표면·라이트필드 5편이 동시에 몰린 신호 밀집일)과 달리 오늘은 다시 신호가 옅어져, 메타표면 나노프린팅+홀로그램 동시 인코딩 저널 논문 2편 정도만 실질 신호로 남았습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>2D 비전 파운데이션 모델을 3D 기하 파이프라인에 "어떻게" 이식할지가 새로운 연구 대상으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.20659" target=_blank>Lift, Associate, and Fuse</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.20788" target=_blank>M2Depth</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.21136" target=_blank>Stream3Dv2</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.20639" target=_blank>MV2GF</a> <span class=pill>CV</span>
+  </td>
+  <td>예전에는 2D 파운데이션 모델(깊이 추정, 세그멘테이션 등)을 3D 파이프라인에 붙이면 대체로 성능이 올라간다고 가정하고, 어떻게 붙이는지는 구현 디테일로 취급했습니다. 오늘 나온 4편은 그 붙이는 방식 자체를 연구 질문으로 삼습니다. "Lift, Associate, and Fuse"는 기존 161개 시스템을 감사해서 어느 단계에서 정보가 버려지면 다시 되돌릴 수 없는지를 다섯 단계로 정리하고, M2Depth는 단안 깊이와 멀티뷰 스테레오를 한쪽 방향으로만 흘려보내던 기존 방식 대신 양방향으로 서로 보정하게 바꿉니다. 즉 "파운데이션 모델을 쓰면 좋아진다"는 단계를 지나서, 어떤 융합 방식이 정보를 덜 잃는지를 비교하는 단계로 넘어가고 있다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 하위 응용(감사 프레임워크, 깊이 추정, 스트리밍 3D 이해, 다시점 탐지) 4편이 같은 날 독립적으로 확인, "2D→3D 정보 이식 설계"라는 공통 문제의식이 명확함</small></td>
+  <td>Lift-Associate-Fuse의 5단계 감사 프로토콜(Generate/Associate/Reconcile/Fuse/Persist)을 우리 랩의 라이트필드·광학 단층촬영 재구성 파이프라인에 적용해, 파운데이션 프라이어를 어느 단계에서 붙이면 정보가 손실되는지 점검</td>
+</tr>
+<tr>
+  <td><strong>의료 파운데이션 모델이 도메인 시프트에서 정확히 어디서 무너지는지 정밀 진단</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.21300" target=_blank>When Adaptation Hurts (MedSAM)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.20557" target=_blank>ANT (전립선 미세초음파)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.21060" target=_blank>CellPath-Bench</a> <span class=pill>AI</span>
+  </td>
+  <td>"파운데이션 모델은 도메인이 바뀌어도 잘 일반화된다"는 주장은 최근 몇 년간 당연하게 받아들여졌습니다. 오늘 나온 3편은 이 주장을 그대로 받아들이지 않고 정확히 어떤 조건에서 무너지는지를 데이터로 보여줍니다. MedSAM 미세조정 논문은 가까운 도메인(같은 촬영 방식 안에서)에서는 성능이 오르지만, 멀리 떨어진 도메인(초음파, 유방 촬영처럼 아예 다른 모달리티)으로 가면 미세조정이 오히려 원래 모델보다 나빠질 수 있다는 것을 보이고, 어떤 미세조정 방식(LoRA, 프롬프트 튜닝, 전체 미세조정)이 이 손실을 가장 덜 겪는지 비교합니다. ANT는 병원의 초음파 장비 세대가 바뀌면 암 탐지 정확도가 떨어지는 문제를, 테스트 시점에 전립선 해부학 구조에 인코더를 다시 맞추는 방식으로 교정합니다. 즉 파운데이션 모델을 그대로 믿기보다, 배포 전에 어느 도메인 거리에서 신뢰가 깨지는지 미리 측정해야 한다는 신호입니다.</td>
+  <td>Medium<br><small>3편이 같은 방향(파운데이션 모델의 도메인 시프트 실패 지점 정밀 진단)을 보이지만 응용(피부/유방 병변, 전립선 초음파, 병리 세포)이 달라 직접 비교 가능한 공통 벤치마크는 없음</small></td>
+  <td>ANT의 테스트 시점 해부학 정렬 아이디어를 우리 랩의 위상 이미징/단층촬영 도메인 적응 실험에 적용해, 장비 세대가 바뀐 held-out 세트에서 재정렬 유무에 따른 성능 격차를 측정</td>
+</tr>
+<tr>
+  <td><strong>AI 생성 영상·이미지를 외형이 아니라 물리적 일관성으로 잡아내는 탐지 흐름</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.20770" target=_blank>MotionPhys</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.20713" target=_blank>AGIDefect-4K</a> <span class=pill>CV</span>
+  </td>
+  <td>지금까지 AI 생성 영상·이미지 탐지는 주로 픽셀이나 잠재 공간에서 생성기 특유의 흔적(artifact)을 찾는 방식이었습니다. MotionPhys는 다른 접근을 취해, AI 생성 영상이 짧은 구간에서는 그럴듯해 보여도 물체 하나가 완전한 동작을 마칠 때까지 관성·연속적인 힘·궤적의 기하학적 일관성을 지키지 못한다는 것을 광학 흐름 궤적으로 보여줍니다. AGIDefect-4K는 이미지 쪽에서 비슷한 문제의식으로, 15개 생성 모델이 만든 이미지에 픽셀 단위 결함 위치와 원인까지 주석을 달아 데이터셋을 만듭니다. 두 논문 모두 "그럴듯해 보이는가"가 아니라 "물리적으로 말이 되는가"를 판별 기준으로 삼는다는 공통점이 있습니다.</td>
+  <td>Medium<br><small>2편이 같은 방향(물리적 일관성 기반 AI 생성물 판별)을 보이지만 영상/이미지로 modality가 달라 직접 비교는 어려움</small></td>
+  <td>MotionPhys의 다중 시간 스케일 궤적 기하 분석을 우리 랩의 비디오 기반 3D/4D 재구성 결과물 품질 검증 단계에 적용해, 재구성된 동적 장면이 물리적으로 일관된 궤적을 갖는지 자동 점검하는 QA 지표로 활용</td>
+</tr>
+<tr>
+  <td><strong>자기지도 역문제 복원이 직접 학습 대신 파운데이션 프라이어를 빌려 쓰는 쪽으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.20524" target=_blank>Frozen CLIP Priors for Poisson Inverse Problems</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2608.20561" target=_blank>Consistency Models for Fast MRI Reconstruction</a> <span class=pill>IV</span>
+  </td>
+  <td>정답 영상 없이 역문제를 푸는 자기지도 복원은 보통 복원 신경망 자체를 처음부터 학습시켜야 했습니다. 두 논문은 그 대신 이미 학습된 대형 모델의 표현을 재활용합니다. Frozen CLIP Priors 논문은 웹 규모로 학습된 CLIP의 동결된 특징을 광자가 부족한 촬영(포아송 잡음) 환경의 복원 사전(prior)으로 그대로 가져다 쓰고, 가벼운 디코더만 새로 학습시켜 학습 파라미터 수를 크게 줄입니다. Consistency Models 논문은 디퓨전 모델 기반 MRI 재구성이 반복 샘플링 때문에 느리다는 문제를, 한 번의 순전파로 디퓨전 궤적을 근사하는 consistency model로 대체해 4번의 신경망 호출만으로 빠른 재구성을 시연합니다. 둘 다 "복원 전용 모델을 새로 학습"에서 "이미 있는 대형 모델의 표현/궤적을 재활용"으로 무게중심이 옮겨가는 신호입니다.</td>
+  <td>Low<br><small>2편이 같은 방향(파운데이션 프라이어 재활용)을 보이지만 각각 다른 문제(Poisson 역문제, MRI 재구성)를 다뤄 단발 관찰에 가까움, 후속 확산 여부 추가 관찰 필요</small></td>
+  <td>Frozen CLIP Priors의 동결 인코더+경량 디코더 구조를 우리 랩의 광량 제한 형광 현미경 복원 파이프라인에 시범 적용해, 처음부터 학습한 복원망 대비 학습 데이터 요구량과 복원 품질 트레이드오프 비교</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ 표 5행 원칙 관련: 오늘은 위 4개 클러스터 외에 Deep Learning Methods(91편) 나머지 부분에서 추가로 2편 이상이 실제로 같은 방향을 가리키는 보조 클러스터를 찾지 못했습니다 — 강화학습·시계열 예측·그래프 신경망·LLM 에이전트처럼 서로 다른 주제가 흩어져 있어 억지로 묶으면 근거 없는 압축 구문이 됩니다. 4행에는 실제 근거가 확인된 관찰만 반영했습니다.</small></p>
+<p><small>⚠️ Watch Lens 참고: 오늘은 계산광학 4개 세부 버킷(Fourier Ptychography 0편, Lensless 0편, Meta-Optics 2편, Light-Field 2편) 신호가 지난 금요일보다 크게 옅어졌습니다. Meta-Optics/Diffractive 2편 중 "Programmable Metasurface for Amplitude-Phase-Independent Microwave Meta-Printing and Synchronous Holography"와 "Deep Neural Network Enabled Complex-Amplitude Metasurfaces for Simultaneous Nanoprinting and Holography"는 둘 다 하나의 메타표면으로 나노프린팅과 홀로그램을 동시에 인코딩하는 실제 방법론이라 클러스터 표에 올릴지 검토했으나, 2편 모두 정보 암호화(encryption) 응용에 초점이 맞춰져 있어 우리 랩의 계산 이미징 재구성 관심사와는 다소 거리가 있다고 판단해 표 밖에 별도로 기록합니다. Phase Imaging/Holography 3편은 모두 메타표면 프린팅/암호화 응용이고 위상 검색이나 정량 위상 이미징과는 무관합니다. Light-Field/Novel Sensors 2편 중 실제 이미징 방법론은 "Sparse Light Field Sampling Improves Casual 3D and 4D Reconstruction" 1편뿐(나머지 1편은 LLM 에이전트 메모리 논문의 "Remembering"이 우연히 매칭)이라 단발 관찰로 남깁니다. Virtual Staining/Pathology 16편은 오늘 실제 병리·가상염색 논문이 0편이고 전부 "staining"/"pathology" 키워드가 여드름균, 티크주 목재, 화장품 등과 우연히 겹친 오탐입니다.</small></p>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 2D→3D 파운데이션 모델 이식 설계(Lift-Associate-Fuse, M2Depth, Stream3Dv2, MV2GF), 의료 파운데이션 모델 도메인 시프트 진단(MedSAM 미세조정, ANT, CellPath-Bench), AI 생성물 물리 일관성 탐지(MotionPhys, AGIDefect-4K), 파운데이션 프라이어 재활용 복원(Frozen CLIP Priors, Consistency Models MRI)</li>
+  <li><strong>저널 전용</strong>: 메타표면 나노프린팅+홀로그램 동시 인코딩(2편, Laser &amp; Photonics Reviews), 다수의 임상 CT/초음파/PET 진단·증례 저널(Quantitative Imaging in Medicine and Surgery 등)</li>
+  <li><strong>공통 키워드</strong>: foundation model, self-supervised, domain shift/adaptation, metasurface</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 "파운데이션 모델을 어떻게 신뢰할 수 있게 쓸 것인가"라는 문제의식을 방법론(2D→3D 이식, 도메인 시프트 진단, 탐지)의 형태로 주도했고, 저널 쪽은 계산광학 핵심 신호가 메타표면 암호화 응용 2편으로 좁게 나타난 날입니다. 지난 금요일에 저널이 렌즈리스·메타표면·타이코그래피로 폭넓게 신호를 냈던 것과 달리, 오늘은 저널 쪽 계산광학 신호가 다시 옅어졌습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 2D 비전 파운데이션 모델을 3D 기하 파이프라인에 "어떻게" 이식할지가 새로운 연구 대상으로</h3>
+  <p>"Lift, Associate, and Fuse"는 2D 파운데이션 모델을 3D로 옮기는 기존 161개 시스템을 감사해, 어느 단계에서 정보가 버려지면 되돌릴 수 없어지는지를 생성-연결-조정-융합-저장/질의 다섯 단계로 정리한 감사 프로토콜을 제안합니다. M2Depth는 단안 깊이 파운데이션 모델과 멀티뷰 스테레오를 한쪽 방향으로만 정보를 흘려보내던 기존 방식 대신, 서로 양방향으로 보정하게 만드는 구조로 바꿉니다. Stream3Dv2는 스트리밍 RGB-D 입력에서 노이즈 있는 2D 세그멘테이션 마스크를 견디면서 실시간으로 3D 장면을 이해하는 프레임워크를, MV2GF는 시각 기하 파운데이션 모델을 다시점 보행자 탐지에 붙여 학습에서 못 본 카메라 배치에도 일반화되게 만듭니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 하위 응용(감사 프레임워크, 깊이 추정, 스트리밍 3D 이해, 다시점 탐지) 4편이 같은 날 독립적으로 확인, 공통 문제의식이 명확</p>
+</div>
+
+<div class=ins>
+  <h3>2. 의료 파운데이션 모델이 도메인 시프트에서 정확히 어디서 무너지는지 정밀 진단</h3>
+  <p>"When Adaptation Hurts"는 MedSAM을 미세조정하면 가까운 도메인에서는 성능이 오르지만, 초음파·유방 촬영처럼 아예 다른 모달리티로 가면 미세조정이 오히려 원래 모델보다 나빠질 수 있다는 것을 보이고, 전체 미세조정이 가장 나은 트레이드오프를, 인코더 전용 LoRA가 가장 나은 파라미터 효율적 대안임을 비교합니다. ANT는 병원의 초음파 장비 세대가 바뀌면 전립선암 탐지 정확도가 떨어지는 문제를, 테스트 시점에 전립선 해부학 구조에 인코더를 다시 정렬해 교정합니다. CellPath-Bench는 병리 파운데이션 모델이 세포 단위 정보를 실제로 얼마나 담고 있고, 그 정보가 조직·데이터셋·장기를 넘나들어도 유지되는지를 평가하는 세포 해상도 벤치마크를 새로 제안합니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편이 같은 방향이지만 응용(피부/유방 병변, 전립선 초음파, 병리 세포)이 달라 직접 비교 벤치마크는 없음</p>
+</div>
+
+<div class=ins>
+  <h3>3. AI 생성 영상·이미지를 외형이 아니라 물리적 일관성으로 잡아내는 탐지 흐름</h3>
+  <p>MotionPhys는 AI 생성 영상이 짧은 구간에서는 그럴듯해 보여도, 물체 하나가 완전한 동작을 마칠 때까지 관성·연속적인 힘·궤적의 기하학적 일관성을 지키지 못한다는 것을 광학 흐름 궤적의 다중 시간 스케일 분석으로 보여줍니다. AGIDefect-4K는 이미지 쪽에서 15개 생성 모델이 만든 4천 장에 픽셀 단위 결함 위치·원인·품질 점수까지 주석을 단 데이터셋을 만들고, 멀티모달 언어모델 기반 베이스라인(AGIDA)으로 결함 탐지·설명이 아직 어렵다는 것을 보입니다.</p>
+  <p class=conf-note>Confidence: Medium — 2편이 같은 방향(물리적 일관성 기반 판별)을 보이지만 영상/이미지로 모달리티가 달라 직접 비교는 어려움</p>
+</div>
+
+<div class=ins>
+  <h3>4. 자기지도 역문제 복원이 직접 학습 대신 파운데이션 프라이어를 빌려 쓰는 쪽으로</h3>
+  <p>Frozen CLIP Priors 논문은 웹 규모로 학습된 CLIP의 동결된 특징을 광자가 부족한 촬영(포아송 잡음) 환경의 복원 사전으로 그대로 가져다 쓰고, 가벼운 디코더만 새로 학습시켜 학습 파라미터를 크게 줄입니다. Consistency Models 논문은 디퓨전 기반 MRI 재구성이 반복 샘플링 때문에 느린 문제를, 한 번의 순전파로 디퓨전 궤적을 근사하는 consistency model로 대체해 단 4번의 신경망 호출만으로 fastMRI 무릎·뇌 데이터셋에서 빠른 재구성을 시연합니다.</p>
+  <p class=conf-note>Confidence: Low — 2편이 같은 방향을 보이지만 각각 다른 문제를 다뤄 단발 관찰에 가까움, 후속 확산 여부 추가 관찰 필요</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. Lift-Associate-Fuse의 5단계 감사 프로토콜을 우리 랩의 파운데이션 프라이어 융합 파이프라인에 적용</h3>
+  <p>2D 파운데이션 모델의 예측을 3D로 옮길 때 정보가 버려지는 지점을 다섯 단계(생성/연결/조정/융합/저장·질의)로 나눠 감사하는 이 논문의 프로토콜을, 우리 랩의 라이트필드·광학 단층촬영 재구성 파이프라인에서 파운데이션 프라이어(깊이, 세그멘테이션 등)를 붙이는 지점에 적용해 어디서 정보가 손실되는지 점검합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>Lift-Associate-Fuse 논문의 5단계 정의를 우리 재구성 파이프라인의 각 처리 단계에 매핑</li>
+    <li>공통 실험: 파운데이션 프라이어를 붙이는 시점을 초기/중간/후기로 나눠 held-out 재구성 데이터셋에서 비교</li>
+    <li>비교축: 각 삽입 시점별 재구성 PSNR/SSIM, 프라이어 정보가 최종 출력까지 살아남는 비율(ablation)</li>
+    <li>실패해도 남는 결과: 우리 파이프라인에서 파운데이션 프라이어 삽입 시점이 성능에 미치는 영향에 대한 정량 프로파일</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. ANT의 테스트 시점 해부학 재정렬을 우리 도메인 적응 실험에 적용</h3>
+  <p>ANT가 병원 장비 세대가 바뀔 때 전립선 해부학 구조에 인코더를 다시 정렬해 성능 저하를 교정한 방식을, 우리 랩의 위상 이미징/단층촬영 재구성 모델이 장비·조건이 바뀐 데이터에서 얼마나 강건한지 검증하는 실험에 적용합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>ANT의 세그멘테이션 유도 test-time adaptation 구조를 우리 재구성/분류 인코더에 시범 적용</li>
+    <li>공통 실험: 기존 장비로 학습한 모델을 다른 장비·조건으로 촬영한 held-out 세트에 leave-one-center-out 방식으로 평가</li>
+    <li>비교축: 재정렬 유무에 따른 성능 격차, close-domain 대비 far-domain에서의 저하폭</li>
+    <li>실패해도 남는 결과: 우리 이미징 조건에서 도메인 거리와 성능 저하 사이의 관계 프로파일</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. Frozen CLIP Priors 구조를 광량 제한 형광 현미경 복원에 시범 적용</h3>
+  <p>동결된 CLIP 특징을 광자 부족 환경의 복원 사전으로 재활용하고 가벼운 디코더만 학습시킨 이 논문의 구조를, 우리 랩의 광량 제한 형광 현미경/저조도 이미징 복원 파이프라인에 적용해 처음부터 학습한 복원망 대비 데이터 요구량과 복원 품질을 비교합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>동결 CLIP RN50 다중 스케일 특징 위에 경량 디코더를 얹은 구조를 우리 저조도 복원 코드베이스에 재구현</li>
+    <li>공통 실험: 학습 데이터 양을 단계적으로 줄여가며(10%/30%/100%) 기존 처음부터 학습한 복원망과 비교</li>
+    <li>비교축: 데이터 양 대비 복원 PSNR/SSIM, 학습 가능 파라미터 수, 수렴 속도</li>
+    <li>실패해도 남는 결과: 우리 형광 현미경 데이터에서 파운데이션 프라이어 재활용이 유효한 광자 예산 구간에 대한 프로파일</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘은 daily 실행이라 예측 회고는 생략합니다(예측 회고는 매주 월요일 별도 weekly 실행이 담당하며, 오늘 오전 발행된 2026-34 weekly에서 이미 지난주 예측을 채점했습니다).</p>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Reconstruction/Inverse Problems(19편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:16%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:11%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:11%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:68%"></span></span><span class=n>13편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:84%"></span></span><span class=n>16편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>19편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>91편</span></div>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Phase Imaging/Holography (3편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71741" target=_blank>Deep Neural Network Enabled Complex-Amplitude Metasurfaces for Simultaneous Nanoprinting and Holography</a></strong> [JNL]<br>
+  왜 주요: 딥러닝으로 설계한 복소 진폭 메타표면 하나로 근접장 나노프린팅과 원거리장 홀로그램을 동시에 인코딩 — Laser & Photonics Reviews 게재
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71811" target=_blank>Programmable Metasurface for Amplitude-Phase-Independent Microwave Meta-Printing and Synchronous Holography</a></strong> [JNL]<br>
+  왜 주요: 진폭과 위상을 독립적으로 제어하는 프로그래머블 메타표면으로 마이크로파 나노프린팅과 홀로그램을 동시 구현, 정보 암호화 응용 시연
+</div>
+
+<h3>Meta-Optics/Diffractive (2편 중 관련 2편, 단 암호화 응용 초점)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71770" target=_blank>Active Terahertz Vortices With Broadband Near-Far Field Multiplexing Based on Nonvolatile Plasmonic Metasurfaces</a></strong> [JNL]<br>
+  왜 주요: 비휘발성 플라즈모닉 메타표면 기반 회전 가능 광대역 테라헤르츠 와동 발생기, 근/원거리장 다중화 — 통신 응용이지만 메타표면 설계 방법론 참고 가치
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optcom.2026.133701" target=_blank>Thermally tunable multiple UV-visible high-Q Fano resonances in asymmetric aluminum metasurface for slow light</a></strong> [JNL]<br>
+  왜 주요: 열 튜닝 가능한 비대칭 알루미늄 메타표면의 고Q Fano 공진 — 초록 미공개, 본문 확인 필요
+</div>
+
+<h3>Light-Field/Novel Sensors (2편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20602" target=_blank>Sparse Light Field Sampling Improves Casual 3D and 4D Reconstruction</a></strong> [IV]<br>
+  왜 주요: 스마트폰·스테레오·라이트필드 카메라의 다시점 동시 촬영을 활용해 단안 스트림 대비 sparse-view 3DGS/4DGS 복원 품질을 높이는 실측 데이터셋과 분석 제시
+</div>
+
+<h3>Tomography/3D Imaging (13편 중 관련 6편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20788" target=_blank>M2Depth</a></strong> [CV · TIER A]<br>
+  왜 주요: 단안 깊이 파운데이션 모델과 멀티뷰 스테레오를 양방향 상호 보정으로 결합해 기존 단방향 융합의 한계를 해결
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20759" target=_blank>DiGS-Avatar</a></strong> [CV]<br>
+  왜 주요: 단일 이미지에서 UV 공간 디퓨전으로 애니메이션 가능한 3D 인간 재구성
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20687" target=_blank>TopoSurfel</a></strong> [CV]<br>
+  왜 주요: Gaussian Surfel과 메시 표현 사이의 루프를 닫아 표면 재구성 품질 개선
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20740" target=_blank>VisTa3D</a></strong> [CV]<br>
+  왜 주요: 시각·촉각·3D 포인트클라우드를 결합한 얇은 물체 재구성 데이터셋·벤치마크
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.21189" target=_blank>Cochlear OCT Fibrosis Quantification</a></strong> [CV]<br>
+  왜 주요: 신규 와우 OCT 데이터셋에서 섬유화 정량화, 잔존 청력 손실 연구에 이미징 정량 지표 제공
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20534" target=_blank>Grounded-Exo2Ego</a></strong> [CV]<br>
+  왜 주요: 구조화된 의미 그라운딩으로 3인칭→1인칭 시점 영상 생성의 강건성 개선
+</div>
+
+<h3>Reconstruction/Inverse Problems (19편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20524" target=_blank>Frozen CLIP Priors for Robust Self-Supervised Poisson Inverse Problems</a></strong> [IV · TIER A]<br>
+  왜 주요: 동결된 CLIP 특징을 광자 제한 환경 복원 사전으로 재활용, 학습 파라미터를 크게 줄이면서 자기지도 학습으로 도메인 시프트에 강건
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20942" target=_blank>LHMCF-Net</a></strong> [CV]<br>
+  왜 주요: 학습된 쌍곡 평균 곡률 흐름 네트워크로 의료 영상 분할, 기하학적 흐름을 신경망으로 근사하는 접근
+</div>
+
+<h3>Deep Learning Methods — 관련 2편 (91편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20561" target=_blank>Consistency Models for Fast MRI Reconstruction</a></strong> [IV · TIER A]<br>
+  왜 주요: 디퓨전 기반 MRI 재구성의 반복 샘플링 부담을 consistency model로 대체해 4번의 신경망 호출만으로 fastMRI 무릎·뇌 데이터셋에서 고품질 재구성
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20770" target=_blank>MotionPhys</a></strong> [CV]<br>
+  왜 주요: 광학 흐름 궤적의 물리적 일관성으로 AI 생성 영상을 외형이 아니라 운동 물리로 탐지
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<p><small>오늘 abstract 기준으로 확인 가능한 정량 벤치마크 수치가 제한적입니다. 구체적 수치가 명시된 결과만 아래에 기록하고, 나머지는 "본문 확인 필요"로 남깁니다.</small></p>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>결과</th><th>논문</th></tr></thead>
+<tbody>
+<tr><td>fastMRI 무릎·뇌 재구성 (다양한 해부/가속 배율)</td><td>신경망 호출 횟수(NFE)</td><td>4회 NFE만으로 기존 diffusion/consistency 기반 방법 대비 정량 지표·시각 품질 우위, 하이퍼파라미터 변화에 강건</td><td><a href="https://arxiv.org/abs/2608.20561" target=_blank>Consistency Models for Fast MRI Reconstruction</a></td></tr>
+<tr><td>MedSAM 미세조정 OOD 평가 (ISIC2018→PH2/BUSI/CBIS-DDSM)</td><td>IN vs OOD 성능 트레이드오프</td><td>전체 미세조정이 가장 나은 균형, 인코더 전용 LoRA가 far-OOD에서 표준 LoRA·VPT 대비 우위(구체 수치는 본문 확인 필요)</td><td><a href="https://arxiv.org/abs/2608.21300" target=_blank>When Adaptation Hurts</a></td></tr>
+<tr><td>전립선암 탐지 미세초음파 (693명 학습 → 118명 신규 장비 평가)</td><td>leave-one-center-out 정확도</td><td>테스트 시점 해부학 정렬로 장비 세대 교체에 따른 성능 저하 완화(구체 수치는 본문 확인 필요)</td><td><a href="https://arxiv.org/abs/2608.20557" target=_blank>ANT</a></td></tr>
+</tbody>
+</table>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Lift, Associate, and Fuse: A Decision-Centric Framework for 2D-to-3D Foundation Model Transfer — arXiv cs.CV</h3>
+  <div class=tag>[통합정리] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 2D 파운데이션 모델의 예측을 3D 표현으로 옮기는 방법은 최근 2~3년 사이 포인트 기반, 필드 기반, Gaussian 기반, 객체 기반, 그래프 기반, 메모리 기반 등 매우 다양한 방식으로 폭발적으로 늘었습니다. 문제는 이 시스템들이 대부분 태스크나 표현 방식으로만 분류돼 있어서, "시스템이 여러 시점에 걸쳐 일관성을 유지하는지"를 결정하는 진짜 요인 — 어디서 이미지 근거가 기하에 붙는지, 언제 여러 관측이 하나의 정체성으로 합쳐지는지, 의미와 세분화 수준이 충돌할 때 어떻게 처리하는지, 어떤 정보가 융합되고 무엇이 나중 질의를 위해 남는지 — 이 가려져 있었습니다. 이 논문은 이런 시스템 161개를 실제로 감사해서, 이 결정들을 다섯 개 연산자(생성, 연결, 조정, 융합, 저장/질의)로 명시적인 계약처럼 정리합니다.</p>
+  <p><strong>핵심:</strong> 이 논문의 핵심 기여는 새 알고리즘이 아니라 "정보가 되돌릴 수 없이 사라지는 첫 지점"을 찾아내는 구조화된 감사 프로토콜입니다. 저자들은 이 프레임워크를 표현(포인트/필드/Gaussian/객체/그래프/메모리 기반), 시간, 관계, 피드포워드 스트레스 테스트에 적용해 각 시스템군이 어떤 조건에서 정보를 잃는지 정리합니다. 즉 "2D→3D 이식이 잘 되는가"를 사후에 최종 성능 지표로만 평가하는 대신, 파이프라인 중간 단계에서 무엇이 버려지는지를 먼저 진단할 수 있게 해줍니다.</p>
+  <p><strong>주의:</strong> 161개 시스템을 다섯 연산자로 일반화하는 과정에서 개별 시스템의 미묘한 설계 차이가 단순화됐을 가능성이 있어, 특정 시스템에 이 프레임워크를 적용할 때 다섯 연산자 경계가 실제로 얼마나 깔끔하게 나뉘는지는 본문 확인이 필요합니다. 또한 이 감사가 정성적 분류에 가까운지, 정량적 정보 손실 측정까지 포함하는지도 본문에서 재확인해야 합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] When Adaptation Hurts: Connecting Representational Drift to OOD Failures in MedSAM Fine-Tuning — arXiv cs.CV</h3>
+  <div class=tag>[경고신호] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> MedSAM 같은 프롬프트 기반 의료 영상 분할 파운데이션 모델은 zero-shot이나 few-shot에서도 여러 도메인·모달리티에 일반화가 잘 된다고 알려져 있었습니다. 하지만 이 논문은 그 일반화 능력에 실제로 데이터로 반박 가능한 조건이 있다는 것을 보입니다. 미세조정이 학습 도메인과 가까운 데이터에서는 성능을 올리지만, 학습 도메인과 멀리 떨어진 데이터(예: 피부 병변 사진으로 미세조정한 모델을 유방 촬영에 적용)에서는 오히려 원래 zero-shot 모델보다 성능이 떨어질 수 있다는 것을 보여, "미세조정하면 항상 좋아진다"는 가정에 반례를 제시합니다. 계산 이미징 랩이 파운데이션 모델을 새 모달리티에 적용하기 전에 반드시 확인해야 할 질문을 실증 데이터로 보여준 사례입니다.</p>
+  <p><strong>핵심:</strong> 이 논문은 전체 모델 미세조정, 인코더 전용 LoRA, 얕은/깊은 시각 프롬프트 튜닝(VPT), 디코더 전용 미세조정 등 6가지 적응 전략을 ISIC 2018(피부경) 데이터셋으로 학습시킨 뒤, in-domain, close-OOD(PH2), far-OOD(BUSI 유방 초음파, CBIS-DDSM 유방촬영) 세 조건에서 평가합니다. 결과는 적응이 in-domain과 close-OOD에서는 성능을 올리지만 far-OOD에서는 종종 성능을 떨어뜨린다는 것이고, 전체 미세조정이 가장 나은 절충안을, 인코더 전용 LoRA가 far-OOD 상황에서 표준 LoRA·VPT보다 더 강건한 파라미터 효율적 대안임을 보입니다. 저자들은 이 트레이드오프를 표현 드리프트(representational drift)와 연결해 분석합니다.</p>
+  <p><strong>주의:</strong> 평가가 피부경-초음파-유방촬영이라는 특정 모달리티 조합에 국한돼 있어, 이 결론이 우리 랩이 다루는 위상 이미징·단층촬영 같은 다른 모달리티 조합에도 그대로 적용되는지는 별도 검증이 필요합니다. "표현 드리프트"라는 진단이 정성적 설명인지 정량적 지표로 측정됐는지도 본문에서 확인해야 합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] Virtual Staining/Pathology 16편 전부 실제 병리·가상염색과 무관한 오탐입니다(여드름균, 목재 재료, 화장품 순도 평가 등에서 "staining" 키워드가 우연히 매칭) — 이 버킷 편수를 병리 AI 활동량으로 해석하면 안 됩니다.</p>
+  <p>[Dataset risk] Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 오늘 0편으로, 계산광학 핵심 버킷 중 두 세부 분야는 신호가 완전히 비었습니다.</p>
+  <p>[Dataset risk] Phase Imaging/Holography 3편, Meta-Optics/Diffractive 2편 모두 정보 암호화·통신 응용에 초점이 맞춰져 있어, 우리 랩의 위상 검색·정량 위상 이미징 관심사와는 응용 맥락이 다릅니다. 방법론(메타표면 진폭·위상 동시 인코딩)은 참고 가치가 있지만 목적이 다르다는 점을 감안해야 합니다.</p>
+  <p>[Dataset risk] Reconstruction/Inverse Problems 19편 중 실제 이미징과 직접 관련된 논문은 2편뿐이며, 나머지는 강화학습·양자컴퓨팅·최적화 이론 등 일반 ML/수학 문제라 클러스터 표에서 별도로 다루지 못했습니다.</p>
+  <p>[Metric risk] 오늘 arXiv 선정률(23.8%)이 지난주 평균보다 낮은데, cs.AI 200편 중 다수가 LLM 에이전트·이론 논문이라 ROI와 거리가 있는 것으로 판단했지만, 파서 자체의 문제가 아닌지는 완전히 배제할 수 없습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] Lift-Associate-Fuse의 "161개 시스템 감사"라는 범위가 실제로 얼마나 대표성 있게 시스템군을 커버하는지는 본문의 선정 기준 확인이 필요합니다.</p>
+  <p>[Baseline risk] When Adaptation Hurts의 "전체 미세조정이 가장 나은 절충안"이라는 결론이 6가지 적응 전략 전부에 동일한 하이퍼파라미터 튜닝 예산을 줬는지는 abstract만으로 확인되지 않습니다.</p>
+  <p>[Claim risk] ANT의 "leave-one-center-out 프로토콜에서 성능 저하 완화"라는 주장의 구체적 수치(AUC/민감도 등)는 abstract에 명시되지 않아 본문 확인이 필요합니다.</p>
+  <p>[Dataset risk] MotionPhys의 "AI 생성 영상이 물리적 일관성을 지키지 못한다"는 관찰이 어떤 생성 모델군(디퓨전, GAN, 자기회귀 등)에 걸쳐 일반적으로 성립하는지, 최신 고품질 생성 모델에서도 여전히 유효한지는 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>임상 CT/초음파/PET 진단·증례보고 다수</strong>(Quantitative Imaging in Medicine and Surgery 등) — 임상 진단 목적, 계산 이미징 방법론 기여 없음.</li>
+    <li><strong>"staining"/"pathology" 키워드 오탐 16편 전부</strong>(여드름균, 목재 재료, 화장품, 사회과학 논문 등) — 계산 이미징과 무관.</li>
+    <li><strong>Deep Learning Methods 내 강화학습·시계열 예측·그래프 신경망·양자 컴퓨팅 논문</strong> — 이미징이 아닌 일반 ML 맥락이라 ROI와의 연결이 간접적.</li>
+    <li><strong>Meta-Optics/Phase 저널 5편 중 통신·레이더 응용 3편</strong>(테라헤르츠 와동, Fano 공진, 마이크로파 암호화) — 메타표면 설계 방법론은 있으나 이미징 ROI와는 응용 맥락이 다름, Skim-only로 분류.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Phase Imaging/Holography — 관련 2편 (3편 중 1편은 초록 미공개)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71741" target=_blank>Deep Neural Network Enabled Complex-Amplitude Metasurfaces for Simultaneous Nanoprinting and Holography</a></strong> <span class=pill>JNL</span><br>
+  문제: 하나의 메타표면으로 근접장 나노프린팅과 원거리장 홀로그램을 동시에 인코딩하는 설계가 어려움 / 방법: 딥러닝으로 서브파장 산란체의 복소 투과장을 최적화 / 의미: 메타표면 다차원 광학장 조작의 확장 사례 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71811" target=_blank>Programmable Metasurface for Amplitude-Phase-Independent Microwave Meta-Printing and Synchronous Holography</a></strong> <span class=pill>JNL</span><br>
+  문제: 기존 메타표면 나노프린팅이 진폭 변조에만 의존해 다채널 암호화 표현력이 제한됨 / 방법: 프로그래머블 메타표면으로 진폭·위상을 독립 제어 / 의미: 정보 암호화용 다중 채널 메타표면 인코딩 사례 / 우선순위: Read
+</div>
+
+<h3>Meta-Optics/Diffractive — 관련 2편 (통신/센서 응용 초점)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71770" target=_blank>Active Terahertz Vortices With Broadband Near-Far Field Multiplexing Based on Nonvolatile Plasmonic Metasurfaces</a></strong> <span class=pill>JNL</span><br>
+  문제: 테라헤르츠 궤도각운동량 소자의 다채널 다중화·광대역·능동 제어를 동시에 만족하기 어려움 / 방법: 비휘발성 자기광학 플라즈모닉 메타표면으로 회전 가능한 광대역 와동 발생 / 의미: 메타표면 능동 소자 설계 참고 사례(통신 응용) / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optcom.2026.133701" target=_blank>Thermally tunable multiple UV-visible high-Q Fano resonances in asymmetric aluminum metasurface for slow light</a></strong> <span class=pill>JNL</span><br>
+  문제: 자외선-가시광 대역 고Q 공진의 열 튜닝 가능성 부재 / 방법: 비대칭 알루미늄 메타표면 Fano 공진 설계 / 의미: 메타표면 공진 튜닝 방법론(이미징 응용은 간접적) / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+
+<h3>Light-Field/Novel Sensors — 관련 1편 (2편 중 1편은 LLM 에이전트 논문 오탐)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20602" target=_blank>Sparse Light Field Sampling Improves Casual 3D and 4D Reconstruction</a></strong> <span class=pill>IV</span><br>
+  문제: 기존 novel view synthesis가 단안 스트림 하나에만 의존해 다시점 커머디티 카메라의 각도 정보를 활용하지 못함 / 방법: 센서 제한·노출 제한 멀티뷰 상황을 분석하고 신규 데이터셋으로 sparse-view 3DGS/4DGS 평가 / 근거: 낮은 baseline에서도 다중 카메라 사용 시 재구성 품질 유의미하게 개선, 단발/동적 장면에서 이득이 가장 큼 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging — 관련 6편 (13편 중 나머지 7편은 임상 진단 저널)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20788" target=_blank>M2Depth</a></strong> <span class=pill>CV</span><br>
+  문제: 단안 깊이 파운데이션 모델과 멀티뷰 스테레오를 붙일 때 기존 단방향 융합이 두 모달리티의 상호 보완성을 충분히 활용 못함 / 방법: 캐스케이드 MVS와 양방향 상호 보정 전략으로 결합 / 의미: 파운데이션 프라이어와 기하 기반 방법의 융합 설계 사례 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.21136" target=_blank>Stream3Dv2</a></strong> <span class=pill>CV</span><br>
+  문제: 스트리밍 RGB-D 3D 장면 이해가 노이즈 있는 2D 세그멘테이션 마스크에 취약 / 방법: 중첩된 로컬-히스토리 구조와 기하-의미 융합 메커니즘 / 의미: 실시간 3D 인식에서 파운데이션 모델 노이즈 강건성 확보 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20639" target=_blank>MV2GF</a></strong> <span class=pill>CV</span><br>
+  문제: 다시점 보행자 탐지가 학습에서 못 본 카메라 배치에 일반화가 어려움 / 방법: 시각 기하 파운데이션 모델을 활용해 카메라 배치 무관 3D 속성 예측 / 의미: 파운데이션 모델 기하 일반화 능력을 탐지에 이식 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20759" target=_blank>DiGS-Avatar</a></strong> <span class=pill>CV</span><br>
+  문제: 단일 이미지로부터 애니메이션 가능한 3D 인간 재구성이 어려움 / 방법: UV 공간 디퓨전 기반 아바타 생성 / 의미: 단일 뷰 인간 재구성의 디퓨전 활용 사례 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20687" target=_blank>TopoSurfel</a></strong> <span class=pill>CV</span><br>
+  문제: Gaussian Surfel 표현과 메시 표현 사이 변환이 단방향이라 반복 개선이 어려움 / 방법: 서펠-메시 루프를 닫는 구조 / 의미: 표면 재구성 표현 간 상호 보정 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20740" target=_blank>VisTa3D</a></strong> <span class=pill>CV</span><br>
+  문제: 얇은 물체(thin object) 3D 재구성이 시각 정보만으로는 어려움 / 방법: 시각·촉각·3D 포인트클라우드 결합 데이터셋·벤치마크 구축 / 의미: 멀티모달 센서 결합 재구성 평가축 제공 / 우선순위: Read
+</div>
+
+<h3>Reconstruction/Inverse Problems — 관련 2편 (19편 중 나머지 17편은 강화학습·최적화·양자컴퓨팅 등 이미징과 무관)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20524" target=_blank>Frozen CLIP Priors for Robust Self-Supervised Poisson Inverse Problems</a></strong> <span class=pill>IV</span><br>
+  문제: 광자 제한(포아송 잡음) 역문제에서 깨끗한 정답 없이 안정적으로 학습하기 어렵고 촬영 조건이 바뀌면 취약함 / 방법: 동결된 CLIP 특징 위에 경량 디코더를 얹은 unrolled plug-and-play 솔버, GR2R 재손상+Equivariant Imaging 정규화로 자기지도 학습 / 근거: 포아송 CFA 디모자이킹 실험에서 검증(구체 수치는 본문 확인 필요) / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20942" target=_blank>LHMCF-Net</a></strong> <span class=pill>CV</span><br>
+  문제: 의료 영상 분할에서 기하학적 곡률 흐름 기반 방법의 계산 비용이 큼 / 방법: 쌍곡 평균 곡률 흐름을 신경망으로 근사해 학습 가능하게 만듦 / 의미: 기하 흐름과 딥러닝 분할의 결합 사례 / 우선순위: Read
+</div>
+
+<h3>Deep Learning Methods — 관련 4편 (91편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20561" target=_blank>Consistency Models for Fast MRI Reconstruction</a></strong> <span class=pill>IV</span><br>
+  문제: 디퓨전 기반 MRI 재구성이 반복적 정제 때문에 느려 실사용이 어려움 / 방법: 사전학습된 consistency model을 regularization-by-denoising 스킴에 통합, 업데이트 단계에 제어된 노이즈 주입 / 근거: fastMRI 무릎·뇌 데이터셋에서 4회 NFE만으로 기존 diffusion/consistency 기반 방법 대비 우수한 정량·시각 품질 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20659" target=_blank>Lift, Associate, and Fuse</a></strong> <span class=pill>CV</span><br>
+  문제: 2D→3D 파운데이션 모델 전이 시스템들이 태스크/표현별로만 분류돼 일관성 결정 요인이 가려짐 / 방법: 생성-연결-조정-융합-저장/질의 5단계 감사 프로토콜, 161개 시스템에 적용 / 근거: 표현·시간·관계·피드포워드 스트레스 테스트로 검증 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.21300" target=_blank>When Adaptation Hurts</a></strong> <span class=pill>CV</span><br>
+  문제: MedSAM 미세조정이 OOD 상황에서 항상 도움이 되는지 불명확 / 방법: 6가지 적응 전략을 in/close-OOD/far-OOD로 나눠 체계적으로 비교 / 근거: ISIC2018 학습, PH2/BUSI/CBIS-DDSM 평가, far-OOD에서 미세조정이 오히려 성능 저하 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20770" target=_blank>MotionPhys</a></strong> <span class=pill>CV</span><br>
+  문제: 기존 AI 생성 영상 탐지가 픽셀·잠재공간의 생성기별 흔적에 의존해 일반화가 약함 / 방법: 광학 흐름 궤적의 다중 시간 스케일 기하 분석으로 물리적 비일관성 탐지 / 의미: 외형이 아닌 물리 기반 판별 기준 제시 / 우선순위: Read
+</div>
+
+<h3>기타 관련 논문 — Watch Lens 보조 확인 (2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.20557" target=_blank>ANT (전립선 미세초음파 test-time adaptation)</a></strong> <span class=pill>CV</span><br>
+  문제: 병원 초음파 장비 세대가 바뀌면 전립선암 탐지 정확도가 떨어짐 / 방법: 테스트 시점에 프로스테이트 세그멘테이션 보조 태스크로 인코더를 목표 도메인에 재정렬 / 근거: 693명 학습, 118명 신규 장비 평가, leave-one-center-out 프로토콜 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.21060" target=_blank>CellPath-Bench</a></strong> <span class=pill>AI</span><br>
+  문제: 병리 파운데이션 모델의 세포 단위 표현 능력을 체계적으로 진단할 벤치마크 부재 / 방법: 동결된 파운데이션 모델을 대상으로 세포 유형 정보의 디코딩 가능성·조직/데이터셋/장기 간 전이 가능성 평가 / 근거: 52개 Xenium 후보 데이터 품질 관리 후 구축 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/abs/2608.20659" target=_blank>Lift, Associate, and Fuse — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.21300" target=_blank>When Adaptation Hurts — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.20788" target=_blank>M2Depth — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.21136" target=_blank>Stream3Dv2 — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.20639" target=_blank>MV2GF — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.20557" target=_blank>ANT — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.21060" target=_blank>CellPath-Bench — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.20770" target=_blank>MotionPhys — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.20713" target=_blank>AGIDefect-4K — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.20524" target=_blank>Frozen CLIP Priors — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.20561" target=_blank>Consistency Models for Fast MRI Reconstruction — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2608.20602" target=_blank>Sparse Light Field Sampling — arXiv</a></li>
+  <li><a href="https://doi.org/10.1002/lpor.71741" target=_blank>Deep Neural Network Enabled Complex-Amplitude Metasurfaces — Laser &amp; Photonics Reviews</a></li>
+  <li><a href="https://doi.org/10.1002/lpor.71811" target=_blank>Programmable Metasurface for Meta-Printing and Holography — Laser &amp; Photonics Reviews</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+  <p>📚 입력: arXiv 2026-08-24(new+cross 432편, cs.LG 112·cs.CV 103·cs.AI 200·eess.IV 4·eess.SP 13) + Crossref/OpenAlex 저널 251편 · 통합 스캔 614건, ROI 146건(23.8%)</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

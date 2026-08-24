@@ -1,0 +1,13 @@
+{
+  "date": "2026-08-24",
+  "results": [
+    {
+      "benchmark": "fastMRI knee/brain reconstruction",
+      "metric": "NFE (network function evaluations)",
+      "value": 4,
+      "value_str": "4 NFE (기존 diffusion/consistency 기반 대비 정량·시각 품질 우위, 구체 PSNR/SSIM 수치는 본문 확인 필요)",
+      "paper": "https://arxiv.org/abs/2608.20561",
+      "paper_title": "Consistency Models for Fast MRI Reconstruction Using Regularization by Denoising"
+    }
+  ]
+}

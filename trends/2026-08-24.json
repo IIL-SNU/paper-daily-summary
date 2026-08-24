@@ -1,36 +1,36 @@
 {
   "date": "2026-08-24",
   "source_listing_date": "2026-08-24",
-  "source_mode": "weekly-pastweek",
+  "source_mode": "new",
   "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 0,
-      "cs.CV": 0,
-      "cs.AI": 0,
-      "eess.IV": 0,
-      "eess.SP": 0
+      "cs.LG": 112,
+      "cs.CV": 103,
+      "cs.AI": 200,
+      "eess.IV": 4,
+      "eess.SP": 13
     },
-    "scope": "not applicable — this is the weekly-run stub; today's (2026-08-24) daily /new counts are not yet collected and will be filled by the later 11:00 KST daily execution"
+    "scope": "new+cross; replacements excluded"
   },
   "totals": {
-    "total_scanned": 0,
-    "selected": 0
+    "total_scanned": 614,
+    "selected": 146
   },
   "classified": {
     "by_bucket": {
       "Fourier Ptychography/Microscopy": 0,
       "Lensless/Coded Imaging": 0,
-      "Phase Imaging/Holography": 0,
-      "Meta-Optics/Diffractive": 0,
-      "Light-Field/Novel Sensors": 0,
-      "Tomography/3D Imaging": 0,
-      "Virtual Staining/Pathology": 0,
-      "Reconstruction/Inverse Problems": 0,
-      "Deep Learning Methods": 0
+      "Phase Imaging/Holography": 3,
+      "Meta-Optics/Diffractive": 2,
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 13,
+      "Virtual Staining/Pathology": 16,
+      "Reconstruction/Inverse Problems": 19,
+      "Deep Learning Methods": 91
     }
   },
-  "daily_thesis": "",
-  "note": "2026-08-24(월) 오전 weekly 실행(mode=weekly)이 이 파일을 먼저 생성했다. 지난주(2026-08-17~08-21) 회고 결과는 아래 weekly_retrospective_context에 집계돼 있다. source_mode=weekly-pastweek이며 daily_new_counts/totals/classified/daily_thesis는 아직 비어 있다 — 오늘자 arXiv /new가 나온 뒤 같은 날 11:00 KST daily 실행이 이 필드들을 오늘자 실측값으로 덮어써 완성한다(2026-08-17 파일이 지난 주 같은 방식으로 덮어써진 선례를 따름).",
+  "daily_thesis": "오늘 arXiv를 관통하는 흐름은 2D 비전 파운데이션 모델(깊이 추정, 세그멘테이션, 기하 인코더)을 3D 파이프라인에 이식하되 '어떻게 잘 이식할지'를 별도 연구 주제로 다루기 시작했다는 점이다. 두 번째 신호는 의료 영상 파운데이션 모델이 도메인이 바뀌면 정확히 어디서 무너지는지를 정밀하게 진단하는 논문들(MedSAM 미세조정 OOD 트레이드오프, 전립선 미세초음파 test-time adaptation)이다. 계산광학 핵심 버킷은 오늘 대부분 키워드 우연 매칭이었지만 메타표면 나노프린팅+홀로그램 동시 인코딩 저널 논문 2편이 예외적 신호였다.",
+  "note": "2026-08-24 11:00 KST daily 실행이 오전 weekly 실행(mode=weekly)이 남긴 stub을 오늘자 실측값으로 덮어썼다. source_mode, daily_new_counts, totals, classified.by_bucket, daily_thesis를 오늘자 arXiv /new + 저널 수집 결과로 갱신했으며, weekly_retrospective_context는 이번 아침 weekly 실행이 채운 지난주(2026-08-17~08-21) 회고 데이터를 그대로 보존한다.",
   "weekly_retrospective_context": {
     "iso_week": "2026-34",
     "week_start": "2026-08-17",
