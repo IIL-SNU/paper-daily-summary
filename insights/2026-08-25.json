@@ -1,83 +1,93 @@
 {
   "date": "2026-08-25",
-  "source_mode": "journal-only",
+  "source_mode": "new",
   "clusters": [
     {
-      "cluster": "메타표면이 통신·센싱 응용보다 이미징 광학(홀로그램 인코딩, 아크로매틱 렌즈, 무아레 억제)으로 특화되는 여섯 편",
+      "cluster": "확산모델이 촬영 역문제를 푸는 재사용 사전이자, 그 사전이 왜 작동하는지 설명하는 이론 대상으로 동시에 떠오름",
+      "papers": [
+        {"title": "Toward a Foundation Plug-and-Play Prior for Computed Tomography Reconstruction via a Multimodal Diffusion Model", "arxiv_id": "https://arxiv.org/abs/2608.23190", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Posterior Information Dynamics of Diffusion Models for Linear Inverse Problems", "arxiv_id": "https://arxiv.org/abs/2608.21709", "journal_or_source": "arXiv cs.LG"},
+        {"title": "One Inverse Step is a Convex Program: Bayes-Limit Calibration of Diffusion Inversion", "arxiv_id": "https://arxiv.org/abs/2608.23094", "journal_or_source": "arXiv cs.LG"},
+        {"title": "EM Informed Holographic Imaging via Unrolled Deep Networks", "arxiv_id": "https://arxiv.org/abs/2608.22409", "journal_or_source": "arXiv eess.SP"},
+        {"title": "Controllable blind deblurring with diffusion models (SuperSharpen)", "arxiv_id": "https://arxiv.org/abs/2608.23343", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "확산모델을 역문제 사전으로 쓰는 논문은 이전에도 많았지만, 대부분 특정 촬영 조건 하나에 맞춰 다시 학습한 사전이었습니다. 오늘 CT 논문은 촬영 방식·기하·재질이 완전히 다른 세 가지 데이터셋에 동일한 얼린 확산모델 하나를 그대로 사전으로 써서 물리 기반 해석적 복원보다 나은 결과를 얻었다고 보고합니다 — 촬영 조건마다 사전을 새로 학습하지 않아도 되는 범용 사전에 한 걸음 다가간 겁니다. 같은 날 나온 두 이론 논문은 정확히 그 반대쪽 질문에 답합니다. Posterior Information Dynamics는 확산모델이 역확산 과정의 각 단계에서 측정값을 언제, 얼마나 반영하는지를 정보량으로 정량화하고, One Inverse Step 논문은 단 한 번의 역변환 스텝이 강볼록한 최적화 문제의 해라는 것을 증명해 확산 역변환의 유일성과 안정성 조건을 처음으로 엄밀하게 규명합니다. EM Informed Holographic Imaging은 같은 원리(반복 알고리즘을 신경망 층으로 펼치는 unrolling)를 전자기 홀로그래피 센싱에 적용한 사례입니다. 즉 오늘은 확산모델이 역문제를 잘 푼다는 관찰을 넘어, 왜 잘 풀리고 언제 안전한지와 여러 촬영 조건에 재사용 가능한가를 같이 묻기 시작한 하루입니다.",
+      "confidence": "High",
+      "confidence_note": "arXiv 서로 다른 저자군 5편, 이론 2편+응용 3편이 같은 문제(확산모델을 역문제 사전으로 쓰기)를 서로 다른 각도에서 다룸",
+      "lab_action": "Foundation PnP CT 사전 논문의 하나의 얼린 확산모델을 여러 촬영 기하에 그대로 적용하는 설정을 우리 랩 산란매질 통과 이미징에 재현해, 촬영 조건별 재학습 없이 사전을 공유할 수 있는지 PSNR/SSIM으로 1차 검증"
+    },
+    {
+      "cluster": "메타표면이 통신용 안테나보다 이미징 광학(아크로매틱 렌즈, 홀로그램 다중화, ML 역설계)에 계속 특화",
       "papers": [
         {"title": "Metasurface-Based Continuous Non Uniform Sampling for Demoiréing", "arxiv_id": "https://doi.org/10.1364/prj.607873", "journal_or_source": "Photonics Research"},
         {"title": "Ultra-broadband high-efficiency AlN achromatic metalens with diffraction-limited focusing in the NIR-SWIR spectrum", "arxiv_id": "https://doi.org/10.1016/j.optlaseng.2026.110088", "journal_or_source": "Optics and Lasers in Engineering"},
         {"title": "On-Chip Multifunctional Perfect Vortex Beams via Monolithic Metasurface-VCSEL Integration", "arxiv_id": "https://doi.org/10.1364/optica.601648", "journal_or_source": "Optica"},
         {"title": "Multi-Dimensional Near-/Far-Field Holography Enabled by On-Chip Metasurface for Information Encryption", "arxiv_id": "https://doi.org/10.1002/adom.71690", "journal_or_source": "Advanced Optical Materials"},
-        {"title": "Metasurface-Enabled Helical Wavefront Fingerprint Metrology for Quantitative Retrieval of Liquid Optical Constants", "arxiv_id": "https://doi.org/10.1002/advs.77099", "journal_or_source": "Advanced Science"},
         {"title": "Transfer learning-assisted rapid design of multi-wavelength and multi-polarization metasurface holography", "arxiv_id": "https://doi.org/10.1016/j.physleta.2026.132113", "journal_or_source": "Physics Letters A"}
       ],
-      "why": "메타표면 버킷은 오늘 11편인데, 그중 다수(THz 변조기·안테나·기계식 진동 소자 등)는 이미징과 무관한 통신·센싱 하드웨어입니다. 반면 여섯 편은 뚜렷하게 이미징·디스플레이 파이프라인을 겨냥합니다. 연속 비균일 샘플링 메타표면은 컬러 필터 배열 없이도 무아레를 줄이는 촬상 소자를 제안하고, AlN 아크로매틱 메타렌즈는 근적외선-단파적외선 대역에서 색수차 없이 회절한계 초점을 만들며, 온칩 메타표면-VCSEL 집적은 별도 광학계 없이 소용돌이빔을 만들어 구조광 이미징에 쓸 수 있습니다. 나머지 세 편은 각각 홀로그램 다중화 정보암호화, 액체 광학상수를 나선파면으로 재는 계측, 전이학습으로 다파장·다편광 홀로그램을 빠르게 설계하는 방법입니다. 즉 메타표면 연구 활력의 상당 부분이 여전히 통신·센싱으로 흐르지만, 렌즈·필터·홀로그램 소자 같은 전통 광학 부품을 대체하려는 흐름도 뚜렷하게 이어지고 있다는 뜻입니다.",
+      "why": "메타표면 버킷은 오늘 13편인데, 그중 세 편(SIM 기반 셀프리 대규모 MIMO 빔포밍, 60GHz 무선 영상 스트리밍용 동적 메타표면 안테나, X-band 무반향실)은 이미징과 무관한 통신·RF 시험 하드웨어입니다. 반면 나머지는 뚜렷하게 이미징·디스플레이 파이프라인을 겨냥합니다. 연속 비균일 샘플링 메타표면은 컬러 필터 배열 없이도 무아레를 줄이는 촬상 소자를 제안하고, AlN 아크로매틱 메타렌즈는 근적외선-단파적외선 대역에서 색수차 없이 회절한계 초점을 만들며, 온칩 메타표면-VCSEL 집적은 별도 광학계 없이 소용돌이빔을 만들어 구조광 이미징에 쓸 수 있습니다. 전이학습 기반 홀로그램 설계 논문은 메타표면 홀로그램의 다파장·다편광 설계를 데이터 기반 최적화로 바꾼 사례라, 계산 광학 설계라는 점에서 특히 눈에 띕니다. 즉 메타표면 연구 활력의 상당 부분이 여전히 통신·센싱으로 흐르지만, 렌즈·필터·홀로그램 소자 같은 전통 광학 부품을 대체하려는 흐름도 뚜렷하게 이어지고 있습니다.",
       "confidence": "Medium",
-      "confidence_note": "서로 다른 저널 6편이 같은 날 나왔고 저자군도 다르지만, 대부분 Crossref 초록이 비어 있어 제목·저널명 기준 판단이 섞임",
-      "lab_action": "Demoiréing용 연속 비균일 샘플링 메타표면을 우리 랩 스냅샷 컬러 이미징 파이프라인의 컬러 필터 배열(CFA) 대체안으로 시뮬레이션해 aliasing/무아레 아티팩트를 정량 비교하고, AlN 아크로매틱 메타렌즈의 파장별 MTF 사양을 우리 렌즈리스 카메라 광학계 대비 벤치마크"
+      "confidence_note": "서로 다른 저널 5편, 저자군 다양하지만 대부분 Crossref 초록이 없어 제목·저널명 기준 판단이 섞임",
+      "lab_action": "Demoiréing용 메타표면 샘플링 패턴을 우리 랩 스냅샷 컬러 이미징의 컬러 필터 배열(CFA) 대체안으로 시뮬레이션해 무아레 아티팩트를 정량 비교하고, AlN 아크로매틱 메타렌즈의 파장별 MTF 사양을 우리 렌즈리스 카메라 광학계와 벤치마크"
     },
     {
-      "cluster": "위상 복원·언래핑이 광학계 대신 학습 기반 복원 알고리즘 쪽으로 계속 세분화",
+      "cluster": "이벤트 카메라가 로봇 비전을 넘어 야간 재구성·유체 측정·이종 센서 정렬까지 계산 이미징 도구로 확장",
       "papers": [
-        {"title": "HMSPU-Net: Hierarchical Multi-Scale State Space Model with Physics-Guided Refinement for High-Accuracy Phase Unwrapping in Complex Scenes", "arxiv_id": "https://doi.org/10.1364/oe.611747", "journal_or_source": "Optics Express"},
-        {"title": "Adaptive carrier-aligned local spectral sampling for fast and accurate phase retrieval in off-axis digital holography", "arxiv_id": "https://doi.org/10.1364/ol.591477", "journal_or_source": "Optics Letters"},
-        {"title": "X-ray Ptychography: State of the Art and Future Prospects", "arxiv_id": "https://doi.org/10.1364/optica.601562", "journal_or_source": "Optica"}
-      ],
-      "why": "위상 정보를 얻는 문제는 예전에는 정교한 간섭계나 여러 번의 촬영 조건 변경으로 풀었는데, 오늘 세 편은 복원 알고리즘 쪽에서 답을 찾습니다. HMSPU-Net은 순차 데이터를 효율적으로 처리하는 상태공간모델(state space model)에 물리 기반 정제 단계를 결합해, 복잡한 산란 장면에서도 위상을 감기 전 상태로 정확히 풀어내는(unwrapping) 신경망입니다. 적응형 캐리어 정렬 스펙트럼 샘플링 논문은 오프액시스 디지털 홀로그래피에서 반송파 위치에 맞춰 스펙트럼 샘플링을 적응적으로 바꿔 속도와 정확도를 동시에 높입니다. X-ray Ptychography 리뷰(Optica)는 이 두 흐름을 포함해 위상 복원 알고리즘 전체가 어디까지 왔고 다음 과제가 무엇인지 정리한 서베이입니다. 세 편을 같이 보면, 위상 이미징의 다음 개선 지점이 여전히 복원 신경망·알고리즘의 구조와 학습 방식에 있다는 공통된 방향을 보여줍니다.",
-      "confidence": "Medium",
-      "confidence_note": "서로 다른 저널 3편이 같은 원리(학습/알고리즘 기반 위상 복원)를 공유하지만, 두 편은 Crossref 초록이 없어 제목 기준 판단",
-      "lab_action": "HMSPU-Net의 상태공간모델 기반 물리 정제(refinement) 모듈을 우리 랩 위상 언래핑 후처리 단계에 이식해 기존 CNN 기반 언래핑 대비 복잡 산란 시료에서의 강건성(unwrapping error rate)을 비교하고, 적응형 캐리어 정렬 샘플링 방식을 오프액시스 홀로그램 재구성 속도 벤치마크에 적용"
-    },
-    {
-      "cluster": "이벤트 카메라가 야간 저조도 장면 복원과 유체 속도장 측정(PIV)이라는 서로 다른 재구성 문제로 확장",
-      "papers": [
+        {"title": "LiteEvent-AE: Lightweight Autoencoder for Event-Based Vision on Low-Latency Energy-Constrained Edge Devices", "arxiv_id": "https://arxiv.org/abs/2608.21764", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Simplified Cross-Modal Calibration for Heterogeneous Event-RGB Stereo Systems", "arxiv_id": "https://arxiv.org/abs/2608.22965", "journal_or_source": "arXiv cs.CV"},
+        {"title": "MotionDLO: Hybrid Event- and Frame-Based Tracking of Deformable Linear Objects", "arxiv_id": "https://arxiv.org/abs/2608.22398", "journal_or_source": "arXiv cs.CV"},
         {"title": "Event-Guided Image Reconstruction for Nighttime Dynamic Scenes", "arxiv_id": "https://doi.org/10.3390/jimaging12090399", "journal_or_source": "Journal of Imaging"},
         {"title": "A time-adaptive particle image velocimetry frame-work via event camera under continuous illumination", "arxiv_id": "https://doi.org/10.1364/ol.608317", "journal_or_source": "Optics Letters"}
       ],
-      "why": "이벤트 카메라는 원래 빠른 움직임을 놓치지 않는 고속 센서로 주로 쓰였는데, 오늘 두 편은 이벤트 데이터를 '기존 프레임 기반 촬영이 놓치는 정보를 채워주는 보조 신호'로 씁니다. Event-Guided 논문은 야간 동적 장면에서 이벤트 개수·강도·타임스탬프 분포를 함께 인코딩한 멀티채널 복셀 표현을 만들고, 여기에 엣지 정합·블러 정합 제약을 추가해 저조도·긴 노출·빠른 움직임에서도 또렷한 구조를 복원합니다. HQF·REDS 데이터셋에서 기존 DeblurSR 대비 MSE를 각각 14.81%·10.00% 줄이고 PSNR을 1.6dB·1.05dB 올렸다고 보고합니다. Time-adaptive PIV 논문은 연속 조명 환경에서 입자영상유속계(PIV) 프레임을 이벤트 신호에 맞춰 시간 적응적으로 재구성해, 고정 프레임레이트 카메라보다 유동 측정 시간 해상도를 높입니다. 두 편 모두 이벤트 카메라를 '새 촬영 방식'이 아니라 '기존 재구성 파이프라인의 시간 해상도·저조도 한계를 우회하는 보조 신호'로 쓴다는 공통점이 있습니다.",
-      "confidence": "Medium",
-      "confidence_note": "2편뿐이지만 Event-Guided 논문은 정량적 벤치마크(HQF/REDS, PSNR/SSIM)를 갖춰 근거가 상대적으로 탄탄함",
-      "lab_action": "Event-Guided의 멀티채널 이벤트 복셀 인코딩(event count/intensity/timestamp 조인트 인코딩)을 우리 랩 이벤트 카메라 재구성 파이프라인에 이식해 REDS 벤치마크로 1차 재현하고, 이후 우리 자체 야간 촬영 데이터셋에서 PSNR/SSIM으로 검증"
+      "why": "이벤트 카메라는 원래 빠른 움직임을 놓치지 않는 고속 센서로 주로 쓰였는데, 오늘 다섯 편은 이벤트 데이터를 기존 프레임 기반 촬영이 놓치는 정보를 채워주는 보조 신호로 씁니다. LiteEvent-AE는 저전력 엣지 장치에서 이벤트 스트림을 압축하면서도 공간-시간 구조를 보존하는 경량 오토인코더이고, Simplified Cross-Modal Calibration은 별도 움직임이나 정밀 동기화 없이 디스플레이에 띄운 패턴만으로 이벤트-RGB 이종 카메라를 정렬하는 방법입니다. MotionDLO는 케이블처럼 변형되는 선형 물체를 이벤트+프레임을 함께 써서 추적합니다. 저널 쪽 두 편은 이벤트 신호를 야간 동적 장면 복원(HQF·REDS에서 PSNR 1.6dB·1.05dB 개선)과 연속 조명 환경의 입자영상유속계(PIV) 시간 해상도 향상에 씁니다. 다섯 편을 같이 보면, 이벤트 카메라를 새 촬영 방식이 아니라 기존 재구성·정렬·추적 파이프라인의 시간 해상도·저조도·동기화 한계를 우회하는 보조 신호로 쓴다는 공통점이 뚜렷합니다.",
+      "confidence": "High",
+      "confidence_note": "arXiv 3편 + 저널 2편이 서로 다른 문제(압축, 정렬, 추적, 야간 복원, PIV)에서 같은 원리를 공유하고, 저자군도 모두 다름",
+      "lab_action": "LiteEvent-AE의 경량 이벤트 압축 모듈과 Event-Guided의 멀티채널 복셀 인코딩을 우리 이벤트 카메라 재구성 파이프라인에 함께 이식해 REDS로 1차 재현 후, Simplified Cross-Modal Calibration 방식으로 우리 이벤트-RGB 스테레오 장비를 재정렬해 캘리브레이션 오차를 비교"
     },
     {
-      "cluster": "단층 재구성이 X선을 넘어 마이크로파·음향-전기·임피던스 신호로 계속 다각화",
+      "cluster": "단층·CT 재구성이 비X선 신호 다각화에 이어 산란 보정 물리 모델로 더 깊어짐",
       "papers": [
+        {"title": "A scattering correction method for CT reconstruction based on the Wavelet Adaptive Material-dependent Boltzmann Transport Equation (WAM-BTE)", "arxiv_id": "https://arxiv.org/abs/2608.21861", "journal_or_source": "arXiv eess.IV"},
+        {"title": "Monotonicity Principle and \"p-Laplace Signature\" for Tomography in Nonlinear Elliptic Inverse Problems", "arxiv_id": "https://arxiv.org/abs/2608.23085", "journal_or_source": "arXiv eess.SP"},
         {"title": "End-to-End Mapping of Microwave Data to Synthetic Computed Tomography Sinograms for High-Resolution Stroke Imaging", "arxiv_id": "https://doi.org/10.1109/access.2026.3727144", "journal_or_source": "IEEE Access"},
         {"title": "Plane-Wave Acoustoelectric Tomography for Sparse-Angle Current Source Imaging", "arxiv_id": "https://doi.org/10.1109/tim.2026.3723490", "journal_or_source": "IEEE Transactions on Instrumentation and Measurement"},
         {"title": "Visual feedback using electrical impedance tomography during inhalation therapy for chronic obstructive lung disease: a pilot study", "arxiv_id": "https://doi.org/10.1038/s41598-026-67510-0", "journal_or_source": "Scientific Reports"}
       ],
-      "why": "단층촬영은 원래 X선 흡수량을 여러 각도에서 모아 재구성하는 문제인데, 오늘 세 편은 X선이 아닌 다른 물리 신호로 같은 문제를 풉니다. 마이크로파-CT sinogram 매핑 논문은 저선량·휴대용 뇌졸중 영상을 목표로, 마이크로파 산란 측정값을 딥러닝으로 직접 CT sinogram 형태로 변환해 별도의 물리 기반 역산 없이도 단층 영상을 얻습니다. Plane-wave 음향전기 단층촬영은 sparse-angle(제한된 각도) 조건에서 초음파와 전기 신호를 결합해 몸속 전류원의 위치를 추정합니다. 전기임피던스단층촬영(EIT) 논문은 만성폐쇄성폐질환 흡입치료 중 실시간으로 폐 안의 공기 분포를 시각 피드백으로 보여주는 임상 적용 사례입니다. 세 편을 같이 보면, 단층 재구성이라는 문제 자체는 그대로인데 입력 신호가 X선에서 비전리·저비용·이동형 신호로 계속 옮겨가고 있고, 그 변환을 딥러닝이 담당하는 비중이 커지고 있다는 뜻입니다.",
-      "confidence": "Medium",
-      "confidence_note": "3편이 서로 다른 물리 신호(마이크로파·음향전기·임피던스)를 다루지만 공통적으로 비X선 단층 재구성이라는 문제를 공유함",
-      "lab_action": "마이크로파-CT sinogram 매핑 논문의 end-to-end 학습 구조(측정값→sinogram 직접 매핑)를 우리 랩의 비전통적 신호(산란매질 통과 촬영 등) 단층 복원 파이프라인과 비교해, 물리 기반 역산 대비 데이터 요구량·재구성 정확도 트레이드오프를 정리"
+      "why": "어제까지 저널 쪽 단층 재구성 흐름은 X선을 마이크로파·음향전기·임피던스 같은 비전리 신호로 바꾼다는 모달리티 다각화가 중심이었습니다. 오늘 arXiv 두 편은 그 다음 층위, 즉 재구성 자체의 물리 정확도를 파고듭니다. WAM-BTE는 기존 CT 산란 보정이 하나의 재질만 가정해 실제 조직처럼 여러 재질이 섞인 경우 광자 산란을 부정확하게 모델링하던 한계를, 재질별로 다른 산란 분포를 파장 적응적으로 반영해 보정합니다. Monotonicity Principle 논문은 비선형 재질의 역문제를 몇 가지 기본 유형으로 분류하고, 각 유형에 맞는 영상화 기법을 유도합니다. 저널 세 편(마이크로파-CT sinogram 매핑, sparse-angle 음향전기 단층촬영, EIT 실시간 피드백)은 여전히 X선이 아닌 신호로 단층 영상을 얻는 응용 사례입니다. 다섯 편을 같이 보면, 단층 재구성이 어떤 신호를 쓸 것인가에서 그 신호의 물리적 왜곡을 얼마나 정확히 모델링할 것인가로 논점이 한 단계 더 들어가고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "arXiv 2편(물리 모델링 심화)+저널 3편(모달리티 다각화)이 같은 문제(비X선/비선형 단층 재구성)의 서로 다른 층위를 채움",
+      "lab_action": "WAM-BTE의 재질별 적응 산란 모델을 우리 랩의 산란매질 통과 이미징 순방향 모델에 반영해, 단일 재질 가정 대비 재구성 오차가 얼마나 줄어드는지 시뮬레이션 데이터로 비교"
     },
     {
-      "cluster": "Light-field 표현이 내시경·현저성 탐지·초해상도라는 서로 다른 커뮤니티에서 각자 재발견되는 중",
+      "cluster": "희소시점·수중 3D 복원이 비디오 확산 사전으로 산란매질 문제를 정면으로 다룸",
       "papers": [
-        {"title": "Multimodal 3D light-field and laser-speckle endoscopy", "arxiv_id": "https://doi.org/10.1364/boe.610175", "journal_or_source": "Biomedical Optics Express"},
-        {"title": "MENet: Accurate Light Field Saliency Detection via Modality-Aware Descriptor and Edge Enhancement", "arxiv_id": "https://doi.org/10.1109/tmm.2026.3727173", "journal_or_source": "IEEE Transactions on Multimedia"},
-        {"title": "Modulating Transformers with Explicit Degradation Information for Real-World Light Field Image Super-Resolution", "arxiv_id": "https://doi.org/10.1109/lsp.2026.3726841", "journal_or_source": "IEEE Signal Processing Letters"}
+        {"title": "GaussVid: Sparse-View Gaussian Splatting with 3D-Aware Video Diffusion Priors", "arxiv_id": "https://arxiv.org/abs/2608.21849", "journal_or_source": "arXiv cs.CV"},
+        {"title": "NemoSplat: Feed-Forward 4D Gaussian Splatting for Media-Aware Underwater Reconstruction", "arxiv_id": "https://arxiv.org/abs/2608.22888", "journal_or_source": "arXiv cs.CV"},
+        {"title": "AquaFlow: A Monocular Gaussian Splatting SLAM for Underwater Streaming Reconstruction", "arxiv_id": "https://arxiv.org/abs/2608.22906", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Seeing the Unseen: Semantic-in-Gaussian for Sparse-View 3D Generalization", "arxiv_id": "https://arxiv.org/abs/2608.22740", "journal_or_source": "arXiv cs.CV"},
+        {"title": "FixAnything: 3D-Consistent Rendering Refinement via Video Generative Priors", "arxiv_id": "https://arxiv.org/abs/2608.23549", "journal_or_source": "arXiv cs.CV"}
       ],
-      "why": "light field(광필드)라는 같은 표현이 오늘 세 편에서 서로 다른 목적으로 쓰입니다. Multimodal 3D light-field 내시경은 3차원 광필드 촬영에 레이저 스페클 채널을 더해 임상 내시경 진단 정보를 늘리는 하드웨어 논문이고, MENet은 광필드 영상에서 어느 영역이 주목할 만한지(saliency) 찾는 컴퓨터비전 알고리즘이며, degradation-aware transformer 논문은 실제 촬영 열화 정보를 명시적으로 반영해 광필드 영상의 해상도를 복원합니다. 세 편이 같은 날 나온 건 광필드가 여전히 활발한 표현이라는 신호이지만, 임상 하드웨어·현저성 탐지·초해상도라는 서로 무관한 세 커뮤니티에서 독립적으로 다뤄지고 있어 하나의 흐름으로 묶기는 이릅니다.",
-      "confidence": "Low",
-      "confidence_note": "3편이 서로 다른 응용(임상 내시경·saliency 탐지·초해상도)이라 방법론적 연결보다는 같은 표현의 재발견 수준",
-      "lab_action": "Multimodal 3D light-field·laser-speckle endoscopy의 다중 모달 결합 원리를 우리 랩 라이트필드 현미경에 laser-speckle 채널로 확장할 수 있는지 예비 광학계 검토(Watch 단계, 즉시 실행은 보류)"
+      "why": "3D Gaussian Splatting은 시점이 충분히 많을 때는 잘 되지만, 시점이 적거나 촬영 매질이 빛을 산란·감쇠시키면 품질이 급격히 떨어집니다. 오늘 다섯 편은 모두 비디오 생성 확산모델이 학습한 그럴듯한 다음 장면에 대한 사전 지식을 3DGS 복원에 끌어옵니다. 특히 NemoSplat과 AquaFlow는 수중 환경의 빛 산란·감쇠를 명시적으로 모델링해서, 기존 범용 3D 복원 모델이 수중 영상에서 특징 추출과 카메라 자세 추정 자체가 무너지는 문제를 정면으로 다룹니다. GaussVid는 카메라 배치 정보를 명시적으로 조건으로 넣어 비디오 확산모델이 다중 시점 기하를 무시하고 그럴듯하지만 시점끼리 어긋나는 영상을 만드는 문제를 줄입니다. 즉 그래픽스 쪽 3DGS 복원이, 우리 랩이 다루는 빛이 산란되는 매질을 통과한 촬영을 어떻게 복원할 것인가라는 계산 이미징 역문제와 같은 자리에서 만나고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "arXiv 서로 다른 저자군 5편이 같은 날 나왔고 그중 2편은 산란매질(수중)을 명시적으로 모델링하지만, 3DGS/그래픽스 커뮤니티 논문이라 계산광학 벤치마크와의 직접 비교는 아직 없음",
+      "lab_action": "NemoSplat의 매질 인지 산란·감쇠 모델링 모듈을 우리 랩 산란매질 통과 이미징 시뮬레이터에 이식 가능한지 검토하고, 산란 강도별로 기존 물리 기반 복원 대비 재구성 오차를 비교"
     }
   ],
   "research_topics": [
     {
-      "title": "HMSPU-Net의 상태공간모델 기반 위상 언래핑 정제 모듈을 우리 위상 복원 파이프라인에 이식",
-      "claim": "복잡한 산란 시료에서 기존 CNN 기반 unwrapping보다 물리 기반 정제 단계를 결합한 상태공간모델이 더 강건할 가능성이 있다.",
+      "title": "Foundation PnP CT 확산 사전의 재사용 설정을 우리 산란매질 이미징에 재현",
+      "claim": "촬영 조건(기하·재질·모달리티)마다 사전을 재학습하지 않고도 하나의 확산 사전을 재사용할 수 있는지, 우리 랩의 산란 통과 이미징 문제에서 검증 가능하다.",
       "supporting_papers": [
-        {"title": "HMSPU-Net: Hierarchical Multi-Scale State Space Model with Physics-Guided Refinement for High-Accuracy Phase Unwrapping in Complex Scenes", "arxiv": "https://doi.org/10.1364/oe.611747"}
+        {"title": "Toward a Foundation Plug-and-Play Prior for Computed Tomography Reconstruction via a Multimodal Diffusion Model", "arxiv": "https://arxiv.org/abs/2608.23190"}
       ]
     },
     {
-      "title": "Event-Guided 멀티채널 복셀 인코딩을 우리 이벤트 카메라 재구성 파이프라인에 적용",
-      "claim": "event count·intensity·timestamp를 함께 인코딩하는 표현이 기존 이벤트 프레임 누적 방식보다 야간 저조도 복원에서 우위를 가질 가능성이 있다.",
+      "title": "이벤트 카메라 3종 결합(LiteEvent-AE 압축 + Event-Guided 야간 복원 + Simplified Cross-Modal Calibration)을 우리 파이프라인에 통합",
+      "claim": "이벤트 압축·야간 복원·이종 센서 정렬을 하나의 파이프라인으로 묶었을 때 개별 적용 대비 실제 이득이 있는지 확인 가능하다.",
       "supporting_papers": [
-        {"title": "Event-Guided Image Reconstruction for Nighttime Dynamic Scenes", "arxiv": "https://doi.org/10.3390/jimaging12090399"}
+        {"title": "LiteEvent-AE: Lightweight Autoencoder for Event-Based Vision", "arxiv": "https://arxiv.org/abs/2608.21764"},
+        {"title": "Event-Guided Image Reconstruction for Nighttime Dynamic Scenes", "arxiv": "https://doi.org/10.3390/jimaging12090399"},
+        {"title": "Simplified Cross-Modal Calibration for Heterogeneous Event-RGB Stereo Systems", "arxiv": "https://arxiv.org/abs/2608.22965"}
       ]
     },
     {

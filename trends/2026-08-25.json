@@ -1,37 +1,37 @@
 {
   "date": "2026-08-25",
   "source_listing_date": "2026-08-25",
-  "source_mode": "journal-only",
-  "note": "cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 추적 카테고리의 arXiv /new listing을 실행 시점에 확인했으나 모두 여전히 \"Monday, 24 August 2026\"을 가리키고 있었다 — 화요일(2026-08-25)로 아직 넘어가지 않았다. 지연 원인은 이번 실행에서 확인·추정하지 않는다(원인 불명 상태로 기록). 규칙(prompts/instruction.md 2.1 저널 독립)에 따라 arXiv 섹션은 이번 실행에서 발행하지 않고, Crossref/OpenAlex 저널 수집은 arXiv listing과 무관하게 정상 수행했다 — Crossref 기준 2026-08-24 등록분 424편을 스캔해 105편을 ROI 버킷에 배정했다(24.8%). 다음 정기 실행(2시간 폴링)에서 /pastweek에 2026-08-25 섹션이 뜨는 즉시 Backfill로 arXiv 포함 완전판으로 업그레이드한다.",
+  "source_mode": "new",
+  "note": "직전 실행은 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 지연되어 저널만으로 만든 잠정본(source_mode=journal-only)이었다. 이번 실행에서 재확인한 결과 5개 카테고리 모두 \"Tuesday, 25 August 2026\"으로 정상 갱신되어, /new를 그대로 사용해 arXiv 포함 완전판으로 업그레이드했다(prompts/instruction.md 2.1: post_date == /new listing_date이면 /new 사용). Crossref/OpenAlex 저널 수집은 2026-08-24 등록분 기준으로 재실행했으며, 직전 잠정본과 거의 동일한 저널 신호(이미징용 메타표면, 학습 기반 위상 복원, 이벤트 카메라 보조 재구성, 비X선 단층 재구성)를 재확인했다.",
   "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 0,
-      "cs.CV": 0,
-      "cs.AI": 0,
-      "eess.IV": 0,
-      "eess.SP": 0
+      "cs.LG": 291,
+      "cs.CV": 234,
+      "cs.AI": 362,
+      "eess.IV": 20,
+      "eess.SP": 37
     },
     "scope": "new+cross; replacements excluded",
-    "journal_count": 424
+    "journal_count": 425
   },
   "totals": {
-    "total_scanned": 424,
-    "selected": 105
+    "total_scanned": 1195,
+    "selected": 354
   },
   "classified": {
-    "total_scanned": 424,
-    "selected": 105,
+    "total_scanned": 1195,
+    "selected": 354,
     "by_bucket": {
       "Fourier Ptychography/Microscopy": 2,
       "Lensless/Coded Imaging": 0,
-      "Phase Imaging/Holography": 10,
-      "Meta-Optics/Diffractive": 11,
-      "Light-Field/Novel Sensors": 4,
-      "Tomography/3D Imaging": 32,
-      "Virtual Staining/Pathology": 21,
-      "Reconstruction/Inverse Problems": 2,
-      "Deep Learning Methods": 23
+      "Phase Imaging/Holography": 11,
+      "Meta-Optics/Diffractive": 13,
+      "Light-Field/Novel Sensors": 11,
+      "Tomography/3D Imaging": 53,
+      "Virtual Staining/Pathology": 48,
+      "Reconstruction/Inverse Problems": 35,
+      "Deep Learning Methods": 181
     }
   },
-  "daily_thesis": "오늘은 arXiv가 아직 화요일로 넘어오지 않아 저널만으로 만든 잠정본입니다. 저널 안에서 가장 뚜렷한 신호는 계산 이미징이 광학계를 정교하게 만드는 대신 재구성 신경망 쪽에서 답을 찾는 흐름이 야간 이벤트 카메라 복원, 위상 언래핑, 마이크로파-CT 매핑처럼 서로 다른 모달리티에서 동시에 나타난다는 점입니다. 한편 메타표면 11편 중 다수는 통신·센싱 응용이지만 여섯 편은 뚜렷하게 이미징 광학(홀로그램 인코딩, 아크로매틱 렌즈, 무아레 억제)을 겨냥하고 있고, 반대로 Virtual Staining/Pathology 21편은 거의 전부가 실험 프로토콜 영상(JoVE) 키워드 오탐이라 편수와 실신호의 괴리가 큰 하루였습니다."
+  "daily_thesis": "오늘은 지연됐던 arXiv가 화요일 치로 정상 복귀하면서, 어제까지 저널에서만 보이던 계산광학 신호(이벤트 카메라 보조 재구성, 비X선 단층 재구성, 이미징용 메타표면)에 arXiv 쪽 방법론이 그대로 이어 붙는 하루였습니다. 가장 눈에 띄는 건 확산모델이 CT·홀로그램 같은 촬영 역문제를 푸는 재사용 가능한 사전으로 쓰이는 동시에, 그 사전이 언제·어떻게 측정 정보를 반영하는지를 수학적으로 분석하는 이론 논문까지 같은 날 나왔다는 점입니다. 한편 이벤트 카메라는 로봇 비전 도구를 넘어 야간 이미지 복원·유체 속도장 측정·이종 센서 정렬까지 계산 이미징 전반의 보조 신호로 계속 넓어지고 있고, 희소시점·수중 3D 복원은 비디오 확산 사전으로 산란매질 문제를 정면으로 다루기 시작했습니다."
 }

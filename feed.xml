@@ -6,14 +6,14 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 25 Aug 2026 11:35:10 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 13:36:53 +0900</lastBuildDate>
     <ttl>720</ttl>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-08-25 (화요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-08-25.html</link>
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-25.html</guid>
       <pubDate>Tue, 25 Aug 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘(8/25, 화)은 arXiv 5개 카테고리 모두 여전히 지난 월요일(8/24) listing에 머물러 있어, arXiv 쪽 신규 신호는 확보하지 못했습니다. 어제 daily(8/24)는 2D 비전 파운데이션 모델을 3D 기하 파이프라인에 어떻게 잘 이식할지, 의료 파운데이션 모델이 도메인 시프트에서 정확히 어디서 무너지는지를 다루는 arXiv 발 흐름이 중심이었고, 계산광학 핵심 버킷은 메타표면 나노프린팅+홀로그램 인코딩 2편을 제외하면 대부분 키워드 우연 매칭이었습니다. 오늘은 그 arXiv 발 흐름을 이어갈 새 데이터가 없는 대신, 저널이 어제와는 결이 다른 계산광학 신호(학습 기반 위상 복원 3편, 이벤트 카메라 재구성 2편, 비X선 단층 재구성 3편)를 내놓…]]></description>
+      <description><![CDATA[오늘(8/25, 화)은 arXiv 5개 카테고리 listing이 정상적으로 화요일 치로 넘어와, 944편(new+cross)을 새로 확보했습니다. 어제(8/24)는 2D 비전 파운데이션 모델을 3D 기하 파이프라인에 어떻게 이식할지, 의료 파운데이션 모델이 도메인 시프트에서 정확히 어디서 무너지는지가 중심이었는데, 계산광학 핵심 버킷 자체는 조용한 편이었습니다. 오늘은 그 흐름과는 결이 다른, 계산광학 코어에 더 가까운 방법론 신호가 나왔습니다 — 확산모델을 촬영 역문제의 범용 사전으로 쓰려는 시도(CT), 그 사전의 이론적 동작 원리를 분석하는 논문 두 편, 그리고 이벤트 카메라를 로봇 비전 바깥의 계산 이미징 문제(야간 복원·PIV·이종 센서 정렬)로 계속 확장하는…]]></description>
     </item>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-08-24 (Week 34)</title>
