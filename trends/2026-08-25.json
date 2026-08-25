@@ -1,0 +1,37 @@
+{
+  "date": "2026-08-25",
+  "source_listing_date": "2026-08-25",
+  "source_mode": "journal-only",
+  "note": "cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 추적 카테고리의 arXiv /new listing을 실행 시점에 확인했으나 모두 여전히 \"Monday, 24 August 2026\"을 가리키고 있었다 — 화요일(2026-08-25)로 아직 넘어가지 않았다. 지연 원인은 이번 실행에서 확인·추정하지 않는다(원인 불명 상태로 기록). 규칙(prompts/instruction.md 2.1 저널 독립)에 따라 arXiv 섹션은 이번 실행에서 발행하지 않고, Crossref/OpenAlex 저널 수집은 arXiv listing과 무관하게 정상 수행했다 — Crossref 기준 2026-08-24 등록분 424편을 스캔해 105편을 ROI 버킷에 배정했다(24.8%). 다음 정기 실행(2시간 폴링)에서 /pastweek에 2026-08-25 섹션이 뜨는 즉시 Backfill로 arXiv 포함 완전판으로 업그레이드한다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 0,
+      "eess.SP": 0
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 424
+  },
+  "totals": {
+    "total_scanned": 424,
+    "selected": 105
+  },
+  "classified": {
+    "total_scanned": 424,
+    "selected": 105,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 2,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 10,
+      "Meta-Optics/Diffractive": 11,
+      "Light-Field/Novel Sensors": 4,
+      "Tomography/3D Imaging": 32,
+      "Virtual Staining/Pathology": 21,
+      "Reconstruction/Inverse Problems": 2,
+      "Deep Learning Methods": 23
+    }
+  },
+  "daily_thesis": "오늘은 arXiv가 아직 화요일로 넘어오지 않아 저널만으로 만든 잠정본입니다. 저널 안에서 가장 뚜렷한 신호는 계산 이미징이 광학계를 정교하게 만드는 대신 재구성 신경망 쪽에서 답을 찾는 흐름이 야간 이벤트 카메라 복원, 위상 언래핑, 마이크로파-CT 매핑처럼 서로 다른 모달리티에서 동시에 나타난다는 점입니다. 한편 메타표면 11편 중 다수는 통신·센싱 응용이지만 여섯 편은 뚜렷하게 이미징 광학(홀로그램 인코딩, 아크로매틱 렌즈, 무아레 억제)을 겨냥하고 있고, 반대로 Virtual Staining/Pathology 21편은 거의 전부가 실험 프로토콜 영상(JoVE) 키워드 오탐이라 편수와 실신호의 괴리가 큰 하루였습니다."
+}

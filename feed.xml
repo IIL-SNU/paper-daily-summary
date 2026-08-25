@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 24 Aug 2026 11:40:02 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 11:35:10 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-08-25 (화요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-08-25.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-25.html</guid>
+      <pubDate>Tue, 25 Aug 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘(8/25, 화)은 arXiv 5개 카테고리 모두 여전히 지난 월요일(8/24) listing에 머물러 있어, arXiv 쪽 신규 신호는 확보하지 못했습니다. 어제 daily(8/24)는 2D 비전 파운데이션 모델을 3D 기하 파이프라인에 어떻게 잘 이식할지, 의료 파운데이션 모델이 도메인 시프트에서 정확히 어디서 무너지는지를 다루는 arXiv 발 흐름이 중심이었고, 계산광학 핵심 버킷은 메타표면 나노프린팅+홀로그램 인코딩 2편을 제외하면 대부분 키워드 우연 매칭이었습니다. 오늘은 그 arXiv 발 흐름을 이어갈 새 데이터가 없는 대신, 저널이 어제와는 결이 다른 계산광학 신호(학습 기반 위상 복원 3편, 이벤트 카메라 재구성 2편, 비X선 단층 재구성 3편)를 내놓…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-08-24 (Week 34)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-08-24-weekly.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-16.html</guid>
       <pubDate>Tue, 16 Jun 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[오늘 메타표면 키워드는 ' 재구성·능동(programmable) '입니다. GST 상변화 물질로 THz 파면을 전기/광학적으로 코딩하거나(Advanced Materials), IR–마이크로파 양쪽에서 동작하는 투명 스텔스 메타표면(Nanophotonics)이 나왔어요. 정적 소자에서 '상태를 바꾸는' 소자로 무게중심이 이동합니다.]]></description>
-    </item>
-    <item>
-      <title>🔬 Imaging Intelligence Daily Briefing</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-06-15.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-15.html</guid>
-      <pubDate>Mon, 15 Jun 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘의 중심은 complex-amplitude(복소진폭) holography 입니다. Collins 공식 기반 복소진폭 복원(Optics Express), 풀컬러 진폭 홀로그래피(Opt Laser Tech), THz 자성 메타표면 Janus 복소진폭(Advanced Functional Materials)이 같은 날. 진폭·위상을 동시에 정밀 제어/복원하는 쪽으로 holography가 고도화됩니다.]]></description>
     </item>
   </channel>
 </rss>
