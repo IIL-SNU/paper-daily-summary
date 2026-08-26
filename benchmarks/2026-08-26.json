@@ -1,0 +1,13 @@
+{
+  "date": "2026-08-26",
+  "results": [
+    {
+      "benchmark": "Metasurface color router (RGB sub-pixel routing, single-layer Si3N4 Bayer unit cell)",
+      "metric": "total transmission efficiency",
+      "value": 95.4,
+      "value_str": "95.4% total transmission (RGB routing 72.9/68.6/45.1%)",
+      "paper": "https://doi.org/10.1088/1361-6633/ae9e8c",
+      "paper_title": "Metasurface color routers inverse-designed with a deep-learning accelerated genetic algorithm for high efficiency imaging"
+    }
+  ]
+}

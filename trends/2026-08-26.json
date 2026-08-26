@@ -1,0 +1,37 @@
+{
+  "date": "2026-08-26",
+  "source_listing_date": "2026-08-26",
+  "source_mode": "new",
+  "note": "cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 \"Wednesday, 26 August 2026\"로 정상 갱신됨을 확인하고 그대로 사용했다. 저널(Crossref/OpenAlex)도 항상 하던 대로 독립 수집했다. 오늘은 계산광학 핵심 버킷(Lensless, Fourier Ptychography, Phase Imaging, Tomography 등)에서 실제 유효 신호가 어제보다 뚜렷하게 줄고, 대신 diffusion model 자체의 이론(생성 궤적 분기, 손실 하한, 일반화·암기)을 파고드는 arXiv cs.LG 논문들이 몰린 하루였다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 155,
+      "cs.CV": 112,
+      "cs.AI": 228,
+      "eess.IV": 7,
+      "eess.SP": 16
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 433
+  },
+  "totals": {
+    "total_scanned": 856,
+    "selected": 225
+  },
+  "classified": {
+    "total_scanned": 856,
+    "selected": 225,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 3,
+      "Lensless/Coded Imaging": 4,
+      "Phase Imaging/Holography": 9,
+      "Meta-Optics/Diffractive": 13,
+      "Light-Field/Novel Sensors": 4,
+      "Tomography/3D Imaging": 33,
+      "Virtual Staining/Pathology": 33,
+      "Reconstruction/Inverse Problems": 20,
+      "Deep Learning Methods": 106
+    }
+  },
+  "daily_thesis": "오늘은 계산광학 코어 버킷(Lensless, Fourier Ptychography, Phase Imaging, Tomography, Virtual Staining) 대부분이 키워드만 겹치는 오탐으로 채워진 조용한 날이었고, 대신 diffusion model이 왜 그렇게 작동하는지를 파고드는 이론 논문 5편이 arXiv cs.LG/cs.CV에 동시에 등장했다. 즉 오늘 판세는 새 촬영 장비나 재구성 응용보다, 우리 랩이 매일 사전(prior)으로 가져다 쓰는 diffusion model 자체의 내부 동작 원리를 다시 들여다보는 흐름에 가깝다."
+}

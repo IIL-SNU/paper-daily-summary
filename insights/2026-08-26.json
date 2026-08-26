@@ -1,0 +1,123 @@
+{
+  "date": "2026-08-26",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "Diffusion model 자체의 생성 동역학과 학습 이론을 파고드는 논문이 한꺼번에 몰림",
+      "papers": [
+        {"title": "A Theory of Speciation in Generative Diffusion Models on Compact Riemannian Manifolds", "arxiv_id": "https://arxiv.org/abs/2608.23798", "journal_or_source": "arXiv cs.LG"},
+        {"title": "The Loss Floor of Denoising Score Matching: Fisher Geometry from Schrödinger Bridges", "arxiv_id": "https://arxiv.org/abs/2608.23916", "journal_or_source": "arXiv cs.LG"},
+        {"title": "Generalization, memorization, and overfitting for diffusion models trained in the lazy high-dimensional regime", "arxiv_id": "https://arxiv.org/abs/2608.23938", "journal_or_source": "arXiv cs.LG"},
+        {"title": "Scaling Reinforcement Learning for Diffusion Models via Velocity Matching", "arxiv_id": "https://arxiv.org/abs/2608.23664", "journal_or_source": "arXiv cs.CV"},
+        {"title": "On-Policy Self-Distillation in Diffusion Models", "arxiv_id": "https://arxiv.org/abs/2608.24646", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "지금까지 diffusion model 관련 논문 대부분은 '어떻게 하면 이 모델을 촬영 역문제에 더 잘 갖다 쓸까'를 물었습니다. 오늘 다섯 편은 그 반대쪽, 즉 diffusion model이 학습 중 내부에서 실제로 무슨 일이 일어나는지를 수학적으로 규명합니다. Speciation 논문은 노이즈를 제거해 가는 과정에서 하나의 궤적이 특정 데이터 종류로 갈라지는 순간(분기점)을 리만 다양체 위에서 정식화하고, Loss Floor 논문은 학습에 쓰는 conditional score와 실제 생성에 필요한 marginal score 사이의 차이가 정확히 얼마나 되는지(피셔 정보량 기준)를 처음으로 정확히 계산합니다. Generalization/memorization 논문은 고차원에서 diffusion model이 훈련 데이터를 외우는 것과 새로운 샘플을 만드는 것 사이의 경계가 어디인지를 분석하고, 나머지 두 편(velocity matching RL, on-policy self-distillation)은 사람 선호도나 목표 함수에 맞춰 diffusion model을 강화학습으로 미세조정할 때 기존 방식이 필요로 했던 복잡한 궤적 우도 계산을 얼마나 줄일 수 있는지를 다룹니다. 즉 오늘은 '더 좋은 응용'보다 '이 모델이 왜, 언제 이런 결과를 내는지'를 파는 논문들이 한 날 겹친 것이 특징입니다. 우리 랩처럼 diffusion model을 촬영 역문제의 사전으로 재사용하는 입장에서는, 이런 이론들이 '어느 노이즈 단계에서 사전 지식이 실제로 도움이 되는지'와 '우리가 원하는 만큼만 데이터를 외우게 할지 일반화하게 할지'를 설계할 근거가 됩니다.",
+      "confidence": "High",
+      "confidence_note": "arXiv cs.LG/cs.CV 서로 다른 저자군 5편이 diffusion model의 학습·생성 동역학이라는 같은 문제를 서로 다른 각도(기하학적 분기, 정보이론, 통계적 일반화, RL 미세조정)에서 다룸",
+      "lab_action": "Loss Floor 논문의 conditional-vs-marginal score 차이 공식을 우리 랩이 쓰는 역문제용 diffusion 사전(예: CT/홀로그램 복원)에 적용해, 노이즈 스케줄 구간별로 측정값을 얼마나 신뢰해서 반영할지 가중치를 다시 설계하고 PSNR/SSIM 변화를 확인",
+      "importance_tags": ["[해부분석]"]
+    },
+    {
+      "cluster": "의료·과학 영상 자기지도학습이 계산 이미징 수식을 그대로 빌려 쓰기 시작",
+      "papers": [
+        {"title": "B-MIM: Biased Masked Image Modeling for Generalizable Segmentation of Fine-Grained Anatomical Structures", "arxiv_id": "https://arxiv.org/abs/2608.24364", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Score-Based Ideal Observer Approximation via Denoising Score Matching for Signal-Known-Exactly Detection Tasks", "arxiv_id": "https://arxiv.org/abs/2608.24768", "journal_or_source": "arXiv eess.IV"},
+        {"title": "Restoring Without Forgetting: Continual Learning Across Image Degradations", "arxiv_id": "https://arxiv.org/abs/2608.23799", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "세 논문 모두 '의료 영상 AI'로 분류되기 쉽지만, 실제로는 계산 이미징에서 익숙한 도구를 빌려 씁니다. Score-Based Ideal Observer는 이진 검출 과제의 이론적 성능 상한선(Bayesian Ideal Observer)을 매번 새로 학습하지 않고 denoising score matching 하나로 근사하는 방법인데, 이는 우리가 복원 알고리즘의 '이론적으로 가능한 최선'을 벤치마크할 때 쓸 수 있는 도구입니다. B-MIM은 masked image modeling(영상의 일부를 가리고 맞히게 해서 표현을 배우는 자기지도학습)이 큰 구조 위주로만 학습되는 편향을 일부러 주어, 혈관처럼 가늘고 미세한 해부 구조에 더 민감하게 만드는 방법입니다. Restoring Without Forgetting은 화질 저하 유형(블러, 노이즈, 저조도 등)이 현장에서 순차적으로 새로 나타날 때, 예전 데이터 없이도 이전에 배운 복원 능력을 잃지 않고 새 열화에 적응하는 continual learning 문제를 다룹니다. 세 편을 같이 보면, 학습 기반 복원·검출 파이프라인이 '한 번 학습하고 끝'이 아니라 '현장에서 계속 바뀌는 조건에 어떻게 적응·평가할 것인가'로 문제의 무게중심이 옮겨가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 저자군 3편이 같은 날 나왔고 방법론적으로 연결되지만, 세 편이 겨냥하는 최종 응용(검출 이론, 분할, 복원)은 서로 달라 단일 흐름으로 보기엔 다소 이른 단계",
+      "lab_action": "Score-Based Ideal Observer 방법으로 우리 랩 복원 알고리즘(예: 위상 복원, 산란매질 통과 이미징)의 이론적 성능 상한을 근사 계산해, 현재 알고리즘이 상한 대비 어느 정도 위치에 있는지 1차 측정",
+      "importance_tags": ["[방법전환]"]
+    },
+    {
+      "cluster": "초해상도가 위성 구름·초음파 전단파·자연 영상까지 서로 다른 파장 영역에서 동시에 재조명",
+      "papers": [
+        {"title": "Deep Learning Super Resolution for Satellite Cloud Mask Downscaling", "arxiv_id": "https://arxiv.org/abs/2608.24715", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Experiment for super-resolution imaging with shear wave", "arxiv_id": "https://doi.org/10.1121/10.0045318", "journal_or_source": "The Journal of the Acoustical Society of America"},
+        {"title": "Structured pattern embedding and efficient global dependency modeling for lightweight image super-resolution", "arxiv_id": "https://doi.org/10.1016/j.cviu.2026.104922", "journal_or_source": "Computer Vision and Image Understanding"}
+      ],
+      "why": "세 논문은 초해상도라는 같은 목표를 완전히 다른 파장·신호로 풉니다. 위성 구름 마스크 논문은 정지궤도 위성(SEVIRI)의 시공간 해상도 트레이드오프를 학습 기반 다운스케일링으로 메우고, 전단파(shear wave) 초해상도 논문은 종파(longitudinal wave)보다 파장이 훨씬 짧은 횡파를 변조 신호로 써서 광학·초음파의 회절 한계 자체를 우회하려는 실험입니다. 경량 이미지 초해상도 논문은 일반 자연 영상에서 전역 의존성(global dependency)을 가볍게 모델링하는 알고리즘 쪽 개선입니다. 셋을 묶는 공통점은 '해상도를 올리는 문제'가 카메라 종류나 파장에 상관없이 계속 반복해서 등장하고 있다는 것이며, 특히 전단파 초해상도는 회절 한계를 신호의 파장 자체를 바꿔서 넘으려 한다는 점에서 우리 랩의 광학 회절한계 우회 접근과 원리적으로 맞닿아 있습니다.",
+      "confidence": "Low",
+      "confidence_note": "서로 다른 파장·응용의 논문 3편이 같은 날 나왔지만 방법론적 연결이 직접적이지 않고, 대부분 abstract만으로 판단해 본문 확인이 더 필요함",
+      "lab_action": "전단파 초해상도 논문의 '파장이 짧은 보조 신호로 회절 한계를 우회'하는 원리가 우리 랩의 광학 초해상도(구조광 조명, 메타렌즈 등) 접근과 수학적으로 같은 뼈대인지 1페이지 요약 비교표 작성",
+      "importance_tags": ["[관찰중]"]
+    },
+    {
+      "cluster": "메타표면 신호 대부분이 RF/통신·센싱으로 흐르는 가운데, 이미징 쪽은 고효율 색 라우팅과 대용량 홀로그램 다중화로 소수 응축",
+      "papers": [
+        {"title": "Metasurface color routers inverse-designed with a deep-learning accelerated genetic algorithm for high efficiency imaging", "arxiv_id": "https://doi.org/10.1088/1361-6633/ae9e8c", "journal_or_source": "Reports on Progress in Physics"},
+        {"title": "Three-Dimensional Vectorial Holography With Full Polarization Control via End-to-End On-Chip Metasurface", "arxiv_id": "https://doi.org/10.1002/lpor.71812", "journal_or_source": "Laser & Photonics Reviews"}
+      ],
+      "why": "오늘 Meta-Optics/Diffractive 버킷은 13편인데, 절반 이상이 THz 변조기·안테나·레이더 흡수체처럼 통신·센싱 하드웨어이고 이미징을 직접 겨냥한 논문은 단 2편뿐입니다. 하지만 이 2편은 편수는 적어도 결과가 뚜렷합니다. 색 라우터 논문은 카메라 픽셀 하나에 RGB 세 색을 나눠 보내는 문제를, FDTD 전자기 시뮬레이션을 신경망으로 대체해 유전 알고리즘 탐색 속도를 올리는 방식으로 풀어 총 투과효율 95.4%를 시뮬레이션으로 보고합니다 — 컬러 필터 대신 메타표면 자체가 색을 분리하는 방식이라, 기존 베이어 필터의 빛 손실 문제를 줄일 잠재력이 있습니다. 3D 벡터 홀로그램 논문은 온칩 메타표면 하나에 편광 상태를 조합해 36개의 독립적인 홀로그램 채널을 담아냈는데, 이는 하나의 소자로 여러 정보를 동시에 인코딩하는 다중화 용량을 크게 늘린 결과입니다. 즉 메타표면 연구 활력의 대부분은 여전히 통신·센싱으로 흐르지만, 이미징 쪽에 남은 소수의 논문은 각각 '색 분리 효율'과 '홀로그램 다중화 용량'이라는 구체적 수치로 발전을 증명하고 있습니다.",
+      "confidence": "Medium",
+      "confidence_note": "이미징 특화 메타표면은 2편뿐이지만 둘 다 구체적 수치(투과효율 95.4%, 36채널)를 제시해 근거가 명확함. 편수 자체는 어제(5편)보다 줄어듦",
+      "lab_action": "색 라우터 논문의 FDTD 대체 신경망 학습 코드를 재현해, 우리 랩 렌즈리스 카메라의 컬러 필터 배열 설계에 같은 역설계 파이프라인을 적용했을 때 투과효율이 얼마나 나오는지 시뮬레이션",
+      "importance_tags": ["[방법전환]"]
+    },
+    {
+      "cluster": "Fourier ptychography는 신호가 옅지만 원거리·수차 보정 두 축에서 여전히 진행 중 (watch lens)",
+      "papers": [
+        {"title": "Remote Fourier Ptychography at a distance of 3.2km", "arxiv_id": "https://doi.org/10.1364/ol.610457", "journal_or_source": "Optics Letters"},
+        {"title": "Cascade pupil aberration correction based on contrast variation in Fourier ptychographic microscopy", "arxiv_id": "https://doi.org/10.1117/1.oe.65.8.083102", "journal_or_source": "Optical Engineering"}
+      ],
+      "why": "Fourier Ptychography/Microscopy 버킷은 오늘 3편 중 2편만 실제 관련 신호이고 나머지 1편(초음파 합성개구)은 이름만 비슷한 오탐입니다. 원거리 FP 논문은 제목만 봐도 3.2km라는, 기존 현미경 스케일(수 mm~cm)을 완전히 벗어난 거리에서 합성 애퍼처 원리를 적용했다는 뜻이라 흥미롭지만 초록이 제공되지 않아 정량적 근거를 확인할 수 없습니다. 캐스케이드 수차 보정 논문은 현미경 스케일로 돌아와, 여러 단계로 나눠 수차를 보정하는 계단식(cascade) 알고리즘으로 기존 방법이 느리고 국소해에 잘 빠지던 문제를 개선했다고 주장합니다. 둘 다 FP의 오랜 숙제(현미경을 벗어난 원거리 응용, 수차로 인한 화질 저하)를 다루지만 연결고리가 강하지 않고 초록 정보가 부족해 상단 주요 클러스터에는 올리지 않고 watch lens로 낮춰 둡니다.",
+      "confidence": "Low",
+      "confidence_note": "2편뿐이고 그중 1편(원거리 FP)은 초록 없이 제목만으로 판단. 독립적인 두 번째 신호(수차 보정)와 직접 연결되지 않음",
+      "lab_action": "원거리 FP 논문 본문을 확보해 3.2km 거리에서 합성 애퍼처를 구성한 조리개 스캔 방식이 우리 랩 원거리 계산 이미징 실험에 재현 가능한지 1차 검토",
+      "importance_tags": ["[관찰중]"]
+    }
+  ],
+  "insights": [
+    {
+      "title": "Diffusion model 자체의 생성 동역학과 학습 이론을 파고드는 논문이 한꺼번에 몰림",
+      "claim": "오늘은 diffusion model을 촬영 문제에 어떻게 쓸지보다, diffusion model이 학습·생성 과정에서 정확히 무엇을 하는지를 수학적으로 규명하는 논문 5편이 arXiv cs.LG/cs.CV에 동시에 나왔다. Speciation, Loss Floor, 일반화/암기 경계, 그리고 RL 미세조정 두 편이 모두 '왜 되는지'를 다룬다.",
+      "papers": [
+        {"title": "A Theory of Speciation in Generative Diffusion Models on Compact Riemannian Manifolds", "arxiv": "https://arxiv.org/abs/2608.23798", "importance_tags": ["[해부분석]"]},
+        {"title": "The Loss Floor of Denoising Score Matching: Fisher Geometry from Schrödinger Bridges", "arxiv": "https://arxiv.org/abs/2608.23916", "importance_tags": ["[해부분석]"]},
+        {"title": "Generalization, memorization, and overfitting for diffusion models trained in the lazy high-dimensional regime", "arxiv": "https://arxiv.org/abs/2608.23938", "importance_tags": ["[해부분석]"]}
+      ]
+    },
+    {
+      "title": "의료·과학 영상 자기지도학습이 계산 이미징 수식을 그대로 빌려 쓰기 시작",
+      "claim": "Score-Based Ideal Observer는 이진 검출의 이론적 성능 상한을 denoising score matching으로 근사하고, B-MIM은 masked image modeling의 편향을 일부러 조절해 미세 해부 구조에 민감하게 만들며, Restoring Without Forgetting은 화질 저하 유형이 순차적으로 늘어나는 상황에서 복원 능력을 유지하는 continual learning을 다룬다.",
+      "papers": [
+        {"title": "Score-Based Ideal Observer Approximation via Denoising Score Matching for Signal-Known-Exactly Detection Tasks", "arxiv": "https://arxiv.org/abs/2608.24768", "importance_tags": ["[방법전환]"]},
+        {"title": "B-MIM: Biased Masked Image Modeling for Generalizable Segmentation of Fine-Grained Anatomical Structures", "arxiv": "https://arxiv.org/abs/2608.24364", "importance_tags": ["[방법전환]"]},
+        {"title": "Restoring Without Forgetting: Continual Learning Across Image Degradations", "arxiv": "https://arxiv.org/abs/2608.23799", "importance_tags": ["[방법전환]"]}
+      ]
+    },
+    {
+      "title": "초해상도가 위성·초음파·자연 영상까지 서로 다른 파장 영역에서 동시에 재조명",
+      "claim": "위성 구름 마스크 다운스케일링, 초음파 전단파 초해상도, 경량 이미지 초해상도가 같은 날 나와, 해상도를 올리는 문제가 파장·플랫폼과 무관하게 계속 재등장하고 있다는 것을 보여준다.",
+      "papers": [
+        {"title": "Deep Learning Super Resolution for Satellite Cloud Mask Downscaling", "arxiv": "https://arxiv.org/abs/2608.24715", "importance_tags": ["[스케일업]"]},
+        {"title": "Experiment for super-resolution imaging with shear wave", "arxiv": "https://doi.org/10.1121/10.0045318", "importance_tags": ["[방법전환]"]}
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "Loss Floor 공식을 우리 랩 diffusion 역문제 사전의 노이즈 스케줄 재설계에 적용",
+      "claim": "conditional score와 marginal score 사이 차이(피셔 정보량)를 노이즈 단계별로 계산하면, 어느 구간에서 측정값 가이던스를 더 강하게 걸어야 할지 이론적으로 결정할 수 있다.",
+      "supporting_papers": [
+        {"title": "The Loss Floor of Denoising Score Matching: Fisher Geometry from Schrödinger Bridges", "arxiv": "https://arxiv.org/abs/2608.23916"}
+      ]
+    },
+    {
+      "title": "Score-Based Ideal Observer로 우리 복원 파이프라인의 이론적 성능 상한 측정",
+      "claim": "이진 검출 과제의 Bayesian Ideal Observer를 denoising score matching으로 근사하는 방법을, 우리 랩 위상 복원·산란매질 통과 이미징의 결함 검출 과제에 적용해 현재 알고리즘이 이론적 상한 대비 어디에 있는지 정량화할 수 있다.",
+      "supporting_papers": [
+        {"title": "Score-Based Ideal Observer Approximation via Denoising Score Matching for Signal-Known-Exactly Detection Tasks", "arxiv": "https://arxiv.org/abs/2608.24768"}
+      ]
+    },
+    {
+      "title": "전단파 초해상도의 회절한계 우회 원리를 광학 초해상도와 비교",
+      "claim": "종파보다 파장이 짧은 전단파를 변조 신호로 쓰는 초음파 초해상도 원리가, 우리 랩의 구조광·메타렌즈 기반 광학 초해상도 접근과 수학적으로 같은 구조인지 확인할 수 있다.",
+      "supporting_papers": [
+        {"title": "Experiment for super-resolution imaging with shear wave", "arxiv": "https://doi.org/10.1121/10.0045318"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

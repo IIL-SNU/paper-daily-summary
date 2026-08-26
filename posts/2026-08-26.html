@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-08-26</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-08-26 (수요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-08-26 (수요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 이번 실행에서 "Wednesday, 26 August 2026"로 정상 확인되어 그대로 사용했습니다.</div>
+  <div>🔢 arXiv: cs.LG 155 · cs.CV 112 · cs.AI 228 · eess.IV 7 · eess.SP 16 (합계 518편, new+cross, replacement 제외)</div>
+  <div>🔢 저널: Crossref/OpenAlex 433편 수집 · arXiv+저널 통합 스캔 856건 · ROI 배정 225건(26.3%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 계산광학 핵심 버킷(Lensless, Fourier Ptychography, Phase Imaging, Tomography, Virtual Staining)이 대부분 키워드만 겹치는 오탐으로 채워진, 광학 하드웨어 신호가 유난히 조용한 하루였습니다. 대신 눈에 띄는 건 <strong>diffusion model 자체가 학습·생성 과정에서 정확히 무엇을 하는지를 수학적으로 규명하는 이론 논문 5편이 arXiv cs.LG/cs.CV에 한꺼번에 나왔다는 점</strong>입니다. 예전에는 "diffusion model을 촬영 역문제에 어떻게 더 잘 갖다 쓸까"를 주로 물었다면, 오늘은 "이 모델이 노이즈를 제거하는 과정에서 정확히 무엇을 배우고, 언제 외우고, 언제 일반화하는지"를 수식으로 파고드는 쪽으로 무게중심이 옮겨간 하루입니다. 우리 랩처럼 diffusion model을 재구성 사전(prior)으로 재사용하는 입장에서는, 이런 이론이 노이즈 스케줄별로 측정 정보를 얼마나 신뢰할지 설계하는 근거가 될 수 있습니다. 한편 메타표면은 절반 이상이 통신·RF 하드웨어로 흘렀지만 이미징 쪽 2편은 각각 색 분리 효율 95.4%와 36채널 홀로그램 다중화라는 뚜렷한 수치를 냈고, 의료 영상 자기지도학습 쪽에서도 계산 이미징의 이론적 성능 상한 근사, 미세 해부 구조 민감도, 화질 저하 연속 적응 같은 도구를 빌려 쓰는 흐름이 보였습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(8/26, 수) arXiv 5개 카테고리 listing이 정상적으로 수요일 치로 갱신되어 518편(new+cross)을 새로 확보했습니다. 어제(8/25)는 확산모델을 CT·홀로그램 역문제의 재사용 사전으로 쓰는 응용 논문과 그 이론을 분석하는 논문이 나란히 나왔고, 이벤트 카메라·단층촬영·수중 3D 복원 같은 계산광학 코어 신호가 5개 클러스터에 걸쳐 뚜렷했습니다. 오늘은 정반대로, 계산광학 코어 버킷 대부분이 실제로 열어보면 무관한 논문(임상 사례 보고, 통신 안테나, 지진파 단층촬영, 지속가능성 논문 등)이었고, 실 신호는 diffusion model 이론 5편에 집중됐습니다.</p>
+<p>저널 쪽은 433편을 스캔했고, 메타표면 13편 중 이미징 직결 신호는 색 라우터(총 투과효율 95.4%)와 3D 벡터 홀로그램(36채널 다중화) 단 2편뿐이었습니다. 나머지는 THz 변조기·레이더 흡수체·안테나 설계로 이미징과 무관했습니다. Tomography/3D Imaging(33편)과 Virtual Staining/Pathology(33편)은 오늘 유독 심하게 오탐 비중이 높아, 전자는 대부분 PET/CT 임상 사례 보고, 후자는 "sustainable", "virtual"이라는 단어가 이미징과 무관한 맥락(지속가능한 다이어트, 가상현실 교육 등)에서 우연히 걸린 경우였습니다. Reconstruction/Inverse Problems(20편)도 마찬가지로 지식그래프·LLM·로봇공학 논문이 "reconstruction"이라는 단어로 걸린 경우가 대부분이었습니다.</p>
+<p>다음 관찰 포인트는 (1) diffusion model 이론화 흐름이 다음 주에도 이어져 우리 랩이 쓰는 사전 설계에 실제로 반영할 수치가 나오는지, (2) 오늘처럼 조용했던 계산광학 코어 버킷(Lensless, Tomography)이 내일 다시 살아나는지, (3) 메타표면 연구에서 이미징 대 통신 비중이 어떻게 움직이는지입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(8/25)는 확산모델이 CT·홀로그램 역문제의 재사용 사전으로 쓰이는 응용과 그 이론이 동시에 나왔고, 이벤트 카메라가 야간 복원·PIV·이종 센서 정렬로, 단층촬영이 산란 물리 모델링으로, 희소시점·수중 3D 복원이 비디오 확산 사전으로 확장되는 등 계산광학 코어에 맞닿은 클러스터가 5개 모두 뚜렷했습니다(총 스캔 1,195건, ROI 354건, 29.6%). 오늘은 계산광학 코어의 실 신호가 크게 줄어(스캔 856건, ROI 225건, 26.3%), Lensless/Coded Imaging은 4편 모두 오탐이었고 Tomography/3D Imaging 33편 중 계산 이미징에 직접 관련된 논문은 사실상 1편(Physics-Integrated Operator Learning via Gaussian Splatting)뿐이었습니다.</p>
+<p>가장 큰 변화는 무게중심이 "촬영 응용"에서 "diffusion model 자체의 이론"으로 옮겨간 것입니다. 어제 확산모델 클러스터는 CT 사전화(응용)와 이론 2편이 섞여 있었다면, 오늘은 응용 없이 이론 논문만 5편(생성 궤적 분기, 손실 하한, 일반화/암기, RL 미세조정 2편)이 나왔습니다. 이벤트 카메라 신호도 어제 5편(클러스터급)에서 오늘 1편(Event-Based Motion Estimation via Oriented Distance Fields)으로 줄어 단발 관찰로 내려갔습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Diffusion model 자체의 생성 동역학과 학습 이론을 파고드는 논문이 한꺼번에 몰림</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.23798" target=_blank>A Theory of Speciation in Generative Diffusion Models</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2608.23916" target=_blank>The Loss Floor of Denoising Score Matching</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2608.23938" target=_blank>Generalization, memorization, and overfitting for diffusion models</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2608.23664" target=_blank>Scaling RL for Diffusion Models via Velocity Matching</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.24646" target=_blank>On-Policy Self-Distillation in Diffusion Models</a> <span class=pill>CV</span>
+  </td>
+  <td>지금까지 diffusion model 관련 논문 대부분은 이 모델을 촬영 역문제에 어떻게 더 잘 갖다 쓸지를 물었습니다. 오늘 다섯 편은 그 반대쪽, 즉 diffusion model이 학습 중 내부에서 실제로 무슨 일이 일어나는지를 수학적으로 규명합니다. Speciation 논문은 노이즈를 제거해 가는 과정에서 하나의 궤적이 특정 데이터 종류로 갈라지는 순간(분기점)을 다양체 위에서 정식화하고, Loss Floor 논문은 학습에 쓰는 조건부 score와 실제 생성에 필요한 한계(marginal) score 사이의 차이가 정확히 얼마나 되는지를 정보량 기준으로 처음 정확히 계산합니다. Generalization/memorization 논문은 고차원에서 diffusion model이 훈련 데이터를 그대로 외우는 것과 새로운 샘플을 만들어내는 것 사이의 경계가 어디인지를 분석하고, 나머지 두 편은 사람 선호도에 맞춰 diffusion model을 강화학습으로 미세조정할 때 기존 방식이 필요로 했던 복잡한 궤적 확률 계산을 얼마나 줄일 수 있는지를 다룹니다. 즉 오늘은 "더 좋은 응용"보다 "이 모델이 왜, 언제 이런 결과를 내는지"를 파는 논문들이 한 날 겹친 것이 특징이고, 우리 랩처럼 diffusion model을 재구성 사전으로 재사용하는 입장에서는 어느 노이즈 단계에서 사전 지식을 얼마나 신뢰해서 반영할지를 설계할 근거가 됩니다.</td>
+  <td>High<br><small>arXiv cs.LG/cs.CV 서로 다른 저자군 5편이 diffusion model의 학습·생성 동역학이라는 같은 문제를 기하학·정보이론·통계적 일반화·RL 네 각도에서 동시에 다룸</small></td>
+  <td>Loss Floor 논문의 conditional-vs-marginal score 차이 공식을 우리 랩 역문제용 diffusion 사전(위상 복원·산란매질 통과 이미징)에 적용해, 노이즈 스케줄 구간별 측정값 가중치를 다시 설계하고 PSNR/SSIM 변화를 시뮬레이션으로 비교</td>
+</tr>
+<tr>
+  <td><strong>의료·과학 영상 자기지도학습이 계산 이미징 수식을 그대로 빌려 쓰기 시작</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.24768" target=_blank>Score-Based Ideal Observer Approximation</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2608.24364" target=_blank>B-MIM: Biased Masked Image Modeling</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.23799" target=_blank>Restoring Without Forgetting</a> <span class=pill>CV</span>
+  </td>
+  <td>세 논문 모두 "의료 영상 AI"로 분류되기 쉽지만, 실제로는 계산 이미징에서 익숙한 도구를 빌려 씁니다. Score-Based Ideal Observer는 이진 검출 과제의 이론적 성능 상한선(Bayesian Ideal Observer)을 매번 새로 학습하지 않고 denoising score matching 하나로 근사하는 방법인데, 이는 복원 알고리즘의 "이론적으로 가능한 최선"을 벤치마크할 때 쓸 수 있는 도구입니다. B-MIM은 영상 일부를 가리고 맞히게 해서 표현을 배우는 자기지도학습이 큰 구조 위주로만 학습되는 편향을 일부러 주어, 혈관처럼 가늘고 미세한 해부 구조에 더 민감하게 만드는 방법입니다. Restoring Without Forgetting은 블러·노이즈·저조도 같은 화질 저하 유형이 현장에서 순차적으로 새로 나타날 때, 예전 데이터 없이도 이전에 배운 복원 능력을 잃지 않고 새 열화에 적응하는 문제를 다룹니다. 세 편을 같이 보면, 학습 기반 복원·검출 파이프라인의 무게중심이 "한 번 학습하고 끝"에서 "현장에서 계속 바뀌는 조건에 어떻게 적응·평가할 것인가"로 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 3편이 같은 날 나왔고 방법론적으로 연결되지만, 겨냥하는 최종 응용(검출 이론·분할·복원)이 서로 달라 단일 흐름으로 보기엔 다소 이름</small></td>
+  <td>Score-Based Ideal Observer 방법으로 우리 랩 위상 복원·산란매질 통과 이미징의 이론적 성능 상한을 근사 계산해, 현재 알고리즘이 상한 대비 어느 위치에 있는지 1차 측정</td>
+</tr>
+<tr>
+  <td><strong>메타표면 신호 대부분이 RF/통신·센싱으로 흐르는 가운데, 이미징 쪽은 색 라우팅 효율과 홀로그램 다중화 두 수치로 응축</strong></td>
+  <td>
+    <a href="https://doi.org/10.1088/1361-6633/ae9e8c" target=_blank>Metasurface color routers inverse-designed with a deep-learning accelerated genetic algorithm</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1002/lpor.71812" target=_blank>Three-Dimensional Vectorial Holography via On-Chip Metasurface</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 Meta-Optics/Diffractive 버킷은 13편인데, 절반 이상이 THz 변조기·안테나·레이더 흡수체 같은 통신·센싱 하드웨어이고 이미징을 직접 겨냥한 논문은 2편뿐입니다. 하지만 이 2편은 편수는 적어도 결과가 뚜렷합니다. 색 라우터 논문은 카메라 픽셀 하나에 RGB 세 색을 나눠 보내는 문제를, 무거운 전자기 시뮬레이션을 신경망으로 대체해 유전 알고리즘 탐색 속도를 올리는 방식으로 풀어 총 투과효율 95.4%(RGB 각각 72.9/68.6/45.1%)를 시뮬레이션으로 보고합니다. 컬러 필터 대신 메타표면 자체가 색을 나누는 방식이라, 기존 베이어 필터의 빛 손실 문제를 줄일 잠재력이 있습니다. 3D 벡터 홀로그램 논문은 온칩 메타표면 하나에 편광 상태를 조합해 36개의 독립 홀로그램 채널을 담아, 하나의 소자로 여러 정보를 동시에 인코딩하는 다중화 용량을 크게 늘렸습니다. 즉 메타표면 연구 활력의 대부분은 통신·센싱으로 흐르지만, 이미징에 남은 소수 논문은 구체적 수치로 발전을 증명하고 있습니다.</td>
+  <td>Medium<br><small>이미징 특화 메타표면은 2편뿐이지만 둘 다 구체적 수치(투과효율 95.4%, 36채널)를 제시해 근거가 명확함. 편수 자체는 어제(5편)보다 뚜렷하게 줄어듦</small></td>
+  <td>색 라우터 논문의 신경망 기반 FDTD 대체 파이프라인을 재현해, 우리 랩 렌즈리스 카메라의 컬러 필터 배열 설계에 같은 역설계 방식을 적용했을 때 투과효율이 얼마나 나오는지 시뮬레이션</td>
+</tr>
+<tr>
+  <td><strong>초해상도가 위성·초음파·자연 영상까지 서로 다른 파장 영역에서 동시에 재조명</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.24715" target=_blank>Deep Learning Super Resolution for Satellite Cloud Mask Downscaling</a> <span class=pill>CV</span><br>
+    <a href="https://doi.org/10.1121/10.0045318" target=_blank>Experiment for super-resolution imaging with shear wave</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.cviu.2026.104922" target=_blank>Structured pattern embedding for lightweight image super-resolution</a> <span class=pill>JNL</span>
+  </td>
+  <td>세 논문은 초해상도라는 같은 목표를 완전히 다른 파장·신호로 풉니다. 위성 구름 마스크 논문은 정지궤도 위성(SEVIRI)의 시간·공간 해상도 트레이드오프를 학습 기반 다운스케일링으로 메우고, 전단파(shear wave) 초해상도 논문은 종파보다 파장이 훨씬 짧은 횡파를 변조 신호로 써서 광학·초음파의 회절 한계 자체를 우회하려는 실험입니다. 경량 이미지 초해상도 논문은 일반 자연 영상에서 전역 문맥 의존성을 가볍게 모델링하는 알고리즘 개선입니다. 셋을 묶는 공통점은 "해상도를 올리는 문제"가 카메라 종류나 파장에 상관없이 계속 반복해서 등장하고 있다는 것이며, 특히 전단파 초해상도는 회절 한계를 신호의 파장 자체를 바꿔서 넘으려 한다는 점에서 우리 랩의 광학 회절한계 우회 접근과 원리적으로 맞닿아 있습니다.</td>
+  <td>Low<br><small>서로 다른 파장·응용의 논문 3편이 같은 날 나왔지만 방법론적 연결이 직접적이지 않고, 대부분 abstract만으로 판단해 본문 확인이 더 필요함</small></td>
+  <td>전단파 초해상도의 "파장이 짧은 보조 신호로 회절 한계를 우회"하는 원리가 우리 랩 광학 초해상도(구조광 조명, 메타렌즈) 접근과 수학적으로 같은 뼈대인지 1페이지 비교표 작성</td>
+</tr>
+<tr>
+  <td><strong>Fourier ptychography는 신호가 옅지만 원거리·수차 보정 두 축에서 여전히 진행 중 (watch lens)</strong></td>
+  <td>
+    <a href="https://doi.org/10.1364/ol.610457" target=_blank>Remote Fourier Ptychography at a distance of 3.2km</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1117/1.oe.65.8.083102" target=_blank>Cascade pupil aberration correction in FPM</a> <span class=pill>JNL</span>
+  </td>
+  <td>Fourier Ptychography/Microscopy 버킷은 오늘 3편 중 2편만 실제 관련 신호이고 나머지 1편(초음파 합성개구)은 이름만 비슷한 오탐입니다. 원거리 FP 논문은 제목만 봐도 3.2km라는, 기존 현미경 스케일(수 mm~cm)을 완전히 벗어난 거리에서 합성 애퍼처 원리를 적용했다는 뜻이라 흥미롭지만, 초록이 제공되지 않아 정량적 근거를 확인할 수 없었습니다. 캐스케이드 수차 보정 논문은 현미경 스케일로 돌아와, 여러 단계로 나눠 렌즈 수차를 보정하는 계단식 알고리즘으로 기존 방법이 느리고 국소해에 잘 빠지던 문제를 개선했다고 주장합니다. 둘 다 FP의 오랜 숙제(현미경을 벗어난 원거리 응용, 수차로 인한 화질 저하)를 다루지만 연결고리가 강하지 않고 초록 정보가 부족해, 상단 주요 클러스터로 올리기보다 watch lens로 낮춰 둡니다.</td>
+  <td>Low<br><small>2편뿐이고 그중 1편(원거리 FP)은 초록 없이 제목만으로 판단. 두 논문이 독립적인 신호라 서로 직접 연결되지 않음</small></td>
+  <td>원거리 FP 논문 본문을 확보해 3.2km 거리에서 합성 애퍼처를 구성한 조리개 스캔 방식이 우리 랩 원거리 계산 이미징 실험에 재현 가능한지 1차 검토</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ 참고: Light-Field/Novel Sensors(4편)는 오늘 이벤트 카메라 논문 1편(Event-Based Motion Estimation via Oriented Distance Fields, sub-pixel 정확도로 실시간 디블러링·안구 추적에 재사용)을 빼면 나머지 3편이 전력망 예측·연합학습 등 무관한 오탐이라, 단발 신호로만 취급하고 클러스터에는 올리지 않았습니다. Lensless/Coded Imaging(4편)은 오늘 실제 렌즈리스·코디드 이미징 논문이 0편입니다(4편 모두 그래프 설명, world model, 캐비테이션 영상, NFT 블록체인 오탐).</small></p>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>공통 키워드</strong>: diffusion model, metasurface, super-resolution — 오늘은 arXiv가 diffusion model의 이론(생성 동역학, 손실 하한, 일반화 경계)을, 저널이 메타표면 하드웨어 수치(투과효율, 다중화 채널 수)와 초음파·위성 초해상도 실험을 각각 채워 같은 키워드를 서로 다른 층위에서 다뤘습니다.</li>
+  <li><strong>arXiv 전용</strong>: diffusion model 학습·생성 이론 5편(Speciation, Loss Floor, Generalization/memorization, Velocity Matching RL, On-Policy Self-Distillation), 의료 영상 자기지도학습 3편(Score-Based Ideal Observer, B-MIM, Restoring Without Forgetting), 이벤트 카메라 모션 추정(ODF Motion Estimation), 위성 구름 마스크 초해상도</li>
+  <li><strong>저널 전용</strong>: 이미징용 메타표면 2편(색 라우터, 3D 벡터 홀로그램), 원거리·수차 보정 Fourier ptychography 2편, 초음파 전단파 초해상도, 경량 이미지 초해상도(CVIU), Sirius Red 가상 염색 신뢰성 벤치마크(간 섬유화)</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 이론 쪽에, 저널이 하드웨어·임상 수치 쪽에 쏠려 있어 어제(둘 다 계산광학 코어에서 방법론↔하드웨어로 나뉘던 날)보다 arXiv와 저널의 접점이 약했습니다. 편수만 보면 상위인 Deep Learning Methods(106)·Tomography(33)·Virtual Staining(33)은 실사 확인 결과 대부분 계산 이미징과 무관한 일반 ML·임상 사례·지속가능성 논문입니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. Diffusion model 자체의 생성 동역학과 학습 이론을 파고드는 논문이 한꺼번에 몰림</h3>
+  <p>Speciation 논문은 노이즈 제거 과정에서 궤적이 특정 데이터로 갈라지는 분기점을 다양체 위에서 규명하고, Loss Floor 논문은 conditional score와 marginal score 사이 정보량 차이를 처음 정확히 계산하며, Generalization 논문은 고차원에서 암기와 일반화의 경계를 분석합니다.</p>
+  <p class=conf-note>Confidence: High — arXiv cs.LG/cs.CV 서로 다른 저자군 5편이 같은 문제를 기하학·정보이론·통계·RL 네 각도에서 동시에 다룸</p>
+</div>
+
+<div class=ins>
+  <h3>2. 의료·과학 영상 자기지도학습이 계산 이미징 수식을 그대로 빌려 쓰기 시작</h3>
+  <p>Score-Based Ideal Observer는 이진 검출의 이론적 성능 상한을 denoising score matching으로 근사하고, B-MIM은 masked image modeling의 편향을 조절해 미세 해부 구조에 민감하게 만들며, Restoring Without Forgetting은 화질 저하 유형이 순차적으로 늘어나는 상황의 continual learning을 다룹니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 저자군 3편이 같은 날 나왔으나 최종 응용이 서로 달라 단일 흐름으로 보기엔 이름</p>
+</div>
+
+<div class=ins>
+  <h3>3. 메타표면은 통신·센싱이 대세지만, 이미징 쪽 2편은 뚜렷한 수치로 존재감을 남김</h3>
+  <p>색 라우터는 신경망으로 FDTD 시뮬레이션을 대체해 총 투과효율 95.4%를 보고했고, 3D 벡터 홀로그램은 단일 온칩 메타표면으로 36채널 편광 다중화 홀로그램을 구현했습니다.</p>
+  <p class=conf-note>Confidence: Medium — 이미징 특화 메타표면 2편뿐이지만 둘 다 구체적 수치를 제시</p>
+</div>
+
+<div class=ins>
+  <h3>4. 초해상도가 위성·초음파·자연 영상까지 서로 다른 파장 영역에서 동시에 재조명</h3>
+  <p>위성 구름 마스크 다운스케일링, 초음파 전단파 초해상도, 경량 이미지 초해상도가 같은 날 나와, 해상도를 올리는 문제가 파장·플랫폼과 무관하게 계속 재등장하고 있습니다.</p>
+  <p class=conf-note>Confidence: Low — 서로 다른 파장·응용 3편의 방법론적 연결이 직접적이지 않음</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. Loss Floor 공식을 우리 랩 diffusion 역문제 사전의 노이즈 스케줄 재설계에 적용</h3>
+  <p>conditional score와 marginal score 사이 정보량 차이를 노이즈 단계별로 계산해, 어느 구간에서 측정값 가이던스를 더 강하게 걸지 이론적으로 결정할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>Loss Floor 논문의 Fisher-Rao 정보량 공식을 우리 랩 diffusion 기반 위상 복원 파이프라인의 노이즈 스케줄에 대입해 재구현</li>
+    <li>공통 benchmark: 우리 랩 산란매질 통과 이미징 시뮬레이션 데이터</li>
+    <li>비교축: 기존 균일 가이던스 스케줄 대비 정보량 기반 가변 가이던스의 PSNR/SSIM, 수렴 속도</li>
+    <li>실패해도 남는 결과: 우리 파이프라인에서 노이즈 단계별 정보량 곡선 자체가 baseline 데이터로 남음</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. Score-Based Ideal Observer로 우리 복원 알고리즘의 이론적 성능 상한 측정</h3>
+  <p>이진 검출 과제의 Bayesian Ideal Observer를 denoising score matching으로 근사하는 방법을, 우리 랩 결함 검출 과제(위상 복원·산란매질 통과 이미징)에 적용해 현재 알고리즘이 이론적 상한 대비 어디에 있는지 정량화합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>Score-Based Ideal Observer 논문의 근사 알고리즘 재구현</li>
+    <li>공통 benchmark: 우리 랩 결함 검출용 signal-known-exactly 합성 데이터셋 구성</li>
+    <li>비교축: 근사 Ideal Observer 성능 vs 현재 우리 알고리즘의 검출 정확도(AUC) 격차</li>
+    <li>실패해도 남는 결과: 우리 검출 과제의 이론적 상한 baseline 확보</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. 색 라우터 역설계 파이프라인을 렌즈리스 카메라 컬러 필터 대체 설계에 재현</h3>
+  <p>무거운 FDTD 시뮬레이션을 신경망으로 대체해 유전 알고리즘 탐색을 가속하는 방식이, 우리 랩 렌즈리스 카메라의 컬러 분리 소자 설계에도 비슷한 투과효율을 낼 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>FDTD 대체 신경망(필드 분포 예측) 학습 파이프라인 재구현</li>
+    <li>공통 benchmark: 우리 랩 렌즈리스 카메라의 현재 컬러 필터 배열 시뮬레이션 셋업</li>
+    <li>비교축: 기존 베이어 필터 대비 메타표면 색 라우팅의 투과효율·크로스토크</li>
+    <li>실패해도 남는 결과: 우리 시뮬레이터에서 신경망 대체 FDTD의 정확도 baseline</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging·Virtual Staining/Pathology(33편, catch-all 제외 공동 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:9%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:12%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:27%"></span></span><span class=n>9편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:39%"></span></span><span class=n>13편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:12%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>33편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>33편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:61%"></span></span><span class=n>20편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>106편</span></div>
+
+<p><small>⚠️ 참고: Tomography/3D Imaging 33편 중 계산 이미징에 직접 관련된 논문은 사실상 1편(Physics-Integrated Operator Learning via Gaussian Splatting)뿐이고, 나머지는 PET/CT 임상 사례 보고·치과/구강악안면 영상·지진파 단층촬영 등입니다. Virtual Staining/Pathology 33편 중 실제 계산 이미징 신호는 2~3편(가상 염색 신뢰성 벤치마크, DAB 면역조직화학 정량화)뿐이며, 나머지는 "sustainable"·"virtual"·"stain" 단어가 지속가능성·가상현실 교육·치아 미백 연구 같은 무관한 문맥에서 우연히 매칭된 오탐입니다. Reconstruction/Inverse Problems 20편 중 실제 계산 이미징 재구성 논문은 2편(Mini-batch Quasi-Newton TV 재구성, 초음파 유도파 결함 영상)뿐이고 나머지는 지식그래프·로봇공학·LLM 논문입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (3편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.610457" target=_blank>Remote Fourier Ptychography at a distance of 3.2km</a></strong> [JNL]<br>
+  왜 주요: 현미경 스케일을 벗어난 3.2km 원거리 FP — 초록 미제공이나 제목 자체가 이 버킷의 오늘 유일한 강한 신호
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.oe.65.8.083102" target=_blank>Cascade pupil aberration correction based on contrast variation in FPM</a></strong> [JNL]<br>
+  왜 주요: 계단식 알고리즘으로 FPM 수차 보정의 느린 수렴·국소해 문제를 개선
+</div>
+
+<h3>Phase Imaging/Holography (9편 중 관련 6편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71812" target=_blank>Three-Dimensional Vectorial Holography With Full Polarization Control via On-Chip Metasurface</a></strong> [JNL · TIER A]<br>
+  왜 주요: 단일 온칩 메타표면으로 36채널 편광 다중화 홀로그램 구현 — 오늘의 must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.609604" target=_blank>Symmetric-anchored transport-of-intensity phase retrieval with adaptive gradient refinement</a></strong> [JNL]<br>
+  왜 주요: transport-of-intensity 위상 복원에 적응형 그래디언트 정제를 결합
+</div>
+
+<h3>Meta-Optics/Diffractive (13편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/1361-6633/ae9e8c" target=_blank>Metasurface color routers inverse-designed with a deep-learning accelerated genetic algorithm</a></strong> [JNL · TIER A]<br>
+  왜 주요: 신경망으로 FDTD 시뮬레이션을 대체해 색 라우팅 총 투과효율 95.4% 달성 — 오늘의 must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.diamond.2026.114100" target=_blank>Single crystalline diamond metasurface with large elasticity and tunable structural colors</a></strong> [JNL]<br>
+  왜 주요: 다이아몬드 메타표면의 구조색 튜닝 — 이미징 필터 대체 소자로 참조 가능
+</div>
+
+<h3>Light-Field/Novel Sensors (4편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.24223" target=_blank>Event-Based Motion Estimation via Oriented Distance Fields</a></strong> [CV]<br>
+  왜 주요: 반복 최적화 없이 단일 평균화 스텝으로 sub-pixel 모션 추정, 실시간 디블러링·안구 추적에 재사용 — 오늘 유일한 이벤트 카메라 신호
+</div>
+
+<h3>Tomography/3D Imaging (33편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.24049" target=_blank>Physics-Integrated Operator Learning via Gaussian Splatting Representations</a></strong> [LG]<br>
+  왜 주요: Gaussian Splatting 표현에 물리 연산자 학습을 결합 — 오늘 이 버킷에서 사실상 유일한 계산 이미징 관련 신호
+</div>
+
+<h3>Virtual Staining/Pathology (33편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.24626" target=_blank>Towards Reliable AI-Based Histological Staining: A Systematic Study of Scaling and Uncertainty in Unpaired Generative Models</a></strong> [CV · TIER A]<br>
+  왜 주요: 6개 비지도 가상 염색 아키텍처를 54개 스케일링 설정으로 벤치마크하고 불확실성까지 정량화 — 오늘의 must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.21769/bioprotoc.5817" target=_blank>Digital Quantification of Membrane DAB Immunohistochemical Staining in FFPE Cervical Cancer Tissues</a></strong> [JNL]<br>
+  왜 주요: 오픈소스 CellProfiler 파이프라인으로 DAB 면역조직화학 염색을 정량화
+</div>
+
+<h3>Reconstruction/Inverse Problems (20편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1137/25m1789305" target=_blank>A Mini-batch Quasi-Newton Proximal Method for Constrained Total Variation Nonlinear Image Reconstruction</a></strong> [JNL]<br>
+  왜 주요: TV 정칙화 비선형 영상 재구성에 준뉴턴 근접법을 결합해 계산 효율 개선
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1121/10.0045183" target=_blank>Sparsity-based ultrasonic guided-wave imaging of structural defects</a></strong> [JNL]<br>
+  왜 주요: 희소성 기반 정칙화로 초음파 유도파 결함 영상화
+</div>
+
+<h3>Deep Learning Methods — 이미징 관련 대표 2편 (106편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.23798" target=_blank>A Theory of Speciation in Generative Diffusion Models on Compact Riemannian Manifolds</a></strong> [LG · TIER A]<br>
+  왜 주요: 확산모델의 생성 궤적이 갈라지는 분기점을 다양체 위에서 규명한 이론 논문 — 오늘의 클러스터 1 대표
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.23916" target=_blank>The Loss Floor of Denoising Score Matching: Fisher Geometry from Schrödinger Bridges</a></strong> [LG]<br>
+  왜 주요: conditional score와 marginal score 사이 정보량 차이를 처음 정확히 계산한 이론 논문
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>Value</th><th>Paper</th></tr></thead>
+<tbody>
+<tr>
+  <td>Metasurface color router (RGB sub-pixel routing)</td>
+  <td>총 투과효율</td>
+  <td>95.4% (RGB 라우팅 효율 72.9/68.6/45.1%)</td>
+  <td><a href="https://doi.org/10.1088/1361-6633/ae9e8c" target=_blank>Metasurface color routers inverse-designed...</a></td>
+</tr>
+</tbody>
+</table>
+<p><small>오늘 abstract에서 명시적 수치를 확인한 결과는 이 1건뿐입니다. 나머지 클러스터(diffusion 이론, 초해상도)는 abstract에 구체적 벤치마크 수치가 없어 이 표에 포함하지 않았습니다.</small></p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] A Theory of Speciation in Generative Diffusion Models on Compact Riemannian Manifolds — arXiv 2608.23798</h3>
+  <div class=tag>[해부분석]</div>
+  <p><strong>왜 A급인가:</strong> Diffusion model이 노이즈에서 이미지를 만들어낼 때, 초기에는 여러 데이터 종류가 뒤섞인 애매한 상태에서 출발했다가 점점 특정 종류(예: 특정 클래스, 특정 형태)로 갈라지는 현상이 관찰돼 왔습니다. 이를 "speciation(분화)"이라고 부르는데, 기존 이론은 이 현상을 대칭적인 분기(symmetric pitchfork bifurcation)로 단순화하고 데이터 차원이 매우 커야 성립한다고 가정했습니다. 이 논문은 그 단순화에서 벗어나, 구(공간이 휘어진 다양체) 위에 놓인 데이터에 대해서도 성립하는 더 일반적인 분화 이론을 만듭니다.</p>
+  <p><strong>핵심:</strong> 노이즈를 제거해 가는 확산 과정에서 확률분포가 점점 뾰족해지는데, 그 확률분포의 극값(모드)이 어떻게 갈라지는지를 다양체 위의 임계점 분기로 정식화합니다. 즉 "언제, 어디서" 궤적이 특정 데이터 종류로 확정되는지를 기하학적으로 예측할 수 있게 됩니다.</p>
+  <p><strong>주의:</strong> 이론 논문이라 실제 이미지 생성 모델에서 이 분기 예측이 실무적으로 얼마나 유용한지(예: 샘플링 가속, 조건부 생성 제어)는 본문과 실험 확인이 필요합니다. abstract만으로는 실증 검증 규모를 알 수 없습니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Metasurface color routers inverse-designed with a deep-learning accelerated genetic algorithm for high efficiency imaging</h3>
+  <div class=tag>[방법전환] [표준후보]</div>
+  <p><strong>왜 A급인가:</strong> 카메라 센서 위에서 RGB 색을 나누는 전통적인 방법은 컬러 필터 배열(베이어 필터)인데, 이 방식은 원리상 절반 넘는 빛을 걸러서 버립니다. 메타표면으로 색 자체를 픽셀별로 물리적으로 분리(라우팅)하면 이 손실을 줄일 수 있다는 아이디어는 예전부터 있었지만, 메타표면 구조를 최적화하려면 매번 무거운 전자기 시뮬레이션(FDTD)을 돌려야 해서 대규모 탐색이 어려웠습니다. 이 논문은 신경망이 FDTD 결과를 대신 예측하게 해서, 유전 알고리즘이 훨씬 많은 후보 구조를 빠르게 평가할 수 있게 만듭니다.</p>
+  <p><strong>핵심:</strong> 2µm×2µm 베이어 유닛 셀 안에 단일층 Si3N4 메타표면을 16×16 격자로 설계해, 시뮬레이션 기준 총 투과효율 95.4%와 RGB 각 채널 라우팅 효율 72.9%/68.6%/45.1%를 보고합니다. 같은 학습된 신경망을 다른 광다이오드 배치 레이아웃에도 재학습 없이 재사용할 수 있다는 점도 확인했습니다.</p>
+  <p><strong>주의:</strong> abstract 수치는 모두 시뮬레이션 기준이고 "16×16 격자, 125nm 피치로 실험 검증을 위해 이산화했다"는 언급은 있지만 실제 제작·측정 결과는 abstract에 없어 본문 확인이 필요합니다. 청색 채널 라우팅 효율(45.1%)이 적/녹 대비 낮고 크로스토크도 37~53%로 상당히 높아, 실사용 색 재현 정확도는 별도 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] Tomography/3D Imaging 33편 중 32편은 PET/CT 임상 사례 보고, 치과/구강악안면 영상, 지진파·해양음향 단층촬영처럼 계산 이미징 방법론과 무관합니다. Virtual Staining/Pathology 33편 중 30편 이상은 "sustainable"·"virtual"·"stain" 단어가 지속가능한 다이어트, 가상현실 교육, 치아 미백 연구 같은 무관한 문맥에서 우연히 매칭된 오탐입니다.</p>
+  <p>[Dataset risk] Lensless/Coded Imaging은 4편 모두 오탐(그래프 설명 프레임워크, 게임 world model, 초음파 캐비테이션 영상, NFT 블록체인)이라 이 버킷의 오늘 실 신호는 0편입니다. Reconstruction/Inverse Problems 20편 중 18편도 지식그래프·로봇공학·LLM 논문이 "reconstruction"·"regularization" 키워드로 우연히 걸렸습니다.</p>
+  <p>[Claim risk] Phase Imaging/Holography 버킷에는 "One-loop divergences for KK theories on AdS × S spaces"(이론물리학 AdS/CFT 논문), "Investigation of the acoustic signals generated by the OSIRIS-REx re-entry"(우주선 재진입 음향 신호) 등이 포함돼 있는데, 모두 "holography"라는 단어가 광학과 무관한 맥락에서 매칭된 오탐입니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] Remote Fourier Ptychography at a distance of 3.2km는 초록이 제공되지 않아 실제 재구성 품질(해상도, SNR)이나 데이터 수집 방식을 확인할 수 없습니다. 제목만으로 must-read 후보에 올렸으므로 본문 확인 전까지는 잠정적 평가입니다.</p>
+  <p>[Claim risk] 색 라우터 메타표면 논문의 95.4% 투과효율은 시뮬레이션 값이며, 청색 채널 라우팅 효율(45.1%)과 최대 53.4%에 달하는 크로스토크는 실사용 이미징 품질에 영향을 줄 수 있어 실측 검증이 필요합니다.</p>
+  <p>[Baseline risk] Diffusion model 이론 논문 5편은 모두 arXiv 프리프린트로 동료 심사 전이며, 실제 이미지 생성·복원 파이프라인에 적용했을 때 이론이 예측한 효과가 실증적으로 재현되는지는 아직 확인되지 않았습니다.</p>
+  <p>[Dataset risk] Towards Reliable AI-Based Histological Staining은 마우스 간 조직(H&E→Sirius Red) 한 가지 변환에 대한 벤치마크로, 다른 염색·조직·종 조합으로 일반화되는지는 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Meta-Optics/Diffractive 11편</strong> [JNL] — THz 변조기, 안테나, 레이더 흡수체, 열전달 소자 등 "metasurface" 키워드는 맞지만 이미징 응용이 없습니다.</li>
+    <li><strong>Tomography/3D Imaging 32편</strong> [JNL/LG] — PET/CT 임상 사례 보고, 치과·구강악안면 영상, 지진파·해양음향 단층촬영 등 계산 이미징 방법론과 무관합니다.</li>
+    <li><strong>Virtual Staining/Pathology 30편 이상</strong> [LG/CV/AI/JNL] — 지속가능성, 가상현실 교육, 치아 미백, 전자상거래 추천 등 "stain"·"virtual"·"sustainable" 키워드가 우연히 매칭된 일반 논문입니다.</li>
+    <li><strong>Reconstruction/Inverse Problems 18편</strong> [LG/CV/AI/SP] — 지식그래프 임베딩, 로봇공학, LLM 안전성 등 "reconstruction"·"regularization" 키워드가 우연히 매칭된 일반 ML 논문입니다.</li>
+    <li><strong>One-loop divergences for KK theories on AdS × S spaces</strong> [JNL] — 이론물리학(AdS/CFT) 논문으로 광학 홀로그래피와 무관합니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.610457" target=_blank>Remote Fourier Ptychography at a distance of 3.2km</a></strong> <span class=pill>JNL</span><br>
+  문제: 기존 FP는 대부분 현미경 스케일 실험실 환경에 국한 / 방법: 3.2km 원거리에서 합성 애퍼처 원리 적용(초록 미제공) / 의미: FP를 현미경 밖 원거리 이미징으로 확장하는 사례 / 주의: 초록 없어 정량 근거 확인 불가 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1121/10.0044972" target=_blank>Ultrasound synthetic aperture image reconstruction by phase cancellation in the Fourier domain</a></strong> <span class=pill>JNL</span><br>
+  문제: 프리핸드 평면 스캔의 3D 초음파 재구성에서 비간섭 스태킹의 한계 / 방법: 1D 공간 푸리에 영역에서 위상 상쇄로 간섭성 도입 / 의미: 합성 애퍼처 원리를 초음파 도메인에 적용, 광학 FP와는 응용 매체가 다름 / 우선순위: Skim
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.oe.65.8.083102" target=_blank>Cascade pupil aberration correction based on contrast variation in Fourier ptychographic microscopy</a></strong> <span class=pill>JNL</span><br>
+  문제: FPM의 광학 수차 보정이 느리게 수렴하고 국소해에 잘 빠짐 / 방법: Zernike 다항식 파라미터화 + 물리 기반 최적화를 결합한 계단식(cascade) 보정 알고리즘 / 의미: FPM 실용 배포의 병목인 수차 보정 속도·안정성 개선 / 우선순위: Read
+</div>
+
+<h3>Lensless/Coded Imaging — 관련 0편 (4편 모두 오탐)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1121/10.0045173" target=_blank>Quantitative cavitation imaging: Computational considerations and potential pitfalls</a></strong> <span class=pill>JNL</span><br>
+  문제: 캐비테이션 치료 정량화의 신뢰도 확보 / 방법: 수동 음향 매핑(PAM) 기반 정량 영상 / 의미: 광학 렌즈리스 이미징과는 원리가 다른 음향 영상 응용 / 우선순위: Skim
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.23835" target=_blank>Generating Intervention Hypotheses using Explainable Explanations on Graphs (G2I)</a></strong> <span class=pill>LG</span><br>
+  문제: 그래프 신경망 설명을 개입(intervention) 설계로 연결 / 방법: 2단계 그리디 프레임워크 / 의미: "coded" 키워드 우연 매칭, 이미징과 무관 / 우선순위: Skim
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.24680" target=_blank>Game2World Engine</a></strong> <span class=pill>CV</span><br>
+  문제: 게임플레이 영상을 world model 학습에 활용할 때 UI 편향 제거 / 방법: GameUI-Taxonomy + G2WEngine / 의미: 이미징과 무관, world model 데이터 정제 논문 / 우선순위: Skim
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s44443-026-01120-8" target=_blank>AIGI-NFT</a></strong> <span class=pill>JNL</span><br>
+  문제: AI 생성 이미지의 NFT 거래 신뢰성 확보 / 방법: 블록체인 + IPFS + 양자키분배 시뮬레이션 / 의미: 이미징과 무관한 블록체인 논문 / 우선순위: Skim
+</div>
+
+<h3>Phase Imaging/Holography — 관련 6편 (9편 중 3편은 물질파/입자물리/음향 오탐으로 제외)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71812" target=_blank>Three-Dimensional Vectorial Holography With Full Polarization Control via End-to-End On-Chip Metasurface</a></strong> <span class=pill>JNL</span><br>
+  문제: 메타표면 홀로그램의 편광 다중화 용량과 설계 효율이 제한적 / 방법: PB 위상과 detour 위상을 단일 원자 온칩 메타표면에 결합한 종단간 기울기 최적화 설계 / 의미: 36채널 편광 다중화 홀로그램으로 정보 인코딩 용량 확장 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.609604" target=_blank>Symmetric-anchored transport-of-intensity phase retrieval with adaptive gradient refinement</a></strong> <span class=pill>JNL</span><br>
+  문제: transport-of-intensity 위상 복원의 정확도·속도 트레이드오프 / 방법: 대칭 앵커 기반 적응형 그래디언트 정제 / 의미: 하드웨어 변경 없이 알고리즘만으로 위상 복원 개선 / 주의: 초록 미제공 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.micrna.2026.208889" target=_blank>Compact tri-layer reconfigurable terahertz metasurface for high-efficiency multichannel holographic imaging</a></strong> <span class=pill>JNL</span><br>
+  문제: THz 대역 다채널 홀로그램 이미징의 편광 크로스토크 / 방법: 3층 재구성 가능 메타표면, 완전 편광 디커플링 / 의미: THz 홀로그램 이미징의 채널 분리도 개선 / 주의: 초록 미제공 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optcom.2026.133703" target=_blank>Wavefront reconstruction and absorption modulation of structured light in nonlinear optics</a></strong> <span class=pill>JNL</span><br>
+  문제: 비선형 광학 매질에서 구조광의 파면 복원 / 방법: 파면 복원 + 흡수 변조 결합 / 의미: 구조광 이미징의 비선형 매질 확장 사례 / 주의: 초록 미제공 / 우선순위: Skim
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116277" target=_blank>Underwater flow field reconstruction of schlieren differential interferometry</a></strong> <span class=pill>JNL</span><br>
+  문제: 수중 유동장의 비접촉 시각화·재구성 / 방법: 슐리렌 차분 간섭계 + 다중모달 물리 사전 + 희소 제약 동화 / 의미: 간섭계 기반 유동 재구성에 물리 사전을 결합한 사례 / 주의: 초록 미제공 / 우선순위: Skim
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1121/10.0045317" target=_blank>Shear wave holography construction of a simplified source condition for focused shear wave beams</a></strong> <span class=pill>JNL</span><br>
+  문제: 집속 전단파 빔의 소스 조건 모델링 / 방법: 단순화된 소스 조건의 해석적 모델 + 실험 검증 / 의미: 의료 초음파 전단파 이미징의 물리 모델 정교화, 광학 홀로그래피와는 원리가 다른 음향 응용 / 우선순위: Skim
+</div>
+
+<p class=roi-item style="border-left-color:#e5e7eb;color:#777"><em>같은 버킷 오탐 3편(키워드 우연 매칭, 계산광학과 무관): <a href="https://arxiv.org/abs/2608.24795" target=_blank>LION: A Clifford Neural Paradigm for Multimodal-Attributed Graph Learning</a> [LG, "holography"와 무관한 그래프 ML], <a href="https://doi.org/10.1007/jhep08(2026)181" target=_blank>One-loop divergences for KK theories on AdS × S spaces</a> [JNL, 이론물리 AdS/CFT], <a href="https://doi.org/10.1121/10.0045621" target=_blank>Investigation of the acoustic signals generated by the OSIRIS-REx re-entry</a> [JNL, 대기 음향학]</em></p>
+
+<h3>Meta-Optics/Diffractive — 관련 2편 (13편 중 11편은 통신·RF·열전달 소자로 제외)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/1361-6633/ae9e8c" target=_blank>Metasurface color routers inverse-designed with a deep-learning accelerated genetic algorithm for high efficiency imaging</a></strong> <span class=pill>JNL</span><br>
+  문제: 메타표면 나노포토닉 구조의 대규모 역설계가 전자기 시뮬레이션 비용 때문에 어려움 / 방법: FDTD 필드 분포를 신경망으로 예측해 유전 알고리즘 탐색 가속 / 방법: 단일층 Si3N4 메타표면으로 RGB 색 라우팅 / 의미: 재사용 가능한 나노포토닉 역설계 프레임워크, 총 투과효율 95.4% / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.diamond.2026.114100" target=_blank>Single crystalline diamond metasurface with large elasticity and tunable structural colors</a></strong> <span class=pill>JNL</span><br>
+  문제: 메타표면 소재의 기계적 안정성과 구조색 튜닝을 동시에 확보 / 방법: 단결정 다이아몬드 메타표면 / 의미: 내구성 있는 이미징 필터·디스플레이 소자 후보 / 주의: 초록 미제공 / 우선순위: Read
+</div>
+
+<p class=roi-item style="border-left-color:#e5e7eb;color:#777"><em>같은 버킷 Skim 11편(통신·RF·센싱·열전달 소자, 이미징 응용 없음): <a href="https://doi.org/10.1364/ome.607314" target=_blank>Optically Controlled Metasurface Antennas</a> · <a href="https://doi.org/10.1088/2058-9565/ae9e6c" target=_blank>High-fidelity single-layer gradient metasurface for optical quantum controlled-Y gate</a> · <a href="https://doi.org/10.3390/photonics13090811" target=_blank>Switchable Triple-Mode Terahertz Polarization Control (Graphene-VO2)</a> · <a href="https://doi.org/10.1039/d6cp02384c" target=_blank>Dual-mode ultrabroadband THz absorbing metasurface</a> · <a href="https://doi.org/10.3390/ma19173603" target=_blank>Low-Scattering Dual-Band Metasurface Array Antenna</a> · <a href="https://doi.org/10.1109/tmtt.2026.3723889" target=_blank>ITO-PET Optically Transparent Wideband Metasurface Absorber</a> · <a href="https://doi.org/10.1007/s42835-026-02915-5" target=_blank>Robust Phase Synthesis of X-Band Transmissive Metasurface Unit Cells</a> · <a href="https://doi.org/10.1007/s11468-026-03443-8" target=_blank>Q-BIC THz Metasurface for EGFR Detection</a> · <a href="https://doi.org/10.1364/ome.607226" target=_blank>Composite Conformal Non-Convex Metasurface (Additive Manufacturing)</a> · <a href="https://doi.org/10.1038/s41598-026-67530-w" target=_blank>Retrodiction of single emitter photon emission rates</a> · <a href="https://doi.org/10.1002/adom.71650" target=_blank>Tunable Asymmetric Thermal Transport via Phonon Polaritons</a> [모두 JNL]</em></p>
+
+<h3>Light-Field/Novel Sensors — 관련 1편 (4편 중 3편은 전력망 예측·연합학습 오탐으로 제외)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.24223" target=_blank>Event-Based Motion Estimation via Oriented Distance Fields</a></strong> <span class=pill>CV</span><br>
+  문제: 기존 이벤트 기반 모션 추정이 반복 최적화나 가설 비교로 센서의 저지연 장점을 상쇄 / 방법: 미리 계산한 이벤트 거리장(distance field) 위에서 단일 평균화 스텝 + 적응형 이벤트 수 선택 / 의미: sub-pixel 정확도를 최저 지연으로 달성, 실시간 디블러링·안구/글린트 추적에 재사용 / 우선순위: Read
+</div>
+<p class=roi-item style="border-left-color:#e5e7eb;color:#777"><em>같은 버킷 오탐 3편: <a href="https://arxiv.org/abs/2608.23987" target=_blank>Low-Latency Activation-Regularized Sparse Neural Operators for Virtual Sensing</a> [LG, 디지털 트윈 가상 센싱], <a href="https://arxiv.org/abs/2608.24665" target=_blank>Data Leakage Inflates Generalizability of Power Outage Prediction Models</a> [LG, 전력망 예측], <a href="https://arxiv.org/abs/2608.24073" target=_blank>ORBITALIF: Spiking Federated Learning for Onboard Cloud Removal</a> [CV, 위성 구름 제거 연합학습]</em></p>
+
+<h3>Tomography/3D Imaging — 관련 1편 (33편 중 32편은 임상 사례 보고·비계산이미징 단층촬영으로 제외)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.24049" target=_blank>Physics-Integrated Operator Learning via Gaussian Splatting Representations</a></strong> <span class=pill>LG</span><br>
+  문제: 연산자 학습(operator learning)에 물리 제약을 결합하는 표현 방식 부재 / 방법: Gaussian Splatting 표현에 물리 통합 연산자 학습을 결합 / 의미: 3D 재구성 표현과 물리 기반 학습을 잇는 시도 / 우선순위: Read
+</div>
+
+<p class=roi-item style="border-left-color:#e5e7eb;color:#777"><em>나머지 32편은 PET/CT·MRI 임상 사례 보고, 치과·구강악안면 영상, 지진파·해양음향·입자물리 단층촬영 등 계산 이미징 방법론과 무관합니다 (모두 Skim): <a href="https://doi.org/10.1038/s44303-026-00191-6" target=_blank>Spatial sampling of hemispherical arrays for three-dimensional photoacoustic computed tomography</a> [JNL] · <a href="https://doi.org/10.66590/ijcmr2026030107" target=_blank>PET Imaging in Alzheimer Disease: Diagnostic and Prognostic Applications</a> [JNL] · <a href="https://doi.org/10.1097/mcp.0000000000001301" target=_blank>The promise of quantitative approaches to computed tomography imaging in pulmonary sarcoidosis</a> [JNL] · <a href="https://doi.org/10.1002/viw2.70190" target=_blank>Quantitative collagen and proteoglycan imaging reveal organic layering, gradients and regional texture in young mature dental cementum</a> [JNL] · <a href="https://doi.org/10.1038/s41597-026-08154-7" target=_blank>Pixel-Level Segmented Longitudinal Optical Coherence Tomography Data of Macular Hole Surgery Outcomes</a> [JNL] · <a href="https://doi.org/10.23919/jcc.fa.2024-0409.202605" target=_blank>Compressive sensing aided deep learning based congested link detection in network tomography</a> [JNL] · <a href="https://doi.org/10.1121/10.0045162" target=_blank>Geoacoustic tomography using modal dispersion data</a> [JNL] · <a href="https://doi.org/10.1016/j.nuclcard.2026.102799" target=_blank>Beyond myocardial perfusion: Positron emission tomography–derived right ventricular strain under scrutiny</a> [JNL] · <a href="https://doi.org/10.1007/jhep08(2026)167" target=_blank>Entanglement enabled tomography of flux tubes in (2+1)D Yang-Mills theory</a> [JNL] · <a href="https://doi.org/10.1016/j.nuclcard.2026.102825" target=_blank>Grey zone, real risk: Making full use of positron emission tomography myocardial perfusion imaging</a> [JNL] · <a href="https://doi.org/10.1121/10.0044963" target=_blank>Numerical investigation of a frequency-domain model-based method for 3-D transcranial photoacoustic computed tomography</a> [JNL] · <a href="https://doi.org/10.1121/10.0045298" target=_blank>Acoustic tomography in a stratified lake with application of the matched nonreciprocity method</a> [JNL] · <a href="https://doi.org/10.1002/cjce.70559" target=_blank>A physics‐constrained neural electrical resistance tomography framework for computationally efficient monitoring of multiphase separation systems</a> [JNL] · <a href="https://doi.org/10.5114/jcb.2026.164179" target=_blank>Dosimetric impact of computed tomography slice thickness-induced applicator reconstruction uncertainties in three-dimensional brachytherapy for cervical cancer</a> [JNL] · <a href="https://doi.org/10.1016/j.nuclcard.2026.102826" target=_blank>We cannot just go with the flow: Defining normal (13)N-ammonia positron emission tomography metrics in heart transplant recipients</a> [JNL] · <a href="https://doi.org/10.7812/tpp/26.049" target=_blank>Computed Tomography Use and Indications in Children With and Without Chronic Health Conditions</a> [JNL] · <a href="https://doi.org/10.1007/s00261-026-05760-2" target=_blank>Aortoiliac calcification assessment via computed tomography in kidney transplantation: correlation with graft outcomes</a> [JNL] · <a href="https://doi.org/10.1016/j.nuclcard.2026.102823" target=_blank>Transient ischemic dilation in the 18F-Flurpiridaz positron emission tomography myocardial perfusion imaging era: Time to adopt radiotracer and stressor specific thresholds</a> [JNL] · <a href="https://doi.org/10.1186/s40902-026-00525-9" target=_blank>Three-dimensional computed tomography evaluation of early mandibular reconstruction after costochondral graft in children With unilateral Pruzansky–Kaban type IIB/III hemifacial microsomia</a> [JNL] · <a href="https://doi.org/10.4103/aihb.aihb_20_26" target=_blank>Three-dimensional Cone-beam Computed Tomography Analysis of Temporomandibular Joint Morphology in Complete Denture versus Implant-supported Prosthesis Patients</a> [JNL] · <a href="https://doi.org/10.5603/cj.111443" target=_blank>Successful percutaneous closure of coronary-to-pulmonary artery fistula using detachable coils, confirmed by coronary computed tomography angiography</a> [JNL] · <a href="https://doi.org/10.4328/acam.22970" target=_blank>Morphometric analysis, prevalence, and positional relationships of the accessory mental foramen using multi-detector computed tomography</a> [JNL] · <a href="https://doi.org/10.1121/10.0045451" target=_blank>Quantitative lung ultrasound spectroscopy versus computed tomography: A comparative study to differentiate pneumonia and cardiogenic pulmonary edema</a> [JNL] · <a href="https://doi.org/10.47811/217" target=_blank>A Diagnostic Accuracy of Multidetector Computed Tomography in Distinguishing Benign and Malignant Focal Liver Lesions at the National Referral Hospital, Bhutan: A Cross-sectional Study.</a> [JNL] · <a href="https://doi.org/10.1002/acm2.70760" target=_blank>Task‐based evaluation of axial and multiplanar reconstructions in computed tomography: A volumetric analysis of spatial resolution, noise, and detectability</a> [JNL] · <a href="https://doi.org/10.1145/3839104" target=_blank>Erratum: Tensor Decomposition-Based Four-dimensional Background-Oriented Schlieren Tomography for High-Speed, High-Fidelity Flow Field Reconstruction</a> [JNL] · <a href="https://doi.org/10.1002/14651858.cd016234" target=_blank>Whole-body magnetic resonance imaging (MRI) or computed tomography (CT) screening for reducing morbidity and mortality from multiple diseases in asymptomatic adults</a> [JNL] · <a href="https://doi.org/10.1097/cce.0000000000001467" target=_blank>18F-Fluorodeoxyglucose Positron Emission Tomography Combined With CT in Unresolved ICU Infections: Diagnostic Yield and Clinical Consequences in a Retrospective Cohort</a> [JNL] · <a href="https://doi.org/10.1038/s41563-026-02727-y" target=_blank>Crystal nucleation and growth in high-entropy alloys revealed by atomic electron tomography</a> [JNL] · <a href="https://doi.org/10.4103/jisppd.jisppd_127_26" target=_blank>Age influence in the location of the mental and mandibular foramen in children: A cone-beam computed tomography-based study</a> [JNL] · <a href="https://doi.org/10.1097/cm9.0000000000004267" target=_blank>Dynamic changes of cycle threshold values and chest computed tomography quantification in a prospective hemodialysis cohort infected with SARS-CoV-2</a> [JNL] · <a href="https://doi.org/10.1007/s12583-025-0300-8" target=_blank>Upper Mantle Structure beneath the Mid-Ocean Ridges in Indian Ocean: Insights from the Seismic Tomography Models</a> [JNL]</em></p>
+
+<h3>Virtual Staining/Pathology — 관련 3편 (33편 중 30편 이상은 키워드 오탐으로 제외)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.24626" target=_blank>Towards Reliable AI-Based Histological Staining: A Systematic Study of Scaling and Uncertainty in Unpaired Generative Models</a></strong> <span class=pill>CV</span><br>
+  문제: 비지도 가상 염색(H&E→Sirius Red)의 체계적 벤치마크와 불확실성 정량화 부재 / 방법: GAN·diffusion 기반 6개 아키텍처를 54개 스케일링 설정에서 지각·분포·과제축으로 평가하고 딥 앙상블로 인식적 불확실성 비교 / 의미: 그럴듯해 보이는 가상 염색 결과가 실제 조직 구조를 충실히 재현하는지 처음으로 체계적으로 검증, 데이터·코드 공개 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.21769/bioprotoc.5817" target=_blank>Digital Quantification of Membrane DAB Immunohistochemical Staining in FFPE Cervical Cancer Tissues Using an Open-Source CellProfiler Pipeline</a></strong> <span class=pill>JNL</span><br>
+  문제: 막(membrane) DAB 면역조직화학 염색의 정량화가 수작업에 의존 / 방법: 오픈소스 CellProfiler 파이프라인 / 의미: 재현 가능한 오픈소스 정량 병리 파이프라인 / 주의: 초록 미제공 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1051/bioconf/202625001007" target=_blank>Enhancement of Near-Infrared Bioluminescence Imaging Performance via Luciferase Mutant Engineering</a></strong> <span class=pill>JNL</span><br>
+  문제: 근적외선 생물발광 이미징의 신호 강도 한계 / 방법: 루시퍼레이즈 돌연변이 엔지니어링 / 의미: label-free에 가까운 생물발광 이미징 성능 개선(생화학 엔지니어링 중심) / 주의: 초록 미제공 / 우선순위: Skim
+</div>
+
+<p class=roi-item style="border-left-color:#e5e7eb;color:#777"><em>나머지 30편은 "sustainable"·"virtual"·"stain" 단어가 지속가능성, 가상현실 교육, 치아 미백, 전자상거래 등 무관한 문맥에서 우연히 매칭된 오탐입니다 (모두 Skim): <a href="https://arxiv.org/abs/2608.24688" target=_blank>A Multimodal Foundation Model for Longitudinal Patient Representation and Scalable Insight Generation in Oncology</a> [LG] · <a href="https://arxiv.org/abs/2608.22368" target=_blank>DiD It in 87 Minutes: A Label-Free Softmax-to-Linear Adaptation of Vision Transformers for Object Detection</a> [CV] · <a href="https://arxiv.org/abs/2608.23574" target=_blank>InfoDPP-PAC: Principled Patch Selection for Whole Slide Image Analysis</a> [LG] · <a href="https://arxiv.org/abs/2608.23841" target=_blank>Pipeline-Native Transformers: Co-Designing Model Architecture and CPU Inference for Bandwidth-Efficient Autoregressive Decode</a> [LG] · <a href="https://arxiv.org/abs/2608.23965" target=_blank>RAGSentinel: Certifiable Geometric Consensus for Robust Retrieval-Augmented Generation</a> [LG] · <a href="https://arxiv.org/abs/2608.24043" target=_blank>ConsensusTAS: Self-Supervised Temporal Action Segmentation for Long-Horizon Construction Videos</a> [CV] · <a href="https://arxiv.org/abs/2608.24130" target=_blank>Syn2RealTrack: Bridging the Gap Between Synthetic and Real-World Datasets for Online Multi-View Multi-Target Tracking</a> [CV] · <a href="https://arxiv.org/abs/2608.24877" target=_blank>From Seeing to Acting: Smart Glasses as First-Person Intelligence Platforms</a> [CV] · <a href="https://arxiv.org/abs/2608.24274" target=_blank>Eating for a Sustainable Planet: Personalized Sustainable Diet Recommendation via Constraint-Aware Decision-Making Modeling</a> [AI] · <a href="https://arxiv.org/abs/2608.23952" target=_blank>STAIN-FL: Stealthy Targeted Attack Injection with Contextual Triggers in Federated Learning</a> [AI] · <a href="https://arxiv.org/abs/2608.23575" target=_blank>Pattern-Derived Visual Swarm Games: Multi-Scale Drone-Vision States for Interception and Sustainability Audits</a> [IV] · <a href="https://doi.org/10.55041/ijcope.v2i8.214" target=_blank>Digital Twin–Driven Supply Chain Resilience Through Fourier–Kontorovich–Lebedev Spectral Analysis</a> [JNL] · <a href="https://doi.org/10.1504/ijcee.2026.155824" target=_blank>Machine learning approach to forecasting global energy consumption and sustainability</a> [JNL] · <a href="https://doi.org/10.1177/23733799261478131" target=_blank>SPH Success: A Program to Identify and Address Quantitative Preparedness in MPH Students</a> [JNL] · <a href="https://doi.org/10.23880/oajda-16000168" target=_blank>Evaluating AI-Generated Arabic Fiction: A Reproducible Matrix for Narrative Coherence, Character Continuity, and Ethical Narrative Brakes in The Temple</a> [JNL] · <a href="https://doi.org/10.1016/j.cacaie.2026.100200" target=_blank>Specification-guided generative augmentation and mixture-of-experts learning for stainless steel beam parametric design</a> [JNL] · <a href="https://doi.org/10.5194/essd-18-6065-2026" target=_blank>NortheastChinaMaizeYield10m: a 10 m resolution maize yield dataset for Northeast China (2019–2024) generated via a mechanistically interpretable, field-label-free framework</a> [JNL] · <a href="https://doi.org/10.30534/ijacst/2026/011582026" target=_blank>2320 - 2602</a> [JNL] · <a href="https://doi.org/10.1016/j.optlastec.2026.116235" target=_blank>Low-power laser-CMT + P hybrid additive manufacturing of 316L stainless steel: spatial multi-angle heat source coupling and forming mechanism</a> [JNL] · <a href="https://doi.org/10.1002/smll.75420" target=_blank>Metal Halide Perovskite‐Based Field‐Effect Transistors</a> [JNL] · <a href="https://doi.org/10.4236/jssm.2026.194019" target=_blank>Sustainable Electrification of Tricycles (Keke NAPEP) in Nigeria (Engineering Design, Conversion, and Field Evaluation of Electric Drivetrain Systems): A Field-Validated Conversion Architecture for Nigeria’s Urban Paratransit Fleet</a> [JNL] · <a href="https://doi.org/10.15415/jtmge/2026.171005" target=_blank>Navigating the Sustainable Metaverse: Leveraging HRIS for Green and Responsible Innovation in India’s Virtual Work Environments</a> [JNL] · <a href="https://doi.org/10.1016/j.jfscie.2026.100077" target=_blank>Experimental approaches to tooth staining and standardization for in vitro bleaching research</a> [JNL] · <a href="https://doi.org/10.18282/po4228" target=_blank>Application of 3D visualization combined with laparoscopic ultrasonography to guide indocyanine green fluorescence staining through portal vein puncture in anatomic segmentectomy</a> [JNL] · <a href="https://doi.org/10.12688/f1000research.187756.1" target=_blank>Understanding University Students’ Acceptance of Virtual Reality for Recycling Education: The Roles of Immersion and Interactivity</a> [JNL] · <a href="https://doi.org/10.70725/238612krzjsv" target=_blank>Seeing Through the Screen: Recognizing and Addressing Ability-Based Labeling in K-8 Virtual Classrooms</a> [JNL] · <a href="https://doi.org/10.30564/jees.v8i8.13434" target=_blank>From Virtual Labs to Real Ecosystems: A Review of Digital Experimental Engineering in Environmental Research</a> [JNL] · <a href="https://doi.org/10.53850/joltida.1831792" target=_blank>Real Insights into Virtual Minds: A Comparison of Private and Public School Teachers’ Perceptions of ChatGPT</a> [JNL] · <a href="https://doi.org/10.55766/sjss286492" target=_blank>Bridging the Seasonal Gap: Virtual Tours, Sense of Presence, and Visit Intention in a Dam-Dependent Destination</a> [JNL] · <a href="https://doi.org/10.1504/ijnvo.2026.155857" target=_blank>Innovative development strategy of enterprise digital marketing based on Internet of Things under sustainable development</a> [JNL]</em></p>
+
+<h3>Reconstruction/Inverse Problems — 관련 2편 (20편 중 18편은 지식그래프·로봇공학·LLM 논문으로 제외)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1137/25m1789305" target=_blank>A Mini-batch Quasi-Newton Proximal Method for Constrained Total Variation Nonlinear Image Reconstruction</a></strong> <span class=pill>JNL</span><br>
+  문제: TV 정칙화 비선형 영상 재구성의 계산 비용 / 방법: 미니배치 준뉴턴 근접법 / 의미: 대규모 비선형 역문제 솔버의 수렴 속도 개선 / 주의: 초록 미제공 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1121/10.0045183" target=_blank>Sparsity-based ultrasonic guided-wave imaging of structural defects</a></strong> <span class=pill>JNL</span><br>
+  문제: 구조물 결함의 초음파 유도파 영상화 정확도 / 방법: 희소성 기반 정칙화 재구성 / 의미: 압축센싱 원리를 비파괴 검사에 적용한 사례 / 주의: 초록 미제공 / 우선순위: Skim
+</div>
+
+<p class=roi-item style="border-left-color:#e5e7eb;color:#777"><em>나머지 18편은 지식그래프, 로봇공학, LLM 안전성, WiFi 센싱 등 "reconstruction"·"regularization" 키워드가 우연히 매칭된 일반 ML 논문입니다 (모두 Skim): <a href="https://arxiv.org/abs/2608.23849" target=_blank>FlowNeg: GFlowNet-Guided Diverse Hard Negative Sampling for Knowledge Graph Embedding</a> [LG] · <a href="https://arxiv.org/abs/2608.24126" target=_blank>A mesh-free multiresolution deep energy method with phase-field modeling of brittle fracture</a> [LG] · <a href="https://arxiv.org/abs/2608.24823" target=_blank>BioKERN: Biological Kernel Regularization for Histology-to-Transcriptomics Neighborhood Retrieval</a> [LG] · <a href="https://arxiv.org/abs/2608.24858" target=_blank>Bellman Calibration for Marginalized Importance Weighting in Offline Reinforcement Learning</a> [LG] · <a href="https://arxiv.org/abs/2608.07265" target=_blank>Finite-Sample Metric Non-Collapse for Geometrically Supervised Latent World Models in Control</a> [LG] · <a href="https://arxiv.org/abs/2608.23959" target=_blank>NeuronGuard: Robust LLM Safety Alignment via Ablation-Aware Safety Signal Redistribution</a> [LG] · <a href="https://arxiv.org/abs/2608.24063" target=_blank>VisCache: Visual KV Cache Pruning for Efficient Vision Large Language Model Inference</a> [CV] · <a href="https://arxiv.org/abs/2608.24121" target=_blank>Graph-Supervised Hierarchical Clinical Alignment for Radiology Report Generation with Large Language Models</a> [CV] · <a href="https://arxiv.org/abs/2608.24175" target=_blank>Amortized Set Prediction for Inverse IFS Reconstruction from Density Maps</a> [CV] · <a href="https://arxiv.org/abs/2608.24422" target=_blank>ZODIAC: Zero-shot Octree-based Diffusion for Anatomical Completion</a> [CV] · <a href="https://arxiv.org/abs/2608.24544" target=_blank>KLTNet: Learning Sparse Feature Tracking for Robust and Accurate Monocular Visual-Inertial Odometry</a> [CV] · <a href="https://arxiv.org/abs/2608.24228" target=_blank>Evaluating Multiple LLM Generations with Validated Task Coverage</a> [AI] · <a href="https://arxiv.org/abs/2608.24273" target=_blank>Matched Excess-Outranker Regularization for Candidate-Set Interference in Continual Knowledge Graph Embedding</a> [AI] · <a href="https://arxiv.org/abs/2608.24039" target=_blank>Design-to-Plan: A Large Language Model-Based Multi-Agent Framework for Manufacturing Process Planning from 3D CAD Models and 2D Engineering Drawings</a> [AI] · <a href="https://arxiv.org/abs/2608.23995" target=_blank>Physics-Informed WiFi Sensing for Robust 3D Human Pose Estimation in Mobile and Cross-Environment Settings</a> [SP] · <a href="https://arxiv.org/abs/2608.24404" target=_blank>EM-KalmanNet: Learned Expectation-Maximization for Adaptive Tracking in Partially Known, Block-Wise Time-Varying State-Space Models</a> [SP] · <a href="https://doi.org/10.1117/1.jei.35.4.041401" target=_blank>Special Section Guest Editorial: Computational Imaging and Intelligent Image Processing</a> [JNL] · <a href="https://doi.org/10.1007/s10444-026-10344-1" target=_blank>High order regularization of nearly singular surface integrals</a> [JNL]</em></p>
+
+<h3>Deep Learning Methods — 이미징 관련 대표 8편 (106편 중 계산 이미징에 직접 참조 가능한 논문 위주)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.23798" target=_blank>A Theory of Speciation in Generative Diffusion Models on Compact Riemannian Manifolds</a></strong> <span class=pill>LG</span><br>
+  문제: 확산모델의 생성 궤적이 특정 데이터로 갈라지는 분기 현상의 기존 이론이 대칭 분기·고차원 가정에 제한됨 / 방법: 다양체 위 확률분포 임계점의 분기 이론으로 일반화 / 의미: 확산 사전이 언제 특정 해로 수렴하는지 예측할 이론적 근거 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.23916" target=_blank>The Loss Floor of Denoising Score Matching: Fisher Geometry from Schrödinger Bridges</a></strong> <span class=pill>LG</span><br>
+  문제: 학습에 쓰는 conditional score와 생성에 필요한 marginal score 사이 차이가 정량화되지 않음 / 방법: 이 차이를 조건부 종점 분포의 Fisher-Rao 정보량으로 정확히 계산 / 의미: 확산 학습 손실의 이론적 하한과 노이즈 스케줄 설계 근거 제공 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.23938" target=_blank>Generalization, memorization, and overfitting for diffusion models trained in the lazy high-dimensional regime</a></strong> <span class=pill>LG</span><br>
+  문제: 확산모델이 훈련 데이터를 외우는 것과 새 샘플을 생성하는 것 사이 경계가 불명확 / 방법: 과매개변수화 신경망의 benign overfitting 이론을 확산모델로 확장 / 의미: 확산 사전의 일반화 vs 암기 트레이드오프를 이론적으로 설명 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.24768" target=_blank>Score-Based Ideal Observer Approximation via Denoising Score Matching for Signal-Known-Exactly Detection Tasks</a></strong> <span class=pill>IV</span><br>
+  문제: 이진 검출 과제의 이론적 성능 상한(Bayesian Ideal Observer) 계산이 각 과제마다 재학습이 필요 / 방법: denoising score matching으로 사후 샘플링 근사, 과제 무관하게 재사용 / 의미: 복원·검출 알고리즘의 이론적 상한을 비교할 표준 도구 후보 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.24364" target=_blank>B-MIM: Biased Masked Image Modeling for Generalizable Segmentation of Fine-Grained Anatomical Structures</a></strong> <span class=pill>CV</span><br>
+  문제: masked image modeling 기반 CT 인코더가 큰 구조 위주로 학습돼 혈관 등 미세 구조에 둔감 / 방법: iBOT 목표를 변형해 전역 정렬을 의도적으로 약화, 국소 패치 복원에 편향 / 의미: 자기지도학습의 편향을 역이용해 미세 구조 민감도를 높이는 설계 원리 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.23799" target=_blank>Restoring Without Forgetting: Continual Learning Across Image Degradations</a></strong> <span class=pill>CV</span><br>
+  문제: all-in-one 복원 모델이 모든 열화 유형에 동시 접근 가능하다는 비현실적 가정에 의존 / 방법: 열화 유형이 순차적으로 등장하는 continual learning 설정으로 재구성 / 의미: 현장 배포 복원 시스템의 실제 조건에 가까운 평가·학습 프레임 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.24715" target=_blank>Deep Learning Super Resolution for Satellite Cloud Mask Downscaling</a></strong> <span class=pill>CV</span><br>
+  문제: 정지궤도 위성의 공간-시간 해상도 트레이드오프로 연속 고해상도 구름 관측이 어려움 / 방법: SEVIRI 구름 마스크 다운스케일링용 딥러닝 초해상도 2종 + 크로스센서 데이터셋 / 의미: 위성 원격탐사에서 초해상도 문제의 반복 재등장 / 우선순위: Skim
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.23664" target=_blank>Scaling Reinforcement Learning for Diffusion Models via Velocity Matching</a></strong> <span class=pill>CV</span><br>
+  문제: 확산모델을 보상 신호로 미세조정할 때 기존 방법이 LLM의 policy gradient 기법을 그대로 가져와 확산모델에 맞지 않는 계산 복잡도를 유발 / 방법: velocity matching으로 우도 계산 없이 보상 정렬 / 의미: 확산모델 RL 미세조정의 확장성 개선 / 우선순위: Skim
+</div>
+
+<p class=roi-item style="border-left-color:#e5e7eb;color:#777"><em>나머지 98편(106편 중 8편은 위에서 다룸)은 계산 이미징과 직접 관련이 없는 일반 ML/LLM/로보틱스/시계열/EEG/통신 논문이거나("diffusion", "reconstruction", "denoising", "super-resolution" 등 랩 관심 키워드가 이미징과 무관한 맥락에서 매칭), 의료 영상 응용이라도 계산광학 방법론과는 거리가 있는 임상 분류·진단 논문입니다 (모두 Skim, 개별 상세 리뷰 생략): <a href="https://arxiv.org/abs/2608.23571" target=_blank>Equivariant Cellular Sheaves for Molecular Electronic Structure: Bridging Sheaf Cohomology and E(3)-Equivariant Hamiltonian Learning</a> [LG] · <a href="https://arxiv.org/abs/2608.23573" target=_blank>Data Predictability Shapes Weibull Weight-Scale Growth in Transformer Training</a> [LG] · <a href="https://arxiv.org/abs/2608.23696" target=_blank>Renormalization Group Flow Matching for Scalable Local Generative Modeling</a> [LG] · <a href="https://arxiv.org/abs/2608.23857" target=_blank>UHI-Bench: Benchmarking Dual-Source Urban Heat Island Modeling Across Cities in Diverse Climate Regimes</a> [LG] · <a href="https://arxiv.org/abs/2608.23877" target=_blank>Every Layer Counts: An Exponential $L_2$ Depth Hierarchy for ReLU Networks</a> [LG] · <a href="https://arxiv.org/abs/2608.23917" target=_blank>GATNextHop: A GAT for Shortest Path Routing with Cross-Topology Generalization</a> [LG] · <a href="https://arxiv.org/abs/2608.23936" target=_blank>MnemoDyn: Learning Resting State Dynamics from 40K FMRI sequences</a> [LG] · <a href="https://arxiv.org/abs/2608.24007" target=_blank>Revenge of Monosemanticity: Specialized Neurons Improve Data Efficiency in MLPs</a> [LG] · <a href="https://arxiv.org/abs/2608.24033" target=_blank>ChorusTIC: Training-Free Multivariate Time Series Classification via Chorus In-Context Learning</a> [LG] · <a href="https://arxiv.org/abs/2608.24210" target=_blank>A Data-dependent Early Stopping Rule using Rademacher Complexity with L1-norm</a> [LG] · <a href="https://arxiv.org/abs/2608.24303" target=_blank>Causal Analysis for Time Series Foundation Models</a> [LG] · <a href="https://arxiv.org/abs/2608.24381" target=_blank>When Does Self-Supervised Pretraining Help Tabular Models? A Study of Label Scarcity and Missing Data</a> [LG] · <a href="https://arxiv.org/abs/2608.24386" target=_blank>Equivariant Covariance Tensors: Guaranteed SPD Uncertainty for Tensor-Valued Geometric Learning</a> [LG] · <a href="https://arxiv.org/abs/2608.24518" target=_blank>It depends: Incorporating correlations for joint aleatoric and epistemic uncertainties of high-dimensional output spaces</a> [LG] · <a href="https://arxiv.org/abs/2608.24561" target=_blank>SeisMamba: Low-Latency Single-Station Seismic Magnitude Estimation for Spatially Distributed Earthquake Early Warning</a> [LG] · <a href="https://arxiv.org/abs/2608.24568" target=_blank>Across the Loss Landscape with Progressive Growth</a> [LG] · <a href="https://arxiv.org/abs/2608.24593" target=_blank>Delayed Optimizer-State Transport Shapes Short-Horizon Training Decisions</a> [LG] · <a href="https://arxiv.org/abs/2608.24597" target=_blank>Taming foundation model with invariance-oriented pre-training for broad-spectrum EEG analysis across signal-level, brain-state, and brain-health tasks</a> [LG] · <a href="https://arxiv.org/abs/2608.24697" target=_blank>Single State Update Predictive Coding training for Time Series Forecasting and Anomaly Detection</a> [LG] · <a href="https://arxiv.org/abs/2608.24700" target=_blank>Parameter-Level Attribution of Symmetry in Trained Networks Though Parameter-Wise Functional Sensitivity</a> [LG] · <a href="https://arxiv.org/abs/2608.24727" target=_blank>Parameter-Efficient Self-Supervised Adaptation for EEG-FM under Fixed Computational Budgets</a> [LG] · <a href="https://arxiv.org/abs/2608.24743" target=_blank>$(\text{DNN})^2$: Doubly Non-Negative Relaxations for Deep Neural Networks</a> [LG] · <a href="https://arxiv.org/abs/2608.24812" target=_blank>MDTE: Minority-Aware Diffusion over Temporal Edge Events for Imbalanced Node Classification</a> [LG] · <a href="https://arxiv.org/abs/2608.23582" target=_blank>Transformer Accelerator (TFA): A Macro-Op INT8 Hardware Chip for Transformer Inference and Machine Translation</a> [LG] · <a href="https://arxiv.org/abs/2608.23750" target=_blank>S-matrix informed neural networks for amplitude analysis</a> [LG] · <a href="https://arxiv.org/abs/2608.23836" target=_blank>Predicting Radiologist Expertise from 3D Gaze Patterns During CT Interpretation</a> [CV] · <a href="https://arxiv.org/abs/2608.23838" target=_blank>Infant Care Video Dataset for Classification of Interventions Using Transformers</a> [CV] · <a href="https://arxiv.org/abs/2608.23874" target=_blank>Differential Learning for Robust Prediction of Thermal Stability with Application to Energetic Materials</a> [LG] · <a href="https://arxiv.org/abs/2608.24079" target=_blank>RetrievalFormer: A Dual-Encoder Transformer for Efficient Approximate Nearest Neighbor Retrieval and Cold-Item Recommendation</a> [LG] · <a href="https://arxiv.org/abs/2608.24093" target=_blank>Joint-Embedding Prediction of Masked Point Tubes for Self-Supervised Learning on 4D Point Cloud Videos</a> [CV] · <a href="https://arxiv.org/abs/2608.24319" target=_blank>Can a Dynamic Internal Field Govern a Transformer's Cognition? Certifiability, not Superiority, in Homeostatic Compute Control</a> [AI] · <a href="https://arxiv.org/abs/2608.24469" target=_blank>Low-Rank Ternary Adaptation for Fine-Tuning Transformers</a> [CV] · <a href="https://arxiv.org/abs/2608.24756" target=_blank>Weakly Supervised Seafloor Segmentation for Seagrass Habitat Mapping in Side-Scan Sonar Imagery</a> [CV] · <a href="https://arxiv.org/abs/2608.24763" target=_blank>MoTE: Mixture of Task Experts for Multi-Task Video Understanding</a> [CV] · <a href="https://arxiv.org/abs/2608.24865" target=_blank>Parameterized Complexity of $L_p$-Lipschitz Constants for Input Convex Neural Networks and $L_p$-Norm Maximization over Zonotopes</a> [LG] · <a href="https://arxiv.org/abs/2608.24881" target=_blank>What FID Hides: Detecting, Ranking, and Diagnosing Deviations in Generative Evaluation</a> [LG] · <a href="https://arxiv.org/abs/2608.23728" target=_blank>Velocity-coupled Representation Refinement for Satellite Orbit Prediction</a> [CV] · <a href="https://arxiv.org/abs/2608.23746" target=_blank>CRISP: Calibration-Aware Visual State Space Duality for Remote Sensing Semantic Segmentation</a> [CV] · <a href="https://arxiv.org/abs/2608.23752" target=_blank>Too much of a good thing -- when knowledge distillation promotes overfitting, and how to avoid it</a> [CV] · <a href="https://arxiv.org/abs/2608.23790" target=_blank>Primate vision reveals a missing principle for robust dynamic AI</a> [CV] · <a href="https://arxiv.org/abs/2608.23850" target=_blank>DDMS: Discriminative Distillation of Multi-view Foundational Features into Single-view Models</a> [CV] · <a href="https://arxiv.org/abs/2608.23853" target=_blank>LUX: A Lesion-Aware Graph-Conditioned Visual - Language Architecture for Explainable Endoscopic Captioning</a> [CV] · <a href="https://arxiv.org/abs/2608.23864" target=_blank>AffineTok: Semantic Affine Consistency for Diffusion-Friendly Visual Tokenizer</a> [CV] · <a href="https://arxiv.org/abs/2608.23869" target=_blank>Gen2Physics: Grounding Generated 3D Meshes in Physics via Multi-View Material Decomposition</a> [CV] · <a href="https://arxiv.org/abs/2608.23903" target=_blank>Continual Visual Learning under Evolving Semantic Concept Shift</a> [CV] · <a href="https://arxiv.org/abs/2608.23921" target=_blank>HAP: Head-Adaptive Visual Token Pruning via Cross-Modal Alignment</a> [CV] · <a href="https://arxiv.org/abs/2608.23927" target=_blank>GlanceWAM: Sparse Test-Time Imagination for World-Action Models</a> [CV] · <a href="https://arxiv.org/abs/2608.23943" target=_blank>Luce: Relightable Gaussians for 3D Asset Generation</a> [CV] · <a href="https://arxiv.org/abs/2608.23974" target=_blank>Boot-and-Feedback Framework for Generalist-Expert Model Collaboration in Breast Ultrasound Diagnosis</a> [CV] · <a href="https://arxiv.org/abs/2608.24068" target=_blank>Representation Learning in Diffusion and Flow-based Model: An Application Aspect</a> [CV] · <a href="https://arxiv.org/abs/2608.24105" target=_blank>DRRG: A Discrete Diffusion Framework for Radiology Report Generation</a> [CV] · <a href="https://arxiv.org/abs/2608.24154" target=_blank>Rethinking Pre-Training and Augmentation for Zero-Shot Cross-City Object Detection</a> [CV] · <a href="https://arxiv.org/abs/2608.24219" target=_blank>Beauty is in the ELBO of the Beholder: A Variational Account of Processing Fluency in Face Perception</a> [CV] · <a href="https://arxiv.org/abs/2608.24293" target=_blank>Keep-or-Drop? Adaptive Tokenizer for Compact Video Representation</a> [CV] · <a href="https://arxiv.org/abs/2608.24342" target=_blank>Metadata-Aware Adaptation of a Generative Foundation Model for Conditional CMR Synthesis</a> [CV] · <a href="https://arxiv.org/abs/2608.24365" target=_blank>MaST: Motion-aware Sparse Pipeline for Lightweight Object Tracking</a> [CV] · <a href="https://arxiv.org/abs/2608.24541" target=_blank>Hierarchical Prototype-Memory Adaptation of SAM for Surgical Instrument Segmentation</a> [CV] · <a href="https://arxiv.org/abs/2608.24594" target=_blank>Comparative Assessment of Deep Learning Architectures for Underwater Subsurface Kelp Forest Segmentation with The Kelp-o-Tron</a> [CV] · <a href="https://arxiv.org/abs/2608.24646" target=_blank>On-Policy Self-Distillation in Diffusion Models</a> [CV] · <a href="https://arxiv.org/abs/2608.24723" target=_blank>Interpretable Fundus Image Classification via Ring-Based Retinal Vasculature Features</a> [CV] · <a href="https://arxiv.org/abs/2608.24771" target=_blank>Ensemble of Convolutional Neural Networks for StrokePrediction: Towards Improved Diagnostic Accuracy</a> [CV] · <a href="https://arxiv.org/abs/2608.24782" target=_blank>Image Difference Quantification Using Autoencoder-Based Latent Representations</a> [CV] · <a href="https://arxiv.org/abs/2608.24783" target=_blank>MoE-based Feature Adapter for Prompt-free Binary Coronary Artery Segmentation in X-ray Angiography</a> [CV] · <a href="https://arxiv.org/abs/2608.24793" target=_blank>EMFE: A lightweight, explainable machine learning framework for malaria cell classification</a> [CV] · <a href="https://arxiv.org/abs/2608.23745" target=_blank>Multi-Stage Prompt-Guided Feature Modulation for Generalizable Brain Tumor Segmentation</a> [IV] · <a href="https://arxiv.org/abs/2608.23882" target=_blank>Native-Space 3D CarveMix for Multi-Site T1w Stroke Segmentation</a> [IV] · <a href="https://arxiv.org/abs/2608.23626" target=_blank>A survey detection channel overrides the pixels in an astronomical foundation model, and biases tomographic mean redshifts</a> [AI] · <a href="https://arxiv.org/abs/2608.23807" target=_blank>Serving Masked Diffusion LLMs: Characterization and Design Principles from Real Hardware</a> [AI] · <a href="https://arxiv.org/abs/2608.23855" target=_blank>In-Context Inpainting for Time Series Forecasting</a> [AI] · <a href="https://arxiv.org/abs/2608.23875" target=_blank>AI Finds A Way</a> [AI] · <a href="https://arxiv.org/abs/2608.24160" target=_blank>OmniJudge or OmniBias? Diagnosing Multimodal Judges through Balanced, Decoupled Lenses</a> [AI] · <a href="https://arxiv.org/abs/2608.24462" target=_blank>Mahalanobis-Based Multi-Head Attention for Complex State Propagation</a> [AI] · <a href="https://arxiv.org/abs/2608.24467" target=_blank>HMGCLIP: Heterogeneous Multi-Granularity Contrastive Learning for E-commerce Representation Learning</a> [AI] · <a href="https://arxiv.org/abs/2608.24758" target=_blank>RACE: Scalable Statistical Estimation of Functional Consistency in LLM Neurons</a> [AI] · <a href="https://arxiv.org/abs/2608.23663" target=_blank>Confidently Wrong, Silently So: Auditing Undetectable Failures of a Deployed On-Device Language Model</a> [AI] · <a href="https://arxiv.org/abs/2608.23840" target=_blank>ShardMeter: Sharded and Geo-Distributed Training Without the Guesswork</a> [AI] · <a href="https://arxiv.org/abs/2608.24288" target=_blank>Sensor Drift Compensation via Olfactory system and Reservoir Computing</a> [SP] · <a href="https://arxiv.org/abs/2608.24443" target=_blank>Time-Window Noise2Noise: A Self-Supervised Method for Blind Denoising of Vibration and Impact Signals in Mechanical Systems</a> [SP] · <a href="https://arxiv.org/abs/2608.24584" target=_blank>A Transformer for Joint Multi-Receiver Pilotless Wi-Fi Decoding</a> [SP] · <a href="https://arxiv.org/abs/2608.24686" target=_blank>An Ultra-Compact Differential V-Band Power Amplifier Using EDMOS Transistors With 18.1 dBm P1dB and 21% PAE in 22nm FD-SOI CMOS</a> [SP] · <a href="https://arxiv.org/abs/2608.24639" target=_blank>Investigating voiced and unvoiced regions of speech for audio deepfake detection</a> [SP] · <a href="https://doi.org/10.1177/01617346261478257" target=_blank>Structure-Aware Deep Learning for Pediatric Echocardiographic Standard-View Classification in Ultrasonic Imaging</a> [JNL] · <a href="https://doi.org/10.1007/s10278-026-02206-5" target=_blank>Advancing Apex Detection: a Comparative Study of Deep Learning Models on Panoramic Radiographs</a> [JNL] · <a href="https://doi.org/10.1002/jmri.70521" target=_blank>Editorial for “A Combined Clinical/ MRI Deep Learning Model for Estimating Outcomes After Percutaneous Transforaminal Endoscopic Discectomy”</a> [JNL] · <a href="https://doi.org/10.1186/s12880-026-02633-4" target=_blank>VGG11-based deep learning for automated MRI classification of adenomyosis: a systematic comparison of five classification criteria</a> [JNL] · <a href="https://doi.org/10.1007/s10278-026-02208-3" target=_blank>Multimodal Ultrasound-Based Decision Support for Bethesda IV Thyroid Nodules: Integration of Clinical, Radiomics, Deep Learning, and Topological Features</a> [JNL] · <a href="https://doi.org/10.1121/10.0044962" target=_blank>Multiparametric imaging of brain hemodyamics using advanced ultrasound and photoacoustic imaging methods</a> [JNL] · <a href="https://doi.org/10.24911/sjemed.12-2564" target=_blank>BREATH BY BYTE: AI IN PULMONARY IMAGING</a> [JNL] · <a href="https://doi.org/10.1121/10.0045318" target=_blank>Experiment for super-resolution imaging with shear wave</a> [JNL] · <a href="https://doi.org/10.65148/ecn/2026004" target=_blank>Knowledge Guided Graph Neural Computational Model for Context Aware Dependency Reasoning in Complex Information Networks</a> [JNL] · <a href="https://doi.org/10.65148/ecn/2026007" target=_blank>A Self Adaptive Meta Learning Model for Personalized Computational Intelligence in Dynamic Problem-Solving Environments</a> [JNL] · <a href="https://doi.org/10.1371/journal.pcbi.1014719" target=_blank>Manifold-constrained plasticity enables stable learning in recurrent neural circuits</a> [JNL] · <a href="https://doi.org/10.1121/10.0045723" target=_blank>Temporal localization of morphologically-conditioned stop categories in Korean: A computational approach</a> [JNL] · <a href="https://doi.org/10.1097/cce.0000000000001474" target=_blank>Hallucination Rate of Peer-Reviewed Citations Generated by Large Language Models in Neurocritical Care</a> [JNL] · <a href="https://doi.org/10.1016/j.cviu.2026.104922" target=_blank>Structured pattern embedding and efficient global dependency modeling for lightweight image super-resolution</a> [JNL] · <a href="https://doi.org/10.70917/ijcisim-2026-5070" target=_blank>Modelling and predicting Computer Network using ARIMA Models and Neural Network Method</a> [JNL] · <a href="https://doi.org/10.1016/j.asoc.2026.116308" target=_blank>Multimodal Comfort Assessment Transformer for Virtual Reality Comfort-state Prediction Using Motion, Touch Interaction, and Physiological Signals</a> [JNL] · <a href="https://doi.org/10.1121/10.0045459" target=_blank>Virtual listener based machine-learning optimization of hearing-aid processing</a> [JNL]</em></p>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv 카테고리: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>cs.LG</a> · <a href="https://arxiv.org/list/cs.CV/new" target=_blank>cs.CV</a> · <a href="https://arxiv.org/list/cs.AI/new" target=_blank>cs.AI</a> · <a href="https://arxiv.org/list/eess.IV/new" target=_blank>eess.IV</a> · <a href="https://arxiv.org/list/eess.SP/new" target=_blank>eess.SP</a></li>
+  <li>저널 소스: Crossref REST API, OpenAlex</li>
+  <li>RSS: <a href="../feed.xml">feed.xml</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<footer>
+Imaging Intelligence Lab · Daily/Weekly automated briefing · 이 사이트는 라이브 발행본입니다.
+</footer>
+
+</body>
+</html>

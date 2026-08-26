@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 25 Aug 2026 13:36:53 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 11:42:51 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-08-26 (수요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-08-26.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-26.html</guid>
+      <pubDate>Wed, 26 Aug 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘(8/26, 수) arXiv 5개 카테고리 listing이 정상적으로 수요일 치로 갱신되어 518편(new+cross)을 새로 확보했습니다. 어제(8/25)는 확산모델을 CT·홀로그램 역문제의 재사용 사전으로 쓰는 응용 논문과 그 이론을 분석하는 논문이 나란히 나왔고, 이벤트 카메라·단층촬영·수중 3D 복원 같은 계산광학 코어 신호가 5개 클러스터에 걸쳐 뚜렷했습니다. 오늘은 정반대로, 계산광학 코어 버킷 대부분이 실제로 열어보면 무관한 논문(임상 사례 보고, 통신 안테나, 지진파 단층촬영, 지속가능성 논문 등)이었고, 실 신호는 diffusion model 이론 5편에 집중됐습니다.]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-08-25 (화요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-08-25.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-17.html</guid>
       <pubDate>Wed, 17 Jun 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[수요일 arXiv는 413건 스캔에서 57건이 ROI로 선택됐습니다. Deep Learning Methods 버킷이 41건으로 압도적이지만, 우리 핵심 분야에 닿는 신호는 크게 세 흐름으로 읽힙니다.]]></description>
-    </item>
-    <item>
-      <title>🔬 Imaging Intelligence Daily Briefing</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-06-16.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-16.html</guid>
-      <pubDate>Tue, 16 Jun 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘 메타표면 키워드는 ' 재구성·능동(programmable) '입니다. GST 상변화 물질로 THz 파면을 전기/광학적으로 코딩하거나(Advanced Materials), IR–마이크로파 양쪽에서 동작하는 투명 스텔스 메타표면(Nanophotonics)이 나왔어요. 정적 소자에서 '상태를 바꾸는' 소자로 무게중심이 이동합니다.]]></description>
     </item>
   </channel>
 </rss>
