@@ -1,0 +1,37 @@
+{
+  "date": "2026-08-27",
+  "source_listing_date": "2026-08-27",
+  "source_mode": "new",
+  "note": "cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 \"Thursday, 27 August 2026\"로 정상 갱신됨을 확인하고 그대로 사용했다. 저널(Crossref/OpenAlex)도 항상 하던 대로 독립 수집했다. 오늘은 계산광학 핵심 버킷(Fourier Ptychography, Lensless)이 아예 0편으로 완전히 조용했고, Meta-Optics/Diffractive 9편 중에서도 이미징에 직접 관련된 논문은 사실상 없어(대부분 THz 통신·RF 안테나·위성 전력전송) 광학 하드웨어 신호가 어제보다 더 옅어진 하루였다. 대신 Tomography/3D Imaging 버킷 안에서 Gaussian Splatting을 광음향 단층촬영·수중 3D 복원 등 서로 다른 촬영 물리에 재사용하는 논문 3편이 뚜렷한 클러스터를 이뤘고, Reconstruction/Inverse Problems 버킷에서는 physics-informed neural network(PINN)의 실패 원인과 개선법을 체계적으로 검증하는 논문 6편이 한꺼번에 나왔다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 188,
+      "cs.CV": 107,
+      "cs.AI": 209,
+      "eess.IV": 5,
+      "eess.SP": 21
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 424
+  },
+  "totals": {
+    "total_scanned": 830,
+    "selected": 231
+  },
+  "classified": {
+    "total_scanned": 830,
+    "selected": 231,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 8,
+      "Meta-Optics/Diffractive": 9,
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 50,
+      "Virtual Staining/Pathology": 26,
+      "Reconstruction/Inverse Problems": 27,
+      "Deep Learning Methods": 109
+    }
+  },
+  "daily_thesis": "오늘은 계산광학 코어 버킷(Fourier Ptychography, Lensless)이 완전히 0편으로 비어 있었던 가장 조용한 하루였고, Meta-Optics 신호도 대부분 통신·센싱 하드웨어로 흘렀다. 대신 판세를 채운 건 두 가지다. 하나는 Gaussian Splatting이 NeRF 스타일 3D 복원을 넘어 광음향 단층촬영·수중 영상처럼 완전히 다른 촬영 물리의 역문제 백본으로 옮겨붙는 흐름이고, 다른 하나는 physics-informed neural network가 왜, 언제 실패하는지를 통제된 실험으로 체계적으로 검증하는 논문 6편이 한 날 몰린 것이다."
+}

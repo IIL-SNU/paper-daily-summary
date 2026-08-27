@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-08-27</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-08-27 (목요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-08-27 (목요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 이번 실행에서 "Thursday, 27 August 2026"로 정상 확인되어 그대로 사용했습니다.</div>
+  <div>🔢 arXiv: cs.LG 188 · cs.CV 107 · cs.AI 209 · eess.IV 5 · eess.SP 21 (합계 530편, new+cross, replacement 제외)</div>
+  <div>🔢 저널: Crossref/OpenAlex 424편 수집 · arXiv+저널 통합 스캔 830건 · ROI 배정 231건(27.8%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 계산광학 코어 버킷 중 <strong>Fourier Ptychography/Microscopy와 Lensless/Coded Imaging이 나란히 0편</strong>으로, 이 리포트를 시작한 이래 가장 조용한 광학 하드웨어 하루였습니다. Meta-Optics/Diffractive도 9편 중 이미징에 직접 관련된 논문이 사실상 없어(대부분 THz 통신·위성 전력전송·레이더 단면적 감소), 광학 하드웨어 신호 전체가 옅어졌습니다. 대신 그 빈자리를 채운 건 두 갈래입니다. 하나는 <strong>Gaussian Splatting이 카메라 3D 복원을 넘어 광음향 단층촬영·수중 영상처럼 완전히 다른 촬영 물리의 역문제 백본으로 옮겨붙는 흐름</strong>이고, 다른 하나는 <strong>physics-informed neural network(PINN)가 왜 실패하는지와 어떤 처방이 실제로 통하는지를 통제된 실험으로 검증하는 논문 5~6편이 한 날 몰린 것</strong>입니다. 우리 랩처럼 물리 기반 사전을 역문제에 재사용하는 입장에서는, 오늘은 "새 촬영 장비"보다 "우리가 이미 쓰는 최적화 도구(Gaussian Splatting, PINN)를 어디까지 믿고 어떻게 검증할지"를 다시 점검할 근거가 쌓인 날입니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘(8/27, 목) arXiv 5개 카테고리 listing이 정상적으로 목요일 치로 갱신되어 530편(new+cross)을 새로 확보했습니다. 어제(8/26)는 diffusion model 자체의 이론(생성 궤적 분기, 손실 하한, 일반화·암기 경계)을 파고드는 논문 5편이 한꺼번에 나왔던 날이었는데, 오늘은 이론보다 "우리가 이미 쓰는 최적화 도구가 언제 믿을 만한지"를 검증하는 쪽으로 무게중심이 다시 한 번 옮겨갔습니다. Gaussian Splatting을 카메라 밖 촬영 물리(광음향, 수중)에 옮겨 쓰는 논문 3편과, PINN의 실패 원인·처방을 통제된 실험으로 가려내는 논문 5~6편이 오늘의 실질적인 두 축입니다.</p>
+<p>저널 쪽은 424편을 스캔했고, Meta-Optics/Diffractive 9편 전부가 통신·센싱·레이더 하드웨어로 흘러 이미징에 직접 관련된 메타표면 논문이 오늘은 0편입니다. Tomography/3D Imaging(50편)과 Virtual Staining/Pathology(26편)도 어제와 마찬가지로 오탐 비중이 매우 높아, 전자는 대부분 PET/CT·구강악안면·초음파 등 임상 사례 보고이고 후자는 "virtual"·"stain"·"sustainable" 단어가 무관한 문맥(가상현실 교육, 지속가능성, NFT)에서 걸린 경우가 많았습니다. Reconstruction/Inverse Problems(27편)는 오히려 오늘 진짜 신호가 강했는데, PINN 실패 진단 클러스터 6편이 이 버킷 안에 몰려 있었습니다.</p>
+<p>다음 관찰 포인트는 (1) 계산광학 코어(Fourier Ptychography, Lensless)가 이틀 연속 0편에 가까운 상태가 이어지는지, (2) Gaussian Splatting을 비카메라 촬영 물리에 쓰는 흐름이 다음 주에도 이어지며 새 응용(예: MRI, 전자현미경)으로 번지는지, (3) PINN 실패 진단 논문들이 실제로 계산 이미징 역문제에 적용 가능한 구체적 수치를 내는지입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(8/26)는 diffusion model 자체의 생성 동역학·학습 이론을 파고드는 논문 5편이 arXiv cs.LG/cs.CV에 동시에 나왔고, 메타표면은 이미징 쪽 2편(색 라우터 95.4% 투과효율, 36채널 홀로그램 다중화)이 뚜렷한 수치로 존재감을 남겼습니다(총 스캔 856건, ROI 225건, 27.8%→26.3%대). 오늘은 메타표면 이미징 신호가 완전히 사라져 9편 모두 통신·센싱 쪽으로 흘렀고, Fourier Ptychography와 Lensless는 어제 각각 3편·4편(그나마도 대부분 오탐)이었던 것이 오늘은 아예 0편으로 떨어졌습니다.</p>
+<p>가장 큰 변화는 무게중심이 "diffusion model 자체의 이론"에서 "Gaussian Splatting과 PINN이라는 기존 최적화 도구를 다른 물리·다른 실패 조건에서 검증하는 쪽"으로 옮겨간 것입니다. 어제 diffusion 이론 클러스터가 순수하게 '왜 되는지'를 수학적으로 규명했다면, 오늘 PINN 클러스터는 '어떤 처방이 실제로 통제된 실험에서 통하는지'를 실증적으로 가려내는 결이라 결이 다릅니다. Gaussian Splatting 클러스터도 어제는 등장하지 않았던 완전히 새로운 신호로, 카메라 3D 복원 기법이 광음향·수중처럼 원래 설계 대상이 아니었던 촬영 물리로 번지고 있다는 것을 보여줍니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Physics-informed neural network가 왜 실패하고 무엇으로 고쳐야 하는지를 통제된 실험으로 검증</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.25327" target=_blank>Neither Precision Nor Architecture Alone</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2608.24940" target=_blank>When Does Frequency Decomposition Benefit PINNs?</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2608.25564" target=_blank>Physics-Informed Foresight Pruning</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2608.24970" target=_blank>Physics-Informed Error Field Learning</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2608.25744" target=_blank>A Constitutive Markov Physics-Informed Neural Operator (MPNO)</a> <span class=pill>LG</span>
+  </td>
+  <td>PINN(물리 방정식을 손실 함수에 직접 넣어 학습하는 신경망)은 뻣뻣한 방정식이나 급격히 변하는 물리 조건에서 학습이 잘 안 되는 문제가 오래 지적돼 왔습니다. 오늘 다섯 편은 이 실패를 감으로 진단하지 않고 통제된 실험으로 검증합니다. Neither Precision Nor Architecture Alone은 "FP64로 정밀도를 올리면 된다"는 주장과 "아키텍처를 상태공간모델로 바꾸면 된다"는 두 경쟁 처방을 144회 반복 실험으로 나란히 놓고 둘 다 단독으로는 충분하지 않다는 것을 보입니다. Frequency Decomposition 논문은 고주파 보정 기법(Fourier 특징 임베딩 등)이 모든 상황에서 도움이 되는 게 아니라 특정 스펙트럼 조건에서만 효과가 있다는 것을 좁혀서 확인합니다. Foresight Pruning은 학습 시작 전에 어떤 파라미터를 가지치기해도 되는지를 미분 항까지 고려해 판단하고, Error Field Learning은 학습 후반부 정체 구간을 남은 오차 자체를 다시 예측하는 후처리로 보완하며, MPNO는 여러 스텝을 반복 예측할 때 오차가 폭발하거나 0으로 무너지는 불안정성을 전파 연산자의 스펙트럼 반경 제약으로 막습니다. 즉 오늘은 PINN 커뮤니티가 떠돌던 여러 처방(정밀도, 아키텍처, 주파수 임베딩, 가지치기, 후처리, 안정성 제약)을 각각 언제 통하고 언제 안 통하는지 가려내는 단계로 넘어갔다는 뜻이고, 우리 랩처럼 물리 기반 사전을 역문제에 쓰는 입장에서는 어떤 상황에 어떤 처방을 골라야 하는지 실질적인 참고가 됩니다.</td>
+  <td>High<br><small>arXiv cs.LG 서로 다른 저자군 5편이 PINN 실패 원인 진단과 처방 검증이라는 같은 문제를 정밀도·아키텍처·주파수·가지치기·안정성 다섯 각도에서 동시에 다룸</small></td>
+  <td>Neither Precision Nor Architecture Alone의 144-run 통제 실험 설계(정밀도 축 vs 아키텍처 축)를 그대로 가져와, 우리 랩 위상 복원용 PINN 사전에서 같은 두 축을 산란매질 통과 이미징의 순전파 방정식으로 바꿔 재현</td>
+</tr>
+<tr>
+  <td><strong>Gaussian Splatting이 카메라 3D 복원을 넘어 광음향·수중처럼 다른 촬영 물리의 역문제 백본으로 옮겨붙음</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.25472" target=_blank>PAGS: Autofocusing Photoacoustic Tomography via SoS-Adaptive Gaussian Splatting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.25483" target=_blank>Gaussian Splatting Underwater</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.25401" target=_blank>PIVOT (Pose, Intrinsics, Novel Viewpoint benchmark)</a> <span class=pill>CV</span>
+  </td>
+  <td>3D Gaussian Splatting은 원래 카메라로 찍은 여러 사진에서 장면을 복원하는 novel-view synthesis 기법으로 시작했습니다. PAGS는 이 기법을 광음향 단층촬영(빛을 흡수한 조직이 초음파를 내는 원리)에 옮겨, 조직마다 음속이 달라 초점이 흐려지는 문제를 풀 때 음속 지도 자체를 학습 가능한 변수로 두고 Gaussian Splatting과 함께 최적화합니다 — 별도 음속 측정 장비 없이 스스로 초점을 맞추는 셈입니다. Gaussian Splatting Underwater는 이 기법이 실제로 잘 되는 조건(맑고 얕은 물)을 벗어나 탁도·빛 흡수·조명 불균일이 있는 진짜 수중 환경에서도 버티는지를 여러 공개 데이터셋으로 통제 비교합니다. PIVOT은 Gaussian Splatting/NeRF 계열이 보통 실험실 친화적인 깨끗한 카메라 경로로만 평가된다는 점을 지적하고, 로봇·드론이 실제로 마주치는 거친 궤적과 부정확한 카메라 파라미터로 다시 평가할 벤치마크를 만듭니다. 세 편을 같이 보면 Gaussian Splatting이 이제 "카메라 3D 복원 알고리즘" 하나가 아니라 물리 모델을 얹을 수 있는 미분 가능한 렌더링 뼈대로 자리잡고 있다는 뜻이고, 우리 랩이 다루는 산란매질 통과 이미징 같은 비카메라 역문제에도 같은 최적화 틀을 가져다 쓸 수 있다는 신호입니다.</td>
+  <td>Medium<br><small>arXiv cs.CV 서로 다른 저자군 3편이 Gaussian Splatting을 비카메라/비이상 조건 역문제로 확장하는 방향을 공유하지만, 응용 도메인이 서로 달라 하나의 방법론 표준으로 수렴했다고 보기엔 이름</small></td>
+  <td>PAGS의 미분 가능 음속 지도 최적화 코드를 재현해, 우리 랩 산란매질 통과 이미징에서 매질 굴절률 불균일을 함께 최적화했을 때 재구성 PSNR이 기존 고정 매질 가정 대비 얼마나 개선되는지 시뮬레이션 비교</td>
+</tr>
+<tr>
+  <td><strong>Diffusion 기반 초해상도가 사실성(fidelity)과 그럴듯함(perception) 사이 줄다리기를 다시 정면으로 다룸</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.25334" target=_blank>GraftSR</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.25998" target=_blank>Uncertainty-Guided Latent Diffusion Models (UGDiff)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2608.25302" target=_blank>WAVE (Guided Depth Super-Resolution)</a> <span class=pill>CV</span>
+  </td>
+  <td>diffusion 기반 초해상도는 이미지를 그럴듯하게 채워 넣는 데는 강하지만, 그 그럴듯함이 실제 정답과 다른 무늬를 만들어내는 texture hallucination 문제가 꾸준히 지적돼 왔습니다. GraftSR은 같은 대상을 찍은 다른 참조 사진에서 진짜 질감을 가져와 옮겨 붙이는 방식으로 이 문제를 풀려 하고, UGDiff는 참조 사진 없이 모델 스스로 어느 영역의 복원 결과를 얼마나 신뢰할 수 있는지 불확실성을 추정해서 사실성과 그럴듯함 사이 균형을 다시 조정합니다. WAVE는 깊이 영상 초해상도에서 RGB 안내 정보를 거친 특징에서 세밀한 특징 순서로 뽑던 기존 구조 자체가 편향을 만든다고 보고 이 순서를 웨이블릿 기반으로 뒤집습니다. 세 편을 같이 보면 초해상도 연구의 무게중심이 "더 그럴듯한 디테일을 만드는 방법"에서 "만들어낸 디테일이 실제로 맞는지 어떻게 보장할 것인가"로 옮겨가고 있다는 뜻이고, 우리 랩이 복원 결과를 평가할 때도 지각적 화질 지표만이 아니라 사실성 지표를 같이 봐야 한다는 신호입니다.</td>
+  <td>Medium<br><small>arXiv cs.CV 서로 다른 저자군 3편이 같은 문제(사실성-지각화질 트레이드오프)를 다루지만 해법이 서로 달라 표준 해법으로 수렴한 것은 아님</small></td>
+  <td>UGDiff의 불확실성 추정 모듈을 우리 랩 위상 복원 diffusion 사전 파이프라인에 이식해, 재구성 영역별 신뢰도 맵과 실제 GT 대비 오차 맵의 상관관계를 정량 비교</td>
+</tr>
+<tr>
+  <td><strong>정량 위상 이미징(QPI)이 물리 기반 신경망 두 갈래(neural field, Gaussian Splatting)로 수차·다중면 문제를 동시에 공략</strong></td>
+  <td>
+    <a href="https://doi.org/10.29026/oes.2026.260019" target=_blank>Physics-informed neural fields for blind aberration correction in QPI</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/oe.605527" target=_blank>Differentiable Gaussian Splatting for Multi-Plane Diffraction Phase Retrieval</a> <span class=pill>JNL</span>
+  </td>
+  <td>두 논문 모두 정량 위상 이미징(빛의 위상 변화를 측정해 투명한 시료의 구조를 재구성하는 기법)의 오랜 숙제를 물리 기반 신경망으로 풉니다. 첫 번째는 부분 간섭성 조명 조건에서 렌즈 수차를 보정하는 문제를, 별도 캘리브레이션 없이 neural field(좌표를 입력받아 물리량을 출력하는 신경망 표현)로 "블라인드" 보정하는 방식입니다. 두 번째는 여러 초점면에서 찍은 회절 패턴으로부터 위상을 복원하는 문제를 Gaussian Splatting으로 미분 가능하게 만들어 풉니다. 두 논문 모두 초록이 제공되지 않아 정량적 근거는 제목 수준에서만 판단했지만, 오늘 클러스터 표 상단의 Gaussian Splatting 흐름과 같은 방향(물리 모델을 미분 가능한 최적화에 얹기)이 계산 이미징 코어 버킷 안에서도 독립적으로 나타나고 있다는 점에서 주목할 만합니다.</td>
+  <td>Low<br><small>2편 모두 초록 미제공으로 제목 기반 판단. 방법론적으로는 상단 Gaussian Splatting 클러스터와 연결되지만 독립적으로 세지 않고 QPI 버킷 안 보조 관찰로 표시</small></td>
+  <td>두 논문의 코드/본문 공개 여부를 확인해, 우리 랩 QPI 파이프라인의 수차 보정 단계를 neural field 기반 블라인드 보정으로 대체했을 때 캘리브레이션 없이 얻는 위상 오차가 기존 캘리브레이션 방식 대비 얼마나 벌어지는지 비교</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ 참고: Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 오늘 각각 0편입니다(도메인 Watch Lens 항목 참조). Meta-Optics/Diffractive(9편)는 위성 무선 전력전송, THz 지문 센싱, 근접장 다중접속 라우터, 스푸프 표면 플라즈몬 레이더 단면적 감소, 굴곡 가능한 저-RCS 메타표면 등 전부 통신·레이더·센싱 하드웨어이고 이미징 결상 응용은 0편이라 상단 클러스터에는 올리지 않았습니다. Light-Field/Novel Sensors(2편)도 뉴로모픽 설계 자동화 프레임워크와 실내 조명의 인지·정서 효과 논문으로, 둘 다 이 버킷 키워드에 우연히 걸린 오탐이라 클러스터로 세지 않았습니다.</small></p>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>공통 키워드</strong>: Gaussian Splatting, physics-informed, super-resolution — 오늘은 arXiv가 Gaussian Splatting/PINN을 새로운 물리·실패 조건에서 검증하는 방법론을, 저널이 정량 위상 이미징의 수차 보정·다중면 위상 복원이라는 계산 이미징 응용을 각각 채워 같은 키워드를 서로 다른 층위에서 다뤘습니다.</li>
+  <li><strong>arXiv 전용</strong>: PINN 실패 진단·처방 검증 5편(Neither Precision Nor Architecture Alone, Frequency Decomposition, Foresight Pruning, Error Field Learning, MPNO), Gaussian Splatting 비카메라 역문제 확장 3편(PAGS, GS Underwater, PIVOT), diffusion 기반 초해상도 사실성 3편(GraftSR, UGDiff, WAVE)</li>
+  <li><strong>저널 전용</strong>: 정량 위상 이미징 물리 기반 신경망 2편(neural field 수차 보정, Gaussian Splatting 다중면 위상 복원), 다중광자 현미경 100nm 해상도 장벽 돌파, 광음향 단층촬영 다중음향원 정식화, 형광 분자 단층촬영 implicit neural representation</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 "기존 도구(Gaussian Splatting, PINN, diffusion)를 어디까지 믿을 수 있는지 검증"하는 쪽에, 저널이 "그 도구를 계산 이미징 응용에 실제로 적용"하는 쪽에 쏠려 있어, 같은 방법론이 방법론 논문과 응용 논문으로 나뉘어 동시에 나타난 하루였습니다. 편수만 보면 상위인 Deep Learning Methods(109)·Tomography(50)·Virtual Staining(26)은 실사 확인 결과 대부분 계산 이미징과 무관한 일반 ML·임상 사례 논문입니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. Physics-informed neural network가 왜 실패하고 무엇으로 고쳐야 하는지를 통제된 실험으로 검증</h3>
+  <p>정밀도 상향(FP64), 아키텍처 교체(SSM 백본), 주파수 임베딩, 가지치기, 후처리 오차 보정, 안정성 제약이라는 여러 처방을 각각 통제된 조건에서 검증한 논문 5편이 같은 날 나와, PINN 커뮤니티가 떠돌던 처방을 하나씩 가려내는 단계로 넘어갔다는 것을 보여줍니다.</p>
+  <p class=conf-note>Confidence: High — arXiv cs.LG 서로 다른 저자군 5편이 같은 문제를 정밀도·아키텍처·주파수·가지치기·안정성 다섯 각도에서 동시에 다룸</p>
+</div>
+
+<div class=ins>
+  <h3>2. Gaussian Splatting이 카메라 3D 복원을 넘어 광음향·수중처럼 다른 촬영 물리의 역문제 백본으로 옮겨붙음</h3>
+  <p>PAGS는 광음향 단층촬영의 음속 불균일 문제를 미분 가능한 Gaussian Splatting 최적화로 풀고, Gaussian Splatting Underwater는 이 기법이 탁하고 조명이 불균일한 진짜 수중 환경에서 버티는지 통제 비교하며, PIVOT은 평가 자체가 실험실 친화적 궤적에 치우쳐 있었다는 것을 지적합니다.</p>
+  <p class=conf-note>Confidence: Medium — arXiv cs.CV 서로 다른 저자군 3편이 같은 방향을 공유하지만 응용 도메인이 서로 달라 표준으로 수렴한 것은 아님</p>
+</div>
+
+<div class=ins>
+  <h3>3. Diffusion 기반 초해상도가 사실성과 그럴듯함 사이 줄다리기를 다시 정면으로 다룸</h3>
+  <p>GraftSR은 참조 이미지에서 진짜 질감을 옮겨 붙이고, UGDiff는 불확실성 추정으로 신뢰도를 판단하며, WAVE는 안내 계층의 순서 자체를 뒤집어 초해상도가 만든 디테일이 실제로 맞는지를 확보하려 합니다.</p>
+  <p class=conf-note>Confidence: Medium — arXiv cs.CV 서로 다른 저자군 3편이 같은 문제를 다루지만 해법이 서로 달라 표준 해법으로 수렴한 것은 아님</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. PINN 실패 처방 통제 실험 설계를 우리 랩 물리 기반 역문제 사전에 재현</h3>
+  <p>정밀도(FP64)와 아키텍처(SSM 백본) 두 축을 나눠서 통제하는 실험 설계를, 우리 랩이 쓰는 위상 복원·산란매질 통과 이미징의 순전파 PINN 사전에 적용해 어떤 처방이 실제로 효과가 있는지 가려냅니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>Neither Precision Nor Architecture Alone의 pre-registered 144-run 실험 설계 재구현(정밀도 축 FP32/FP64 × 아키텍처 축 MLP/SSM)</li>
+    <li>공통 benchmark: 우리 랩 산란매질 통과 이미징 순전파 PDE(파동 방정식) 시뮬레이션 데이터</li>
+    <li>비교축: 두 축을 독립적으로 바꿨을 때의 수렴 안정성, 최종 오차, 학습 시간</li>
+    <li>실패해도 남는 결과: 우리 PINN 사전의 정밀도·아키텍처별 실패 조건 baseline 표</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. PAGS의 미분 가능 음속 지도 최적화를 우리 랩 산란매질 통과 이미징에 이식</h3>
+  <p>매질의 물리 변수(굴절률)를 고정하지 않고 Gaussian Splatting 최적화 변수로 함께 학습하면, 매질 불균일로 인한 초점 흐림을 별도 측정 장비 없이 줄일 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>PAGS의 미분 가능 음속/매질 지도 최적화 파이프라인 재구현</li>
+    <li>공통 benchmark: 우리 랩 산란매질 통과 이미징 시뮬레이션 데이터(불균일 굴절률 매질 포함)</li>
+    <li>비교축: 매질을 고정 가정한 기존 방식 대비 공동 최적화 방식의 PSNR/SSIM</li>
+    <li>실패해도 남는 결과: 매질 불균일 정도별 재구성 오차 곡선</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. UGDiff 불확실성 추정을 위상 복원 diffusion 사전에 이식</h3>
+  <p>diffusion 기반 복원이 만들어낸 디테일 영역별로 불확실성을 추정하면, 실제 GT와 오차가 큰 영역을 사전에 표시할 수 있어 복원 신뢰도를 정량적으로 보고할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>UGDiff의 불확실성 추정 모듈 재구현</li>
+    <li>공통 benchmark: 우리 랩 위상 복원 diffusion 사전 파이프라인의 검증 세트</li>
+    <li>비교축: 추정된 불확실성 맵과 실제 GT 대비 오차 맵의 공간 상관관계(픽셀 단위 correlation)</li>
+    <li>실패해도 남는 결과: 우리 파이프라인의 영역별 신뢰도 baseline 맵</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(50편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:16%"></span></span><span class=n>8편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:18%"></span></span><span class=n>9편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:4%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>50편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:52%"></span></span><span class=n>26편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:54%"></span></span><span class=n>27편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>109편</span></div>
+
+<p><small>⚠️ 참고: Tomography/3D Imaging 50편 중 계산 이미징 방법론에 직접 관련된 논문은 3편(PAGS, Gaussian Splatting Underwater, PIVOT)뿐이고 나머지는 PET/CT·구강악안면·관상동맥 등 임상 사례 보고·리뷰입니다. Virtual Staining/Pathology 26편 중 실제 계산 이미징 신호는 2~3편(다중분광 가상 염색, 자가형광 현미경 노이즈 제거+분할, DAB 정량화)뿐이며, 나머지는 "sustainable"·"virtual"·"stain" 단어가 무관한 문맥(지속가능성, 가상현실 교육, 크롭 스트레스, NFT)에서 우연히 매칭된 오탐입니다. Reconstruction/Inverse Problems 27편 중에서는 PINN 실패 진단 클러스터 6편과 이미지 재구성 직결 논문 2~3편이 실 신호이고, 나머지는 MoE 가속·트래픽 예측·유전자 예측 등 "reconstruction"·"regularization" 키워드 오탐입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Phase Imaging/Holography (8편 중 관련 6편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.605527" target=_blank>Differentiable Gaussian Splatting for Multi-Plane Diffraction Phase Retrieval</a></strong> [JNL]<br>
+  왜 주요: 여러 초점면 회절 패턴으로부터 위상 복원을 Gaussian Splatting으로 미분 가능하게 만든 논문 — 오늘 클러스터 표 Gaussian Splatting 흐름과 QPI 코어 버킷을 잇는 연결점
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.29026/oes.2026.260019" target=_blank>Physics-informed neural fields enable blind aberration correction for partially coherent quantitative phase imaging</a></strong> [JNL]<br>
+  왜 주요: 부분 간섭성 조명에서 캘리브레이션 없이 렌즈 수차를 보정하는 neural field 방법
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.607328" target=_blank>Co- and cross-polarization multiplexed liquid-crystal device for simultaneous near-field display and far-field holography</a></strong> [JNL]<br>
+  왜 주요: 하나의 액정 소자로 근접장 디스플레이와 원거리 홀로그램을 동시에 구현하는 편광 다중화 설계
+</div>
+
+<h3>Meta-Optics/Diffractive (9편 중 이미징 결상 관련 0편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02451-x" target=_blank>Electrically activated quasi-BICs in metasurfaces through atomically thin semiconductors</a></strong> [JNL]<br>
+  왜 주요: 원자층 반도체로 전기적으로 활성화하는 quasi-BIC 메타표면 — 결상 응용은 아니지만 분광 센싱으로 확장 가능한 소자 플랫폼이라 참조 가치
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/lmwt.2026.3724018" target=_blank>Deep-Learning-Enabled Inverse Design of Dual-Resonance Terahertz Metasurface Sensors</a></strong> [JNL]<br>
+  왜 주요: 신경망 기반 역설계를 THz 센서에 적용 — 어제 색 라우터 논문과 같은 역설계 방법론이지만 오늘은 센싱 목적
+</div>
+
+<h3>Tomography/3D Imaging (50편 중 계산 이미징 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25472" target=_blank>PAGS: Autofocusing Photoacoustic Tomography via Speed-of-Sound-Adaptive Gaussian Splatting</a></strong> [CV · TIER A]<br>
+  왜 주요: 음속 지도를 Gaussian Splatting과 함께 최적화해 별도 장비 없이 광음향 단층촬영을 스스로 초점 맞춤 — 오늘의 must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25483" target=_blank>Gaussian Splatting Underwater: A Controlled Cross-Regime Study</a></strong> [CV]<br>
+  왜 주요: Gaussian Splatting이 탁도·조명 불균일이 있는 진짜 수중 환경에서도 버티는지 통제 비교한 평가 논문
+</div>
+
+<h3>Virtual Staining/Pathology (26편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02464-6" target=_blank>Label-free ovarian cancer histopathological diagnosis using two-photon autofluorescence microscopy</a></strong> [JNL · TIER A]<br>
+  왜 주요: 이광자 자가형광 현미경의 핵 신호 소실 문제를 노이즈 제거+분할 통합 프레임워크(DINOv3 기반)로 해결 — 오늘의 must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optcom.2026.133707" target=_blank>Multispectral bright-field microscopic imaging for extended depth of field virtual staining of lung tissue sections</a></strong> [JNL]<br>
+  왜 주요: 다중분광 밝은장 이미징으로 초점 심도를 늘려 가상 염색의 적용 범위 확장
+</div>
+
+<h3>Reconstruction/Inverse Problems (27편 중 관련 7편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25327" target=_blank>Neither Precision Nor Architecture Alone</a></strong> [LG · TIER A]<br>
+  왜 주요: PINN 실패 처방 두 가지(정밀도, 아키텍처)를 144-run 통제 실험으로 검증 — 오늘의 클러스터 1 대표, must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25127" target=_blank>Learning spatially varying regularisation parameters of low regularity for image reconstruction</a></strong> [IV]<br>
+  왜 주요: TV/TGV 정칙화의 공간 가변 가중치를 학습하는 이론적 정칙성 리뷰 — 우리 랩 재구성 알고리즘의 정칙화 설계에 직접 참고 가능
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25828" target=_blank>FlowMoDL: Model-Based Deep Learning for Highly Accelerated 4D Flow MRI Reconstruction</a></strong> [CV]<br>
+  왜 주요: MoDL 프레임워크 기반 unrolled 네트워크로 10~50배 가속 4D flow MRI를 단일 모델로 처리
+</div>
+
+<h3>Deep Learning Methods — 이미징 관련 대표 2편 (109편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25334" target=_blank>GraftSR: Grafting Authentic Textures for Real-World Image Super-Resolution</a></strong> [CV]<br>
+  왜 주요: 참조 이미지의 진짜 질감을 옮겨 붙여 diffusion 초해상도의 texture hallucination을 줄이는 방법 — 오늘의 클러스터 3 대표
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25998" target=_blank>Uncertainty-Guided Latent Diffusion Models for Faithful Super Resolution</a></strong> [CV]<br>
+  왜 주요: 불확실성 추정으로 초해상도의 사실성-지각화질 균형을 다시 조정하는 방법
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<p><small>오늘 abstract에서 명시적 수치(정확한 %, dB, 해상도 값 등)를 확인할 수 있는 신규 SOTA 결과가 없었습니다. PAGS, GraftSR, UGDiff 등 오늘의 대표 논문들은 방법론 설명 위주이고 abstract에 구체적 벤치마크 수치를 명시하지 않아 이 표는 비워둡니다.</small></p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] PAGS: Autofocusing Photoacoustic Tomography via Speed-of-Sound-Adaptive Gaussian Splatting — arXiv 2608.25472</h3>
+  <div class=tag>[방법전환]</div>
+  <p><strong>왜 A급인가:</strong> 광음향 단층촬영(photoacoustic computed tomography, PACT)은 빛을 흡수한 조직이 내는 초음파를 검출해 깊은 조직의 광학 대비 정보를 얻는 기법입니다. 문제는 조직마다 음속(speed-of-sound, SoS)이 달라서, 재구성 알고리즘이 균일한 음속을 가정하면 음향 신호의 도달 시간이 어긋나 영상이 흐려진다는 점입니다. 기존 SoS 보정 방법은 별도로 캘리브레이션된 음향 사전 정보를 쓰거나, 촘촘한 물리 매질 모델을 최적화해야 해서 3D로 확장하기 어려웠습니다. PAGS는 이 문제를 미분 가능한 Gaussian Splatting 프레임워크 안에서, 음속 지도 자체를 최적화 변수로 두어 블라인드(사전 정보 없이) 자동 초점을 맞추는 방식으로 풉니다.</p>
+  <p><strong>핵심:</strong> Gaussian Splatting을 광음향 신호의 미분 가능한 렌더링 도구로 재해석해, 3D 공간에 배치된 Gaussian들의 위치·형태와 함께 국소 음속 값을 동시에 최적화합니다. 이렇게 하면 별도의 음속 측정 하드웨어 없이도 초점이 흐려진 3D 광음향 영상을 스스로 재초점화할 수 있습니다.</p>
+  <p><strong>주의:</strong> abstract 기준으로는 정성적 방법 설명이 중심이고 정량적 해상도·PSNR 개선 수치는 명시되어 있지 않아 본문 확인이 필요합니다. 또한 이 방법이 실제 조직처럼 음속 변화가 국소적이지 않고 연속적으로 완만하게 바뀌는 상황에서도 안정적으로 수렴하는지는 별도 검증이 필요해 보입니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Neither Precision Nor Architecture Alone: Controlled Tests of Failure Remedies for Physics-Informed Neural Networks — arXiv 2608.25327</h3>
+  <div class=tag>[해부분석] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> PINN은 뻣뻣하거나(stiff) 이류(advection)가 지배적인 편미분방정식에서 자주 학습에 실패한다고 알려져 있습니다. 최근 두 연구 그룹이 서로 다른 처방을 제안했는데, 하나는 "FP32에서 FP64로 정밀도를 올리면 L-BFGS 최적화의 멈춤 오류(stopping artifact)가 해결된다"는 것이고, 다른 하나는 "MLP 대신 상태공간모델(state-space model, SSM) 백본과 부분 시퀀스 정렬을 쓰면 아키텍처의 단순성 편향을 극복할 수 있다"는 것입니다. 이 논문은 두 처방을 각각 따로 검증하지 않고, 씨앗(seed)까지 맞춘 통제 조건에서 둘을 나란히 놓고 비교합니다.</p>
+  <p><strong>핵심:</strong> convection·reaction·wave 세 종류 PDE에 걸쳐 144회 반복 실험을 사전 등록(pre-registered)하고, 여기에 독립적인 85회 반복의 convection 실험을 추가로 수행합니다. 정밀도만 올리거나 아키텍처만 바꾸는 단일 처방은 둘 다 실패 조건을 완전히 해결하지 못하며, 두 처방이 서로 다른 실패 메커니즘(수치 정밀도 문제 대 표현력 편향 문제)을 겨냥하고 있다는 것을 실험적으로 분리해 보입니다.</p>
+  <p><strong>주의:</strong> abstract만으로는 두 처방을 결합했을 때의 구체적 개선 폭(예: 손실 값, 상대 오차)을 알 수 없어 본문 확인이 필요합니다. 실험 대상 PDE가 convection·reaction·wave로 한정되어 있어, 계산 이미징에서 흔한 파동/산란 방정식에 결과가 그대로 일반화되는지는 별도 확인이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Label-free ovarian cancer histopathological diagnosis using two-photon autofluorescence microscopy with a joint denoising and segmentation framework — Light: Science &amp; Applications</h3>
+  <div class=tag>[방법전환]</div>
+  <p><strong>왜 A급인가:</strong> 이광자 자가형광(two-photon autofluorescence, TPAF) 현미경은 조직에 염색약을 쓰지 않고도 빠르게 병리 정보를 얻을 수 있는 기법이지만, 암 진단의 핵심 지표인 세포핵이 신호를 거의 내지 않는 음성 대비(negative contrast) 특성 때문에 잘 보이지 않는다는 근본적 한계가 있었습니다. 이 신호 소실이 진짜 핵 경계인지 그냥 노이즈인지 구분하는 방법이 없었다는 것이 정량 병리 분석을 가로막는 병목이었습니다.</p>
+  <p><strong>핵심:</strong> AFN-DeSeg(Auto-Fluorescence Nuclei Denoising and Segmentation)라는 이중 인코더 구조를 제안하는데, DINOv3 비전 트랜스포머를 포함해 노이즈 제거와 핵 분할을 하나의 프레임워크로 통합합니다. 검출기/샷 노이즈를 명시적으로 모델링해, 신호가 거의 없는 핵 영역을 노이즈와 구분해 복원합니다.</p>
+  <p><strong>주의:</strong> abstract에 구체적 정확도·검출 지표 수치가 제시되지 않아 본문 확인이 필요합니다. 난소암 조직 한 종류에 대한 검증이라 다른 암종·조직으로 일반화되는지도 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] Tomography/3D Imaging 50편 중 47편은 PET/CT 임상 사례 보고, 구강악안면·관상동맥 영상, 지진파·해양음향 단층촬영처럼 계산 이미징 방법론과 무관합니다. Virtual Staining/Pathology 26편 중 23편 이상은 "sustainable"·"virtual"·"stain" 단어가 태양광 모듈 수명, 가상 이벤트, 작물 스트레스, NFT 같은 무관한 문맥에서 우연히 매칭된 오탐입니다.</p>
+  <p>[Dataset risk] Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 오늘 모두 0편입니다. Meta-Optics/Diffractive 9편도 전부 통신·레이더·센싱 하드웨어로 흘러 이미징 결상 응용은 0편입니다.</p>
+  <p>[Claim risk] Phase Imaging/Holography 버킷에는 "Massless Islands in Wedge Holography"(고에너지 이론물리학 논문)가 포함돼 있는데, "holography"라는 단어가 광학과 무관한 맥락(AdS/CFT 이론)에서 매칭된 오탐입니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] Differentiable Gaussian Splatting for Multi-Plane Diffraction Phase Retrieval과 Physics-informed neural fields for blind aberration correction은 둘 다 초록이 제공되지 않아 제목만으로 판단했습니다. 정량적 성능 근거는 본문 확인 전까지 잠정적 평가입니다.</p>
+  <p>[Baseline risk] PINN 실패 진단 논문 5편은 모두 arXiv 프리프린트로 동료 심사 전이며, 특히 Neither Precision Nor Architecture Alone은 사전 등록된 실험이라는 점에서 신뢰도가 높지만 결합 처방의 효과는 아직 본문 확인이 필요합니다.</p>
+  <p>[Dataset risk] PAGS와 Gaussian Splatting Underwater는 각각 시뮬레이션/공개 데이터셋 기준 결과로, 실제 임상·현장 광음향 장비나 다양한 수역 조건에서 재현되는지는 확인되지 않았습니다.</p>
+  <p>[Deployment risk] Label-free ovarian cancer 논문은 난소암 조직 한 가지 응용에 대한 검증으로, 다른 암종·현미경 하드웨어 조합에 일반화되는지는 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Meta-Optics/Diffractive 9편</strong> [JNL/SP] — 위성 무선 전력전송, THz 지문 센싱, 근접장 다중접속 라우터, 레이더 단면적 감소 등 "metasurface" 키워드는 맞지만 이미징 응용이 없습니다.</li>
+    <li><strong>Tomography/3D Imaging 47편</strong> [JNL/CV/IV] — PET/CT 임상 사례 보고, 구강악안면·관상동맥 영상, 지진파·해양음향 단층촬영 등 계산 이미징 방법론과 무관합니다.</li>
+    <li><strong>Virtual Staining/Pathology 23편 이상</strong> [LG/CV/AI/JNL] — 태양광 모듈, 가상 이벤트, 작물 스트레스 단계, NFT 등 "stain"·"virtual"·"sustainable" 키워드가 우연히 매칭된 일반 논문입니다.</li>
+    <li><strong>Reconstruction/Inverse Problems 20편</strong> [LG/AI/SP] — MoE 가속, 트래픽 예측, 유전자 기능 예측 등 "reconstruction"·"regularization" 키워드가 우연히 매칭된 일반 ML 논문입니다.</li>
+    <li><strong>Massless Islands in Wedge Holography</strong> [JNL] — 고에너지 이론물리학(AdS/CFT) 논문으로 광학 홀로그래피와 무관합니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy — 관련 0편</h3>
+<p><small>오늘 이 버킷에 걸린 논문이 arXiv·저널 어느 쪽에도 없습니다. 도메인 Watch Lens 참고: 계산광학 코어 버킷 중 하나가 완전히 비는 것은 이 리포트 시작 이후 드문 경우로, 내일도 이어지는지 추적이 필요합니다.</small></p>
+
+<h3>Lensless/Coded Imaging — 관련 0편</h3>
+<p><small>오늘 이 버킷에 걸린 논문이 arXiv·저널 어느 쪽에도 없습니다. Fourier Ptychography와 함께 계산광학 코어 두 버킷이 동시에 0편인 하루입니다.</small></p>
+
+<h3>Phase Imaging/Holography (8편 중 관련 6편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.605527" target=_blank>Differentiable Gaussian Splatting for Multi-Plane Diffraction Phase Retrieval</a></strong> <span class=pill>JNL</span><br>
+  문제: 다중 초점면 회절 패턴으로부터 위상을 복원하는 기존 알고리즘의 계산 비용과 수렴성 / 방법: Gaussian Splatting을 미분 가능한 순전파 모델로 사용 / 의미: 오늘 클러스터 표의 Gaussian Splatting 흐름이 QPI 코어 버킷 안에서도 독립적으로 나타남 / 주의: 초록 미제공 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.29026/oes.2026.260019" target=_blank>Physics-informed neural fields enable blind aberration correction for partially coherent quantitative phase imaging</a></strong> <span class=pill>JNL</span><br>
+  문제: 부분 간섭성 조명 QPI에서 렌즈 수차 보정에 별도 캘리브레이션이 필요 / 방법: neural field 기반 블라인드(사전 정보 없는) 보정 / 의미: 하드웨어 캘리브레이션 없이 알고리즘만으로 수차 보정 / 주의: 초록 미제공 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.607328" target=_blank>Co- and cross-polarization multiplexed liquid-crystal device for simultaneous near-field display and far-field holography</a></strong> <span class=pill>JNL</span><br>
+  문제: 근접장 디스플레이와 원거리 홀로그램을 한 소자로 동시에 구현하기 어려움 / 방법: 공편광·교차편광을 동시에 활용하는 액정 소자 다중화 / 의미: 단일 소자로 두 광학 기능을 분리해 인코딩하는 다중화 설계 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41598-026-67323-1" target=_blank>Multi-scale optical scanning holography for robust manipulation detection in satellite images</a></strong> <span class=pill>JNL</span><br>
+  문제: 생성 AI로 만든 위성영상 조작을 탐지하기 어려움 / 방법: 다중 스케일 광학 스캐닝 홀로그래피 원리를 위조 탐지에 응용 / 의미: 홀로그래피 원리를 이미지 포렌식에 적용한 사례 / 우선순위: Skim
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2040-8986/ae9ed7" target=_blank>2-Bit optically controlled terahertz metasurface based on silicon waveguide</a></strong> <span class=pill>JNL</span><br>
+  문제: THz 파면 제어의 다기능 스위칭 구현이 어려움 / 방법: 실리콘 광도파로와 결합한 2비트 광학 제어 메타표면 / 의미: 이미징보다는 THz 통신·센싱에 가까운 응용 / 우선순위: Skim
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/prosthesis8090089" target=_blank>Enhancing Surgical Strategy for Raghib Syndrome by Virtual and Augmented Reality Tools</a></strong> <span class=pill>JNL</span><br>
+  문제: 희귀 선천성 심장 기형의 수술 전략 수립이 어려움 / 방법: 전산 유체 모델링과 AR/VR 시각화 결합 / 의미: 이미징 방법론보다는 임상 활용 사례 / 우선순위: Skim
+</div>
+
+<h3>Meta-Optics/Diffractive — 이미징 결상 관련 0편 (9편 모두 통신·센싱·레이더 하드웨어)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02451-x" target=_blank>Electrically activated quasi-BICs in metasurfaces through atomically thin semiconductors</a></strong> <span class=pill>JNL</span><br>
+  문제: BIC(bound state in the continuum) 공진의 능동 제어가 어려움 / 방법: 원자층 반도체를 결합해 전기적으로 quasi-BIC를 활성화 / 의미: 결상보다는 분광 센싱 플랫폼에 가까움 / 우선순위: Skim
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/lmwt.2026.3724018" target=_blank>Deep-Learning-Enabled Inverse Design of Dual-Resonance Terahertz Metasurface Sensors</a></strong> <span class=pill>JNL</span><br>
+  문제: 이중 공진 THz 메타표면 센서의 설계 공간이 넓어 최적화가 어려움 / 방법: 신경망 기반 역설계로 SP-BIC/FW-BIC 다중화 / 의미: 어제 색 라우터와 같은 역설계 방법론이나 목적이 센싱 / 우선순위: Skim
+</div>
+<div class=roi-item>
+  <strong>나머지 7편</strong> <span class=pill>JNL/SP</span> — 위성 무선 전력전송, 근접장 다중접속 메타표면 라우터, 스푸프 표면 플라즈몬 레이더 단면적 감소, 굴곡 가능한 저-RCS 메타표면, 대칭 깨짐 유도 고-Q Fano 공진, 가시광 덤벨 공진 메타표면. 문제/방법/의미: 전부 통신·레이더·구조색 응용으로 이미징과 무관 / 우선순위: Skim
+</div>
+
+<h3>Light-Field/Novel Sensors — 관련 0편 (2편 모두 오탐)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25536" target=_blank>Syn2Logic: End-to-End Neuromorphic Design Automation</a></strong> <span class=pill>AI</span><br>
+  문제: 뉴로모픽 하드웨어 설계와 계산신경과학 모델링 사이 자동화 격차 / 방법: 뉴런 행동을 DSL로 기술하고 합성 가능한 RTL로 컴파일 / 의미: 이벤트 카메라·뉴로모픽 센서와는 무관한 EDA 툴체인 논문 / 우선순위: Skim
+</div>
+<div class=roi-item>
+  <strong>How light reshapes the mind</strong> <span class=pill>JNL</span><br>
+  문제: 실내 조명이 인지·정서에 미치는 영향을 통합적으로 설명하는 계산 모델 부재 / 방법: active inference 프레임워크 / 의미: "light field"와 무관한 조명심리학 논문 / 우선순위: Skim
+</div>
+
+<h3>Tomography/3D Imaging (50편 중 관련 3편, 나머지는 부록 생략)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25472" target=_blank>PAGS: Autofocusing Photoacoustic Tomography via Speed-of-Sound-Adaptive Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: 조직별 음속 불균일로 인한 광음향 단층촬영 초점 흐림 / 방법: 음속 지도를 Gaussian Splatting 최적화 변수로 함께 학습 / 의미: Gaussian Splatting을 카메라 밖 촬영 물리로 확장하는 오늘의 대표 사례 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25483" target=_blank>Gaussian Splatting Underwater: A Controlled Cross-Regime Study</a></strong> <span class=pill>CV</span><br>
+  문제: Gaussian Splatting이 탁도·조명 불균일이 있는 실제 수중 환경에서 얼마나 버티는지 불명확 / 방법: 여러 공개 수중 데이터셋으로 통제된 교차 비교 / 의미: 방법론의 일반화 한계를 정면으로 검증한 평가 논문 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25401" target=_blank>PIVOT: A Multi-Trajectory Dataset and Testbed for Pose, Intrinsics, and Novel Viewpoint Evaluation</a></strong> <span class=pill>CV</span><br>
+  문제: NeRF/3DGS 평가가 실험실 친화적인 깨끗한 카메라 궤적에 치우쳐 있음 / 방법: 로봇·드론이 마주치는 거친 궤적·부정확한 캘리브레이션 조건의 벤치마크 구축 / 의미: Gaussian Splatting 평가 관행 자체를 재검토하는 인프라 논문 / 우선순위: Read
+</div>
+<p><small>나머지 47편은 PET/CT·구강악안면·관상동맥 임상 사례 보고 및 리뷰로 계산 이미징과 무관해 개별 bullet을 생략합니다(Skim-only 후보 참고).</small></p>
+
+<h3>Virtual Staining/Pathology (26편 중 관련 3편, 나머지는 부록 생략)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02464-6" target=_blank>Label-free ovarian cancer histopathological diagnosis using two-photon autofluorescence microscopy</a></strong> <span class=pill>JNL</span><br>
+  문제: 이광자 자가형광 현미경에서 세포핵이 음성 대비라 노이즈와 구분이 어려움 / 방법: DINOv3 기반 이중 인코더로 노이즈 제거와 분할을 통합 / 의미: 염색 없는 진단 워크플로의 정량화 가능성을 보여줌 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optcom.2026.133707" target=_blank>Multispectral bright-field microscopic imaging for extended depth of field virtual staining of lung tissue sections</a></strong> <span class=pill>JNL</span><br>
+  문제: 가상 염색의 초점 심도가 얕아 조직 전체를 한 번에 담기 어려움 / 방법: 다중분광 밝은장 이미징으로 심도 확장 / 의미: 가상 염색의 실용 범위를 넓히는 하드웨어+알고리즘 결합 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.21769/bioprotoc.5817" target=_blank>Digital Quantification of Membrane DAB Immunohistochemical Staining in FFPE Cervical Cancer Tissues</a></strong> <span class=pill>JNL</span><br>
+  문제: DAB 면역조직화학 염색 강도의 정량화가 관찰자에 따라 달라짐 / 방법: 오픈소스 CellProfiler 파이프라인 / 의미: 재현 가능한 정량 병리 프로토콜 제공 / 우선순위: Read
+</div>
+<p><small>나머지 23편은 태양광 모듈 수명, 가상 이벤트, 작물 스트레스 단계, NFT 거래 등 "stain"·"virtual"·"sustainable" 키워드 오탐으로 개별 bullet을 생략합니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (27편 중 관련 8편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25327" target=_blank>Neither Precision Nor Architecture Alone</a></strong> <span class=pill>LG</span><br>
+  문제: PINN이 stiff/advection PDE에서 실패하는 원인이 정밀도인지 아키텍처인지 불명확 / 방법: 씨앗까지 맞춘 통제 실험으로 두 처방을 분리 검증(144-run) / 의미: PINN 실패 처방을 감이 아니라 실증으로 가려내는 오늘의 대표 클러스터 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.24940" target=_blank>When Does Frequency Decomposition Benefit Physics-Informed Neural Networks?</a></strong> <span class=pill>LG</span><br>
+  문제: Fourier 특징 임베딩 같은 고주파 보정이 항상 도움이 되는지 불명확 / 방법: 스펙트럼 조건별 사전 실험(ablation) / 의미: PINN 처방의 적용 조건을 좁히는 논문 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25564" target=_blank>Physics-Informed Foresight Pruning for Sparse PINN Solvers of Nonlinear PDEs</a></strong> <span class=pill>LG</span><br>
+  문제: PINN이 필요 이상으로 과대 파라미터화되어 있음 / 방법: 미분 항을 고려한 학습 전 가지치기(foresight pruning) / 의미: PINN 경량화의 실용적 방향 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.24970" target=_blank>Physics-Informed Error Field Learning</a></strong> <span class=pill>LG</span><br>
+  문제: PINN 학습 후반부에 파라미터 업데이트 대비 정확도 개선이 정체됨 / 방법: 남은 오차 자체를 다시 예측하는 후처리 최적화 단계 / 의미: 학습 후 미세조정으로 정체 구간을 보완 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25744" target=_blank>A Constitutive Markov Physics-Informed Neural Operator (MPNO)</a></strong> <span class=pill>LG</span><br>
+  문제: 신경 연산자의 반복 예측(autoregressive rollout)이 불안정해 오차가 폭발하거나 0으로 무너짐 / 방법: 전파 연산자의 스펙트럼 반경에 구조적 제약 부여 / 의미: 장시간 예측 안정성을 구조적으로 보장 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25127" target=_blank>Learning spatially varying regularisation parameters of low regularity for image reconstruction</a></strong> <span class=pill>IV</span><br>
+  문제: TV/TGV 정칙화의 공간 가변 가중치 설계에 대한 이론적 근거 부족 / 방법: 정칙성 이론 리뷰 및 정리 / 의미: 재구성 알고리즘의 정칙화 설계에 이론적 기반 제공 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25828" target=_blank>FlowMoDL: Model-Based Deep Learning for Highly Accelerated 4D Flow MRI Reconstruction</a></strong> <span class=pill>CV</span><br>
+  문제: 4D flow MRI의 가속 재구성이 가속 배율마다 별도 모델을 필요로 함 / 방법: MoDL 프레임워크에 이중 경로 조건화를 추가해 10~50배 가속을 단일 모델로 처리 / 의미: 임상 적용성이 높은 가변 가속 재구성 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/jimaging12090403" target=_blank>A Deep Reconstruction Framework with Ringing Artifact Suppression for Overexposed Remote Sensing Image Restoration</a></strong> <span class=pill>JNL</span><br>
+  문제: 계산 이미징에서 광학 하드웨어 대신 알고리즘으로 수차를 보정할 때 과노출 영역에서 링잉 아티팩트 발생 / 방법: 학습된 Wiener 필터와 시야 공유 커널 예측 네트워크 결합 / 의미: 알고리즘 기반 수차 보정의 부작용을 정면으로 다룸 / 우선순위: Read
+</div>
+<p><small>나머지 19편은 MoE 가속, 트래픽 예측, 유전자 기능 예측 등 "reconstruction"·"regularization" 키워드 오탐으로 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods (109편 중 이미징 관련 대표 5편만 표시, 전체는 catch-all)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25334" target=_blank>GraftSR: Grafting Authentic Textures for Real-World Image Super-Resolution</a></strong> <span class=pill>CV</span><br>
+  문제: diffusion 기반 초해상도가 그럴듯하지만 실제와 다른 무늬(texture hallucination)를 만들어냄 / 방법: 동일 대상의 참조 이미지에서 진짜 질감을 옮겨 붙이되 공간적 어긋남을 정렬 / 의미: 사실성 확보를 위한 참조 기반 접근 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25998" target=_blank>Uncertainty-Guided Latent Diffusion Models for Faithful Super Resolution</a></strong> <span class=pill>CV</span><br>
+  문제: diffusion 초해상도의 지각적 화질과 사실성이 서로 상충 / 방법: 영역별 불확실성을 추정해 가이던스 강도를 조정 / 의미: 참조 이미지 없이도 사실성을 높이는 대안 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25302" target=_blank>WAVE: Reversing the Guidance Hierarchy for Coarse-to-Fine Guided Depth Super-Resolution</a></strong> <span class=pill>CV</span><br>
+  문제: 깊이 영상 초해상도에서 RGB 안내 정보의 거친→세밀 순서 자체가 편향을 만듦 / 방법: 다단계 웨이블릿 변환으로 안내 계층을 재설계 / 의미: 안내 특징 추출 순서 자체를 재검토 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2608.25813" target=_blank>Canalization Before Generalization: Grokking as a Dynamical Probe</a></strong> <span class=pill>LG</span><br>
+  문제: grokking(늦게 일반화가 나타나는 현상) 동안 weight decay가 일반화에 미치는 영향 메커니즘 불명확 / 방법: 짧은 weight-decay 펄스를 grokking 평탄구간에 걸쳐 스윕 / 의미: 우리 랩이 diffusion 사전을 오래 학습시킬 때 일반화 대 암기 경계를 판단하는 데 참고 가능 / 우선순위: Skim
+</div>
+<div class=roi-item>
+  <strong>나머지 104편</strong> <span class=pill>LG/CV/AI/JNL</span> — 대부분 LLM·로보틱스·연합학습·통신 등 일반 ML 논문으로 계산 이미징과 직접 관련이 없어 개별 bullet을 생략합니다.
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li>arXiv cs.LG: <a href="https://arxiv.org/list/cs.LG/new" target=_blank>https://arxiv.org/list/cs.LG/new</a></li>
+  <li>arXiv cs.CV: <a href="https://arxiv.org/list/cs.CV/new" target=_blank>https://arxiv.org/list/cs.CV/new</a></li>
+  <li>arXiv cs.AI: <a href="https://arxiv.org/list/cs.AI/new" target=_blank>https://arxiv.org/list/cs.AI/new</a></li>
+  <li>arXiv eess.IV: <a href="https://arxiv.org/list/eess.IV/new" target=_blank>https://arxiv.org/list/eess.IV/new</a></li>
+  <li>arXiv eess.SP: <a href="https://arxiv.org/list/eess.SP/new" target=_blank>https://arxiv.org/list/eess.SP/new</a></li>
+  <li>RSS: <a href="../feed.xml">feed.xml</a></li>
+</ul>
+
+<footer>
+  Imaging Intelligence Daily Briefing — cs.LG/cs.CV/cs.AI/eess.IV/eess.SP arXiv 신규 공지 + Crossref/OpenAlex 저널을 매일 스캔해 랩 ROI 버킷으로 정리합니다. 입력 출처: arXiv /new listing, Crossref REST API, OpenAlex.
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+</body>
+</html>

@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 26 Aug 2026 11:42:51 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 27 Aug 2026 12:48:17 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-08-27 (목요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-08-27.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-27.html</guid>
+      <pubDate>Thu, 27 Aug 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘(8/27, 목) arXiv 5개 카테고리 listing이 정상적으로 목요일 치로 갱신되어 530편(new+cross)을 새로 확보했습니다. 어제(8/26)는 diffusion model 자체의 이론(생성 궤적 분기, 손실 하한, 일반화·암기 경계)을 파고드는 논문 5편이 한꺼번에 나왔던 날이었는데, 오늘은 이론보다 "우리가 이미 쓰는 최적화 도구가 언제 믿을 만한지"를 검증하는 쪽으로 무게중심이 다시 한 번 옮겨갔습니다. Gaussian Splatting을 카메라 밖 촬영 물리(광음향, 수중)에 옮겨 쓰는 논문 3편과, PINN의 실패 원인·처방을 통제된 실험으로 가려내는 논문 5~6편이 오늘의 실질적인 두 축입니다.]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-08-26 (수요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-08-26.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-18.html</guid>
       <pubDate>Thu, 18 Jun 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[목요일 arXiv 섹션은 cs.LG 194편·cs.AI 165편·cs.CV 100편으로 일반 ML이 양적으로 압도하는 날입니다. 그럼에도 계산 광학과 직결되는 신호가 세 갈래로 들어왔네요.]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Daily Briefing — 2026-06-17 (수요일)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-06-17.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-17.html</guid>
-      <pubDate>Wed, 17 Jun 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[수요일 arXiv는 413건 스캔에서 57건이 ROI로 선택됐습니다. Deep Learning Methods 버킷이 41건으로 압도적이지만, 우리 핵심 분야에 닿는 신호는 크게 세 흐름으로 읽힙니다.]]></description>
     </item>
   </channel>
 </rss>

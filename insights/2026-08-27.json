@@ -1,0 +1,112 @@
+{
+  "date": "2026-08-27",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "Gaussian Splatting이 카메라 3D 복원을 넘어 광음향·수중처럼 다른 촬영 물리의 역문제 백본으로 옮겨붙음",
+      "papers": [
+        {"title": "PAGS: Autofocusing Photoacoustic Tomography via Speed-of-Sound-Adaptive Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2608.25472", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Gaussian Splatting Underwater: A Controlled Cross-Regime Study", "arxiv_id": "https://arxiv.org/abs/2608.25483", "journal_or_source": "arXiv cs.CV"},
+        {"title": "PIVOT: A Multi-Trajectory Dataset and Testbed for Pose, Intrinsics, and Novel Viewpoint Evaluation in Real-World 3D Reconstruction", "arxiv_id": "https://arxiv.org/abs/2608.25401", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "3D Gaussian Splatting은 원래 카메라로 찍은 여러 장의 사진에서 장면을 복원하는 novel-view synthesis 기법으로 시작했습니다. 오늘 나온 두 논문은 이 기법을 완전히 다른 촬영 물리로 옮겨서 씁니다. PAGS는 광음향 단층촬영(빛을 흡수한 조직이 초음파를 내는 원리)에서, 조직마다 음속이 달라 초점이 흐려지는 문제를 풀 때 Gaussian Splatting을 미분 가능한 렌더링 도구로 씁니다 — 음속 지도 자체를 학습 가능한 변수로 두고 최적화하는 방식이라, 별도의 음속 측정 장비 없이도 흐려진 영상을 스스로 초점을 맞춥니다. Gaussian Splatting Underwater는 반대로 이 기법이 실제로 잘 되는 조건(맑고 얕은 물)을 벗어나 탁도, 빛 흡수, 조명 불균일이 있는 진짜 수중 환경에서도 버티는지를 여러 공개 데이터셋으로 통제 비교합니다. PIVOT은 Gaussian Splatting/NeRF 계열 방법들이 보통 실험실 친화적인 깨끗한 카메라 경로로만 평가된다는 점을 지적하고, 로봇·드론이 실제로 마주치는 거친 궤적과 부정확한 카메라 파라미터로 다시 평가할 벤치마크를 만듭니다. 세 편을 같이 보면, Gaussian Splatting이 이제 '카메라 3D 복원 알고리즘' 하나가 아니라 물리 모델을 얹을 수 있는 미분 가능한 렌더링 뼈대로 자리잡아, 우리 랩이 다루는 산란매질 통과 이미징이나 비카메라 촬영 역문제에도 같은 최적화 틀을 가져다 쓸 수 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "arXiv cs.CV 서로 다른 저자군 3편이 같은 날 Gaussian Splatting을 비카메라/비이상 조건 역문제로 확장하는 방향을 공유하지만, 응용 도메인(의료 영상 대 수중 대 평가 벤치마크)이 서로 달라 아직 하나의 방법론 표준으로 수렴했다고 보기엔 이름",
+      "lab_action": "PAGS의 미분 가능 음속 지도 최적화 코드를 재현해, 우리 랩 산란매질 통과 이미징에서 매질의 굴절률 불균일을 같은 방식으로 함께 최적화했을 때 재구성 PSNR이 기존 고정 매질 가정 대비 얼마나 개선되는지 시뮬레이션 비교",
+      "importance_tags": ["[방법전환]"]
+    },
+    {
+      "cluster": "Physics-informed neural network가 왜 실패하고 무엇으로 고쳐야 하는지를 통제된 실험으로 검증하는 논문이 한꺼번에 몰림",
+      "papers": [
+        {"title": "Neither Precision Nor Architecture Alone: Controlled Tests of Failure Remedies for Physics-Informed Neural Networks", "arxiv_id": "https://arxiv.org/abs/2608.25327", "journal_or_source": "arXiv cs.LG"},
+        {"title": "When Does Frequency Decomposition Benefit Physics-Informed Neural Networks? A Preliminary Ablation Study", "arxiv_id": "https://arxiv.org/abs/2608.24940", "journal_or_source": "arXiv cs.LG"},
+        {"title": "Physics-Informed Foresight Pruning for Sparse PINN Solvers of Nonlinear PDEs", "arxiv_id": "https://arxiv.org/abs/2608.25564", "journal_or_source": "arXiv cs.LG"},
+        {"title": "Physics-Informed Error Field Learning: A Post-Training Optimization Framework for Physics-Informed Neural Networks", "arxiv_id": "https://arxiv.org/abs/2608.24970", "journal_or_source": "arXiv cs.LG"},
+        {"title": "A Constitutive Markov Physics-Informed Neural Operator (MPNO) for Autoregressive Stability in Transient Dynamics", "arxiv_id": "https://arxiv.org/abs/2608.25744", "journal_or_source": "arXiv cs.LG"}
+      ],
+      "why": "PINN(물리 방정식을 손실 함수에 직접 넣어 학습하는 신경망)은 계산 이미징의 역문제 사전으로도 종종 쓰이는데, 실전에서는 뻣뻣한(stiff) 방정식이나 급격히 변하는 물리 조건에서 학습이 잘 안 되는 문제가 오랫동안 보고돼 왔습니다. 오늘 다섯 편은 이 실패를 감覚적으로 진단하지 않고 통제된 실험으로 검증합니다. Neither Precision Nor Architecture Alone은 'FP64로 정밀도를 올리면 된다'는 주장과 '아키텍처를 상태공간모델로 바꾸면 된다'는 두 경쟁 처방을 144회 반복 실험으로 나란히 놓고, 둘 다 단독으로는 충분하지 않다는 것을 보입니다. Frequency Decomposition 논문은 Fourier 특징 임베딩 같은 고주파 보정 기법이 실제로는 모든 상황에서 도움이 되는 게 아니라 특정 스펙트럼 조건에서만 효과가 있다는 것을 좁혀서 확인합니다. Foresight Pruning은 PINN이 과도하게 큰 모델을 쓰는 경우가 많다는 데서 출발해, 학습 시작 전에 어떤 파라미터를 가지치기해도 되는지를 미분 항까지 고려해 판단합니다. Error Field Learning은 학습 후반부에 파라미터를 더 업데이트해도 정확도가 잘 안 오르는 정체 구간을, 남은 오차 자체를 다시 예측하는 후처리 단계로 보완합니다. MPNO는 반복 예측(autoregressive rollout)을 여러 스텝 돌릴 때 오차가 폭발하거나 0으로 무너지는 불안정성을, 전파 연산자의 스펙트럼 반경에 구조적 제약을 걸어서 막습니다. 다섯 편을 같이 보면, PINN 커뮤니티가 '더 좋은 트릭 하나'를 찾기보다 기존에 떠돌던 여러 처방(정밀도, 아키텍처, 주파수 임베딩, 가지치기, 후처리, 안정성 제약)을 각각 언제 통하고 언제 안 통하는지 통제된 조건에서 가려내는 단계로 넘어갔다는 뜻입니다. 우리 랩처럼 물리 기반 사전을 역문제에 쓰는 입장에서는, 이 결과들이 '어떤 상황에서 어떤 처방을 써야 하는지'를 고를 때 실질적인 참고가 됩니다.",
+      "confidence": "High",
+      "confidence_note": "arXiv cs.LG 서로 다른 저자군 5편(+ 관련 주제 1편인 neutron diffusion PINN 초기화 논문까지 포함하면 6편)이 PINN의 실패 원인 진단과 개선법 검증이라는 같은 문제를 정밀도, 아키텍처, 주파수, 가지치기, 안정성 다섯 각도에서 동시에 다룸",
+      "lab_action": "Neither Precision Nor Architecture Alone의 144-run 통제 실험 설계(정밀도 축 vs 아키텍처 축)를 그대로 가져와, 우리 랩 위상 복원용 PINN 사전에서 같은 두 축(FP64 vs SSM 백본)을 convection/advection 대신 산란매질 통과 이미징의 순전파 방정식으로 바꿔 재현",
+      "importance_tags": ["[해부분석]", "[평가축]"]
+    },
+    {
+      "cluster": "Diffusion 기반 초해상도가 사실성(fidelity)과 그럴듯함(perception) 사이 줄다리기를 다시 정면으로 다룸",
+      "papers": [
+        {"title": "GraftSR: Grafting Authentic Textures for Real-World Image Super-Resolution via Identical-Instance Guidance", "arxiv_id": "https://arxiv.org/abs/2608.25334", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Uncertainty-Guided Latent Diffusion Models for Faithful Super Resolution", "arxiv_id": "https://arxiv.org/abs/2608.25998", "journal_or_source": "arXiv cs.CV"},
+        {"title": "WAVE: Reversing the Guidance Hierarchy for Coarse-to-Fine Guided Depth Super-Resolution", "arxiv_id": "https://arxiv.org/abs/2608.25302", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "diffusion 기반 초해상도는 이미지를 그럴듯하게 채워 넣는 데는 강하지만, 그 그럴�듯함이 실제 정답과 다른 무늬(texture hallucination)를 만들어내는 문제가 꾸준히 지적돼 왔습니다. GraftSR은 이 문제를 '같은 대상을 찍은 다른 참조 사진'에서 진짜 질감을 가져와 옮겨 붙이는 방식으로 풀려 하는데, 저해상도 입력과 참조 사진 사이의 공간적 어긋남을 맞추는 것이 관건입니다. UGDiff는 참조 사진 없이, 모델 스스로 어느 영역의 복원 결과를 얼마나 신뢰할 수 있는지 불확실성을 추정해서 그 정보로 사실성과 그럴듯함 사이의 균형을 다시 조정합니다. WAVE는 깊이 영상 초해상도에서, 기존에는 RGB 안내 정보를 거친 특징에서 세밀한 특징 순서로 뽑던 구조 자체가 편향을 만든다고 보고 이 순서를 뒤집는 웨이블릿 기반 방법을 제안합니다. 세 편을 같이 보면, 초해상도 연구의 무게중심이 '더 그럴듯한 디테일을 만드는 방법'에서 '만들어낸 디테일이 실제로 맞는지 어떻게 보장할 것인가'로 옮겨가고 있다는 뜻입니다. 이는 우리 랩이 복원 결과를 정량 평가할 때 지각적 화질 지표만이 아니라 사실성 지표를 같이 봐야 한다는 신호이기도 합니다.",
+      "confidence": "Medium",
+      "confidence_note": "arXiv cs.CV 서로 다른 저자군 3편이 같은 날 초해상도의 사실성-지각화질 트레이드오프라는 같은 문제를 다루지만, 해법(참조 이미지, 불확실성 추정, 안내 계층 재배열)이 서로 달라 하나의 표준 해법으로 수렴한 것은 아님",
+      "lab_action": "UGDiff의 불확실성 추정 모듈을 우리 랩 위상 복원 diffusion 사전 파이프라인에 이식해, 재구성 영역별 신뢰도 맵과 실제 GT 대비 오차 맵의 상관관계를 정량 비교",
+      "importance_tags": ["[방법전환]"]
+    },
+    {
+      "cluster": "Meta-Optics/Diffractive 신호는 오늘 사실상 이미징 무관 — 통신·센싱 하드웨어로 완전히 쏠림 (watch lens)",
+      "papers": [
+        {"title": "Deep-Learning-Enabled Inverse Design of Dual-Resonance Terahertz Metasurface Sensors Multiplexing SP-BIC and FW-BIC", "arxiv_id": "https://doi.org/10.1109/lmwt.2026.3724018", "journal_or_source": "JNL"},
+        {"title": "Electrically activated quasi-BICs in metasurfaces through atomically thin semiconductors", "arxiv_id": "https://doi.org/10.1038/s41377-026-02451-x", "journal_or_source": "JNL"}
+      ],
+      "why": "오늘 Meta-Optics/Diffractive 버킷은 9편인데, 실제로 열어보면 위성 무선 전력전송, THz 지문 센싱, 근접장 다중접속용 메타표면 라우터, 스푸프 표면 플라즈몬 기반 레이더 단면적 감소, 굴곡 가능한 저-RCS 메타표면처럼 전부 통신·레이더·센싱 하드웨어입니다. 카메라나 현미경처럼 이미지를 형성하는 데 쓰이는 메타표면 논문은 오늘 한 편도 없습니다. 그나마 이미징과 가장 가까운 두 편(quasi-BIC 반도체 메타표면, THz 이중공진 센서)도 분광 센싱이나 굴절률 감지가 목적이라 결상(imaging) 응용은 아닙니다. 즉 오늘은 메타표면 연구 활력이 통신·레이더·센싱 쪽으로 거의 전부 쏠린 날이라, 어제(색 라우터·3D 홀로그램처럼 뚜렷한 이미징 수치가 있던 날)와 대비됩니다.",
+      "confidence": "Low",
+      "confidence_note": "9편 모두 확인했으나 이미징 결상 응용 논문이 0편이라 클러스터라기보다 '오늘 신호 없음'에 가까운 관찰. 상단 클러스터 표에는 올리지 않음",
+      "lab_action": "이미징용 메타표면 신호가 이틀 이상 연속으로 옅어지는지 다음 주까지 추적하고, 계속 옅으면 저널 수집 쿼리에 'metalens imaging'처럼 더 좁은 키워드를 추가해 통신 논문 오탐 비율을 낮출지 검토",
+      "importance_tags": ["[관찰중]"]
+    }
+  ],
+  "insights": [
+    {
+      "title": "Gaussian Splatting이 카메라 3D 복원을 넘어 광음향·수중처럼 다른 촬영 물리의 역문제 백본으로 옮겨붙음",
+      "claim": "PAGS는 광음향 단층촬영의 음속 불균일 문제를 미분 가능한 Gaussian Splatting 렌더링으로 스스로 초점을 맞추는 방식으로 풀고, Gaussian Splatting Underwater는 이 기법이 탁하고 조명이 불균일한 진짜 수중 환경에서도 버티는지 통제 비교하며, PIVOT은 평가 자체가 실험실 친화적 궤적에 치우쳐 있었다는 것을 지적한다.",
+      "papers": [
+        {"title": "PAGS: Autofocusing Photoacoustic Tomography via Speed-of-Sound-Adaptive Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2608.25472", "importance_tags": ["[방법전환]"]},
+        {"title": "Gaussian Splatting Underwater: A Controlled Cross-Regime Study", "arxiv": "https://arxiv.org/abs/2608.25483", "importance_tags": ["[평가축]"]},
+        {"title": "PIVOT: A Multi-Trajectory Dataset and Testbed for Pose, Intrinsics, and Novel Viewpoint Evaluation in Real-World 3D Reconstruction", "arxiv": "https://arxiv.org/abs/2608.25401", "importance_tags": ["[인프라]"]}
+      ]
+    },
+    {
+      "title": "Physics-informed neural network가 왜 실패하고 무엇으로 고쳐야 하는지를 통제된 실험으로 검증하는 논문이 한꺼번에 몰림",
+      "claim": "정밀도 상향, 아키텍처 교체, 주파수 임베딩, 가지치기, 후처리 오차 보정, 안정성 제약이라는 여섯 가지 처방을 각각 통제된 조건에서 검증한 논문 5편이 같은 날 나와, PINN 커뮤니티가 처방을 하나씩 검증하는 단계로 넘어갔다는 것을 보여준다.",
+      "papers": [
+        {"title": "Neither Precision Nor Architecture Alone: Controlled Tests of Failure Remedies for Physics-Informed Neural Networks", "arxiv": "https://arxiv.org/abs/2608.25327", "importance_tags": ["[해부분석]"]},
+        {"title": "When Does Frequency Decomposition Benefit Physics-Informed Neural Networks? A Preliminary Ablation Study", "arxiv": "https://arxiv.org/abs/2608.24940", "importance_tags": ["[평가축]"]},
+        {"title": "Physics-Informed Foresight Pruning for Sparse PINN Solvers of Nonlinear PDEs", "arxiv": "https://arxiv.org/abs/2608.25564", "importance_tags": ["[실사용전환]"]}
+      ]
+    },
+    {
+      "title": "Diffusion 기반 초해상도가 사실성과 그럴듯함 사이 줄다리기를 다시 정면으로 다룸",
+      "claim": "GraftSR은 참조 이미지에서 진짜 질감을 옮겨 붙이고, UGDiff는 불확실성 추정으로 신뢰도를 판단하며, WAVE는 안내 계층의 순서 자체를 뒤집어 초해상도가 만든 디테일이 실제로 맞는지를 확보하려 한다.",
+      "papers": [
+        {"title": "GraftSR: Grafting Authentic Textures for Real-World Image Super-Resolution via Identical-Instance Guidance", "arxiv": "https://arxiv.org/abs/2608.25334", "importance_tags": ["[방법전환]"]},
+        {"title": "Uncertainty-Guided Latent Diffusion Models for Faithful Super Resolution", "arxiv": "https://arxiv.org/abs/2608.25998", "importance_tags": ["[평가축]"]},
+        {"title": "WAVE: Reversing the Guidance Hierarchy for Coarse-to-Fine Guided Depth Super-Resolution", "arxiv": "https://arxiv.org/abs/2608.25302", "importance_tags": ["[방법전환]"]}
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "PAGS의 미분 가능 음속 지도 최적화를 우리 랩 산란매질 통과 이미징에 이식",
+      "claim": "매질의 물리 변수(음속, 또는 굴절률)를 고정하지 않고 Gaussian Splatting 최적화 변수로 함께 학습하면, 매질 불균일로 인한 초점 흐림을 별도 측정 장비 없이 줄일 수 있다.",
+      "supporting_papers": [
+        {"title": "PAGS: Autofocusing Photoacoustic Tomography via Speed-of-Sound-Adaptive Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2608.25472"}
+      ]
+    },
+    {
+      "title": "PINN 실패 처방 통제 실험 설계를 우리 랩 물리 기반 역문제 사전에 재현",
+      "claim": "정밀도(FP64)와 아키텍처(SSM 백본) 두 축을 나눠서 통제하는 실험 설계를, 우리 랩이 쓰는 위상 복원·산란매질 통과 이미징의 순전파 PINN 사전에 적용하면 어떤 처방이 실제로 효과가 있는지 가려낼 수 있다.",
+      "supporting_papers": [
+        {"title": "Neither Precision Nor Architecture Alone: Controlled Tests of Failure Remedies for Physics-Informed Neural Networks", "arxiv": "https://arxiv.org/abs/2608.25327"}
+      ]
+    },
+    {
+      "title": "UGDiff 불확실성 추정을 위상 복원 diffusion 사전에 이식해 신뢰도 맵 검증",
+      "claim": "diffusion 기반 복원이 만들어낸 디테일 영역별로 불확실성을 추정하면, 실제 GT와 오차가 큰 영역을 사전에 표시할 수 있어 복원 신뢰도를 정량적으로 보고할 수 있다.",
+      "supporting_papers": [
+        {"title": "Uncertainty-Guided Latent Diffusion Models for Faithful Super Resolution", "arxiv": "https://arxiv.org/abs/2608.25998"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}
