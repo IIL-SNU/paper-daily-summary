@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 27 Aug 2026 12:48:17 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 13:45:04 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-08-28 (금요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-08-28.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-28.html</guid>
+      <pubDate>Fri, 28 Aug 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘(8/28, 금) arXiv 5개 카테고리 listing이 정상적으로 금요일 치로 갱신되어 486편(new+cross)을 새로 확보했습니다. 어제(8/26)는 계산광학 하드웨어 버킷이 통째로 조용했던 하루였는데(Fourier Ptychography/Lensless 모두 0편), 오늘도 그 기조가 이어져 Fourier Ptychography는 0편, Lensless/Coded Imaging도 1편뿐입니다. 다만 오늘은 그 빈자리를 채우는 신호가 어제보다 더 또렷했습니다. Tomography/3D Imaging 버킷 안에서 3D Gaussian Splatting을 압축·다중 에이전트 SLAM·방해 요소 필터링·다중 물체 편집 같은 실제 배포 문제에 적용한 논문 4편이 같…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-08-27 (목요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-08-27.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-19.html</guid>
       <pubDate>Fri, 19 Jun 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[금요일 arXiv /new 배치는 총 452건으로 cs.AI(220)·cs.LG(201)·cs.CV(124) 세 채널이 대부분을 채웁니다. eess.IV는 5건, eess.SP는 16건으로 광학 전문 채널은 여전히 소수 정예입니다. 이번 주 전체를 돌아보면, 월요일부터 점차 역문제·희소 관측 복원에서 기하 제약을 명시적으로 내재화 하는 방향이 강화되어 왔고, 오늘 PSCT-Net(미분 가능 역투영)과 VisDom(가시 도메인 제약 Gaussian Splatting)이 그 흐름의 금요일 결산처럼 보입니다.]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Daily Briefing — 2026-06-18 (목요일)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-06-18.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-18.html</guid>
-      <pubDate>Thu, 18 Jun 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[목요일 arXiv 섹션은 cs.LG 194편·cs.AI 165편·cs.CV 100편으로 일반 ML이 양적으로 압도하는 날입니다. 그럼에도 계산 광학과 직결되는 신호가 세 갈래로 들어왔네요.]]></description>
     </item>
   </channel>
 </rss>
