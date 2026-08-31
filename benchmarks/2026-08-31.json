@@ -1,0 +1,37 @@
+{
+  "date": "2026-08-31",
+  "results": [
+    {
+      "benchmark": "Oxford Spires (long-horizon streaming 3D reconstruction)",
+      "metric": "ATE",
+      "value": 4.35,
+      "value_str": "4.35 m ATE, RPE-R 0.12° (직전 최고 기록 대비 약 40% 감소)",
+      "paper": "https://arxiv.org/abs/2608.27529",
+      "paper_title": "Revisiting Local Context for Long-Horizon Streaming 3D Reconstruction (ABot-Recon)"
+    },
+    {
+      "benchmark": "9개 항공 매핑 블록 (large-scale UAV mapping)",
+      "metric": "F@5",
+      "value": 0.877,
+      "value_str": "0.877 F@5 (Pi3X+SLRF 0.829 대비 개선, 2000장 약 5분 처리)",
+      "paper": "https://arxiv.org/abs/2608.28288",
+      "paper_title": "GeoFF3D: Coordinate-Anchored Feed-Forward Reconstruction for Large-Scale UAV Mapping"
+    },
+    {
+      "benchmark": "Non-line-of-sight reconstruction GPU pipeline (f-k migration / phasor-fields)",
+      "metric": "speedup / memory",
+      "value": 42,
+      "value_str": "최대 42배 가속(최고 성능 공개 GPU baseline 대비 최대 14배), 메모리 사용량 최대 2.5%까지 감소",
+      "paper": "https://arxiv.org/abs/2608.28183",
+      "paper_title": "Memory-efficient GPU pipelines for real-time non-line-of-sight reconstruction"
+    },
+    {
+      "benchmark": "Chest radiograph case-based retrieval",
+      "metric": "retrieval accuracy / ranking quality",
+      "value": 26,
+      "value_str": "SOTA global/local 방법 대비 검색 정확도 18~26%, 랭킹 품질 11~23% 개선",
+      "paper": "https://arxiv.org/abs/2608.28137",
+      "paper_title": "CheXtriev: Anatomy-Centered Representation for Case-Based Retrieval of Chest Radiographs"
+    }
+  ]
+}

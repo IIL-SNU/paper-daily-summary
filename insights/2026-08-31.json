@@ -1,0 +1,96 @@
+{
+  "date": "2026-08-31",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "3D 재구성이 '더 정확하게'에서 '정해진 메모리·연산 예산 안에서 돌아가게'로",
+      "papers": [
+        {"title": "ABCD: Alpha-Composited Block Coordinate Descent: Constant-VRAM Training for Large Radiance Fields", "arxiv_id": "https://arxiv.org/abs/2608.27735", "journal_or_source": "arXiv cs.CV/cs.GR"},
+        {"title": "ZipMVS: Multi-View Stereo with Compressed Cost Volumes", "arxiv_id": "https://arxiv.org/abs/2608.28033", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Non-Uniform Quantisation for 3DGS Compression", "arxiv_id": "https://arxiv.org/abs/2608.28272", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Memory-efficient GPU pipelines for real-time non-line-of-sight reconstruction", "arxiv_id": "https://arxiv.org/abs/2608.28183", "journal_or_source": "arXiv cs.DC/cs.CV"}
+      ],
+      "why": "3D 재구성 연구에서 그동안 많이 보던 질문은 '얼마나 정확하게 복원하느냐'였습니다. 오늘 arXiv에는 그 질문 앞에 '정해진 메모리·저장 용량·연산 시간 안에서'라는 조건을 붙이는 논문 6편이 한꺼번에 나왔습니다. ABCD는 3D Gaussian Splatting(여러 장의 사진에서 장면을 점 구름으로 복원해 새 시점 영상을 만드는 기법) 학습 시 장면 전체를 GPU 메모리에 한꺼번에 올려야 했던 문제를, 공간을 블록으로 나눠 한 번에 하나의 블록만 활성화하는 방식으로 풀어 GPU 메모리 사용량을 장면 크기와 무관하게 일정하게 만듭니다. ZipMVS는 다중 시점 스테레오(여러 장의 사진과 카메라 기하로 깊이를 복원하는 방법)가 정확도를 위해 쌓아 두는 비용 볼륨(cost volume)을 압축해 항공우주·자율주행처럼 메모리가 제한된 환경에서도 돌아가게 하고, Non-Uniform Quantisation for 3DGS Compression은 3DGS 결과물을 저장·전송할 때 필요한 용량을 데이터 분포에 맞춰 비균일하게 줄이며 MPEG 3DGS 압축 표준화 활동에 기여하는 것을 목표로 합니다. 실시간 비가시선(non-line-of-sight, 코너 너머 숨은 장면을 간접광만으로 복원하는 기법) 재구성 논문은 GPU 커널을 다시 짜서 기존 대비 최대 42배 빠르면서 메모리는 최대 2.5%까지 줄였다고 보고합니다. 여기에 장시간 비디오 스트리밍 3D 복원(직전 11프레임만 기억하는 국소 컨텍스트로 장거리 드리프트를 줄인 ABot-Recon)과 대규모 UAV 매핑(2000장을 5분 만에 처리하는 청크 단위 확장 구조의 GeoFF3D)까지 더하면, 오늘 하루만 6편이 학습·저장·전송·추론 각 단계에서 '무한정 자원을 가정하지 않는' 3D 재구성을 다뤘습니다. 어제(8/28)의 3DGS 클러스터가 이미 검증된 3DGS를 SLAM·협업·편집 같은 상위 응용에 배포하는 문제를 다뤘다면, 오늘은 그보다 한 단 아래, 학습·저장·연산 자체의 자원 제약을 다룬다는 점에서 결이 다릅니다.",
+      "confidence": "High",
+      "confidence_note": "arXiv cs.CV/cs.DC/cs.GR 서로 다른 저자군 6편이 같은 날 3D 재구성의 학습 메모리, 저장 압축, 비용 볼륨 압축, 실시간 GPU 파이프라인, 스트리밍 드리프트, 대규모 확장이라는 서로 다른 자원 제약을 동시에 다룸",
+      "lab_action": "ABCD의 블록 좌표 하강(block coordinate descent) 방식과 Non-Uniform Quantisation의 중요도 가중 양자화를 우리 랩 산란매질 통과 이미징용 3DGS 파이프라인에 순서대로 적용해, (1) 학습 시 피크 VRAM-장면 크기 곡선과 (2) 압축률별 재구성 PSNR 저하 곡선을 그려 실시간 처리 가능한 자원 구간을 확인",
+      "importance_tags": ["[방법전환]", "[실사용전환]"]
+    },
+    {
+      "cluster": "병리 파운데이션 모델의 신뢰성 문제 — 설명 가능성과 아티팩트 강건성을 서로 다른 방향에서 공략",
+      "papers": [
+        {"title": "EXPOSE: Explainable and Domain-Robust Embeddings from Pathology Vision Foundation Models using Sparse Autoencoders", "arxiv_id": "https://arxiv.org/abs/2608.28191", "journal_or_source": "arXiv cs.CV/cs.LG"},
+        {"title": "Destroy Me: Automatic Artifact Generation for Histopathology Images", "arxiv_id": "https://arxiv.org/abs/2608.27516", "journal_or_source": "arXiv eess.IV/cs.AI/cs.CV/cs.LG"}
+      ],
+      "why": "컴퓨테이셔널 병리학에서 쓰는 비전 파운데이션 모델은 염색·조직 처리·스캐너 하드웨어가 달라지면 성능이 흔들리는 문제가 있습니다. 오늘 나온 두 논문은 이 문제를 서로 다른 방향에서 다룹니다. EXPOSE는 파운데이션 모델이 뽑아내는 임베딩(특징 벡터) 안에 생물학적 정보와 도메인(염색·스캐너) 정보가 뒤섞여 있다는 데 주목해, sparse autoencoder(희소 오토인코더)로 임베딩을 해석 가능한 성분으로 분해한 뒤 도메인 관련 성분만 골라 억제합니다. 모델을 다시 학습시키지 않고도 도메인 관련 성분을 지우면 서로 다른 병원·스캐너 데이터 사이의 성능 격차가 줄어든다는 결과를 대규모 전립선암 데이터셋에서 보여줍니다. Destroy Me는 반대 방향에서 접근합니다. 기존에는 화질이 나쁜 영역을 걸러내 '깨끗한 데이터'만 쓰는 전략이 흔했는데, 이 논문은 조직 접힘·염색 침전물·블러·스티칭 오류·먼지·펜 표시 같은 실제 아티팩트를 diffusion 모델과 물리 기반 절차적 모델링으로 사실적으로 합성해, 모델을 '지저분한 환경에서도 버티도록' 훈련시킵니다. 폐선암 패턴 분류 실험에서 이렇게 훈련한 모델이 독립 실제 데이터셋에서 macro F1 10.5%, Cohen's Kappa 15% 상대적으로 개선됐습니다. 두 논문을 같이 보면, 병리 파운데이션 모델 연구가 '깨끗한 데이터에서 얼마나 잘 맞히나'를 넘어 '실제 병원 환경의 지저분함과 장비 차이를 모델이 어떻게 견디게 만들 것인가'를 정면으로 묻기 시작했다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "arXiv 서로 다른 저자군 2편이 같은 날 나왔고 접근 방향(임베딩 해석 대 아티팩트 합성)은 다르지만 둘 다 '병리 파운데이션 모델의 실배포 강건성'이라는 같은 문제를 겨냥함. 3편 이상으로 확산되는지는 추가 확인 필요",
+      "lab_action": "EXPOSE의 sparse autoencoder 기반 도메인 성분 억제 기법을, 우리 랩이 검토 중인 계산 병리·현미경 영상 파운데이션 모델 임베딩에 적용해 스캐너·조명 조건이 다른 두 데이터셋 간 cross-domain 성능 격차를 DoRI 유사 지표로 측정",
+      "importance_tags": ["[해부분석]", "[데이터전환]"]
+    },
+    {
+      "cluster": "메타표면이 결상과 광학 연산을 하나의 소자에 통합하려는 시도 (watch lens)",
+      "papers": [
+        {"title": "Real‐Time LWIR Imaging and Ranging via 4D Light‐Field Metasurface‐Transformer Integrated Framework", "arxiv_id": "https://doi.org/10.1002/lpor.71816", "journal_or_source": "JNL"},
+        {"title": "Spatial Differentiation of Optical Signal Based on Fourier Filtering with Pixel and Gradient Metasurfaces", "arxiv_id": "https://doi.org/10.1134/s0021364026601624", "journal_or_source": "JNL"}
+      ],
+      "why": "메타표면(나노구조로 빛의 위상·진폭을 조절하는 평면 광학 소자) 이미징 신호는 오늘도 옅었습니다 — Meta-Optics/Diffractive 버킷 2편 중 통신용 빔포밍 안테나 1편을 빼면 이미징 관련은 사실상 이 두 편뿐입니다. 다만 방향은 비슷합니다. LWIR(장파장 적외선) 이미징·거리측정 논문은 메타표면 마이크로렌즈 어레이를 상용 열화상 카메라 모듈에 그대로 통합해 4차원 라이트필드(공간+각도 정보)를 얻고, 텍스처가 거의 없는 열화상에서도 트랜스포머 기반 디스패리티(시차) 추정으로 초당 40프레임 수준의 실시간 거리측정을 시연합니다. 즉 '촬영'과 '거리측정'이라는 두 기능을 렌즈 하나와 신경망 하나로 통합한 셈입니다. Fourier 필터링 메타표면 논문은 반대 방향에서 비슷한 통합을 추구합니다 — 렌즈가 아니라 아날로그 광학 미분(이미지 경계를 디지털 처리 없이 빛의 속도로 검출하는 연산)을 메타표면 나노구조로 구현합니다. 두 논문 모두 '메타표면 하나로 촬영과 신호처리를 동시에 해결한다'는 방향은 같지만, 하나는 결상+거리측정이고 다른 하나는 순수 광학 연산이라 하나의 표준 방법으로 수렴했다고 보기는 이릅니다.",
+      "confidence": "Low",
+      "confidence_note": "이미징 직결 논문은 저널 2편뿐이고 구체 기능(거리측정 결상 대 아날로그 광학 연산)이 달라 단발 신호에 가까움. 상단 클러스터 표에는 watch lens로만 유지",
+      "lab_action": "LWIR 메타표면-트랜스포머 결합 구조(광학 프론트엔드 + 디스패리티 트랜스포머 백엔드)를, 우리 랩 메타렌즈 기반 라이트필드 프로토타입의 거리측정 정확도 벤치마크 설계에 참고 사례로 정리",
+      "importance_tags": ["[방법전환]"]
+    }
+  ],
+  "insights": [
+    {
+      "title": "3D 재구성이 '더 정확하게'에서 '정해진 메모리·연산 예산 안에서 돌아가게'로",
+      "claim": "ABCD는 학습 시 GPU 메모리를 장면 크기와 무관하게 일정하게 만들고, ZipMVS는 다중 시점 스테레오의 비용 볼륨을 압축하며, Non-Uniform Quantisation은 3DGS 저장 용량을 데이터 분포에 맞춰 줄이고, 실시간 NLOS 재구성은 GPU 파이프라인을 다시 짜 최대 42배 빠르면서 메모리는 2.5%까지 줄였다.",
+      "papers": [
+        {"title": "ABCD: Alpha-Composited Block Coordinate Descent", "arxiv": "https://arxiv.org/abs/2608.27735", "importance_tags": ["[방법전환]"]},
+        {"title": "ZipMVS: Multi-View Stereo with Compressed Cost Volumes", "arxiv": "https://arxiv.org/abs/2608.28033", "importance_tags": ["[실사용전환]"]},
+        {"title": "Non-Uniform Quantisation for 3DGS Compression", "arxiv": "https://arxiv.org/abs/2608.28272", "importance_tags": ["[표준후보]"]},
+        {"title": "Memory-efficient GPU pipelines for real-time non-line-of-sight reconstruction", "arxiv": "https://arxiv.org/abs/2608.28183", "importance_tags": ["[실사용전환]"]}
+      ]
+    },
+    {
+      "title": "병리 파운데이션 모델의 신뢰성 문제 — 설명 가능성과 아티팩트 강건성을 서로 다른 방향에서 공략",
+      "claim": "EXPOSE는 sparse autoencoder로 임베딩에서 도메인 관련 성분을 걸러내 재학습 없이 cross-domain 성능을 높이고, Destroy Me는 실제 아티팩트를 합성해 모델을 지저분한 환경에서도 버티도록 훈련시켜 macro F1 10.5%를 개선한다.",
+      "papers": [
+        {"title": "EXPOSE: Explainable and Domain-Robust Embeddings from Pathology Vision Foundation Models", "arxiv": "https://arxiv.org/abs/2608.28191", "importance_tags": ["[해부분석]"]},
+        {"title": "Destroy Me: Automatic Artifact Generation for Histopathology Images", "arxiv": "https://arxiv.org/abs/2608.27516", "importance_tags": ["[데이터전환]"]}
+      ]
+    },
+    {
+      "title": "메타표면이 결상과 광학 연산을 하나의 소자에 통합하려는 시도",
+      "claim": "LWIR 메타표면-트랜스포머 프레임워크는 결상과 거리측정을 렌즈 하나로 통합하고, Fourier 필터링 메타표면은 디지털 전처리 없이 광학 미분 연산을 나노구조로 구현한다.",
+      "papers": [
+        {"title": "Real-Time LWIR Imaging and Ranging via 4D Light-Field Metasurface-Transformer", "arxiv": "https://doi.org/10.1002/lpor.71816", "importance_tags": ["[방법전환]"]}
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "ABCD/Non-Uniform Quantisation을 우리 랩 3DGS 역문제 백본에 적용해 자원-품질 곡선 확보",
+      "claim": "학습 시 블록 단위로만 메모리를 활성화하는 ABCD의 구조와, 저장 시 중요도 가중 양자화를 쓰는 Non-Uniform Quantisation을 우리 랩 산란매질 통과 이미징용 3DGS 파이프라인에 순서대로 적용하면, 실시간 처리가 가능한 학습 메모리·압축률 구간을 정량적으로 확인할 수 있다.",
+      "supporting_papers": [
+        {"title": "ABCD: Alpha-Composited Block Coordinate Descent", "arxiv": "https://arxiv.org/abs/2608.27735"},
+        {"title": "Non-Uniform Quantisation for 3DGS Compression", "arxiv": "https://arxiv.org/abs/2608.28272"}
+      ]
+    },
+    {
+      "title": "EXPOSE 기반 sparse autoencoder로 우리 랩 병리·현미경 파운데이션 모델 임베딩의 도메인 강건성 점검",
+      "claim": "EXPOSE의 sparse autoencoder 기반 도메인 성분 분리·억제 기법을 우리 랩이 검토 중인 계산 병리/현미경 영상 파운데이션 모델에 적용하면, 재학습 없이 스캐너·염색 조건이 다른 데이터셋 간 성능 격차를 줄일 수 있는지 확인할 수 있다.",
+      "supporting_papers": [
+        {"title": "EXPOSE: Explainable and Domain-Robust Embeddings from Pathology Vision Foundation Models", "arxiv": "https://arxiv.org/abs/2608.28191"}
+      ]
+    },
+    {
+      "title": "LWIR 메타표면-트랜스포머 구조를 참고한 메타렌즈 라이트필드 거리측정 벤치마크 설계",
+      "claim": "메타표면 마이크로렌즈 어레이와 디스패리티 트랜스포머를 결합해 결상과 거리측정을 동시에 수행하는 구조를, 우리 랩 메타렌즈 기반 라이트필드 프로토타입에 참고해 거리측정 정확도·프레임률 벤치마크를 설계할 수 있다.",
+      "supporting_papers": [
+        {"title": "Real-Time LWIR Imaging and Ranging via 4D Light-Field Metasurface-Transformer", "arxiv": "https://doi.org/10.1002/lpor.71816"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

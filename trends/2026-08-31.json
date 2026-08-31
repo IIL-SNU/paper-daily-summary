@@ -1,36 +1,36 @@
 {
   "date": "2026-08-31",
   "source_listing_date": "2026-08-31",
-  "source_mode": "weekly-pastweek",
+  "source_mode": "new",
   "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 0,
-      "cs.CV": 0,
-      "cs.AI": 0,
-      "eess.IV": 0,
-      "eess.SP": 0
+      "cs.LG": 120,
+      "cs.CV": 93,
+      "cs.AI": 190,
+      "eess.IV": 6,
+      "eess.SP": 21
     },
-    "scope": "not applicable — this is the weekly-run stub; 2026-08-31(월)은 독립 weekly 실행(mode=weekly)만 수행하며 당일 daily는 만들지 않는다. 오늘자 arXiv /new daily 카운트는 이 실행의 범위 밖이며, 이후 별도의 11:00 KST daily 실행이 있을 경우에만 채워진다."
+    "scope": "new+cross; replacements excluded"
   },
   "totals": {
-    "total_scanned": 0,
-    "selected": 0
+    "total_scanned": 609,
+    "selected": 148
   },
   "classified": {
     "by_bucket": {
-      "Fourier Ptychography/Microscopy": 0,
+      "Fourier Ptychography/Microscopy": 1,
       "Lensless/Coded Imaging": 0,
-      "Phase Imaging/Holography": 0,
-      "Meta-Optics/Diffractive": 0,
-      "Light-Field/Novel Sensors": 0,
-      "Tomography/3D Imaging": 0,
-      "Virtual Staining/Pathology": 0,
-      "Reconstruction/Inverse Problems": 0,
-      "Deep Learning Methods": 0
+      "Phase Imaging/Holography": 2,
+      "Meta-Optics/Diffractive": 2,
+      "Light-Field/Novel Sensors": 4,
+      "Tomography/3D Imaging": 24,
+      "Virtual Staining/Pathology": 22,
+      "Reconstruction/Inverse Problems": 18,
+      "Deep Learning Methods": 75
     }
   },
-  "daily_thesis": "",
-  "note": "2026-08-31(월) 오전 weekly 실행(mode=weekly)이 이 파일을 생성했다. 지난주(2026-08-24~08-28) 회고 결과는 아래 weekly_retrospective_context에 집계돼 있다. source_mode=weekly-pastweek이며 daily_new_counts/totals/classified/daily_thesis는 당일(2026-08-31) daily 실행이 별도로 있을 경우에만 그 실행이 실측값으로 채운다(2026-08-17, 2026-08-24 weekly stub이 같은 방식으로 처리된 선례를 따름).",
+  "daily_thesis": "계산광학 코어(Fourier Ptychography·Lensless)는 오늘도 거의 비어 있었지만, 3D 재구성 연구의 무게중심이 '더 정확하게 복원하기'에서 '정해진 메모리·연산 예산 안에서 돌아가게 만들기'로 뚜렷하게 옮겨간 하루였다. ABCD, ZipMVS, Non-Uniform Quantisation for 3DGS Compression, 실시간 NLOS GPU 파이프라인 등 학습 VRAM·저장 용량·GPU 메모리라는 자원 제약을 정면으로 다룬 논문이 6편 몰렸다.",
+  "note": "2026-08-31(월) 11:00 KST daily 실행. arXiv 5개 카테고리 /new listing이 이번 실행에서 Monday, 31 August 2026으로 정상 확인되어 그대로 사용했다. 같은 날 오전 별도 weekly 실행이 이 파일을 먼저 weekly-pastweek stub으로 만들었으나, 이번 daily 실행이 daily_new_counts/totals/classified/daily_thesis를 실측값으로 덮어썼다. weekly_retrospective_context는 그대로 보존한다.",
   "weekly_retrospective_context": {
     "iso_week": "2026-35",
     "week_start": "2026-08-24",
