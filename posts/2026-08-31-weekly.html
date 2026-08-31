@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Weekly Retrospective — 2026-W35</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.7;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+table{border-collapse:collapse;width:100%;margin:1rem 0}
+th,td{border:1px solid #ccc;padding:.5rem .8rem;vertical-align:top}
+th{background:#f0f0f8;font-size:.85rem}
+td{font-size:.88rem}
+blockquote{border-left:4px solid #2a2a6e;padding:.5rem 1rem;margin:1rem 0;background:#f8f8ff}
+.theme-card{border:1px solid #e0e0ff;border-radius:8px;padding:1rem;margin:.8rem 0;background:#f8f8ff}
+.theme-card h3{margin:0 0 .5rem;font-size:1rem;color:#2a2a6e}
+a{color:#2a2a6e}
+.home{display:inline-block;padding:.4rem .9rem;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;font-size:.875rem;color:#374151;text-decoration:none;margin:.5rem 0}
+.home:hover{background:#e9ecef}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 6px;border-radius:8px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.hot-cold{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+.hot-box{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:.9rem 1.1rem}
+.cold-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:.9rem 1.1rem}
+.hot-box h3{margin:0 0 .5rem;color:#7f1d1d;font-size:.95rem}
+.cold-box h3{margin:0 0 .5rem;color:#1e3a8a;font-size:.95rem}
+.hot-box ul,.cold-box ul{margin:.4rem 0;padding-left:1.2rem;font-size:.88rem}
+.dd{background:#fefce8;border:1px solid #fde047;border-radius:10px;padding:1.1rem 1.3rem;margin:1rem 0}
+.dd h3{margin:0 0 .5rem;color:#713f12;font-size:1rem}
+.action-card{border:1px solid #d1fae5;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#f0fdf4}
+.action-card h3{margin:0 0 .4rem;font-size:.95rem;color:#14532d}
+.pred-card{border:1px solid #e0e7ff;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#eef2ff}
+.pred-card h3{margin:0 0 .4rem;font-size:.95rem;color:#3730a3}
+.pred-card .cond{font-size:.82rem;color:#4338ca;margin:.3rem 0}
+.meta{font-size:.85rem;color:#475569;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:4px;padding:.6rem 1rem;margin:.8rem 0}
+ul.plain{padding-left:1.3rem}
+ul.plain li{margin:.3rem 0;font-size:.9rem}
+.review-hit{color:#166534;font-weight:700}
+.review-partial{color:#92400e;font-weight:700}
+.review-miss{color:#7f1d1d;font-weight:700}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Weekly Retrospective — 2026-08-31 (Week 35)</h1>
+<div class=meta>
+  <div>발행: 2026-08-31 (월) &nbsp;|&nbsp; 검토 기간: 2026-08-24 ~ 08-28 (Mon–Fri)</div>
+  <div>지난주 arXiv 신규 약 2,910편 (cs.LG 903 · cs.CV 670 · cs.AI 1,195 · eess.IV 39 · eess.SP 103) + 저널 포함 스캔 총 4,311건 &nbsp;|&nbsp; ROI 배정 1,191건 &nbsp;|&nbsp; 5일치 daily briefing 기반(월~금 모두 arXiv+저널 완전판)</div>
+</div>
+
+<h2>🗓 Executive Summary</h2>
+<ul class=plain>
+  <li>지난주는 <strong>'3D Gaussian Splatting(3DGS)이 새 촬영 물리로 번진 다음 날 바로 배포 인프라로 성격을 바꾼 한 주'</strong>로 기억하면 됩니다. 목요일에는 광음향 단층촬영·수중 이미징이라는 카메라 밖의 촬영 물리에 3DGS를 적용하는 논문이 나왔는데, 금요일에는 같은 3DGS가 압축·SLAM·방해요소 필터링 같은 순수 배포 문제로 하루 만에 넘어갔습니다.</li>
+  <li>diffusion 모델을 촬영 역문제 사전으로 쓰는 흐름도 비슷한 하루짜리 전환을 보였습니다. 화요일 CT 재구성에 얼린 diffusion 사전 하나를 재사용하는 응용이 나온 다음 날, 그 사전이 왜 작동하는지를 순수 수학으로 규명하는 이론 논문 5편이 한꺼번에 등장했습니다.</li>
+  <li>랩의 핵심 ROI인 <strong>계산광학 하드웨어 코어(Fourier Ptychography·Lensless)는 목요일 사상 처음으로 두 버킷이 동시에 0편을 기록하고 금요일에도 회복하지 못했습니다.</strong> 지난주(W34) '가뭄이 아니라 하루 단위 변동성'이라고 정정했던 진단을, 이번 주는 저점이 더 깊고 길게 이어지며 다시 시험대에 올렸습니다.</li>
+</ul>
+
+<blockquote>
+<strong>Weekly Thesis.</strong> 지난주 초반(월)에는 2D 비전 파운데이션 모델을 3D 파이프라인에 이식하는 "방법 자체"와 의료 파운데이션 모델이 도메인이 바뀌면 정확히 어디서 무너지는지를 진단하는 논문들이 나왔고, 화요일에는 diffusion 모델이 CT·홀로그래피 역문제를 푸는 재사용 가능한 사전이자 그 자체가 왜 작동하는지 규명하는 이론 대상으로 동시에 떠올랐습니다. 수요일에는 그 이론 축만 남아 5편이 diffusion의 생성 동역학·기억-일반화 경계를 순수 수학으로 파고들었고, 목요일부터는 3D Gaussian Splatting이 카메라 3D 복원을 넘어 광음향 단층촬영·수중 이미징 같은 완전히 다른 촬영 물리의 역문제 백본으로 옮겨붙었다가, 금요일에는 같은 3DGS가 압축·SLAM·편집 같은 "배포 인프라"로 성격을 바꿨습니다. 계산광학 하드웨어 코어는 목요일 사상 처음 두 버킷이 동시에 0편을 기록하고 금요일에도 회복되지 않아, 지난주(W34) "가뭄이 아니라 하루 단위 변동성"이라는 진단을 유지하기 어려울 만큼 골이 깊어진 한 주였습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>지난주 가장 뜨거웠던 흐름은 <strong>3D Gaussian Splatting이 응용 확장과 배포 인프라 사이를 하루 간격으로 오간 것</strong>입니다. 목요일 PAGS는 광음향 단층촬영에서 전용 속도(SoS, speed-of-sound) 측정 하드웨어 없이도 Gaussian의 위치·모양과 국소 속도값을 함께 최적화해 눈먼 자동초점을 구현했고, Gaussian Splatting Underwater는 수중 산란 조건에서 3DGS가 얼마나 버티는지를 통제된 교차 실험으로 처음 정량 검증했습니다. 지금까지 3DGS는 주로 카메라로 찍은 장면을 다시 그리는 도구였는데, 이 두 논문은 그 표현 방식을 완전히 다른 촬영 물리(음파, 산란 매질)의 역문제를 푸는 백본으로 옮겨 쓸 수 있다는 걸 보였습니다. 그런데 금요일에는 3DGS 클러스터의 성격이 완전히 달라집니다. KISS-GS는 압축 파이프라인을 속성별 양자화·엔트로피 코딩·가지치기 모듈로 쪼개 각 모듈의 용량 절감 기여를 독립적으로 측정 가능하게 했고, CGS-SLAM은 여러 로봇이 하나의 3DGS 지도를 함께 만드는 협업 방법을, Per-View Gaussian Predictions는 재학습 없이 사진에 우연히 찍힌 방해 요소를 걸러내는 방법을 냈습니다. 비슷한 하루짜리 전환이 diffusion 모델에서도 나타났습니다. 화요일 Foundation PnP CT는 촬영 방식·기하·재질이 전혀 다른 CT 데이터셋 세 곳에 얼린 diffusion 모델 하나를 그대로 사전으로 재사용해 해석적 복원보다 나은 결과를 냈고, 같은 날 Posterior Information Dynamics와 One Inverse Step 두 논문이 그 사전이 왜 안정적으로 작동하는지 이론으로 규명하기 시작했습니다. 그런데 수요일에는 응용 논문이 완전히 사라지고, diffusion의 생성 동역학과 기억-일반화 경계를 다루는 순수 이론 논문만 5편 남았습니다. 즉 두 흐름 모두 "성능이 좋다"는 관찰에서 "왜 좋은지, 어디까지 재사용해도 안전한지"를 묻는 단계로 넘어갔다는 뜻입니다.</p>
+
+<p>반대로 눈에 띄게 식은 흐름은 랩의 핵심 ROI인 계산광학 하드웨어 코어(Fourier Ptychography·Lensless)입니다. 월요일 두 버킷 모두 0편으로 시작해, 화요일 Fourier Ptychography 2편·Lensless 0편, 수요일에는 각각 3편·4편으로 잠깐 회복하는 듯 보였지만, 목요일에는 두 버킷 모두 다시 0편으로 떨어져 이 리포트가 시작된 이래 처음으로 두 핵심 하드웨어 버킷이 동시에 비었습니다. 금요일에도 Fourier Ptychography는 이틀 연속 0편, Lensless는 클러스터 기준(2편)에 못 미치는 1편에 그쳤습니다. 지난주(W34) weekly가 "가뭄이 아니라 하루 단위로 신호가 몰리는 변동성"이라고 진단을 정정했었는데, 이번 주는 그 저점이 예상보다 훨씬 깊고 길게 이어졌다는 뜻입니다. 이 밖에 월요일 2D 비전 파운데이션 모델을 3D 파이프라인에 "어떻게" 이식할지를 다루는 4편의 클러스터와, 목요일 의료·과학 파운데이션 모델의 도메인 이동 실패를 통제 실험으로 진단하는 흐름(PINN 실패 원인 검증 5편)은 각각 하루짜리로 끝나거나 도구만 바뀐 채 반복됐습니다.</p>
+
+<p>다음 주 전망: 첫째, 계산광학 하드웨어 코어의 결핍이 정말 "변동성"의 저점인지, 아니면 진단을 다시 수정해야 할 "구조적 하락"인지가 가장 먼저 확인할 대상입니다. 둘째, 3DGS가 지난주 목~금 하루 만에 응용 확장에서 배포 인프라로 넘어간 패턴이 다음 주에도 이틀 이내의 짧은 간격으로 반복되는지 지켜봐야 합니다. 셋째, diffusion 역문제 사전을 둘러싼 이론(Loss Floor, Posterior Information Dynamics)이 다음 주에는 실제 재구성 성능 개선으로 이어지는 후속 응용 논문을 낳는지가 랩 ROI 관점에서 가장 직접적인 확인 대상입니다.</p>
+
+<h2>⚖️ Hot vs Cold</h2>
+<div class=hot-cold>
+  <div class=hot-box>
+    <h3>⬆ 가속 클러스터</h3>
+    <ul>
+      <li><strong>3D Gaussian Splatting — 새 촬영 물리 확장(목)에서 배포 인프라(금)로 하루 만에 전환</strong><br>목요일 광음향·수중 이미징 적용에 이어 금요일 압축·SLAM·편집으로 성격이 완전히 바뀌었습니다.</li>
+      <li><strong>diffusion 역문제 사전 — 응용(화)에서 순수 이론(수)으로 하루 만에 좁혀짐</strong><br>화요일 CT 재구성 응용과 이론 논문이 함께 나온 다음 날, 응용은 사라지고 이론 5편만 남았습니다.</li>
+    </ul>
+  </div>
+  <div class=cold-box>
+    <h3>⬇ 감속 클러스터</h3>
+    <ul>
+      <li><strong>계산광학 하드웨어 코어(Fourier Ptychography·Lensless)</strong><br>닷새 중 사흘(월·목·금) 두 버킷 중 하나 이상이 0편, 목요일에는 사상 처음 동시 0편을 기록했습니다.</li>
+      <li><strong>월요일 2D→3D 파운데이션 모델 이식 방법론 축</strong><br>월요일 하루 뚜렷한 클러스터를 이뤘지만 화요일 이후 같은 축의 후속 논문이 다시 잡히지 않았습니다.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>🧩 주간 클러스터 표</h2>
+<table>
+<thead><tr>
+  <th>Cluster</th>
+  <th>대표 논문</th>
+  <th>왜 중요?</th>
+  <th>Confidence</th>
+  <th>Lab action</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><strong>3D Gaussian Splatting이 광음향·수중 같은 새 촬영 물리로 번진 뒤(목) 하루 만에 압축·SLAM·편집 배포 인프라로 성격이 바뀜(금) <span class=tag>HOT</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.25472">PAGS</a><br>
+    <a href="https://arxiv.org/abs/2608.25483">Gaussian Splatting Underwater</a><br>
+    <a href="https://arxiv.org/abs/2608.26948">KISS-GS</a><br>
+    <a href="https://arxiv.org/abs/2608.26868">CGS-SLAM</a><br>
+    <a href="https://arxiv.org/abs/2608.26951">Per-View Gaussian Predictions</a>
+  </td>
+  <td>목요일 PAGS는 광음향 단층촬영에서 전용 속도(SoS) 측정 하드웨어 없이도 Gaussian의 위치·모양과 국소 속도값을 함께 최적화해 눈먼 자동초점을 구현했고, Gaussian Splatting Underwater는 수중 산란 조건에서 3DGS가 얼마나 버티는지를 통제된 교차 실험으로 처음 정량 검증했습니다. 지금까지 3DGS는 주로 카메라로 찍은 장면을 다시 그리는 도구였는데, 이 두 논문은 그 표현 방식을 아예 다른 촬영 물리(음파, 산란 매질)의 역문제를 푸는 백본으로 옮겨 쓸 수 있다는 걸 보였습니다. 그런데 금요일에는 3DGS 클러스터의 성격이 완전히 달라집니다. KISS-GS는 압축 파이프라인을 속성별 양자화·엔트로피 코딩·가지치기 모듈로 쪼개 어떤 모듈이 용량을 얼마나 줄이는지 독립적으로 측정할 수 있게 했고, CGS-SLAM은 여러 로봇이 하나의 3DGS 지도를 협업으로 만드는 방법을, Per-View Gaussian Predictions는 재학습 없이 사진에 우연히 찍힌 방해 요소를 걸러내는 방법을 냈습니다. 이제는 "3DGS로 무엇을 새로 복원할 수 있는가"가 아니라 "이미 복원한 3DGS를 실제로 저장하고 옮기고 여러 대가 함께 쓸 수 있는가"를 묻는 단계입니다. 이틀을 이어보면, 3DGS 연구가 응용 확장과 배포 준비 사이를 매주 오간다는 지난주(W34) 패턴이 이번 주에는 하루 간격으로 더 빠르게 반복된 셈입니다.</td>
+  <td>High<br><small>목·금 이틀, 서로 다른 저자군 5편이 각각 새 촬영 물리 적용과 배포 인프라라는 다른 문제 설정으로 3DGS를 확장, 여러 논문이 정량 벤치마크(자동초점 정확도, 압축률, SLAM 정합 오차) 제시</small></td>
+  <td>PAGS의 속도(SoS) 지도-Gaussian 동시 최적화 구조를 우리 랩 산란매질 통과 이미징의 미지 매질 속도 추정 문제에 시뮬레이션으로 재현하고, KISS-GS의 모듈형 압축 파이프라인을 우리 랩 3DGS 기반 tomography 재구성 결과물의 저장·전송 용량 절감에 적용해 PSNR-압축률 곡선을 이번 주 안에 그린다</td>
+</tr>
+<tr>
+  <td><strong>diffusion 모델이 CT·홀로그래피 역문제의 재사용 사전(화)에서 순수 생성 이론(수)으로 하루 만에 좁혀짐 <span class=tag>HOT</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.23190">Foundation PnP CT</a><br>
+    <a href="https://arxiv.org/abs/2608.21709">Posterior Information Dynamics</a><br>
+    <a href="https://arxiv.org/abs/2608.23094">One Inverse Step</a><br>
+    <a href="https://arxiv.org/abs/2608.23798">A Theory of Speciation</a><br>
+    <a href="https://arxiv.org/abs/2608.23916">The Loss Floor</a>
+  </td>
+  <td>화요일 Foundation PnP CT는 콘빔 금속 적층제조 CT와 평행빔 중성자 콘크리트 CT처럼 촬영 방식·기하·재질이 완전히 다른 세 데이터셋에, 촬영 조건마다 다시 학습하지 않은 얼린 diffusion 모델 하나를 그대로 사전으로 재사용해 해석적 복원보다 나은 결과를 냈습니다. 같은 날 Posterior Information Dynamics는 역확산 과정의 각 단계에서 측정값을 얼마나 반영하는지를 정보량으로 정량화했고, One Inverse Step은 단 한 번의 역변환이 강볼록 최적화 문제의 해와 같다는 것을 증명해 diffusion 역변환이 언제 안정적인지 처음 엄밀하게 규명했습니다. 그런데 수요일에는 이 흐름에서 응용 논문이 완전히 빠지고, 순수 이론 논문만 남았습니다. A Theory of Speciation는 diffusion이 노이즈를 걷어내며 특정 데이터 모드로 수렴하는 지점을 곡면 기하학으로 예측하고, The Loss Floor는 조건부·비조건부 score 사이의 간극을 Fisher 기하로 정량화해 diffusion 모델이 절대 넘을 수 없는 손실의 하한을 계산했습니다. 이틀을 이어보면, diffusion을 촬영 역문제 사전으로 쓰는 흐름이 "일단 성능이 좋더라"는 관찰에서 "왜 좋은지, 언제까지 안전하게 재사용할 수 있는지"를 묻는 단계로 넘어갔다는 뜻이고, 랩이 CT·QPI 복원에 얼린 diffusion 사전을 쓸 때 그 재사용 범위를 정당화할 근거가 이 이론들에서 나올 수 있습니다.</td>
+  <td>High<br><small>화·수 이틀, 응용 3편과 이론 5편이 같은 대상(diffusion을 역문제 사전으로 쓰는 근거)을 서로 다른 각도에서 다룸, 수요일은 서로 다른 저자군 5편이 독립적으로 이론 논문을 냄</small></td>
+  <td>Foundation PnP CT의 얼린 diffusion 사전 하나를 여러 촬영 기하에 그대로 적용하는 설정을 우리 랩 산란매질 통과 이미징에 재현해 PSNR/SSIM으로 1차 검증하고, The Loss Floor의 조건부-비조건부 score 간극 공식을 우리 랩 diffusion 역문제 사전의 노이즈 스케줄 가중치 설계에 반영</td>
+</tr>
+<tr>
+  <td><strong>의료·과학 파운데이션 모델의 도메인 이동 실패 정밀 진단(월)이 PINN 실패 원인 통제 검증(목)으로 도구만 바뀌어 반복</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.21300">When Adaptation Hurts</a><br>
+    <a href="https://arxiv.org/abs/2608.20557">ANT (Prostate Micro-Ultrasound)</a><br>
+    <a href="https://arxiv.org/abs/2608.25327">Neither Precision Nor Architecture Alone</a><br>
+    <a href="https://arxiv.org/abs/2608.24940">Frequency Decomposition for PINNs</a><br>
+    <a href="https://arxiv.org/abs/2608.25564">Physics-Informed Foresight Pruning</a>
+  </td>
+  <td>월요일 When Adaptation Hurts는 피부병변 데이터로 미세조정한 MedSAM을 도메인이 가까운 데이터(PH2)와 먼 데이터(BUSI, CBIS-DDSM)에서 각각 테스트해, 미세조정이 오히려 먼 도메인에서는 아무것도 하지 않은 원본 모델보다 성능을 떨어뜨릴 수 있다는 걸 정량으로 보였습니다. 같은 날 ANT는 전립선 미세초음파에서 병원마다 다른 스캐너 때문에 생기는 정확도 하락을, 테스트 시점에 해부학적 위치를 다시 정렬하는 방식으로 고쳤습니다. 이 흐름이 목요일에는 다른 도구, 같은 태도로 이어집니다. Neither Precision Nor Architecture Alone은 144회의 사전등록 실험으로 물리 기반 신경망(PINN, physics-informed neural network — 손실 함수에 물리 방정식을 직접 넣어 학습하는 신경망)이 뻣뻣한 편미분방정식에서 실패할 때 계산 정밀도를 높이는 방법과 구조를 바꾸는 방법 중 어느 쪽이 실제로 문제를 고치는지 통제 비교했고, 결론은 '둘 다 필요하고 서로 다른 실패 원인을 고친다'였습니다. 닷새를 이어보면, 이번 주는 이미 널리 쓰이는 도구(파운데이션 모델, PINN)를 새로 만드는 대신, 그 도구가 정확히 어떤 조건에서 왜 무너지는지를 통제된 실험으로 캐묻는 논문이 반복해서 나온 한 주였다는 뜻입니다. 랩이 재구성 파이프라인에 파운데이션 프라이어나 물리 기반 신경망을 가져다 쓸 때, '성능이 좋다'는 주장만 보지 말고 어떤 도메인 이동·물리 조건에서 검증됐는지를 먼저 확인해야 한다는 신호입니다.</td>
+  <td>Medium<br><small>월·목 이틀, 서로 다른 도구(의료 파운데이션 모델/PINN)를 다루지만 같은 방법론(통제된 실험으로 실패 원인 진단) 5편이 반복, 다른 요일에 직접적인 후속 신호는 없어 지속성은 주제 차원</small></td>
+  <td>When Adaptation Hurts의 근접-원거리 OOD 평가 설계(가까운 도메인 vs 먼 도메인 분리 검증)를 우리 랩 파운데이션 프라이어 기반 복원 파이프라인의 도메인 이동 평가에 적용하고, Neither Precision Nor Architecture Alone의 통제 실험 설계를 우리 랩 위상 복원용 PINN의 실패 원인 진단(정밀도 vs 구조)에 재현</td>
+</tr>
+<tr>
+  <td><strong>이벤트 카메라 연구가 로봇 비전 응용 확장(화)에서 엣지 실시간 저전력 배포(금)로 초점이 옮겨감</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.21764">LiteEvent-AE</a><br>
+    <a href="https://arxiv.org/abs/2608.22965">Simplified Cross-Modal Calibration</a><br>
+    <a href="https://arxiv.org/abs/2608.26644">Real-time Unsupervised Object Discovery</a><br>
+    <a href="https://arxiv.org/abs/2608.26720">Parameter Efficient Continual Learning</a><br>
+    <a href="https://arxiv.org/abs/2608.27150">ANTShapes</a>
+  </td>
+  <td>화요일에는 이벤트 카메라 연구가 야간 영상 복원, 유체 속도계, 이종 센서 정합처럼 로봇 비전 바깥의 계산 이미징 응용으로 퍼졌습니다. 그런데 금요일에는 같은 이벤트 카메라 연구가 완전히 다른 축으로 이동합니다. Real-time Unsupervised Object Discovery는 정답 라벨 없이 실시간으로 물체를 찾아내는 방법을, Parameter Efficient Continual Learning은 엣지 기기에서 계속 학습해도 이전에 배운 것을 잊지 않는 파라미터 효율적 방법을, ANTShapes는 이벤트 기반 뉴로모픽(neuromorphic, 뇌의 스파이크 신호 처리 방식을 모사한) 분류를 위한 벤치마크 데이터셋을 냈습니다. 화요일이 '이벤트 카메라로 무엇을 더 찍을 수 있는가'를 물었다면 금요일은 '그 처리를 저전력 엣지 장치에서 실시간으로 돌릴 수 있는가'를 묻는 질문으로, 이벤트 카메라 연구의 무게중심이 응용 다양화에서 실사용 배포 조건으로 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>화·금 이틀, 서로 다른 응용(계산 이미징 확장/엣지 배포) 5편이 같은 센서(이벤트 카메라)를 다루지만 논문군이 겹치지 않아 연속성은 주제 차원, 수요일에는 후속 신호가 1편으로 줄어 중간 공백 존재</small></td>
+  <td>ANTShapes 벤치마크로 우리 랩 이벤트 기반 센서 프로토타입의 분류 성능을 1차 평가하고, LiteEvent-AE의 오토인코딩 압축 구조를 우리 랩 이벤트-RGB 융합 파이프라인의 저장·전송 용량 절감에 적용</td>
+</tr>
+<tr>
+  <td><strong>계산광학 하드웨어 코어(Fourier Ptychography·Lensless)가 목요일 사상 처음 동시 0편, 금요일에도 회복 못함 <span class=tag>WATCH</span></strong></td>
+  <td>
+    <a href="https://doi.org/10.1088/1361-6633/ae9e8c">Metasurface color routers</a><br>
+    <a href="https://doi.org/10.1088/2040-8986/ae9f70">Multi-wavelength CDI</a>
+  </td>
+  <td>월요일 Fourier Ptychography 0편·Lensless 0편으로 시작해 화요일 Fourier Ptychography 2편·Lensless 0편, 수요일에는 각각 3편·4편으로 잠깐 회복하는 듯 보였지만, 목요일에는 두 버킷 모두 다시 0편으로 떨어져 이 리포트가 시작된 이래 처음으로 두 핵심 하드웨어 버킷이 동시에 비었습니다. 금요일에도 Fourier Ptychography는 이틀 연속 0편, Lensless는 1편(구조 클러스터 기준 미달)에 그쳤습니다. 수요일의 메타표면 색상 라우터(95.4% 총 투과 효율)와 금요일의 단일 촬영 다파장 코히런트 회절 이미징 정도가 이 주의 유일한 실질 신호였습니다. 랩의 핵심 ROI인 이 두 버킷이 닷새 중 사흘을 0편으로 보낸 건, 지난주(W34) '가뭄이 아니라 변동성'이라는 진단을 그대로 유지하기 어려운 수준의 공백입니다.</td>
+  <td>Low<br><small>닷새 중 사흘이 Fourier Ptychography 또는 Lensless 0편, 실질 신호는 수요일·금요일 각 1편씩으로 클러스터라기보다 결핍 자체가 관찰 대상</small></td>
+  <td>이 두 버킷만 별도로 지난 4주치 daily trends의 raw count와 실질 신호 편수를 요일별로 다시 뽑아, 목요일 동시 0편이 일회성 이상치인지 구조적 하락 추세인지 이번 주 안에 판정</td>
+</tr>
+</tbody>
+</table>
+
+<h2>📐 arXiv vs 저널 키워드</h2>
+<table>
+<thead><tr><th>채널</th><th>지난주 주요 키워드</th></tr></thead>
+<tbody>
+<tr><td><strong>공통</strong></td><td>3DGS의 새 촬영 물리 확장과 배포 인프라 전환, diffusion 역문제 사전의 응용-이론 순환, 파운데이션 모델·PINN의 실패 원인 통제 검증, 이벤트 카메라의 엣지 배포 전환</td></tr>
+<tr><td><strong>arXiv 전용</strong></td><td>3DGS 광음향·수중·압축·SLAM(PAGS, Gaussian Splatting Underwater, KISS-GS, CGS-SLAM), diffusion 역문제 사전과 이론(Foundation PnP CT, Posterior Information Dynamics, A Theory of Speciation, The Loss Floor), PINN 실패 진단(Neither Precision Nor Architecture Alone), 이벤트 카메라 엣지 배포(ANTShapes, Parameter Efficient Continual Learning), 파운데이션 모델 OOD 실패(When Adaptation Hurts)</td></tr>
+<tr><td><strong>저널 전용</strong></td><td>메타표면 색상 라우터(95.4% 투과 효율), 다파장 코히런트 회절 이미징(단일 촬영 RGB), 온칩 메타표면-VCSEL 통합 볼텍스 빔</td></tr>
+<tr><td><strong>같은 단어, 다른 맥락</strong></td><td>"reconstruction" — 3DGS 기반 광음향·수중 복원과 diffusion 기반 CT 복원이 같은 단어로 섞여 나오지만, 전자는 새 촬영 물리에 표현을 이식하는 문제이고 후자는 하나의 사전을 여러 기하에 재사용하는 문제라 구분이 필요합니다. "실패 진단" — 의료 파운데이션 모델 쪽은 도메인 거리에 따른 OOD 성능 하락을, PINN 쪽은 계산 정밀도와 구조 중 무엇이 실패 원인인지를 가리켜 같은 표현이라도 검증 대상이 다릅니다. "배포" — 3DGS 쪽은 저장·전송 용량과 다중 에이전트 협업을, 이벤트 카메라 쪽은 저전력 엣지 실시간 처리를 가리켜 세부 조건이 다릅니다.</td></tr>
+</tbody>
+</table>
+
+<h2>🔥 주간 Top 5</h2>
+<ol>
+<li>
+  <strong><a href="https://arxiv.org/abs/2608.25472">PAGS: Autofocusing Photoacoustic Tomography via Speed-of-Sound-Adaptive Gaussian Splatting</a></strong>
+  <span class=tag>[방법전환]</span><br>
+  3D Gaussian Splatting을 카메라 3D 복원이 아니라 광음향 단층촬영의 속도(SoS) 지도 추정에 직접 적용해, 전용 하드웨어 없이 눈먼 자동초점을 구현했습니다. 지난주 3DGS가 새로운 촬영 물리로 번지는 흐름을 가장 직접적으로 대표하고, 랩의 산란매질 통과 이미징과도 맞닿아 있는 논문입니다.<br>
+  <small>Phylogeny: CVML / Computational Optics &gt; Photoacoustic Imaging &gt; Gaussian Splatting for Non-Camera Physics &gt; Blind Speed-of-Sound Autofocusing</small>
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2608.23190">Toward a Foundation Plug-and-Play Prior for Computed Tomography Reconstruction via a Multimodal Diffusion Model</a></strong>
+  <span class=tag>[방법전환]</span><br>
+  촬영 방식·기하·재질이 전혀 다른 CT 데이터셋 세 곳에 얼린 diffusion 모델 하나를 그대로 사전으로 재사용해 해석적 복원보다 나은 결과를 냈습니다. 촬영 조건마다 사전을 새로 학습할 필요가 없다는 뜻이라 랩의 CT/산란매질 복원 파이프라인에 가장 직접적으로 연결됩니다.<br>
+  <small>Phylogeny: CVML / Medical Imaging &gt; CT Reconstruction &gt; Diffusion Prior Reuse &gt; Cross-Geometry Frozen Prior</small>
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2608.26948">KISS-GS: 3D Gaussian Splatting Compression Kept Simple</a></strong>
+  <span class=tag>[인프라]</span><br>
+  3DGS 압축 파이프라인을 속성별 양자화·엔트로피 코딩·가지치기 모듈로 쪼개 각 모듈의 용량 절감 기여를 독립적으로 측정 가능하게 했습니다. 지난주 목~금 3DGS의 응용 확장에서 배포 인프라로의 전환을 완성하는 논문이자, 랩이 3DGS 결과물을 저장·전송할 때 바로 참고할 수 있는 실용적 구조입니다.<br>
+  <small>Phylogeny: CVML / Computational Optics &gt; 3D Gaussian Splatting &gt; Deployment Infrastructure &gt; Modular Compression Pipeline</small>
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2608.25327">Neither Precision Nor Architecture Alone: Controlled Tests of Failure Remedies for Physics-Informed Neural Networks</a></strong>
+  <span class=tag>[해부분석]</span><br>
+  144회의 사전등록 실험으로 물리 기반 신경망이 뻣뻣한 편미분방정식에서 실패할 때, 계산 정밀도를 높이는 방법과 구조를 바꾸는 방법이 서로 다른 실패 원인을 고친다는 걸 통제 비교로 보였습니다. 이번 주 반복된 "도구가 왜 실패하는지 통제 실험으로 캐묻는" 흐름을 가장 엄밀하게 대표하고, 랩의 위상 복원용 PINN 설계에 바로 적용 가능합니다.<br>
+  <small>Phylogeny: CVML / Reconstruction/Inverse Problems &gt; Physics-Informed Neural Networks &gt; Failure Mode Diagnosis &gt; Controlled Ablation of Remedies</small>
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2608.21300">When Adaptation Hurts: Connecting Representational Drift to OOD Failures in MedSAM Fine-Tuning</a></strong>
+  <span class=tag>[경고신호]</span><br>
+  MedSAM을 피부병변 데이터로 미세조정하면 도메인이 가까운 데이터에서는 도움이 되지만 먼 도메인(BUSI, CBIS-DDSM)에서는 오히려 원본 모델보다 성능이 떨어질 수 있다는 걸 6가지 적응 전략으로 정량 비교했습니다. 랩이 파운데이션 프라이어를 가져다 미세조정할 때, 어떤 도메인 거리에서 검증됐는지를 먼저 확인해야 한다는 직접적 경고입니다.<br>
+  <small>Phylogeny: CVML / Medical Imaging &gt; Foundation Model Adaptation &gt; OOD Failure Diagnosis &gt; Representational Drift Analysis</small>
+</li>
+</ol>
+
+<h2>🌟 Weekly Deep-Dive — 지난주의 대표 논문</h2>
+<div class=dd>
+  <h3>PAGS: Autofocusing Photoacoustic Tomography via Speed-of-Sound-Adaptive Gaussian Splatting (2608.25472)</h3>
+  <p><em>왜 주간 대표인가</em>: 지난주는 3DGS가 새 촬영 물리로 번진 다음 날 바로 배포 인프라로 성격을 바꾼, 두 얼굴을 하루 간격으로 보여준 한 주였습니다. PAGS는 그 첫 번째 얼굴 — "3DGS를 카메라 밖의 촬영 물리에 쓸 수 있는가" — 를 가장 구체적으로 증명한 논문이라, 특정 요일의 단발 신호가 아니라 3DGS를 둘러싼 한 주 전체의 확장 흐름을 대표합니다.</p>
+
+  <p><strong>무엇을 했나</strong>: 광음향 단층촬영(photoacoustic tomography)은 빛을 쬐어 조직이 낸 초음파를 여러 위치에서 측정해 내부 구조를 복원하는 기법인데, 복원 품질은 조직 안에서 소리가 얼마나 빨리 퍼지는지(속도, speed-of-sound·SoS)를 얼마나 정확히 아는지에 크게 좌우됩니다. 문제는 SoS를 재려면 별도의 초음파 투과 측정 하드웨어가 필요하다는 점입니다. PAGS는 3D Gaussian Splatting의 각 Gaussian이 위치·모양뿐 아니라 그 자리의 국소 SoS 값도 함께 갖도록 확장해, 측정된 광음향 신호만으로 Gaussian들의 형태와 SoS 지도를 동시에 최적화합니다. 즉 전용 SoS 측정 장비 없이, 이미 갖고 있는 광음향 측정값만으로 스스로 초점을 맞추는(autofocusing) 방식입니다.</p>
+
+  <p><strong>왜 새로운가</strong>: 기존 광음향 복원은 SoS를 균일하다고 가정하거나 별도로 측정해 고정값으로 넣는 경우가 많았는데, 실제 조직은 부위마다 SoS가 달라 이 가정이 틀리면 영상이 흐려지거나 구조가 왜곡됩니다. PAGS는 "3DGS는 카메라 장면을 복원하는 도구"라는 통념을 깨고, Gaussian이라는 표현 자체를 물리량(SoS)까지 포함해 최적화 가능한 대상으로 확장했습니다. 즉 3DGS가 시각적으로 그럴듯한 장면을 만드는 도구를 넘어, 측정값과 물리 모델을 함께 맞춰가는 범용 역문제 최적화 틀로 쓰일 수 있다는 걸 보인 사례입니다.</p>
+
+  <p><strong>랩 관련성</strong>: 랩이 산란매질을 통과한 빛으로 내부 구조를 복원할 때도, 매질의 굴절률이나 산란 계수처럼 미리 정확히 알기 어려운 물리량이 항상 걸림돌입니다. PAGS처럼 그 물리량 자체를 3DGS 표현의 일부로 넣어 측정값만으로 함께 최적화하는 접근은, 랩이 별도 보정 측정 없이도 매질 조건을 추정하면서 동시에 복원하는 파이프라인을 설계할 때 바로 참고할 수 있는 틀입니다.</p>
+
+  <p><strong>주의</strong>: 검증은 시뮬레이션과 제한된 실측 팬텀 위주로 이뤄졌을 가능성이 높아, 실제 생체 조직처럼 SoS 분포가 훨씬 복잡하고 잡음이 큰 환경에서도 최적화가 안정적으로 수렴하는지는 본문 확인이 필요합니다. 또한 Gaussian 개수·초기화에 따라 SoS 추정이 국소 최적해에 빠질 위험이 있어, 랩 세팅에 적용할 때는 초기화 민감도를 먼저 별도로 검증해야 합니다 [Baseline risk].</p>
+  <p><small>Phylogeny: CVML / Computational Optics &gt; Photoacoustic Imaging &gt; Gaussian Splatting for Non-Camera Physics &gt; Blind Speed-of-Sound Autofocusing</small></p>
+</div>
+
+<h2>🧭 주간 테마 3개</h2>
+<div class=theme-card>
+  <h3>1. 3D Gaussian Splatting이 "새 촬영 물리로 확장"과 "배포 인프라 정비" 사이를 하루 간격으로 오감</h3>
+  <p>목요일 광음향·수중 이미징으로 번졌던 3DGS가 금요일에는 압축·SLAM·방해요소 필터링 같은 순수 인프라 문제로 넘어갔습니다. 지난주(W34)에는 이 전환이 주 단위로 일어났는데 이번 주는 하루 만에 일어나, 3DGS 연구 커뮤니티가 응용과 배포 사이를 점점 더 빠르게 오가고 있다는 뜻입니다.</p>
+  <p><em>Confidence: High — 목·금 이틀, 서로 다른 저자군 5편이 각각 다른 문제 설정으로 3DGS를 확장</em></p>
+</div>
+<div class=theme-card>
+  <h3>2. diffusion을 촬영 역문제 사전으로 쓰는 흐름이 "성능이 좋다"에서 "왜, 언제 안전한가"를 규명하는 이론으로 넘어감</h3>
+  <p>화요일 CT 재구성에 얼린 diffusion 사전 하나를 여러 촬영 조건에 재사용하는 응용이 나온 다음 날, 그 사전이 왜 작동하고 언제까지 안전한지를 수학적으로 규명하는 순수 이론 논문 5편이 한꺼번에 등장했습니다. 랩이 diffusion 사전을 재사용할 때 그 근거를 이 이론들에서 가져올 수 있다는 뜻입니다.</p>
+  <p><em>Confidence: High — 화·수 이틀, 응용 3편·이론 5편이 같은 대상을 서로 다른 각도에서 검증</em></p>
+</div>
+<div class=theme-card>
+  <h3>3. 계산광학 하드웨어 코어(Fourier Ptychography·Lensless)의 결핍이 "변동성"을 넘어 구조적 우려 단계로</h3>
+  <p>닷새 중 사흘(월·목·금) 두 버킷 중 하나 이상이 0편에 머물렀고, 목요일에는 사상 처음 두 버킷이 동시에 비었습니다. 지난주 냈던 "가뭄이 아니라 변동성" 진단을 유지하려면 다음 주 반등폭이 이번 주 수요일 수준(7편) 이상이어야 하며, 그렇지 않으면 진단을 다시 수정해야 합니다.</p>
+  <p><em>Confidence: Medium — raw count는 매일 존재했지만 실질 신호가 사흘간 0~1편 수준</em></p>
+</div>
+
+<h2>🪞 지난 예측 채점 (W34 → W35)</h2>
+<div class=pred-card>
+  <h3><span class=review-partial>◐</span> 계산광학 코어의 '가뭄'이 실제로는 하루 단위 변동성이라는 진단이 다음 주에도 반복된다</h3>
+  <p>수요일 Fourier Ptychography 3편·Lensless 4편으로 반등해 '변동성' 진단의 정신(특정 요일에 신호가 몰릴 수 있다)은 다시 확인됐습니다. 하지만 목요일에는 두 버킷이 사상 처음 동시에 0편으로 떨어지고 금요일에도 회복하지 못해, 예측이 기대했던 '반전 가능성 확인' 수준을 넘어 저점이 더 깊고 길게 이어졌습니다. 변동성이라는 진단의 방향은 맞았지만 진폭이 예상보다 커서 부분 적중으로 판정합니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-miss>✗</span> 3DGS의 CT/현미경 재구성 응용이 다음 주에는 로봇·인프라 축과 명확히 분리된 하위 흐름으로 자리잡는다</h3>
+  <p>이번 주 3DGS 논문 중 CT나 현미경 재구성에 직접 해당하는 것은 한 편도 없었습니다. 대신 목요일에는 광음향 단층촬영·수중 이미징이라는 다른 응용으로, 금요일에는 압축·SLAM·편집이라는 순수 인프라로 이동해, 예측이 명시한 빗나감 조건('CT/현미경 도메인 1편 이하로 로봇·인프라에 압도적으로 쏠림')을 그대로 충족했습니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-partial>◐</span> 의료 VLM/병리 AI의 '신뢰성 검증' 축이 계산 이미징 재구성의 불확실성 정량화로 이어진다</h3>
+  <p>CT·MRI·QPI 재구성의 불확실성 지도를 실제 오차와 직접 대조 검증한 논문은 이번 주에도 나오지 않았습니다. 다만 수요일 Score-Based Ideal Observer Approximation이 검출 과제의 이론적 성능 상한을 점수 기반으로 근사하고, 목요일 Uncertainty-Guided Latent Diffusion(초해상도)이 영역별 불확실성을 추정해 사실성-지각 품질 균형을 잡는 등, CT/MRI/QPI는 아니지만 인접한 계산 이미징 신뢰성·불확실성 논문이 이어져 3주 연속 같은 패턴(인접 도메인에서만 부분 확인)이 반복돼 부분 적중으로 판정합니다.</p>
+</div>
+
+<h2>🔮 다음주 예측</h2>
+<div class=pred-card>
+  <h3>1. 계산광학 하드웨어 코어의 결핍이 '변동성'을 넘어 '구조적 하락'인지가 다음 주 첫 판정 대상이다</h3>
+  <p>지난주 목요일 Fourier Ptychography·Lensless 동시 0편, 금요일에도 회복 실패로 이어진 흐름이, 다음 주에도 두 버킷이 주 5일 중 3일 이상 0~1편에 머무는 형태로 이어진다.</p>
+  <div class=cond>✅ 적중 조건: 다음 주 5영업일 중 Fourier Ptychography 또는 Lensless 버킷이 0~1편에 머무는 날이 3일 이상</div>
+  <div class=cond>✗ 빗나감 조건: 다음 주 5일 중 최소 3일, 두 버킷 모두 2편 이상의 실질 신호를 내면 빗나감(변동성이 아니라 이번 주가 이례적 저점이었다는 뜻)</div>
+</div>
+<div class=pred-card>
+  <h3>2. 3D Gaussian Splatting의 '응용 확장 → 배포 인프라' 하루 간격 전환이 다음 주에도 반복된다</h3>
+  <p>지난주 목요일 새 촬영 물리 확장(광음향·수중)에서 금요일 배포 인프라(압축·SLAM·편집)로 하루 만에 바뀐 패턴이, 다음 주에도 이틀 이내의 짧은 간격으로 다시 관찰된다.</p>
+  <div class=cond>✅ 적중 조건: 다음 주 3DGS 클러스터가 응용 확장형과 배포 인프라형으로 각각 최소 1일씩 나뉘어 나타나고, 두 유형 사이 간격이 2일 이내</div>
+  <div class=cond>✗ 빗나감 조건: 다음 주 3DGS 논문이 한 가지 유형(응용 또는 인프라)에만 5일 내내 머물면 빗나감</div>
+</div>
+<div class=pred-card>
+  <h3>3. diffusion을 역문제 사전으로 쓰는 흐름에서 나온 이론이 실제 재구성 벤치마크의 정량 개선으로 이어진다</h3>
+  <p>지난주 화·수 이틀에 걸쳐 나온 diffusion 역문제 사전의 이론적 규명(Loss Floor, Posterior Information Dynamics)이, 다음 주에는 그 이론을 실제로 적용해 PSNR/SSIM 등 정량 지표를 개선했다고 보고하는 후속 응용 논문으로 이어진다.</p>
+  <div class=cond>✅ 적중 조건: diffusion 역문제 사전의 노이즈 스케줄이나 반영 시점을 이론적으로 재설계해 기존 대비 PSNR/SSIM 정량 개선을 보고한 논문 1편 이상</div>
+  <div class=cond>✗ 빗나감 조건: 다음 주에도 이론 논문과 응용 논문이 서로 인용·연결 없이 별개로 나오면 빗나감</div>
+</div>
+
+<h2>🧪 다음 주 1주 실행안</h2>
+<div class=action-card>
+  <h3>1. PAGS의 속도(SoS)-Gaussian 동시 최적화를 랩 산란매질 이미징에 재현</h3>
+  <p>PAGS의 Gaussian 위치·모양과 국소 속도값을 함께 최적화하는 구조를 우리 랩 산란매질 통과 이미징의 미지 매질 속도 추정 문제에 시뮬레이션으로 적용해, 전용 속도 측정 없이도 자동초점이 가능한지 비교.</p>
+  <p><em>기대 산출물: 매질 속도 오차 조건별(0/5/10%) 자동초점 정확도 비교표</em></p>
+</div>
+<div class=action-card>
+  <h3>2. KISS-GS 모듈형 압축을 랩 3DGS 재구성 파이프라인에 적용</h3>
+  <p>KISS-GS의 속성별 양자화·엔트로피 코딩·가지치기 모듈을 랩 3DGS 기반 tomography 재구성 결과물에 각각 독립 적용해 어떤 모듈이 용량 절감에 가장 기여하는지 측정.</p>
+  <p><em>기대 산출물: 모듈별 PSNR-압축률 곡선 및 기여도 분해표</em></p>
+</div>
+<div class=action-card>
+  <h3>3. 계산광학 하드웨어 코어 결핍이 변동성인지 구조적 하락인지 4주 추적 데이터로 재판정</h3>
+  <p>지난 4주(W32~W35) daily trends의 Fourier Ptychography·Lensless 버킷 raw count와 abstract 기반 실질 신호 편수를 요일별로 다시 정리해, 이번 주 목요일 동시 0편이 일회성 이상치인지 추세인지 통계적으로 판정.</p>
+  <p><em>기대 산출물: 4주 × 요일 실질 신호 히트맵, 추세선 및 이상치 판정 결과</em></p>
+</div>
+
+<h2>🧊 Skim-only / Watch-only 흐름</h2>
+<ul class=plain>
+  <li><strong>[Watch-only] 메타표면 역설계에 대형언어모델을 통합 서로게이트로 쓰는 시도</strong> — 금요일 "Towards a universal meta-optics solver via large language models"가 8개 메타표면 계열을 하나의 텍스트 지시문 형식으로 통합해 단일 LLM을 미세조정했습니다. 광학 응답 예측 오차를 평균 56.5% 줄였다고 보고했지만 통신·센싱 방법론에 더 가까워 계산 이미징 SOTA 표에서는 제외했습니다. 하루짜리 신호라 다음 주 후속 여부를 지켜봅니다 [Confidence Low].</li>
+  <li><strong>[Skim-only] QPI(정량 위상 영상)의 신경망 필드+Gaussian Splatting 결합 시도</strong> — 목요일 눈먼 수차 보정 신경망 필드와 다중 평면 위상 복원용 미분가능 Gaussian Splatting 두 편이 있었지만 abstract만으로는 코드 공개나 정량 비교가 확인되지 않아 우선순위를 낮춥니다.</li>
+  <li><strong>[Watch-only] 초해상도가 위성·초음파·자연 영상까지 서로 다른 파장 영역에서 동시 재조명</strong> — 수요일 위성 구름 마스크, 전단파(shear wave) 초음파, 자연 영상 초해상도 3편이 각각 다른 파장 영역에서 회절 한계를 우회하는 방법을 냈지만 논문군이 서로 다른 응용이라 하나의 클러스터로 묶기엔 이르고, 다음 주 후속 신호를 지켜봅니다.</li>
+</ul>
+
+<h2>🔗 참고 링크</h2>
+<ul class=plain>
+  <li><a href="../posts/2026-08-24.html">2026-08-24 Daily Briefing (Mon)</a></li>
+  <li><a href="../posts/2026-08-25.html">2026-08-25 Daily Briefing (Tue)</a></li>
+  <li><a href="../posts/2026-08-26.html">2026-08-26 Daily Briefing (Wed)</a></li>
+  <li><a href="../posts/2026-08-27.html">2026-08-27 Daily Briefing (Thu)</a></li>
+  <li><a href="../posts/2026-08-28.html">2026-08-28 Daily Briefing (Fri)</a></li>
+  <li><a href="../posts/2026-08-24-weekly.html">2026-W34 Weekly Retrospective</a></li>
+  <li><a href="../feed.xml">RSS Feed</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

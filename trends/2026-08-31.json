@@ -1,0 +1,64 @@
+{
+  "date": "2026-08-31",
+  "source_listing_date": "2026-08-31",
+  "source_mode": "weekly-pastweek",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 0,
+      "eess.SP": 0
+    },
+    "scope": "not applicable — this is the weekly-run stub; 2026-08-31(월)은 독립 weekly 실행(mode=weekly)만 수행하며 당일 daily는 만들지 않는다. 오늘자 arXiv /new daily 카운트는 이 실행의 범위 밖이며, 이후 별도의 11:00 KST daily 실행이 있을 경우에만 채워진다."
+  },
+  "totals": {
+    "total_scanned": 0,
+    "selected": 0
+  },
+  "classified": {
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 0,
+      "Meta-Optics/Diffractive": 0,
+      "Light-Field/Novel Sensors": 0,
+      "Tomography/3D Imaging": 0,
+      "Virtual Staining/Pathology": 0,
+      "Reconstruction/Inverse Problems": 0,
+      "Deep Learning Methods": 0
+    }
+  },
+  "daily_thesis": "",
+  "note": "2026-08-31(월) 오전 weekly 실행(mode=weekly)이 이 파일을 생성했다. 지난주(2026-08-24~08-28) 회고 결과는 아래 weekly_retrospective_context에 집계돼 있다. source_mode=weekly-pastweek이며 daily_new_counts/totals/classified/daily_thesis는 당일(2026-08-31) daily 실행이 별도로 있을 경우에만 그 실행이 실측값으로 채운다(2026-08-17, 2026-08-24 weekly stub이 같은 방식으로 처리된 선례를 따름).",
+  "weekly_retrospective_context": {
+    "iso_week": "2026-35",
+    "week_start": "2026-08-24",
+    "week_end": "2026-08-28",
+    "weekly_new_counts_sum": {
+      "by_cat": {
+        "cs.LG": 903,
+        "cs.CV": 670,
+        "cs.AI": 1195,
+        "eess.IV": 39,
+        "eess.SP": 103
+      },
+      "scope": "sum of Mon-Fri 2026-08-24~2026-08-28 daily_new_counts.by_cat (new+cross; replacements excluded)"
+    },
+    "weekly_totals": {
+      "total_scanned": 4311,
+      "selected": 1191
+    },
+    "weekly_classified_by_bucket": {
+      "Fourier Ptychography/Microscopy": 5,
+      "Lensless/Coded Imaging": 5,
+      "Phase Imaging/Holography": 39,
+      "Meta-Optics/Diffractive": 45,
+      "Light-Field/Novel Sensors": 25,
+      "Tomography/3D Imaging": 191,
+      "Virtual Staining/Pathology": 155,
+      "Reconstruction/Inverse Problems": 129,
+      "Deep Learning Methods": 597
+    }
+  }
+}
