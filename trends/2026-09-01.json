@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-01",
+  "source_listing_date": "2026-09-01",
+  "source_mode": "journal-only",
+  "note": "2026-09-01(화) 11:05 KST daily 실행. cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 이번 실행 시점에 여전히 2026-08-31(월) listing에 머물러 있어(특별한 휴일 사유 확인 안 됨) arXiv 신규 제출 0건, Crossref/OpenAlex 저널만으로 만든 잠정본이다. /pastweek에 2026-09-01 섹션이 뜨면 다음 실행에서 arXiv 포함 완전판으로 자동 업그레이드된다. Crossref 키워드 검색(--days 1)으로 426건을 수집했으나 선택률(103/426, 24.2%)은 평소보다 낮다 — arXiv 기여가 0이라 전량이 저널 키워드 검색 결과이고, Crossref bibliographic 검색 특성상 무관 분야(임상 CT/OCT 진단, RF 안테나, 농축산·화학 논문 등) 오탐 비중이 높기 때문이며 parser 자체의 오류는 아니다(out/*_new.json 로드 정상, arxiv_id 없음은 저널 소스라 해당 없음).",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 0,
+      "eess.SP": 0
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 426
+  },
+  "totals": {
+    "total_scanned": 426,
+    "selected": 103
+  },
+  "classified": {
+    "total_scanned": 426,
+    "selected": 103,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 2,
+      "Phase Imaging/Holography": 10,
+      "Meta-Optics/Diffractive": 15,
+      "Light-Field/Novel Sensors": 4,
+      "Tomography/3D Imaging": 23,
+      "Virtual Staining/Pathology": 19,
+      "Reconstruction/Inverse Problems": 7,
+      "Deep Learning Methods": 23
+    }
+  },
+  "daily_thesis": "arXiv 5개 카테고리가 이번 실행 시점까지 2026-08-31 listing에 머물러 있어 저널만으로 만든 잠정본이다. 저널에서 가장 뚜렷한 신호는 위상·홀로그래피 복원이 수차·모호성·수렴 정체·노이즈라는 각기 다른 약점을 반복 알고리즘이 아닌 비반복·앙상블·PINN·딥러닝 디노이징으로 우회하는 논문 4편이 같은 날 나온 것과, label-free 현미경 영상에서 AI로 염색 정보를 예측하는 '가상 염색' 흐름이 방법 논문 3편과 이를 종합하는 리뷰 1편까지 갖추며 뚜렷해진 것이다."
+}

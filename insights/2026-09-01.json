@@ -1,0 +1,128 @@
+{
+ "date": "2026-09-01",
+ "source_mode": "journal-only",
+ "clusters": [
+  {
+   "cluster": "위상·홀로그래피 복원이 반복 알고리즘의 각기 다른 약점을 우회하는 여러 시도로 갈라짐",
+   "papers": [
+    {"title": "Non-iterative quantitative phase imaging with aberration correction via angular and focal modulation", "arxiv_id": "https://doi.org/10.1364/prj.604208", "journal_or_source": "Photonics Research"},
+    {"title": "Addressing phase ambiguity in single-frame coherent X-ray diffraction imaging through ensemble phase retrieval", "arxiv_id": "https://doi.org/10.1080/00268976.2026.2720232", "journal_or_source": "Molecular Physics"},
+    {"title": "Metasurface-Based Terahertz Three-Dimensional Holography Enabled by Physics-Informed Neural Network", "arxiv_id": "https://doi.org/10.1002/adom.71712", "journal_or_source": "Advanced Optical Materials"},
+    {"title": "Deep-Learning-Based Denoising for Improved Phase Precision in Electron Holography of Electromagnetic Fields in Nanoscale Materials", "arxiv_id": "https://doi.org/10.1002/advs.77380", "journal_or_source": "Advanced Science"}
+   ],
+   "why": "위상 정보를 복원하는 문제는 빛의 세기만 측정할 수 있고 위상은 직접 잴 수 없다는 근본적인 제약에서 출발합니다. 그래서 지금까지는 여러 번 계산을 반복하면서 답을 조금씩 맞춰가는 반복 알고리즘(iterative algorithm)이 표준이었는데, 이 방식은 느리고 초기값에 따라 수렴이 멈추거나 엉뚱한 답에 갇히는 경우가 많다는 약점이 있습니다. 오늘 저널에 나온 네 편은 이 문제를 각자 다른 약점 하나씩 겨냥합니다. Photonics Research 논문은 여러 각도·초점에서 얻은 정보를 조합해 반복 계산 없이 한 번에 수차(빛이 렌즈를 지나며 생기는 상의 왜곡)까지 보정된 위상 영상을 얻고, Molecular Physics 논문은 X선 회절 이미징에서 한 장의 사진만으로는 위상 답이 여러 개로 갈리는 모호성 문제를 여러 후보 답을 동시에 계산하는 앙상블 방식으로 줄입니다. Advanced Optical Materials 논문은 3차원 홀로그램을 만들 때 목표 형태가 복잡해질수록 반복 계산이 멈춰버리는 문제를, 신경망이 물리 법칙 자체를 학습하게 하는 physics-informed neural network(물리 정보를 손실 함수에 넣어 학습하는 신경망, PINN)로 우회합니다. Advanced Science 논문은 나노 소재의 전자기장을 전자 홀로그래피로 측정할 때 시료 손상을 막으려 전자선 노출을 줄이면 노이즈가 커지는 문제를, 반복 계산이 아니라 딥러닝 디노이징으로 해결합니다. 즉 네 논문 모두 '더 정확한 반복 알고리즘'이 아니라 '반복 계산 자체를 줄이거나 없애는' 방향으로 위상·홀로그래피 복원 문제에 접근한다는 공통점이 있습니다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저널 4편(Photonics Research, Molecular Physics, Advanced Optical Materials, Advanced Science)이 반복 계산에서 벗어나려는 같은 방향성을 보이지만, 구체적으로 겨냥하는 약점(수차·모호성·수렴 정체·노이즈)이 각각 달라 하나의 표준 방법으로 수렴한 것은 아님",
+   "lab_action": "non-iterative QPI의 각도·초점 다중 모달 수차 보정 방식을 랩 QPI 시스템의 수차 보정 파이프라인과 비교해 반복 Gerchberg-Saxton 알고리즘 대비 처리 속도·정확도 곡선을 그리고, THz 홀로그래피 논문의 PINN 구조를 랩 홀로그램 설계 시뮬레이터에 이식해 3D 목표 형태 복잡도에 따른 수렴 성공률을 비교",
+   "importance_tags": ["[방법전환]"]
+  },
+  {
+   "cluster": "Label-free 현미경 영상에서 AI가 염색 정보 자체를 예측하는 '가상 염색' 흐름이 리뷰 논문까지 나올 만큼 뚜렷해짐",
+   "papers": [
+    {"title": "AI-driven dual-mode phase and label-free fluorescence imaging platform using a single-shot gabor hologram", "arxiv_id": "https://doi.org/10.1038/s41378-026-01424-9", "journal_or_source": "Microsystems & Nanoengineering"},
+    {"title": "HYED-Net: unified hierarchical feature refinement for co-registered nuclei segmentation and virtual IHC-to-mpIF staining", "arxiv_id": "https://doi.org/10.1038/s41598-026-67646-z", "journal_or_source": "Scientific Reports"},
+    {"title": "Mid-infrared microscopy for label-free digital staining: initial clinical assessment", "arxiv_id": "https://doi.org/10.3389/fbioe.2026.1774279", "journal_or_source": "Frontiers in Bioengineering and Biotechnology"},
+    {"title": "'In silico labelling': Exploring the biological landscape at the nanoscale using intelligent multimodal optical microscopy", "arxiv_id": "https://doi.org/10.1111/jmi.70163", "journal_or_source": "Journal of Microscopy"}
+   ],
+   "why": "가상 염색(virtual staining)은 화학 염색이나 형광 표지 없이 얻은 영상에서 인공지능이 염색했을 때와 비슷한 대비를 만들어내는 접근입니다. 오늘 저널 네 편은 이 흐름이 이제 개별 논문 수준을 넘어 리뷰에서도 정리될 만큼 자리 잡았다는 것을 보여줍니다. Microsystems & Nanoengineering 논문은 홀로그램 한 장만으로 위상 정보와 형광과 비슷한 label-free 대비를 동시에 뽑아내는 AI 플랫폼을 제시하고, Scientific Reports의 HYED-Net은 면역조직화학(IHC) 염색 영상을 다중 형광(mpIF) 염색처럼 보이게 변환하면서 동시에 세포핵 위치까지 맞추는 통합 구조를 씁니다. Frontiers in Bioengineering and Biotechnology 논문은 적외선(mid-infrared) 현미경으로 조직을 촬영해 화학 염색 없이 병리 진단에 쓸 수 있는 영상을 만드는 초기 임상 평가 결과를 보고합니다. Journal of Microscopy의 리뷰 논문(In silico labelling)은 이런 개별 시도들을 '광학 현미경과 AI가 만나 라벨 없는 측정에서 형광 같은 분자 대비를 계산으로 예측하는' 하나의 연구 흐름으로 묶어서 정리합니다. 개별 방법 논문 세 편과 이를 종합하는 리뷰가 같은 날 나왔다는 것은, 가상 염색이 더 이상 산발적인 아이디어가 아니라 현미경 커뮤니티가 하나의 연구 분야로 인식하기 시작했다는 신호로 읽을 수 있습니다.",
+   "confidence": "High",
+   "confidence_note": "서로 다른 저널 4편(방법 논문 3편 + 종합 리뷰 1편)이 같은 날 나와, 가상 염색이 산발적 시도를 넘어 하나의 정리된 연구 흐름으로 인식되고 있음을 뒷받침",
+   "lab_action": "HYED-Net의 계층적 특징 정제(hierarchical feature refinement) 구조를 랩이 보유한 병리·현미경 label-free 영상에 적용해 IHC-유사 변환 후 세포핵 검출 정확도를 gold-standard 염색 영상과 비교하고, mid-IR 라벨-free 논문의 임상 평가 프로토콜(민감도·특이도 지표)을 랩 가상 염색 파이프라인 검증 기준으로 채택",
+   "importance_tags": ["[방법전환]", "[통합정리]"]
+  },
+  {
+   "cluster": "Light-field 계산광학이 촬영 하드웨어에서 압축·디스플레이까지 파이프라인 전체로 넓어짐",
+   "papers": [
+    {"title": "Extended-depth-of-field Fourier light-field microscopy based on Bessel beams", "arxiv_id": "https://doi.org/10.1063/5.0351312", "journal_or_source": "Applied Physics Letters"},
+    {"title": "Coordinate-Aware Implicit Representation for Low-Light Light Field Image Compression and Enhancement", "arxiv_id": "https://doi.org/10.1109/tmm.2026.3729403", "journal_or_source": "IEEE Transactions on Multimedia"},
+    {"title": "Semi-physical neural-network-based pre-correction toward achromatic crosstalk-free vector light-field 3D display", "arxiv_id": "https://doi.org/10.1117/1.apn.5.6.066005", "journal_or_source": "Advanced Photonics Nexus"}
+   ],
+   "why": "라이트필드(light field, 한 장면을 여러 시점에서 동시에 담아 나중에 초점·시점을 바꿀 수 있게 하는 촬영 방식) 연구는 보통 '어떻게 잘 찍을 것인가'에 집중해 왔습니다. 오늘 저널 세 편은 촬영·압축·디스플레이라는 서로 다른 단계에서 각각 라이트필드를 다룹니다. Applied Physics Letters 논문은 베셀 빔(회절에 강해 멀리까지 폭이 유지되는 빛)을 이용해 Fourier 라이트필드 현미경의 초점 심도(한 번에 선명하게 찍히는 깊이 범위)를 늘려, 한 번의 촬영으로 더 두꺼운 시료를 스냅샷으로 담을 수 있게 합니다. IEEE Transactions on Multimedia 논문은 촬영된 라이트필드 영상을 저장·전송하기 좋게 압축하면서 동시에 저조도에서 어두워진 부분을 함께 보정하는, 좌표를 입력받아 값을 계산하는 신경망 표현 방식(implicit representation)을 씁니다. Advanced Photonics Nexus 논문은 그렇게 만든 라이트필드 영상을 안경 없는 3D 디스플레이로 보여줄 때 생기는 색 번짐과 시점 간 간섭을 신경망 기반 사전 보정으로 없앱니다. 즉 촬영(현미경)-압축·복원-디스플레이라는 라이트필드 파이프라인의 세 단계가 같은 날 저널에서 각각 진전을 보인 셈인데, 이는 라이트필드 연구가 '찍는 기술'에서 '찍고 저장하고 보여주는 전체 시스템'으로 범위가 넓어지고 있다는 뜻입니다.",
+   "confidence": "Medium",
+   "confidence_note": "3편이 서로 다른 저널에서 각각 다른 파이프라인 단계(촬영·압축·디스플레이)를 다뤄, 라이트필드 파이프라인 전반의 관심 확대는 보이지만 논문 간 직접적 상호 참조는 없음",
+   "lab_action": "베셀 빔 기반 annular pupil modulation을 랩 라이트필드 현미경 시스템의 마이크로렌즈 어레이 설계에 적용해 초점 심도-해상도 트레이드오프 곡선을 측정하고, 좌표 기반 implicit representation 압축 방식을 랩 라이트필드 데이터 저장 포맷 후보로 벤치마크",
+   "importance_tags": ["[방법전환]"]
+  },
+  {
+   "cluster": "Lensless·coded 촬영이 실험실 데모를 넘어 산업 센싱·정보 인코딩으로 확장",
+   "papers": [
+    {"title": "Multi-feature identification of particles in transformer oil using lensless holographic imaging and XGBoost", "arxiv_id": "https://doi.org/10.1016/j.measurement.2026.123053", "journal_or_source": "Measurement"},
+    {"title": "Five dimensional information encoding using spiral phase masks in coded aperture imaging", "arxiv_id": "https://doi.org/10.1007/s44352-026-00026-5", "journal_or_source": "Discover Imaging"}
+   ],
+   "why": "렌즈리스(lensless, 렌즈 없이 센서 위에 놓인 마스크나 회절판만으로 촬영하는 방식)·코드화 조리개(coded aperture) 촬영은 그동안 주로 실험실 환경에서 재구성 알고리즘 자체를 검증하는 데 쓰였습니다. 오늘 저널 두 편은 이 기술이 실제 응용 문제로 넘어가는 모습을 보여줍니다. Measurement 논문은 변압기 절연유 안의 미세 입자를 렌즈리스 홀로그래픽 촬영으로 찍은 뒤 머신러닝(XGBoost)으로 입자 종류를 구분해 변압기 고장을 예측하는 산업 진단에 씁니다. Discover Imaging 논문은 나선형 위상 마스크를 코드화 조리개에 적용해 한 장의 촬영에 5개 차원의 정보를 동시에 담아내는 정보 인코딩 방법을 제시합니다. 두 논문 모두 렌즈리스·코드화 촬영의 '단순한 하드웨어로 특수한 정보를 얻는다'는 본래 장점을 산업 센싱과 정보 인코딩이라는 구체적인 실사용 시나리오에 연결하고 있습니다.",
+   "confidence": "Low",
+   "confidence_note": "2편뿐이고 응용 방향(산업 진단 vs 정보 인코딩)이 서로 달라 직접적인 연결은 약함",
+   "lab_action": "변압기 오일 입자 진단 논문의 렌즈리스 홀로그램+classical ML(XGBoost) 파이프라인을 랩이 보유한 산란매질 입자 센싱 데이터셋에 적용해 딥러닝 기반 분류기 대비 성능·속도를 비교",
+   "importance_tags": ["[실사용전환]"]
+  },
+  {
+   "cluster": "물리·사전지식을 명시적으로 주입하는 신경망이 복원·해석 문제의 표준 도구로 자리잡음",
+   "papers": [
+    {"title": "Physics-Informed Neural Operator Hybrids for Multi-Scale Inverse Problems", "arxiv_id": "https://doi.org/10.1016/j.cam.2026.118101", "journal_or_source": "Journal of Computational and Applied Mathematics"},
+    {"title": "Physics-informed noise modeling for denoising in short-wave infrared imaging systems", "arxiv_id": "https://doi.org/10.1016/j.optlaseng.2026.110095", "journal_or_source": "Optics and Lasers in Engineering"},
+    {"title": "Semi-supervised clustering with knowledge-guided representation learning in cryo-electron tomography", "arxiv_id": "https://doi.org/10.1371/journal.pdig.0001619", "journal_or_source": "PLOS Digital Health"}
+   ],
+   "why": "역문제(inverse problem, 측정된 데이터로부터 원인이 되는 물리량을 되짚어 계산하는 문제)를 순수 블랙박스 신경망으로 풀면 데이터가 적을 때 불안정하거나 물리적으로 말이 안 되는 답을 낼 수 있습니다. 오늘 저널 세 편은 이 문제를 물리 법칙이나 도메인 지식을 신경망 구조·손실 함수에 직접 넣는 방식으로 공략합니다. Journal of Computational and Applied Mathematics 논문은 물리 연산자(operator)와 신경망을 결합한 하이브리드 구조로 여러 스케일에 걸친 역문제를 동시에 다루는 프레임워크를 제안하고, Optics and Lasers in Engineering 논문은 단파적외선(SWIR) 촬영에서 노이즈가 생기는 물리적 과정 자체를 모델링해 디노이징 신경망의 사전(prior)으로 사용합니다. PLOS Digital Health 논문은 냉동전자단층촬영(cryo-electron tomography, 극저온에서 생체분자를 3차원으로 촬영하는 기법)에서 구조를 자동 분류할 때, 완전히 비지도로 학습하는 대신 연구자가 이미 아는 부분 정답을 지식으로 주입하는 준지도 학습 방식을 씁니다. 세 논문 모두 '데이터만으로 학습'이 아니라 '알고 있는 물리·구조 지식을 학습 과정에 명시적으로 넣는다'는 같은 설계 철학을 공유합니다.",
+   "confidence": "Medium",
+   "confidence_note": "3편이 서로 다른 응용(일반 역문제, SWIR 디노이징, cryo-ET 클러스터링)을 다루지만 설계 철학(물리·지식 주입)이 뚜렷하게 겹침",
+   "lab_action": "physics-informed neural operator 하이브리드 구조를 랩의 optical diffraction tomography 역문제 솔버에 시험 적용해 순수 신경망 대비 적은 학습 데이터에서의 안정성을 비교하고, SWIR 노이즈 물리 모델링 방식을 랩 SWIR/NIR 촬영 파이프라인의 디노이징 사전 학습에 이식",
+   "importance_tags": ["[방법전환]"]
+  }
+ ],
+ "insights": [
+  {
+   "title": "Label-free 현미경 영상에서 AI가 염색 정보 자체를 예측하는 '가상 염색' 흐름이 리뷰 논문까지 나올 만큼 뚜렷해짐",
+   "claim": "AI 기반 홀로그램 플랫폼, HYED-Net의 IHC-to-mpIF 변환, mid-IR label-free 임상 평가에 이어 이를 종합하는 리뷰(In silico labelling)까지 같은 날 나오면서 가상 염색이 산발적 아이디어를 넘어 하나의 연구 흐름으로 자리잡았다.",
+   "papers": [
+    {"title": "HYED-Net: unified hierarchical feature refinement for co-registered nuclei segmentation and virtual IHC-to-mpIF staining", "arxiv": "https://doi.org/10.1038/s41598-026-67646-z", "importance_tags": ["[방법전환]"]},
+    {"title": "'In silico labelling': Exploring the biological landscape at the nanoscale using intelligent multimodal optical microscopy", "arxiv": "https://doi.org/10.1111/jmi.70163", "importance_tags": ["[통합정리]"]},
+    {"title": "Mid-infrared microscopy for label-free digital staining: initial clinical assessment", "arxiv": "https://doi.org/10.3389/fbioe.2026.1774279", "importance_tags": ["[실사용전환]"]}
+   ]
+  },
+  {
+   "title": "위상·홀로그래피 복원이 반복 알고리즘의 각기 다른 약점을 우회하는 여러 시도로 갈라짐",
+   "claim": "non-iterative QPI는 수차 보정을, 앙상블 phase retrieval은 위상 모호성을, PINN 기반 THz 홀로그래피는 수렴 정체를, 전자 홀로그래피 DL 디노이징은 노이즈 문제를 각각 반복 계산을 줄이거나 없애는 방향으로 공략한다.",
+   "papers": [
+    {"title": "Non-iterative quantitative phase imaging with aberration correction via angular and focal modulation", "arxiv": "https://doi.org/10.1364/prj.604208", "importance_tags": ["[방법전환]"]},
+    {"title": "Metasurface-Based Terahertz Three-Dimensional Holography Enabled by Physics-Informed Neural Network", "arxiv": "https://doi.org/10.1002/adom.71712", "importance_tags": ["[방법전환]"]},
+    {"title": "Deep-Learning-Based Denoising for Improved Phase Precision in Electron Holography of Electromagnetic Fields in Nanoscale Materials", "arxiv": "https://doi.org/10.1002/advs.77380", "importance_tags": ["[방법전환]"]}
+   ]
+  },
+  {
+   "title": "물리·사전지식을 명시적으로 주입하는 신경망이 복원·해석 문제의 표준 도구로 자리잡음",
+   "claim": "물리 연산자 하이브리드, SWIR 노이즈 물리 모델링, cryo-ET 지식 주입 준지도 학습이 모두 '데이터만으로 학습' 대신 '알고 있는 물리·구조 지식을 학습 과정에 넣는다'는 같은 설계 철학을 공유한다.",
+   "papers": [
+    {"title": "Physics-Informed Neural Operator Hybrids for Multi-Scale Inverse Problems", "arxiv": "https://doi.org/10.1016/j.cam.2026.118101", "importance_tags": ["[방법전환]"]},
+    {"title": "Physics-informed noise modeling for denoising in short-wave infrared imaging systems", "arxiv": "https://doi.org/10.1016/j.optlaseng.2026.110095", "importance_tags": ["[방법전환]"]},
+    {"title": "Semi-supervised clustering with knowledge-guided representation learning in cryo-electron tomography", "arxiv": "https://doi.org/10.1371/journal.pdig.0001619", "importance_tags": ["[해부분석]"]}
+   ]
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "A. HYED-Net/AI 듀얼모드 홀로그램 가상 염색 파이프라인을 랩 label-free 현미경 영상에 적용",
+   "claim": "HYED-Net의 계층적 특징 정제 구조와 AI 듀얼모드 홀로그램 플랫폼의 방식을 랩이 보유한 label-free 현미경 영상에 적용하면, gold-standard 염색 영상 대비 정량적 유사도와 세포핵 검출 정확도를 확보할 수 있다.",
+   "supporting_papers": [
+    {"title": "HYED-Net: unified hierarchical feature refinement for co-registered nuclei segmentation and virtual IHC-to-mpIF staining", "arxiv": "https://doi.org/10.1038/s41598-026-67646-z"},
+    {"title": "AI-driven dual-mode phase and label-free fluorescence imaging platform using a single-shot gabor hologram", "arxiv": "https://doi.org/10.1038/s41378-026-01424-9"}
+   ]
+  },
+  {
+   "title": "B. Non-iterative QPI/THz metasurface holography PINN 구조를 랩 위상 복원 파이프라인에 이식",
+   "claim": "각도·초점 다중 모달 수차 보정과 PINN 기반 3D 홀로그램 설계 구조를 랩 QPI/홀로그래피 파이프라인에 이식하면, 반복 Gerchberg-Saxton 알고리즘 대비 처리 속도와 수렴 성공률을 함께 개선할 수 있다.",
+   "supporting_papers": [
+    {"title": "Non-iterative quantitative phase imaging with aberration correction via angular and focal modulation", "arxiv": "https://doi.org/10.1364/prj.604208"},
+    {"title": "Metasurface-Based Terahertz Three-Dimensional Holography Enabled by Physics-Informed Neural Network", "arxiv": "https://doi.org/10.1002/adom.71712"}
+   ]
+  },
+  {
+   "title": "C. Physics-informed neural operator/SWIR 노이즈 모델링을 랩 optical diffraction tomography 솔버에 시험 적용",
+   "claim": "물리 연산자 하이브리드 구조와 SWIR 노이즈 물리 모델링 방식을 랩 ODT 솔버에 적용하면, 순수 신경망 대비 적은 학습 데이터에서도 재구성 안정성을 유지할 수 있다.",
+   "supporting_papers": [
+    {"title": "Physics-Informed Neural Operator Hybrids for Multi-Scale Inverse Problems", "arxiv": "https://doi.org/10.1016/j.cam.2026.118101"},
+    {"title": "Physics-informed noise modeling for denoising in short-wave infrared imaging systems", "arxiv": "https://doi.org/10.1016/j.optlaseng.2026.110095"}
+   ]
+  }
+ ],
+ "phylogeny_tags": []
+}
