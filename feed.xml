@@ -6,14 +6,14 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 01 Sep 2026 11:19:45 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 13:29:39 +0900</lastBuildDate>
     <ttl>720</ttl>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-09-01 (화요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-09-01.html</link>
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-09-01.html</guid>
       <pubDate>Tue, 01 Sep 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘 브리핑은 어제(8/31, 월)까지 arXiv가 정상적으로 채워주던 자리를 저널이 대신한 하루입니다. 어제 daily는 3D 재구성 연구가 "얼마나 정확하게 복원하느냐"에서 "정해진 메모리·연산 예산 안에서 돌아가게 만드느냐"로 무게중심을 옮긴 논문 6편이 대표였는데, 오늘은 그 arXiv 신호 자체가 완전히 사라지면서 계산광학 코어 주제가 저널 단독으로 하루 전체를 채우는 하루가 됐습니다.]]></description>
+      <description><![CDATA[오늘 daily는 하루 두 번 실행됐습니다. 최초 실행(11:05 KST)에서는 arXiv 5개 카테고리가 모두 어제(8/31) listing에 머물러 있어 저널만으로 만든 잠정본을 냈고, 이번 재실행에서 arXiv listing이 정상 갱신된 것을 확인해 arXiv 1,136건을 포함한 완전판으로 업그레이드했습니다. 그 결과 오늘 하루에 두 개의 서로 다른 신호 축이 쌓였습니다 — 최초 실행에서 이미 확인한 저널 신호(가상 염색, 위상·홀로그래피 복원)와, 이번 재실행에서 새로 드러난 arXiv 신호(3DGS 세 갈래 분화, 의료영상 생성 사전)입니다.]]></description>
     </item>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-08-31 (Week 35)</title>

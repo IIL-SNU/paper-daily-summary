@@ -1,4 +1,37 @@
 {
   "date": "2026-09-01",
-  "results": []
+  "results": [
+    {
+      "benchmark": "Feed-forward 3D Reconstruction Confidence Calibration (7 backbones x 13 datasets)",
+      "metric": "median miscalibration factor (raw -> cross-scene constant -> few-shot refit)",
+      "value": 1.12,
+      "value_str": "2.4x -> 1.35x -> 1.12x",
+      "paper": "https://arxiv.org/abs/2608.29705",
+      "paper_title": "A Calibration Audit of Confidence in Feed-Forward 3D Reconstruction"
+    },
+    {
+      "benchmark": "US3D satellite feed-forward 3D reconstruction (held-out tiles)",
+      "metric": "absolute MAE / coverage / completeness-aware accuracy gain",
+      "value": 2.99,
+      "value_str": "MAE 2.99 m, coverage 91.9%, +46.4pt completeness-aware accuracy vs strongest compliant feed-forward baseline",
+      "paper": "https://arxiv.org/abs/2608.29680",
+      "paper_title": "GeoRay: Gauge-Aware Feed-Forward Satellite 3D Reconstruction in the Geodetic Frame"
+    },
+    {
+      "benchmark": "Label-free mid-IR virtual H&E staining (110 ROIs, 5 tissue sections)",
+      "metric": "PSNR / MS-SSIM / LPIPS",
+      "value": 24,
+      "value_str": "PSNR≈24, MS-SSIM≈0.82, LPIPS≈0.22, 500nm 유효 해상도, Gleason 등급 판정 화학염색과 동등",
+      "paper": "https://doi.org/10.3389/fbioe.2026.1774279",
+      "paper_title": "Mid-infrared microscopy for label-free digital staining: initial clinical assessment"
+    },
+    {
+      "benchmark": "Underwater array self-calibration DoA estimation (SWellEx-96)",
+      "metric": "geometric RMSE @ 166Hz",
+      "value": 0.659,
+      "value_str": "0.659 m",
+      "paper": "https://arxiv.org/abs/2608.30488",
+      "paper_title": "Leveraging Bayesian Optimization for Array Shape Self-Calibration in Underwater DoA Estimation (BOGE)"
+    }
+  ]
 }
