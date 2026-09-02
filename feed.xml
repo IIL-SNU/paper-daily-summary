@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 01 Sep 2026 13:29:39 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 11:26:02 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-09-02 (수요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-09-02.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-09-02.html</guid>
+      <pubDate>Wed, 02 Sep 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 arXiv new+cross 총 698건(cs.LG 202·cs.CV 152·cs.AI 309·eess.IV 8·eess.SP 27) 중 ROI 버킷에 걸린 건 263건(26.9%)입니다. 저널은 Crossref/OpenAlex 426편을 재수집했고, 전체 스캔 978건 중 선택 비율은 26.9%로 어제(31.0%)보다 다소 낮습니다 — 이는 저널 쿼리가 이미징 코어 키워드로 정확히 맞은 편수가 적었고, 대신 arXiv cs.AI(309편)가 LLM/에이전트 논문 위주로 많이 잡혀 분모가 커졌기 때문입니다.]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-09-01 (화요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-09-01.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-25.html</guid>
       <pubDate>Thu, 25 Jun 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[/pastweek 데이터가 추가되면서 오늘 총 855건(arXiv 521 + 저널 334)을 검토했습니다. cs.LG(186)·cs.AI(182)·cs.CV(125)가 주를 이루고, eess.IV(10)·eess.SP(18)가 광학 전문 채널입니다. 이번 주(6월 23일~25일) 흐름을 돌아보면, 역문제 방법론의 생성 모델 통합이 빠르게 가속 되고 있습니다. 수요일(6/24)에는 홀로그래피 용량 돌파(멀티오더 디커플링)와 이벤트 카메라 크로스모달 융합이 중심이었고, 목요일(6/25)에는 그 흐름이 더 구체화됩니다 — 역문제에서 diffusion이 내부로 들어오고, 나노포토닉이 설계에서 제조까지 연결됩니다.]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Daily Briefing — 2026-06-24 (수요일)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-06-24.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-24.html</guid>
-      <pubDate>Wed, 24 Jun 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[수요일 arXiv /new 배치는 총 804건으로 cs.AI(198)·cs.CV(129)·cs.LG(110)가 주를 이루고, eess.IV(10)·eess.SP(25)가 광학 전문 채널을 채웁니다. 이번 주 흐름을 돌아보면, 메타서피스의 다기능화와 능동 재구성 가능성 이 꾸준히 강화되고 있습니다. 지난주 금요일(6/19)에는 역문제 알고리즘(Flow Map Denoisers, PSCT-Net)이 중심이었고, 화요일(6/23) 배치에서는 홀로그래피·위상의 생물·재료 응용과 이벤트 카메라 표현 체계화, 메타서피스 다기능화가 큰 흐름이었습니다. 오늘은 그 두 흐름이 더 심화됩니다 — 홀로그래피는 용량 한계 돌파로, 이벤트 카메라는 크로스모달 융합 실용화로 이어지고 있습니다.]]></description>
     </item>
   </channel>
 </rss>

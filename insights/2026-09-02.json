@@ -1,0 +1,155 @@
+{
+ "date": "2026-09-02",
+ "source_mode": "new",
+ "clusters": [
+  {
+   "cluster": "3D 재구성이 \"정확도\"에서 \"실시간·대규모·부족한 입력을 견디는 시스템\"으로",
+   "papers": [
+    {"title": "Streaming4D: Accelerate 4D World Models via Block-wise Video Generation and Incremental Reconstruction", "arxiv_id": "https://arxiv.org/abs/2609.00610", "journal_or_source": "arXiv cs.CV"},
+    {"title": "On-the-Fly3R: Towards Robust Online 3D Reconstruction with Feed-Forward 3R Models for Large-Scale UAV Scenarios", "arxiv_id": "https://arxiv.org/abs/2609.00923", "journal_or_source": "arXiv cs.CV"},
+    {"title": "EvoGS: Modeling Deformation Evolution for Dynamic Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2609.00994", "journal_or_source": "arXiv cs.CV"},
+    {"title": "DualDiff3D: Dual Structure-Appearance Diffusion Priors for Reliability-Enhanced 3D Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2609.01516", "journal_or_source": "arXiv cs.CV"}
+   ],
+   "why": "예전에는 3D 재구성 논문이 복원 결과가 얼마나 정확한지를 주로 봤다. 오늘 네 편은 그 정확도를 어느 정도 인정한 다음, 실시간성·대규모 입력·급격한 모션·부족한 입력 뷰처럼 실제 배포에서 마주치는 까다로운 조건에서도 그 정확도가 유지되는지를 묻는다. Streaming4D는 영상 생성과 3D 복원을 동시에 돌려 지연시간을 줄이고, On-the-Fly3R은 순서가 뒤섞인 UAV 촬영 이미지 수천 장을 재학습 없이 온라인으로 이어붙이며, EvoGS는 변형을 시간에 따른 진화 과정으로 다뤄 급격한 모션 앞에서의 흔들림을 줄이고, DualDiff3D는 입력 뷰가 적을 때 구조와 외형 diffusion 사전을 분리 적용해 흐릿함을 줄인다. 네 논문 모두 복원이 되느냐가 아니라 실시간·대량·저입력 조건에서도 복원이 유지되느냐를 다룬다는 공통점이 있어, 3D 재구성 연구가 실험실 조건을 벗어나 실제 배포 조건을 정면으로 다루기 시작했다는 신호로 읽힌다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저자군 4편이 배포 견고성이라는 공통 문제의식을 보이지만, 실시간성·대규모·모션·희소뷰라는 서로 다른 하위 조건을 다뤄 하나의 평가축으로 수렴하지는 않음",
+   "lab_action": "On-the-Fly3R의 검증-거부-재시도 메커니즘을 랩이 보유한 산란매질/저조도 3D 재구성 결과에 적용해 정렬 실패 프레임을 자동으로 걸러내는지 자체 데이터로 확인하고, DualDiff3D의 구조-외형 분리 diffusion 사전을 랩의 소수 뷰 광학 단층 재구성에 이식해 흐릿함 감소 여부를 PSNR/LPIPS로 비교"
+  },
+  {
+   "cluster": "Flow matching이 diffusion을 이어받아 영상 복원의 새 생성 사전으로 자리잡는 흐름",
+   "papers": [
+    {"title": "ReBridge-Flow: Re-Coupling Posterior Bridges in Flow Matching for Image Restoration", "arxiv_id": "https://arxiv.org/abs/2609.00811", "journal_or_source": "arXiv cs.LG"},
+    {"title": "A Lagrangian View of Flow Matching", "arxiv_id": "https://arxiv.org/abs/2609.00198", "journal_or_source": "arXiv cs.LG"},
+    {"title": "Conditional Flow Matching for ML-Based Inverse Design Problems", "arxiv_id": "https://arxiv.org/abs/2609.00863", "journal_or_source": "arXiv cs.LG"}
+   ],
+   "why": "flow matching은 diffusion처럼 노이즈에서 시작해 점을 조금씩 움직여 원하는 이미지로 만들어가는 생성모델인데, diffusion보다 적은 단계로 결과를 낼 수 있어 최근 영상 복원의 새 생성 사전으로 주목받고 있다. 오늘은 이 흐름의 이론과 응용이 같은 날 함께 나왔다는 점이 중요하다. A Lagrangian View of Flow Matching은 flow matching이 왜 한 번의 계산만으로도 그럴듯한 결과를 낼 수 있는지를 입자 하나하나의 움직임 관점에서 새로 설명하고, ReBridge-Flow는 그 flow matching을 실제 영상 복원에 쓸 때 측정값을 반영하는 보정 단계가 원래 모델이 배운 시작점-끝점 짝을 깨뜨려버리는 문제를 발견해 이를 다시 이어 붙이는 방법을 제안하며, Conditional Flow Matching for Inverse Design은 같은 flow matching을 공학 역설계 문제에 적용해 diffusion·GAN과 직접 비교한다. 이론이 응용을 뒷받침하고 응용이 이론이 예측한 한계를 실제로 드러낸다는 점에서, flow matching이 아직 다듬어지는 이론과 이미 현장에 투입되는 응용이 동시에 진행되는 단계임을 보여준다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저자군 3편이 flow matching을 복원/역설계의 생성 사전으로 다루는 공통 문제의식을 보이지만, 이론(단일 논문)과 응용(2편)의 비중이 아직 작아 확산 규모는 더 지켜봐야 함",
+   "lab_action": "ReBridge-Flow의 posterior bridge 재결합 방법을 랩의 diffusion 기반 위상 복원/QPI 파이프라인에 flow matching으로 교체 적용해, 측정 일관성 보정 전후 이미지 품질과 추론 속도를 diffusion 버전과 비교하는 ablation 표 작성"
+  },
+  {
+   "cluster": "가상 염색이 \"그럴듯한 생성\"에서 \"실제 병리 워크플로우의 지저분한 조건을 견디는 방법\"으로",
+   "papers": [
+    {"title": "Semi-Supervised Virtual Staining via Morphology Preservation and Histopathological Realism Constraints", "arxiv_id": "https://arxiv.org/abs/2609.00984", "journal_or_source": "arXiv cs.CV"},
+    {"title": "StainPresetNet: Stain Preset Network for Fast Multi-to-Multi Stain Normalization", "arxiv_id": "https://arxiv.org/abs/2609.01146", "journal_or_source": "arXiv cs.CV"},
+    {"title": "SlideMix: Enhancing Whole Slide Image Analysis via Multimodal Shuffling", "arxiv_id": "https://arxiv.org/abs/2609.00396", "journal_or_source": "arXiv cs.CV"},
+    {"title": "FTU-Seek: Foundation Model-Guided Hard-Negative Learning for Sparse Functional Tissue Unit Segmentation", "arxiv_id": "https://arxiv.org/abs/2609.00704", "journal_or_source": "arXiv cs.CV"}
+   ],
+   "why": "가상 염색은 화학 염색 없이 인공지능이 염색된 것처럼 보이는 영상을 만들어내는 기술인데, 지금까지는 주로 정확히 짝지어진 염색 전/후 영상 쌍이 충분히 있다는 전제 위에서 발전해 왔다. 오늘 네 편은 그 전제가 실제 병원에서는 잘 성립하지 않는다는 문제를 각각 다른 각도에서 다룬다. Semi-Supervised Virtual Staining은 정확히 정렬된 페어 데이터가 적어도 정렬 안 된 영상까지 함께 활용하도록 조직 구조를 보존하는 제약을 걸었고, StainPresetNet은 염색 방향이 바뀔 때마다 모델을 다시 학습시켜야 했던 문제를 기준 영상만 바꾸면 되도록 풀었으며, SlideMix는 기가픽셀 슬라이드에서 진단에 중요한 영역만 골라 섞는 증강으로 라벨이 거친 데이터에서도 학습이 잘 되게 했고, FTU-Seek는 슬라이드 안에 듬성듬성 나타나는 구조를 배경과 헷갈리지 않고 찾아내는 문제를 다뤘다. 네 논문 모두 이상적인 데이터가 있다면 잘 되는 방법을 넘어 실제 병리 데이터가 가진 결측·비정렬·희소성 문제를 견디는 방법을 겨냥한다는 공통점이 있어, 가상 염색 연구가 알고리즘 정확도 경쟁에서 실제 배포 가능성 경쟁으로 무게중심을 옮기고 있다는 신호로 읽힌다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저자군 4편이 실제 데이터 조건에서의 견고성이라는 공통 문제의식을 보이지만, 페어링·염색방향·증강·희소구조라는 서로 다른 하위 문제를 다뤄 하나의 표준 벤치마크로 수렴하지는 않음",
+   "lab_action": "StainPresetNet의 기준 영상 교체 방식 정규화를 랩 label-free 현미경 파이프라인의 염색 스타일 전이 단계에 적용해 재학습 없이 여러 염색 스타일로 전환 가능한지 확인하고, FTU-Seek의 hard-negative 선별 전략을 랩 조직 영상의 희소 구조 검출에 적용해 검출 재현율 변화를 측정"
+  },
+  {
+   "cluster": "라벨 부족한 3D/의료 영상을 위한 밀집(dense) 자기지도 사전학습이 별도 갈래로 성숙",
+   "papers": [
+    {"title": "Pix2Rep-v2: Data-Efficient Representation Learning for Dense Medical Imaging Applications", "arxiv_id": "https://arxiv.org/abs/2609.01427", "journal_or_source": "arXiv cs.LG"},
+    {"title": "CMRVision: A Foundation Model for Cardiac MR Image Analysis", "arxiv_id": "https://arxiv.org/abs/2609.01308", "journal_or_source": "arXiv cs.LG"},
+    {"title": "Revisiting Cross-View Completion: Self-Supervised Pre-Training via Reconstruction Error Comparison (Gekko)", "arxiv_id": "https://arxiv.org/abs/2609.01530", "journal_or_source": "arXiv cs.LG"}
+   ],
+   "why": "일반적인 자기지도학습은 보통 이미지 전체가 어떤 범주인가를 맞히는 식으로 설계돼 왔는데, 의료·3D 영상에서는 정작 필요한 건 픽셀·복셀 하나하나가 무엇을 나타내는가이다. 오늘 세 편은 이미지 전체가 아니라 픽셀·복셀 단위로 학습 신호를 설계하는 밀집 자기지도학습을 각각 다른 각도에서 다룬다. Pix2Rep-v2는 픽셀 단위 중복 축소 목표와 등변성 원리를 결합해 3D·광시야 데이터에도 확장되도록 설계했고, CMRVision은 3,600만 장의 심장 MRI 영상으로 이미지 분류가 아닌 픽셀 단위 사전학습을 대규모로 수행했으며, Gekko는 스테레오·다중 시점 사전학습에서 두 시점 모두에 보이지 않는 부분이 학습이 잘 안 되는 약점을, 오히려 그 부분을 구분해내는 신호로 거꾸로 활용한다. 세 논문 모두 라벨이 부족한 3D·의료 영상에서 각 위치 단위로 쓸모 있는 표현을 어떻게 스스로 학습시킬 것인가라는 같은 질문을 서로 다른 학습 목표로 풀고 있어, 밀집 자기지도학습이 이미지 분류형 SSL과 갈라져 나온 별도 갈래로 자리잡고 있다는 신호로 읽힌다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 응용(범용 밀집 SSL·심장 MRI·스테레오)에서 3편이 같은 방향을 보이지만, 아직 하나의 벤치마크로 직접 비교된 적은 없음",
+   "lab_action": "Pix2Rep-v2의 픽셀 단위 밀집 SSL 목표를 랩의 3D 단층 재구성 데이터(라벨 부족 volumetric 이미지)에 사전학습으로 적용해, 기존 이미지 분류형 SSL 사전학습 대비 다운스트림 분할/복원 성능을 비교"
+  },
+  {
+   "cluster": "계산광학 코어(Lensless·Meta-Optics·Phase·Light-Field) — 관찰 중, 아직 클러스터 아님",
+   "papers": [
+    {"title": "Joint Optimization of Scanning Strategy and Initialization for Accelerated Lensless Coded Ptychography", "arxiv_id": "https://doi.org/10.3390/photonics13090828", "journal_or_source": "Photonics (JNL)"},
+    {"title": "Residual Kalman Dynamics for Event-Based UAV Forecasting", "arxiv_id": "https://arxiv.org/abs/2609.00839", "journal_or_source": "arXiv cs.CV"}
+   ],
+   "why": "오늘은 Fourier Ptychography/Microscopy 1편, Lensless/Coded Imaging 전용 버킷 0편(관련 저널 논문 1편은 Phase Imaging/Holography로 분류), Meta-Optics/Diffractive는 9편 중 이미징과 직접 관련된 논문이 사실상 없고, Light-Field/Novel Sensors 4편 중 실제 라이트필드 촬영 논문은 저널 1편뿐이다. 편수가 워낙 적어 독립 클러스터로 세우기엔 근거가 부족하지만, 랩 ROI 핵심 영역이 오늘도 거의 비어 있다는 사실 자체가 신호다. 계산광학 코어 논문이 arXiv/저널 양쪽에서 지속적으로 희소하다는 점은 랩이 스스로 이 공백을 채울 필요성을 시사한다.",
+   "confidence": "Low",
+   "confidence_note": "계산광학 코어 신호가 2편 미만으로 흩어져 있어 클러스터로 묶을 근거가 부족함",
+   "lab_action": "랩 자체 lensless/FPM 데이터로 이번 주 안에 최소 1건의 미니 벤치마크(재구성 PSNR/속도)를 만들어, 외부 논문 공백을 랩 자체 관찰로 대체하는 시험적 기록 남기기"
+  }
+ ],
+ "insights": [
+  {
+   "title": "3D 재구성이 \"정확도\"에서 \"실시간·대규모·부족한 입력을 견디는 시스템\"으로",
+   "claim": "Streaming4D(생성-복원 동시 처리), On-the-Fly3R(대규모 무순서 UAV 입력), EvoGS(급격한 모션), DualDiff3D(소수 입력 뷰) 네 편이 같은 날 나오면서, 3D 재구성 연구가 정확도 경쟁을 넘어 실제 배포 조건에서의 견고성을 다루기 시작했다.",
+   "papers": [
+    {"title": "On-the-Fly3R: Towards Robust Online 3D Reconstruction with Feed-Forward 3R Models for Large-Scale UAV Scenarios", "arxiv": "https://arxiv.org/abs/2609.00923", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+    {"title": "Streaming4D: Accelerate 4D World Models via Block-wise Video Generation and Incremental Reconstruction", "arxiv": "https://arxiv.org/abs/2609.00610", "importance_tags": ["[방법전환]"]},
+    {"title": "EvoGS: Modeling Deformation Evolution for Dynamic Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2609.00994", "importance_tags": ["[방법전환]"]},
+    {"title": "DualDiff3D: Dual Structure-Appearance Diffusion Priors for Reliability-Enhanced 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2609.01516", "importance_tags": ["[방법전환]"]}
+   ]
+  },
+  {
+   "title": "Flow matching이 diffusion을 이어받아 영상 복원의 새 생성 사전으로 자리잡는 흐름",
+   "claim": "A Lagrangian View of Flow Matching(이론)과 ReBridge-Flow(복원 응용), Conditional Flow Matching for Inverse Design(공학 역설계 응용)이 같은 날 나오며, flow matching이 아직 다듬어지는 이론과 이미 현장에 투입되는 응용이 동시에 진행되는 단계임을 보여준다.",
+   "papers": [
+    {"title": "ReBridge-Flow: Re-Coupling Posterior Bridges in Flow Matching for Image Restoration", "arxiv": "https://arxiv.org/abs/2609.00811", "importance_tags": ["[해부분석]", "[방법전환]"]},
+    {"title": "A Lagrangian View of Flow Matching", "arxiv": "https://arxiv.org/abs/2609.00198", "importance_tags": ["[해부분석]"]},
+    {"title": "Conditional Flow Matching for ML-Based Inverse Design Problems", "arxiv": "https://arxiv.org/abs/2609.00863", "importance_tags": ["[방법전환]"]}
+   ]
+  },
+  {
+   "title": "가상 염색이 \"그럴듯한 생성\"에서 \"실제 병리 워크플로우의 지저분한 조건을 견디는 방법\"으로",
+   "claim": "Semi-Supervised Virtual Staining(비페어 데이터), StainPresetNet(다중 염색 방향), SlideMix(거친 라벨), FTU-Seek(희소 구조) 네 편이 각각 다른 실전 조건을 다루며, 가상 염색 연구의 무게중심이 알고리즘 정확도에서 배포 가능성으로 옮겨가고 있다.",
+   "papers": [
+    {"title": "Semi-Supervised Virtual Staining via Morphology Preservation and Histopathological Realism Constraints", "arxiv": "https://arxiv.org/abs/2609.00984", "importance_tags": ["[방법전환]", "[데이터전환]"]},
+    {"title": "StainPresetNet: Stain Preset Network for Fast Multi-to-Multi Stain Normalization", "arxiv": "https://arxiv.org/abs/2609.01146", "importance_tags": ["[방법전환]"]},
+    {"title": "SlideMix: Enhancing Whole Slide Image Analysis via Multimodal Shuffling", "arxiv": "https://arxiv.org/abs/2609.00396", "importance_tags": ["[데이터전환]"]},
+    {"title": "FTU-Seek: Foundation Model-Guided Hard-Negative Learning for Sparse Functional Tissue Unit Segmentation", "arxiv": "https://arxiv.org/abs/2609.00704", "importance_tags": ["[방법전환]"]}
+   ]
+  },
+  {
+   "title": "라벨 부족한 3D/의료 영상을 위한 밀집 자기지도 사전학습이 별도 갈래로 성숙",
+   "claim": "Pix2Rep-v2(범용 밀집 SSL), CMRVision(심장 MRI 3,600만 장 사전학습), Gekko(스테레오 비공가시 영역 신호화)가 같은 날 나오며, 픽셀·복셀 단위 자기지도학습이 이미지 분류형 SSL과 갈라져 나온 독립 갈래로 자리잡고 있다.",
+   "papers": [
+    {"title": "Pix2Rep-v2: Data-Efficient Representation Learning for Dense Medical Imaging Applications", "arxiv": "https://arxiv.org/abs/2609.01427", "importance_tags": ["[방법전환]"]},
+    {"title": "CMRVision: A Foundation Model for Cardiac MR Image Analysis", "arxiv": "https://arxiv.org/abs/2609.01308", "importance_tags": ["[스케일업]"]},
+    {"title": "Revisiting Cross-View Completion: Self-Supervised Pre-Training via Reconstruction Error Comparison (Gekko)", "arxiv": "https://arxiv.org/abs/2609.01530", "importance_tags": ["[해부분석]", "[방법전환]"]}
+   ]
+  },
+  {
+   "title": "계산광학 코어 공백이 이틀 연속 이어짐",
+   "claim": "Fourier Ptychography/Microscopy는 사실상 0편, Lensless/Coded Imaging은 전용 버킷 0편, Meta-Optics/Diffractive 9편 중 이미징 직접 관련은 0편으로, 랩 ROI 핵심 영역이 외부 논문만으로는 채워지지 않고 있다.",
+   "papers": [
+    {"title": "Joint Optimization of Scanning Strategy and Initialization for Accelerated Lensless Coded Ptychography", "arxiv": "https://doi.org/10.3390/photonics13090828", "importance_tags": ["[경고신호]"]}
+   ]
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "A. On-the-Fly3R 검증-거부-재시도 메커니즘을 랩 3D 재구성 파이프라인에 적용",
+   "claim": "무순서·저품질 입력에서도 정렬 실패 프레임을 자동으로 걸러내는 On-the-Fly3R의 메커니즘을 랩의 산란매질/저조도 3D 재구성 데이터에 적용하면, 실패 프레임 자동 검출 정확도를 확인할 수 있다.",
+   "supporting_papers": [
+    {"title": "On-the-Fly3R: Towards Robust Online 3D Reconstruction with Feed-Forward 3R Models for Large-Scale UAV Scenarios", "arxiv": "https://arxiv.org/abs/2609.00923"}
+   ]
+  },
+  {
+   "title": "B. ReBridge-Flow의 posterior bridge 재결합을 랩 diffusion 기반 복원 파이프라인에 flow matching으로 교체 적용",
+   "claim": "기존 diffusion 사후 샘플링 기반 위상 복원/QPI 파이프라인을 flow matching으로 바꾸고 ReBridge-Flow의 재결합 방식을 적용하면, 측정 일관성 보정 전후 이미지 품질과 추론 속도를 diffusion 버전과 비교할 수 있다.",
+   "supporting_papers": [
+    {"title": "ReBridge-Flow: Re-Coupling Posterior Bridges in Flow Matching for Image Restoration", "arxiv": "https://arxiv.org/abs/2609.00811"},
+    {"title": "A Lagrangian View of Flow Matching", "arxiv": "https://arxiv.org/abs/2609.00198"}
+   ]
+  },
+  {
+   "title": "C. StainPresetNet의 기준 영상 교체 방식 정규화를 랩 label-free 염색 스타일 전이에 적용",
+   "claim": "재학습 없이 기준 영상만 바꿔 염색 방향을 전환하는 StainPresetNet 방식을 랩의 label-free 현미경 파이프라인에 적용하면, 여러 염색 스타일로 전환 가능한지와 재학습 없이도 정확도가 유지되는지를 확인할 수 있다.",
+   "supporting_papers": [
+    {"title": "StainPresetNet: Stain Preset Network for Fast Multi-to-Multi Stain Normalization", "arxiv": "https://arxiv.org/abs/2609.01146"},
+    {"title": "FTU-Seek: Foundation Model-Guided Hard-Negative Learning for Sparse Functional Tissue Unit Segmentation", "arxiv": "https://arxiv.org/abs/2609.00704"}
+   ]
+  },
+  {
+   "title": "D. Pix2Rep-v2의 픽셀 단위 밀집 SSL을 랩 3D 단층 재구성 사전학습에 적용",
+   "claim": "이미지 분류형 사전학습 대신 Pix2Rep-v2의 픽셀 단위 목표를 랩의 라벨 부족 volumetric 이미지에 사전학습으로 적용하면, 다운스트림 분할/복원 성능을 기존 사전학습 대비 비교할 수 있다.",
+   "supporting_papers": [
+    {"title": "Pix2Rep-v2: Data-Efficient Representation Learning for Dense Medical Imaging Applications", "arxiv": "https://arxiv.org/abs/2609.01427"},
+    {"title": "Revisiting Cross-View Completion: Self-Supervised Pre-Training via Reconstruction Error Comparison (Gekko)", "arxiv": "https://arxiv.org/abs/2609.01530"}
+   ]
+  },
+  {
+   "title": "E. 랩 자체 lensless/FPM 미니 벤치마크로 계산광학 코어 공백 채우기",
+   "claim": "외부 논문 공백이 이틀째 이어지는 만큼, 랩이 보유한 lensless/Fourier ptychography 데이터로 자체 미니 벤치마크를 만들어 내부 기록으로 남기면 다음 외부 논문 비교의 기준선이 된다.",
+   "supporting_papers": [
+    {"title": "Joint Optimization of Scanning Strategy and Initialization for Accelerated Lensless Coded Ptychography", "arxiv": "https://doi.org/10.3390/photonics13090828"}
+   ]
+  }
+ ],
+ "phylogeny_tags": []
+}

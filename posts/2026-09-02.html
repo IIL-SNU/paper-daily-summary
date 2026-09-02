@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-09-02</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-09-02 (수요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-09-02 (수요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Wednesday, 2 September 2026"을 가리키는 것을 확인했습니다. 어제 발생했던 재실행 이슈 없이 정상적인 daily 실행입니다.</div>
+  <div>🔢 arXiv: cs.LG 202 · cs.CV 152 · cs.AI 309 · eess.IV 8 · eess.SP 27 (합계 698건, new+cross 기준)</div>
+  <div>🔢 저널: Crossref/OpenAlex 426편(+OpenAlex 보충 2편) · 전체 스캔(arXiv+저널) 978건 · ROI 배정 263건 (26.9%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 arXiv 쪽 신호는 어제의 3DGS(3D Gaussian Splatting, 사진 여러 장으로 장면을 점 구름처럼 복원해 새 시점 영상을 실시간으로 만드는 기법) 세 갈래 분화가 다시 한번 이어지되, 이번엔 <strong>"복원 결과가 정확한가"가 아니라 "그 복원이 실시간·대규모·부족한 입력 조건에서도 버티는가"</strong>로 질문이 옮겨갔습니다. 또 하나 눈에 띄는 건 <strong>flow matching(diffusion과 비슷하게 노이즈에서 데이터로 점을 옮겨가며 이미지를 생성하는 최신 생성모델 계열)이 영상 복원의 새 생성 사전(prior, 복원 결과가 그럴듯한 이미지가 되도록 잡아주는 학습된 가정)으로 자리잡아가는 흐름</strong>이 이론 논문과 응용 논문이 같은 날 나오며 동시에 확인됐다는 점입니다. 가상 염색 쪽은 어제 저널에서 확인된 "하나의 분야로 굳어짐"이라는 흐름 위에, 오늘 arXiv에서 "비페어 데이터·다중 염색·희소 구조처럼 실제 병리 워크플로우의 지저분한 조건을 견디는 방법"이라는 다음 단계 질문이 이어졌습니다. 반면 계산광학 코어(Fourier ptychography, lensless, meta-optics)는 오늘도 편수가 매우 얇아 랩이 직접 채워야 할 공백으로 남아 있습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv new+cross 총 698건(cs.LG 202·cs.CV 152·cs.AI 309·eess.IV 8·eess.SP 27) 중 ROI 버킷에 걸린 건 263건(26.9%)입니다. 저널은 Crossref/OpenAlex 426편을 재수집했고, 전체 스캔 978건 중 선택 비율은 26.9%로 어제(31.0%)보다 다소 낮습니다 — 이는 저널 쿼리가 이미징 코어 키워드로 정확히 맞은 편수가 적었고, 대신 arXiv cs.AI(309편)가 LLM/에이전트 논문 위주로 많이 잡혀 분모가 커졌기 때문입니다.</p>
+<p>가장 큰 부피는 여전히 Tomography/3D Imaging(34편)과 Virtual Staining/Pathology(34편), Reconstruction/Inverse Problems(30편)였지만, 어제와 마찬가지로 이 버킷들 안에는 임상 사례 보고나 키워드 우연 매칭(예: "reconstruction"이 강화학습/지식증류 논문에 붙는 경우)이 상당수 섞여 있습니다. 실제 계산 이미징 신호만 추리면, Tomography/3D Imaging에서는 4D/feed-forward 3D 재구성이 실시간성·대규모 입력·부족한 뷰 조건을 견디는 방향으로 다시 모였고(Streaming4D, On-the-Fly3R, EvoGS, DualDiff3D), Virtual Staining/Pathology에서는 비페어 데이터와 희소 구조를 다루는 실전형 방법론(Semi-Supervised Virtual Staining, StainPresetNet, SlideMix, FTU-Seek)이 모였습니다.</p>
+<p>Deep Learning Methods(146편, catch-all)는 대부분 이미징과 무관한 일반 ML/LLM 논문이지만, 그 안에서 flow matching의 이론(A Lagrangian View of Flow Matching)과 복원 응용(ReBridge-Flow) 논문이 같은 날 나온 점, 그리고 라벨이 부족한 3D/의료 영상을 위한 밀집(pixel/voxel 단위) 자기지도 사전학습 논문 3편(Pix2Rep-v2, CMRVision, Gekko)이 모인 점은 눈여겨볼 만합니다. 계산광학 코어(Fourier Ptychography/Microscopy 1편, Lensless/Coded Imaging 0편, Meta-Optics/Diffractive 9편 중 이미징 직접 관련은 사실상 0편)는 오늘도 공백에 가깝습니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(9/1)는 3DGS가 "복원 정확도"라는 단일 질문을 떠나 응용 인터페이스(편집·뷰포인트·분할), 동적 모션 안정성, 신뢰도·기하학적 진위 검증이라는 세 층위로 갈라진 게 핵심이었습니다. 오늘은 그 세 층위 중 어느 것도 직접 이어받지 않고, 대신 "실시간 스트리밍(Streaming4D), 대규모 무순서 UAV 입력(On-the-Fly3R), 급격한 모션(EvoGS), 부족한 입력 뷰(DualDiff3D)"처럼 배치 조건 자체가 까다로워지는 시나리오에서 3DGS/feed-forward 재구성이 버티는지를 묻는 논문들이 새로 모였습니다. 즉 어제는 "무엇을 더 할 수 있는가/얼마나 안정적인가/믿어도 되는가"였다면, 오늘은 "어떤 조건에서도 계속 돌아가는가"라는 실사용 배포에 더 가까운 질문으로 넘어간 것입니다. 가상 염색 쪽도 마찬가지입니다 — 어제는 저널에서 "방법 논문과 종합 리뷰가 함께 나오며 하나의 분야로 굳어졌다"는 관찰이었다면, 오늘은 arXiv에서 그 분야 안의 다음 문제, 즉 "완벽하게 정렬된 페어 데이터가 없어도, 여러 염색을 오가야 해도, 구조가 희소해도 작동하는가"라는 실전 조건으로 초점이 옮겨갔습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>3D 재구성이 "정확도"에서 "실시간·대규모·부족한 입력을 견디는 시스템"으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2609.00610" target=_blank>Streaming4D</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.00923" target=_blank>On-the-Fly3R</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.00994" target=_blank>EvoGS</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.01516" target=_blank>DualDiff3D</a> <span class=pill>CV</span>
+  </td>
+  <td>예전에는 3D 재구성 논문이 "복원 결과가 얼마나 정확한가"를 주로 봤습니다. 오늘 네 편은 그 정확도를 어느 정도 인정한 다음, "그 정확도를 실제로 까다로운 조건에서도 유지할 수 있는가"를 묻습니다. Streaming4D는 영상 생성과 3D 복원을 따로 순서대로 하지 않고 동시에 돌려 지연시간을 줄이고, On-the-Fly3R은 순서가 뒤섞인 무인기(UAV) 촬영 이미지 수천 장을 재학습 없이 온라인으로 이어붙이며, EvoGS는 갑자기 크게 움직이는 물체 앞에서도 변형을 매 순간 새로 추정하지 않고 시간에 따라 이어지는 과정으로 다뤄 흔들림을 줄이고, DualDiff3D는 입력 사진이 몇 장 안 될 때 diffusion(노이즈에서 이미지를 점진적으로 복원하는 생성모델) 사전 지식을 구조 정보와 색·질감 정보로 나눠 따로 적용해 흐릿함을 줄입니다. 네 논문 모두 "복원이 되느냐"가 아니라 "실시간·대량·저입력 조건에서도 복원이 유지되느냐"를 다룬다는 공통점이 있어, 3D 재구성 연구가 실험실 조건을 벗어나 실제 배포 조건을 정면으로 다루기 시작했다는 신호로 읽힙니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 4편이 "배포 조건에서의 견고성"이라는 공통 문제의식을 보이지만, 실시간성·대규모·모션·희소뷰라는 서로 다른 하위 조건을 다뤄 하나의 평가축으로 수렴하지는 않음</small></td>
+  <td>On-the-Fly3R의 검증-거부-재시도 메커니즘을 랩이 보유한 산란매질/저조도 3D 재구성 파이프라인에 적용해, 정렬 실패 프레임을 자동으로 걸러내는지 자체 데이터로 확인하고, DualDiff3D의 구조-외형 분리 diffusion 사전을 랩의 소수 뷰(few-view) 광학 단층 재구성에 이식해 흐릿함 감소 여부를 PSNR/LPIPS로 비교</td>
+</tr>
+<tr>
+  <td><strong>Flow matching이 diffusion을 이어받아 영상 복원의 새 생성 사전으로 자리잡는 흐름</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2609.00811" target=_blank>ReBridge-Flow</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2609.00198" target=_blank>A Lagrangian View of Flow Matching</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2609.00863" target=_blank>Conditional Flow Matching for Inverse Design</a> <span class=pill>LG</span>
+  </td>
+  <td>flow matching은 diffusion처럼 노이즈에서 시작해 점을 조금씩 움직여 원하는 이미지로 만들어가는 생성모델인데, diffusion보다 적은 단계로 결과를 낼 수 있어 최근 영상 복원의 새 생성 사전으로 주목받고 있습니다. 오늘은 이 흐름의 이론과 응용이 같은 날 함께 나왔다는 점이 중요합니다. A Lagrangian View of Flow Matching은 flow matching이 왜 한 번의 계산만으로도 그럴듯한 결과를 낼 수 있는지를 입자 하나하나의 움직임 관점에서 새로 설명하는 이론 논문이고, ReBridge-Flow는 그 flow matching을 실제 영상 복원(예: 손상되거나 저해상도인 영상을 복원)에 쓸 때 측정값을 반영하는 보정 단계가 원래 모델이 배운 시작점-끝점 짝을 깨뜨려버리는 문제를 발견하고 이를 다시 이어 붙이는 방법을 제안합니다. Conditional Flow Matching for Inverse Design은 같은 flow matching을 물리 시뮬레이터가 필요한 공학 역설계 문제에 적용해 diffusion·GAN과 직접 비교합니다. 이론이 응용을 뒷받침하고 응용이 이론이 예측한 한계(측정값 보정이 깨는 짝맞춤 문제)를 실제로 드러낸다는 점에서, flow matching이 아직 다듬어지는 중인 이론과 이미 현장에 투입되는 응용이 동시에 진행되는 단계임을 보여줍니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 3편이 flow matching을 복원/역설계의 생성 사전으로 다루는 공통 문제의식을 보이지만, 이론(단일 논문)과 응용(2편)의 비중이 아직 작아 확산 규모는 더 지켜봐야 함</small></td>
+  <td>ReBridge-Flow의 posterior bridge 재결합 방법을 랩의 diffusion 기반 위상 복원/QPI 파이프라인에 flow matching으로 교체 적용해, 측정 일관성 보정 전후 이미지 품질과 추론 속도를 diffusion 버전과 비교하는 ablation 표 작성</td>
+</tr>
+<tr>
+  <td><strong>가상 염색이 "그럴듯한 염색 이미지 생성"에서 "실제 병리 워크플로우의 지저분한 조건을 견디는 방법"으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2609.00984" target=_blank>Semi-Supervised Virtual Staining</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.01146" target=_blank>StainPresetNet</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.00396" target=_blank>SlideMix</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.00704" target=_blank>FTU-Seek</a> <span class=pill>CV</span>
+  </td>
+  <td>가상 염색은 화학 염색 없이 인공지능이 염색된 것처럼 보이는 영상을 만들어내는 기술인데, 지금까지는 주로 "정확히 짝지어진 염색 전/후 영상 쌍"이 충분히 있다는 전제 위에서 발전해 왔습니다. 오늘 네 편은 그 전제가 실제 병원에서는 잘 성립하지 않는다는 문제를 각각 다른 각도에서 다룹니다. Semi-Supervised Virtual Staining은 정확히 정렬된 페어 데이터가 적어도 정렬 안 된 영상까지 함께 활용하도록 조직 구조를 보존하는 제약을 걸었고, StainPresetNet은 염색 방향(예: H&E에서 IHC로, 또는 그 반대로)이 바뀔 때마다 모델을 다시 학습시켜야 했던 문제를 기준 영상만 바꾸면 되도록 풀었으며, SlideMix는 기가픽셀 슬라이드에서 진단에 중요한 영역만 골라 섞는 증강으로 라벨이 거친 데이터에서도 학습이 잘 되게 했고, FTU-Seek는 임파 구조·혈관·샘처럼 슬라이드 안에 듬성듬성 나타나는 구조를 배경과 헷갈리지 않고 찾아내는 문제를 다뤘습니다. 네 논문 모두 "이상적인 데이터가 있다면 잘 되는 방법"을 넘어 "실제 병리 데이터가 가진 결측·비정렬·희소성 문제를 견디는 방법"을 겨냥한다는 공통점이 있어, 가상 염색 연구가 알고리즘 정확도 경쟁에서 실제 배포 가능성 경쟁으로 무게중심을 옮기고 있다는 신호로 읽힙니다.</td>
+  <td>Medium<br><small>서로 다른 저자군 4편이 "실제 데이터 조건에서의 견고성"이라는 공통 문제의식을 보이지만, 페어링·염색방향·증강·희소구조라는 서로 다른 하위 문제를 다뤄 하나의 표준 벤치마크로 수렴하지는 않음</small></td>
+  <td>StainPresetNet의 기준 영상 교체 방식 정규화를 랩 label-free 현미경 파이프라인의 염색 스타일 전이 단계에 적용해, 재학습 없이 여러 염색 스타일로 전환 가능한지 확인하고, FTU-Seek의 hard-negative 선별 전략을 랩 조직 영상의 희소 구조 검출에 적용해 검출 재현율 변화를 측정</td>
+</tr>
+<tr>
+  <td><strong>라벨 부족한 3D/의료 영상을 위한 밀집(dense) 자기지도 사전학습이 별도 갈래로 성숙</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2609.01427" target=_blank>Pix2Rep-v2</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2609.01308" target=_blank>CMRVision</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2609.01530" target=_blank>Gekko</a> <span class=pill>LG</span>
+  </td>
+  <td>일반적인 자기지도학습(정답 라벨 없이 스스로 학습 신호를 만들어내는 학습법)은 보통 "이미지 전체가 어떤 범주인가"를 맞히는 식으로 설계돼 왔는데, 의료·3D 영상에서는 정작 필요한 건 "이 픽셀/이 복셀(3D 화소) 하나하나가 무엇을 나타내는가"입니다. 오늘 세 편은 이미지 전체가 아니라 픽셀·복셀 단위로 학습 신호를 설계하는 밀집 자기지도학습을 각각 다른 각도에서 다룹니다. Pix2Rep-v2는 픽셀 단위로 중복 정보를 줄이는 목표와 "장면이 조금 바뀌어도 표현은 그만큼만 바뀌어야 한다"는 원리를 결합해 3D·광시야 데이터에도 확장되도록 설계했고, CMRVision은 3,600만 장의 심장 MRI 영상으로 이미지 분류가 아닌 픽셀 단위 사전학습을 대규모로 수행했으며, Gekko는 스테레오·다중 시점 사전학습에서 "두 시점 모두에 보이지 않는 부분은 원래 정보가 부족해 학습이 잘 안 된다"는 한계를, 오히려 그 부분을 구분해내는 신호로 거꾸로 활용합니다. 세 논문 모두 "라벨이 부족한 3D·의료 영상에서 각 위치 단위로 쓸모 있는 표현을 어떻게 스스로 학습시킬 것인가"라는 같은 질문을 서로 다른 학습 목표로 풀고 있어, 밀집 자기지도학습이 이미지 분류형 SSL과 갈라져 나온 별도 갈래로 자리잡고 있다는 신호로 읽힙니다.</td>
+  <td>Medium<br><small>서로 다른 응용(범용 밀집 SSL·심장 MRI·스테레오)에서 3편이 같은 방향을 보이지만, 아직 하나의 벤치마크로 직접 비교된 적은 없음</small></td>
+  <td>Pix2Rep-v2의 픽셀 단위 중복 축소 목표를 랩의 3D 단층 재구성 데이터(라벨 부족 volumetric 이미지)에 사전학습으로 적용해, 기존 이미지 분류형 SSL 사전학습 대비 다운스트림 분할/복원 성능을 비교</td>
+</tr>
+<tr>
+  <td><strong>계산광학 코어(Lensless·Meta-Optics·Phase·Light-Field) — 관찰 중, 아직 클러스터 아님</strong></td>
+  <td>
+    <a href="https://doi.org/10.3390/photonics13090828" target=_blank>Lensless Coded Ptychography 스캔 최적화</a> <span class="pill">JNL</span><br>
+    <a href="https://arxiv.org/abs/2609.00839" target=_blank>Event-Based UAV Forecasting</a> <span class=pill>CV</span>
+  </td>
+  <td>오늘은 Fourier Ptychography/Microscopy 1편, Lensless/Coded Imaging 0편(단, Phase Imaging/Holography로 분류된 lensless coded ptychography 저널 논문 1편은 있음), Meta-Optics/Diffractive는 9편 중 이미징과 직접 관련된 논문이 사실상 없고(대부분 통신 안테나·바이오센서·물성 물리), Light-Field/Novel Sensors 4편 중 실제 라이트필드 촬영 논문은 저널 1편뿐입니다. 편수가 워낙 적어 독립 클러스터로 세우기엔 근거가 부족하지만, 랩 ROI 핵심 영역이 오늘도 거의 비어 있다는 사실 자체가 신호입니다 — 계산광학 코어 논문이 arXiv/저널 양쪽에서 지속적으로 희소하다는 점은 랩이 스스로 이 공백을 채울 필요성을 시사합니다.</td>
+  <td>Low<br><small>계산광학 코어 신호가 2편 미만으로 흩어져 있어 클러스터로 묶을 근거가 부족함</small></td>
+  <td>랩 자체 lensless/FPM 데이터로 이번 주 안에 최소 1건의 미니 벤치마크(재구성 PSNR/속도)를 만들어, 외부 논문 공백을 랩 자체 관찰로 대체하는 시험적 기록 남기기</td>
+</tr>
+</tbody>
+</table>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Lensless/Coded Imaging — 오늘도 전용 버킷 0편</strong> — 다만 Phase Imaging/Holography로 분류된 <a href="https://doi.org/10.3390/photonics13090828" target=_blank>Joint Optimization of Scanning Strategy and Initialization for Accelerated Lensless Coded Ptychography</a> [JNL] 1편이 렌즈리스 코드화 ptychography의 스캔 전략과 초기화를 함께 최적화해 약 3배 빠른 수렴을 보고합니다. 단발 논문이라 클러스터로 올리지 않았지만, 랩의 렌즈리스 재구성 파이프라인 초기화 단계에 바로 참고할 만합니다.</li>
+    <li><strong>Meta-Optics/Diffractive — 9편 중 이미징 직접 관련 0편</strong> — 나머지는 편광 스핀-디커플링 메타표면, RF 반사, 결함 검출용 회절 광학 필터, 그래핀 THz 흡수체처럼 통신·센싱·물성 응용이며 계산 이미징과 직접 연결되지 않습니다. 계산광학 코어 공백이 이어집니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 4편 중 촬영 단계 논문은 저널 1편뿐</strong> — <a href="https://doi.org/10.1109/ojsp.2026.3729157" target=_blank>Dual Representation-based Light Field View Synthesis</a> [JNL]이 유일하게 라이트필드 시점 합성을 다루고, 나머지는 이벤트 카메라 UAV 예측(cs.CV), 신경모방 스펙트럼 시뮬레이터(eess.SP), 비선형 광학 시간 인코딩(JNL)으로 라이트필드/이벤트 카메라 하드웨어 자체보다 응용 쪽입니다.</li>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 1편</strong> — <a href="https://arxiv.org/abs/2609.00968" target=_blank>ReFlowSET</a> [CV]는 SAR(합성개구레이더)-to-EO(전자광학) 영상 변환 논문으로, "aperture"·"synthesis" 키워드가 우연히 매칭된 것으로 보이며 실제 Fourier ptychography 방법론과는 무관합니다. 즉 이 버킷은 사실상 0편입니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 3D 재구성의 배포 견고성(Streaming4D, On-the-Fly3R, EvoGS, DualDiff3D), flow matching 이론+복원 응용(A Lagrangian View, ReBridge-Flow, Conditional Flow Matching), 가상 염색 워크플로우 견고성(Semi-Supervised Virtual Staining, StainPresetNet, SlideMix, FTU-Seek), 밀집 자기지도 사전학습(Pix2Rep-v2, CMRVision, Gekko)</li>
+  <li><strong>저널 전용</strong>: 렌즈리스 코드화 ptychography 스캔 최적화, 편광-위상 독립 제어 메타표면, 라이트필드 시점 합성, 각종 임상 CT/MRI/OCT 사례 보고(계산 이미징 방법론과는 거리가 있음)</li>
+  <li><strong>공통 키워드</strong>: physics-informed(오늘은 저널 쪽 신호가 약해 arXiv의 PINN 기반 논문들과 직접 대응되는 저널 논문이 어제만큼 뚜렷하지 않음), reconstruction(arXiv는 3D/feed-forward 배포 견고성, 저널은 CT/MRI 임상 재구성 사례로 층위가 다름)</li>
+  <li><strong>특징</strong>: 어제는 arXiv와 저널이 "결과를 검증한다"는 같은 태도를 공유했다면, 오늘은 arXiv가 압도적으로 방법론 갱신(3D 재구성 배포 조건, flow matching, 가상 염색 견고성, 밀집 SSL)에 집중했고 저널은 계산광학 코어에서 소수 신호(렌즈리스, 메타표면, 라이트필드) 외에는 대부분 임상 사례 보고 위주였습니다. arXiv-저널 사이의 명확한 크로스오버 페어는 오늘은 확인되지 않았습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 3D 재구성이 "정확도"에서 "실시간·대규모·부족한 입력을 견디는 시스템"으로</h3>
+  <p>Streaming4D(생성-복원 동시 처리), On-the-Fly3R(대규모 무순서 UAV 입력), EvoGS(급격한 모션), DualDiff3D(소수 입력 뷰) 네 편이 같은 날 나오면서, 3D 재구성 연구가 정확도 경쟁을 넘어 실제 배포 조건에서의 견고성을 다루기 시작했습니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 저자군 4편이 배포 견고성이라는 공통 문제의식을 보이나 하위 조건(실시간성·규모·모션·뷰수)이 갈려 단일 평가축은 아직 없음</p>
+</div>
+
+<div class=ins>
+  <h3>2. Flow matching이 diffusion을 이어받아 영상 복원의 새 생성 사전으로 자리잡는 흐름</h3>
+  <p>A Lagrangian View of Flow Matching(이론)과 ReBridge-Flow(복원 응용), Conditional Flow Matching for Inverse Design(공학 역설계 응용)이 같은 날 나오며, flow matching이 아직 다듬어지는 이론과 이미 현장에 투입되는 응용이 동시에 진행되는 단계임을 보여줍니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편이 같은 방향을 보이나 아직 확산 규모(다른 이미징 하위 분야로의 전파)는 지켜봐야 함</p>
+</div>
+
+<div class=ins>
+  <h3>3. 가상 염색이 "그럴듯한 생성"에서 "실제 병리 워크플로우의 지저분한 조건을 견디는 방법"으로</h3>
+  <p>Semi-Supervised Virtual Staining(비페어 데이터), StainPresetNet(다중 염색 방향), SlideMix(거친 라벨), FTU-Seek(희소 구조) 네 편이 각각 다른 실전 조건을 다루며, 가상 염색 연구의 무게중심이 알고리즘 정확도에서 배포 가능성으로 옮겨가고 있습니다.</p>
+  <p class=conf-note>Confidence: Medium — 4편이 실전 조건 견고성이라는 공통 문제의식을 보이나 하위 문제가 갈려 표준 벤치마크로 수렴하지는 않음</p>
+</div>
+
+<div class=ins>
+  <h3>4. 라벨 부족한 3D/의료 영상을 위한 밀집 자기지도 사전학습이 별도 갈래로 성숙</h3>
+  <p>Pix2Rep-v2(범용 밀집 SSL), CMRVision(심장 MRI 3,600만 장 사전학습), Gekko(스테레오 비공가시 영역 신호화)가 같은 날 나오며, 픽셀·복셀 단위 자기지도학습이 이미지 분류형 SSL과 갈라져 나온 독립 갈래로 자리잡고 있습니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편이 밀집 SSL이라는 방향을 공유하나 서로 다른 응용(범용·심장·스테레오)이라 직접 비교된 적은 없음</p>
+</div>
+
+<div class=ins>
+  <h3>5. 계산광학 코어 공백이 이틀 연속 이어짐</h3>
+  <p>Fourier Ptychography/Microscopy는 사실상 0편, Lensless/Coded Imaging은 전용 버킷 0편(저널 1편만 인접 버킷에 분류), Meta-Optics/Diffractive 9편 중 이미징 직접 관련은 0편입니다. 랩 ROI 핵심 영역이 외부 논문만으로는 채워지지 않고 있다는 뜻입니다.</p>
+  <p class=conf-note>Confidence: High — 이틀 연속 같은 공백 패턴이 반복됨(어제도 FP 0편, Meta-Optics 16편 중 관련 3편뿐)</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. On-the-Fly3R 검증-거부-재시도 메커니즘을 랩 3D 재구성 파이프라인에 적용</h3>
+  <p>무순서·저품질 입력에서도 정렬 실패 프레임을 자동으로 걸러내는 On-the-Fly3R의 메커니즘을 랩의 산란매질/저조도 3D 재구성 데이터에 적용해, 실패 프레임 자동 검출 정확도를 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: On-the-Fly3R 공개 코드 확보 및 재현</li>
+    <li>공통 benchmark: 랩 보유 산란매질/저조도 3D 재구성 데이터셋(의도적으로 일부 프레임에 정렬 오류 주입)</li>
+    <li>비교축: 정렬 실패 프레임 검출 재현율/정밀도, 검증-거부-재시도 유무에 따른 최종 복원 정확도</li>
+    <li>실패해도 남는 결과: 랩 데이터에 대한 정렬 실패 검출 baseline 성능표</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. ReBridge-Flow의 posterior bridge 재결합을 랩 diffusion 기반 복원 파이프라인에 flow matching으로 교체 적용</h3>
+  <p>기존 diffusion 사후 샘플링 기반 위상 복원/QPI 파이프라인을 flow matching으로 바꾸고, ReBridge-Flow의 재결합 방식을 적용해 측정 일관성 보정 전후 이미지 품질과 추론 속도를 diffusion 버전과 비교합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: ReBridge-Flow, A Lagrangian View of Flow Matching 방법 재현</li>
+    <li>공통 benchmark: 랩 QPI/위상 복원 검증 데이터셋</li>
+    <li>비교축: PSNR/SSIM, 추론 단계 수, 측정 일관성 보정 전후 아티팩트 정도</li>
+    <li>실패해도 남는 결과: 랩 파이프라인의 diffusion vs flow matching 속도-품질 비교표</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. StainPresetNet의 기준 영상 교체 방식 정규화를 랩 label-free 염색 스타일 전이에 적용</h3>
+  <p>재학습 없이 기준(preset) 영상만 바꿔 염색 방향을 전환하는 StainPresetNet 방식을 랩의 label-free 현미경 파이프라인에 적용해, 여러 염색 스타일로 전환 가능한지와 재학습 없이도 정확도가 유지되는지를 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: StainPresetNet, FTU-Seek 방법 재현</li>
+    <li>공통 benchmark: 랩 보유 label-free 현미경/병리 영상 데이터셋(2종 이상 염색 스타일)</li>
+    <li>비교축: 염색 전환 정확도(색 매핑 오차), 재학습 유무에 따른 처리 시간</li>
+    <li>실패해도 남는 결과: 랩 데이터에 대한 염색 전환 baseline 성능표</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>D. Pix2Rep-v2의 픽셀 단위 밀집 SSL을 랩 3D 단층 재구성 사전학습에 적용</h3>
+  <p>이미지 분류형 사전학습 대신 Pix2Rep-v2의 픽셀 단위 중복 축소+등변성 목표를 랩의 라벨 부족 volumetric 이미지(예: 광학 단층 촬영)에 사전학습으로 적용해, 다운스트림 분할/복원 성능을 기존 사전학습 대비 비교합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Pix2Rep-v2, Gekko 방법 재현</li>
+    <li>공통 benchmark: 랩 volumetric 이미지 데이터셋(라벨 부족 상황 시뮬레이션)</li>
+    <li>비교축: 다운스트림 분할 mIoU, 복원 PSNR, 사전학습 유무·방식별 소수 샷(few-shot) 성능</li>
+    <li>실패해도 남는 결과: 랩 데이터에 대한 밀집 SSL 사전학습 baseline 비교표</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>E. 랩 자체 lensless/FPM 미니 벤치마크로 계산광학 코어 공백 채우기</h3>
+  <p>외부 논문 공백이 이틀째 이어지는 만큼, 랩이 보유한 lensless/Fourier ptychography 데이터로 자체 미니 벤치마크(재구성 PSNR·속도)를 만들어 내부 기록으로 남깁니다. 이는 새 논문 발굴이 아니라 랩 스스로 관찰점을 만드는 액션입니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상: 랩 보유 lensless/FPM 재구성 코드베이스</li>
+    <li>공통 benchmark: 랩 자체 촬영 데이터(2~3개 시나리오)</li>
+    <li>비교축: 재구성 PSNR, 처리 시간, 기존 반복 알고리즘 대비 개선폭</li>
+    <li>실패해도 남는 결과: 랩 내부 lensless/FPM 성능 기록(다음 외부 논문 비교 기준선)</li>
+  </ul>
+</div>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘은 평일 daily 실행이라 예측 회고는 생략합니다(예측 회고는 매주 월요일 별도 weekly 실행이 담당합니다).</p>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging·Virtual Staining/Pathology(각 34편, catch-all 제외 공동 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:3%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:15%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:26%"></span></span><span class=n>9편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:12%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>34편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>34편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:88%"></span></span><span class=n>30편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>146편</span></div>
+
+<p><small>⚠️ 참고: Tomography/3D Imaging 34편 중 실제 계산 이미징 신호는 약 7편(3D 재구성 배포 견고성 클러스터 4편 + 단독 Tier B 3편)이고 나머지 27편은 심장 손상 진단, TAVI 시술 가이드, CT 무릎 영상 급증 논평, 관상동맥 CT 사례처럼 임상 사례 보고입니다. Virtual Staining/Pathology 34편 중 실제 신호는 약 6편(가상 염색 클러스터 4편 + 단독 Tier B 2편)이며 나머지 28편은 LLM/에이전트/드론 제어 논문이 "staining"·"virtual" 키워드와 무관한 맥락에서 우연히 매칭되거나, PBMC 형광수명 이미징처럼 인접하지만 클러스터로 묶기엔 단발입니다. Reconstruction/Inverse Problems 30편 중 실제 신호는 약 5편(flow matching 클러스터 2편 + PINN 계열 2편 + 단독 1편)이고 나머지는 강화학습, LLM 증류, 뉴스벤더 변수선택 등 "reconstruction/inverse" 키워드만 겹친 오탐입니다. Meta-Optics/Diffractive 9편은 전부 통신 안테나·바이오센서·물성 물리로 이미징 직접 관련 0편입니다. Deep Learning Methods 146편 중 이미징 관련 대표 2편만 표시했으며(catch-all 과대표 방지), 나머지는 LLM·에이전트·로봇·통신 등에 흩어져 있습니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.00968" target=_blank>ReFlowSET: Representation-Aligned Latent Flow Matching for SAR-to-EO Image Translation</a></strong> [CV]<br>
+  왜 주요: 제목상 FP 버킷에 분류됐지만 실제로는 SAR-EO 영상 변환 논문(키워드 오탐) — flow matching 클러스터의 응용 예시로만 참고
+</div>
+
+<h3>Phase Imaging/Holography (5편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/photonics13090828" target=_blank>Joint Optimization of Scanning Strategy and Initialization for Accelerated Lensless Coded Ptychography</a></strong> [JNL]<br>
+  왜 주요: 렌즈리스 코드화 ptychography의 스캔 전략+초기화 공동 최적화로 약 3배 빠른 수렴 — 오늘 유일한 렌즈리스 신호
+</div>
+
+<h3>Light-Field/Novel Sensors (4편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/ojsp.2026.3729157" target=_blank>Dual Representation-based Light Field View Synthesis using Deformable Convolutional and Deep Residual Channel Attention Networks</a></strong> [JNL]<br>
+  왜 주요: 오늘 유일한 라이트필드 촬영/시점 합성 논문 — 변형 가능 컨볼루션+잔차 채널 어텐션으로 뷰 합성
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.00839" target=_blank>Residual Kalman Dynamics for Event-Based UAV Forecasting</a></strong> [CV]<br>
+  왜 주요: 이벤트 카메라(빛의 밝기 변화만 비동기로 감지하는 새 센서) 기반 UAV 궤적 예측 — 신호 자체보다 데이터셋 지름길(shortcut) 진단 방법론이 참고할 만함
+</div>
+
+<h3>Tomography/3D Imaging (34편 중 관련 대표 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.00610" target=_blank>Streaming4D</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — 영상 생성과 3D 복원을 동시에 돌려 지연시간 단축
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.00923" target=_blank>On-the-Fly3R</a></strong> [CV]<br>
+  왜 주요: 오늘의 must-read — 무순서 대규모 UAV 입력에서도 검증-거부-재시도로 견고성 확보
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.00994" target=_blank>EvoGS: Modeling Deformation Evolution for Dynamic Gaussian Splatting</a></strong> [CV]<br>
+  왜 주요: 급격한 모션 앞에서 매 순간 새로 추정하지 않고 변형을 진화 과정으로 다뤄 안정화
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.01516" target=_blank>DualDiff3D</a></strong> [CV]<br>
+  왜 주요: 소수 입력 뷰 상황에서 구조-외형 diffusion 사전을 분리 적용해 흐릿함 감소
+</div>
+
+<h3>Virtual Staining/Pathology (34편 중 관련 대표 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.00984" target=_blank>Semi-Supervised Virtual Staining via Morphology Preservation and Histopathological Realism Constraints</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘의 must-read — 페어 데이터가 부족해도 조직 구조 보존 제약으로 안정적인 반지도 가상 염색 학습
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.01146" target=_blank>StainPresetNet</a></strong> [CV]<br>
+  왜 주요: 재학습 없이 기준 영상 교체만으로 염색 방향 전환 — 실전 배포 편의성이 큼
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.00396" target=_blank>SlideMix: Enhancing Whole Slide Image Analysis via Multimodal Shuffling</a></strong> [CV]<br>
+  왜 주요: 거친 슬라이드 단위 라벨 환경에서도 진단 영역 인식 증강으로 일반화 개선
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.00704" target=_blank>FTU-Seek</a></strong> [CV]<br>
+  왜 주요: 희소한 기능적 조직 단위(임파구조·혈관·샘)를 배경과 구분하는 hard-negative 학습
+</div>
+
+<h3>Reconstruction/Inverse Problems (30편 중 관련 대표 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.00811" target=_blank>ReBridge-Flow: Re-Coupling Posterior Bridges in Flow Matching for Image Restoration</a></strong> [LG · TIER A]<br>
+  왜 주요: 오늘의 must-read — flow matching 기반 영상 복원의 측정 보정이 시작점-끝점 짝을 깨는 문제를 재결합으로 해결
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.00198" target=_blank>A Lagrangian View of Flow Matching</a></strong> [LG]<br>
+  왜 주요: flow matching의 단일 단계 생성 원리를 입자 관점에서 새로 설명하는 이론 논문
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.01060" target=_blank>Lightweight Interpretable RGB-Guided Hyperspectral Super-Resolution under Real Cross-resolution Misalignment</a></strong> [IV]<br>
+  왜 주요: 실제 RGB-초분광 듀얼카메라 오정렬 조건에서 재학습 없이 다양한 스케일에 대응하는 경량 융합 — 계산광학 하드웨어 친화적
+</div>
+
+<h3>Deep Learning Methods — 이미징 관련 대표 2편 (146편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.01427" target=_blank>Pix2Rep-v2: Data-Efficient Representation Learning for Dense Medical Imaging Applications</a></strong> [LG]<br>
+  왜 주요: 오늘 클러스터4 대표 — 픽셀·복셀 단위 자기지도학습으로 3D·광시야 의료 영상에 확장
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.01530" target=_blank>Revisiting Cross-View Completion (Gekko)</a></strong> [LG]<br>
+  왜 주요: 스테레오/다중시점 사전학습의 비공가시 영역 한계를 공가시성 신호로 거꾸로 활용
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<p><small>오늘 Tier A/B 논문 초록에는 구체적인 수치 비교(예: "71.2 SR")가 명시된 경우가 드물어(abstract 기준), 신규 결과 없음으로 처리합니다. On-the-Fly3R("5,000장 이상 UAV 이미지로 확장, 기존 SOTA 대비 substantially superior"), EvoGS("경쟁력 있는 성능"), StainPresetNet("계산 비용 90% 절감")처럼 정성적 우수성 주장은 있으나 절대 수치가 없어 벤치마크 표에는 포함하지 않았습니다.</small></p>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>오늘은 arXiv-저널 간 뚜렷한 크로스오버 페어가 확인되지 않았습니다(저널 쪽 계산광학 코어 신호가 매우 얇았음). 대신 arXiv 내부에서 3D 재구성(Tomography 버킷)과 가상 염색(Virtual Staining 버킷)이 서로 다른 응용 도메인임에도 "정확도 경쟁에서 실전 배포 조건을 견디는 경쟁으로"라는 동일한 방향 전환을 독립적으로 보였다는 점이 오늘의 구조적 유사성입니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] On-the-Fly3R: Towards Robust Online 3D Reconstruction with Feed-Forward 3R Models for Large-Scale UAV Scenarios — arXiv 2609.00923</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> 한 번의 신경망 순전파로 3D 장면을 복원하는 feed-forward 3R 모델은 빠르고 정확하지만, 트랜스포머 어텐션의 메모리 비용 때문에 대규모 장면에는 적용하기 어렵습니다. 게다가 기존의 확장 가능한 스트리밍 3R 방법들은 입력 이미지가 시간·공간적으로 이어져 있다는 전제를 깔고 있어서, 무인기(UAV)가 여러 방향으로 나눠 촬영한 뒤섞인 이미지 스트림에는 그대로 쓸 수 없었습니다. 이 논문은 그 전제 자체를 없애 실제 UAV 매핑 현장 조건에 맞춥니다.</p>
+  <p><strong>핵심:</strong> 재학습 없이, 검색 기반으로 공간적으로 관련된 이미지들을 동적으로 골라 부분집합을 구성해 뒤섞인 입력에서도 복원이 가능하게 하고, 사전 정합성 검사를 통해 어긋난 이미지를 자동으로 걸러내고 다른 부분집합으로 재시도하는 메커니즘으로 전역 일관성을 지킵니다. 또한 시각 SLAM에서 쓰는 방식처럼 검색 기반 루프 클로저로 카메라 궤적의 누적 오차(드리프트)를 줄입니다. 여러 UAV 벤치마크에서 5,000장 이상의 정사각 킬로미터급 장면까지 다양한 3R 백본을 확장시켰고, 기존 스트리밍 3R 방법보다 훨씬 나은 정확도를 보고합니다(abstract 기준 정성적 표현, 구체 수치는 본문 확인 필요).</p>
+  <p><strong>주의:</strong> "substantially superior accuracy"라는 표현 외에 abstract에 구체적인 정량 수치가 없어 본문 확인이 필요합니다. 검증-거부-재시도 메커니즘이 반복될 때 전체 처리 시간에 미치는 영향도 확인이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Semi-Supervised Virtual Staining via Morphology Preservation and Histopathological Realism Constraints — arXiv 2609.00984</h3>
+  <div class=tag>[방법전환] [데이터전환]</div>
+  <p><strong>왜 A급인가:</strong> 가상 염색은 화학 염색 없이 인공지능이 염색된 것처럼 보이는 조직 영상을 만들어내는 기술인데, 지금까지 대부분의 방법은 정확히 짝지어지고 정렬된 염색 전/후 영상 쌍이 충분히 있다는 전제 위에서 학습했습니다. 실제 병원 현장에서는 이런 완벽한 페어 데이터를 구하기 어렵고 비용도 큽니다. 이 논문은 적은 페어 데이터와 풍부한 비페어 데이터를 함께 쓰는 반지도 학습으로 이 전제를 없앱니다.</p>
+  <p><strong>핵심:</strong> 비페어 영상을 그대로 학습에 넣으면 생성 결과에 대응하는 정답이 없어 비현실적인 염색이나 조직 구조 손상, 심하면 학습 붕괴로 이어질 수 있습니다. 이를 막기 위해 각 원본 영상에서 구조적 단서를 뽑아 생성 결과가 원래 조직 형태를 유지하도록 제약하는 "형태 보존" 장치와, 생성 결과가 실제 대상 염색처럼 보이도록 유도하는 "병리학적 사실성" 제약을 함께 걸어, 구조 변형이나 단순 색상 변환으로 퇴화하는 것을 막습니다.</p>
+  <p><strong>주의:</strong> abstract 기준으로는 Ki67·HER2 IHC 변환과 FFPE-to-H&E 변환에서 "일관된 개선"이라고만 나와 있어 구체적인 정량 지표(SSIM, 세포핵 검출 정확도 등)는 본문 확인이 필요합니다. 코드는 "공개 예정"으로, 현재는 재현이 어렵습니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] ReBridge-Flow: Re-Coupling Posterior Bridges in Flow Matching for Image Restoration — arXiv 2609.00811</h3>
+  <div class=tag>[해부분석] [방법전환]</div>
+  <p><strong>왜 A급인가:</strong> flow matching은 diffusion처럼 노이즈에서 원하는 이미지로 점진적으로 옮겨가며 영상을 복원하는 데 쓰이는데, 실제 관측값(손상되거나 저해상도인 입력 영상)에 맞춰 중간에 보정을 걸어주는 기존 방식들은 지역적인 수정만 가하는 경우가 많았습니다. 이 논문은 그런 지역적 보정이 사전학습된 flow가 원래 배운 "시작점(노이즈)-끝점(깨끗한 이미지)" 짝을 깨뜨려, 보정된 끝점이 현재 상태와 맞지 않게 되는 문제를 처음으로 짚어냅니다.</p>
+  <p><strong>핵심:</strong> 현재 상태에서 대응하는 지역적 끝점을 먼저 복원한 뒤, 그 끝점과 현재 상태 사이의 다리(posterior bridge)를 관측값에 맞게 다시 이어 붙이는 재결합 방식을 제안합니다. 이렇게 하면 매 단계마다 관측값을 반영하면서도 flow가 원래 배운 시작-끝 짝맞춤 구조를 유지할 수 있습니다.</p>
+  <p><strong>주의:</strong> abstract 기준으로는 어떤 영상 복원 과제(초해상도·디노이징·인페인팅 등)에서 검증했는지, 기존 flow matching 복원 대비 정량적 개선폭이 얼마인지 나와 있지 않아 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] Tomography/3D Imaging 34건 중 27건, Virtual Staining/Pathology 34건 중 28건, Reconstruction/Inverse Problems 30건 중 대다수가 키워드 오탐(임상 사례 보고이거나 무관 분야가 "tomography"/"staining"/"reconstruction" 키워드로 우연히 매칭)입니다. 버킷 편수와 실제 계산 이미징 신호 사이의 괴리가 어제에 이어 오늘도 큽니다.</p>
+  <p>[Dataset risk] Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Meta-Optics/Diffractive는 이틀 연속 실질적으로 공백입니다. 랩 ROI 핵심 영역에 대한 외부 신호 자체가 부족하다는 구조적 한계가 있습니다.</p>
+  <p>[Claim risk] 저널 논문 다수(예: 렌즈리스 ptychography, 라이트필드 시점 합성, 다수 CT/OCT 임상 보고)가 Crossref 초록 미공개 상태로, 제목만으로 버킷·클러스터를 판단했으므로 본문 확인 전 배치가 부정확할 수 있습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] On-the-Fly3R("substantially superior"), EvoGS("경쟁력 있는 성능"), StainPresetNet("90% 절감")은 abstract에 우수성을 주장하지만 구체적 절대 수치가 없어 벤치마크 섹션에는 넣지 않았습니다.</p>
+  <p>[Baseline risk] DualDiff3D는 "추론만으로도 SOTA 능가"라고 주장하나, 비교 baseline이 얼마나 강하게 튜닝됐는지 abstract에 명시돼 있지 않습니다.</p>
+  <p>[Dataset risk] Semi-Supervised Virtual Staining의 "코드 공개 예정"은 abstract 기준 약속일 뿐이며, 실제 공개 여부와 재현 가능성은 확인이 필요합니다.</p>
+  <p>[Metric risk] flow matching 클러스터의 세 논문 모두 abstract 기준으로는 정성적 개선 표현이 대부분이라, 정량적 비교표를 만들려면 본문의 표를 직접 확인해야 합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Tomography/3D Imaging 임상 사례 27편</strong> [JNL] — 심장 손상 진단, TAVI 시술 가이드, CT 무릎 영상 급증 논평, PET/CT 사례 등으로 계산 이미징 방법론과 무관합니다.</li>
+    <li><strong>Virtual Staining/Pathology 오탐 28편</strong> [arXiv+JNL] — LLM/드론/통신 논문의 "virtual"·"staining" 키워드 우연 매칭, PBMC 형광수명 이미징처럼 인접하지만 단발인 논문들입니다.</li>
+    <li><strong>Reconstruction/Inverse Problems 오탐 25편</strong> [주로 arXiv] — 강화학습, LLM 증류, 뉴스벤더 변수선택, 오디오 서술자 등 "reconstruction/inverse" 키워드만 겹치는 일반 ML/공학 논문입니다.</li>
+    <li><strong>Meta-Optics/Diffractive 통신·센서 9편</strong> [JNL] — RF 안테나, 바이오센서, 그래핀 THz 흡수체 등 통신·센싱 응용으로 이미징과 거리가 있습니다.</li>
+    <li><strong>Deep Learning Methods 내 일반 ML 논문 다수</strong> [arXiv] — 146편 중 약 55~60%가 LLM/에이전트/로봇/통신/화학 등으로 이미징과 무관하며, 오늘 클러스터에 포함되지 않은 flow matching/밀집 SSL 인접 논문 몇 편(Conditional Flow Matching for Inverse Design 등)은 응용이 공학 역설계·심장 MRI에 그쳐 계산 이미징 코어와는 한 단계 거리가 있어 Tier C로 낮췄습니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편)</h3>
+<div class=roi-item>
+  <strong>ReFlowSET: Representation-Aligned Latent Flow Matching for SAR-to-EO Image Translation</strong> [arXiv]<br>
+  문제: SAR(레이더) 영상을 EO(광학) 영상처럼 변환 / 방법: 코덱 선택을 SAR-EO 재구성 감사로 고르고 처음부터 작은 조건부 DiT를 flow matching으로 학습 / 의미: FP 버킷 키워드 오탐이나 flow matching 응용 사례로 참고 / 주의: 계산광학 코어와 무관 / 우선순위: Skim-only
+</div>
+
+<h3>Phase Imaging/Holography — 관련 1편</h3>
+<div class=roi-item>
+  <strong>Joint Optimization of Scanning Strategy and Initialization for Accelerated Lensless Coded Ptychography</strong> [JNL]<br>
+  문제: 렌즈리스 코드화 ptychography의 느린 반복 위상 복원 / 방법: 비균일 연속 스캔+저해상도 rPIE 초기화 공동 최적화 / 의미: 약 3배 빠른 수렴, 디지털 병리·QPI 응용 겨냥 / 우선순위: Read
+</div>
+<p><small>나머지 4편(홀로그래피 이론 물리, 바이오메트릭 워터마킹, 메타표면 편광-위상 독립 제어, 실리콘 포토닉스 배열도파관 정렬)은 이미징 코어와 거리가 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Meta-Optics/Diffractive (9편, 관련 0편)</h3>
+<p><small>9편 전부 통신 안테나(RF 반사 메타표면), 바이오센서, 물성 물리(그래핀 THz 흡수체, 굴곡파 조작), 결함 검출용 필터로 계산 이미징 응용과 직접 연결되지 않아 개별 bullet을 생략합니다.</small></p>
+
+<h3>Light-Field/Novel Sensors — 관련 2편</h3>
+<div class=roi-item>
+  <strong>Dual Representation-based Light Field View Synthesis using Deformable Convolutional and Deep Residual Channel Attention Networks</strong> [JNL]<br>
+  문제: 라이트필드 시점 합성의 화질·일관성 저하 / 방법: 변형 가능 컨볼루션+잔차 채널 어텐션 이중 표현 / 의미: 오늘 유일한 라이트필드 촬영/합성 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Residual Kalman Dynamics for Event-Based UAV Forecasting</strong> [arXiv]<br>
+  문제: 이벤트 카메라 UAV 궤적 예측이 데이터셋 지름길에 의존하는지 불확실 / 방법: 칼만 필터 잔차 보정 + 비상관 부분집합 진단 / 의미: 이벤트 카메라 벤치마크 설계에 참고할 진단 방법론 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging — 관련 대표 7편</h3>
+<div class=roi-item>
+  <strong>Streaming4D: Accelerate 4D World Models via Block-wise Video Generation and Incremental Reconstruction</strong> [arXiv]<br>
+  문제: 영상 생성 후 3D 복원이라는 순차 처리로 인한 높은 상호작용 지연시간 / 방법: 블록 단위 자기회귀 생성+점진적 복원 동시 처리 / 의미: 4D 생성의 실시간 상호작용 가능성 확대 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>On-the-Fly3R</strong> [arXiv]<br>
+  문제: 대규모 무순서 UAV 이미지에서 feed-forward 3D 복원의 메모리·정합 문제 / 방법: 검색 기반 부분집합 구성 + 검증-거부-재시도 / 의미: 오늘의 must-read, 실사용 배포 조건에서의 견고성 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong>EvoGS: Modeling Deformation Evolution for Dynamic Gaussian Splatting</strong> [arXiv]<br>
+  문제: 동적 3DGS가 매 시점 독립적으로 변형을 추정해 급격한 모션에 약함 / 방법: 변형을 시간에 따른 진화 과정으로 모델링 / 의미: 클러스터1 대표, 모션 안정성 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>DualDiff3D</strong> [arXiv]<br>
+  문제: 소수 입력 뷰에서 3DGS 렌더링 품질 저하 / 방법: 구조-외형 이중 diffusion 사전 분리 적용 / 의미: 클러스터1 대표, 뷰 부족 조건 견고성 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Monocular Depth Estimation from a Single Image: Progress and Opportunities</strong> [arXiv]<br>
+  문제: 단안 깊이 추정 연구의 파운데이션 모델 시대 흐름 정리 / 방법: 판별적·생성적 접근을 아우르는 서베이 / 의미: 3D 재구성 전반의 배경 지도 역할 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong>Accurate Reconstruction of Gas Turbine Blade Geometry Using 3D/2D Rigid Registration and CT View Optimization</strong> [arXiv]<br>
+  문제: 산업 CT 검사에서 CT 재구성 없이 부품 형상을 정확히 측정 / 방법: CAD-X선 정합 + 탐욕적 뷰 각도 최적화 / 의미: 비파괴 검사용 3D/2D 정합의 산업 응용 사례 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Machine-learning-enhanced image reconstruction in optical tomography using the Monte Carlo method for light transport</strong> [JNL]<br>
+  문제: 몬테카를로 광 전달 시뮬레이션의 확률적 노이즈가 광학 단층 복원을 방해 / 방법: CNN 기반 Gauss-Newton 반복 보정 / 의미: 랩 ODT 파이프라인과 직접 연관된 노이즈 보정 방법론 / 우선순위: Read
+</div>
+
+<h3>Virtual Staining/Pathology — 관련 대표 6편</h3>
+<div class=roi-item>
+  <strong>Semi-Supervised Virtual Staining via Morphology Preservation and Histopathological Realism Constraints</strong> [arXiv]<br>
+  문제: 가상 염색이 페어·정렬 데이터 의존적 / 방법: 형태 보존+병리학적 사실성 제약으로 비페어 데이터 활용 / 의미: 오늘의 must-read / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong>StainPresetNet</strong> [arXiv]<br>
+  문제: 염색 방향 전환마다 재학습이 필요한 기존 정규화 방법의 경직성 / 방법: 기준 영상 교체만으로 다방향 정규화 / 의미: 계산 비용 절감+실전 배포 편의성 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>SlideMix</strong> [arXiv]<br>
+  문제: 기가픽셀 슬라이드의 약한 라벨과 희소 진단 영역 / 방법: 검색 증강 VLM 기반 영역 선별 + 타일 셔플링 / 의미: 클러스터3 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>FTU-Seek</strong> [arXiv]<br>
+  문제: 슬라이드 내 희소한 기능적 조직 단위 분할이 배경에 묻힘 / 방법: 병리 파운데이션 모델 기반 hard-negative 선별 / 의미: 클러스터3 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Semantic-Guided Multimodal Preprocessing for Vision Transformer-Based Clear Cell Renal Cell Carcinoma Grading</strong> [CV]<br>
+  문제: 핵 단위 분류와 전체 등급 판정이 분리돼 있던 문제 / 방법: 핵 분류 맵과 RGB를 결합한 ViT 전처리 / 의미: 등급 판정 정확도 개선(abstract 기준 balanced accuracy 0.916) / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Autofluorescence lifetime imaging resolves cell heterogeneity within peripheral blood mononuclear cells</strong> [JNL]<br>
+  문제: 파괴적이지 않은 단일세포 대사 특성화 방법 부재 / 방법: 형광수명영상(FLIM) 기반 대사 보조인자 측정 / 의미: label-free 단일세포 이미징의 진단 응용 사례 / 우선순위: Read
+</div>
+
+<h3>Reconstruction/Inverse Problems — 관련 대표 5편</h3>
+<div class=roi-item>
+  <strong>ReBridge-Flow</strong> [arXiv]<br>
+  문제: flow matching 기반 복원의 측정 보정이 시작-끝 짝맞춤을 깨는 문제 / 방법: posterior bridge 재결합 / 의미: 오늘의 must-read / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong>A Lagrangian View of Flow Matching</strong> [arXiv]<br>
+  문제: flow matching의 단일 단계 생성이 왜 가능한지 이론적 설명 부재 / 방법: 입자 중심 라그랑주 관점 재유도 / 의미: 클러스터2 대표 이론 논문 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Conditional Flow Matching for ML-Based Inverse Design Problems</strong> [LG]<br>
+  문제: PDE 제약 공학 역설계의 높은 반복 계산 비용 / 방법: 조건부 flow matching을 diffusion/GAN과 비교 / 의미: 클러스터2 대표 응용 논문 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Lightweight Interpretable RGB-Guided Hyperspectral Super-Resolution under Real Cross-resolution Misalignment</strong> [IV]<br>
+  문제: RGB-초분광 듀얼카메라의 실제 오정렬이 학습 기반 융합 방법의 성능을 저해 / 방법: 크로스모달 플로우 정렬+모델 기반 Gram-Schmidt 융합 / 의미: 재학습 없이 다양한 스펙트럼·스케일에 대응하는 경량 프레임워크 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Diffusion Based Unpaired Data Learning for Inverse Problems (LUD-DIF)</strong> [CV]<br>
+  문제: 역문제 해결에 필요한 페어 데이터 부족 / 방법: ELBO를 약결합 가정 아래 두 독립 diffusion 과정으로 분리 / 의미: 비페어 데이터로 이미지 역문제를 푸는 이론적 근거 제공 / 우선순위: Read
+</div>
+
+<h3>Deep Learning Methods — 이미징 관련 대표 3편</h3>
+<div class=roi-item>
+  <strong>Pix2Rep-v2</strong> [arXiv]<br>
+  문제: 밀집 의료 영상 과제에 필요한 픽셀·복셀 단위 자기지도학습이 3D·광시야로 확장되기 어려움 / 방법: 픽셀 단위 중복 축소+등변성 결합 / 의미: 클러스터4 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Revisiting Cross-View Completion (Gekko)</strong> [arXiv]<br>
+  문제: 스테레오 사전학습에서 비공가시 영역이 약한 단안 신호로 남는 한계 / 방법: 재구성 오차 비교로 공가시성 자체를 신호화 / 의미: 클러스터4 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>CMRVision: A Foundation Model for Cardiac MR Image Analysis</strong> [arXiv]<br>
+  문제: 심장 MRI 특화 파운데이션 모델 부재 / 방법: 3,600만 장 다기관·다시퀀스 코호트에 DINOv3 스타일 사전학습 / 의미: 클러스터4 대표, 대규모 밀집 SSL 실증 사례 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://arxiv.org/abs/2609.00923" target=_blank>On-the-Fly3R — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2609.00984" target=_blank>Semi-Supervised Virtual Staining — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2609.00811" target=_blank>ReBridge-Flow — arXiv</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-09-02 정상 daily 실행 · arXiv 698건(new+cross) + 저널 426편(+OpenAlex 보충 2편), 전체 스캔 978건 · ROI 배정 263건 (26.9%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

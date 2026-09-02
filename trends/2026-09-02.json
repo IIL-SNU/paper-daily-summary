@@ -1,0 +1,37 @@
+{
+ "date": "2026-09-02",
+ "source_listing_date": "2026-09-02",
+ "source_mode": "new",
+ "note": "2026-09-02(수) 정상 daily 실행. cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 arXiv /new listing이 모두 \"Wednesday, 2 September 2026\"을 가리키는 것을 Date Source Contract 점검에서 확인했다. arXiv new+cross 698건과 Crossref/OpenAlex 저널 426편(+OpenAlex 보충 works 2편)을 병합해 classify.py로 분류했다. 전체 스캔 978건 중 263건(26.9%)이 9개 ROI 버킷에 배정됐다. 계산광학 코어(Fourier Ptychography, Lensless/Coded Imaging, Meta-Optics)는 어제에 이어 오늘도 편수가 매우 얇아 랩이 직접 채워야 할 관찰 공백으로 남았다.",
+ "daily_new_counts": {
+  "by_cat": {
+   "cs.LG": 202,
+   "cs.CV": 152,
+   "cs.AI": 309,
+   "eess.IV": 8,
+   "eess.SP": 27
+  },
+  "scope": "new+cross; replacements excluded",
+  "journal_count": 426
+ },
+ "totals": {
+  "total_scanned": 978,
+  "selected": 263
+ },
+ "classified": {
+  "total_scanned": 978,
+  "selected": 263,
+  "by_bucket": {
+   "Fourier Ptychography/Microscopy": 1,
+   "Lensless/Coded Imaging": 0,
+   "Phase Imaging/Holography": 5,
+   "Meta-Optics/Diffractive": 9,
+   "Light-Field/Novel Sensors": 4,
+   "Tomography/3D Imaging": 34,
+   "Virtual Staining/Pathology": 34,
+   "Reconstruction/Inverse Problems": 30,
+   "Deep Learning Methods": 146
+  }
+ },
+ "daily_thesis": "오늘 arXiv 신규 제출 698건(new+cross) 중 가장 뚜렷한 신호는 3D 재구성 연구가 '얼마나 정확한가'에서 '실시간·대규모·부족한 입력 조건에서도 버티는가'로 질문을 옮긴 것이다. 동시에 flow matching이 diffusion을 이어받아 영상 복원의 새 생성 사전으로 자리잡는 흐름이 이론 논문과 응용 논문 형태로 같은 날 함께 나타났고, 가상 염색 연구는 어제 확인된 '하나의 분야로 굳어짐' 위에서 비페어 데이터·다중 염색·희소 구조 같은 실제 병리 워크플로우 조건을 견디는 다음 단계로 넘어갔다. 계산광학 코어(Fourier ptychography, lensless, meta-optics)는 이틀 연속 공백에 가까워 랩이 직접 채워야 할 관찰 지점으로 남았다."
+}
