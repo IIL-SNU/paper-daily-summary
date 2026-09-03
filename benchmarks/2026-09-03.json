@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-03",
+  "results": [
+    {
+      "benchmark": "CoSMo-RecNet multi-contrast MRI reconstruction",
+      "metric": "training subjects to match MoDL@100-subject baseline",
+      "value": 5,
+      "value_str": "≤5 subjects (20x fewer) matches MoDL trained on 100 subjects",
+      "paper": "https://arxiv.org/abs/2609.01959",
+      "paper_title": "Data-Efficient Networks for Multi-Contrast MRI Reconstruction based on a Generalized Content/Style Prior"
+    },
+    {
+      "benchmark": "SliceBridge T1-weighted MRI slice-interval repair",
+      "metric": "brain volume error",
+      "value": 1.05,
+      "value_str": "1.05% (vs 1.95% independent-reconstruction baseline)",
+      "paper": "https://arxiv.org/abs/2609.01827",
+      "paper_title": "SliceBridge: context-consistent repair of corrupted slice intervals in T1-weighted MRI"
+    },
+    {
+      "benchmark": "GeoSPRINT diffusion trajectory step pruning (CIFAR-10/LSUN/SD v1.5)",
+      "metric": "FID improvement over baseline samplers",
+      "value": 1.9,
+      "value_str": "0.7-1.9 FID improvement, training-free",
+      "paper": "https://arxiv.org/abs/2609.02160",
+      "paper_title": "GeoSPRINT: Geometric Redundancy-Aware Step Pruning for Inference in Diffusion Trajectories"
+    },
+    {
+      "benchmark": "CAT-Flow curvature-adaptive step sizing (FLUX/SD3.5-class models)",
+      "metric": "inference step reduction at equal quality",
+      "value": 40,
+      "value_str": "up to 40% fewer steps, equal quality",
+      "paper": "https://arxiv.org/abs/2609.01746",
+      "paper_title": "CAT-Flow: Curvature-Adaptive sTeps for Flow Matching"
+    },
+    {
+      "benchmark": "MV-dVRK surgical sparse-view 3D reconstruction",
+      "metric": "surface coverage within 1mm of GT (3-viewpoint)",
+      "value": 67,
+      "value_str": "67% (optimization-based) vs 43% (feed-forward foundation model)",
+      "paper": "https://arxiv.org/abs/2609.02717",
+      "paper_title": "MV-dVRK: A Multi-Viewpoint Benchmark for Spatial Surgical Perception"
+    },
+    {
+      "benchmark": "Quantum-well metasurface nonlinear polarization enhancement (1.57um)",
+      "metric": "second-order nonlinear tensor element d_eff",
+      "value": 14,
+      "value_str": "~14 nm/V metasurface-enhanced (vs 1.6 nm/V bare quantum well)",
+      "paper": "https://doi.org/10.1038/s41565-026-02268-0",
+      "paper_title": "Quantum-well metasurface for free-space-accessible enhanced nonlinear polarization"
+    }
+  ]
+}

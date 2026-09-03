@@ -1,0 +1,160 @@
+{
+  "date": "2026-09-03",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "3D 장면 복원 뒤에 생성모델이 못 찍은 부분을 채우고 압축·재조명까지 맡는 흐름",
+      "papers": [
+        {"title": "InceptionGS: Generative Bootstrapping for Large-Scale Gaussian Splatting under Unstructured View Sampling", "arxiv_id": "https://arxiv.org/abs/2609.02747", "journal_or_source": "arXiv cs.CV"},
+        {"title": "RoGe: Novel View Synthesis via End-to-End Implicit Reconstruction and Generation", "arxiv_id": "https://arxiv.org/abs/2609.02847", "journal_or_source": "arXiv cs.CV"},
+        {"title": "LightBridge: Feed-Forward Generative Relighting for 3D Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2609.02543", "journal_or_source": "arXiv cs.GR"},
+        {"title": "CC-4DGS: Computational Deformation and Point-Cloud Compression for Storage-Efficient Dynamic Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2609.02184", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "지난 이틀은 3D 재구성이 촬영 조건이 까다로워도 정확도를 지키는지를 물었다면, 오늘은 한 걸음 더 나아가 애초에 못 찍은 각도나 부족한 저장 공간, 다시 찍기 힘든 조명 조건처럼 촬영 이후에 생기는 문제까지 생성모델이 직접 메워주는 논문들이 모였습니다. InceptionGS는 넓은 장면을 듬성듬성 찍었을 때 비어 있는 시점을 생성모델로 채워 넣고, RoGe는 복원과 생성을 명시적인 3D 중간 표현 없이 하나의 파이프라인으로 합쳐 손실을 줄이며, LightBridge는 이미 완성된 3DGS 장면을 장면마다 다시 최적화하지 않고 한 번의 순전파로 조명만 바꿔주고, CC-4DGS는 시간에 따라 움직이는 4D 장면의 저장 용량을 20~30메가바이트 수준으로 줄입니다. 다만 같은 날 나온 수술 현장 벤치마크(MV-dVRK)는 이런 feed-forward 생성·복원 모델들이 실제 좁고 통제된 촬영 조건(내시경)에서는 최적화 기반 방법보다 표면 복원 커버리지가 아직 낮다는 점(3-viewpoint 기준 67% 대 43%)을 보여줘, 생성모델 확장이 모든 도메인에서 바로 통하는 건 아니라는 균형추 역할을 합니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 저자군 4편이 '촬영 이후 생성모델 개입'이라는 공통 문제의식을 보이지만 채움·압축·재조명이라는 서로 다른 하위 문제를 다뤄 하나의 평가축으로 수렴하지는 않음. 같은 날 나온 MV-dVRK는 이 흐름의 한계를 보여주는 반증 사례",
+      "lab_action": "InceptionGS의 생성적 부트스트래핑을 랩이 보유한 대규모 unstructured-view 촬영 데이터에 적용해 시점 밀도 대비 복원 품질 저하 곡선을 그리고, LightBridge의 feed-forward 재조명을 랩 3DGS 파이프라인에 이식해 장면별 재최적화 없이 조명 변경이 가능한지 PSNR/LPIPS로 비교"
+    },
+    {
+      "cluster": "다시 학습시키지 않고 diffusion/flow matching 생성 속도를 줄이는 방법들이 같은 날 모임",
+      "papers": [
+        {"title": "GeoSPRINT: Geometric Redundancy-Aware Step Pruning for Inference in Diffusion Trajectories", "arxiv_id": "https://arxiv.org/abs/2609.02160", "journal_or_source": "arXiv cs.LG"},
+        {"title": "CAT-Flow: Curvature-Adaptive sTeps for Flow Matching", "arxiv_id": "https://arxiv.org/abs/2609.01746", "journal_or_source": "arXiv cs.LG"},
+        {"title": "SelfLift: Accelerating Few-Step Diffusion via Self-Recovering Resolution Transition", "arxiv_id": "https://arxiv.org/abs/2609.02036", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Linear Fusion MultiDiffusion for Fast Training-Free Spherical Panorama Generation", "arxiv_id": "https://arxiv.org/abs/2609.01997", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "diffusion과 flow matching(노이즈에서 이미지로 점을 조금씩 옮겨가며 생성하는 최신 생성모델 계열)은 여러 단계를 거쳐야 그럴듯한 결과가 나오는데, 그 단계 수를 줄이는 게 배포 비용을 낮추는 핵심 과제입니다. 오늘 나온 세 편은 모두 모델을 다시 학습시키지 않고도 추론 단계에서 단계 수를 줄이는 방법을 제안한다는 공통점이 있습니다. GeoSPRINT는 노이즈 제거 궤적이 기하학적으로 평평해지는(중복되는) 구간을 QR 분해로 검출해 그 구간의 계산을 건너뛰고, CAT-Flow는 flow matching이 만드는 경로의 휘어진 정도(곡률)에 따라 단계 크기를 적응적으로 조절해 최대 40%까지 단계를 줄이며, SelfLift는 few-step diffusion 모델의 해상도를 점진적으로 높여가는 방식으로 지연시간을 40% 이상 줄입니다. 함께 볼 만한 LF-MultiDiffusion도 여러 diffusion 결과를 이어 붙이는 계산을 반복적인 최적화 대신 한 번의 선형 연립방정식 풀이로 바꿔 15배 이상 빨라졌다고 보고합니다. 이런 방법들은 랩이 쓰는 위상 복원이나 QPI diffusion 파이프라인의 추론 비용을 직접 낮출 수 있어 눈여겨볼 만합니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 3편이 '재학습 없는 단계 수 감소'라는 같은 목표(inference-time acceleration)로 수렴하며, GeoSPRINT와 CAT-Flow는 정량적 개선치까지 제시",
+      "lab_action": "GeoSPRINT의 기하학적 중복 검출 step pruning을 랩 diffusion 기반 위상 복원 파이프라인에 적용해 재학습 없이 추론 단계 수 대비 PSNR/LPIPS 저하 곡선을 그리고, CAT-Flow의 곡률 적응 스텝을 랩 QPI flow matching 모델에 이식해 동일 품질 기준 추론 시간을 diffusion 버전과 비교"
+    },
+    {
+      "cluster": "영상 복원 신경망이 주파수 성분이나 물리적 산란 특성을 아예 구조 안에 심는 흐름",
+      "papers": [
+        {"title": "LaST-SR: Laplace-Inspired Steady-Transient Complex-Frequency Decomposition for Single Image Super-Resolution", "arxiv_id": "https://arxiv.org/abs/2609.02063", "journal_or_source": "arXiv cs.CV"},
+        {"title": "ProSR: Semantic-Prototype-Guided Discrete Modeling for Physically Consistent SAR Super-Resolution", "arxiv_id": "https://arxiv.org/abs/2609.02377", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Efficient All-in-One Weather Restoration using Spectral Harmonization (FReSH-IR)", "arxiv_id": "https://arxiv.org/abs/2609.02839", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "일반적인 영상 복원 신경망은 입력을 통째로 넣고 손실 함수만으로 복원을 학습시키는 경우가 많은데, 오늘 나온 세 편은 그 대신 복원 대상이 가진 물리적·주파수적 구조를 아예 모델 구조 안에 명시적으로 새겨 넣습니다. LaST-SR은 초해상도 문제를 라플라스 변환의 정상 성분과 과도 성분으로 나누는 복소 주파수 분해를 도입해 전역 저주파 정보와 지역 고주파 디테일을 서로 다른 경로로 처리하고, ProSR은 위성 레이더(SAR) 영상의 초해상도를 연속적인 픽셀 값을 바로 예측하는 대신 이산적인 토큰을 예측하는 문제로 바꿔 레이더 특유의 산란 통계가 깨지지 않게 하며, FReSH-IR은 비·안개·눈처럼 여러 날씨 열화를 한 모델로 처리할 때 주파수 대역별로 나눠 처리해 트랜스포머 기반 모델보다 파라미터와 연산량을 80% 줄입니다. 세 논문 모두 '어떤 열화든 큰 모델로 다 배우게 하자'가 아니라 '복원 대상이 원래 가진 물리적 구조를 힌트로 미리 심어주자'는 방향을 공유해, 영상 복원 연구가 순수 데이터 주도 학습에서 구조를 아는 학습으로 돌아오는 신호로 읽힙니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 응용(일반 SISR·SAR·날씨 복원) 3편이 '물리 구조를 모델에 내장'이라는 방향을 공유하나, abstract 기준으로는 LaST-SR과 FReSH-IR 두 편에 구체적 수치가 부족해 확산 규모를 판단하기엔 이름",
+      "lab_action": "FReSH-IR의 주파수 대역별 분리 처리 구조를 랩의 다중 열화(저조도+노이즈+블러) 복원 파이프라인에 적용해 파라미터 수 대비 PSNR을 기존 트랜스포머 baseline과 비교하고, ProSR의 이산 토큰화 아이디어를 랩 SAR/레이더 기반 이미징 데이터에 적용해 산란 통계 보존 여부를 정성 평가"
+    },
+    {
+      "cluster": "완전한 정답 데이터 없이도 스스로 배우는 MRI/CT 복원",
+      "papers": [
+        {"title": "Data-Efficient Networks for Multi-Contrast MRI Reconstruction based on a Generalized Content/Style Prior (CoSMo-RecNet)", "arxiv_id": "https://arxiv.org/abs/2609.01959", "journal_or_source": "arXiv eess.IV"},
+        {"title": "Diffusion-Encoding Gaussian Field for Joint k-q dMRI Reconstruction", "arxiv_id": "https://arxiv.org/abs/2609.02288", "journal_or_source": "arXiv cs.CV"},
+        {"title": "SliceBridge: context-consistent repair of corrupted slice intervals in T1-weighted MRI", "arxiv_id": "https://arxiv.org/abs/2609.01827", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Physics-Driven Independent Pair Generation for Iterative Self-Supervised Low-Dose CT Denoising", "arxiv_id": "https://arxiv.org/abs/2609.02654", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "MRI·CT 복원 신경망을 학습시키려면 보통 깨끗하게 완전히 채워진 정답 영상(fully-sampled ground truth)이 필요한데, 이런 정답 데이터를 구하는 것 자체가 비싸거나 아예 불가능한 경우가 많습니다. 오늘 네 편은 모두 이 정답 데이터 없이 스스로 학습하는 방법을 다룹니다. CoSMo-RecNet은 짝지어진 k-space(원본 측정) 데이터 없이도 콘텐츠와 스타일을 분리한 사전(prior)을 학습시켜, 겨우 5명 분량의 데이터로 100명 분량으로 학습한 기존 모델(MoDL)과 맞먹는 성능을 내고 완전히 다른 초저자기장(47mT) 스캐너에도 그대로 통합니다. Diffusion-Encoding Gaussian Field는 확산 MRI의 공간-각도 방향 복원을 3D Gaussian 필드로 표현해 언더샘플링된 k-space만으로 자기지도 학습을 하고, SliceBridge는 손상되거나 빠진 MRI 슬라이스 구간을 rectified flow matching으로 메워 슬라이스 오차를 32.9~41.3% 줄이고 뇌 부피 오차를 1.95%에서 1.05%로 낮췄으며, 저선량 CT 디노이징 논문은 Poisson-Gaussian 노이즈의 물리적 특성을 명시적으로 모델링해 정답 없는 반복적 자기지도 학습을 가능하게 합니다. 네 논문 모두 '정답이 없어도 물리적 구조나 통계적 특성을 활용하면 학습이 가능하다'는 같은 전략을 공유합니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 모달리티(MRI 3편, CT 1편)에서 4편이 '정답 없는 학습'이라는 공통 전략을 공유하고, CoSMo-RecNet과 SliceBridge는 구체적 수치(20배 데이터 효율, 오차 32.9~41.3% 감소)까지 제시",
+      "lab_action": "CoSMo-RecNet의 content/style prior 분리 학습을 랩이 보유한 저자기장/비표준 MRI 스캐너 데이터에 적용해 소량 데이터로도 MoDL 수준 복원이 가능한지 확인하고, SliceBridge의 rectified flow matching 슬라이스 복구를 랩 T1/T2 MRI 파이프라인의 손상 슬라이스 복구 단계에 이식해 뇌 부피 측정 오차 변화를 비교"
+    },
+    {
+      "cluster": "tomography 복원에 불확실성까지 함께 추정하는 베이지안 방법이 서로 다른 도메인에서 독립적으로 등장",
+      "papers": [
+        {"title": "Hamiltonian Dynamics for Stochastic Reconstruction in Emission Tomography", "arxiv_id": "https://doi.org/10.1088/1361-6560/aea1d7", "journal_or_source": "Physics in Medicine & Biology"},
+        {"title": "Computed Tomography Reconstruction Algorithm Using Markov Random Field Model", "arxiv_id": "https://doi.org/10.7566/jpsj.95.104001", "journal_or_source": "Journal of the Physical Society of Japan"},
+        {"title": "Real-time tomography-based Bayesian inference from TCV bolometry data", "arxiv_id": "https://doi.org/10.1088/1741-4326/aea173", "journal_or_source": "Nuclear Fusion"}
+      ],
+      "why": "기존 단층촬영(tomography) 복원은 보통 '가장 그럴듯한 영상 하나'만 내놓는데, 오늘 저널에서 나온 세 편은 서로 다른 응용(PET/SPECT 핵의학 영상, CT, 핵융합 플라즈마 단층촬영)에서 독립적으로 '그 영상이 얼마나 불확실한지'까지 함께 추정하는 베이지안 접근을 씁니다. Hamiltonian Dynamics 논문은 PET/SPECT 복원에 확률적 경사하강과 Hamiltonian Monte Carlo를 결합해 데이터와 일치하는 여러 영상의 앙상블을 만들어 불확실성을 정량화하고, MRF 기반 CT 복원 논문은 마르코프 무작위장(이웃 픽셀 간 관계를 확률적으로 표현하는 모델) 사전과 자유에너지 기반 하이퍼파라미터 추정을 결합해 저선량·희소 촬영에서도 필터링 역투영(FBP)보다 나은 결과를 내며, TCV 핵융합로 볼로미터 논문은 사전 계산된 베이지안 선형 추정기로 방사 전력 분포를 실시간으로 재구성합니다. 세 논문이 서로 다른 의료·공학 도메인에서 같은 통계적 전략에 독립적으로 도달했다는 점이, 이 접근이 특정 응용에 국한된 트릭이 아니라 tomography 복원 전반에 걸친 일반적인 방향일 수 있음을 시사합니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 3개 도메인(핵의학·CT·플라즈마)에서 독립적으로 같은 전략에 도달했다는 점은 신호가 강하지만, 저널 초록 상 구체적 정량 비교 수치가 제한적이라 본문 확인이 필요함",
+      "lab_action": "TCV 볼로미터 논문의 사전 계산 베이지안 선형 추정기 아이디어를 랩의 실시간 CT/OCT 스트리밍 재구성 파이프라인에 적용해 복셀 단위 불확실성 맵을 함께 출력하도록 확장하고, MRF 기반 CT 복원의 자유에너지 하이퍼파라미터 추정 방식을 랩의 저선량 단층 재구성 정규화 세기 자동 조정에 이식"
+    }
+  ],
+  "insights": [
+    {
+      "title": "3D 장면 복원 뒤에 생성모델이 못 찍은 부분을 채우고 압축·재조명까지 맡는 흐름",
+      "claim": "InceptionGS(시점 채움), RoGe(복원-생성 융합), LightBridge(feed-forward 재조명), CC-4DGS(저장 압축) 네 편이 같은 날 나오며, 3D 재구성 연구가 촬영 그 자체를 넘어 촬영 이후의 확장·활용 문제로 무게중심을 옮기고 있다.",
+      "papers": [
+        {"title": "InceptionGS: Generative Bootstrapping for Large-Scale Gaussian Splatting under Unstructured View Sampling", "arxiv": "https://arxiv.org/abs/2609.02747", "importance_tags": ["[방법전환]"]},
+        {"title": "RoGe: Novel View Synthesis via End-to-End Implicit Reconstruction and Generation", "arxiv": "https://arxiv.org/abs/2609.02847", "importance_tags": ["[방법전환]"]},
+        {"title": "LightBridge: Feed-Forward Generative Relighting for 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2609.02543", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "MV-dVRK: A Multi-Viewpoint Benchmark for Spatial Surgical Perception", "arxiv": "https://arxiv.org/abs/2609.02717", "importance_tags": ["[평가축]", "[경고신호]"]}
+      ]
+    },
+    {
+      "title": "다시 학습시키지 않고 diffusion/flow matching 생성 속도를 줄이는 방법들이 같은 날 모임",
+      "claim": "GeoSPRINT(기하 중복 pruning), CAT-Flow(곡률 적응 스텝), SelfLift(점진적 해상도 상승) 세 편이 모두 재학습 없이 추론 단계 수를 줄이는 방법을 같은 날 제안하며, 생성모델 가속이 학습 단계가 아니라 추론 단계로 무게중심이 옮겨가고 있다.",
+      "papers": [
+        {"title": "GeoSPRINT: Geometric Redundancy-Aware Step Pruning for Inference in Diffusion Trajectories", "arxiv": "https://arxiv.org/abs/2609.02160", "importance_tags": ["[방법전환]"]},
+        {"title": "CAT-Flow: Curvature-Adaptive sTeps for Flow Matching", "arxiv": "https://arxiv.org/abs/2609.01746", "importance_tags": ["[방법전환]"]},
+        {"title": "SelfLift: Accelerating Few-Step Diffusion via Self-Recovering Resolution Transition", "arxiv": "https://arxiv.org/abs/2609.02036", "importance_tags": ["[실사용전환]"]}
+      ]
+    },
+    {
+      "title": "영상 복원 신경망이 주파수 성분이나 물리적 산란 특성을 아예 구조 안에 심는 흐름",
+      "claim": "LaST-SR(복소 주파수 분해), ProSR(이산 토큰 SAR 초해상도), FReSH-IR(주파수 대역별 날씨 복원) 세 편이 같은 날 나오며, 영상 복원 연구가 순수 데이터 주도 학습에서 물리적 구조를 아는 학습으로 돌아오고 있다.",
+      "papers": [
+        {"title": "LaST-SR: Laplace-Inspired Steady-Transient Complex-Frequency Decomposition for Single Image Super-Resolution", "arxiv": "https://arxiv.org/abs/2609.02063", "importance_tags": ["[방법전환]"]},
+        {"title": "ProSR: Semantic-Prototype-Guided Discrete Modeling for Physically Consistent SAR Super-Resolution", "arxiv": "https://arxiv.org/abs/2609.02377", "importance_tags": ["[방법전환]", "[인프라]"]},
+        {"title": "Efficient All-in-One Weather Restoration using Spectral Harmonization (FReSH-IR)", "arxiv": "https://arxiv.org/abs/2609.02839", "importance_tags": ["[실사용전환]"]}
+      ]
+    },
+    {
+      "title": "완전한 정답 데이터 없이도 스스로 배우는 MRI/CT 복원",
+      "claim": "CoSMo-RecNet(20배 데이터 효율), Diffusion-Encoding Gaussian Field(자기지도 dMRI), SliceBridge(슬라이스 복구), 저선량 CT 디노이징(물리 노이즈 모델) 네 편이 정답 데이터 없이 학습하는 전략을 공유하며, MRI/CT 복원의 병목이 알고리즘보다 정답 데이터 확보로 옮겨가고 있음을 보여준다.",
+      "papers": [
+        {"title": "Data-Efficient Networks for Multi-Contrast MRI Reconstruction based on a Generalized Content/Style Prior (CoSMo-RecNet)", "arxiv": "https://arxiv.org/abs/2609.01959", "importance_tags": ["[방법전환]", "[데이터전환]"]},
+        {"title": "SliceBridge: context-consistent repair of corrupted slice intervals in T1-weighted MRI", "arxiv": "https://arxiv.org/abs/2609.01827", "importance_tags": ["[방법전환]"]},
+        {"title": "Physics-Driven Independent Pair Generation for Iterative Self-Supervised Low-Dose CT Denoising", "arxiv": "https://arxiv.org/abs/2609.02654", "importance_tags": ["[방법전환]", "[데이터전환]"]}
+      ]
+    },
+    {
+      "title": "tomography 복원에 불확실성까지 함께 추정하는 베이지안 방법이 서로 다른 도메인에서 독립적으로 등장",
+      "claim": "PET/SPECT, CT, 핵융합 플라즈마 볼로미터 세 도메인에서 독립적으로 베이지안 불확실성 정량화 재구성이 나오며, 이 전략이 특정 응용에 국한되지 않은 tomography 복원의 일반적 방향일 수 있음을 시사한다.",
+      "papers": [
+        {"title": "Hamiltonian Dynamics for Stochastic Reconstruction in Emission Tomography", "arxiv": "https://doi.org/10.1088/1361-6560/aea1d7", "importance_tags": ["[평가축]"]},
+        {"title": "Computed Tomography Reconstruction Algorithm Using Markov Random Field Model", "arxiv": "https://doi.org/10.7566/jpsj.95.104001", "importance_tags": ["[방법전환]"]},
+        {"title": "Real-time tomography-based Bayesian inference from TCV bolometry data", "arxiv": "https://doi.org/10.1088/1741-4326/aea173", "importance_tags": ["[실사용전환]"]}
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "A. InceptionGS/LightBridge의 생성모델 사후 확장을 랩 3DGS 파이프라인에 적용",
+      "claim": "촬영 이후 생성모델로 시점을 채우거나 조명을 바꾸는 InceptionGS/LightBridge 방식을 랩의 대규모 unstructured-view 3DGS 데이터에 적용하면, 재촬영 없이 활용 범위를 넓힐 수 있는지 확인할 수 있다.",
+      "supporting_papers": [
+        {"title": "InceptionGS: Generative Bootstrapping for Large-Scale Gaussian Splatting under Unstructured View Sampling", "arxiv": "https://arxiv.org/abs/2609.02747"},
+        {"title": "LightBridge: Feed-Forward Generative Relighting for 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2609.02543"}
+      ]
+    },
+    {
+      "title": "B. GeoSPRINT/CAT-Flow의 재학습 없는 step 감소를 랩 diffusion/flow matching 복원에 적용",
+      "claim": "재학습 없이 추론 단계를 줄이는 GeoSPRINT/CAT-Flow를 랩의 diffusion·flow matching 기반 위상 복원/QPI 파이프라인에 적용하면, 품질 저하 없이 추론 비용을 낮출 수 있는지 확인할 수 있다.",
+      "supporting_papers": [
+        {"title": "GeoSPRINT: Geometric Redundancy-Aware Step Pruning for Inference in Diffusion Trajectories", "arxiv": "https://arxiv.org/abs/2609.02160"},
+        {"title": "CAT-Flow: Curvature-Adaptive sTeps for Flow Matching", "arxiv": "https://arxiv.org/abs/2609.01746"}
+      ]
+    },
+    {
+      "title": "C. FReSH-IR/ProSR의 주파수·물리 구조 내장을 랩 다중 열화 복원에 적용",
+      "claim": "주파수 대역별 처리(FReSH-IR)와 이산 토큰화(ProSR)를 랩의 다중 열화 및 SAR/레이더 이미징 파이프라인에 적용하면, 파라미터 대비 복원 품질과 물리적 일관성을 동시에 개선할 수 있는지 확인할 수 있다.",
+      "supporting_papers": [
+        {"title": "Efficient All-in-One Weather Restoration using Spectral Harmonization (FReSH-IR)", "arxiv": "https://arxiv.org/abs/2609.02839"},
+        {"title": "ProSR: Semantic-Prototype-Guided Discrete Modeling for Physically Consistent SAR Super-Resolution", "arxiv": "https://arxiv.org/abs/2609.02377"}
+      ]
+    },
+    {
+      "title": "D. CoSMo-RecNet/SliceBridge의 정답 없는 학습을 랩 저자기장 MRI 파이프라인에 적용",
+      "claim": "정답 k-space 없이 학습하는 CoSMo-RecNet과 슬라이스 복구를 다루는 SliceBridge를 랩의 비표준/저자기장 MRI 데이터에 적용하면, 적은 데이터로도 표준 스캐너 수준 복원이 가능한지 확인할 수 있다.",
+      "supporting_papers": [
+        {"title": "Data-Efficient Networks for Multi-Contrast MRI Reconstruction based on a Generalized Content/Style Prior (CoSMo-RecNet)", "arxiv": "https://arxiv.org/abs/2609.01959"},
+        {"title": "SliceBridge: context-consistent repair of corrupted slice intervals in T1-weighted MRI", "arxiv": "https://arxiv.org/abs/2609.01827"}
+      ]
+    },
+    {
+      "title": "E. 베이지안 불확실성 정량화 재구성을 랩 실시간 CT/OCT 파이프라인에 적용",
+      "claim": "TCV 볼로미터의 사전 계산 베이지안 선형 추정기와 MRF 기반 CT 복원의 하이퍼파라미터 자동 추정을 랩의 실시간 단층 재구성에 적용하면, 복원 영상과 함께 복셀 단위 불확실성 맵을 낮은 지연시간으로 얻을 수 있는지 확인할 수 있다.",
+      "supporting_papers": [
+        {"title": "Real-time tomography-based Bayesian inference from TCV bolometry data", "arxiv": "https://doi.org/10.1088/1741-4326/aea173"},
+        {"title": "Computed Tomography Reconstruction Algorithm Using Markov Random Field Model", "arxiv": "https://doi.org/10.7566/jpsj.95.104001"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

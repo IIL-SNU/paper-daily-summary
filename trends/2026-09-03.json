@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-03",
+  "source_listing_date": "2026-09-03",
+  "source_mode": "new",
+  "note": "2026-09-03(목) 정상 daily 실행. cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 arXiv /new listing이 모두 \"Thursday, 3 September 2026\"을 가리키는 것을 Date Source Contract 점검에서 확인했다. arXiv new+cross 478건과 Crossref/OpenAlex 저널 355편을 병합해 classify.py로 분류했다. 전체 스캔 793건 중 234건(29.5%)이 9개 ROI 버킷에 배정됐다. 계산광학 코어(Fourier Ptychography, Lensless, Meta-Optics, Phase, Light-Field)는 여전히 편수가 얇고 대부분 RF/안테나 저널 논문이 섞여 실제 이미징 신호는 버킷당 0~2편 수준이다. 오늘의 주된 신호는 3D 장면 복원 뒤에 생성모델이 사후 확장(gap-filling·압축·재조명) 도구로 들어오는 흐름과, diffusion/flow matching 추론 가속(재학습 없는 step pruning) 3편이 같은 날 수렴한 점, 그리고 정답 데이터 없이 학습하는 MRI/CT 복원 4편이다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 159,
+      "cs.CV": 136,
+      "cs.AI": 162,
+      "eess.IV": 5,
+      "eess.SP": 16
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 355
+  },
+  "totals": {
+    "total_scanned": 793,
+    "selected": 234
+  },
+  "classified": {
+    "total_scanned": 793,
+    "selected": 234,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 5,
+      "Lensless/Coded Imaging": 3,
+      "Phase Imaging/Holography": 4,
+      "Meta-Optics/Diffractive": 8,
+      "Light-Field/Novel Sensors": 5,
+      "Tomography/3D Imaging": 41,
+      "Virtual Staining/Pathology": 28,
+      "Reconstruction/Inverse Problems": 24,
+      "Deep Learning Methods": 116
+    }
+  },
+  "daily_thesis": "오늘 arXiv+저널 793건 중 가장 뚜렷한 신호는 3D 장면 복원이 '찍은 것을 그대로 되살리기'를 넘어 못 찍은 시점·저장 용량·조명까지 생성모델이 사후 처리로 확장해주는 쪽으로 넘어간 것이고, 동시에 diffusion/flow matching을 재학습 없이 더 적은 단계로 돌리는 방법 3편과 정답 데이터 없이 학습하는 MRI/CT 복원 4편이 각각 독립적으로 수렴해 두 개의 실용화 축이 함께 두드러진 하루였다."
+}
