@@ -1,0 +1,45 @@
+{
+  "date": "2026-09-04",
+  "results": [
+    {
+      "benchmark": "FlashRender camera-controlled few-step video rendering",
+      "metric": "sampling cost reduction vs multi-step baseline at matched video quality/geometric consistency",
+      "value": 25,
+      "value_str": "25x lower sampling cost, matches multi-step baseline quality",
+      "paper": "https://arxiv.org/abs/2609.03563",
+      "paper_title": "FlashRender: Few-Step Generative Rendering via Camera-Controlled Video MeanFlow"
+    },
+    {
+      "benchmark": "TAP-Path pathology foundation model compression (Virchow2, 32-class histopathology benchmark)",
+      "metric": "encoder parameter/FLOPs reduction with accuracy retained",
+      "value": 87.98,
+      "value_str": "params -24.96% (631.24M→473.70M), compute -35.20% FLOPs, test accuracy 87.98% (vs Virchow2 full 86.89%)",
+      "paper": "https://arxiv.org/abs/2609.04071",
+      "paper_title": "TAP-Path: Task-Adaptive Structural and Token Pruning for Efficient and Trustworthy Pathology Foundation Models"
+    },
+    {
+      "benchmark": "Computationally Efficient Pathology Segmentation (Virchow2 distillation, PUMA/IGNITE/BEETLE + private vessel dataset)",
+      "metric": "inference throughput gain vs foundation-model-based segmentation",
+      "value": 10,
+      "value_str": "up to 10x higher inference throughput, SOTA or near-SOTA accuracy retained",
+      "paper": "https://arxiv.org/abs/2609.03947",
+      "paper_title": "Computationally Efficient Pathology Segmentation using Knowledge Distillation from Foundation Models"
+    },
+    {
+      "benchmark": "Exemplar few-shot biomedical/microscopy segmentation (11-dataset panel)",
+      "metric": "foreground IoU / centreline Dice, fused classical+frozen-feature head",
+      "value": 0.782,
+      "value_str": "0.782 fused (vs 0.693 classical-only, 0.672 frozen-features-only); leads 54/55 method-dataset comparisons vs 5 few-shot baselines",
+      "paper": "https://arxiv.org/abs/2609.03080",
+      "paper_title": "Exemplar: Classical Priors Complement Frozen Features for Few-Shot Microscopy Segmentation at Native Resolution"
+    },
+    {
+      "benchmark": "Stabilizing Camera-Controlled Novel View Synthesis (CamTrol++, RealEstate10K/MegaScene)",
+      "metric": "stable per-step camera motion threshold before degradation",
+      "value": 18,
+      "value_str": "stable up to ~18-20° per-step motion; degrades beyond that threshold",
+      "paper": "https://arxiv.org/abs/2609.03639",
+      "paper_title": "Stabilizing Camera-Controlled Novel View Synthesis at Inference Time"
+    }
+  ]
+}

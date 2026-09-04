@@ -1,0 +1,137 @@
+{
+  "date": "2026-09-04",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "카메라 경로를 지정하는 3D/비디오 생성이 재학습 없이 추론 시점에서 안정화·가속화됨",
+      "papers": [
+        {"title": "FlashRender: Few-Step Generative Rendering via Camera-Controlled Video MeanFlow", "arxiv_id": "https://arxiv.org/abs/2609.03563", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Stabilizing Camera-Controlled Novel View Synthesis at Inference Time", "arxiv_id": "https://arxiv.org/abs/2609.03639", "journal_or_source": "arXiv cs.CV"},
+        {"title": "OctWorld: Long-Range World-Consistent Video Generation with Octree-Based 3D Mapping", "arxiv_id": "https://arxiv.org/abs/2609.03919", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Zero-Shot Novel Depth Synthesis Using 3D Foundation Models Scene Representations", "arxiv_id": "https://arxiv.org/abs/2609.04174", "journal_or_source": "arXiv cs.CV"},
+        {"title": "VI3: Grounding Pretrained 3D Foundation Models with Inertial Cues", "arxiv_id": "https://arxiv.org/abs/2609.03824", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "예전에는 카메라 경로를 지정해서 새로운 시점의 영상을 만들어내는 연구가 주로 '얼마나 그럴듯한 장면을 만드느냐'를 겨루는 학습 방법 경쟁이었다면, 오늘 모인 다섯 편은 이미 학습된 video diffusion·3D foundation model을 다시 학습시키지 않고도 더 안정적이고 빠르게 쓰는 쪽에 집중합니다. Stabilizing Camera-Controlled NVS는 카메라 이동을 잘게 쪼개 한 걸음씩 진행하는 것만으로 큰 카메라 움직임에서도 흔들림이 줄어든다는 걸 보이고, FlashRender는 소스 영상 표현을 목표 카메라 경로에 맞춰 정렬해 25배 적은 샘플링 단계로 기존 다단계 방법과 같은 품질을 냅니다. OctWorld는 이전에 생성한 영역을 다시 지나갈 때도 공간적 일관성이 깨지지 않도록 octree 기반 3D 메모리를 두고, VI3와 Zero-Shot Novel Depth Synthesis는 이미 학습된 3D foundation model(VGGT 등)의 내부 표현을 IMU나 latent diffusion으로 보정·확장해 새로운 능력을 얻어냅니다. 즉 오늘 흐름은 '더 큰 생성 모델을 새로 학습시키자'가 아니라 '이미 있는 생성·3D 표현 모델을 촬영 조건이 까다로운 상황에서도 안정적으로 재활용하자'는 방향입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 5편이 '재학습 없이 카메라 제어 생성/3D 표현을 안정화·확장'이라는 같은 목표로 수렴하며, FlashRender와 Stabilizing Camera-Controlled NVS는 정량적 개선치(25배 가속, 18-20도 안정 한계)까지 제시",
+      "lab_action": "Stabilizing Camera-Controlled NVS의 소규모 autoregressive 카메라 스텝 분해를 랩의 sparse-view 3DGS 촬영 파이프라인에 적용해 카메라 이동 각도별 복원 안정성 곡선을 그리고, FlashRender의 RETA 정렬 아이디어를 랩 novel-view 렌더링 후처리 단계에 이식해 추론 단계 수 대비 품질 저하 곡선을 비교"
+    },
+    {
+      "cluster": "병리 파운데이션 모델을 더 크게 키우는 대신 가지치기·증류로 가볍게 배포하는 흐름",
+      "papers": [
+        {"title": "TAP-Path: Task-Adaptive Structural and Token Pruning for Efficient and Trustworthy Pathology Foundation Models", "arxiv_id": "https://arxiv.org/abs/2609.04071", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Computationally Efficient Pathology Segmentation using Knowledge Distillation from Foundation Models", "arxiv_id": "https://arxiv.org/abs/2609.03947", "journal_or_source": "arXiv eess.IV"},
+        {"title": "Exemplar: Classical Priors Complement Frozen Features for Few-Shot Microscopy Segmentation at Native Resolution", "arxiv_id": "https://arxiv.org/abs/2609.03080", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "최근 병리(histopathology) 영상 해석은 Virchow2 같은 수억 파라미터급 파운데이션 모델을 그대로 가져다 쓰는 쪽으로 발전해 왔는데, 이런 모델은 실제 병원 스캐너 옆에서 대량의 whole-slide 이미지를 실시간으로 돌리기엔 계산 비용이 너무 큽니다. 오늘 모인 세 편은 모두 이 문제를 모델을 더 작게 새로 학습시키는 대신, 이미 학습된 큰 모델에서 필요한 부분만 남기는 방식으로 풉니다. TAP-Path는 Virchow2 인코더에서 검증 성능 기준으로 불필요한 transformer 블록을 통째로 제거하고 patch token도 솎아내, 파라미터를 25% 줄이면서도 원본보다 오히려 정확도가 조금 높은 결과(87.98% vs 86.89%)를 냅니다. Computationally Efficient Pathology Segmentation은 Virchow2 기반 teacher 모델의 지식을 작은 student 네트워크로 증류해 최대 10배 빠른 추론 속도를 얻고, Exemplar는 아예 큰 모델을 fine-tuning하지 않고 고정된 DINOv3 특징과 전통적인 필터 응답을 합쳐 소수의 라벨만으로 11개 생체 영상 데이터셋에서 경쟁력 있는 분할 성능을 냅니다. 세 논문 모두 '병리 AI의 다음 단계는 더 큰 모델이 아니라, 이미 있는 큰 모델을 병원 현장에서 실제로 돌릴 수 있게 가볍게 만드는 것'이라는 공통된 판단을 보여줍니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저자군 3편이 모두 Virchow2 또는 동급 파운데이션 모델을 대상으로 가지치기·증류·frozen-feature 재활용이라는 같은 전략에 수렴하며, 세 편 모두 구체적 정량 수치(파라미터 25% 감소, 추론 10배 가속, IoU 0.782)를 제시",
+      "lab_action": "TAP-Path의 검증 기준 transformer 블록 제거를 랩이 쓰는 병리/조직 영상 파운데이션 모델 인코더에 적용해 파라미터-정확도 트레이드오프 곡선을 그리고, Exemplar의 frozen feature + classical filter 결합 헤드를 랩 보유 소량 라벨 biomedical 영상(현미경/조직) 데이터셋에 적용해 nnU-Net 대비 라벨 효율성을 비교"
+    },
+    {
+      "cluster": "diffusion/DiT 생성 파이프라인의 학습·추론 비용을 구조를 바꾸지 않고 줄이는 흐름",
+      "papers": [
+        {"title": "SPARK: Input-Conditioned Sparse Activation Modulation for Frozen DiT-based Super-Resolution", "arxiv_id": "https://arxiv.org/abs/2609.03813", "journal_or_source": "arXiv cs.CV"},
+        {"title": "DSAQuant: Denoising-Stage-Aligned Quantization-Aware Training for Video Generation", "arxiv_id": "https://arxiv.org/abs/2609.04031", "journal_or_source": "arXiv cs.CV"},
+        {"title": "LeanGRPO: Eliminating Redundant Recomputation in Diffusion RL", "arxiv_id": "https://arxiv.org/abs/2609.03528", "journal_or_source": "arXiv cs.LG"},
+        {"title": "Laplacian Frequency Hierarchies for Efficient 3D Gaussian Splatting Training", "arxiv_id": "https://arxiv.org/abs/2609.03334", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "diffusion이나 Diffusion Transformer(DiT) 기반 생성 모델은 이미지·비디오 품질을 개선할 때마다 보통 fine-tuning이나 별도 adapter를 새로 붙여야 했는데, 오늘 나온 네 편은 모두 기존 구조는 그대로 두고 계산이 낭비되는 지점만 찾아 없애는 쪽으로 접근합니다. SPARK는 frozen DiT 기반 초해상도 모델 내부에서 소수의 활성값이 유독 크게 튀는 채널들을 찾아, 그 채널만 입력에 맞춰 조절하는 것으로 fine-tuning 없이 화질을 개선하고, DSAQuant는 비디오 diffusion 모델을 양자화(quantization)할 때 노이즈 제거 단계별로 다르게 정렬해 기존 방법이 놓치던 디테일·질감 손실을 줄입니다. LeanGRPO는 diffusion 강화학습에서 롤아웃과 업데이트가 같은 신경망을 쓰는데도 타임스텝을 중복 계산하던 부분을 찾아 제거하고, Laplacian Frequency Hierarchies는 3D Gaussian Splatting 학습에서 저주파 구조를 먼저 맞춘 뒤 그 결과를 그대로 둔 채 고주파 디테일만 추가로 최적화해 Gaussian 개수가 계속 불어나는 문제를 줄입니다. 네 논문 모두 '모델을 다시 설계하자'가 아니라 '이미 있는 생성 파이프라인 안에서 실제로 낭비되는 계산이 어디인지 찾아 걷어내자'는 같은 태도를 공유합니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 4개 하위 문제(SR 활성화 변조, 비디오 양자화, RL 재계산, 3DGS 학습)에서 4편이 '구조 불변 + 낭비 계산 제거'라는 방향을 공유하지만, 응용이 흩어져 있어 단일 벤치마크로 수렴하지는 않음",
+      "lab_action": "SPARK의 활성값 기반 입력 조건부 변조를 랩의 frozen DiT 기반 위상 복원/초해상도 모델에 적용해 fine-tuning 없이 화질 개선이 재현되는지 확인하고, Laplacian Frequency Hierarchies의 주파수 단계별 3DGS 학습을 랩 3D 재구성 파이프라인에 적용해 Gaussian 개수 증가 곡선과 학습 시간을 baseline과 비교"
+    },
+    {
+      "cluster": "3DGS 학습의 구조적 병목을 정면으로 다루는 논문들이 같은 날 모임",
+      "papers": [
+        {"title": "TruncGradGS: Improved 3D Gaussian Splatting via Truncated Gradient Updates", "arxiv_id": "https://arxiv.org/abs/2609.03534", "journal_or_source": "arXiv cs.CV"},
+        {"title": "STARS-GS", "arxiv_id": "https://arxiv.org/abs/2609.03447", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Laplacian Frequency Hierarchies for Efficient 3D Gaussian Splatting Training", "arxiv_id": "https://arxiv.org/abs/2609.03334", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "3D Gaussian Splatting은 이제 novel view synthesis의 사실상 표준 표현이 됐지만, 오늘 나온 세 편은 그 최적화 과정 자체에 아직 남아 있는 구조적 문제를 짚습니다. TruncGradGS는 Gaussian primitive에서 멀리 떨어진 픽셀일수록 그래디언트가 작아져 최적화에 제대로 반영되지 못하는 현상(그래디언트 소실)을 그래디언트 크기를 잘라내는(truncation) 방식으로 완화하고, STARS-GS는 넓은 항공 촬영 장면을 여러 구역으로 나눠 최적화할 때 하나로 이어져야 할 장면 요소가 구역 경계에서 끊기는 문제를 구조 인식 정규화로 보완하며, Laplacian Frequency Hierarchies는 주파수 단계별 학습으로 Gaussian 개수 폭증을 억제합니다. 세 논문 모두 3DGS가 널리 쓰이기 시작하면서 오히려 '잘 되는 것처럼 보이지만 실제로는 최적화가 불완전한' 지점들이 하나씩 드러나고 있다는 신호로 읽힙니다.",
+      "confidence": "Medium",
+      "confidence_note": "같은 3DGS 최적화 문제를 다루는 3편이 모였으나 각각 다른 하위 문제(그래디언트 소실·대규모 장면 분할·주파수 계층)를 다뤄 단일 벤치마크로 수렴하지 않음. 클러스터3과 대표 논문(Laplacian Frequency Hierarchies) 일부 중복",
+      "lab_action": "TruncGradGS의 그래디언트 truncation을 랩의 3DGS 재구성 파이프라인에 적용해 원거리 디테일 복원 품질 변화를 측정하고, STARS-GS의 구조 인식 정규화를 랩의 대규모 조직 슬라이드 스티칭·모자이킹 파이프라인에 참고 사례로 검토"
+    }
+  ],
+  "insights": [
+    {
+      "title": "카메라 경로를 지정하는 3D/비디오 생성이 재학습 없이 추론 시점에서 안정화·가속화됨",
+      "claim": "FlashRender(25배 가속), Stabilizing Camera-Controlled NVS(작은 스텝 분해로 안정화), OctWorld(octree 3D 메모리), VI3·Zero-Shot Novel Depth Synthesis(3D foundation model 내부 표현 재활용) 다섯 편이 같은 날 나오며, 카메라 제어 생성 연구의 무게중심이 새 모델 학습에서 기존 모델을 추론 시점에 더 안정적으로 쓰는 쪽으로 옮겨가고 있다.",
+      "papers": [
+        {"title": "FlashRender: Few-Step Generative Rendering via Camera-Controlled Video MeanFlow", "arxiv": "https://arxiv.org/abs/2609.03563", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "Stabilizing Camera-Controlled Novel View Synthesis at Inference Time", "arxiv": "https://arxiv.org/abs/2609.03639", "importance_tags": ["[해부분석]", "[방법전환]"]},
+        {"title": "OctWorld: Long-Range World-Consistent Video Generation with Octree-Based 3D Mapping", "arxiv": "https://arxiv.org/abs/2609.03919", "importance_tags": ["[방법전환]"]}
+      ]
+    },
+    {
+      "title": "병리 파운데이션 모델을 더 크게 키우는 대신 가지치기·증류로 가볍게 배포하는 흐름",
+      "claim": "TAP-Path(파라미터 25% 감소), Computationally Efficient Pathology Segmentation(추론 10배 가속), Exemplar(few-shot frozen feature 재활용) 세 편이 모두 Virchow2급 파운데이션 모델을 실제 배포 가능한 크기로 줄이는 전략을 공유하며, 병리 AI 연구의 초점이 모델 확대에서 배포 효율로 옮겨가고 있다.",
+      "papers": [
+        {"title": "TAP-Path: Task-Adaptive Structural and Token Pruning for Efficient and Trustworthy Pathology Foundation Models", "arxiv": "https://arxiv.org/abs/2609.04071", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "Computationally Efficient Pathology Segmentation using Knowledge Distillation from Foundation Models", "arxiv": "https://arxiv.org/abs/2609.03947", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "Exemplar: Classical Priors Complement Frozen Features for Few-Shot Microscopy Segmentation at Native Resolution", "arxiv": "https://arxiv.org/abs/2609.03080", "importance_tags": ["[데이터전환]"]}
+      ]
+    },
+    {
+      "title": "diffusion/DiT 생성 파이프라인의 학습·추론 비용을 구조를 바꾸지 않고 줄이는 흐름",
+      "claim": "SPARK(frozen DiT 활성화 변조), DSAQuant(단계별 정렬 양자화), LeanGRPO(중복 재계산 제거), Laplacian Frequency Hierarchies(3DGS 주파수 단계 학습) 네 편이 같은 날 나오며, 생성 파이프라인 효율화가 모델 재설계보다 기존 파이프라인 안의 낭비 계산 제거로 향하고 있다.",
+      "papers": [
+        {"title": "SPARK: Input-Conditioned Sparse Activation Modulation for Frozen DiT-based Super-Resolution", "arxiv": "https://arxiv.org/abs/2609.03813", "importance_tags": ["[방법전환]"]},
+        {"title": "DSAQuant: Denoising-Stage-Aligned Quantization-Aware Training for Video Generation", "arxiv": "https://arxiv.org/abs/2609.04031", "importance_tags": ["[실사용전환]"]},
+        {"title": "LeanGRPO: Eliminating Redundant Recomputation in Diffusion RL", "arxiv": "https://arxiv.org/abs/2609.03528", "importance_tags": ["[실사용전환]"]}
+      ]
+    },
+    {
+      "title": "3DGS 학습의 구조적 병목을 정면으로 다루는 논문들이 같은 날 모임",
+      "claim": "TruncGradGS(그래디언트 소실 완화), STARS-GS(대규모 항공 장면 구역 경계 문제), Laplacian Frequency Hierarchies(Gaussian 개수 폭증 억제) 세 편이 3DGS 최적화 자체에 남아있는 구조적 결함을 짚으며, 3DGS가 표준 표현으로 자리잡을수록 오히려 세부 최적화 결함이 하나씩 드러나고 있음을 보여준다.",
+      "papers": [
+        {"title": "TruncGradGS: Improved 3D Gaussian Splatting via Truncated Gradient Updates", "arxiv": "https://arxiv.org/abs/2609.03534", "importance_tags": ["[해부분석]"]},
+        {"title": "STARS-GS", "arxiv": "https://arxiv.org/abs/2609.03447", "importance_tags": ["[해부분석]"]},
+        {"title": "Laplacian Frequency Hierarchies for Efficient 3D Gaussian Splatting Training", "arxiv": "https://arxiv.org/abs/2609.03334", "importance_tags": ["[방법전환]"]}
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "A. Stabilizing Camera-Controlled NVS/FlashRender의 추론 시점 안정화·가속을 랩 novel-view 파이프라인에 적용",
+      "claim": "카메라 이동을 잘게 쪼개는 안정화 기법과 few-step 렌더링 가속을 랩의 sparse-view 3D 재구성 및 novel-view 합성 파이프라인에 적용하면, 재학습 없이 큰 카메라 움직임에서도 안정성과 속도를 동시에 개선할 수 있는지 확인할 수 있다.",
+      "supporting_papers": [
+        {"title": "Stabilizing Camera-Controlled Novel View Synthesis at Inference Time", "arxiv": "https://arxiv.org/abs/2609.03639"},
+        {"title": "FlashRender: Few-Step Generative Rendering via Camera-Controlled Video MeanFlow", "arxiv": "https://arxiv.org/abs/2609.03563"}
+      ]
+    },
+    {
+      "title": "B. TAP-Path/Computationally Efficient Pathology Segmentation의 압축 전략을 랩 병리·조직 영상 모델에 적용",
+      "claim": "검증 기준 transformer 블록 제거와 지식 증류를 랩이 쓰는 병리/조직 영상 파운데이션 모델에 적용하면, 정확도 손실 없이 실제 스캐너 옆에서 실시간으로 돌릴 수 있는 크기로 줄일 수 있는지 확인할 수 있다.",
+      "supporting_papers": [
+        {"title": "TAP-Path: Task-Adaptive Structural and Token Pruning for Efficient and Trustworthy Pathology Foundation Models", "arxiv": "https://arxiv.org/abs/2609.04071"},
+        {"title": "Computationally Efficient Pathology Segmentation using Knowledge Distillation from Foundation Models", "arxiv": "https://arxiv.org/abs/2609.03947"}
+      ]
+    },
+    {
+      "title": "C. SPARK의 frozen DiT 활성화 변조를 랩 위상 복원/초해상도 파이프라인에 적용",
+      "claim": "SPARK가 제안한 소수 활성 채널 기반 입력 조건부 변조를 랩의 frozen diffusion transformer 기반 복원 모델에 적용하면, fine-tuning 없이 화질을 개선할 수 있는지 확인할 수 있다.",
+      "supporting_papers": [
+        {"title": "SPARK: Input-Conditioned Sparse Activation Modulation for Frozen DiT-based Super-Resolution", "arxiv": "https://arxiv.org/abs/2609.03813"},
+        {"title": "DSAQuant: Denoising-Stage-Aligned Quantization-Aware Training for Video Generation", "arxiv": "https://arxiv.org/abs/2609.04031"}
+      ]
+    },
+    {
+      "title": "D. Laplacian Frequency Hierarchies의 주파수 단계별 학습을 랩 3DGS 재구성 파이프라인에 적용",
+      "claim": "저주파 구조를 먼저 고정하고 고주파 디테일만 추가로 최적화하는 계층적 학습 방식을 랩의 3D Gaussian Splatting 파이프라인에 적용하면, Gaussian 개수 증가를 억제하면서 학습 시간을 줄일 수 있는지 확인할 수 있다.",
+      "supporting_papers": [
+        {"title": "Laplacian Frequency Hierarchies for Efficient 3D Gaussian Splatting Training", "arxiv": "https://arxiv.org/abs/2609.03334"},
+        {"title": "TruncGradGS: Improved 3D Gaussian Splatting via Truncated Gradient Updates", "arxiv": "https://arxiv.org/abs/2609.03534"}
+      ]
+    },
+    {
+      "title": "E. Full-Field-of-View 메타렌즈 스캐너를 랩 소형 이미징 모듈 설계에 참고 사례로 검토",
+      "claim": "GaN 메타표면 기반 메타렌즈 스캐너가 이광자 현미경 대물렌즈의 부피·수차 문제를 광학 하드웨어 단에서 해결한 사례를 랩의 소형 계산 이미징 모듈(내시경·휴대형 현미경) 광학계 설계에 참고 사례로 검토하면, 메타표면 기반 스캐닝이 랩 하드웨어 소형화에 적용 가능한지 판단할 수 있다.",
+      "supporting_papers": [
+        {"title": "Full-Field-of-View Metalens Scanner Optical Module for High-Speed Imaging Toward Miniaturized Two-Photon Microscopy", "arxiv": "https://doi.org/10.1002/lpor.71849"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

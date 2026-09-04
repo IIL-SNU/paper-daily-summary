@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-09-04</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-09-04 (금요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-09-04 (금요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Friday, 4 September 2026"을 가리키는 것을 확인했습니다. 정상적인 daily 실행입니다.</div>
+  <div>🔢 arXiv: cs.LG 168 · cs.CV 112 · cs.AI 165 · eess.IV 9 · eess.SP 28 (합계 482건, new+cross 기준)</div>
+  <div>🔢 저널: Crossref/OpenAlex 396편 · 전체 스캔(arXiv+저널) 800건 · ROI 배정 260건 (32.5%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 가장 뚜렷한 신호는 <strong>카메라 경로를 지정해서 새로운 시점의 3D 장면·비디오를 만들어내는 생성 모델들이, 다시 학습시키지 않고도 추론 시점에서 더 안정적이고 빠르게 동작하도록 만드는 방법 5편</strong>이 같은 날 모였다는 점입니다. 동시에 <strong>병리(histopathology) 파운데이션 모델을 더 큰 모델로 새로 학습시키는 대신 가지치기·지식증류로 가볍게 배포하는 논문 3편</strong>과, <strong>diffusion/DiT(Diffusion Transformer) 생성 파이프라인의 학습·추론 비용을 구조를 바꾸지 않고 줄이는 논문 4편</strong>이 각각 독립적으로 모였습니다. 세 흐름 모두 "더 크고 새로운 모델을 학습시키자"가 아니라 "이미 학습된 모델·표현을 실제로 쓸 수 있는 조건(현장 배포, 큰 카메라 움직임, 제한된 연산 자원)에서 더 잘 재활용하자"는 공통점을 갖고 있어, 어제에 이어 계산 이미징·생성 연구의 무게중심이 학습 단계에서 배포·활용 단계로 계속 옮겨가고 있다는 신호로 읽힙니다. 계산광학 코어(Fourier Ptychography, Lensless, Meta-Optics, Phase Imaging, Light-Field)는 오늘도 버킷당 0~1편 수준으로 얇아, 랩이 직접 채워야 할 공백으로 남아 있습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv new+cross 총 482건(cs.LG 168·cs.CV 112·cs.AI 165·eess.IV 9·eess.SP 28) 중 ROI 버킷에 걸린 건 저널 포함 전체 스캔 800건 기준 260건(32.5%)입니다. 저널은 Crossref/OpenAlex 396편을 재수집했습니다. 어제(29.5%)보다 선택 비율이 소폭 높아졌는데, 이는 하루 전체 스캔 물량이 늘면서 ROI 버킷 특히 Virtual Staining/Pathology(73편)와 Tomography/3D Imaging(45편)의 절대 편수가 함께 늘어난 영향으로 보입니다.</p>
+<p>다만 편수만 보면 오해하기 쉽습니다. Virtual Staining/Pathology 버킷(73편) 중 63편이 저널(JNL) 소스인데, 그 대부분이 Journal of Visualized Experiments(JoVE)에 실린 "H&amp;E 염색 방법", "Giemsa 염색 방법", "은 염색 방법"처럼 실제 습식 실험실 프로토콜 논문입니다. 우리 랩이 관심 있는 딥러닝 기반 virtual staining(염색 없이 조직 이미지를 컴퓨테이셔널하게 생성하는 기술)과는 전혀 무관한 키워드 오탐이며, 실제 계산 이미징 신호는 3~4편 수준입니다. Tomography/3D Imaging(45편) 역시 절반 이상이 CT/MRI/OCT/PET 임상 사례 보고이고, 실제 3D 재구성·계산 이미징 방법론 논문은 10여 편입니다.</p>
+<p>Deep Learning Methods(106편, catch-all)는 대부분 이미징과 무관한 일반 ML/LLM/통신 논문이지만, 그 안에서 카메라 제어 3D/비디오 생성 가속·안정화 클러스터(FlashRender, Stabilizing Camera-Controlled NVS, OctWorld 등), 병리 파운데이션 모델 경량화 클러스터(TAP-Path, Exemplar 등), diffusion/DiT 파이프라인 효율화 클러스터(SPARK, DSAQuant, LeanGRPO)가 뚜렷하게 모였습니다. 계산광학 코어(Fourier Ptychography 0편, Lensless/Coded Imaging 3편 중 실제 신호 1편, Phase Imaging/Holography 8편 중 실제 신호 4~5편, Meta-Optics/Diffractive 8편 중 실제 신호 2편, Light-Field/Novel Sensors 1편 중 0편)는 오늘도 매우 얇습니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(9/3)의 결론은 "3D 재구성이 촬영 자체를 넘어 촬영 이후의 확장·활용 문제(못 찍은 시점 채우기, 압축, 재조명)로 무게중심을 옮기고 있다"였고, 여기에 diffusion/flow matching 추론 가속 3편과 정답 데이터 없이 학습하는 MRI/CT 복원 4편이 곁들여졌습니다. 오늘은 그 흐름이 완전히 새로운 방향으로 갈아탄 건 아니고, "촬영 이후 활용"이라는 질문이 한 단계 더 구체화됐습니다 — 어제는 "생성모델로 무엇을 채우거나 바꿀 수 있는가"였다면, 오늘은 "그 생성모델을 큰 카메라 움직임이나 긴 촬영 경로에서도 흔들림 없이, 그리고 훨씬 적은 계산으로 쓸 수 있는가"를 묻는 논문들(FlashRender, Stabilizing Camera-Controlled NVS, OctWorld)이 모였습니다. 즉 어제가 "생성모델이 무슨 일을 할 수 있는가"의 확장이었다면, 오늘은 "그 일을 실제 배포 조건에서 안정적으로 할 수 있는가"로 질문이 옮겨간 셈입니다. 또한 어제 확인된 "재학습 없이 diffusion/flow matching을 가속하는 흐름"이 오늘은 병리 파운데이션 모델 압축(TAP-Path 등)과 DiT 파이프라인 효율화(SPARK, DSAQuant)로 응용 범위가 넓어졌습니다 — 어제는 생성 샘플링 단계 수를 줄이는 데 집중했다면, 오늘은 모델 파라미터·활성값·양자화까지 포함해 "이미 학습된 모델을 어떻게 하면 더 싸게 돌릴까"라는 질문 전반으로 확장됐습니다. 반면 어제 강했던 "정답 데이터 없이 학습하는 MRI/CT 복원" 클러스터는 오늘 단일 논문(RARF, MRI inpainting)만 남아 잠시 쉬어가는 모습이고, 베이지안 불확실성 정량화 클러스터도 오늘은 이어지는 후속 논문이 확인되지 않았습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>카메라 경로를 지정하는 3D/비디오 생성이 재학습 없이 추론 시점에서 안정화·가속화됨</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2609.03563" target=_blank>FlashRender</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.03639" target=_blank>Stabilizing Camera-Controlled NVS</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.03919" target=_blank>OctWorld</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.04174" target=_blank>Zero-Shot Novel Depth Synthesis</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.03824" target=_blank>VI3</a> <span class=pill>CV</span>
+  </td>
+  <td>예전에는 카메라 경로를 지정해서 새 시점의 영상을 만드는 연구가 주로 "얼마나 그럴듯한 장면을 만드느냐"를 겨루는 학습 방법 경쟁이었다면, 오늘 모인 다섯 편은 이미 학습된 video diffusion·3D foundation model을 다시 학습시키지 않고도 더 안정적이고 빠르게 쓰는 쪽에 집중합니다. Stabilizing Camera-Controlled NVS는 카메라 이동을 잘게 쪼개 한 걸음씩 진행하는 것만으로 큰 카메라 움직임에서도 흔들림이 줄어든다는 걸 보이고, FlashRender는 소스 영상 표현을 목표 카메라 경로에 맞춰 정렬해 25배 적은 샘플링 단계로 기존 다단계 방법과 같은 품질을 냅니다. OctWorld는 이전에 생성한 영역을 다시 지나갈 때도 공간 일관성이 깨지지 않도록 octree 기반 3D 메모리를 두고, VI3와 Zero-Shot Novel Depth Synthesis는 이미 학습된 3D foundation model(VGGT 등)의 내부 표현을 IMU 신호나 latent diffusion으로 보정·확장해 새로운 능력을 얻어냅니다. 즉 "더 큰 생성 모델을 새로 학습시키자"가 아니라 "이미 있는 생성·3D 표현 모델을 촬영 조건이 까다로운 상황에서도 안정적으로 재활용하자"는 방향입니다.</td>
+  <td>High<br><small>서로 다른 저자군 5편이 "재학습 없이 카메라 제어 생성/3D 표현을 안정화·확장"이라는 같은 목표로 수렴하며, FlashRender와 Stabilizing Camera-Controlled NVS는 정량적 개선치(25배 가속, 18-20도 안정 한계)까지 제시</small></td>
+  <td>Stabilizing Camera-Controlled NVS의 소규모 autoregressive 카메라 스텝 분해를 랩의 sparse-view 3DGS 촬영 파이프라인에 적용해 카메라 이동 각도별 복원 안정성 곡선을 그리고, FlashRender의 RETA 정렬 아이디어를 랩 novel-view 렌더링 후처리 단계에 이식해 추론 단계 수 대비 품질 저하 곡선을 비교</td>
+</tr>
+<tr>
+  <td><strong>병리 파운데이션 모델을 더 크게 키우는 대신 가지치기·증류로 가볍게 배포하는 흐름</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2609.04071" target=_blank>TAP-Path</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.03947" target=_blank>Computationally Efficient Pathology Segmentation</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2609.03080" target=_blank>Exemplar</a> <span class=pill>CV</span>
+  </td>
+  <td>최근 병리(histopathology) 영상 해석은 Virchow2 같은 수억 파라미터급 파운데이션 모델을 그대로 가져다 쓰는 쪽으로 발전해 왔는데, 이런 모델은 실제 병원 스캐너 옆에서 대량의 whole-slide 이미지를 실시간으로 돌리기엔 계산 비용이 너무 큽니다. 오늘 모인 세 편은 모두 이 문제를 모델을 더 작게 새로 학습시키는 대신, 이미 학습된 큰 모델에서 필요한 부분만 남기는 방식으로 풉니다. TAP-Path는 Virchow2 인코더에서 검증 성능 기준으로 불필요한 transformer 블록을 통째로 제거하고 patch token도 솎아내, 파라미터를 25% 줄이면서도 원본보다 오히려 정확도가 조금 높은 결과(87.98% vs 86.89%)를 냅니다. Computationally Efficient Pathology Segmentation은 Virchow2 기반 teacher 모델의 지식을 작은 student 네트워크로 증류해 최대 10배 빠른 추론 속도를 얻고, Exemplar는 아예 큰 모델을 fine-tuning하지 않고 고정된 DINOv3 특징과 전통적인 필터 응답을 합쳐 소수의 라벨만으로 11개 생체 영상 데이터셋에서 경쟁력 있는 분할 성능을 냅니다. 세 논문 모두 "병리 AI의 다음 단계는 더 큰 모델이 아니라, 이미 있는 큰 모델을 병원 현장에서 실제로 돌릴 수 있게 가볍게 만드는 것"이라는 같은 판단을 보여줍니다.</td>
+  <td>High<br><small>서로 다른 저자군 3편이 모두 Virchow2 또는 동급 파운데이션 모델을 대상으로 가지치기·증류·frozen-feature 재활용이라는 같은 전략에 수렴하며, 세 편 모두 구체적 정량 수치(파라미터 25% 감소, 추론 10배 가속, IoU 0.782)를 제시</small></td>
+  <td>TAP-Path의 검증 기준 transformer 블록 제거를 랩이 쓰는 병리/조직 영상 파운데이션 모델 인코더에 적용해 파라미터-정확도 트레이드오프 곡선을 그리고, Exemplar의 frozen feature + classical filter 결합 헤드를 랩 보유 소량 라벨 biomedical 영상(현미경/조직) 데이터셋에 적용해 nnU-Net 대비 라벨 효율성을 비교</td>
+</tr>
+<tr>
+  <td><strong>diffusion/DiT 생성 파이프라인의 학습·추론 비용을 구조를 바꾸지 않고 줄이는 흐름</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2609.03813" target=_blank>SPARK</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.04031" target=_blank>DSAQuant</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.03528" target=_blank>LeanGRPO</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2609.03334" target=_blank>Laplacian Frequency Hierarchies</a> <span class=pill>CV</span>
+  </td>
+  <td>diffusion이나 Diffusion Transformer(DiT) 기반 생성 모델은 이미지·비디오 품질을 개선할 때마다 보통 fine-tuning이나 별도 adapter를 새로 붙여야 했는데, 오늘 나온 네 편은 모두 기존 구조는 그대로 두고 계산이 낭비되는 지점만 찾아 없애는 쪽으로 접근합니다. SPARK는 frozen DiT 기반 초해상도 모델 내부에서 소수의 활성값이 유독 크게 튀는 채널들을 찾아 그 채널만 입력에 맞춰 조절하는 것으로 fine-tuning 없이 화질을 개선하고, DSAQuant는 비디오 diffusion 모델을 양자화(quantization)할 때 노이즈 제거 단계별로 다르게 정렬해 기존 방법이 놓치던 디테일·질감 손실을 줄입니다. LeanGRPO는 diffusion 강화학습에서 롤아웃과 업데이트가 같은 신경망을 쓰는데도 타임스텝을 중복 계산하던 부분을 찾아 제거하고, Laplacian Frequency Hierarchies는 3D Gaussian Splatting 학습에서 저주파 구조를 먼저 맞춘 뒤 그 결과는 그대로 둔 채 고주파 디테일만 추가로 최적화해 Gaussian 개수가 계속 불어나는 문제를 줄입니다. 네 논문 모두 "모델을 다시 설계하자"가 아니라 "이미 있는 생성 파이프라인 안에서 실제로 낭비되는 계산이 어디인지 찾아 걷어내자"는 태도를 공유합니다.</td>
+  <td>Medium<br><small>서로 다른 4개 하위 문제(SR 활성화 변조, 비디오 양자화, RL 재계산, 3DGS 학습)에서 4편이 "구조 불변 + 낭비 계산 제거"라는 방향을 공유하지만, 응용이 흩어져 있어 단일 벤치마크로 수렴하지는 않음</small></td>
+  <td>SPARK의 활성값 기반 입력 조건부 변조를 랩의 frozen DiT 기반 위상 복원/초해상도 모델에 적용해 fine-tuning 없이 화질 개선이 재현되는지 확인하고, Laplacian Frequency Hierarchies의 주파수 단계별 3DGS 학습을 랩 3D 재구성 파이프라인에 적용해 Gaussian 개수 증가 곡선과 학습 시간을 baseline과 비교</td>
+</tr>
+<tr>
+  <td><strong>3DGS 학습의 구조적 병목(그래디언트 소실·대규모 항공 장면)을 정면으로 다루는 논문들</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2609.03534" target=_blank>TruncGradGS</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.03447" target=_blank>STARS-GS</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.03334" target=_blank>Laplacian Frequency Hierarchies</a> <span class=pill>CV</span>
+  </td>
+  <td>3D Gaussian Splatting은 이제 novel view synthesis의 사실상 표준 표현이 됐지만, 오늘 나온 세 편은 그 최적화 과정 자체에 아직 남아 있는 구조적 문제를 짚습니다. TruncGradGS는 Gaussian primitive에서 멀리 떨어진 픽셀일수록 그래디언트가 작아져 최적화에 제대로 반영되지 못하는 현상(그래디언트 소실)을 그래디언트 크기를 잘라내는(truncation) 방식으로 완화하고, STARS-GS는 넓은 항공 촬영 장면을 여러 구역으로 나눠 최적화할 때 하나로 이어져야 할 장면 요소가 구역 경계에서 끊기는 문제를 구조 인식 정규화로 보완하며, Laplacian Frequency Hierarchies는 주파수 단계별 학습으로 Gaussian 개수 폭증을 억제합니다. 세 논문 모두 3DGS가 널리 쓰이기 시작하면서 오히려 "잘 되는 것처럼 보이지만 실제로는 최적화가 불완전한" 지점들이 하나씩 드러나고 있다는 신호로 읽힙니다.</td>
+  <td>Medium<br><small>같은 3DGS 최적화 문제를 다루는 3편이 모였으나 각각 다른 하위 문제(그래디언트 소실·대규모 장면 분할·주파수 계층)를 다뤄 단일 벤치마크로 수렴하지 않음. 클러스터3과 대표 논문(Laplacian Frequency Hierarchies) 일부 중복</small></td>
+  <td>TruncGradGS의 그래디언트 truncation을 랩의 3DGS 재구성 파이프라인에 적용해 원거리 디테일 복원 품질 변화를 측정하고, STARS-GS의 구조 인식 정규화를 랩의 대규모 조직 슬라이드 스티칭·모자이킹 파이프라인에 참고 사례로 검토</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ 참고: 5행을 채울 만한 독립적인 다섯 번째 클러스터는 오늘 근거가 부족했습니다. 정답 데이터 없이 학습하는 MRI 복원 흐름(RARF)과 병리 VQA 벤치마크(MetaStructAtlas) 등은 오늘 각각 단발 논문이라 "관찰 중" 항목으로만 아래 Watch Lens/부록에 남겼습니다.</small></p>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 버킷 내 편수 0편</strong> — classify.py가 이 버킷에 배정한 논문이 없습니다. 랩 핵심 ROI 중 가장 공백이 큰 영역입니다.</li>
+    <li><strong>Lensless/Coded Imaging — 3편 중 실제 신호 1편</strong> — <a href="https://doi.org/10.1051/0004-6361/202661472" target=_blank>On-sky demonstration of a vector Zernike wavefront sensor in a cascaded adaptive optics system</a> [JNL, Astronomy &amp; Astrophysics]은 lensless/coded aperture는 아니지만 파면 센서(wavefront sensor) 기반 적응광학 하드웨어 논문으로, 2단 적응광학계에서 Strehl ratio를 최대 16%p 개선한 실측 결과를 보고합니다. 나머지 2편(원격탐사 CLIP 사전학습, 근적외선 확산판 산란 특성)은 lensless/coded imaging과 직접 관련이 없습니다.</li>
+    <li><strong>Phase Imaging/Holography — 8편 중 실제 신호 4~5편</strong> — <a href="https://doi.org/10.70401/lma.2026.0018" target=_blank>Optical field modulation for phase imaging: A unified framework for interferometric and diffractive strategies</a> [JNL]은 간섭법과 회절법 기반 위상 이미징을 하나의 프레임워크로 정리하는 리뷰이고, <a href="https://doi.org/10.1016/j.cam.2026.118120" target=_blank>PRDeamNet</a>과 <a href="https://doi.org/10.1364/oe.612328" target=_blank>PRI-Net</a>은 각각 phase retrieval과 reflective digital holography에 딥러닝 사전(prior)을 적용한 방법론 논문(제목 기반, 초록 미공개)입니다. <a href="https://doi.org/10.1364/prj.607096" target=_blank>Terahertz phase imaging via galvanometric scanning illumination</a>과 <a href="https://doi.org/10.1103/c1g7-czdy" target=_blank>Quantum remote multichannel meta-holography with entangled photons</a>도 실제 위상 이미징/홀로그래피 하드웨어 논문입니다. 오늘 8편 중 계산광학 코어와 가장 밀도 높게 겹치는 버킷입니다.</li>
+    <li><strong>Meta-Optics/Diffractive — 8편 중 이미징 직접 관련 2편</strong> — <a href="https://doi.org/10.1002/lpor.71849" target=_blank>Full-Field-of-View Metalens Scanner Optical Module for High-Speed Imaging Toward Miniaturized Two-Photon Microscopy</a> [JNL, Laser &amp; Photonics Reviews]는 GaN 메타표면 스캐너로 소형 이광자 현미경의 시야각·수차 문제를 광학 하드웨어 단에서 해결한 논문이고, <a href="https://doi.org/10.1002/lpor.71854" target=_blank>Diffractive Signal-Processing Nonlocal Metasurface</a>도 회절 메타표면 기반 신호처리 논문입니다. 나머지 6편은 대부분 통신 안테나·전자파 흡수체 응용으로 이미징과 거리가 있습니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 1편, 신호 없음</strong> — 유일한 논문(<a href="https://doi.org/10.1364/ao.608268" target=_blank>Event-based Scheimpflug LiDAR</a>)은 event camera 기반 LiDAR 레인지파인딩으로 light-field/plenoptic 촬영과는 다른 갈래이지만, event-based novel sensor라는 점에서 광의의 관련성은 있습니다. 단발이라 클러스터로 올리지 않았습니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 카메라 제어 3D/비디오 생성 안정화·가속(FlashRender, Stabilizing Camera-Controlled NVS, OctWorld, VI3, Zero-Shot Novel Depth Synthesis), 병리 파운데이션 모델 경량화(TAP-Path, Computationally Efficient Pathology Segmentation, Exemplar), diffusion/DiT 파이프라인 효율화(SPARK, DSAQuant, LeanGRPO), 3DGS 최적화 구조 문제(TruncGradGS, STARS-GS, Laplacian Frequency Hierarchies)</li>
+  <li><strong>저널 전용</strong>: 위상 이미징/홀로그래피 방법론 리뷰 및 하드웨어(간섭·회절 통합 프레임워크, terahertz phase imaging, quantum meta-holography), 메타렌즈 스캐너 기반 이광자 현미경 소형화, 적응광학 vector Zernike 파면 센서 실측, JoVE 습식 염색 프로토콜 다수(계산 이미징과 무관), 각종 임상 CT/MRI/OCT/PET 사례 보고</li>
+  <li><strong>공통 키워드</strong>: efficient/lightweight(arXiv는 파운데이션 모델·diffusion 파이프라인 압축 중심, 저널은 광학 하드웨어 소형화 중심으로 층위가 다름), reconstruction(arXiv는 3D/novel-view 방법론, 저널은 임상 사례 보고 위주)</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 "이미 학습된 모델을 배포 조건에서 더 잘 쓰자"는 효율화 축에 강하게 집중했고, 저널은 위상 이미징·메타옵틱스 하드웨어라는 계산광학 코어 신호가 어제보다 조금 더 뚜렷했습니다(간섭·회절 통합 리뷰, 메타렌즈 스캐너). 다만 같은 구체적 아이디어가 arXiv·저널 양쪽에서 동시에 나온 명확한 크로스오버 페어는 오늘도 확인되지 않았습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 카메라 경로를 지정하는 3D/비디오 생성이 재학습 없이 추론 시점에서 안정화·가속화됨</h3>
+  <p>FlashRender(25배 가속), Stabilizing Camera-Controlled NVS(작은 스텝 분해로 안정화), OctWorld(octree 3D 메모리), VI3·Zero-Shot Novel Depth Synthesis(3D foundation model 내부 표현 재활용) 다섯 편이 같은 날 나오며, 카메라 제어 생성 연구의 무게중심이 새 모델 학습에서 기존 모델을 추론 시점에 더 안정적으로 쓰는 쪽으로 옮겨가고 있습니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 저자군 5편이 같은 목표로 수렴하며 FlashRender·Stabilizing Camera-Controlled NVS는 정량 수치까지 제시</p>
+</div>
+
+<div class=ins>
+  <h3>2. 병리 파운데이션 모델을 더 크게 키우는 대신 가지치기·증류로 가볍게 배포하는 흐름</h3>
+  <p>TAP-Path(파라미터 25% 감소), Computationally Efficient Pathology Segmentation(추론 10배 가속), Exemplar(few-shot frozen feature 재활용) 세 편이 모두 Virchow2급 파운데이션 모델을 실제 배포 가능한 크기로 줄이는 전략을 공유하며, 병리 AI 연구의 초점이 모델 확대에서 배포 효율로 옮겨가고 있습니다.</p>
+  <p class=conf-note>Confidence: High — 3편이 같은 전략(가지치기·증류·frozen feature)에 수렴하고 모두 구체 수치 제시</p>
+</div>
+
+<div class=ins>
+  <h3>3. diffusion/DiT 생성 파이프라인의 학습·추론 비용을 구조를 바꾸지 않고 줄이는 흐름</h3>
+  <p>SPARK(frozen DiT 활성화 변조), DSAQuant(단계별 정렬 양자화), LeanGRPO(중복 재계산 제거), Laplacian Frequency Hierarchies(3DGS 주파수 단계 학습) 네 편이 같은 날 나오며, 생성 파이프라인 효율화가 모델 재설계보다 기존 파이프라인 안의 낭비 계산 제거로 향하고 있습니다.</p>
+  <p class=conf-note>Confidence: Medium — 4개 하위 문제에서 방향은 같지만 단일 벤치마크로 수렴하지는 않음</p>
+</div>
+
+<div class=ins>
+  <h3>4. 3DGS 학습의 구조적 병목을 정면으로 다루는 논문들이 같은 날 모임</h3>
+  <p>TruncGradGS(그래디언트 소실 완화), STARS-GS(대규모 항공 장면 구역 경계 문제), Laplacian Frequency Hierarchies(Gaussian 개수 폭증 억제) 세 편이 3DGS 최적화 자체에 남아있는 구조적 결함을 짚으며, 3DGS가 표준 표현으로 자리잡을수록 오히려 세부 최적화 결함이 하나씩 드러나고 있음을 보여줍니다.</p>
+  <p class=conf-note>Confidence: Medium — 같은 표현(3DGS)에 대한 서로 다른 최적화 병목을 다뤄 단일 축으로 수렴하지 않음</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. Stabilizing Camera-Controlled NVS/FlashRender의 추론 시점 안정화·가속을 랩 novel-view 파이프라인에 적용</h3>
+  <p>카메라 이동을 잘게 쪼개는 안정화 기법과 few-step 렌더링 가속을 랩의 sparse-view 3D 재구성 및 novel-view 합성 파이프라인에 적용해, 재학습 없이 큰 카메라 움직임에서도 안정성과 속도를 동시에 개선할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Stabilizing Camera-Controlled NVS(CamTrol++), FlashRender 방법 재현</li>
+    <li>공통 benchmark: 랩 보유 sparse-view 3DGS 촬영 데이터셋 + RealEstate10K/MegaScene 공개 데이터</li>
+    <li>비교축: 카메라 스텝 크기별 복원 안정성(기하 일관성), 추론 단계 수 대비 렌더링 시간</li>
+    <li>실패해도 남는 결과: 랩 데이터에 대한 카메라 이동 각도-안정성 곡선</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. TAP-Path/Computationally Efficient Pathology Segmentation의 압축 전략을 랩 병리·조직 영상 모델에 적용</h3>
+  <p>검증 기준 transformer 블록 제거와 지식 증류를 랩이 쓰는 병리/조직 영상 파운데이션 모델에 적용해, 정확도 손실 없이 실제 스캐너 옆에서 실시간으로 돌릴 수 있는 크기로 줄일 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: TAP-Path, Computationally Efficient Pathology Segmentation 방법 재현</li>
+    <li>공통 benchmark: 랩 보유 whole-slide 조직 영상 데이터셋</li>
+    <li>비교축: 파라미터/FLOPs 감소율 대비 정확도, 추론 처리량(throughput)</li>
+    <li>실패해도 남는 결과: 랩 파운데이션 모델의 블록별 중요도 순위표</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. SPARK의 frozen DiT 활성화 변조를 랩 위상 복원/초해상도 파이프라인에 적용</h3>
+  <p>SPARK가 제안한 소수 활성 채널 기반 입력 조건부 변조를 랩의 frozen diffusion transformer 기반 복원 모델에 적용해, fine-tuning 없이 화질을 개선할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: SPARK, DSAQuant 방법 재현</li>
+    <li>공통 benchmark: 랩 QPI/위상 복원 검증 데이터셋</li>
+    <li>비교축: fine-tuning 유무에 따른 PSNR/LPIPS, 양자화 전후 디테일 보존도</li>
+    <li>실패해도 남는 결과: 랩 frozen DiT 모델의 활성값 채널 분포 분석 리포트</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>D. Laplacian Frequency Hierarchies의 주파수 단계별 학습을 랩 3DGS 재구성 파이프라인에 적용</h3>
+  <p>저주파 구조를 먼저 고정하고 고주파 디테일만 추가로 최적화하는 계층적 학습 방식을 랩의 3D Gaussian Splatting 파이프라인에 적용해, Gaussian 개수 증가를 억제하면서 학습 시간을 줄일 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Laplacian Frequency Hierarchies, TruncGradGS 방법 재현</li>
+    <li>공통 benchmark: 랩 3D 재구성 검증 데이터셋</li>
+    <li>비교축: Gaussian 개수 증가 곡선, 학습 시간 대비 렌더링 품질</li>
+    <li>실패해도 남는 결과: 랩 3DGS 파이프라인의 주파수 단계별 학습 baseline 비교표</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>E. Full-Field-of-View 메타렌즈 스캐너를 랩 소형 이미징 모듈 설계에 참고 사례로 검토</h3>
+  <p>GaN 메타표면 기반 메타렌즈 스캐너가 이광자 현미경 대물렌즈의 부피·수차 문제를 광학 하드웨어 단에서 해결한 사례를 랩의 소형 계산 이미징 모듈(내시경·휴대형 현미경) 광학계 설계에 참고 사례로 검토해, 메타표면 기반 스캐닝이 랩 하드웨어 소형화에 적용 가능한지 판단합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상: Full-Field-of-View Metalens Scanner 논문 본문·설계 파라미터 확인</li>
+    <li>공통 benchmark: 랩 보유 소형 이미징 모듈 광학계 스펙(시야각, 수차, 부피)과 비교</li>
+    <li>비교축: 메타렌즈 스캐너 vs 기존 대물렌즈의 시야각·수차·부피 트레이드오프</li>
+    <li>실패해도 남는 결과: 메타표면 스캐너 적용 가능성에 대한 1차 타당성 메모</li>
+  </ul>
+</div>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘은 평일 daily 실행이라 예측 회고는 생략합니다(예측 회고는 매주 월요일 별도 weekly 실행이 담당합니다).</p>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Virtual Staining/Pathology(73편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:4%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:11%"></span></span><span class=n>8편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:11%"></span></span><span class=n>8편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:1%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:62%"></span></span><span class=n>45편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>73편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:22%"></span></span><span class=n>16편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>106편</span></div>
+
+<p><small>⚠️ 참고: Virtual Staining/Pathology 73편 중 63편은 Journal of Visualized Experiments(JoVE)의 습식 실험 프로토콜 논문(H&amp;E, Giemsa, silver staining 등 실제 조직염색 기법 설명)으로, 컴퓨테이셔널 virtual staining과 무관한 키워드 오탐입니다. 실제 계산 이미징 신호는 3~4편(TAP-Path, Computationally Efficient Pathology Segmentation, Exemplar, MetaStructAtlas)에 불과합니다. Tomography/3D Imaging 45편 중 실제 계산 이미징 신호는 약 12~14편(카메라 제어 3D/비디오 생성 클러스터 일부 + 3DGS 최적화 클러스터 + Tier B 논문들)이고 나머지는 대부분 CT/MRI/OCT/PET 임상 사례 보고입니다. Reconstruction/Inverse Problems 16편 중 실제 신호는 약 4~5편이고 나머지는 PINN 반도체 소자 시뮬레이션, 무선통신, 게임이론 등 "reconstruction/inverse" 키워드만 겹친 오탐입니다. Meta-Optics/Diffractive 8편 중 이미징 직접 관련은 2편뿐이며 나머지는 통신 안테나·전자파 흡수체 응용입니다. Deep Learning Methods 106편 중 이미징 관련 대표 몇 편만 표시했으며(catch-all 과대표 방지), 나머지는 LLM·에이전트·로봇·통신·금융 등에 흩어져 있습니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Lensless/Coded Imaging (3편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1051/0004-6361/202661472" target=_blank>On-sky demonstration of a vector Zernike wavefront sensor in a cascaded adaptive optics system</a></strong> [JNL · Astronomy &amp; Astrophysics]<br>
+  왜 주요: 2단 적응광학계에서 vector Zernike 파면 센서를 실제 망원경에 적용해 Strehl ratio를 최대 16%p 개선 — 파면 센싱 기반 계산 이미징 하드웨어 실증
+</div>
+
+<h3>Phase Imaging/Holography (8편 중 관련 4~5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.70401/lma.2026.0018" target=_blank>Optical field modulation for phase imaging: A unified framework for interferometric and diffractive strategies</a></strong> [JNL]<br>
+  왜 주요: 간섭법·회절법 기반 위상 이미징을 하나의 프레임워크로 정리하는 리뷰 — 계산광학 코어 방법론 지도 역할
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.612328" target=_blank>PRI-Net: two-stage complex-field restoration and height inversion for single-hologram morphology reconstruction in reflective digital holography</a></strong> [JNL]<br>
+  왜 주요: 단일 홀로그램으로부터 복소장 복원과 높이 역산을 2단계로 수행하는 딥러닝 기반 반사형 디지털 홀로그래피 방법(제목 기반, 초록 미공개)
+</div>
+
+<h3>Meta-Optics/Diffractive (8편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71849" target=_blank>Full-Field-of-View Metalens Scanner Optical Module for High-Speed Imaging Toward Miniaturized Two-Photon Microscopy</a></strong> [JNL · Laser &amp; Photonics Reviews]<br>
+  왜 주요: GaN 메타표면 스캐너로 소형 이광자 현미경의 시야각·수차 한계를 광학 하드웨어 단에서 해결
+</div>
+
+<h3>Tomography/3D Imaging (45편 중 관련 대표 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.03639" target=_blank>Stabilizing Camera-Controlled Novel View Synthesis at Inference Time</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — 재학습 없이 카메라 스텝 분해만으로 대형 카메라 움직임 안정화
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.03563" target=_blank>FlashRender</a></strong> [CV]<br>
+  왜 주요: 오늘의 must-read — 25배 낮은 샘플링 비용으로 다단계 baseline과 동등한 품질
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.03919" target=_blank>OctWorld</a></strong> [CV]<br>
+  왜 주요: octree 기반 3D 메모리로 긴 카메라 경로에서도 공간 일관성 유지
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.03534" target=_blank>TruncGradGS</a></strong> [CV]<br>
+  왜 주요: 3DGS 그래디언트 소실 문제를 truncation으로 완화하는 최적화 개선
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.03334" target=_blank>Laplacian Frequency Hierarchies</a></strong> [CV]<br>
+  왜 주요: 주파수 단계별 학습으로 3DGS Gaussian 개수 폭증 억제
+</div>
+
+<h3>Virtual Staining/Pathology (73편 중 관련 대표 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.04071" target=_blank>TAP-Path</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘의 must-read — Virchow2 인코더를 25% 압축하면서 정확도는 오히려 소폭 상승
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.03947" target=_blank>Computationally Efficient Pathology Segmentation</a></strong> [IV]<br>
+  왜 주요: 지식증류로 병리 분할 모델 추론 처리량을 최대 10배 향상
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.03080" target=_blank>Exemplar</a></strong> [CV]<br>
+  왜 주요: frozen feature + classical filter 결합으로 11개 생체 영상 데이터셋에서 few-shot 분할 SOTA급 성능
+</div>
+
+<h3>Reconstruction/Inverse Problems (16편 중 관련 대표 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.03343" target=_blank>Learning Informative Prior with Infinite-Dimensional Continuous Normalizing Flow for Bayesian Inverse Problem</a></strong> [LG]<br>
+  왜 주요: 무한차원 베이지안 역문제에 continuous normalizing flow 기반 사전(prior)을 도입한 이론 논문
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.02921" target=_blank>Cadzow Projected Gradient Descent for Generalized Finite Rate of Innovation</a></strong> [SP]<br>
+  왜 주요: 구조적 저계수 최적화 기반 신호 복원 알고리즘의 정량적 지역 수렴 이론 제시
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/ima.70435" target=_blank>HDS-Net: A Hybrid Deformable-Swin Network for Dual-Domain Sparse-View CT Reconstruction</a></strong> [JNL]<br>
+  왜 주요: sparse-view CT를 sinogram·이미지 두 도메인에서 동시에 복원하는 하이브리드 트랜스포머 구조
+</div>
+
+<h3>Deep Learning Methods — 이미징 관련 대표 3편 (106편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.03813" target=_blank>SPARK</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터3 대표 — frozen DiT 활성값 변조만으로 fine-tuning 없이 초해상도 화질 개선
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.04174" target=_blank>Zero-Shot Novel Depth Synthesis Using 3D Foundation Models Scene Representations</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — 3D foundation model 내부 표현에 latent diffusion을 적용해 새 시점 depth를 zero-shot 예측
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.03956" target=_blank>RARF: Region-Aware Rectified Flows for 3D Brain MRI Inpainting</a></strong> [CV]<br>
+  왜 주요: BraTS 2026 챌린지 제출작 — rectified flow 기반 3D MRI 병변 영역 인페인팅(관찰 중, 단발)
+</div>
+
+<hr>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<table>
+<thead>
+<tr><th>벤치마크</th><th>지표</th><th>값</th><th>논문</th></tr>
+</thead>
+<tbody>
+<tr><td>FlashRender 카메라 제어 few-step 비디오 렌더링</td><td>다단계 baseline 대비 샘플링 비용</td><td>25배 감소, 품질 동등</td><td><a href="https://arxiv.org/abs/2609.03563" target=_blank>arXiv</a></td></tr>
+<tr><td>TAP-Path 병리 파운데이션 모델 압축 (Virchow2, 32-class 벤치마크)</td><td>파라미터/FLOPs 감소 대비 정확도</td><td>파라미터 -25%, FLOPs -35%, 정확도 87.98% (원본 86.89%)</td><td><a href="https://arxiv.org/abs/2609.04071" target=_blank>arXiv</a></td></tr>
+<tr><td>Computationally Efficient Pathology Segmentation (Virchow2 증류)</td><td>추론 처리량 향상</td><td>최대 10배</td><td><a href="https://arxiv.org/abs/2609.03947" target=_blank>arXiv</a></td></tr>
+<tr><td>Exemplar few-shot 생체영상 분할 (11개 데이터셋)</td><td>foreground IoU/centreline Dice</td><td>0.782 (fused, vs 0.693/0.672 단일 소스)</td><td><a href="https://arxiv.org/abs/2609.03080" target=_blank>arXiv</a></td></tr>
+<tr><td>Stabilizing Camera-Controlled NVS (CamTrol++)</td><td>안정적인 스텝당 카메라 이동 한계</td><td>~18-20도까지 안정, 이후 저하</td><td><a href="https://arxiv.org/abs/2609.03639" target=_blank>arXiv</a></td></tr>
+</tbody>
+</table>
+
+<h2>🔀 크로스오버 페어</h2>
+<p>오늘은 arXiv-저널 간 뚜렷한 크로스오버 페어가 확인되지 않았습니다. 대신 arXiv 내부에서 카메라 제어 3D/비디오 생성(클러스터1)과 diffusion/DiT 파이프라인 효율화(클러스터3)가 서로 다른 응용임에도 "이미 학습된 생성 모델을 재학습 없이 더 안정적이고 싸게 쓰자"는 동일한 방향을 독립적으로 보였다는 점이 오늘의 구조적 유사성입니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] FlashRender: Few-Step Generative Rendering via Camera-Controlled Video MeanFlow — arXiv 2609.03563</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> 미리 학습된 video diffusion 모델로 카메라 경로를 바꿔가며 영상을 다시 렌더링하는 기존 방법들은 여러 단계를 거쳐야 그럴듯한 결과가 나와, 실제 서비스에 쓰기엔 지연시간이 큽니다. 이 논문은 그 지연시간을 25배 줄이면서도 품질은 유지하는 방법을 제시합니다.</p>
+  <p><strong>핵심:</strong> 저자들은 샘플링 단계마다 카메라 제어 방식이 조금씩 달라지는 것이 이산화 오차(discretization error)의 주요 원인이라는 점을 찾아내고, 소스 영상의 내부 표현을 목표 영상의 특징과 정렬시키는 방법(RETA)으로 이 문제를 직접 해결합니다. 이렇게 정렬된 표현 위에서 노이즈 제거 궤적의 곡률이 줄어들기 때문에, 그 다음 단계인 MeanFlow 목적함수 미세조정과 on-policy 궤적 증류가 훨씬 효과적으로 작동합니다. 세 기법이 서로 보완적으로 작동해 최종적으로 다단계 baseline과 동등한 품질·기하 일관성을 25배 적은 샘플링 비용으로 달성하고, 학습 때 보지 못한 카메라 경로에서도 카메라 조종 능력이 오히려 더 좋다고 보고합니다.</p>
+  <p><strong>주의:</strong> "우수한 카메라 조종성"이라는 주장은 abstract 기준이라 구체적 정량 비교표는 본문 확인이 필요합니다. 어떤 video diffusion backbone에 이 방법이 일반화되는지도 본문에서 확인해야 합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] TAP-Path: Task-Adaptive Structural and Token Pruning for Efficient and Trustworthy Pathology Foundation Models — arXiv 2609.04071</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> Virchow2 같은 병리 파운데이션 모델은 수억 개의 파라미터를 갖고 있어 표현력은 뛰어나지만, 실제로 병원 스캐너 옆에서 대량의 whole-slide 이미지를 빠르게 처리해야 하는 배포 환경에서는 계산 비용이 걸림돌입니다. 이 논문은 별도의 작은 모델을 처음부터 다시 학습(distillation)시키는 대신, 이미 학습된 큰 모델 자체를 직접 깎아내는 방식으로 이 문제를 풉니다.</p>
+  <p><strong>핵심:</strong> 검증 데이터 기준으로 어떤 transformer 블록이 실제로 성능에 기여하는지를 판단해 불필요한 블록을 물리적으로 제거하고, 입력에 따라 필요 없는 patch token도 함께 솎아냅니다. 이렇게 32개 블록 중 24개, patch token의 70%만 남긴 결과, 인코더 파라미터는 25% 줄고 연산량(FLOPs)은 35% 줄었는데도 32-클래스 병리 분류 벤치마크에서 정확도(87.98%)가 원본 Virchow2(86.89%)보다 오히려 높게 나왔습니다. 별도로 수집한 433건의 외부(CPTAC) 데이터에서도 91% 이상의 정확도를 유지해, 배포 환경이 바뀌어도 성능이 잘 유지된다는 점을 보여줍니다.</p>
+  <p><strong>주의:</strong> 32-클래스 벤치마크 하나와 외부 검증 하나에 기반한 결과라, 더 다양한 조직 유형·염색 프로토콜에서도 같은 압축률이 유지되는지는 본문과 후속 검증이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] Virtual Staining/Pathology 73건 중 63건이 JoVE의 습식 실험 프로토콜(H&amp;E·Giemsa·silver staining 등 실제 조직염색 기법 설명)로, 컴퓨테이셔널 virtual staining과 무관한 키워드 오탐입니다. 버킷 편수와 실제 계산 이미징 신호 사이의 괴리가 오늘 특히 큽니다. Tomography/3D Imaging 45건 중 약 30건, Reconstruction/Inverse Problems 16건 중 약 11건도 비슷한 키워드 오탐(임상 사례 보고이거나 무관 분야가 "tomography"/"reconstruction" 키워드로 우연히 매칭)입니다.</p>
+  <p>[Dataset risk] Fourier Ptychography/Microscopy는 오늘 버킷 배정 자체가 0편입니다. Lensless/Coded Imaging·Light-Field/Novel Sensors도 실제 신호는 0~1편 수준으로, 랩 ROI 핵심 영역에 대한 외부 신호가 구조적으로 부족합니다.</p>
+  <p>[Claim risk] 저널 논문 다수(PRDeamNet, PRI-Net, Terahertz phase imaging 등)가 Crossref 초록 미공개 상태로, 제목만으로 버킷·워치렌즈를 판단했으므로 본문 확인 전 배치가 부정확할 수 있습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] TAP-Path의 "압축 후에도 정확도가 오히려 상승"이라는 결과는 표준편차가 작게(±0.067%) 보고돼 있지만, 단일 32-클래스 벤치마크에 기반한 결과라 더 다양한 병리 도메인에서도 재현되는지 본문·후속 검증이 필요합니다.</p>
+  <p>[Baseline risk] FlashRender의 "even under out-of-distribution target camera trajectories" 주장은 abstract 상 정성적 표현이라, OOD 카메라 경로에서의 구체적 정량 비교는 본문 확인이 필요합니다.</p>
+  <p>[Dataset risk] Exemplar의 "54 of 55 method-dataset comparisons"라는 우위 주장은 5개 few-shot baseline과의 비교에 한정돼 있어, 최신 대형 foundation-model 기반 segmenter와의 비교는 빠져 있습니다.</p>
+  <p>[Metric risk] 오늘 클러스터4(3DGS 최적화)의 TruncGradGS·STARS-GS는 abstract 기준으로는 정성적 개선 표현이 대부분이라, 정량적 비교표를 만들려면 본문의 표를 직접 확인해야 합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Virtual Staining/Pathology JoVE 프로토콜 약 63편</strong> [JNL] — H&amp;E, Giemsa, silver staining 등 실제 습식 염색 기법 설명으로 계산 이미징 방법론과 무관합니다.</li>
+    <li><strong>Tomography/3D Imaging 임상 사례 약 30편</strong> [JNL] — 관상동맥 OCT, 부비동 CBCT, 갑상선 PET/CT 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
+    <li><strong>Reconstruction/Inverse Problems 오탐 약 11편</strong> [주로 arXiv] — TCAD 반도체 소자 시뮬레이션, 5G 수신기, 게임이론 등 "reconstruction/inverse" 키워드만 겹치는 일반 공학/ML 논문입니다.</li>
+    <li><strong>Meta-Optics/Diffractive 통신·센서 6편</strong> [JNL] — 지하철 PIS 안테나, ITO 기반 전자파 흡수체 등 통신·센싱 응용으로 이미징과 거리가 있습니다.</li>
+    <li><strong>RARF: Region-Aware Rectified Flows for 3D Brain MRI Inpainting</strong> [CV] — BraTS 챌린지 제출작으로 흥미롭지만 오늘은 단발 논문이라 클러스터로 올리지 않았습니다. 후속 관찰이 필요합니다.</li>
+    <li><strong>Deep Learning Methods 내 일반 ML 논문 다수</strong> [arXiv] — 106편 중 상당수가 LLM·에이전트·통신·금융 등으로 이미징과 무관합니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy — 오늘 배정 0편</h3>
+<p><small>classify.py 기준으로 오늘 이 버킷에 배정된 논문이 없습니다. 랩 ROI 핵심 공백입니다.</small></p>
+
+<h3>Lensless/Coded Imaging (3편) — 관련 1편</h3>
+<div class=roi-item>
+  <strong>On-sky demonstration of a vector Zernike wavefront sensor in a cascaded adaptive optics system</strong> [JNL]<br>
+  문제: 고성능 적응광학계의 파면 센서가 낮은 광자 수 조건에서 민감도·동적 범위를 동시에 만족하기 어려움 / 방법: vector Zernike 파면 센서를 2단 적응광학계 후단에 배치해 실측 검증 / 의미: Strehl ratio 최대 16%p 개선, 파면 센싱 기반 계산 이미징 하드웨어 실증 / 우선순위: Read
+</div>
+<p><small>나머지 2편(원격탐사 CLIP 사전학습, 근적외선 확산판 산란 특성)은 lensless/coded imaging과 직접 관련이 없어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Phase Imaging/Holography (8편) — 관련 대표 3편</h3>
+<div class=roi-item>
+  <strong>Optical field modulation for phase imaging: A unified framework for interferometric and diffractive strategies</strong> [JNL]<br>
+  문제: 간섭법·회절법 기반 위상 이미징 전략들이 서로 다른 틀로 다뤄져 옴 / 방법: 광학장 변조 관점에서 두 전략을 통합하는 프레임워크 제시 / 의미: 계산광학 코어 방법론 지도 역할 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>PRI-Net: two-stage complex-field restoration and height inversion for single-hologram morphology reconstruction in reflective digital holography</strong> [JNL]<br>
+  문제: 단일 홀로그램에서 복소장과 표면 높이를 동시에 복원하기 어려움 / 방법: 2단계 딥러닝 복원(복소장 복원 후 높이 역산) (제목 기반, 초록 미공개) / 의미: 반사형 디지털 홀로그래피 표면 형상 복원 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong>PRDeamNet: Adaptive Consistency Prior based on Deep Network for Phase Retrieval</strong> [JNL]<br>
+  문제: phase retrieval에 딥러닝 사전(prior)을 적용할 때 데이터 일관성 유지가 어려움 / 방법: 적응형 일관성 사전 기반 딥네트워크 (제목 기반, 초록 미공개) / 의미: phase retrieval 방법론 갱신 / 우선순위: Skim-only
+</div>
+<p><small>나머지 5편(terahertz phase imaging, quantum meta-holography, x-ray 광학 열-변형 이미징, 굴절식 적응광학, diffractive nonlocal metasurface)은 하드웨어·응용이 다양해 개별 bullet을 생략합니다.</small></p>
+
+<h3>Meta-Optics/Diffractive (8편) — 관련 2편</h3>
+<div class=roi-item>
+  <strong>Full-Field-of-View Metalens Scanner Optical Module for High-Speed Imaging Toward Miniaturized Two-Photon Microscopy</strong> [JNL]<br>
+  문제: 소형 이광자 현미경의 대물렌즈가 부피·수차 제약으로 시야각이 제한됨 / 방법: GaN 메타표면 기반 메타렌즈 스캐너 모듈 설계 / 의미: 광학 하드웨어 단에서 시야각·수차 문제 해결 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Diffractive Signal-Processing Nonlocal Metasurface Enabled by Spatial-Momentum Domain Phase-Amplitude Decoupling</strong> [JNL]<br>
+  문제: 회절 비국소 메타표면에서 공간 파면 제어와 운동량 영역 신호처리를 동시에 얻기 어려움 / 방법: 공간-운동량 영역 위상-진폭 분리(decoupling) / 의미: 회절 기반 광학 신호처리 소자 / 우선순위: Read
+</div>
+<p><small>나머지 6편(지하철 PIS 안테나, ITO 전자파 흡수체, 메타렌즈 굴절률 강건성, 카이랄 메타표면 이온빔 조사)은 통신·센싱 응용이거나 이미징과 거리가 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Tomography/3D Imaging — 관련 대표 5편</h3>
+<div class=roi-item>
+  <strong>FlashRender</strong> [arXiv]<br>
+  문제: 카메라 제어 비디오 재렌더링이 다단계 생성으로 지연시간이 큼 / 방법: 표현 정렬(RETA) + MeanFlow + on-policy 궤적 증류 / 의미: 오늘의 must-read, 25배 가속 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong>Stabilizing Camera-Controlled Novel View Synthesis at Inference Time</strong> [arXiv]<br>
+  문제: 훈련 없는 카메라 제어 NVS가 큰 카메라 움직임에서 불안정 / 방법: 카메라 이동을 작은 autoregressive 스텝으로 분해 / 의미: 클러스터1 대표, 18-20도까지 안정 유지 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>OctWorld</strong> [arXiv]<br>
+  문제: 긴 카메라 경로에서 이전에 생성한 영역을 다시 지날 때 공간 일관성이 깨짐 / 방법: octree 기반 적응형 3D 메모리(OctMap) / 의미: 클러스터1 대표, 장거리 world-consistent 비디오 생성 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>TruncGradGS</strong> [arXiv]<br>
+  문제: 3DGS 최적화에서 primitive에서 먼 픽셀의 그래디언트가 소실됨 / 방법: 그래디언트 truncation 기반 업데이트 / 의미: 클러스터4 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>STARS-GS</strong> [arXiv]<br>
+  문제: 대규모 항공 장면 3DGS가 구역 분할 시 장면 요소가 경계에서 끊김 / 방법: 구조 인식 정규화 기반 대규모 표면 복원 / 의미: 클러스터4 인접 / 우선순위: Read
+</div>
+<p><small>나머지 약 40편은 관상동맥/부비동/갑상선 등 임상 CT·MRI·OCT·PET 사례 보고와 전기 임피던스 단층촬영 산업 응용으로 계산 이미징 방법론과 거리가 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology — 관련 3편</h3>
+<div class=roi-item>
+  <strong>TAP-Path</strong> [arXiv]<br>
+  문제: 병리 파운데이션 모델이 수억 파라미터로 배포 비용이 큼 / 방법: 검증 기준 transformer 블록·token 가지치기 / 의미: 오늘의 must-read, 파라미터 25% 감소하면서 정확도 소폭 상승 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong>Computationally Efficient Pathology Segmentation using Knowledge Distillation from Foundation Models</strong> [arXiv]<br>
+  문제: 병리 분할에 파운데이션 모델을 그대로 쓰면 배포 비용이 큼 / 방법: Virchow2 teacher에서 경량 student로 지식증류 / 의미: 클러스터2 대표, 추론 처리량 최대 10배 향상 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Exemplar</strong> [arXiv]<br>
+  문제: 새 생체 영상 데이터셋 분할이 대량 라벨 또는 파운데이션 모델 fine-tuning을 요구 / 방법: frozen DINOv3 특징 + classical 필터 응답 결합 few-shot 헤드 / 의미: 클러스터2 대표, 11개 데이터셋에서 라벨 효율적 SOTA급 성능 / 우선순위: Read
+</div>
+<p><small>나머지 약 70편은 JoVE 습식 염색 프로토콜(H&amp;E, Giemsa 등)이거나 LLM/로봇 관련 키워드 우연 매칭으로, 계산 이미징 방법론과 거리가 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems — 관련 대표 3편</h3>
+<div class=roi-item>
+  <strong>Learning Informative Prior with Infinite-Dimensional Continuous Normalizing Flow for Bayesian Inverse Problem</strong> [arXiv]<br>
+  문제: PDE 역문제의 무한차원 베이지안 추론에 정보성 있는 사전을 넣기 어려움 / 방법: 무한차원 continuous normalizing flow 기반 사전 학습 / 의미: 역문제 이론 확장 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Cadzow Projected Gradient Descent for Generalized Finite Rate of Innovation</strong> [arXiv]<br>
+  문제: FRI 신호 복원 알고리즘(CPGD)의 수렴성이 정성적으로만 알려짐 / 방법: 정칙화 관점에서 정량적 지역 수렴 이론 제시 / 의미: 구조적 저계수 신호 복원 이론 강화 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>HDS-Net: A Hybrid Deformable-Swin Network for Dual-Domain Sparse-View CT Reconstruction</strong> [JNL]<br>
+  문제: sparse-view CT 복원이 sinogram·이미지 한쪽 도메인에만 의존하면 아티팩트가 남음 / 방법: deformable convolution + Swin transformer 기반 dual-domain 복원 / 의미: sparse-view CT 복원 성능 개선 / 우선순위: Read
+</div>
+<p><small>나머지 약 13편은 TCAD 반도체 소자 시뮬레이션, VLA 정책, 5G 수신기, 게임이론 등 "reconstruction/inverse" 키워드만 겹치는 일반 공학/ML 논문이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods — 이미징 관련 대표 3편</h3>
+<div class=roi-item>
+  <strong>SPARK</strong> [arXiv]<br>
+  문제: frozen DiT 기반 초해상도 모델의 화질을 개선하려면 보통 fine-tuning이 필요 / 방법: 소수 활성 채널 기반 입력 조건부 변조 / 의미: 클러스터3 대표, fine-tuning 없이 화질 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Zero-Shot Novel Depth Synthesis Using 3D Foundation Models Scene Representations</strong> [arXiv]<br>
+  문제: 3D foundation model이 새 시점의 depth를 직접 예측하지는 못함 / 방법: 내부 표현에 latent diffusion 적용(Z3D) / 의미: 클러스터1 대표, zero-shot 새 시점 depth 예측 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>RARF: Region-Aware Rectified Flows for 3D Brain MRI Inpainting</strong> [arXiv]<br>
+  문제: 병변 영역을 포함한 뇌 MRI에서 건강한 조직을 복원해야 자동 분석이 개선됨 / 방법: 영역 제한 rectified flow 기반 인페인팅 / 의미: BraTS 2026 챌린지 제출작(관찰 중, 단발) / 우선순위: Skim-only
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://arxiv.org/abs/2609.03563" target=_blank>FlashRender — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2609.04071" target=_blank>TAP-Path — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2609.03639" target=_blank>Stabilizing Camera-Controlled NVS — arXiv</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-09-04 정상 daily 실행 · arXiv 482건(new+cross) + 저널 396편, 전체 스캔 800건 · ROI 배정 260건 (32.5%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-04",
+  "source_listing_date": "2026-09-04",
+  "source_mode": "new",
+  "note": "2026-09-04(금) 정상 daily 실행. cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 arXiv /new listing이 모두 \"Friday, 4 September 2026\"을 가리키는 것을 Date Source Contract 점검에서 확인했다. arXiv new+cross 482건과 Crossref/OpenAlex 저널 396편을 병합해 classify.py로 분류했다. 전체 스캔 800건 중 260건(32.5%)이 9개 ROI 버킷에 배정됐다. Virtual Staining/Pathology 버킷(73편)은 오늘 거의 전부가 JoVE(Journal of Visualized Experiments)의 실험 프로토콜 논문(H&E, Giemsa, silver staining 등 실제 습식 조직염색 기법)으로, 컴퓨테이셔널 virtual staining과 무관한 키워드 오탐이다. Tomography/3D Imaging(45편)도 대다수가 임상 CT/MRI/OCT/PET 사례 보고다. 계산광학 코어(Fourier Ptychography 0편, Lensless 3편, Phase Imaging 8편, Meta-Optics 8편, Light-Field 1편)는 여전히 얇고 신호는 버킷당 0~1편 수준이다. 오늘의 주된 신호는 카메라 경로를 지정하는 3D/비디오 생성 모델이 재학습 없이 추론 시점에서 안정화·가속화되는 흐름 4편, 병리 파운데이션 모델을 더 큰 모델로 키우는 대신 가지치기·증류로 가볍게 만드는 흐름 3편, diffusion/DiT 생성 파이프라인의 학습·추론 비용을 구조 변경 없이 줄이는 흐름 4편이다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 168,
+      "cs.CV": 112,
+      "cs.AI": 165,
+      "eess.IV": 9,
+      "eess.SP": 28
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 396
+  },
+  "totals": {
+    "total_scanned": 800,
+    "selected": 260
+  },
+  "classified": {
+    "total_scanned": 800,
+    "selected": 260,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 3,
+      "Phase Imaging/Holography": 8,
+      "Meta-Optics/Diffractive": 8,
+      "Light-Field/Novel Sensors": 1,
+      "Tomography/3D Imaging": 45,
+      "Virtual Staining/Pathology": 73,
+      "Reconstruction/Inverse Problems": 16,
+      "Deep Learning Methods": 106
+    }
+  },
+  "daily_thesis": "오늘 arXiv+저널 800건 중 가장 뚜렷한 신호는 카메라 경로를 지정하는 3D 장면·비디오 생성 모델들이 다시 학습시키지 않고도 추론 시점에서 더 안정적이고 빠르게 동작하도록 만드는 방법 4편이 모인 것이고, 동시에 병리 파운데이션 모델을 더 크게 키우는 대신 가지치기·지식증류로 배포 비용을 낮추는 방법 3편, diffusion/DiT 생성 파이프라인의 학습·추론 비용을 구조를 바꾸지 않고 줄이는 방법 4편이 각각 독립적으로 모여, 오늘 하루는 '더 큰 모델을 새로 학습시키자'보다 '이미 학습된 모델을 더 싸고 안정적으로 쓰자'는 방향으로 무게중심이 쏠린 날이었다."
+}
