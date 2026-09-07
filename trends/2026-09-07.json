@@ -1,6 +1,39 @@
 {
   "date": "2026-09-07",
-  "note": "2026-09-07(월) 10:00 KST weekly 실행이 만든 stub. 이 실행은 daily가 아니라 지난주(2026-08-31~2026-09-04) 회고 weekly만 발행한다. daily_new_counts/totals/classified/daily_thesis는 같은 날 11:00 KST daily 실행이 실측값으로 채운다. weekly_retrospective_context는 daily 실행이 덮어쓰지 않고 보존해야 한다.",
+  "source_listing_date": "2026-09-07",
+  "source_mode": "new",
+  "note": "2026-09-07(월) 정상 daily 실행. cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 arXiv /new listing이 모두 \"Monday, 7 September 2026\"을 가리키는 것을 Date Source Contract 점검에서 확인했다. arXiv new+cross 480건과 Crossref/OpenAlex 저널 299편을 병합·중복제거해 classify.py로 분류한 결과 총 704건 중 180건(25.6%)이 9개 ROI 버킷에 배정됐다. 계산광학 코어 5개 버킷(Fourier Ptychography, Lensless, Phase Imaging, Meta-Optics, Light-Field) 합계 10편 중 실제 계산 이미징 신호는 2편뿐으로 이번 주 들어 가장 얇았다. 오늘의 주된 신호는 DiT/diffusion 생성 파이프라인을 재설계 없이 후처리 단계에서 고쳐 쓰는 흐름 4편, frozen depth/geometry 파운데이션 모델을 날씨·수술장면·다중카메라 등 특정 실패 조건에 맞춰 국소 보정하는 흐름 4편, 병리·의료 영상 AI가 단일 코호트 정확도에서 기관·인구집단 간 전이 가능성 검증으로 무게중심을 옮기는 흐름 3편, 3D 재구성 파이프라인의 표현(SH, dense correspondence)을 교체해 계산 병목을 줄이는 흐름 3편이다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 137,
+      "cs.CV": 110,
+      "cs.AI": 205,
+      "eess.IV": 10,
+      "eess.SP": 18
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 299
+  },
+  "totals": {
+    "total_scanned": 704,
+    "selected": 180
+  },
+  "classified": {
+    "total_scanned": 704,
+    "selected": 180,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 4,
+      "Meta-Optics/Diffractive": 3,
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 21,
+      "Virtual Staining/Pathology": 17,
+      "Reconstruction/Inverse Problems": 14,
+      "Deep Learning Methods": 118
+    }
+  },
+  "daily_thesis": "오늘 arXiv+저널 전체 스캔 704건 중 계산광학 코어 5개 버킷(Fourier Ptychography, Lensless, Phase Imaging, Meta-Optics, Light-Field)에 배정된 건 단 10편뿐이고 그중 실제 계산 이미징 신호는 사실상 0편에 가까운, 이번 주 들어 가장 얇은 날입니다. 대신 눈에 띄는 흐름은 '이미 학습된 diffusion transformer(DiT)나 depth/geometry 파운데이션 모델을 재설계하지 않고, 특정 실패 상황(악천후, 수술 장면, 카메라 배열 불일치, 병원 간 데이터 이동)에 맞춰 국소적으로 고쳐 쓰는' 논문들이 두 갈래(생성 모델 효율화, 기하 추정 강건화)로 동시에 모였다는 점이라, 계산 이미징 랩 입장에서는 오늘 하루만 보면 외부 신호보다 스스로 공백을 채워야 할 압박이 더 큰 날로 읽힙니다.",
   "weekly_retrospective_context": {
     "iso_week": "2026-36",
     "week_start": "2026-08-31",

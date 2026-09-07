@@ -1,0 +1,282 @@
+{
+  "date": "2026-09-07",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "DiT/diffusion 생성 파이프라인을 재설계 없이 후처리 단계에서 고쳐 쓰는 흐름",
+      "papers": [
+        {
+          "title": "ReaDiT Guidance: Control for Image and Video Generation using Diffusion Transformer Features",
+          "arxiv_id": "https://arxiv.org/abs/2609.04649",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Importance-Aware Low-Rank Distillation of Diffusion Transformers",
+          "arxiv_id": "https://arxiv.org/abs/2609.04646",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Joint Alignment and Distillation for Video Generation via Sample-Guided Distribution Matching",
+          "arxiv_id": "https://arxiv.org/abs/2609.04283",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Step Back to Move Forward: Reflection-Aware Preference Optimization for Visual Generation",
+          "arxiv_id": "https://arxiv.org/abs/2609.04282",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "예전에는 DiT(Diffusion Transformer) 기반 생성 모델을 원하는 방향(카메라 조종, 화질, 사람 선호도)으로 맞추려면 별도 adapter를 새로 붙이거나 처음부터 다시 학습시키는 경우가 많았는데, 오늘 모인 네 편은 모두 이미 학습된 DiT 하나만 두고 그 내부·후처리 단계만 손봅니다. ReaDiT Guidance는 DiT 블록 하나의 내부 표현을 읽어내 depth·pose 같은 목표 조건으로 이미지·비디오 생성을 조종하고, Importance-Aware Low-Rank Distillation은 DiT의 각 투영 행렬에 중요도를 매겨 압축해도 성능이 급격히 무너지지 않는 지점을 찾습니다. Joint Alignment and Distillation은 사람 선호도에 맞추는 강화학습(RL)과 모델 경량화(distillation)를 따로 두 단계로 하면 비용이 크거나 모델이 붕괴하던 문제를, 분포 정합(distribution matching)이라는 한 단계로 합쳐서 풉니다. Step Back to Move Forward는 RL 정책이 국소 최적점에 빠져 그럴듯하지 않은 이미지를 만드는 문제를, 되돌아가는(reflection) 탐색 방식으로 완화합니다. 네 편 모두 '더 좋은 새 모델을 만들자'가 아니라 '이미 있는 DiT 하나를 조종·압축·정렬하는 후처리 레이어를 더 잘 설계하자'는 같은 태도를 보이며, 이는 랩이 쓰는 diffusion 기반 위상 복원·초해상도 파이프라인에도 재학습 없이 적용해볼 수 있는 힌트입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 4개 하위 문제(조건부 제어, 저랭크 압축, RL+distillation 통합, 선호도 정렬)에서 4편이 'DiT 구조 불변 + 후처리·정렬 단계 개선'이라는 방향을 공유하지만, 저자군이 겹치는지 확인되지 않았고 단일 벤치마크로 수렴하지도 않음",
+      "lab_action": "ReaDiT Guidance의 단일 DiT 블록 readout 방식을 랩의 frozen diffusion 기반 위상 복원 모델에 적용해 depth/edge 조건 없이도 위상 맵을 목표 조건으로 유도할 수 있는지 확인하고, Importance-Aware Low-Rank Distillation의 투영 행렬별 중요도 프로파일을 랩 DiT 기반 초해상도 모델에 적용해 압축률 대비 PSNR 저하 곡선을 그린다"
+    },
+    {
+      "cluster": "frozen depth/geometry 파운데이션 모델이 특정 실패 조건(날씨·수술장면·카메라 배열)에 맞춰 국소 보정됨",
+      "papers": [
+        {
+          "title": "Weather-Conditioned Depth Anything",
+          "arxiv_id": "https://arxiv.org/abs/2609.04827",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "DART: Depth-as-Target Pretraining for Surgical Vision Foundation Models",
+          "arxiv_id": "https://arxiv.org/abs/2609.04555",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "CrossDepth: Geometry-Constrained Attention for Generalizable Multi-View Surround Depth Estimation",
+          "arxiv_id": "https://arxiv.org/abs/2609.05397",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "MINT: A Unified Model for World-Space Camera and Hand Motion Estimation from Scalable Egocentric Pipeline Supervision",
+          "arxiv_id": "https://arxiv.org/abs/2609.04958",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "Depth Anything 같은 단안(monocular) 깊이 추정 파운데이션 모델은 일반적인 실내외 장면에서는 잘 동작하지만, 안개·야간처럼 날씨가 나쁘거나 수술 장면처럼 도메인이 특이하거나 여러 카메라를 동시에 써야 하는 상황에서는 성능이 확 떨어집니다. 오늘 모인 네 편은 모두 이 모델을 처음부터 다시 만들지 않고, 실패가 일어나는 지점에 딱 맞는 신호를 하나씩 추가로 주입합니다. Weather-Conditioned Depth Anything은 날씨로 인한 화질 저하 스타일과 장면 내용을 분리하는 필터를 얹어 안개·비·야간에서도 깊이 추정이 무너지지 않게 하고, DART는 자연 이미지로 학습된 파운데이션 모델이 수술 장면에서 잘 안 통하는 문제를, 깊이 정보를 사전학습 목표로 추가해서 보완합니다. CrossDepth는 여러 대의 서라운드 카메라에서 카메라 내부 파라미터가 다르고 시야가 겹치지 않아 생기는 불일치를, 카메라 인식 attention으로 맞추고, MINT는 카메라 움직임·깊이·손 위치를 따로따로 추정하던 파이프라인을 하나의 모델로 합쳐 계산 낭비를 줄입니다. 즉 오늘 흐름은 '깊이 추정을 다시 처음부터 풀자'가 아니라 '이미 잘 되는 깊이 추정 모델이 어디서 왜 깨지는지 찾아서 그 지점만 고치자'는 방향이며, 이는 랩의 다중 시점·저조도 촬영 파이프라인에도 바로 적용해볼 수 있는 접근입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 4개 응용(날씨 저하, 수술 도메인, 다중 카메라, 손-카메라 동시 추정)에서 4편이 '기존 depth/geometry 백본에 특정 실패 신호를 국소 주입'이라는 방향을 공유하지만, 공통 벤치마크나 직접적 저자 중복은 확인되지 않음",
+      "lab_action": "Weather-Conditioned Depth Anything의 style-content 분리 필터를 랩의 저조도/산란매체 촬영 이미지에 적용해 깊이·위상 추정이 안정화되는지 확인하고, CrossDepth의 카메라 인식 cross-attention을 랩의 다중 카메라 라이트필드 촬영 파이프라인에 적용해 카메라 간 깊이 추정 불일치가 줄어드는지 정량 비교한다"
+    },
+    {
+      "cluster": "병리·의료 영상 AI가 '단일 코호트 정확도'에서 '기관·인구집단을 넘나드는 전이 가능성' 검증으로 무게중심 이동",
+      "papers": [
+        {
+          "title": "Conserved Immune Topology Improves Pathology Foundation Model Generalization for Cross-Cancer MSI-H Prediction",
+          "arxiv_id": "https://arxiv.org/abs/2609.05182",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Cross-dataset transportability of pediatric chest X-ray deep learning across three countries: discrimination, calibration, operating-point failure, and limited-label recovery",
+          "arxiv_id": "https://arxiv.org/abs/2609.05140",
+          "journal_or_source": "arXiv eess.IV"
+        },
+        {
+          "title": "Ultrasound-Based Prediction of Cirrhosis Decompensation Using Large-Scale Computer Vision Models",
+          "arxiv_id": "https://arxiv.org/abs/2609.04365",
+          "journal_or_source": "arXiv eess.IV"
+        }
+      ],
+      "why": "예전에는 병리·의료 영상 AI 논문 대부분이 한 병원·한 암종에서 모은 데이터로 정확도를 얼마나 높였는지를 보고했다면, 오늘 모인 세 편은 모두 '같은 모델이 다른 병원, 다른 나라, 다른 암종으로 옮겨갔을 때도 버티는가'를 정면으로 다룹니다. Conserved Immune Topology는 병리 파운데이션 모델이 한 암종에서는 잘 되다가 다른 암종으로 가면 무너지는 문제를, 면역세포 분포처럼 암종이 달라져도 유지되는 생물학적 특징을 추가해서 완화합니다. 소아 흉부 X선 전이 가능성 논문은 정확도 하나만 보지 않고, 확률 보정이 얼마나 깨지는지, 정해진 판정 기준값이 다른 나라 데이터에서도 그대로 통하는지, 라벨을 얼마나 더 모아야 성능이 회복되는지를 3개국 데이터로 나눠서 측정합니다. 초음파 기반 간경변 악화 예측 논문도 기존 실험실 수치 기반 위험도 점수에 더해, 대형 컴퓨터 비전 모델이 일상 초음파 영상에서 추가 정보를 뽑아낼 수 있는지를 확인합니다. 세 논문 모두 '이 데이터셋에서 몇 % 정확도'라는 단일 숫자보다 '어디서, 왜 전이가 깨지는지'를 더 중요한 질문으로 다루고 있어, 의료 영상 AI 평가 기준이 한 단계 더 까다로워지고 있다는 신호입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 3개 모달리티(병리 슬라이드, 흉부 X선, 초음파)에서 3편이 '단일 코호트 정확도보다 전이·일반화 실패 조건을 직접 측정'이라는 방향을 공유하지만, 서로 다른 저자군·기관인지는 abstract만으로 확인되지 않아 벤치마크 수렴도 아직 약함",
+      "lab_action": "Cross-dataset transportability 논문의 판별력/보정/고정 임계값 3축 평가 프로토콜을 랩이 보유한 다기관 의료·현미경 영상 데이터셋에 그대로 적용해, 랩 모델이 기관을 옮겼을 때 어느 축에서 가장 먼저 무너지는지 확인한다"
+    },
+    {
+      "cluster": "3D 재구성 파이프라인의 계산 병목을 표현(SH, dense correspondence) 자체를 바꿔서 줄이는 흐름",
+      "papers": [
+        {
+          "title": "Compact Neural Appearance Models for Efficient Gaussian Splatting",
+          "arxiv_id": "https://arxiv.org/abs/2609.05255",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "BLASt3R: Bundle Adjustment of Any Image Set with Multi-View Matching and Monocular Priors",
+          "arxiv_id": "https://arxiv.org/abs/2609.05210",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "HiSfM: Disambiguating Structure-from-Motion via Scaffold-Anchored Hierarchical Reconstruction",
+          "arxiv_id": "https://arxiv.org/abs/2609.04718",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "3D Gaussian Splatting과 Structure-from-Motion(SfM, 여러 사진에서 카메라 위치와 3D 구조를 동시에 복원하는 기법)은 이제 널리 쓰이지만, 오늘 나온 세 편은 모두 그 안에서 저장·계산 비용을 차지하는 특정 표현 하나를 바꿔서 병목을 풉니다. Compact Neural Appearance Models는 3D Gaussian Splatting에서 시점에 따라 색이 달라지는 정도를 표현하던 구면조화함수(SH) 계수가 저장 공간을 많이 차지하고 표현력도 제한적이라는 점을 찾아, 작은 신경망이 대신 압축된 코드를 해석하게 바꿉니다. BLASt3R는 정확하지만 느린 기존 bundle adjustment(카메라 위치와 3D 점을 동시에 미세조정하는 최적화)가 조밀한 대응점 계산 때문에 실시간 SLAM에 못 쓰이던 문제를, 빠른 다중 시점 매칭과 단안 사전 정보로 대체해 정확도와 속도를 동시에 잡습니다. HiSfM은 반복되거나 대칭적인 구조에서 SfM이 헷갈려 실패하는 문제를, 지역별로 먼저 강한 골격(scaffold)을 만들고 그 위에 계층적으로 붙여나가는 방식으로 줄입니다. 세 논문 모두 '더 큰 모델을 쓰자'가 아니라 '표현이나 매칭 방식 자체의 비효율을 찾아 바꾸자'는 공통된 태도를 보여, 3D 재구성 파이프라인이 아직 세부 표현 단에서 개선 여지가 많이 남아 있다는 뜻입니다.",
+      "confidence": "Low",
+      "confidence_note": "3편이 3D 재구성 파이프라인의 비효율을 다룬다는 공통점은 있으나 각각 다른 하위 문제(외형 표현 압축, bundle adjustment 가속, SfM 모호성 해소)를 다뤄 단일 축으로 수렴하지 않고, 저자군 중복이나 벤치마크 공유도 확인되지 않음",
+      "lab_action": "Compact Neural Appearance Models의 SH 대체 소형 MLP 디코더를 랩의 3DGS 기반 조직 슬라이드 재구성 파이프라인에 이식해 저장 용량 대비 렌더링 품질을 baseline SH와 비교한다"
+    }
+  ],
+  "insights": [
+    {
+      "title": "DiT/diffusion 생성 파이프라인을 재설계 없이 후처리 단계에서 고쳐 쓰는 흐름",
+      "claim": "ReaDiT Guidance(내부 feature 기반 조건부 생성), Importance-Aware Low-Rank Distillation(투영 행렬별 중요도 압축), Joint Alignment and Distillation(RL+distillation 단일 단계 통합), Step Back to Move Forward(reflection 기반 RL 탐색) 네 편이 같은 날 나오며, DiT 생성 모델을 개선하는 방식이 새 아키텍처 설계보다 기존 모델의 내부 표현·후처리 단계를 조종하는 쪽으로 몰리고 있습니다.",
+      "papers": [
+        {
+          "title": "ReaDiT Guidance: Control for Image and Video Generation using Diffusion Transformer Features",
+          "arxiv": "https://arxiv.org/abs/2609.04649",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        },
+        {
+          "title": "Importance-Aware Low-Rank Distillation of Diffusion Transformers",
+          "arxiv": "https://arxiv.org/abs/2609.04646",
+          "importance_tags": [
+            "[해부분석]",
+            "[실사용전환]"
+          ]
+        },
+        {
+          "title": "Joint Alignment and Distillation for Video Generation via Sample-Guided Distribution Matching",
+          "arxiv": "https://arxiv.org/abs/2609.04283",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "frozen depth/geometry 파운데이션 모델이 특정 실패 조건에 맞춰 국소 보정됨",
+      "claim": "Weather-Conditioned Depth Anything(악천후 스타일 분리), DART(수술 장면 depth 사전학습), CrossDepth(다중 카메라 기하 제약 attention), MINT(카메라+손 동시 추정) 네 편이 같은 날 나오며, 범용 depth/geometry 파운데이션 모델의 개선이 재학습보다 실패 조건별 국소 신호 주입으로 향하고 있습니다.",
+      "papers": [
+        {
+          "title": "Weather-Conditioned Depth Anything",
+          "arxiv": "https://arxiv.org/abs/2609.04827",
+          "importance_tags": [
+            "[방법전환]",
+            "[경고신호]"
+          ]
+        },
+        {
+          "title": "DART: Depth-as-Target Pretraining for Surgical Vision Foundation Models",
+          "arxiv": "https://arxiv.org/abs/2609.04555",
+          "importance_tags": [
+            "[데이터전환]"
+          ]
+        },
+        {
+          "title": "CrossDepth: Geometry-Constrained Attention for Generalizable Multi-View Surround Depth Estimation",
+          "arxiv": "https://arxiv.org/abs/2609.05397",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "병리·의료 영상 AI가 단일 코호트 정확도에서 기관·인구집단을 넘나드는 전이 가능성 검증으로 이동",
+      "claim": "Conserved Immune Topology(암종 간 전이), 소아 흉부 X선 3개국 전이성 평가, 초음파 기반 간경변 예측 세 편이 모두 '한 데이터셋 정확도'보다 '다른 병원·다른 나라·다른 암종으로 옮겨갔을 때 무엇이 깨지는지'를 직접 측정하며, 의료 영상 AI 평가 기준이 한 단계 더 까다로워지고 있습니다.",
+      "papers": [
+        {
+          "title": "Conserved Immune Topology Improves Pathology Foundation Model Generalization for Cross-Cancer MSI-H Prediction",
+          "arxiv": "https://arxiv.org/abs/2609.05182",
+          "importance_tags": [
+            "[평가축]",
+            "[데이터전환]"
+          ]
+        },
+        {
+          "title": "Cross-dataset transportability of pediatric chest X-ray deep learning across three countries",
+          "arxiv": "https://arxiv.org/abs/2609.05140",
+          "importance_tags": [
+            "[평가축]",
+            "[경고신호]"
+          ]
+        },
+        {
+          "title": "Ultrasound-Based Prediction of Cirrhosis Decompensation Using Large-Scale Computer Vision Models",
+          "arxiv": "https://arxiv.org/abs/2609.04365",
+          "importance_tags": [
+            "[실사용전환]"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "3D 재구성 파이프라인의 계산 병목을 표현 자체를 바꿔서 줄이는 흐름",
+      "claim": "Compact Neural Appearance Models(SH 계수를 소형 MLP로 대체), BLASt3R(조밀 대응점 대신 빠른 매칭+단안 사전), HiSfM(스캐폴드 기반 계층 복원) 세 편이 3D 재구성의 저장·계산 비용을 표현 방식 교체로 줄이며, 3DGS·SfM 파이프라인이 아직 세부 표현 단에서 개선 여지가 많이 남아 있음을 보여줍니다.",
+      "papers": [
+        {
+          "title": "Compact Neural Appearance Models for Efficient Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2609.05255",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        },
+        {
+          "title": "BLASt3R: Bundle Adjustment of Any Image Set with Multi-View Matching and Monocular Priors",
+          "arxiv": "https://arxiv.org/abs/2609.05210",
+          "importance_tags": [
+            "[방법전환]",
+            "[실사용전환]"
+          ]
+        },
+        {
+          "title": "HiSfM: Disambiguating Structure-from-Motion via Scaffold-Anchored Hierarchical Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2609.04718",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        }
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "A. ReaDiT Guidance/Importance-Aware Low-Rank Distillation을 랩 frozen DiT 기반 복원 파이프라인에 적용",
+      "claim": "단일 DiT 블록의 내부 표현을 읽어 목표 조건(위상 맵, depth)으로 생성을 유도하는 방식과 투영 행렬별 중요도 기반 압축을 랩의 frozen diffusion transformer 기반 위상 복원·초해상도 모델에 적용하면, 재학습 없이 목표 조건 제어와 경량화를 동시에 시험할 수 있습니다.",
+      "supporting_papers": [
+        {
+          "title": "ReaDiT Guidance: Control for Image and Video Generation using Diffusion Transformer Features",
+          "arxiv": "https://arxiv.org/abs/2609.04649"
+        },
+        {
+          "title": "Importance-Aware Low-Rank Distillation of Diffusion Transformers",
+          "arxiv": "https://arxiv.org/abs/2609.04646"
+        }
+      ]
+    },
+    {
+      "title": "B. Weather-Conditioned Depth Anything/CrossDepth를 랩 저조도·다중 카메라 촬영 파이프라인에 적용",
+      "claim": "악천후 스타일-내용 분리 필터와 카메라 인식 cross-attention을 랩의 저조도·산란매체·다중 카메라 라이트필드 촬영 파이프라인에 적용하면, 열화 조건에서도 depth/기하 추정이 안정화되는지 확인할 수 있습니다.",
+      "supporting_papers": [
+        {
+          "title": "Weather-Conditioned Depth Anything",
+          "arxiv": "https://arxiv.org/abs/2609.04827"
+        },
+        {
+          "title": "CrossDepth: Geometry-Constrained Attention for Generalizable Multi-View Surround Depth Estimation",
+          "arxiv": "https://arxiv.org/abs/2609.05397"
+        }
+      ]
+    },
+    {
+      "title": "C. 의료 영상 전이 가능성 평가 프로토콜(discrimination/calibration/operating-point)을 랩 다기관 데이터셋에 적용",
+      "claim": "소아 흉부 X선 전이성 논문이 쓴 판별력·확률 보정·고정 임계값 전이·라벨 회복력 4축 평가 프로토콜을 랩이 보유한 다기관 의료·현미경 영상 데이터셋에 적용하면, 랩 모델이 기관을 옮겼을 때 어느 축에서 가장 먼저 무너지는지 확인할 수 있습니다.",
+      "supporting_papers": [
+        {
+          "title": "Cross-dataset transportability of pediatric chest X-ray deep learning across three countries",
+          "arxiv": "https://arxiv.org/abs/2609.05140"
+        },
+        {
+          "title": "Conserved Immune Topology Improves Pathology Foundation Model Generalization for Cross-Cancer MSI-H Prediction",
+          "arxiv": "https://arxiv.org/abs/2609.05182"
+        }
+      ]
+    },
+    {
+      "title": "D. Compact Neural Appearance Models의 SH 대체 디코더를 랩 3DGS 조직 슬라이드 재구성에 적용",
+      "claim": "구면조화함수(SH) 대신 소형 공유 MLP로 시점 의존 외형을 표현하는 방식을 랩의 3D Gaussian Splatting 기반 조직 슬라이드·현미경 재구성 파이프라인에 적용하면, 저장 용량을 줄이면서 각도별 디테일 표현력을 유지할 수 있는지 확인할 수 있습니다.",
+      "supporting_papers": [
+        {
+          "title": "Compact Neural Appearance Models for Efficient Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2609.05255"
+        }
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

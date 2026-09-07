@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-09-07</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-09-07 (월요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-09-07 (월요일)</div>
+  <div>📚 소스: new — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 arXiv /new listing이 모두 "Monday, 7 September 2026"을 가리키는 것을 확인했습니다. 정상적인 daily 실행입니다.</div>
+  <div>🔢 arXiv: cs.LG 137 · cs.CV 110 · cs.AI 205 · eess.IV 10 · eess.SP 18 (합계 480건, new+cross 기준)</div>
+  <div>🔢 저널: Crossref/OpenAlex 299편 · 전체 스캔(arXiv+저널, 중복제거) 704건 · ROI 배정 180건 (25.6%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 arXiv+저널 전체 스캔 704건 중 계산광학 코어 5개 버킷(Fourier Ptychography, Lensless, Phase Imaging, Meta-Optics, Light-Field)에 배정된 건 단 10편뿐이고 그중 실제 계산 이미징 신호는 사실상 0편에 가까운, 이번 주 들어 가장 얇은 날입니다. 대신 눈에 띄는 흐름은 '이미 학습된 diffusion transformer(DiT)나 depth/geometry 파운데이션 모델을 재설계하지 않고, 특정 실패 상황(악천후, 수술 장면, 카메라 배열 불일치, 병원 간 데이터 이동)에 맞춰 국소적으로 고쳐 쓰는' 논문들이 두 갈래(생성 모델 효율화, 기하 추정 강건화)로 동시에 모였다는 점이라, 계산 이미징 랩 입장에서는 오늘 하루만 보면 외부 신호보다 스스로 공백을 채워야 할 압박이 더 큰 날로 읽힙니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv new+cross는 cs.LG 137·cs.CV 110·cs.AI 205·eess.IV 10·eess.SP 18로 합계 480건이고, 여기에 Crossref/OpenAlex 저널 299편(OpenAlex 보충 1편 포함 300편 소스, 중복 제거 후 299편 반영)을 더한 뒤 classify.py가 704건을 스캔해 180건(약 25.6%)을 9개 ROI 버킷에 배정했습니다. 9/4(32.5%)에 비해 선택 비율이 크게 낮아졌는데, 이는 오늘 cs.AI(205건)의 절대 물량이 늘면서 이미징과 무관한 LLM 에이전트·통신·산업 응용 논문 비중이 상대적으로 커졌기 때문으로 보입니다. Deep Learning Methods(118편, catch-all)가 오늘 배정분의 65%를 차지할 정도로 쏠려 있어, 실제로 읽을 가치가 있는 신호는 이 catch-all 안을 다시 훑어야 드러나는 구조입니다.</p>
+<p>버킷 편수만 보면 오해하기 쉽습니다. Tomography/3D Imaging(21편) 중 절반이 넘는 14편이 저널(JNL) 소스인데, 소아 뇌수막염 CT 사례 보고·펄크로스트 지형 전기비저항 탐사·턱뼈 3D 성장 평가 등 임상/지구물리 사례 보고이거나 'tomography'라는 단어만 겹친 논문이라 계산 이미징 방법론과 무관합니다. 실제 3D 재구성·SfM·3DGS 방법론 신호는 7편(전부 arXiv)에 불과합니다. Virtual Staining/Pathology(17편)도 17편 중 7편이 JNL인데 그중 실제 병리 영상 신호는 사실상 0~1편이고 나머지는 궤양성 대장염 임상 지표 모델, 비트뿌리 천연 염색제 개발처럼 완전한 키워드 오탐입니다. Reconstruction/Inverse Problems(14편) 중에서도 실제 재구성/역문제 방법론은 5~6편 정도이고 나머지는 PDE 물리 시뮬레이션, JEPA 표현학습 등 'reconstruction'과 무관한 일반 ML입니다.</p>
+<p>무엇보다 눈에 띄는 건 계산광학 코어 자체의 공백입니다. Fourier Ptychography/Microscopy 버킷에 배정된 유일한 1편(3D Radar Imaging from the UAV Nadir)은 제목의 'imaging'과 'aperture synthesis' 키워드가 우연히 겹친 UAV용 SAR(합성개구레이더) 논문으로 실제 신호는 0편입니다. Lensless/Coded Imaging은 오늘 배정 자체가 0편이고, Phase Imaging/Holography(4편)도 안테나 mutual-coupling 이론, 편광 홀로그래픽 메타표면 하드웨어(초록 미공개), Raman optical activity 분광학처럼 계산 위상 이미징과는 결이 다른 논문들뿐이라 실제 신호는 0~1편입니다. Meta-Optics/Diffractive(3편)·Light-Field/Novel Sensors(2편)도 각각 실제 이미징 관련은 1편 안팎입니다. 저널 쪽에서도 Fourier ptychography·lensless·QPI·CGH 관련 키워드로 수집한 299편 전체를 훑었지만 초록이 붙어 있는 진짜 계산광학 신호는 확인되지 않아, 오늘은 5개 코어 버킷 전체가 사실상 관찰 공백일로 기록해야 하는 날입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>9/4의 결론은 '카메라 제어 3D/비디오 생성과 diffusion/DiT 파이프라인을 재학습 없이 안정화·경량화하자'는 흐름과 '병리 파운데이션 모델을 가지치기·증류로 가볍게 배포하자'는 흐름이 뚜렷했던 날이었는데, 오늘은 그 '재학습 없이 기존 모델을 실전 조건에 맞춰 고쳐 쓴다'는 태도 자체는 이어지면서도 적용 대상이 한 단계 더 세분화됐습니다 — 9/4가 카메라 경로·병리 압축이라는 비교적 좁은 응용에 집중했다면, 오늘은 DiT 생성 파이프라인의 제어·정렬·압축(클러스터1), depth/geometry 파운데이션 모델의 날씨·수술·다중카메라 실패 조건별 보정(클러스터2)까지 범위가 넓어졌습니다. 또한 9/4에는 없던 새로운 축으로 '의료 영상 AI를 한 데이터셋 정확도가 아니라 기관·인구집단 간 전이 가능성으로 검증하자'는 클러스터가 오늘 처음 뚜렷하게 나타났고, 반대로 9/4의 '3DGS 학습 구조적 병목' 클러스터는 오늘 '3D 재구성 표현 자체 교체'(SH 대체, bundle adjustment 가속)로 결이 바뀌어 이어졌습니다. 계산광학 코어 공백은 9/4(버킷당 0~8편, 실제 신호 0~5편)보다 오늘(버킷당 0~4편, 실제 신호 0~1편)이 더 심해져, 랩이 직접 채워야 할 공백이 이번 주 들어 계속 커지고 있는 모습입니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>DiT/diffusion 생성 파이프라인을 재설계 없이 후처리 단계에서 고쳐 쓰는 흐름</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2609.04649" target=_blank>ReaDiT Guidance: Control for Image and Video Generation using Diffusion Transformer Features</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.04646" target=_blank>Importance-Aware Low-Rank Distillation of Diffusion Transformers</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.04283" target=_blank>Joint Alignment and Distillation for Video Generation via Sample-Guided Distribution Matching</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.04282" target=_blank>Step Back to Move Forward: Reflection-Aware Preference Optimization for Visual Generation</a> <span class=pill>CV</span>
+  </td>
+  <td>예전에는 DiT(Diffusion Transformer) 기반 생성 모델을 원하는 방향(카메라 조종, 화질, 사람 선호도)으로 맞추려면 별도 adapter를 새로 붙이거나 처음부터 다시 학습시키는 경우가 많았는데, 오늘 모인 네 편은 모두 이미 학습된 DiT 하나만 두고 그 내부·후처리 단계만 손봅니다. ReaDiT Guidance는 DiT 블록 하나의 내부 표현을 읽어내 depth·pose 같은 목표 조건으로 이미지·비디오 생성을 조종하고, Importance-Aware Low-Rank Distillation은 DiT의 각 투영 행렬에 중요도를 매겨 압축해도 성능이 급격히 무너지지 않는 지점을 찾습니다. Joint Alignment and Distillation은 사람 선호도에 맞추는 강화학습(RL)과 모델 경량화(distillation)를 따로 두 단계로 하면 비용이 크거나 모델이 붕괴하던 문제를, 분포 정합(distribution matching)이라는 한 단계로 합쳐서 풉니다. Step Back to Move Forward는 RL 정책이 국소 최적점에 빠져 그럴듯하지 않은 이미지를 만드는 문제를, 되돌아가는(reflection) 탐색 방식으로 완화합니다. 네 편 모두 '더 좋은 새 모델을 만들자'가 아니라 '이미 있는 DiT 하나를 조종·압축·정렬하는 후처리 레이어를 더 잘 설계하자'는 같은 태도를 보이며, 이는 랩이 쓰는 diffusion 기반 위상 복원·초해상도 파이프라인에도 재학습 없이 적용해볼 수 있는 힌트입니다.</td>
+  <td>Medium<br><small>서로 다른 4개 하위 문제(조건부 제어, 저랭크 압축, RL+distillation 통합, 선호도 정렬)에서 4편이 'DiT 구조 불변 + 후처리·정렬 단계 개선'이라는 방향을 공유하지만, 저자군이 겹치는지 확인되지 않았고 단일 벤치마크로 수렴하지도 않음</small></td>
+  <td>ReaDiT Guidance의 단일 DiT 블록 readout 방식을 랩의 frozen diffusion 기반 위상 복원 모델에 적용해 depth/edge 조건 없이도 위상 맵을 목표 조건으로 유도할 수 있는지 확인하고, Importance-Aware Low-Rank Distillation의 투영 행렬별 중요도 프로파일을 랩 DiT 기반 초해상도 모델에 적용해 압축률 대비 PSNR 저하 곡선을 그린다</td>
+</tr>
+<tr>
+  <td><strong>frozen depth/geometry 파운데이션 모델이 특정 실패 조건(날씨·수술장면·카메라 배열)에 맞춰 국소 보정됨</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2609.04827" target=_blank>Weather-Conditioned Depth Anything</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.04555" target=_blank>DART: Depth-as-Target Pretraining for Surgical Vision Foundation Models</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.05397" target=_blank>CrossDepth: Geometry-Constrained Attention for Generalizable Multi-View Surround Depth Estimation</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.04958" target=_blank>MINT: A Unified Model for World-Space Camera and Hand Motion Estimation from Scalable Egocentric Pipeline Supervision</a> <span class=pill>CV</span>
+  </td>
+  <td>Depth Anything 같은 단안(monocular) 깊이 추정 파운데이션 모델은 일반적인 실내외 장면에서는 잘 동작하지만, 안개·야간처럼 날씨가 나쁘거나 수술 장면처럼 도메인이 특이하거나 여러 카메라를 동시에 써야 하는 상황에서는 성능이 확 떨어집니다. 오늘 모인 네 편은 모두 이 모델을 처음부터 다시 만들지 않고, 실패가 일어나는 지점에 딱 맞는 신호를 하나씩 추가로 주입합니다. Weather-Conditioned Depth Anything은 날씨로 인한 화질 저하 스타일과 장면 내용을 분리하는 필터를 얹어 안개·비·야간에서도 깊이 추정이 무너지지 않게 하고, DART는 자연 이미지로 학습된 파운데이션 모델이 수술 장면에서 잘 안 통하는 문제를, 깊이 정보를 사전학습 목표로 추가해서 보완합니다. CrossDepth는 여러 대의 서라운드 카메라에서 카메라 내부 파라미터가 다르고 시야가 겹치지 않아 생기는 불일치를, 카메라 인식 attention으로 맞추고, MINT는 카메라 움직임·깊이·손 위치를 따로따로 추정하던 파이프라인을 하나의 모델로 합쳐 계산 낭비를 줄입니다. 즉 오늘 흐름은 '깊이 추정을 다시 처음부터 풀자'가 아니라 '이미 잘 되는 깊이 추정 모델이 어디서 왜 깨지는지 찾아서 그 지점만 고치자'는 방향이며, 이는 랩의 다중 시점·저조도 촬영 파이프라인에도 바로 적용해볼 수 있는 접근입니다.</td>
+  <td>Medium<br><small>서로 다른 4개 응용(날씨 저하, 수술 도메인, 다중 카메라, 손-카메라 동시 추정)에서 4편이 '기존 depth/geometry 백본에 특정 실패 신호를 국소 주입'이라는 방향을 공유하지만, 공통 벤치마크나 직접적 저자 중복은 확인되지 않음</small></td>
+  <td>Weather-Conditioned Depth Anything의 style-content 분리 필터를 랩의 저조도/산란매체 촬영 이미지에 적용해 깊이·위상 추정이 안정화되는지 확인하고, CrossDepth의 카메라 인식 cross-attention을 랩의 다중 카메라 라이트필드 촬영 파이프라인에 적용해 카메라 간 깊이 추정 불일치가 줄어드는지 정량 비교한다</td>
+</tr>
+<tr>
+  <td><strong>병리·의료 영상 AI가 '단일 코호트 정확도'에서 '기관·인구집단을 넘나드는 전이 가능성' 검증으로 무게중심 이동</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2609.05182" target=_blank>Conserved Immune Topology Improves Pathology Foundation Model Generalization for Cross-Cancer MSI-H Prediction</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.05140" target=_blank>Cross-dataset transportability of pediatric chest X-ray deep learning across three countries: discrimination, calibration, operating-point failure, and limited-label recovery</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2609.04365" target=_blank>Ultrasound-Based Prediction of Cirrhosis Decompensation Using Large-Scale Computer Vision Models</a> <span class=pill>IV</span>
+  </td>
+  <td>예전에는 병리·의료 영상 AI 논문 대부분이 한 병원·한 암종에서 모은 데이터로 정확도를 얼마나 높였는지를 보고했다면, 오늘 모인 세 편은 모두 '같은 모델이 다른 병원, 다른 나라, 다른 암종으로 옮겨갔을 때도 버티는가'를 정면으로 다룹니다. Conserved Immune Topology는 병리 파운데이션 모델이 한 암종에서는 잘 되다가 다른 암종으로 가면 무너지는 문제를, 면역세포 분포처럼 암종이 달라져도 유지되는 생물학적 특징을 추가해서 완화합니다. 소아 흉부 X선 전이 가능성 논문은 정확도 하나만 보지 않고, 확률 보정이 얼마나 깨지는지, 정해진 판정 기준값이 다른 나라 데이터에서도 그대로 통하는지, 라벨을 얼마나 더 모아야 성능이 회복되는지를 3개국 데이터로 나눠서 측정합니다. 초음파 기반 간경변 악화 예측 논문도 기존 실험실 수치 기반 위험도 점수에 더해, 대형 컴퓨터 비전 모델이 일상 초음파 영상에서 추가 정보를 뽑아낼 수 있는지를 확인합니다. 세 논문 모두 '이 데이터셋에서 몇 % 정확도'라는 단일 숫자보다 '어디서, 왜 전이가 깨지는지'를 더 중요한 질문으로 다루고 있어, 의료 영상 AI 평가 기준이 한 단계 더 까다로워지고 있다는 신호입니다.</td>
+  <td>Medium<br><small>서로 다른 3개 모달리티(병리 슬라이드, 흉부 X선, 초음파)에서 3편이 '단일 코호트 정확도보다 전이·일반화 실패 조건을 직접 측정'이라는 방향을 공유하지만, 서로 다른 저자군·기관인지는 abstract만으로 확인되지 않아 벤치마크 수렴도 아직 약함</small></td>
+  <td>Cross-dataset transportability 논문의 판별력/보정/고정 임계값 3축 평가 프로토콜을 랩이 보유한 다기관 의료·현미경 영상 데이터셋에 그대로 적용해, 랩 모델이 기관을 옮겼을 때 어느 축에서 가장 먼저 무너지는지 확인한다</td>
+</tr>
+<tr>
+  <td><strong>3D 재구성 파이프라인의 계산 병목을 표현(SH, dense correspondence) 자체를 바꿔서 줄이는 흐름</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2609.05255" target=_blank>Compact Neural Appearance Models for Efficient Gaussian Splatting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.05210" target=_blank>BLASt3R: Bundle Adjustment of Any Image Set with Multi-View Matching and Monocular Priors</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2609.04718" target=_blank>HiSfM: Disambiguating Structure-from-Motion via Scaffold-Anchored Hierarchical Reconstruction</a> <span class=pill>CV</span>
+  </td>
+  <td>3D Gaussian Splatting과 Structure-from-Motion(SfM, 여러 사진에서 카메라 위치와 3D 구조를 동시에 복원하는 기법)은 이제 널리 쓰이지만, 오늘 나온 세 편은 모두 그 안에서 저장·계산 비용을 차지하는 특정 표현 하나를 바꿔서 병목을 풉니다. Compact Neural Appearance Models는 3D Gaussian Splatting에서 시점에 따라 색이 달라지는 정도를 표현하던 구면조화함수(SH) 계수가 저장 공간을 많이 차지하고 표현력도 제한적이라는 점을 찾아, 작은 신경망이 대신 압축된 코드를 해석하게 바꿉니다. BLASt3R는 정확하지만 느린 기존 bundle adjustment(카메라 위치와 3D 점을 동시에 미세조정하는 최적화)가 조밀한 대응점 계산 때문에 실시간 SLAM에 못 쓰이던 문제를, 빠른 다중 시점 매칭과 단안 사전 정보로 대체해 정확도와 속도를 동시에 잡습니다. HiSfM은 반복되거나 대칭적인 구조에서 SfM이 헷갈려 실패하는 문제를, 지역별로 먼저 강한 골격(scaffold)을 만들고 그 위에 계층적으로 붙여나가는 방식으로 줄입니다. 세 논문 모두 '더 큰 모델을 쓰자'가 아니라 '표현이나 매칭 방식 자체의 비효율을 찾아 바꾸자'는 공통된 태도를 보여, 3D 재구성 파이프라인이 아직 세부 표현 단에서 개선 여지가 많이 남아 있다는 뜻입니다.</td>
+  <td>Low<br><small>3편이 3D 재구성 파이프라인의 비효율을 다룬다는 공통점은 있으나 각각 다른 하위 문제(외형 표현 압축, bundle adjustment 가속, SfM 모호성 해소)를 다뤄 단일 축으로 수렴하지 않고, 저자군 중복이나 벤치마크 공유도 확인되지 않음</small></td>
+  <td>Compact Neural Appearance Models의 SH 대체 소형 MLP 디코더를 랩의 3DGS 기반 조직 슬라이드 재구성 파이프라인에 이식해 저장 용량 대비 렌더링 품질을 baseline SH와 비교한다</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ 참고: 오늘은 5행을 채울 만한 독립적인 다섯 번째 클러스터의 근거가 부족했습니다(4행만 표시). 계산광학 코어 5개 버킷은 아래 도메인 Watch Lens에서 별도로 다룹니다.</small></p>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 1편 중 실제 신호 0편</strong> — 오늘 이 버킷에 배정된 유일한 논문 <a href="https://arxiv.org/abs/2609.04848">3D Radar Imaging from the UAV Nadir</a> [SP]는 UAV 탑재 mm-wave InSAR(간섭 합성개구레이더)로 지면 3D 영상을 복원하는 논문입니다. 제목의 'imaging'과 초록의 'aperture synthesis'가 Fourier ptychography 키워드와 겹쳐 분류됐을 뿐, 광학 현미경/코히런트 조명 기반 aperture synthesis와는 무관한 레이더 리모트센싱 논문이라 실제 신호는 0편입니다.</li>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 0편 중 실제 신호 0편</strong> — 오늘 classify.py가 이 버킷에 배정한 논문이 없습니다. arXiv·저널 어느 쪽에서도 lensless, coded aperture, diffuser, PSF engineering 관련 신규 논문이 확인되지 않아, 랩 ROI 핵심 공백이 오늘 가장 뚜렷합니다.</li>
+    <li><strong>Phase Imaging/Holography — 오늘 배정 4편 중 실제 신호 0편</strong> — 4편 모두 계산 위상 이미징 코어와는 결이 다릅니다. <a href="https://arxiv.org/abs/2609.04968">Mutual-Coupling-Aware Movable and Fluid Antennas on Holographic Surfaces</a> [SP]는 'holographic surface'라는 용어를 안테나 어레이 이론에서 차용한 통신 논문이고, <a href="https://doi.org/10.1016/j.physleta.2026.132158">Reflection Holographic Imaging of Programmable Metasurface Based on Dual-Polarization Independent Control</a> [JNL, 초록 미공개]는 편광 제어형 홀로그래픽 메타표면 하드웨어(제목 기반)이며, <a href="https://doi.org/10.1021/acs.jpclett.6c02215">Twisted Raman: Orbital Angular Momentum Control of Raman Optical Activity</a> [JNL]는 궤도각운동량을 이용한 라만 분광학 논문으로 위상 이미징과 무관합니다. 나머지 1편(<a href="https://doi.org/10.1016/j.optlastec.2026.116338">Cascaded all-silicon metasurfaces for polarization-discriminating asymmetric terahertz wavefront shaping</a> [JNL, 초록 미공개])도 테라헤르츠 파면 성형 하드웨어라 QPI/디지털 홀로그래피 방법론과는 거리가 있습니다.</li>
+    <li><strong>Meta-Optics/Diffractive — 오늘 배정 3편 중 실제 신호 1편</strong> — <a href="https://arxiv.org/abs/2506.04061">Collaborative On-Sensor Array Cameras</a> [CV]만 실제 계산 이미징과 관련이 있습니다 — 메타표면 어레이를 부피가 큰 렌즈 대신 쓰는 flat computational camera들이 각각 좁은 시야각만 감당하는 문제를, 여러 대의 메타렌즈 카메라가 서로 정보를 공유하는 협업 방식으로 보완하려는 논문입니다. 나머지 2편(<a href="https://doi.org/10.1038/s41598-026-69471-w">A single passive terahertz metasurface implementing eight Boolean logic gates</a>, <a href="https://doi.org/10.1364/oe.608362">Inverse Design of Asymmetric Interlocked Metasurfaces...Perovskite Photovoltaics</a>)는 각각 불리언 논리 소자와 태양광 발전용 반투과 필터로, 이미징과 무관한 메타표면 응용입니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 오늘 배정 2편 중 실제 신호 1편</strong> — <a href="https://arxiv.org/abs/2609.05049">Efficient Multi-Timescale Event Representations for Feed-Forward Object Detection</a> [CV]는 event camera(밝기 변화만 비동기적으로 기록하는 novel sensor)의 시간 정보를 로그 B-spline으로 인코딩해 저지연 객체 탐지를 개선하는 논문으로, light-field는 아니지만 novel sensor 범주의 실제 신호입니다. 나머지 1편(<a href="https://doi.org/10.1016/j.rio.2026.101141">Design of a non-volatile Plasmonic Memory Based on MIM waveguide and phase-change Material</a> [JNL, 초록 미공개])은 상변화 물질 기반 광메모리·뉴로모픽 소자로 촬영/센싱과 무관한 논문입니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: DiT/diffusion 후처리 효율화·제어(ReaDiT Guidance, Importance-Aware Low-Rank Distillation, Joint Alignment and Distillation, Step Back to Move Forward), frozen depth/geometry 파운데이션 모델의 실패 조건별 국소 보정(Weather-Conditioned Depth Anything, DART, CrossDepth, MINT), 병리·의료 영상 전이 가능성 검증(Conserved Immune Topology, 소아 흉부 X선 전이성, 초음파 간경변 예측), 3D 재구성 표현 최적화(Compact Neural Appearance Models, BLASt3R, HiSfM)</li>
+  <li><strong>저널 전용</strong>: 메타표면·홀로그래픽 하드웨어(편광 제어형 반사 홀로그래픽 메타표면, 테라헤르츠 파면 성형, 불리언 논리 메타표면 등, 대부분 초록 미공개), 임상 사례 보고(소아 결핵성 뇌수막염 CT, 무릎 인대 손상 MRI 다기관 검증, 궤양성 대장염 디지털 병리 지표), 지구물리 탐사(펄크로스트 지형 전기비저항 탐사, 단루 단층대 지진파 토모그래피)</li>
+  <li><strong>공통 키워드</strong>: 'holographic'과 'metasurface'는 arXiv 쪽에서는 계산 이미징용 flat camera 응용(Collaborative On-Sensor Array Cameras)으로 쓰이는 반면, 저널 쪽에서는 통신 안테나·논리소자·광발전 응용으로 완전히 다른 맥락에서 쓰입니다. 'reconstruction'·'tomography'도 arXiv에서는 3D/SfM 방법론을, 저널에서는 임상 영상 판독이나 지질 탐사를 가리켜 같은 단어가 서로 다른 층위를 지칭합니다.</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 '이미 있는 생성·기하 추정 모델을 특정 실패 조건에 맞춰 고쳐 쓰자'는 방법론 축에 강하게 몰려 있는 반면, 저널은 계산광학 코어 신호가 거의 없이 메타표면 하드웨어·임상 사례 보고·지구물리 응용으로 흩어져 있어, 양쪽이 겹치는 구체적 크로스오버 페어는 오늘 확인되지 않았습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. DiT/diffusion 생성 파이프라인을 재설계 없이 후처리 단계에서 고쳐 쓰는 흐름</h3>
+  <p>ReaDiT Guidance(내부 feature 기반 조건부 생성), Importance-Aware Low-Rank Distillation(투영 행렬별 중요도 압축), Joint Alignment and Distillation(RL+distillation 단일 단계 통합), Step Back to Move Forward(reflection 기반 RL 탐색) 네 편이 같은 날 나오며, DiT 생성 모델을 개선하는 방식이 새 아키텍처 설계보다 기존 모델의 내부 표현·후처리 단계를 조종하는 쪽으로 몰리고 있습니다.</p>
+  <p class=conf-note>Confidence: Medium — 4개 하위 문제에서 방향은 같지만 단일 벤치마크로 수렴하지 않고 저자군 중복도 확인되지 않음</p>
+</div>
+
+<div class=ins>
+  <h3>2. frozen depth/geometry 파운데이션 모델이 특정 실패 조건에 맞춰 국소 보정됨</h3>
+  <p>Weather-Conditioned Depth Anything(악천후 스타일 분리), DART(수술 장면 depth 사전학습), CrossDepth(다중 카메라 기하 제약 attention), MINT(카메라+손 동시 추정) 네 편이 같은 날 나오며, 범용 depth/geometry 파운데이션 모델의 개선이 재학습보다 실패 조건별 국소 신호 주입으로 향하고 있습니다.</p>
+  <p class=conf-note>Confidence: Medium — 4개 응용에서 방향은 같지만 공통 벤치마크나 저자 중복은 확인되지 않음</p>
+</div>
+
+<div class=ins>
+  <h3>3. 병리·의료 영상 AI가 단일 코호트 정확도에서 기관·인구집단을 넘나드는 전이 가능성 검증으로 이동</h3>
+  <p>Conserved Immune Topology(암종 간 전이), 소아 흉부 X선 3개국 전이성 평가, 초음파 기반 간경변 예측 세 편이 모두 '한 데이터셋 정확도'보다 '다른 병원·다른 나라·다른 암종으로 옮겨갔을 때 무엇이 깨지는지'를 직접 측정하며, 의료 영상 AI 평가 기준이 한 단계 더 까다로워지고 있습니다.</p>
+  <p class=conf-note>Confidence: Medium — 3개 모달리티에서 방향은 같지만 abstract만으로는 서로 다른 기관/저자군인지 확인되지 않아 근거가 아직 얇음</p>
+</div>
+
+<div class=ins>
+  <h3>4. 3D 재구성 파이프라인의 계산 병목을 표현 자체를 바꿔서 줄이는 흐름</h3>
+  <p>Compact Neural Appearance Models(SH 계수를 소형 MLP로 대체), BLASt3R(조밀 대응점 대신 빠른 매칭+단안 사전), HiSfM(스캐폴드 기반 계층 복원) 세 편이 3D 재구성의 저장·계산 비용을 표현 방식 교체로 줄이며, 3DGS·SfM 파이프라인이 아직 세부 표현 단에서 개선 여지가 많이 남아 있음을 보여줍니다.</p>
+  <p class=conf-note>Confidence: Low — 3편이 모두 3D 재구성 효율화를 다루지만 하위 문제가 서로 달라 단일 축으로 수렴하지 않음</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. ReaDiT Guidance/Importance-Aware Low-Rank Distillation을 랩 frozen DiT 기반 복원 파이프라인에 적용</h3>
+  <p>단일 DiT 블록의 내부 표현을 읽어 목표 조건(위상 맵, depth)으로 생성을 유도하는 방식과 투영 행렬별 중요도 기반 압축을 랩의 frozen diffusion transformer 기반 위상 복원·초해상도 모델에 적용하면, 재학습 없이 목표 조건 제어와 경량화를 동시에 시험할 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: ReaDiT Guidance, Importance-Aware Low-Rank Distillation of Diffusion Transformers 방법 재현</li>
+    <li>공통 benchmark: 랩 QPI/위상 복원 검증 데이터셋 + 랩 보유 frozen DiT 기반 초해상도 baseline</li>
+    <li>비교축: 조건부 제어 정확도(목표 depth/edge map과의 일치도), 압축률 대비 PSNR/LPIPS 저하 곡선</li>
+    <li>실패해도 남는 결과: 실패해도 랩 DiT 모델의 블록별/투영 행렬별 중요도 프로파일 리포트는 남음</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. Weather-Conditioned Depth Anything/CrossDepth를 랩 저조도·다중 카메라 촬영 파이프라인에 적용</h3>
+  <p>악천후 스타일-내용 분리 필터와 카메라 인식 cross-attention을 랩의 저조도·산란매체·다중 카메라 라이트필드 촬영 파이프라인에 적용하면, 열화 조건에서도 depth/기하 추정이 안정화되는지 확인할 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Weather-Conditioned Depth Anything, CrossDepth 방법 재현</li>
+    <li>공통 benchmark: 랩 보유 저조도/산란매체 촬영 데이터셋 + 다중 카메라 라이트필드 리그</li>
+    <li>비교축: 저조도/산란 조건별 depth 오차, 카메라 간 깊이 추정 일관성</li>
+    <li>실패해도 남는 결과: 실패해도 랩 촬영 조건별 depth 오차 곡선(악천후 대응 필터 유무)은 남음</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. 의료 영상 전이 가능성 평가 프로토콜(discrimination/calibration/operating-point)을 랩 다기관 데이터셋에 적용</h3>
+  <p>소아 흉부 X선 전이성 논문이 쓴 판별력·확률 보정·고정 임계값 전이·라벨 회복력 4축 평가 프로토콜을 랩이 보유한 다기관 의료·현미경 영상 데이터셋에 적용하면, 랩 모델이 기관을 옮겼을 때 어느 축에서 가장 먼저 무너지는지 확인할 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Cross-dataset transportability of pediatric chest X-ray deep learning 프로토콜 재현</li>
+    <li>공통 benchmark: 랩 보유 다기관 병리/현미경 영상 데이터셋(최소 2개 기관 이상)</li>
+    <li>비교축: 판별력(AUROC), 확률 보정 오차, 고정 임계값 유지 여부, 소량 라벨 추가 시 성능 회복 속도</li>
+    <li>실패해도 남는 결과: 실패해도 랩 데이터셋의 기관 간 전이 실패 지점을 축별로 정리한 진단 리포트는 남음</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>D. Compact Neural Appearance Models의 SH 대체 디코더를 랩 3DGS 조직 슬라이드 재구성에 적용</h3>
+  <p>구면조화함수(SH) 대신 소형 공유 MLP로 시점 의존 외형을 표현하는 방식을 랩의 3D Gaussian Splatting 기반 조직 슬라이드·현미경 재구성 파이프라인에 적용하면, 저장 용량을 줄이면서 각도별 디테일 표현력을 유지할 수 있는지 확인할 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Compact Neural Appearance Models for Efficient Gaussian Splatting 방법 재현</li>
+    <li>공통 benchmark: 랩 3DGS 조직 슬라이드/현미경 재구성 검증 데이터셋</li>
+    <li>비교축: 저장 용량 대비 렌더링 PSNR/SSIM, 각도별 디테일 보존도</li>
+    <li>실패해도 남는 결과: 실패해도 랩 3DGS 파이프라인의 SH vs 소형 MLP 저장-품질 트레이드오프 비교표는 남음</li>
+  </ul>
+</div>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘은 daily 실행이라 예측 회고는 생략합니다(예측 회고는 매주 월요일 별도 weekly 실행이 담당하며, 오늘 오전 발행된 <a href="2026-09-07-weekly.html">2026-36 weekly</a>에서 이미 지난주(2026-08-31~2026-09-04) 예측을 채점했습니다).</p>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(21편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:5%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:19%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:14%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:10%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>21편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:81%"></span></span><span class=n>17편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:67%"></span></span><span class=n>14편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>118편</span></div>
+
+<p><small>⚠️ 참고: 계산광학 코어 5개 버킷(Fourier Ptychography 1편, Lensless 0편, Phase Imaging 4편, Meta-Optics 3편, Light-Field 2편) 합계 10편 중 실제 계산 이미징 신호는 2편(Collaborative On-Sensor Array Cameras, Efficient Multi-Timescale Event Representations)뿐입니다. Tomography/3D Imaging 21편 중 14편은 임상/지구물리 사례 보고, Virtual Staining/Pathology 17편 중 16편은 키워드 오탐(JoVE 무관 논문·임상 지표 모델 등), Reconstruction/Inverse Problems 14편 중 8~9편도 'reconstruction/inverse' 키워드만 겹친 일반 ML/물리 논문입니다. Deep Learning Methods 118편 중 이미징 관련 대표 몇 편만 아래에 표시했으며(catch-all 과대표 방지), 나머지 약 90편은 LLM·에이전트·통신·금융 등에 흩어져 있습니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Meta-Optics/Diffractive (3편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2506.04061" target=_blank>Collaborative On-Sensor Array Cameras</a></strong> [CV]<br>
+  왜 주요: 메타렌즈 array camera들의 좁은 시야각 한계를 카메라 간 협업으로 보완하려는 유일한 실제 이미징 신호
+</div>
+
+<h3>Light-Field/Novel Sensors (2편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.05049" target=_blank>Efficient Multi-Timescale Event Representations for Feed-Forward Object Detection</a></strong> [CV]<br>
+  왜 주요: event camera의 시간 정보를 로그 B-spline으로 인코딩해 저지연 탐지를 개선 — novel sensor 범주 실제 신호
+</div>
+
+<h3>Tomography/3D Imaging (21편 중 관련 대표 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.05210" target=_blank>BLASt3R: Bundle Adjustment of Any Image Set with Multi-View Matching and Monocular Priors</a></strong> [CV]<br>
+  왜 주요: 빠른 다중 시점 매칭과 단안 사전으로 SfM의 조밀 대응점 계산 병목을 해결
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.04325" target=_blank>The microscope is the mask: privileged views and labels from a cryo-ET forward model</a></strong> [CV]<br>
+  왜 주요: cryo-ET(극저온 전자단층촬영) 정방향 모델의 측정 열화를 역이용해 도메인 특화 증강 데이터를 만드는 접근
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.05255" target=_blank>Compact Neural Appearance Models for Efficient Gaussian Splatting</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터4 대표 — SH 계수를 소형 MLP로 대체해 3DGS 저장 비용 절감
+</div>
+
+<h3>Virtual Staining/Pathology (17편 중 관련 1편(다른 응용 맥락))</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.05323" target=_blank>Scalable Detection of Fossil Palynomorphs in Multifocal Digital Microscopy Images</a></strong> [CV]<br>
+  왜 주요: 다초점 디지털 현미경 이미지에서 자동 검출을 시도하는 몇 안 되는 실제 현미경 이미징 신호(다만 병리 virtual staining과는 응용이 다름)
+</div>
+
+<h3>Reconstruction/Inverse Problems (14편 중 관련 대표 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.04942" target=_blank>Learning 3D Editing without Paired Supervision via Generative Prior Distillation</a></strong> [CV]<br>
+  왜 주요: 3D 편집용 pair 데이터 부족 문제를 생성 사전(prior) 증류로 우회하는 접근
+</div>
+
+<h3>Deep Learning Methods (118편 중 catch-all 과대표 방지, 대표 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.04649" target=_blank>ReaDiT Guidance: Control for Image and Video Generation using Diffusion Transformer Features</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — frozen DiT 내부 표현만으로 조건부 생성 제어
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.04827" target=_blank>Weather-Conditioned Depth Anything</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터2 대표이자 오늘의 must-read — 악천후 조건에서 depth 파운데이션 모델 강건화
+</div>
+
+<hr>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Weather-Conditioned Depth Anything — arXiv 2609.04827</h3>
+  <div class=tag>[방법전환] [경고신호]</div>
+  <p><strong>왜 A급인가:</strong> Depth Anything류의 단안 깊이 추정 파운데이션 모델은 랩의 다양한 촬영 조건(저조도, 산란매체, 실외)에 그대로 가져다 쓰기 좋은 후보인데, 안개·비·야간 같은 열화 조건에서 성능이 크게 떨어진다는 사실이 실무 적용의 걸림돌이었습니다. 이 논문은 그 실패를 재학습이 아니라 스타일 분리라는 국소적인 해법으로 정면 대응한다는 점에서 랩이 바로 참고할 수 있는 사례입니다.</p>
+  <p><strong>핵심:</strong> 저자들은 날씨로 인한 화질 저하가 이미지의 '내용(장면 구조)'과 무관한 '스타일' 성분으로 어느 정도 분리될 수 있다고 보고, 실제와 합성 열화 데이터를 섞어 학습한 Style Filter로 안개·비·눈·야간 등 날씨에 따른 열화 스타일만 추출합니다. 이렇게 뽑아낸 스타일 정보를 depth 추정 백본에 조건으로 넣어, 장면 내용 자체는 그대로 두고 열화 스타일에 따라 추정 방식을 다르게 가져가는 프레임워크(DA-W)를 제안합니다. 핵심은 depth 백본을 다시 학습시키는 대신, 스타일이라는 하나의 축만 분리해 조건으로 주입한다는 점이며, 이는 안개·야간처럼 서로 다른 열화 조건마다 별도 모델을 만들 필요를 줄여줍니다.</p>
+  <p><strong>주의:</strong> abstract에는 정성적 개선 방향만 나와 있어, 안개·비·눈·야간 각 조건별 정량적 depth 오차(RMSE 등)와 baseline 대비 개선폭은 본문 표를 확인해야 합니다. 또한 Style Filter 학습에 쓴 합성 열화 데이터의 종류가 랩이 실제로 마주치는 산란매체·저조도 조건과 얼마나 가까운지도 검증이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] ReaDiT Guidance: Control for Image and Video Generation using Diffusion Transformer Features — arXiv 2609.04649</h3>
+  <div class=tag>[방법전환]</div>
+  <p><strong>왜 A급인가:</strong> diffusion transformer(DiT) 기반 생성 모델에 depth·pose 같은 목표 조건을 걸려면 보통 ControlNet류의 별도 adapter를 새로 학습시켜야 했는데, 이 논문은 이미 학습된 DiT 블록 하나의 내부 표현만 읽어서 조건부 제어를 거는 훨씬 가벼운 경로를 제시합니다. 랩이 diffusion 기반 복원 모델에 물리적 조건(위상, 조명 방향 등)을 걸고 싶을 때 재학습 비용을 줄일 수 있는 방법론입니다.</p>
+  <p><strong>핵심:</strong> ReaDiT Guidance는 DiT 내부의 한 블록에서 나오는 feature를 읽어내(readout) 그 표현이 목표 조건(depth map, pose, edge map 등)과 얼마나 일치하는지를 추론 시점에 비교하고, 이 차이를 생성 과정을 조종하는 신호로 되먹임합니다. 별도의 학습 가능한 adapter 네트워크를 추가하지 않고 이미 있는 DiT 블록의 표현력을 그대로 활용한다는 점이 핵심이며, 현대 text-to-video 모델 대부분이 DiT 백본을 쓰기 때문에 이미지뿐 아니라 비디오의 카메라·모션 제어로도 자연스럽게 확장됩니다.</p>
+  <p><strong>주의:</strong> abstract 상 '경쟁력 있거나 더 나은 성능'이라는 표현은 정성적이라, 어떤 baseline(ControlNet 등)과 어떤 지표로 비교했는지는 본문 표 확인이 필요합니다. 또한 어떤 DiT 블록을 골라야 하는지에 대한 민감도 분석도 본문에서 확인해야 합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 계산광학 코어 5개 버킷(Fourier Ptychography, Lensless, Phase Imaging, Meta-Optics, Light-Field) 합계 10편 중 실제 신호는 2편(Collaborative On-Sensor Array Cameras, Efficient Multi-Timescale Event Representations)뿐이고 나머지 8편은 레이더/안테나/분광학/논리소자 등 키워드 우연 매칭입니다. 랩 핵심 ROI에 대한 외부 신호가 오늘 특히 얇습니다.</p>
+  <p>[Dataset risk] Tomography/3D Imaging(21편) 중 14편, Virtual Staining/Pathology(17편) 중 사실상 16편이 임상 사례 보고·지구물리 탐사·일반 임상 지표 논문으로 계산 이미징 방법론과 무관한 키워드 오탐입니다. 저널 소스(299편) 전체에서 Fourier ptychography/lensless/QPI/CGH 키워드로 검색한 결과 초록이 붙은 진짜 계산광학 신호는 확인되지 않았습니다.</p>
+  <p>[Claim risk] 저널 항목 다수(Reflection Holographic Imaging, Cascaded all-silicon metasurfaces 등)가 Crossref 초록 미공개 상태로, 제목만으로 워치렌즈 판단을 내렸으므로 본문 확인 전 배치가 부정확할 수 있습니다.</p>
+  <p>[Baseline risk] 오늘 클러스터 4개 중 3개(Confidence Medium)는 abstract만으로 방향성 일치를 판단했고, 서로 다른 저자군인지·같은 학회/제출 주기에 나온 것인지는 확인하지 못했습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] Weather-Conditioned Depth Anything의 'critical failures under adverse weather'라는 문제 제기는 명확하지만, 개선 폭이 abstract에 정량 수치로 제시되지 않아 baseline 대비 실제 개선폭은 본문 표 확인이 필요합니다.</p>
+  <p>[Baseline risk] ReaDiT Guidance가 비교 대상으로 삼은 baseline이 abstract에 명시되지 않아, ControlNet 계열 대비 우위인지 자체 ablation 대비 우위인지 구분이 필요합니다.</p>
+  <p>[Dataset risk] Conserved Immune Topology는 CPTAC-COAD·TCGA 등 공개 코호트로 검증했다고 되어 있으나, 코호트 수·표본 크기가 abstract에 나오지 않아 cross-cancer 일반화 주장의 통계적 근거는 본문 확인이 필요합니다.</p>
+  <p>[Metric risk] Compact Neural Appearance Models·BLASt3R·HiSfM 세 편 모두 abstract 기준으로는 정성적 개선 표현이 대부분이라, 저장 용량·속도·정확도 트레이드오프의 정량 비교표는 본문에서 직접 확인해야 합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li>Tomography/3D Imaging 임상·지구물리 사례 약 14편 [주로 JNL] — 소아 결핵성 뇌수막염 CT, 무릎 인대 MRI 다기관 검증, permafrost 전기비저항 탐사, 단루 단층대 지진파 토모그래피 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
+    <li>Virtual Staining/Pathology 키워드 오탐 약 16편 — 궤양성 대장염 임상 지표 모델, 비트뿌리 천연 염색제 개발, 미세금융기관 연구, 낙농업 컴퓨터 비전 경제성 분석 등 'staining'·'pathology' 단어만 겹친 무관 논문입니다.</li>
+    <li>Reconstruction/Inverse Problems 오탐 약 8~9편 — JEPA 스타일 world model, 분자 컨포메이션 증강, 심볼릭 회귀, 위성항법 등 'reconstruction/inverse' 키워드만 겹치는 일반 ML/물리 논문입니다.</li>
+    <li>Deep Learning Methods 118편 중 이미징과 무관한 일반 ML/LLM/통신/금융 논문 약 90편 — 그래프 신경망, 양자 컴퓨팅, 비트코인 가격 예측, HVAC 운영 LLM 등으로 오늘 클러스터에 포함되지 않았습니다.</li>
+    <li>Phase Imaging/Holography·Meta-Optics 저널 항목 다수 [JNL, 초록 미공개] — 제목만으로는 실제 계산 이미징 관련성을 판단하기 어려워 본문 확인 전까지는 낮은 우선순위로 둡니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.04848" target=_blank>3D Radar Imaging from the UAV Nadir</a></strong> [SP]<br>
+  문제: UAV 하부(nadir) 방향 SAR 영상이 각도 분해능이 낮음 / 방법: InSAR 프레임워크 + 위상오차 보정(PGA)으로 3D 영상 복원 / 의미: 'aperture synthesis' 키워드로 버킷에 배정됐으나 광학 Fourier ptychography와 무관한 레이더 리모트센싱 논문 / 우선순위: Skim-only
+</div>
+<p><small>오늘 이 버킷에 배정된 유일한 논문(3D Radar Imaging from the UAV Nadir)은 UAV InSAR 레이더 논문으로 광학 Fourier ptychography와 무관해 개별 bullet을 생략합니다. 랩 ROI 핵심 공백입니다.</small></p>
+
+<h3>Lensless/Coded Imaging (0편)</h3>
+<p><small>classify.py 기준으로 오늘 이 버킷에 배정된 논문이 없습니다. 랩 ROI 핵심 공백입니다.</small></p>
+
+<h3>Phase Imaging/Holography (4편)</h3>
+<p><small>오늘 배정된 4편(안테나 mutual-coupling 이론, 편광 홀로그래픽 메타표면 하드웨어, Raman optical activity 분광학, 테라헤르츠 파면 성형)은 모두 계산 위상 이미징/디지털 홀로그래피 방법론과 결이 달라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Meta-Optics/Diffractive (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2506.04061" target=_blank>Collaborative On-Sensor Array Cameras</a></strong> [CV]<br>
+  문제: 메타렌즈 기반 flat computational camera가 부피는 줄었지만 시야각이 좁음 / 방법: 여러 대의 온-센서 메타렌즈 카메라가 서로 정보를 공유하는 협업 촬영 구조 / 의미: 메타옵틱스 기반 계산 카메라의 시야각 한계를 하드웨어 배열 단에서 보완하는 드문 실제 신호 / 우선순위: Read
+</div>
+<p><small>나머지 2편은 계산 이미징 방법론과 거리가 있는 키워드 오탐(임상 사례 보고·일반 ML 등)이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Light-Field/Novel Sensors (2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.05049" target=_blank>Efficient Multi-Timescale Event Representations for Feed-Forward Object Detection</a></strong> [CV]<br>
+  문제: event camera 기반 객체 탐지가 보통 recurrent 구조로 시간 정보를 누적해 지연이 큼 / 방법: 로그 B-spline 기반 연속 다중 시간축 표현 + 신뢰도 정규화 / 의미: novel sensor(event camera) 표현을 feed-forward로 바꿔 저지연 탐지를 노리는 접근 / 우선순위: Read
+</div>
+<p><small>나머지 1편은 계산 이미징 방법론과 거리가 있는 키워드 오탐(임상 사례 보고·일반 ML 등)이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Tomography/3D Imaging (21편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.05210" target=_blank>BLASt3R: Bundle Adjustment of Any Image Set with Multi-View Matching and Monocular Priors</a></strong> [CV]<br>
+  문제: 정확한 bundle adjustment는 조밀 대응점 계산 비용 때문에 실시간 SLAM에 못 씀 / 방법: 빠른 다중 시점 매칭 + 단안 사전 기반 정칙화 BA / 의미: 정확도와 속도를 동시에 잡는 하이브리드 SfM/SLAM 접근 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.04718" target=_blank>HiSfM: Disambiguating Structure-from-Motion via Scaffold-Anchored Hierarchical Reconstruction</a></strong> [CV]<br>
+  문제: 반복·대칭 구조에서 SfM이 모호성 때문에 실패하고 계산 비용도 큼 / 방법: 지역 커뮤니티 기반 골격(scaffold) 구성 후 계층적 정합 / 의미: 대칭 구조 강건성과 효율을 동시에 노리는 SfM 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.05255" target=_blank>Compact Neural Appearance Models for Efficient Gaussian Splatting</a></strong> [CV]<br>
+  문제: 3DGS의 구면조화함수(SH) 계수가 저장·메모리 대역폭을 많이 차지하고 표현력도 제한적 / 방법: 소형 공유 MLP가 압축된 per-primitive latent code를 해석하는 대체 표현 / 의미: 오늘 클러스터4 대표 — 3DGS 저장 비용 절감의 표현 단 해법 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.04325" target=_blank>The microscope is the mask: privileged views and labels from a cryo-ET forward model</a></strong> [CV]<br>
+  문제: cryo-ET 단백질 주석 모델 학습에 쓸 라벨이 부족하고 측정 자체가 제한된 기울임 각도로 손상됨 / 방법: 정방향 모델의 측정 열화를 역이용해 도메인 특화 증강 페어 생성 / 의미: 측정 물리 모델을 데이터 증강에 재활용하는 접근 / 우선순위: Read
+</div>
+<p><small>나머지 17편은 계산 이미징 방법론과 거리가 있는 키워드 오탐(임상 사례 보고·일반 ML 등)이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology (17편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.05323" target=_blank>Scalable Detection of Fossil Palynomorphs in Multifocal Digital Microscopy Images</a></strong> [CV]<br>
+  문제: 화석 포자·꽃가루 등 palynomorph 판독이 다초점 고해상도 이미지 수작업 분석에 의존 / 방법: 다초점 디지털 현미경 이미지 기반 자동 검출 파이프라인 / 의미: 현미경 이미징 자동화 신호이나 병리 virtual staining과는 응용이 다름 / 우선순위: Skim-only
+</div>
+<p><small>나머지 16편은 계산 이미징 방법론과 거리가 있는 키워드 오탐(임상 사례 보고·일반 ML 등)이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (14편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.04942" target=_blank>Learning 3D Editing without Paired Supervision via Generative Prior Distillation</a></strong> [CV]<br>
+  문제: 지시문 기반 3D 편집이 고품질 pair 데이터 부족으로 병목 / 방법: 생성 사전(prior) 증류를 통해 pair 없이 feed-forward 3D 편집 학습 / 의미: 3D 편집 데이터 병목을 우회하는 방법론 / 우선순위: Read
+</div>
+<p><small>나머지 13편은 계산 이미징 방법론과 거리가 있는 키워드 오탐(임상 사례 보고·일반 ML 등)이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods (118편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.04649" target=_blank>ReaDiT Guidance: Control for Image and Video Generation using Diffusion Transformer Features</a></strong> [CV]<br>
+  문제: DiT 조건부 생성 제어에 보통 별도 adapter 학습이 필요 / 방법: DiT 내부 블록 feature readout으로 추론 시점 조건부 유도 / 의미: 오늘 클러스터1·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.04827" target=_blank>Weather-Conditioned Depth Anything</a></strong> [CV]<br>
+  문제: depth 파운데이션 모델이 악천후·야간에서 성능 급락 / 방법: 스타일-내용 분리 필터로 열화 스타일만 조건으로 주입 / 의미: 오늘 클러스터2·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.04646" target=_blank>Importance-Aware Low-Rank Distillation of Diffusion Transformers</a></strong> [CV]<br>
+  문제: DiT 압축 시 LLM처럼 급격한 성능 붕괴 우려 / 방법: 투영 행렬별 중요도 기반 truncated SVD 압축 / 의미: 클러스터1 대표, DiT는 LLM과 달리 완만한 성능 저하를 보인다는 관찰 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.04555" target=_blank>DART: Depth-as-Target Pretraining for Surgical Vision Foundation Models</a></strong> [CV]<br>
+  문제: 자연 이미지 기반 파운데이션 모델이 수술 장면에서 전이 성능이 낮음 / 방법: pseudo-depth를 마스킹된 iBOT 패치의 재구성 목표로 추가 / 의미: 클러스터2 대표, 도메인 특화 기하 신호 주입 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.05182" target=_blank>Conserved Immune Topology Improves Pathology Foundation Model Generalization for Cross-Cancer MSI-H Prediction</a></strong> [CV]<br>
+  문제: 병리 파운데이션 모델이 암종이 바뀌면 일반화가 깨짐 / 방법: 면역세포 공간 분포를 생물학적 사전 지식으로 frozen embedding에 추가 / 의미: 클러스터3 대표, 전이 가능성 검증 축 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2609.05140" target=_blank>Cross-dataset transportability of pediatric chest X-ray deep learning across three countries</a></strong> [JNL]<br>
+  문제: 의료 영상 AI 외부 검증이 판별력 하나로만 축소되는 경향 / 방법: 판별력·보정·고정 임계값 전이·라벨 회복력 4축 분리 평가 / 의미: 클러스터3 대표, 평가축 자체를 다양화한 논문 / 우선순위: Read
+</div>
+<p><small>나머지 112편은 계산 이미징 방법론과 거리가 있는 키워드 오탐(임상 사례 보고·일반 ML 등)이라 개별 bullet을 생략합니다.</small></p>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://arxiv.org/abs/2609.04827" target=_blank>Weather-Conditioned Depth Anything — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2609.04649" target=_blank>ReaDiT Guidance — arXiv</a></li>
+  <li><a href="2026-09-07-weekly.html">2026-36 Weekly Retrospective</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-09-07 정상 daily 실행 · arXiv 480건(new+cross) + 저널 299편, 전체 스캔(중복제거) 704건 · ROI 배정 180건 (25.6%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>
