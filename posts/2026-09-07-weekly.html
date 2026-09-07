@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Weekly Retrospective — 2026-W36</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.7;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+table{border-collapse:collapse;width:100%;margin:1rem 0}
+th,td{border:1px solid #ccc;padding:.5rem .8rem;vertical-align:top}
+th{background:#f0f0f8;font-size:.85rem}
+td{font-size:.88rem}
+blockquote{border-left:4px solid #2a2a6e;padding:.5rem 1rem;margin:1rem 0;background:#f8f8ff}
+.theme-card{border:1px solid #e0e0ff;border-radius:8px;padding:1rem;margin:.8rem 0;background:#f8f8ff}
+.theme-card h3{margin:0 0 .5rem;font-size:1rem;color:#2a2a6e}
+a{color:#2a2a6e}
+.home{display:inline-block;padding:.4rem .9rem;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;font-size:.875rem;color:#374151;text-decoration:none;margin:.5rem 0}
+.home:hover{background:#e9ecef}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 6px;border-radius:8px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.hot-cold{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+.hot-box{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:.9rem 1.1rem}
+.cold-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:.9rem 1.1rem}
+.hot-box h3{margin:0 0 .5rem;color:#7f1d1d;font-size:.95rem}
+.cold-box h3{margin:0 0 .5rem;color:#1e3a8a;font-size:.95rem}
+.hot-box ul,.cold-box ul{margin:.4rem 0;padding-left:1.2rem;font-size:.88rem}
+.dd{background:#fefce8;border:1px solid #fde047;border-radius:10px;padding:1.1rem 1.3rem;margin:1rem 0}
+.dd h3{margin:0 0 .5rem;color:#713f12;font-size:1rem}
+.action-card{border:1px solid #d1fae5;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#f0fdf4}
+.action-card h3{margin:0 0 .4rem;font-size:.95rem;color:#14532d}
+.pred-card{border:1px solid #e0e7ff;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#eef2ff}
+.pred-card h3{margin:0 0 .4rem;font-size:.95rem;color:#3730a3}
+.pred-card .cond{font-size:.82rem;color:#4338ca;margin:.3rem 0}
+.meta{font-size:.85rem;color:#475569;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:4px;padding:.6rem 1rem;margin:.8rem 0}
+ul.plain{padding-left:1.3rem}
+ul.plain li{margin:.3rem 0;font-size:.9rem}
+.review-hit{color:#166534;font-weight:700}
+.review-partial{color:#92400e;font-weight:700}
+.review-miss{color:#7f1d1d;font-weight:700}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Weekly Retrospective — 2026-09-07 (Week 36)</h1>
+<div class=meta>
+  <div>발행: 2026-09-07 (월) &nbsp;|&nbsp; 검토 기간: 2026-08-31 ~ 09-04 (Mon–Fri)</div>
+  <div>지난주 arXiv 신규 약 3,224편 (cs.LG 985 · cs.CV 809 · cs.AI 1,250 · eess.IV 47 · eess.SP 133) + 저널 포함 스캔 총 4,527건 &nbsp;|&nbsp; ROI 배정 1,323건 &nbsp;|&nbsp; 5일치 daily briefing 기반(월~금 모두 arXiv+저널 완전판)</div>
+</div>
+
+<h2>🗓 Executive Summary</h2>
+<ul class=plain>
+  <li>지난주는 <strong>'3D Gaussian Splatting/feed-forward 3D 재구성이 닷새 내내 한 단계씩 질문을 구체화한 한 주'</strong>로 기억하면 됩니다. 월요일 자원 제약(메모리·저장)을 정리한 뒤, 화요일엔 결과를 믿을 수 있는지, 수요일엔 어떤 조건에서도 계속 돌아가는지, 목요일엔 생성모델로 무엇을 더할 수 있는지, 금요일엔 학습 자체가 왜 무너지는지를 순서대로 물었습니다.</li>
+  <li>diffusion을 영상 복원 사전으로 쓰던 흐름에도 세대교체 조짐이 보였습니다. 수요일 flow matching이 왜 적은 단계로도 그럴듯한 결과를 내는지 설명하는 이론과, 그걸 실제 복원에 적용했을 때 어디서 깨지는지 보여주는 응용이 같은 날 나왔습니다.</li>
+  <li>랩의 핵심 ROI인 <strong>계산광학 하드웨어 코어(Fourier Ptychography·Lensless)는 raw count만 보면 목요일 반등한 것처럼 보였지만, 내용을 하나씩 확인하면 닷새 내내 진짜 신호가 사실상 0에 머물렀습니다.</strong> 지난주(W35) '변동성인지 구조적 하락인지'라는 질문에 구조적 하락 쪽으로 답이 기울고 있습니다.</li>
+</ul>
+
+<blockquote>
+<strong>Weekly Thesis.</strong> 지난주 초반(월)에는 3D 재구성이 정해진 메모리·연산 예산 안에서 돌아가게 만드는 자원 제약 문제가 중심이었는데, 화요일에는 그렇게 복원한 결과를 믿어도 되는지를 검증하는 신뢰도 축이 새로 열렸습니다. 수요일부터는 그 신뢰도 검증이 실제 시스템(On-the-Fly3R의 검증-거부-재시도)으로 옮겨가며 실시간·대규모 입력에서도 견디는지를 물었고, 동시에 diffusion을 밀어낼 후보로 flow matching이 이론과 응용을 동시에 갖추고 등장했습니다. 목요일에는 3DGS가 생성모델을 얹어 찍지 못한 부분까지 채우는 쪽으로 능력을 넓혔고, 금요일에는 그 모든 확장의 기반이 되는 학습 구조 자체의 병목(그래디언트 소실, 대규모 항공 장면)을 정면으로 공략했습니다. 랩의 핵심 ROI인 계산광학 하드웨어 코어는 raw count로는 목요일 반등처럼 보였지만 실질 신호를 걷어내면 닷새 내내 사실상 0이라, 지난주(W35) 걸었던 진단이 구조적 하락 쪽으로 한 걸음 더 다가간 한 주였습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>지난주 가장 뜨거웠던 흐름은 <strong>3D Gaussian Splatting과 feed-forward 3D 재구성이 닷새 내내 하나의 이야기로 이어진 것</strong>입니다. 월요일 ABCD는 3DGS 학습 시 장면 전체를 GPU 메모리에 올리지 않고 공간을 블록으로 나눠 한 번에 하나만 활성화하는 방식으로 메모리 사용량을 장면 크기와 무관하게 고정시켰습니다. 화요일에는 질문이 완전히 달라집니다 — Calibration Audit은 feed-forward 3D 복원 결과가 스스로 얼마나 확신하는지와 그 확신이 실제 기하학적 정합성과 일치하는지를 처음 정량으로 검증했습니다. 지금까지 3D 재구성 논문이 "얼마나 정확하게 복원하느냐"를 물었다면, 이 논문은 "그 복원 결과를 곧이곧대로 믿어도 되느냐"를 묻기 시작한 겁니다. 수요일에는 그 신뢰도 검증이 이론에서 실제 시스템으로 옮겨갑니다. On-the-Fly3R는 순서가 뒤섞인 무인기(UAV) 촬영 이미지 수천 장을 재학습 없이 온라인으로 이어붙이면서, 정렬에 실패한 프레임을 자동으로 걸러내고 다시 시도하는 검증-거부-재시도 구조를 냈습니다. 목요일에는 InceptionGS가 3DGS 장면에 생성모델을 얹어 카메라가 찍지 못한 부분까지 채워 넣는 쪽으로 능력을 넓혔고, 금요일에는 Laplacian Frequency Hierarchies가 대규모 항공 장면에서 3DGS 학습이 느려지고 그래디언트가 사라지는 근본 원인을 주파수 단계별 학습 구조로 정면 공략했습니다. 닷새를 이어보면 "무엇을 더 복원할 수 있는가"에서 "그 결과를 믿을 수 있는가", "어떤 조건에서도 계속 돌아가는가", "학습 자체가 왜 무너지는가"로 질문이 한 단계씩 구체화된 셈입니다. 비슷한 세대교체가 영상 복원 생성 사전에서도 나타났습니다. 화요일 Manifold-Constrained PET Reconstruction까지는 학습된 diffusion 모델을 사전으로 재사용하는 범위를 MRI에서 PET까지 넓히는 정도였는데, 수요일에는 A Lagrangian View of Flow Matching이 flow matching(적은 단계로 끝나는 diffusion의 후속 생성모델)이 왜 한 번의 계산만으로도 그럴듯한 결과를 내는지를 입자 이동 관점에서 새로 설명했고, 같은 날 ReBridge-Flow는 그 flow matching을 실제 영상 복원에 쓸 때 측정값을 반영하는 보정 단계가 모델이 배운 시작점-끝점 짝을 깨뜨리는 구체적 실패 조건을 찾아 고쳤습니다. 목~금에는 GeoSPRINT와 SPARK가 diffusion·flow matching 두 계열 모두를 재학습 없이 더 싸게 쓰는 방법을 냈습니다.</p>
+
+<p>반대로 식은 흐름은 랩의 핵심 ROI인 계산광학 하드웨어 코어(Fourier Ptychography·Lensless)입니다. raw count만 보면 월요일 1편·0편으로 시작해 화요일 3편·2편, 수요일 1편·0편을 거쳐 목요일에는 5편·3편으로 2주 만의 반등처럼 보였습니다. 그런데 하나씩 확인해 보면 전혀 다른 그림이 나옵니다. 화요일 Fourier Ptychography 3편은 전부 SAR(합성개구레이더)·레이더 원격탐사 논문이 "aperture"·"synthesis" 키워드에 우연히 걸린 오탐이었고, 목요일 5편 중 진짜 신호는 전자현미경 파라미터 추정에 전이 가능한 베이지안 최적화 논문 1편과 초록이 비어 본문 확인이 필요한 X-ray ptychography 저널 논문 1편뿐이었습니다. Lensless도 마찬가지로 화요일 2편은 방향이 갈려 클러스터를 이루지 못했고, 목요일 3편은 전부 무관했습니다. 즉 닷새 중 어느 하루도 두 버킷이 동시에 실질 신호 2편 이상을 낸 날이 없었습니다. 지난주(W35) weekly가 "변동성인지 구조적 하락인지가 다음 주 첫 판정 대상"이라고 걸었던 질문에, 이번 주는 구조적 하락 쪽으로 한 걸음 더 다가간 답을 내놓은 셈입니다. 가상 염색·병리 파운데이션 모델 쪽도 눈여겨볼 만합니다 — 월요일 EXPOSE가 모델 내부를 뜯어 신뢰성을 점검한 뒤, 화요일에는 저널에서 방법 논문과 종합 리뷰가 함께 나오며 하나의 분야로 인식되기 시작했고, 수요일에는 실제 병원 워크플로우의 지저분한 조건(비페어 데이터, 여러 염색 전환)을 견디는 방법(StainPresetNet)이, 금요일에는 그렇게 검증된 모델을 실제 현장에 배포할 만큼 가볍게 만드는 방법(TAP-Path)이 나와, 3DGS 스레드와 비슷한 성숙 순서를 밟았습니다.</p>
+
+<p>다음 주 전망: 첫째, 계산광학 하드웨어 코어의 결핍이 정말 새로운 기준선으로 굳어지는지, 아니면 다음 주 어느 하루라도 두 버킷이 동시에 실질 신호 2편 이상을 내며 반전하는지가 가장 먼저 확인할 대상입니다. 둘째, 이번 주 닷새 내내 쌓인 3DGS/3D 재구성의 다섯 갈래(자원·신뢰도·배포·생성·학습구조)가 다음 주에는 그중 두 개 이상을 한 논문 안에서 결합하는 통합형 논문으로 수렴하는지 지켜봐야 합니다. 셋째, flow matching이 다음 주에도 diffusion과 나란히, 혹은 diffusion을 밀어내고 영상 복원의 기본 생성 사전 자리를 굳히는지가 랩 ROI 관점에서 직접적인 확인 대상입니다.</p>
+
+<h2>⚖️ Hot vs Cold</h2>
+<div class=hot-cold>
+  <div class=hot-box>
+    <h3>⬆ 가속 클러스터</h3>
+    <ul>
+      <li><strong>3D Gaussian Splatting/feed-forward 3D 재구성 — 자원(월)→신뢰도(화)→배포(수)→생성(목)→학습구조(금) 5단계 누적 진화</strong><br>지난 4주 중 처음으로 하루짜리 전환이 아니라 닷새 내내 새 층위를 더하며 이어졌습니다.</li>
+      <li><strong>diffusion → flow matching 세대교체 조짐(수~금)</strong><br>수요일 이론+응용이 같은 날 나오며 flow matching이 diffusion과 나란히 설 준비가 됐다는 신호를 냈습니다.</li>
+      <li><strong>가상 염색·병리 파운데이션 모델 — 신뢰성(월)→분야 성숙(화)→실전 견고성(수)→경량 배포(금)</strong><br>3DGS와 비슷한 성숙 순서를 밟으며 닷새 중 나흘에 걸쳐 이어졌습니다.</li>
+    </ul>
+  </div>
+  <div class=cold-box>
+    <h3>⬇ 감속 클러스터</h3>
+    <ul>
+      <li><strong>계산광학 하드웨어 코어(Fourier Ptychography·Lensless)</strong><br>raw count는 목요일 반등처럼 보였지만 실질 신호는 닷새 내내 사실상 0으로, 구조적 하락 진단에 더 가까워졌습니다.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>🧩 주간 클러스터 표</h2>
+<table>
+<thead><tr>
+  <th>Cluster</th>
+  <th>대표 논문</th>
+  <th>왜 중요?</th>
+  <th>Confidence</th>
+  <th>Lab action</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><strong>3D Gaussian Splatting/feed-forward 3D 재구성 — 자원 제약(월)→신뢰도 검증(화)→실시간 견고 배포(수)→생성적 확장(목)→학습 구조 개선(금) <span class=tag>HOT</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.27735">ABCD</a><br>
+    <a href="https://arxiv.org/abs/2608.29705">Calibration Audit</a><br>
+    <a href="https://arxiv.org/abs/2609.00923">On-the-Fly3R</a><br>
+    <a href="https://arxiv.org/abs/2609.02747">InceptionGS</a><br>
+    <a href="https://arxiv.org/abs/2609.03334">Laplacian Frequency Hierarchies</a>
+  </td>
+  <td>월요일 ABCD는 3DGS 학습 시 장면 전체를 GPU에 올리지 않고 블록 단위로만 활성화해 메모리 사용량을 장면 크기와 무관하게 고정시켰습니다. 화요일 Calibration Audit은 feed-forward 3D 복원 결과가 스스로 얼마나 확신하는지와 그 확신이 실제 기하학적 정합성과 일치하는지를 처음 정량 검증했습니다. 수요일 On-the-Fly3R는 그 신뢰도 검증을 실제 시스템으로 옮겨, 순서가 뒤섞인 무인기 촬영 이미지 수천 장을 재학습 없이 온라인으로 이어붙이면서 정렬 실패 프레임을 자동으로 걸러내고 다시 시도하는 구조를 냈습니다. 목요일 InceptionGS는 3DGS 장면에 생성모델을 얹어 카메라가 찍지 못한 부분까지 채워 넣었고, 금요일 Laplacian Frequency Hierarchies는 대규모 항공 장면에서 3DGS 학습이 느려지고 그래디언트가 사라지는 근본 원인을 주파수 단계별 학습 구조로 정면 공략했습니다. 닷새를 이어보면 "무엇을 더 복원할 수 있는가"에서 "그 결과를 믿을 수 있는가", "어떤 조건에서도 계속 돌아가는가", "학습 자체가 왜 무너지는가"로 질문이 한 단계씩 구체화된 흐름입니다.</td>
+  <td>High<br><small>월~금 닷새 내내 서로 다른 저자군이 매일 새 층위를 더하며 이어짐, 4주 중 처음으로 하루짜리로 끝나지 않은 스레드</small></td>
+  <td>Calibration Audit의 신뢰도-기하 정합성 평가 프로토콜과 On-the-Fly3R의 검증-거부-재시도 메커니즘을 우리 랩 산란매질/저조도 3D 재구성 파이프라인에 순서대로 적용해, 실패 프레임 자동 검출 정확도와 재시도 후 PSNR 개선폭을 함께 측정하는 표를 이번 주 안에 만든다</td>
+</tr>
+<tr>
+  <td><strong>diffusion을 영상 복원 사전으로 쓰던 흐름에서 flow matching이 이론+응용을 동시에 갖춘 대안으로 떠오름 <span class=tag>HOT</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.29158">Manifold-Constrained PET Reconstruction</a><br>
+    <a href="https://arxiv.org/abs/2609.00198">A Lagrangian View of Flow Matching</a><br>
+    <a href="https://arxiv.org/abs/2609.00811">ReBridge-Flow</a><br>
+    <a href="https://arxiv.org/abs/2609.02160">GeoSPRINT</a><br>
+    <a href="https://arxiv.org/abs/2609.03813">SPARK</a>
+  </td>
+  <td>화요일 Manifold-Constrained PET Reconstruction은 학습된 생성모델을 의료영상 역문제 사전으로 쓰는 범위를 MRI를 넘어 PET까지 넓혔는데, 여기까지는 여전히 diffusion 기반이었습니다. 수요일에는 A Lagrangian View of Flow Matching이 flow matching이 왜 한 번의 계산만으로도 그럴듯한 결과를 내는지를 입자 이동 관점에서 새로 설명했고, 같은 날 ReBridge-Flow는 그 flow matching을 실제 영상 복원에 적용했을 때 측정값을 반영하는 보정 단계가 모델이 배운 시작점-끝점 짝을 깨뜨려버리는 구체적 실패 조건을 발견해 다시 이어 붙이는 방법을 냈습니다. 목요일 GeoSPRINT는 재학습 없이 diffusion/flow matching 두 계열 모두의 샘플링 단계 수를 줄이는 방법을 냈고, 금요일 SPARK는 이미 학습된 DiT(Diffusion Transformer)의 활성값을 재학습 없이 변조해 추론 비용을 줄였습니다. 화요일까지는 diffusion이 기본값이었는데, 수요일 이후로는 flow matching이 이론과 응용을 동시에 갖춘 대안으로 떠오르고, 목~금은 두 생성모델 계열 모두를 "이미 학습된 걸 어떻게 더 싸게 쓸까"라는 같은 질문으로 다루기 시작했습니다.</td>
+  <td>High<br><small>화~금 나흘, 이론 1편·응용 4편이 diffusion에서 flow matching으로의 전환을 서로 다른 각도에서 뒷받침</small></td>
+  <td>ReBridge-Flow의 posterior bridge 재결합 방법을 우리 랩 diffusion 기반 복원 파이프라인에 flow matching으로 교체 적용해, 같은 측정 조건에서 diffusion 대비 PSNR/SSIM과 샘플링 단계 수를 함께 비교하는 표를 만든다</td>
+</tr>
+<tr>
+  <td><strong>가상 염색·병리 파운데이션 모델 — 신뢰성 점검(월)→분야로서의 성숙(화)→실전 견고성(수)→경량 배포(금) <span class=tag>HOT</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2608.28191">EXPOSE</a><br>
+    <a href="https://doi.org/10.1038/s41598-026-67646-z">HYED-Net</a><br>
+    <a href="https://arxiv.org/abs/2609.01146">StainPresetNet</a><br>
+    <a href="https://arxiv.org/abs/2609.04071">TAP-Path</a>
+  </td>
+  <td>월요일 EXPOSE는 병리 파운데이션 모델의 임베딩을 sparse autoencoder로 뜯어봐 어떤 특징이 실제 진단 근거이고 어떤 것이 염색 아티팩트인지 구분하는 설명가능성 도구를 냈습니다. 화요일에는 저널에서 HYED-Net처럼 IHC-to-mpIF 가상 염색과 핵 분할을 함께 처리하는 방법 논문과 이를 종합하는 리뷰가 같이 나오며, label-free 가상 염색이 산발적 아이디어를 넘어 하나의 연구 분야로 인식되기 시작했다는 걸 보여줬습니다. 수요일 StainPresetNet은 완벽하게 정렬된 페어 데이터가 없거나 여러 염색을 오가야 하는 실제 병원 워크플로우의 지저분한 조건에서도 작동하도록 기준 영상 교체 방식의 정규화를 도입했고, 금요일 TAP-Path는 큰 병리 파운데이션 모델을 새로 학습시키는 대신 가지치기·지식증류로 가볍게 만들어 실제 현장 배포 비용을 낮췄습니다. "모델을 믿을 수 있는가"에서 "분야로 자리잡았는가", "실전 조건을 견디는가", "현장에 배포할 만큼 가벼운가"로 질문이 자연스럽게 이어졌습니다.</td>
+  <td>High<br><small>월·화·수·금 나흘, 서로 다른 문제 설정(설명가능성·분야 성숙·워크플로우 견고성·경량화) 4편이 자연스러운 성숙 순서로 연결</small></td>
+  <td>StainPresetNet의 기준 영상 교체 정규화를 우리 랩 label-free 염색 스타일 전이 파이프라인에 적용하고, TAP-Path의 가지치기·증류 전략을 우리 랩 병리 파운데이션 모델에 적용해 정확도-지연시간 곡선을 그린다</td>
+</tr>
+<tr>
+  <td><strong>계산광학 하드웨어 코어(Fourier Ptychography·Lensless)가 raw count 착시를 걷어내면 닷새 내내 실질 신호 사실상 0 <span class=tag>WATCH</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2609.02126">Scalable Bayesian Optimization of Composite Functions</a><br>
+    <a href="https://doi.org/10.1051/0004-6361/202661472">Vector Zernike Wavefront Sensor (adaptive optics)</a>
+  </td>
+  <td>raw count만 보면 목요일 Fourier Ptychography 5편·Lensless 3편으로 2주 만의 반등처럼 보이지만, 실제로 하나씩 확인하면 5편 중 진짜 신호는 전자현미경 파라미터 추정에 전이 가능한 베이지안 최적화 논문 1편과 초록이 비어 본문 확인이 필요한 X-ray ptychography 저널 논문 1편뿐이었고, Lensless 3편은 전부 무관했습니다. 화요일도 Fourier Ptychography 3편이 전부 SAR·레이더 원격탐사 키워드 오탐이었습니다. 즉 닷새 중 어느 하루도 두 버킷이 동시에 실질 신호 2편 이상을 낸 날이 없어, 지난주(W35) "변동성인지 구조적 하락인지 다음 주 첫 판정 대상"이라는 질문에 구조적 하락 쪽으로 답이 기울고 있습니다.</td>
+  <td>Low<br><small>닷새 모두 실질 신호가 버킷당 0~1편, raw count 반등(목요일)조차 확인하면 대부분 오탐</small></td>
+  <td>지난 5주치(W32~W36) daily trends의 Fourier Ptychography·Lensless raw count와 실질 신호 편수를 요일별로 재정리하고, 랩 자체 lensless/FPM 미니 벤치마크 계획을 이번 주 안에 초안으로 작성한다</td>
+</tr>
+</tbody>
+</table>
+
+<h2>📐 arXiv vs 저널 키워드</h2>
+<table>
+<thead><tr><th>채널</th><th>지난주 주요 키워드</th></tr></thead>
+<tbody>
+<tr><td><strong>공통</strong></td><td>reconstruction/reliability(3DGS·feed-forward 3D 재구성의 신뢰도 검증과 가상 염색의 실전 견고성이 같은 지향을 서로 다른 도메인에서 보임), physics-informed(수~목 PINN·물리 구조 내장 복원과 저널의 베이지안 tomography 불확실성 정량화가 다른 층위로 등장), efficient/lightweight(arXiv는 파운데이션 모델·diffusion 파이프라인 압축, 저널은 광학 하드웨어 소형화)</td></tr>
+<tr><td><strong>arXiv 전용</strong></td><td>3DGS 자원 제약·신뢰도 검증·배포·생성 확장·학습 구조 개선(ABCD, Calibration Audit, On-the-Fly3R, InceptionGS, Laplacian Frequency Hierarchies), flow matching 이론+응용(A Lagrangian View, ReBridge-Flow, GeoSPRINT), 가상 염색 실전 견고성·경량화(StainPresetNet, TAP-Path), 밀집 자기지도 사전학습(Pix2Rep-v2, CMRVision, Gekko), 카메라 제어 3D/비디오 생성 안정화(FlashRender, Stabilizing Camera-Controlled NVS)</td></tr>
+<tr><td><strong>저널 전용</strong></td><td>label-free 가상 염색 방법+리뷰(HYED-Net, In silico labelling), 렌즈리스 코드화 ptychography 스캔 최적화, 베이지안 tomography 불확실성 정량화(PET/SPECT, CT MRF), 위상 이미징/홀로그래피 하드웨어(terahertz phase imaging, quantum meta-holography), 메타렌즈 스캐너 소형화, 적응광학 vector Zernike 파면 센서</td></tr>
+<tr><td><strong>같은 단어, 다른 맥락</strong></td><td>"reconstruction" — arXiv는 3DGS/feed-forward 3D 재구성의 신뢰도·배포 견고성을, 저널은 CT/MRI/PET 임상 재구성 사례를 가리켜 층위가 다릅니다. "efficient/lightweight" — arXiv는 파운데이션 모델·diffusion 파이프라인의 파라미터·활성값 압축을, 저널은 메타렌즈 스캐너 같은 광학 하드웨어 자체의 물리적 소형화를 가리켜 같은 표현이라도 압축 대상이 다릅니다. "virtual/staining" — arXiv 쪽 가상 염색은 계산 이미징 방법론이지만, 금요일 저널에서 다수 등장한 JoVE 습식 실험 프로토콜의 "staining"은 실제 조직염색 기법 설명이라 컴퓨테이셔널 virtual staining과 무관합니다.</td></tr>
+</tbody>
+</table>
+
+<h2>🔥 주간 Top 5</h2>
+<ol>
+<li>
+  <strong><a href="https://arxiv.org/abs/2608.27735">ABCD: Block-Coordinate 3DGS Training with Fixed Memory Budget</a></strong>
+  <span class=tag>[방법전환]</span><br>
+  3D Gaussian Splatting 학습을 공간 블록 단위로 쪼개 GPU 메모리 사용량을 장면 크기와 무관하게 고정시켰습니다. 지난주 자원 제약 클러스터 6편 중 가장 직접적으로 랩 파이프라인의 VRAM 문제에 적용 가능하고, 닷새짜리 3DGS 진화의 첫 단추이기도 합니다.<br>
+  <small>Phylogeny: CVML / Computational Optics &gt; 3D Gaussian Splatting &gt; Resource-Constrained Training &gt; Block-Coordinate Memory Fixing</small>
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2608.29705">Calibration Audit: Confidence Verification for Feed-Forward 3D Reconstruction</a></strong>
+  <span class=tag>[평가축]</span><br>
+  feed-forward 3D 복원 결과가 스스로 얼마나 확신하는지와 그 확신이 실제 기하학적 정합성과 일치하는지를 처음 정량 검증했습니다. "복원이 되느냐"에서 "믿을 수 있느냐"로 질문을 바꾼 이번 주 흐름의 출발점입니다.<br>
+  <small>Phylogeny: CVML / Computational Optics &gt; 3D Reconstruction Reliability &gt; Confidence Calibration &gt; Self-Confidence vs Geometric Truth Verification</small>
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2609.00811">ReBridge-Flow: Reconnecting Measurement-Conditioned Flow Matching for Inverse Problems</a></strong>
+  <span class=tag>[방법전환]</span><br>
+  flow matching을 실제 영상 복원에 적용했을 때 측정값 보정이 모델의 시작점-끝점 짝을 깨뜨리는 구체적 실패 조건을 발견하고 고쳤습니다. diffusion에서 flow matching으로 넘어가는 이번 주 흐름에서 "어디가 깨지는지"까지 보여준 유일한 논문입니다.<br>
+  <small>Phylogeny: CVML / Reconstruction/Inverse Problems &gt; Generative Priors &gt; Flow Matching Application &gt; Posterior Bridge Reconnection</small>
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2609.02747">InceptionGS: Generative Inpainting Extension for 3D Gaussian Splatting</a></strong>
+  <span class=tag>[방법전환]</span><br>
+  3DGS 장면 복원에 생성모델을 얹어 카메라가 찍지 못한 부분까지 채워 넣는 방법으로, 3DGS가 "찍은 것만 복원"에서 "찍지 못한 것까지 생성"으로 능력을 확장한 목요일의 대표 사례입니다.<br>
+  <small>Phylogeny: CVML / Computational Optics &gt; 3D Gaussian Splatting &gt; Generative Post-Processing &gt; Unseen-View Inpainting and Compression</small>
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2609.03334">Laplacian Frequency Hierarchies for Large-Scale Aerial 3DGS Training</a></strong>
+  <span class=tag>[해부분석]</span><br>
+  대규모 항공 장면에서 3DGS 학습이 느려지고 그래디언트가 사라지는 근본 원인을 주파수 단계별 학습 구조로 정면 공략했습니다. 이번 주 3DGS 진화의 마지막 단계 — "학습 자체가 왜 무너지는가"를 대표합니다.<br>
+  <small>Phylogeny: CVML / Computational Optics &gt; 3D Gaussian Splatting &gt; Training Bottleneck Diagnosis &gt; Frequency-Staged Optimization</small>
+</li>
+</ol>
+
+<h2>🌟 Weekly Deep-Dive — 지난주의 대표 논문</h2>
+<div class=dd>
+  <h3>On-the-Fly3R: Online Feed-Forward 3D Reconstruction from Unordered Large-Scale UAV Imagery (2609.00923)</h3>
+  <p><em>왜 주간 대표인가</em>: 지난주는 3D 재구성이 "무엇을 더 복원할 수 있는가"에서 "그 결과를 믿을 수 있는가", "어떤 조건에서도 계속 돌아가는가"로 질문을 구체화한 한 주였습니다. On-the-Fly3R는 화요일 Calibration Audit이 이론적으로 제기한 신뢰도 질문을 실제로 돌아가는 온라인 시스템으로 옮긴 논문이라, 특정 요일의 단발 신호가 아니라 한 주 전체의 방향 전환을 가장 구체적으로 대표합니다.</p>
+
+  <p><strong>무엇을 했나</strong>: 무인기(UAV)로 대규모 지역을 촬영하면 수천 장의 이미지가 순서 없이 쌓이는데, 기존 feed-forward 3D 재구성은 보통 정해진 순서나 배치 단위로 이미지를 넣어야 했습니다. On-the-Fly3R는 이 이미지들을 순서와 무관하게, 재학습 없이 온라인으로 하나씩 이어붙이면서 3D 장면을 실시간으로 완성해 갑니다. 핵심은 각 프레임이 기존 3D 장면과 얼마나 잘 맞아떨어지는지를 스스로 점검해, 정렬에 실패한 것 같은 프레임은 자동으로 걸러내고(거부) 다른 방식으로 다시 시도하는 검증-거부-재시도 구조입니다.</p>
+
+  <p><strong>왜 새로운가</strong>: 기존 feed-forward 3D 재구성은 "입력이 주어지면 그대로 복원한다"는 가정에 가까웠는데, 실제 UAV 촬영처럼 순서가 뒤섞이고 일부 프레임의 품질이 나쁜 현실 조건에서는 이 가정이 깨집니다. On-the-Fly3R는 복원 과정 자체에 "이 프레임을 믿어도 되는가"라는 판단을 내장해, 화요일 Calibration Audit이 사후에 점검하던 신뢰도 문제를 복원 파이프라인 안으로 끌어들였습니다. 즉 3D 재구성이 "정확한 결과를 내는 도구"에서 "스스로 무엇을 걸러야 하는지 아는 시스템"으로 넘어간 사례입니다.</p>
+
+  <p><strong>랩 관련성</strong>: 랩이 산란매질이나 저조도 환경에서 여러 장의 이미지를 이어 3D를 복원할 때도, 일부 프레임은 정렬이 잘 안 되거나 노이즈가 심해 전체 결과를 망칠 수 있습니다. On-the-Fly3R의 검증-거부-재시도 구조를 그대로 가져오면, 랩 파이프라인이 나쁜 프레임을 사람이 골라내지 않아도 스스로 걸러내는 방향으로 개선할 수 있습니다.</p>
+
+  <p><strong>주의</strong>: 검증은 상대적으로 정형화된 UAV 항공 촬영 환경 위주였을 가능성이 높아, 산란매질처럼 왜곡 패턴 자체가 훨씬 불규칙한 환경에서도 같은 검증-거부 기준이 유효한지는 본문 확인이 필요합니다. 또한 재시도 횟수나 거부 임계값 설정에 따라 실제로 걸러야 할 프레임을 통과시키거나 반대로 유효한 프레임을 과도하게 버릴 위험이 있어, 랩 데이터에 적용할 때는 임계값 민감도를 먼저 별도로 검증해야 합니다 [Baseline risk].</p>
+  <p><small>Phylogeny: CVML / Computational Optics &gt; 3D Reconstruction Reliability &gt; Verify-Reject-Retry Deployment &gt; Online Large-Scale Alignment Failure Filtering</small></p>
+</div>
+
+<h2>🧭 주간 테마 3개</h2>
+<div class=theme-card>
+  <h3>1. 3D Gaussian Splatting/feed-forward 3D 재구성이 닷새 내내 자원→신뢰도→배포→생성→학습구조로 한 단계씩 쌓여가는 누적 진화</h3>
+  <p>지난 4주간 3DGS 클러스터는 대부분 하루~이틀짜리 전환으로 끝났는데, 이번 주는 처음으로 매일 새로운 층위를 더하며 닷새 내내 하나의 이야기로 이어졌습니다. 다음 주 이 흐름이 통합 논문으로 수렴할지, 완전히 새로운 갈래로 넘어갈지가 관전 포인트입니다.</p>
+  <p><em>Confidence: High — 월~금 닷새, 서로 다른 저자군이 매일 새 층위를 더하며 이어짐</em></p>
+</div>
+<div class=theme-card>
+  <h3>2. diffusion에서 flow matching으로: 영상 복원 생성 사전의 세대교체 조짐</h3>
+  <p>화요일까지 diffusion이 기본값이던 생성 사전 자리에, 수요일 flow matching이 이론과 응용을 동시에 갖추고 등장했습니다. 아직 완전한 교체는 아니지만, 목~금 두 계열 모두를 "재학습 없이 더 싸게 쓰자"는 같은 질문으로 다루기 시작한 건 flow matching이 diffusion과 나란히 설 준비가 됐다는 신호입니다.</p>
+  <p><em>Confidence: Medium — 화~금 나흘, 이론 1편·응용 4편이 전환을 뒷받침하지만 diffusion을 완전히 대체했다는 근거는 아직 부족</em></p>
+</div>
+<div class=theme-card>
+  <h3>3. 계산광학 하드웨어 코어의 결핍이 raw count 착시를 걷어내면 구조적 기준선에 더 가까워짐</h3>
+  <p>raw count만 보고 목요일을 "반등"으로 읽으면 오판입니다. 실질 신호를 하나씩 확인하면 닷새 내내 사실상 0에 머물러, 지난주(W35) weekly가 걸었던 "변동성인지 구조적 하락인지" 질문에 구조적 하락 쪽으로 답이 기울고 있습니다.</p>
+  <p><em>Confidence: High — 닷새 모두 실질 신호 0~1편, raw count 반등조차 확인하면 대부분 오탐</em></p>
+</div>
+
+<h2>🪞 지난 예측 채점 (W35 → W36)</h2>
+<div class=pred-card>
+  <h3><span class=review-hit>✅</span> 계산광학 하드웨어 코어의 결핍이 '변동성'을 넘어 '구조적 하락'인지가 다음 주 첫 판정 대상이다</h3>
+  <p>raw count는 화(FP3·L2)·목(FP5·L3)에 반등처럼 보였지만, 하나씩 확인하면 화요일 FP 3편은 전부 SAR/레이더 오탐, 목요일 FP 5편 중 진짜 신호는 0편(1편은 전이 가능한 인접 기법, 1편은 초록 없는 제목 기반 신호)이었습니다. 닷새 중 실질 신호 기준으로 두 버킷이 동시에 2편 이상을 낸 날은 단 하루도 없어, 예측이 걸었던 "3일 이상 0~1편" 조건을 사실상 모든 날이 충족했고 빗나감 조건(3일 이상 동시 2편 이상)은 전혀 발생하지 않았습니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-partial>◐</span> 3D Gaussian Splatting의 '응용 확장 → 배포 인프라' 하루 간격 전환이 다음 주에도 반복된다</h3>
+  <p>응용형(화 편집·검색·촬영, 목 생성적 확장)과 인프라형(월 자원 제약, 수 실시간 배포, 금 학습 구조 개선)이 모두 나타나 두 유형 사이 간격이 예측이 요구한 2일 이내를 대부분 만족했습니다. 다만 실제 패턴은 예측이 그렸던 "이틀 간격의 단순 왕복"보다 훨씬 풍부해서, 닷새 내내 자원→신뢰도→배포→생성→학습구조로 한 단계씩 쌓여가는 5단계 누적 진화에 가까웠습니다. 조건은 충족했지만 예측의 묘사 자체는 실제 패턴을 과소평가했다고 보고 부분 적중으로 판정합니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-miss>✗</span> diffusion을 역문제 사전으로 쓰는 흐름에서 나온 이론이 실제 재구성 벤치마크의 정량 개선으로 이어진다</h3>
+  <p>이번 주에는 지난주 이론 논문들(Loss Floor, Posterior Information Dynamics)을 직접 인용하거나 그 노이즈 스케줄·반영 시점 재설계를 재구성 벤치마크에 적용해 PSNR/SSIM 개선을 보고한 후속 논문이 나오지 않았습니다. 대신 수요일 완전히 새로운 이론-응용 짝(A Lagrangian View of Flow Matching과 ReBridge-Flow)이 flow matching이라는 다른 생성모델 계열에서 독립적으로 등장해, 예측이 명시한 빗나감 조건("이론 논문과 응용 논문이 서로 인용·연결 없이 별개로 나옴")을 그대로 충족했습니다.</p>
+</div>
+
+<h2>🔮 다음주 예측</h2>
+<div class=pred-card>
+  <h3>1. 계산광학 하드웨어 코어의 실질 신호 결핍이 새로운 기준선으로 굳어지는지</h3>
+  <p>이번 주는 raw count 반등(목요일 FP 5편)조차 실제로는 거의 전부 오탐이었던 것으로 드러나, 4주 연속 이어진 결핍이 변동성이 아니라 구조적 기준선에 가까워지고 있습니다. 다음 주에도 Fourier Ptychography·Lensless 두 버킷의 실질 신호가 5일 중 4일 이상 0편에 머무는지가 관전 포인트입니다.</p>
+  <div class=cond>✅ 적중 조건: 다음 주 5영업일 중 4일 이상 Fourier Ptychography·Lensless 두 버킷 모두 실질 신호 0편</div>
+  <div class=cond>✗ 빗나감 조건: 다음 주 5일 중 2일 이상에서 Fourier Ptychography 또는 Lensless 중 하나라도 실질 신호 2편 이상을 내면 빗나감</div>
+</div>
+<div class=pred-card>
+  <h3>2. 3D Gaussian Splatting/3D 재구성 메인 스레드가 다섯 갈래를 통합하는 논문으로 수렴하는지</h3>
+  <p>닷새 내내 매일 새 층위를 더하며 이어진 이번 주 패턴을 보면, 다음 단계는 완전히 새로운 여섯 번째 갈래보다 지금까지의 갈래들(자원·신뢰도·배포·생성·학습구조)을 하나로 묶는 통합·벤치마크 논문일 가능성이 높습니다.</p>
+  <div class=cond>✅ 적중 조건: 다음 주 3DGS/3D 재구성 클러스터 대표 논문 중 1편 이상이 자원·신뢰도·배포·생성·학습구조 중 2개 이상을 같은 시스템/벤치마크로 다룸</div>
+  <div class=cond>✗ 빗나감 조건: 다음 주 3DGS 클러스터가 이번 주 다섯 갈래를 하나도 반복하지 않고 완전히 새로운 단일 주제로 넘어가면 빗나감</div>
+</div>
+<div class=pred-card>
+  <h3>3. flow matching이 diffusion을 밀어내고 영상 복원의 기본 생성 사전으로 자리잡는지</h3>
+  <p>이번 주 수요일 flow matching 이론+응용이 같은 날 나오며 diffusion의 대안으로 떠올랐지만, 아직 화~금 신규 복원 응용 다수는 여전히 diffusion 기반이라 완전한 세대교체인지는 확인되지 않았습니다.</p>
+  <div class=cond>✅ 적중 조건: 다음 주 영상 복원용 생성 사전 응용 논문 중 flow matching 기반이 diffusion 기반과 같거나 더 많음</div>
+  <div class=cond>✗ 빗나감 조건: 다음 주에도 diffusion 기반 복원 응용이 압도적으로 많고 flow matching 응용이 1편 이하에 그치면 빗나감</div>
+</div>
+
+<h2>🧪 다음 주 1주 실행안</h2>
+<div class=action-card>
+  <h3>1. 3DGS 신뢰도-검증 파이프라인 재현</h3>
+  <p>Calibration Audit의 신뢰도-기하 정합성 평가와 On-the-Fly3R의 검증-거부-재시도 메커니즘을 우리 랩 산란매질/저조도 3D 재구성 파이프라인에 순서대로 적용해, 실패 프레임을 자동으로 걸러내는지 자체 데이터로 확인합니다.</p>
+  <p><em>기대 산출물: 실패 프레임 자동 검출 정확도 및 재시도 후 PSNR 개선폭 비교표</em></p>
+</div>
+<div class=action-card>
+  <h3>2. flow matching vs diffusion 복원 성능 비교</h3>
+  <p>ReBridge-Flow의 posterior bridge 재결합 방법을 우리 랩 diffusion 기반 복원 파이프라인에 flow matching으로 교체 적용해, 같은 측정 조건에서 diffusion 대비 정량 성능과 계산량을 비교합니다.</p>
+  <p><em>기대 산출물: diffusion 대비 PSNR/SSIM·샘플링 단계 수 비교표</em></p>
+</div>
+<div class=action-card>
+  <h3>3. 계산광학 코어 5주 추세 재판정 및 자체 미니 벤치마크 초안</h3>
+  <p>지난 5주(W32~W36) daily trends의 Fourier Ptychography·Lensless raw count와 실질 신호 편수를 요일별로 다시 정리해 결핍이 구조적 추세인지 최종 판정하고, 랩 자체 lensless/FPM 미니 벤치마크 계획을 초안으로 작성합니다.</p>
+  <p><em>기대 산출물: 5주 × 요일 실질 신호 히트맵과 자체 벤치마크 1페이지 제안서</em></p>
+</div>
+
+<h2>🧊 Skim-only / Watch-only 흐름</h2>
+<ul class=plain>
+  <li><strong>[Watch-only] 라벨 부족한 3D/의료 영상을 위한 밀집 자기지도 사전학습</strong> — 수요일 Pix2Rep-v2, CMRVision, Gekko 세 편이 픽셀/복셀 단위 밀집 자기지도학습을 별도 갈래로 다뤘지만 이후 날짜에 직접적인 후속 신호가 확인되지 않아 다음 주 지속 여부를 지켜봅니다 [Confidence Low].</li>
+  <li><strong>[Watch-only] tomography 복원의 베이지안 불확실성 정량화</strong> — 목요일 PET/SPECT·CT MRF·핵융합 볼로미터처럼 서로 다른 도메인에서 베이지안 불확실성 정량화 방법이 독립적으로 등장했지만 하루짜리 신호에 그쳤습니다. 재구성 결과에 신뢰구간을 붙이는 흐름이 이어지는지 다음 주 확인이 필요합니다.</li>
+  <li><strong>[Skim-only] 카메라 제어 3D/비디오 생성의 추론 시점 안정화</strong> — 금요일 FlashRender·Stabilizing Camera-Controlled NVS·OctWorld 등이 재학습 없이 카메라 경로 지정 생성의 안정성을 높였지만, 3DGS 메인 스레드만큼 닷새를 관통하는 근거는 아직 하루치뿐이라 우선순위를 낮춥니다.</li>
+</ul>
+
+<h2>🔗 참고 링크</h2>
+<ul class=plain>
+  <li><a href="../posts/2026-08-31.html">2026-08-31 Daily Briefing (Mon)</a></li>
+  <li><a href="../posts/2026-09-01.html">2026-09-01 Daily Briefing (Tue)</a></li>
+  <li><a href="../posts/2026-09-02.html">2026-09-02 Daily Briefing (Wed)</a></li>
+  <li><a href="../posts/2026-09-03.html">2026-09-03 Daily Briefing (Thu)</a></li>
+  <li><a href="../posts/2026-09-04.html">2026-09-04 Daily Briefing (Fri)</a></li>
+  <li><a href="../posts/2026-08-31-weekly.html">2026-W35 Weekly Retrospective</a></li>
+  <li><a href="../feed.xml">RSS Feed</a></li>
+</ul>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

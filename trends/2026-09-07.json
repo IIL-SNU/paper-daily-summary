@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-07",
+  "note": "2026-09-07(월) 10:00 KST weekly 실행이 만든 stub. 이 실행은 daily가 아니라 지난주(2026-08-31~2026-09-04) 회고 weekly만 발행한다. daily_new_counts/totals/classified/daily_thesis는 같은 날 11:00 KST daily 실행이 실측값으로 채운다. weekly_retrospective_context는 daily 실행이 덮어쓰지 않고 보존해야 한다.",
+  "weekly_retrospective_context": {
+    "iso_week": "2026-36",
+    "week_start": "2026-08-31",
+    "week_end": "2026-09-04",
+    "weekly_new_counts_sum": {
+      "by_cat": {
+        "cs.LG": 985,
+        "cs.CV": 809,
+        "cs.AI": 1250,
+        "eess.IV": 47,
+        "eess.SP": 133
+      },
+      "scope": "sum of Mon-Fri 2026-08-31~2026-09-04 daily_new_counts.by_cat (new+cross; replacements excluded)"
+    },
+    "weekly_totals": {
+      "total_scanned": 4527,
+      "selected": 1323
+    },
+    "weekly_classified_by_bucket": {
+      "Fourier Ptychography/Microscopy": 10,
+      "Lensless/Coded Imaging": 8,
+      "Phase Imaging/Holography": 30,
+      "Meta-Optics/Diffractive": 43,
+      "Light-Field/Novel Sensors": 21,
+      "Tomography/3D Imaging": 191,
+      "Virtual Staining/Pathology": 204,
+      "Reconstruction/Inverse Problems": 137,
+      "Deep Learning Methods": 679
+    }
+  }
+}

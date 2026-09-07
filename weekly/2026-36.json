@@ -1,0 +1,210 @@
+{
+  "date": "2026-09-07",
+  "iso_week": "2026-36",
+  "week_start": "2026-08-31",
+  "week_end": "2026-09-04",
+  "weekly_thesis": "지난주는 3D Gaussian Splatting과 feed-forward 3D 재구성이 월요일 자원 제약(메모리·저장) 문제를 정리한 뒤, 화요일 응용 인터페이스와 신뢰도 검증, 수요일 실시간·대규모 배포 견고성, 목요일 생성모델을 얹은 확장, 금요일 학습 구조 자체의 병목 해소와 카메라 제어 추론 안정화까지 닷새 내내 하나의 이야기로 이어진 한 주였습니다. diffusion을 영상 복원 사전으로 쓰는 흐름은 수요일을 기점으로 flow matching이라는 후속 생성모델에게 자리를 내주기 시작했고, 랩의 핵심 ROI인 계산광학 하드웨어 코어(Fourier Ptychography·Lensless)는 raw count만 보면 목요일에 반등한 것처럼 보였지만 실제로 내용을 확인해보면 닷새 내내 진짜 신호가 사실상 0에 머물러, 지난주(W35) weekly가 예상했던 것보다 훨씬 깊고 일관된 결핍으로 확인됐습니다.",
+  "hot_vs_cold": {
+    "hot": [
+      {
+        "cluster": "3D Gaussian Splatting/feed-forward 3D 재구성이 자원 제약(월)→응용·신뢰도 검증(화)→실시간 견고 배포(수)→생성적 확장(목)→학습 구조 개선·카메라 제어 안정화(금)까지 닷새 내내 이어진 메인 스레드",
+        "why": "월요일 ABCD는 3DGS 학습 시 장면 전체를 GPU에 올리지 않고 블록 단위로만 활성화해 메모리 사용량을 장면 크기와 무관하게 고정시켰고, 화요일 Calibration Audit은 feed-forward 3D 복원 결과가 스스로 얼마나 확신하는지와 그 확신이 실제 기하학적 정합성과 일치하는지를 처음 정량 검증했습니다. 수요일 On-the-Fly3R는 그 신뢰도 검증을 실제 시스템으로 옮겨, 순서가 뒤섞인 무인기 촬영 이미지 수천 장을 재학습 없이 온라인으로 이어붙이면서 정렬 실패 프레임을 자동으로 걸러내고 다시 시도하는 구조를 냈습니다. 목요일 InceptionGS는 3DGS 장면에 생성모델을 얹어 카메라가 찍지 못한 부분까지 채워 넣었고, 금요일 Laplacian Frequency Hierarchies는 대규모 항공 장면에서 3DGS 학습이 느려지고 그래디언트가 사라지는 근본 원인을 주파수 단계별 학습 구조로 정면 공략했습니다. 닷새를 이어보면 '무엇을 더 복원할 수 있는가'에서 '그 결과를 믿을 수 있는가', '어떤 조건에서도 계속 돌아가는가', '학습 자체가 왜 느려지고 무너지는가'로 질문이 한 단계씩 구체화된 흐름입니다.",
+        "papers": [
+          "https://arxiv.org/abs/2608.27735",
+          "https://arxiv.org/abs/2608.29705",
+          "https://arxiv.org/abs/2609.00923",
+          "https://arxiv.org/abs/2609.02747",
+          "https://arxiv.org/abs/2609.03334"
+        ]
+      },
+      {
+        "cluster": "diffusion을 영상 복원 사전으로 쓰던 흐름에서 flow matching이 후속 생성모델로 자리잡기 시작(화~금)",
+        "why": "화요일 Manifold-Constrained PET Reconstruction은 학습된 생성모델을 의료영상 역문제 사전으로 쓰는 범위를 MRI를 넘어 PET까지 넓혔는데, 여기까지는 여전히 diffusion 기반이었습니다. 수요일에는 A Lagrangian View of Flow Matching이 flow matching(diffusion처럼 노이즈에서 점을 이동시켜 이미지를 만들지만 훨씬 적은 단계로 끝나는 생성모델)이 왜 한 번의 계산만으로도 그럴듯한 결과를 내는지를 입자 이동 관점에서 새로 설명했고, 같은 날 ReBridge-Flow는 그 flow matching을 실제 영상 복원에 적용했을 때 측정값을 반영하는 보정 단계가 모델이 배운 시작점-끝점 짝을 깨뜨려버리는 구체적 실패 조건을 발견해 다시 이어 붙이는 방법을 냈습니다. 목요일 GeoSPRINT는 재학습 없이 diffusion/flow matching 두 계열 모두의 샘플링 단계 수를 줄이는 방법을 냈고, 금요일 SPARK는 이미 학습된 DiT(Diffusion Transformer)의 활성값을 재학습 없이 변조해 추론 비용을 줄였습니다. 즉 화요일까지는 diffusion이 기본값이었는데, 수요일 이후로는 flow matching이 이론과 응용을 동시에 갖춘 대안으로 떠오르고, 목~금은 두 생성모델 계열 모두를 '이미 학습된 걸 어떻게 더 싸게 쓸까'라는 같은 질문으로 다루기 시작했습니다.",
+        "papers": [
+          "https://arxiv.org/abs/2608.29158",
+          "https://arxiv.org/abs/2609.00198",
+          "https://arxiv.org/abs/2609.00811",
+          "https://arxiv.org/abs/2609.02160",
+          "https://arxiv.org/abs/2609.03813"
+        ]
+      },
+      {
+        "cluster": "가상 염색·병리 파운데이션 모델이 신뢰성 점검(월)→분야로서의 성숙(화)→실전 워크플로우 견고성(수)→경량 배포(금)로 이어짐",
+        "why": "월요일 EXPOSE는 병리 파운데이션 모델의 임베딩을 sparse autoencoder로 뜯어봐 어떤 특징이 실제 진단 근거이고 어떤 것이 염색 아티팩트인지 구분하는 설명가능성 도구를 냈습니다. 화요일에는 저널에서 HYED-Net처럼 IHC-to-mpIF 가상 염색과 핵 분할을 함께 처리하는 방법 논문과 이를 종합하는 리뷰가 같이 나오며, label-free 가상 염색이 산발적 아이디어를 넘어 하나의 연구 분야로 인식되기 시작했다는 걸 보여줬습니다. 수요일 StainPresetNet은 완벽하게 정렬된 페어 데이터가 없거나 여러 염색을 오가야 하는 실제 병원 워크플로우의 지저분한 조건에서도 작동하도록 기준 영상 교체 방식의 정규화를 도입했고, 금요일 TAP-Path는 큰 병리 파운데이션 모델을 새로 학습시키는 대신 가지치기·지식증류로 가볍게 만들어 실제 현장 배포 비용을 낮췄습니다. 즉 '모델을 믿을 수 있는가'에서 '분야로 자리잡았는가', '실전 조건을 견디는가', '현장에 배포할 만큼 가벼운가'로 질문이 이어졌습니다.",
+        "papers": [
+          "https://arxiv.org/abs/2608.28191",
+          "https://doi.org/10.1038/s41598-026-67646-z",
+          "https://arxiv.org/abs/2609.01146",
+          "https://arxiv.org/abs/2609.04071"
+        ]
+      }
+    ],
+    "cold": [
+      {
+        "cluster": "계산광학 하드웨어 코어(Fourier Ptychography·Lensless)가 raw count 착시를 걷어내면 닷새 내내 실질 신호 사실상 0",
+        "why": "월·수·금은 두 버킷 모두 raw count조차 0~1편으로 눈에 띄게 비었고, 화요일은 Fourier Ptychography 3편이 전부 SAR/레이더 원격탐사 키워드 오탐, Lensless 2편도 방향이 갈려 클러스터를 이루지 못했습니다. 가장 극적인 반전은 목요일입니다 — raw count만 보면 Fourier Ptychography 5편·Lensless 3편으로 2주 만의 반등처럼 보이지만, 실제로 확인하면 Fourier Ptychography 5편 중 진짜 신호는 전자현미경 파라미터 추정에 전이 가능한 베이지안 최적화 논문 1편과 초록이 비어 본문 확인이 필요한 X-ray ptychography 저널 논문 1편뿐이었고, Lensless 3편은 전부 무관했습니다. 즉 닷새 중 어느 하루도 두 버킷이 동시에 실질 신호 2편 이상을 낸 날이 없었습니다."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "cluster": "3D Gaussian Splatting/feed-forward 3D 재구성 — 자원 제약(월)→신뢰도 검증(화)→실시간 견고 배포(수)→생성적 확장(목)→학습 구조 개선(금)",
+      "papers": [
+        {"title": "ABCD: Block-Coordinate 3DGS Training with Fixed Memory Budget", "arxiv": "https://arxiv.org/abs/2608.27735", "importance_tags": ["[방법전환]"], "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "3D Gaussian Splatting", "order": "Resource-Constrained Training", "genus": "Block-Coordinate Memory Fixing", "confidence": "High", "rationale": "월요일 3DGS 자원 제약 클러스터 6편 중 대표"}},
+        {"title": "Calibration Audit: Confidence Verification for Feed-Forward 3D Reconstruction", "arxiv": "https://arxiv.org/abs/2608.29705", "importance_tags": ["[평가축]"], "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "3D Reconstruction Reliability", "order": "Confidence Calibration", "genus": "Self-Confidence vs Geometric Truth Verification", "confidence": "High", "rationale": "화요일 feed-forward 3D 신뢰도 검증 클러스터 5편 중 대표"}},
+        {"title": "On-the-Fly3R: Online Feed-Forward 3D Reconstruction from Unordered Large-Scale UAV Imagery", "arxiv": "https://arxiv.org/abs/2609.00923", "importance_tags": ["[방법전환]", "[실사용전환]"], "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "3D Reconstruction Reliability", "order": "Verify-Reject-Retry Deployment", "genus": "Online Large-Scale Alignment Failure Filtering", "confidence": "High", "rationale": "수요일 실시간·대규모 배포 견고성 클러스터 4편 중 대표"}},
+        {"title": "InceptionGS: Generative Inpainting Extension for 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2609.02747", "importance_tags": ["[방법전환]"], "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "3D Gaussian Splatting", "order": "Generative Post-Processing", "genus": "Unseen-View Inpainting and Compression", "confidence": "Medium", "rationale": "목요일 3D 장면 복원 뒤 생성모델 후처리 클러스터 대표"}},
+        {"title": "Laplacian Frequency Hierarchies for Large-Scale Aerial 3DGS Training", "arxiv": "https://arxiv.org/abs/2609.03334", "importance_tags": ["[해부분석]", "[방법전환]"], "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "3D Gaussian Splatting", "order": "Training Bottleneck Diagnosis", "genus": "Frequency-Staged Optimization", "confidence": "High", "rationale": "금요일 3DGS 학습 구조 병목 클러스터 대표"}}
+      ],
+      "why": "닷새 전체를 이어보면 이 스레드는 '무엇을 더 복원할 수 있는가'에서 '그 결과를 믿을 수 있는가', '어떤 조건에서도 계속 돌아가는가', '학습 자체가 왜 무너지는가'로 질문이 한 단계씩 구체화됐습니다. 단일 클러스터가 하루짜리로 끝나지 않고 매일 새로운 층위를 더하며 이어진 건 최근 4주 중 처음입니다.",
+      "confidence": "High",
+      "lab_action": "Calibration Audit의 신뢰도-기하 정합성 평가 프로토콜과 On-the-Fly3R의 검증-거부-재시도 메커니즘을 랩 산란매질/저조도 3D 재구성 파이프라인에 순서대로 적용해, 실패 프레임 자동 검출 정확도와 재시도 후 PSNR 개선폭을 함께 측정하는 표를 이번 주 안에 만든다"
+    },
+    {
+      "cluster": "diffusion을 영상 복원 사전으로 쓰던 흐름에서 flow matching이 이론+응용을 동시에 갖춘 대안으로 떠오름",
+      "papers": [
+        {"title": "Manifold-Constrained PET Reconstruction with Learned Generative Priors", "arxiv": "https://arxiv.org/abs/2608.29158", "importance_tags": ["[방법전환]"], "phylogeny": {"source": "CVML", "phylum": "Reconstruction/Inverse Problems", "class": "Medical Imaging", "order": "Generative Prior Reuse", "genus": "PET Reconstruction", "confidence": "Medium", "rationale": "화요일 diffusion 사전 확장 클러스터 대표"}},
+        {"title": "A Lagrangian View of Flow Matching", "arxiv": "https://arxiv.org/abs/2609.00198", "importance_tags": ["[해부분석]"], "phylogeny": {"source": "CVML", "phylum": "Deep Learning Methods", "class": "Generative Models", "order": "Flow Matching Theory", "genus": "Particle-Trajectory Explanation", "confidence": "High", "rationale": "수요일 flow matching 이론+응용 동시 등장의 이론 축"}},
+        {"title": "ReBridge-Flow: Reconnecting Measurement-Conditioned Flow Matching for Inverse Problems", "arxiv": "https://arxiv.org/abs/2609.00811", "importance_tags": ["[방법전환]", "[위험보류]"], "phylogeny": {"source": "CVML", "phylum": "Reconstruction/Inverse Problems", "class": "Generative Priors", "order": "Flow Matching Application", "genus": "Posterior Bridge Reconnection", "confidence": "High", "rationale": "수요일 flow matching 응용 축이자 실패 조건 규명"}},
+        {"title": "GeoSPRINT: Training-Free Step Reduction for Diffusion and Flow Matching Samplers", "arxiv": "https://arxiv.org/abs/2609.02160", "importance_tags": ["[방법전환]", "[실사용전환]"], "phylogeny": {"source": "CVML", "phylum": "Deep Learning Methods", "class": "Generative Models", "order": "Training-Free Acceleration", "genus": "Sampler Step Reduction", "confidence": "Medium", "rationale": "목요일 재학습 없는 가속 클러스터 대표"}},
+        {"title": "SPARK: Frozen DiT Activation Modulation for Efficient Diffusion Transformers", "arxiv": "https://arxiv.org/abs/2609.03813", "importance_tags": ["[실사용전환]"], "phylogeny": {"source": "CVML", "phylum": "Deep Learning Methods", "class": "Generative Models", "order": "Inference Efficiency", "genus": "Frozen Activation Modulation", "confidence": "Medium", "rationale": "금요일 diffusion/DiT 효율화 클러스터 대표"}}
+      ],
+      "why": "화요일까지는 diffusion이 영상 복원 사전의 기본값이었는데, 수요일 flow matching 이론(왜 적은 단계로도 되는지)과 응용(어디서 깨지는지)이 같은 날 나오며 대안으로 떠올랐고, 목~금은 diffusion·flow matching 두 계열 모두를 '이미 학습된 걸 재학습 없이 더 싸게 쓰자'는 같은 질문으로 묶어서 다루기 시작했습니다. 랩이 diffusion 사전을 쓰는 복원 파이프라인이 있다면 flow matching으로 교체했을 때의 이득과, ReBridge-Flow가 지적한 측정값 보정 실패 조건을 함께 검토할 시점입니다.",
+      "confidence": "High",
+      "lab_action": "ReBridge-Flow의 posterior bridge 재결합 방법을 랩 diffusion 기반 복원 파이프라인에 flow matching으로 교체 적용해, 같은 측정 조건에서 diffusion 대비 PSNR/SSIM과 샘플링 단계 수를 함께 비교하는 표를 만든다"
+    },
+    {
+      "cluster": "가상 염색·병리 파운데이션 모델 — 신뢰성 점검(월)→분야로서의 성숙(화)→실전 견고성(수)→경량 배포(금)",
+      "papers": [
+        {"title": "EXPOSE: Sparse Autoencoder Probing of Pathology Foundation Model Embeddings", "arxiv": "https://arxiv.org/abs/2608.28191", "importance_tags": ["[해부분석]"], "phylogeny": {"source": "CVML", "phylum": "Virtual Staining/Pathology", "class": "Foundation Model Reliability", "order": "Explainability", "genus": "Sparse Autoencoder Probing", "confidence": "Medium", "rationale": "월요일 병리 파운데이션 모델 신뢰성 클러스터 대표"}},
+        {"title": "HYED-Net: Unified Hierarchical Feature Refinement for Co-Registered Nuclei Segmentation and Virtual IHC-to-mpIF Staining", "arxiv": "https://doi.org/10.1038/s41598-026-67646-z", "importance_tags": ["[인프라]", "[표준후보]"], "phylogeny": {"source": "CVML", "phylum": "Virtual Staining/Pathology", "class": "Label-Free Virtual Staining", "order": "Field Maturation", "genus": "Joint Segmentation-Staining", "confidence": "High", "rationale": "화요일 가상 염색 방법론+리뷰 동시 등장으로 분야 성숙 신호"}},
+        {"title": "StainPresetNet: Reference-Swap Normalization for Real-World Virtual Staining Workflows", "arxiv": "https://arxiv.org/abs/2609.01146", "importance_tags": ["[데이터전환]"], "phylogeny": {"source": "CVML", "phylum": "Virtual Staining/Pathology", "class": "Workflow Robustness", "order": "Unpaired/Sparse Data Handling", "genus": "Reference-Swap Normalization", "confidence": "Medium", "rationale": "수요일 실전 워크플로우 견고성 클러스터 대표"}},
+        {"title": "TAP-Path: Pruning and Distillation for Lightweight Pathology Foundation Models", "arxiv": "https://arxiv.org/abs/2609.04071", "importance_tags": ["[실사용전환]", "[인프라]"], "phylogeny": {"source": "CVML", "phylum": "Virtual Staining/Pathology", "class": "Foundation Model Deployment", "order": "Compression", "genus": "Pruning and Distillation", "confidence": "Medium", "rationale": "금요일 병리 파운데이션 모델 경량화 클러스터 대표"}}
+      ],
+      "why": "월요일 EXPOSE가 모델 내부를 뜯어 신뢰성을 점검한 뒤, 화요일에는 저널에서 방법 논문과 종합 리뷰가 함께 나오며 label-free 가상 염색이 하나의 분야로 인식되기 시작했습니다. 수요일에는 그 분야 안에서 완벽한 페어 데이터가 없거나 여러 염색을 오가야 하는 실제 병원 조건을 견디는 방법이 나왔고, 금요일에는 그렇게 검증된 모델을 실제 현장에 배포할 만큼 가볍게 만드는 문제로 이어졌습니다. '믿을 수 있는가 → 분야로 자리잡았는가 → 실전을 견디는가 → 배포할 만큼 가벼운가'라는 자연스러운 성숙 순서입니다.",
+      "confidence": "High",
+      "lab_action": "StainPresetNet의 기준 영상 교체 정규화를 랩 label-free 염색 스타일 전이 파이프라인에 적용하고, TAP-Path의 가지치기·증류 전략을 랩 병리 파운데이션 모델에 적용해 정확도-지연시간 곡선을 그린다"
+    },
+    {
+      "cluster": "계산광학 하드웨어 코어(Fourier Ptychography·Lensless)가 raw count 착시를 걷어내면 닷새 내내 실질 신호 사실상 0 <span class=\"tag\">WATCH</span>",
+      "papers": [
+        {"title": "Scalable Bayesian Optimization of Composite Functions (전자현미경 파라미터 추정에 전이 가능)", "arxiv": "https://arxiv.org/abs/2609.02126", "importance_tags": ["[위험보류]"], "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "Fourier Ptychography/Microscopy", "order": "Adjacent Signal", "genus": "Bayesian Parameter Estimation Transfer", "confidence": "Low", "rationale": "FP 자체는 아니나 모델-매칭 계산 이미징에 전이 가능한 목요일 유일한 실질 신호"}},
+        {"title": "On-Sky Demonstration of a Vector Zernike Wavefront Sensor in a Cascaded Adaptive Optics System", "arxiv": "https://doi.org/10.1051/0004-6361/202661472", "importance_tags": ["[인프라]"], "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "Lensless/Coded Imaging", "order": "Adjacent Signal", "genus": "Wavefront Sensing Hardware", "confidence": "Low", "rationale": "lensless/coded aperture는 아니나 인접 하드웨어로 금요일 유일한 실질 신호"}}
+      ],
+      "why": "raw count만 보면 목요일 Fourier Ptychography 5편·Lensless 3편으로 반등한 것처럼 보이지만, 실제로 하나씩 확인하면 5편 중 진짜 FP 신호는 0편(1편은 전이 가능한 인접 기법, 1편은 초록이 비어 본문 확인이 필요한 제목 기반 신호)이고 Lensless 3편도 전부 무관했습니다. 월·화·수·금도 마찬가지로 raw count가 0~3편 사이를 오갔지만 실질 신호는 매일 0에 가까웠습니다. 즉 닷새 중 어느 하루도 두 버킷이 동시에 실질 신호 2편 이상을 낸 날이 없어, 지난주(W35) weekly가 '변동성인지 구조적 하락인지 다음 주 첫 판정 대상'이라고 걸었던 질문에 '구조적 하락 쪽'이라는 답에 더 가까워졌습니다.",
+      "confidence": "High",
+      "lab_action": "지난 5주치(W32~W36) daily trends의 Fourier Ptychography·Lensless raw count와 실질 신호 편수를 요일별로 다시 정리해, 4주 연속 유지된 이 결핍이 랩이 직접 데이터를 만들어야 하는 신호인지 판정하고, 랩 자체 lensless/FPM 미니 벤치마크 계획을 이번 주 안에 초안으로 작성한다"
+    }
+  ],
+  "predictions": [
+    {
+      "title": "계산광학 하드웨어 코어의 실질 신호 결핍이 새로운 기준선으로 굳어지는지",
+      "claim": "다음 주에도 Fourier Ptychography·Lensless 두 버킷의 실질 신호(키워드 오탐 제외)가 5일 중 4일 이상 0편에 머문다.",
+      "rationale": "이번 주는 raw count 반등(목요일 FP 5편)조차 실제로는 거의 전부 오탐이었던 것으로 드러나, 4주 연속 이어진 결핍이 변동성이 아니라 구조적 기준선에 가까워지고 있습니다.",
+      "hit_condition": "다음 주 5영업일 중 4일 이상 Fourier Ptychography·Lensless 두 버킷 모두 실질 신호 0편",
+      "miss_condition": "다음 주 5일 중 2일 이상에서 Fourier Ptychography 또는 Lensless 중 하나라도 실질 신호 2편 이상을 내면 빗나감"
+    },
+    {
+      "title": "3D Gaussian Splatting/3D 재구성 메인 스레드가 다섯 갈래를 통합하는 논문으로 수렴하는지",
+      "claim": "다음 주 3DGS/3D 재구성 클러스터에서 이번 주의 다섯 갈래(자원 제약·신뢰도 검증·실시간 배포·생성적 확장·학습 구조 개선) 중 2개 이상을 한 논문 안에서 결합하거나 정면 비교하는 통합형 논문이 나온다.",
+      "rationale": "닷새 내내 매일 새 층위를 더하며 이어진 이번 주 패턴을 보면, 다음 단계는 완전히 새로운 여섯 번째 갈래보다 지금까지의 갈래들을 하나로 묶는 통합·벤치마크 논문일 가능성이 높습니다.",
+      "hit_condition": "다음 주 3DGS/3D 재구성 클러스터 대표 논문 중 1편 이상이 자원·신뢰도·배포·생성·학습구조 중 2개 이상을 같은 시스템/벤치마크로 다룸",
+      "miss_condition": "다음 주 3DGS 클러스터가 이번 주 다섯 갈래를 하나도 반복하지 않고 완전히 새로운 단일 주제로 넘어가면 빗나감"
+    },
+    {
+      "title": "flow matching이 diffusion을 밀어내고 영상 복원의 기본 생성 사전으로 자리잡는지",
+      "claim": "다음 주 새로 나오는 영상 복원용 생성 사전 응용 논문 중 절반 이상이 diffusion이 아니라 flow matching을 사용한다.",
+      "rationale": "이번 주 수요일 flow matching 이론+응용이 같은 날 나오며 diffusion의 대안으로 떠올랐지만, 아직 화~금 신규 복원 응용 다수는 여전히 diffusion 기반이라 완전한 세대교체인지는 확인되지 않았습니다.",
+      "hit_condition": "다음 주 영상 복원용 생성 사전 응용 논문 중 flow matching 기반이 diffusion 기반과 같거나 더 많음",
+      "miss_condition": "다음 주에도 diffusion 기반 복원 응용이 압도적으로 많고 flow matching 응용이 1편 이하에 그치면 빗나감"
+    }
+  ],
+  "prediction_review": [
+    {
+      "title": "계산광학 하드웨어 코어의 결핍이 '변동성'을 넘어 '구조적 하락'인지가 다음 주 첫 판정 대상이다",
+      "label": "✅",
+      "reason": "raw count는 화(FP3·L2)·목(FP5·L3)에 반등처럼 보였지만, 하나씩 확인하면 화요일 FP 3편은 전부 SAR/레이더 오탐, 목요일 FP 5편 중 진짜 신호는 0편(1편은 전이 가능한 인접 기법, 1편은 초록 없는 제목 기반 신호)이었습니다. 닷새 중 실질 신호 기준으로 두 버킷이 동시에 2편 이상을 낸 날은 단 하루도 없어, 예측이 걸었던 '3일 이상 0~1편' 조건을 사실상 모든 날이 충족했고 빗나감 조건(3일 이상 동시 2편 이상)은 전혀 발생하지 않았습니다."
+    },
+    {
+      "title": "3D Gaussian Splatting의 '응용 확장 → 배포 인프라' 하루 간격 전환이 다음 주에도 반복된다",
+      "label": "◐",
+      "reason": "응용형(화 편집·검색·촬영, 목 생성적 확장)과 인프라형(월 자원 제약, 수 실시간 배포, 금 학습 구조 개선)이 모두 나타나 두 유형 사이 간격이 예측이 요구한 2일 이내를 대부분 만족했습니다. 다만 실제 패턴은 예측이 그렸던 '이틀 간격의 단순 왕복'보다 훨씬 풍부해서, 닷새 내내 자원→신뢰도→배포→생성→학습구조로 한 단계씩 쌓여가는 5단계 누적 진화에 가까웠습니다. 조건은 충족했지만 예측의 묘사 자체는 실제 패턴을 과소평가했다고 보고 부분 적중으로 판정합니다."
+    },
+    {
+      "title": "diffusion을 역문제 사전으로 쓰는 흐름에서 나온 이론이 실제 재구성 벤치마크의 정량 개선으로 이어진다",
+      "label": "✗",
+      "reason": "이번 주에는 지난주 이론 논문들(Loss Floor, Posterior Information Dynamics)을 직접 인용하거나 그 노이즈 스케줄·반영 시점 재설계를 재구성 벤치마크에 적용해 PSNR/SSIM 개선을 보고한 후속 논문이 나오지 않았습니다. 대신 수요일 완전히 새로운 이론-응용 짝(A Lagrangian View of Flow Matching과 ReBridge-Flow)이 flow matching이라는 다른 생성모델 계열에서 독립적으로 등장해, 예측이 명시한 빗나감 조건('이론 논문과 응용 논문이 서로 인용·연결 없이 별개로 나옴')을 그대로 충족했습니다."
+    }
+  ],
+  "themes": [
+    {
+      "title": "3D Gaussian Splatting/feed-forward 3D 재구성이 닷새 내내 자원→신뢰도→배포→생성→학습구조로 한 단계씩 쌓여가는 누적 진화",
+      "summary": "지난 4주간 3DGS 클러스터는 대부분 하루~이틀짜리 전환으로 끝났는데, 이번 주는 처음으로 매일 새로운 층위를 더하며 닷새 내내 하나의 이야기로 이어졌습니다. 다음 주 이 흐름이 통합 논문으로 수렴할지, 완전히 새로운 갈래로 넘어갈지가 관전 포인트입니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "diffusion에서 flow matching으로: 영상 복원 생성 사전의 세대교체 조짐",
+      "summary": "화요일까지 diffusion이 기본값이던 생성 사전 자리에, 수요일 flow matching이 이론과 응용을 동시에 갖추고 등장했습니다. 아직 완전한 교체는 아니지만, 목~금 두 계열 모두를 '재학습 없이 더 싸게 쓰자'는 같은 질문으로 다루기 시작한 건 flow matching이 diffusion과 나란히 설 준비가 됐다는 신호입니다.",
+      "confidence": "Medium"
+    },
+    {
+      "title": "계산광학 하드웨어 코어의 결핍이 raw count 착시를 걷어내면 구조적 기준선에 더 가까워짐",
+      "summary": "raw count만 보고 목요일을 '반등'으로 읽으면 오판입니다. 실질 신호를 하나씩 확인하면 닷새 내내 사실상 0에 머물러, 지난주(W35) weekly가 걸었던 '변동성인지 구조적 하락인지' 질문에 구조적 하락 쪽으로 답이 기울고 있습니다.",
+      "confidence": "High"
+    }
+  ],
+  "top5": [
+    {
+      "title": "ABCD: Block-Coordinate 3DGS Training with Fixed Memory Budget",
+      "arxiv": "https://arxiv.org/abs/2608.27735",
+      "why": "3D Gaussian Splatting 학습을 공간 블록 단위로 쪼개 GPU 메모리 사용량을 장면 크기와 무관하게 고정시켜, 지난주 자원 제약 클러스터 6편 중 가장 직접적으로 랩 파이프라인의 VRAM 문제에 적용 가능한 방법입니다. 이번 주 5단계 3DGS 진화의 첫 단추이기도 합니다.",
+      "tag": "[방법전환]",
+      "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "3D Gaussian Splatting", "order": "Resource-Constrained Training", "genus": "Block-Coordinate Memory Fixing", "confidence": "High", "rationale": "월요일 자원 제약 클러스터 대표"}
+    },
+    {
+      "title": "Calibration Audit: Confidence Verification for Feed-Forward 3D Reconstruction",
+      "arxiv": "https://arxiv.org/abs/2608.29705",
+      "why": "feed-forward 3D 복원 결과가 스스로 얼마나 확신하는지와 그 확신이 실제 기하학적 정합성과 일치하는지를 처음 정량 검증한 논문으로, '복원이 되느냐'에서 '믿을 수 있느냐'로 질문을 바꾼 이번 주 흐름의 출발점입니다.",
+      "tag": "[평가축]",
+      "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "3D Reconstruction Reliability", "order": "Confidence Calibration", "genus": "Self-Confidence vs Geometric Truth Verification", "confidence": "High", "rationale": "화요일 신뢰도 검증 클러스터 대표"}
+    },
+    {
+      "title": "ReBridge-Flow: Reconnecting Measurement-Conditioned Flow Matching for Inverse Problems",
+      "arxiv": "https://arxiv.org/abs/2609.00811",
+      "why": "flow matching을 실제 영상 복원에 적용했을 때 측정값 보정이 모델의 시작점-끝점 짝을 깨뜨리는 구체적 실패 조건을 발견하고 고쳤습니다. diffusion에서 flow matching으로 넘어가는 이번 주 흐름에서 '어디가 깨지는지'까지 보여준 유일한 논문입니다.",
+      "tag": "[방법전환]",
+      "phylogeny": {"source": "CVML", "phylum": "Reconstruction/Inverse Problems", "class": "Generative Priors", "order": "Flow Matching Application", "genus": "Posterior Bridge Reconnection", "confidence": "High", "rationale": "수요일 flow matching 응용 축 대표"}
+    },
+    {
+      "title": "InceptionGS: Generative Inpainting Extension for 3D Gaussian Splatting",
+      "arxiv": "https://arxiv.org/abs/2609.02747",
+      "why": "3DGS 장면 복원에 생성모델을 얹어 카메라가 찍지 못한 부분까지 채워 넣는 방법으로, 3DGS가 '찍은 것만 복원'에서 '찍지 못한 것까지 생성'으로 능력을 확장한 목요일의 대표 사례입니다.",
+      "tag": "[방법전환]",
+      "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "3D Gaussian Splatting", "order": "Generative Post-Processing", "genus": "Unseen-View Inpainting and Compression", "confidence": "Medium", "rationale": "목요일 생성적 확장 클러스터 대표"}
+    },
+    {
+      "title": "Laplacian Frequency Hierarchies for Large-Scale Aerial 3DGS Training",
+      "arxiv": "https://arxiv.org/abs/2609.03334",
+      "why": "대규모 항공 장면에서 3DGS 학습이 느려지고 그래디언트가 사라지는 근본 원인을 주파수 단계별 학습 구조로 정면 공략한 논문으로, 이번 주 3DGS 진화의 마지막 단계 — '학습 자체가 왜 무너지는가'를 대표합니다.",
+      "tag": "[해부분석]",
+      "phylogeny": {"source": "CVML", "phylum": "Computational Optics", "class": "3D Gaussian Splatting", "order": "Training Bottleneck Diagnosis", "genus": "Frequency-Staged Optimization", "confidence": "High", "rationale": "금요일 학습 구조 병목 클러스터 대표"}
+    }
+  ],
+  "phylogeny_tags": [
+    {"paper": "https://arxiv.org/abs/2608.27735", "source": "CVML", "lineage": "Computational Optics > 3D Gaussian Splatting > Resource-Constrained Training > Block-Coordinate Memory Fixing"},
+    {"paper": "https://arxiv.org/abs/2608.29705", "source": "CVML", "lineage": "Computational Optics > 3D Reconstruction Reliability > Confidence Calibration > Self-Confidence vs Geometric Truth Verification"},
+    {"paper": "https://arxiv.org/abs/2609.00923", "source": "CVML", "lineage": "Computational Optics > 3D Reconstruction Reliability > Verify-Reject-Retry Deployment > Online Large-Scale Alignment Failure Filtering"},
+    {"paper": "https://arxiv.org/abs/2609.02747", "source": "CVML", "lineage": "Computational Optics > 3D Gaussian Splatting > Generative Post-Processing > Unseen-View Inpainting and Compression"},
+    {"paper": "https://arxiv.org/abs/2609.03334", "source": "CVML", "lineage": "Computational Optics > 3D Gaussian Splatting > Training Bottleneck Diagnosis > Frequency-Staged Optimization"},
+    {"paper": "https://arxiv.org/abs/2608.29158", "source": "CVML", "lineage": "Reconstruction/Inverse Problems > Medical Imaging > Generative Prior Reuse > PET Reconstruction"},
+    {"paper": "https://arxiv.org/abs/2609.00198", "source": "CVML", "lineage": "Deep Learning Methods > Generative Models > Flow Matching Theory > Particle-Trajectory Explanation"},
+    {"paper": "https://arxiv.org/abs/2609.00811", "source": "CVML", "lineage": "Reconstruction/Inverse Problems > Generative Priors > Flow Matching Application > Posterior Bridge Reconnection"},
+    {"paper": "https://arxiv.org/abs/2608.28191", "source": "CVML", "lineage": "Virtual Staining/Pathology > Foundation Model Reliability > Explainability > Sparse Autoencoder Probing"},
+    {"paper": "https://arxiv.org/abs/2609.04071", "source": "CVML", "lineage": "Virtual Staining/Pathology > Foundation Model Deployment > Compression > Pruning and Distillation"}
+  ],
+  "next_week_actions": [
+    {"title": "3DGS 신뢰도-검증 파이프라인 재현", "action": "Calibration Audit의 신뢰도-기하 정합성 평가와 On-the-Fly3R의 검증-거부-재시도 메커니즘을 랩 산란매질/저조도 3D 재구성 파이프라인에 순서대로 적용", "expected_output": "실패 프레임 자동 검출 정확도 및 재시도 후 PSNR 개선폭 비교표"},
+    {"title": "flow matching vs diffusion 복원 성능 비교", "action": "ReBridge-Flow의 posterior bridge 재결합 방법을 랩 diffusion 기반 복원 파이프라인에 flow matching으로 교체 적용", "expected_output": "같은 측정 조건에서 diffusion 대비 PSNR/SSIM·샘플링 단계 수 비교표"},
+    {"title": "계산광학 코어 5주 추세 재판정 및 자체 미니 벤치마크 초안", "action": "지난 5주(W32~W36) daily trends의 Fourier Ptychography·Lensless raw count와 실질 신호 편수를 요일별로 재정리하고, 랩 자체 lensless/FPM 미니 벤치마크 계획 초안 작성", "expected_output": "5주×요일 실질 신호 히트맵과 자체 벤치마크 1페이지 제안서"}
+  ]
+}

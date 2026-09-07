@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 04 Sep 2026 11:16:07 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 10:44:06 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Weekly Retrospective — 2026-09-07 (Week 36)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-09-07-weekly.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-09-07-weekly.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[지난주 가장 뜨거웠던 흐름은 3D Gaussian Splatting과 feed-forward 3D 재구성이 닷새 내내 하나의 이야기로 이어진 것 입니다. 월요일 ABCD는 3DGS 학습 시 장면 전체를 GPU 메모리에 올리지 않고 공간을 블록으로 나눠 한 번에 하나만 활성화하는 방식으로 메모리 사용량을 장면 크기와 무관하게 고정시켰습니다. 화요일에는 질문이 완전히 달라집니다 — Calibration Audit은 feed-forward 3D 복원 결과가 스스로 얼마나 확신하는지와 그 확신이 실제 기하학적 정합성과 일치하는지를 처음 정량으로 검증했습니다. 지금까지 3D 재구성 논문이 "얼마나 정확하게 복원하느냐"를 물었다면, 이 논문은 "그 복원 결과를 곧이곧대로 믿어도 되…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-09-04 (금요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-09-04.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-29-weekly.html</guid>
       <pubDate>Mon, 29 Jun 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[지난주 가장 뜨거운 흐름은 이벤트 카메라의 계층적 성숙 입니다. 화요일(Jun 23)에 표현 학습 체계화 서베이(2606.23078)가 나와 이벤트 스트림을 어떻게 표현해야 하는지 지도가 만들어졌고, 수요일(Jun 24)에는 RGB·오디오·깊이와 결합하는 크로스모달 융합 논문 3편(M²C-EvDet, UniRED, GeoIMO)이 한꺼번에 등장해 '이벤트 혼자로는 부족하다'는 문제에 답하기 시작했습니다. 금요일(Jun 26)에는 FracEvent(2606.26636)가 분수 완화 미분 방정식으로 픽셀 동역학을 모델링해 기존 시뮬레이터(vid2e, ESIM)보다 실제 카메라에 훨씬 가까운 합성 이벤트를 생성하는 방법을 제시했습니다. 이 흐름을 한 문장으로 정리하면, 이벤트…]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Daily Briefing — 2026-06-29 (월요일)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-06-29.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-06-29.html</guid>
-      <pubDate>Mon, 29 Jun 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘 arXiv /new 배치는 월요일 특성상 주말 제출분으로 390건(cs.AI 131·cs.LG 134·cs.CV 105·eess.SP 11·eess.IV 9)으로 지난 금요일(522건)보다 양이 적습니다. 저널까지 합산하면 615건, 그 중 ROI 164건입니다. 이번 주(6월 22~26일) 회고 관점에서 보면, 지난 금요일(6/26)의 이벤트 카메라 시뮬레이션·나노제조 세계 모델·잠재 확산 PDE 역문제라는 세 강신호 중에서 오늘은 나노제조 역설계와 잠재 확산 PDE 쪽은 비어 있고, 대신 3DGS의 범용화 방향성과 광학-AI 공동 설계라는 새 신호 가 나왔습니다.]]></description>
     </item>
   </channel>
 </rss>
