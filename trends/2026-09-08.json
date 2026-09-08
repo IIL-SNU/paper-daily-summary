@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-08",
+  "source_listing_date": "2026-09-08",
+  "source_mode": "journal-only",
+  "note": "2026-09-08(화) daily 실행. Date Source Contract 점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 이틀째 \"Monday, 7 September 2026\" listing에 머물러 있고(/new, /pastweek 모두 9/8 섹션 없음) arXiv 신규 제출이 0건이라, prompts/instruction.md 2.1의 저널 독립 규칙에 따라 arXiv 섹션 없이 Crossref/OpenAlex 저널만으로 만든 잠정본(source_mode=journal-only)을 발행했다. Crossref 9개 키워드 질의(--days 1) + OpenAlex enrich/works로 427건을 수집·중복제거해 classify.py로 스캔했고, 90건(21.1%)이 9개 ROI 버킷에 배정됐다. 선택 비율이 평소(25~35%)보다 낮은 이유는 'virtual'(가상현실/가상수자원), 'staining'(세균 염색), 'Fourier'(경제학 ARDL 모형), 'tomography'(지구물리 탐사) 같은 일반 키워드 오탐이 Virtual Staining/Pathology(20건)·Tomography/3D Imaging(24건) 버킷을 대부분 채웠기 때문이다. 90건 중 실제 계산 이미징 방법론과 관련된 신호는 13편으로 추정되며, 위상 이미징/홀로그래피 응용 확장(3편), 역문제 해법의 데이터 의존도·신뢰성 재점검(3편), 확립된 계산 이미징 기법에 디퓨전/자동화 AI 이식(3편), 메타표면/광 필드의 디스플레이·해상도 응용 복귀(2편), coherence tomography의 산업/의료 응용 분화(2편)로 5개 클러스터를 구성했다. /pastweek에 9/8 섹션이 뜨면 다음 실행(2시간 간격 폴링)에서 arXiv 포함 완전판으로 업그레이드된다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 0,
+      "eess.SP": 0
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 427
+  },
+  "totals": {
+    "total_scanned": 427,
+    "selected": 90
+  },
+  "classified": {
+    "total_scanned": 427,
+    "selected": 90,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 2,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 6,
+      "Meta-Optics/Diffractive": 14,
+      "Light-Field/Novel Sensors": 3,
+      "Tomography/3D Imaging": 24,
+      "Virtual Staining/Pathology": 20,
+      "Reconstruction/Inverse Problems": 5,
+      "Deep Learning Methods": 15
+    }
+  },
+  "daily_thesis": "오늘은 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 다섯 카테고리 모두 이틀째 월요일(9/7) listing에 머물러 있어 저널만으로 만든 잠정본입니다. 저널에서 가장 뚜렷한 신호는 위상 이미징·역문제 해법처럼 이미 자리잡은 계산 이미징 방법들이 미세조류 오염 감지, 반도체 결함 분석, 저선량 CT 같은 새 현장으로 퍼지면서 동시에 디퓨전 모델이나 자동화 AI 파이프라인으로 다시 손질되고 있다는 점이고, 메타표면·광 필드 쪽은 이번 주 초 저널을 채우던 안테나·통신 응용에서 벗어나 디스플레이·해상도 향상이라는 이미징 본연의 자리로 돌아왔습니다."
+}

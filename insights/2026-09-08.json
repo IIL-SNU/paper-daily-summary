@@ -1,0 +1,95 @@
+{
+ "date": "2026-09-08",
+ "source_mode": "journal-only",
+ "clusters": [
+  {
+   "cluster": "위상 이미징·홀로그래피가 서로 다른 산업 응용으로 반복 확장",
+   "papers": [
+    {"title": "AI-enhanced digital holographic microscopy for real-time monitoring and early contamination detection in industrial microalgae raceway ponds", "arxiv_id": "https://doi.org/10.1016/j.algal.2026.104950", "journal_or_source": "Algal Research"},
+    {"title": "Unambiguous thin-film thickness measurement using phase disambiguation in Fresnel diffraction from a phase step", "arxiv_id": "https://doi.org/10.1088/2040-8986/aea343", "journal_or_source": "Journal of Optics"},
+    {"title": "Multi-Dimensional Metasurface Holography", "arxiv_id": "https://doi.org/10.1364/ome.610146", "journal_or_source": "Optical Materials Express"}
+   ],
+   "why": "지금까지 디지털 홀로그래피와 위상 이미징은 대체로 '얼마나 정확하게 위상을 복원하느냐'를 겨루는 방법론 논문 형태로 나왔는데, 오늘 저널 세 편은 오히려 그 방법을 특정 산업 현장에 가져다 쓸 때 부딪히는 구체적인 문제를 하나씩 겨냥합니다. 미세조류 배양지 오염 감지 논문은 디지털 홀로그래픽 현미경으로 배양지 안의 조류·오염 미생물을 실시간으로 세어, 사람이 현미경을 들여다보지 않아도 오염을 조기에 알아채게 만듭니다. 박막 두께 측정 논문은 반사형 위상 계단에서 나오는 프레넬 회절 무늬가 두께·파장·입사각에 따라 주기적으로 반복돼서 생기는 '몇 번째 주기인지 알 수 없는' 모호성 문제를, 여러 각도 또는 여러 파장에서 얻은 후보 두께값을 겹쳐서 하나로 좁히는 방식으로 풀어 1nm 이하 오차로 50~2000nm 범위의 두께를 잽니다. 메타표면 홀로그래피 논문은 파장·편광·시야각처럼 서로 다른 차원의 정보를 하나의 메타표면 소자에 동시에 인코딩하려는 시도입니다. 세 논문 모두 '더 정확한 위상 복원 알고리즘'보다 '이미 있는 위상 복원 원리를 오염 감지, 두께 계측, 다차원 인코딩이라는 실제 쓰임에 맞게 가공하는 단계'로 넘어갔다는 공통점이 있습니다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저널(Algal Research, Journal of Optics, Optical Materials Express) 3편이 독립적으로 위상/홀로그래피의 응용 확장을 보이나, 오염 감지 논문과 메타표면 홀로그래피 논문은 Crossref 초록이 제공되지 않아 제목 기반 판단입니다.",
+   "lab_action": "박막 두께 측정 논문의 다각도/다파장 위상 모호성 해소 프레임워크를 랩의 정량 위상 이미징(QPI) 파이프라인에 적용해 두꺼운 샘플에서 위상 언랩핑 오차가 줄어드는지 검증하고, 디지털 홀로그래픽 현미경 기반 오염 감지 파이프라인 구조를 랩 현미경 자동 모니터링 셋업에 참고해 실시간 이상 감지 기능 추가 가능성을 검토한다."
+  },
+  {
+   "cluster": "역문제 해법이 학습 데이터 의존도와 결과 신뢰성을 각각 다른 각도에서 재점검",
+   "papers": [
+    {"title": "You KAN do it in a Single Shot: Plug-and-Play Methods with Single-Instance Priors", "arxiv_id": "https://doi.org/10.1007/s10851-026-01351-4", "journal_or_source": "Journal of Mathematical Imaging and Vision"},
+    {"title": "WaveDL: A Scalable Deep Learning Framework for Wave-Based Inverse Problems", "arxiv_id": "https://doi.org/10.1016/j.cpc.2026.110400", "journal_or_source": "Computer Physics Communications"},
+    {"title": "Quantitative In-Cell Localization Microscopy: From Single-Molecule Localizations to Mechanistic Inference", "arxiv_id": "https://doi.org/10.1021/cbmi.6c00156", "journal_or_source": "Chemical & Biomedical Imaging"}
+   ],
+   "why": "계산 이미징의 역문제(측정값에서 원래 신호를 거꾸로 복원하는 문제) 연구는 최근 몇 년간 대부분 '대량의 학습 데이터로 복원 사전(prior)을 미리 학습시킨다'는 전제를 깔고 발전해 왔습니다. 오늘 저널 세 편은 이 전제를 서로 다른 방향에서 건드립니다. Plug-and-Play 논문은 KAN(Kolmogorov-Arnold Network)이라는 최근 구조를 이용해, 외부 학습 데이터셋 없이 복원하려는 그 이미지 한 장 안에서만 사전 정보를 뽑아내 단일 촬영으로 복원합니다. WaveDL은 파동 방정식을 통해 신호를 복원해야 하는 여러 문제 유형(초음파, 지진파, 전자기파 등)에 재사용할 수 있는 확장 가능한 딥러닝 프레임워크를 제시합니다. Quantitative In-Cell Localization Microscopy는 반대 방향에서 접근해, 복원된 단분자 위치 정보로부터 '분자가 뭉쳐 있다', '분자 상태가 바뀌었다' 같은 생물학적 결론을 내릴 때 그 결론이 실제 측정에 기반한 것인지 아니면 모델이 만든 가정에 기반한 것인지를 구분하는 4단계 점검표(claims ladder)를 제시합니다. 세 논문을 묶으면, 역문제 연구가 '더 정확하게 복원하는 법'뿐 아니라 '학습 데이터를 얼마나 줄일 수 있는지'와 '복원 결과를 어디까지 믿어도 되는지'까지 함께 다루기 시작했다는 인상을 줍니다.",
+   "confidence": "Low",
+   "confidence_note": "Plug-and-Play 논문과 WaveDL 논문은 Crossref 초록이 제공되지 않아 제목만으로 방법론을 추정했고, 세 논문이 같은 학회·저자군에서 나온 것은 아니라 방향성 일치는 느슨한 추정입니다.",
+   "lab_action": "KAN 기반 single-instance prior 방식을 랩의 렌즈리스/위상 복원 파이프라인 중 학습 데이터가 부족한 새 광학계 프로토타입에 시험 적용하고, Quantitative In-Cell Localization Microscopy의 claims ladder 체크리스트를 랩의 정량 위상 이미징 결과 해석 절차에 적용해 어떤 결론이 직접 측정이고 어떤 결론이 모델 기반 추정인지 구분하는 문서화 절차를 마련한다."
+  },
+  {
+   "cluster": "확립된 계산 이미징 방법에 디퓨전·자동화 AI를 이식하는 흐름",
+   "papers": [
+    {"title": "Fourier Single-pixel Imaging Based on Wavelet Decomposition and Diffusion Model", "arxiv_id": "https://doi.org/10.1109/jphot.2026.3731430", "journal_or_source": "IEEE Photonics Journal"},
+    {"title": "Automated End-to-End AI Solution for Photon Emission Microscopy in Semiconductor Failure Analysis", "arxiv_id": "https://doi.org/10.31399/asm.edfa.2026-3.p018", "journal_or_source": "EDFA Technical Articles"},
+    {"title": "Instance-Specific Denoising: A Hybrid Acquisition Framework for Deep Learning in Low-Dose Computed Tomography", "arxiv_id": "https://doi.org/10.1109/tci.2026.3731170", "journal_or_source": "IEEE Transactions on Computational Imaging"}
+   ],
+   "why": "Fourier 단일픽셀 이미징(카메라 없이 하나의 광검출기와 패턴 조명만으로 영상을 복원하는 기법), 반도체 결함 분석용 광자방출 현미경(PEM), 저선량 CT는 모두 수십 년 된 확립된 계산 이미징 기법인데, 오늘 저널 세 편은 이 오래된 기법에 최신 AI를 이식해 실제 현장에서 쓰기 좋게 바꿉니다. Fourier 단일픽셀 이미징 논문은 웨이블릿 분해로 측정을 압축한 뒤 디퓨전 모델로 나머지 디테일을 채워 넣어 더 적은 측정 횟수로도 복원 품질을 유지합니다. 반도체 결함 분석 논문은 그동안 사람이 눈으로 하나하나 비교하던 PEM 이미지 판독을 SSD/VGG16 딥러닝 모델과 좌표 변환 시스템으로 자동화해 분석 시간을 30분에서 몇 분으로(80% 이상) 줄였습니다. 저선량 CT 논문은 모든 환자·촬영 조건에 똑같이 적용하던 범용 디노이징 대신, 촬영 인스턴스마다 다르게 적용되는 하이브리드 획득-디노이징 프레임워크를 제안합니다. 세 논문 모두 '새 촬영 원리를 만들자'가 아니라 '이미 검증된 촬영 원리에 최신 AI를 매칭해 현장 적용성을 높이자'는 같은 태도를 보입니다.",
+   "confidence": "Medium",
+   "confidence_note": "PEM 자동화 논문은 30분→몇 분(80% 이상 단축)이라는 구체적 배포 수치가 abstract에 있어 신뢰도가 높고, 저선량 CT는 IEEE TCI라는 계산 이미징 전문지에 실려 관련성이 명확하나, Fourier 단일픽셀 이미징 논문은 Crossref 초록이 제공되지 않아 제목 기반 판단입니다.",
+   "lab_action": "PEM 자동화 논문의 hotspot 검출+registration 비교 파이프라인 구조를 랩의 반도체/재료 결함 검사용 현미경 자동화 도구에 참고해 적용하고, Fourier 단일픽셀 이미징의 웨이블릿+디퓨전 조합을 랩 단일픽셀/컴프레시브 이미징 실험에 적용해 필요 측정 횟수 대비 복원 품질 곡선을 비교한다."
+  },
+  {
+   "cluster": "메타표면·광 필드가 통신·안테나 대신 디스플레이·해상도 향상으로 돌아옴",
+   "papers": [
+    {"title": "Continuous Metasurface Integrated GaN-based Micro-LEDs for Naked-eye 3D Display", "arxiv_id": "https://doi.org/10.1364/oe.609592", "journal_or_source": "Optics Express"},
+    {"title": "State-Aware Dependency Reasoning for Light Field Angular Super-Resolution", "arxiv_id": "https://doi.org/10.1109/tcsvt.2026.3730990", "journal_or_source": "IEEE Transactions on Circuits and Systems for Video Technology"}
+   ],
+   "why": "오늘 Meta-Optics/Diffractive 버킷에 배정된 14편 중 12편은 안테나·전자기파 차폐·태양광 발전처럼 통신·에너지 응용이었고, 실제 이미징/디스플레이 관련 신호는 단 1편뿐이었습니다. 그 1편인 메타표면 통합 GaN 마이크로 LED 논문은 별도의 안경 없이 맨눈으로 보는 3D 디스플레이를 만들기 위해 메타표면을 마이크로 LED 위에 직접 얹어 시야각별로 다른 상을 보여주는 구조입니다. 같은 날 나온 광 필드 각도 초해상도 논문은 하드웨어가 아니라 알고리즘 쪽에서, 몇 장의 시점만 촬영해도 그 사이 각도의 영상을 신경망이 채워 넣어 마치 훨씬 더 촘촘하게 찍은 것처럼 만듭니다. 하드웨어(메타표면 3D 디스플레이)와 알고리즘(광 필드 초해상도)이라는 서로 다른 층위이긴 하지만, 두 논문 모두 '더 적은 촬영·소자로 더 풍부한 시각 정보를 재현한다'는 목표를 공유합니다.",
+   "confidence": "Low",
+   "confidence_note": "메타표면 3D 디스플레이 논문은 Crossref 초록이 제공되지 않아 제목 기반 판단이고, 두 논문의 저자군이나 벤치마크가 겹치는지는 확인되지 않아 연결이 느슨합니다.",
+   "lab_action": "메타표면 통합 마이크로 LED의 시야각별 상 분리 구조를 랩의 라이트필드 디스플레이/캡처 프로토타입 설계에 참고해 검토하고, State-Aware Dependency Reasoning의 각도 의존성 모델링 방식을 랩 광 필드 현미경 각도 초해상도 파이프라인에 적용해 필요 촬영 시점 수가 줄어드는지 비교한다."
+  },
+  {
+   "cluster": "Coherence tomography 계열 기법이 산업 비파괴검사와 의료 내시경으로 갈라지는 확장",
+   "papers": [
+    {"title": "Geometry Adaptive Photothermal Coherence Tomography and Its Application in Additively Manufactured Metal Structures", "arxiv_id": "https://doi.org/10.1088/2631-7990/aea392", "journal_or_source": "International Journal of Extreme Manufacturing"},
+    {"title": "Deep-learning-aided sarcoma biopsy guidance using forward-view endoscopic optical coherence tomography", "arxiv_id": "https://doi.org/10.1364/boe.613595", "journal_or_source": "Biomedical Optics Express"}
+   ],
+   "why": "coherence tomography(빛이나 열의 간섭 신호를 이용해 단면 정보를 쌓아 3차원 구조를 복원하는 원리)는 원래 의료 영상에서 자리잡은 기법인데, 오늘 저널 두 편은 이 원리가 서로 다른 두 현장으로 갈라지는 모습을 보여줍니다. 광열 코히런스 단층촬영(GA-PCT) 논문은 3D 프린팅으로 만든 금속 부품 내부의 결함을 비파괴적으로 검사하기 위해, 레이저로 표면을 훑으면서 적외선 카메라로 열 신호의 간섭 무늬를 기록해 표면과 내부 결함을 동시에 3차원 좌표로 복원합니다(스테인리스강 기준 1.4mm 깊이까지 검사 가능). 반면 전방시야 내시경 OCT 논문은 사람 몸속 육종(sarcoma) 조직을 생검(biopsy)할 때 정확한 위치를 찾기 위해 딥러닝으로 내시경 OCT 영상을 실시간 해석해 시술을 안내합니다. 같은 '간섭 신호로 단면을 쌓아 3D를 복원한다'는 원리가 한쪽에서는 산업 제조 품질 검사로, 다른 쪽에서는 의료 시술 안내로 쓰이고 있다는 점이 오늘의 신호입니다.",
+   "confidence": "Low",
+   "confidence_note": "두 논문뿐이고 서로 다른 산업(제조 비파괴검사 vs 의료 시술)이라 직접적인 상호 참조나 공통 벤치마크는 없습니다. 내시경 OCT 논문은 Crossref 초록이 제공되지 않아 제목 기반 판단입니다.",
+   "lab_action": "GA-PCT의 line-structured light 스캐닝+지연 샘플링 조합을 랩의 산업용 비파괴검사/현미경 결함 탐지 파이프라인에 적용 가능성을 검토하고, 내시경 OCT 실시간 딥러닝 해석 파이프라인 구조를 랩의 실시간 OCT 처리 실험에 참고한다."
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "A. 박막 두께 다각도/다파장 위상 모호성 해소 프레임워크를 랩 QPI 파이프라인에 적용",
+   "claim": "여러 각도 또는 여러 파장에서 얻은 후보 두께값을 겹쳐 위상 모호성을 해소하는 프레임워크를 랩의 정량 위상 이미징(QPI) 파이프라인에 적용하면, 두꺼운 샘플에서도 위상 언랩핑 오차 없이 안정적으로 복원할 수 있다",
+   "supporting_papers": [
+    {"title": "Unambiguous thin-film thickness measurement using phase disambiguation in Fresnel diffraction from a phase step", "arxiv": "https://doi.org/10.1088/2040-8986/aea343"}
+   ]
+  },
+  {
+   "title": "B. PEM 자동화 hotspot 검출+registration 파이프라인을 랩 결함 검사 현미경 자동화에 적용",
+   "claim": "SSD/VGG16 기반 hotspot 검출과 좌표 변환 registration 파이프라인을 랩의 반도체/재료 결함 검사용 현미경 자동화 도구에 적용하면, 분석 시간과 분석자 간 일관성을 동시에 개선할 수 있다",
+   "supporting_papers": [
+    {"title": "Automated End-to-End AI Solution for Photon Emission Microscopy in Semiconductor Failure Analysis", "arxiv": "https://doi.org/10.31399/asm.edfa.2026-3.p018"}
+   ]
+  },
+  {
+   "title": "C. KAN 기반 single-instance prior PnP를 랩 렌즈리스 위상 복원에 적용",
+   "claim": "외부 학습 데이터셋 없이 단일 촬영 이미지 안에서만 사전 정보를 추출하는 KAN 기반 Plug-and-Play 방법을 랩의 학습 데이터가 부족한 새 광학계 프로토타입에 적용하면, 재학습 없이도 합리적인 복원 품질을 얻을 수 있다",
+   "supporting_papers": [
+    {"title": "You KAN do it in a Single Shot: Plug-and-Play Methods with Single-Instance Priors", "arxiv": "https://doi.org/10.1007/s10851-026-01351-4"}
+   ]
+  },
+  {
+   "title": "D. GA-PCT의 line-structured light+지연 샘플링 결함 깊이 분석을 랩 비파괴검사 파이프라인에 적용",
+   "claim": "갈바노미터 기반 line-structured light 스캐닝과 지연 샘플링을 결합한 광열 코히런스 단층촬영 방식을 랩의 비파괴검사/현미경 결함 탐지 파이프라인에 적용하면, 표면과 내부 결함을 동시에 3차원으로 정량화할 수 있다",
+   "supporting_papers": [
+    {"title": "Geometry Adaptive Photothermal Coherence Tomography and Its Application in Additively Manufactured Metal Structures", "arxiv": "https://doi.org/10.1088/2631-7990/aea392"}
+   ]
+  }
+ ],
+ "phylogeny_tags": []
+}

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-09-08</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-09-08 (화요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-09-08 (화요일)</div>
+  <div>📚 소스: journal-only (잠정본) — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 이틀째 "Monday, 7 September 2026" listing에 머물러 있는 것을 Date Source Contract 점검에서 확인했습니다. /pastweek에도 아직 9/8 섹션이 없어 arXiv 신규 제출은 0건입니다.</div>
+  <div>🔢 arXiv: cs.LG 0 · cs.CV 0 · cs.AI 0 · eess.IV 0 · eess.SP 0 (신규 제출 없음)</div>
+  <div>🔢 저널: Crossref/OpenAlex 427편 수집(2026-09-08 등록분, --days 1) · 스캔 427건 · ROI 배정 90건 (21.1%)</div>
+  <div>⚠️ 이 리포트는 저널만으로 만든 잠정본입니다. arXiv 5개 카테고리가 9/8 listing으로 갱신되고 /pastweek에 9/8 섹션이 뜨면, 다음 실행(2시간 간격 폴링)에서 arXiv 포함 완전판으로 자동 업그레이드됩니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 다섯 카테고리 모두 이틀째 월요일(9/7) listing에 머물러 있어 저널만으로 만든 잠정본입니다. 저널에서 가장 뚜렷한 신호는 <strong>위상 이미징·역문제 해법처럼 이미 자리잡은 계산 이미징 방법들이 미세조류 오염 감지, 반도체 결함 분석, 저선량 CT 같은 새 현장으로 퍼지면서 동시에 디퓨전 모델이나 자동화 AI 파이프라인으로 다시 손질되고 있다는 점</strong>이고, <strong>메타표면·광 필드 쪽은 이번 주 초 저널을 채우던 안테나·통신 응용에서 벗어나 디스플레이·해상도 향상이라는 이미징 본연의 자리로 돌아왔습니다.</strong> 다만 arXiv 480여 건이 통째로 빠진 날이라 전체 정보량 자체는 평소보다 훨씬 적습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv 5개 카테고리는 모두 이틀째 "Monday, 7 September 2026" listing에 머물러 있어(9/8 신규 제출 0건), Crossref 9개 키워드 질의(--days 1)와 OpenAlex enrich/works로 저널만 427건을 수집·중복제거해 classify.py로 스캔했습니다. 그 결과 90건(21.1%)이 9개 ROI 버킷에 배정됐는데, 이는 최근 며칠(25~35%대)보다 뚜렷하게 낮은 비율입니다. 원인은 명확합니다 — 'virtual'(가상현실 관광·가상수자원 무역), 'staining'(세균 진단용 천연 염색제), 'Fourier'(탄소발자국 계량경제 모형), 'tomography'(파미르 고원 지각 구조 탐사) 같은 흔한 단어가 Virtual Staining/Pathology(20건)와 Tomography/3D Imaging(24건) 두 버킷을 대부분 키워드 오탐으로 채웠기 때문입니다. 90건 중 실제로 계산 이미징 방법론과 관련이 있다고 판단한 신호는 13편에 불과해, 오늘은 편수 대비 실질 신호 밀도가 유난히 낮은 하루였습니다.</p>
+<p>그 13편을 다시 묶으면 다섯 갈래가 보입니다. 첫째, 위상 이미징·홀로그래피가 미세조류 오염 감지·박막 두께 계측·다차원 메타표면 인코딩처럼 서로 다른 응용으로 갈라지는 흐름입니다. 둘째, 역문제(측정값에서 원래 신호를 거꾸로 복원하는 문제) 해법 세 편이 각각 학습 데이터 없이 단일 촬영만으로 복원하는 방법, 여러 문제 유형에 재사용 가능한 확장형 프레임워크, 그리고 복원 결과로부터 내린 결론이 실제 측정인지 모델 추정인지를 구분하는 점검표를 제시하며 '복원 정확도'를 넘어 '데이터 의존도'와 '결과 신뢰성'까지 함께 다루기 시작했습니다. 셋째, Fourier 단일픽셀 이미징·반도체 결함 분석용 광자방출 현미경·저선량 CT처럼 수십 년 된 확립된 계산 이미징 기법에 디퓨전 모델이나 자동화 AI 파이프라인을 이식하는 논문 세 편이 같은 날 나왔습니다. 넷째, 메타표면·광 필드가 이번 주 초 저널을 채우던 안테나·통신 응용에서 벗어나 맨눈 3D 디스플레이와 광 필드 각도 초해상도라는 이미징 본연의 자리로 돌아왔습니다. 다섯째, coherence tomography(간섭 신호로 단면을 쌓아 3D를 복원하는 원리)가 3D 프린팅 금속 부품의 산업 비파괴검사와 육종 조직 생검 안내라는, 완전히 다른 두 현장으로 갈라지는 모습도 확인됩니다.</p>
+<p>이번 주(2026-W37, 9/7 월~9/11 금)는 어제 daily가 arXiv 480건을 확보했지만 계산광학 코어(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics·Light-Field) 실제 신호가 10편 중 2편뿐이었던 얇은 시작이었는데, 오늘은 그 arXiv 흐름 자체가 완전히 멈추면서 정보량은 더 줄었지만 저널 쪽 계산광학 코어 신호(위상 이미징 3편, 메타표면/광 필드 2편)는 오히려 어제보다 늘었습니다. 다음 daily가 arXiv 정상 listing으로 복귀하면, 오늘 저널이 채운 다섯 클러스터에 arXiv 쪽 방법론이 얼마나 이어 붙는지가 이번 주 후반의 관전 포인트입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>9/7의 결론은 "이미 학습된 DiT나 depth/geometry 파운데이션 모델을 재설계 없이 특정 실패 조건(악천후, 수술 장면, 카메라 배열 불일치)에 맞춰 국소적으로 고쳐 쓴다"는 흐름이 중심이었고, 계산광학 코어 5개 버킷은 배정 10편 중 실제 신호가 2편뿐인 이번 주 들어 가장 얇은 날이었습니다. 오늘은 그 arXiv 흐름 자체가 완전히 멈췄습니다 — 5개 카테고리 모두 이틀째 월요일(9/7) listing에 머물러 있어 신규 제출이 0건입니다. 대신 저널에서는 오히려 어제보다 계산광학 코어에 가까운 신호가 나왔습니다. 어제 Phase Imaging(4편 중 실제 0~1편)·Meta-Optics(3편 중 1편)·Light-Field(2편 중 1편)가 대부분 통신·분광학 오탐이었던 것과 달리, 오늘은 Phase Imaging에서 3편(미세조류 오염 감지, 박막 두께 계측, 메타표면 홀로그래피), Reconstruction에서 3편(단일 촬영 PnP, 파동 역문제 프레임워크, 정량 현미경 신뢰성 점검표), Deep Learning Methods에서도 확립된 계산 이미징 기법에 최신 AI를 이식한 3편이 확인됩니다. 다만 전체 정보량 자체는 arXiv 480건이 통째로 빠지면서 어제보다 훨씬 적고, Virtual Staining/Pathology 버킷은 어제(17편 중 실질 신호 0~1편)에 이어 오늘도(20편 중 0편) 실제 신호가 완전히 사라진 상태가 이어지고 있습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>위상 이미징·홀로그래피가 서로 다른 산업 응용으로 반복 확장</strong></td>
+  <td>
+    <a href="https://doi.org/10.1016/j.algal.2026.104950" target=_blank>AI-enhanced digital holographic microscopy for real-time monitoring and early contamination detection in industrial microalgae raceway ponds</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1088/2040-8986/aea343" target=_blank>Unambiguous thin-film thickness measurement using phase disambiguation in Fresnel diffraction from a phase step</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/ome.610146" target=_blank>Multi-Dimensional Metasurface Holography</a> <span class=pill>JNL</span>
+  </td>
+  <td>지금까지 디지털 홀로그래피와 위상 이미징은 대체로 "얼마나 정확하게 위상을 복원하느냐"를 겨루는 방법론 논문 형태로 나왔는데, 오늘 저널 세 편은 오히려 그 방법을 특정 산업 현장에 가져다 쓸 때 부딪히는 구체적인 문제를 하나씩 겨냥합니다. 미세조류 배양지 오염 감지 논문은 디지털 홀로그래픽 현미경으로 배양지 안의 조류·오염 미생물을 실시간으로 세어, 사람이 현미경을 들여다보지 않아도 오염을 조기에 알아채게 만듭니다. 박막 두께 측정 논문은 반사형 위상 계단에서 나오는 프레넬 회절 무늬가 두께·파장·입사각에 따라 주기적으로 반복돼서 생기는 "몇 번째 주기인지 알 수 없는" 모호성 문제를, 여러 각도 또는 여러 파장에서 얻은 후보 두께값을 겹쳐서 하나로 좁히는 방식으로 풀어 1nm 이하 오차로 50~2000nm 범위의 두께를 잽니다. 메타표면 홀로그래피 논문은 파장·편광·시야각처럼 서로 다른 차원의 정보를 하나의 메타표면 소자에 동시에 인코딩하려는 시도입니다. 세 논문 모두 "더 정확한 위상 복원 알고리즘"보다 "이미 있는 위상 복원 원리를 오염 감지, 두께 계측, 다차원 인코딩이라는 실제 쓰임에 맞게 가공하는 단계"로 넘어갔다는 공통점이 있습니다.</td>
+  <td>Medium<br><small>서로 다른 저널 3편이 독립적으로 위상/홀로그래피의 응용 확장을 보이나, 오염 감지·메타표면 홀로그래피 2편은 Crossref 초록이 없어 제목 기반 판단</small></td>
+  <td>박막 두께 측정 논문의 다각도/다파장 위상 모호성 해소 프레임워크를 랩의 정량 위상 이미징(QPI) 파이프라인에 적용해 두꺼운 샘플에서 위상 언랩핑 오차가 줄어드는지 검증하고, 디지털 홀로그래픽 현미경 기반 오염 감지 파이프라인 구조를 랩 현미경 자동 모니터링 셋업에 참고해 실시간 이상 감지 기능 추가 가능성을 검토한다</td>
+</tr>
+<tr>
+  <td><strong>역문제 해법이 학습 데이터 의존도와 결과 신뢰성을 각각 다른 각도에서 재점검</strong></td>
+  <td>
+    <a href="https://doi.org/10.1007/s10851-026-01351-4" target=_blank>You KAN do it in a Single Shot: Plug-and-Play Methods with Single-Instance Priors</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.cpc.2026.110400" target=_blank>WaveDL: A Scalable Deep Learning Framework for Wave-Based Inverse Problems</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1021/cbmi.6c00156" target=_blank>Quantitative In-Cell Localization Microscopy: From Single-Molecule Localizations to Mechanistic Inference</a> <span class=pill>JNL</span>
+  </td>
+  <td>계산 이미징의 역문제(측정값에서 원래 신호를 거꾸로 복원하는 문제) 연구는 최근 몇 년간 대부분 "대량의 학습 데이터로 복원 사전(prior)을 미리 학습시킨다"는 전제를 깔고 발전해 왔습니다. 오늘 저널 세 편은 이 전제를 서로 다른 방향에서 건드립니다. Plug-and-Play 논문은 KAN(Kolmogorov-Arnold Network)이라는 최근 구조를 이용해, 외부 학습 데이터셋 없이 복원하려는 그 이미지 한 장 안에서만 사전 정보를 뽑아내 단일 촬영으로 복원합니다. WaveDL은 파동 방정식을 통해 신호를 복원해야 하는 여러 문제 유형(초음파, 지진파, 전자기파 등)에 재사용할 수 있는 확장 가능한 딥러닝 프레임워크를 제시합니다. Quantitative In-Cell Localization Microscopy는 반대 방향에서 접근해, 복원된 단분자 위치 정보로부터 "분자가 뭉쳐 있다", "분자 상태가 바뀌었다" 같은 생물학적 결론을 내릴 때 그 결론이 실제 측정에 기반한 것인지 모델이 만든 가정에 기반한 것인지를 구분하는 4단계 점검표(claims ladder)를 제시합니다. 세 논문을 묶으면, 역문제 연구가 "더 정확하게 복원하는 법"뿐 아니라 "학습 데이터를 얼마나 줄일 수 있는지"와 "복원 결과를 어디까지 믿어도 되는지"까지 함께 다루기 시작했다는 인상을 줍니다.</td>
+  <td>Low<br><small>Plug-and-Play·WaveDL 2편은 Crossref 초록이 없어 제목만으로 방법론을 추정했고, 세 논문이 같은 학회·저자군은 아니라 방향성 일치는 느슨한 추정</small></td>
+  <td>KAN 기반 single-instance prior 방식을 랩의 렌즈리스/위상 복원 파이프라인 중 학습 데이터가 부족한 새 광학계 프로토타입에 시험 적용하고, Quantitative In-Cell Localization Microscopy의 claims ladder 체크리스트를 랩의 정량 위상 이미징 결과 해석 절차에 적용해 어떤 결론이 직접 측정이고 어떤 결론이 모델 기반 추정인지 구분하는 문서화 절차를 마련한다</td>
+</tr>
+<tr>
+  <td><strong>확립된 계산 이미징 방법에 디퓨전·자동화 AI를 이식하는 흐름</strong></td>
+  <td>
+    <a href="https://doi.org/10.1109/jphot.2026.3731430" target=_blank>Fourier Single-pixel Imaging Based on Wavelet Decomposition and Diffusion Model</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.31399/asm.edfa.2026-3.p018" target=_blank>Automated End-to-End AI Solution for Photon Emission Microscopy in Semiconductor Failure Analysis</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1109/tci.2026.3731170" target=_blank>Instance-Specific Denoising: A Hybrid Acquisition Framework for Deep Learning in Low-Dose Computed Tomography</a> <span class=pill>JNL</span>
+  </td>
+  <td>Fourier 단일픽셀 이미징(카메라 없이 하나의 광검출기와 패턴 조명만으로 영상을 복원하는 기법), 반도체 결함 분석용 광자방출 현미경(PEM), 저선량 CT는 모두 수십 년 된 확립된 계산 이미징 기법인데, 오늘 저널 세 편은 이 오래된 기법에 최신 AI를 이식해 실제 현장에서 쓰기 좋게 바꿉니다. Fourier 단일픽셀 이미징 논문은 웨이블릿 분해로 측정을 압축한 뒤 디퓨전 모델로 나머지 디테일을 채워 넣어 더 적은 측정 횟수로도 복원 품질을 유지합니다. 반도체 결함 분석 논문은 그동안 사람이 눈으로 하나하나 비교하던 PEM 이미지 판독을 SSD/VGG16 딥러닝 모델과 좌표 변환 시스템으로 자동화해 분석 시간을 30분에서 몇 분으로(80% 이상) 줄였습니다. 저선량 CT 논문은 모든 환자·촬영 조건에 똑같이 적용하던 범용 디노이징 대신, 촬영 인스턴스마다 다르게 적용되는 하이브리드 획득-디노이징 프레임워크를 제안합니다. 세 논문 모두 "새 촬영 원리를 만들자"가 아니라 "이미 검증된 촬영 원리에 최신 AI를 매칭해 현장 적용성을 높이자"는 같은 태도를 보입니다.</td>
+  <td>Medium<br><small>PEM 자동화는 30분→몇 분(80% 이상 단축)이라는 구체적 배포 수치가 abstract에 있고 저선량 CT는 IEEE TCI 전문지 게재로 관련성이 명확하나, Fourier 단일픽셀 이미징은 초록 미공개로 제목 기반 판단</small></td>
+  <td>PEM 자동화 논문의 hotspot 검출+registration 비교 파이프라인 구조를 랩의 반도체/재료 결함 검사용 현미경 자동화 도구에 참고해 적용하고, Fourier 단일픽셀 이미징의 웨이블릿+디퓨전 조합을 랩 단일픽셀/컴프레시브 이미징 실험에 적용해 필요 측정 횟수 대비 복원 품질 곡선을 비교한다</td>
+</tr>
+<tr>
+  <td><strong>메타표면·광 필드가 통신·안테나 대신 디스플레이·해상도 향상으로 돌아옴</strong></td>
+  <td>
+    <a href="https://doi.org/10.1364/oe.609592" target=_blank>Continuous Metasurface Integrated GaN-based Micro-LEDs for Naked-eye 3D Display</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1109/tcsvt.2026.3730990" target=_blank>State-Aware Dependency Reasoning for Light Field Angular Super-Resolution</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 Meta-Optics/Diffractive 버킷에 배정된 14편 중 12편은 안테나·전자기파 차폐·태양광 발전처럼 통신·에너지 응용이었고, 실제 이미징/디스플레이 관련 신호는 단 1편뿐이었습니다. 그 1편인 메타표면 통합 GaN 마이크로 LED 논문은 별도의 안경 없이 맨눈으로 보는 3D 디스플레이를 만들기 위해 메타표면을 마이크로 LED 위에 직접 얹어 시야각별로 다른 상을 보여주는 구조입니다. 같은 날 나온 광 필드 각도 초해상도 논문은 하드웨어가 아니라 알고리즘 쪽에서, 몇 장의 시점만 촬영해도 그 사이 각도의 영상을 신경망이 채워 넣어 마치 훨씬 더 촘촘하게 찍은 것처럼 만듭니다. 하드웨어(메타표면 3D 디스플레이)와 알고리즘(광 필드 초해상도)이라는 서로 다른 층위이긴 하지만, 두 논문 모두 "더 적은 촬영·소자로 더 풍부한 시각 정보를 재현한다"는 목표를 공유합니다.</td>
+  <td>Low<br><small>메타표면 3D 디스플레이 논문은 초록 미공개로 제목 기반 판단이고, 두 논문의 저자군·벤치마크가 겹치는지는 확인되지 않아 연결이 느슨함</small></td>
+  <td>메타표면 통합 마이크로 LED의 시야각별 상 분리 구조를 랩의 라이트필드 디스플레이/캡처 프로토타입 설계에 참고해 검토하고, State-Aware Dependency Reasoning의 각도 의존성 모델링 방식을 랩 광 필드 현미경 각도 초해상도 파이프라인에 적용해 필요 촬영 시점 수가 줄어드는지 비교한다</td>
+</tr>
+<tr>
+  <td><strong>Coherence tomography 계열 기법이 산업 비파괴검사와 의료 내시경으로 갈라지는 확장</strong></td>
+  <td>
+    <a href="https://doi.org/10.1088/2631-7990/aea392" target=_blank>Geometry Adaptive Photothermal Coherence Tomography and Its Application in Additively Manufactured Metal Structures</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/boe.613595" target=_blank>Deep-learning-aided sarcoma biopsy guidance using forward-view endoscopic optical coherence tomography</a> <span class=pill>JNL</span>
+  </td>
+  <td>coherence tomography(빛이나 열의 간섭 신호를 이용해 단면 정보를 쌓아 3차원 구조를 복원하는 원리)는 원래 의료 영상에서 자리잡은 기법인데, 오늘 저널 두 편은 이 원리가 서로 다른 두 현장으로 갈라지는 모습을 보여줍니다. 광열 코히런스 단층촬영(GA-PCT) 논문은 3D 프린팅으로 만든 금속 부품 내부의 결함을 비파괴적으로 검사하기 위해, 레이저로 표면을 훑으면서 적외선 카메라로 열 신호의 간섭 무늬를 기록해 표면과 내부 결함을 동시에 3차원 좌표로 복원합니다(스테인리스강 기준 1.4mm 깊이까지 검사 가능). 반면 전방시야 내시경 OCT 논문은 사람 몸속 육종(sarcoma) 조직을 생검(biopsy)할 때 정확한 위치를 찾기 위해 딥러닝으로 내시경 OCT 영상을 실시간 해석해 시술을 안내합니다. 같은 "간섭 신호로 단면을 쌓아 3D를 복원한다"는 원리가 한쪽에서는 산업 제조 품질 검사로, 다른 쪽에서는 의료 시술 안내로 쓰이고 있다는 점이 오늘의 신호입니다.</td>
+  <td>Low<br><small>두 논문뿐이고 서로 다른 산업이라 상호 참조나 공통 벤치마크는 없음. 내시경 OCT 논문은 초록 미공개로 제목 기반 판단</small></td>
+  <td>GA-PCT의 line-structured light 스캐닝+지연 샘플링 조합을 랩의 산업용 비파괴검사/현미경 결함 탐지 파이프라인에 적용 가능성을 검토하고, 내시경 OCT 실시간 딥러닝 해석 파이프라인 구조를 랩의 실시간 OCT 처리 실험에 참고한다</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ 참고: Lensless/Coded Imaging(1편, 자기입자영상 MPI로 lensless와 무관), Virtual Staining/Pathology(20편, 전량 "virtual"/"staining" 키워드 오탐)는 오늘 독립 클러스터를 만들 만큼의 근거가 없습니다. Fourier Ptychography/Microscopy(2편)도 둘 다 SAR 레이더 논문으로 실제 신호가 없습니다 — 아래 도메인 Watch Lens와 리스크 필터 참고.</small></p>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 2편 중 실제 신호 0편</strong> — <a href="https://doi.org/10.1109/tci.2026.3731172">An Efficient One-Bit Synthetic Aperture Radar Sparse Imaging Approach</a> [JNL]와 <a href="https://doi.org/10.3390/rs18173037">SAR Jamming via Metasurface-Enabled Spatial-Block Subsection Shift-Frequency Modulation</a> [JNL]은 둘 다 SAR(합성개구레이더) 논문으로, 제목의 'imaging'·'aperture' 키워드가 우연히 겹쳤을 뿐 광학 Fourier ptychography와는 무관합니다. 랩 ROI 핵심 공백이 오늘도 이어집니다.</li>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 1편 중 실제 신호 0편</strong> — <a href="https://doi.org/10.1088/1361-6560/aea399">Narrowband isotropic magnetic particle imaging with FFL-parallel excitation</a> [JNL]은 자기입자영상(MPI)이라는 완전히 다른 의료 영상 모달리티 논문으로, lensless/coded aperture 계산 이미징과는 무관합니다.</li>
+    <li><strong>Phase Imaging/Holography — 오늘 배정 6편 중 실제 신호 3편</strong> — 오늘 클러스터1의 대표 논문 세 편(미세조류 오염 감지 DHM, 박막 두께 위상 모호성 해소, 메타표면 홀로그래피)이 실제 신호입니다. 나머지 3편은 5.8GHz 대역 텐서 홀로그래픽 임피던스 메타표면(RF 안테나), 분산형 간섭 광섬유 센서의 편광 페이딩 완화(진동 감지), 파미르 고원 지각 운동 표면파 토모그래피(지구물리)로 'holographic'·'tomography' 키워드 오탐입니다.</li>
+    <li><strong>Meta-Optics/Diffractive — 오늘 배정 14편 중 실제 신호 1편</strong> — <a href="https://doi.org/10.1364/oe.609592">Continuous Metasurface Integrated GaN-based Micro-LEDs for Naked-eye 3D Display</a> [JNL]만 실제 이미징/디스플레이 신호입니다. 나머지 13편은 안테나(AiP, RCS 저감, 6G 센싱 서베이), 열복사·플라즈모닉 소자, 태양광 발전, 초음파 위상배열 버퍼처럼 통신·에너지·비광학 응용이며, K-band(23.3GHz) 밀리미터파 빔포밍용 Huygens 메타렌즈 1편도 abstract 확인 결과 광학 이미징이 아니라 RF 안테나였습니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 오늘 배정 3편 중 실제 신호 1편</strong> — <a href="https://doi.org/10.1109/tcsvt.2026.3730990">State-Aware Dependency Reasoning for Light Field Angular Super-Resolution</a> [JNL]만 실제 광 필드 신호입니다. 나머지 2편은 벼 육묘장 광 환경 디지털 트윈(농업)과 SiC/Ga2O3 광검출-광시냅스 소자(뉴로모픽 소자, 촬영과 무관)입니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 없음 (2026-09-08 신규 제출 0건, 5개 카테고리 모두 9/7 listing에 머물러 있음)</li>
+  <li><strong>저널 전용</strong>: 위상 이미징·홀로그래피 응용 확장(미세조류 DHM, 박막 두께 위상 모호성 해소, 메타표면 홀로그래피), 역문제 해법 재점검(KAN 기반 단일 촬영 PnP, WaveDL, 정량 현미경 claims ladder), 확립된 기법의 AI 이식(Fourier 단일픽셀 이미징+디퓨전, PEM 자동화, 저선량 CT instance-specific denoising), 메타표면·광 필드의 디스플레이 복귀(GaN 마이크로 LED 3D 디스플레이, 광 필드 각도 초해상도), coherence tomography 분화(GA-PCT 비파괴검사, 내시경 OCT 생검 안내)</li>
+  <li><strong>공통 키워드</strong>: 오늘은 arXiv 신호가 없어 arXiv-저널 교차 비교 자체가 성립하지 않습니다. 저널 전용 목록이 곧 오늘의 전체 신호입니다.</li>
+  <li><strong>특징</strong>: 어제(9/7)는 arXiv가 "기존 파운데이션 모델을 실패 조건에 맞춰 고쳐 쓴다"는 방법론 축에 몰려 있었던 반면, 오늘 저널은 위상 이미징·역문제·메타옵틱스처럼 계산광학 코어에 더 가까운 응용·재점검 신호로 채워졌습니다. 다음 daily에서 arXiv가 복귀하면 두 축이 어떻게 이어지는지가 관전 포인트입니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 위상 이미징·홀로그래피가 서로 다른 산업 응용으로 반복 확장</h3>
+  <p>미세조류 배양지 오염 감지(디지털 홀로그래픽 현미경), 박막 두께 계측(Fresnel 위상 모호성 해소), 메타표면 홀로그래피(다차원 인코딩) 세 편이 같은 날 나오며, 위상 복원 원리가 "더 정확한 알고리즘"보다 "실제 산업 현장에 맞게 가공하는 단계"로 넘어가고 있습니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 저널 3편이 독립적으로 응용 확장을 보이나 2편은 초록 미공개로 제목 기반 판단</p>
+</div>
+
+<div class=ins>
+  <h3>2. 역문제 해법이 학습 데이터 의존도와 결과 신뢰성을 각각 다른 각도에서 재점검</h3>
+  <p>KAN 기반 단일 촬영 Plug-and-Play(외부 학습 데이터 불필요), WaveDL(파동 역문제 확장형 프레임워크), Quantitative In-Cell Localization Microscopy(claims ladder 신뢰성 점검표) 세 편이 "더 정확하게 복원하는 법"을 넘어 "학습 데이터를 얼마나 줄일 수 있는지"와 "결과를 어디까지 믿어도 되는지"를 함께 묻습니다.</p>
+  <p class=conf-note>Confidence: Low — 2편이 초록 미공개로 제목 기반 연결이며 저자군·학회 중복은 확인되지 않음</p>
+</div>
+
+<div class=ins>
+  <h3>3. 확립된 계산 이미징 방법에 디퓨전·자동화 AI를 이식하는 흐름</h3>
+  <p>Fourier 단일픽셀 이미징+디퓨전 모델, 반도체 PEM 자동화(분석 시간 80% 이상 단축), 저선량 CT instance-specific denoising 세 편이 수십 년 된 확립된 계산 이미징 기법에 최신 AI를 이식해 현장 적용성을 높입니다.</p>
+  <p class=conf-note>Confidence: Medium — PEM 자동화는 구체적 배포 수치가 확인되고 저선량 CT는 IEEE TCI 게재로 관련성이 명확함</p>
+</div>
+
+<div class=ins>
+  <h3>4. 메타표면·광 필드가 통신·안테나 대신 디스플레이·해상도 향상으로 돌아옴</h3>
+  <p>메타표면 통합 GaN 마이크로 LED 맨눈 3D 디스플레이와 광 필드 각도 초해상도 두 편이, 오늘 Meta-Optics 14편 대부분을 채운 안테나·통신 응용과 달리 하드웨어·알고리즘 양쪽에서 "더 적은 촬영·소자로 더 풍부한 시각 정보를 재현"하는 이미징 본연의 응용으로 돌아왔습니다.</p>
+  <p class=conf-note>Confidence: Low — 2편뿐이고 1편은 초록 미공개, 저자군·벤치마크 중복도 확인되지 않음</p>
+</div>
+
+<div class=ins>
+  <h3>5. Coherence tomography 계열 기법이 산업 비파괴검사와 의료 내시경으로 갈라짐</h3>
+  <p>광열 코히런스 단층촬영(3D 프린팅 금속 결함 검사)과 전방시야 내시경 OCT(육종 생검 안내) 두 편이, 같은 "간섭 신호로 단면을 쌓아 3D를 복원한다"는 원리를 산업 제조 검사와 의료 시술 안내라는 서로 다른 현장에 각각 적용합니다.</p>
+  <p class=conf-note>Confidence: Low — 두 논문뿐이고 서로 다른 산업이라 상호 참조가 없으며 1편은 초록 미공개</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. 박막 두께 다각도/다파장 위상 모호성 해소 프레임워크를 랩 QPI 파이프라인에 적용</h3>
+  <p>여러 각도 또는 여러 파장에서 얻은 후보 두께값을 겹쳐 위상 모호성을 해소하는 프레임워크를 랩의 정량 위상 이미징(QPI) 파이프라인에 적용해, 두꺼운 샘플에서도 위상 언랩핑 오차 없이 안정적으로 복원할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Unambiguous thin-film thickness measurement via phase disambiguation 방법 재현</li>
+    <li>공통 benchmark: 랩 보유 QPI 검증 샘플(두께 50~2000nm 범위 박막)</li>
+    <li>비교축: 기존 visibility 기반 방법 대비 두께 추정 오차(nm), 다각도 vs 다파장 방식의 정확도 비교</li>
+    <li>실패해도 남는 결과: 랩 QPI 시스템의 위상 모호성 발생 조건(두께·파장·입사각) 정량 분석</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. PEM 자동화 hotspot 검출+registration 파이프라인을 랩 결함 검사 현미경 자동화에 적용</h3>
+  <p>SSD/VGG16 기반 hotspot 검출과 좌표 변환 registration 파이프라인을 랩의 반도체/재료 결함 검사용 현미경 자동화 도구에 적용해, 분석 시간과 분석자 간 일관성을 동시에 개선할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Automated End-to-End AI Solution for Photon Emission Microscopy 워크플로우 재현</li>
+    <li>공통 benchmark: 랩 보유 결함 검사 현미경 이미지 세트(reference vs target 쌍)</li>
+    <li>비교축: 기존 수작업 분석 시간 대비 자동화 파이프라인 처리 시간, hotspot 분류(same/extra/missing) 정확도</li>
+    <li>실패해도 남는 결과: 랩 결함 검사 워크플로우의 수작업 병목 구간 정량 분석</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. KAN 기반 single-instance prior PnP를 랩 렌즈리스 위상 복원에 적용</h3>
+  <p>외부 학습 데이터셋 없이 단일 촬영 이미지 안에서만 사전 정보를 추출하는 KAN 기반 Plug-and-Play 방법을 랩의 학습 데이터가 부족한 새 광학계 프로토타입에 적용해, 재학습 없이도 합리적인 복원 품질을 얻을 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: You KAN do it in a Single Shot 방법 재현</li>
+    <li>공통 benchmark: 랩 보유 신규 광학계 프로토타입(학습 데이터셋 미구축 상태)의 단일 촬영 데이터</li>
+    <li>비교축: 기존 학습 기반 PnP 대비 단일 촬영 복원 품질(SSIM/PSNR), 필요 사전 데이터량</li>
+    <li>실패해도 남는 결과: 랩 신규 광학계에서 single-instance prior가 유효한 조건과 무효한 조건 정리</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>D. GA-PCT의 line-structured light+지연 샘플링 결함 깊이 분석을 랩 비파괴검사 파이프라인에 적용</h3>
+  <p>갈바노미터 기반 line-structured light 스캐닝과 지연 샘플링을 결합한 광열 코히런스 단층촬영 방식을 랩의 비파괴검사/현미경 결함 탐지 파이프라인에 적용해, 표면과 내부 결함을 동시에 3차원으로 정량화할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Geometry Adaptive Photothermal Coherence Tomography 워크플로우 재현</li>
+    <li>공통 benchmark: 랩 보유 3D 프린팅/적층 제조 금속 시편(알려진 결함 깊이 포함)</li>
+    <li>비교축: 기존 광학 3D 이미징/OCT 대비 침투 깊이·검사 효율, 결함 깊이 추정 오차</li>
+    <li>실패해도 남는 결과: 랩 비파괴검사 대상 재료의 photothermal 침투 특성 정량 데이터</li>
+  </ul>
+</div>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘은 daily 실행이라 예측 회고는 생략합니다(예측 회고는 매주 월요일 별도 weekly 실행이 담당하며, 어제 오전 발행된 <a href="2026-09-07-weekly.html">2026-36 weekly</a>에서 이미 지난주(2026-08-31~2026-09-04) 예측을 채점했습니다).</p>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(24편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:8%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:4%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:25%"></span></span><span class=n>6편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:58%"></span></span><span class=n>14편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:13%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>24편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:83%"></span></span><span class=n>20편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:21%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>15편</span></div>
+
+<p><small>⚠️ 참고: Tomography/3D Imaging 24편 중 22편은 소아 결핵성 뇌수막염 CT, PET 종양 영상, DXA 골밀도, 치과 CBCT 같은 임상 사례 보고이거나 지질공학 지진파 토모그래피로 계산 이미징 방법론과 무관합니다(실제 신호 2편). Virtual Staining/Pathology 20편은 전량 "virtual"(가상현실 관광·가상수자원 무역·가상 실습실)·"staining"(세균 진단용 천연 염색제) 키워드 오탐으로 실제 신호가 0편입니다. Meta-Optics/Diffractive 14편 중 13편은 안테나·열복사·태양광 등 비이미징 응용입니다. Deep Learning Methods 15편 중 이미징 핵심 3편만 클러스터3에 반영했고 나머지 12편은 의료영상 분류·세그멘테이션 등 인접 분야이거나 완전히 무관한 응용(챗봇 평가, 해양 로봇 경로계획, 신약 스크리닝)입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Phase Imaging/Holography (6편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2040-8986/aea343" target=_blank>Unambiguous thin-film thickness measurement using phase disambiguation in Fresnel diffraction from a phase step</a></strong> [JNL · TIER A]<br>
+  왜 주요: 오늘 클러스터1·must-read 대표 — 다각도/다파장 후보값 겹침으로 위상 모호성을 1nm 이하 오차로 해소
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.algal.2026.104950" target=_blank>AI-enhanced digital holographic microscopy for real-time monitoring and early contamination detection in industrial microalgae raceway ponds</a></strong> [JNL]<br>
+  왜 주요: 디지털 홀로그래픽 현미경을 산업 미세조류 배양 실시간 오염 감지에 적용한 응용 사례
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ome.610146" target=_blank>Multi-Dimensional Metasurface Holography</a></strong> [JNL]<br>
+  왜 주요: 파장·편광·시야각 등 다차원 정보를 하나의 메타표면 소자에 인코딩하는 홀로그래피 확장
+</div>
+
+<h3>Meta-Optics/Diffractive (14편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.609592" target=_blank>Continuous Metasurface Integrated GaN-based Micro-LEDs for Naked-eye 3D Display</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터4 대표 — 메타표면+마이크로 LED로 안경 없는 맨눈 3D 디스플레이 구현
+</div>
+
+<h3>Light-Field/Novel Sensors (3편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tcsvt.2026.3730990" target=_blank>State-Aware Dependency Reasoning for Light Field Angular Super-Resolution</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터4 대표 — 적은 시점 촬영에서 각도 간 의존성을 학습해 광 필드 각도 초해상도 구현
+</div>
+
+<h3>Tomography/3D Imaging (24편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2631-7990/aea392" target=_blank>Geometry Adaptive Photothermal Coherence Tomography and Its Application in Additively Manufactured Metal Structures</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터5 대표 — 광열 간섭 신호로 3D 프린팅 금속 부품의 표면·내부 결함을 동시에 복원
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/boe.613595" target=_blank>Deep-learning-aided sarcoma biopsy guidance using forward-view endoscopic optical coherence tomography</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터5 대표 — 딥러닝으로 내시경 OCT를 실시간 해석해 육종 생검을 안내
+</div>
+
+<h3>Reconstruction/Inverse Problems (5편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s10851-026-01351-4" target=_blank>You KAN do it in a Single Shot: Plug-and-Play Methods with Single-Instance Priors</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터2 대표 — 외부 학습 데이터 없이 단일 촬영만으로 KAN 기반 PnP 복원
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/cbmi.6c00156" target=_blank>Quantitative In-Cell Localization Microscopy: From Single-Molecule Localizations to Mechanistic Inference</a></strong> [JNL · TIER A]<br>
+  왜 주요: 오늘 클러스터2·must-read 대표 — 복원 결과 기반 결론의 신뢰성을 구분하는 claims ladder 제시
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.cpc.2026.110400" target=_blank>WaveDL: A Scalable Deep Learning Framework for Wave-Based Inverse Problems</a></strong> [JNL]<br>
+  왜 주요: 파동 방정식 기반 역문제를 여러 문제 유형에 재사용 가능한 확장형 딥러닝 프레임워크로 일반화
+</div>
+
+<h3>Deep Learning Methods (15편 중 관련 3편, catch-all 과대표 방지로 2편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.31399/asm.edfa.2026-3.p018" target=_blank>Automated End-to-End AI Solution for Photon Emission Microscopy in Semiconductor Failure Analysis</a></strong> [JNL · TIER A]<br>
+  왜 주요: 오늘 클러스터3·must-read 대표 — 반도체 결함 분석 현미경 판독을 자동화해 분석 시간 80% 이상 단축
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/jphot.2026.3731430" target=_blank>Fourier Single-pixel Imaging Based on Wavelet Decomposition and Diffusion Model</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터3 대표 — 웨이블릿 압축+디퓨전 모델로 단일픽셀 이미징의 측정 효율을 높임
+</div>
+
+<hr>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Unambiguous thin-film thickness measurement using phase disambiguation in Fresnel diffraction from a phase step — Journal of Optics</h3>
+  <div class=tag>[방법전환] [표준후보]</div>
+  <p><strong>왜 A급인가:</strong> 랩이 다루는 위상 이미징·박막 계측 문제는 위상이 2π마다 반복돼서 생기는 모호성 때문에 두께 측정 범위가 제한되는 경우가 많은데, 이 논문은 그 모호성 자체를 정면으로 겨냥해 50~2000nm라는 넓은 범위에서 1nm 이하 오차를 달성했습니다. 연속적인 각도 스캐닝이나 visibility 카운팅 없이도 되는 실용적인 접근이라 랩 계측 파이프라인에 바로 참고할 수 있습니다.</p>
+  <p><strong>핵심:</strong> 반사형 위상 계단에서 나오는 Fresnel 회절 프로파일이 두께·파장·입사각에 따라 주기적으로 반복되는 문제를, 세 개의 서로 다른 입사각(단일 파장) 또는 세 개의 서로 다른 파장(고정 입사각)에서 얻은 후보 두께 집합을 겹쳐서 교집합으로 좁히는 방식으로 해소합니다. Angular Spectrum 방법으로 전체 회절 강도 프로파일을 피팅해 두께를 결정하며, 두 방식(다각도/다파장) 모두 0.5~1nm 수준의 일치도를 보였습니다.</p>
+  <p><strong>주의:</strong> 실험이 반사형 위상 계단이라는 특정 기하 조건에 한정돼 있어, 랩이 다루는 투과형 또는 곡면 위상 샘플에도 그대로 적용되는지는 본문 확인이 필요합니다. 다중 각도/파장 측정에 필요한 추가 촬영 시간이 abstract에 나오지 않아 실시간 적용 가능성도 별도 검증이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Automated End-to-End AI Solution for Photon Emission Microscopy in Semiconductor Failure Analysis — EDFA Technical Articles</h3>
+  <div class=tag>[실사용전환] [인프라]</div>
+  <p><strong>왜 A급인가:</strong> 계산 이미징 기법을 실제 산업 현장에 배포했을 때 어떤 정량적 이득이 나오는지를 드물게 구체적인 수치로 보여주는 논문입니다. 반도체 소자가 점점 미세화되면서 사람이 눈으로 결함 위치를 판독하던 기존 방식이 한계에 부딪히는 상황에서, 이 논문은 딥러닝 자동화가 실제로 분석 시간을 80% 이상 줄인다는 것을 내부 평가로 확인했습니다.</p>
+  <p><strong>핵심:</strong> 수만 장의 raw/overlay PEM 이미지를 hybrid auto-seeding/전문가 큐레이션 방식으로 라벨링해 학습시킨 SSD/VGG16 모델이 여러 배율에서 hotspot(결함 의심 지점)을 검출하고, registration 기반 비교 파이프라인이 기준 이미지와 대상 이미지 사이의 hotspot을 same/extra/missing으로 분류하며, 좌표 변환 시스템이 Avalon 레이아웃 데이터베이스와 SSH로 연동해 자동으로 해당 회로 인스턴스를 불러옵니다. 이 모든 기능이 하나의 GUI로 통합돼, 분석 시간이 약 30분에서 몇 분으로 줄었습니다.</p>
+  <p><strong>주의:</strong> "80% 이상 단축"이라는 수치가 내부 평가(internal evaluation) 기준이라 외부 벤치마크나 다른 반도체 공정에서도 재현되는지는 확인이 필요합니다. 학습에 쓴 라벨링 전략(auto-seeding+전문가 큐레이션)의 초기 라벨링 비용이 abstract에 나오지 않아, 랩이 유사 파이프라인을 구축할 때 필요한 초기 투자 규모는 별도로 가늠해야 합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] arXiv 5개 카테고리가 모두 0건이라 오늘 신호는 전량 저널 데이터입니다. 평소 대비 정보량이 크게 줄었고, 스캔 427건 중 실제 계산 이미징 신호로 판단한 것은 13편(약 3%)에 불과합니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology 20건은 전부 "virtual"(가상현실 관광·가상수자원 무역·가상 실습실 등)과 "staining"(세균 진단용 천연 염색제) 키워드가 우연히 겹친 오탐이며, 실제 디지털 병리/가상 염색 논문은 0건입니다.</p>
+  <p>[Dataset risk] Tomography/3D Imaging 24건 중 22건은 임상 사례 보고(뇌수막염 CT, PET 종양 영상, DXA 골밀도, 치과 CBCT 등)와 지질공학 지진파 토모그래피로, 계산 이미징 방법론과 직접 관련된 논문은 2건뿐입니다. Meta-Optics/Diffractive 14건 중 13건도 안테나·열복사·태양광 등 비이미징 응용입니다.</p>
+  <p>[Claim risk] 클러스터 대표 논문 13편 중 7편이 Crossref 초록 미공개 상태로, 제목과 저널명만으로 클러스터 배치를 판단했습니다. 본문 확인 전 배치가 부정확할 수 있습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Baseline risk] Unambiguous thin-film thickness measurement의 다각도/다파장 두 방식이 반사형 위상 계단이라는 특정 기하에서만 검증돼, 투과형·곡면 샘플에서도 같은 정확도가 나오는지는 본문·후속 검증이 필요합니다.</p>
+  <p>[Claim risk] Automated End-to-End AI Solution for Photon Emission Microscopy의 "80% 이상 단축"은 내부 평가 수치로, 외부 반도체 공정이나 다른 팀 데이터에서도 재현되는지는 확인되지 않았습니다.</p>
+  <p>[Metric risk] You KAN do it in a Single Shot, WaveDL, Multi-Dimensional Metasurface Holography 등 초록 미공개 논문들은 abstract 기준 정량 비교가 불가능해 저널명·제목만으로 방향성을 추정했습니다.</p>
+  <p>[Dataset risk] Quantitative In-Cell Localization Microscopy가 제시하는 claims ladder는 아직 CTR1/smND 단일 예시로만 검증돼, 다른 형광 표지·다른 세포 시스템에서도 같은 4단계 구분이 유효한지는 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li>Tomography/3D Imaging 임상·지구물리 사례 약 22편 [주로 JNL] — 소아 결핵성 뇌수막염 CT, PET 종양 영상, DXA 골밀도, 치과 CBCT, 지진파 토모그래피 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
+    <li>Virtual Staining/Pathology 키워드 오탐 20편 — 가상현실 문화관광, 가상수자원 무역, 가상 실습실 교육, 세균 진단용 천연 염색제 등 "virtual"·"staining" 단어만 겹친 무관 논문입니다.</li>
+    <li>Meta-Optics/Diffractive RF·에너지 응용 13편 — 안테나(AiP, RCS 저감), 열복사, 태양광 발전, 밀리미터파 빔포밍용 Huygens 메타렌즈 등으로 광학 이미징과 거리가 있습니다.</li>
+    <li>Deep Learning Methods 15편 중 이미징과 결이 다른 12편 — 뇌종양 세그멘테이션, 하이퍼스펙트럴 분류, 다발성 골수염 감별진단 등 의료영상 인접 분야이거나, USV 경로계획·리간드 스크리닝처럼 완전히 무관한 응용입니다.</li>
+    <li>Fourier Ptychography/Microscopy 2편, Lensless/Coded Imaging 1편 [JNL] — SAR 레이더·자기입자영상(MPI)으로 광학 계산 이미징과 무관한 키워드 오탐입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy (2편)</h3>
+<p><small>오늘 배정된 2편(One-Bit SAR Sparse Imaging, SAR Jamming via Metasurface) 모두 합성개구레이더(SAR) 논문으로 광학 Fourier ptychography와 무관해 개별 bullet을 생략합니다. 랩 ROI 핵심 공백입니다.</small></p>
+
+<h3>Lensless/Coded Imaging (1편)</h3>
+<p><small>오늘 배정된 1편(Narrowband isotropic magnetic particle imaging)은 자기입자영상(MPI) 논문으로 lensless/coded aperture와 무관해 개별 bullet을 생략합니다. 랩 ROI 핵심 공백입니다.</small></p>
+
+<h3>Phase Imaging/Holography (6편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2040-8986/aea343" target=_blank>Unambiguous thin-film thickness measurement using phase disambiguation in Fresnel diffraction from a phase step</a></strong> <span class=pill>JNL</span><br>
+  문제: Fresnel 회절 기반 두께 측정이 위상의 주기성 때문에 몇 번째 주기인지 모호함 / 방법: 다각도 또는 다파장 후보 두께값을 겹쳐 교집합으로 모호성 해소 / 의미: 오늘 클러스터1·must-read 대표, 넓은 두께 범위에서 nm급 정확도 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.algal.2026.104950" target=_blank>AI-enhanced digital holographic microscopy for real-time monitoring and early contamination detection in industrial microalgae raceway ponds</a></strong> <span class=pill>JNL</span><br>
+  문제: 산업 미세조류 배양지의 오염을 수작업 현미경 관찰로만 감지 / 방법: AI 강화 디지털 홀로그래픽 현미경 실시간 모니터링 / 의미: 홀로그래픽 위상 복원의 산업 응용 확장 / 주의: 초록 미공개, 본문 확인 필요 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ome.610146" target=_blank>Multi-Dimensional Metasurface Holography</a></strong> <span class=pill>JNL</span><br>
+  문제: 단일 메타표면 소자로 여러 차원(파장·편광·시야각)의 홀로그램 정보를 동시에 담기 어려움 / 방법: 다차원 인코딩 메타표면 홀로그래피 / 의미: 메타표면 홀로그래피 설계 원칙 확장 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<p><small>나머지 3편(텐서 홀로그래픽 임피던스 메타표면 RF 안테나, 간섭 광섬유 센서 편광 페이딩, 파미르 고원 표면파 토모그래피)은 'holographic'·'tomography' 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Meta-Optics/Diffractive (14편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.609592" target=_blank>Continuous Metasurface Integrated GaN-based Micro-LEDs for Naked-eye 3D Display</a></strong> <span class=pill>JNL</span><br>
+  문제: 안경 없는 3D 디스플레이가 시야각별 상 분리와 광 효율을 동시에 만족하기 어려움 / 방법: GaN 마이크로 LED에 연속 메타표면을 직접 통합 / 의미: 오늘 클러스터4 대표, 메타옵틱스의 디스플레이 응용 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<p><small>나머지 13편은 안테나·열복사·태양광 등 비이미징 응용(키워드 오탐 포함)이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Light-Field/Novel Sensors (3편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tcsvt.2026.3730990" target=_blank>State-Aware Dependency Reasoning for Light Field Angular Super-Resolution</a></strong> <span class=pill>JNL</span><br>
+  문제: 적은 시점만 촬영한 광 필드에서 촘촘한 각도 정보를 복원하기 어려움 / 방법: 상태 인식 의존성 추론 기반 각도 초해상도 신경망 / 의미: 오늘 클러스터4 대표, 광 필드 알고리즘 쪽 실제 신호 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<p><small>나머지 2편(벼 육묘장 광 환경 디지털 트윈, SiC/Ga2O3 광검출-광시냅스 소자)은 계산 이미징과 거리가 있는 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Tomography/3D Imaging (24편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2631-7990/aea392" target=_blank>Geometry Adaptive Photothermal Coherence Tomography and Its Application in Additively Manufactured Metal Structures</a></strong> <span class=pill>JNL</span><br>
+  문제: 기존 적외선 열화상은 2D 투영만 제공해 3D 프린팅 금속 부품의 내부 결함 깊이를 정량화하기 어려움 / 방법: line-structured light 스캐닝+지연 샘플링 기반 광열 코히런스 단층촬영(GA-PCT) / 의미: 오늘 클러스터5 대표, 산업 비파괴검사에 coherence tomography 원리 적용 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/boe.613595" target=_blank>Deep-learning-aided sarcoma biopsy guidance using forward-view endoscopic optical coherence tomography</a></strong> <span class=pill>JNL</span><br>
+  문제: 육종 생검 시 정확한 조직 위치 파악이 어려움 / 방법: 전방시야 내시경 OCT + 딥러닝 실시간 해석 / 의미: 오늘 클러스터5 대표, 의료 시술 안내에 coherence tomography 원리 적용 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<p><small>나머지 22편은 임상 사례 보고·지구물리 탐사로 계산 이미징 방법론과 거리가 있는 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology (20편)</h3>
+<p><small>classify.py 기준으로 오늘 이 버킷에 배정된 20편 전량이 "virtual"(가상현실 관광·가상수자원 무역·가상 실습실 등)과 "staining"(세균 진단용 천연 염색제) 키워드 오탐입니다. 실제 디지털 병리·가상 염색 논문은 0편으로, 랩 ROI 핵심 공백입니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (5편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s10851-026-01351-4" target=_blank>You KAN do it in a Single Shot: Plug-and-Play Methods with Single-Instance Priors</a></strong> <span class=pill>JNL</span><br>
+  문제: Plug-and-Play 역문제 해법이 대체로 외부 학습 데이터로 사전을 미리 학습시켜야 함 / 방법: KAN 기반 single-instance prior로 단일 촬영 데이터만으로 복원 / 의미: 오늘 클러스터2 대표, 학습 데이터 의존도 감소 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/cbmi.6c00156" target=_blank>Quantitative In-Cell Localization Microscopy: From Single-Molecule Localizations to Mechanistic Inference</a></strong> <span class=pill>JNL</span><br>
+  문제: 복원된 위치 데이터로부터 생물학적 결론을 내릴 때 과잉해석 위험 / 방법: 측정-추론-메커니즘을 구분하는 4단계 claims ladder 제시 / 의미: 오늘 클러스터2·must-read 대표, 복원 결과 신뢰성 평가 틀 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.cpc.2026.110400" target=_blank>WaveDL: A Scalable Deep Learning Framework for Wave-Based Inverse Problems</a></strong> <span class=pill>JNL</span><br>
+  문제: 파동 방정식 기반 역문제 해법이 문제 유형마다 따로 개발됨 / 방법: 확장 가능한 범용 딥러닝 프레임워크 / 의미: 오늘 클러스터2 대표, 역문제 해법의 재사용성 확대 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<p><small>나머지 2편(AI 생성 상호문화역량 테스트 검증, Simscape 가상 실습실)은 계산 이미징과 무관한 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods (15편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.31399/asm.edfa.2026-3.p018" target=_blank>Automated End-to-End AI Solution for Photon Emission Microscopy in Semiconductor Failure Analysis</a></strong> <span class=pill>JNL</span><br>
+  문제: 반도체 PEM 결함 판독이 수작업 비교에 의존해 느리고 비일관적 / 방법: SSD/VGG16 hotspot 검출+registration 비교 자동화 파이프라인 / 의미: 오늘 클러스터3·must-read 대표, 분석 시간 80% 이상 단축 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/jphot.2026.3731430" target=_blank>Fourier Single-pixel Imaging Based on Wavelet Decomposition and Diffusion Model</a></strong> <span class=pill>JNL</span><br>
+  문제: 단일픽셀 이미징이 좋은 복원 품질을 위해 많은 측정 횟수를 필요로 함 / 방법: 웨이블릿 분해로 측정 압축 후 디퓨전 모델로 디테일 복원 / 의미: 오늘 클러스터3 대표, 확립된 기법에 최신 생성모델 이식 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tci.2026.3731170" target=_blank>Instance-Specific Denoising: A Hybrid Acquisition Framework for Deep Learning in Low-Dose Computed Tomography</a></strong> <span class=pill>JNL</span><br>
+  문제: 범용 디노이징 모델이 촬영 인스턴스별 특성을 반영하지 못함 / 방법: 촬영-디노이징을 인스턴스별로 결합하는 하이브리드 프레임워크 / 의미: 오늘 클러스터3 대표, IEEE TCI 게재로 관련성 명확 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<p><small>나머지 12편은 의료영상 인접 분야(뇌종양 세그멘테이션, 하이퍼스펙트럴 분류 등)이거나 완전히 무관한 응용(경로계획, 리간드 스크리닝 등)이라 개별 bullet을 생략합니다.</small></p>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://doi.org/10.1088/2040-8986/aea343" target=_blank>Unambiguous thin-film thickness measurement — Journal of Optics</a></li>
+  <li><a href="https://doi.org/10.31399/asm.edfa.2026-3.p018" target=_blank>Automated End-to-End AI Solution for Photon Emission Microscopy — EDFA Technical Articles</a></li>
+  <li><a href="2026-09-07-weekly.html">2026-36 Weekly Retrospective</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-09-08 journal-only 잠정본 · arXiv 0건(5개 카테고리 모두 9/7 listing 유지) + 저널 427편, 전체 스캔 427건 · ROI 배정 90건 (21.1%, 실제 계산 이미징 신호 13편) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>
