@@ -1,4 +1,21 @@
 {
   "date": "2026-09-09",
-  "results": []
+  "results": [
+    {
+      "benchmark": "CVT-GS 3DGS post-hoc 압축 (다양한 novel-view synthesis 데이터셋)",
+      "metric": "Gaussian 개수 감소율 / 렌더링 속도 / PSNR",
+      "value": 100,
+      "value_str": "Gaussian 100배 감소, 렌더링 12배 가속, PSNR +1.3dB",
+      "paper": "https://arxiv.org/abs/2609.08730",
+      "paper_title": "CVT-GS: Learning to Simplify 3D Gaussian Splatting with Centroidal Voronoi Tessellation"
+    },
+    {
+      "benchmark": "GP-Refiner + TaylorSeer 결합 DiT 가속 (video/image diffusion feature caching)",
+      "metric": "연산량 감소 / PSNR / LPIPS",
+      "value": 19.3,
+      "value_str": "연산량 -19.3%, PSNR +0.9dB, LPIPS 0.46→0.29",
+      "paper": "https://arxiv.org/abs/2609.05981",
+      "paper_title": "Accelerating Diffusion Transformers with Gaussian Process Rectified Feature Cache"
+    }
+  ]
 }

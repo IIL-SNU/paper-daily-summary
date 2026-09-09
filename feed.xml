@@ -6,14 +6,14 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 09 Sep 2026 11:15:35 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 15:25:48 +0900</lastBuildDate>
     <ttl>720</ttl>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-09-09 (수요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-09-09.html</link>
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-09-09.html</guid>
       <pubDate>Wed, 09 Sep 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘 arXiv 5개 카테고리는 모두 사흘째 "Monday, 7 September 2026" listing에 머물러 있어(9/8·9/9 신규 제출 0건), Crossref 9개 키워드 질의(--days 1, 어제 배치와 겹치지 않는 2026-09-08~09 등록분)와 OpenAlex enrich/works로 저널 422건을 수집·중복제거해 classify.py로 스캔했습니다. 그 결과 98건(23.2%)이 9개 ROI 버킷에 배정됐습니다. 이 중 실제로 계산 이미징 방법론과 관련 있다고 판단한 신호는 약 20편 남짓이며, 나머지는 여전히 'virtual'(메타버스 프로젝트 관리, 가상 관광), 'tomography'(임상 사례보고, 지구물리 탐사) 같은 흔한 단어의 키워…]]></description>
+      <description><![CDATA[오늘 arXiv new+cross 총 1405건(cs.LG 447·cs.CV 359·cs.AI 517·eess.IV 15·eess.SP 67) 중 ROI 버킷에 걸린 건 저널 포함 전체 스캔 1545건 기준 467건(30.2%)입니다. 저널은 Crossref/OpenAlex 425편을 수집했습니다. 어제(23.2%, journal-only)보다 선택 비율이 소폭 높아졌는데, arXiv가 복귀하면서 Tomography/3D Imaging(60편)과 Reconstruction/Inverse Problems(56편) 버킷에 3DGS·하이퍼스펙트럴 관련 arXiv 논문이 대거 추가된 영향입니다.]]></description>
     </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-09-08 (화요일)</title>

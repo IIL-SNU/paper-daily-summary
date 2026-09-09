@@ -1,36 +1,37 @@
 {
   "date": "2026-09-09",
   "source_listing_date": "2026-09-09",
-  "source_mode": "journal-only",
-  "note": "2026-09-09(수) daily 실행. Date Source Contract 점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 사흘째 \"Monday, 7 September 2026\" listing에 머물러 있고(/new, /pastweek 모두 9/8·9/9 섹션 없음) arXiv 신규 제출이 0건이라, prompts/instruction.md 2.1의 저널 독립 규칙에 따라 arXiv 섹션 없이 Crossref/OpenAlex 저널만으로 만든 잠정본(source_mode=journal-only)을 발행했다. 어제(9/8)도 동일 사유로 journal-only였으므로 저널 수집 --days 1(2026-09-08~09-09 등록분)로 어제와 겹치지 않는 새 등록분만 수집했다. Crossref 9개 키워드 질의(--days 1) + OpenAlex enrich/works로 422건을 수집·중복제거해 classify.py로 스캔했고, 98건(23.2%)이 9개 ROI 버킷에 배정됐다. Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 오늘 배정 0건으로 랩 ROI 핵심 공백이 이어진다. Virtual Staining/Pathology 12건은 전량 'virtual'(메타버스 프로젝트 관리, 가상 관광, 가상 실습실 등)·'staining' 키워드 오탐이며, Tomography/3D Imaging 38건 중 다수도 임상 사례보고·지구물리 탐사로 계산 이미징 방법론과 무관하다. 실제 계산 이미징 신호는 metalens 기반 QPI/초해상도(3편), 홀로그래피·파면 계측 알고리즘 확장(3편), 확립된 계측 기법에 신경망 이식(3편), 물리 정보 기반 역문제 해법의 교차 도메인 적용(3편), CT/OCT 임상 진단 딥러닝 반복 사례(5편)로 5개 클러스터를 구성했다. /pastweek에 9/9(또는 9/8) 섹션이 뜨면 다음 실행(2시간 간격 폴링)에서 arXiv 포함 완전판으로 자동 업그레이드된다.",
+  "source_mode": "new",
+  "note": "2026-09-09(수) daily 실행 — journal-only 잠정본에서 arXiv+저널 완전판으로 업그레이드. 오전 실행 시점에는 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 arXiv listing이 사흘째 \"Monday, 7 September 2026\"에 머물러 있어 저널만으로 잠정본을 발행했다. 이후 Date Source Contract를 재점검한 결과 5개 카테고리 모두 /new listing이 \"Wednesday, 9 September 2026\"으로 갱신된 것을 확인해 정상 daily(source_mode=new)로 이 파일과 posts/benchmarks/insights를 덮어썼다. arXiv new+cross 1405건(cs.LG 447·cs.CV 359·cs.AI 517·eess.IV 15·eess.SP 67)과 Crossref/OpenAlex 저널 425편을 합쳐 전체 1545건을 classify.py로 스캔했고 467건(30.2%)이 9개 ROI 버킷에 배정됐다. 오늘 가장 뚜렷한 arXiv 신호는 3D Gaussian Splatting(3DGS)이 서로 다른 구조적 실패 지점(밀집 시점 저하, 연무/스모크 매질, sparse-view 기하 전파, Gaussian 개수 폭증, 의료 volumetric 초해상도, SLAM, 이벤트 기반 동적 장면, 효율 벤치마킹)을 각각 공략하는 8편이 같은 날 모인 것과, Diffusion Transformer(DiT)의 학습·추론 비용을 구조 재설계 없이 줄이는 5편(feature caching, low-rank attention, distillation, DiT 재활용)이다. 저널 쪽에서는 어제(9/8)에 이어 메타렌즈가 통신 응용에서 벗어나 이미징 하드웨어(QPI 간섭계, 초점 성능, 적분영상 초해상도)로 계속 쓰이는 흐름이 이어졌다. 계산광학 코어(Fourier Ptychography 1편, Lensless 1편)는 오늘도 매우 얇다.",
   "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 0,
-      "cs.CV": 0,
-      "cs.AI": 0,
-      "eess.IV": 0,
-      "eess.SP": 0
+      "cs.LG": 447,
+      "cs.CV": 359,
+      "cs.AI": 517,
+      "eess.IV": 15,
+      "eess.SP": 67
     },
     "scope": "new+cross; replacements excluded",
-    "journal_count": 422
+    "journal_count": 425
   },
   "totals": {
-    "total_scanned": 422,
-    "selected": 98
+    "total_scanned": 1545,
+    "selected": 467
   },
   "classified": {
-    "total_scanned": 422,
-    "selected": 98,
+    "total_scanned": 1545,
+    "selected": 467,
     "by_bucket": {
-      "Fourier Ptychography/Microscopy": 0,
-      "Lensless/Coded Imaging": 0,
-      "Phase Imaging/Holography": 8,
-      "Meta-Optics/Diffractive": 12,
-      "Light-Field/Novel Sensors": 2,
-      "Tomography/3D Imaging": 38,
-      "Virtual Staining/Pathology": 12,
-      "Reconstruction/Inverse Problems": 3,
-      "Deep Learning Methods": 23
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 9,
+      "Meta-Optics/Diffractive": 14,
+      "Light-Field/Novel Sensors": 5,
+      "Tomography/3D Imaging": 60,
+      "Virtual Staining/Pathology": 50,
+      "Reconstruction/Inverse Problems": 56,
+      "Deep Learning Methods": 271
     }
-  }
+  },
+  "daily_thesis": "오늘 arXiv가 사흘 만에 복귀하면서 1405건(new+cross)이 한꺼번에 들어왔고, 그 안에서 가장 뚜렷한 신호는 3D Gaussian Splatting이 밀집 시점 저하·연무 매질·sparse-view 기하·Gaussian 개수 폭증·SLAM·이벤트 기반 동적 장면이라는 서로 다른 구조적 문제를 각각 공략하는 8편이 모인 것과, Diffusion Transformer의 추론·학습 비용을 구조를 바꾸지 않고 줄이는 5편이 모인 것이다. 저널 쪽은 어제에 이어 메타렌즈가 통신 응용에서 이미징 하드웨어로 돌아오는 흐름이 계속됐다."
 }

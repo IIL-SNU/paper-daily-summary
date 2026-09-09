@@ -1,162 +1,148 @@
 {
   "date": "2026-09-09",
-  "source_mode": "journal-only",
+  "source_mode": "new",
   "clusters": [
     {
-      "cluster": "메타렌즈가 통신·RF 대신 위상 복원·초해상도 같은 이미징 하드웨어 자리로 계속 쓰임",
+      "cluster": "3D Gaussian Splatting가 서로 다른 구조적 실패 지점을 각각 정면으로 공략",
       "papers": [
-        {
-          "title": "Design and simulation study of a monolithic metalens-based compact interferometer for quantitative phase imaging",
-          "arxiv_id": "https://doi.org/10.1088/2040-8986/aea42e",
-          "journal_or_source": "Journal of Optics"
-        },
-        {
-          "title": "Binary Huygens Metalens Based on Congener Dipoles",
-          "arxiv_id": "https://doi.org/10.1364/ol.610964",
-          "journal_or_source": "Optics Letters"
-        },
-        {
-          "title": "Adaptive Super-Resolution in Integral Imaging with a Heterogeneous Metalens Array",
-          "arxiv_id": "https://doi.org/10.1364/ao.605954",
-          "journal_or_source": "Applied Optics"
-        }
+        {"title": "AVSplat: Dense-View Feed-Forward 3D Gaussian Splatting with Assist-View Preconditioning", "arxiv_id": "https://arxiv.org/abs/2609.05925", "journal_or_source": "arXiv cs.CV"},
+        {"title": "FujinSplat: Seeing Through Smoke with RAW-Domain Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2609.06017", "journal_or_source": "arXiv cs.CV"},
+        {"title": "TV-SGS: Gaussian Splatting with Geometric Information Propagation via Tensor Voting under sparse views", "arxiv_id": "https://arxiv.org/abs/2609.07734", "journal_or_source": "arXiv cs.CV"},
+        {"title": "CVT-GS: Learning to Simplify 3D Gaussian Splatting with Centroidal Voronoi Tessellation", "arxiv_id": "https://arxiv.org/abs/2609.08730", "journal_or_source": "arXiv cs.CV"},
+        {"title": "MedGSSR: Generalizable Medical Image Super-Resolution 3D Reconstruction via Hierarchical Feed-forward Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2609.06874", "journal_or_source": "arXiv eess.IV"},
+        {"title": "LightSplat: Real-Time High-Fidelity 3D Gaussian SLAM with Loop Closure", "arxiv_id": "https://arxiv.org/abs/2609.07274", "journal_or_source": "arXiv cs.CV"},
+        {"title": "EdMCGS: Event-Driven Markov Chain Gaussian Splatting for Extreme-Low-Frame-Rate Dynamic Scene Reconstruction", "arxiv_id": "https://arxiv.org/abs/2609.08332", "journal_or_source": "arXiv cs.CV"},
+        {"title": "From Splats to Silicon: Rethinking Computational Efficiency of 3DGS", "arxiv_id": "https://arxiv.org/abs/2609.06157", "journal_or_source": "arXiv cs.AI"}
       ],
-      "why": "메타표면·메타렌즈 논문은 최근 저널에서 대부분 안테나, 테라헤르츠 센서, 태양광 흡수체처럼 통신·에너지 응용으로 쏠려 있었는데, 오늘 세 편은 다시 이미징 본연의 문제로 돌아왔습니다. 정량 위상 이미징(QPI, 두께나 굴절률 같은 위상 정보를 정량적으로 복원하는 이미징 기법) 논문은 기존 디지털 홀로그래피 장비가 여러 개의 렌즈와 빔스플리터로 이뤄져 부피가 크고 진동에 민감했던 문제를, 메타렌즈 하나로 만든 단일 소자 간섭계로 대체해 정렬이 필요 없는 컴팩트한 구조를 제안합니다. Binary Huygens Metalens 논문은 메타렌즈를 구성하는 기본 단위(congener dipole, 같은 계열의 짝지어진 공진 구조)를 새로 설계해 초점 성능을 높이는 방법론 논문이고, Heterogeneous Metalens Array 논문은 서로 다른 특성을 가진 메타렌즈를 배열로 묶어 여러 시점에서 촬영한 적분 영상(integral imaging)의 해상도를 적응적으로 높입니다. 세 논문 모두 메타렌즈를 「얇은 렌즈 대체재」가 아니라 「기존 광학계로는 어려웠던 컴팩트화·해상도 향상을 이루는 도구」로 쓰고 있다는 공통점이 있습니다.",
-      "confidence": "Medium",
-      "confidence_note": "서로 다른 저널 3편이 독립적으로 메타렌즈의 이미징 응용을 보이지만, 대표 논문 중 QPI 간섭계 1편만 Crossref 초록이 있고 나머지 2편은 제목 기반 판단입니다.",
-      "lab_action": "메타렌즈 기반 QPI 간섭계의 단일 소자 정렬-불필요 구조를 랩의 정량 위상 이미징 프로토타입 설계에 참고해, 기존 다중 렌즈 구성 대비 진동·정렬 오차에 대한 강건성을 시뮬레이션으로 비교한다."
-    },
-    {
-      "cluster": "홀로그래피·파면 계측 알고리즘이 복원 정확도를 넘어 3D 프린팅·센싱 응용으로 갈라짐",
-      "papers": [
-        {
-          "title": "Monte Carlo Maximum Likelihood Reconstruction for Digital Holography with Speckle",
-          "arxiv_id": "https://doi.org/10.1109/tci.2026.3732104",
-          "journal_or_source": "IEEE Transactions on Computational Imaging"
-        },
-        {
-          "title": "Phase-aligned wavefront record plane algorithm for single-shot continuous 3D holographic two-photon lithography",
-          "arxiv_id": "https://doi.org/10.1364/ol.613912",
-          "journal_or_source": "Optics Letters"
-        },
-        {
-          "title": "Experimental Validation on Computational Sub-aperture Fusion Wavefront Sensing Technology",
-          "arxiv_id": "https://doi.org/10.1364/ol.612789",
-          "journal_or_source": "Optics Letters"
-        }
-      ],
-      "why": "디지털 홀로그래피는 오랫동안 '스페클(레이저 빛이 거친 표면에서 산란돼 생기는 반점 잡음) 아래에서 얼마나 정확하게 복원하느냐'를 겨루는 알고리즘 문제였는데, 오늘 세 편은 그 알고리즘이 다른 목적으로 갈라지는 모습을 보여줍니다. Monte Carlo Maximum Likelihood 논문은 스페클 잡음이 있는 상황에서 복원 정확도 자체를 통계적으로 개선하는 정공법 알고리즘입니다. 반면 2-광자 리소그래피(빛으로 미세 3D 구조물을 한 층씩 찍어내는 3D 프린팅 기법) 논문은 같은 홀로그래픽 파면 기록 원리를 이용해, 단계별로 끊어 찍던 기존 방식 대신 위상을 맞춰 연속적으로 3D 구조물을 프린팅하는 데 씁니다. 파면 센싱 논문은 또 다른 방향에서, 하나의 큰 조리개 대신 여러 개의 작은 조리개(sub-aperture)로 나눠 찍은 뒤 계산으로 합쳐 전체 파면 정보를 복원하는 실험 검증입니다. 세 논문을 묶으면, 홀로그래피/파면 계측의 핵심 수학(위상 정렬, 파면 복원)은 그대로인데 그 수학이 적용되는 현장이 이미지 품질 개선에서 3D 프린팅 속도, 광학계 파면 진단으로 넓어지고 있다는 인상을 줍니다.",
-      "confidence": "Low",
-      "confidence_note": "세 논문 모두 Crossref 초록이 제공되지 않아 제목만으로 방법론을 추정했고, 서로 다른 저자군·학회 소속인지도 확인되지 않았습니다.",
-      "lab_action": "Monte Carlo Maximum Likelihood 알고리즘을 랩의 스페클 노이즈가 있는 디지털 홀로그래피 복원 파이프라인에 시험 적용해 기존 결정론적 복원 대비 정확도를 비교하고, sub-aperture fusion 파면 센싱 개념을 랩 광학계 정렬 진단 도구에 참고해 적용 가능성을 검토한다."
-    },
-    {
-      "cluster": "확립된 정밀 계측 기법에 최신 신경망 보정을 이식하는 흐름",
-      "papers": [
-        {
-          "title": "DeepMoCo: graph neural network-based adaptive correction for motion artifacts in fluorescence microscopy",
-          "arxiv_id": "https://doi.org/10.1186/s43074-026-00279-7",
-          "journal_or_source": "PhotoniX"
-        },
-        {
-          "title": "A computational framework for post-acquisition stability assessment in scanning tunneling microscopy",
-          "arxiv_id": "https://doi.org/10.1088/1361-6501/aea43b",
-          "journal_or_source": "Measurement Science and Technology"
-        },
-        {
-          "title": "High-fidelity φ-OFDR based on a deep phase recovery convolutional neural network",
-          "arxiv_id": "https://doi.org/10.1364/oe.612412",
-          "journal_or_source": "Optics Express"
-        }
-      ],
-      "why": "형광 현미경, 주사터널링현미경(STM), 광섬유 위상 반사계(φ-OFDR)는 모두 수십 년 된 확립된 정밀 계측 기법인데, 오늘 세 편은 각 기법이 갖고 있던 고질적인 잡음·불안정성 문제를 신경망으로 다시 손질합니다. DeepMoCo는 생체 내 신경 회로를 촬영하는 형광 현미경에서 호흡이나 조직 움직임 때문에 생기는 강체·비강체 움직임 잡음을, 그래프 신경망으로 적응적으로 보정합니다. STM 안정성 평가 논문은 원자 단위 정밀도가 필요한 측정에서 하드웨어 흔들림이나 분석자마다 다른 해석 때문에 생기는 신뢰도 문제를, 모듈형 검증 프레임워크로 정량화합니다. φ-OFDR 논문은 광섬유를 따라 위상 변화를 읽어 진동이나 변형을 감지하는 기법에서, 위상 복원 정확도를 딥러닝 CNN으로 높입니다. 세 논문 모두 「새 계측 원리를 만들자」가 아니라 「이미 검증된 계측 원리가 갖고 있던 잡음·신뢰도 문제를 신경망으로 후처리해서 없애자」는 같은 태도를 보입니다.",
-      "confidence": "Medium",
-      "confidence_note": "DeepMoCo와 STM 안정성 평가 논문 2편은 Crossref 초록이 있어 방법론이 명확하고, φ-OFDR 1편만 제목 기반 판단입니다.",
-      "lab_action": "DeepMoCo의 그래프 신경망 기반 강체·비강체 움직임 보정 구조를 랩의 생체 형광 현미경 실험(호흡·조직 움직임이 있는 in vivo 촬영)에 적용해 기존 rigid registration 대비 보정 정확도를 비교하고, STM 안정성 평가 프레임워크의 모듈형 검증 구조를 랩의 정밀 계측 장비 QC 절차에 참고한다."
-    },
-    {
-      "cluster": "물리 정보 기반(physics-informed) 역문제 해법이 자기장·구조물 탐상·X선 현미경까지 서로 다른 계측 문제에 반복 적용됨",
-      "papers": [
-        {
-          "title": "Fourier-space approach to physics-informed magnetization reconstruction from nitrogen-vacancy measurements",
-          "arxiv_id": "https://doi.org/10.1103/nc5g-3yw9",
-          "journal_or_source": "Physical Review Letters"
-        },
-        {
-          "title": "High-Fidelity Guided-wave Full Waveform Inversion Regularized by Physics-Informed Deep Generative Model",
-          "arxiv_id": "https://doi.org/10.1016/j.cacaie.2026.100218",
-          "journal_or_source": "Computer-Aided Civil and Infrastructure Engineering"
-        },
-        {
-          "title": "A Bayesian Approach to Rocking-Curve Analysis in Dark-Field X-ray Microscopy",
-          "arxiv_id": "https://doi.org/10.1088/1757-899x/1350/1/012020",
-          "journal_or_source": "IOP Conference Series: Materials Science and Engineering"
-        }
-      ],
-      "why": "역문제(측정값에서 원래 신호를 거꾸로 복원하는 문제)를 풀 때 '물리 법칙을 모델에 미리 알려주고(physics-informed) 그 안에서 답을 찾게 한다'는 접근이, 오늘은 완전히 다른 세 계측 분야에서 동시에 나타났습니다. 자기화 복원 논문은 다이아몬드 결함(질소-공극 중심)으로 측정한 자기장 신호로부터 물체 내부의 자기화 분포를 Fourier 공간에서 물리 법칙에 맞게 복원합니다. 유도파 전파형 역산 논문은 구조물 건전성 모니터링에서 초음파 유도파 신호로부터 손상 위치를 복원할 때, 물리 정보 기반 생성모델로 복원을 정규화(regularize, 물리적으로 말이 안 되는 답을 걸러내는 제약)합니다. 다크필드 X선 현미경 논문은 결정 결함을 매핑할 때 여러 회절 신호가 한 voxel 안에서 겹쳐 분리가 어려운 문제를, 베이지안 역문제로 정식화해 불확실성까지 함께 추정합니다. 세 논문이 다루는 물체(자기장, 구조물 손상, 결정 결함)와 측정 방식은 전혀 다르지만, '물리 법칙과 불확실성을 명시적으로 모델에 넣어야 신뢰할 수 있는 복원이 나온다'는 문제의식은 같습니다.",
-      "confidence": "Medium",
-      "confidence_note": "다크필드 X선 현미경 논문은 초록이 있어 방법론이 명확하고, 나머지 2편은 초록이 없지만 저널(Physical Review Letters, Computer-Aided Civil and Infrastructure Engineering)의 전문성이 높아 제목 기반 판단의 신뢰도가 상대적으로 높습니다.",
-      "lab_action": "다크필드 X선 현미경의 베이지안 rocking-curve 분해 프레임워크(불확실성 정량화 포함)를 랩의 역문제 복원 파이프라인 중 신뢰구간 표기가 없는 부분에 적용해, 복원 결과에 불확실성 추정을 추가하는 실험을 설계한다."
-    },
-    {
-      "cluster": "CT·OCT 기반 임상 진단 딥러닝 사례가 대량으로 반복되지만 새로운 방법론적 진전은 약함",
-      "papers": [
-        {
-          "title": "Smooth 3D Cardiac Geometry Reconstruction from 2D CT Slice Segmentations: Wall-Thickness Agreement with a Manual Reference",
-          "arxiv_id": "https://doi.org/10.1007/s10278-026-02223-4",
-          "journal_or_source": "Journal of Imaging Informatics in Medicine"
-        },
-        {
-          "title": "Leveraging CNN and Transfer Learning With EfficientNet for Enhanced Optical Coherence Tomography (OCT)",
-          "arxiv_id": "https://doi.org/10.1155/ijbi/1272954",
-          "journal_or_source": "International Journal of Biomedical Imaging"
-        },
-        {
-          "title": "Progressive Refinement Autoencoder for Low-Dose Computed Tomography Enhancement",
-          "arxiv_id": "https://doi.org/10.1002/ima.70438",
-          "journal_or_source": "International Journal of Imaging Systems and Technology"
-        },
-        {
-          "title": "Multimodal Transformer Integrating Retinal Fundus Images, Optical Coherence Tomography, and Clinical Variables for Predicting Progression from Intermediate to Neovascular Age-Related Macular Degeneration",
-          "arxiv_id": "https://doi.org/10.68159/t313828804",
-          "journal_or_source": "Journal of Artificial Intelligence for Healthcare Systems"
-        }
-      ],
-      "why": "오늘 Tomography/3D Imaging(38편)과 Deep Learning Methods(23편) 버킷에는 CT나 OCT 영상에 표준 딥러닝 구조(CNN, transformer, autoencoder)를 적용해 특정 질환을 진단·분류·복원하는 논문이 유난히 많이 반복됩니다. 3D 심장 형상 복원 논문은 2D CT 슬라이스를 쌓을 때 생기는 계단식 왜곡을 매끄럽게 보간해 벽 두께 측정 정확도를 높이고, OCT 논문은 EfficientNet과 SVM을 결합해 망막 질환을 다중 분류하며, 저선량 CT 논문은 오토인코더로 노이즈를 줄이고, 다중모달 트랜스포머 논문은 안저 영상·OCT·임상 변수를 합쳐 황반변성 진행을 예측합니다. 네 논문 모두 '표준 딥러닝 구조를 특정 임상 진단 task에 적용해 정확도를 높였다'는 같은 틀을 따르고 있어, 개별 논문의 기여는 뚜렷하지만 계산 이미징 방법론 관점에서 새로운 문제 설정이나 평가축을 제시하는 논문은 오늘 이 묶음 안에는 없었습니다.",
+      "why": "3D Gaussian Splatting(3DGS)은 카메라로 찍은 여러 장의 사진을 수많은 작은 타원형 입자(Gaussian)로 이뤄진 장면으로 바꿔, 실시간으로 새로운 시점의 영상을 만들어내는 표현 방식입니다. 이미 novel view synthesis의 표준으로 자리잡았지만, 오늘 arXiv가 사흘 만에 복귀하면서 나온 여덟 편은 3DGS가 실제로 쓰이려면 아직 남아 있는 구조적 문제들을 각자 다른 지점에서 정면으로 다룹니다. AVSplat은 촬영한 시점 수가 많아질수록 오히려 품질이 떨어지는 역설적인 현상(밀집 시점 저하)을, 관련성 높은 보조 시점만 먼저 훑어보게 하는 방식으로 막습니다. FujinSplat은 연기가 낀 장면을 촬영하면 카메라 신호처리와 빛의 산란이 뒤섞여 분리하기 어려운 문제를, 카메라가 아직 보정하지 않은 원본(RAW) 신호 단계에서 두 요인을 나눠 풉니다. TV-SGS는 각 Gaussian 입자들이 서로 간접적으로만 영향을 주고받아 기하 구조가 불안정한 문제를, 입자들이 직접 정보를 주고받게 하는 방식으로 보완하고, CVT-GS는 고품질 렌더링에 필요한 Gaussian 개수가 계속 불어나는 문제를 재학습 없이 사후에 100배까지 압축합니다. MedGSSR은 같은 3DGS 표현을 의료 볼륨 영상(CT/MRI)의 초해상도 복원에 적용하고, LightSplat은 실시간 SLAM(동시 위치추정 및 지도작성)에, EdMCGS는 이벤트 카메라를 더해 프레임이 매우 드문 영상에서도 동적 장면을 복원하는 데 적용합니다. From Splats to Silicon은 이 모든 개별 최적화 성과들이 실제로 어느 하드웨어·시나리오에서 얼마나 이득인지가 논문마다 다른 기준으로 보고돼 비교가 어렵다는 문제 자체를 짚습니다. 즉 오늘의 흐름은 3DGS를 새로 발명하는 단계가 아니라, 이미 표준이 된 이 표현이 실제 촬영 조건(연기, sparse-view, 저프레임률)과 실제 배포 조건(의료, SLAM, 저장 용량)에서 부딪히는 구체적인 약점을 하나씩 도려내는 단계로 넘어갔다는 뜻입니다.",
       "confidence": "High",
-      "confidence_note": "같은 패턴(표준 아키텍처+특정 임상 task)의 논문이 4편 이상 확인되고 그중 3편은 Crossref 초록으로 방법론이 명확하지만, '새로운 진전이 약하다'는 판단 자체는 abstract 수준 검토에 근거한 것이라 본문 확인 전 최종 결론은 아닙니다.",
-      "lab_action": "3D 심장 형상 복원의 슬라이스 간 보간 방식을 랩이 다루는 다른 stacked-2D-to-3D 파이프라인(예: 현미경 z-stack)의 계단식 아티팩트 완화에 참고 가능한지 검토하되, 나머지 논문들은 랩 파이프라인에 직접 적용하기보다 Skim-only로 분류해 우선순위를 낮춘다."
+      "confidence_note": "서로 다른 저자군 8편이 3DGS라는 같은 표현의 서로 다른 구조적 실패 지점(밀집 시점, 매질, sparse-view 기하, 압축, 의료 SR, SLAM, 이벤트 기반, 효율 측정)을 다루며, CVT-GS·GP-Refiner류는 정량 수치(100배 압축, 12배 가속, PSNR +1.3dB)까지 제시",
+      "lab_action": "CVT-GS의 optimization-free 사후 압축(Centroidal Voronoi Tessellation 기반 many-to-one merging)을 랩의 3DGS 재구성 결과물에 적용해 Gaussian 개수-PSNR 트레이드오프 곡선을 그리고, AVSplat의 Assist-View Preconditioning을 랩 sparse-to-dense multi-view 촬영 파이프라인에 이식해 시점 수 증가에 따른 품질 곡선이 양의 기울기로 바뀌는지 확인한다"
+    },
+    {
+      "cluster": "Diffusion Transformer의 추론·학습 비용을 구조 재설계 없이 줄이는 흐름",
+      "papers": [
+        {"title": "Accelerating Diffusion Transformers with Gaussian Process Rectified Feature Cache", "arxiv_id": "https://arxiv.org/abs/2609.05981", "journal_or_source": "arXiv cs.CV"},
+        {"title": "RoLA: Rotary-Positioned Low-Rank Linear Attention for Efficient Diffusion Transformers", "arxiv_id": "https://arxiv.org/abs/2609.06712", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Mask Forcing: Improving Autoregressive Video Diffusion Distillation via Dual-Noise Masking Rollout", "arxiv_id": "https://arxiv.org/abs/2609.09123", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Flow3D-OPD: Multi-Teacher On-Policy Distillation for 3D Geometry Generation with Flow-Matching Diffusion Transformer", "arxiv_id": "https://arxiv.org/abs/2609.07137", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Marigold V2: Revisiting Diffusion Transformers for Monocular Depth Estimation", "arxiv_id": "https://arxiv.org/abs/2609.08084", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "Diffusion Transformer(DiT)는 이미지·비디오 생성에서 품질은 좋지만, 노이즈를 여러 단계에 걸쳐 반복 제거해야 해서 계산 비용이 큽니다. 오늘 나온 다섯 편은 모두 DiT의 구조 자체를 새로 설계하기보다, 이미 학습된 DiT를 더 싸게 또는 더 안정적으로 쓰는 방법을 찾습니다. GP-Refiner는 매 단계 전체 계산을 다시 하는 대신 이전 결과를 캐싱해 재사용하는 기존 방법이 단계가 늘어날수록 오차가 누적되는 문제를, Gaussian Process 회귀로 그 오차를 실시간 보정하는 방식으로 풀어 계산량을 19.3% 줄이면서도 화질(PSNR +0.9dB, LPIPS 0.46→0.29)을 오히려 개선합니다. RoLA는 비디오 DiT의 self-attention이 시퀀스 길이의 제곱에 비례해 느려지는 문제를, 회전 위치 인코딩(RoPE)과 저랭크(low-rank) 압축을 구조적으로 호환되게 재설계해 줄입니다. Mask Forcing은 양방향으로 미리 학습된 비디오 diffusion 모델을 실시간 생성이 가능한 순차적(autoregressive) 모델로 증류할 때 화질이 과포화·과매끈해지는 문제를 잡고, Flow3D-OPD는 이미지에서 3D 형태를 생성하는 DiT를 강화학습으로 후속 학습시킬 때 보상을 정의하기 어려운 문제를 다중 교사 증류로 우회합니다. Marigold V2는 아예 이미지 생성용으로 학습된 DiT를 단일 단계 추론만으로 깊이 추정 모델로 재활용합니다. 다섯 논문 모두 '새로운 생성 구조를 만들자'가 아니라 '이미 있는 DiT를 캐싱, 압축, 증류, 재활용으로 더 싸고 안정적으로 쓰자'는 같은 태도를 공유합니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 응용(이미지/비디오 캐싱, 비디오 attention, AR 비디오 증류, 3D 생성 후속학습, 깊이 추정 재활용) 5편이 'DiT 구조는 그대로 두고 추론·학습 비용만 줄인다'는 같은 전략에 수렴하며, GP-Refiner는 구체적 정량 수치를 제시",
+      "lab_action": "GP-Refiner의 Gaussian Process 기반 feature cache 보정을 랩의 frozen DiT 기반 위상 복원/초해상도 파이프라인에 적용해 캐싱 단계 수 대비 PSNR/LPIPS 저하 곡선을 측정하고, Marigold V2의 단일 단계 DiT 재활용 방식을 랩 depth/위상 추정 실험에 적용해 다단계 baseline 대비 속도-정확도 트레이드오프를 비교한다"
+    },
+    {
+      "cluster": "하이퍼스펙트럴 역문제가 블랙박스 회귀 대신 저랭크·희소 구조 사전으로 되돌아감",
+      "papers": [
+        {"title": "AXS-Net: Interpretable Deep Unfolding for Hyperspectral Image Denoising via Spectral Basis Unmixing and Structured Noise Refinement", "arxiv_id": "https://arxiv.org/abs/2609.08777", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Hyperspectral Anomaly Detection via Group Sparse Low-Rank Tensor Factorization With Automatic Anomaly Grouping", "arxiv_id": "https://arxiv.org/abs/2609.08121", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Interpretable Hyperspectral Unmixing Framework with Fixed Endmember Prior and Structured Residual Refinement", "arxiv_id": "https://arxiv.org/abs/2609.08786", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Poisson Image Denoising Using Minimax Concave and Reweighted L1 Penalties: Nonblind and Blind Approaches", "arxiv_id": "https://arxiv.org/abs/2609.07916", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "하이퍼스펙트럴 영상(HSI, 수십~수백 개 파장 대역을 동시에 찍는 영상)의 잡음 제거·이상 탐지·언믹싱(혼합 픽셀을 원료별 성분으로 분해하는 작업)은 최근 딥러닝이 깨끗한 영상을 바로 회귀 예측하는 방식으로 많이 풀렸는데, 이 방식은 신호와 구조적 잡음(줄무늬, 결함 라인)이 뒤섞여 버려 원인을 구분할 수 없다는 약점이 있습니다. 오늘 나온 네 편은 모두 이 블랙박스 회귀 대신, 신호를 저랭크(low-rank)·희소(sparse) 성분으로 명시적으로 분해하는 고전적인 최적화 구조로 되돌아갑니다. AXS-Net은 잡음 낀 HSI를 저랭크 스펙트럴 기반 신호와 구조적 희소 잡음, 나머지 가우시안 잡음 셋으로 나누는 최적화 문제를 신경망 여러 단(stage)으로 풀어내(deep unfolding), 각 단계가 실제로 어떤 성분을 다루는지 해석 가능하게 만듭니다. 이상 탐지 논문(GSAA)은 배경을 저랭크 텐서로, 이상 신호를 그룹 단위로 성기게(sparse) 모델링해 계산 비용과 정확도를 동시에 개선하고, 언믹싱 논문(I-HyperSU)은 원료 성분(endmember)을 고정해두는 기존 방식이 조명 변화나 센서 잡음에 취약한 문제를, 잔차를 구조적으로 다시 다듬는 단계를 추가해 보완합니다. Poisson 잡음 제거 논문도 딥러닝 없이 비볼록 페널티 함수로 잡음 통계 모델에 맞춘 최적화 복원을 다룹니다. 네 논문 모두 '데이터로 잡음 제거를 통째로 학습하자'가 아니라, '신호가 실제로 어떤 물리적 성분(저랭크 구조, 희소 이상, 고정 endmember)으로 이뤄져 있는지 명시적으로 모델에 넣어야 신뢰할 수 있는 복원이 나온다'는 문제의식을 공유합니다.",
+      "confidence": "Medium",
+      "confidence_note": "같은 날 같은 cs.CV 카테고리에서 4편이 저랭크/희소/deep-unfolding 구조로 수렴했고 AXS-Net은 3개 공개 데이터셋(ICVL/CAVE/Harvard) 정량 비교를 제시하지만, 저자군이 겹치는지 확인되지 않았고 응용(잡음제거/이상탐지/언믹싱)이 흩어져 있어 단일 벤치마크로 수렴하지는 않음",
+      "lab_action": "AXS-Net의 저랭크 스펙트럴-희소 구조 잡음 분해 deep unfolding 구조를 랩의 하이퍼스펙트럴/멀티스펙트럴 계산 이미징 파이프라인에 적용해 기존 블랙박스 디노이저 대비 해석 가능한 성분 분리가 재현되는지 ICVL/CAVE류 공개 데이터로 확인하고, GSAA의 group sparse 이상 탐지 구조를 랩 결함 검사용 하이퍼스펙트럴 실험에 참고 사례로 검토한다"
+    },
+    {
+      "cluster": "메타렌즈가 통신·RF 대신 위상 복원·초해상도 이미징 하드웨어로 계속 쓰임 (2일 연속)",
+      "papers": [
+        {"title": "Design and simulation study of a monolithic metalens-based compact interferometer for quantitative phase imaging", "arxiv_id": "https://doi.org/10.1088/2040-8986/aea42e", "journal_or_source": "Journal of Optics"},
+        {"title": "Binary Huygens Metalens Based on Congener Dipoles", "arxiv_id": "https://doi.org/10.1364/ol.610964", "journal_or_source": "Optics Letters"},
+        {"title": "Adaptive Super-Resolution in Integral Imaging with a Heterogeneous Metalens Array", "arxiv_id": "https://doi.org/10.1364/ao.605954", "journal_or_source": "Applied Optics"}
+      ],
+      "why": "어제(9/8) journal-only 잠정본에서 이미 관찰했던 흐름이 오늘도 같은 논문 셋으로 이어집니다. 메타표면·메타렌즈 논문은 저널 전체에서 보면 대부분 안테나, 테라헤르츠 센서, 태양광 흡수체 같은 통신·에너지 응용으로 쏠려 있는데(오늘 Meta-Optics/Diffractive 14편 중 실제 이미징 신호는 이 3편뿐), 이 3편만은 이미징 본연의 자리를 지킵니다. 정량 위상 이미징(QPI) 간섭계 논문은 여러 렌즈·빔스플리터로 이뤄져 부피가 크고 진동에 민감한 기존 디지털 홀로그래피 장비를, 메타렌즈 하나로 만든 단일 소자 간섭계로 대체해 정렬이 필요 없는 컴팩트한 구조를 시뮬레이션으로 검증합니다. Binary Huygens Metalens는 메타렌즈의 기본 구성 단위(congener dipole)를 새로 설계해 초점 성능을 높이고, Heterogeneous Metalens Array는 서로 다른 특성의 메타렌즈를 배열로 묶어 여러 시점에서 찍은 적분 영상(integral imaging)의 각도별 해상도를 적응적으로 높입니다. 오늘 arXiv가 복귀하면서 이 논문들과 짝지을 만한 arXiv 쪽 메타옵틱스 신호는 아직 없었지만(arXiv Meta-Optics 배정 0편), 저널에서 이틀 연속 같은 방향의 신호가 이어졌다는 점 자체가 관찰할 가치가 있습니다.",
+      "confidence": "Medium",
+      "confidence_note": "동일 논문 셋이 어제에 이어 오늘도 저널 재수집 창(--days 1)에서 다시 잡혔으며, QPI 간섭계 1편만 Crossref 초록이 있고 나머지 2편은 제목 기반 판단. 이틀 연속 관찰이라는 점에서 confidence를 Medium으로 유지",
+      "lab_action": "메타렌즈 기반 QPI 간섭계의 단일 소자 정렬-불필요 구조를 랩의 정량 위상 이미징 프로토타입 설계에 참고해, 기존 다중 렌즈 구성 대비 진동·정렬 오차에 대한 강건성을 FDTD 시뮬레이션으로 비교한다"
+    },
+    {
+      "cluster": "CT/OCT 임상 진단 딥러닝이 오늘도 대량 반복되지만 새로운 방법론적 문제 설정은 드묾",
+      "papers": [
+        {"title": "Smooth 3D Cardiac Geometry Reconstruction from 2D CT Slice Segmentations", "arxiv_id": "https://doi.org/10.1007/s10278-026-02223-4", "journal_or_source": "Journal of Imaging Informatics in Medicine"},
+        {"title": "Leveraging CNN and Transfer Learning With EfficientNet for Enhanced Optical Coherence Tomography (OCT)", "arxiv_id": "https://doi.org/10.1155/ijbi/1272954", "journal_or_source": "International Journal of Biomedical Imaging"},
+        {"title": "Multimodal automated diagnosis of lymphovascular invasion in breast cancer on contrast-enhanced MRI: ResUNet++ segmentation and transformer-based classification", "arxiv_id": null, "journal_or_source": "저널(Crossref)"},
+        {"title": "An interpretable deep learning model based on enhanced CT predicts the recurrence of non-muscle-invasive bladder cancer within 2 years", "arxiv_id": null, "journal_or_source": "저널(Crossref)"}
+      ],
+      "why": "Tomography/3D Imaging(60편)과 Deep Learning Methods(271편) 두 버킷에는 CT·OCT·MRI 영상에 표준 딥러닝 구조(CNN, transformer, U-Net 계열)를 적용해 특정 질환을 진단·분류·재구성하는 논문이 오늘도 다수 반복됩니다. 3D 심장 형상 복원 논문은 2D CT 슬라이스를 쌓을 때 생기는 계단식 왜곡을 보간으로 완화하고, OCT 논문은 EfficientNet 기반 전이학습으로 망막 질환을 분류하며, 유방암 림프혈관 침습 진단 논문은 ResUNet++ 분할과 transformer 분류를 결합하고, 방광암 재발 예측 논문은 CT 특징으로 재발 위험을 해석 가능한 모델로 예측합니다. 네 논문 모두 표준 아키텍처를 특정 임상 진단 과제에 적용해 정확도를 높였다는 같은 틀을 따르고 있어, 개별 기여는 있지만 계산 이미징 방법론 관점에서 새로운 문제 설정이나 평가축을 제시하는 논문은 오늘 이 묶음 안에서 확인되지 않았습니다. 어제(9/8)도 비슷한 임상 CT/OCT 반복 클러스터가 있었는데, 오늘은 arXiv가 복귀하면서 이 패턴이 저널 논문에서만 계속 확인된다는 점이 새롭습니다.",
+      "confidence": "High",
+      "confidence_note": "같은 패턴(표준 아키텍처+특정 임상 task)의 논문이 4편 이상 확인되고 그중 다수가 Crossref 초록으로 방법론이 명확하지만, '새로운 진전이 약하다'는 판단 자체는 abstract 수준 검토에 근거한 것이라 본문 확인 전 최종 결론은 아님",
+      "lab_action": "3D 심장 형상 복원의 슬라이스 간 보간 방식이 랩의 다른 stacked-2D-to-3D 파이프라인(예: 현미경 z-stack)의 계단식 아티팩트 완화에 참고 가능한지만 검토하고, 나머지 논문들은 Skim-only로 분류해 우선순위를 낮춘다"
+    }
+  ],
+  "insights": [
+    {
+      "title": "3D Gaussian Splatting가 서로 다른 구조적 실패 지점을 각각 정면으로 공략",
+      "claim": "AVSplat(밀집 시점 저하), FujinSplat(연무 매질), TV-SGS(sparse-view 기하), CVT-GS(Gaussian 개수 압축), MedGSSR(의료 초해상도), LightSplat(SLAM), EdMCGS(이벤트 기반 동적 장면), From Splats to Silicon(효율 측정 자체의 비교 불가능성) 여덟 편이 같은 날 모이며, 3DGS 연구가 표현을 새로 만드는 단계에서 실제 촬영·배포 조건의 약점을 하나씩 도려내는 단계로 넘어갔다.",
+      "papers": [
+        {"title": "CVT-GS: Learning to Simplify 3D Gaussian Splatting with Centroidal Voronoi Tessellation", "arxiv": "https://arxiv.org/abs/2609.08730", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "AVSplat: Dense-View Feed-Forward 3D Gaussian Splatting with Assist-View Preconditioning", "arxiv": "https://arxiv.org/abs/2609.05925", "importance_tags": ["[해부분석]", "[방법전환]"]},
+        {"title": "From Splats to Silicon: Rethinking Computational Efficiency of 3DGS", "arxiv": "https://arxiv.org/abs/2609.06157", "importance_tags": ["[평가축]", "[통합정리]"]}
+      ]
+    },
+    {
+      "title": "Diffusion Transformer의 추론·학습 비용을 구조 재설계 없이 줄이는 흐름",
+      "claim": "GP-Refiner(feature cache 보정), RoLA(low-rank attention), Mask Forcing(AR 증류 안정화), Flow3D-OPD(다중 교사 증류), Marigold V2(DiT 재활용) 다섯 편이 같은 날 나오며, DiT 효율화가 새 구조 설계보다 이미 학습된 모델의 캐싱·압축·증류·재활용으로 향하고 있다.",
+      "papers": [
+        {"title": "Accelerating Diffusion Transformers with Gaussian Process Rectified Feature Cache", "arxiv": "https://arxiv.org/abs/2609.05981", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "RoLA: Rotary-Positioned Low-Rank Linear Attention for Efficient Diffusion Transformers", "arxiv": "https://arxiv.org/abs/2609.06712", "importance_tags": ["[방법전환]"]},
+        {"title": "Marigold V2: Revisiting Diffusion Transformers for Monocular Depth Estimation", "arxiv": "https://arxiv.org/abs/2609.08084", "importance_tags": ["[실사용전환]"]}
+      ]
+    },
+    {
+      "title": "하이퍼스펙트럴 역문제가 블랙박스 회귀 대신 저랭크·희소 구조 사전으로 되돌아감",
+      "claim": "AXS-Net(저랭크+구조적 희소 잡음 분해), GSAA(group sparse 저랭크 텐서 이상 탐지), I-HyperSU(고정 endmember 잔차 보정) 세 편과 Poisson 잡음 제거 논문이 같은 날 모이며, 하이퍼스펙트럴 영상 복원이 물리적 성분을 명시적으로 모델에 넣는 고전적 구조로 되돌아가고 있다.",
+      "papers": [
+        {"title": "AXS-Net: Interpretable Deep Unfolding for Hyperspectral Image Denoising via Spectral Basis Unmixing and Structured Noise Refinement", "arxiv": "https://arxiv.org/abs/2609.08777", "importance_tags": ["[방법전환]", "[해부분석]"]},
+        {"title": "Hyperspectral Anomaly Detection via Group Sparse Low-Rank Tensor Factorization With Automatic Anomaly Grouping", "arxiv": "https://arxiv.org/abs/2609.08121", "importance_tags": ["[방법전환]"]}
+      ]
+    },
+    {
+      "title": "메타렌즈가 통신·RF 대신 위상 복원·초해상도 이미징 하드웨어로 계속 쓰임 (2일 연속)",
+      "claim": "메타렌즈 기반 QPI 간섭계, Binary Huygens Metalens, Heterogeneous Metalens Array 세 편이 어제에 이어 오늘도 관찰되며, 메타표면 연구가 통신·에너지 응용 사이에서도 이미징 하드웨어 자리를 꾸준히 지키고 있다.",
+      "papers": [
+        {"title": "Design and simulation study of a monolithic metalens-based compact interferometer for quantitative phase imaging", "arxiv": "https://doi.org/10.1088/2040-8986/aea42e", "importance_tags": ["[방법전환]", "[실사용전환]"]}
+      ]
+    },
+    {
+      "title": "CT/OCT 임상 진단 딥러닝이 오늘도 대량 반복되지만 새로운 방법론적 문제 설정은 드묾",
+      "claim": "3D 심장 형상 복원, OCT 전이학습 분류, 유방암 림프혈관 침습 진단, 방광암 재발 예측 네 편이 표준 아키텍처를 특정 임상 과제에 적용하는 같은 틀을 반복하며, 계산 이미징 방법론 관점의 새 문제 설정은 오늘도 확인되지 않았다.",
+      "papers": [
+        {"title": "Smooth 3D Cardiac Geometry Reconstruction from 2D CT Slice Segmentations", "arxiv": "https://doi.org/10.1007/s10278-026-02223-4", "importance_tags": ["[경고신호]"]}
+      ]
     }
   ],
   "research_topics": [
     {
-      "title": "A. 메타렌즈 기반 단일 소자 QPI 간섭계 구조를 랩 정량 위상 이미징 프로토타입에 참고",
-      "claim": "다중 렌즈·빔스플리터로 구성된 기존 디지털 홀로그래피 장비를 메타렌즈 하나로 만든 단일 소자 간섭계로 대체하면, 진동·정렬 오차에 덜 민감하면서도 컴팩트한 정량 위상 이미징 시스템을 만들 수 있다",
+      "title": "A. CVT-GS의 optimization-free 사후 압축을 랩 3DGS 파이프라인에 적용",
+      "claim": "Centroidal Voronoi Tessellation 기반 many-to-one Gaussian 병합을 랩의 3D Gaussian Splatting 재구성 결과물에 적용하면, 재학습 없이 저장·렌더링 비용을 크게 줄이면서도 화질을 유지하거나 개선할 수 있는지 확인할 수 있다.",
       "supporting_papers": [
-        {
-          "title": "Design and simulation study of a monolithic metalens-based compact interferometer for quantitative phase imaging",
-          "arxiv": "https://doi.org/10.1088/2040-8986/aea42e"
-        }
+        {"title": "CVT-GS: Learning to Simplify 3D Gaussian Splatting with Centroidal Voronoi Tessellation", "arxiv": "https://arxiv.org/abs/2609.08730"},
+        {"title": "AVSplat: Dense-View Feed-Forward 3D Gaussian Splatting with Assist-View Preconditioning", "arxiv": "https://arxiv.org/abs/2609.05925"}
       ]
     },
     {
-      "title": "B. DeepMoCo의 그래프 신경망 움직임 보정을 랩 생체 형광 현미경 파이프라인에 적용",
-      "claim": "그래프 신경망 기반 강체·비강체 움직임 보정을 랩의 in vivo 형광 현미경 실험에 적용하면, 호흡·조직 움직임으로 인한 화질 저하를 기존 rigid registration보다 효과적으로 줄일 수 있다",
+      "title": "B. GP-Refiner의 feature cache 보정을 랩 frozen DiT 위상 복원 파이프라인에 적용",
+      "claim": "Gaussian Process 기반 feature caching 오차 보정을 랩의 diffusion transformer 기반 복원 모델에 적용하면, 캐싱으로 인한 화질 저하를 실시간으로 보정하면서 계산량을 줄일 수 있는지 확인할 수 있다.",
       "supporting_papers": [
-        {
-          "title": "DeepMoCo: graph neural network-based adaptive correction for motion artifacts in fluorescence microscopy",
-          "arxiv": "https://doi.org/10.1186/s43074-026-00279-7"
-        }
+        {"title": "Accelerating Diffusion Transformers with Gaussian Process Rectified Feature Cache", "arxiv": "https://arxiv.org/abs/2609.05981"},
+        {"title": "Marigold V2: Revisiting Diffusion Transformers for Monocular Depth Estimation", "arxiv": "https://arxiv.org/abs/2609.08084"}
       ]
     },
     {
-      "title": "C. 다크필드 X선 현미경의 베이지안 불확실성 정량화를 랩 역문제 파이프라인에 이식",
-      "claim": "여러 회절/산란 신호가 겹치는 복원 문제를 베이지안 역문제로 정식화해 불확실성까지 함께 추정하면, 랩의 역문제 복원 결과에도 신뢰구간을 부여할 수 있다",
+      "title": "C. AXS-Net의 저랭크-희소 구조 분해를 랩 하이퍼스펙트럴 파이프라인에 적용",
+      "claim": "잡음을 저랭크 스펙트럴 신호와 구조적 희소 잡음으로 명시적으로 분해하는 deep unfolding 구조를 랩의 하이퍼스펙트럴/멀티스펙트럴 계산 이미징 실험에 적용하면, 블랙박스 디노이저보다 해석 가능한 성분 분리와 함께 잡음 제거 성능을 확인할 수 있다.",
       "supporting_papers": [
-        {
-          "title": "A Bayesian Approach to Rocking-Curve Analysis in Dark-Field X-ray Microscopy",
-          "arxiv": "https://doi.org/10.1088/1757-899x/1350/1/012020"
-        }
+        {"title": "AXS-Net: Interpretable Deep Unfolding for Hyperspectral Image Denoising via Spectral Basis Unmixing and Structured Noise Refinement", "arxiv": "https://arxiv.org/abs/2609.08777"}
+      ]
+    },
+    {
+      "title": "D. 메타렌즈 기반 단일 소자 QPI 간섭계 구조를 랩 정량 위상 이미징 프로토타입에 참고",
+      "claim": "다중 렌즈·빔스플리터로 구성된 기존 디지털 홀로그래피 장비를 메타렌즈 하나로 만든 단일 소자 간섭계로 대체하면, 진동·정렬 오차에 덜 민감하면서도 컴팩트한 정량 위상 이미징 시스템을 만들 수 있는지 검토할 수 있다.",
+      "supporting_papers": [
+        {"title": "Design and simulation study of a monolithic metalens-based compact interferometer for quantitative phase imaging", "arxiv": "https://doi.org/10.1088/2040-8986/aea42e"}
       ]
     }
   ],
