@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-09",
+  "source_listing_date": "2026-09-09",
+  "source_mode": "journal-only",
+  "note": "2026-09-09(수) daily 실행. Date Source Contract 점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 사흘째 \"Monday, 7 September 2026\" listing에 머물러 있고(/new, /pastweek 모두 9/8·9/9 섹션 없음) arXiv 신규 제출이 0건이라, prompts/instruction.md 2.1의 저널 독립 규칙에 따라 arXiv 섹션 없이 Crossref/OpenAlex 저널만으로 만든 잠정본(source_mode=journal-only)을 발행했다. 어제(9/8)도 동일 사유로 journal-only였으므로 저널 수집 --days 1(2026-09-08~09-09 등록분)로 어제와 겹치지 않는 새 등록분만 수집했다. Crossref 9개 키워드 질의(--days 1) + OpenAlex enrich/works로 422건을 수집·중복제거해 classify.py로 스캔했고, 98건(23.2%)이 9개 ROI 버킷에 배정됐다. Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 오늘 배정 0건으로 랩 ROI 핵심 공백이 이어진다. Virtual Staining/Pathology 12건은 전량 'virtual'(메타버스 프로젝트 관리, 가상 관광, 가상 실습실 등)·'staining' 키워드 오탐이며, Tomography/3D Imaging 38건 중 다수도 임상 사례보고·지구물리 탐사로 계산 이미징 방법론과 무관하다. 실제 계산 이미징 신호는 metalens 기반 QPI/초해상도(3편), 홀로그래피·파면 계측 알고리즘 확장(3편), 확립된 계측 기법에 신경망 이식(3편), 물리 정보 기반 역문제 해법의 교차 도메인 적용(3편), CT/OCT 임상 진단 딥러닝 반복 사례(5편)로 5개 클러스터를 구성했다. /pastweek에 9/9(또는 9/8) 섹션이 뜨면 다음 실행(2시간 간격 폴링)에서 arXiv 포함 완전판으로 자동 업그레이드된다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 0,
+      "eess.SP": 0
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 422
+  },
+  "totals": {
+    "total_scanned": 422,
+    "selected": 98
+  },
+  "classified": {
+    "total_scanned": 422,
+    "selected": 98,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 8,
+      "Meta-Optics/Diffractive": 12,
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 38,
+      "Virtual Staining/Pathology": 12,
+      "Reconstruction/Inverse Problems": 3,
+      "Deep Learning Methods": 23
+    }
+  }
+}

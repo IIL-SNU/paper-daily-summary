@@ -1,0 +1,164 @@
+{
+  "date": "2026-09-09",
+  "source_mode": "journal-only",
+  "clusters": [
+    {
+      "cluster": "메타렌즈가 통신·RF 대신 위상 복원·초해상도 같은 이미징 하드웨어 자리로 계속 쓰임",
+      "papers": [
+        {
+          "title": "Design and simulation study of a monolithic metalens-based compact interferometer for quantitative phase imaging",
+          "arxiv_id": "https://doi.org/10.1088/2040-8986/aea42e",
+          "journal_or_source": "Journal of Optics"
+        },
+        {
+          "title": "Binary Huygens Metalens Based on Congener Dipoles",
+          "arxiv_id": "https://doi.org/10.1364/ol.610964",
+          "journal_or_source": "Optics Letters"
+        },
+        {
+          "title": "Adaptive Super-Resolution in Integral Imaging with a Heterogeneous Metalens Array",
+          "arxiv_id": "https://doi.org/10.1364/ao.605954",
+          "journal_or_source": "Applied Optics"
+        }
+      ],
+      "why": "메타표면·메타렌즈 논문은 최근 저널에서 대부분 안테나, 테라헤르츠 센서, 태양광 흡수체처럼 통신·에너지 응용으로 쏠려 있었는데, 오늘 세 편은 다시 이미징 본연의 문제로 돌아왔습니다. 정량 위상 이미징(QPI, 두께나 굴절률 같은 위상 정보를 정량적으로 복원하는 이미징 기법) 논문은 기존 디지털 홀로그래피 장비가 여러 개의 렌즈와 빔스플리터로 이뤄져 부피가 크고 진동에 민감했던 문제를, 메타렌즈 하나로 만든 단일 소자 간섭계로 대체해 정렬이 필요 없는 컴팩트한 구조를 제안합니다. Binary Huygens Metalens 논문은 메타렌즈를 구성하는 기본 단위(congener dipole, 같은 계열의 짝지어진 공진 구조)를 새로 설계해 초점 성능을 높이는 방법론 논문이고, Heterogeneous Metalens Array 논문은 서로 다른 특성을 가진 메타렌즈를 배열로 묶어 여러 시점에서 촬영한 적분 영상(integral imaging)의 해상도를 적응적으로 높입니다. 세 논문 모두 메타렌즈를 「얇은 렌즈 대체재」가 아니라 「기존 광학계로는 어려웠던 컴팩트화·해상도 향상을 이루는 도구」로 쓰고 있다는 공통점이 있습니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 저널 3편이 독립적으로 메타렌즈의 이미징 응용을 보이지만, 대표 논문 중 QPI 간섭계 1편만 Crossref 초록이 있고 나머지 2편은 제목 기반 판단입니다.",
+      "lab_action": "메타렌즈 기반 QPI 간섭계의 단일 소자 정렬-불필요 구조를 랩의 정량 위상 이미징 프로토타입 설계에 참고해, 기존 다중 렌즈 구성 대비 진동·정렬 오차에 대한 강건성을 시뮬레이션으로 비교한다."
+    },
+    {
+      "cluster": "홀로그래피·파면 계측 알고리즘이 복원 정확도를 넘어 3D 프린팅·센싱 응용으로 갈라짐",
+      "papers": [
+        {
+          "title": "Monte Carlo Maximum Likelihood Reconstruction for Digital Holography with Speckle",
+          "arxiv_id": "https://doi.org/10.1109/tci.2026.3732104",
+          "journal_or_source": "IEEE Transactions on Computational Imaging"
+        },
+        {
+          "title": "Phase-aligned wavefront record plane algorithm for single-shot continuous 3D holographic two-photon lithography",
+          "arxiv_id": "https://doi.org/10.1364/ol.613912",
+          "journal_or_source": "Optics Letters"
+        },
+        {
+          "title": "Experimental Validation on Computational Sub-aperture Fusion Wavefront Sensing Technology",
+          "arxiv_id": "https://doi.org/10.1364/ol.612789",
+          "journal_or_source": "Optics Letters"
+        }
+      ],
+      "why": "디지털 홀로그래피는 오랫동안 '스페클(레이저 빛이 거친 표면에서 산란돼 생기는 반점 잡음) 아래에서 얼마나 정확하게 복원하느냐'를 겨루는 알고리즘 문제였는데, 오늘 세 편은 그 알고리즘이 다른 목적으로 갈라지는 모습을 보여줍니다. Monte Carlo Maximum Likelihood 논문은 스페클 잡음이 있는 상황에서 복원 정확도 자체를 통계적으로 개선하는 정공법 알고리즘입니다. 반면 2-광자 리소그래피(빛으로 미세 3D 구조물을 한 층씩 찍어내는 3D 프린팅 기법) 논문은 같은 홀로그래픽 파면 기록 원리를 이용해, 단계별로 끊어 찍던 기존 방식 대신 위상을 맞춰 연속적으로 3D 구조물을 프린팅하는 데 씁니다. 파면 센싱 논문은 또 다른 방향에서, 하나의 큰 조리개 대신 여러 개의 작은 조리개(sub-aperture)로 나눠 찍은 뒤 계산으로 합쳐 전체 파면 정보를 복원하는 실험 검증입니다. 세 논문을 묶으면, 홀로그래피/파면 계측의 핵심 수학(위상 정렬, 파면 복원)은 그대로인데 그 수학이 적용되는 현장이 이미지 품질 개선에서 3D 프린팅 속도, 광학계 파면 진단으로 넓어지고 있다는 인상을 줍니다.",
+      "confidence": "Low",
+      "confidence_note": "세 논문 모두 Crossref 초록이 제공되지 않아 제목만으로 방법론을 추정했고, 서로 다른 저자군·학회 소속인지도 확인되지 않았습니다.",
+      "lab_action": "Monte Carlo Maximum Likelihood 알고리즘을 랩의 스페클 노이즈가 있는 디지털 홀로그래피 복원 파이프라인에 시험 적용해 기존 결정론적 복원 대비 정확도를 비교하고, sub-aperture fusion 파면 센싱 개념을 랩 광학계 정렬 진단 도구에 참고해 적용 가능성을 검토한다."
+    },
+    {
+      "cluster": "확립된 정밀 계측 기법에 최신 신경망 보정을 이식하는 흐름",
+      "papers": [
+        {
+          "title": "DeepMoCo: graph neural network-based adaptive correction for motion artifacts in fluorescence microscopy",
+          "arxiv_id": "https://doi.org/10.1186/s43074-026-00279-7",
+          "journal_or_source": "PhotoniX"
+        },
+        {
+          "title": "A computational framework for post-acquisition stability assessment in scanning tunneling microscopy",
+          "arxiv_id": "https://doi.org/10.1088/1361-6501/aea43b",
+          "journal_or_source": "Measurement Science and Technology"
+        },
+        {
+          "title": "High-fidelity φ-OFDR based on a deep phase recovery convolutional neural network",
+          "arxiv_id": "https://doi.org/10.1364/oe.612412",
+          "journal_or_source": "Optics Express"
+        }
+      ],
+      "why": "형광 현미경, 주사터널링현미경(STM), 광섬유 위상 반사계(φ-OFDR)는 모두 수십 년 된 확립된 정밀 계측 기법인데, 오늘 세 편은 각 기법이 갖고 있던 고질적인 잡음·불안정성 문제를 신경망으로 다시 손질합니다. DeepMoCo는 생체 내 신경 회로를 촬영하는 형광 현미경에서 호흡이나 조직 움직임 때문에 생기는 강체·비강체 움직임 잡음을, 그래프 신경망으로 적응적으로 보정합니다. STM 안정성 평가 논문은 원자 단위 정밀도가 필요한 측정에서 하드웨어 흔들림이나 분석자마다 다른 해석 때문에 생기는 신뢰도 문제를, 모듈형 검증 프레임워크로 정량화합니다. φ-OFDR 논문은 광섬유를 따라 위상 변화를 읽어 진동이나 변형을 감지하는 기법에서, 위상 복원 정확도를 딥러닝 CNN으로 높입니다. 세 논문 모두 「새 계측 원리를 만들자」가 아니라 「이미 검증된 계측 원리가 갖고 있던 잡음·신뢰도 문제를 신경망으로 후처리해서 없애자」는 같은 태도를 보입니다.",
+      "confidence": "Medium",
+      "confidence_note": "DeepMoCo와 STM 안정성 평가 논문 2편은 Crossref 초록이 있어 방법론이 명확하고, φ-OFDR 1편만 제목 기반 판단입니다.",
+      "lab_action": "DeepMoCo의 그래프 신경망 기반 강체·비강체 움직임 보정 구조를 랩의 생체 형광 현미경 실험(호흡·조직 움직임이 있는 in vivo 촬영)에 적용해 기존 rigid registration 대비 보정 정확도를 비교하고, STM 안정성 평가 프레임워크의 모듈형 검증 구조를 랩의 정밀 계측 장비 QC 절차에 참고한다."
+    },
+    {
+      "cluster": "물리 정보 기반(physics-informed) 역문제 해법이 자기장·구조물 탐상·X선 현미경까지 서로 다른 계측 문제에 반복 적용됨",
+      "papers": [
+        {
+          "title": "Fourier-space approach to physics-informed magnetization reconstruction from nitrogen-vacancy measurements",
+          "arxiv_id": "https://doi.org/10.1103/nc5g-3yw9",
+          "journal_or_source": "Physical Review Letters"
+        },
+        {
+          "title": "High-Fidelity Guided-wave Full Waveform Inversion Regularized by Physics-Informed Deep Generative Model",
+          "arxiv_id": "https://doi.org/10.1016/j.cacaie.2026.100218",
+          "journal_or_source": "Computer-Aided Civil and Infrastructure Engineering"
+        },
+        {
+          "title": "A Bayesian Approach to Rocking-Curve Analysis in Dark-Field X-ray Microscopy",
+          "arxiv_id": "https://doi.org/10.1088/1757-899x/1350/1/012020",
+          "journal_or_source": "IOP Conference Series: Materials Science and Engineering"
+        }
+      ],
+      "why": "역문제(측정값에서 원래 신호를 거꾸로 복원하는 문제)를 풀 때 '물리 법칙을 모델에 미리 알려주고(physics-informed) 그 안에서 답을 찾게 한다'는 접근이, 오늘은 완전히 다른 세 계측 분야에서 동시에 나타났습니다. 자기화 복원 논문은 다이아몬드 결함(질소-공극 중심)으로 측정한 자기장 신호로부터 물체 내부의 자기화 분포를 Fourier 공간에서 물리 법칙에 맞게 복원합니다. 유도파 전파형 역산 논문은 구조물 건전성 모니터링에서 초음파 유도파 신호로부터 손상 위치를 복원할 때, 물리 정보 기반 생성모델로 복원을 정규화(regularize, 물리적으로 말이 안 되는 답을 걸러내는 제약)합니다. 다크필드 X선 현미경 논문은 결정 결함을 매핑할 때 여러 회절 신호가 한 voxel 안에서 겹쳐 분리가 어려운 문제를, 베이지안 역문제로 정식화해 불확실성까지 함께 추정합니다. 세 논문이 다루는 물체(자기장, 구조물 손상, 결정 결함)와 측정 방식은 전혀 다르지만, '물리 법칙과 불확실성을 명시적으로 모델에 넣어야 신뢰할 수 있는 복원이 나온다'는 문제의식은 같습니다.",
+      "confidence": "Medium",
+      "confidence_note": "다크필드 X선 현미경 논문은 초록이 있어 방법론이 명확하고, 나머지 2편은 초록이 없지만 저널(Physical Review Letters, Computer-Aided Civil and Infrastructure Engineering)의 전문성이 높아 제목 기반 판단의 신뢰도가 상대적으로 높습니다.",
+      "lab_action": "다크필드 X선 현미경의 베이지안 rocking-curve 분해 프레임워크(불확실성 정량화 포함)를 랩의 역문제 복원 파이프라인 중 신뢰구간 표기가 없는 부분에 적용해, 복원 결과에 불확실성 추정을 추가하는 실험을 설계한다."
+    },
+    {
+      "cluster": "CT·OCT 기반 임상 진단 딥러닝 사례가 대량으로 반복되지만 새로운 방법론적 진전은 약함",
+      "papers": [
+        {
+          "title": "Smooth 3D Cardiac Geometry Reconstruction from 2D CT Slice Segmentations: Wall-Thickness Agreement with a Manual Reference",
+          "arxiv_id": "https://doi.org/10.1007/s10278-026-02223-4",
+          "journal_or_source": "Journal of Imaging Informatics in Medicine"
+        },
+        {
+          "title": "Leveraging CNN and Transfer Learning With EfficientNet for Enhanced Optical Coherence Tomography (OCT)",
+          "arxiv_id": "https://doi.org/10.1155/ijbi/1272954",
+          "journal_or_source": "International Journal of Biomedical Imaging"
+        },
+        {
+          "title": "Progressive Refinement Autoencoder for Low-Dose Computed Tomography Enhancement",
+          "arxiv_id": "https://doi.org/10.1002/ima.70438",
+          "journal_or_source": "International Journal of Imaging Systems and Technology"
+        },
+        {
+          "title": "Multimodal Transformer Integrating Retinal Fundus Images, Optical Coherence Tomography, and Clinical Variables for Predicting Progression from Intermediate to Neovascular Age-Related Macular Degeneration",
+          "arxiv_id": "https://doi.org/10.68159/t313828804",
+          "journal_or_source": "Journal of Artificial Intelligence for Healthcare Systems"
+        }
+      ],
+      "why": "오늘 Tomography/3D Imaging(38편)과 Deep Learning Methods(23편) 버킷에는 CT나 OCT 영상에 표준 딥러닝 구조(CNN, transformer, autoencoder)를 적용해 특정 질환을 진단·분류·복원하는 논문이 유난히 많이 반복됩니다. 3D 심장 형상 복원 논문은 2D CT 슬라이스를 쌓을 때 생기는 계단식 왜곡을 매끄럽게 보간해 벽 두께 측정 정확도를 높이고, OCT 논문은 EfficientNet과 SVM을 결합해 망막 질환을 다중 분류하며, 저선량 CT 논문은 오토인코더로 노이즈를 줄이고, 다중모달 트랜스포머 논문은 안저 영상·OCT·임상 변수를 합쳐 황반변성 진행을 예측합니다. 네 논문 모두 '표준 딥러닝 구조를 특정 임상 진단 task에 적용해 정확도를 높였다'는 같은 틀을 따르고 있어, 개별 논문의 기여는 뚜렷하지만 계산 이미징 방법론 관점에서 새로운 문제 설정이나 평가축을 제시하는 논문은 오늘 이 묶음 안에는 없었습니다.",
+      "confidence": "High",
+      "confidence_note": "같은 패턴(표준 아키텍처+특정 임상 task)의 논문이 4편 이상 확인되고 그중 3편은 Crossref 초록으로 방법론이 명확하지만, '새로운 진전이 약하다'는 판단 자체는 abstract 수준 검토에 근거한 것이라 본문 확인 전 최종 결론은 아닙니다.",
+      "lab_action": "3D 심장 형상 복원의 슬라이스 간 보간 방식을 랩이 다루는 다른 stacked-2D-to-3D 파이프라인(예: 현미경 z-stack)의 계단식 아티팩트 완화에 참고 가능한지 검토하되, 나머지 논문들은 랩 파이프라인에 직접 적용하기보다 Skim-only로 분류해 우선순위를 낮춘다."
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "A. 메타렌즈 기반 단일 소자 QPI 간섭계 구조를 랩 정량 위상 이미징 프로토타입에 참고",
+      "claim": "다중 렌즈·빔스플리터로 구성된 기존 디지털 홀로그래피 장비를 메타렌즈 하나로 만든 단일 소자 간섭계로 대체하면, 진동·정렬 오차에 덜 민감하면서도 컴팩트한 정량 위상 이미징 시스템을 만들 수 있다",
+      "supporting_papers": [
+        {
+          "title": "Design and simulation study of a monolithic metalens-based compact interferometer for quantitative phase imaging",
+          "arxiv": "https://doi.org/10.1088/2040-8986/aea42e"
+        }
+      ]
+    },
+    {
+      "title": "B. DeepMoCo의 그래프 신경망 움직임 보정을 랩 생체 형광 현미경 파이프라인에 적용",
+      "claim": "그래프 신경망 기반 강체·비강체 움직임 보정을 랩의 in vivo 형광 현미경 실험에 적용하면, 호흡·조직 움직임으로 인한 화질 저하를 기존 rigid registration보다 효과적으로 줄일 수 있다",
+      "supporting_papers": [
+        {
+          "title": "DeepMoCo: graph neural network-based adaptive correction for motion artifacts in fluorescence microscopy",
+          "arxiv": "https://doi.org/10.1186/s43074-026-00279-7"
+        }
+      ]
+    },
+    {
+      "title": "C. 다크필드 X선 현미경의 베이지안 불확실성 정량화를 랩 역문제 파이프라인에 이식",
+      "claim": "여러 회절/산란 신호가 겹치는 복원 문제를 베이지안 역문제로 정식화해 불확실성까지 함께 추정하면, 랩의 역문제 복원 결과에도 신뢰구간을 부여할 수 있다",
+      "supporting_papers": [
+        {
+          "title": "A Bayesian Approach to Rocking-Curve Analysis in Dark-Field X-ray Microscopy",
+          "arxiv": "https://doi.org/10.1088/1757-899x/1350/1/012020"
+        }
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}
