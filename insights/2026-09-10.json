@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-10",
+  "insights": [
+    {
+      "title": "카메라 종류를 가리지 않는 feed-forward 3D 기하 모델이 매칭까지 흡수",
+      "claim": "OmniPoint(어안·전방위 카메라까지 통합한 metric pointcloud), RoMa-Ω(VGGT류 feed-forward 3D 모델이 이미 이미지 매칭 정보를 갖고 있다는 분석 후 이를 백본으로 새 SOTA 매처 제작) 두 편이 같은 날 나오며, 3D 복원과 2D 매칭을 따로 풀던 파이프라인이 하나의 feed-forward 네트워크로 합쳐지는 흐름이 뚜렷해졌다.",
+      "papers": [
+        {
+          "title": "OmniPoint: Universal Monocular Metric Pointcloud from Any Camera",
+          "arxiv": "https://arxiv.org/abs/2609.09394",
+          "importance_tags": ["[방법전환]", "[표준후보]"]
+        },
+        {
+          "title": "RoMa-Ω: What Feed-Forward 3D Models Know About Image Matching",
+          "arxiv": "https://arxiv.org/abs/2609.09507",
+          "importance_tags": ["[해부분석]", "[방법전환]"]
+        }
+      ]
+    },
+    {
+      "title": "투영 각도가 부족한 X-ray 3D 복원이 통계적 구조 사전으로 구멍을 메움",
+      "claim": "LUCID(라미노그래피 X-ray의 missing-cone을 diffusion prior로 메움)와 Shape-guided GS(5장짜리 X-ray로도 해부학적 형태 사전으로 3D Gaussian Splatting 복원)가 같은 날 나오며, 관점이 부족해 원래는 풀 수 없는 X-ray 3D 복원 문제를 '이 장기가 대략 어떤 모양이어야 하는지'를 미리 아는 사전 지식으로 메우는 전략이 두 개의 서로 다른 표현(diffusion, Gaussian splatting)에서 동시에 확인됐다.",
+      "papers": [
+        {
+          "title": "Advanced Brain Tissue Imaging with Data-Consistent Diffusion Priors in Laminographic X-Ray Nanoimaging (LUCID)",
+          "arxiv": "https://arxiv.org/abs/2609.10456",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Shape-guided Gaussian Splatting for Sparse-View X-ray 3D Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2609.10376",
+          "importance_tags": ["[방법전환]", "[인프라]"]
+        }
+      ]
+    },
+    {
+      "title": "3D Gaussian Splatting을 그대로 믿지 말고 가지치기·불확실성으로 걸러내자는 흐름",
+      "claim": "LinearMask-GS(렌더링 결과가 크게 바뀌지 않는 Gaussian을 찾아 솎아내는 pruning)와 View-Structured Conformal Prediction(3DGS 렌더링 결과에 통계적으로 보장되는 신뢰구간을 씌우는 방법)이 같은 날 나오며, 3DGS를 '더 크게 잘 만들자'가 아니라 '가볍게 줄이거나 결과를 얼마나 믿을 수 있는지 재보자'는 쪽으로 관심이 옮겨가고 있다.",
+      "papers": [
+        {
+          "title": "LinearMask-GS: Stable-Mask Importance Pruning for Compact 3D Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2609.10095",
+          "importance_tags": ["[실사용전환]"]
+        },
+        {
+          "title": "View-Structured Conformal Prediction for 3D Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2609.10307",
+          "importance_tags": ["[평가축]"]
+        }
+      ]
+    },
+    {
+      "title": "현미경 촬영 자체를 줄이면서도 생물학적 정보는 지키려는 효율화 흐름",
+      "claim": "CR-DINO(형광 채널 5개를 2개로 줄여도 자가증류로 세포 정보를 보존), Pretraining/Distillation 비교 논문(label-free 세포 분류에서 구조보다 사전학습·증류가 더 중요함을 벤치마크로 확인), SkNeXt(페타바이트급 신경 미세구조 데이터를 스켈레톤 우선 방식으로 GPU 한 대에서 처리) 세 편이 같은 날 모이며, 현미경 AI 연구가 '더 많이 찍어서 더 잘 맞히기'에서 '더 적게 찍거나 더 적게 계산해도 생물학적 신호를 지키기'로 무게중심을 옮기고 있다.",
+      "papers": [
+        {
+          "title": "Reducing cost of fluorescent microscopy through dye exclusion, distillation techniques, and deep learning (CR-DINO)",
+          "arxiv": "https://doi.org/10.1038/s41598-026-69424-3",
+          "importance_tags": ["[데이터전환]", "[실사용전환]"]
+        },
+        {
+          "title": "Pretraining and Distillation Matter More Than Architecture Family for Label-Free Single-Cell Classification",
+          "arxiv": "https://arxiv.org/abs/2609.09863",
+          "importance_tags": ["[해부분석]"]
+        },
+        {
+          "title": "SkNeXt enables topology-guided neuronal reconstruction from petabyte-scale microscopy data",
+          "arxiv": "https://arxiv.org/abs/2609.09832",
+          "importance_tags": ["[인프라]", "[실사용전환]"]
+        }
+      ]
+    },
+    {
+      "title": "의료 영상 분할이 정확도보다 배포 신뢰성 문제로 무게중심 이동",
+      "claim": "LightMedSeg-ISLES(가벼운 경량 분할), Cross-Model Agreement(용종 분할에서 모델 간 합의로 신뢰도 신호를 만듦), When Fusion Fails(입력 모달리티가 일부 손상되거나 없을 때를 대비한 강건한 융합), LeCor(폐 종양 분할을 테스트 시점에 사용자가 즉석에서 교정) 네 편이 모이며, 의료 영상 분할 연구가 '정확도를 더 높이자'보다 '현장에서 입력이 지저분하거나 부족할 때도 버티게 하자'는 쪽에 더 관심을 두고 있다.",
+      "papers": [
+        {
+          "title": "LightMedSeg-ISLES: efficient lightweight segmentation",
+          "arxiv": "https://arxiv.org/abs/2609.09634",
+          "importance_tags": ["[실사용전환]"]
+        },
+        {
+          "title": "When Fusion Fails: Corruption-Aware Rebalanced Fusion",
+          "arxiv": "https://arxiv.org/abs/2609.10261",
+          "importance_tags": ["[경고신호]", "[방법전환]"]
+        }
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "A. VGGT류 feed-forward 3D 백본을 랩 매칭 파이프라인에 이식",
+      "claim": "RoMa-Ω가 보여준 것처럼, 랩이 쓰는 이미지 매칭 파이프라인의 DINO 백본을 feed-forward 3D 재구성 모델(VGGT류) 특징으로 교체하면 별도 매칭 학습 없이도 시점 변화가 큰 상황에서 매칭 성능이 오르는지 확인한다.",
+      "supporting_papers": [
+        {"title": "RoMa-Ω: What Feed-Forward 3D Models Know About Image Matching", "arxiv": "https://arxiv.org/abs/2609.09507"},
+        {"title": "OmniPoint: Universal Monocular Metric Pointcloud from Any Camera", "arxiv": "https://arxiv.org/abs/2609.09394"}
+      ]
+    },
+    {
+      "title": "B. Shape prior 기반 sparse-view 3DGS 복원을 랩 X-ray/CT 세팅에 적용",
+      "claim": "Shape-guided Gaussian Splatting의 해부학적 형태 사전 정규화를 랩이 다루는 sparse-view 단층 촬영 데이터(X-ray 또는 유사 저선량 촬영)에 적용해, 5~10개 투영만으로도 PSNR이 얼마나 개선되는지 측정한다.",
+      "supporting_papers": [
+        {"title": "Shape-guided Gaussian Splatting for Sparse-View X-ray 3D Reconstruction", "arxiv": "https://arxiv.org/abs/2609.10376"},
+        {"title": "Advanced Brain Tissue Imaging with Data-Consistent Diffusion Priors in Laminographic X-Ray Nanoimaging (LUCID)", "arxiv": "https://arxiv.org/abs/2609.10456"}
+      ]
+    },
+    {
+      "title": "C. 3DGS 결과물에 conformal prediction 신뢰구간 씌우기",
+      "claim": "View-Structured Conformal Prediction을 랩의 3DGS 재구성 결과물에 적용해, 새로운 시점에서 렌더링 오차가 통계적으로 보장된 범위 안에 들어오는지, 그리고 그 신뢰구간이 실패하기 쉬운 시점(외삽 각도)을 미리 알려줄 수 있는지 확인한다.",
+      "supporting_papers": [
+        {"title": "View-Structured Conformal Prediction for 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2609.10307"},
+        {"title": "LinearMask-GS: Stable-Mask Importance Pruning for Compact 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2609.10095"}
+      ]
+    },
+    {
+      "title": "D. 형광 채널 축소 증류를 랩 현미경 파이프라인에 적용",
+      "claim": "CR-DINO의 자가증류 방식을 랩이 쓰는 다채널 형광 현미경 파이프라인에 적용해, 촬영 채널 수를 절반 이하로 줄여도 다운스트림 분석(세포 분류·정량)의 정확도가 유지되는지 확인한다.",
+      "supporting_papers": [
+        {"title": "Reducing cost of fluorescent microscopy through dye exclusion, distillation techniques, and deep learning (CR-DINO)", "arxiv": "https://doi.org/10.1038/s41598-026-69424-3"},
+        {"title": "Pretraining and Distillation Matter More Than Architecture Family for Label-Free Single-Cell Classification", "arxiv": "https://arxiv.org/abs/2609.09863"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}
