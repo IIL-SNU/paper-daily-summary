@@ -1,0 +1,77 @@
+{
+  "date": "2026-09-11",
+  "results": [
+    {
+      "benchmark": "ColoRadar (outdoor scenes, held-out RA images)",
+      "metric": "mean Pearson correlation",
+      "value": 0.587,
+      "value_str": "0.587 mean Pearson corr. (1.7x-5.2x vs optical-NVS baselines)",
+      "paper": "https://arxiv.org/abs/2609.11894",
+      "paper_title": "3D Point Splatting for mmWave Radar Novel View Synthesis"
+    },
+    {
+      "benchmark": "Holographic reconstruction (RGB)",
+      "metric": "PSNR improvement",
+      "value": 0.19,
+      "value_str": "+0.19 dB (RGB) vs SOTA",
+      "paper": "https://arxiv.org/abs/2609.11434",
+      "paper_title": "Hologram Representation via Quadratic Phase Gaussian Splatting (CVQPG)"
+    },
+    {
+      "benchmark": "Holographic reconstruction (grayscale)",
+      "metric": "PSNR improvement",
+      "value": 0.33,
+      "value_str": "+0.33 dB (grayscale) vs SOTA",
+      "paper": "https://arxiv.org/abs/2609.11434",
+      "paper_title": "Hologram Representation via Quadratic Phase Gaussian Splatting (CVQPG)"
+    },
+    {
+      "benchmark": "Intraoperative 2D/3D registration (real-world benchmark)",
+      "metric": "3D error",
+      "value": 4,
+      "value_str": "<4 mm 3D error, <1 mm reprojection error",
+      "paper": "https://arxiv.org/abs/2609.10733",
+      "paper_title": "XPos3R: Cross-Modal Transformer for Intraoperative 2D/3D Registration"
+    },
+    {
+      "benchmark": "Multi-view 3D scene reconstruction (instance-centric)",
+      "metric": "reconstruction precision improvement",
+      "value": 11,
+      "value_str": "+11% avg. reconstruction precision vs SOTA baselines",
+      "paper": "https://arxiv.org/abs/2609.11279",
+      "paper_title": "SAMV-DUSt3R: Instance-Centric 3D Scene Decoupling from Sparse Multi-Views"
+    },
+    {
+      "benchmark": "SAMV-DUSt3R reference-view selection",
+      "metric": "selection accuracy",
+      "value": 73.5,
+      "value_str": "73.5% reference-view selection accuracy",
+      "paper": "https://arxiv.org/abs/2609.11279",
+      "paper_title": "SAMV-DUSt3R: Instance-Centric 3D Scene Decoupling from Sparse Multi-Views"
+    },
+    {
+      "benchmark": "CARE 2025 Liver Track 4 (liver fibrosis staging, S1)",
+      "metric": "classification accuracy",
+      "value": 78.4,
+      "value_str": "78.4% accuracy (S1 mild fibrosis)",
+      "paper": "https://arxiv.org/abs/2609.11380",
+      "paper_title": "DINO-Med: A Unified Patch-Based Adaptation Framework for Multi-Modal Medical Image Analysis"
+    },
+    {
+      "benchmark": "CARE 2025 Liver Track 4 (liver fibrosis staging, S4)",
+      "metric": "classification accuracy",
+      "value": 75.8,
+      "value_str": "75.8% accuracy (S4 cirrhosis)",
+      "paper": "https://arxiv.org/abs/2609.11380",
+      "paper_title": "DINO-Med: A Unified Patch-Based Adaptation Framework for Multi-Modal Medical Image Analysis"
+    },
+    {
+      "benchmark": "OCT multi-landmark tracking (motion robustness)",
+      "metric": "RMSE",
+      "value": 1,
+      "value_str": "<1 mm RMSE up to 100 mm/s, 9 landmarks",
+      "paper": "https://arxiv.org/abs/2609.11330",
+      "paper_title": "Predictive Multi-Landmark OCT Tracking for Increased Motion Robustness"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "date": "2026-09-11",
+  "insights": [
+    {
+      "title": "3D Gaussian Splatting이 안개·홀로그램·레이더까지 만능 장면 표현으로 확장",
+      "claim": "Tri-DehazeGS(안개-장면 분리 3DGS), CVQPG(복소수 위상 Gaussian으로 홀로그램 표현), 3D Point Splatting(mmWave 레이더 신호를 Gaussian에 실어 렌더링) 세 편이 같은 날 나오며, Gaussian Splatting이 가시광선 카메라 전용 도구를 벗어나 서로 다른 물리 신호를 표현하는 일반적인 미분 가능 렌더링 틀로 굳어지는 흐름이 뚜렷해졌다.",
+      "papers": [
+        {
+          "title": "Tri-DehazeGS: Scene--Medium Decoupled Gaussian Splatting with Transmittance-Aware Optimization",
+          "arxiv": "https://arxiv.org/abs/2609.11223",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Hologram Representation via Quadratic Phase Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2609.11434",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "3D Point Splatting for mmWave Radar Novel View Synthesis",
+          "arxiv": "https://arxiv.org/abs/2609.11894",
+          "importance_tags": ["[방법전환]", "[표준후보]"]
+        }
+      ]
+    },
+    {
+      "title": "DUSt3R류 feed-forward 기하 모델이 물체 분리와 의료 인터벤션 정합까지 침투",
+      "claim": "SAMV-DUSt3R(SAM2 마스크로 3D 장면 내 물체를 분리)와 XPos3R(수술 중 X-ray와 수술 전 3D 볼륨을 환자별 재학습 없이 정합)가 같은 날 나오며, 어제 관찰된 '카메라를 가리지 않는 feed-forward 기하 모델' 흐름이 물체 단위 분리와 완전히 다른 도메인(의료 인터벤션)의 백본으로 재활용되는 단계로 넘어갔다.",
+      "papers": [
+        {
+          "title": "SAMV-DUSt3R: Instance-Centric 3D Scene Decoupling from Sparse Multi-Views",
+          "arxiv": "https://arxiv.org/abs/2609.11279",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "XPos3R: Cross-Modal Transformer for Intraoperative 2D/3D Registration",
+          "arxiv": "https://arxiv.org/abs/2609.10733",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        }
+      ]
+    },
+    {
+      "title": "의료 영상 복원·분석이 모달리티 경계를 넘는 공유 해부 구조를 활용하는 쪽으로",
+      "claim": "UniH³(여러 모달리티·복원 과제에 공통된 해부학적 패턴을 기억했다 꺼내 쓰는 all-in-one 복원)와 DINO-Med(자연 이미지 foundation model 특징을 패치 단위로 의료 영상에 적용) 두 편이 모이며, 모달리티마다 따로 모델을 만들던 관행에서 모달리티를 넘나드는 공통 구조를 먼저 찾아 재활용하는 쪽으로 관심이 옮겨가고 있다.",
+      "papers": [
+        {
+          "title": "UniH³: Unifying Hierarchical Homogeneity and Heterogeneity for All-in-One Medical Image Restoration",
+          "arxiv": "https://arxiv.org/abs/2609.11156",
+          "importance_tags": ["[방법전환]", "[표준후보]"]
+        },
+        {
+          "title": "DINO-Med: A Unified Patch-Based Adaptation Framework for Multi-Modal Medical Image Analysis Applied to Liver Fibrosis Staging",
+          "arxiv": "https://arxiv.org/abs/2609.11380",
+          "importance_tags": ["[방법전환]"]
+        }
+      ]
+    },
+    {
+      "title": "Virtual staining이 실험실 시연을 벗어나 임상 실사용 조건을 겨냥하는 쪽으로 회복",
+      "claim": "COMB(기가픽셀 WSI 전체를 이음매 없이 처리하는 virtual staining)와 AI 기반 virtual iodine staining 내시경 다기관 검증이 같은 날 나오며, 이틀 연속 사실상 0편이던 이 버킷에서 처음으로 '임상 실사용 조건에서 버티는가'를 겨냥한 신호가 확인됐다.",
+      "papers": [
+        {
+          "title": "Seamless Whole Slide Label-Free Virtual Staining (COMB)",
+          "arxiv": "https://arxiv.org/abs/2609.10914",
+          "importance_tags": ["[실사용전환]"]
+        },
+        {
+          "title": "Artificial intelligence-based virtual iodine staining model for esophageal squamous cell carcinoma: a multicenter proof-of-concept study",
+          "arxiv": "https://doi.org/10.1007/s00464-026-13347-7",
+          "importance_tags": ["[실사용전환]", "[위험보류]"]
+        }
+      ]
+    },
+    {
+      "title": "현미경·SPM 영상 복원이 물리 기반 자기지도학습과 불확실성 정량화로 이동",
+      "claim": "Physics-Informed SPM Reconstruction(순차 스캔을 베이지안 상태추정으로 재정의해 불확실성 지도까지 산출), 물리 정보 기반 형광현미경 자기지도 노이즈 제거, 연속 신경 표현 기반 전자현미경 세 편이 모이며, 정답 쌍 지도학습 대신 촬영 물리 자체를 모델에 명시적으로 넣어 데이터 없이도 믿을 수 있는 복원을 만들자는 방향이 관찰된다.",
+      "papers": [
+        {
+          "title": "Physics-Informed Sequential Reconstruction of Scanning Probe Microscopy Images with Calibrated Uncertainty",
+          "arxiv": "https://arxiv.org/abs/2609.10638",
+          "importance_tags": ["[방법전환]", "[평가축]"]
+        },
+        {
+          "title": "Physics-informed self-supervised denoising for fluorescence microscopy via structure and intensity priors",
+          "arxiv": "https://doi.org/10.1016/j.isci.2026.117261",
+          "importance_tags": ["[방법전환]", "[위험보류]"]
+        },
+        {
+          "title": "Learning continuous neural representations enables scalable and high-fidelity electron microscopy",
+          "arxiv": "https://doi.org/10.1016/j.xcrp.2026.103540",
+          "importance_tags": ["[인프라]", "[위험보류]"]
+        }
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "A. Gaussian Splatting을 랩의 산란매질/위상 센서 데이터에 물리 모델별로 재구성",
+      "claim": "Tri-DehazeGS의 장면-매질 분리 표현과 3D Point Splatting의 복소수 phasor 렌더링 설계를 참고해, 랩이 다루는 산란매질 통과 촬영이나 위상 기반 센서(홀로그래피, 간섭계) 데이터에 맞는 물리 모델을 Gaussian Splatting에 이식할 수 있는지 검토한다.",
+      "supporting_papers": [
+        {"title": "Tri-DehazeGS: Scene--Medium Decoupled Gaussian Splatting with Transmittance-Aware Optimization", "arxiv": "https://arxiv.org/abs/2609.11223"},
+        {"title": "Hologram Representation via Quadratic Phase Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2609.11434"},
+        {"title": "3D Point Splatting for mmWave Radar Novel View Synthesis", "arxiv": "https://arxiv.org/abs/2609.11894"}
+      ]
+    },
+    {
+      "title": "B. DUSt3R류 백본을 랩의 이종 모달리티 정합 문제에 적용",
+      "claim": "XPos3R가 보여준 것처럼, DUSt3R류 feed-forward 기하 모델을 시료별 재학습 없이 랩이 다루는 서로 다른 두 촬영 모달리티(예: 2D 현미경 영상과 3D 볼륨 스캔) 정합에 바로 적용했을 때의 정합 오차를 측정한다.",
+      "supporting_papers": [
+        {"title": "XPos3R: Cross-Modal Transformer for Intraoperative 2D/3D Registration", "arxiv": "https://arxiv.org/abs/2609.10733"},
+        {"title": "SAMV-DUSt3R: Instance-Centric 3D Scene Decoupling from Sparse Multi-Views", "arxiv": "https://arxiv.org/abs/2609.11279"}
+      ]
+    },
+    {
+      "title": "C. UniH³의 모달리티 간 공유 구조 메모리를 랩 다중 모달리티 복원 파이프라인에 적용",
+      "claim": "UniH³의 계층적 동질성 메모리(H2M) 개념을 랩이 보유한 다중 조명·파장 현미경 영상 복원 파이프라인에 적용해, 모달리티별 개별 모델 대비 공유 구조 활용 모델이 데이터 효율과 성능 양쪽에서 얼마나 나은지 비교한다.",
+      "supporting_papers": [
+        {"title": "UniH³: Unifying Hierarchical Homogeneity and Heterogeneity for All-in-One Medical Image Restoration", "arxiv": "https://arxiv.org/abs/2609.11156"},
+        {"title": "DINO-Med: A Unified Patch-Based Adaptation Framework for Multi-Modal Medical Image Analysis Applied to Liver Fibrosis Staging", "arxiv": "https://arxiv.org/abs/2609.11380"}
+      ]
+    },
+    {
+      "title": "D. COMB의 타일 일관성 메모리를 랩 대형 슬라이드 파이프라인에 적용",
+      "claim": "COMB의 Consistency Memory Bank(인접 타일 정보를 저장·검색해 이음매를 없애는 방식)를 랩의 대형 슬라이드/타일 기반 영상 처리 파이프라인에 적용해, 기존 patch 단위 추론 대비 이음매 아티팩트가 실제로 줄어드는지 시각적·정량적으로 비교한다.",
+      "supporting_papers": [
+        {"title": "Seamless Whole Slide Label-Free Virtual Staining (COMB)", "arxiv": "https://arxiv.org/abs/2609.10914"}
+      ]
+    }
+  ]
+}

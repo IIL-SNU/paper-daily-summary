@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 10 Sep 2026 11:20:14 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 11:18:54 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-09-11 (금요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-09-11.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-09-11.html</guid>
+      <pubDate>Fri, 11 Sep 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 arXiv new+cross 총 464건(cs.LG 171·cs.CV 89·cs.AI 171·eess.IV 9·eess.SP 24) 중 ROI 버킷에 걸린 건 저널 포함 전체 스캔 773건 기준 216건(27.9%)입니다. 저널은 Crossref/OpenAlex 405편을 수집했습니다. 어제(27.8%)와 거의 같은 선택 비율로, 이번 주 들어 arXiv 물량이 안정적인 평시 수준을 유지하고 있다는 뜻입니다.]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-09-10 (목요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-09-10.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-06.html</guid>
       <pubDate>Mon, 06 Jul 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[오늘 브리핑은 사실상 지난주 arXiv 흐름이 멈춘 자리를 저널이 대신 채운 날입니다. 오늘 아침 발행된 주간 회고에 따르면 지난주(6/29~7/3)는 3D 장면 재구성이 장면별 최적화에서 feed-forward 단일 추론으로 넘어가고, 역문제 해법이 diffusion prior 한 방향에서 zero-shot·PnP·unrolling 등 여러 갈래로 나뉜 한 주였습니다. 계산광학 핵심 주제(FP, 위상, 메타표면)는 지난주에도 arXiv가 아니라 저널에서만 움직였는데, 오늘은 그 arXiv 쪽 신호 자체가 완전히 사라지면서 계산광학 코어 주제가 저널 단독으로 하루 전체를 채우는 극단적인 하루가 됐습니다.]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Daily Briefing — 2026-07-03 (금요일)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-07-03.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-03.html</guid>
-      <pubDate>Fri, 03 Jul 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘(2026-07-03 금요일) arXiv /new에는 cs.LG 181편, cs.CV 155편, cs.AI 228편, eess.IV 6편, eess.SP 17편으로 총 587편이 발행됐습니다. 전체 스캔 884건(저널 포함) 중 ROI 배정 229건(25.9%)으로, 어제(2026-07-02) 819건 중 261건(31.9%)보다 스캔량은 늘었지만 배정 비율은 낮아졌습니다. 오늘 가장 뚜렷한 신호는 편수가 아니라 문제 설정의 반복입니다 — 라이트시트 현미경의 압축 측정, 저선량 CT의 노이즈, 치과 파노라마 X-ray의 극단적 정보 부족이라는 서로 다른 세 상황이, 전부 "부족한 측정값을 학습 기반 사전 정보로 메워 3차원 구조를 되살린다"는 같은 재구성 문제로 수렴…]]></description>
     </item>
   </channel>
 </rss>

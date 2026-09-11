@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-11",
+  "source_listing_date": "2026-09-11",
+  "source_mode": "new",
+  "note": "2026-09-11(금) 정상 daily 실행. cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 /new listing이 \"Friday, 11 September 2026\"으로 post_date와 일치해 정상 daily(source_mode=new)로 발행한다. arXiv new+cross 464건(cs.LG 171·cs.CV 89·cs.AI 171·eess.IV 9·eess.SP 24)과 Crossref/OpenAlex 저널 405편을 classify.py가 합쳐 총 773건을 스캔했고 216건(27.9%)이 9개 ROI 버킷에 배정됐다. 오늘 가장 뚜렷한 arXiv 신호는 3D Gaussian Splatting이 안개(Tri-DehazeGS), 홀로그램(CVQPG), mmWave 레이더(3D Point Splatting)처럼 서로 다른 물리 신호를 표현하는 만능 장면 표현으로 번지는 흐름과, 어제 관찰된 DUSt3R/VGGT류 feed-forward 기하 모델이 물체 분리(SAMV-DUSt3R)와 의료 인터벤션 2D/3D 정합(XPos3R)까지 침투하는 흐름이다. 의료 영상 복원·분석에서는 모달리티 간 공유 해부 구조를 활용하는 UniH³·DINO-Med 클러스터가 확인됐다. Virtual Staining/Pathology는 이틀 연속 실신호 0편이던 것에서 오늘은 2편(COMB, virtual iodine staining 내시경)으로 소폭 회복됐다. 다만 편수 대비 실제 신호는 여전히 얇다 — Tomography/3D Imaging 36건 중 실제 계산 이미징 방법론 신호는 약 6~8편, Reconstruction/Inverse Problems 18건 중 실제 신호는 3~4편에 그친다. 계산광학 코어(Fourier Ptychography 0편, Lensless 실질 0편, Light-Field 1편 판단 보류)는 오늘 사실상 비어 있지만, 저널 쪽에서 스냅샷 다중분광 메타표면 이미징이라는 실질적 하드웨어 신호가 확인됐다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 171,
+      "cs.CV": 89,
+      "cs.AI": 171,
+      "eess.IV": 9,
+      "eess.SP": 24
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 405
+  },
+  "totals": {
+    "total_scanned": 773,
+    "selected": 216
+  },
+  "classified": {
+    "total_scanned": 773,
+    "selected": 216,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 4,
+      "Meta-Optics/Diffractive": 11,
+      "Light-Field/Novel Sensors": 1,
+      "Tomography/3D Imaging": 36,
+      "Virtual Staining/Pathology": 33,
+      "Reconstruction/Inverse Problems": 18,
+      "Deep Learning Methods": 112
+    }
+  },
+  "daily_thesis": "오늘 arXiv는 정상 listing이고, 가장 뚜렷한 신호는 3D Gaussian Splatting이 안개·홀로그램·mmWave 레이더처럼 서로 다른 물리 신호를 표현하는 만능 장면 표현으로 확장되는 흐름(Tri-DehazeGS, CVQPG, 3D Point Splatting)과, 어제 관찰된 DUSt3R류 feed-forward 기하 모델이 물체 분리와 의료 인터벤션의 2D/3D 정합까지 확장되는 흐름(SAMV-DUSt3R, XPos3R)이다. 의료 영상 복원·분석에서는 모달리티 간 공유 해부 구조를 활용하려는 UniH³·DINO-Med 클러스터가 확인됐고, virtual staining은 이틀 만에 실신호를 회복했다."
+}
