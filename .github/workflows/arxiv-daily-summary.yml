@@ -226,6 +226,8 @@ jobs:
       - name: Run Claude Code release agent
         if: ${{ steps.plan.outputs.act == 'true' }}
         shell: bash
+        env:
+          IS_SANDBOX: "1"
         run: |
           set -euo pipefail
           # Headless CI: no interactive approver, so bypass permission prompts.
