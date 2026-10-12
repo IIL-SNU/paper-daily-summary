@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T02:18:58+00:00",
+  "generated_at": "2026-10-12T04:59:35+00:00",
   "source": "repo-local saved daily /new metadata only; no external arXiv fetch",
   "note": "Per-category /new counts include cross-listed entries when recorded as new+cross. Replacement/update-only entries are excluded. Weekend reports skipped.",
   "windows": [
@@ -924,6 +924,76 @@
       "scope": "new+cross; replacements excluded",
       "source": "trends/2026-09-11.json",
       "weekday": "Fri"
+    },
+    {
+      "date": "2026-10-06",
+      "total": 1497,
+      "by_cat": {
+        "cs.LG": 593,
+        "cs.CV": 285,
+        "cs.AI": 550,
+        "eess.IV": 12,
+        "eess.SP": 57
+      },
+      "scope": "new+cross; replacements excluded",
+      "source": "trends/2026-10-06.json",
+      "weekday": "Tue"
+    },
+    {
+      "date": "2026-10-07",
+      "total": 896,
+      "by_cat": {
+        "cs.LG": 354,
+        "cs.CV": 164,
+        "cs.AI": 350,
+        "eess.IV": 5,
+        "eess.SP": 23
+      },
+      "scope": "new+cross; replacements excluded",
+      "source": "trends/2026-10-07.json",
+      "weekday": "Wed"
+    },
+    {
+      "date": "2026-10-08",
+      "total": 851,
+      "by_cat": {
+        "cs.LG": 352,
+        "cs.CV": 185,
+        "cs.AI": 282,
+        "eess.IV": 9,
+        "eess.SP": 23
+      },
+      "scope": "new+cross; replacements excluded",
+      "source": "trends/2026-10-08.json",
+      "weekday": "Thu"
+    },
+    {
+      "date": "2026-10-09",
+      "total": 872,
+      "by_cat": {
+        "cs.LG": 324,
+        "cs.CV": 207,
+        "cs.AI": 301,
+        "eess.IV": 7,
+        "eess.SP": 33
+      },
+      "scope": "new+cross; replacements excluded",
+      "source": "trends/2026-10-09.json",
+      "weekday": "Fri"
+    },
+    {
+      "date": "2026-10-12",
+      "total": 611,
+      "by_cat": {
+        "cs.LG": 262,
+        "cs.CV": 153,
+        "cs.AI": 161,
+        "eess.IV": 8,
+        "eess.SP": 27
+      },
+      "scope": "new+cross; replacements excluded",
+      "source": "trends/2026-10-12.json",
+      "weekday": "Mon"
     }
   ]
 }

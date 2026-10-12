@@ -1,0 +1,150 @@
+{
+ "date": "2026-10-06",
+ "insights": [
+  {
+   "title": "3D Gaussian Splatting이 모바일 실시간, 희소 뷰, 세포 영상, 역학 시뮬레이션까지 응용 영역을 동시에 넓힘",
+   "claim": "Mobile-4DGS(모바일 실시간 정적·동적 통합 렌더링), Sparse-View 4D Gaussian Splatting(시공간 사전+생성 보조), LoCoSplat(최소 3D 추론 feed-forward), CellSplat4D(PSF 인식 희소 로봇 세포 영상), VolS-GS(체적 서브서피스 산란 relighting), Sparse-GS2Mesh(스테레오+2DGS 기반 표면 복원), MaRO-GS(마스크 불일치에 강건한 object-centric GS), GS-Pool(객체 단위 변화 탐지), 3DGS-SPH(고체역학 정방향·역방향 시뮬레이션) 9편이 같은 날 나왔다는 점은, Gaussian Splatting이라는 하나의 표현 방식이 더 이상 '예쁜 3D 장면 복원' 한 가지 용도에 머물지 않고, 계산 자원이 적은 모바일 기기, 카메라 뷰가 희소한 상황, 세포 단위 현미경 영상, 공학 시뮬레이션처럼 서로 전혀 다른 제약 조건에 맞춰 각자 변형되고 있다는 뜻이다. 다만 이번 묶음은 arXiv /pastweek 날짜 섹션에서 초록 없이 제목·subject만으로 복구한 backfill 데이터라, 각 논문이 실제로 어떤 수치로 기존 방법을 앞서는지는 본문 확인이 필요하다.",
+   "papers": [
+    {
+     "title": "Mobile-4DGS: Unified Static-Dynamic Real-time Mobile Gaussian Splatting",
+     "arxiv": "https://arxiv.org/abs/2610.05289",
+     "importance_tags": ["[실사용전환]"]
+    },
+    {
+     "title": "Sparse-View 4D Gaussian Splatting via Spatiotemporal Priors and Generative Assistance",
+     "arxiv": "https://arxiv.org/abs/2610.04606",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "CellSplat4D: PSF-Aware 4D Gaussian Splatting for Sparse Robotic Live-Cell Imaging",
+     "arxiv": "https://arxiv.org/abs/2610.04199",
+     "importance_tags": ["[방법전환]", "[데이터전환]"]
+    },
+    {
+     "title": "VolS-GS: Relightable Gaussian Splatting with Volumetric Subsurface Scattering",
+     "arxiv": "https://arxiv.org/abs/2610.04007",
+     "importance_tags": ["[방법전환]"]
+    }
+   ]
+  },
+  {
+   "title": "이미지 초해상도·복원이 열화상, 실제 저하 조건, 동결된 파운데이션 잠재공간으로 동시에 퍼짐",
+   "claim": "TIRMamba(서브밀리언 파라미터 열화상 초해상도 state-space 네트워크), AstraSR(GPT-6 Astra 기반 실세계 열화상 초해상도), DriftSR(분포 드리프트를 이용한 원스텝 실세계 초해상도), Super-Resolution in The Right Latent Space(동결된 vision foundation model의 잠재공간을 그대로 쓰는 초해상도) 4편이 같은 날 모였다. 예전에는 초해상도 연구가 깨끗한 다운샘플링-업샘플링 쌍으로 학습하는 합성 환경 위주였다면, 이번 묶음은 실제 촬영 저하(real-world degradation), 열화상처럼 가시광 밖의 센서, 그리고 처음부터 다시 학습하지 않고 이미 학습된 파운데이션 모델의 표현을 재사용하는 방향으로 동시에 움직이고 있다는 신호다.",
+   "papers": [
+    {
+     "title": "TIRMamba: A Thermal-Prior-Modulated State-Space Network for Sub-Million-Parameter Infrared Image Super-Resolution",
+     "arxiv": "https://arxiv.org/abs/2610.05182",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "AstraSR: Real-World Thermal Super-Resolution with GPT-6 Astra",
+     "arxiv": "https://arxiv.org/abs/2610.05910",
+     "importance_tags": ["[실사용전환]"]
+    },
+    {
+     "title": "DriftSR: One-Step Real-World Image Super-Resolution via Distribution Drifting",
+     "arxiv": "https://arxiv.org/abs/2610.04819",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "Super-Resolution in The Right Latent Space: A Frozen Vision-Foundation Substrate",
+     "arxiv": "https://arxiv.org/abs/2610.04781",
+     "importance_tags": ["[방법전환]"]
+    }
+   ]
+  },
+  {
+   "title": "Diffusion 모델에서 특정 개념을 지우는 연구(unlearning/concept erasure)가 이미지·비디오 양쪽에서 동시에 늘어남",
+   "claim": "Your Unlearning Gives You Away(지운 개념을 역으로 식별해내는 공격), No Concept Escapes the Audit(감사 가능한 개념 지우기), VisualErase(텍스트-이미지 확산모델의 강건한 개념 지우기), FADE(비디오 확산모델의 다중 개념 지우기) 4편이 같은 날 나왔다. 이는 diffusion 모델에서 저작권·유해 콘텐츠와 관련된 개념을 제거하는 기법 자체가 이제 '지웠다고 주장하는 것'과 '실제로 지워졌는지 검증하는 것' 사이의 공방으로 번지고 있고, 그 대상도 정지 이미지에서 비디오로 넓어지고 있다는 신호다.",
+   "papers": [
+    {
+     "title": "Your Unlearning Gives You Away: Identifying Erased Concepts in Diffusion Models",
+     "arxiv": "https://arxiv.org/abs/2610.05601",
+     "importance_tags": ["[경고신호]"]
+    },
+    {
+     "title": "No Concept Escapes the Audit: Auditing-Aware Unlearning for Verifiable Concept Erasure in Diffusion Models",
+     "arxiv": "https://arxiv.org/abs/2610.05401",
+     "importance_tags": ["[평가축]"]
+    },
+    {
+     "title": "VisualErase: Dual-Branch Visual Trajectory Redirection for Robust Concept Erasure in Text-to-Image Diffusion Models",
+     "arxiv": "https://arxiv.org/abs/2610.05000",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "FADE: Frame-Aware Diffusion-Transformer-based Multi-Concept Erasure for Video Unlearning",
+     "arxiv": "https://arxiv.org/abs/2610.03980",
+     "importance_tags": ["[방법전환]"]
+    }
+   ]
+  },
+  {
+   "title": "Virtual staining/label-free 영상이 수의학, 비지도학습, 광음향 혈류 매핑으로 응용 범위를 넓힘",
+   "claim": "Assessment of Transfer Learning for H&E Virtual Staining in Veterinary Oncology(수의 종양학으로 확장), High-fidelity unsupervised virtual staining via progressive Schrödinger bridge dynamics(정답 쌍 없는 비지도 virtual staining), Label-free hemodynamic mapping via ultrafast power Doppler-enhanced photoacoustic imaging(라벨 없는 광음향 혈류 매핑) 3편이 모였다. 공통점은 '염색하지 않고도 염색한 것처럼 보여주거나 기능을 측정한다'는 label-free 철학을 사람 병리가 아닌 수의학, 지도학습 대신 비지도학습, 조직 염색이 아닌 혈류 기능 영상까지로 넓히고 있다는 점이다.",
+   "papers": [
+    {
+     "title": "Assessment of Transfer Learning for H&E Virtual Staining in Veterinary Oncology",
+     "arxiv": "https://doi.org/10.3390/jimaging12100490",
+     "importance_tags": ["[데이터전환]"]
+    },
+    {
+     "title": "High-fidelity unsupervised virtual staining for digital pathology via progressive Schrödinger bridge dynamics",
+     "arxiv": "https://doi.org/10.1631/eng.itee.2026.0118",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "Label-free hemodynamic mapping via ultrafast power Doppler-enhanced photoacoustic imaging reveals early therapy-induced functional changes in the tumor",
+     "arxiv": "https://doi.org/10.1038/s44303-026-00192-5",
+     "importance_tags": ["[실사용전환]"]
+    }
+   ]
+  },
+  {
+   "title": "의료·과학 영상 역문제에 diffusion과 물리 정보 결합이 SAR·MRI·PDE 등 서로 다른 신호에서 동시에 퍼짐",
+   "claim": "Diffusion Meets Unrolling(SAR 영상의 압축 복원에 diffusion과 unrolling을 교차 적용), MRpro(모델 기반·학습 기반·정량 MRI를 아우르는 오픈 프레임워크, 저자기장 MRI 적용), Right Bregman proximal gradient(Poisson 역문제), Backward-Consistent Diffusion Sampling(희소 관측 PDE 역문제) 4편이 모였다. 레이더 영상, 자기공명영상, 편미분방정식이라는 서로 다른 신호 소스가 '관측이 희소하거나 노이즈가 있을 때 물리 모델과 diffusion 생성 모델을 함께 쓴다'는 같은 설계 철학을 공유하고 있다는 점에서, 이 틀이 특정 모달리티 전용이 아니라 범용 역문제 해결 전략으로 자리잡고 있다는 뜻이다.",
+   "papers": [
+    {
+     "title": "Diffusion Meets Unrolling: Compressive SAR Image Reconstruction with Interleaved Learned Corrections",
+     "arxiv": "https://arxiv.org/abs/2610.06107",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "MRpro: Open Framework for Model-Based, Learned, and Quantitative MR Imaging-Application to Low-Field MRI",
+     "arxiv": "https://doi.org/10.1002/nbm.70405",
+     "importance_tags": ["[인프라]", "[표준후보]"]
+    },
+    {
+     "title": "Right Bregman proximal gradient with application to Poisson inverse problems",
+     "arxiv": "https://arxiv.org/abs/2610.06579",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "Backward-Consistent Diffusion Sampling for Sparsely Observed PDE Inverse Problems",
+     "arxiv": "https://arxiv.org/abs/2610.04624",
+     "importance_tags": ["[방법전환]"]
+    }
+   ]
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "Gaussian Splatting 변형들의 응용별 공통 모듈 비교표 만들기",
+   "claim": "Mobile-4DGS, CellSplat4D, VolS-GS, Sparse-GS2Mesh처럼 같은 날 나온 서로 다른 응용 GS 변형들이 실제로 어떤 공통 모듈(압축, PSF 모델링, 희소 뷰 보강)을 재사용하는지 코드 확인 후 비교표를 만들어, 랩의 현미경·산란매질 데이터에 어떤 모듈이 바로 이식 가능한지 가늠한다.",
+   "supporting_papers": [
+    {"title": "Mobile-4DGS", "arxiv": "https://arxiv.org/abs/2610.05289"},
+    {"title": "CellSplat4D", "arxiv": "https://arxiv.org/abs/2610.04199"},
+    {"title": "VolS-GS", "arxiv": "https://arxiv.org/abs/2610.04007"}
+   ]
+  },
+  {
+   "title": "열화상 초해상도 4편의 저하 모델 가정을 정리해 랩 열화상 파이프라인에 대입",
+   "claim": "TIRMamba·AstraSR·DriftSR·Super-Resolution in The Right Latent Space가 가정하는 저하 모델(센서 노이즈, 블러, 실측 vs 합성)을 정리하고, 랩이 보유한 실제 열화상 데이터에서 어떤 가정이 가장 잘 맞는지 PSNR/SSIM 기준으로 비교한다.",
+   "supporting_papers": [
+    {"title": "TIRMamba", "arxiv": "https://arxiv.org/abs/2610.05182"},
+    {"title": "AstraSR", "arxiv": "https://arxiv.org/abs/2610.05910"},
+    {"title": "DriftSR", "arxiv": "https://arxiv.org/abs/2610.04819"}
+   ]
+  }
+ ]
+}

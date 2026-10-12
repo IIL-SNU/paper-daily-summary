@@ -1,0 +1,110 @@
+{
+ "date": "2026-10-12",
+ "insights": [
+  {
+   "title": "Gaussian Splatting가 반사·유체·물성 편집 같은 물리 현상과 로봇 조작 다운스트림까지 흡수",
+   "claim": "PhysForge(비디오 확산모델을 참조로 물체별 물성을 추정해 조합 가능한 물리 시뮬레이션으로 변환), Gaussian Splatting with Reflections(근접 반사까지 표현하는 2DGS 기반 프레임워크), Make It Flow(정적 3DGS 장면에 흐르는 물을 애니메이션으로 추가), Splat2Act(휴대폰 스캔만으로 VLA 로봇 정책을 특정 공간에 맞게 개인화) 4편이 같은 날 모였다. Splat2Act는 특히 구체적인데, 범용 정책 pi_0.5가 적응 없이는 수거 성공률 0%였던 실제 배포 환경에서, 3DGS로 만든 디지털 트윈 기반 real-to-sim-to-real 파이프라인으로 학습시킨 뒤 62.5%(시뮬레이션), 실제 Stretch 3 로봇에서는 63.9%까지 끌어올렸다. 이는 Gaussian Splatting이 장면을 '보기 좋게 복원하는' 단계를 넘어, 반사·유체 같은 물리 현상을 직접 다루고 로봇이 실제로 쓸 수 있는 학습 환경을 자동 생성하는 쪽으로 쓰임새가 넓어지고 있다는 뜻이다.",
+   "papers": [
+    {
+     "title": "PhysForge: Material-Controllable 3D Reconstruction with Separable Components",
+     "arxiv": "https://arxiv.org/abs/2610.13681",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "Gaussian Splatting with Reflections Guided by What is Seen",
+     "arxiv": "https://arxiv.org/abs/2610.13757",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "Make It Flow: Animating Water in 3D Gaussian Splatting Scenes",
+     "arxiv": "https://arxiv.org/abs/2610.13860",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "Splat2Act: From Captured Scenes to Personalized VLA Manipulation",
+     "arxiv": "https://arxiv.org/abs/2610.13945",
+     "importance_tags": ["[실사용전환]", "[스케일업]"]
+    }
+   ]
+  },
+  {
+   "title": "Feed-forward/효율적 3DGS 최적화가 가지치기·밀도화·압축 표현으로 계속 세분화",
+   "claim": "SplatQ(영역별 예산 배분과 공동 삭제 효과를 함께 고려하는 가지치기), Efficient Confidence-Aware Densification(불투명도 대신 이미지 오차와 학습된 신뢰도로 밀도화 위치를 정함), CompactSplat(균일하게 픽셀당 Gaussian을 배정하는 대신 공간 적응적으로 분포를 조절), NovaSplat(짧은 스마트폰 동영상만으로 CAD 모델 없는 6D 물체 자세 추정) 4편이 모였다. 이번 주 내내 이어진 GS 효율화 흐름이 오늘은 가지치기 기준(영역+상호작용), 밀도화 기준(오차 기반), 표현 자체의 공간 적응성, 자세 추정이라는 네 갈래로 계속 세분화되고 있다.",
+   "papers": [
+    {
+     "title": "SplatQ: Interaction-Aware Pruning of 3D Gaussian Splatting via Quadratic Selection",
+     "arxiv": "https://arxiv.org/abs/2610.13503",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "Efficient Confidence-Aware Densification for 3DGS",
+     "arxiv": "https://arxiv.org/abs/2610.13541",
+     "importance_tags": ["[방법전환]", "[평가축]"]
+    },
+    {
+     "title": "CompactSplat: Spatially Adaptive Gaussian Distribution for Feedforward Scene Reconstruction",
+     "arxiv": "https://arxiv.org/abs/2610.13177",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "NovaSplat: Model-Free 6D Object Pose Estimation via 3D Gaussian Splatting Onboarding and Refinement",
+     "arxiv": "https://arxiv.org/abs/2610.13309",
+     "importance_tags": ["[방법전환]"]
+    }
+   ]
+  },
+  {
+   "title": "의료 영상 표현학습이 당연하게 여기던 설계 가정(공간 attention, 무작위 샘플링, 데이터셋 일반화)을 재검증",
+   "claim": "Dataset-Specific Encoding(17개 공개 데이터셋·8개 고정 표현을 조사해, 브레인 MRI foundation model이 다른 데이터셋에서 실패하는 원인이 데이터셋 신호 자체가 아니라 같은 내용이 데이터셋마다 다른 방향으로 인코딩되기 때문임을 밝힘), Where to Look Matters(3D 의료 영상 자기지도학습의 무작위 서브볼륨 샘플링이 모든 영역을 동등하게 취급하는 암묵적 가정에 의문을 제기), Learning Features Not Layouts(자연 이미지용 공간 토큰 self-attention이 의료 영상에는 맞지 않는 설계라는 점을 지적) 3편이 모였다. 셋 다 '모델을 더 키우자'가 아니라 의료 영상 표현학습이 자연 이미지에서 물려받은 기본 설계 가정 자체를 다시 검증한다는 공통점이 있다.",
+   "papers": [
+    {
+     "title": "Dataset-Specific Encoding of Image Content Underlies Cross-Dataset Failure in Brain MRI Foundation Models",
+     "arxiv": "https://arxiv.org/abs/2610.13027",
+     "importance_tags": ["[해부분석]", "[경고신호]"]
+    },
+    {
+     "title": "Where to Look Matters: Rethinking Sub-Volume Sampling in 3D Medical Self-supervised Learning",
+     "arxiv": "https://arxiv.org/abs/2610.13915",
+     "importance_tags": ["[해부분석]"]
+    },
+    {
+     "title": "Learning Features, Not Layouts: Feature-Axis Attention as a Transfer Prior for Medical Imaging",
+     "arxiv": "https://arxiv.org/abs/2610.13012",
+     "importance_tags": ["[방법전환]", "[해부분석]"]
+    }
+   ]
+  },
+  {
+   "title": "비디오/원격탐사 초해상도가 소비자급 하드웨어·구조 인식 조건으로 효율화",
+   "claim": "High-Throughput Generative Video Super-Resolution(사전학습된 구성요소만으로 소비자용 GPU 한 대에서 돌아가는 제로샷 생성형 비디오 초해상도)와 MOSAIC(원격탐사 영상 초해상도에서 물체 중심 구조 조건을 학습해 배경과 물체를 분리) 2편이 모였다. 둘 다 '더 큰 모델을 처음부터 다시 학습'이 아니라 기존 구성요소를 재사용하거나 구조적 조건을 더 똑똑하게 설계해 초해상도를 실용적으로 만들려는 방향이다.",
+   "papers": [
+    {
+     "title": "High-Throughput Generative Video Super-Resolution on a Single Consumer GPU",
+     "arxiv": "https://arxiv.org/abs/2610.13179",
+     "importance_tags": ["[실사용전환]"]
+    },
+    {
+     "title": "MOSAIC: Multi-Scale Object-Centric Slot Adaptation with Image-Guided Prototype Conditioning for Remote Sensing Image Super-Resolution",
+     "arxiv": "https://arxiv.org/abs/2610.13547",
+     "importance_tags": ["[방법전환]"]
+    }
+   ]
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "Splat2Act의 real-to-sim-to-real 파이프라인을 랩의 로봇/현미경 자동화 작업에 적용 가능한지 검토",
+   "claim": "휴대폰 스캔만으로 3DGS 디지털 트윈과 시뮬레이션 오라클 기반 학습 데이터를 자동 생성하는 Splat2Act의 파이프라인을, 랩이 보유한 로봇 팔/자동화 현미경 플랫폼의 특정 작업 공간에 적용해 영점 조정 비용을 얼마나 줄일 수 있는지 검토한다.",
+   "supporting_papers": [
+    {"title": "Splat2Act", "arxiv": "https://arxiv.org/abs/2610.13945"}
+   ]
+  },
+  {
+   "title": "Dataset-Specific Encoding의 진단 방법론을 랩의 다기관 영상 데이터 일반화 평가에 적용",
+   "claim": "서로 다른 데이터셋에서 같은 내용이 다른 방향으로 인코딩되는지 확인하는 이 논문의 진단 절차를, 랩이 여러 기관/장비에서 수집한 영상 데이터로 학습한 모델에 적용해 일반화 실패의 진짜 원인(장비 특성 vs 인코딩 방향 불일치)을 가려낸다.",
+   "supporting_papers": [
+    {"title": "Dataset-Specific Encoding of Image Content Underlies Cross-Dataset Failure in Brain MRI Foundation Models", "arxiv": "https://arxiv.org/abs/2610.13027"}
+   ]
+  }
+ ]
+}

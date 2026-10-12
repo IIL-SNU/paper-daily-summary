@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-10-07</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-10-07 (수요일, Backfill)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-10-07 (수요일) · <strong>⚠️ Backfill 산출물</strong> (2026-10-12 복구 실행에서 역산 발행, 2번째)</div>
+  <div>📚 소스: pastweek-date-section — /pastweek의 "Wed, 7 Oct 2026" 날짜 섹션만 추출. <strong>title/subject 기반(abstract 없음)</strong></div>
+  <div>🔢 arXiv: cs.LG 354 · cs.CV 164 · cs.AI 350 · eess.IV 5 · eess.SP 23 (합계 896건, 카테고리별 원시 합산, replacement 제외)</div>
+  <div>🔢 저널: Crossref/OpenAlex 58편 · 전체 스캔 779건 · ROI 배정 90건 (11.6%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 가장 뚜렷한 변화는 <strong>Gaussian Splatting 연구의 무게중심이 "어디에 쓸 것인가"에서 "얼마나 믿을 수 있고 효율적인가"로 넘어갔다</strong>는 점입니다. 어제(10/6)는 모바일·세포영상·서브서피스 산란 같은 응용 다각화가 핵심이었다면, 오늘은 불확실성 정량화(Revar3r), 뷰 확장(DensiTok), 표준 비디오 코덱 압축(Efficient GS Sequence Compression)처럼 결과물의 신뢰성과 효율성을 묻는 논문 4편이 모였습니다. 한편 의료 영상에서는 처음부터 학습하는 대신 foundation model과 암시적 신경 표현을 재사용하려는 2편(심장 MRI, CT-초음파 정합)이, 3D/광 복원에서는 수중·달 표면·산란매질이라는 물리적 왜곡을 명시적으로 다루는 3편이 새로 확인됐습니다. 계산광학 코어(Fourier Ptychography, Lensless/Coded Imaging)에는 어제와 달리 각 1편씩 드물게 신호가 떴습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv는 카테고리별 원시 합산 896건(cs.LG 354·cs.CV 164·cs.AI 350·eess.IV 5·eess.SP 23, replacement 제외)으로 어제(1,497건)보다 /pastweek 날짜 섹션 자체 물량이 작았습니다. 저널 58편을 더해 전체 779건을 스캔해 90건(11.6%)을 ROI 버킷에 배정했는데, 이는 abstract 없는 title/subject 기반 분류의 한계와 오늘의 원시 물량 축소가 함께 작용한 결과입니다.</p>
+<p>Tomography/3D Imaging(10편) 중 4편이 feed-forward Gaussian Splatting의 신뢰성·효율성을 다루는 논문(Post-Training Semantic Lifting, DensiTok, Revar3r, Efficient GS Sequence Compression)이고, 나머지는 수중 3D 복원·달 표면 GS·CT-US 정합처럼 각기 다른 물리적 제약을 다루는 논문들입니다. Virtual Staining/Pathology(7편)는 대부분 오탐(기후정책 불확실성, 자카르타 MRT 평가, 치과 교정기 표면 특성)이지만, 양어장 어류 조직 병변 평가에 virtual staining을 적용한 저널 논문 1편이 확인돼 어제의 수의학 확장 흐름이 오늘은 양식업으로 이어졌습니다. Meta-Optics/Diffractive(6편)는 적외선-마이크로파 위장, 테라헤르츠 편광판 등 대부분 통신·재료 응용이고, 실제 이미징 신호는 거의 없습니다.</p>
+<p>Deep Learning Methods(56편, catch-all)는 표형(tabular)·시계열 foundation model 논문이 압도적으로 많아 이미징과 무관하지만, 그 안에서 심장 MRI 복원에 foundation model을 재사용하는 논문과 CT-초음파 변형 정합에 암시적 신경 표현을 쓰는 논문 2편이 확인됐습니다. 계산광학 코어(Fourier Ptychography/Microscopy, Lensless/Coded Imaging)는 어제 완전히 비어 있었지만 오늘은 각각 1편씩(생체광물화 미세영상, 코드화 조리개 편광 영상) 신호가 떴습니다 — 다만 둘 다 단발이라 클러스터로 묶기보다는 개별 관찰점으로 기록합니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(10/6)는 Gaussian Splatting이 모바일 실시간·세포 현미경·서브서피스 산란 등 "어디에 쓸 것인가"라는 응용 다각화가 핵심이었습니다. 오늘은 그 결과물 자체의 신뢰성과 효율성을 묻는 논문 4편(검출-의미화-표현 오차 분리, 불확실성 정량화, 뷰 확장, 비디오 코덱 압축)이 모이며, 같은 Gaussian Splatting이라는 주제 안에서 "더 많은 곳에 쓰자"에서 "쓰는 결과물을 믿고 효율적으로 다루자"로 질문이 한 단계 넘어갔습니다. Diffusion concept erasure는 어제 4편이나 모이며 뚜렷한 클러스터였지만, 오늘은 1편(Compositional Concept Erasure)만 확인돼 흐름 자체는 이어지되 강도는 약해졌습니다. Virtual staining은 어제 수의 종양학으로 확장되는 신호가 있었는데, 오늘은 양식 어류 조직 병변 평가로 또 다른 종에 적용되는 사례가 나오며 "사람 병리를 벗어난다"는 방향이 이틀 연속 이어지고 있습니다. 새로 나타난 흐름은 3D/광 복원이 수중·달 표면·산란매질이라는 서로 다른 물리적 왜곡 조건을 명시적으로 모델링하는 클러스터로, 어제는 관찰되지 않았던 각도입니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Feed-forward Gaussian Splatting이 응용 다각화에서 신뢰성·효율성(불확실성, 압축, 뷰 확장) 문제로 무게중심 이동</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.08756" target=_blank>Post-Training Semantic Lifting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.07958" target=_blank>DensiTok</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.07883" target=_blank>Revar3r</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.07795" target=_blank>Efficient GS Sequence Compression</a> <span class=pill>CV</span>
+  </td>
+  <td>어제까지 Gaussian Splatting 관련 연구는 주로 "이 표현 방식을 어떤 새로운 응용에 쓸 수 있을까"를 물었습니다. 오늘 모인 4편은 질문이 한 단계 더 나아갑니다. Post-Training Semantic Lifting은 물체를 인식하는 단계(검출), 그 인식을 3D에 투영하는 단계(의미화), 3D 표현 자체의 한계라는 세 가지 오차 원인을 분리해서 각각 어디서 실패하는지 짚어냅니다. Revar3r는 한 걸음 더 나아가, 모델이 3D를 복원할 때 "이 부분은 얼마나 확신하는지"를 정량적인 불확실성으로 내놓습니다. DensiTok은 반대로 입력된 뷰보다 더 많은 가상의 뷰를 보는 것처럼 밀도를 보강하고, Efficient GS Sequence Compression은 Gaussian Splatting으로 만든 동영상 시퀀스를 기존 표준 비디오 코덱으로 압축해 저장·전송 비용을 줄이려 합니다. 즉 "더 다양한 곳에 쓰자"는 확장이 어느 정도 포화되자, 이제는 "그 결과물을 얼마나 믿을 수 있고, 얼마나 가볍게 다룰 수 있는가"라는 운영 단계의 질문으로 자연스럽게 넘어가는 모습입니다.</td>
+  <td>Medium<br><small>같은 날 4편이 '신뢰성·효율성'이라는 운영 단계 질문에 수렴했으나 abstract 부재로 구체 수치는 확인 전</small></td>
+  <td>랩이 쓰는 feed-forward 3D 복원 파이프라인에 Revar3r의 불확실성 정량화 개념을 적용해, 어떤 촬영 조건(조명, 뷰 개수)에서 복원이 불안정해지는지 사전 플래그 지표를 설계</td>
+</tr>
+<tr>
+  <td><strong>의료 영상 복원·정합이 처음부터 학습하는 대신 foundation model과 암시적 신경 표현을 재사용하는 쪽으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.08109" target=_blank>Beyond Training from Scratch (Cardiac MRI)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.08419" target=_blank>Deformable CT-US Registration</a> <span class=pill>CV</span>
+  </td>
+  <td>심장 MRI 복원과 CT-초음파 변형 정합은 그동안 각 작업 전용 모델을 처음부터 학습시키는 방식이 일반적이었습니다. 오늘 모인 두 논문은 모두 이미 학습된 범용 표현(foundation model, 암시적 신경 표현)을 가져다 쓰는 쪽을 택했습니다. Cardiac MRI 논문은 적은 데이터로도 여러 심장 MRI 하위 작업에 일반화되는 복원 모델을 foundation model 기반으로 만들려 하고, CT-US Registration 논문은 해부학적 구조를 인식하는 암시적 신경 표현으로 두 모달리티 간 변형 정합을 풉니다. 둘 다 "의료 영상은 데이터가 적으니 작업별로 새로 학습시키자"는 오래된 가정을 벗어나려는 시도라는 공통점이 있습니다.</td>
+  <td>Low<br><small>2편이 같은 방향(foundation model/INR 재사용)에 수렴하나 서로 다른 작업(복원 vs 정합)이라 단일 벤치마크로 묶이지 않고, abstract 부재로 구체 수치 확인 전</small></td>
+  <td>랩의 다중 모달리티 영상 정합/복원 문제에 처음부터 학습한 전용 모델과 foundation model 기반 전이 모델의 데이터 효율성(학습 샘플 수 대비 성능 곡선)을 비교</td>
+</tr>
+<tr>
+  <td><strong>3D/광 영상 복원이 수중, 달 표면, 산란매질이라는 서로 다른 물리적 왜곡 조건을 명시적으로 모델링하는 쪽으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.07788" target=_blank>Image-Space Refraction Correction (Underwater)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.07110" target=_blank>MoonGS</a> <span class=pill>CV</span><br>
+    <a href="https://doi.org/10.1016/j.optlaseng.2026.110165" target=_blank>Ghost Imaging under Scattering Media</a> <span class=pill>JNL</span>
+  </td>
+  <td>3D나 광학 영상 복원 연구는 흔히 깨끗한 실내 환경이나 이상적인 광학 조건을 가정하고 설계됩니다. 오늘 모인 세 편은 모두 실제 현장에서 피할 수 없는 물리적 방해 요인을 모델 안에 명시적으로 집어넣습니다. 수중 3D 복원 논문은 평면 방수창을 통과하며 생기는 굴절을 이미지 공간에서 직접 보정해 핀홀 카메라처럼 보이게 바꾸고, MoonGS는 달 표면 사진 쌍에서 얻은 깊이 정보가 원래 노이즈가 많다는 점을 전제로 강건한 깊이 특징을 쓰며, ghost imaging 논문은 산란매질을 통과할 때 광필드 왜곡과 신호감쇠가 동시에 걸리는 상황에서 이미징이 실제로 어디까지 가능한지 한계를 분석합니다. 세 편 모두 "이상적인 조건을 가정한 알고리즘"에서 "현장의 물리적 왜곡을 모델에 넣는 알고리즘"으로 넘어가는 공통된 방향을 보여줍니다.</td>
+  <td>Low<br><small>서로 다른 환경(수중, 우주, 산란매질)이 '물리적 왜곡의 명시적 모델링'이라는 느슨한 주제로 묶였고, abstract 부재로 수치 근거는 확인 전</small></td>
+  <td>랩이 다루는 산란매질 촬영 환경에, 수중 논문의 이미지 공간 굴절 보정 아이디어를 적용 가능한 형태로 변형할 수 있는지(평면 경계면 대 랩 환경의 산란 경계 조건 차이) 타당성 검토</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ 참고: 오늘은 /pastweek 날짜 섹션 물량 자체가 작아 클러스터를 3행으로만 채웠습니다. Diffusion concept erasure(어제 4편)는 오늘 1편(Compositional Concept Erasure)뿐이라 단독 클러스터로 올리지 않고 위 '어제와 달라진 점'에서 다뤘습니다.</small></p>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 1편</strong> — <a href="https://doi.org/10.1098/rsif.2026.0369" target=_blank>Deciphering coccolith formation</a> [OAX]은 생체광물화 과정을 고급 현미경으로 분석한 논문으로, "advanced microscopy"라는 키워드로 이 버킷에 걸렸지만 Fourier ptychography 자체를 다루는지는 제목만으로 단정하기 어렵습니다. 어제(0편)보다는 신호가 생겼지만 단발이라 클러스터로 올리지 않았습니다.</li>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 1편</strong> — <a href="https://doi.org/10.1038/s41598-026-74635-9" target=_blank>Three-state polarization imaging with coded apertures</a> [OAX]는 코드화 조리개로 세 가지 편광 상태를 이미징하는 논문으로, 이 버킷의 핵심 정의에 맞는 실질 신호입니다. 어제의 완전한 공백에서 벗어난 유일한 코어 버킷 신호입니다.</li>
+    <li><strong>Phase Imaging/Holography — 오늘 배정 1편, 실제 신호 판단 보류</strong> — VLBI 관측의 고해상도 이미징에 흐름 기반 신경망을 쓴 논문으로, 위상 이미징·홀로그래피 핵심과는 거리가 있어 보이나 본문 확인 전까지는 판단을 유보합니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: feed-forward Gaussian Splatting의 신뢰성·효율성(Post-Training Semantic Lifting, DensiTok, Revar3r, Efficient GS Sequence Compression), 수중·달 표면 3D 복원(Image-Space Refraction Correction, MoonGS), 의료 영상의 foundation model/INR 재사용(Cardiac MRI Recon, CT-US Registration)</li>
+  <li><strong>저널 전용</strong>: 양식 어류 조직 병변 virtual staining, 산란매질 ghost imaging 한계 분석, 코드화 조리개 편광 영상, 생체광물화 미세영상</li>
+  <li><strong>공통 키워드</strong>: uncertainty/불확실성(arXiv는 feed-forward 3D 복원 맥락, 저널에는 해당 키워드 없음 — 오늘은 arXiv 단독 신호), scattering media(arXiv는 다루지 않고 저널의 ghost imaging 논문에서만 등장 — 수중 굴절 보정은 arXiv, 산란매질 한계 분석은 저널로 상보적)</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 GS 신뢰성/효율성이라는 뚜렷한 방법론 신호를, 저널은 응용 범위 확장(양식업 virtual staining)과 광학 한계 분석(ghost imaging)이라는 신호를 냈습니다. 계산광학 코어는 저널(OAX) 쪽에서만 드물게 신호가 났습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. Feed-forward Gaussian Splatting이 응용 다각화에서 신뢰성·효율성(불확실성, 압축, 뷰 확장) 문제로 무게중심 이동</h3>
+  <p>Post-Training Semantic Lifting, DensiTok, Revar3r, Efficient GS Sequence Compression 4편이 모이며, 어제의 응용 다각화 흐름이 오늘은 결과물의 신뢰성(불확실성 정량화)과 효율성(압축, 뷰 확장)을 묻는 운영 단계 질문으로 넘어갔다.</p>
+  <p class=conf-note>Confidence: Medium — 같은 날 4편이 수렴했으나 abstract 부재로 구체 수치 확인 전</p>
+</div>
+
+<div class=ins>
+  <h3>2. 의료 영상 복원·정합이 foundation model과 암시적 신경 표현을 재사용하는 쪽으로</h3>
+  <p>Cardiac MRI Reconstruction과 CT-US Registration 2편이 모이며, 의료 영상 작업 전용 모델을 처음부터 학습시키던 관행에서 범용 표현을 재사용하는 쪽으로 관심이 옮겨가고 있다.</p>
+  <p class=conf-note>Confidence: Low — 2편이 방향은 같으나 서로 다른 작업(복원 vs 정합)이라 단일 벤치마크로 묶이지 않음</p>
+</div>
+
+<div class=ins>
+  <h3>3. 3D/광 영상 복원이 수중, 달 표면, 산란매질의 물리적 왜곡을 명시적으로 모델링</h3>
+  <p>Image-Space Refraction Correction, MoonGS, Ghost Imaging under Scattering Media 3편이 모이며, 이상적 조건을 가정하던 3D/광 복원 연구가 현장의 물리적 왜곡을 명시적으로 모델에 넣는 쪽으로 이동하고 있다.</p>
+  <p class=conf-note>Confidence: Low — 서로 다른 환경이 느슨한 주제로만 묶였고 abstract 부재로 수치 근거 확인 전</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. Revar3r의 불확실성 정량화를 랩 feed-forward 3D 파이프라인 품질 관리에 도입</h3>
+  <p>Revar3r의 gauge-aware 섭동 불확실성 개념을 랩이 쓰는 feed-forward 3D 복원 결과물에 적용해, 어떤 촬영 조건(조명 변화, 뷰 개수 부족)에서 복원이 불안정해지는지 사전에 플래그하는 지표를 설계합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Revar3r 코드 공개 확인 및 재현</li>
+    <li>공통 benchmark: 랩 보유 feed-forward 3D 복원 데이터셋</li>
+    <li>비교축: 불확실성 지도와 실제 복원 오차의 상관관계</li>
+    <li>실패해도 남는 결과: 랩 파이프라인의 실패 조건 사전 탐지 가능성 보고서</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. 수중 굴절 보정 아이디어를 랩 산란매질 환경에 이식 가능한지 검토</h3>
+  <p>Image-Space Refraction Correction의 평면 방수창 굴절 보정 아이디어가, 랩이 다루는 산란매질 경계 조건(굴절률 차이가 더 복잡한 경우)에도 변형 적용 가능한지 타당성을 검토합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Image-Space Refraction Correction 방법 재현</li>
+    <li>공통 benchmark: 랩 보유 산란매질 촬영 데이터</li>
+    <li>비교축: 보정 전/후 복원 품질, 경계 조건 가정 위반 시 실패 양상</li>
+    <li>실패해도 남는 결과: 랩 환경에서의 적용 가능 범위 보고서</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(10편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:10%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:10%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:10%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:60%"></span></span><span class=n>6편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:40%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>10편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:70%"></span></span><span class=n>7편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:40%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>56편</span></div>
+
+<p><small>⚠️ 참고: Tomography/3D Imaging 10편 중 4편은 위 클러스터1(feed-forward GS 신뢰성/효율성), 3편은 클러스터3(물리적 왜곡 모델링)이고, 나머지 3편은 원형질체 soft X-ray 토모그래피·소아 시신경교종 OCT 추적·PET/CT 환기관류 패턴처럼 임상 사례입니다. Virtual Staining/Pathology 7편 중 실제 virtual staining 신호는 1건(양식 어류)이고 나머지는 기후정책·도시계획·치과 교정기 표면 특성 등 키워드 오탐입니다. Reconstruction/Inverse Problems 4편 중 영상 관련 신호는 거의 없고(모델 머징, 강화학습 정칙화, 이주 예측 등 일반 ML), 실제로는 Quantum-Classical PINN 저수지 침투 방정식 1편 정도만 물리 기반 역문제입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1098/rsif.2026.0369" target=_blank>Deciphering coccolith formation</a></strong> [OAX]<br>
+  왜 주요: 생체광물화 미세구조를 고급 현미경으로 분석(제목 기반 판단, Fourier ptychography 직접 언급 여부는 본문 확인 필요)
+</div>
+
+<h3>Lensless/Coded Imaging (1편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41598-026-74635-9" target=_blank>Three-state polarization imaging with coded apertures</a></strong> [OAX]<br>
+  왜 주요: 코드화 조리개로 세 가지 편광 상태를 이미징하는 계산광학 코어 신호
+</div>
+
+<h3>Tomography/3D Imaging (10편 중 관련 대표 6편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.08756" target=_blank>Post-Training Semantic Lifting</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — GS 오차를 검출·의미화·표현 세 요인으로 분리
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.07958" target=_blank>DensiTok</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — feed-forward GS가 주어진 뷰보다 더 많이 보도록 밀도 보강
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.07883" target=_blank>Revar3r</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — feed-forward 3D 복원의 gauge-aware 불확실성 정량화
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.07795" target=_blank>Efficient Gaussian Splatting Sequence Compression</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — 표준 비디오 코덱으로 GS 시퀀스 압축
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.07788" target=_blank>Image-Space Refraction Correction</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터3 대표 — 수중 3D 복원의 굴절을 이미지 공간에서 직접 보정
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.07110" target=_blank>MoonGS</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터3 대표 — 노이즈 있는 깊이 특징에 강건한 달 표면 GS
+</div>
+<p><small>나머지 약 4편(원형질체 soft X-ray 토모그래피, 소아 시신경교종 OCT 추적, PET/CT 환기관류 패턴 등)은 임상·응용 사례라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology (7편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s11259-026-11567-9" target=_blank>From traditional histopathology to virtual staining (farmed fish)</a></strong> [JNL]<br>
+  왜 주요: virtual staining을 양식 어류 조직 병변 평가로 확장(어제의 수의학 확장 흐름이 이어짐)
+</div>
+<p><small>나머지 6편은 기후정책, 도시계획, 치과 교정기 표면 특성 등 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods — 이미징 관련 대표 4편 (56편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.08109" target=_blank>Beyond Training from Scratch (Cardiac MRI)</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터2 대표 — foundation model 기반 데이터 효율적 심장 MRI 복원
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.08419" target=_blank>Deformable CT-US Registration</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터2 대표 — 해부 구조 인식 암시적 신경 표현으로 CT-초음파 정합
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.07337" target=_blank>Compositional Concept Erasure in Text-to-Image Diffusion Models</a></strong> [CV]<br>
+  왜 주요: 어제 4편이던 diffusion concept erasure 흐름이 오늘도 약하게 이어짐
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116583" target=_blank>Penetration depth monitoring in laser welding via OCT</a></strong> [JNL]<br>
+  왜 주요: 레이저 용접 공정에 OCT 기반 실시간 딥러닝 모니터링 적용
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<p><small>오늘은 abstract가 없는 title/subject 기반 backfill이라 구체적인 벤치마크 수치를 확인할 수 없습니다. 신규 결과 없음(빈 배열).</small></p>
+
+<hr>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 오늘도 /pastweek 날짜 섹션에서 abstract 없이 복구한 backfill 데이터입니다. 클러스터·인사이트는 제목·subject·저자 정보만으로 구성했습니다.</p>
+  <p>[Dataset risk] 오늘 물량 자체가 어제보다 작아(cs.LG 354 vs 593) 클러스터 후보군이 상대적으로 얇습니다. 표를 3행으로만 채운 이유입니다.</p>
+  <p>[Claim risk] 계산광학 코어 신호(Fourier Ptychography, Lensless) 2편 모두 OpenAlex 보충 소스(OAX)로, Crossref/arXiv보다 커버리지 신뢰도가 상대적으로 낮고 abstract도 없어 실제 내용은 본문 확인이 필요합니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] Gaussian Splatting 신뢰성/효율성 4편 모두 "기존 방법 대비 개선"을 주장할 것으로 추정되나 구체적 수치는 abstract 부재로 확인 불가능합니다.</p>
+  <p>[Baseline risk] 수중 3D 복원 논문의 "평면 방수창 굴절 보정"이 실제로 어떤 베이스라인(기존 수중 SfM/NeRF 방법) 대비 비교됐는지 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Virtual Staining/Pathology 키워드 오탐 약 6편</strong> [JNL] — 기후정책, 도시계획, 치과 교정기 표면 특성 등입니다.</li>
+    <li><strong>Meta-Optics/Diffractive 통신·재료 약 5편</strong> [JNL] — 적외선-마이크로파 위장, 테라헤르츠 편광판, 근적외선 흡수체 등입니다.</li>
+    <li><strong>Reconstruction/Inverse Problems 일반 ML 약 3편</strong> [LG] — 모델 머징, 강화학습 정칙화, LLM 기반 이주 예측 등입니다.</li>
+    <li><strong>Deep Learning Methods 내 표형·시계열 foundation model 다수</strong> [LG] — 56편 중 상당수가 이미징과 무관한 tabular/time-series 논문입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편) — 관련 1편</h3>
+<div class=roi-item>
+  <strong>Deciphering coccolith formation</strong> [OAX]<br>
+  문제: 생체광물화 과정에서 미세구조 형성 메커니즘 규명 / 방법: 고급 현미경 기법 적용(초록 미공개) / 의미: 계산광학 코어 인접 신호(본문 확인 필요) / 우선순위: Read
+</div>
+
+<h3>Lensless/Coded Imaging (1편) — 관련 1편</h3>
+<div class=roi-item>
+  <strong>Three-state polarization imaging with coded apertures</strong> [OAX]<br>
+  문제: 편광 상태를 추가 광학계 없이 단일 소자로 이미징 / 방법: 코드화 조리개 기반 세 가지 편광 상태 이미징(초록 미공개) / 의미: 계산광학 코어 핵심 신호 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging (10편) — 관련 대표 6편</h3>
+<div class=roi-item>
+  <strong>Post-Training Semantic Lifting</strong> [arXiv]<br>
+  문제: GS 오차의 원인(검출/의미화/표현)이 뒤섞여 분석 어려움 / 방법: 사후 학습 단계에서 세 오차를 분리 / 의미: 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>DensiTok</strong> [arXiv]<br>
+  문제: feed-forward GS가 주어진 뷰 수에 제한됨 / 방법: 가상 뷰를 보강하는 밀도화 / 의미: 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Revar3r</strong> [arXiv]<br>
+  문제: feed-forward 3D 복원이 불확실성을 제공하지 않음 / 방법: gauge-aware 섭동 기반 불확실성 정량화 / 의미: 클러스터1 대표, 평가축 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Efficient Gaussian Splatting Sequence Compression</strong> [arXiv]<br>
+  문제: GS 동영상 시퀀스의 저장·전송 비용 / 방법: 표준 비디오 코덱 재사용 / 의미: 클러스터1 대표, 실사용 전환 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Image-Space Refraction Correction</strong> [arXiv]<br>
+  문제: 수중 3D 복원이 방수창 굴절로 왜곡됨 / 방법: 이미지 공간에서 핀홀 시점으로 워핑 / 의미: 클러스터3 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>MoonGS</strong> [arXiv]<br>
+  문제: 달 표면 깊이 추정이 노이즈에 취약 / 방법: 강건한 깊이 특징 기반 GS / 의미: 클러스터3 대표 / 우선순위: Read
+</div>
+<p><small>나머지 약 4편(원형질체 soft X-ray 토모그래피, 소아 시신경교종 OCT 추적, 초고해상도 OCT 레이저, PET/CT 환기관류 패턴)은 임상·응용 사례라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology (7편) — 관련 1편</h3>
+<div class=roi-item>
+  <strong>From traditional histopathology to virtual staining (farmed fish)</strong> [JNL]<br>
+  문제: virtual staining이 사람 병리 위주로 평가됨 / 방법: 양식 어류 조직 병변 평가에 적용(초록 미공개) / 의미: 어제 수의학 확장에 이은 응용 범위 확대 / 우선순위: Read
+</div>
+<p><small>나머지 6편은 기후정책, 도시계획, 치과 교정기 표면 특성 등 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (4편) — 관련 1편</h3>
+<div class=roi-item>
+  <strong>Quantum-Classical Physics-Informed Neural Networks for Reservoir Seepage Equations</strong> [JNL]<br>
+  문제: 저수지 침투 방정식의 물리 기반 역문제 / 방법: 양자-고전 하이브리드 PINN(초록 미공개) / 의미: 영상과는 거리가 있으나 물리 정보 역문제 신호 / 우선순위: Skim
+</div>
+<p><small>나머지 3편(모델 머징, 강화학습 정칙화, LLM 기반 이주 예측)은 영상과 무관한 일반 ML 논문이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods — 이미징 관련 대표 4편</h3>
+<div class=roi-item>
+  <strong>Beyond Training from Scratch (Cardiac MRI)</strong> [arXiv]<br>
+  문제: 심장 MRI 복원 모델이 작업마다 새로 학습돼야 함 / 방법: foundation model 기반 데이터 효율적 복원 / 의미: 클러스터2 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Deformable CT-US Registration</strong> [arXiv]<br>
+  문제: CT-초음파 변형 정합이 모달리티 간 차이로 어려움 / 방법: 해부 구조 인식 암시적 신경 표현 / 의미: 클러스터2 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Compositional Concept Erasure in Text-to-Image Diffusion Models</strong> [arXiv]<br>
+  문제: 복합적인 개념을 diffusion 모델에서 지우기 어려움 / 방법: 계층적으로 근거 있는 의미 수술(초록 미공개) / 의미: 어제 concept erasure 흐름의 연속 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Penetration depth monitoring in laser welding via OCT</strong> [JNL]<br>
+  문제: 레이저 용접 중 침투 깊이를 실시간으로 알기 어려움 / 방법: OCT의 공간-강도 표현 기반 종단간 딥러닝(초록 미공개) / 의미: 산업용 OCT 응용 신호 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/pastweek">arXiv cs.CV /pastweek</a> · <a href="https://arxiv.org/list/cs.LG/pastweek">cs.LG /pastweek</a> · <a href="https://arxiv.org/list/cs.AI/pastweek">cs.AI /pastweek</a> · <a href="https://arxiv.org/list/eess.IV/pastweek">eess.IV /pastweek</a> · <a href="https://arxiv.org/list/eess.SP/pastweek">eess.SP /pastweek</a></li>
+  <li><a href="https://arxiv.org/abs/2610.07883" target=_blank>Revar3r — arXiv</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-10-07 backfill 실행(2026-10-12에 역산 발행) · arXiv 896건(카테고리별 원시 합산, new+cross, replacement 제외) + 저널 58편, 전체 스캔 779건 · ROI 배정 90건 (11.6%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP · <strong>title/subject 기반(abstract 없음)</strong></p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성, backfill)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

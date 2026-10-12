@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-10-09</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-10-09 (금요일, Backfill)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-10-09 (금요일) · <strong>⚠️ Backfill 산출물</strong> (2026-10-12 복구 실행에서 역산 발행, 4번째이자 마지막 backfill일)</div>
+  <div>📚 소스: pastweek-date-section — arXiv는 title/subject 기반(abstract 없음)</div>
+  <div>🔢 arXiv: cs.LG 324 · cs.CV 207 · cs.AI 301 · eess.IV 7 · eess.SP 33 (합계 872건, 카테고리별 원시 합산, replacement 제외)</div>
+  <div>🔢 저널: Crossref/OpenAlex 73편(중복 1편 제외 후) · 전체 스캔 799건 · ROI 배정 100건 (12.5%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+어제(10/8)의 계산광학 코어 활기(Fourier Ptychography, QPM, Light-Field, 메타표면 이미징 하드웨어)는 오늘 다시 가라앉았습니다(세 버킷 모두 0편). 대신 <strong>Gaussian Splatting/NeRF 연구가 이번 주 내내 이어진 흐름의 연장선에서, 오늘은 워터마킹(저작권 보호), 시간대 변화 강건성, PCA 정칙화, 스트리밍 처리, 희소뷰 X선 CT라는 다섯 개의 서로 다른 실용적 세부 문제로 갈라졌습니다.</strong> 한편 포아송 카운트·1비트·단일 픽셀처럼 최소한의 측정만으로 영상을 복원하려는 알고리즘·하드웨어 3편과, 의료 영상 복원을 자기지도학습·연속시간 신경망으로 접근하는 2편도 확인됐습니다. 데이터 처리 중 어제 이미 다룬 HoloSIM 논문이 OpenAlex 쪽에서 날짜가 다르게(created=10/9) 중복 보고된 것을 확인해 오늘 집계에서 제외했습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv는 카테고리별 원시 합산 872건(cs.LG 324·cs.CV 207·cs.AI 301·eess.IV 7·eess.SP 33, replacement 제외)이며, 저널 73편(중복 1편 제외)을 더해 전체 799건을 스캔해 100건(12.5%)을 ROI 버킷에 배정했습니다. 이번 주 backfill 4일 중 Fourier Ptychography/Microscopy·Lensless/Coded Imaging·Light-Field/Novel Sensors 세 버킷이 동시에 0편인 날은 오늘이 처음입니다(10/6: FP·Lensless 0편, LF는 4편 / 10/7: FP·Lensless 각 1편 / 10/8: 세 버킷 모두 신호 있음).</p>
+<p>Tomography/3D Imaging(16편) 중 5편이 Gaussian Splatting/NeRF 계열이며, 이번 주 흐름(10/6 응용 다각화 → 10/7 신뢰성/효율성)이 오늘은 워터마킹·시간대 강건성·정칙화·스트리밍·X선 희소뷰로 더 세분화됐습니다. 나머지는 OCT 임상 사례(망막, 녹내장, 이소골)가 다수입니다. Reconstruction/Inverse Problems(9편)에는 포아송 노이즈 영상 복원(Deep-Unfolded Penalized MLEM), 1비트 압축센싱 복원 보장(Recovery Guarantees), 단일 픽셀 페로브스카이트 영상기(High-Responsivity Single-Pixel Perovskite Imager)처럼 '최소 측정에서 복원한다'는 공통 철학을 가진 3편이 눈에 띕니다. Deep Learning Methods(56편, catch-all) 안에서는 병렬 MRI 자기지도 복원(Hankel Subspace)과 Liquid Neural Network 기반 의료 영상 복원(ContiLNN) 2편이 확인됐습니다.</p>
+<p>Virtual Staining/Pathology(6편)는 오늘도 뚜렷한 virtual staining 신호 없이 CT/MR 융합 영상 유도 생검, 소아 영상 윤리, 전립선암 형광영상 등 임상 응용이 대부분입니다. Phase Imaging/Holography(6편)·Meta-Optics/Diffractive(7편)도 그레이팅 형상 측정, 모아레 프로파일로미트리, 테라헤르츠 방사체 등 대부분 계측·통신 응용이라 실제 이미징 방법론 핵심 신호는 1편 안팎입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(10/8)는 backfill 4일 중 계산광학 코어가 가장 크게 깨어난 날이었습니다(Fourier Ptychography 3편, QPM 2편, Light-Field 2편, 메타표면 이미징 하드웨어 3편). 오늘은 이 네 신호가 전부 사라지고(FP·Lensless·Light-Field 모두 0편), 다시 Gaussian Splatting/NeRF 중심의 ML 방법론 흐름으로 돌아왔습니다. 다만 완전히 같은 자리로 돌아간 것은 아닙니다 — 10/6은 GS의 응용 다각화, 10/7은 GS의 신뢰성/효율성이 중심이었다면, 오늘은 워터마킹처럼 이전에 없던 완전히 새로운 축(보안/저작권)이 추가됐습니다. 또한 어제는 Fresnel CDI 논문에서 abstract까지 확인되는 구체적 신호가 있었지만, 오늘은 다시 대부분 title/subject 기반 판단으로 돌아가 신호의 구체성은 낮아졌습니다. 데이터 처리 과정에서 어제 다룬 HoloSIM 논문이 OpenAlex에 의해 다른 날짜로 재보고되는 것을 확인해 제외한 것도 오늘의 특이점입니다 — 저널 다중 소스(Crossref+OpenAlex) 수집 시 같은 논문이 소스마다 다른 날짜로 집계될 수 있다는 리스크를 보여준 사례입니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Gaussian Splatting/NeRF가 보안(워터마킹), 시간대 강건성, 정칙화, 스트리밍, 희소뷰 X선까지 다섯 갈래로 세분화</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.12282" target=_blank>Slot3R</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.11364" target=_blank>FlyMark</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.11547" target=_blank>OX-NeRF</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.11572" target=_blank>PAM-ToD</a> <span class=pill>CV</span>
+  </td>
+  <td>이번 주 내내 Gaussian Splatting/NeRF 연구는 응용 다각화(10/6)에서 신뢰성·효율성(10/7)으로 질문이 이동해 왔습니다. 오늘은 그 세분화가 한 단계 더 진행돼, 서로 전혀 다른 다섯 개 실용적 문제로 갈라졌습니다. Slot3R는 연속적으로 들어오는 영상 스트림에서 공간 메모리를 집합 연상(set-associative) 방식으로 관리해 실시간 3D 복원을 가능하게 하고, PAM-ToD는 낮/밤처럼 촬영 시간대가 달라져도 기존 장면 표현을 다시 학습하지 않고 외관만 갈아끼우는 plug-and-play 모델링을 제안합니다. FlyMark는 완전히 새로운 축인데, 초파리의 신경 연결 구조(커넥톰)에서 착안한 알고리즘으로 추가 학습 없이 Gaussian Splatting 결과물에 비가시 워터마크를 심어 저작권을 보호합니다. OX-NeRF는 의료 영상으로 더 좁혀 들어가, 적은 수의 X선 촬영만으로 3D CT 볼륨을 implicit neural representation으로 복원합니다. 다섯 편(PCAsplat 포함)을 합치면, Gaussian Splatting이라는 기반 표현이 이제 "더 잘 복원하는 법"을 넘어 보안·운영·특수 도메인이라는 응용 단계의 세부 문제까지 건드리기 시작했다는 그림이 그려집니다.</td>
+  <td>Medium<br><small>같은 주 안에서 GS/NeRF 클러스터가 날마다 다른 세부 문제로 이어지고 있고 오늘은 5편이 모였으나, abstract 부재로 각 방법의 구체적 개선폭은 확인 전</small></td>
+  <td>랩이 공개하는 3D 복원 결과물(데이터셋, 데모)에 FlyMark의 학습 불필요 워터마킹을 적용했을 때 렌더링 품질 저하가 있는지, OX-NeRF의 희소뷰 X선 복원 설계가 랩의 저선량 CT 데이터에 적용 가능한지 각각 타당성 검토</td>
+</tr>
+<tr>
+  <td><strong>최소 측정에서 영상을 복원하는 알고리즘과 하드웨어가 동시에 접근</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.12198" target=_blank>Deep-Unfolded Penalized MLEM</a> <span class=pill>SP</span><br>
+    <a href="https://arxiv.org/abs/2610.11834" target=_blank>Recovery Guarantees for One-Bit CS</a> <span class=pill>LG</span><br>
+    <a href="https://doi.org/10.1002/lpor.72015" target=_blank>Single-Pixel Perovskite Imager</a> <span class=pill>OAX</span>
+  </td>
+  <td>영상 복원 연구의 전통적인 방향은 "측정을 더 많이, 더 정밀하게 모으자"였습니다. 오늘 모인 세 편은 반대 방향입니다. Deep-Unfolded Penalized MLEM은 PET류 영상에서 흔한 포아송 통계적 노이즈를 가정한 상황에서, 전통적인 반복 알고리즘(MLEM)을 신경망 층으로 풀어서(unroll) 빠르게 복원합니다. Recovery Guarantees for One-Bit Compressed Sensing은 한 걸음 더 나아가 "단 1비트(크다/작다)만 측정해도 원래 신호를 복원할 수 있다"는 조건을 이론적으로 분석합니다. Single-Pixel Perovskite Imager는 아예 하드웨어 자체를 극단적으로 단순화해, 화소 배열 없이 단일 픽셀 하나로 영상을 찍는 소자를 제시합니다. 세 편 모두 "측정이 부족해도, 혹은 극단적으로 단순한 하드웨어만으로도 영상을 복원할 수 있다"는 계산 이미징의 핵심 명제를 서로 다른 각도(알고리즘 속도, 이론적 한계, 하드웨어 단순화)에서 확인해 줍니다.</td>
+  <td>Low<br><small>3편이 '최소 측정 복원'이라는 공통 철학은 뚜렷하나 서로 다른 계층(알고리즘, 이론, 하드웨어)을 다뤄 단일 벤치마크로 수렴하지 않고, abstract 부재로 수치 근거 확인 전</small></td>
+  <td>Deep-Unfolded Penalized MLEM의 unrolled 구조를 랩이 다루는 포아송 노이즈 환경(저선량 촬영, 광자 계수 센서)에 적용 가능한지 검토하고, 기존 반복 MLEM 대비 복원 속도 개선폭을 측정</td>
+</tr>
+<tr>
+  <td><strong>의료 영상 복원이 자기지도학습과 연속시간 신경망으로 샘플링 불연속 문제를 해결하는 쪽으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.11560" target=_blank>Hankel Subspace SSL (Parallel MRI)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.12337" target=_blank>ContiLNN</a> <span class=pill>CV</span>
+  </td>
+  <td>병렬 MRI나 다중 슬라이스 CT 같은 의료 영상은 촬영 방식 자체에 수학적 구조(부분공간 제약)나 물리적 불연속(슬라이스 간 간격)이 내재돼 있습니다. 오늘 모인 두 논문은 이 내재된 구조를 명시적으로 모델에 반영합니다. Hankel Subspace 논문은 병렬 MRI 신호가 만드는 Hankel 행렬이 저랭크 부분공간에 놓인다는 수학적 성질을 이용해, 정답 쌍 없이 자기지도 방식으로 복원 모델을 학습시킵니다. ContiLNN은 슬라이스 단위로 띄엄띄엄 촬영되는 의료 영상의 불연속성을, 시간을 연속적으로 다루는 Liquid Neural Network로 메웁니다. 둘 다 "더 많은 정답 데이터를 모으자"가 아니라 "촬영 방식이 만드는 구조적 제약을 모델에 직접 넣자"는 공통된 설계 철학을 보여줍니다.</td>
+  <td>Low<br><small>2편이 같은 방향(촬영 구조를 모델에 반영)에 수렴하나 서로 다른 기법(부분공간 자기지도 vs 연속시간 신경망)이라 단일 벤치마크로 묶이지 않고, abstract 부재로 수치 확인 전</small></td>
+  <td>랩이 다루는 다중 채널/슬라이스 영상 복원 문제에 Hankel Subspace 자기지도 학습 방식을 적용 가능한지 검토하고, 정답 쌍 지도학습 대비 데이터 효율성을 비교</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ 참고: 오늘은 계산광학 코어 버킷(FP, Lensless, Light-Field)이 전부 0편이라 클러스터를 3행으로만 채웠습니다. 데이터 처리 과정에서 어제(10/8) 이미 다룬 HoloSIM 논문(OpenAlex 재보고, created=10/9)을 오늘 집계에서 제외했습니다 — 상세는 아래 리스크 필터 참고.</small></p>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 0편</strong> — 어제(3편)와 달리 오늘은 완전히 비었습니다.</li>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 0편</strong> — 이번 주 내내(10/6, 10/9) 가장 자주 비는 버킷입니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 오늘 배정 0편</strong> — 어제(2편)의 광필드 현미경 신호가 하루 만에 사라졌습니다.</li>
+    <li><strong>Meta-Optics/Diffractive — 7편 중 실제 이미징 신호 1편 미만</strong> — <a href="https://arxiv.org/abs/2610.11500" target=_blank>Learning qBIC Resonances across Metasurface Families</a> [LG]는 메타표면 설계에 머신러닝을 적용한 논문으로 이미징 응용과는 거리가 있어 보이나 본문 확인 전까지 판단을 유보합니다. 나머지 6편은 통신 코일, 태양광 흡수체, 열 메타표면 등 비(非)이미징 응용입니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: Gaussian Splatting/NeRF 세분화(Slot3R, FlyMark, OX-NeRF, PAM-ToD, PCAsplat), 최소 측정 복원 알고리즘(Deep-Unfolded Penalized MLEM, Recovery Guarantees One-Bit CS), 의료 영상 자기지도/연속시간 복원(Hankel Subspace SSL, ContiLNN)</li>
+  <li><strong>저널 전용</strong>: 단일 픽셀 페로브스카이트 영상기, 모아레 프로파일로미트리, 그레이팅 형상 측정, 고속 홀로그래피 연소 진단</li>
+  <li><strong>공통 키워드</strong>: sparse/희소(arXiv는 GS 희소뷰 X선·1비트 압축센싱 맥락, 저널에는 해당 맥락 없음 — 오늘은 arXiv 단독 신호), self-supervised(arXiv의 Hankel Subspace MRI 복원에서만 등장)</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 GS/NeRF 세분화와 최소 측정 복원이라는 방법론 신호를 강하게 냈고, 저널은 단일 픽셀 하드웨어 외에는 뚜렷한 계산광학 신호를 내지 않았습니다. 어제와 정반대로, 오늘은 저널보다 arXiv 쪽 신호가 더 뚜렷합니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. Gaussian Splatting/NeRF가 보안, 시간대 강건성, 정칙화, 스트리밍, 희소뷰 X선으로 세분화</h3>
+  <p>Slot3R, FlyMark, OX-NeRF, PAM-ToD, PCAsplat 5편이 모이며, 이번 주 내내 이어진 GS/NeRF 흐름이 오늘은 서로 다른 다섯 개 실용적 세부 문제(보안, 환경 변화, 정칙화, 스트리밍, 의료 X선)로 갈라졌다.</p>
+  <p class=conf-note>Confidence: Medium — 5편이 모였으나 abstract 부재로 구체 개선폭 확인 전</p>
+</div>
+
+<div class=ins>
+  <h3>2. 최소 측정에서 영상을 복원하는 알고리즘과 하드웨어가 동시에 접근</h3>
+  <p>Deep-Unfolded Penalized MLEM, Recovery Guarantees for One-Bit CS, Single-Pixel Perovskite Imager 3편이 모이며, 측정을 늘리는 대신 최소한의 측정(포아송 카운트, 1비트, 단일 픽셀)으로도 영상을 복원하려는 공통된 철학이 확인됐다.</p>
+  <p class=conf-note>Confidence: Low — 서로 다른 계층(알고리즘, 이론, 하드웨어)이라 단일 벤치마크로 수렴하지 않음</p>
+</div>
+
+<div class=ins>
+  <h3>3. 의료 영상 복원이 자기지도학습과 연속시간 신경망으로 샘플링 불연속 문제를 해결</h3>
+  <p>Hankel Subspace SSL과 ContiLNN 2편이 모이며, 촬영 방식이 만드는 구조적 제약(부분공간, 슬라이스 불연속)을 모델에 직접 반영하는 흐름이 확인됐다.</p>
+  <p class=conf-note>Confidence: Low — 2편이 방향은 같으나 서로 다른 기법이라 단일 벤치마크로 묶이지 않음</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. FlyMark 워터마킹을 랩 공개 3D 복원 결과물에 적용 가능한지 검토</h3>
+  <p>학습이 필요 없는 FlyMark의 워터마킹 방식을 랩이 외부 공개하는 3D Gaussian Splatting 결과물(데이터셋, 데모)에 적용해, 워터마크 삽입이 렌더링 품질에 주는 영향을 측정합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: FlyMark 코드 공개 확인 및 재현</li>
+    <li>공통 benchmark: 랩 보유 3D Gaussian Splatting 결과물</li>
+    <li>비교축: 워터마크 삽입 전/후 PSNR/SSIM, 워터마크 강건성(크롭, 압축 등 공격 시뮬레이션)</li>
+    <li>실패해도 남는 결과: 랩 산출물의 워터마킹 적용 가능성 보고서</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. Hankel Subspace 자기지도 학습을 랩 다중 채널 영상 복원에 이식</h3>
+  <p>Hankel Subspace Self-Supervised Learning의 부분공간 기반 자기지도 복원 방식을, 랩이 다루는 다중 채널/다중 센서 영상 복원 문제에 적용 가능한지 검토하고, 정답 쌍 지도학습 대비 데이터 효율성을 비교합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Hankel Subspace SSL for Parallel MRI Reconstruction 방법 재현</li>
+    <li>공통 benchmark: 랩 보유 다중 채널 영상 데이터셋</li>
+    <li>비교축: 정답 쌍 필요 개수 대비 복원 품질 곡선</li>
+    <li>실패해도 남는 결과: 랩 데이터에서 부분공간 자기지도 학습의 적용 가능 범위 보고서</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(16편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:37.5%"></span></span><span class=n>6편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:43.8%"></span></span><span class=n>7편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>16편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:37.5%"></span></span><span class=n>6편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:56.3%"></span></span><span class=n>9편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>56편</span></div>
+
+<p><small>⚠️ 참고: Tomography/3D Imaging 16편 중 5편은 클러스터1(GS/NeRF 세분화)이고, 나머지 11편은 이소골 CT 재건, 면역치료 반응 예측 PET 라디오믹스, 전안부 OCT, 망막신경섬유층 OCT 등 임상 사례입니다. Virtual Staining/Pathology 6편 중 명확한 virtual staining 신호는 0편이고, CT/MR 융합 생검 유도·전립선암 형광영상 등 인접 응용만 있습니다. Phase Imaging/Holography와 Meta-Optics/Diffractive는 각각 6~7편이지만 대부분 계측·통신 응용이라 실제 이미징 방법론 핵심 신호는 1편 미만입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Tomography/3D Imaging (16편 중 관련 대표 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.12282" target=_blank>Slot3R</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — set-associative 공간 메모리 기반 스트리밍 3D 복원
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.11572" target=_blank>PAM-ToD</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — 시간대 변화에 강건한 plug-and-play 외관 모델링
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.11547" target=_blank>OX-NeRF</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — 희소뷰 X선 CT를 INR로 복원
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.11364" target=_blank>FlyMark</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — 초파리 커넥톰 기반 학습 불필요 GS 워터마킹
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.11011" target=_blank>PCAsplat</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — local PCA 정칙화 기반 GS
+</div>
+<p><small>나머지 약 11편은 이소골 CT 재건, PET 라디오믹스, 전안부·망막신경섬유층 OCT 등 임상 사례라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (9편 중 관련 대표 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.12198" target=_blank>Deep-Unfolded Penalized MLEM</a></strong> [SP]<br>
+  왜 주요: 오늘 클러스터2 대표 — 포아송 노이즈 영상의 빠른 unrolled 복원
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.11834" target=_blank>Recovery Guarantees for One-Bit Compressed Sensing</a></strong> [LG]<br>
+  왜 주요: 오늘 클러스터2 대표 — 1비트 압축센싱 복원 이론적 보장
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.72015" target=_blank>High-Responsivity Broadband Single-Pixel Perovskite Imager</a></strong> [OAX]<br>
+  왜 주요: 오늘 클러스터2 대표 — 단일 픽셀 페로브스카이트 영상 하드웨어
+</div>
+
+<h3>Deep Learning Methods — 이미징 관련 대표 2편 (56편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.11560" target=_blank>Hankel Subspace Self-Supervised Learning for Parallel MRI Reconstruction</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터3 대표 — 부분공간 구조 기반 자기지도 병렬 MRI 복원
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.12337" target=_blank>ContiLNN</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터3 대표 — Liquid Neural Network로 슬라이스 샘플링 불연속 완화
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<p><small>오늘은 abstract가 없는 title/subject 기반 backfill이라 구체적인 벤치마크 수치를 확인할 수 없습니다. 신규 결과 없음(빈 배열).</small></p>
+
+<hr>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] arXiv 부분은 여전히 title/subject 기반 backfill입니다.</p>
+  <p>[Dataset risk] 저널 수집 중 2026-10-08에 이미 다룬 HoloSIM 논문(DOI 10.1088/2515-7647/aeb213)이 OpenAlex 소스에서 created=2026-10-09로 재보고되는 것을 확인해 오늘 집계·클러스터에서 제외했습니다. 이는 Crossref와 OpenAlex가 같은 DOI에 서로 다른 "created" 타임스탬프를 기록할 수 있다는 구조적 리스크를 보여줍니다 — 이번 backfill 4일 전체에서 한 번 더 확인이 필요합니다(자동화된 중복 검사는 arxiv_id/DOI 기준으로 수행했으나, 완전한 전수 검사는 아닙니다).</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] Gaussian Splatting/NeRF 5편 모두 "기존 방법 대비 개선"을 주장할 것으로 추정되나 abstract 부재로 구체 수치는 확인 불가능합니다.</p>
+  <p>[Baseline risk] FlyMark의 "학습 불필요(training-free)" 주장이 실제로 어떤 워터마킹 공격(크롭, 노이즈, 재학습)까지 버티는지는 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Tomography/3D Imaging 임상 사례 약 11편</strong> [JNL] — 이소골 CT, PET 라디오믹스, 전안부/망막신경섬유층 OCT 등입니다.</li>
+    <li><strong>Virtual Staining/Pathology 임상 응용 약 6편</strong> [JNL/LG] — CT/MR 융합 생검 유도, 소아 영상 윤리, 전립선암 형광영상 등으로 virtual staining 방법론 핵심과 거리가 있습니다.</li>
+    <li><strong>Phase Imaging/Holography·Meta-Optics 계측·통신 약 11편</strong> [JNL/OAX] — 그레이팅 형상 측정, 모아레 프로파일로미트리, 통신 코일, 태양광 흡수체 등입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Tomography/3D Imaging (16편) — 관련 대표 5편</h3>
+<div class=roi-item>
+  <strong>Slot3R</strong> [arXiv]<br>
+  문제: 스트리밍 3D 복원이 과거 정보를 효율적으로 관리하지 못함 / 방법: set-associative 공간 메모리(제목 기반 판단) / 의미: 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>PAM-ToD</strong> [arXiv]<br>
+  문제: 촬영 시간대가 바뀌면 GS 장면 표현을 다시 학습해야 함 / 방법: plug-and-play 외관 모델링 / 의미: 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>OX-NeRF</strong> [arXiv]<br>
+  문제: 희소뷰 X선으로 3D CT 볼륨 복원이 어려움 / 방법: implicit neural representation / 의미: 클러스터1 대표, 의료 응용 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>FlyMark</strong> [arXiv]<br>
+  문제: 3D GS 결과물의 저작권 보호 수단 부재 / 방법: 초파리 커넥톰 기반 학습 불필요 워터마킹 / 의미: 클러스터1 대표, 새로운 보안 축 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>PCAsplat</strong> [arXiv]<br>
+  문제: GS의 과적합/노이즈 민감성 / 방법: local PCA 정칙화 / 의미: 클러스터1 대표 / 우선순위: Read
+</div>
+<p><small>나머지 약 11편은 이소골 CT 재건, PET 라디오믹스, 전안부/망막신경섬유층 OCT 등 임상 사례라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology (6편) — 관련 0편</h3>
+<p><small>오늘은 명확한 virtual staining 방법론 신호가 없습니다. CT/MR 융합 생검 유도, 소아 영상 윤리, 전립선암 형광영상 등 인접 임상 응용 6편뿐입니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (9편) — 관련 대표 3편</h3>
+<div class=roi-item>
+  <strong>Deep-Unfolded Penalized MLEM</strong> [arXiv]<br>
+  문제: 포아송 노이즈 영상의 느린 반복 복원 / 방법: MLEM을 신경망 층으로 unroll / 의미: 클러스터2 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Recovery Guarantees for Posterior Sampling of One-Bit Compressed Sensing</strong> [arXiv]<br>
+  문제: 1비트 측정만으로 신호 복원이 가능한 이론적 조건 불명확 / 방법: posterior 샘플링 복원 보장 분석 / 의미: 클러스터2 대표, 평가축 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>High-Responsivity Broadband Single-Pixel Perovskite Imager</strong> [JNL]<br>
+  문제: 화소 배열 없이 영상을 찍는 하드웨어 단순화 / 방법: 단일 픽셀 페로브스카이트 소자(초록 미공개) / 의미: 클러스터2 대표, 인프라 신호 / 우선순위: Read
+</div>
+<p><small>나머지 약 6편은 KL 정칙화 강화학습, 유체-고체 열전달 PINN 등 영상과 거리가 있는 일반 공학 역문제라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods — 이미징 관련 대표 2편</h3>
+<div class=roi-item>
+  <strong>Hankel Subspace Self-Supervised Learning for Parallel MRI Reconstruction</strong> [arXiv]<br>
+  문제: 병렬 MRI 복원이 정답 쌍 지도학습에 의존 / 방법: Hankel 부분공간 구조 기반 자기지도 학습 / 의미: 클러스터3 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>ContiLNN</strong> [arXiv]<br>
+  문제: 슬라이스 단위 샘플링의 불연속성이 의료 영상 복원 품질 저하 / 방법: Liquid Neural Network 기반 연속시간 모델링 / 의미: 클러스터3 대표 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/pastweek">arXiv cs.CV /pastweek</a> · <a href="https://arxiv.org/list/cs.LG/pastweek">cs.LG /pastweek</a> · <a href="https://arxiv.org/list/cs.AI/pastweek">cs.AI /pastweek</a> · <a href="https://arxiv.org/list/eess.IV/pastweek">eess.IV /pastweek</a> · <a href="https://arxiv.org/list/eess.SP/pastweek">eess.SP /pastweek</a></li>
+  <li><a href="https://arxiv.org/abs/2610.11364" target=_blank>FlyMark — arXiv</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-10-09 backfill 실행(2026-10-12에 역산 발행) · arXiv 872건(카테고리별 원시 합산, new+cross, replacement 제외) + 저널 73편(중복 1편 제외), 전체 스캔 799건 · ROI 배정 100건 (12.5%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP · <strong>title/subject 기반(abstract 없음)</strong></p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성, backfill)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

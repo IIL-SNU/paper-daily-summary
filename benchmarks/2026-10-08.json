@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-08",
+  "results": [
+    {
+      "benchmark": "Fresnel CDI 단일 프레임 복원 (합성 라인 패턴)",
+      "metric": "진폭 SSIM",
+      "value": 0.90,
+      "value_str": "0.90 초과 (단일 프레임 모드)",
+      "paper": "https://doi.org/10.1364/oe.607138",
+      "paper_title": "A unified self-supervised framework for single-frame Fresnel CDI and overlapped ptychography"
+    }
+  ]
+}

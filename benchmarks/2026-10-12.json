@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-12",
+  "results": [
+    {
+      "benchmark": "Splat2Act 개인화 VLA 수거 작업 (타겟 씬 집계)",
+      "metric": "수거 성공률",
+      "value": 62.5,
+      "value_str": "62.5% (시뮬레이션, 적응 전 0%에서 개선)",
+      "paper": "https://arxiv.org/abs/2610.13945",
+      "paper_title": "Splat2Act: From Captured Scenes to Personalized VLA Manipulation"
+    },
+    {
+      "benchmark": "Splat2Act 실제 Stretch 3 로봇 배포 (12-task 부분집합)",
+      "metric": "수거 성공률",
+      "value": 63.9,
+      "value_str": "63.9% (실제 로봇, 동일 task 시뮬레이션은 66.7%)",
+      "paper": "https://arxiv.org/abs/2610.13945",
+      "paper_title": "Splat2Act: From Captured Scenes to Personalized VLA Manipulation"
+    }
+  ]
+}

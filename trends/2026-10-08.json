@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-08",
+  "source_listing_date": "2026-10-08",
+  "source_mode": "pastweek-date-section",
+  "note": "2026-10-08(목) backfill. arXiv 부분은 title/subject 기반(abstract 없음, /pastweek 날짜 섹션에서 YYMM=2610 외 추정 replacement 제외: cs.LG 353->352, cs.CV 186->185, 나머지 변화 없음). 저널(Crossref/OpenAlex)은 이날 Optics Letters/Express 계열 논문이 대거 등재돼(created==2026-10-08) 계산광학 코어 버킷(Fourier Ptychography 3편, Phase Imaging 12편, Light-Field 3편)에 backfill 구간 중 가장 강한 신호가 확인됐다. 저널 항목 중 일부는 Crossref/OpenAlex abstract가 실제로 확인됐다(예: Fresnel CDI 통합 프레임워크, HoloSIM). 선택 비율 18.5%는 여전히 정상 daily(21~32%)보다 낮지만 backfill 3일 중 가장 높다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 352,
+      "cs.CV": 185,
+      "cs.AI": 282,
+      "eess.IV": 9,
+      "eess.SP": 23
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 110
+  },
+  "totals": {
+    "total_scanned": 812,
+    "selected": 150
+  },
+  "classified": {
+    "total_scanned": 812,
+    "selected": 150,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 3,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 12,
+      "Meta-Optics/Diffractive": 29,
+      "Light-Field/Novel Sensors": 3,
+      "Tomography/3D Imaging": 15,
+      "Virtual Staining/Pathology": 10,
+      "Reconstruction/Inverse Problems": 13,
+      "Deep Learning Methods": 65
+    }
+  },
+  "daily_thesis": "2026-10-08은 backfill 4일 중 계산광학 코어가 가장 크게 깨어난 날이다. Fourier Ptychography(기가픽셀 하드웨어 + Fresnel CDI 통합 알고리즘), Quantitative Phase Microscopy(초해상도 + 조명 강건성), Light-Field Microscopy(조리개 샘플링 설계), Meta-Optics 이미징 하드웨어(분광, 확장 피사계심도) 네 갈래에서 동시다발적으로 실질 신호가 확인됐다."
+}

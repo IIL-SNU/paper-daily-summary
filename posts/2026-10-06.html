@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-10-06</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-10-06 (화요일, Backfill)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-10-06 (화요일) · <strong>⚠️ Backfill 산출물</strong> (2026년 11월 중순경 CI 파이프라인 오류로 약 한 달간 실행이 끊겼다가 2026-10-12 복구 실행에서 역산 발행)</div>
+  <div>📚 소스: pastweek-date-section — arXiv /new가 이미 2026-10-12로 넘어가 있어, /pastweek 날짜 섹션에서 "Tue, 6 Oct 2026" 구간만 추출했습니다. <strong>이 구간은 abstract를 제공하지 않아 title/subject 기반 backfill입니다.</strong></div>
+  <div>🔢 arXiv: cs.LG 593 · cs.CV 285 · cs.AI 550 · eess.IV 12 · eess.SP 57 (합계 1,497건, 카테고리별 원시 합산 · 교차 등재 중복 포함, replacement 제외)</div>
+  <div>🔢 저널: Crossref/OpenAlex 62편 · classify.py 중복 제거 후 전체 스캔 1,267건 · ROI 배정 169건 (13.3%, abstract 부재로 평소 21~32%보다 낮음)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘(backfill 대상일)은 abstract 없이 제목·subject만으로 복구한 날이라 깊이에는 한계가 있지만, 그 안에서도 <strong>3D Gaussian Splatting이 "예쁜 3D 장면 복원" 한 가지 용도를 벗어나 모바일 실시간 렌더링, 희소 뷰, 살아있는 세포 현미경 영상, 고체역학 시뮬레이션까지 동시에 퍼지는 흐름</strong>이 뚜렷합니다. Tomography/3D Imaging 버킷 17편 중 9편이 전부 Gaussian Splatting 변형입니다. 한편 이미지 초해상도 연구는 열화상·실제 저하 조건·동결된 파운데이션 모델 잠재공간이라는 서로 다른 네 갈래로 동시에 퍼졌고, diffusion 모델에서 특정 개념을 지우는 연구(unlearning/concept erasure)도 이미지와 비디오 양쪽에서 4편이 한꺼번에 나왔습니다. 계산광학 코어(Fourier Ptychography, Lensless)는 오늘도 완전히 비어 있습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv는 카테고리별 원시 합산 1,497건(cs.LG 593·cs.CV 285·cs.AI 550·eess.IV 12·eess.SP 57, replacement 제외)이며, 저널(Crossref/OpenAlex) 62편을 더해 classify.py가 중복 제거 후 전체 1,267건을 스캔해 169건(13.3%)을 ROI 버킷에 배정했습니다. 이 선택 비율은 최근 정상 daily(2026-09-11 기준 27.9%)보다 뚜렷이 낮은데, 이는 /pastweek 날짜 섹션이 abstract를 제공하지 않아 classify.py가 제목·subject 키워드만으로 판단했기 때문이며 parser 오류가 아닙니다.</p>
+<p>버킷별로 보면 Tomography/3D Imaging(17편) 중 9편이 Gaussian Splatting 변형(모바일 실시간, 희소 뷰, 세포 영상, relighting, 메시 복원, 역학 시뮬레이션 등)으로 사실상 이 버킷을 장악했고, 나머지는 PET/CT 팬텀 연구·CBCT 치과 영상·OCT 임상 사례처럼 "tomography" 키워드만 겹치는 임상 논문입니다. Virtual Staining/Pathology(11편)는 평소처럼 오탐(은하 궤도 분석, 수학 교육 연구, 미세플라스틱 형광 반응 등)이 섞여 있지만, 실제 virtual staining·label-free 신호가 3편(수의 종양학 H&E virtual staining, 비지도 Schrödinger bridge virtual staining, label-free 광음향 혈류 매핑) 확인됐습니다. Reconstruction/Inverse Problems(18편)는 PDE 역문제·전기기계 공학 응용이 다수지만, SAR 압축 복원과 MRI 프레임워크(MRpro)처럼 영상 역문제 핵심 신호도 섞여 있습니다.</p>
+<p>Deep Learning Methods(108편, catch-all)는 대부분 시계열·그래프·LLM 관련 일반 ML 논문이지만, 그 안에서 이미지 초해상도 4편(TIRMamba, AstraSR, DriftSR, Super-Resolution in The Right Latent Space)과 diffusion concept erasure 4편(Your Unlearning Gives You Away, No Concept Escapes the Audit, VisualErase, FADE)이라는 두 개의 뚜렷한 클러스터가 확인됐습니다. 계산광학 코어(Fourier Ptychography/Microscopy 0편, Lensless/Coded Imaging 0편)는 오늘도 완전히 비어 있고, Phase Imaging/Holography(5편)·Meta-Optics/Diffractive(6편)도 대부분 통신·레이더 응용으로 이미징 신호는 1~2편 수준입니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p><strong>⚠️ 비교 불가 — 데이터 손실 구간.</strong> 가장 최근 발행된 daily는 2026-09-11(금)이며, 2026-09-14(월)부터 2026-10-05(일)까지 약 3주간(평일 14일) CI 파이프라인이 실행되지 않아 daily가 발행되지 못했습니다. arXiv의 <code>/pastweek</code> listing은 최근 약 7일치만 보관하므로, 이 구간은 원본 listing을 더 이상 복구할 수 없는 상태입니다(2.1절 Date Source Contract 하드 게이트에 따라 발행 불가로 판단). 따라서 오늘(2026-10-06)은 "어제"와 비교할 수 있는 직전 daily가 없으며, 가장 최근 비교 가능한 자료는 약 한 달 전인 2026-09-11입니다. 이 보고서부터 2026-10-09까지 4개 영업일을 순서대로 backfill한 뒤, 2026-10-12부터는 정상 daily 비교가 재개됩니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>3D Gaussian Splatting이 모바일 실시간·희소 뷰·세포 영상·역학 시뮬레이션까지 응용 영역을 동시에 넓힘</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.05289" target=_blank>Mobile-4DGS</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.04606" target=_blank>Sparse-View 4D Gaussian Splatting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.04199" target=_blank>CellSplat4D</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.04007" target=_blank>VolS-GS</a> <span class=pill>CV</span>
+  </td>
+  <td>지금까지 Gaussian Splatting은 "일반 카메라 사진 여러 장으로 예쁜 3D 장면을 빠르게 복원한다"는 한 가지 쓰임새로 주로 소개돼 왔습니다. 그런데 오늘 하루에만 9편이 Tomography/3D Imaging 버킷에 모였고, 그 각각이 완전히 다른 제약 조건을 겨냥합니다. Mobile-4DGS는 계산 자원이 부족한 스마트폰에서 정적 장면과 움직이는 장면을 하나의 틀로 실시간 렌더링하려 하고, Sparse-View 4D Gaussian Splatting은 카메라 각도가 몇 개 없는 상황을 시공간 사전 지식과 생성 모델의 보조로 메우려 합니다. CellSplat4D는 로봇이 촬영하는 살아있는 세포 현미경 영상처럼 뷰가 희소하고 현미경 렌즈의 점퍼짐함수(PSF)까지 고려해야 하는 상황에, VolS-GS는 반투명한 물체 내부에서 빛이 산란하는 현상(subsurface scattering)까지 표현해 조명을 바꿔가며 다시 렌더링할 수 있게 합니다. 즉 "여러 장의 사진에서 점(Gaussian) 집합으로 장면을 표현하고 미분 가능하게 렌더링한다"는 같은 틀이, 계산량 제약·뷰 희소성·현미경 광학·반투명 산란이라는 서로 다른 제약에 맞춰 각자 변형되고 있다는 뜻입니다. 다만 이 날짜의 arXiv listing은 abstract가 없는 backfill 데이터라, 각 논문이 기존 방법 대비 구체적으로 얼마나 개선됐는지는 본문 확인이 필요합니다.</td>
+  <td>Medium<br><small>같은 날 Tomography/3D Imaging 버킷에 서로 다른 응용(모바일, 희소 뷰, 세포 영상, 서브서피스 산란 외에도 메시 복원·역학 시뮬레이션·변화 탐지까지 9편)이 동시에 몰렸으나, abstract가 없어 수치 근거 없이 제목 수준의 연결입니다.</small></td>
+  <td>랩이 보유한 저조도·희소 뷰 현미경 촬영 데이터에 CellSplat4D의 PSF 인식 설계를 랩 현미경 광학계의 실측 PSF로 교체해 재현 가능한지 코드 공개 여부부터 확인하고, VolS-GS의 서브서피스 산란 모델을 랩의 반투명 시료(조직 절편 등) 촬영에 적용했을 때 기존 3DGS 대비 내부 구조 복원이 개선되는지 비교</td>
+</tr>
+<tr>
+  <td><strong>이미지 초해상도가 열화상·실제 저하 조건·동결된 파운데이션 잠재공간으로 동시에 퍼짐</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.05182" target=_blank>TIRMamba</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2610.05910" target=_blank>AstraSR</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.04819" target=_blank>DriftSR</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.04781" target=_blank>Super-Resolution in The Right Latent Space</a> <span class=pill>CV</span>
+  </td>
+  <td>예전 초해상도 연구는 깨끗한 고해상도 영상을 인위적으로 다운샘플링한 뒤 다시 복원하도록 학습시키는 합성 실험이 대부분이었습니다. 오늘 모인 4편은 이 가정을 서로 다른 방향으로 깹니다. TIRMamba는 가시광이 아닌 열화상(적외선) 영상을, 그것도 파라미터 100만 개 미만의 초경량 모델로 다룹니다. AstraSR과 DriftSR은 둘 다 "합성 저하"가 아니라 실제 촬영에서 생기는 진짜 저하 조건을 겨냥하는데, DriftSR은 반복적인 디노이징 없이 한 번의 단계로 분포를 이동시켜 속도를 올리려 합니다. Super-Resolution in The Right Latent Space는 아예 새 모델을 처음부터 학습시키는 대신, 이미 학습된 거대 비전 파운데이션 모델의 잠재 표현을 그대로 가져다 쓰는 쪽을 택했습니다. 네 논문 모두 "더 정교한 업샘플링 네트워크를 새로 설계한다"가 아니라, 센서 종류·저하 조건의 현실성·기존 모델 재사용이라는 서로 다른 축에서 초해상도 문제의 전제를 바꾸고 있다는 공통점이 있습니다.</td>
+  <td>Low<br><small>4편이 "초해상도 전제를 바꾼다"는 방향성은 공유하지만 서로 다른 축(센서, 저하 조건, 백본 재사용)을 겨냥해 하나의 벤치마크로 수렴하지 않고, abstract 부재로 구체 수치는 확인 전입니다.</small></td>
+  <td>랩이 보유한 실제 열화상 데이터에 TIRMamba의 경량 state-space 설계를 재현해 보고, Super-Resolution in The Right Latent Space처럼 동결된 foundation model 잠재공간을 그대로 쓰는 방식이 랩 데이터에서도 처음부터 학습한 모델만큼 나오는지 PSNR/SSIM으로 비교</td>
+</tr>
+<tr>
+  <td><strong>Diffusion 모델의 개념 지우기(unlearning/concept erasure)가 이미지·비디오 양쪽에서 공방으로 번짐</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.05601" target=_blank>Your Unlearning Gives You Away</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2610.05401" target=_blank>No Concept Escapes the Audit</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2610.05000" target=_blank>VisualErase</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.03980" target=_blank>FADE</a> <span class=pill>CV</span>
+  </td>
+  <td>diffusion 모델에서 저작권이 있는 캐릭터나 유해한 콘텐츠와 관련된 개념을 "지우는" 기법은 그동안 지우는 쪽의 알고리즘 개선이 중심이었습니다. 오늘 모인 4편은 이 문제를 한 단계 더 끌고 갑니다 — Your Unlearning Gives You Away는 반대로 "지웠다고 주장하는 모델에서 그 개념이 실제로 지워졌는지, 혹은 숨겨져 있을 뿐인지"를 역으로 찾아내는 공격을 다루고, No Concept Escapes the Audit은 아예 처음부터 "나중에 검증 가능하도록" 지우는 방법을 설계합니다. 즉 "지웠다"는 주장과 "진짜 지워졌는지 확인한다"는 검증 사이의 공방이 시작된 것입니다. 한편 VisualErase와 FADE는 같은 문제의식을 각각 이미지 생성과 비디오 생성으로 넓히는데, 특히 FADE는 비디오처럼 시간축이 있는 생성모델에서 여러 개념을 동시에 지우는 더 어려운 문제를 다룹니다. 네 논문을 합치면 concept erasure 연구의 중심이 "어떻게 지울까"에서 "지웠다는 걸 어떻게 믿을까"와 "비디오까지 지울 수 있을까"로 넓어지고 있다는 그림이 그려집니다.</td>
+  <td>Medium<br><small>같은 날 4편이 "지우기 vs 검증"과 "이미지에서 비디오로 확장"이라는 두 축에서 뚜렷하게 수렴했으나, abstract가 없어 각 방법의 구체적 공격·방어 성공률은 본문 확인이 필요합니다.</small></td>
+  <td>랩이 생성모델을 활용하는 파이프라인이 있다면, No Concept Escapes the Audit의 "감사 가능한 지우기" 설계를 랩 모델에 적용했을 때 Your Unlearning Gives You Away류 역추론 공격에 실제로 버티는지 점검하는 red-team 체크리스트를 만들기</td>
+</tr>
+<tr>
+  <td><strong>Virtual staining/label-free 영상이 수의학·비지도학습·광음향 혈류 매핑으로 응용 범위를 넓힘</strong></td>
+  <td>
+    <a href="https://doi.org/10.3390/jimaging12100490" target=_blank>H&E Virtual Staining in Veterinary Oncology</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1631/eng.itee.2026.0118" target=_blank>Unsupervised Virtual Staining (Schrödinger Bridge)</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1038/s44303-026-00192-5" target=_blank>Label-free Photoacoustic Hemodynamic Mapping</a> <span class=pill>JNL</span>
+  </td>
+  <td>Virtual staining은 보통 사람 병리 슬라이드를 대상으로, 정답 염색 영상과 짝지어 지도학습시키는 방식이 중심이었습니다. 오늘 모인 3편은 이 전제 세 가지(사람 대상, 지도학습, 조직 염색)를 각각 다른 방향으로 벗어납니다. 수의 종양학 논문은 같은 H&E 염색 기법을 동물 조직에 그대로 전이학습했을 때 얼마나 통하는지를 평가하고, Schrödinger bridge 논문은 정답 쌍 없이도 염색 전후 분포를 점진적으로 연결하는 비지도 방식을 제안하며, 광음향 혈류 매핑 논문은 아예 "염색처럼 보이게 만든다"가 아니라 "염색 없이 혈류라는 기능적 신호를 직접 측정한다"는 더 넓은 의미의 label-free 철학을 보여줍니다. 공통점은 모두 "염색 시약 없이도 조직이나 기능 상태를 알고 싶다"는 label-free라는 큰 우산 아래 있다는 점입니다.</td>
+  <td>Low<br><small>3편이 label-free라는 공통 철학은 뚜렷하지만 응용 도메인(수의학, 디지털 병리, 광음향 기능영상)이 서로 갈려 단일 벤치마크로 수렴하지 않고, abstract 부재로 정량 수치는 확인 전입니다.</small></td>
+  <td>Schrödinger bridge 기반 비지도 virtual staining 설계를 랩이 정답 쌍을 확보하기 어려운 현미경 영상(희귀 시료, 동물 조직 등)에 적용 가능한지 코드 공개 여부부터 확인</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ 참고: 오늘은 abstract 없는 backfill이라 Confidence를 전반적으로 보수적으로(Low~Medium) 매겼습니다. Reconstruction/Inverse Problems(18편, SAR·MRI·PDE 역문제 혼재)도 후보 클러스터였으나, 서로 다른 신호(레이더/MRI/PDE)가 제목만으로는 충분히 강하게 묶이지 않아 Watch Lens로 내렸습니다.</small></p>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 0편</strong> — 계산광학 핵심 버킷이 완전히 비어 있습니다.</li>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 0편</strong> — 역시 완전한 공백입니다.</li>
+    <li><strong>Phase Imaging/Holography — 5편 중 실제 이미징 신호 1편 미만</strong> — 5편 모두 NLoS MIMO 홀로그래피, 음향 홀로그래피(공업), OAM 암호화, 테라헤르츠 메타표면 라우팅, 메타표면 홀로그래픽 리소그래피처럼 통신·음향·재료 응용이라 계산 이미징 핵심과는 거리가 있습니다.</li>
+    <li><strong>Meta-Optics/Diffractive — 6편 중 실제 이미징 신호 1편</strong> — <a href="https://doi.org/10.1021/acsphotonics.6c00927" target=_blank>Polarization-Multiplexed Binocular Metasurface-Empowered Monolithic Ranging and Dual-Mode Imaging System</a> [JNL]만 거리 측정+이중 모드 이미징을 다루는 실제 이미징 하드웨어 신호이고, 나머지 5편은 CubeSat 안테나·위성통신·RCS 저감·EBL 공정처럼 통신·재료·제조 응용입니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 4편 중 실제 신호 2편</strong> — <a href="https://arxiv.org/abs/2610.04883" target=_blank>Reflection-Robust 6DoF Object Tracking with Light Fields</a> [CV]와 <a href="https://arxiv.org/abs/2610.04342" target=_blank>Asynchronous Tracking, Optical Communication and 3D Motion Capture using Event-based Sensors</a> [CV]가 각각 광필드·이벤트 카메라 하드웨어를 실제로 다루는 신호이고, 나머지 2편(어류 심장혈관 광시트현미경, 난류 왜곡 OAM 빔 검출)은 생물학 응용·통신 응용으로 결이 다릅니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: Gaussian Splatting의 모바일·희소 뷰·세포 영상·서브서피스 산란 확장(Mobile-4DGS, Sparse-View 4DGS, CellSplat4D, VolS-GS 등 9편), 열화상·실제 조건 초해상도(TIRMamba, AstraSR, DriftSR, Super-Resolution in The Right Latent Space), diffusion concept erasure(Your Unlearning Gives You Away, No Concept Escapes the Audit, VisualErase, FADE), SAR 압축 복원(Diffusion Meets Unrolling)</li>
+  <li><strong>저널 전용</strong>: 수의 종양학 H&E virtual staining, 비지도 Schrödinger bridge virtual staining, label-free 광음향 혈류 매핑, MRpro 저자기장 MRI 프레임워크, 이중모드 거리측정 메타표면</li>
+  <li><strong>공통 키워드</strong>: label-free(arXiv는 세포 영상 Gaussian Splatting 맥락, 저널은 virtual staining·광음향 맥락으로 "염색/표지 없이 정보를 얻는다"는 문제의식을 서로 다른 촬영 방식에서 공유), physics-informed/model-based(arXiv는 PDE·전자기 역문제, 저널은 MRpro의 정량 MRI 프레임워크 맥락으로 "물리 모델을 명시적으로 넣는다"는 설계가 양쪽에서 반복)</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 Gaussian Splatting 응용 다각화와 diffusion concept erasure라는 두 개의 강한 방법론 신호를 냈고, 저널은 label-free 영상의 응용 확장(수의학, 광음향)이라는 신호를 냈습니다. abstract가 없는 backfill 데이터라 교차 신호의 구체적 수치 비교는 본문 확인 전까지 유보합니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 3D Gaussian Splatting이 모바일 실시간, 희소 뷰, 세포 영상, 역학 시뮬레이션까지 응용 영역을 동시에 넓힘</h3>
+  <p>Mobile-4DGS, Sparse-View 4D Gaussian Splatting, LoCoSplat, CellSplat4D, VolS-GS, Sparse-GS2Mesh, MaRO-GS, GS-Pool, 3DGS-SPH 9편이 같은 날 나오며, Gaussian Splatting이 "예쁜 3D 장면 복원" 한 가지 용도를 벗어나 모바일 기기·희소 뷰·세포 현미경·공학 시뮬레이션이라는 서로 다른 제약에 맞춰 각자 변형되고 있다는 흐름이 뚜렷해졌다.</p>
+  <p class=conf-note>Confidence: Medium — 같은 날 9편이 Tomography/3D Imaging 버킷에 집중됐으나 abstract 부재로 구체 수치 근거는 확인 전</p>
+</div>
+
+<div class=ins>
+  <h3>2. 이미지 초해상도가 열화상, 실제 저하 조건, 동결된 파운데이션 잠재공간으로 동시에 퍼짐</h3>
+  <p>TIRMamba(경량 열화상), AstraSR·DriftSR(실제 저하 조건), Super-Resolution in The Right Latent Space(동결된 foundation model 재사용) 4편이 모이며, 초해상도 연구가 합성 저하 가정을 벗어나 센서 종류·저하 현실성·백본 재사용이라는 세 축으로 동시에 확장되고 있다.</p>
+  <p class=conf-note>Confidence: Low — 방향성은 뚜렷하나 각자 다른 축을 겨냥해 하나의 벤치마크로 수렴하지 않고, abstract 부재로 수치 확인 전</p>
+</div>
+
+<div class=ins>
+  <h3>3. Diffusion 모델의 개념 지우기가 이미지·비디오 양쪽에서 '지우기 vs 검증' 공방으로 번짐</h3>
+  <p>Your Unlearning Gives You Away(역추론 공격)와 No Concept Escapes the Audit(검증 가능한 지우기)가 같은 날 나오며 concept erasure의 중심이 "어떻게 지울까"에서 "지웠다는 걸 어떻게 믿을까"로 옮겨갔고, VisualErase·FADE는 같은 문제의식을 이미지에서 비디오로 넓혔다.</p>
+  <p class=conf-note>Confidence: Medium — 4편이 두 축(지우기 vs 검증, 이미지→비디오)에서 뚜렷하게 수렴하나 abstract 부재로 공격·방어 성공률은 확인 전</p>
+</div>
+
+<div class=ins>
+  <h3>4. Virtual staining/label-free 영상이 수의학, 비지도학습, 광음향 혈류 매핑으로 응용 범위를 넓힘</h3>
+  <p>수의 종양학 H&E virtual staining, 비지도 Schrödinger bridge virtual staining, label-free 광음향 혈류 매핑 3편이 모이며, virtual staining·label-free 연구가 사람 병리·지도학습·조직 염색이라는 전제를 각각 다른 방향으로 벗어나고 있다.</p>
+  <p class=conf-note>Confidence: Low — label-free라는 공통 철학은 뚜렷하나 응용 도메인이 갈려 단일 벤치마크로 수렴하지 않음</p>
+</div>
+
+<div class=ins>
+  <h3>5. 의료·과학 영상 역문제에 diffusion과 물리 정보 결합이 SAR·MRI·PDE에서 동시에 퍼짐</h3>
+  <p>Diffusion Meets Unrolling(SAR), MRpro(MRI 프레임워크), Right Bregman proximal gradient(Poisson 역문제), Backward-Consistent Diffusion Sampling(PDE) 4편이 모이며, "물리 모델과 diffusion 생성 모델을 함께 쓴다"는 설계가 특정 모달리티 전용이 아니라 범용 역문제 전략으로 자리잡고 있다는 신호가 보인다.</p>
+  <p class=conf-note>Confidence: Low — 서로 다른 신호원(SAR/MRI/PDE)이 제목 수준에서만 묶여 있어 본문 확인 전까지는 느슨한 연결</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. Gaussian Splatting 응용 변형들의 공통/차별 모듈 비교표 만들기</h3>
+  <p>Mobile-4DGS, CellSplat4D, VolS-GS, Sparse-GS2Mesh 등 오늘 모인 9편의 코드가 공개되는 대로, 각자 어떤 공통 모듈(압축, PSF 모델링, 희소 뷰 보강, 서브서피스 산란 표현)을 쓰는지 비교표로 정리해 랩의 현미경·산란매질 데이터에 어떤 모듈이 가장 먼저 이식 가능한지 가늠합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Mobile-4DGS, CellSplat4D, VolS-GS 코드 공개 확인 및 재현 시도</li>
+    <li>공통 benchmark: 랩 보유 희소 뷰 현미경 촬영 데이터</li>
+    <li>비교축: 기존 3DGS 대비 희소 뷰 조건에서의 PSNR/SSIM, PSF 모델 교체 시 학습 안정성</li>
+    <li>실패해도 남는 결과: 랩 데이터에서 각 GS 변형의 재현 가능성 타당성 보고서</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. 실제 저하 조건 초해상도 4편의 가정을 정리해 랩 열화상 데이터에 대입</h3>
+  <p>TIRMamba·AstraSR·DriftSR·Super-Resolution in The Right Latent Space가 각각 가정하는 저하 모델(센서 노이즈, 블러, 실측 vs 합성)을 정리하고, 랩이 보유한 실제 열화상/저조도 데이터에서 어떤 가정이 가장 잘 맞는지 비교합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: TIRMamba, DriftSR 방법 재현</li>
+    <li>공통 benchmark: 랩 보유 실제 열화상 데이터셋</li>
+    <li>비교축: PSNR/SSIM, 파라미터 수 대비 성능(TIRMamba의 경량화 주장 검증)</li>
+    <li>실패해도 남는 결과: 랩 열화상 데이터의 초해상도 baseline 측정</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. 비지도 virtual staining(Schrödinger bridge)을 정답 쌍이 부족한 랩 시료에 타당성 검토</h3>
+  <p>정답 염색-비염색 쌍을 구하기 어려운 랩의 희귀 시료나 동물 조직 촬영에, Schrödinger bridge 기반 비지도 virtual staining 설계를 적용할 수 있는지 코드 공개 여부부터 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: High-fidelity unsupervised virtual staining (Schrödinger bridge) 코드 확인</li>
+    <li>공통 benchmark: 랩 보유 비정렬 염색/비염색 현미경 영상</li>
+    <li>비교축: 지도학습 기반 virtual staining 대비 비지도 방식의 시각적 품질 차이</li>
+    <li>실패해도 남는 결과: 랩 시료에서 비지도 virtual staining 적용 가능성 보고서</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Reconstruction/Inverse Problems(18편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:27.8%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:33.3%"></span></span><span class=n>6편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:22.2%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:94.4%"></span></span><span class=n>17편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:61.1%"></span></span><span class=n>11편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>18편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>108편</span></div>
+
+<p><small>⚠️ 참고: Tomography/3D Imaging 17편 중 9편이 Gaussian Splatting 변형(위 클러스터1 대표)이고, 나머지 8편은 PET/CT 팬텀 연구·CBCT 치과 영상·OCT 임상 사례·VR 인지 자극 등 "tomography/3D" 키워드만 겹치는 임상·응용 논문입니다. Virtual Staining/Pathology 11편 중 실제 virtual staining/label-free 신호는 3건(클러스터4)이고 나머지는 은하 궤도 Fourier 분석, 수학 교육 연구, 미세플라스틱 형광 반응처럼 "staining"·"label-free" 키워드 오탐입니다. Reconstruction/Inverse Problems 18편 중 영상 역문제 핵심 신호는 4~5건(SAR, MRI, Poisson, PDE)이고 나머지는 전자기계·전력망 등 일반 공학 역문제입니다. Deep Learning Methods 108편 중 이미징 관련 대표 논문만 아래 표시했습니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Meta-Optics/Diffractive (6편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/acsphotonics.6c00927" target=_blank>Polarization-Multiplexed Binocular Metasurface-Empowered Monolithic Ranging and Dual-Mode Imaging System</a></strong> [JNL]<br>
+  왜 주요: 거리 측정과 이중 모드 이미징을 한 메타표면 소자에 통합한 실제 이미징 하드웨어 신호(제목 기반 판단)
+</div>
+
+<h3>Light-Field/Novel Sensors (4편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.04883" target=_blank>Reflection-Robust 6DoF Object Tracking with Light Fields</a></strong> [CV]<br>
+  왜 주요: 반사면이 있는 환경에서도 강건한 광필드 기반 6자유도 물체 추적
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.04342" target=_blank>Asynchronous Tracking, Optical Communication and 3D Motion Capture using Event-based Sensors</a></strong> [CV]<br>
+  왜 주요: 이벤트 카메라 하나로 추적·광통신·3D 모션 캡처를 동시에 수행
+</div>
+
+<h3>Tomography/3D Imaging (17편 중 관련 대표 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.05289" target=_blank>Mobile-4DGS</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — 모바일 기기에서 정적·동적 장면을 통합 실시간 렌더링
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.04606" target=_blank>Sparse-View 4D Gaussian Splatting</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — 희소 뷰를 시공간 사전+생성 모델로 보강
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.04199" target=_blank>CellSplat4D</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — PSF 인식 희소 로봇 세포 현미경 영상 복원
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.04007" target=_blank>VolS-GS</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — 체적 서브서피스 산란을 표현하는 relightable GS
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.04351" target=_blank>LoCoSplat</a></strong> [CV]<br>
+  왜 주요: 최소한의 3D 추론만으로 실시간 feed-forward Gaussian Splatting
+</div>
+<p><small>나머지 약 12편(GS-Pool, MaRO-GS, Sparse-GS2Mesh, 3DGS-SPH 포함)은 클러스터1에서 이미 다뤘거나, PET/CT 팬텀·CBCT 치과·OCT 임상 사례처럼 계산 이미징 방법론과 거리가 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology (11편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/jimaging12100490" target=_blank>Assessment of Transfer Learning for H&E Virtual Staining in Veterinary Oncology</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터4 대표 — virtual staining을 수의 종양학으로 확장 평가
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1631/eng.itee.2026.0118" target=_blank>High-fidelity unsupervised virtual staining via progressive Schrödinger bridge dynamics</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터4 대표 — 정답 쌍 없는 비지도 virtual staining
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s44303-026-00192-5" target=_blank>Label-free hemodynamic mapping via ultrafast power Doppler-enhanced photoacoustic imaging</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터4 대표 — label-free 광음향 혈류 기능 매핑
+</div>
+<p><small>나머지 약 8편은 은하 궤도 Fourier 분석, 수학 교육 연구, 미세플라스틱 형광 반응 등 "staining/label-free" 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (18편 중 관련 대표 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.06107" target=_blank>Diffusion Meets Unrolling</a></strong> [IV]<br>
+  왜 주요: 오늘 클러스터5 대표 — SAR 압축 영상 복원에 diffusion과 unrolling 교차 적용
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/nbm.70405" target=_blank>MRpro</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터5 대표 — 모델 기반·학습 기반·정량 MRI를 아우르는 오픈 프레임워크, 저자기장 MRI 적용
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.06579" target=_blank>Right Bregman proximal gradient</a></strong> [IV]<br>
+  왜 주요: 오늘 클러스터5 대표 — Poisson 영상 역문제에 적용
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.04624" target=_blank>Backward-Consistent Diffusion Sampling</a></strong> [LG]<br>
+  왜 주요: 오늘 클러스터5 대표 — 희소 관측 PDE 역문제에 diffusion 샘플링 적용
+</div>
+<p><small>나머지 약 14편은 전력망·전자기계·절삭 가공 등 영상과 무관한 공학 역문제라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods — 이미징 관련 대표 4편 (108편 중 catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.05182" target=_blank>TIRMamba</a></strong> [IV]<br>
+  왜 주요: 오늘 클러스터2 대표 — 서브밀리언 파라미터 경량 열화상 초해상도
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.05910" target=_blank>AstraSR</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터2 대표 — 실세계 열화상 초해상도
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.05601" target=_blank>Your Unlearning Gives You Away</a></strong> [LG]<br>
+  왜 주요: 오늘 클러스터3 대표 — diffusion 모델의 지워진 개념을 역추론하는 공격
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.03980" target=_blank>FADE</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터3 대표 — 비디오 diffusion의 다중 개념 지우기
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<p><small>오늘은 abstract가 없는 title/subject 기반 backfill이라 구체적인 벤치마크 수치를 확인할 수 없습니다. 신규 결과 없음(빈 배열).</small></p>
+
+<hr>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 오늘은 arXiv /pastweek 날짜 섹션에서 abstract 없이 복구한 backfill 데이터입니다. 모든 클러스터·인사이트는 제목·subject·저자 정보만으로 구성했으며, 실제 방법론 세부사항과 수치는 본문 확인 전까지 추정입니다.</p>
+  <p>[Dataset risk] /pastweek 날짜 섹션은 new/cross/replacements를 구분하지 않아, arxiv_id의 YYMM prefix가 2610이 아닌 항목(replacement로 추정)을 수동 필터링했습니다. 이 과정에서 일부 정당한 신규 논문이 오탈락했거나, 반대로 일부 replacement가 YYMM이 우연히 일치해 남아있을 가능성을 배제할 수 없습니다.</p>
+  <p>[Claim risk] 저널 다수(수의 종양학 virtual staining, Schrödinger bridge virtual staining, MRpro 등)가 Crossref abstract 미공개 상태라 제목만으로 버킷·신호를 판단했습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] Gaussian Splatting 응용 9편 모두 "기존 방법 대비 개선"을 주장할 것으로 추정되나 구체적 비교 대상·수치는 abstract 부재로 확인 불가능합니다.</p>
+  <p>[Baseline risk] Diffusion concept erasure 4편의 공격·방어 성공률, 기존 방법 대비 우위 수치는 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li><strong>Tomography/3D Imaging 임상·응용 사례 약 8편</strong> [JNL] — PET/CT 팬텀, CBCT 치과, OCT 임상 사례, VR 인지 자극 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
+    <li><strong>Virtual Staining/Pathology 키워드 오탐 약 8편</strong> [JNL/LG/AI] — 은하 궤도 Fourier 분석, 수학 교육 연구, 미세플라스틱 형광 반응 등입니다.</li>
+    <li><strong>Phase Imaging/Holography 통신·음향 응용 5편</strong> [SP/JNL] — NLoS MIMO 홀로그래피, 음향 홀로그래피 등으로 이미징과 거리가 있습니다.</li>
+    <li><strong>Reconstruction/Inverse Problems 일반 공학 역문제 약 14편</strong> [주로 LG] — 전력망, 전자기계, 절삭 가공 등입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy (0편)</h3>
+<p><small>오늘 배정 0편입니다.</small></p>
+
+<h3>Lensless/Coded Imaging (0편)</h3>
+<p><small>오늘 배정 0편입니다.</small></p>
+
+<h3>Phase Imaging/Holography (5편) — 관련 0~1편</h3>
+<p><small>5편 모두 NLoS MIMO 홀로그래피, 음향 홀로그래피(공업), OAM 암호화, 테라헤르츠 메타표면, 메타표면 홀로그래픽 리소그래피로 통신·음향·재료 응용이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Meta-Optics/Diffractive (6편) — 관련 1편</h3>
+<div class=roi-item>
+  <strong>Polarization-Multiplexed Binocular Metasurface-Empowered Monolithic Ranging and Dual-Mode Imaging System</strong> [JNL]<br>
+  문제: 거리 측정과 이미징을 별도 소자로 구현해야 하는 비효율 / 방법: 편광 다중화 양안 메타표면으로 통합(초록 미공개, 제목 기반 판단) / 의미: 이중 모드 이미징 하드웨어 신호 / 우선순위: Read
+</div>
+<p><small>나머지 5편(CubeSat 안테나, 위성통신, RCS 저감, EBL 공정)은 통신·재료·제조 응용이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Light-Field/Novel Sensors (4편) — 관련 2편</h3>
+<div class=roi-item>
+  <strong>Reflection-Robust 6DoF Object Tracking with Light Fields</strong> [CV]<br>
+  문제: 반사면이 있는 환경에서 물체 추적이 깨짐 / 방법: 광필드 기반 반사 강건 6DoF 추적(제목 기반 판단) / 의미: 광필드 센서 하드웨어 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Asynchronous Tracking, Optical Communication and 3D Motion Capture using Event-based Sensors</strong> [CV]<br>
+  문제: 추적·통신·모션 캡처를 각각 다른 센서로 구현해야 하는 비효율 / 방법: 이벤트 카메라 하나로 세 기능 통합(제목 기반 판단) / 의미: 이벤트 카메라 신호 / 우선순위: Read
+</div>
+<p><small>나머지 2편(어류 심장혈관 광시트현미경, 난류 왜곡 OAM 빔 검출)은 생물학·통신 응용이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Tomography/3D Imaging (17편) — 관련 대표 6편</h3>
+<div class=roi-item>
+  <strong>Mobile-4DGS</strong> [arXiv]<br>
+  문제: 모바일 기기에서 정적·동적 장면을 따로 처리해야 하는 비효율 / 방법: 통합 실시간 Gaussian Splatting(제목 기반 판단) / 의미: 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Sparse-View 4D Gaussian Splatting</strong> [arXiv]<br>
+  문제: 카메라 뷰가 희소할 때 4D 복원이 어려움 / 방법: 시공간 사전+생성 모델 보조(제목 기반 판단) / 의미: 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>CellSplat4D</strong> [arXiv]<br>
+  문제: 로봇 기반 희소 뷰 세포 현미경 영상의 PSF 미고려 / 방법: PSF 인식 4D Gaussian Splatting(제목 기반 판단) / 의미: 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>VolS-GS</strong> [arXiv]<br>
+  문제: 반투명 물체의 서브서피스 산란 표현과 재조명이 어려움 / 방법: 체적 서브서피스 산란 Gaussian Splatting(제목 기반 판단) / 의미: 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>LoCoSplat</strong> [arXiv]<br>
+  문제: feed-forward 3D 복원이 복잡한 3D 추론을 요구 / 방법: 최소 3D 추론 실시간 Gaussian Splatting(제목 기반 판단) / 의미: 효율적 feed-forward GS 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Sparse-GS2Mesh</strong> [arXiv]<br>
+  문제: 희소 뷰에서 표면 메시 복원이 어려움 / 방법: 2DGS+신규 스테레오 뷰 안내 메시 복원(제목 기반 판단) / 의미: GS 기반 메시 복원 신호 / 우선순위: Read
+</div>
+<p><small>나머지 약 11편(GS-Pool, MaRO-GS, 3DGS-SPH 포함)과 PET/CT 팬텀·CBCT 치과·OCT 임상 사례는 개별 bullet을 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology (11편) — 관련 3편</h3>
+<div class=roi-item>
+  <strong>H&E Virtual Staining in Veterinary Oncology</strong> [JNL]<br>
+  문제: virtual staining 모델이 사람 병리 위주로 평가됨 / 방법: 동물 종양 조직에 전이학습 평가(초록 미공개) / 의미: 클러스터4 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Unsupervised Virtual Staining via Schrödinger Bridge</strong> [JNL]<br>
+  문제: virtual staining이 정답 쌍 지도학습에 의존 / 방법: 점진적 Schrödinger bridge로 비지도 학습(초록 미공개) / 의미: 클러스터4 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Label-free Photoacoustic Hemodynamic Mapping</strong> [JNL]<br>
+  문제: 치료에 따른 종양 내 기능 변화를 라벨 없이 측정하기 어려움 / 방법: 초고속 파워 도플러 강화 광음향 이미징(초록 미공개) / 의미: 클러스터4 대표 / 우선순위: Read
+</div>
+<p><small>나머지 약 8편은 은하 궤도 분석, 수학 교육 연구, 미세플라스틱 형광 반응 등 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (18편) — 관련 대표 4편</h3>
+<div class=roi-item>
+  <strong>Diffusion Meets Unrolling</strong> [arXiv]<br>
+  문제: 압축 SAR 영상 복원의 정확도 한계 / 방법: diffusion과 unrolling 교차 학습된 보정(제목 기반 판단) / 의미: 클러스터5 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>MRpro</strong> [JNL]<br>
+  문제: 모델 기반·학습 기반·정량 MRI 도구가 파편화됨 / 방법: 통합 오픈 프레임워크, 저자기장 MRI 적용(초록 미공개) / 의미: 클러스터5 대표, 표준후보 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Right Bregman proximal gradient</strong> [arXiv]<br>
+  문제: Poisson 노이즈가 있는 영상 역문제의 수렴 보장 / 방법: Bregman proximal gradient 변형(제목 기반 판단) / 의미: 클러스터5 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Backward-Consistent Diffusion Sampling</strong> [arXiv]<br>
+  문제: 희소 관측 PDE 역문제의 diffusion 샘플링 불안정성 / 방법: 역방향 일관성을 강제하는 샘플링(제목 기반 판단) / 의미: 클러스터5 대표 / 우선순위: Read
+</div>
+<p><small>나머지 약 14편은 전력망·전자기계·절삭 가공 등 영상과 무관한 공학 역문제라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods — 이미징 관련 대표 8편</h3>
+<div class=roi-item>
+  <strong>TIRMamba</strong> [arXiv]<br>
+  문제: 열화상 초해상도가 큰 모델을 요구 / 방법: 서브밀리언 파라미터 state-space 네트워크(제목 기반 판단) / 의미: 클러스터2 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>AstraSR</strong> [arXiv]<br>
+  문제: 실세계 열화상 저하 조건 대응 부족 / 방법: GPT-6 Astra 기반 초해상도(제목 기반 판단) / 의미: 클러스터2 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>DriftSR</strong> [arXiv]<br>
+  문제: 반복적 diffusion 초해상도의 느린 속도 / 방법: 분포 드리프트 기반 원스텝 초해상도(제목 기반 판단) / 의미: 클러스터2 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Super-Resolution in The Right Latent Space</strong> [arXiv]<br>
+  문제: 초해상도 모델을 처음부터 학습시켜야 하는 비효율 / 방법: 동결된 vision foundation model 잠재공간 재사용(제목 기반 판단) / 의미: 클러스터2 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Your Unlearning Gives You Away</strong> [arXiv]<br>
+  문제: diffusion 모델의 지우기 주장을 검증할 방법 부재 / 방법: 지워진 개념을 역으로 식별하는 공격(제목 기반 판단) / 의미: 클러스터3 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>No Concept Escapes the Audit</strong> [arXiv]<br>
+  문제: concept erasure의 사후 검증 불가능성 / 방법: 감사 가능한 지우기 설계(제목 기반 판단) / 의미: 클러스터3 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>VisualErase</strong> [arXiv]<br>
+  문제: 텍스트-이미지 diffusion의 개념 지우기 강건성 부족 / 방법: 이중 분기 시각 궤적 재방향(제목 기반 판단) / 의미: 클러스터3 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>FADE</strong> [arXiv]<br>
+  문제: 비디오 diffusion에서 다중 개념 지우기 어려움 / 방법: 프레임 인식 diffusion-transformer 지우기(제목 기반 판단) / 의미: 클러스터3 대표 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/pastweek">arXiv cs.CV /pastweek</a> · <a href="https://arxiv.org/list/cs.LG/pastweek">cs.LG /pastweek</a> · <a href="https://arxiv.org/list/cs.AI/pastweek">cs.AI /pastweek</a> · <a href="https://arxiv.org/list/eess.IV/pastweek">eess.IV /pastweek</a> · <a href="https://arxiv.org/list/eess.SP/pastweek">eess.SP /pastweek</a></li>
+  <li><a href="https://arxiv.org/abs/2610.05289" target=_blank>Mobile-4DGS — arXiv</a></li>
+  <li><a href="https://arxiv.org/abs/2610.05601" target=_blank>Your Unlearning Gives You Away — arXiv</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-10-06 backfill 실행(2026-10-12에 역산 발행) · arXiv 1,497건(카테고리별 원시 합산, new+cross, replacement 제외) + 저널 62편, classify.py 중복 제거 후 전체 스캔 1,267건 · ROI 배정 169건 (13.3%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP · <strong>title/subject 기반(abstract 없음)</strong></p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성, backfill)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

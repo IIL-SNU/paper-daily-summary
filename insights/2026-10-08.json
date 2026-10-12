@@ -1,0 +1,111 @@
+{
+ "date": "2026-10-08",
+ "insights": [
+  {
+   "title": "Fourier Ptychography가 기가픽셀급 하드웨어 스케일링과 X선 CDI 통합 알고리즘으로 동시에 진전",
+   "claim": "2.5-Gigapixel Compact Stitching-Free Fourier Ptychographic Imager(이어붙이기 없이 기가픽셀급 시야를 확보), Camera-array Fourier ptychography with speckle suppression(카메라 배열로 반사형 거시 영상의 스펙클 억제), A unified self-supervised framework for single-frame Fresnel CDI and overlapped ptychography(방사광/X선 자유전자레이저의 단일 프레임 코히어런트 회절 이미징과 중첩 ptychography를 하나의 자기지도 프레임워크로 통합) 3편이 같은 날 모였다. 이는 Fourier ptychography 연구가 '더 넓은 시야를 어떻게 하드웨어로 확보할까'와 '더 적은 중첩·노출로도 복원이 되게 알고리즘을 어떻게 바꿀까'라는 두 축에서 동시에 움직이고 있다는 뜻이다. 특히 Fresnel CDI 통합 논문은 실제 abstract를 확인할 수 있었는데, 겹침 제약 없이 단일 프레임만으로도 SSIM 0.90 이상을 복원했다고 보고해 신호가 구체적이다.",
+   "papers": [
+    {
+     "title": "2.5-Gigapixel Compact Stitching-Free Fourier Ptychographic Imager",
+     "arxiv": "https://doi.org/10.1364/ol.610551",
+     "importance_tags": ["[스케일업]", "[실사용전환]"]
+    },
+    {
+     "title": "Camera-array Fourier ptychography with speckle suppression for reflective macroscopic imaging",
+     "arxiv": "https://doi.org/10.1364/ol.614463",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "A unified self-supervised framework for single-frame Fresnel CDI and overlapped ptychography",
+     "arxiv": "https://doi.org/10.1364/oe.607138",
+     "importance_tags": ["[방법전환]", "[표준후보]"]
+    }
+   ]
+  },
+  {
+   "title": "Quantitative phase microscopy가 회절 한계를 넘는 초해상도와 조명 불일치 강건성으로 확장",
+   "claim": "Label-free super-resolution quantitative phase microscopy(HoloSIM — 홀로그래픽 구조조명으로 QPM의 회절 한계를 넘는 초해상도 구현)와 High-Spatiotemporal-Resolution Quantitative Phase Microscopy under Unmatched Illumination(조명 조건이 어긋난 상황에서도 시공간 해상도를 유지) 2편이 모였다. HoloSIM은 abstract가 확인되는데, 시료의 위상 정보를 근접장 홀로그램 패턴으로 바꾼 뒤 형광 기반 구조조명현미경으로 읽어내 공간 대역폭을 늘리는 방식이다. 두 논문 모두 QPM의 오랜 약점(회절 한계에 따른 해상도, 조명 조건에 대한 민감성)을 정면으로 겨냥한다는 공통점이 있다.",
+   "papers": [
+    {
+     "title": "Label-free super-resolution quantitative phase microscopy (HoloSIM)",
+     "arxiv": "https://doi.org/10.1088/2515-7647/aeb213",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "High-Spatiotemporal-Resolution Quantitative Phase Microscopy under Unmatched Illumination",
+     "arxiv": "https://doi.org/10.1364/ol.610597",
+     "importance_tags": ["[방법전환]"]
+    }
+   ]
+  },
+  {
+   "title": "Light-field microscopy가 조리개 샘플링 설계와 여기광-검출 모듈 분리로 3D 고해상도를 노림",
+   "claim": "Non-uniformly sampled aperture-coded light-field microscopy(불균일 샘플링 조리개 코딩)와 A Two-Module Upgrade for 3D High-Resolution Microscopy(DMD 패턴 여기광과 광필드 검출을 별도 모듈로 분리) 2편이 모였다. 둘 다 '하나의 광학계로 모든 것을 다 하려 하지 말고, 조리개 샘플링 패턴이나 여기-검출 경로를 의도적으로 설계/분리해서 3D 해상도와 시야를 동시에 얻자'는 방향을 가리킨다.",
+   "papers": [
+    {
+     "title": "Non-uniformly sampled aperture-coded light-field microscopy",
+     "arxiv": "https://doi.org/10.1364/ol.613384",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "A Two-Module Upgrade for 3D, High-Resolution Microscopy: DMD Patterned Excitation and Light-Field Detection",
+     "arxiv": "https://doi.org/10.1364/boe.615978",
+     "importance_tags": ["[방법전환]", "[인프라]"]
+    }
+   ]
+  },
+  {
+   "title": "메타표면 이미징 하드웨어가 분광과 확장 피사계심도 기능으로 수렴",
+   "claim": "Huygens Metasurface-Enabled Mid-Wave Infrared Computational Spectrometers, High-resolution violet-band silicon metasurface spectrometers, Polarization-Multiplexed Double-Helix/Airy Metalens for Depth-Resolved Texture Imaging With Extended Depth-of-Field 3편이 모였다. 29편에 달하는 Meta-Optics/Diffractive 버킷 대부분이 테라헤르츠 흡수체·센서 같은 통신·재료 응용이지만, 이 3편만은 분광기나 피사계심도 확장처럼 실제 이미징 하드웨어 기능을 겨냥한다는 점에서 가려 뽑을 가치가 있다.",
+   "papers": [
+    {
+     "title": "Huygens Metasurface-Enabled Mid-Wave Infrared Computational Spectrometers",
+     "arxiv": "https://doi.org/10.1364/ol.614321",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "High-resolution violet-band silicon metasurface spectrometers via tailoring the spatial localization of electromagnetic fields",
+     "arxiv": "https://doi.org/10.1364/ol.619735",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "Polarization-Multiplexed Double-Helix/Airy Metalens for Depth-Resolved Texture Imaging With Extended Depth-of-Field",
+     "arxiv": "https://doi.org/10.1002/nap2.70311",
+     "importance_tags": ["[방법전환]"]
+    }
+   ]
+  },
+  {
+   "title": "분광 영상이 필터 없는 하드웨어와 압축 센싱 알고리즘 양쪽에서 동시에 접근됨",
+   "claim": "MULOR-Net(스펙트럼 압축 이미징을 위한 다중 분기 저랭크 네트워크)과 Electrically Programmable Polarization-Resolved Photodetector Platform for Filterless Computational Spectroscopy and Imaging(필터 없이 전기적으로 분광·편광을 읽는 포토다이오드 플랫폼) 2편이 모였다. 하나는 압축 센싱 알고리즘 쪽에서, 다른 하나는 필터를 아예 없애는 하드웨어 쪽에서 분광 이미징의 비용(필터, 모자이크 센서)을 줄이려 한다는 공통점이 있다.",
+   "papers": [
+    {
+     "title": "MULOR-Net: Multi-Branch Low-Rank Network for Spectral Compressive Imaging",
+     "arxiv": "https://doi.org/10.1109/tci.2026.3741317",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "Electrically Programmable Polarization-Resolved Photodetector Platform for Filterless Computational Spectroscopy and Imaging",
+     "arxiv": "https://doi.org/10.1002/adom.71860",
+     "importance_tags": ["[방법전환]", "[인프라]"]
+    }
+   ]
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "Fresnel CDI 통합 자기지도 프레임워크를 랩의 ptychography 파이프라인에 이식",
+   "claim": "A unified self-supervised framework for single-frame Fresnel CDI and overlapped ptychography가 공개한 겹침-제약 없는 단일 프레임 복원 방식을, 랩이 쓰는 Fourier ptychography 세팅(가시광 대역)에 맞춰 재현하고, 기존 중첩 스캔 방식 대비 노출 수/스캔 시간을 얼마나 줄일 수 있는지 측정한다.",
+   "supporting_papers": [
+    {"title": "A unified self-supervised framework for single-frame Fresnel CDI and overlapped ptychography", "arxiv": "https://doi.org/10.1364/oe.607138"}
+   ]
+  },
+  {
+   "title": "HoloSIM의 홀로그램+구조조명 결합 설계를 랩 QPM 세팅에 타당성 검토",
+   "claim": "HoloSIM이 제안한 '위상 정보를 홀로그램 패턴으로 바꾼 뒤 형광 구조조명으로 읽는다'는 설계를, 랩이 보유한 QPM 광학계에 추가 모듈로 이식할 수 있는지, 기존 QPM 대비 실제 해상도 개선폭을 측정한다.",
+   "supporting_papers": [
+    {"title": "Label-free super-resolution quantitative phase microscopy (HoloSIM)", "arxiv": "https://doi.org/10.1088/2515-7647/aeb213"}
+   ]
+  }
+ ]
+}

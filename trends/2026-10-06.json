@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-06",
+  "source_listing_date": "2026-10-06",
+  "source_mode": "pastweek-date-section",
+  "note": "2026-10-06(화) backfill. arXiv /new가 2026-10-12로 이미 넘어가 있어 /pastweek의 '2026-10-06' 날짜 섹션만 추출했다(title/subject 기반 backfill — abstract 없음). /pastweek 날짜 섹션은 new/cross/replacements를 구분하지 않고 한 묶음으로 보여주므로, arxiv_id의 YYMM prefix가 2610(2026년 10월)이 아닌 항목은 replacement로 간주해 제외했다(cs.LG 600→593, cs.AI 554→550, 나머지 카테고리는 변화 없음). Crossref/OpenAlex 저널도 생성 시점(오늘)에서 과거 윈도우를 넓게 가져온 뒤 created==2026-10-06인 레코드만 남겨 재구성했다. abstract가 없어 분류 정밀도가 평소(/new 기준 21~32%)보다 낮은 13.3%로 나왔는데, 이는 제목·subject 키워드만으로 매칭했기 때문이며 parser 오류가 아니다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 593,
+      "cs.CV": 285,
+      "cs.AI": 550,
+      "eess.IV": 12,
+      "eess.SP": 57
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 62
+  },
+  "totals": {
+    "total_scanned": 1267,
+    "selected": 169
+  },
+  "classified": {
+    "total_scanned": 1267,
+    "selected": 169,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 5,
+      "Meta-Optics/Diffractive": 6,
+      "Light-Field/Novel Sensors": 4,
+      "Tomography/3D Imaging": 17,
+      "Virtual Staining/Pathology": 11,
+      "Reconstruction/Inverse Problems": 18,
+      "Deep Learning Methods": 108
+    }
+  },
+  "daily_thesis": "2026-10-06은 title/subject 기반 backfill이지만, Tomography/3D Imaging 버킷에 Gaussian Splatting 변형 9편이 한꺼번에 몰려 응용 범위가 모바일 실시간·세포 영상·역학 시뮬레이션으로 넓어지는 뚜렷한 흐름이 확인됐고, 초해상도(열화상/실제 저하 조건)와 diffusion concept erasure 양쪽에서도 같은 날 4편씩 모이는 클러스터가 나타났다."
+}

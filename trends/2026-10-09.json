@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-09",
+  "source_listing_date": "2026-10-09",
+  "source_mode": "pastweek-date-section",
+  "note": "2026-10-09(금) backfill, 마지막 backfill 대상일. arXiv는 title/subject 기반(abstract 없음, YYMM=2610 외 추정 replacement 제외: cs.AI 302->301, 나머지 변화 없음). 저널 수집 중 OpenAlex가 2026-10-08에 이미 발행한 HoloSIM 논문(DOI 10.1088/2515-7647/aeb213)을 created=2026-10-09로 중복 보고해, 2026-10-08 daily에서 이미 다룬 논문과 동일함을 확인하고 오늘 집계에서 제외했다(제외 전 선택 101건 -> 제외 후 100건). 계산광학 코어 버킷(Fourier Ptychography, Lensless, Light-Field)은 어제의 활발한 신호 이후 오늘 다시 0편으로 돌아갔다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 324,
+      "cs.CV": 207,
+      "cs.AI": 301,
+      "eess.IV": 7,
+      "eess.SP": 33
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 73
+  },
+  "totals": {
+    "total_scanned": 799,
+    "selected": 100
+  },
+  "classified": {
+    "total_scanned": 799,
+    "selected": 100,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 6,
+      "Meta-Optics/Diffractive": 7,
+      "Light-Field/Novel Sensors": 0,
+      "Tomography/3D Imaging": 16,
+      "Virtual Staining/Pathology": 6,
+      "Reconstruction/Inverse Problems": 9,
+      "Deep Learning Methods": 56
+    }
+  },
+  "daily_thesis": "2026-10-09은 backfill 마지막 날로, 어제의 계산광학 코어 활기가 다시 가라앉고 Gaussian Splatting/NeRF가 워터마킹·시간대 강건성·정칙화·스트리밍·희소뷰 X선이라는 다섯 개 실용적 세부 문제로 갈라지는 흐름이 중심이었다. 최소 측정(포아송 카운트, 1비트, 단일 픽셀)에서 복원하는 알고리즘·하드웨어와, 의료 영상 복원의 자기지도/연속시간 모델화도 함께 확인됐다."
+}

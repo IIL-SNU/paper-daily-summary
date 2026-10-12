@@ -1,0 +1,84 @@
+{
+ "date": "2026-10-09",
+ "insights": [
+  {
+   "title": "Gaussian Splatting/NeRF가 보안(워터마킹), 시간대 강건성, 정칙화, 스트리밍, 희소뷰 X선까지 다섯 갈래로 세분화",
+   "claim": "Slot3R(스트리밍 3D 복원을 위한 set-associative 공간 메모리), PAM-ToD(시간대가 바뀌어도 쓸 수 있는 plug-and-play 외관 모델링), OX-NeRF(희소뷰 X선 CT를 implicit neural representation으로 복원), FlyMark(초파리 커넥톰 구조를 활용한 학습 불필요 비가시 워터마킹), PCAsplat(local PCA 정칙화) 5편이 같은 날 모였다. 이번 주 내내 이어진 Gaussian Splatting/NeRF 흐름이, 이번엔 저작권 보호(워터마킹), 조명·시간대 변화에 대한 강건성, 과적합을 막는 정칙화, 실시간 스트리밍 처리, 의료 X선이라는 다섯 개의 서로 다른 실용적 세부 문제로 갈라지고 있다는 뜻이다.",
+   "papers": [
+    {
+     "title": "Slot3R: Set-Associative Spatial Memory for Streaming 3D Reconstruction",
+     "arxiv": "https://arxiv.org/abs/2610.12282",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "FlyMark: Training-Free Invisible Watermarking of 3D Gaussian Splatting via a Fruit Fly Connectome",
+     "arxiv": "https://arxiv.org/abs/2610.11364",
+     "importance_tags": ["[방법전환]", "[경고신호]"]
+    },
+    {
+     "title": "OX-NeRF: 3D X-ray Tomography Reconstruction from Sparse Views Using Implicit Neural Representation",
+     "arxiv": "https://arxiv.org/abs/2610.11547",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "PAM-ToD: Plug-and-Play Appearance Modeling for Cross-Time-of-Day 3D Gaussian Splatting",
+     "arxiv": "https://arxiv.org/abs/2610.11572",
+     "importance_tags": ["[방법전환]"]
+    }
+   ]
+  },
+  {
+   "title": "최소 측정에서 영상을 복원하는 알고리즘과 하드웨어가 동시에 접근됨",
+   "claim": "Deep-Unfolded Penalized MLEM(포아송 노이즈가 있는 영상을 빠르게 복원하는 unrolled 알고리즘), Recovery Guarantees for Posterior Sampling of One-Bit Compressed Sensing(단 1비트 측정만으로도 복원 가능성을 이론적으로 보장), High-Responsivity Broadband Single-Pixel Perovskite Imager(단일 픽셀만으로 영상을 찍는 하드웨어) 3편이 모였다. 셋 다 '더 많은 측정을 모으자'가 아니라 '최소한의 측정(포아송 카운트, 1비트, 단일 픽셀)으로도 영상을 복원하거나 아예 하드웨어 자체를 극단적으로 단순화하자'는 같은 철학을 공유한다.",
+   "papers": [
+    {
+     "title": "Deep-Unfolded Penalized MLEM for Rapid Poisson Image Reconstruction",
+     "arxiv": "https://arxiv.org/abs/2610.12198",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "Recovery Guarantees for Posterior Sampling of One-Bit Compressed Sensing",
+     "arxiv": "https://arxiv.org/abs/2610.11834",
+     "importance_tags": ["[평가축]"]
+    },
+    {
+     "title": "High-Responsivity Broadband Single-Pixel Perovskite Imager",
+     "arxiv": "https://doi.org/10.1002/lpor.72015",
+     "importance_tags": ["[인프라]"]
+    }
+   ]
+  },
+  {
+   "title": "의료 영상 복원이 자기지도학습과 연속시간 신경망으로 샘플링 불연속 문제를 해결하는 쪽으로",
+   "claim": "Hankel Subspace Self-Supervised Learning for Parallel MRI Reconstruction(정답 쌍 없이 Hankel 부분공간 구조로 병렬 MRI를 복원)와 ContiLNN(Liquid Neural Network로 슬라이스별 샘플링이 끊기는 문제를 완화하는 의료 영상 복원) 2편이 모였다. 둘 다 '더 많은 정답 데이터로 지도학습'이 아니라, MRI/CT가 실제로 측정되는 방식(부분공간 구조, 슬라이스 단위 불연속 샘플링)을 모델 설계에 직접 반영해 문제를 푼다는 공통점이 있다.",
+   "papers": [
+    {
+     "title": "Hankel Subspace Self-Supervised Learning for Parallel MRI Reconstruction",
+     "arxiv": "https://arxiv.org/abs/2610.11560",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "ContiLNN: Mitigating Slice Sampling Discontinuity with Liquid Neural Networks for Medical Image Restoration",
+     "arxiv": "https://arxiv.org/abs/2610.12337",
+     "importance_tags": ["[방법전환]"]
+    }
+   ]
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "FlyMark의 워터마킹 설계가 랩이 공개할 3D 복원 결과물 보호에 쓸 수 있는지 검토",
+   "claim": "학습이 필요 없는 FlyMark의 워터마킹 방식이, 랩이 외부 공개하는 3D Gaussian Splatting 결과물(데이터셋, 데모)에 적용 가능한지, 워터마크가 렌더링 품질에 주는 영향을 측정한다.",
+   "supporting_papers": [
+    {"title": "FlyMark", "arxiv": "https://arxiv.org/abs/2610.11364"}
+   ]
+  },
+  {
+   "title": "Hankel Subspace SSL을 랩의 병렬 MRI/다중 센서 복원 파이프라인에 적용 가능한지 검토",
+   "claim": "정답 쌍 없이 Hankel 부분공간 구조만으로 학습하는 자기지도 방식을, 랩이 다루는 병렬 센싱(다중 코일 MRI 또는 다중 센서 배열) 복원 문제에 이식 가능한지 검토한다.",
+   "supporting_papers": [
+    {"title": "Hankel Subspace Self-Supervised Learning for Parallel MRI Reconstruction", "arxiv": "https://arxiv.org/abs/2610.11560"}
+   ]
+  }
+ ]
+}

@@ -1,0 +1,85 @@
+{
+ "date": "2026-10-07",
+ "insights": [
+  {
+   "title": "Feed-forward Gaussian Splatting이 응용 다각화에서 신뢰성·효율성(불확실성, 압축, 뷰 확장) 문제로 무게중심 이동",
+   "claim": "Post-Training Semantic Lifting(검출-의미화-표현 오차를 분리), DensiTok(주어진 것보다 더 많은 뷰를 보도록 만드는 feed-forward GS), Revar3r(gauge-aware 섭동 불확실성 정량화), Efficient Gaussian Splatting Sequence Compression(표준 비디오 코덱으로 GS 시퀀스 압축) 4편이 같은 날 모였다. 어제(10/6)는 Gaussian Splatting이 모바일·세포영상·서브서피스 산란처럼 '어디에 쓸 것인가'라는 응용 다각화가 중심이었다면, 오늘은 그 결과물이 '얼마나 믿을 수 있는가'(불확실성 정량화)와 '얼마나 효율적으로 저장·전송할 수 있는가'(압축)로 질문이 옮겨갔다는 뜻이다.",
+   "papers": [
+    {
+     "title": "Post-Training Semantic Lifting for 3D Gaussian Splatting: Separating Detector, Lifting and Representation Error",
+     "arxiv": "https://arxiv.org/abs/2610.08756",
+     "importance_tags": ["[해부분석]"]
+    },
+    {
+     "title": "DensiTok: Making Feed-Forward 3D Gaussian Splatting See More Views Than It Is Given",
+     "arxiv": "https://arxiv.org/abs/2610.07958",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "Revar3r: gauge-aware perturbation uncertainty for feed-forward 3d reconstruction",
+     "arxiv": "https://arxiv.org/abs/2610.07883",
+     "importance_tags": ["[평가축]"]
+    },
+    {
+     "title": "Efficient Gaussian Splatting Sequence Compression with Standard Video Codecs",
+     "arxiv": "https://arxiv.org/abs/2610.07795",
+     "importance_tags": ["[실사용전환]"]
+    }
+   ]
+  },
+  {
+   "title": "의료 영상 복원·정합이 처음부터 학습하는 대신 foundation model과 암시적 신경 표현을 재사용하는 쪽으로",
+   "claim": "Beyond Training from Scratch(심장 MRI 복원에 foundation model 재사용)와 Deformable CT-US Registration(해부 구조를 인식하는 implicit neural representation으로 CT-초음파 변형 정합) 2편이 모였다. 둘 다 '이 작업 전용 모델을 처음부터 학습시키자'가 아니라 '이미 학습된 범용 표현을 의료 영상이라는 특정 문제에 맞게 재사용하자'는 같은 방향을 가리킨다.",
+   "papers": [
+    {
+     "title": "Beyond Training from Scratch: Foundation Models for Data-Efficient and Generalizable Cardiac MRI Reconstruction",
+     "arxiv": "https://arxiv.org/abs/2610.08109",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "Deformable CT-US Registration via Anatomy-Aware Implicit Neural Representations",
+     "arxiv": "https://arxiv.org/abs/2610.08419",
+     "importance_tags": ["[방법전환]"]
+    }
+   ]
+  },
+  {
+   "title": "3D/광 영상 복원이 수중, 달 표면, 산란매질이라는 서로 다른 물리적 왜곡 조건을 명시적으로 모델링하는 쪽으로",
+   "claim": "Image-Space Refraction Correction for Underwater 3D Reconstruction(수중 굴절 보정), MoonGS(달 표면의 노이즈 있는 깊이 특징을 강건하게 다루는 GS), 산란매질 ghost imaging의 결합 왜곡·신호감쇠 한계를 다룬 저널 논문 3편이 모였다. 세 편 모두 '깨끗한 실내 환경을 가정한 3D/광 복원'이 아니라, 굴절·깊이 노이즈·산란이라는 실제 현장의 물리적 방해 요인을 모델에 명시적으로 집어넣는다는 공통점이 있다.",
+   "papers": [
+    {
+     "title": "Image-Space Refraction Correction for Underwater 3D Reconstruction: Warping Flat-Port Views into Pinhole Perspective",
+     "arxiv": "https://arxiv.org/abs/2610.07788",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "MoonGS: High-quality Representation of the Lunar Surface via Gaussian Splatting Using Robust Depth Features from Image Pairs",
+     "arxiv": "https://arxiv.org/abs/2610.07110",
+     "importance_tags": ["[방법전환]", "[데이터전환]"]
+    },
+    {
+     "title": "Imaging limits of ghost imaging under coupled light-field distortion and signal attenuation in scattering media",
+     "arxiv": "https://doi.org/10.1016/j.optlaseng.2026.110165",
+     "importance_tags": ["[평가축]"]
+    }
+   ]
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "Feed-forward GS 불확실성 정량화(Revar3r)를 랩 데이터 품질 관리 지표로 도입",
+   "claim": "Revar3r의 gauge-aware 섭동 불확실성 정량화 방식을 랩이 쓰는 feed-forward 3D 복원 파이프라인에 적용해, 어떤 입력 조건에서 복원이 불안정해지는지 사전에 플래그할 수 있는지 검토한다.",
+   "supporting_papers": [
+    {"title": "Revar3r", "arxiv": "https://arxiv.org/abs/2610.07883"}
+   ]
+  },
+  {
+   "title": "산란매질/수중 환경의 명시적 왜곡 모델을 랩의 현장 촬영 파이프라인에 이식",
+   "claim": "Image-Space Refraction Correction과 MoonGS가 보여준 '물리적 왜곡을 명시적으로 모델링'하는 설계를 랩이 다루는 산란매질 또는 비정형 촬영 환경에 적용 가능한지 검토한다.",
+   "supporting_papers": [
+    {"title": "Image-Space Refraction Correction for Underwater 3D Reconstruction", "arxiv": "https://arxiv.org/abs/2610.07788"},
+    {"title": "MoonGS", "arxiv": "https://arxiv.org/abs/2610.07110"}
+   ]
+  }
+ ]
+}

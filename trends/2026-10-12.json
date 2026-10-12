@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-12",
+  "source_listing_date": "2026-10-12",
+  "source_mode": "new",
+  "note": "2026-10-12(월) 정상 daily 실행. cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 /new listing이 \"Monday, 12 October 2026\"으로 발행일과 일치해 정상 daily(source_mode=new)로 발행한다. arXiv new+cross 611건(cs.LG 262·cs.CV 153·cs.AI 161·eess.IV 8·eess.SP 27)과 Crossref/OpenAlex 저널 297편을 classify.py가 합쳐 총 807건을 스캔했고 227건(28.1%)이 9개 ROI 버킷에 배정됐다. 오늘은 2026-09-11 이후 약 한 달(2026-09-14~2026-10-05, 영업일 14일)의 CI 파이프라인 중단을 복구한 첫 정상 daily로, 같은 실행에서 2026-10-06/07/08/09 4개 영업일을 pastweek-date-section backfill로 먼저 채웠다. 2026-09-14~2026-10-05는 arXiv /pastweek 보관 기간(약 1주)을 넘어서 원본 listing을 복구할 수 없어 발행하지 못했다(Date Source Contract 하드 게이트).",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 262,
+      "cs.CV": 153,
+      "cs.AI": 161,
+      "eess.IV": 8,
+      "eess.SP": 27
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 297
+  },
+  "totals": {
+    "total_scanned": 807,
+    "selected": 227
+  },
+  "classified": {
+    "total_scanned": 807,
+    "selected": 227,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 2,
+      "Meta-Optics/Diffractive": 4,
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 28,
+      "Virtual Staining/Pathology": 27,
+      "Reconstruction/Inverse Problems": 19,
+      "Deep Learning Methods": 143
+    }
+  },
+  "daily_thesis": "2026-10-12은 한 달간의 CI 공백을 복구한 첫 정상 daily로, Gaussian Splatting이 반사·유체·물성 편집 같은 물리 현상과 로봇 조작(Splat2Act, pi_0.5 수거 성공률 0%->62.5%) 다운스트림까지 흡수하는 흐름이 중심이었다. 의료 영상 표현학습이 공간 attention·무작위 샘플링 같은 기본 설계 가정을 재검증하는 분석 논문 3편도 눈에 띈다."
+}

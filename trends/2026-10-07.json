@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-07",
+  "source_listing_date": "2026-10-07",
+  "source_mode": "pastweek-date-section",
+  "note": "2026-10-07(수) backfill, title/subject 기반(abstract 없음). /pastweek 날짜 섹션에서 arxiv_id YYMM prefix가 2610이 아닌 항목(replacement 추정)을 제외했다(cs.LG 355→354, 나머지 변화 없음). 저널은 created==2026-10-07 레코드만 남겨 재구성했다. 오늘은 /pastweek 날짜 섹션 자체 물량이 어제(cs.LG 593)보다 작아(cs.LG 354) 전체 스캔·선택 건수도 함께 줄었다(선택 비율 11.6%). 계산광학 코어 버킷(Fourier Ptychography, Lensless/Coded Imaging)에 각 1편씩 드물게 신호가 떴다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 354,
+      "cs.CV": 164,
+      "cs.AI": 350,
+      "eess.IV": 5,
+      "eess.SP": 23
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 58
+  },
+  "totals": {
+    "total_scanned": 779,
+    "selected": 90
+  },
+  "classified": {
+    "total_scanned": 779,
+    "selected": 90,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 1,
+      "Meta-Optics/Diffractive": 6,
+      "Light-Field/Novel Sensors": 4,
+      "Tomography/3D Imaging": 10,
+      "Virtual Staining/Pathology": 7,
+      "Reconstruction/Inverse Problems": 4,
+      "Deep Learning Methods": 56
+    }
+  },
+  "daily_thesis": "2026-10-07은 어제보다 /pastweek 물량 자체가 작았지만, feed-forward Gaussian Splatting의 관심이 '어디에 쓸 것인가'에서 '얼마나 믿을 수 있고 효율적인가'로 옮겨갔고, 3D/광 영상 복원이 수중·달 표면·산란매질이라는 물리적 왜곡을 명시적으로 다루는 흐름이 새로 확인됐다."
+}
