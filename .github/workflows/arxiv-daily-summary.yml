@@ -1,18 +1,18 @@
 name: arXiv Daily Summary
+# Upgrade dispatches from arxiv-upgrade-poll.yml are titled "Upgrade <date>"; the poll
+# reads these titles back to attempt each date only once.
+run-name: ${{ inputs.upgrade_only && format('Upgrade {0} (journal-only → full)', inputs.target_date) || github.workflow }}
 
 on:
   schedule:
     # Daily report — 11:00 KST (02:00 UTC), every day incl. weekends. arXiv posts
     # the day's /new ~09-10 KST, so it is reliably up by 11:00. Generates the daily
     # (no-ops when arXiv has nothing new) and delivers its Slack in the same run.
+    # When arXiv is late it publishes journal-only and arms arxiv-upgrade-poll.yml.
     - cron: "0 2 * * *"
     # Weekly retrospective — Monday 10:00 KST (01:00 UTC). Standalone run that
     # generates last week's weekly (mode=weekly) and delivers its Slack inline.
     - cron: "0 1 * * 1"
-    # Journal-only upgrade poll — every 2h. A cheap pre-check (no Claude) looks for a
-    # daily published as journal-only whose date has since appeared in arXiv /pastweek;
-    # only then does it run the agent in backfill mode to upgrade it. Otherwise no-op.
-    - cron: "0 */2 * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -35,10 +35,16 @@ on:
         required: false
         default: true
         type: boolean
+      upgrade_only:
+        description: "Upgrade dispatch: skip unless target_date is still journal-only (set by the upgrade poll)"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
-  actions: read
+  # write: dispatch the Pages deploy and arm/disarm the upgrade poll.
+  actions: write
 
 concurrency:
   group: paper-daily-summary-${{ github.ref }}
@@ -75,8 +81,8 @@ jobs:
           python-version: "3.11"
 
       # Decide whether to run the agent at all, and in which mode, BEFORE installing
-      # Claude. The every-2h poll only proceeds when a journal-only daily can be
-      # upgraded; daily/weekly/manual always proceed.
+      # Claude. Daily/weekly/manual always proceed; an upgrade dispatch from the poll
+      # proceeds only if its date is still journal-only.
       - name: Resolve run plan
         id: plan
         shell: bash
@@ -85,15 +91,20 @@ jobs:
           SCHEDULE: ${{ github.event.schedule }}
           IN_MODE: ${{ github.event.inputs.mode }}
           IN_DATE: ${{ github.event.inputs.target_date }}
+          IN_UPGRADE_ONLY: ${{ github.event.inputs.upgrade_only }}
         run: |
           set -euo pipefail
+          # Baseline for the final sync step: did this run move origin/main?
+          git fetch -q origin main
+          echo "start_sha=$(git rev-parse origin/main)" >> "$GITHUB_OUTPUT"
           python - <<'PY'
-          import json, os, glob, re, datetime, urllib.request
+          import json, os, subprocess
 
           event = os.environ.get("EVENT_NAME", "")
           sched = os.environ.get("SCHEDULE", "")
           in_mode = os.environ.get("IN_MODE", "") or ""
           in_date = os.environ.get("IN_DATE", "") or ""
+          upgrade_only = os.environ.get("IN_UPGRADE_ONLY", "") == "true"
 
           def emit(act, mode="auto", target=""):
               with open(os.environ["GITHUB_OUTPUT"], "a") as f:
@@ -103,48 +114,24 @@ jobs:
               print(f"plan: act={act} mode={mode} target_date={target!r}")
               raise SystemExit
 
-          # Manual dispatch and the daily/weekly schedules always run.
           if event == "workflow_dispatch":
+              if upgrade_only:
+                  # Idempotent upgrade: the date may have been upgraded meanwhile (e.g. by
+                  # the daily's Calendar Audit while this run was queued). Read origin/main,
+                  # not the checkout, which is pinned to the commit at dispatch time.
+                  try:
+                      t = json.loads(subprocess.check_output(
+                          ["git", "show", f"origin/main:trends/{in_date}.json"],
+                          stderr=subprocess.DEVNULL))
+                  except Exception:
+                      t = {}
+                  if t.get("source_mode") != "journal-only":
+                      print(f"upgrade: {in_date} is no longer journal-only; nothing to do")
+                      emit(False, in_mode or "backfill", in_date)
               emit(True, in_mode or "auto", in_date)
           if sched == "0 1 * * 1":
               emit(True, "weekly")
-          if sched == "0 2 * * *":
-              emit(True, "auto")
-
-          # Otherwise this is the every-2h poll: act only to UPGRADE a journal-only
-          # daily once arXiv's data for that date has appeared in /pastweek.
-          pending = []
-          for p in sorted(glob.glob("trends/*.json")):
-              try:
-                  t = json.load(open(p, encoding="utf-8"))
-              except Exception:
-                  continue
-              if t.get("source_mode") == "journal-only":
-                  pending.append(t.get("date") or os.path.basename(p)[:-5])
-          if not pending:
-              print("poll: no journal-only dailies pending")
-              emit(False)
-
-          try:
-              req = urllib.request.Request(
-                  "https://arxiv.org/list/cs.CV/pastweek?skip=0&show=2000",
-                  headers={"User-Agent": "paper-daily-summary upgrade-poll"})
-              html = urllib.request.urlopen(req, timeout=60).read().decode("utf-8", "replace")
-          except Exception as e:
-              print("poll: pastweek fetch failed:", e)
-              emit(False)
-
-          avail = set()
-          for d, mon, yr in re.findall(r"[A-Z][a-z]{2}, (\d{1,2}) ([A-Z][a-z]{2}) (\d{4})", html):
-              try:
-                  avail.add(datetime.datetime.strptime(f"{d} {mon} {yr}", "%d %b %Y").strftime("%Y-%m-%d"))
-              except ValueError:
-                  pass
-          upgradable = sorted(set(pending) & avail)
-          print(f"poll: pending={sorted(set(pending))} upgradable={upgradable}")
-          if upgradable:
-              emit(True, "backfill", upgradable[0])  # oldest first
-          emit(False)
+          emit(True, "auto")  # daily schedule
           PY
 
       - name: Set up Node.js
@@ -335,3 +322,46 @@ jobs:
             out/*.txt
             out/*.md
           if-no-files-found: ignore
+
+      # Runs last, whatever happened above. Neither action can loop: Pages triggers
+      # nothing, and the poll is cron-driven and attempts each date only once.
+      - name: Sync Pages deploy and upgrade poll
+        if: ${{ always() }}
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          START_SHA: ${{ steps.plan.outputs.start_sha }}
+          MODE: ${{ steps.plan.outputs.mode }}
+        run: |
+          set -uo pipefail
+          if ! git fetch -q origin main; then
+            echo "::warning::git fetch failed; skipping Pages/poll sync."
+            exit 0
+          fi
+
+          # Token pushes don't fire pages.yml's push trigger, so dispatch it — only when
+          # this run actually moved main.
+          if [[ -n "${START_SHA}" && "$(git rev-parse origin/main)" != "${START_SHA}" ]]; then
+            if gh workflow run pages.yml --ref main; then
+              echo "main moved; Pages deploy dispatched."
+            else
+              echo "::warning::Could not dispatch the Pages deploy."
+            fi
+          fi
+
+          # Daily runs own the poll: armed only while the latest daily is journal-only
+          # (arXiv was late). Backfill/weekly runs leave it as is.
+          case "${MODE}" in
+            auto|daily)
+              latest=$(git ls-tree --name-only origin/main trends/ \
+                | grep -E '/[0-9]{4}-[0-9]{2}-[0-9]{2}\.json$' | sort | tail -n 1)
+              latest_mode=$(git show "origin/main:${latest}" 2>/dev/null \
+                | python3 -c 'import json,sys; print(json.load(sys.stdin).get("source_mode",""))' 2>/dev/null)
+              if [[ "${latest_mode}" == "journal-only" ]]; then action=enable; else action=disable; fi
+              if gh api -X PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/arxiv-upgrade-poll.yml/${action}"; then
+                echo "Latest daily ${latest} is ${latest_mode:-unknown}; upgrade poll ${action}d."
+              else
+                echo "::warning::Could not ${action} the upgrade poll."
+              fi
+              ;;
+          esac

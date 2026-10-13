@@ -1,0 +1,129 @@
+name: arXiv Upgrade Poll
+
+# Upgrades a journal-only daily (published when arXiv /new was late) as soon as arXiv
+# catches up, instead of waiting for the next daily's Calendar Audit.
+#
+# The daily run arms this workflow only while the latest daily is journal-only and
+# disarms it otherwise (see "Sync Pages deploy and upgrade poll" in
+# arxiv-daily-summary.yml), so on normal days it never runs. While armed, every 2h a
+# cheap check (no Claude) looks for a journal-only date that has appeared in arXiv
+# /pastweek and dispatches one backfill upgrade for it.
+#
+# Loop safety:
+#   - One attempt per date: dispatched runs are titled "Upgrade <date>", and a date
+#     that already has such a run is never dispatched again. A failed or no-op upgrade
+#     falls back to the next daily's Calendar Audit.
+#   - Disarms itself once the latest daily is no longer journal-only or has had its
+#     attempt; at the latest, the next daily run disarms it.
+#   - Never dispatches while an arXiv Daily Summary run is queued or running.
+on:
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  poll:
+    name: Poll arXiv for journal-only upgrades
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Resolve upgrade plan
+        id: plan
+        shell: bash
+        run: |
+          set -euo pipefail
+          busy=$(gh run list --workflow arxiv-daily-summary.yml --limit 20 \
+            --json status -q '[.[] | select(.status != "completed")] | length')
+          if (( busy > 0 )); then
+            echo "An arXiv Daily Summary run is queued or running; checking again next tick."
+            exit 0
+          fi
+          gh run list --workflow arxiv-daily-summary.yml --limit 200 \
+            --json displayTitle -q '.[].displayTitle' > "${RUNNER_TEMP}/run_titles.txt"
+
+          python3 - <<'PY'
+          import datetime, glob, json, os, re, urllib.request
+
+          def emit(target, disarm):
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write(f"target={target}\n")
+                  f.write(f"disarm={'true' if disarm else 'false'}\n")
+              print(f"poll: target={target!r} disarm={disarm}")
+              raise SystemExit
+
+          modes = {}
+          for p in glob.glob("trends/*.json"):
+              try:
+                  t = json.load(open(p, encoding="utf-8"))
+              except Exception:
+                  continue
+              modes[t.get("date") or os.path.basename(p)[:-5]] = t.get("source_mode")
+          latest = max(modes, default="")
+          pending = sorted(d for d, m in modes.items() if m == "journal-only")
+
+          attempted = set()
+          with open(os.path.join(os.environ["RUNNER_TEMP"], "run_titles.txt"), encoding="utf-8") as f:
+              for line in f:
+                  m = re.match(r"Upgrade (\d{4}-\d{2}-\d{2})\b", line)
+                  if m:
+                      attempted.add(m.group(1))
+
+          def done():
+              # Nothing left to wait for once the latest daily is complete or attempted.
+              return modes.get(latest) != "journal-only" or latest in attempted
+
+          candidates = [d for d in pending if d not in attempted]
+          print(f"poll: latest={latest} pending={pending} candidates={candidates}")
+          if not candidates:
+              emit("", done())
+
+          try:
+              req = urllib.request.Request(
+                  "https://arxiv.org/list/cs.CV/pastweek?skip=0&show=2000",
+                  headers={"User-Agent": "paper-daily-summary upgrade-poll"})
+              html = urllib.request.urlopen(req, timeout=60).read().decode("utf-8", "replace")
+          except Exception as e:
+              print("poll: pastweek fetch failed:", e)
+              emit("", False)  # stay armed; retry next tick
+
+          avail = set()
+          for d, mon, yr in re.findall(r"[A-Z][a-z]{2}, (\d{1,2}) ([A-Z][a-z]{2}) (\d{4})", html):
+              try:
+                  avail.add(datetime.datetime.strptime(f"{d} {mon} {yr}", "%d %b %Y").strftime("%Y-%m-%d"))
+              except ValueError:
+                  pass
+          upgradable = [d for d in candidates if d in avail]
+          print(f"poll: upgradable={upgradable}")
+          if not upgradable:
+              emit("", done())
+          target = upgradable[0]  # oldest first; the rest wait for later ticks
+          attempted.add(target)
+          emit(target, done())
+          PY
+
+      - name: Dispatch upgrade run
+        if: ${{ steps.plan.outputs.target != '' }}
+        shell: bash
+        env:
+          TARGET_DATE: ${{ steps.plan.outputs.target }}
+        run: |
+          gh workflow run arxiv-daily-summary.yml --ref main \
+            -f mode=backfill -f target_date="${TARGET_DATE}" -f upgrade_only=true
+          echo "Dispatched upgrade for ${TARGET_DATE}."
+
+      # Skipped if the dispatch above failed, so a failed dispatch is retried next tick.
+      - name: Disarm poll
+        if: ${{ steps.plan.outputs.disarm == 'true' }}
+        shell: bash
+        run: |
+          gh api -X PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/arxiv-upgrade-poll.yml/disable"
+          echo "Nothing left to wait for; upgrade poll disarmed."
