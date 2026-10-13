@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-10-13</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-10-13 (화요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-10-13 (화요일)</div>
+  <div>📚 소스: journal-only (잠정본) — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 Date Source Contract 점검에서 /new listing이 여전히 "Monday, 12 October 2026"에 머물러 있는 것을 확인했습니다(어제 daily가 이미 이 listing을 정상 소비). post_date(10/13)가 listing_date(10/12)보다 뒤라 arXiv 섹션 없이 발행합니다.</div>
+  <div>🔢 arXiv: cs.LG 0 · cs.CV 0 · cs.AI 0 · eess.IV 0 · eess.SP 0 (신규 listing 미갱신)</div>
+  <div>🔢 저널: Crossref/OpenAlex 428편 수집(2026-10-13 등록분, --days 1) · 스캔 428건 · ROI 배정 104건 (24.3%, 실제 계산 이미징 신호 약 26편)</div>
+  <div>⚠️ 이 리포트는 저널만으로 만든 잠정본입니다. arXiv 5개 카테고리가 10/13 listing으로 갱신되고 /pastweek에 10/13 섹션이 뜨면, 다음 실행에서 arXiv 포함 완전판으로 자동 업그레이드됩니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 arXiv listing이 갱신되지 않아 저널만으로 만든 잠정본입니다. 가장 뚜렷한 신호는 <strong>산업·소재 현장에서 학습 데이터 없이, 또는 적은 추가 가정만으로 내부 구조를 3차원으로 복원하는 논문이 초음파·입자유동·열화상·X선까지 서로 다른 모달리티에서 6편이나 동시에 나왔다는 점</strong>이고, 두 번째는 <strong>메타표면이 5G/6G 안테나 더미 속에서도 광학 라돈 변환·비국소 다기능 이미징처럼 "빛으로 직접 연산하는" 쪽 논문을 꾸준히 내고 있다는 점</strong>입니다. 다만 arXiv가 통째로 빠진 날이라 전체 정보량 자체는 평소(정상 daily 기준 800건 안팎)보다 훨씬 적습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv 5개 카테고리는 모두 어제(10/12)와 같은 "Monday, 12 October 2026" listing에 머물러 있어(10/13 신규 listing 미갱신), Crossref 9개 키워드 질의(--days 1)와 OpenAlex enrich로 저널만 428건을 수집·중복제거해 classify.py로 스캔했습니다. 그 결과 104건(24.3%)이 9개 ROI 버킷에 배정됐는데, 이 중 'virtual'(가상현실 관광)·'staining'(세균 진단 염색)·'tomography'(임상 CT/CBCT 사례, 지구물리 탐사)·'metasurface'(5G/6G 안테나, RFID) 같은 범용 키워드 오탐을 빼면 실제 계산 이미징 신호로 볼 수 있는 논문은 약 26편(전체 스캔의 약 6%)입니다.</p>
+<p>그 26편을 다시 묶으면 다섯 갈래가 보입니다. 첫째, 디지털 홀로그래픽 현미경·메타표면 홀로그래피·컬러 홀로그래피 네 편이 "더 정확한 복원"보다 "한 번에 더 많은 샘플·편광·색을 동시에 처리"하는 쪽으로 넘어갔습니다. 둘째, 메타표면이 통신용 안테나 더미(14편 중 10편) 속에서도 광학 라돈 변환, 비국소 다기능 이미징, OAM 다중화처럼 빛으로 직접 연산·이미징하는 기능 논문 네 편을 냈습니다. 셋째, 오늘 가장 많은 독립 신호가 모인 주제인데, 산업용 초음파 토모그래피·입자유동(PIV) 두 편·열화상 결함 검사·피치코그래피 X선 CT·실험실 X선 회절까지 여섯 편이 모두 "학습 데이터 없이 또는 모델 기반 제약만으로 산업 현장의 3차원·내부 구조를 복원"하는 방향으로 수렴했습니다. 넷째, 고스트 이미징·편광 영상 복원·광전자 신경망·정렬 오차 자동 보정처럼 비전통적인 촬상·연산 방식 네 편이 각각 진단, 수중 탐사, 광컴퓨팅, 계측 자동화라는 서로 다른 실사용 맥락으로 걸어 들어갔습니다. 다섯째, label-free(표지 없는) 조직 영상 세 편이 "그럴듯하게 보이는 영상"을 넘어 금표준 대비 진단 동등성, 임상 2상이라는 더 엄격한 기준으로 검증되기 시작했습니다.</p>
+<p>이번 주(2026-10-12 월~10-16 금)는 어제 daily가 한 달간의 CI 파이프라인 공백(2026-09-14~10-05)을 복구한 첫 정상 daily였고, arXiv 611건이 3D Gaussian Splatting의 물리 현상 흡수·로봇 조작 다운스트림 중심으로 쏟아졌습니다. 오늘은 그 arXiv 흐름이 다시 멈추면서 정보량은 크게 줄었지만, 저널 쪽에서는 어제 거의 신호가 없었던 계산광학 코어(홀로그래피·메타표면·산업용 3D 복원)에 가까운 논문이 오히려 더 많이 나왔습니다. 다음 daily가 arXiv 정상 listing으로 복귀하면, 오늘 저널이 채운 다섯 클러스터에 arXiv 쪽 방법론이 얼마나 이어 붙는지가 이번 주 후반의 관전 포인트입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(10/12)의 결론은 "3D Gaussian Splatting이 반사·유체·물성 편집 같은 물리 현상과 로봇 조작 다운스트림까지 흡수한다"는 흐름이 중심이었고, arXiv new+cross 611건과 저널 297편을 합쳐 807건을 스캔해 227건(28.1%)이 ROI에 배정됐습니다. 오늘은 그 arXiv 흐름이 완전히 멈췄습니다 — 5개 카테고리 모두 listing이 갱신되지 않아 신규 제출이 0건입니다. 대신 저널에서는 어제(계산광학 코어 신호 2~4편)보다 뚜렷하게 더 많은 계산광학 코어 신호가 나왔습니다. 어제 Phase Imaging(2편 중 실제 1~2편)·Meta-Optics(4편 중 실제 1~2편)가 얇았던 것과 달리, 오늘은 Phase Imaging에서 9편(홀로그래피 다중화 4편, 산업용 PIV 1편, 기타 4편), Meta-Optics에서 4편(광연산/이미징 기능), Tomography/Reconstruction에서 4편(비지도 3D 복원)이 확인됩니다. 다만 전체 정보량 자체는 arXiv 611건이 통째로 빠지면서 어제보다 훨씬 적고, Virtual Staining/Pathology는 어제(27건 중 실질 신호 0~1편)에 이어 오늘도(19건 중 3편) 여전히 대부분이 키워드 오탐입니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>홀로그래피가 '하나를 더 정확히 복원하기'에서 '여러 채널을 동시에 처리하기'로 넘어감</strong></td>
+  <td>
+    <a href="https://doi.org/10.1016/j.optlaseng.2026.110170" target=_blank>Single-shot multiplexed digital holographic microscopy for dual-sample phase imaging</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.3390/mi17101179" target=_blank>Polarization-Multiplexed Holography Based on Dielectric Metasurfaces</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.optlastec.2026.116638" target=_blank>Amplitude-constrained and phase-supervised physics-guided color holography</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.optlaseng.2026.110167" target=_blank>Review for metasurface holographic imaging enabled by AI</a> <span class=pill>JNL</span>
+  </td>
+  <td>지금까지 디지털 홀로그래피나 컴퓨터 생성 홀로그래피(CGH) 논문들은 대체로 한 장면을 얼마나 정확하게 복원하느냐를 두고 경쟁해 왔는데, 오늘 저널 네 편은 동시에 여러 개를 처리하는 쪽으로 방향을 틀었습니다. 단일 촬영 다중 홀로그래픽 현미경 논문은 한 번 찍은 영상만으로 서로 다른 두 샘플의 위상을 동시에 복원하고, 편광 다중화 메타표면 홀로그래피 논문은 서로 다른 편광 상태에 맞춰 두 개의 독립된 홀로그램 영상을 하나의 소자에 집어넣습니다. 색상 홀로그래피 논문도 밝기(진폭)에 제약을 걸고 위상 학습을 감독하는 방식으로 사실적인 3차원 색 장면을 재현하고, 메타표면 홀로그래피 리뷰 논문은 이런 흐름을 AI 보조 설계 관점에서 정리합니다. 네 편 모두 "복원 정확도를 더 높이자"보다 "한 번에 더 많은 정보(샘플, 편광, 색)를 동시에 처리하자"는 같은 방향을 가리킵니다.</td>
+  <td>Medium<br><small>서로 다른 저널 4편이 독립적으로 홀로그래피 다중화 흐름을 보이나, 편광 다중화 논문을 제외한 3편은 초록 미공개로 제목 기반 판단 비중이 있음</small></td>
+  <td>편광 다중화 메타표면 홀로그래피의 Jones-matrix 기반 Gerchberg-Saxton 설계 절차를 랩의 메타표면 설계 파이프라인에 적용해 보고, 단일 촬영 다중 샘플 위상 복원 아이디어를 랩 QPI 현미경에서 다중 FOV 동시 촬영이 가능한지 검토한다</td>
+</tr>
+<tr>
+  <td><strong>메타표면이 안테나 더미 속에서도 광연산·이미징 기능 논문을 꾸준히 냄</strong></td>
+  <td>
+    <a href="https://doi.org/10.1364/optica.609474" target=_blank>Multifunctional imaging with an inverse-designed non-local metasurface</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1063/5.0360122" target=_blank>Metasurface-based optical Radon transform for complex-amplitude reconstruction</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/oe.614034" target=_blank>Guided-wave-driven eight-channel spin/direction-multiplexed on-chip metasurface</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/oe.617888" target=_blank>Inverse Design of a Fiber-to-Fiber Metasurface System for OAM Multiplexing</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 Meta-Optics/Diffractive 버킷 14편 중 10편은 5G/6G 안테나, RFID, 열복사 흡수체처럼 통신·에너지 응용이었는데, 나머지 4편은 메타표면을 "전파를 조작하는 소자"가 아니라 "빛으로 직접 연산이나 이미징을 수행하는 소자"로 씁니다. Optica에 실린 다기능 이미징 메타표면은 비국소(non-local) 응답을 역설계해 평면 소자 하나로 여러 이미징 기능을 동시에 구현하고, 광학 라돈 변환 메타표면은 지금까지 디지털 연산이나 부피가 큰 광학계로만 하던 토모그래피의 핵심 수학 연산(라돈 변환)을 평면 메타표면 하나로 수행합니다. 여기에 광도파로 기반 8채널 스핀/방향 다중화 메타표면과 광섬유 간 궤도각운동량(OAM) 다중화·역다중화 메타표면까지 더하면, 같은 날 서로 다른 저널 네 편이 메타표면을 통신 부품이 아니라 광학 연산 부품으로 쓰는 방향을 가리킵니다.</td>
+  <td>High<br><small>서로 다른 저널 4편(Optica, Applied Physics Letters, Optics Express ×2)이 독립적으로 메타표면의 이미징/광연산 기능을 보임. 다만 Radon transform 논문 외 3편은 초록 미공개</small></td>
+  <td>광학 라돈 변환 메타표면의 설계 원리를 랩의 토모그래피/위상 복원 파이프라인에서 프런트엔드 연산(투영 샘플링 감소)으로 시뮬레이션 적용해 보고, Optica 비국소 다기능 이미징 메타표면의 역설계 절차를 랩이 설계 중인 메타옵틱스 소자 비교 벤치마크로 돌린다</td>
+</tr>
+<tr>
+  <td><strong>산업·소재 현장의 비침습 3D·구조 복원이 비지도·모델기반 방식으로 동시다발 등장</strong></td>
+  <td>
+    <a href="https://doi.org/10.1109/tim.2026.3742006" target=_blank>Non-local Mean Regularized Deep Image Prior (Industrial Ultrasonic Tomography)</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.optlastec.2026.116562" target=_blank>Calibration-geometry-constrained unsupervised volumetric particle reconstruction (PIV)</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/ao.613215" target=_blank>Three-dimensional particle velocimetry in digital in-line holography</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.optlastec.2026.116669" target=_blank>Mapping delaminations using lock-in thermography (quantitative tomography)</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1002/adem.202503145" target=_blank>Density Measurement by Ptychographic X-Ray CT (PXCT)</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1021/acs.jpcc.6c03816" target=_blank>In Situ Spatial Deconvolution via Laboratory Full-Field X-ray Diffraction</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 저널에서 가장 많은 수의 독립 신호가 모인 주제는 "학습 데이터 없이, 혹은 적은 추가 가정만으로 산업·소재 현장의 내부 구조를 3차원으로 복원하는" 문제입니다. 산업용 초음파 토모그래피 논문은 외부 학습 데이터셋 대신 복원하려는 그 측정 자체에서 사전(prior)을 뽑아내는 deep image prior 방식에 비지역(non-local) 평균 정규화를 더해 품질을 높입니다. 두 편의 입자유동(PIV) 논문은 각각 보정 기하 제약을 건 비지도 체적 입자 복원과 채널-어텐션 기반 자동초점 신경망으로, 유체 속 입자의 3차원 위치를 라벨 없이 복원합니다. 지연 샘플링 lock-in 열화상 논문은 적외선 열 신호의 간섭 패턴으로 적층제조 부품의 결함 깊이를 정량화하고, PXCT(피치코그래피 X선 CT) 논문은 지르코늄 산화막의 밀도를 비파괴로 측정하며, 실험실 전영역 X선 회절 논문은 구리 표면의 화학적 산화와 구조 재배열을 공간적으로 분리해 냅니다. 여섯 편 모두 "더 정확한 알고리즘"보다 "실측 데이터 자체에서 사전 정보를 뽑아내거나 모델 기반 제약으로 학습 데이터 의존도를 줄이면서 산업 현장의 3차원·내부 구조 정보를 복원한다"는 같은 태도를 보입니다.</td>
+  <td>High<br><small>서로 다른 저널 6편(IEEE TIM, Optics & Laser Technology ×2, Applied Optics, Advanced Engineering Materials, J. Phys. Chem. C)이 초음파·입자유동·열화상·X선까지 서로 다른 모달리티에서 같은 방향으로 수렴</small></td>
+  <td>Non-local Mean Regularized Deep Image Prior의 비지도 사전 추출 구조를 랩의 산업용 비파괴검사/현미경 결함 탐지 파이프라인에 적용해 외부 학습 데이터 없이도 복원이 되는지 비교하고, 두 PIV 논문의 체적 복원·자동초점 기법을 랩 광 필드/홀로그래픽 유동 측정 셋업에 이식해 복원 오차를 비교한다</td>
+</tr>
+<tr>
+  <td><strong>비전통 광학 센싱(고스트 이미징·편광·광학 신경망)이 진단·수중·계측 자동화로 각각 확장</strong></td>
+  <td>
+    <a href="https://doi.org/10.1364/ao.614922" target=_blank>Direct classification of retinal diseases from ghost imaging with Deep learning</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/ao.611606" target=_blank>Polarimetric Image Restoration with Adaptive Backscatter Light Estimation</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.optcom.2026.133865" target=_blank>Microdisplay-driven optoelectronic fully connected neural network</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/ao.609299" target=_blank>Deep Learning-based Misalignment Error Correction for Spherical Surface Testing</a> <span class=pill>JNL</span>
+  </td>
+  <td>고스트 이미징은 원래 하나의 단일 화소 검출기와 무작위 패턴 조명만으로 영상을 복원하는 실험실 기법에 가까웠는데, 오늘 저널 논문은 이를 망막 질환 분류라는 실제 진단 문제에 딥러닝과 결합해 적용합니다. 편광 영상 복원 논문은 수중 촬영에서 빛이 산란되며 생기는 배경광(backscatter)을 적응적으로 추정하고 편광 각도 기반 색 보정까지 더해 탁한 물 속에서도 선명한 영상을 복원합니다. 마이크로디스플레이 기반 광전자 완전연결 신경망은 신경망의 행렬 연산 자체를 마이크로렌즈 배열로 광학적으로 구현해, 전자 회로가 아니라 빛으로 연산하는 하드웨어를 지향합니다. 구면 표면 검사용 오정렬 오차 보정 논문은 광학 계측에서 사람이 조정하던 정렬 작업을 딥러닝으로 자동화합니다. 네 편 모두 비전통적인 촬상·연산 방식이 실험실 시연을 넘어 진단, 수중 탐사, 광컴퓨팅, 계측 자동화라는 서로 다른 실사용 맥락으로 각각 걸어 들어가고 있다는 신호입니다.</td>
+  <td>Medium<br><small>네 편 모두 서로 다른 응용(진단·수중·광컴퓨팅·계측)에 1편씩만 있어 같은 방향의 반복 검증은 아직 없고, 전편 초록 미공개로 제목 기반 판단임</small></td>
+  <td>편광 기반 배경광 추정+색 보정 파이프라인을 랩의 수중/산란매질 촬영 실험에 적용해 기존 dehazing 대비 복원 품질(대비·색 정확도)을 비교하고, 고스트 이미징+딥러닝 분류 구조를 랩의 단일픽셀/압축 센싱 진단 응용 가능성 검토에 참고한다</td>
+</tr>
+<tr>
+  <td><strong>표지 없는(label-free) 조직·세포 영상이 임상 동등성 검증 단계로 들어감</strong></td>
+  <td>
+    <a href="https://doi.org/10.3390/diagnostics16203315" target=_blank>Photon Absorption Remote Sensing Virtual Histopathology</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1088/2040-8986/aeb313" target=_blank>Phasor-based FLIM for label-free assessment of skin tissue responses</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1055/a-2971-8878" target=_blank>Phase II Results Utilizing Tozuleristide and the Canvas Imaging System</a> <span class=pill>JNL</span>
+  </td>
+  <td>그동안 가상 염색(virtual staining)이나 표지 없는 조직 영상 연구는 주로 "기존 염색 영상과 얼마나 비슷하게 보이는가"를 화질 지표로 비교하는 단계에 머물러 있었는데, 오늘 저널 세 편은 실제 진단·임상 맥락에서 검증하는 단계로 넘어갑니다. Photon Absorption Remote Sensing(PARS) 논문은 염색 없이 흡수 신호만으로 만든 가상 H&E(헤마톡실린-에오신) 영상이 피부암 절제 생검에서 금표준 염색 영상과 진단적으로 동등한지를 직접 평가합니다. 위상자(phasor) 기반 형광수명영상(FLIM) 논문은 자외선과 5G 밀리미터파에 노출된 피부 조직의 미세한 생화학적 변화를 염색 없이 비침습적으로 감지합니다. Tozuleristide 형광 영상제 임상 2상 논문은 뇌종양(전정신경초종) 절제 수술 중 형광 유도 영상으로 절제 범위를 넓히는 효과를 실제 환자 코호트에서 검증합니다. 세 편 모두 "그럴듯하게 보이는 영상"을 넘어 "진단 동등성"과 "임상 2상"이라는 더 엄격한 기준으로 label-free 영상 기법을 검증하기 시작했다는 공통점이 있습니다.</td>
+  <td>High<br><small>세 편 모두 초록이 확인되고, 임상/진단 동등성 검증이라는 같은 방향으로 수렴하며 Tozuleristide는 실제 Phase II 임상 결과를 제시함</small></td>
+  <td>PARS의 진단 동등성 평가 설계(금표준 H&E 대비 병리의 블라인드 판독 합의도)를 랩의 virtual staining 파이프라인 검증 프로토콜로 그대로 채택하고, phasor FLIM의 label-free 생화학 변화 감지 방식을 랩 형광수명영상 셋업에서 피부/조직 샘플 스트레스 테스트에 적용한다</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ 참고: Fourier Ptychography/Microscopy(2편 중 1편만 실제 신호 — PXCT는 클러스터3에 포함, 나머지 1편은 SAR 레이더 오탐)는 독립 클러스터를 만들 근거가 부족합니다. Lensless/Coded Imaging과 Light-Field/Novel Sensors는 오늘 배정 0건으로, 아래 도메인 Watch Lens 참고.</small></p>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 0편</strong> — Crossref 9개 키워드 질의에서 단 한 건도 걸리지 않았습니다. 랩 ROI 핵심 공백이 오늘은 완전 공백으로 깊어졌습니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 오늘 배정 0편</strong> — light field·plenoptic·event camera 관련 저널 신규 등록이 전혀 없었습니다. 역시 완전 공백입니다.</li>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 2편 중 실제 신호 1편</strong> — <a href="https://doi.org/10.1002/adem.202503145" target=_blank>Density Measurement by Ptychographic X-Ray CT</a> [JNL]만 실제 신호(클러스터3 포함)이고, 나머지 1편(Deep Learning-Empowered Metasurface Design for ISAR Illusions)은 레이더 스텔스 논문으로 광학 Fourier ptychography와 무관합니다.</li>
+    <li><strong>Virtual Staining/Pathology — 오늘 배정 19편 중 실제 신호 3편</strong> — 클러스터5의 PARS·FLIM·Tozuleristide 세 편만 실제 신호이고, 나머지 16편은 도시재생 정책 텍스트 분석, 디아스포라 이주 연구, 세균 진단용 천연 염색제, 치아교정용 아치와이어 변색 등 "virtual"·"staining" 키워드 오탐입니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 없음 (2026-10-13 신규 listing 갱신 없음, 5개 카테고리 모두 10/12 listing에 머물러 있음)</li>
+  <li><strong>저널 전용</strong>: 홀로그래피 다중화(단일 촬영 다중 샘플, 편광 다중화, 컬러 홀로그래피), 메타표면 광연산/이미징(비국소 다기능 이미징, 광학 라돈 변환, OAM 다중화), 산업용 비지도 3D 복원(초음파 토모그래피, PIV 2편, 열화상, PXCT, X선 회절), 비전통 센싱 확장(고스트 이미징, 편광 복원, 광전자 신경망, 정렬 오차 보정), label-free 조직 영상 임상 검증(PARS, FLIM, Tozuleristide)</li>
+  <li><strong>공통 키워드</strong>: 오늘은 arXiv 신호가 없어 arXiv-저널 교차 비교 자체가 성립하지 않습니다. 저널 전용 목록이 곧 오늘의 전체 신호입니다.</li>
+  <li><strong>특징</strong>: 어제(10/12)는 arXiv가 3D Gaussian Splatting의 물리 현상 흡수·로봇 조작이라는 cs.CV/cs.LG 중심 축에 몰려 있었던 반면, 오늘 저널은 홀로그래피·메타표면·산업용 3D 복원처럼 계산광학 코어에 더 가까운 신호로 채워졌습니다. 다음 daily에서 arXiv가 복귀하면 두 축이 어떻게 이어지는지가 관전 포인트입니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 홀로그래피가 '하나를 더 정확히 복원하기'에서 '여러 채널을 동시에 처리하기'로 넘어감</h3>
+  <p>단일 촬영 다중 샘플 위상 복원, 편광 다중화 메타표면 홀로그래피, 진폭 제약 컬러 홀로그래피, 메타표면 홀로그래피 AI 리뷰 네 편이 같은 날 나오며, 홀로그래피 연구의 무게중심이 복원 정확도에서 다중채널 동시 처리로 옮겨가는 모습을 보입니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 저널 4편이 독립적으로 보이나 1편을 제외하고 초록 미공개로 제목 기반 판단</p>
+</div>
+
+<div class=ins>
+  <h3>2. 메타표면이 안테나 더미 속에서도 광연산·이미징 기능 논문을 꾸준히 냄</h3>
+  <p>Optica 비국소 다기능 이미징, 광학 라돈 변환, 온칩 스핀/방향 다중화, 광섬유 OAM 다중화 네 편이 오늘 Meta-Optics 14편 중 10편을 채운 안테나·통신 응용과 달리, 메타표면을 "빛으로 직접 연산·이미징하는 소자"로 씁니다.</p>
+  <p class=conf-note>Confidence: High — Optica·APL·Optics Express 등 서로 다른 저널 4편이 독립적으로 같은 방향을 가리킴</p>
+</div>
+
+<div class=ins>
+  <h3>3. 산업·소재 현장의 비침습 3D·구조 복원이 비지도·모델기반 방식으로 동시다발 등장</h3>
+  <p>초음파 토모그래피 deep image prior, PIV 2편(비지도 체적 복원·채널-어텐션 자동초점), 열화상 정량 토모그래피, PXCT, 실험실 X선 회절 디콘볼루션까지 여섯 편이 초음파·유체·열·X선이라는 서로 다른 모달리티에서 "학습 데이터 의존도를 줄이면서 3차원·내부구조를 복원한다"는 같은 방향으로 수렴합니다.</p>
+  <p class=conf-note>Confidence: High — 6개 독립 저널이 서로 다른 모달리티에서 같은 방향으로 수렴</p>
+</div>
+
+<div class=ins>
+  <h3>4. 비전통 광학 센싱이 진단·수중·광컴퓨팅·계측 자동화로 각각 확장</h3>
+  <p>고스트 이미징 기반 망막질환 분류, 편광 기반 수중 영상 복원, 광전자 완전연결 신경망, 구면 표면 정렬 오차 자동 보정 네 편이 각각 다른 실사용 맥락에서 비전통적 촬상·연산 방식을 적용합니다.</p>
+  <p class=conf-note>Confidence: Medium — 네 편 모두 서로 다른 응용에 1편씩만 있어 반복 검증은 아직 없음</p>
+</div>
+
+<div class=ins>
+  <h3>5. 표지 없는(label-free) 조직·세포 영상이 임상 동등성 검증 단계로 들어감</h3>
+  <p>PARS 가상 H&E 진단 동등성 평가, phasor FLIM label-free 피부 조직 평가, Tozuleristide 형광 유도 수술 임상 2상 세 편이 모두 "그럴듯한 영상"을 넘어 임상 기준으로 label-free 영상 기법을 검증합니다.</p>
+  <p class=conf-note>Confidence: High — 세 편 모두 초록이 확인되고 임상/진단 동등성이라는 같은 엄격도로 수렴</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. 광학 라돈 변환 메타표면을 랩 토모그래피 파이프라인의 프런트엔드 연산으로 시뮬레이션 적용</h3>
+  <p>메타표면이 광학적으로 직접 수행하는 라돈 변환 연산을 랩의 토모그래피/위상 복원 파이프라인 앞단에 두면, 투영 샘플링 수를 줄이면서도 복원 품질을 유지할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Metasurface-based optical Radon transform 방법 시뮬레이션 재현</li>
+    <li>공통 benchmark: 랩 보유 토모그래피 시뮬레이션 데이터(알려진 투영 샘플링 조건)</li>
+    <li>비교축: 기존 디지털 라돈 변환 대비 필요 투영 샘플 수, 복원 품질(SSIM)</li>
+    <li>실패해도 남는 결과: 랩 토모그래피 파이프라인에서 투영 샘플링을 줄였을 때의 성능 저하 곡선</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. 비지도 Deep Image Prior 구조를 랩 비파괴검사 파이프라인에 적용해 학습 데이터 의존도 비교</h3>
+  <p>Non-local Mean Regularized Deep Image Prior 방식을 랩의 산업용 비파괴검사/현미경 결함 탐지 파이프라인에 적용해, 외부 학습 데이터 없이도 기존 지도학습 기반 복원과 비슷한 품질을 얻을 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Non-local Mean Regularized Deep Image Prior 워크플로우 재현</li>
+    <li>공통 benchmark: 랩 보유 비파괴검사 결함 샘플(라벨 보유)</li>
+    <li>비교축: 기존 지도학습 기반 복원 대비 비지도 방식의 복원 오차, 필요 학습 데이터량</li>
+    <li>실패해도 남는 결과: 랩 비파괴검사 데이터에서 deep image prior가 유효한 조건 정리</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. 편광 기반 배경광 추정+색 보정을 랩 수중/산란매질 촬영 실험에 적용</h3>
+  <p>적응적 배경광(backscatter) 추정과 편광 각도 기반 색 보정을 결합하면, 랩이 다루는 산란매질(수중·안개·생체조직) 촬영에서 기존 dehazing 대비 대비·색 정확도를 더 안정적으로 복원할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Polarimetric Image Restoration with Adaptive Backscatter Light Estimation 방법 재현</li>
+    <li>공통 benchmark: 랩 보유 산란매질 촬영 데이터셋(수중 또는 안개 시뮬레이션)</li>
+    <li>비교축: 기존 dehazing 대비 대비(contrast)·색 정확도(ΔE), 처리 속도</li>
+    <li>실패해도 남는 결과: 랩 산란매질 데이터에서 편광 기반 방법이 유효한 산란 조건 범위</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>D. PARS 진단 동등성 평가 설계를 랩 virtual staining 검증 프로토콜로 채택</h3>
+  <p>금표준 염색 영상 대비 병리의 블라인드 판독 합의도로 진단 동등성을 평가하는 PARS의 검증 설계를 랩의 virtual staining 결과물에 적용하면, 화질 지표만으로는 드러나지 않는 임상 적용 가능성을 판단할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: PARS Virtual Histopathology 평가 설계(블라인드 판독 프로토콜) 재현</li>
+    <li>공통 benchmark: 랩 보유 virtual staining 결과물 + 실제 염색 대조군</li>
+    <li>비교축: 화질 지표(SSIM/PSNR) vs 병리의 블라인드 판독 합의도(Cohen's kappa)</li>
+    <li>실패해도 남는 결과: 랩 virtual staining 파이프라인의 화질 지표-진단 합의도 간 괴리 정도 정리</li>
+  </ul>
+</div>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘은 daily 실행이라 예측 회고는 생략합니다(예측 회고는 매주 월요일 별도 weekly 실행이 담당합니다). 2026-09-14~10-05 구간의 CI 파이프라인 공백으로 2026-10-12(월) weekly 실행이 이뤄지지 못해 참조할 직전 weekly가 없습니다 — 다음 월요일(2026-10-19) weekly 실행에서 지난주(10/12~10/16) 예측·회고를 다시 시작합니다.</p>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(29편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:7%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:45%"></span></span><span class=n>13편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:48%"></span></span><span class=n>14편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>29편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:66%"></span></span><span class=n>19편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:31%"></span></span><span class=n>9편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>18편</span></div>
+
+<p><small>⚠️ 참고: Tomography/3D Imaging 29편 중 25편은 임상 사례 보고(PET/CT, CBCT 치과 영상, 망막 질환, 지구물리 탐사 등)로 계산 이미징 방법론과 무관합니다(실제 신호 4편, 클러스터3 3편 + biofilm OCT/DL 1편). Virtual Staining/Pathology 19편 중 16편은 "virtual"·"staining" 키워드 오탐입니다. Meta-Optics/Diffractive 14편 중 10편은 안테나·열복사·태양광 등 비이미징 응용입니다. Deep Learning Methods 18편 중 이미징 핵심 4편만 클러스터4에 반영했고 나머지 14편은 라디오믹스·음악 추천·소비자 인식 조사 등 인접·무관 응용입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (2편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/adem.202503145" target=_blank>Density Measurement of Irradiated and Nonirradiated Zirconium Oxide by Ptychographic X-Ray Computed Tomography (PXCT)</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터3 대표 — 피치코그래피 X선 CT로 원자로 피복재 산화막 밀도를 비파괴 측정
+</div>
+
+<h3>Phase Imaging/Holography (13편 중 관련 9편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/mi17101179" target=_blank>Polarization-Multiplexed Holography Based on Dielectric Metasurfaces</a></strong> [JNL · TIER B]<br>
+  왜 주요: 오늘 클러스터1 대표 — Jones-matrix+Gerchberg-Saxton 기반 편광 다중화 메타표면 홀로그래피
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110167" target=_blank>Review for metasurface holographic imaging enabled by artificial intelligence technology</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터1 대표 — AI 보조 메타표면 홀로그래피 설계 흐름을 정리한 리뷰
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.609209" target=_blank>Quantitative phase nano-imaging with a laboratory source</a></strong> [JNL]<br>
+  왜 주요: 실험실 광원만으로 나노 스케일 정량 위상 이미징을 구현한 QPI 하드웨어 논문
+</div>
+
+<h3>Meta-Optics/Diffractive (14편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1063/5.0360122" target=_blank>Metasurface-based optical Radon transform for complex-amplitude reconstruction</a></strong> [JNL · TIER A]<br>
+  왜 주요: 오늘 클러스터2·must-read 대표 — 메타표면으로 토모그래피 핵심 연산(라돈 변환)을 광학적으로 직접 수행
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/optica.609474" target=_blank>Multifunctional imaging with an inverse-designed non-local metasurface</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터2 대표 — Optica 게재, 비국소 응답 역설계로 평면 소자 하나에 다기능 이미징 구현
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.614034" target=_blank>Guided-wave-driven eight-channel spin- and direction-multiplexed on-chip metasurface</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터2 대표 — 온칩 메타표면으로 8채널 스핀/방향 다중화 광 조작
+</div>
+
+<h3>Tomography/3D Imaging (29편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tim.2026.3742006" target=_blank>Non-local Mean Regularized Deep Image Prior: An Unsupervised Framework for Industrial Ultrasonic Tomography</a></strong> [JNL · TIER B]<br>
+  왜 주요: 오늘 클러스터3 대표 — 외부 학습 데이터 없이 측정 자체에서 사전을 뽑아내는 비지도 초음파 토모그래피
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116562" target=_blank>Calibration-geometry-constrained unsupervised volumetric particle reconstruction</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터3 대표 — 보정 기하 제약 기반 비지도 체적 입자유동(PIV) 복원
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116669" target=_blank>Mapping the depth and thickness of delaminations using lock-in thermography</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터3 대표 — 지연 샘플링 열화상으로 적층제조 부품 결함 깊이 정량화
+</div>
+
+<h3>Virtual Staining/Pathology (19편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/diagnostics16203315" target=_blank>Photon Absorption Remote Sensing Virtual Histopathology</a></strong> [JNL · TIER A]<br>
+  왜 주요: 오늘 클러스터5·must-read 대표 — 가상 H&E 영상의 금표준 대비 진단 동등성을 직접 평가
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2040-8986/aeb313" target=_blank>Phasor-based fluorescence lifetime imaging microscopy for label-free assessment of skin tissue</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터5 대표 — label-free FLIM으로 피부 조직의 환경 스트레스 반응을 비침습 감지
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1055/a-2971-8878" target=_blank>Phase II Results Utilizing the Tumor-Targeting Fluorescence Imaging Agent Tozuleristide</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터5 대표 — 형광 유도 수술 임상 2상으로 label-free 영상의 실제 임상 효과 검증
+</div>
+
+<h3>Reconstruction/Inverse Problems (9편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/acs.jpcc.6c03816" target=_blank>In Situ Spatial Deconvolution via Laboratory Full-Field X-ray Diffraction</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터3 대표 — 실험실 X선 회절로 구리 표면의 화학적 산화·구조 재배열을 공간 분리
+</div>
+
+<h3>Deep Learning Methods (18편 중 관련 4편, catch-all 과대표 방지로 2편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ao.614922" target=_blank>Direct classification of retinal diseases from ghost imaging with Deep learning</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터4 대표 — 고스트 이미징+딥러닝으로 망막 질환을 직접 분류
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ao.611606" target=_blank>Polarimetric Image Restoration with Adaptive Backscatter Light Estimation</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터4 대표 — 적응적 배경광 추정+편광 색 보정으로 수중 영상 복원
+</div>
+
+<hr>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Metasurface-based optical Radon transform for complex-amplitude reconstruction — Applied Physics Letters</h3>
+  <div class=tag>[방법전환] [표준후보]</div>
+  <p><strong>왜 A급인가:</strong> 랩이 다루는 토모그래피·위상 복원 문제의 핵심 연산인 라돈 변환(Radon transform)을 지금까지는 디지털 연산이나 부피가 큰 광학계로 구현해 왔는데, 이 논문은 그 연산 자체를 평면 메타표면 하나로 수행합니다. 복소 진폭(진폭+위상)까지 다루는 방향으로 확장했다는 점에서, 메타표면이 단순 영상 소자를 넘어 이미징 파이프라인의 연산 단계 자체를 대체할 수 있다는 신호로 읽힙니다.</p>
+  <p><strong>핵심:</strong> 기존 메타표면 기반 광학 연산은 진폭 정보만 다루는 경우가 많고 촘촘한 투영 샘플링이 필요했는데, 이 논문은 비국소(non-local) 메타표면 설계로 복소 진폭 영상에 대해 라돈 변환에 해당하는 선적분 연산을 광학적으로 직접 수행해, 기존 방식 대비 더 적은 투영 샘플로도 복원이 가능한 구조를 제안합니다(초록 기준).</p>
+  <p><strong>주의:</strong> Applied Physics Letters 논문 특성상 원리 증명(proof-of-concept) 단계일 가능성이 높고, 실제 토모그래피 재구성 품질이나 노이즈 강건성이 기존 디지털 라돈 변환 대비 얼마나 되는지는 초록만으로 확인하기 어렵습니다. 실험 데이터 기반인지 시뮬레이션 기반인지도 본문 확인이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Photon Absorption Remote Sensing Virtual Histopathology — Diagnostics</h3>
+  <div class=tag>[평가축] [위험보류]</div>
+  <p><strong>왜 A급인가:</strong> 랩의 virtual staining ROI 버킷은 최근 며칠간 키워드 오탐(가상현실, 세균 염색 등)으로만 채워지며 사실상 공백 상태였는데, 이 논문은 label-free 가상 염색 기법을 "기존 염색과 진단적으로 동등한가"라는 임상 기준으로 직접 검증한 드문 사례입니다.</p>
+  <p><strong>핵심:</strong> Photon Absorption Remote Sensing(PARS)은 염색이나 표지 없이 흡수 신호만으로 조직 구조를 얻고, 딥러닝으로 그 신호를 가상의 H&E(헤마톡실린-에오신) 염색 영상으로 변환합니다. 이 연구는 피부암(편평세포암 등) 절제 생검 샘플에서 PARS 가상 H&E 영상과 실제 금표준 H&E 염색 영상의 진단 일치도를 비교해, 처리하지 않은 조직에서도 임상적으로 쓸 수 있는 수준인지 평가합니다(초록 기준, "예비 탐색(preliminary exploration)" 단계로 명시).</p>
+  <p><strong>주의:</strong> 논문 제목에 명시된 대로 "Preliminary Exploration" 단계이고, 표본 수·병리의 수·합의도(agreement) 수치가 초록만으로는 확인되지 않습니다. 가상 염색 결과가 실제 병리 진단 결정에 쓰이려면 더 큰 코호트와 다기관 검증이 필요할 것으로 보입니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] arXiv 5개 카테고리가 모두 listing 미갱신이라 오늘 신호는 전량 저널 데이터입니다. 평소(정상 daily 800건 안팎) 대비 정보량이 크게 줄었고, 스캔 428건 중 실제 계산 이미징 신호로 판단한 것은 약 26편(약 6%)에 불과합니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology 19건 중 16건은 "virtual"(가상현실 관광·디아스포라 이주 연구 등)과 "staining"(세균 진단용 천연 염색제, 치아교정 아치와이어 변색) 키워드가 우연히 겹친 오탐입니다.</p>
+  <p>[Dataset risk] Tomography/3D Imaging 29건 중 25건은 임상 사례 보고(PET/CT, CBCT, 망막 질환)와 지구물리 탐사로, 계산 이미징 방법론과 직접 관련된 논문은 4건뿐입니다. Meta-Optics/Diffractive 14건 중 10건도 안테나·열복사·태양광 등 비이미징 응용입니다.</p>
+  <p>[Claim risk] 클러스터 대표 논문 20편 중 12편이 Crossref 초록 미공개 상태로, 제목과 저널명만으로 클러스터 배치를 판단했습니다. 본문 확인 전 배치가 부정확할 수 있습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Baseline risk] Metasurface-based optical Radon transform이 기존 디지털 라돈 변환이나 다른 메타표면 기반 광학 연산 대비 정량적으로 어느 정도 우수한지 초록에 구체적 수치가 없어, 본문 확인 전까지는 원리 증명 수준으로만 간주해야 합니다.</p>
+  <p>[Claim risk] Photon Absorption Remote Sensing Virtual Histopathology는 "Preliminary Exploration"으로 스스로 명시한 예비 연구로, 표본 수와 병리의 간 합의도가 확인되지 않아 임상 동등성 주장은 본문·후속 연구로 재확인이 필요합니다.</p>
+  <p>[Metric risk] 홀로그래피 다중화 클러스터(4편 중 3편)와 비전통 센싱 클러스터(4편 전부)는 초록 미공개 상태라 abstract 기준 정량 비교가 불가능해 저널명·제목만으로 방향성을 추정했습니다.</p>
+  <p>[Dataset risk] 산업용 3D 복원 클러스터의 PIV 2편은 서로 다른 유체 실험 조건에서 검증돼 직접 비교는 어렵고, 비지도 복원 품질이 지도학습 기반 방법과 얼마나 차이 나는지는 abstract만으로 판단할 수 없습니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li>Tomography/3D Imaging 임상·지구물리 사례 약 25편 [주로 JNL] — PET/CT 종양 영상, CBCT 치과·안와 평가, 망막 질환, 이란 자그로스 산맥 지진파 토모그래피 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
+    <li>Virtual Staining/Pathology 키워드 오탐 16편 — 도시재생 정책 텍스트 분석, 디아스포라 이주 연구, 세균 진단용 천연 염색제, 치아교정 아치와이어 변색 등 "virtual"·"staining" 단어만 겹친 무관 논문입니다.</li>
+    <li>Meta-Optics/Diffractive RF·에너지 응용 10편 — 5G/6G 안테나, RFID 리더, THz 흡수체, 레이더 스텔스(illusion) 메타표면 등으로 광학 이미징과 거리가 있습니다.</li>
+    <li>Deep Learning Methods 18편 중 이미징과 결이 다른 14편 — 유방암 라디오믹스, 음악 추천, 소비자 인식 조사, 다중 모바일 매니퓰레이터 경로계획 등 의료영상 인접 분야이거나 완전히 무관한 응용입니다.</li>
+    <li>Reconstruction/Inverse Problems 8편 — MEMS 진동자·MHD·수리학 분야 물리 정보 신경망(PINN)으로, 방법론은 유사하나 이미징 응용이 아닙니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy (2편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/adem.202503145" target=_blank>Density Measurement of Irradiated and Nonirradiated Zirconium Oxide by Ptychographic X-Ray Computed Tomography</a></strong> <span class=pill>JNL</span><br>
+  문제: 원자로 피복재(Zircaloy-4) 표면 산화막의 밀도를 비파괴로 알기 어려움 / 방법: 피치코그래피 X선 CT(PXCT)로 기둥형 시편의 밀도 분포 측정 / 의미: 오늘 클러스터3 대표, 피치코그래피 원리의 소재과학 응용 / 우선순위: Read
+</div>
+<p><small>나머지 1편(Deep Learning-Empowered Metasurface Design for ISAR Illusions)은 레이더 스텔스 논문으로 광학 Fourier ptychography와 무관해 개별 bullet을 생략합니다.</small></p>
+
+<h3>Phase Imaging/Holography (13편 중 관련 9편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110170" target=_blank>Single-shot multiplexed digital holographic microscopy for dual-sample phase imaging</a></strong> <span class=pill>JNL</span><br>
+  문제: 서로 다른 두 샘플의 위상을 각각 따로 촬영해야 함 / 방법: 단일 촬영 다중화 디지털 홀로그래픽 현미경 / 의미: 오늘 클러스터1 대표, 홀로그래피의 다중 샘플 동시처리 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/mi17101179" target=_blank>Polarization-Multiplexed Holography Based on Dielectric Metasurfaces</a></strong> <span class=pill>JNL</span><br>
+  문제: 하나의 메타표면 소자로 서로 다른 편광 채널의 홀로그램을 독립적으로 담기 어려움 / 방법: Jones-matrix 설계+Gerchberg-Saxton 알고리즘 기반 편광 다중화 / 의미: 오늘 클러스터1 대표, 메타표면 홀로그래피 다중화 확장 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116638" target=_blank>Amplitude-constrained and phase-supervised physics-guided color holography</a></strong> <span class=pill>JNL</span><br>
+  문제: 컴퓨터 생성 홀로그래피(CGH)로 사실적인 색상 3D 장면을 재현하기 어려움 / 방법: 진폭 제약+위상 감독 physics-guided 학습 / 의미: 오늘 클러스터1 대표, CGH의 색상·사실성 확장 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110167" target=_blank>Review for metasurface holographic imaging enabled by AI</a></strong> <span class=pill>JNL</span><br>
+  문제: 메타표면 홀로그래피 설계에 AI를 접목하는 흐름이 산발적으로 보고됨 / 방법: AI 보조 메타표면 홀로그래피 설계 사례를 종합 정리 / 의미: 오늘 클러스터1 대표, 흩어진 설계 흐름을 한 장으로 정리 / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.609209" target=_blank>Quantitative phase nano-imaging with a laboratory source</a></strong> <span class=pill>JNL</span><br>
+  문제: 나노 스케일 정량 위상 이미징이 보통 방사광 같은 대형 광원을 요구함 / 방법: 실험실 규모 광원만으로 나노 위상 이미징 구현 / 의미: QPI 하드웨어 접근성 확대 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ao.613215" target=_blank>Three-dimensional particle velocimetry in digital in-line holography via channel-attention autofocusing network</a></strong> <span class=pill>JNL</span><br>
+  문제: 디지털 인라인 홀로그래피에서 입자의 정확한 초점면을 찾기 어려움 / 방법: 채널-어텐션 기반 자동초점 신경망 / 의미: 오늘 클러스터3 대표, 홀로그래픽 PIV의 자동초점 개선 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/josaa.610487" target=_blank>Computational holography applied in the analysis of turbulence effects on optical vortex beams</a></strong> <span class=pill>JNL</span><br>
+  문제: 대기 난류가 광 와류 빔의 위상 구조에 미치는 영향을 정량화하기 어려움 / 방법: 계산 홀로그래피 기반 분석 / 의미: 자유공간 광통신·센싱의 난류 강건성 평가에 활용 가능 / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ao.605753" target=_blank>Wavefront sensing with gradient density filters in polar coordinates</a></strong> <span class=pill>JNL</span><br>
+  문제: 기존 파면 센서가 공간 분해능과 동적 범위를 동시에 만족하기 어려움 / 방법: 극좌표계 gradient density 필터 기반 파면 센싱 / 의미: 적응광학·위상 복원 하드웨어의 센서 설계 대안 / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.615255" target=_blank>Vibration-Resistant Temporal Phase-Shifting Interferometry with Enhanced Amplitude-Frequency Product Tolerance</a></strong> <span class=pill>JNL</span><br>
+  문제: 시간 위상천이 간섭계가 진동 환경에서 위상 오차에 취약함 / 방법: 진폭-주파수 곱 허용도를 높인 진동 강인 위상천이 기법 / 의미: 현장 계측용 간섭계의 실사용 강건성 개선 / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+<p><small>나머지 4편(수중 음향 간섭계, 1-bit 프로그래머블 RF 메타표면, 뇌신호-홀로그램 변환, 췌장암 광자계수 CT)은 음향·RF·임상 응용 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Meta-Optics/Diffractive (14편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/optica.609474" target=_blank>Multifunctional imaging with an inverse-designed non-local metasurface</a></strong> <span class=pill>JNL</span><br>
+  문제: 하나의 평면 메타표면으로 여러 이미징 기능을 동시에 구현하기 어려움 / 방법: 비국소(non-local) 응답을 역설계해 다기능화 / 의미: 오늘 클러스터2 대표, Optica 게재로 관련성 명확 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1063/5.0360122" target=_blank>Metasurface-based optical Radon transform for complex-amplitude reconstruction</a></strong> <span class=pill>JNL</span><br>
+  문제: 라돈 변환이 디지털 연산이나 부피가 큰 광학계로만 구현됨 / 방법: 비국소 메타표면으로 복소 진폭 라돈 변환을 직접 수행 / 의미: 오늘 클러스터2·must-read 대표, 토모그래피 연산의 광학화 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.614034" target=_blank>Guided-wave-driven eight-channel spin- and direction-multiplexed on-chip metasurface</a></strong> <span class=pill>JNL</span><br>
+  문제: 온칩 광소자가 여러 편광·방향 채널을 독립적으로 다루기 어려움 / 방법: 도파로 기반 8채널 스핀/방향 다중화 메타표면 / 의미: 오늘 클러스터2 대표, 온칩 광연산 확장 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.617888" target=_blank>Inverse Design of a Fiber-to-Fiber Integrated Metasurface System for OAM Multiplexing</a></strong> <span class=pill>JNL</span><br>
+  문제: 광섬유 간 궤도각운동량(OAM) 모드를 다중화·역다중화하는 통합 소자가 부족함 / 방법: 광섬유-광섬유 통합 메타표면 역설계 / 의미: 오늘 클러스터2 대표, 메타표면 기반 모드 다중화 통신·센싱 응용 / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+<p><small>나머지 10편은 안테나·열복사·태양광·레이더 스텔스 등 비이미징 응용(키워드 오탐 포함)이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Light-Field/Novel Sensors (0편)</h3>
+<p><small>오늘 이 버킷에 배정된 논문이 0편입니다. light field·plenoptic·event camera 관련 저널 신규 등록이 전혀 없었습니다. 랩 ROI 핵심 공백입니다.</small></p>
+
+<h3>Tomography/3D Imaging (29편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tim.2026.3742006" target=_blank>Non-local Mean Regularized Deep Image Prior: An Unsupervised Framework for Industrial Ultrasonic Tomography</a></strong> <span class=pill>JNL</span><br>
+  문제: 산업용 초음파 토모그래피가 대량의 학습 데이터에 의존함 / 방법: 비지역 평균 정규화를 더한 비지도 deep image prior / 의미: 오늘 클러스터3 대표, 학습 데이터 없는 산업용 3D 복원 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116562" target=_blank>Calibration-geometry-constrained unsupervised volumetric particle reconstruction</a></strong> <span class=pill>JNL</span><br>
+  문제: 토모그래피 PIV의 체적 입자 복원이 라벨 데이터 없이는 어려움 / 방법: 보정 기하 제약 기반 비지도 복원 / 의미: 오늘 클러스터3 대표, 유체 계측의 비지도 3D 복원 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116669" target=_blank>Mapping the depth and thickness of delaminations using lock-in thermography</a></strong> <span class=pill>JNL</span><br>
+  문제: 기존 적외선 열화상이 2D 투영만 제공해 박리 결함의 깊이를 정량화하기 어려움 / 방법: 지연 샘플링 lock-in 열화상 기반 정량 토모그래피 / 의미: 오늘 클러스터3 대표, 산업 비파괴검사의 3D 결함 정량화 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/jbio.70372" target=_blank>Optical Characterization of Gram-Positive and Gram-Negative Biofilms Using Swept-Source OCT and Deep Learning</a></strong> <span class=pill>JNL</span><br>
+  문제: 세균 바이오필름의 그람 염색 유형을 비침습적으로 구분하기 어려움 / 방법: Swept-source OCT+딥러닝 분류 / 의미: OCT 기반 생물학적 분류의 새 응용 / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+<p><small>나머지 25편은 임상 사례 보고(PET/CT, CBCT, 망막 질환)와 지구물리 탐사로 계산 이미징 방법론과 거리가 있는 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology (19편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/diagnostics16203315" target=_blank>Photon Absorption Remote Sensing Virtual Histopathology</a></strong> <span class=pill>JNL</span><br>
+  문제: label-free 가상 염색 영상이 실제 진단에 쓸 만큼 금표준과 동등한지 검증이 부족함 / 방법: PARS 가상 H&E와 실제 H&E의 피부암 진단 일치도 비교 / 의미: 오늘 클러스터5·must-read 대표, 가상 염색의 임상 동등성 검증 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2040-8986/aeb313" target=_blank>Phasor-based fluorescence lifetime imaging microscopy for label-free assessment of skin tissue</a></strong> <span class=pill>JNL</span><br>
+  문제: 자외선·5G 밀리미터파 노출로 인한 피부 조직의 미세 변화를 염색 없이 감지하기 어려움 / 방법: phasor 기반 형광수명영상(FLIM) / 의미: 오늘 클러스터5 대표, label-free 비침습 조직 모니터링 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1055/a-2971-8878" target=_blank>Phase II Results Utilizing the Tumor-Targeting Fluorescence Imaging Agent Tozuleristide</a></strong> <span class=pill>JNL</span><br>
+  문제: 뇌종양(전정신경초종) 절제 수술 중 종양 경계를 정확히 구분하기 어려움 / 방법: 종양 표적 형광 영상제+Canvas 영상 시스템 임상 2상 / 의미: 오늘 클러스터5 대표, 형광 유도 수술의 임상 효과 검증 / 우선순위: Read
+</div>
+<p><small>나머지 16편은 "virtual"·"staining" 키워드 오탐(도시재생 정책, 디아스포라 연구, 세균 염색제 등)이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (9편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/acs.jpcc.6c03816" target=_blank>In Situ Spatial Deconvolution of Concurrent Chemical Oxidation and Localized Structural Reorganization in Copper via Laboratory Full-Field X-ray Diffraction</a></strong> <span class=pill>JNL</span><br>
+  문제: 금속 표면의 화학적 산화와 구조 재배열이 동시에 일어날 때 두 현상을 공간적으로 구분하기 어려움 / 방법: 실험실 전영역 X선 회절(FFXRD)+공간 디콘볼루션 / 의미: 오늘 클러스터3 대표, X선 회절 기반 in-situ 구조 이미징 / 주의: 초록 확인됨 / 우선순위: Read
+</div>
+<p><small>나머지 8편은 MEMS 진동자·MHD·수리학 분야 물리정보신경망(PINN)으로 방법론은 유사하나 이미징 응용이 아니라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods (18편 중 관련 4편, catch-all 과대표 방지로 2편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ao.614922" target=_blank>Direct classification of retinal diseases from ghost imaging with Deep learning</a></strong> <span class=pill>JNL</span><br>
+  문제: 고스트 이미징 복원 영상에서 질환을 진단하려면 복원과 분류를 따로 수행해야 함 / 방법: 고스트 이미징+딥러닝 직접 분류 / 의미: 오늘 클러스터4 대표, 비전통 촬상의 진단 응용 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ao.611606" target=_blank>Polarimetric Image Restoration with Adaptive Backscatter Light Estimation</a></strong> <span class=pill>JNL</span><br>
+  문제: 수중 촬영에서 배경광(backscatter)이 영상 대비와 색을 크게 훼손함 / 방법: 적응적 배경광 추정+편광 각도 기반 색 보정 / 의미: 오늘 클러스터4 대표, 산란매질 영상 복원 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<p><small>나머지 14편은 라디오믹스·음악 추천·소비자 인식 조사 등 의료영상 인접 분야이거나 완전히 무관한 응용이라 개별 bullet을 생략합니다.</small></p>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://doi.org/10.1063/5.0360122" target=_blank>Metasurface-based optical Radon transform — Applied Physics Letters</a></li>
+  <li><a href="https://doi.org/10.3390/diagnostics16203315" target=_blank>Photon Absorption Remote Sensing Virtual Histopathology — Diagnostics</a></li>
+  <li><a href="2026-10-12.html">2026-10-12 Daily Briefing</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-10-13 journal-only 잠정본 · arXiv 0건(5개 카테고리 모두 10/12 listing 유지) + 저널 428편, 전체 스캔 428건 · ROI 배정 104건 (24.3%, 실제 계산 이미징 신호 약 26편) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+{
+ "date": "2026-10-13",
+ "source_mode": "journal-only",
+ "clusters": [
+  {
+   "cluster": "홀로그래피가 '하나를 더 정확히 복원하기'에서 '여러 채널을 동시에 처리하기'로 넘어감",
+   "papers": [
+    {
+     "title": "Single-shot multiplexed digital holographic microscopy for dual-sample phase imaging",
+     "arxiv_id": "https://doi.org/10.1016/j.optlaseng.2026.110170",
+     "journal_or_source": "Optics and Lasers in Engineering"
+    },
+    {
+     "title": "Polarization-Multiplexed Holography Based on Dielectric Metasurfaces",
+     "arxiv_id": "https://doi.org/10.3390/mi17101179",
+     "journal_or_source": "Micromachines"
+    },
+    {
+     "title": "Amplitude-constrained and phase-supervised physics-guided color holography for realistic three-dimensional scenes",
+     "arxiv_id": "https://doi.org/10.1016/j.optlastec.2026.116638",
+     "journal_or_source": "Optics & Laser Technology"
+    },
+    {
+     "title": "Review for metasurface holographic imaging enabled by artificial intelligence technology",
+     "arxiv_id": "https://doi.org/10.1016/j.optlaseng.2026.110167",
+     "journal_or_source": "Optics and Lasers in Engineering"
+    }
+   ],
+   "why": "지금까지 디지털 홀로그래피나 컴퓨터 생성 홀로그래피(CGH) 논문들은 대체로 한 장면을 얼마나 정확하게 복원하느냐를 두고 경쟁해 왔는데, 오늘 저널 네 편은 동시에 여러 개를 처리하는 쪽으로 방향을 틀었습니다. 단일 촬영 다중 홀로그래픽 현미경 논문은 한 번 찍은 영상만으로 서로 다른 두 샘플의 위상을 동시에 복원하고, 편광 다중화 메타표면 홀로그래피 논문은 서로 다른 편광 상태에 맞춰 두 개의 독립된 홀로그램 영상을 하나의 소자에 집어넣습니다. 색상 홀로그래피 논문도 밝기(진폭)에 제약을 걸고 위상 학습을 감독하는 방식으로 사실적인 3차원 색 장면을 재현하고, 메타표면 홀로그래피 리뷰 논문은 이런 흐름을 AI 보조 설계 관점에서 정리합니다. 네 편 모두 '복원 정확도를 더 높이자'보다 '한 번에 더 많은 정보(샘플, 편광, 색)를 동시에 처리하자'는 같은 방향을 가리킵니다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저널 4편이 독립적으로 홀로그래피 다중화 흐름을 보이나, 편광 다중화 논문을 제외한 3편은 Crossref 초록이 없어 제목 기반 판단 비중이 있음",
+   "lab_action": "편광 다중화 메타표면 홀로그래피의 Jones-matrix 기반 Gerchberg-Saxton 설계 절차를 랩의 메타표면 설계 파이프라인에 적용해 보고, 단일 촬영 다중 샘플 위상 복원 아이디어를 랩 QPI 현미경에서 다중 FOV 동시 촬영이 가능한지 검토한다"
+  },
+  {
+   "cluster": "메타표면이 안테나 더미 속에서도 광연산·이미징 기능 논문을 꾸준히 냄",
+   "papers": [
+    {
+     "title": "Multifunctional imaging with an inverse-designed non-local metasurface",
+     "arxiv_id": "https://doi.org/10.1364/optica.609474",
+     "journal_or_source": "Optica"
+    },
+    {
+     "title": "Metasurface-based optical Radon transform for complex-amplitude reconstruction",
+     "arxiv_id": "https://doi.org/10.1063/5.0360122",
+     "journal_or_source": "Applied Physics Letters"
+    },
+    {
+     "title": "Guided-wave-driven eight-channel spin- and direction-multiplexed on-chip metasurface for light manipulation",
+     "arxiv_id": "https://doi.org/10.1364/oe.614034",
+     "journal_or_source": "Optics Express"
+    },
+    {
+     "title": "Inverse Design of a Fiber-to-Fiber Integrated Metasurface System for Multiplexing and Demultiplexing of Orbital Angular Momentum Modes",
+     "arxiv_id": "https://doi.org/10.1364/oe.617888",
+     "journal_or_source": "Optics Express"
+    }
+   ],
+   "why": "오늘 Meta-Optics/Diffractive 버킷 14편 중 10편은 5G/6G 안테나, RFID, 열복사 흡수체처럼 통신·에너지 응용이었는데, 나머지 4편은 메타표면을 '전파를 조작하는 소자'가 아니라 '빛으로 직접 연산이나 이미징을 수행하는 소자'로 씁니다. Optica에 실린 다기능 이미징 메타표면은 비국소(non-local) 응답을 역설계해 평면 소자 하나로 여러 이미징 기능을 동시에 구현하고, 광학 라돈 변환 메타표면은 지금까지 디지털 연산이나 부피가 큰 광학계로만 하던 토모그래피의 핵심 수학 연산(라돈 변환)을 평면 메타표면 하나로 수행합니다. 여기에 광도파로 기반 8채널 스핀/방향 다중화 메타표면과 광섬유 간 궤도각운동량(OAM) 다중화·역다중화 메타표면까지 더하면, 같은 날 서로 다른 저널 네 편이 메타표면을 통신 부품이 아니라 광학 연산 부품으로 쓰는 방향을 가리킵니다.",
+   "confidence": "High",
+   "confidence_note": "서로 다른 저널 4편(Optica, Applied Physics Letters, Optics Express ×2)이 독립적으로 메타표면의 이미징/광연산 기능을 보임. 다만 Radon transform 논문 외 3편은 Crossref 초록이 없어 제목 기반 판단이 섞여 있음",
+   "lab_action": "광학 라돈 변환 메타표면의 설계 원리를 랩의 토모그래피/위상 복원 파이프라인에서 프런트엔드 연산(투영 샘플링 감소)으로 시뮬레이션 적용해 보고, Optica 비국소 다기능 이미징 메타표면의 역설계 절차를 랩이 설계 중인 메타옵틱스 소자에 비교 벤치마크로 돌린다"
+  },
+  {
+   "cluster": "산업·소재 현장의 비침습 3D·구조 복원이 비지도·모델기반 방식으로 동시다발 등장",
+   "papers": [
+    {
+     "title": "Non-local Mean Regularized Deep Image Prior: An Unsupervised Framework for Industrial Ultrasonic Tomography",
+     "arxiv_id": "https://doi.org/10.1109/tim.2026.3742006",
+     "journal_or_source": "IEEE Transactions on Instrumentation and Measurement"
+    },
+    {
+     "title": "Calibration-geometry-constrained unsupervised volumetric particle reconstruction for tomographic particle image velocimetry",
+     "arxiv_id": "https://doi.org/10.1016/j.optlastec.2026.116562",
+     "journal_or_source": "Optics & Laser Technology"
+    },
+    {
+     "title": "Three-dimensional particle velocimetry in digital in-line holography via channel-attention autofocusing network",
+     "arxiv_id": "https://doi.org/10.1364/ao.613215",
+     "journal_or_source": "Applied Optics"
+    },
+    {
+     "title": "Mapping the depth and thickness of delaminations using lock-in thermography: Towards a quantitative tomography",
+     "arxiv_id": "https://doi.org/10.1016/j.optlastec.2026.116669",
+     "journal_or_source": "Optics & Laser Technology"
+    },
+    {
+     "title": "Density Measurement of Irradiated and Nonirradiated Zirconium Oxide by Ptychographic X-Ray Computed Tomography (PXCT)",
+     "arxiv_id": "https://doi.org/10.1002/adem.202503145",
+     "journal_or_source": "Advanced Engineering Materials"
+    },
+    {
+     "title": "In Situ Spatial Deconvolution of Concurrent Chemical Oxidation and Localized Structural Reorganization in Copper via Laboratory Full-Field X-ray Diffraction",
+     "arxiv_id": "https://doi.org/10.1021/acs.jpcc.6c03816",
+     "journal_or_source": "The Journal of Physical Chemistry C"
+    }
+   ],
+   "why": "오늘 저널에서 가장 많은 수의 독립 신호가 모인 주제는 '학습 데이터 없이, 혹은 적은 추가 가정만으로 산업·소재 현장의 내부 구조를 3차원으로 복원하는' 문제입니다. 산업용 초음파 토모그래피 논문은 외부 학습 데이터셋 대신 복원하려는 그 측정 자체에서 사전(prior)을 뽑아내는 deep image prior 방식에 비지역(non-local) 평균 정규화를 더해 품질을 높입니다. 두 편의 입자유동(PIV) 논문은 각각 보정 기하 제약을 건 비지도 체적 입자 복원과 채널-어텐션 기반 자동초점 신경망으로, 유체 속 입자의 3차원 위치를 라벨 없이 복원합니다. 지연 샘플링 lock-in 열화상 논문은 적외선 열 신호의 간섭 패턴으로 적층제조 부품의 결함 깊이를 정량화하고, PXCT(피치코그래피 X선 CT) 논문은 지르코늄 산화막의 밀도를 비파괴로 측정하며, 실험실 전영역 X선 회절 논문은 구리 표면의 화학적 산화와 구조 재배열을 공간적으로 분리해 냅니다. 여섯 편 모두 '더 정확한 알고리즘'보다 '실측 데이터 자체에서 사전 정보를 뽑아내거나 모델 기반 제약으로 학습 데이터 의존도를 줄이면서, 산업 현장의 3차원·내부 구조 정보를 복원한다'는 같은 태도를 보입니다.",
+   "confidence": "High",
+   "confidence_note": "서로 다른 저널 6편(IEEE TIM, Optics & Laser Technology ×2, Applied Optics, Advanced Engineering Materials, J. Phys. Chem. C)이 초음파·입자유동·열화상·X선까지 서로 다른 모달리티에서 같은 '비지도/모델기반 3D 복원' 방향으로 동시에 수렴함",
+   "lab_action": "Non-local Mean Regularized Deep Image Prior의 비지도 사전 추출 구조를 랩의 산업용 비파괴검사/현미경 결함 탐지 파이프라인에 적용해 외부 학습 데이터 없이도 복원이 되는지 비교하고, 두 PIV 논문의 체적 복원·자동초점 기법을 랩이 보유한 광 필드/홀로그래픽 유동 측정 셋업에 이식해 복원 정확도(라벨 대비 오차)를 비교한다"
+  },
+  {
+   "cluster": "비전통 광학 센싱(고스트 이미징·편광·광학 신경망)이 진단·수중·계측 자동화로 각각 확장",
+   "papers": [
+    {
+     "title": "Direct classification of retinal diseases from ghost imaging with Deep learning",
+     "arxiv_id": "https://doi.org/10.1364/ao.614922",
+     "journal_or_source": "Applied Optics"
+    },
+    {
+     "title": "Polarimetric Image Restoration with Adaptive Backscatter Light Estimation and Angle of Polarization-based Color Correction",
+     "arxiv_id": "https://doi.org/10.1364/ao.611606",
+     "journal_or_source": "Applied Optics"
+    },
+    {
+     "title": "Microdisplay-driven optoelectronic fully connected neural network with microlens array",
+     "arxiv_id": "https://doi.org/10.1016/j.optcom.2026.133865",
+     "journal_or_source": "Optics Communications"
+    },
+    {
+     "title": "Deep Learning-based Misalignment Error Correction Method for Spherical Surface Testing",
+     "arxiv_id": "https://doi.org/10.1364/ao.609299",
+     "journal_or_source": "Applied Optics"
+    }
+   ],
+   "why": "고스트 이미징은 원래 하나의 단일 화소 검출기와 무작위 패턴 조명만으로 영상을 복원하는 실험실 기법에 가까웠는데, 오늘 저널 논문은 이를 망막 질환 분류라는 실제 진단 문제에 딥러닝과 결합해 적용합니다. 편광 영상 복원 논문은 수중 촬영에서 빛이 산란되며 생기는 배경광(backscatter)을 적응적으로 추정하고 편광 각도 기반 색 보정까지 더해 탁한 물 속에서도 선명한 영상을 복원합니다. 마이크로디스플레이 기반 광전자 완전연결 신경망은 신경망의 행렬 연산 자체를 마이크로렌즈 배열로 광학적으로 구현해, 전자 회로가 아니라 빛으로 연산하는 하드웨어를 지향합니다. 구면 표면 검사용 오정렬 오차 보정 논문은 광학 계측에서 사람이 조정하던 정렬 작업을 딥러닝으로 자동화합니다. 네 편 모두 비전통적인 촬상·연산 방식이 실험실 시연을 넘어 진단, 수중 탐사, 광컴퓨팅, 계측 자동화라는 서로 다른 실사용 맥락으로 각각 걸어 들어가고 있다는 신호입니다.",
+   "confidence": "Medium",
+   "confidence_note": "네 편 모두 서로 다른 응용(진단·수중·광컴퓨팅·계측)에 1편씩만 있어 같은 방향의 반복 검증은 아직 없고, 전편 Crossref 초록이 없어 제목 기반 판단임",
+   "lab_action": "편광 기반 배경광 추정+색 보정 파이프라인을 랩의 수중/산란매질 촬영 실험에 적용해 기존 dehazing 대비 복원 품질(대비·색 정확도)을 비교하고, 고스트 이미징+딥러닝 분류 구조를 랩의 단일픽셀/압축 센싱 진단 응용 가능성 검토에 참고한다"
+  },
+  {
+   "cluster": "표지 없는(label-free) 조직·세포 영상이 임상 동등성 검증 단계로 들어감",
+   "papers": [
+    {
+     "title": "Photon Absorption Remote Sensing Virtual Histopathology: A Preliminary Exploration of Diagnostic Equivalence to Gold-Standard H&E Staining in Skin Cancer Excisional Biopsies",
+     "arxiv_id": "https://doi.org/10.3390/diagnostics16203315",
+     "journal_or_source": "Diagnostics"
+    },
+    {
+     "title": "Phasor-based fluorescence lifetime imaging microscopy for label-free assessment of skin tissue responses to UV and 5G millimetre-wave exposure",
+     "arxiv_id": "https://doi.org/10.1088/2040-8986/aeb313",
+     "journal_or_source": "Journal of Optics"
+    },
+    {
+     "title": "Phase II Results Utilizing the Tumor-Targeting Fluorescence Imaging Agent Tozuleristide and the Canvas Imaging System in a Cohort of Adults Undergoing Resection of Vestibular Schwannoma",
+     "arxiv_id": "https://doi.org/10.1055/a-2971-8878",
+     "journal_or_source": "Journal of Neurological Surgery Part B: Skull Base"
+    }
+   ],
+   "why": "그동안 가상 염색(virtual staining)이나 표지 없는 조직 영상 연구는 주로 '기존 염색 영상과 얼마나 비슷하게 보이는가'를 화질 지표로 비교하는 단계에 머물러 있었는데, 오늘 저널 세 편은 실제 진단·임상 맥락에서 검증하는 단계로 넘어갑니다. Photon Absorption Remote Sensing(PARS) 논문은 염색 없이 흡수 신호만으로 만든 가상 H&E(헤마톡실린-에오신) 영상이 피부암 절제 생검에서 금표준 염색 영상과 진단적으로 동등한지를 직접 평가합니다. 위상자(phasor) 기반 형광수명영상(FLIM) 논문은 자외선과 5G 밀리미터파에 노출된 피부 조직의 미세한 생화학적 변화를 염색 없이 비침습적으로 감지합니다. Tozuleristide 형광 영상제 임상 2상 논문은 뇌종양(전정신경초종) 절제 수술 중 형광 유도 영상으로 절제 범위를 넓히는 효과를 실제 환자 코호트에서 검증합니다. 세 편 모두 '그럴듯하게 보이는 영상'을 넘어 '진단 동등성'과 '임상 2상'이라는 더 엄격한 기준으로 label-free 영상 기법을 검증하기 시작했다는 공통점이 있습니다.",
+   "confidence": "High",
+   "confidence_note": "세 편 모두 Crossref 초록이 확인되고, 임상/진단 동등성 검증이라는 같은 방향으로 수렴하며 Tozuleristide는 실제 Phase II 임상 결과를 제시함",
+   "lab_action": "PARS의 진단 동등성 평가 설계(금표준 H&E 대비 병리의 블라인드 판독 합의도)를 랩의 virtual staining 파이프라인 검증 프로토콜로 그대로 채택하고, phasor FLIM의 label-free 생화학 변화 감지 방식을 랩 형광수명영상 셋업에서 피부/조직 샘플 스트레스 테스트에 적용한다"
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "A. 광학 라돈 변환 메타표면을 랩 토모그래피 파이프라인의 프런트엔드 연산으로 시뮬레이션 적용",
+   "claim": "메타표면이 광학적으로 직접 수행하는 라돈 변환 연산을 랩의 토모그래피/위상 복원 파이프라인 앞단에 두면, 투영 샘플링 수를 줄이면서도 복원 품질을 유지할 수 있다",
+   "supporting_papers": [
+    {
+     "title": "Metasurface-based optical Radon transform for complex-amplitude reconstruction",
+     "arxiv": "https://doi.org/10.1063/5.0360122"
+    }
+   ]
+  },
+  {
+   "title": "B. 비지도 Deep Image Prior 구조를 랩 비파괴검사 파이프라인에 적용해 학습 데이터 의존도 비교",
+   "claim": "Non-local Mean Regularized Deep Image Prior 방식을 랩의 산업용 비파괴검사/현미경 결함 탐지 파이프라인에 적용하면, 외부 학습 데이터 없이도 기존 지도학습 기반 복원과 비슷한 품질을 얻을 수 있다",
+   "supporting_papers": [
+    {
+     "title": "Non-local Mean Regularized Deep Image Prior: An Unsupervised Framework for Industrial Ultrasonic Tomography",
+     "arxiv": "https://doi.org/10.1109/tim.2026.3742006"
+    }
+   ]
+  },
+  {
+   "title": "C. 편광 기반 배경광 추정+색 보정을 랩 수중/산란매질 촬영 실험에 적용",
+   "claim": "적응적 배경광(backscatter) 추정과 편광 각도 기반 색 보정을 결합하면, 랩이 다루는 산란매질(수중·안개·생체조직) 촬영에서 기존 dehazing 대비 대비·색 정확도를 더 안정적으로 복원할 수 있다",
+   "supporting_papers": [
+    {
+     "title": "Polarimetric Image Restoration with Adaptive Backscatter Light Estimation and Angle of Polarization-based Color Correction",
+     "arxiv": "https://doi.org/10.1364/ao.611606"
+    }
+   ]
+  },
+  {
+   "title": "D. PARS 진단 동등성 평가 설계를 랩 virtual staining 검증 프로토콜로 채택",
+   "claim": "금표준 염색 영상 대비 병리의 블라인드 판독 합의도로 진단 동등성을 평가하는 PARS의 검증 설계를 랩의 virtual staining 결과물에 그대로 적용하면, 화질 지표만으로는 드러나지 않는 임상 적용 가능성을 판단할 수 있다",
+   "supporting_papers": [
+    {
+     "title": "Photon Absorption Remote Sensing Virtual Histopathology: A Preliminary Exploration of Diagnostic Equivalence to Gold-Standard H&E Staining in Skin Cancer Excisional Biopsies",
+     "arxiv": "https://doi.org/10.3390/diagnostics16203315"
+    }
+   ]
+  }
+ ],
+ "phylogeny_tags": []
+}

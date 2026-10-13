@@ -1,0 +1,37 @@
+{
+ "date": "2026-10-13",
+ "source_listing_date": "2026-10-13",
+ "source_mode": "journal-only",
+ "note": "2026-10-13(화) daily 실행. Date Source Contract 점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 /new listing이 여전히 \"Monday, 12 October 2026\"에 머물러 있었다(어제 2026-10-12 daily가 이미 이 listing을 정상 소비함). post_date(10/13) > listing_date(10/12)라 prompts/instruction.md 2.1의 저널 독립 규칙에 따라 arXiv 섹션 없이 Crossref/OpenAlex 저널만으로 journal-only 잠정본을 발행한다. Crossref 9개 키워드 질의(--days 1, 2026-10-13 등록분)로 428건을 수집하고 OpenAlex enrich로 46건을 보강한 뒤 classify.py로 스캔해 104건(24.3%)이 9개 ROI 버킷에 배정됐다. 다만 104건 중 'virtual'(가상현실 관광 등)·'staining'(세균 진단 염색)·'tomography'(임상 CT/CBCT 사례, 지구물리)·'metasurface'(5G/6G 안테나, RFID) 같은 범용 키워드 오탐을 제외하면 실제 계산 이미징 신호는 약 26편으로 추정된다. 이 26편을 다시 묶어 (1) 홀로그래피의 다중채널 처리 확장, (2) 메타표면의 광연산/이미징 기능화, (3) 산업·소재 현장의 비지도/모델기반 3D·구조 복원 동시다발, (4) 비전통 센싱(고스트 이미징·편광·광학 신경망)의 실사용 확장, (5) label-free 조직 영상의 임상 동등성 검증 진입 — 5개 클러스터를 구성했다. Lensless/Coded Imaging과 Light-Field/Novel Sensors 두 핵심 ROI 버킷은 오늘 배정 0건으로 완전 공백이다. arXiv가 10/13 listing으로 갱신되고 /pastweek에 해당 섹션이 뜨면 다음 실행에서 arXiv 포함 완전판으로 업그레이드된다.",
+ "daily_new_counts": {
+  "by_cat": {
+   "cs.LG": 0,
+   "cs.CV": 0,
+   "cs.AI": 0,
+   "eess.IV": 0,
+   "eess.SP": 0
+  },
+  "scope": "new+cross; replacements excluded",
+  "journal_count": 428
+ },
+ "totals": {
+  "total_scanned": 428,
+  "selected": 104
+ },
+ "classified": {
+  "total_scanned": 428,
+  "selected": 104,
+  "by_bucket": {
+   "Fourier Ptychography/Microscopy": 2,
+   "Lensless/Coded Imaging": 0,
+   "Phase Imaging/Holography": 13,
+   "Meta-Optics/Diffractive": 14,
+   "Light-Field/Novel Sensors": 0,
+   "Tomography/3D Imaging": 29,
+   "Virtual Staining/Pathology": 19,
+   "Reconstruction/Inverse Problems": 9,
+   "Deep Learning Methods": 18
+  }
+ },
+ "daily_thesis": "오늘은 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 arXiv listing이 어제(10/12) 것에 머물러 있어 저널만으로 만든 잠정본입니다. 가장 뚜렷한 신호는 산업·소재 현장에서 학습 데이터 없이(또는 적은 추가 가정만으로) 내부 구조를 3차원으로 복원하는 논문이 초음파·입자유동·열화상·X선까지 서로 다른 모달리티에서 6편이나 동시에 나왔다는 점이고, 두 번째는 메타표면이 5G/6G 안테나 더미 속에서도 광학 라돈 변환·비국소 다기능 이미징처럼 '빛으로 직접 연산하는' 쪽 논문을 꾸준히 내고 있다는 점입니다."
+}
