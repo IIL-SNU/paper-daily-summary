@@ -1,0 +1,37 @@
+{
+ "date": "2026-10-14",
+ "source_listing_date": "2026-10-14",
+ "source_mode": "journal-only",
+ "note": "2026-10-14(수) daily 실행. Date Source Contract 점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 /new listing이 여전히 \"Monday, 12 October 2026\"에 머물러 있었다(2026-10-12 daily가 이미 이 listing을 정상 소비, 2026-10-13도 같은 사유로 journal-only 발행). /pastweek 5개 카테고리를 재확인해도 10/13 섹션이 아직 생기지 않아 journal-only 업그레이드 대상도 없다. post_date(10/14) > listing_date(10/12)라 prompts/instruction.md 2.1의 저널 독립 규칙에 따라 arXiv 섹션 없이 Crossref/OpenAlex 저널만으로 journal-only 잠정본을 발행한다. Crossref 9개 키워드 질의(--days 1, 2026-10-14 등록분 중심)로 430건을 수집하고 OpenAlex works 보충 질의로 4건을 더해 434건을 classify.py로 스캔, 84건(19.4%)이 9개 ROI 버킷에 배정됐다. 다만 84건 중 'phase'(의료영상 조영 단계, 양자역학 이론), 'metasurface'(5G/6G 안테나), 'tomography'(임상 CT/PET 사례), 'virtual'/'staining'(STEM 교육, 세균 염색, 명화학적 염색 비교) 같은 범용 키워드 오탐을 제외하면 실제 계산 이미징 신호는 약 31편으로 추정된다. 이 31편을 다시 묶어 (1) 메타표면 연구가 설계에서 공명 제어로 이동, (2) 메타표면이 편광/생체 센싱 이미징 하드웨어로 확장, (3) 렌즈리스·이벤트 센서가 병리 영상까지 침투(Lensless 버킷 0편 집계의 숨은 오분류 포함), (4) 위상·간섭 계측의 조용한 갱신, (5) 의료영상 AI의 신뢰성 검증 — 5개 클러스터를 구성했다. Lensless/Coded Imaging 버킷은 집계상 0건이지만 실제로는 1편(virtual staining 버킷으로 오분류)이 존재해 Watch Lens에서 별도로 짚는다.",
+ "daily_new_counts": {
+  "by_cat": {
+   "cs.LG": 0,
+   "cs.CV": 0,
+   "cs.AI": 0,
+   "eess.IV": 0,
+   "eess.SP": 0
+  },
+  "scope": "new+cross; replacements excluded",
+  "journal_count": 434
+ },
+ "totals": {
+  "total_scanned": 434,
+  "selected": 84
+ },
+ "classified": {
+  "total_scanned": 434,
+  "selected": 84,
+  "by_bucket": {
+   "Fourier Ptychography/Microscopy": 2,
+   "Lensless/Coded Imaging": 0,
+   "Phase Imaging/Holography": 8,
+   "Meta-Optics/Diffractive": 14,
+   "Light-Field/Novel Sensors": 2,
+   "Tomography/3D Imaging": 16,
+   "Virtual Staining/Pathology": 14,
+   "Reconstruction/Inverse Problems": 6,
+   "Deep Learning Methods": 22
+  }
+ },
+ "daily_thesis": "오늘도 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 arXiv listing이 10/12에 머물러 있어 저널만으로 만든 잠정본입니다. 가장 뚜렷한 신호는 메타표면 연구 다섯 편이 '어떤 모양을 설계할까'보다 '빛의 공명을 어떻게 제어해 정보를 다룰까'로 질문을 바꿨다는 점이고, 두 번째는 Lensless/Coded Imaging 버킷이 집계상 0편으로 보였지만 실제로는 렌즈 없는 온칩 현미경 논문이 virtual staining 버킷으로 오분류돼 숨어 있었다는 점입니다."
+}

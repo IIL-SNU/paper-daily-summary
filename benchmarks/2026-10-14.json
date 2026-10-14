@@ -1,0 +1,21 @@
+{
+ "date": "2026-10-14",
+ "results": [
+  {
+   "benchmark": "MR-guided radiotherapy tumor tracking (open-access MRgRT dataset)",
+   "metric": "Dice similarity coefficient",
+   "value": 0.891,
+   "value_str": "0.891 (fine-tuned via semi-automatic labeling, up from 0.874 zero-shot SAM2/MedSAM2)",
+   "paper": "https://doi.org/10.1007/s10278-026-02387-z",
+   "paper_title": "Semi-Automated Image Labeling and Object Tracking for MR-Guided Radiotherapy Using a Foundation Vision Model"
+  },
+  {
+   "benchmark": "AI-generated chest radiograph detection (160 PA radiographs, 3 synthetic pipelines)",
+   "metric": "Balanced accuracy (frequency-domain baseline)",
+   "value": 98.3,
+   "value_str": "98.3% within-dataset vs 12% on a held-out generator (large generalization gap)",
+   "paper": "https://doi.org/10.1007/s10278-026-02339-7",
+   "paper_title": "Complementary Error Profiles of Human Readers and Large Language Models in Detecting AI-Generated Chest Radiographs"
+  }
+ ]
+}

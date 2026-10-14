@@ -1,0 +1,178 @@
+{
+ "date": "2026-10-14",
+ "source_mode": "journal-only",
+ "clusters": [
+  {
+   "cluster": "메타표면 연구의 무게중심이 '어떤 모양을 설계할까'에서 '공명을 어떻게 제어해 정보를 다룰까'로 이동",
+   "papers": [
+    {
+     "title": "How metasurfaces transformed flat optics into information optics",
+     "arxiv_id": "https://doi.org/10.1038/s41565-026-02286-y",
+     "journal_or_source": "Nature Nanotechnology"
+    },
+    {
+     "title": "Local resonances in nanostructures for strong light–matter interaction: from principles to applications",
+     "arxiv_id": "https://doi.org/10.1117/1.ap.8.5.054005",
+     "journal_or_source": "Advanced Photonics"
+    },
+    {
+     "title": "Confining Light in Hexagonal Boron Nitride Photonic Resonators",
+     "arxiv_id": "https://doi.org/10.1021/acsphotonics.6c01516",
+     "journal_or_source": "ACS Photonics"
+    },
+    {
+     "title": "Multiple Scattering Model for the Coherent Optical Response of Correlated Disordered Plasmonic Metasurfaces",
+     "arxiv_id": "https://doi.org/10.1002/adom.71916",
+     "journal_or_source": "Advanced Optical Materials"
+    },
+    {
+     "title": "Understanding Inhomogeneous Crystallization Dynamics of Phase‐Change Materials in the Vicinity of Metallic Nanoantennas",
+     "arxiv_id": "https://doi.org/10.1002/adom.71908",
+     "journal_or_source": "Advanced Optical Materials"
+    }
+   ],
+   "why": "메타표면 연구는 그동안 '원하는 모양을 어떻게 깎을까'라는 설계 문제에 가까웠는데, 오늘 저널 다섯 편은 같은 소자를 '빛의 공명을 어떻게 다루면 원하는 정보를 뽑아낼 수 있을까'라는 질문으로 다시 봅니다. Nature Nanotechnology 해설 논문은 메타표면이 처음에는 렌즈나 거울 같은 평면 광학 부품을 대체하는 역할이었지만, 지금은 빛 자체로 연산이나 정보 처리를 수행하는 '정보 광학' 소자로 넘어갔다고 정리합니다. Advanced Photonics 리뷰는 그 전환을 가능하게 한 물리적 조건(속박상태-연속체, 국소-비국소 전이)을 체계적으로 정리하고, hBN 포토닉 레조네이터 논문은 실제로 굴절률이 낮은 재료에서도 품질 계수가 높은 공명을 만들 수 있다는 걸 실험으로 보여줍니다. 무질서한 플라즈모닉 메타표면의 산란 모델과 상변화 물질의 결정화 동역학 연구는 '완벽하게 규칙적인 구조'가 아니라 '불균일하거나 무질서한 구조에서도 공명을 예측하고 제어할 수 있는가'를 다룹니다. 다섯 편을 같이 보면, 메타표면 연구의 중심이 특정 기능 하나를 만드는 설계에서 공명이라는 물리 현상 자체를 더 정밀하게 예측·제어하는 쪽으로 옮겨가고 있다는 뜻입니다.",
+   "confidence": "High",
+   "confidence_note": "서로 다른 저널 5편(Nature Nanotechnology, Advanced Photonics, ACS Photonics, Advanced Optical Materials ×2)이 독립적으로 같은 방향(설계→공명 제어)을 가리킴. 다만 리뷰·해설 2편을 제외한 나머지는 초록 기준 판단",
+   "lab_action": "Advanced Photonics의 BIC·국소-비국소 전이 설계 지침을 랩이 설계 중인 메타표면의 Q-factor·모드 부피 트레이드오프 비교표에 반영하고, hBN qBIC 실험 조건(PMMA 코팅 전후 공명 변화)을 랩 나노포토닉 공명 측정 셋업으로 재현해 본다"
+  },
+  {
+   "cluster": "메타표면이 안테나·통신 응용 속에서도 편광·생체 센싱용 이미징 하드웨어로 쓰이는 사례가 늘어남",
+   "papers": [
+    {
+     "title": "Full-Polarization-Sensing MCT Photodetector Enabled by a High-Efficiency Bilayer Plasmonic Metasurface",
+     "arxiv_id": "https://doi.org/10.3390/photonics13100959",
+     "journal_or_source": "Photonics"
+    },
+    {
+     "title": "Deep learning-assisted graphene-based THz metasurface for label-free and high-performance MCF-7 breast cancer cell sensing",
+     "arxiv_id": "https://doi.org/10.1038/s41598-026-75451-x",
+     "journal_or_source": "Scientific Reports"
+    },
+    {
+     "title": "Breaking Optical Transparency and Electromagnetic Performance Trade‐Offs for Transparent Reflective Metasurfaces",
+     "arxiv_id": "https://doi.org/10.1002/adom.71923",
+     "journal_or_source": "Advanced Optical Materials"
+    }
+   ],
+   "why": "오늘 Meta-Optics/Diffractive 버킷 14편 중 상당수는 여전히 안테나·통신 응용이지만, 그중 세 편은 메타표면을 '전파를 꺾는 소자'가 아니라 '이미지를 만드는 하드웨어'로 씁니다. 적외선 광검출기 논문은 빛의 세기만 재던 기존 장파장 적외선(LWIR) MCT 검출기에 이중층 플라즈모닉 메타표면을 얹어, 선형·원형 편광 상태까지 한 번에 구분하는 완전 편광 영상 소자를 만듭니다. 그래핀 테라헤르츠 메타표면 논문은 유방암 세포를 표지 없이 구분하는 센싱에 메타표면 공명을 활용하고, 투명 반사형 메타표면 논문은 마이크로파를 반사하면서도 가시광 투과율 73%를 유지해 유리창 위에 설치할 수 있는 통신-광학 겸용 소자를 보여줍니다. 세 편 모두 메타표면이 통신 부품인 동시에 이미징·센싱 기능까지 같이 떠안기 시작했다는 공통점이 있습니다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저널 3편이 각각 다른 응용(적외선 편광 영상, 암세포 센싱, 투명 반사)에서 메타표면의 이미징/센싱 겸용 기능을 보이나, 같은 응용축의 반복 검증은 아직 부족",
+   "lab_action": "완전 편광 감지 MCT 포토다이오드의 이중층 플라즈모닉 설계를 랩의 편광 이미징 파이프라인에 참고해 기존 편광판 방식 대비 소형화 가능성을 검토하고, THz 그래핀 메타표면의 암세포 센싱 신호 처리 방식을 랩 label-free 센싱 응용의 비교군으로 둔다"
+  },
+  {
+   "cluster": "렌즈리스·이벤트 기반 센서가 병리 영상(가상 염색)까지 침투 — Lensless 버킷 '0편' 집계의 숨은 오분류",
+   "papers": [
+    {
+     "title": "High-fidelity lensless on-chip microscopy via mixed coherence control for virtual staining",
+     "arxiv_id": "https://doi.org/10.1364/ol.614237",
+     "journal_or_source": "Optics Letters"
+    },
+    {
+     "title": "NEEHA: Neuromorphic Event Enhanced Histopathology Apparatus",
+     "arxiv_id": "https://doi.org/10.1364/boe.612808",
+     "journal_or_source": "Biomedical Optics Express"
+    },
+    {
+     "title": "CSNet: Cognitive Simulation Network for Reliable Histopathology-Based Cancer Diagnosis",
+     "arxiv_id": "https://doi.org/10.1007/s10278-026-02388-y",
+     "journal_or_source": "Journal of Imaging Informatics in Medicine"
+    }
+   ],
+   "why": "오늘 버킷 집계만 보면 Lensless/Coded Imaging은 0편으로 완전히 비어 있는데, 실제로는 렌즈 없는 온칩 현미경 논문 한 편이 제목에 들어간 'virtual staining' 때문에 Virtual Staining 버킷으로 잘못 분류됐을 뿐입니다. 이 논문은 혼합 가간섭성 제어(mixed coherence control)로 렌즈 없이 칩 위에서 바로 고해상도 영상을 얻고, 그 영상을 염색 없이 가상으로 염색된 조직처럼 보이게 변환합니다. 같은 날 나온 NEEHA 논문은 아예 다른 방식으로 접근하는데, 신경모방(neuromorphic) 이벤트 카메라로 조직 샘플을 스캔해 기존 카메라로는 놓치는 미세한 신호 변화까지 병리 영상에 반영합니다. CSNet 논문은 병리 영상 자체보다 진단 과정을 모사하는 인지 시뮬레이션 신경망으로 암 진단의 신뢰도를 높입니다. 세 편을 같이 보면, 렌즈나 염색 같은 전통적인 병리 영상 장비 구성 요소를 하나씩 덜어내면서도 진단에 필요한 정보는 유지하거나 오히려 늘리려는 흐름이 보입니다.",
+   "confidence": "High",
+   "confidence_note": "서로 다른 저널 3편이 독립적으로 비전통 촬상(렌즈리스, 이벤트 카메라)과 병리 진단을 연결하며, 특히 Lensless 버킷의 '0편' 집계가 실제로는 오분류임을 직접 확인함",
+   "lab_action": "렌즈 없는 온칩 현미경+혼합 가간섭성 제어 설계를 랩의 lensless 이미징 셋업에 재현해 가상 염색 영상 품질(기존 염색 대비 SSIM)을 비교하고, NEEHA의 이벤트 카메라 조직 스캔 프로토콜을 랩 보유 이벤트 카메라로 재현해 기존 CMOS 스캔 대비 신호 민감도를 측정한다"
+  },
+  {
+   "cluster": "위상·간섭 계측이 메타표면 뉴스에 가려진 채로도 현장 조건에 맞춰 조용히 갱신됨",
+   "papers": [
+    {
+     "title": "Fourier-Based Characterization of Reflective Surface Topography Using a Heterodyne Optical Profilometer",
+     "arxiv_id": "https://doi.org/10.3390/photonics13100961",
+     "journal_or_source": "Photonics"
+    },
+    {
+     "title": "Optical flow-assisted phase retrieval for unequal phase-shifting interferometric measurement",
+     "arxiv_id": "https://doi.org/10.1109/lpt.2026.3741867",
+     "journal_or_source": "IEEE Photonics Technology Letters"
+    },
+    {
+     "title": "Self-referencing speckle pattern interferometry for deformation measurement in vibrating environments",
+     "arxiv_id": "https://doi.org/10.1016/j.optlaseng.2026.110171",
+     "journal_or_source": "Optics and Lasers in Engineering"
+    },
+    {
+     "title": "Surface Contouring of Reflective and Diffuse Samples Using Dual-Angle Digital Holographic Shear Interferometry",
+     "arxiv_id": "https://doi.org/10.1364/ao.618152",
+     "journal_or_source": "Applied Optics"
+    }
+   ],
+   "why": "오늘은 메타표면 뉴스가 많아 상대적으로 눈에 덜 띄지만, 위상과 간섭 기반 계측 논문 네 편이 독립적으로 올라왔습니다. 헤테로다인 광학 프로파일로미터 논문은 레이저 빔을 두 갈래로 나눠 한쪽만 주파수를 이동시킨 뒤 다시 합쳐서, 마이크로미터 단위로 미세한 반사 표면의 굴곡을 재구성하고 이를 전자현미경 결과와 직접 비교해 검증합니다. 광류(optical flow) 보조 위상 복원 논문은 위상천이 간섭계에서 천이 간격이 균일하지 않을 때도 복원이 가능하도록 돕고, 자기참조 스펙클 간섭계 논문은 진동이 있는 현장에서도 변형을 측정할 수 있게 합니다. 이중 각도 홀로그래픽 전단 간섭계 논문은 반사면과 확산면 모두에서 표면 윤곽을 복원합니다. 네 편 모두 화려한 발표 없이도, 위상·간섭 기반 계측이 실험실 바깥의 진동·비균일 조건에서도 버틸 수 있도록 하나씩 보완되고 있다는 신호입니다.",
+   "confidence": "Medium",
+   "confidence_note": "네 편 모두 서로 다른 저널에서 독립적으로 나왔으나 2편은 초록이 공개되지 않아 제목 기반 판단 비중이 있음",
+   "lab_action": "헤테로다인 프로파일로미터의 USRP 기반 비트 신호 처리 구조를 랩의 간섭계 계측 셋업에 적용해 SEM 대비 검증 가능한 표면 굴곡 측정 파이프라인을 구축하고, 자기참조 스펙클 간섭계의 진동 강인 설계를 랩 현장 계측(진동 환경) 실험의 비교군으로 적용한다"
+  },
+  {
+   "cluster": "의료영상 딥러닝이 '더 정확한 모델'보다 '이 모델을 믿어도 되는가'를 검증하는 쪽으로 이동",
+   "papers": [
+    {
+     "title": "Complementary Error Profiles of Human Readers and Large Language Models in Detecting AI-Generated Chest Radiographs",
+     "arxiv_id": "https://doi.org/10.1007/s10278-026-02339-7",
+     "journal_or_source": "Journal of Imaging Informatics in Medicine"
+    },
+    {
+     "title": "Mitigating Domain Shift and Dataset Bias in Deep Learning Models for Cancer Diagnostics",
+     "arxiv_id": "https://doi.org/10.1007/s10278-026-02353-9",
+     "journal_or_source": "Journal of Imaging Informatics in Medicine"
+    },
+    {
+     "title": "Semi-Automated Image Labeling and Object Tracking for MR-Guided Radiotherapy Using a Foundation Vision Model",
+     "arxiv_id": "https://doi.org/10.1007/s10278-026-02387-z",
+     "journal_or_source": "Journal of Imaging Informatics in Medicine"
+    },
+    {
+     "title": "Reviewing reproducibility and replicability in 'Deconstructing gastrulation at single-cell resolution'",
+     "arxiv_id": "https://doi.org/10.1111/jmi.70132",
+     "journal_or_source": "Journal of Microscopy"
+    }
+   ],
+   "why": "오늘 Deep Learning Methods 버킷에서 의료·바이오 영상 관련 논문 네 편을 모으면, 공통적으로 '성능을 더 높이는 방법'보다 '이 결과를 믿어도 되는가'를 검증하는 쪽에 무게가 실려 있습니다. 흉부 X선 판독 논문은 방사선과 전문의 두 명과 GPT-5.5·Gemini 3.5 Flash·Claude Opus 4.8 세 LLM에게 진짜 영상과 생성 영상을 구분하게 했는데, 사람과 LLM이 서로 다른 종류의 오류를 범하고(사람은 진짜 영상을 더 많이 틀리고, 보수적인 LLM은 생성 영상을 놓침), 3개월 뒤 재현했을 때는 LLM 판정 순위마저 바뀌는 걸 보여줍니다. 도메인 시프트·데이터 편향 리뷰 논문은 암 진단 모델이 내부 데이터에서는 거의 완벽해 보여도 외부 기관 데이터에서는 AUC가 평균 0.16이나 떨어진다는 사실을 다시 짚고, 그 해결책들이 전체 성능은 올려도 인구 집단별 격차는 오히려 숨기거나 키울 수 있다고 경고합니다. SAM2 기반 영상 추적 논문은 전문가 라벨링 비용을 줄이려고 준자동 라벨링을 썼을 때도 정확도가 유지되는지를 확인하고, 재현성 리뷰 논문은 4D 현미경 분석 파이프라인이 여러 소프트웨어 환경에 걸쳐 있어 완전한 재현이 쉽지 않다는 점을 짚습니다. 네 편 모두 '숫자가 좋아 보이는 모델'과 '실제로 믿고 쓸 수 있는 모델' 사이의 간극을 각자 다른 각도에서 드러냅니다.",
+   "confidence": "Medium",
+   "confidence_note": "네 편 모두 초록이 확인되고 '신뢰성 검증'이라는 같은 메타 주제로 묶이지만, 서로 다른 하위 문제(딥페이크 탐지·도메인 시프트·라벨링 비용·재현성)라 같은 평가축의 반복 검증은 아님",
+   "lab_action": "AI 생성 흉부 X선 탐지 리더 스터디의 평가 설계(사람 다수 + 복수 LLM 반복 판정)를 랩이 다루는 의료영상 생성 모델의 신뢰성 검증 프로토콜로 채택하고, 도메인 시프트 리뷰가 제안한 세분화된 격차 지표(intersectional disparity index)를 랩 진단 모델 평가에 추가 지표로 반영한다"
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "A. 메타표면 공명 설계 지침(BIC·국소-비국소 전이)을 랩 메타옵틱스 비교표에 반영",
+   "claim": "Advanced Photonics 리뷰가 정리한 BIC·국소-비국소 전이 설계 원칙을 랩이 설계 중인 메타표면의 Q-factor·모드 부피 트레이드오프 비교에 적용하면, 기존 설계 대비 어떤 조건에서 이득이 있는지 정량화할 수 있다.",
+   "supporting_papers": [
+    {"title": "Local resonances in nanostructures for strong light–matter interaction", "arxiv": "https://doi.org/10.1117/1.ap.8.5.054005"},
+    {"title": "Confining Light in Hexagonal Boron Nitride Photonic Resonators", "arxiv": "https://doi.org/10.1021/acsphotonics.6c01516"}
+   ]
+  },
+  {
+   "title": "B. 렌즈 없는 혼합 가간섭성 가상 염색 파이프라인을 랩 lensless 셋업에서 재현",
+   "claim": "혼합 가간섭성 제어 기반 렌즈리스 온칩 현미경을 재현하면, 기존 렌즈 기반 가상 염색 대비 해상도·처리 속도·장비 비용에서 어떤 트레이드오프가 있는지 확인할 수 있다.",
+   "supporting_papers": [
+    {"title": "High-fidelity lensless on-chip microscopy via mixed coherence control for virtual staining", "arxiv": "https://doi.org/10.1364/ol.614237"}
+   ]
+  },
+  {
+   "title": "C. 이벤트 카메라 병리 스캔(NEEHA) 프로토콜 재현 및 신호 민감도 비교",
+   "claim": "신경모방 이벤트 카메라로 조직 샘플을 스캔하는 NEEHA 프로토콜을 재현하면, 기존 CMOS 스캔 대비 어떤 미세 신호(저대비 경계, 빠른 초점 이동)에서 민감도 이득이 있는지 확인할 수 있다.",
+   "supporting_papers": [
+    {"title": "NEEHA: Neuromorphic Event Enhanced Histopathology Apparatus", "arxiv": "https://doi.org/10.1364/boe.612808"}
+   ]
+  },
+  {
+   "title": "D. AI 생성 의료영상 탐지 리더 스터디 설계를 랩 신뢰성 평가 프로토콜로 채택",
+   "claim": "사람 다수 평가자와 복수 LLM을 반복 측정에 투입하는 리더 스터디 설계를 랩의 의료영상 생성 모델 평가에 적용하면, 화질 지표만으로는 드러나지 않는 재현성·평가자 간 불일치를 정량화할 수 있다.",
+   "supporting_papers": [
+    {"title": "Complementary Error Profiles of Human Readers and Large Language Models in Detecting AI-Generated Chest Radiographs", "arxiv": "https://doi.org/10.1007/s10278-026-02339-7"}
+   ]
+  }
+ ],
+ "phylogeny_tags": []
+}
