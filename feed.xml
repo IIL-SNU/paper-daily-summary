@@ -6,14 +6,14 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 14 Oct 2026 11:16:37 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 15:33:31 +0900</lastBuildDate>
     <ttl>720</ttl>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-10-14 (수요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-10-14.html</link>
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-10-14.html</guid>
       <pubDate>Wed, 14 Oct 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘도 arXiv 5개 카테고리 모두 "Monday, 12 October 2026" listing에 머물러 있어(이틀 연속 신규 listing 미갱신), Crossref 9개 키워드 질의(--days 1)로 430건, OpenAlex works 보충 질의로 4건을 모아 434건을 classify.py로 스캔했습니다. 84건(19.4%)이 9개 ROI 버킷에 배정됐는데, 'phase'(간질환 영상 조영 단계, 정체불명의 양자이론 논문)·'metasurface'(5G/6G 안테나, RFID 리더)·'tomography'(임상 CT/PET 사례 보고)·'virtual'·'staining'(STEM 조기교육, 혈액도말 염색법 비교) 같은 범용 키워드 오탐을 빼면 실제 계산 이미…]]></description>
+      <description><![CDATA[오늘 arXiv new+cross 총 2293건(cs.LG 862·cs.CV 479·cs.AI 852·eess.IV 21·eess.SP 79) 중 저널 포함 전체 스캔 2230건(중복 제거 후) 기준 625건(28.0%)이 ROI 버킷에 배정됐습니다. 이 비율은 2026-10-12 정상 daily(28.1%)와 거의 같아, 분류 품질이 안정적으로 유지되고 있음을 보여줍니다. 오늘은 또한 2026-10-14 journal-only 잠정본을 arXiv+저널 완성본으로 업그레이드한 날이기도 합니다 — 2026-10-13(화)은 arXiv 원본이 끝내 생기지 않아(월요일 다음 공지가 바로 수요일로 건너뜀, 미국 연휴로 인한 공백 추정) 영구 결측으로 남습니다.]]></description>
     </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-10-13 (화요일)</title>

@@ -1,178 +1,188 @@
 {
  "date": "2026-10-14",
- "source_mode": "journal-only",
+ "source_mode": "new",
  "clusters": [
   {
-   "cluster": "메타표면 연구의 무게중심이 '어떤 모양을 설계할까'에서 '공명을 어떻게 제어해 정보를 다룰까'로 이동",
+   "cluster": "feed-forward 3D 복원에서 '프레임이 또렷한가'보다 '여러 각도를 고르게 봤는가'가 더 중요하다는 반증 실험",
    "papers": [
     {
-     "title": "How metasurfaces transformed flat optics into information optics",
-     "arxiv_id": "https://doi.org/10.1038/s41565-026-02286-y",
-     "journal_or_source": "Nature Nanotechnology"
+     "title": "Sharper Frames, Worse Rooms: Viewpoint Coverage Dominates Image Quality in Feed-Forward 3D Reconstruction",
+     "arxiv_id": "https://arxiv.org/abs/2610.15854",
+     "importance_tags": ["[해부분석]", "[경고신호]"],
+     "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Feed-forward Multi-view", "genus": "Frame Selection", "confidence": "High", "rationale": "9개 핸드헬드 방 스캔에 대한 2x2 요인 실험으로 뒷받침됨"}
     },
     {
-     "title": "Local resonances in nanostructures for strong light–matter interaction: from principles to applications",
-     "arxiv_id": "https://doi.org/10.1117/1.ap.8.5.054005",
-     "journal_or_source": "Advanced Photonics"
+     "title": "PURE: Refining Feed-forward 3D Reconstruction with Unlabeled Post-training",
+     "arxiv_id": "https://arxiv.org/abs/2610.14698",
+     "importance_tags": ["[방법전환]"],
+     "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Feed-forward Multi-view", "genus": "Self-supervised Refinement", "confidence": "Medium", "rationale": "정답 깊이/자세 없이 2D prior 증류"}
     },
     {
-     "title": "Confining Light in Hexagonal Boron Nitride Photonic Resonators",
-     "arxiv_id": "https://doi.org/10.1021/acsphotonics.6c01516",
-     "journal_or_source": "ACS Photonics"
-    },
-    {
-     "title": "Multiple Scattering Model for the Coherent Optical Response of Correlated Disordered Plasmonic Metasurfaces",
-     "arxiv_id": "https://doi.org/10.1002/adom.71916",
-     "journal_or_source": "Advanced Optical Materials"
-    },
-    {
-     "title": "Understanding Inhomogeneous Crystallization Dynamics of Phase‐Change Materials in the Vicinity of Metallic Nanoantennas",
-     "arxiv_id": "https://doi.org/10.1002/adom.71908",
-     "journal_or_source": "Advanced Optical Materials"
+     "title": "UniForge3D: Joint 3D Reconstruction and Generation in a Shared Anchor-Guided Space",
+     "arxiv_id": "https://arxiv.org/abs/2610.15357",
+     "importance_tags": ["[방법전환]"],
+     "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "3D Reconstruction", "order": "Feed-forward Multi-view", "genus": "Reconstruction-Generation Fusion", "confidence": "Medium", "rationale": "희소 미보정 이미지에서 관측-비관측 영역 결합"}
     }
    ],
-   "why": "메타표면 연구는 그동안 '원하는 모양을 어떻게 깎을까'라는 설계 문제에 가까웠는데, 오늘 저널 다섯 편은 같은 소자를 '빛의 공명을 어떻게 다루면 원하는 정보를 뽑아낼 수 있을까'라는 질문으로 다시 봅니다. Nature Nanotechnology 해설 논문은 메타표면이 처음에는 렌즈나 거울 같은 평면 광학 부품을 대체하는 역할이었지만, 지금은 빛 자체로 연산이나 정보 처리를 수행하는 '정보 광학' 소자로 넘어갔다고 정리합니다. Advanced Photonics 리뷰는 그 전환을 가능하게 한 물리적 조건(속박상태-연속체, 국소-비국소 전이)을 체계적으로 정리하고, hBN 포토닉 레조네이터 논문은 실제로 굴절률이 낮은 재료에서도 품질 계수가 높은 공명을 만들 수 있다는 걸 실험으로 보여줍니다. 무질서한 플라즈모닉 메타표면의 산란 모델과 상변화 물질의 결정화 동역학 연구는 '완벽하게 규칙적인 구조'가 아니라 '불균일하거나 무질서한 구조에서도 공명을 예측하고 제어할 수 있는가'를 다룹니다. 다섯 편을 같이 보면, 메타표면 연구의 중심이 특정 기능 하나를 만드는 설계에서 공명이라는 물리 현상 자체를 더 정밀하게 예측·제어하는 쪽으로 옮겨가고 있다는 뜻입니다.",
+   "why": "그동안 feed-forward 3D 복원(여러 장 사진을 한 번에 넣으면 바로 3D 구조를 뱉어주는 방식)은 '입력 사진이 또렷할수록 결과도 좋아진다'는 당연한 전제 위에서 발전해 왔습니다. 오늘 모인 Sharper Frames, Worse Rooms는 이 전제를 정면으로 뒤집습니다. 200장의 후보 프레임 중 가장 또렷한 16장만 골랐더니 방 치수 오차가 48%까지 치솟았는데, 그냥 시간 간격으로 고르게 16장을 뽑은 경우는 오차가 3%에 그쳤습니다. 원인은 간단합니다 — 또렷한 사진은 카메라가 천천히 움직일 때 많이 찍히는데, 그러면 좁은 각도 범위만 반복해서 찍히고 방의 나머지 192도 이상은 아예 못 찍히기 때문입니다. 즉 사진 한 장 한 장의 품질보다 '얼마나 다양한 각도에서 찍었는가'가 3배 가까이 더 중요한 변수라는 뜻입니다. PURE와 UniForge3D는 같은 feed-forward 3D 복원이라는 기반 위에서 다른 문제(정답 라벨 없이 성능 올리기, 관측된 부분과 안 보이는 부분을 함께 채우기)를 풀지만, 셋을 같이 보면 feed-forward 3D 복원이 '모델을 더 키우자'는 단계를 지나 '애초에 뭘 입력으로 넣어야 하는가', '정답 라벨 없이 어떻게 고치는가' 같은 파이프라인 앞단의 질문으로 관심이 옮겨가고 있다는 그림이 그려집니다.",
    "confidence": "High",
-   "confidence_note": "서로 다른 저널 5편(Nature Nanotechnology, Advanced Photonics, ACS Photonics, Advanced Optical Materials ×2)이 독립적으로 같은 방향(설계→공명 제어)을 가리킴. 다만 리뷰·해설 2편을 제외한 나머지는 초록 기준 판단",
-   "lab_action": "Advanced Photonics의 BIC·국소-비국소 전이 설계 지침을 랩이 설계 중인 메타표면의 Q-factor·모드 부피 트레이드오프 비교표에 반영하고, hBN qBIC 실험 조건(PMMA 코팅 전후 공명 변화)을 랩 나노포토닉 공명 측정 셋업으로 재현해 본다"
+   "confidence_note": "대표 논문 1편이 48%→3%라는 구체적이고 반증 가능한 수치를 제시했고, 같은 feed-forward 3D 복원 영역에서 서로 다른 각도(프레임 선택, 비지도 후처리, 생성 결합)의 논문 2편이 같은 날 함께 나와 영역 전체의 관심이 파이프라인 앞단으로 이동 중임을 뒷받침",
+   "lab_action": "랩이 보유한 멀티뷰 캡처 장비로 '가장 또렷한 N장' vs '시간/각도 균등 샘플링 N장' 두 가지 프레임 선택 전략을 같은 feed-forward 복원 모델에 넣어 방/물체 치수 오차를 비교하는 A/B 벤치마크를 구성"
   },
   {
-   "cluster": "메타표면이 안테나·통신 응용 속에서도 편광·생체 센싱용 이미징 하드웨어로 쓰이는 사례가 늘어남",
+   "cluster": "정답 영상 없이 노이즈 낀 데이터만으로 배우는 자기지도 복원이 저선량 CT·고차원 현미경·과학 영상 전반에서 동시에 등장",
    "papers": [
     {
-     "title": "Full-Polarization-Sensing MCT Photodetector Enabled by a High-Efficiency Bilayer Plasmonic Metasurface",
-     "arxiv_id": "https://doi.org/10.3390/photonics13100959",
-     "journal_or_source": "Photonics"
+     "title": "Noise2Match: Self-Supervised Low-Dose CT Denoising via Adaptive Inter-Slice Matching",
+     "arxiv_id": "https://arxiv.org/abs/2610.18379",
+     "importance_tags": ["[방법전환]"],
+     "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Reconstruction/Inverse Problems", "order": "Self-supervised Denoising", "genus": "Inter-slice Matching", "confidence": "Medium", "rationale": "인접 슬라이스 간 비강체 정렬까지 고려"}
     },
     {
-     "title": "Deep learning-assisted graphene-based THz metasurface for label-free and high-performance MCF-7 breast cancer cell sensing",
-     "arxiv_id": "https://doi.org/10.1038/s41598-026-75451-x",
-     "journal_or_source": "Scientific Reports"
+     "title": "S^3-PnP: Plug-and-Play Denoising for Scientific Imaging with Self-Supervised Score Priors",
+     "arxiv_id": "https://arxiv.org/abs/2610.18458",
+     "importance_tags": ["[방법전환]", "[표준후보]"],
+     "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Reconstruction/Inverse Problems", "order": "Plug-and-Play", "genus": "Score Prior", "confidence": "Medium", "rationale": "HSI/MRI 등 여러 과학 영상 모달리티에 걸쳐 검증"}
     },
     {
-     "title": "Breaking Optical Transparency and Electromagnetic Performance Trade‐Offs for Transparent Reflective Metasurfaces",
-     "arxiv_id": "https://doi.org/10.1002/adom.71923",
-     "journal_or_source": "Advanced Optical Materials"
+     "title": "Background2Background: a self-supervised background removal framework for high dimensional microscopy",
+     "arxiv_id": "https://arxiv.org/abs/2610.17615",
+     "importance_tags": ["[방법전환]", "[인프라]"],
+     "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Reconstruction/Inverse Problems", "order": "Self-supervised Denoising", "genus": "Background Suppression", "confidence": "High", "rationale": "형광·SRS·중적외선 광열 세 가지 현미경 모달리티에서 40배 이상 배경 억제 확인"}
     }
    ],
-   "why": "오늘 Meta-Optics/Diffractive 버킷 14편 중 상당수는 여전히 안테나·통신 응용이지만, 그중 세 편은 메타표면을 '전파를 꺾는 소자'가 아니라 '이미지를 만드는 하드웨어'로 씁니다. 적외선 광검출기 논문은 빛의 세기만 재던 기존 장파장 적외선(LWIR) MCT 검출기에 이중층 플라즈모닉 메타표면을 얹어, 선형·원형 편광 상태까지 한 번에 구분하는 완전 편광 영상 소자를 만듭니다. 그래핀 테라헤르츠 메타표면 논문은 유방암 세포를 표지 없이 구분하는 센싱에 메타표면 공명을 활용하고, 투명 반사형 메타표면 논문은 마이크로파를 반사하면서도 가시광 투과율 73%를 유지해 유리창 위에 설치할 수 있는 통신-광학 겸용 소자를 보여줍니다. 세 편 모두 메타표면이 통신 부품인 동시에 이미징·센싱 기능까지 같이 떠안기 시작했다는 공통점이 있습니다.",
-   "confidence": "Medium",
-   "confidence_note": "서로 다른 저널 3편이 각각 다른 응용(적외선 편광 영상, 암세포 센싱, 투명 반사)에서 메타표면의 이미징/센싱 겸용 기능을 보이나, 같은 응용축의 반복 검증은 아직 부족",
-   "lab_action": "완전 편광 감지 MCT 포토다이오드의 이중층 플라즈모닉 설계를 랩의 편광 이미징 파이프라인에 참고해 기존 편광판 방식 대비 소형화 가능성을 검토하고, THz 그래핀 메타표면의 암세포 센싱 신호 처리 방식을 랩 label-free 센싱 응용의 비교군으로 둔다"
+   "why": "영상 복원 분야의 오래된 병목 중 하나는 '깨끗한 정답 영상'을 구하기가 현실적으로 거의 불가능하다는 점입니다. 저선량 CT를 여러 번 찍어 정답을 만들 수는 없고, 살아있는 세포를 현미경으로 깨끗하게 다시 찍는 것도 불가능하기 때문입니다. 오늘 같은 날 나온 세 편은 이 문제를 각자 다른 영상 모달리티에서 정면으로 다룹니다. Noise2Match는 저선량 CT에서 인접 슬라이스끼리 해부학적으로 조금씩 어긋나 있다는 점을 보정하면서 그 슬라이스들을 서로의 정답처럼 활용합니다. S³-PnP는 CT뿐 아니라 하이퍼스펙트럴 영상이나 MRI처럼 아예 정답을 구할 수 없는 영상 복원 문제에서, 복원 과정 중간에 나오는 추정값 자체로부터 사전 지식을 학습합니다. Background2Background는 형광현미경·라만산란현미경·적외선현미경이라는 세 가지 완전히 다른 현미경 방식에서 신호와 배경을 뒤섞은 뒤 다시 분리하는 방식으로 배경을 40배 이상 줄입니다. 세 편을 묶으면, '정답 영상이 없다'는 계산 이미징의 공통 제약을 각 모달리티의 고유한 통계적 구조(슬라이스 간 유사성, 복원 중간값, 신호-배경 상관관계)를 이용해 우회하는 방법론이 CT·과학 영상·현미경이라는 서로 다른 하드웨어에서 동시에 무르익고 있다는 뜻입니다.",
+   "confidence": "High",
+   "confidence_note": "서로 다른 세 가지 영상 모달리티(CT, 과학 영상 일반, 현미경)에서 독립적으로 같은 핵심 제약(정답 데이터 부재)을 다루는 논문이 같은 날 나왔고, 그중 1편은 40배 억제라는 정량 수치까지 제시",
+   "lab_action": "랩이 보유한 저선량 CT 또는 형광현미경 원시 데이터에 Noise2Match의 인접 슬라이스 매칭 방식과 Background2Background의 신호-배경 셔플 방식을 각각 적용해, 정답 영상 없이도 기존 Noise2Noise 대비 복원 품질(PSNR/SSIM)이 얼마나 개선되는지 비교"
   },
   {
-   "cluster": "렌즈리스·이벤트 기반 센서가 병리 영상(가상 염색)까지 침투 — Lensless 버킷 '0편' 집계의 숨은 오분류",
+   "cluster": "희소 투영 CBCT 복원이 Gaussian 표현을 해부학적 밀도·시공간 일관성으로 제약하는 쪽으로 세분화",
+   "papers": [
+    {
+     "title": "AD-GS: Anatomical Density-guided 3D Gaussian Splatting for Sparse-View Dental CBCT Reconstruction",
+     "arxiv_id": "https://arxiv.org/abs/2610.14963",
+     "importance_tags": ["[방법전환]"],
+     "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Tomography/3D Imaging", "order": "Sparse-view CBCT", "genus": "Gaussian Splatting Densification", "confidence": "Medium", "rationale": "MCMC 기반 밀도화 + 의미 정규화"}
+    },
+    {
+     "title": "Dual-Domain Sparse-View 4D CBCT Reconstruction with Spatial-Temporal Consistency Learning (STCNet)",
+     "arxiv_id": "https://arxiv.org/abs/2610.18518",
+     "importance_tags": ["[방법전환]", "[실사용전환]"],
+     "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Tomography/3D Imaging", "order": "Sparse-view CBCT", "genus": "Spatial-Temporal Consistency", "confidence": "Medium", "rationale": "호흡 위상당 16장 투영만으로 4D 복원, TCIA-LUNG 데이터셋 검증"}
+    },
+    {
+     "title": "RePrior: Measurement-Reconciled Prior Correction for Sparse-View CBCT Reconstruction",
+     "arxiv_id": "https://arxiv.org/abs/2610.14102",
+     "importance_tags": ["[방법전환]", "[해부분석]"],
+     "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Tomography/3D Imaging", "order": "Sparse-view CBCT", "genus": "Prior-Measurement Reconciliation", "confidence": "Medium", "rationale": "학습 기반 prior와 실측 X-ray 투영 간 불일치를 다단계로 조정"}
+    }
+   ],
+   "why": "희소 투영 CBCT(콘빔 CT를 평소보다 훨씬 적은 X선 투영만으로 찍어 방사선량과 촬영 시간을 줄이는 방식)는 정보가 부족해 복원이 늘 불안정했습니다. 오늘 모인 세 편은 모두 3D Gaussian Splatting 계열 표현을 쓰면서도, 그 불안정성을 서로 다른 방식으로 길들입니다. AD-GS는 Gaussian을 아무 데나 추가하는 대신, 치아처럼 X선을 많이 흡수하는 해부학적 구조에 Gaussian을 더 많이 배정하도록 확률적으로 제약해 구조 경계를 더 뚜렷하게 만듭니다. STCNet은 호흡 때문에 장기가 움직이는 4D CBCT에서, 각 호흡 위상마다 단 16장의 투영만으로도 시공간 일관성을 유지하도록 투영 영역과 영상 영역을 동시에 최적화합니다. RePrior는 딥러닝으로 학습한 사전 지식과 실제 측정값이 서로 어긋날 때, 그 차이가 '진짜 놓친 정보'인지 '학습된 사전 지식의 편향'인지를 가려내는 보정 단계를 추가합니다. 세 편을 묶으면, Gaussian Splatting이 의료 영상에서도 '적은 투영으로 어떻게 해부학적으로 그럴듯한 구조를 유지할 것인가'라는 임상 배포에 가까운 질문으로 세분화되고 있다는 뜻입니다.",
+   "confidence": "Medium",
+   "confidence_note": "같은 희소 투영 CBCT 문제를 세 논문이 서로 다른 제약(해부학적 밀도, 시공간 일관성, 측정-사전 조정)으로 풀고 있어 방향은 뚜렷하나, 세 편 모두 abstract 기준이며 임상 데이터셋 상호 비교는 아직 없음",
+   "lab_action": "랩이 CBCT/CT 복원 파이프라인을 다룬다면 AD-GS의 해부학적 밀도 유도 MCMC와 RePrior의 측정-사전 조정 단계를 같은 희소 투영 설정(예: 1/8 투영수)에서 나란히 돌려 구조 경계 선명도와 실측 정합성을 정량 비교"
+  },
+  {
+   "cluster": "병리·현미경 영상에서 언어와 맞붙는 vision-language foundation model이 캡션 부족 문제를 보고서·전문 데이터로 우회",
+   "papers": [
+    {
+     "title": "BigCell: Generating Gigapixel Whole-Slide Images",
+     "arxiv_id": "https://arxiv.org/abs/2610.14261",
+     "importance_tags": ["[인프라]", "[스케일업]"],
+     "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Virtual Staining/Pathology", "order": "Pathology Foundation Model", "genus": "Gigapixel Generation", "confidence": "Medium", "rationale": "12만 장 이상 WSI로 학습한 flow-matching 생성 모델"}
+    },
+    {
+     "title": "MicroCLIP: Connecting Text and Microscopy Images via Contrastive Language-Image Pretraining",
+     "arxiv_id": "https://arxiv.org/abs/2610.17866",
+     "importance_tags": ["[인프라]", "[방법전환]"],
+     "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Virtual Staining/Pathology", "order": "Pathology Foundation Model", "genus": "Vision-Language Pretraining", "confidence": "Medium", "rationale": "약 250만 쌍의 형광현미경 이미지-텍스트 데이터셋 구축"}
+    },
+    {
+     "title": "MIST: Multi-Scale Spatial Context for Gene Expression Prediction from Histology",
+     "arxiv_id": "https://arxiv.org/abs/2610.18769",
+     "importance_tags": ["[방법전환]"],
+     "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Virtual Staining/Pathology", "order": "Pathology Foundation Model", "genus": "Spatial Context Modeling", "confidence": "Medium", "rationale": "H&E로부터 공간 유전자 발현을 예측하는 multi-scale attention"}
+    },
+    {
+     "title": "Beyond Sparse Captions: Aligning Slide-Level Text and Patch-Level Vision in Pathology",
+     "arxiv_id": "https://arxiv.org/abs/2610.17233",
+     "importance_tags": ["[데이터전환]"],
+     "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Virtual Staining/Pathology", "order": "Pathology Foundation Model", "genus": "Report-level Supervision", "confidence": "Medium", "rationale": "슬라이드 단위 진단 보고서를 패치 단위 시각 특징과 정렬"}
+    }
+   ],
+   "why": "병리·현미경 영상에 CLIP 같은 언어-이미지 사전학습을 적용하려는 시도는 꾸준히 있었지만, 늘 걸림돌은 '설명 캡션이 붙은 이미지가 너무 적다'는 점이었습니다 — 병리의사는 진단할 때 상세한 캡션을 따로 쓰지 않기 때문입니다. 오늘 모인 네 편은 이 캡션 부족 문제를 각자 다른 방식으로 피해 갑니다. BigCell은 아예 캡션 문제를 비켜가, 기가픽셀 단위 전체 슬라이드 이미지 자체를 12만 장 이상의 공개 데이터로 생성하는 모델을 만듭니다. MicroCLIP은 형광현미경 이미지에 맞는 설명이 부족한 문제를, 세포·세포소기관 수준의 생물학적 지식을 단계적으로 연결하는 방식으로 약 250만 쌍의 이미지-텍스트 데이터셋을 직접 구축해 풉니다. Beyond Sparse Captions는 아예 캡션을 새로 만들지 않고, 병원에서 원래 쓰던 슬라이드 단위 진단 보고서를 재활용해 패치 단위 시각 특징과 맞춥니다. MIST는 언어 연결이 아니라 공간 맥락 쪽에서, 각 조직 조각(spot)의 유전자 발현이 주변 조직과 슬라이드 전체 맥락에 함께 좌우된다는 점을 multi-scale attention으로 반영합니다. 네 편을 묶으면, 병리·현미경 foundation model 경쟁이 '모델 구조를 더 정교하게 만들기'에서 '애초에 어떤 지도 신호(생성 데이터, 임상 보고서, 공간 맥락)를 쓸 것인가'로 넘어가고 있다는 그림이 그려집니다.",
+   "confidence": "High",
+   "confidence_note": "서로 다른 기관·접근(생성, 대조학습, 보고서 재활용, 공간 맥락)으로 4편이 같은 캡션 부족 문제를 다루며 수렴, 각각 대규모 데이터(12만+ WSI, 250만 쌍) 구축까지 동반",
+   "lab_action": "랩이 보유한 병리/현미경 이미지에 캡션이 없다면 Beyond Sparse Captions의 슬라이드-보고서 정렬 방식을 먼저 적용해보고, MicroCLIP의 단계적 생물학적 지식 연결 전략을 랩 현미경 이미지의 약한 라벨(세포주, 염색 종류)에 적용했을 때 검색/분류 성능이 어떻게 달라지는지 비교"
+  },
+  {
+   "cluster": "[Watch Lens] 렌즈리스·메타표면 코어 신호는 오늘 단발·오탐 속에 묻혀 있어 클러스터 승격은 보류",
    "papers": [
     {
      "title": "High-fidelity lensless on-chip microscopy via mixed coherence control for virtual staining",
      "arxiv_id": "https://doi.org/10.1364/ol.614237",
-     "journal_or_source": "Optics Letters"
+     "importance_tags": ["[방법전환]"],
+     "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Lensless/Coded Imaging", "order": "On-chip Microscopy", "genus": "Coherence Control", "confidence": "Low", "rationale": "저널 신규 등록, abstract 미공개로 제목 기반 판단"}
     },
     {
-     "title": "NEEHA: Neuromorphic Event Enhanced Histopathology Apparatus",
-     "arxiv_id": "https://doi.org/10.1364/boe.612808",
-     "journal_or_source": "Biomedical Optics Express"
-    },
-    {
-     "title": "CSNet: Cognitive Simulation Network for Reliable Histopathology-Based Cancer Diagnosis",
-     "arxiv_id": "https://doi.org/10.1007/s10278-026-02388-y",
-     "journal_or_source": "Journal of Imaging Informatics in Medicine"
+     "title": "Recovery-Oriented Optical System Design Based on Fisher Information",
+     "arxiv_id": "https://arxiv.org/abs/2610.17950",
+     "importance_tags": ["[방법전환]"],
+     "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Phase Imaging/Holography", "order": "Optics Co-design", "genus": "Fisher Information Design", "confidence": "Low", "rationale": "단발 논문, abstract 기준"}
     }
    ],
-   "why": "오늘 버킷 집계만 보면 Lensless/Coded Imaging은 0편으로 완전히 비어 있는데, 실제로는 렌즈 없는 온칩 현미경 논문 한 편이 제목에 들어간 'virtual staining' 때문에 Virtual Staining 버킷으로 잘못 분류됐을 뿐입니다. 이 논문은 혼합 가간섭성 제어(mixed coherence control)로 렌즈 없이 칩 위에서 바로 고해상도 영상을 얻고, 그 영상을 염색 없이 가상으로 염색된 조직처럼 보이게 변환합니다. 같은 날 나온 NEEHA 논문은 아예 다른 방식으로 접근하는데, 신경모방(neuromorphic) 이벤트 카메라로 조직 샘플을 스캔해 기존 카메라로는 놓치는 미세한 신호 변화까지 병리 영상에 반영합니다. CSNet 논문은 병리 영상 자체보다 진단 과정을 모사하는 인지 시뮬레이션 신경망으로 암 진단의 신뢰도를 높입니다. 세 편을 같이 보면, 렌즈나 염색 같은 전통적인 병리 영상 장비 구성 요소를 하나씩 덜어내면서도 진단에 필요한 정보는 유지하거나 오히려 늘리려는 흐름이 보입니다.",
-   "confidence": "High",
-   "confidence_note": "서로 다른 저널 3편이 독립적으로 비전통 촬상(렌즈리스, 이벤트 카메라)과 병리 진단을 연결하며, 특히 Lensless 버킷의 '0편' 집계가 실제로는 오분류임을 직접 확인함",
-   "lab_action": "렌즈 없는 온칩 현미경+혼합 가간섭성 제어 설계를 랩의 lensless 이미징 셋업에 재현해 가상 염색 영상 품질(기존 염색 대비 SSIM)을 비교하고, NEEHA의 이벤트 카메라 조직 스캔 프로토콜을 랩 보유 이벤트 카메라로 재현해 기존 CMOS 스캔 대비 신호 민감도를 측정한다"
-  },
-  {
-   "cluster": "위상·간섭 계측이 메타표면 뉴스에 가려진 채로도 현장 조건에 맞춰 조용히 갱신됨",
-   "papers": [
-    {
-     "title": "Fourier-Based Characterization of Reflective Surface Topography Using a Heterodyne Optical Profilometer",
-     "arxiv_id": "https://doi.org/10.3390/photonics13100961",
-     "journal_or_source": "Photonics"
-    },
-    {
-     "title": "Optical flow-assisted phase retrieval for unequal phase-shifting interferometric measurement",
-     "arxiv_id": "https://doi.org/10.1109/lpt.2026.3741867",
-     "journal_or_source": "IEEE Photonics Technology Letters"
-    },
-    {
-     "title": "Self-referencing speckle pattern interferometry for deformation measurement in vibrating environments",
-     "arxiv_id": "https://doi.org/10.1016/j.optlaseng.2026.110171",
-     "journal_or_source": "Optics and Lasers in Engineering"
-    },
-    {
-     "title": "Surface Contouring of Reflective and Diffuse Samples Using Dual-Angle Digital Holographic Shear Interferometry",
-     "arxiv_id": "https://doi.org/10.1364/ao.618152",
-     "journal_or_source": "Applied Optics"
-    }
-   ],
-   "why": "오늘은 메타표면 뉴스가 많아 상대적으로 눈에 덜 띄지만, 위상과 간섭 기반 계측 논문 네 편이 독립적으로 올라왔습니다. 헤테로다인 광학 프로파일로미터 논문은 레이저 빔을 두 갈래로 나눠 한쪽만 주파수를 이동시킨 뒤 다시 합쳐서, 마이크로미터 단위로 미세한 반사 표면의 굴곡을 재구성하고 이를 전자현미경 결과와 직접 비교해 검증합니다. 광류(optical flow) 보조 위상 복원 논문은 위상천이 간섭계에서 천이 간격이 균일하지 않을 때도 복원이 가능하도록 돕고, 자기참조 스펙클 간섭계 논문은 진동이 있는 현장에서도 변형을 측정할 수 있게 합니다. 이중 각도 홀로그래픽 전단 간섭계 논문은 반사면과 확산면 모두에서 표면 윤곽을 복원합니다. 네 편 모두 화려한 발표 없이도, 위상·간섭 기반 계측이 실험실 바깥의 진동·비균일 조건에서도 버틸 수 있도록 하나씩 보완되고 있다는 신호입니다.",
-   "confidence": "Medium",
-   "confidence_note": "네 편 모두 서로 다른 저널에서 독립적으로 나왔으나 2편은 초록이 공개되지 않아 제목 기반 판단 비중이 있음",
-   "lab_action": "헤테로다인 프로파일로미터의 USRP 기반 비트 신호 처리 구조를 랩의 간섭계 계측 셋업에 적용해 SEM 대비 검증 가능한 표면 굴곡 측정 파이프라인을 구축하고, 자기참조 스펙클 간섭계의 진동 강인 설계를 랩 현장 계측(진동 환경) 실험의 비교군으로 적용한다"
-  },
-  {
-   "cluster": "의료영상 딥러닝이 '더 정확한 모델'보다 '이 모델을 믿어도 되는가'를 검증하는 쪽으로 이동",
-   "papers": [
-    {
-     "title": "Complementary Error Profiles of Human Readers and Large Language Models in Detecting AI-Generated Chest Radiographs",
-     "arxiv_id": "https://doi.org/10.1007/s10278-026-02339-7",
-     "journal_or_source": "Journal of Imaging Informatics in Medicine"
-    },
-    {
-     "title": "Mitigating Domain Shift and Dataset Bias in Deep Learning Models for Cancer Diagnostics",
-     "arxiv_id": "https://doi.org/10.1007/s10278-026-02353-9",
-     "journal_or_source": "Journal of Imaging Informatics in Medicine"
-    },
-    {
-     "title": "Semi-Automated Image Labeling and Object Tracking for MR-Guided Radiotherapy Using a Foundation Vision Model",
-     "arxiv_id": "https://doi.org/10.1007/s10278-026-02387-z",
-     "journal_or_source": "Journal of Imaging Informatics in Medicine"
-    },
-    {
-     "title": "Reviewing reproducibility and replicability in 'Deconstructing gastrulation at single-cell resolution'",
-     "arxiv_id": "https://doi.org/10.1111/jmi.70132",
-     "journal_or_source": "Journal of Microscopy"
-    }
-   ],
-   "why": "오늘 Deep Learning Methods 버킷에서 의료·바이오 영상 관련 논문 네 편을 모으면, 공통적으로 '성능을 더 높이는 방법'보다 '이 결과를 믿어도 되는가'를 검증하는 쪽에 무게가 실려 있습니다. 흉부 X선 판독 논문은 방사선과 전문의 두 명과 GPT-5.5·Gemini 3.5 Flash·Claude Opus 4.8 세 LLM에게 진짜 영상과 생성 영상을 구분하게 했는데, 사람과 LLM이 서로 다른 종류의 오류를 범하고(사람은 진짜 영상을 더 많이 틀리고, 보수적인 LLM은 생성 영상을 놓침), 3개월 뒤 재현했을 때는 LLM 판정 순위마저 바뀌는 걸 보여줍니다. 도메인 시프트·데이터 편향 리뷰 논문은 암 진단 모델이 내부 데이터에서는 거의 완벽해 보여도 외부 기관 데이터에서는 AUC가 평균 0.16이나 떨어진다는 사실을 다시 짚고, 그 해결책들이 전체 성능은 올려도 인구 집단별 격차는 오히려 숨기거나 키울 수 있다고 경고합니다. SAM2 기반 영상 추적 논문은 전문가 라벨링 비용을 줄이려고 준자동 라벨링을 썼을 때도 정확도가 유지되는지를 확인하고, 재현성 리뷰 논문은 4D 현미경 분석 파이프라인이 여러 소프트웨어 환경에 걸쳐 있어 완전한 재현이 쉽지 않다는 점을 짚습니다. 네 편 모두 '숫자가 좋아 보이는 모델'과 '실제로 믿고 쓸 수 있는 모델' 사이의 간극을 각자 다른 각도에서 드러냅니다.",
-   "confidence": "Medium",
-   "confidence_note": "네 편 모두 초록이 확인되고 '신뢰성 검증'이라는 같은 메타 주제로 묶이지만, 서로 다른 하위 문제(딥페이크 탐지·도메인 시프트·라벨링 비용·재현성)라 같은 평가축의 반복 검증은 아님",
-   "lab_action": "AI 생성 흉부 X선 탐지 리더 스터디의 평가 설계(사람 다수 + 복수 LLM 반복 판정)를 랩이 다루는 의료영상 생성 모델의 신뢰성 검증 프로토콜로 채택하고, 도메인 시프트 리뷰가 제안한 세분화된 격차 지표(intersectional disparity index)를 랩 진단 모델 평가에 추가 지표로 반영한다"
+   "why": "Lensless/Coded Imaging 버킷은 오늘 집계상 1편(LensErase)뿐인데, 확인해보니 이 논문은 'Lens'라는 생성 모델 이름이 들어간 이미지 지우기(erase) 논문이라 lensless 이미징과 무관한 키워드 오탐입니다. 대신 진짜 렌즈리스 신호는 저널 쪽에 1편 숨어 있습니다 — 혼합 가간섭성 제어로 렌즈 없이 칩 위에서 바로 가상 염색용 고해상도 영상을 얻는 논문인데, abstract가 공개되지 않아 제목만으로는 깊이 판단하기 어렵습니다. Meta-Optics/Diffractive는 16편이나 모였지만 대부분 안테나·레이더 통신 응용이고, 랩 ROI와 직접 관련된 두 편(거칠기를 가진 플라즈모닉 메타표면의 고차 공명 예측, 모아레 초격자의 플랫밴드 공명)은 어제(10/13)와 같은 '공명 제어' 각도라 독립 클러스터로 승격하면 Editorial Uniqueness Gate에 걸립니다. Recovery-Oriented Optical System Design은 광학계를 MTF 같은 전통적 영상 품질 지표가 아니라 '후속 복원 알고리즘이 얼마나 정보를 잘 뽑아낼 수 있는가(Fisher information)'를 기준으로 설계하자는 제안으로, 계산 이미징 하드웨어-소프트웨어 공동 설계 관점에서 흥미롭지만 오늘은 단발 신호입니다.",
+   "confidence": "Low",
+   "confidence_note": "두 편 모두 abstract 일부 미공개 또는 단발 신호라 독립 클러스터 기준(2편 이상 수렴)에는 못 미치나, 랩 ROI 핵심 버킷이라 묻히지 않도록 별도로 짚음",
+   "lab_action": "렌즈리스 가상 염색 저널 논문의 본문을 확인해 혼합 가간섭성 제어 방식이 랩 lensless 셋업에 이식 가능한지 판단하고, Fisher information 기반 광학계 설계 논문의 수식을 랩이 쓰는 계산 이미징 광학계(코딩된 조리개 등) 설계 단계에 비교 지표로 시범 적용"
   }
  ],
  "research_topics": [
   {
-   "title": "A. 메타표면 공명 설계 지침(BIC·국소-비국소 전이)을 랩 메타옵틱스 비교표에 반영",
-   "claim": "Advanced Photonics 리뷰가 정리한 BIC·국소-비국소 전이 설계 원칙을 랩이 설계 중인 메타표면의 Q-factor·모드 부피 트레이드오프 비교에 적용하면, 기존 설계 대비 어떤 조건에서 이득이 있는지 정량화할 수 있다.",
+   "title": "A. 멀티뷰 캡처의 프레임 선택 전략을 '선명도' 대신 '각도 커버리지' 기준으로 바꿔 재구성 오차 비교",
+   "claim": "Sharper Frames, Worse Rooms가 보인 '선명도보다 각도 분산이 3배 더 중요하다'는 결과를 랩의 feed-forward 3D 복원/스캐닝 파이프라인에 적용하면, 기존 선명도 기반 프레임 선택 대비 치수·구조 오차를 줄일 수 있는지 확인할 수 있다.",
    "supporting_papers": [
-    {"title": "Local resonances in nanostructures for strong light–matter interaction", "arxiv": "https://doi.org/10.1117/1.ap.8.5.054005"},
-    {"title": "Confining Light in Hexagonal Boron Nitride Photonic Resonators", "arxiv": "https://doi.org/10.1021/acsphotonics.6c01516"}
+    {"title": "Sharper Frames, Worse Rooms: Viewpoint Coverage Dominates Image Quality in Feed-Forward 3D Reconstruction", "arxiv": "https://arxiv.org/abs/2610.15854", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
    ]
   },
   {
-   "title": "B. 렌즈 없는 혼합 가간섭성 가상 염색 파이프라인을 랩 lensless 셋업에서 재현",
-   "claim": "혼합 가간섭성 제어 기반 렌즈리스 온칩 현미경을 재현하면, 기존 렌즈 기반 가상 염색 대비 해상도·처리 속도·장비 비용에서 어떤 트레이드오프가 있는지 확인할 수 있다.",
+   "title": "B. 정답 없는 복원 세 방법(Noise2Match/S3-PnP/Background2Background)을 같은 랩 데이터에 나란히 적용해 비교표 작성",
+   "claim": "세 자기지도 복원 방법이 각각 다른 통계적 가정(슬라이스 유사성, 복원 중간값 prior, 신호-배경 상관)에 기대고 있으므로, 랩이 보유한 저선량 CT 또는 현미경 데이터 한 세트에 세 방법을 모두 적용하면 어떤 가정이 랩 데이터 특성과 가장 잘 맞는지 가려낼 수 있다.",
    "supporting_papers": [
-    {"title": "High-fidelity lensless on-chip microscopy via mixed coherence control for virtual staining", "arxiv": "https://doi.org/10.1364/ol.614237"}
+    {"title": "Noise2Match", "arxiv": "https://arxiv.org/abs/2610.18379", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}},
+    {"title": "S^3-PnP", "arxiv": "https://arxiv.org/abs/2610.18458", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}},
+    {"title": "Background2Background", "arxiv": "https://arxiv.org/abs/2610.17615", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
    ]
   },
   {
-   "title": "C. 이벤트 카메라 병리 스캔(NEEHA) 프로토콜 재현 및 신호 민감도 비교",
-   "claim": "신경모방 이벤트 카메라로 조직 샘플을 스캔하는 NEEHA 프로토콜을 재현하면, 기존 CMOS 스캔 대비 어떤 미세 신호(저대비 경계, 빠른 초점 이동)에서 민감도 이득이 있는지 확인할 수 있다.",
+   "title": "C. 희소 투영 CBCT에서 해부학적 밀도 유도와 측정-사전 조정을 같은 설정에서 ablation",
+   "claim": "AD-GS의 해부학적 밀도 유도 MCMC와 RePrior의 측정-사전 조정 단계를 동일한 희소 투영 비율(예: 1/8, 1/16)에서 결합/분리해 비교하면, 두 제약이 상호 보완적인지 중복적인지 확인할 수 있다.",
    "supporting_papers": [
-    {"title": "NEEHA: Neuromorphic Event Enhanced Histopathology Apparatus", "arxiv": "https://doi.org/10.1364/boe.612808"}
+    {"title": "AD-GS", "arxiv": "https://arxiv.org/abs/2610.14963", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}},
+    {"title": "RePrior", "arxiv": "https://arxiv.org/abs/2610.14102", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
    ]
   },
   {
-   "title": "D. AI 생성 의료영상 탐지 리더 스터디 설계를 랩 신뢰성 평가 프로토콜로 채택",
-   "claim": "사람 다수 평가자와 복수 LLM을 반복 측정에 투입하는 리더 스터디 설계를 랩의 의료영상 생성 모델 평가에 적용하면, 화질 지표만으로는 드러나지 않는 재현성·평가자 간 불일치를 정량화할 수 있다.",
+   "title": "D. 병리/현미경 약한 라벨(보고서, 세포주 메타데이터)을 캡션 대체재로 활용한 vision-language 사전학습 시범",
+   "claim": "Beyond Sparse Captions의 슬라이드-보고서 정렬과 MicroCLIP의 단계적 생물학적 지식 연결 전략을 랩이 보유한 약한 라벨 현미경/병리 데이터에 적용하면, 캡션 없이도 검색·분류 성능을 어느 정도까지 끌어올릴 수 있는지 가늠할 수 있다.",
    "supporting_papers": [
-    {"title": "Complementary Error Profiles of Human Readers and Large Language Models in Detecting AI-Generated Chest Radiographs", "arxiv": "https://doi.org/10.1007/s10278-026-02339-7"}
+    {"title": "Beyond Sparse Captions", "arxiv": "https://arxiv.org/abs/2610.17233", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}},
+    {"title": "MicroCLIP", "arxiv": "https://arxiv.org/abs/2610.17866", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
    ]
   }
  ],
- "phylogeny_tags": []
+ "phylogeny_tags": [
+  {"paper": "https://arxiv.org/abs/2610.15854", "source": "CVML", "lineage": "Computational Imaging > 3D Reconstruction > Feed-forward Multi-view > Frame Selection"},
+  {"paper": "https://arxiv.org/abs/2610.18379", "source": "CVML", "lineage": "Computational Imaging > Reconstruction/Inverse Problems > Self-supervised Denoising > Inter-slice Matching"},
+  {"paper": "https://arxiv.org/abs/2610.18458", "source": "CVML", "lineage": "Computational Imaging > Reconstruction/Inverse Problems > Plug-and-Play > Score Prior"},
+  {"paper": "https://arxiv.org/abs/2610.17615", "source": "CVML", "lineage": "Computational Imaging > Reconstruction/Inverse Problems > Self-supervised Denoising > Background Suppression"},
+  {"paper": "https://arxiv.org/abs/2610.14963", "source": "CVML", "lineage": "Computational Imaging > Tomography/3D Imaging > Sparse-view CBCT > Gaussian Splatting Densification"},
+  {"paper": "https://arxiv.org/abs/2610.18518", "source": "CVML", "lineage": "Computational Imaging > Tomography/3D Imaging > Sparse-view CBCT > Spatial-Temporal Consistency"},
+  {"paper": "https://arxiv.org/abs/2610.14102", "source": "CVML", "lineage": "Computational Imaging > Tomography/3D Imaging > Sparse-view CBCT > Prior-Measurement Reconciliation"},
+  {"paper": "https://arxiv.org/abs/2610.14261", "source": "CVML", "lineage": "Computational Imaging > Virtual Staining/Pathology > Pathology Foundation Model > Gigapixel Generation"},
+  {"paper": "https://arxiv.org/abs/2610.17866", "source": "CVML", "lineage": "Computational Imaging > Virtual Staining/Pathology > Pathology Foundation Model > Vision-Language Pretraining"},
+  {"paper": "https://arxiv.org/abs/2610.18769", "source": "CVML", "lineage": "Computational Imaging > Virtual Staining/Pathology > Pathology Foundation Model > Spatial Context Modeling"},
+  {"paper": "https://arxiv.org/abs/2610.17233", "source": "CVML", "lineage": "Computational Imaging > Virtual Staining/Pathology > Pathology Foundation Model > Report-level Supervision"}
+ ]
 }

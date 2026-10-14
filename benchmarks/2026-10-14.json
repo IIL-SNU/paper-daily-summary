@@ -2,6 +2,22 @@
  "date": "2026-10-14",
  "results": [
   {
+   "benchmark": "Feed-forward 3D room reconstruction, frame-selection strategy (9 handheld room scans)",
+   "metric": "Room dimension error",
+   "value": 48.0,
+   "value_str": "sharpest-16-of-200 frame selection: 48% room dimension error vs uniform temporal sampling: 3%",
+   "paper": "https://arxiv.org/abs/2610.15854",
+   "paper_title": "Sharper Frames, Worse Rooms: Viewpoint Coverage Dominates Image Quality in Feed-Forward 3D Reconstruction"
+  },
+  {
+   "benchmark": "High-dimensional microscopy background removal (fluorescence / stimulated Raman scattering / mid-infrared photothermal)",
+   "metric": "Background suppression ratio",
+   "value": 40.0,
+   "value_str": "40배 이상 배경 억제(self-supervised, clean 정답 데이터 불필요)",
+   "paper": "https://arxiv.org/abs/2610.17615",
+   "paper_title": "Background2Background: a self-supervised background removal framework for high dimensional microscopy"
+  },
+  {
    "benchmark": "MR-guided radiotherapy tumor tracking (open-access MRgRT dataset)",
    "metric": "Dice similarity coefficient",
    "value": 0.891,

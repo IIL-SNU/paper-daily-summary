@@ -1,37 +1,37 @@
 {
  "date": "2026-10-14",
  "source_listing_date": "2026-10-14",
- "source_mode": "journal-only",
- "note": "2026-10-14(수) daily 실행. Date Source Contract 점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 /new listing이 여전히 \"Monday, 12 October 2026\"에 머물러 있었다(2026-10-12 daily가 이미 이 listing을 정상 소비, 2026-10-13도 같은 사유로 journal-only 발행). /pastweek 5개 카테고리를 재확인해도 10/13 섹션이 아직 생기지 않아 journal-only 업그레이드 대상도 없다. post_date(10/14) > listing_date(10/12)라 prompts/instruction.md 2.1의 저널 독립 규칙에 따라 arXiv 섹션 없이 Crossref/OpenAlex 저널만으로 journal-only 잠정본을 발행한다. Crossref 9개 키워드 질의(--days 1, 2026-10-14 등록분 중심)로 430건을 수집하고 OpenAlex works 보충 질의로 4건을 더해 434건을 classify.py로 스캔, 84건(19.4%)이 9개 ROI 버킷에 배정됐다. 다만 84건 중 'phase'(의료영상 조영 단계, 양자역학 이론), 'metasurface'(5G/6G 안테나), 'tomography'(임상 CT/PET 사례), 'virtual'/'staining'(STEM 교육, 세균 염색, 명화학적 염색 비교) 같은 범용 키워드 오탐을 제외하면 실제 계산 이미징 신호는 약 31편으로 추정된다. 이 31편을 다시 묶어 (1) 메타표면 연구가 설계에서 공명 제어로 이동, (2) 메타표면이 편광/생체 센싱 이미징 하드웨어로 확장, (3) 렌즈리스·이벤트 센서가 병리 영상까지 침투(Lensless 버킷 0편 집계의 숨은 오분류 포함), (4) 위상·간섭 계측의 조용한 갱신, (5) 의료영상 AI의 신뢰성 검증 — 5개 클러스터를 구성했다. Lensless/Coded Imaging 버킷은 집계상 0건이지만 실제로는 1편(virtual staining 버킷으로 오분류)이 존재해 Watch Lens에서 별도로 짚는다.",
+ "source_mode": "new",
+ "note": "2026-10-14(수) daily 업그레이드 실행. Date Source Contract 재점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 arXiv /new listing이 드디어 \"Wednesday, 14 October 2026\"으로 갱신되어 post_date와 정확히 일치했다. 이에 따라 기존 journal-only 잠정본(434건 스캔, 84건 배정)을 폐기하고 arXiv+저널 완성본(source_mode=new)으로 덮어쓴다. 10/13(화)은 /pastweek에도 해당 날짜 h3 섹션이 끝내 생기지 않아(월요일 다음 공지가 바로 수요일로 건너뜀, 미국 연휴로 인한 공백 추정) 영구 결측으로 남고 이번 업그레이드 대상이 아니다 — posts/2026-10-13.html은 수정하지 않는다. arXiv /new에서 cs.LG 862·cs.CV 479·cs.AI 852·eess.IV 21·eess.SP 79건(new+cross 합계 2293건)을 수집했고, 같은 9개 키워드 Crossref 질의(--days 1)로 저널 432편, OpenAlex works 보충 질의로 4편을 추가 수집했다(저널 합계 436편). classify.py가 arXiv+저널을 중복 제거해 합친 뒤 총 2230건을 스캔, 625건(28.0%)을 9개 ROI 버킷에 배정했다 — 이 비율은 2026-10-12 정상 daily의 28.1%와 거의 동일해 분류 품질이 안정적임을 보여준다(참고: instruction.md의 40% 기준치는 최근 정상 daily 실측과 차이가 있다). 버킷별로 Lensless/Coded Imaging의 유일한 배정(LensErase)은 'Lens' 모델명 키워드 오탐이며 실제 lensless 신호는 저널 쪽 '가상 염색을 위한 고충실도 렌즈리스 온칩 현미경'(abstract 미공개) 1편이 Virtual Staining/Pathology로 분류돼 숨어 있다. Phase Imaging/Holography 10건 중 1건(HoloCuRA)은 무선통신 홀로그래픽 MIMO 안테나 논문으로 오탐이다. Tomography/3D Imaging 42건 중 다수가 Gaussian Splatting/4D 재구성 핵심 신호이며, Reconstruction/Inverse Problems 80건과 Virtual Staining/Pathology 65건은 대부분 일반 ML/임상 오탐이지만 실신호(자기지도 복원 3편, 병리/현미경 foundation model 3편)를 추려냈다. OpenAlex enrich로 저널 432편 중 34편이 인용수/개념 정보로 보강됐다.",
  "daily_new_counts": {
   "by_cat": {
-   "cs.LG": 0,
-   "cs.CV": 0,
-   "cs.AI": 0,
-   "eess.IV": 0,
-   "eess.SP": 0
+   "cs.LG": 862,
+   "cs.CV": 479,
+   "cs.AI": 852,
+   "eess.IV": 21,
+   "eess.SP": 79
   },
   "scope": "new+cross; replacements excluded",
-  "journal_count": 434
+  "journal_count": 436
  },
  "totals": {
-  "total_scanned": 434,
-  "selected": 84
+  "total_scanned": 2230,
+  "selected": 625
  },
  "classified": {
-  "total_scanned": 434,
-  "selected": 84,
+  "total_scanned": 2230,
+  "selected": 625,
   "by_bucket": {
-   "Fourier Ptychography/Microscopy": 2,
-   "Lensless/Coded Imaging": 0,
-   "Phase Imaging/Holography": 8,
-   "Meta-Optics/Diffractive": 14,
-   "Light-Field/Novel Sensors": 2,
-   "Tomography/3D Imaging": 16,
-   "Virtual Staining/Pathology": 14,
-   "Reconstruction/Inverse Problems": 6,
-   "Deep Learning Methods": 22
+   "Fourier Ptychography/Microscopy": 3,
+   "Lensless/Coded Imaging": 1,
+   "Phase Imaging/Holography": 10,
+   "Meta-Optics/Diffractive": 16,
+   "Light-Field/Novel Sensors": 10,
+   "Tomography/3D Imaging": 42,
+   "Virtual Staining/Pathology": 65,
+   "Reconstruction/Inverse Problems": 80,
+   "Deep Learning Methods": 398
   }
  },
- "daily_thesis": "오늘도 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 arXiv listing이 10/12에 머물러 있어 저널만으로 만든 잠정본입니다. 가장 뚜렷한 신호는 메타표면 연구 다섯 편이 '어떤 모양을 설계할까'보다 '빛의 공명을 어떻게 제어해 정보를 다룰까'로 질문을 바꿨다는 점이고, 두 번째는 Lensless/Coded Imaging 버킷이 집계상 0편으로 보였지만 실제로는 렌즈 없는 온칩 현미경 논문이 virtual staining 버킷으로 오분류돼 숨어 있었다는 점입니다."
+ "daily_thesis": "오늘 가장 뚜렷한 신호는 feed-forward 3D 복원에서 '또렷한 프레임을 고르는' 당연한 직관이 오히려 방 치수 오차를 48%까지 키운다는 반증 실험(Sharper Frames, Worse Rooms)이고, 두 번째는 정답 영상 없이 노이즈 낀 데이터만으로 학습하는 자기지도 복원 방법 세 편(저선량 CT, 고차원 현미경 배경 제거, 과학 영상 일반)이 같은 날 동시에 나와 '깨끗한 정답 데이터를 구하기 어렵다'는 계산 이미징의 오래된 병목을 정면으로 다루기 시작했다는 점입니다."
 }
