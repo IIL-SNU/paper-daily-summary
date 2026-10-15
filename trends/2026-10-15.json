@@ -1,0 +1,37 @@
+{
+ "date": "2026-10-15",
+ "source_listing_date": "2026-10-15",
+ "source_mode": "journal-only",
+ "note": "2026-10-15(목) daily 실행. Date Source Contract 점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 /new listing이 \"Wednesday, 14 October 2026\"에 머물러 있었다(어제 2026-10-14 daily가 이미 이 listing을 정상 소비함). post_date(10/15) > listing_date(10/14)라 prompts/instruction.md 2.1의 저널 독립 규칙에 따라 arXiv 섹션 없이 Crossref/OpenAlex 저널만으로 journal-only 잠정본을 발행한다. Crossref 9개 키워드 질의(--days 1, 2026-10-15 등록분 기준)로 411건을 수집하고 OpenAlex works 보충 질의로 4건을 더해 전체 414건을 스캔, classify.py로 90건(21.7%)이 9개 ROI 버킷에 배정됐다. 다만 90건 중 'tomography'(임상 CT/PET/CBCT 사례, 지구물리·소재 비파괴검사)·'staining'(병리 염색 시약, 식물 조직학, B2B AR/VR)·'metasurface'(안테나·열복사 등 비광학 응용) 같은 범용 키워드 오탐을 제외하면 실제 계산 이미징 신호는 약 9~10편으로 추정된다(10/13 대비 신호가 뚜렷이 얇음). 이 신호를 다시 묶어 (1) 메타표면 설계를 물리 기반 신경망으로 대체하는 흐름, (2) 적은/영 데이터로 역문제를 푸는 물리 기반 신경망이 토모그래피·분광 전반에 확산되는 흐름, (3) 측정 장비 자체의 물리적 왜곡을 모델링·보정하는 흐름 — 3개 클러스터를 구성했다. Lensless/Coded Imaging과 Light-Field/Novel Sensors 두 핵심 ROI 버킷은 오늘도 배정 0건으로 공백이 이어진다. arXiv가 10/15 listing으로 갱신되고 /pastweek에 해당 섹션이 뜨면 다음 실행에서 arXiv 포함 완전판으로 업그레이드된다.",
+ "daily_new_counts": {
+  "by_cat": {
+   "cs.LG": 0,
+   "cs.CV": 0,
+   "cs.AI": 0,
+   "eess.IV": 0,
+   "eess.SP": 0
+  },
+  "scope": "new+cross; replacements excluded",
+  "journal_count": 414
+ },
+ "totals": {
+  "total_scanned": 414,
+  "selected": 90
+ },
+ "classified": {
+  "total_scanned": 414,
+  "selected": 90,
+  "by_bucket": {
+   "Fourier Ptychography/Microscopy": 1,
+   "Lensless/Coded Imaging": 0,
+   "Phase Imaging/Holography": 3,
+   "Meta-Optics/Diffractive": 10,
+   "Light-Field/Novel Sensors": 0,
+   "Tomography/3D Imaging": 33,
+   "Virtual Staining/Pathology": 12,
+   "Reconstruction/Inverse Problems": 9,
+   "Deep Learning Methods": 22
+  }
+ },
+ "daily_thesis": "오늘은 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 arXiv listing이 어제(10/14) 것에 머물러 있어 저널만으로 만든 잠정본입니다. 가장 뚜렷한 신호는 메타표면 설계에서 전자기 시뮬레이션을 직접 돌리는 대신 물리 기반 신경망으로 그 과정을 대체하려는 논문이 4편 동시에 나왔다는 점이고, 두 번째는 측정이 매우 제한적이거나 아예 정답 데이터가 없는 상황에서 물리 법칙 자체를 학습 신호로 쓰는 재구성 방법이 광음향 토모그래피·전기용량 토모그래피·강한 장 이온화 분광까지 서로 다른 영상 양상에서 동시에 나타났다는 점입니다."
+}
