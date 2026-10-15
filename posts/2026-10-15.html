@@ -80,25 +80,24 @@ html[data-theme=light] body{background-color:#fff}
 <h1>Imaging Intelligence Daily Briefing — 2026-10-15 (목요일)</h1>
 
 <div class=meta>
-  <div>📅 발행일: 2026-10-15 (목요일)</div>
-  <div>📚 소스: journal-only (잠정본) — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 Date Source Contract 점검에서 /new listing이 여전히 "Wednesday, 14 October 2026"에 머물러 있는 것을 확인했습니다(어제 daily가 이미 이 listing을 정상 소비). post_date(10/15)가 listing_date(10/14)보다 뒤라 arXiv 섹션 없이 발행합니다.</div>
-  <div>🔢 arXiv: cs.LG 0 · cs.CV 0 · cs.AI 0 · eess.IV 0 · eess.SP 0 (신규 listing 미갱신)</div>
-  <div>🔢 저널: Crossref/OpenAlex 414편 수집(2026-10-15 등록분 기준, --days 1) · 스캔 414건 · ROI 배정 90건 (21.7%, 실제 계산 이미징 신호 약 10편)</div>
-  <div>⚠️ 이 리포트는 저널만으로 만든 잠정본입니다. arXiv 5개 카테고리가 10/15 listing으로 갱신되고 /pastweek에 10/15 섹션이 뜨면, 다음 실행에서 arXiv 포함 완전판으로 자동 업그레이드됩니다.</div>
+  <div>📅 발행일: 2026-10-15 (목요일) · <strong>journal-only 잠정본 → arXiv+저널 완성본 업그레이드</strong> — arXiv 실원본의 날짜 배너가 2026-10-15를 정확히 가리켜 pastweek 날짜 섹션 backfill로 정상 daily(source_mode=pastweek-date-section)로 재발행합니다.</div>
+  <div>📚 소스: pastweek-date-section — cs.LG·cs.CV·cs.AI·eess.IV 4개 카테고리는 /new가 "0 new submissions"를 보여주는 캐시 지연 상태였지만 날짜 배너는 2026-10-15와 일치했습니다. Date Source Contract에 따라 /pastweek에서 2026-10-15 날짜 섹션만 추출했습니다(abstract 없이 title/subject 기준). <strong>단 eess.SP는 /new가 정상적으로 당일 콘텐츠를 서빙해 /new를 그대로 사용했고(abstract 포함)</strong>, eess.SP의 /pastweek는 HTTP 406을 반환해 처음부터 backfill이 불가능한 카테고리였습니다.</div>
+  <div>🔢 arXiv: cs.LG 305 · cs.CV 143 · cs.AI 280 · eess.IV 8 · eess.SP 30 (합계 766건, new+cross 기준)</div>
+  <div>🔢 저널: Crossref/OpenAlex 409편 · 전체 스캔(arXiv+저널, 중복 제거) 1020건 · ROI 배정 150건 (14.7%)</div>
 </div>
 
 <h2>📌 오늘의 결론</h2>
 <blockquote>
-오늘도 arXiv listing이 갱신되지 않아 저널만으로 만든 잠정본입니다. 가장 뚜렷한 신호는 <strong>메타표면을 설계할 때 반복적인 전자기 시뮬레이션을 신경망으로 대체하려는 논문이 4편 동시에 나왔다는 점</strong>이고, 두 번째는 <strong>정답 데이터가 거의 없는 상황에서 측정을 지배하는 물리 법칙 자체를 학습 신호로 쓰는 재구성 방법이 광음향 토모그래피·전기용량 토모그래피·강한 장 이온화 분광까지 서로 다른 영상 양상에서 동시에 등장했다는 점</strong>입니다. 다만 arXiv가 이틀 연속 빠진 날이라 전체 정보량 자체는 평소(정상 daily 기준 2000건 안팎)보다 훨씬 적고, 어제(10/14)보다도 계산 이미징 핵심 신호 자체가 더 얇습니다.
+오늘 가장 뚜렷한 신호는 <strong>3D Gaussian Splatting이 "장면 하나를 잘 복원하기"를 넘어 압축·시점 간 특징 코딩·오클루전 기반 재조명·의료 CT/MRI 모션 보정까지 동시에 떠맡는 인프라 단계로 들어섰다는 점</strong>입니다. 두 번째는 메타표면 역설계(파라미터 66.35%만 쓰면서 역예측 정확도는 자릿수 단위로 개선)와 광음향·전기용량 토모그래피 재구성이 서로 다른 버킷에서 독립적으로 <strong>"정답 데이터나 반복 시뮬레이션 없이 물리 법칙 자체를 모델 안에 박아 넣는다"</strong>는 같은 태도로 수렴하고 있다는 점입니다. 다만 오늘은 cs.LG/cs.CV/cs.AI/eess.IV 4개 카테고리가 abstract 없는 title 기반 backfill이라, 깊이 있는 Tier A 분석은 eess.SP와 abstract가 확인된 저널 논문 위주로 제한됩니다.
 </blockquote>
 
 <h2>🔭 주간 동향</h2>
-<p>오늘 arXiv 5개 카테고리는 모두 어제(10/14)와 같은 "Wednesday, 14 October 2026" listing에 머물러 있어(10/15 신규 listing 미갱신), Crossref 9개 키워드 질의(--days 1)와 OpenAlex 보충 질의로 저널만 414건을 수집·중복제거해 classify.py로 스캔했습니다. 그 결과 90건(21.7%)이 9개 ROI 버킷에 배정됐는데, 이 중 'tomography'(임상 CT/PET/CBCT 사례, 지구물리·소재 비파괴검사)·'staining'(병리 염색 시약, 식물 조직학, B2B AR/VR 마케팅)·'metasurface'(5G/6G 안테나, 열복사 흡수체) 같은 범용 키워드 오탐을 빼면 실제 계산 이미징 신호로 볼 수 있는 논문은 약 9~10편(전체 스캔의 약 2%)입니다. 어제(10/14)도 arXiv가 빠진 이틀째였지만 저널 쪽 계산 이미징 신호 자체는 더 두꺼웠던 것과 비교하면, 오늘은 신호가 한층 더 얇아졌습니다.</p>
-<p>그 9~10편을 다시 묶으면 세 갈래가 보입니다. 첫째, 가장 또렷한 신호인데, 메타표면 흡수체의 반사 스펙트럼을 물리 기반 신경 연산자로 예측하는 논문, 플라즈모닉 메타표면의 근접장 스펙트럼을 물리 영감 신경망으로 추정하는 논문, 가역 딥러닝으로 메타흡수체를 역설계하는 논문, 메타표면 설계 리뷰까지 네 편이 모두 "전자기 시뮬레이션을 반복해서 좋은 구조를 찾기"보다 "신경망이 그 탐색 과정 자체를 대신하게 하기"로 넘어가고 있습니다. 둘째, 광음향 토모그래피·전기용량 토모그래피·강한 장 이온화 분광·뼈 초음파 영상까지 네 편이 모두 정답 데이터가 거의 없거나 전혀 없는 상황에서, 측정을 지배하는 물리 방정식 자체를 신경망 학습 신호로 직접 집어넣는 방식을 씁니다. 셋째, 갈바노미터 스캐너 왜곡 보정, Bragg 결맞음 나노 회절 가이드라인, 편광 분해 3D 방향 토모그래피까지 세 편이 측정 장비나 측정 기하 자체의 물리적 제약을 먼저 정확히 모델링한 뒤 그 위에서 보정하거나 새 정보를 뽑아내는 공통된 태도를 보입니다.</p>
-<p>이번 주(2026-10-12 월~10-16 금)는 월요일 정상 daily 이후 화·목·금 사흘이 전부 arXiv listing 정체를 겪은 한 주로 기록될 가능성이 높습니다. 어제(10/14)는 결국 listing이 올라와 journal-only 잠정본이 arXiv+저널 완성본으로 업그레이드됐지만, 오늘은 그 listing이 다시 하루 묶여 있는 상태입니다. 다음 daily에서 arXiv가 복귀하면, 오늘 저널이 보여준 "메타표면 설계의 신경망 대체"와 "물리 기반 제로샷 재구성" 두 흐름에 arXiv 쪽 방법론이 얼마나 이어 붙는지가 이번 주 후반의 관전 포인트입니다.</p>
+<p>오늘 arXiv new+cross 총 766건(cs.LG 305·cs.CV 143·cs.AI 280·eess.IV 8·eess.SP 30) 중 저널 포함 전체 스캔 1020건(중복 제거 후) 기준 150건(14.7%)이 ROI 버킷에 배정됐습니다. 이 비율은 2026-10-12(28.1%)·2026-10-14(28.0%) 같은 abstract 포함 정상 daily보다는 낮지만, 이 repo의 최근 실측 범위(과거 최저치 약 12.5%대) 안에 들어 있어 parser 실패로 보지 않습니다 — cs.LG/cs.CV/cs.AI/eess.IV 4개 카테고리가 abstract 없는 title/subject 기반 backfill이라 classify.py의 키워드 매칭이 더 보수적으로 작동했을 가능성이 큽니다. 오늘은 또한 2026-10-15 journal-only 잠정본을 arXiv+저널 완성본으로 업그레이드한 날이기도 합니다.</p>
+<p>Tomography/3D Imaging(38편) 안에서 가장 뚜렷한 신호는 3D Gaussian Splatting 계열 5편입니다 — 시점 간 특징 코딩, 이미지 코덱 기반 압축, 레이트레이싱 오클루전 재조명, 영화 같은 CT 복원, 자유호흡 MRI 모션 보정까지 응용이 넓게 퍼져 있습니다. 반면 Tomography 버킷 안의 나머지 약 10편은 지진학·재료과학·비파괴검사 등 "tomography" 키워드 오탐입니다. Virtual Staining/Pathology(12편)는 오늘도 전부가 'virtual'/'staining' 단어만 겹치는 오탐(교육공학, 게임경제학, 화학, 수의조직학 등)으로 확인됐습니다. Meta-Optics/Diffractive(11편)와 Reconstruction/Inverse Problems(14편)에는 abstract가 확인된 실신호가 섞여 있는데, 메타흡수체 역설계·Moiré 초격자·Sb2S3 메타표면 3편이 구체적 정량 수치를 제시했고, 광음향·전기용량 토모그래피 2편이 물리 기반 제로샷 재구성이라는 같은 방향을 가리켰습니다. Deep Learning Methods(69편, catch-all) 안에서는 diffusion 기반 CT 초해상도·흉부 X선 뼈 억제·agentic 복원 3편과, ComFormer·7T MRI 병변 분할 등 정량 Dice 수치가 확인된 의료 영상 분할 논문들이 확인됐습니다.</p>
+<p>계산광학 코어 3개 버킷(Lensless/Coded Imaging, Fourier Ptychography/Microscopy, Light-Field/Novel Sensors)은 오늘 각각 0편·1편(오탐)·1편(진짜 신호)에 그쳐 여전히 공백에 가깝습니다. Fourier Ptychography의 유일한 1편(Bragg 결맞음 나노 회절)은 'ptychography'가 비교 대상으로만 언급된 X선 결정학 논문이고, Light-Field의 유일한 1편(이벤트 카메라 vs 프레임 카메라 synthetic-aperture 이미징)은 제목만으로도 랩 ROI와 직접 연결되는 진짜 신호입니다.</p>
 
 <h2>🧭 어제와 달라진 점</h2>
-<p>어제(10/14)의 결론은 arXiv가 10/14 listing으로 정상 복귀하면서 feed-forward 3D 복원, 자기지도 복원, 희소 투영 CBCT, 병리/현미경 foundation model이라는 네 개 클러스터가 arXiv new+cross 2293건을 중심으로 구성된 완성본이었습니다. 오늘은 그 arXiv 복귀가 하루 만에 다시 끊겼습니다 — 5개 카테고리 모두 listing이 갱신되지 않아 신규 제출이 0건입니다. 저널 쪽 신호의 성격도 바뀌었습니다. 어제는 Tomography/3D Imaging 42편 중 14편이 Gaussian Splatting/4D 재구성 계열의 실질 신호였던 반면, 오늘은 Tomography/3D Imaging 33편 중 계산 이미징 방법론과 직접 관련된 논문이 2~3편에 그치고 대부분(약 28편)이 임상 사례 보고·지구물리 탐사·소재 비파괴검사입니다. 대신 어제 거의 보이지 않았던 "메타표면 설계를 신경망으로 자동화"하는 신호가 오늘은 Meta-Optics/Diffractive 10편 중 4편으로 뚜렷해졌습니다. 전체 정보량은 어제(arXiv 2293건 + 저널 436편)보다 오늘(저널 414편만)이 훨씬 적고, Virtual Staining/Pathology는 어제(65건 중 실질 신호 2편)에 이어 오늘도(12건 중 0편) 여전히 거의 전부가 키워드 오탐입니다.</p>
+<p>어제(10/14)는 arXiv가 정상 listing으로 복귀하면서 feed-forward 3D 복원의 프레임 선택 문제, 정답 영상 없이 배우는 자기지도 복원(저선량 CT·과학 영상·고차원 현미경), 희소 투영 CBCT의 Gaussian 표현 세분화, 병리·현미경 foundation model의 캡션 부족 우회라는 네 개 클러스터가 중심이었습니다. 오늘은 어제와 완전히 다른 두 축이 떠올랐습니다 — Gaussian Splatting이 "복원 품질"에서 "압축·재조명·의료 모션 보정 인프라"로 번지는 흐름과, 메타표면 역설계·물리 기반 토모그래피 재구성이 "정답 데이터 없이 물리 법칙을 직접 모델에 넣는다"는 공통 태도로 수렴하는 흐름입니다. 어제의 Gaussian Splatting 클러스터가 희소 투영 CBCT라는 임상 응용 하나에 집중했다면, 오늘의 Gaussian Splatting 신호는 압축·그래픽스 렌더링·의료 모션 보정까지 더 넓게 퍼져 있어 같은 기술이 다른 단계(임상 세분화 → 인프라 범용화)로 넘어간 모습입니다. 어제 주인공이었던 자기지도 복원(Noise2Match, S³-PnP, Background2Background)과 병리 foundation model(BigCell, MicroCLIP 등) 클러스터는 오늘 데이터에서 재현되지 않았는데, 이는 오늘 4개 카테고리가 abstract 없는 title 기반 backfill이라 그런 세부 방법론적 신호를 포착하기 어려웠던 구조적 한계와 맞물려 있습니다. Virtual Staining/Pathology는 어제(65건 중 실질 신호 2편)에 이어 오늘(12건 중 0편)도 여전히 거의 전부가 키워드 오탐입니다.</p>
 
 <h2>🧩 오늘의 클러스터 지도</h2>
 <table>
@@ -107,90 +106,127 @@ html[data-theme=light] body{background-color:#fff}
 </thead>
 <tbody>
 <tr>
-  <td><strong>메타표면 설계가 전자기 시뮬레이션 반복 대신 물리 기반 신경망으로 넘어감</strong></td>
+  <td><strong>3D Gaussian Splatting이 "장면 복원"을 넘어 압축·시점 코딩·재조명·의료 CT/MRI 모션 보정 인프라로 확장</strong></td>
   <td>
-    <a href="https://doi.org/10.1109/access.2026.3743317" target=_blank>Data-Efficient Physics-Informed Reflection Prediction (GSTC-Embedded Neural Operator)</a> <span class=pill>JNL</span><br>
-    <a href="https://doi.org/10.1016/j.optlastec.2026.116666" target=_blank>Physics-inspired neural network prediction of high-Q near-field spectra</a> <span class=pill>JNL</span><br>
-    <a href="https://doi.org/10.1002/adom.71947" target=_blank>Intelligent Inverse Design of Meta-Absorbers (Reversible Deep Learning)</a> <span class=pill>JNL · TIER A</span><br>
-    <a href="https://doi.org/10.1117/1.apn.5.6.064002" target=_blank>Metasurface design using multiple meta-atoms: a review</a> <span class=pill>JNL</span>
+    <a href="https://arxiv.org/abs/2610.20590" target=_blank>Feed-Forward Multi-View Feature Coding for 3DGS</a> <span class=pill>CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.19538" target=_blank>RDCompGS</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.19847" target=_blank>VisibilitySplat</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.20397" target=_blank>Where Should the Gaussians Go? (Cinematic CT)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.19120" target=_blank>DoReMe (abdominal MRI)</a> <span class=pill>IV</span>
   </td>
-  <td>메타표면을 설계할 때 원래는 후보 구조마다 전자기 시뮬레이션을 반복해서 돌려 원하는 반사·흡수 특성을 맞춰야 했는데, 오늘 저널 네 편은 그 반복 시뮬레이션 과정 자체를 신경망으로 대체하려 합니다. GSTC(일반화 시트 전이 조건) 임베딩 신경 연산자 논문은 메타표면 흡수체의 반사 스펙트럼을 적은 학습 데이터로도 물리 법칙을 모델에 직접 넣어 예측하고, 근접장 스펙트럼 예측 논문도 같은 방식으로 거칠기가 있는 플라즈모닉 메타표면의 고품질(high-Q) 공진 스펙트럼을 시뮬레이션 없이 추정합니다. 가역 딥러닝 기반 메타흡수체 역설계 논문은 기존에 정방향·역방향 신경망을 따로 두 개 학습시키던 방식(tandem neural network) 대신, 양방향으로 학습 가능한 신경망 하나로 설계와 검증을 동시에 수행해 계산 비용을 줄입니다. 메타표면 설계 리뷰 논문은 이런 흐름이 단일 단위 구조에서 여러 개의 메타원자를 조합한 슈퍼셀 설계로 확장되는 과정을 정리합니다. 네 편을 같이 보면, 메타표면 설계 연구의 병목이 "어떤 구조가 좋은가"에서 "그 좋은 구조를 얼마나 적은 시뮬레이션·데이터로 빨리 찾아내는가"로 옮겨가고 있다는 뜻입니다.</td>
-  <td>High<br><small>서로 다른 저널 4편(IEEE Access, Optics & Laser Technology, Advanced Optical Materials, Advanced Photonics Nexus)이 독립적으로 같은 방향을 가리킴. 2편은 초록 미공개로 제목 기반 판단이 섞여 있음</small></td>
-  <td>가역 딥러닝(RDL) 메타흡수체 역설계 구조를 랩이 설계 중인 메타옵틱스 소자 파이프라인에 적용해, 기존 tandem neural network 대비 학습 시간과 목표 스펙트럼 재현 오차(MSE)를 비교하는 벤치마크를 구성한다</td>
+  <td>1~2년 전 Gaussian Splatting 논문들은 대부분 "한 장면을 얼마나 선명하고 빠르게 복원하느냐" 하나에 집중했습니다. 오늘 모인 다섯 편은 그 질문 자체가 세분화되고 있다는 걸 보여줍니다. Feed-Forward Multi-View Feature Coding은 장면마다 Gaussian을 새로 최적화하는 대신 여러 시점의 특징을 한 번에 인코딩해 바로 장면을 만들고, RDCompGS는 복원이 끝난 Gaussian 장면을 기존 이미지 코덱으로 효율적으로 압축해 저장·전송 문제를 겨냥합니다. VisibilitySplat은 Gaussian 장면에 레이트레이싱 기반 오클루전(가려짐) 계산을 더해, 보기만 하던 장면을 조명을 바꿔 다시 렌더링할 수 있게 만듭니다. 나머지 두 편은 의료 영상으로 건너가, 숨쉬며 움직이는 장기를 찍을 때 Gaussian 장면 자체가 모션까지 함께 추정하도록 확장합니다(영화 같은 CT 복원, 자유호흡 MRI). 다섯 편을 같이 보면, Gaussian Splatting 연구가 "복원 품질을 더 올리는 알고리즘" 단계를 지나 "그 결과를 어떻게 압축하고, 재사용하고, 움직이는 대상에 적용할 것인가"라는 인프라·배포 질문으로 넘어가고 있다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 응용(그래픽스 압축/재조명, 의료 CT/MRI 모션 보정)을 겨냥한 논문 5편이 같은 날 Tomography/3D Imaging 버킷에 모였고, 그중 2편은 임상 배포에 가까운 맥락까지 확장됨. 다만 오늘은 abstract 없는 title 기반 backfill이라 구체적 수치는 미확인</small></td>
+  <td>랩 Gaussian Splatting 복원 파이프라인에 RDCompGS의 이미지 코덱 압축 단계를 붙여 저장 용량 대비 복원 품질(PSNR) 손실을 측정하고, DoReMe의 모션-복원 동시 최적화 아이디어를 랩의 동적 장면(호흡·진동 샘플) 촬영 셋업에 시범 적용</td>
 </tr>
 <tr>
-  <td><strong>정답 데이터가 거의 없는 역문제에서 물리 법칙 자체를 학습 신호로 쓰는 재구성이 토모그래피·분광 전반에 확산</strong></td>
+  <td><strong>메타표면 역설계·비선형 튜닝이 "더 정교한 구조 탐색"에서 "적은 파라미터·적은 데이터로 빠르게 찾기"로 수렴</strong></td>
   <td>
-    <a href="https://doi.org/10.1063/5.0353516" target=_blank>Zero-shot physics-supervised neural network for photoacoustic tomography</a> <span class=pill>JNL · TIER A</span><br>
-    <a href="https://doi.org/10.1088/1361-6501/aeb3f9" target=_blank>Electric-potential-augmented benchmark dataset for ECT</a> <span class=pill>JNL</span><br>
-    <a href="https://doi.org/10.3390/sym18101708" target=_blank>Topology-Constrained Saddle-Point Reconstruction of Photoelectron Momentum Spectra</a> <span class=pill>JNL</span><br>
-    <a href="https://doi.org/10.1360/sspma-2026-0582" target=_blank>Quantitative Bone Ultrasound Imaging via Implicit Full-Waveform Inversion</a> <span class=pill>JNL</span>
+    <a href="https://doi.org/10.1002/adom.71947" target=_blank>Intelligent Inverse Design of Meta-Absorbers (RDL)</a> <span class=pill>JNL · TIER A</span><br>
+    <a href="https://doi.org/10.1021/acsphotonics.6c01011" target=_blank>Near-Flatband Resonances in Bilayer Moiré Superlattices</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1002/adom.71935" target=_blank>Linear and Nonlinear Optical Tuning With Sb2S3-Based Metasurfaces</a> <span class=pill>JNL</span>
   </td>
-  <td>영상 재구성에서 가장 오래된 제약은 "정답 영상이 있어야 학습이 된다"는 점인데, 오늘 모인 네 편은 모두 정답 데이터 없이 또는 아주 적은 가정만으로 역문제를 풉니다. ZS-PSNN(광음향 토모그래피)은 외부 학습 데이터 없이, 측정 장비의 음향 전달 과정을 미분 가능한 연산자로 직접 손실 함수에 넣어서 단일 스캔 데이터만으로 신경망을 학습시킵니다. 전기용량 토모그래피(ECT) 데이터셋 논문은 한 걸음 더 나아가, 기존에는 버려지던 '측정 중간 단계의 전위장'까지 2만 개 샘플에 함께 저장해 앞으로 물리 기반 학습이 중간 물리량까지 지도 신호로 쓸 수 있는 길을 엽니다. 위상 제약 기반 광전자 운동량 스펙트럼 재구성 논문은 강한 레이저 장에서 전자가 방출되는 복잡한 양자 궤도 중 물리적으로 말이 되는 해만 걸러내는 데 물리 기반 신경망과 위상수학적 필터를 결합합니다. 뼈 초음파 영상 논문도 비슷하게, 완전파형역산(FWI)이라는 전통적 물리 기반 역산 기법에 범위를 제한하는 매핑을 추가해 비선형성이 큰 문제를 신경망으로 안정화합니다. 네 편 모두 "데이터를 더 모으자"가 아니라 "측정을 지배하는 물리 방정식 자체를 모델 안에 박아 넣어서, 데이터가 없어도 또는 적어도 재구성이 되게 하자"는 같은 태도를 공유합니다.</td>
-  <td>High<br><small>서로 다른 저널 4편(Applied Physics Letters, Measurement Science and Technology, Symmetry, SCIENTIA SINICA)이 광음향·전기용량·강한장 이온화·초음파라는 서로 다른 영상 양상에서 독립적으로 수렴. 4편 모두 초록 확인됨</small></td>
-  <td>ZS-PSNN의 미분 가능한 전방 연산자(acoustic forward operator) 구조를 랩의 포토어쿠스틱 또는 초음파 재구성 파이프라인에 이식해, 기존 FBP/모델 기반 TV 정규화 대비 단일 스캔만으로 재구성 가능한지와 PSNR을 비교하는 실험을 1주 내로 설계한다</td>
+  <td>메타표면을 설계할 때 보통은 후보 구조마다 전자기 시뮬레이션을 반복해 원하는 특성을 맞추는데, 이 세 편은 그 반복을 줄이는 쪽으로 각자 다르게 접근합니다. 가역 딥러닝(RDL) 역설계 논문은 순방향·역방향 신경망을 따로 두 개 학습시키던 기존 tandem 방식 대신, 양방향으로 학습 가능한 신경망 하나로 설계·검증을 동시에 수행해 학습 파라미터는 66.35%만 쓰면서 역예측 정확도는 자릿수 단위로 끌어올렸습니다. Moiré 초격자 논문은 서로 살짝 어긋난 두 격자를 겹쳐 빛을 거의 완전히 가두는 평평한 밴드(flatband)를 만들어, 1538nm 중심파장에서 3.5nm의 공진 이동과 ±24도 입사각 범위에서도 안정적인 공진을 실험으로 확인했습니다. Sb2S3 기반 메타표면 논문은 레이저로 비정질→다결정 상태를 바꾸는 것만으로 투과 변조 깊이 92%, 공진 이동 150nm, 3차 고조파 발생 3배 증폭까지 광학 응답을 선형·비선형으로 동시에 튜닝합니다. 세 편을 묶으면, 메타표면 연구의 초점이 "얼마나 정교한 구조를 찾아내는가"에서 "그 구조를 얼마나 적은 계산·파라미터로 빨리 찾고, 찾은 뒤에는 외부 신호 하나로 얼마나 유연하게 바꿀 수 있는가"로 옮겨가고 있다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 저널 3편이 모두 abstract가 확인됐고, 각각 구체적 정량 수치(66.35% 파라미터, 3.5nm 공진 이동, 92% 변조 깊이)를 제시해 근거 수준이 높음</small></td>
+  <td>RDL의 양방향 단일 신경망 구조를 랩이 설계 중인 메타옵틱스 소자 파이프라인에 이식해, 기존 tandem neural network 대비 학습 시간과 목표 스펙트럼 재현 오차(MSE)를 비교하는 벤치마크를 구성</td>
 </tr>
 <tr>
-  <td><strong>측정 장비 자체의 물리적 왜곡·제약을 모델링해서 보정하는 하드웨어 밀착형 논문들이 산발적으로 등장</strong></td>
+  <td><strong>정답 데이터 없이 물리 방정식 자체를 모델 안에 박아 넣는 재구성이 광음향·전기용량 토모그래피로 확산</strong></td>
   <td>
-    <a href="https://doi.org/10.1117/1.jei.35.5.053021" target=_blank>Modality-specific deep learning frameworks for distortion correction in galvanometric imaging</a> <span class=pill>JNL</span><br>
-    <a href="https://doi.org/10.1021/photonsci.6c00066" target=_blank>Designing Guidelines for Bragg Coherent Nano Diffraction</a> <span class=pill>JNL</span><br>
-    <a href="https://doi.org/10.1038/s41467-026-78323-0" target=_blank>Orientation tomography of lanthanide-doped nanoprobes</a> <span class=pill>JNL</span>
+    <a href="https://doi.org/10.1063/5.0353516" target=_blank>Zero-shot physics-supervised neural network (PACT)</a> <span class=pill>JNL · TIER A</span><br>
+    <a href="https://doi.org/10.1088/1361-6501/aeb3f9" target=_blank>Electric-potential-augmented ECT benchmark</a> <span class=pill>JNL</span>
   </td>
-  <td>이 세 편은 서로 다른 응용이지만 공통적으로 "측정 장비 또는 측정 기하 자체가 만드는 왜곡을 정면으로 다룬다"는 점에서 묶입니다. 갈바노미터 스캐너 왜곡 보정 논문은 레이저 스캐닝 이미징과 광 간섭 단층촬영(OCT)에서 스캐너의 기계적 히스테리시스가 만드는 2D 공간 왜곡과 시간 지연을 각각 다른 딥러닝 구조로 보정해 구조적 유사도(SSIM)를 0.96까지 끌어올립니다. Bragg 결맞음 나노 회절 논문은 반사 기하에서 찍은 회절 패턴에서 박막의 격자 변형 정보를 뽑아내는 것이 투과 기하와 근본적으로 다르다는 점을 지적하며, 피치코그래피 같은 기존 방법이 그대로 통하지 않는 이유와 올바른 측정 가이드라인을 제시합니다. 편광 분해 미세분광 기반 3D 방향 토모그래피 논문은 한 번의 시야각만으로 란타넘 나노입자의 3차원 방향 정보를 복원하는 새로운 측정 설정 자체를 제안합니다. 세 편 모두 알고리즘을 바꾸기보다, 측정 장비의 물리적 한계(스캐너 비선형성, 반사 기하, 단일 시야각)를 먼저 정확히 모델링한 뒤에 그 모델 위에서 보정하거나 새 정보를 뽑아낸다는 공통점이 있습니다.</td>
-  <td>Medium<br><small>서로 다른 저널 3편이 "측정 장비 자체의 물리적 제약 모델링"이라는 방향을 보이지만, 응용이 서로 달라(스캐너 보정·X선 회절·편광 분광) 같은 벤치마크로 비교 검증된 사례는 아직 없음</small></td>
-  <td>갈바노미터 왜곡 보정 논문의 변형 가능 이미지 등록 네트워크(DIR-Net) 구조를 랩 레이저 스캐닝/OCT 셋업의 스캐너 교정 단계에 적용해, 기존 보정 없이 찍은 영상 대비 SSIM·MSE 개선폭을 측정한다</td>
+  <td>영상 재구성에서 가장 오래된 제약은 "정답 영상이 있어야 학습이 된다"는 점인데, 이 두 편은 정답 데이터를 아예 쓰지 않거나 측정 중간 단계의 물리량까지 학습 신호로 씁니다. ZS-PSNN(광음향 토모그래피)은 외부 학습 데이터 없이, 측정 장비의 음향 전달 과정을 미분 가능한 연산자로 직접 손실 함수에 넣어 단일 스캔 데이터 하나만으로 신경망을 학습시키고, 시뮬레이션 혈관 데이터와 실제 생쥐 실험 데이터 양쪽에서 통했다고 보고합니다. 전기용량 토모그래피(ECT) 데이터셋 논문은 한 걸음 더 나아가, 기존에는 버려지던 '측정 중간 단계의 전위장'까지 8전극 센서 기준 2만 개 샘플에 함께 저장해, 앞으로 물리 기반 학습이 최종 결과뿐 아니라 중간 물리량까지 지도 신호로 쓸 수 있는 길을 엽니다. 두 편을 묶으면 "데이터를 더 모으자"가 아니라 "측정을 지배하는 물리 방정식 자체를 모델 안에 박아 넣어서, 데이터가 없어도 또는 적어도 재구성이 되게 하자"는 같은 태도가 서로 다른 토모그래피 양상에서 동시에 나타나고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저널 2편이 독립적으로 같은 방향을 보이고 abstract도 확인됐지만, 2편뿐이라 High 기준(3편 이상)에는 못 미침</small></td>
+  <td>ZS-PSNN의 미분 가능한 음향 전방 연산자 구조를 랩의 포토어쿠스틱 또는 초음파 재구성 파이프라인에 이식해, 기존 FBP·모델 기반 TV 정규화 대비 단일 스캔만으로 재구성 가능한지와 PSNR을 비교하는 실험을 설계</td>
+</tr>
+<tr>
+  <td><strong>의료 영상에서 diffusion 기반 복원이 CT 초해상도·흉부 X선 뼈 억제·실패 예측형 agentic 복원으로 분화</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.20509" target=_blank>VascuSR (CT Super-Resolution)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.19466" target=_blank>DeBoneDiT (Chest X-Ray)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.20384" target=_blank>Look Before You Restore</a> <span class=pill>CV</span>
+  </td>
+  <td>예전에는 diffusion 모델을 의료 영상 복원에 쓴다고 하면 대체로 "노이즈를 지우고 더 선명하게" 정도의 범용 목적이었는데, 오늘 모인 세 편은 각자 더 구체적인 임상 문제에 diffusion을 맞춤 적용합니다. VascuSR는 CT 영상을 초해상도로 키울 때 혈관처럼 가늘고 끊어지기 쉬운 해부학적 구조를 반복적으로 참조하면서 diffusion을 진행해 혈관 연속성이 깨지지 않게 하고, DeBoneDiT는 흉부 X선에서 뼈 때문에 가려지는 폐 병변을 보기 위해 깊이 정보로 조건을 준 bridge diffusion transformer로 뼈 성분만 선택적으로 지웁니다. Look Before You Restore는 아예 다른 방향에서 접근해, 복원을 바로 실행하기 전에 "이 복원이 성공할지 실패할지"를 먼저 예측하게 만드는 agentic(행동 전 예측) 구조를 제안합니다. 세 편을 묶으면 diffusion 기반 이미지 복원이 "범용 디노이징 도구"에서 "해당 장기·조직의 해부학적 특성과 실패 가능성까지 고려하는 맞춤형 임상 도구"로 세분화되고 있다는 그림이 그려집니다.</td>
+  <td>Medium<br><small>세 논문이 diffusion 기반 복원이라는 같은 방법론 축을 공유하지만 응용(CT 혈관 SR, X선 뼈 억제, 범용 실패 예측)이 서로 달라 하나의 임상 문제로 수렴한다고 보기는 이름. abstract 없는 title 기반 backfill이라 성능 수치는 미확인</small></td>
+  <td>Look Before You Restore의 "복원 전 성공/실패 예측" 모듈을 랩이 쓰는 diffusion 기반 복원 파이프라인 앞단에 붙여, 예측된 실패 사례가 실제 복원 품질 저하(PSNR 하락)와 상관이 있는지 랩 데이터로 검증</td>
+</tr>
+<tr>
+  <td><strong>[Watch Lens] Lensless 0편·Fourier Ptychography 1편(오탐)·Light-Field 1편으로 계산광학 코어 3개 버킷이 오늘도 공백</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.20309" target=_blank>Event Cameras vs Frame Cameras (Synthetic-Aperture)</a> <span class=pill>CV</span><br>
+    <a href="https://doi.org/10.1021/photonsci.6c00066" target=_blank>Bragg Coherent Nano Diffraction Guidelines</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 Lensless/Coded Imaging 버킷은 배정이 0건입니다 — 오늘 수집된 논문 어디에도 lensless·coded aperture·single-shot 계산 카메라를 명시적으로 내세운 논문이 없었다는 뜻입니다. Fourier Ptychography/Microscopy 버킷의 유일한 1편(Bragg 결맞음 나노 회절)도 실제로는 X선 결정학 논문이라 'ptychography'가 한계·비교 대상으로만 언급된 키워드 오탐에 가깝습니다. 다만 반사 기하에서 회절 패턴으로부터 박막 격자 변형을 구하는 방법이 투과 기하용 기존 방법(ptychography 포함)과 근본적으로 다르다는 걸 보여주는 측정 가이드라인 논문이라 계산 이미징 하드웨어 설계 관점에서 참고할 가치는 있습니다. Light-Field/Novel Sensors 버킷의 유일한 1편은 이벤트 카메라와 프레임 카메라를 synthetic-aperture(여러 시점을 합쳐 가려진 물체를 보이게 하는) 이미징에서 시뮬레이션으로 비교하는 논문으로, 제목만으로도 랩 ROI와 직접 관련된 진짜 신호입니다.</td>
+  <td>Low<br><small>진짜 신호는 Light-Field 1편뿐이고 Fourier Ptychography 1편은 오탐, Lensless는 0건이라 클러스터 승격 기준(2편 이상 수렴)에 못 미침</small></td>
+  <td>이벤트 카메라 vs 프레임 카메라 synthetic-aperture 시뮬레이션 논문의 비교 프로토콜을 랩이 보유한 이벤트 카메라 하드웨어로 재현해 가려진 물체 복원 품질이 시뮬레이션 결과와 얼마나 맞는지 확인하고, 다음 실행에서 Lensless/Coded Imaging 공백이 계속되는지 다시 확인</td>
 </tr>
 </tbody>
 </table>
-<p><small>⚠️ 참고: 오늘은 계산 이미징 핵심 신호 자체가 10편 안팎으로 얇아 5행을 채울 근거가 부족합니다. Fourier Ptychography/Microscopy(1편, Bragg 회절 논문은 클러스터3에 포함)와 Phase Imaging/Holography(3편 중 메타표면 리뷰 1편만 실제 신호로 클러스터1에 포함)는 독립 클러스터를 만들 근거가 부족합니다. Lensless/Coded Imaging과 Light-Field/Novel Sensors는 오늘도 배정 0건입니다.</small></p>
+<p><small>⚠️ 참고: 오늘은 근거가 충분해 5행을 모두 실제 신호(Watch Lens 포함)로 채웠습니다. Reconstruction/Inverse Problems의 물리 기반 재구성 클러스터는 2편뿐이라 Confidence를 Medium으로 두었습니다.</small></p>
 
 <h2>🔬 도메인 Watch Lens</h2>
 <div class=skim>
   <ul>
-    <li><strong>Lensless/Coded Imaging — 오늘 배정 0편</strong> — Crossref 9개 키워드 질의에서 단 한 건도 걸리지 않았습니다. 랩 ROI 핵심 공백이 이틀째 이어집니다.</li>
-    <li><strong>Light-Field/Novel Sensors — 오늘 배정 0편</strong> — light field·plenoptic·event camera 관련 저널 신규 등록이 전혀 없었습니다. 역시 공백이 이어집니다.</li>
-    <li><strong>Phase Imaging/Holography — 오늘 배정 3편 중 실제 신호 1편</strong> — 메타표면 설계 리뷰 논문만 클러스터1에 포함되는 실제 신호이고, 나머지 2편(wafer 결함검사 홀로그래피, wavefront sensorless adaptive optics 리뷰)은 초록이 공개되지 않아 제목만으로는 랩 ROI와의 연결 강도를 판단하기 어려워 독립 클러스터로 올리지 않았습니다.</li>
-    <li><strong>Virtual Staining/Pathology — 오늘 배정 12편 중 실제 신호 0편</strong> — 전부 피부과 사례보고, 공정 마이닝, B2B AR/VR 마케팅, 식물 조직학 염색법 등 "virtual"·"staining" 키워드 오탐입니다. 어제(10/14, 2편)보다도 신호가 더 얇아졌습니다.</li>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 0편</strong> — arXiv title/subject backfill과 저널 신규 등록 어디에도 lensless·coded aperture·단일 샷 계산 카메라를 명시한 논문이 없었습니다. 핵심 ROI 공백이 이어집니다.</li>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 1편, 실제로는 오탐</strong> — <a href="https://doi.org/10.1021/photonsci.6c00066" target=_blank>Designing Guidelines for Bragg Coherent Nano Diffraction</a> [JNL]은 X선 결정학 논문으로 'ptychography'가 비교·한계 설명에만 등장합니다. 측정 가이드라인 자체는 계산 이미징 하드웨어 설계에 참고할 가치가 있어 Watch Lens 행에서 짚었습니다.</li>
+    <li><strong>Phase Imaging/Holography — 오늘 배정 4편</strong> — <a href="https://arxiv.org/abs/2610.19898" target=_blank>Bilinear Compressive Security</a> [SP]는 압축 센싱 기반 암호화 보안 논문으로 홀로그래피와 무관한 키워드 오탐이고, 나머지 3편(wafer 결함검사 홀로그래피, wavefront sensorless adaptive optics 리뷰, 메타표면 설계 리뷰)은 abstract가 공개되지 않아 본문 확인 전까지는 판단을 보류합니다.</li>
   </ul>
 </div>
 
 <h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
 <ul>
-  <li><strong>arXiv 전용</strong>: 없음 (2026-10-15 신규 listing 갱신 없음, 5개 카테고리 모두 10/14 listing에 머물러 있음)</li>
-  <li><strong>저널 전용</strong>: 메타표면 설계의 신경망 대체(물리 기반 신경 연산자, 근접장 스펙트럼 예측, 가역 딥러닝 역설계), 물리 기반 제로샷/소량데이터 재구성(광음향 토모그래피, 전기용량 토모그래피, 강한장 이온화 분광, 뼈 초음파), 측정 장비 물리 모델링(갈바노미터 스캐너 보정, Bragg 결맞음 회절, 편광 분해 방향 토모그래피)</li>
-  <li><strong>공통 키워드</strong>: 오늘은 arXiv 신호가 없어 arXiv-저널 교차 비교 자체가 성립하지 않습니다. 저널 전용 목록이 곧 오늘의 전체 신호입니다.</li>
-  <li><strong>특징</strong>: 어제(10/14)는 arXiv가 복귀하며 feed-forward 3D 복원·자기지도 복원 중심의 cs.CV 축이 다시 두꺼워졌던 반면, 오늘은 그 축이 다시 끊기고 저널만 남아 메타표면 설계 자동화와 물리 기반 재구성이라는 계산광학 코어에 더 가까운 신호로 채워졌습니다. 다음 daily에서 arXiv가 복귀하면 두 축이 어떻게 이어지는지가 관전 포인트입니다.</li>
+  <li><strong>arXiv 전용</strong>: 3D Gaussian Splatting 인프라 확장(Feed-Forward Feature Coding, RDCompGS, VisibilitySplat, Cinematic CT, DoReMe), diffusion 기반 의료 영상 복원 분화(VascuSR, DeBoneDiT, Look Before You Restore), 이벤트 카메라 synthetic-aperture 비교</li>
+  <li><strong>저널 전용</strong>: 메타표면 역설계·비선형 튜닝(RDL 메타흡수체, Moiré 초격자, Sb2S3 메타표면), 물리 기반 제로샷 토모그래피 재구성(광음향·전기용량), 의료 영상 분할 벤치마크(ComFormer, 7T MRI MS 병변 분할)</li>
+  <li><strong>공통 키워드</strong>: reconstruction/복원(arXiv는 Gaussian Splatting·diffusion 기반 방법론적 복원 문제, 저널은 광음향·전기용량 토모그래피라는 물리 기반 역문제 재구성이라는 다른 층위에서 "정답 데이터 없이 어떻게 구조를 되살릴까"라는 문제의식을 공유), tomography(arXiv는 그래픽스·의료 모션 보정 맥락의 Gaussian 표현, 저널은 전통적 물리 기반 역문제 재구성)</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 Gaussian Splatting과 diffusion 복원이라는 두 갈래의 방법론 신호를 냈고, 저널은 메타표면 역설계와 물리 기반 토모그래피 재구성이라는 계산광학 코어에 가까운 신호를 냈습니다. 4개 카테고리가 abstract 없는 backfill이라 arXiv 쪽 수치는 아직 확인되지 않았지만, 저널 쪽은 abstract가 확인된 논문 위주로 Tier A 깊이를 채웠습니다.</li>
 </ul>
 
 <h2>💡 오늘의 인사이트</h2>
 
 <div class=ins>
-  <h3>1. 메타표면 설계가 전자기 시뮬레이션 반복 대신 물리 기반 신경망으로 넘어감</h3>
-  <p>GSTC 임베딩 신경 연산자, 근접장 스펙트럼 예측, 가역 딥러닝 역설계, 메타표면 설계 리뷰 네 편이 같은 날 나오며, 메타표면 설계 연구의 병목이 "어떤 구조가 좋은가"에서 "그 구조를 얼마나 적은 시뮬레이션·데이터로 빨리 찾아내는가"로 옮겨가는 모습을 보입니다.</p>
-  <p class=conf-note>Confidence: High — 서로 다른 저널 4편이 독립적으로 같은 방향을 가리킴, 2편은 제목 기반 판단</p>
+  <h3>1. 3D Gaussian Splatting이 "장면 복원"을 넘어 압축·시점 코딩·재조명·의료 모션 보정 인프라로 확장</h3>
+  <p>Feed-Forward Multi-View Feature Coding, RDCompGS, VisibilitySplat, Where Should the Gaussians Go?(Cinematic CT), DoReMe(abdominal MRI) 5편이 모이며, Gaussian Splatting 연구가 "복원 품질을 올리는 알고리즘" 단계를 지나 압축·재조명·의료 모션 보정 같은 인프라·배포 질문으로 넘어갔다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 응용(그래픽스, 의료 CT/MRI) 5편이 같은 날 같은 버킷에 모임, 다만 title 기반 backfill이라 수치는 미확인</p>
 </div>
 
 <div class=ins>
-  <h3>2. 정답 데이터가 거의 없는 역문제에서 물리 법칙 자체를 학습 신호로 쓰는 재구성이 확산</h3>
-  <p>광음향 토모그래피 제로샷 재구성, 전기용량 토모그래피 물리 기반 데이터셋, 위상 제약 광전자 스펙트럼 재구성, 뼈 초음파 완전파형역산 네 편이 모두 "데이터를 더 모으자"가 아니라 "측정을 지배하는 물리 방정식을 모델 안에 직접 넣자"는 같은 태도를 공유합니다.</p>
-  <p class=conf-note>Confidence: High — 4개 독립 저널이 서로 다른 영상 양상에서 같은 방향으로 수렴, 전편 초록 확인됨</p>
+  <h3>2. 메타표면 역설계·비선형 튜닝이 "적은 파라미터·적은 데이터로 빠르게 찾기"로 수렴</h3>
+  <p>RDL 메타흡수체 역설계(파라미터 66.35%만 사용, 역예측 정확도 자릿수 단위 개선), Moiré 초격자(공진 이동 3.5nm), Sb2S3 메타표면(변조 깊이 92%) 3편이 모이며, 메타표면 연구의 초점이 "정교한 구조 탐색"에서 "빠르고 유연한 탐색·튜닝"으로 옮겨갔다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 저널 3편 모두 abstract 확인, 각각 구체적 정량 수치 제시</p>
 </div>
 
 <div class=ins>
-  <h3>3. 측정 장비 자체의 물리적 왜곡·제약을 모델링해서 보정하는 논문들이 산발적으로 등장</h3>
-  <p>갈바노미터 스캐너 왜곡 보정, Bragg 결맞음 나노 회절 가이드라인, 편광 분해 3D 방향 토모그래피 세 편이 각각 다른 응용에서 측정 장비·기하의 물리적 한계를 먼저 모델링한 뒤 보정하거나 새 정보를 뽑아냅니다.</p>
-  <p class=conf-note>Confidence: Medium — 세 편 모두 응용이 달라 같은 벤치마크로 비교 검증된 사례는 아직 없음</p>
+  <h3>3. 정답 데이터 없이 물리 방정식을 모델에 박아 넣는 재구성이 광음향·전기용량 토모그래피로 확산</h3>
+  <p>Zero-shot physics-supervised neural network(PACT), Electric-potential-augmented ECT benchmark 2편이 모이며, "데이터를 더 모으자"가 아니라 "측정을 지배하는 물리 방정식 자체를 모델 안에 넣자"는 태도가 서로 다른 토모그래피 양상에서 동시에 나타났다.</p>
+  <p class=conf-note>Confidence: Medium — 2편뿐이라 방향은 뚜렷하나 High 기준(3편 이상)에는 못 미침</p>
+</div>
+
+<div class=ins>
+  <h3>4. diffusion 기반 의료 영상 복원이 CT 초해상도·흉부 X선 뼈 억제·실패 예측형 복원으로 분화</h3>
+  <p>VascuSR, DeBoneDiT, Look Before You Restore 3편이 모이며, diffusion 기반 복원이 "범용 디노이징 도구"에서 장기·조직별 해부학적 특성과 실패 가능성까지 고려하는 맞춤형 임상 도구로 세분화되는 흐름이 보인다.</p>
+  <p class=conf-note>Confidence: Medium — 같은 방법론(diffusion) 축은 공유하나 응용이 서로 달라 하나의 임상 문제로 수렴한다고 보긴 이름</p>
 </div>
 
 <h2>🔬 추천 연구주제</h2>
 
 <div class=dd>
-  <h3>A. 가역 딥러닝(RDL) 역설계를 랩 메타옵틱스 파이프라인의 tandem neural network 대체재로 시범 적용</h3>
-  <p>하나의 양방향 신경망으로 설계와 검증을 동시에 하면, 기존처럼 정방향·역방향 신경망을 따로 학습시키는 tandem 방식 대비 학습 비용과 설계 정확도에서 이득이 있는지 확인합니다.</p>
+  <h3>A. RDCompGS의 이미지 코덱 압축을 랩 Gaussian Splatting 파이프라인에 붙여 저장 용량 대비 품질 손실 측정</h3>
+  <p>Gaussian 장면을 기존 이미지 코덱으로 압축하는 방식이 랩이 쓰는 계산 이미징/3D 복원 데이터에도 통하는지, 압축률 대비 PSNR 손실 곡선을 그려 실제 저장·전송 파이프라인에 넣을 수 있는지 확인합니다.</p>
   <p><strong>실행 1주차:</strong></p>
   <ul>
-    <li>대상 논문/코드: Intelligent Inverse Design of Meta-Absorbers (RDL) 방법 재현</li>
+    <li>대상 논문/코드: RDCompGS 코드/데이터 공개 확인</li>
+    <li>공통 benchmark: 랩 보유 Gaussian Splatting 복원 장면 1~2개</li>
+    <li>비교축: 압축률별 PSNR/SSIM 손실, 저장 용량</li>
+    <li>실패해도 남는 결과: 랩 복원 파이프라인에 적용 가능한 압축률 상한 가이드라인</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. RDL(가역 딥러닝) 단일 신경망 역설계를 랩 메타옵틱스 파이프라인의 tandem neural network 대체재로 시범 적용</h3>
+  <p>하나의 양방향 신경망으로 설계·검증을 동시에 하면 기존 2단계 tandem 방식 대비 학습 비용과 설계 정확도에서 이득이 있는지, 66.35% 파라미터 절감이 랩이 설계하는 메타옵틱스 구조에서도 재현되는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Intelligent Inverse Design of Meta-Absorbers(RDL) 방법 재현</li>
     <li>공통 benchmark: 랩 보유 메타옵틱스 설계 타깃 스펙트럼 세트</li>
     <li>비교축: 기존 tandem neural network 대비 학습 시간, 목표 스펙트럼 재현 오차(MSE)</li>
     <li>실패해도 남는 결과: 랩 메타옵틱스 설계 파이프라인에서 RDL이 유효한 스펙트럼 복잡도 범위 정리</li>
@@ -198,8 +234,8 @@ html[data-theme=light] body{background-color:#fff}
 </div>
 
 <div class=dd>
-  <h3>B. ZS-PSNN의 미분 가능한 전방 연산자를 랩 포토어쿠스틱/초음파 재구성에 이식</h3>
-  <p>외부 학습 데이터 없이 단일 스캔만으로 재구성이 가능한지, 기존 FBP·모델 기반 TV 정규화 대비 재구성 품질이 얼마나 차이 나는지 확인합니다.</p>
+  <h3>C. ZS-PSNN의 미분 가능한 음향 전방 연산자를 랩 포토어쿠스틱/초음파 재구성에 이식</h3>
+  <p>외부 학습 데이터 없이 단일 스캔만으로 재구성이 가능한지, 기존 FBP·모델 기반 TV 정규화 대비 PSNR/SSIM이 얼마나 차이 나는지 비교합니다.</p>
   <p><strong>실행 1주차:</strong></p>
   <ul>
     <li>대상 논문/코드: Zero-shot physics-supervised neural network(ZS-PSNN) 워크플로우 재현</li>
@@ -209,133 +245,152 @@ html[data-theme=light] body{background-color:#fff}
   </ul>
 </div>
 
-<div class=dd>
-  <h3>C. 갈바노미터 스캐너 왜곡 보정 네트워크를 랩 레이저 스캐닝/OCT 셋업에 적용</h3>
-  <p>스캐너의 기계적 비선형성이 만드는 공간·시간 왜곡을 모델별로 보정했을 때, 랩이 보유한 레이저 스캐닝 또는 OCT 하드웨어에서도 비슷한 SSIM/MSE 개선이 재현되는지 확인합니다.</p>
-  <p><strong>실행 1주차:</strong></p>
-  <ul>
-    <li>대상 논문/코드: 변형 가능 이미지 등록 네트워크(DIR-Net) 기반 왜곡 보정 구조 재현</li>
-    <li>공통 benchmark: 랩 보유 레이저 스캐닝/OCT 원시 스캔 데이터(왜곡 포함)</li>
-    <li>비교축: 보정 전 대비 SSIM·MSE 개선폭, 처리 지연시간</li>
-    <li>실패해도 남는 결과: 랩 스캐너 하드웨어의 왜곡 특성과 보정 가능 범위 정리</li>
-  </ul>
-</div>
-
-<h2>🧭 예측 회고 루프</h2>
-<p>오늘은 daily 실행이라 예측 회고는 생략합니다(예측 회고는 매주 월요일 별도 weekly 실행이 담당합니다). 2026-09-14~10-05 구간의 CI 파이프라인 공백으로 2026-10-12(월) weekly 실행이 이뤄지지 못해 참조할 직전 weekly가 없습니다 — 다음 월요일(2026-10-19) weekly 실행에서 지난주(10/12~10/16) 예측·회고를 다시 시작합니다.</p>
-
 <h2>📊 오늘의 버킷 현황</h2>
-<p><small>막대 너비: Tomography/3D Imaging(33편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+<p><small>막대 너비: Tomography/3D Imaging(38편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
 
-<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:3%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:2.6%"></span></span><span class=n>1편</span></div>
 <div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
-<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:9%"></span></span><span class=n>3편</span></div>
-<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:30%"></span></span><span class=n>10편</span></div>
-<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
-<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>33편</span></div>
-<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:36%"></span></span><span class=n>12편</span></div>
-<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:27%"></span></span><span class=n>9편</span></div>
-<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>22편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:10.5%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:28.9%"></span></span><span class=n>11편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:2.6%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>38편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:31.6%"></span></span><span class=n>12편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:36.8%"></span></span><span class=n>14편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>69편</span></div>
 
-<p><small>⚠️ 참고: Tomography/3D Imaging 33편 중 약 28편은 임상 사례 보고(CT/PET/CBCT, 안과·심혈관 영상)와 지구물리·소재 비파괴검사로 계산 이미징 방법론과 무관합니다(실제 신호는 Bragg 회절 포함 2~3편). Virtual Staining/Pathology 12편 중 12편 전부가 "virtual"·"staining" 키워드 오탐입니다. Meta-Optics/Diffractive 10편 중 4편이 클러스터1 실제 신호이고 나머지는 열복사·구조색·비선형 광학 등 설계 자동화와 직접 관련 없는 응용입니다. Reconstruction/Inverse Problems 9편 중 4편(광음향·ECT·광전자·초음파)이 클러스터2 실제 신호입니다.</small></p>
+<p><small>⚠️ 참고: Tomography/3D Imaging 38건 중 약 10건은 지진학·재료과학·비파괴검사 등 'tomography' 키워드 오탐이고, 다수는 임상 사례 보고(CT/PET/CBCT, 안과·심혈관 영상)입니다. 실제 계산 이미징 방법론 신호는 3D Gaussian Splatting 5편과 Bragg 회절·나노프로브 방향 토모그래피 2편입니다. Virtual Staining/Pathology 12건은 전부 "virtual"·"staining" 키워드 오탐입니다.</small></p>
 
 <h2>🗂 버킷별 주요 논문</h2>
 
-<h3>Fourier Ptychography/Microscopy (1편)</h3>
+<h3>Tomography/3D Imaging (38편 중 관련 대표 5편)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1021/photonsci.6c00066" target=_blank>Designing Guidelines for Bragg Coherent Nano Diffraction in Crystalline Thin Films</a></strong> [JNL]<br>
-  왜 주요: 오늘 클러스터3 대표 — 반사 기하 Bragg 회절에서 기존 피치코그래피 방법이 그대로 통하지 않는 이유와 측정 가이드라인 제시
+  <strong><a href="https://arxiv.org/abs/2610.20590" target=_blank>Feed-Forward Multi-View Feature Coding for 3D Gaussian Splatting</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터1 대표 — 장면별 최적화 없이 여러 시점 특징을 한 번에 인코딩해 Gaussian 장면 생성
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.19538" target=_blank>RDCompGS</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — 이미지 코덱 기반 Gaussian Splatting 압축의 rate-distortion 최적화
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.19847" target=_blank>VisibilitySplat</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — 레이트레이싱 오클루전으로 Gaussian 장면 재조명 지원
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.20397" target=_blank>Where Should the Gaussians Go? (Cinematic CT)</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — 예산 제한 Gaussian Splatting을 영화 같은 CT 복원에 적용
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.19120" target=_blank>DoReMe</a></strong> [IV]<br>
+  왜 주요: 오늘 클러스터1 대표 — 자유호흡 복부 MRI에서 복원과 모션 추정을 Gaussian Splatting으로 동시 최적화
 </div>
 
-<h3>Phase Imaging/Holography (3편 중 관련 1편)</h3>
+<h3>Meta-Optics/Diffractive (11편 중 관련 대표 3편)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1117/1.apn.5.6.064002" target=_blank>Metasurface design using multiple meta-atoms as fundamental elements: a review</a></strong> [JNL]<br>
-  왜 주요: 오늘 클러스터1 대표 — 단일 메타원자에서 슈퍼셀 기반 다중 메타원자 설계로 확장되는 흐름을 정리한 리뷰
+  <strong><a href="https://doi.org/10.1002/adom.71947" target=_blank>Intelligent Inverse Design of Meta-Absorbers (RDL)</a></strong> [JNL · TIER A]<br>
+  왜 주요: 오늘의 must-read — 양방향 단일 신경망으로 메타흡수체 역설계, 파라미터 66.35%로 자릿수 단위 정확도 개선
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/acsphotonics.6c01011" target=_blank>Near-Flatband Resonances in Bilayer Moiré Superlattices</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터2 대표 — Moiré 초격자로 각도에 강건한 평평한 밴드 공진 실험 확인
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/adom.71935" target=_blank>Linear and Nonlinear Optical Tuning With Sb2S3-Based Metasurfaces</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터2 대표 — 상전이 물질로 변조 깊이 92%, 3차 고조파 3배 증폭 동시 튜닝
 </div>
 
-<h3>Meta-Optics/Diffractive (10편 중 관련 4편)</h3>
+<h3>Reconstruction/Inverse Problems (14편 중 관련 대표 2편)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1002/adom.71947" target=_blank>Intelligent Inverse Design of Meta-Absorbers Based on Reversible Deep Learning</a></strong> [JNL · TIER A]<br>
-  왜 주요: 오늘 클러스터1·must-read 대표 — 양방향 신경망 하나로 메타흡수체 설계·검증을 동시 수행
+  <strong><a href="https://doi.org/10.1063/5.0353516" target=_blank>Zero-shot physics-supervised neural network (PACT)</a></strong> [JNL · TIER A]<br>
+  왜 주요: 오늘의 must-read — 외부 학습 데이터 없이 단일 스캔만으로 광음향 토모그래피 재구성
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1109/access.2026.3743317" target=_blank>Data-Efficient Physics-Informed Reflection Prediction of Metasurface Absorbers</a></strong> [JNL]<br>
-  왜 주요: 오늘 클러스터1 대표 — GSTC 임베딩 신경 연산자로 적은 데이터로도 반사 스펙트럼 예측
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116666" target=_blank>Physics-inspired neural network prediction of high-Q near-field spectra</a></strong> [JNL]<br>
-  왜 주요: 오늘 클러스터1 대표 — 플라즈모닉 메타표면의 고품질 공진 스펙트럼을 시뮬레이션 없이 추정
+  <strong><a href="https://doi.org/10.1088/1361-6501/aeb3f9" target=_blank>Electric-potential-augmented ECT benchmark</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터3 대표 — 중간 물리량(전위장)까지 지도 신호로 쓸 수 있는 물리 기반 학습용 데이터셋 공개
 </div>
 
-<h3>Tomography/3D Imaging (33편 중 관련 2편)</h3>
+<h3>Deep Learning Methods — 이미징 관련 대표 5편 (69편 중 catch-all 과대표 방지)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1038/s41467-026-78323-0" target=_blank>Orientation tomography of lanthanide-doped nanoprobes by polarization-resolved micro-spectroscopy</a></strong> [JNL]<br>
-  왜 주요: 오늘 클러스터3 대표 — 단일 시야각으로 나노입자의 3D 방향 정보를 복원하는 새 측정 설정
+  <strong><a href="https://arxiv.org/abs/2610.20509" target=_blank>VascuSR</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터4 대표 — 혈관 구조를 반복 참조하는 anatomy-aware diffusion CT 초해상도
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.19466" target=_blank>DeBoneDiT</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터4 대표 — 깊이 조건 bridge diffusion transformer로 흉부 X선 뼈 성분 선택적 억제
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.20384" target=_blank>Look Before You Restore</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터4 대표 — 복원 실행 전 성공/실패를 먼저 예측하는 agentic 복원 구조
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1111/coin.70303" target=_blank>ComFormer</a></strong> [JNL]<br>
+  왜 주요: Synapse 벤치마크에서 83.46% DSC로 하이브리드 Transformer 의료 영상 분할 — 벤치마크 SOTA 추이 참고
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/jimaging12100510" target=_blank>7T MRI 다발성 경화증 병변 분할</a></strong> [JNL]<br>
+  왜 주요: 7T 초고자장 MRI에서 nnUNet 기반 분할의 입력 조합별 DSC(0.66~0.72) 비교 — 벤치마크 SOTA 추이 참고
 </div>
 
-<h3>Reconstruction/Inverse Problems (9편 중 관련 4편)</h3>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1063/5.0353516" target=_blank>Zero-shot physics-supervised neural network for data-free photoacoustic tomography reconstruction</a></strong> [JNL · TIER A]<br>
-  왜 주요: 오늘 클러스터2·must-read 대표 — 외부 학습 데이터 없이 단일 스캔만으로 광음향 토모그래피 재구성
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1088/1361-6501/aeb3f9" target=_blank>An electric-potential-augmented benchmark dataset for electrical capacitance tomography</a></strong> [JNL]<br>
-  왜 주요: 오늘 클러스터2 대표 — 중간 물리량(전위장)까지 지도 신호로 쓸 수 있는 물리 기반 학습용 데이터셋 공개
-</div>
-
-<h3>Deep Learning Methods (22편 중 관련 1편, catch-all 과대표 방지로 1편만 표시)</h3>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1117/1.jei.35.5.053021" target=_blank>Modality-specific deep learning frameworks for distortion correction in galvanometric imaging</a></strong> [JNL]<br>
-  왜 주요: 오늘 클러스터3 대표 — 레이저 스캐닝/OCT 스캐너의 기계적 왜곡을 모달리티별 딥러닝 구조로 보정
-</div>
+<h2>📈 벤치마크 SOTA 추이</h2>
+<table>
+<thead>
+<tr><th>벤치마크</th><th>지표</th><th>값</th><th>논문</th></tr>
+</thead>
+<tbody>
+<tr><td>Meta-absorber 역설계 (근적외선, RDL vs tandem neural network)</td><td>학습 파라미터 비율 / 역예측 정확도</td><td>파라미터 66.35%만 사용, 정확도는 자릿수 단위 개선</td><td><a href="https://doi.org/10.1002/adom.71947" target=_blank>Advanced Optical Materials</a></td></tr>
+<tr><td>의료 영상 분할 — Synapse multi-organ CT</td><td>DSC / HD95</td><td>83.46% DSC, 16.89mm HD95</td><td><a href="https://doi.org/10.1111/coin.70303" target=_blank>Computational Intelligence</a></td></tr>
+<tr><td>다발성 경화증 병변 분할 — 7T MRI (nnUNet)</td><td>DSC</td><td>결합 입력 0.72, MP2RAGE 단독 0.71, FLAIR 단독 0.66</td><td><a href="https://doi.org/10.3390/jimaging12100510" target=_blank>Journal of Imaging</a></td></tr>
+<tr><td>갈바노미터 스캐너 왜곡 보정 (레이저 스캐닝/OCT)</td><td>SSIM / MSE / MTF</td><td>SSIM 0.96±0.02, MTF 26.91→88.21 lp/mm</td><td><a href="https://doi.org/10.1117/1.jei.35.5.053021" target=_blank>Journal of Electronic Imaging</a></td></tr>
+</tbody>
+</table>
+<p><small>모든 수치는 abstract에 명시된 값 그대로이며, 본문 확인 전까지는 저자 보고 수치로 취급합니다.</small></p>
 
 <hr>
 
 <h2>🌟 오늘의 must-read</h2>
 
 <div class=dd>
-  <h3>[TIER A] Intelligent Inverse Design of Meta-Absorbers Based on Reversible Deep Learning — Advanced Optical Materials</h3>
-  <div class=tag>[방법전환] [표준후보]</div>
-  <p><strong>왜 A급인가:</strong> 메타표면 역설계는 지금까지 정방향 신경망(구조→스펙트럼)과 역방향 신경망(스펙트럼→구조)을 따로 학습시키는 tandem neural network 방식이 사실상 표준이었는데, 이 논문은 그 두 신경망을 하나의 양방향 학습 가능한 신경망으로 합칩니다. 랩이 메타옵틱스 소자를 설계할 때 반복하는 "시뮬레이션 돌리고 구조 수정하고 다시 시뮬레이션"이라는 루프 자체를 줄일 수 있다는 점에서 파이프라인에 바로 영향을 줄 수 있는 방법전환입니다.</p>
-  <p><strong>핵심:</strong> 기존 tandem neural network는 두 개의 분리된 신경망을 학습시켜야 해서 계산 비용이 높고, 역설계 단계에서 정확도가 떨어지는 경우가 많았습니다. 이 논문은 가역 딥러닝(reversible deep learning, RDL)이라는 하나의 양방향 신경망 구조를 제안해, 정방향(구조→스펙트럼 예측)과 역방향(스펙트럼→구조 설계)을 같은 네트워크 가중치로 동시에 처리합니다(초록 기준). 저자들은 이 구조가 기존 tandem 방식보다 더 정밀하다고 주장합니다.</p>
-  <p><strong>주의:</strong> 초록만으로는 "더 정밀하다"는 주장을 뒷받침하는 구체적인 정량 수치(설계 오차, 학습 시간 단축폭)를 확인하기 어렵습니다. 가역 신경망 구조가 더 복잡한 다중 메타원자·슈퍼셀 설계에도 그대로 확장되는지, 실험적으로 제작·검증까지 이어졌는지는 본문 확인이 필요합니다.</p>
+  <h3>[TIER A] Feed-Forward Multi-View Feature Coding for 3D Gaussian Splatting — arXiv 2610.20590</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> 기존 Gaussian Splatting은 장면마다 반복적인 최적화 과정을 거쳐야 해서, 실시간 적용이나 대규모 배포에는 걸림돌이었습니다. 이 논문은 여러 시점의 영상 특징을 feed-forward로 한 번에 인코딩해 최적화 없이 바로 Gaussian 장면을 만드는 방향을 제시하는데, 이는 오늘 클러스터1 전체(압축·재조명·의료 모션 보정)가 공유하는 "Gaussian Splatting을 더 가볍고 재사용 가능하게 만들자"는 흐름의 대표 격입니다.</p>
+  <p><strong>핵심:</strong> 제목과 분야(cs.CV) 기준으로 볼 때, 이 논문은 전통적인 장면별 최적화 기반 3D Gaussian Splatting과 달리 여러 시점(multi-view) 입력을 특징 코딩(feature coding) 방식으로 처리해 feed-forward 네트워크 한 번의 추론으로 Gaussian 파라미터를 직접 예측하는 구조로 추정됩니다. 다만 오늘은 abstract가 없는 title/subject 기반 backfill 데이터라, 구체적인 네트워크 구조·학습 방식·정량적 성능 비교는 본문 확인이 필요합니다.</p>
+  <p><strong>주의:</strong> abstract가 없어 "feed-forward"가 완전히 최적화를 생략한다는 뜻인지, 아니면 초기화 단계만 가속한다는 뜻인지가 제목만으로는 명확하지 않습니다. 기존 feed-forward 3D 복원 계열(예: 어제 다룬 PURE, UniForge3D)과의 구체적 차별점도 본문 확인 전까지는 추정에 머뭅니다.</p>
 </div>
 
 <div class=dd>
-  <h3>[TIER A] Zero-shot physics-supervised neural network for data-free photoacoustic tomography reconstruction — Applied Physics Letters</h3>
-  <div class=tag>[방법전환] [위험보류]</div>
-  <p><strong>왜 A급인가:</strong> 광음향 토모그래피를 포함한 영상 재구성 분야의 오랜 병목은 "깨끗한 정답 영상이 있어야 지도학습이 가능하다"는 점인데, 이 논문은 외부 학습 데이터 자체를 아예 요구하지 않습니다. 랩이 다루는 여러 역문제(포토어쿠스틱, 초음파, 위상 복원)에서 똑같이 "정답이 없다"는 제약에 부딪히는 경우가 많아, 이 논문의 접근 방식이 다른 모달리티로 바로 이식 가능한지가 중요한 질문입니다.</p>
-  <p><strong>핵심:</strong> 기존 딥러닝 기반 광음향 토모그래피 재구성은 대량의 쌍을 이룬(측정-정답) 학습 데이터가 필요했는데, 이 논문은 음향 신호 전달 과정을 이산화된 행렬로 명시적으로 구성해 미분 가능한 전방 연산자로 손실 함수에 직접 내장합니다. 이렇게 하면 단 한 번의 스캔 측정값만으로 그 측정과 일치하도록 신경망을 역으로 최적화할 수 있습니다(초록 기준). 시뮬레이션 혈관 데이터와 실제 쥐 실험 데이터에서 기존 FBP·시간역전·모델 기반 TV 정규화·plug-and-play TV·암묵적 신경 표현(INR) 방법들과 비교해 경쟁력 있는 재구성 성능을 보였다고 보고합니다.</p>
-  <p><strong>주의:</strong> "경쟁력 있는 성능"이 구체적으로 어떤 정량 지표(PSNR, SSIM 등)로 얼마나 차이 나는지는 초록만으로 확인되지 않습니다. 단일 스캔 기반 최적화 방식이므로 스캔당 처리 시간이 기존 사전학습 기반 방법보다 느릴 가능성이 있어, 실시간 적용 가능성은 본문 확인이 필요합니다.</p>
+  <h3>[TIER A] Intelligent Inverse Design of Meta-Absorbers Based on Reversible Deep Learning — Advanced Optical Materials</h3>
+  <div class=tag>[방법전환] [표준후보]</div>
+  <p><strong>왜 A급인가:</strong> 메타표면 역설계는 지금까지 정방향 신경망(구조→스펙트럼)과 역방향 신경망(스펙트럼→구조)을 따로 학습시키는 tandem neural network 방식이 사실상 표준이었는데, 이 논문은 그 두 신경망을 하나의 양방향 학습 가능한 신경망으로 합칩니다. 랩이 메타옵틱스 소자를 설계할 때 반복하는 "시뮬레이션 돌리고 구조 수정하고 다시 시뮬레이션"이라는 루프 자체를 줄일 수 있다는 점에서 파이프라인에 바로 영향을 줄 수 있는 방법전환입니다.</p>
+  <p><strong>핵심:</strong> 기존 tandem neural network는 두 개의 분리된 신경망을 학습시켜야 해서 계산 비용이 높고, 역설계 단계에서 정확도가 떨어지는 경우가 많았습니다. 이 논문은 가역 딥러닝(reversible deep learning, RDL)이라는 하나의 양방향 신경망 구조를 제안해, 정방향(구조→스펙트럼 예측)과 역방향(스펙트럼→구조 설계)을 같은 네트워크 가중치로 동시에 처리합니다. 근적외선 메타흡수체 설계를 예로 들어, 기존 tandem 방식 대비 역예측 정확도를 자릿수 단위로 개선하면서도 학습 파라미터는 66.35%만 사용했다고 보고합니다.</p>
+  <p><strong>주의:</strong> "자릿수 단위 개선"이 정확히 어떤 정량 지표(설계 오차, MSE 등)의 몇 배인지는 abstract 요약 문장 이상의 세부 수치가 없어 본문 확인이 필요합니다. 근적외선 메타흡수체라는 비교적 단순한 proof-of-concept를 넘어, 다중 메타원자·슈퍼셀처럼 더 복잡한 설계에도 그대로 확장되는지도 본문에서 확인해야 합니다.</p>
 </div>
 
 <h2>⚠️ 리스크·한계 필터</h2>
 
 <div class=risk>
   <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
-  <p>[Dataset risk] arXiv 5개 카테고리가 모두 listing 미갱신이라 오늘 신호는 전량 저널 데이터입니다. 평소(정상 daily 기준 2000건 안팎) 대비 정보량이 크게 줄었고, 스캔 414건 중 실제 계산 이미징 신호로 판단한 것은 약 9~10편(약 2%)에 불과해 어제(10/14)보다도 더 얇습니다.</p>
+  <p>[Dataset risk] cs.LG/cs.CV/cs.AI/eess.IV 4개 카테고리(arXiv 736건 중 대부분)가 abstract 없는 title/subject 기반 backfill입니다. eess.SP(30건)와 abstract가 확인된 저널 논문만 깊이 있는 Tier A 분석이 가능했습니다.</p>
   <p>[Dataset risk] Virtual Staining/Pathology 12건 전부가 "virtual"(B2B AR/VR 마케팅, 디지털 학습 생태계)과 "staining"(병리 염색 시약, 식물 조직학) 키워드가 우연히 겹친 오탐입니다.</p>
-  <p>[Dataset risk] Tomography/3D Imaging 33건 중 약 28건은 임상 사례 보고(CT/PET/CBCT, 안과·심혈관 영상)와 지구물리·소재 비파괴검사로, 계산 이미징 방법론과 직접 관련된 논문은 2~3건뿐입니다.</p>
-  <p>[Claim risk] 클러스터 대표 논문 11편 중 5편이 Crossref 초록 미공개 상태로, 제목과 저널명만으로 클러스터 배치를 판단했습니다. 본문 확인 전 배치가 부정확할 수 있습니다.</p>
+  <p>[Dataset risk] Tomography/3D Imaging 38건 중 약 10건은 지진학·재료과학·비파괴검사 'tomography' 키워드 오탐이고, 다수는 임상 사례 보고(CT/PET/CBCT, 안과·심혈관 영상)로 계산 이미징 방법론과는 거리가 있습니다.</p>
+  <p>[Claim risk] 오늘 ROI 배정 비율(14.7%)이 최근 정상 daily(28%대)보다 낮은데, abstract 부재로 classify.py의 키워드 매칭이 보수적으로 작동했을 가능성이 있어 일부 실제 신호가 누락됐을 수 있습니다.</p>
 </div>
 
 <div class=risk>
   <p><strong>[개별 논문 리스크]</strong></p>
-  <p>[Claim risk] Intelligent Inverse Design of Meta-Absorbers가 기존 tandem neural network 대비 "더 정밀하다"고 주장하지만, 초록에 구체적인 정량 비교 수치가 없어 본문 확인 전까지는 정성적 주장으로만 간주해야 합니다.</p>
-  <p>[Baseline risk] Zero-shot physics-supervised neural network는 FBP·TV 정규화·INR 등 여러 기존 방법과 비교했다고 밝히지만, "경쟁력 있는 성능"의 구체적 수치(PSNR/SSIM)가 초록에 없어 비교 우위의 크기를 가늠하기 어렵습니다.</p>
+  <p>[Claim risk] Feed-Forward Multi-View Feature Coding, RDCompGS, VisibilitySplat 등 오늘 클러스터1 대표 논문 5편 모두 abstract가 없어 제목과 subject만으로 클러스터에 배치했습니다. 실제 방법론 세부사항은 본문 확인 전까지 추정입니다.</p>
+  <p>[Claim risk] Intelligent Inverse Design of Meta-Absorbers의 "자릿수 단위 개선"이 구체적으로 어떤 지표 기준인지 abstract에 명시되지 않아 본문 확인이 필요합니다.</p>
+  <p>[Baseline risk] Zero-shot physics-supervised neural network는 여러 기존 방법과 비교했다고 밝히지만, "경쟁력 있는 성능"의 구체적 수치(PSNR/SSIM)가 abstract에 없어 비교 우위의 크기를 가늠하기 어렵습니다.</p>
   <p>[Deployment risk] ZS-PSNN은 스캔마다 최적화를 새로 돌리는 구조라, 사전학습된 모델을 바로 적용하는 기존 지도학습 방법보다 스캔당 처리 시간이 길 가능성이 있어 실시간 임상 적용에는 추가 검증이 필요합니다.</p>
-  <p>[Metric risk] 측정 장비 물리 모델링 클러스터(3편)는 서로 다른 응용(스캐너 보정·X선 회절·편광 분광)에 1편씩만 있어 같은 지표로 직접 비교할 수 없고, 2편은 초록 미공개 상태라 제목 기반 판단입니다.</p>
 </div>
 
 <h2>🧊 Skim-only 후보</h2>
 
 <div class=skim>
   <ul>
-    <li>Tomography/3D Imaging 임상·지구물리·소재 사례 약 28편 [주로 JNL] — CT/PET/CBCT 종양·심혈관·안과 영상, 지진파 탐사, 시멘트 산 저항성 X선 CT 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
-    <li>Virtual Staining/Pathology 키워드 오탐 12편 전부 — B2B AR/VR 마케팅, 공정 마이닝, 식물 조직학 염색법, 피부과 사례보고 등 "virtual"·"staining" 단어만 겹친 무관 논문입니다.</li>
-    <li>Meta-Optics/Diffractive 비설계자동화 응용 6편 — 구조색, 열복사 냉각, 비선형 광학 튜닝, 플라즈모닉 미세유체 등으로 오늘 클러스터1의 "설계 자동화" 각도와는 결이 다릅니다.</li>
-    <li>Deep Learning Methods 22편 중 이미징과 결이 다른 21편 — 심혈관 AI 리뷰, 단백질 구조 예측, 암호화 트래픽 분류, 학생 과목 추천 시스템 등 의료영상 인접 분야이거나 완전히 무관한 응용입니다.</li>
-    <li>Reconstruction/Inverse Problems 나머지 5편 — 고분자 물성 예측, FFT 프로세서 하드웨어 설계, 의료 청구 분류, 유체 상변화 PINN 등으로 방법론은 유사하나 이미징 응용이 아닙니다.</li>
+    <li><strong>Tomography/3D Imaging 임상·지구물리·소재 사례 약 28편</strong> [주로 JNL] — CT/PET/CBCT 종양·심혈관·안과 영상, 지진파 탐사, 시멘트 산 저항성 X선 CT 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
+    <li><strong>Virtual Staining/Pathology 키워드 오탐 12편 전부</strong> — B2B AR/VR 마케팅, 게임 경제학, 식물 조직학 염색법, 피부과 사례보고 등 "virtual"·"staining" 단어만 겹친 무관 논문입니다.</li>
+    <li><strong>Meta-Optics/Diffractive 비설계자동화 응용 8편</strong> [JNL] — 구조색, 열복사 냉각, 비선형 소재 튜닝, 플라즈모닉 미세유체 등으로 오늘 클러스터2의 "역설계·빠른 튜닝" 각도와는 결이 다릅니다.</li>
+    <li><strong>Deep Learning Methods 69편 중 이미징과 결이 다른 약 55편</strong> — 트랜스포머 일반 이론, 그래프 신경망, 테이블형 foundation model, 금융/농업/통신 응용 등 완전히 무관하거나 의료영상과 간접 연결된 응용입니다.</li>
+    <li><strong>Reconstruction/Inverse Problems 나머지 12편</strong> — 고분자 물성 예측, FFT 프로세서 하드웨어 설계, 의료 청구 분류, 전력 변환기 PINN 등으로 방법론은 유사하나 이미징 응용이 아닙니다.</li>
   </ul>
 </div>
 
@@ -343,92 +398,122 @@ html[data-theme=light] body{background-color:#fff}
 
 <h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
 
-<h3>Fourier Ptychography/Microscopy (1편)</h3>
+<h3>Fourier Ptychography/Microscopy (1편) — 실제로는 오탐</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1021/photonsci.6c00066" target=_blank>Designing Guidelines for Bragg Coherent Nano Diffraction in Crystalline Thin Films</a></strong> <span class=pill>JNL</span><br>
-  문제: 반사 기하 Bragg 코히런트 나노 회절에서 기존 피치코그래피 방법이 그대로 적용되지 않음 / 방법: 순방향 시뮬레이션+최대우도 추정으로 두께 프린지에서 격자 변형 정보 추출 / 의미: 오늘 클러스터3 대표, 코히런트 X선 회절 이미징의 측정 가이드라인 제시 / 우선순위: Read
+  <strong>Designing Guidelines for Bragg Coherent Nano Diffraction in Crystalline Thin Films</strong> [JNL]<br>
+  문제: 반사 기하 Bragg 코히런트 나노 회절에서 기존 ptychography 방법이 그대로 적용되지 않음 / 방법: 순방향 시뮬레이션+최대우도 추정으로 두께 프린지에서 격자 변형 추출 / 의미: 'ptychography' 키워드는 비교 대상으로만 등장하는 오탐이지만 측정 가이드라인 자체는 참고 가치 있음 / 우선순위: Skim
 </div>
 
-<h3>Phase Imaging/Holography (3편 중 관련 1편)</h3>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1117/1.apn.5.6.064002" target=_blank>Metasurface design using multiple meta-atoms as fundamental elements: a review</a></strong> <span class=pill>JNL</span><br>
-  문제: 단일 메타원자 설계는 자유도가 부족해 구현 가능한 광학 기능이 제한됨 / 방법: 슈퍼셀 내 다중 메타원자 조합(로컬/비국소 비BIC) 설계 사례 정리 / 의미: 오늘 클러스터1 대표, 메타표면 설계 자유도 확장 리뷰 / 우선순위: Read
-</div>
-<p><small>나머지 2편(wafer 결함검사용 TDI 다크필드 홀로그래피, wavefront sensorless adaptive optics 리뷰)은 Crossref 초록이 공개되지 않아 제목만으로는 랩 ROI와의 연결 강도를 판단하기 어려워 개별 bullet을 생략합니다.</small></p>
+<h3>Lensless/Coded Imaging (0편)</h3>
+<p><small>오늘 이 버킷에 배정된 논문이 0편입니다. 랩 ROI 핵심 공백입니다.</small></p>
 
-<h3>Meta-Optics/Diffractive (10편 중 관련 4편)</h3>
+<h3>Phase Imaging/Holography (4편) — 실제 신호 대표 1편(제목/분야 기준)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1002/adom.71947" target=_blank>Intelligent Inverse Design of Meta-Absorbers Based on Reversible Deep Learning</a></strong> <span class=pill>JNL</span><br>
-  문제: tandem neural network 기반 메타흡수체 역설계가 두 신경망을 따로 학습시켜야 해 계산 비용이 높고 역설계 정확도가 떨어짐 / 방법: 양방향 학습 가능한 가역 딥러닝(RDL) 신경망 하나로 통합 / 의미: 오늘 클러스터1·must-read 대표, 메타표면 역설계 구조 간소화 / 우선순위: Must-read
+  <strong>Metasurface design using multiple meta-atoms as fundamental elements: a review</strong> [JNL]<br>
+  문제: 단일 메타원자 설계는 자유도가 부족해 구현 가능한 광학 기능이 제한됨 / 방법: 슈퍼셀 내 다중 메타원자 조합 설계 사례 정리(제목/분야 기준) / 의미: 메타표면 설계 자유도 확장 리뷰 / 우선순위: Read
 </div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1109/access.2026.3743317" target=_blank>Data-Efficient Physics-Informed Reflection Prediction of Metasurface Absorbers via a GSTC-Embedded Branch-Trunk Neural Operator</a></strong> <span class=pill>JNL</span><br>
-  문제: 메타표면 흡수체 반사 스펙트럼 예측이 많은 학습 데이터를 요구함 / 방법: 일반화 시트 전이 조건(GSTC)을 임베딩한 branch-trunk 신경 연산자 / 의미: 오늘 클러스터1 대표, 데이터 효율적 물리 기반 예측 / 주의: 초록 미공개 / 우선순위: Read
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116666" target=_blank>Physics-inspired neural network prediction of high-Q near-field spectra for roughness-engineered plasmonic metasurfaces</a></strong> <span class=pill>JNL</span><br>
-  문제: 거칠기가 있는 플라즈모닉 메타표면의 고품질(high-Q) 근접장 스펙트럼을 전자기 시뮬레이션 없이 예측하기 어려움 / 방법: 물리 영감 신경망 기반 스펙트럼 예측 / 의미: 오늘 클러스터1 대표, 시뮬레이션 비용 절감 / 주의: 초록 미공개 / 우선순위: Read
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1364/oe.607289" target=_blank>Quantization-Aware Nonlinear Diffractive Neural Network for Robust Optical Image Reconstruction under Fabrication Constraints</a></strong> <span class=pill>JNL</span><br>
-  문제: 회절 신경망을 실제 제작할 때 양자화 오차 때문에 설계대로 동작하지 않음 / 방법: 양자화를 고려한 비선형 회절 신경망 설계 / 의미: 메타옵틱스 설계-제작 간극을 줄이는 접근 / 주의: 초록 미공개, 제목 기반 판단 / 우선순위: Skim-only
-</div>
-<p><small>나머지 6편은 구조색, 열복사 냉각, 비선형 광학 튜닝, 플라즈모닉 미세유체 등 오늘 클러스터1의 "설계 자동화" 각도와 결이 다른 응용이라 개별 bullet을 생략합니다.</small></p>
+<p><small>나머지 3편 중 1편(Bilinear Compressive Security)은 암호화 보안 논문으로 키워드 오탐이고, 2편(wafer 결함검사 홀로그래피, wavefront sensorless adaptive optics 리뷰)은 abstract가 공개되지 않아 제목만으로는 판단을 보류해 개별 bullet을 생략합니다.</small></p>
 
-<h3>Light-Field/Novel Sensors (0편)</h3>
-<p><small>오늘 이 버킷에 배정된 논문이 0편입니다. light field·plenoptic·event camera 관련 저널 신규 등록이 전혀 없었습니다. 랩 ROI 핵심 공백이 이틀째 이어집니다.</small></p>
+<h3>Meta-Optics/Diffractive (11편) — 실제 신호 대표 3편</h3>
+<div class=roi-item>
+  <strong>Intelligent Inverse Design of Meta-Absorbers Based on Reversible Deep Learning</strong> [JNL]<br>
+  문제: tandem neural network 기반 메타흡수체 역설계가 두 신경망을 따로 학습시켜야 해 계산 비용이 높고 역설계 정확도가 떨어짐 / 방법: 양방향 학습 가능한 가역 딥러닝(RDL) 신경망 하나로 통합 / 의미: 오늘의 must-read, 파라미터 66.35%로 자릿수 단위 정확도 개선 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong>Near-Flatband Resonances in Bilayer Moiré Superlattices for Visible-to-Infrared Meta-Optics</strong> [JNL]<br>
+  문제: 넓은 입사각에서도 안정적인 좁은 공진을 유지하는 평면 광학 구조가 어려움 / 방법: 살짝 어긋난 두 격자를 겹친 Moiré 초격자로 평평한 밴드 형성 / 의미: 오늘 클러스터2 대표, 1538nm에서 3.5nm 공진 이동·±24도 입사각 실험 확인 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Linear and Nonlinear Optical Tuning With Sb2S3-Based Metasurfaces</strong> [JNL]<br>
+  문제: 큰 광학 변조와 낮은 손실·강한 field confinement를 동시에 만족하기 어려움 / 방법: 상전이 물질(Sb2S3) 기반 메타표면으로 레이저 유도 상전이 튜닝 / 의미: 오늘 클러스터2 대표, 변조 깊이 92%·3차 고조파 3배 증폭 / 우선순위: Read
+</div>
+<p><small>나머지 8편은 구조색, 열복사 냉각, 비선형 소재 튜닝, 플라즈모닉 미세유체 등 오늘 클러스터2의 "역설계·빠른 튜닝" 각도와 결이 다른 응용이라 개별 bullet을 생략합니다.</small></p>
 
-<h3>Tomography/3D Imaging (33편 중 관련 2편)</h3>
+<h3>Light-Field/Novel Sensors (1편)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1038/s41467-026-78323-0" target=_blank>Orientation tomography of lanthanide-doped nanoprobes by polarization-resolved micro-spectroscopy</a></strong> <span class=pill>JNL</span><br>
-  문제: 비등방성 입자의 3D 방향을 여러 시야각 없이 측정하기 어려움 / 방법: 편광 분해 미세분광 기반 단일 시야각 3D 방향 토모그래피 / 의미: 새로운 3D 방향 측정 설정 제안 / 주의: 랩 ROI와는 다소 거리가 있는 소재과학 응용 / 우선순위: Skim-only
+  <strong>Event Cameras versus Frame Cameras for Synthetic-Aperture Imaging: A Simulation Study</strong> [CV]<br>
+  문제: synthetic-aperture 이미징에서 이벤트 카메라와 프레임 카메라 중 어느 쪽이 가려진 물체 복원에 유리한지 불분명함(제목/분야 기준) / 방법: 시뮬레이션 기반 두 센서 비교 / 의미: 랩 ROI와 직접 관련된 유일한 진짜 신호 / 우선순위: Read
 </div>
-<p><small>나머지 31편은 임상 사례 보고(CT/PET/CBCT, 안과·심혈관 영상)와 지구물리·소재 비파괴검사로 계산 이미징 방법론과 거리가 있는 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
 
-<h3>Virtual Staining/Pathology (12편, 관련 0편)</h3>
-<p><small>오늘 이 버킷에 배정된 12편 전부가 "virtual"(B2B AR/VR 마케팅, 디지털 학습 생태계, 헤리티지 플랫폼)과 "staining"(병리 염색 시약, 식물 조직학, 치과 교정 염색) 키워드 오탐입니다. 실제 label-free/virtual staining 신호는 오늘 0편입니다.</small></p>
+<h3>Tomography/3D Imaging (38편) — 관련 대표 7편</h3>
+<div class=roi-item>
+  <strong>Feed-Forward Multi-View Feature Coding for 3D Gaussian Splatting</strong> [arXiv]<br>
+  문제: 장면별 반복 최적화가 필요해 Gaussian Splatting의 실시간·대규모 적용이 어려움(제목/분야 기준) / 방법: feed-forward 특징 코딩으로 최적화 없이 Gaussian 장면 생성 / 의미: 오늘의 must-read, 클러스터1 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong>RDCompGS</strong> [arXiv]<br>
+  문제: 복원된 Gaussian 장면의 저장·전송 비용이 큼(제목/분야 기준) / 방법: 이미지 코덱 기반 rate-distortion 최적화 압축 / 의미: 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>VisibilitySplat</strong> [arXiv]<br>
+  문제: Gaussian Splatting 장면은 조명을 바꿔 재렌더링하기 어려움(제목/분야 기준) / 방법: 레이트레이싱 기반 오클루전 계산 추가 / 의미: 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Where Should the Gaussians Go? (Cinematic CT)</strong> [arXiv]<br>
+  문제: 예산이 제한된 Gaussian 배정이 CT처럼 의미 있는 해부학적 구조를 놓치기 쉬움(제목/분야 기준) / 방법: 재사용 가능한 라벨 인지 Gaussian 배정 / 의미: 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>DoReMe</strong> [arXiv]<br>
+  문제: 자유호흡 복부 MRI는 모션 때문에 복원이 불안정함(제목/분야 기준) / 방법: 복원과 모션 추정을 Gaussian Splatting으로 동시 최적화 / 의미: 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Orientation tomography of lanthanide-doped nanoprobes by polarization-resolved micro-spectroscopy</strong> [JNL]<br>
+  문제: 비등방성 나노입자의 3D 방향을 여러 시야각 없이 측정하기 어려움 / 방법: 편광 분해 미세분광 기반 단일 시야각 3D 방향 토모그래피 / 의미: 새로운 3D 방향 측정 설정 제안 / 우선순위: Skim
+</div>
+<p><small>나머지 약 31편은 임상 사례 보고(CT/PET/CBCT, 안과·심혈관 영상)와 지구물리·소재 비파괴검사로 계산 이미징 방법론과 거리가 있는 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
 
-<h3>Reconstruction/Inverse Problems (9편 중 관련 4편)</h3>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1063/5.0353516" target=_blank>Zero-shot physics-supervised neural network for data-free photoacoustic tomography reconstruction</a></strong> <span class=pill>JNL</span><br>
-  문제: 광음향 토모그래피 재구성이 대량의 쌍을 이룬 학습 데이터에 의존함 / 방법: 미분 가능한 음향 전방 연산자를 손실 함수에 내장한 제로샷 물리 지도 신경망 / 의미: 오늘 클러스터2·must-read 대표, 데이터 없는 재구성 / 우선순위: Must-read
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1088/1361-6501/aeb3f9" target=_blank>An electric-potential-augmented benchmark dataset for electrical capacitance tomography</a></strong> <span class=pill>JNL</span><br>
-  문제: 기존 ECT 공개 데이터셋이 정전용량 벡터·유전율 영상만 담고 중간 물리량(전위장)을 노출하지 않음 / 방법: COMSOL-MATLAB 파이프라인으로 2만 샘플에 전위장까지 포함한 벤치마크 데이터셋 구축 / 의미: 오늘 클러스터2 대표, 물리 기반 학습용 중간 지도 신호 제공 / 우선순위: Read
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.3390/sym18101708" target=_blank>Topology-Constrained Saddle-Point Reconstruction of Strong-Field Photoelectron Momentum Spectra</a></strong> <span class=pill>JNL</span><br>
-  문제: 강한 장 이온화에서 물리적으로 말이 안 되는 안장점 해가 재구성에 섞여 들어감 / 방법: 물리 기반 신경망으로 후보 해 생성 후 위상수학적 선택자로 비물리적 해 필터링 / 의미: 오늘 클러스터2 대표, 위상 제약 기반 역문제 정제 / 우선순위: Read
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1360/sspma-2026-0582" target=_blank>Quantitative Bone Ultrasound Imaging Based on Implicit Full-Waveform Inversion with Bounded Mapping</a></strong> <span class=pill>JNL</span><br>
-  문제: 뼈 초음파 영상의 완전파형역산(FWI)이 강한 비선형성 때문에 불안정함 / 방법: 범위를 제한하는 매핑을 추가한 암묵적 FWI / 의미: 오늘 클러스터2 대표, 물리 기반 역산의 안정화 / 주의: 초록 미공개, 제목 기반 판단 / 우선순위: Read
-</div>
-<p><small>나머지 5편은 고분자 물성 예측, FFT 프로세서 하드웨어 설계, 의료 청구 분류, 유체 상변화 PINN 등으로 방법론은 유사하나 이미징 응용이 아니라 개별 bullet을 생략합니다.</small></p>
+<h3>Virtual Staining/Pathology (12편) — 실제 신호 0편(키워드 오탐)</h3>
+<p><small>오늘 이 버킷에 배정된 12편 전부가 "virtual"(B2B AR/VR 마케팅, 디지털 학습 생태계, 헤리티지 플랫폼)과 "staining"(병리 염색 시약, 식물 조직학, 수의조직학) 키워드 오탐입니다. 실제 label-free/virtual staining 신호는 오늘 0편입니다.</small></p>
 
-<h3>Deep Learning Methods (22편 중 관련 1편, catch-all 과대표 방지로 1편만 표시)</h3>
+<h3>Reconstruction/Inverse Problems (14편) — 관련 대표 2편</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1117/1.jei.35.5.053021" target=_blank>Modality-specific deep learning frameworks for distortion correction in galvanometric imaging</a></strong> <span class=pill>JNL</span><br>
-  문제: 듀얼축 갈바노미터 스캐너의 기계적 히스테리시스가 레이저 스캐닝 이미징과 OCT의 공간·시간 분해능을 모두 저하시킴 / 방법: 모달리티별로 분리한 두 딥러닝 보정 네트워크(공간 왜곡용 DIR-Net, 시간 지연 보정용) / 의미: 오늘 클러스터3 대표, 측정 장비 물리 모델링 기반 보정, SSIM 0.96까지 개선 / 우선순위: Read
+  <strong>Zero-shot physics-supervised neural network for data-free photoacoustic tomography reconstruction</strong> [JNL]<br>
+  문제: 광음향 토모그래피 재구성이 대량의 쌍을 이룬 학습 데이터에 의존함 / 방법: 미분 가능한 음향 전방 연산자를 손실 함수에 내장한 제로샷 물리 지도 신경망 / 의미: 오늘의 must-read, 클러스터3 대표 / 우선순위: Must-read
 </div>
-<p><small>나머지 21편은 심혈관 AI 리뷰, 단백질 구조 예측, 암호화 트래픽 분류, 학생 과목 추천 시스템 등 의료영상 인접 분야이거나 완전히 무관한 응용이라 개별 bullet을 생략합니다.</small></p>
+<div class=roi-item>
+  <strong>An electric-potential-augmented benchmark dataset for electrical capacitance tomography</strong> [JNL]<br>
+  문제: 기존 ECT 공개 데이터셋이 정전용량 벡터·유전율 영상만 담고 중간 물리량(전위장)을 노출하지 않음 / 방법: COMSOL-MATLAB 파이프라인으로 2만 샘플에 전위장까지 포함한 벤치마크 데이터셋 구축 / 의미: 클러스터3 대표, 물리 기반 학습용 중간 지도 신호 제공 / 우선순위: Read
+</div>
+<p><small>나머지 12편은 고분자 물성 예측, FFT 프로세서 하드웨어 설계, 의료 청구 분류, 전력 변환기·유체 상변화 PINN 등으로 방법론은 유사하나 이미징 응용이 아니라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods (69편) — 이미징 관련 대표 5편</h3>
+<div class=roi-item>
+  <strong>VascuSR: Iterative Anatomy-Aware Diffusion for CT Super-Resolution</strong> [arXiv]<br>
+  문제: CT 초해상도에서 혈관처럼 가늘고 끊어지기 쉬운 구조가 diffusion 과정에서 손상되기 쉬움(제목/분야 기준) / 방법: 해부학 구조를 반복 참조하는 anatomy-aware diffusion / 의미: 클러스터4 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>DeBoneDiT</strong> [arXiv]<br>
+  문제: 흉부 X선에서 뼈가 폐 병변을 가림(제목/분야 기준) / 방법: 깊이 조건 bridge diffusion transformer로 뼈 성분 선택적 억제 / 의미: 클러스터4 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Look Before You Restore</strong> [arXiv]<br>
+  문제: 이미지 복원이 실패할지 미리 알기 어려움(제목/분야 기준) / 방법: 행동 전 성공/실패 예측 agentic 구조 / 의미: 클러스터4 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>ComFormer</strong> [JNL]<br>
+  문제: CNN·Transformer 단독 구조가 전역 맥락과 경계 정밀도를 동시에 만족하기 어려움 / 방법: Efficient Dual Attention·External Attention·Graph Convolution을 결합한 하이브리드 구조 / 의미: Synapse 83.46% DSC로 벤치마크 SOTA 추이에 반영 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong>Deep Learning-Based Multiple Sclerosis Lesion Segmentation at 7 Tesla</strong> [JNL]<br>
+  문제: 7T 초고자장 MRI는 해상도는 높지만 아티팩트 때문에 자동 분할이 어려움 / 방법: nnUNet으로 MP2RAGE/FLAIR 단일·결합 입력 비교 / 의미: 병변 크기별 성능 차이까지 확인한 벤치마크 / 우선순위: Read
+</div>
+<p><small>나머지 약 64편은 트랜스포머 일반 이론, 그래프 신경망, 테이블형 foundation model, 금융/농업/통신 응용 등으로 이미징과 직접 관련이 없어 개별 bullet을 생략합니다.</small></p>
 
 <hr>
 
 <h2>🔗 참고 링크</h2>
 <ul>
   <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://arxiv.org/abs/2610.20590" target=_blank>Feed-Forward Multi-View Feature Coding for 3DGS — arXiv</a></li>
   <li><a href="https://doi.org/10.1002/adom.71947" target=_blank>Intelligent Inverse Design of Meta-Absorbers — Advanced Optical Materials</a></li>
-  <li><a href="https://doi.org/10.1063/5.0353516" target=_blank>Zero-shot physics-supervised neural network for PACT — Applied Physics Letters</a></li>
   <li><a href="2026-10-14.html">2026-10-14 Daily Briefing</a></li>
   <li><a href="../feed.xml">RSS 피드</a></li>
 </ul>
 
 <footer>
-  <p>📚 입력: 2026-10-15 journal-only 잠정본 · arXiv 0건(5개 카테고리 모두 10/14 listing 유지) + 저널 414편, 전체 스캔 414건 · ROI 배정 90건 (21.7%, 실제 계산 이미징 신호 약 10편) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
+  <p>📚 입력: 2026-10-15 daily 업그레이드 실행 · arXiv 766건(new+cross) + 저널 409편, 전체 스캔 1020건(중복 제거) · ROI 배정 150건 (14.7%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
   <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
-  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성) · journal-only 잠정본(414건 스캔, 90건 배정)을 arXiv+저널 완성본으로 덮어씀</p>
   <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
 </footer>
 

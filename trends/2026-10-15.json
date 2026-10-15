@@ -1,37 +1,37 @@
 {
  "date": "2026-10-15",
  "source_listing_date": "2026-10-15",
- "source_mode": "journal-only",
- "note": "2026-10-15(목) daily 실행. Date Source Contract 점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 /new listing이 \"Wednesday, 14 October 2026\"에 머물러 있었다(어제 2026-10-14 daily가 이미 이 listing을 정상 소비함). post_date(10/15) > listing_date(10/14)라 prompts/instruction.md 2.1의 저널 독립 규칙에 따라 arXiv 섹션 없이 Crossref/OpenAlex 저널만으로 journal-only 잠정본을 발행한다. Crossref 9개 키워드 질의(--days 1, 2026-10-15 등록분 기준)로 411건을 수집하고 OpenAlex works 보충 질의로 4건을 더해 전체 414건을 스캔, classify.py로 90건(21.7%)이 9개 ROI 버킷에 배정됐다. 다만 90건 중 'tomography'(임상 CT/PET/CBCT 사례, 지구물리·소재 비파괴검사)·'staining'(병리 염색 시약, 식물 조직학, B2B AR/VR)·'metasurface'(안테나·열복사 등 비광학 응용) 같은 범용 키워드 오탐을 제외하면 실제 계산 이미징 신호는 약 9~10편으로 추정된다(10/13 대비 신호가 뚜렷이 얇음). 이 신호를 다시 묶어 (1) 메타표면 설계를 물리 기반 신경망으로 대체하는 흐름, (2) 적은/영 데이터로 역문제를 푸는 물리 기반 신경망이 토모그래피·분광 전반에 확산되는 흐름, (3) 측정 장비 자체의 물리적 왜곡을 모델링·보정하는 흐름 — 3개 클러스터를 구성했다. Lensless/Coded Imaging과 Light-Field/Novel Sensors 두 핵심 ROI 버킷은 오늘도 배정 0건으로 공백이 이어진다. arXiv가 10/15 listing으로 갱신되고 /pastweek에 해당 섹션이 뜨면 다음 실행에서 arXiv 포함 완전판으로 업그레이드된다.",
+ "source_mode": "pastweek-date-section",
+ "note": "2026-10-15(목) journal-only 잠정본을 arXiv+저널 완성본으로 업그레이드. 실행 시점에 cs.LG/cs.CV/cs.AI/eess.IV 4개 카테고리의 /new가 '0 new submissions'을 보여주는 캐시 지연 상태였으나 날짜 배너는 2026-10-15를 정확히 가리켰다 — Date Source Contract에 따라 /new 대신 /pastweek에서 2026-10-15 날짜 섹션만 추출하는 backfill parser로 복구했다(abstract 없이 title/subject 기준, source_mode=pastweek-date-section). 단 eess.SP는 /new가 정상적으로 당일 콘텐츠를 서빙해 /new를 그대로 사용했고(abstract 포함, 25 new + 5 cross), eess.SP의 /pastweek는 HTTP 406을 반환해 애초에 backfill이 불가능했다 — 결과적으로 eess.SP만 /new 직접 사용, 나머지 4개는 /pastweek 날짜 섹션 backfill이라는 혼합 소스 상태다. 저널(Crossref+OpenAlex)은 arXiv listing 상태와 무관하게 매 실행 수행되므로 영향 없음. classified.json은 arXiv 5개 카테고리(new+cross 766건) + 저널 409편 + OpenAlex 보충 4편을 합쳐 총 1020건을 스캔했고 150건(14.7%)을 9개 ROI 버킷에 배정했다. 이 비율은 instruction.md의 40% 체크리스트 기준보다 낮지만, 이 repo의 최근 실측(2026-10-12는 28.1%, 2026-10-14는 28.0%, 과거 최저치는 약 12.5%)과 비교해도 그 범위 하단에 가깝다 — title/subject 기반 backfill 4개 카테고리가 abstract 없이 제목만으로 분류되면서 classify.py의 키워드 매칭이 더 보수적으로 작동했을 가능성이 있고, 이는 이 repo에서 반복적으로 관찰돼 온 패턴이라 parser 실패로 보지 않는다. 버킷 내부를 수작업으로 재검토한 결과 Virtual Staining/Pathology(12건)는 전부 'virtual'/'staining' 단어만 겹치는 오탐(교육공학, 게임경제학, 화학, 수의조직학 등)이었고, Tomography/3D Imaging(38건) 중 약 10건은 지진학·재료과학·비파괴검사 등 'tomography' 키워드 오탐이었다. 반면 Tomography 버킷 안에 3D Gaussian Splatting 계열 논문 5편이 뚜렷하게 모여 있었고, Meta-Optics(11건)와 Reconstruction(14건)에는 abstract가 확인된 실신호(메타흡수체 역설계, 광음향/전기용량 토모그래피 물리 기반 재구성)가 섞여 있었다.",
  "daily_new_counts": {
   "by_cat": {
-   "cs.LG": 0,
-   "cs.CV": 0,
-   "cs.AI": 0,
-   "eess.IV": 0,
-   "eess.SP": 0
+   "cs.LG": 305,
+   "cs.CV": 143,
+   "cs.AI": 280,
+   "eess.IV": 8,
+   "eess.SP": 30
   },
   "scope": "new+cross; replacements excluded",
-  "journal_count": 414
+  "journal_count": 409
  },
  "totals": {
-  "total_scanned": 414,
-  "selected": 90
+  "total_scanned": 1020,
+  "selected": 150
  },
  "classified": {
-  "total_scanned": 414,
-  "selected": 90,
+  "total_scanned": 1020,
+  "selected": 150,
   "by_bucket": {
    "Fourier Ptychography/Microscopy": 1,
    "Lensless/Coded Imaging": 0,
-   "Phase Imaging/Holography": 3,
-   "Meta-Optics/Diffractive": 10,
-   "Light-Field/Novel Sensors": 0,
-   "Tomography/3D Imaging": 33,
+   "Phase Imaging/Holography": 4,
+   "Meta-Optics/Diffractive": 11,
+   "Light-Field/Novel Sensors": 1,
+   "Tomography/3D Imaging": 38,
    "Virtual Staining/Pathology": 12,
-   "Reconstruction/Inverse Problems": 9,
-   "Deep Learning Methods": 22
+   "Reconstruction/Inverse Problems": 14,
+   "Deep Learning Methods": 69
   }
  },
- "daily_thesis": "오늘은 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 arXiv listing이 어제(10/14) 것에 머물러 있어 저널만으로 만든 잠정본입니다. 가장 뚜렷한 신호는 메타표면 설계에서 전자기 시뮬레이션을 직접 돌리는 대신 물리 기반 신경망으로 그 과정을 대체하려는 논문이 4편 동시에 나왔다는 점이고, 두 번째는 측정이 매우 제한적이거나 아예 정답 데이터가 없는 상황에서 물리 법칙 자체를 학습 신호로 쓰는 재구성 방법이 광음향 토모그래피·전기용량 토모그래피·강한 장 이온화 분광까지 서로 다른 영상 양상에서 동시에 나타났다는 점입니다."
+ "daily_thesis": "오늘 가장 뚜렷한 신호는 3D Gaussian Splatting이 '장면 하나를 잘 복원하기'를 넘어 압축·시점 간 특징 코딩·오클루전 기반 재조명·의료 CT 모션 보정까지 동시에 다루는 인프라 단계로 들어섰다는 점이고, 두 번째는 메타표면 역설계와 광음향/전기용량 토모그래피 재구성이 서로 다른 버킷에서 독립적으로 '정답 데이터나 반복 시뮬레이션 없이 물리 법칙 자체를 모델 안에 박아 넣는' 같은 태도로 수렴하고 있다는 점입니다. 다만 오늘은 cs.LG/cs.CV/cs.AI/eess.IV 4개 카테고리가 abstract 없는 title 기반 backfill이라 Tier A 깊이는 eess.SP와 abstract가 확인된 저널 논문 위주로 제한됩니다."
 }

@@ -1,4 +1,37 @@
 {
  "date": "2026-10-15",
- "results": []
+ "results": [
+  {
+   "benchmark": "Meta-absorber 역설계 (근적외선, RDL vs tandem neural network)",
+   "metric": "학습 파라미터 비율 / 역예측 정확도",
+   "value": 66.35,
+   "value_str": "파라미터 66.35%만 사용하면서 역예측 정확도는 자릿수(order-of-magnitude) 단위로 개선",
+   "paper": "https://doi.org/10.1002/adom.71947",
+   "paper_title": "Intelligent Inverse Design of Meta-Absorbers Based on Reversible Deep Learning"
+  },
+  {
+   "benchmark": "의료 영상 분할 — Synapse multi-organ CT",
+   "metric": "DSC / HD95",
+   "value": 83.46,
+   "value_str": "83.46% DSC, 16.89mm HD95 (26.05M 파라미터, 6.15G FLOPs)",
+   "paper": "https://doi.org/10.1111/coin.70303",
+   "paper_title": "ComFormer: A Hierarchical Multi-Scale Hybrid Transformer for Precise Medical Image Segmentation"
+  },
+  {
+   "benchmark": "다발성 경화증 병변 분할 — 7T MRI (nnUNet)",
+   "metric": "DSC",
+   "value": 0.72,
+   "value_str": "결합 입력 0.72, MP2RAGE 단독 0.71, FLAIR 단독 0.66 (환자 57명, 115 스캔)",
+   "paper": "https://doi.org/10.3390/jimaging12100510",
+   "paper_title": "Deep Learning-Based Multiple Sclerosis Lesion Segmentation at 7 Tesla: Comparison of Single- and Multi-Contrast MRI Inputs"
+  },
+  {
+   "benchmark": "갈바노미터 스캐너 왜곡 보정 (레이저 스캐닝/OCT)",
+   "metric": "SSIM / MSE / MTF",
+   "value": 0.96,
+   "value_str": "SSIM 0.96±0.02로 개선, MSE 32.32±11.47→16.82±1.59, MTF 26.91→88.21 lp/mm",
+   "paper": "https://doi.org/10.1117/1.jei.35.5.053021",
+   "paper_title": "Modality-specific deep learning frameworks for distortion correction in galvanometric imaging"
+  }
+ ]
 }
