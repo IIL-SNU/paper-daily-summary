@@ -6,14 +6,14 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 16 Oct 2026 11:14:21 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 13:25:28 +0900</lastBuildDate>
     <ttl>720</ttl>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-10-16 (금요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-10-16.html</link>
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-10-16.html</guid>
       <pubDate>Fri, 16 Oct 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘 arXiv 5개 카테고리는 모두 어제(10/15)와 같은 "Thursday, 15 October 2026" listing에 머물러 있어(10/16 신규 listing 미갱신), Crossref 9개 키워드 질의(--days 1)와 OpenAlex 보충 질의로 저널만 404건을 수집·중복제거해 classify.py로 스캔했습니다. 그 결과 90건(22.3%)이 9개 ROI 버킷에 배정됐는데, 이 중 'tomography'(임상 CT/PET/CBCT 사례, 지구물리·소재 비파괴검사)·'staining'(병리 염색 시약, 식물 조직학, VR 부동산 마케팅)·'metasurface'(5G/6G 안테나, THz 전자파 차폐) 같은 범용 키워드 오탐을 빼면 실제 계산 이미징…]]></description>
+      <description><![CDATA[이번 주(2026-10-12 월~10-16 금)는 결국 "arXiv listing이 하루걸러 멈췄다가 다시 따라잡는" 패턴으로 기록됐습니다. 월요일(10/12)은 한 달 CI 공백을 복구한 정상 daily로 Gaussian Splatting이 반사·유체·로봇 조작까지 흡수하는 흐름이 중심이었고, 화요일(10/13)은 listing 정체로 저널만의 잠정본(산업 현장 비파괴 3D 복원 6편)을 냈습니다. 수요일(10/14)은 listing이 복귀하며 "또렷한 프레임이 오히려 오차를 키운다"는 반증 실험과 자기지도 복원 3편이 중심이었고, 목요일(10/15)은 다시 정체해 저널 backfill로 메타표면 하드웨어 결함 보정과 교차격자 파면 현미경의 초기 신호가 처음 등장했습니…]]></description>
     </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-10-15 (목요일)</title>

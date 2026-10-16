@@ -1,4 +1,37 @@
 {
- "date": "2026-10-16",
- "results": []
+  "date": "2026-10-16",
+  "results": [
+    {
+      "benchmark": "Learn2Reg 2026 PSMAReg challenge",
+      "metric": "DSC",
+      "value": 81.0,
+      "value_str": "81.0% DSC",
+      "paper": "https://arxiv.org/abs/2610.21451",
+      "paper_title": "PET Quantification-Preserving Registration for Longitudinal Whole-Body PSMA PET/CT"
+    },
+    {
+      "benchmark": "CAMELYON17-WILDS (cross-centre)",
+      "metric": "AUROC",
+      "value": 0.945,
+      "value_str": "0.94-0.95 AUROC",
+      "paper": "https://arxiv.org/abs/2610.21115",
+      "paper_title": "Evidence Field for Histopathology: Cross-Centre Evaluation and Replayable Spatial Decisions"
+    },
+    {
+      "benchmark": "DIR-LAB",
+      "metric": "TRE",
+      "value": 1.03,
+      "value_str": "1.03mm TRE",
+      "paper": "https://arxiv.org/abs/2610.21845",
+      "paper_title": "Temporal Periodic Image Registration with Implicit Neural Representations"
+    },
+    {
+      "benchmark": "WorldCast world-state-prediction benchmark",
+      "metric": "capability score",
+      "value": 20.1,
+      "value_str": "20.1/100 (best open model) vs 72.8 (GPT-Image-2.5 System)",
+      "paper": "https://arxiv.org/abs/2610.20731",
+      "paper_title": "WorldCast: Exploring Intelligent Visual Generation in World State Prediction"
+    }
+  ]
 }

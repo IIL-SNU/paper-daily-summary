@@ -1,36 +1,37 @@
 {
   "date": "2026-10-16",
   "source_listing_date": "2026-10-16",
-  "source_mode": "journal-only",
-  "note": "2026-10-16(금) daily 실행. Date Source Contract 재점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 /new listing이 여전히 \"Thursday, 15 October 2026\"에 머물러 있다(어제 2026-10-15 daily가 이미 이 listing을 pastweek backfill로 정상 소비). post_date(10/16)가 listing_date(10/15)보다 뒤라 2.1의 저널 독립 규칙에 따라 arXiv 섹션 없이 Crossref/OpenAlex 저널만으로 journal-only 잠정본을 발행한다. Crossref 9개 키워드 질의(--days 1, 2026-10-16 등록분 기준)로 403건을 수집하고 OpenAlex works 보충 질의로 1건을 더해 전체 404건을 스캔, classify.py로 90건(22.3%)을 9개 ROI 버킷에 배정했다. 다만 90건 중 'tomography'(임상 CT/PET/CBCT 사례, 지구물리·소재 비파괴검사)·'staining'(병리 염색 시약, 식물 조직학, VR 부동산 마케팅)·'metasurface'(5G/6G 안테나, THz 전자파 차폐) 같은 범용 키워드 오탐을 제외하면 실제 계산 이미징 신호는 약 13편(전체 스캔의 약 3%)으로, 어제(10/15, 약 10편)보다도 미세하게 늘었지만 여전히 얇다. 이번 주(10/12~10/16) 중 화·목·금 사흘이 모두 arXiv listing 정체를 겪은 셈이다(어제 메모에서 이미 이 패턴을 예측했다). 저널(Crossref+OpenAlex)은 arXiv listing 상태와 무관하게 매 실행 수행되므로 영향 없음. source_mode=journal-only, pending upgrade once arXiv /pastweek exposes a 2026-10-16 section.",
+  "source_mode": "new",
+  "note": "2026-10-16(금) daily 업그레이드 실행. Date Source Contract 재점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 /new listing이 'Friday, 16 October 2026'으로 정확히 갱신됨을 확인했다(post_date == listing_date). 어제 발행한 journal-only 잠정본(source_mode=journal-only)을 arXiv+저널 완전판으로 덮어쓴다. scripts/fetch_arxiv.py new로 5개 카테고리 800건(new+cross, replacement 제외)을 수집했고, Crossref 9개 키워드 질의(--days 1)로 406편, OpenAlex works 보충 질의로 1편을 추가 수집해 OpenAlex enrich로 42편의 인용수·초록을 보강했다. classify.py는 arXiv 800건 + 저널 407편을 합쳐 중복 제거 후 총 1,056건을 스캔했고 285건(27.0%)을 9개 ROI 버킷에 배정했다. 이 비율은 instruction.md의 40% 체크리스트 기준보다 낮지만 이 repo의 최근 실측 범위(2026-10-12 28.1%, 2026-10-14 28.0%, 2026-10-15 14.7%, 과거 최저치 약 12.5%)와 비교하면 오히려 상단에 가깝다. 버킷 내부를 4개의 전문 에이전트로 나눠 재검토한 결과, Virtual Staining/Pathology(35건)는 실제 신호 2건을 제외한 33건이 LLM 평가·로봇 조작·치과 레진 변색 등 'virtual'/'staining' 키워드 오탐이었고, Tomography/3D Imaging(50건) 중 약 41건은 임상 사례 보고·지구물리/고고학 저항 토모그래피·양자 상태 토모그래피 이론으로 계산 이미징 방법론과 무관했다. 반면 Phase Imaging/Holography와 Meta-Optics/Diffractive 두 버킷에 걸쳐 교차격자 파면 현미경(cross-grating wavefront microscopy) 기반 논문 두 편이 어제 journal-only 잠정본에서 포착한 신호와 완전한 abstract로 다시 확인됐고, cs.CV에서는 video generator를 4D 기하 인식기로 재활용하는 클러스터(Gen4P/GeoState/Velox/WorldCast) 4편과 diffusion/flow 추론 가속의 동역학 인식형 캐싱 클러스터 5편(SoftCache 외)이 새로 발견됐다. Reconstruction/Inverse Problems(27건)에서는 변형 정합·압축 센싱을 '정량 지표 보존' 관점으로 정칙화하는 논문 3편이 눈에 띈다.",
   "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 0,
-      "cs.CV": 0,
-      "cs.AI": 0,
-      "eess.IV": 0,
-      "eess.SP": 0
+      "cs.LG": 306,
+      "cs.CV": 165,
+      "cs.AI": 286,
+      "eess.IV": 10,
+      "eess.SP": 33
     },
     "scope": "new+cross; replacements excluded",
-    "journal_count": 403
+    "journal_count": 407
   },
   "totals": {
-    "total_scanned": 404,
-    "selected": 90
+    "total_scanned": 1056,
+    "selected": 285
   },
   "classified": {
-    "total_scanned": 404,
-    "selected": 90,
+    "total_scanned": 1056,
+    "selected": 285,
     "by_bucket": {
       "Fourier Ptychography/Microscopy": 0,
       "Lensless/Coded Imaging": 1,
-      "Phase Imaging/Holography": 10,
+      "Phase Imaging/Holography": 13,
       "Meta-Optics/Diffractive": 11,
-      "Light-Field/Novel Sensors": 2,
-      "Tomography/3D Imaging": 39,
-      "Virtual Staining/Pathology": 12,
-      "Reconstruction/Inverse Problems": 3,
-      "Deep Learning Methods": 12
+      "Light-Field/Novel Sensors": 3,
+      "Tomography/3D Imaging": 50,
+      "Virtual Staining/Pathology": 35,
+      "Reconstruction/Inverse Problems": 27,
+      "Deep Learning Methods": 145
     }
-  }
+  },
+  "daily_thesis": "오늘 가장 뚜렷한 신호는 교차격자 파면 현미경이라는 한 측정 기법이 완전히 다른 두 논문(메타표면 벡터 편광 영상, 나노유체 농도 모니터링)에서 같은 날 같은 저널(ACS Nano)로 동시에 나오며 범용 특성화 플랫폼으로 자리잡고 있다는 점이고, 두 번째는 cs.CV에서 video generator를 영상 생성기가 아니라 4D 기하 인식기로 다시 쓰자는 흐름이 네 편 동시에 나왔는데 그중 한 편(WorldCast)이 '지금 모델들은 아직 그 수준에 한참 못 미친다'는 벤치마크를 같이 내놓으며 기대와 현실의 간극을 스스로 드러냈다는 점이다. Reconstruction 버킷에서는 변형 가능한 영상 정합을 정량 지표 보존 관점으로 정칙화하는 논문 세 편이 독립적으로 수렴했다. 오늘로 이번 주(10/12~10/16) daily 닷새가 모두 채워졌다."
 }
