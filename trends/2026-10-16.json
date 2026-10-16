@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-16",
+  "source_listing_date": "2026-10-16",
+  "source_mode": "journal-only",
+  "note": "2026-10-16(금) daily 실행. Date Source Contract 재점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 /new listing이 여전히 \"Thursday, 15 October 2026\"에 머물러 있다(어제 2026-10-15 daily가 이미 이 listing을 pastweek backfill로 정상 소비). post_date(10/16)가 listing_date(10/15)보다 뒤라 2.1의 저널 독립 규칙에 따라 arXiv 섹션 없이 Crossref/OpenAlex 저널만으로 journal-only 잠정본을 발행한다. Crossref 9개 키워드 질의(--days 1, 2026-10-16 등록분 기준)로 403건을 수집하고 OpenAlex works 보충 질의로 1건을 더해 전체 404건을 스캔, classify.py로 90건(22.3%)을 9개 ROI 버킷에 배정했다. 다만 90건 중 'tomography'(임상 CT/PET/CBCT 사례, 지구물리·소재 비파괴검사)·'staining'(병리 염색 시약, 식물 조직학, VR 부동산 마케팅)·'metasurface'(5G/6G 안테나, THz 전자파 차폐) 같은 범용 키워드 오탐을 제외하면 실제 계산 이미징 신호는 약 13편(전체 스캔의 약 3%)으로, 어제(10/15, 약 10편)보다도 미세하게 늘었지만 여전히 얇다. 이번 주(10/12~10/16) 중 화·목·금 사흘이 모두 arXiv listing 정체를 겪은 셈이다(어제 메모에서 이미 이 패턴을 예측했다). 저널(Crossref+OpenAlex)은 arXiv listing 상태와 무관하게 매 실행 수행되므로 영향 없음. source_mode=journal-only, pending upgrade once arXiv /pastweek exposes a 2026-10-16 section.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 0,
+      "eess.SP": 0
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 403
+  },
+  "totals": {
+    "total_scanned": 404,
+    "selected": 90
+  },
+  "classified": {
+    "total_scanned": 404,
+    "selected": 90,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 10,
+      "Meta-Optics/Diffractive": 11,
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 39,
+      "Virtual Staining/Pathology": 12,
+      "Reconstruction/Inverse Problems": 3,
+      "Deep Learning Methods": 12
+    }
+  }
+}
