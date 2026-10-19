@@ -5,11 +5,11 @@ run-name: ${{ inputs.upgrade_only && format('Upgrade {0} (journal-only → full)
 
 on:
   schedule:
-    # Daily report — 13:00 KST (04:00 UTC), every day incl. weekends. arXiv's nominal
-    # announce is 09-10 KST, but since 2026-10 /new often lands 11-13 KST. Generates the daily
+    # Daily report — 14:00 KST (05:00 UTC), every day incl. weekends. arXiv's nominal
+    # announce is 09-10 KST, but since 2026-10 /new often lands 11-15 KST. Generates the daily
     # (no-ops when arXiv has nothing new) and delivers its Slack in the same run.
     # When arXiv is late it publishes journal-only and arms arxiv-upgrade-poll.yml.
-    - cron: "0 4 * * *"
+    - cron: "0 5 * * *"
     # Weekly retrospective — Monday 10:00 KST (01:00 UTC). Standalone run that
     # generates last week's weekly (mode=weekly) and delivers its Slack inline.
     - cron: "0 1 * * 1"

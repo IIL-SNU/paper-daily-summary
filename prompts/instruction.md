@@ -51,7 +51,7 @@ weekly_date    = weekly HTML 파일명에 쓸 날짜(매주 월요일 발행, �
 ```
 
 예:
-- 월요일 daily 실행(13:00 KST)은 그날 daily(`post_date=월요일`)만 만든다.
+- 월요일 daily 실행(14:00 KST)은 그날 daily(`post_date=월요일`)만 만든다.
 - 지난주 회고 weekly는 **별도의 월요일 오전 weekly 실행**(10:00 KST, `mode=weekly`)이 만든다 — `posts/YYYY-MM-DD-weekly.html`(파일명 날짜 = 발행 월요일). 지난주(직전 월~금) 평일 daily가 모두 존재해야 하며, 없으면 그 주 daily 실행들의 Calendar Audit이 먼저 Backfill해 둔다.
 
 ### 2.1 Date Source Contract — hard gate
@@ -163,14 +163,14 @@ done
 
 ### 4.3 Weekly mode
 조건:
-- **매주 월요일 오전 10:00 KST의 독립 실행**(`mode=weekly`, `0 1 * * 1` cron). daily 실행(13:00 KST)과 분리돼 있으며, weekly 실행은 daily를 만들지 않는다.
+- **매주 월요일 오전 10:00 KST의 독립 실행**(`mode=weekly`, `0 1 * * 1` cron). daily 실행(14:00 KST)과 분리돼 있으며, weekly 실행은 daily를 만들지 않는다.
 - 지난주(직전 월~금) 평일 daily 산출물이 모두 존재해야 한다(없으면 그 주 daily 실행들의 Calendar Audit이 미리 Backfill).
 
 동작:
 - 지난주를 회고하는 `posts/YYYY-MM-DD-weekly.html` 생성(파일명 날짜 = 발행 월요일).
 - `weekly/YYYY-WW.json` 생성(회고 대상 = 지난주 ISO week).
 - `trends/YYYY-MM-DD.json` 갱신.
-- weekly는 **지난주(직전 월~금) 산출물만 회고**하며 당일(월) daily에 의존하지 않는다(당일 daily는 이후 13:00 실행이 생성). 따라서 당일 daily의 `insights`를 weekly 실행에서 만들지 않는다.
+- weekly는 **지난주(직전 월~금) 산출물만 회고**하며 당일(월) daily에 의존하지 않는다(당일 daily는 이후 14:00 실행이 생성). 따라서 당일 daily의 `insights`를 weekly 실행에서 만들지 않는다.
 
 ### 4.4 Weekend mode (토·일)
 조건:
@@ -969,7 +969,7 @@ push 실패 시 Slack 발송도 스킵한다.
 ## [17. Slack 발송]
 
 생성과 Slack은 **같은 실행에서** 처리한다(별도 발송 잡 없음). 정기 실행은 두 종류다:
-- **daily 실행** — 매일 13:00 KST(`0 4 * * *`). arXiv에 새 listing이 있으면 daily를 생성하고, push 성공 직후 **daily 요약** Slack을 보낸다.
+- **daily 실행** — 매일 14:00 KST(`0 5 * * *`). arXiv에 새 listing이 있으면 daily를 생성하고, push 성공 직후 **daily 요약** Slack을 보낸다.
 - **weekly 실행** — 매주 월요일 10:00 KST(`0 1 * * 1`, `mode=weekly`). 지난주 회고 weekly를 생성하고, push 성공 직후 **weekly 요약** Slack을 보낸다.
 
 에이전트는 두 경우 모두 메시지 본문(mrkdwn)을 `out/slack_message.txt`로 작성한다(daily면 daily 요약, weekly면 weekly 요약). 같은 실행의 마지막 단계가 이를 **Slack 봇(`chat.postMessage`)**으로 `SLACK_CHANNEL_ID` 채널에 보낸다. **발행 시(`out/release_ok.txt` 존재)** 요약을, **실행 실패 시** 실패 알림을 보내며, **no-op(주말 daily 등)은 미발송**이다.

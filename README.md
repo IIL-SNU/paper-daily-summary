@@ -224,8 +224,8 @@ Crossref(저널)는 위에 더해 `source:"crossref"`, `doi`, `journal`, `url`, 
 3. **Settings → Actions → General → Workflow permissions** 를 *Read and write* 로 설정
 4. **Settings → Pages → Source** 를 *GitHub Actions* 로 설정
 
-스케줄은 두 가지입니다(`arxiv-daily-summary.yml`의 `cron`으로 조정): **daily 보고서**는 매일 `04:00 UTC`(= `13:00 KST`)에 생성하고 같은 실행에서 Slack까지 보냅니다(arXiv `/new`의 공식 공지는 오전 9~10시 KST지만 2026-10부터 11~13시에 올라오는 날이 많아 13시로 늦춤; 주말 포함 매일 실행, 새 글 없으면 no-op). **weekly 회고**는 매주 월요일 `01:00 UTC`(= `10:00 KST`)에 **별도 실행**으로 생성+Slack합니다. 추가로 **업그레이드 폴**(`arxiv-upgrade-poll.yml`, 2시간 간격)이 있는데, 평소엔 꺼져 있다가 daily가 arXiv 지연으로 *journal-only*를 발행했을 때만 켜집니다. 켜져 있는 동안 Claude 없이 그 날짜의 arXiv가 `/pastweek`에 떴는지만 확인하고, 떴으면 `backfill`(`upgrade_only`)로 업그레이드를 **날짜당 한 번만** 디스패치합니다. 최신 daily가 완성본이 되거나 시도가 끝나면 스스로 꺼지고, 늦어도 다음 daily 실행이 끕니다. Pages 배포는 실행이 `main`을 실제로 바꿨을 때만 daily 워크플로가 직접 트리거합니다.
-**weekly 회고는 매주 월요일 오전 10시 KST의 독립 실행**으로 발행됩니다(지난주 회고, daily와 분리). daily는 매일(주말 포함) 13시에 돌며 arXiv에 새 글이 없으면 no-op.
+스케줄은 두 가지입니다(`arxiv-daily-summary.yml`의 `cron`으로 조정): **daily 보고서**는 매일 `05:00 UTC`(= `14:00 KST`)에 생성하고 같은 실행에서 Slack까지 보냅니다(arXiv `/new`의 공식 공지는 오전 9~10시 KST지만 2026-10부터 11~15시에 올라오는 날이 많아 14시로 늦춤; 주말 포함 매일 실행, 새 글 없으면 no-op). **weekly 회고**는 매주 월요일 `01:00 UTC`(= `10:00 KST`)에 **별도 실행**으로 생성+Slack합니다. 추가로 **업그레이드 폴**(`arxiv-upgrade-poll.yml`, 2시간 간격)이 있는데, 평소엔 꺼져 있다가 daily가 arXiv 지연으로 *journal-only*를 발행했을 때만 켜집니다. 켜져 있는 동안 Claude 없이 그 날짜의 arXiv가 `/pastweek`에 떴는지만 확인하고, 떴으면 `backfill`(`upgrade_only`)로 업그레이드를 **날짜당 한 번만** 디스패치합니다. 최신 daily가 완성본이 되거나 시도가 끝나면 스스로 꺼지고, 늦어도 다음 daily 실행이 끕니다. Pages 배포는 실행이 `main`을 실제로 바꿨을 때만 daily 워크플로가 직접 트리거합니다.
+**weekly 회고는 매주 월요일 오전 10시 KST의 독립 실행**으로 발행됩니다(지난주 회고, daily와 분리). daily는 매일(주말 포함) 14시에 돌며 arXiv에 새 글이 없으면 no-op.
 Slack 알림은 각 실행의 마지막 단계가 보냅니다 — **daily 실행은 daily 요약**, **월요일 weekly 실행은 weekly 요약**, **실행 실패 시 실패 알림**(모두 push 성공 직후 `chat.postMessage`로 `SLACK_CHANNEL_ID` 채널에). 발행도 실패도 아닌 **no-op(주말 daily 등)은 미발송**(`out/release_ok.txt` 기준)입니다.
 워크플로우는 `mode`(auto/daily/backfill/weekly/sunday)·`target_date`·`send_slack`을 수동 실행 입력으로 받습니다.
 
