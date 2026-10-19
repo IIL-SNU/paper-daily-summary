@@ -1,4 +1,45 @@
 {
   "date": "2026-10-19",
-  "results": []
+  "results": [
+    {
+      "benchmark": "C3VD-v2 (Endoscopic Gaussian Splatting SLAM, matched vs SplaTAM)",
+      "metric": "Rotational relative pose error reduction",
+      "value": 20.3,
+      "value_str": "-20.3% rotational RPE vs SplaTAM",
+      "paper": "https://arxiv.org/abs/2610.22505",
+      "paper_title": "KFS^4LAM: Adaptive Keyframe Selection with Structure-Aware Mapping for Endoscopic Gaussian Splatting SLAM"
+    },
+    {
+      "benchmark": "C3VD-v2 (Endoscopic Gaussian Splatting SLAM, matched vs SplaTAM)",
+      "metric": "Depth RMSE reduction",
+      "value": 38.4,
+      "value_str": "-38.4% depth RMSE vs SplaTAM",
+      "paper": "https://arxiv.org/abs/2610.22505",
+      "paper_title": "KFS^4LAM: Adaptive Keyframe Selection with Structure-Aware Mapping for Endoscopic Gaussian Splatting SLAM"
+    },
+    {
+      "benchmark": "N-dimensional splatting (main MCMC evaluation)",
+      "metric": "PSNR gain over covariance-derived conditioning",
+      "value": 1.26,
+      "value_str": "+1.26 dB PSNR, 6.9-7.7x faster slicing",
+      "paper": "https://arxiv.org/abs/2610.22778",
+      "paper_title": "Direct Conditional Parameterization for N-Dimensional Splatting"
+    },
+    {
+      "benchmark": "CIFAR-10 (color), single-layer optical convolution",
+      "metric": "Classification accuracy",
+      "value": 86.6,
+      "value_str": "57.5% -> 86.6% accuracy",
+      "paper": "https://doi.org/10.1002/advs.78340",
+      "paper_title": "Spatiotemporal Computational Meta-Imager for Broadband Dual-Layer Optical Convolution"
+    },
+    {
+      "benchmark": "SIPaKMeD (medical cell classification), single-layer optical convolution",
+      "metric": "Classification accuracy",
+      "value": 99.3,
+      "value_str": "99.3% accuracy, 99.7% of MAC ops offloaded to optics",
+      "paper": "https://doi.org/10.1002/advs.78340",
+      "paper_title": "Spatiotemporal Computational Meta-Imager for Broadband Dual-Layer Optical Convolution"
+    }
+  ]
 }

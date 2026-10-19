@@ -1,6 +1,6 @@
 {
   "date": "2026-10-19",
-  "note": "2026-10-19(월) 10:00 KST weekly 실행이 지난주(10-12~10-16) 회고(posts/2026-10-19-weekly.html, weekly/2026-42.json)를 먼저 발행했다. 이어진 11:00 KST daily 실행에서 Date Source Contract를 점검한 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 /new listing이 여전히 \"Friday, 16 October 2026\"에 머물러 있었다(금요일 daily가 이미 이 listing을 정상 소비). post_date(10/19) > listing_date(10/16)라 저널 독립 규칙에 따라 arXiv 섹션 없이 journal-only로 발행한다. Crossref 9개 키워드 질의를 --days 1로 먼저 수집했더니 282건 중 45건(15.9%)만 ROI에 배정되고 임상 사례 보고 위주라 클러스터 구성 근거가 부족해, prompts/instruction.md 2.1의 '재수집' 조항에 따라 --days 3으로 넓혀 재수집했다. --days 3(2026-10-16~10-19 등록분, 주말분 포함)으로 442건을 수집하고 OpenAlex enrich로 48건을 보강한 뒤 classify.py로 스캔해 119건(26.9%)이 9개 ROI 버킷에 배정됐다. 이 중 임상 사례 보고(CT/OCT/PET)·키워드 오탐('virtual' 가상학습, 'staining' 치아/세균 염색)을 제외한 실제 계산 이미징 신호는 약 30편(클러스터 대표 18편 + 도메인 watch/부록 단발 신호 12편)으로 추정되며, 클러스터 대표분을 (1) single-shot/단일픽셀 계산 이미징, (2) 위상 복원의 classical-학습 공존, (3) CT/MRI 재구성의 deep unrolling 이동, (4) 광학 하드웨어 직접 연산 — 4개 클러스터로 묶었다. 이번 수집 윈도우가 지난주 daily의 journal_new.json 수집분과 일부 겹칠 수 있어, 최근 5영업일 insights에 등장한 arxiv/DOI 60건과 대조해 오늘 선정분과 중복이 없음을 확인했다. arXiv가 10/19 listing으로 갱신되고 /pastweek에 해당 섹션이 뜨면 다음 실행에서 arXiv 포함 완전판으로 업그레이드된다.",
+  "note": "2026-10-19(월) 11:00 KST에 journal-only 잠정본을 먼저 발행했다(arXiv 5개 카테고리 모두 /new listing이 'Friday, 16 October 2026'에 머물러 post_date>listing_date였음). 이후 Date Source Contract를 재점검한 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 /new listing이 'Monday, 19 October 2026'으로 정상 갱신됨을 확인해(post_date==listing_date) arXiv+저널 완전판으로 업그레이드한다. 오전 저널 수집분(Crossref --days 3, 442편 스캔, 119편 ROI 배정)은 그대로 유지하고, arXiv만 scripts/fetch_arxiv.py new로 5개 카테고리 570건(new+cross, replacement 제외)을 새로 수집해 별도로 classify.py를 돌렸다(저널 재분류와의 교차 오염을 막기 위해 out/journal_new.json을 일시 제외하고 arXiv 단독 493건 스캔, 156건(31.6%) 선정). 두 분류 결과(arXiv 156건 + 저널 119건)를 버킷별로 합산해 총 935건 스캔, 275건(29.4%) ROI 배정으로 집계했다. arXiv 쪽에서 가장 뚜렷한 신호는 cs.CV의 3D Gaussian Splatting 확장 클러스터(X-Splat, KFS4LAM, LonGaussian, Direct Conditional Parameterization, Frame-Consistent Feed-Forward, TriFold 6편)이며, 두 번째는 CT/MRI에 국한됐던 '물리 연산자+학습 정칙화 하이브리드' 패턴이 NLOS(Measurement-Adaptive Light-Cone Transform), 종단 MRI(LGGS), 광음향단층촬영(Untrained CNN)까지 확장된 점이다. 저널 재검토 과정에서 Meta-Optics/Diffractive 버킷(15편) 중 기존에 노출하지 않았던 Spatiotemporal Computational Meta-Imager(단일층 메타렌즈 광학 convolution, CIFAR-10 86.6%·SIPaKMeD 99.3%)를 추가로 끌어올려 클러스터4에 반영했다. Virtual Staining/Pathology에서는 arXiv 쪽에 병리 파운데이션 모델 일반화/전처리 보정 논문 2편(IHC grading correction, tissue graph encoder)이 새로 나타나 Watch-only로 추적한다. 최근 5영업일 insights와 대조해 오늘 클러스터 선정분(특히 저널 18편)과 중복이 없음을 재확인했다.",
   "weekly_retrospective_context": {
     "iso_week": "2026-42",
     "week_start": "2026-10-12",
@@ -32,37 +32,38 @@
     }
   },
   "source_listing_date": "2026-10-19",
-  "source_mode": "journal-only",
+  "source_mode": "new",
   "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 0,
-      "cs.CV": 0,
-      "cs.AI": 0,
-      "eess.IV": 0,
-      "eess.SP": 0
+      "cs.LG": 222,
+      "cs.CV": 126,
+      "cs.AI": 174,
+      "eess.IV": 17,
+      "eess.SP": 31
     },
     "scope": "new+cross; replacements excluded",
     "journal_count": 442,
-    "journal_window_days": 3
+    "journal_window_days": 3,
+    "journal_note": "저널 수집분은 오전 journal-only 잠정본(--days 3) 그대로 유지, arXiv만 신규 수집"
   },
   "totals": {
-    "total_scanned": 442,
-    "selected": 119
+    "total_scanned": 935,
+    "selected": 275
   },
   "classified": {
-    "total_scanned": 442,
-    "selected": 119,
+    "total_scanned": 935,
+    "selected": 275,
     "by_bucket": {
-      "Fourier Ptychography/Microscopy": 2,
-      "Lensless/Coded Imaging": 0,
+      "Fourier Ptychography/Microscopy": 3,
+      "Lensless/Coded Imaging": 3,
       "Phase Imaging/Holography": 17,
       "Meta-Optics/Diffractive": 15,
-      "Light-Field/Novel Sensors": 4,
-      "Tomography/3D Imaging": 34,
-      "Virtual Staining/Pathology": 14,
-      "Reconstruction/Inverse Problems": 7,
-      "Deep Learning Methods": 26
+      "Light-Field/Novel Sensors": 5,
+      "Tomography/3D Imaging": 42,
+      "Virtual Staining/Pathology": 24,
+      "Reconstruction/Inverse Problems": 26,
+      "Deep Learning Methods": 140
     }
   },
-  "daily_thesis": "오늘은 arXiv 5개 카테고리 모두 listing이 금요일(10/16) 것에 머물러 있어 저널만으로 만든 잠정본입니다. 가장 뚜렷한 신호는 피치코그래피·단일픽셀 현미경·홀로그래피·간섭계처럼 서로 다른 계산광학 하위분야 6편이 모두 '한 번의 촬영/신호로 더 많은 정보를 뽑아내자'는 single-shot 방향으로 동시에 움직였다는 점이고, 두 번째는 CT·MRI 재구성 5편이 classical 알고리즘의 정칙화·보간·노이즈 모델 단계를 신경망 블록(unrolling, 자기지도학습, transformer)으로 계속 바꾸고 있다는 점입니다."
+  "daily_thesis": "오늘은 두 신호가 겹쳤습니다. 오전 저널 잠정본에서 확인한 '촬영 횟수를 줄이는 single-shot 계산 이미징' 흐름에 더해, arXiv가 정상화되며 3D Gaussian Splatting이 내시경 SLAM·X-ray 융합·장시간 스트리밍으로 동시에 6편 확장됐고, CT/MRI 재구성 하이브리드 패턴이 NLOS·Cryo-EM·광음향까지 번졌습니다."
 }
