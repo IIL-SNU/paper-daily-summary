@@ -1,0 +1,175 @@
+{
+  "date": "2026-10-19",
+  "source_mode": "journal-only",
+  "clusters": [
+    {
+      "cluster": "피치코그래피·단일픽셀현미경·홀로그래피가 '한 번 더 찍기'보다 '한 번에 더 뽑아내기'로 수렴",
+      "papers": [
+        {
+          "title": "Single-shot dynamic ptychography based on multi-angle modulation via spatial light modulator",
+          "arxiv_id": "https://doi.org/10.1016/j.optlastec.2026.116705",
+          "journal_or_source": "Optics & Laser Technology"
+        },
+        {
+          "title": "Dual-beam frequency-division multiplexing for high-throughput single-pixel microscopy",
+          "arxiv_id": "https://doi.org/10.1016/j.optlastec.2026.116689",
+          "journal_or_source": "Optics & Laser Technology"
+        },
+        {
+          "title": "Single-shot full optical field reconstruction via joint amplitude and phase modulation interferometry",
+          "arxiv_id": "https://doi.org/10.1016/j.optlaseng.2026.110176",
+          "journal_or_source": "Optics and Lasers in Engineering"
+        },
+        {
+          "title": "Refractive index measurement of liquids using single-shot common-path interferometry",
+          "arxiv_id": "https://doi.org/10.1016/j.optlastec.2026.116667",
+          "journal_or_source": "Optics & Laser Technology"
+        },
+        {
+          "title": "CNN-based algorithm for improving the quality of Single-Shot Holographic Tomography",
+          "arxiv_id": "https://doi.org/10.1364/oe.609703",
+          "journal_or_source": "Optics Express"
+        },
+        {
+          "title": "Undersampling Fourier single-pixel imaging based on array spatial light field modulation",
+          "arxiv_id": "https://doi.org/10.1016/j.optlastec.2026.116712",
+          "journal_or_source": "Optics & Laser Technology"
+        }
+      ],
+      "why": "예전에는 이미징 품질을 올리려면 여러 번 찍거나 더 많은 샘플을 모으는 쪽으로 가는 경우가 많았는데, 오늘 저널 6편은 모두 '한 번의 촬영 혹은 한 번의 신호 세트로 얼마나 많은 정보를 뽑아낼 수 있는가'를 묻습니다. 동적 피치코그래피 논문은 여러 각도 조명을 한 번에 변조해 움직이는 샘플도 단일 프레임으로 복원하고, 듀얼빔 주파수분할 다중화 논문은 유세포분석처럼 빠르게 흐르는 세포를 단일 픽셀 검출기로 고처리량으로 잡아냅니다. 단일 촬영 전체 광장 복원, 단일 촬영 공통경로 간섭계, CNN 기반 단일 촬영 홀로그래픽 토모그래피, undersampling 상태의 Fourier 단일픽셀 이미징까지 더하면, 피치코그래피·단일픽셀 현미경·간섭계·홀로그래피라는 서로 다른 계산광학 하위분야가 같은 날 같은 방향(촬영·샘플링 횟수를 줄이면서 정보량은 유지)으로 움직였다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "6편이지만 4편이 Optics & Laser Technology 한 저널에 몰려 있어 같은 특집호일 가능성을 배제할 수 없음. 다만 피치코그래피·단일픽셀현미경·간섭계·홀로그래피라는 서로 다른 세부 기술이 같은 방향을 보인다는 점은 유효함",
+      "lab_action": "Dual-beam frequency-division multiplexing single-pixel microscopy의 유세포분석 처리량 수치를 랩 단일픽셀/압축센싱 이미징 셋업과 비교하고, Undersampling Fourier single-pixel imaging의 DuRN-GU(global attention 기반 dual residual network) 복원 네트워크를 랩 저샘플링 재구성 파이프라인에 이식해 PSNR/SSIM을 비교한다"
+    },
+    {
+      "cluster": "위상 복원이 classical 반복 알고리즘과 학습 기반 신경망으로 동시에 정교해짐",
+      "papers": [
+        {
+          "title": "Learning Adaptive Filtering in the Fourier Domain for Fringe Pattern Analysis: A New Reconstruction Paradigm in Digital Holographic Interferometry",
+          "arxiv_id": "https://doi.org/10.1002/nap2.70282",
+          "journal_or_source": "Nanophotonics"
+        },
+        {
+          "title": "Physics-Consistent Dual-Plane-Driven Complex-Domain Learning for Phase Retrieval in Inline Holography",
+          "arxiv_id": "https://doi.org/10.1002/lpor.72050",
+          "journal_or_source": "Laser & Photonics Reviews"
+        },
+        {
+          "title": "Convergence Analysis of Reshaped Wirtinger Flow with Random Initialization for Phase Retrieval",
+          "arxiv_id": "https://doi.org/10.1016/j.cam.2026.118258",
+          "journal_or_source": "Journal of Computational and Applied Mathematics"
+        }
+      ],
+      "why": "위상 복원(phase retrieval)은 원래 Gerchberg-Saxton이나 Wirtinger flow 같은 반복 최적화 알고리즘으로 푸는 문제였는데, 오늘 저널 세 편이 이 흐름의 두 갈래를 동시에 보여줍니다. 적응적 필터링 논문은 디지털 홀로그래픽 간섭계의 프린지(줄무늬) 패턴 분석을 '물리 기반 모델링에서 데이터 기반 학습'으로 넘기겠다고 초록에서 직접 밝히고, physics-consistent 복소영역 학습 논문은 인라인 홀로그래피에서 반복 알고리즘이 노이즈에 취약해 생기는 twin-image(쌍둥이 영상) 아티팩트를 학습 기반 복소영역 추론으로 줄입니다. 그 반대편에서 Wirtinger flow 수렴성 분석 논문은 여전히 classical 알고리즘의 수학적 보장(무작위 초기화에서도 수렴하는 조건)을 엄밀하게 다지고 있어, 학습 기반이 classical을 대체한다기보다 두 접근이 동시에 더 정교해지고 있다는 그림에 가깝습니다.",
+      "confidence": "Medium",
+      "confidence_note": "3편, abstract 확인 2편은 분명한 신호지만 논문 수 자체가 적고 Wirtinger flow 논문은 방향이 다름(classical 이론 보강)",
+      "lab_action": "Physics-Consistent Dual-Plane-Driven Complex-Domain Learning의 twin-image 억제 성능을 랩 inline holography 셋업에서 기존 iterative GS 알고리즘과 나란히 비교(PSNR, twin-image 잔차 기준)하고, Learning Adaptive Filtering의 fringe pattern 학습 필터를 랩 DHI 파이프라인 전처리 단계로 교체 실험한다"
+    },
+    {
+      "cluster": "CT·MRI 재구성이 classical FBP/압축센싱에서 deep unrolling·자기지도학습·transformer로 계속 이동",
+      "papers": [
+        {
+          "title": "Dual-state adaptive unrolled network for structure-preserving low-dose CT image restoration",
+          "arxiv_id": "https://doi.org/10.1016/j.compmedimag.2026.102826",
+          "journal_or_source": "Computerized Medical Imaging and Graphics"
+        },
+        {
+          "title": "Three-dimensional residual projection completion for coded-aperture cone-beam computed tomography",
+          "arxiv_id": "https://doi.org/10.1364/ao.613760",
+          "journal_or_source": "Applied Optics"
+        },
+        {
+          "title": "Noise2Match: Self-Supervised Low-Dose CT Denoising via Adaptive Inter-Slice Matching",
+          "arxiv_id": "https://doi.org/10.1109/tmi.2026.3744092",
+          "journal_or_source": "IEEE Transactions on Medical Imaging"
+        },
+        {
+          "title": "Unrolling gradient nonconvex graph total variation for blind image restoration",
+          "arxiv_id": "https://doi.org/10.1177/17483026261498337",
+          "journal_or_source": "Journal of Algorithms & Computational Technology"
+        },
+        {
+          "title": "A hierarchical residual Swin transformer with dual-level locality compensation for accelerated MRI reconstruction",
+          "arxiv_id": "https://doi.org/10.1016/j.mri.2026.110820",
+          "journal_or_source": "Magnetic Resonance Imaging"
+        }
+      ],
+      "why": "저선량·고속 촬영 재구성 문제에서 예전에는 FBP(filtered back-projection)나 손으로 설계한 정칙화 항(total variation 등)을 쓰는 게 기본이었는데, 오늘 저널 다섯 편은 모두 그 정칙화나 복원 단계를 신경망으로 넘기는 방향을 보여줍니다. Dual-state adaptive unrolled network는 저선량 CT의 구조 보존 복원을, 코드화 애퍼처 콘빔 CT 논문은 부족한 투영 각도를 잔차 네트워크로 채우는 방식을, Noise2Match는 쌍을 이룬 깨끗한 영상 없이도 인접 슬라이스 매칭만으로 저선량 CT 노이즈를 줄이는 자기지도 학습을, 그래프 총변이 언롤링 논문은 비볼록 정칙화 항 자체를 학습 가능한 네트워크로 펼치는 방식을 제안합니다. 계층적 residual Swin transformer는 같은 문제의식을 MRI 가속 재구성에 적용합니다. 다섯 편 모두 CT·MRI라는 서로 다른 모달리티에서 classical 알고리즘의 각 단계(정칙화, 보간, 노이즈 모델)를 신경망 블록으로 바꾸거나 학습 가능하게 만든다는 같은 방향으로 수렴합니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 저널·모달리티(CT 3편+MRI 1편+범용 1편)가 독립적으로 수렴, 2편은 abstract로 구체적 방법이 확인됨",
+      "lab_action": "Noise2Match의 인접 슬라이스 매칭 기반 자기지도 학습을 랩 저선량 CT/현미경 노이즈 제거 파이프라인에 적용해 기존 supervised 대비 페어 데이터 없이 비슷한 PSNR을 내는지 비교하고, coded-aperture CBCT의 잔차 투영 완성 네트워크를 랩 coded-aperture 이미징 실험의 부족한 투영/샘플 완성 작업에 이식해 본다"
+    },
+    {
+      "cluster": "광학 하드웨어가 전자 회로 대신 직접 연산·분광을 수행하는 옵티컬 컴퓨팅이 계속 나옴",
+      "papers": [
+        {
+          "title": "Optical neural computing: from fourier optics to integrated photonic artificial intelligence",
+          "arxiv_id": "https://doi.org/10.1016/j.optlastec.2026.116673",
+          "journal_or_source": "Optics & Laser Technology"
+        },
+        {
+          "title": "Optoelectronic hybrid computing from handwritten digits to binary based on time-division multiplexed neural networks",
+          "arxiv_id": "https://doi.org/10.1016/j.optlaseng.2026.110178",
+          "journal_or_source": "Optics and Lasers in Engineering"
+        },
+        {
+          "title": "Two-dimensional photodetectors enabling ultraminiaturized computational spectrometers",
+          "arxiv_id": "https://doi.org/10.1063/5.0337027",
+          "journal_or_source": "Applied Physics Reviews"
+        },
+        {
+          "title": "Performance evaluation of all-optical OR and NOR logic gates based on an optically pumped SOA-Mach-Zehnder interferometer",
+          "arxiv_id": "https://doi.org/10.1007/s11082-026-09195-3",
+          "journal_or_source": "Optical and Quantum Electronics"
+        }
+      ],
+      "why": "오늘 저널에서 네 편이 공통적으로 계산을 전자 회로가 아니라 빛 자체로 하자는 방향을 보여줍니다. 옵티컬 뉴럴 컴퓨팅 리뷰는 Fourier 광학부터 집적 포토닉 AI까지 이 흐름을 전체적으로 정리하고, 시분할 다중화 신경망 논문은 손글씨 숫자를 이진수로 바꾸는 과제를 광전자 하이브리드 회로로 직접 수행합니다. 2차원 광검출기 기반 초소형 분광계 논문은 각 소자가 서로 다른 스펙트럼 응답을 갖게 만들어, 별도의 분산 소자(프리즘·격자) 없이 소자 자체의 응답 패턴만으로 입사 스펙트럼을 계산으로 복원합니다. 전광 OR/NOR 논리 게이트 논문은 반도체 광증폭기-마흐젠더 간섭계로 디지털 논리 연산 자체를 광학적으로 구현합니다. 네 편 모두 빛으로 신호를 전달한 뒤 전자회로로 계산한다는 기존 구조 대신, 빛이 지나가는 과정 자체가 곧 계산이 되도록 만드는 하드웨어 설계라는 공통점이 있습니다.",
+      "confidence": "Medium",
+      "confidence_note": "4편, 서로 다른 세부 응용(리뷰/신경망/분광계/논리게이트)이라 반복 검증이라기보다 같은 큰 방향 아래 흩어진 사례에 가까움",
+      "lab_action": "2D 광검출기 기반 계산 분광계의 소자별 스펙트럼 응답 설계 원리를 랩이 보유한 computational spectrometer/하이퍼스펙트럼 이미징 하드웨어와 비교하고, 옵티컬 뉴럴 컴퓨팅 리뷰에서 다루는 아키텍처 분류를 랩의 광학 추론 가속기 로드맵 문헌 조사에 반영한다"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "A. Undersampling Fourier 단일픽셀 이미징의 DuRN-GU 복원 네트워크를 랩 저샘플링 재구성에 이식",
+      "claim": "tiled array-Fourier 변조와 global-attention dual residual network를 결합하면, 랩의 저샘플링/압축센싱 이미징 파이프라인에서도 샘플링률을 더 낮추면서 복원 품질을 유지할 수 있다",
+      "supporting_papers": [
+        {
+          "title": "Undersampling Fourier single-pixel imaging based on array spatial light field modulation",
+          "arxiv": "https://doi.org/10.1016/j.optlastec.2026.116712"
+        }
+      ]
+    },
+    {
+      "title": "B. Physics-Consistent 복소영역 학습 기반 위상 복원을 랩 inline holography twin-image 억제에 적용",
+      "claim": "dual-plane 구동 복소영역 학습으로 twin-image 아티팩트를 줄이면, 랩의 inline holography 셋업에서 기존 iterative GS 알고리즘보다 적은 반복으로 더 깨끗한 위상 복원이 가능하다",
+      "supporting_papers": [
+        {
+          "title": "Physics-Consistent Dual-Plane-Driven Complex-Domain Learning for Phase Retrieval in Inline Holography",
+          "arxiv": "https://doi.org/10.1002/lpor.72050"
+        }
+      ]
+    },
+    {
+      "title": "C. Noise2Match 자기지도 저선량 CT 노이즈 제거를 랩 저선량 촬영 파이프라인에 적용",
+      "claim": "인접 슬라이스 매칭만으로 학습하는 자기지도 방식을 랩의 저선량 CT/현미경 노이즈 제거에 적용하면, 페어 데이터 없이도 기존 supervised 방법과 비슷한 노이즈 제거 품질을 얻을 수 있다",
+      "supporting_papers": [
+        {
+          "title": "Noise2Match: Self-Supervised Low-Dose CT Denoising via Adaptive Inter-Slice Matching",
+          "arxiv": "https://doi.org/10.1109/tmi.2026.3744092"
+        }
+      ]
+    },
+    {
+      "title": "D. 2D 광검출기 기반 계산 분광계 설계를 랩 하이퍼스펙트럼/컴퓨테이셔널 스펙트로미터 하드웨어와 비교",
+      "claim": "소자별로 서로 다른 스펙트럼 응답을 갖도록 설계한 2D 광검출기 어레이를 랩의 computational spectrometer 하드웨어와 비교하면, 별도 분산 소자 없이도 비슷한 스펙트럼 복원 정확도를 소형화된 폼팩터로 달성할 수 있는지 확인할 수 있다",
+      "supporting_papers": [
+        {
+          "title": "Two-dimensional photodetectors enabling ultraminiaturized computational spectrometers",
+          "arxiv": "https://doi.org/10.1063/5.0337027"
+        }
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

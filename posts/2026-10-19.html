@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-10-19</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-10-19 (월요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-10-19 (월요일)</div>
+  <div>🗓 오늘 10:00 KST에는 지난주(10/12~10/16) 회고 weekly가 별도로 발행됐습니다 — <a href="2026-10-19-weekly.html">weekly 보기</a>.</div>
+  <div>📚 소스: journal-only (잠정본) — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 Date Source Contract 점검에서 /new listing이 여전히 "Friday, 16 October 2026"에 머물러 있는 것을 확인했습니다(금요일 daily가 이미 이 listing을 정상 소비). post_date(10/19)가 listing_date(10/16)보다 뒤라 arXiv 섹션 없이 발행합니다.</div>
+  <div>🔢 arXiv: cs.LG 0 · cs.CV 0 · cs.AI 0 · eess.IV 0 · eess.SP 0 (신규 listing 미갱신)</div>
+  <div>🔢 저널: Crossref/OpenAlex 442편 수집(2026-10-16~10-19 등록분, --days 3 — --days 1은 45/282건만 배정되고 클러스터를 구성할 신호가 부족해 창을 넓힘) · 스캔 442건 · ROI 배정 119건 (26.9%, 실제 계산 이미징 신호 약 30편)</div>
+  <div>⚠️ 이 리포트는 저널만으로 만든 잠정본입니다. arXiv 5개 카테고리가 10/19 listing으로 갱신되고 /pastweek에 10/19 섹션이 뜨면, 다음 실행에서 arXiv 포함 완전판으로 자동 업그레이드됩니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘도 arXiv listing이 갱신되지 않아 저널만으로 만든 잠정본입니다. 가장 뚜렷한 신호는 <strong>피치코그래피·단일픽셀 현미경·간섭계·홀로그래피처럼 서로 다른 계산광학 하위분야 6편이 모두 "한 번의 촬영/신호로 더 많은 정보를 뽑아내자"는 single-shot 방향으로 동시에 움직였다는 점</strong>이고, 두 번째는 <strong>CT·MRI 재구성 5편이 classical 알고리즘의 정칙화·보간·노이즈 모델 단계를 신경망 블록(deep unrolling, 자기지도학습, transformer)으로 계속 바꾸고 있다는 점</strong>입니다. 다만 arXiv가 통째로 빠진 날이라 전체 정보량 자체는 평소(정상 daily 기준 800건 안팎)보다 훨씬 적습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv 5개 카테고리는 모두 지난주 금요일(10/16)과 같은 "Friday, 16 October 2026" listing에 머물러 있어(10/19 신규 listing 미갱신), Crossref 9개 키워드 질의로 저널만 먼저 --days 1(282건)을 수집해 봤지만 45건(15.9%)만 ROI에 배정되고 대부분 임상 사례 보고라 클러스터를 만들 근거가 부족했습니다. prompts/instruction.md의 재수집 규칙에 따라 --days 3(2026-10-16~10-19 등록분, 주말 등록분 포함)으로 다시 수집하니 442건으로 늘었고, OpenAlex enrich 후 classify.py로 스캔해 119건(26.9%)이 9개 ROI 버킷에 배정됐습니다. 이 중 'virtual'(가상학습 플랫폼)·'staining'(치아 미백, 세균 진단 염색)·'tomography'(임상 CT/PET/OCT 사례) 같은 범용 키워드 오탐을 빼면 실제 계산 이미징 신호로 볼 수 있는 논문은 약 30편입니다.</p>
+<p>그 30편을 다시 묶으면 네 갈래가 보입니다. 첫째, 가장 많은 독립 신호가 모인 주제인데, 동적 피치코그래피·듀얼빔 주파수분할 다중화 단일픽셀 현미경·단일 촬영 전체 광장 복원·단일 촬영 공통경로 간섭계·CNN 기반 단일 촬영 홀로그래픽 토모그래피·undersampling Fourier 단일픽셀 이미징까지 여섯 편이 모두 "한 번의 촬영이나 신호 세트로 더 많은 정보를 뽑아내자"는 같은 방향으로 수렴했습니다. 둘째, 위상 복원에서 적응적 필터링 학습과 physics-consistent 복소영역 학습이 twin-image 억제를 신경망에 맡기는 동안, Wirtinger flow 수렴성 분석 논문은 classical 반복 알고리즘의 수학적 보장을 여전히 다지고 있어 두 접근이 동시에 정교해지는 모습입니다. 셋째, CT·MRI 재구성에서 저선량 CT 복원, coded-aperture CBCT 투영 완성, 자기지도 노이즈 제거(Noise2Match), 그래프 총변이 언롤링, MRI 가속 재구성용 Swin transformer까지 다섯 편이 FBP·손설계 정칙화를 신경망 블록으로 바꾸는 방향으로 수렴했습니다. 넷째, 옵티컬 뉴럴 컴퓨팅 리뷰·광전자 하이브리드 컴퓨팅·2D 광검출기 기반 계산 분광계·전광 논리 게이트 네 편이 "빛이 지나가는 과정 자체가 계산이 되는" 하드웨어를 지향합니다.</p>
+<p>지난주(2026-10-12~10-16)는 arXiv가 중간에 한 번(10/13) 멈췄다가 금요일(10/16)에 다시 정상화되면서, 3D Gaussian Splatting의 물리 현상 흡수와 메타표면·홀로그래피 하드웨어 신호가 번갈아 나오는 한 주였습니다. 오늘은 월요일인데도 arXiv가 아직 금요일 listing에 머물러 있어 다시 저널만의 하루가 됐는데, 저널 쪽 신호 자체는 지난 화요일(10/13, 저널 신호 약 26편)과 비슷한 밀도를 유지하면서 홀로그래피·single-shot 계산 이미징 쪽으로 무게중심이 좀 더 뚜렷해졌습니다. 다음 daily에서 arXiv가 정상 listing으로 복귀하면, 오늘 저널이 채운 네 클러스터에 arXiv 쪽 방법론(특히 deep unrolling, self-supervised reconstruction)이 얼마나 이어 붙는지가 관전 포인트입니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>지난주 마지막 정상 daily였던 금요일(10/16)의 결론은 "메타렌즈·홀로그래피 하드웨어의 결함(제작 오차, 효율-충실도 트레이드오프, 위상 수차)을 계산으로 다루는 흐름"과 "cross-grating 파면 현미경이 범용 단일 촬영 QPI 플랫폼으로 확산"이 중심이었고, 저널 404건을 수집해 90건이 ROI에 배정됐습니다. 오늘은 arXiv가 다시 멈추면서 저널만 남았는데, 저널 쪽에서는 금요일의 "하드웨어 결함 보정" 축 대신 "촬영·샘플링 횟수를 줄이는 single-shot 계산 이미징"(6편)과 "CT/MRI 재구성의 deep unrolling 전환"(5편)이라는 두 개의 더 뚜렷한 축이 새로 나타났습니다. 금요일에 1~2편 수준이었던 Meta-Optics의 이미징 관련 신호는 오늘 1편(Sliding metasurfaces)으로 더 얇아졌고, 대신 Phase Imaging/Holography에서 관련 신호가 11편(지난주 평균 대비 뚜렷하게 늘어남)으로 두꺼워졌습니다. Virtual Staining/Pathology는 지난주에 이어 오늘도(14건 중 1건) 대부분 키워드 오탐입니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>피치코그래피·단일픽셀현미경·홀로그래피가 '한 번 더 찍기'보다 '한 번에 더 뽑아내기'로 수렴</strong></td>
+  <td>
+    <a href="https://doi.org/10.1016/j.optlastec.2026.116705" target=_blank>Single-shot dynamic ptychography based on multi-angle modulation via SLM</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.optlastec.2026.116689" target=_blank>Dual-beam frequency-division multiplexing for high-throughput single-pixel microscopy</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.optlaseng.2026.110176" target=_blank>Single-shot full optical field reconstruction via joint amplitude/phase interferometry</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/oe.609703" target=_blank>CNN-based algorithm for improving the quality of Single-Shot Holographic Tomography</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.optlastec.2026.116712" target=_blank>Undersampling Fourier single-pixel imaging (array spatial light field modulation)</a> <span class=pill>JNL</span>
+  </td>
+  <td>예전에는 이미징 품질을 올리려면 여러 번 찍거나 더 많은 샘플을 모으는 쪽으로 가는 경우가 많았는데, 오늘 저널 6편은 모두 "한 번의 촬영 혹은 한 번의 신호 세트로 얼마나 많은 정보를 뽑아낼 수 있는가"를 묻습니다. 동적 피치코그래피 논문은 여러 각도 조명을 한 번에 변조해 움직이는 샘플도 단일 프레임으로 복원하고, 듀얼빔 주파수분할 다중화 논문은 유세포분석처럼 빠르게 흐르는 세포를 단일 픽셀 검출기로 고처리량으로 잡아냅니다. 단일 촬영 전체 광장 복원, CNN 기반 단일 촬영 홀로그래픽 토모그래피, undersampling 상태의 Fourier 단일픽셀 이미징까지 더하면, 서로 다른 계산광학 하위분야가 같은 날 같은 방향(촬영·샘플링 횟수를 줄이면서 정보량은 유지)으로 움직였다는 뜻입니다.</td>
+  <td>Medium<br><small>6편이지만 4편이 Optics & Laser Technology 한 저널에 몰려 있어 같은 특집호일 가능성을 배제할 수 없음. 다만 세부 기술 자체는 서로 다름</small></td>
+  <td>Dual-beam FDM single-pixel microscopy의 유세포분석 처리량 수치를 랩 단일픽셀/압축센싱 셋업과 비교하고, Undersampling Fourier single-pixel imaging의 DuRN-GU(global attention 기반 dual residual network) 복원 네트워크를 랩 저샘플링 재구성 파이프라인에 이식해 PSNR/SSIM을 비교한다</td>
+</tr>
+<tr>
+  <td><strong>위상 복원이 classical 반복 알고리즘과 학습 기반 신경망으로 동시에 정교해짐</strong></td>
+  <td>
+    <a href="https://doi.org/10.1002/nap2.70282" target=_blank>Learning Adaptive Filtering in the Fourier Domain for Fringe Pattern Analysis (DHI)</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1002/lpor.72050" target=_blank>Physics-Consistent Dual-Plane-Driven Complex-Domain Learning for Phase Retrieval</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.cam.2026.118258" target=_blank>Convergence Analysis of Reshaped Wirtinger Flow with Random Initialization</a> <span class=pill>JNL</span>
+  </td>
+  <td>위상 복원(phase retrieval)은 원래 Gerchberg-Saxton이나 Wirtinger flow 같은 반복 최적화 알고리즘으로 푸는 문제였는데, 오늘 저널 세 편이 이 흐름의 두 갈래를 동시에 보여줍니다. 적응적 필터링 논문은 디지털 홀로그래픽 간섭계의 프린지 패턴 분석을 "물리 기반 모델링에서 데이터 기반 학습"으로 넘기겠다고 초록에서 직접 밝히고, physics-consistent 복소영역 학습 논문은 인라인 홀로그래피에서 반복 알고리즘이 노이즈에 취약해 생기는 twin-image(쌍둥이 영상) 아티팩트를 학습 기반 추론으로 줄입니다. 그 반대편에서 Wirtinger flow 수렴성 분석 논문은 classical 알고리즘이 무작위 초기화에서도 수렴하는 조건을 수학적으로 다지고 있어, 학습 기반이 classical을 대체한다기보다 두 접근이 동시에 더 정교해지는 그림에 가깝습니다.</td>
+  <td>Medium<br><small>3편, abstract 확인 2편은 분명한 신호지만 논문 수 자체가 적고 Wirtinger flow 논문은 방향이 다름(classical 이론 보강)</small></td>
+  <td>Physics-Consistent Dual-Plane-Driven Complex-Domain Learning의 twin-image 억제 성능을 랩 inline holography 셋업에서 기존 iterative GS 알고리즘과 나란히 비교(PSNR, twin-image 잔차 기준)하고, Learning Adaptive Filtering의 fringe pattern 학습 필터를 랩 DHI 전처리 단계로 교체 실험한다</td>
+</tr>
+<tr>
+  <td><strong>CT·MRI 재구성이 classical FBP/압축센싱에서 deep unrolling·자기지도학습·transformer로 계속 이동</strong></td>
+  <td>
+    <a href="https://doi.org/10.1016/j.compmedimag.2026.102826" target=_blank>Dual-state adaptive unrolled network for low-dose CT restoration</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/ao.613760" target=_blank>Three-dimensional residual projection completion for coded-aperture cone-beam CT</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1109/tmi.2026.3744092" target=_blank>Noise2Match: Self-Supervised Low-Dose CT Denoising</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1177/17483026261498337" target=_blank>Unrolling gradient nonconvex graph total variation for blind image restoration</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.mri.2026.110820" target=_blank>Hierarchical residual Swin transformer for accelerated MRI reconstruction</a> <span class=pill>JNL</span>
+  </td>
+  <td>저선량·고속 촬영 재구성 문제에서 예전에는 FBP(filtered back-projection)나 손으로 설계한 정칙화 항(total variation 등)을 쓰는 게 기본이었는데, 오늘 저널 다섯 편은 모두 그 정칙화나 복원 단계를 신경망으로 넘기는 방향을 보여줍니다. Dual-state adaptive unrolled network는 저선량 CT의 구조 보존 복원을, 코드화 애퍼처 콘빔 CT 논문은 부족한 투영 각도를 잔차 네트워크로 채우는 방식을, Noise2Match는 쌍을 이룬 깨끗한 영상 없이도 인접 슬라이스 매칭만으로 저선량 CT 노이즈를 줄이는 자기지도 학습을, 그래프 총변이 언롤링 논문은 비볼록 정칙화 항 자체를 학습 가능한 네트워크로 펼치는 방식을 제안합니다. 계층적 residual Swin transformer는 같은 문제의식을 MRI 가속 재구성에 적용합니다. 다섯 편 모두 CT·MRI라는 서로 다른 모달리티에서 classical 알고리즘의 각 단계를 신경망 블록으로 바꾸는 같은 방향으로 수렴합니다.</td>
+  <td>High<br><small>서로 다른 저널·모달리티(CT 3편+MRI 1편+범용 1편)가 독립적으로 수렴, 2편은 abstract로 구체적 방법이 확인됨</small></td>
+  <td>Noise2Match의 인접 슬라이스 매칭 기반 자기지도 학습을 랩 저선량 CT/현미경 노이즈 제거 파이프라인에 적용해 기존 supervised 대비 페어 데이터 없이 비슷한 PSNR을 내는지 비교하고, coded-aperture CBCT의 잔차 투영 완성 네트워크를 랩 coded-aperture 실험의 부족한 투영 완성 작업에 이식한다</td>
+</tr>
+<tr>
+  <td><strong>광학 하드웨어가 전자 회로 대신 직접 연산·분광을 수행하는 옵티컬 컴퓨팅이 계속 나옴</strong></td>
+  <td>
+    <a href="https://doi.org/10.1016/j.optlastec.2026.116673" target=_blank>Optical neural computing: from Fourier optics to integrated photonic AI</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.optlaseng.2026.110178" target=_blank>Optoelectronic hybrid computing from handwritten digits to binary (TDM neural networks)</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1063/5.0337027" target=_blank>Two-dimensional photodetectors enabling ultraminiaturized computational spectrometers</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1007/s11082-026-09195-3" target=_blank>Performance evaluation of all-optical OR and NOR logic gates (SOA-Mach-Zehnder)</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 저널에서 네 편이 공통적으로 계산을 전자 회로가 아니라 빛 자체로 하자는 방향을 보여줍니다. 옵티컬 뉴럴 컴퓨팅 리뷰는 Fourier 광학부터 집적 포토닉 AI까지 이 흐름을 정리하고, 시분할 다중화 신경망 논문은 손글씨 숫자를 이진수로 바꾸는 과제를 광전자 하이브리드 회로로 직접 수행합니다. 2차원 광검출기 기반 초소형 분광계 논문은 소자별로 서로 다른 스펙트럼 응답을 갖게 만들어 별도 분산 소자 없이 응답 패턴만으로 입사 스펙트럼을 계산 복원하고, 전광 OR/NOR 논리 게이트 논문은 반도체 광증폭기-마흐젠더 간섭계로 디지털 논리 연산 자체를 광학적으로 구현합니다. 네 편 모두 빛이 지나가는 과정 자체가 곧 계산이 되도록 만드는 하드웨어 설계라는 공통점이 있습니다.</td>
+  <td>Medium<br><small>4편, 서로 다른 세부 응용(리뷰/신경망/분광계/논리게이트)이라 반복 검증이라기보다 같은 방향 아래 흩어진 사례에 가까움</small></td>
+  <td>2D 광검출기 기반 계산 분광계의 소자별 스펙트럼 응답 설계 원리를 랩이 보유한 computational spectrometer 하드웨어와 비교하고, 옵티컬 뉴럴 컴퓨팅 리뷰의 아키텍처 분류를 랩의 광학 추론 가속기 로드맵 문헌 조사에 반영한다</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ 참고: Lensless/Coded Imaging은 오늘 배정 0건(coded-aperture 키워드를 포함한 CBCT 논문은 Tomography 버킷으로 분류되어 클러스터3에 반영)이라 아래 도메인 Watch Lens 참고.</small></p>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 0편</strong> — Crossref 9개 키워드 질의에서 독립 항목으로는 한 건도 걸리지 않았습니다(coded-aperture 키워드를 포함한 CBCT 논문 1편은 Tomography 버킷으로 분류돼 클러스터3에 반영). 랩 ROI 핵심 공백이 계속됩니다.</li>
+    <li><strong>Meta-Optics/Diffractive — 오늘 배정 15편 중 이미징 신호 1편</strong> — 15편 중 12편이 6G IRS·THz 흡수체·레이더 단면적 감소 등 통신/전자파 응용이고, 이미징에 직접 연결되는 건 <a href="https://doi.org/10.1038/s41377-026-02470-8" target=_blank>Sliding metasurfaces</a>(주파수 필터링+빔 조향 겸용 소자) [JNL] 1편뿐이라 독립 클러스터로 올리지 않았습니다. 지난주 금요일(10/16)에 4편이던 이미징 신호 대비 뚜렷하게 얇아졌습니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 오늘 배정 4편 중 3편이 클러스터 밖 단발 신호</strong> — Undersampling Fourier single-pixel imaging 1편은 클러스터1에 포함됐지만, 나머지 3편(<a href="https://doi.org/10.1016/j.patcog.2026.115139" target=_blank>light field depth estimation</a>, <a href="https://doi.org/10.1016/j.optlastec.2026.116691" target=_blank>integral imaging 비지도 디노이징</a>, <a href="https://doi.org/10.1016/j.optlastec.2026.116681" target=_blank>event camera bias tuning 이론</a>)은 각각 깊이·노이즈·튜닝이라는 다른 축을 다뤄 하나의 주장으로 묶기엔 근거가 약해 Watch-only로 유지합니다.</li>
+    <li><strong>Virtual Staining/Pathology — 오늘 배정 14편 중 실제 신호 1편</strong> — <a href="https://doi.org/10.21105/joss.11121" target=_blank>Whole slide and microscopy image analysis with QuPath and OMERO</a>(오픈소스 디지털 병리 분석 도구) [JNL]만 실제 신호이고, 나머지 13편은 치아 미백, 세균 진단 염색, 자원봉사 연구 텍스트 분석 등 "staining"·"virtual" 키워드 오탐입니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 없음 (2026-10-19 신규 listing 갱신 없음, 5개 카테고리 모두 10/16 listing에 머물러 있음)</li>
+  <li><strong>저널 전용</strong>: single-shot/단일픽셀 계산 이미징(피치코그래피, 단일픽셀 현미경, 전체 광장 복원, 홀로그래픽 토모그래피), 위상 복원 classical-학습 공존(적응적 필터링, 복소영역 학습, Wirtinger flow 수렴성), CT/MRI 재구성 deep unrolling(저선량 CT 2편, coded-aperture CBCT, 그래프 TV 언롤링, MRI Swin transformer), 옵티컬 컴퓨팅(뉴럴 컴퓨팅 리뷰, 광전자 하이브리드, 계산 분광계, 전광 논리 게이트)</li>
+  <li><strong>공통 키워드</strong>: 오늘은 arXiv 신호가 없어 arXiv-저널 교차 비교 자체가 성립하지 않습니다. 저널 전용 목록이 곧 오늘의 전체 신호입니다.</li>
+  <li><strong>특징</strong>: 지난주 금요일(10/16)은 메타렌즈·홀로그래피 하드웨어 결함 보정이 저널 축이었던 반면, 오늘은 single-shot 계산 이미징과 CT/MRI 재구성의 신경망 전환이 더 뚜렷합니다. 다음 daily에서 arXiv가 복귀하면 두 축이 어떻게 이어지는지가 관전 포인트입니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 피치코그래피·단일픽셀현미경·홀로그래피가 '한 번 더 찍기'보다 '한 번에 더 뽑아내기'로 수렴</h3>
+  <p>동적 피치코그래피, 듀얼빔 주파수분할 단일픽셀 현미경, 단일 촬영 전체 광장 복원, 단일 촬영 공통경로 간섭계, CNN 기반 단일 촬영 홀로그래픽 토모그래피, undersampling Fourier 단일픽셀 이미징 여섯 편이 같은 날 나오며, 계산광학 전반이 촬영·샘플링 횟수를 줄이는 방향으로 동시에 움직이는 모습을 보입니다.</p>
+  <p class=conf-note>Confidence: Medium — 6편 중 4편이 한 저널(Optics & Laser Technology)에 몰려 있어 특집호 가능성이 있으나 세부 기술은 서로 다름</p>
+</div>
+
+<div class=ins>
+  <h3>2. 위상 복원이 classical 반복 알고리즘과 학습 기반 신경망으로 동시에 정교해짐</h3>
+  <p>적응적 필터링 학습, physics-consistent 복소영역 학습 기반 위상 복원이 twin-image 억제를 신경망에 맡기는 동안, Wirtinger flow 수렴성 분석 논문은 classical 반복 알고리즘의 수학적 보장을 여전히 다지고 있습니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편, 서로 다른 저널에서 독립적으로 보이나 논문 수 자체가 적음</p>
+</div>
+
+<div class=ins>
+  <h3>3. CT·MRI 재구성이 classical FBP/압축센싱에서 deep unrolling·자기지도학습·transformer로 계속 이동</h3>
+  <p>저선량 CT 복원 2편(unrolled network, Noise2Match), coded-aperture CBCT 투영 완성, 그래프 총변이 언롤링, MRI 가속 재구성용 Swin transformer까지 다섯 편이 CT·MRI라는 서로 다른 모달리티에서 같은 방향(classical 알고리즘 단계를 신경망 블록으로 치환)으로 수렴합니다.</p>
+  <p class=conf-note>Confidence: High — 서로 다른 저널·모달리티 5편이 독립적으로 수렴</p>
+</div>
+
+<div class=ins>
+  <h3>4. 광학 하드웨어가 전자 회로 대신 직접 연산·분광을 수행하는 옵티컬 컴퓨팅이 계속 나옴</h3>
+  <p>옵티컬 뉴럴 컴퓨팅 리뷰, 광전자 하이브리드 컴퓨팅, 2D 광검출기 기반 계산 분광계, 전광 OR/NOR 논리 게이트 네 편이 각각 다른 응용에서 "빛이 지나가는 과정 자체가 계산이 되는" 하드웨어를 지향합니다.</p>
+  <p class=conf-note>Confidence: Medium — 4편, 서로 다른 응용에 1편씩이라 반복 검증보다는 같은 방향 아래 흩어진 사례</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. Undersampling Fourier 단일픽셀 이미징의 DuRN-GU 복원 네트워크를 랩 저샘플링 재구성에 이식</h3>
+  <p>tiled array-Fourier 변조와 global-attention dual residual network를 결합하면, 랩의 저샘플링/압축센싱 이미징 파이프라인에서도 샘플링률을 더 낮추면서 복원 품질을 유지할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Undersampling Fourier single-pixel imaging 방법 재현(DuRN-GU 구조)</li>
+    <li>공통 benchmark: 랩 보유 단일픽셀/압축센싱 이미징 데이터(알려진 샘플링률 조건)</li>
+    <li>비교축: 기존 복원 네트워크 대비 필요 샘플링률, 복원 품질(PSNR/SSIM)</li>
+    <li>실패해도 남는 결과: 랩 데이터에서 샘플링률을 낮췄을 때의 성능 저하 곡선</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. Physics-Consistent 복소영역 학습 기반 위상 복원을 랩 inline holography twin-image 억제에 적용</h3>
+  <p>dual-plane 구동 복소영역 학습으로 twin-image 아티팩트를 줄이면, 랩의 inline holography 셋업에서 기존 iterative GS 알고리즘보다 적은 반복으로 더 깨끗한 위상 복원이 가능한지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Physics-Consistent Dual-Plane-Driven Complex-Domain Learning 방법 재현</li>
+    <li>공통 benchmark: 랩 보유 inline holography 데이터(twin-image 발생 조건 포함)</li>
+    <li>비교축: 기존 iterative GS 대비 반복 횟수, PSNR, twin-image 잔차</li>
+    <li>실패해도 남는 결과: 랩 inline holography 데이터에서 twin-image 억제 난이도 조건 정리</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. Noise2Match 자기지도 저선량 CT 노이즈 제거를 랩 저선량 촬영 파이프라인에 적용</h3>
+  <p>인접 슬라이스 매칭만으로 학습하는 자기지도 방식을 랩의 저선량 CT/현미경 노이즈 제거에 적용하면, 페어 데이터 없이도 기존 supervised 방법과 비슷한 노이즈 제거 품질을 얻을 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Noise2Match 워크플로우(인접 슬라이스 매칭) 재현</li>
+    <li>공통 benchmark: 랩 보유 저선량 촬영 데이터(페어 클린 데이터 보유분)</li>
+    <li>비교축: 기존 supervised denoising 대비 PSNR/SSIM, 필요 페어 데이터량</li>
+    <li>실패해도 남는 결과: 랩 저선량 데이터에서 자기지도 방식이 유효한 노이즈 조건 정리</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>D. 2D 광검출기 기반 계산 분광계 설계를 랩 하이퍼스펙트럼/컴퓨테이셔널 스펙트로미터 하드웨어와 비교</h3>
+  <p>소자별로 서로 다른 스펙트럼 응답을 갖도록 설계한 2D 광검출기 어레이를 랩의 computational spectrometer 하드웨어와 비교하면, 별도 분산 소자 없이도 비슷한 스펙트럼 복원 정확도를 소형화된 폼팩터로 달성할 수 있는지 확인할 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Two-dimensional photodetectors 계산 분광계 설계 원리 재현</li>
+    <li>공통 benchmark: 랩 보유 하이퍼스펙트럼/스펙트로미터 교정 데이터</li>
+    <li>비교축: 기존 분산 소자 기반 분광계 대비 스펙트럼 복원 정확도, 폼팩터(부피)</li>
+    <li>실패해도 남는 결과: 랩 스펙트로미터 하드웨어에서 소자 응답 다양성이 복원 정확도에 미치는 영향 정리</li>
+  </ul>
+</div>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘은 월요일이지만 daily 실행이라 예측 회고는 생략합니다(예측 회고는 오늘 10:00 KST 별도 weekly 실행이 이미 수행했습니다 — <a href="2026-10-19-weekly.html">weekly 보기</a> 참고). 다음 예측 회고는 2026-10-26(월) weekly 실행이 이번 주를 되돌아보며 수행합니다.</p>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(34편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:6%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:50%"></span></span><span class=n>17편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:44%"></span></span><span class=n>15편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:12%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>34편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:41%"></span></span><span class=n>14편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:21%"></span></span><span class=n>7편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>26편</span></div>
+
+<p><small>⚠️ 참고: Tomography/3D Imaging 34편 중 31편은 임상 사례 보고(PET/CT, OCT 안과 질환, CBCT 치과 영상 등)로 계산 이미징 방법론과 무관합니다(실제 신호 3편: 클러스터3의 coded-aperture CBCT, OCT 기반 산업용 비파괴검사, full-field OCT 이론 논문). Virtual Staining/Pathology 14편 중 13편은 "virtual"·"staining" 키워드 오탐입니다. Meta-Optics/Diffractive 15편 중 12편은 6G IRS·THz 흡수체·레이더 단면적 감소 등 비이미징 응용입니다. Deep Learning Methods 26편 중 이미징 핵심 신호 7편만 클러스터3·4에 반영했고 나머지 19편은 임상 세그멘테이션, 소비자 인식 조사, 6G 빔 트레이닝 등 인접·무관 응용입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (2편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116705" target=_blank>Single-shot dynamic ptychography based on multi-angle modulation via spatial light modulator</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터1 대표 — 여러 각도 조명을 한 번에 변조해 움직이는 샘플도 단일 프레임으로 복원
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116689" target=_blank>Dual-beam frequency-division multiplexing for high-throughput single-pixel microscopy</a></strong> [JNL · TIER B]<br>
+  왜 주요: 오늘 클러스터1 대표 — 유세포분석급 처리량으로 단일 픽셀 검출기 기반 세포 영상 획득
+</div>
+
+<h3>Phase Imaging/Holography (17편 중 관련 11편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.72050" target=_blank>Physics-Consistent Dual-Plane-Driven Complex-Domain Learning for Phase Retrieval in Inline Holography</a></strong> [JNL · TIER A]<br>
+  왜 주요: 오늘 클러스터2·must-read 대표 — 인라인 홀로그래피의 twin-image 아티팩트를 학습 기반 복소영역 추론으로 억제
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/nap2.70282" target=_blank>Learning Adaptive Filtering in the Fourier Domain for Fringe Pattern Analysis</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터2 대표 — DHI 프린지 패턴 분석을 물리 기반에서 데이터 기반 학습으로 전환
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110176" target=_blank>Single-shot full optical field reconstruction via joint amplitude and phase modulation interferometry</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터1 대표 — 진폭·위상 동시 변조 간섭계로 단일 촬영 전체 광장 복원
+</div>
+
+<h3>Meta-Optics/Diffractive (15편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02470-8" target=_blank>Sliding metasurfaces: a two-in-one meta-device for frequency filtering and beam steering</a></strong> [JNL · TIER B]<br>
+  왜 주요: Light: Science & Applications 게재, 하나의 메타표면 소자로 주파수 필터링과 빔 조향을 동시 수행
+</div>
+
+<h3>Light-Field/Novel Sensors (4편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116712" target=_blank>Undersampling Fourier single-pixel imaging based on array spatial light field modulation</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터1 대표 — tiled array-Fourier 변조+global attention 네트워크로 낮은 샘플링률에서도 복원
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116681" target=_blank>On the theory of bias tuning in event cameras</a></strong> [JNL]<br>
+  왜 주요: 이벤트 카메라 감도 바이어스 튜닝의 이론적 기초를 Poincaré–Miranda 정리로 정립 — Watch-only 참고
+</div>
+
+<h3>Tomography/3D Imaging (34편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ao.613760" target=_blank>Three-dimensional residual projection completion for coded-aperture cone-beam computed tomography</a></strong> [JNL · TIER B]<br>
+  왜 주요: 오늘 클러스터3 대표 — 부족한 투영 각도를 잔차 네트워크로 채워 coded-aperture CBCT 복원
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1155/ijo/8385167" target=_blank>Optical Coherence Tomography-Based Nondestructive Detection of Internal Welding Defects in Quartz Glass Welds</a></strong> [JNL]<br>
+  왜 주요: 반도체 석영 용기 용접부 결함을 OCT로 비파괴 검출하는 산업 응용
+</div>
+
+<h3>Virtual Staining/Pathology (14편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.21105/joss.11121" target=_blank>Whole slide and microscopy image analysis with QuPath and OMERO</a></strong> [JNL]<br>
+  왜 주요: 디지털 병리 whole-slide 분석을 위한 오픈소스 QuPath-OMERO 연동 인프라 논문
+</div>
+
+<h3>Reconstruction/Inverse Problems (7편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.compmedimag.2026.102826" target=_blank>Dual-state adaptive unrolled network for structure-preserving low-dose CT image restoration</a></strong> [JNL · TIER B]<br>
+  왜 주요: 오늘 클러스터3 대표 — 저선량 CT 구조 보존 복원을 위한 적응형 unrolled network
+</div>
+
+<h3>Deep Learning Methods (26편 중 관련 7편, catch-all 과대표 방지로 2편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1063/5.0337027" target=_blank>Two-dimensional photodetectors enabling ultraminiaturized computational spectrometers</a></strong> [JNL · TIER A]<br>
+  왜 주요: 오늘 클러스터4·must-read 대표 — 분산 소자 없이 광검출기 응답 다양성만으로 스펙트럼 복원
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tmi.2026.3744092" target=_blank>Noise2Match: Self-Supervised Low-Dose CT Denoising via Adaptive Inter-Slice Matching</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터3 대표 — 페어 데이터 없이 인접 슬라이스 매칭만으로 저선량 CT 노이즈 제거
+</div>
+
+<hr>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Physics-Consistent Dual-Plane-Driven Complex-Domain Learning for Phase Retrieval in Inline Holography — Laser & Photonics Reviews</h3>
+  <div class=tag>[방법전환] [해부분석]</div>
+  <p><strong>왜 A급인가:</strong> 랩이 다루는 inline holography/위상 복원 문제의 고질적 난점인 twin-image(쌍둥이 영상) 아티팩트를, 기존 반복 알고리즘이 아니라 물리 제약을 유지한 복소영역 학습으로 직접 공략합니다. 센서면 위상 정보가 없는 상태에서 노이즈에 취약했던 반복 복원 방식을 신경망으로 대체하려는 시도라, 랩의 QPI/홀로그래피 파이프라인 전반에 바로 참고할 수 있는 방법론입니다.</p>
+  <p><strong>핵심:</strong> Inline holography는 소형·안정적인 광학 구성으로 label-free 정량 위상 이미징(QPI)을 가능하게 하지만, 센서면의 위상 정보가 없어 twin-image 아티팩트가 생기고 기존 반복 알고리즘은 노이즈에 민감합니다. 이 논문은 두 개의 평면(dual-plane)에서 얻은 정보를 물리 법칙과 일관되게(physics-consistent) 유지하면서, 진폭과 위상을 복소수 영역에서 함께 학습하는 네트워크로 twin-image를 억제합니다(초록 기준).</p>
+  <p><strong>주의:</strong> 초록만으로는 기존 iterative 방법 대비 구체적인 PSNR·twin-image 잔차 수치를 확인하기 어렵고, 실험 데이터인지 시뮬레이션 기반인지도 본문 확인이 필요합니다. dual-plane 측정이 실제로 추가 하드웨어 복잡도를 얼마나 요구하는지도 확인해야 합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Two-dimensional photodetectors enabling ultraminiaturized computational spectrometers — Applied Physics Reviews</h3>
+  <div class=tag>[방법전환] [표준후보]</div>
+  <p><strong>왜 A급인가:</strong> 랩이 참고할 만한 분광 이미징 하드웨어 설계 논리를 제시합니다. 기존 분광계는 프리즘·격자 같은 별도 분산 소자가 필수였는데, 이 논문은 그 분산 소자 자체를 없애고 광검출기 소자의 응답 다양성만으로 스펙트럼을 계산 복원하는 방향을 제시해, 온칩·웨어러블 센싱에 바로 쓸 수 있는 초소형화 경로를 보여줍니다.</p>
+  <p><strong>핵심:</strong> 온칩·휴대용·웨어러블 시스템에 들어갈 초소형 분광계가 필요한데, 기존 분산형 분광계는 부피가 큽니다. 이 리뷰 논문은 2차원 광검출기 각각이 서로 다른 소자-의존적 스펙트럼 응답을 갖도록 설계해, 그 응답 패턴들의 조합만으로 입사 스펙트럼을 계산적으로 재구성하는 computational spectrometer 접근을 정리합니다(초록 기준).</p>
+  <p><strong>주의:</strong> 리뷰 성격의 논문이라 특정 소자 하나의 정량적 스펙트럼 분해능·정확도를 바로 비교하기는 어렵고, 랩이 실제로 참고하려면 본문에서 구체적인 소자 구조와 캘리브레이션 절차를 확인해야 합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] arXiv 5개 카테고리가 모두 listing 미갱신이라 오늘 신호는 전량 저널 데이터입니다. --days 1(282건)에서는 신호가 너무 얇아 --days 3(442건)으로 넓혀 수집했고, 평소(정상 daily 800건 안팎) 대비 정보량은 여전히 적습니다.</p>
+  <p>[Dataset risk] --days 3 수집 윈도우(2026-10-16~10-19)가 지난주 금요일 daily의 수집분과 일부 겹칠 수 있어, 최근 5영업일 insights에 등장한 DOI 60건과 대조해 오늘 클러스터 선정분과 중복이 없음을 확인했습니다. 다만 appendix의 모든 단발 언급까지 전수 대조하지는 못했습니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology 14건 중 13건, Tomography/3D Imaging 34건 중 31건이 키워드 오탐 또는 계산 이미징 방법론과 무관한 임상 사례 보고입니다.</p>
+  <p>[Claim risk] 클러스터 대표 논문 18편 중 9편이 Crossref 초록 미공개 상태로, 제목과 저널명만으로 클러스터 배치를 판단했습니다. 본문 확인 전 배치가 부정확할 수 있습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Baseline risk] Physics-Consistent Dual-Plane-Driven Complex-Domain Learning이 기존 iterative 위상 복원 대비 정량적으로 얼마나 우수한지 초록에 구체적 수치가 없어, 본문 확인 전까지는 방향성 제시 수준으로만 간주해야 합니다.</p>
+  <p>[Metric risk] single-shot 계산 이미징 클러스터(6편 중 2편만 abstract 확인)는 abstract 기준 정량 비교가 어려운 논문이 섞여 있어 제목·저널명만으로 방향성을 추정한 부분이 있습니다.</p>
+  <p>[Dataset risk] single-shot 클러스터 6편 중 4편이 Optics & Laser Technology 한 저널에 몰려 있어, 독립적인 연구 동향이라기보다 같은 특집호 효과일 가능성을 배제할 수 없습니다.</p>
+  <p>[Claim risk] Two-dimensional photodetectors 계산 분광계 논문은 리뷰 성격이라 특정 소자의 정량적 스펙트럼 분해능 주장은 본문의 개별 인용 논문까지 확인해야 검증됩니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li>Tomography/3D Imaging 임상 사례 약 31편 [주로 JNL] — PET/CT 종양 영상, OCT 안과 질환, CBCT 치과 영상, 관상동맥 CT 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
+    <li>Virtual Staining/Pathology 키워드 오탐 13편 — 치아 미백 염색, 세균 진단 배양, ESG 보고서, 가상 전문성 개발 연구 등 "virtual"·"staining" 단어만 겹친 무관 논문입니다.</li>
+    <li>Meta-Optics/Diffractive RF·에너지 응용 12편 — 6G IRS, THz 흡수체, 레이더 단면적 감소, 위상 배열 안테나 등으로 광학 이미징과 거리가 있습니다.</li>
+    <li>Deep Learning Methods 26편 중 이미징과 결이 다른 19편 — 유방 초음파 품질 등급, 간종양 세그멘테이션, 6G MIMO 빔 트레이닝, 소비자 인식 조사 등 의료영상 인접 분야이거나 완전히 무관한 응용입니다.</li>
+    <li>Reconstruction/Inverse Problems 6편 — 항공기 도어 탐지, 약물 민감도 디콘볼루션, 광음향 현미경 리뷰 등 방법론은 유사하나 랩 ROI 핵심과는 거리가 있습니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy (2편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116705" target=_blank>Single-shot dynamic ptychography based on multi-angle modulation via spatial light modulator</a></strong> <span class=pill>JNL</span><br>
+  문제: 움직이는 샘플을 피치코그래피로 복원하려면 여러 프레임의 조명 스캔이 필요함 / 방법: SLM으로 다각도 조명을 한 번에 변조하는 단일 촬영 동적 피치코그래피 / 의미: 오늘 클러스터1 대표, single-shot 계산 이미징 확장 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116689" target=_blank>Dual-beam frequency-division multiplexing for high-throughput single-pixel microscopy</a></strong> <span class=pill>JNL</span><br>
+  문제: 이미징 유세포분석(IFC)이 단일픽셀 검출기의 처리량 한계에 묶여 있음 / 방법: 듀얼빔 주파수분할 다중화로 처리량 확대 / 의미: 오늘 클러스터1 대표, 단일픽셀 현미경의 실사용 처리량 개선 / 우선순위: Read
+</div>
+
+<h3>Phase Imaging/Holography (17편 중 관련 11편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/nap2.70282" target=_blank>Learning Adaptive Filtering in the Fourier Domain for Fringe Pattern Analysis</a></strong> <span class=pill>JNL</span><br>
+  문제: 단일 프레임 프린지 패턴 분석이 물리 기반 모델링만으로는 동적 조건에서 한계가 있음 / 방법: Fourier 영역 적응적 필터링을 학습 기반으로 전환 / 의미: 오늘 클러스터2 대표, DHI 재구성 패러다임 전환 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.72050" target=_blank>Physics-Consistent Dual-Plane-Driven Complex-Domain Learning for Phase Retrieval in Inline Holography</a></strong> <span class=pill>JNL</span><br>
+  문제: 인라인 홀로그래피가 센서면 위상 정보 부재로 twin-image 아티팩트를 겪음 / 방법: dual-plane 기반 physics-consistent 복소영역 학습 / 의미: 오늘 클러스터2·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.cam.2026.118258" target=_blank>Convergence Analysis of Reshaped Wirtinger Flow with Random Initialization for Phase Retrieval</a></strong> <span class=pill>JNL</span><br>
+  문제: Wirtinger flow 기반 위상 복원의 무작위 초기화 수렴성이 엄밀히 보장되지 않음 / 방법: reshaped Wirtinger flow의 수렴 조건을 수학적으로 분석 / 의미: 오늘 클러스터2 대표, classical 알고리즘의 이론적 보강 / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110176" target=_blank>Single-shot full optical field reconstruction via joint amplitude and phase modulation interferometry</a></strong> <span class=pill>JNL</span><br>
+  문제: 전체 광장(진폭+위상)을 복원하려면 보통 여러 번의 촬영이 필요함 / 방법: 진폭·위상 동시 변조 간섭계 기반 단일 촬영 복원 / 의미: 오늘 클러스터1 대표 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116667" target=_blank>Refractive index measurement of liquids using single-shot common-path interferometry</a></strong> <span class=pill>JNL</span><br>
+  문제: 액체의 굴절률을 정밀 측정하려면 안정적인 다중 촬영 간섭계가 필요함 / 방법: 단일 촬영 공통경로 간섭계로 위상 변화를 정량화 / 의미: 오늘 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.609703" target=_blank>CNN-based algorithm for improving the quality of Single-Shot Holographic Tomography</a></strong> <span class=pill>JNL</span><br>
+  문제: 단일 촬영 홀로그래픽 토모그래피의 복원 품질이 제한적임 / 방법: CNN 기반 후처리로 품질 개선 / 의미: 오늘 클러스터1 대표 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116692" target=_blank>Spherical-carrier lateral-shearing interferometry for large-aperture wavefront sensing</a></strong> <span class=pill>JNL</span><br>
+  문제: 대형 광학 소자의 파면을 간편하고 정밀하게 측정하기 어려움 / 방법: Fresnel zone plate 기반 spherical-carrier QWLSI / 의미: 적응광학·위상 복원 하드웨어의 센서 설계 대안 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s10043-026-01089-9" target=_blank>Numerical investigation of polarization-dependent multi-channel holographic imaging based on a dual-focal-plane metasurface</a></strong> <span class=pill>JNL</span><br>
+  문제: 하나의 메타표면으로 편광별 다채널 홀로그램을 독립적으로 재생하기 어려움 / 방법: dual-focal-plane 메타표면 기반 편광 의존 다채널 홀로그래픽 이미징 수치해석 / 의미: 메타표면 홀로그래피 다중화 확장 / 주의: 초록 미공개, 수치해석 단계 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110168" target=_blank>Programmable liquid crystal photoalignment for Pancharatnam-Berry phase wavefront manipulation</a></strong> <span class=pill>JNL</span><br>
+  문제: 복잡한 광학 파면을 생성하려면 정교한 위상 설계와 유연한 물리적 구현이 모두 필요함 / 방법: 광간섭 이론+각스펙트럼 전파 기반 설계와 프로그래머블 액정 광배향 구현 / 의미: Pancharatnam-Berry 위상 소자 제작의 유연성 확대 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.oe.65.10.107102" target=_blank>Ultrathin high-refractive-index coating for enhanced phase modulation in two-photon-printed diffractive optical elements</a></strong> <span class=pill>JNL</span><br>
+  문제: 2광자 리소그래피(TPL)로 만든 회절 광학 신경망(D2NN)이 폴리머 소재의 낮은 굴절률 때문에 위상 변조·회절 효율이 제한됨 / 방법: 초박막 고굴절률 ZnO 코팅 적용 / 의미: D2NN 소형 광학 프로세서의 제작 한계 완화 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s11082-026-09195-3" target=_blank>Performance evaluation of all-optical OR and NOR logic gates based on an optically pumped SOA-Mach-Zehnder interferometer</a></strong> <span class=pill>JNL</span><br>
+  문제: 디지털 논리 연산을 전자 회로 없이 광학적으로 구현하기 어려움 / 방법: 광펌핑 SOA-Mach-Zehnder 간섭계 기반 전광 OR/NOR 게이트 / 의미: 오늘 클러스터4 대표, 옵티컬 컴퓨팅의 기본 연산 단위 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<p><small>나머지 6편(암호화, 광물학 X선 회절, 배터리 재활용 슬래그 정량상분석, 끈이론 홀로그래피 등)은 "Fourier"·"phase"·"holography" 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Meta-Optics/Diffractive (15편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02470-8" target=_blank>Sliding metasurfaces: a two-in-one meta-device for frequency filtering and beam steering</a></strong> <span class=pill>JNL</span><br>
+  문제: 메타표면 하나로 여러 전자파 제어 기능을 동시에 구현하려면 보통 능동 소자가 필요함 / 방법: 슬라이딩 구조로 주파수 필터링과 빔 조향을 한 소자에서 수행 / 의미: 도메인 Watch Lens 참고, 통신 응용 더미 속 이미징 인접 신호 / 우선순위: Read
+</div>
+<p><small>나머지 14편은 6G IRS·THz 흡수체·레이더 단면적 감소·안테나 등 비이미징 통신/전자파 응용이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Light-Field/Novel Sensors (4편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116712" target=_blank>Undersampling Fourier single-pixel imaging based on array spatial light field modulation</a></strong> <span class=pill>JNL</span><br>
+  문제: Fourier 단일픽셀 이미징이 낮은 샘플링률에서 복원 품질이 떨어짐 / 방법: tiled array-Fourier 변조+global attention dual residual network(DuRN-GU) / 의미: 오늘 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.patcog.2026.115139" target=_blank>Multi-view collaborative consistency for light field depth estimation</a></strong> <span class=pill>JNL</span><br>
+  문제: 광필드 깊이 추정이 시점 간 불일치로 오차가 커짐 / 방법: 다시점 협력적 일관성 제약 / 의미: Watch-only, 광필드 깊이 추정 품질 개선 / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116691" target=_blank>Cross-region unsupervised denoising for high fidelity integral imaging 3D display</a></strong> <span class=pill>JNL</span><br>
+  문제: 노이즈가 있는 element image array에서 고품질 광필드 복원이 지역적 상관관계만으로는 한계가 있음 / 방법: cross-region 비지도 디노이징으로 장거리 기하 일관성 확보 / 의미: Watch-only, integral imaging 3D 디스플레이 품질 개선 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116681" target=_blank>On the theory of bias tuning in event cameras</a></strong> <span class=pill>JNL</span><br>
+  문제: 이벤트 카메라의 감도 바이어스 튜닝에 체계적인 이론적 기초가 부족함 / 방법: Poincaré-Miranda 정리 기반 이벤트율-바이어스 관계 수학적 정식화 / 의미: Watch-only, 이벤트 카메라 튜닝의 이론적 토대 / 우선순위: Skim-only
+</div>
+
+<h3>Tomography/3D Imaging (34편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ao.613760" target=_blank>Three-dimensional residual projection completion for coded-aperture cone-beam computed tomography</a></strong> <span class=pill>JNL</span><br>
+  문제: coded-aperture CBCT가 부족한 투영 각도로 인해 복원 품질이 저하됨 / 방법: 3D 잔차 네트워크 기반 투영 완성 / 의미: 오늘 클러스터3 대표 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1155/ijo/8385167" target=_blank>Optical Coherence Tomography-Based Nondestructive Detection of Internal Welding Defects in Quartz Glass Welds</a></strong> <span class=pill>JNL</span><br>
+  문제: 반도체용 석영 유리 용접부의 기공·균열 결함을 비파괴로 검출하기 어려움 / 방법: OCT 기반 내부 결함 검출 / 의미: 산업용 OCT 비파괴검사 응용 확장 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.613800" target=_blank>Spatial coherence governs the resolution-signal trade-off and aberration tolerance in full-field optical coherence tomography</a></strong> <span class=pill>JNL</span><br>
+  문제: full-field OCT에서 공간 결맞음(coherence)이 해상도-신호 트레이드오프와 수차 허용도에 미치는 영향이 불명확함 / 방법: 공간 결맞음 기반 이론 분석 / 의미: full-field OCT 설계 원리 정립 / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+<p><small>나머지 31편은 PET/CT, 안과 OCT, CBCT 치과 영상 등 임상 사례 보고라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology (14편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.21105/joss.11121" target=_blank>Whole slide and microscopy image analysis with QuPath and OMERO</a></strong> <span class=pill>JNL</span><br>
+  문제: whole-slide 병리 영상과 현미경 영상을 분석·관리하는 통합 오픈소스 도구가 부족함 / 방법: QuPath와 OMERO를 연동한 분석 워크플로우 / 의미: 디지털 병리 인프라 도구 / 주의: 초록 미공개 / 우선순위: Skim-only
+</div>
+<p><small>나머지 13편은 치아 미백, 세균 진단 염색, ESG 보고서 등 "virtual"·"staining" 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (7편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.compmedimag.2026.102826" target=_blank>Dual-state adaptive unrolled network for structure-preserving low-dose CT image restoration</a></strong> <span class=pill>JNL</span><br>
+  문제: 저선량 CT 복원이 구조 보존과 노이즈 제거를 동시에 만족하기 어려움 / 방법: dual-state 적응형 unrolled network / 의미: 오늘 클러스터3 대표 / 주의: 초록 미공개 / 우선순위: Read
+</div>
+<p><small>나머지 6편은 항공기 도어 탐지, 약물 민감도 디콘볼루션, 광음향 현미경 리뷰 등 이미징 ROI와 거리가 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods (26편 중 관련 7편, catch-all 과대표 방지로 2편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1063/5.0337027" target=_blank>Two-dimensional photodetectors enabling ultraminiaturized computational spectrometers</a></strong> <span class=pill>JNL</span><br>
+  문제: 온칩·웨어러블 시스템에 들어갈 분광계가 부피 제약을 받음 / 방법: 소자별 스펙트럼 응답 다양성 기반 계산 분광계 / 의미: 오늘 클러스터4·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tmi.2026.3744092" target=_blank>Noise2Match: Self-Supervised Low-Dose CT Denoising via Adaptive Inter-Slice Matching</a></strong> <span class=pill>JNL</span><br>
+  문제: 저선량 CT denoising이 페어 노이즈-클린 데이터 확보 어려움에 막혀 있음 / 방법: 적응적 인접 슬라이스 매칭 기반 자기지도 학습 / 의미: 오늘 클러스터3 대표 / 우선순위: Read
+</div>
+<p><small>나머지 5편(Optical neural computing 리뷰, Optoelectronic hybrid computing, Unrolling gradient nonconvex graph TV, Hierarchical residual Swin transformer MRI, SEA-RAFT-DIC 변위장 측정)은 각각 클러스터3·4에 이미 반영되었거나 Watch-only 수준이라 중복 bullet을 생략합니다.</small></p>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://doi.org/10.1002/lpor.72050" target=_blank>Physics-Consistent Dual-Plane-Driven Complex-Domain Learning — Laser & Photonics Reviews</a></li>
+  <li><a href="https://doi.org/10.1063/5.0337027" target=_blank>Two-dimensional photodetectors enabling ultraminiaturized computational spectrometers — Applied Physics Reviews</a></li>
+  <li><a href="2026-10-19-weekly.html">2026-10-19 Weekly Retrospective (지난주 10/12~10/16)</a></li>
+  <li><a href="2026-10-16.html">2026-10-16 Daily Briefing</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-10-19 journal-only 잠정본 · arXiv 0건(5개 카테고리 모두 10/16 listing 유지) + 저널 442편(--days 3), 전체 스캔 442건 · ROI 배정 119건 (26.9%, 실제 계산 이미징 신호 약 30편) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

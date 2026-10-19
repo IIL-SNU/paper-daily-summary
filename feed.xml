@@ -6,7 +6,7 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 19 Oct 2026 10:29:03 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 11:20:52 +0900</lastBuildDate>
     <ttl>720</ttl>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-10-19 (Week 42)</title>
@@ -14,6 +14,13 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-10-19-weekly.html</guid>
       <pubDate>Mon, 19 Oct 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[지난주 가장 뜨거웠던 흐름은 피드포워드 3D/4D 장면 인식이 3DGS를 넘어 비디오 생성 모델 전반으로 확장되며 스스로 한계를 드러낸 것 입니다. 월요일(10/12)은 한 달간의 CI 공백을 복구한 첫 정상 daily였는데, Splat2Act가 휴대폰 스캔 하나로 만든 3DGS 디지털 트윈 기반 real-to-sim-to-real 파이프라인으로 범용 로봇 정책의 수거 성공률을 0%에서 실제 로봇 기준 63.9%까지 끌어올렸습니다. 여기까지는 "3DGS로 더 많은 걸 할 수 있다"는 쓰임새 확장 이야기였습니다. 수요일(10/14)에는 질문이 완전히 달라집니다 — Sharper Frames, Worse Rooms는 200장의 후보 프레임 중 가장 또렷한 16장만 골랐더니…]]></description>
+    </item>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-10-19 (월요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-10-19.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-10-19.html</guid>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 arXiv 5개 카테고리는 모두 지난주 금요일(10/16)과 같은 "Friday, 16 October 2026" listing에 머물러 있어(10/19 신규 listing 미갱신), Crossref 9개 키워드 질의로 저널만 먼저 --days 1(282건)을 수집해 봤지만 45건(15.9%)만 ROI에 배정되고 대부분 임상 사례 보고라 클러스터를 만들 근거가 부족했습니다. prompts/instruction.md의 재수집 규칙에 따라 --days 3(2026-10-16~10-19 등록분, 주말 등록분 포함)으로 다시 수집하니 442건으로 늘었고, OpenAlex enrich 후 classify.py로 스캔해 119건(26.9%)이 9개 ROI 버킷에 배정됐습니다.…]]></description>
     </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-10-16 (금요일)</title>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-17.html</guid>
       <pubDate>Fri, 17 Jul 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[이번 주 3DGS/neural reconstruction 흐름을 하루씩 되짚어 보면 뚜렷한 계단식 진행이 보입니다. 월요일(7/13)엔 feed-forward 3D 재구성이 "새 도메인에 적용해보기"에서 "내부가 왜 흔들리는지 진단하고 고치기"로, 화요일(7/14)엔 "더 예쁜 렌더링"에서 "압축·적응형 복잡도·온라인 증분 재구성"으로, 수요일(7/15)엔 CT·내시경·무선 VR 전송·레이더까지 여러 응용으로 번지며 "어디에나 쓰는 공통 3D 표현"으로 자리잡았고, 목요일(7/16)엔 그 결과를 "믿을 수 있는가"와 "얼마나 빨리 뽑아낼 수 있는가"를 정면으로 묻는 논문들이 나왔습니다. 오늘(7/17, 금)은 이 질문이 논리적 끝까지 밀고 나가, "애초에 장면마다 다시…]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Daily Briefing — 2026-07-16 (목요일)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-07-16.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-16.html</guid>
-      <pubDate>Thu, 16 Jul 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[어제(7/15, 수)는 3D Gaussian splatting(3DGS)이 사진 기반 렌더링을 넘어 CT·내시경·VR 전송·레이더까지 서로 다른 촬영 조건과 센서로 번지는 응용 확장이 중심이었습니다. 오늘(7/16, 목)은 그 응용 확장이 한 단계 더 들어가서, 3DGS와 neural implicit 재구성이 "결과를 어디까지 믿을 수 있는가"와 "얼마나 빨리 뽑아낼 수 있는가"를 정면으로 묻는 논문 3편으로 이어졌습니다. 희소뷰 CT 재구성에서 픽셀 단위 불확실성을 닫힌 형태로 계산하는 논문, 실내 표면 재구성에서 평면과 얇은 구조를 다르게 다루는 논문, 3DGS 렌더링을 질감 아틀라스로 구워 최대 5배 빠르게 만드는 논문이 같은 날 나왔습니다. 이틀을 합쳐 보면 3D…]]></description>
     </item>
   </channel>
 </rss>
