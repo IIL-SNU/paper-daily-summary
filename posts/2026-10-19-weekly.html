@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Weekly Retrospective — 2026-W42</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.7;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+table{border-collapse:collapse;width:100%;margin:1rem 0}
+th,td{border:1px solid #ccc;padding:.5rem .8rem;vertical-align:top}
+th{background:#f0f0f8;font-size:.85rem}
+td{font-size:.88rem}
+blockquote{border-left:4px solid #2a2a6e;padding:.5rem 1rem;margin:1rem 0;background:#f8f8ff}
+.theme-card{border:1px solid #e0e0ff;border-radius:8px;padding:1rem;margin:.8rem 0;background:#f8f8ff}
+.theme-card h3{margin:0 0 .5rem;font-size:1rem;color:#2a2a6e}
+a{color:#2a2a6e}
+.home{display:inline-block;padding:.4rem .9rem;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;font-size:.875rem;color:#374151;text-decoration:none;margin:.5rem 0}
+.home:hover{background:#e9ecef}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 6px;border-radius:8px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.hot-cold{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+.hot-box{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:.9rem 1.1rem}
+.cold-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:.9rem 1.1rem}
+.hot-box h3{margin:0 0 .5rem;color:#7f1d1d;font-size:.95rem}
+.cold-box h3{margin:0 0 .5rem;color:#1e3a8a;font-size:.95rem}
+.hot-box ul,.cold-box ul{margin:.4rem 0;padding-left:1.2rem;font-size:.88rem}
+.dd{background:#fefce8;border:1px solid #fde047;border-radius:10px;padding:1.1rem 1.3rem;margin:1rem 0}
+.dd h3{margin:0 0 .5rem;color:#713f12;font-size:1rem}
+.action-card{border:1px solid #d1fae5;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#f0fdf4}
+.action-card h3{margin:0 0 .4rem;font-size:.95rem;color:#14532d}
+.pred-card{border:1px solid #e0e7ff;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#eef2ff}
+.pred-card h3{margin:0 0 .4rem;font-size:.95rem;color:#3730a3}
+.pred-card .cond{font-size:.82rem;color:#4338ca;margin:.3rem 0}
+.meta{font-size:.85rem;color:#475569;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:4px;padding:.6rem 1rem;margin:.8rem 0}
+ul.plain{padding-left:1.3rem}
+ul.plain li{margin:.3rem 0;font-size:.9rem}
+.review-hit{color:#166534;font-weight:700}
+.review-partial{color:#92400e;font-weight:700}
+.review-miss{color:#7f1d1d;font-weight:700}
+.review-pending{color:#475569;font-weight:700}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Weekly Retrospective — 2026-10-19 (Week 42)</h1>
+<div class=meta>
+  <div>발행: 2026-10-19 (월) &nbsp;|&nbsp; 검토 기간: 2026-10-12 ~ 10-16 (Mon–Fri)</div>
+  <div>지난주 arXiv 신규 약 4,470편 (cs.LG 1,735 · cs.CV 940 · cs.AI 1,579 · eess.IV 47 · eess.SP 169, new+cross) + 저널 약 1,977편 &nbsp;|&nbsp; 전체 스캔 5,541건 &nbsp;|&nbsp; ROI 배정 1,391건 &nbsp;|&nbsp; 5일치 daily briefing 기반(월·수 arXiv+저널 완전판, 화 저널 전용 잠정본, 목 4개 카테고리 title-only backfill + eess.SP 완전판, 금 arXiv+저널 완전판)</div>
+</div>
+
+<h2>🗓 Executive Summary</h2>
+<ul class=plain>
+  <li>지난주는 <strong>'피드포워드로 복원하는 능력이, 그 결과를 실제로 믿고 써도 되는지를 스스로 검증하는 단계로 넘어간 한 주'</strong>로 기억하면 됩니다. 월요일 3DGS가 로봇 조작까지 흡수한 뒤, 수요일 "또렷한 사진이 꼭 좋은 건 아니다"라는 반증을 거쳐, 금요일에는 비디오 생성 모델 전체로 인식 범위가 넓어지면서 동시에 "아직 한참 부족하다"는 벤치마크가 같은 날 따라붙었습니다.</li>
+  <li>화요일부터 목요일까지는 산업 3D·의료 영상·광음향 토모그래피에서 '정답 데이터 없이도 돌아가는 복원'이라는 같은 해법이 모달리티만 바꿔가며 반복됐습니다. 더 이상 개별 논문의 묘안이 아니라 계산 이미징 전체가 공유하는 설계 전제로 굳어지는 모습입니다.</li>
+  <li>랩의 핵심 ROI인 <strong>계산광학 하드웨어 코어(Fourier Ptychography·Lensless)는 raw count 10편에도 불구하고 실질 신호가 사실상 비어 있어, 지난 9월 초 weekly가 걸었던 구조적 공백 진단이 6주의 발행 공백을 건너뛰고도 그대로 이어지고 있습니다.</strong></li>
+</ul>
+
+<blockquote>
+<strong>Weekly Thesis.</strong> 지난주 초반(월)에는 3D Gaussian Splatting이 반사·유체 같은 물리 현상과 로봇 조작 다운스트림까지 흡수하며 "복원의 쓰임새"를 넓히는 이야기였는데, 화~목을 거치며 질문이 "정답 데이터 없이도 믿을 수 있게 돌아가는가"로 좁혀졌고, 금요일에는 그 피드포워드 인식 능력이 3DGS를 넘어 비디오 생성 모델 전반으로 확장되면서 동시에 "아직 한참 부족하다"는 반증(WorldCast)까지 같은 날 스스로 따라붙었습니다. 랩의 핵심 ROI인 계산광학 하드웨어 코어는 닷새 내내 실질 신호가 사실상 비어 있어, 9월 초 weekly가 걸었던 구조적 공백 진단이 6주의 공백기를 건너뛰고도 그대로 이어지고 있는 한 주였습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>지난주 가장 뜨거웠던 흐름은 <strong>피드포워드 3D/4D 장면 인식이 3DGS를 넘어 비디오 생성 모델 전반으로 확장되며 스스로 한계를 드러낸 것</strong>입니다. 월요일(10/12)은 한 달간의 CI 공백을 복구한 첫 정상 daily였는데, Splat2Act가 휴대폰 스캔 하나로 만든 3DGS 디지털 트윈 기반 real-to-sim-to-real 파이프라인으로 범용 로봇 정책의 수거 성공률을 0%에서 실제 로봇 기준 63.9%까지 끌어올렸습니다. 여기까지는 "3DGS로 더 많은 걸 할 수 있다"는 쓰임새 확장 이야기였습니다. 수요일(10/14)에는 질문이 완전히 달라집니다 — Sharper Frames, Worse Rooms는 200장의 후보 프레임 중 가장 또렷한 16장만 골랐더니 방 치수 오차가 48%까지 치솟았는데, 그냥 시간 간격으로 고르게 16장을 뽑으면 오차가 3%에 그친다는 반증 실험을 내놓았습니다. "사진 한 장의 품질이 좋을수록 좋다"는 feed-forward 3D 복원의 당연한 전제가 깨지고, "애초에 뭘 입력으로 넣어야 하는가"라는 파이프라인 앞단의 질문이 떠오른 겁니다. 목요일(10/15)에는 3DGS가 압축·시점 간 특징 코딩·오클루전 기반 재조명·의료 CT 모션 보정까지 동시에 떠맡는 인프라 단계로 들어섰고, 금요일(10/16)에는 Gen4P가 그 피드포워드 인식 범위를 3DGS에서 사전학습된 비디오 생성 모델 전체로 넓혔습니다. 그런데 같은 날 WorldCast가 320개 사례·4단계 난이도 벤치마크로 "최고의 공개 모델도 100점 만점에 20.1점"이라는 수치를 공개하며, 그 기대가 아직 현실과 멀다는 걸 같은 날 같이 보여줬습니다. 닷새를 이어보면 "무엇을 더 복원할 수 있는가"에서 "어떤 입력이 중요한가", "어디까지 인프라로 쓸 수 있는가", "그 인식이 실제로 어디까지 일반화되고 스스로 검증되는가"로 질문이 한 단계씩 구체화된 셈입니다.</p>
+<p>화요일(10/13)부터 목요일까지는 <strong>'정답 데이터 없이도 돌아가는 복원'</strong>이 또 하나의 축을 이뤘습니다. 화요일은 arXiv listing이 갱신되지 않아 저널만으로 만든 잠정본이었는데, 산업·소재 현장의 비침습 3D 복원 6편이 초음파·입자유동·열화상·X선처럼 서로 다른 모달리티에서 학습 데이터 없이(비지도·모델기반) 내부 구조를 복원했습니다. 수요일에는 Noise2Match와 Background2Background가 저선량 CT와 고차원 현미경에서 깨끗한 정답 영상 없이 노이즈 낀 데이터만으로 학습하는 방법을 냈고, 목요일에는 광음향 토모그래피 논문이 같은 태도(정답 데이터 대신 물리 방정식 자체를 모델에 박아 넣기)를 또 다른 모달리티로 확장했습니다. 사흘 내내 모달리티만 바뀌며 같은 해법이 반복된다는 건, 깨끗한 정답 데이터를 구하기 어렵다는 계산 이미징의 오래된 병목이 이제 개별 논문의 묘안이 아니라 분야 전체가 공유하는 설계 전제가 됐다는 뜻입니다. 메타표면 쪽에서도 비슷한 성숙이 보였습니다. 화요일 안테나 응용 다수에 묻혀서도 광학 라돈 변환 같은 "빛으로 직접 연산하는" 메타표면 논문이 꾸준히 나왔고, 목요일 Intelligent Inverse Design of Meta-Absorbers는 학습 파라미터를 66.35%만 쓰고도 역예측 정확도를 자릿수 단위로 끌어올려 설계 목표를 "더 정교한 탐색"에서 "더 적은 자원으로 빠르게 찾기"로 바꿨습니다. 금요일에는 교차격자 파면 현미경이 메타표면 벡터장 복원과 나노유체 농도 측정이라는 완전히 다른 두 응용에 같은 저널·겹치는 저자군으로 이틀 연속 등장하며 범용 특성화 플랫폼으로 자리잡았음이 확인됐습니다.</p>
+<p>다음 주 전망: 첫째, 계산광학 하드웨어 코어의 실질 신호 결핍이 정말 새로운 기준선으로 굳어지는지, 아니면 두 버킷 중 하나라도 반전하는 날이 나오는지가 가장 먼저 확인할 대상입니다. 둘째, Gen4P류 비디오 생성 모델 기반 4D 인식이 WorldCast 같은 벤치마크로 직접 수치 검증되는 후속 논문으로 이어지는지 지켜봐야 합니다. 셋째, '정답 데이터 없이 돌아가는 복원'이 이번 주 다룬 세 모달리티(산업 3D·의료·광음향)를 넘어 네 번째 모달리티로 더 번지는지가 랩 ROI 관점에서 직접적인 확인 대상입니다.</p>
+
+<h2>⚖️ Hot vs Cold</h2>
+<div class=hot-cold>
+  <div class=hot-box>
+    <h3>⬆ 가속 클러스터</h3>
+    <ul>
+      <li><strong>피드포워드 3D/4D 장면 인식이 3DGS를 넘어 비디오 생성 모델로 확장되며 스스로 한계를 드러냄</strong><br>월→수→목→금 나흘에 걸쳐 쓰임새 확장(로봇 조작)→입력 설계 반증→인프라화→일반화+자기검증으로 한 단계씩 쌓였습니다.</li>
+      <li><strong>'정답 데이터 없이도 돌아가는 복원'이 산업·의료·광학 전반의 공통 전제로 굳어짐</strong><br>화~목 사흘, 모달리티만 바뀌며 같은 해법(비지도·자기지도·물리내장)이 반복됐습니다.</li>
+      <li><strong>메타표면 광연산·역설계의 효율화, 교차격자 파면 현미경의 범용 플랫폼 확정</strong><br>화·목·금 사흘에 걸쳐 "더 정교한 탐색"에서 "더 적은 자원"으로, 단발 신호에서 이틀 연속 확인된 플랫폼으로 발전했습니다.</li>
+    </ul>
+  </div>
+  <div class=cold-box>
+    <h3>⬇ 감속 클러스터</h3>
+    <ul>
+      <li><strong>계산광학 하드웨어 코어(Fourier Ptychography·Lensless)</strong><br>raw count 10편에도 실질 신호는 거의 0에 머물러, 9월 초 weekly의 구조적 하락 진단이 6주의 공백기를 건너뛰고도 그대로 이어지고 있습니다.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>🧩 주간 클러스터 표</h2>
+<table>
+<thead><tr>
+  <th>Cluster</th>
+  <th>대표 논문</th>
+  <th>왜 중요?</th>
+  <th>Confidence</th>
+  <th>Lab action</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><strong>피드포워드 3D/4D 장면 인식이 3DGS를 넘어 비디오 생성 모델 전반으로 확장되며 스스로 한계를 드러냄 <span class=tag>HOT</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.13945">Splat2Act</a><br>
+    <a href="https://arxiv.org/abs/2610.15854">Sharper Frames, Worse Rooms</a><br>
+    <a href="https://arxiv.org/abs/2610.22371">Gen4P</a><br>
+    <a href="https://arxiv.org/abs/2610.20731">WorldCast</a>
+  </td>
+  <td>월요일 Splat2Act는 3DGS 디지털 트윈 하나로 로봇 정책 수거 성공률을 0%에서 62.5~63.9%까지 끌어올려 복원 결과를 실행 환경에 바로 투입할 수 있다는 걸 보여줬습니다. 수요일 Sharper Frames, Worse Rooms는 "사진이 또렷할수록 좋다"는 전제를 뒤집어 "애초에 뭘 입력으로 넣어야 하는가"로 질문을 파이프라인 앞단으로 옮겼고, 목요일에는 3DGS가 압축·시점 간 특징 코딩·재조명·의료 CT 모션 보정까지 동시에 떠맡는 인프라 단계로 들어섰습니다. 금요일 Gen4P는 그 피드포워드 인식 범위를 사전학습된 비디오 생성 모델 전체로 넓혔는데, 같은 날 WorldCast가 320개 사례 벤치마크로 최고 공개 모델도 100점 만점에 20.1점에 그친다는 수치를 공개하며 같은 흐름 안에서 제안과 반증이 동시에 나왔습니다.</td>
+  <td>High<br><small>월·수·목·금 나흘, 서로 다른 기관의 독립된 논문들이 로봇 실측치·반증 실험·벤치마크 수치로 서로를 뒷받침</small></td>
+  <td>Splat2Act의 real-to-sim-to-real 파이프라인과 Gen4P의 feed-forward 4D 인식을 랩 보유 멀티뷰/라이트필드 데이터셋에 순서대로 적용해, 기존 반복 최적화 파이프라인 대비 추론 속도·깊이 오차(AbsRel)·실제 장비 적용 성공률을 함께 비교하는 표를 만든다</td>
+</tr>
+<tr>
+  <td><strong>'정답 데이터 없이도 돌아가는 복원'이 산업 3D·의료 영상·광음향 토모그래피로 번짐 <span class=tag>HOT</span></strong></td>
+  <td>
+    <a href="https://doi.org/10.1109/tim.2026.3742006">Non-local Mean Regularized Deep Image Prior</a><br>
+    <a href="https://arxiv.org/abs/2610.18379">Noise2Match</a><br>
+    <a href="https://arxiv.org/abs/2610.17615">Background2Background</a><br>
+    <a href="https://doi.org/10.1063/5.0353516">Zero-shot physics-supervised photoacoustic tomography</a>
+  </td>
+  <td>화요일 산업 현장 3D 복원 6편은 초음파·입자유동·열화상·X선처럼 서로 다른 모달리티에서 학습 데이터 없이 내부 구조를 복원했고, 수요일 Noise2Match·Background2Background는 저선량 CT와 고차원 현미경에서 깨끗한 정답 영상 없이 노이즈 낀 데이터만으로 학습하는 방법을 냈습니다. 목요일 광음향 토모그래피 논문은 같은 태도(정답 데이터 대신 물리 방정식 자체를 모델에 내장)를 또 다른 모달리티로 확장했습니다. 사흘 내내 모달리티만 바뀌며 같은 해법이 반복된다는 건, 깨끗한 정답 데이터를 구하기 어렵다는 계산 이미징의 오래된 병목이 이제 개별 논문의 해결책이 아니라 분야 전체가 공유하는 전제가 됐다는 뜻입니다.</td>
+  <td>High<br><small>화·수·목 사흘, 서로 다른 모달리티(산업 초음파/입자유동/열화상, 의료 CT/현미경, 광음향)의 독립된 논문들이 같은 해법을 반복</small></td>
+  <td>Background2Background의 자기지도 배경 제거와 Noise2Match의 인접 슬라이스 매칭 방식을 랩이 정답 데이터를 확보하기 어려운 모달리티(저선량/저조도 촬영)에 적용해, 기존 지도학습 기반 디노이징 대비 배경 억제율과 PSNR을 비교한다</td>
+</tr>
+<tr>
+  <td><strong>재구성·정합의 성공 기준이 "매끄러움"에서 "과제에 필요한 정량값 보존"으로 이동 <span class=tag>HOT</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.14963">AD-GS</a><br>
+    <a href="https://arxiv.org/abs/2610.18518">STCNet</a><br>
+    <a href="https://arxiv.org/abs/2610.21451">PET Quantification-Preserving Registration</a><br>
+    <a href="https://arxiv.org/abs/2610.21664">Smooth-to-hard Spectral Regularization</a>
+  </td>
+  <td>목요일 AD-GS·STCNet은 희소 투영 CBCT 복원에서 3DGS 표현이 해부학적 밀도나 시공간 일관성 같은 사전 지식을 직접 따르도록 제약했습니다. 금요일 PET Quantification-Preserving Registration은 정합 전후로 종양 대사량 같은 PET 정량 지표가 유지되도록 손실 함수에 직접 반영했고, 같은 날 Smooth-to-hard Spectral Regularization은 일반 선형 역문제에 적용 가능한 데이터 기반 정칙화로 부드러움과 엄격함 사이를 조절했습니다. 네 편을 같이 보면, 정합·재구성의 성공 기준이 "시각적으로 매끄러운가"에서 "정합·재구성이 끝난 뒤에도 실제로 측정하려던 값이 유지되는가"로 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>목·금 이틀, 서로 다른 모달리티(CBCT, PET/CT, 일반 선형 역문제)의 독립된 4편이 같은 방향을 보이나 더 넓은 확산은 다음 주 확인 필요</small></td>
+  <td>Smooth-to-hard 스펙트럼 정칙화를 랩의 FP·토모그래피 재구성 solver에 기존 soft-thresholding 대신 drop-in으로 적용하고, AD-GS의 해부학적 밀도 제약 아이디어를 랩 CBCT/3D 재구성 파이프라인에 적용해 수렴 속도와 복원 오차(PSNR/SSIM)를 비교한다</td>
+</tr>
+<tr>
+  <td><strong>메타표면 광연산·역설계가 "더 정교한 탐색"에서 "더 적은 자원으로 빠르게 찾기"로, 교차격자 파면 현미경은 범용 플랫폼으로 확정 <span class=tag>HOT</span></strong></td>
+  <td>
+    <a href="https://doi.org/10.1063/5.0360122">Metasurface-based optical Radon transform</a><br>
+    <a href="https://doi.org/10.1002/adom.71947">Intelligent Inverse Design of Meta-Absorbers</a><br>
+    <a href="https://doi.org/10.1021/acsnano.6c06635">Single-Shot Polarization Imaging of Vectorial Metasurfaces</a><br>
+    <a href="https://doi.org/10.1021/acsnano.6c12559">Monitoring Liquid Concentration Changes in Nanofluidic Channels</a>
+  </td>
+  <td>화요일에는 5G/6G 안테나 응용 다수에 묻혀서도 광학 라돈 변환·비국소 다기능 이미징처럼 "빛으로 직접 연산하는" 메타표면 논문이 꾸준히 나왔습니다. 목요일 Intelligent Inverse Design of Meta-Absorbers는 학습 파라미터를 66.35%만 쓰고도 역예측 정확도를 자릿수 단위로 끌어올려, 설계 목표가 "더 정교한 구조 탐색"에서 "더 적은 자원으로 빠르게 찾기"로 바뀌었음을 보였습니다. 금요일에는 교차격자 파면 현미경이 메타표면 벡터장 복원과 나노유체 농도 측정이라는 완전히 다른 두 응용에 같은 저널·겹치는 저자군으로 이틀 연속 등장하며, 우연한 동시 등장이 아니라 범용 특성화 플랫폼으로 자리잡았다는 확신을 줬습니다.</td>
+  <td>Medium<br><small>화·목·금 사흘, 서로 다른 응용(안테나 공존 광연산, 역설계 효율화, 벡터장/유체 특성화)이 메타옵틱스 효율화라는 같은 방향으로 수렴</small></td>
+  <td>교차격자 파면 현미경의 단일 촬영 벡터장 복원 절차를 랩 보유 메타표면 샘플에 시범 적용해 기존 편광 분해 현미경 대비 측정 시간·Stokes 파라미터 복원 오차를 비교하고, Intelligent Inverse Design의 적은 파라미터 전략을 랩 메타표면 설계 파이프라인에 적용해 학습 비용 대비 역예측 정확도를 비교한다</td>
+</tr>
+<tr>
+  <td><strong>계산광학 하드웨어 코어(Fourier Ptychography·Lensless)가 raw count 10편에도 실질 신호는 사실상 공백 <span class=tag>WATCH</span></strong></td>
+  <td>
+    <a href="https://doi.org/10.1364/ol.614237">High-fidelity lensless on-chip microscopy</a><br>
+    <a href="https://arxiv.org/abs/2610.20309">Event Cameras versus Frame Cameras for Synthetic-Aperture Imaging</a>
+  </td>
+  <td>닷새 합계 raw count는 Fourier Ptychography 7편·Lensless 3편이었지만, 목·금 이틀은 각 daily briefing이 실질 신호 0편임을 직접 확인했습니다(목: Lensless 0편·FP는 1편 오탐, 금: FP 0편·Lensless 1편도 레스리스와의 직접 연결이 약한 일반 광학 설계 이론). 월~수 사흘은 대표 클러스터에 전혀 언급되지 않아 본문 기준 실질 신호 여부가 확인되지 않았습니다. 유일하게 실질적으로 보이는 신호는 수요일 저널에 올라온 렌즈리스 온칩 현미경 1편뿐인데, 이마저 같은 날 2편 이상 묶이지 못해 클러스터로 승격되지 못했습니다.</td>
+  <td>Low<br><small>닷새 중 명시적으로 확인된 이틀(목·금) 모두 실질 신호 0~1편, raw count 10편과의 괴리가 큼</small></td>
+  <td>지난 6주(9월 초 weekly~이번 주)의 daily trends에서 Fourier Ptychography·Lensless raw count와 실질 신호 편수를 요일별로 재정리하고, 랩 자체 lensless/FPM 미니 벤치마크 제안서를 이번 주 안에 초안으로 작성한다</td>
+</tr>
+</tbody>
+</table>
+
+<h2>📐 arXiv vs 저널 키워드</h2>
+<table>
+<thead><tr><th>채널</th><th>지난주 주요 키워드</th></tr></thead>
+<tbody>
+<tr><td><strong>공통</strong></td><td>reconstruction/tomography(arXiv의 3DGS·CBCT·등록 정량 보존과 저널의 산업 초음파/입자유동 토모그래피·광음향/전기용량 토모그래피가 "정답 데이터 없이 물리 구조를 복원한다"는 같은 지향을 서로 다른 층위에서 반복), physics-informed/zero-shot(수~목 자기지도 디노이징과 저널의 물리 내장형 광음향 재구성이 다른 모달리티에서 같은 태도로 수렴)</td></tr>
+<tr><td><strong>arXiv 전용</strong></td><td>피드포워드 3D/4D 장면 인식(Splat2Act, Sharper Frames, Gen4P, WorldCast), 희소 투영 CBCT의 해부학적·시공간 제약(AD-GS, STCNet), 정합의 정량값 보존(PET Quantification-Preserving Registration, Smooth-to-hard Spectral Regularization), 자기지도 디노이징(Noise2Match, Background2Background), 병리·현미경 vision-language 캡션 부족 우회(BigCell, MicroCLIP)</td></tr>
+<tr><td><strong>저널 전용</strong></td><td>메타표면 광연산·역설계 효율화(optical Radon transform, Intelligent Inverse Design of Meta-Absorbers), 교차격자 파면 현미경의 범용 특성화 확산(벡터장 복원, 나노유체 농도), 산업·소재 현장 비침습 3D 복원(초음파 토모그래피, 입자유동 PIV, 열화상), 홀로그래피의 다채널 동시 처리(dual-sample phase imaging, polarization-multiplexed holography)</td></tr>
+<tr><td><strong>같은 단어, 다른 맥락</strong></td><td>"reconstruction"/"tomography" — arXiv는 3DGS·CBCT·의료 역문제의 신뢰도·정량값 보존을, 저널은 산업 초음파·입자유동·광음향·전기용량 토모그래피처럼 완전히 다른 물리 신호를 가리킵니다. "metasurface" — 화요일 저널에는 안테나/RF 응용과 광연산·역설계가 섞여 있어, 같은 단어라도 "전자파 차폐"와 "빛으로 연산하기"는 전혀 다른 맥락입니다. "virtual/staining" — arXiv 쪽은 계산 이미징 방법론이지만 저널 쪽 일부(관광·진단 등)는 키워드만 겹치는 무관 논문입니다.</td></tr>
+</tbody>
+</table>
+
+<h2>🔥 주간 Top 5</h2>
+<ol>
+<li>
+  <strong><a href="https://arxiv.org/abs/2610.13945">Splat2Act: From Captured Scenes to Personalized VLA Manipulation</a></strong>
+  <span class=tag>[실사용전환]</span><br>
+  휴대폰 스캔 하나로 만든 3DGS 디지털 트윈 기반 real-to-sim-to-real 파이프라인이 범용 로봇 정책의 수거 성공률을 0%에서 실제 로봇 기준 63.9%까지 끌어올렸습니다. 한 달간의 CI 공백을 복구한 첫날, 3DGS가 "복원"을 넘어 "실행"까지 책임질 수 있다는 걸 가장 구체적인 수치로 보여준 사례입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2610.15854">Sharper Frames, Worse Rooms: Viewpoint Coverage Dominates Image Quality in Feed-Forward 3D Reconstruction</a></strong>
+  <span class=tag>[해부분석]</span><br>
+  가장 또렷한 16장만 골랐더니 방 치수 오차가 48%까지 치솟았는데, 그냥 시간 간격으로 고르게 뽑으면 3%에 그쳤습니다. "사진 품질이 좋을수록 좋다"는 feed-forward 3D 복원의 당연한 전제를 정면으로 뒤집은, 이번 주 가장 반증 가능한 수치를 가진 논문입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2610.22371">Gen4P: Video Generators are 4D Perceivers</a></strong>
+  <span class=tag>[방법전환]</span><br>
+  사전학습된 비디오 생성 모델이 이미 내부에 깊이·카메라 자세·시간적 장면 변화를 담고 있다고 보고, 반복적 디노이징 없이 한 번의 순전파로 그 정보를 꺼내 씁니다. 이번 주 피드포워드 3D/4D 인식 스레드가 3DGS를 넘어 비디오 생성 모델 전체로 번진 가장 큰 프레이밍 전환입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2610.20731">WorldCast: Exploring Intelligent Visual Generation in World State Prediction</a></strong>
+  <span class=tag>[평가축]</span><br>
+  Gen4P와 같은 날, 320개 사례·4단계 난이도 벤치마크로 "최고의 공개 모델도 100점 만점에 20.1점"이라는 수치를 공개했습니다. 제안과 반증이 같은 날 같은 주제에서 나왔다는 건 이 분야가 과대평가 단계를 지나 스스로를 검증하는 단계로 들어섰다는 신호입니다.
+</li>
+<li>
+  <strong><a href="https://doi.org/10.1021/acsnano.6c06635">Single-Shot Polarization Imaging of Vectorial Metasurfaces Using Cross-Grating Wavefront Microscopy</a></strong>
+  <span class=tag>[인프라]</span><br>
+  같은 저널·겹치는 저자군이 완전히 다른 두 응용(메타표면 벡터장 복원, 나노유체 농도 측정)에 같은 측정 기법을 이틀 연속 적용했습니다. 세기·위상·편광을 한 번의 촬영으로 함께 복원하는 범용 특성화 플랫폼이 우연이 아니라는 걸 가장 뚜렷하게 보여준 사례입니다.
+</li>
+</ol>
+
+<h2>🌟 Weekly Deep-Dive — 지난주의 대표 논문</h2>
+<div class=dd>
+  <h3>Gen4P: Video Generators are 4D Perceivers (2610.22371)</h3>
+  <p><em>왜 주간 대표인가</em>: 지난주는 피드포워드 복원이 "무엇을 더 복원할 수 있는가"에서 "그 인식이 어디까지 일반화되고 스스로 검증되는가"로 넘어간 한 주였습니다. Gen4P는 월요일 Splat2Act가 3DGS로 시작한 피드포워드 인식 범위를 비디오 생성 모델 전체로 넓힌 금요일의 결론이면서, 같은 날 WorldCast의 반증까지 함께 딸려오는 바람에 한 주 전체의 "제안과 자기 검증" 패턴을 가장 압축적으로 보여줍니다. daily must-read로도 다뤘지만, 주간 대표로는 "왜 이 논문이 월~목의 흐름을 받아 금요일에 어떻게 매듭지었는지"를 기준으로 다시 골랐습니다.</p>
+
+  <p><strong>무엇을 했나</strong>: 지금까지 비디오 기반 4D(3차원+시간) 복원은 대부분 반복적인 최적화나 디노이징 과정을 거쳐야 했습니다. Gen4P는 사전학습된 video generator의 clean latent를 한 번의 인코더 순전파로 처리하고, 원하는 4D 속성(점 추적, 깊이, 카메라 자세)을 가벼운 cross-attention 디코더로 바로 예측합니다. 깊이 추정을 위해서는 별도로 학습한 video-depth LoRA를 기하학적 사전 지식으로 주입하는 구조도 함께 제안합니다.</p>
+
+  <p><strong>왜 새로운가</strong>: 예전에는 비디오 생성 모델을 "그럴듯한 다음 장면을 그려내는 도구"로만 봤다면, Gen4P는 그 모델 내부에 이미 깊이·카메라 자세·시간에 따른 장면 변화 같은 3차원 정보가 들어 있다고 보고 그걸 반복 없이 꺼내 쓰는 쪽으로 관점을 바꿨습니다. 이건 월요일 Splat2Act가 3DGS를 "복원 도구"에서 "로봇이 쓸 학습 환경을 만드는 도구"로 넓힌 것과 같은 방향의 전환이고, 수요일 Sharper Frames, Worse Rooms가 "입력을 어떻게 고르느냐"를 물었던 것의 연장선에서 "입력 하나로 얼마나 많은 걸 한 번에 뽑아낼 수 있느냐"를 묻는 질문이기도 합니다.</p>
+
+  <p><strong>랩 관련성</strong>: 랩의 라이트필드/멀티뷰 재구성에서, 만약 생성 모델 하나로 점 추적·깊이·카메라 자세까지 한 번에 뽑아낼 수 있다면 재구성 파이프라인 구조 자체를 다시 설계해볼 만한 신호입니다. 특히 반복 최적화 기반 파이프라인의 추론 속도 병목을 줄일 수 있다는 점에서 랩 멀티뷰 데이터셋에 바로 시범 적용해볼 가치가 있습니다.</p>
+
+  <p><strong>주의</strong>: 초록에는 "SOTA 또는 경쟁력 있는 성능"이라고만 서술돼 있고 구체적인 수치 비교가 없습니다. 일반화 주장도 정성적인 야외(in-the-wild) 결과에 기대고 있어, 랩 데이터에 적용했을 때 실제 성능이 어느 정도인지는 직접 재현해봐야 합니다 [Claim risk]. 같은 날 나온 WorldCast가 "이 분야 전체가 아직 멀었다"는 현실을 수치로 보여준다는 점도 함께 고려해야 하며, 다음 주 예측 중 하나로 Gen4P류 방법이 WorldCast 같은 벤치마크로 직접 검증되는지를 지켜보고 있습니다.</p>
+</div>
+
+<h2>🧭 주간 테마 3개</h2>
+<div class=theme-card>
+  <h3>1. 피드포워드 3D/4D 인식이 "무엇을 더 잘 복원하나"에서 "그 인식이 어디까지 일반화되고 스스로 검증되나"로 진화</h3>
+  <p>월요일 물리 현상·로봇 다운스트림 흡수, 수요일 입력 설계(프레임 선택) 반증, 목요일 3DGS 인프라 단계 진입, 금요일 비디오 생성 모델로의 일반화와 자기 검증형 벤치마크까지 닷새 내내 한 단계씩 쌓였습니다. 다음 주에는 이 흐름 중 둘 이상을 한 시스템에서 같이 다루는 통합형 논문이 나오는지, 아니면 Gen4P류 방법이 수치 기반으로 검증되는 후속 논문이 나오는지가 관전 포인트입니다.</p>
+  <p><em>Confidence: High — 월·수·목·금 나흘, 로봇 실측치·반증 실험·벤치마크 수치가 서로 다른 각도에서 같은 방향을 뒷받침</em></p>
+</div>
+<div class=theme-card>
+  <h3>2. "정답 데이터 없이도 돌아가는 복원"이 산업·의료·광학 전반의 공통 전제가 됨</h3>
+  <p>화요일 산업 3D, 수요일 의료 영상 디노이징, 목요일 광음향 토모그래피까지 사흘에 걸쳐 모달리티만 바뀌며 같은 해법(비지도·자기지도·물리내장)이 반복됐습니다. 깨끗한 정답 데이터를 구하기 어렵다는 계산 이미징의 오래된 병목이 이제 분야 전체가 당연하게 설계에 반영하는 전제가 되고 있다는 뜻입니다.</p>
+  <p><em>Confidence: High — 화·수·목 사흘, 서로 다른 모달리티의 독립된 논문들이 같은 해법을 반복</em></p>
+</div>
+<div class=theme-card>
+  <h3>3. 계산광학 하드웨어 코어의 공백이 9월 이후에도 반복되는 구조적 패턴으로 굳어짐</h3>
+  <p>6주의 weekly 발행 공백기를 건너뛰어도 Fourier Ptychography·Lensless의 실질 신호 결핍이 그대로 재확인됐습니다. 랩의 핵심 ROI와 직접 맞닿은 영역인 만큼, 외부 신호를 기다리기보다 랩 자체 벤치마크로 공백을 채워야 할 필요성이 커지고 있습니다.</p>
+  <p><em>Confidence: Medium — 닷새 중 명시적으로 확인된 이틀(목·금)은 실질 신호 0~1편, 나머지 사흘은 본문 미확인이라 완전한 확정은 아님</em></p>
+</div>
+
+<h2>🪞 지난 예측 채점 (W36 → W42)</h2>
+<p><small>2026-09-07(W36) weekly 이후 2026-09-14~10-05(영업일 14일) CI 공백으로 중간 5주(W37~W41) weekly가 발행되지 못해, 6주를 건너뛴 상태에서 채점합니다. 이 때문에 "지속적으로 굳어졌는지"처럼 연속 추적이 필요한 예측은 완전히 확인할 수 없고, 이번 주(W42) 데이터로 방향성만 재확인하는 수준에 그칩니다.</small></p>
+<div class=pred-card>
+  <h3><span class=review-partial>◐</span> 계산광학 하드웨어 코어의 결핍이 새로운 기준선으로 굳어지는지</h3>
+  <p>6주의 공백으로 연속 추적은 불가능했지만, 공백을 건너뛰고 다시 측정한 이번 주에도 Fourier Ptychography·Lensless 실질 신호가 닷새 내내 사실상 0에 머물러 방향성 자체는 W36의 구조적 하락 진단과 일치합니다. 중간 과정을 확인할 수 없었던 점을 반영해 부분 적중으로 판정합니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-partial>◐</span> 3D Gaussian Splatting/3D 재구성 메인 스레드가 다섯 갈래를 통합하는 논문으로 수렴하는지</h3>
+  <p>6주 공백으로 중간 과정은 확인할 수 없습니다. 다만 이번 주 목요일 클러스터(압축·시점 간 특징 코딩·오클루전 기반 재조명·의료 CT 모션 보정을 모두 3DGS 하나로 다룸)는 W36이 예상했던 "여러 갈래를 한 시스템으로 묶는" 통합 단계와 방향은 비슷하지만, 단일 논문이 다섯 갈래를 직접 통합한 것은 아니라 부분 적중으로 판정합니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-pending>⏳</span> flow matching이 diffusion을 밀어내고 영상 복원의 기본 생성 사전으로 자리잡는지</h3>
+  <p>6주의 공백으로 diffusion과 flow matching의 상대적 비중이 그 사이 어떻게 변했는지 추적할 근거가 없습니다. 이번 주(10/16)에는 diffusion/flow 추론 가속 논문 5편이 모두 "이미 학습된 모델을 재학습 없이 더 싸게 쓰는" 방향이라 diffusion 대 flow matching의 세대교체 여부를 직접 판정할 신호가 아니었습니다. 판정을 유보합니다.</p>
+</div>
+
+<h2>🔮 다음주 예측</h2>
+<div class=pred-card>
+  <h3>1. 계산광학 하드웨어 코어의 실질 신호 결핍이 새로운 기준선으로 계속 굳어진다</h3>
+  <p>이번 주도 raw count 10편(FP 7·Lensless 3)과 무관하게 실질 신호는 거의 0에 머물렀습니다. 9월 초 이후 6주의 공백기에도 같은 결핍이 재확인됐다는 건 일시적 변동이 아니라 구조적 기준선에 가깝다는 뜻입니다.</p>
+  <div class=cond>✅ 적중 조건: 다음 주 5영업일 중 4일 이상 Fourier Ptychography·Lensless 두 버킷 모두 실질 신호 0~1편에 머문다</div>
+  <div class=cond>✗ 빗나감 조건: 다음 주 5일 중 2일 이상에서 Fourier Ptychography 또는 Lensless 중 하나라도 실질 신호 2편 이상을 낸다</div>
+</div>
+<div class=pred-card>
+  <h3>2. 피드포워드 3D/4D 인식 스레드가 비디오 생성 모델 쪽에서 수치 기반 검증 논문으로 이어진다</h3>
+  <p>금요일 Gen4P는 "SOTA 또는 경쟁력 있는 성능"이라는 정성적 표현만 쓰고 구체적 벤치마크 수치를 내지 않았습니다. 같은 날 WorldCast가 이 분야 전체의 미성숙을 수치로 보여준 만큼, 다음 주에는 Gen4P류 방법을 WorldCast 같은 벤치마크로 직접 검증하는 후속 논문이 나올 가능성이 있습니다.</p>
+  <div class=cond>✅ 적중 조건: 다음 주 video-generator-as-4D-perceiver 계열 논문 1편 이상이 WorldCast 또는 유사 벤치마크로 자신의 주장을 직접 수치 검증한다</div>
+  <div class=cond>✗ 빗나감 조건: 다음 주 관련 신규 논문이 전부 정성적 주장(SOTA/competitive)에 그치고 수치 기반 교차 검증이 전혀 나오지 않는다</div>
+</div>
+<div class=pred-card>
+  <h3>3. '정답 데이터 없이 돌아가는 복원'이 네 번째 모달리티로 더 확산된다</h3>
+  <p>화~목 사흘에 걸쳐 산업 3D(초음파·입자유동·열화상)·의료 영상(CT·현미경)·광음향 토모그래피까지 세 갈래로 번진 흐름이, 다음 주에는 또 다른 모달리티(예: 레스리스/코디드 어퍼처, THz, MRI)에서도 같은 해법(비지도·자기지도·물리내장)으로 나타날 가능성이 있습니다.</p>
+  <div class=cond>✅ 적중 조건: 다음 주 세 모달리티(산업 3D·의료·광음향) 외의 새로운 모달리티에서 비지도/자기지도/물리내장 재구성 논문이 1편 이상 나온다</div>
+  <div class=cond>✗ 빗나감 조건: 다음 주 관련 신규 논문이 전혀 나오지 않거나 이미 다룬 세 모달리티 안에서만 반복된다</div>
+</div>
+
+<h2>🧪 다음 주 1주 실행안</h2>
+<div class=action-card>
+  <h3>1. Gen4P 피드포워드 4D 인식을 랩 멀티뷰/라이트필드 데이터셋에 벤치마크</h3>
+  <p>Gen4P(2610.22371)의 feed-forward 점 추적·깊이·카메라 자세 추정을 랩 보유 멀티뷰/라이트필드 데이터셋에 적용해, 기존 반복 최적화 파이프라인 대비 추론 속도와 깊이 오차(AbsRel)를 비교합니다. WorldCast 벤치마크 기준으로 이 접근이 랩 데이터에서도 "아직 멀었는지" 함께 확인합니다.</p>
+  <p><em>기대 산출물: 추론 속도·AbsRel 비교표, WorldCast 난이도 기준 재현 결과</em></p>
+</div>
+<div class=action-card>
+  <h3>2. 정답 데이터 없는 모달리티에 자기지도 복원 적용</h3>
+  <p>Background2Background(2610.17615)의 자기지도 배경 제거와 Noise2Match(2610.18379)의 인접 슬라이스 매칭 방식을 랩이 정답 데이터를 확보하기 어려운 모달리티(저선량/저조도 촬영)에 적용해, 기존 지도학습 기반 방법 대비 배경 억제율과 PSNR을 비교합니다.</p>
+  <p><em>기대 산출물: 지도학습 대비 배경 억제율·PSNR 비교표</em></p>
+</div>
+<div class=action-card>
+  <h3>3. 계산광학 코어 6주 추세 재정리 및 자체 미니 벤치마크 제안서 업데이트</h3>
+  <p>W36(2026-09-07)부터 이번 주(W42)까지 6주치 daily trends의 Fourier Ptychography·Lensless raw count와 실질 신호 편수를 요일별로 재정리해 결핍이 구조적 추세인지 재판정하고, 랩 자체 lensless/FPM 미니 벤치마크 제안서를 업데이트합니다.</p>
+  <p><em>기대 산출물: 6주 × 요일 실질 신호 히트맵, 자체 벤치마크 제안서 개정판</em></p>
+</div>
+
+<h2>🧊 Skim-only / Watch-only 흐름</h2>
+<ul class=plain>
+  <li><strong>[Watch-only] 병리·현미경 vision-language foundation model의 캡션 부족 우회</strong> — 수요일 BigCell·MicroCLIP·MIST·Beyond Sparse Captions 네 편이 보고서·전문 데이터·공간 맥락으로 캡션 부족 문제를 우회했지만, 다른 날 직접적인 후속 신호가 확인되지 않아 다음 주 지속 여부를 지켜봅니다 [Confidence Low].</li>
+  <li><strong>[Watch-only] 의료 영상 표현학습의 기본 설계 가정 재검증</strong> — 월요일 공간 attention·무작위 서브볼륨 샘플링 같은 "당연히 그렇게 해왔던" 설계 가정을 재검증하는 분석 논문 3편이 모였지만 하루짜리 신호에 그쳤습니다. 피드포워드 3D 인식 쪽의 "입력 설계가 중요하다"는 수요일 발견과 결이 비슷해, 두 흐름이 다음 주 합쳐질지 지켜볼 만합니다.</li>
+  <li><strong>[Skim-only] 디지털 병리·OCT의 단일 기관 정확도 → 교차 기관 일반화 검증</strong> — 금요일 Evidence Field for Histopathology·Multi-Centre OCT Validation 두 편이 같은 패턴을 보였지만 아직 하루짜리라, 3DGS·자기지도 복원 스레드만큼 닷새를 관통하는 근거는 아닙니다.</li>
+</ul>
+
+<h2>🔗 참고 링크</h2>
+<ul class=plain>
+  <li><a href="../posts/2026-10-12.html">2026-10-12 Daily Briefing (Mon)</a></li>
+  <li><a href="../posts/2026-10-13.html">2026-10-13 Daily Briefing (Tue, journal-only)</a></li>
+  <li><a href="../posts/2026-10-14.html">2026-10-14 Daily Briefing (Wed)</a></li>
+  <li><a href="../posts/2026-10-15.html">2026-10-15 Daily Briefing (Thu, backfill)</a></li>
+  <li><a href="../posts/2026-10-16.html">2026-10-16 Daily Briefing (Fri)</a></li>
+  <li><a href="../posts/2026-09-07-weekly.html">2026-W36 Weekly Retrospective</a></li>
+  <li><a href="../feed.xml">RSS Feed</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-10-12~10-16(월~금) daily briefing 5편 기반 회고 · arXiv new+cross 4,470편(cs.LG 1,735·cs.CV 940·cs.AI 1,579·eess.IV 47·eess.SP 169) + 저널 약 1,977편 · 전체 스캔 5,541건 · ROI 배정 1,391건</p>
+  <p>🎧 주간 오디오: TTS 환경 미연결 — 이번 주도 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

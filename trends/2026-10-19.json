@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-19",
+  "note": "2026-10-19(월) 10:00 KST 별도 weekly 실행. 지난주(2026-10-12~10-16, 월~금) daily briefing 5편이 모두 존재함을 Calendar Audit에서 확인하고 posts/2026-10-19-weekly.html과 weekly/2026-42.json을 발행했다. 이 trends 파일은 weekly 실행 시점에 생성됐으며 daily_new_counts 등 당일(10/19) daily 필드는 같은 날 11:00 KST daily 실행이 별도로 채운다.",
+  "weekly_retrospective_context": {
+    "iso_week": "2026-42",
+    "week_start": "2026-10-12",
+    "week_end": "2026-10-16",
+    "weekly_new_counts_sum": {
+      "by_cat": {
+        "cs.LG": 1735,
+        "cs.CV": 940,
+        "cs.AI": 1579,
+        "eess.IV": 47,
+        "eess.SP": 169
+      },
+      "scope": "sum of Mon-Fri 2026-10-12~2026-10-16 daily_new_counts.by_cat (new+cross; replacements excluded; 2026-10-13 journal-only day contributes 0)"
+    },
+    "weekly_totals": {
+      "total_scanned": 5541,
+      "selected": 1391
+    },
+    "weekly_classified_by_bucket": {
+      "Fourier Ptychography/Microscopy": 7,
+      "Lensless/Coded Imaging": 3,
+      "Phase Imaging/Holography": 42,
+      "Meta-Optics/Diffractive": 56,
+      "Light-Field/Novel Sensors": 16,
+      "Tomography/3D Imaging": 187,
+      "Virtual Staining/Pathology": 158,
+      "Reconstruction/Inverse Problems": 149,
+      "Deep Learning Methods": 773
+    }
+  }
+}

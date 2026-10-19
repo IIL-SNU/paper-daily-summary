@@ -1,0 +1,285 @@
+{
+  "date": "2026-10-19",
+  "iso_week": "2026-42",
+  "week_start": "2026-10-12",
+  "week_end": "2026-10-16",
+  "weekly_thesis": "지난주 초반(월)에는 3D Gaussian Splatting이 반사·유체 같은 물리 현상과 로봇 조작 다운스트림까지 흡수하며 '복원의 쓰임새'를 넓히는 이야기였는데, 화~목을 거치며 질문이 '정답 데이터 없이도 믿을 수 있게 돌아가는가'로 좁혀졌고, 금요일에는 그 피드포워드 인식 능력이 3DGS를 넘어 비디오 생성 모델 전반으로 확장되면서 동시에 '아직 한참 부족하다'는 반증(WorldCast)까지 같은 날 스스로 따라붙었습니다. 랩의 핵심 ROI인 계산광학 하드웨어 코어(Fourier Ptychography·Lensless)는 닷새 내내 실질 신호가 사실상 비어 있어, 지난 9월 초 weekly가 걸었던 구조적 공백 진단이 6주의 공백기를 건너뛰고도 그대로 이어지고 있습니다.",
+  "hot_vs_cold": {
+    "hot": [
+      {
+        "cluster": "피드포워드 3D/4D 장면 인식이 3DGS를 넘어 비디오 생성 모델 전반으로 확장되며 스스로 한계를 드러냄",
+        "why": "월요일 Splat2Act는 3DGS로 만든 디지털 트윈 하나로 로봇 정책을 실제 환경에 맞춰 수거 성공률을 0%에서 62.5~63.9%까지 끌어올려 '복원 결과를 바로 실행에 쓸 수 있는가'를 보여줬습니다. 수요일 Sharper Frames, Worse Rooms는 '사진이 또렷할수록 좋다'는 당연한 전제를 뒤집어 '어떤 입력을 넣어야 하는가'로 질문을 한 단계 앞당겼고, 목요일에는 3DGS가 압축·시점 간 특징 코딩·재조명·의료 CT 모션 보정까지 동시에 떠맡는 인프라 단계로 들어섰습니다. 금요일 Gen4P는 그 피드포워드 인식 범위를 3DGS에서 사전학습된 비디오 생성 모델 전체로 넓혔는데, 같은 날 WorldCast가 320개 사례 벤치마크로 '최고의 공개 모델도 100점 만점에 20.1점'이라는 수치를 공개하며 그 기대를 스스로 검증하는 단계까지 보여줬습니다.",
+        "papers": [
+          "https://arxiv.org/abs/2610.13945",
+          "https://arxiv.org/abs/2610.15854",
+          "https://arxiv.org/abs/2610.22371",
+          "https://arxiv.org/abs/2610.20731"
+        ]
+      },
+      {
+        "cluster": "정답 데이터 없이도 돌아가는 복원이 산업 3D·의료 영상·광음향 토모그래피로 번짐",
+        "why": "화요일 산업 현장 3D 복원 6편은 초음파·입자유동·열화상·X선처럼 서로 다른 모달리티에서 학습 데이터 없이(비지도·모델기반) 내부 구조를 복원했고, 수요일 Noise2Match·Background2Background는 저선량 CT와 고차원 현미경에서 깨끗한 정답 영상 없이 노이즈 낀 데이터만으로 학습하는 방법을 냈습니다. 목요일 Zero-shot physics-supervised 광음향 토모그래피는 같은 태도(정답 데이터 대신 물리 방정식 자체를 모델에 박아 넣기)를 또 다른 모달리티로 확장했습니다. 사흘에 걸쳐 모달리티만 바뀌며 같은 해법이 반복된다는 건, '깨끗한 정답 데이터를 구하기 어렵다'는 계산 이미징의 오래된 병목이 이제 개별 논문이 아니라 분야 전체가 공유하는 전제가 됐다는 뜻입니다.",
+        "papers": [
+          "https://doi.org/10.1109/tim.2026.3742006",
+          "https://arxiv.org/abs/2610.18379",
+          "https://arxiv.org/abs/2610.17615",
+          "https://doi.org/10.1063/5.0353516"
+        ]
+      },
+      {
+        "cluster": "메타표면이 안테나 노이즈 속에서도 광연산·역설계를 적은 파라미터·적은 데이터로 빠르게 찾는 쪽으로 수렴, 교차격자 파면 현미경이 범용 플랫폼으로 확정",
+        "why": "화요일에는 5G/6G 안테나 응용 다수에 묻혀서도 광학 라돈 변환·비국소 다기능 이미징처럼 '빛으로 직접 연산하는' 메타표면 논문이 꾸준히 나왔고, 목요일 Intelligent Inverse Design of Meta-Absorbers는 학습 파라미터를 66.35%만 쓰고도 역예측 정확도를 자릿수 단위로 끌어올려 '더 정교한 구조 탐색'에서 '더 적은 자원으로 빠르게 찾기'로 설계 목표 자체가 바뀌었음을 보였습니다. 금요일에는 교차격자 파면 현미경이 완전히 다른 두 응용(메타표면 벡터장 복원, 나노유체 농도 측정)에 같은 저널·겹치는 저자군으로 이틀 연속(목 저널 backfill, 금 완전판) 등장하며 단발이 아니라 범용 특성화 플랫폼으로 자리잡았음이 확인됐습니다.",
+        "papers": [
+          "https://doi.org/10.1063/5.0360122",
+          "https://doi.org/10.1002/adom.71947",
+          "https://doi.org/10.1021/acsnano.6c06635",
+          "https://doi.org/10.1021/acsnano.6c12559"
+        ]
+      }
+    ],
+    "cold": [
+      {
+        "cluster": "계산광학 하드웨어 코어(Fourier Ptychography·Lensless)가 raw count 10편에도 실질 신호는 사실상 공백",
+        "why": "닷새 합계 raw count는 Fourier Ptychography 7편·Lensless 3편이었지만, 목·금 이틀은 각 daily briefing이 '실질 신호 0편'임을 직접 확인했고(목: Lensless 0편·FP 1편 오탐, 금: FP 0편·Lensless 1편도 레스리스와의 직접 연결이 약한 광학 설계 이론), 월~수 사흘도 대표 클러스터에 전혀 언급되지 않아 공백에 가깝습니다. 유일하게 실질적으로 보이는 신호는 수요일 저널에 올라온 렌즈리스 온칩 현미경 1편뿐이었는데, 이마저 같은 날 2편 이상 묶이지 못해 클러스터로 승격되지 못했습니다."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "cluster": "피드포워드 3D/4D 장면 인식이 3DGS를 넘어 비디오 생성 모델 전반으로 확장되며 스스로 한계를 드러냄",
+      "papers": [
+        {
+          "title": "Splat2Act: From Captured Scenes to Personalized VLA Manipulation",
+          "arxiv": "https://arxiv.org/abs/2610.13945",
+          "importance_tags": ["[실사용전환]", "[스케일업]"]
+        },
+        {
+          "title": "Sharper Frames, Worse Rooms: Viewpoint Coverage Dominates Image Quality in Feed-Forward 3D Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2610.15854",
+          "importance_tags": ["[해부분석]", "[경고신호]"]
+        },
+        {
+          "title": "Gen4P: Video Generators are 4D Perceivers",
+          "arxiv": "https://arxiv.org/abs/2610.22371",
+          "importance_tags": ["[방법전환]", "[인프라]"]
+        },
+        {
+          "title": "WorldCast: Exploring Intelligent Visual Generation in World State Prediction",
+          "arxiv": "https://arxiv.org/abs/2610.20731",
+          "importance_tags": ["[평가축]", "[경고신호]"]
+        }
+      ],
+      "why": "월요일 Splat2Act는 3DGS 디지털 트윈 하나로 로봇 정책 수거 성공률을 0%에서 62.5~63.9%까지 끌어올려 복원 결과를 실행 환경에 바로 투입할 수 있다는 걸 보여줬습니다. 수요일 Sharper Frames, Worse Rooms는 '사진이 또렷할수록 좋다'는 전제를 뒤집어 '애초에 뭘 입력으로 넣어야 하는가'로 질문을 파이프라인 앞단으로 옮겼고, 목요일에는 3DGS가 압축·시점 간 특징 코딩·재조명·의료 CT 모션 보정까지 동시에 떠맡는 인프라 단계로 들어섰습니다. 금요일 Gen4P는 그 피드포워드 인식 범위를 사전학습된 비디오 생성 모델 전체로 넓혔는데, 같은 날 WorldCast가 320개 사례 벤치마크로 최고 공개 모델도 100점 만점에 20.1점에 그친다는 수치를 공개하며 같은 흐름 안에서 제안과 반증이 동시에 나왔습니다.",
+      "confidence": "High",
+      "lab_action": "Splat2Act의 real-to-sim-to-real 파이프라인과 Gen4P의 feed-forward 4D 인식을 랩 보유 멀티뷰/라이트필드 데이터셋에 순서대로 적용해, 기존 반복 최적화 기반 파이프라인 대비 추론 속도·깊이 오차(AbsRel)·실제 로봇/장비 적용 성공률을 함께 비교하는 표를 만든다"
+    },
+    {
+      "cluster": "정답 데이터 없이도 돌아가는 복원이 산업 3D·의료 영상·광음향 토모그래피로 번짐",
+      "papers": [
+        {
+          "title": "Non-local Mean Regularized Deep Image Prior: An Unsupervised Framework for Industrial Ultrasonic Tomography",
+          "arxiv": "https://doi.org/10.1109/tim.2026.3742006",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Noise2Match: Self-Supervised Low-Dose CT Denoising via Adaptive Inter-Slice Matching",
+          "arxiv": "https://arxiv.org/abs/2610.18379",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Background2Background: a self-supervised background removal framework for high dimensional microscopy",
+          "arxiv": "https://arxiv.org/abs/2610.17615",
+          "importance_tags": ["[방법전환]", "[표준후보]"]
+        },
+        {
+          "title": "Zero-shot physics-supervised neural network for data-free photoacoustic tomography reconstruction",
+          "arxiv": "https://doi.org/10.1063/5.0353516",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "화요일 산업 현장 3D 복원 6편은 초음파·입자유동·열화상·X선처럼 서로 다른 모달리티에서 학습 데이터 없이 내부 구조를 복원했고, 수요일 Noise2Match·Background2Background는 저선량 CT와 고차원 현미경에서 깨끗한 정답 영상 없이 노이즈 낀 데이터만으로 학습하는 방법을 냈습니다. 목요일 광음향 토모그래피 논문은 같은 태도(정답 데이터 대신 물리 방정식 자체를 모델에 내장)를 또 다른 모달리티로 확장했습니다. 사흘 내내 모달리티만 바뀌며 같은 해법이 반복된다는 건, 깨끗한 정답 데이터를 구하기 어렵다는 계산 이미징의 오래된 병목이 이제 개별 논문의 해결책이 아니라 분야 전체가 공유하는 전제가 됐다는 뜻입니다.",
+      "confidence": "High",
+      "lab_action": "Background2Background의 자기지도 배경 제거와 Noise2Match의 인접 슬라이스 매칭 방식을 랩이 정답 데이터를 확보하기 어려운 모달리티(예: 저선량/저조도 촬영)에 적용해, 기존 지도학습 기반 디노이징 대비 배경 억제율과 PSNR을 비교한다"
+    },
+    {
+      "cluster": "재구성·정합의 성공 기준이 '매끄러움'에서 '과제에 필요한 정량값 보존'으로 이동",
+      "papers": [
+        {
+          "title": "AD-GS: Anatomical Density-guided 3D Gaussian Splatting for Sparse-View Dental CBCT Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2610.14963",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Dual-Domain Sparse-View 4D CBCT Reconstruction with Spatial-Temporal Consistency Learning (STCNet)",
+          "arxiv": "https://arxiv.org/abs/2610.18518",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "PET Quantification-Preserving Registration for Longitudinal Whole-Body PSMA PET/CT",
+          "arxiv": "https://arxiv.org/abs/2610.21451",
+          "importance_tags": ["[평가축]"]
+        },
+        {
+          "title": "Data-driven Smooth-to-hard Spectral Regularization for General Linear Inverse Problems",
+          "arxiv": "https://arxiv.org/abs/2610.21664",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "목요일 AD-GS·STCNet은 희소 투영 CBCT 복원에서 3DGS 표현이 해부학적 밀도나 시공간 일관성 같은 사전 지식을 직접 따르도록 제약했습니다. 금요일 PET Quantification-Preserving Registration은 정합 전후로 종양 대사량 같은 PET 정량 지표가 유지되도록 손실 함수에 직접 반영했고, 같은 날 Smooth-to-hard Spectral Regularization은 일반 선형 역문제에 적용 가능한 데이터 기반 정칙화로 부드러움과 엄격함 사이를 조절했습니다. 네 편을 같이 보면, 정합·재구성의 성공 기준이 '시각적으로 매끄러운가'에서 '정합·재구성이 끝난 뒤에도 실제로 측정하려던 값이 유지되는가'로 옮겨가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "lab_action": "Smooth-to-hard 스펙트럼 정칙화를 랩의 FP·토모그래피 재구성 solver에 기존 soft-thresholding 대신 drop-in으로 적용하고, AD-GS의 해부학적 밀도 제약 아이디어를 랩 CBCT/3D 재구성 파이프라인에 적용해 수렴 속도와 복원 오차(PSNR/SSIM)를 비교한다"
+    },
+    {
+      "cluster": "메타표면 광연산·역설계가 '더 정교한 탐색'에서 '더 적은 자원으로 빠르게 찾기'로, 교차격자 파면 현미경은 범용 플랫폼으로 확정",
+      "papers": [
+        {
+          "title": "Metasurface-based optical Radon transform for complex-amplitude reconstruction",
+          "arxiv": "https://doi.org/10.1063/5.0360122",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Intelligent Inverse Design of Meta-Absorbers Based on Reversible Deep Learning",
+          "arxiv": "https://doi.org/10.1002/adom.71947",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Single-Shot Polarization Imaging of Vectorial Metasurfaces Using Cross-Grating Wavefront Microscopy",
+          "arxiv": "https://doi.org/10.1021/acsnano.6c06635",
+          "importance_tags": ["[방법전환]", "[인프라]"]
+        },
+        {
+          "title": "Monitoring Liquid Concentration Changes in Nanofluidic Channels Using Cross-Grating Wavefront Microscopy",
+          "arxiv": "https://doi.org/10.1021/acsnano.6c12559",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "화요일에는 5G/6G 안테나 응용 다수에 묻혀서도 광학 라돈 변환·비국소 다기능 이미징처럼 '빛으로 직접 연산하는' 메타표면 논문이 꾸준히 나왔습니다. 목요일 Intelligent Inverse Design of Meta-Absorbers는 학습 파라미터를 66.35%만 쓰고도 역예측 정확도를 자릿수 단위로 끌어올려, 설계 목표가 '더 정교한 구조 탐색'에서 '더 적은 자원으로 빠르게 찾기'로 바뀌었음을 보였습니다. 금요일에는 교차격자 파면 현미경이 메타표면 벡터장 복원과 나노유체 농도 측정이라는 완전히 다른 두 응용에 같은 저널·겹치는 저자군으로 이틀 연속 등장하며, 우연한 동시 등장이 아니라 범용 특성화 플랫폼으로 자리잡았다는 확신을 줬습니다.",
+      "confidence": "Medium",
+      "lab_action": "교차격자 파면 현미경의 단일 촬영 벡터장 복원 절차를 랩 보유 메타표면 샘플에 시범 적용해 기존 편광 분해 현미경 대비 측정 시간·Stokes 파라미터 복원 오차를 비교하고, 메타표면 역설계 쪽은 Intelligent Inverse Design의 적은 파라미터 전략을 랩 메타표면 설계 파이프라인에 적용해 학습 비용 대비 역예측 정확도를 비교한다"
+    },
+    {
+      "cluster": "계산광학 하드웨어 코어(Fourier Ptychography·Lensless)가 raw count 10편에도 실질 신호는 사실상 공백",
+      "papers": [
+        {
+          "title": "High-fidelity lensless on-chip microscopy via mixed coherence control for virtual staining",
+          "arxiv": "https://doi.org/10.1364/ol.614237",
+          "importance_tags": ["[위험보류]"]
+        },
+        {
+          "title": "Event Cameras versus Frame Cameras for Synthetic-Aperture Imaging: A Simulation Study",
+          "arxiv": "https://arxiv.org/abs/2610.20309",
+          "importance_tags": ["[위험보류]"]
+        }
+      ],
+      "why": "닷새 합계 raw count는 Fourier Ptychography 7편·Lensless 3편이었지만, 목·금 이틀은 각 daily briefing이 실질 신호 0편임을 직접 확인했습니다(목: Lensless 0편·FP는 1편 오탐, 금: FP 0편·Lensless 1편도 레스리스와의 직접 연결이 약한 일반 광학 설계 이론). 월~수 사흘은 대표 클러스터에 전혀 언급되지 않아 본문 기준 실질 신호 여부가 확인되지 않았습니다. 유일하게 실질적으로 보이는 신호는 수요일 저널에 올라온 렌즈리스 온칩 현미경 1편뿐인데, 이마저 같은 날 2편 이상 묶이지 못해 클러스터로 승격되지 못했습니다.",
+      "confidence": "Low",
+      "lab_action": "지난 6주(9월 초 weekly~이번 주)의 daily trends에서 Fourier Ptychography·Lensless raw count와 실질 신호 편수를 요일별로 재정리하고, 랩 자체 lensless/FPM 미니 벤치마크 제안서를 이번 주 안에 초안으로 작성한다"
+    }
+  ],
+  "predictions": [
+    {
+      "title": "계산광학 하드웨어 코어의 실질 신호 결핍이 새로운 기준선으로 계속 굳어진다",
+      "claim": "이번 주도 raw count 10편(FP 7·Lensless 3)과 무관하게 실질 신호는 거의 0에 머물렀습니다. 다음 주에도 같은 패턴이 반복될 가능성이 높습니다.",
+      "rationale": "9월 초 weekly 이후 6주의 공백기에도 불구하고 이번 주 닷새 모두 같은 결핍이 재확인됐다는 건 일시적 변동이 아니라 구조적 기준선에 가깝다는 뜻입니다.",
+      "hit_condition": "다음 주 5영업일 중 4일 이상 Fourier Ptychography·Lensless 두 버킷 모두 실질 신호 0~1편에 머문다",
+      "miss_condition": "다음 주 5일 중 2일 이상에서 Fourier Ptychography 또는 Lensless 중 하나라도 실질 신호 2편 이상을 낸다"
+    },
+    {
+      "title": "피드포워드 3D/4D 인식 스레드가 비디오 생성 모델 쪽에서 수치 기반 검증 논문으로 이어진다",
+      "claim": "금요일 Gen4P는 'SOTA 또는 경쟁력 있는 성능'이라는 정성적 표현만 쓰고 구체적 벤치마크 수치를 내지 않았습니다. 같은 날 WorldCast가 이 분야 전체의 미성숙을 수치로 보여준 만큼, 다음 주에는 Gen4P류 방법을 WorldCast 같은 벤치마크로 직접 검증하는 후속 논문이 나올 가능성이 있습니다.",
+      "rationale": "같은 날 제안(Gen4P)과 반증 도구(WorldCast)가 함께 나온 패턴은 이번 주 3DGS 신뢰도 검증 스레드(Calibration Audit류)와 같은 성숙 순서를 밟을 가능성을 시사합니다.",
+      "hit_condition": "다음 주 video-generator-as-4D-perceiver 계열 논문 1편 이상이 WorldCast 또는 유사 벤치마크로 자신의 주장을 직접 수치 검증한다",
+      "miss_condition": "다음 주 관련 신규 논문이 전부 정성적 주장(SOTA/competitive)에 그치고 수치 기반 교차 검증이 전혀 나오지 않는다"
+    },
+    {
+      "title": "'정답 데이터 없이 돌아가는 복원'이 네 번째 모달리티로 더 확산된다",
+      "claim": "화~목 사흘에 걸쳐 산업 3D(초음파·입자유동·열화상)·의료 영상(CT·현미경)·광음향 토모그래피까지 세 갈래로 번진 흐름이, 다음 주에는 또 다른 모달리티(예: 레스리스/코디드 어퍼처, THz, MRI)에서도 같은 해법(비지도·자기지도·물리내장)으로 나타날 가능성이 있습니다.",
+      "rationale": "사흘 내내 모달리티만 바뀌며 같은 해법이 반복된 패턴은 일회성 우연이 아니라 분야 전체가 공유하는 설계 전제로 굳어지고 있음을 시사합니다.",
+      "hit_condition": "다음 주 세 모달리티(산업 3D·의료·광음향) 외의 새로운 모달리티에서 비지도/자기지도/물리내장 재구성 논문이 1편 이상 나온다",
+      "miss_condition": "다음 주 관련 신규 논문이 전혀 나오지 않거나 이미 다룬 세 모달리티 안에서만 반복된다"
+    }
+  ],
+  "prediction_review": [
+    {
+      "title": "[2026-09-07 weekly, W36] 계산광학 하드웨어 코어의 결핍이 새로운 기준선으로 굳어지는지",
+      "label": "◐",
+      "reason": "W36(2026-09-07) weekly 이후 2026-09-14~10-05(영업일 14일)에 걸친 CI 공백으로 중간 5주(W37~W41) weekly가 발행되지 못해 연속 추적은 불가능했습니다. 다만 공백을 건너뛰고 다시 측정한 이번 주(W42)에도 Fourier Ptychography·Lensless 실질 신호가 닷새 내내 사실상 0에 머물러, 방향성 자체는 W36이 걸었던 구조적 하락 진단과 일치합니다. 6주의 공백 때문에 '지속적으로 굳어졌는지'를 완전히 확인할 수는 없어 부분 적중으로 판정합니다."
+    },
+    {
+      "title": "[2026-09-07 weekly, W36] 3D Gaussian Splatting/3D 재구성 메인 스레드가 다섯 갈래를 통합하는 논문으로 수렴하는지",
+      "label": "◐",
+      "reason": "6주 공백으로 W37~W41의 중간 과정은 확인할 수 없습니다. 다만 이번 주 목요일 클러스터(압축·시점 간 특징 코딩·오클루전 기반 재조명·의료 CT 모션 보정을 모두 3DGS 하나로 다룸)는 W36이 예상했던 '여러 갈래를 한 시스템으로 묶는' 통합 단계와 방향은 비슷하지만, 단일 논문이 다섯 갈래를 직접 통합한 것은 아니라 부분 적중으로 판정합니다."
+    },
+    {
+      "title": "[2026-09-07 weekly, W36] flow matching이 diffusion을 밀어내고 영상 복원의 기본 생성 사전으로 자리잡는지",
+      "label": "⏳",
+      "reason": "6주의 공백으로 diffusion과 flow matching의 상대적 비중이 그 사이 어떻게 변했는지 추적할 근거가 없습니다. 이번 주(10/16)에는 diffusion/flow 추론 가속 논문 5편이 모두 '이미 학습된 모델을 재학습 없이 더 싸게 쓰는' 방향이라 diffusion 대 flow matching의 세대교체 여부를 직접 판정할 신호가 아니었습니다. 판정을 유보합니다."
+    }
+  ],
+  "themes": [
+    {
+      "title": "피드포워드 3D/4D 인식이 '무엇을 더 잘 복원하나'에서 '그 인식이 어디까지 일반화되고 스스로 검증되나'로 진화",
+      "summary": "월요일 물리 현상·로봇 다운스트림 흡수, 수요일 입력 설계(프레임 선택) 반증, 목요일 3DGS 인프라 단계 진입, 금요일 비디오 생성 모델로의 일반화와 자기 검증형 벤치마크까지 닷새 내내 한 단계씩 쌓였습니다. 다음 주에는 이 다섯 갈래 중 둘 이상을 한 시스템에서 같이 다루는 통합형 논문이 나오는지가 관전 포인트입니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "'정답 데이터 없이도 돌아가는 복원'이 산업·의료·광학 전반의 공통 전제가 됨",
+      "summary": "화요일 산업 3D, 수요일 의료 영상 디노이징, 목요일 광음향 토모그래피까지 사흘에 걸쳐 모달리티만 바뀌며 같은 해법(비지도·자기지도·물리내장)이 반복됐습니다. 깨끗한 정답 데이터를 구하기 어렵다는 계산 이미징의 오래된 병목이 이제 분야 전체가 당연하게 설계에 반영하는 전제가 되고 있다는 뜻입니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "계산광학 하드웨어 코어의 공백이 9월 이후에도 반복되는 구조적 패턴으로 굳어짐",
+      "summary": "6주의 weekly 공백기를 건너뛰어도 Fourier Ptychography·Lensless의 실질 신호 결핍이 그대로 재확인됐습니다. 랩의 핵심 ROI와 직접 맞닿은 영역인 만큼, 외부 신호를 기다리기보다 랩 자체 벤치마크로 공백을 채워야 할 필요성이 커지고 있습니다.",
+      "confidence": "Medium"
+    }
+  ],
+  "top5": [
+    {
+      "title": "Splat2Act: From Captured Scenes to Personalized VLA Manipulation",
+      "arxiv": "https://arxiv.org/abs/2610.13945",
+      "why": "휴대폰 스캔 하나로 만든 3DGS 디지털 트윈 기반 real-to-sim-to-real 파이프라인이 범용 로봇 정책의 수거 성공률을 0%에서 실제 로봇 기준 63.9%까지 끌어올렸습니다. 한 달간의 CI 공백을 복구한 첫날, 3DGS가 '복원'을 넘어 '실행'까지 책임질 수 있다는 걸 가장 구체적인 수치로 보여준 사례입니다.",
+      "tag": "[실사용전환]"
+    },
+    {
+      "title": "Sharper Frames, Worse Rooms: Viewpoint Coverage Dominates Image Quality in Feed-Forward 3D Reconstruction",
+      "arxiv": "https://arxiv.org/abs/2610.15854",
+      "why": "가장 또렷한 16장만 골랐더니 방 치수 오차가 48%까지 치솟았는데, 그냥 시간 간격으로 고르게 뽑으면 3%에 그쳤습니다. '사진 품질이 좋을수록 좋다'는 feed-forward 3D 복원의 당연한 전제를 정면으로 뒤집은, 이번 주 가장 반증 가능한 수치를 가진 논문입니다.",
+      "tag": "[해부분석]"
+    },
+    {
+      "title": "Gen4P: Video Generators are 4D Perceivers",
+      "arxiv": "https://arxiv.org/abs/2610.22371",
+      "why": "사전학습된 비디오 생성 모델이 이미 내부에 깊이·카메라 자세·시간적 장면 변화를 담고 있다고 보고, 반복적 디노이징 없이 한 번의 순전파로 그 정보를 꺼내 씁니다. 이번 주 피드포워드 3D/4D 인식 스레드가 3DGS를 넘어 비디오 생성 모델 전체로 번진 가장 큰 프레이밍 전환입니다.",
+      "tag": "[방법전환]"
+    },
+    {
+      "title": "WorldCast: Exploring Intelligent Visual Generation in World State Prediction",
+      "arxiv": "https://arxiv.org/abs/2610.20731",
+      "why": "Gen4P와 같은 날, 320개 사례·4단계 난이도 벤치마크로 '최고의 공개 모델도 100점 만점에 20.1점'이라는 수치를 공개했습니다. 제안과 반증이 같은 날 같은 주제에서 나왔다는 건 이 분야가 과대평가 단계를 지나 스스로를 검증하는 단계로 들어섰다는 신호입니다.",
+      "tag": "[평가축]"
+    },
+    {
+      "title": "Single-Shot Polarization Imaging of Vectorial Metasurfaces Using Cross-Grating Wavefront Microscopy",
+      "arxiv": "https://doi.org/10.1021/acsnano.6c06635",
+      "why": "같은 저널·겹치는 저자군이 완전히 다른 두 응용(메타표면 벡터장 복원, 나노유체 농도 측정)에 같은 측정 기법을 이틀 연속 적용했습니다. 세기·위상·편광을 한 번의 촬영으로 함께 복원하는 범용 특성화 플랫폼이 우연이 아니라는 걸 가장 뚜렷하게 보여준 사례입니다.",
+      "tag": "[인프라]"
+    }
+  ],
+  "next_week_actions": [
+    {
+      "title": "Gen4P 피드포워드 4D 인식을 랩 멀티뷰/라이트필드 데이터셋에 벤치마크",
+      "action": "Gen4P(2610.22371)의 feed-forward 점 추적·깊이·카메라 자세 추정을 랩 보유 멀티뷰/라이트필드 데이터셋에 적용해, 기존 반복 최적화 파이프라인 대비 추론 속도와 깊이 오차(AbsRel)를 비교한다. WorldCast 벤치마크 기준으로 이 접근이 랩 데이터에서도 '아직 멀었는지' 함께 확인한다.",
+      "expected_output": "추론 속도·AbsRel 비교표, WorldCast 난이도 기준 재현 결과"
+    },
+    {
+      "title": "정답 데이터 없는 모달리티에 자기지도 복원 적용",
+      "action": "Background2Background(2610.17615)의 자기지도 배경 제거와 Noise2Match(2610.18379)의 인접 슬라이스 매칭 방식을 랩이 정답 데이터를 확보하기 어려운 모달리티(저선량/저조도 촬영)에 적용해, 기존 지도학습 기반 방법 대비 배경 억제율과 PSNR을 비교한다.",
+      "expected_output": "지도학습 대비 배경 억제율·PSNR 비교표"
+    },
+    {
+      "title": "계산광학 코어 6주 추세 재정리 및 자체 미니 벤치마크 제안서 업데이트",
+      "action": "W36(2026-09-07)부터 이번 주(W42)까지 6주치 daily trends의 Fourier Ptychography·Lensless raw count와 실질 신호 편수를 요일별로 재정리해 결핍이 구조적 추세인지 재판정하고, 랩 자체 lensless/FPM 미니 벤치마크 제안서를 업데이트한다.",
+      "expected_output": "6주 × 요일 실질 신호 히트맵, 자체 벤치마크 제안서 개정판"
+    }
+  ]
+}
