@@ -1,0 +1,178 @@
+{
+  "date": "2026-10-20",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "Feed-forward 3D Gaussian Splatting가 확장기를 지나 '왜 품질이 떨어지는가'를 진단하는 단계로 들어감",
+      "papers": [
+        {
+          "title": "GeoForward: Geometry-Guided Cross-View Alignment for Feedforward 3D Gaussian Splatting",
+          "arxiv_id": "https://arxiv.org/abs/2610.23895",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "FineSplat: Fine Patches, Local Groups, Detailed Splats",
+          "arxiv_id": "https://arxiv.org/abs/2610.25011",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "MCSplat: Multi-View Photometric and Geometric Consistent Feed-Forward Gaussian Splatting for Driving Scenes",
+          "arxiv_id": "https://arxiv.org/abs/2610.25345",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Rethinking Sparse-View 3D Gaussian Splatting: A Few-Shot Learning Perspective on Overfitting Prevention",
+          "arxiv_id": "https://arxiv.org/abs/2610.25887",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Localization and Neural Splatting on the Edge: An FPGA Scene Memory for Robots",
+          "arxiv_id": "https://arxiv.org/abs/2610.25068",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "어제 올라온 3D Gaussian Splatting 묶음은 X-ray 융합, 내시경 SLAM처럼 '새로운 입력 조건으로 적용 범위를 넓히는' 쪽이었는데, 오늘 묶음은 결이 다릅니다. 다섯 편 모두 feed-forward 방식(한 번의 순전파로 바로 3D를 복원하는 접근) 자체의 품질 저하 원인을 하나씩 짚고 고칩니다. GeoForward는 기존 방식이 카메라 캘리브레이션 정보가 있어도 이를 쓰지 않고 영상 특징만으로 뷰 간 대응을 암묵적으로 추론한다는 점을 지적하며, 이미 알고 있는 기하 제약을 명시적으로 넣습니다. MCSplat은 카메라마다 노출·ISP가 달라 생기는 밝기 차이가 Gaussian의 기하 파라미터로 잘못 흡수되는 문제를, FineSplat은 전역 멀티뷰 attention 비용 때문에 세밀한 디테일을 포기해야 하는 문제를, Rethinking Sparse-View는 적은 뷰에서 과적합되는 문제를 각각 다룹니다. 즉 예전에는 '얼마나 빠르고 넓게 쓸 수 있는가'가 관심사였다면, 오늘은 '왜 품질이 떨어지는가'를 구조적으로 뜯어보는 해부 단계로 넘어갔다는 뜻이고, 이는 이 기술이 실제 배포(FPGA 엣지, 자율주행) 직전 단계에 와 있다는 신호이기도 합니다.",
+      "confidence": "High",
+      "confidence_note": "cs.CV에서 서로 다른 저자군 5편이 같은 날 feed-forward 3DGS의 서로 다른 실패 모드(기하 정합, 광도 일관성, 디테일 손실, sparse-view 과적합, 엣지 배포)를 독립적으로 다룸",
+      "lab_action": "GeoForward의 명시적 카메라 기하 제약 주입 방식과 MCSplat의 cross-camera 광도 보정 모듈을 랩의 feed-forward 3DGS 파이프라인에 각각 ablation으로 붙여, DL3DV/RealEstate10K에서 기하 정합 오차와 PSNR을 분리 측정한다"
+    },
+    {
+      "cluster": "영상 역문제 복원이 손으로 짠 정칙화에서 diffusion/flow-matching 기반 generative prior plug-in으로 수렴",
+      "papers": [
+        {
+          "title": "PnP-CF: A Consensus Flow-Matching Solver for General Inverse Problems",
+          "arxiv_id": "https://arxiv.org/abs/2610.26000",
+          "journal_or_source": "arXiv cs.LG"
+        },
+        {
+          "title": "HP-PnP-Flow: Hybrid Time Scheduling and Projection for Plug-and-Play Image Restoration via Flow Matching",
+          "arxiv_id": "https://arxiv.org/abs/2610.26183",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Generative Priors for Total-Body PET Reconstruction",
+          "arxiv_id": "https://arxiv.org/abs/2610.23870",
+          "journal_or_source": "arXiv eess.IV"
+        },
+        {
+          "title": "Geometry-Aware Interpolation for Inverse Problems",
+          "arxiv_id": "https://arxiv.org/abs/2610.24687",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "영상 역문제(측정값에서 원래 영상을 복원하는 문제)를 풀 때 Plug-and-Play(PnP) 방식은 원래 '학습된 디노이저를 반복 최적화 루프 안에 끼워 넣는다'는 아이디어였는데, 오늘 올라온 네 편은 그 디노이저 자리를 전부 diffusion 또는 flow-matching 기반 생성모델로 바꾸는 흐름을 보여줍니다. PnP-CF와 HP-PnP-Flow는 둘 다 최근 ICLR에서 나온 PnP-Flow 방법을 확장해 역문제 solver와 생성모델 sampler 사이의 '합의(consensus)'를 어떻게 더 안정적으로 맞출지를 다루고, Total-Body PET 재구성 논문은 저선량·대용량 PET 영상에 diffusion 기반 사전(prior)을 측정 조건에 맞게 직접 결합합니다. Geometry-Aware Interpolation은 기존 Spatial Transformer Network가 선형/쌍선형 보간에 의존해 영상의 기하학적 구조를 제대로 못 살리는 문제를 다른 각도에서 짚습니다. 즉 CT/PET 같은 의료 영상부터 범용 영상 복원까지, '물리 모델은 고정하고 생성모델을 사전 지식으로 꽂아 넣는다'는 같은 설계가 서로 다른 응용에서 독립적으로 반복되고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "cs.LG/cs.CV/eess.IV 3개 카테고리 4편이 같은 PnP+생성모델 결합 방향을 보이나, PnP-CF와 HP-PnP-Flow는 같은 선행 연구(PnP-Flow, ICLR 2025)를 확장한 동시 발표라 완전히 독립적인 수렴으로 보기엔 다소 겹침",
+      "lab_action": "PnP-CF의 consensus 업데이트 규칙을 랩이 보유한 compressed sensing 또는 저선량 CT 복원 파이프라인의 기존 PnP-ADMM denoiser 자리에 교체 실험하고, 수렴 속도·PSNR을 기존 디노이저 기반 PnP와 비교한다"
+    },
+    {
+      "cluster": "홀로그래피·위상 복원에서 '광학 하드웨어의 물리적 결함'을 계산으로 보정하는 논문이 몰림",
+      "papers": [
+        {
+          "title": "Phase aberration compensation based on iteratively reweighted Zernike polynomial fitting for digital holographic microscopy",
+          "arxiv_id": "https://doi.org/10.1364/ao.615844",
+          "journal_or_source": "Applied Optics"
+        },
+        {
+          "title": "Variable-Magnification synthetic aperture Digital holographic microscopy integrated with dual electrically tunable lenses and oblique illumination",
+          "arxiv_id": "https://doi.org/10.1016/j.optlastec.2026.116686",
+          "journal_or_source": "Optics & Laser Technology"
+        },
+        {
+          "title": "Few-frame wavefront reconstruction in Ronchi lateral shearing interferometry using physics-guided deep learning",
+          "arxiv_id": "https://doi.org/10.1016/j.optcom.2026.133873",
+          "journal_or_source": "Optics Communications"
+        },
+        {
+          "title": "Reference-free per-measurement assessment of lensless reconstruction quality under imperfect PSF models",
+          "arxiv_id": "https://doi.org/10.1364/oe.613012",
+          "journal_or_source": "Optics Express"
+        }
+      ],
+      "why": "오늘 저널 네 편은 공통적으로 '광학계 자체가 완벽하지 않다'는 전제에서 출발합니다. 디지털 홀로그래픽 현미경의 위상 수차 보정 논문은 렌즈나 정렬 오차 때문에 생기는 위상 왜곡을 Zernike 다항식(렌즈 수차를 수학적으로 표현하는 표준 방법)으로 반복 추정해서 없애고, 가변 배율 합성 개구 현미경 논문은 전동 가변 렌즈와 비스듬한 조명을 결합해 하드웨어 단에서부터 더 넓은 시야와 높은 배율을 동시에 얻으려 합니다. Ronchi 측면 전단 간섭계 논문은 적은 프레임만으로 파면을 복원하는 데 물리 모델을 네트워크에 끼워 넣고, 렌즈리스 이미징 논문은 아예 'PSF(점 확산 함수, 광학계가 점광원을 얼마나 퍼뜨려 찍는지를 나타내는 함수) 모델이 부정확할 때 기준 영상 없이도 복원 품질을 어떻게 평가할 것인가'라는 메타 질문을 던집니다. 즉 네 편 모두 '광학 하드웨어가 이상적이지 않다는 것을 인정하고, 그 결함을 계산으로 추정·보정·평가하자'는 공통된 태도를 공유합니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 저널 4편(Applied Optics, Optics & Laser Technology, Optics Communications, Optics Express)에서 독립적으로 나왔으나, 대다수 abstract가 아직 공개되지 않아 제목과 저널 맥락 기반 판단이 섞여 있음",
+      "lab_action": "Reference-free lensless reconstruction quality assessment의 평가 지표를 랩이 보유한 렌즈리스/코드화 조리개 셋업의 PSF 오차 조건별 복원 결과에 적용해보고, Zernike 기반 위상 수차 보정 알고리즘을 랩 DHM(디지털 홀로그래픽 현미경) 파이프라인의 전처리 단계로 넣어 twin-image·수차 잔차를 비교한다"
+    },
+    {
+      "cluster": "의료 영상 합성·등록에서 implicit neural representation과 flow matching이 '환자별 재학습' 비용을 줄이는 쪽으로 쓰임",
+      "papers": [
+        {
+          "title": "LUMINR: Intensity-conditioned Meta-learned INRs for Accelerated Medical Image Registration",
+          "arxiv_id": "https://arxiv.org/abs/2610.24046",
+          "journal_or_source": "arXiv eess.IV"
+        },
+        {
+          "title": "GliomaINK: A Tumor and Anatomy Conditioned Flow Matching Framework for 3D MRI Sequence Synthesis in Glioma Patients",
+          "arxiv_id": "https://arxiv.org/abs/2610.24044",
+          "journal_or_source": "arXiv eess.IV"
+        },
+        {
+          "title": "Implicit Neural Models for Direct Multi-Shell Diffusion MRI Signal Estimation",
+          "arxiv_id": "https://arxiv.org/abs/2610.24034",
+          "journal_or_source": "arXiv eess.IV"
+        }
+      ],
+      "why": "implicit neural representation(INR, 좌표를 입력받아 해당 위치의 영상 값을 출력하도록 학습하는 신경망 표현)은 원래 한 장의 영상·장면마다 새로 네트워크를 처음부터 최적화해야 해서 느리다는 한계가 있었는데, 오늘 eess.IV에서 같이 올라온 세 편은 모두 이 '환자마다 처음부터 다시 학습해야 하는' 비용을 줄이는 쪽으로 움직입니다. LUMINR는 여러 환자 데이터에서 미리 좋은 초기값을 메타러닝해둬서 새 영상 쌍이 와도 적은 반복만으로 정합(registration)을 끝내고, GliomaINK는 종양·해부 구조 조건을 flow matching에 직접 넣어 빠진 MRI 시퀀스를 환자별 재학습 없이 한 번에 합성하며, multi-shell diffusion MRI 신호 추정 논문도 좌표 기반 implicit 모델로 비싼 다중 측정을 줄이려 합니다. 세 편 모두 '정확도'보다 '환자 1명당 추가로 드는 계산 비용을 어떻게 줄일 것인가'를 공통 질문으로 삼고 있다는 점에서, 의료 영상 재구성·합성·정합이 실제 임상 워크플로우에 들어가기 위한 속도 병목을 겨냥하는 단계로 가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "eess.IV 한 카테고리에서 같은 날 3편이 INR/flow matching 기반 환자별 재학습 비용 절감이라는 같은 motivation을 공유하나, 과제(정합/합성/신호추정)가 서로 달라 직접적인 벤치마크 비교는 어려움",
+      "lab_action": "LUMINR의 메타러닝된 INR 초기화를 랩이 보유한 반복 촬영 데이터(동일 환자/샘플 다회 측정) 정합 파이프라인에 적용해, 처음부터 학습하는 기존 INR 대비 수렴에 필요한 반복 횟수와 최종 정합 정확도를 비교한다"
+    },
+    {
+      "cluster": "Fourier/주파수 기반 복원이 CT geometry부터 ptychography, SAR까지 '측정 격자·기저함수 자체를 재설계'하는 쪽으로 세분화",
+      "papers": [
+        {
+          "title": "Hexagonal Basis Projectors for Model-Based Iterative CT Reconstruction",
+          "arxiv_id": "https://arxiv.org/abs/2610.24363",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Low-Dimensional Hermite-Gaussian Representations for Ptychographic Reconstruction",
+          "arxiv_id": "https://arxiv.org/abs/2610.25526",
+          "journal_or_source": "arXiv eess.SP"
+        },
+        {
+          "title": "SPIRIT: Sparse Physics-Informed Inverse Rendering for SAR Imaging",
+          "arxiv_id": "https://arxiv.org/abs/2610.23914",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "세 편 모두 영상 복원 문제를 풀 때 '픽셀 격자를 어떻게 바꾸면 더 적은 정보로 더 정확하게 복원할 수 있는가'라는 같은 질문을 다른 모달리티에서 던집니다. Hexagonal Basis Projectors는 CT 재구성에서 흔히 쓰는 정사각 격자(Cartesian grid) 대신, 같은 샘플링 밀도에서 더 넓은 anti-aliasing 대역폭을 갖는 육각 격자로 바꾸면 반복 재구성 품질이 올라간다는 것을 보이고, ptychography 논문은 복원 변수를 픽셀 하나하나가 아니라 소수의 Hermite-Gaussian 기저 계수로 표현해 차원을 크게 줄입니다. SPIRIT은 SAR(레이더) 영상에서 측정 수를 줄이면 생기는 매우 모호한(non-injective) 역문제를, 물리 기반 희소 표현으로 안정화합니다. 즉 CT·피치코그래피·SAR이라는 서로 다른 센서가 공통적으로 '표준 픽셀 격자·완전 밀집 표현을 버리고 문제에 맞는 기저로 바꾸면 적은 측정으로도 더 잘 풀린다'는 방향으로 움직이고 있다는 뜻입니다.",
+      "confidence": "Low",
+      "confidence_note": "서로 다른 모달리티(CT/ptychography/SAR) 3편이 같은 날 '기저함수 재설계'라는 유사한 설계 아이디어를 보이지만, 편수가 적고 서로 다른 커뮤니티(의료영상/계산광학/레이더)라 독립적 트렌드로 단정하기엔 이름 공유가 약함",
+      "lab_action": "Low-Dimensional Hermite-Gaussian Representations의 기저 축소 아이디어를 랩의 ptychography 복원 파이프라인에 적용해, 기존 픽셀 기반 복원 대비 수렴 반복 수와 노이즈가 있는 측정 조건에서의 안정성을 비교한다"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "A. GeoForward + MCSplat의 기하/광도 보정 모듈을 랩 feed-forward 3DGS 파이프라인에 ablation",
+      "claim": "카메라 기하 제약을 명시적으로 주입하고 cross-camera 광도 불일치를 분리해 처리하면, 동일한 feed-forward 3DGS 백본에서도 기하 정합 오차와 렌더링 품질이 함께 개선된다",
+      "supporting_papers": [
+        {"title": "GeoForward: Geometry-Guided Cross-View Alignment for Feedforward 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2610.23895"},
+        {"title": "MCSplat: Multi-View Photometric and Geometric Consistent Feed-Forward Gaussian Splatting for Driving Scenes", "arxiv": "https://arxiv.org/abs/2610.25345"}
+      ]
+    },
+    {
+      "title": "B. PnP-CF consensus 업데이트를 랩 저선량 CT/압축센싱 복원의 기존 PnP denoiser와 비교",
+      "claim": "flow-matching 기반 generative prior를 consensus 방식으로 결합하면, 기존 학습된 디노이저 기반 PnP-ADMM보다 적은 반복으로 비슷하거나 더 나은 PSNR을 달성한다",
+      "supporting_papers": [
+        {"title": "PnP-CF: A Consensus Flow-Matching Solver for General Inverse Problems", "arxiv": "https://arxiv.org/abs/2610.26000"}
+      ]
+    },
+    {
+      "title": "C. Reference-free lensless reconstruction quality assessment를 랩 렌즈리스 셋업의 PSF 오차 평가에 적용",
+      "claim": "기준 영상 없이 측정값만으로 복원 품질을 평가하는 지표가, 랩이 보유한 코드화 조리개/렌즈리스 셋업에서 PSF 모델 오차 크기와 실제 복원 품질 저하 사이의 상관관계를 정량화하는 데 쓸 수 있다",
+      "supporting_papers": [
+        {"title": "Reference-free per-measurement assessment of lensless reconstruction quality under imperfect PSF models", "arxiv": "https://doi.org/10.1364/oe.613012"}
+      ]
+    },
+    {
+      "title": "D. LUMINR의 메타러닝 INR 초기화를 랩 반복 촬영 데이터 정합에 적용",
+      "claim": "여러 샘플에서 미리 학습한 INR 초기값을 쓰면, 반복 촬영(동일 샘플 다회 측정) 데이터의 정합에서 처음부터 학습하는 기존 INR 대비 필요한 반복 횟수를 줄이면서 정합 정확도는 유지된다",
+      "supporting_papers": [
+        {"title": "LUMINR: Intensity-conditioned Meta-learned INRs for Accelerated Medical Image Registration", "arxiv": "https://arxiv.org/abs/2610.24046"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

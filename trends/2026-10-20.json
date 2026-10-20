@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-20",
+  "note": "2026-10-20(화) 14:00 KST 정기 daily 실행. 추적 5개 카테고리 모두 /new listing이 'Tuesday, 20 October 2026'으로 post_date와 정확히 일치해 표준 daily mode로 진행했다(backfill/journal-only 아님). arXiv new+cross 1416건(cs.LG 511·cs.CV 346·cs.AI 486·eess.IV 24·eess.SP 49, replacement 제외)과 저널(Crossref+OpenAlex, --days 1) 430편을 합쳐 총 1559건을 스캔했고, classify.py가 448건(28.7%)을 9개 ROI 버킷에 배정했다. 오늘 가장 뚜렷한 신호는 cs.CV의 feed-forward 3D Gaussian Splatting 5편으로, 어제 올라온 묶음(X-ray 융합·내시경 SLAM 같은 '적용 범위 확장')과는 결이 달라, 오늘은 기하 정합 오차(GeoForward)·cross-camera 광도 불일치(MCSplat)·디테일 손실(FineSplat)·sparse-view 과적합(Rethinking Sparse-View)·FPGA 엣지 배포(LENS)처럼 feed-forward 방식 자체의 품질 저하 원인을 하나씩 진단하는 단계로 넘어갔다. 두 번째 신호는 Plug-and-Play 역문제 solver가 diffusion/flow-matching 기반 generative prior로 수렴하는 흐름(PnP-CF, HP-PnP-Flow, Total-Body PET의 TB-PET-DDS)이고, 세 번째는 저널 쪽에서 디지털 홀로그래픽 현미경의 위상 수차 보정, 렌즈리스 PSF 모델 오차 평가처럼 '광학 하드웨어의 물리적 결함을 계산으로 보정·평가'하는 논문 4편이 몰린 점이다. 도메인 Watch Lens(Lensless/Coded Imaging, Virtual Staining/Pathology, Light-Field/Novel Sensors, Meta-Optics/Diffractive)를 별도로 훑었으나, Lensless는 1건(렌즈리스 복원 품질 평가 저널 논문, 오늘 클러스터3에 편입), Light-Field/Novel Sensors 8건은 이벤트 카메라 포즈 추정·RGB-event 융합 등 로보틱스/센서 퓨전 쪽으로 계산광학 핵심과는 결이 달라 독립 클러스터로 올리지 않았고, Virtual Staining/Pathology 55건 중 실제 신호는 Gleason grading·H&E artifact segmentation·spatial proteomics 등 4편 내외로 아직 클러스터를 구성하기엔 약해 Watch-only로만 기록했다. 어제(10/19) insights의 클러스터 제목 5개와 대조한 결과 완전히 겹치는 제목은 0개였다.",
+  "source_listing_date": "2026-10-20",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 511,
+      "cs.CV": 346,
+      "cs.AI": 486,
+      "eess.IV": 24,
+      "eess.SP": 49
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 430,
+    "journal_window_days": 1
+  },
+  "totals": {
+    "total_scanned": 1559,
+    "selected": 448
+  },
+  "classified": {
+    "total_scanned": 1559,
+    "selected": 448,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 3,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 11,
+      "Meta-Optics/Diffractive": 13,
+      "Light-Field/Novel Sensors": 8,
+      "Tomography/3D Imaging": 39,
+      "Virtual Staining/Pathology": 55,
+      "Reconstruction/Inverse Problems": 55,
+      "Deep Learning Methods": 263
+    }
+  },
+  "daily_thesis": "오늘은 어제의 '적용 범위 확장' 국면을 지나, feed-forward 3D Gaussian Splatting이 왜 품질이 떨어지는지를 구조적으로 진단하는 단계로 넘어간 날입니다. 동시에 역문제 복원 쪽에서는 Plug-and-Play solver의 디노이저 자리를 diffusion/flow-matching 생성모델이 채우는 흐름이 CT·PET·범용 영상 복원에서 독립적으로 반복됐습니다."
+}

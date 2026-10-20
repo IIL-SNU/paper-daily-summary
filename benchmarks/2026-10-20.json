@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-20",
+  "results": [
+    {
+      "benchmark": "Cambridge Landmarks (FPGA edge 3DGS rendering, vs ACEsplat GPU baseline)",
+      "metric": "PSNR",
+      "value": 34.11,
+      "value_str": "34.11 dB vs ACEsplat 33.20 dB (board-measured, AMD KR260)",
+      "paper": "https://arxiv.org/abs/2610.25068",
+      "paper_title": "Localization and Neural Splatting on the Edge: An FPGA Scene Memory for Robots"
+    },
+    {
+      "benchmark": "RealEstate10K (FPGA edge novel-view synthesis, vs ACEsplat GPU baseline)",
+      "metric": "PSNR",
+      "value": 27.84,
+      "value_str": "27.84 dB vs ACEsplat 26.11 dB (board-measured, AMD KR260)",
+      "paper": "https://arxiv.org/abs/2610.25068",
+      "paper_title": "Localization and Neural Splatting on the Edge: An FPGA Scene Memory for Robots"
+    },
+    {
+      "benchmark": "Edge deployment vs Jetson Orin NX (localization + rendering tasks)",
+      "metric": "Performance per watt",
+      "value": 5.7,
+      "value_str": "1.9x-5.7x perf/watt over Jetson Orin NX at ~1/4 power",
+      "paper": "https://arxiv.org/abs/2610.25068",
+      "paper_title": "Localization and Neural Splatting on the Edge: An FPGA Scene Memory for Robots"
+    },
+    {
+      "benchmark": "SPIRIT sparse-aperture SAR 3D surface reconstruction (synthetic + real-world data)",
+      "metric": "Data collection reduction while outperforming baselines",
+      "value": 90,
+      "value_str": "data collection reduced by over 90%, low geometric/signal error, outperforms baselines (abstract 기준)",
+      "paper": "https://arxiv.org/abs/2610.23914",
+      "paper_title": "SPIRIT: Sparse Physics-Informed Inverse Rendering for SAR Imaging"
+    }
+  ]
+}
