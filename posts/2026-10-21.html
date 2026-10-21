@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-10-21</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-10-21 (수요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-10-21 (수요일) · 표준 daily — 추적 5개 카테고리 모두 /new listing이 "Wednesday, 21 October 2026"으로 post_date와 정확히 일치해 backfill/journal-only 없이 정상 진행합니다.</div>
+  <div>📚 소스: arXiv(Date Source Contract 통과, post_date==listing_date) + 저널(Crossref/OpenAlex, --days 1)</div>
+  <div>🔢 arXiv: cs.LG 249 · cs.CV 183 · cs.AI 321 · eess.IV 5 · eess.SP 25 (new+cross, replacement 제외, 총 783건)</div>
+  <div>🔢 저널: Crossref+OpenAlex 425편 수집 (--days 1)</div>
+  <div>🔢 전체 스캔: 1047건(dedup 후) · ROI 배정 284건 (27.1%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 어제의 "feed-forward 3D Gaussian Splatting이 왜 품질이 떨어지는가 진단" 국면을 지나, 그 전제 자체가 두 갈래로 갈라진 날입니다. 하나는 <strong>"이미 잘 되는 3DGS를 얼마나 적은 자원으로 돌릴 것인가"</strong>(RLSplat, KoalaGS, Counting Contributions Not Views, Codec-Compatible Compression)이고, 다른 하나는 <strong>"그 3DGS에 무엇이 있는지 의미를 입힐 것인가"</strong>(PanoGraphGS, OV-Foam, CoGaussian)입니다. 동시에 비디오 생성모델의 latent에서 중간 복원 단계 없이 바로 3D/4D 기하를 뽑아내는 흐름(Latent Bridge, AEON)이 나타났고, <strong>병리 영상 쪽에서는 H&amp;E 염색 영상만으로 공간 전사체학(spatial transcriptomics) 유전자 발현을 직접 예측하려는 논문 4편</strong>(REST, VGL-stGen, HistoLoop, GeneCMamba)이 동시에 나오며 디지털 병리가 "분류"에서 "분자 상태 예측"으로 넘어가는 신호를 보였습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv 5개 카테고리는 모두 "Wednesday, 21 October 2026" listing으로 정상 갱신됐습니다(post_date==listing_date). new+cross 783건(cs.LG 249 · cs.CV 183 · cs.AI 321 · eess.IV 5 · eess.SP 25)과 저널 425편(Crossref+OpenAlex, --days 1)을 합쳐 dedup 후 총 1047건을 스캔했고, classify.py가 284건(27.1%)을 9개 ROI 버킷에 배정했습니다.</p>
+<p>가장 뚜렷한 신호는 cs.CV에서 계속되는 3D Gaussian Splatting 묶음인데, 결이 둘로 갈라졌습니다. 첫 번째는 "자원 예산" 축입니다 — RLSplat은 budget-controllable 방법들이 Gaussian을 일단 많이 만든 뒤 가지치기해서 추론 비용 자체는 줄지 않는다는 점을 고쳐 지연시간·메모리까지 예산에 비례하게 만들고, KoalaGS는 입력 영상의 복잡도를 미리 계산해 단순한 영역에 Gaussian이 과하게 몰리는 문제를 고치며, Counting Contributions Not Views는 가려진 Gaussian까지 "관측됐다"고 잘못 세는 densification 통계를 고쳐 더 적은 Gaussian으로 같은 품질을 내고, Codec-Compatible Compression은 Gaussian의 색상 계수를 표준 비디오 코덱에 맞게 변환해 BD-rate를 51.3% 줄입니다. 두 번째는 "의미 구조" 축입니다 — PanoGraphGS·OV-Foam·CoGaussian 세 편이 3DGS에 panoptic segmentation, 겹침 없는 feature lifting, open-vocabulary 협업 인식을 각각 입혀, "렌더링 품질"보다 "그 공간에 무엇이 있는지 물을 수 있는가"를 묻기 시작했습니다. 세 번째 신호는 비디오 생성모델의 latent에서 바로 3D/4D 기하를 뽑아내는 Latent Bridge와 AEON으로, 비디오 생성과 3D 재구성을 하나의 latent 공간에서 같이 풀려는 시도입니다.</p>
+<p>병리 쪽에서도 뚜렷한 묶음이 나왔습니다. REST, VGL-stGen, HistoLoop, GeneCMamba 네 편이 모두 H&amp;E 염색 영상만으로 공간 전사체학 유전자 발현을 직접 예측하려 하며, 서로 다른 아키텍처(신뢰도 가중 대조학습, vision-language 모델, looped Transformer, 상태공간모델)로 같은 문제를 다룹니다. 지난주(2026-10-12~10-16)는 3D Gaussian Splatting의 물리 현상 흡수와 메타표면·홀로그래피 하드웨어 신호가 번갈아 나왔고, 어제(10/20)는 그 3DGS 흐름이 "품질 저하 원인 진단"으로 들어간 날이었습니다. 다음 daily에서는 오늘 갈라진 "자원 효율화"와 "의미 구조화" 두 축 중 어느 쪽이 더 많은 후속 논문을 끌어모으는지가 관전 포인트입니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>어제(10/20)의 결론은 feed-forward 3D Gaussian Splatting이 "왜 품질이 떨어지는가"를 기하 정합(GeoForward)·cross-camera 광도 불일치(MCSplat)·디테일 손실(FineSplat)·sparse-view 과적합(Rethinking Sparse-View)·엣지 배포(LENS) 다섯 각도에서 진단하는 날이었습니다. 오늘은 그 "진단" 전제를 넘어, 이미 어느 정도 해결됐다고 보고 "얼마나 적은 자원으로 돌릴 것인가"(RLSplat, KoalaGS, Counting Contributions, CCT-GS)와 "무엇이 있는지 의미를 입힐 것인가"(PanoGraphGS, OV-Foam, CoGaussian)로 질문 자체가 바뀌었습니다. 어제 두 번째 축이었던 "PnP solver의 디노이저를 diffusion/flow-matching으로 교체"하는 흐름은 오늘은 뚜렷한 후속이 보이지 않고, 대신 Reconstruction/Inverse Problems 버킷에서는 MoSAIK(k-space 모션 검색)·Manifold Prior Deep Unfolding(하이퍼스펙트럴) 같은 개별 신호만 흩어져 있습니다. Virtual Staining/Pathology는 어제 55건 중 5편 내외의 약한 신호(Gleason grading, spatial proteomics 등)였는데, 오늘은 33건 중 4편이 "H&amp;E→공간 유전자 발현 예측"이라는 뚜렷한 공통 질문으로 묶여 처음으로 독립 클러스터를 구성했습니다. Meta-Optics/Diffractive는 어제 13편(이미징 신호 1편)에서 오늘 14편(이미징 신호 0편)으로 여전히 대부분 통신/THz 응용이고, Fourier Ptychography/Microscopy는 어제 1편이던 실제 신호가 오늘은 0편(2편 모두 'synthetic aperture' 키워드로 걸린 SAR 논문)으로 핵심 공백이 더 깊어졌습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Feed-forward 3DGS의 관심사가 '품질'에서 '자원 예산·압축'으로 좁혀짐</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.27712" target=_blank>RLSplat: Resource-Linear Budget Control for Feed-forward 3D Gaussian Splatting</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.28615" target=_blank>KoalaGS: Complexity-Aware Continuous Level of Detail for Gaussian Splatting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.27108" target=_blank>Counting Contributions, Not Views: Occlusion-Aware Densification for 3D Gaussian Splatting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.26920" target=_blank>Codec-Compatible Learned Compression for 3D Gaussian Splatting</a> <span class=pill>IV</span>
+  </td>
+  <td>어제는 feed-forward 3DGS가 "왜 실패하는가"(기하 정합, 광도 불일치, 디테일 손실, sparse-view 과적합)를 진단하는 논문들이었는데, 오늘은 전제가 바뀝니다. 네 편 모두 "이미 잘 되는 3DGS를 얼마나 적은 자원으로 돌릴 것인가"를 묻습니다. RLSplat은 기존 budget-controllable 방법들이 일단 Gaussian을 많이 만든 뒤 가지치기해서 추론 비용 자체는 줄지 않는다는 점을 고쳐, 지역별로 꼭 필요한 만큼만 Gaussian을 배정해 지연시간·메모리까지 예산에 비례하게 만듭니다. KoalaGS는 최적화 전에 입력 영상의 복잡도를 미리 계산해, 단순한 영역에 Gaussian이 과하게 몰리는 문제를 고치고 압축률을 낮춰도 품질이 부드럽게 떨어지게 합니다. Counting Contributions Not Views는 가려진 Gaussian도 "관측됐다"고 잘못 세는 기존 densification 통계의 결함을 고쳐 같은 품질을 더 적은 Gaussian으로 달성하고, Codec-Compatible Compression은 Gaussian의 색상 정보를 표준 비디오 코덱에 맞게 변환해 압축률을 크게 높입니다. 즉 이 기술이 "빠르게 넓히는" 단계와 "왜 안 되는지 진단하는" 단계를 지나, 이제는 "어떻게 저장·전송·스트리밍할 것인가"라는 실제 서비스 조건을 겨냥하는 단계로 넘어갔다는 뜻입니다.</td>
+  <td>High<br><small>cs.CV 3편+eess.IV 1편이 서로 다른 저자군에서 나왔고, 모두 구체적 정량 수치 동반(RLSplat 4배 적은 Gaussian으로 baseline 상회·4.1배 빠름, CCT-GS BD-rate 51.3% 절감, Counting Contributions 최대 6% LPIPS 개선+Gaussian 절반 이하)</small></td>
+  <td>랩 feed-forward 3DGS 파이프라인에 RLSplat의 지역별 Gaussian 할당 정책과 KoalaGS의 복잡도 기반 LOD를 함께 붙여, 동일 저장 예산에서 기존 pruning 기반 방법 대비 PSNR/LPIPS가 얼마나 개선되는지 DL3DV에서 ablation한다</td>
+</tr>
+<tr>
+  <td><strong>3DGS가 '어디 있나'를 넘어 '그게 무엇인가'까지 답하도록 의미 구조를 입힘</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.27696" target=_blank>PanoGraphGS: Unifying Panoptic Segmentation and Hierarchical 3D Scene Graphs with Gaussian Splatting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.28131" target=_blank>OV-Foam: How 3D Representations Shape Semantic Feature Lifting</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.28530" target=_blank>CoGaussian: Open-Vocabulary Gaussian-based Collaborative 3D Scene Understanding</a> <span class=pill>CV</span>
+  </td>
+  <td>세 편 모두 3D Gaussian을 순수 기하·외형 표현에서 "그 공간에 무엇이 있는지 언어로 물을 수 있는 지도"로 확장합니다. PanoGraphGS는 panoptic segmentation(장면을 영역·개체 단위로 전부 나누는 분할)과 계층적 3D scene graph를 같은 Gaussian 표현 위에서 함께 학습해, 언어로 길을 지시하는 내비게이션에 바로 쓸 수 있는 구조화된 지도를 만듭니다. OV-Foam은 여러 Gaussian이 한 광선 위에 겹쳐 있을 때 특징을 영상에서 3D로 역투영하는 기존 방식이 수학적으로 최적이 아니라는 점을 보이고, 겹침이 없는 PowerFoam이라는 표현으로 바꿔 open-vocabulary(사전에 정해둔 클래스 없이 임의의 단어로 질의하는) 분할 성능을 높입니다. CoGaussian은 여러 로봇이 각자 본 장면을 Gaussian 기반으로 합쳐, 미리 정해둔 class 목록 없이도 열린 어휘로 공간을 이해하게 합니다. 즉 3DGS의 평가 기준이 "얼마나 예쁘게 렌더링하는가"에서 "그 공간 안에 무엇이 있는지 물어볼 수 있는가"로 넓어지고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>cs.CV 3편이 서로 다른 응용(실내 내비게이션, 분할 이론, 다중 로봇 협업)에서 나왔으나, 독립 benchmark 간 직접 비교는 아직 부족</small></td>
+  <td>OV-Foam의 PowerFoam(겹침 없는 공간 분할) 아이디어를 랩 3DGS 기반 open-vocabulary segmentation 실험에 적용해, 기존 backprojection 대비 feature 할당 정확도와 mIoU를 비교한다</td>
+</tr>
+<tr>
+  <td><strong>병리 영상이 '무슨 조직인가'를 넘어 '어떤 유전자가 발현되는가'를 직접 예측하는 쪽으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.26988" target=_blank>REST: Reliability-Guided Spatial Transcriptomics Supervision for Gene Expression Prediction from HE-Stained Images</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.28266" target=_blank>VGL-stGen: Learning a shared multimodal model for lung histology and spatial transcriptomics</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.28339" target=_blank>HistoLoop: Iterative Contextual Inference with a Looped Transformer for Histology-Based Spatial Gene Expression Prediction</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://doi.org/10.1016/j.compbiolchem.2026.109506" target=_blank>GeneCMamba: Autoregressive Spatial Transcriptome Prediction from Histopathology</a> <span class=pill>JNL</span>
+  </td>
+  <td>네 편 모두 H&amp;E(헤마톡실린-에오신) 염색 영상, 즉 병원에서 가장 흔히 찍는 일반 병리 슬라이드만 보고 공간 전사체학(spatial transcriptomics, 조직 내 위치별로 어떤 유전자가 얼마나 발현되는지 측정하는 값비싼 실험)을 예측하려 합니다. REST는 측정 신뢰도가 낮은 영역을 가려내는 "신뢰도 기반 대조 정렬"로 품질이 들쑥날쑥한 학습 데이터를 다루고, VGL-stGen은 의료 vision-language 모델을 확장해 조직 분류·유전자 예측·발현 완성을 한 모델에서 처리하며, HistoLoop는 주변 조직 조각의 상태를 반복적으로 되먹여 점점 더 세밀한 해상도로 추론하는 looped Transformer로 HEST-Bench에서 비교 방법 중 가장 높은 유전자별 상관계수를 달성했습니다. GeneCMamba는 상태공간모델(Mamba) 기반 자기회귀 방식으로 같은 문제를 풉니다. 즉 디지털 병리가 "암이다/아니다"를 분류하는 문제에서, 비싼 분자 실험 없이 염색 영상만으로 조직의 분자 상태 지도를 그리는 문제로 넘어가고 있다는 뜻입니다.</td>
+  <td>High<br><small>4편이 서로 다른 아키텍처(신뢰도 가중 대조학습, vision-language 모델, looped Transformer, 상태공간모델)로 같은 목표를 겨냥하고, 같은 계열 벤치마크(HEST)에서 정량 비교를 동반</small></td>
+  <td>HistoLoop/REST의 공개 코드를 공개 HEST-1K subset에 적용해, 랩이 관심 있는 조직 유형에서 유전자별 Pearson 상관계수를 두 방법 간 비교한다</td>
+</tr>
+<tr>
+  <td><strong>비디오 생성모델의 latent와 3D/4D 표현을 중간 단계 없이 바로 연결</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.28521" target=_blank>Latent Bridge: From Video Latents to 3D Geometry via Feature Alignment</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.28631" target=_blank>AEON: Unifying Video and 3D World Models</a> <span class=pill>CV</span>
+  </td>
+  <td>기존에는 비디오 생성모델이 만든 latent를 일단 RGB 영상으로 복원한 뒤, 그 영상에서 다시 깊이·카메라 위치·3D 구조를 추정해야 했습니다. 두 논문은 이 "복원 후 재인코딩" 단계를 건너뛰고 생성 latent에서 바로 3D/4D 표현을 뽑아냅니다. Latent Bridge는 Wan2.1·V-RAE 같은 비디오 생성모델의 latent 공간과 기하 특징 공간을 직접 잇는 다리를 학습해 카메라·깊이·점군을 바로 예측하고, AEON은 한 걸음 더 나아가 비디오 생성모델의 latent 공간 안에서 동작하면서 4D Gaussian Splatting(시간에 따라 변하는 3D 장면 표현)을 직접 출력하는 통합 world model을 제안합니다. 즉 "그럴듯한 영상을 만드는 모델"과 "기하학적으로 일관된 3D를 만드는 모델"을 따로 두지 않고, 하나의 latent 공간 안에서 같이 풀려는 시도라는 뜻입니다.</td>
+  <td>Medium<br><small>2편뿐이지만 서로 다른 저자군이 거의 동시에 "생성 latent에서 직접 기하를 예측한다"는 같은 설계를 선택, 독립 benchmark 수가 아직 적음</small></td>
+  <td>Latent Bridge의 feature-distillation bridge 아이디어를 랩이 쓰는 비디오 diffusion latent에 적용해, RGB 재인코딩을 거치는 기존 depth/pose 추정 파이프라인 대비 지연시간과 정확도를 비교한다</td>
+</tr>
+</tbody>
+</table>
+<p><small>⚠️ 참고: 보조 클러스터 근거가 Lensless/Coded Imaging에서 1건(코드화 조리개 카메라를 3DGS와 함께 미분 가능하게 공동 설계) 더 있었으나 단발이라 독립 행으로 올리지 않고 아래 도메인 Watch Lens에서 다룹니다. 오늘은 4행으로 표시합니다.</small></p>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 2편, 실제 신호 0편</strong> — 2편 모두 "synthetic aperture" 키워드로 걸린 SAR(합성개구레이더) 물체 탐지 논문이라 랩 ROI 핵심과 무관합니다. 랩 핵심 공백이 어제보다 더 깊어졌습니다.</li>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 3편 중 실제 신호 2편</strong> — <a href="https://arxiv.org/abs/2610.28004" target=_blank>Differentiable Task-Driven Coded Aperture Camera Design with 3D Gaussian Scene Representations</a> [CV]는 코드화 조리개 마스크·카메라 파라미터·depth-from-defocus 네트워크를 3D Gaussian Splatting으로 재구성한 장면 위에서 end-to-end로 공동 최적화하는 논문으로, 오늘 클러스터1·2의 "3DGS를 다른 작업의 기반 표현으로 쓰는" 흐름과 닿아 있지만 단발이라 독립 클러스터로 올리지 않았습니다. <a href="https://doi.org/10.7717/peerj.21700" target=_blank>Three-dimensional coded aperture imaging system for early breast cancer detection</a> [JNL]은 SPECT 코드화 조리개 카메라의 3D 유방암 재구성 타당성 연구입니다.</li>
+    <li><strong>Phase Imaging/Holography — 오늘 배정 7편 중 실제 신호 2편</strong> — <a href="https://doi.org/10.1038/s41598-026-73646-w" target=_blank>XPAR-Net: cross-paradigm alignment and reconstruction network for high-fidelity lens-free on-chip microscopy</a> [JNL]는 단일 인라인 홀로그램에서 위상 추론과 프린지 단위 정보 복원을 함께 다루는 lens-free 현미경 복원망이고, <a href="https://doi.org/10.1021/acsnano.6c13095" target=_blank>Optical Fourier Surfaces for Free-Space Computer-Generated Holography</a> [JNL]는 리소그래피의 이산화된 표면 대신 연속(그레이스케일) 제어가 가능한 나노구조 표면으로 CGH 설계 자유도를 넓힙니다. 나머지 5편(AdS/CFT 홀로그래피, 광속 불변성 논쟁, 풍동 음향 잡음 등)은 무관 키워드 오탐입니다.</li>
+    <li><strong>Meta-Optics/Diffractive — 오늘 배정 14편 중 이미징 신호 0편</strong> — 전부 THz 센서·안테나·광통신·암호화 같은 비이미징 응용이며, 어제 있었던 이미징 인접 신호(diffractive neural network)도 오늘은 보이지 않습니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 오늘 배정 3편 중 계산광학 핵심과 거리가 있는 신호뿐</strong> — 이벤트 카메라 웨어러블 태스크 전환 감지, 이벤트 기반 그래프 신경망 2편은 로보틱스/웨어러블 센서 쪽이고, 저널의 소용돌이 빔 위상 검출 1편도 광필드 이미징 핵심과는 결이 다릅니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: feed-forward 3DGS 자원 효율화 4편(RLSplat, KoalaGS, Counting Contributions, CCT-GS), 3DGS 의미 구조화 3편(PanoGraphGS, OV-Foam, CoGaussian), 비디오-3D latent 연결 2편(Latent Bridge, AEON), 병리 유전자발현 예측 3편(REST, VGL-stGen, HistoLoop), 코드화 조리개 카메라 미분 가능 공동 설계 1편</li>
+  <li><strong>저널 전용</strong>: 병리 유전자발현 예측 1편(GeneCMamba), lens-free on-chip 현미경 복원(XPAR-Net), CGH 하드웨어 표면 설계(Optical Fourier Surfaces), SPECT 코드화 조리개 3D 유방암 재구성, 메타표면 통신/THz 응용 다수</li>
+  <li><strong>공통 키워드</strong>: "3D 표현"이 오늘 arXiv 내부에서도 자원 효율화·의미 구조화·비디오 연결이라는 서로 다른 세부 흐름으로 갈라졌다는 점이 특징입니다. 저널은 여전히 "촬영 하드웨어 자체의 물리적 한계를 계산으로 메운다"는 익숙한 축(렌즈리스, CGH)을 유지합니다.</li>
+  <li><strong>특징</strong>: 오늘은 arXiv와 저널 양쪽에서 독립적으로 "H&amp;E/병리 영상에서 유전자 발현을 직접 예측"하는 논문이 나왔다는 점이 눈에 띕니다(arXiv 3편 + 저널 1편) — 전체적으로 계산광학 파이프라인의 앞단(촬영 하드웨어)은 저널이, 3D 표현의 쓰임새 확장과 병리 분자 예측은 arXiv가 주로 다루는 날입니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. Feed-forward 3DGS의 관심사가 '품질'에서 '자원 예산·압축'으로 좁혀짐</h3>
+  <p>RLSplat(지역별 Gaussian 할당), KoalaGS(복잡도 기반 LOD), Counting Contributions Not Views(occlusion-aware densification), Codec-Compatible Compression(코덱 친화적 압축) 네 편이 같은 날 올라오며, feed-forward 3DGS가 "왜 실패하는가"에서 "어떻게 저장·전송할 것인가"로 질문을 옮깁니다.</p>
+  <p class=conf-note>Confidence: High — cs.CV 3편+eess.IV 1편이 서로 다른 저자군에서 구체적 정량 수치(4배 적은 Gaussian, BD-rate 51.3% 절감 등)와 함께 나옴</p>
+</div>
+
+<div class=ins>
+  <h3>2. 3DGS가 '어디 있나'를 넘어 '그게 무엇인가'까지 답하도록 의미 구조를 입힘</h3>
+  <p>PanoGraphGS(panoptic scene graph), OV-Foam(겹침 없는 feature lifting), CoGaussian(open-vocabulary 협업 인식) 세 편이 3D Gaussian 표현에 의미 구조를 결합해, "렌더링 품질"보다 "그 공간에 무엇이 있는지 물을 수 있는가"를 평가 기준으로 끌어올립니다.</p>
+  <p class=conf-note>Confidence: Medium — cs.CV 3편이 서로 다른 응용에서 나왔으나 독립 benchmark 간 직접 비교는 아직 부족</p>
+</div>
+
+<div class=ins>
+  <h3>3. 병리 영상이 조직 분류를 넘어 유전자 발현을 직접 예측하는 쪽으로</h3>
+  <p>REST, VGL-stGen, HistoLoop, GeneCMamba 네 편이 모두 H&amp;E 염색 영상만으로 공간 전사체학 유전자 발현을 예측하며, 서로 다른 아키텍처가 같은 HEST 계열 벤치마크를 겨냥합니다.</p>
+  <p class=conf-note>Confidence: High — 4편이 서로 다른 아키텍처로 같은 목표를 겨냥하고 정량 비교를 동반</p>
+</div>
+
+<div class=ins>
+  <h3>4. 비디오 생성모델의 latent와 3D/4D 표현을 중간 단계 없이 바로 연결</h3>
+  <p>Latent Bridge와 AEON 두 편이 비디오 생성 latent에서 RGB 재인코딩 없이 바로 3D/4D 기하를 뽑아내며, "그럴듯한 영상"과 "기하학적으로 일관된 3D"를 하나의 latent 공간에서 같이 풀려 합니다.</p>
+  <p class=conf-note>Confidence: Medium — 2편뿐이며 독립 benchmark 수가 아직 적음</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. RLSplat + KoalaGS의 자원 할당 전략을 랩 feed-forward 3DGS 파이프라인에 적용</h3>
+  <p>지역별 Gaussian 할당 정책과 복잡도 기반 LOD를 함께 쓰면, 동일한 저장 예산에서 기존 pruning 기반 budget-control 방법보다 PSNR/LPIPS가 함께 개선되는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: RLSplat·KoalaGS 공식 코드(공개 시) 또는 핵심 모듈 재구현</li>
+    <li>공통 benchmark: DL3DV, 3DGS-MCMC 재구성 데이터</li>
+    <li>비교축: 동일 Gaussian 예산에서 PSNR/LPIPS, 추론 지연시간, 피크 메모리</li>
+    <li>실패해도 남는 결과: 랩 feed-forward 3DGS 파이프라인의 예산별 품질 저하 곡선 정리</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. OV-Foam의 PowerFoam 겹침 없는 분할을 랩 3DGS open-vocabulary segmentation에 적용</h3>
+  <p>Gaussian이 겹치지 않도록 공간을 분할하면, 기존 backprojection 기반 feature lifting보다 open-vocabulary 분할의 feature 할당 정확도가 개선되는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: OV-Foam 방법 재현(PowerFoam 기반 partition)</li>
+    <li>공통 benchmark: 랩 보유 실내 장면 open-vocabulary segmentation 데이터</li>
+    <li>비교축: feature 할당 정확도, mIoU, primitive당 ray 수</li>
+    <li>실패해도 남는 결과: 랩 3DGS 파이프라인의 primitive 겹침 정도별 분할 오차 분석</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. HistoLoop/REST를 공개 HEST-1K subset에 적용해 랩 관심 조직의 유전자 발현 예측 비교</h3>
+  <p>looped Transformer(HistoLoop)와 신뢰도 기반 대조학습(REST)이 랩이 관심 있는 조직 유형에서도 유전자별 Pearson 상관계수 면에서 일관된 우위를 보이는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: HistoLoop·REST 공식 코드(공개 시) 재현</li>
+    <li>공통 benchmark: 공개 HEST-1K subset(랩 관심 조직 유형)</li>
+    <li>비교축: 유전자별 macro-averaged Pearson correlation, 추론 속도</li>
+    <li>실패해도 남는 결과: 랩 관심 조직에서 두 방법의 실패 유전자 목록 정리</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>D. Latent Bridge의 feature-distillation bridge를 랩 비디오 diffusion latent에 적용</h3>
+  <p>비디오 생성 latent에서 RGB 재인코딩 없이 바로 깊이/카메라를 예측하면, 기존 재인코딩 기반 파이프라인보다 지연시간이 줄어들면서 정확도는 유지되는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Latent Bridge 방법 재현(Wan2.1/V-RAE 기반 bridge)</li>
+    <li>공통 benchmark: 랩 보유 비디오 diffusion latent + 대응 RGB 데이터</li>
+    <li>비교축: depth/pose 추정 지연시간, 재인코딩 경로 대비 정확도</li>
+    <li>실패해도 남는 결과: 랩 비디오 latent 공간에서 기하 정보 보존 정도 분석</li>
+  </ul>
+</div>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘은 수요일 daily라 예측 회고 루프는 생략합니다(월요일 전용 섹션). 다음 예측 회고는 2026-10-26(월) weekly 실행이 이번 주를 되돌아보며 수행합니다.</p>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(34편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:6%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:9%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:21%"></span></span><span class=n>7편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:41%"></span></span><span class=n>14편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:9%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>34편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:97%"></span></span><span class=n>33편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:74%"></span></span><span class=n>25편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>163편</span></div>
+
+<p><small>⚠️ 참고: Fourier Ptychography/Microscopy 2편은 모두 "synthetic aperture" 키워드 오탐(SAR 논문)으로 실제 신호가 없습니다. Meta-Optics/Diffractive 14편 중 이미징 신호는 0편이고 거의 전부 THz/통신/센싱 응용입니다. Tomography/3D Imaging 34편 중 실제 계산 이미징 신호는 feed-forward 3DGS 자원 효율화·의미 구조화·비디오 연결 묶음 9편 정도이고 나머지는 PET/CT 임상 사례, OCT 안과 질환 등입니다. Virtual Staining/Pathology 33편 중 실제 신호는 약 6편(병리 유전자발현 예측 묶음 포함)이고 나머지는 LLM/ESG/사회과학 등 "virtual"·"staining" 키워드 오탐입니다. Reconstruction/Inverse Problems 25편 중 이미징 핵심 신호는 3~4편 정도이고 나머지는 RL/PINN 등 ML 방법론입니다. Deep Learning Methods 163편 중 이미징 핵심 신호는 6편 내외(클러스터2·4 반영분 포함)이고 나머지는 LLM/RL/로보틱스 등입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Lensless/Coded Imaging (3편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28004" target=_blank>Differentiable Task-Driven Coded Aperture Camera Design with 3D Gaussian Scene Representations</a></strong> [CV]<br>
+  왜 주요: 도메인 Watch Lens 참고 — 코드화 조리개 마스크·카메라 파라미터·depth 네트워크를 3DGS 장면 표현 위에서 end-to-end 공동 최적화
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.7717/peerj.21700" target=_blank>Three-dimensional coded aperture imaging system for early breast cancer detection</a></strong> [JNL]<br>
+  왜 주요: 도메인 Watch Lens 참고 — SPECT 코드화 조리개 카메라의 3D 유방암 재구성 타당성 연구
+</div>
+
+<h3>Phase Imaging/Holography (7편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41598-026-73646-w" target=_blank>XPAR-Net: cross-paradigm alignment and reconstruction network for high-fidelity lens-free on-chip microscopy</a></strong> [JNL]<br>
+  왜 주요: 도메인 Watch Lens 참고 — 단일 인라인 홀로그램에서 위상 추론과 프린지 단위 정보 복원을 함께 다루는 lens-free 현미경 복원망
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/acsnano.6c13095" target=_blank>Optical Fourier Surfaces for Free-Space Computer-Generated Holography</a></strong> [JNL]<br>
+  왜 주요: 도메인 Watch Lens 참고 — 연속(그레이스케일) 제어 가능한 나노구조 표면으로 CGH 설계 자유도 확장
+</div>
+
+<h3>Tomography/3D Imaging (34편 중 관련 9편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.27712" target=_blank>RLSplat: Resource-Linear Budget Control for Feed-forward 3D Gaussian Splatting</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터1·must-read 대표 — 지역별 Gaussian 할당 정책으로 추론 비용 자체를 예산에 비례하게 만듦
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28131" target=_blank>OV-Foam: How 3D Representations Shape Semantic Feature Lifting</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터2 대표 — 겹침 없는 PowerFoam 표현으로 open-vocabulary 분할의 feature lifting을 최적화
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28631" target=_blank>AEON: Unifying Video and 3D World Models</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터4 대표 — 비디오 생성 latent 공간에서 바로 4D Gaussian Splatting을 출력하는 통합 world model
+</div>
+
+<h3>Virtual Staining/Pathology (33편 중 관련 6편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.26988" target=_blank>REST: Reliability-Guided Spatial Transcriptomics Supervision for Gene Expression Prediction from HE-Stained Images</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터3·must-read 대표 — 신뢰도 기반 대조 정렬로 노이즈가 섞인 HE-ST 학습 데이터를 다룸
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28339" target=_blank>HistoLoop: Iterative Contextual Inference with a Looped Transformer for Histology-Based Spatial Gene Expression Prediction</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터3 대표 — looped Transformer로 HEST-Bench 최고 유전자별 상관계수 달성
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28266" target=_blank>VGL-stGen: Learning a shared multimodal model for lung histology and spatial transcriptomics</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터3 대표 — 의료 vision-language 모델을 확장해 조직 분류·유전자 예측·발현 완성을 한 체크포인트로 처리
+</div>
+
+<h3>Reconstruction/Inverse Problems (25편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.27874" target=_blank>Manifold Prior Guided Deep Unfolding for Hyperspectral Image Reconstruction</a></strong> [CV]<br>
+  왜 주요: 하이퍼스펙트럴 영상 복원의 deep unfolding에 manifold prior를 결합해 spectral content adaptivity를 개선
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.27156" target=_blank>MoSAIK: Motion Search with Artificial Intelligence in K-space</a></strong> [AI]<br>
+  왜 주요: 외부 navigator 없이 k-space 자기일관성 위반만으로 모션을 추정해 모션 인식 재구성에 반영
+</div>
+
+<h3>Deep Learning Methods (163편 중 관련 6편, catch-all 과대표 방지로 2편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28530" target=_blank>CoGaussian: Open-Vocabulary Gaussian-based Collaborative 3D Scene Understanding</a></strong> [CV/RO]<br>
+  왜 주요: 오늘 클러스터2 대표 — 다중 로봇이 공유하는 open-vocabulary Gaussian 기반 협업 의미 지도
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28521" target=_blank>Latent Bridge: From Video Latents to 3D Geometry via Feature Alignment</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터4 대표 — 비디오 생성 latent와 기하 특징 공간을 직접 잇는 feature-distillation bridge
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>Value</th><th>Paper</th></tr></thead>
+<tbody>
+<tr><td>Zero-shot budget-controllable feed-forward 3DGS (최강 baseline 대비)</td><td>Gaussian 수 대비 품질/속도/메모리</td><td>4배 적은 Gaussian으로 상회, 최대 4.1배 빠름, 저예산 메모리 9.6배 절감</td><td><a href="https://arxiv.org/abs/2610.27712" target=_blank>RLSplat</a></td></tr>
+<tr><td>MPEG GSC sequences (3DGS 압축, video-based anchor 대비)</td><td>BD-rate</td><td>평균 51.30% 절감</td><td><a href="https://arxiv.org/abs/2610.26920" target=_blank>Codec-Compatible Compression (CCT-GS)</a></td></tr>
+<tr><td>Occlusion-heavy scenes (StopThePop 기반 densification)</td><td>LPIPS / Gaussian 수</td><td>최대 6% 낮은 LPIPS, Gaussian 절반 이하</td><td><a href="https://arxiv.org/abs/2610.27108" target=_blank>Counting Contributions, Not Views</a></td></tr>
+<tr><td>HEST-Bench HVG50 (H&amp;E → 공간 유전자 발현, 6개 암종·5개 장기)</td><td>유전자별 macro-averaged Pearson correlation</td><td>비교 방법 중 최고치 달성(abstract 기준, 구체적 수치는 본문 확인 필요)</td><td><a href="https://arxiv.org/abs/2610.28339" target=_blank>HistoLoop</a></td></tr>
+</tbody>
+</table>
+<p><small>오늘은 3DGS 자원 효율화 묶음(RLSplat, CCT-GS, Counting Contributions)이 abstract에 명시적 수치를 담고 있어 벤치마크 표에 반영했습니다. HistoLoop는 "최고 상관계수 달성"이라고만 명시돼 있어 구체적 수치는 포함하지 않았습니다.</small></p>
+
+<h2>🔀 크로스오버 페어</h2>
+<p><strong>REST/HistoLoop(H&amp;E 영상 → 유전자 발현 직접 예측) ↔ Latent Bridge(비디오 생성 latent → 3D 기하 직접 예측)</strong> — 둘 다 "중간 표현을 복원한 뒤 다시 추정하지 말고, 원본 신호에서 근본적으로 다른 종류의 표현으로 바로 매핑하자"는 같은 설계 철학을 공유합니다. REST/HistoLoop는 형태학적 영상(H&amp;E)에서 분자 상태(유전자 발현)로, Latent Bridge는 비디오 생성 latent에서 기하 구조로 각각 직접 매핑한다는 점에서, 병리 영상 분야와 3D 비전 분야가 같은 날 같은 설계 아이디어로 수렴한 사례입니다.</p>
+
+<hr>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] RLSplat: Resource-Linear Budget Control for Feed-forward 3D Gaussian Splatting — arXiv 2610.27712</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> 랩이 다루는 feed-forward 3D 재구성 파이프라인을 실제 자원 제약 환경(로봇, 모바일)에 배포할 때 바로 부딪히는 문제를 정면으로 다룹니다. 기존 budget-controllable feed-forward 3DGS 방법들은 목표 Gaussian 수를 맞추기 위해 일단 조밀한 Gaussian 집합을 예측한 뒤 가지치기하거나 선택하는 방식이라, 예산을 줄여도 추론 자체의 지연시간과 메모리는 거의 그대로였습니다.</p>
+  <p><strong>핵심:</strong> RLSplat은 가지치기 대신, 장면을 지역별로 나눠 각 지역에 정확히 필요한 만큼의 Gaussian을 생성하도록 배정하는 정책을 학습합니다. 이후 각 Gaussian이 가까운 이웃만 참조하는 효율적인 계층적 탐색으로 디코딩해, 디코딩 비용 자체가 Gaussian 수에 선형으로 줄어들게 설계했습니다. zero-shot 평가에서 모든 예산 구간에서 기존 budget-controllable 방법을 능가했고, 최강 baseline을 4배 적은 Gaussian으로도 상회하면서 최대 4.1배 빠르고 저예산에서는 메모리를 9.6배 절감했습니다(abstract 기준).</p>
+  <p><strong>주의:</strong> "zero-shot 평가"의 구체적인 학습-평가 도메인 전이 조건과, 매우 낮은 예산(극소수 Gaussian)에서 복잡한 장면의 품질이 어디까지 버티는지는 본문 확인이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] REST: Reliability-Guided Spatial Transcriptomics Supervision for Gene Expression Prediction from HE-Stained Images — arXiv 2610.26988</h3>
+  <div class=tag>[방법전환] [데이터전환]</div>
+  <p><strong>왜 A급인가:</strong> 디지털 병리가 "암이다/아니다"를 분류하는 문제에서 "어떤 유전자가 발현되는가"를 예측하는 문제로 넘어가는 오늘 클러스터3의 대표 논문이자, 데이터 품질이 들쑥날쑥한 공간 전사체학(spatial transcriptomics) 학습 데이터를 다루는 방법론적 기여가 뚜렷합니다. H&amp;E 염색 영상의 형태학은 조직 내 분자 상태를 직접 보여주지 않는데, 공간 전사체학 실험은 assay 커버리지와 spot 정보량이 제각각이라 짝지어진 HE-ST 데이터의 신뢰도가 균일하지 않다는 문제를 정면으로 다룹니다.</p>
+  <p><strong>핵심:</strong> REST는 signature·pathway·cell-type 유전자 집합으로 구성한 Biological Program Bank(BPB)를 기반으로, 각 spot의 신뢰도를 assay 수준의 program coverage와 spot 수준의 활성도 분산으로 추정하는 Spot-Reliability Contrastive Alignment(SRCA)로 HE-ST 정렬을 신뢰도에 따라 재가중합니다. 여기에 학습 가능한 program query로 조직 형태로부터 유전자 발현을 복원하는 Biology-Informed Program Reconstruction(BIPR)을 더합니다. 16개 장기 407,475개 spot(209개 샘플)으로 학습하고 8개 장기 230,056개 spot(70개 샘플)으로 평가해, 기존 ST-supervised 방법과 병리 foundation model 모두를 제치고 가장 높은 Macro correlation을 달성했습니다(abstract 기준).</p>
+  <p><strong>주의:</strong> 학습·평가 데이터가 여러 장기를 아우르지만 특정 기관/플랫폼의 공간 전사체학 assay에 편중됐을 가능성이 있어, 랩이 관심 있는 조직·플랫폼으로 일반화되는지는 본문과 코드 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 저널 425편은 Crossref/OpenAlex --days 1 수집분이라, OpenAlex enrich가 abstract를 백필하지 못한 논문 다수(특히 Meta-Optics·Phase Imaging 클러스터)는 제목과 저널명만으로 분류·판단했습니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology 33건 중 27건, Meta-Optics/Diffractive 14건 전부가 키워드 오탐 또는 계산 이미징 방법론과 무관한 응용(ESG, 통신, 사회과학 등)입니다.</p>
+  <p>[Claim risk] 클러스터2(3DGS 의미 구조화)의 CoGaussian은 cs.RO 중심 다중로봇 협업 응용이라, 계산광학 ROI보다 로보틱스 ROI에 가깝다는 점을 감안해 읽어야 합니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] VGL-stGen은 abstract에서 "일부 H&amp;E 소스가 암 학습 또는 모델 개발 과정에 노출됐다"고 직접 밝히고 있어, 외부 분류 성능 수치를 해석할 때 데이터 누출 가능성을 감안해야 합니다.</p>
+  <p>[Baseline risk] RLSplat의 "zero-shot 평가"가 어떤 학습 도메인에서 어떤 평가 도메인으로의 전이인지 abstract만으로는 불명확해, 보고된 배수 개선이 모든 장면 유형에 일반화되는지는 본문 확인이 필요합니다.</p>
+  <p>[Metric risk] HistoLoop와 REST는 둘 다 "최고 성능 달성"을 주장하지만 비교 대상 baseline 집합과 평가 프로토콜(HEST-Bench HVG50 vs REST 자체 70-sample split)이 달라, 두 논문의 수치를 직접 비교하기는 어렵습니다.</p>
+  <p>[Dataset risk] 클러스터4(비디오-3D latent 연결)는 2편뿐이고 AEON·Latent Bridge 모두 자체 벤치마크 중심으로 보고해, 독립적인 제3자 평가는 아직 없습니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li>Tomography/3D Imaging 임상 사례·비계산광학 응용 약 22편 [주로 JNL] — PET/CT 종양 영상, OCT 안과 질환, CBCT 치과 영상, 연안 음향 토모그래피 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
+    <li>Virtual Staining/Pathology 키워드 오탐 27편 — ESG 실적, 소셜미디어 신뢰도, 식품 포장 검사 등 "virtual"·"staining" 단어만 겹친 무관 논문입니다.</li>
+    <li>Meta-Optics/Diffractive 통신/센싱 응용 14편 — THz 투과 제어, 안테나 배열, 광학 암호화 등으로 이미징과 거리가 있습니다.</li>
+    <li>Reconstruction/Inverse Problems 21편 — 강화학습, PINN 기반 물리 시뮬레이션, LLM 에이전트 등 방법론은 유사하나 랩 ROI 핵심과는 거리가 있습니다.</li>
+    <li>Deep Learning Methods 163편 중 이미징과 결이 다른 약 157편 — 텍스트 생성, 금융/시계열 예측, 로보틱스 조작 등 의료영상 인접 분야이거나 완전히 무관한 응용입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy (2편 중 관련 0편)</h3>
+<p><small>2편 모두 "synthetic aperture" 키워드 오탐(SAR 물체 탐지 논문)이라 bullet을 생략합니다.</small></p>
+
+<h3>Lensless/Coded Imaging (3편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28004" target=_blank>Differentiable Task-Driven Coded Aperture Camera Design with 3D Gaussian Scene Representations</a></strong> <span class=pill>CV</span><br>
+  문제: 카메라 설계가 보통 전문가의 비용이 큰 실험을 통해 과제와 분리된 채 이뤄짐 / 방법: 코드화 조리개 마스크·카메라 파라미터·depth 네트워크를 3DGS로 재구성한 실제 장면 위에서 미분 가능하게 공동 최적화 / 의미: 오늘 클러스터1·2와 닿는 "3DGS를 다른 작업의 기반으로 쓰는" 흐름 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.7717/peerj.21700" target=_blank>Three-dimensional coded aperture imaging system proposed for early breast cancer detection</a></strong> <span class=pill>JNL</span><br>
+  문제: SPECT 코드화 조리개 카메라가 상용화되지 못함 / 방법: MURA 마스크+MLEM 반복 재구성으로 낮은 종양-배경비 3D 유방 재구성 평가 / 의미: 코드화 조리개 의료 이미징 타당성 연구 / 주의: 본문 확인 필요 / 우선순위: Skim-only
+</div>
+
+<h3>Phase Imaging/Holography (7편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41598-026-73646-w" target=_blank>XPAR-Net: cross-paradigm alignment and reconstruction network for high-fidelity lens-free on-chip microscopy</a></strong> <span class=pill>JNL</span><br>
+  문제: 단일 인라인 홀로그램에서 위상 추론과 프린지 단위 정보 복원이라는 두 결합된 문제를 동시에 풀어야 함 / 방법: 상호보완적인 표현 패러다임 간 교차 정렬·융합 학습 / 의미: 도메인 Watch Lens 참고, lens-free 현미경 복원 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/acsnano.6c13095" target=_blank>Optical Fourier Surfaces for Free-Space Computer-Generated Holography</a></strong> <span class=pill>JNL</span><br>
+  문제: 가시광/근적외선 홀로그램 설계가 리소그래피의 이산화된 표면 제작 한계에 묶임 / 방법: 연속(그레이스케일) 제어가 가능한 나노구조 표면 / 의미: computer-generated holography 하드웨어 제작 한계 완화 / 주의: 초록 일부만 확인 / 우선순위: Read
+</div>
+<p><small>나머지 5편(AdS/CFT 홀로그래피의 D5 brane 해, 광속 불변성 논쟁, 풍동 음향 잡음의 광학 영향 등)은 "holography"·"phase" 키워드 오탐이거나 계산광학 ROI와 거리가 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Meta-Optics/Diffractive (14편 중 관련 0편)</h3>
+<p><small>14편 전부 THz 센서, 안테나 배열, 광통신 암호화, 플라즈모닉 재료 등 비이미징 응용이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Tomography/3D Imaging (34편 중 관련 9편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.27712" target=_blank>RLSplat: Resource-Linear Budget Control for Feed-forward 3D Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: 기존 budget-controllable feed-forward 3DGS가 가지치기 방식이라 예산을 줄여도 추론 비용이 줄지 않음 / 방법: 지역별 Gaussian 할당 정책 학습+선형 비용 디코딩 / 의미: 오늘 클러스터1·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28615" target=_blank>KoalaGS: Complexity-Aware Continuous Level of Detail for Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: 압축 예산이 줄어들 때 어떤 Gaussian이 용량을 유지해야 하는지 결정하기 어려움 / 방법: 입력 영상 복잡도 사전 계산으로 relocation 편향 / 의미: 오늘 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.27108" target=_blank>Counting Contributions, Not Views: Occlusion-Aware Densification for 3D Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: 가려진 Gaussian도 "관측됐다"고 세는 densification 통계가 densification을 억제함 / 방법: occlusion-aware 필터+평균 기여도 정규화 / 의미: 오늘 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.26920" target=_blank>Codec-Compatible Learned Compression for 3D Gaussian Splatting</a></strong> <span class=pill>IV</span><br>
+  문제: 3DGS의 구면조화 계수 맵이 비디오 코덱과 통계적으로 맞지 않아 압축 효율이 낮음 / 방법: 코덱 친화적 변환 학습+LoRA 기반 장면 적응 / 의미: 오늘 클러스터1 대표, BD-rate 51.3% 절감 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.27696" target=_blank>PanoGraphGS: Unifying Panoptic Segmentation and Hierarchical 3D Scene Graphs with Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: 언어 기반 내비게이션에 쓸 구조화된 지도를 만들려면 뷰 간 일관된 의미·개체 구분이 필요 / 방법: panoptic Gaussian 표현+계층적 scene graph 공동 학습 / 의미: 오늘 클러스터2 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28131" target=_blank>OV-Foam: How 3D Representations Shape Semantic Feature Lifting</a></strong> <span class=pill>CV</span><br>
+  문제: Gaussian이 겹친 상태에서 feature를 역투영하는 기존 방식이 최적이 아님 / 방법: 겹침 없는 PowerFoam(power-diagram) 표현 / 의미: 오늘 클러스터2 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28521" target=_blank>Latent Bridge: From Video Latents to 3D Geometry via Feature Alignment</a></strong> <span class=pill>CV</span><br>
+  문제: 비디오 생성 latent에서 기하를 얻으려면 RGB 디코딩+재인코딩이 필요해 비효율적 / 방법: 비디오 생성 latent와 기하 특징 공간을 잇는 representation-specific bridge / 의미: 오늘 클러스터4 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28631" target=_blank>AEON: Unifying Video and 3D World Models</a></strong> <span class=pill>CV</span><br>
+  문제: 비디오 생성모델은 3D 일관성이 부족하고 3D 생성모델은 외형이 정적·비현실적임 / 방법: 비디오 생성 latent 공간에서 4D Gaussian Splatting을 직접 출력하는 통합 프레임워크 / 의미: 오늘 클러스터4 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28190" target=_blank>CrossFit-GS: Out-of-Fold Pose Estimation for COLMAP-Free 3D Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: pose-free 3DGS가 누적 궤적 drift와 자기강화적 오차 전파에 취약함 / 방법: 교차 정제되는 두 개의 상호보완적 submap / 의미: 클러스터1·2와는 결이 다른 온라인 pose 추정 신호, Watch-only / 우선순위: Read
+</div>
+<p><small>나머지 25편은 PET/CT 임상 사례, OCT 안과 질환, CBCT 치과 영상, 연안 음향 토모그래피 등이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology (33편 중 관련 6편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.26988" target=_blank>REST: Reliability-Guided Spatial Transcriptomics Supervision for Gene Expression Prediction from HE-Stained Images</a></strong> <span class=pill>CV</span><br>
+  문제: HE-ST 짝 데이터의 신뢰도가 assay·spot마다 균일하지 않음 / 방법: Biological Program Bank 기반 신뢰도 가중 대조 정렬+program reconstruction / 의미: 오늘 클러스터3·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28266" target=_blank>VGL-stGen: Learning a shared multimodal model for lung histology and spatial transcriptomics</a></strong> <span class=pill>CV</span><br>
+  문제: 조직 분류·유전자 예측·발현 완성이 각각 별도 모델로 다뤄짐 / 방법: 의료 vision-language 모델을 확장한 멀티태스크 체크포인트 / 의미: 오늘 클러스터3 대표 / 주의: 일부 학습 데이터 노출 가능성 명시 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28339" target=_blank>HistoLoop: Iterative Contextual Inference with a Looped Transformer for Histology-Based Spatial Gene Expression Prediction</a></strong> <span class=pill>CV</span><br>
+  문제: spot 상태가 갱신된 이후의 맥락을 다시 구성하는 방법이 충분히 탐구되지 않음 / 방법: looped Transformer로 반복적 맥락 추론+해상도별 memory 갱신 / 의미: 오늘 클러스터3 대표, HEST-Bench 최고 상관계수 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.compbiolchem.2026.109506" target=_blank>GeneCMamba: Autoregressive Spatial Transcriptome Prediction from Histopathology</a></strong> <span class=pill>JNL</span><br>
+  문제: 공간 전사체 예측에 상태공간모델 기반 자기회귀 접근이 부족함 / 방법: 상태공간 시퀀스 모델링+적응형 cross-modal gating / 의미: 오늘 클러스터3 대표(저널) / 주의: 초록 상세 미확인 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28007" target=_blank>AdaptMIL: Domain Adaptation for Multiple Instance Learning in Digital Pathology</a></strong> <span class=pill>CV</span><br>
+  문제: 병리 foundation model이 병원 간 분포 이동에 취약함 / 방법: MIL 학습에 도메인 적응 목적함수를 직접 통합 / 의미: 클러스터3과는 결이 다른 일반화 신호, Watch-only / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3724/pxlife.2026-0017" target=_blank>Multispectral dispersive-refocused imaging enables label-free virtual staining of 10-&micro;m-thick tissue sections</a></strong> <span class=pill>JNL</span><br>
+  문제: 기존 virtual staining이 얇은 절편에서 다중 스펙트럼 정보를 충분히 활용하지 못함 / 방법: 다중 스펙트럼 분산-재초점 이미징 / 의미: label-free virtual staining 하드웨어 신호, Watch-only / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<p><small>나머지 27편은 ESG 실적, 소셜미디어 신뢰도, 식품 포장 검사 등 "virtual"·"staining" 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (25편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.27874" target=_blank>Manifold Prior Guided Deep Unfolding for Hyperspectral Image Reconstruction</a></strong> <span class=pill>CV</span><br>
+  문제: 기존 deep unfolding이 고정된 경사하강 스텝을 써서 HSI의 스펙트럴 적응성을 반영 못함 / 방법: manifold prior 기반 projection·denoiser 모듈 개선 / 의미: 하이퍼스펙트럴 복원 방법론 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.27156" target=_blank>MoSAIK: Motion Search with Artificial Intelligence in K-space</a></strong> <span class=pill>AI</span><br>
+  문제: T2 TSE 뇌 MRI의 모션 아티팩트가 진단 신뢰도를 떨어뜨림 / 방법: 외부 navigator 없이 k-space 자기일관성 위반에서 모션 추정 / 의미: 모션 인식 재구성 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28099" target=_blank>Diffusion MRI protocol design for reliable parameter recovery: a unified framework across biophysical models</a></strong> <span class=pill>SP</span><br>
+  문제: 기존 프로토콜 설계 기준이 추정 편향·비선형 피팅 거동을 충분히 반영하지 못함 / 방법: 연속 획득 공간을 탐색해 파라미터 복원 오차를 직접 최소화 / 의미: dMRI 획득 설계 최적화 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.oe.65.10.104103" target=_blank>Recursive calibration of wide-field optical systems based on weakly observable directions</a></strong> <span class=pill>JNL</span><br>
+  문제: 광시야 광학계 캘리브레이션이 약하게 관측 가능한 방향에서 불안정함 / 방법: 재귀적 캘리브레이션 절차 / 의미: 광학계 캘리브레이션 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<p><small>나머지 21편은 강화학습, PINN 기반 물리 시뮬레이션, LLM 에이전트 플래닝 등 이미징 ROI와 거리가 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods (163편 중 관련 6편, catch-all 과대표 방지로 2편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28530" target=_blank>CoGaussian: Open-Vocabulary Gaussian-based Collaborative 3D Scene Understanding</a></strong> <span class=pill>CV</span><br>
+  문제: 기존 협업 semantic occupancy가 밀집 3D voxel 주석과 고정된 class 집합에 묶임 / 방법: open-vocabulary Gaussian 기반 협업 semantic occupancy 예측 / 의미: 오늘 클러스터2 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.27049" target=_blank>VitronEdit: Universal Visual Editing across Images, Videos, and 3D Scenes</a></strong> <span class=pill>CV</span><br>
+  문제: 영상·비디오·3D 장면 편집이 각각 별도 파이프라인으로 다뤄짐 / 방법: 통합 범용 시각 편집 프레임워크 / 의미: 클러스터1·2와는 결이 다른 멀티모달 편집 인프라, Watch-only / 우선순위: Skim-only
+</div>
+<p><small>나머지 4편(저선량 CT 디노이징 인접 연구, 초해상도 관련 연구 등)은 각각 클러스터와 이미 겹치거나 Watch-only 수준이라 중복 bullet을 생략합니다.</small></p>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://arxiv.org/abs/2610.27712" target=_blank>RLSplat: Resource-Linear Budget Control for Feed-forward 3D Gaussian Splatting</a></li>
+  <li><a href="https://arxiv.org/abs/2610.26988" target=_blank>REST: Reliability-Guided Spatial Transcriptomics Supervision</a></li>
+  <li><a href="https://arxiv.org/abs/2610.28131" target=_blank>OV-Foam: How 3D Representations Shape Semantic Feature Lifting</a></li>
+  <li><a href="2026-10-20.html">2026-10-20 Daily Briefing</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-10-21 arXiv+저널 표준 daily · arXiv 783건(new+cross, 5개 카테고리) + 저널 425편(Crossref/OpenAlex, --days 1) · 전체 스캔 1047건(dedup 후) · ROI 배정 284건 (27.1%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

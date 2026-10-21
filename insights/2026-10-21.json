@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-21",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "Feed-forward 3DGS의 관심사가 '품질'에서 '자원 예산·압축'으로 좁혀짐",
+      "papers": [
+        {
+          "title": "RLSplat: Resource-Linear Budget Control for Feed-forward 3D Gaussian Splatting",
+          "arxiv_id": "https://arxiv.org/abs/2610.27712",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "KoalaGS: Complexity-Aware Continuous Level of Detail for Gaussian Splatting",
+          "arxiv_id": "https://arxiv.org/abs/2610.28615",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Counting Contributions, Not Views: Occlusion-Aware Densification for 3D Gaussian Splatting",
+          "arxiv_id": "https://arxiv.org/abs/2610.27108",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Codec-Compatible Learned Compression for 3D Gaussian Splatting",
+          "arxiv_id": "https://arxiv.org/abs/2610.26920",
+          "journal_or_source": "arXiv eess.IV"
+        }
+      ],
+      "why": "어제는 feed-forward 3DGS가 '왜 실패하는가'(기하 정합, 광도 불일치, 디테일 손실, sparse-view 과적합)를 진단하는 논문들이었는데, 오늘은 전제가 바뀝니다. 네 편 모두 '이미 잘 되는 3DGS를 얼마나 적은 자원으로 돌릴 것인가'를 묻습니다. RLSplat은 기존 budget-controllable 방법들이 일단 Gaussian을 많이 만든 뒤 가지치기해서 추론 비용 자체는 줄지 않는다는 점을 지적하고, Gaussian을 지역별로 바로 필요한 만큼만 배정하는 정책을 학습해 지연시간과 메모리까지 예산에 비례하게 만듭니다. KoalaGS는 최적화 전에 입력 영상의 복잡도를 미리 계산해, 단순한 영역에 Gaussian이 과하게 몰리는 문제를 고치고 압축률을 낮춰도 품질이 부드럽게 떨어지도록 합니다. Counting Contributions Not Views는 가려진(occluded) Gaussian도 '관측됐다'고 잘못 세는 기존 densification 통계의 결함을 고쳐, 같은 품질을 더 적은 Gaussian으로 달성합니다. Codec-Compatible Compression은 Gaussian의 색상 정보(구면조화 계수)를 표준 비디오 코덱에 맞게 변환해 압축률을 크게 높입니다. 즉 이 기술이 '빠르게 넓히는' 단계와 '왜 안 되는지 진단하는' 단계를 지나, 이제는 '어떻게 저장·전송·스트리밍할 것인가'라는 실제 서비스 조건을 겨냥하는 단계로 넘어갔다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "cs.CV 3편+eess.IV 1편이 서로 다른 저자군에서 나왔고, 모두 구체적 정량 수치를 제시(RLSplat 4배 적은 Gaussian으로 baseline 상회·4.1배 빠름, CCT-GS BD-rate 51.3% 절감, Counting Contributions 최대 6% LPIPS 개선+Gaussian 절반 이하)",
+      "lab_action": "랩 feed-forward 3DGS 파이프라인에 RLSplat의 지역별 Gaussian 할당 정책과 KoalaGS의 복잡도 기반 LOD를 함께 붙여, 동일 저장 예산에서 기존 pruning 기반 방법 대비 PSNR/LPIPS가 얼마나 개선되는지 DL3DV에서 ablation한다"
+    },
+    {
+      "cluster": "3DGS가 '어디 있나'를 넘어 '그게 무엇인가'까지 답하도록 의미 구조를 입힘",
+      "papers": [
+        {
+          "title": "PanoGraphGS: Unifying Panoptic Segmentation and Hierarchical 3D Scene Graphs with Gaussian Splatting",
+          "arxiv_id": "https://arxiv.org/abs/2610.27696",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "OV-Foam: How 3D Representations Shape Semantic Feature Lifting",
+          "arxiv_id": "https://arxiv.org/abs/2610.28131",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "CoGaussian: Open-Vocabulary Gaussian-based Collaborative 3D Scene Understanding",
+          "arxiv_id": "https://arxiv.org/abs/2610.28530",
+          "journal_or_source": "arXiv cs.CV/cs.RO"
+        }
+      ],
+      "why": "세 편 모두 3D Gaussian을 순수 기하·외형 표현에서 '그 공간에 무엇이 있는지 언어로 물을 수 있는 지도'로 확장합니다. PanoGraphGS는 panoptic segmentation(장면을 영역·개체 단위로 전부 나누는 분할)과 계층적 3D scene graph를 같은 Gaussian 표현 위에서 함께 학습해, 언어로 길을 지시하는 내비게이션에 바로 쓸 수 있는 구조화된 지도를 만듭니다. OV-Foam은 기존 방식이 여러 Gaussian이 한 광선 위에 겹쳐 있을 때 특징(feature)을 영상에서 3D로 역투영하는 과정이 최적이 아니라는 점을 수학적으로 보이고, 겹침이 없는 PowerFoam이라는 표현으로 바꿔 open-vocabulary(사전에 정해둔 클래스 없이 임의의 단어로 질의하는) 분할 성능을 높입니다. CoGaussian은 여러 로봇이 각자 본 장면을 Gaussian 기반으로 합쳐, 미리 정해둔 class 목록 없이도 열린 어휘로 공간을 이해하게 합니다. 즉 3DGS의 평가 기준이 '얼마나 예쁘게 렌더링하는가'에서 '그 공간 안에 무엇이 있는지 물어볼 수 있는가'로 넓어지고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "cs.CV 3편이 서로 다른 응용(실내 내비게이션, 분할 이론, 다중 로봇 협업)에서 나왔으나, 공통적으로 'primitive 단위를 의미 있게/겹치지 않게 설계한다'는 방향을 공유 — 독립적인 benchmark 간 직접 비교는 아직 부족",
+      "lab_action": "OV-Foam의 PowerFoam(겹침 없는 공간 분할) 아이디어를 랩 3DGS 기반 open-vocabulary segmentation 실험에 적용해, 기존 backprojection 대비 feature 할당 정확도와 mIoU를 비교한다"
+    },
+    {
+      "cluster": "병리 영상이 '무슨 조직인가'를 넘어 '어떤 유전자가 발현되는가'를 직접 예측하는 쪽으로",
+      "papers": [
+        {
+          "title": "REST: Reliability-Guided Spatial Transcriptomics Supervision for Gene Expression Prediction from Histopathological HE-Stained Images",
+          "arxiv_id": "https://arxiv.org/abs/2610.26988",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "VGL-stGen: Learning a shared multimodal model for lung histology and spatial transcriptomics",
+          "arxiv_id": "https://arxiv.org/abs/2610.28266",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "HistoLoop: Iterative Contextual Inference with a Looped Transformer for Histology-Based Spatial Gene Expression Prediction",
+          "arxiv_id": "https://arxiv.org/abs/2610.28339",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "GeneCMamba: Autoregressive Spatial Transcriptome Prediction from Histopathology via State-Space Sequence Modeling and Adaptive Cross-Modal Gating",
+          "arxiv_id": "https://doi.org/10.1016/j.compbiolchem.2026.109506",
+          "journal_or_source": "Journal (Crossref)"
+        }
+      ],
+      "why": "네 편 모두 H&E(헤마톡실린-에오신) 염색 영상, 즉 병원에서 가장 흔히 찍는 일반 병리 슬라이드만 보고 공간 전사체학(spatial transcriptomics, 조직 내 위치별로 어떤 유전자가 얼마나 발현되는지 측정하는 값비싼 실험)을 예측하려 합니다. REST는 측정 신뢰도가 낮은 영역을 가려내는 '신뢰도 기반 대조 정렬'로 품질이 들쑥날쑥한 학습 데이터를 다루고, VGL-stGen은 의료 vision-language 모델을 확장해 조직 분류·유전자 예측·발현 완성을 한 모델에서 처리하며, HistoLoop는 주변 조직 조각의 상태를 반복적으로 되먹여 점점 더 세밀한 해상도로 추론하는 looped Transformer로 HEST-Bench에서 비교 방법 중 가장 높은 유전자별 상관계수를 달성했습니다. GeneCMamba는 상태공간모델(Mamba) 기반 자기회귀 방식으로 같은 문제를 풉니다. 즉 디지털 병리가 '암이다/아니다'를 분류하는 문제에서, 비싼 분자 실험 없이 염색 영상만으로 조직의 분자 상태 지도를 그리는 문제로 넘어가고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "4편이 서로 다른 아키텍처(대조학습 기반 신뢰도 가중, vision-language 모델, looped Transformer, 상태공간모델)로 같은 목표(H&E→공간 유전자 발현)를 겨냥하고, 같은 계열 벤치마크(HEST)에서 정량 비교를 동반",
+      "lab_action": "HistoLoop/REST의 공개 코드를 공개 HEST-1K subset에 적용해, 랩이 관심 있는 조직 유형에서 유전자별 Pearson 상관계수를 두 방법 간 비교한다"
+    },
+    {
+      "cluster": "비디오 생성모델의 latent와 3D/4D 표현을 중간 단계 없이 바로 연결",
+      "papers": [
+        {
+          "title": "Latent Bridge: From Video Latents to 3D Geometry via Feature Alignment",
+          "arxiv_id": "https://arxiv.org/abs/2610.28521",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "AEON: Unifying Video and 3D World Models",
+          "arxiv_id": "https://arxiv.org/abs/2610.28631",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "기존에는 비디오 생성모델이 만든 latent를 일단 RGB 영상으로 복원한 뒤, 그 영상에서 다시 깊이·카메라 위치·3D 구조를 추정해야 했습니다. 두 논문은 이 '복원 후 재인코딩' 단계를 건너뛰고 생성 latent에서 바로 3D/4D 표현을 뽑아냅니다. Latent Bridge는 Wan2.1·V-RAE 같은 비디오 생성모델의 latent 공간과 기하 특징 공간을 직접 잇는 다리를 학습해 카메라·깊이·점군을 바로 예측하고, AEON은 한 걸음 더 나아가 비디오 생성모델의 latent 공간 안에서 동작하면서 4D Gaussian Splatting(시간에 따라 변하는 3D 장면 표현)을 직접 출력하는 통합 world model을 제안합니다. 즉 '그럴듯한 영상을 만드는 모델'과 '기하학적으로 일관된 3D를 만드는 모델'을 따로 두지 않고, 하나의 latent 공간 안에서 같이 풀려는 시도라는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "2편뿐이지만 서로 다른 저자군이 거의 동시에 '생성 latent에서 직접 기하를 예측한다'는 같은 설계를 선택 — 독립 benchmark 수가 아직 적어 추가 검증 필요",
+      "lab_action": "Latent Bridge의 feature-distillation bridge 아이디어를 랩이 쓰는 비디오 diffusion latent에 적용해, RGB 재인코딩을 거치는 기존 depth/pose 추정 파이프라인 대비 지연시간과 정확도를 비교한다"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "A. RLSplat의 지역별 Gaussian 할당 정책 + KoalaGS의 복잡도 기반 LOD를 랩 feed-forward 3DGS 파이프라인에 적용",
+      "claim": "지역별 예산 할당과 복잡도 기반 LOD를 함께 쓰면, 동일한 저장 예산에서 기존 pruning 기반 budget-control 방법보다 PSNR/LPIPS가 함께 개선된다",
+      "supporting_papers": [
+        {"title": "RLSplat: Resource-Linear Budget Control for Feed-forward 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2610.27712"},
+        {"title": "KoalaGS: Complexity-Aware Continuous Level of Detail for Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2610.28615"}
+      ]
+    },
+    {
+      "title": "B. OV-Foam의 PowerFoam 겹침 없는 분할을 랩 3DGS open-vocabulary segmentation에 적용",
+      "claim": "Gaussian이 겹치지 않도록 공간을 분할하면, 기존 backprojection 기반 feature lifting보다 open-vocabulary 분할의 feature 할당 정확도가 개선된다",
+      "supporting_papers": [
+        {"title": "OV-Foam: How 3D Representations Shape Semantic Feature Lifting", "arxiv": "https://arxiv.org/abs/2610.28131"}
+      ]
+    },
+    {
+      "title": "C. HistoLoop/REST를 공개 HEST-1K subset에 적용해 랩 관심 조직의 유전자 발현 예측 비교",
+      "claim": "looped Transformer(HistoLoop)와 신뢰도 기반 대조학습(REST)이 랩이 관심 있는 조직 유형에서도 유전자별 Pearson 상관계수 면에서 일관된 우위를 보이는지 확인한다",
+      "supporting_papers": [
+        {"title": "HistoLoop: Iterative Contextual Inference with a Looped Transformer for Histology-Based Spatial Gene Expression Prediction", "arxiv": "https://arxiv.org/abs/2610.28339"},
+        {"title": "REST: Reliability-Guided Spatial Transcriptomics Supervision for Gene Expression Prediction from Histopathological HE-Stained Images", "arxiv": "https://arxiv.org/abs/2610.26988"}
+      ]
+    },
+    {
+      "title": "D. Latent Bridge의 feature-distillation bridge를 랩 비디오 diffusion latent에 적용",
+      "claim": "비디오 생성 latent에서 RGB 재인코딩 없이 바로 깊이/카메라를 예측하면, 기존 재인코딩 기반 파이프라인보다 지연시간이 줄어들면서 정확도는 유지된다",
+      "supporting_papers": [
+        {"title": "Latent Bridge: From Video Latents to 3D Geometry via Feature Alignment", "arxiv": "https://arxiv.org/abs/2610.28521"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

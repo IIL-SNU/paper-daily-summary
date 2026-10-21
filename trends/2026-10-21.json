@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-21",
+  "note": "2026-10-21(수) 14:00 KST 정기 daily 실행. 추적 5개 카테고리 모두 /new listing이 'Wednesday, 21 October 2026'으로 post_date와 정확히 일치해 표준 daily mode로 진행했다(backfill/journal-only 아님). arXiv new+cross 783건(cs.LG 249·cs.CV 183·cs.AI 321·eess.IV 5·eess.SP 25, replacement 제외)과 저널(Crossref+OpenAlex, --days 1) 425편(Crossref+enrich 420편, OpenAlex 보충 works 5편)을 합쳐 총 1047건(dedup 후)을 스캔했고, classify.py가 284건(27.1%)을 9개 ROI 버킷에 배정했다. 오늘 가장 뚜렷한 신호는 cs.CV의 feed-forward 3D Gaussian Splatting 관련 논문들로, 어제(10/20) 묶음이 '왜 품질이 떨어지는가'를 진단하는 단계였다면 오늘은 그 전제를 넘어 '이미 되는 3DGS를 얼마나 적은 자원으로 돌릴 것인가'(RLSplat, KoalaGS, Counting Contributions Not Views, Codec-Compatible Compression)와 '3DGS에 의미 구조를 입혀 무엇이 있는지 답하게 할 것인가'(PanoGraphGS, OV-Foam, CoGaussian)로 두 갈래로 갈라졌다. 세 번째 신호는 비디오 생성모델의 latent에서 바로 3D/4D 기하를 뽑아내는 흐름(Latent Bridge, AEON)이고, 네 번째는 Virtual Staining/Pathology에서 H&E 염색 영상만으로 공간 전사체학(spatial transcriptomics) 유전자 발현을 직접 예측하려는 논문 4편(REST, VGL-stGen, HistoLoop, GeneCMamba)이 동시에 나온 점이다. 도메인 Watch Lens(Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors)를 별도로 훑은 결과 Fourier Ptychography/Microscopy는 2건 모두 'synthetic aperture' 키워드 오탐(SAR 논문)으로 핵심 공백이 이어졌고, Lensless/Coded Imaging은 코드화 조리개 카메라를 3D Gaussian Splatting과 함께 미분 가능하게 공동 설계하는 논문 1편이 새로 눈에 띄었으나 단발이라 독립 클러스터로 올리지 않았다. 어제(10/20) insights의 클러스터 제목 5개와 대조한 결과 완전히 겹치는 제목은 0개였다.",
+  "source_listing_date": "2026-10-21",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 249,
+      "cs.CV": 183,
+      "cs.AI": 321,
+      "eess.IV": 5,
+      "eess.SP": 25
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 425,
+    "journal_window_days": 1
+  },
+  "totals": {
+    "total_scanned": 1047,
+    "selected": 284
+  },
+  "classified": {
+    "total_scanned": 1047,
+    "selected": 284,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 2,
+      "Lensless/Coded Imaging": 3,
+      "Phase Imaging/Holography": 7,
+      "Meta-Optics/Diffractive": 14,
+      "Light-Field/Novel Sensors": 3,
+      "Tomography/3D Imaging": 34,
+      "Virtual Staining/Pathology": 33,
+      "Reconstruction/Inverse Problems": 25,
+      "Deep Learning Methods": 163
+    }
+  },
+  "daily_thesis": "오늘은 어제 feed-forward 3D Gaussian Splatting이 '왜 품질이 떨어지는가'를 진단하던 단계를 지나, '이미 되는 3DGS를 얼마나 적은 자원으로 돌릴 것인가'와 '그 3DGS에 무엇이 있는지 의미를 입힐 것인가'로 두 갈래로 갈라진 날입니다. 동시에 병리 영상에서는 조직 분류를 넘어 H&E 염색 영상만으로 공간 전사체학 유전자 발현을 직접 예측하려는 논문 4편이 동시에 나왔습니다."
+}
