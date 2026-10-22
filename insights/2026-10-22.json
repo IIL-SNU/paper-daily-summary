@@ -1,0 +1,173 @@
+{
+  "date": "2026-10-22",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "VLA 내부 상태 표현이 기하/깊이 정보를 직접 거치는 쪽으로 수렴",
+      "papers": [
+        {
+          "title": "GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for Vision-Language-Action Models",
+          "arxiv_id": "https://arxiv.org/abs/2610.29866",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "DepState-JEPA: Learning Depth-Grounded State Representation for Visual Perception and Manipulation",
+          "arxiv_id": "https://arxiv.org/abs/2610.29246",
+          "journal_or_source": "arXiv cs.RO"
+        }
+      ],
+      "why": "기존 VLA(비전-언어-행동 모델, 카메라 영상과 언어 지시를 보고 바로 로봇 행동을 생성하는 모델)는 2D 영상 특징만 보고 행동을 만들거나, 3D 정보를 쓰더라도 매 순간 장면을 통째로 다시 추정한 뒤 버리는 방식이 많았습니다. 오늘 두 논문은 모두 '3D/깊이 구조를 매번 새로 계산하지 말고, 작업에 필요한 만큼만 압축해서 계속 들고 다니자'는 같은 결론에 도달합니다. GeoMem-VLA는 고정된 3D 기하 모델이 알려주는 지식을 별도의 GeoPlan 토큰에 흡수시킨 뒤, 그 토큰을 과거 관측과 함께 시간이 지나도 남는 메모리로 유지하면서, 추론 시에는 3D teacher 모델 없이도 과거 기하 정보를 꺼내 쓰게 만듭니다. DepState-JEPA는 RGB와 깊이 영상을 함께 보는 두 갈래 신경망으로 '지금 장면이 어떻게 생겼는지'와 '행동을 하면 무엇이 바뀌는지'를 하나의 공유된 잠재 상태(DepState)로 연결합니다. 즉 두 논문 모두 깊이·기하 정보를 한 번 쓰고 버리지 않고, 행동을 예측하는 내부 상태 자체에 녹여 넣는 방향으로 VLA 설계가 수렴하고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 연구팀(GeoMem-VLA, DepState-JEPA)이 같은 날 '깊이/기하 정보를 내부 상태에 상시 결합'이라는 같은 설계를 선택했으나, 2편뿐이라 더 많은 후속 사례 확인이 필요",
+      "lab_action": "GeoMem-VLA의 GeoPlan 토큰 메모리 구조와 DepState-JEPA의 RGB-Depth 공유 잠재상태를 LIBERO 공통 세팅에서 비교해, 3D teacher 없이 추론할 때 두 방식의 success rate와 추론 지연시간을 ablation한다"
+    },
+    {
+      "cluster": "로봇 조작의 '일반화'가 데이터 볼륨보다 다양성 커버리지·자기 불확실성 인식으로",
+      "papers": [
+        {
+          "title": "Post-hoc Epistemic Uncertainty for Vision-Language-Action Policies",
+          "arxiv_id": "https://arxiv.org/abs/2610.29730",
+          "journal_or_source": "arXiv cs.RO"
+        },
+        {
+          "title": "From Reasoning to Action: Benchmarking Frontier AI Models on LIBERO-10 Robot Manipulation Tasks",
+          "arxiv_id": "https://arxiv.org/abs/2610.30051",
+          "journal_or_source": "arXiv cs.RO"
+        },
+        {
+          "title": "Robot Generalization Beyond Volume: The Diversity Path via Zero-Shot Capabilities",
+          "arxiv_id": "https://arxiv.org/abs/2610.29829",
+          "journal_or_source": "arXiv cs.RO"
+        },
+        {
+          "title": "Real2Sem2Real: 3D Semantic Augmentations for Robot Learning from a Single Human RGB Demonstration",
+          "arxiv_id": "https://arxiv.org/abs/2610.28880",
+          "journal_or_source": "arXiv cs.RO"
+        }
+      ],
+      "why": "로봇 학습에서 '일반화'는 보통 더 많은 데모, 더 큰 모델을 뜻했습니다. 오늘 네 편은 모두 '얼마나 많이'가 아니라 '무엇을 모르는지 아는가'와 '얼마나 다양한 상황을 커버하는가'를 묻습니다. Robot Generalization Beyond Volume은 디지털 AI의 zero-shot 능력이 데이터 양보다 크라우드소싱으로 얻은 다양성 덕분에 늘었던 반면, 로보틱스는 소수의 자금력 있는 팀이 비용을 들여 데이터를 모으다 보니 양은 늘어도 다양성은 늘지 않는다는 구조적 문제를 지적하고, 배포 환경을 얼마나 커버하는지로 zero-shot 일반화를 다시 정의합니다. Real2Sem2Real은 사람이 손으로 하는 시연 영상 한 편만 가지고, DINOv3로 추출한 3D Gaussian 기반 물체 추적을 이용해 같은 범주에 속한 수많은 다른 물체에 대한 로봇 시연 데이터를 자동으로 만들어, 바로 그 다양성 부족을 데이터 증강으로 메웁니다. Post-hoc Epistemic Uncertainty for VLA Policies는 모델이 배우지 못한 상황을 스스로 알아채고 도움을 요청할 수 있는가를 다루는데, 기존에는 여러 정책을 따로 학습해 서로 다른 의견을 비교해야 했던 것을, 단일 정책의 embedding만으로 추정하는 방법을 제안합니다. From Reasoning to Action은 GPT-6 Astra, Claude Opus 5.5 같은 범용 모델 6종을 LIBERO-10이라는 표준 로봇 조작 벤치마크에서 직접 평가해, 추론 능력이 뛰어난 모델도 최고 성공률이 44%에 그치고 물체 배치는 비교적 잘하지만 정밀한 공간 배열이나 여러 단계로 이어지는 조작에서는 크게 흔들린다는 사실을 수치로 보여줍니다. 네 편을 묶으면, 로봇 조작의 다음 과제는 더 큰 모델이 아니라 어떤 상황을 아직 못 보는지 알고 그 공백을 다양성으로 메우는 것이라는 공통된 판단으로 모입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 4개 연구팀이 데이터 다양성, 불확실성 인식, 범용 모델 벤치마킹이라는 서로 다른 각도에서 같은 결론(볼륨보다 커버리지)에 도달했고, 구체적 수치(LIBERO-10 최고 44% 등)를 동반",
+      "lab_action": "Real2Sem2Real의 단일 데모→다중 semantic 증강 파이프라인을 랩 보유 로봇 데모 1~2개에 적용해 생성된 데모 다양성을 측정하고, Post-hoc Epistemic Uncertainty 헤드를 랩 정책에 붙여 분포 밖 상황에서 개입 요청 정확도를 LIBERO-10 미학습 태스크로 평가한다"
+    },
+    {
+      "cluster": "World model이 '화면을 잘 그리는가'보다 '사건·물리·인과를 올바르게 담았는가'로",
+      "papers": [
+        {
+          "title": "Events, Not Pixels: Where World Models Get the Return Wrong",
+          "arxiv_id": "https://arxiv.org/abs/2610.29435",
+          "journal_or_source": "arXiv cs.AI"
+        },
+        {
+          "title": "PhysiCalWorld: In-Context Physics Calibration for World Models",
+          "arxiv_id": "https://arxiv.org/abs/2610.30125",
+          "journal_or_source": "arXiv cs.RO"
+        },
+        {
+          "title": "Causal world models under physical parameter shifts",
+          "arxiv_id": "https://arxiv.org/abs/2610.29088",
+          "journal_or_source": "arXiv cs.LG"
+        },
+        {
+          "title": "ALPS: Visual State Encoders for World Models",
+          "arxiv_id": "https://arxiv.org/abs/2610.30120",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "World model(미래 장면을 상상해서 행동을 계획하는 데 쓰는 예측 모델)은 지금까지 주로 다음 프레임을 얼마나 그럴듯하게 그리는가로 평가받았습니다. 오늘 네 편은 이 평가 기준 자체에 문제를 제기합니다. Events, Not Pixels는 실제 전이(transition)로 상상된 전이를 하나씩 바꿔치기하는 진단 방법으로, 보상이 발생하거나 에피소드가 끝나는 '사건' 구간은 다른 구간과 비슷한 화질로 그려지는데도(픽셀 오차 비율 0.85) 그 구간만 복원하면 반환값 오차의 70%가 사라진다는 것을 44개의 Atari-100k 모델-데이터 조합에서 확인했습니다. 반대로 픽셀 오차나 구조적 유사도 오차가 가장 큰 구간을 복원해도 무작위로 고른 구간보다 개선 효과가 작았습니다. 즉 화질이 좋다는 것과 계획에 중요한 구간을 맞게 그린다는 것은 서로 다른 문제라는 뜻입니다. PhysiCalWorld는 현재 화면이나 짧은 과거 기록만으로는 물체의 질량 분포나 마찰 같은 물리 속성이 드러나지 않아 world model이 새로운 장면에서 예측이 크게 흔들린다는 점을 지적하고, 몇 번의 관찰로 물리 속성을 즉석에서 추정해 world model에 반영하는 방법을 제안합니다. Causal world models under physical parameter shifts는 로봇 팔의 질량이 학습 범위를 벗어나는 상황(OOD)에서, 어떤 입력을 모델이 참고해도 되는지를 미리 제약한 인과적 의존성 마스크를 쓰면 OOD 오차가 크게 줄어든다는 것을 보여, 물리적으로 말이 안 되는 지름길을 학습하지 못하게 막는 효과를 정량화합니다. ALPS는 world model의 시각 인코더가 물리적 상태 정보, 언어 정렬, 픽셀 복원이라는 세 능력을 동시에 가져야 한다고 주장하며 이를 하나의 인코더로 통합합니다. 네 편을 합치면, world model 연구의 무게중심이 더 예쁜 화면에서 계획에 실제로 영향을 주는 사건, 물리 속성, 인과 구조를 올바르게 담는가로 옮겨가고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 4개 연구팀이 평가 진단, 물리 보정, 인과 구조, 인코더 설계라는 서로 다른 층위에서 같은 결론(픽셀 충실도만으로는 부족)에 도달했고, Events Not Pixels는 44개 모델-데이터 조합·통계적 유의성(p=1.4e-7)까지 제시",
+      "lab_action": "랩이 쓰는 world model 평가 파이프라인에 Events Not Pixels의 transition-level 진단(실제 전이로 바꿔치기해 반환 오차 감소량 측정)을 추가해, 기존 픽셀 기반 지표와 사건 기반 지표가 얼마나 다른 순위를 매기는지 Atari-100k 서브셋에서 비교한다"
+    },
+    {
+      "cluster": "Video generation의 평가축이 '보기 좋은가'에서 '카메라·의미·효율을 얼마나 지키는가'로 분화",
+      "papers": [
+        {
+          "title": "CausalAlign: Causal Alignment of Video Generation Models for Consistent Ego-Motion",
+          "arxiv_id": "https://arxiv.org/abs/2610.29915",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "HorizonComposer: Spatiotemporally Consistent Driving Video Editing with Enriched Traffic Semantics",
+          "arxiv_id": "https://arxiv.org/abs/2610.28829",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Attn-Forcing: Learning Full-Context Attention Proxies for Streaming Video Generation",
+          "arxiv_id": "https://arxiv.org/abs/2610.30036",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Looking Ahead: Modeling Future Evolution in Autoregressive Video Generation",
+          "arxiv_id": "https://arxiv.org/abs/2610.29989",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "예전에는 비디오 생성모델이 얼마나 그럴듯한 영상을 만드는지가 중요한 평가 기준이었다면, 오늘 네 편은 그 영상이 특정 조건을 끝까지 안정적으로 지키는가를 각각 다른 축에서 묻습니다. CausalAlign은 diffusion 기반 비디오 생성모델이 긴 영상에서 카메라 시점(ego-motion)이 서서히 어긋나는 문제를 선형 프로브와 인과적 개입으로 진단해, denoising 과정 중 카메라 정보가 한 번 떠올랐다가 사라지는 패턴을 찾아내고, 그 구간의 표현을 3D 모델에 맞춰 정렬해 기하 일관성을 20% 이상 끌어올립니다. HorizonComposer는 자율주행 시뮬레이션용 영상 편집에서, 일반적인 지시 기반 영상 편집기가 날씨나 시간대를 바꾸는 동안 신호등 색이나 차선 같은 교통 규칙(ODD, 차량이 실제로 운행하도록 설계된 조건 범위)을 깨뜨리는 문제를 발견하고, 그 규칙을 세 단계에 걸쳐 보호하는 방법을 제안합니다. Attn-Forcing과 Looking Ahead는 효율성과 실제 내용 학습이라는 다른 각도를 다룹니다. Attn-Forcing은 스트리밍 비디오 생성에서 과거 맥락을 길게 참조할수록 품질은 좋아지지만 메모리 비용이 감당하기 어려워지는 문제를, 과거 정보를 압축해 재현하는 attention proxy로 해결하고, Looking Ahead는 자기회귀 비디오 생성이 teacher forcing 때문에 실제 장면 변화를 이해하지 않고 바로 이전 프레임을 베끼는 지름길을 학습할 수 있다는 점을 지적하며, 중간 맥락 없이 미래 구간을 직접 예측하게 하는 보조 학습 목표로 이를 막습니다. 네 편을 묶으면, 비디오 생성모델의 다음 경쟁 지점은 더 예쁜 샘플이 아니라 카메라 일관성, 의미 규칙 보존, 메모리 효율, 실제 움직임 이해라는 서로 다른 신뢰성 축이라는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 4개 연구팀이 카메라 일관성, 의미 규칙, 스트리밍 효율, teacher-forcing 지름길이라는 서로 다른 신뢰성 축을 다루면서도 '화질보다 조건 유지'라는 같은 결론에 도달, CausalAlign은 20%+ 기하 일관성·WAM +10%p 등 구체적 수치 동반",
+      "lab_action": "CausalAlign의 선형 프로브+인과적 개입 진단을 랩이 쓰는 비디오 diffusion 모델에 적용해 denoising 단계별 카메라 정보 보존 패턴을 그리고, Looking Ahead의 Future Chunk Prediction을 추가했을 때 teacher-forcing 지름길 의존도가 줄어드는지 측정한다"
+    },
+    {
+      "cluster": "언어 질의 가능한 3D Gaussian 지도가 '만들기'에서 '효율적으로 모으고 압축하기'로",
+      "papers": [
+        {
+          "title": "AOV-GS: Active Open-Vocabulary Semantic Mapping with 3D Gaussian Splatting",
+          "arxiv_id": "https://arxiv.org/abs/2610.29374",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "ClunoGS: Compact Language 3D Gaussian Splatting via Unified Optimization",
+          "arxiv_id": "https://arxiv.org/abs/2610.30013",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "3D Gaussian Splatting에 언어 특징을 붙여 이 공간에 무엇이 있는지 임의의 단어로 물어볼 수 있게 만드는 연구(open-vocabulary 3D Gaussian map)는 어제까지 주로 어떻게 의미 구조를 붙이는가를 다뤘습니다. 오늘 두 논문은 한 단계 더 나아가, 그 지도를 만들고 유지하는 과정 자체의 효율을 문제 삼습니다. AOV-GS는 로봇이 처음부터 사람이 미리 정해둔 분할 라벨 없이 공간을 돌아다니며 지도를 만들 때, 기존 방식이 어디를 더 봐야 기하학적으로 커버리지가 넓어지는가만 보고 의미 정보는 그 결과로 따라오는 부산물로 취급했던 점을 지적하며, 로봇이 다음에 어디로 가야 의미 정보까지 함께 풍부해지는지를 능동적으로 결정하게 만듭니다. ClunoGS는 이미 만들어진 언어-Gaussian 지도를 압축할 때, 기존 압축 방법이 RGB 렌더링 품질만 보고 가지치기를 하다 보니 색상 기여는 작아도 의미 예측에는 중요한 Gaussian까지 함께 날아가 버리는 문제를 고쳐, 의미 정보를 보존하면서 저장 용량을 줄입니다. 즉 언어로 질의할 수 있는 3D 지도라는 같은 결과물을 두고, 하나는 로봇이 그 지도를 효율적으로 모으는 방법을, 다른 하나는 모은 지도를 효율적으로 저장하는 방법을 다룬다는 점에서, 이 기술이 실제 로봇에 올라가기 위해 필요한 실용적 조건을 다루는 단계로 넘어갔다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 연구팀이 언어-Gaussian 지도의 수집/저장 효율이라는 같은 실용적 문제의 다른 절반을 각각 다뤘으나, 2편뿐이라 독립적인 벤치마크 비교는 아직 부족",
+      "lab_action": "AOV-GS의 능동 탐색 정책과 ClunoGS의 의미-인지 압축을 랩 3DGS 기반 open-vocabulary mapping 파이프라인에 순서대로 적용해, 동일 탐색 예산·저장 예산에서 의미 질의 정확도(mIoU 등)가 기존 수동 탐색+RGB 기반 압축 대비 얼마나 개선되는지 ablation한다"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "A. GeoMem-VLA의 GeoPlan 토큰 메모리와 DepState-JEPA의 RGB-Depth 공유 잠재상태를 LIBERO 공통 세팅에서 비교",
+      "claim": "3D teacher 없이 추론할 때 두 방식 모두 success rate를 유지하면서 추론 지연시간을 줄이는지, 또는 한쪽이 더 유리한 과제 유형이 있는지 확인한다",
+      "supporting_papers": [
+        {"title": "GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for Vision-Language-Action Models", "arxiv": "https://arxiv.org/abs/2610.29866"},
+        {"title": "DepState-JEPA: Learning Depth-Grounded State Representation for Visual Perception and Manipulation", "arxiv": "https://arxiv.org/abs/2610.29246"}
+      ]
+    },
+    {
+      "title": "B. Real2Sem2Real 단일 데모 증강 + Post-hoc Epistemic Uncertainty 헤드를 랩 정책에 적용",
+      "claim": "단일 데모에서 생성한 다양한 semantic 변형 데이터로 학습한 정책이, 분포 밖 상황에서 불확실성 헤드의 개입 요청 정확도까지 함께 개선하는지 확인한다",
+      "supporting_papers": [
+        {"title": "Real2Sem2Real: 3D Semantic Augmentations for Robot Learning from a Single Human RGB Demonstration", "arxiv": "https://arxiv.org/abs/2610.28880"},
+        {"title": "Post-hoc Epistemic Uncertainty for Vision-Language-Action Policies", "arxiv": "https://arxiv.org/abs/2610.29730"}
+      ]
+    },
+    {
+      "title": "C. Events Not Pixels의 transition-level 진단을 랩 world model 평가 파이프라인에 추가",
+      "claim": "픽셀 기반 지표와 사건(event) 기반 지표가 같은 world model에 대해 얼마나 다른 순위를 매기는지 Atari-100k 서브셋에서 정량 비교한다",
+      "supporting_papers": [
+        {"title": "Events, Not Pixels: Where World Models Get the Return Wrong", "arxiv": "https://arxiv.org/abs/2610.29435"}
+      ]
+    },
+    {
+      "title": "D. CausalAlign의 인과적 개입 진단 + Looking Ahead의 Future Chunk Prediction을 랩 비디오 diffusion에 적용",
+      "claim": "denoising 단계별 카메라 정보 보존 패턴을 그리고, Future Chunk Prediction 추가 시 teacher-forcing 지름길 의존도가 실제로 줄어드는지 측정한다",
+      "supporting_papers": [
+        {"title": "CausalAlign: Causal Alignment of Video Generation Models for Consistent Ego-Motion", "arxiv": "https://arxiv.org/abs/2610.29915"},
+        {"title": "Looking Ahead: Modeling Future Evolution in Autoregressive Video Generation", "arxiv": "https://arxiv.org/abs/2610.29989"}
+      ]
+    },
+    {
+      "title": "E. AOV-GS 능동 탐색 + ClunoGS 의미-인지 압축을 랩 3DGS open-vocabulary mapping에 순서 적용",
+      "claim": "동일 탐색/저장 예산에서 기존 수동 탐색+RGB 기반 압축 대비 의미 질의 정확도(mIoU 등)가 개선되는지 확인한다",
+      "supporting_papers": [
+        {"title": "AOV-GS: Active Open-Vocabulary Semantic Mapping with 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2610.29374"},
+        {"title": "ClunoGS: Compact Language 3D Gaussian Splatting via Unified Optimization", "arxiv": "https://arxiv.org/abs/2610.30013"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-22",
+  "note": "2026-10-22(목) 14:00 KST 정기 daily 실행. 추적 5개 카테고리 모두 /new listing이 'Thursday, 22 October 2026'으로 post_date와 정확히 일치해 표준 daily mode로 진행했다(backfill/journal-only 아님). arXiv new+cross 621건(cs.LG 240·cs.CV 138·cs.AI 211·eess.IV 4·eess.SP 28, replacement 제외)과 저널(Crossref+OpenAlex, --days 1) 434편(OpenAlex enrich 37/434, 보충 works 1편)을 합쳐 총 947건(dedup 후)을 스캔했고, classify.py가 263건(27.8%)을 9개 ROI 버킷에 배정했다. 오늘은 어제(10/21)의 3D Gaussian Splatting 자원효율화/의미구조화 흐름과 달리, cs.CV/cs.AI/cs.RO 전반에서 VLA와 world model, 비디오 생성모델 세 영역 모두에서 '그럴듯함'보다 '신뢰성(사건/물리/일관성)'을 묻는 논문들이 동시에 나왔다. GeoMem-VLA와 DepState-JEPA는 VLA의 내부 상태 표현에 깊이/3D 기하를 직접 결합했고, Post-hoc Epistemic Uncertainty·From Reasoning to Action(LIBERO-10)·Robot Generalization Beyond Volume·Real2Sem2Real 네 편은 로봇 조작 일반화의 핵심이 데이터 볼륨이 아니라 다양성과 자기 불확실성 인식에 있다는 데 수렴했다. Events Not Pixels·PhysiCalWorld·Causal world models·ALPS 네 편은 world model이 화면 품질보다 사건/물리/인과를 제대로 담았는지를 묻어야 한다고 주장했고, CausalAlign·HorizonComposer·Attn-Forcing·Looking Ahead 네 편은 비디오 생성모델의 평가축이 카메라/의미/효율로 분화되고 있음을 보였다. AOV-GS·ClunoGS는 어제와 달리 '언어 질의 가능한 3D Gaussian 지도'를 만드는 것을 넘어, 어떻게 효율적으로 모으고(active mapping) 압축해 유지할지를 묻는 단계로 넘어갔다. 계산광학 코어(Fourier Ptychography/Lensless/Phase/Meta-Optics/Light-Field)는 여전히 신호가 희미하고 대부분 저널 노이즈여서 도메인 Watch Lens로 별도 처리했다.",
+  "source_listing_date": "2026-10-22",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 240,
+      "cs.CV": 138,
+      "cs.AI": 211,
+      "eess.IV": 4,
+      "eess.SP": 28
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 434,
+    "journal_window_days": 1
+  },
+  "totals": {
+    "total_scanned": 947,
+    "selected": 263
+  },
+  "classified": {
+    "total_scanned": 947,
+    "selected": 263,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 3,
+      "Phase Imaging/Holography": 9,
+      "Meta-Optics/Diffractive": 19,
+      "Light-Field/Novel Sensors": 1,
+      "Tomography/3D Imaging": 38,
+      "Virtual Staining/Pathology": 30,
+      "Reconstruction/Inverse Problems": 17,
+      "Deep Learning Methods": 145
+    }
+  }
+}

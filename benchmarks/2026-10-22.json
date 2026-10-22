@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-22",
+  "results": [
+    {
+      "benchmark": "LIBERO / RoboTwin (clean,randomized) / 실제 로봇 5종 과제",
+      "metric": "평균 성공률",
+      "value": 98.9,
+      "value_str": "LIBERO 98.9% · RoboTwin 91.10%/91.24% · 실제 로봇 78.0%",
+      "paper": "https://arxiv.org/abs/2610.29866",
+      "paper_title": "GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for Vision-Language-Action Models"
+    },
+    {
+      "benchmark": "44개 Atari-100k 모델-데이터 쌍 (reliability check 통과분)",
+      "metric": "event patch가 random patch를 이기는 비율 / 중앙값 개선폭",
+      "value": 44.0,
+      "value_str": "39/44쌍에서 승리(sign test p=1.4e-7), 중앙값 +44%p 반환오차 감소",
+      "paper": "https://arxiv.org/abs/2610.29435",
+      "paper_title": "Events, Not Pixels: Where World Models Get the Return Wrong"
+    },
+    {
+      "benchmark": "Wan2.2 기반 비디오 생성 (DL3DV/RealEstate10K) + RoboCasa365 WAM",
+      "metric": "기하 일관성 개선률 / WAM 성공률 개선",
+      "value": 20.0,
+      "value_str": "geometric consistency 20%+ 상대 개선, mobile manipulation 성공률 +10%p",
+      "paper": "https://arxiv.org/abs/2610.29915",
+      "paper_title": "CausalAlign: Causal Alignment of Video Generation Models for Consistent Ego-Motion"
+    },
+    {
+      "benchmark": "LIBERO-10 (frontier AI 모델 6종 × reasoning effort 3단계, 1800 episode)",
+      "metric": "최고 성공률",
+      "value": 44.0,
+      "value_str": "GPT-6 Astra 44% (최고), Gemini-4 Argon 43% (abstract 기준)",
+      "paper": "https://arxiv.org/abs/2610.30051",
+      "paper_title": "From Reasoning to Action: Benchmarking Frontier AI Models on LIBERO-10 Robot Manipulation Tasks"
+    },
+    {
+      "benchmark": "LIBERO state-probe (15개 공개 encoder 비교) / policy 성공률",
+      "metric": "state-probe 오차 최저 / 평균 정책 성공률",
+      "value": 85.5,
+      "value_str": "ViT-B급 중 최저 오차(3.5배 큰 V-JEPA2-L과 동급), frozen token 기준 평균 정책 성공률 85.5%",
+      "paper": "https://arxiv.org/abs/2610.30120",
+      "paper_title": "ALPS: Visual State Encoders for World Models"
+    }
+  ]
+}

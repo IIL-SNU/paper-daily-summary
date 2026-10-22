@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-10-22</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-10-22 (목요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-10-22 (목요일) · 표준 daily — 추적 5개 카테고리 모두 /new listing이 "Thursday, 22 October 2026"으로 post_date와 정확히 일치해 backfill/journal-only 없이 정상 진행합니다.</div>
+  <div>📚 소스: arXiv(Date Source Contract 통과, post_date==listing_date) + 저널(Crossref/OpenAlex, --days 1)</div>
+  <div>🔢 arXiv: cs.LG 240 · cs.CV 138 · cs.AI 211 · eess.IV 4 · eess.SP 28 (new+cross, replacement 제외, 총 621건)</div>
+  <div>🔢 저널: Crossref+OpenAlex 434편 수집 (--days 1)</div>
+  <div>🔢 전체 스캔: 947건(dedup 후) · ROI 배정 263건 (27.8%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 배치는 로봇 조작, world model(미래 장면을 상상해 행동을 계획하는 예측 모델), 비디오 생성 세 영역 모두에서 "얼마나 그럴듯해 보이는가"라는 기존 평가 기준을 내려놓고 <strong>"모델이 모르는 상황을 스스로 아는가"</strong>와 <strong>"사건·물리·인과를 제대로 반영하는가"</strong>를 묻는 날입니다. VLA(비전-언어-행동 모델)는 깊이·기하 정보를 내부 상태에 상시 결합하는 쪽으로(GeoMem-VLA, DepState-JEPA) 움직였고, 로봇 조작의 일반화는 데이터 볼륨보다 다양성과 자기 불확실성 인식으로(Post-hoc Epistemic Uncertainty, From Reasoning to Action, Robot Generalization Beyond Volume, Real2Sem2Real) 무게중심이 옮겨갔습니다. world model은 "화면을 잘 그리는가"보다 "사건·물리·인과를 올바르게 담았는가"로(Events Not Pixels, PhysiCalWorld, Causal world models, ALPS), 비디오 생성은 "보기 좋은가"에서 "카메라·의미·효율을 얼마나 지키는가"로(CausalAlign, HorizonComposer, Attn-Forcing, Looking Ahead) 각각 평가축이 갈라졌습니다. 즉 오늘은 생성·조작 능력 자체보다, 그 능력을 얼마나 믿고 실제로 배포할 수 있는지를 재는 쪽으로 연구 질문이 옮겨간 날입니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv 5개 카테고리는 모두 "Thursday, 22 October 2026" listing으로 정상 갱신됐습니다(post_date==listing_date). new+cross 621건(cs.LG 240 · cs.CV 138 · cs.AI 211 · eess.IV 4 · eess.SP 28)과 저널 434편(Crossref+OpenAlex, --days 1)을 합쳐 dedup 후 총 947건을 스캔했고, classify.py가 263건(27.8%)을 9개 ROI 버킷에 배정했습니다.</p>
+<p>가장 뚜렷한 신호는 cs.CV·cs.AI·cs.RO 전반에 걸쳐 동시에 나타났습니다. VLA 쪽에서는 GeoMem-VLA와 DepState-JEPA 두 편이 깊이·3D 기하 정보를 매 순간 다시 계산하지 않고 내부 상태에 압축해 계속 들고 다니는 설계를 각각 다른 방식으로 제안했습니다. 로봇 조작의 일반화를 다루는 묶음은 네 편으로 가장 두터웠는데, Robot Generalization Beyond Volume은 로보틱스 데이터 수집이 "양은 늘어도 다양성은 늘지 않는" 구조적 한계를 지적했고, Real2Sem2Real은 사람 시연 영상 한 편에서 같은 범주의 다른 물체들에 대한 로봇 데모를 자동으로 증강해 바로 그 문제를 메웠습니다. Post-hoc Epistemic Uncertainty는 단일 정책만으로 "내가 모르는 상황"을 감지하는 방법을, From Reasoning to Action은 GPT-6 Astra·Claude Opus 5.5 같은 범용 모델 6종을 LIBERO-10에서 직접 평가해 추론 능력과 실제 조작 성공률 사이의 간극(최고 44%)을 드러냈습니다.</p>
+<p>world model 쪽에서는 Events Not Pixels가 "화질이 좋다"와 "계획에 중요한 순간을 맞게 그린다"가 다른 문제라는 것을 44개 Atari-100k 모델-데이터 조합에서 통계적으로 보였고, PhysiCalWorld와 Causal world models under physical parameter shifts가 각각 물리 속성 보정과 인과적 의존성 제약으로 분포 밖(OOD) 안정성을 높였습니다. 비디오 생성 쪽에서는 CausalAlign이 카메라 시점 drift를 인과적으로 진단해 고쳤고, HorizonComposer·Attn-Forcing·Looking Ahead가 각각 교통 규칙 보존, 스트리밍 메모리 효율, teacher-forcing 지름길 방지라는 다른 신뢰성 축을 다뤘습니다. 마지막으로 AOV-GS와 ClunoGS는 언어로 질의 가능한 3D Gaussian 지도를 "만드는" 단계를 넘어 "효율적으로 모으고 압축하는" 단계로 넘어간 신호였습니다. 계산광학 코어(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics·Light-Field)는 오늘도 신호가 희미해 도메인 Watch Lens에서 별도로 다룹니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>어제(10/21)의 결론은 feed-forward 3D Gaussian Splatting이 "자원 예산·압축"과 "의미 구조화"라는 두 갈래로 갈라지고, 병리 영상이 "조직 분류"에서 "유전자 발현 예측"으로 넘어가는 날이었습니다. 오늘은 그 3DGS/병리 묶음의 직접적인 후속이 뚜렷하지 않은 대신, 무대가 로봇 조작·world model·비디오 생성으로 옮겨가며 세 영역 모두에서 공통적으로 "신뢰성 재평가"가 일어났습니다. 어제 cluster2("3DGS가 '어디 있나'를 넘어 '그게 무엇인가'까지")의 언어 질의형 3D Gaussian 지도 흐름은 오늘 AOV-GS·ClunoGS로 이어졌지만, 대표 논문은 완전히 바뀌었고 질문도 "의미를 어떻게 입히는가"에서 "그 지도를 어떻게 효율적으로 모으고 압축하는가"로 구체화됐습니다. 지난주(2026-10-19 weekly 회고 기준)는 3DGS의 물리 현상 흡수와 메타표면·홀로그래피 하드웨어 신호가 번갈아 나왔는데, 이번 주 초반(10/19~10/21)은 3DGS 효율화·의미화와 병리 유전자발현 예측이 중심이었다면, 오늘(10/22)은 로봇학습·world model·비디오 생성의 "평가축 전환"이 새로 떠오른 주제입니다. Meta-Optics/Diffractive는 어제 14편(이미징 신호 0편)에서 오늘 19편(이미징 신호 약 5편: MWIR 메타렌즈, SWIR 컴퓨테이셔널 하이퍼스펙트럴 카메라 등)으로 늘었지만 여전히 대부분 THz·통신 응용이고, Fourier Ptychography/Microscopy는 어제 신호 0편이던 핵심 공백이 오늘도 1편(X-ray Bragg ptychography, 그나마 비광학 영상 응용)에 그쳐 계속 비어 있습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>VLA 내부 상태 표현이 기하/깊이 정보를 직접 거치는 쪽으로 수렴</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.29866" target=_blank>GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for Vision-Language-Action Models</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.29246" target=_blank>DepState-JEPA: Learning Depth-Grounded State Representation for Visual Perception and Manipulation</a> <span class=pill>RO</span>
+  </td>
+  <td>기존 VLA(비전-언어-행동 모델, 카메라 영상과 언어 지시를 보고 바로 로봇 행동을 생성하는 모델)는 2D 영상 특징만 쓰거나, 3D 정보를 쓰더라도 매 순간 장면을 통째로 다시 추정한 뒤 버리는 경우가 많았습니다. 두 논문 모두 "기하 정보를 매번 새로 계산하지 말고, 필요한 만큼만 압축해 계속 들고 다니자"는 같은 결론에 도달합니다. GeoMem-VLA는 고정된 3D 기하 모델의 지식을 GeoPlan 토큰에 흡수시켜 시간이 지나도 남는 메모리로 유지하고, 추론 시에는 3D teacher 없이 과거 기하 정보를 꺼내 씁니다. DepState-JEPA는 RGB와 깊이 영상을 함께 보는 두 갈래 신경망으로 "장면이 어떻게 생겼는지"와 "행동하면 무엇이 바뀌는지"를 하나의 공유 잠재 상태로 연결합니다. 즉 깊이·기하 정보를 한 번 쓰고 버리지 않고 행동 예측 상태 자체에 녹여 넣는 방향으로 VLA 설계가 수렴하고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 두 연구팀이 같은 날 같은 설계 방향(기하 정보를 내부 상태에 상시 결합)을 선택했으나 2편뿐이라 더 많은 후속 사례 확인 필요</small></td>
+  <td>GeoMem-VLA의 GeoPlan 토큰 메모리와 DepState-JEPA의 RGB-Depth 공유 잠재상태를 LIBERO 공통 세팅에서 비교해, 3D teacher 없이 추론할 때 success rate와 지연시간을 ablation한다</td>
+</tr>
+<tr>
+  <td><strong>로봇 조작의 '일반화'가 데이터 볼륨보다 다양성 커버리지·자기 불확실성 인식으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.29829" target=_blank>Robot Generalization Beyond Volume: The Diversity Path via Zero-Shot Capabilities</a> <span class="pill a">RO · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.30051" target=_blank>From Reasoning to Action: Benchmarking Frontier AI Models on LIBERO-10 Robot Manipulation Tasks</a> <span class="pill a">RO · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.28880" target=_blank>Real2Sem2Real: 3D Semantic Augmentations for Robot Learning from a Single Human RGB Demonstration</a> <span class=pill>RO</span><br>
+    <a href="https://arxiv.org/abs/2610.29730" target=_blank>Post-hoc Epistemic Uncertainty for Vision-Language-Action Policies</a> <span class=pill>RO</span>
+  </td>
+  <td>로봇 학습에서 "일반화"는 보통 더 많은 데모, 더 큰 모델을 뜻했습니다. 네 편 모두 "얼마나 많이"가 아니라 "무엇을 모르는지 아는가"와 "얼마나 다양한 상황을 커버하는가"를 묻습니다. Robot Generalization Beyond Volume은 로보틱스 데이터 수집이 소수의 팀에 의존해 양은 늘어도 다양성은 늘지 않는다는 구조적 문제를 지적하고, Real2Sem2Real은 사람 시연 영상 한 편에서 DINOv3 기반 3D Gaussian 추적으로 같은 범주의 수많은 다른 물체에 대한 로봇 데모를 자동 생성해 그 다양성 부족을 직접 메웁니다. Post-hoc Epistemic Uncertainty는 여러 정책을 따로 학습하지 않고 단일 정책의 embedding만으로 "내가 모르는 상황"을 감지하는 방법을 제안하고, From Reasoning to Action은 GPT-6 Astra·Claude Opus 5.5 등 범용 모델 6종을 LIBERO-10에서 직접 평가해 추론 능력이 뛰어나도 최고 성공률이 44%에 그치고 정밀한 공간 배열이나 다단계 조작에서 크게 흔들린다는 것을 수치로 보였습니다. 네 편을 묶으면, 로봇 조작의 다음 과제는 더 큰 모델이 아니라 어떤 상황을 아직 못 보는지 알고 그 공백을 다양성으로 메우는 것이라는 공통된 판단으로 모입니다.</td>
+  <td>High<br><small>서로 다른 4개 연구팀이 데이터 다양성, 불확실성 인식, 범용 모델 벤치마킹이라는 다른 각도에서 같은 결론(볼륨보다 커버리지)에 도달, 구체적 수치(LIBERO-10 최고 44%) 동반</small></td>
+  <td>Real2Sem2Real의 단일 데모→다중 semantic 증강 파이프라인을 랩 보유 로봇 데모에 적용해 생성 다양성을 측정하고, Post-hoc Epistemic Uncertainty 헤드를 랩 정책에 붙여 분포 밖 상황 개입 요청 정확도를 LIBERO-10 미학습 태스크로 평가한다</td>
+</tr>
+<tr>
+  <td><strong>World model이 '화면을 잘 그리는가'보다 '사건·물리·인과를 올바르게 담았는가'로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.29435" target=_blank>Events, Not Pixels: Where World Models Get the Return Wrong</a> <span class="pill a">AI · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.30125" target=_blank>PhysiCalWorld: In-Context Physics Calibration for World Models</a> <span class=pill>RO</span><br>
+    <a href="https://arxiv.org/abs/2610.29088" target=_blank>Causal world models under physical parameter shifts</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2610.30120" target=_blank>ALPS: Visual State Encoders for World Models</a> <span class="pill a">CV · TIER A</span>
+  </td>
+  <td>world model(미래 장면을 상상해 행동을 계획하는 예측 모델)은 지금까지 주로 "다음 프레임을 얼마나 그럴듯하게 그리는가"로 평가받았습니다. Events, Not Pixels는 실제 전이로 상상된 전이를 하나씩 바꿔치기하는 진단법으로, 보상이 발생하거나 에피소드가 끝나는 "사건" 구간은 다른 구간과 비슷한 화질로 그려지는데도(픽셀 오차 비율 0.85) 그 구간만 복원하면 반환값 오차의 70%가 사라진다는 것을 44개 Atari-100k 조합에서 확인했습니다. 반대로 픽셀·구조 오차가 가장 큰 구간을 복원해도 무작위보다 개선 효과가 작았습니다. PhysiCalWorld는 현재 화면만으로는 질량·마찰 같은 물리 속성이 드러나지 않아 world model이 새 장면에서 크게 흔들린다는 점을 지적하며 즉석 물리 보정을 제안하고, Causal world models under physical parameter shifts는 인과적 의존성 마스크로 물리적으로 말이 안 되는 지름길 학습을 막아 OOD 오차를 줄입니다. ALPS는 물리적 상태·언어 정렬·픽셀 복원 세 능력을 하나의 인코더로 통합합니다. 즉 world model 연구의 무게중심이 "예쁜 화면"에서 "계획에 영향을 주는 사건·물리·인과를 올바르게 담는가"로 옮겨가고 있다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 4개 연구팀이 평가 진단·물리 보정·인과 구조·인코더 설계라는 다른 층위에서 같은 결론에 도달, Events Not Pixels는 44개 모델-데이터 조합과 통계적 유의성(p=1.4e-7)까지 제시</small></td>
+  <td>랩 world model 평가 파이프라인에 Events Not Pixels의 transition-level 진단을 추가해, 픽셀 기반 지표와 사건 기반 지표가 얼마나 다른 순위를 매기는지 Atari-100k 서브셋에서 비교한다</td>
+</tr>
+<tr>
+  <td><strong>Video generation의 평가축이 '보기 좋은가'에서 '카메라·의미·효율을 얼마나 지키는가'로 분화</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.29915" target=_blank>CausalAlign: Causal Alignment of Video Generation Models for Consistent Ego-Motion</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.28829" target=_blank>HorizonComposer: Spatiotemporally Consistent Driving Video Editing with Enriched Traffic Semantics</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.30036" target=_blank>Attn-Forcing: Learning Full-Context Attention Proxies for Streaming Video Generation</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.29989" target=_blank>Looking Ahead: Modeling Future Evolution in Autoregressive Video Generation</a> <span class=pill>CV</span>
+  </td>
+  <td>예전에는 비디오 생성모델이 얼마나 그럴듯한 영상을 만드는지가 중요한 기준이었다면, 네 편은 그 영상이 특정 조건을 끝까지 안정적으로 지키는가를 각각 다른 축에서 묻습니다. CausalAlign은 긴 영상에서 카메라 시점(ego-motion)이 서서히 어긋나는 문제를 선형 프로브와 인과적 개입으로 진단해, denoising 중 카메라 정보가 떠올랐다 사라지는 패턴을 찾고 그 구간을 3D 모델에 맞춰 정렬해 기하 일관성을 20% 이상 끌어올립니다. HorizonComposer는 자율주행 시뮬레이션용 영상 편집에서 일반 편집기가 날씨·시간대를 바꾸며 신호등·차선 같은 교통 규칙(ODD)을 깨뜨리는 문제를 세 단계로 보호합니다. Attn-Forcing은 스트리밍 비디오 생성에서 과거 맥락을 길게 참조할수록 메모리 비용이 감당 못 할 만큼 커지는 문제를 압축된 attention proxy로 풀고, Looking Ahead는 자기회귀 비디오 생성이 teacher forcing 때문에 실제 장면 변화를 이해하지 않고 바로 이전 프레임을 베끼는 지름길을 학습할 수 있다는 점을 지적하며 중간 맥락 없이 미래 구간을 직접 예측하는 보조 목표로 이를 막습니다. 즉 비디오 생성모델의 다음 경쟁 지점은 더 예쁜 샘플이 아니라 카메라 일관성, 의미 규칙 보존, 메모리 효율, 실제 움직임 이해라는 서로 다른 신뢰성 축이라는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 4개 연구팀이 카메라 일관성·의미 규칙·스트리밍 효율·teacher-forcing 지름길이라는 다른 신뢰성 축에서 같은 결론(화질보다 조건 유지)에 도달, CausalAlign은 20%+ 기하 일관성·WAM +10%p 등 구체적 수치 동반</small></td>
+  <td>CausalAlign의 인과적 개입 진단을 랩 비디오 diffusion 모델에 적용해 denoising 단계별 카메라 정보 보존 패턴을 그리고, Looking Ahead의 Future Chunk Prediction 추가 시 teacher-forcing 지름길 의존도가 줄어드는지 측정한다</td>
+</tr>
+<tr>
+  <td><strong>언어 질의 가능한 3D Gaussian 지도가 '만들기'에서 '효율적으로 모으고 압축하기'로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.29374" target=_blank>AOV-GS: Active Open-Vocabulary Semantic Mapping with 3D Gaussian Splatting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.30013" target=_blank>ClunoGS: Compact Language 3D Gaussian Splatting via Unified Optimization</a> <span class=pill>CV</span>
+  </td>
+  <td>3D Gaussian Splatting에 언어 특징을 붙여 공간에 무엇이 있는지 임의의 단어로 물어볼 수 있게 만드는 연구는 어제까지 주로 "의미 구조를 어떻게 붙이는가"를 다뤘습니다. 오늘 두 논문은 그 지도를 만들고 유지하는 과정의 효율을 문제 삼습니다. AOV-GS는 로봇이 사람이 미리 정해둔 라벨 없이 공간을 탐색할 때, 기존 방식이 기하학적 커버리지만 보고 의미 정보를 부산물로 취급했던 점을 고쳐 의미까지 함께 풍부해지도록 다음 목적지를 능동적으로 정합니다. ClunoGS는 기존 압축이 RGB 렌더링 품질만 보고 가지치기를 해 의미 예측에 중요한 Gaussian까지 날려버리는 문제를 고쳐, 의미 정보를 보존하면서 저장 용량을 줄입니다. 즉 "언어로 질의 가능한 3D 지도"를 두고 하나는 효율적으로 모으는 방법을, 다른 하나는 효율적으로 저장하는 방법을 다뤄, 이 기술이 실제 로봇에 올라가기 위한 실용적 조건을 다루는 단계로 넘어갔다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 연구팀이 '수집'과 '저장' 효율이라는 같은 문제의 다른 절반을 다뤘으나 2편뿐이라 독립 benchmark 비교는 아직 부족</small></td>
+  <td>AOV-GS의 능동 탐색 정책과 ClunoGS의 의미-인지 압축을 랩 3DGS open-vocabulary mapping 파이프라인에 순서대로 적용해, 동일 탐색·저장 예산에서 기존 수동 탐색+RGB 압축 대비 mIoU가 얼마나 개선되는지 ablation한다</td>
+</tr>
+</tbody>
+</table>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 1편, 실제 신호 1편(비광학 응용)</strong> — <a href="https://doi.org/10.1364/optica.614886" target=_blank>Dose-efficient X-ray Bragg Ptychography imaging via a mixed sparse sampling strategy</a> [JNL]은 X-ray Bragg ptychography의 선량 효율을 높이는 sparse sampling 전략으로, 랩이 주로 보는 가시광 Fourier ptychography와는 영역이 다르지만 ptychography 재구성 방법론 자체는 참고할 만합니다. 랩 핵심(가시광/현미경 FP) 신호는 계속 공백입니다.</li>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 3편 중 실제 신호 2편</strong> — <a href="https://doi.org/10.1364/ol.615582" target=_blank>Lensless complex-field imaging through thin scattering media using a two-variable decoupling framework</a> [JNL]은 얇은 산란매질을 통한 lensless 복소장 이미징을 두 변수 분리 프레임워크로 복원하는 핵심 신호이고, <a href="https://doi.org/10.1051/0004-6361/202661016" target=_blank>Modelling Fourier filtering wavefront sensors for power spectral density-based methods: The AOPERA tool</a> [JNL]은 거대 망원경 적응광학용 Fourier filtering wavefront sensor를 모델링하는 도구로, 코드화 조리개/파면 센싱과 인접합니다. 나머지 1편(Gabriel Graph GPU 가속)은 그래프 클러스터링 논문이라 "coded" 키워드 오탐입니다.</li>
+    <li><strong>Phase Imaging/Holography — 오늘 배정 9편 중 실제 신호 6편</strong> — <a href="https://doi.org/10.1038/s41598-026-73646-w" target=_blank>XPAR-Net</a> [JNL](lens-free on-chip 현미경 복원), <a href="https://doi.org/10.1016/j.optlaseng.2026.110185" target=_blank>Physics-guided multi-scale deep learning network for incoherent digital holographic reconstruction</a> [JNL], <a href="https://doi.org/10.1016/j.proci.2026.106812" target=_blank>Size-resolved burn time of iron particles... via in-situ digital in-line micro-holography</a> [JNL], <a href="https://doi.org/10.1021/acsomega.6c11324" target=_blank>Oblique Back-Illumination Microscopy Enables Phase-Gradient Optical Sensing...</a> [JNL], <a href="https://doi.org/10.1016/j.optlastec.2026.116731" target=_blank>Front-end phase stabilization in heterodyne interferometry...</a> [JNL], <a href="https://doi.org/10.1002/adom.71966" target=_blank>Adjoint-Designed Mosaic Optical Fourier Surfaces for... RGB Color Mixing</a> [JNL]이 모두 위상 복원·홀로그래피·간섭계 핵심 신호입니다. 나머지 3편(중력 이론의 "Cauchy Slice Holography", 음향 홀로그래피, 각막 수차 임상 리뷰)은 키워드만 겹치거나 응용이 멀어 제외했습니다.</li>
+    <li><strong>Meta-Optics/Diffractive — 오늘 배정 19편 중 이미징 신호 약 5편</strong> — <a href="https://arxiv.org/abs/2610.29841" target=_blank>Broadband Mid-Wave Infrared Imaging Enabled by All-Silicon Hyperboloid Metalens</a> [AI], <a href="https://doi.org/10.1117/1.apn.6.1.016004" target=_blank>Single-shot on-chip SWIR computational hyperspectral camera based on metasurface array</a> [JNL], <a href="https://doi.org/10.1364/optica.618235" target=_blank>Encoding-attention Network-Empowered High-accuracy Hyperspectro-polarimetric Encoding Metasurface Image Sensor</a> [JNL], <a href="https://doi.org/10.1364/oe.611898" target=_blank>Metalens-assisted hybrid optics system for compact Micro-LED projection</a> [JNL], <a href="https://doi.org/10.1364/ao.615214" target=_blank>Design Principle: Broadband Achromatic Metalens</a> [JNL]이 실제 이미징 신호이고, 나머지 14편은 THz 센싱·안테나·통신·암호화 응용입니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 오늘 배정 1편, 단발 신호</strong> — <a href="https://doi.org/10.1016/j.optlastec.2026.116734" target=_blank>High-performance lens array optimization for light field 3D display using display-path light beam constraints</a> [JNL]은 광필드 3D 디스플레이용 렌즈 어레이 최적화로, 단발이라 독립 클러스터로 올리지 않고 Watch-only로 둡니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: VLA 내부 기하 상태 결합 2편(GeoMem-VLA, DepState-JEPA), 로봇 조작 일반화/다양성 4편(Robot Generalization Beyond Volume, From Reasoning to Action, Real2Sem2Real, Post-hoc Epistemic Uncertainty), world model 신뢰성 축 4편(Events Not Pixels, PhysiCalWorld, Causal world models, ALPS), 비디오 생성 신뢰성 축 4편(CausalAlign, HorizonComposer, Attn-Forcing, Looking Ahead), 언어 질의형 3D Gaussian 지도 효율화 2편(AOV-GS, ClunoGS)</li>
+  <li><strong>저널 전용</strong>: lensless 복소장 이미징(산란매질 투과), 적응광학 wavefront sensor 모델링(AOPERA), 비간섭 digital holographic reconstruction, in-line micro-holography(연소 입자 측정), 메타렌즈/메타표면 이미징 센서 다수(SWIR 하이퍼스펙트럴 카메라, hyperspectro-polarimetric 센서, Micro-LED 프로젝션용 하이브리드 광학계)</li>
+  <li><strong>공통 키워드</strong>: 오늘은 arXiv와 저널이 거의 겹치지 않는 날입니다 — arXiv는 로봇학습·world model·비디오 생성의 "평가축 전환"에, 저널은 여전히 "촬영 하드웨어 자체의 물리적 한계를 계산으로 메운다"는 익숙한 축(lensless, 홀로그래피, 메타광학 센서)에 머물러 있습니다.</li>
+  <li><strong>특징</strong>: 어제(10/21)는 병리 영상에서 arXiv 3편+저널 1편이 같은 질문(H&amp;E→유전자 발현)으로 수렴했지만, 오늘은 그런 교차 신호가 뚜렷하지 않습니다. 계산 이미징 핵심 코어(FP·Lensless·Phase·Meta-Optics·Light-Field) 전체가 저널에서만 신호를 내는 날로, arXiv 쪽 로보틱스/비전 흐름과는 완전히 분리돼 있습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. VLA 내부 상태 표현이 기하/깊이 정보를 직접 거치는 쪽으로 수렴</h3>
+  <p>GeoMem-VLA(GeoPlan 토큰 메모리)와 DepState-JEPA(RGB-Depth 공유 잠재상태) 두 편이 같은 날 올라오며, VLA가 3D/깊이 정보를 매번 새로 계산하지 않고 행동 예측 내부 상태에 상시 결합하는 방향으로 수렴하고 있음을 보입니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 두 연구팀이 같은 설계 방향을 선택했으나 2편뿐</p>
+</div>
+
+<div class=ins>
+  <h3>2. 로봇 조작의 '일반화'가 데이터 볼륨보다 다양성 커버리지·자기 불확실성 인식으로</h3>
+  <p>Robot Generalization Beyond Volume, From Reasoning to Action, Real2Sem2Real, Post-hoc Epistemic Uncertainty 네 편이 모두 "더 큰 모델/더 많은 데이터"가 아니라 "다양성 커버리지"와 "모르는 상황을 아는가"를 로봇 조작 일반화의 핵심 축으로 제시합니다.</p>
+  <p class=conf-note>Confidence: High — 4개 연구팀이 서로 다른 각도에서 같은 결론에 도달, 구체적 수치(LIBERO-10 최고 44%) 동반</p>
+</div>
+
+<div class=ins>
+  <h3>3. World model이 '화면을 잘 그리는가'보다 '사건·물리·인과를 올바르게 담았는가'로</h3>
+  <p>Events Not Pixels, PhysiCalWorld, Causal world models, ALPS 네 편이 각각 평가 진단·물리 보정·인과 구조·인코더 설계 층위에서 "픽셀 충실도만으로는 부족하다"는 같은 결론에 도달합니다.</p>
+  <p class=conf-note>Confidence: High — Events Not Pixels는 44개 모델-데이터 조합·통계적 유의성(p=1.4e-7)까지 제시</p>
+</div>
+
+<div class=ins>
+  <h3>4. Video generation의 평가축이 '보기 좋은가'에서 '카메라·의미·효율을 얼마나 지키는가'로 분화</h3>
+  <p>CausalAlign, HorizonComposer, Attn-Forcing, Looking Ahead 네 편이 각각 카메라 일관성, 교통 의미 규칙, 스트리밍 메모리 효율, teacher-forcing 지름길이라는 서로 다른 신뢰성 축을 다룹니다.</p>
+  <p class=conf-note>Confidence: High — CausalAlign은 기하 일관성 20%+·WAM 성공률 +10%p 등 구체적 수치 동반</p>
+</div>
+
+<div class=ins>
+  <h3>5. 언어 질의 가능한 3D Gaussian 지도가 '만들기'에서 '효율적으로 모으고 압축하기'로</h3>
+  <p>AOV-GS(능동 탐색)와 ClunoGS(의미-인지 압축) 두 편이 open-vocabulary 3D Gaussian 지도를 실제 로봇에 올리기 위한 수집·저장 효율 문제로 질문을 구체화합니다.</p>
+  <p class=conf-note>Confidence: Medium — 2편뿐이며 독립 benchmark 비교는 아직 부족</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. GeoMem-VLA의 GeoPlan 토큰 메모리와 DepState-JEPA의 RGB-Depth 공유 잠재상태를 LIBERO 공통 세팅에서 비교</h3>
+  <p>3D teacher 없이 추론할 때 두 방식 모두 success rate를 유지하며 지연시간을 줄이는지, 혹은 과제 유형별로 유불리가 갈리는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: GeoMem-VLA·DepState-JEPA 공식 코드(공개 시) 또는 핵심 모듈 재구현</li>
+    <li>공통 benchmark: LIBERO</li>
+    <li>비교축: success rate, 추론 지연시간, 3D teacher 유무에 따른 성능 차이</li>
+    <li>실패해도 남는 결과: 두 메모리 설계의 과제 유형별 강약점 정리</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. Real2Sem2Real 단일 데모 증강 + Post-hoc Epistemic Uncertainty 헤드를 랩 정책에 적용</h3>
+  <p>단일 데모에서 생성한 semantic 변형 데이터로 학습한 정책이, 분포 밖 상황에서 불확실성 헤드의 개입 요청 정확도까지 함께 개선하는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Real2Sem2Real·Post-hoc Epistemic Uncertainty 방법 재현</li>
+    <li>공통 benchmark: 랩 보유 로봇 데모 1~2개 + LIBERO 미학습 태스크</li>
+    <li>비교축: 증강 데이터 다양성 지표, 분포 밖 개입 요청 정확도</li>
+    <li>실패해도 남는 결과: 랩 데모 환경에서의 semantic 증강 실패 사례 목록</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. Events Not Pixels의 transition-level 진단을 랩 world model 평가 파이프라인에 추가</h3>
+  <p>픽셀 기반 지표와 사건(event) 기반 지표가 같은 world model에 대해 얼마나 다른 순위를 매기는지 정량 비교합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Events Not Pixels의 transition-level 진단 방법 재구현</li>
+    <li>공통 benchmark: Atari-100k 서브셋</li>
+    <li>비교축: 픽셀 오차 기반 순위 vs 사건 기반 반환 오차 감소량 순위</li>
+    <li>실패해도 남는 결과: 랩 world model의 사건 민감도 분석 리포트</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>D. CausalAlign의 인과적 개입 진단 + Looking Ahead의 Future Chunk Prediction을 랩 비디오 diffusion에 적용</h3>
+  <p>denoising 단계별 카메라 정보 보존 패턴을 그리고, Future Chunk Prediction 추가 시 teacher-forcing 지름길 의존도가 실제로 줄어드는지 측정합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: CausalAlign·Looking Ahead 핵심 모듈 재구현</li>
+    <li>공통 benchmark: 랩 보유 비디오 diffusion 모델 + DL3DV/RealEstate10K 서브셋</li>
+    <li>비교축: 기하 일관성, teacher-forcing 지름길 의존도(FCP 유무)</li>
+    <li>실패해도 남는 결과: 랩 비디오 diffusion의 denoising 단계별 카메라 정보 보존 곡선</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>E. AOV-GS 능동 탐색 + ClunoGS 의미-인지 압축을 랩 3DGS open-vocabulary mapping에 순서 적용</h3>
+  <p>동일 탐색·저장 예산에서 기존 수동 탐색+RGB 기반 압축 대비 의미 질의 정확도(mIoU 등)가 개선되는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: AOV-GS·ClunoGS 방법 재현</li>
+    <li>공통 benchmark: 랩 보유 실내 장면 open-vocabulary mapping 데이터</li>
+    <li>비교축: mIoU, 탐색 예산 대비 의미 커버리지, 압축률별 의미 정확도 저하 곡선</li>
+    <li>실패해도 남는 결과: 랩 3DGS mapping 파이프라인의 탐색/압축 trade-off 정리</li>
+  </ul>
+</div>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘은 목요일 daily라 예측 회고 루프는 생략합니다(월요일 전용 섹션). 다음 예측 회고는 2026-10-26(월) weekly 실행이 이번 주를 되돌아보며 수행합니다.</p>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(38편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:3%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:8%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:24%"></span></span><span class=n>9편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:50%"></span></span><span class=n>19편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:3%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>38편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:79%"></span></span><span class=n>30편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:45%"></span></span><span class=n>17편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>145편</span></div>
+
+<p><small>⚠️ 참고: Fourier Ptychography/Microscopy 1편은 X-ray Bragg ptychography로 비광학 응용입니다. Meta-Optics/Diffractive 19편 중 이미징 신호는 약 5편이고 나머지는 THz/통신/센싱 응용입니다. Tomography/3D Imaging 38편 중 실제 계산 이미징/로보틱스 신호는 오늘 클러스터 1·2·5에 반영된 8편 내외이고 나머지는 PET/CT 임상 사례, OCT 안과 질환 등입니다. Virtual Staining/Pathology 30편 중 실제 신호는 약 5편(TRACE-CLDN, LEAF-Mamba, Learning to Reason Like a Cytopathologist 등)이고 나머지는 LLM/ESG/사회과학 등 "virtual"·"staining" 키워드 오탐입니다. Reconstruction/Inverse Problems 17편 중 이미징 핵심 신호는 5편 내외이고 나머지는 RL/PINN 등 ML 방법론입니다. Deep Learning Methods 145편 중 오늘 클러스터에 반영된 신호는 4편 내외(world model·video generation 일부)이고 나머지는 LLM/시계열/로보틱스 등입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/optica.614886" target=_blank>Dose-efficient X-ray Bragg Ptychography imaging via a mixed sparse sampling strategy</a></strong> [JNL]<br>
+  왜 주요: 도메인 Watch Lens 참고 — X-ray Bragg ptychography의 선량 효율을 높이는 sparse sampling 전략(비광학 응용이지만 ptychography 재구성 방법론 참고 가치)
+</div>
+
+<h3>Lensless/Coded Imaging (3편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.615582" target=_blank>Lensless complex-field imaging through thin scattering media using a two-variable decoupling framework</a></strong> [JNL]<br>
+  왜 주요: 도메인 Watch Lens 핵심 신호 — 얇은 산란매질을 통한 lensless 복소장 이미징을 두 변수 분리 프레임워크로 복원
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1051/0004-6361/202661016" target=_blank>Modelling Fourier filtering wavefront sensors for power spectral density-based methods: The AOPERA tool</a></strong> [JNL]<br>
+  왜 주요: 적응광학용 Fourier filtering wavefront sensor 모델링 도구, 코드화 조리개/파면 센싱과 인접
+</div>
+
+<h3>Phase Imaging/Holography (9편 중 관련 6편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41598-026-73646-w" target=_blank>XPAR-Net: cross-paradigm alignment and reconstruction network for high-fidelity lens-free on-chip microscopy</a></strong> [JNL]<br>
+  왜 주요: lens-free on-chip 현미경의 위상 추론+프린지 복원을 서로 다른 표현 방식끼리 교차 정렬해 함께 푸는 복원망
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110185" target=_blank>Physics-guided multi-scale deep learning network for incoherent digital holographic reconstruction</a></strong> [JNL]<br>
+  왜 주요: 비간섭 digital holographic reconstruction에 물리 기반 멀티스케일 네트워크 적용
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/adom.71966" target=_blank>Adjoint-Designed Mosaic Optical Fourier Surfaces for Short-Distance RGB Color Mixing</a></strong> [JNL]<br>
+  왜 주요: adjoint 설계 기반 optical Fourier surface로 근거리 RGB 색 혼합 디스플레이 광학 설계
+</div>
+
+<h3>Meta-Optics/Diffractive (19편 중 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29841" target=_blank>Broadband Mid-Wave Infrared Imaging Enabled by All-Silicon Hyperboloid Metalens</a></strong> [AI]<br>
+  왜 주요: 광대역 MWIR 이미징을 위한 all-silicon hyperboloid 메타렌즈로 색수차 문제를 정면으로 다룸
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.apn.6.1.016004" target=_blank>Single-shot on-chip SWIR computational hyperspectral camera based on metasurface array</a></strong> [JNL]<br>
+  왜 주요: 메타표면 어레이 기반 단일샷 on-chip SWIR 컴퓨테이셔널 하이퍼스펙트럴 카메라
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/optica.618235" target=_blank>Encoding-attention Network-Empowered High-accuracy Hyperspectro-polarimetric Encoding Metasurface Image Sensor</a></strong> [JNL]<br>
+  왜 주요: 메타표면 기반 하이퍼스펙트럴-편광 동시 인코딩 이미지 센서 + attention 기반 디코딩
+</div>
+
+<h3>Tomography/3D Imaging (38편 중 관련 8편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29866" target=_blank>GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for Vision-Language-Action Models</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터1·must-read 대표 — 3D 기하 지식을 GeoPlan 토큰 메모리로 내재화해 LIBERO 98.9% 달성
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29374" target=_blank>AOV-GS: Active Open-Vocabulary Semantic Mapping with 3D Gaussian Splatting</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터5 대표 — 능동 탐색으로 기하 커버리지와 의미 정보를 함께 풍부하게 만드는 정책
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30013" target=_blank>ClunoGS: Compact Language 3D Gaussian Splatting via Unified Optimization</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터5 대표 — 의미 예측을 보존하는 language-Gaussian 압축
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29106" target=_blank>DriftNeRF: Cross-Ray Density Drifting for Sparse-View Neural Radiance Fields</a></strong> [CV]<br>
+  왜 주요: sparse-view NeRF에서 서로 다른 ray가 같은 3D 지점에 모순된 밀도를 할당하는 결함을 cross-ray 항으로 직접 교정
+</div>
+
+<h3>Virtual Staining/Pathology (30편 중 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29665" target=_blank>Learning to Reason Like a Cytopathologist: Clinically Grounded Multiscale Evidential Learning for Cervical Cytology</a></strong> [CV]<br>
+  왜 주요: ASC-US처럼 애매한 자궁경부 세포診단 범주에서 "증거가 충분한가"까지 함께 판단하는 multiscale evidential learning
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29746" target=_blank>LEAF-Mamba: Feature Adaptation and Fusion for Whole Slide Image Analysis</a></strong> [CV]<br>
+  왜 주요: Mamba 기반 긴 패치 시퀀스 모델링으로 whole slide image의 slide-level 학습 개선
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s10278-026-02433-w" target=_blank>TRACE-CLDN: An Integrated Computational Pathology Framework for Tumor-Restricted Quantification of CLDN18.2 Expression Burden from H&amp;E Whole-Slide Images</a></strong> [JNL]<br>
+  왜 주요: H&amp;E WSI에서 종양 영역에 한정해 CLDN18.2 발현 정량화를 자동화한 계산병리 프레임워크
+</div>
+
+<h3>Reconstruction/Inverse Problems (17편 중 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29102" target=_blank>Diffusion Posterior Sampling with Uncertain Forward Models</a></strong> [CV]<br>
+  왜 주요: diffusion posterior sampling에서 forward model(블러 커널, 검출기 응답 등) 파라미터의 불확실성을 likelihood에 직접 반영하는 uncertainty-aware likelihood 제안
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29454" target=_blank>BlazeVGGT: 13x Faster VGGT at 2,000 Frames via Camera Token without Training</a></strong> [CV]<br>
+  왜 주요: VGGT 기반 feed-forward 다중뷰 geometry 모델의 ray간 전역 attention 비용을 camera token 구조로 재사용해 학습 없이 13배 가속
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1137/25m1760738" target=_blank>The Gaussian Latent Machine: Efficient Prior and Posterior Sampling for Inverse Problems</a></strong> [JNL]<br>
+  왜 주요: 베이지안 이미징의 product-of-experts 사전/사후 분포를 Gaussian latent variable 모델로 일반화해 기존 여러 sampling 알고리즘을 통합
+</div>
+
+<h3>Deep Learning Methods (145편 중 관련 4편, catch-all 과대표 방지로 2편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30120" target=_blank>ALPS: Visual State Encoders for World Models</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터3 대표 — 물리적 상태·언어 정렬·픽셀 복원을 하나의 encoder로 통합
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29915" target=_blank>CausalAlign: Causal Alignment of Video Generation Models for Consistent Ego-Motion</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터4·must-read 대표 — denoising 중 카메라 정보 rise-and-fall 패턴을 인과적으로 진단하고 정렬
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>Value</th><th>Paper</th></tr></thead>
+<tbody>
+<tr><td>LIBERO / RoboTwin(clean,randomized) / 실제 로봇 5과제</td><td>평균 성공률</td><td>LIBERO 98.9% · RoboTwin 91.10%/91.24% · 실제 로봇 78.0%</td><td><a href="https://arxiv.org/abs/2610.29866" target=_blank>GeoMem-VLA</a></td></tr>
+<tr><td>44개 Atari-100k 모델-데이터 쌍(reliability check 통과분)</td><td>event patch가 random patch를 이기는 비율</td><td>39/44쌍(sign test p=1.4e-7), 중앙값 +44%p 반환오차 감소</td><td><a href="https://arxiv.org/abs/2610.29435" target=_blank>Events, Not Pixels</a></td></tr>
+<tr><td>Wan2.2(DL3DV/RealEstate10K) + RoboCasa365 WAM</td><td>기하 일관성 / 조작 성공률 개선</td><td>geometric consistency 20%+ 상대 개선, WAM 성공률 +10%p</td><td><a href="https://arxiv.org/abs/2610.29915" target=_blank>CausalAlign</a></td></tr>
+<tr><td>LIBERO-10(frontier 모델 6종 × reasoning effort 3단계, 1800 episode)</td><td>최고 성공률</td><td>GPT-6 Astra 44%(최고), Gemini-4 Argon 43%(abstract 기준)</td><td><a href="https://arxiv.org/abs/2610.30051" target=_blank>From Reasoning to Action</a></td></tr>
+<tr><td>LIBERO state-probe(15개 공개 encoder 비교) / 정책 성공률</td><td>state-probe 오차 / 평균 성공률</td><td>ViT-B급 중 최저 오차(3.5배 큰 V-JEPA2-L과 동급), 평균 85.5%</td><td><a href="https://arxiv.org/abs/2610.30120" target=_blank>ALPS</a></td></tr>
+</tbody>
+</table>
+<p><small>오늘은 로봇 조작·world model 묶음(GeoMem-VLA, Events Not Pixels, CausalAlign, From Reasoning to Action, ALPS)이 abstract에 구체적 수치를 명시하고 있어 벤치마크 표에 반영했습니다. 모든 수치는 abstract 기준이며 본문 확인 전 1차 참고용입니다.</small></p>
+
+<h2>🔀 크로스오버 페어</h2>
+<p><strong>CausalAlign(비디오 생성 카메라 drift 진단) ↔ Events, Not Pixels(world model 반환 오차 진단)</strong> — 둘 다 "모델 내부에 실제 값을 끼워 넣거나(인과적 개입) 상상 대신 실제 전이로 바꿔치기해서, 어느 구간·어느 표현이 과제 성능에 진짜 영향을 주는지 찾아낸다"는 같은 진단 설계를 공유합니다. CausalAlign은 비디오 생성 latent의 어느 denoising 단계에서 카메라 정보가 사라지는지를, Events Not Pixels는 world model 롤아웃의 어느 transition이 반환값 오차를 만드는지를 찾습니다. 비디오 생성과 world model 평가라는 서로 다른 분야가 같은 날 같은 "원인 추적형 진단" 설계로 수렴한 사례입니다.</p>
+
+<hr>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for Vision-Language-Action Models — arXiv 2610.29866</h3>
+  <div class=tag>[방법전환] [인프라]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 클러스터1의 대표 논문이자, 랩이 다루는 VLA/로봇 조작 파이프라인에서 "3D 정보를 어떻게 효율적으로 유지할 것인가"라는 핵심 질문에 구체적인 설계와 강한 수치로 답합니다. 기존 VLA는 2D 영상에 의존하거나, 3D 정보를 쓰더라도 매 순간 독립적으로 추정한 뒤 다음 스텝에서는 버리는 경우가 많아 일관된 작업 표현을 유지하지 못했습니다.</p>
+  <p><strong>핵심:</strong> GeoMem-VLA는 고정된(frozen) 3D 기하 foundation model이 현재 장면의 point map과 미래 end-effector 궤적에 대해 알려주는 지식을, geometric flow-matching objective로 학습 가능한 GeoPlan 토큰에 흡수시킵니다. 이 토큰은 과거 관측 메모리와 함께 저장되며, 과거 정보가 검색되고 현재 관측과 적응적으로 융합되어 사건 프레임으로 축적됩니다. 추론 시에는 3D teacher나 명시적 장면 재구성 없이, 과거 표현을 꺼내 현재 표현과 합쳐 행동을 예측합니다. 벤치마크별 다운스트림 적응 후 LIBERO에서 평균 98.9% 성공률, RoboTwin의 clean/randomized 설정에서 각각 91.10%/91.24%, 5개의 실제 로봇 과제에서 평균 78.0% 성공률을 달성했습니다(abstract 기준).</p>
+  <p><strong>주의:</strong> "벤치마크별 다운스트림 적응"이 구체적으로 어떤 범위의 fine-tuning을 뜻하는지, 그리고 GeoPlan 토큰 메모리가 매우 긴 horizon 작업에서도 계속 유효한지는 본문 확인이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Events, Not Pixels: Where World Models Get the Return Wrong — arXiv 2610.29435</h3>
+  <div class=tag>[평가축] [해부분석]</div>
+  <p><strong>왜 A급인가:</strong> world model을 쓰는 모든 플래닝 파이프라인에 적용되는 평가 방법론 자체를 다시 묻는 논문입니다. World model은 지금까지 주로 "프레임을 얼마나 잘 그리는가"로 평가받았는데, 이 논문은 화질 좋은 롤아웃도 잘못된 반환값(return)을 줄 수 있다는 어긋남이 어디서 생기는지를 구조적으로 짚습니다.</p>
+  <p><strong>핵심:</strong> 저자들은 상상된 전이를 실제 전이로 하나씩 바꿔치기하고, 예산을 맞춘 무작위 대조군 대비 반환 오차 감소량을 측정하는 transition-level 진단법을 제안합니다. 보상이 발생하거나 에피소드가 끝나는 "사건(event)" 전이는 다른 전이와 비슷한 화질로 그려지는데도(중앙값 픽셀오차 비율 0.85), 그 전이만 복원하면 반환 오차의 중앙값 70%가 사라집니다. 반대로 MSE·SSIM·LPIPS 오차가 가장 큰 전이를 복원해도 무작위 선택보다 개선 효과가 작습니다. reliability check를 통과한 44개의 Atari-100k 모델-데이터 조합(공개된 3개 모델 계열 포함)에서, event patch가 random patch를 이기는 경우가 39/44(부호검정 p=1.4×10⁻⁷)였고 중앙값 개선폭은 +44%p였습니다. 남은 오차도 구조적이어서, 실제 사건과 그 외 지점의 오차를 분리하는 보완 patch와, 8-step 타이밍 허용오차를 두면 결정론적 모델이 놓친 사건 일부를 복구할 수 있습니다.</p>
+  <p><strong>주의:</strong> 실험이 Atari-100k라는 게임 환경에 한정돼 있어, 로보틱스나 연속 제어처럼 보상이 희소하지 않은 환경에서도 "사건 집중" 패턴이 똑같이 나타나는지는 확인이 더 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 저널 434편 중 OpenAlex enrich가 abstract를 백필한 건 37편(8.5%)뿐이라, 대다수 저널 레코드(특히 Meta-Optics·Phase Imaging·Virtual Staining 다수)는 제목과 저널명만으로 분류·판단했습니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology 30건 중 약 25건, Meta-Optics/Diffractive 19건 중 약 14건이 키워드 오탐 또는 계산 이미징 방법론과 무관한 응용(ESG, 통신, 사회과학 등)입니다.</p>
+  <p>[Claim risk] 오늘 로봇학습/world model/비디오 생성 클러스터는 모두 cs.CV·cs.AI·cs.RO 기반이라, 랩의 계산광학 ROI 핵심(FP·Lensless·Phase·Meta-Optics)과는 직접적 거리가 있고 "3D 표현을 다루는 방법론"이라는 간접적 연결로 묶었습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] From Reasoning to Action이 언급하는 "GPT-6 Astra", "Claude Opus 5.5", "Gemini-4 Argon" 등 모델명은 abstract에 보고된 그대로 인용한 것으로, 모델 사양·공개 여부는 본문/원 출처 확인이 필요합니다.</p>
+  <p>[Baseline risk] ALPS의 "3.5배 큰 V-JEPA2-L과 동급" 비교가 동일한 평가 프로토콜·fine-tuning 조건에서 이뤄졌는지는 abstract만으로는 불명확합니다.</p>
+  <p>[Metric risk] Events Not Pixels의 핵심 실험은 Atari-100k(이산 행동, 명확한 보상 사건)에 한정돼 있어, 보상이 희소하거나 연속적인 로보틱스 환경에 그대로 일반화되는지는 추가 검증이 필요합니다.</p>
+  <p>[Claim risk] CausalAlign의 "20% 이상 기하 일관성 개선", "+10%p WAM 성공률"은 abstract 기준 수치로, 비교 baseline의 구체적 구성과 평가 프로토콜은 본문 확인이 필요합니다.</p>
+  <p>[Dataset risk] 클러스터5(AOV-GS·ClunoGS)는 2편뿐이고 각자 자체 벤치마크 중심으로 보고해 독립적인 제3자 평가는 아직 없습니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li>Tomography/3D Imaging 임상 사례·비계산광학 응용 약 30편 [주로 JNL] — PET/CT 종양 영상, OCT 안과 질환, CBCT 치과 영상, 연안/빙하 음향 토모그래피 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
+    <li>Virtual Staining/Pathology 키워드 오탐 약 25편 — ESG 실적, 소셜미디어 신뢰도, 인도네시아 UMKM 기술창업, 레소토 보건 거버넌스 등 "virtual"·"staining" 단어만 겹친 무관 논문입니다.</li>
+    <li>Meta-Optics/Diffractive 통신/센싱 응용 약 14편 — THz 투과 제어, 안테나 배열, 광학 암호화·스텔스 등으로 이미징과 거리가 있습니다.</li>
+    <li>Reconstruction/Inverse Problems 약 12편 — 강화학습, FPGA 가속, LLM 에이전트 플래닝 등 방법론은 유사하나 랩 ROI 핵심과는 거리가 있습니다.</li>
+    <li>Deep Learning Methods 145편 중 이미징과 결이 다른 약 141편 — 텍스트/언어모델, 금융·시계열 예측, 분자/소재 설계 등 의료영상 인접 분야이거나 완전히 무관한 응용입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/optica.614886" target=_blank>Dose-efficient X-ray Bragg Ptychography imaging via a mixed sparse sampling strategy</a></strong> <span class=pill>JNL</span><br>
+  문제: X-ray Bragg ptychography가 시료 손상을 줄이려면 선량을 낮춰야 하지만 재구성 품질이 떨어짐 / 방법: 혼합 sparse sampling 전략 / 의미: ptychography 재구성 방법론 참고(비광학 응용) / 우선순위: Skim-only
+</div>
+
+<h3>Lensless/Coded Imaging (3편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.615582" target=_blank>Lensless complex-field imaging through thin scattering media using a two-variable decoupling framework</a></strong> <span class=pill>JNL</span><br>
+  문제: 얇은 산란매질을 통과한 빛에서 복소장(진폭+위상)을 lensless로 복원하기 어려움 / 방법: 두 변수(산란 특성과 물체 정보)를 분리하는 디커플링 프레임워크 / 의미: 도메인 Watch Lens 핵심 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1051/0004-6361/202661016" target=_blank>Modelling Fourier filtering wavefront sensors for power spectral density-based methods: The AOPERA tool</a></strong> <span class=pill>JNL</span><br>
+  문제: 거대 망원경 적응광학 시스템의 성능 예측에 Fourier filtering wavefront sensor를 PSD 기반 방법으로 정확히 모델링하기 어려움 / 방법: AOPERA 시뮬레이션 도구 / 의미: 코드화 조리개/파면 센싱 인접 신호 / 주의: 천문 관측 응용 중심 / 우선순위: Skim-only
+</div>
+<p><small>나머지 1편(Gabriel Graph GPU 가속)은 "coded" 키워드 오탐(그래프 클러스터링 논문)이라 bullet을 생략합니다.</small></p>
+
+<h3>Phase Imaging/Holography (9편 중 관련 6편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41598-026-73646-w" target=_blank>XPAR-Net: cross-paradigm alignment and reconstruction network for high-fidelity lens-free on-chip microscopy</a></strong> <span class=pill>JNL</span><br>
+  문제: 단일 인라인 홀로그램에서 위상 추론과 프린지 단위 정보 복원이라는 결합된 두 문제를 함께 풀어야 함 / 방법: 상호보완적 표현 패러다임 간 교차 정렬·융합 학습 / 의미: lens-free 현미경 복원 핵심 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110185" target=_blank>Physics-guided multi-scale deep learning network for incoherent digital holographic reconstruction</a></strong> <span class=pill>JNL</span><br>
+  문제: 비간섭 digital holography 재구성이 다양한 스케일의 구조를 동시에 복원하기 어려움 / 방법: 물리 기반 멀티스케일 네트워크 / 의미: 홀로그래피 재구성 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.proci.2026.106812" target=_blank>Size-resolved burn time of iron particles down to 3 μm via in-situ digital in-line micro-holography</a></strong> <span class=pill>JNL</span><br>
+  문제: 미세 철 입자의 연소 시간을 입자 크기별로 실시간 측정하기 어려움 / 방법: in-situ digital in-line micro-holography / 의미: 홀로그래피 응용(연소 진단) 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/acsomega.6c11324" target=_blank>Oblique Back-Illumination Microscopy Enables Phase-Gradient Optical Sensing of Malaria-Induced Intracellular Heterogeneity</a></strong> <span class=pill>JNL</span><br>
+  문제: 말라리아 진단이 적혈구의 ex vivo 분석에 의존해 기생충 발달 단계를 불완전하게 샘플링함 / 방법: oblique back-illumination microscopy 기반 phase-gradient 광학 센싱 / 의미: 정량 위상 이미징의 의료 응용 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116731" target=_blank>Front-end phase stabilization in heterodyne interferometry based on acousto-optic modulator radio-frequency phase feedback</a></strong> <span class=pill>JNL</span><br>
+  문제: heterodyne 간섭계의 위상 측정이 전단(front-end) 위상 드리프트에 취약함 / 방법: 음향광학변조기 RF 위상 피드백 안정화 / 의미: 간섭계 위상 안정화 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/adom.71966" target=_blank>Adjoint-Designed Mosaic Optical Fourier Surfaces for Short-Distance RGB Color Mixing From Spatially Separated Emitters</a></strong> <span class=pill>JNL</span><br>
+  문제: 공간적으로 분리된 RGB 발광원을 짧은 거리에서 색 혼합하기 어려움 / 방법: adjoint 최적화로 설계한 모자이크 optical Fourier surface / 의미: Fourier optics 기반 디스플레이 광학 설계 신호 / 우선순위: Read
+</div>
+<p><small>나머지 3편(중력 이론의 Cauchy Slice Holography, 동적 음향 홀로그래피, 각막 수차 임상 리뷰)은 "holography"·"phase" 키워드 오탐이거나 계산광학 ROI와 거리가 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Meta-Optics/Diffractive (19편 중 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29841" target=_blank>Broadband Mid-Wave Infrared Imaging Enabled by All-Silicon Hyperboloid Metalens</a></strong> <span class=pill>AI</span><br>
+  문제: 메타광학의 강한 색수차가 SWaP(크기·무게·전력) 제약 환경의 광대역 MWIR 이미징을 막음 / 방법: all-silicon hyperboloid 메타렌즈 설계 / 의미: 메타렌즈의 색수차 극복 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.apn.6.1.016004" target=_blank>Single-shot on-chip SWIR computational hyperspectral camera based on metasurface array</a></strong> <span class=pill>JNL</span><br>
+  문제: on-chip 컴퓨테이셔널 하이퍼스펙트럴 이미징이 소형화와 단일샷 획득을 동시에 만족하기 어려움 / 방법: 메타표면 어레이 기반 단일샷 SWIR 카메라 / 의미: 메타광학 기반 컴퓨테이셔널 이미징 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/optica.618235" target=_blank>Encoding-attention Network-Empowered High-accuracy Hyperspectro-polarimetric Encoding Metasurface Image Sensor in Complex Scenes</a></strong> <span class=pill>JNL</span><br>
+  문제: 복잡한 장면에서 하이퍼스펙트럴+편광 정보를 동시에 정확히 디코딩하기 어려움 / 방법: 메타표면 인코딩 + attention 기반 디코딩 네트워크 / 의미: 메타광학 이미지 센서 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.611898" target=_blank>Metalens-assisted hybrid optics system for compact Micro-LED projection</a></strong> <span class=pill>JNL</span><br>
+  문제: Micro-LED 프로젝션 시스템의 소형화가 기존 굴절 광학계로는 한계가 있음 / 방법: 메타렌즈-굴절 광학 하이브리드 시스템 / 의미: 메타렌즈 디스플레이 응용 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ao.615214" target=_blank>Design Principle: Broadband Achromatic Metalens</a></strong> <span class=pill>JNL</span><br>
+  문제: 광대역 무색수차 메탈렌즈 설계 원리가 체계적으로 정리되지 않음 / 방법: 설계 원리 정리 / 의미: 메타렌즈 색수차 설계 참고 자료 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<p><small>나머지 14편은 THz 센서, 안테나 배열, 광통신 암호화·스텔스, 플라즈모닉 재료 등 비이미징 응용이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Light-Field/Novel Sensors (1편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116734" target=_blank>High-performance lens array optimization for light field 3D display using display-path light beam constraints</a></strong> <span class=pill>JNL</span><br>
+  문제: 광필드 3D 디스플레이의 렌즈 어레이 설계가 디스플레이 경로의 광선 제약을 충분히 반영하지 못함 / 방법: display-path light beam 제약 기반 렌즈 어레이 최적화 / 의미: 광필드 디스플레이 하드웨어 신호, Watch-only / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+
+<h3>Tomography/3D Imaging (38편 중 관련 8편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29866" target=_blank>GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for Vision-Language-Action Models</a></strong> <span class=pill>CV</span><br>
+  문제: VLA가 3D 기하 정보를 매 순간 다시 추정한 뒤 버려 지속적인 작업 표현을 유지하지 못함 / 방법: GeoPlan 토큰에 3D 지식을 흡수시켜 시간 메모리로 유지 / 의미: 오늘 클러스터1·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29246" target=_blank>DepState-JEPA: Learning Depth-Grounded State Representation for Visual Perception and Manipulation</a></strong> <span class=pill>RO</span><br>
+  문제: 예측 표현이 장면 기하와 행동에 의한 상태 변화를 따로 다뤄 연결이 약함 / 방법: RGB-Depth 이중 스트림 joint-embedding predictive architecture / 의미: 오늘 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29374" target=_blank>AOV-GS: Active Open-Vocabulary Semantic Mapping with 3D Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: 기존 능동 매핑이 기하 커버리지만 최대화하고 의미 정보는 수동적 부산물로 취급함 / 방법: 의미 정보까지 함께 풍부해지도록 능동 탐색 정책 학습 / 의미: 오늘 클러스터5 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30013" target=_blank>ClunoGS: Compact Language 3D Gaussian Splatting via Unified Optimization</a></strong> <span class=pill>CV</span><br>
+  문제: 언어 특징을 더한 3DGS 압축이 RGB 품질만 보고 가지치기해 의미 정보를 잃음 / 방법: 의미 예측을 보존하는 통합 최적화 압축 / 의미: 오늘 클러스터5 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29106" target=_blank>DriftNeRF: Cross-Ray Density Drifting for Sparse-View Neural Radiance Fields</a></strong> <span class=pill>CV</span><br>
+  문제: sparse-view NeRF의 렌더링 손실이 ray 간 밀도 불일치를 벌점화하지 않아 같은 3D 지점에 모순된 밀도가 생김 / 방법: cross-ray 밀도 불일치를 명시적으로 측정·교정 / 의미: sparse-view 3D 재구성 신호, Watch-only / 우선순위: Read
+</div>
+<p><small>나머지 33편은 PET/CT 임상 사례, OCT 안과 질환, CBCT 치과 영상, 연안/빙하 음향 토모그래피 등이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology (30편 중 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29665" target=_blank>Learning to Reason Like a Cytopathologist: Clinically Grounded Multiscale Evidential Learning for Cervical Cytology</a></strong> <span class=pill>CV</span><br>
+  문제: 자궁경부 세포診단에서 ASC-US 같은 애매한 범주는 "증거가 충분한가" 자체가 불확실함 / 방법: multiscale evidential learning으로 label과 함께 증거 충분성을 판단 / 의미: 병리 진단 신뢰성 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29746" target=_blank>LEAF-Mamba: Feature Adaptation and Fusion for Whole Slide Image Analysis</a></strong> <span class=pill>CV</span><br>
+  문제: gigapixel WSI와 제한된 주석 때문에 slide-level 학습이 어려움 / 방법: Mamba 기반 긴 패치 시퀀스 효율 모델링 + feature adaptation/fusion / 의미: WSI 분석 효율화 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s10278-026-02433-w" target=_blank>TRACE-CLDN: An Integrated Computational Pathology Framework for Tumor-Restricted Quantification of CLDN18.2 Expression Burden from H&amp;E Whole-Slide Images in Intrahepatic Cholangiocarcinoma</a></strong> <span class=pill>JNL</span><br>
+  문제: CLDN18.2 발현 정량화가 종양 외 영역까지 포함해 바이오마커 신뢰도를 떨어뜨림 / 방법: 종양 영역에 한정한 통합 계산병리 프레임워크 / 의미: H&amp;E 기반 바이오마커 정량화 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29272" target=_blank>Certified Abstention for Provably-Unidentifiable Index-Phase Recovery in Image Registration</a></strong> <span class=pill>CV</span><br>
+  문제: 기준 위치가 교란된 샘플링 이미징에서, 위치 추정이 애초에 복원 불가능한 경우에도 추정기가 값을 "지어내는" 문제 / 방법: 복원 불가능성을 증명 가능하게 식별해 abstention(답하지 않음)을 인증 / 의미: 현미경/스캐닝 이미징 registration 신뢰성 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3724/pxlife.2026-0017" target=_blank>Multispectral dispersive-refocused imaging enables label-free virtual staining of 10-μm-thick tissue sections</a></strong> <span class=pill>JNL</span><br>
+  문제: 기존 virtual staining이 두꺼운 조직 절편에서 다중 스펙트럼 정보를 충분히 활용하지 못함 / 방법: 다중 스펙트럼 분산-재초점 이미징 / 의미: label-free virtual staining 하드웨어 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<p><small>나머지 25편은 ESG 실적, 소셜미디어 신뢰도, 인도네시아 UMKM 기술창업 등 "virtual"·"staining" 키워드 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (17편 중 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29102" target=_blank>Diffusion Posterior Sampling with Uncertain Forward Models</a></strong> <span class=pill>CV</span><br>
+  문제: forward model 파라미터(블러 커널, 검출기 응답 등)를 고정값으로 쓰면 그 불확실성이 복원 결과에 그대로 흡수됨 / 방법: uncertainty-aware likelihood(파라미터 불확실성을 포함한 Gaussian 근사) / 의미: 베이지안 이미지 복원 신뢰성 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29454" target=_blank>BlazeVGGT: 13x Faster VGGT at 2,000 Frames via Camera Token without Training</a></strong> <span class=pill>CV</span><br>
+  문제: feed-forward 다중뷰 geometry 모델의 전역 attention이 뷰 수에 제곱으로 비용이 늘어 긴 시퀀스에서 비효율적 / 방법: camera token의 topology-first 특성을 활용한 학습 없는 가속 / 의미: 3D 재구성 효율화 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1137/25m1760738" target=_blank>The Gaussian Latent Machine: Efficient Prior and Posterior Sampling for Inverse Problems</a></strong> <span class=pill>JNL</span><br>
+  문제: 베이지안 이미징에서 쓰이는 다양한 product-of-experts 사전/사후 분포를 통일된 틀로 효율적으로 샘플링하기 어려움 / 방법: Gaussian latent variable 모델로 일반화 / 의미: 역문제 샘플링 방법론 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110181" target=_blank>Physics-guided dual-branch deep unfolding with sparse proximal mapping for polarimetric image dehazing</a></strong> <span class=pill>JNL</span><br>
+  문제: 편광 영상 dehazing이 물리 모델과 학습 기반 복원을 함께 반영하기 어려움 / 방법: 물리 기반 dual-branch deep unfolding + sparse proximal mapping / 의미: 편광 이미징 복원 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.29362" target=_blank>Compositional neural networks for multimodal X-ray and neutron scattering inversion</a></strong> <span class=pill>LG</span><br>
+  문제: X-ray/중성자 산란은 위상 정보 없이 강도만 기록해 역문제가 본질적으로 모호함 / 방법: 상보적인 다중 모달 측정을 결합하는 조합적(compositional) 신경망 / 의미: 산란 역문제 신호, Watch-only / 우선순위: Read
+</div>
+<p><small>나머지 12편은 강화학습, FPGA 가속, LLM 에이전트 플래닝 등 이미징 ROI와 거리가 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods (145편 중 관련 4편, catch-all 과대표 방지로 2편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30120" target=_blank>ALPS: Visual State Encoders for World Models</a></strong> <span class=pill>CV</span><br>
+  문제: world model 시각 인코더가 물리적 상태·언어 정렬·픽셀 복원 중 한두 능력에만 특화됨 / 방법: 세 능력을 하나의 patch token 집합으로 통합한 pretrained encoder / 의미: 오늘 클러스터3 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.28829" target=_blank>HorizonComposer: Spatiotemporally Consistent Driving Video Editing with Enriched Traffic Semantics</a></strong> <span class=pill>CV</span><br>
+  문제: 지시 기반 비디오 편집이 자율주행 시뮬레이션에 쓰일 때 교통 규칙(ODD)을 깨뜨려 구조적 환각을 일으킴 / 방법: 세 단계에 걸친 교통 의미 보호 / 의미: 오늘 클러스터4 대표 / 우선순위: Read
+</div>
+<p><small>나머지 2편(Attn-Forcing, Looking Ahead)은 클러스터4에 이미 반영돼 중복 bullet을 생략합니다.</small></p>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://arxiv.org/abs/2610.29866" target=_blank>GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for VLA</a></li>
+  <li><a href="https://arxiv.org/abs/2610.29435" target=_blank>Events, Not Pixels: Where World Models Get the Return Wrong</a></li>
+  <li><a href="https://arxiv.org/abs/2610.29915" target=_blank>CausalAlign: Causal Alignment of Video Generation Models for Consistent Ego-Motion</a></li>
+  <li><a href="2026-10-21.html">2026-10-21 Daily Briefing</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-10-22 arXiv+저널 표준 daily · arXiv 621건(new+cross, 5개 카테고리) + 저널 434편(Crossref/OpenAlex, --days 1) · 전체 스캔 947건(dedup 후) · ROI 배정 263건 (27.8%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>
