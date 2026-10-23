@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-23",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "World action model/비디오 생성이 '한 번에 그리기' 대신 명시적 중간 구조(3D 상태·카메라 궤적·물리 위반 시점)를 두는 쪽으로",
+      "papers": [
+        {"title": "DeXplicit: Making Physical State Explicit in Dexterous Manipulation World Models", "arxiv_id": "https://arxiv.org/abs/2610.30781", "journal_or_source": "arXiv cs.CV"},
+        {"title": "WorldForge V2: Eliciting Camera-Trajectory Alignment in Video Diffusion Models", "arxiv_id": "https://arxiv.org/abs/2610.31640", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Self-Distilling Future Video Representations for World Action Models (FRED)", "arxiv_id": "https://arxiv.org/abs/2610.30320", "journal_or_source": "arXiv cs.RO"},
+        {"title": "PhysTrace: Interpretable Temporal Evaluation of Physical Consistency in Video Generative Models", "arxiv_id": "https://arxiv.org/abs/2610.31429", "journal_or_source": "arXiv cs.AI"},
+        {"title": "Making MLLM Latents Matter: Factor-Aware Predictive Learning for Cinematic Video Generation", "arxiv_id": "https://arxiv.org/abs/2610.30926", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "지금까지 world model과 비디오 생성모델은 입력을 받아 바로 미래 영상을 통째로 그려내는 하나의 블랙박스에 가까웠습니다. 다섯 편은 모두 그 사이에 사람이 들여다보고 검증할 수 있는 중간 단계를 끼워 넣습니다. DeXplicit은 로봇 손이 물체를 건드리기 전에 그 결과를 바로 영상으로 상상하지 않고 먼저 물체가 미터 단위 3D 공간에서 어떻게 움직이고 변형되는지를 명시적으로 예측한 뒤에야 영상으로 투영합니다. WorldForge V2는 카메라가 어느 경로로 움직여야 하는지를 비디오 생성 과정 중간에 광학 흐름으로 직접 짚어 교정하고, FRED는 action을 예측하는 모델이 참고하는 미래 장면 표현 자체의 품질을 self-distillation으로 끌어올립니다. PhysTrace는 생성된 영상에서 물리적으로 말이 안 되는 지점이 정확히 몇 번째 프레임인지를 짚어내고, FAPL은 MLLM이 만든 표현을 비디오 생성 모델이 실제로 활용하도록 강제하는 학습 신호를 추가합니다. 즉 그럴듯한 영상이라는 최종 결과물만 보고 모델을 믿는 대신, 그 영상이 나오기까지의 중간 상태를 하나씩 드러내고 검증하겠다는 공통된 설계 철학으로 다섯 연구팀이 같은 날 수렴했습니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 5개 연구팀이 로봇 조작·카메라 제어·action decoding·물리 진단·MLLM 활용이라는 다른 층위에서 같은 설계 철학에 도달, DeXplicit 이동오차 27~40% 감소·57배 가속, FRED 성공률 19.4%→50.0% 등 구체적 수치 동반",
+      "lab_action": "DeXplicit의 명시적 3D 동역학 예측 모듈과 FRED의 self-distillation 미래 표현 학습을 같은 랩 조작 데이터셋(HOT3D 또는 랩 보유 데모)에서 비교해, 어느 쪽이 더 적은 denoising step으로 같은 success rate를 내는지 ablation한다"
+    },
+    {
+      "cluster": "3D Gaussian Splatting이 '장면 복원'을 넘어 질의·자동연구·실시간 재조명까지 맡는 인프라로 확장",
+      "papers": [
+        {"title": "R4DGS: Referring Segmentation in 4D Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2610.30326", "journal_or_source": "arXiv cs.CV"},
+        {"title": "SplatLab: Autonomous Scientific Discovery for 3DGS Research", "arxiv_id": "https://arxiv.org/abs/2610.30468", "journal_or_source": "arXiv cs.CV"},
+        {"title": "RecallGS: Geometry-Grounded Recall for Online Semantic Gaussian Splatting", "arxiv_id": "https://arxiv.org/abs/2610.31293", "journal_or_source": "arXiv cs.CV"},
+        {"title": "GSHeadRelight: Fast Relightability for 3D Gaussian Head Synthesis", "arxiv_id": "https://arxiv.org/abs/2610.30619", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "어제까지 3DGS 연구의 중심 질문은 장면을 얼마나 잘 수집하고 압축하는가였습니다. 오늘 네 편은 그 장면을 복원한 다음에 무엇을 할 수 있는지를 각각 다른 방향으로 넓힙니다. R4DGS는 4D 장면에서 복잡하고 여러 단계를 거쳐야 하는 자연어 질의를 장면별 추가 학습 없이 바로 처리하고, SplatLab은 사람이 수 주일 걸려 하던 3DGS 논문 재현·확장 실험 자체를 자율 에이전트가 가설을 세우고 코드를 작성해 수행하게 해 기존 방법이 전혀 없던 천체사진 성운 렌더링에서 새 기록을 세웠습니다. RecallGS는 온라인 장면에 의미 정보를 붙일 때 추가 3D 네트워크 학습 대신 로봇이 이미 봤던 과거 관측 기록에서 필요한 기하-의미 정보를 그대로 꺼내 쓸 수 있다는 것을 보였고, GSHeadRelight는 인물의 3D 조명을 새로 계산하는 시간을 기존 대비 12배 줄였습니다. 네 편을 묶으면, 3DGS가 한 번 잘 찍어서 복원하는 기술에서 질의받고, 스스로 연구를 확장하고, 실시간으로 반응하는 인프라로 요구 조건이 올라가고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 4개 연구팀이 질의·자동연구·온라인 추론·재조명이라는 다른 능력을 확장했으나 모두 3DGS 복원 자체는 끝난 문제로 보는 같은 전제를 공유, SplatLab은 PSNR +0.18~+3.78dB라는 구체적 수치를 동반",
+      "lab_action": "RecallGS의 학습 없는 기하-의미 recall 메커니즘을 랩 보유 3DGS open-vocabulary mapping 파이프라인에 붙여, 추가 3D 네트워크 학습 없이 같은 수준의 semantic segmentation 성능(ScanNet 기준 mIoU)을 재현할 수 있는지 확인한다"
+    },
+    {
+      "cluster": "카메라 geometry foundation model이 임의 카메라·긴 시퀀스·동적 장면까지 버티는 범용 인프라로 수렴",
+      "papers": [
+        {"title": "MVLoMa: Multi-View Local Feature Matching with Any Geometry Foundation Model", "arxiv_id": "https://arxiv.org/abs/2610.31321", "journal_or_source": "arXiv cs.CV"},
+        {"title": "HiP3R: Hierarchical Pose Graphs for Long-Horizon 3D Reconstruction", "arxiv_id": "https://arxiv.org/abs/2610.31635", "journal_or_source": "arXiv cs.CV"},
+        {"title": "OmniRay: Camera-Agnostic Monocular 3D Reconstruction with Composite Ray Fields", "arxiv_id": "https://arxiv.org/abs/2610.31645", "journal_or_source": "arXiv cs.CV"},
+        {"title": "Stream4D: Streaming 4D Reconstruction with Training-free Motion Decoupling via Causal KV-Cache Attention", "arxiv_id": "https://arxiv.org/abs/2610.31320", "journal_or_source": "arXiv cs.CV"},
+        {"title": "F2G-Pose: Geometry-Aware Foundation Feature Lifting for Direct RGB-D Category-Level Object Pose Estimation", "arxiv_id": "https://arxiv.org/abs/2610.31623", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "feed-forward 방식으로 카메라 위치와 3D 기하를 바로 추정하는 geometry foundation model은 보통 짧은 영상 몇 장이라는 깨끗한 조건에서 평가됐습니다. 다섯 편은 모두 그 조건을 하나씩 깨며 범용성을 시험합니다. MVLoMa는 기준 영상 한 장을 주변 영상 여러 장과 한 번에 비교해야 하는 상황에서 영상쌍을 하나씩 따로 매칭하던 방식을 고쳐 2.2배 빠르게 만들었고, HiP3R은 수천 프레임짜리 긴 영상을 겹치는 조각으로 나눠 처리할 때 생기는 좌표계 불일치를 계층적 pose graph로 해결합니다. OmniRay는 어안·파노라마처럼 일반적인 핀홀 카메라 가정이 깨지는 영상에서도 카메라 정보 없이 단일 이미지로 3D를 복원하고, Stream4D는 동적 장면에서 causal attention의 KV 캐시에 담긴 모션 단서를 재활용해 추가 학습 없이 정적/동적 영역을 분리하며, F2G-Pose는 카테고리 수준 물체 자세 추정을 한 번의 feed-forward로 끝내 실시간성과 신뢰성을 동시에 잡습니다. 다섯 편 모두 짧고 깨끗한 영상이라는 안전한 가정을 하나씩 벗겨내며 실제 로봇·AR 환경에 가까운 조건으로 geometry foundation model을 밀어붙이고 있습니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 5개 연구팀이 다중뷰 매칭·장기 시퀀스·비표준 카메라·동적 장면·실시간 자세추정이라는 다른 실패 조건에서 같은 결론에 도달, MVLoMa·HiP3R·F2G-Pose는 정량 지표(AUC, FPS)까지 제시",
+      "lab_action": "HiP3R의 계층적 pose graph와 Stream4D의 KV-cache 기반 동적/정적 분리를 같은 긴 동적 장면 벤치마크에서 순서대로 적용해, 장기 시퀀스에서 카메라 궤적 drift와 ghosting이 각각 얼마나 줄어드는지 ablation한다"
+    },
+    {
+      "cluster": "로봇·자율주행 정책 학습이 비싼 실제 데이터 수집을 합성 데이터·self-play·오프라인 proxy로 우회",
+      "papers": [
+        {"title": "Learning Robot Behavior Priors from Non-Robotic Synthetic Data", "arxiv_id": "https://arxiv.org/abs/2610.31275", "journal_or_source": "arXiv cs.RO"},
+        {"title": "TerraTransfer++: Demonstration-Free End-to-End Planner", "arxiv_id": "https://arxiv.org/abs/2610.30319", "journal_or_source": "arXiv cs.RO"},
+        {"title": "Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success", "arxiv_id": "https://arxiv.org/abs/2610.31670", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "로봇·자율주행 정책 학습은 전통적으로 사람이 모은 시연이나 운전 로그가 많을수록 유리하다고 여겨졌습니다. 세 편은 모두 그 비싼 실제 데이터 수집을 다른 방식으로 우회합니다. Learning Robot Behavior Priors from Non-Robotic Synthetic Data는 로봇 몸체가 전혀 등장하지 않는 절차적 합성 데이터만으로 사전학습해도 실제 로봇 행동 예측에 통하는 구조가 생긴다는 것을 보였고, TerraTransfer++는 사람이 운전한 로그 없이 벡터화 시뮬레이터의 self-play 정책 하나로부터 두 개의 end-to-end 학생 모델을 distill해 사람 데모 없이도 공개된 모든 모방학습 기반 방법을 사진 수준 3DGS closed-loop 벤치마크에서 넘어섰습니다. Sensorimotor Alignment(S²)는 비싼 closed-loop 로봇 평가를 다 돌려보기 전에 모델의 센서 표현이 실제 물리적 운동 구조와 얼마나 가까운지를 학습 없이 재는 지표로 먼저 거를 수 있다는 것을 보였습니다. 세 편을 묶으면, 실제 데이터가 많을수록 좋다는 전제 자체를 의심하고 합성 데이터·self-play·오프라인 지표로 그 병목을 각각 다른 지점에서 우회하려는 흐름으로 읽힙니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 3개 연구팀이 사전학습·정책 distillation·평가 proxy라는 다른 단계에서 같은 방향을 보였으나, TerraTransfer++를 제외하면 아직 독립 3자 검증이나 광범위한 benchmark 확산은 이르다",
+      "lab_action": "Sensorimotor Alignment(S²) 지표를 랩이 보유한 VLM 백본 후보군에 먼저 적용해 순위를 매긴 뒤, 상위 후보에만 실제 VLA fine-tuning·closed-loop 평가를 수행해 평가 비용이 실제로 줄어드는지 측정한다"
+    },
+    {
+      "cluster": "평가 인프라 자체가 서로 무관한 도메인(에이전트-world model 짝, 기가픽셀 압축, 회화 시선추적)에서 동시에 생겨남",
+      "papers": [
+        {"title": "Dual Exam: Controlled Evaluation of Multimodal Agents and World Models", "arxiv_id": "https://arxiv.org/abs/2610.31066", "journal_or_source": "arXiv cs.AI"},
+        {"title": "GigaBench: Benchmarking Learnable Representations for Gigapixel Image Compression and Super-Resolution", "arxiv_id": "https://arxiv.org/abs/2610.31644", "journal_or_source": "arXiv cs.CV"},
+        {"title": "AVAtt: A Free-Viewing Eye-Tracking Dataset and Benchmark for Visual Attention on Paintings", "arxiv_id": "https://arxiv.org/abs/2610.30481", "journal_or_source": "arXiv cs.CV"}
+      ],
+      "why": "세 편은 서로 완전히 다른 분야(멀티모달 에이전트, 기가픽셀 이미지 압축, 회화 시선추적)를 다루지만 공통적으로 기존에는 각자 느슨하게 평가하던 능력을 처음으로 전용 benchmark로 만든다는 같은 움직임을 보입니다. Dual Exam은 멀티모달 에이전트의 행동 선택과 world model의 상태 변화 예측을 뒤섞어 평가하면 실패 원인을 알 수 없다는 문제를 짚어 두 능력을 고정된 조건 아래 따로 떼어 평가하는 benchmark를 만들었고, GigaBench는 기가픽셀 이미지에 신경망 기반 압축·초해상도 표현을 적용하는 연구가 늘고 있는데도 정작 기가픽셀 규모에서 공정하게 비교할 benchmark가 없었다는 공백을 메웁니다. AVAtt는 시선추적·saliency 연구가 거의 전부 일반 사진에만 맞춰져 있어 회화에는 적용하기 어려웠던 공백을 16개 미술사조·5세기에 걸친 데이터로 메웁니다. 세 편의 공통점은 어떤 연구 분야든 응용 능력이 일정 수준에 오르면 다음 단계는 새 방법론이 아니라 그 능력을 제대로 잴 수 있는 전용 자(benchmark)를 먼저 만드는 것이라는 패턴이 CV/AI 전반에서 동시다발적으로 나타나고 있다는 점입니다.",
+      "confidence": "Medium",
+      "confidence_note": "세 도메인이 완전히 다르고 직접적인 상호 인용·교류는 없어 같은 논문들의 직접적 공통 결론이라기보다 동시에 나타난 같은 유형의 연구 행위 패턴이라 독립적 추가 사례 확인이 필요",
+      "lab_action": "Dual Exam의 행동 선택 vs 상태 예측 분리 평가 설계를 랩 VLA+world model 파이프라인에 적용해, 랩이 현재 하나로 뭉쳐 보고하는 성공률을 정책 실패와 world model 예측 실패로 나눠 재보고한다"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "A. DeXplicit의 명시적 3D 동역학 예측과 FRED의 self-distillation 미래 표현 학습을 같은 조작 데이터셋에서 비교",
+      "claim": "어느 쪽이 더 적은 denoising step으로 같은 success rate를 내는지, 두 설계를 결합했을 때 추가 이득이 있는지 확인한다",
+      "supporting_papers": [
+        {"title": "DeXplicit: Making Physical State Explicit in Dexterous Manipulation World Models", "arxiv": "https://arxiv.org/abs/2610.30781"},
+        {"title": "Self-Distilling Future Video Representations for World Action Models (FRED)", "arxiv": "https://arxiv.org/abs/2610.30320"}
+      ]
+    },
+    {
+      "title": "B. RecallGS의 학습 없는 기하-의미 recall을 랩 3DGS open-vocabulary mapping 파이프라인에 적용",
+      "claim": "추가 3D 네트워크 학습 없이도 기존 방식과 같은 수준의 semantic segmentation 성능을 낼 수 있는지 확인한다",
+      "supporting_papers": [
+        {"title": "RecallGS: Geometry-Grounded Recall for Online Semantic Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2610.31293"}
+      ]
+    },
+    {
+      "title": "C. HiP3R의 계층적 pose graph와 Stream4D의 KV-cache 기반 동적/정적 분리를 같은 긴 동적 장면에 순서 적용",
+      "claim": "장기 시퀀스에서 카메라 궤적 drift와 ghosting이 각 방법 단독 대비 얼마나 더 줄어드는지 ablation한다",
+      "supporting_papers": [
+        {"title": "HiP3R: Hierarchical Pose Graphs for Long-Horizon 3D Reconstruction", "arxiv": "https://arxiv.org/abs/2610.31635"},
+        {"title": "Stream4D: Streaming 4D Reconstruction with Training-free Motion Decoupling via Causal KV-Cache Attention", "arxiv": "https://arxiv.org/abs/2610.31320"}
+      ]
+    },
+    {
+      "title": "D. Sensorimotor Alignment(S²) 지표로 랩 VLM 백본 후보군을 먼저 걸러 closed-loop 평가 비용을 줄이기",
+      "claim": "S² 점수 순위가 실제 VLA fine-tuning 후 closed-loop 성공률 순위와 얼마나 일치하는지 확인한다",
+      "supporting_papers": [
+        {"title": "Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success", "arxiv": "https://arxiv.org/abs/2610.31670"}
+      ]
+    },
+    {
+      "title": "E. Dual Exam의 행동 선택 vs 상태 예측 분리 평가 설계를 랩 VLA+world model 파이프라인에 적용",
+      "claim": "랩이 하나로 뭉쳐 보고하는 조작 성공률을 정책의 행동 선택 실패와 world model의 상태 예측 실패로 나눠 재보고한다",
+      "supporting_papers": [
+        {"title": "Dual Exam: Controlled Evaluation of Multimodal Agents and World Models", "arxiv": "https://arxiv.org/abs/2610.31066"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}

@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-23",
+  "note": "2026-10-23(금) 14:00 KST 정기 daily 실행. 추적 5개 카테고리 모두 /new listing이 'Friday, 23 October 2026'으로 post_date와 정확히 일치해 표준 daily mode로 진행했다(backfill/journal-only 아님). arXiv new+cross 579건(cs.LG 205·cs.CV 114·cs.AI 229·eess.IV 14·eess.SP 17, replacement 제외)과 저널(Crossref 426편+OpenAlex 보충 works 48편)을 합쳐 dedup 후 총 942건을 스캔했고, classify.py가 260건(27.6%)을 9개 ROI 버킷에 배정했다. 오늘은 world action model/비디오 생성모델이 '한 번에 그리기' 대신 명시적 중간 구조(3D 상태·카메라 궤적·미래 표현·물리 위반 시점)를 두는 쪽으로 수렴했다(DeXplicit, WorldForge V2, FRED, PhysTrace, FAPL). 3D Gaussian Splatting과 카메라 geometry foundation model은 '장면 복원' 자체를 넘어 질의·자동연구·실시간 재조명·임의 카메라·긴 시퀀스까지 버티는 인프라로 확장됐다(R4DGS, SplatLab, RecallGS, GSHeadRelight, MVLoMa, HiP3R, OmniRay, Stream4D, F2G-Pose). 로봇/자율주행 정책 학습은 비싼 실제 데이터 수집을 합성 데이터·self-play·오프라인 proxy로 우회하려는 시도가 이어졌고(Learning Robot Behavior Priors, TerraTransfer++, Sensorimotor Alignment), 평가 인프라 자체가 서로 무관한 도메인(에이전트-world model 짝, 기가픽셀 압축, 회화 시선추적)에서 동시에 생겨났다(Dual Exam, GigaBench, AVAtt). 계산광학 코어(Fourier Ptychography/Lensless/Phase/Meta-Optics/Light-Field)는 이틀 연속 신호가 희미해 도메인 Watch Lens에서 별도 처리했다.",
+  "source_listing_date": "2026-10-23",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 205,
+      "cs.CV": 114,
+      "cs.AI": 229,
+      "eess.IV": 14,
+      "eess.SP": 17
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 426,
+    "journal_window_days": 1
+  },
+  "totals": {
+    "total_scanned": 942,
+    "selected": 260
+  },
+  "classified": {
+    "total_scanned": 942,
+    "selected": 260,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 11,
+      "Meta-Optics/Diffractive": 11,
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 47,
+      "Virtual Staining/Pathology": 30,
+      "Reconstruction/Inverse Problems": 22,
+      "Deep Learning Methods": 135
+    }
+  }
+}

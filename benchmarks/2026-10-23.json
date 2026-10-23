@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-23",
+  "results": [
+    {
+      "benchmark": "HOT3D / OakInk2 / PhysTwin (vs PointWorld)",
+      "metric": "moved-point error reduction / IoU+ / speedup",
+      "value": "-27~-40%, HOT3D IoU+ 47%, 57x vs 14B bi-directional",
+      "value_str": "-27~-40% error, +47% IoU, 57x speedup",
+      "paper": "https://arxiv.org/abs/2610.30781",
+      "paper_title": "DeXplicit: Making Physical State Explicit in Dexterous Manipulation World Models"
+    },
+    {
+      "benchmark": "Mip-NeRF 360 / LLFF + astrophotographic nebula rendering",
+      "metric": "PSNR improvement over reproduced baseline",
+      "value": 3.78,
+      "value_str": "+0.18~+3.78 dB",
+      "paper": "https://arxiv.org/abs/2610.30468",
+      "paper_title": "SplatLab: Autonomous Scientific Discovery for 3DGS Research"
+    },
+    {
+      "benchmark": "NAVSIM navhard / navtest, HUGSim closed-loop",
+      "metric": "EPDMS / PDMS",
+      "value": 59.4,
+      "value_str": "navhard 59.4 EPDMS (vs DriveZero-Scale 57.1), navtest 95.5 PDMS",
+      "paper": "https://arxiv.org/abs/2610.30319",
+      "paper_title": "TerraTransfer++: Demonstration-Free End-to-End Planner"
+    },
+    {
+      "benchmark": "HyperSim/ScanNet++/Mip-NeRF 360/Tanks&Temples 25-view star graph",
+      "metric": "macro-average relative-pose AUC (3 thresholds) / speedup",
+      "value": 90.99,
+      "value_str": "58.65/85.41/90.99 AUC, 2.2x faster than sequential",
+      "paper": "https://arxiv.org/abs/2610.31321",
+      "paper_title": "MVLoMa: Multi-View Local Feature Matching with Any Geometry Foundation Model"
+    },
+    {
+      "benchmark": "Human-to-robot zero-shot skill transfer (real robot manipulation)",
+      "metric": "task success rate",
+      "value": 50.0,
+      "value_str": "50.0% (best competing WAM 19.4%)",
+      "paper": "https://arxiv.org/abs/2610.30320",
+      "paper_title": "Self-Distilling Future Video Representations for World Action Models (FRED)"
+    }
+  ]
+}

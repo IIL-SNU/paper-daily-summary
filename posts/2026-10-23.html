@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-10-23</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-10-23 (금요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-10-23 (금요일) · 표준 daily — 추적 5개 카테고리 모두 /new listing이 "Friday, 23 October 2026"으로 post_date와 정확히 일치해 backfill/journal-only 없이 정상 진행합니다.</div>
+  <div>📚 소스: arXiv(Date Source Contract 통과, post_date==listing_date) + 저널(Crossref/OpenAlex, --days 1)</div>
+  <div>🔢 arXiv: cs.LG 205 · cs.CV 114 · cs.AI 229 · eess.IV 14 · eess.SP 17 (new+cross, replacement 제외, 총 579건)</div>
+  <div>🔢 저널: Crossref 426편 + OpenAlex 보충 works 48편 수집 (--days 1)</div>
+  <div>🔢 전체 스캔: 942건(dedup 후) · ROI 배정 260건 (27.6%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 배치는 world action model과 비디오 생성모델이 "한 번에 그럴듯한 영상을 뽑아내기"를 포기하고, 그 사이에 <strong>검증 가능한 명시적 중간 구조</strong>(물체의 3D 상태, 카메라 궤적, 미래 표현의 품질, 물리 위반이 일어난 시점)를 끼워 넣는 쪽으로 같은 날 움직였다는 점이 가장 뚜렷합니다(DeXplicit, WorldForge V2, FRED, PhysTrace, FAPL). 동시에 3D Gaussian Splatting과 카메라 geometry foundation model은 "장면을 한 번 잘 복원하는가"를 넘어 <strong>언어로 질의하고, 자동으로 재현·확장 연구하고, 실시간으로 유지하는 인프라</strong>로 역할이 넓어졌습니다(R4DGS, SplatLab, RecallGS, GSHeadRelight, MVLoMa, HiP3R, OmniRay, Stream4D). 그 밑에서는 로봇·자율주행 정책 학습이 비싼 실제 데이터 수집을 합성 데이터·self-play·오프라인 proxy로 우회하려는 시도가 이어졌고(Learning Robot Behavior Priors, TerraTransfer++, Sensorimotor Alignment), 평가 인프라 자체가 서로 전혀 무관한 도메인(에이전트-world model 짝, 기가픽셀 이미지 압축, 회화 시선추적)에서 동시에 새로 생겨나며 이 분야가 "능력을 더 키우기 전에 측정 체계부터 갖추는" 단계에 들어섰다는 인상을 줍니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv 5개 카테고리는 모두 "Friday, 23 October 2026" listing으로 정상 갱신됐습니다(post_date==listing_date). new+cross 579건(cs.LG 205 · cs.CV 114 · cs.AI 229 · eess.IV 14 · eess.SP 17)과 저널 Crossref 426편+OpenAlex 보충 48편을 합쳐 dedup 후 총 942건을 스캔했고, classify.py가 260건(27.6%)을 9개 ROI 버킷에 배정했습니다.</p>
+<p>가장 강한 신호는 world action model과 비디오 생성모델의 설계 축에서 나왔습니다. DeXplicit은 로봇이 손을 움직이기 전에 그 결과를 영상으로 바로 그리지 않고, 먼저 물체 중심의 3D 움직임과 변형을 명시적으로 예측한 뒤 그 결과를 화면에 투영하는 방식으로 바꿔, 기존 포인트 궤적 기반 방법(PointWorld) 대비 이동 오차를 27~40% 줄이고 2단계짜리 causal generation만으로 14B 양방향 모델 대비 57배 빠른 속도를 냈습니다. WorldForge V2는 비디오 diffusion 모델의 카메라 경로를 학습 없는 guidance로 정밀하게 맞추고, FRED(Self-Distilling Future Video Representations)는 action decoder가 보는 "미래 표현"의 품질 자체를 self-distillation으로 끌어올려 사람 시연 영상만 본 로봇 과제에서 성공률을 19.4%에서 50.0%로 끌어올렸습니다. PhysTrace는 MLLM이 만든 기대와 실제 관찰 영상을 맞춰보며 물리 법칙이 깨지는 정확한 시점을 짚어내는 학습 없는 진단틀을 제안했고, FAPL(Making MLLM Latents Matter)은 MLLM의 표현이 비디오 생성에 실제로 쓰이도록 만드는 별도 학습 신호를 설계했습니다. 다섯 편 모두 "그림을 더 잘 그리는 모델"이 아니라 "그 사이의 상태·궤적·표현·위반 시점을 명시적으로 다루는 모델"을 지향한다는 공통점이 있습니다.</p>
+<p>3D 재구성 쪽에서는 두 묶음이 뚜렷했습니다. 하나는 3D Gaussian Splatting이 "장면 복원" 자체를 넘어선 인프라로 확장되는 흐름으로, R4DGS는 시간에 따라 바뀌는 4D 장면에서 복잡한 자연어 질의를 받아내고, SplatLab은 3DGS 논문을 재현하고 확장하는 연구 자체를 자율 에이전트가 수행해 공개된 적 없는 천체사진 성운 렌더링에서 기존 방법을 3.78dB 앞섰으며, RecallGS는 추가 학습 없이 과거 관측 이력에서 기하-의미 정보를 그대로 꺼내 쓰고, GSHeadRelight는 인물 조명을 기존 대비 12배 빠르게 재현합니다. 다른 하나는 카메라에 구애받지 않는 geometry foundation model 묶음으로, MVLoMa는 한 장의 기준 영상을 여러 주변 영상과 한 번에 매칭해 기존보다 2.2배 빠르게 상대 포즈를 추정하고, HiP3R은 수천 프레임짜리 긴 영상을 겹치는 조각으로 나눠 처리할 때 생기는 좌표계 불일치를 계층적 pose graph로 바로잡으며, OmniRay는 어안·파노라마 같은 비표준 카메라에서도 단일 이미지로 3D를 복원하고, Stream4D는 causal attention의 KV 캐시에 이미 들어 있는 모션 단서를 재활용해 동적 장면에서도 안정적으로 스트리밍 재구성을 이어갑니다. 즉 3D 복원이 "한 번 잘 만드는 것"에서 "질의·자동화·임의 카메라·긴 시퀀스까지 버티는 인프라"로 조건이 까다로워지고 있습니다.</p>
+<p>그 아래 계층에서는 로봇·자율주행 학습이 비싼 실제 데이터를 우회하려는 시도가 두드러졌습니다. TerraTransfer++는 사람이 운전한 로그 없이 벡터화 시뮬레이터에서 self-play로 얻은 정책을 distill해, NAVSIM navhard에서 59.4 EPDMS로 기존 최고 공개 기록(DriveZero-Scale 57.1)을 넘었습니다. Learning Robot Behavior Priors from Non-Robotic Synthetic Data는 로봇 몸체가 전혀 없는 절차적 합성 데이터만으로도 로봇 행동 예측에 쓸모 있는 사전 지식이 생긴다는 것을 보였고, Sensorimotor Alignment(S²)는 비싼 closed-loop 로봇 평가 전에 센서 표현이 실제 물리적 운동 구조와 얼마나 잘 맞는지를 학습 없이 재는 오프라인 지표를 제안했습니다. 한편 평가 인프라 자체도 서로 무관한 도메인에서 동시에 생겨났는데, Dual Exam은 멀티모달 에이전트와 world model을 분리해 짝으로 평가하는 벤치마크를, GigaBench는 기가픽셀 이미지 압축·초해상도용 학습 가능 표현(Learnable Representation) 벤치마크를, AVAtt는 회화에 대한 시선추적 데이터셋을 각각 내놓았습니다. 계산광학 코어(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics·Light-Field)는 오늘도 신호가 희미해 도메인 Watch Lens에서 별도로 다룹니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>어제(10/22)의 결론은 로봇 조작·world model·비디오 생성 세 영역 모두에서 "얼마나 그럴듯해 보이는가" 대신 "모델이 모르는 상황을 스스로 아는가"와 "사건·물리·인과를 제대로 반영하는가"를 묻는 날이었습니다. 오늘은 그 질문이 한 단계 더 구체화됐습니다 — 어제가 "world model이 사건과 인과를 제대로 담았는가"라는 평가 축의 전환이었다면, 오늘은 DeXplicit·WorldForge V2·FRED·PhysTrace처럼 아예 모델 내부에 명시적인 3D 상태·카메라 궤적·물리 위반 시점을 끼워 넣어 그 질문에 설계로 답하는 논문들이 나왔습니다. 어제 cluster5(AOV-GS·ClunoGS, 언어 질의형 3D Gaussian 지도의 수집·압축 효율화)의 3DGS 흐름은 오늘 R4DGS·SplatLab·RecallGS·GSHeadRelight로 이어졌지만, 대표 논문은 완전히 바뀌었고 질문도 "효율적으로 모으고 저장하는가"에서 "그 지도에 질의하고, 자동으로 재현·확장 연구하고, 실시간 조명까지 바꿀 수 있는가"로 넓어졌습니다. 지난주(2026-10-19 weekly 회고 기준)는 피드포워드 3D/4D 인식이 "무엇을 더 잘 복원하나"에서 "그 인식이 어디까지 일반화되고 스스로 검증되나"로 진화하는 한 주였는데, 이번 주 들어서는(10/19~10/22) 3DGS 효율화·병리 영상 유전자 발현 예측·로봇 조작 신뢰성이 번갈아 나왔다면, 오늘(10/23)은 geometry foundation model(MVLoMa·HiP3R·OmniRay·Stream4D)이 임의 카메라·긴 시퀀스·동적 장면까지 버티는 범용 인프라로 수렴하는 새로운 축이 뚜렷해졌습니다. Meta-Optics/Diffractive는 어제 19편(이미징 신호 약 5편)에서 오늘 11편(이미징 신호 약 2~3편)으로 줄었고, Fourier Ptychography/Microscopy는 어제 1편(X-ray Bragg ptychography, 비광학 응용)에 이어 오늘도 1편(전자 ptychography 신경망 복원, 역시 비가시광 응용)으로 핵심 공백이 계속되고 있습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>World action model/비디오 생성이 '한 번에 그리기' 대신 명시적 중간 구조(3D 상태·카메라 궤적·물리 위반 시점)를 두는 쪽으로</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.30781" target=_blank>DeXplicit: Making Physical State Explicit in Dexterous Manipulation World Models</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.31640" target=_blank>WorldForge V2: Eliciting Camera-Trajectory Alignment in Video Diffusion Models</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.30320" target=_blank>Self-Distilling Future Video Representations for World Action Models (FRED)</a> <span class=pill>RO</span><br>
+    <a href="https://arxiv.org/abs/2610.31429" target=_blank>PhysTrace: Interpretable Temporal Evaluation of Physical Consistency in Video Generative Models</a> <span class=pill>AI</span><br>
+    <a href="https://arxiv.org/abs/2610.30926" target=_blank>Making MLLM Latents Matter: Factor-Aware Predictive Learning for Cinematic Video Generation</a> <span class=pill>CV</span>
+  </td>
+  <td>지금까지 world model과 비디오 생성모델은 입력을 받아 바로 미래 영상을 통째로 그려내는 하나의 블랙박스에 가까웠습니다. 다섯 편은 모두 그 사이에 사람이 들여다보고 검증할 수 있는 중간 단계를 끼워 넣습니다. DeXplicit은 로봇 손이 물체를 건드리기 전에, 그 결과를 바로 영상으로 상상하지 않고 먼저 "물체가 미터 단위 3D 공간에서 어떻게 움직이고 변형되는지"를 명시적으로 예측한 뒤에야 그 결과를 영상으로 투영합니다. WorldForge V2는 카메라가 어느 경로로 움직여야 하는지를 비디오 생성 과정 중간에 광학 흐름으로 직접 짚어 교정합니다. FRED는 action을 예측하는 모델이 참고하는 "미래 장면 표현" 자체의 품질을 별도로 끌어올리는 self-distillation 단계를 추가합니다. PhysTrace는 생성된 영상에서 물리적으로 말이 안 되는 지점이 정확히 몇 번째 프레임인지를 짚어내고, FAPL은 MLLM이 만든 표현을 비디오 생성 모델이 실제로 활용하도록 강제하는 학습 신호를 추가합니다. 즉 "그럴듯한 영상"이라는 최종 결과물만 보고 모델을 믿는 대신, 그 영상이 나오기까지의 중간 상태를 하나씩 드러내고 검증하겠다는 공통된 설계 철학으로 다섯 개 연구팀이 같은 날 수렴한 셈입니다.</td>
+  <td>High<br><small>서로 다른 5개 연구팀이 로봇 조작·카메라 제어·action decoding·물리 진단·MLLM 활용이라는 다른 층위에서 같은 설계 철학(암묵적 생성 대신 명시적 중간 구조)에 도달, DeXplicit은 이동오차 27~40% 감소·57배 가속, FRED는 성공률 19.4%→50.0% 같은 구체적 수치 동반</small></td>
+  <td>DeXplicit의 명시적 3D 동역학 예측 모듈과 FRED의 self-distillation 미래 표현 학습을 같은 랩 조작 데이터셋(HOT3D 또는 랩 보유 데모)에서 비교해, 어느 쪽이 더 적은 denoising step으로 같은 success rate를 내는지 ablation한다</td>
+</tr>
+<tr>
+  <td><strong>3D Gaussian Splatting이 '장면 복원'을 넘어 질의·자동연구·실시간 재조명까지 맡는 인프라로 확장</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.30326" target=_blank>R4DGS: Referring Segmentation in 4D Gaussian Splatting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.30468" target=_blank>SplatLab: Autonomous Scientific Discovery for 3DGS Research</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.31293" target=_blank>RecallGS: Geometry-Grounded Recall for Online Semantic Gaussian Splatting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.30619" target=_blank>GSHeadRelight: Fast Relightability for 3D Gaussian Head Synthesis</a> <span class=pill>CV</span>
+  </td>
+  <td>어제까지 3D Gaussian Splatting(3DGS) 연구의 중심 질문은 "장면을 얼마나 잘 수집하고 압축하는가"였습니다. 오늘 네 편은 그 장면을 복원한 다음에 무엇을 할 수 있는지를 각각 다른 방향으로 넓힙니다. R4DGS는 시간에 따라 바뀌는 4D 장면에서 "빨간 공을 든 사람이 지나간 뒤 멈춘 물체"처럼 복잡하고 여러 단계를 거쳐야 하는 자연어 질의를 장면별 추가 학습 없이 바로 처리합니다. SplatLab은 사람이 수 주일 걸려 하던 3DGS 논문 재현과 확장 실험 자체를 자율 에이전트가 가설을 세우고 코드를 작성해 수행하게 해, 기존 방법이 전혀 없던 천체사진 성운 렌더링에서 새 기록을 세웠습니다. RecallGS는 온라인으로 들어오는 장면에 의미 정보를 붙일 때, 추가로 3D 네트워크를 학습시키는 대신 로봇이 이미 봤던 과거 관측 기록에서 필요한 기하-의미 정보를 그대로 꺼내 쓸 수 있다는 것을 보였습니다. GSHeadRelight는 인물의 3D 조명을 새로 계산하는 데 드는 시간을 기존 대비 12배 줄여 실시간에 가깝게 만들었습니다. 네 편을 묶으면, 3DGS가 "한 번 잘 찍어서 복원하는 기술"에서 "질의받고, 스스로 연구를 확장하고, 실시간으로 반응하는 인프라"로 요구 조건이 올라가고 있다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 4개 연구팀이 질의·자동연구·온라인 추론·재조명이라는 다른 능력을 확장했으나, 모두 "3DGS 복원 자체는 끝난 문제로 보고 그 다음을 묻는다"는 같은 전제를 공유, SplatLab은 PSNR +0.18~+3.78dB라는 구체적 수치를 동반</small></td>
+  <td>RecallGS의 학습 없는 기하-의미 recall 메커니즘을 랩 보유 3DGS open-vocabulary mapping 파이프라인에 붙여, 추가 3D 네트워크 학습 없이 같은 수준의 semantic segmentation 성능(ScanNet 기준 mIoU)을 재현할 수 있는지 확인한다</td>
+</tr>
+<tr>
+  <td><strong>카메라 geometry foundation model이 임의 카메라·긴 시퀀스·동적 장면까지 버티는 범용 인프라로 수렴</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.31321" target=_blank>MVLoMa: Multi-View Local Feature Matching with Any Geometry Foundation Model</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.31635" target=_blank>HiP3R: Hierarchical Pose Graphs for Long-Horizon 3D Reconstruction</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.31645" target=_blank>OmniRay: Camera-Agnostic Monocular 3D Reconstruction with Composite Ray Fields</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.31320" target=_blank>Stream4D: Streaming 4D Reconstruction with Training-free Motion Decoupling via Causal KV-Cache Attention</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.31623" target=_blank>F2G-Pose: Geometry-Aware Foundation Feature Lifting for Direct RGB-D Category-Level Object Pose Estimation</a> <span class=pill>CV</span>
+  </td>
+  <td>feed-forward 방식으로 카메라 위치와 3D 기하를 바로 추정하는 geometry foundation model은 보통 "짧은 영상 몇 장"이라는 깨끗한 조건에서 평가됐습니다. 다섯 편은 모두 그 조건을 하나씩 깨며 범용성을 시험합니다. MVLoMa는 기준 영상 한 장을 주변 영상 여러 장과 한 번에 비교해야 하는 상황(구조 추정·시각적 위치 인식)에서, 기존처럼 영상 쌍을 하나씩 따로 매칭하면 계산을 낭비하고 다른 시점의 정보를 활용하지 못한다는 점을 고쳐 2.2배 빠르게 만들었습니다. HiP3R은 수천 프레임짜리 긴 영상을 겹치는 조각으로 나눠 처리할 때 조각마다 좌표계가 어긋나는 문제를, 조각 단위와 프레임 단위 pose graph를 계층적으로 조합해 해결합니다. OmniRay는 어안·파노라마처럼 일반적인 핀홀 카메라 가정이 깨지는 영상에서도 카메라 정보 없이 단일 이미지로 3D를 복원합니다. Stream4D는 사람이나 물체가 움직이는 동적 장면에서 causal attention의 KV 캐시에 이미 담겨 있는 모션 단서를 재활용해 추가 학습 없이 정적/동적 영역을 분리합니다. F2G-Pose는 카테고리 수준 물체 자세 추정을 중간 단계 없이 한 번의 feed-forward로 끝내 실시간성과 신뢰성을 동시에 잡습니다. 다섯 편 모두 "짧고 깨끗한 영상"이라는 안전한 가정을 하나씩 벗겨내며 실제 로봇·AR 환경에 가까운 조건으로 geometry foundation model을 밀어붙이고 있습니다.</td>
+  <td>High<br><small>서로 다른 5개 연구팀이 다중뷰 매칭·장기 시퀀스·비표준 카메라·동적 장면·실시간 자세추정이라는 다른 실패 조건에서 같은 결론(짧고 깨끗한 영상 가정을 벗어나야 함)에 도달, MVLoMa·HiP3R·F2G-Pose는 정량 지표(AUC, FPS)까지 제시</small></td>
+  <td>HiP3R의 계층적 pose graph와 Stream4D의 KV-cache 기반 동적/정적 분리를 같은 긴 동적 장면 벤치마크에서 순서대로 적용해, 장기 시퀀스에서 카메라 궤적 drift와 ghosting이 각각 얼마나 줄어드는지 ablation한다</td>
+</tr>
+<tr>
+  <td><strong>로봇·자율주행 정책 학습이 비싼 실제 데이터 수집을 합성 데이터·self-play·오프라인 proxy로 우회</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.31275" target=_blank>Learning Robot Behavior Priors from Non-Robotic Synthetic Data</a> <span class=pill>RO</span><br>
+    <a href="https://arxiv.org/abs/2610.30319" target=_blank>TerraTransfer++: Demonstration-Free End-to-End Planner</a> <span class="pill a">RO · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.31670" target=_blank>Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success</a> <span class=pill>CV</span>
+  </td>
+  <td>로봇·자율주행 정책 학습은 전통적으로 사람이 모은 시연이나 운전 로그가 많을수록 유리하다고 여겨졌습니다. 세 편은 모두 그 비싼 실제 데이터 수집을 다른 방식으로 우회합니다. Learning Robot Behavior Priors from Non-Robotic Synthetic Data는 로봇 몸체가 전혀 등장하지 않는, 수학적으로 제어 문제를 추상화한 절차적 합성 데이터만으로 사전학습해도 실제 로봇 행동 예측에 통하는 구조가 생긴다는 것을 보였습니다. TerraTransfer++는 사람이 운전한 로그 없이, 벡터화 시뮬레이터에서 초당 수백만 스텝으로 빠르게 돌아가는 self-play 정책 하나로부터 두 개의 end-to-end 학생 모델(policy·planner)을 distill해, 사람 데모 없이도 공개된 모든 모방학습 기반 방법을 사진 수준 3DGS closed-loop 벤치마크(HUGSim)에서 넘어섰습니다. Sensorimotor Alignment(S²)는 비싼 closed-loop 로봇 평가를 다 돌려보기 전에, 모델의 센서 표현이 실제 물리적 운동 구조와 얼마나 가까운지를 학습 없이 재는 지표로 먼저 거를 수 있다는 것을 보였습니다. 세 편을 묶으면, "실제 데이터가 많을수록 좋다"는 전제 자체를 의심하고 합성 데이터·self-play·오프라인 지표로 그 병목을 각각 다른 지점에서 우회하려는 흐름으로 읽힙니다.</td>
+  <td>Medium<br><small>서로 다른 3개 연구팀이 사전학습·정책 distillation·평가 proxy라는 다른 단계에서 같은 방향(실제 데이터 의존도 완화)을 보였으나, TerraTransfer++를 제외하면 아직 독립 3자 검증이나 광범위한 benchmark 확산은 이르다</small></td>
+  <td>Sensorimotor Alignment(S²) 지표를 랩이 보유한 VLM 백본 후보군에 먼저 적용해 순위를 매긴 뒤, 상위 후보에만 실제 VLA fine-tuning·closed-loop 평가를 수행해 평가 비용이 실제로 줄어드는지 측정한다</td>
+</tr>
+<tr>
+  <td><strong>평가 인프라 자체가 서로 무관한 도메인(에이전트-world model 짝, 기가픽셀 압축, 회화 시선추적)에서 동시에 생겨남</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.31066" target=_blank>Dual Exam: Controlled Evaluation of Multimodal Agents and World Models</a> <span class=pill>AI</span><br>
+    <a href="https://arxiv.org/abs/2610.31644" target=_blank>GigaBench: Benchmarking Learnable Representations for Gigapixel Image Compression and Super-Resolution</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.30481" target=_blank>AVAtt: A Free-Viewing Eye-Tracking Dataset and Benchmark for Visual Attention on Paintings</a> <span class=pill>CV</span>
+  </td>
+  <td>세 편은 서로 완전히 다른 분야(멀티모달 에이전트, 기가픽셀 이미지 압축, 회화 시선추적)를 다루지만, 공통적으로 "기존에는 각자 느슨하게 평가하던 능력을 처음으로 전용 benchmark로 만든다"는 같은 움직임을 보입니다. Dual Exam은 멀티모달 에이전트의 "행동 선택"과 world model의 "상태 변화 예측"을 뒤섞어 평가하면 무엇이 실패 원인인지 알 수 없다는 문제를 짚어, 두 능력을 고정된 조건 아래 따로 떼어 평가하는 benchmark를 만들었습니다. GigaBench는 기가픽셀 이미지에 신경망 기반 압축·초해상도 표현(Learnable Representation)을 적용하는 연구가 늘고 있는데도 정작 기가픽셀 규모에서 공정하게 비교할 benchmark가 없었다는 공백을 메웁니다. AVAtt는 지금까지 시선추적·saliency 연구가 거의 전부 일반 사진에만 맞춰져 있어, 화가가 의도적으로 시선을 유도하는 회화에는 적용하기 어려웠던 공백을 16개 미술사조·5세기에 걸친 데이터로 메웁니다. 세 편이 보여주는 공통점은, 어떤 연구 분야든 응용 능력이 일정 수준에 오르면 다음 단계는 새 방법론이 아니라 "그 능력을 제대로 잴 수 있는 전용 자(benchmark)를 먼저 만드는 것"이라는 패턴이 CV/AI 전반에서 동시다발적으로 나타나고 있다는 점입니다.</td>
+  <td>Medium<br><small>세 도메인이 완전히 다르고 직접적인 상호 인용·교류는 없어 "같은 논문들의 직접적 공통 결론"이라기보다 "동시에 나타난 같은 유형의 연구 행위" 패턴이라 독립적 추가 사례 확인이 필요</small></td>
+  <td>Dual Exam의 "행동 선택 vs 상태 예측 분리 평가" 설계를 랩 VLA+world model 파이프라인에 적용해, 랩이 현재 하나로 뭉쳐 보고하는 성공률을 정책 실패와 world model 예측 실패로 나눠 재보고한다</td>
+</tr>
+</tbody>
+</table>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 1편, 실제 신호 1편(비가시광 응용)</strong> — <a href="https://doi.org/10.1021/acs.nanolett.6c03513" target=_blank>PtyRANNOSAUR: Ptychography with Robust Artificial Neural Networks Optimized for Subangstrom Accuracy and Ultrafast Reconstruction</a> [JNL]은 원자 분해능 전자 ptychography 데이터를 convolutional autoencoder로 기존 반복 알고리즘 대비 100~1000배 빠르게 복원하는 신경망 방법입니다. 전자현미경 응용이라 랩이 주로 보는 가시광 Fourier ptychography와는 영역이 다르지만, "신경망으로 반복 재구성을 대체해 속도를 세 자릿수로 줄인다"는 설계는 그대로 가져올 만합니다. 랩 핵심(가시광/현미경 FP) 신호는 오늘도 공백입니다.</li>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 1편, 광학 신호는 0편</strong> — <a href="https://arxiv.org/abs/2610.31490" target=_blank>Self-Supervised Multibeam Sonar Restoration via Coherent Forward Modeling</a> [IV]은 "point spread function" 키워드로 분류됐지만 실제로는 음향 소나 영상 복원 논문입니다. 다만 "깨끗한 정답 없이 coherent forward model만으로 self-supervised 학습"하는 설계는 lensless 복원의 self-supervised deconvolution 연구와 방법론적으로 가깝습니다.</li>
+    <li><strong>Phase Imaging/Holography — 오늘 배정 11편 중 실제 신호 약 8편</strong> — <a href="https://doi.org/10.1117/1.oe.65.10.104104" target=_blank>Improved fractional Fourier transform for Michelson interferometer wavelength measurement</a> [JNL](간섭 프린지 자동 판독), <a href="https://doi.org/10.1364/oe.619400" target=_blank>Non-iterative nonlinear cross-correlation imaging for Fresnel incoherent correlation holography</a> [JNL], <a href="https://doi.org/10.1063/5.0349239" target=_blank>Assessing metal–semiconductor contact properties using in situ-biasing off-axis electron holography</a> [JNL](전자 홀로그래피), <a href="https://doi.org/10.1016/j.proci.2026.106812" target=_blank>Size-resolved burn time of iron particles... via in-situ digital in-line micro-holography</a> [JNL], <a href="https://doi.org/10.1016/j.optlaseng.2026.110188" target=_blank>Large-dynamic-range Shack-Hartmann wavefront sensing based on fiducial-lenslet-anchored clustering</a> [JNL], <a href="https://doi.org/10.1016/j.optcom.2026.133892" target=_blank>Fabry–Pérot phase effects of tapered amplifiers in Raman laser systems for atom interferometry</a> [JNL], <a href="https://doi.org/10.1109/access.2026.3745957" target=_blank>Edge Feature and Particle Focusing Network for Holographic Particle Detection Under Diffraction Blur and Interference</a> [JNL]이 위상 복원·홀로그래피·간섭계 핵심 신호입니다. 나머지 3편(CT 조영 임상, 중력 이론의 "celestial holography", 스페인어 교육 AI 논문)은 키워드만 겹치거나 응용이 완전히 멀어 제외했습니다.</li>
+    <li><strong>Meta-Optics/Diffractive — 오늘 배정 11편 중 이미징 신호 약 2~3편</strong> — <a href="https://doi.org/10.1364/oe.615422" target=_blank>Aperiodic metalenses with identical nanocylinders: positional phase control and passive chromatic aberration suppression</a> [JNL]과 <a href="https://doi.org/10.1016/j.optcom.2026.133900" target=_blank>High-uniformity flat-top beam shaping using dielectric metasurfaces enabled by a multi-stage adaptive weighted Gerchberg-Saxton algorithm</a> [JNL]이 메타렌즈/메타표면의 이미징·빔성형 핵심 신호이고, <a href="https://doi.org/10.1364/ome.605720" target=_blank>Meta-processing units: metasurface-based operators for optical information processing</a> [JNL]은 광학 연산 쪽이라 간접 신호입니다. 나머지 8편은 THz 센서·안테나·통신·플라즈모닉 재료 등 비이미징 응용입니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 오늘 배정 2편, 모두 실제 신호</strong> — <a href="https://doi.org/10.1364/oe.613439" target=_blank>Low-latency axial depth estimation of 2.82 ms using light field microscopy</a> [JNL]과 <a href="https://doi.org/10.1016/j.measurement.2026.123658" target=_blank>Full-depth and complete contour measurement of film-cooling holes using light-field focus-stack fusion and multi-angle fusion</a> [JNL]이 각각 생체 영상용 저지연 depth 추정과 산업 검사용 정밀 형상 측정을 다룹니다. 규칙상 2편 이상이면 독립 클러스터 후보로 검토해야 하지만, 생체 저지연 측정과 산업 부품 검사라는 서로 다른 응용이라 아직 단일 클러스터로 묶기엔 이르다고 판단해 Watch Lens에만 남겨 둡니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: world action model/비디오 생성 명시적 구조화 5편(DeXplicit, WorldForge V2, FRED, PhysTrace, FAPL), 3DGS 인프라 확장 4편(R4DGS, SplatLab, RecallGS, GSHeadRelight), geometry foundation model 범용화 5편(MVLoMa, HiP3R, OmniRay, Stream4D, F2G-Pose), 로봇/자율주행 데이터 우회 3편(Learning Robot Behavior Priors, TerraTransfer++, Sensorimotor Alignment), 평가 인프라 3편(Dual Exam, GigaBench, AVAtt)</li>
+  <li><strong>저널 전용</strong>: 전자 ptychography 신경망 복원(PtyRANNOSAUR), Michelson 간섭계 파장 측정, Fresnel incoherent correlation holography, 전자 홀로그래피(금속-반도체 접합), 메타렌즈 색수차 억제·flat-top 빔성형, 광필드 현미경 저지연 depth 추정·필름냉각홀 형상 측정</li>
+  <li><strong>공통 키워드</strong>: 오늘도 arXiv와 저널이 거의 겹치지 않습니다 — arXiv는 world action model·3D 재구성 인프라·평가체계라는 "소프트웨어/학습" 축에, 저널은 여전히 "촬영 하드웨어 자체의 물리적 한계를 계산으로 메운다"는 익숙한 축(ptychography, 홀로그래피, 메타렌즈, wavefront sensing)에 머물러 있습니다.</li>
+  <li><strong>특징</strong>: 어제(10/22)도 로봇학습·world model·비디오 생성의 평가축 전환에 arXiv가, 계산 이미징 하드웨어에 저널이 머물렀는데, 오늘은 그 분리가 한 단계 더 뚜렷해져 3D 재구성 인프라(3DGS·geometry foundation model)라는 새 축까지 arXiv 쪽에 추가됐습니다. 계산 이미징 핵심 코어(FP·Lensless·Phase·Meta-Optics·Light-Field)는 이틀 연속 저널에서만 신호를 내고 있습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. World action model/비디오 생성이 '한 번에 그리기' 대신 명시적 중간 구조를 두는 쪽으로</h3>
+  <p>DeXplicit, WorldForge V2, FRED, PhysTrace, FAPL 다섯 편이 각각 3D 동역학, 카메라 궤적, 미래 표현 품질, 물리 위반 시점, MLLM 표현 활용이라는 다른 층위에서 "암묵적 생성 대신 검증 가능한 중간 구조"라는 같은 설계 철학에 도달합니다.</p>
+  <p class=conf-note>Confidence: High — 5개 연구팀이 서로 다른 각도에서 같은 결론에 도달, DeXplicit 이동오차 27~40% 감소·FRED 성공률 19.4%→50.0% 등 구체적 수치 동반</p>
+</div>
+
+<div class=ins>
+  <h3>2. 3D Gaussian Splatting이 '장면 복원'을 넘어 질의·자동연구·실시간 재조명까지 맡는 인프라로 확장</h3>
+  <p>R4DGS(4D 질의), SplatLab(자율 연구), RecallGS(온라인 의미 recall), GSHeadRelight(실시간 재조명) 네 편이 3DGS 복원 자체는 끝난 문제로 보고, 그 다음 단계의 능력을 각각 다른 방향으로 확장합니다.</p>
+  <p class=conf-note>Confidence: High — SplatLab은 PSNR +0.18~+3.78dB라는 구체적 수치를 동반, 4개 연구팀이 다른 능력을 확장했으나 같은 전제를 공유</p>
+</div>
+
+<div class=ins>
+  <h3>3. 카메라 geometry foundation model이 임의 카메라·긴 시퀀스·동적 장면까지 버티는 범용 인프라로 수렴</h3>
+  <p>MVLoMa, HiP3R, OmniRay, Stream4D, F2G-Pose 다섯 편이 "짧고 깨끗한 영상"이라는 기존 평가 조건을 각각 다른 방식으로 깨며 feed-forward geometry foundation model의 범용성을 시험합니다.</p>
+  <p class=conf-note>Confidence: High — MVLoMa·HiP3R·F2G-Pose는 AUC·FPS 등 정량 지표를 제시, 5개 연구팀이 다른 실패 조건에서 같은 결론에 도달</p>
+</div>
+
+<div class=ins>
+  <h3>4. 로봇·자율주행 정책 학습이 비싼 실제 데이터 수집을 합성 데이터·self-play·오프라인 proxy로 우회</h3>
+  <p>Learning Robot Behavior Priors from Non-Robotic Synthetic Data, TerraTransfer++, Sensorimotor Alignment 세 편이 "실제 데이터가 많을수록 좋다"는 전제를 각각 사전학습·정책 distillation·평가 단계에서 의심합니다.</p>
+  <p class=conf-note>Confidence: Medium — TerraTransfer++는 NAVSIM navhard 59.4 EPDMS로 기존 최고 기록을 넘었으나, 세 편뿐이라 더 많은 후속 사례 확인 필요</p>
+</div>
+
+<div class=ins>
+  <h3>5. 평가 인프라 자체가 서로 무관한 도메인에서 동시에 생겨남</h3>
+  <p>Dual Exam(에이전트-world model 분리평가), GigaBench(기가픽셀 압축), AVAtt(회화 시선추적) 세 편이 완전히 다른 분야에서 "능력이 쌓이면 전용 benchmark부터 만든다"는 같은 유형의 연구 행위를 동시에 보입니다.</p>
+  <p class=conf-note>Confidence: Medium — 세 도메인 간 직접 교류는 없어 패턴으로서의 반복성이며, 독립 사례 추가 확인 필요</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. DeXplicit의 명시적 3D 동역학 예측과 FRED의 self-distillation 미래 표현 학습을 같은 조작 데이터셋에서 비교</h3>
+  <p>어느 쪽이 더 적은 denoising step으로 같은 success rate를 내는지, 그리고 두 설계를 결합했을 때 추가 이득이 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: DeXplicit·FRED 공식 코드(공개 시) 또는 핵심 모듈 재구현</li>
+    <li>공통 benchmark: HOT3D 서브셋 또는 랩 보유 로봇 조작 데모</li>
+    <li>비교축: moved-point error, denoising step 수, 추론 지연시간</li>
+    <li>실패해도 남는 결과: 두 명시적 구조화 설계의 과제 유형별 강약점 정리</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. RecallGS의 학습 없는 기하-의미 recall을 랩 3DGS open-vocabulary mapping 파이프라인에 적용</h3>
+  <p>추가 3D 네트워크를 학습시키지 않고도 기존 방식과 같은 수준의 semantic segmentation 성능을 낼 수 있는지, FPS 이득이 실제로 재현되는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: RecallGS recall-ground-fuse 파이프라인 재구현</li>
+    <li>공통 benchmark: ScanNet/ScanNet++ 서브셋 또는 랩 보유 실내 장면</li>
+    <li>비교축: mIoU, FPS, 추가 학습 유무에 따른 성능 차이</li>
+    <li>실패해도 남는 결과: 랩 관측 이력 데이터의 기하-의미 recall 가능 범위 정리</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. HiP3R의 계층적 pose graph와 Stream4D의 KV-cache 기반 동적/정적 분리를 같은 긴 동적 장면에 순서 적용</h3>
+  <p>장기 시퀀스에서 카메라 궤적 drift와 ghosting이 각 방법 단독 대비 얼마나 더 줄어드는지 ablation합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: HiP3R·Stream4D 공식 코드(StreamVGGT/Stream3R 백본 기준)</li>
+    <li>공통 benchmark: 동적 장면 포함 긴 시퀀스 벤치마크(수천 프레임급)</li>
+    <li>비교축: 카메라 궤적 drift, ghosting 발생 빈도, 좌표계 일관성</li>
+    <li>실패해도 남는 결과: 랩 스트리밍 3D 재구성 파이프라인의 긴 시퀀스 실패 사례 목록</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>D. Sensorimotor Alignment(S²) 지표로 랩 VLM 백본 후보군을 먼저 걸러 closed-loop 평가 비용을 줄이기</h3>
+  <p>S² 점수로 매긴 순위가 실제 VLA fine-tuning 후 closed-loop 성공률 순위와 얼마나 일치하는지 확인해, 평가 비용 절감 효과를 정량화합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Sensorimotor Alignment(S²) 지표 재구현</li>
+    <li>공통 benchmark: 랩 보유 VLM 백본 후보 3~5종 + LIBERO 서브셋</li>
+    <li>비교축: S² 점수 순위 vs 실제 fine-tuning 후 closed-loop 성공률 순위, 평가에 든 GPU-시간</li>
+    <li>실패해도 남는 결과: 랩 VLM 백본 선정 기준에 대한 오프라인 proxy 유효성 보고서</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>E. Dual Exam의 '행동 선택 vs 상태 예측 분리 평가' 설계를 랩 VLA+world model 파이프라인에 적용</h3>
+  <p>랩이 현재 하나로 뭉쳐 보고하는 조작 성공률을, 정책의 행동 선택 실패와 world model의 상태 예측 실패로 나눠 재보고해 실패 원인을 구분합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Dual Exam의 고정 환경 응답/고정 행동 개입 평가 프로토콜 재구현</li>
+    <li>공통 benchmark: 랩 보유 VLA+world model 결합 파이프라인</li>
+    <li>비교축: 행동 선택 성공률 vs 상태 예측 정확도, 둘의 상관관계</li>
+    <li>실패해도 남는 결과: 랩 파이프라인 실패 사례의 원인별(정책/world model) 분류 리포트</li>
+  </ul>
+</div>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘은 금요일 daily라 예측 회고 루프는 생략합니다(월요일 전용 섹션). 다음 예측 회고는 2026-10-26(월) weekly 실행이 이번 주를 되돌아보며 수행합니다.</p>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(47편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:23%"></span></span><span class=n>11편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:23%"></span></span><span class=n>11편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:4%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>47편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:64%"></span></span><span class=n>30편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:47%"></span></span><span class=n>22편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>135편</span></div>
+
+<p><small>⚠️ 참고: Fourier Ptychography/Microscopy 1편은 전자 ptychography로 비가시광 응용입니다. Lensless/Coded Imaging 1편은 음향 소나 복원으로 "point spread function" 키워드 오탐입니다. Meta-Optics/Diffractive 11편 중 이미징 신호는 약 2~3편이고 나머지는 THz·안테나·통신 응용입니다. Tomography/3D Imaging 47편 중 실제 계산 이미징/로보틱스 신호는 오늘 클러스터 2·3에 반영된 10편 내외(R4DGS, SplatLab, RecallGS, GSHeadRelight, MVLoMa, HiP3R, OmniRay, TerraTransfer++, H-2DGS, Unified Projection-Domain Material Decomposition)이고 나머지는 PET/CT 임상 사례, OCT 안과 질환 등입니다. Virtual Staining/Pathology 30편 중 실제 신호는 약 7편(Attention-guided HCC-CCA, Gastric Cancer Detection, TB-BasilNet 등)이고 나머지는 Dual Exam·FedBST 등 "staining"·"label-free" 키워드 오탐이거나 법학·사회과학 무관 논문입니다. Reconstruction/Inverse Problems 22편 중 이미징 핵심 신호는 4편 내외(SciFusion, Equivariant Experience Replay 등)이고 나머지는 RL/양자컴퓨팅 등 ML 방법론입니다. Deep Learning Methods 135편 중 오늘 클러스터에 반영된 신호는 9편 내외(world action model·video generation·평가 인프라 다수)이고 나머지는 LLM/시계열/소재과학 등입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/acs.nanolett.6c03513" target=_blank>PtyRANNOSAUR: Ptychography with Robust Artificial Neural Networks Optimized for Subangstrom Accuracy and Ultrafast Reconstruction</a></strong> [JNL]<br>
+  왜 주요: 도메인 Watch Lens 참고 — 전자 ptychography를 신경망으로 100~1000배 빠르게 복원(비가시광 응용이지만 반복 알고리즘 대체 설계 참고 가치)
+</div>
+
+<h3>Lensless/Coded Imaging (1편 중 관련 0편, 방법론 참고 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31490" target=_blank>Self-Supervised Multibeam Sonar Restoration via Coherent Forward Modeling</a></strong> [IV]<br>
+  왜 주요: 음향 소나 영상이라 광학 lensless와는 영역이 다르지만, PSF 기반 coherent forward model로 정답 없이 self-supervised 복원하는 설계가 방법론적으로 인접
+</div>
+
+<h3>Phase Imaging/Holography (11편 중 관련 8편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.oe.65.10.104104" target=_blank>Improved fractional Fourier transform for Michelson interferometer wavelength measurement</a></strong> [JNL]<br>
+  왜 주요: 수작업 프린지 판독의 주관성과 기존 FRFT 방법의 중복 변환항 문제를 개선한 파장 측정 기법
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1063/5.0349239" target=_blank>Assessing metal–semiconductor contact properties using in situ-biasing off-axis electron holography</a></strong> [JNL]<br>
+  왜 주요: off-axis 전자 홀로그래피로 금속-반도체 접합의 전위 분포를 in-situ biasing 상태에서 직접 시각화
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110188" target=_blank>Large-dynamic-range Shack-Hartmann wavefront sensing based on fiducial-lenslet-anchored clustering</a></strong> [JNL]<br>
+  왜 주요: Shack-Hartmann 파면 센서의 동적 범위를 fiducial-lenslet 기준 클러스터링으로 확장
+</div>
+
+<h3>Meta-Optics/Diffractive (11편 중 관련 2~3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.615422" target=_blank>Aperiodic metalenses with identical nanocylinders: positional phase control and passive chromatic aberration suppression</a></strong> [JNL]<br>
+  왜 주요: 동일한 나노실린더의 위치만으로 위상을 제어해 수동적으로 색수차를 억제하는 메타렌즈 설계
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optcom.2026.133900" target=_blank>High-uniformity flat-top beam shaping using dielectric metasurfaces enabled by a multi-stage adaptive weighted Gerchberg-Saxton algorithm</a></strong> [JNL]<br>
+  왜 주요: 다단계 적응형 가중 Gerchberg-Saxton 알고리즘으로 유전체 메타표면의 flat-top 빔성형 균일도를 개선
+</div>
+
+<h3>Light-Field/Novel Sensors (2편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.613439" target=_blank>Low-latency axial depth estimation of 2.82 ms using light field microscopy</a></strong> [JNL]<br>
+  왜 주요: 도메인 Watch Lens 핵심 신호 — 광필드 현미경에서 2.82ms라는 저지연 axial depth 추정
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.measurement.2026.123658" target=_blank>Full-depth and complete contour measurement of film-cooling holes using light-field focus-stack fusion and multi-angle fusion</a></strong> [JNL]<br>
+  왜 주요: 광필드 focus-stack과 다각도 융합으로 터빈 블레이드 필름냉각홀의 전체 깊이·윤곽을 정밀 측정
+</div>
+
+<h3>Tomography/3D Imaging (47편 중 관련 10편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30468" target=_blank>SplatLab: Autonomous Scientific Discovery for 3DGS Research</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터2·must-read 대표 — 3DGS 논문 재현·확장을 자율 에이전트가 수행, PSNR +0.18~+3.78dB
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30326" target=_blank>R4DGS: Referring Segmentation in 4D Gaussian Splatting</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터2 대표 — 4D 동적 장면에서 복잡한 자연어 질의를 장면별 추가 학습 없이 처리
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31635" target=_blank>HiP3R: Hierarchical Pose Graphs for Long-Horizon 3D Reconstruction</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터3 대표 — 수천 프레임 긴 영상의 조각별 좌표계 불일치를 계층적 pose graph로 해결
+</div>
+
+<h3>Virtual Staining/Pathology (30편 중 관련 7편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30944" target=_blank>Attention-guided classification and tumor localization of combined hepatocellular-cholangiocarcinoma</a></strong> [CV]<br>
+  왜 주요: 두 종양이 혼재하는 복합 간세포-담관암을 attention 기반으로 분류·국소화
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30316" target=_blank>A Contrastive Learning Framework for Label-Efficient Gastric Cancer Detection and Intra-Tumour Progression Analysis</a></strong> [IV]<br>
+  왜 주요: contrastive learning으로 라벨이 적어도 위암 검출과 종양 내부 진행 양상 분석을 함께 수행
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1111/exsy.70463" target=_blank>TB-BasilNet: Weakly Supervised Segmentation of Tuberculosis Bacilli in Ziehl–Neelsen Sputum Smear Microscopy</a></strong> [JNL]<br>
+  왜 주요: 약지도 학습으로 결핵균 객담도말 현미경 영상에서 간균을 분할
+</div>
+
+<h3>Reconstruction/Inverse Problems (22편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30313" target=_blank>SciFusion: Physics-Guided Compositional Diffusion for Multimodal 3D Scientific Image Generation</a></strong> [IV]<br>
+  왜 주요: 물리 기반 합성적(compositional) diffusion으로 멀티모달 3D 과학 영상을 생성
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30460" target=_blank>Equivariant Experience Replay for Continual Learning in Imaging Inverse Problems</a></strong> [IV]<br>
+  왜 주요: 이미징 역문제의 continual learning에서 equivariance를 활용한 experience replay로 망각을 완화
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110181" target=_blank>Physics-guided dual-branch deep unfolding with sparse proximal mapping for polarimetric image dehazing</a></strong> [JNL]<br>
+  왜 주요: 물리 기반 dual-branch deep unfolding으로 편광 영상의 안개 제거를 수행
+</div>
+
+<h3>Deep Learning Methods (135편 중 관련 9편, catch-all 과대표 방지로 2편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30781" target=_blank>DeXplicit: Making Physical State Explicit in Dexterous Manipulation World Models</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터1·must-read 대표 — 로봇 조작 전에 명시적 3D 동역학을 먼저 예측, 이동오차 27~40% 감소
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31640" target=_blank>WorldForge V2: Eliciting Camera-Trajectory Alignment in Video Diffusion Models</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터1 대표 — 학습 없는 guidance로 비디오 diffusion의 카메라 경로를 정밀 제어
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>Value</th><th>Paper</th></tr></thead>
+<tbody>
+<tr><td>HOT3D / OakInk2 / PhysTwin (vs PointWorld)</td><td>이동 포인트 오차 감소 / IoU 개선 / 가속비</td><td>moved-point error -27~-40%, HOT3D IoU+ 47%, 14B 양방향 대비 57배 가속</td><td><a href="https://arxiv.org/abs/2610.30781" target=_blank>DeXplicit</a></td></tr>
+<tr><td>Mip-NeRF 360 / LLFF + 천체사진 성운 렌더링</td><td>PSNR 개선폭</td><td>+0.18~+3.78dB(성운 렌더링은 기존 3DGS 방법 전무)</td><td><a href="https://arxiv.org/abs/2610.30468" target=_blank>SplatLab</a></td></tr>
+<tr><td>NAVSIM navhard / navtest, HUGSim closed-loop</td><td>EPDMS / PDMS / closed-loop 순위</td><td>navhard 59.4(DriveZero-Scale 57.1 상회), navtest 95.5, 모든 공개 모방학습 기반 방법 상회</td><td><a href="https://arxiv.org/abs/2610.30319" target=_blank>TerraTransfer++</a></td></tr>
+<tr><td>HyperSim/ScanNet++/Mip-NeRF 360/Tanks&amp;Temples 25-view star graph</td><td>상대 포즈 AUC(3개 threshold) / 속도</td><td>58.65/85.41/90.99, 순차 매칭 대비 2.2배 가속</td><td><a href="https://arxiv.org/abs/2610.31321" target=_blank>MVLoMa</a></td></tr>
+<tr><td>실제 로봇 조작(사람 시연만 학습, zero-shot 환경 일반화)</td><td>human-to-robot skill transfer 성공률</td><td>50.0%(최고 경쟁 WAM 19.4% 대비)</td><td><a href="https://arxiv.org/abs/2610.30320" target=_blank>FRED</a></td></tr>
+</tbody>
+</table>
+<p><small>오늘은 world action model·3D 재구성 묶음(DeXplicit, SplatLab, TerraTransfer++, MVLoMa, FRED)이 abstract에 구체적 수치를 명시하고 있어 벤치마크 표에 반영했습니다. 모든 수치는 abstract 기준이며 본문 확인 전 1차 참고용입니다.</small></p>
+
+<h2>🔀 크로스오버 페어</h2>
+<p><strong>SplatLab(3DGS 연구 자동화) ↔ TerraTransfer++(자율주행 정책 자동화)</strong> — 두 편은 완전히 다른 분야(3D 재구성 연구 vs 자율주행 정책 학습)를 다루지만, 둘 다 "사람이 몇 주씩 들여야 했던 전문가 작업을 자기생성 루프로 압축한다"는 같은 구조를 공유합니다. SplatLab은 논문 재현·가설 수립·코드 작성이라는 대학원생 수준의 연구 사이클을 자율 에이전트의 가설-실험-검증 루프로 압축해 "몇 주"를 "며칠"로 줄였고, TerraTransfer++는 사람이 운전한 로그를 모으는 대신 벡터화 시뮬레이터의 self-play 루프가 스스로 다양한 상황(충돌, 아슬아슬한 회피, 복구)을 만들어내 사람 데모 없이도 기존 모방학습 방법을 넘어섰습니다. 3D 재구성 연구와 자율주행이라는 서로 다른 분야가 같은 날 "사람이 큐레이션한 데이터/노동을 자기생성 루프로 대체한다"는 같은 설계로 수렴한 사례입니다.</p>
+
+<hr>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] DeXplicit: Making Physical State Explicit in Dexterous Manipulation World Models — arXiv 2610.30781</h3>
+  <div class=tag>[방법전환] [해부분석]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 클러스터1의 대표 논문이자, 랩이 다루는 world model/로봇 조작 파이프라인에서 "행동 전에 무엇을 먼저 계산해야 하는가"라는 설계 질문에 강한 수치로 답합니다. 기존 방법은 action-conditioned dynamics·카메라 모션·영상 합성을 하나의 비디오 생성 모델 안에 뒤섞어 처리하거나, 동역학을 물체 구조 없이 포인트 궤적만으로 표현해 왔습니다.</p>
+  <p><strong>핵심:</strong> DeXplicit은 초기 장면과 미래 손 궤적이 주어지면, 가벼운 3D 동역학 네트워크가 먼저 물체 중심의 움직임과 변형을 미터 단위 3D 공간에서 명시적으로 예측합니다. 이 예측은 구조화되고 기하적으로 근거 있는 미래 world state를 제공하며, 이후 비디오 생성 모델은 이 3D 모션을 통해 외형을 미래 시점으로 옮기고 투영하기만 하면 되므로, 픽셀에서 암묵적으로 동역학을 배우는 대신 불확실하거나 새로 보이는 내용을 채우는 데만 집중할 수 있습니다. 이런 명시적-3D-우선 분해는 효율적인 causal generation도 가능하게 해, 과거 이력을 조건으로 블록당 단 2번의 denoising step만 필요합니다. HOT3D, OakInk2, PhysTwin에서 DeXplicit은 PointWorld 대비 이동 포인트 오차를 27~40% 줄이고, 동일 renderer 조건에서 HOT3D의 object fidelity IoU+를 47% 개선했으며, 14B 양방향 구성 대비 비디오 합성에서 57배 가속을 달성했습니다(abstract 기준).</p>
+  <p><strong>주의:</strong> "가벼운 3D 동역학 네트워크"가 구체적으로 어떤 구조이고 얼마나 다양한 물체 형태에 일반화되는지, 그리고 2-step causal generation이 품질을 얼마나 희생하는지는 본문 확인이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] SplatLab: Autonomous Scientific Discovery for 3DGS Research — arXiv 2610.30468</h3>
+  <div class=tag>[인프라] [스케일업]</div>
+  <p><strong>왜 A급인가:</strong> 3DGS 연구 자체를 수행하는 방법론 논문이라, 랩의 3DGS 관련 실험 사이클 전체에 영향을 줄 수 있습니다. 기존 자율 연구 시스템은 짧고 고정된 템플릿에 갇혀 있거나 실행 가능성이 낮고 추적이 약했으며, 경쟁이 치열한 실제 컴퓨터비전 세부분야에서 end-to-end로 검증된 적이 없었습니다.</p>
+  <p><strong>핵심:</strong> SplatLab은 연구 프롬프트나 대상 논문 URL(또는 아무 입력 없이)이 주어지면, 공개된 베이스라인을 재현하고, 확장안을 제안하고, Mip-NeRF 360과 LLFF에서 학습·ablation을 수행하고, 원고를 작성하며, 보고된 모든 수치를 로그로 남긴 학습 run에 직접 묶습니다. 핵심 설계는 다섯 가지입니다: (i) 후보들이 검증된 재현 백본에서 플러그인을 변형하고, (ii) 8개 섬에 걸친 cascade-weighted Elo 토너먼트가 측정된 GPU PSNR과 언어적 피드백으로 후보를 평가하며, (iii) 상시 작동하는 falsifier가 실패 시 Elo를 깎아 stress-test 생존을 선택 과정에 반영하고, (iv) 보고된 모든 수치가 로그된 학습 run에 묶여 근거 없는 주장으로는 run이 종료될 수 없으며, (v) 7개 범주의 3DGS 분류체계가 여러 3DGS 저장소에 이식 가능한 도메인별 틀을 제공합니다. PSNR 목표 실행에서 SplatLab의 원고는 재현 목표 대비 +0.18~+3.78dB를 앞섰고, 기존 3DGS 방법이 전혀 없는 천체사진 성운 렌더링에서도 +3.78dB를 기록했습니다. 연구 주기가 대학원생 몇 달 치 작업에서 대부분 자율적인 컴퓨팅 며칠로 압축됩니다(abstract 기준).</p>
+  <p><strong>주의:</strong> "검증된 재현 백본"을 구축하는 초기 비용과, 이 시스템이 제안하는 "확장안"이 얼마나 새로운 아이디어인지 아니면 기존 설계공간 안의 조합에 그치는지는 원고·코드 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 저널 426편 중 OpenAlex enrich가 abstract를 백필한 건 215편(약 50%)으로 어제보다는 높지만, 나머지 약 절반(특히 Meta-Optics·Phase Imaging 다수)은 여전히 제목만으로 분류·판단했습니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology 30건 중 약 23건, Tomography/3D Imaging 47건 중 약 37건이 키워드 오탐 또는 계산 이미징 방법론과 무관한 임상/응용(PET/CT 사례, OCT 안과 등)입니다.</p>
+  <p>[Claim risk] 오늘 world action model/3D 재구성/로봇학습 클러스터는 모두 cs.CV·cs.AI·cs.RO 기반이라, 랩의 계산광학 ROI 핵심(FP·Lensless·Phase·Meta-Optics)과는 직접적 거리가 있고 "3D/기하 표현을 다루는 방법론"이라는 간접적 연결로 묶었습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Baseline risk] SplatLab의 "PSNR +0.18~+3.78dB" 개선폭이 재현된 베이스라인의 재현 정확도에 따라 달라질 수 있어, 원래 논문의 공식 수치와 직접 비교 가능한지는 본문 확인이 필요합니다.</p>
+  <p>[Metric risk] TerraTransfer++의 "모든 공개 모방학습 기반 방법을 상회"라는 주장은 abstract에 나열된 비교군 범위에 한정되며, 비교 대상 목록과 평가 시점이 동일한지는 확인이 필요합니다.</p>
+  <p>[Claim risk] DeXplicit의 "57배 가속"은 14B 양방향 설정 대비 수치로, 더 작은 베이스라인과 비교했을 때도 같은 배수의 이득이 유지되는지는 불명확합니다.</p>
+  <p>[Dataset risk] 클러스터5(Dual Exam·GigaBench·AVAtt)는 서로 다른 세 도메인을 "평가 인프라 생성"이라는 패턴으로 묶은 해석이라, 개별 benchmark의 품질과는 별개로 패턴 자체의 일반성은 더 많은 사례로 검증이 필요합니다.</p>
+  <p>[Deployment risk] Sensorimotor Alignment(S²)가 closed-loop 성공률과 상관관계가 있다고 보고하지만, 상관관계의 강도와 실패하는 반례 비율은 abstract만으로는 확인할 수 없습니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li>Tomography/3D Imaging 임상 사례·비계산광학 응용 약 37편 [주로 JNL] — PET/CT 종양 영상, OCT 안과 질환, CBCT 치과 영상, 음향/빙하 토모그래피 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
+    <li>Virtual Staining/Pathology 키워드 오탐 약 23편 — Dual Exam, FedBST, 법학·사회과학·생태학 논문 등 "label-free"·"stain" 단어만 겹친 무관 논문입니다.</li>
+    <li>Meta-Optics/Diffractive 통신/센싱 응용 약 8편 — THz 투과 제어, 안테나 배열, 마이크로파 온열치료 등으로 이미징과 거리가 있습니다.</li>
+    <li>Reconstruction/Inverse Problems 약 18편 — 강화학습, 양자 커널, LLM 지식 습득 등 방법론은 유사하나 랩 ROI 핵심과는 거리가 있습니다.</li>
+    <li>Deep Learning Methods 135편 중 이미징과 결이 다른 약 126편 — 텍스트/언어모델, 시계열·금융 예측, 소재·분자 설계 등 의료영상 인접 분야이거나 완전히 무관한 응용입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Fourier Ptychography/Microscopy (1편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/acs.nanolett.6c03513" target=_blank>PtyRANNOSAUR: Ptychography with Robust Artificial Neural Networks Optimized for Subangstrom Accuracy and Ultrafast Reconstruction</a></strong> <span class=pill>JNL</span><br>
+  문제: 원자 분해능 전자 ptychography 복원이 반복 알고리즘 때문에 느림 / 방법: convolutional autoencoder로 4D STEM 데이터를 2D 위상 영상으로 직접 매핑 / 의미: 반복 재구성을 신경망으로 대체하는 설계 참고(비가시광 응용) / 우선순위: Skim-only
+</div>
+
+<h3>Lensless/Coded Imaging (1편 중 관련 0편, 방법론 참고 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31490" target=_blank>Self-Supervised Multibeam Sonar Restoration via Coherent Forward Modeling</a></strong> <span class=pill>IV</span><br>
+  문제: 멀티빔 소나 영상이 coherent speckle과 blur로 열화되는데 깨끗한 정답 영상이 거의 없음 / 방법: coherent forward model 기반 self-supervised 복원 / 의미: PSF 키워드 오탐(음향 영상)이나 lensless self-supervised 복원과 방법론적으로 인접 / 우선순위: Skim-only
+</div>
+
+<h3>Phase Imaging/Holography (11편 중 관련 8편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.oe.65.10.104104" target=_blank>Improved fractional Fourier transform for Michelson interferometer wavelength measurement</a></strong> <span class=pill>JNL</span><br>
+  문제: 수작업 프린지 판독이 주관적이고 기존 FRFT 방법은 중복 변환항과 비선형 매핑 문제가 있음 / 방법: 개선된 fractional Fourier transform / 의미: 간섭계 파장 측정 핵심 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.619400" target=_blank>Non-iterative nonlinear cross-correlation imaging for Fresnel incoherent correlation holography</a></strong> <span class=pill>JNL</span><br>
+  문제: Fresnel incoherent correlation holography 복원이 반복 계산에 의존함 / 방법: 비선형 cross-correlation 기반 비반복 복원 / 의미: 홀로그래피 재구성 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1063/5.0349239" target=_blank>Assessing metal–semiconductor contact properties using in situ-biasing off-axis electron holography</a></strong> <span class=pill>JNL</span><br>
+  문제: 금속-반도체 접합의 Schottky vs ohmic 특성을 직접 구분하기 어려움 / 방법: in situ biasing off-axis 전자 홀로그래피로 전위 분포 시각화 / 의미: 전자 홀로그래피 응용 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.proci.2026.106812" target=_blank>Size-resolved burn time of iron particles down to 3 μm via in-situ digital in-line micro-holography</a></strong> <span class=pill>JNL</span><br>
+  문제: 수 마이크로미터급 철 입자의 크기별 연소 거동이 잘 규명되지 않음 / 방법: digital in-line micro-holography + 초고속 2색 파이로미터 / 의미: 홀로그래피 응용(연소 진단) 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110188" target=_blank>Large-dynamic-range Shack-Hartmann wavefront sensing based on fiducial-lenslet-anchored clustering</a></strong> <span class=pill>JNL</span><br>
+  문제: Shack-Hartmann 파면 센서의 동적 범위가 제한적임 / 방법: fiducial-lenslet 기준 클러스터링 / 의미: 파면 센싱 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optcom.2026.133892" target=_blank>Fabry–Pérot phase effects of tapered amplifiers in Raman laser systems for atom interferometry</a></strong> <span class=pill>JNL</span><br>
+  문제: tapered amplifier의 Fabry-Pérot 위상 효과가 원자 간섭계용 Raman 레이저 안정성에 영향 / 방법: 위상 효과 특성화 / 의미: 간섭계 레이저 안정화 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/access.2026.3745957" target=_blank>Edge Feature and Particle Focusing Network for Holographic Particle Detection Under Diffraction Blur and Interference</a></strong> <span class=pill>JNL</span><br>
+  문제: 회절 블러와 간섭 때문에 홀로그래픽 입자 검출이 어려움 / 방법: edge feature + particle focusing network / 의미: 홀로그래피 입자 검출 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<p><small>나머지 3편(CT 조영 임상, 중력 이론의 celestial holography, 스페인어 교육 AI)은 "holography"·"phase" 키워드 오탐이거나 계산광학 ROI와 거리가 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Meta-Optics/Diffractive (11편 중 관련 2~3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.615422" target=_blank>Aperiodic metalenses with identical nanocylinders: positional phase control and passive chromatic aberration suppression</a></strong> <span class=pill>JNL</span><br>
+  문제: 메타렌즈의 색수차 억제가 보통 능동 보정이나 다양한 나노구조를 필요로 함 / 방법: 동일 나노실린더의 위치만으로 위상 제어 / 의미: 수동 색수차 억제 메타렌즈 설계 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optcom.2026.133900" target=_blank>High-uniformity flat-top beam shaping using dielectric metasurfaces enabled by a multi-stage adaptive weighted Gerchberg-Saxton algorithm</a></strong> <span class=pill>JNL</span><br>
+  문제: 유전체 메타표면의 flat-top 빔성형이 균일도를 유지하기 어려움 / 방법: 다단계 적응형 가중 Gerchberg-Saxton 알고리즘 / 의미: 메타광학 빔성형 설계 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ome.605720" target=_blank>Meta-processing units: metasurface-based operators for optical information processing</a></strong> <span class=pill>JNL</span><br>
+  문제: 광학 정보 처리용 연산자를 메타표면으로 구현하는 통합 틀이 부족함 / 방법: metasurface 기반 연산자(meta-processing unit) / 의미: 광학 컴퓨팅 인접 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<p><small>나머지 8편은 THz 센서, 안테나 배열, 마이크로파 온열치료, 플라즈모닉 재료 등 비이미징 응용이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Light-Field/Novel Sensors (2편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.613439" target=_blank>Low-latency axial depth estimation of 2.82 ms using light field microscopy</a></strong> <span class=pill>JNL</span><br>
+  문제: 광필드 현미경의 axial depth 추정이 실시간 생체 관찰에 쓰기엔 느림 / 방법: 2.82ms 저지연 depth 추정 알고리즘 / 의미: 도메인 Watch Lens 핵심 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.measurement.2026.123658" target=_blank>Full-depth and complete contour measurement of film-cooling holes using light-field focus-stack fusion and multi-angle fusion</a></strong> <span class=pill>JNL</span><br>
+  문제: 터빈 블레이드 필름냉각홀의 전체 깊이·윤곽을 단일 시점으로 측정하기 어려움 / 방법: 광필드 focus-stack + 다각도 융합 / 의미: 광필드 산업 계측 신호 / 주의: 초록 상세 미확인 / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging (47편 중 관련 10편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30326" target=_blank>R4DGS: Referring Segmentation in 4D Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: 기존 4DGS가 복잡한 자연어 질의를 장면별 추가 학습 없이 처리하지 못함 / 방법: EntityBank와 MLLM 기반 제약 분해로 training-free referring 추론 / 의미: 오늘 클러스터2 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30468" target=_blank>SplatLab: Autonomous Scientific Discovery for 3DGS Research</a></strong> <span class=pill>CV</span><br>
+  문제: 3DGS 논문 재현·확장이 수 주일의 전문 엔지니어링을 요구함 / 방법: 가설-실험-검증을 자동화한 자율 연구 시스템 / 의미: 오늘 클러스터2·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31293" target=_blank>RecallGS: Geometry-Grounded Recall for Online Semantic Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: 온라인 semantic 3DGS가 기하 맥락 복원에 추가 3D 네트워크 학습을 요구함 / 방법: 과거 관측 이력에서 기하-의미 정보를 recall-ground-fuse로 재활용 / 의미: 오늘 클러스터2 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30619" target=_blank>GSHeadRelight: Fast Relightability for 3D Gaussian Head Synthesis</a></strong> <span class=pill>CV</span><br>
+  문제: 3D-aware 인물 재조명이 비싼 light stage 데이터나 느린 생성 NeRF에 의존함 / 방법: 선형 neural radiance transfer 기반 3D Gaussian 조명 모델 / 의미: 오늘 클러스터2 대표, 12배 가속 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31321" target=_blank>MVLoMa: Multi-View Local Feature Matching with Any Geometry Foundation Model</a></strong> <span class=pill>CV</span><br>
+  문제: 기준-주변 다중 영상 매칭에 영상쌍 매칭기를 독립 적용하면 계산이 중복되고 다중뷰 정보를 못 씀 / 방법: frozen geometry foundation model 기반 star-graph matcher / 의미: 오늘 클러스터3 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31635" target=_blank>HiP3R: Hierarchical Pose Graphs for Long-Horizon 3D Reconstruction</a></strong> <span class=pill>CV</span><br>
+  문제: 긴 영상을 조각으로 나눠 처리하면 좌표계 불일치와 중복 추정이 생김 / 방법: chunk-level Sim(3)과 frame-level SE(3)를 결합한 계층적 pose graph / 의미: 오늘 클러스터3 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31645" target=_blank>OmniRay: Camera-Agnostic Monocular 3D Reconstruction with Composite Ray Fields</a></strong> <span class=pill>CV</span><br>
+  문제: 단안 3D 복원 모델이 대부분 핀홀 카메라를 가정해 어안·파노라마 영상에서 왜곡됨 / 방법: 방사형 기저+구면조화 잔차+자유형 잔차로 구성된 Ray Module / 의미: 오늘 클러스터3 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30319" target=_blank>TerraTransfer++: Demonstration-Free End-to-End Planner</a></strong> <span class=pill>RO</span><br>
+  문제: end-to-end 자율주행 학습이 모방학습의 로그 수집, 강화학습의 렌더링 비용 모두에서 비쌈 / 방법: 벡터화 시뮬레이터 self-play 정책을 distill한 두 학생 모델 / 의미: 오늘 클러스터4 대표, NAVSIM navhard 59.4 EPDMS / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30910" target=_blank>H-2DGS: Height-Field Gaussian Splatting for Sharp and Deformable Neurosurgical Surface Reconstruction</a></strong> <span class=pill>IV</span><br>
+  문제: 기존 3DGS는 신경외과 수술 중 대뇌피질 표면의 선명한 경계를 형성하지 못함 / 방법: height-field 기반 Gaussian Splatting / 의미: 3DGS의 의료 응용 신호, Watch-only / 우선순위: Read
+</div>
+<p><small>나머지 37편은 PET/CT 임상 사례, OCT 안과 질환, CBCT 치과 영상, 음향/빙하 토모그래피 등이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology (30편 중 관련 7편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30944" target=_blank>Attention-guided classification and tumor localization of combined hepatocellular-cholangiocarcinoma</a></strong> <span class=pill>CV</span><br>
+  문제: 간세포암과 담관암이 혼재하는 복합 종양은 분류·국소화가 까다로움 / 방법: attention 기반 분류+국소화 네트워크 / 의미: 병리 진단 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30316" target=_blank>A Contrastive Learning Framework for Label-Efficient Gastric Cancer Detection and Intra-Tumour Progression Analysis</a></strong> <span class=pill>IV</span><br>
+  문제: 위암 검출·진행 분석에 충분한 라벨이 없는 경우가 많음 / 방법: contrastive learning 기반 label-efficient 프레임워크 / 의미: 병리 영상 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1111/exsy.70463" target=_blank>TB-BasilNet: Weakly Supervised Segmentation of Tuberculosis Bacilli in Ziehl–Neelsen Sputum Smear Microscopy</a></strong> <span class=pill>JNL</span><br>
+  문제: 결핵균 객담도말 현미경 영상에서 간균을 정확히 분할하려면 픽셀 단위 라벨이 많이 필요함 / 방법: 약지도 학습 기반 segmentation / 의미: 디지털 병리 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.slasd.2026.100347" target=_blank>Label-free live cell analysis in transmitted light using cross-channel supervised deep learning</a></strong> <span class=pill>JNL</span><br>
+  문제: 살아있는 세포 분석이 보통 형광 라벨링을 요구해 세포에 스트레스를 줌 / 방법: cross-channel supervised deep learning으로 투과광만으로 분석 / 의미: label-free 분석 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/ece3.74540" target=_blank>Comparison of Giemsa and Hemacolor Staining Reveals Systematic Differences in Avian Leukocyte Profiles</a></strong> <span class=pill>JNL</span><br>
+  문제: 조류 백혈구 프로파일 분석에 쓰이는 두 염색법(Giemsa·Hemacolor) 간 차이가 체계적으로 비교되지 않음 / 방법: 두 염색법 비교 분석 / 의미: 염색법 비교 신호, Watch-only / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.4103/jomfp.jomfp_39_26" target=_blank>Comparative evaluation of stromal characteristics in developmental, inflammatory, and neoplastic oral lesions using Masson's Trichrome staining</a></strong> <span class=pill>JNL</span><br>
+  문제: 구강 병변의 기질 특성이 발달성·염증성·신생물성 범주에서 다르게 나타나는지 불명확함 / 방법: Masson's Trichrome 염색 비교 평가 / 의미: 조직 염색 병리 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1093/infdis/jiag523" target=_blank>EBV-infected cell lineage by EBER double-staining as a diagnostic and prognostic clue in pediatric EBV-related lymphoproliferative disorders</a></strong> <span class=pill>JNL</span><br>
+  문제: 소아 EBV 관련 림프증식성 질환의 진단·예후 평가가 어려움 / 방법: EBER 이중염색으로 감염 세포 계통 확인 / 의미: 진단 염색 신호, Watch-only / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<p><small>나머지 23편은 Dual Exam, FedBST 등 "label-free"·"stain" 키워드 오탐이거나 법학·사회과학·생태학 등 무관 논문이라 개별 bullet을 생략합니다(Dual Exam은 오늘 클러스터5에 별도로 반영).</small></p>
+
+<h3>Reconstruction/Inverse Problems (22편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30313" target=_blank>SciFusion: Physics-Guided Compositional Diffusion for Multimodal 3D Scientific Image Generation</a></strong> <span class=pill>IV</span><br>
+  문제: 멀티모달 3D 과학 영상 생성이 물리적 정합성과 모달리티 간 일관성을 동시에 만족하기 어려움 / 방법: 물리 기반 compositional diffusion / 의미: 과학 영상 생성 방법론 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30460" target=_blank>Equivariant Experience Replay for Continual Learning in Imaging Inverse Problems</a></strong> <span class=pill>IV</span><br>
+  문제: 이미징 역문제를 순차적으로 continual learning하면 이전 과제를 잊어버림 / 방법: equivariance 기반 experience replay / 의미: 이미징 역문제 continual learning 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110181" target=_blank>Physics-guided dual-branch deep unfolding with sparse proximal mapping for polarimetric image dehazing</a></strong> <span class=pill>JNL</span><br>
+  문제: 편광 영상 안개 제거가 물리 모델과 학습 기반 복원을 함께 반영하기 어려움 / 방법: 물리 기반 dual-branch deep unfolding + sparse proximal mapping / 의미: 편광 이미징 복원 신호 / 주의: 초록 상세 미확인 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30940" target=_blank>Vision Transformers for Estimating Irradiance Using Data Scarce Sky Images</a></strong> <span class=pill>IV</span><br>
+  문제: 태양광 일사량 추정이 적은 하늘 영상 데이터로는 정확도가 떨어짐 / 방법: Vision Transformer 기반 data-scarce 일사량 추정 / 의미: 영상 기반 일사량 추정 신호, Watch-only / 우선순위: Skim-only
+</div>
+<p><small>나머지 18편은 강화학습, 양자 커널, LLM 지식 습득 등 이미징 ROI와 거리가 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods (135편 중 관련 9편, catch-all 과대표 방지로 2편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.30781" target=_blank>DeXplicit: Making Physical State Explicit in Dexterous Manipulation World Models</a></strong> <span class=pill>CV</span><br>
+  문제: world model이 action-conditioned dynamics·카메라 모션·영상 합성을 뒤섞어 처리함 / 방법: 명시적 3D 동역학 예측 후 영상 투영 / 의미: 오늘 클러스터1·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31640" target=_blank>WorldForge V2: Eliciting Camera-Trajectory Alignment in Video Diffusion Models</a></strong> <span class=pill>CV</span><br>
+  문제: 비디오 diffusion 모델의 카메라 제어가 부정확하고 장면 역학과 뒤엉킴 / 방법: 학습 없는 guidance + Trajectory LoRA / 의미: 오늘 클러스터1 대표 / 우선순위: Read
+</div>
+<p><small>나머지 7편(FRED, PhysTrace, FAPL, Stream4D, F2G-Pose, Sensorimotor Alignment, GigaBench, AVAtt 중 클러스터에 이미 반영된 논문)은 중복 bullet을 생략합니다.</small></p>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://arxiv.org/abs/2610.30781" target=_blank>DeXplicit: Making Physical State Explicit in Dexterous Manipulation World Models</a></li>
+  <li><a href="https://arxiv.org/abs/2610.30468" target=_blank>SplatLab: Autonomous Scientific Discovery for 3DGS Research</a></li>
+  <li><a href="https://arxiv.org/abs/2610.30319" target=_blank>TerraTransfer++: Demonstration-Free End-to-End Planner</a></li>
+  <li><a href="2026-10-22.html">2026-10-22 Daily Briefing</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-10-23 arXiv+저널 표준 daily · arXiv 579건(new+cross, 5개 카테고리) + 저널 426편(Crossref)+OpenAlex 보충 48편 · 전체 스캔 942건(dedup 후) · ROI 배정 260건 (27.6%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>
