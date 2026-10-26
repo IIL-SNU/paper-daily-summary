@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-10-26</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-10-26 (월요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-10-26 (월요일) · 표준 daily — 추적 5개 카테고리 모두 /new listing이 "Monday, 26 October 2026"으로 post_date와 정확히 일치해 backfill/journal-only 없이 정상 진행합니다. 오늘 오전 10:00 KST에는 지난주(10/19~10/23) 회고 <a href="2026-10-26-weekly.html">weekly 리포트</a>가 별도로 발행됐습니다.</div>
+  <div>📚 소스: arXiv(Date Source Contract 통과, post_date==listing_date) + 저널(Crossref/OpenAlex, --days 1)</div>
+  <div>🔢 arXiv: cs.LG 198 · cs.CV 133 · cs.AI 189 · eess.IV 2 · eess.SP 18 (new+cross, replacement 제외, 총 540건)</div>
+  <div>🔢 저널: Crossref 375편 + OpenAlex enrich 21편 abstract 보강 (--days 1)</div>
+  <div>🔢 전체 스캔: 808건(dedup 후) · ROI 배정 247건 (30.6%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 배치에서 가장 뚜렷한 건, 로봇·내비게이션 학습에서 지금까지 사람이 손으로 준비해야 했던 세 가지 — 시뮬레이션 환경, 내비게이션 정책이 참고할 시각 표현, 사람 동작을 로봇 동작으로 옮기는 과정 — 을 생성형 에이전트가 전부 자동으로 만들어내기 시작했다는 점입니다(WorldMirror, SceneBloom, RepresentNav, SP-Guide, ViT-H). 그 밑에서는 feed-forward 3D 재구성/생성이 "한 번 잘 만들기"를 넘어 불확실성·압축 열화·물리적 안정성·메쉬 해상도 같은 현실적인 잡음까지 신경 쓰는 쪽으로 옮겨갔고(PixGR, CompMVR, StackGen3D, Easy-3Dfy, RADIANT), 동시에 에이전트가 실행하면서 스스로 경험을 쌓아 다음 실행을 개선하는 self-improvement 설계가 모델 최적화·과학 발견·에이전트 도구 숙련에서는 분명히 통했지만(RSI-Opt, On-Policy Self-Training, TTME, Phronix) 로봇이 실제 행동을 생성하는 VLA 쪽에서는 아직 같은 효과를 보여주지 못한다는 솔직한 경계가 같은 날 함께 드러났습니다(TTT in VLA Models). 계산광학 코어(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics·Light-Field)는 오늘 Fourier Ptychography와 Lensless 모두 배정 0건으로 완전히 비어 있어, 월요일 재개 첫날부터 공백이 더 깊어졌습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv 5개 카테고리는 모두 "Monday, 26 October 2026" listing으로 정상 갱신됐습니다(post_date==listing_date). new+cross 540건(cs.LG 198 · cs.CV 133 · cs.AI 189 · eess.IV 2 · eess.SP 18)과 저널 Crossref 375편(OpenAlex enrich로 21편 abstract 보강)을 합쳐 dedup 후 총 808건을 스캔했고, classify.py가 247건(30.6%)을 9개 ROI 버킷에 배정했습니다.</p>
+<p>가장 강한 신호는 로봇·내비게이션 학습 파이프라인에서 사람이 손으로 짜주던 부분을 생성형 에이전트가 자동화하는 흐름이었습니다. WorldMirror는 실제 로봇이 아무 장소에서나 찍은 영상만 보고, 코딩 에이전트가 장면을 분해하고 복원 순서를 계획해 로봇 궤적을 그대로 재생할 수 있는 시뮬레이션 쌍둥이를 자동으로 만듭니다. SceneBloom은 diffusion 모델로 제안한 가구 배치를 물리적으로 말이 되는 3D 공간으로 자동으로 다듬어, 실제 촬영한 방 데이터로 학습했을 때보다 오히려 더 높은 내비게이션 성공률을 냈습니다. RepresentNav(See What I Need, Dream What I Want)는 내비게이션 정책이 한 순간 뒤의 장면을 스스로 상상하도록 학습시켜(JEPA 방식) VLNVerse에서 기존 최고 기록을 20.05%포인트 앞섰고, SP-Guide는 드론이 하늘에서 언어로 지시된 목표를 찾을 때 시각 정보와 지도 정보를 공간적으로 정렬해 주는 모듈을 추가했으며, ViT-H는 사람 동작 재구성·리타게팅 같은 중간 단계 없이 영상에서 바로 휴머노이드 동작을 생성한 뒤 실행 가능성을 피드백으로 반영합니다. 다섯 편 모두 "사람이 미리 준비해 둬야 했던 환경·표현·동작"을 자동화한다는 공통점이 있습니다.</p>
+<p>그 옆에서는 feed-forward 3D 생성/재구성이 현실적인 잡음을 처리하는 쪽으로 넘어갔습니다. PixGR는 몇 장 안 되는 영상만으로 3D Gaussian을 복원할 때 생기는 불확실성을 pixel 단위 생성 모델로 표현해 넓은 시점 간격에서도 1초 이내에 결과를 냈고, CompMVR은 다중 시점 영상이 압축 때문에 열화된 상황에서 생기는 시점 간 불일치를 diffusion 모델로 복원합니다. StackGen3D는 블록을 쌓았을 때 쓰러지지 않는지를 그래프 신경망으로 미리 걸러 안정성을 45.3%에서 72.4%로 끌어올렸고, Easy-3Dfy는 물체 생성과 장면 배치를 각각 잘하는 모델에 맡긴 뒤 기하학적으로 다시 이어 붙였으며, RADIANT는 메쉬 해상도에 상관없이 물체 수에만 비례하는 표현으로 500개 물체짜리 장면도 1초 이내에 렌더링합니다. 한편 에이전트의 test-time self-improvement는 영역에 따라 결과가 갈렸는데, RSI-Opt(최적화 에이전트, PDE 오차 최대 8.8배 감소)·On-Policy Self-Training(사람 라벨 없는 LLM 자기개선)·TTME(외부 메모리만 갱신, 연산량 82.8~84.6% 절감)·Phronix(재사용 가능한 능력 축적, 첫 시도 성공률 93~95%)는 모두 분명한 개선을 보였지만, TTT in VLA Models는 같은 설계(test-time training)를 로봇의 시연 조건부 행동 생성에 적용했을 때 일관된 개선을 보지 못했다고 솔직하게 보고했습니다.</p>
+<p>diffusion 생성모델 쪽에서는 통제 단위가 더 세밀해졌습니다. Concept Acupuncturist는 U-Net의 특정 블록만 찾아 고쳐 유해 개념 지우기 성공률을 기존 최고 방법보다 36.34%포인트 끌어올렸고, PASTA는 로고·헤드라인이 들어갈 영역을 학습 없이 깨끗하게 보존하며, TIE는 텍스트 임베딩을 한 번만 조정해 속성 정렬 오류를 고치고, AlphaAnything은 기존 RGB 생성 모델에 가벼운 어댑터만 추가해 알파 채널을 확장하며, DELA는 언어 모델 쪽에서 초안의 삽입·삭제·재마스킹을 명시적으로 통제합니다. 또한 4DMemory(장기 기억 벤치마크)·VERA-Hand(손동작 4축 평가)·IFC-SSL-Bench(세포 영상 SSL 벤치마크)·RootDown(농산물 엣지 디바이스 벤치마크)처럼 서로 무관한 도메인에서 전용 benchmark가 동시에 생겨나는 패턴도 이어졌습니다. 계산광학 코어(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics·Light-Field)는 오늘도 신호가 희미해 도메인 Watch Lens에서 별도로 다룹니다.</p>
+
+<h2>🧭 어제/지난주와 달라진 점</h2>
+<p>지난 금요일(10/23)은 world action model과 비디오 생성모델이 명시적 중간 구조(3D 상태·카메라 궤적·물리 위반 시점)를 두는 쪽으로, 3D Gaussian Splatting과 geometry foundation model이 "장면 복원" 자체를 넘어선 인프라로 확장되는 날이었습니다. 토·일요일은 arXiv 미발행으로 건너뛰었고, 오늘 오전 10:00 KST 별도 weekly 실행이 지난주(10/19~10/23) 전체를 "3DGS가 복원 품질을 다듬는 단계를 완전히 마치고 질의·자동연구·범용 카메라 인프라로 넘어간 한 주"로 회고했습니다(<a href="2026-10-26-weekly.html">weekly 보기</a>). 오늘(월요일) 들어서는 무게중심이 3DGS/geometry 인프라 자체보다 그 위에서 돌아가는 에이전트 쪽으로 옮겨갔습니다 — 금요일이 "복원된 3D 장면에 무엇을 더 할 수 있는가"를 물었다면, 오늘은 "로봇 학습에 필요한 환경·표현·동작 자체를 에이전트가 처음부터 만들 수 있는가"를 묻고 있습니다(WorldMirror, SceneBloom, RepresentNav). 또한 금요일까지는 보이지 않던 축이 새로 등장했는데, 에이전트의 test-time self-improvement가 영역마다 다르게 작동한다는 점을 같은 날 긍정(RSI-Opt, TTME, Phronix)과 부정(TTT in VLA Models) 사례로 동시에 보여준 것은 이번 주 들어 처음입니다. 계산광학 코어는 금요일 Fourier Ptychography 1편(비가시광 응용)·Lensless 1편(키워드 오탐)이었던 것이 오늘은 두 버킷 모두 0건으로 더 비었고, Phase Imaging·Meta-Optics도 금요일 11편씩에서 오늘 2편씩(모두 제목만 확인된 저널)으로 줄어 월요일 재개 첫날의 공백이 지난주 평일보다 두드러집니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>에이전트가 로봇 시뮬레이션 환경·내비게이션 표현·동작까지 자동으로 만들어, 사람이 손으로 설계하던 단계를 대체</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.31834" target=_blank>WorldMirror: Agentic Real-to-Sim Generation of Interactive Worlds from In-the-Wild Robot Demonstrations</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.32978" target=_blank>SceneBloom: Agentic Indoor Environment Generation with Realistic and Diverse Layouts for Embodied Learning</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.31762" target=_blank>See What I Need, Dream What I Want: A Navigation Foundation Model on a Self-Constructed Representation Space (RepresentNav)</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.32697" target=_blank>SP-Guide: Enhancing Aerial Vision-Language Navigation with Spatial Priors</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.32966" target=_blank>ViT-H: Generative Video-To-Humanoid Control with Motion Tracking Feedback</a> <span class=pill>CV</span>
+  </td>
+  <td>로봇을 시뮬레이션에서 학습시키려면 지금까지는 사람이 장면을 일일이 꾸미고 과제를 정의해야 했고, 내비게이션 로봇이 어떤 시각 정보를 봐야 하는지도 보통 미리 학습된 인코더의 설계에 그대로 맡겨 왔습니다. 오늘 다섯 편은 이 "사람이 손으로 짜주던 부분"을 하나씩 자동화합니다. WorldMirror는 실제 로봇이 아무 장소에서나 찍은 영상만 보고, 코딩 에이전트가 장면을 분해하고 복원 순서를 계획해 사람이 그 안에서 로봇 궤적을 그대로 재생할 수 있는 시뮬레이션 쌍둥이를 자동으로 만듭니다. SceneBloom은 가구 배치를 diffusion 모델로 제안한 뒤 물리적으로 말이 되는 3D 공간인지 자동으로 다듬어, 실제 촬영한 방 데이터로 학습했을 때보다 오히려 더 높은 내비게이션 성공률을 냅니다. RepresentNav는 내비게이션 정책이 어떤 화면 정보를 봐야 하는지를 기존 인코더 설계에 맡기는 대신, 정책 스스로 "한 순간 뒤에 장면이 어떻게 보일지"를 상상하도록 학습시켜(JEPA 방식) VLNVerse에서 기존 최고 기록을 20.05%포인트 앞섰습니다. SP-Guide는 드론이 하늘에서 언어로 지시된 목표를 찾아갈 때 시각 정보와 지도 정보를 그냥 섞는 대신 공간적으로 정렬해 주는 모듈을 추가했고, ViT-H는 사람이 찍힌 영상에서 동작을 재구성하고 로봇 동작으로 옮기는 중간 단계 없이, 영상에서 바로 휴머노이드가 따라 할 동작을 diffusion 모델로 생성한 뒤 실제로 그 동작이 로봇에서 실행 가능한지를 피드백으로 다시 학습에 반영합니다. 다섯 편 모두 "사람이 미리 준비해 둬야 했던 환경·표현·동작"을 생성형 모델과 에이전트가 스스로 만들어내는 쪽으로 옮겨가고 있다는 공통점이 있습니다.</td>
+  <td>High<br><small>서로 다른 5개 연구팀이 시뮬레이션 환경 생성·실내 장면 생성·내비게이션 표현·공중 내비게이션·휴머노이드 제어라는 다른 과제에서 같은 설계 철학에 도달, RepresentNav는 VLNVerse +20.05%p·EVT-Bench +10.1%p라는 구체적 수치를 동반</small></td>
+  <td>RepresentNav의 self-constructed representation(JEPA 기반 'dream') 모듈을 랩 내비게이션/조작 파이프라인의 기존 비전 인코더 뒤에 붙여, 같은 인코더 조합에서 representation concatenation 대비 충돌 회피율과 성공률이 얼마나 개선되는지 ablation한다</td>
+</tr>
+<tr>
+  <td><strong>Feed-forward 3D 생성/복원이 '한 번 잘 만들기'를 넘어 불확실성·압축 열화·물리적 안정성·메쉬 해상도 같은 현실 잡음까지 처리</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.31908" target=_blank>PixGR: Pixel-Space Generative Decoding for Fast Feed-Forward 3D Reconstruction</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.32800" target=_blank>CompMVR: Compression-Aware Multi-View Restoration Using Diffusion Models for Geometrically Consistent 3D Reconstruction</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.31803" target=_blank>StackGen3D: Stable 3D Block Stack Generation from Multiview Silhouettes</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.32250" target=_blank>Easy-3Dfy: Object-Level Geometric Composition for Single-Image 3D Scene Construction</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.32075" target=_blank>RADIANT: Object-Centric Feed-Forward Global Illumination</a> <span class=pill>CV</span>
+  </td>
+  <td>feed-forward 3D 재구성·생성 모델은 보통 "깨끗한 입력에서 장면을 얼마나 잘 복원/생성하는가"로 평가돼 왔습니다. 오늘 다섯 편은 모두 그 "깨끗한 입력"이라는 가정을 하나씩 깨며 현실적인 잡음을 다룹니다. PixGR는 몇 장 안 되는 영상만으로 3D Gaussian을 복원할 때 생기는 불확실성 자체를 pixel 단위 생성 모델로 표현해, 영상 사이 간격이 넓거나 아예 새로운 시점을 봐야 하는 어려운 상황에서 기존 회귀 기반 방법보다 나은 결과를 1초 이내에 냅니다. CompMVR은 실제 서비스에서는 다중 시점 영상이 압축 때문에 열화된 상태로 들어온다는 점을 지적하고, 압축으로 생긴 시점 간 불일치를 diffusion 모델로 복원해 카메라 추정과 새 시점 합성 품질을 함께 끌어올립니다. StackGen3D는 블록을 쌓아 3D 구조를 만들 때 물리적으로 쓰러지지 않는지를 그래프 신경망으로 미리 걸러, 안정성을 45.3%에서 72.4%로 끌어올립니다. Easy-3Dfy는 물체 생성과 장면 배치를 하나의 모델이 한꺼번에 떠맡는 대신 각각 잘하는 모델에 맡기고 그 둘을 기하학적으로 다시 이어 붙입니다. RADIANT는 메쉬를 잘게 쪼갤수록 계산량이 늘어나는 문제를 물체 단위 표현으로 바꿔 물체 수에만 비례하게 만들어 500개 물체짜리 장면도 1초 이내에 렌더링합니다. 다섯 편을 묶으면, feed-forward 3D 파이프라인이 "한 번 잘 복원/생성하는가"라는 질문에서 "불확실하거나 깨지거나 쌓이거나 복잡한 실제 상황에서도 버티는가"로 평가 기준이 옮겨가고 있다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 5개 연구팀이 불확실성 모델링·압축 복원·물리적 안정성·조합적 생성·렌더링 확장성이라는 다른 실패 조건에서 같은 방향으로 수렴, StackGen3D 45.3%→72.4%·RADIANT +3.3~7.6dB 등 구체적 수치 동반</small></td>
+  <td>PixGR의 pixel-space flow matching 기반 불확실성 모델링을 랩 보유 sparse-view 3DGS 파이프라인에 붙여, 넓은 baseline/시점 외삽 조건에서 기존 회귀 기반 복원 대비 PSNR과 추론 시간이 어떻게 달라지는지 비교한다</td>
+</tr>
+<tr>
+  <td><strong>에이전트의 test-time self-improvement가 모델 최적화·과학 발견에서는 통하지만 VLA 로봇 조작에서는 아직 신뢰할 수 없음</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.32026" target=_blank>RSI-Opt: Recursive Self-Improvement Optimizer Agents For Model Training</a> <span class="pill a">LG · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.32770" target=_blank>On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models</a> <span class=pill>LG</span><br>
+    <a href="https://arxiv.org/abs/2610.32046" target=_blank>Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery? (TTME)</a> <span class=pill>AI</span><br>
+    <a href="https://arxiv.org/abs/2610.31789" target=_blank>Phronix: The Capability-Centric Learning Paradigm for Agents</a> <span class=pill>AI</span><br>
+    <a href="https://arxiv.org/abs/2610.32094" target=_blank>TTT in VLA Models: Exploring Training with Human Demonstrations</a> <span class=pill>CV</span>
+  </td>
+  <td>모델이나 에이전트가 미리 정해진 절차를 그대로 따르는 대신, 실행하면서 쌓은 경험으로 스스로를 갱신하게 만드는 시도가 오늘 다섯 편에서 동시에 나왔는데, 결과는 영역에 따라 갈렸습니다. RSI-Opt는 LLM 에이전트가 모델 학습을 모니터링하고 최적화 설정을 바꾸되, 그 경험을 프롬프트·검증된 코드·판단 기준으로 계속 쌓아가게 만들어 Burgers 방정식 오차를 최대 8.8배까지 줄였습니다. On-Policy Self-Training은 사람이 만든 문제·정답 없이, 모델이 스스로 문제를 내고 스스로 푼 뒤 그 경험으로 자신을 다시 가르치는 방식만으로 언어와 멀티모달 과제 모두에서 성능이 올랐습니다. TTME는 모델 가중치를 계속 업데이트하는 test-time training 대신 외부 메모리만 갱신하는 더 가벼운 방식으로도 같은 과학 발견 과제에서 더 나은 결과를 내면서 연산량은 82.8~84.6%, 실행 시간은 47.7~58.4% 줄였습니다. Phronix는 에이전트가 작업을 수행할 때마다 재사용 가능한 능력을 자동으로 뽑아내 저장해 두고, 다음에 비슷한 작업이 오면 그 능력을 꺼내 쓰게 해 같은 작업의 첫 시도 성공률을 93~95%까지 끌어올렸습니다. 반면 TTT in VLA Models는 로봇이 사람의 시연 영상을 참고해 행동을 생성하도록, 실행 중 가중치를 빠르게 갱신하는 test-time training을 VLA(비전-언어-행동) 모델에 적용했지만, 지금 실험한 범위에서는 시연을 일관되게 더 잘 따라가게 만들지 못했고 실제 로봇에서도 특정 위치에 있는 컵만 계속 선택하는 편향이 남았다고 솔직하게 보고합니다. 즉 "실행 중 쌓은 경험으로 스스로를 개선한다"는 설계가 모델 최적화·과학 발견·에이전트 도구 숙련에서는 통하는 신호를 보였지만, 로봇이 실제 행동을 생성하는 VLA 쪽에서는 아직 같은 효과를 보여주지 못했다는 경계가 같은 날 함께 드러났습니다.</td>
+  <td>High<br><small>서로 다른 5개 연구팀이 모델 최적화·LLM post-training·과학 발견·에이전트 도구 숙련·로봇 행동생성이라는 다른 영역에서 self-improvement를 시도했고, RSI-Opt·TTME·Phronix는 구체적 수치로 성공을, TTT in VLA Models는 동일한 설계가 통하지 않는 영역을 같은 날 함께 보여줘 경계가 뚜렷함</small></td>
+  <td>TTT in VLA Models이 보고한 "시연 조건부 행동 생성에서 TTT가 통하지 않는" 실패 조건(사람 시연 → 로봇 행동 전이)을 랩 보유 VLA 파이프라인에서 먼저 재현해, 같은 실패가 랩 데이터 규모에서도 나타나는지, 아니면 데이터 스케일이 커지면 해소되는지 확인한다</td>
+</tr>
+<tr>
+  <td><strong>Diffusion 생성모델의 통제가 '그럴듯한 결과물 하나'에서 지우기·영역 보존·속성 정렬·알파 채널 확장 같은 세밀한 편집 단위로 내려감</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.32059" target=_blank>Concept Acupuncturist: An Efficient and Precise Concept Erasure Method for Diffusion Models via Sparse Autoencoders</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.32390" target=_blank>PASTA: Prompt-Aware Annealed Diffusion Sampling</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.32407" target=_blank>TIE: Training-free CLIP Embedding Guidance for Compositional Text-to-Image Alignment</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.32413" target=_blank>AlphaAnything: Extending Pretrained RGB Generators to RGBA</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.32096" target=_blank>DELA: Learning Controllable Edits for Diffusion Language Models</a> <span class=pill>AI</span>
+  </td>
+  <td>diffusion 기반 생성 모델을 다루는 논문들이 "원하는 대로 하나 잘 만들기"보다, 이미 만들어진 결과를 정확하게 고치고 통제하는 세밀한 단위로 눈을 돌렸습니다. Concept Acupuncturist는 이미지 생성 모델에서 특정 개념(유해하거나 정책에 위반되는 내용)만 콕 집어 지우되, 그 개념과 관련된 U-Net의 특정 블록만 찾아 고쳐 다른 능력은 건드리지 않고 지우기 성공률을 기존 최고 방법보다 36.34%포인트 끌어올렸습니다. PASTA는 광고나 UI 디자인처럼 로고·헤드라인이 들어갈 자리는 깨끗하게 비워 둬야 하는 상황에서, 그 영역에 원치 않는 내용이 새어 들어가는 문제를 학습 없이 샘플링 방식만 바꿔 해결합니다. TIE는 "빨간 공과 파란 상자"처럼 여러 물체와 속성을 동시에 요청했을 때 속성이 엉뚱한 물체에 붙거나 아예 빠지는 문제를, 텍스트 임베딩을 한 번만 조정해 학습 없이 고칩니다. AlphaAnything은 투명도(알파 채널)가 있는 이미지를 만들려면 보통 모델을 처음부터 다시 학습시켜야 했는데, 기존 RGB 생성 모델의 잠재 공간은 그대로 둔 채 가벼운 어댑터만 추가해 투명 이미지를 만들어내는 쪽으로 문제를 바꿉니다. DELA는 이미지가 아니라 언어 모델 쪽이지만 같은 결을 공유하는데, diffusion 언어 모델이 생성 중인 초안에서 어디를 삽입·삭제·다시 마스킹할지를 명시적인 편집 동작으로 통제할 수 있게 만듭니다. 다섯 편 모두 diffusion 모델을 "그럴듯한 결과 하나를 뽑는 블랙박스"가 아니라 "원하는 부분만 정확히 건드리는 편집 도구"로 다루기 시작했다는 공통점이 있습니다.</td>
+  <td>High<br><small>서로 다른 5개 연구팀이 개념 삭제·영역 보존·속성 정렬·채널 확장·언어 모델 편집이라는 다른 과제에서 같은 방향으로 수렴, Concept Acupuncturist +36.34%p·DELA +5.5%p 등 구체적 수치 동반</small></td>
+  <td>Concept Acupuncturist의 '개념-특정 U-Net 블록 매핑 후 국소 수정' 설계를, 랩이 쓰는 이미지 생성 파이프라인에서 특정 아티팩트(예: 특정 질감·잡음 패턴)만 제거하는 용도로 옮겨 실험하고, 전역 fine-tuning 대비 다른 품질 저하가 적은지 확인한다</td>
+</tr>
+<tr>
+  <td><strong>평가 벤치마크 자체가 서로 무관한 도메인(초장기 기억 에이전트, 손동작 추정, 유세포 분석, 농업 엣지 디바이스)에서 동시에 생겨남</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.32332" target=_blank>4DMemory: Benchmarking Long-Horizon Spatiotemporal Memory with Harness-Augmented Agents</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.32517" target=_blank>VERA-Hand: A Verified Multidimensional Benchmark for 2D Hand Pose Estimation in Third-Person Dynamic Gesture Videos</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.31848" target=_blank>IFC-SSL-Bench: Benchmarking Self-Supervised Learning for Annotation-Efficient Multispectral Imaging Flow Cytometry</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.32275" target=_blank>RootDown: Deploying and Benchmarking Models for Beet-Root Detection on Edge Devices</a> <span class=pill>CV</span>
+  </td>
+  <td>네 편은 로봇·에이전트 장기 기억, 손동작 추정, 세포 영상 분석, 농산물 검사라는 완전히 다른 분야를 다루지만, 공통적으로 "지금까지 느슨하게 평가되던 능력을 처음으로 전용 benchmark로 만든다"는 같은 움직임을 보입니다. 4DMemory는 900시간 분량 영상과 5천 개 넘는 질문으로, 기존 벤치마크가 다루지 않던 "몇 시간에서 며칠에 걸친 장기 기억"을 재는 틀을 만들었고, 13개 주요 모델이 여기서는 성능이 10%포인트 넘게 떨어진다는 것을 보였습니다. VERA-Hand는 손동작 추정을 지금까지처럼 "맞춘 예측끼리만" 비교하는 대신, 손을 놓치거나 엉뚱한 손으로 착각하는 경우까지 포함해 평가해, 최신 foundation model도 85% 넘는 프레임에서 양손을 혼동한다는 것을 드러냈습니다. IFC-SSL-Bench는 세포 영상(Imaging Flow Cytometry)에 self-supervised 학습을 적용하는 연구가 각자 다른 조건에서 보고돼 비교가 어려웠던 상황을, 여섯 가지 방법과 네 가지 backbone을 통일된 조건에서 비교하는 벤치마크로 정리했습니다. RootDown은 사탕무 품질 검사처럼 농산물이 겹치고 가려지는 실제 현장 조건에서, 라벨링 비용과 엣지 디바이스 배포 가능성까지 함께 재는 벤치마크를 만들었습니다. 네 도메인이 서로 직접 연결되지는 않지만, 어떤 분야든 응용 능력이 쌓이면 다음 단계는 새 방법론보다 "그 능력을 제대로 잴 수 있는 전용 자(benchmark)를 먼저 만드는 것"이라는 패턴이 오늘도 반복해서 나타났습니다.</td>
+  <td>Medium<br><small>네 도메인이 완전히 다르고 직접적인 상호 인용·교류는 없어 "같은 논문들의 직접적 공통 결론"이라기보다 "동시에 나타난 같은 유형의 연구 행위" 패턴이라 독립적 추가 사례 확인이 필요</small></td>
+  <td>VERA-Hand의 "탐지·국소화·식별·시간 안정성" 4축 평가 설계를 랩이 쓰는 로봇 손 자세 추정 파이프라인 평가에 그대로 적용해, 기존에 PCK/MPJPE만으로는 드러나지 않던 손 혼동·추적 끊김 비율을 별도로 측정한다</td>
+</tr>
+</tbody>
+</table>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 0편</strong> — 월요일 재개 첫날부터 완전 공백입니다. 지난주에도 신호가 희미했는데(금요일 1편, 전자 ptychography 비가시광 응용) 오늘은 arXiv·저널 모두에서 전혀 잡히지 않았습니다.</li>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 0편</strong> — 역시 완전 공백입니다. 핵심 ROI 두 버킷이 같은 날 모두 비는 것은 최근 들어 드문 경우라, 수집 윈도우(--days 1)가 짧은 월요일 특유의 공백인지 추가 관찰이 필요합니다.</li>
+    <li><strong>Phase Imaging/Holography — 오늘 배정 2편, 모두 제목 기반(저널)</strong> — <a href="https://doi.org/10.1016/j.optlaseng.2026.110201" target=_blank>Rotary four-state digital holographic microscopy for zero-order suppression and high-frequency-preserving dynamic phase imaging</a> [JNL]과 <a href="https://doi.org/10.1016/j.optlastec.2026.116797" target=_blank>Measurement of refractive index and evaluation of cured state of UV-curable adhesive using immersion liquid method and digital holography</a> [JNL]입니다. 둘 다 Crossref에서 abstract가 비어 있어 제목만으로 분류했습니다(OpenAlex enrich가 이번 배치에서 abstract를 채우지 못한 다수에 포함). 각각 동적 위상 이미징의 영차 억제·고주파 보존 설계와 접착제 경화 상태 평가용 굴절률 측정으로, 랩 핵심(정량 위상·홀로그래피) 신호는 맞지만 세부 응용은 다릅니다.</li>
+    <li><strong>Meta-Optics/Diffractive — 오늘 배정 2편, 모두 제목 기반(저널)</strong> — <a href="https://doi.org/10.1016/j.optlastec.2026.116755" target=_blank>Physics-guided surrogate modeling and multi-objective inverse design of graphene-based terahertz metasurface sensors</a> [JNL]과 <a href="https://doi.org/10.1364/oe.611840" target=_blank>Enhancement of the magneto-optical Kerr effect and figure of merit empowered by hybrid bound states in the continuum in a metal nanograting metasurface</a> [JNL]입니다. 전자는 THz 센서용 메타표면의 surrogate 기반 역설계, 후자는 bound states in the continuum을 활용한 자기광학 효과 증폭으로, 이미징보다는 센싱·물성 쪽에 가까워 간접 신호로 분류했습니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 오늘 배정 2편, 광학 신호는 0편</strong> — <a href="https://arxiv.org/abs/2610.31927" target=_blank>ENCL: Enabling Efficient Neuromorphic Continual Learning with Local Learning Rule and Sub-Network Freezing Strategy</a> [LG]와 <a href="https://arxiv.org/abs/2610.31954" target=_blank>RobustNCL: Robustifying Neuromorphic Continual Learning under Transient Faults with Lightweight Detect-and-Cure Strategy</a> [LG] 모두 "neuromorphic" 키워드로 분류됐지만, 실제로는 뉴로모픽 칩의 continual learning 알고리즘 논문이라 light-field/event camera 하드웨어와는 무관한 키워드 오탐입니다. 랩 핵심(광필드·이벤트 카메라) 신호는 오늘도 공백입니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 로봇/내비게이션 자동화 5편(WorldMirror, SceneBloom, RepresentNav, SP-Guide, ViT-H), feed-forward 3D 생성/복원의 현실 잡음 처리 5편(PixGR, CompMVR, StackGen3D, Easy-3Dfy, RADIANT), 에이전트 self-improvement 5편(RSI-Opt, On-Policy Self-Training, TTME, Phronix, TTT in VLA Models), diffusion 세밀 통제 5편(Concept Acupuncturist, PASTA, TIE, AlphaAnything, DELA), 평가 인프라 4편(4DMemory, VERA-Hand, IFC-SSL-Bench, RootDown)</li>
+  <li><strong>저널 전용</strong>: 동적 위상 이미징 영차 억제 홀로그래픽 현미경, UV 접착제 굴절률 측정용 디지털 홀로그래피, THz 메타표면 센서 역설계, 자기광학 Kerr 효과 메타표면, 라벨-free 간암 미세혈관 침범 검출, 심근병증 sarcomere SHG 현미경, 결핵균 도말 분할(TB-BasilNet) 등 임상·물성 응용</li>
+  <li><strong>공통 키워드</strong>: 오늘도 arXiv와 저널이 거의 겹치지 않습니다 — arXiv는 로봇/에이전트 자동화·3D 생성/복원·자기개선·diffusion 편집·평가 인프라라는 "학습/에이전트" 축에, 저널은 여전히 "촬영 하드웨어 자체의 물리적 한계를 계산으로 메운다"는 익숙한 축(홀로그래피, 메타표면, 라벨-free 현미경)과 심혈관/병리 임상 영상에 머물러 있습니다.</li>
+  <li><strong>특징</strong>: 지난 금요일(10/23)은 3D 재구성 인프라(3DGS·geometry foundation model)가 arXiv 쪽의 주축이었는데, 오늘은 그 인프라 위에서 돌아가는 에이전트(환경 생성, 자기개선, 세밀 편집)로 축이 한 단계 더 올라갔습니다. 계산 이미징 핵심 코어(FP·Lensless·Phase·Meta-Optics·Light-Field)는 Fourier Ptychography·Lensless가 처음으로 동시에 0건을 기록하며 공백이 가장 깊은 날이었습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 에이전트가 로봇 시뮬레이션 환경·내비게이션 표현·동작까지 자동으로 만들어, 사람이 손으로 설계하던 단계를 대체</h3>
+  <p>WorldMirror, SceneBloom, RepresentNav, SP-Guide, ViT-H 다섯 편이 각각 시뮬레이션 환경, 실내 장면, 내비게이션 표현, 공중 내비게이션, 휴머노이드 동작이라는 다른 층위에서 "사람이 준비하던 것을 생성형 에이전트가 자동화"라는 같은 설계 철학에 도달합니다.</p>
+  <p class=conf-note>Confidence: High — 5개 연구팀이 서로 다른 각도에서 같은 결론에 도달, RepresentNav VLNVerse +20.05%p·EVT-Bench +10.1%p 등 구체적 수치 동반</p>
+</div>
+
+<div class=ins>
+  <h3>2. Feed-forward 3D 생성/복원이 '한 번 잘 만들기'를 넘어 불확실성·압축 열화·물리적 안정성·메쉬 해상도 같은 현실 잡음까지 처리</h3>
+  <p>PixGR(불확실성 모델링), CompMVR(압축 복원), StackGen3D(물리적 안정성), Easy-3Dfy(조합적 생성), RADIANT(렌더링 확장성) 다섯 편이 "깨끗한 입력"이라는 기존 평가 조건을 각각 다른 방식으로 깨며 feed-forward 3D 파이프라인의 실전 적용성을 시험합니다.</p>
+  <p class=conf-note>Confidence: High — StackGen3D 45.3%→72.4%·RADIANT +3.3~7.6dB 등 정량 지표 제시, 5개 연구팀이 다른 실패 조건에서 같은 결론에 도달</p>
+</div>
+
+<div class=ins>
+  <h3>3. 에이전트의 test-time self-improvement가 모델 최적화·과학 발견에서는 통하지만 VLA 로봇 조작에서는 아직 신뢰할 수 없음</h3>
+  <p>RSI-Opt, On-Policy Self-Training, TTME, Phronix 네 편이 실행 중 쌓은 경험으로 스스로를 개선하는 설계로 분명한 성과를 냈지만, TTT in VLA Models는 같은 설계를 로봇 행동생성에 적용했을 때 일관된 개선을 보지 못했다고 솔직하게 보고합니다.</p>
+  <p class=conf-note>Confidence: High — RSI-Opt·TTME·Phronix는 구체적 수치로 성공을, TTT in VLA Models는 같은 설계가 통하지 않는 경계를 같은 날 함께 보여줌</p>
+</div>
+
+<div class=ins>
+  <h3>4. Diffusion 생성모델의 통제가 '그럴듯한 결과물 하나'에서 지우기·영역 보존·속성 정렬·알파 채널 확장 같은 세밀한 편집 단위로 내려감</h3>
+  <p>Concept Acupuncturist(개념 삭제), PASTA(영역 보존), TIE(속성 정렬), AlphaAnything(채널 확장), DELA(언어 모델 편집) 다섯 편이 결과물 전체가 아니라 특정 부분만 정밀하게 통제하는 방향으로 수렴합니다.</p>
+  <p class=conf-note>Confidence: High — Concept Acupuncturist +36.34%p·DELA +5.5%p 등 구체적 수치 동반, 5개 연구팀이 다른 편집 단위에서 같은 방향으로 수렴</p>
+</div>
+
+<div class=ins>
+  <h3>5. 평가 벤치마크 자체가 서로 무관한 도메인에서 동시에 생겨남</h3>
+  <p>4DMemory(장기 기억), VERA-Hand(손동작 4축 평가), IFC-SSL-Bench(세포 영상 SSL), RootDown(농산물 엣지 디바이스) 네 편이 완전히 다른 분야에서 "능력이 쌓이면 전용 benchmark부터 만든다"는 같은 유형의 연구 행위를 동시에 보입니다.</p>
+  <p class=conf-note>Confidence: Medium — 네 도메인 간 직접 교류는 없어 패턴으로서의 반복성이며, 독립 사례 추가 확인 필요</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. RepresentNav의 self-constructed representation을 랩 내비게이션/조작 인코더에 이식해 비교</h3>
+  <p>JEPA 기반 "dream" 모듈을 랩이 쓰는 비전 인코더 조합 뒤에 붙여, 같은 인코더 조합에서 representation concatenation 대비 충돌 회피율과 성공률이 얼마나 개선되는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: RepresentNav(See What I Need, Dream What I Want) 핵심 모듈(Representation Residuals, 3층 transformer) 재구현</li>
+    <li>공통 benchmark: 랩 보유 내비게이션/조작 인코더 조합 + 실내 장애물 회피 시나리오</li>
+    <li>비교축: 충돌 회피율, 성공률, representation concatenation 대비 이득</li>
+    <li>실패해도 남는 결과: 랩 인코더 조합의 JEPA 적합성 보고서</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. PixGR의 불확실성 인지 feed-forward 3DGS를 랩 sparse-view 파이프라인에 적용</h3>
+  <p>pixel-space flow matching으로 재구성 불확실성을 직접 모델링하는 방식이, 넓은 baseline/시점 외삽 조건에서 기존 회귀 기반 복원보다 얼마나 나은지 측정합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: PixGR 공식 코드(공개 시) 또는 pixel-space flow matching 디코더 재구현</li>
+    <li>공통 benchmark: 랩 보유 sparse-view 3DGS 데이터셋(넓은 baseline 서브셋)</li>
+    <li>비교축: PSNR, 추론 시간, 시점 외삽 안정성</li>
+    <li>실패해도 남는 결과: 랩 sparse-view 조건에서 회귀 기반 vs 생성 기반 복원의 실패 유형 비교</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. TTT in VLA Models의 실패 조건을 랩 VLA 파이프라인에서 재현</h3>
+  <p>시연 조건부 행동 생성에서 test-time training이 통하지 않는다는 결과가 랩 데이터 규모에서도 재현되는지, 데이터가 늘면 해소되는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: TTT in VLA Models의 memory transfer·truncated backpropagation 설정 재구현(InternVLA-A1 또는 Pi0.5급 백본)</li>
+    <li>공통 benchmark: 랩 보유 VLA 조작 데모(video/short-video/single-frame cue 조건 포함)</li>
+    <li>비교축: 시연 조건에 따른 target selection 일관성, 데이터 스케일에 따른 변화</li>
+    <li>실패해도 남는 결과: 랩 VLA 파이프라인에서 TTT가 통하는 조건과 안 통하는 조건의 경계 목록</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>D. Concept Acupuncturist의 국소 개념 삭제 설계를 아티팩트 제거 용도로 전용</h3>
+  <p>개념-특정 U-Net 블록 매핑 후 국소 수정 설계를, 특정 질감·잡음 아티팩트 제거에 적용해 전역 fine-tuning 대비 다른 품질 저하가 적은지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Concept Acupuncturist(ConceptACP) 공식 코드</li>
+    <li>공통 benchmark: 랩이 쓰는 이미지 생성 파이프라인 + 알려진 아티팩트 패턴 세트</li>
+    <li>비교축: 아티팩트 제거율, 일반 생성 품질 유지, 전역 fine-tuning 대비 연산 비용</li>
+    <li>실패해도 남는 결과: 랩 생성 파이프라인의 아티팩트-U-Net 블록 매핑 분석 보고서</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>E. VERA-Hand의 4축 평가 설계를 랩 로봇 손 자세 추정 평가에 적용</h3>
+  <p>탐지·국소화·식별·시간 안정성 4축 평가를 랩 파이프라인에 적용해, 기존 PCK/MPJPE만으로는 드러나지 않던 손 혼동·추적 끊김 비율을 측정합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: VERA-Hand 평가 프로토콜 및 Pose-F1 지표 재구현</li>
+    <li>공통 benchmark: 랩 보유 로봇 손 자세 추정 영상 데이터</li>
+    <li>비교축: 탐지 누락률, 좌우손 혼동률, 시간적 안정성, 기존 PCK/MPJPE와의 괴리</li>
+    <li>실패해도 남는 결과: 랩 손 자세 추정 파이프라인의 4축 평가 베이스라인 보고서</li>
+  </ul>
+</div>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘은 월요일이지만 daily 실행이라 예측 회고는 생략합니다(예측 회고는 오늘 10:00 KST 별도 weekly 실행이 이미 수행했습니다 — <a href="2026-10-26-weekly.html">weekly 보기</a> 참고). 다음 예측 회고는 2026-11-02(월) weekly 실행이 이번 주를 되돌아보며 수행합니다.</p>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(59편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:3%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:3%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:3%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>59편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:51%"></span></span><span class=n>30편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:49%"></span></span><span class=n>29편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>123편</span></div>
+
+<p><small>⚠️ 참고: Fourier Ptychography/Microscopy·Lensless/Coded Imaging은 오늘 0건입니다. Phase Imaging/Holography·Meta-Optics/Diffractive 2편씩은 모두 Crossref abstract 미보강 저널로 제목만으로 분류했습니다. Light-Field/Novel Sensors 2편은 "neuromorphic" 키워드 오탐(뉴로모픽 continual learning, 광필드와 무관)입니다. Tomography/3D Imaging 59편 중 실제 계산 이미징 신호는 오늘 클러스터2에 반영된 PixGR·CompMVR 2편뿐이고 나머지 57편은 심혈관 CT·치과 CBCT·안과 OCT 등 임상 영상입니다. Virtual Staining/Pathology 30편 중 실제 신호는 약 5편(Automated Nucleus Segmentation, 라벨-free 간암 미세혈관 침범 검출, SHG sarcomere 영상 등)이고 나머지는 ICG 형광 염색 수술 가이드, 지속가능성/교육 연구 등 "staining"·"green" 키워드 오탐이거나 무관 논문입니다. Reconstruction/Inverse Problems 29편 중 이미징 핵심 신호는 3편 내외(Computational imaging through turbid water, plug-and-play FWI breast imaging, TTT in VLA Models)이고 나머지는 RL/최적화 이론 등 ML 방법론입니다. Deep Learning Methods 123편 중 오늘 클러스터에 반영된 신호는 18편 내외(로봇/내비게이션 자동화, 3D 생성, self-improvement, diffusion 편집, 평가 인프라 다수)이고 나머지는 LLM/시계열/소재과학 등입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Phase Imaging/Holography (2편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110201" target=_blank>Rotary four-state digital holographic microscopy for zero-order suppression and high-frequency-preserving dynamic phase imaging</a></strong> [JNL]<br>
+  왜 주요: 도메인 Watch Lens 핵심 신호 — 동적 위상 이미징에서 영차 억제와 고주파 보존을 동시에 해결하는 홀로그래픽 현미경 설계
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116797" target=_blank>Measurement of refractive index and evaluation of cured state of UV-curable adhesive using immersion liquid method and digital holography</a></strong> [JNL]<br>
+  왜 주요: 디지털 홀로그래피와 침지액법을 결합해 UV 경화형 접착제의 굴절률과 경화 상태를 측정
+</div>
+
+<h3>Meta-Optics/Diffractive (2편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116755" target=_blank>Physics-guided surrogate modeling and multi-objective inverse design of graphene-based terahertz metasurface sensors</a></strong> [JNL]<br>
+  왜 주요: physics-guided surrogate 모델로 그래핀 기반 THz 메타표면 센서를 다목적 역설계
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.611840" target=_blank>Enhancement of the magneto-optical Kerr effect and figure of merit empowered by hybrid bound states in the continuum in a metal nanograting metasurface</a></strong> [JNL]<br>
+  왜 주요: bound states in the continuum을 활용해 금속 나노그레이팅 메타표면의 자기광학 Kerr 효과를 증폭
+</div>
+
+<h3>Tomography/3D Imaging (59편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31908" target=_blank>PixGR: Pixel-Space Generative Decoding for Fast Feed-Forward 3D Reconstruction</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터2·must-read 대표 — 재구성 불확실성을 pixel-space 생성 모델로 직접 모델링, sparse-view/시점 외삽에서 강세
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.32800" target=_blank>CompMVR: Compression-Aware Multi-View Restoration Using Diffusion Models for Geometrically Consistent 3D Reconstruction</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터2 대표 — 압축으로 생긴 다중 시점 간 기하 불일치를 diffusion 모델로 복원
+</div>
+
+<h3>Virtual Staining/Pathology (30편 중 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31902" target=_blank>Automated Nucleus Segmentation in Histology Images: An Attention U-Net Approach with Comprehensive Preprocessing and Inference Pipelines</a></strong> [CV]<br>
+  왜 주요: stain deconvolution을 포함한 전처리 파이프라인과 경량 Attention U-Net으로 조직 영상 핵 분할을 수행
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.hpb.2026.08.186" target=_blank>Rapid Detection of Microvascular Invasion in Hepatocellular Carcinoma via AI-assisted Femtosecond Label-free Optical Histology</a></strong> [JNL]<br>
+  왜 주요: 라벨-free 펨토초 광학 조직검사로 간세포암의 미세혈관 침범을 AI 보조로 신속 검출
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1093/eurheartj/ehag785.2384" target=_blank>A study of sarcomere in hypertrophic cardiomyopathy using second-harmonic generation microscopy</a></strong> [JNL]<br>
+  왜 주요: 라벨-free SHG 현미경으로 비대심근병증의 sarcomere 미세구조 이상을 직접 시각화
+</div>
+
+<h3>Reconstruction/Inverse Problems (29편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.32646" target=_blank>Computational imaging through turbid, bubbly and flowing water near the telescope</a></strong> [CV]<br>
+  왜 주요: 렌즈 바로 앞의 탁하고 기포 섞인 흐르는 물을 통과한 영상을 실측 데이터셋으로 복원하는 계산 이미징 핵심 신호
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.32185" target=_blank>An exploration of plug-and-play flow matching for full-waveform inversion on breast imaging</a></strong> [IV]<br>
+  왜 주요: full-waveform inversion에 plug-and-play flow matching prior를 결합해 유방 영상 음속장 복원을 안정화
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.32094" target=_blank>TTT in VLA Models: Exploring Training with Human Demonstrations</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터3 대표(부정적 결과) — test-time training이 VLA의 시연 조건부 행동생성에서 아직 통하지 않음을 솔직하게 보고
+</div>
+
+<h3>Deep Learning Methods (123편 중 관련 18편, catch-all 과대표 방지로 2편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31834" target=_blank>WorldMirror: Agentic Real-to-Sim Generation of Interactive Worlds from In-the-Wild Robot Demonstrations</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터1·must-read 대표 — 코딩 에이전트가 실제 로봇 시연 영상에서 시뮬레이션 디지털 트윈을 자동 구성
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.32026" target=_blank>RSI-Opt: Recursive Self-Improvement Optimizer Agents For Model Training</a></strong> [LG · TIER A]<br>
+  왜 주요: 오늘 클러스터3 대표 — 메타 에이전트가 과거 실행 경험으로 최적화 정책을 계속 갱신, Burgers PDE 오차 최대 8.8배 감소
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>Value</th><th>Paper</th></tr></thead>
+<tbody>
+<tr><td>VLNVerse fine-grained / VLN-CE R2R / EVT-Bench distracted tracking</td><td>success rate 개선폭</td><td>VLNVerse 83.80%(+20.05%p), EVT-Bench 85.5%(+10.1%p, 단일 카메라)</td><td><a href="https://arxiv.org/abs/2610.31762" target=_blank>RepresentNav</a></td></tr>
+<tr><td>Burgers PDE / optimizer-agent evolution suite</td><td>상대 L2 오차 감소 / z-score</td><td>Opus 5.5 대비 -2.7배, GPT-6.1 대비 -8.8배, z-score +10.48→+14.33</td><td><a href="https://arxiv.org/abs/2610.32026" target=_blank>RSI-Opt</a></td></tr>
+<tr><td>StackGen3D block-stack 생성 (Best-of-10)</td><td>물리적 안정성 / silhouette IoU</td><td>안정성 45.3%→72.4%, IoU 0.970</td><td><a href="https://arxiv.org/abs/2610.31803" target=_blank>StackGen3D</a></td></tr>
+<tr><td>SDXL-Turbo one-step concept erasure</td><td>forgetting success rate 개선폭</td><td>최고 baseline 대비 +36.34%p</td><td><a href="https://arxiv.org/abs/2610.32059" target=_blank>Concept Acupuncturist</a></td></tr>
+<tr><td>과학 발견 5개 수학 과제, TTME vs TTT</td><td>연산량/실행시간 절감(동등 이상 정확도)</td><td>FLOPs -82.8~84.6%, 실행시간 -47.7~58.4%, 5개 과제 모두 TTT 상회</td><td><a href="https://arxiv.org/abs/2610.32046" target=_blank>TTME</a></td></tr>
+</tbody>
+</table>
+<p><small>오늘은 로봇/내비게이션 자동화와 에이전트 self-improvement 묶음(RepresentNav, RSI-Opt, StackGen3D, Concept Acupuncturist, TTME)이 abstract에 구체적 수치를 명시하고 있어 벤치마크 표에 반영했습니다. 모든 수치는 abstract 기준이며 본문 확인 전 1차 참고용입니다.</small></p>
+
+<h2>🔀 크로스오버 페어</h2>
+<p><strong>WorldMirror(로봇 real-to-sim 자동화) ↔ RSI-Opt(모델 최적화 자동화)</strong> — 두 편은 완전히 다른 분야(로봇 시뮬레이션 구성 vs 신경망 학습 최적화)를 다루지만, 둘 다 "코딩/메타 에이전트가 자신의 이전 실행 결과를 검증 피드백으로 받아 산출물을 반복적으로 고쳐나간다"는 같은 구조를 공유합니다. WorldMirror는 코딩 에이전트가 실행 가능한 "world program"을 짜고, 검증 피드백으로 재구성 오류를 진단·수정하는 과정을 반복해 물리적으로 말이 되는 디지털 트윈을 완성합니다. RSI-Opt는 메타 에이전트가 과거 실행에서 얻은 증거로 최적화 정책(프롬프트·코드·판단 기준)을 다시 써서, 고정된 정책으로는 불가능했던 세대를 거듭한 개선을 만들어냅니다. 로봇 시뮬레이션 구성과 신경망 학습이라는 서로 다른 분야가 같은 날 "에이전트가 자기 결과물을 검증-수정 루프로 반복 개선한다"는 같은 설계로 수렴한 사례입니다.</p>
+
+<hr>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] See What I Need, Dream What I Want: A Navigation Foundation Model on a Self-Constructed Representation Space (RepresentNav) — arXiv 2610.31762</h3>
+  <div class=tag>[방법전환] [해부분석]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 클러스터1의 대표 논문이자, "내비게이션 정책이 어떤 시각 정보를 봐야 하는가"라는 설계 질문에 가장 강한 수치로 답합니다. 기존 내비게이션 정책은 vision foundation model 인코더가 사전학습 목적으로 이미 만들어 둔 표현을 그대로 가져다 썼고, 그 표현이 내비게이션에 정말 필요한 정보인지는 따로 검증하지 않았습니다.</p>
+  <p><strong>핵심:</strong> RepresentNav는 "정책이 스스로 필요한 것을 보게" 만드는 self-constructed representation space를 제안합니다. Representation Residuals라는 3층 transformer가 여러 vision foundation model의 전체 깊이에 걸친 feature에 주의를 기울여, 정책 자신의 목적에 맞는 표현을 재구성합니다. 같은 공간 안에서 정책은 매 행동 전에 "한 순간 뒤의 장면이 어떻게 보일지"를 예측하는 latent chain-of-thought("dream")를 만드는데, 이 dream은 joint-embedding predictive architecture(JEPA) 방식으로 정책과 함께 학습됩니다. 그 결과 RepresentNav는 VLNVerse, VLN-CE R2R, EVT-Bench, 두 개의 point-goal 벤치마크에서 새 state of the art를 세웠고, 실제 로봇에서도 사람이 많고 복잡한 환경에서 이득이 이어졌습니다. VLNVerse fine-grained에서는 83.80% 성공률로 기존 최고 기록을 20.05%포인트 앞섰고, EVT-Bench distracted tracking에서는 단일 카메라만으로 85.5%(+10.1%p)를 기록했습니다. 같은 인코더를 써도 단순히 출력을 이어붙이는 것보다 self-constructed space가 뚜렷하게 낫고, 공간 안의 dream은 충돌을 4분의 1 줄입니다. 하나의 dream latent는 깊이·의미·3D occupancy를 실제 미래 프레임에 적용한 사전학습 인코더보다도 더 정확하게 디코딩되는데, occupancy는 한 번도 직접 지도학습된 적이 없다는 점이 눈에 띕니다(abstract 기준).</p>
+  <p><strong>주의:</strong> self-constructed space가 서로 다른 vision foundation model 조합에도 똑같이 잘 작동하는지, 그리고 "dream"이 실패하는 상황(급격한 장면 변화, 완전히 새로운 환경)에서 얼마나 안정적인지는 본문 확인이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] PixGR: Pixel-Space Generative Decoding for Fast Feed-Forward 3D Reconstruction — arXiv 2610.31908</h3>
+  <div class=tag>[방법전환] [인프라]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 클러스터2의 대표 논문이자, 랩의 feed-forward 3D 재구성 파이프라인에 바로 영향을 줄 수 있는 설계입니다. 기존 feed-forward 3D Gaussian 재구성은 대부분 회귀 기반이라 관측이 부족하거나 시점이 넓게 벌어진 어려운 상황에서 장면의 불확실성을 표현하지 못했고, 생성 기반 방법은 VAE 기반 잠재 압축과 2단계 파이프라인 때문에 오차가 누적되는 문제가 있었습니다.</p>
+  <p><strong>핵심:</strong> PixGR는 가벼운 pixel-space 생성 모델링을 feed-forward 3D Gaussian 재구성에 통합해 장면 불확실성을 직접 다룹니다. context 관측은 한 번만 인코딩해 장면 latent 표현을 만들고, 이 표현이 noisy한 target view로부터의 생성적 디코딩을 조건화해 공유된 3D Gaussian 표현을 만듭니다. 이 과정을 pixel-space flow matching으로 공식화해, differentiable rendering을 통해 pixel-space 생성적 supervision으로 3D 재구성을 end-to-end로 최적화할 수 있습니다. VAE 기반 잠재 압축과 거기서 생기는 오차 전파를 피하면서도, feed-forward 효율성을 지키기 위해 장면 표현을 캐시하고 가벼운 DiT 디코더로 반복 추론합니다. 실험에서 PixGR는 넓게 벌어진 관측이나 시점 외삽처럼 어려운 sparse-view 상황에서 회귀 기반 방법을 능가하면서도, 1초 미만의 추론 속도를 유지하고 훨씬 무거운 사전학습 생성 모델과도 경쟁력을 보였습니다(abstract 기준).</p>
+  <p><strong>주의:</strong> "가벼운 DiT 디코더"의 구체적인 반복 횟수와, 불확실성이 실제로 얼마나 잘 보정(calibration)되는지, 또 정량적 PSNR/LPIPS 수치가 abstract에는 없어 본문·코드 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 저널 375편 중 OpenAlex enrich가 abstract를 백필한 건 21편(약 5.6%)에 그쳐, 나머지 대다수(특히 Phase Imaging·Meta-Optics 전부)는 제목만으로 분류·판단했습니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology 30건 중 약 25건, Tomography/3D Imaging 59건 중 약 57건이 키워드 오탐 또는 계산 이미징 방법론과 무관한 임상/응용(심혈관 CT, 치과 CBCT, 안과 OCT 등)입니다.</p>
+  <p>[Claim risk] 오늘 다섯 클러스터는 모두 cs.CV·cs.LG·cs.AI 기반이라, 랩의 계산광학 ROI 핵심(FP·Lensless·Phase·Meta-Optics)과는 직접적 거리가 있고 "3D/에이전트/생성모델 방법론"이라는 간접적 연결로 묶었습니다. 특히 Fourier Ptychography·Lensless가 오늘 0건이라 핵심 ROI 관점에서는 공백이 가장 깊은 날입니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Baseline risk] RepresentNav의 "VLNVerse +20.05%p" 개선폭이 비교 대상 baseline들의 재현 정확도에 따라 달라질 수 있어, 공식 재현 수치와 직접 비교 가능한지는 본문 확인이 필요합니다.</p>
+  <p>[Metric risk] RSI-Opt의 "z-score +10.48→+14.33"은 평가 스위트 내부 정규화 지표라, 절대적인 성능 개선 크기를 직관적으로 비교하기 어렵습니다.</p>
+  <p>[Claim risk] Concept Acupuncturist는 SDXL-Turbo 한 백본에서 주로 검증됐고, 다른 Stable Diffusion 백본으로의 일반화는 "효과적으로 일반화된다"는 서술 외에 구체적 수치가 abstract에 없습니다.</p>
+  <p>[Deployment risk] WorldMirror는 DROID 데이터셋에서만 검증됐고, 코딩 에이전트가 생성하는 "world program"이 더 복잡하거나 장시간인 로봇 시연에서도 같은 품질을 유지하는지는 불명확합니다.</p>
+  <p>[Claim risk] TTT in VLA Models는 음의 결과(negative result) 논문으로, "현재 실험한 규모·설정에서" 통하지 않았다는 보고이지 모든 조건에서 TTT가 VLA에 무용하다는 뜻은 아닙니다. 데이터 스케일이나 모델 규모가 달라지면 결과가 바뀔 수 있습니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li>Tomography/3D Imaging 임상 사례·비계산광학 응용 약 57편 [주로 JNL] — 심혈관 CT 플라크/석회화 평가, 치과 CBCT, 안과 OCT, 신장결석 CT 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
+    <li>Virtual Staining/Pathology 키워드 오탐·주변 응용 약 25편 — ICG 형광 염색 수술 가이드, 조류 백혈구 염색법 비교, 지속가능성/교육/에너지 연구 등 "staining"·"green" 단어만 겹친 무관 논문이 다수입니다.</li>
+    <li>Reconstruction/Inverse Problems 약 26편 — 강화학습 이론, 양자 커널, LLM 지식 습득, 금융 그래프 신경망 등 방법론은 유사하나 랩 ROI 핵심과는 거리가 있습니다.</li>
+    <li>Deep Learning Methods 123편 중 이미징과 결이 다른 약 105편 — 텍스트/언어모델, EEG/fMRI 파운데이션 모델, 시계열·금융 예측, 소재·분자 설계, 음악/오디오 생성 등 의료영상 인접 분야이거나 완전히 무관한 응용입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Phase Imaging/Holography (2편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110201" target=_blank>Rotary four-state digital holographic microscopy for zero-order suppression and high-frequency-preserving dynamic phase imaging</a></strong> <span class=pill>JNL</span><br>
+  문제: 기존 digital holographic microscopy가 영차항 억제와 고주파 성분 보존을 동시에 만족하기 어려움 / 방법: 회전형 4-state 위상 변조 / 의미: 랩 핵심(동적 위상 이미징) 신호 / 주의: 초록 상세 미확인(제목 기반) / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116797" target=_blank>Measurement of refractive index and evaluation of cured state of UV-curable adhesive using immersion liquid method and digital holography</a></strong> <span class=pill>JNL</span><br>
+  문제: UV 경화형 접착제의 굴절률과 경화 상태를 비파괴로 측정하기 어려움 / 방법: 침지액법 + 디지털 홀로그래피 / 의미: 홀로그래피 응용(재료 계측) 신호 / 주의: 초록 상세 미확인(제목 기반) / 우선순위: Skim-only
+</div>
+
+<h3>Meta-Optics/Diffractive (2편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116755" target=_blank>Physics-guided surrogate modeling and multi-objective inverse design of graphene-based terahertz metasurface sensors</a></strong> <span class=pill>JNL</span><br>
+  문제: 그래핀 기반 THz 메타표면 센서의 다목적 설계 탐색이 비싼 전자기 시뮬레이션에 의존함 / 방법: physics-guided surrogate 모델 기반 역설계 / 의미: 메타광학 역설계 신호(센싱 응용) / 주의: 초록 상세 미확인(제목 기반) / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.611840" target=_blank>Enhancement of the magneto-optical Kerr effect and figure of merit empowered by hybrid bound states in the continuum in a metal nanograting metasurface</a></strong> <span class=pill>JNL</span><br>
+  문제: 자기광학 Kerr 효과의 figure of merit가 금속 나노구조에서 제한적임 / 방법: hybrid bound states in the continuum 활용 나노그레이팅 메타표면 / 의미: 메타광학 물성 증폭 신호(이미징과는 간접적) / 주의: 초록 상세 미확인(제목 기반) / 우선순위: Skim-only
+</div>
+
+<h3>Light-Field/Novel Sensors (2편 중 관련 0편, 키워드 오탐 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31927" target=_blank>ENCL: Enabling Efficient Neuromorphic Continual Learning with Local Learning Rule and Sub-Network Freezing Strategy</a></strong> <span class=pill>LG</span><br>
+  문제: 뉴로모픽 continual learning이 에너지 효율을 유지하면서 재앙적 망각을 피하기 어려움 / 방법: local learning rule + sub-network freezing / 의미: "neuromorphic" 키워드 오탐(광필드/이벤트 카메라 하드웨어와 무관) / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31954" target=_blank>RobustNCL: Robustifying Neuromorphic Continual Learning under Transient Faults with Lightweight Detect-and-Cure Strategy</a></strong> <span class=pill>LG</span><br>
+  문제: 뉴로모픽 continual learning이 일시적 하드웨어 결함에 취약함 / 방법: 경량 detect-and-cure 전략 / 의미: "neuromorphic" 키워드 오탐(광필드와 무관) / 우선순위: Skim-only
+</div>
+
+<h3>Tomography/3D Imaging (59편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31908" target=_blank>PixGR: Pixel-Space Generative Decoding for Fast Feed-Forward 3D Reconstruction</a></strong> <span class=pill>CV</span><br>
+  문제: feed-forward 3D Gaussian 재구성이 회귀 기반이라 sparse-view 상황의 불확실성을 표현하지 못함 / 방법: pixel-space flow matching 기반 생성적 디코딩 / 의미: 오늘 클러스터2·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.32800" target=_blank>CompMVR: Compression-Aware Multi-View Restoration Using Diffusion Models for Geometrically Consistent 3D Reconstruction</a></strong> <span class=pill>CV</span><br>
+  문제: 압축된 다중 시점 영상이 시점 간 기하 불일치를 일으켜 3D 재구성 품질을 떨어뜨림 / 방법: 압축 인지 다중 시점 diffusion 복원 / 의미: 오늘 클러스터2 대표 / 우선순위: Read
+</div>
+<p><small>나머지 57편은 심혈관 CT 플라크/석회화 평가, 치과 CBCT, 안과 OCT, 신장결석 CT 등 임상 영상이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology (30편 중 관련 5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31902" target=_blank>Automated Nucleus Segmentation in Histology Images: An Attention U-Net Approach with Comprehensive Preprocessing and Inference Pipelines</a></strong> <span class=pill>CV</span><br>
+  문제: 조직 영상의 높은 핵 밀도와 염색 불균일성이 핵 분할을 어렵게 함 / 방법: stain deconvolution 전처리 + 경량 Attention U-Net / 의미: 디지털 병리 핵 분할 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.hpb.2026.08.186" target=_blank>Rapid Detection of Microvascular Invasion in Hepatocellular Carcinoma via AI-assisted Femtosecond Label-free Optical Histology</a></strong> <span class=pill>JNL</span><br>
+  문제: 간세포암 미세혈관 침범 여부 확인이 기존 염색 기반 병리 판독으로는 시간이 오래 걸림 / 방법: 펨토초 라벨-free 광학 조직검사 + AI 보조 판독 / 의미: 라벨-free 디지털 병리 핵심 신호 / 주의: 초록 상세 미확인(제목 기반) / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1093/eurheartj/ehag785.2384" target=_blank>A study of sarcomere in hypertrophic cardiomyopathy using second-harmonic generation microscopy</a></strong> <span class=pill>JNL</span><br>
+  문제: 비대심근병증의 sarcomere 미세구조 이상을 조기에 포착하기 어려움 / 방법: 라벨-free SHG(second-harmonic generation) 현미경 / 의미: 라벨-free 이미징 응용 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1111/exsy.70463" target=_blank>TB-BasilNet: Weakly Supervised Segmentation of Tuberculosis Bacilli in Ziehl-Neelsen Sputum Smear Microscopy</a></strong> <span class=pill>JNL</span><br>
+  문제: 결핵균 객담도말 현미경 영상에서 간균을 정확히 분할하려면 픽셀 단위 라벨이 많이 필요함 / 방법: 약지도 학습 기반 segmentation / 의미: 디지털 병리 신호 / 주의: 초록 상세 미확인(제목 기반) / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong>Automated Nucleus Segmentation 외 CV 1편(ReLEAP, Vision Datasets Upcycling)</strong> <span class=pill>CV</span><br>
+  문제: 비전 데이터셋의 task 간 재사용이 annotation 형식 차이로 제한됨 / 방법: cross-task unification + semi-supervised annotation / 의미: 병리 영상 자체보다 데이터셋 구축 방법론에 가까운 간접 신호 / 우선순위: Skim-only
+</div>
+<p><small>나머지 25편은 ICG 형광 염색 수술 가이드, 조류 백혈구 염색법 비교, 지속가능성/교육/에너지 연구 등 "staining"·"green" 키워드 오탐이거나 무관 논문이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (29편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.32646" target=_blank>Computational imaging through turbid, bubbly and flowing water near the telescope</a></strong> <span class=pill>CV</span><br>
+  문제: 서프존이나 선박 항적 뒤처럼 렌즈 바로 앞의 탁하고 움직이는 물을 통과해 찍은 영상의 복원 품질이 실제 물리 조건에서 검증되지 않음 / 방법: 흐름·기포·탁도를 조합한 실측 데이터셋 구축 / 의미: 계산 이미징 핵심 신호(수중/산란 매질 통과 촬영) / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.32185" target=_blank>An exploration of plug-and-play flow matching for full-waveform inversion on breast imaging</a></strong> <span class=pill>IV</span><br>
+  문제: full-waveform inversion의 정칙화 설계가 역전환 안정성과 구조 보존 사이에서 까다로움 / 방법: 음속장 영상에서 학습한 flow matching prior를 plug-and-play로 결합 / 의미: 역문제 재구성 핵심 신호(유방 초음파 영상) / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.32094" target=_blank>TTT in VLA Models: Exploring Training with Human Demonstrations</a></strong> <span class=pill>CV</span><br>
+  문제: 장기 과제를 수행하는 로봇이 과거 정보를 유지·활용하지 못함 / 방법: test-time training(fast weights)을 VLA에 통합, 시연-궤적 쌍으로 학습 / 의미: 오늘 클러스터3 대표(부정적 결과) / 우선순위: Read
+</div>
+<p><small>나머지 26편은 강화학습 이론, 양자 커널, LLM 지식 습득, 금융 그래프 신경망 등 이미징 ROI와 거리가 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods (123편 중 관련 18편, catch-all 과대표 방지로 4편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31834" target=_blank>WorldMirror: Agentic Real-to-Sim Generation of Interactive Worlds from In-the-Wild Robot Demonstrations</a></strong> <span class=pill>CV</span><br>
+  문제: 로봇 시뮬레이션 환경 구성이 사람의 많은 수작업을 요구해 확장성이 떨어짐 / 방법: 코딩 에이전트가 검증 피드백으로 "world program"을 반복 정제 / 의미: 오늘 클러스터1·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.31762" target=_blank>See What I Need, Dream What I Want (RepresentNav)</a></strong> <span class=pill>CV</span><br>
+  문제: 내비게이션 정책이 어떤 시각 표현을 써야 하는지를 인코더 사전학습 목적에만 맡겨 옴 / 방법: self-constructed representation + JEPA 기반 미래 표현 예측 / 의미: 오늘 클러스터1·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.32026" target=_blank>RSI-Opt: Recursive Self-Improvement Optimizer Agents For Model Training</a></strong> <span class=pill>LG</span><br>
+  문제: 고정된 에이전트 정책은 여러 학습 실행에 걸친 경험을 축적하지 못함 / 방법: 메타 에이전트가 프롬프트·코드·판단 기준을 계속 갱신 / 의미: 오늘 클러스터3 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.32059" target=_blank>Concept Acupuncturist</a></strong> <span class=pill>CV</span><br>
+  문제: diffusion 모델의 개념 삭제가 전체 fine-tuning에 의존해 비효율적이고 부정확함 / 방법: sparse autoencoder 기반 국소 U-Net 블록 수정 / 의미: 오늘 클러스터4 대표 / 우선순위: Read
+</div>
+<p><small>나머지 14편(SceneBloom, SP-Guide, ViT-H, StackGen3D, Easy-3Dfy, RADIANT, On-Policy Self-Training, TTME, Phronix, PASTA, TIE, AlphaAnything, DELA, 4DMemory 등 클러스터에 이미 반영된 논문)은 중복 bullet을 생략합니다.</small></p>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://arxiv.org/abs/2610.31762" target=_blank>See What I Need, Dream What I Want (RepresentNav)</a></li>
+  <li><a href="https://arxiv.org/abs/2610.31908" target=_blank>PixGR: Pixel-Space Generative Decoding for Fast Feed-Forward 3D Reconstruction</a></li>
+  <li><a href="https://arxiv.org/abs/2610.31834" target=_blank>WorldMirror: Agentic Real-to-Sim Generation of Interactive Worlds</a></li>
+  <li><a href="2026-10-26-weekly.html">2026-10-26 Weekly Retrospective</a></li>
+  <li><a href="2026-10-23.html">2026-10-23 Daily Briefing</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-10-26 arXiv+저널 표준 daily · arXiv 540건(new+cross, 5개 카테고리) + 저널 375편(Crossref)+OpenAlex enrich 21편 abstract 보강 · 전체 스캔 808건(dedup 후) · ROI 배정 247건 (30.6%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

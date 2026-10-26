@@ -1,0 +1,244 @@
+{
+    "date": "2026-10-26",
+    "source_mode": "new",
+    "clusters": [
+        {
+            "cluster": "에이전트가 로봇 시뮬레이션 환경·내비게이션 표현·동작까지 자동으로 만들어, 사람이 손으로 설계하던 단계를 대체",
+            "papers": [
+                {
+                    "title": "WorldMirror: Agentic Real-to-Sim Generation of Interactive Worlds from In-the-Wild Robot Demonstrations",
+                    "arxiv_id": "https://arxiv.org/abs/2610.31834",
+                    "journal_or_source": "arXiv cs.CV"
+                },
+                {
+                    "title": "SceneBloom: Agentic Indoor Environment Generation with Realistic and Diverse Layouts for Embodied Learning",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32978",
+                    "journal_or_source": "arXiv cs.CV"
+                },
+                {
+                    "title": "See What I Need, Dream What I Want: A Navigation Foundation Model on a Self-Constructed Representation Space (RepresentNav)",
+                    "arxiv_id": "https://arxiv.org/abs/2610.31762",
+                    "journal_or_source": "arXiv cs.CV"
+                },
+                {
+                    "title": "SP-Guide: Enhancing Aerial Vision-Language Navigation with Spatial Priors",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32697",
+                    "journal_or_source": "arXiv cs.CV"
+                },
+                {
+                    "title": "ViT-H: Generative Video-To-Humanoid Control with Motion Tracking Feedback",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32966",
+                    "journal_or_source": "arXiv cs.CV"
+                }
+            ],
+            "why": "로봇을 시뮬레이션에서 학습시키려면 지금까지는 사람이 장면을 일일이 꾸미고 과제를 정의해야 했고, 내비게이션 로봇이 어떤 시각 정보를 봐야 하는지도 보통 미리 학습된 인코더의 설계에 그대로 맡겨 왔습니다. 오늘 다섯 편은 이 '사람이 손으로 짜주던 부분'을 하나씩 자동화합니다. WorldMirror는 실제 로봇이 아무 장소에서나 찍은 영상만 보고, 코딩 에이전트가 장면을 분해하고 복원 순서를 계획해 사람이 그 안에서 로봇 궤적을 그대로 재생할 수 있는 시뮬레이션 쌍둥이를 자동으로 만듭니다. SceneBloom은 가구 배치를 diffusion 모델로 제안한 뒤 물리적으로 말이 되는 3D 공간인지 자동으로 다듬어, 실제 촬영한 방 데이터로 학습했을 때보다 오히려 더 높은 내비게이션 성공률을 냅니다. RepresentNav는 내비게이션 정책이 어떤 화면 정보를 봐야 하는지를 기존 인코더 설계에 맡기는 대신, 정책 스스로 '한 순간 뒤에 장면이 어떻게 보일지'를 상상하도록 학습시켜(JEPA 방식) VLNVerse에서 기존 최고 기록을 20.05%포인트 앞섰습니다. SP-Guide는 드론이 하늘에서 언어로 지시된 목표를 찾아갈 때 시각 정보와 지도 정보를 그냥 섞는 대신 공간적으로 정렬해 주는 모듈을 추가했고, ViT-H는 사람이 찍힌 영상에서 동작을 재구성하고 로봇 동작으로 옮기는 중간 단계 없이, 영상에서 바로 휴머노이드가 따라 할 동작을 diffusion 모델로 생성한 뒤 실제로 그 동작이 로봇에서 실행 가능한지를 피드백으로 다시 학습에 반영합니다. 다섯 편 모두 '사람이 미리 준비해 둬야 했던 환경·표현·동작'을 생성형 모델과 에이전트가 스스로 만들어내는 쪽으로 옮겨가고 있다는 공통점이 있습니다.",
+            "confidence": "High",
+            "confidence_note": "서로 다른 5개 연구팀이 시뮬레이션 환경 생성·실내 장면 생성·내비게이션 표현·공중 내비게이션·휴머노이드 제어라는 다른 과제에서 같은 설계 철학(사람이 준비하던 것을 생성형 에이전트가 자동화)에 도달, RepresentNav는 VLNVerse +20.05%p·EVT-Bench +10.1%p라는 구체적 수치를 동반",
+            "lab_action": "RepresentNav의 self-constructed representation(JEPA 기반 'dream') 모듈을 랩 내비게이션/조작 파이프라인의 기존 비전 인코더 뒤에 붙여, 같은 인코더 조합에서 representation concatenation 대비 충돌 회피율과 성공률이 얼마나 개선되는지 ablation한다"
+        },
+        {
+            "cluster": "Feed-forward 3D 생성/복원이 '한 번 잘 만들기'를 넘어 불확실성·압축 열화·물리적 안정성·메쉬 해상도 같은 현실 잡음까지 처리",
+            "papers": [
+                {
+                    "title": "PixGR: Pixel-Space Generative Decoding for Fast Feed-Forward 3D Reconstruction",
+                    "arxiv_id": "https://arxiv.org/abs/2610.31908",
+                    "journal_or_source": "arXiv cs.CV"
+                },
+                {
+                    "title": "CompMVR: Compression-Aware Multi-View Restoration Using Diffusion Models for Geometrically Consistent 3D Reconstruction",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32800",
+                    "journal_or_source": "arXiv cs.CV"
+                },
+                {
+                    "title": "StackGen3D: Stable 3D Block Stack Generation from Multiview Silhouettes",
+                    "arxiv_id": "https://arxiv.org/abs/2610.31803",
+                    "journal_or_source": "arXiv cs.CV"
+                },
+                {
+                    "title": "Easy-3Dfy: Object-Level Geometric Composition for Single-Image 3D Scene Construction",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32250",
+                    "journal_or_source": "arXiv cs.CV"
+                },
+                {
+                    "title": "RADIANT: Object-Centric Feed-Forward Global Illumination",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32075",
+                    "journal_or_source": "arXiv cs.CV"
+                }
+            ],
+            "why": "feed-forward 3D 재구성·생성 모델은 보통 '깨끗한 입력에서 장면을 얼마나 잘 복원/생성하는가'로 평가돼 왔습니다. 오늘 다섯 편은 모두 그 '깨끗한 입력'이라는 가정을 하나씩 깨며 현실적인 잡음을 다룹니다. PixGR는 몇 장 안 되는 영상만으로 3D Gaussian을 복원할 때 생기는 불확실성 자체를 pixel 단위 생성 모델로 표현해, 영상 사이 간격이 넓거나 아예 새로운 시점을 봐야 하는 어려운 상황에서 기존 회귀 기반 방법보다 나은 결과를 1초 이내에 냅니다. CompMVR은 실제 서비스에서는 다중 시점 영상이 압축 때문에 열화된 상태로 들어온다는 점을 지적하고, 압축으로 생긴 시점 간 불일치를 diffusion 모델로 복원해 카메라 추정과 새 시점 합성 품질을 함께 끌어올립니다. StackGen3D는 블록을 쌓아 3D 구조를 만들 때 물리적으로 쓰러지지 않는지를 그래프 신경망으로 미리 걸러, 안정성을 45.3%에서 72.4%로 끌어올립니다. Easy-3Dfy는 물체 생성과 장면 배치를 하나의 모델이 한꺼번에 떠맡는 대신 각각 잘하는 모델에 맡기고 그 둘을 기하학적으로 다시 이어 붙입니다. RADIANT는 메쉬를 잘게 쪼갤수록 계산량이 늘어나는 문제를 물체 단위 표현으로 바꿔 물체 수에만 비례하게 만들어 500개 물체짜리 장면도 1초 이내에 렌더링합니다. 다섯 편을 묶으면, feed-forward 3D 파이프라인이 '한 번 잘 복원/생성하는가'라는 질문에서 '불확실하거나 깨지거나 쌓이거나 복잡한 실제 상황에서도 버티는가'로 평가 기준이 옮겨가고 있다는 뜻입니다.",
+            "confidence": "High",
+            "confidence_note": "서로 다른 5개 연구팀이 불확실성 모델링·압축 복원·물리적 안정성·조합적 생성·렌더링 확장성이라는 다른 실패 조건에서 같은 방향(이상적 가정을 깨는 조건에서도 버티는 feed-forward 파이프라인)으로 수렴, StackGen3D 45.3%→72.4%·RADIANT +3.3~7.6dB 등 구체적 수치 동반",
+            "lab_action": "PixGR의 pixel-space flow matching 기반 불확실성 모델링을 랩 보유 sparse-view 3DGS 파이프라인에 붙여, 넓은 baseline/시점 외삽 조건에서 기존 회귀 기반 복원 대비 PSNR과 추론 시간이 어떻게 달라지는지 비교한다"
+        },
+        {
+            "cluster": "에이전트가 실행하는 동안 스스로 경험을 쌓아 다음 실행을 개선하는 self-improvement 설계가 과학 발견·모델 최적화에서는 통하지만 로봇 조작에서는 아직 신뢰할 수 없음",
+            "papers": [
+                {
+                    "title": "RSI-Opt: Recursive Self-Improvement Optimizer Agents For Model Training",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32026",
+                    "journal_or_source": "arXiv cs.LG"
+                },
+                {
+                    "title": "On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32770",
+                    "journal_or_source": "arXiv cs.LG"
+                },
+                {
+                    "title": "Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery? (TTME)",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32046",
+                    "journal_or_source": "arXiv cs.AI"
+                },
+                {
+                    "title": "Phronix: The Capability-Centric Learning Paradigm for Agents",
+                    "arxiv_id": "https://arxiv.org/abs/2610.31789",
+                    "journal_or_source": "arXiv cs.AI"
+                },
+                {
+                    "title": "TTT in VLA Models: Exploring Training with Human Demonstrations",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32094",
+                    "journal_or_source": "arXiv cs.CV"
+                }
+            ],
+            "why": "모델이나 에이전트가 미리 정해진 절차를 그대로 따르는 대신, 실행하면서 쌓은 경험으로 스스로를 갱신하게 만드는 시도가 오늘 다섯 편에서 동시에 나왔는데, 결과는 영역에 따라 갈렸습니다. RSI-Opt는 LLM 에이전트가 모델 학습을 모니터링하고 최적화 설정을 바꾸되, 그 경험을 프롬프트·검증된 코드·판단 기준으로 계속 쌓아가게 만들어 Burgers 방정식 오차를 최대 8.8배까지 줄였습니다. On-Policy Self-Training은 사람이 만든 문제·정답 없이, 모델이 스스로 문제를 내고 스스로 푼 뒤 그 경험으로 자신을 다시 가르치는 방식만으로 언어와 멀티모달 과제 모두에서 성능이 올랐습니다. TTME는 모델 가중치를 계속 업데이트하는 test-time training 대신 외부 메모리만 갱신하는 더 가벼운 방식으로도 같은 과학 발견 과제에서 더 나은 결과를 내면서 연산량은 82.8~84.6%, 실행 시간은 47.7~58.4% 줄였습니다. Phronix는 에이전트가 작업을 수행할 때마다 재사용 가능한 능력을 자동으로 뽑아내 저장해 두고, 다음에 비슷한 작업이 오면 그 능력을 꺼내 쓰게 해 같은 작업의 첫 시도 성공률을 93~95%까지 끌어올렸습니다. 반면 TTT in VLA Models는 로봇이 사람의 시연 영상을 참고해 행동을 생성하도록, 실행 중 가중치를 빠르게 갱신하는 test-time training을 VLA(비전-언어-행동) 모델에 적용했지만, 지금 실험한 범위에서는 시연을 일관되게 더 잘 따라가게 만들지 못했고 실제 로봇에서도 특정 위치에 있는 컵만 계속 선택하는 편향이 남았다고 솔직하게 보고합니다. 즉 '실행 중 쌓은 경험으로 스스로를 개선한다'는 설계가 모델 최적화·과학 발견·에이전트 도구 숙련에서는 통하는 신호를 보였지만, 로봇이 실제 행동을 생성하는 VLA 쪽에서는 아직 같은 효과를 보여주지 못했다는 경계가 같은 날 함께 드러났습니다.",
+            "confidence": "High",
+            "confidence_note": "서로 다른 5개 연구팀이 모델 최적화·LLM post-training·과학 발견·에이전트 도구 숙련·로봇 행동생성이라는 다른 영역에서 self-improvement를 시도했고, RSI-Opt·TTME·Phronix는 구체적 수치로 성공을, TTT in VLA Models는 동일한 설계가 통하지 않는 영역을 같은 날 함께 보여줘 경계가 뚜렷함",
+            "lab_action": "TTT in VLA Models이 보고한 '시연 조건부 행동 생성에서 TTT가 통하지 않는' 실패 조건(사람 시연 → 로봇 행동 전이)을 랩 보유 VLA 파이프라인에서 먼저 재현해, 같은 실패가 랩 데이터 규모에서도 나타나는지, 아니면 데이터 스케일이 커지면 해소되는지 확인한다"
+        },
+        {
+            "cluster": "Diffusion 생성모델의 통제가 '그럴듯한 결과물 하나'에서 지우기·영역 보존·속성 정렬·알파 채널 확장 같은 세밀한 편집 단위로 내려감",
+            "papers": [
+                {
+                    "title": "Concept Acupuncturist: An Efficient and Precise Concept Erasure Method for Diffusion Models via Sparse Autoencoders",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32059",
+                    "journal_or_source": "arXiv cs.CV"
+                },
+                {
+                    "title": "PASTA: Prompt-Aware Annealed Diffusion Sampling",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32390",
+                    "journal_or_source": "arXiv cs.CV"
+                },
+                {
+                    "title": "TIE: Training-free CLIP Embedding Guidance for Compositional Text-to-Image Alignment",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32407",
+                    "journal_or_source": "arXiv cs.CV"
+                },
+                {
+                    "title": "AlphaAnything: Extending Pretrained RGB Generators to RGBA",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32413",
+                    "journal_or_source": "arXiv cs.CV"
+                },
+                {
+                    "title": "DELA: Learning Controllable Edits for Diffusion Language Models",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32096",
+                    "journal_or_source": "arXiv cs.AI"
+                }
+            ],
+            "why": "diffusion 기반 생성 모델을 다루는 논문들이 '원하는 대로 하나 잘 만들기'보다, 이미 만들어진 결과를 정확하게 고치고 통제하는 세밀한 단위로 눈을 돌렸습니다. Concept Acupuncturist는 이미지 생성 모델에서 특정 개념(유해하거나 정책에 위반되는 내용)만 콕 집어 지우되, 그 개념과 관련된 U-Net의 특정 블록만 찾아 고쳐 다른 능력은 건드리지 않고 지우기 성공률을 기존 최고 방법보다 36.34%포인트 끌어올렸습니다. PASTA는 광고나 UI 디자인처럼 로고·헤드라인이 들어갈 자리는 깨끗하게 비워 둬야 하는 상황에서, 그 영역에 원치 않는 내용이 새어 들어가는 문제를 학습 없이 샘플링 방식만 바꿔 해결합니다. TIE는 '빨간 공과 파란 상자'처럼 여러 물체와 속성을 동시에 요청했을 때 속성이 엉뚱한 물체에 붙거나 아예 빠지는 문제를, 텍스트 임베딩을 한 번만 조정해 학습 없이 고칩니다. AlphaAnything은 투명도(알파 채널)가 있는 이미지를 만들려면 보통 모델을 처음부터 다시 학습시켜야 했는데, 기존 RGB 생성 모델의 잠재 공간은 그대로 둔 채 가벼운 어댑터만 추가해 투명 이미지를 만들어내는 쪽으로 문제를 바꿉니다. DELA는 이미지가 아니라 언어 모델 쪽이지만 같은 결을 공유하는데, diffusion 언어 모델이 생성 중인 초안에서 어디를 삽입·삭제·다시 마스킹할지를 명시적인 편집 동작으로 통제할 수 있게 만듭니다. 다섯 편 모두 diffusion 모델을 '그럴듯한 결과 하나를 뽑는 블랙박스'가 아니라 '원하는 부분만 정확히 건드리는 편집 도구'로 다루기 시작했다는 공통점이 있습니다.",
+            "confidence": "High",
+            "confidence_note": "서로 다른 5개 연구팀이 개념 삭제·영역 보존·속성 정렬·채널 확장·언어 모델 편집이라는 다른 과제에서 같은 방향(결과물 전체가 아니라 특정 부분만 정밀 통제)으로 수렴, Concept Acupuncturist +36.34%p·DELA +5.5%p 등 구체적 수치 동반",
+            "lab_action": "Concept Acupuncturist의 '개념-특정 U-Net 블록 매핑 후 국소 수정' 설계를, 랩이 쓰는 이미지 생성 파이프라인에서 특정 아티팩트(예: 특정 질감·잡음 패턴)만 제거하는 용도로 옮겨 실험하고, 전역 fine-tuning 대비 다른 품질 저하가 적은지 확인한다"
+        },
+        {
+            "cluster": "평가 벤치마크 자체가 서로 무관한 도메인(초장기 기억 에이전트, 손동작 추정, 유세포 분석, 농업 엣지 디바이스)에서 동시에 새로 생겨남",
+            "papers": [
+                {
+                    "title": "4DMemory: Benchmarking Long-Horizon Spatiotemporal Memory with Harness-Augmented Agents",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32332",
+                    "journal_or_source": "arXiv cs.CV"
+                },
+                {
+                    "title": "VERA-Hand: A Verified Multidimensional Benchmark for 2D Hand Pose Estimation in Third-Person Dynamic Gesture Videos",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32517",
+                    "journal_or_source": "arXiv cs.CV"
+                },
+                {
+                    "title": "IFC-SSL-Bench: Benchmarking Self-Supervised Learning for Annotation-Efficient Multispectral Imaging Flow Cytometry",
+                    "arxiv_id": "https://arxiv.org/abs/2610.31848",
+                    "journal_or_source": "arXiv cs.CV"
+                },
+                {
+                    "title": "RootDown: Deploying and Benchmarking Models for Beet-Root Detection on Edge Devices",
+                    "arxiv_id": "https://arxiv.org/abs/2610.32275",
+                    "journal_or_source": "arXiv cs.CV"
+                }
+            ],
+            "why": "네 편은 로봇·에이전트 장기 기억, 손동작 추정, 세포 영상 분석, 농산물 검사라는 완전히 다른 분야를 다루지만, 공통적으로 '지금까지 느슨하게 평가되던 능력을 처음으로 전용 benchmark로 만든다'는 같은 움직임을 보입니다. 4DMemory는 900시간 분량 영상과 5천 개 넘는 질문으로, 기존 벤치마크가 다루지 않던 '몇 시간에서 며칠에 걸친 장기 기억'을 재는 틀을 만들었고, 13개 주요 모델이 여기서는 성능이 10%포인트 넘게 떨어진다는 것을 보였습니다. VERA-Hand는 손동작 추정을 지금까지처럼 '맞춘 예측끼리만' 비교하는 대신, 손을 놓치거나 엉뚱한 손으로 착각하는 경우까지 포함해 평가해, 최신 foundation model도 85% 넘는 프레임에서 양손을 혼동한다는 것을 드러냈습니다. IFC-SSL-Bench는 세포 영상(Imaging Flow Cytometry)에 self-supervised 학습을 적용하는 연구가 각자 다른 조건에서 보고돼 비교가 어려웠던 상황을, 여섯 가지 방법과 네 가지 backbone을 통일된 조건에서 비교하는 벤치마크로 정리했습니다. RootDown은 사탕무 품질 검사처럼 농산물이 겹치고 가려지는 실제 현장 조건에서, 라벨링 비용과 엣지 디바이스 배포 가능성까지 함께 재는 벤치마크를 만들었습니다. 네 도메인이 서로 직접 연결되지는 않지만, 어떤 분야든 응용 능력이 쌓이면 다음 단계는 새 방법론보다 '그 능력을 제대로 잴 수 있는 전용 자(benchmark)를 먼저 만드는 것'이라는 패턴이 오늘도 반복해서 나타났습니다.",
+            "confidence": "Medium",
+            "confidence_note": "네 도메인이 완전히 다르고 직접적인 상호 인용·교류는 없어 '같은 논문들의 직접적 공통 결론'이라기보다 '동시에 나타난 같은 유형의 연구 행위' 패턴이라 독립적 추가 사례 확인이 필요",
+            "lab_action": "VERA-Hand의 '탐지·국소화·식별·시간 안정성' 4축 평가 설계를 랩이 쓰는 로봇 손 자세 추정 파이프라인 평가에 그대로 적용해, 기존에 PCK/MPJPE만으로는 드러나지 않던 손 혼동·추적 끊김 비율을 별도로 측정한다"
+        }
+    ],
+    "research_topics": [
+        {
+            "title": "A. RepresentNav의 self-constructed representation을 랩 내비게이션/조작 인코더에 이식",
+            "claim": "정책이 스스로 '한 순간 뒤 장면'을 상상하도록 학습시키는 JEPA 기반 설계가, 랩이 쓰는 비전 인코더 조합에서도 representation concatenation보다 나은지 확인한다.",
+            "supporting_papers": [
+                {
+                    "title": "See What I Need, Dream What I Want (RepresentNav)",
+                    "arxiv": "https://arxiv.org/abs/2610.31762",
+                    "phylogeny": {
+                        "source": "ROBOTICS",
+                        "phylum": "Navigation > Representation Learning"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "B. PixGR의 불확실성 인지 feed-forward 3DGS를 랩 sparse-view 파이프라인에 적용",
+            "claim": "pixel-space flow matching으로 재구성 불확실성을 직접 모델링하는 방식이, 넓은 baseline/시점 외삽 조건에서 기존 회귀 기반 복원보다 얼마나 나은지 측정한다.",
+            "supporting_papers": [
+                {
+                    "title": "PixGR",
+                    "arxiv": "https://arxiv.org/abs/2610.31908",
+                    "phylogeny": {
+                        "source": "CVML",
+                        "phylum": "3D Reconstruction > Feed-Forward Gaussian Splatting"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "C. TTT in VLA Models의 실패 조건을 랩 VLA 파이프라인에서 재현",
+            "claim": "시연 조건부 행동 생성에서 test-time training이 통하지 않는다는 결과가 랩 데이터 규모에서도 재현되는지, 데이터가 늘면 해소되는지 확인한다.",
+            "supporting_papers": [
+                {
+                    "title": "TTT in VLA Models",
+                    "arxiv": "https://arxiv.org/abs/2610.32094",
+                    "phylogeny": {
+                        "source": "ROBOTICS",
+                        "phylum": "Vision-Language-Action > Test-Time Adaptation"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "D. Concept Acupuncturist의 국소 개념 삭제 설계를 아티팩트 제거 용도로 전용",
+            "claim": "개념-특정 U-Net 블록 매핑 후 국소 수정 설계를, 특정 질감·잡음 아티팩트 제거에 적용해 전역 fine-tuning 대비 품질 저하가 적은지 확인한다.",
+            "supporting_papers": [
+                {
+                    "title": "Concept Acupuncturist",
+                    "arxiv": "https://arxiv.org/abs/2610.32059",
+                    "phylogeny": {
+                        "source": "CVML",
+                        "phylum": "Generative Models > Diffusion Unlearning"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "E. VERA-Hand의 4축 평가 설계를 랩 로봇 손 자세 추정 평가에 적용",
+            "claim": "탐지·국소화·식별·시간 안정성 4축 평가를 랩 파이프라인에 적용해, PCK/MPJPE만으로는 드러나지 않던 손 혼동·추적 끊김 비율을 측정한다.",
+            "supporting_papers": [
+                {
+                    "title": "VERA-Hand",
+                    "arxiv": "https://arxiv.org/abs/2610.32517",
+                    "phylogeny": {
+                        "source": "CVML",
+                        "phylum": "Evaluation > Hand Pose Benchmark"
+                    }
+                }
+            ]
+        }
+    ],
+    "phylogeny_tags": []
+}

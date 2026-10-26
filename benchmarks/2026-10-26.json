@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-26",
+  "results": [
+    {
+      "benchmark": "VLNVerse fine-grained / VLN-CE R2R / EVT-Bench distracted tracking",
+      "metric": "success rate improvement over prior SOTA",
+      "value": 83.80,
+      "value_str": "VLNVerse 83.80% (+20.05pp), EVT-Bench 85.5% single-camera (+10.1pp)",
+      "paper": "https://arxiv.org/abs/2610.31762",
+      "paper_title": "See What I Need, Dream What I Want: A Navigation Foundation Model on a Self-Constructed Representation Space (RepresentNav)"
+    },
+    {
+      "benchmark": "Burgers PDE / optimizer-agent evolution suite",
+      "metric": "relative L2 error reduction / raw-space z-score",
+      "value": 8.8,
+      "value_str": "mean relative L2 error -2.7x (Opus 5.5) to -8.8x (GPT-6.1); z-score +10.48 to +14.33",
+      "paper": "https://arxiv.org/abs/2610.32026",
+      "paper_title": "RSI-Opt: Recursive Self-Improvement Optimizer Agents For Model Training"
+    },
+    {
+      "benchmark": "StackGen3D block-stack generation (Best-of-10)",
+      "metric": "physical stability / silhouette IoU",
+      "value": 72.4,
+      "value_str": "stability 45.3%→72.4%, silhouette IoU 0.970",
+      "paper": "https://arxiv.org/abs/2610.31803",
+      "paper_title": "StackGen3D: Stable 3D Block Stack Generation from Multiview Silhouettes"
+    },
+    {
+      "benchmark": "SDXL-Turbo one-step concept erasure",
+      "metric": "forgetting success rate improvement over best baseline",
+      "value": 36.34,
+      "value_str": "+36.34pp over best-performing baseline",
+      "paper": "https://arxiv.org/abs/2610.32059",
+      "paper_title": "Concept Acupuncturist: An Efficient and Precise Concept Erasure Method for Diffusion Models via Sparse Autoencoders"
+    },
+    {
+      "benchmark": "Scientific discovery (5 mathematical tasks), TTME vs TTT",
+      "metric": "compute/runtime reduction at equal or better accuracy",
+      "value": 84.6,
+      "value_str": "FLOPs -82.8~84.6%, runtime -47.7~58.4%, outperforms TTT on all 5 tasks",
+      "paper": "https://arxiv.org/abs/2610.32046",
+      "paper_title": "Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery? (TTME)"
+    }
+  ]
+}

@@ -29,5 +29,40 @@
       "Reconstruction/Inverse Problems": 145,
       "Deep Learning Methods": 846
     }
-  }
+  },
+  "note": "2026-10-26(월) 14:00 KST 정기 daily 실행. 오늘 오전 10:00 KST weekly 실행이 이미 지난주(10/19~10/23) 회고를 발행했으며(weekly_retrospective_context 유지), 이 daily는 당일(10/26) 신규 분을 별도로 수집·분류한다. 추적 5개 카테고리 모두 /new listing이 'Monday, 26 October 2026'으로 post_date와 정확히 일치해 표준 daily mode로 진행했다(backfill/journal-only 아님). arXiv new+cross 540건(cs.LG 198·cs.CV 133·cs.AI 189·eess.IV 2·eess.SP 18, replacement 제외)과 저널(Crossref 375편, --days 1, OpenAlex enrich 21편 abstract 보강)을 합쳐 dedup 후 총 808건을 스캔했고, classify.py가 247건(30.6%)을 9개 ROI 버킷에 배정했다. 오늘은 로봇·내비게이션 학습에서 사람이 손으로 준비하던 시뮬레이션 환경·시각 표현·동작을 생성형 에이전트가 자동으로 만들어내는 흐름(WorldMirror, SceneBloom, RepresentNav, SP-Guide, ViT-H)과, feed-forward 3D 생성/복원이 불확실성·압축 열화·물리적 안정성·메쉬 해상도 같은 현실 잡음까지 처리하는 흐름(PixGR, CompMVR, StackGen3D, Easy-3Dfy, RADIANT)이 뚜렷했다. 에이전트의 test-time self-improvement는 모델 최적화·과학 발견·에이전트 도구 숙련에서는 통했지만(RSI-Opt, On-Policy Self-Training, TTME, Phronix) VLA 로봇 조작에서는 아직 신뢰할 수 없다는 경계도 같은 날 드러났다(TTT in VLA Models, 부정적 결과). diffusion 생성모델의 통제가 세밀한 편집 단위로 내려가는 흐름(Concept Acupuncturist, PASTA, TIE, AlphaAnything, DELA)과, 평가 벤치마크가 서로 무관한 도메인에서 동시에 생겨나는 흐름(4DMemory, VERA-Hand, IFC-SSL-Bench, RootDown)도 관찰됐다. 계산광학 코어(Fourier Ptychography/Lensless/Phase/Meta-Optics/Light-Field)는 오늘 Fourier Ptychography·Lensless 모두 0건으로 공백이었고 Phase·Meta-Optics도 저널 2편씩(제목 기반)에 그쳐 도메인 Watch Lens에서 별도 처리했다.",
+  "source_listing_date": "2026-10-26",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 198,
+      "cs.CV": 133,
+      "cs.AI": 189,
+      "eess.IV": 2,
+      "eess.SP": 18
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 375,
+    "journal_window_days": 1
+  },
+  "totals": {
+    "total_scanned": 808,
+    "selected": 247
+  },
+  "classified": {
+    "total_scanned": 808,
+    "selected": 247,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 2,
+      "Meta-Optics/Diffractive": 2,
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 59,
+      "Virtual Staining/Pathology": 30,
+      "Reconstruction/Inverse Problems": 29,
+      "Deep Learning Methods": 123
+    }
+  },
+  "daily_thesis": "오늘은 로봇·내비게이션 학습에서 사람이 손으로 준비하던 시뮬레이션 환경·시각 표현·동작을 생성형 에이전트가 자동으로 만들어내는 흐름과, feed-forward 3D 생성/복원이 불확실성·압축 열화·물리적 안정성 같은 현실 잡음까지 처리하는 흐름이 겹쳤고, 에이전트의 test-time self-improvement가 모델 최적화·과학 발견에서는 통했지만 VLA 로봇 조작에서는 아직 안 통한다는 경계가 같은 날 함께 드러났습니다."
 }
