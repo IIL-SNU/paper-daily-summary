@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 23 Oct 2026 14:25:22 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 10:30:54 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Weekly Retrospective — 2026-10-26 (Week 43)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-10-26-weekly.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-10-26-weekly.html</guid>
+      <pubDate>Mon, 26 Oct 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[지난주 가장 강하게 가속한 흐름은 목요일과 금요일 이틀에 걸쳐 VLA·world model·video generation 전반에서 동시에 터진 '신뢰성 축'입니다. 목요일(10/22)에는 네 개의 클러스터가 한꺼번에 같은 방향을 가리켰습니다. GeoMem-VLA와 DepState-JEPA는 VLA가 깊이·3D 기하 정보를 매 순간 다시 계산하지 말고 내부 상태에 압축해 계속 들고 다니자는 설계를 각각 다르게 제안했고, Post-hoc Epistemic Uncertainty·Real2Sem2Real 등 네 편은 로봇 조작의 '일반화'를 데이터 양이 아니라 다양성 커버리지와 자기 불확실성 인식의 문제로 다시 정의했습니다. 같은 날 Events, Not Pixels는 worl…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-10-23 (금요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-10-23.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-23.html</guid>
       <pubDate>Thu, 23 Jul 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[오늘(7/23, 목)을 어제(7/22, 수)와 이어보면 3DGS라는 화두 자체는 계속 이어지지만 질문이 다시 한 번 바뀌었습니다. 어제는 "재구성한 장면을 어떻게 계속 편집·조작·활용할 수 있는가"가 중심이었는데, 오늘은 "그 재구성 자체를 얼마나 빠르고 가볍게, 얼마나 일반화되게 만들 수 있는가"로 초점이 되돌아왔습니다. ATSplat은 장면 복잡도에 맞춰 가우시안 개수를 조절해 촘촘한 feed-forward 3DGS 대비 가우시안 개수를 5.7배 넘게 줄였고, STEREOFLOW는 스테레오 매칭을 결정론적 회귀가 아니라 생성 모델링으로 다시 풀어 애매한 영역에서의 부정확성을 줄였습니다. 계산광학 코어(Fourier Ptychography, Lensless, Phase…]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Daily Briefing — 2026-07-22 (수요일)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-07-22.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-22.html</guid>
-      <pubDate>Wed, 22 Jul 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘(7/22, 수)은 어제(7/21, 화)와 이어서 보면 3DGS라는 표현 자체는 계속 화두지만 질문이 완전히 바뀌었습니다. 어제는 3DGS 8편이 몰리면서 "저장·전송·촬영 조건이 나빠져도 계속 쓸 수 있는가"라는 배포 조건 검증이 중심이었는데, 오늘은 3DGS 4편이 "재구성한 장면을 어떻게 계속 편집·조작·활용할 수 있는가"를 묻습니다. 대표 논문 겹침은 없습니다. 계산광학 코어(Fourier Ptychography, Lensless, Phase Imaging, Meta-Optics)는 어제도 얇았지만(6~7편) 오늘은 더 얇아져(4편) 최근 며칠 중 가장 조용한 날입니다.]]></description>
     </item>
   </channel>
 </rss>
