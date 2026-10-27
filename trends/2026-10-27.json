@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-27",
+  "source_listing_date": "2026-10-27",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 426,
+      "cs.CV": 290,
+      "cs.AI": 433,
+      "eess.IV": 25,
+      "eess.SP": 50
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 435,
+    "journal_window_days": 1
+  },
+  "totals": {
+    "total_scanned": 1410,
+    "selected": 418
+  },
+  "classified": {
+    "total_scanned": 1410,
+    "selected": 418,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 7,
+      "Meta-Optics/Diffractive": 21,
+      "Light-Field/Novel Sensors": 5,
+      "Tomography/3D Imaging": 62,
+      "Virtual Staining/Pathology": 67,
+      "Reconstruction/Inverse Problems": 37,
+      "Deep Learning Methods": 218
+    }
+  },
+  "daily_thesis": "오늘은 로봇 World Action Model/VLA 연구가 '더 똑똑한 예측'에서 '엣지에서 실시간으로 도는 예측'으로, feed-forward 3D 재구성이 '빠르게 한 번 추정'에서 '추정이 틀렸을 때 스스로 아는가'로 평가축이 옮겨간 날입니다. 계산광학 핵심(Fourier Ptychography·Lensless·Phase·Meta-Optics·Light-Field)은 오늘도 실신호가 희미해 도메인 Watch Lens로 따로 다뤘습니다."
+}

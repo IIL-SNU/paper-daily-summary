@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-10-27</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-10-27 (화요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-10-27 (화요일) · 표준 daily — 추적 5개 카테고리 모두 /new listing이 "Tuesday, 27 October 2026"으로 post_date와 정확히 일치해 backfill/journal-only 없이 정상 진행합니다.</div>
+  <div>📚 소스: arXiv(Date Source Contract 통과, post_date==listing_date) + 저널(Crossref/OpenAlex, --days 1)</div>
+  <div>🔢 arXiv: cs.LG 426 · cs.CV 290 · cs.AI 433 · eess.IV 25 · eess.SP 50 (new+cross, replacement 제외, 총 1224건)</div>
+  <div>🔢 저널: Crossref/OpenAlex 435편 (--days 1)</div>
+  <div>🔢 전체 스캔: 1410건(dedup 후) · ROI 배정 418건 (29.6%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 배치에서 가장 뚜렷한 건, 로봇 World Action Model/VLA(비전-언어-행동) 연구의 무게중심이 "미래를 얼마나 그럴듯하게 예측하는가"에서 "그 예측과 행동을 엣지 하드웨어에서 지연 없이 돌릴 수 있는가"로 넘어갔다는 점입니다(Video World Models Need Predictable Latents, TurboWAM, OSWAM, DriveUniTok, VLA-HWBench). 같은 날 feed-forward 3D 재구성 쪽에서도 비슷한 성숙 신호가 보였는데, "한 번 빠르게 추정하기"를 넘어 "그 추정이 틀렸을 때 모델 스스로 아는가"를 처음으로 정면에서 묻기 시작했습니다(Does VGGT Know What It Does Not Know?, FreeView, SG-Splat, Generative SfM). 의료 영상 ViT/VLM 쪽은 정확도보다 "근거를 실제로 보고 판단했는가"와 "다른 병원 데이터에서도 재현되는가"를 더 중요하게 다뤘고, 가속 MRI·저선량 영상 재구성은 diffusion prior를 무겁게 쓰는 대신 측정 물리에 맞춰 가볍게 적용하는 쪽으로 수렴했습니다. 계산광학 코어(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics·Light-Field)는 오늘도 Fourier Ptychography 0건으로 공백이 이어졌습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv 5개 카테고리는 모두 "Tuesday, 27 October 2026" listing으로 정상 갱신됐습니다(post_date==listing_date). new+cross 1224건(cs.LG 426·cs.CV 290·cs.AI 433·eess.IV 25·eess.SP 50)과 저널 435편(Crossref/OpenAlex, --days 1)을 합쳐 dedup 후 총 1410건을 스캔했고, classify.py가 418건(29.6%)을 9개 ROI 버킷에 배정했습니다.</p>
+<p>가장 강한 신호는 World Action Model(WAM)·VLA 연구가 실시간 배포 가능성을 정면으로 다루기 시작했다는 점이었습니다. Video World Models Need Predictable Latents는 월드 모델이 미래 프레임을 예측할 때 쓰는 잠재 표현 자체가 예측하기 어렵게 설계돼 있어서 긴 호라이즌 롤아웃 품질이 무너지고 추론도 느려진다는 점을 지적했고, TurboWAM과 OSWAM은 각각 비디오 월드 모델 표현의 일부만 써도 충분하다는 점과 디노이징 스텝을 여러 번 돌릴 필요가 없다는 점을 보여 추론 경로 자체를 줄였습니다. DriveUniTok은 자율주행 월드 모델이 외형·기하·자기운동을 따로 다루는 비효율을 하나의 토크나이저로 통합했고, VLA-HWBench는 VLA 모델이 엣지 하드웨어에서 돌아갈 때 지연시간이 어디서 발생하는지 체계적으로 측정하는 벤치마크를 만들었습니다. 다섯 편 모두 "더 그럴듯한 미래를 상상하는 모델"에서 "실시간 폐루프 제어에 들어갈 수 있는 모델"로 평가 기준이 옮겨가고 있다는 공통점을 보였습니다.</p>
+<p>그 옆에서는 feed-forward 3D 재구성이 "자기 추정을 믿어도 되는지 스스로 아는가"를 묻는 쪽으로 넘어갔습니다. Does VGGT Know What It Does Not Know?는 VGGT 같은 feed-forward 모델이 틀린 카메라 자세를 내놓아도 겉보기엔 맞는 추정과 구분이 안 된다는 문제를 HardMatch라는 1,000개 사례 벤치마크로 직접 검증했고, FreeView는 입력 사진 중 장면과 무관한 사진이 섞여 있을 때 모델 내부 일관성 신호만으로 걸러낼 수 있다고 보고했습니다. SG-Splat은 카메라 자세 오차가 3D Gaussian 기하 품질 저하로 이어지는 문제를 자세 불확실성을 명시적으로 다뤄 완화했고, Generative Structure from Motion은 고전 SfM의 "안 보이는 영역은 복원 못함"과 생성 모델의 "입력과 안 맞을 수 있음"이라는 두 한계를 함께 겨냥했습니다. 한편 의료 영상 ViT/VLM 연구는 정확도보다 신뢰성을 더 따졌는데, SAP-ViT는 CLS 토큰 하나로 판단하는 대신 패치 단위로 근거를 분해했고, Alzheimer's MRI 분류 논문은 한 데이터셋에서 잘 나온 성능이 다른 병원 데이터에서도 유지되는지 교차 검증했으며, 유방 생검 논문은 Grad-CAM으로 모델이 실제 병변을 보고 판단하는지 확인해 불필요한 생검을 줄이려 했습니다.</p>
+<p>가속 MRI·저선량 영상 재구성 쪽에서는 diffusion prior를 가볍게 쓰는 설계가 눈에 띄었습니다. Cascaded Posterior Sampling은 고해상도 분포 전체를 큰 네트워크 하나로 학습하는 대신 거친 영상을 조건으로 디테일만 작은 네트워크로 채워나갔고, Scalable Unrolled Chains는 unrolled MRI 재구성 네트워크가 층을 늘릴수록 메모리가 감당 안 되는 문제를 매번 일부 층만 무작위로 학습시켜 풀었습니다. Complex Domain Inverse Problem과 Spectrally optimized INR은 둘 다 4D Flow MRI 해상도를 지도학습 데이터 없이 끌어올렸고, Matching Particle-Arrival Rates는 광자·전자가 극히 적게 검출되는 저선량 현미경 영상에서 빛 입자 도달 통계 자체를 모델링해 잡음을 제거했습니다. 계산광학 코어(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics·Light-Field)는 오늘도 Fourier Ptychography가 0건으로 공백이었고, 나머지도 대부분 키워드 오탐이라 도메인 Watch Lens에서 별도로 다룹니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(월요일, 10/26)는 로봇 시뮬레이션 환경·내비게이션 표현·동작을 생성형 에이전트가 자동으로 만드는 흐름(WorldMirror, SceneBloom, RepresentNav)과, feed-forward 3D 생성/복원이 불확실성·압축 열화·물리적 안정성 같은 현실 잡음을 처리하는 흐름(PixGR, CompMVR, StackGen3D)이 중심이었습니다. 오늘은 그 두 흐름이 한 단계 더 나아간 모습으로 이어졌습니다 — 어제가 "에이전트가 환경·표현·동작을 자동으로 만들 수 있는가"를 물었다면, 오늘은 "그렇게 만든 모델을 실시간으로 로봇 위에서 돌릴 수 있는가"(VLA-HWBench, TurboWAM, OSWAM)를 묻고, 어제가 "feed-forward 3D가 현실 잡음까지 처리하는가"를 봤다면 오늘은 "그 결과를 얼마나 믿어도 되는지 모델 스스로 아는가"(Does VGGT Know What It Does Not Know?, FreeView)를 봤습니다. 즉 같은 두 연구 흐름이 "자동화 능력 확보" 단계에서 "신뢰성·실시간성 검증" 단계로 한 걸음 넘어간 것으로 읽힙니다. 또한 어제는 보이지 않던 축인 의료 영상 ViT/VLM의 해석가능성·교차 데이터셋 재현성(SAP-ViT, Alzheimer's MRI robustness, LiteMed-ViT)과 가속 MRI의 가벼운 diffusion prior 설계(Cascaded Posterior Sampling, Scalable Unrolled Chains)가 오늘 새로 뚜렷해졌습니다. 계산광학 코어는 어제 Fourier Ptychography·Lensless 모두 0건이었던 것이 오늘은 Lensless 1건(암호화 응용, 간접 신호)으로 소폭 늘었지만 Fourier Ptychography는 여전히 0건으로 공백이 이어집니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>World Action Model/VLA가 '더 똑똑하게'보다 '더 빠르게·엣지에서' 돌아가야 한다는 쪽으로 평가축이 이동</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.34663" target=_blank>Video World Models Need Predictable Latents</a> <span class="pill a">LG · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.33941" target=_blank>TurboWAM: Learning What Matters for Fast World Action Models</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.35850" target=_blank>OSWAM: An Effective World Action Model with One-Step Action Generation</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.35044" target=_blank>DriveUniTok: A Unified Multimodal Tokenizer for Driving World-Action Models</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.34717" target=_blank>VLA-HWBench: Where the Time Goes When VLA Models Run on Edge Hardware</a> <span class=pill>AI</span>
+  </td>
+  <td>로봇이 다음 행동을 정하기 전에 미래 장면을 예측하는 World Action Model(WAM)과 VLA(비전-언어-행동) 모델은 지금까지 주로 "얼마나 정확하게 예측하고 행동하는가"로 평가받아 왔습니다. 오늘 다섯 편은 모두 같은 질문을 던집니다 — 그 예측과 행동을 실제 로봇 위에서 지연 없이 돌릴 수 있는가. Video World Models Need Predictable Latents는 월드 모델의 잠재 표현 자체가 예측하기 어렵게 설계돼 있어 긴 호라이즌에서 품질이 무너지고 추론 속도도 느려진다는 점을 지적하고 표현을 예측 친화적으로 바꿉니다. TurboWAM과 OSWAM은 각각 "모든 비디오 월드 모델 표현을 다 쓸 필요가 없다"는 점과 "여러 번 디노이징 스텝을 돌릴 필요가 없다"는 점을 보여, 미래 프레임을 상상하는 단계 자체를 줄이거나 한 번에 행동을 생성합니다. DriveUniTok은 자율주행 월드 모델이 외형·기하(라이다)·자기운동을 따로 다루는 비효율을 하나의 토크나이저로 통합해서 풉니다. VLA-HWBench는 아예 한발 물러서서 VLA 모델이 실제 엣지 하드웨어에서 돌아갈 때 지연시간이 어디서 발생하는지를 체계적으로 측정하는 벤치마크를 만들었습니다. 다섯 편을 묶으면, 월드 모델/VLA 연구의 다음 단계는 "더 그럴듯한 미래를 상상하는 모델"이 아니라 "실시간 폐루프 제어에 들어갈 수 있는 모델"이라는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 5개 연구팀이 잠재 표현 설계·연산 경로 단축·원스텝 생성·토크나이저 통합·하드웨어 프로파일링이라는 다른 각도에서 같은 결론(지연시간이 다음 병목)에 도달, VLA-HWBench는 전용 벤치마크까지 동반</small></td>
+  <td>VLA-HWBench의 지연시간 분해 프로토콜(perception/tokenization/action head 구간별 측정)을 랩 보유 VLA 파이프라인에 적용해 가장 비싼 구간을 먼저 찾고, OSWAM의 원스텝 action head를 그 구간에 이식했을 때 success rate 손실 대비 지연시간 절감폭을 비교한다</td>
+</tr>
+<tr>
+  <td><strong>Feed-forward 3D 재구성이 '불확실할 때 모른다고 말할 수 있는가'를 묻기 시작</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.35806" target=_blank>Does VGGT Know What It Does Not Know?</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.33656" target=_blank>FreeView: Robust 3D Reconstruction from Uncurated Views</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.35361" target=_blank>SG-Splat: Stable Geometry Learning under Pose Uncertainty for Pose-Free 3D Gaussian Splatting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.35522" target=_blank>Generative Structure from Motion with Native 3D Diffusion</a> <span class=pill>CV</span>
+  </td>
+  <td>VGGT 같은 feed-forward 3D 재구성 모델은 카메라 자세와 장면 기하를 한 번의 순전파로 바로 내놓습니다. 문제는 이 모델이 틀린 추정을 내놓아도 겉보기엔 맞는 추정과 구분이 안 된다는 점입니다. Does VGGT Know What It Does Not Know?는 이 "모델이 자기가 틀렸다는 걸 아는가"를 직접 검증하는 벤치마크(HardMatch)를 만들어, 얼린 모델 내부에 이미 불확실성 신호가 숨어 있는지를 찾습니다. FreeView는 한발 더 나아가 입력 영상 중 실제로 장면과 무관한 사진이 섞여 있을 때, feed-forward 모델이 가진 내부 일관성 신호만으로 그 이상 영상을 걸러낼 수 있다고 보고합니다. SG-Splat은 카메라 자세 추정이 조금이라도 틀리면 그 오차가 그대로 3D Gaussian 기하 품질 저하로 이어지는 문제를, 자세 불확실성을 명시적으로 다루는 방식으로 완화합니다. Generative Structure from Motion은 고전적인 SfM이 보이지 않는 영역은 복원할 수 없다는 한계와, 생성 모델이 만든 3D가 입력 사진과 안 맞을 수 있다는 한계를 동시에 겨냥해, 재구성과 생성을 한 번에 묶어 오차가 단계별로 누적되지 않게 합니다. 네 편 모두 feed-forward 3D 모델을 "한 번 빠르게 추정하는 도구"에서 "추정이 믿을 만한지 스스로 판단할 수 있는 도구"로 발전시키려는 같은 방향을 보여줍니다.</td>
+  <td>High<br><small>서로 다른 4개 연구팀이 불확실성 벤치마크·이상치 거부·자세 불확실성·재구성-생성 통합이라는 다른 각도에서 같은 결론(feed-forward 3D 모델이 자기 신뢰도를 알아야 한다)에 수렴, HardMatch 1,000개 사례 벤치마크 동반</small></td>
+  <td>HardMatch의 "의도적으로 어려운 상대 자세" 구성 방식을 랩 보유 feed-forward 3D 재구성 모델(VGGT 계열)에 적용해, 랩 데이터에서도 내부 활성화만으로 틀린 포즈를 탐지할 수 있는지 probing 실험을 1주일 내로 돌려본다</td>
+</tr>
+<tr>
+  <td><strong>의료 영상 ViT/VLM의 신뢰성이 정확도가 아니라 '근거를 실제로 보는가'로 재평가됨</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.35593" target=_blank>SAP-ViT: A Self-Attributing Patch Vision Transformer for Medical Image Classification</a> <span class=pill>AI</span><br>
+    <a href="https://arxiv.org/abs/2610.33416" target=_blank>How Robust Are CNNs and Vision Transformers for Alzheimer's MRI Classification Across Datasets?</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.33520" target=_blank>Promise and Limits of Cross-Architecture Knowledge Distillation for Lightweight Medical Vision Transformers (LiteMed-ViT)</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.35704" target=_blank>Explainable Multimodal AI Approach to Reduce Unnecessary Breast Biopsies</a> <span class=pill>AI</span>
+  </td>
+  <td>의료 영상에 쓰는 ViT/VLM 논문들이 오늘은 "정확도가 몇 %인가"보다 "그 정확도를 믿어도 되는가"를 더 많이 물었습니다. SAP-ViT는 ViT가 보통 CLS 토큰 하나로 최종 판단을 내리는 방식이 "어느 부위를 보고 그렇게 판단했는지"를 설명하기 어렵게 만든다는 점을 지적하고, 마지막 층 패치 임베딩을 직접 모아서 판단 근거를 패치 단위로 분해합니다. How Robust Are CNNs and Vision Transformers for Alzheimer's MRI Classification은 한 데이터셋에서 잘 나온 성능이 다른 병원·장비로 찍은 데이터셋에서도 유지되는지를 교차 검증해, 단일 데이터셋 성능이 실제 임상 일반화를 보장하지 않는다는 걸 보여줍니다. LiteMed-ViT는 엣지 환경에 배포 가능한 가벼운 의료 ViT를 지식 증류로 만들 때, 어디까지는 성능이 유지되고 어디서부터 무너지는지 한계를 정직하게 측정합니다. 유방 생검 논문은 Grad-CAM으로 모델이 실제로 종양 부위를 보고 판단하는지 시각화해서, 불필요한 생검을 줄이는 데 그 설명 가능성을 직접 활용합니다. 네 편을 묶으면, 의료 영상 모델 연구가 "더 높은 정확도"보다 "그 정확도가 실제 임상 환경과 다른 병원 데이터에서도 재현되고, 모델이 진짜 병변을 보고 판단했다는 근거가 있는가"를 더 중요하게 보기 시작했다는 뜻입니다.</td>
+  <td>Medium<br><small>4편이 해석가능성·교차 데이터셋 강건성·경량화 한계·임상 적용이라는 서로 다른 각도에서 같은 방향(정확도보다 신뢰성·재현성)을 보이지만 모두 abstract 기준이며 서로 다른 질환·모달리티라 추가 사례 확인 필요</small></td>
+  <td>SAP-ViT의 patch-level self-attribution 방식을 랩이 보유한 의료 영상 분류 파이프라인(ViT 기반)에 이식해, 기존 CLS-token 방식과 Grad-CAM 근거 영역이 실제 병변 마스크와 얼마나 겹치는지 IoU로 비교하는 1주 실험을 설계한다</td>
+</tr>
+<tr>
+  <td><strong>가속 MRI·저선량 영상 재구성에서 diffusion prior를 가볍게 쓰는 쪽으로 설계가 수렴</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.34170" target=_blank>Cascaded Posterior Sampling With Diffusion Priors for highly Accelerated MRI</a> <span class="pill a">IV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2610.33695" target=_blank>Scalable Unrolled Chains for MRI Reconstruction</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2610.33598" target=_blank>Complex Domain Inverse Problem Formulation for 4D Flow MRI Super-Resolution</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2610.33124" target=_blank>Spectrally optimized implicit neural representations mitigate acquisition-related image quality trade-offs in intracranial 4D Flow MRI</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2610.33136" target=_blank>Matching Particle-Arrival Rates for Low-Count Image Denoising</a> <span class=pill>LG</span>
+  </td>
+  <td>MRI를 빨리 찍으려면 측정을 덜 하는 수밖에 없는데, 측정을 덜 하면 잡음과 결측 정보가 늘어서 복원이 어려워집니다. 오늘 다섯 편은 이 복원 문제를 푸는 방식이 "크고 무거운 모델 하나"에서 "가볍게 반복 적용 가능한 구조"로 수렴하는 모습을 보여줍니다. Cascaded Posterior Sampling은 고해상도 영상 분포 전체를 하나의 큰 네트워크로 학습하는 대신, 거친 영상을 조건으로 준 뒤 디테일만 작은 네트워크로 단계적으로 채워나가 계산 비용을 줄입니다. Scalable Unrolled Chains는 가속 MRI의 표준 방법인 unrolled network(반복 최적화 과정을 신경망 층으로 펼친 구조)가 층을 늘릴수록 학습 메모리가 감당 안 되는 문제를, 매번 일부 층만 무작위로 골라 학습시키는 방식으로 해결합니다. Complex Domain Inverse Problem과 Spectrally optimized INR은 둘 다 4D Flow MRI(시간에 따른 3차원 혈류 속도 측정)의 해상도를 늘리는 문제를 다루는데, 전자는 복소수 영역에서 바로 역문제를 풀고 후자는 환자별로 즉석에서 적응하는 implicit neural representation을 써서 각각 지도학습 데이터 없이 품질을 끌어올립니다. Matching Particle-Arrival Rates는 광자나 전자가 극히 적게 검출되는 저선량 현미경 영상에서, 깨끗한 정답 영상 없이도 빛 입자가 들어오는 통계적 과정 자체를 직접 모델링해 잡음을 제거합니다. 다섯 편 모두 "더 큰 모델"이 아니라 "측정 물리/통계 구조에 맞춰 가볍게 설계된 복원 방식"이라는 공통점을 가집니다.</td>
+  <td>High<br><small>서로 다른 5개 연구팀이 posterior sampling·학습 메모리 효율화·복소영역 역문제·환자별 적응형 INR·입자 도달 통계 모델링이라는 다른 조각에서 같은 방향(측정 물리에 맞춘 가벼운 복원)으로 수렴, eess.IV/cs.CV/cs.LG 세 카테고리에 걸쳐 나타남</small></td>
+  <td>Scalable Unrolled Chains의 "무작위 cascade 샘플링 학습" 기법을 랩이 보유한 unrolled MRI/CT 재구성 네트워크에 적용해, 같은 GPU 메모리 예산에서 cascade 수를 몇 단까지 늘릴 수 있는지와 PSNR/SSIM이 전체 학습 대비 얼마나 유지되는지 측정한다</td>
+</tr>
+<tr>
+  <td><strong>계산 이미징 핵심(Lensless·Phase·Light-Field)은 오늘도 대부분 키워드 오탐이고 실신호는 간접 응용 1~2편뿐</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2610.33988" target=_blank>Hybrid Mamba-Transformer Network for Single-Shot 3D Reconstruction from Fringe Patterns</a> <span class=pill>CV</span><br>
+    <a href="https://doi.org/10.1109/tcsvt.2026.3746984" target=_blank>Spatial–Angular Aggregation with Sparse Awareness and Temporal Enhancement for Light Field Object Tracking</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1364/ao.612436" target=_blank>Analysis and design of the optical system for unfocused plenoptic cameras</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 Lensless/Coded Imaging은 1편뿐이고 그 1편(편광 부호화 간섭없는 코드화 조리개 상관 홀로그래피 이미지 암호화)도 실제로는 암호화 응용이라 랩이 보는 lensless 촬영 하드웨어 신호와는 거리가 있습니다. Phase Imaging/Holography 7편 중에도 실제 위상 이미징·홀로그래피 신호는 거의 없고, "Holo-NN"(홀로그래픽 근접 탐색)과 "Physical Adjoint Learning"(물리 기반 학습)은 각각 벡터 검색과 파동계 학습 알고리즘 논문이라 "holographic"·"wave" 단어만 겹친 키워드 오탐입니다. 그나마 Light-Field/Novel Sensors 쪽은 단편적으로 실신호가 있는데, Hybrid Mamba-Transformer는 fringe pattern(줄무늬 패턴) 하나로 3D 형상을 복원하는 구조광 계측이라 랩의 단일 샷 3D 측정과 결이 맞고, "unfocused plenoptic camera" 광학계 설계 논문과 "light field object tracking" 저널 논문도 간접적이지만 실제 광필드 신호입니다. 오늘 묶음은 독립 클러스터로 세우기엔 서로 다른 응용(구조광 계측, 플레놉틱 카메라 설계, 광필드 추적)이라 공통 연구 질문을 공유하지 않지만, 계산광학 코어가 또 한 번 공백에 가깝다는 신호 자체가 랩에 중요합니다.</td>
+  <td>Low<br><small>세 논문이 서로 다른 응용(구조광 계측·플레놉틱 광학계·추적)이라 하나의 연구 질문으로 묶이지 않음, 독립 클러스터라기보다 도메인 Watch Lens 관찰 기록에 가까움</small></td>
+  <td>Hybrid Mamba-Transformer의 fringe-to-depth 네트워크 구조(Mamba 장거리 의존성 + 국소 Transformer)를 랩 보유 단일 샷 구조광 3D 측정 파이프라인의 디코더로 교체 실험해, 기존 CNN/Transformer 단독 디코더 대비 고주파 디테일 보존이 개선되는지 확인한다</td>
+</tr>
+</tbody>
+</table>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 0편</strong> — 어제(월요일)에 이어 이틀 연속 완전 공백입니다. 계산 이미징 랩 핵심 ROI 중 가장 오래 비어 있는 버킷입니다.</li>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 1편</strong> — <a href="https://doi.org/10.1016/j.optlastec.2026.116808" target=_blank>Color image encryption based on Polarization-Encoded interferenceless coded aperture correlation holography and phase modulation</a> [JNL]. coded aperture correlation holography를 쓰지만 목적은 영상 암호화라, 랩이 보는 lensless 촬영·복원 자체와는 간접적인 신호입니다.</li>
+    <li><strong>Phase Imaging/Holography — 오늘 배정 7편, 실질 신호는 1편</strong> — 7편 중 "Holo-NN"(홀로그래픽 근접 이웃 탐색, 압축 센싱 기반 벡터 검색)과 "Physical Adjoint Learning"(파동계 물리 학습)은 각각 "holographic"·"wave" 키워드 오탐입니다. "On non-uniqueness of phase retrieval"은 위상 복원의 수학적 비유일성을 다루는 이론 논문이라 랩 응용과는 다소 거리가 있고, "Programmable illumination and spatially varying aberration correction in LSCM"[JNL]이 그나마 실제 현미경 하드웨어 신호에 가깝습니다. 나머지는 CO2 센서, 천체물리 스펙트럼 논쟁 등 완전히 무관합니다.</li>
+    <li><strong>Meta-Optics/Diffractive — 오늘 배정 21편, 대부분 통신·센싱용 메타표면</strong> — eess.SP 3편(XL MIMO extreme learning machine, dynamic metasurface pinching antenna, space-time stacked IM)은 모두 무선통신용 재구성 가능 메타표면이라 이미징과 무관합니다. JNL 18편 중 "Scaling metasurface design: from reusable unit cells to full-metasurface inverse design"과 "Inverse design of dielectric metasurface transmitarray using physics-enhanced GAN"이 메타광학 역설계 방법론으로 랩과 가장 가깝고, 나머지는 바이오센싱·전력전송·안테나용 메타표면으로 간접 신호입니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 오늘 배정 5편, 실질 신호는 3편</strong> — "Evaluating Spiking MoveNet Deployability"는 뉴로모픽 포즈 추정이라 키워드("neuromorphic")만 겹친 간접 신호이고, "Tight Learned Event-Inertial Odometry"는 이벤트 카메라 기반 오도메트리라 실제 novel sensor 신호입니다. 저널 2편(unfocused plenoptic camera 광학계 설계, light field object tracking)도 실신호에 포함됩니다. 오늘 클러스터5에서 다룬 fringe-pattern 3D 재구성(Hybrid Mamba-Transformer)까지 포함하면 이 버킷이 오늘 계산광학 코어 중 가장 신호가 많은 버킷입니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: World Action Model/VLA 실시간성 5편(Video World Models Need Predictable Latents, TurboWAM, OSWAM, DriveUniTok, VLA-HWBench), feed-forward 3D 불확실성 4편(Does VGGT Know, FreeView, SG-Splat, Generative SfM), 의료 영상 ViT/VLM 신뢰성 4편(SAP-ViT, Alzheimer's MRI robustness, LiteMed-ViT, 유방 생검 XAI), 가속 MRI/저선량 복원 5편(Cascaded Posterior Sampling, Scalable Unrolled Chains, Complex Domain 4D Flow MRI, Spectrally optimized INR, Matching Particle-Arrival Rates)</li>
+  <li><strong>저널 전용</strong>: 그래핀 THz 메타표면 센서 역설계, 레이저 스캐닝 공초점 현미경의 프로그래머블 조명·수차 보정, 심혈관 OCT 플라크/석회화 평가, 치과 CBCT, 광필드 객체 추적, 플레놉틱 카메라 광학계 설계 등 임상·하드웨어 응용</li>
+  <li><strong>공통 키워드</strong>: 오늘도 arXiv와 저널이 거의 겹치지 않습니다 — arXiv는 로봇/월드모델 실시간성·3D 신뢰성·의료 VLM 해석가능성·가속 MRI라는 "학습/신뢰성" 축에, 저널은 여전히 "촬영 하드웨어 자체를 계산으로 보강한다"는 익숙한 축(메타표면, 홀로그래피, 현미경 광학계)과 심혈관/치과 임상 영상에 머물러 있습니다.</li>
+  <li><strong>특징</strong>: 어제(월요일)는 "에이전트가 환경·동작을 자동 생성"하는 쪽이 arXiv 축이었는데, 오늘은 그 결과물의 "실시간성·신뢰성 검증"으로 한 단계 더 올라갔습니다. 계산 이미징 핵심 코어는 Fourier Ptychography가 이틀 연속 0건으로 가장 깊은 공백이 이어지는 중입니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. World Action Model/VLA가 '더 똑똑하게'보다 '더 빠르게·엣지에서' 돌아가야 한다는 쪽으로 평가축이 이동</h3>
+  <p>Video World Models Need Predictable Latents, TurboWAM, OSWAM, DriveUniTok, VLA-HWBench 다섯 편이 각각 잠재 표현 설계, 연산 경로 단축, 원스텝 생성, 토크나이저 통합, 하드웨어 프로파일링이라는 다른 각도에서 "지연시간이 다음 병목"이라는 같은 결론에 도달합니다.</p>
+  <p class=conf-note>Confidence: High — 5개 연구팀이 서로 다른 각도에서 같은 결론에 도달, VLA-HWBench는 전용 벤치마크까지 동반</p>
+</div>
+
+<div class=ins>
+  <h3>2. Feed-forward 3D 재구성이 '불확실할 때 모른다고 말할 수 있는가'를 묻기 시작</h3>
+  <p>Does VGGT Know What It Does Not Know?(HardMatch 벤치마크), FreeView(이상치 거부), SG-Splat(자세 불확실성), Generative SfM(재구성-생성 통합) 네 편이 feed-forward 3D 모델을 "빠르게 추정하는 도구"에서 "신뢰도를 스스로 판단할 수 있는 도구"로 발전시키는 같은 방향을 보입니다.</p>
+  <p class=conf-note>Confidence: High — HardMatch 1,000개 사례 벤치마크 동반, 4개 연구팀이 다른 조각에서 같은 결론에 수렴</p>
+</div>
+
+<div class=ins>
+  <h3>3. 의료 영상 ViT/VLM의 신뢰성이 정확도가 아니라 '근거를 실제로 보는가'로 재평가됨</h3>
+  <p>SAP-ViT(패치 단위 근거 분해), Alzheimer's MRI 교차 데이터셋 검증, LiteMed-ViT(경량화 한계 측정), 유방 생검 XAI 네 편이 "더 높은 정확도"보다 "재현성과 근거의 진짜 여부"를 더 중요하게 보기 시작했습니다.</p>
+  <p class=conf-note>Confidence: Medium — 4편이 다른 각도에서 같은 방향을 보이지만 모두 abstract 기준이며 질환·모달리티가 달라 추가 사례 확인 필요</p>
+</div>
+
+<div class=ins>
+  <h3>4. 가속 MRI·저선량 영상 재구성에서 diffusion prior를 가볍게 쓰는 쪽으로 설계가 수렴</h3>
+  <p>Cascaded Posterior Sampling, Scalable Unrolled Chains, Complex Domain 4D Flow MRI, Spectrally optimized INR, Matching Particle-Arrival Rates 다섯 편이 "더 큰 모델"이 아니라 "측정 물리/통계 구조에 맞춰 가볍게 설계된 복원 방식"이라는 공통점을 보입니다.</p>
+  <p class=conf-note>Confidence: High — eess.IV/cs.CV/cs.LG 세 카테고리에 걸쳐 5개 연구팀이 같은 방향으로 수렴</p>
+</div>
+
+<div class=ins>
+  <h3>5. 계산 이미징 핵심(Lensless·Phase·Light-Field)은 오늘도 대부분 키워드 오탐이고 실신호는 간접 응용 1~2편뿐</h3>
+  <p>Hybrid Mamba-Transformer(구조광 3D), 광필드 객체 추적 저널 논문, 플레놉틱 카메라 광학계 논문 세 편이 서로 다른 응용이라 하나의 클러스터로 묶이진 않지만, 계산광학 코어의 공백이 이어진다는 관찰 자체가 중요합니다.</p>
+  <p class=conf-note>Confidence: Low — 세 논문이 공통 연구 질문을 공유하지 않는 관찰 기록에 가까움</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. VLA-HWBench 지연시간 분해 프로토콜을 랩 VLA 파이프라인에 적용 + OSWAM 원스텝 action head 이식</h3>
+  <p>랩 VLA 파이프라인의 지연시간이 perception/tokenization/action head 중 어디에 몰려 있는지 먼저 측정한 뒤, 가장 비싼 구간에 OSWAM의 원스텝 생성을 이식했을 때 success rate 손실 대비 지연시간 절감폭을 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: VLA-HWBench 지연시간 프로파일링 프로토콜, OSWAM 원스텝 action head 재구현</li>
+    <li>공통 benchmark: 랩 보유 VLA 조작 데모 + 엣지 하드웨어(Jetson급)</li>
+    <li>비교축: 구간별 지연시간 비중, success rate, 원스텝 적용 후 지연시간 절감폭</li>
+    <li>실패해도 남는 결과: 랩 VLA 파이프라인의 구간별 지연시간 프로파일 보고서</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. HardMatch 스타일 불확실성 probing을 랩 feed-forward 3D 재구성 모델에 적용</h3>
+  <p>의도적으로 어려운 상대 카메라 자세 쌍을 구성해, 랩이 쓰는 VGGT 계열 모델의 내부 활성화만으로 틀린 포즈 추정을 탐지할 수 있는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Does VGGT Know What It Does Not Know?의 HardMatch 벤치마크 구성 방식</li>
+    <li>공통 benchmark: 랩 보유 VGGT 계열 feed-forward 재구성 모델 + 의도적 hard-pose 쌍</li>
+    <li>비교축: 내부 활성화 기반 불확실성 점수 vs 실제 자세 오차</li>
+    <li>실패해도 남는 결과: 랩 모델의 포즈 오류 탐지 가능성 1차 진단 보고서</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. SAP-ViT의 patch-level self-attribution을 랩 의료 영상 분류 파이프라인에 이식</h3>
+  <p>CLS 토큰 기반 분류 대신 patch 단위 근거를 직접 집계하는 방식이, 기존 Grad-CAM 근거 영역보다 실제 병변 마스크와 더 잘 겹치는지 IoU로 비교합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: SAP-ViT 패치 집계 분류 헤드 재구현</li>
+    <li>공통 benchmark: 랩 보유 의료 영상 분류 데이터(병변 마스크 포함)</li>
+    <li>비교축: CLS-token+Grad-CAM vs patch-level self-attribution의 병변 마스크 IoU, 분류 정확도</li>
+    <li>실패해도 남는 결과: 랩 의료 영상 분류기의 근거 영역-병변 마스크 정합성 베이스라인</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>D. Scalable Unrolled Chains의 무작위 cascade 샘플링 학습을 랩 가속 MRI/CT 재구성에 적용</h3>
+  <p>같은 GPU 메모리 예산에서 unrolled cascade 수를 몇 단까지 늘릴 수 있는지, 전체 학습 대비 PSNR/SSIM 손실이 어느 정도인지 측정합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Scalable Unrolled Chains의 무작위 cascade 샘플링 학습 기법 재구현</li>
+    <li>공통 benchmark: 랩 보유 unrolled MRI/CT 재구성 네트워크</li>
+    <li>비교축: 같은 메모리 예산에서 cascade 수, PSNR/SSIM, 학습 시간</li>
+    <li>실패해도 남는 결과: 랩 unrolled 네트워크의 메모리-품질 트레이드오프 곡선</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>E. Hybrid Mamba-Transformer fringe-to-depth 디코더를 랩 단일 샷 구조광 3D 측정에 이식</h3>
+  <p>Mamba 장거리 의존성과 국소 Transformer를 결합한 디코더가, 기존 CNN/Transformer 단독 디코더 대비 고주파 표면 디테일 복원에서 얼마나 개선되는지 비교합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Hybrid Mamba-Transformer 공식 코드(공개 시) 또는 디코더 재구현</li>
+    <li>공통 benchmark: 랩 보유 단일 샷 fringe projection profilometry 데이터</li>
+    <li>비교축: 고주파 디테일 복원 정확도, 추론 속도, 기존 디코더 대비 개선폭</li>
+    <li>실패해도 남는 결과: 랩 구조광 3D 측정 파이프라인의 디코더 비교 보고서</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Virtual Staining/Pathology(67편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:1%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:10%"></span></span><span class=n>7편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:31%"></span></span><span class=n>21편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:7%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:93%"></span></span><span class=n>62편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>67편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:55%"></span></span><span class=n>37편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>218편</span></div>
+
+<p><small>⚠️ 참고: Fourier Ptychography/Microscopy는 이틀 연속 0건입니다. Lensless/Coded Imaging 1편은 암호화 응용(간접 신호)입니다. Phase Imaging/Holography 7편 중 실질 신호는 1편뿐이고 나머지는 "holographic"·"wave" 키워드 오탐이거나 무관 이론/센서 논문입니다. Meta-Optics/Diffractive 21편 중 통신·센싱용(무선 메타표면, 바이오센싱, 전력전송)이 대다수이고 메타광학 역설계 방법론 신호는 2편 내외입니다. Light-Field/Novel Sensors 5편 중 3편이 실신호(이벤트 카메라 오도메트리, 플레놉틱 광학계, 광필드 객체 추적)이고 1편은 뉴로모픽 키워드 오탐입니다. Tomography/3D Imaging 62편 중 오늘 클러스터에 반영된 실제 계산 이미징/3D 신호는 4편(Does VGGT Know, FreeView, SG-Splat 등)이고 나머지 58편은 심혈관 OCT 플라크, 치과 CBCT, 안과 OCT 등 임상 영상입니다. Virtual Staining/Pathology 67편 중 실질 신호는 약 6편(히스토로지 공간 유전자 발현 예측, SWIFT-Cell 분할, PathKGen, 조직 collagen/SHG 영상 등)이고 나머지는 "label-free"·"staining" 키워드가 자기지도학습·에이전트·비이미징 분야 논문에 우연히 겹친 오탐입니다. Reconstruction/Inverse Problems 37편 중 이미징 핵심 신호는 6편 내외(MRI 재구성·QR 코드 복원 등)이고 나머지는 LLM/RL/시계열 등 ML 방법론입니다. Deep Learning Methods 218편 중 오늘 클러스터에 반영된 신호는 21편 내외(WAM/VLA 실시간성, feed-forward 3D 신뢰성, 의료 영상 해석가능성, 픽셀 공간 복원 다수)이고 나머지는 LLM/시계열/소재과학 등입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Phase Imaging/Holography (7편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2040-8986/aeb953" target=_blank>Programmable illumination and spatially varying aberration correction in a laser scanning confocal microscopy system</a></strong> [JNL]<br>
+  왜 주요: 도메인 Watch Lens 핵심 신호 — 레이저 스캐닝 공초점 현미경에 프로그래머블 조명과 공간 가변 수차 보정을 결합한 하드웨어 설계
+</div>
+
+<h3>Light-Field/Novel Sensors (5편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.33356" target=_blank>Tight Learned Event-Inertial Odometry (TLEIO): a Transformer-Based Architecture for End-to-End Motion from Event Streams</a></strong> [CV]<br>
+  왜 주요: 이벤트 카메라 스트림에서 Transformer로 바로 자세 추정을 수행하는 end-to-end odometry
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ao.612436" target=_blank>Analysis and design of the optical system for unfocused plenoptic cameras</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터5 대표 — unfocused 플레놉틱 카메라의 광학계 설계·분석
+</div>
+
+<h3>Tomography/3D Imaging (62편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.35806" target=_blank>Does VGGT Know What It Does Not Know?</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터2·must-read 대표 — feed-forward 3D 모델이 자기 추정 오류를 내부적으로 아는지 HardMatch 벤치마크로 검증
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.33656" target=_blank>FreeView: Robust 3D Reconstruction from Uncurated Views</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터2 대표 — 장면과 무관한 입력 사진을 모델 내부 일관성 신호만으로 걸러냄
+</div>
+
+<h3>Virtual Staining/Pathology (67편 중 관련 2편, 키워드 오탐 다수로 2편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.35167" target=_blank>Biology-Guided Context-Aware Residual Propagation for Spatial Gene Expression Prediction from Histology</a></strong> [LG]<br>
+  왜 주요: H&E 염색 조직 영상에서 공간 유전자 발현을 예측해 비싼 spatial transcriptomics를 대체하려는 디지털 병리 핵심 신호
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.33081" target=_blank>SWIFT-Cell: Segmentation Without Iterative Flow Tracking</a></strong> [CV]<br>
+  왜 주요: Cellpose-SAM급 정확도를 유지하면서 초 단위 상호작용 속도로 세포를 분할하는 실시간 병리 영상 분할
+</div>
+
+<h3>Reconstruction/Inverse Problems (37편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.34170" target=_blank>Cascaded Posterior Sampling With Diffusion Priors for highly Accelerated MRI</a></strong> [IV · TIER A]<br>
+  왜 주요: 오늘 클러스터4·must-read 대표 — 계단식 diffusion prior로 가속 MRI 복원 비용을 줄임
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.33695" target=_blank>Scalable Unrolled Chains for MRI Reconstruction</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터4 대표 — unrolled 네트워크 학습 메모리 문제를 무작위 cascade 샘플링으로 해결
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.34788" target=_blank>Decoding Motion-Blurred QR Codes: Motion-Parameter Error Tolerance and Model-Based Recovery</a></strong> [IV]<br>
+  왜 주요: 움직임 블러로 손상된 QR 코드를 모델 기반 복원으로 디코딩하는 계산 이미징 역문제
+</div>
+
+<h3>Deep Learning Methods (218편 중 관련 21편, catch-all 과대표 방지로 3편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.34663" target=_blank>Video World Models Need Predictable Latents</a></strong> [LG · TIER A]<br>
+  왜 주요: 오늘 클러스터1·must-read 대표 — 월드 모델 잠재 표현을 예측 친화적으로 재설계해 긴 호라이즌 품질·속도 동시 개선
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.34717" target=_blank>VLA-HWBench: Where the Time Goes When VLA Models Run on Edge Hardware</a></strong> [AI]<br>
+  왜 주요: 오늘 클러스터1 대표 — VLA 모델의 엣지 하드웨어 지연시간을 구간별로 분해하는 벤치마크
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.35593" target=_blank>SAP-ViT: A Self-Attributing Patch Vision Transformer for Medical Image Classification</a></strong> [AI]<br>
+  왜 주요: 오늘 클러스터3 대표 — CLS 토큰 대신 패치 단위로 판단 근거를 분해하는 의료 영상 분류기
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<p><small>오늘 abstract에서 확인 가능한 벤치마크 수치가 충분히 구체적이지 않아(대부분 "성능이 향상됐다" 수준의 정성적 서술) 벤치마크 표는 비워 둡니다. 본문 확인 후 추가 가능한 항목이 있으면 다음 daily에 반영합니다.</small></p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Does VGGT Know What It Does Not Know? — arXiv 2610.35806</h3>
+  <div class=tag>[평가축] [해부분석]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 클러스터2의 대표 논문이자, feed-forward 3D 재구성이라는 랩 핵심 영역에서 지금까지 아무도 정면으로 묻지 않았던 질문을 던집니다. VGGT 같은 feed-forward 모델은 카메라 자세와 기하를 한 번의 순전파로 바로 추정하지만, 그 추정이 틀렸을 때도 겉보기엔 맞는 추정과 구분할 방법이 없었습니다. 이 논문은 "모델이 자기가 틀렸다는 걸 내부적으로 아는가"를 직접 검증합니다.</p>
+  <p><strong>핵심:</strong> 저자들은 HardMatch라는 1,000개의 의도적으로 어려운 상대 자세(delta pose) 사례로 구성된 벤치마크를 만들어, 얼린 VGGT 모델의 내부 활성화만으로 올바른 추정과 틀린 추정을 구분할 수 있는지 조사합니다(abstract 기준으로 구체적인 probing 기법과 정량 결과는 본문 확인이 필요하지만, 핵심 주장은 "추가 학습 없이도 모델 내부에 불확실성 신호가 존재한다"는 쪽입니다). 이는 feed-forward 3D 모델을 실제 로봇 파이프라인에 투입할 때, 재구성이 실패한 프레임을 별도 분류기 없이도 걸러낼 수 있다는 뜻이라 실용적 의미가 큽니다.</p>
+  <p><strong>주의:</strong> HardMatch의 "의도적으로 어려운" 사례 구성 기준이 실제 현장에서 마주치는 실패 유형(반사면, 반복 패턴, 극단적 조도 변화 등)을 얼마나 대표하는지, 그리고 내부 신호 기반 탐지가 다른 feed-forward 아키텍처(VGGT 외 모델)에도 일반화되는지는 본문 확인이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Video World Models Need Predictable Latents — arXiv 2610.34663</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 클러스터1의 대표 논문이자, 로봇 정책 학습·평가에 쓰이는 비디오 월드 모델의 근본 설계를 건드립니다. 기존 비디오 월드 모델은 보통 재구성 목적으로 학습된 잠재 공간에서 미래를 예측하는데, 이 논문은 그 잠재 공간 자체가 "예측하기 쉬운 구조"로 만들어져 있지 않다는 점을 문제로 짚습니다.</p>
+  <p><strong>핵심:</strong> 저자들은 월드 모델의 잠재 표현이 재구성 품질만을 위해 최적화되면 긴 호라이즌 롤아웃에서 오차가 누적되고 분포 밖 상황에서 일반화가 떨어지며, 추론 시에도 계산 비용이 크다고 지적합니다. 이를 해결하기 위해 잠재 공간을 예측 가능성(predictability) 기준으로 직접 설계·정규화해, 월드 모델이 미래를 예측할 때 불필요하게 복잡한 디테일까지 재구성하지 않고 예측에 실제로 필요한 정보만 압축해서 담도록 만듭니다(abstract 기준). 이는 WAM/VLA 전체 클러스터가 오늘 공유하는 "실시간성" 문제의 근본 원인 중 하나를 잠재 표현 설계 단계에서 짚었다는 점에서 다른 네 편(TurboWAM, OSWAM, DriveUniTok, VLA-HWBench)의 상위 설계 원칙 역할을 합니다.</p>
+  <p><strong>주의:</strong> "예측 가능한 잠재 공간"을 만드는 구체적인 손실 함수·정규화 기법과, 이 설계가 실제 장기 호라이즌 로봇 작업에서 얼마나 개선을 가져오는지의 정량 수치는 abstract에 없어 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 저널 435편 중 다수가 Crossref abstract 미보강 상태라, Meta-Optics/Diffractive 21편과 Phase Imaging 7편 중 상당수를 제목만으로 분류·판단했습니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology 67건 중 약 60건, Tomography/3D Imaging 62건 중 약 58건이 키워드 오탐 또는 계산 이미징 방법론과 무관한 임상/응용(심혈관 OCT, 치과 CBCT 등)입니다.</p>
+  <p>[Claim risk] 오늘 다섯 클러스터 중 셋(WAM/VLA, feed-forward 3D, 가속 MRI)은 cs.CV·cs.LG·eess.IV 기반이라 랩의 계산광학 ROI 핵심(FP·Lensless·Phase·Meta-Optics)과는 간접적 거리가 있습니다. 특히 Fourier Ptychography가 이틀 연속 0건이라 핵심 ROI 관점에서는 공백이 이어지고 있습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] Does VGGT Know What It Does Not Know?의 "내부 신호로 불확실성을 안다"는 주장은 abstract에 구체적인 정확도/AUROC 수치가 없어, probing 방법의 실제 성능은 본문 확인이 필요합니다.</p>
+  <p>[Baseline risk] Video World Models Need Predictable Latents의 "예측 가능한 잠재 공간" 설계가 기존 월드 모델 대비 구체적으로 어떤 벤치마크·수치로 개선됐는지 abstract에 명시되지 않아 비교 기준이 불명확합니다.</p>
+  <p>[Metric risk] VLA-HWBench는 "지연시간이 어디서 발생하는가"를 측정하는 벤치마크지만, 측정 대상 하드웨어 종류가 제한적일 경우 랩이 쓰는 엣지 디바이스로 결과가 그대로 일반화되지 않을 수 있습니다.</p>
+  <p>[Dataset risk] SAP-ViT·LiteMed-ViT·Alzheimer's MRI robustness 세 편 모두 abstract 기준 실험 데이터셋 규모·다양성이 명시되지 않아, "교차 데이터셋 재현성"을 실제로 얼마나 폭넓게 검증했는지는 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li>Tomography/3D Imaging 임상 사례·비계산광학 응용 약 58편 [주로 JNL] — 심혈관 OCT 플라크/석회화 평가, 치과 CBCT, 안과 OCT 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
+    <li>Virtual Staining/Pathology 키워드 오탐·주변 응용 약 60편 — "label-free"·"staining" 단어가 자기지도학습, LLM 에이전트, 비이미징 분야 논문에 우연히 겹친 경우가 다수입니다.</li>
+    <li>Meta-Optics/Diffractive 통신·센싱용 약 17편 — 무선 MIMO 메타표면, 바이오센싱, 전력전송용 메타표면 등으로 이미징과는 직접 연결이 약합니다.</li>
+    <li>Reconstruction/Inverse Problems 약 31편 — LLM 추론, 강화학습, EEG/SSVEP 디코딩 등 방법론은 유사하나 랩 ROI 핵심과는 거리가 있습니다.</li>
+    <li>Deep Learning Methods 218편 중 이미징과 결이 다른 약 197편 — 텍스트/언어모델, 시계열·금융 예측, 소재·분자 설계, 음악/오디오 생성 등 완전히 무관하거나 간접적인 응용입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Phase Imaging/Holography (7편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2040-8986/aeb953" target=_blank>Programmable illumination and spatially varying aberration correction in a laser scanning confocal microscopy system</a></strong> <span class=pill>JNL</span><br>
+  문제: 기존 갤보 스캐너 기반 공초점 현미경이 빔 반복성·정렬 복잡도·수차 보정에서 제약을 가짐 / 방법: 프로그래머블 조명과 공간 가변 수차 보정을 결합한 광학계 설계 / 의미: 현미경 하드웨어 자체를 계산으로 보강하는 랩 핵심 신호 / 주의: 초록 상세 일부만 확인(제목+부분 요약 기반) / 우선순위: Read
+</div>
+<p><small>나머지 6편은 홀로그래픽 근접 탐색·물리 기반 파동계 학습(키워드 오탐), 위상 복원 비유일성 이론, CO2 센서, 천체물리 스펙트럼 논쟁 등으로 랩 응용과 거리가 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Meta-Optics/Diffractive (21편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.29026/oes.2026.260058" target=_blank>Scaling metasurface design: from reusable unit cells to full-metasurface inverse design</a></strong> <span class=pill>JNL</span><br>
+  문제: 메타표면 역설계가 유닛셀 단위에서는 잘 되지만 전체 메타표면 규모로 확장하기 어려움 / 방법: 재사용 가능한 유닛셀에서 전체 메타표면 역설계로 확장하는 프레임워크 / 의미: 메타광학 역설계 방법론 핵심 신호 / 주의: 초록 상세 미확인(제목 기반) / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1063/5.0357152" target=_blank>Inverse design of dielectric metasurface transmitarray using physics-enhanced generative adversarial networks</a></strong> <span class=pill>JNL</span><br>
+  문제: 유전체 메타표면 transmitarray 역설계가 비싼 전자기 시뮬레이션에 의존함 / 방법: physics-enhanced Wasserstein GAN 기반 역설계 / 의미: 메타광학 역설계 방법론 핵심 신호 / 우선순위: Read
+</div>
+<p><small>나머지 19편은 무선통신용 재구성 가능 메타표면(MIMO, pinching antenna, RIS), 바이오센싱, 전력전송·임플란트용 메타표면 등으로 이미징과는 간접적 연결만 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Light-Field/Novel Sensors (5편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.33356" target=_blank>Tight Learned Event-Inertial Odometry (TLEIO): a Transformer-Based Architecture for End-to-End Motion from Event Streams</a></strong> <span class=pill>CV</span><br>
+  문제: 이벤트 카메라의 희소·비동기 측정에서 빠른 움직임·고다이나믹레인지 조건의 정확한 자세 추정이 어려움 / 방법: Transformer 기반 end-to-end 학습 오도메트리 / 의미: 이벤트 카메라 하드웨어 핵심 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ao.612436" target=_blank>Analysis and design of the optical system for unfocused plenoptic cameras</a></strong> <span class=pill>JNL</span><br>
+  문제: unfocused 플레놉틱 카메라의 광학계 설계 변수가 영상 품질에 미치는 영향이 체계적으로 분석되지 않음 / 방법: 광학계 분석 및 설계 가이드라인 제시 / 의미: 오늘 클러스터5 대표 / 주의: 초록 상세 미확인(제목 기반) / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tcsvt.2026.3746984" target=_blank>Spatial–Angular Aggregation with Sparse Awareness and Temporal Enhancement for Light Field Object Tracking</a></strong> <span class=pill>JNL</span><br>
+  문제: 광필드 영상의 공간-각도 정보를 객체 추적에 충분히 활용하지 못함 / 방법: 희소 인지 공간-각도 집계 + 시간적 강화 / 의미: 광필드 센서 응용 핵심 신호 / 주의: 초록 상세 미확인(제목 기반) / 우선순위: Read
+</div>
+<p><small>나머지 2편은 뉴로모픽 위성 포즈 추정(키워드 오탐, "neuromorphic"만 겹침)이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Tomography/3D Imaging (62편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.35806" target=_blank>Does VGGT Know What It Does Not Know?</a></strong> <span class=pill>CV</span><br>
+  문제: feed-forward 3D 재구성 모델이 틀린 카메라 자세를 내놓아도 겉보기엔 맞는 추정과 구분이 안 됨 / 방법: HardMatch 벤치마크로 내부 활성화 기반 불확실성 신호를 탐색 / 의미: 오늘 클러스터2·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.33656" target=_blank>FreeView: Robust 3D Reconstruction from Uncurated Views</a></strong> <span class=pill>CV</span><br>
+  문제: 큐레이션되지 않은 이미지 모음에 장면과 무관한 사진이 섞이면 재구성 품질이 떨어짐 / 방법: feed-forward 모델의 내부 일관성 신호로 이상 영상 거부 / 의미: 오늘 클러스터2 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.35361" target=_blank>SG-Splat: Stable Geometry Learning under Pose Uncertainty for Pose-Free 3D Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: pose-free feed-forward 3DGS가 잔여 자세 오차에 민감해 기하 품질이 저하됨 / 방법: 자세 불확실성을 명시적으로 다루는 안정적 기하 학습 / 의미: 오늘 클러스터2 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.35522" target=_blank>Generative Structure from Motion with Native 3D Diffusion</a></strong> <span class=pill>CV</span><br>
+  문제: 고전 SfM은 안 보이는 영역을 복원 못하고 생성 모델은 입력 사진과 안 맞을 수 있음 / 방법: 재구성과 생성을 하나의 네이티브 3D diffusion으로 통합 / 의미: 오늘 클러스터2 대표 / 우선순위: Read
+</div>
+<p><small>나머지 58편은 심혈관 OCT 플라크/석회화 평가, 치과 CBCT, 안과 OCT, 신장결석 CT 등 임상 영상이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology (67편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.35167" target=_blank>Biology-Guided Context-Aware Residual Propagation for Spatial Gene Expression Prediction from Histology</a></strong> <span class=pill>LG</span><br>
+  문제: spatial transcriptomics가 비용·처리량 제약으로 대규모 임상 적용이 어려움 / 방법: H&E 염색 조직 영상에서 생물학 정보를 반영한 context-aware residual propagation으로 공간 유전자 발현 예측 / 의미: 디지털 병리 핵심 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.33081" target=_blank>SWIFT-Cell: Segmentation Without Iterative Flow Tracking</a></strong> <span class=pill>CV</span><br>
+  문제: Cellpose-SAM급 범용 세포 분할기는 정확하지만 느려 실시간 상호작용 용도로 쓰기 어려움 / 방법: iterative flow tracking 없이 초 단위로 세포 경계를 추출 / 의미: 실시간 디지털 병리 분할 신호 / 우선순위: Read
+</div>
+<p><small>나머지 65편은 "label-free"·"staining" 키워드가 자기지도학습·LLM 에이전트·재료과학·종교/교육 연구 등 완전히 무관한 분야에 우연히 겹친 오탐이거나(다수), 심혈관 SHG/콜라겐 영상 등 주변 응용(소수)이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (37편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.34170" target=_blank>Cascaded Posterior Sampling With Diffusion Priors for highly Accelerated MRI</a></strong> <span class=pill>IV</span><br>
+  문제: diffusion prior로 고해상도 MRI 영상 분포를 학습하려면 크고 비싼 네트워크가 필요함 / 방법: 거친 영상을 조건으로 디테일만 작은 네트워크로 채우는 계단식 posterior sampling / 의미: 오늘 클러스터4·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.33695" target=_blank>Scalable Unrolled Chains for MRI Reconstruction</a></strong> <span class=pill>CV</span><br>
+  문제: unrolled MRI 재구성 네트워크가 cascade 수를 늘릴수록 end-to-end 학습 메모리가 감당 안 됨 / 방법: 매 학습 스텝마다 무작위로 고른 cascade만 업데이트 / 의미: 오늘 클러스터4 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.34788" target=_blank>Decoding Motion-Blurred QR Codes: Motion-Parameter Error Tolerance and Model-Based Recovery</a></strong> <span class=pill>IV</span><br>
+  문제: 움직임 블러로 손상된 QR 코드는 기존 디코더로 인식이 어려움 / 방법: 모션 파라미터 오차 허용 범위를 고려한 모델 기반 복원 / 의미: 계산 이미징 역문제 핵심 신호(블러 복원) / 우선순위: Read
+</div>
+<p><small>나머지 34편은 LLM 추론, 강화학습, EEG/SSVEP 디코딩, 시계열 예측 등 방법론은 유사하나 이미징 ROI와 거리가 있어 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods (218편 중 관련 21편, catch-all 과대표 방지로 4편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.34663" target=_blank>Video World Models Need Predictable Latents</a></strong> <span class=pill>LG</span><br>
+  문제: 비디오 월드 모델의 재구성 중심 잠재 표현이 긴 호라이즌 예측에서 오차 누적과 느린 추론을 유발함 / 방법: 예측 가능성 기준으로 잠재 공간을 직접 설계·정규화 / 의미: 오늘 클러스터1·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.34717" target=_blank>VLA-HWBench: Where the Time Goes When VLA Models Run on Edge Hardware</a></strong> <span class=pill>AI</span><br>
+  문제: VLA 모델이 엣지 하드웨어에서 돌 때 지연시간이 어디서 발생하는지 체계적으로 측정된 적이 없음 / 방법: 구간별(perception/tokenization/action) 지연시간 분해 벤치마크 / 의미: 오늘 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.35593" target=_blank>SAP-ViT: A Self-Attributing Patch Vision Transformer for Medical Image Classification</a></strong> <span class=pill>AI</span><br>
+  문제: ViT의 CLS 토큰 기반 분류가 의료 영상에서 요구하는 국소 해석가능성과 맞지 않음 / 방법: 마지막 층 패치 임베딩을 직접 집계해 판단 근거를 패치 단위로 분해 / 의미: 오늘 클러스터3 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2610.33136" target=_blank>Matching Particle-Arrival Rates for Low-Count Image Denoising</a></strong> <span class=pill>LG</span><br>
+  문제: 저선량 현미경 영상은 광자/전자 검출 수가 적어 신호 의존적 Poisson shot noise가 지배적임 / 방법: 깨끗한 정답 없이 입자 도달 과정 자체를 직접 모델링하는 자기지도 디노이징(PARM) / 의미: 오늘 클러스터4 대표 / 우선순위: Read
+</div>
+<p><small>나머지 17편(TurboWAM, OSWAM, DriveUniTok, FreeView, SG-Splat, Generative SfM, HiFiPix, Sentinel-2 cross-sensor SR, ZoomSEM, Compression of VFM for Retinal OCT, MOSAIC, Rethinking Microscopy Generation, Hybrid Mamba-Transformer fringe 3D, SeeRF, Domain-Adapted LDM CT-to-PET, Low-rank MERA OCT, Deep Spectral SR 등 클러스터·부록에 이미 반영된 논문)은 중복 bullet을 생략합니다.</small></p>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://arxiv.org/abs/2610.35806" target=_blank>Does VGGT Know What It Does Not Know?</a></li>
+  <li><a href="https://arxiv.org/abs/2610.34663" target=_blank>Video World Models Need Predictable Latents</a></li>
+  <li><a href="https://arxiv.org/abs/2610.34170" target=_blank>Cascaded Posterior Sampling With Diffusion Priors for highly Accelerated MRI</a></li>
+  <li><a href="2026-10-26.html">2026-10-26 Daily Briefing</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-10-27 arXiv+저널 표준 daily · arXiv 1224건(new+cross, 5개 카테고리) + 저널 435편(Crossref/OpenAlex, --days 1) · 전체 스캔 1410건(dedup 후) · ROI 배정 418건 (29.6%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

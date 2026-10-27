@@ -1,0 +1,219 @@
+{
+  "date": "2026-10-27",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "World Action Model/VLA가 '더 똑똑하게'보다 '더 빠르게·엣지에서' 돌아가야 한다는 쪽으로 평가축이 이동",
+      "papers": [
+        {
+          "title": "Video World Models Need Predictable Latents",
+          "arxiv_id": "https://arxiv.org/abs/2610.34663",
+          "journal_or_source": "arXiv cs.LG"
+        },
+        {
+          "title": "TurboWAM: Learning What Matters for Fast World Action Models",
+          "arxiv_id": "https://arxiv.org/abs/2610.33941",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "OSWAM: An Effective World Action Model with One-Step Action Generation",
+          "arxiv_id": "https://arxiv.org/abs/2610.35850",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "DriveUniTok: A Unified Multimodal Tokenizer for Driving World-Action Models",
+          "arxiv_id": "https://arxiv.org/abs/2610.35044",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "VLA-HWBench: Where the Time Goes When VLA Models Run on Edge Hardware",
+          "arxiv_id": "https://arxiv.org/abs/2610.34717",
+          "journal_or_source": "arXiv cs.AI"
+        }
+      ],
+      "why": "로봇이 다음 행동을 정하기 전에 미래 장면을 예측하는 World Action Model(WAM)과 VLA(비전-언어-행동) 모델은 지금까지 주로 '얼마나 정확하게 예측하고 행동하는가'로 평가받아 왔습니다. 오늘 다섯 편은 모두 같은 질문을 던집니다 - 그 예측과 행동을 실제 로봇 위에서 지연 없이 돌릴 수 있는가. Video World Models Need Predictable Latents는 월드 모델이 미래를 예측할 때 쓰는 잠재 표현 자체가 예측하기 어렵게 설계돼 있어서 긴 호라이즌에서 품질이 무너지고 추론 속도도 느려진다는 점을 지적하고, 표현을 예측 친화적으로 바꿉니다. TurboWAM과 OSWAM은 각각 '모든 비디오 월드 모델 표현을 다 쓸 필요가 없다'는 점과 '여러 번 디노이징 스텝을 돌릴 필요가 없다'는 점을 보여, 미래 프레임을 상상하는 단계 자체를 줄이거나 한 번에 행동을 생성하도록 모델을 다시 설계합니다. DriveUniTok은 자율주행 월드 모델이 외형·기하(라이다)·자기운동을 따로 다루는 비효율을 하나의 토크나이저로 통합해서 풉니다. VLA-HWBench는 아예 한발 물러서서, VLA 모델이 실제 엣지 하드웨어에서 돌아갈 때 지연시간이 어디서 발생하는지를 체계적으로 측정하는 벤치마크를 만들었습니다. 다섯 편을 묶으면, 월드 모델/VLA 연구의 다음 단계는 '더 그럴듯한 미래를 상상하는 모델'이 아니라 '실시간 폐루프 제어에 들어갈 수 있는 모델'이라는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 5개 연구팀이 잠재 표현 설계·연산 경로 단축·원스텝 생성·토크나이저 통합·하드웨어 프로파일링이라는 다른 각도에서 같은 결론(지연시간이 다음 병목)에 도달, VLA-HWBench는 전용 벤치마크까지 동반",
+      "lab_action": "VLA-HWBench의 지연시간 분해 프로토콜(perception/tokenization/action head로 구간별 시간 측정)을 랩 보유 VLA 파이프라인에 그대로 적용해, 어느 구간이 전체 지연시간의 몇 %를 차지하는지 먼저 측정한 뒤 OSWAM의 원스텝 action head를 그 구간에 이식했을 때 success rate 손실 대비 지연시간 절감폭을 비교한다"
+    },
+    {
+      "cluster": "Feed-forward 3D 재구성이 '불확실할 때 모른다고 말할 수 있는가'를 묻기 시작",
+      "papers": [
+        {
+          "title": "Does VGGT Know What It Does Not Know?",
+          "arxiv_id": "https://arxiv.org/abs/2610.35806",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "FreeView: Robust 3D Reconstruction from Uncurated Views",
+          "arxiv_id": "https://arxiv.org/abs/2610.33656",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "SG-Splat: Stable Geometry Learning under Pose Uncertainty for Pose-Free 3D Gaussian Splatting",
+          "arxiv_id": "https://arxiv.org/abs/2610.35361",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Generative Structure from Motion with Native 3D Diffusion",
+          "arxiv_id": "https://arxiv.org/abs/2610.35522",
+          "journal_or_source": "arXiv cs.CV"
+        }
+      ],
+      "why": "VGGT 같은 feed-forward 3D 재구성 모델은 카메라 자세와 장면 기하를 한 번의 순전파로 바로 내놓습니다. 문제는 이 모델이 틀린 추정을 내놓아도 겉보기엔 맞는 추정과 구분이 안 된다는 점입니다. Does VGGT Know What It Does Not Know?는 이 '모델이 자기가 틀렸다는 걸 아는가'를 직접 검증하는 벤치마크(HardMatch)를 만들어, 얼린 모델 내부에 이미 불확실성 신호가 숨어 있는지를 찾습니다. FreeView는 한발 더 나아가 입력 영상 중 실제로 장면과 무관한(겹치지 않는) 사진이 섞여 있을 때, feed-forward 모델이 가진 내부 일관성 신호만으로 그 이상 영상을 걸러낼 수 있다고 보고합니다. SG-Splat은 카메라 자세 추정이 조금이라도 틀리면 그 오차가 그대로 3D Gaussian 기하 품질 저하로 이어지는 문제를, 자세 불확실성을 명시적으로 다루는 방식으로 완화합니다. Generative Structure from Motion은 고전적인 SfM이 보이지 않는 영역은 복원할 수 없다는 한계와, 생성 모델이 만든 3D가 입력 사진과 안 맞을 수 있다는 한계를 동시에 겨냥해, 재구성과 생성을 한 번에 묶어 오차가 단계별로 누적되지 않게 합니다. 네 편 모두 feed-forward 3D 모델을 '한 번 빠르게 추정하는 도구'에서 '추정이 믿을 만한지 스스로 판단할 수 있는 도구'로 발전시키려는 같은 방향을 보여줍니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 4개 연구팀이 불확실성 벤치마크·이상치 거부·자세 불확실성·재구성-생성 통합이라는 다른 각도에서 같은 결론(feed-forward 3D 모델이 자기 신뢰도를 알아야 한다)에 수렴, HardMatch 1,000개 사례 벤치마크 동반",
+      "lab_action": "HardMatch 벤치마크의 '의도적으로 어려운 상대 자세' 구성 방식을 랩 보유 feed-forward 3D 재구성 모델(VGGT 계열)에 적용해, 랩 데이터에서도 내부 활성화만으로 틀린 포즈를 탐지할 수 있는지 probing 실험을 1주일 내로 돌려본다"
+    },
+    {
+      "cluster": "의료 영상 ViT/VLM의 신뢰성이 정확도가 아니라 '근거를 실제로 보는가'로 재평가됨",
+      "papers": [
+        {
+          "title": "SAP-ViT: A Self-Attributing Patch Vision Transformer for Medical Image Classification",
+          "arxiv_id": "https://arxiv.org/abs/2610.35593",
+          "journal_or_source": "arXiv cs.AI"
+        },
+        {
+          "title": "How Robust Are CNNs and Vision Transformers for Alzheimer's MRI Classification Across Datasets?",
+          "arxiv_id": "https://arxiv.org/abs/2610.33416",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Promise and Limits of Cross-Architecture Knowledge Distillation for Lightweight Medical Vision Transformers (LiteMed-ViT)",
+          "arxiv_id": "https://arxiv.org/abs/2610.33520",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Explainable Multimodal AI Approach to Reduce Unnecessary Breast Biopsies",
+          "arxiv_id": "https://arxiv.org/abs/2610.35704",
+          "journal_or_source": "arXiv cs.AI"
+        }
+      ],
+      "why": "의료 영상에 쓰는 ViT/VLM 논문들이 오늘은 '정확도가 몇 %인가'보다 '그 정확도를 믿어도 되는가'를 더 많이 물었습니다. SAP-ViT는 ViT가 보통 CLS 토큰 하나로 최종 판단을 내리는 방식이 '어느 부위를 보고 그렇게 판단했는지'를 설명하기 어렵게 만든다는 점을 지적하고, 마지막 층 패치 임베딩을 직접 모아서 판단 근거를 패치 단위로 분해합니다. How Robust Are CNNs and Vision Transformers for Alzheimer's MRI Classification은 한 데이터셋에서 잘 나온 성능이 다른 병원·장비로 찍은 데이터셋에서도 유지되는지를 교차 검증해, 단일 데이터셋 성능이 실제 임상 일반화를 보장하지 않는다는 걸 보여줍니다. LiteMed-ViT는 엣지 환경에 배포 가능한 가벼운 의료 ViT를 지식 증류로 만들 때, 어디까지는 성능이 유지되고 어디서부터 무너지는지 한계를 정직하게 측정합니다. 유방 생검 논문은 Grad-CAM으로 모델이 실제로 종양 부위를 보고 판단하는지 시각화해서, 불필요한 생검을 줄이는 데 그 설명 가능성을 직접 활용합니다. 네 편을 묶으면, 의료 영상 모델 연구가 '더 높은 정확도'보다 '그 정확도가 실제 임상 환경과 다른 병원 데이터에서도 재현되고, 모델이 진짜 병변을 보고 판단했다는 근거가 있는가'를 더 중요하게 보기 시작했다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "4편이 해석가능성·교차 데이터셋 강건성·경량화 한계·임상 적용이라는 서로 다른 각도에서 같은 방향(정확도보다 신뢰성·재현성)을 보이지만 모두 abstract 기준이며 서로 다른 질환·모달리티라 추가 사례 확인 필요",
+      "lab_action": "SAP-ViT의 patch-level self-attribution 방식을 랩이 보유한 의료 영상 분류 파이프라인(ViT 기반)에 이식해, 기존 CLS-token 방식과 Grad-CAM 근거 영역이 실제 병변 마스크와 얼마나 겹치는지 IoU로 비교하는 1주 실험을 설계한다"
+    },
+    {
+      "cluster": "가속 MRI·저선량 영상 재구성에서 diffusion prior를 가볍게 쓰는 쪽으로 설계가 수렴",
+      "papers": [
+        {
+          "title": "Cascaded Posterior Sampling With Diffusion Priors for highly Accelerated MRI",
+          "arxiv_id": "https://arxiv.org/abs/2610.34170",
+          "journal_or_source": "arXiv eess.IV"
+        },
+        {
+          "title": "Scalable Unrolled Chains for MRI Reconstruction",
+          "arxiv_id": "https://arxiv.org/abs/2610.33695",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Complex Domain Inverse Problem Formulation for 4D Flow MRI Super-Resolution",
+          "arxiv_id": "https://arxiv.org/abs/2610.33598",
+          "journal_or_source": "arXiv eess.IV"
+        },
+        {
+          "title": "Spectrally optimized implicit neural representations mitigate acquisition-related image quality trade-offs in intracranial 4D Flow MRI",
+          "arxiv_id": "https://arxiv.org/abs/2610.33124",
+          "journal_or_source": "arXiv eess.IV"
+        },
+        {
+          "title": "Matching Particle-Arrival Rates for Low-Count Image Denoising",
+          "arxiv_id": "https://arxiv.org/abs/2610.33136",
+          "journal_or_source": "arXiv cs.LG"
+        }
+      ],
+      "why": "MRI를 빨리 찍으려면 측정을 덜 하는 수밖에 없는데, 측정을 덜 하면 잡음과 결측 정보가 늘어서 복원이 어려워집니다. 오늘 다섯 편은 이 복원 문제를 푸는 방식이 '크고 무거운 모델 하나'에서 '가볍게 반복 적용 가능한 구조'로 수렴하는 모습을 보여줍니다. Cascaded Posterior Sampling은 고해상도 영상 분포 전체를 하나의 큰 네트워크로 학습하는 대신, 거친 영상을 조건으로 준 뒤 디테일만 작은 네트워크로 단계적으로 채워나가 계산 비용을 줄입니다. Scalable Unrolled Chains는 가속 MRI의 표준 방법인 unrolled network(반복 최적화 과정을 신경망 층으로 펼친 구조)가 층을 늘릴수록 학습 메모리가 감당 안 되는 문제를, 매번 일부 층만 무작위로 골라 학습시키는 방식으로 해결합니다. Complex Domain Inverse Problem과 Spectrally optimized INR은 둘 다 4D Flow MRI(시간에 따른 3차원 혈류 속도 측정)의 해상도를 늘리는 문제를 다루는데, 전자는 복소수 영역에서 바로 역문제를 풀고 후자는 환자별로 즉석에서 적응하는 implicit neural representation을 써서 각각 지도학습 데이터 없이 품질을 끌어올립니다. Matching Particle-Arrival Rates는 광자나 전자가 극히 적게 검출되는 저선량 현미경 영상에서, 깨끗한 정답 영상 없이도 빛 입자가 들어오는 통계적 과정 자체를 직접 모델링해 잡음을 제거합니다. 다섯 편 모두 '더 큰 모델'이 아니라 '측정 물리/통계 구조에 맞춰 가볍게 설계된 복원 방식'이라는 공통점을 가집니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 5개 연구팀이 posterior sampling·학습 메모리 효율화·복소영역 역문제·환자별 적응형 INR·입자 도달 통계 모델링이라는 다른 조각에서 같은 방향(측정 물리에 맞춘 가벼운 복원)으로 수렴, eess.IV/cs.CV/cs.LG 세 카테고리에 걸쳐 나타남",
+      "lab_action": "Scalable Unrolled Chains의 '무작위 cascade 샘플링 학습' 기법을 랩이 보유한 unrolled MRI/CT 재구성 네트워크에 적용해, 같은 GPU 메모리 예산에서 cascade 수를 몇 단까지 늘릴 수 있는지와 PSNR/SSIM이 전체 학습 대비 얼마나 유지되는지 측정한다"
+    },
+    {
+      "cluster": "계산 이미징 핵심(Lensless·Phase·Light-Field)은 오늘도 대부분 키워드 오탐이고 실신호는 간접적인 응용 논문 1~2편뿐",
+      "papers": [
+        {
+          "title": "Hybrid Mamba-Transformer Network for Single-Shot 3D Reconstruction from Fringe Patterns",
+          "arxiv_id": "https://arxiv.org/abs/2610.33988",
+          "journal_or_source": "arXiv cs.CV"
+        },
+        {
+          "title": "Spatial–Angular Aggregation with Sparse Awareness and Temporal Enhancement for Light Field Object Tracking",
+          "arxiv_id": "https://doi.org/10.1109/tcsvt.2026.3746984",
+          "journal_or_source": "JNL"
+        },
+        {
+          "title": "Analysis and design of the optical system for unfocused plenoptic cameras",
+          "arxiv_id": "https://doi.org/10.1364/ao.612436",
+          "journal_or_source": "JNL"
+        }
+      ],
+      "why": "오늘 Lensless/Coded Imaging은 1편뿐이고 그 1편(편광 부호화 간섭없는 코드화 조리개 상관 홀로그래피 이미지 암호화)도 실제로는 암호화 응용이라 랩이 보는 lensless 촬영 하드웨어 신호와는 거리가 있습니다. Phase Imaging/Holography 7편 중에도 실제 위상 이미징·홀로그래피 신호는 거의 없고, 'Holo-NN'(홀로그래픽 근접 탐색)과 'Physical Adjoint Learning'(물리 기반 학습)은 각각 벡터 검색과 파동계 학습 알고리즘 논문이라 'holographic'·'wave' 단어만 겹친 키워드 오탐입니다. 그나마 Light-Field/Novel Sensors 쪽은 단편적으로 실신호가 있는데, Hybrid Mamba-Transformer는 fringe pattern(줄무늬 패턴) 하나로 3D 형상을 복원하는 구조 광 계측이라 랩의 단일 샷 3D 측정과 결이 맞고, 'unfocused plenoptic camera' 광학계 설계 논문과 'light field object tracking' 저널 논문도 간접적이지만 실제 광필드 신호입니다. 오늘 묶음은 독립 클러스터로 세우기엔 서로 다른 응용(구조광 계측, 플레놉틱 카메라 설계, 광필드 추적)이라 공통 연구 질문을 공유하지 않지만, 계산광학 코어가 또 한 번 공백에 가깝다는 신호 자체가 랩에 중요합니다.",
+      "confidence": "Low",
+      "confidence_note": "세 논문이 서로 다른 응용(구조광 계측·플레놉틱 광학계·추적)이라 하나의 연구 질문으로 묶이지 않음, 독립 클러스터라기보다 도메인 Watch Lens 관찰 기록에 가까움",
+      "lab_action": "Hybrid Mamba-Transformer의 fringe-to-depth 네트워크 구조(Mamba 장거리 의존성 + 국소 Transformer)를 랩 보유 단일 샷 구조광 3D 측정 파이프라인의 디코더로 교체 실험해, 기존 CNN/Transformer 단독 디코더 대비 고주파 디테일 보존이 개선되는지 확인한다"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "A. VLA-HWBench 지연시간 분해 프로토콜을 랩 VLA 파이프라인에 적용 + OSWAM 원스텝 action head 이식",
+      "claim": "랩 VLA 파이프라인의 지연시간이 perception/tokenization/action head 중 어디에 몰려 있는지 먼저 측정한 뒤, 가장 비싼 구간에 OSWAM의 원스텝 생성을 이식했을 때 success rate 손실 대비 지연시간 절감폭을 확인한다.",
+      "supporting_papers": [
+        {
+          "title": "VLA-HWBench",
+          "arxiv": "https://arxiv.org/abs/2610.34717",
+          "phylogeny": {"source": "ROBOTICS", "phylum": "Vision-Language-Action > Edge Deployment Benchmark"}
+        },
+        {
+          "title": "OSWAM",
+          "arxiv": "https://arxiv.org/abs/2610.35850",
+          "phylogeny": {"source": "ROBOTICS", "phylum": "World Action Model > One-Step Generation"}
+        }
+      ]
+    },
+    {
+      "title": "B. HardMatch 스타일 불확실성 probing을 랩 feed-forward 3D 재구성 모델에 적용",
+      "claim": "의도적으로 어려운 상대 카메라 자세 쌍을 구성해, 랩이 쓰는 VGGT 계열 모델의 내부 활성화만으로 틀린 포즈 추정을 탐지할 수 있는지 1주 내로 확인한다.",
+      "supporting_papers": [
+        {
+          "title": "Does VGGT Know What It Does Not Know?",
+          "arxiv": "https://arxiv.org/abs/2610.35806",
+          "phylogeny": {"source": "CVML", "phylum": "3D Reconstruction > Feed-Forward Uncertainty"}
+        }
+      ]
+    },
+    {
+      "title": "C. SAP-ViT의 patch-level self-attribution을 랩 의료 영상 분류 파이프라인에 이식",
+      "claim": "CLS 토큰 기반 분류 대신 patch 단위 근거를 직접 집계하는 방식이, 기존 Grad-CAM 근거 영역보다 실제 병변 마스크와 더 잘 겹치는지 IoU로 비교한다.",
+      "supporting_papers": [
+        {
+          "title": "SAP-ViT",
+          "arxiv": "https://arxiv.org/abs/2610.35593",
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging > Interpretable Classification"}
+        }
+      ]
+    },
+    {
+      "title": "D. Scalable Unrolled Chains의 무작위 cascade 샘플링 학습을 랩 가속 MRI/CT 재구성에 적용",
+      "claim": "같은 GPU 메모리 예산에서 unrolled cascade 수를 몇 단까지 늘릴 수 있는지, 전체 학습 대비 PSNR/SSIM 손실이 어느 정도인지 측정한다.",
+      "supporting_papers": [
+        {
+          "title": "Scalable Unrolled Chains for MRI Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2610.33695",
+          "phylogeny": {"source": "CVML", "phylum": "Inverse Problems > Unrolled Optimization"}
+        }
+      ]
+    },
+    {
+      "title": "E. Hybrid Mamba-Transformer fringe-to-depth 디코더를 랩 단일 샷 구조광 3D 측정에 이식",
+      "claim": "Mamba 장거리 의존성과 국소 Transformer를 결합한 디코더가, 기존 CNN/Transformer 단독 디코더 대비 고주파 표면 디테일 복원에서 얼마나 개선되는지 비교한다.",
+      "supporting_papers": [
+        {
+          "title": "Hybrid Mamba-Transformer Network for Single-Shot 3D Reconstruction from Fringe Patterns",
+          "arxiv": "https://arxiv.org/abs/2610.33988",
+          "phylogeny": {"source": "CVML", "phylum": "Structured Light > Single-Shot 3D"}
+        }
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}
