@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-28",
+  "source_listing_date": "2026-10-28",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 237,
+      "cs.CV": 156,
+      "cs.AI": 254,
+      "eess.IV": 8,
+      "eess.SP": 32
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 419,
+    "journal_window_days": 1
+  },
+  "totals": {
+    "total_scanned": 964,
+    "selected": 284
+  },
+  "classified": {
+    "total_scanned": 964,
+    "selected": 284,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 2,
+      "Phase Imaging/Holography": 5,
+      "Meta-Optics/Diffractive": 15,
+      "Light-Field/Novel Sensors": 9,
+      "Tomography/3D Imaging": 47,
+      "Virtual Staining/Pathology": 38,
+      "Reconstruction/Inverse Problems": 23,
+      "Deep Learning Methods": 144
+    }
+  },
+  "daily_thesis": "오늘 가장 뚜렷한 흐름은 Tomography/3D Imaging 버킷 47편 중 10편 가까이가 3D Gaussian Splatting의 '표현 자체'를 다시 설계하는 논문이라는 점입니다 — 복셀/점 대신 육각형 프리미티브를 쓰거나, 카메라 타입에 무관하게 만들거나, 기하와 카메라 추적을 분리하는 식으로 feed-forward 3DGS가 범용 3D 표현으로 굳어지는 신호입니다. 계산광학 코어는 오늘도 Meta-Optics 15편 전부가 통신·센싱용이라 이미징 신호가 0에 가깝고, 대신 디지털 홀로그래픽 현미경(위상 unwrapping·오토포커스) 2편과 이벤트 카메라 4편이 조용히 실신호를 냈습니다."
+}
