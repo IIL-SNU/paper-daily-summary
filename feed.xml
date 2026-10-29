@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 28 Oct 2026 14:22:08 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 14:21:56 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-10-29 (목요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-10-29.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-10-29.html</guid>
+      <pubDate>Thu, 29 Oct 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리는 실행 시각(14:09 KST) 기준으로도, 9분 뒤 재확인에서도 모두 "Wednesday, 28 October 2026" listing을 그대로 가리켰습니다. post_date(2026-10-29)가 listing_date(2026-10-28)보다 뒤라 Date Source Contract([2.1])에 따라 arXiv 섹션은 발행하지 않고, 저널 수집(Crossref 랩 키워드 9종 --days 1, OpenAlex enrich·보충)만 arXiv 공백과 무관하게 진행했습니다. Crossref 426편 + OpenAlex 보충 3편을 classify.py로 스캔해 429건 중 89건(20…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-10-28 (수요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-10-28.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-28.html</guid>
       <pubDate>Tue, 28 Jul 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[오늘(7/28, 화)은 arXiv /new에 cs.LG 326편, cs.CV 243편, cs.AI 406편, eess.IV 28편, eess.SP 39편으로 총 1042편이 잡혔고, 저널 459건을 더한 전체 스캔 1280건 중 396건(30.9%)이 ROI로 선정됐습니다. 어제(7/27, 월)가 학습된 사전 기반 역문제 solver의 불확실성 신뢰성, diffusion 초해상도 평가 세분화, 의료영상 국소 정확도라는 세 축으로 마무리됐다면, 오늘은 그 첫 번째 축이 한 단계 더 구체화됐습니다. Stabilizing Deep Reconstruction Operators with Contractive Anchoring과 Trainable Nonexpansive Denois…]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Weekly Retrospective — 2026-07-27 (Week 30)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-07-27-weekly.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-27-weekly.html</guid>
-      <pubDate>Mon, 27 Jul 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[지난주 가장 뜨거운 흐름은 3D Gaussian Splatting(3DGS, 장면을 수많은 3차원 조각으로 표현해 새 시점 영상을 만드는 방법)이 닷새 동안 다섯 단계를 순서대로 통과해 실시간 SLAM(동시적 위치추정 및 지도작성, 로봇이 움직이면서 주변 지도를 만들고 자기 위치를 동시에 계산하는 문제)까지 도달한 것 입니다. 월요일에는 E3DGS·ImprovedVBGS·CSS-BA가 색상-기하 결합, 실시간 연속학습, 저시차 번들 조정처럼 배포 조건을 하나씩 개별적으로 점검했습니다. 화요일에는 SPARE-GS·QIRF·패킷 손실 강건 압축까지 다섯 편이 가우시안 개수와 저장 용량을 줄이면서도 패킷 유실·모션 블러에 버티는지를 함께 물었고, 수요일에는 ZeroSplat·…]]></description>
     </item>
   </channel>
 </rss>

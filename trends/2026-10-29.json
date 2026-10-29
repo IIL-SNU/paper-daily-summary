@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-29",
+  "source_listing_date": "2026-10-29",
+  "source_mode": "journal-only",
+  "note": "2026-10-29(목) 14:09 KST 정기 daily 실행. Date Source Contract 확인 결과 추적 5개 카테고리(cs.LG, cs.CV, cs.AI, eess.IV, eess.SP) 모두 /new listing이 'Wednesday, 28 October 2026'을 가리켜(2회 재확인, 09분 간격) post_date(2026-10-29) > listing_date(2026-10-28)였다. arXiv가 아직 당일 분을 올리지 않은 것으로 보고 arXiv 섹션은 발행하지 않았다(2.1절 저널 독립 규칙에 따라 journal-only daily로 진행). Crossref(--days 1, 랩 키워드 9종) 426편 + OpenAlex 보충 3편을 수집해 classify.py로 429건을 스캔, 89건(20.7%)을 9개 ROI 버킷에 배정했다. 저널 선택분만으로 Phase Imaging/Holography(계산 위상영상·홀로그래피 알고리즘 4편), Lensless/Coded Imaging(메타표면 코딩 기반 스냅샷 촬영 2편), Tomography/3D Imaging 내 회절단층촬영·OCT·망막 스페클·RGB-D SLAM 획득효율 4편 세 클러스터를 구성할 수 있어(각 2편 이상) journal-only 발행 기준을 충족했다. arXiv가 올라오면 다음 실행의 Calendar Audit이 이 daily를 pastweek-date-section으로 업그레이드한다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 0,
+      "eess.SP": 0
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 426,
+    "journal_window_days": 1
+  },
+  "totals": {
+    "total_scanned": 429,
+    "selected": 89
+  },
+  "classified": {
+    "total_scanned": 429,
+    "selected": 89,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 2,
+      "Phase Imaging/Holography": 11,
+      "Meta-Optics/Diffractive": 4,
+      "Light-Field/Novel Sensors": 1,
+      "Tomography/3D Imaging": 34,
+      "Virtual Staining/Pathology": 16,
+      "Reconstruction/Inverse Problems": 3,
+      "Deep Learning Methods": 17
+    }
+  },
+  "daily_thesis": "오늘은 추적 5개 카테고리 모두 arXiv /new listing이 어제(10/28) 날짜에 멈춰 있어 당일 신규 arXiv 논문이 없었고, 저널(Crossref/OpenAlex) 426편만으로 하루를 구성한 journal-only daily입니다. 평소엔 로봇·CV 논문 수백 편 사이에 묻혀 거의 안 보이던 계산광학 코어 신호가 오늘은 오히려 선명하게 드러났는데, 디지털 홀로그래피·간섭계측이 속도·자동초점·노이즈 문제를 알고리즘으로 푸는 흐름(4편), 메타표면 코딩을 쓴 렌즈리스·스냅샷 촬영이 하드웨어와 복원 네트워크를 함께 설계하는 흐름(2편), 회절단층촬영·OCT·망막 스페클·RGB-D SLAM처럼 서로 다른 영상 모달리티가 똑같이 '획득 효율과 강건성'을 계산으로 끌어올리는 흐름(4편)이 같은 날 함께 나왔습니다."
+}

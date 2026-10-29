@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-29",
+  "results": [
+    {
+      "benchmark": "ScanNet (RGB-D neural SLAM, adaptive keyframe/pixel sampling)",
+      "metric": "ATE",
+      "value": 8.28,
+      "value_str": "8.28 cm ATE (vs 8.75 cm 고정 간격 베이스라인)",
+      "paper": "https://doi.org/10.1117/1.jei.35.5.053028",
+      "paper_title": "Adaptive keyframe selection and information-guided sampling for efficient RGB-D neural SLAM"
+    },
+    {
+      "benchmark": "TUM RGB-D (RGB-D neural SLAM, adaptive keyframe/pixel sampling)",
+      "metric": "ATE",
+      "value": 1.25,
+      "value_str": "1.25 cm ATE (vs 2.17 cm 고정 간격 베이스라인)",
+      "paper": "https://doi.org/10.1117/1.jei.35.5.053028",
+      "paper_title": "Adaptive keyframe selection and information-guided sampling for efficient RGB-D neural SLAM"
+    }
+  ]
+}
