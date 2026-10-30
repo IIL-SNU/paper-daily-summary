@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-10-30</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-10-30 (금요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-10-30 (금요일) · <strong>journal-only</strong> — 추적 5개 카테고리(cs.LG/cs.CV/cs.AI/eess.IV/eess.SP) 모두 /new listing이 어제에 이어 오늘도 "Wednesday, 28 October 2026"에 멈춰 있어(/pastweek에도 10/29·10/30 섹션 없음을 확인) post_date(2026-10-30) &gt; listing_date(2026-10-28)로 Date Source Contract상 arXiv 섹션은 발행하지 않습니다.</div>
+  <div>📚 소스: 저널(Crossref/OpenAlex, --days 1)만 — arXiv는 저널과 독립적으로 수집되므로 arXiv 공백과 무관하게 정상 수집했습니다.</div>
+  <div>🔢 arXiv: 0건 (미발행 2일째 — /pastweek에 10/29·10/30 섹션이 생기면 두 daily를 함께 arXiv+저널 완성본으로 업그레이드합니다)</div>
+  <div>🔢 저널: Crossref 421편(랩 키워드 9종, --days 1) + OpenAlex enrich(38/421편 초록 보강)</div>
+  <div>🔢 전체 스캔: 421건 · ROI 배정 89건 (21.1%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘도 추적 5개 카테고리 모두 arXiv /new listing이 그제(10/28) 날짜에 멈춰 있어 이틀 연속 당일 신규 arXiv 논문이 없었고, 저널(Crossref/OpenAlex) 421편만으로 하루를 구성했습니다. 어제와는 다른 결의 신호가 보였는데, 이미지 복원 역문제 쪽에서 "신경망을 학습시키면 알아서 잘 복원한다"는 최근 경험적 접근 대신 수렴성·사후오차 같은 수학적 보장을 다시 세우려는 논문 3편이 같은 날 나왔고(그중 2편은 SIAM Journal on Imaging Sciences), 라이트필드는 공간-각도 해상도 트레이드오프를 촬영측 알고리즘과 디스플레이측 하드웨어 양쪽에서 동시에 공략하는 2편이 구체적인 수치로 뒷받침됐으며, 메타광학은 시간·기계적 위상배열·데이터 기반 역설계라는 서로 다른 설계 변수를 각각 확장하는 3편이 눈에 띄었습니다. 다만 저널 421건 중 실제로 랩 ROI와 맞닿은 신호는 15편 내외이고 나머지는 키워드만 겹친 임상·타 도메인 논문이라, 오늘 리포트도 평소 arXiv daily보다 분량이 짧습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리는 실행 시각 기준으로 모두 "Wednesday, 28 October 2026" listing을 그대로 가리켰고, /pastweek 날짜별 섹션 추출로도 10/29·10/30 섹션이 아직 생성되지 않았음을 확인했습니다. post_date(2026-10-30)가 listing_date(2026-10-28)보다 뒤라 Date Source Contract([2.1])에 따라 arXiv 섹션은 발행하지 않고, 저널 수집(Crossref 랩 키워드 9종 --days 1, OpenAlex enrich)만 arXiv 공백과 무관하게 진행했습니다. Crossref 421편을 classify.py로 스캔해 89건(21.1%)을 9개 ROI 버킷에 배정했는데, 이 중 실제로 "제목만 겹친 오탐"이 아닌 진짜 계산 이미징 신호는 15편 정도입니다.</p>
+<p>가장 뚜렷한 신호는 이미지 복원 역문제의 이론적 엄밀성 회귀였습니다. Deep Projective Priors 논문은 학습된 신경망을 투영 연산자로 쓰는 generalized projected gradient descent가 선형 수렴하려면 그 신경망이 직교 투영에 충분히 가까워야 한다는 점을 보이고, 이를 훈련 손실에 직접 강제하는 확률적 직교 정규화를 제안해 수렴 속도와 강건성을 실험적으로 개선했습니다. 같은 저널(SIAM Journal on Imaging Sciences)의 또 다른 논문은 흐림과 곱셈 잡음을 함께 제거할 때 기하학적 사전 하나만 쓰면 생기는 아티팩트를, 평균곡률과 표면적이라는 서로 다른 미분 차수의 두 사전을 결합해 줄이는 변분 모델과 전역수렴이 보장된 교대최소화 알고리즘을 제시했습니다. 세 번째 논문은 역문제가 본질적으로 ill-posed라는 점을 인정한 채 계산된 근사해가 실제 해와 얼마나 떨어져 있는지를 사후에 정량적으로 추정하는 방법을 세웁니다. 세 편 모두 "복원 품질을 PSNR 숫자 하나로만 보고한다"에서 벗어나 "이 복원이 언제 믿을 만한지"를 수학적으로 답하려는 방향입니다.</p>
+<p>그 옆에서는 라이트필드가 공간-각도 해상도라는 오래된 트레이드오프를 획득측과 디스플레이측 양쪽에서 공략하는 2편이 나왔습니다. 적분영상 깊이추정 논문은 여러 목표 깊이평면의 최적 피치를 최소공배수로 통일하고 카메라 배열을 불균일하게 배치해 픽셀 양자화 오차를 수학적으로 완전히 없앴다고(모든 목표 깊이에서 평균제곱오차 0) 보고했고, 라이트필드 디스플레이 논문은 서브픽셀 단위 시점 다중화 인코딩과 두 평면 렌즈 최적화로 4320×3840 서브픽셀 배열, 가로 2.67 lp/mm·세로 2.99 lp/mm 공간 해상도, 1.45 시점/도 각도 해상도를 가진 5.5인치 시제품을 만들었습니다. 메타광학 쪽에서는 시간을 설계 변수로 도입한 spatio-temporal metalattice(Light: Science & Applications), 기계적 MEMS 위상배열로 3D 스캐닝을 구현한 논문, CGAN으로 메타표면 구조를 직접 생성해 평균 스펙트럼 정확도 90% 이상을 달성한 역설계 논문이 서로 다른 설계 자유도 확장을 보여줬습니다.</p>
+<p>랩 ROI 핵심 중에서는 Fourier Ptychography/Microscopy 1편이 실은 ISAR(역합성개구레이다) 선박 영상 논문으로 "synthetic aperture" 키워드만 겹친 완전한 오탐이었고, Lensless/Coded Imaging은 1편(메타표면 산란 커널 기반 광학 디퓨저 설계)만 걸렸습니다. Meta-Optics/Diffractive 9편 중 실제 메타광학 역설계·물리 신호는 2~3편뿐이고 나머지는 THz 통신·레이더·센싱용이었습니다. Virtual Staining/Pathology 8편, Tomography/3D Imaging 나머지 32편(=35-3), Reconstruction/Inverse Problems 나머지 4편, Deep Learning Methods 17편 중 다수는 "staining"·"tomography"·"reconstruction" 키워드가 임상·지구물리·농업 등 타 도메인에 우연히 겹친 오탐이었습니다. 도메인 Watch Lens에서 버킷별로 자세히 다룹니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(목요일, 10/29)도 오늘과 똑같이 arXiv가 발행되지 않은 journal-only daily였지만, 어제의 핵심은 디지털 홀로그래피·간섭계측의 속도·자동초점·노이즈 문제를 알고리즘으로 푸는 흐름과 회절단층촬영·OCT·망막 스페클·RGB-D SLAM이 "선택적 획득·계산"이라는 공통 원리로 수렴하는 흐름이었습니다. 오늘은 완전히 다른 결의 신호로 바뀌었습니다 — 어제는 하드웨어·계측 쪽(홀로그래피, 간섭계측, 단층촬영, SLAM)이 중심이었다면, 오늘은 이미지 복원의 수학적 이론(수렴성 보장, 사후오차 추정)과 메타광학의 설계 변수 확장(시간, 기계적 구동, 데이터 기반 역설계)처럼 더 근본적인 방법론 쪽으로 무게중심이 옮겨갔습니다. 바꿔 말하면, 어제가 "계산을 어떻게 더 빠르고 강건하게 할까"였다면 오늘은 "그 계산 결과를 얼마나 믿을 수 있는가"와 "애초에 어떤 설계 변수를 더 쓸 수 있는가"를 묻는 하루였습니다. 또한 어제 클러스터의 핵심이었던 디지털 홀로그래피·RGB-D SLAM 신호는 오늘 저널 수집에서는 다시 나타나지 않아, 하루치 저널 수집만으로는 같은 흐름이 매일 재현되지 않는다는 점도 확인됐습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<p><small>오늘도 arXiv가 없어 저널 신호만으로 클러스터를 구성했습니다. 보조 클러스터 근거가 thin해 기본 5행 대신 3행만 표시합니다.</small></p>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>이미지 복원 역문제에 통계적·변분적 보장을 다시 요구하는 흐름</strong></td>
+  <td>
+    <a href="https://doi.org/10.1137/25m1824835" target=_blank>Stochastic Orthogonal Regularization for Deep Projective Priors</a> <span class="pill a">JNL · TIER A</span><br>
+    <a href="https://doi.org/10.1137/25m1825154" target=_blank>Image Restoration with Multiplicative Noise: A Hybrid Geometric Model</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1515/cmam-2026-0152" target=_blank>A Posteriori Analysis of Inverse Problems for Elliptic Differential Equations</a> <span class=pill>JNL</span>
+  </td>
+  <td>세 편 모두 "신경망을 학습시키면 알아서 잘 복원한다"는 최근 경험적 접근에서 한 발 물러나, 복원 결과가 실제로 얼마나 믿을 만한지를 수학적으로 보장하려는 시도입니다. Deep Projective Priors 논문은 학습된 신경망을 투영 연산자로 쓰는 복원 알고리즘이 선형 수렴하려면 그 신경망이 직교 투영에 충분히 가까워야 한다는 점을 보이고, 이를 훈련 손실에 직접 강제하는 확률적 직교 정규화를 제안해 수렴 속도와 안정성을 실험적으로 높였습니다. Multiplicative Noise 논문은 흐림과 곱셈 잡음을 동시에 제거할 때 기하학적 사전 하나만 쓰면 생기는 특유의 아티팩트를, 평균곡률과 표면적이라는 서로 다른 미분 차수의 두 사전을 결합해 줄이고 전역수렴이 보장된 교대최소화 알고리즘으로 풉니다. Elliptic PDE 논문은 역문제가 본질적으로 풀기 어려운(ill-posed) 문제라는 점을 인정한 채, 계산된 근사해가 실제 해와 얼마나 떨어져 있는지를 사후에 정량적으로 추정하는 방법을 세웁니다. 즉 복원 품질을 PSNR 숫자 하나로만 보고하던 흐름에서 벗어나 "이 복원을 언제 믿을 수 있는지"를 수학적으로 답하려는 쪽으로 가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 세 저널(그중 두 편은 같은 호의 SIAM Journal on Imaging Sciences)에서 독립적으로 같은 방향이 나타났지만, 하루치 저널 수집이라 같은 저자군의 후속 교차 인용이나 더 넓은 벤치마크 확산은 아직 확인 안 됨</small></td>
+  <td>Deep Projective Priors의 확률적 직교 정규화를 랩이 쓰는 learned-prior 기반 복원망(오토인코더 또는 디노이징 네트워크)에 적용해, 정규화 유무에 따른 수렴 속도와 복원 PSNR을 동일 inverse-problem 설정에서 1주일 내로 비교한다</td>
+</tr>
+<tr>
+  <td><strong>라이트필드가 공간-각도 해상도 trade-off를 획득측과 디스플레이측 양쪽에서 동시에 공략</strong></td>
+  <td>
+    <a href="https://doi.org/10.3390/s26216827" target=_blank>Computational Reconstruction of Integral Imaging for Accurate Depth Estimation Using Non-Uniform Pitches</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1186/s43074-026-00292-w" target=_blank>High spatial-angular resolution light-field display enabled by subpixel-demultiplexing viewpoint-interleaving encoding</a> <span class="pill a">JNL · TIER A</span>
+  </td>
+  <td>라이트필드 영상의 오래된 난제는 "공간 해상도를 올리면 각도(시점) 해상도가 떨어지고, 반대도 마찬가지"라는 공간-대역폭 곱의 근본적 트레이드오프입니다. 이번 두 편은 이 문제를 서로 다른 쪽에서 공략합니다. 적분영상 깊이추정 논문은 촬영 후 계산 복원 단계에서 여러 목표 깊이평면의 최적 피치를 최소공배수로 통일하고 카메라 배열을 라틴방진 형태로 불균일하게 배치해, 픽셀 양자화로 생기던 깊이 오차를 수학적으로 완전히 없앴다고(모든 목표 깊이에서 평균제곱오차 0) 보고합니다. 라이트필드 디스플레이 논문은 반대로 하드웨어·인코딩 단계에서 서브픽셀 단위 시점 다중화 인코딩과 두 평면 렌즈 최적화를 결합해 4320×3840 서브픽셀 배열과 가로 2.67 lp/mm·세로 2.99 lp/mm 공간 해상도, 1.45 시점/도 각도 해상도를 가진 5.5인치 시제품으로 두 해상도를 동시에 끌어올렸습니다. 두 편을 합치면 라이트필드 연구가 같은 질문에 계산 알고리즘과 광학 하드웨어 양쪽에서 답하기 시작했다는 뜻입니다.</td>
+  <td>Medium<br><small>획득과 디스플레이라는 파이프라인 양 끝에서 같은 문제를 다루는 2편이지만, 더 넓은 벤치마크 확산이나 제3의 독립 검증은 아직 없음. IEEE TPAMI의 Aperture-aware Dispersion 5-D Light-field Imaging Spectrometer도 같은 버킷에 배정됐으나 초록이 없어 이 클러스터에는 포함하지 않음</small></td>
+  <td>적분영상 논문의 최소공배수 통일 피치 + 라틴방진 불균일 카메라 배치를 랩 보유 라이트필드 촬영 리그에 적용해, 기존 균일 피치 방식 대비 여러 목표 깊이평면에서 깊이추정 오차가 실제로 줄어드는지 1주일 내로 재현한다</td>
+</tr>
+<tr>
+  <td><strong>메타광학이 설계 변수를 시간·기계적 위상배열·데이터 기반 역설계로 동시에 확장</strong></td>
+  <td>
+    <a href="https://doi.org/10.1038/s41377-026-02452-w" target=_blank>Spatio-temporal photonic metalattice</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.3390/mi17111240" target=_blank>Design and Simulation of a Ring-Shaped MEMS Optical Phased Array for 3D Optical Scanning</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1002/aisy.70611" target=_blank>Inverse Design of Electromagnetic‐Induced Transparency Metasurface Using Conditional Generative Adversarial Network</a> <span class=pill>JNL</span>
+  </td>
+  <td>메타광학은 보통 "고정된 나노구조를 한 번 설계하면 그 기능도 고정된다"는 한계를 가지는데, 오늘 세 편은 각자 다른 새 설계 변수를 더해 이 한계를 깨려 합니다. Metalattice 논문은 공간적으로 패터닝된 구조에 초고속 펄스 간섭으로 만든 시간적 격자를 더해 "시간"을 설계 변수로 도입하고, 펄스 지연·입사각·파장을 바꿔가며 동적으로 재구성할 수 있음을 보였습니다. MEMS 링형 광위상배열 논문은 고정 메타표면 대신 전기정전식으로 구동되는 동심원 MEMS 구조로 3차원 광학 스캐닝을 기계적으로 구현합니다. EIT 메타표면 역설계 논문은 소프트웨어 쪽에서, 수작업 모델링 대신 조건부 생성적 적대 신경망(CGAN)으로 목표 투과 스펙트럼에서 메타표면 구조를 직접 생성해 평균 스펙트럼 정확도 90% 이상을 더 적은 학습 비용으로 달성했습니다. 세 편을 합치면 메타광학 연구가 "어떤 나노구조를 고정해서 새길까"를 넘어 시간, 기계적 구동, 데이터 기반 최적화라는 전혀 다른 축에서 설계 자유도를 넓히는 쪽으로 가고 있다는 뜻입니다.</td>
+  <td>Low<br><small>세 편이 응용 분야(기초 광학 물리, 라이다형 3D 스캐닝, 전자기 유도투명 통신소자)와 설계 변수가 모두 달라 좁은 공통 문제로 보기는 어렵지만, "고정 나노구조의 한계를 넘는 새 설계 자유도 탐색"이라는 상위 설계 철학은 뚜렷하게 겹침</small></td>
+  <td>EIT 메타표면 역설계의 픽셀 기반 인코딩 + Gramian Angle Field CGAN 구조를 랩이 설계하는 메타렌즈 위상 프로파일에 적용해, 기존 수치 최적화 대비 목표 스펙트럼 재현 정확도와 설계 소요 시간을 1주일 내로 비교한다</td>
+</tr>
+</tbody>
+</table>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 1편, 실질 신호 0편</strong> — <a href="https://doi.org/10.3390/rs18213725" target=_blank>Fast Frequency-Domain Generalized Radon–Fourier Transform for ISAR Imaging of Maneuvering Ships</a>(Remote Sensing)는 선박 레이더 영상(ISAR)의 모션 보정 알고리즘 논문으로, "synthetic aperture"/"aperture synthesis" 키워드가 Fourier Ptychography 버킷과 우연히 겹친 완전한 오탐입니다. 오늘은 FP 실질 신호가 없습니다.</li>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 1편, 실질 신호 1편</strong> — <a href="https://doi.org/10.1364/oe.618807" target=_blank>Cascaded design for microstructured optical diffusers using a Gaussian scattering-kernel model</a>(Optics Express)는 산란 커널 모델로 마이크로구조 광학 디퓨저를 계단식(cascaded)으로 설계하는 논문으로, 렌즈리스·코딩 애퍼처 촬영에 쓰이는 디퓨저 설계와 직접 맞닿지만 1편뿐이라 클러스터로 올리지 않았습니다.</li>
+    <li><strong>Phase Imaging/Holography — 오늘 배정 8편, 실질 신호 6편</strong> — 클러스터3의 2편(metalattice, MEMS OPA) 외에 <a href="https://doi.org/10.1007/s00041-026-10311-w" target=_blank>Optimal Frames for Phase Retrieval from Edge Vectors of Optimal Polygons</a>(J Fourier Anal Appl)는 위상복원(phase retrieval)에 필요한 최적 프레임을 다각형의 변 벡터로 구성하는 순수 수학 이론 논문이고, <a href="https://doi.org/10.1364/ao.614563" target=_blank>Full-color computer-generated holography using a photopolymer holographic dichroic beam splitter</a>(Applied Optics)는 단일 LCoS-SLM과 포토폴리머 이색성 빔스플리터로 풀컬러 CGH를 구현하는 하드웨어 논문이며, <a href="https://doi.org/10.1016/j.optcom.2026.133935" target=_blank>A digital holographic phase aberration compensation method based on extremum filtering</a>(Optics Communications)는 극값 필터링으로 디지털 홀로그래피의 위상 수차를 보정합니다. 나머지 2편(핀 N 홀로그래피 근지평선 수정 — 끈이론/AdS-CFT 물리, 법적 뇌사판정용 순차 CTA — 임상)은 "holography"·"phase" 키워드만 겹친 완전한 오탐입니다.</li>
+    <li><strong>Meta-Optics/Diffractive — 오늘 배정 9편, 실질 신호 2~3편</strong> — 클러스터3의 EIT CGAN 역설계 1편 외에, <a href="https://doi.org/10.1063/5.0353421" target=_blank>Lightweight infrared-radar compatible stealth metasurface</a>(J Applied Physics, IR 방사율 0.226·전파흡수율 90%↑)와 <a href="https://doi.org/10.1016/j.applthermaleng.2026.133791" target=_blank>Machine-learning-driven dual-window metasurface for passive radiative cooling</a>는 메타표면 설계·ML 역설계 방법론은 랩 관심사와 맞닿지만 응용이 각각 군사 위장·열복사 냉각이라 이미징과는 간접적입니다. 나머지 6편(THz tri-state 재구성형 메타표면, 위성 IoV용 다편광 안테나 스태킹, 반사형 THz 편광변환 메타표면, qBIC-LSPR 광섬유 센서, 시변 메타표면 레이더 기만 재밍, THz TDR 분광법)은 통신·레이더·센싱용이라 이미징 버킷 신호는 아닙니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 오늘 배정 3편, 실질 신호 3편(클러스터2 2편 + 추가 1편)</strong> — 클러스터2의 2편 외에 <a href="https://doi.org/10.1109/tpami.2026.3748025" target=_blank>Aperture-aware Dispersion 5-D Light-field Imaging Spectrometer</a>(IEEE TPAMI)도 같은 버킷의 진짜 신호이나 초록이 없어 제목·저널 기준으로만 참고합니다(본문 확인 필요).</li>
+    <li><strong>Tomography/3D Imaging — 오늘 배정 35편, 실질 신호 3편</strong> — <a href="https://doi.org/10.1088/2515-7647/aebb7d" target=_blank>Holographic incoherent-light optical diffraction tomography</a>(J Phys Photonics)는 비간섭광원 기반 회절단층촬영(hiODT)이 기존 간섭성 회절단층촬영과 이론적으로 동치임을 보이는 진짜 ODT 신호지만 1편뿐이라 "관찰 중"으로만 표시합니다. <a href="https://doi.org/10.1016/j.optlastec.2026.116787" target=_blank>Dehaze-GaussianImage</a>(2D Gaussian splatting 기반 제로샷 디헤이징)와 <a href="https://doi.org/10.1364/oe.618751" target=_blank>Polarimetric 3D Reconstruction of Colored Targets</a>는 둘 다 "3D reconstruction" 계열 키워드로 걸렸고 geometry/recon 신호 2편 이상 기준을 충족하지만, 초록이 없고 응용이 서로 다른 데다(안개 제거 vs 다분광 편광 형상 복원) 묶기엔 근거가 얇아 독립 클러스터로 올리지 않았습니다(이 두 편은 아래 버킷별 주요 논문에서 개별 소개합니다). 나머지 32편은 PET/CT 종양 리뷰, 사후 CT, 경동맥협착 도플러·CTA 비교, 치아 뿌리끝 병변 딥러닝 진단, 고관절 절골술 CT 분석 등 임상 영상 사례·리뷰입니다.</li>
+    <li><strong>Virtual Staining/Pathology — 오늘 배정 8편, 실질 신호 2편</strong> — <a href="https://doi.org/10.26599/audt.2026.260040" target=_blank>Research Progress... Ultrasound Localization Microscopy</a>(초음파 회절한계 돌파 초해상도 영상)와 <a href="https://doi.org/10.5826/dpc.1604a7357" target=_blank>Performance of Ex Vivo Confocal Microscopy in Mohs Surgery</a>(공초점현미경 기반 수술 중 절제면 평가)는 현미경 영상 진단 성능 신호이지만 영상 모달리티가 각각 초음파·임상 진단이라 계산 가상염색과는 거리가 있습니다. 나머지 6편(정치철학 포럼, 베네수엘라 민속음악 디지털 아카이브, Gram 염색 교육법 비교, VR 언어학습, 탄소나노튜브 당단백질 프로브)은 "staining"·"virtual" 키워드만 겹친 완전한 오탐입니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv</strong>: 0건 — 오늘도 /new listing이 갱신되지 않아 arXiv 쪽 방법론 신호 자체가 없습니다(2일 연속).</li>
+  <li><strong>저널 전용</strong>: 이미지 복원 역문제 이론 3편(확률적 직교 정규화, 곱셈잡음 하이브리드 기하 모델, 타원형 PDE 역문제 사후분석), 라이트필드 공간-각도 해상도 2편(적분영상 깊이추정, 라이트필드 디스플레이), 메타광학 설계변수 확장 3편(시공간 metalattice, MEMS OPA, EIT CGAN 역설계), 디퓨저 설계 1편, 비간섭광원 회절단층촬영 1편.</li>
+  <li><strong>공통 키워드</strong>: 비교할 arXiv 축이 없어 오늘도 "방법 vs 응용" 대비 자체가 성립하지 않습니다. 대신 저널 내부에서 "이론/알고리즘 논문"(복원 역문제 수렴성·사후오차, 메타표면 역설계)과 "임상/응용 관찰 논문"(PET/CT 리뷰, OCT·CTA 임상 사례)이 선명하게 갈렸습니다 — 전자가 오늘 클러스터의 핵심이고 후자는 대부분 Skim-only입니다.</li>
+  <li><strong>특징</strong>: 어제도 오늘과 같은 journal-only였지만 어제는 계측·하드웨어(홀로그래피 속도, SLAM 샘플링) 중심이었고 오늘은 이론·설계변수 확장 중심이라, 같은 "arXiv 공백" 상황에서도 저널이 매일 다른 결의 신호를 낸다는 점이 드러났습니다. 다음 실행에서 arXiv /pastweek에 10/29·10/30 섹션이 생기면 두 daily를 함께 arXiv+저널 완성본으로 업그레이드합니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 이미지 복원 역문제에 통계적·변분적 보장을 다시 요구하는 흐름</h3>
+  <p>Deep Projective Priors(확률적 직교 정규화로 GPGD 선형수렴 보장), Multiplicative Noise 하이브리드 기하 모델(전역수렴 교대최소화), Elliptic PDE 역문제 사후오차 추정 세 편이 "경험적 딥러닝 복원"에서 "수학적으로 보장된 복원"으로 무게중심을 옮깁니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 세 저널(2편은 같은 호의 SIAM J Imaging Sciences)에서 같은 방향이 동시에 나타났지만 하루치 저널 수집이라 교차 재현은 아직 확인 안 됨</p>
+</div>
+
+<div class=ins>
+  <h3>2. 라이트필드가 공간-각도 해상도 trade-off를 획득측과 디스플레이측 양쪽에서 동시에 공략</h3>
+  <p>적분영상 깊이추정(최소공배수 통일 피치, MSE=0)과 라이트필드 디스플레이(서브픽셀 다중화, 2.67/2.99 lp/mm·1.45 VIPD) 두 편이 라이트필드 파이프라인의 양 끝에서 같은 해상도 트레이드오프 문제를 공략합니다.</p>
+  <p class=conf-note>Confidence: Medium — 획득·디스플레이 양끝에서 같은 문제를 다루지만 2편뿐이라 제3의 독립 검증은 아직 없음</p>
+</div>
+
+<div class=ins>
+  <h3>3. 메타광학이 설계 변수를 시간·기계적 위상배열·데이터 기반 역설계로 동시에 확장</h3>
+  <p>시공간 metalattice(시간을 설계변수로), MEMS 링형 OPA(기계적 3D 스캐닝), EIT 메타표면 CGAN 역설계(스펙트럼 정확도 90%↑) 세 편이 "고정 나노구조"라는 메타광학의 전통적 한계를 서로 다른 축에서 넘으려 합니다.</p>
+  <p class=conf-note>Confidence: Low — 응용 분야와 설계 변수가 모두 달라 좁은 공통 문제는 아니지만 "새 설계 자유도 탐색"이라는 상위 철학은 겹침</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. 확률적 직교 정규화를 랩 learned-prior 복원망에 이식</h3>
+  <p>Deep Projective Priors 훈련 손실에 확률적 직교 정규화를 추가하면 generalized projected gradient descent의 수렴 속도와 강건성이 실제로 개선되는지 랩 inverse-problem 파이프라인으로 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Stochastic Orthogonal Regularization for Deep Projective Priors의 정규화 항 재구현(오토인코더·디노이징 네트워크 기반 투영 각 1개)</li>
+    <li>공통 benchmark: 랩 보유 compressed sensing 또는 phase retrieval 데이터셋 + 기존 비정규화 GPGD 베이스라인</li>
+    <li>비교축: 동일 반복 횟수에서 수렴 속도(반복 수), 복원 PSNR, 잡음 강건성</li>
+    <li>실패해도 남는 결과: 랩 inverse-problem 파이프라인의 learned-prior 수렴성 진단 보고서</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. 최소공배수 통일 피치 기반 불균일 적분영상 촬영 리그 재현</h3>
+  <p>여러 목표 깊이평면에 대해 최소공배수로 통일한 최적 피치와 라틴방진 카메라 배치를 랩 적분영상 리그에 적용해 깊이추정 오차가 실제로 줄어드는지 확인합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Computational Reconstruction of Integral Imaging의 LCM 통일 피치 + 라틴방진 배치 알고리즘 재구현</li>
+    <li>공통 benchmark: 랩 보유 적분영상 카메라 배열 + 기존 균일/비균일(NVCR) 피치 베이스라인</li>
+    <li>비교축: 여러 목표 깊이평면에서의 깊이추정 MSE, peak sidelobe ratio</li>
+    <li>실패해도 남는 결과: 랩 적분영상 리그의 피치 설계 비교 보고서</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. CGAN 기반 메타표면 역설계를 랩 메타렌즈 설계에 적용</h3>
+  <p>픽셀 기반 인코딩 행렬과 Gramian Angle Field를 결합한 CGAN 역설계 구조를 랩 메타렌즈 위상 프로파일 설계에 적용해 기존 수치 최적화 대비 정확도·소요 시간을 비교합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Inverse Design of EIT Metasurface Using CGAN의 픽셀 인코딩·GAF·U-Net 구조 재구현</li>
+    <li>공통 benchmark: 랩 보유 메타렌즈 목표 위상 프로파일 세트 + 기존 수치 최적화(topology optimization) 베이스라인</li>
+    <li>비교축: 목표 스펙트럼/위상 재현 정확도(MSE), 설계 소요 시간, 필요 학습 epoch 수</li>
+    <li>실패해도 남는 결과: 랩 메타렌즈 역설계 파이프라인의 데이터 기반 방법 적용 가능성 1차 진단 보고서</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Tomography/3D Imaging(35편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:3%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:3%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:23%"></span></span><span class=n>8편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:26%"></span></span><span class=n>9편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:9%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>35편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:23%"></span></span><span class=n>8편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:20%"></span></span><span class=n>7편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>17편</span></div>
+
+<p><small>⚠️ 참고: 오늘도 저널만 수집했기 때문에 버킷 편수 자체가 평소(arXiv 포함 시 200~300건대)보다 훨씬 작습니다. Fourier Ptychography/Microscopy 1편은 ISAR 레이더 영상 논문으로 완전한 키워드 오탐입니다. Lensless/Coded Imaging 1편(광학 디퓨저 설계)은 실질 신호입니다. Phase Imaging/Holography 8편 중 실질 신호는 6편(클러스터3의 2편 + Watch Lens에서 다룬 4편)이고 나머지 2편은 끈이론 홀로그래피·임상 CTA로 오탐입니다. Meta-Optics/Diffractive 9편 중 실질 신호는 2~3편(클러스터3의 EIT CGAN 포함)이고 나머지는 통신·레이더·센싱용입니다. Light-Field/Novel Sensors 3편은 모두 실질 신호입니다. Tomography/3D Imaging 35편 중 실질 신호는 3편(비간섭 ODT, Dehaze-GaussianImage, Polarimetric 3D Reconstruction)이고 나머지 32편은 임상 CT/OCT/PET 사례·리뷰입니다. Virtual Staining/Pathology 8편 중 실질 신호는 2편(초음파 국소화 현미경, Mohs 수술 공초점현미경)이고 나머지는 "staining"·"virtual" 키워드가 정치철학·민속음악·VR 교육 논문에 우연히 겹친 오탐입니다. Reconstruction/Inverse Problems 7편 중 4편(클러스터1의 3편 + 양자화 압축센싱 이론)이 실질 신호이고 나머지 3편(균열 전파 예측, 광섬유 센싱 PINN, 단백질 서열 예측)은 이미징 핵심과 거리가 있거나 완전히 무관합니다. Deep Learning Methods 17편 중 광학 이미징 관련 신호는 2~3편(OpenBlink TIRF 현미경, 단분자 영상 디노이징, PSF 유도 영상복원)이고 나머지는 하천 유량 예측, 치질 흑연 품질평가, AI 생성 가사 품질평가 등 완전히 무관합니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Lensless/Coded Imaging (1편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.618807" target=_blank>Cascaded design for microstructured optical diffusers using a Gaussian scattering-kernel model</a></strong> [JNL]<br>
+  왜 주요: 오늘 LCI 버킷 유일 신호 — 가우시안 산란 커널 모델로 렌즈리스·코딩 애퍼처용 마이크로구조 디퓨저를 계단식으로 설계
+</div>
+
+<h3>Phase Imaging/Holography (8편 중 관련 6편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02452-w" target=_blank>Spatio-temporal photonic metalattice</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터3 대표 — 초고속 펄스 간섭으로 시간을 메타광학 설계 변수로 도입, 동적 재구성 가능한 회절격자 구현
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/mi17111240" target=_blank>Design and Simulation of a Ring-Shaped MEMS Optical Phased Array for 3D Optical Scanning</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터3 대표 — 전기정전식 구동 동심원 MEMS 구조로 3D 광학 스캐닝을 기계적으로 구현
+</div>
+
+<h3>Meta-Optics/Diffractive (9편 중 관련 2~3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/aisy.70611" target=_blank>Inverse Design of Electromagnetic‐Induced Transparency Metasurface Using Conditional Generative Adversarial Network</a></strong> [JNL · TIER A]<br>
+  왜 주요: 오늘 클러스터3·must-read 대표 — 픽셀 기반 인코딩 + Gramian Angle Field CGAN으로 평균 스펙트럼 정확도 90% 이상 달성
+</div>
+
+<h3>Light-Field/Novel Sensors (3편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1186/s43074-026-00292-w" target=_blank>High spatial-angular resolution light-field display</a></strong> [JNL · TIER A]<br>
+  왜 주요: 오늘 클러스터2·must-read 대표 — 서브픽셀 다중화 인코딩+두 평면 렌즈 최적화로 공간·각도 해상도를 동시에 끌어올린 5.5인치 시제품
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/s26216827" target=_blank>Computational Reconstruction of Integral Imaging for Accurate Depth Estimation Using Non-Uniform Pitches</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터2 대표 — LCM 통일 피치+라틴방진 카메라 배치로 깊이추정 오차를 수학적으로 0까지 제거
+</div>
+
+<h3>Tomography/3D Imaging (35편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2515-7647/aebb7d" target=_blank>Holographic incoherent-light optical diffraction tomography</a></strong> [JNL]<br>
+  왜 주요: 비간섭광원 기반 회절단층촬영(hiODT)이 기존 간섭성 ODT와 이론적으로 동치임을 보임 — 단발 신호라 "관찰 중"
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.618751" target=_blank>Polarimetric 3D Reconstruction of Colored Targets Based on Narrowband Multispectral Dispersion Constraints</a></strong> [JNL]<br>
+  왜 주요: 다분광 분산 제약과 색도 기반 탈채도로 색을 가진 대상의 편광 3D 형상 복원 — 초록 미확인(제목·저널 기준)
+</div>
+
+<h3>Reconstruction/Inverse Problems (7편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1137/25m1824835" target=_blank>Stochastic Orthogonal Regularization for Deep Projective Priors</a></strong> [JNL · TIER A]<br>
+  왜 주요: 오늘 클러스터1·must-read 대표 — 확률적 직교 정규화로 deep projective prior 기반 GPGD의 선형 수렴을 보장
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1137/25m1825154" target=_blank>Image Restoration with Multiplicative Noise: A Hybrid Geometric Model</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터1 대표 — 평균곡률+표면적 하이브리드 정규화로 흐림·곱셈잡음 동시 제거, 전역수렴 보장 알고리즘
+</div>
+
+<h3>Deep Learning Methods (17편 중 관련 2~3편, catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/acsphotonics.6c00733" target=_blank>OpenBlink: Low-Cost TIRF Microscopy for Super-Resolution Imaging via μManager</a></strong> [JNL]<br>
+  왜 주요: 고가 상용 장비 없이도 균일 고출력 조명·나노미터급 축방향 안정성을 μManager 오픈소스로 구현한 저비용 단분자 국소화 현미경(SMLM)
+</div>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Stochastic Orthogonal Regularization for Deep Projective Priors — SIAM Journal on Imaging Sciences</h3>
+  <div class=tag>[방법전환] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 클러스터1의 대표 논문이자, "신경망 기반 복원이 왜/언제 수렴하는지"를 경험이 아니라 수학으로 답하려는 보기 드문 시도입니다.</p>
+  <p><strong>핵심:</strong> 이미지 복원 역문제는 흔히 generalized projected gradient descent(GPGD)로 풀리는데, 최근에는 이 투영(projection) 단계를 손으로 설계하는 대신 학습된 신경망으로 대체한 "deep projective prior"가 최고 성능을 냅니다. 문제는 고전적인 희소 복원(sparse recovery) 이론에서는 투영이 진짜 직교 투영(orthogonal projection)에 가까울수록 GPGD가 선형 속도로 수렴한다는 보장이 있는데, 평범한 평균제곱오차로 학습된 신경망 투영은 이 조건을 만족한다는 보장이 전혀 없다는 점입니다. 저자들은 이 간극을 메우기 위해 훈련 손실에 "확률적 직교 정규화"를 추가하는 방법을 제안합니다 — 신경망 투영이 직교 투영에 충분히 가까우면 선형 안정 복원이 보장된다는 이론적 결과에 기반해, 그 근사 조건을 훈련 과정에서 직접 강제하는 방식입니다. 오토인코더 기반 사전과 디노이징 네트워크 기반 사전 두 종류 모두에 이 정규화를 적용한 실험에서, 어려운 역문제 설정에서 GPGD의 수렴 속도와 강건성이 이론적 예측과 일치하게 개선됐다고 보고합니다. 랩이 learned-prior 기반 복원(압축센싱, 위상복원 등)을 쓰고 있다면, 이 정규화 항 하나를 훈련 손실에 추가하는 것만으로 같은 효과를 기대해볼 수 있다는 점에서 실용적 의미가 큽니다.</p>
+  <p><strong>주의:</strong> 개선 폭이 구체적으로 몇 %인지, 어떤 종류의 역문제(압축센싱 vs 위상복원 등)에서 가장 크게 나타나는지는 abstract만으로는 수치로 확인되지 않아 본문 확인이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] High spatial-angular resolution light-field display — PhotoniX</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 클러스터2의 대표 논문이자, 라이트필드 디스플레이의 공간-각도 해상도 트레이드오프라는 오래된 문제를 알고리즘과 광학 하드웨어를 함께 바꿔 구체적인 수치로 풀어낸 보기 드문 사례입니다.</p>
+  <p><strong>핵심:</strong> 라이트필드 디스플레이(LFD)는 2D 디스플레이 패널의 고정된 공간-대역폭 곱(space-bandwidth product) 때문에 공간 해상도와 각도(시점) 해상도가 서로를 희생시키는 구조적 트레이드오프를 가집니다. 저자들은 두 축에서 동시에 접근합니다. 소프트웨어 쪽에서는 서브픽셀 단위로 시점을 미리 인코딩하는 "subpixel-demultiplexing viewpoint-interleaving encoding(SVE)"을 제안해 앨리어싱 없는 4320(H)×3840(V) 서브픽셀 배열(수평 1612 SPI, 수직 806 SPI)을 만들고, 수직 방향에는 홀짝 시점 인터리빙을 더해 시차 부드러움을 개선합니다. 하드웨어 쪽에서는 "full-field dual-plane lens optimization(FDLO)"으로 중심 깊이평면과 보는 평면(viewing plane) 양쪽에서 동시에 스폿 크기를 최소화해 복셀 퍼짐과 시점 번짐을 억제합니다. 5.5인치 시제품으로 검증한 결과 공간 해상도 2.67 lp/mm(수평)·2.99 lp/mm(수직), 각도 해상도 1.45 시점/도(VIPD)를 동시에 달성하며 매끄러운 motion parallax를 보였습니다. 랩이 라이트필드나 3D 디스플레이 파이프라인을 다룬다면, 소프트웨어 인코딩과 광학 렌즈 설계를 분리하지 않고 함께 최적화한다는 이 설계 철학 자체가 바로 참고할 만합니다.</p>
+  <p><strong>주의:</strong> 5.5인치 시제품 하나에서의 결과라 더 큰 화면이나 다른 패널 해상도로 스케일업했을 때도 같은 수준의 공간·각도 해상도가 유지되는지는 abstract만으로는 확인되지 않아 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] arXiv가 이틀 연속 발행되지 않아 오늘 리포트는 저널 421건(실제 랩 ROI 신호 15편 내외)만으로 구성됐습니다. 평소 대비 표본 크기가 훨씬 작습니다.</p>
+  <p>[Dataset risk] 저널 421편 중 OpenAlex로 abstract가 보강된 비율은 38/421(9%)뿐이라, Meta-Optics·Reconstruction 상당수를 제목·저널명만으로 분류·판단했습니다.</p>
+  <p>[Claim risk] Virtual Staining/Pathology 8편 중 6편, Tomography/3D Imaging 35편 중 32편이 키워드 오탐이거나 계산 이미징 방법론과 무관한 임상/응용 논문입니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] Deep Projective Priors의 수렴 속도·강건성 개선이 구체적으로 어느 정도인지(수치), 어떤 역문제 유형에서 가장 크게 나타나는지 abstract에 명시되지 않았습니다.</p>
+  <p>[Dataset risk] 라이트필드 디스플레이의 해상도 수치는 5.5인치 시제품 1종에서만 검증됐고, 다른 화면 크기·패널로 일반화되는지는 본문 확인이 필요합니다.</p>
+  <p>[Baseline risk] Polarimetric 3D Reconstruction과 hiODT는 초록이 없어 기존 방법 대비 구체적으로 어떤 조건에서 얼마나 개선되는지 확인할 수 없습니다.</p>
+  <p>[Metric risk] EIT 메타표면 CGAN 역설계의 "평균 스펙트럼 정확도 90% 이상"이 어떤 주파수 대역·설계 난이도 분포에서 측정된 평균인지 abstract만으로는 불명확합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+
+<div class=skim>
+  <ul>
+    <li>Tomography/3D Imaging 임상 사례·리뷰 약 32편 — PET/CT 종양 리뷰, 사후 CT 부검, 경동맥협착 도플러·CTA, 치아 뿌리끝 병변 딥러닝 진단 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
+    <li>Virtual Staining/Pathology 키워드 오탐 약 6편 — "staining"·"virtual" 단어가 정치철학, 민속음악 아카이브, 의학교육, VR 언어학습 논문에 우연히 겹친 경우가 다수입니다.</li>
+    <li>Meta-Optics/Diffractive 통신·레이더·센싱용 6편 — THz 재구성형 메타표면, 위성 IoV 안테나, qBIC-LSPR 광섬유 센서 등으로 이미징과 직접 연결되지 않습니다.</li>
+    <li>Reconstruction/Inverse Problems 3편 — 균열 전파 예측(구조역학), 광섬유 다중변수 센싱 PINN, 단백질 서열-기능 예측(LLM4AAV)으로 방법론은 유사하나 이미징 ROI 핵심과는 거리가 있습니다.</li>
+    <li>Deep Learning Methods 17편 중 광학과 결이 다른 약 14편 — 하천 유량 예측, 흑연 품질평가, 크리켓 샷 분류, AI 생성 가사 품질평가, 치과 임플란트 유한요소 surrogate 등 완전히 무관하거나 간접적인 응용입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+
+<h3>Lensless/Coded Imaging (1편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.618807" target=_blank>Cascaded design for microstructured optical diffusers using a Gaussian scattering-kernel model</a></strong> <span class=pill>JNL</span><br>
+  문제: 마이크로구조 광학 디퓨저의 산란 특성을 정밀하게 설계하기 어려움 / 방법: 가우시안 산란 커널 모델 기반 계단식(cascaded) 설계 / 의미: 렌즈리스·코딩 애퍼처 촬영용 디퓨저 하드웨어 신호 / 주의: 초록 미확인(제목·저널 기준) / 우선순위: Read
+</div>
+
+<h3>Phase Imaging/Holography (8편 중 관련 6편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41377-026-02452-w" target=_blank>Spatio-temporal photonic metalattice</a></strong> <span class=pill>JNL</span><br>
+  문제: 메타광학 설계가 공간적 구조로만 고정돼 동적 재구성이 어려움 / 방법: 초고속 펄스 간섭으로 만든 시간적 격자를 공간 패턴에 결합 / 의미: 오늘 클러스터3·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/mi17111240" target=_blank>Design and Simulation of a Ring-Shaped MEMS Optical Phased Array for 3D Optical Scanning</a></strong> <span class=pill>JNL</span><br>
+  문제: 고정 메타표면 기반 빔 조향은 기계적 3D 스캐닝 유연성이 부족함 / 방법: 전기정전식 동심원 MEMS 광위상배열 / 의미: 오늘 클러스터3 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s00041-026-10311-w" target=_blank>Optimal Frames for Phase Retrieval from Edge Vectors of Optimal Polygons</a></strong> <span class=pill>JNL</span><br>
+  문제: 위상복원에 필요한 최적 측정 프레임 구성의 이론적 하한이 불명확함 / 방법: 최적 다각형의 변 벡터로 프레임 구성 / 의미: 위상복원 이론 신호 / 주의: 순수 수학 이론, 응용 사례는 abstract에 없음 / 우선순위: Skim
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ao.614563" target=_blank>Full-color computer-generated holography using a photopolymer holographic dichroic beam splitter and a single LCoS-SLM</a></strong> <span class=pill>JNL</span><br>
+  문제: 풀컬러 CGH는 보통 여러 SLM이나 시분할이 필요해 시스템이 복잡함 / 방법: 포토폴리머 이색성 빔스플리터 + 단일 LCoS-SLM / 의미: CGH 하드웨어 단순화 신호 / 주의: 초록 미확인(제목·저널 기준) / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optcom.2026.133935" target=_blank>A digital holographic phase aberration compensation method based on extremum filtering</a></strong> <span class=pill>JNL</span><br>
+  문제: 디지털 홀로그래피 위상 수차가 정량 위상영상 정확도를 떨어뜨림 / 방법: 극값 필터링 기반 수차 보정 / 의미: DH 위상영상 품질 개선 신호 / 주의: 초록 미확인(제목·저널 기준) / 우선순위: Read
+</div>
+<p><small>나머지 2편(핀 N 홀로그래피 근지평선 수정 — 끈이론/AdS-CFT 물리, 법적 뇌사판정용 순차 CTA — 임상)은 "holography"·"phase" 키워드만 겹친 완전한 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Meta-Optics/Diffractive (9편 중 관련 2~3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/aisy.70611" target=_blank>Inverse Design of Electromagnetic‐Induced Transparency Metasurface Using Conditional Generative Adversarial Network</a></strong> <span class=pill>JNL</span><br>
+  문제: 전통적 메타표면 역설계는 수작업 모델링·대량 데이터 수집·수치 계산 비용이 큼 / 방법: 픽셀 기반 인코딩 + Gramian Angle Field + U-Net 내장 CGAN / 의미: 오늘 클러스터3·must-read 대표 / 우선순위: Must-read
+</div>
+<p><small>나머지 8편 중 2편(적외선-레이더 호환 스텔스 메타표면, ML 기반 복사냉각 메타표면)은 메타표면 설계·ML 역설계 방법론은 맞닿지만 응용이 군사 위장·열복사 냉각이라 간접 신호로만 언급하고, 나머지 6편(THz 재구성형 메타표면, 위성 IoV 안테나 스태킹, 반사형 THz 편광변환, qBIC-LSPR 광섬유 센서, 시변 레이더 기만 재밍, THz TDR 분광법)은 통신·레이더·센싱용이라 이미징 신호가 아니라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Light-Field/Novel Sensors (3편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1186/s43074-026-00292-w" target=_blank>High spatial-angular resolution light-field display</a></strong> <span class=pill>JNL</span><br>
+  문제: 라이트필드 디스플레이의 공간-각도 해상도가 서로를 희생시키는 근본적 trade-off / 방법: 서브픽셀 다중화 인코딩 + 두 평면 렌즈 최적화 / 의미: 오늘 클러스터2·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/s26216827" target=_blank>Computational Reconstruction of Integral Imaging for Accurate Depth Estimation Using Non-Uniform Pitches</a></strong> <span class=pill>JNL</span><br>
+  문제: 적분영상 깊이추정이 픽셀 양자화 오차로 완전히 0에 도달하지 못함 / 방법: 최소공배수 통일 피치 + 라틴방진 불균일 카메라 배치 / 의미: 오늘 클러스터2 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tpami.2026.3748025" target=_blank>Aperture-aware Dispersion 5-D Light-field Imaging Spectrometer</a></strong> <span class=pill>JNL</span><br>
+  문제: 5차원(공간·각도·파장) 라이트필드 분광 영상의 애퍼처 설계가 분산 특성을 충분히 반영하지 못함 / 방법: 애퍼처 인식 분산 설계 / 의미: 라이트필드 분광 영상 신호 / 주의: 초록 미확인(제목·저널 기준) / 우선순위: Read
+</div>
+
+<h3>Tomography/3D Imaging (35편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2515-7647/aebb7d" target=_blank>Holographic incoherent-light optical diffraction tomography</a></strong> <span class=pill>JNL</span><br>
+  문제: 비간섭광원 기반 회절단층촬영과 기존 간섭성 ODT의 물리적 관계가 불명확함 / 방법: hiODT와 coherent ODT의 이론적 동치성 증명 + 시뮬레이션 검증 / 의미: ODT 이론 신호(단발, 관찰 중) / 주의: 응용 실측 검증은 abstract에 없음 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116787" target=_blank>Dehaze-GaussianImage: Zero-shot dehazing via Explicit 2D Gaussian splatting representation</a></strong> <span class=pill>JNL</span><br>
+  문제: 기존 디헤이징은 장면별 재학습이 필요하거나 일반화가 약함 / 방법: 명시적 2D Gaussian splatting 표현 기반 제로샷 디헤이징 / 의미: Gaussian splatting의 복원 응용 확장 신호 / 주의: 초록 미확인(제목·저널 기준) / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.618751" target=_blank>Polarimetric 3D Reconstruction of Colored Targets Based on Narrowband Multispectral Dispersion Constraints</a></strong> <span class=pill>JNL</span><br>
+  문제: 편광 기반 3D 형상 복원은 보통 무채색 대상에 국한됨 / 방법: 협대역 다분광 분산 제약 + 색도 기반 탈채도 / 의미: 유채색 대상으로 편광 3D 복원 확장 / 주의: 초록 미확인(제목·저널 기준) / 우선순위: Read
+</div>
+<p><small>나머지 32편은 PET/CT 종양 리뷰, 사후 CT 부검, 경동맥협착 도플러·CTA 비교, 치아 뿌리끝 병변 딥러닝 진단, 고관절 절골술 CT 분석 등 임상 영상 사례·리뷰라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (7편 중 관련 4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1137/25m1824835" target=_blank>Stochastic Orthogonal Regularization for Deep Projective Priors</a></strong> <span class=pill>JNL</span><br>
+  문제: 학습된 신경망 투영이 GPGD 선형수렴 조건(직교 투영 근사)을 만족한다는 보장이 없음 / 방법: 확률적 직교 정규화를 훈련 손실에 추가 / 의미: 오늘 클러스터1·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1137/25m1825154" target=_blank>Image Restoration with Multiplicative Noise: A Hybrid Geometric Model and Its Alternating Minimization Algorithm</a></strong> <span class=pill>JNL</span><br>
+  문제: 단일 기하학적 사전만 쓰면 흐림+곱셈잡음 동시 제거 시 특유 아티팩트 발생 / 방법: 평균곡률+표면적 하이브리드 정규화 + 전역수렴 교대최소화 / 의미: 오늘 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1515/cmam-2026-0152" target=_blank>A Posteriori Analysis of Inverse Problems for Elliptic Differential Equations</a></strong> <span class=pill>JNL</span><br>
+  문제: ill-posed 역문제의 계산된 근사해가 실제 해와 얼마나 떨어져 있는지 정량화하기 어려움 / 방법: 함수형 사후오차 추정(a posteriori estimate of functional type) / 의미: 오늘 클러스터1 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.acha.2026.101946" target=_blank>Optimal Quantized Compressed Sensing via Projected Gradient Descent</a></strong> <span class=pill>JNL</span><br>
+  문제: 양자화된 압축센싱 복원의 최적 샘플 복잡도가 불명확함 / 방법: Projected Gradient Descent 기반 최적 양자화 복원 이론 / 의미: 클러스터1과 같은 방향(이론적 보장)의 보조 신호 / 주의: 초록 미확인(제목·저널 기준) / 우선순위: Read
+</div>
+<p><small>나머지 3편(물리기반 균열 전파 예측 KAN, 광섬유 다중변수 센싱 PINN+GP, LLM4AAV 단백질 서열예측)은 이미징 ROI 핵심과 거리가 있거나 완전히 무관해 개별 bullet을 생략합니다.</small></p>
+
+<h3>Deep Learning Methods (17편 중 관련 2~3편, catch-all 과대표 방지)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1021/acsphotonics.6c00733" target=_blank>OpenBlink: Low-Cost TIRF Microscopy for Super-Resolution Imaging via μManager</a></strong> <span class=pill>JNL</span><br>
+  문제: 정량적 SMLM(단분자 국소화 현미경)은 고가 상용 장비가 필요해 접근성이 낮음 / 방법: μManager 오픈소스 제어 기반 저비용 TIRF 현미경 / 의미: 초고해상도 영상 접근성 확대 신호 / 우선순위: Read
+</div>
+<p><small>나머지 15편(하천 유량 예측, CT 기반 췌장염 중증도 예측, 텍스처 비지도 클러스터링 검증, 흑연 품질평가, 크리켓 샷 분류, AI 생성 가사 품질평가 등)은 광학 이미징과 결이 다르거나 완전히 무관해 개별 bullet을 생략합니다.</small></p>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://doi.org/10.1137/25m1824835" target=_blank>Stochastic Orthogonal Regularization for Deep Projective Priors</a></li>
+  <li><a href="https://doi.org/10.1186/s43074-026-00292-w" target=_blank>High spatial-angular resolution light-field display</a></li>
+  <li><a href="2026-10-29.html">2026-10-29 Daily Briefing</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-10-30 journal-only daily(arXiv 미발행 2일째) · 저널 Crossref 421편(--days 1), OpenAlex enrich 38/421편 · 전체 스캔 421건 · ROI 배정 89건 (21.1%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP(arXiv 0건, 다음 실행에서 /pastweek 확인 후 업그레이드 예정)</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>
