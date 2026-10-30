@@ -1,4 +1,53 @@
 {
   "date": "2026-10-30",
-  "results": []
+  "results": [
+    {
+      "benchmark": "FIORD (200° fisheye surface reconstruction)",
+      "metric": "PSNR gain over best prior method",
+      "value": 2.28,
+      "value_str": "+2.28 dB",
+      "paper": "https://arxiv.org/abs/2610.37818",
+      "paper_title": "GOFish: Full Field-of-View Gaussian Splatting and Mesh Extraction"
+    },
+    {
+      "benchmark": "FullCircle (205° fisheye surface reconstruction)",
+      "metric": "PSNR gain over best prior method",
+      "value": 1.97,
+      "value_str": "+1.97 dB",
+      "paper": "https://arxiv.org/abs/2610.37818",
+      "paper_title": "GOFish: Full Field-of-View Gaussian Splatting and Mesh Extraction"
+    },
+    {
+      "benchmark": "3DGS densification (multi-dataset average)",
+      "metric": "Gaussian count/storage reduction at competitive rendering fidelity",
+      "value": 60,
+      "value_str": "~60% fewer Gaussians/storage",
+      "paper": "https://arxiv.org/abs/2610.39399",
+      "paper_title": "ACD-GS: Asymmetric Curvature-aware Densification for 3D Gaussian Splatting"
+    },
+    {
+      "benchmark": "SynthRAD2025 (CBCT-to-CT synthesis)",
+      "metric": "PSNR gain over DDPM baseline",
+      "value": 2.66,
+      "value_str": "+2.66 dB (SSIM 0.97)",
+      "paper": "https://arxiv.org/abs/2610.40046",
+      "paper_title": "EPC-RawDC: Equivariant Physics Constrained 3D Diffusion with Raw Data Consistency for CBCT to CT Image Synthesis"
+    },
+    {
+      "benchmark": "JUST clinical cohort (CBCT-to-CT synthesis)",
+      "metric": "PSNR gain over DDPM baseline",
+      "value": 2.10,
+      "value_str": "+2.10 dB (SSIM 0.97)",
+      "paper": "https://arxiv.org/abs/2610.40046",
+      "paper_title": "EPC-RawDC: Equivariant Physics Constrained 3D Diffusion with Raw Data Consistency for CBCT to CT Image Synthesis"
+    },
+    {
+      "benchmark": "Variable-view clinical linac CBCT (simulated, 10-100 views)",
+      "metric": "PSNR",
+      "value": 33.2,
+      "value_str": "29.9-33.2 dB PSNR",
+      "paper": "https://arxiv.org/abs/2610.37740",
+      "paper_title": "EUReCA: End-to-End Unified CBCT Reconstruction Across Clinical Acquisitions"
+    }
+  ]
 }

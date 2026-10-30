@@ -1,38 +1,38 @@
 {
   "date": "2026-10-30",
   "source_listing_date": "2026-10-30",
-  "source_mode": "journal-only",
-  "note": "2026-10-30(금) 정기 daily 실행. Date Source Contract 확인 결과 추적 5개 카테고리(cs.LG, cs.CV, cs.AI, eess.IV, eess.SP) 모두 /new listing이 여전히 'Wednesday, 28 October 2026'에 멈춰 있어(어제 10/29 실행과 동일 listing, /pastweek에도 10/29·10/30 섹션 없음 확인됨) post_date(2026-10-30) > listing_date(2026-10-28)였다. arXiv가 이틀 연속 이틀 당일 분을 올리지 않은 것으로 보고 arXiv 섹션은 발행하지 않았다(2.1절 저널 독립 규칙에 따라 journal-only daily로 진행, 어제(10/29)와 동일 사유). 어제 journal-only daily(10/29)도 업그레이드 대상으로 확인했으나 /pastweek에 10/29 섹션이 아직 없어 업그레이드하지 않았다. Crossref(--days 1, 랩 키워드 9종) 421편 + OpenAlex enrich(38/421 초록 보강) + OpenAlex 보충 0편을 수집해 classify.py로 421건을 스캔, 89건(21.1%)을 9개 ROI 버킷에 배정했다. 저널 선택분만으로 Reconstruction/Inverse Problems 내 이론적 보장 복원 알고리즘 3편, Light-Field/Novel Sensors 내 공간-각도 해상도 trade-off 해결 2편, 메타광학 설계 변수 확장(시간·위상배열·ML 역설계) 3편 세 클러스터를 구성할 수 있어(각 2편 이상) journal-only 발행 기준을 충족했다. arXiv가 올라오면 다음 실행의 Calendar Audit가 이 daily와 10/29를 함께 pastweek-date-section으로 업그레이드한다.",
+  "source_mode": "new",
+  "note": "2026-10-30(금) 정기 daily 재실행. 오늘 이른 시각 실행에서는 추적 5개 카테고리 모두 /new listing이 'Wednesday, 28 October 2026'에 멈춰 있어(10/29와 동일) journal-only daily를 발행했다. 이후 재확인 결과 5개 카테고리 모두 /new listing이 'Showing new listings for Friday, 30 October 2026'으로 갱신되어 post_date(2026-10-30)와 정확히 일치했다(Date Source Contract 2.1절 충족). 이에 따라 /pastweek 추출 없이 /new를 직접 사용해 arXiv+저널 완성본(source_mode=new)으로 이 날짜의 journal-only 산출물을 덮어썼다. arXiv는 10/28(수) 이후 이틀(10/29, 10/30 오전) 공백을 두고 오늘 재개됐다. cs.LG 372 · cs.CV 233 · cs.AI 392 · eess.IV 15 · eess.SP 52 (new+cross, replacement 제외, 총 1064건) + 저널 Crossref/OpenAlex 427편(--days 1, 35/427 abstract 보강)을 합쳐 1304건을 scripts/classify.py로 스캔, 369건(28.3%)을 9개 ROI 버킷에 배정했다.",
   "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 0,
-      "cs.CV": 0,
-      "cs.AI": 0,
-      "eess.IV": 0,
-      "eess.SP": 0
+      "cs.LG": 372,
+      "cs.CV": 233,
+      "cs.AI": 392,
+      "eess.IV": 15,
+      "eess.SP": 52
     },
     "scope": "new+cross; replacements excluded",
-    "journal_count": 421,
+    "journal_count": 427,
     "journal_window_days": 1
   },
   "totals": {
-    "total_scanned": 421,
-    "selected": 89
+    "total_scanned": 1304,
+    "selected": 369
   },
   "classified": {
-    "total_scanned": 421,
-    "selected": 89,
+    "total_scanned": 1304,
+    "selected": 369,
     "by_bucket": {
-      "Fourier Ptychography/Microscopy": 1,
-      "Lensless/Coded Imaging": 1,
-      "Phase Imaging/Holography": 8,
-      "Meta-Optics/Diffractive": 9,
-      "Light-Field/Novel Sensors": 3,
-      "Tomography/3D Imaging": 35,
-      "Virtual Staining/Pathology": 8,
-      "Reconstruction/Inverse Problems": 7,
-      "Deep Learning Methods": 17
+      "Fourier Ptychography/Microscopy": 3,
+      "Lensless/Coded Imaging": 3,
+      "Phase Imaging/Holography": 10,
+      "Meta-Optics/Diffractive": 10,
+      "Light-Field/Novel Sensors": 7,
+      "Tomography/3D Imaging": 56,
+      "Virtual Staining/Pathology": 27,
+      "Reconstruction/Inverse Problems": 38,
+      "Deep Learning Methods": 215
     }
   },
-  "daily_thesis": "오늘은 추적 5개 카테고리 모두 arXiv /new listing이 이틀도 10/28에 멈춰 있어(2일 연속) 당일 신규 arXiv 논문이 없었고, 저널(Crossref/OpenAlex) 421편만으로 하루를 구성한 journal-only daily입니다. 이미지 복원 역문제에 데이터 기반 딥러닝 대신 통계적·변분적 보장을 다시 세우려는 이론 논문 3편이 SIAM Journal on Imaging Sciences를 중심으로 동시에 나왔고, 라이트필드가 공간-각도 해상도 trade-off를 획득측 알고리즘과 디스플레이 하드웨어 양쪽에서 동시에 공략하는 두 편이 설득력 있는 수치로 나타났으며, 메타광학은 시간·기계적 위상배열·데이터 기반 역설계라는 서로 다른 새 설계 변수를 동시에 확장하는 모습을 보였습니다."
+  "daily_thesis": "오늘은 10/28 이후 이틀간 멈췄던 arXiv가 재개되면서 저널만으로 꾸리던 이틀과는 분량과 결이 확 달라진 날입니다. 가장 뚜렷한 신호는 feed-forward 3D Gaussian Splatting이 '빠른 렌더링 기법'에서 '적은 입력·적은 투영으로도 버티는 복원기'로 과제 자체를 바꾸는 흐름(Tomography/3D Imaging 버킷에서 6편 이상)이고, 그 옆에서는 diffusion·masked modeling 같은 생성·자기지도 prior가 CT/PET/MRI 재구성과 라벨 부족 문제에 본격적으로 들어오기 시작했습니다. 계산광학 코어에서는 Fourier ptychography에 diffusion posterior sampling을 결합해 측정 중복도를 줄이는 논문이 눈에 띄었고, 라이트필드와 메타광학 쪽은 저널에서 이어진 흐름(해상도 trade-off 공략, 설계 변수 확장)이 계속됐습니다."
 }

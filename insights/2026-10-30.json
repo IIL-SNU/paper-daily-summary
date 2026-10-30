@@ -1,49 +1,122 @@
 {
   "date": "2026-10-30",
-  "source_mode": "journal-only",
+  "source_mode": "new",
   "clusters": [
     {
-      "cluster": "이미지 복원 역문제에 통계적·변분적 보장을 다시 요구하는 흐름",
+      "cluster": "Feed-forward 3D Gaussian Splatting가 '빠른 렌더링'에서 '제한된 입력에서도 버티는 복원기'로 과제를 바꾸는 중",
+      "papers": [
+        {
+          "title": "GOFish: Full Field-of-View Gaussian Splatting and Mesh Extraction",
+          "arxiv_id": "https://arxiv.org/abs/2610.37818",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "BudSplat: Feed-forward 3D Gaussian Splatting under a Rendering Budget",
+          "arxiv_id": "https://arxiv.org/abs/2610.38278",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "GradSplat: Gradients Inside the Forward Pass for Feed-Forward 3D Gaussian Splatting",
+          "arxiv_id": "https://arxiv.org/abs/2610.38951",
+          "importance_tags": ["[방법전환]", "[해부분석]"]
+        },
+        {
+          "title": "SparseTokenGS: Gaussian-based Sparse-View CBCT Reconstruction via Reusable Token Pool",
+          "arxiv_id": "https://arxiv.org/abs/2610.38360",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "Extremely Sparse-View Computed Tomography from 2D Projections via Pose-Aware Diffusion Priors",
+          "arxiv_id": "https://arxiv.org/abs/2610.38319",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "EUReCA: End-to-End Unified CBCT Reconstruction Across Clinical Acquisitions",
+          "arxiv_id": "https://arxiv.org/abs/2610.37740",
+          "importance_tags": ["[인프라]", "[실사용전환]"]
+        },
+        {
+          "title": "EPC-RawDC: Equivariant Physics Constrained 3D Diffusion with Raw Data Consistency for CBCT to CT Image Synthesis",
+          "arxiv_id": "https://arxiv.org/abs/2610.40046",
+          "importance_tags": ["[방법전환]", "[평가축]"]
+        }
+      ],
+      "why": "3D Gaussian Splatting(3DGS)은 몇 장의 이미지로부터 장면을 수많은 작은 타원체로 표현해 실시간 렌더링을 가능하게 한 기법인데, 지금까지는 주로 \"얼마나 빨리, 얼마나 예쁘게 렌더링하는가\"가 경쟁 축이었습니다. 오늘 여섯 편은 질문을 바꿔서, \"입력이 왜곡되거나(어안렌즈), 적거나(CBCT 투영 10장 미만), 예산이 제한되거나, 장면별 직접 최적화 없이 한 번에 예측해야 하는\" 상황에서도 3DGS가 버틸 수 있는지를 묻습니다. GOFish는 180도까지만 되던 어안렌즈 렌더링을 200도 이상으로 넓히면서 충돌 메시까지 같이 뽑아내고, BudSplat과 GradSplat은 feed-forward 예측이 장면별 직접 최적화보다 품질이 떨어지는 격차를 각각 예산 제약과 forward pass 내 그래디언트로 줄입니다. SparseTokenGS·EUReCA·EPC-RawDC는 CBCT(콘빔 CT) 투영 수를 8~100장까지 줄여도 재구성이 되게 하고, Extremely Sparse-View CT는 아예 사전 재구성 볼륨 없이 2D 투영만으로 학습합니다. 여섯 편을 묶으면, 3DGS 연구의 다음 단계가 \"더 빠르게\"가 아니라 \"측정이 부족해도 안정적으로\"라는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "6개 이상 서로 다른 팀이 어안렌즈·예산 제약·그래디언트 전달·CBCT 투영 수·사전 볼륨 부재라는 다른 제약 조건에서 같은 방향(제한된 입력에서의 feed-forward 3DGS 강건성)으로 수렴, cs.CV와 eess.IV에 걸쳐 나타남",
+      "lab_action": "EUReCA의 geometry-aware feed-forward 구조(가변 투영 수를 단일 가중치로 처리)를 랩 보유 sparse-view CT/CBCT 데이터에 적용해, 8/20/50장 투영 조건별로 기존 FDK 반복 재구성 대비 PSNR과 재구성 시간을 1주일 내로 비교한다"
+    },
+    {
+      "cluster": "생성·자기지도 prior가 PET/CT/MRI 재구성 파이프라인에 들어와 측정·라벨 부족을 메우기 시작함",
+      "papers": [
+        {
+          "title": "D-MOD: Diffusion mode estimation for accelerated MRI",
+          "arxiv_id": "https://arxiv.org/abs/2610.40110",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "FFAI: Flow Matching with Feedback Training and Adaptive Initialization for CT Reconstruction",
+          "arxiv_id": "https://arxiv.org/abs/2610.39517",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "LoRe-MIM: Lost-or-Replaced Masked Image Modeling for Self-Supervised Representation Learning in Whole-Body PET/CT",
+          "arxiv_id": "https://arxiv.org/abs/2610.40284",
+          "importance_tags": ["[데이터전환]", "[인프라]"]
+        },
+        {
+          "title": "Accurate MRI-free PET Quantification and Reliability Assessment via CT-to-MRI Synthesis and Conformal Prediction",
+          "arxiv_id": "https://arxiv.org/abs/2610.40478",
+          "importance_tags": ["[실사용전환]", "[평가축]"]
+        }
+      ],
+      "why": "가속 MRI나 CT 재구성에 diffusion 같은 생성 모델을 prior로 쓰는 시도 자체는 이전부터 있었지만, 오늘 네 편은 그 적용 방식이 더 실용적인 방향으로 구체화됐다는 공통점이 있습니다. D-MOD는 diffusion posterior sampler가 안정적인 결과를 얻으려면 여러 샘플을 뽑아 평균을 내야 해서 계산 비용이 크다는 문제를, 한 번의 추론으로 posterior의 가장 그럴듯한 값(mode)을 바로 찾는 방식으로 줄입니다. FFAI는 저선량·희소뷰·제한각 CT처럼 서로 다른 촬영 조건을 각각 다른 모델로 풀지 않고 하나의 flow matching 프레임워크로 통합합니다. LoRe-MIM은 PET/CT 영상에 전문의 라벨을 다는 비용이 크다는 문제를, 이미지 조각을 지우거나 바꿔치기한 뒤 맞히게 하는 마스킹 기반 자기지도 학습으로 우회하고, MRI-free PET Quantification은 비싼 전용 MRI 촬영 없이 CT에서 합성한 MRI로 PET 정량값을 내면서 그 값을 얼마나 믿을 수 있는지도 함께 추정합니다. 네 편 모두 \"생성 모델이 있으면 더 좋다\"가 아니라 \"생성 모델로 실제 촬영 비용·라벨 비용·전용 장비 요구를 줄인다\"는 실용적 방향으로 수렴합니다.",
+      "confidence": "Medium",
+      "confidence_note": "4개 팀이 MRI·CT·PET/CT라는 다른 모달리티에서 diffusion/flow matching/masked modeling이라는 다른 생성 기법을 쓰지만 같은 방향(측정·라벨 비용 절감)으로 수렴, 다만 모두 cs.LG/cs.CV 소스라 임상 검증 확산은 추가 확인 필요",
+      "lab_action": "D-MOD의 posterior mode 추정 방식을 랩 가속 MRI 복원 파이프라인에 적용해, 기존 다중 샘플 평균 방식 대비 동일 품질에서 추론 시간이 얼마나 줄어드는지 1주일 내로 측정한다"
+    },
+    {
+      "cluster": "이미지 복원 역문제가 데이터 기반 학습 대신 수렴성·사후오차 같은 수학적 보장을 다시 요구함",
       "papers": [
         {
           "title": "Stochastic Orthogonal Regularization for Deep Projective Priors",
           "arxiv_id": "https://doi.org/10.1137/25m1824835",
-          "journal_or_source": "SIAM Journal on Imaging Sciences (JNL)"
+          "importance_tags": ["[방법전환]", "[평가축]"]
         },
         {
           "title": "Image Restoration with Multiplicative Noise: A Hybrid Geometric Model and Its Alternating Minimization Algorithm",
           "arxiv_id": "https://doi.org/10.1137/25m1825154",
-          "journal_or_source": "SIAM Journal on Imaging Sciences (JNL)"
+          "importance_tags": ["[방법전환]"]
         },
         {
           "title": "A Posteriori Analysis of Inverse Problems for Elliptic Differential Equations",
           "arxiv_id": "https://doi.org/10.1515/cmam-2026-0152",
-          "journal_or_source": "Computational Methods in Applied Mathematics (JNL)"
+          "importance_tags": ["[평가축]"]
         }
       ],
-      "why": "세 편 모두 '신경망을 학습시키면 알아서 잘 복원한다'는 최근 경험적 접근에서 한 발 물러나, 복원 결과가 실제로 얼마나 믿을 만한지를 수학적으로 보장하려는 시도입니다. Deep Projective Priors 논문은 학습된 신경망을 투영 연산자로 쓰는 generalized projected gradient descent(GPGD)가 선형 수렴하려면 그 신경망이 직교 투영에 충분히 가까워야 한다는 점을 보이고, 이를 훈련 손실에 직접 강제하는 확률적 직교 정규화를 제안해 실험적으로 수렴 속도와 안정성을 높였습니다. Multiplicative Noise 논문은 흐림과 곱셈 잡음을 동시에 제거할 때 기하학적 사전(prior) 하나만 쓰면 생기는 특유의 아티팩트를, 평균곡률과 표면적이라는 서로 다른 미분 차수의 두 사전을 결합해 줄이고, 전역 수렴이 보장되는 교대최소화 알고리즘으로 풉니다. Elliptic PDE 논문은 역문제가 본질적으로 Hadamard 의미에서 '풀기 어려운(ill-posed)' 문제라는 점을 인정한 채로, 계산된 근사해가 실제 해와 얼마나 떨어져 있는지를 사후(a posteriori)에 정량적으로 추정하는 방법을 세웁니다. 세 편을 합치면, 복원 품질을 PSNR 숫자 하나로만 보고하던 흐름에서 벗어나 '이 복원이 언제 믿을 만한지'를 수학적으로 답하려는 쪽으로 이미지 복원 역문제 커뮤니티의 관심이 옮겨가고 있다는 뜻입니다.",
+      "why": "세 편 모두 \"신경망을 학습시키면 알아서 잘 복원한다\"는 최근 경험적 접근에서 한 발 물러나, 복원 결과가 실제로 얼마나 믿을 만한지를 수학적으로 보장하려는 시도입니다. Deep Projective Priors 논문은 학습된 신경망을 투영 연산자로 쓰는 복원 알고리즘이 선형 속도로 수렴하려면 그 신경망이 진짜 직교 투영에 충분히 가까워야 한다는 점을 보이고, 이를 훈련 손실에 직접 강제하는 확률적 직교 정규화를 제안합니다. Multiplicative Noise 논문은 흐림과 곱셈 잡음을 동시에 제거할 때 기하학적 사전(prior) 하나만 쓰면 생기는 특유의 아티팩트를, 서로 다른 미분 차수를 가진 두 사전(평균곡률과 표면적)을 결합해 줄이고, 전역 수렴이 보장되는 알고리즘으로 풉니다. Elliptic PDE 논문은 역문제가 본질적으로 풀기 어려운(ill-posed) 문제라는 점을 인정한 채, 계산된 근사해가 실제 해와 얼마나 떨어져 있는지를 사후에 정량적으로 추정하는 방법을 세웁니다. 어제부터 이틀째 이어지는 흐름으로, 복원 품질을 PSNR 숫자 하나로만 보고하던 관행에서 벗어나 \"이 복원을 언제 믿을 수 있는지\"를 수학으로 답하려는 쪽으로 커뮤니티 관심이 옮겨가는 중이라는 뜻입니다.",
       "confidence": "Medium",
-      "confidence_note": "서로 다른 세 저널(그 중 두 편은 같은 호의 SIAM Journal on Imaging Sciences)에서 독립적으로 '경험적 딥러닝 복원 대신 보장·사후추정을 세운다'는 같은 방향이 동시에 나타났지만, 하루치 저널 수집이라 같은 저자군의 후속 교차 인용이나 더 넓은 벤치마크 확산은 아직 확인되지 않음",
-      "lab_action": "Deep Projective Priors의 확률적 직교 정규화를 랩이 쓰는 learned-prior 기반 복원망(오토인코더 또는 디노이징 네트워크)에 적용해, 정규화 유무에 따른 GPGD 수렴 속도와 복원 PSNR을 동일 inverse-problem 설정(예: 랩 보유 compressed sensing 또는 phase retrieval 데이터)에서 1주일 내로 비교한다"
+      "confidence_note": "서로 다른 세 저널(2편은 같은 호의 SIAM J Imaging Sciences)에서 독립적으로 같은 방향이 나타났고 이틀 연속(10/29→10/30) 유사 신호가 반복됐지만, 같은 저자군의 후속 교차 인용이나 더 넓은 벤치마크 확산은 아직 확인 안 됨",
+      "lab_action": "Deep Projective Priors의 확률적 직교 정규화를 랩이 쓰는 learned-prior 기반 복원망(오토인코더 또는 디노이징 네트워크)에 적용해, 정규화 유무에 따른 GPGD 수렴 속도와 복원 PSNR을 동일 inverse-problem 설정(랩 보유 compressed sensing 또는 phase retrieval 데이터)에서 1주일 내로 비교한다"
     },
     {
-      "cluster": "라이트필드가 공간-각도 해상도 trade-off를 획득측과 디스플레이측 양쪽에서 동시에 공략",
+      "cluster": "라이트필드가 공간-각도 해상도 trade-off를 촬영측과 디스플레이측 양쪽에서 동시에 공략",
       "papers": [
         {
           "title": "Computational Reconstruction of Integral Imaging for Accurate Depth Estimation Using Non-Uniform Pitches",
           "arxiv_id": "https://doi.org/10.3390/s26216827",
-          "journal_or_source": "Sensors (JNL)"
+          "importance_tags": ["[방법전환]"]
         },
         {
           "title": "High spatial-angular resolution light-field display enabled by subpixel-demultiplexing viewpoint-interleaving encoding and full-field dual-plane lens optimization",
           "arxiv_id": "https://doi.org/10.1186/s43074-026-00292-w",
-          "journal_or_source": "PhotoniX (JNL)"
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
         }
       ],
-      "why": "라이트필드 영상의 오래된 난제는 '공간 해상도를 올리면 각도(시점) 해상도가 떨어지고, 반대도 마찬가지'라는 공간-대역폭 곱(space-bandwidth product)의 근본적 트레이드오프입니다. 이번에 나온 두 편은 이 문제를 서로 다른 쪽에서 공략합니다. 적분영상(integral imaging) 깊이추정 논문은 촬영 후 계산 복원 단계에서, 여러 목표 깊이평면의 최적 피치를 최소공배수로 통일하고 카메라 배열을 라틴방진 형태로 불균일하게 배치해 픽셀 양자화로 생기던 깊이 오차를 수학적으로 완전히 없앴다고(모든 목표 깊이에서 평균제곱오차 0) 보고합니다. 라이트필드 디스플레이 논문은 반대로 하드웨어·인코딩 단계에서, 서브픽셀 단위로 시점을 다중화하는 인코딩과 두 평면 렌즈 최적화를 결합해 4320×3840 서브픽셀 배열과 가로 2.67 lp/mm·세로 2.99 lp/mm 공간 해상도, 1.45 시점/도(VIPD) 각도 해상도를 가진 5.5인치 시제품으로 두 해상도를 동시에 끌어올렸습니다. 두 편을 합치면, 라이트필드 연구가 '해상도 트레이드오프를 어떻게 완화할까'라는 같은 질문에 계산 알고리즘과 광학 하드웨어 양쪽에서 답하기 시작했다는 뜻입니다.",
+      "why": "라이트필드 영상의 오래된 난제는 \"공간 해상도를 올리면 각도(시점) 해상도가 떨어지고, 반대도 마찬가지\"라는 근본적 트레이드오프입니다. 적분영상(integral imaging) 깊이추정 논문은 촬영 후 계산 복원 단계에서, 여러 목표 깊이평면의 최적 피치를 최소공배수로 통일하고 카메라 배열을 불균일하게 배치해 픽셀 양자화로 생기던 깊이 오차를 수학적으로 완전히 없앴다고 보고합니다. 라이트필드 디스플레이 논문은 반대로 하드웨어·인코딩 단계에서, 서브픽셀 단위 시점 다중화 인코딩과 두 평면 렌즈 최적화를 결합해 4320×3840 서브픽셀 배열에서 공간·각도 해상도를 동시에 끌어올린 5.5인치 시제품을 만들었습니다. 두 편을 합치면, 라이트필드 연구가 같은 질문에 계산 알고리즘과 광학 하드웨어 양쪽에서 답하기 시작했다는 뜻입니다.",
       "confidence": "Medium",
-      "confidence_note": "서로 다른 저널·연구팀 2편이 획득(촬영)과 디스플레이라는 라이트필드 파이프라인의 양 끝에서 같은 공간-각도 해상도 문제를 다루지만, 2편뿐이라 더 넓은 벤치마크 확산이나 제3의 독립 검증은 아직 없음. IEEE TPAMI에 실린 Aperture-aware Dispersion 5-D Light-field Imaging Spectrometer도 오늘 같은 버킷에 배정됐으나 초록이 없어 이 클러스터에는 직접 포함하지 않음(제목 기준 추가 신호로만 참고)",
-      "lab_action": "적분영상 논문의 '최소공배수 기반 통일 피치 + 라틴방진 불균일 카메라 배치' 방법을 랩 보유 라이트필드/적분영상 촬영 리그에 적용해, 기존 균일 피치 방식 대비 여러 목표 깊이평면에서 깊이추정 오차(MSE)가 실제로 줄어드는지 1주일 내로 재현 실험한다"
+      "confidence_note": "획득과 디스플레이라는 파이프라인 양 끝에서 같은 문제를 다루는 2편이 이틀 연속(10/29→10/30) 같은 두 논문으로 반복 확인됐지만, 더 넓은 벤치마크 확산이나 제3의 독립 검증은 아직 없음",
+      "lab_action": "적분영상 논문의 최소공배수 통일 피치 + 불균일 카메라 배치 방법을 랩 보유 라이트필드 촬영 리그에 적용해, 기존 균일 피치 방식 대비 여러 목표 깊이평면에서 깊이추정 오차가 실제로 줄어드는지 1주일 내로 재현한다"
     },
     {
       "cluster": "메타광학이 설계 변수를 시간·기계적 위상배열·데이터 기반 역설계로 동시에 확장",
@@ -51,56 +124,47 @@
         {
           "title": "Spatio-temporal photonic metalattice",
           "arxiv_id": "https://doi.org/10.1038/s41377-026-02452-w",
-          "journal_or_source": "Light: Science & Applications (JNL)"
+          "importance_tags": ["[방법전환]"]
         },
         {
           "title": "Design and Simulation of a Ring-Shaped MEMS Optical Phased Array for 3D Optical Scanning",
           "arxiv_id": "https://doi.org/10.3390/mi17111240",
-          "journal_or_source": "Micromachines (JNL)"
+          "importance_tags": ["[실사용전환]"]
         },
         {
           "title": "Inverse Design of Electromagnetic‐Induced Transparency Metasurface Using Conditional Generative Adversarial Network",
           "arxiv_id": "https://doi.org/10.1002/aisy.70611",
-          "journal_or_source": "Advanced Intelligent Systems (JNL)"
+          "importance_tags": ["[방법전환]", "[데이터전환]"]
         }
       ],
-      "why": "메타광학은 보통 '고정된 나노구조를 한 번 설계하면 그 기능이 고정된다'는 한계를 가지고 있었는데, 오늘 세 편은 각자 다른 새 설계 변수를 더해 이 한계를 깨려 합니다. Spatio-temporal metalattice 논문은 공간적으로 패터닝된 구조에 초고속 펄스 간섭으로 만든 시간적 격자를 더해 '시간'을 설계 변수로 도입합니다 — 빛이 회절체와 상호작용하는 '어디서'가 아니라 '언제'를 묻는 셈이고, 이렇게 만든 전이 격자는 펄스 지연·입사각·파장을 바꿔가며 동적으로 재구성할 수 있었습니다. MEMS 링형 광위상배열(OPA) 논문은 고정 메타표면 대신 전기정전식으로 구동되는 동심원 구조의 MEMS를 써서 3차원 광학 스캐닝을 기계적으로 구현합니다. EIT 메타표면 역설계 논문은 반대로 소프트웨어 쪽에서, 전통적인 수작업 모델링 대신 조건부 생성적 적대 신경망(CGAN)으로 목표 투과 스펙트럼에서 메타표면 구조를 직접 생성해, 평균 스펙트럼 정확도 90% 이상을 더 적은 학습 epoch과 비용으로 달성했다고 보고합니다. 세 편을 합치면, 메타광학 연구가 '어떤 나노구조를 고정해서 새길까'를 넘어 시간, 기계적 구동, 데이터 기반 최적화라는 전혀 다른 축에서 설계 자유도를 넓히는 쪽으로 가고 있다는 뜻입니다.",
+      "why": "메타광학은 보통 \"고정된 나노구조를 한 번 설계하면 그 기능도 고정된다\"는 한계를 가지는데, 오늘 세 편은 각자 다른 새 설계 변수를 더해 이 한계를 깨려 합니다. Metalattice 논문은 공간적으로 패터닝된 구조에 초고속 펄스 간섭으로 만든 시간적 격자를 더해 \"시간\"을 설계 변수로 도입하고, 펄스 지연·입사각·파장을 바꿔가며 동적으로 재구성할 수 있음을 보였습니다. MEMS 링형 광위상배열 논문은 고정 메타표면 대신 전기정전식으로 구동되는 동심원 MEMS 구조로 3차원 광학 스캐닝을 기계적으로 구현합니다. EIT 메타표면 역설계 논문은 소프트웨어 쪽에서, 수작업 모델링 대신 조건부 생성적 적대 신경망(CGAN)으로 목표 투과 스펙트럼에서 메타표면 구조를 직접 생성해 평균 스펙트럼 정확도 90% 이상을 더 적은 학습 비용으로 달성했습니다. 세 편을 합치면 메타광학 연구가 어떤 나노구조를 고정해서 새길지를 넘어 시간, 기계적 구동, 데이터 기반 최적화라는 전혀 다른 축에서 설계 자유도를 넓히는 쪽으로 가고 있다는 뜻입니다.",
       "confidence": "Low",
-      "confidence_note": "세 편이 응용 분야(기초 광학 물리, 라이다형 3D 스캐닝, 전자기 유도투명 통신소자)와 설계 변수(시간, 기계적 위상배열, 데이터 기반 역설계)가 모두 달라 하나의 좁은 공통 문제로 보기는 어렵지만, '고정 나노구조의 한계를 넘는 새 설계 자유도 탐색'이라는 상위 설계 철학은 세 편 모두에서 뚜렷하게 겹침",
-      "lab_action": "EIT 메타표면 역설계 논문의 '픽셀 기반 인코딩 행렬 + Gramian Angle Field로 물리적 상관관계를 반영한 CGAN' 구조를 랩이 설계하는 메타표면(예: 메타렌즈 위상 프로파일)에 적용해, 기존 수치 최적화 기반 역설계 대비 목표 위상/투과 스펙트럼 재현 정확도와 설계 소요 시간을 1주일 내로 비교한다"
+      "confidence_note": "세 편이 응용 분야(기초 광학 물리, 라이다형 3D 스캐닝, 전자기 유도투명 통신소자)와 설계 변수가 모두 달라 좁은 공통 문제로 보기는 어렵지만, 어제부터 이어진 \"고정 나노구조의 한계를 넘는 새 설계 자유도 탐색\"이라는 상위 설계 철학은 뚜렷하게 겹침",
+      "lab_action": "EIT 메타표면 역설계의 픽셀 기반 인코딩 + Gramian Angle Field CGAN 구조를 랩이 설계하는 메타렌즈 위상 프로파일에 적용해, 기존 수치 최적화 대비 목표 스펙트럼 재현 정확도와 설계 소요 시간을 1주일 내로 비교한다"
     }
   ],
   "research_topics": [
     {
-      "title": "A. 확률적 직교 정규화를 랩 learned-prior 복원망에 이식",
+      "title": "A. SparseTokenGS/EUReCA의 feed-forward Gaussian CBCT 재구성을 랩 sparse-view 촬영 파이프라인에 적용",
+      "claim": "재사용 가능한 토큰 풀과 기하 인식 feed-forward 구조가 랩 보유 sparse-view CT/CBCT 데이터에서도 기존 반복 재구성 대비 투영 수를 줄이면서 품질을 유지하는지 검증한다.",
+      "supporting_papers": [
+        {"title": "SparseTokenGS: Gaussian-based Sparse-View CBCT Reconstruction via Reusable Token Pool", "arxiv": "https://arxiv.org/abs/2610.38360"},
+        {"title": "EUReCA: End-to-End Unified CBCT Reconstruction Across Clinical Acquisitions", "arxiv": "https://arxiv.org/abs/2610.37740"}
+      ]
+    },
+    {
+      "title": "B. D-MOD의 posterior mode 추정을 랩 가속 MRI 복원 파이프라인에 이식",
+      "claim": "다중 샘플 평균 대신 minorize-maximize 기반 posterior mode를 한 번에 추정하는 방식이 랩 가속 MRI 데이터에서 재구성 품질을 유지하면서 추론 비용을 실제로 줄이는지 측정한다.",
+      "supporting_papers": [
+        {"title": "D-MOD: Diffusion mode estimation for accelerated MRI", "arxiv": "https://arxiv.org/abs/2610.40110"}
+      ]
+    },
+    {
+      "title": "C. 확률적 직교 정규화를 랩 learned-prior 복원망에 이식",
       "claim": "Deep Projective Priors 훈련에 확률적 직교 정규화를 추가하면 GPGD 복원의 수렴 속도와 강건성이 실제로 개선되는지 랩 inverse-problem 파이프라인으로 검증한다.",
       "supporting_papers": [
-        {
-          "title": "Stochastic Orthogonal Regularization for Deep Projective Priors",
-          "arxiv": "https://doi.org/10.1137/25m1824835"
-        }
-      ]
-    },
-    {
-      "title": "B. 최소공배수 통일 피치 기반 불균일 적분영상 촬영 리그 재현",
-      "claim": "여러 목표 깊이평면에 대해 최소공배수로 통일한 최적 피치와 라틴방진 카메라 배치를 랩 적분영상 리그에 적용해 깊이추정 오차가 실제로 0에 가깝게 줄어드는지 확인한다.",
-      "supporting_papers": [
-        {
-          "title": "Computational Reconstruction of Integral Imaging for Accurate Depth Estimation Using Non-Uniform Pitches",
-          "arxiv": "https://doi.org/10.3390/s26216827"
-        }
-      ]
-    },
-    {
-      "title": "C. CGAN 기반 메타표면 역설계를 랩 메타렌즈 설계에 적용",
-      "claim": "픽셀 기반 인코딩과 Gramian Angle Field를 결합한 CGAN 역설계 구조를 랩 메타렌즈 위상 프로파일 설계에 적용해 기존 수치 최적화 대비 정확도·속도를 비교한다.",
-      "supporting_papers": [
-        {
-          "title": "Inverse Design of Electromagnetic‐Induced Transparency Metasurface Using Conditional Generative Adversarial Network",
-          "arxiv": "https://doi.org/10.1002/aisy.70611"
-        }
+        {"title": "Stochastic Orthogonal Regularization for Deep Projective Priors", "arxiv": "https://doi.org/10.1137/25m1824835"}
       ]
     }
-  ],
-  "phylogeny_tags": []
+  ]
 }
