@@ -1,5 +1,40 @@
 {
   "date": "2026-11-02",
+  "source_listing_date": "2026-11-02",
+  "source_mode": "new",
+  "note": "2026-11-02(월) 14:08 KST 정기 daily 실행. Date Source Contract 확인 결과 추적 5개 카테고리(cs.LG, cs.CV, cs.AI, eess.IV, eess.SP) 모두 /new listing이 'Monday, 2 November 2026'을 가리켜 post_date와 정확히 일치했다(daily mode, backfill 불필요). Calendar Audit 결과 지난주 평일 daily(10/26~10/30)는 모두 존재하고, 오늘 오전 weekly(2026-44) 실행도 이미 완료되어 있었다. 2026-10-29는 여전히 journal-only(source_mode=journal-only)이나 /pastweek에 해당 날짜 섹션이 아직 생기지 않아 이번 실행에서는 업그레이드하지 않았다. arXiv new+cross: cs.LG 198 · cs.CV 102 · cs.AI 186 · eess.IV 20 · eess.SP 24 (총 530건, replacement 제외) + 저널 Crossref 325편(--days 1, 랩 키워드 9종, 25/325편 abstract 보강) + OpenAlex 보충 6편을 합쳐 scripts/classify.py로 774건을 스캔(중복 제거 후), 168건(21.7%)을 9개 ROI 버킷에 배정했다. 지난 금요일(10/30, 1304건 스캔·369건 배정)과 비교하면 arXiv·저널 모두 거의 절반 이하로 줄어든 조용한 월요일이었다. 계산광학 하드웨어 코어(Fourier Ptychography/Lensless/Phase/Meta-Optics/Light-Field) 5개 버킷 합산 배정은 10건이었으나 실질 신호는 3건(Generalized Twin Image, DANO 메타표면 역설계, Learning Clean Generative Processes)뿐이었다 — 지난주 weekly(2026-44)가 예측한 '계산광학 하드웨어 코어가 구조적으로 얇은 패턴을 유지한다'와 부합하는 첫째 날 관측치다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 198,
+      "cs.CV": 102,
+      "cs.AI": 186,
+      "eess.IV": 20,
+      "eess.SP": 24
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 331,
+    "journal_window_days": 1
+  },
+  "totals": {
+    "total_scanned": 774,
+    "selected": 168
+  },
+  "classified": {
+    "total_scanned": 774,
+    "selected": 168,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 4,
+      "Meta-Optics/Diffractive": 3,
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 15,
+      "Virtual Staining/Pathology": 28,
+      "Reconstruction/Inverse Problems": 13,
+      "Deep Learning Methods": 102
+    }
+  },
+  "daily_thesis": "오늘은 arXiv·저널 물량 모두 지난 금요일의 절반 이하로 줄어든 조용한 월요일이지만, 그 안에서 뚜렷한 신호는 컴퓨테이셔널 병리·안저영상 AI 6편이 '더 큰 모델'보다 '그 모델을 다른 병원에서도, 애매한 사례에서도 믿을 수 있는가'를 묻는 쪽(해석가능성·인과적 강건성·기관 간 일반화·실배포·보정·경량화)으로 동시에 움직였다는 점이다. 계산광학 하드웨어 코어 5개 버킷은 오늘도 실질 신호 3편에 그쳐, 지난주 weekly가 예측한 '구조적으로 얇은 기준선' 패턴의 첫 관측일과 부합한다.",
   "weekly_retrospective_context": {
     "iso_week": "2026-44",
     "week_start": "2026-10-26",

@@ -1,0 +1,45 @@
+{
+ "date": "2026-11-02",
+ "results": [
+  {
+   "benchmark": "EyePACS+DDR+APTOS2019 pooled (당뇨망막병증 등급)",
+   "metric": "Quadratic Weighted Kappa (QWK)",
+   "value": 0.863,
+   "value_str": "QWK 0.863, accuracy 0.865 (27.8M params, teacher 대비 52% 경량화)",
+   "paper": "https://arxiv.org/abs/2610.40699",
+   "paper_title": "CalibCause: A Quality-Gated, Interpretable and Calibrated Deep Learning Framework for Diabetic Retinopathy Grading"
+  },
+  {
+   "benchmark": "IDRiD/DeepDRiD leave-one-environment-out (당뇨망막병증 등급)",
+   "metric": "평균 QWK",
+   "value": 0.741,
+   "value_str": "평균 QWK 0.741 (plain ConvNeXt-Tiny 베이스라인 0.743과 동급)",
+   "paper": "https://arxiv.org/abs/2610.40699",
+   "paper_title": "CalibCause: A Quality-Gated, Interpretable and Calibrated Deep Learning Framework for Diabetic Retinopathy Grading"
+  },
+  {
+   "benchmark": "CalibCause 보정 기반 보류 (최저 신뢰도 20% 보류)",
+   "metric": "잔여 샘플 accuracy",
+   "value": 0.923,
+   "value_str": "accuracy 0.865 → 0.923 (최저 신뢰도 20% 보류 시)",
+   "paper": "https://arxiv.org/abs/2610.40699",
+   "paper_title": "CalibCause: A Quality-Gated, Interpretable and Calibrated Deep Learning Framework for Diabetic Retinopathy Grading"
+  },
+  {
+   "benchmark": "TCGA-BRCA → Yale-HER2 외부 검증 (HER2 상태 판정)",
+   "metric": "AUC",
+   "value": 0.812,
+   "value_str": "AUC 0.812, 7개 인코더 중 1위 (40~50배 큰 인코더와 동급)",
+   "paper": "https://arxiv.org/abs/2610.40662",
+   "paper_title": "A small HER2 reader for routine H&E slides: real-world deployment"
+  },
+  {
+   "benchmark": "3개 외부 병원 실배포 (Yale-HER2 / HEROHE / BCNB, HER2 판정)",
+   "metric": "AUC",
+   "value": 0.82,
+   "value_str": "Yale-HER2 0.82 · HEROHE 0.75 · BCNB 0.63 (GPU 없이 슬라이드당 5~6초)",
+   "paper": "https://arxiv.org/abs/2610.40662",
+   "paper_title": "A small HER2 reader for routine H&E slides: real-world deployment"
+  }
+ ]
+}

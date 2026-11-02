@@ -1,0 +1,174 @@
+{
+ "date": "2026-11-02",
+ "source_mode": "new",
+ "clusters": [
+  {
+   "cluster": "컴퓨테이셔널 병리·안저영상 AI가 '성능 숫자'에서 '신뢰·해석·배포 가능성'으로 평가축을 옮김",
+   "papers": [
+    {
+     "title": "Sparse Autoencoders for Expert-Assisted Interpretation of Histopathology Foundation Model Embeddings",
+     "arxiv_id": "https://arxiv.org/abs/2610.40905",
+     "importance_tags": ["[해부분석]"]
+    },
+    {
+     "title": "Measuring What Matters: A Causal Reliance Score for Histopathology Image Segmentation",
+     "arxiv_id": "https://arxiv.org/abs/2610.41763",
+     "importance_tags": ["[평가축]", "[경고신호]"]
+    },
+    {
+     "title": "With foundation-model features, aggregator complexity does not improve cross-hospital discrimination in gastric whole-slide image classification",
+     "arxiv_id": "https://arxiv.org/abs/2610.41328",
+     "importance_tags": ["[경고신호]", "[평가축]"]
+    },
+    {
+     "title": "A small HER2 reader for routine H&E slides: real-world deployment",
+     "arxiv_id": "https://arxiv.org/abs/2610.40662",
+     "importance_tags": ["[실사용전환]", "[표준후보]"]
+    },
+    {
+     "title": "CalibCause: A Quality-Gated, Interpretable and Calibrated Deep Learning Framework for Diabetic Retinopathy Grading",
+     "arxiv_id": "https://arxiv.org/abs/2610.40699",
+     "importance_tags": ["[평가축]", "[실사용전환]"]
+    },
+    {
+     "title": "CAMEL: Cross-Architecture Masked Embedding Learning for Ultra-Lightweight Retinal Foundation Models",
+     "arxiv_id": "https://arxiv.org/abs/2610.40954",
+     "importance_tags": ["[실사용전환]", "[방법전환]"]
+    }
+   ],
+   "why": "여섯 편 모두 '파운데이션 모델을 조직·안저 영상에 얼마나 잘 맞추느냐'가 아니라 '그 모델을 실제로 믿고 병원에 넣을 수 있느냐'를 묻습니다. SAE 논문은 병리 파운데이션 모델의 임베딩을 병리의사가 이해할 수 있는 개념 단위로 쪼개 해부하고, CRS 논문은 모델이 실제로 조직 구조를 보고 판단하는지 배경 잡음에 기대는지를 인과적으로 가려내는 평가지표를 제안합니다. 한국 5개 병원 5,036장 위장 슬라이드 연구는 더 복잡한 집계기(aggregator)를 써도 병원 간 일반화가 좋아지지 않는다는 부정적 결과를 보여주고, HER2 리더는 22M 파라미터짜리 작은 모델도 자기보다 수십 배 큰 인코더와 동급 성능을 내며 실제 3개 병원에 배포까지 마쳤습니다. CalibCause는 당뇨망막병증 등급 판정에서 보정된 신뢰도로 애매한 영상을 사람에게 넘기는 구조를 만들었고, CAMEL은 안저영상 파운데이션 모델을 가벼운 구조로도 재현해 실제 임상 스크리닝에 쓸 수 있게 합니다. 여섯 편을 합치면, 이 분야의 다음 질문은 '더 큰 모델을 어떻게 만들까'가 아니라 '그 모델이 다른 병원에서도, 애매한 사례에서도, 설명을 요구받아도 버티는가'라는 뜻입니다.",
+   "confidence": "High",
+   "confidence_note": "서로 다른 6개 팀이 병리·안저영상이라는 다른 모달리티에서 해석가능성·인과적 강건성·기관 간 일반화·실배포·보정·경량화라는 겹치지 않는 각도로 같은 방향(신뢰성 중심 평가)에 도달",
+   "lab_action": "HER2 리더의 22M 파라미터 ViT-S/16 + JEPA 정제 레시피와 CalibCause의 보정+보류 구조를 랩 보유 조직/안저 영상 분류 파이프라인에 적용해, 기관 간 일반화(leave-one-site-out)와 ECE를 1주일 내로 측정한다"
+  },
+  {
+   "cluster": "Flow matching/diffusion이 복원(reconstruction)의 기본 생성 사전으로 자리잡고, 이제는 초기화·불확실성 같은 세부 설계로 연구가 들어감",
+   "papers": [
+    {
+     "title": "Bayesian PET Reconstruction with Learned Flow Matching Priors via Langevin Sampling",
+     "arxiv_id": "https://arxiv.org/abs/2610.41337",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "Retrieval-Augmented Initialization with Dual-Guided Inversion for Flow-Based Inverse Problem Solvers",
+     "arxiv_id": "https://arxiv.org/abs/2610.41695",
+     "importance_tags": ["[해부분석]", "[방법전환]"]
+    },
+    {
+     "title": "Uncertainty-aware PCE-Diffusion model for flow field reconstruction using sparse sensor data",
+     "arxiv_id": "https://doi.org/10.1016/j.cma.2026.119507",
+     "importance_tags": ["[방법전환]", "[평가축]"]
+    }
+   ],
+   "why": "세 편 모두 flow matching이나 diffusion을 '복원에 쓸 수 있는 생성 사전(prior)'이라는 이미 자리잡은 전제 위에서, 그 적용의 세부 설계를 파고듭니다. PET 재구성 논문은 flow matching으로 학습한 사전을 Bayesian posterior sampling(Langevin 알고리즘)으로 풀어 저선량 PET의 불확실성까지 함께 추정하고, Retrieval-Augmented Initialization 논문은 지금까지 당연하게 무작위 가우시안 잡음에서 출발하던 flow 기반 역문제 solver의 초기화 자체가 결과를 크게 바꾼다는 것을 보여 검색 기반으로 더 나은 출발점을 고릅니다. 유체 흐름장 재구성 논문(공학 저널)은 센서가 몇 개뿐인 상황에서 PCE(다항식 카오스 전개)와 diffusion을 결합해 복원값과 함께 그 값을 얼마나 믿을 수 있는지도 추정합니다. 세 편을 합치면, '복원에 생성 모델을 쓴다'는 단계는 지났고 이제는 '그 생성 모델을 어떻게 초기화하고, 불확실성을 어떻게 같이 내놓을 것인가'라는 다음 단계 질문으로 넘어갔다는 뜻입니다.",
+   "confidence": "Medium",
+   "confidence_note": "PET·범용 역문제·유체공학이라는 서로 다른 세 응용에서 같은 방향(flow/diffusion prior의 세부 설계 정교화)이 나타났지만, 의료영상 2편 중 1편은 수치실험 단계이고 세 번째는 이미징이 아닌 유체역학 응용이라 핵심 도메인 수렴으로 보기엔 이름",
+   "lab_action": "Retrieval-Augmented Initialization의 검색 기반 초기화 전략을 랩 보유 flow-based 위상복원 또는 압축센싱 solver에 적용해, 무작위 가우시안 초기화 대비 수렴 속도와 최종 복원 품질을 1주일 내로 비교한다"
+  },
+  {
+   "cluster": "Novel view synthesis가 단일 입력 복원(HDR, 초해상도) 문제를 푸는 보조 도구로 쓰이기 시작",
+   "papers": [
+    {
+     "title": "Prior-Guided Single-Exposure HDR Novel View Synthesis via Base-Gain Representation",
+     "arxiv_id": "https://arxiv.org/abs/2610.41011",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "PBSR: Pseudo-Burst Super-Resolution via Zero-Shot Novel View Synthesis",
+     "arxiv_id": "https://arxiv.org/abs/2610.41258",
+     "importance_tags": ["[방법전환]"]
+    }
+   ],
+   "why": "HDR(High Dynamic Range) 복원과 초해상도(super-resolution)는 둘 다 전통적으로 '여러 장을 더 찍어서' 부족한 정보를 메우는 문제였는데, 두 편 모두 그 여러 장을 실제로 찍는 대신 novel view synthesis(NVS, 새로운 시점의 영상을 합성하는 기술)로 가짜 다중 프레임을 만들어내는 쪽으로 접근합니다. PriorGS는 한 번의 노출로 찍은 LDR(저동적범위) 영상들만으로 3D Gaussian Splatting을 학습시키면서, 2D HDR 복원 기법이 만든 가짜(pseudo) HDR 타깃으로 보강하고 노출 곡선 자체도 학습 가능한 사전으로 정규화합니다. PBSR은 한 장의 사진만 있을 때, 실제 연사(burst) 데이터셋의 픽셀 이동 분포에 맞춰 보정된 시점에서 NVS로 가짜 연사 프레임을 합성한 뒤, 이를 기존 burst super-resolution 백본에 넣어 단일 사진의 해상도를 끌어올립니다. 두 편을 합치면, NVS가 이제 '새 시점을 보여주는 것' 자체를 넘어 '한 장으로는 풀 수 없던 고전적인 복원 문제를 풀기 위한 합성 데이터 발생기'로 쓰이기 시작했다는 뜻입니다.",
+   "confidence": "Medium",
+   "confidence_note": "HDR 복원과 초해상도라는 서로 다른 고전 문제에서 'NVS로 가짜 다중뷰를 만들어 단일 입력 복원을 보강한다'는 같은 설계 패턴이 독립적으로 나타났지만 2편뿐이라 세 번째 응용으로의 확산은 아직 확인 안 됨",
+   "lab_action": "PBSR의 연사 픽셀-이동 분포 보정 시점 샘플링을 랩 보유 단일 영상 초해상도 파이프라인에 적용해, 기존 단일 프레임 베이스라인 대비 PSNR/SSIM/LPIPS 개선폭을 1주일 내로 측정한다"
+  },
+  {
+   "cluster": "3D 표현 학습·SLAM·카메라 위치추정이 구조적 prior를 입력 단이 아니라 표현·설계 단에 직접 반영",
+   "papers": [
+    {
+     "title": "DrawSplat: Atlanta World-Guided Implicit Gaussian SLAM for Indoor Reconstruction",
+     "arxiv_id": "https://arxiv.org/abs/2610.41602",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "Rethinking Asymmetry in Self-Supervised 3D Geometry Learning",
+     "arxiv_id": "https://arxiv.org/abs/2610.42092",
+     "importance_tags": ["[해부분석]", "[방법전환]"]
+    },
+    {
+     "title": "VoxLution: Evolving Voxels for High-Fidelity 3D Scene Generation",
+     "arxiv_id": "https://arxiv.org/abs/2610.41501",
+     "importance_tags": ["[방법전환]"]
+    },
+    {
+     "title": "PGGT-Loc: Primitive-Grounded Geometry Transformer for Feed-Forward Camera Localization",
+     "arxiv_id": "https://arxiv.org/abs/2610.41833",
+     "importance_tags": ["[방법전환]", "[표준후보]"]
+    }
+   ],
+   "why": "네 편 모두 '더 많은 데이터로 학습'이 아니라 '씬(scene)이 실내 건물이라면, 혹은 지도가 이미 있다면 당연히 성립하는 구조적 가정을 모델 설계에 명시적으로 박아 넣는다'는 공통 전략을 씁니다. DrawSplat은 실내 공간이 대체로 직각으로 이루어진다는 Atlanta World 가정을 이용해 점-선 기하로 먼저 구조를 스케치한 뒤 Gaussian으로 디테일을 채워 SLAM의 표면 두께 왜곡과 포즈 drift를 줄입니다. Rethinking Asymmetry 논문은 자기지도 3D 기하 학습에서 '보여줄 뷰와 가려서 맞혀야 할 뷰를 입력 단에서 나누던' 기존 설계 대신, 3D 표현 공간에서만 비대칭을 주고 모든 뷰의 정보를 백본에는 그대로 흘려보내는 쪽이 기하 정확도에 더 유리하다는 것을 보입니다. VoxLution은 거친 해상도에서 공간 레이아웃을 먼저 만들고 지역별로 점진적으로 디테일을 채워 넣는 coarse-to-fine 설계로 기존 생성 모델의 과도하게 매끈한 지오메트리를 개선하고, PGGT-Loc은 복잡한 전용 지도 대신 이미 있는 평면 primitive 지도에 쿼리 영상을 바로 대응시켜 카메라 위치를 한 번에(feed-forward) 추정합니다. 네 편을 합치면, 3D 복원·위치추정 연구가 '모델을 더 키우기'보다 '씬이나 지도에 대해 이미 아는 구조적 사실을 어디에 박아 넣을지'를 다시 설계하는 단계로 들어갔다는 뜻입니다.",
+   "confidence": "Medium",
+   "confidence_note": "SLAM·자기지도 기하학습·장면생성·카메라 위치추정이라는 다른 하위 문제 4편이 '구조적 prior를 표현/설계 단에 반영'이라는 같은 전략으로 수렴했지만, 서로 직접 비교되는 공통 벤치마크는 아직 없음",
+   "lab_action": "Rethinking Asymmetry의 '3D 표현 공간에서만 비대칭을 부여' 설계를 랩 보유 멀티뷰 깊이추정/자기지도 기하학습 파이프라인에 적용해, 기존 입력-공간 비대칭(분리 branch/masked attention) 베이스라인 대비 깊이·포즈 정확도를 1주일 내로 비교한다"
+  },
+  {
+   "cluster": "학습된 이미지 사전(prior)이 복원에 언제·왜 도움이 되는지 이론적으로 따지는 논문 등장",
+   "papers": [
+    {
+     "title": "The Generalized Twin Image: Understanding Regularized Phase Retrieval",
+     "arxiv_id": "https://arxiv.org/abs/2610.41531",
+     "importance_tags": ["[해부분석]", "[평가축]"]
+    },
+    {
+     "title": "Learning Clean Generative Processes from Noisy Measurements",
+     "arxiv_id": "https://arxiv.org/abs/2610.42036",
+     "importance_tags": ["[해부분석]", "[방법전환]"]
+    }
+   ],
+   "why": "두 편 모두 '이미지 사전을 쓰면 복원이 더 잘 된다'는 경험적 관찰에서 한 발 더 들어가, 그게 '언제, 왜' 성립하는지를 이론으로 설명하려 합니다. Generalized Twin Image 논문은 Fourier 위상복원에서만 알려져 있던 twin-image(원본과 구별하기 어려운 가짜 해) 모호성을 임의의 가역 센싱 연산자로 일반화하고, 이미지 사전이 효과가 있으려면 그 사전이 진짜 정답을 가짜 twin image보다 선호해야 한다는 간단한 판별 기준(total-variation ratio)을 제안합니다. Learning Clean Generative Processes 논문은 잡음 섞인 관측만으로 깨끗한 이미지의 생성 모델을 배우는 문제를, Noise2Noise 방식으로는 학습 데이터의 잡음 수준 이상에서만 풀 수 있다는 한계를 밝히고, '예측이 이어지는 샘플링 과정 이후의 기댓값과 일치해야 한다'는 일관성 조건을 추가해 그 한계를 넘는 조건을 포아송·이항·감마·음이항 잡음 각각에 대해 도출하고 광자계수 현미경(photon-counting microscopy) 데이터로 검증합니다. 두 편을 합치면, 계산광학 커뮤니티가 '사전을 쓰면 좋다더라'는 경험칙에서 벗어나 '어떤 조건에서 왜 좋은지'를 수식으로 보장하려는 쪽으로 다시 움직이고 있다는 뜻입니다.",
+   "confidence": "Low",
+   "confidence_note": "두 편이 각각 위상복원과 잡음 측정 기반 생성학습이라는 다른 문제를 다뤄 좁은 공통 주제는 아니지만, '학습된 사전의 효과를 이론적으로 설명한다'는 상위 motivation은 뚜렷하게 겹침",
+   "lab_action": "Generalized Twin Image의 total-variation ratio 판별 기준을 랩 보유 phase retrieval 파이프라인(Fourier ptychography 포함)에 적용해, 현재 쓰는 learned denoiser prior가 ground truth를 generalized twin image보다 실제로 선호하는지 1주일 내로 진단한다"
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "HER2 리더 + CalibCause 레시피를 랩 조직/안저 영상 파이프라인에 이식해 기관 간 일반화·보정 진단",
+   "claim": "22M 파라미터 자기지도 인코더(JEPA 정제) + 보정된 신뢰도 기반 보류 구조를 랩 보유 병리/안저 영상 분류기에 적용하면, 추가 라벨 없이도 기관 간 일반화와 신뢰도 보정을 동시에 얻을 수 있는지 검증합니다.",
+   "supporting_papers": [
+    {"title": "A small HER2 reader for routine H&E slides: real-world deployment", "arxiv": "https://arxiv.org/abs/2610.40662"},
+    {"title": "CalibCause: A Quality-Gated, Interpretable and Calibrated Deep Learning Framework for Diabetic Retinopathy Grading", "arxiv": "https://arxiv.org/abs/2610.40699"}
+   ]
+  },
+  {
+   "title": "Retrieval-Augmented Initialization을 랩 flow-based 역문제 solver에 이식",
+   "claim": "무작위 가우시안 노이즈 대신 검색 기반 초기화를 쓰면 랩 보유 flow matching 기반 위상복원/압축센싱 solver의 수렴 속도와 최종 품질이 실제로 개선되는지 측정합니다.",
+   "supporting_papers": [
+    {"title": "Retrieval-Augmented Initialization with Dual-Guided Inversion for Flow-Based Inverse Problem Solvers", "arxiv": "https://arxiv.org/abs/2610.41695"}
+   ]
+  },
+  {
+   "title": "PBSR의 NVS 기반 가짜 연사 생성을 랩 단일 영상 초해상도에 적용",
+   "claim": "실제 burst 데이터셋 없이도 zero-shot NVS로 합성한 가짜 연사 프레임이 랩 보유 단일 이미지 초해상도 파이프라인의 품질을 실제로 끌어올리는지 검증합니다.",
+   "supporting_papers": [
+    {"title": "PBSR: Pseudo-Burst Super-Resolution via Zero-Shot Novel View Synthesis", "arxiv": "https://arxiv.org/abs/2610.41258"}
+   ]
+  },
+  {
+   "title": "Rethinking Asymmetry의 표현-공간 비대칭 설계를 랩 자기지도 기하학습에 적용",
+   "claim": "입력 단에서 뷰를 분리하는 대신 3D 표현 공간에서만 비대칭을 부여하는 설계가 랩 보유 멀티뷰 깊이추정 파이프라인의 기하 정확도를 개선하는지 ablation으로 확인합니다.",
+   "supporting_papers": [
+    {"title": "Rethinking Asymmetry in Self-Supervised 3D Geometry Learning", "arxiv": "https://arxiv.org/abs/2610.42092"}
+   ]
+  },
+  {
+   "title": "Generalized Twin Image 판별 기준으로 랩 phase retrieval prior 진단",
+   "claim": "현재 랩이 쓰는 learned denoiser 기반 위상복원 사전이 total-variation ratio 기준에서 ground truth를 generalized twin image보다 실제로 선호하는지 진단해, 사전 교체가 필요한 센싱 조건을 식별합니다.",
+   "supporting_papers": [
+    {"title": "The Generalized Twin Image: Understanding Regularized Phase Retrieval", "arxiv": "https://arxiv.org/abs/2610.41531"}
+   ]
+  }
+ ]
+}

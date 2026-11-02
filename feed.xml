@@ -6,7 +6,7 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 02 Nov 2026 10:14:07 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 14:24:20 +0900</lastBuildDate>
     <ttl>720</ttl>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-11-02 (Week 44)</title>
@@ -14,6 +14,13 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-11-02-weekly.html</guid>
       <pubDate>Mon, 02 Nov 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[지난주 가장 꾸준히 쌓인 흐름은 feed-forward 3D 재구성과 3D Gaussian Splatting(3DGS, 점 대신 작은 타원체로 장면을 표현해 실시간 렌더링을 가능하게 한 기법)이 "불완전한 입력에서도 버티는가"를 매일 다른 각도에서 되묻는 모습이었습니다. 월요일(10/26)에는 PixGR와 CompMVR이 몇 장 안 되는 영상으로 3D Gaussian을 복원할 때 생기는 불확실성과, 다중 시점 영상이 압축으로 열화된 상태로 들어오는 현실적인 잡음을 각각 생성 모델로 다뤘습니다. 화요일(10/27)에는 Does VGGT Know What It Does Not Know?가 한발 더 나아가, feed-forward 3D 모델이 틀린 카메라 자세를 내놓아도 겉보…]]></description>
+    </item>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-11-02 (월요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-11-02.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-11-02.html</guid>
+      <pubDate>Mon, 02 Nov 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 arXiv 5개 카테고리는 모두 "Monday, 2 November 2026" listing으로 post_date와 정확히 일치했습니다(post_date==listing_date). new+cross 530건(cs.LG 198·cs.CV 102·cs.AI 186·eess.IV 20·eess.SP 24)과 저널 331편(Crossref 325 + OpenAlex 보충 6, --days 1)을 합쳐 774건을 스캔했고, classify.py가 168건(21.7%)을 9개 ROI 버킷에 배정했습니다. 10/30(1304건·369건)과 비교하면 arXiv는 약 50%, 저널은 약 22% 줄어 전체적으로 가장 조용한 물량의 하루였습니다.]]></description>
     </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-10-30 (금요일)</title>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-31.html</guid>
       <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[오늘(7/31, 금)은 arXiv /new에 cs.LG 196편, cs.CV 131편, cs.AI 245편, eess.IV 7편, eess.SP 16편으로 총 595편이 잡혔습니다. 어제(439편)보다 크게 늘었지만 다섯 카테고리 모두 고르게 늘어난 형태라 parser 문제로 보이지 않습니다. 저널 436건(Crossref 434 + OpenAlex 2)을 더한 원천 스캔 1031건이 dedup을 거쳐 924건으로 병합됐고, 이 중 265건(28.7%)이 ROI로 선정됐습니다 — 최근 밴드(25~32%) 안이라 정상 범위입니다. 오늘 가장 눈에 띄는 특징은 계산광학 코어 4개 버킷(Fourier Ptychography·Lensless·Phase Imaging·Meta-O…]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Daily Briefing — 2026-07-30 (목요일)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-07-30.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-07-30.html</guid>
-      <pubDate>Thu, 30 Jul 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘(7/30, 목)은 arXiv /new에 cs.LG 153편, cs.CV 96편, cs.AI 157편, eess.IV 9편, eess.SP 24편으로 총 439편이 잡혔습니다. 어제(547편)보다 줄었지만 특정 카테고리 하나가 아니라 대체로 고르게 줄어든 형태라 parser 문제로 보이지 않습니다. 저널 411건(Crossref 410 + OpenAlex 1)을 더한 원천 스캔 850건이 dedup을 거쳐 765건으로 병합됐고, 이 중 223건(29.2%)이 ROI로 선정됐습니다 — 최근 밴드(25~32%) 안이라 정상 범위입니다. 오늘 가장 눈에 띄는 변화는 어제 5편까지 올라왔던 Lensless/Coded Imaging이 다시 0편으로 돌아갔다는 점입니다 — 계산…]]></description>
     </item>
   </channel>
 </rss>
