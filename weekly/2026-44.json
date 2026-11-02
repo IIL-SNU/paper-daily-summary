@@ -1,0 +1,295 @@
+{
+  "date": "2026-11-02",
+  "iso_week": "2026-44",
+  "week_start": "2026-10-26",
+  "week_end": "2026-10-30",
+  "weekly_thesis": "지난주 초반(월~화)은 로봇·생성모델 영역에서 '사람이 손으로 준비하던 것을 에이전트가 자동화'하는 흐름과 '불확실하면 모른다고 말할 수 있는가'를 묻는 흐름이 나란히 떠올랐던 구간이었는데, 후반(수~금)에는 그 질문이 3D Gaussian Splatting 한곳으로 모이면서 '복원 품질'이 아니라 '카메라가 왜곡되거나 입력이 모자라도 버티는 범용 표현'인지를 매일 다른 각도에서 재확인하는 한 주로 흘러갔습니다. 목요일은 arXiv가 쉬고 저널만 들어온 날이라 이 흐름이 잠깐 끊겼지만, 금요일 바로 같은 자리(3DGS, 의료 영상 생성 prior)에서 이어졌습니다.",
+  "hot_vs_cold": {
+    "hot": [
+      {
+        "cluster": "Feed-forward 3D/3DGS가 '빠르게 잘 만들기'에서 '입력이 불완전해도 믿을 만한가'로 평가축을 옮김",
+        "why": "월요일 PixGR·CompMVR이 재구성 불확실성과 압축 열화를 다뤘고, 화요일 Does VGGT Know What It Does Not Know?가 모델이 자기 오류를 아는지를 직접 검증하는 벤치마크를 만들었습니다. 수요일에는 7편이 3DGS를 카메라 종류·프라이버시·의료 볼륨까지 아우르는 범용 표현으로 확장했고, 금요일에는 어안렌즈·CBCT 희소 투영·렌더링 예산 제약 같은 '입력이 모자란' 조건에서도 3DGS가 버티는지를 검증하는 6편이 나왔습니다.",
+        "papers": [
+          "https://arxiv.org/abs/2610.31908",
+          "https://arxiv.org/abs/2610.35806",
+          "https://arxiv.org/abs/2610.36150",
+          "https://arxiv.org/abs/2610.37818"
+        ]
+      },
+      {
+        "cluster": "의료·현미경 영상 분류가 정확도보다 '근거와 불확실성'을 핵심 기여로 내세움",
+        "why": "화요일 SAP-ViT·유방 생검 XAI 2편이 ViT 판단 근거를 패치 단위로 분해했고, 수요일에는 5편이 유방암·피부암·치매·적혈구·병리 파운데이션 모델이라는 다른 질환에서 같은 방향(정확도 숫자보다 설명 가능성·보정·불확실성)으로 동시에 수렴했습니다.",
+        "papers": [
+          "https://arxiv.org/abs/2610.35593",
+          "https://arxiv.org/abs/2610.37026",
+          "https://arxiv.org/abs/2610.37314",
+          "https://arxiv.org/abs/2610.36517"
+        ]
+      }
+    ],
+    "cold": [
+      {
+        "cluster": "계산광학 하드웨어 코어(Fourier Ptychography·Lensless·Phase/Holography)",
+        "why": "월요일은 Fourier Ptychography·Lensless 둘 다 0편으로 시작했고, 닷새 내내 두 버킷을 합쳐도 실질 신호가 하루 1~2편을 넘긴 날이 거의 없었습니다. 목요일 저널 전용 수집에서 홀로그래피·렌즈리스 묶음이 잠깐 늘었지만 arXiv가 없던 날의 보정 효과였고, 금요일에는 다시 1편 수준으로 줄었습니다.",
+        "papers": []
+      },
+      {
+        "cluster": "Diffusion 생성모델의 세밀 편집 통제(개념 삭제·영역 보존·속성 정렬)",
+        "why": "월요일 5편(Concept Acupuncturist, PASTA, TIE, AlphaAnything, DELA)이 뚜렷한 클러스터를 만들었지만, 화~금 나흘 동안 같은 방향의 후속 논문이 전혀 확인되지 않아 하루짜리 신호에 머물렀습니다."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "cluster": "Feed-forward 3D/3DGS가 '빠르게 잘 만들기'를 넘어 '입력이 모자라거나 뒤틀려도 믿을 만한가'를 검증",
+      "papers": [
+        {
+          "title": "PixGR: Pixel-Space Generative Decoding for Fast Feed-Forward 3D Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2610.31908",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Does VGGT Know What It Does Not Know?",
+          "arxiv": "https://arxiv.org/abs/2610.35806",
+          "importance_tags": ["[평가축]", "[해부분석]"]
+        },
+        {
+          "title": "Any3R: Feedforward 3D Reconstruction from Any Camera Type",
+          "arxiv": "https://arxiv.org/abs/2610.36150",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "GOFish: Full Field-of-View Gaussian Splatting and Mesh Extraction",
+          "arxiv": "https://arxiv.org/abs/2610.37818",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "SparseTokenGS: Gaussian-based Sparse-View CBCT Reconstruction via Reusable Token Pool",
+          "arxiv": "https://arxiv.org/abs/2610.38360",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        }
+      ],
+      "why": "월요일 PixGR는 몇 장 안 되는 영상으로 3D Gaussian을 복원할 때 생기는 불확실성 자체를 생성 모델로 표현했고, 화요일 Does VGGT Know What It Does Not Know?는 한발 더 나아가 '모델이 자기가 틀렸다는 걸 스스로 아는가'를 HardMatch라는 전용 벤치마크로 직접 검증했습니다. 수요일 Any3R은 지금까지 핀홀 카메라만 가정하던 feed-forward 3D 모델을 렌즈 종류에 무관한 표현으로 바꿔 어안렌즈·파노라마까지 다루게 했고, 금요일 GOFish·SparseTokenGS는 각각 200도 이상의 초광각 입력과 CBCT 투영 수를 8~100장까지 줄인 조건에서도 재구성이 버티는지를 검증했습니다. 닷새를 이어보면 feed-forward 3D 재구성/3DGS 연구가 '깨끗한 입력에서 얼마나 빨리 잘 만드는가'라는 질문에서 '카메라가 이상하거나, 장면과 무관한 사진이 섞이거나, 측정이 턱없이 부족한 현실적인 상황에서도 버티고 그 사실을 스스로 아는가'로 평가 기준을 옮기고 있다는 뜻입니다.",
+      "confidence": "High",
+      "lab_action": "Does VGGT Know What It Does Not Know?의 HardMatch 구성 방식(의도적으로 어려운 상대 카메라 자세 쌍)을 랩 보유 VGGT 계열 feed-forward 3D 모델에 적용해 내부 활성화만으로 틀린 포즈를 탐지할 수 있는지 1주 내 probing 실험을 돌리고, SparseTokenGS의 재사용 가능한 token pool 구조를 랩 sparse-view CT/CBCT 데이터에 적용해 투영 수를 8/20/50장으로 줄여가며 PSNR 저하 곡선을 그린다"
+    },
+    {
+      "cluster": "의료·현미경 영상 분류가 '몇 % 맞혔는가'보다 '그 판단을 믿을 근거가 있는가'를 핵심 기여로 세움",
+      "papers": [
+        {
+          "title": "SAP-ViT: A Self-Attributing Patch Vision Transformer for Medical Image Classification",
+          "arxiv": "https://arxiv.org/abs/2610.35593",
+          "importance_tags": ["[방법전환]", "[해부분석]"]
+        },
+        {
+          "title": "Interpretable Deep Learning Models for Breast Cancer Diagnosis Using Medical Imaging",
+          "arxiv": "https://arxiv.org/abs/2610.37026",
+          "importance_tags": ["[평가축]"]
+        },
+        {
+          "title": "A Lightweight Attention-Based CNN with Saliency-Map Interpretability for Skin Cancer Detection",
+          "arxiv": "https://arxiv.org/abs/2610.37314",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "PRISM: Pathology Reliability In Scarce-label Medicine",
+          "arxiv": "https://arxiv.org/abs/2610.36517",
+          "importance_tags": ["[평가축]", "[인프라]"]
+        }
+      ],
+      "why": "화요일 SAP-ViT는 ViT가 보통 CLS 토큰 하나로 최종 판단을 내려 '어디를 보고 그렇게 판단했는지'를 설명하기 어렵다는 점을 지적하고 패치 단위로 근거를 분해했으며, 유방 생검 논문은 Grad-CAM으로 모델이 실제 병변을 보고 판단하는지 시각화했습니다. 수요일에는 유방암·피부암·치매·적혈구·병리 파운데이션 모델이라는 서로 다른 다섯 질환/모달리티에서 똑같이 '정확도 숫자'가 아니라 '설명 근거·보정·불확실성'을 논문의 핵심 기여로 내세우는 논문이 동시에 나왔는데, 그중 PRISM은 병리 파운데이션 모델 8종을 라벨 부족 상황·모델 보정·기관 간 분포 변화라는 네 축으로 묶어 평가하는 벤치마크까지 만들었습니다. 이틀을 합치면, 의료 영상 모델이 '정확도가 높다'는 주장만으로는 더 이상 설득력을 갖기 어렵고, '왜 그렇게 판단했는지'와 '다른 병원 데이터에서도 재현되는지'를 같이 보여줘야 하는 쪽으로 커뮤니티 기준이 옮겨가고 있다는 뜻입니다.",
+      "confidence": "High",
+      "lab_action": "PRISM의 4축 평가 프로토콜(모델 선택·라벨 비율·보정·분포 변화)을 랩이 보유한 병리/현미경 분류 파이프라인에 적용해 라벨 10%·50%·100% 조건에서 calibration error가 어떻게 달라지는지 측정하고, SAP-ViT의 patch-level self-attribution을 같은 파이프라인에 이식해 기존 Grad-CAM 근거 영역과 실제 병변 마스크의 IoU를 비교한다"
+    },
+    {
+      "cluster": "에이전트의 self-improvement가 모델 최적화·과학 발견에서는 통하지만 로봇이 직접 행동을 만드는 VLA에서는 아직 신뢰할 수 없음을 같은 날 함께 드러냄",
+      "papers": [
+        {
+          "title": "RSI-Opt: Recursive Self-Improvement Optimizer Agents For Model Training",
+          "arxiv": "https://arxiv.org/abs/2610.32026",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery? (TTME)",
+          "arxiv": "https://arxiv.org/abs/2610.32046",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "Phronix: The Capability-Centric Learning Paradigm for Agents",
+          "arxiv": "https://arxiv.org/abs/2610.31789",
+          "importance_tags": ["[방법전환]", "[인프라]"]
+        },
+        {
+          "title": "TTT in VLA Models: Exploring Training with Human Demonstrations",
+          "arxiv": "https://arxiv.org/abs/2610.32094",
+          "importance_tags": ["[경고신호]", "[해부분석]"]
+        }
+      ],
+      "why": "월요일 하루에만 나온 클러스터지만, 네 편이 보여준 대비가 뚜렷해 주간 표에 남길 가치가 있습니다. RSI-Opt는 LLM 에이전트가 모델 학습을 모니터링하고 최적화 설정을 바꾸는 경험을 계속 쌓아가게 해 Burgers 방정식 오차를 최대 8.8배 줄였고, TTME는 모델 가중치를 계속 갱신하는 대신 외부 메모리만 갱신하는 더 가벼운 방식으로 과학 발견 과제에서 연산량을 82.8~84.6% 줄이면서도 성능을 높였습니다. Phronix는 에이전트가 작업마다 재사용 가능한 능력을 뽑아 저장해 다음 비슷한 작업의 첫 시도 성공률을 93~95%까지 끌어올렸습니다. 반면 TTT in VLA Models는 로봇이 사람 시연 영상을 참고해 행동을 생성하도록 실행 중 가중치를 빠르게 갱신하는 test-time training을 적용했지만, 실험한 범위에서는 시연을 더 잘 따라가게 만들지 못했고 실제 로봇에서 특정 위치의 컵만 계속 집는 편향이 남았다고 솔직하게 보고했습니다. '실행 중 쌓은 경험으로 스스로를 개선한다'는 같은 설계가 모델 최적화·과학 발견·에이전트 도구 숙련에서는 통하는 신호를 보였지만, 로봇이 실제 행동을 만드는 VLA 쪽에서는 아직 같은 효과를 보여주지 못한다는 경계가 같은 날 함께 드러났다는 점이 중요합니다.",
+      "confidence": "Medium",
+      "lab_action": "TTT in VLA Models이 보고한 '시연 조건부 행동 생성에서 TTT가 통하지 않는' 실패 조건을 랩 보유 VLA 파이프라인에서 먼저 재현해, 같은 실패가 랩 데이터 규모에서도 나타나는지 아니면 데이터가 늘면 해소되는지 1주 내로 확인한다"
+    },
+    {
+      "cluster": "생성·자기지도 prior가 MRI/CT/PET 재구성에서 '있으면 좋다'가 아니라 '촬영·라벨 비용을 실제로 줄인다'는 실용적 증거로 이틀 연속 쌓임",
+      "papers": [
+        {
+          "title": "Cascaded Posterior Sampling With Diffusion Priors for highly Accelerated MRI",
+          "arxiv": "https://arxiv.org/abs/2610.34170",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Scalable Unrolled Chains for MRI Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2610.33695",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "D-MOD: Diffusion mode estimation for accelerated MRI",
+          "arxiv": "https://arxiv.org/abs/2610.40110",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "LoRe-MIM: Lost-or-Replaced Masked Image Modeling for Self-Supervised Representation Learning in Whole-Body PET/CT",
+          "arxiv": "https://arxiv.org/abs/2610.40284",
+          "importance_tags": ["[데이터전환]", "[인프라]"]
+        }
+      ],
+      "why": "화요일 Cascaded Posterior Sampling과 Scalable Unrolled Chains는 가속 MRI 복원에 diffusion prior를 쓰되 거친 영상을 조건으로 디테일만 작은 네트워크로 채우거나 학습 중 일부 층만 무작위로 골라 학습시켜, '크고 비싼 모델 하나'가 아니라 '가볍게 반복 적용 가능한 구조'로 계산 비용을 줄였습니다. 금요일 D-MOD는 diffusion posterior sampler가 안정적인 결과를 얻으려면 여러 샘플을 뽑아 평균 내야 한다는 비용을, 한 번의 추론으로 posterior의 가장 그럴듯한 값을 바로 찾는 방식으로 줄였고, LoRe-MIM은 PET/CT 영상에 전문의 라벨을 다는 비용을, 이미지 조각을 지우거나 바꿔치기한 뒤 맞히게 하는 자기지도 학습으로 우회했습니다. 두 날을 합치면 생성 모델을 재구성에 쓰는 이유가 '화질이 더 좋아서'가 아니라 '실제 촬영 시간·라벨 비용·전용 장비 요구를 구체적으로 줄여서'라는 실용적 근거로 자리 잡고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "lab_action": "D-MOD의 posterior mode 단일 추정 방식을 랩 가속 MRI 복원 파이프라인에 적용해 기존 다중 샘플 평균 방식 대비 동일 품질에서 추론 시간이 얼마나 줄어드는지 측정하고, Scalable Unrolled Chains의 무작위 cascade 샘플링 학습을 랩 unrolled MRI/CT 재구성 네트워크에 적용해 동일 GPU 메모리에서 cascade 단수를 몇 단까지 늘릴 수 있는지 비교한다"
+    },
+    {
+      "cluster": "계산광학 하드웨어 코어, 닷새 내내 독립 클러스터를 못 만들 정도로 계속 얇음 — 다만 완전한 공백은 아니고 금요일 수학적 보장 요구로 변주됨",
+      "papers": [
+        {
+          "title": "Noise-robust phase unwrapping for digital holographic microscopy using a parallel channel-spatial attention U-Net",
+          "arxiv": "https://doi.org/10.1364/ao.614107",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Fast and Low-Noise 3D Meta-Holography Based on Complex-Amplitude Constraint",
+          "arxiv": "https://doi.org/10.1021/acsphotonics.6c01497",
+          "importance_tags": ["[방법전환]", "[평가축]"]
+        },
+        {
+          "title": "Progressive Coupling Method for Diffusion Posterior Sampling in Ptychography",
+          "arxiv": "https://arxiv.org/abs/2610.38207",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Stochastic Orthogonal Regularization for Deep Projective Priors",
+          "arxiv": "https://doi.org/10.1137/25m1824835",
+          "importance_tags": ["[방법전환]", "[평가축]"]
+        }
+      ],
+      "why": "월요일은 Fourier Ptychography·Lensless 둘 다 0편으로 출발했고, 화요일은 Lensless 1편, 수요일은 둘을 합쳐 3편(그마저 디지털 홀로그래픽 현미경 2편이 전부)이었습니다. 목요일은 arXiv가 쉬고 저널만 들어온 날이라 메타홀로그래피·렌즈리스 저널 논문이 일시적으로 늘었지만, 그 다음 날인 금요일에는 ptychography·lensless 각각 1편 수준으로 돌아왔습니다. 다만 완전한 공백은 아닙니다 — 금요일 Stochastic Orthogonal Regularization과 목요일 보고된 elliptic PDE 역문제 논문은 '복원 품질을 PSNR 숫자 하나로만 보고하지 말고 수렴성·사후오차처럼 수학적으로 믿을 수 있는지를 보여야 한다'는 방향으로, 하드웨어 신호가 아니라 이론적 엄밀성 쪽에서 계산 이미징과 맞닿은 흐름이 이틀 연속 나타났습니다. 종합하면 랩 핵심 ROI인 계산광학 하드웨어 코어는 이번 주에도 독립 클러스터를 구성할 만큼 쌓이지 못했고, 대신 그 자리를 수학적 보장을 요구하는 역문제 이론이 부분적으로 메웠습니다.",
+      "confidence": "Low",
+      "lab_action": "W43~W44 2주치 daily trends에서 Fourier Ptychography·Lensless raw count와 실질 신호 편수를 요일별로 재정리해 '불규칙 신호'라는 W43 결론이 2주 연속 유지되는지 확인하고, Stochastic Orthogonal Regularization의 확률적 직교 정규화를 랩 learned-prior 기반 복원망에 적용해 GPGD 수렴 속도와 PSNR을 1주 내로 비교한다"
+    }
+  ],
+  "predictions": [
+    {
+      "title": "feed-forward 3D/3DGS의 '불확실성 인지·입력 결손 내성' 축이 다음 주에도 지속된다",
+      "claim": "지난주 월·화·수·금 나흘에 걸쳐 feed-forward 3D 재구성과 3DGS가 '빠르게 잘 만들기'에서 '불완전한 입력에서도 버티고 스스로 신뢰도를 아는가'로 평가축을 옮겼습니다. 다음 주에도 이 축이 매일 또는 대부분의 날 이어지는지가 일시적 동시 발생이었는지를 가른다고 봅니다.",
+      "rationale": "서로 다른 날짜·연구팀이 불확실성 모델링(PixGR), 자기인지 검증(VGGT), 카메라 일반화(Any3R), 입력 결손 내성(GOFish·SparseTokenGS)이라는 겹치지 않는 각도에서 같은 결론에 도달했다는 건 단순 우연 이상의 구조적 전환일 가능성을 시사합니다.",
+      "hit_condition": "다음 주 5영업일 중 3일 이상에서 feed-forward 3D/3DGS 관련 '불확실성·신뢰도·입력 결손 내성' 클러스터(Confidence High 또는 Medium)가 1개 이상 등장한다",
+      "miss_condition": "다음 주 5일 중 1일 이하에서만 관련 클러스터가 등장하고 나머지 날은 완전히 다른 주제가 3DGS/feed-forward 3D 영역을 주도한다"
+    },
+    {
+      "title": "의료 영상 '설명 근거·불확실성' 중심 평가가 세 번째 질환/모달리티 묶음으로 더 확산된다",
+      "claim": "지난주 화·수 이틀에 걸쳐 유방암·피부암·치매·적혈구·병리 파운데이션 모델까지 다섯 개 서로 다른 질환/모달리티에서 '정확도보다 신뢰성'이라는 같은 방향이 나타났습니다. 다음 주에는 이 방향이 또 다른 질환(예: 폐·간·안과)이나 모달리티(예: 초음파·내시경)로 확산되는지 확인합니다.",
+      "rationale": "PRISM 같은 전용 벤치마크까지 나온 상태라, 다음 단계는 그 벤치마크 프로토콜을 다른 질환에 적용하는 후속 논문일 가능성이 높습니다.",
+      "hit_condition": "다음 주 5일 중 2일 이상에서 의료 영상 '설명가능성/불확실성/보정' 관련 클러스터(2편 이상)가 지난주와 다른 질환 또는 모달리티에서 등장한다",
+      "miss_condition": "다음 주 5일 중 관련 신호가 1일 이하로 등장하거나, 등장하더라도 전부 지난주와 같은 질환(유방암·피부암·치매·병리)에 머문다"
+    },
+    {
+      "title": "계산광학 하드웨어 코어가 2주 연속 '구조적으로 얇음' 패턴을 유지한다",
+      "claim": "W43에 이어 지난주(W44)에도 Fourier Ptychography·Lensless 두 버킷을 합쳐 하루 2편을 넘긴 날이 사실상 없었습니다(월 0, 화 1, 수 3, 금 2). 2주 연속 같은 패턴이면 '불규칙 신호'보다 '구조적으로 얇은 기준선'에 더 가깝다는 쪽으로 판단을 조정해야 합니다.",
+      "rationale": "W43 weekly는 '불규칙하게 돌아오는 신호'라고 결론 냈지만, W44에서는 그 복귀가 거의 확인되지 않아 재평가가 필요한 시점입니다.",
+      "hit_condition": "다음 주 5일 중 4일 이상에서 Fourier Ptychography+Lensless 합산이 2편 이하에 머문다",
+      "miss_condition": "다음 주 5일 중 2일 이상에서 Fourier Ptychography 또는 Lensless 중 하나가 단독으로 3편 이상을 기록해 W43의 '불규칙 복귀' 쪽이 다시 맞는 것으로 드러난다"
+    }
+  ],
+  "prediction_review": [
+    {
+      "title": "[2026-10-26 weekly, W43] 목·금에 터진 VLA·world model·video generation 신뢰성 축이 다음 주에도 지속된다",
+      "label": "◐",
+      "reason": "VLA·world model·video generation이라는 좁은 조합 자체가 매일 반복되지는 않았습니다. 대신 '신뢰성·불확실성 인지'라는 상위 문제의식이 월요일(self-improvement의 VLA 실패 조건), 화요일(feed-forward 3D 불확실성, 의료 영상 해석가능성), 수요일(의료 영상 신뢰성 5편), 금요일(수학적 수렴 보장)까지 거의 매일 다른 영역으로 옮겨가며 이어졌습니다. 적중 조건이 요구한 '같은 세 영역(VLA/world model/video generation)'으로 좁히면 미스에 가깝지만, 신뢰성 축 자체는 분명히 이어졌다는 점에서 부분 적중으로 판단합니다."
+    },
+    {
+      "title": "[2026-10-26 weekly, W43] 3DGS 인프라화와 카메라 geometry foundation model이 하나의 시스템으로 합쳐지는 논문이 나온다",
+      "label": "✅",
+      "reason": "수요일(10/28) 7편짜리 3DGS 클러스터에서 Any3R이 정확히 이 조건을 충족했습니다 — 임의 카메라(어안렌즈·파노라마 포함)에서 작동하는 feed-forward 3D 재구성이면서, 같은 클러스터의 PrinGS(프라이버시)·CTBakeGS(의료 볼륨 변환)·LingGS(SLAM 인프라)와 함께 3DGS가 카메라 범용성과 인프라 기능을 같은 주에 동시에 흡수하는 모습을 보였습니다. 금요일 GOFish도 카메라 범용성(200도 이상 어안)과 메시 추출(인프라성 출력)을 한 논문에서 같이 제공해 적중 조건을 다시 충족했습니다."
+    },
+    {
+      "title": "[2026-10-26 weekly, W43] 계산광학 하드웨어 코어가 이번 주 패턴(닷새 중 나흘, FP·Lensless 중 하나 2편 이상)을 유지한다",
+      "label": "✗",
+      "reason": "실제로는 월요일 FP 0편·Lensless 0편, 화요일 FP 0편·Lensless 1편, 수요일 FP 1편·Lensless 2편(그마저 위성 SAR 오탐·파장대가 다른 간접 신호), 금요일 FP 1편·Lensless 1편으로, 닷새 중 '하나라도 2편 이상'을 충족한 날은 수요일 하루뿐이었습니다(그나마도 실질 신호 기준으로는 오탐 섞임). 빗나감 조건(5일 중 1일 이하에서만 2편 이상)이 그대로 충족돼, W43이 재확인했던 '불규칙 복귀' 패턴은 이번 주 다시 사라진 것으로 판정합니다."
+    }
+  ],
+  "themes": [
+    {
+      "title": "Feed-forward 3D/3DGS가 '얼마나 잘 만드는가'에서 '불완전한 입력에서도 믿을 만한가'로",
+      "summary": "월요일 재구성 불확실성 모델링, 화요일 모델이 자기 오류를 아는지 검증하는 벤치마크, 수요일 카메라 종류·의료 볼륨까지 아우르는 범용 표현화, 금요일 어안렌즈·희소 투영·예산 제약 스트레스 테스트까지 나흘에 걸쳐 같은 질문(입력이 이상적이지 않을 때도 버티는가)이 반복됐습니다. 다음 주에는 이 질문이 3DGS를 넘어 다른 생성/복원 모델로도 번지는지가 관전 포인트입니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "의료 영상 분류가 정확도 경쟁에서 '설명 근거·보정·재현성' 경쟁으로",
+      "summary": "화·수 이틀 동안 유방암·피부암·치매·적혈구·병리 파운데이션 모델이라는 다섯 개 서로 다른 영역에서 똑같이 '정확도 숫자보다 그 판단을 믿을 근거'를 핵심 기여로 내세웠고, PRISM 같은 전용 평가 벤치마크까지 등장했습니다. 다음 주에는 이 평가 틀이 다른 질환으로 확산되는지 지켜봐야 합니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "계산광학 하드웨어 코어는 2주 연속 구조적으로 얇은 채로 남아, '불규칙 복귀'라는 지난주 판단을 재검토할 시점",
+      "summary": "지난주 weekly(W43)는 '완전한 공백이 아니라 불규칙하게 돌아오는 신호'라고 결론 냈지만, 이번 주(W44)에는 그 복귀가 사실상 확인되지 않았습니다. 2주 연속 같은 패턴이면 '불규칙'보다 '구조적으로 얇은 기준선'에 더 가깝다는 쪽으로 판단을 조정해야 할 수 있습니다.",
+      "confidence": "Medium"
+    }
+  ],
+  "top5": [
+    {
+      "title": "Does VGGT Know What It Does Not Know?",
+      "arxiv": "https://arxiv.org/abs/2610.35806",
+      "why": "feed-forward 3D 재구성 모델이 틀린 추정을 내놓아도 겉보기엔 맞는 추정과 구분이 안 된다는 문제를, HardMatch라는 전용 벤치마크로 정면에서 검증한 논문입니다. 지난주 내내 이어진 '불확실성 인지' 흐름의 방법론적으로 가장 날카로운 사례입니다.",
+      "tag": "[평가축]"
+    },
+    {
+      "title": "StackGen3D: Stable 3D Block Stack Generation from Multiview Silhouettes",
+      "arxiv": "https://arxiv.org/abs/2610.31803",
+      "why": "블록을 쌓아 3D 구조를 만들 때 물리적으로 쓰러지지 않는지를 그래프 신경망으로 미리 걸러 안정성을 45.3%에서 72.4%로 끌어올린, 월요일 '현실 잡음을 다루는 feed-forward 3D' 클러스터에서 가장 구체적인 수치를 가진 사례입니다.",
+      "tag": "[방법전환]"
+    },
+    {
+      "title": "PRISM: Pathology Reliability In Scarce-label Medicine",
+      "arxiv": "https://arxiv.org/abs/2610.36517",
+      "why": "병리 파운데이션 모델 8종을 라벨 부족·모델 보정·기관 간 분포 변화라는 네 축으로 묶어 평가하는 벤치마크를 만들어, 수요일 '의료 영상 신뢰성' 클러스터를 가장 체계적으로 뒷받침합니다.",
+      "tag": "[인프라]"
+    },
+    {
+      "title": "TTT in VLA Models: Exploring Training with Human Demonstrations",
+      "arxiv": "https://arxiv.org/abs/2610.32094",
+      "why": "같은 날 세 편(RSI-Opt, TTME, Phronix)이 self-improvement 설계의 성공 사례를 보고한 가운데, 유일하게 실패를 솔직히 보고한 논문입니다. 로봇 행동 생성이라는 영역에서 같은 설계가 아직 통하지 않는다는 경계를 보여줘 랩에 직접적인 경고 신호가 됩니다.",
+      "tag": "[경고신호]"
+    },
+    {
+      "title": "GOFish: Full Field-of-View Gaussian Splatting and Mesh Extraction",
+      "arxiv": "https://arxiv.org/abs/2610.37818",
+      "why": "180도까지만 되던 어안렌즈 3DGS 렌더링을 200도 이상으로 넓히면서 메시까지 동시에 추출해, FIORD·FullCircle 벤치마크에서 PSNR을 1.97~2.28dB 개선했습니다. 금요일 '입력 결손 내성' 클러스터를 대표하는 가장 구체적인 수치를 가진 사례입니다.",
+      "tag": "[방법전환]"
+    }
+  ],
+  "next_week_actions": [
+    {
+      "title": "HardMatch 불확실성 probing + SparseTokenGS token pool을 랩 feed-forward 3D 파이프라인에 적용",
+      "action": "Does VGGT Know What It Does Not Know?(2610.35806)의 HardMatch 구성 방식(의도적으로 어려운 상대 카메라 자세 쌍)을 랩 보유 VGGT 계열 모델에 적용해 내부 활성화만으로 틀린 포즈를 탐지할 수 있는지 확인하고, SparseTokenGS(2610.38360)의 재사용 가능한 token pool을 랩 sparse-view CT/CBCT 데이터에 적용해 투영 수 8/20/50장 조건별 PSNR 저하 곡선을 그린다.",
+      "expected_output": "불확실성 probing 정확도 표, 투영 수별 PSNR 저하 곡선"
+    },
+    {
+      "title": "PRISM 4축 평가 프로토콜을 랩 병리/현미경 분류 파이프라인에 적용",
+      "action": "PRISM(2610.36517)의 모델 선택·라벨 비율·보정(calibration)·분포 변화 4축 평가를 랩 보유 병리 분류기에 그대로 적용해, 라벨 10%·50%·100% 조건에서 calibration error가 어떻게 달라지는지 측정한다.",
+      "expected_output": "라벨 비율별 calibration error 비교표"
+    },
+    {
+      "title": "계산광학 코어 2주치(W43~W44) 요일별 실질신호 히트맵 갱신",
+      "action": "W43~W44 2주치 daily trends에서 Fourier Ptychography·Lensless raw count와 실질 신호 편수를 요일별로 재정리해, W43 결론('불규칙 복귀')이 2주 연속 유지되는지 아니면 '구조적으로 얇은 기준선'으로 수정해야 하는지 판단하고, Stochastic Orthogonal Regularization(10.1137/25m1824835)을 랩 learned-prior 복원망에 적용해 GPGD 수렴 속도를 비교한다.",
+      "expected_output": "2주 × 요일 실질 신호 히트맵, 정규화 적용 전후 수렴 속도 비교표"
+    }
+  ]
+}

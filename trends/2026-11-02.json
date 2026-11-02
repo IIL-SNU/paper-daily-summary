@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-02",
+  "weekly_retrospective_context": {
+    "iso_week": "2026-44",
+    "week_start": "2026-10-26",
+    "week_end": "2026-10-30",
+    "weekly_new_counts_sum": {
+      "by_cat": {
+        "cs.LG": 1233,
+        "cs.CV": 812,
+        "cs.AI": 1268,
+        "eess.IV": 50,
+        "eess.SP": 152
+      },
+      "scope": "sum of Mon-Fri 2026-10-26~2026-10-30 daily_new_counts.by_cat (new+cross; replacements excluded; 2026-10-29 source_mode=journal-only so contributes 0 arXiv)"
+    },
+    "weekly_totals": {
+      "total_scanned": 4915,
+      "selected": 1407
+    },
+    "weekly_classified_by_bucket": {
+      "Fourier Ptychography/Microscopy": 5,
+      "Lensless/Coded Imaging": 8,
+      "Phase Imaging/Holography": 35,
+      "Meta-Optics/Diffractive": 52,
+      "Light-Field/Novel Sensors": 24,
+      "Tomography/3D Imaging": 258,
+      "Virtual Staining/Pathology": 178,
+      "Reconstruction/Inverse Problems": 130,
+      "Deep Learning Methods": 717
+    }
+  }
+}
