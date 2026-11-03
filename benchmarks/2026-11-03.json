@@ -2,12 +2,68 @@
   "date": "2026-11-03",
   "results": [
     {
-      "benchmark": "Nanoimprinted IR metasurface multispectral filter (영하 20°C~영상 20°C 흑체 온도 복원)",
+      "benchmark": "13개 표준 3DGS 장면 (웹/모바일 CPU 정렬 뷰어 렌더링)",
+      "metric": "PSNR 손실 / 렌더링 속도",
+      "value": 0.13,
+      "value_str": "PSNR 손실 평균 0.13dB, 렌더링 속도 4.5배 향상(기존 per-splat 정렬 대비)",
+      "paper": "https://arxiv.org/abs/2611.01534",
+      "paper_title": "AbacusGS: Gaussian Splatting without Per-Splat Sorting"
+    },
+    {
+      "benchmark": "GaussFlaw-80K (3DGS 결함 진단)",
+      "metric": "AUC-J / Acc@1",
+      "value": 0.9507,
+      "value_str": "AUC-J 0.9507, Acc@1 80.08%",
+      "paper": "https://arxiv.org/abs/2611.02767",
+      "paper_title": "GaussFlaw: Fine-Grained Perceptual Diagnosis for 3D Gaussian Splatting"
+    },
+    {
+      "benchmark": "D-NeRF/HyperNeRF/DyNeRF 30개 장면, 150개 모델 (4DGS 워터마킹)",
+      "metric": "페이로드 복원 상관계수 / 렌더링 손실",
+      "value": 0.991,
+      "value_str": "Pearson r≥0.991 페이로드 복원, 렌더링 손실 평균 0.13dB 이하, 400건 완전 탐지·1600건 오탐 0",
+      "paper": "https://arxiv.org/abs/2611.01162",
+      "paper_title": "SHield: Watermarking 4D Gaussian Splatting via Spherical Harmonic Coefficient Perturbation"
+    },
+    {
+      "benchmark": "THUNDER 16개 분류 + 4개 분할 데이터셋 (병리 기반모델)",
+      "metric": "평균 분할 Dice",
+      "value": 69.7,
+      "value_str": "평균 분할 Dice 69.7 (14개 모델 중 4위, Midnight 능가, 학습 연산량은 320 H100-시간으로 34배 절감)",
+      "paper": "https://arxiv.org/abs/2611.00064",
+      "paper_title": "OpenMidnight: Closing the Performance Gap Between Open and Proprietary Pathology Foundation Models"
+    },
+    {
+      "benchmark": "PI-CAI 외부 검증 (전립선 T2W MRI 합성 영상 품질)",
+      "metric": "FID",
+      "value": 2.04,
+      "value_str": "내부 FID 13.28→2.04±0.06, PI-CAI 외부 검증 3.83±0.51",
+      "paper": "https://arxiv.org/abs/2611.02197",
+      "paper_title": "A conditional generative model for T2-weighted prostate MRI with downstream evaluation in clinically significant cancer classification"
+    },
+    {
+      "benchmark": "전립선암(csPCa) 분류기 5개 학습데이터 시나리오",
+      "metric": "AUC 개선폭",
+      "value": 0.088,
+      "value_str": "AUC +0.027~+0.088 (합성 데이터 증강, p=0.016~0.043), 단 기관 간 전이는 +0.013로 유의하지 않음(p=0.397)",
+      "paper": "https://arxiv.org/abs/2611.02197",
+      "paper_title": "A conditional generative model for T2-weighted prostate MRI with downstream evaluation in clinically significant cancer classification"
+    },
+    {
+      "benchmark": "적외선 저온 열복사 온도 복원 (메타표면 다중대역 필터+신경망 보정)",
       "metric": "MAE",
       "value": 0.16,
-      "value_str": "평균절대오차 0.160°C (필터 없는 단일 채널 베이스라인 0.434°C 대비 약 63% 개선)",
+      "value_str": "MAE 0.160°C (필터 없는 단일채널 베이스라인 0.434°C 대비 약 63% 개선)",
       "paper": "https://doi.org/10.1002/nap2.70345",
       "paper_title": "Nanoimprinted Infrared Metasurface Multispectral Filters for Neural-Network-Assisted Low-Temperature Sensing"
+    },
+    {
+      "benchmark": "광자 제한 형광현미경 스팟 카운팅 (수차 보정)",
+      "metric": "F1 / PSNR 근접도",
+      "value": 0.75,
+      "value_str": "스팟 카운팅 F1 0.03~0.04 → 0.73~0.75, oracle PSF Richardson-Lucy 대비 PSNR 0.05dB 이내",
+      "paper": "https://doi.org/10.1117/1.oe.65.11.113101",
+      "paper_title": "Measurement-driven aberration calibration and a Fisher-information theory of optical identifiability for photon-limited fluorescence microscopy"
     }
   ]
 }

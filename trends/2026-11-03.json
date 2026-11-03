@@ -1,38 +1,38 @@
 {
   "date": "2026-11-03",
   "source_listing_date": "2026-11-03",
-  "source_mode": "journal-only",
-  "note": "2026-11-03(화) 정기 daily 실행. Date Source Contract 확인 결과 추적 5개 카테고리(cs.LG, cs.CV, cs.AI, eess.IV, eess.SP) 모두 /new listing이 여전히 'Monday, 2 November 2026'을 가리켜 post_date(2026-11-03) > listing_date(2026-11-02)였다. arXiv가 아직 당일 분을 올리지 않은 것으로 보고 arXiv 섹션은 발행하지 않았다([2.1]절 저널 독립 규칙에 따라 journal-only daily로 진행). Crossref(--days 1, 랩 키워드 9종) 415편 + OpenAlex 보충 1편을 수집해 classify.py로 416건을 스캔, 81건(19.5%)을 9개 ROI 버킷에 배정했다. 저널 선택분만으로 '산란·회절 환경의 정량 영상 복원을 forward-model/식별가능성 이론으로 다시 세우는 흐름'(회절단층촬영 이론·형광현미경 수차보정·단일픽셀 영상·세포역학 영상 4편), '메타표면이 다중 파라미터 센싱 플랫폼이자 ML과 짝을 이루는 쪽으로 이동'(4편), '의료영상 AI 신뢰성 검증이 여러 모달리티에서 동시에 강조'(흉부·어깨·유방 4편) 세 클러스터를 구성할 수 있어(각 4편) journal-only 발행 기준을 충족했다. arXiv가 올라오면 다음 실행의 Calendar Audit이 이 daily를 pastweek-date-section으로 업그레이드한다.",
+  "source_mode": "new",
+  "note": "2026-11-03(화) daily 업그레이드 실행. 이른 시각 실행에서는 추적 5개 카테고리 모두 /new listing이 'Monday, 2 November 2026'에 멈춰 있어 저널 416건만으로 journal-only daily(source_mode=journal-only)를 발행했다. 이후 재확인 결과 5개 카테고리 모두 /new listing이 'Showing new listings for Tuesday, 3 November 2026'으로 갱신되어 post_date(2026-11-03)와 정확히 일치했다(Date Source Contract 2.1절 충족, post_date==listing_date). post_date==listing_date이므로 /pastweek backfill이 아니라 /new를 직접 사용해 arXiv+저널 완성본(source_mode=new)으로 이 날짜의 journal-only 산출물을 덮어썼다. cs.LG 570 · cs.CV 395 · cs.AI 521 · eess.IV 33 · eess.SP 82 (new+cross, replacement 제외, 총 1601건) + 저널 Crossref 417편 + OpenAlex 보충 1편(총 418편, --days 1)을 합쳐 1703건을 scripts/classify.py로 스캔, 496건(29.1%)을 9개 ROI 버킷에 배정했다. 이른 시각 journal-only 버전의 저널 클러스터 3개(산란·회절 역문제 forward-model/식별가능성, 메타표면 다중센싱+ML, 의료영상 AI 신뢰성 검증)는 저널 수집 내용이 그대로 유지되는 한 계속 유효해 유지했고, 여기에 오늘 처음 들어온 arXiv 1601건에서 새로 두 개 클러스터(3D Gaussian Splatting의 제품화 엔지니어링 성숙, 의료·현미경 영상 생성모델의 생물학적/임상적 타당성 검증 요구)를 추가해 클러스터 표를 5행으로 완성했다. Tomography/3D Imaging 버킷(37편) 중 geometry/SLAM/recon 관련 실질 신호가 14편 이상으로 Release Gate의 geometry 게이트(2편 이상)를 충분히 넘어 클러스터1로 상단에 반영했다.",
   "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 0,
-      "cs.CV": 0,
-      "cs.AI": 0,
-      "eess.IV": 0,
-      "eess.SP": 0
+      "cs.LG": 570,
+      "cs.CV": 395,
+      "cs.AI": 521,
+      "eess.IV": 33,
+      "eess.SP": 82
     },
     "scope": "new+cross; replacements excluded",
-    "journal_count": 415,
+    "journal_count": 418,
     "journal_window_days": 1
   },
   "totals": {
-    "total_scanned": 416,
-    "selected": 81
+    "total_scanned": 1703,
+    "selected": 496
   },
   "classified": {
-    "total_scanned": 416,
-    "selected": 81,
+    "total_scanned": 1703,
+    "selected": 496,
     "by_bucket": {
-      "Fourier Ptychography/Microscopy": 0,
-      "Lensless/Coded Imaging": 2,
-      "Phase Imaging/Holography": 8,
-      "Meta-Optics/Diffractive": 8,
-      "Light-Field/Novel Sensors": 1,
-      "Tomography/3D Imaging": 22,
-      "Virtual Staining/Pathology": 15,
-      "Reconstruction/Inverse Problems": 3,
-      "Deep Learning Methods": 22
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 5,
+      "Phase Imaging/Holography": 14,
+      "Meta-Optics/Diffractive": 11,
+      "Light-Field/Novel Sensors": 7,
+      "Tomography/3D Imaging": 37,
+      "Virtual Staining/Pathology": 61,
+      "Reconstruction/Inverse Problems": 58,
+      "Deep Learning Methods": 302
     }
   },
-  "daily_thesis": "오늘도 추적 5개 카테고리 모두 arXiv /new listing이 어제(11/2) 날짜에 멈춰 있어 저널(Crossref/OpenAlex) 416건만으로 하루를 구성한 journal-only daily입니다. 전체 선택률은 19.5%(81/416)로 낮지만 그 안에서 세 흐름이 뚜렷합니다 — 회절단층촬영 이론·광자제한 형광현미경·단일픽셀 영상·세포역학 영상처럼 서로 다른 4개 분야가 '측정이 부족하면 모델을 키운다'가 아니라 forward model과 식별가능성(Fisher information)·시간정보를 명시적으로 활용해 역문제를 다시 세우는 흐름, 메타표면이 위상 하나를 조절하는 소자에서 다중 파라미터 센싱 플랫폼이자 신경망과 짝을 이루는 설계 대상으로 옮겨가는 흐름, 그리고 의료영상 AI가 성능 숫자보다 해석가능성·일반화·체계적 검증을 동시에 요구받는 흐름입니다."
+  "daily_thesis": "오늘 arXiv /new가 추적 5개 카테고리 모두 'Tuesday, 3 November 2026'으로 post_date와 정확히 일치해, 아침의 journal-only 산출물을 arXiv+저널 완성본으로 업그레이드했습니다. arXiv 1601건이 들어오자 가장 뚜렷한 신호는 3D Gaussian Splatting 연구가 '더 빠르고 예쁜 렌더링' 경쟁에서 벗어나 결함 진단, 소유권 보호(워터마킹), 정렬 없는 렌더링 구조, octree 기반 적응형 밀도 제어처럼 '제품으로 내놓기 위한 엔지니어링 문제'로 무게중심을 옮긴 점입니다. 그 옆에서는 병리·현미경·MRI 영상을 생성하는 모델들이 '그럴듯해 보이는 영상'보다 '생물학적으로 말이 되고 임상적으로 재현 가능한 영상'인지를 따지는 평가 방법을 쏟아냈습니다. 저널 쪽은 아침부터 이어진 세 흐름 — 산란·회절 환경의 역문제를 forward-model과 식별가능성 이론으로 다시 세우는 흐름, 메타표면이 다중 파라미터 센싱+ML 플랫폼으로 이동하는 흐름, 의료영상 AI 신뢰성 검증이 여러 모달리티에서 동시에 강조되는 흐름 — 이 그대로 유지됐습니다."
 }
