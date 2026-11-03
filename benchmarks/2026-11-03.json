@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-03",
+  "results": [
+    {
+      "benchmark": "Nanoimprinted IR metasurface multispectral filter (영하 20°C~영상 20°C 흑체 온도 복원)",
+      "metric": "MAE",
+      "value": 0.16,
+      "value_str": "평균절대오차 0.160°C (필터 없는 단일 채널 베이스라인 0.434°C 대비 약 63% 개선)",
+      "paper": "https://doi.org/10.1002/nap2.70345",
+      "paper_title": "Nanoimprinted Infrared Metasurface Multispectral Filters for Neural-Network-Assisted Low-Temperature Sensing"
+    }
+  ]
+}

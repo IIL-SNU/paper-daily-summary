@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-03",
+  "source_listing_date": "2026-11-03",
+  "source_mode": "journal-only",
+  "note": "2026-11-03(화) 정기 daily 실행. Date Source Contract 확인 결과 추적 5개 카테고리(cs.LG, cs.CV, cs.AI, eess.IV, eess.SP) 모두 /new listing이 여전히 'Monday, 2 November 2026'을 가리켜 post_date(2026-11-03) > listing_date(2026-11-02)였다. arXiv가 아직 당일 분을 올리지 않은 것으로 보고 arXiv 섹션은 발행하지 않았다([2.1]절 저널 독립 규칙에 따라 journal-only daily로 진행). Crossref(--days 1, 랩 키워드 9종) 415편 + OpenAlex 보충 1편을 수집해 classify.py로 416건을 스캔, 81건(19.5%)을 9개 ROI 버킷에 배정했다. 저널 선택분만으로 '산란·회절 환경의 정량 영상 복원을 forward-model/식별가능성 이론으로 다시 세우는 흐름'(회절단층촬영 이론·형광현미경 수차보정·단일픽셀 영상·세포역학 영상 4편), '메타표면이 다중 파라미터 센싱 플랫폼이자 ML과 짝을 이루는 쪽으로 이동'(4편), '의료영상 AI 신뢰성 검증이 여러 모달리티에서 동시에 강조'(흉부·어깨·유방 4편) 세 클러스터를 구성할 수 있어(각 4편) journal-only 발행 기준을 충족했다. arXiv가 올라오면 다음 실행의 Calendar Audit이 이 daily를 pastweek-date-section으로 업그레이드한다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 0,
+      "eess.SP": 0
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 415,
+    "journal_window_days": 1
+  },
+  "totals": {
+    "total_scanned": 416,
+    "selected": 81
+  },
+  "classified": {
+    "total_scanned": 416,
+    "selected": 81,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 2,
+      "Phase Imaging/Holography": 8,
+      "Meta-Optics/Diffractive": 8,
+      "Light-Field/Novel Sensors": 1,
+      "Tomography/3D Imaging": 22,
+      "Virtual Staining/Pathology": 15,
+      "Reconstruction/Inverse Problems": 3,
+      "Deep Learning Methods": 22
+    }
+  },
+  "daily_thesis": "오늘도 추적 5개 카테고리 모두 arXiv /new listing이 어제(11/2) 날짜에 멈춰 있어 저널(Crossref/OpenAlex) 416건만으로 하루를 구성한 journal-only daily입니다. 전체 선택률은 19.5%(81/416)로 낮지만 그 안에서 세 흐름이 뚜렷합니다 — 회절단층촬영 이론·광자제한 형광현미경·단일픽셀 영상·세포역학 영상처럼 서로 다른 4개 분야가 '측정이 부족하면 모델을 키운다'가 아니라 forward model과 식별가능성(Fisher information)·시간정보를 명시적으로 활용해 역문제를 다시 세우는 흐름, 메타표면이 위상 하나를 조절하는 소자에서 다중 파라미터 센싱 플랫폼이자 신경망과 짝을 이루는 설계 대상으로 옮겨가는 흐름, 그리고 의료영상 AI가 성능 숫자보다 해석가능성·일반화·체계적 검증을 동시에 요구받는 흐름입니다."
+}
