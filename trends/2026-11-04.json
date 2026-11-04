@@ -1,38 +1,38 @@
 {
   "date": "2026-11-04",
   "source_listing_date": "2026-11-04",
-  "source_mode": "journal-only",
-  "note": "2026-11-04(수) 정기 daily 실행. Date Source Contract 확인 결과 추적 5개 카테고리(cs.LG, cs.CV, cs.AI, eess.IV, eess.SP) 모두 /new listing이 여전히 'Tuesday, 3 November 2026'을 가리켜 post_date(2026-11-04) > listing_date(2026-11-03)였다. arXiv가 아직 당일 분을 올리지 않은 것으로 보고 arXiv 섹션은 발행하지 않았다([2.1]절 저널 독립 규칙에 따라 journal-only daily로 진행). Crossref(--days 1, 랩 키워드 9종) 431편 + OpenAlex works 보충 6편을 수집해 classify.py로 437건을 스캔, 105건(24.0%)을 9개 ROI 버킷에 배정했다. 어제(11/3)는 결국 /new가 'Tuesday, 3 November 2026'으로 갱신되며 arXiv 1601건+저널 418편 완성본(source_mode=new)으로 업그레이드됐으나, 오늘(11/4) 기준으로는 아직 /new가 그 다음 날짜로 넘어가지 않아 다시 journal-only로 진행한다. 저널 선택분만으로 '계산 위상영상·홀로그래피가 나쁜 측정 조건을 수식/캘리브레이션으로 극복'(X-ray 위상대비 CRLB·컴팩트 CGH·저조도 간섭계·간섭현미경 시공간 초해상 4편), '메타광학이 센싱을 넘어 광학소자·광학컴퓨팅·역설계로 확장'(줌렌즈·THz 회절신경망·필터 역설계 3편), '의료·음향·적외선 복원이 압축센싱/물리prior/트랜스포머로 열악 조건을 극복'(대장암 MRI·Wiener 디컨볼루션·초음파 골영상·PSGAN 4편) 세 클러스터를 구성할 수 있어(각 3~4편) journal-only 발행 기준(클러스터 3개 이상, 각 2편 이상)을 충족했다. 어제 클러스터(3DGS 엔지니어링, 의료/현미경 생성모델 평가, 산란·회절 forward-model, 메타표면 다중센싱, 의료영상 AI 신뢰성)와 오늘 세 클러스터는 대표 논문·DOI가 전혀 겹치지 않아 Editorial Uniqueness Gate를 충족한다. arXiv가 올라오면 다음 실행의 Calendar Audit이 이 daily를 pastweek-date-section 또는 new로 업그레이드한다.",
+  "source_mode": "new",
+  "note": "2026-11-04(수) daily 업그레이드 실행. 오늘 아침 실행에서는 추적 5개 카테고리 모두 /new listing이 'Tuesday, 3 November 2026'에 멈춰 있어 post_date(2026-11-04) > listing_date(2026-11-03)이므로 저널 437건만으로 journal-only daily(source_mode=journal-only)를 먼저 발행했다. 이후 재확인 결과 5개 카테고리 모두 /new listing이 'Showing new listings for Wednesday, 4 November 2026'으로 갱신되어 post_date와 정확히 일치했다(Date Source Contract 2.1절 충족, post_date==listing_date). post_date==listing_date이므로 /pastweek backfill이 아니라 /new를 직접 사용해 arXiv+저널 완성본(source_mode=new)으로 이 날짜의 journal-only 산출물을 덮어썼다. cs.LG 252 · cs.CV 160 · cs.AI 252 · eess.IV 13 · eess.SP 27 (new+cross, replacement 제외, 총 704건) + 저널 Crossref 431편 + OpenAlex 보충 6편(총 437편, --days 1)을 scripts/classify.py로 중복 제거하며 스캔해 총 1024건 중 291건(28.4%)을 9개 ROI 버킷에 배정했다. 오늘 아침 journal-only 버전의 저널 흐름(계산 위상영상 CRLB 평가이론, 메타광학의 소자·컴퓨팅 확장, 의료 영상 복원의 물리 사전정보 활용)은 저널 수집 내용이 그대로 유지되는 한 계속 유효해 클러스터4로 유지했고, 여기에 오늘 처음 들어온 arXiv 704건에서 새로 세 개 클러스터(3D Gaussian Splatting의 동적/실사용 조건 확장, MRI 재구성의 범용 사전모델 재사용, 의료영상 AI 신뢰성 검증의 외부 일반화 검증 전환)를 추가해 클러스터 표를 4행으로 완성했다. Tomography/3D Imaging 버킷(42편) 중 geometry/SLAM/recon 관련 실질 신호가 6편(IGSW, Phase-DGS, EndoS3, Mamba3R, GSCV++, 3DGS-VBench+)으로 Release Gate의 geometry 게이트(2편 이상)를 넘어 클러스터1로 상단에 반영했다. 어제(11/3)와 비교해 3DGS 클러스터는 대표 논문이 100% 교체됐다(어제: AbacusGS/GaussFlaw/SHield/Unified Loss-Aware Density Control/OctreeSplat, 오늘: IGSW/Phase-DGS/EndoS3/Mamba3R/GSCV++/3DGS-VBench+). 의료영상 AI 신뢰성 클러스터도 대표 논문이 전부 교체됐다(어제: DINOv3-SAM/어깨 MRI/어깨 분할 리뷰/PSO-XAI, 오늘: saliency map 외부검증/Diagnosis by Composition/유방 MRI vCE).",
   "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 0,
-      "cs.CV": 0,
-      "cs.AI": 0,
-      "eess.IV": 0,
-      "eess.SP": 0
+      "cs.LG": 252,
+      "cs.CV": 160,
+      "cs.AI": 252,
+      "eess.IV": 13,
+      "eess.SP": 27
     },
     "scope": "new+cross; replacements excluded",
-    "journal_count": 431,
+    "journal_count": 437,
     "journal_window_days": 1
   },
   "totals": {
-    "total_scanned": 437,
-    "selected": 105
+    "total_scanned": 1024,
+    "selected": 291
   },
   "classified": {
-    "total_scanned": 437,
-    "selected": 105,
+    "total_scanned": 1024,
+    "selected": 291,
     "by_bucket": {
-      "Fourier Ptychography/Microscopy": 0,
+      "Fourier Ptychography/Microscopy": 1,
       "Lensless/Coded Imaging": 0,
       "Phase Imaging/Holography": 9,
       "Meta-Optics/Diffractive": 15,
-      "Light-Field/Novel Sensors": 1,
-      "Tomography/3D Imaging": 32,
-      "Virtual Staining/Pathology": 12,
-      "Reconstruction/Inverse Problems": 9,
-      "Deep Learning Methods": 27
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 42,
+      "Virtual Staining/Pathology": 29,
+      "Reconstruction/Inverse Problems": 37,
+      "Deep Learning Methods": 156
     }
   },
-  "daily_thesis": "오늘도 추적 5개 카테고리 모두 arXiv /new listing이 어제(11/3) 날짜에 멈춰 있어 저널(Crossref 431편 + OpenAlex 6편, 총 437건) 수집만으로 하루를 구성한 journal-only daily입니다. 선택률은 24.0%(105/437)로, 그 안에서 세 흐름이 뚜렷합니다 — 계산 위상영상·홀로그래피가 저조도·좁은 대역·빠른 움직임 같은 나쁜 측정 조건을 수식과 캘리브레이션으로 극복하려는 흐름, 메타광학이 센싱을 넘어 렌즈·광학 컴퓨팅·역설계까지 역할을 넓히는 흐름, 그리고 의료·음향·적외선 영상 복원이 압축센싱·물리 사전정보·트랜스포머 구조로 열악한 측정 조건에서도 품질을 끌어올리는 흐름입니다."
+  "daily_thesis": "오늘 arXiv /new가 추적 5개 카테고리 모두 'Wednesday, 4 November 2026'으로 post_date와 정확히 일치해, 아침의 journal-only 산출물을 arXiv+저널 완성본으로 업그레이드했습니다. arXiv 704건이 들어오자 가장 뚜렷한 신호는 3D Gaussian Splatting 연구가 어제(11/3)의 '정적 장면을 어떻게 제품으로 내놓을까'에서 한 단계 더 나아가, 동적(4D) 장면·수술 장면 SLAM·표준 비디오 코덱 호환 압축·품질 평가 벤치마크까지 적용 범위를 넓힌 점입니다. 그 옆에서는 MRI 재구성 세 편이 같은 에너지 기반 사전모델(MuSE)을 공유 플랫폼처럼 활용해 고해상도 정량 MRI와 모션 보정까지 풀어냈고, 의료영상 AI의 신뢰성 검증은 '내부 설명이 맞는지'에서 '새 병원·새 질병에서도 실제로 작동하는지'로 질문이 한 단계 더 구체화됐습니다. 저널 쪽은 오늘 아침 journal-only 버전에서 짚었던 계산 위상영상·메타광학 흐름이 그대로 유지됐습니다."
 }

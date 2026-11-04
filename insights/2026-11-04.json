@@ -1,111 +1,291 @@
 {
   "date": "2026-11-04",
-  "source_mode": "journal-only",
+  "source_mode": "new",
   "clusters": [
     {
-      "cluster": "계산 위상영상·홀로그래피가 저조도·좁은 대역·빠른 움직임 같은 나쁜 측정 조건을 수식과 캘리브레이션으로 극복하려는 흐름",
+      "cluster": "3D Gaussian Splatting이 '깨끗한 정적 장면' 가정을 벗어나 동적(4D) 장면·수술 SLAM·비디오 코덱 압축·품질 평가 인프라까지 적용 범위를 넓힘",
+      "papers": [
+        {
+          "title": "IGSW: Multi-Weather Urban Scene Reconstruction with Intrinsic-Decoupled Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2611.04374",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "3D Representation",
+            "class": "Gaussian Splatting",
+            "order": "Multi-weather Simulation",
+            "genus": "Intrinsic Decomposition",
+            "confidence": "High",
+            "rationale": "날씨 무관 성분(반사율/법선)과 날씨 특이 성분(조명/잔차)을 분리해 생성모델의 구조적 왜곡이 4D 장면에 전파되는 문제를 정면으로 겨냥, nuScenes/Waymo에서 비교 방법 대비 최고 콘텐츠 유사도·의미 일관성·최저 시간 오차"
+          }
+        },
+        {
+          "title": "Phase-DGS: Phase-guided Dynamic Gaussian Splatting from Unsynchronized Multi-view Video",
+          "arxiv": "https://arxiv.org/abs/2611.04666",
+          "importance_tags": ["[방법전환]", "[실사용전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "3D Representation",
+            "class": "Gaussian Splatting",
+            "order": "Multi-view Synchronization",
+            "genus": "Semantic Phase Alignment",
+            "confidence": "High",
+            "rationale": "타임스탬프 대신 동작 주기 내 위상으로 프레임을 정렬해 비싼 전용 동기화 하드웨어 없이도 시간 오프셋·프레임 드랍·카메라 정지 조건에서 최대 +8.5dB PSNR 개선"
+          }
+        },
+        {
+          "title": "EndoS3: Endoscopic Semantic Splatting SLAM",
+          "arxiv": "https://arxiv.org/abs/2611.04358",
+          "importance_tags": ["[방법전환]", "[인프라]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "3D Representation",
+            "class": "Gaussian Splatting",
+            "order": "Surgical SLAM",
+            "genus": "Instance-level Motion Decomposition",
+            "confidence": "High",
+            "rationale": "카메라 추적·변형 재구성·의미 분할을 인스턴스 단위 모션 분리로 동시에 풀고, CRCD++ ex-vivo 담낭절제술 데이터셋을 공개해 수술 semantic SLAM 평가 인프라를 처음 제공"
+          }
+        },
+        {
+          "title": "Mamba3R: Fixed-Capacity Selective State Memory for Long-Sequence 3D Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2611.04221",
+          "importance_tags": ["[방법전환]", "[실사용전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "3D Representation",
+            "class": "Streaming Reconstruction",
+            "order": "Long-sequence Adaptation",
+            "genus": "State-memory Adapter",
+            "confidence": "Medium",
+            "rationale": "128만 파라미터짜리 adapter만 학습해 고정 GPU 예산 내 장시간 스트리밍 3D 재구성 정확도를 최대 40% 개선, RTX 4060에서 11.7fps·5.1GiB 실측"
+          }
+        },
+        {
+          "title": "GSCV++: Lightweight 3D Gaussian Splatting Sequence Compression via Standard Video Codecs",
+          "arxiv": "https://arxiv.org/abs/2611.05359",
+          "importance_tags": ["[실사용전환]", "[표준후보]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "3D Representation",
+            "class": "Gaussian Splatting",
+            "order": "Compression Standardization",
+            "genus": "Standard Codec Compatibility",
+            "confidence": "Medium",
+            "rationale": "3DGS 시퀀스를 업계 표준 비디오 코덱과 호환되게 압축하는 파이프라인, SOTA 대비 intra 20%·inter 60% 이상 rate-distortion 개선으로 방송·스트리밍 표준화를 겨냥"
+          }
+        },
+        {
+          "title": "3DGS-VBench+ and 3DGSV-Assessor: A Multi-Dimensional Subjective Benchmark and a Reference-Flexible Objective Model for 3D Gaussian Splatting Video Quality Assessment",
+          "arxiv": "https://arxiv.org/abs/2611.04498",
+          "importance_tags": ["[평가축]", "[인프라]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "3D Representation",
+            "class": "Gaussian Splatting",
+            "order": "Quality Assessment",
+            "genus": "Reference-flexible VQA",
+            "confidence": "Medium",
+            "rationale": "정렬된 ground-truth 비디오 없이도 3,036개 3DGS 재구성·9,108개 사람 평가 점수로 압축 왜곡을 다차원 평가하는 대규모 벤치마크와 모델을 공개"
+          }
+        }
+      ],
+      "why": "3DGS(3D Gaussian Splatting)는 몇 장의 이미지로 장면을 수많은 작은 타원체로 표현해 실시간 렌더링을 가능하게 한 기법인데, 지금까지 대부분의 연구는 '조명이 일정하고 카메라가 잘 동기화된 깨끗한 정적 장면'을 전제로 했습니다. 오늘 묶인 여섯 편은 전부 그 전제가 깨지는 더 어려운 상황을 다룹니다. IGSW는 자율주행 시뮬레이션에 쓰려고 거리 장면을 다른 날씨로 바꿔 그리는데, 생성 모델이 만든 '가짜 정답 이미지'를 그대로 믿으면 원래 장면 구조가 깨진다는 문제를 겨냥해 날씨와 무관한 성분과 날씨에 따라 바뀌는 성분을 분리합니다. Phase-DGS는 여러 카메라를 완벽히 동기화하기 어렵다는 현실 문제를 '지금 동작이 전체 동작 주기에서 어느 단계인지'로 프레임을 정렬하는 방식으로 풀어 동기화가 어긋나도 화질을 크게 개선합니다. EndoS3는 카메라도 움직이고 조직도 변형되는 수술 장면에서 추적·재구성·의미 분류를 동시에 풀고, 평가용 데이터셋까지 공개합니다. Mamba3R은 장시간 스트리밍 3D 재구성에서 고정 GPU 예산 제약 아래 적은 파라미터만 추가 학습해 정확도를 끌어올립니다. GSCV++와 3DGS-VBench+는 각각 3DGS를 표준 비디오 코덱으로 압축하는 문제와 그 압축 손실을 사람이 느끼는 방식으로 재는 문제를 다루는데, 둘 다 3DGS가 연구용 데모를 넘어 실제 방송·스트리밍 인프라에 들어갈 때 필요한 표준화 작업입니다. 여섯 편을 합치면, 3DGS 연구의 다음 단계가 '더 빠르고 예쁜 렌더링'이 아니라 '현실의 어지러운 조건(날씨 변화, 동기화 오류, 조직 변형, 장시간 운용, 압축 손실)에서도 믿을 수 있는가'를 시험하는 단계로 넘어갔다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 6개 팀이 날씨 변화·비동기 멀티뷰·수술 SLAM·장시간 스트리밍·코덱 압축·품질 평가라는 다른 실사용 조건에서 같은 방향(3DGS의 '깨끗한 정적 장면' 전제 탈피)으로 수렴, 모두 오늘 cs.CV 신규 논문"
+    },
+    {
+      "cluster": "MRI 재구성이 범용 영상 사전정보(그레이스케일 얼굴 데이터로 학습한 에너지 기반 모델)를 공유 플랫폼처럼 재사용해 고해상도화·모션보정까지 한번에 풂",
+      "papers": [
+        {
+          "title": "High-Resolution Quantitative MRI Using Contrast-Domain Multiscale Energy (MuSE) Regularization",
+          "arxiv": "https://arxiv.org/abs/2611.05132",
+          "importance_tags": ["[방법전환]", "[데이터전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Medical Reconstruction",
+            "class": "Quantitative MRI",
+            "order": "Prior Reuse",
+            "genus": "Non-MRI Energy Model",
+            "confidence": "High",
+            "rationale": "CelebA 얼굴 데이터로 학습한 2D 에너지 기반 모델을 MRI 전용 학습 데이터 없이 합성 대비 영상에 적용해 0.5mm 등방 해상도를 5분 이내 스캔으로 달성, NRMSE 0.133/0.091 → 0.074"
+          }
+        },
+        {
+          "title": "Unified Motion Correction and Reconstruction for Accelerated Zero Echo Time MRI",
+          "arxiv": "https://arxiv.org/abs/2611.05169",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Medical Reconstruction",
+            "class": "Zero Echo Time MRI",
+            "order": "Motion Correction",
+            "genus": "MuSE-regularized MAP",
+            "confidence": "High",
+            "rationale": "MuSE 에너지 기반 사전모델을 그대로 재사용해 모션 보정+재구성을 통합, 데드타임 갭 3.5샘플 이상에서 CG-SENSE/Autofocusing 대비 PSNR 10~15dB 개선"
+          }
+        },
+        {
+          "title": "AI-accelerated compressed sensing and deep learning reconstruction for colon MRI: prospective validation of image quality and preliminary assessment of staging accuracy versus contrast-enhanced CT",
+          "arxiv": "https://doi.org/10.1186/s13244-026-02445-8",
+          "importance_tags": ["[실사용전환]", "[평가축]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Medical Reconstruction",
+            "class": "Compressed Sensing MRI",
+            "order": "Clinical Validation",
+            "genus": "CS + Deep Learning Hybrid",
+            "confidence": "Medium",
+            "rationale": "L1 압축센싱+딥러닝 복원 MRI가 조영증강 CT보다 높은 병기 판정 정확도(78.8% vs 30.3%)를 전향적으로 검증, 방사선 노출 없는 대안 가능성 제시"
+          }
+        },
+        {
+          "title": "Deep Plug-and-Play Proximal Distance Algorithm for Robust Principal Component Analysis",
+          "arxiv": "https://arxiv.org/abs/2611.04623",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Medical Reconstruction",
+            "class": "Inverse Problem",
+            "order": "Plug-and-Play Prior",
+            "genus": "Physical Model + Deep Denoiser",
+            "confidence": "Medium",
+            "rationale": "물리적 생성모델과 딥러닝 사전정보를 결합한 다채널 RPCA, 초분광 영상·비디오 배경모델링에서 기존 방법 및 딥러닝 디노이저 대비 우수"
+          }
+        }
+      ],
+      "why": "정량 MRI(T1 같은 조직 특성 지도를 만드는 MRI)는 지금까지 보통 1mm 해상도로 찍었는데, 이는 뇌의 미세한 구조를 보는 신경퇴행성질환 연구에는 너무 거칩니다. MuSE 논문은 'MRI 전용 학습 데이터가 없어도 된다'는 발상의 전환을 보여주는데, 사람 얼굴 사진(CelebA)으로 학습한 2차원 에너지 기반 모델을 MRI의 여러 대비 영상에 그대로 적용해서 임상 프로토콜보다 복셀 부피가 8분의 1인 0.5mm 등방 해상도를 5분 이내 스캔으로 달성했습니다. 핵심은 사전정보를 시간 축의 신호 패턴이 아니라 합성된 대비 영상 자체에 걸어서, 특정 MRI 시퀀스에 묶이지 않고 범용으로 쓸 수 있게 만들었다는 점입니다. 바로 다음 논문인 Zero Echo Time MRI 재구성은 이 MuSE 모델을 그대로 가져와 쓰는데, 이번에는 해상도가 아니라 환자가 움직여서 생기는 아티팩트를 보정하는 데 씁니다 — 데드타임 간격이 3.5샘플 이상인 어려운 조건에서 기존 CG-SENSE·Autofocusing 방법보다 PSNR을 10~15dB나 높였습니다. 즉 같은 사전모델 하나가 해상도를 올리는 문제와 움직임을 보정하는 문제 양쪽에 재사용되고 있다는 뜻이고, 대장암 MRI 압축센싱 논문(조영증강 CT 대비 병기 정확도 78.8% vs 30.3%로 전향적 검증)까지 더하면 범용 영상 사전정보와 압축센싱을 결합해 MRI의 느린 촬영 시간 문제를 정면으로 공략한다는 전략이 공고해지는 모습입니다. Deep PnP RPCA 논문은 모달리티는 다르지만 같은 설계 철학(물리적 생성모델 + 딥러닝 사전정보 결합)을 공유합니다.",
+      "confidence": "High",
+      "confidence_note": "MuSE와 ZTE MRI 두 편이 같은 사전모델을 명시적으로 공유하는 직접 연결 + 대장암 MRI·RPCA까지 같은 전략을 보이는 4편째, 서로 다른 임상 과제(신경영상·호흡기 없는 촬영·종양 병기)에서 반복"
+    },
+    {
+      "cluster": "의료영상 AI의 신뢰성 검증이 '내부 설명이 병변과 일치하는가'에서 '그 설명·모델이 새 병원·새 질병에서도 실제로 작동하는가'로 질문이 좁혀짐",
+      "papers": [
+        {
+          "title": "Can saliency maps flag chest radiograph classifier errors at a new hospital? An external validation study",
+          "arxiv": "https://arxiv.org/abs/2611.05011",
+          "importance_tags": ["[경고신호]", "[평가축]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Medical AI Reliability",
+            "class": "Explainability Verification",
+            "order": "External Validation",
+            "genus": "Saliency-confidence Comparison",
+            "confidence": "High",
+            "rationale": "3개 병원 30만 건 이상 판정을 방사선 전문의 라벨과 비교, Grad-CAM hit rate가 전문의 대비 낮고(0.575 vs 0.888) enrichment-정확도 관계가 병원 간 역전되는 현상을 입증"
+          }
+        },
+        {
+          "title": "Diagnosis by Composition: Detecting and Localizing Unseen Diseases by Composing Learned Radiological Findings",
+          "arxiv": "https://arxiv.org/abs/2611.05231",
+          "importance_tags": ["[방법전환]", "[표준후보]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Medical AI Reliability",
+            "class": "Interpretable Diagnosis",
+            "order": "Findings-first Composition",
+            "genus": "Guideline-derived Disease Mapping",
+            "confidence": "High",
+            "rationale": "질병명을 직접 학습하는 대신 진료지침의 '소견→질병' 논리를 파라미터 없는 조합으로 구현, 간 CT에서 미지 질병·타 기관 희귀질환·외부 코호트 모두 비교군 능가"
+          }
+        },
+        {
+          "title": "Influence of dominant sequence artifacts on generative AI for virtual contrast-enhancement in breast MRI",
+          "arxiv": "https://doi.org/10.1186/s12880-026-02996-8",
+          "importance_tags": ["[위험보류]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Medical AI Reliability",
+            "class": "Generative Robustness",
+            "order": "Artifact Sensitivity",
+            "genus": "Sequence Artifact Stress Test",
+            "confidence": "Medium",
+            "rationale": "확산강조영상(DWI) 아티팩트 조건별로 가상 조영증강 유방 MRI 합성 모델의 강건성을 투명하게 점검"
+          }
+        }
+      ],
+      "why": "의료영상 AI의 설명가능성·해석가능성 연구는 이미 흔한데, 오늘 묶인 세 편은 '그 설명이 그럴듯해 보이는가'를 넘어 '다른 병원이나 다른 질병에서도 여전히 믿을 수 있는가'를 직접 시험했다는 공통점이 있습니다. Saliency map 논문은 흉부 X-ray 분류기의 판정 30만 건 이상을 학습 병원과 미국·베트남의 외부 두 병원에서 비교했는데, Grad-CAM이 실제 병변 위치를 짚어내는 비율이 방사선 전문의보다 훨씬 낮았을 뿐 아니라(최대 0.575 대 0.888), 더 심각한 문제는 설명이 얼마나 집중돼 있는가와 실제로 맞았는가의 관계 자체가 병원마다 반대 방향으로 뒤집혀서, 이 설명을 오류 탐지에 쓰면 오히려 성능이 나빠졌다는 점입니다. Diagnosis by Composition은 아예 접근을 바꿔, 질병명을 직접 맞히게 학습시키는 대신 방사선과 진료지침이 쓰는 '어떤 소견들이 모이면 어떤 질병'이라는 논리를 모델에 그대로 심어서, 재학습 없이도 학습 때 보지 못한 질병이나 다른 기관의 희귀 질환을 소견 조합만으로 찾아냅니다. 유방 MRI 가상 조영증강 논문은 확산강조영상(DWI) 아티팩트가 있을 때 생성된 가상 조영증강 영상이 얼마나 흔들리는지를 점검해, 실제 임상에 쓰기 전에 어떤 조건에서 믿을 수 없는지를 투명하게 보고합니다. 세 편을 합치면, 의료영상 AI 신뢰성 검증의 초점이 모델 내부 설명이 그럴듯한가에서 그 설명·모델이 실제 배포 환경(다른 병원, 다른 질병, 다른 영상 조건)에서도 버티는가로 한 단계 더 구체화됐다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 3개 모달리티(흉부 X-ray, 간 CT, 유방 MRI)에서 '외부 환경 일반화 실패'라는 같은 방향이 나타났지만, 공통 벤치마크나 같은 평가 프로토콜을 쓰지는 않음"
+    },
+    {
+      "cluster": "계산 위상영상·메타광학이 저널에서 저조도·좁은 대역 측정 조건 극복과 광학소자·컴퓨팅 확장을 계속 이어감",
       "papers": [
         {
           "title": "Cramér–Rao lower bound for spectral propagation-based x-ray phase-contrast imaging",
-          "arxiv_id": "https://doi.org/10.1088/1361-6560/aebd38",
-          "journal_or_source": "Physics in Medicine & Biology (JNL)"
-        },
-        {
-          "title": "Spatial-domain diffraction-order selection and carrier-aware brightness compensation for compact off-axis computer-generated holography",
-          "arxiv_id": "https://doi.org/10.1016/j.optlaseng.2026.110225",
-          "journal_or_source": "Optics and Lasers in Engineering (JNL)"
-        },
-        {
-          "title": "Low-flux optical scanning interferometry with four-channel front-end calibration and signed-residual bias control: A XuYi-LBOI commissioning study",
-          "arxiv_id": "https://doi.org/10.1016/j.optlaseng.2026.110217",
-          "journal_or_source": "Optics and Lasers in Engineering (JNL)"
-        },
-        {
-          "title": "Spatiotemporal phase super-resolution for dynamic interferometric microscopy using dual-camera coordinated sampling and prior guidance",
-          "arxiv_id": "https://doi.org/10.1016/j.optlastec.2026.116842",
-          "journal_or_source": "Optics & Laser Technology (JNL)"
-        }
-      ],
-      "why": "네 편 모두 측정 조건이 나쁜 상황(광자가 부족한 스펙트럴 X-ray, 컴팩트한 공간에 넣어야 하는 CGH, 저조도 간섭계, 빠르게 움직이는 시료를 보는 간섭현미경)에서 복원 품질을 수식과 캘리브레이션으로 끌어올리려 합니다. X-ray 위상대비영상 논문은 기존에 흡수(강도) 정보만 다루던 평가 이론(Cramér-Rao 하한)을 위상 정보까지 포함하도록 확장해서, 에너지 분해형 검출기를 쓸 때 어떤 에너지 구간을 고르면 측정 정보가 가장 많이 남는지 수학적으로 계산할 수 있게 했습니다. 즉 '일단 찍고 본다'가 아니라 '찍기 전에 이 측정으로 무엇을 얼마나 정확히 알아낼 수 있는지부터 계산한다'는 접근이 홀로그래피 소자 설계와 저조도 간섭계 보정, 간섭현미경의 시공간 초해상 복원에서도 똑같이 나타났다는 뜻입니다.",
-      "confidence": "Medium",
-      "confidence_note": "서로 다른 4개 응용(X-ray 위상대비, 컴팩트 CGH, 저조도 간섭계, 간섭현미경)에서 같은 설계 철학이 동시에 나타났지만, 저널 초록이 대부분 비어 있어 제목·저널명 기준 판단이 섞여 있음",
-      "lab_action": "XPCI 논문의 generalized CRLB 프레임워크(Poisson Fisher information 기반)를 랩 Fourier ptychography/위상검색 파이프라인에 적용해, 조명 파장·노출 조건별로 어떤 변수가 식별 가능한지 1주일 내 시뮬레이션으로 비교한다"
-    },
-    {
-      "cluster": "메타광학이 센싱을 넘어 광학 소자(줌렌즈)·광학 컴퓨팅(회절 신경망)·역설계까지 역할을 넓히는 흐름",
-      "papers": [
-        {
-          "title": "Electrically-driven zoom lens based on liquid-controlled metasurface",
-          "arxiv_id": "https://doi.org/10.29026/oea.2026.260092",
-          "journal_or_source": "Opto-Electronic Advances (JNL)"
+          "arxiv": "https://doi.org/10.1088/1361-6560/aebd38",
+          "importance_tags": ["[평가축]", "[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Optics",
+            "class": "X-ray Phase-Contrast Imaging",
+            "order": "Measurement Design Theory",
+            "genus": "Generalized CRLB",
+            "confidence": "Medium",
+            "rationale": "흡수 기반 평가 이론을 위상 정보까지 확장해 에너지 분해형 검출기의 최적 에너지 구간을 수식으로 계산, 시뮬레이션 maximum-likelihood 추정치가 CRLB에 평균분산비 1.006~1.020로 근접"
+          }
         },
         {
           "title": "Terahertz Diffractive Deep Neural Networks via Polarization-Conversion Metasurfaces for Digit Recognition",
-          "arxiv_id": "https://doi.org/10.1002/mop.70846",
-          "journal_or_source": "Microwave and Optical Technology Letters (JNL)"
+          "arxiv": "https://doi.org/10.1002/mop.70846",
+          "importance_tags": ["[실사용전환]", "[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Meta-optics",
+            "class": "Optical Computing",
+            "order": "Diffractive Neural Network",
+            "genus": "Polarization-Conversion Meta-atom",
+            "confidence": "Medium",
+            "rationale": "편광변환 메타원자 3층만으로 저전력 광학 신경망을 구현, 0.6THz에서 MNIST 9-class 숫자 인식에 성공(시뮬레이션 기준)"
+          }
         },
         {
-          "title": "A tandem neural network for the inverse design of multilayer thin-film optical filters validated against the transfer-matrix method",
-          "arxiv_id": "https://doi.org/10.1016/j.optlastec.2026.116858",
-          "journal_or_source": "Optics & Laser Technology (JNL)"
+          "title": "Electrically-driven zoom lens based on liquid-controlled metasurface",
+          "arxiv": "https://doi.org/10.29026/oea.2026.260092",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Meta-optics",
+            "class": "Optical Device",
+            "order": "Tunable Lens",
+            "genus": "Liquid-controlled Metasurface",
+            "confidence": "Low",
+            "rationale": "메타표면에 액체를 흘려 넣고 전기 신호만으로 초점을 조절, 메타광학이 센싱을 넘어 소자 대체로 확장됨을 보여줌"
+          }
         }
       ],
-      "why": "메타표면은 원래 빛의 위상을 평면에서 조절하는 소자로 많이 쓰였는데, 오늘 묶인 세 편은 그 역할이 광학 소자(줌렌즈)와 광학 컴퓨팅(숫자 인식용 회절 신경망), 그리고 설계 자체를 맡는 신경망(역설계)으로 넓어지고 있다는 신호입니다. 테라헤르츠 회절 신경망 논문은 기존의 부피가 큰 회절 신경망 대신 편광변환 메타원자 세 층만으로 9개 숫자(MNIST 일부)를 인식하는 데 성공했는데, 이는 '많이 계산하는 대신 빛이 메타표면을 통과하는 과정 자체가 계산을 대신하게' 하려는 저전력 광학 AI 하드웨어 흐름입니다. 즉 메타광학이 센싱뿐 아니라 렌즈 교체와 신경망 연산까지 대신하는 방향으로 쓰임새가 넓어지고 있습니다.",
+      "why": "오늘 아침 journal-only 버전에서 짚었던 흐름이 그대로 유효합니다. X-ray 위상대비영상(XPCI) 논문은 기존에 흡수(강도) 정보만 다루던 평가 이론(Cramér-Rao 하한)을 위상 정보까지 포함하도록 확장해서, 에너지 분해형 검출기를 쓸 때 어떤 에너지 구간을 고르면 정보를 가장 많이 얻는지 촬영 전에 수학적으로 계산할 수 있게 했습니다. 테라헤르츠 회절 신경망 논문은 메타표면 세 층만으로 빛이 통과하는 과정 자체가 숫자 인식 연산을 대신하게 만들어, 부피가 큰 기존 회절 신경망 없이도 저전력 광학 AI 하드웨어가 가능함을 시뮬레이션으로 보였습니다. 줌렌즈 논문은 메타표면에 액체를 흘려 넣고 전기 신호만으로 초점을 조절하는 소자를 제안합니다. 세 편을 합치면, 메타광학이 센싱(다중 파라미터 측정)뿐 아니라 광학 소자 대체(줌렌즈)와 광학 연산(회절 신경망)까지 역할을 계속 넓혀가고 있다는 뜻입니다.",
       "confidence": "Medium",
-      "confidence_note": "2개 메타광학 응용(줌렌즈, 광학컴퓨팅)과 1개 ML 역설계 방법이 같은 방향을 보이지만, 세 편 모두 시뮬레이션 기반 검증이라 실측 확산 여부는 확인 필요",
-      "lab_action": "THz 메타표면 회절 신경망의 meta-atom 설계 원리(편광변환 계수 0.9 이상, 3-layer cascaded 구조)를 랩 보유 가시광/적외선 메타표면 시뮬레이션 파이프라인에 이식해, 저전력 광학 추론이 가능한 과제 범위를 1주일 내로 검토한다"
-    },
-    {
-      "cluster": "의료·음향·적외선 영상 복원이 압축센싱·물리 사전정보·트랜스포머 구조로 열악한 측정 조건에서도 품질을 끌어올리는 흐름",
-      "papers": [
-        {
-          "title": "AI-accelerated compressed sensing and deep learning reconstruction for colon MRI: prospective validation of image quality and preliminary assessment of staging accuracy versus contrast-enhanced CT",
-          "arxiv_id": "https://doi.org/10.1186/s13244-026-02445-8",
-          "journal_or_source": "Insights into Imaging (JNL)"
-        },
-        {
-          "title": "Reducing ringing artifacts in Wiener deconvolution using implicit physical priors",
-          "arxiv_id": "https://doi.org/10.1364/ol.619118",
-          "journal_or_source": "Optics Letters (JNL)"
-        },
-        {
-          "title": "Dual-domain transformer low-frequency waveform recovery for quantitative ultrasound bone imaging",
-          "arxiv_id": "https://doi.org/10.1016/j.ultras.2026.108354",
-          "journal_or_source": "Ultrasonics (JNL)"
-        },
-        {
-          "title": "PSGAN: Pseudo-Sensing GAN for Infrared and Low-Light Visible Image Fusion",
-          "arxiv_id": "https://doi.org/10.3390/electronics15215099",
-          "journal_or_source": "Electronics (JNL)"
-        }
-      ],
-      "why": "대장암 MRI, 초음파 골 영상, 적외선·가시광 융합, 광학 디컨볼루션까지 서로 다른 네 분야에서 똑같이 '측정이 부족하거나 조건이 나쁠 때 압축센싱·물리 사전정보·트랜스포머 구조로 복원 품질을 끌어올린다'는 전략이 동시에 나타났습니다. 대장암 MRI 논문은 L1 정규화 압축센싱과 딥러닝 복원을 결합해 조영제 CT보다 더 높은 병기 판정 정확도(78.8% vs 30.3%)를 전향적으로 검증했는데, 이는 방사선 노출 없이도 기존 표준 검사를 대체할 수 있다는 임상적으로 꽤 강한 주장입니다. PSGAN은 적외선과 가시광 영상을 합칠 때 생기는 도메인 차이와 저조도 문제를 센싱 과정을 거꾸로 흉내 내는 구조로 동시에 풀려 하고, Wiener 디컨볼루션 논문은 전통적인 복원 공식에 물리적 사전지식을 암묵적으로 끼워 넣어 링잉 아티팩트를 줄입니다. 즉 같은 전략이 의료·음향·적외선·광학이라는 서로 다른 네 영역에서 동시에 검증되고 있다는 뜻입니다.",
-      "confidence": "Medium",
-      "confidence_note": "서로 다른 4개 모달리티(MRI, 초음파, 적외선 융합, 광학 디컨볼루션)에서 같은 복원 전략이 동시에 나타났지만, 같은 평가 프로토콜을 공유하지는 않음",
-      "lab_action": "PSGAN의 pseudo-sensing 삼중 판별자 구조와 Wiener deconvolution의 implicit physical prior 접근을 랩 저조도·적외선 융합 또는 복원 파이프라인에 각각 적용해, 기존 압축센싱·전통 디콘볼루션 대비 복원 품질을 1주일 내로 비교한다"
+      "confidence_note": "오늘 아침 journal-only 버전과 동일 저널 수집분이라 신규 증거는 아니지만, arXiv 데이터가 들어온 뒤에도 독립적으로 유지되는 저널 신호라는 점에서 재확인된 Medium"
     }
   ],
   "research_topics": [
     {
-      "title": "A. XPCI generalized CRLB 프레임워크를 랩 위상검색 파이프라인의 측정 설계 최적화에 적용",
-      "claim": "에너지 분해형/다중 조명 조건에서 어떤 측정이 가장 많은 위상·재질 정보를 담는지, Fisher information 기반으로 랩 Fourier ptychography 설정에서도 사전에 계산할 수 있는지 검증한다.",
+      "title": "A. Phase-DGS의 phase 기반 프레임 정렬을 랩 비동기 멀티카메라 3DGS 파이프라인에 적용",
+      "claim": "타임스탬프 대신 동작 주기 내 위상으로 프레임을 정렬하는 방식이, 랩이 쓰는 비동기·저가 멀티카메라 환경에서도 동기화 오차에 강건한 동적 장면 재구성을 가능하게 하는지 검증한다.",
       "supporting_papers": [
-        {"title": "Cramér–Rao lower bound for spectral propagation-based x-ray phase-contrast imaging", "arxiv": "https://doi.org/10.1088/1361-6560/aebd38"}
+        {"title": "Phase-DGS: Phase-guided Dynamic Gaussian Splatting from Unsynchronized Multi-view Video", "arxiv": "https://arxiv.org/abs/2611.04666", "phylogeny": {"source": "CVML", "phylum": "3D Representation"}}
       ]
     },
     {
-      "title": "B. THz 메타표면 회절 신경망 설계 원리를 랩 메타표면 시뮬레이션 파이프라인에 이식",
-      "claim": "편광변환 meta-atom 기반 cascaded 회절 신경망 구조가 랩이 다루는 가시광/적외선 대역에서도 저전력 광학 추론 과제(간단한 분류/인식)에 적용 가능한지 시뮬레이션으로 1차 검토한다.",
+      "title": "B. MuSE의 비-MRI 사전모델 재사용 전략을 랩 정량 MRI/확산 MRI 복원에 이식",
+      "claim": "MRI 전용 학습 데이터 없이 범용 2D 에너지 기반 모델을 사전정보로 재사용하는 방식이, 랩 보유 정량 MRI 파이프라인에서도 고해상도 복원을 가능하게 하는지 재현한다.",
       "supporting_papers": [
-        {"title": "Terahertz Diffractive Deep Neural Networks via Polarization-Conversion Metasurfaces for Digit Recognition", "arxiv": "https://doi.org/10.1002/mop.70846"}
+        {"title": "High-Resolution Quantitative MRI Using Contrast-Domain Multiscale Energy (MuSE) Regularization", "arxiv": "https://arxiv.org/abs/2611.05132", "phylogeny": {"source": "CVML", "phylum": "Medical Reconstruction"}}
       ]
     },
     {
-      "title": "C. pseudo-sensing GAN·implicit physical prior 복원 구조를 랩 저조도/적외선 융합 파이프라인과 비교",
-      "claim": "PSGAN의 삼중 판별자 pseudo-sensing 구조와 Wiener deconvolution의 implicit physical prior가, 랩 보유 저조도·적외선 데이터에서 기존 압축센싱/전통 디콘볼루션 대비 복원 품질을 얼마나 개선하는지 비교한다.",
+      "title": "C. Saliency map 외부 병원 교차검증 프로토콜을 랩 의료/현미경 영상 분류 모델에 적용",
+      "claim": "랩이 쓰는 의료·현미경 영상 분류·분할 모델의 attribution 기반 설명이, 학습 기관이 아닌 다른 기관의 데이터에서도 여전히 오류를 탐지하는 데 쓸모가 있는지 정량 검증한다.",
       "supporting_papers": [
-        {"title": "PSGAN: Pseudo-Sensing GAN for Infrared and Low-Light Visible Image Fusion", "arxiv": "https://doi.org/10.3390/electronics15215099"},
-        {"title": "Reducing ringing artifacts in Wiener deconvolution using implicit physical priors", "arxiv": "https://doi.org/10.1364/ol.619118"}
+        {"title": "Can saliency maps flag chest radiograph classifier errors at a new hospital?", "arxiv": "https://arxiv.org/abs/2611.05011", "phylogeny": {"source": "CVML", "phylum": "Medical AI Reliability"}}
+      ]
+    },
+    {
+      "title": "D. EndoS3의 인스턴스별 모션 분리 모듈을 랩 변형 가능 생물학적 장면 재구성에 적용",
+      "claim": "수술 장면에서 검증된 인스턴스 단위 정적/동적 구분과 개별 변형 추적이, 랩이 다루는 조직 배양이나 살아있는 세포 영상처럼 변형 가능한 다른 생물학적 장면에도 적용 가능한지 검토한다.",
+      "supporting_papers": [
+        {"title": "EndoS3: Endoscopic Semantic Splatting SLAM", "arxiv": "https://arxiv.org/abs/2611.04358", "phylogeny": {"source": "CVML", "phylum": "3D Representation"}}
       ]
     }
   ],

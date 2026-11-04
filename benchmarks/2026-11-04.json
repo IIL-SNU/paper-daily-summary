@@ -2,12 +2,68 @@
   "date": "2026-11-04",
   "results": [
     {
-      "benchmark": "AI-accelerated compressed sensing MRI vs contrast-enhanced CT (대장암 T-staging)",
-      "metric": "T-staging accuracy",
+      "benchmark": "실내외 공개 데이터셋 + 로봇 주행 (장시간 스트리밍 3D 재구성)",
+      "metric": "궤적/표면/깊이 정확도 개선폭",
+      "value": 40,
+      "value_str": "recurrent 베이스라인 대비 한 지표에서 최대 40% 개선, RTX 4060에서 11.7fps·5.1GiB",
+      "paper": "https://arxiv.org/abs/2611.04221",
+      "paper_title": "Mamba3R: Fixed-Capacity Selective State Memory for Long-Sequence 3D Reconstruction"
+    },
+    {
+      "benchmark": "RealTime-4DGS/FreeTimeGS 백본 (비동기 멀티뷰 동적 장면 재구성)",
+      "metric": "PSNR",
+      "value": 8.5,
+      "value_str": "시간 오프셋·프레임 드랍·카메라 정지 조건에서 베이스라인 대비 최대 +8.5dB",
+      "paper": "https://arxiv.org/abs/2611.04666",
+      "paper_title": "Phase-DGS: Phase-guided Dynamic Gaussian Splatting from Unsynchronized Multi-view Video"
+    },
+    {
+      "benchmark": "3DGS 비디오 시퀀스 압축 (SOTA 대비 rate-distortion)",
+      "metric": "intra/inter-prediction 이득",
+      "value": 60,
+      "value_str": "intra 20% 이상, inter 60% 이상 rate-distortion 개선",
+      "paper": "https://arxiv.org/abs/2611.05359",
+      "paper_title": "GSCV++: Lightweight 3D Gaussian Splatting Sequence Compression via Standard Video Codecs"
+    },
+    {
+      "benchmark": "3-D 방사형 MPnRAGE, 7T, 4.3분 스캔 (고해상도 정량 MRI)",
+      "metric": "NRMSE / WM T1 IQR",
+      "value": 0.074,
+      "value_str": "NRMSE 0.133(CG-SENSE)·0.091(L1-wavelet) → 0.074, WM T1 interquartile range 117·47ms → 38ms",
+      "paper": "https://arxiv.org/abs/2611.05132",
+      "paper_title": "High-Resolution Quantitative MRI Using Contrast-Domain Multiscale Energy (MuSE) Regularization"
+    },
+    {
+      "benchmark": "시뮬레이션+생체 내 3D Zero Echo Time MRI (데드타임 갭 ≥3.5샘플)",
+      "metric": "PSNR",
+      "value": 12.5,
+      "value_str": "CG-SENSE/Autofocusing 대비 약 10~15dB 개선",
+      "paper": "https://arxiv.org/abs/2611.05169",
+      "paper_title": "Unified Motion Correction and Reconstruction for Accelerated Zero Echo Time MRI"
+    },
+    {
+      "benchmark": "대장암 T/N-병기 판정, AI 압축센싱 MRI vs 조영증강 CT (전향적 검증)",
+      "metric": "T-staging accuracy / N-staging 특이도",
       "value": 78.8,
-      "value_str": "78.8% (vs 조영증강 CT 30.3%), N-staging 특이도 93.3% (vs 13.3%)",
+      "value_str": "T-staging accuracy 78.8%(vs CT 30.3%), N-staging 특이도 93.3%(vs 13.3%)",
       "paper": "https://doi.org/10.1186/s13244-026-02445-8",
-      "paper_title": "AI-accelerated compressed sensing and deep learning reconstruction for colon MRI: prospective validation of image quality and preliminary assessment of staging accuracy versus contrast-enhanced CT"
+      "paper_title": "AI-accelerated compressed sensing and deep learning reconstruction for colon MRI"
+    },
+    {
+      "benchmark": "흉부 X-ray 병변 국소화, 3개 병원 30만 건 이상 (Grad-CAM vs 방사선전문의)",
+      "metric": "Hit rate / 오류탐지 AUC 개선폭",
+      "value": 0.575,
+      "value_str": "Grad-CAM hit rate 최대 0.575 (vs 방사선전문의 0.888), confidence 기반 탐지기에 enrichment 추가해도 AUC 개선폭 0.011 이하",
+      "paper": "https://arxiv.org/abs/2611.05011",
+      "paper_title": "Can saliency maps flag chest radiograph classifier errors at a new hospital? An external validation study"
+    },
+    {
+      "benchmark": "EchoNet-LVH 시뮬레이션 + 실제 임상 심초음파 (초음파 비디오 복원)",
+      "metric": "PSNR 개선 / EF 예측 MAE",
+      "value": 1.24,
+      "value_str": "PSNR +1.24dB(자연영상 prior 기준), 임상 심초음파 EF 예측 MAE 7.31 → 6.37",
+      "paper": "https://arxiv.org/abs/2611.05206",
+      "paper_title": "Diffusion Plug-in Priors for Self-Supervised Ultrasound Video Restoration"
     }
   ]
 }

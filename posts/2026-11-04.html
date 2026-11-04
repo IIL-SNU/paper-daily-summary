@@ -80,367 +80,425 @@ html[data-theme=light] body{background-color:#fff}
 <h1>Imaging Intelligence Daily Briefing — 2026-11-04 (수요일)</h1>
 
 <div class=meta>
-  <div>📅 발행일: 2026-11-04 (수요일) · <strong>journal-only</strong> — 추적 5개 카테고리(cs.LG/cs.CV/cs.AI/eess.IV/eess.SP) 모두 /new listing이 여전히 "Tuesday, 3 November 2026"을 가리켜 post_date(2026-11-04) &gt; listing_date(2026-11-03)로 Date Source Contract상 arXiv 섹션은 발행하지 않습니다.</div>
-  <div>📚 소스: 저널(Crossref/OpenAlex, --days 1)만 — arXiv는 저널과 독립적으로 수집되므로 arXiv 공백과 무관하게 정상 수집했습니다.</div>
-  <div>🔢 arXiv: 0건 (미발행 — 다음 실행에서 /pastweek 또는 /new에 11/4 섹션이 생기면 이 daily를 arXiv+저널 완성본으로 업그레이드합니다)</div>
-  <div>🔢 저널: Crossref 431편(랩 키워드 9종, --days 1) + OpenAlex 보충 6편</div>
-  <div>🔢 전체 스캔: 437건 · ROI 배정 105건 (24.0%)</div>
+  <div>📅 발행일: 2026-11-04 (수요일) · <strong>업그레이드 daily</strong> — 오늘 아침 실행 시점엔 추적 5개 카테고리 모두 /new listing이 여전히 "Tuesday, 3 November 2026"을 가리켜 post_date(2026-11-04) &gt; listing_date(2026-11-03)로 저널만으로 journal-only 산출물을 먼저 냈으나, 재확인 결과 5개 카테고리 모두 /new listing이 "Wednesday, 4 November 2026"으로 갱신되어 post_date와 정확히 일치해(post_date==listing_date) /new를 직접 사용한 arXiv+저널 완성본으로 이 날짜의 journal-only 산출물을 덮어씁니다.</div>
+  <div>📚 소스: arXiv(Date Source Contract 통과, /new 직접 사용) + 저널(Crossref/OpenAlex, --days 1)</div>
+  <div>🔢 arXiv: cs.LG 252 · cs.CV 160 · cs.AI 252 · eess.IV 13 · eess.SP 27 (new+cross, replacement 제외, 총 704건)</div>
+  <div>🔢 저널: Crossref 431편 + OpenAlex 보충 6편 (--days 1, 총 437편)</div>
+  <div>🔢 전체 스캔: 1024건(중복 제거 후) · ROI 배정 291건 (28.4%)</div>
 </div>
 
 <h2>📌 오늘의 결론</h2>
 <blockquote>
-오늘도 추적 5개 카테고리 모두 arXiv /new listing이 어제(11/3) 날짜에 멈춰 있어 저널(Crossref/OpenAlex) 437건만으로 하루를 구성했습니다. 선택률은 24.0%(105/437)로, 그 안에서 세 흐름이 뚜렷하게 보였습니다 — 계산 위상영상·홀로그래피가 저조도·좁은 대역·빠른 움직임 같은 나쁜 측정 조건을 수식과 캘리브레이션으로 극복하려는 흐름, 메타광학이 센싱을 넘어 광학 소자(줌렌즈)·광학 컴퓨팅(회절 신경망)·역설계까지 역할을 넓히는 흐름, 그리고 의료·음향·적외선 영상 복원이 압축센싱·물리 사전정보·트랜스포머 구조로 열악한 측정 조건에서도 품질을 끌어올리는 흐름입니다. 다만 저널 437건 중 실제로 랩 ROI와 맞닿은 신호는 14편 정도이고 나머지는 키워드만 겹친 임상·타 도메인 논문이라, 오늘 리포트도 평소 arXiv daily보다 분량이 짧습니다.
+오늘 아침 journal-only로 냈던 하루가 arXiv 704건이 들어오면서 다시 arXiv 중심의 하루로 바뀌었습니다. 가장 뚜렷한 신호는 3D Gaussian Splatting(3DGS, 장면을 수많은 작은 타원체로 표현해 실시간 렌더링을 가능하게 하는 기법) 연구가 어제(11/3)의 "정적 장면을 어떻게 제품으로 내놓을까"에서 한 단계 더 나아가, 동적(4D) 장면·수술 장면 SLAM·표준 비디오 코덱 호환 압축·품질 평가 벤치마크까지 적용 범위를 넓힌 점입니다. 그 옆에서는 MRI 재구성 세 편이 같은 에너지 기반 확산모델(MuSE)을 공유 플랫폼처럼 활용해 고해상도 정량 MRI와 모션 보정까지 풀어내는 모습을 보였고, 의료영상 AI의 신뢰성 검증은 어제의 "내부 설명이 맞는지"에서 오늘은 "새 병원·새 질병에서도 실제로 작동하는지"로 질문이 한 단계 더 구체화됐습니다. 저널 쪽은 오늘 아침 journal-only 버전에서 짚었던 계산 위상영상·메타광학 흐름이 그대로 유지됐습니다.
 </blockquote>
 
 <h2>🔭 주간 동향</h2>
-<p>오늘 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리는 실행 시각 기준으로 모두 "Tuesday, 3 November 2026" listing을 그대로 가리켰습니다. post_date(2026-11-04)가 listing_date(2026-11-03)보다 뒤라 Date Source Contract([2.1])에 따라 arXiv 섹션은 발행하지 않고, 저널 수집(Crossref 랩 키워드 9종 --days 1, OpenAlex enrich·보충)만 arXiv 공백과 무관하게 진행했습니다. Crossref 431편 + OpenAlex 보충 6편을 classify.py로 스캔해 437건 중 105건(24.0%)을 9개 ROI 버킷에 배정했는데, 이 중 실제로 "제목만 겹친 오탐"이 아닌 진짜 계산 이미징 신호는 14편 정도입니다.</p>
-<p>가장 뚜렷한 신호는 "관찰 조건이 나쁠 때 복원 품질을 수식과 캘리브레이션으로 끌어올리는" 쪽이었습니다. 스펙트럴 X-ray 위상대비영상 논문은 기존에 흡수(강도) 정보만 다루던 평가 이론(Cramér-Rao 하한)을 위상 정보까지 포함하도록 확장해, 에너지 분해형 검출기를 쓸 때 어떤 에너지 구간을 고르면 측정 정보가 가장 많이 남는지 수학적으로 계산할 수 있게 했습니다. 컴팩트 off-axis 컴퓨터생성홀로그래피(CGH) 논문은 회절 차수 선택과 반송파(carrier) 인식 밝기 보정으로 좁은 공간에서도 홀로그램 품질을 유지하려 했고, 저조도 광학 스캐닝 간섭계 논문은 4채널 프런트엔드 캘리브레이션으로 신호가 약한 상황에서의 바이어스를 제어했으며, 간섭현미경 시공간 초해상 논문은 듀얼 카메라 동시 샘플링으로 빠르게 움직이는 시료의 위상 영상을 더 정밀하게 복원했습니다. 네 편 모두 "데이터를 더 모은다"가 아니라 "측정이 왜 부족한지부터 수식으로 짚는다"는 공통 전략을 씁니다.</p>
-<p>그 옆에서는 메타광학 3편이 센싱을 넘어 광학 소자와 광학 컴퓨팅 쪽으로 쓰임새를 넓히는 모습을 보였습니다(액체 제어 메타표면 기반 전기구동 줌렌즈, 편광변환 메타원자로 만든 테라헤르츠 회절 신경망의 숫자 인식, transfer-matrix 검증을 거친 다층박막 광학필터 역설계 신경망). 이 중 테라헤르츠 회절 신경망은 부피가 큰 기존 회절 신경망 대신 메타원자 세 층만으로 저전력 광학 AI 하드웨어가 가능함을 시뮬레이션으로 보였습니다. 또 다른 축에서는 의료·음향·적외선 영상 복원 4편(대장암 MRI 압축센싱+딥러닝, Wiener 디컨볼루션 implicit physical prior, 초음파 골영상 dual-domain transformer, 적외선·가시광 PSGAN 융합)이 "물리 사전정보/압축센싱/트랜스포머로 열악한 측정 조건에서도 품질을 끌어올린다"는 같은 전략을 공유했습니다.</p>
-<p>랩 ROI 핵심 중에서는 Fourier Ptychography/Microscopy와 Lensless/Coded Imaging이 오늘 둘 다 신호 0건이었습니다. Phase Imaging/Holography 9편 중 실질 신호는 3편뿐이고(나머지는 플라즈마물리·아토초간섭계·QCD 등 완전히 다른 분야), Meta-Optics/Diffractive 15편 중 실질 신호는 2편(나머지는 통신·RF·열관리 응용), Tomography/3D Imaging 32편 중 실질 신호는 1편(나머지 31편은 임상 CT/OCT/PET 사례), Virtual Staining/Pathology 12편은 실질 신호가 사실상 없었고, Reconstruction/Inverse Problems 9편 중 3편, Deep Learning Methods 27편 중 5편이 각각 실질 신호였습니다. 도메인 Watch Lens에서 버킷별로 자세히 다룹니다.</p>
+<p>오늘 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리는 재확인 결과 모두 "Showing new listings for Wednesday, 4 November 2026"으로 post_date와 정확히 일치했습니다(post_date==listing_date, Date Source Contract 2.1절 충족). 이에 따라 /pastweek backfill이 아니라 /new를 직접 사용해 arXiv new+cross 704건(cs.LG 252·cs.CV 160·cs.AI 252·eess.IV 13·eess.SP 27)과 저널 437편(Crossref 431편+OpenAlex 보충 6편, --days 1)을 합쳐 classify.py로 스캔했고, 중복 제거 후 1024건 중 291건(28.4%)을 9개 ROI 버킷에 배정했습니다. 이번 주는 11/2(월, 완성본) → 11/3(화, journal-only로 시작했다가 arXiv 1601건으로 완성본 업그레이드) → 11/4(수, 오늘도 같은 패턴으로 journal-only에서 arXiv 704건으로 완성본 업그레이드)로, arXiv listing 갱신이 매번 하루 이상 늦게 반영되는 패턴이 이번 주 들어 반복되고 있습니다.</p>
+<p>가장 큰 덩어리는 어제에 이어 다시 Tomography/3D Imaging 버킷(42편)에 모인 3DGS 관련 논문들이었는데, 어제와는 적용 범위가 다릅니다. 어제(11/3)는 정적 장면 렌더링을 "어떻게 제품으로 배포할까"(정렬 제거, 결함 진단, 워터마킹, 밀도 제어)에 집중했다면, 오늘은 3DGS가 날씨가 바뀌는 자율주행 시뮬레이션용 4D 장면(IGSW), 카메라 동기화가 안 맞는 멀티뷰 영상(Phase-DGS), 수술실 내시경 SLAM(EndoS3), 장시간 스트리밍 3D 재구성(Mamba3R), 표준 비디오 코덱과 호환되는 압축(GSCV++), 압축으로 생기는 화질 저하를 사람 평가 기준으로 재는 벤치마크(3DGS-VBench+)까지, 상황이 더 복잡하고 동적인 실사용 현장으로 넓어지는 모습을 보였습니다. 여섯 편을 묶으면, 3DGS가 "깨끗한 정적 장면을 빠르게 렌더링한다"는 기본 가정 자체가 흔들리는 상황(날씨 변화, 동기화 오류, 조직 변형, 장시간 스트리밍)에서도 버틸 수 있는지를 시험하는 단계로 넘어갔다는 뜻입니다.</p>
+<p>그 옆에서는 MRI 재구성 세 편이 같은 설계 철학을 공유하는 모습이 뚜렷했습니다. MuSE 논문은 그레이스케일 얼굴 이미지(CelebA)로 학습한 2차원 에너지 기반 모델을 정량 MRI 복원의 사전정보로 재사용해, MRI 학습 데이터 없이도 0.5mm 등방 해상도(임상 프로토콜 대비 복셀 부피 8분의 1)를 달성했습니다. 흥미로운 건 바로 다음 논문인 Zero Echo Time MRI 재구성(EnMoCo)이 이 MuSE 모델을 그대로 가져와 모션 보정에 썼다는 점인데, 데드타임 간격 3.5샘플 이상에서 기존 CG-SENSE·Autofocusing 대비 PSNR을 10~15dB 끌어올렸습니다. 즉 같은 사전모델이 해상도 문제와 모션 보정 문제 양쪽에 재사용되고 있다는 뜻이고, 대장암 MRI 압축센싱 논문(오늘 아침 journal-only 버전부터 이어짐)까지 더하면 "범용 영상 사전정보 + 압축센싱/에너지 모델 재사용"이 MRI 재구성의 공통 전략으로 굳어지는 모습입니다.</p>
+<p>의료영상 AI의 신뢰성 검증은 어제보다 한 단계 더 날카로워졌습니다. 흉부 X-ray saliency map 논문은 30만 건이 넘는 판정을 학습 병원과 미국·베트남의 외부 두 병원에서 비교했는데, Grad-CAM이 실제 병변을 짚어내는 비율이 방사선 전문의 대비 한참 낮았고(최대 0.575 대 0.888), 더 문제는 "설명이 그럴듯해 보이는 정도"와 "실제로 맞았는지"의 관계가 병원마다 뒤집혀서 오류 탐지기를 오히려 망가뜨렸다는 점입니다. Diagnosis by Composition 논문은 아예 접근을 바꿔서, 질병명을 직접 맞히게 학습시키는 대신 방사선과 진료지침이 쓰는 "소견→질병" 논리를 그대로 모델에 넣어, 학습 때 보지 못한 질병이나 다른 기관의 희귀 질환도 소견 조합만으로 찾아냅니다. 유방 MRI 가상 조영증강 논문은 확산강조영상(DWI) 아티팩트가 있을 때 생성 결과가 얼마나 흔들리는지를 점검합니다. 세 편을 합치면, 어제(11/3)가 "모델이 내놓은 설명이 병변 위치와 일치하는가"를 물었다면, 오늘은 "그 설명·모델이 다른 병원·다른 질병에서도 여전히 믿을 만한가"로 질문이 구체화됐다는 뜻입니다.</p>
 
 <h2>🧭 어제와 달라진 점</h2>
-<p>어제(화요일, 11/3)는 실행 당시 저널 418편만으로 journal-only daily가 먼저 발행됐지만, 이후 재확인에서 추적 5개 카테고리 모두 /new listing이 "Tuesday, 3 November 2026"으로 갱신된 것이 확인돼 arXiv 1601건(new+cross)을 더한 완성본(source_mode=new)으로 업그레이드됐습니다. 그 결과 어제 리포트는 "3D Gaussian Splatting이 렌더링 경쟁에서 제품화 엔지니어링 문제로 무게중심을 옮김"과 "의료·현미경 생성모델 평가가 그럴듯함보다 생물학적 타당성·임상 재현성을 묻기 시작함"이라는 arXiv 중심의 두 클러스터를 추가로 얻었고, 기존 저널 3개 클러스터(forward-model/식별가능성, 메타표면 다중센싱, 의료영상 AI 신뢰성)는 그대로 유지됐습니다. 오늘(수요일, 11/4)은 다시 /new가 11/3 날짜에 멈춰 있어 저널 437건만으로 구성했는데, 어제 arXiv 축이었던 3DGS 제품화·생성모델 평가 흐름은 오늘 저널에서는 전혀 보이지 않고, 대신 계산 위상영상·홀로그래피의 나쁜 측정 조건 극복, 메타광학의 소자·컴퓨팅 확장, 의료·음향·적외선 복원의 물리사전정보 활용이라는 완전히 새로운 세 축이 등장했습니다. 어제 저널 3개 클러스터(산란·회절 forward-model, 메타표면 다중센싱, 의료영상 AI 신뢰성)의 대표 논문과도 DOI가 전혀 겹치지 않아, 오늘 클러스터는 어제와 다른 날짜의 Crossref 신규 등록분을 그대로 반영한 결과입니다. 즉 같은 "arXiv 공백" 상황이 이틀 연속 반복됐지만, 저널에서 매번 다른 세부 논문들이 등장해 흐름 자체는 계속 바뀌고 있습니다.</p>
+<p>어제(화요일, 11/3)는 실행 당시 저널 418편만으로 journal-only daily가 먼저 발행됐지만, 이후 재확인에서 /new listing이 "Tuesday, 3 November 2026"으로 갱신된 것이 확인돼 arXiv 1601건을 더한 완성본으로 업그레이드됐습니다. 오늘(수요일, 11/4)도 같은 패턴이 반복됐는데, 아침 journal-only 버전은 계산 위상영상·메타광학·의료 복원이라는 저널 세 흐름만 다뤘고, 이후 /new가 11/4로 갱신되면서 arXiv 704건이 들어와 그림이 바뀌었습니다. 가장 큰 차이는 3DGS 클러스터의 성격입니다 — 어제는 "정적 장면 렌더링을 어떻게 제품으로 배포할까"(정렬 제거, 결함 진단, 워터마킹)에 머물렀다면, 오늘은 4D 동적 장면·수술 SLAM·비디오 코덱 압축·품질 평가 벤치마크로 적용 범위가 넓어져, 3DGS가 "깨끗한 정적 장면"이라는 전제가 깨지는 더 어려운 조건에서도 버티는지를 시험하는 단계로 넘어갔습니다. 의료영상 AI 신뢰성 검증도 어제는 attribution map이 병변과 일치하는지(내부 설명의 충실도)를 봤다면, 오늘은 그 설명·모델이 새 병원·새 질병에서 실제로 작동하는지(외부 일반화)로 한 단계 더 구체적인 질문으로 좁혀졌습니다. 저널 쪽 세 흐름(계산 위상영상의 나쁜 측정조건 극복, 메타광학의 소자·컴퓨팅 확장, 의료 영상 복원의 물리 사전정보 활용)은 오늘 아침 journal-only 버전과 거의 그대로 유지됐습니다.</p>
 
 <h2>🧩 오늘의 클러스터 지도</h2>
-<p><small>오늘은 arXiv가 없어 저널 신호만으로 클러스터를 구성했습니다. 세 클러스터 모두 3~4편씩 근거를 확보해 기본 5행 대신 3행만 표시합니다(보조 클러스터는 근거 부족).</small></p>
 <table>
 <thead>
 <tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
 </thead>
 <tbody>
 <tr>
-  <td><strong>계산 위상영상·홀로그래피가 저조도·좁은 대역·빠른 움직임 같은 나쁜 측정 조건을 수식과 캘리브레이션으로 극복하려는 흐름</strong></td>
+  <td><strong>3D Gaussian Splatting이 '깨끗한 정적 장면' 가정을 벗어나 동적(4D) 장면·수술 SLAM·비디오 코덱 압축·품질 평가 인프라까지 적용 범위를 넓힘</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.04374" target=_blank>IGSW: Multi-Weather Urban Scene Reconstruction with Intrinsic-Decoupled Gaussian Splatting</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2611.04666" target=_blank>Phase-DGS: Phase-guided Dynamic Gaussian Splatting from Unsynchronized Multi-view Video</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2611.04358" target=_blank>EndoS3: Endoscopic Semantic Splatting SLAM</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2611.04221" target=_blank>Mamba3R: Fixed-Capacity Selective State Memory for Long-Sequence 3D Reconstruction</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2611.05359" target=_blank>GSCV++: Lightweight 3D Gaussian Splatting Sequence Compression via Standard Video Codecs</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2611.04498" target=_blank>3DGS-VBench+ and 3DGSV-Assessor</a> <span class=pill>CV</span>
+  </td>
+  <td>3DGS(3D Gaussian Splatting)는 몇 장의 이미지로 장면을 수많은 작은 타원체로 표현해 실시간 렌더링을 가능하게 한 기법인데, 지금까지 대부분의 연구는 "조명이 일정하고 카메라가 잘 동기화된 깨끗한 정적 장면"을 전제로 했습니다. 오늘 묶인 여섯 편은 전부 그 전제가 깨지는 더 어려운 상황을 다룹니다. IGSW는 자율주행 시뮬레이션에 쓰려고 같은 거리 장면을 비·눈·안개가 낀 다른 날씨로 바꿔 그리는데, 생성 모델이 만든 "날씨가 바뀐 가짜 정답 이미지"를 그대로 믿으면 원래 장면의 구조가 깨진다는 문제를 겨냥해 반사율·법선처럼 날씨와 무관한 성분과 조명·잔차처럼 날씨에 따라 바뀌는 성분을 분리합니다. Phase-DGS는 여러 대의 카메라를 완벽히 동기화하려면 비싼 전용 장비가 필요하다는 현실적 문제를 "몇 시 몇 분에 찍었는지"가 아니라 "지금 동작이 전체 동작 주기에서 어느 단계인지"로 프레임을 정렬하는 방식으로 풀어, 동기화가 어긋나도 최대 8.5dB까지 화질을 개선합니다. EndoS3는 수술 장면이 카메라도 움직이고 조직도 변형되는 상황에서 카메라 위치 추적·3D 복원·장기별 의미 분류를 동시에 풀어야 한다는 어려움을 겨냥해, 어떤 조직이 움직이는지를 먼저 구분하고 움직이는 조직마다 따로 변형을 추적합니다. Mamba3R은 드론이나 로봇이 오랜 시간 돌아다니며 3D 지도를 그릴 때 GPU 메모리가 고정돼 있어야 한다는 제약 아래, 128만 개(전체 모델 대비 매우 적은 수)의 파라미터만 추가 학습해서 정확도를 최대 40% 끌어올립니다. GSCV++와 3DGS-VBench+는 각각 "3DGS 결과물을 어떻게 기존 비디오 코덱으로 압축할까"와 "그 압축으로 생긴 화질 저하를 사람이 느끼는 방식으로 어떻게 잴까"를 다루는데, 둘 다 3DGS가 연구용 데모를 넘어 실제 방송·스트리밍 인프라에 들어갈 때 필요한 표준화 작업입니다. 여섯 편을 합치면, 3DGS 연구의 다음 단계가 "더 빠르고 예쁜 렌더링"이 아니라 "현실의 어지러운 조건(날씨 변화, 동기화 오류, 조직 변형, 장시간 운용, 압축 손실)에서도 믿을 수 있는가"를 시험하는 단계로 넘어갔다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 6개 팀이 날씨 변화·비동기 멀티뷰·수술 SLAM·장시간 스트리밍·코덱 압축·품질 평가라는 다른 실사용 조건에서 같은 방향(3DGS의 '깨끗한 정적 장면' 전제 탈피)으로 수렴, 모두 오늘 cs.CV 신규 논문</small></td>
+  <td>Phase-DGS의 phase 기반 프레임 정렬과 EndoS3의 인스턴스별 모션 분리 모듈을 랩 3DGS 파이프라인에 적용해, 비동기 멀티카메라 환경과 변형 가능한 장면(조직·직물 등)에서 재구성 품질이 얼마나 유지되는지 1주일 내로 비교한다</td>
+</tr>
+<tr>
+  <td><strong>MRI 재구성이 범용 영상 사전정보(그레이스케일 얼굴 데이터로 학습한 에너지 기반 모델)를 공유 플랫폼처럼 재사용해 고해상도화·모션보정까지 한번에 풂</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.05132" target=_blank>High-Resolution Quantitative MRI Using Contrast-Domain Multiscale Energy (MuSE) Regularization</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2611.05169" target=_blank>Unified Motion Correction and Reconstruction for Accelerated Zero Echo Time MRI</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://doi.org/10.1186/s13244-026-02445-8" target=_blank>AI-accelerated compressed sensing and deep learning reconstruction for colon MRI</a> <span class=pill>JNL</span><br>
+    <a href="https://arxiv.org/abs/2611.04623" target=_blank>Deep Plug-and-Play Proximal Distance Algorithm for Robust Principal Component Analysis</a> <span class=pill>CV</span>
+  </td>
+  <td>정량 MRI(T1 같은 조직 특성 지도를 만드는 MRI)는 지금까지 보통 1mm 해상도로 찍었는데, 이는 뇌의 미세한 구조를 보는 신경퇴행성질환 연구에는 너무 거칩니다. MuSE 논문은 "MRI 전용 학습 데이터가 없어도 된다"는 발상의 전환을 보여주는데, 사람 얼굴 사진(CelebA)으로 학습한 2차원 에너지 기반 모델을 MRI의 여러 대비 영상에 그대로 적용해서 임상 프로토콜보다 복셀 부피가 8분의 1인 0.5mm 등방 해상도를 5분 이내 스캔으로 달성했습니다. 핵심은 사전정보를 시간 축의 신호 패턴이 아니라 합성된 대비 영상 자체에 걸어서, 특정 MRI 시퀀스에 묶이지 않고 범용으로 쓸 수 있게 만들었다는 점입니다. 바로 다음 논문인 Zero Echo Time MRI 재구성은 이 MuSE 모델을 그대로 가져와 쓰는데, 이번에는 해상도가 아니라 환자가 움직여서 생기는 아티팩트를 보정하는 데 씁니다 — 데드타임 간격이 3.5샘플 이상인 어려운 조건에서 기존 CG-SENSE·Autofocusing 방법보다 PSNR을 10~15dB나 높였습니다. 즉 같은 사전모델 하나가 "해상도를 올리는 문제"와 "움직임을 보정하는 문제" 양쪽에 재사용되고 있다는 뜻이고, 대장암 MRI 압축센싱 논문(조영증강 CT 대비 병기 정확도 78.8% vs 30.3%로 전향적 검증)까지 더하면 "범용 영상 사전정보 + 압축센싱을 결합해 MRI의 느린 촬영 시간 문제를 정면으로 공략한다"는 전략이 공고해지는 모습입니다. Deep PnP RPCA 논문은 모달리티는 다르지만(초분광 영상·비디오) 같은 설계 철학(물리적 생성모델 + 딥러닝 사전정보 결합)을 공유합니다.</td>
+  <td>High<br><small>MuSE와 ZTE MRI 두 편이 같은 사전모델을 명시적으로 공유하는 직접 연결 + 대장암 MRI·RPCA까지 같은 전략을 보이는 4편째, 서로 다른 임상 과제(신경영상·호흡기 없는 촬영·종양 병기)에서 반복</small></td>
+  <td>MuSE의 2D 에너지 기반 모델(비-MRI 학습 데이터로 학습된 사전정보)을 랩 보유 정량 MRI 또는 확산 MRI 복원 파이프라인에 이식해, MRI 전용 학습 데이터 없이도 고해상도 복원이 가능한지 1주일 내로 검증한다</td>
+</tr>
+<tr>
+  <td><strong>의료영상 AI의 신뢰성 검증이 '내부 설명이 병변과 일치하는가'에서 '그 설명·모델이 새 병원·새 질병에서도 실제로 작동하는가'로 질문이 좁혀짐</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.05011" target=_blank>Can saliency maps flag chest radiograph classifier errors at a new hospital?</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2611.05231" target=_blank>Diagnosis by Composition: Detecting and Localizing Unseen Diseases</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://doi.org/10.1186/s12880-026-02996-8" target=_blank>Influence of dominant sequence artifacts on generative AI for virtual contrast-enhancement in breast MRI</a> <span class=pill>JNL</span>
+  </td>
+  <td>의료영상 AI의 설명가능성·해석가능성 연구는 이미 흔한데, 오늘 묶인 세 편은 "그 설명이 그럴듯해 보이는가"를 넘어 "다른 병원이나 다른 질병에서도 여전히 믿을 수 있는가"를 직접 시험했다는 공통점이 있습니다. Saliency map 논문은 흉부 X-ray 분류기의 판정 30만 건 이상을 학습 병원과 미국·베트남의 외부 두 병원에서 비교했는데, Grad-CAM이 실제 병변 위치를 짚어내는 비율이 방사선 전문의보다 훨씬 낮았을 뿐 아니라(최대 0.575 대 0.888), 더 심각한 문제는 "설명이 얼마나 집중돼 있는가"와 "실제로 맞았는가"의 관계 자체가 병원마다 반대 방향으로 뒤집혀서, 이 설명을 오류 탐지에 쓰면 오히려 성능이 나빠졌다는 점입니다. Diagnosis by Composition은 아예 접근을 바꿔, 질병명을 직접 맞히게 학습시키는 대신 방사선과 진료지침이 쓰는 "어떤 소견들이 모이면 어떤 질병"이라는 논리를 모델에 그대로 심어서, 재학습 없이도 학습 때 보지 못한 질병이나 다른 기관의 희귀 질환을 소견 조합만으로 찾아냅니다. 유방 MRI 가상 조영증강 논문은 확산강조영상(DWI) 아티팩트가 있을 때 생성된 가상 조영증강 영상이 얼마나 흔들리는지를 점검해, 실제 임상에 쓰기 전에 어떤 조건에서 믿을 수 없는지를 투명하게 보고합니다. 세 편을 합치면, 의료영상 AI 신뢰성 검증의 초점이 "모델 내부 설명이 그럴듯한가"에서 "그 설명·모델이 실제 배포 환경(다른 병원, 다른 질병, 다른 영상 조건)에서도 버티는가"로 한 단계 더 구체화됐다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 3개 모달리티(흉부 X-ray, 간 CT, 유방 MRI)에서 '외부 환경 일반화 실패'라는 같은 방향이 나타났지만, 공통 벤치마크나 같은 평가 프로토콜을 쓰지는 않음</small></td>
+  <td>Saliency map 논문의 외부 병원 교차검증 프로토콜(학습 기관 + 지리적으로 다른 2개 기관)을 랩이 쓰는 의료/현미경 영상 분류 모델에 적용해, attribution 기반 모니터링이 실제로 기관 간 이동에도 유효한지 1주일 내로 점검한다</td>
+</tr>
+<tr>
+  <td><strong>계산 위상영상·메타광학이 저널에서 저조도·좁은 대역 측정 조건 극복과 광학소자·컴퓨팅 확장을 계속 이어감</strong></td>
   <td>
     <a href="https://doi.org/10.1088/1361-6560/aebd38" target=_blank>Cramér–Rao lower bound for spectral propagation-based x-ray phase-contrast imaging</a> <span class="pill a">JNL · TIER A</span><br>
-    <a href="https://doi.org/10.1016/j.optlaseng.2026.110225" target=_blank>Spatial-domain diffraction-order selection and carrier-aware brightness compensation for compact off-axis CGH</a> <span class=pill>JNL</span><br>
-    <a href="https://doi.org/10.1016/j.optlaseng.2026.110217" target=_blank>Low-flux optical scanning interferometry (XuYi-LBOI commissioning study)</a> <span class=pill>JNL</span><br>
-    <a href="https://doi.org/10.1016/j.optlastec.2026.116842" target=_blank>Spatiotemporal phase super-resolution for dynamic interferometric microscopy</a> <span class=pill>JNL</span>
+    <a href="https://doi.org/10.1002/mop.70846" target=_blank>Terahertz Diffractive Deep Neural Networks via Polarization-Conversion Metasurfaces</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.29026/oea.2026.260092" target=_blank>Electrically-driven zoom lens based on liquid-controlled metasurface</a> <span class=pill>JNL</span>
   </td>
-  <td>네 편 모두 측정 조건이 나쁜 상황(광자가 부족한 스펙트럴 X-ray, 컴팩트한 공간에 넣어야 하는 CGH, 저조도 간섭계, 빠르게 움직이는 시료를 보는 간섭현미경)에서 복원 품질을 수식과 캘리브레이션으로 끌어올리려 합니다. X-ray 위상대비영상 논문은 기존에 흡수(강도) 정보만 다루던 평가 이론(Cramér-Rao 하한)을 위상 정보까지 포함하도록 확장해서, 에너지 분해형 검출기를 쓸 때 어떤 에너지 구간을 고르면 측정 정보가 가장 많이 남는지 수학적으로 계산할 수 있게 했습니다. 즉 "일단 찍고 본다"가 아니라 "찍기 전에 이 측정으로 무엇을 얼마나 정확히 알아낼 수 있는지부터 계산한다"는 접근이 홀로그래피 소자 설계와 저조도 간섭계 보정, 간섭현미경의 시공간 초해상 복원에서도 똑같이 나타났다는 뜻입니다.</td>
-  <td>Medium<br><small>서로 다른 4개 응용(X-ray 위상대비, 컴팩트 CGH, 저조도 간섭계, 간섭현미경)에서 같은 설계 철학이 동시에 나타났지만, 저널 초록이 대부분 비어 있어 제목·저널명 기준 판단이 섞여 있음</small></td>
-  <td>XPCI 논문의 generalized CRLB 프레임워크(Poisson Fisher information 기반)를 랩 Fourier ptychography/위상검색 파이프라인에 적용해, 조명 파장·노출 조건별로 어떤 변수가 식별 가능한지 1주일 내 시뮬레이션으로 비교한다</td>
-</tr>
-<tr>
-  <td><strong>메타광학이 센싱을 넘어 광학 소자·광학 컴퓨팅·역설계까지 역할을 넓히는 흐름</strong></td>
-  <td>
-    <a href="https://doi.org/10.29026/oea.2026.260092" target=_blank>Electrically-driven zoom lens based on liquid-controlled metasurface</a> <span class=pill>JNL</span><br>
-    <a href="https://doi.org/10.1002/mop.70846" target=_blank>Terahertz Diffractive Deep Neural Networks via Polarization-Conversion Metasurfaces for Digit Recognition</a> <span class="pill a">JNL · TIER A</span><br>
-    <a href="https://doi.org/10.1016/j.optlastec.2026.116858" target=_blank>A tandem neural network for the inverse design of multilayer thin-film optical filters</a> <span class=pill>JNL</span>
-  </td>
-  <td>메타표면은 원래 빛의 위상을 평면에서 조절하는 소자로 많이 쓰였는데, 오늘 묶인 세 편은 그 역할이 광학 소자(줌렌즈)와 광학 컴퓨팅(숫자 인식용 회절 신경망), 그리고 설계 자체를 맡는 신경망(역설계)으로 넓어지고 있다는 신호입니다. 테라헤르츠 회절 신경망 논문은 기존의 부피가 큰 회절 신경망 대신 편광변환 메타원자 세 층만으로 9개 숫자(MNIST 일부)를 인식하는 데 성공했는데, 이는 "많이 계산하는 대신 빛이 메타표면을 통과하는 과정 자체가 계산을 대신하게" 하려는 저전력 광학 AI 하드웨어 흐름입니다. 즉 메타광학이 센싱뿐 아니라 렌즈 교체와 신경망 연산까지 대신하는 방향으로 쓰임새가 넓어지고 있습니다.</td>
-  <td>Medium<br><small>2개 메타광학 응용(줌렌즈, 광학컴퓨팅)과 1개 ML 역설계 방법이 같은 방향을 보이지만, 세 편 모두 시뮬레이션 기반 검증이라 실측 확산 여부는 확인 필요</small></td>
-  <td>THz 메타표면 회절 신경망의 meta-atom 설계 원리(편광변환 계수 0.9 이상, 3-layer cascaded 구조)를 랩 보유 가시광/적외선 메타표면 시뮬레이션 파이프라인에 이식해, 저전력 광학 추론이 가능한 과제 범위를 1주일 내로 검토한다</td>
-</tr>
-<tr>
-  <td><strong>의료·음향·적외선 영상 복원이 압축센싱·물리 사전정보·트랜스포머 구조로 열악한 측정 조건에서도 품질을 끌어올리는 흐름</strong></td>
-  <td>
-    <a href="https://doi.org/10.1186/s13244-026-02445-8" target=_blank>AI-accelerated compressed sensing and deep learning reconstruction for colon MRI</a> <span class="pill a">JNL · TIER A</span><br>
-    <a href="https://doi.org/10.1364/ol.619118" target=_blank>Reducing ringing artifacts in Wiener deconvolution using implicit physical priors</a> <span class=pill>JNL</span><br>
-    <a href="https://doi.org/10.1016/j.ultras.2026.108354" target=_blank>Dual-domain transformer low-frequency waveform recovery for quantitative ultrasound bone imaging</a> <span class=pill>JNL</span><br>
-    <a href="https://doi.org/10.3390/electronics15215099" target=_blank>PSGAN: Pseudo-Sensing GAN for Infrared and Low-Light Visible Image Fusion</a> <span class=pill>JNL</span>
-  </td>
-  <td>대장암 MRI, 초음파 골 영상, 적외선·가시광 융합, 광학 디컨볼루션까지 서로 다른 네 분야에서 똑같이 "측정이 부족하거나 조건이 나쁠 때 압축센싱·물리 사전정보·트랜스포머 구조로 복원 품질을 끌어올린다"는 전략이 동시에 나타났습니다. 대장암 MRI 논문은 L1 정규화 압축센싱과 딥러닝 복원을 결합해 조영제 CT보다 더 높은 병기 판정 정확도(78.8% vs 30.3%)를 전향적으로 검증했는데, 방사선 노출 없이도 기존 표준 검사를 대체할 수 있다는 임상적으로 꽤 강한 주장입니다. PSGAN은 적외선과 가시광 영상을 합칠 때 생기는 도메인 차이와 저조도 문제를 센싱 과정을 거꾸로 흉내 내는 구조로 동시에 풀려 하고, Wiener 디컨볼루션 논문은 전통적인 복원 공식에 물리적 사전지식을 암묵적으로 끼워 넣어 링잉 아티팩트를 줄입니다. 즉 같은 전략이 의료·음향·적외선·광학이라는 서로 다른 네 영역에서 동시에 검증되고 있다는 뜻입니다.</td>
-  <td>Medium<br><small>서로 다른 4개 모달리티(MRI, 초음파, 적외선 융합, 광학 디컨볼루션)에서 같은 복원 전략이 동시에 나타났지만, 같은 평가 프로토콜을 공유하지는 않음</small></td>
-  <td>PSGAN의 pseudo-sensing 삼중 판별자 구조와 Wiener deconvolution의 implicit physical prior 접근을 랩 저조도·적외선 융합 또는 복원 파이프라인에 각각 적용해, 기존 압축센싱·전통 디콘볼루션 대비 복원 품질을 1주일 내로 비교한다</td>
+  <td>오늘 아침 journal-only 버전에서 짚었던 흐름이 그대로 유효합니다. X-ray 위상대비영상(XPCI) 논문은 기존에 흡수(강도) 정보만 다루던 평가 이론(Cramér-Rao 하한)을 위상 정보까지 포함하도록 확장해서, 에너지 분해형 검출기를 쓸 때 어떤 에너지 구간을 고르면 정보를 가장 많이 얻는지 촬영 전에 수학적으로 계산할 수 있게 했습니다. 테라헤르츠 회절 신경망 논문은 메타표면 세 층만으로 빛이 통과하는 과정 자체가 숫자 인식 연산을 대신하게 만들어, 부피가 큰 기존 회절 신경망 없이도 저전력 광학 AI 하드웨어가 가능함을 시뮬레이션으로 보였습니다. 줌렌즈 논문은 메타표면에 액체를 흘려 넣고 전기 신호만으로 초점을 조절하는 소자를 제안합니다. 세 편을 합치면, 메타광학이 센싱(다중 파라미터 측정)뿐 아니라 광학 소자 대체(줌렌즈)와 광학 연산(회절 신경망)까지 역할을 계속 넓혀가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>오늘 아침 journal-only 버전과 동일 저널 수집분이라 신규 증거는 아니지만, arXiv 데이터가 들어온 뒤에도 독립적으로 유지되는 저널 신호라는 점에서 재확인된 Medium</small></td>
+  <td>XPCI 논문의 generalized CRLB 프레임워크를 랩 Fourier ptychography/위상검색 파이프라인에 적용해, 조명 조건별 식별가능성을 1주일 내 시뮬레이션으로 비교한다</td>
 </tr>
 </tbody>
 </table>
 
+<p><small>참고: Tomography/3D Imaging 42편 중 geometry/SLAM/recon 관련 실질 신호(클러스터1의 6편: IGSW, Phase-DGS, EndoS3, Mamba3R, GSCV++, 3DGS-VBench+)는 Release Gate 기준(2편 이상)을 크게 넘어 클러스터1로 상단에 반영했습니다. 42편의 나머지 대다수(약 34편)는 망막/안과 OCT·PET/CT·CBCT 임상 사례·리뷰·수의학 영상이라 geometry 신호와는 구분해 다룹니다.</small></p>
+
 <h2>🔬 도메인 Watch Lens</h2>
 <div class=skim>
   <ul>
-    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 0편</strong> — 오늘은 이 버킷에 걸린 저널 논문이 없었습니다.</li>
-    <li><strong>Lensless/Coded Imaging — 오늘 배정 0편</strong> — 어제는 2편(형광현미경 수차보정, 세그먼트 광학계 PSF 통계)이 있었지만 오늘은 신규 등록분 중 이 버킷에 걸린 논문이 없습니다.</li>
-    <li><strong>Phase Imaging/Holography — 오늘 배정 9편, 실질 신호 3편</strong> — 클러스터1의 X-ray 위상대비 CRLB, 컴팩트 off-axis CGH, 저조도 간섭계(XuYi-LBOI) 세 편이 실질 신호이고(간섭현미경 시공간 초해상은 Deep Learning Methods 버킷으로 분류됨), 나머지 6편은 플라즈마 입자가속 홀로그래피, 메타표면 양자수 인식기, LLM 보조 메타표면 패턴전환, 아토초 간섭계, QCD 홀로그래픽 모델처럼 계산 위상영상 방법론과는 거리가 있는 기초물리·통신 논문입니다.</li>
-    <li><strong>Meta-Optics/Diffractive — 오늘 배정 15편, 실질 신호 2편</strong> — 클러스터2의 줌렌즈·THz 회절신경망 두 편이 실질 신호이고(필터 역설계 신경망은 Deep Learning Methods 버킷), 나머지 13편은 THz 생체센싱 흡수체, 수중광통신 복호화, SHG 부스팅 헤테로구조, 카이랄 메타표면, 편광다중 공간필터링, 통신용 형상 최적화, 음향 메타표면, 안테나 필테나, 열관리, 업컨버전 나노온도계, 미생물 센서, RCS 저감, 안테나 등으로 통신·RF·열관리·센싱 응용이라 이미징용 메타광학 신호가 아닙니다.</li>
-    <li><strong>Light-Field/Novel Sensors — 오늘 배정 1편, 실질 신호 0편</strong> — "미세조류 배양계의 공간-스펙트럼 광장(light field)과 광자 플럭스 분배 모델링"(Algal Research)은 농업생물학 논문으로 "light field" 키워드와는 무관한 완전한 오탐입니다.</li>
-    <li><strong>Tomography/3D Imaging — 오늘 배정 32편, 실질 신호 1편</strong> — "Support-Guided Canonicalization Enables Cross-Platform Label-Free Rotational Tomography"(BME Frontiers) 1편만 계산 단층촬영 방법론 신호이고(단발이라 클러스터 대신 Watch-only로 분류), 나머지 31편은 신장암 CT, 망막질환 OCT, 관상동맥 CT, 소아 CBCT, 수의학 CT 등 임상 영상 사례·리뷰입니다. geometry/SLAM/3D 복원 같은 컴퓨터비전 쪽 신호는 없었습니다.</li>
-    <li><strong>Virtual Staining/Pathology — 오늘 배정 12편, 실질 신호 0편</strong> — "staining"·"label-free" 키워드가 리뷰·LED 소자·화학합성·물리학·체육교육·치과재료·헬민스 알 염색·식물 조직 투명화·가상 병동(virtual wards)·나노입자 합성 논문에 우연히 겹친 완전한 오탐이 대부분입니다.</li>
-    <li><strong>Reconstruction/Inverse Problems — 오늘 배정 9편, 실질 신호 3편</strong> — 대장암 MRI 압축센싱(클러스터3), Wiener 디컨볼루션(클러스터3), 마이크로볼로미터 메모리효과 저감 세 편이 실질 신호이고, 나머지 6편(4D Flow MRI 리뷰, PI-DOSnet PDE 연산자, STM용 LLM 에이전트, LiDAR 압축센싱 캐노피 높이, 격자 회절 임베딩 공식, 수소흡착 예측)은 계산 이미징 핵심과는 거리가 있습니다.</li>
-    <li><strong>Deep Learning Methods — 오늘 배정 27편, 실질 신호 5편</strong> — 필터 역설계 신경망(클러스터2), 간섭현미경 시공간 초해상(클러스터1), 초음파 골영상 dual-domain transformer(클러스터3), 수중 영상 복원 TCP, PSGAN(클러스터3) 다섯 편이 실질 신호이고, 나머지 22편은 나노유체 열전달 신경망, CT 저선량 노이즈 전파, 경추 골절 분류, 영상 매니폴드 형상분석(이론적이나 응용과 거리), 열 UAV 탐색영상 슬라이싱, 갑상선암 전이 예측, 전립선 분할, 특발성 폐섬유증 추적, 유방 MRI 조영증강 생성AI, 망막출혈 검출(철회), GNN 효율화 서베이, 전자현미경 AI 리뷰, 거문고 작곡 생성AI, 유전체 에너지저장 ML, 블록체인 연합학습, 산업유산 시각융합, 고고학 드론영상 탐지, 미세조직 세분화 등 광학 이미징과 결이 다르거나 완전히 무관한 응용입니다.</li>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 1편, 실질 신호 0편</strong> — "Predicting Void Points in Self-Occluding Forest Volumes"는 드론 기반 synthetic aperture imaging으로 숲 수관을 관측하는 산림생태 논문으로, "aperture synthesis" 계열 키워드가 완전히 무관한 분야에 우연히 겹친 오탐입니다. Fourier ptychography 고유 신호는 이번 주 들어 계속 거의 없습니다.</li>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 0편</strong> — 어제(11/3)는 저널 2편(형광현미경 수차보정, 세그먼트 광학계 PSF 통계)이 있었지만 오늘은 이 버킷에 걸린 논문이 전혀 없습니다. 이번 주 가장 조용한 버킷입니다.</li>
+    <li><strong>Phase Imaging/Holography — 오늘 배정 9편, 실질 신호 1편</strong> — 클러스터4의 X-ray 위상대비 CRLB 한 편만 실질 신호이고(컴팩트 off-axis CGH·저조도 간섭계는 오늘 arXiv 데이터에는 다시 나타나지 않음), 나머지 8편은 메타표면 리뷰, 홀로그래픽 QCD, 구조광 양자수 인식기, LLM 보조 메타표면, 플라즈마 홀로그래피, 저조도 간섭계, 아토초 간섭계처럼 계산 위상영상 방법론과는 거리가 있는 기초물리·통신·리뷰 논문입니다.</li>
+    <li><strong>Meta-Optics/Diffractive — 오늘 배정 15편, 실질 신호 2편</strong> — 클러스터4의 THz 회절신경망·줌렌즈 두 편이 실질 신호이고, 나머지 13편은 THz 생체센싱 흡수체, 수중광통신 복호화, SHG 헤테로구조, 카이랄 메타표면, 통신용 형상 최적화, 음향 메타표면, 안테나 필테나, 열관리, 업컨버전 나노온도계, 미생물 센서, RCS 저감 안테나 등으로 통신·RF·열관리·센싱 응용이라 이미징용 메타광학 신호가 아닙니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 오늘 배정 2편, 실질 신호 0편</strong> — "HyVox"는 저전력 화자인식 뉴로모픽 엣지컴퓨팅 논문으로 "light field" 키워드와 무관하고, "미세조류 배양계의 공간-스펙트럼 광장(light field) 모델링"은 농업생물학 논문입니다. 둘 다 완전한 오탐입니다. 이번 주 들어 light-field/이벤트카메라 이미징 고유 신호가 계속 보이지 않아, 다음 daily에서 다시 확인이 필요한 버킷입니다.</li>
+    <li><strong>Virtual Staining/Pathology — 오늘 배정 29편, 실질 신호 사실상 0편</strong> — "staining"·"virtual" 키워드가 LLM 에이전트, 연합학습, 암석물리, 천문 신호처리, 안경 조성물, 구강암 염색법 비교, 종자 투명화, 가상 병동(virtual wards) 논문에 우연히 겹친 완전한 오탐이 대부분입니다. 29편 중 계산 이미징 방법론으로 볼 만한 신호는 없었습니다 — 이번 주 가장 noisy한 버킷 1위 자리를 Tomography/3D Imaging과 다투고 있습니다.</li>
+    <li><strong>Reconstruction/Inverse Problems — 오늘 배정 37편, 실질 신호 약 6편</strong> — 클러스터2의 MuSE MRI·ZTE MRI·대장암 MRI·Deep PnP RPCA 4편 외에 Wiener deconvolution(implicit physical prior, 오늘 아침 journal-only 버전부터 이어짐), microbolometer 메모리효과 저감 2편이 실질 신호입니다. 나머지 약 31편은 물리정보 신경망(PINN) 이론, 강화학습, 암 치료 최적화, 단백질 설계, 무선통신 안테나 최적화 등 범용 ML·공학 방법론이라 계산 이미징 핵심과는 거리가 있습니다.</li>
   </ul>
 </div>
 
 <h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
 <ul>
-  <li><strong>arXiv</strong>: 0건 — 오늘도 /new listing이 갱신되지 않아 arXiv 쪽 방법론 신호 자체가 없습니다(어제 11/3에 이은 두 번째 journal-only daily 실행).</li>
-  <li><strong>저널 전용</strong>: 계산 위상영상·홀로그래피 나쁜 측정 조건 극복 4편(X-ray 위상대비 CRLB, 컴팩트 CGH, 저조도 간섭계, 간섭현미경 시공간 초해상), 메타광학 소자·컴퓨팅 확장 3편(줌렌즈, THz 회절신경망, 필터 역설계), 의료·음향·적외선 복원 4편(대장암 MRI, Wiener 디컨볼루션, 초음파 골영상, PSGAN), 마이크로볼로미터 메모리효과·단층촬영 라벨프리 일반화 등 보조 신호 3편.</li>
-  <li><strong>공통 키워드</strong>: 비교할 arXiv 축이 없어 오늘도 "방법 vs 응용" 대비 자체가 성립하지 않습니다. 대신 저널 내부에서 "이론/캘리브레이션 중심 계산 이미징 논문"(X-ray CRLB, 간섭계 캘리브레이션, 메타광학 역설계)과 "임상/응용 관찰 논문"(CT·OCT·PET 사례, 염색법 비교, 리뷰)이 선명하게 갈렸습니다 — 전자가 오늘 클러스터의 핵심이고 후자는 대부분 Skim-only입니다.</li>
-  <li><strong>특징</strong>: 어제(11/3)는 저널 418편으로 먼저 발행된 뒤 arXiv 1601건이 뒤늦게 올라와 3DGS 엔지니어링·생성모델 평가 흐름이 추가되며 완성본으로 업그레이드됐습니다. 오늘은 다시 저널만 유일한 소스였습니다. 다음 실행에서 arXiv /new 또는 /pastweek에 11/4 섹션이 생기면 이 daily를 arXiv+저널 완성본으로 업그레이드합니다.</li>
+  <li><strong>arXiv 전용</strong>: 3DGS의 동적/실사용 조건 확장 6편(IGSW, Phase-DGS, EndoS3, Mamba3R, GSCV++, 3DGS-VBench+), MRI 재구성 사전모델 공유 2편(MuSE, ZTE MRI EnMoCo), Deep PnP RPCA, 의료영상 AI 외부 일반화 검증 2편(saliency map, Diagnosis by Composition), 초음파 비디오 복원(UltraDiff).</li>
+  <li><strong>저널 전용</strong>: X-ray 위상대비영상 CRLB 평가이론, 메타광학 소자·컴퓨팅 확장 2편(THz 회절신경망, 줌렌즈), 대장암 MRI 압축센싱+딥러닝(병기 정확도 78.8% vs CT 30.3%), 유방 MRI 가상 조영증강 아티팩트 영향 검증.</li>
+  <li><strong>공통 키워드</strong>: "의료영상 AI의 신뢰성/일반화 검증"이라는 상위 주제가 arXiv(흉부 X-ray·간 CT 외부 검증, cs.CV 신규 논문)와 저널(유방 MRI 가상 조영증강 아티팩트 영향, 영상의학 저널)에서 각각 다른 모달리티로 동시에 나타났습니다. 구체적 논문·기관은 겹치지 않지만 "배포 환경에서 실제로 작동하는가"를 묻는 방향은 같습니다.</li>
+  <li><strong>특징</strong>: 어제(11/3)는 arXiv 3DGS 클러스터가 "제품화 엔지니어링"(정렬·결함·워터마킹)에 머물렀는데, 오늘은 같은 3DGS 연구가 "조건이 나빠져도 버티는가"(날씨 변화, 비동기, 조직 변형, 장시간 운용)로 한 단계 더 들어갔습니다. 저널 세 흐름(계산 위상영상, 메타광학, 의료 영상 복원)은 오늘 아침 journal-only 버전과 거의 그대로 유지돼, arXiv 유무와 무관한 저널 고유의 연속성을 보여줍니다.</li>
 </ul>
 
 <h2>💡 오늘의 인사이트</h2>
 
 <div class=ins>
-  <h3>1. 계산 위상영상·홀로그래피가 저조도·좁은 대역·빠른 움직임 같은 나쁜 측정 조건을 수식과 캘리브레이션으로 극복하려는 흐름</h3>
-  <p>X-ray 위상대비영상 Cramér-Rao 하한 확장, 컴팩트 off-axis CGH 회절차수 선택+밝기보정, 저조도 광학 스캐닝 간섭계 캘리브레이션, 간섭현미경 시공간 초해상 네 편이 "측정이 왜 부족한지 수식으로 짚고 그 안에서 복원한다"는 같은 방향에 수렴합니다.</p>
-  <p class=conf-note>Confidence: Medium — 4개 응용이 같은 설계 철학으로 수렴하지만 저널 초록이 대부분 비어 있어 제목·저널명 기준 판단이 섞여 있음</p>
+  <h3>1. 3D Gaussian Splatting이 '깨끗한 정적 장면' 가정을 벗어나 동적(4D) 장면·수술 SLAM·비디오 코덱 압축·품질 평가 인프라까지 적용 범위를 넓힘</h3>
+  <p>IGSW(날씨 변화), Phase-DGS(비동기 멀티뷰), EndoS3(수술 SLAM), Mamba3R(장시간 스트리밍), GSCV++(코덱 압축), 3DGS-VBench+(품질 평가) 여섯 편이 3DGS가 실사용 현장의 어지러운 조건에서도 버티는지를 시험합니다.</p>
+  <p class=conf-note>Confidence: High — 6개 팀이 다른 실사용 조건에서 같은 방향으로 수렴, 모두 오늘 cs.CV 신규 논문</p>
 </div>
 
 <div class=ins>
-  <h3>2. 메타광학이 센싱을 넘어 광학 소자·광학 컴퓨팅·역설계까지 역할을 넓히는 흐름</h3>
-  <p>액체 제어 메타표면 전기구동 줌렌즈, 편광변환 메타원자 기반 THz 회절 신경망(숫자 인식), transfer-matrix 검증 다층박막 필터 역설계 신경망 세 편이 "위상 조절 소자"에서 "광학 소자+광학 컴퓨팅+ML 역설계"로 메타광학의 쓰임새가 넓어지고 있음을 보여줍니다.</p>
-  <p class=conf-note>Confidence: Medium — 세 편 모두 시뮬레이션 기반 검증이라 실측 확산 여부는 확인 필요</p>
+  <h3>2. MRI 재구성이 범용 영상 사전정보(그레이스케일 얼굴 데이터로 학습한 에너지 기반 모델)를 공유 플랫폼처럼 재사용해 고해상도화·모션보정까지 한번에 풂</h3>
+  <p>MuSE(고해상도 정량 MRI)와 Zero Echo Time MRI(모션 보정)가 같은 에너지 기반 사전모델을 재사용하고, 대장암 MRI 압축센싱·Deep PnP RPCA까지 더하면 "범용 사전정보+압축센싱 결합"이 공통 전략으로 보입니다.</p>
+  <p class=conf-note>Confidence: High — MuSE와 ZTE MRI는 같은 모델을 직접 재사용하는 명시적 연결, 4편 모두 같은 전략을 공유</p>
 </div>
 
 <div class=ins>
-  <h3>3. 의료·음향·적외선 영상 복원이 압축센싱·물리 사전정보·트랜스포머 구조로 열악한 측정 조건에서도 품질을 끌어올리는 흐름</h3>
-  <p>대장암 MRI 압축센싱+딥러닝(병기 정확도 78.8% vs CT 30.3%), Wiener 디컨볼루션 implicit physical prior, 초음파 골영상 dual-domain transformer, 적외선·가시광 PSGAN 융합 네 편이 서로 다른 모달리티에서 같은 복원 전략을 공유했습니다.</p>
-  <p class=conf-note>Confidence: Medium — 서로 다른 4개 모달리티에서 같은 방향이 나타났지만 같은 평가 프로토콜을 공유하지는 않음</p>
+  <h3>3. 의료영상 AI의 신뢰성 검증이 '내부 설명이 병변과 일치하는가'에서 '새 병원·새 질병에서도 실제로 작동하는가'로 질문이 좁혀짐</h3>
+  <p>Saliency map 외부 병원 검증, Diagnosis by Composition(미지 질병 진단), 유방 MRI 가상 조영증강 아티팩트 영향 세 편이 설명가능성 연구의 초점을 "그럴듯함"에서 "배포 환경에서의 실제 작동"으로 옮깁니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 3개 모달리티에서 같은 방향이 나타났지만 공통 평가 프로토콜은 공유하지 않음</p>
+</div>
+
+<div class=ins>
+  <h3>4. 계산 위상영상·메타광학이 저널에서 저조도 측정 조건 극복과 광학소자·컴퓨팅 확장을 계속 이어감</h3>
+  <p>X-ray 위상대비영상 CRLB 확장, THz 회절 신경망, 액체 제어 줌렌즈 세 편이 오늘 아침 journal-only 버전부터 이어지는 메타광학·계산 위상영상 흐름을 그대로 유지합니다.</p>
+  <p class=conf-note>Confidence: Medium — arXiv 데이터 유입과 무관하게 유지되는 저널 고유 신호지만 신규 증거는 아님</p>
 </div>
 
 <h2>🔬 추천 연구주제</h2>
 
 <div class=dd>
-  <h3>A. XPCI generalized CRLB 프레임워크를 랩 위상검색 파이프라인의 측정 설계 최적화에 적용</h3>
-  <p>에너지 분해형/다중 조명 조건에서 어떤 측정이 가장 많은 위상·재질 정보를 담는지, Fisher information 기반으로 랩 Fourier ptychography 설정에서도 사전에 계산할 수 있는지 검증합니다.</p>
+  <h3>A. Phase-DGS의 phase 기반 프레임 정렬을 랩 비동기 멀티카메라 3DGS 파이프라인에 적용</h3>
+  <p>타임스탬프 대신 동작 주기 내 위상으로 프레임을 정렬하는 방식이, 랩이 쓰는 비동기·저가 멀티카메라 환경에서도 동기화 오차에 강건한 동적 장면 재구성을 가능하게 하는지 검증합니다.</p>
   <p><strong>실행 1주차:</strong></p>
   <ul>
-    <li>대상 논문/코드: Cramér–Rao lower bound for spectral PB-XPCI의 generalized CRLB 프레임워크 재구현</li>
-    <li>공통 benchmark: 랩 보유 Fourier ptychography 데이터(기지의 조명 파장·노출 조건 스윕)</li>
-    <li>비교축: 조건별 CRLB 예측값, 실제 복원 오차와의 상관관계, 기존 경험적 조건 선택 대비 개선 여부</li>
-    <li>실패해도 남는 결과: 랩 위상검색 파이프라인의 측정 설계 가이드라인 1차 보고서</li>
+    <li>대상 논문/코드: Phase-DGS의 semantic phase 표현 + RealTime-4GS/FreeTimeGS 백본 재구현</li>
+    <li>공통 benchmark: 랩 보유 멀티카메라 동적 장면 데이터(의도적 시간 오프셋·프레임 드랍 주입)</li>
+    <li>비교축: PSNR 손실, 시간 오프셋 크기별 강건성, 기존 타임스탬프 기반 정렬 대비 개선폭</li>
+    <li>실패해도 남는 결과: 랩 멀티카메라 동기화 요구사항 완화 가능성 1차 진단 보고서</li>
   </ul>
 </div>
 
 <div class=dd>
-  <h3>B. THz 메타표면 회절 신경망 설계 원리를 랩 메타표면 시뮬레이션 파이프라인에 이식</h3>
-  <p>편광변환 meta-atom 기반 cascaded 회절 신경망 구조가 랩이 다루는 가시광/적외선 대역에서도 저전력 광학 추론 과제(간단한 분류/인식)에 적용 가능한지 시뮬레이션으로 1차 검토합니다.</p>
+  <h3>B. MuSE의 비-MRI 사전모델 재사용 전략을 랩 정량 MRI/확산 MRI 복원에 이식</h3>
+  <p>MRI 전용 학습 데이터 없이 범용 2D 에너지 기반 모델을 사전정보로 재사용하는 방식이, 랩 보유 정량 MRI 파이프라인에서도 고해상도 복원을 가능하게 하는지 재현합니다.</p>
   <p><strong>실행 1주차:</strong></p>
   <ul>
-    <li>대상 논문/코드: Terahertz Diffractive Deep Neural Networks via Polarization-Conversion Metasurfaces 재구현(3-layer cascaded 구조)</li>
-    <li>공통 benchmark: MNIST 서브셋 또는 랩 보유 간단 분류 데이터셋, 가시광/적외선 파장대 시뮬레이션</li>
-    <li>비교축: 인식 정확도, 필요한 메타원자 층 수, 기존 디지털 신경망 대비 연산량(에너지) 절감</li>
-    <li>실패해도 남는 결과: 랩 메타표면 파이프라인의 광학 컴퓨팅 적용 가능성 1차 진단 보고서</li>
+    <li>대상 논문/코드: MuSE의 contrast-domain multiscale energy 모델 + majorize-minimize MAP 알고리즘 재구현</li>
+    <li>공통 benchmark: 랩 보유 정량 MRI 데이터(T1 맵) + CelebA 또는 유사 범용 이미지로 학습한 에너지 모델</li>
+    <li>비교축: NRMSE, 조직별 T1 interquartile range, 기존 CG-SENSE/L1-wavelet 대비 해상도-시간 트레이드오프</li>
+    <li>실패해도 남는 결과: 랩 MRI 복원 파이프라인의 범용 사전정보 적용 가능성 1차 보고서</li>
   </ul>
 </div>
 
 <div class=dd>
-  <h3>C. pseudo-sensing GAN·implicit physical prior 복원 구조를 랩 저조도/적외선 융합 파이프라인과 비교</h3>
-  <p>PSGAN의 삼중 판별자 pseudo-sensing 구조와 Wiener deconvolution의 implicit physical prior가, 랩 보유 저조도·적외선 데이터에서 기존 압축센싱/전통 디콘볼루션 대비 복원 품질을 얼마나 개선하는지 비교합니다.</p>
+  <h3>C. Saliency map 외부 병원 교차검증 프로토콜을 랩 의료/현미경 영상 분류 모델에 적용</h3>
+  <p>랩이 쓰는 의료·현미경 영상 분류·분할 모델의 attribution 기반 설명이, 학습 기관이 아닌 다른 기관의 데이터에서도 여전히 오류를 탐지하는 데 쓸모가 있는지 정량 검증합니다.</p>
   <p><strong>실행 1주차:</strong></p>
   <ul>
-    <li>대상 논문/코드: PSGAN(삼중 판별자+pseudo-sensing), Wiener deconvolution implicit physical prior 재구현</li>
-    <li>공통 benchmark: 랩 보유 저조도·적외선 융합 데이터셋</li>
-    <li>비교축: 융합/복원 품질(기존 압축센싱·전통 디콘볼루션 대비), 다운스트림 검출 성능 변화</li>
-    <li>실패해도 남는 결과: 랩 저조도·적외선 파이프라인의 복원 구조 비교 보고서</li>
+    <li>대상 논문/코드: Can saliency maps flag classifier errors의 anatomical enrichment 측정 + 교차 병원 평가 프로토콜 재구현</li>
+    <li>공통 benchmark: 랩 보유 의료/현미경 영상 분류 모델 + 2개 이상의 서로 다른 데이터 소스(기관/장비)</li>
+    <li>비교축: 병원별 enrichment-정확도 상관관계, confidence 기반 오류탐지기 대비 saliency 추가 효과(AUC 변화)</li>
+    <li>실패해도 남는 결과: 랩 모델의 설명가능성-배포 신뢰성 격차 1차 진단 보고서</li>
   </ul>
 </div>
 
 <h2>📊 오늘의 버킷 현황</h2>
-<p><small>막대 너비: Tomography/3D Imaging(32편, catch-all 제외 최댓값) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all).</small></p>
+<p><small>막대 너비: Deep Learning Methods(156편, catch-all)를 제외한 버킷 중 최댓값인 Tomography/3D Imaging(42편) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all, 실제 편수는 라벨에 표시). 0편 버킷도 0% 막대로 표시합니다.</small></p>
 
-<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
 <div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
-<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:28%"></span></span><span class=n>9편</span></div>
-<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:47%"></span></span><span class=n>15편</span></div>
-<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:3%"></span></span><span class=n>1편</span></div>
-<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>32편</span></div>
-<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:38%"></span></span><span class=n>12편</span></div>
-<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:28%"></span></span><span class=n>9편</span></div>
-<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>27편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:21%"></span></span><span class=n>9편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:36%"></span></span><span class=n>15편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:5%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>42편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:69%"></span></span><span class=n>29편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:88%"></span></span><span class=n>37편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>156편</span></div>
 
-<p><small>⚠️ 참고: 오늘도 저널만 수집했기 때문에 버킷 편수 자체가 평소(arXiv 포함 시 200~300건대)보다 훨씬 작습니다. Fourier Ptychography/Microscopy·Lensless/Coded Imaging은 0편입니다. Phase Imaging/Holography 9편 중 실질 신호는 3편이고 나머지 6편은 기초물리·통신용입니다. Meta-Optics/Diffractive 15편 중 2편이 실질 신호이고 나머지 13편은 통신·RF·열관리·센싱용입니다. Light-Field/Novel Sensors 1편은 완전한 키워드 오탐입니다. Tomography/3D Imaging 32편 중 1편만 계산 단층촬영 방법론 신호이고 나머지 31편은 임상 영상 사례·리뷰입니다. Virtual Staining/Pathology 12편은 실질 신호가 사실상 없습니다. Reconstruction/Inverse Problems 9편 중 3편, Deep Learning Methods 27편 중 5편이 실질 신호이고 나머지는 광학 이미징과 결이 다르거나 완전히 무관한 응용입니다.</small></p>
+<p><small>⚠️ 참고: Fourier Ptychography/Microscopy 1편은 완전한 키워드 오탐(드론 산림 영상)입니다. Lensless/Coded Imaging은 오늘 0편으로, 이번 주 들어 가장 조용한 버킷입니다. Phase Imaging/Holography 9편 중 실질 신호는 1편(X-ray 위상대비 CRLB)뿐이고 나머지 8편은 기초물리·통신·리뷰입니다. Meta-Optics/Diffractive 15편 중 실질 이미징 신호는 클러스터4의 2편뿐이고 나머지 13편은 통신·RF·열관리·센싱용입니다. Light-Field/Novel Sensors 2편 모두 완전한 키워드 오탐입니다. Tomography/3D Imaging 42편 중 geometry/SLAM/recon 신호 6편(클러스터1)이 실질 신호이고, 나머지 약 34편은 망막/안과 OCT·PET/CT·CBCT 임상 사례·리뷰·수의학 영상입니다. Virtual Staining/Pathology 29편은 실질 신호가 사실상 없습니다 — "staining"·"virtual" 키워드가 LLM 에이전트·연합학습·가상 병동 등 완전히 무관한 분야에 우연히 겹친 경우가 대부분입니다. Reconstruction/Inverse Problems 37편 중 실질 신호는 약 6편(클러스터2의 4편 포함)이고 나머지 약 31편은 PINN 이론, 강화학습, 단백질 설계 등 범용 ML·공학 방법론입니다. Deep Learning Methods 156편 중 오늘 클러스터에 반영된 신호는 3편(클러스터3)이고, 추가로 초음파 비디오 복원·CT 저선량 노이즈 등 이미징 인접 신호 약 15편이 더 있으며 나머지 약 138편은 언어모델·로봇학습·시계열·통신 등 범용 ML입니다.</small></p>
 
 <h2>🗂 버킷별 주요 논문</h2>
 
-<h3>Phase Imaging/Holography (9편 중 관련 3편)</h3>
+<h3>Phase Imaging/Holography (9편 중 관련 1편)</h3>
 <div class=roi-item>
   <strong><a href="https://doi.org/10.1088/1361-6560/aebd38" target=_blank>Cramér–Rao lower bound for spectral propagation-based x-ray phase-contrast imaging</a></strong> [JNL · TIER A]<br>
-  왜 주요: 오늘 클러스터1·must-read 대표 — 흡수 기반 평가 이론을 위상 정보까지 포함하도록 확장해 에너지 분해형 검출기의 최적 에너지 구간을 수식으로 계산
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110225" target=_blank>Spatial-domain diffraction-order selection and carrier-aware brightness compensation for compact off-axis computer-generated holography</a></strong> [JNL]<br>
-  왜 주요: 컴팩트 off-axis CGH에서 회절 차수 선택과 반송파 인식 밝기 보정으로 좁은 공간에서도 홀로그램 품질 유지
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110217" target=_blank>Low-flux optical scanning interferometry with four-channel front-end calibration and signed-residual bias control</a></strong> [JNL]<br>
-  왜 주요: 저조도 광학 스캐닝 간섭계의 4채널 프런트엔드 캘리브레이션 및 바이어스 제어(XuYi-LBOI commissioning) — 주의: 응용 분야(계측/천문 여부)는 제목·저널 기준 판단이라 본문 확인 필요
+  왜 주요: 오늘 클러스터4·must-read 대표 — 흡수 기반 평가 이론을 위상 정보까지 확장해 에너지 분해형 검출기의 최적 에너지 구간을 수식으로 계산
 </div>
 
 <h3>Meta-Optics/Diffractive (15편 중 관련 2편)</h3>
 <div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/mop.70846" target=_blank>Terahertz Diffractive Deep Neural Networks via Polarization-Conversion Metasurfaces for Digit Recognition</a></strong> [JNL]<br>
+  왜 주요: 오늘 클러스터4 대표 — 편광변환 메타원자 3층만으로 저전력 광학 신경망을 구현해 숫자 인식에 성공
+</div>
+<div class=roi-item>
   <strong><a href="https://doi.org/10.29026/oea.2026.260092" target=_blank>Electrically-driven zoom lens based on liquid-controlled metasurface</a></strong> [JNL]<br>
-  왜 주요: 오늘 클러스터2 대표 — 액체 제어 메타표면으로 전기 신호만으로 줌을 조절하는 광학 소자
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1002/mop.70846" target=_blank>Terahertz Diffractive Deep Neural Networks via Polarization-Conversion Metasurfaces for Digit Recognition</a></strong> [JNL · TIER A]<br>
-  왜 주요: 오늘 클러스터2·must-read 대표 — 편광변환 메타원자 3층만으로 저전력 광학 신경망을 구현해 숫자 인식에 성공
+  왜 주요: 메타표면에 액체를 흘려 넣고 전기 신호만으로 초점을 조절하는 광학 소자, 메타광학의 역할이 센싱을 넘어 소자 대체로 확장됨을 보여줌
 </div>
 
-<h3>Reconstruction/Inverse Problems (9편 중 관련 3편)</h3>
+<h3>Tomography/3D Imaging (42편 중 관련 6편, 대표 4편만 표시)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1186/s13244-026-02445-8" target=_blank>AI-accelerated compressed sensing and deep learning reconstruction for colon MRI</a></strong> [JNL · TIER A]<br>
-  왜 주요: 오늘 클러스터3·must-read 대표 — L1 압축센싱+딥러닝 복원 MRI가 조영증강 CT 대비 병기 정확도 78.8%(vs 30.3%)를 전향적으로 검증
+  <strong><a href="https://arxiv.org/abs/2611.04374" target=_blank>IGSW: Multi-Weather Urban Scene Reconstruction with Intrinsic-Decoupled Gaussian Splatting</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터1·must-read 대표 — 날씨 편집용 4D Gaussian 장면에서 반사율/법선과 조명/잔차를 분리해 구조 붕괴 없이 날씨를 바꿈
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1364/ol.619118" target=_blank>Reducing ringing artifacts in Wiener deconvolution using implicit physical priors</a></strong> [JNL]<br>
-  왜 주요: 오늘 클러스터3 대표 — 전통적인 Wiener 디컨볼루션 공식에 물리적 사전지식을 암묵적으로 끼워 넣어 링잉 아티팩트 저감
+  <strong><a href="https://arxiv.org/abs/2611.04358" target=_blank>EndoS3: Endoscopic Semantic Splatting SLAM</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터1 대표 — 수술 장면에서 카메라 추적·변형 재구성·의미 분할을 동시에 푸는 최초의 Gaussian Splatting 기반 semantic SLAM, CRCD++ 벤치마크 공개
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1117/1.oe.65.11.114102" target=_blank>Simple method to reduce the memory effect in microbolometer cameras</a></strong> [JNL]<br>
-  왜 주요: 적외선 마이크로볼로미터 센서의 열적 메모리 효과(모션 블러 원인)를 신호처리만으로 제거하는 실시간 가능 기법
+  <strong><a href="https://arxiv.org/abs/2611.04221" target=_blank>Mamba3R: Fixed-Capacity Selective State Memory for Long-Sequence 3D Reconstruction</a></strong> [CV]<br>
+  왜 주요: 128만 개 adapter 파라미터만 학습해 고정 GPU 예산 내 장시간 스트리밍 3D 재구성 정확도를 최대 40% 개선
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.04666" target=_blank>Phase-DGS: Phase-guided Dynamic Gaussian Splatting from Unsynchronized Multi-view Video</a></strong> [CV]<br>
+  왜 주요: 타임스탬프 대신 동작 위상으로 비동기 멀티뷰 카메라를 정렬, 최대 +8.5dB PSNR 개선
 </div>
 
-<h3>Deep Learning Methods (27편 중 관련 2편, catch-all 과대표 방지)</h3>
+<h3>Virtual Staining/Pathology (29편 중 관련 신호 사실상 없음)</h3>
+<p><small>29편 전체가 "staining"·"virtual" 키워드 오탐이라 개별 논문을 선별하지 않습니다. 자세한 내역은 도메인 Watch Lens를 참고하세요.</small></p>
+
+<h3>Reconstruction/Inverse Problems (37편 중 관련 6편, 대표 3편만 표시)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116858" target=_blank>A tandem neural network for the inverse design of multilayer thin-film optical filters</a></strong> [JNL]<br>
-  왜 주요: 오늘 클러스터2 대표 — transfer-matrix 방법으로 검증된 tandem 신경망 구조로 다층박막 광학필터 역설계
+  <strong><a href="https://arxiv.org/abs/2611.05132" target=_blank>High-Resolution Quantitative MRI Using Contrast-Domain Multiscale Energy (MuSE) Regularization</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터2·must-read 대표 — 비-MRI 데이터로 학습한 에너지 기반 모델을 범용 사전정보로 재사용해 0.5mm 등방 정량 MRI를 5분 이내로 달성
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.3390/electronics15215099" target=_blank>PSGAN: Pseudo-Sensing GAN for Infrared and Low-Light Visible Image Fusion</a></strong> [JNL]<br>
-  왜 주요: 오늘 클러스터3 대표 — 삼중 판별자 pseudo-sensing 구조로 적외선·가시광 도메인 격차와 저조도 문제를 동시에 완화
+  <strong><a href="https://arxiv.org/abs/2611.05169" target=_blank>Unified Motion Correction and Reconstruction for Accelerated Zero Echo Time MRI</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터2 대표 — MuSE 사전모델을 모션 보정에 재사용, 데드타임 간격 3.5샘플 이상에서 PSNR 10~15dB 개선
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.04623" target=_blank>Deep Plug-and-Play Proximal Distance Algorithm for Robust Principal Component Analysis</a></strong> [CV]<br>
+  왜 주요: 물리적 생성모델과 딥러닝 사전정보를 결합한 PnP RPCA, 초분광 영상·비디오 배경모델링에서 기존 방법 대비 우수
+</div>
+
+<h3>Deep Learning Methods (156편 중 관련 약 15편, catch-all 과대표 방지로 2편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05011" target=_blank>Can saliency maps flag chest radiograph classifier errors at a new hospital?</a></strong> [CV · TIER A]<br>
+  왜 주요: 오늘 클러스터3·must-read 대표 — 30만 건 이상의 판정을 3개 병원에서 비교해 saliency 기반 오류탐지가 기관 간 이동에서 무너짐을 입증
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05231" target=_blank>Diagnosis by Composition: Detecting and Localizing Unseen Diseases by Composing Learned Radiological Findings</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터3 대표 — 소견 기반 진료지침 논리를 모델에 심어 재학습 없이 미지 질병·희귀 질환까지 진단
 </div>
 
 <h2>📈 벤치마크 SOTA 추이</h2>
 <table>
 <thead><tr><th>Benchmark</th><th>Metric</th><th>값</th><th>논문</th></tr></thead>
 <tbody>
-<tr><td>AI-accelerated compressed sensing MRI vs 조영증강 CT (대장암 T-staging)</td><td>T-staging accuracy</td><td>78.8% (vs CT 30.3%), N-staging 특이도 93.3% (vs 13.3%)</td><td><a href="https://doi.org/10.1186/s13244-026-02445-8" target=_blank>AI-accelerated compressed sensing and deep learning reconstruction for colon MRI</a></td></tr>
+<tr><td>CRCD++/SemSup 수술 semantic SLAM</td><td>추적/재구성/의미분할 종합 비교</td><td>기존 범용·수술 전용 semantic SLAM 전체를 능가 (abstract 기준 상대적 우위, 절대 수치 비공개)</td><td><a href="https://arxiv.org/abs/2611.04358" target=_blank>EndoS3</a></td></tr>
+<tr><td>실내외 공개 데이터셋 + 로봇 주행 (장시간 스트리밍 3D 재구성)</td><td>궤적 오차/표면·깊이 정확도</td><td>recurrent 베이스라인 대비 한 지표에서 최대 40% 개선, RTX 4060에서 11.7fps·5.1GiB</td><td><a href="https://arxiv.org/abs/2611.04221" target=_blank>Mamba3R</a></td></tr>
+<tr><td>RealTime-4DGS/FreeTimeGS 백본 (비동기 멀티뷰 동적 장면)</td><td>PSNR</td><td>베이스라인 대비 최대 +8.5dB</td><td><a href="https://arxiv.org/abs/2611.04666" target=_blank>Phase-DGS</a></td></tr>
+<tr><td>3DGS 비디오 압축 (SOTA 대비 rate-distortion)</td><td>intra/inter-prediction 이득</td><td>intra 20% 이상, inter 60% 이상 개선</td><td><a href="https://arxiv.org/abs/2611.05359" target=_blank>GSCV++</a></td></tr>
+<tr><td>3-D 방사형 MPnRAGE, 7T, 4.3분 (정량 MRI)</td><td>NRMSE / WM T1 IQR</td><td>NRMSE 0.133(CG-SENSE)·0.091(L1-wavelet) → 0.074, T1 IQR 117·47ms → 38ms</td><td><a href="https://arxiv.org/abs/2611.05132" target=_blank>MuSE</a></td></tr>
+<tr><td>시뮬레이션+생체 내 3D ZTE MRI (데드타임 간격 ≥3.5샘플)</td><td>PSNR</td><td>CG-SENSE/Autofocusing 대비 약 10~15dB 개선</td><td><a href="https://arxiv.org/abs/2611.05169" target=_blank>EnMoCo (Zero Echo Time MRI)</a></td></tr>
+<tr><td>대장암 T-병기 판정, AI 압축센싱 MRI vs 조영증강 CT</td><td>T-staging accuracy / N-staging 특이도</td><td>78.8%(vs CT 30.3%) / 93.3%(vs 13.3%)</td><td><a href="https://doi.org/10.1186/s13244-026-02445-8" target=_blank>AI-accelerated compressed sensing colon MRI</a></td></tr>
+<tr><td>흉부 X-ray 병변 국소화 (Grad-CAM vs 방사선전문의)</td><td>Hit rate</td><td>최대 0.575 (vs 방사선전문의 0.888), 오류탐지 AUC 개선폭 0.011 이하</td><td><a href="https://arxiv.org/abs/2611.05011" target=_blank>Can saliency maps flag classifier errors</a></td></tr>
+<tr><td>EchoNet-LVH 시뮬레이션+실제 임상 심초음파 (초음파 비디오 복원)</td><td>PSNR / EF 예측 MAE</td><td>PSNR +1.24dB, EF MAE 7.31→6.37</td><td><a href="https://arxiv.org/abs/2611.05206" target=_blank>UltraDiff (Diffusion Plug-in Priors)</a></td></tr>
 </tbody>
 </table>
+<p><small>abstract에 명시된 수치만 반영했습니다. 본문 확인 전까지는 비교 기준(동일 데이터셋·동일 측정 조건 여부)이 abstract 서술 그대로라고 가정합니다.</small></p>
 
 <h2>🌟 오늘의 must-read</h2>
 
 <div class=dd>
-  <h3>[TIER A] Cramér–Rao lower bound for spectral propagation-based x-ray phase-contrast imaging — Physics in Medicine &amp; Biology</h3>
-  <div class=tag>[평가축] [방법전환]</div>
-  <p><strong>왜 A급인가:</strong> 스펙트럴 X-ray 위상대비영상(XPCI)이 단일 촬영으로 위상·재질 정보를 동시에 얻을 수 있다는 가능성을 보여준 지 얼마 안 됐는데, 이 논문은 "그 측정을 어떻게 설계해야 정보를 가장 많이 얻는가"를 수학적으로 답하는 평가 이론을 처음으로 제공합니다.</p>
-  <p><strong>핵심:</strong> 기존 Cramér-Rao 하한(CRLB) 모델은 흡수(강도) 기반 스펙트럴 영상에만 적용돼, propagation-based XPCI가 갖는 공간적으로 퍼진 위상 정보를 설명하지 못했습니다. 저자들은 비이상적인 다색광 광자계수형 검출기 측정에 맞는 PB-XPCI forward model을 세우고, 단일 엣지 형상의 toy model로 에너지 분해·공간 분포 측정에 대한 Poisson Fisher information을 계산합니다. 이상적인 이중 단색광 획득에서 기존 single-ray CRLB와 새 single-edge CRLB를 비교하고, 이 모델로 비이상적인 30-kVp 다색광 시스템의 최적 에너지 문턱값까지 구해 시뮬레이션으로 검증했습니다(시뮬레이션 maximum-likelihood 추정치가 CRLB에 평균분산비 1.006~1.020로 근접). 랩이 에너지 분해형 검출기나 다중 에너지 조명으로 위상·재질 정보를 함께 뽑아내는 시스템을 설계한다면, "어떤 에너지 구간을 쓰면 무엇을 얼마나 정확히 구분할 수 있는가"를 촬영 전에 계산할 수 있다는 실용적 가치가 큽니다.</p>
-  <p><strong>주의:</strong> 검증이 단순한 두 재질 엣지 형상의 toy model과 시뮬레이션에 국한돼 있어, 복잡한 실제 조직·재질 분포에서도 같은 CRLB 예측이 유효한지는 abstract만으로 확인되지 않습니다. 또한 약한 산란(propagation-based) 가정을 벗어나는 강한 위상 변화 영역에서의 적용 가능성도 명시되지 않았습니다.</p>
+  <h3>[TIER A] EndoS3: Endoscopic Semantic Splatting SLAM — arXiv 2611.04358</h3>
+  <div class=tag>[방법전환] [인프라]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 클러스터1의 대표 논문이자, 3DGS/SLAM 연구가 "깨끗한 정적 장면"이라는 전제를 가장 극단적으로 깨는 환경(카메라도 움직이고 조직도 변형되는 수술실)에서 실제로 작동하는지를 보여준 논문입니다.</p>
+  <p><strong>핵심:</strong> 의미론적(semantic) SLAM은 카메라 위치 추적, 고품질 변형 가능 3D 재구성, 장면의 의미 분류(어떤 장기·조직인지) 세 가지를 동시에 풀어야 하는데, 수술 장면에서는 카메라도 흔들리고 조직도 수술 도구에 의해 끊임없이 변형돼 세 과제가 서로의 오차를 증폭시킵니다. 또한 세 과제를 모두 평가할 수 있는 ground truth가 달린 데이터셋 자체가 드물었습니다. EndoS3는 인스턴스(장기·조직) 단위 마스크를 세 과제 모두에 안내 신호로 활용합니다. 먼저 카메라 움직임을 보정한 뒤 남는 잔차 흐름(residual flow)을 보고 각 인스턴스가 정적인지 동적인지를 구분하는 모듈을 두고, 카메라는 정적인 Gaussian들만 기준으로 추적합니다. 각 동적 인스턴스에는 자신만의 제어점과 변형 네트워크를 따로 부여해 서로 다른 조직이 독립적으로 움직이는 것을 표현하고, 고정된 전체 "노드 예산"을 인스턴스의 크기와 비강체성(non-rigidity)에 따라 차등 배분합니다. 저자들은 담낭절제술(cholecystectomy) 실제 수술의 RGB-D 영상·카메라 궤적·인스턴스 라벨을 담은 CRCD++ 데이터셋도 함께 공개해, 추적·재구성·의미 분할 세 과제를 모두 평가할 수 있는 벤치마크를 처음 제공합니다. CRCD++와 기존 SemSup 데이터셋 모두에서 기존의 범용 및 수술 전용 semantic SLAM 방법을 모두 능가했습니다. 랩이 내시경이나 수술 로봇 영상 파이프라인에 관심이 있다면, 인스턴스별 모션 분리라는 설계 원칙 자체가 변형 가능한 다른 생물학적 장면(조직 배양, 살아있는 세포 영상 등)에도 적용해볼 만합니다.</p>
+  <p><strong>주의:</strong> ex-vivo(적출 후) 담낭절제술 데이터로 검증했는데, 살아있는 환자의 실제 in-vivo 수술 환경(출혈, 연기, 조명 변화)에서도 같은 수준의 성능이 유지되는지는 abstract만으로 확인되지 않아 본문 확인이 필요합니다.</p>
 </div>
 
 <div class=dd>
-  <h3>[TIER A] Terahertz Diffractive Deep Neural Networks via Polarization-Conversion Metasurfaces for Digit Recognition — Microwave and Optical Technology Letters</h3>
-  <div class=tag>[실사용전환] [방법전환]</div>
-  <p><strong>왜 A급인가:</strong> 회절 신경망(diffractive deep neural network)은 빛이 여러 층의 광학 소자를 통과하는 과정 자체로 연산을 수행해 전력 소모를 크게 줄일 수 있다는 아이디어인데, 기존 구현은 부피가 크고 집적이 어려웠습니다. 이 논문은 메타표면으로 그 부피 문제를 정면으로 풀었다는 점에서 눈에 띕니다.</p>
-  <p><strong>핵심:</strong> 저자들은 0.55~0.65 THz 대역에서 0.9를 넘는 편광변환 투과계수를 가지면서 완전한 위상 변조까지 제공하는 meta-atom을 설계하고, 이를 기반으로 세 개의 연쇄된(cascaded) 은닉층을 갖는 THz 광학 신경망을 구성합니다. 시뮬레이션 결과 세 층의 메타표면을 통과한 패턴화된 전자기파가 지정된 검출 영역으로 수렴하도록 학습되며, 0.6 THz에서 MNIST의 9개 숫자(0~6, 8, 9) 부분집합을 인식하는 데 성공합니다. 랩이 메타광학 기반 센싱·이미징 파이프라인에서 전처리나 간단한 분류를 "디지털 연산 없이" 광학적으로 끝내는 방향을 검토한다면, 이 논문의 meta-atom 설계 원리와 cascaded 구조는 저전력 광학 AI 하드웨어로 가는 구체적인 참조점이 됩니다.</p>
-  <p><strong>주의:</strong> 전체 결과가 시뮬레이션 기반이며 실제 THz 메타표면을 제작해 검증했는지는 abstract에 명시되지 않았습니다. 또한 9개 클래스(10개 중 7 제외)로 축소한 MNIST 부분집합에서의 성능이라 전체 10-class 인식 성능이나 잡음·정렬 오차에 대한 강건성은 본문 확인이 필요합니다.</p>
+  <h3>[TIER A] Can saliency maps flag chest radiograph classifier errors at a new hospital? An external validation study — arXiv 2611.05011</h3>
+  <div class=tag>[경고신호] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 클러스터3의 대표 논문이자, 의료영상 AI 설명가능성 연구 전체에 꽤 불편한 질문을 던진 논문입니다 — "설명이 그럴듯해 보인다"와 "그 설명을 실제 배포 모니터링에 쓸 수 있다"는 서로 다른 주장이라는 점을 대규모 데이터로 입증했습니다.</p>
+  <p><strong>핵심:</strong> Saliency map(모델이 영상의 어느 부분을 보고 판단했는지 보여주는 히트맵)은 의료영상 AI의 안전장치로 자주 언급되는데, 정작 "새로운 병원에서 모델이 틀렸을 때 그걸 saliency map이 알려줄 수 있는가"는 제대로 검증된 적이 없었습니다. 저자들은 합성곱 신경망과 비전 트랜스포머를 NIH ChestX-ray14로 학습시킨 뒤, 학습 병원과 미국·베트남의 외부 두 병원에서 모델당 30만 건이 넘는 판정을 방사선 전문의 합의 라벨과 비교했습니다. 각 설명을 "흉부의 해부학적으로 의미 있는 영역에 얼마나 집중돼 있는지"(anatomical enrichment)로 점수화하고, 이 점수가 모델의 confidence(확신도)만으로는 못 잡는 오류까지 추가로 잡아내는지 검증했습니다. 결과는 두 가지로 꽤 분명했습니다. 첫째, Grad-CAM이 실제 병변을 짚어내는 비율(hit rate)이 방사선 전문의보다 훨씬 낮았습니다(최대 0.575 대 0.888). 둘째, 더 심각한 문제인데, confidence 기반 오류탐지기에 enrichment 정보를 더해도 AUC가 0.011 이상 오르지 않았고, 합성곱 신경망의 경우 "enrichment가 높을수록 맞았을 가능성"이라는 관계 자체가 학습 병원과 외부 병원 사이에서 반대로 뒤집혀서 오히려 탐지기를 망가뜨렸습니다. 결론적으로 저자들은 "배포 모니터링은 saliency가 아니라 모델 confidence를 기준으로 삼아야 한다"고 제안합니다. 랩이 의료·현미경 영상 분류 모델을 여러 기관에 배포하거나 외부 검증을 계획한다면, saliency 기반 설명가능성을 품질 보증 수단으로 과신하지 않도록 이 논문의 프로토콜로 먼저 점검해볼 가치가 있습니다.</p>
+  <p><strong>주의:</strong> 흉부 X-ray와 Grad-CAM이라는 특정 조합에서의 결과이며, 다른 설명 기법(SHAP, 통합 그래디언트 등)이나 다른 모달리티(CT, MRI, 현미경)에서도 같은 역전 현상이 나타나는지는 abstract만으로 확인되지 않아 본문 확인이 필요합니다.</p>
 </div>
 
 <h2>⚠️ 리스크·한계 필터</h2>
 
 <div class=risk>
   <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
-  <p>[Dataset risk] arXiv가 다시 발행되지 않아 오늘 리포트도 저널 437건(실제 랩 ROI 신호 14편)만으로 구성됐습니다. 평소 대비 표본 크기가 훨씬 작습니다.</p>
-  <p>[Dataset risk] 저널 431편 중 OpenAlex로 abstract가 보강된 비율은 32/431(7.4%)뿐이라, Phase Imaging/Holography·Meta-Optics 상당수를 제목·저널명만으로 분류·판단했습니다.</p>
-  <p>[Claim risk] Virtual Staining/Pathology 12편과 Tomography/3D Imaging 32편 중 31편이 키워드 오탐이거나 계산 이미징 방법론과 무관한 임상/응용 논문입니다.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology(29편)가 사실상 전부 키워드 오탐이고, Reconstruction/Inverse Problems(37편)도 실질 신호가 약 6편뿐이라, ROI 배정 291건 중 상당수는 계산 이미징 핵심과 거리가 있습니다.</p>
+  <p>[Dataset risk] Deep Learning Methods catch-all(156편)이 cs.LG(252)·cs.AI(252) 비중 증가로 여전히 크고, 그중 이미징 핵심 신호는 클러스터3의 2편을 포함해 약 15편뿐입니다.</p>
+  <p>[Claim risk] 오늘 업그레이드로 새로 반영된 arXiv 클러스터(3DGS 동적 확장, MRI 사전모델 재사용, 의료영상 AI 외부 일반화)는 모두 오늘 하루치 신규 논문이라, 내일 이후에도 같은 방향이 이어지는지는 추가 확인이 필요합니다.</p>
 </div>
 
 <div class=risk>
   <p><strong>[개별 논문 리스크]</strong></p>
-  <p>[Claim risk] XPCI CRLB 논문의 검증이 단순 toy model과 시뮬레이션에 국한돼, 복잡한 실제 재질 분포에서도 같은 예측이 유효한지 본문 확인이 필요합니다.</p>
-  <p>[Claim risk] THz 회절 신경망의 MNIST 9-class 인식 결과가 전부 시뮬레이션이며, 실제 메타표면 제작·정렬 오차에 대한 강건성은 abstract에 언급되지 않았습니다.</p>
-  <p>[Baseline risk] 저조도 광학 스캐닝 간섭계(XuYi-LBOI) 논문은 응용 분야(계측 장비 vs 천문/타 분야 장비)가 제목만으로는 불명확해 본문 확인 전까지 계산광학 신호로 단정하기 어렵습니다.</p>
-  <p>[Dataset risk] 마이크로볼로미터 메모리효과 저감 기법은 abstract상 "patented procedure"로 서술돼 있어, 공개 구현체 유무가 본문 확인이 필요합니다.</p>
+  <p>[Claim risk] EndoS3가 ex-vivo 담낭절제술 데이터로만 검증됐고, 실제 in-vivo 수술 환경(출혈·연기·조명 변화)에서의 강건성은 abstract에 명시되지 않았습니다.</p>
+  <p>[Claim risk] Saliency map 논문의 결과가 Grad-CAM·흉부 X-ray라는 특정 조합에 한정되며, 다른 설명 기법이나 모달리티로 일반화되는지는 본문 확인이 필요합니다.</p>
+  <p>[Baseline risk] MuSE/ZTE MRI의 PSNR·NRMSE 개선폭이 abstract 기준 수치이며, 동일 재구성 시간·언더샘플링 조건에서의 공정한 비교인지는 본문 확인이 필요합니다.</p>
+  <p>[Dataset risk] 3DGS-VBench+·GSCV++의 SOTA 대비 개선폭(20%/60% 이상)이 "비교 대상 SOTA가 무엇인지"를 abstract만으로는 특정하기 어려워 본문 확인이 필요합니다.</p>
 </div>
 
 <h2>🧊 Skim-only 후보</h2>
-
 <div class=skim>
   <ul>
-    <li>Tomography/3D Imaging 임상 사례·리뷰 31편 — 신장암 CT, 망막질환 OCT, 관상동맥 CT, 소아 CBCT, 수의학 CT 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
-    <li>Virtual Staining/Pathology 12편 전체 — "staining"·"label-free" 키워드가 리뷰·LED 소자·화학합성·헬민스 알 염색·식물 조직 투명화·가상 병동 논문에 우연히 겹친 경우가 대부분입니다.</li>
+    <li>Tomography/3D Imaging 임상 사례·리뷰 약 34편 — 망막/안과 OCT, PET/CT, CBCT, 수의학 CT 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
+    <li>Virtual Staining/Pathology 29편 전체 — "staining"·"virtual" 키워드가 LLM 에이전트, 연합학습, 가상 병동, 종자 투명화, 구강암 염색법 비교 논문에 우연히 겹친 경우가 대부분입니다.</li>
     <li>Meta-Optics/Diffractive 통신·RF·열관리 13편 — THz 생체센싱 흡수체, 수중광통신 복호화, SHG 헤테로구조, 카이랄 메타표면, 통신용 형상 최적화, 안테나 필테나 등으로 이미징과 직접 연결되지 않습니다.</li>
-    <li>Phase Imaging/Holography 기초물리·통신 6편 — 플라즈마 입자가속 홀로그래피, 메타표면 양자수 인식기, LLM 보조 메타표면 패턴전환, 아토초 간섭계, QCD 홀로그래픽 모델.</li>
-    <li>Deep Learning Methods 22편 중 광학과 결이 다른 응용 — 나노유체 열전달 신경망, 거문고 작곡 생성AI, 블록체인 연합학습, 고고학 드론영상 탐지 등 완전히 무관하거나 간접적입니다.</li>
+    <li>Phase Imaging/Holography 기초물리·통신·리뷰 8편 — 메타표면 리뷰, 홀로그래픽 QCD, 구조광 양자수 인식기, LLM 보조 메타표면, 플라즈마 홀로그래피, 저조도 간섭계, 아토초 간섭계.</li>
+    <li>Reconstruction/Inverse Problems 범용 ML·공학 약 31편 — PINN 이론, 강화학습, 암 치료 최적화, 단백질 설계, 무선통신 안테나 최적화 등 방법론은 유사하나 랩 ROI 핵심과는 거리가 있습니다.</li>
+    <li>Deep Learning Methods 비이미징 약 138편 — 언어모델, 로봇 정책학습, 시계열 예측, 무선통신 등 광학 이미징과 결이 다르거나 완전히 무관한 응용입니다.</li>
   </ul>
 </div>
 
 <hr>
 
 <h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+<p><small>하루 291건 전체를 개별 bullet로 쓰는 대신, 각 버킷의 실질 신호(키워드 오탐 제외)를 대표 논문 중심으로 압축했습니다. 하위 롱테일(특히 Virtual Staining/Pathology 전체, Tomography/3D Imaging 임상 사례 약 34편, Deep Learning Methods 비이미징 약 138편)은 Watch Lens·Skim-only 섹션에서 버킷/카운트만 표시하고 개별 bullet은 생략합니다.</small></p>
 
-<h3>Phase Imaging/Holography (9편 중 관련 3편)</h3>
+<h3>Phase Imaging/Holography (9편 중 관련 1편)</h3>
 <div class=roi-item>
   <strong><a href="https://doi.org/10.1088/1361-6560/aebd38" target=_blank>Cramér–Rao lower bound for spectral propagation-based x-ray phase-contrast imaging</a></strong> <span class=pill>JNL</span><br>
-  문제: 기존 CRLB 평가 이론이 흡수 정보만 다뤄 propagation-based XPCI의 위상 정보를 설명 못함 / 방법: 다색광 광자계수형 검출기용 generalized CRLB 프레임워크(Poisson Fisher information) / 의미: 오늘 클러스터1·must-read 대표 / 우선순위: Must-read
+  문제: 스펙트럴 X-ray 위상대비영상(XPCI)의 측정 설계를 평가할 이론이 흡수(강도) 정보만 다뤄 위상 정보를 설명하지 못함 / 방법: 비이상적 다색광 광자계수형 검출기에 맞는 forward model + Poisson Fisher information 기반 일반화된 CRLB / 의미: 오늘 클러스터4·must-read 대표 / 근거: 시뮬레이션 maximum-likelihood 추정치가 CRLB에 평균분산비 1.006~1.020로 근접 / 우선순위: Must-read
 </div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110225" target=_blank>Spatial-domain diffraction-order selection and carrier-aware brightness compensation for compact off-axis computer-generated holography</a></strong> <span class=pill>JNL</span><br>
-  문제: 컴팩트 off-axis CGH가 좁은 공간 제약 속에서 밝기·품질을 유지하기 어려움 / 방법: 공간 영역 회절차수 선택 + 반송파 인식 밝기 보정 / 의미: 오늘 클러스터1 대표 / 주의: 초록 미확인(제목·저널 기준) / 우선순위: Read
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110217" target=_blank>Low-flux optical scanning interferometry with four-channel front-end calibration and signed-residual bias control</a></strong> <span class=pill>JNL</span><br>
-  문제: 저조도 조건에서 광학 스캐닝 간섭계의 신호 편향(bias)이 측정 정확도를 저하시킴 / 방법: 4채널 프런트엔드 캘리브레이션 + 부호화 잔차 바이어스 제어 / 의미: 오늘 클러스터1 대표 / 주의: 응용 분야(계측/천문 여부) 본문 확인 필요 / 우선순위: Read
-</div>
-<p><small>나머지 6편은 플라즈마 입자가속 홀로그래피, 메타표면 양자수 인식기, LLM 보조 메타표면 패턴전환, 아토초 간섭계, QCD 홀로그래픽 모델로 계산 위상영상 방법론과는 거리가 있어 개별 bullet을 생략합니다.</small></p>
+<p><small>나머지 8편(메타표면 리뷰, 홀로그래픽 QCD, 구조광 양자수 인식기, LLM 보조 메타표면, 플라즈마 홀로그래피, 저조도 간섭계, 아토초 간섭계 등)은 "phase"·"holography" 키워드가 기초물리·통신·리뷰 논문에 걸려 개별 bullet을 생략합니다.</small></p>
 
 <h3>Meta-Optics/Diffractive (15편 중 관련 2편)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.29026/oea.2026.260092" target=_blank>Electrically-driven zoom lens based on liquid-controlled metasurface</a></strong> <span class=pill>JNL</span><br>
-  문제: 메타표면 렌즈는 보통 초점거리가 고정돼 줌 기능을 구현하기 어려움 / 방법: 액체로 메타표면 형상/굴절률을 전기적으로 제어 / 의미: 오늘 클러스터2 대표(메타광학의 소자화) / 주의: 초록 미확인(제목·저널 기준) / 우선순위: Read
-</div>
-<div class=roi-item>
   <strong><a href="https://doi.org/10.1002/mop.70846" target=_blank>Terahertz Diffractive Deep Neural Networks via Polarization-Conversion Metasurfaces for Digit Recognition</a></strong> <span class=pill>JNL</span><br>
-  문제: 기존 회절 신경망이 부피가 커서 집적·저전력 광학 AI 하드웨어로 쓰기 어려움 / 방법: 편광변환 meta-atom 3층 cascaded 구조 / 의미: 오늘 클러스터2·must-read 대표(MNIST 9-class 인식) / 우선순위: Must-read
+  문제: 기존 회절 심층신경망이 부피가 크고 집적이 어려움 / 방법: 편광변환 계수 0.9 이상의 meta-atom 3층을 연쇄(cascaded)해 빛의 통과 자체가 연산을 수행 / 의미: 오늘 클러스터4 대표, 저전력 광학 컴퓨팅 신호 / 근거: 0.6THz에서 MNIST 9-class 숫자 인식 성공 / 우선순위: Read
 </div>
-<p><small>나머지 13편(THz 생체센싱 흡수체, 수중광통신 복호화, SHG 헤테로구조, 카이랄 메타표면, 편광다중 공간필터링, 통신용 형상 최적화, 음향 메타표면, 안테나 필테나, 열관리, 업컨버전 나노온도계, 미생물 센서, RCS 저감, 안테나)은 통신·RF·열관리·센싱 응용이라 이미징용 메타광학 신호가 아니라 개별 bullet을 생략합니다.</small></p>
-
-<h3>Light-Field/Novel Sensors (1편 중 관련 0편)</h3>
-<p><small>1편("미세조류 배양계의 공간-스펙트럼 광장과 광자 플럭스 분배 모델링", Algal Research)은 농업생물학 논문으로 "light field" 키워드에 우연히 겹친 완전한 오탐이라 개별 bullet을 생략합니다.</small></p>
-
-<h3>Tomography/3D Imaging (32편 중 관련 1편)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.34133/bmef.0347" target=_blank>Support-Guided Canonicalization Enables Cross-Platform Label-Free Rotational Tomography</a></strong> <span class=pill>JNL</span><br>
-  문제: 라벨 없는 회전 단층촬영 결과가 촬영 플랫폼이 바뀌면 일관성이 떨어짐 / 방법: support 기반 정규화(canonicalization)로 플랫폼 간 결과를 정렬 / 의미: 계산 단층촬영의 플랫폼 간 일반화 신호 / 주의: 단발 논문이라 클러스터 대신 Watch-only / 우선순위: Read
+  <strong><a href="https://doi.org/10.29026/oea.2026.260092" target=_blank>Electrically-driven zoom lens based on liquid-controlled metasurface</a></strong> <span class=pill>JNL</span><br>
+  문제: 기존 줌렌즈는 기계적 이동 부품에 의존해 소형화가 어려움 / 방법: 액체를 메타표면 구조에 흘려 넣어 전기 신호만으로 굴절력을 조절 / 의미: 메타광학이 센싱을 넘어 광학 소자 자체를 대체하는 방향으로 확장 / 우선순위: Read
 </div>
-<p><small>나머지 31편은 신장암 CT, 망막질환 OCT, 관상동맥 CT, 소아 CBCT, 수의학 CT 등 임상 영상 사례·리뷰라 개별 bullet을 생략합니다.</small></p>
+<p><small>나머지 13편(THz 생체센싱 흡수체, 수중광통신 복호화, SHG 헤테로구조, 카이랄 메타표면, 통신용 형상 최적화, 음향 메타표면, 안테나 필테나, 열관리, 업컨버전 나노온도계, 미생물 센서, RCS 저감 안테나 등)은 통신·RF·열관리·센싱 응용이라 이미징용 메타광학 신호가 아니라 개별 bullet을 생략합니다.</small></p>
 
-<h3>Virtual Staining/Pathology (12편 중 관련 0편)</h3>
-<p><small>12편 모두 "staining"·"label-free" 키워드가 리뷰·LED 소자·화학합성·물리학·체육교육·치과재료·헬민스 알 염색·식물 조직 투명화·가상 병동·나노입자 합성 논문에 우연히 겹친 오탐이라 개별 bullet을 생략합니다.</small></p>
+<h3>Light-Field/Novel Sensors (2편 중 관련 0편)</h3>
+<p><small>2편 모두 완전한 키워드 오탐입니다 — "HyVox"(저전력 화자인식 뉴로모픽 엣지컴퓨팅)와 미세조류 배양계 광장 모델링(농업생물학) 모두 이미징용 light-field/novel sensor 신호가 아니라 개별 bullet을 생략합니다.</small></p>
 
-<h3>Reconstruction/Inverse Problems (9편 중 관련 3편)</h3>
+<h3>Tomography/3D Imaging (42편 중 관련 6편)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1186/s13244-026-02445-8" target=_blank>AI-accelerated compressed sensing and deep learning reconstruction for colon MRI</a></strong> <span class=pill>JNL</span><br>
-  문제: 대장암 병기 판정이 방사선 피폭이 있는 조영증강 CT에 크게 의존함 / 방법: L1 정규화 압축센싱 + 딥러닝 복원 MRI 프로토콜을 전향적으로 검증 / 의미: 오늘 클러스터3·must-read 대표(T-staging 78.8% vs 30.3%) / 우선순위: Must-read
+  <strong><a href="https://arxiv.org/abs/2611.04374" target=_blank>IGSW: Multi-Weather Urban Scene Reconstruction with Intrinsic-Decoupled Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: 생성모델이 만든 날씨 편집 이미지를 그대로 학습하면 구조적 왜곡이 4D 장면에 전파됨 / 방법: 날씨 무관 성분(반사율·법선)과 날씨 특이 성분(조명·잔차)을 분리하는 2단계 프레임워크 / 의미: 오늘 클러스터1·must-read 대표 / 근거: nuScenes·Waymo에서 비교 방법 대비 최고 콘텐츠 유사도·의미 일관성·최저 시간 오차 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.04358" target=_blank>EndoS3: Endoscopic Semantic Splatting SLAM</a></strong> <span class=pill>CV</span><br>
+  문제: 수술 장면의 semantic SLAM이 카메라 추적·변형 재구성·의미 분할을 동시에 요구하는데 평가 데이터셋도 부족함 / 방법: 인스턴스 단위 모션 분리 + 인스턴스별 변형 네트워크 + CRCD++ 신규 데이터셋 공개 / 의미: 오늘 클러스터1·must-read 대표 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.04221" target=_blank>Mamba3R: Fixed-Capacity Selective State Memory for Long-Sequence 3D Reconstruction</a></strong> <span class=pill>CV</span><br>
+  문제: 장시간 스트리밍 3D 재구성이 고정 GPU 예산 안에서 품질을 유지해야 하는데 사전학습 recurrent 모델의 백본을 얼리면 적응력이 떨어짐 / 방법: 128만 파라미터짜리 state-memory adapter로 백본을 건드리지 않고 적응 경로 확보 / 의미: 오늘 클러스터1 대표 / 근거: 한 지표에서 최대 40% 개선, RTX 4060 11.7fps·5.1GiB / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.04666" target=_blank>Phase-DGS: Phase-guided Dynamic Gaussian Splatting from Unsynchronized Multi-view Video</a></strong> <span class=pill>CV</span><br>
+  문제: Dynamic Gaussian Splatting이 완벽한 카메라 간 시간 동기화를 전제하는데 실제로는 거의 불가능함 / 방법: 타임스탬프 대신 동작 주기 내 위상으로 프레임을 정렬 / 의미: 오늘 클러스터1 대표 / 근거: 시간 오프셋·프레임 드랍·카메라 정지 조건에서 최대 +8.5dB PSNR / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05359" target=_blank>GSCV++: Lightweight 3D Gaussian Splatting Sequence Compression via Standard Video Codecs</a></strong> <span class=pill>CV</span><br>
+  문제: 3DGS 시퀀스를 업계 표준 저복잡도·하드웨어 호환 조건으로 압축해야 함 / 방법: 에너지 적응형 구면조화 차원축소 + prior 기반 2D 매핑 + 콘텐츠 인식 압축 설정 / 의미: 오늘 클러스터1 대표, 3DGS 방송·스트리밍 표준화 신호 / 근거: SOTA 대비 intra 20%·inter 60% 이상 rate-distortion 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.04498" target=_blank>3DGS-VBench+ and 3DGSV-Assessor</a></strong> <span class=pill>CV</span><br>
+  문제: 3DGS 압축으로 생기는 다차원 왜곡을 평가할 정렬된 ground-truth 비디오가 실제 촬영에는 없음 / 방법: 3,036개 3DGS 재구성·9,108개 사람 평가 점수로 구성된 대규모 벤치마크 + reference-flexible 평가 모델 / 의미: 오늘 클러스터1 대표, 3DGS 품질 평가 인프라 / 우선순위: Read
+</div>
+<p><small>나머지 geometry 인접 신호는 이번 daily 데이터에서 추가로 확인되지 않았고, 임상 영상 사례·리뷰 약 34편(망막/안과 OCT, PET/CT, CBCT, 수의학 CT 등)은 계산 이미징 방법론과 거리가 있어 생략합니다.</small></p>
+
+<h3>Virtual Staining/Pathology (29편 중 관련 0편)</h3>
+<p><small>29편 전체가 "staining"·"virtual" 키워드가 LLM 에이전트·연합학습·가상 병동·종자 투명화·구강암 염색법 비교·나노입자 합성 논문에 우연히 겹친 완전한 오탐이라 개별 bullet을 생략합니다.</small></p>
+
+<h3>Reconstruction/Inverse Problems (37편 중 관련 6편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05132" target=_blank>High-Resolution Quantitative MRI Using Contrast-Domain Multiscale Energy (MuSE) Regularization</a></strong> <span class=pill>CV</span><br>
+  문제: 정량 MRI가 보통 1mm로 찍혀 미세 뇌 구조를 보는 신경퇴행성질환 연구에 부족함 / 방법: 비-MRI 데이터(CelebA)로 학습한 2D 에너지 기반 모델을 합성 대비 영상에 적용하는 범용 사전정보 / 의미: 오늘 클러스터2·must-read 대표 / 근거: 0.5mm 등방 해상도를 5분 이내 스캔으로 달성, NRMSE 0.074 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05169" target=_blank>Unified Motion Correction and Reconstruction for Accelerated Zero Echo Time MRI</a></strong> <span class=pill>CV</span><br>
+  문제: Zero Echo Time MRI가 데드타임 갭·두부 움직임·언더샘플링이 동시에 품질을 떨어뜨림 / 방법: MuSE 사전모델을 재사용한 에너지 기반 MAP 모션 보정+재구성 통합 프레임워크 / 의미: 오늘 클러스터2 대표, MuSE의 재사용성을 입증 / 근거: 데드타임 갭 3.5샘플 이상에서 PSNR 10~15dB 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.04623" target=_blank>Deep Plug-and-Play Proximal Distance Algorithm for Robust Principal Component Analysis</a></strong> <span class=pill>CV</span><br>
+  문제: 전통 RPCA는 데이터 사전정보 활용이 부족하고 딥러닝 디노이저는 물리 모델 제약이 없어 구조적 잡음에 약함 / 방법: 물리적 생성모델과 딥러닝 사전정보를 결합한 다채널 PnP 방법 / 의미: 오늘 클러스터2 보조 신호, 초분광 영상·비디오 배경모델링 적용 / 우선순위: Read
 </div>
 <div class=roi-item>
   <strong><a href="https://doi.org/10.1364/ol.619118" target=_blank>Reducing ringing artifacts in Wiener deconvolution using implicit physical priors</a></strong> <span class=pill>JNL</span><br>
-  문제: 전통적인 Wiener 디컨볼루션이 링잉(ringing) 아티팩트를 만들어냄 / 방법: 암묵적 물리 사전정보를 복원 공식에 끼워 넣음 / 의미: 오늘 클러스터3 대표 / 주의: 초록 미확인(제목·저널 기준) / 우선순위: Read
+  문제: 전통적인 Wiener 디컨볼루션 공식이 링잉 아티팩트를 만듦 / 방법: 물리적 사전지식을 암묵적으로 끼워 넣는 보정 / 의미: 오늘 아침 journal-only 버전부터 이어지는 계산 이미징 복원 신호 / 우선순위: Read
 </div>
 <div class=roi-item>
   <strong><a href="https://doi.org/10.1117/1.oe.65.11.114102" target=_blank>Simple method to reduce the memory effect in microbolometer cameras</a></strong> <span class=pill>JNL</span><br>
-  문제: 적외선 마이크로볼로미터 센서가 열적 메모리 효과로 모션 블러를 일으킴 / 방법: 픽셀별로 이전 판독 이전의 복사 이력을 제거하는 실시간 신호처리 / 의미: 센서를 시간상수형에서 적분시간형으로 재해석하는 실용적 기법 / 주의: 특허 절차로 서술돼 공개 구현 여부 확인 필요 / 우선순위: Read
+  문제: 적외선 마이크로볼로미터 센서의 열적 메모리 효과가 모션 블러를 일으킴 / 방법: 신호처리만으로 실시간 가능한 메모리 효과 저감 / 의미: 오늘 아침 journal-only 버전부터 이어지는 신호 / 우선순위: Read
 </div>
-<p><small>나머지 6편(4D Flow MRI 리뷰, PI-DOSnet PDE 연산자, STM용 LLM 에이전트, LiDAR 압축센싱 캐노피 높이, 격자 회절 임베딩 공식, 수소흡착 예측)은 계산 이미징 핵심과는 거리가 있어 개별 bullet을 생략합니다.</small></p>
+<p><small>나머지 약 32편(PINN 이론, 강화학습, 암 치료 최적화, 단백질 설계, 무선통신 안테나 최적화, 4D Flow MRI 리뷰 등)은 방법론은 유사하나 계산 이미징 핵심과는 거리가 있어 개별 bullet을 생략합니다.</small></p>
 
-<h3>Deep Learning Methods (27편 중 관련 5편, catch-all 과대표 방지로 2편만 강조)</h3>
+<h3>Deep Learning Methods (156편 중 관련 약 15편, catch-all 과대표 방지로 4편만 표시)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116858" target=_blank>A tandem neural network for the inverse design of multilayer thin-film optical filters</a></strong> <span class=pill>JNL</span><br>
-  문제: 다층박막 광학필터 설계가 전통적으로 시행착오·최적화에 크게 의존함 / 방법: transfer-matrix 방법으로 검증된 tandem 신경망 역설계 / 의미: 오늘 클러스터2 대표 / 주의: 초록 미확인(제목 기준) / 우선순위: Read
+  <strong><a href="https://arxiv.org/abs/2611.05011" target=_blank>Can saliency maps flag chest radiograph classifier errors at a new hospital?</a></strong> <span class=pill>CV</span><br>
+  문제: Saliency map이 의료영상 AI의 안전장치로 쓰이지만 새 병원에서의 오류 탐지 능력이 검증되지 않음 / 방법: 3개 병원 30만 건 이상 판정을 방사선 전문의 라벨과 비교하는 외부 검증 / 의미: 오늘 클러스터3·must-read 대표 / 근거: hit rate 최대 0.575 vs 전문의 0.888, enrichment-정확도 관계가 병원 간 역전 / 우선순위: Must-read
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.116842" target=_blank>Spatiotemporal phase super-resolution for dynamic interferometric microscopy using dual-camera coordinated sampling and prior guidance</a></strong> <span class=pill>JNL</span><br>
-  문제: 빠르게 움직이는 시료의 간섭현미경 위상 영상이 시공간 해상도 trade-off를 겪음 / 방법: 듀얼 카메라 동시 샘플링 + prior guidance 초해상 복원 / 의미: 오늘 클러스터1 대표 / 주의: 초록 미확인(제목 기준) / 우선순위: Read
+  <strong><a href="https://arxiv.org/abs/2611.05231" target=_blank>Diagnosis by Composition: Detecting and Localizing Unseen Diseases by Composing Learned Radiological Findings</a></strong> <span class=pill>CV</span><br>
+  문제: 질병명을 직접 학습시키는 방식은 학습 때 본 질병에만 갇히고 해석이 어려움 / 방법: 소견(findings)을 어휘로 학습해 진료지침 기반 "소견→질병" 논리를 파라미터 없는 조합으로 구현 / 의미: 오늘 클러스터3 대표 / 근거: 간 CT에서 미지 질병·타 기관 희귀질환·외부 코호트 모두 비교군 능가 / 우선순위: Read
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.ultras.2026.108354" target=_blank>Dual-domain transformer low-frequency waveform recovery for quantitative ultrasound bone imaging</a></strong> <span class=pill>JNL</span><br>
-  문제: 정량 초음파 골영상이 저주파 파형 정보 손실로 정확도가 떨어짐 / 방법: 공간-주파수 dual-domain transformer로 파형 복원 / 의미: 오늘 클러스터3 대표 / 주의: 초록 미확인(제목 기준) / 우선순위: Read
+  <strong><a href="https://arxiv.org/abs/2611.05206" target=_blank>Diffusion Plug-in Priors for Self-Supervised Ultrasound Video Restoration</a></strong> <span class=pill>CV</span><br>
+  문제: 초음파 비디오는 해상도가 낮고 스펙클 잡음이 있는데 짝지어진 저/고해상도 학습 데이터가 거의 없음 / 방법: 고정된 사전학습 diffusion 모델을 plug-in prior로 써서 재학습 없이 초해상도+디스펙클 동시 수행 / 의미: 비지도 의료 영상 복원 신호 / 근거: PSNR +1.24dB, 임상 심초음파 EF 예측 MAE 7.31→6.37 / 우선순위: Read
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1364/ao.614984" target=_blank>Real-Time Underwater Optical Image Restoration Using a Progressive Transformer-CNN (TCP) Model</a></strong> <span class=pill>JNL</span><br>
-  문제: 수중 광학 영상이 산란·색 왜곡으로 실시간 복원이 어려움 / 방법: 점진적(progressive) 트랜스포머-CNN 하이브리드 구조 / 의미: 클러스터3과 같은 결의 보조 신호(열악 조건 복원) / 주의: 초록 미확인(제목 기준) / 우선순위: Read
+  <strong><a href="https://doi.org/10.1186/s12880-026-02996-8" target=_blank>Influence of dominant sequence artifacts on generative AI for virtual contrast-enhancement in breast MRI</a></strong> <span class=pill>JNL</span><br>
+  문제: 가상 조영증강(vCE) 유방 MRI가 확산강조영상(DWI) 아티팩트에 얼마나 흔들리는지 불분명함 / 방법: pix2pix 기반 vCE 합성 모델의 강건성을 아티팩트 조건별로 평가 / 의미: 오늘 클러스터3 보조 신호, 저널 쪽 "외부 일반화 검증" 대응 사례 / 우선순위: Read
 </div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.3390/electronics15215099" target=_blank>PSGAN: Pseudo-Sensing GAN for Infrared and Low-Light Visible Image Fusion</a></strong> <span class=pill>JNL</span><br>
-  문제: 적외선·가시광 융합이 도메인 격차와 저조도 환경에서 품질이 저하됨 / 방법: 센싱 과정을 역으로 흉내 내는 pseudo-sensing 삼중 판별자 GAN / 의미: 오늘 클러스터3 대표 / 우선순위: Read
-</div>
-<p><small>나머지 22편(나노유체 열전달 신경망, CT 저선량 노이즈 전파, 경추 골절 분류, 영상 매니폴드 형상분석, 열 UAV 탐색영상, 갑상선암 전이 예측, 전립선 분할, 폐섬유증 추적, 유방 MRI 생성AI, 망막출혈 검출(철회), GNN 서베이, 전자현미경 AI 리뷰, 거문고 작곡 생성AI, 유전체 에너지저장 ML, 블록체인 연합학습, 산업유산 시각융합, 고고학 드론영상 탐지 등)은 광학 이미징과 결이 다르거나 완전히 무관해 개별 bullet을 생략합니다.</small></p>
+<p><small>나머지 약 11편(CT 저선량 노이즈 전파, 유방 MRI 조영증강 생성 AI, 전립선 PI-RADS 예측, 심장 4D Flow MRI 초해상도 등)은 중복을 피해 bullet을 생략하고, 비이미징 범용 ML 약 141편은 버킷·카운트만 표시합니다.</small></p>
 
 <hr>
 
 <h2>🔗 참고 링크</h2>
 <ul>
   <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
-  <li><a href="https://doi.org/10.1088/1361-6560/aebd38" target=_blank>Cramér–Rao lower bound for spectral propagation-based x-ray phase-contrast imaging</a></li>
-  <li><a href="https://doi.org/10.1002/mop.70846" target=_blank>Terahertz Diffractive Deep Neural Networks via Polarization-Conversion Metasurfaces for Digit Recognition</a></li>
+  <li><a href="https://arxiv.org/abs/2611.04358" target=_blank>EndoS3: Endoscopic Semantic Splatting SLAM</a></li>
+  <li><a href="https://arxiv.org/abs/2611.05011" target=_blank>Can saliency maps flag chest radiograph classifier errors at a new hospital?</a></li>
+  <li><a href="https://arxiv.org/abs/2611.05132" target=_blank>High-Resolution Quantitative MRI Using Contrast-Domain Multiscale Energy (MuSE) Regularization</a></li>
   <li><a href="2026-11-03.html">2026-11-03 Daily Briefing</a></li>
   <li><a href="../feed.xml">RSS 피드</a></li>
 </ul>
 
 <footer>
-  <p>📚 입력: 2026-11-04 journal-only daily(arXiv 미발행) · 저널 Crossref 431편 + OpenAlex 보충 6편(--days 1) · 전체 스캔 437건 · ROI 배정 105건 (24.0%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP(arXiv 0건, 다음 실행에서 /pastweek·/new 확인 후 업그레이드 예정)</p>
+  <p>📚 입력: 2026-11-04 arXiv+저널 업그레이드 daily(오늘 아침 journal-only 산출물을 덮어씀) · arXiv 704건(new+cross, 5개 카테고리) + 저널 437편(Crossref 431편+OpenAlex 보충 6편, --days 1) · 전체 스캔 1024건(중복 제거) · ROI 배정 291건 (28.4%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
   <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
   <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
   <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
