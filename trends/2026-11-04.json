@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-04",
+  "source_listing_date": "2026-11-04",
+  "source_mode": "journal-only",
+  "note": "2026-11-04(수) 정기 daily 실행. Date Source Contract 확인 결과 추적 5개 카테고리(cs.LG, cs.CV, cs.AI, eess.IV, eess.SP) 모두 /new listing이 여전히 'Tuesday, 3 November 2026'을 가리켜 post_date(2026-11-04) > listing_date(2026-11-03)였다. arXiv가 아직 당일 분을 올리지 않은 것으로 보고 arXiv 섹션은 발행하지 않았다([2.1]절 저널 독립 규칙에 따라 journal-only daily로 진행). Crossref(--days 1, 랩 키워드 9종) 431편 + OpenAlex works 보충 6편을 수집해 classify.py로 437건을 스캔, 105건(24.0%)을 9개 ROI 버킷에 배정했다. 어제(11/3)는 결국 /new가 'Tuesday, 3 November 2026'으로 갱신되며 arXiv 1601건+저널 418편 완성본(source_mode=new)으로 업그레이드됐으나, 오늘(11/4) 기준으로는 아직 /new가 그 다음 날짜로 넘어가지 않아 다시 journal-only로 진행한다. 저널 선택분만으로 '계산 위상영상·홀로그래피가 나쁜 측정 조건을 수식/캘리브레이션으로 극복'(X-ray 위상대비 CRLB·컴팩트 CGH·저조도 간섭계·간섭현미경 시공간 초해상 4편), '메타광학이 센싱을 넘어 광학소자·광학컴퓨팅·역설계로 확장'(줌렌즈·THz 회절신경망·필터 역설계 3편), '의료·음향·적외선 복원이 압축센싱/물리prior/트랜스포머로 열악 조건을 극복'(대장암 MRI·Wiener 디컨볼루션·초음파 골영상·PSGAN 4편) 세 클러스터를 구성할 수 있어(각 3~4편) journal-only 발행 기준(클러스터 3개 이상, 각 2편 이상)을 충족했다. 어제 클러스터(3DGS 엔지니어링, 의료/현미경 생성모델 평가, 산란·회절 forward-model, 메타표면 다중센싱, 의료영상 AI 신뢰성)와 오늘 세 클러스터는 대표 논문·DOI가 전혀 겹치지 않아 Editorial Uniqueness Gate를 충족한다. arXiv가 올라오면 다음 실행의 Calendar Audit이 이 daily를 pastweek-date-section 또는 new로 업그레이드한다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 0,
+      "eess.SP": 0
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 431,
+    "journal_window_days": 1
+  },
+  "totals": {
+    "total_scanned": 437,
+    "selected": 105
+  },
+  "classified": {
+    "total_scanned": 437,
+    "selected": 105,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 9,
+      "Meta-Optics/Diffractive": 15,
+      "Light-Field/Novel Sensors": 1,
+      "Tomography/3D Imaging": 32,
+      "Virtual Staining/Pathology": 12,
+      "Reconstruction/Inverse Problems": 9,
+      "Deep Learning Methods": 27
+    }
+  },
+  "daily_thesis": "오늘도 추적 5개 카테고리 모두 arXiv /new listing이 어제(11/3) 날짜에 멈춰 있어 저널(Crossref 431편 + OpenAlex 6편, 총 437건) 수집만으로 하루를 구성한 journal-only daily입니다. 선택률은 24.0%(105/437)로, 그 안에서 세 흐름이 뚜렷합니다 — 계산 위상영상·홀로그래피가 저조도·좁은 대역·빠른 움직임 같은 나쁜 측정 조건을 수식과 캘리브레이션으로 극복하려는 흐름, 메타광학이 센싱을 넘어 렌즈·광학 컴퓨팅·역설계까지 역할을 넓히는 흐름, 그리고 의료·음향·적외선 영상 복원이 압축센싱·물리 사전정보·트랜스포머 구조로 열악한 측정 조건에서도 품질을 끌어올리는 흐름입니다."
+}

@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-04",
+  "results": [
+    {
+      "benchmark": "AI-accelerated compressed sensing MRI vs contrast-enhanced CT (대장암 T-staging)",
+      "metric": "T-staging accuracy",
+      "value": 78.8,
+      "value_str": "78.8% (vs 조영증강 CT 30.3%), N-staging 특이도 93.3% (vs 13.3%)",
+      "paper": "https://doi.org/10.1186/s13244-026-02445-8",
+      "paper_title": "AI-accelerated compressed sensing and deep learning reconstruction for colon MRI: prospective validation of image quality and preliminary assessment of staging accuracy versus contrast-enhanced CT"
+    }
+  ]
+}

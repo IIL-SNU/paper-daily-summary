@@ -1,0 +1,113 @@
+{
+  "date": "2026-11-04",
+  "source_mode": "journal-only",
+  "clusters": [
+    {
+      "cluster": "계산 위상영상·홀로그래피가 저조도·좁은 대역·빠른 움직임 같은 나쁜 측정 조건을 수식과 캘리브레이션으로 극복하려는 흐름",
+      "papers": [
+        {
+          "title": "Cramér–Rao lower bound for spectral propagation-based x-ray phase-contrast imaging",
+          "arxiv_id": "https://doi.org/10.1088/1361-6560/aebd38",
+          "journal_or_source": "Physics in Medicine & Biology (JNL)"
+        },
+        {
+          "title": "Spatial-domain diffraction-order selection and carrier-aware brightness compensation for compact off-axis computer-generated holography",
+          "arxiv_id": "https://doi.org/10.1016/j.optlaseng.2026.110225",
+          "journal_or_source": "Optics and Lasers in Engineering (JNL)"
+        },
+        {
+          "title": "Low-flux optical scanning interferometry with four-channel front-end calibration and signed-residual bias control: A XuYi-LBOI commissioning study",
+          "arxiv_id": "https://doi.org/10.1016/j.optlaseng.2026.110217",
+          "journal_or_source": "Optics and Lasers in Engineering (JNL)"
+        },
+        {
+          "title": "Spatiotemporal phase super-resolution for dynamic interferometric microscopy using dual-camera coordinated sampling and prior guidance",
+          "arxiv_id": "https://doi.org/10.1016/j.optlastec.2026.116842",
+          "journal_or_source": "Optics & Laser Technology (JNL)"
+        }
+      ],
+      "why": "네 편 모두 측정 조건이 나쁜 상황(광자가 부족한 스펙트럴 X-ray, 컴팩트한 공간에 넣어야 하는 CGH, 저조도 간섭계, 빠르게 움직이는 시료를 보는 간섭현미경)에서 복원 품질을 수식과 캘리브레이션으로 끌어올리려 합니다. X-ray 위상대비영상 논문은 기존에 흡수(강도) 정보만 다루던 평가 이론(Cramér-Rao 하한)을 위상 정보까지 포함하도록 확장해서, 에너지 분해형 검출기를 쓸 때 어떤 에너지 구간을 고르면 측정 정보가 가장 많이 남는지 수학적으로 계산할 수 있게 했습니다. 즉 '일단 찍고 본다'가 아니라 '찍기 전에 이 측정으로 무엇을 얼마나 정확히 알아낼 수 있는지부터 계산한다'는 접근이 홀로그래피 소자 설계와 저조도 간섭계 보정, 간섭현미경의 시공간 초해상 복원에서도 똑같이 나타났다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 4개 응용(X-ray 위상대비, 컴팩트 CGH, 저조도 간섭계, 간섭현미경)에서 같은 설계 철학이 동시에 나타났지만, 저널 초록이 대부분 비어 있어 제목·저널명 기준 판단이 섞여 있음",
+      "lab_action": "XPCI 논문의 generalized CRLB 프레임워크(Poisson Fisher information 기반)를 랩 Fourier ptychography/위상검색 파이프라인에 적용해, 조명 파장·노출 조건별로 어떤 변수가 식별 가능한지 1주일 내 시뮬레이션으로 비교한다"
+    },
+    {
+      "cluster": "메타광학이 센싱을 넘어 광학 소자(줌렌즈)·광학 컴퓨팅(회절 신경망)·역설계까지 역할을 넓히는 흐름",
+      "papers": [
+        {
+          "title": "Electrically-driven zoom lens based on liquid-controlled metasurface",
+          "arxiv_id": "https://doi.org/10.29026/oea.2026.260092",
+          "journal_or_source": "Opto-Electronic Advances (JNL)"
+        },
+        {
+          "title": "Terahertz Diffractive Deep Neural Networks via Polarization-Conversion Metasurfaces for Digit Recognition",
+          "arxiv_id": "https://doi.org/10.1002/mop.70846",
+          "journal_or_source": "Microwave and Optical Technology Letters (JNL)"
+        },
+        {
+          "title": "A tandem neural network for the inverse design of multilayer thin-film optical filters validated against the transfer-matrix method",
+          "arxiv_id": "https://doi.org/10.1016/j.optlastec.2026.116858",
+          "journal_or_source": "Optics & Laser Technology (JNL)"
+        }
+      ],
+      "why": "메타표면은 원래 빛의 위상을 평면에서 조절하는 소자로 많이 쓰였는데, 오늘 묶인 세 편은 그 역할이 광학 소자(줌렌즈)와 광학 컴퓨팅(숫자 인식용 회절 신경망), 그리고 설계 자체를 맡는 신경망(역설계)으로 넓어지고 있다는 신호입니다. 테라헤르츠 회절 신경망 논문은 기존의 부피가 큰 회절 신경망 대신 편광변환 메타원자 세 층만으로 9개 숫자(MNIST 일부)를 인식하는 데 성공했는데, 이는 '많이 계산하는 대신 빛이 메타표면을 통과하는 과정 자체가 계산을 대신하게' 하려는 저전력 광학 AI 하드웨어 흐름입니다. 즉 메타광학이 센싱뿐 아니라 렌즈 교체와 신경망 연산까지 대신하는 방향으로 쓰임새가 넓어지고 있습니다.",
+      "confidence": "Medium",
+      "confidence_note": "2개 메타광학 응용(줌렌즈, 광학컴퓨팅)과 1개 ML 역설계 방법이 같은 방향을 보이지만, 세 편 모두 시뮬레이션 기반 검증이라 실측 확산 여부는 확인 필요",
+      "lab_action": "THz 메타표면 회절 신경망의 meta-atom 설계 원리(편광변환 계수 0.9 이상, 3-layer cascaded 구조)를 랩 보유 가시광/적외선 메타표면 시뮬레이션 파이프라인에 이식해, 저전력 광학 추론이 가능한 과제 범위를 1주일 내로 검토한다"
+    },
+    {
+      "cluster": "의료·음향·적외선 영상 복원이 압축센싱·물리 사전정보·트랜스포머 구조로 열악한 측정 조건에서도 품질을 끌어올리는 흐름",
+      "papers": [
+        {
+          "title": "AI-accelerated compressed sensing and deep learning reconstruction for colon MRI: prospective validation of image quality and preliminary assessment of staging accuracy versus contrast-enhanced CT",
+          "arxiv_id": "https://doi.org/10.1186/s13244-026-02445-8",
+          "journal_or_source": "Insights into Imaging (JNL)"
+        },
+        {
+          "title": "Reducing ringing artifacts in Wiener deconvolution using implicit physical priors",
+          "arxiv_id": "https://doi.org/10.1364/ol.619118",
+          "journal_or_source": "Optics Letters (JNL)"
+        },
+        {
+          "title": "Dual-domain transformer low-frequency waveform recovery for quantitative ultrasound bone imaging",
+          "arxiv_id": "https://doi.org/10.1016/j.ultras.2026.108354",
+          "journal_or_source": "Ultrasonics (JNL)"
+        },
+        {
+          "title": "PSGAN: Pseudo-Sensing GAN for Infrared and Low-Light Visible Image Fusion",
+          "arxiv_id": "https://doi.org/10.3390/electronics15215099",
+          "journal_or_source": "Electronics (JNL)"
+        }
+      ],
+      "why": "대장암 MRI, 초음파 골 영상, 적외선·가시광 융합, 광학 디컨볼루션까지 서로 다른 네 분야에서 똑같이 '측정이 부족하거나 조건이 나쁠 때 압축센싱·물리 사전정보·트랜스포머 구조로 복원 품질을 끌어올린다'는 전략이 동시에 나타났습니다. 대장암 MRI 논문은 L1 정규화 압축센싱과 딥러닝 복원을 결합해 조영제 CT보다 더 높은 병기 판정 정확도(78.8% vs 30.3%)를 전향적으로 검증했는데, 이는 방사선 노출 없이도 기존 표준 검사를 대체할 수 있다는 임상적으로 꽤 강한 주장입니다. PSGAN은 적외선과 가시광 영상을 합칠 때 생기는 도메인 차이와 저조도 문제를 센싱 과정을 거꾸로 흉내 내는 구조로 동시에 풀려 하고, Wiener 디컨볼루션 논문은 전통적인 복원 공식에 물리적 사전지식을 암묵적으로 끼워 넣어 링잉 아티팩트를 줄입니다. 즉 같은 전략이 의료·음향·적외선·광학이라는 서로 다른 네 영역에서 동시에 검증되고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 4개 모달리티(MRI, 초음파, 적외선 융합, 광학 디컨볼루션)에서 같은 복원 전략이 동시에 나타났지만, 같은 평가 프로토콜을 공유하지는 않음",
+      "lab_action": "PSGAN의 pseudo-sensing 삼중 판별자 구조와 Wiener deconvolution의 implicit physical prior 접근을 랩 저조도·적외선 융합 또는 복원 파이프라인에 각각 적용해, 기존 압축센싱·전통 디콘볼루션 대비 복원 품질을 1주일 내로 비교한다"
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "A. XPCI generalized CRLB 프레임워크를 랩 위상검색 파이프라인의 측정 설계 최적화에 적용",
+      "claim": "에너지 분해형/다중 조명 조건에서 어떤 측정이 가장 많은 위상·재질 정보를 담는지, Fisher information 기반으로 랩 Fourier ptychography 설정에서도 사전에 계산할 수 있는지 검증한다.",
+      "supporting_papers": [
+        {"title": "Cramér–Rao lower bound for spectral propagation-based x-ray phase-contrast imaging", "arxiv": "https://doi.org/10.1088/1361-6560/aebd38"}
+      ]
+    },
+    {
+      "title": "B. THz 메타표면 회절 신경망 설계 원리를 랩 메타표면 시뮬레이션 파이프라인에 이식",
+      "claim": "편광변환 meta-atom 기반 cascaded 회절 신경망 구조가 랩이 다루는 가시광/적외선 대역에서도 저전력 광학 추론 과제(간단한 분류/인식)에 적용 가능한지 시뮬레이션으로 1차 검토한다.",
+      "supporting_papers": [
+        {"title": "Terahertz Diffractive Deep Neural Networks via Polarization-Conversion Metasurfaces for Digit Recognition", "arxiv": "https://doi.org/10.1002/mop.70846"}
+      ]
+    },
+    {
+      "title": "C. pseudo-sensing GAN·implicit physical prior 복원 구조를 랩 저조도/적외선 융합 파이프라인과 비교",
+      "claim": "PSGAN의 삼중 판별자 pseudo-sensing 구조와 Wiener deconvolution의 implicit physical prior가, 랩 보유 저조도·적외선 데이터에서 기존 압축센싱/전통 디콘볼루션 대비 복원 품질을 얼마나 개선하는지 비교한다.",
+      "supporting_papers": [
+        {"title": "PSGAN: Pseudo-Sensing GAN for Infrared and Low-Light Visible Image Fusion", "arxiv": "https://doi.org/10.3390/electronics15215099"},
+        {"title": "Reducing ringing artifacts in Wiener deconvolution using implicit physical priors", "arxiv": "https://doi.org/10.1364/ol.619118"}
+      ]
+    }
+  ],
+  "phylogeny_tags": []
+}
