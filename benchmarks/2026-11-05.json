@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-05",
+  "results": [
+    {
+      "benchmark": "26,820개 Objaverse 객체, 300개 미학습 객체 (rasterizer-free 3DGS 렌더링)",
+      "metric": "PSNR",
+      "value": 38.08,
+      "value_str": "신경망만으로 38.08dB, 같은 입력을 전통 래스터라이저로 그리면 44.02dB",
+      "paper": "https://arxiv.org/abs/2611.05593",
+      "paper_title": "GaussianRenderFormer: Transformer-based Rendering of 3D Gaussian Splats"
+    },
+    {
+      "benchmark": "47개 ScanNet++ 장면, 레이저 ground truth (3DGS 메트릭 스케일 추정)",
+      "metric": "평균 오차율",
+      "value": 16.6,
+      "value_str": "휴리스틱 21.1% → 선택적 추정기 16.6%(판단을 내린 장면만은 9.3%), MASt3R 단독 9.9%지만 라우팅 시 호출 60% 절감",
+      "paper": "https://arxiv.org/abs/2611.06020",
+      "paper_title": "METRIC-GS: Selective Metric-Scale Estimation for 3D Gaussian Splatting"
+    },
+    {
+      "benchmark": "장시퀀스 feed-forward 3DGS 교차뷰 융합",
+      "metric": "속도 향상",
+      "value": 26.12,
+      "value_str": "재학습 없이 교차뷰 융합 최대 26.12배, end-to-end 1.43배 가속",
+      "paper": "https://arxiv.org/abs/2611.06258",
+      "paper_title": "CrossPressor: Scalable Cross-View Fusion for Feed-Forward 3D Gaussian Splatting"
+    },
+    {
+      "benchmark": "Kermany SD-OCT 4-class 망막질환 분류, EfficientNet-B0~B7",
+      "metric": "Test Accuracy",
+      "value": 96.95,
+      "value_str": "B0 95.93% → B1 96.95%(최고) → B7 96.73%, 파라미터 대비 정확도 효율은 B0 대비 B7이 13배 이상 낮음",
+      "paper": "https://arxiv.org/abs/2611.06452",
+      "paper_title": "Within-Family EfficientNet Scaling under Fixed-Resolution Transfer Learning for Spectral-Domain OCT Retinal Disease Classification"
+    },
+    {
+      "benchmark": "Monte Carlo 혈관 마스크 보류 테스트 (depth-resolved OCT attenuation 복원)",
+      "metric": "혈관 ROI 대비/오차",
+      "value": 65,
+      "value_str": "segmentation-informed 혈관 대비 61% 복원, 혈관 ROI 평균절대오차 65% 감소(기존 0차 Beer-Lambert 대비)",
+      "paper": "https://arxiv.org/abs/2611.05983",
+      "paper_title": "Perturbation-Based Reconstruction of Depth-Resolved OCT Attenuation"
+    },
+    {
+      "benchmark": "11,455건 5개 병원 전향적 다기관 CT 검증 (해석+분할 통합 foundation model)",
+      "metric": "병변 분할·판독문 생성 개선폭",
+      "value": 18.2,
+      "value_str": "경쟁 모델 대비 병변 분할 +18.2점, 판독문 생성 +15.3점",
+      "paper": "https://arxiv.org/abs/2611.06471",
+      "paper_title": "HoloCT: A 3D foundation model unifying CT interpretation and segmentation"
+    },
+    {
+      "benchmark": "갑상선·대장 병변 선별 리트로스펙티브 reader study (방사선과 전문의 4인 대비)",
+      "metric": "평균 정확도",
+      "value": 85.1,
+      "value_str": "HoloCT 85.1%로 참여 방사선과 전문의 4인 전원의 정확도를 상회",
+      "paper": "https://arxiv.org/abs/2611.06471",
+      "paper_title": "HoloCT: A 3D foundation model unifying CT interpretation and segmentation"
+    }
+  ]
+}

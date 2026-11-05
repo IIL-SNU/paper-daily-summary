@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-11-05</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-11-05 (목요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-11-05 (목요일) · 추적 5개 카테고리 모두 /new listing이 "Thursday, 5 November 2026"으로 post_date와 정확히 일치해(Date Source Contract 2.1절 충족) /new를 직접 사용한 완성본입니다.</div>
+  <div>📚 소스: arXiv(Date Source Contract 통과, /new 직접 사용) + 저널(Crossref/OpenAlex, --days 1)</div>
+  <div>🔢 arXiv: cs.LG 214 · cs.CV 148 · cs.AI 217 · eess.IV 8 · eess.SP 36 (new+cross, replacement 제외, 총 623건)</div>
+  <div>🔢 저널: Crossref 440편 + OpenAlex 보충 3편 (--days 1, 총 443편)</div>
+  <div>🔢 전체 스캔: 938건(중복 제거 후) · ROI 배정 270건 (28.8%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 하루치에서 가장 뚜렷한 축은 두 개입니다. 하나는 3D Gaussian Splatting(3DGS, 장면을 수많은 작은 타원체로 표현해 실시간 렌더링을 가능케 하는 기법) 연구가 "얼마나 예쁘게 그리는가"에서 "그 표현을 얼마나 작게 압축하고, 실제 길이 단위로 잴 수 있고, 가려서 안 보이는 부분까지 채울 수 있는가"로 평가 기준을 옮긴 점입니다. 다른 하나는 OCT(광간섭단층촬영)·CT·MRI·초분광 네 가지 서로 다른 영상 모달리티에서 동시에 "모델을 더 키우면 무조건 좋아지는가"와 "한 장비·한 기관에서 학습한 모델이 다른 장비·다른 기관에서도 버티는가"라는 사실상 같은 신뢰성 질문이 반복해서 나왔다는 점입니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리는 모두 "Showing new listings for Thursday, 5 November 2026"으로 post_date와 정확히 일치했습니다(post_date==listing_date, Date Source Contract 2.1절 충족). 이에 따라 /new를 직접 사용해 arXiv new+cross 623건(cs.LG 214·cs.CV 148·cs.AI 217·eess.IV 8·eess.SP 36)과 저널 443편(Crossref 440편+OpenAlex 보충 3편, --days 1)을 합쳐 classify.py로 스캔했고, 중복 제거 후 938건 중 270건(28.8%)을 9개 ROI 버킷에 배정했습니다. 다만 classify.py의 키워드 매칭은 오늘도 양방향으로 어긋났습니다 — Fourier Ptychography/Lensless/Light-Field 버킷 배정분은 대부분 "synthetic aperture"·"diffuser"·"light field" 같은 키워드가 완전히 무관한 분야(위성 SAR, diffusion 모델, 뉴로모픽 음성인식)에 우연히 겹친 오탐이었고, 반대로 ME2FDiff(뇌종양 MRI 분할)·TOP(전송손실 대응 팬샤프닝)·세포 추적 현미경 논문처럼 명백히 계산 이미징에 해당하는 논문 3편은 키워드 매칭 점수가 0이라 어느 버킷에도 자동 배정되지 않았습니다. 이 글의 클러스터는 classified.json 원본과 카테고리별 전체 목록을 다시 훑어 이 세 편을 수동으로 포함해 구성했습니다.</p>
+<p>가장 큰 덩어리는 Tomography/3D Imaging 버킷(50편)에 모인 3D Gaussian Splatting(3DGS) 관련 논문들이었는데, 질문의 결이 완전히 다릅니다. GaussianRenderFormer는 아예 래스터라이저(3D 점을 화면 픽셀로 바꿔주는 전통적 렌더링 장치) 없이 신경망만으로 Gaussian을 이미지로 바꿀 수 있는지 묻고, METRIC-GS는 3DGS 재구성이 임의의 단위를 쓴다는 문제를 "신뢰도가 낮으면 판단을 보류"하는 방식으로 풀어 스케일 오차를 21.1%에서 16.6%로 줄였습니다. CrossPressor와 BudgetSplat은 입력 뷰가 늘어날수록 Gaussian 개수가 감당 못 할 정도로 느는 문제를 각각 최대 26배 빠른 교차뷰 융합과 사용자 지정 압축률로 풀고, OccSplat(Quo Vadis)은 자율주행 서라운드뷰처럼 한 시점에서만 찍은 장면의 가려진 영역을 이미지가 아니라 3D 표현 자체에서 채웁니다. 다섯 편을 합치면, 3DGS 연구의 중심이 "어떻게 더 예쁘게 그릴까"에서 "그 표현이 압축 가능하고, 실제 단위로 잴 수 있고, 빈 곳 없이 완전한가"로 넘어갔다는 뜻입니다.</p>
+<p>그 옆에서는 OCT·CT 영상 AI 세 편이 당연해 보이는 두 가지 직관을 동시에 재검토했습니다. EfficientNet 논문은 자연 이미지에서 성립하는 "모델을 키울수록 정확도가 오른다"는 scaling 법칙이 망막 OCT 네 가지 질환 분류에는 그대로 옮겨지지 않음을 확인했는데, 가장 작은 축에 가까운 B1이 96.95%로 최고 정확도를 냈고 가장 큰 B7은 오히려 96.73%에 그쳤습니다. OCT attenuation 복원 논문은 신호가 깊은 곳까지 완전히 사그라들어야 한다는 기존 가정 없이도 혈관 대비를 61% 복원했고, HoloCT는 반대로 "영상을 보고 소견을 말하는 것"과 "병변을 픽셀 단위로 표시하는 것"을 하나로 묶으면 서로 도움이 되는지를 19만 건이 넘는 CT로 검증해, 다기관 검증에서 두 과제를 각각 18.2점·15.3점 개선하고 참여 방사선과 전문의 4명 전원보다 높은 85.1%의 정확도를 냈습니다. 세 편을 합치면, "더 큰 모델·더 전문화된 모델이 항상 낫다"는 단순한 직관에서 벗어나 더 구체적인 질문으로 옮겨가고 있다는 뜻입니다.</p>
+<p>나머지 두 흐름도 뚜렷했습니다. 뇌 MRI 쪽에서는 C-WFDM·ME2FDiff·Glioblastoma MRI 합성 세 편이 같은 확산모델 전략(있는 모달리티로 없는 모달리티를 만든다)을 모달리티 보완, 재발 분할, 조건부 데이터 합성에 각각 적용했고, 초분광·팬샤프닝 쪽에서는 ReTailor·TOP·Homology Features·Many Pixels 네 편이 "한 센서에서 학습한 모델이 새 센서·전송 조건에서도 버티는가"를 공통으로 물었습니다. 디지털 병리·현미경에서는 PathoS2VD(2D→가상 3D 단면)와 세포 추적 논문이 "한 장의 평면 영상"이라는 전통적 제약을 깊이와 시간 양쪽에서 넘어서려는 신호를 보였습니다. 저널 쪽은 계산 위상영상·메타광학에서 소규모 신호(Dirac 반금속 메타표면 홀로그래피, 다중깊이 전계 단층 홀로그래피, Janus 메탈렌즈, 액체 제어 줌렌즈, 역리소그래피)가 조용히 이어졌습니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(11/4)의 3DGS 클러스터는 "날씨 변화·비동기 멀티뷰·수술 SLAM·장시간 스트리밍·코덱 압축·품질 평가"처럼 3DGS가 현실의 어지러운 조건에서도 버티는지를 물었다면, 오늘은 완전히 다른 각도입니다 — "그 표현 자체가 압축 가능하고, 실제 단위로 측정 가능하고, 빈 곳 없이 완전한가"를 묻습니다. 대표 논문도 전부 교체됐습니다(어제: IGSW/Phase-DGS/EndoS3/Mamba3R/GSCV++/3DGS-VBench+, 오늘: GaussianRenderFormer/METRIC-GS/CrossPressor/BudgetSplat/OccSplat). 의료영상 AI 쪽도 질문이 바뀌었습니다 — 어제는 "설명·모델이 새 병원·새 질병에서도 실제로 작동하는가"(외부 일반화)를 물었다면, 오늘은 "모델을 더 키우면 좋아지는가"와 "여러 과제를 한 모델에 합치면 시너지가 나는가"라는 스케일링·아키텍처 설계 질문으로 옮겨갔습니다. 저널 쪽 계산 위상영상·메타광학 흐름은 어제와 비슷한 규모(2~3편)로 조용히 이어지고 있습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>3D Gaussian Splatting이 '더 예쁜 렌더링'에서 표현 압축·측정 가능한 스케일·결측 영역 채우기로 평가축을 옮김</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.05593" target=_blank>GaussianRenderFormer: Transformer-based Rendering of 3D Gaussian Splats</a> <span class="pill a">LG · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2611.06020" target=_blank>METRIC-GS: Selective Metric-Scale Estimation for 3D Gaussian Splatting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2611.06258" target=_blank>CrossPressor: Scalable Cross-View Fusion for Feed-Forward 3D Gaussian Splatting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2611.06593" target=_blank>BudgetSplat: Budget-Controllable Generalizable Gaussian Splatting</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2611.06273" target=_blank>Quo Vadis, Driving Scene Reconstruction? (OccSplat)</a> <span class=pill>CV</span>
+  </td>
+  <td>3DGS(3D Gaussian Splatting)는 몇 장의 이미지로 장면을 수많은 작은 타원체로 표현해 실시간 렌더링을 가능하게 한 기법인데, 지금까지 연구 대부분은 "같은 장면을 얼마나 빠르고 예쁘게 그리는가"를 겨냥했습니다. 오늘 묶인 다섯 편은 전부 그 다음 질문, 즉 "그 표현 자체가 실제로 쓸모 있는 형태인가"를 겨냥합니다. GaussianRenderFormer는 아예 래스터라이저(3D 점들을 화면 픽셀로 바꿔주는 전통적인 렌더링 장치) 없이 신경망만으로 Gaussian을 직접 이미지로 바꿀 수 있는지 묻는데, 아직 전통 래스터라이저(44.02dB)에는 못 미치지만 38.08dB까지는 신경망만으로 렌더링에 성공해, 렌더링이라는 연산 자체를 데이터에서 배울 수 있다는 가능성을 보여줍니다. METRIC-GS는 "예쁘게 보이는 것"과 "실제 길이 단위로 잴 수 있는 것"은 다른 문제라는 점을 짚습니다 — 3DGS 재구성은 원래 임의의 단위를 쓰기 때문에, 기존 방식대로 천장 높이를 어림짐작하면 27%, 깊이 추정 모델에 맞추면 35~71%까지 오차가 나는데, METRIC-GS는 신뢰도가 낮으면 아예 판단을 보류하는 방식으로 오차를 21.1%에서 16.6%까지 줄입니다. CrossPressor와 BudgetSplat은 여러 장의 입력 이미지를 쓸수록 Gaussian 개수와 연산량이 감당 못 할 정도로 늘어난다는 문제를 겨냥해, 전자는 재학습 없이 최대 26배 빠른 교차 뷰 융합을, 후자는 사용자가 지정한 압축률에 맞춰 Gaussian 개수를 조절하는 방법을 제시합니다. OccSplat(Quo Vadis)은 자율주행 서라운드뷰처럼 한 번에 한 시점에서만 찍은 장면은 원래 안 보이던 부분(가려진 영역)이 다른 시점에서는 보여야 하는데 그 부분이 통째로 비어버린다는 문제를, 이미지가 아니라 3D 표현 자체에서 빈 영역을 채우는 방식으로 풉니다. 다섯 편을 합치면, 3DGS 연구의 중심이 "어떻게 더 예쁘게 그릴까"에서 "그 표현이 압축 가능하고, 실제 단위로 잴 수 있고, 빈 곳 없이 완전한가"로 넘어갔다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 5개 팀(1편은 cs.LG 제출)이 압축·스케일·결측영역이라는 다른 각도에서 같은 방향(3DGS 표현 자체의 신뢰성/효율)으로 수렴, 모두 오늘 cs.CV/cs.LG 신규 논문</small></td>
+  <td>GaussianRenderFormer의 rasterizer-free 렌더링과 METRIC-GS의 "신뢰도 낮으면 판단 보류" 전략을 랩 3DGS 파이프라인에 적용해, 자체 보유 실내 스캔 데이터에서 PSNR과 스케일 오차를 함께 1주일 내 벤치마크한다</td>
+</tr>
+<tr>
+  <td><strong>OCT·CT 영상 AI가 '모델을 더 키우면 좋아지는가'와 '여러 과제를 한 모델에 합치면 서로 도움이 되는가'를 동시에 재검토</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.06452" target=_blank>Within-Family EfficientNet Scaling for SD-OCT Retinal Disease Classification</a> <span class="pill a">CV·AI · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2611.05983" target=_blank>Perturbation-Based Reconstruction of Depth-Resolved OCT Attenuation</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2611.06471" target=_blank>HoloCT: A 3D foundation model unifying CT interpretation and segmentation</a> <span class="pill a">CV·AI · TIER A</span>
+  </td>
+  <td>의료영상 분류·재구성 모델을 평가할 때 흔히 두 가지를 당연하게 가정합니다 — "모델을 키우면 더 좋아진다"와 "한 가지 과제에 집중한 모델이 여러 과제를 한꺼번에 하는 모델보다 낫다"는 가정입니다. 오늘 묶인 세 편은 둘 다 당연하지 않다는 걸 보여줍니다. EfficientNet 논문은 자연 이미지에서 성립하는 "모델을 B0에서 B7까지 키울수록 정확도가 오른다"는 scaling 법칙이 망막 OCT 네 가지 질환 분류에는 그대로 옮겨지지 않는다는 걸 확인했습니다 — 가장 작은 축에 가까운 B1이 96.95%로 최고 정확도를 냈고, 가장 큰 B7은 오히려 살짝 낮은 96.73%에 그쳤습니다. OCT attenuation 논문은 신호가 조직 깊은 곳까지 완전히 사그라들지 않아도 되는 복원 방법을 제안해, 기존 방법이 가정하던 "신호가 끝까지 충분히 감쇠해야 한다"는 조건 없이도 혈관 대비를 61% 복원하고 오차를 65% 줄였습니다. HoloCT는 반대 방향에서 접근해, "영상을 보고 소견을 말하는 것"과 "어디가 병변인지 픽셀 단위로 표시하는 것"을 하나의 모델로 묶으면 서로 도움이 되는지를 19만 건이 넘는 CT로 검증했는데, 실제로 두 과제를 합쳤더니 다기관 검증에서 병변 분할과 판독문 생성이 각각 18.2점·15.3점 개선됐고, 갑상선·대장 병변 선별에서는 참여한 영상의학과 전문의 4명 전원보다 높은 85.1%의 정확도를 냈습니다. 세 편을 합치면, OCT·CT 영상 AI가 "더 큰 모델, 더 전문화된 모델이 항상 낫다"는 단순한 직관에서 벗어나, 특정 과제에는 작은 모델이 더 맞을 수 있고 서로 다른 과제를 한 모델에 묶으면 오히려 시너지가 날 수 있다는 더 구체적인 질문으로 옮겨가고 있다는 뜻입니다.</td>
+  <td>High<br><small>세 편 모두 구체적 수치로 뒷받침되고 서로 다른 모달리티(OCT 2편, CT 1편)에서 같은 방향이 나타남, HoloCT는 11,455건 5개 병원 전향적 다기관 검증까지 거쳐 근거 강도가 특히 높음</small></td>
+  <td>EfficientNet 논문의 "모델 크기별 정확도-효율 트레이드오프 재평가" 프로토콜을 랩이 쓰는 망막/현미경 분류 모델에 적용해, 가장 작은 모델부터 큰 모델까지 소수 클래스 F1을 1주일 내 재측정한다</td>
+</tr>
+<tr>
+  <td><strong>확산모델 기반 뇌 MRI 보완·합성이 역할을 데이터 증강까지 확장</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.05737" target=_blank>C-WFDM: ControlNet-Guided Wavelet-Fusion Diffusion Model for Multimodal Brain MRI Completion</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2611.05766" target=_blank>ME2FDiff: Multiscale Expert Enhancing Feature Diffusion for Brain Tumor Segmentation</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2611.06540" target=_blank>Spatially and Compositionally Controlled Glioblastoma MRI Synthesis with Latent Diffusion</a> <span class=pill>CV</span>
+  </td>
+  <td>여러 기관의 뇌 MRI 데이터를 모아서 쓰려고 하면 흔히 겪는 문제가 있습니다 — T1 영상은 거의 항상 있는데, T2나 조영증강 영상은 기관마다 촬영 여부가 달라서 비어 있는 경우가 많다는 점입니다. 오늘 묶인 세 편은 모두 "확산모델로 없는 모달리티를 만들어낸다"는 같은 전략을 쓰지만 겨냥하는 상황이 다릅니다. C-WFDM은 있는 모달리티 조합으로 없는 모달리티(T2, FLAIR, 조영증강 T1)를 보완하는 데 집중하고, ME2FDiff는 수술·방사선치료 이후 생긴 절제 공간·부종·섬유화처럼 종양 재발과 겉보기가 비슷해지는 변화까지 고려해 재발 영역을 분할합니다. Glioblastoma MRI 합성 논문은 한 단계 더 나아가, 종양의 위치·크기·구성까지 사용자가 직접 지정해서 원하는 형태의 교모세포종 MRI를 통째로 새로 만들어낼 수 있다는 걸 보여줍니다 — 이건 단순히 빠진 영상을 채우는 게 아니라, 애초에 희귀한 종양 형태 데이터를 인위적으로 늘릴 수 있다는 뜻입니다. 세 편을 합치면, 뇌 MRI 확산모델 활용이 "빠진 조각 채우기"에서 "원하는 조건의 데이터를 설계해서 만들기"까지 역할을 넓혀가고 있다는 뜻이고, 데이터가 불균형한 랩 보유 MRI 코호트에도 바로 적용해볼 만한 흐름입니다.</td>
+  <td>Medium<br><small>3편 모두 같은 확산모델 전략(모달리티 보완/합성)을 공유하지만, 각기 다른 임상 목적(모달리티 보완/재발 분할/데이터 증강)을 겨냥해 직접적인 벤치마크 비교는 아직 없음</small></td>
+  <td>Glioblastoma MRI 합성 논문의 "위치·크기·구성 조건부 2단계 LDM" 구조를 랩 보유 희귀 병변 MRI 데이터 증강에 적용해, 분할 모델 성능이 실제로 개선되는지 1주일 내 소규모로 검증한다</td>
+</tr>
+<tr>
+  <td><strong>초분광·팬샤프닝 영상 융합이 센서 간 일반화를 공통으로 질문</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.05811" target=_blank>ReTailor: Real-Time Cross-Sensor Pansharpening Adaptation</a> <span class="pill a">LG · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2611.06430" target=_blank>TOP: Transmission-Oriented Remote Sensing Pansharpening</a> <span class=pill>IV</span><br>
+    <a href="https://arxiv.org/abs/2611.06230" target=_blank>Homology Features for X-Ray Hyperspectral Images Segmentation</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2611.06096" target=_blank>Many Pixels, One Composition: Self-Supervised Spectra for Specimen-Level Prediction</a> <span class=pill>LG</span>
+  </td>
+  <td>위성·원격탐사 영상 융합(팬샤프닝: 저해상도 컬러 영상과 고해상도 흑백 영상을 합쳐 고해상도 컬러 영상을 만드는 기법)과 초분광 영상 분석은 보통 "학습에 쓴 센서에서 얼마나 잘 되는가"로 평가해왔습니다. 오늘 묶인 네 편은 공통으로 "다른 센서, 다른 전송 조건에서도 버티는가"를 묻습니다. ReTailor는 팬샤프닝 모델이 학습에 쓰지 않은 새 센서에서 성능이 뚝 떨어지는 문제를, 센서별로 모델 전체를 다시 학습시키거나 이미지 하나하나마다 전체 네트워크를 최적화하는 대신, 가벼운 보정 모듈 하나만 실시간으로 빠르게 맞추는 방식으로 풉니다. TOP는 한발 더 나아가, 위성에서 지상으로 영상을 내려보내는 전송 과정에서 생기는 손실 압축까지 고려한 최초의 팬샤프닝 모델이라고 주장합니다 — 지금까지는 "고해상도 영상이 이미 온전하게 도착했다"는 비현실적인 가정을 깔고 있었다는 뜻입니다. Homology Features 논문과 Many Pixels 논문은 초분광 영상(수백 개 파장 대역을 동시에 찍는 영상) 쪽에서, 각각 X-ray 다중에너지 영상의 세그멘테이션과 지표면 시료의 원소 구성 예측을 다루는데, 둘 다 센서가 만들어내는 고차원 스펙트럼 데이터를 어떻게 일반화 가능한 표현으로 압축할지를 고민합니다. 네 편을 합치면, 영상 융합·초분광 분석 연구가 "한 조건에서 잘 되는 모델"에서 "센서가 바뀌거나 전송 과정에서 손실이 생겨도 버티는 모델"로 평가 기준을 옮기고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>4편이 서로 다른 응용(팬샤프닝 2편, 초분광 분석 2편)이지만 "센서/조건 변화에 대한 일반화"라는 같은 질문으로 수렴, 공통 벤치마크는 아직 없음</small></td>
+  <td>ReTailor의 경량 residual tailoring 모듈을 랩이 보유한 다중 센서 초분광/위성 영상 융합 파이프라인에 이식해, 학습에 쓰지 않은 센서에서 품질 저하폭을 1주일 내로 측정한다</td>
+</tr>
+<tr>
+  <td><strong>디지털 병리·시간경과 현미경이 평면 영상을 넘어 3차원·시간축으로 조직을 복원</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.05974" target=_blank>PathoS2VD: From 2D Histopathology to Pseudo Z-Stack Representations</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2611.06624" target=_blank>Learning to Track Cells from Sparse Annotations in 3D Time-Lapse Microscopy</a> <span class=pill>CV</span><br>
+    <a href="https://arxiv.org/abs/2611.05579" target=_blank>Multimodal Fusion Methods for Whole-Slide Images and Clinical Data</a> <span class=pill>CV</span>
+  </td>
+  <td>디지털 병리는 지금까지 거의 항상 "얇게 한 번 자른 조직 단면(2D) 하나"를 들여다보는 방식이었는데, 실제 조직은 3차원 구조이고 깊이 방향의 정보는 그 단면 한 장만 보면 영영 사라집니다. PathoS2VD는 2D 조직 단면 영상만으로 깊이 방향(z축)의 형태 변화를 예측하는 생성 모델을 만들어, 추가 촬영 없이도 가상의 3차원 단면 스택을 복원할 수 있는지 보여줍니다. Learning to Track Cells 논문은 비슷한 문제를 시간축에서 풉니다 — 3차원 시간경과(time-lapse) 현미경 영상에서 세포가 이동한 것인지 분열한 것인지 구분하고 시간에 따라 일관된 세포 계보를 재구성해야 하는데, 모든 세포에 라벨을 다는 건 비현실적이라 일부만 라벨이 달린 상황에서도 학습이 가능한 파이프라인을 제안합니다. Whole-Slide Image 융합 논문은 조직 영상 자체보다 조직 영상과 임상 데이터를 어떻게 합칠지를 다루는데, 15가지 서로 다른 융합 방법을 같은 조건에서 비교해 "그냥 영상만 봐도 될지, 임상 데이터를 더해야 할지"를 정량적으로 답하려 합니다. 세 편을 합치면, 디지털 병리·현미경 영상 분석이 "한 장의 정지된 평면"이라는 전통적 한계를 깊이(z축)와 시간(t축) 양쪽에서 넘어서려는 흐름으로 보입니다.</td>
+  <td>Low<br><small>3편이 서로 다른 하위 문제(3D 깊이 복원/시간경과 추적/멀티모달 융합)를 다뤄 직접 비교는 어렵고, 각각 단일 논문 수준의 신호</small></td>
+  <td>PathoS2VD의 2D→pseudo z-stack 생성 아이디어를 랩 보유 디지털 병리 슬라이드에 시험 적용해, 실제 연속 절편(serial section) 데이터와 비교했을 때 생성된 z축 형태가 얼마나 일치하는지 1주일 내 정성 평가한다</td>
+</tr>
+</tbody>
+</table>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li><strong>Fourier Ptychography/Microscopy — 오늘 배정 1편, 실질 신호 0편</strong> — "CAPE-JEPA"는 SAR·다중분광 원격탐사 크로스모달 검색 논문으로, 초록의 "Synthetic Aperture Radar"가 "aperture synthesis" 키워드와 우연히 겹친 완전한 오탐입니다. Fourier ptychography 고유 신호는 오늘도 관찰되지 않았습니다.</li>
+    <li><strong>Lensless/Coded Imaging — 오늘 배정 2편, 실질 신호 0편</strong> — "MA-SafeDiffuser"는 멀티에이전트 diffusion 플래닝 논문으로 "Diffuser"라는 이름이 "diffuser" 키워드와 겹친 오탐이고, 천문 적응광학(adaptive optics) petal mode 논문은 실제 광학 하드웨어 제어 논문이지만 lensless/coded imaging과는 다른 응용(망원경 보정)이라 이 버킷의 고유 신호로 보기 어렵습니다.</li>
+    <li><strong>Phase Imaging/Holography — 오늘 배정 7편, 실질 신호 2편</strong> — Dirac 반금속 메타표면의 재구성 가능한 홀로그래픽 이미징과 공간주파수분할다중화 기반 단일샷 다중깊이 전계 단층 홀로그래피 두 편이 실질 신호입니다. 둘 다 2편뿐이라 단독 클러스터로 올리기엔 이르지만, 계산 위상영상 저널 흐름이 조용히 이어지고 있다는 신호로 기록합니다. 나머지 5편(XL-MIMO 채널 추정, 천체물리 간섭계, QCD 홀로그래피, 중력파/소립자 홀로그래피 리뷰 등)은 기초물리·통신 논문입니다.</li>
+    <li><strong>Meta-Optics/Diffractive — 오늘 배정 14편, 실질 신호 3편</strong> — Janus 메탈렌즈(초점 깊이·세기 방향 제어), 액체 제어 메타표면 기반 전기구동 줌렌즈, 역리소그래피용 Mask3D 미분가능 모델링 세 편이 실질 이미징 광학소자 신호입니다. 나머지 11편은 THz 생체센싱·무선통신 안테나·광무선통신 복호화·열관리 등 RF/통신용 메타표면이라 이미징 신호가 아닙니다.</li>
+    <li><strong>Light-Field/Novel Sensors — 오늘 배정 1편, 실질 신호 1편(단발)</strong> — "자유공간 광통신용 다중표적 포인팅·추적 뉴로모픽 카메라" 1편이 실질 신호이지만 단발이라 클러스터 기준(2편 이상)에 못 미칩니다. Light-field/이벤트카메라 이미징 고유 신호는 이번 주 계속 드문드문 나타나는 패턴입니다.</li>
+    <li><strong>Virtual Staining/Pathology — 오늘 배정 36편, 실질 신호 2편</strong> — 나이지리아 유방 조직 광현미경 사진의 양성/악성 비지도 분리, 이중모드 방출-투과 현미경 기반 신장 섬유화 평가 두 편만 실질 신호이고, 나머지 34편은 "staining"·"virtual" 키워드가 LLM 에이전트, 가상현실/메타버스, 화학 합성, 가상 홍수 체험, 도서관 게임화 같은 완전히 무관한 분야에 우연히 겹친 오탐입니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 3DGS 표현 압축/스케일 5편(GaussianRenderFormer, METRIC-GS, CrossPressor, BudgetSplat, OccSplat), OCT/CT 스케일링·멀티태스크 3편(EfficientNet-OCT, OCT attenuation, HoloCT), 뇌 MRI 확산모델 보완/합성 3편(C-WFDM, ME2FDiff, Glioblastoma MRI LDM), 초분광/팬샤프닝 센서 일반화 4편(ReTailor, TOP, Homology Features, Many Pixels), 디지털 병리·3D/시간축 현미경 3편(PathoS2VD, Cell Tracking, WSI Fusion), 물리 기반 역문제 2편(FLINT, Dual Flow).</li>
+  <li><strong>저널 전용</strong>: 계산 위상영상·메타광학 소규모 신호(Dirac 반금속 홀로그래픽 메타표면, 다중깊이 전계 단층 홀로그래피, Janus 메탈렌즈, 액체 제어 줌렌즈, 역리소그래피 Mask3D), 디지털 병리 2편(유방 조직 비지도 분리, 신장 섬유화 이중모드 현미경), 영상 재구성 인프라 2편(필드프리 라인 자기입자영상 공개 데이터셋, 투과전자현미경 양자화 물성 추정용 물리정보 베이지안 최적화).</li>
+  <li><strong>공통 키워드</strong>: "영상 재구성에 물리 모델을 명시적으로 결합한다"는 상위 주제가 arXiv(OCT attenuation의 Beer-Lambert 섭동 모델, FLINT의 flow-matching 안정성 경계)와 저널(투과전자현미경 물리정보 베이지안 최적화, 자기입자영상 데이터셋) 양쪽에서 동시에 나타났습니다. 구체적 논문·모달리티는 겹치지 않지만 "순수 데이터 기반보다 물리 사전지식을 명시적으로 넣는다"는 방향은 같습니다.</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 압도적으로 중심이고(623건, 5개 클러스터 모두 arXiv 기반), 저널은 계산 위상영상·메타광학에서 2~3편씩 조용한 신호만 이어가는 하루였습니다. 어제(11/4)의 arXiv 클러스터가 "제품화·배포 조건에서의 강건성"을 물었다면, 오늘은 같은 영역에서 "표현 자체의 압축성·측정가능성"과 "모델 스케일링/아키텍처 설계 가정의 재검토"로 질문이 바뀌었습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 3D Gaussian Splatting이 '더 예쁜 렌더링'에서 표현 압축·측정 가능한 스케일·결측 영역 채우기로 평가축을 옮김</h3>
+  <p>GaussianRenderFormer(rasterizer-free 렌더링), METRIC-GS(스케일 추정의 선택적 보류), CrossPressor·BudgetSplat(압축), OccSplat(결측영역 채움) 다섯 편이 3DGS 표현 자체의 신뢰성/효율을 겨냥합니다.</p>
+  <p class=conf-note>Confidence: High — 5개 팀이 다른 각도(압축·스케일·결측영역)에서 같은 방향으로 수렴, 모두 오늘 cs.CV/cs.LG 신규 논문</p>
+</div>
+
+<div class=ins>
+  <h3>2. OCT·CT 영상 AI가 모델 스케일링 가정과 멀티태스크 결합 효과를 재검토</h3>
+  <p>EfficientNet-OCT scaling 재평가, OCT attenuation perturbation 복원, HoloCT 통합 foundation model 세 편이 "크면 좋다"와 "전문화가 낫다"는 직관을 둘 다 반박합니다.</p>
+  <p class=conf-note>Confidence: High — 세 편 모두 구체적 수치로 뒷받침, HoloCT는 11,455건 5개 병원 전향적 다기관 검증까지 거침</p>
+</div>
+
+<div class=ins>
+  <h3>3. 확산모델 기반 뇌 MRI 보완·합성이 데이터 증강까지 역할을 확장</h3>
+  <p>C-WFDM(모달리티 보완)·ME2FDiff(재발 분할)·Glioblastoma MRI LDM(조건부 데이터 합성) 세 편이 같은 확산모델 전략을 서로 다른 임상 목적에 적용합니다.</p>
+  <p class=conf-note>Confidence: Medium — 3편이 같은 전략을 공유하지만 직접적인 벤치마크 비교는 아직 없음</p>
+</div>
+
+<div class=ins>
+  <h3>4. 초분광·팬샤프닝 영상 융합이 센서 간 일반화를 공통으로 질문</h3>
+  <p>ReTailor·TOP·Homology Features·Many Pixels 네 편이 학습 센서를 벗어난 조건에서도 버티는 영상 융합/스펙트럼 표현을 겨냥합니다.</p>
+  <p class=conf-note>Confidence: Medium — 서로 다른 응용(팬샤프닝/초분광)이지만 같은 질문으로 수렴, 공통 벤치마크는 아직 없음</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. GaussianRenderFormer·METRIC-GS의 압축/스케일 추정 전략을 랩 3DGS 파이프라인에 결합 적용</h3>
+  <p>rasterizer-free 렌더링과 신뢰도 기반 스케일 추정 보류를 함께 적용하면, 랩 3DGS 파이프라인의 압축률-정확도-측정가능성 트레이드오프를 정량적으로 진단할 수 있는지 검증합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: GaussianRenderFormer의 view-independent 인코더 + METRIC-GS의 visibility-aware voting 재구현</li>
+    <li>공통 benchmark: 랩 보유 실내 스캔 데이터(tape-measured 참조 치수 포함) + ScanNet++ 일부</li>
+    <li>비교축: PSNR 손실, 스케일 오차율, 판단 보류(abstention) 비율과 추론 시간</li>
+    <li>실패해도 남는 결과: 랩 3DGS 파이프라인의 압축-정확도 트레이드오프 1차 진단 보고서</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. HoloCT의 해석+분할 공동학습 설계원칙을 랩 CT/현미경 파이프라인에 축소 재현</h3>
+  <p>언어 유도 분할과 판독 과제를 한 모델에서 공동학습하는 방식이, 랩 데이터 규모에서도 단일 과제 모델 대비 분할 정확도·판독 일치도를 끌어올리는지 재현합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: HoloCT의 언어 유도 segmentation + 3D 마스크 동시 출력 구조 축소 재구현</li>
+    <li>공통 benchmark: 랩 보유 CT 또는 현미경 라벨 데이터 일부(병변/구조 마스크 포함)</li>
+    <li>비교축: 단일 과제 모델 대비 분할 정확도, 판독 일치도, 미지 구조에 대한 일반화</li>
+    <li>실패해도 남는 결과: 멀티태스크 결합의 이점이 랩 데이터 규모에서도 재현되는지 1차 보고서</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. ReTailor의 경량 residual tailoring을 랩 다중 센서 영상 융합 파이프라인에 이식</h3>
+  <p>센서별 전체 재학습이나 이미지별 전체 최적화 없이, 가벼운 보정 모듈만으로 랩 보유 다중 센서 팬샤프닝/융합 파이프라인의 cross-sensor 저하폭을 줄일 수 있는지 측정합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: ReTailor의 content-aware patch selection + rolling residual bootstrap 재구현</li>
+    <li>공통 benchmark: 랩 보유 2개 이상 센서의 팬샤프닝/영상융합 데이터</li>
+    <li>비교축: cross-sensor 품질 저하폭, 이미지당 적응 비용(처리 시간), LoRA 대비 효율</li>
+    <li>실패해도 남는 결과: 랩 파이프라인의 센서 일반화 격차 1차 정량화 보고서</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Deep Learning Methods(128편, catch-all)를 제외한 버킷 중 최댓값인 Tomography/3D Imaging(50편) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all, 실제 편수는 라벨에 표시). 0편 버킷도 0% 막대로 표시합니다.</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:4%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:14%"></span></span><span class=n>7편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:28%"></span></span><span class=n>14편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>50편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:72%"></span></span><span class=n>36편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:62%"></span></span><span class=n>31편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>128편</span></div>
+
+<p><small>⚠️ 참고: Fourier Ptychography/Microscopy 1편은 완전한 키워드 오탐(SAR 원격탐사)입니다. Lensless/Coded Imaging 2편도 오탐/응용 불일치입니다. Phase Imaging/Holography 7편 중 실질 신호는 2편(메타표면 홀로그래피, 다중깊이 전계 단층 홀로그래피)뿐이고 나머지 5편은 통신·기초물리입니다. Meta-Optics/Diffractive 14편 중 실질 이미징 신호는 3편(Janus 메탈렌즈, 줌렌즈, 역리소그래피)뿐이고 나머지 11편은 통신·RF·열관리용입니다. Light-Field/Novel Sensors 1편은 실질 신호지만 단발입니다. Tomography/3D Imaging 50편 중 geometry/3DGS 신호 5편(클러스터1)과 OCT/CT 신호 3편(클러스터2)이 실질 신호이고, 나머지 약 42편은 치과 CBCT·PET/CT·해부학적 변이 같은 임상 사례·리뷰입니다. Virtual Staining/Pathology 36편 중 실질 신호는 2편뿐이고 나머지 34편은 LLM 에이전트·가상현실·화학 합성 등에 우연히 겹친 오탐입니다. Reconstruction/Inverse Problems 31편 중 실질 신호는 약 4편(FLINT, Dual Flow, 자기입자영상 데이터셋, TEM 물리정보 베이지안 최적화)이고 나머지 약 27편은 PINN 이론, 강화학습, 무선통신 등 범용 ML·공학입니다. Deep Learning Methods 128편 중 오늘 클러스터에 직접 반영된 신호는 약 7편(GaussianRenderFormer, C-WFDM, Glioblastoma MRI LDM, ReTailor, Homology Features, Many Pixels, WSI Fusion)이고 나머지 약 121편은 시계열 예측, 통신, 로봇 정책학습 등 범용 ML입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<h3>Phase Imaging/Holography (7편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/josab.615826" target=_blank>Dynamic Tunable Dirac Semimetal Metasurface and its Reconfigurable Holographic Imaging Research</a></strong> [JNL]<br>
+  왜 주요: Dirac 반금속 메타표면으로 재구성 가능한 홀로그래픽 이미징을 구현해 메타표면 기반 동적 홀로그래피 소자 신호를 보여줌
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/photonics13111044" target=_blank>Flexible Single-Shot Multi-Depth Full-Field Tomographic Imaging System Based on Spatial Frequency Division Multiplexing Holography</a></strong> [JNL]<br>
+  왜 주요: 오프축 기준빔을 공간주파수로 다중화해 단일 촬영으로 여러 깊이의 전계 단층 영상을 동시에 얻는 홀로그래픽 시스템 제안
+</div>
+
+<h3>Meta-Optics/Diffractive (14편 중 관련 3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.612749" target=_blank>Janus metalens enabling directional control of focal depth and intensity</a></strong> [JNL]<br>
+  왜 주요: 보는 방향에 따라 초점 깊이와 세기를 다르게 제어하는 메타렌즈로, 메타광학 소자의 방향 의존 기능성을 확장
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.29026/oea.2026.260092" target=_blank>Electrically-driven zoom lens based on liquid-controlled metasurface</a></strong> [JNL]<br>
+  왜 주요: 메타표면 구조에 액체를 흘려 넣고 전기 신호만으로 초점을 조절, 메타광학이 센싱을 넘어 소자 대체로 확장됨을 보여줌
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/oe.615526" target=_blank>Efficient angle-aware differentiable Mask3D modeling for inverse lithography</a></strong> [JNL]<br>
+  왜 주요: 각도 의존성을 반영한 미분가능 3D 마스크 모델로 역리소그래피 계산 효율을 높임, 메타표면 제작 공정과 연결되는 신호
+</div>
+
+<h3>Light-Field/Novel Sensors (1편 중 관련 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05503" target=_blank>Neuromorphic Camera for Multi-Target Pointing Acquisition and Tracking in Free Space Optical Communication</a></strong> [IV]<br>
+  왜 주요: 뉴로모픽(이벤트) 카메라로 자유공간 광통신의 다중표적 포인팅·추적을 수행, 이벤트 센서 기반 광학 시스템 신호지만 오늘은 단발
+</div>
+
+<h3>Tomography/3D Imaging (50편 중 관련 다수, 대표 3편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.06471" target=_blank>HoloCT: A 3D foundation model unifying CT interpretation and segmentation</a></strong> [CV·AI · TIER A]<br>
+  왜 주요: 오늘 클러스터2·must-read 대표 — 19만 건 넘는 CT로 해석+분할 공동학습이 서로 시너지를 내는지 입증, 다기관 검증에서 전문의 4인 전원을 상회
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.06020" target=_blank>METRIC-GS: Selective Metric-Scale Estimation for 3D Gaussian Splatting</a></strong> [CV]<br>
+  왜 주요: 오늘 클러스터1 대표 — 3DGS 재구성의 임의 단위 문제를 신뢰도 기반 판단 보류로 풀어 스케일 오차를 21.1%→16.6%로 줄임
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05983" target=_blank>Perturbation-Based Reconstruction of Depth-Resolved OCT Attenuation</a></strong> [IV]<br>
+  왜 주요: 오늘 클러스터2 대표 — 신호가 완전히 감쇠하지 않아도 되는 OCT 감쇠 복원 방법으로 혈관 대비 61% 복원
+</div>
+
+<h3>Virtual Staining/Pathology (36편 중 관련 2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1186/s12880-026-03009-4" target=_blank>Unsupervised separation of benign and malignant tissue in Nigerian breast histopathology photomicrographs</a></strong> [JNL]<br>
+  왜 주요: 라벨 없이 유방 조직 광현미경 사진에서 양성/악성 조직을 분리, 데이터가 부족한 지역 병리 환경에 적용 가능한 비지도 신호
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.jmi.13.6.067501" target=_blank>Kidney fibrosis evaluation using dual-mode emission and transmission microscopy</a></strong> [JNL]<br>
+  왜 주요: 방출과 투과 두 모드를 결합한 현미경으로 신장 섬유화를 정량 평가, 다중모드 현미경 응용 신호
+</div>
+
+<h3>Reconstruction/Inverse Problems (31편 중 관련 4편, 대표 3편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05945" target=_blank>FLINT: Coupling Proximal Initialization and Bounded Stochasticity for Flow-Matching Inverse Problems</a></strong> [CV]<br>
+  왜 주요: flow-matching 기반 역문제 solver의 두 설계축(초기화/확률성)이 실제로 결합돼 있음을 보이고 통합 안정성 경계를 유도
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05843" target=_blank>Dual Flow: Joint Image-Measurement Flow for Inverse Problems</a></strong> [CV·IV]<br>
+  왜 주요: 깨끗한 영상과 노이즈 없는 측정값을 동시에 추정하는 joint flow로 역문제의 이미지 복원과 측정 디노이징을 결합
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/mp.70724" target=_blank>A public projection imaging dataset for fieldfree line magnetic particle imaging</a></strong> [JNL]<br>
+  왜 주요: 필드프리 라인 자기입자영상(MPI)의 투영 영상 공개 데이터셋, 이 모달리티의 재구성 알고리즘 비교를 위한 인프라 신호
+</div>
+
+<h3>Deep Learning Methods (128편 중 관련 약 7편, catch-all 과대표 방지로 2편만 표시)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05593" target=_blank>GaussianRenderFormer: Transformer-based Rendering of 3D Gaussian Splats</a></strong> [LG · TIER A]<br>
+  왜 주요: 오늘 클러스터1·must-read 대표 — 래스터라이저 없이 신경망만으로 3DGS를 렌더링할 수 있는지 처음 검증(38.08dB vs 44.02dB)
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05811" target=_blank>ReTailor: A Residual Feature Tailoring Framework for Real-Time Cross-Sensor Pansharpening Adaptation</a></strong> [LG · TIER A]<br>
+  왜 주요: 오늘 클러스터4 대표 — 경량 보정 모듈만으로 팬샤프닝 모델의 cross-sensor 적응을 실시간에 가깝게 수행
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>값</th><th>논문</th></tr></thead>
+<tbody>
+<tr><td>26,820개 Objaverse 객체, 300개 미학습 객체 (rasterizer-free 3DGS 렌더링)</td><td>PSNR</td><td>신경망만으로 38.08dB (전통 래스터라이저 44.02dB)</td><td><a href="https://arxiv.org/abs/2611.05593" target=_blank>GaussianRenderFormer</a></td></tr>
+<tr><td>47개 ScanNet++ 장면, 레이저 ground truth (3DGS 메트릭 스케일 추정)</td><td>평균 오차율</td><td>휴리스틱 21.1% → 선택적 추정기 16.6%(판단 수행 장면만은 9.3%), 라우팅 시 MASt3R 호출 60% 절감</td><td><a href="https://arxiv.org/abs/2611.06020" target=_blank>METRIC-GS</a></td></tr>
+<tr><td>장시퀀스 feed-forward 3DGS 교차뷰 융합</td><td>속도 향상</td><td>재학습 없이 교차뷰 융합 최대 26.12배, end-to-end 1.43배 가속</td><td><a href="https://arxiv.org/abs/2611.06258" target=_blank>CrossPressor</a></td></tr>
+<tr><td>Kermany SD-OCT 4-class 망막질환 분류, EfficientNet-B0~B7</td><td>Test Accuracy</td><td>B0 95.93% → B1 96.95%(최고) → B7 96.73%</td><td><a href="https://arxiv.org/abs/2611.06452" target=_blank>EfficientNet-OCT Scaling</a></td></tr>
+<tr><td>Monte Carlo 혈관 마스크 보류 테스트 (depth-resolved OCT attenuation 복원)</td><td>혈관 ROI 대비/오차</td><td>segmentation-informed 혈관 대비 61% 복원, 평균절대오차 65% 감소</td><td><a href="https://arxiv.org/abs/2611.05983" target=_blank>Perturbation-Based OCT Attenuation</a></td></tr>
+<tr><td>11,455건 5개 병원 전향적 다기관 CT 검증 (해석+분할 통합 foundation model)</td><td>병변 분할·판독문 생성 개선폭</td><td>경쟁 모델 대비 분할 +18.2점, 판독문 생성 +15.3점</td><td><a href="https://arxiv.org/abs/2611.06471" target=_blank>HoloCT</a></td></tr>
+<tr><td>갑상선·대장 병변 선별 리트로스펙티브 reader study (방사선과 전문의 4인 대비)</td><td>평균 정확도</td><td>HoloCT 85.1%로 전문의 4인 전원 상회</td><td><a href="https://arxiv.org/abs/2611.06471" target=_blank>HoloCT</a></td></tr>
+</tbody>
+</table>
+<p><small>abstract에 명시된 수치만 반영했습니다. 본문 확인 전까지는 비교 기준(동일 데이터셋·동일 측정 조건 여부)이 abstract 서술 그대로라고 가정합니다.</small></p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] GaussianRenderFormer: Transformer-based Rendering of 3D Gaussian Splats — arXiv 2611.05593</h3>
+  <div class=tag>[문제정의] [방법전환]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 클러스터1의 대표 논문이자, 3DGS 연구에서 거의 당연하게 여겨지던 전제, 즉 "Gaussian을 화면 픽셀로 바꾸는 과정(래스터라이제이션)은 손으로 설계된 고정 알고리즘이어야 한다"는 전제 자체를 처음 정면으로 시험한 논문입니다.</p>
+  <p><strong>핵심:</strong> 3D Gaussian Splatting은 장면을 수많은 작은 타원체(Gaussian)로 표현하고, 이를 카메라 시점에 맞춰 화면 픽셀로 투영·합성하는 래스터라이저를 통해 실시간 렌더링을 구현합니다. 이 래스터라이저는 지금까지 모든 3DGS 파이프라인에서 손으로 설계된 고정 연산으로 취급돼 왔습니다. GaussianRenderFormer는 이 전제에 "신경망이 래스터라이저 없이 이 연산 자체를 배울 수 있는가"라는 질문을 던집니다. 구조는 두 단계입니다 — 먼저 각 Gaussian을 하나의 토큰으로 바꾸는 시점-독립적인(view-independent) 인코더를 거치고, 그다음 카메라 광선(ray)을 작은 패치 단위로 나눠 그 패치가 어떤 Gaussian 토큰들을 봐야 하는지 attention으로 찾아 픽셀을 직접 만들어내는 시점-의존적(view-dependent) 디코더를 둡니다. 26,820개의 Objaverse 객체를 2만 개 이하로 가지치기한 Gaussian으로 학습시킨 뒤, 전혀 보지 못한 300개 객체에 대해 렌더링을 시도한 결과 38.08dB PSNR을 기록했습니다. 같은 입력을 전통 래스터라이저로 그리면 44.02dB가 나오므로 아직 격차가 있지만, 저자들의 진단에 따르면 이 격차는 미지 객체에 대한 일반화 실패가 아니라 디코더의 구조적 병목(bottleneck)에서 온다고 추정됩니다 — 각 Gaussian이 화면에서 차지하는 투영 범위(footprint)를 디코더에 미리 알려주기만 해도 PSNR이 1.4dB 오르는데, 이 정보는 원래 모델이 스스로 추론할 수 있어야 하는 정보이기 때문입니다. 저자들은 또한 "충분히 학습되지 않았을 가능성도 배제할 수 없다"고 스스로 명시합니다. 랩이 3DGS 파이프라인을 다루고 있다면, 렌더링이라는 연산 자체를 데이터로부터 학습 가능한 대상으로 보는 이 방향이 향후 미분 가능하고 학습 가능한 렌더링 파이프라인 전체를 재설계하는 단서가 될 수 있습니다.</p>
+  <p><strong>주의:</strong> 아직 전통 래스터라이저 대비 성능 격차(38.08dB vs 44.02dB)가 있고, 이 격차가 구조적 한계인지 단순 학습 부족인지 abstract만으로는 확정할 수 없어 본문과 추가 학습 실험 확인이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] HoloCT: A 3D foundation model unifying CT interpretation and segmentation — arXiv 2611.06471</h3>
+  <div class=tag>[인프라] [방법전환] [스케일업]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 클러스터2의 대표 논문이자, "영상을 보고 무엇인지 말하는 것"과 "어디인지 픽셀 단위로 짚는 것"을 하나의 모델에 합치면 서로 도움이 되는지를 임상 규모로 입증한 논문입니다.</p>
+  <p><strong>핵심:</strong> 방사선과 전문의가 CT를 읽을 때는 "이게 무엇인가"와 "그게 3차원 해부학적으로 어디에 있는가"를 동시에 판단합니다. 그런데 지금까지 CT 모델들은 판독문 생성(해석)과 복셀 단위 분할을 서로 다른 과제로 떼어 다뤄왔고, 그 결과 텍스트로 쓰인 소견이 실제 위치와 맞는지 검증할 방법이 없었고, 두 과제가 서로 도움을 줄 수 있는 가능성도 그냥 흘려보냈습니다. HoloCT는 전체 볼륨 맥락과 세밀한 해부학적 디테일을 함께 모델링해, 판독과 복셀 단위 분할을 하나의 모델로 공동학습하고 텍스트 판독 결과에 3D 마스크를 근거로 함께 제시합니다. 이를 위해 73개 공개 데이터셋과 6개 임상 코호트에서 모은 195,921건의 CT, 620만 건의 instruction 대화, 280만 쌍의 CT-마스크 쌍으로 구성된 HoloDATA를 직접 구축했습니다. 분할·병변 선별·시각질의응답·판독문 생성 등 346개 과제, 내부 61개+외부 12개 데이터셋에서 전문·foundation 모델들을 능가했고, 5개 병원 11,455건의 전향적 다기관 검증에서는 경쟁 모델 대비 병변 분할과 판독문 생성을 각각 18.2점·15.3점 개선했습니다. 갑상선·대장 병변 선별에서는 85.1%의 평균 정확도로 리트로스펙티브 reader study에 참여한 방사선과 전문의 4명 전원의 정확도를 넘어섰습니다. 더 흥미로운 지점은 양방향 시너지입니다 — 언어로 유도한 분할이 본 적 없는 해부학적 구조나 애매한 자유 서술형 소견까지도 기존 최고 방법보다 22.1점 높게 찾아냈고, 반대로 모델에게 텍스트와 함께 3D 마스크를 생성하도록 요구했더니 판독 성능 자체도 올라갔습니다. 랩이 CT나 유사한 3D 의료/현미경 영상 파이프라인을 다룬다면, 해석과 분할을 별도 모델로 두지 않고 공동학습시키는 설계가 평가 가능한 수준의 이득을 줄 수 있다는 근거로 참고할 만합니다.</p>
+  <p><strong>주의:</strong> "참여 방사선과 전문의 4명 전원보다 높은 정확도"는 리트로스펙티브 reader study 기준이며, 실시간 전향적 임상 판독 환경에서도 같은 우위가 유지되는지는 abstract만으로 확인되지 않아 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] Virtual Staining/Pathology(36편)·Tomography/3D Imaging(50편)·Reconstruction/Inverse Problems(31편) 모두 실질 신호는 10% 안팎이고 나머지는 키워드 오탐이거나 랩 ROI와 거리가 있는 임상/범용 논문입니다.</p>
+  <p>[Dataset risk] Deep Learning Methods catch-all(128편) 중 이미징 핵심 신호는 클러스터1·3·4에 걸친 약 7편뿐입니다.</p>
+  <p>[Claim risk] classify.py 키워드 매칭이 ME2FDiff·TOP·세포추적 논문처럼 명백한 계산 이미징 논문을 0점 처리해 자동 배정에서 누락시켰습니다(수동 보완함) — 자동 집계 수치(270건)는 실제 ROI 신호의 하한에 가깝습니다.</p>
+  <p>[Claim risk] 오늘 다섯 클러스터는 모두 하루치 신규 논문 기반이라, 내일 이후에도 같은 방향(3DGS 압축/스케일, OCT·CT 스케일링 재검토 등)이 이어지는지는 추가 확인이 필요합니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] GaussianRenderFormer는 저자 스스로 "under-training is not ruled out"이라고 명시 — 38.08dB 격차가 구조적 한계인지 학습 부족인지 abstract만으로는 확정할 수 없습니다.</p>
+  <p>[Dataset risk] EfficientNet-OCT 저자가 "cross-partition duplicates가 독립적으로 감사되지 않았다"고 명시 — 데이터 분할 누수 가능성이 있어 B1의 최고 정확도(96.95%)가 과대평가됐을 수 있습니다.</p>
+  <p>[Claim risk] HoloCT의 "전문의 4인 전원보다 높은 정확도"는 리트로스펙티브 reader study 기준이며 전향적 임상 환경에서의 재현은 확인되지 않았습니다.</p>
+  <p>[Baseline risk] METRIC-GS·CrossPressor의 개선폭(21.1%→16.6%, 최대 26.12배)이 abstract 기준 수치이며, 비교 대상 베이스라인의 설정이 동일 조건인지는 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+<div class=skim>
+  <ul>
+    <li>Tomography/3D Imaging 임상 사례·리뷰 약 42편 — 치과 CBCT, PET/CT, 해부학적 변이, 수의학 영상 등으로 계산 이미징 방법론과 거리가 있습니다.</li>
+    <li>Virtual Staining/Pathology 34편 — "staining"·"virtual" 키워드가 LLM 에이전트, 가상현실/메타버스, 화학 합성, 가상 홍수 체험 논문에 우연히 겹친 경우가 대부분입니다.</li>
+    <li>Meta-Optics/Diffractive 통신·RF·열관리 11편 — THz 생체센싱, 무선통신 안테나, 광무선통신 복호화 등으로 이미징과 직접 연결되지 않습니다.</li>
+    <li>Phase Imaging/Holography 기초물리·통신 5편 — XL-MIMO 채널 추정, 천체물리 간섭계, QCD/중력파 홀로그래피 리뷰.</li>
+    <li>Reconstruction/Inverse Problems 범용 ML·공학 약 27편 — PINN 이론, 강화학습, federated learning, 안테나 최적화 등 방법론은 유사하나 랩 ROI 핵심과는 거리가 있습니다.</li>
+    <li>Deep Learning Methods 비이미징 약 121편 — 시계열 예측, 무선통신, 로봇 정책학습, 그래프 모델 등 광학 이미징과 결이 다른 응용입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+<p><small>하루 270건 전체를 개별 bullet로 쓰는 대신, 각 버킷의 실질 신호(키워드 오탐 제외, 수동 보완 포함)를 대표 논문 중심으로 압축했습니다. 하위 롱테일(Virtual Staining/Pathology 대부분, Tomography/3D Imaging 임상 사례 약 42편, Deep Learning Methods 비이미징 약 121편)은 Watch Lens·Skim-only 섹션에서 버킷/카운트만 표시하고 개별 bullet은 생략합니다.</small></p>
+
+<h3>3D Gaussian Splatting — 표현 압축·스케일·결측 영역 (5편, Tomography/3D Imaging·Deep Learning Methods 교차)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05593" target=_blank>GaussianRenderFormer: Transformer-based Rendering of 3D Gaussian Splats</a></strong> <span class=pill>LG</span><br>
+  문제: 3DGS 렌더링의 래스터라이제이션이 항상 손으로 설계된 고정 알고리즘이어야 한다는 전제 / 방법: Gaussian을 토큰화하는 view-independent 인코더 + ray-patch attention 기반 view-dependent 디코더 / 의미: 오늘 클러스터1·must-read 대표 / 근거: 미학습 300개 객체에서 38.08dB(전통 래스터라이저 44.02dB) / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.06020" target=_blank>METRIC-GS: Selective Metric-Scale Estimation for 3D Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: 3DGS 재구성이 구조-운동 복원에서 임의의 단위를 물려받아 실제 치수로 측정할 수 없음 / 방법: 2D teacher의 visibility-aware voting + 인스턴스 크기 사전지식 + 증거가 얇으면 판단을 보류하는 inlier-mass 테스트 / 의미: 오늘 클러스터1 대표 / 근거: 47개 ScanNet++ 장면에서 오차 21.1%→16.6% / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.06258" target=_blank>CrossPressor: Scalable Cross-View Fusion for Feed-Forward 3D Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: anchor 기반 3DGS 압축이 anchor를 고정하면 입력 뷰가 늘수록 각 anchor의 부담이 커짐 / 방법: coverage-cycled evidence routing으로 anchor query는 유지하되 지원 뷰 시퀀스만 재분배 / 의미: 오늘 클러스터1 대표 / 근거: 재학습 없이 교차뷰 융합 최대 26.12배 가속 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.06593" target=_blank>BudgetSplat: Budget-Controllable Generalizable Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: pixel-aligned feed-forward 3DGS가 해상도·뷰 수에 비례해 Gaussian 개수가 급증 / 방법: 중요도·공간커버리지·교차뷰 중복을 함께 고려한 budget-conditioned 압축 / 의미: 오늘 클러스터1 대표, 재학습 없이 압축률 조절 가능 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.06273" target=_blank>Quo Vadis, Driving Scene Reconstruction? (OccSplat)</a></strong> <span class=pill>CV</span><br>
+  문제: 서라운드뷰 feed-forward 3DGS가 한 시점 관측에만 의존해 가려진 영역이 novel view에서 비어버림 / 방법: Gaussian Occlusion Mapping으로 빈 영역을 찾고 Gaussian Occlusion Completion으로 3D 표현 자체에서 채움 / 의미: 오늘 클러스터1 대표, 이미지 공간 inpainting이 아니라 3D 표현 수준 완성 / 근거: nuScenes에서 가려진 영역의 novel-view synthesis 품질 개선 / 우선순위: Read
+</div>
+
+<h3>OCT·CT 영상 AI — 스케일링과 멀티태스크 재검토 (3편, Tomography/3D Imaging)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.06452" target=_blank>Within-Family EfficientNet Scaling for SD-OCT Retinal Disease Classification</a></strong> <span class=pill>CV</span><br>
+  문제: 자연 이미지의 EfficientNet 크기별 scaling 법칙이 의료영상 전이학습에도 그대로 성립하는지 불분명 / 방법: B0~B7 8개 변형을 고정 해상도에서 4-class SD-OCT 분류로 통제 비교 / 의미: 오늘 클러스터2 대표 / 근거: B1 96.95%(최고) vs B7 96.73%, scaling이 비단조적 / 주의: cross-partition 중복이 독립 감사되지 않음 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05983" target=_blank>Perturbation-Based Reconstruction of Depth-Resolved OCT Attenuation</a></strong> <span class=pill>IV</span><br>
+  문제: OCT 감쇠 복원이 신호가 완전히 감쇠해야 한다는 조건에 의존해 깊은 조직에서 편향됨 / 방법: 0차 지수 추정 + 1차 섭동 보정의 Beer-Lambert 프레임워크 / 의미: 오늘 클러스터2 대표 / 근거: 혈관 대비 61% 복원, MAE 65% 감소 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.06471" target=_blank>HoloCT: A 3D foundation model unifying CT interpretation and segmentation</a></strong> <span class=pill>CV</span><br>
+  문제: CT 해석(판독)과 3D 분할이 별도 과제로 다뤄져 텍스트 소견의 공간적 근거를 검증할 수 없음 / 방법: 전체 볼륨 맥락+세부 해부 구조를 공동 모델링, 19.6만 건 CT·620만 instruction·280만 CT-마스크 쌍으로 학습 / 의미: 오늘 클러스터2·must-read 대표 / 근거: 다기관 검증 분할+18.2점·판독+15.3점, 병변 선별 85.1%(전문의 4인 전원 상회) / 우선순위: Must-read
+</div>
+
+<h3>확산모델 기반 뇌 MRI 보완·합성 (3편, Deep Learning Methods)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05737" target=_blank>C-WFDM: ControlNet-Guided Wavelet-Fusion Diffusion Model for Multimodal Brain MRI Completion</a></strong> <span class=pill>CV</span><br>
+  문제: 풀링된 뇌 MRI 데이터셋에서 T2/FLAIR/조영증강 T1 같은 모달리티가 기관마다 고르지 않게 빠짐 / 방법: ControlNet 유도 wavelet-fusion 확산모델로 있는 모달리티에서 없는 모달리티를 생성 / 의미: 오늘 클러스터3 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05766" target=_blank>ME2FDiff: Multiscale Expert Enhancing Feature Diffusion for Brain Tumor Segmentation</a></strong> <span class=pill>CV</span><br>
+  문제: 치료 후 절제 공간·부종·섬유화가 종양 재발과 겉보기가 비슷해 분할이 어려움 / 방법: 가장 깊은 인코더 단계에만 의존하지 않는 multiscale expert 확산 기반 분할 / 의미: 오늘 클러스터3 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.06540" target=_blank>Spatially and Compositionally Controlled Glioblastoma MRI Synthesis with Latent Diffusion</a></strong> <span class=pill>CV</span><br>
+  문제: 교모세포종 임상 데이터셋이 환자별 형태·구성이 불균형함 / 방법: 위치·범위·구성을 조건으로 받는 2단계(종양 지도→모달리티 조건부 영상) latent diffusion / 의미: 오늘 클러스터3 대표, 데이터 증강으로 역할 확장 / 우선순위: Read
+</div>
+
+<h3>초분광·팬샤프닝 센서 일반화 (4편, Deep Learning Methods·eess.IV)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05811" target=_blank>ReTailor: Real-Time Cross-Sensor Pansharpening Adaptation</a></strong> <span class=pill>LG</span><br>
+  문제: 팬샤프닝 모델이 학습 센서에서만 잘 되고 새 센서로 가면 재학습/전체 최적화가 필요 / 방법: 경량 residual Feature Tailor를 content-aware patch selection + rolling residual bootstrap으로 실시간 적응 / 의미: 오늘 클러스터4·Tier A 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.06430" target=_blank>TOP: Transmission-Oriented Remote Sensing Pansharpening</a></strong> <span class=pill>IV</span><br>
+  문제: 기존 팬샤프닝이 고해상도 영상이 손실 없이 지상에 도착했다고 가정 / 방법: 다운링크 손실 압축을 고려한 전송 지향 팬샤프닝 프레임워크 / 의미: 오늘 클러스터4 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.06230" target=_blank>Homology Features for X-Ray Hyperspectral Images Segmentation</a></strong> <span class=pill>CV</span><br>
+  문제: 다중에너지 X-ray 초분광 영상이 고차원 중복성과 비선형 스펙트럼 중첩으로 분류가 어려움 / 방법: UMAP 매니폴드 표현에 위상수학적(homology) 구조를 결합한 하이브리드 세그멘테이션 / 의미: 오늘 클러스터4 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.06096" target=_blank>Many Pixels, One Composition: Self-Supervised Spectra for Specimen-Level Prediction</a></strong> <span class=pill>LG</span><br>
+  문제: 초분광 영상으로 지표면 시료의 원소 구성을 예측하는 문제가 픽셀 단위 라벨 없이는 어려움 / 방법: 픽셀 단위 비지도 사전학습 인코더 + 시료 단위 attention 회귀 헤드 / 의미: 오늘 클러스터4 대표 / 우선순위: Read
+</div>
+
+<h3>디지털 병리·3D/시간축 현미경 (3편, Tomography/3D Imaging·Deep Learning Methods)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05974" target=_blank>PathoS2VD: From 2D Histopathology to Pseudo Z-Stack Representations</a></strong> <span class=pill>CV</span><br>
+  문제: 2D 조직 단면 한 장만으로는 깊이(z축) 방향의 형태 정보가 사라짐 / 방법: 2D 단면에서 z축 형태학적 사전정보를 학습하는 생성 프레임워크 / 의미: 오늘 클러스터5 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.06624" target=_blank>Learning to Track Cells from Sparse Annotations in 3D Time-Lapse Microscopy</a></strong> <span class=pill>CV</span><br>
+  문제: 3D 시간경과 현미경에서 세포 계보 재구성이 전체 라벨링을 요구해 비현실적 / 방법: 희소 라벨 기반 탐지 + 이미지 특징 보정 + 계보 공동 선택 파이프라인 / 의미: 오늘 클러스터5 대표 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.05579" target=_blank>Multimodal Fusion Methods for Whole-Slide Images and Clinical Data</a></strong> <span class=pill>CV</span><br>
+  문제: 조직 영상과 임상 데이터의 융합 방법이 동일 조건에서 비교된 적이 드묾 / 방법: 15가지 상호교체 가능한 융합 방법을 같은 조건에서 벤치마크 / 의미: 오늘 클러스터5 대표 / 우선순위: Read
+</div>
+<p><small>나머지 계산 이미징 인접 신호(FLINT, Dual Flow, 필드프리 라인 자기입자영상 데이터셋, TEM 물리정보 베이지안 최적화 등)는 🗂 버킷별 주요 논문 섹션을 참고하세요.</small></p>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://arxiv.org/abs/2611.05593" target=_blank>GaussianRenderFormer: Transformer-based Rendering of 3D Gaussian Splats</a></li>
+  <li><a href="https://arxiv.org/abs/2611.06471" target=_blank>HoloCT: A 3D foundation model unifying CT interpretation and segmentation</a></li>
+  <li><a href="https://arxiv.org/abs/2611.06020" target=_blank>METRIC-GS: Selective Metric-Scale Estimation for 3D Gaussian Splatting</a></li>
+  <li><a href="2026-11-04.html">2026-11-04 Daily Briefing</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-11-05 arXiv+저널 daily · arXiv 623건(new+cross, 5개 카테고리) + 저널 443편(Crossref 440편+OpenAlex 보충 3편, --days 1) · 전체 스캔 938건(중복 제거) · ROI 배정 270건 (28.8%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>

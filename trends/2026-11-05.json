@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-05",
+  "source_listing_date": "2026-11-05",
+  "source_mode": "new",
+  "note": "2026-11-05(목) daily. 추적 5개 카테고리(cs.LG/cs.CV/cs.AI/eess.IV/eess.SP) 모두 /new listing이 'Thursday, 5 November 2026'으로 post_date와 정확히 일치해(Date Source Contract 2.1절 충족) /new를 직접 사용했다. arXiv new+cross 623건(cs.LG 214 · cs.CV 148 · cs.AI 217 · eess.IV 8 · eess.SP 36, replacement 제외) + 저널 Crossref 440편 + OpenAlex 보충 3편(총 443편, --days 1)을 scripts/classify.py로 중복 제거하며 스캔해 총 938건 중 270건(28.8%)을 9개 ROI 버킷에 배정했다. classify.py의 키워드 매칭은 이번에도 양방향으로 어긋났다 — Fourier Ptychography/Lensless/Light-Field 버킷 배정분은 대부분 'synthetic aperture'·'diffuser'·'light field' 같은 키워드가 완전히 무관한 분야(위성 SAR, diffusion 모델, 뉴로모픽 음성인식 등)에 우연히 겹친 오탐이었고, 반대로 ME2FDiff(뇌종양 MRI 분할), TOP(전송손실 대응 팬샤프닝), Learning to Track Cells(3D 시간경과 현미경 세포추적)처럼 명백히 계산 이미징에 해당하는 논문 3편은 키워드 매칭 점수가 0이라 어느 버킷에도 배정되지 않았다. 이 세 편은 daily 클러스터 작성 시 classified.json 원본과 카테고리별 전체 목록을 다시 훑어 수동으로 포함했다. 오늘 신호는 거의 전부 arXiv에서 나왔다 — 3D Gaussian Splatting이 렌더링 품질에서 표현 압축/측정 가능한 스케일/결측영역 복원으로 평가축을 옮긴 클러스터(GaussianRenderFormer/METRIC-GS/CrossPressor/BudgetSplat/OccSplat), OCT·CT 영상 AI가 모델 스케일링 가정과 멀티태스크 결합 효과를 재검토한 클러스터(EfficientNet-OCT/OCT attenuation perturbation/HoloCT), 확산모델 기반 뇌 MRI 모달리티 보완·합성 클러스터(C-WFDM/ME2FDiff/Glioblastoma MRI LDM), 초분광·팬샤프닝의 센서 간 일반화 클러스터(ReTailor/TOP/Homology Features/Many Pixels), 디지털 병리·3D 시간경과 현미경 클러스터(PathoS2VD/Cell Tracking/WSI Fusion) 다섯 개를 구성했다. 저널 쪽은 계산 위상영상·메타광학에서 각 2~3편의 조용한 신호(Dirac 반금속 메타표면 홀로그래피, 다중깊이 전계 단층 홀로그래피, Janus 메탈렌즈, 액체 제어 줌렌즈, 역리소그래피)만 이어졌고 클러스터 표에는 올리지 않았다(도메인 Watch Lens 참고). 어제(11/4)와 비교해 클러스터 제목·대표 논문이 전부 교체됐다 — 11/4는 3DGS 동적/실사용 조건 확장·MRI 사전모델 재사용·의료영상 AI 외부 일반화였고, 오늘은 3DGS 표현 압축/스케일·OCT·CT 스케일링 재검토·MRI 모달리티 합성·영상융합 센서 일반화·디지털 병리 3D/시간축로 질문 자체가 다르다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 214,
+      "cs.CV": 148,
+      "cs.AI": 217,
+      "eess.IV": 8,
+      "eess.SP": 36
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 443,
+    "journal_window_days": 1
+  },
+  "totals": {
+    "total_scanned": 938,
+    "selected": 270
+  },
+  "classified": {
+    "total_scanned": 938,
+    "selected": 270,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 2,
+      "Phase Imaging/Holography": 7,
+      "Meta-Optics/Diffractive": 14,
+      "Light-Field/Novel Sensors": 1,
+      "Tomography/3D Imaging": 50,
+      "Virtual Staining/Pathology": 36,
+      "Reconstruction/Inverse Problems": 31,
+      "Deep Learning Methods": 128
+    }
+  },
+  "daily_thesis": "오늘 하루치에서 가장 뚜렷한 축은 두 개입니다. 하나는 3D Gaussian Splatting 연구가 '얼마나 예쁘게 그리는가'에서 '그 표현을 얼마나 작게 압축하고, 실제 길이 단위로 잴 수 있고, 가려서 안 보이는 부분까지 채울 수 있는가'로 평가 기준을 옮긴 점입니다. 다른 하나는 OCT·CT·MRI·초분광 네 가지 서로 다른 영상 모달리티에서 동시에 '모델을 더 키우면 무조건 좋아지는가'와 '한 장비·한 기관에서 학습한 모델이 다른 장비·다른 기관에서도 버티는가'라는 사실상 같은 신뢰성 질문이 반복해서 나왔다는 점입니다."
+}
