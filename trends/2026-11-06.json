@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-06",
+  "source_listing_date": "2026-11-06",
+  "source_mode": "new",
+  "note": "2026-11-06(금) daily. 추적 5개 카테고리(cs.LG/cs.CV/cs.AI/eess.IV/eess.SP) 모두 /new listing이 'Friday, 6 November 2026'으로 post_date와 정확히 일치해(Date Source Contract 2.1절 충족) /new를 직접 사용했다. arXiv new+cross 596건(cs.LG 224 · cs.CV 138 · cs.AI 198 · eess.IV 6 · eess.SP 30, replacement 제외) + 저널 Crossref 432편(--days 1)을 scripts/classify.py로 중복 제거하며 스캔해 총 913건 중 255건(27.9%)을 9개 ROI 버킷에 배정했다. classify.py의 키워드 매칭은 오늘도 양방향으로 어긋났다 — Virtual Staining/Pathology(31편 중 실신호 2편), Tomography/3D Imaging(42편 중 실신호 10편 미만), Meta-Optics/Diffractive(13편 중 실신호 1편)처럼 대부분의 배정이 키워드 우연 일치였고, 반대로 SplatAnything·SM4RT·Gaussians Can Subtract·4D Point Splatting(mmWave 레이더)·Simulation of Refraction Through Voxel Volumes 5편은 feed-forward 3DGS/광학 시뮬레이션 어휘가 표준 키워드와 달라 키워드 매칭 점수가 0이라 어느 버킷에도 배정되지 않았다. 이 5편은 daily 클러스터 작성 시 classified.json 원본과 카테고리별 전체 목록(596편)을 다시 훑어 수동으로 복구했다. 오늘 신호는 arXiv와 저널이 역할을 나눠 맡았다 — arXiv에서는 feed-forward 3D Gaussian Splatting이 스케일 불변성과 4D 동적 복원으로 분류기 사각지대에서 확장하는 클러스터와 이벤트 카메라·SPAD·mmWave 레이더 등 이종 센서가 물리적 결함을 명시적으로 모델링하는 클러스터, 의료영상 분할 아키텍처가 위상·공간 계층을 모델 내부에 직접 주입하는 클러스터(TRiST/OcTreeMamba) 세 개를, 저널에서는 광학 결상 데모가 연구실 조건을 벗어나 옥외 1.4km·일반 CT 챔버 같은 실사용 환경으로 이식되는 클러스터 하나를 구성했다. 다섯 번째 후보(X선 체적 굴절 시뮬레이션 + 가상 염색 SCGP-CGAN)는 두 논문이 '검증 범위의 한계를 스스로 인정한다'는 것 외에 실질적 공통점이 없어 클러스터로 묶지 않고 관찰 항목으로만 남겨, 오늘 클러스터 지도는 목표 5행에서 1행 축소된 4행으로 구성했다. 어제(11/5)와 비교해 클러스터 대표 arXiv ID가 전부 교체됐다 — 11/5는 classify.py 버킷에 정상 배정된 3DGS 표현 압축/OCT·CT 스케일링 재검토였고, 오늘은 분류기가 놓친 3DGS scene-scale 일반화/4D 복원과 이종 센서 물리 모델링으로 질문의 출처 자체가 다르다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 224,
+      "cs.CV": 138,
+      "cs.AI": 198,
+      "eess.IV": 6,
+      "eess.SP": 30
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 432,
+    "journal_window_days": 1
+  },
+  "totals": {
+    "total_scanned": 913,
+    "selected": 255
+  },
+  "classified": {
+    "total_scanned": 913,
+    "selected": 255,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 5,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 8,
+      "Meta-Optics/Diffractive": 13,
+      "Light-Field/Novel Sensors": 2,
+      "Tomography/3D Imaging": 42,
+      "Virtual Staining/Pathology": 31,
+      "Reconstruction/Inverse Problems": 26,
+      "Deep Learning Methods": 128
+    }
+  },
+  "daily_thesis": "오늘 하루치를 다 훑어보면 arXiv 쪽에서는 진짜 전산 광학 이미징 신호가 꽤 희박합니다. 913편 중 classify.py가 255편을 9개 버킷에 넣었지만, 직접 하나씩 읽어보니 그중 상당수가 'Synthetic Aperture'가 태풍 위성 영상에 매칭되거나, 'staining'이 VR·LLM 논문에 매칭되는 식의 키워드 오탐이었습니다. 그럼에도 두 개 축은 분명합니다. 하나는 저널 쪽에서 광학 결상의 '랩 환경 이식' 이야기가 겹쳐서 나온다는 점입니다 — 1.4km 옥외 Fourier ptychography 실증, 싱크로트론 전용이던 격자 기반 X선 위상차 영상을 일반 CT 챔버에 구현해 CNR을 7배 끌어올린 사례, 렌즈리스 홀로그래피 오토포커스 가속까지, 모두 '연구실 데모를 실제 환경/현장 장비로 옮기는' 방향입니다. 다른 하나는 arXiv 쪽 3D Gaussian Splatting 연구가 분류기가 놓친 곳에서 '정적 장면을 더 예쁘게'가 아니라 '스케일에 안정적인 feed-forward 복원'과 '4D(동적) 장면으로의 확장'으로 넘어가고 있다는 점이며, 이는 전혀 다른 센서(mmWave 레이더)에서도 같은 미분가능 렌더링 아이디어가 반복되고 있다는 것으로 확인됩니다."
+}

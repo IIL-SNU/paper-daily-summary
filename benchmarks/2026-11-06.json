@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-06",
+  "results": [
+    {
+      "benchmark": "X선 위상차 영상 CNR(대비잡음비) 비교",
+      "metric": "Contrast-to-Noise Ratio",
+      "value": 8.5,
+      "value_str": "격자 기반 위상차 영상의 CNR 8.5 (기존 흡수 영상 CNR 1.2 대비 약 7배 향상)",
+      "paper": "https://doi.org/10.1177/08953996261451154",
+      "paper_title": "Design, construction and application of a grating-based X-ray phase contrast imaging system under laboratory conditions"
+    },
+    {
+      "benchmark": "mmWave 레이더 micro-Doppler 4D 복원 sim2real pose 오차",
+      "metric": "MPJPE (cm)",
+      "value": 21.9,
+      "value_str": "4D Point Splatting 적용 시 MPJPE 21.9cm (기존 베이스라인 127.6cm 대비 대폭 감소)",
+      "paper": "https://arxiv.org/abs/2611.08342",
+      "paper_title": "4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering"
+    },
+    {
+      "benchmark": "mmWave 레이더 4D 복원 median correlation (HuPR/RT-Pose)",
+      "metric": "Correlation",
+      "value": 0.99,
+      "value_str": "HuPR/RT-Pose 데이터셋 전반에서 median correlation 0.83~0.99 범위로 보고",
+      "paper": "https://arxiv.org/abs/2611.08342",
+      "paper_title": "4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering"
+    }
+  ]
+}

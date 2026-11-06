@@ -1,0 +1,157 @@
+{
+ "date": "2026-11-06",
+ "source_mode": "new",
+ "clusters": [
+  {
+   "cluster": "Feed-forward 3D Gaussian Splatting이 '한 장면 예쁘게'에서 '스케일 불변 + 동적(4D) 복원'으로 분류기 사각지대에서 확장 중",
+   "papers": [
+    {
+     "title": "SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes",
+     "arxiv": "https://arxiv.org/abs/2611.08264",
+     "importance_tags": []
+    },
+    {
+     "title": "SM4RT: Cascaded Feed-forward Model for 4D Reconstruction",
+     "arxiv": "https://arxiv.org/abs/2611.08436",
+     "importance_tags": []
+    },
+    {
+     "title": "Gaussians Can Subtract: Neural Dissolve Fields for Hybrid Scene Rendering",
+     "arxiv": "https://arxiv.org/abs/2611.07049",
+     "importance_tags": []
+    }
+   ],
+   "why": "세 논문 모두 classify.py의 'Tomography/3D Imaging' 버킷에 들지 못했는데, 이유는 전부 아바타·메쉬 압축 같은 표준 3DGS 키워드가 아니라 '장면 스케일', '동적 복원', '하이브리드 렌더링'이라는 다른 어휘를 쓰기 때문입니다. SplatAnything은 feed-forward 3DGS가 장면마다 카메라-거리 정규화 공간에서 가우시안을 예측하다 보니 이웃 가우시안 간 실제 간격이 장면 스케일마다 달라져 지도학습 타깃이 모호해진다는 문제를 지적하고, 이를 정규화하는 GSNorm으로 희소 시점·외삽 시점에서 성능을 끌어올렸다고 보고합니다. SM4RT는 기존 feed-forward 방식이 기하 복원과 모션 추정을 따로 하거나 카메라 움직임까지 한 좌표계에 뭉뚱그려 예측해 모호함이 컸다는 문제를 짚고, 기하를 먼저 복원한 뒤 각 픽셀의 3D 모션을 그 픽셀이 속한 카메라 프레임 기준으로 추정하는 순차적 구조로 Kubric/Waymo/Point Odyssey 등에서 경쟁력 있는 결과를 보고합니다. Gaussians Can Subtract는 메쉬+가우시안 하이브리드 렌더링에서 기존 방식이 항상 '부족한 부분을 가우시안으로 덧붙이는' 가산적 구조였던 것과 달리, 뷰에 따라 메쉬가 오히려 틀린 부분을 선택적으로 지우는 Neural Dissolve Field를 제안합니다. 세 편 모두 '더 사실적인 렌더링'이 아니라 '다른 장면 스케일/동적 상황/메쉬 불일치 같은 조건에서도 깨지지 않는 feed-forward 복원'이라는 같은 문제의식을 공유합니다. 세 팀이 독립적으로 비슷한 방향(스케일/동역학/불일치에 대한 강건성)을 겨냥하고 있다는 점에서 우연이 아니라 feed-forward 3DGS 분야 전체가 다음 단계로 넘어가는 신호로 보입니다.",
+   "confidence": "Medium",
+   "lab_action": "SplatAnything의 GSNorm 아이디어를 랩에서 보유한 멀티스케일 현미경/내시경 feed-forward 3DGS 파이프라인에 이식해, in-house sparse-view 데이터셋(카메라-객체 거리 비율을 2배~5배로 변화시킨 서브셋)에서 기존 정규화 대비 PSNR/LPIPS 변화를 1주 내 측정한다."
+  },
+  {
+   "cluster": "광학 결상 데모가 '연구실 조건'을 벗어나 옥외 1.4km·일반 CT 챔버 같은 실사용 환경으로 이식되는 사례가 저널에서 반복",
+   "papers": [
+    {
+     "title": "Long-Range Horizontal-Path Fourier Ptychography: A 1.4-km Experimental Demonstration",
+     "arxiv": "https://doi.org/10.1002/lpor.71975",
+     "importance_tags": []
+    },
+    {
+     "title": "Design, construction and application of a grating-based X-ray phase contrast imaging system under laboratory conditions",
+     "arxiv": "https://doi.org/10.1177/08953996261451154",
+     "importance_tags": []
+    },
+    {
+     "title": "Statistical outlier detection for polarity-invariant accelerated autofocusing in lensless in-line digital holography",
+     "arxiv": "https://doi.org/10.1117/1.oe.65.11.113102",
+     "importance_tags": []
+    }
+   ],
+   "why": "세 논문 모두 '원래 실험실/싱크로트론 전용이던 결상 기법을 실제 사용 가능한 조건으로 옮긴다'는 같은 동작을 보입니다. Fourier ptychography는 원래 현미경 스케일(수 mm) 기법인데 이 논문은 1.4km 옥외 수평 경로에서 합성 개구 복원을 실증했다고 제목에 명시되어 있습니다(abstract는 Crossref에 미제공이라 세부 수치는 본문 확인 필요). X선 위상차 영상은 원래 싱크로트론처럼 광원 밝기가 매우 높은 시설에서만 되던 기법인데, 이 논문은 격자 듀티비·위상 편이 조건·기하 구조를 이론적으로 최적화하고 격자를 자체 제작해 일반 실험실 CT 챔버에 넣었고, 생체 미세구조 대비잡음비(CNR)를 기존 흡수 영상 대비 1.2에서 8.5로 약 7배 끌어올렸다고 구체적으로 보고합니다. 렌즈리스 홀로그래피 오토포커스 논문은 기존 방식이 초점 응답의 극성이 물체 종류마다 달라지고 넓은 축 방향 범위를 촘촘히 스캔해야 했던 두 가지 한계를 지적하고, 통계적 이상치 탐지 기반으로 이 스캔을 가속하는 극성-불변 프레임워크를 제안합니다. 세 편 다 '새 원리를 증명'하는 논문이 아니라 '이미 알려진 원리를 실제 접근 가능한 하드웨어·거리·조건에서 돌아가게 만드는' 엔지니어링 이식 논문입니다. X선 위상차 논문처럼 구체적 수치(CNR 7배)가 있는 경우는 신뢰도가 높고, FP 1.4km와 홀로그래피 오토포커스는 abstract 수치가 없어 제목 수준의 신호로만 받아들여야 합니다.",
+   "confidence": "Medium",
+   "lab_action": "X선 위상차 논문의 격자 duty cycle·위상 편이 최적화 절차를 랩 보유 micro-CT 장비에 적용 가능한지 1주일 내 타당성 검토하고, 가능하면 동일한 CNR 측정 프로토콜(흡수 영상 대비)로 랩 시료 1종에 대해 재현 실험을 설계한다."
+  },
+  {
+   "cluster": "이종 센서(이벤트 카메라·SPAD·mmWave 레이더)에서 '이상적 센서 모델'을 버리고 물리적 결함을 명시적으로 모델링하는 흐름",
+   "papers": [
+    {
+     "title": "Selective Event Evidence and Persistent Temporal Priors for Event-Based Point Tracking",
+     "arxiv": "https://arxiv.org/abs/2611.07713",
+     "importance_tags": []
+    },
+    {
+     "title": "VisionSIM: Beyond Idealized Sensors - A Multi-Modal Simulator for Robot Perception",
+     "arxiv": "https://arxiv.org/abs/2611.08368",
+     "importance_tags": []
+    },
+    {
+     "title": "4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering",
+     "arxiv": "https://arxiv.org/abs/2611.08342",
+     "importance_tags": []
+    }
+   ],
+   "why": "SEPT는 이벤트 카메라가 빠른 움직임에서도 추적이 가능하지만 이벤트 발생이 장면·움직임에 따라 희박해지고 긴 시퀀스에서 궤적이 drift된다는 문제를 지적하며, 정보가 많은 이벤트만 선택적으로 쓰는 모듈과 시간 윈도우를 넘어 궤적 제약을 유지하는 모듈을 결합합니다. VisionSIM은 기존 로봇 시뮬레이터들이 이벤트·SPAD·iToF/dToF·열화상 같은 신규 센서를 이상적으로 모델링해 LiDAR의 pileup·글레어, SPAD의 위상 wrapping·포화 같은 실제 실패 모드를 숨긴다는 문제를 지적하고, 물리적 측정 과정을 직접 모델링하는 시뮬레이터를 제시합니다. mmWave 레이더 4D Point Splatting은 광학이 아닌 레이더에서도 동일한 미분가능 렌더링(점군을 range-Doppler 빈에 스플래팅) 아이디어를 적용해, HuPR/RT-Pose 데이터셋에서 median correlation 0.83~0.99, sim2real pose 추정 오차를 기존 127.6cm에서 21.9cm로 줄였다고 구체적 수치를 보고합니다. 세 편 모두 '센서를 이상화하지 않고 결함·희박성·물리적 측정 과정을 그대로 모델에 넣는' 같은 설계 철학을 공유하며, 이는 광학 기반 전산 이미징 랩이 다루는 PSF·노이즈 모델링 문제와 정확히 같은 구조입니다. 레이더 사례처럼 구체적 오차 감소 수치가 나온 것은 '물리 기반 미분가능 렌더링이 센서 모달리티를 가리지 않고 통한다'는 꽤 설득력 있는 증거입니다.",
+   "confidence": "High",
+   "lab_action": "VisionSIM의 센서 결함 모델링 파라미터(특히 SPAD pileup/포화) 공개 여부를 확인하고, 랩의 SPAD 기반 TOF 이미징 파이프라인의 노이즈 모델과 1주 내 대조하여 반영 가능한 결함 유형을 리스트업한다."
+  },
+  {
+   "cluster": "의료영상 분할 아키텍처가 '구조를 사후에 다듬기'에서 '위상·공간 계층을 모델 안에 직접 주입하기'로 이동",
+   "papers": [
+    {
+     "title": "TRiST: Topology-Reinforced Swin Transformer for Medical Image Analysis",
+     "arxiv": "https://arxiv.org/abs/2611.07431",
+     "importance_tags": [
+      "[방법전환]",
+      "[해부분석]"
+     ]
+    },
+    {
+     "title": "OcTreeMamba: Topology-Aware Mamba for 3D Medical Segmentation via Octree Sparsification",
+     "arxiv": "https://arxiv.org/abs/2611.07865",
+     "importance_tags": [
+      "[방법전환]",
+      "[스케일업]"
+     ]
+    }
+   ],
+   "why": "의료영상 분할 모델을 평가할 때 지금까지는 주로 픽셀 단위 정확도(Dice 등)만 봤는데, 실제로 병변이나 혈관은 연결 요소나 고리 같은 구조(위상, topology)를 갖고 있고 그 구조가 끊기면 임상적으로 의미가 없어집니다. 오늘 묶인 두 편은 서로 다른 백본을 쓰지만 공통으로 \"이 구조 정보를 결과를 다듬는 후처리 단계가 아니라 모델 내부에 처음부터 넣자\"는 방향을 취합니다. TRiST는 계층형 Swin Transformer의 네 단계마다 2D persistent homology(연결 성분 H0, 고리 H1)를 독립적으로 계산해 각 단계의 토큰 해상도에 맞춘 위상 기술자를 만들고, 이를 짧게/중간/길게 지속되는 구조별로 따로 다듬은 뒤 attention 점수 자체를 바꾸는 데 직접 사용합니다. OcTreeMamba는 반대로 최근 떠오른 Mamba 계열(선형 시간으로 긴 거리 의존성을 포착하는 구조)이 공간을 휴리스틱하게 훑는 과정에서 3D 해부 구조의 원래 공간 계층을 깨고 불필요한 연산까지 늘린다는 문제를 짚고, Gumbel-Softmax로 미분 가능하게 해부학적 영역을 선택한 뒤 이를 octree(공간을 8등분씩 재귀적으로 나누는 트리 구조)로 조직해 혈관처럼 가늘고 연결이 중요한 구조에서 위상적 연속성을 지키며 양방향으로 특징을 전파합니다. 두 편을 합치면, 의료영상 분할 아키텍처 설계가 백본을 더 키우거나 attention을 더 정교하게 만드는 것보다 애초에 구조적 사전지식(위상·공간 계층)을 어디에 어떻게 주입할지를 더 중요하게 보기 시작했다는 뜻입니다.",
+   "confidence": "Medium",
+   "lab_action": "OcTreeMamba의 octree 기반 희소화 모듈을 랩이 보유한 3D 혈관/미세혈관 분할 데이터셋에 적용해, 연결성(topological continuity) 지표와 Dice를 기존 Mamba/Swin-UNet 베이스라인과 1주일 내 비교한다."
+  }
+ ],
+ "insights": [
+  {
+   "title": "Feed-forward 3DGS가 스케일 불변성과 4D 동적 복원으로 확장",
+   "claim": "SplatAnything의 Gaussian Spacing Normalization과 SM4RT의 순차적 기하-모션 추정이 독립적으로 '다른 장면 조건에서도 깨지지 않는 feed-forward 복원'을 겨냥하고 있습니다.",
+   "papers": []
+  },
+  {
+   "title": "광학 결상 기법의 실사용 환경 이식이 저널에서 반복",
+   "claim": "1.4km 옥외 Fourier ptychography, 일반 CT 챔버용 X선 위상차 영상(CNR 7배 개선), 렌즈리스 홀로그래피 가속 오토포커스가 모두 '연구실 데모 → 실사용 조건'이라는 같은 방향을 보입니다.",
+   "papers": []
+  },
+  {
+   "title": "이종 센서에서 물리 결함을 명시적으로 모델링하는 흐름",
+   "claim": "이벤트 카메라, SPAD/iToF, mmWave 레이더 세 모달리티에서 센서를 이상화하지 않고 결함을 직접 모델링하는 접근이 동시에 나타났고, 레이더 사례는 sim2real 오차를 127.6cm에서 21.9cm로 줄인 구체적 수치가 있습니다.",
+   "papers": []
+  },
+  {
+   "title": "의료영상 분할 아키텍처가 위상·공간 계층을 모델에 직접 주입",
+   "claim": "TRiST(Swin+persistent homology)와 OcTreeMamba(Mamba+octree)가 각기 다른 백본에서 구조 정보를 후처리가 아니라 아키텍처 내부에 넣는 같은 방향을 취합니다.",
+   "papers": []
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "A. Feed-forward 3DGS의 스케일 정규화를 전산 현미경 파이프라인에 이식",
+   "claim": "SplatAnything의 Gaussian Spacing Normalization이 희소 시점·극단적 스케일 변화에서 기존 feed-forward 3DGS보다 안정적이라고 보고하는데, 이는 배율이 자주 바뀌는 현미경 영상 복원에도 적용 가능할 수 있습니다.",
+   "supporting_papers": [
+    {
+     "title": "SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes",
+     "arxiv": "https://arxiv.org/abs/2611.08264"
+    }
+   ]
+  },
+  {
+   "title": "B. 물리 기반 센서 결함 모델링을 랩의 SPAD/TOF 이미징에 반영",
+   "claim": "VisionSIM은 SPAD의 pileup·위상 wrapping·포화 같은 실패 모드를 명시적으로 시뮬레이션하면 로봇 인지 실패를 더 잘 예측할 수 있다고 주장하며, 4D Point Splatting(레이더)은 비슷한 물리 기반 미분가능 렌더링으로 sim2real 오차를 127.6cm에서 21.9cm로 줄였습니다.",
+   "supporting_papers": [
+    {
+     "title": "VisionSIM: Beyond Idealized Sensors - A Multi-Modal Simulator for Robot Perception",
+     "arxiv": "https://arxiv.org/abs/2611.08368"
+    },
+    {
+     "title": "4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering",
+     "arxiv": "https://arxiv.org/abs/2611.08342"
+    }
+   ]
+  },
+  {
+   "title": "C. SCGP-CGAN 가상 염색을 WSI 수준으로 확장 검증",
+   "claim": "SCGP-CGAN은 patch-level 데이터셋에서만 검증되었고 저자가 WSI·다기관 검증 부재를 인정했으므로, 랩이 보유한 WSI 데이터로 바로 이 공백을 메우는 추가 실험이 가능합니다.",
+   "supporting_papers": [
+    {
+     "title": "Development of a SCGP-CGAN framework for bidirectional H&E-Masson's Trichrome Virtual Staining",
+     "arxiv": "https://doi.org/10.1371/journal.pone.0361713"
+    }
+   ]
+  }
+ ]
+}

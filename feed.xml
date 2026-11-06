@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 05 Nov 2026 14:24:39 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 14:24:14 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-11-06 (금요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-11-06.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-11-06.html</guid>
+      <pubDate>Fri, 06 Nov 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 스캔 규모는 cs.LG 224편, cs.CV 138편, cs.AI 198편, eess.IV 6편, eess.SP 30편으로 arXiv 신규/교차 등재 합계 596편이었고, 여기에 저널 후보 432편을 더해 classify.py가 총 913편을 보고 255편(약 27.9%)을 9개 버킷에 배정했습니다. 그런데 버킷별로 직접 열어본 결과 실신호 비율은 극단적으로 갈립니다. Virtual Staining/Pathology는 31편 배정에 실제 디지털 병리 신호는 SCGP-CGAN 가상 염색 논문 1편과 스마트 현미경 배포 논문 정도로 2편 내외이고 나머지는 'staining'이 PD-1 염색 피부과 증례나 'virtual'이 VR 대피 훈련·가상 시도착용 논문에 매칭된…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-11-05 (목요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-11-05.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-05.html</guid>
       <pubDate>Wed, 05 Aug 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[오늘(8/5, 수)은 arXiv /new에 cs.LG 181편, cs.CV 146편, cs.AI 292편, eess.IV 8편, eess.SP 20편이 잡혔고, 저널 439건을 더한 원천 스캔 968건 중 255건(26.3%)이 ROI로 선정됐습니다. 어제(8/4)를 압도했던 3D Gaussian Splatting(3DGS, 장면을 수많은 반투명 타원체로 표현해 빠르게 렌더링하는 방식) 신뢰성 물결이 오늘은 거의 잦아들었고, Tomography/3D Imaging 버킷(32편)도 절반 이상이 3DGS가 아니라 임상 OCT·CBCT 사례 보고로 채워졌습니다. 대신 오늘 가장 또렷한 신호는 방법론 쪽에서 나왔습니다. 예전에는 재구성·초해상도 같은 역문제를 풀 때 '이 영상이…]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Daily Briefing — 2026-08-04 (화요일)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-08-04.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-04.html</guid>
-      <pubDate>Tue, 04 Aug 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘(8/4, 화)은 arXiv /new에 cs.LG 340편, cs.CV 331편, cs.AI 464편, eess.IV 19편, eess.SP 71편으로 총 1,225편이 잡혔습니다. 어젯밤까지 listing이 월요일에 멈춰 있어 오전에는 저널만으로 잠정본을 냈었는데, 이번 실행에서 다섯 카테고리 모두 "Tuesday, 4 August 2026"으로 넘어온 걸 확인해 arXiv를 포함한 완전판으로 다시 발행합니다. 저널 420건을 더한 원천 스캔 1,402건 중 469건(33.5%)이 ROI로 선정됐습니다. 오늘 가장 눈에 띄는 특징은 Tomography/3D Imaging 버킷(65편) 안에서 3D Gaussian Splatting(3DGS, 장면을 수많은 반투명 타…]]></description>
     </item>
   </channel>
 </rss>

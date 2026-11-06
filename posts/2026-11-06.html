@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-11-06</title>
+<style>
+
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-11-06 (금요일)</h1>
+
+
+<div class=meta>
+  <div>📅 발행일: 2026-11-06 (금요일) · 추적 5개 카테고리 모두 /new listing이 "Friday, 6 November 2026"으로 post_date와 정확히 일치해(Date Source Contract 2.1절 충족) /new를 직접 사용한 완성본입니다.</div>
+  <div>📚 소스: arXiv(Date Source Contract 통과, /new 직접 사용) + 저널(Crossref/OpenAlex, --days 1)</div>
+  <div>🔢 arXiv: cs.LG 224 · cs.CV 138 · cs.AI 198 · eess.IV 6 · eess.SP 30 (new+cross, replacement 제외, 총 596건)</div>
+  <div>🔢 저널: Crossref 432편 (--days 1)</div>
+  <div>🔢 전체 스캔: 913건(중복 제거 후) · ROI 배정 255건 (27.9%)</div>
+</div>
+
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 하루치를 다 훑어보면 arXiv 쪽에서는 진짜 전산 광학 이미징 신호가 꽤 희박합니다. 913편 중 classify.py가 255편을 9개 버킷에 넣었지만, 직접 하나씩 읽어보니 그중 상당수가 'Synthetic Aperture'가 태풍 위성 영상에 매칭되거나, 'staining'이 VR·LLM 논문에 매칭되는 식의 키워드 오탐이었습니다. 그럼에도 두 개 축은 분명합니다. 하나는 저널 쪽에서 광학 결상의 '랩 환경 이식' 이야기가 겹쳐서 나온다는 점입니다 — 1.4km 옥외 Fourier ptychography 실증, 싱크로트론 전용이던 격자 기반 X선 위상차 영상을 일반 CT 챔버에 구현해 CNR을 7배 끌어올린 사례, 렌즈리스 홀로그래피 오토포커스 가속까지, 모두 '연구실 데모를 실제 환경/현장 장비로 옮기는' 방향입니다. 다른 하나는 arXiv 쪽 3D Gaussian Splatting 연구가 분류기가 놓친 곳에서 '정적 장면을 더 예쁘게'가 아니라 '스케일에 안정적인 feed-forward 복원'과 '4D(동적) 장면으로의 확장'으로 넘어가고 있다는 점이며, 이는 전혀 다른 센서(mmWave 레이더)에서도 같은 미분가능 렌더링 아이디어가 반복되고 있다는 것으로 확인됩니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 스캔 규모는 cs.LG 224편, cs.CV 138편, cs.AI 198편, eess.IV 6편, eess.SP 30편으로 arXiv 신규/교차 등재 합계 596편이었고, 여기에 저널 후보 432편을 더해 classify.py가 총 913편을 보고 255편(약 27.9%)을 9개 버킷에 배정했습니다. 그런데 버킷별로 직접 열어본 결과 실신호 비율은 극단적으로 갈립니다. Virtual Staining/Pathology는 31편 배정에 실제 디지털 병리 신호는 SCGP-CGAN 가상 염색 논문 1편과 스마트 현미경 배포 논문 정도로 2편 내외이고 나머지는 'staining'이 PD-1 염색 피부과 증례나 'virtual'이 VR 대피 훈련·가상 시도착용 논문에 매칭된 오탐입니다. Tomography/3D Imaging은 42편 중 진짜 전산 영상 재구성 신호는 10편 미만이고 나머지는 CT/MRI를 쓰는 임상 증례·역학 보고서입니다. Meta-Optics/Diffractive는 13편 거의 전부가 안테나·전자파 흡수체·통신용 메타표면이고 광학 이미징에 쓰이는 건 end-to-end diffractive optics 설계 1편뿐입니다. Fourier Ptychography/Microscopy 버킷은 태풍 풍속 추정 논문(SAR 키워드 오탐) 1편과 진짜 ptychography 저널 논문 2편이 섞여 있었습니다. 반대로 분류기가 아예 점수를 주지 않아 버킷 밖으로 떨어진 논문 중에서는 feed-forward 3D Gaussian Splatting의 스케일 불변성(SplatAnything), 4D 동적 장면 복원(SM4RT), 메쉬-가우시안 하이브리드 렌더링, mmWave 레이더용 4D point splatting, X선 체적 굴절 시뮬레이션까지 5편을 직접 찾아 복구했습니다. 요약하면 이번 분류기의 구조적 문제는 거짓양성(키워드 우연 일치)이 압도적으로 많고 거짓음성(3DGS·광학 시뮬레이션 어휘가 표준 키워드와 달라 완전히 누락)도 소수지만 질적으로 중요하다는 것입니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제는 3D Gaussian Splatting의 평가축 전환(압축·측정 가능한 스케일·결측 영역 채우기)과 OCT/CT/MRI/초분광 네 모달리티에 걸친 '모델을 키우면 좋아지는가, 다른 장비에서도 버티는가'라는 신뢰성 질문이 두 축이었습니다. 오늘은 결이 다릅니다. classified.json의 버킷 구성 자체가 어제보다 노이즈가 심해서(Virtual Staining 31편 중 실제 신호 1~2편 수준), 오늘의 1번 축은 어제처럼 '한 분야 내부의 평가 기준 변화'가 아니라 '분류기가 완전히 놓친 feed-forward 3DGS/4D 복원 논문들을 직접 찾아내야 했다'는 운영상의 축입니다. 2번 축도 어제의 모달리티 간 신뢰성 질문과 달리, 오늘은 저널에서 반복되는 '연구실 데모를 실제 현장(옥외 1.4km, 일반 CT 챔버)으로 옮기는' 실사용 전환 이야기입니다. 같은 3DGS 키워드가 다시 등장하지만 어제는 Tomography/3D Imaging 버킷에 할당된 아바타·메쉬 압축 논문들이었고 오늘은 분류기가 놓친 scene-scale 일반화와 4D 동적 복원 논문들이라 대표 arXiv ID가 겹치지 않습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Feed-forward 3D Gaussian Splatting이 '한 장면 예쁘게'에서 '스케일 불변 + 동적(4D) 복원'으로 분류기 사각지대에서 확장 중</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.08264" target=_blank>SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2611.08436" target=_blank>SM4RT: Cascaded Feed-forward Model for 4D Reconstruction</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.07049" target=_blank>Gaussians Can Subtract: Neural Dissolve Fields for Hybrid Scene Rendering</a> <span class="pill">CV</span>
+  </td>
+  <td>세 논문 모두 classify.py의 'Tomography/3D Imaging' 버킷에 들지 못했는데, 이유는 전부 아바타·메쉬 압축 같은 표준 3DGS 키워드가 아니라 '장면 스케일', '동적 복원', '하이브리드 렌더링'이라는 다른 어휘를 쓰기 때문입니다. SplatAnything은 feed-forward 3DGS가 장면마다 카메라-거리 정규화 공간에서 가우시안을 예측하다 보니 이웃 가우시안 간 실제 간격이 장면 스케일마다 달라져 지도학습 타깃이 모호해진다는 문제를 지적하고, 이를 정규화하는 GSNorm으로 희소 시점·외삽 시점에서 성능을 끌어올렸다고 보고합니다. SM4RT는 기존 feed-forward 방식이 기하 복원과 모션 추정을 따로 하거나 카메라 움직임까지 한 좌표계에 뭉뚱그려 예측해 모호함이 컸다는 문제를 짚고, 기하를 먼저 복원한 뒤 각 픽셀의 3D 모션을 그 픽셀이 속한 카메라 프레임 기준으로 추정하는 순차적 구조로 Kubric/Waymo/Point Odyssey 등에서 경쟁력 있는 결과를 보고합니다. Gaussians Can Subtract는 메쉬+가우시안 하이브리드 렌더링에서 기존 방식이 항상 '부족한 부분을 가우시안으로 덧붙이는' 가산적 구조였던 것과 달리, 뷰에 따라 메쉬가 오히려 틀린 부분을 선택적으로 지우는 Neural Dissolve Field를 제안합니다. 세 편 모두 '더 사실적인 렌더링'이 아니라 '다른 장면 스케일/동적 상황/메쉬 불일치 같은 조건에서도 깨지지 않는 feed-forward 복원'이라는 같은 문제의식을 공유합니다. 세 팀이 독립적으로 비슷한 방향(스케일/동역학/불일치에 대한 강건성)을 겨냥하고 있다는 점에서 우연이 아니라 feed-forward 3DGS 분야 전체가 다음 단계로 넘어가는 신호로 보입니다.</td>
+  <td>Medium<br><small>서로 다른 세 팀이 '스케일/동적/불일치 강건성'이라는 같은 방향을 가리키지만 공통 벤치마크로 직접 비교되지는 않았고, SM4RT·Dissolve Field는 abstract만으로는 숫자 비교가 부족합니다.</small></td>
+  <td>SplatAnything의 GSNorm 아이디어를 랩에서 보유한 멀티스케일 현미경/내시경 feed-forward 3DGS 파이프라인에 이식해, in-house sparse-view 데이터셋(카메라-객체 거리 비율을 2배~5배로 변화시킨 서브셋)에서 기존 정규화 대비 PSNR/LPIPS 변화를 1주 내 측정한다.</td>
+</tr>
+<tr>
+  <td><strong>광학 결상 데모가 '연구실 조건'을 벗어나 옥외 1.4km·일반 CT 챔버 같은 실사용 환경으로 이식되는 사례가 저널에서 반복</strong></td>
+  <td>
+    <a href="https://doi.org/10.1002/lpor.71975" target=_blank>Long-Range Horizontal-Path Fourier Ptychography: A 1.4-km Experimental Demonstration</a> <span class="pill a">JNL · TIER A</span><br>
+    <a href="https://doi.org/10.1177/08953996261451154" target=_blank>Design, construction and application of a grating-based X-ray phase contrast imaging system under laboratory conditions</a> <span class="pill">JNL</span><br>
+    <a href="https://doi.org/10.1117/1.oe.65.11.113102" target=_blank>Statistical outlier detection for polarity-invariant accelerated autofocusing in lensless in-line digital holography</a> <span class="pill">JNL</span>
+  </td>
+  <td>세 논문 모두 '원래 실험실/싱크로트론 전용이던 결상 기법을 실제 사용 가능한 조건으로 옮긴다'는 같은 동작을 보입니다. Fourier ptychography는 원래 현미경 스케일(수 mm) 기법인데 이 논문은 1.4km 옥외 수평 경로에서 합성 개구 복원을 실증했다고 제목에 명시되어 있습니다(abstract는 Crossref에 미제공이라 세부 수치는 본문 확인 필요). X선 위상차 영상은 원래 싱크로트론처럼 광원 밝기가 매우 높은 시설에서만 되던 기법인데, 이 논문은 격자 듀티비·위상 편이 조건·기하 구조를 이론적으로 최적화하고 격자를 자체 제작해 일반 실험실 CT 챔버에 넣었고, 생체 미세구조 대비잡음비(CNR)를 기존 흡수 영상 대비 1.2에서 8.5로 약 7배 끌어올렸다고 구체적으로 보고합니다. 렌즈리스 홀로그래피 오토포커스 논문은 기존 방식이 초점 응답의 극성이 물체 종류마다 달라지고 넓은 축 방향 범위를 촘촘히 스캔해야 했던 두 가지 한계를 지적하고, 통계적 이상치 탐지 기반으로 이 스캔을 가속하는 극성-불변 프레임워크를 제안합니다. 세 편 다 '새 원리를 증명'하는 논문이 아니라 '이미 알려진 원리를 실제 접근 가능한 하드웨어·거리·조건에서 돌아가게 만드는' 엔지니어링 이식 논문입니다. X선 위상차 논문처럼 구체적 수치(CNR 7배)가 있는 경우는 신뢰도가 높고, FP 1.4km와 홀로그래피 오토포커스는 abstract 수치가 없어 제목 수준의 신호로만 받아들여야 합니다.</td>
+  <td>Medium<br><small>세 논문이 서로 다른 결상 원리(FP, X선 위상차, 홀로그래피)에서 같은 '실사용 이식' 방향을 보이지만, 저널 논문 특성상 abstract에 수치가 없는 경우(FP, 홀로그래피)가 있어 본문 확인이 필요합니다.</small></td>
+  <td>X선 위상차 논문의 격자 duty cycle·위상 편이 최적화 절차를 랩 보유 micro-CT 장비에 적용 가능한지 1주일 내 타당성 검토하고, 가능하면 동일한 CNR 측정 프로토콜(흡수 영상 대비)로 랩 시료 1종에 대해 재현 실험을 설계한다.</td>
+</tr>
+<tr>
+  <td><strong>이종 센서(이벤트 카메라·SPAD·mmWave 레이더)에서 '이상적 센서 모델'을 버리고 물리적 결함을 명시적으로 모델링하는 흐름</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.07713" target=_blank>Selective Event Evidence and Persistent Temporal Priors for Event-Based Point Tracking</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.08368" target=_blank>VisionSIM: Beyond Idealized Sensors - A Multi-Modal Simulator for Robot Perception</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.08342" target=_blank>4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering</a> <span class="pill">SP</span>
+  </td>
+  <td>SEPT는 이벤트 카메라가 빠른 움직임에서도 추적이 가능하지만 이벤트 발생이 장면·움직임에 따라 희박해지고 긴 시퀀스에서 궤적이 drift된다는 문제를 지적하며, 정보가 많은 이벤트만 선택적으로 쓰는 모듈과 시간 윈도우를 넘어 궤적 제약을 유지하는 모듈을 결합합니다. VisionSIM은 기존 로봇 시뮬레이터들이 이벤트·SPAD·iToF/dToF·열화상 같은 신규 센서를 이상적으로 모델링해 LiDAR의 pileup·글레어, SPAD의 위상 wrapping·포화 같은 실제 실패 모드를 숨긴다는 문제를 지적하고, 물리적 측정 과정을 직접 모델링하는 시뮬레이터를 제시합니다. mmWave 레이더 4D Point Splatting은 광학이 아닌 레이더에서도 동일한 미분가능 렌더링(점군을 range-Doppler 빈에 스플래팅) 아이디어를 적용해, HuPR/RT-Pose 데이터셋에서 median correlation 0.83~0.99, sim2real pose 추정 오차를 기존 127.6cm에서 21.9cm로 줄였다고 구체적 수치를 보고합니다. 세 편 모두 '센서를 이상화하지 않고 결함·희박성·물리적 측정 과정을 그대로 모델에 넣는' 같은 설계 철학을 공유하며, 이는 광학 기반 전산 이미징 랩이 다루는 PSF·노이즈 모델링 문제와 정확히 같은 구조입니다. 레이더 사례처럼 구체적 오차 감소 수치가 나온 것은 '물리 기반 미분가능 렌더링이 센서 모달리티를 가리지 않고 통한다'는 꽤 설득력 있는 증거입니다.</td>
+  <td>High<br><small>서로 다른 세 센서 모달리티(이벤트, SPAD/iToF, mmWave)에서 같은 '물리 결함 명시적 모델링' 방향이 독립적으로 나타났고, 레이더 사례는 수치로 뒷받침됩니다.</small></td>
+  <td>VisionSIM의 센서 결함 모델링 파라미터(특히 SPAD pileup/포화) 공개 여부를 확인하고, 랩의 SPAD 기반 TOF 이미징 파이프라인의 노이즈 모델과 1주 내 대조하여 반영 가능한 결함 유형을 리스트업한다.</td>
+</tr>
+<tr>
+  <td><strong>의료영상 분할 아키텍처가 '구조를 사후에 다듬기'에서 '위상·공간 계층을 모델 안에 직접 주입하기'로 이동</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.07431" target=_blank>TRiST: Topology-Reinforced Swin Transformer for Medical Image Analysis</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.07865" target=_blank>OcTreeMamba: Topology-Aware Mamba for 3D Medical Segmentation via Octree Sparsification</a> <span class="pill">CV</span>
+  </td>
+  <td>의료영상 분할 모델을 평가할 때 지금까지는 주로 픽셀 단위 정확도(Dice 등)만 봤는데, 실제로 병변이나 혈관은 연결 요소나 고리 같은 구조(위상, topology)를 갖고 있고 그 구조가 끊기면 임상적으로 의미가 없어집니다. 오늘 묶인 두 편은 서로 다른 백본을 쓰지만 공통으로 "이 구조 정보를 결과를 다듬는 후처리 단계가 아니라 모델 내부에 처음부터 넣자"는 방향을 취합니다. TRiST는 계층형 Swin Transformer의 네 단계마다 2D persistent homology(연결 성분 H0, 고리 H1)를 독립적으로 계산해 각 단계의 토큰 해상도에 맞춘 위상 기술자를 만들고, 이를 짧게/중간/길게 지속되는 구조별로 따로 다듬은 뒤 attention 점수 자체를 바꾸는 데 직접 사용합니다. OcTreeMamba는 반대로 최근 떠오른 Mamba 계열(선형 시간으로 긴 거리 의존성을 포착하는 구조)이 공간을 휴리스틱하게 훑는 과정에서 3D 해부 구조의 원래 공간 계층을 깨고 불필요한 연산까지 늘린다는 문제를 짚고, Gumbel-Softmax로 미분 가능하게 해부학적 영역을 선택한 뒤 이를 octree(공간을 8등분씩 재귀적으로 나누는 트리 구조)로 조직해 혈관처럼 가늘고 연결이 중요한 구조에서 위상적 연속성을 지키며 양방향으로 특징을 전파합니다. 두 편을 합치면, 의료영상 분할 아키텍처 설계가 백본을 더 키우거나 attention을 더 정교하게 만드는 것보다 애초에 구조적 사전지식(위상·공간 계층)을 어디에 어떻게 주입할지를 더 중요하게 보기 시작했다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 백본(Swin vs Mamba)에서 같은 방향(위상/구조 정보의 아키텍처 내재화)이 나타났지만 공통 벤치마크·공통 지표 비교는 없고, 각자 5개/4개의 서로 다른 데이터셋에서만 검증됨.</small></td>
+  <td>OcTreeMamba의 octree 기반 희소화 모듈을 랩이 보유한 3D 혈관/미세혈관 분할 데이터셋에 적용해, 연결성(topological continuity) 지표와 Dice를 기존 Mamba/Swin-UNet 베이스라인과 1주일 내 비교한다.</td>
+</tr>
+</tbody>
+</table>
+<p><small>오늘은 근거가 확실한 클러스터 4개만 표를 구성했습니다(목표 5행에서 1행 축소). 다섯 번째 후보(X선 순방향 물리 시뮬레이션 + 가상 염색)는 두 논문이 "검증 범위의 한계를 스스로 인정한다"는 것 외에 실질적 공통점이 없어 클러스터로 묶지 않고, 아래 도메인 Watch Lens에 단일 관찰 항목으로 남겼습니다.</small></p>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li>Fourier Ptychography/Microscopy: 5편 배정, 실신호 2편(1.4km 장거리 FP 실증, Mueller matrix ptychography) — 나머지 3편은 태풍 풍속 추정(SAR 키워드 오탐), ADF-STEM PSF, 합금 조직 현미경 관찰 등 무관한 논문.</li>
+    <li>Lensless/Coded Imaging: 0편 배정, 실신호 0편 — 해당 버킷 자체가 비어 있어 분류기가 아무것도 걸러내지 못함.</li>
+    <li>Phase Imaging/Holography: 8편 배정, 실신호 2편(렌즈리스 홀로그래피 오토포커스, 위상-편이 moiré 간섭계 파면 복원) — 나머지는 QCD/끈이론 'holography'(물리학 용어 동음이의), 초음파 메타표면, 유전자 조절망 'Virtual Knockout' 등 완전한 오탐.</li>
+    <li>Meta-Optics/Diffractive: 13편 배정, 실신호 1편(end-to-end diffractive optics 공간 분류용 설계) — 나머지 12편은 안테나·전자파 흡수체·통신용 메타표면으로 광학 이미징과 무관.</li>
+    <li>Light-Field/Novel Sensors: 2편 배정, 실신호 2편(이벤트 기반 포인트 추적, 이종 센서 로봇 시뮬레이터) — 둘 다 진짜 신호이며 위 클러스터 3에 포함.</li>
+    <li>Tomography/3D Imaging: 42편 배정, 실신호 10편 미만 — 대부분 CT/MRI를 사용하는 임상 증례·역학 보고서(관상동맥 질환, 두경부 해부 등)이며, 진짜 영상 재구성 신호는 3DGS 아바타/메쉬 압축 논문 소수에 그침.</li>
+    <li>Virtual Staining/Pathology: 31편 배정, 실신호 2편(SCGP-CGAN 가상 염색, 스마트 현미경 배포) — 나머지는 LLM 에이전트, VR 대피 훈련, 가상 시착, 피부과 PD-1 염색 증례 등 'virtual'/'staining' 단어의 완전한 오탐.</li>
+    <li>Reconstruction/Inverse Problems: 26편 배정, 실신호 3~4편(단일 픽셀 이미징용 섬유 프로젝터, femtosecond 레이저 가공용 physics-informed GPR, continual learning 의료 영상 리뷰) — 'Formalizing inverse problems'는 Lean 증명보조기 논문으로 완전한 오탐이며 제외.</li>
+    <li>Deep Learning Methods: 128편 배정(최대 버킷), 실신호 2편 수준 — TRiST(의료 영상용 위상 인식 Swin Transformer), OcTreeMamba(3D 의료 분할) 정도만 결상과 인접하고 나머지는 LLM/RL/시계열/통신 등 완전히 다른 분야 catch-all.</li>
+    <li>Reconstruction/Inverse Problems 바깥 단일 신호(eess.IV, 분류기 누락): 'Simulation of Refraction Through Voxel Volumes'는 경계면에서만 굴절이 일어난다고 가정해온 기존 X선 광선추적 모델이 뼈처럼 굴절률이 연속적으로 변하는 조직 내부 굴절을 무시해왔다는 점을 지적하고, 곡선 광선으로 복셀 그리드 위에서 직접 시뮬레이션해 해석적 해와 대조 검증했습니다. 다만 짝지을 다른 논문이 없어 단독 클러스터 대신 관찰 항목으로만 기록합니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: feed-forward 3D Gaussian Splatting의 스케일 불변성·4D 동적 복원 클러스터(SplatAnything, SM4RT, Gaussians Can Subtract) — 분류기가 아예 놓쳤던 신호; 이종 센서 물리 결함 모델링 클러스터(SEPT 이벤트 추적, VisionSIM, mmWave 레이더 4D Point Splatting); X선 체적 굴절 시뮬레이션(Simulation of Refraction Through Voxel Volumes).</li>
+  <li><strong>저널 전용</strong>: 1.4km 장거리 Fourier ptychography 옥외 실증(Laser & Photonics Reviews); 일반 실험실 CT 챔버용 격자 기반 X선 위상차 영상 시스템(CNR 7배 개선); 렌즈리스 인라인 디지털 홀로그래피의 극성-불변 가속 오토포커스; SCGP-CGAN 기반 H&E-Masson's Trichrome 양방향 가상 염색.</li>
+  <li><strong>공통 키워드</strong>: 직접적인 키워드 교집합은 없지만, arXiv의 'X선 굴절 순방향 시뮬레이션'과 저널의 'X선 위상차 영상 실험실 이식'이 모두 X선 전산 영상의 물리 모델 정밀화라는 넓은 주제를 공유합니다.</li>
+  <li><strong>특징</strong>: 오늘은 arXiv가 3DGS/센서 시뮬레이션 쪽 방법론 전환을, 저널이 광학 결상의 실사용 환경 이식 사례를 각각 담당하는 분업 구도였습니다. 어제는 3DGS 평가축 전환이 arXiv 내부에서 완결된 클러스터였던 반면, 오늘은 arXiv 신호 상당수가 분류기 사각지대에서 수작업으로 복구해야 했고 저널 신호도 abstract 미제공 항목이 많아 전반적으로 어제보다 arXiv/저널 양쪽 모두 신호 밀도가 낮았습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. Feed-forward 3DGS가 스케일 불변성과 4D 동적 복원으로 확장</h3>
+  <p>SplatAnything의 Gaussian Spacing Normalization과 SM4RT의 순차적 기하-모션 추정이 독립적으로 '다른 장면 조건에서도 깨지지 않는 feed-forward 복원'을 겨냥하고 있습니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<div class=ins>
+  <h3>2. 광학 결상 기법의 실사용 환경 이식이 저널에서 반복</h3>
+  <p>1.4km 옥외 Fourier ptychography, 일반 CT 챔버용 X선 위상차 영상(CNR 7배 개선), 렌즈리스 홀로그래피 가속 오토포커스가 모두 '연구실 데모 → 실사용 조건'이라는 같은 방향을 보입니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<div class=ins>
+  <h3>3. 이종 센서에서 물리 결함을 명시적으로 모델링하는 흐름</h3>
+  <p>이벤트 카메라, SPAD/iToF, mmWave 레이더 세 모달리티에서 센서를 이상화하지 않고 결함을 직접 모델링하는 접근이 동시에 나타났고, 레이더 사례는 sim2real 오차를 127.6cm에서 21.9cm로 줄인 구체적 수치가 있습니다.</p>
+  <p class=conf-note>Confidence: High</p>
+</div>
+
+<div class=ins>
+  <h3>4. 의료영상 분할 아키텍처가 위상·공간 계층을 모델에 직접 주입</h3>
+  <p>TRiST(Swin+persistent homology)와 OcTreeMamba(Mamba+octree)가 각기 다른 백본에서 구조 정보를 후처리가 아니라 아키텍처 내부에 넣는 같은 방향을 취합니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. Feed-forward 3DGS의 스케일 정규화를 전산 현미경 파이프라인에 이식</h3>
+  <p>SplatAnything의 Gaussian Spacing Normalization이 희소 시점·극단적 스케일 변화에서 기존 feed-forward 3DGS보다 안정적이라고 보고하는데, 이는 배율이 자주 바뀌는 현미경 영상 복원에도 적용 가능할 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: SplatAnything (2611.08264) — 코드 공개 여부 abstract 기준 불명, 본문/저장소 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 multi-scale 현미경 feed-forward 3DGS 데이터셋(카메라-객체 거리 비율 2배~5배 서브셋 구성)</li>
+    <li>비교축: GSNorm 적용 전/후 PSNR, LPIPS, 가우시안 개수 대비 복원 품질</li>
+    <li>실패해도 남는 결과: GSNorm이 현미경 스케일에서 개선을 못 보이더라도, '스케일 불변 정규화'라는 문제의식 자체(현재 랩 파이프라인이 고정 배율을 가정하는지 점검)는 유효하게 남는다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. 물리 기반 센서 결함 모델링을 랩의 SPAD/TOF 이미징에 반영</h3>
+  <p>VisionSIM은 SPAD의 pileup·위상 wrapping·포화 같은 실패 모드를 명시적으로 시뮬레이션하면 로봇 인지 실패를 더 잘 예측할 수 있다고 주장하며, 4D Point Splatting(레이더)은 비슷한 물리 기반 미분가능 렌더링으로 sim2real 오차를 127.6cm에서 21.9cm로 줄였습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: VisionSIM (2611.08368) 공개 시뮬레이터 파라미터 목록</li>
+    <li>공통 benchmark: 랩의 SPAD 기반 TOF 이미징 실측 데이터(포화/pileup 구간 포함 서브셋)</li>
+    <li>비교축: 이상화된 노이즈 모델 vs VisionSIM 스타일 물리 결함 모델 적용 시 재구성 오차(RMSE) 비교</li>
+    <li>실패해도 남는 결과: VisionSIM 파라미터가 랩 센서와 안 맞더라도, '어떤 결함 유형이 현재 노이즈 모델에서 빠져 있는가'를 정리한 체크리스트는 다음 센서 모델링에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. SCGP-CGAN 가상 염색을 WSI 수준으로 확장 검증</h3>
+  <p>SCGP-CGAN은 patch-level 데이터셋에서만 검증되었고 저자가 WSI·다기관 검증 부재를 인정했으므로, 랩이 보유한 WSI 데이터로 바로 이 공백을 메우는 추가 실험이 가능합니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: SCGP-CGAN 논문 공개 patch-level 데이터셋(본문에서 명칭 확인 필요)</li>
+    <li>공통 benchmark: 랩 보유 H&E-Masson's Trichrome WSI 페어 데이터(확보 가능한 경우) 또는 공개 WSI 병리 데이터셋</li>
+    <li>비교축: patch 단위 SSIM/LPIPS/color consistency vs WSI 단위로 확장했을 때의 동일 지표 저하 폭</li>
+    <li>실패해도 남는 결과: WSI 확장이 실패해도 '어떤 구조적 아티팩트가 patch-to-WSI 확장에서 발생하는가'에 대한 정성적 기록은 가상 염색 평가 프로토콜 설계에 재사용된다.</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Deep Learning Methods(128편, catch-all)를 제외한 버킷 중 최댓값인 Tomography/3D Imaging(42편) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all, 실제 편수는 라벨에 표시). 0편 버킷도 0% 막대로 표시합니다.</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:12%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:19%"></span></span><span class=n>8편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:31%"></span></span><span class=n>13편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:5%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>42편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:74%"></span></span><span class=n>31편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:62%"></span></span><span class=n>26편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>128편</span></div>
+
+<p><small>⚠️ 참고: 버킷별 실질 신호 비율은 위 🔬 도메인 Watch Lens 섹션을 참고하세요 — 대부분의 버킷에서 키워드 오탐이 실질 신호보다 압도적으로 많았습니다(예: Virtual Staining/Pathology 31편 중 실질 신호 2편, Meta-Optics/Diffractive 13편 중 1편).</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71975" target=_blank>Long-Range Horizontal-Path Fourier Ptychography: A 1.4-km Experimental Demonstration</a></strong> [JNL]<br>
+  왜 주요: Fourier ptychography를 현미경 스케일이 아닌 1.4km 옥외 수평 경로로 확장한 실증 사례로, 버킷 내 유일한 진짜 FP 성능 실증 신호.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71977" target=_blank>Mueller Matrix Ptychography for Optical Anisotropy of Triclinic Systems</a></strong> [JNL]<br>
+  왜 주요: Ptychography를 편광 분석(Mueller matrix)과 결합해 비등방성 결정 구조를 측정하는 방법론적 확장.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.oe.65.11.113102" target=_blank>Statistical outlier detection for polarity-invariant accelerated autofocusing in lensless in-line digital holography</a></strong> [JNL]<br>
+  왜 주요: 렌즈리스 홀로그래피 오토포커스의 두 고질적 한계(초점 응답 극성 의존성, 촘촘한 축 방향 스캔 필요)를 통계적 이상치 탐지로 동시에 완화.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.07713" target=_blank>Selective Event Evidence and Persistent Temporal Priors for Event-Based Point Tracking</a></strong> [CV]<br>
+  왜 주요: 이벤트 카메라의 희박성과 긴 시퀀스 drift 문제를 선택적 증거 활용과 시간적 사전(prior) 유지로 동시에 다룸.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.08368" target=_blank>VisionSIM: Beyond Idealized Sensors - A Multi-Modal Simulator for Robot Perception</a></strong> [CV]<br>
+  왜 주요: 이벤트·SPAD·iToF/dToF·열화상 센서의 실제 물리적 실패 모드(pileup, 위상 wrapping, 포화 등)를 숨기지 않고 시뮬레이션.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1371/journal.pone.0361713" target=_blank>Development of a SCGP-CGAN framework for bidirectional H&E-Masson's Trichrome Virtual Staining</a></strong> [JNL]<br>
+  왜 주요: CycleGAN 기반 양방향 가상 염색에 attention·perceptual loss를 결합했고, 저자가 WSI 검증 공백을 스스로 인정한 드문 투명한 사례.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110241" target=_blank>Path-guided sampling for high-performance Laguerre-Gaussian single-pixel imaging at low sampling rates</a></strong> [JNL]<br>
+  왜 주요: 저샘플링률에서 단일 픽셀 이미징 성능을 높이는 경로 유도 샘플링 (abstract 미제공, 제목 기준 신호).
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.07431" target=_blank>TRiST: Topology-Reinforced Swin Transformer for Medical Image Analysis</a></strong> [CV]<br>
+  왜 주요: Deep Learning Methods 캐치올 버킷에서 유일하게 의료 영상의 위상적 특징(연결 요소, 루프)을 멀티스케일 표현에 명시적으로 통합한 사례.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.07690" target=_blank>Simulation of Refraction Through Voxel Volumes</a></strong> [IV]<br>
+  왜 주요: X선 광선추적이 경계면에서만 굴절을 모델링해온 관행을 깨고, 굴절률이 연속적으로 변하는 조직 내부 굴절까지 복셀 단위로 시뮬레이션해 해석적 해와 대조 검증(분류기 누락, 단일 신호).
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>값</th><th>논문</th></tr></thead>
+<tbody>
+<tr><td>X선 위상차 영상 CNR(대비잡음비) 비교</td><td>Contrast-to-Noise Ratio</td><td>격자 기반 위상차 영상의 CNR 8.5 (기존 흡수 영상 CNR 1.2 대비 약 7배 향상)</td><td><a href="https://doi.org/10.1177/08953996261451154" target=_blank>Design, construction and application of a grating-based X-ray phase contrast imaging system under laboratory conditions</a></td></tr>
+<tr><td>mmWave 레이더 micro-Doppler 4D 복원 sim2real pose 오차</td><td>MPJPE (cm)</td><td>4D Point Splatting 적용 시 MPJPE 21.9cm (기존 베이스라인 127.6cm 대비 대폭 감소)</td><td><a href="https://arxiv.org/abs/2611.08342" target=_blank>4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering</a></td></tr>
+<tr><td>mmWave 레이더 4D 복원 median correlation (HuPR/RT-Pose)</td><td>Correlation</td><td>HuPR/RT-Pose 데이터셋 전반에서 median correlation 0.83~0.99 범위로 보고</td><td><a href="https://arxiv.org/abs/2611.08342" target=_blank>4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering</a></td></tr>
+</tbody>
+</table>
+<p><small>abstract에 명시된 수치만 반영했습니다. 본문 확인 전까지는 비교 기준(동일 데이터셋·동일 측정 조건 여부)이 abstract 서술 그대로라고 가정합니다.</small></p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes — https://arxiv.org/abs/2611.08264</h3>
+  <div class=tag>[문제정의] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 분류기가 완전히 놓친 feed-forward 3DGS 클러스터의 대표 논문이며, '예쁜 렌더링'이 아니라 '스케일에 안정적인 지도학습 타깃'이라는 평가축 자체를 재정의한다는 점에서 A급입니다.</p>
+  <p><strong>핵심:</strong> 이 논문은 feed-forward 3D Gaussian Splatting(카메라 이미지 몇 장만 보고 바로 3D 가우시안 집합을 예측하는 방식)이 가진 숨겨진 문제를 짚습니다. 기존 방법들은 가우시안의 크기·위치 같은 속성을 예측할 때 장면 전체의 '반경 거리'를 기준으로 정규화된 공간에서 작업하는데, 이 정규화는 장면 전체의 하나의 통계치만 맞출 뿐 이웃한 가우시안 중심들 사이의 실제 간격은 카메라 구성과 장면 스케일에 따라 제각각으로 벌어질 수 있습니다. 결과적으로 같은 모델이 어떤 장면에서는 가우시안 크기를 적절히 예측하다가 스케일이 다른 장면을 만나면 지도학습 타깃 자체가 체계적으로 어긋나는 문제가 생깁니다. 저자들은 이를 해결하기 위해 장면 수준의 더 강건한 통계치를 기준으로 삼아 가우시안 중심 간 간격을 정규화하는 Gaussian Spacing Normalization(GSNorm)을 제안하고, 이를 SplatAnything이라는 모델에 적용해 희소 시점(적은 수의 입력 이미지)과 외삽 시점(학습 때 보지 못한 먼 거리/각도) 조건을 포함하는 새로운 벤치마크에서 기존 대비 큰 폭의 성능 향상을 보고합니다. 이 랩의 관점에서 중요한 이유는, 현미경·내시경처럼 배율과 촬영 거리가 자주 바뀌는 전산 이미징 환경에서 '한 배율에서 학습한 feed-forward 복원 모델이 다른 배율에서도 버티는가'라는 질문이 정확히 이 논문이 다루는 '장면 스케일 불변성' 문제와 동일한 구조이기 때문입니다.</p>
+  <p><strong>주의:</strong> abstract만으로는 GSNorm이 구체적으로 어떤 수식/알고리즘인지, 그리고 '큰 폭의 성능 향상'이 정확히 몇 퍼센트인지 알 수 없어 본문의 정량적 표(PSNR/SSIM 테이블)를 확인해야 하며, 코드/벤치마크 공개 여부도 abstract에 명시되어 있지 않습니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Design, construction and application of a grating-based X-ray phase contrast imaging system under laboratory conditions — https://doi.org/10.1177/08953996261451154</h3>
+  <div class=tag>[실사용전환] [표준후보]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 저널 클러스터의 '실사용 이식' 테마를 가장 구체적인 수치(CNR 7배 개선)로 뒷받침하는 논문이며, 싱크로트론 전용 기법을 일반 실험실 장비로 옮긴 재현 가능한 파라미터 세트를 제공한다는 점에서 A급입니다.</p>
+  <p><strong>핵심:</strong> X선 위상차 영상(phase-contrast imaging)은 X선을 얼마나 흡수하는지가 아니라 X선의 위상이 얼마나 휘는지를 측정해서, 흡수율 차이가 거의 없어 기존 X선 영상으로는 잘 안 보이는 연부 조직 같은 '약하게 흡수하는' 시료의 내부 구조를 비파괴로 보여주는 기법입니다. 문제는 이 기법이 보통 밝기가 매우 강한 싱크로트론 광원이 있어야 제대로 작동했고, 일반 실험실의 약한 X선 광원으로 옮기려면 격자(grating) 구조의 듀티 사이클, 위상 편이 조건, 기하학적 배치를 정밀하게 맞춰야 했습니다. 저자들은 이 파라미터들을 이론적으로 최적화해 프린지(간섭무늬) 가시성과 광자 수(flux) 사이의 균형을 맞추고, 필요한 격자를 리소그래피와 전기도금 공정으로 직접 제작해 표준 실험실 CT 챔버 안에 설치했습니다. 2단계 위상-편이 방법으로 면봉, 산화된 904L 스테인리스강, 생선 뼈 등 다양한 시료를 촬영한 결과, 생체 미세구조에 대한 대비잡음비(CNR)가 기존 흡수 영상의 1.2에서 8.5로 약 7배 향상되었다고 정량적으로 보고합니다. 이 랩에 중요한 이유는, 비슷한 구조(고가 전용 장비에서만 되던 결상 원리를 표준 장비로 이식)의 문제를 다루는 다른 결상 모달리티(예: 랩의 전산 현미경/OCT 파이프라인)에도 그대로 적용 가능한 '재현 가능한 파라미터 최적화 레시피'를 제공한다는 점입니다.</p>
+  <p><strong>주의:</strong> CNR 7배 개선은 면봉·스테인리스강·생선뼈라는 세 가지 테스트 시료에 한정된 결과이며, 생물학적으로 더 다양하거나 두꺼운 실제 임상/생물 시료에서도 동일한 향상이 재현되는지는 abstract에 언급이 없어 본문의 시료별 상세 결과를 확인해야 합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Baseline risk] Meta-Optics/Diffractive 버킷(13편)의 92%가 안테나·전자파 흡수체 등 통신용 메타표면으로, 광학 이미징과 무관한 키워드 오탐이어서 버킷 이름 자체가 오늘 데이터를 거의 대표하지 못함.</p>
+  <p>[Dataset risk] Virtual Staining/Pathology(31편)와 Tomography/3D Imaging(42편) 두 버킷 모두 실신호 비율이 10% 미만으로, 'staining'/'virtual'/'tomography' 단어의 광범위한 다의성이 분류기 신뢰도를 크게 떨어뜨림.</p>
+  <p>[Baseline risk] 오늘 복구한 5편의 분류기 누락 논문(SplatAnything, SM4RT 등)은 사람이 직접 596편 전체를 재스캔해 찾은 것으로, 매일 이 작업이 수행되지 않으면 feed-forward 3DGS/센서 시뮬레이션 같은 비표준 어휘 논문은 구조적으로 계속 누락될 위험이 있음.</p>
+  <p>[Claim risk] 저널 후보 다수(FP 1.4km, Mueller matrix ptychography, moiré 간섭계, diffractive optics 설계 등)가 Crossref 메타데이터에 abstract가 비어 있어, 오늘 보고서의 저널 관련 주장 상당수가 제목만으로 판단한 것이며 본문 확인 전까지는 잠정적임.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] SplatAnything의 '큰 폭의 성능 향상'이라는 표현은 abstract 수준 요약이며, 실제 PSNR/LPIPS 수치와 비교 대상 베이스라인 목록은 본문 표를 확인해야 함.</p>
+  <p>[Dataset risk] SCGP-CGAN은 저자 스스로 '공개 patch-level 데이터셋만 사용했고 독립적인 WSI 수준 또는 다기관 검증은 포함하지 않았다'고 명시해, 임상 적용 가능성을 평가하려면 WSI 단위 재현이 반드시 필요함.</p>
+  <p>[Claim risk] X선 위상차 영상 논문의 CNR 7배 개선은 면봉·스테인리스강·생선뼈 세 가지 테스트 시료에 한정된 수치로, 더 다양하거나 두꺼운 실제 생체 시료에 일반화되는지는 abstract에서 확인 불가.</p>
+  <p>[Baseline risk] 4D Point Splatting(mmWave 레이더)의 sim2real 오차 감소(127.6cm→21.9cm)는 HuPR/RT-Pose라는 특정 데이터셋·특정 베이스라인 대비 수치이며, 다른 레이더 하드웨어나 다른 포즈 추정 벤치마크에서도 같은 폭의 개선이 나오는지는 확인되지 않음.</p>
+  <p>[Claim risk] Long-Range Fourier Ptychography(1.4km)와 Mueller Matrix Ptychography 두 편은 abstract가 Crossref에 제공되지 않아, '실증 성공'이라는 판단 자체가 논문 제목에 의존한 잠정적 평가임.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+<div class=skim>
+  <ul>
+    <li>Deep Learning Methods 비이미징 약 126편 — LLM/RL/시계열 예측/그래프 신경망/연합학습/시계열 이상탐지 등 일반 머신러닝 방법론 논문으로, 전산 광학 이미징과 직접 관련 없음(TRiST, OcTreeMamba 등 의료 영상 세그멘테이션 아키텍처 2편만 인접 신호).</li>
+    <li>Tomography/3D Imaging 임상 증례/역학 보고서 약 30편 — 관상동맥 CT, 두경부 해부, 신장 섬유화 등 CT/MRI를 '사용'하지만 영상 재구성 방법론에는 기여하지 않는 순수 임상 연구.</li>
+    <li>Virtual Staining/Pathology 비병리 약 29편 — VR 대피 훈련, 가상 시착, LLM 에이전트 메모리, 피부과 PD-1 염색 증례 등 'virtual'/'staining' 단어만 일치하는 완전 무관 논문.</li>
+    <li>Meta-Optics/Diffractive 통신용 메타표면 약 12편 — 6G 안테나, 전자파 흡수체, MIMO 안테나 등 RF/안테나 설계로 광학 결상과 무관.</li>
+    <li>eess.SP 전체 30편 중 29편 — 5G/6G 빔포밍, ISAC, RIS, 위성-지상 통신 등 무선통신 신호처리로 전산 이미징 ROI와 무관(4D Point Splatting 레이더 1편만 예외).</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+<p><small>하루 255건 전체를 개별 bullet로 쓰는 대신, 오늘의 클러스터 지도에 포함된 대표 논문 중심으로 압축했습니다. 하위 롱테일(각 버킷의 키워드 오탐·일반 임상/범용 ML 논문)은 Watch Lens·Skim-only 섹션에서 버킷/카운트만 표시하고 개별 bullet은 생략합니다.</small></p>
+
+<h3>Feed-forward 3D Gaussian Splatting이 '한 장면 예쁘게'에서 '스케일 불변 + 동적(4D) 복원'으로 분류기 사각지대에서 확장 중 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.08264" target=_blank>SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes</a></strong> <span class=pill>CV</span><br>
+  문제: feed-forward 3DGS가 장면 스케일에 따라 가우시안 간격 지도학습 타깃이 체계적으로 어긋남 / 방법: 장면 수준 강건 통계치 기준 Gaussian Spacing Normalization(GSNorm)으로 재정규화 / 의미: 희소 시점·외삽 시점 조건에서도 깨지지 않는 feed-forward 복원으로 평가축 이동 / 근거: 새 benchmark에서 기존 대비 큰 폭 향상 (구체적 수치는 abstract에 없음, 본문 확인 필요) / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.08436" target=_blank>SM4RT: Cascaded Feed-forward Model for 4D Reconstruction</a></strong> <span class=pill>CV</span><br>
+  문제: 기하 복원과 모션 추정을 동시에/단일 좌표계로 처리하면 카메라 움직임 때문에 모호함 발생 / 방법: 기하를 먼저 복원한 뒤 각 픽셀 모션을 해당 카메라 프레임 기준으로 순차 추정 / 의미: 정적 장면 복원에서 동적(4D) 장면 복원으로 feed-forward 방법론 확장 / 근거: Kubric, Waymo, Point Odyssey 등에서 경쟁력 있는/최상위 결과 보고 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.07049" target=_blank>Gaussians Can Subtract: Neural Dissolve Fields for Hybrid Scene Rendering</a></strong> <span class=pill>CV</span><br>
+  문제: 메쉬-가우시안 하이브리드 렌더링이 항상 가산적이라 뷰 의존적 메쉬 오류를 못 지움 / 방법: Neural Dissolve Field로 뷰에 따라 불일치하는 메쉬 영역을 선택적으로 제거 후 잔차 가우시안으로 보완 / 의미: 가산적 보정에서 선택적 제거-보완 구조로 하이브리드 렌더링 패러다임 전환 / 근거: 더 적은 가우시안 수로 더 높은 충실도, 더 빠른 렌더링 (구체적 수치는 abstract에 없음) / 우선순위: Read
+</div>
+<h3>광학 결상 데모가 '연구실 조건'을 벗어나 옥외 1.4km·일반 CT 챔버 같은 실사용 환경으로 이식되는 사례가 저널에서 반복 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.71975" target=_blank>Long-Range Horizontal-Path Fourier Ptychography: A 1.4-km Experimental Demonstration</a></strong> <span class=pill>JNL</span><br>
+  문제: Fourier ptychography는 원래 현미경 스케일 기법으로 장거리 옥외 환경에서 검증된 바 적음 / 방법: 1.4km 수평 경로에서 합성 개구 기반 위상 복원 실험 / 의미: 현미경 결상 기법의 원거리 실사용 가능성 실증 / 근거: abstract 미제공, 제목 기준 신호 — 본문 확인 필요 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1177/08953996261451154" target=_blank>Design, construction and application of a grating-based X-ray phase contrast imaging system under laboratory conditions</a></strong> <span class=pill>JNL</span><br>
+  문제: X선 위상차 영상이 싱크로트론 같은 고휘도 광원에 의존해 일반 실험실에서 쓰기 어려움 / 방법: 격자 duty cycle·위상 편이·기하 구조 최적화 + 자체 제작 격자로 일반 CT 챔버에 구현 / 의미: 싱크로트론 전용 기법의 실험실급 하드웨어 이식 / 근거: CNR 1.2 → 8.5로 약 7배 향상 (면봉, 스테인리스강, 생선뼈 시료) / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.oe.65.11.113102" target=_blank>Statistical outlier detection for polarity-invariant accelerated autofocusing in lensless in-line digital holography</a></strong> <span class=pill>JNL</span><br>
+  문제: 초점 응답 극성이 물체 종류마다 다르고 넓은 축 방향 스캔이 필요 / 방법: 통계적 이상치 탐지 기반 극성-불변 가속 오토포커스 프레임워크 / 의미: 렌즈리스 홀로그래피의 실시간/실사용 가능성 제고 / 근거: abstract에 구체적 가속 배율 수치 없음 — 본문 확인 필요 / 우선순위: Read
+</div>
+<h3>이종 센서(이벤트 카메라·SPAD·mmWave 레이더)에서 '이상적 센서 모델'을 버리고 물리적 결함을 명시적으로 모델링하는 흐름 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.07713" target=_blank>Selective Event Evidence and Persistent Temporal Priors for Event-Based Point Tracking</a></strong> <span class=pill>CV</span><br>
+  문제: 이벤트 희박성과 긴 시퀀스에서의 궤적 drift / 방법: Task-Adaptive Event Evidence Modulation + Persistent Temporal Priors 결합 / 의미: 이벤트 전용 장시간 포인트 추적의 강건성 향상 / 근거: abstract에 정량적 벤치마크 수치 없음 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.08368" target=_blank>VisionSIM: Beyond Idealized Sensors - A Multi-Modal Simulator for Robot Perception</a></strong> <span class=pill>CV</span><br>
+  문제: 기존 시뮬레이터가 이벤트·SPAD·iToF/dToF·열화상을 이상적으로 모델링해 실패 모드를 숨김 / 방법: pileup, 글레어, 위상 wrapping, 포화 등 물리적 측정 과정을 직접 모델링하는 통합 시뮬레이터 / 의미: 센서 현실성을 시뮬레이션의 1급 설계 목표로 승격 / 근거: abstract에 정량적 성능 수치 없음 (시뮬레이터 설명 위주) / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.08342" target=_blank>4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering</a></strong> <span class=pill>SP</span><br>
+  문제: 레이더 데이터셋이 비전/언어보다 훨씬 부족하고 기존 시뮬레이터는 움직이는 신체를 실측에 맞추지 못함 / 방법: 4D 지향점(oriented point, 속도 포함) 장면을 range-Doppler 빈에 미분가능 스플래팅으로 피팅 / 의미: 광학 전용이 아닌 레이더에도 미분가능 렌더링/역렌더링 아이디어가 통함을 실증 / 근거: HuPR/RT-Pose에서 median correlation 0.83~0.99, sim2real MPJPE 127.6cm→21.9cm / 우선순위: Read
+</div>
+<h3>의료영상 분할 아키텍처가 '구조를 사후에 다듬기'에서 '위상·공간 계층을 모델 안에 직접 주입하기'로 이동 (2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.07431" target=_blank>TRiST: Topology-Reinforced Swin Transformer for Medical Image Analysis</a></strong> <span class=pill>CV</span><br>
+  문제: 계층형 Vision Transformer가 다중스케일 표현 전체에 위상 정보(연결 성분·고리)를 명시적으로 반영하지 않음 / 방법: 4단계 Swin 스테이지마다 2D persistent homology를 독립 계산하고, 지속 구간별 residual refinement로 다듬어 attention 점수에 직접 반영 / 의미: 오늘 클러스터4 대표 — 구조 정보를 후처리가 아니라 attention 내부에 주입 / 근거: 5개 의료영상 데이터셋에서 Swin 베이스라인 대비 일관된 개선, 기존 topology-augmented 방법과 경쟁력 있는 성능 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.07865" target=_blank>OcTreeMamba: Topology-Aware Mamba for 3D Medical Segmentation via Octree Sparsification</a></strong> <span class=pill>CV</span><br>
+  문제: Mamba 기반 3D 분할의 휴리스틱 selective scan이 해부 구조의 공간 계층을 깨고 연산 중복을 늘림 / 방법: Gumbel-Softmax 기반 미분가능 해부 영역 선택 + Dynamic Octree Builder + 양방향 Tree-SSM 전파 / 의미: 오늘 클러스터4 대표 — octree로 공간 계층을 보존하며 혈관 등 가는 구조의 위상 연속성을 지킴 / 근거: 4개 벤치마크에서 경쟁력 있는 성능, 특히 혈관 데이터셋의 위상 연속성 복원에서 강점 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://arxiv.org/abs/2611.08264" target=_blank>SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes</a></li>
+  <li><a href="https://doi.org/10.1177/08953996261451154" target=_blank>Design, construction and application of a grating-based X-ray phase contrast imaging system under laboratory conditions</a></li>
+  <li><a href="2026-11-05.html">2026-11-05 Daily Briefing</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-11-06 arXiv+저널 daily · arXiv 596건(new+cross, 5개 카테고리) + 저널 432편(Crossref, --days 1) · 전체 스캔 913건(중복 제거) · ROI 배정 255건 (27.9%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>
