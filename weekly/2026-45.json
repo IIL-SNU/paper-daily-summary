@@ -1,0 +1,290 @@
+{
+  "date": "2026-11-09",
+  "iso_week": "2026-45",
+  "week_start": "2026-11-02",
+  "week_end": "2026-11-06",
+  "weekly_thesis": "지난주는 거의 모든 요일에서 3D Gaussian Splatting(3DGS, 장면을 수많은 작은 타원체로 표현해 실시간 렌더링을 가능하게 하는 기법)이 주인공이었지만, 매일 다른 얼굴로 나타났습니다. 화요일에는 '제품으로 내놓을 때 생기는 문제(정렬 비용, 결함 진단, 워터마킹)'였고, 수요일에는 '날씨·동기화·수술 장면처럼 현실이 어지러운 조건에서도 버티는가'였고, 목요일에는 '표현을 압축하고 실제 길이로 잴 수 있고 빈 곳을 채울 수 있는가'였고, 금요일에는 분류기가 놓친 자리에서 '장면 스케일이 달라져도, 동적으로 움직여도 깨지지 않는가'였습니다. 초반(월~화)은 그 옆에서 의료·병리·안저 영상 AI의 '성능 숫자보다 신뢰·해석·일반화'라는 축이 나란히 떠올랐는데, 수요일을 거치며 이 축도 '설명이 그럴듯한가'에서 '다른 병원·다른 질병에서도 그 설명과 모델이 실제로 버티는가'로 더 날카로워졌습니다. 즉 지난주 초반에는 '3DGS'와 '의료 영상 신뢰성'이라는 두 개의 분리된 흐름처럼 보였지만, 주 후반으로 갈수록 두 흐름 모두 같은 질문(이상적이지 않은 현실 조건에서도 이 모델을 믿을 수 있는가)으로 수렴했습니다.",
+  "hot_vs_cold": {
+    "hot": [
+      {
+        "cluster": "3D Gaussian Splatting이 '예쁜 렌더링'에서 '제품화·동적 확장·압축·강건성'으로 매일 다른 축을 돌아가며 입증",
+        "why": "화요일 5편이 정렬 비용·결함 진단·워터마킹·밀도 제어·octree 적응이라는 '배포 엔지니어링' 문제를 한꺼번에 꺼냈고, 수요일 6편은 날씨 변화·비동기 카메라·수술 장면·장시간 스트리밍·비디오 코덱 압축·품질 평가 벤치마크까지 '현실이 어지러운 조건'으로 적용 범위를 넓혔습니다. 목요일 5편은 래스터라이저 없는 렌더링·실제 단위 스케일 추정·압축·가려진 영역 채우기로 '표현 자체의 쓸모'를 따졌고, 금요일에는 분류기가 아예 놓친 자리에서 3편(스케일 불변 정규화, 4D 동적 복원, 메쉬-가우시안 하이브리드)이 또 비슷한 문제의식을 반복했습니다. 나흘 내내 서로 다른 연구팀이 겹치지 않는 각도에서 '더 잘 그린다'가 아니라 '현실 조건에서 안 깨진다'는 같은 결론에 도달했다는 점이 핵심입니다.",
+        "papers": [
+          "https://arxiv.org/abs/2611.02767",
+          "https://arxiv.org/abs/2611.04358",
+          "https://arxiv.org/abs/2611.06020",
+          "https://arxiv.org/abs/2611.08264"
+        ]
+      },
+      {
+        "cluster": "의료·병리·안저 영상 AI 신뢰성 검증이 '설명이 그럴듯한가'에서 '다른 병원·다른 질병에서도 버티는가'로 더 날카로워짐",
+        "why": "월요일 6편이 병리·안저영상에서 '정확도보다 해석·보정·배포 가능성'을 핵심 기여로 세웠고, 화요일 5편은 생성된 의료·현미경 영상이 '생물학적으로 말이 되고 임상적으로 재현 가능한지'를 따지는 평가법을 요구했습니다. 수요일 3편은 한 발 더 나아가 흉부 X-ray saliency map이 학습 병원 밖(미국·베트남)에서는 오류 탐지에 오히려 역효과를 낸다는 외부 검증 결과와, 재학습 없이 미지의 질병을 소견 조합으로 찾아내는 구조까지 제시했습니다. 목요일에는 OCT·CT에서 '모델을 키우면 항상 좋아지는가'라는 가정 자체가 깨지는 사례(EfficientNet B7이 B1보다 낮은 정확도)가 나왔습니다. 나흘을 합치면 의료 영상 AI의 기준이 '정확도 숫자'에서 '다른 환경·다른 가정에서도 재현되는 근거'로 완전히 옮겨갔다는 뜻입니다.",
+        "papers": [
+          "https://arxiv.org/abs/2610.40905",
+          "https://arxiv.org/abs/2610.41328",
+          "https://arxiv.org/abs/2611.05011",
+          "https://arxiv.org/abs/2611.06452"
+        ]
+      }
+    ],
+    "cold": [
+      {
+        "cluster": "학습된 이미지 사전(prior)이 '언제·왜' 복원에 도움이 되는지 수식으로 증명하려는 이론적 시도",
+        "why": "월요일 2편(Generalized Twin Image, Learning Clean Generative Processes)이 뚜렷한 클러스터를 만들었지만, 화~금 나흘 동안 같은 방향(사전의 효과를 이론적으로 보장하려는 시도)의 후속 논문이 전혀 확인되지 않아 하루짜리 신호에 머물렀습니다.",
+        "papers": []
+      },
+      {
+        "cluster": "novel view synthesis를 단일 입력 복원(HDR·초해상도)의 보조 데이터 발생기로 쓰는 접근",
+        "why": "월요일 2편(PriorGS, PBSR)이 '가짜 다중 프레임을 합성해 고전적 복원 문제를 푼다'는 같은 아이디어를 보였지만, 화~금에는 이 조합(NVS를 복원용 데이터 증강 도구로 쓰는) 후속이 나타나지 않았습니다. 3DGS 자체는 나흘 내내 뜨거웠지만, 이 특정 활용 방향은 일회성에 그쳤습니다."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "cluster": "3D Gaussian Splatting이 '예쁜 렌더링'에서 벗어나 제품화·동적 확장·압축·강건성을 매일 다른 각도에서 입증",
+      "papers": [
+        {
+          "title": "GaussFlaw: Fine-Grained Perceptual Diagnosis for 3D Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2611.02767",
+          "importance_tags": ["[평가축]", "[인프라]"]
+        },
+        {
+          "title": "EndoS3: Endoscopic Semantic Splatting SLAM",
+          "arxiv": "https://arxiv.org/abs/2611.04358",
+          "importance_tags": ["[방법전환]", "[인프라]"]
+        },
+        {
+          "title": "METRIC-GS: Selective Metric-Scale Estimation for 3D Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2611.06020",
+          "importance_tags": ["[평가축]", "[위험보류]"]
+        },
+        {
+          "title": "SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes",
+          "arxiv": "https://arxiv.org/abs/2611.08264",
+          "importance_tags": []
+        },
+        {
+          "title": "SM4RT: Cascaded Feed-forward Model for 4D Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2611.08436",
+          "importance_tags": []
+        }
+      ],
+      "why": "화요일 GaussFlaw는 3DGS 결과물의 흠집(지오메트리 깨짐, 블렌딩 얼룩)을 전역 품질 점수 하나로는 어디가 왜 틀렸는지 알 수 없다는 점을 지적하며 8만 개 결함 영역에 픽셀 단위 라벨을 달아 '결함 진단'을 처음으로 측정 가능한 과제로 만들었습니다. 수요일 EndoS3는 카메라도 움직이고 조직도 변형되는 수술 장면에서 추적·재구성·의미 분류를 동시에 풀어, 3DGS가 '깨끗한 정적 장면'이라는 전제를 벗어나는 사례를 보탰습니다. 목요일 METRIC-GS는 3DGS 재구성이 임의의 단위를 쓰기 때문에 실제 길이로 잴 수 없다는 문제를, 신뢰도가 낮으면 판단을 보류하는 방식으로 풀어 오차를 21.1%에서 16.6%로 줄였습니다. 금요일 SplatAnything과 SM4RT는 분류기(classify.py)가 '3DGS'라는 표준 키워드를 쓰지 않아 놓친 자리에서, 각각 장면 스케일이 달라져도 가우시안 간격이 깨지지 않도록 정규화하는 문제와 기하·모션을 순차적으로 복원하는 4D 구조를 다뤘습니다. 닷새를 통틀어 보면 3DGS 연구가 '얼마나 예쁘게 그리는가'라는 단일 축에서 완전히 벗어나, 제품으로 내놓을 때 생기는 엔지니어링 문제, 현실이 어지러운 조건(날씨·동기화·수술 장면), 표현 자체의 쓸모(스케일·압축·완전성), 그리고 분류기조차 놓치는 비표준 상황(스케일 불변·4D)까지 네 개의 서로 다른 압박을 동시에 받고 있다는 뜻입니다. 이는 3DGS가 연구실 데모를 지나 인프라 단계로 들어섰다는 신호로 읽힙니다.",
+      "confidence": "High",
+      "lab_action": "GaussFlaw의 8만 개 결함 영역 라벨 프로토콜을 랩 보유 3DGS 파이프라인 출력에 적용해 흠집 유형별(지오메트리 깨짐·블렌딩 얼룩) 발생 빈도를 측정하고, METRIC-GS의 신뢰도 기반 스케일 판단 보류 전략과 SplatAnything의 GSNorm을 같은 in-house sparse-view 데이터셋(카메라-객체 거리 비율 2~5배)에 이식해 PSNR·스케일 오차·판단 보류율을 1주 내 함께 벤치마크한다"
+    },
+    {
+      "cluster": "의료·병리·안저 영상 AI 신뢰성 검증이 '설명이 그럴듯한가'에서 '다른 병원·다른 질병에서도 버티는가'로 날카로워짐",
+      "papers": [
+        {
+          "title": "Sparse Autoencoders for Expert-Assisted Interpretation of Histopathology Foundation Model Embeddings",
+          "arxiv": "https://arxiv.org/abs/2610.40905",
+          "importance_tags": ["[해부분석]"]
+        },
+        {
+          "title": "With foundation-model features, aggregator complexity does not improve cross-hospital discrimination in gastric whole-slide image classification",
+          "arxiv": "https://arxiv.org/abs/2610.41328",
+          "importance_tags": ["[경고신호]", "[평가축]"]
+        },
+        {
+          "title": "Can saliency maps flag chest radiograph classifier errors at a new hospital? An external validation study",
+          "arxiv": "https://arxiv.org/abs/2611.05011",
+          "importance_tags": ["[경고신호]", "[평가축]"]
+        },
+        {
+          "title": "Diagnosis by Composition: Detecting and Localizing Unseen Diseases by Composing Learned Radiological Findings",
+          "arxiv": "https://arxiv.org/abs/2611.05231",
+          "importance_tags": ["[방법전환]", "[표준후보]"]
+        },
+        {
+          "title": "Within-Family EfficientNet Scaling under Fixed-Resolution Transfer Learning for SD-OCT Retinal Disease Classification",
+          "arxiv": "https://arxiv.org/abs/2611.06452",
+          "importance_tags": ["[평가축]", "[위험보류]"]
+        }
+      ],
+      "why": "월요일 한국 5개 병원 5,036장 위장 슬라이드 연구는 더 복잡한 집계기를 써도 병원 간 일반화가 좋아지지 않는다는 부정적 결과를 보여줬고, SAE 논문은 병리 파운데이션 모델의 임베딩을 병리의사가 이해할 수 있는 개념 단위로 쪼개 해부했습니다. 수요일 흉부 X-ray saliency map 외부 검증 연구는 한 단계 더 나아가, Grad-CAM이 병변 위치를 짚는 비율이 학습 병원보다 훨씬 낮을 뿐 아니라 '설명이 집중될수록 맞을 확률'이라는 관계 자체가 병원마다 반대로 뒤집혀서, 이 설명을 오류 탐지에 쓰면 오히려 성능이 나빠진다는 구체적 수치(최대 0.575 대 0.888)를 보고했습니다. 같은 날 Diagnosis by Composition은 질병명을 직접 맞히는 대신 방사선과 진료지침의 소견 조합 논리를 모델에 심어, 재학습 없이도 학습 때 못 본 질병을 찾아내는 쪽으로 아예 설계를 바꿨습니다. 목요일 EfficientNet 논문은 '모델을 키우면 좋아진다'는 자연 이미지 스케일링 법칙이 망막 OCT 분류에는 그대로 옮겨지지 않는다는 것을(B1 96.95% vs B7 96.73%) 보여줬습니다. 나흘을 합치면, 의료 영상 AI의 핵심 기여가 '정확도가 높다'는 숫자에서 '다른 병원·다른 질병·다른 가정에서도 그 근거가 재현되는가'로 완전히 옮겨갔다는 뜻입니다.",
+      "confidence": "High",
+      "lab_action": "흉부 X-ray saliency map 외부 검증 논문의 다기관 비교 프로토콜(학습 병원 vs 외부 2개 병원)을 랩 보유 병리/안저 분류 파이프라인에 적용해 설명-정확도 관계의 방향이 기관마다 뒤집히는지 1주 내 확인하고, EfficientNet 스케일링 재평가와 동일한 방식으로 랩 모델 크기별 소수 클래스 F1을 재측정한다"
+    },
+    {
+      "cluster": "생성적 prior(flow matching·diffusion·에너지 기반 모델)가 모달리티를 가리지 않는 복원 공용 플랫폼으로 자리잡음",
+      "papers": [
+        {
+          "title": "Retrieval-Augmented Initialization with Dual-Guided Inversion for Flow-Based Inverse Problem Solvers",
+          "arxiv": "https://arxiv.org/abs/2610.41695",
+          "importance_tags": ["[해부분석]", "[방법전환]"]
+        },
+        {
+          "title": "High-Resolution Quantitative MRI Using Contrast-Domain Multiscale Energy (MuSE) Regularization",
+          "arxiv": "https://arxiv.org/abs/2611.05132",
+          "importance_tags": ["[방법전환]", "[데이터전환]"]
+        },
+        {
+          "title": "Unified Motion Correction and Reconstruction for Accelerated Zero Echo Time MRI",
+          "arxiv": "https://arxiv.org/abs/2611.05169",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Spatially and Compositionally Controlled Multimodal Glioblastoma MRI Synthesis with Latent Diffusion",
+          "arxiv": "https://arxiv.org/abs/2611.06540",
+          "importance_tags": ["[데이터전환]", "[인프라]"]
+        }
+      ],
+      "why": "월요일 Retrieval-Augmented Initialization은 지금까지 당연하게 무작위 가우시안 잡음에서 출발하던 flow 기반 역문제 solver의 초기화 자체가 결과를 크게 바꾼다는 것을 보여, '생성 모델을 복원에 쓴다'는 단계를 지나 '어떻게 초기화할지'라는 세부 설계로 연구가 들어갔음을 시사했습니다. 수요일 MuSE 논문은 한 걸음 더 나아가 MRI 전용 학습 데이터 없이 사람 얼굴 사진(CelebA)으로 학습한 2차원 에너지 기반 모델을 그대로 MRI 여러 대비 영상에 적용해 임상 프로토콜보다 복셀 부피가 8분의 1인 0.5mm 해상도를 5분 이내에 달성했고, 바로 다음 논문인 Zero Echo Time MRI 재구성은 같은 MuSE 모델을 이번엔 해상도가 아니라 환자 움직임 아티팩트 보정에 재사용해 PSNR을 10~15dB 높였습니다. 목요일 Glioblastoma MRI 합성 논문은 또 다른 활용으로, 종양의 위치·크기·구성을 직접 지정해 희귀 종양 형태 데이터를 인위적으로 늘리는 데 같은 전략(생성 사전 재사용)을 적용했습니다. 세 날짜를 합치면, 생성적 prior 하나를 여러 하위 문제(초기화, 해상도, 모션 보정, 데이터 증강)에 재사용하는 것이 이제 '특이한 아이디어'가 아니라 표준 전략으로 자리잡고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "lab_action": "MuSE의 '범용 2D 사전(자연 이미지로 학습) + MRI 대비 영상 조건화' 전략을 랩 보유 compressed-sensing MRI 또는 CT 재구성 파이프라인에 이식해, MRI 전용 학습 데이터 없이도 동일 가속 비율에서 PSNR이 기존 전용 학습 모델과 얼마나 차이나는지 1주 내 비교한다"
+    },
+    {
+      "cluster": "광학 결상 데모가 연구실 조건을 벗어나 옥외·일반 CT 챔버 같은 실사용 환경으로 이식되는 사례가 저널에서 반복",
+      "papers": [
+        {
+          "title": "Long-Range Horizontal-Path Fourier Ptychography: A 1.4-km Experimental Demonstration",
+          "arxiv": "https://doi.org/10.1002/lpor.71975",
+          "importance_tags": []
+        },
+        {
+          "title": "Design, construction and application of a grating-based X-ray phase contrast imaging system under laboratory conditions",
+          "arxiv": "https://doi.org/10.1177/08953996261451154",
+          "importance_tags": []
+        },
+        {
+          "title": "Statistical outlier detection for polarity-invariant accelerated autofocusing in lensless in-line digital holography",
+          "arxiv": "https://doi.org/10.1117/1.oe.65.11.113102",
+          "importance_tags": []
+        }
+      ],
+      "why": "세 논문 모두 금요일 하루에 몰려 나왔지만, 공통으로 '원래 실험실·싱크로트론 전용이던 결상 기법을 실제 사용 가능한 조건으로 옮긴다'는 같은 동작을 보여 랩의 핵심 ROI(계산광학 하드웨어)와 직접 맞닿습니다. Fourier ptychography는 원래 현미경 스케일(수 mm) 기법인데 이 논문은 1.4km 옥외 수평 경로에서 합성 개구 복원을 실증했다고 제목에 명시했습니다. X선 위상차 영상 논문은 싱크로트론처럼 광원이 매우 밝은 시설에서만 가능하던 기법을, 격자 듀티비·위상 편이 조건을 이론적으로 최적화하고 격자를 자체 제작해 일반 실험실 CT 챔버에 넣었고, 생체 미세구조 대비잡음비(CNR)를 기존 흡수 영상 대비 약 7배(1.2→8.5) 끌어올렸다고 구체적으로 보고했습니다. 렌즈리스 홀로그래피 오토포커스 논문은 초점 응답의 극성이 물체마다 달라지는 문제를 통계적 이상치 탐지로 우회해 넓은 범위 스캔을 가속했습니다. 비록 하루에 몰린 신호이지만, 계산광학 하드웨어 코어가 3주 연속 구조적으로 얇은 가운데서도 완전히 비어 있지는 않다는 걸 보여주는 사례로, X선 위상차처럼 수치가 명확한 경우와 FP·홀로그래피처럼 abstract가 없어 제목 수준으로만 받아들여야 하는 경우를 구분해서 봐야 합니다.",
+      "confidence": "Medium",
+      "lab_action": "X선 위상차 논문의 격자 duty cycle·위상 편이 최적화 절차를 랩 보유 micro-CT 장비에 적용 가능한지 1주 내 타당성 검토하고, 동일한 CNR 측정 프로토콜(흡수 영상 대비)로 랩 시료 1종에 대해 재현 실험을 설계한다"
+    },
+    {
+      "cluster": "이종 센서(이벤트 카메라·SPAD·mmWave 레이더)에서 '이상적 센서 모델'을 버리고 물리적 결함을 명시적으로 모델링",
+      "papers": [
+        {
+          "title": "Selective Event Evidence and Persistent Temporal Priors for Event-Based Point Tracking",
+          "arxiv": "https://arxiv.org/abs/2611.07713",
+          "importance_tags": []
+        },
+        {
+          "title": "VisionSIM: Beyond Idealized Sensors - A Multi-Modal Simulator for Robot Perception",
+          "arxiv": "https://arxiv.org/abs/2611.08368",
+          "importance_tags": []
+        },
+        {
+          "title": "4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering",
+          "arxiv": "https://arxiv.org/abs/2611.08342",
+          "importance_tags": []
+        }
+      ],
+      "why": "이 역시 금요일 하루 신호지만 랩의 PSF·노이즈 모델링 문제와 정확히 같은 구조라 독립 행으로 남깁니다. SEPT는 이벤트 카메라가 빠른 움직임에서도 추적 가능하지만 이벤트 발생이 희박해지고 긴 시퀀스에서 궤적이 drift된다는 문제를, 정보가 많은 이벤트만 선택적으로 쓰는 모듈로 풀었습니다. VisionSIM은 기존 로봇 시뮬레이터가 이벤트·SPAD·iToF/dToF·열화상 센서를 이상적으로 모델링해 pileup, 글레어, 위상 wrapping, 포화 같은 실제 실패 모드를 숨긴다는 문제를 지적하고, 물리적 측정 과정을 직접 모델링하는 시뮬레이터를 제시했습니다. mmWave 레이더 4D Point Splatting은 광학이 아닌 레이더에서도 같은 미분가능 렌더링(점군을 range-Doppler 빈에 스플래팅) 아이디어가 통한다는 것을, sim2real pose 추정 오차를 기존 127.6cm에서 21.9cm로 줄였다는 구체적 수치로 보여줬습니다. 세 편이 공유하는 '센서를 이상화하지 않고 결함·희박성·물리적 측정 과정을 그대로 모델에 넣는다'는 설계 철학은 3DGS 클러스터의 '현실 조건에서도 안 깨지는가'라는 질문과 같은 뿌리입니다.",
+      "confidence": "High",
+      "lab_action": "VisionSIM의 센서 결함 모델링 파라미터(특히 SPAD pileup·포화) 공개 여부를 확인하고, 랩의 SPAD 기반 TOF 이미징 파이프라인 노이즈 모델과 1주 내 대조해 반영 가능한 결함 유형을 리스트업한다"
+    }
+  ],
+  "predictions": [
+    {
+      "title": "3DGS 평가 축 이동이 '제품화 엔지니어링'이라는 구체적 하위 주제로 좁혀지며 다음 주에도 지속된다",
+      "claim": "지난주 나흘(화~금)에 걸쳐 3DGS 연구가 '예쁜 렌더링'을 떠나 제품화 엔지니어링(결함 진단, 저작권, 압축), 현실 조건 강건성(날씨, 동기화, 수술 장면), 표현의 쓸모(스케일, 완전성), 분류기 사각지대(스케일 불변, 4D)라는 서로 다른 하위축을 돌아가며 입증했습니다. 다음 주에는 이 중 특히 '결함 진단·품질 벤치마크'처럼 측정 가능한 하위축으로 수렴하는 후속 논문이 나오는지가 관전 포인트입니다.",
+      "rationale": "닷새 중 나흘이라는 빈도와, 서로 다른 연구팀이 겹치지 않는 각도(배포 엔지니어링, 현실 조건, 표현 압축, 분류기 사각지대)에서 같은 결론에 도달했다는 점은 일시적 동시 발생이 아니라 구조적 전환에 더 가깝다는 신호입니다.",
+      "hit_condition": "다음 주 5영업일 중 3일 이상에서 3DGS/feed-forward 3D 관련 '제품화·강건성·품질평가' 클러스터(Confidence High 또는 Medium)가 1개 이상 등장한다",
+      "miss_condition": "다음 주 5일 중 1일 이하에서만 관련 클러스터가 등장하고 나머지 날은 완전히 다른 주제가 3DGS/feed-forward 3D 영역을 주도한다"
+    },
+    {
+      "title": "의료 영상 신뢰성 검증이 '외부 기관 검증 실패 사례'를 한 건 이상 더 추가한다",
+      "claim": "지난주 수요일 흉부 X-ray saliency map 논문은 설명가능성 기법이 외부 병원에서 오히려 역효과를 낸다는 구체적 실패 사례를 보고했습니다. 다음 주에도 이런 '다기관 외부 검증에서 기존 가정이 깨지는' 유형의 논문이 다른 모달리티에서 나오는지 확인합니다.",
+      "rationale": "월~목 나흘 연속 이어진 '신뢰성 검증이 점점 더 구체화된다'는 흐름을 고려하면, 다음 단계는 더 많은 외부 검증 실패 사례가 드러나는 쪽일 가능성이 높습니다.",
+      "hit_condition": "다음 주 5일 중 2일 이상에서 의료 영상 AI의 외부 기관/분포 변화 검증에서 negative result 또는 기존 가정이 깨지는 사례(경고신호 태그)가 1편 이상 등장한다",
+      "miss_condition": "다음 주 5일 동안 외부 검증 negative result가 전혀 나오지 않거나, 모든 의료 영상 신뢰성 논문이 긍정적 결과만 보고한다"
+    },
+    {
+      "title": "계산광학 하드웨어 코어가 3주 연속 '구조적으로 얇음' 패턴을 유지한다",
+      "claim": "W43, W44에 이어 지난주(W45)에도 Fourier Ptychography·Lensless 실질 신호가 하루 2편을 넘긴 날이 없었습니다(월 0, 화 2, 수 0, 목 0, 금 2). 3주 연속 같은 패턴이면 '구조적으로 얇은 기준선'이라는 W44의 재평가가 더 굳어진 것으로 봅니다.",
+      "rationale": "W44가 '불규칙 복귀'에서 '구조적으로 얇은 기준선'으로 판단을 조정했는데, W45도 같은 패턴을 보여 그 판단이 다시 확인되는 흐름입니다.",
+      "hit_condition": "다음 주 5일 중 4일 이상에서 Fourier Ptychography+Lensless 실질 신호 합산이 2편 이하에 머문다",
+      "miss_condition": "다음 주 5일 중 2일 이상에서 Fourier Ptychography 또는 Lensless 중 하나가 실질 신호 기준으로 단독 3편 이상을 기록한다"
+    }
+  ],
+  "prediction_review": [
+    {
+      "title": "[2026-11-02 weekly, W44] feed-forward 3D/3DGS의 '불확실성 인지·입력 결손 내성' 축이 다음 주에도 지속된다",
+      "label": "◐",
+      "reason": "3DGS가 '예쁜 렌더링'을 벗어난다는 더 큰 흐름 자체는 나흘(화~금) 내내 강하게 이어졌지만, 예측이 좁혀 말한 '자기 오류를 스스로 아는가(VGGT 스타일 불확실성)'라는 구체적 형태는 그대로 반복되지 않았습니다. 대신 화요일은 결함 진단·저작권·엔지니어링 비용, 수요일은 날씨·동기화·수술 장면 같은 현실 조건 강건성, 목요일은 압축·실제 단위 스케일·가려진 영역 채우기, 금요일은 장면 스케일 불변성으로 매일 다른 하위축으로 흩어졌습니다. 목요일의 '결측 영역 채우기'와 금요일의 '스케일 불변'은 원 예측의 '입력 결손 내성'과 분명히 맞닿아 있어 완전한 미스는 아니지만, 원 예측이 가정한 좁은 틀(자기 인지적 불확실성)보다는 훨씬 넓은 '현실 조건에서도 안 깨지는가'라는 상위 질문으로 재편됐다고 보는 것이 정확합니다."
+    },
+    {
+      "title": "[2026-11-02 weekly, W44] 의료 영상 '설명 근거·불확실성' 중심 평가가 세 번째 질환/모달리티 묶음으로 더 확산된다",
+      "label": "✅",
+      "reason": "월요일 컴퓨테이셔널 병리·안저영상(당뇨망막병증, 안저영상 파운데이션 모델) 묶음은 지난주(W44) 다루지 않았던 새 모달리티(안저/망막)로 확산된 사례이고, 수요일 흉부 X-ray saliency map 외부 검증과 목요일 EfficientNet OCT 스케일링 재검토 역시 각각 새로운 모달리티(흉부 X-ray, 망막 OCT)에서 같은 방향(신뢰성 중심 평가)을 보여줬습니다. 적중 조건이 요구한 '5일 중 2일 이상, 지난주와 다른 질환/모달리티'를 월·수·목 최소 3일에서 충족해 명확한 적중으로 판정합니다."
+    },
+    {
+      "title": "[2026-11-02 weekly, W44] 계산광학 하드웨어 코어가 2주 연속 '구조적으로 얇음' 패턴을 유지한다",
+      "label": "✅",
+      "reason": "실제 실질 신호(classify.py 원시 배정이 아니라 수작업 검증 기준)로 재확인하면 월요일 FP 0편·Lensless 0편, 화요일 FP 0편·Lensless 2편(둘 다 저널), 수요일 FP 0편·Lensless 0편, 목요일 FP 0편·Lensless 0편, 금요일 FP 2편·Lensless 0편으로, 닷새 모두 FP+Lensless 합산이 2편 이하였습니다. 적중 조건(4일 이상에서 2편 이하)을 5일 모두 충족했고, 빗나감 조건(단독 3편 이상)은 어느 날도 충족하지 않아 명확한 적중입니다. W43→W44→W45까지 3주 연속 같은 패턴이 반복돼 '구조적으로 얇은 기준선'이라는 W44의 재평가가 더 굳어졌습니다."
+    }
+  ],
+  "themes": [
+    {
+      "title": "3D Gaussian Splatting이 연구실 데모에서 인프라 단계로: 제품화, 현실 강건성, 압축, 분류기 사각지대까지 네 겹의 압박",
+      "summary": "화요일 제품화 엔지니어링(결함 진단, 저작권, 정렬 비용), 수요일 현실 조건 강건성(날씨, 동기화, 수술 장면), 목요일 표현의 쓸모(압축, 실제 단위 스케일, 완전성), 금요일 분류기조차 놓치는 사각지대(스케일 불변, 4D)까지 나흘 내내 다른 각도에서 같은 결론(더 예쁘게가 아니라 더 믿을 만하게)에 도달했습니다. 다음 주에는 이 네 겹 중 어떤 축이 측정 가능한 표준 벤치마크로 수렴하는지가 관전 포인트입니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "의료 영상 AI 신뢰성 검증이 '내부 설명'에서 '외부 기관 재현성'으로: 처음 나온 명시적 실패 사례",
+      "summary": "월~목 나흘에 걸쳐 병리·안저·흉부 X-ray·망막 OCT라는 서로 다른 모달리티에서 신뢰성 중심 평가가 반복됐는데, 특히 수요일 saliency map 외부 검증 논문은 '설명가능성 기법을 다른 병원에 그대로 가져다 쓰면 오히려 해롭다'는 구체적 negative result를 처음으로 수치와 함께 제시했습니다. 다음 주에는 이런 외부 검증 실패 사례가 다른 모달리티로 더 퍼지는지 지켜봐야 합니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "계산광학 하드웨어 코어, 3주 연속 구조적으로 얇지만 완전한 공백은 아님 — 금요일의 '랩 환경 이식' 신호",
+      "summary": "W43부터 이어진 '계산광학 코어가 구조적으로 얇다'는 판단이 W45에도 그대로 유지됐습니다(닷새 모두 FP+Lensless 실질 신호 2편 이하). 다만 완전히 비어 있지는 않습니다 — 금요일 하루 1.4km 옥외 Fourier ptychography, 일반 CT 챔버용 X선 위상차 영상, 렌즈리스 오토포커스 가속까지 세 편이 몰려 '연구실 데모를 실사용 환경으로 옮긴다'는 뚜렷한 하위 신호를 남겼습니다. 다음 주에는 이 '랩 환경 이식' 축이 다시 사라지는지, 아니면 반복되는 작은 신호로 자리잡는지가 관전 포인트입니다.",
+      "confidence": "Medium"
+    }
+  ],
+  "top5": [
+    {
+      "title": "AbacusGS: Gaussian Splatting without Per-Splat Sorting",
+      "arxiv": "https://arxiv.org/abs/2611.01534",
+      "why": "매 프레임 모든 Gaussian을 깊이순으로 재정렬하는 비용이 웹·모바일 뷰어의 실제 병목이라는 점을 짚고, 화질 손실 0.13dB만으로 CPU 정렬 기반 렌더링을 4.5배 가속했습니다. 화요일 '3DGS 제품화 엔지니어링' 클러스터에서 가장 구체적인 배포 수치를 가진 사례입니다.",
+      "tag": "[실사용전환]"
+    },
+    {
+      "title": "Can saliency maps flag chest radiograph classifier errors at a new hospital? An external validation study",
+      "arxiv": "https://arxiv.org/abs/2611.05011",
+      "why": "30만 건 넘는 흉부 X-ray 판정을 학습 병원과 미국·베트남 외부 병원에서 비교해, saliency map 기반 오류 탐지가 병원마다 반대 방향으로 작동한다는 negative result를 수치(최대 0.575 대 0.888)로 보여준 논문입니다. 의료 영상 신뢰성 검증 클러스터에서 가장 날카로운 경고 신호입니다.",
+      "tag": "[경고신호]"
+    },
+    {
+      "title": "High-Resolution Quantitative MRI Using Contrast-Domain Multiscale Energy (MuSE) Regularization",
+      "arxiv": "https://arxiv.org/abs/2611.05132",
+      "why": "MRI 전용 학습 데이터 없이 사람 얼굴 사진으로 학습한 에너지 기반 모델을 그대로 재사용해 임상 프로토콜보다 복셀 부피 8분의 1인 0.5mm 해상도를 5분 내 스캔으로 달성하고, 같은 모델이 다음 날 모션 보정에도 재사용됐습니다. 생성적 prior가 공용 플랫폼이 되어가는 흐름을 가장 잘 보여주는 사례입니다.",
+      "tag": "[방법전환]"
+    },
+    {
+      "title": "4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering",
+      "arxiv": "https://arxiv.org/abs/2611.08342",
+      "why": "광학이 아닌 mmWave 레이더에서도 점군을 range-Doppler 빈에 스플래팅하는 미분가능 렌더링이 통한다는 것을, sim2real pose 오차를 127.6cm에서 21.9cm로 줄인 구체적 수치로 보여줬습니다. 3DGS와 이종 센서 물리 모델링이라는 두 주간 클러스터를 동시에 잇는 다리 역할을 합니다.",
+      "tag": "[방법전환]"
+    },
+    {
+      "title": "Design, construction and application of a grating-based X-ray phase contrast imaging system under laboratory conditions",
+      "arxiv": "https://doi.org/10.1177/08953996261451154",
+      "why": "싱크로트론 전용이던 격자 기반 X선 위상차 영상을 일반 실험실 CT 챔버에 구현해 생체 미세구조 대비잡음비를 기존 흡수 영상 대비 약 7배(1.2→8.5) 끌어올렸습니다. 금요일 '랩 환경 이식' 클러스터에서 가장 구체적인 수치를 가진, 랩 ROI와 직접 맞닿은 사례입니다.",
+      "tag": "[실사용전환]"
+    }
+  ],
+  "next_week_actions": [
+    {
+      "title": "GaussFlaw 결함 라벨 + METRIC-GS/SplatAnything 정규화를 랩 3DGS 파이프라인에 동시 적용",
+      "action": "GaussFlaw(2611.02767)의 8만 개 결함 영역 라벨 프로토콜을 랩 보유 3DGS 출력에 적용해 흠집 유형별 발생 빈도를 측정하고, METRIC-GS(2611.06020)의 신뢰도 기반 스케일 판단 보류와 SplatAnything(2611.08264)의 GSNorm을 in-house sparse-view 데이터셋(카메라-객체 거리 비율 2~5배)에 함께 이식해 PSNR·스케일 오차·판단 보류율을 비교한다.",
+      "expected_output": "결함 유형별 빈도표, 거리 비율별 PSNR·스케일 오차·판단 보류율 비교표"
+    },
+    {
+      "title": "흉부 X-ray saliency map 외부 검증 프로토콜을 랩 병리/안저 분류기에 적용",
+      "action": "saliency map 외부 검증 논문(2611.05011)의 다기관 비교 설계(학습 병원 vs 외부 2개 병원)를 랩 보유 병리/안저 분류 파이프라인에 그대로 적용해, 설명-정확도 관계의 방향이 기관마다 뒤집히는지 확인하고, EfficientNet 스케일링 재평가(2611.06452)와 동일하게 랩 모델 크기별 소수 클래스 F1을 재측정한다.",
+      "expected_output": "기관별 설명-정확도 상관관계 비교표, 모델 크기별 F1 곡선"
+    },
+    {
+      "title": "X선 위상차 영상 랩 환경 이식 타당성 검토 + MuSE 범용 사전 재사용 실험",
+      "action": "X선 위상차 영상 논문의 격자 duty cycle·위상 편이 최적화 절차를 랩 보유 micro-CT 장비에 적용 가능한지 검토하고 동일 CNR 측정 프로토콜로 랩 시료 1종 재현 실험을 설계하며, MuSE(2611.05132)의 '범용 2D 사전 + MRI 대비 영상 조건화' 전략을 랩 보유 compressed-sensing MRI/CT 파이프라인에 이식해 MRI 전용 학습 데이터 없이 동일 가속 비율에서 PSNR 차이를 비교한다.",
+      "expected_output": "micro-CT 적용 타당성 보고서 및 CNR 재현 실험 설계안, 범용 사전 vs 전용 학습 모델 PSNR 비교표"
+    }
+  ]
+}
