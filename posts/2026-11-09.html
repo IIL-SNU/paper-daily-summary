@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-11-09</title>
+<style>
+
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-11-09 (월요일)</h1>
+
+
+<div class=meta>
+  <div>📅 발행일: 2026-11-09 (월요일) · 추적 5개 카테고리 모두 /new listing이 "Monday, 9 November 2026"으로 post_date와 정확히 일치해(Date Source Contract 2.1절 충족) /new를 직접 사용한 완성본입니다.</div>
+  <div>📚 소스: arXiv(Date Source Contract 통과, /new 직접 사용) + 저널(Crossref/OpenAlex, --days 1)</div>
+  <div>🔢 arXiv: cs.LG 213 · cs.CV 117 · cs.AI 219 · eess.IV 17 · eess.SP 30 (new+cross, replacement 제외, 총 596건)</div>
+  <div>🔢 저널: Crossref 337편 + OpenAlex 보충 1편 (--days 1)</div>
+  <div>🔢 전체 스캔: 811건(중복 제거 후) · ROI 배정 212건 (26.1%)</div>
+</div>
+
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘 하루치 전산 광학 신호는 양은 많지 않지만 결은 뚜렷합니다. 병리·현미경 영상 AI는 "정확도가 몇 퍼센트인가"보다 "이 모델이 틀릴 걸 스스로 아는지, 엉뚱한 단서로 맞히는 건 아닌지"를 점검하는 쪽으로 넘어갔고, 영상 복원 알고리즘은 diffusion이든 고전적 plug-and-play든 사람이 손으로 맞추던 하이퍼파라미터를 스스로 추정하는 쪽으로 수렴했습니다. 영상 생성 쪽은 "예쁜 영상을 만드는가" 경쟁에서 벗어나 알파채널·물리 법칙·실시간 편집 같은 실사용 속성을 하나씩 채우고 있고, 이벤트 카메라는 diffusion의 prior를 빌려 쓰며 응용 범위를 우주선 추적까지 넓혔습니다. 지난주 weekly가 짚었던 "의료·병리 영상 AI 신뢰성" 축이 이번 주 첫날에도 그대로, 오히려 더 구체적인 형태(편향 지도, 불확실성 기반 보류)로 이어지는 모습입니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 스캔 규모는 cs.LG 213편, cs.CV 117편, cs.AI 219편, eess.IV 17편, eess.SP 30편으로 arXiv 신규/교차 등재 합계 596건(중복 제거 전 카테고리별 집계)이었고, 여기에 저널 후보 337편과 OpenAlex 보충 1편을 더해 classify.py가 중복 제거 후 총 811건을 보고 212건(약 26.1%)을 9개 버킷에 배정했습니다. 버킷별로 직접 열어본 결과 신호 밀도는 극단적으로 낮습니다 — Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 오늘 둘 다 0편 배정으로 완전히 빈 버킷이었고, Phase Imaging/Holography(2편)와 Meta-Optics/Diffractive(2편)도 배정된 논문이 전부 결상과 무관한 키워드 오탐(용액 구조 분광학, 플라즈몬 재료 공정)이었습니다. 반대로 실질 신호는 분류기가 상대적으로 큰 버킷으로 분류한 곳에 몰려 있었습니다. Virtual Staining/Pathology(25편 배정)에서는 병리 AI의 신뢰성·편향·설명가능성을 다루는 4편(Health-System-Wide Mapping, ProtoCouncil, PathXAI, APL)이 뚜렷한 신호였고, Reconstruction/Inverse Problems(19편)에서는 diffusion과 고전 plug-and-play 복원 알고리즘이 하이퍼파라미터를 자동 추정하는 4편(FANO, AdaptivePnP, SPSC, DoA 추정)이, Tomography/3D Imaging(44편 중 대부분은 심장내과·방사선종양학 학회 초록)에서는 관상동맥 CT 파이프라인을 정교화하는 3편이 신호였습니다. Deep Learning Methods(115편, catch-all)에서는 비디오 diffusion 생성 모델이 알파채널·물리 일관성·실시간 편집 같은 실사용 속성을 하나씩 채우는 6편이 가장 큰 단일 묶음이었습니다. 저널 쪽은 오늘 유난히 빈약해서, Crossref 쿼리 9개가 직접 겨냥한 계산광학 핵심 키워드(Fourier ptychography, lensless, metasurface, holography, virtual staining)에 정확히 매칭되는 논문이 사실상 없었고, 유일하게 의미 있는 신호는 다중모드 광섬유 스페클 기반 영상 복원 논문 1편이었습니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>지난 금요일(11/6)은 분류기가 놓친 feed-forward 3D Gaussian Splatting(3DGS) 신호를 수작업으로 복구해야 할 만큼 노이즈가 심했고, 그 안에서도 핵심 축은 "3DGS가 예쁜 렌더링에서 스케일 불변·4D 복원으로 확장"과 "이종 센서의 물리 결함을 명시적으로 모델링하는 흐름"이었습니다. 오늘은 3DGS 관련 신호 자체가 거의 없습니다(제목 재탐색에서도 발견되지 않음). 대신 지난주 weekly가 짚었던 "의료·병리 영상 AI 신뢰성" 축이 전면에 나섰습니다. 금요일에는 의료영상이 "구조(위상) 정보를 모델 안에 주입하는가"라는 아키텍처 질문이었다면, 오늘은 "그 모델을 믿어도 되는가"라는 한 단계 더 나아간 질문(편향 지도, 불확실성 기반 보류, 근거를 추적할 수 있는 보고서 생성)으로 구체화됐습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>병리·현미경 영상 AI 평가가 "정확도 숫자"에서 "편향·불확실성·추적 가능성 점검"으로 넘어감</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.09851" target=_blank>Health-System-Wide Mapping of Demographic Information in Routine Clinical Histopathology</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2611.09058" target=_blank>ProtoCouncil: Multi-Encoder Anatomical Prototypes for Prostate Cancer Detection in Micro-Ultrasound</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2611.09117" target=_blank>PathXAI: Evidence-guided structured pathology reporting by transferable tissue segmentation</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.08838" target=_blank>The APL Doesn't Fall Far From The Tree: Unsupervised Artefact Prototype Learning in Histopathology</a> <span class="pill">CV</span>
+  </td>
+  <td>병리·현미경 영상 AI 논문들은 그동안 정확도나 Dice 같은 숫자 하나로 평가받는 경우가 많았는데, 오늘 묶인 네 편은 전부 그 숫자 뒤에 숨어 있던 문제를 하나씩 들춰냅니다. Health-System-Wide Mapping은 125만 장이 넘는 병리 전슬라이드영상(WSI, whole slide image)을 모아, 모델이 암 여부가 아니라 환자의 성별·나이대·인종 같은 인구통계 정보까지 "지름길"로 학습해버리는지 체계적으로 지도를 그렸고, 실제로 위·유방·피부 등 여러 장기에서 이 정보가 꽤 정확하게 읽혀버린다는 걸 보여줍니다. ProtoCouncil은 전립선암 초음파 진단에서 서로 다른 foundation model 세 개가 의견이 갈릴 때 바로 그 지점에서 "모른다"고 답을 보류하게 만들어, 모델끼리 의견이 갈리는 외부 병원 데이터에서 정확도가 79%에서 27%까지 떨어지는 걸 미리 걸러냅니다. PathXAI는 진단 결과만 뱉는 대신 조직 구성을 먼저 분할하고 그 근거를 따라가며 보고서를 쓰게 해서 "왜 이렇게 진단했는지"를 추적 가능하게 만들고, APL은 라벨 없이도 슬라이드에 묻은 얼룩·접힘 같은 촬영 아티팩트를 걸러낼 수 있다는 걸 보여줍니다. 네 편을 합치면, 병리 AI를 볼 때 이제는 "정확도가 몇 퍼센트인가"보다 "이 모델이 틀릴 걸 스스로 아는가, 엉뚱한 단서로 맞히는 건 아닌가, 왜 그렇게 판단했는지 설명할 수 있는가"를 더 중요하게 보기 시작했다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 네 응용(대규모 WSI 편향 지도, 전립선 초음파 진단, 병리 보고서 생성, 아티팩트 탐지)이 "신뢰성 점검"이라는 같은 평가축을 공유하고, 그중 두 편은 구체적 수치(AUROC, 정확도 낙폭)를 동반합니다.</small></td>
+  <td>ProtoCouncil의 인코더 간 불일치 기반 선택적 예측(abstention) 로직을 랩이 보유한 현미경/WSI foundation model 2~3종 앙상블에 적용해, 모델 간 의견이 갈리는 코어의 비율과 그때 답을 보류했을 때 정확도 변화를 1주 내 측정한다.</td>
+</tr>
+<tr>
+  <td><strong>Diffusion·plug-and-play 기반 복원 알고리즘이 손으로 맞추던 파라미터를 스스로 추정하는 쪽으로 수렴</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.08923" target=_blank>FANO: Anchored Forward-Noise Optimization for Diffusion Inverse Problems</a> <span class="pill a">CV · TIER A</span><br>
+    <a href="https://arxiv.org/abs/2611.09845" target=_blank>AdaptivePnP: Fast Auto-Tuned Plug-and-Play for Deconvolution</a> <span class="pill">IV</span><br>
+    <a href="https://arxiv.org/abs/2611.09380" target=_blank>SPSC: Zero-Shot Cross-Subject EEG-to-Image Reconstruction</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.09263" target=_blank>Model-based learning for DoA estimation and array calibration via continuous sparse recovery</a> <span class="pill">AI</span>
+  </td>
+  <td>오늘 묶인 네 편은 전부 diffusion이나 고전적 plug-and-play(PnP, 데이터 피팅과 영상 디노이저를 번갈아 적용하는 복원 방식) 기반 복원 알고리즘이 가진 "사람이 일일이 맞춰야 했던 손잡이"를 알고리즘 스스로 추정하게 만드는 논문들입니다. FANO는 diffusion 모델을 영상 역문제(블러·노이즈가 낀 영상에서 원본을 복원하는 문제)의 사전 지식으로 쓸 때, 최적화를 반복하다 보면 노이즈 성분의 크기가 diffusion이 원래 기대하는 정상 범위를 벗어나 디노이저가 제 성능을 못 내는 현상을 찾아내고, 이를 극좌표로 나눠 반경만 따로 조절해 막습니다. AdaptivePnP는 PnP 복원에서 항상 그리드 서치로 손으로 맞추던 step size와 노이즈 레벨을 매 반복마다 데이터 잔차로부터 동시에 추정하는 방법을 제안했고, 영상 디블러링·초해상도에서 정답 노이즈 레벨을 알고 있는 PnP와 비슷하거나 더 나은 결과를 냅니다. SPSC는 뇌파(EEG)로 영상을 복원할 때 한 번도 본 적 없는 새 피험자에게 라벨 없이 적용해도 복원 품질이 유지되도록 피험자 간 의미 공간을 보정하고, DoA(신호 도래각 추정) 논문은 안테나 배열의 하드웨어 결함까지 라벨 없이 함께 보정합니다. 네 편 모두 "복원 품질을 몇 퍼센트 더 올렸다"보다 "현장에 배치할 때마다 사람이 다시 맞춰야 했던 값을 없앤다"는 같은 방향을 가리키고 있습니다.</td>
+  <td>High<br><small>서로 다른 네 팀이 diffusion과 고전 PnP 양쪽에서 같은 "자동 파라미터 추정" 방향을 가리키고, 그중 두 편(AdaptivePnP, SPSC)은 구체적 비교 수치를 동반합니다.</small></td>
+  <td>AdaptivePnP의 식별 가능 최대우도(IML) 추정 방식을 랩의 Fourier ptychography/lensless deconvolution PnP 파이프라인에 이식해, 그리드 서치로 고정해둔 step size·노이즈 레벨 대비 자동 추정 시 PSNR과 수렴 반복 횟수 변화를 1주 내 비교한다.</td>
+</tr>
+<tr>
+  <td><strong>Video diffusion 생성이 "그럴듯한 영상"에서 알파채널·물리 법칙·실시간 편집 같은 실사용 속성으로 확장</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.09069" target=_blank>UniRGBA: Unifying RGB and Alpha in Pretrained Video Diffusion Models</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.08904" target=_blank>MotionCore: A Latent Neural Simulator for Video Generation with Rigid-Body Dynamics</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.09096" target=_blank>Trajectory Forcing: Exploiting Diffusion Trajectories for Autoregressive Long Video Generation</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.09795" target=_blank>AR-Edit: Training-Free Autoregressive Video Editing without Inversion</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.08610" target=_blank>InstaGen: Group-Shared Importance Sampling for Fast Video Generation</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.08861" target=_blank>Align3D: Image-Structure Co-Aligned 3D Scene Generation</a> <span class="pill">CV</span>
+  </td>
+  <td>여섯 편 모두 비디오 diffusion 모델을 다루지만, 공통적으로 "얼마나 그럴듯한 영상을 만드는가"가 아니라 "그 영상을 실제로 쓸 수 있게 만드는 속성 하나"에 집중합니다. UniRGBA는 비디오 생성 모델이 RGB 외에 투명도(알파) 채널까지 함께 만들게 해서 시각효과(VFX) 합성에 바로 쓸 수 있게 하고, MotionCore는 물리적으로 말이 안 되는 강체 운동을 줄이려고 별도의 물리 시뮬레이터가 예측한 궤적을 생성 모델에 집어넣습니다. Trajectory Forcing과 AR-Edit은 둘 다 "한 번에 다 보지 못하는" 상황(긴 영상, 실시간 스트리밍)을 겨냥하는데, 전자는 이전 조각들의 생성 과정 전체를 기억하게 해 30초 영상에서도 품질이 떨어지지 않게 하고, 후자는 역방향 추론(inversion) 없이도 원본 영상을 실시간으로 편집할 수 있게 합니다. InstaGen은 이런 모델을 더 빠르게 돌리는 attention 근사 방법이고, Align3D는 사진 한 장에서 안 보이는 뒷공간까지 그럴듯하게 채우는 3D 공간 생성입니다. 즉 오늘 묶음은 영상 생성이 "예쁘게 만들기" 경쟁에서 벗어나, 알파채널처럼 바로 합성에 쓸 수 있는가, 물리적으로 믿을 수 있는가, 실시간으로 길게 써도 버티는가처럼 실제 제작 도구로서 필요한 속성들을 하나씩 채워가는 단계로 넘어갔다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 여섯 팀이 각기 다른 실사용 속성(알파채널·물리성·장시간 생성·실시간 편집·속도·3D 확장)을 겨냥하지만 다수가 VBench 등 공통 벤치마크·공통 백본(Wan2.1 계열)을 공유합니다.</small></td>
+  <td>MotionCore의 물리 궤적 주입 아이디어가 랩이 쓰는 합성 영상 데이터 생성 파이프라인(가상 현미경·내시경 시뮬레이션)에 적용 가능한지 검토하고, 강체 운동이 포함된 테스트 시나리오에서 궤적 일치도를 1주 내 확인한다.</td>
+</tr>
+<tr>
+  <td><strong>관상동맥 CT 파이프라인이 분할 다음 단계인 랜드마크·시점 선택까지 정교화</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.09714" target=_blank>Beyond Segmentation: Enriching ImageCAS with Coronary Ostia Landmarks</a> <span class="pill">IV</span><br>
+    <a href="https://arxiv.org/abs/2611.09754" target=_blank>Tomographic Sparse View Selection using the View Covariance Loss</a> <span class="pill">IV</span><br>
+    <a href="https://arxiv.org/abs/2611.08652" target=_blank>An Anatomy-guided 3D Segmentation Pipeline for Prostate Surgical Phantoms from CT Scans</a> <span class="pill">CV</span>
+  </td>
+  <td>세 편 모두 CT(컴퓨터단층촬영) 영상 재구성·분할 파이프라인에서 "전체를 얼마나 잘 뭉뚱그려 맞히는가"가 아니라 그 다음 단계의 세부 작업을 정교화하는 논문입니다. Beyond Segmentation은 관상동맥 CT 혈관조영술(CCTA)에서 공개 데이터셋이 혈관의 시작점(ostium)을 암묵적으로만 표시해 온 공백을 메워, 1000명 분량에 정확한 시작점과 그로부터 뻗어나가는 중심선(centerline) 그래프를 새로 주석했고, 기존 데이터만으로 학습한 모델이 좌/우 시작점의 34~53%에서 실패하던 것을 이 데이터를 더하는 것만으로 실패 0건까지 줄였습니다. Tomographic Sparse View Selection은 적은 수의 투사 영상만으로 CT를 복원해야 할 때 "어떤 각도에서 찍을지"를 재구성 오차 근사치로 직접 고르는 손실 함수를 제안했고, Anatomy-guided 3D Segmentation은 학습 데이터가 거의 없는 수술 팬텀 영상에서도 해부학적 사전 지식만으로 라벨 없이 3D 분할을 해냅니다. 세 편을 합치면, CT 파이프라인의 병목이 "분할을 얼마나 정확히 하는가"에서 "어디를 더 찍을지, 어디가 혈관의 시작점인지, 라벨이 거의 없을 때도 돌아가는지" 같은 더 세부적인 단계로 내려가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>세 논문이 같은 방향(CT 파이프라인 세부 단계 정교화)을 가리키지만 공통 벤치마크로 직접 비교되지는 않고, 서로 다른 해부 부위(관상동맥, 전립선)를 다룹니다.</small></td>
+  <td>Tomographic Sparse View Selection의 view covariance loss를 랩의 sparse-view CT/현미경 단층촬영 설정에 적용해, 균등 각도 샘플링 대비 같은 투사 수에서 재구성 NRMSE·아티팩트 수를 1주 내 비교한다.</td>
+</tr>
+<tr>
+  <td><strong>이벤트 카메라가 diffusion prior를 업고 깊이 추정·우주선 포즈 추정까지 영역을 넓힘</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.08731" target=_blank>eSharp: Diffusion-based Sharp Monocular Metric Event-to-Depth Estimation</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.09717" target=_blank>Direct Regression and Geometric Recovery for Event-based Spacecraft Pose Estimation</a> <span class="pill">CV</span>
+  </td>
+  <td>오늘은 이벤트 카메라(밝기 변화가 있을 때만 비동기적으로 신호를 내는 센서) 관련 논문이 딱 두 편이었지만, 둘 다 같은 방향을 가리켜 묶어 둘 만합니다. eSharp는 이벤트 카메라만으로 깊이를 추정할 때 LiDAR처럼 조밀한 정답이 없다는 문제를, 사전학습된 diffusion 모델의 prior를 이벤트 전용 깊이 추정에 재활용하고 프레임 카메라와 짝지은 LiDAR 보정 pseudo label로 지도학습하는 방식으로 풀었습니다. Direct Regression 논문은 우주선 자세 추정에 이벤트 카메라를 적용했는데, 두 방식(모듈형 파이프라인 vs 직접 회귀)을 비교해보니 회전 오차는 직접 회귀가 22.7% 더 낮고 이동 오차는 반대로 모듈형 파이프라인이 78.7% 더 낮다는, 한쪽이 일방적으로 이기지 않는 상반된 결과를 보고합니다. 두 편 모두 이벤트 카메라가 "빠른 움직임을 잘 잡는 센서" 수준을 넘어서, diffusion 같은 범용 생성 모델의 prior를 가져다 쓰거나 완전히 새로운 응용(우주선 추적)까지 넓어지고 있다는 신호입니다.</td>
+  <td>Low<br><small>편수가 2편뿐인 관찰 단계이며, 두 논문의 구체적 방법(diffusion prior 재활용 vs 직접 회귀)도 서로 달라 공통 방법론으로 묶기는 이릅니다.</small></td>
+  <td>eSharp의 diffusion prior 재활용 구조가 랩의 이벤트 기반 고속 영상 파이프라인에도 적용 가능한지, 보유한 이벤트+프레임 동기 데이터셋으로 1주 내 타당성 검토한다.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li>Fourier Ptychography/Microscopy: 0편 배정, 실신호 0편 — 오늘은 이 버킷이 완전히 빈 날입니다.</li>
+    <li>Lensless/Coded Imaging: 0편 배정, 실신호 0편 — 다만 저널에서 분류기가 놓친 "Multimode fiber speckle-based robust image reconstruction"(광섬유 스페클 기반 복원, 물리적 모드 전파 prior 활용) 1편이 내용상 이 버킷에 더 가까운데, 버킷 키워드가 "lensless"/"coded aperture"처럼 좁게 잡혀 있어 놓쳤습니다. 아래 arXiv vs 저널 대비에서 별도로 다룹니다.</li>
+    <li>Phase Imaging/Holography: 2편 배정, 실신호 0편 — X선 위상차 영상이 아니라 γ-피콜린 수용액 구조 분광학 논문과 입자 플라즈몬 공명 논문으로 "phase"/"holograph" 단어의 완전한 오탐입니다.</li>
+    <li>Meta-Optics/Diffractive: 2편 배정, 실신호 0편 — 둘 다 플라즈몬 공명·나노리소그래피 재료 공정 연구로 광학 이미징과 무관합니다.</li>
+    <li>Light-Field/Novel Sensors: 5편 배정, 실신호 2편(eSharp, Direct Regression) — 나머지 3편은 zeroth-order 최적화, 전력전자 회로 모니터링, 광빔의 궤도각운동량(OAM) 물리로 "light field"라는 같은 단어가 가리키는 다른 맥락(라이트필드 촬영이 아닌 구조광 물리)입니다.</li>
+    <li>Tomography/3D Imaging: 44편 배정, 실신호 3편 — 나머지 약 41편은 Circulation·Radiotherapy and Oncology 학회 초록 같은 순수 임상 증례로 영상 재구성 방법론에 기여하지 않습니다.</li>
+    <li>Virtual Staining/Pathology: 25편 배정, 실신호 4편 — 나머지 약 21편은 풍력 예측, LiDAR 벤치마크, UAV 축산 관찰, LLM 코드 심사 등 "virtual"/"staining" 단어의 완전한 오탐입니다.</li>
+    <li>Reconstruction/Inverse Problems: 19편 배정, 실신호 4편(arXiv) — 나머지는 물리정보신경망(PINN) 최적화 이론, 로봇 파지, LLM 감사 등 "reconstruction"/"inverse" 단어가 범용 ML 맥락에 쓰인 경우입니다.</li>
+    <li>Deep Learning Methods: 115편 배정, 실신호 6편(video diffusion 클러스터) — 나머지는 LLM, 시계열 예측, 그래프 신경망, 연합학습 등 전산 광학과 무관한 catch-all입니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<ul>
+  <li><strong>arXiv 전용</strong>: 병리·현미경 영상 AI 신뢰성 클러스터(Health-System-Wide Mapping, ProtoCouncil, PathXAI, APL) — 4편 전부 arXiv; diffusion·PnP 역문제 자동 파라미터 추정 클러스터(FANO, AdaptivePnP, SPSC, DoA); 관상동맥 CT 파이프라인 정교화 클러스터; video diffusion 실사용 속성 클러스터 6편; 이벤트 카메라 클러스터.</li>
+  <li><strong>저널 전용</strong>: Multimode fiber speckle-based robust image reconstruction(Optics and Lasers in Engineering) — 다중모드 광섬유를 통과한 스페클 패턴에서 모드 전파의 물리적 prior를 활용해 영상을 복원하는 논문으로, abstract는 Crossref에 제공되지 않아 제목 수준의 신호입니다.</li>
+  <li><strong>공통 키워드</strong>: 직접적인 키워드 교집합은 거의 없습니다. 굳이 연결하면 arXiv의 diffusion/PnP 기반 역문제 복원과 저널의 광섬유 스페클 복원이 둘 다 "물리적/통계적 prior를 활용한 영상 역문제 해결"이라는 넓은 주제를 공유하지만, 전자는 학습된 생성모델 prior를, 후자는 광학적 모드 전파의 물리 모델을 prior로 쓴다는 점에서 접근 축이 다릅니다.</li>
+  <li><strong>특징</strong>: 오늘은 저널 신호가 유난히 빈약한 날이었습니다. Crossref 쿼리 9개가 직접 겨냥한 계산광학 핵심 키워드(Fourier ptychography, lensless imaging, computational microscopy, quantitative phase imaging, computer-generated holography, metasurface optics, light field microscopy, optical diffraction tomography, virtual staining)에 정확히 매칭되는 논문이 사실상 없었습니다. 지난 금요일에는 저널이 "실사용 환경 이식" 이야기를 구체적 수치(CNR 7배 개선 등)로 뒷받침했는데, 오늘은 그 축이 거의 비어 있고 arXiv가 신호를 압도적으로 담당했습니다.</li>
+</ul>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 병리·현미경 영상 AI 평가가 정확도에서 신뢰성 점검으로 이동</h3>
+  <p>Health-System-Wide Mapping(편향 지도)과 ProtoCouncil(불확실성 기반 보류)이 독립적으로 "모델이 맞았다"가 아니라 "이 모델을 믿어도 되는가"를 묻기 시작했습니다.</p>
+  <p class=conf-note>Confidence: High</p>
+</div>
+
+<div class=ins>
+  <h3>2. Diffusion·PnP 복원 알고리즘이 하이퍼파라미터 자동 추정으로 수렴</h3>
+  <p>FANO(diffusion)와 AdaptivePnP(고전 PnP)가 서로 다른 방법론 계열에서 똑같이 "사람이 손으로 맞추던 값을 알고리즘이 스스로 추정"하는 방향을 취합니다.</p>
+  <p class=conf-note>Confidence: High</p>
+</div>
+
+<div class=ins>
+  <h3>3. Video diffusion 생성이 알파채널·물리성·실시간 편집으로 확장</h3>
+  <p>UniRGBA, MotionCore, Trajectory Forcing, AR-Edit 네 편이 서로 다른 실사용 속성을 겨냥하지만 공통적으로 "그럴듯한 영상"을 넘어선 제작 도구 요건을 채우고 있습니다.</p>
+  <p class=conf-note>Confidence: High</p>
+</div>
+
+<div class=ins>
+  <h3>4. 관상동맥 CT 파이프라인이 랜드마크·시점 선택으로 세분화</h3>
+  <p>Beyond Segmentation(ostium 랜드마크)과 Tomographic Sparse View Selection(시점 선택)이 "분할 정확도"를 넘어선 다음 단계 병목을 다룹니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. ProtoCouncil의 불일치 기반 선택적 예측을 랩 파운데이션 모델 앙상블에 적용</h3>
+  <p>ProtoCouncil은 MedSAM·DINOv3·V-JEPA 2.1 세 인코더가 서로 동의하지 않을 때 답을 보류하게 만들어 외부 코호트 정확도 낙폭(79%→27%)을 완화했는데, 랩이 보유한 복수의 현미경/WSI foundation model에도 같은 불일치 기반 보류 로직을 적용할 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: ProtoCouncil (2611.09058) — 코드 공개 여부 abstract 기준 불명, 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 WSI/현미경 데이터셋에서 2~3종 foundation model 임베딩 추출</li>
+    <li>비교축: 인코더 전원 동의 시 vs 불일치 시 정확도, 보류율(coverage) 대 정확도(balanced accuracy) 트레이드오프</li>
+    <li>실패해도 남는 결과: 불일치 기반 보류가 랩 데이터에서 효과가 없더라도, "어느 인코더 조합이 가장 자주 불일치하는가"에 대한 진단 결과는 모델 선택에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. AdaptivePnP의 자동 파라미터 추정을 랩의 PnP 기반 복원 파이프라인에 이식</h3>
+  <p>AdaptivePnP는 그리드 서치로 고정해온 step size와 노이즈 레벨을 매 반복마다 잔차로부터 동시에 추정하는 식별 가능 최대우도(IML) 추정기를 제안했고, 코드가 공개되어 있어 직접 이식해볼 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: AdaptivePnP (2611.09845) — 공개 코드 저장소 확인</li>
+    <li>공통 benchmark: 랩의 Fourier ptychography/lensless deconvolution PnP 파이프라인, 고정 벤치마크 영상셋</li>
+    <li>비교축: 그리드 서치 고정 파라미터 vs 자동 추정 시 PSNR, 수렴까지 걸리는 반복 횟수</li>
+    <li>실패해도 남는 결과: 자동 추정이 랩 데이터에서 안 맞더라도, 현재 그리드 서치가 어느 파라미터 범위에서 민감한지 정리한 민감도 분석은 다음 튜닝에 재사용된다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. eSharp의 diffusion prior 재활용 구조를 랩의 이벤트 카메라 파이프라인에 검토</h3>
+  <p>eSharp는 사전학습된 diffusion 모델의 prior를 이벤트 전용 깊이 추정에 재활용해 LiDAR 수준의 조밀한 정답 없이도 날카로운 깊이 맵을 만듭니다. 랩이 이벤트 기반 고속 영상 파이프라인을 보유하고 있다면 같은 구조를 적용해볼 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: eSharp (2611.08731) — 코드/사전학습 가중치 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 이벤트+프레임 동기 데이터셋(LiDAR 보정 가능한 서브셋)</li>
+    <li>비교축: 기존 이벤트 전용 깊이 추정 대비 diffusion prior 재활용 시 깊이 정확도·경계 선명도</li>
+    <li>실패해도 남는 결과: diffusion prior가 랩 센서에 안 맞더라도, "어떤 조건에서 이벤트 전용 깊이 추정이 가장 불안정한가"를 정리한 실패 사례 목록은 다음 센서 모델링에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Deep Learning Methods(115편, catch-all)를 제외한 버킷 중 최댓값인 Tomography/3D Imaging(44편) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all, 실제 편수는 라벨에 표시). 0편 버킷도 0% 막대로 표시합니다.</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:5%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:5%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:11%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>44편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:57%"></span></span><span class=n>25편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:43%"></span></span><span class=n>19편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>115편</span></div>
+
+<p><small>⚠️ 참고: 버킷별 실질 신호 비율은 위 🔬 도메인 Watch Lens 섹션을 참고하세요 — 대부분의 버킷에서 키워드 오탐이 실질 신호보다 압도적으로 많았습니다(예: Tomography/3D Imaging 44편 중 실질 신호 3편, Virtual Staining/Pathology 25편 중 4편).</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09851" target=_blank>Health-System-Wide Mapping of Demographic Information in Routine Clinical Histopathology</a></strong> [CV]<br>
+  왜 주요: 125만 장 WSI를 분석해 병리 foundation model이 진단과 무관한 인구통계 정보를 지름길로 학습할 위험을 체계적으로 지도화한 대규모 연구.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09058" target=_blank>ProtoCouncil: Multi-Encoder Anatomical Prototypes for Prostate Cancer Detection in Micro-Ultrasound</a></strong> [CV]<br>
+  왜 주요: 인코더 간 불일치를 신뢰도 신호로 바꿔, 외부 코호트에서 최고 csPCa AUROC(82.9%)를 기록하면서도 불확실한 예측을 스스로 걸러냄.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.08923" target=_blank>FANO: Anchored Forward-Noise Optimization for Diffusion Inverse Problems</a></strong> [CV]<br>
+  왜 주요: diffusion 기반 역문제 solver의 숨은 실패 모드(반경 이탈)를 찾아내고 이를 수정하는 구조적 해법을 제시.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09845" target=_blank>AdaptivePnP: Fast Auto-Tuned Plug-and-Play for Deconvolution</a></strong> [IV]<br>
+  왜 주요: PnP 복원의 두 핵심 하이퍼파라미터를 라벨·정답 노이즈 레벨 없이 동시에 추정하는 코드 공개 방법.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09714" target=_blank>Beyond Segmentation: Enriching ImageCAS with Coronary Ostia Landmarks</a></strong> [IV]<br>
+  왜 주요: 공개 데이터셋 공백(관상동맥 시작점 명시적 annotation 부재)을 메워 좌/우 시작점 탐지 실패율을 34~53%에서 0%로 낮춤.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09069" target=_blank>UniRGBA: Unifying RGB and Alpha in Pretrained Video Diffusion Models</a></strong> [CV]<br>
+  왜 주요: 비디오 diffusion 모델이 네이티브 알파채널까지 생성하게 만들어 VFX 합성 파이프라인에 바로 쓸 수 있게 함.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.08731" target=_blank>eSharp: Diffusion-based Sharp Monocular Metric Event-to-Depth Estimation</a></strong> [CV]<br>
+  왜 주요: 이벤트 카메라 전용 깊이 추정에 diffusion prior를 처음으로 재활용해, 조밀한 정답 없이도 선명한 깊이 맵을 복원.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110238" target=_blank>Multimode fiber speckle-based robust image reconstruction Leveraging physical priors of modal propagation</a></strong> [JNL]<br>
+  왜 주요: 오늘 저널에서 거의 유일한 핵심 계산광학 신호로, 다중모드 광섬유 스페클 복원에 물리적 모드 전파 prior를 활용(abstract 미제공, 제목 기준 신호).
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>값</th><th>논문</th></tr></thead>
+<tbody>
+<tr><td>전립선암 micro-ultrasound 진단 (csPCa)</td><td>AUROC</td><td>82.9% (이전 최고 공개 방법 대비 +4.3점)</td><td><a href="https://arxiv.org/abs/2611.09058" target=_blank>ProtoCouncil</a></td></tr>
+<tr><td>병리 보고서 생성 정확도</td><td>Cancer family match / Finding F1</td><td>Qwen+H&E 대비 각각 +4.4%p / +5.7%p</td><td><a href="https://arxiv.org/abs/2611.09117" target=_blank>PathXAI</a></td></tr>
+<tr><td>EEG-to-Image 피험자 간 zero-shot 복원</td><td>CLIP / Alex.5 유사도</td><td>CLIP 0.552→0.713, Alex.5 0.612→0.745</td><td><a href="https://arxiv.org/abs/2611.09380" target=_blank>SPSC</a></td></tr>
+<tr><td>Video 생성 가속 (Wan2.1-T2V, 동일 attention 밀도)</td><td>PSNR</td><td>SVG2 대비 +3.4dB(1.3B) / +2dB(14B)</td><td><a href="https://arxiv.org/abs/2611.08610" target=_blank>InstaGen</a></td></tr>
+<tr><td>5초 VBench 장기 영상 품질</td><td>Total score</td><td>85.15 (Self Forcing 대비 +0.84, Causal Forcing 대비 +1.11)</td><td><a href="https://arxiv.org/abs/2611.09096" target=_blank>Trajectory Forcing</a></td></tr>
+<tr><td>우주선 포즈 추정 (SPARK 2026, SPADES real-event)</td><td>회전/이동 오차</td><td>직접 회귀 회전오차 -22.7%(1.1767→0.9101rad), 모듈형 이동오차 -78.7%(0.1335→0.0285)</td><td><a href="https://arxiv.org/abs/2611.09717" target=_blank>Direct Regression</a></td></tr>
+<tr><td>관상동맥 ostium 랜드마크 탐지</td><td>중앙값 오차 / 실패율</td><td>0.70~0.87mm, 실패율 34~53%→0%(ImageCAS 추가 시)</td><td><a href="https://arxiv.org/abs/2611.09714" target=_blank>Beyond Segmentation</a></td></tr>
+</tbody>
+</table>
+<p><small>abstract에 명시된 수치만 반영했습니다. 본문 확인 전까지는 비교 기준(동일 데이터셋·동일 측정 조건 여부)이 abstract 서술 그대로라고 가정합니다.</small></p>
+
+<h2>🔀 크로스오버 페어</h2>
+<p><strong>FANO ↔ AdaptivePnP</strong> — 둘 다 "영상 역문제를 어떤 prior로 푸는가"라는 같은 질문에 다른 축에서 답합니다. FANO는 diffusion 모델이라는 학습된 생성적 prior를 쓰고, 그 prior가 최적화 중에 벗어나는 현상(반경 이탈)을 고치는 데 집중합니다. AdaptivePnP는 diffusion 없이 고전적 영상 디노이저와 데이터 피팅을 번갈아 쓰는 PnP 구조를 유지하되, 그 안의 숫자 손잡이(step size, 노이즈 레벨)를 자동화합니다. 둘을 나란히 보면, "최신 생성모델 prior를 쓸 것인가, 가벼운 고전 알고리즘의 자동화를 추구할 것인가"라는 복원 알고리즘 설계의 두 갈래 축이 같은 날 동시에 나타난 셈입니다. 랩의 실시간/저전력 제약이 있는 파이프라인에는 AdaptivePnP 계열이, 품질이 우선인 오프라인 복원에는 FANO 계열이 더 맞을 수 있습니다.</p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] ProtoCouncil: Multi-Encoder Anatomical Prototypes for Prostate Cancer Detection in Micro-Ultrasound — https://arxiv.org/abs/2611.09058</h3>
+  <div class=tag>[평가축] [방법전환]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 병리 신뢰성 클러스터의 대표 논문이며, 단순히 정확도를 올린 게 아니라 "모델이 틀릴 걸 스스로 아는가"라는 평가축 자체를 임상 지표(csPCa 정확도 79%→27% 낙폭 방지)로 구체화했다는 점에서 A급입니다.</p>
+  <p><strong>핵심:</strong> 전립선암을 저해상도 micro-ultrasound 영상으로 진단하려는 시도는 많았지만, 학습에 쓸 수 있는 정답이 코어(바늘로 채취한 조직 조각) 단위로만 있고 노이즈가 많아서, 모델이 왜 그렇게 판단했는지 설명하기 어렵고 낯선 병원 데이터를 만나면 소리 없이 틀리는 문제가 있었습니다. ProtoCouncil은 MedSAM, DINOv3, V-JEPA 2.1이라는 서로 다른 사전학습 foundation encoder 세 개가 각각 전립선 전체·바늘 경로·구역이라는 세 해부학적 수준에서 "이 환자 케이스는 학습 데이터의 어떤 실제 사례와 닮았는가"라는 프로토타입을 만들게 하고, 최종 판단을 프로토타입 유사도의 단순 합으로 설명 가능하게 구성합니다. 핵심은 세 인코더가 서로 다른 답을 낼 때(disagreement) 이를 노이즈가 아니라 "이 케이스는 불확실하다"는 신호로 바꿔, 바로 그 지점에서 판단을 보류(selective prediction)하게 만든 것입니다. 5-fold 환자 단위 교차검증(6,588개 코어, 693명)에서 csPCa(임상적으로 유의미한 전립선암) AUROC 82.9%로 기존 최고 공개 방법보다 4.3점 높았고, 두 개의 외부 코호트에서도 모든 기존 방법을 앞섰습니다. 더 중요한 건 외부 코호트에서 인코더들이 서로 반대로 판단한 케이스만 모으면 정확도가 79%에서 27%까지 떨어지는데, 바로 이 불일치를 보고 판단을 보류하면 정확도가 7~15점 올라가고 코어의 절반 이상은 여전히 커버한다는 점입니다. 랩의 관점에서 중요한 이유는, 현미경·내시경 등 여러 foundation model을 함께 쓰는 랩의 영상 파이프라인에서도 "모델끼리 의견이 갈리는 지점"을 그냥 평균 내버리지 않고 신뢰도 신호로 활용할 수 있다는 구체적 설계도를 제공하기 때문입니다.</p>
+  <p><strong>주의:</strong> 79%→27%라는 극적인 낙폭은 "두 인코더가 반대로 판단한" 가장 어려운 부분집합에 한정된 수치이며, 전체 코어 중 이런 완전 불일치 케이스가 몇 퍼센트인지는 abstract에 명시되어 있지 않아 본문의 불일치 분포표를 확인해야 합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Health-System-Wide Mapping of Demographic Information in Routine Clinical Histopathology — https://arxiv.org/abs/2611.09851</h3>
+  <div class=tag>[경고신호] [해부분석]</div>
+  <p><strong>왜 A급인가:</strong> 125만 장이 넘는 WSI와 25만 명 이상의 환자를 가로지르는 이번 주 가장 큰 규모의 병리 AI 연구이며, "성능이 좋다"는 주장 뒤에 숨어 있을 수 있는 지름길 학습(shortcut learning) 위험을 정면으로 드러낸다는 점에서 A급입니다.</p>
+  <p><strong>핵심:</strong> 병리 foundation model(H&E 염색 슬라이드로 사전학습된 표현 모델)은 보통 암 유무나 아형 분류 성능으로만 평가받습니다. 그런데 이 모델들이 쓰는 표현이 실제로는 진단과 무관한 환자의 성별·나이대·인종 같은 인구통계 정보까지 암묵적으로 담고 있다면, 모델이 "제대로 된 조직 형태학적 근거"가 아니라 "이 슬라이드는 어떤 유형의 환자에게서 나온 것 같다"는 지름길로 좋은 성능을 내는 것일 수 있습니다. 저자들은 25개 장기에 걸쳐 125만 장의 일상 임상 H&E 슬라이드를 모아, 병리 foundation model 표현과 multiple instance learning(패치 단위 특징을 모아 슬라이드 단위 판단으로 합치는 방법)으로 성별·나이대·인종이 각 장기에서 얼마나 정확히 읽히는지 지도를 그렸습니다. 69개 장기-인구통계 조합 전반에서 이 정보는 놀라울 정도로 잘 읽혔습니다(장기 평균 AUROC: 성별 0.828, 나이대 0.733, 인종 0.662). 진단명으로 그룹을 나눠 다시 학습해도(즉 "진단이 같은 환자들 안에서만 비교해도") 위장에서 성별(AUROC 0.865), 유방에서 나이대(0.816), 피부에서 인종(0.728)처럼 신호가 사라지지 않는 경우가 많았습니다. 저자들은 이 결과를 "이 모델을 쓰지 말라"는 결론이 아니라, 어떤 조직학적·맥락적 단서가 이 신호를 만드는지 추가로 조사해야 하고, 지름길 학습 가능성을 평가하며, 더 해석 가능한 전산 병리 모델을 설계하는 데 쓰라는 지도로 제시합니다. 랩의 관점에서 중요한 이유는, 랩이 쓰거나 평가하는 어떤 병리/현미경 foundation model이든 "진단 성능이 좋다"는 결과만 보고하지 말고 그 성능이 인구통계적 지름길에 기대고 있지 않은지 같은 방식으로 점검해볼 수 있는 재현 가능한 프로토콜을 제공한다는 점입니다.</p>
+  <p><strong>주의:</strong> 이 연구는 "인구통계 정보가 읽힌다"는 사실을 보였을 뿐, 그 정보가 실제 진단 성능에 긍정적으로든 부정적으로든 얼마나 영향을 미치는지는 abstract에서 직접 다루지 않아 본문의 literature-guided 분석 부분을 확인해야 하며, 단일 foundation model 표현에 기반한 분석이라 다른 표현에서도 같은 지도가 재현되는지는 별도 검증이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Baseline risk] Tomography/3D Imaging(44편)의 약 93%가 Circulation·Radiotherapy and Oncology 학회 초록 같은 순수 임상 증례로, 버킷명 자체가 오늘 실신호를 거의 대표하지 못함.</p>
+  <p>[Dataset risk] Fourier Ptychography/Microscopy·Lensless/Coded Imaging·Phase Imaging/Holography·Meta-Optics/Diffractive 네 핵심 계산광학 버킷 모두 오늘 실신호가 0편이라, 랩 핵심 ROI 관점에서는 사실상 공백일입니다.</p>
+  <p>[Claim risk] 저널(Crossref --days 1) 337편 중 계산광학 핵심 키워드(FP·lensless·metasurface·holography·virtual staining) 직접 매칭은 사실상 0건이었고, 유일한 저널 신호(Multimode fiber speckle)도 abstract가 비어 있어 제목만으로 판단했습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] ProtoCouncil의 "이전 최고 공개 방법 대비 +4.3점"은 비교 대상 방법 목록이 abstract에 구체적으로 나열되지 않아, 본문의 베이스라인 표를 확인해야 함.</p>
+  <p>[Dataset risk] Health-System-Wide Mapping은 1.3백만 WSI라는 대규모 데이터지만 단일 기관·단일 병리 foundation model 표현 기반 분석이라, 다른 foundation model에서도 같은 편향 지도가 재현되는지는 확인되지 않음.</p>
+  <p>[Baseline risk] Direct Regression 논문의 "모듈형 vs 직접 회귀" 비교는 SPARK 2026 특정 hidden-test 프로토콜 1개에 한정되며, 두 시스템이 같은 학습 데이터·증강 조건에서 공정하게 비교됐는지는 abstract만으로 확인 불가.</p>
+  <p>[Claim risk] InstaGen·Trajectory Forcing의 PSNR·VBench 수치는 각각 Wan2.1 계열 특정 모델 크기와 특정 벤치마크(5초/30초 VBench)에 한정되어, 다른 아키텍처·해상도로 일반화되는지는 미확인.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+<div class=skim>
+  <ul>
+    <li>Deep Learning Methods 비이미징 약 109편 — LLM, 강화학습, 시계열 예측, 그래프 신경망, 연합학습 등 일반 머신러닝 방법론으로 전산 광학 이미징과 직접 관련 없음(video diffusion 6편만 인접 신호).</li>
+    <li>Tomography/3D Imaging 임상 증례 약 41편 — 관상동맥 질환, 두경부 해부, 방사선치료 품질관리 등 CT/MRI/PET을 "사용"하지만 영상 재구성 방법론에는 기여하지 않는 순수 임상·역학 연구.</li>
+    <li>Virtual Staining/Pathology 비병리 약 21편 — 풍력 예측, LiDAR 벤치마크, UAV 축산 관찰, LLM 코드 심사 등 "virtual"/"staining" 단어만 일치하는 완전 무관 논문.</li>
+    <li>Reconstruction/Inverse Problems 중 PINN 이론 2편(Task-Contribution Dynamics of Adam, Equidistribution of Solution Gradients) — 물리정보신경망 최적화 이론으로 영상 복원과는 간접적으로만 연결.</li>
+  </ul>
+</div>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘은 월요일이지만 daily 실행이라 전체 예측 회고는 생략합니다(예측 회고는 오늘 10:00 KST 별도 weekly 실행이 이미 수행했습니다 — <a href="2026-11-09-weekly.html">weekly 보기</a> 참고). 다만 weekly(2026-45)가 낸 세 예측 중 오늘(이번 주 1일차) 관측치를 짚어두면: (1) "계산광학 하드웨어 코어가 3주 연속 얇음을 유지한다"는 예측은 오늘 Fourier Ptychography 0편 + Lensless 0편으로 hit 방향에 부합하는 첫 관측치입니다. (2) "의료 영상 신뢰성 검증이 외부 기관 검증 실패 사례를 추가한다"는 예측은, 오늘 ProtoCouncil이 외부 코호트에서 인코더들이 서로 불일치할 때 csPCa 정확도가 79%에서 27%까지 떨어진다고 보고해 hit 방향의 첫 관측치로 볼 만합니다(다만 이 논문은 "실패를 미리 감지하는 방법"을 제안한 긍정적 프레이밍이라, 순수 negative result로 셀지는 이번 주 나머지 날짜와 함께 다시 판단합니다). (3) "3DGS 제품화 엔지니어링이 지속된다"는 예측은 오늘 관련 신호가 전혀 없어 아직 판단을 보류합니다. 다음 예측 회고는 2026-11-16(월) weekly가 이번 주(11/9~11/13) 전체를 되돌아보며 수행합니다.</p>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+<p><small>하루 212건 전체를 개별 bullet로 쓰는 대신, 오늘의 클러스터 지도에 포함된 대표 논문 중심으로 압축했습니다. 하위 롱테일(각 버킷의 키워드 오탐·일반 임상/범용 ML 논문)은 Watch Lens·Skim-only 섹션에서 버킷/카운트만 표시하고 개별 bullet은 생략합니다.</small></p>
+
+<h3>병리·현미경 영상 AI 평가가 "정확도 숫자"에서 "편향·불확실성·추적 가능성 점검"으로 넘어감 (4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09851" target=_blank>Health-System-Wide Mapping of Demographic Information in Routine Clinical Histopathology</a></strong> <span class=pill>CV</span><br>
+  문제: 병리 foundation model 표현이 진단과 무관한 인구통계 정보를 지름길로 담고 있는지 불분명 / 방법: 125만 WSI·25만 환자·25개 장기에 걸쳐 MIL로 성별·나이대·인종 검출 가능성을 체계적으로 지도화 / 의미: 성능 숫자 뒤의 지름길 학습 위험을 처음으로 대규모 정량화 / 근거: 장기 평균 AUROC 성별 0.828·나이대 0.733·인종 0.662 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09058" target=_blank>ProtoCouncil: Multi-Encoder Anatomical Prototypes for Prostate Cancer Detection in Micro-Ultrasound</a></strong> <span class=pill>CV</span><br>
+  문제: micro-ultrasound 전립선암 진단 모델이 근거를 설명하지 못하고 분포 변화에서 소리 없이 틀림 / 방법: 세 foundation encoder의 해부학적 프로토타입 + 인코더 불일치 기반 선택적 예측 / 의미: "정확도"와 "이 예측을 믿을 수 있는가"를 분리해서 보기 시작 / 근거: csPCa AUROC 82.9%(+4.3점), 불일치 시 정확도 79%→27% / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09117" target=_blank>PathXAI: Evidence-guided structured pathology reporting by transferable tissue segmentation</a></strong> <span class=pill>CV</span><br>
+  문제: H&E 기반 보고서 생성이 명시적 조직 구성 정보를 거의 활용하지 않음 / 방법: 분할 기반 조직 정보 + H&E 영상 + 도메인 지식으로 진단 추론·재검토·보고서 작성을 유도 / 의미: 진단 결과뿐 아니라 근거를 추적 가능하게 만드는 방향 / 근거: Qwen+H&E 대비 cancer family match +4.4%p, finding F1 +5.7%p / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.08838" target=_blank>The APL Doesn't Fall Far From The Tree: Unsupervised Artefact Prototype Learning in Histopathology</a></strong> <span class=pill>CV</span><br>
+  문제: WSI의 촬영 아티팩트(블러, 얼룩, 접힘)가 진단 신호에 노이즈를 더함 / 방법: 라벨 없이 사전학습 임베딩 공간의 기하만으로 아티팩트 프로토타입 탐지 / 의미: 비용이 드는 라벨 없이도 품질 관리가 가능하다는 실용적 신호 / 근거: 블러·어두운 반점·슬라이드 경계·펜 자국에서 기존 GrandQC·HistoART 대비 우수, 조직 접힘·혈액은 약함 / 우선순위: Read
+</div>
+<h3>Diffusion·plug-and-play 기반 복원 알고리즘이 손으로 맞추던 파라미터를 스스로 추정하는 쪽으로 수렴 (4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.08923" target=_blank>FANO: Anchored Forward-Noise Optimization for Diffusion Inverse Problems</a></strong> <span class=pill>CV</span><br>
+  문제: diffusion 기반 역문제 solver가 최적화 중 노이즈 성분이 정상 범위를 벗어나는 "반경 이탈"로 디노이저 성능이 떨어짐 / 방법: 순방향 노이즈를 극좌표로 분해해 반경만 별도로 규제하는 anchored 최적화 / 의미: 같은 diffusion prior를 더 안정적으로 활용하는 구조적 개선 / 근거: 선형 역문제는 최상위 베이스라인과 동등, 비선형 역문제는 일관된 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09845" target=_blank>AdaptivePnP: Fast Auto-Tuned Plug-and-Play for Deconvolution</a></strong> <span class=pill>IV</span><br>
+  문제: PnP 복원의 step size·노이즈 레벨을 그리드 서치로 손으로 맞춰야 하고 문제가 바뀔 때마다 재튜닝 필요 / 방법: 데이터 피팅 잔차로부터 식별 가능 최대우도(IML) 추정기로 두 파라미터를 매 반복 동시 추정 / 의미: 배치 환경이 자주 바뀌는 복원 파이프라인의 운영 부담을 줄임 / 근거: 디블러링·초해상도에서 정답 노이즈 레벨을 아는 PnP와 동등하거나 우수, 코드 공개 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09380" target=_blank>SPSC: Zero-Shot Cross-Subject EEG-to-Image Reconstruction</a></strong> <span class=pill>CV</span><br>
+  문제: EEG 기반 영상 복원이 새 피험자에게 라벨 없이 적용될 때 의미 공간이 어긋남 / 방법: 객체 수준 대조 정규화(OMCR) + 라벨 없는 subspace candidate gate로 피험자 간 보정 / 의미: 임상/실험 현장에서 매번 피험자별 재학습이 필요 없는 복원 가능성 / 근거: THINGS-EEG LOSO 설정에서 CLIP 0.552→0.713, Alex.5 0.612→0.745 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09263" target=_blank>Model-based learning for DoA estimation and array calibration via continuous sparse recovery</a></strong> <span class=pill>AI</span><br>
+  문제: 안테나 배열의 하드웨어 결함(게인·위상·위치 오차)이 신호 도래각 추정 정확도를 떨어뜨림 / 방법: SOMP 희소 복구 기반 모델 기반 학습으로 배열 보정과 DoA 추정을 라벨 없이 공동 수행 / 의미: 복원·추정 알고리즘이 센서 자체의 결함까지 함께 보정하는 방향 / 근거: 기존 희소 복구·subspace 기반 DoA 베이스라인 대비 우수 / 우선순위: Skim-only
+</div>
+<h3>Video diffusion 생성이 "그럴듯한 영상"에서 알파채널·물리 법칙·실시간 편집 같은 실사용 속성으로 확장 (6편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09069" target=_blank>UniRGBA: Unifying RGB and Alpha in Pretrained Video Diffusion Models</a></strong> <span class=pill>CV</span><br>
+  문제: 비디오 diffusion이 네이티브 알파채널 없이 매팅 스타일 데이터에 의존해 VFX 콘텐츠에서 품질이 떨어짐 / 방법: causal video VAE를 4채널로 확장하고 소수 레이어만 선택적으로 학습 / 의미: RGB 품질을 유지하며 알파 생성 능력을 추가한 실용적 확장 / 근거: RGBA 벤치마크에서 Wan-Alpha 대비 큰 폭 우위 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.08904" target=_blank>MotionCore: A Latent Neural Simulator for Video Generation with Rigid-Body Dynamics</a></strong> <span class=pill>CV</span><br>
+  문제: 비디오 생성 모델이 시각적으로 그럴듯해도 물리적으로 말이 안 되는 강체 운동을 만듦 / 방법: 학습 가능한 PDE solver로 물리 궤적을 예측해 diffusion 생성기에 latent control로 주입 / 의미: 생성기를 외관 담당, 물리 모델을 궤적 담당으로 역할 분리 / 근거: 물리 일관성 벤치마크에서 시각 품질 유지하며 궤적 준수도 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09096" target=_blank>Trajectory Forcing: Exploiting Diffusion Trajectories for Autoregressive Long Video Generation</a></strong> <span class=pill>CV</span><br>
+  문제: 자기회귀 비디오 diffusion이 직전 조각만 참고해 생성 이력 대부분을 버림 / 방법: 이전 조각들의 디노이징 궤적 전체를 컨텍스트로 활용하는 TraF / 의미: LLM처럼 전체 이력을 조건으로 쓰는 방식을 비디오 diffusion에 이식 / 근거: 5초 VBench Total 85.15(+0.84/+1.11), 30초(학습 길이의 6배)에서도 최고 품질 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09795" target=_blank>AR-Edit: Training-Free Autoregressive Video Editing without Inversion</a></strong> <span class=pill>CV</span><br>
+  문제: 실시간 스트리밍 영상 편집이 미래 프레임 접근을 요구하는 기존 training-free 방법과 상충 / 방법: DMD-distilled AR 모델의 self-attention에서 value만 재사용하는 inversion-free 구조 발견 / 의미: 역방향 추론 없이도 원본을 충실히 보존하는 실시간 편집 가능성 / 근거: 여러 AR 백본에서 inversion 기반 방법과 동등하거나 우수한 원본 보존·색감 충실도 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.08610" target=_blank>InstaGen: Group-Shared Importance Sampling for Fast Video Generation</a></strong> <span class=pill>CV</span><br>
+  문제: 기존 top-p 블록 선택 방식이 엔트로피가 높은 비디오 생성 attention에서 샘플 비효율적 / 방법: 블록 선택을 importance sampling으로 재정식화해 중요도 비례 샘플링 + 역확률 가중치 적용 / 의미: 같은 연산 예산에서 더 나은 attention 근사를 얻는 일반적 틀 / 근거: Wan2.1-T2V에서 SVG2 대비 동일 밀도 기준 PSNR +3.4dB(1.3B)/+2dB(14B) / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.08861" target=_blank>Align3D: Image-Structure Co-Aligned 3D Scene Generation</a></strong> <span class=pill>CV</span><br>
+  문제: 사진 한 장에서 안 보이는 영역까지 포함한 3D 실내 레이아웃을 생성하기 어려움 / 방법: 신뢰도 보정 scene graph와 이미지 정합을 함께 쓰는 set-diffusion denoiser / 의미: 단일 입력에서 관측 밖 영역까지 물리적으로 그럴듯하게 확장하는 feed-forward 생성 / 근거: 3D-FRONT에서 이미지 정합·장면 품질 지표 개선 / 우선순위: Skim-only
+</div>
+<h3>관상동맥 CT 파이프라인이 분할 다음 단계인 랜드마크·시점 선택까지 정교화 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09714" target=_blank>Beyond Segmentation: Enriching ImageCAS with Coronary Ostia Landmarks</a></strong> <span class=pill>IV</span><br>
+  문제: 공개 CCTA 데이터셋이 관상동맥 시작점(ostium)을 명시적으로 주석하지 않음 / 방법: 1000명 분량에 시작점·중심선 그래프를 사람+모델 보정(human-in-the-loop)으로 새로 주석 / 의미: 혈관 추적·수술 계획의 다음 단계 병목인 랜드마크 공백을 직접 메움 / 근거: 추가 데이터로 좌/우 시작점 탐지 실패율 34~53%→0%, 중앙값 오차 0.70~0.87mm / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09754" target=_blank>Tomographic Sparse View Selection using the View Covariance Loss</a></strong> <span class=pill>IV</span><br>
+  문제: sparse-view CT에서 "어떤 각도로 찍을지"를 고르는 문제는 오랫동안 미해결 / 방법: 재구성 NMSE를 근사하는 view covariance loss(VCL)로 뷰 조합을 직접 평가·선택 / 의미: 복원 알고리즘이 아니라 촬영 설계 단계에서 품질을 개선 / 근거: 동일 뷰 수에서 기존 대안 대비 낮은 NRMSE·적은 아티팩트 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.08652" target=_blank>An Anatomy-guided 3D Segmentation Pipeline for Prostate Surgical Phantoms from CT Scans</a></strong> <span class=pill>CV</span><br>
+  문제: 수술 팬텀 영상은 데이터가 적고 라벨링이 비싸 딥러닝 분할이 비현실적 / 방법: 해부학적 사전 지식을 명시적 기하·밝기 prior로 인코딩한 classical 파이프라인(학습 불필요) / 의미: 라벨 없이도 새 팬텀 버전에 재사용 가능한 실용적 대안 / 근거: 57개 스캔에서 중앙값 Dice 0.83, 32개 병변 전원 탐지(오탐 없음), 스캔당 2~8분 / 우선순위: Skim-only
+</div>
+<h3>이벤트 카메라가 diffusion prior를 업고 깊이 추정·우주선 포즈 추정까지 영역을 넓힘 (2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.08731" target=_blank>eSharp: Diffusion-based Sharp Monocular Metric Event-to-Depth Estimation</a></strong> <span class=pill>CV</span><br>
+  문제: 이벤트 전용 깊이 추정이 조밀한 정답 부족으로 어려움 / 방법: 사전학습 diffusion prior 재활용 + 프레임 카메라-LiDAR 보정 pseudo label로 지도학습 / 의미: 범용 생성모델 prior를 이벤트 기반 3D 인지에 처음으로 재활용 / 근거: 기존 event-to-depth 베이스라인 대비 metric-depth 정확도·공간 충실도 우수 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.09717" target=_blank>Direct Regression and Geometric Recovery for Event-based Spacecraft Pose Estimation</a></strong> <span class=pill>CV</span><br>
+  문제: 합성 이벤트 스트림으로 학습한 모델이 실제 센서의 노이즈·배경 활동에 일반화해야 함 / 방법: 모듈형(키포인트+기하 복원) vs 직접 회귀(apparent-scale cue) 두 독립 접근을 SPARK 2026 프로토콜로 비교 / 의미: 한쪽이 일방적으로 이기지 않는 상반된 결과가 하이브리드 설계를 시사 / 근거: 직접 회귀 회전오차 -22.7%, 모듈형 이동오차 -78.7% / 우선순위: Skim-only
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://arxiv.org/abs/2611.09058" target=_blank>ProtoCouncil: Multi-Encoder Anatomical Prototypes for Prostate Cancer Detection in Micro-Ultrasound</a></li>
+  <li><a href="https://arxiv.org/abs/2611.09851" target=_blank>Health-System-Wide Mapping of Demographic Information in Routine Clinical Histopathology</a></li>
+  <li><a href="2026-11-09-weekly.html">2026-11-09 Weekly Retrospective</a></li>
+  <li><a href="2026-11-06.html">2026-11-06 Daily Briefing</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-11-09 arXiv+저널 daily · arXiv 596건(new+cross, 5개 카테고리, 중복 제거 전 카테고리별 합산) + 저널 337편(Crossref, --days 1) + OpenAlex 보충 1편 · 전체 스캔 811건(중복 제거) · ROI 배정 212건 (26.1%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

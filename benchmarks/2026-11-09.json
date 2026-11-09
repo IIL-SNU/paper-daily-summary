@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-09",
+  "results": [
+    {
+      "benchmark": "Prostate csPCa detection (micro-ultrasound)",
+      "metric": "AUROC",
+      "value": 82.9,
+      "value_str": "82.9% AUROC (+4.3pt vs prior best published)",
+      "paper": "https://arxiv.org/abs/2611.09058",
+      "paper_title": "ProtoCouncil: Multi-Encoder Anatomical Prototypes for Prostate Cancer Detection in Micro-Ultrasound"
+    },
+    {
+      "benchmark": "Pathology report generation (public eval cohort)",
+      "metric": "Cancer family match rate / Finding F1",
+      "value_str": "+4.4pp cancer family match, +5.7pp finding F1 vs Qwen+H&E",
+      "paper": "https://arxiv.org/abs/2611.09117",
+      "paper_title": "PathXAI: Evidence-guided structured pathology reporting by transferable tissue segmentation"
+    },
+    {
+      "benchmark": "EEG-to-Image zero-shot cross-subject reconstruction (THINGS-EEG, LOSO)",
+      "metric": "CLIP / Alex.5 similarity",
+      "value_str": "CLIP 0.552→0.713, Alex.5 0.612→0.745",
+      "paper": "https://arxiv.org/abs/2611.09380",
+      "paper_title": "SPSC: Zero-Shot Cross-Subject EEG-to-Image Reconstruction via Semantic Preservation and Subspace Calibration"
+    },
+    {
+      "benchmark": "Fast video generation (Wan2.1-T2V, matched attention density)",
+      "metric": "PSNR",
+      "value_str": "+3.4dB (1.3B) / +2dB (14B) over SVG2",
+      "paper": "https://arxiv.org/abs/2611.08610",
+      "paper_title": "InstaGen: Group-Shared Importance Sampling for Fast Video Generation"
+    },
+    {
+      "benchmark": "5-second VBench long video generation",
+      "metric": "Total score",
+      "value": 85.15,
+      "value_str": "85.15 (+0.84 vs Self Forcing, +1.11 vs Causal Forcing)",
+      "paper": "https://arxiv.org/abs/2611.09096",
+      "paper_title": "Trajectory Forcing: Exploiting Diffusion Trajectories for Autoregressive Long Video Generation"
+    },
+    {
+      "benchmark": "Event-based spacecraft pose estimation (SPARK 2026, SPADES real-event)",
+      "metric": "Orientation / translation error",
+      "value_str": "direct regression orientation -22.7% (1.1767→0.9101 rad); modular pipeline translation -78.7% (0.1335→0.0285)",
+      "paper": "https://arxiv.org/abs/2611.09717",
+      "paper_title": "Direct Regression and Geometric Recovery for Event-based Spacecraft Pose Estimation"
+    },
+    {
+      "benchmark": "Coronary ostia landmark localization (ImageCAS-enriched)",
+      "metric": "Median error / failure rate",
+      "value_str": "0.70-0.87mm median error; failure rate 34-53% → 0% after adding annotations",
+      "paper": "https://arxiv.org/abs/2611.09714",
+      "paper_title": "Beyond Segmentation: Enriching ImageCAS with Coronary Ostia Landmarks, Rooted Centerline Graphs, and Open-Weight Localization Models"
+    },
+    {
+      "benchmark": "Pan-organ demographic recoverability in routine histopathology (1.3M WSI)",
+      "metric": "AUROC",
+      "value_str": "sex 0.828, age group 0.733, self-reported race 0.662 (pan-organ mean)",
+      "paper": "https://arxiv.org/abs/2611.09851",
+      "paper_title": "Health-System-Wide Mapping of Demographic Information in Routine Clinical Histopathology"
+    }
+  ]
+}

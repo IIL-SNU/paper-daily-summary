@@ -1,5 +1,40 @@
 {
   "date": "2026-11-09",
+  "source_listing_date": "2026-11-09",
+  "source_mode": "new",
+  "note": "2026-11-09(월) daily. 추적 5개 카테고리(cs.LG/cs.CV/cs.AI/eess.IV/eess.SP) 모두 /new listing이 'Monday, 9 November 2026'으로 post_date와 정확히 일치해(Date Source Contract 2.1절 충족) /new를 직접 사용했다. arXiv new+cross 596건(cs.LG 213 · cs.CV 117 · cs.AI 219 · eess.IV 17 · eess.SP 30, replacement 제외) + 저널 Crossref 337편 + OpenAlex 보충 1편(--days 1)을 scripts/classify.py로 중복 제거하며 스캔해 총 811건 중 212건(26.1%)을 9개 ROI 버킷에 배정했다. Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 오늘 0편 배정으로 완전히 빈 날이었고, Phase Imaging/Holography·Meta-Optics/Diffractive도 배정된 2편씩이 전부 결상과 무관한 키워드 오탐이었다. 실신호는 Virtual Staining/Pathology(25편 중 4편: 병리 AI 신뢰성 검증), Reconstruction/Inverse Problems(19편 중 4편: diffusion/PnP 파라미터 자동 추정), Tomography/3D Imaging(44편 중 3편: CT 랜드마크/시점 선택), Deep Learning Methods(115편 중 6편: video diffusion 실사용 속성 확장)에 집중되었다. 저널(Crossref --days 1) 337편 중 계산광학 핵심 키워드(Fourier ptychography/lensless/metasurface/holography/virtual staining) 직접 매칭은 사실상 0건이었고, 유일한 저널 신호(Multimode fiber speckle-based robust image reconstruction)도 abstract 미제공이라 제목 기준 판단이다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 213,
+      "cs.CV": 117,
+      "cs.AI": 219,
+      "eess.IV": 17,
+      "eess.SP": 30
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 337,
+    "journal_window_days": 1
+  },
+  "totals": {
+    "total_scanned": 811,
+    "selected": 212
+  },
+  "classified": {
+    "total_scanned": 811,
+    "selected": 212,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 2,
+      "Meta-Optics/Diffractive": 2,
+      "Light-Field/Novel Sensors": 5,
+      "Tomography/3D Imaging": 44,
+      "Virtual Staining/Pathology": 25,
+      "Reconstruction/Inverse Problems": 19,
+      "Deep Learning Methods": 115
+    }
+  },
+  "daily_thesis": "오늘 하루치 전산 광학 신호는 양은 많지 않지만 결은 뚜렷합니다. 병리·현미경 영상 AI는 정확도가 몇 퍼센트인가보다 이 모델이 틀릴 걸 스스로 아는지, 엉뚱한 단서로 맞히는 건 아닌지를 점검하는 쪽으로 넘어갔고, 영상 복원 알고리즘은 diffusion이든 고전적 plug-and-play든 사람이 손으로 맞추던 하이퍼파라미터를 스스로 추정하는 쪽으로 수렴했습니다. 영상 생성 쪽은 예쁜 영상을 만드는가 경쟁에서 벗어나 알파채널·물리 법칙·실시간 편집 같은 실사용 속성을 하나씩 채우고 있고, 이벤트 카메라는 diffusion의 prior를 빌려 쓰며 응용 범위를 우주선 추적까지 넓혔습니다. 지난주 weekly가 짚었던 의료·병리 영상 AI 신뢰성 축이 이번 주 첫날에도 그대로, 오히려 더 구체적인 형태(편향 지도, 불확실성 기반 보류)로 이어지는 모습입니다.",
   "weekly_retrospective_context": {
     "iso_week": "2026-45",
     "week_start": "2026-11-02",
