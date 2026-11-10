@@ -1,4 +1,85 @@
 {
   "date": "2026-11-10",
-  "results": []
+  "results": [
+    {
+      "benchmark": "CT restoration (LDCT+SVCT+MAR unified, Mayo 2020)",
+      "metric": "PSNR/SSIM",
+      "value": 46.18,
+      "value_str": "46.18 dB / 0.984",
+      "paper": "https://arxiv.org/abs/2611.11503",
+      "paper_title": "AgentCT: A Vision-Language Agent for Universal CT Imaging"
+    },
+    {
+      "benchmark": "CT degradation type/severity classification",
+      "metric": "Accuracy",
+      "value": 95.7,
+      "value_str": "type 95.7% / severity 93.9%",
+      "paper": "https://arxiv.org/abs/2611.11503",
+      "paper_title": "AgentCT: A Vision-Language Agent for Universal CT Imaging"
+    },
+    {
+      "benchmark": "Dynamic monocular SLAM (TUM/BONN RGB-D)",
+      "metric": "ATE RMSE",
+      "value": 1.2,
+      "value_str": "1.2 cm (TUM) / 2.7 cm (BONN)",
+      "paper": "https://arxiv.org/abs/2611.12038",
+      "paper_title": "DPGS-SLAM: Diffusion-Prior and Provenance-Aware Monocular Gaussian Splatting SLAM"
+    },
+    {
+      "benchmark": "3D Gaussian Ray Tracing training speed (vs 3DGRT)",
+      "metric": "Speedup",
+      "value": 4.97,
+      "value_str": "1.9x-4.97x",
+      "paper": "https://arxiv.org/abs/2611.11586",
+      "paper_title": "FastGRT: Accelerating Training of 3D Gaussian Ray Tracing"
+    },
+    {
+      "benchmark": "Transparent surface reconstruction (3D-FRONT-T)",
+      "metric": "Chamfer distance / F1",
+      "value": 27.05,
+      "value_str": "27.05 mm / 0.928 (vs 59.18 mm baseline)",
+      "paper": "https://arxiv.org/abs/2611.10370",
+      "paper_title": "ClearForm: Shared-Surface Gaussian Splatting for Transparent and Opaque Scenes"
+    },
+    {
+      "benchmark": "OCTA vessel segmentation (OCTA-500 3mm)",
+      "metric": "IoU/Dice",
+      "value": 85.16,
+      "value_str": "85.16% / 91.93%",
+      "paper": "https://arxiv.org/abs/2611.11906",
+      "paper_title": "RBA: A Read-out Basis Adapter for Parameter-Efficient Interactive OCTA Vessel Segmentation with SEEM"
+    },
+    {
+      "benchmark": "Hippocampus segmentation/volumetry (MSD hippocampus)",
+      "metric": "Dice",
+      "value": 0.8861,
+      "value_str": "0.8861 ± 0.0094",
+      "paper": "https://arxiv.org/abs/2611.09958",
+      "paper_title": "HippoMamba: A Mamba-augmented network for hippocampal segmentation and serial volumetry in Alzheimers disease"
+    },
+    {
+      "benchmark": "Brain tumor MRI classification (public vs duplicate-filtered external)",
+      "metric": "Accuracy",
+      "value": 90.3,
+      "value_str": "public 94.5-95.6% -> dedup 90.3-91.7%, external 77.6-95.0%",
+      "paper": "https://arxiv.org/abs/2611.11793",
+      "paper_title": "Benchmarking CNNs, Vision Transformers, and Foundation Models for Explainable Brain Tumor MRI Classification"
+    },
+    {
+      "benchmark": "Super-resolution (Urban100 x4, lightweight)",
+      "metric": "PSNR gain / efficiency",
+      "value": 0.38,
+      "value_str": "+0.24-0.38 dB, params -13.7~34.3%, latency -71.5~78.4%",
+      "paper": "https://arxiv.org/abs/2611.11139",
+      "paper_title": "Graphene: A Lightweight Transformer with Ising Mean-Field Refinement for Image Super-Resolution"
+    },
+    {
+      "benchmark": "Virtual staining cell-state transition detection (single-cell)",
+      "metric": "Macro F1 / Cohen's kappa",
+      "value": 0.78,
+      "value_str": "F1 0.57->0.78, kappa 0.34->0.65",
+      "paper": "https://doi.org/10.1088/2632-2153/aebff2",
+      "paper_title": "Biology-informed virtual staining enables label-free detection of cell state transitions at the single-cell level"
+    }
+  ]
 }

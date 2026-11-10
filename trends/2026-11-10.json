@@ -1,37 +1,37 @@
 {
   "date": "2026-11-10",
   "source_listing_date": "2026-11-10",
-  "source_mode": "journal-only",
-  "note": "2026-11-10(화) daily 실행. Date Source Contract 점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 2026-11-10 05:09 UTC 기준 /new listing이 여전히 \"Monday, 9 November 2026\"에 머물러 있어(post_date=2026-11-10 > listing_date=2026-11-09), prompts/instruction.md 2.1의 저널 독립 규칙에 따라 arXiv 섹션 없이 Crossref/OpenAlex 저널만으로 만든 잠정본(source_mode=journal-only)을 발행한다. Crossref 키워드 질의 + OpenAlex enrich/works로 422건을 수집·중복 제거해 scripts/classify.py로 스캔했고, 109건(25.8%)이 9개 ROI 버킷에 배정됐다. Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 오늘도 거의 비어 있다(각각 1건·0건이며 1건도 SAR 선박 탐지 키워드 오탐). 실신호는 Phase Imaging/Holography(위상 복원·간섭계 잡음 보정), Tomography/3D Imaging(물리 기반 제약을 넣은 역문제 재구성), Virtual Staining/Pathology(라벨 없는 세포/조직 정량화), Reconstruction/Inverse Problems(압축 인코딩 기반 고속·고처리량 현미경), Light-Field/Novel Sensors(광필드·이벤트 기반 센서의 새 응용 확장)에 흩어져 있다. Meta-Optics/Diffractive는 15건 배정됐지만 대부분 통신용 안테나·THz 메타표면으로 실제 이미징 신호는 거의 없다. Deep Learning Methods(26건, catch-all)는 대부분 전산 광학과 무관한 일반 의료영상·범용 ML 논문이다. 이 리포트는 arXiv /pastweek에 2026-11-10 섹션이 생기는 즉시 Calendar Audit이 arXiv+저널 완성본으로 자동 업그레이드한다.",
+  "source_mode": "new",
+  "note": "2026-11-10(화) daily 실행. 오늘 아침 Date Source Contract 점검에서는 5개 카테고리 /new listing이 아직 2026-11-09에 머물러 있어 journal-only 잠정본을 먼저 발행했으나, 이후 재점검에서 5개 카테고리 모두 /new listing이 \"Tuesday, 10 November 2026\"으로 갱신되어(post_date==listing_date) 2.1절 규칙에 따라 /new를 직접 사용한 완성본으로 덮어썼다. arXiv new+cross 합계 1371건(cs.LG 509 · cs.CV 317 · cs.AI 480 · eess.IV 13 · eess.SP 52)과 Crossref 저널 423편(OpenAlex enrich 31/423건) + OpenAlex 보충 6편을 합쳐 classify.py가 중복 제거 후 총 1514건을 스캔, 486건(32.1%)을 9개 ROI 버킷에 배정했다. 핵심 신호는 3D Gaussian Splatting이 의료 초음파·동적 SLAM·레이 트레이싱·투명체·라이다 융합으로 번지는 5편(Tomography/3D Imaging), 병리 foundation model 평가축이 스캐너/염색 강건성·신뢰도 보정·백도어 보안으로 이동하는 4편(Virtual Staining/Pathology), 의료영상 역문제 복원이 물리적 촬영 원리를 구조에 되돌리는 5편(Reconstruction/Inverse Problems·Tomography 교차), 뇌 MRI 벤치마크의 데이터 중복·사전학습 소스 신뢰성을 드러낸 2편과 뇌 MRI 응용이 예측·분할·엣지 배포로 갈라지는 3편(Deep Learning Methods)이다. Fourier Ptychography/Microscopy(2편, 전부 오탐)와 Lensless/Coded Imaging(0편)은 여전히 공백이며, Meta-Optics/Diffractive(17편)도 대부분 통신용 안테나/THz 메타표면으로 이미징 신호가 거의 없다. 저널은 핵심 키워드 직접 매칭 2건(근안 디스플레이용 컴퓨터 생성 홀로그래피, 생물학 정보 반영 가상 염색)만 진짜 신호였다.",
   "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 0,
-      "cs.CV": 0,
-      "cs.AI": 0,
-      "eess.IV": 0,
-      "eess.SP": 0
+      "cs.LG": 509,
+      "cs.CV": 317,
+      "cs.AI": 480,
+      "eess.IV": 13,
+      "eess.SP": 52
     },
     "scope": "new+cross; replacements excluded",
-    "journal_count": 422
+    "journal_count": 429
   },
   "totals": {
-    "total_scanned": 422,
-    "selected": 109
+    "total_scanned": 1514,
+    "selected": 486
   },
   "classified": {
-    "total_scanned": 422,
-    "selected": 109,
+    "total_scanned": 1514,
+    "selected": 486,
     "by_bucket": {
-      "Fourier Ptychography/Microscopy": 1,
+      "Fourier Ptychography/Microscopy": 2,
       "Lensless/Coded Imaging": 0,
-      "Phase Imaging/Holography": 12,
-      "Meta-Optics/Diffractive": 15,
-      "Light-Field/Novel Sensors": 4,
-      "Tomography/3D Imaging": 31,
-      "Virtual Staining/Pathology": 15,
-      "Reconstruction/Inverse Problems": 5,
-      "Deep Learning Methods": 26
+      "Phase Imaging/Holography": 16,
+      "Meta-Optics/Diffractive": 17,
+      "Light-Field/Novel Sensors": 6,
+      "Tomography/3D Imaging": 65,
+      "Virtual Staining/Pathology": 46,
+      "Reconstruction/Inverse Problems": 57,
+      "Deep Learning Methods": 277
     }
   },
-  "daily_thesis": "오늘은 arXiv가 아직 올라오지 않아 저널만으로 만든 잠정본인데, 저널 신호를 다시 훑어보니 공통된 결이 하나 보입니다 — 위상 복원이든 전기용량/전기저항 단층촬영이든 현미경이든, 다들 '측정이 불완전하거나 잡음이 낀 상황에서 물리 모델이나 압축 인코딩을 계산 쪽에 명시적으로 박아 넣어 복원 품질과 처리량을 같이 끌어올리는' 쪽으로 움직이고 있습니다."
+  "daily_thesis": "오늘은 전산 광학 핵심 버킷(Fourier ptychography, lensless)은 여전히 비어 있지만, 3D Gaussian Splatting이 렌더링을 넘어 의료 초음파·동적 SLAM·라이다까지 범용 3D 표현 계층으로 번지고, 영상 복원·병리 foundation model 모두 정확도 숫자 경쟁에서 벗어나 물리적 구조와 벤치마크 자체의 신뢰성을 점검하는 쪽으로 옮겨간다는 두 결이 뚜렷하다."
 }
