@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-11-10</title>
+<style>
+
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-11-10 (화요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-11-10 (화요일)</div>
+  <div>📚 소스: journal-only (잠정본) — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 2026-11-10 05:09 UTC 기준 /new listing이 "Monday, 9 November 2026"에 머물러 있는 것을 Date Source Contract 점검에서 확인했습니다(post_date 2026-11-10 &gt; listing_date 2026-11-09). arXiv가 아직 당일 분을 올리지 않아 arXiv 섹션은 발행하지 않습니다.</div>
+  <div>🔢 arXiv: cs.LG 0 · cs.CV 0 · cs.AI 0 · eess.IV 0 · eess.SP 0 (해당일 arXiv 미발행)</div>
+  <div>🔢 저널: Crossref/OpenAlex 422편 수집(2026-11-10 등록분 중심, --days 1) · 스캔 422건 · ROI 배정 109건 (25.8%)</div>
+  <div>⚠️ 이 리포트는 저널만으로 만든 잠정본입니다. arXiv 5개 카테고리가 11/10 listing으로 갱신되고 /pastweek에 11/10 섹션이 뜨면, Calendar Audit이 다음 실행에서 arXiv 포함 완전판으로 자동 업그레이드합니다.</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 arXiv 5개 카테고리가 전부 아직 어제(11/9) listing에 머물러 있어 저널만으로 만든 잠정본입니다. 그런데 저널 쪽 신호만 다시 훑어봐도 결이 하나 뚜렷하게 보입니다 — <strong>위상 복원, 전기용량/전기저항/초음파 단층촬영, 라벨 없는 세포 정량화, 압축 인코딩 현미경까지, 분야를 가리지 않고 "측정이 불완전하거나 잡음이 낀 상황에서 물리 모델이나 압축 구조를 계산 쪽에 명시적으로 박아 넣어 복원 품질과 처리량을 같이 끌어올리는" 쪽으로 움직이고 있습니다.</strong> 특히 눈에 띄는 건 광학이 아닌 초음파·전기용량·전기저항·레이더 네 가지 서로 다른 모달리티 논문이 전부 똑같이 "물리 법칙을 신경망 구조 안에 직접 거는" 설계를 들고 나왔다는 점인데, 랩이 광 회절 단층촬영에서 쓰는 물리 기반 신경망 설계와 바로 맞닿아 있는 신호입니다. 다만 오늘은 arXiv 500~800여 건이 통째로 빠진 날이라, 정보량 자체는 평소 daily의 5분의 1 수준으로 훨씬 적습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 arXiv 5개 카테고리는 2026-11-10 05:09 UTC 확인 기준 전부 "Monday, 9 November 2026" listing에 머물러 있어(11/10 신규 제출 0건), Crossref 키워드 질의와 OpenAlex enrich/works로 저널만 422건을 수집·중복 제거해 classify.py로 스캔했습니다. 그 결과 109건(25.8%)이 9개 ROI 버킷에 배정됐는데, 이는 최근 arXiv 포함 daily의 선택 비율(25~35%대)과 비슷한 수준입니다. 다만 버킷별로 직접 열어본 결과 신호 밀도는 버킷마다 크게 갈렸습니다. 랩 핵심 ROI인 Fourier Ptychography/Microscopy(1편)와 Lensless/Coded Imaging(0편)은 오늘도 거의 완전히 빈 버킷이었고, 유일한 Fourier Ptychography 배정 1편조차 "Fourier"와 "aperture" 단어가 우연히 겹친 광학 SAR(합성개구레이더) 선박 탐지 논문이라 실제 신호는 0편입니다. Meta-Optics/Diffractive(15편)도 대부분 통신·에너지용 안테나·THz 메타표면으로, 실제 이미징/디스플레이 신호는 거의 없습니다. 반대로 실질 신호는 Phase Imaging/Holography(12편 중 3편: 위상 복원·간섭계의 현장 결함 보정), Tomography/3D Imaging(31편 중 4편: 비광학 단층촬영의 물리 기반 신경망), Virtual Staining/Pathology(15편 중 3편: 라벨 없는 세포·조직 정량화), Reconstruction/Inverse Problems(5편 중 3편: 압축 인코딩 기반 고속 현미경), Light-Field/Novel Sensors(4편 중 3편: 광필드·이벤트 센서의 새 응용)에 흩어져 있었습니다. Deep Learning Methods(26편, catch-all)는 전부 전산 광학과 무관한 일반 의료영상 분류·세그멘테이션이거나 완전히 동떨어진 범용 ML 논문이었습니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(11/9)는 arXiv 596건을 확보한 정상 daily였고, 그 신호는 병리 AI 신뢰성 점검, diffusion/PnP 복원 알고리즘의 자동 파라미터 추정, video diffusion의 실사용 속성 확장처럼 주로 방법론·평가축 전환에 가까운 이야기였습니다. 오늘은 그 arXiv 소스 자체가 통째로 빠져서, 어제와 "흐름이 이어지는지"를 직접 비교하기는 어렵습니다 — 오늘 신호는 완전히 다른 소스(저널 Crossref/OpenAlex)에서 나왔기 때문입니다. 굳이 연결점을 찾자면, 어제 클러스터2(diffusion·plug-and-play 복원 알고리즘의 자동 파라미터 추정)와 오늘 클러스터1·2(위상 복원·단층촬영의 물리 기반 보정)가 둘 다 "복원 알고리즘이 사람이 손으로 맞추던 값이나 가정을 스스로 안게 만든다"는 큰 방향을 공유한다는 정도입니다. 다만 어제는 arXiv의 학습 기반 방법(diffusion prior, 자동 하이퍼파라미터 추정)이 중심이었고, 오늘 저널은 물리 모델을 명시적 제약으로 거는 고전적이면서도 견고한 접근이 중심이라는 점에서 접근 축 자체는 다릅니다. 정직하게 말하면, 오늘은 "어제와 이어지는 흐름"보다 "완전히 다른 소스가 보여주는 다른 단면"으로 보는 게 맞습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>위상 복원·간섭계가 잡음·떨림·정렬 오차 같은 현장 결함을 계산으로 직접 보정하는 쪽으로 수렴</strong></td>
+  <td>
+    <a href="https://doi.org/10.1364/ol.616086" target=_blank>Proximal Guided Filtering for Enhanced Phase Retrieval in Coherent Diffractive Imaging</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1088/2040-8986/aebfac" target=_blank>Constraint-guided regularization for robust phase correction in phase shifting interferometry</a> <span class="pill a">JNL · TIER A</span><br>
+    <a href="https://doi.org/10.1002/lpor.72192" target=_blank>Misalignment-Robust Dynamic Cascaded Holography Accelerated by Deep Neural Networks</a> <span class=pill>JNL</span>
+  </td>
+  <td>위상 이미징이나 홀로그래피는 실험실에서는 잘 되다가도, 실제로 설치해 쓰려고 하면 바닥 진동, 위상 변조 비선형성, 여러 층 광학소자 사이의 미세한 정렬 틀어짐 같은 현실적인 문제 때문에 성능이 쉽게 무너집니다. 오늘 묶인 세 편은 바로 이 현장 결함을 광학계를 다시 설계하는 대신 계산 단계에서 직접 보정합니다. Proximal Guided Filtering은 렌즈 없이 회절 패턴만으로 물체를 복원하는 결맞음 회절 이미징에서, 위상 복원 알고리즘에 유도 필터를 반복적으로 끼워 넣어 복원 중에 생기는 노이즈와 아티팩트를 줄입니다. Constraint-guided regularization 논문은 위상천이 간섭계가 진동이나 위상천이 비선형성에 취약해 측정값이 틀어지는 문제를, 피타고라스 항등식과 직교성처럼 물리적으로 반드시 성립해야 하는 제약조건을 정규화 항으로 명시적으로 넣어서 보정합니다. Misalignment-Robust Cascaded Holography는 여러 층의 위상 변조기를 겹쳐 쓰는 홀로그래피 장치가 층간 정렬에 극도로 민감하다는 문제를, 학습 단계부터 무작위 정렬 오차를 파동 전파 모델에 포함시켜 딥러닝으로 훈련함으로써 실제 장치가 조금 틀어져도 안정적으로 복원되게 만듭니다. 세 편 모두 "더 정밀한 광학 하드웨어를 만들자"가 아니라 "하드웨어가 완벽하지 않아도 계산이 그 결함을 알고 보정하게 만들자"는 같은 태도를 공유합니다.</td>
+  <td>Medium<br><small>서로 다른 저널 세 편이 독립적으로 '현장 결함의 계산적 보정'을 보이나, 셋 중 둘(Proximal Guided Filtering 외)은 Crossref 초록이 일부만 제공되어 검증 수준이 고르지 않습니다.</small></td>
+  <td>Constraint-guided regularization의 피타고라스 항등식·직교성 제약 정규화 항을 랩의 위상천이 간섭계(PSI) 복원 파이프라인에 추가해, 인위적 진동(선풍기·보행 진동 등)을 준 환경과 없는 환경에서 위상 오차(RMSE)를 1주 내 비교한다.</td>
+</tr>
+<tr>
+  <td><strong>전기용량/전기저항/초음파 단층촬영 같은 비광학 역문제도 물리 모델을 신경망 구조에 직접 박아 넣는 흐름으로 수렴</strong></td>
+  <td>
+    <a href="https://doi.org/10.3390/s26217042" target=_blank>Spatial Physics-Informed Neural Reconstruction for Ultrasound Travel-Time Tomography</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.asoc.2026.116845" target=_blank>Physics-Guided Triple Neural Network for Electrical Capacitance Tomography with Partial Differential Equation and Forward Constraints</a> <span class="pill a">JNL · TIER A</span><br>
+    <a href="https://doi.org/10.1088/1361-6501/aebfb5" target=_blank>EPGV-UNet: A measurement-domain feature-guided network for electrical resistance tomography image reconstruction</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.3390/jmse14212117" target=_blank>Sea-Surface Wave Field Reconstruction from X-Band Marine Radar Imagery Using a Physics-Informed Three-Dimensional Fourier Neural Operator</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘 저널에서 가장 편수가 많이 모인 조합은 광학이 아니라 초음파·전기용량·전기저항·레이더처럼 빛 대신 다른 물리량을 재는 단층촬영 역문제입니다. 그런데 네 편 모두 랩이 광학 영상 복원에서 쓰는 전략, 즉 물리 법칙을 신경망 바깥의 후처리가 아니라 구조 안에 직접 집어넣는 전략을 그대로 따릅니다. 초음파 단층촬영 논문은 속도장을 전혀 실측하지 않고, 초음파가 매질을 지나가는 시간을 계산하는 Eikonal 방정식으로 만든 합성 데이터만으로 학습한 뒤, 지도학습 복원과 잠재 영상 사전, 물리 조건부 보정을 순서대로 적용합니다. 전기용량 단층촬영(ECT) 논문은 세 개의 신경망을 엮어 편미분방정식과 순방향 물리 모델을 제약으로 걸어, 경계가 흐려지고 구조가 왜곡되는 전형적인 ECT 복원의 약점을 줄입니다. EPGV-UNet도 같은 전기저항 단층촬영(ERT) 문제에서, 원시 전압 측정값 자체에서 뽑은 특징을 영상 복원 네트워크에 안내 신호로 주는 방식으로 경계 흐림과 구조 왜곡을 줄입니다. 해상 레이더로 파도를 복원하는 논문도 3차원 푸리에 신경 연산자의 학습 목표에 파동방정식에서 나온 제약을 명시적으로 넣습니다. 네 편을 합치면, "측정에서 거꾸로 영상을 복원하는 문제"를 다루는 분야 전반이 모달리티를 가리지 않고 신경망이 물리 법칙을 어기지 않도록 구조 안에 제약을 거는 쪽으로 수렴하고 있다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 네 모달리티(초음파·전기용량·전기저항·레이더)가 동일한 '물리 제약 내장형 신경망' 설계를 독립적으로 채택했고, 그중 두 편은 명시적인 PDE/순방향 모델 제약 구조를 제목에서부터 드러냅니다.</small></td>
+  <td>ECT 논문의 삼중 신경망(순방향 물리 모델 + PDE 제약 + 복원 네트워크) 구조를 랩의 광 회절 단층촬영(ODT) 파이프라인에 맞게 변형해, 기존 단일 네트워크 복원 대비 경계 선명도와 구조 왜곡 정도를 같은 테스트 샘플 세트로 1주 내 비교한다.</td>
+</tr>
+<tr>
+  <td><strong>라벨 없는 세포·조직 정량화가 단일 생체지표 복원에서 여러 물리·생물 신호를 동시에 풀어내는 쪽으로 확장</strong></td>
+  <td>
+    <a href="https://doi.org/10.1088/2632-2153/aebff2" target=_blank>Biology-informed virtual staining enables label-free detection of cell state transitions at the single-cell level</a> <span class="pill a">JNL · TIER A</span><br>
+    <a href="https://doi.org/10.1364/boe.620774" target=_blank>Quantitative three-dimensional absorption imaging of pigments and stains with brightfield microscopy</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1007/s11634-026-00710-8" target=_blank>Unmixing of imaging mass spectrometry measurements using microscopy-informed constraints</a> <span class=pill>JNL</span>
+  </td>
+  <td>가상 염색(virtual staining)은 그동안 "염색 없이 찍은 영상에서 염색한 것처럼 보이는 영상을 만들어낸다"는 한 가지 목표에 집중해 왔는데, 오늘 묶인 세 편은 그 목표를 "세포가 지금 어떤 상태인지", "시료 안에 색소가 실제로 얼마나 있는지", "한 픽셀 안에 여러 생체 구조 신호가 섞여 있을 때 어떻게 분리할지"처럼 더 구체적인 정량화 문제로 확장합니다. Biology-informed virtual staining은 세포가 살아있는지 죽어가는지를 판정하는 기존 형광 염색법이 침습적이고 노동 집약적이라는 문제를, 위상차 영상만으로 세포 상태 전이를 잡아내는 생성적 적대 신경망(GAN)에 사람이 품질을 검수하는 과정을 결합해 풉니다. Quantitative 3D absorption imaging 논문은 염료나 색소가 빛을 얼마나 흡수하는지를 보는 가장 기본적인 밝은 시야 현미경만으로 염색 시료의 3차원 흡수량을 정량적으로 복원해, 비싼 장비 없이도 색소 분포를 정량화할 수 있게 합니다. Unmixing of imaging mass spectrometry 논문은 조직 위 각 지점의 분자 성분을 찍는 영상 질량분석에서 한 픽셀에 여러 세포·조직 단위의 신호가 섞여 나오는 문제를, 현미경 영상에서 얻은 경계 정보를 제약으로 써서 성분별로 분리합니다. 세 편을 합치면, 라벨 없는(또는 최소한의 라벨만 쓰는) 세포·조직 영상 분석이 "염색을 대체하는 영상 생성" 단계를 넘어, 그 영상에서 정량적인 생물학적 결론을 믿을 수 있게 뽑아내는 단계로 넘어가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 세 저널이 독립적으로 라벨 없는 정량화 확장을 보이나, 셋 다 abstract가 짧거나 일부만 제공돼 구체적 수치 비교는 제한적입니다.</small></td>
+  <td>Biology-informed virtual staining의 human-in-the-loop 큐레이션 절차를 랩의 가상 염색 학습 데이터 정제 과정에 적용해, 기존 절차 없이 학습한 모델 대비 세포 상태 전이 판별 정확도가 개선되는지 보유 위상차 현미경 데이터셋으로 1주 내 비교한다.</td>
+</tr>
+<tr>
+  <td><strong>압축 인코딩 기반 고속·고처리량 현미경이 공간 해상도를 희생하지 않고 촬영 속도·부피를 같이 늘리는 쪽으로 정리</strong></td>
+  <td>
+    <a href="https://doi.org/10.1117/1.ap.9.1.016004" target=_blank>Off-axis compressed encoding microscopy for high-resolution, high-throughput, high-contrast volumetric imaging</a> <span class="pill a">JNL · TIER A</span><br>
+    <a href="https://doi.org/10.1117/1.ap.9.1.014001" target=_blank>Compressed sensing-enabled super-resolution fluorescence microscopy: a comprehensive review</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1016/j.optcom.2026.133963" target=_blank>Deep Learning Based Feature-Fusion Encoding Mask Generation Method for Compressed Ultrafast Photography System</a> <span class=pill>JNL</span>
+  </td>
+  <td>현미경으로 3차원 부피나 초고속 현상을 찍으려면 보통 여러 번 스캔하거나 아주 비싼 센서가 필요한데, 오늘 묶인 세 편은 모두 한 번에 압축해서 찍고 계산으로 풀어낸다는 같은 전략을 공유합니다. Off-axis compressed encoding microscopy는 깊이에 따라 다른 조명 패턴과 광축을 벗어난(off-axis) 다중 라인 검출 구조를 이용해, 2차원 측정 하나에 깊이 정보를 물리적으로 암호화해 넣고 이를 풀어 3차원 부피 영상을 고속·고해상도로 얻습니다. Compressed sensing 리뷰 논문은 초해상도 형광 현미경이 회절 한계를 넘기 위해 공간·시간적으로 과샘플링을 해야 해서 촬영이 느리고 광표백이 심하다는 공통 문제를, 신호의 희소성을 이용해 적은 측정으로도 복원하는 압축 센싱이 어떻게 풀어왔는지 정리합니다. Compressed Ultrafast Photography 논문은 빛의 속도로 일어나는 현상을 찍는 초고속 카메라에서, 측정을 압축하는 인코딩 마스크 자체를 특징 융합 딥러닝으로 생성해 복원 품질을 높입니다. 세 편을 합치면, 많이 찍어서 느리게 복원하던 고전적 현미경 설계 대신, 적게 찍되 압축 인코딩과 계산 복원으로 품질과 속도를 같이 가져가는 접근이 부피 촬영부터 초해상도, 초고속 촬영까지 현미경의 여러 축에서 동시에 자리잡고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>세 논문이 "압축 인코딩+계산 복원"이라는 같은 설계 철학을 공유하지만, 서로 다른 하위 응용(부피 촬영·초해상도·초고속 촬영)이라 직접적인 벤치마크 교차 검증은 없습니다.</small></td>
+  <td>Off-axis compressed encoding microscopy의 깊이별 조명 패턴+오프축 다중 라인 검출 구조를 랩의 부피 현미경 설정에 시뮬레이션으로 적용해, 기존 z-스택 스캐닝 대비 같은 깊이 범위에서 촬영 프레임 수 대비 복원 해상도(측방향·축방향)를 1주 내 비교한다.</td>
+</tr>
+<tr>
+  <td><strong>광필드·이벤트 기반 센서가 디스플레이·깊이 추정을 넘어 수중·신경망 구조 쪽으로 응용을 넓힘</strong></td>
+  <td>
+    <a href="https://doi.org/10.1109/tvcg.2026.3751264" target=_blank>Light Field Relighting: A Diffusion-Guided 3D Gaussian Splatting Approach</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1007/s11760-026-05775-8" target=_blank>Light field depth estimation framework based on bidirectional spatial transformer and Mamba-like linear attention</a> <span class=pill>JNL</span><br>
+    <a href="https://doi.org/10.1109/lsp.2026.3751663" target=_blank>Aquatic Neuromorphic Optical Flow</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘은 Light-Field/Novel Sensors 버킷에 신호가 세 편뿐이라 근거가 두텁지는 않지만, 방향은 뚜렷합니다. Light Field Relighting은 디퓨전 모델을 가이드로 써서 3D 가우시안 스플래팅(점군을 가우시안 타원체로 표현해 빠르게 렌더링하는 최근 3D 표현법) 장면의 조명을 다시 바꿔 그릴 수 있게 하고, Light field depth estimation 논문은 Mamba 계열의 선형 attention(시퀀스를 처리할 때 계산량이 길이에 비례해서만 느는 효율적인 구조)과 양방향 공간 트랜스포머를 결합해 광필드 카메라의 여러 시점 영상에서 깊이를 추정합니다. Aquatic Neuromorphic Optical Flow는 밝기 변화가 있을 때만 비동기로 신호를 내는 이벤트 카메라를 물속 환경에 적용해 광학 흐름(장면 속 움직임의 패턴)을 복원하는데, 수중에서는 빛 산란과 색 왜곡이 심해 기존 이벤트 카메라 알고리즘이 그대로 통하지 않는다는 점을 다룹니다. 세 편을 묶으면, 광필드·이벤트처럼 카메라 하나로는 안 되는 새로운 센서 모달리티들이 각각 생성형 모델, 효율적인 시퀀스 모델, 완전히 새로운 환경(수중)으로 응용 범위를 넓히고 있다는 신호입니다.</td>
+  <td>Low<br><small>편수가 세 편뿐이고 각각 서로 다른 하위 문제(조명 재현, 깊이 추정, 수중 광학 흐름)를 다뤄 느슨하게 묶었습니다. 셋 다 Crossref 초록이 제공되지 않아 제목 기반 판단입니다.</small></td>
+  <td>Light field depth estimation의 Mamba-like 선형 attention 구조를 랩의 광필드 현미경 깊이 추정 파이프라인에 적용해, 기존 트랜스포머 기반 대비 추론 속도와 깊이 정확도를 보유 광필드 데이터셋으로 1주 내 비교한다.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li>Fourier Ptychography/Microscopy: 1편 배정, 실신호 0편 — 유일한 배정 논문(SeaBridge-MC)은 "Fourier"·"aperture" 키워드가 우연히 겹친 광학-SAR 선박 탐지 논문으로 실제 Fourier ptychography와 무관합니다. 랩 ROI 핵심 공백이 오늘도 이어집니다.</li>
+    <li>Lensless/Coded Imaging: 0편 배정 — 오늘 Crossref/OpenAlex 쿼리에 매칭된 논문이 전혀 없습니다.</li>
+    <li>Phase Imaging/Holography: 12편 배정, 실신호 3편(클러스터1 대표 세 편) — 나머지 9편은 THz 안테나 메타표면, 고에너지물리 bilocal holography, 통신용 동적 메타표면 홀로그래피 등 "phase"/"holography" 단어의 오탐이거나 전산 이미징과 무관한 분야입니다.</li>
+    <li>Meta-Optics/Diffractive: 15편 배정, 실신호 0편 — 전량 통신·에너지·구조공학용 안테나/메타표면(5G·IoT 안테나, 지진 메타표면, 전자파 흡수 복합재 등)이며, OpenAlex 보충 1편(THz 콜리메이팅 메탈렌즈)도 통신용 소자입니다.</li>
+    <li>Light-Field/Novel Sensors: 4편 배정, 실신호 3편(클러스터5 전체) — 나머지 1편(하이브리드 벡터 광필드 통신 디코더)은 광통신 응용으로 이미징과 무관합니다.</li>
+    <li>Tomography/3D Imaging: 31편 배정, 실신호 4편(클러스터2) + 1편(Off-axis compressed encoding microscopy, 클러스터4에 배치) — 나머지 약 26편은 관상동맥 MRA, 소아 CT 외상, 치과 CBCT, PET 전이암 증례처럼 순수 임상 증례이거나 지진파 토모그래피·원자 프로브 토모그래피 같은 완전히 다른 분야입니다.</li>
+    <li>Virtual Staining/Pathology: 15편 배정, 실신호 3편(클러스터3 중 2편) — 나머지 약 12편은 마케팅의 "AI-generated" 콘텐츠, 가상화폐, 가상 교육 같은 "virtual"/"staining" 단어의 완전한 오탐입니다.</li>
+    <li>Reconstruction/Inverse Problems: 5편 배정, 실신호 3편(클러스터4) — 나머지 2편은 보행 로봇 궤적 합성, 질량분석 언믹싱(클러스터3으로 재배치)입니다.</li>
+    <li>Deep Learning Methods: 26편 배정, 실신호 0편(클러스터 미구성) — 전부 전산 광학과 직접 관련 없는 일반 의료영상 분류·세그멘테이션(유방 초음파, 관상동맥 협착, 망막 혈관)이거나 완전히 무관한 범용 ML(베어링 고장 진단, 자율주행 객체 검출, 양자신경망 풍력 예측)입니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<p>오늘은 arXiv가 아직 올라오지 않아 이 섹션이 평소와 다르게 작동합니다. 추적 중인 5개 카테고리(cs.LG, cs.CV, cs.AI, eess.IV, eess.SP) 모두 2026-11-10 05:09 UTC 기준 /new listing이 여전히 "Monday, 9 November 2026"을 가리키고 있어, post_date(2026-11-10)와 listing_date(2026-11-09)가 어긋납니다. Date Source Contract(instruction.md 2.1절)에 따라 이 경우 arXiv 섹션은 발행하지 않고, Crossref·OpenAlex 저널 수집은 arXiv listing 유무와 무관하게 독립적으로 수행해 저널만으로 오늘의 리포트를 구성했습니다. 따라서 오늘은 arXiv 전용 신호도, arXiv-저널 공통 키워드 비교도 존재하지 않습니다 — 위 클러스터 다섯 개가 저널 전용 신호의 전체입니다. arXiv가 /pastweek에 2026-11-10 섹션으로 올라오는 즉시, Calendar Audit이 이 daily를 arXiv 포함 완전판(source_mode=pastweek-date-section)으로 자동 업그레이드하며, 그때 오늘 저널이 보여준 "물리 제약 내장형 복원" 흐름에 arXiv 쪽 방법론이 얼마나 이어 붙는지가 관전 포인트입니다.</p>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 위상 복원·간섭계가 현장 결함을 계산으로 직접 보정</h3>
+  <p>Proximal Guided Filtering, Constraint-guided regularization, Misalignment-Robust Cascaded Holography 세 편이 진동·비선형성·정렬 오차 같은 실제 배치 환경의 문제를 광학 재설계가 아니라 계산 단계에서 보정합니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<div class=ins>
+  <h3>2. 비광학 단층촬영 역문제도 물리 기반 신경망 구조로 수렴</h3>
+  <p>초음파·전기용량·전기저항·레이더 네 가지 서로 다른 모달리티가 모두 물리 법칙을 신경망 구조 안에 직접 거는 같은 전략을 독립적으로 채택했습니다.</p>
+  <p class=conf-note>Confidence: High</p>
+</div>
+
+<div class=ins>
+  <h3>3. 라벨 없는 세포·조직 정량화가 생성에서 정량 분석으로 확장</h3>
+  <p>가상 염색, 3D 흡수 영상, 질량분석 언믹싱 세 편이 "염색을 대체하는 영상 생성"을 넘어 정량적 생물학 결론을 뽑아내는 단계로 넘어갑니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<div class=ins>
+  <h3>4. 압축 인코딩 기반 고속 현미경이 해상도를 지키며 처리량을 확장</h3>
+  <p>Off-axis compressed encoding microscopy, 압축센싱 초해상도 리뷰, 압축 초고속 촬영 마스크 생성 세 편이 적게 찍고 계산으로 복원하는 같은 설계 철학을 공유합니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. 위상천이 간섭계 물리 제약 정규화를 랩 PSI 파이프라인에 적용</h3>
+  <p>Constraint-guided regularization은 피타고라스 항등식·직교성·공간 평활성을 명시적 제약으로 걸어 진동·비선형성에 강건한 위상 보정을 보였는데, 랩의 위상천이 간섭계 복원 절차에도 같은 제약을 추가해볼 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Constraint-guided regularization for robust phase correction (Journal of Optics) — 공개 코드 여부 abstract 기준 불명, 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 위상천이 간섭계(PSI) 캘리브레이션 샘플</li>
+    <li>비교축: 인위적 진동(선풍기·보행 진동)을 준 환경 vs 없는 환경에서 위상 오차(RMSE)</li>
+    <li>실패해도 남는 결과: 정규화가 랩 장비에서 효과가 없더라도, 어떤 진동 주파수 대역에서 위상 오차가 가장 커지는지 정리한 민감도 분석은 다음 하드웨어 댐핑 설계에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. ECT의 삼중 물리 기반 신경망 구조를 랩 광 회절 단층촬영에 이식</h3>
+  <p>Physics-Guided Triple Neural Network는 PDE·순방향 모델 제약을 신경망 구조 안에 명시적으로 걸어 ECT 복원의 경계 흐림·구조 왜곡을 줄였는데, 같은 구조를 랩의 광 회절 단층촬영(ODT) 파이프라인에 맞게 변형해볼 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Physics-Guided Triple Neural Network for ECT (Applied Soft Computing) — 코드 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩의 ODT 복원 테스트 샘플(알려진 내부 구조 포함)</li>
+    <li>비교축: 기존 단일 네트워크 복원 대비 삼중 신경망(순방향 모델+PDE 제약+복원망)의 경계 선명도·구조 왜곡 지표</li>
+    <li>실패해도 남는 결과: 삼중 구조가 ODT에 안 맞더라도, 현재 ODT 복원이 어느 PDE 제약 조건에서 가장 왜곡되는지 정리한 진단은 다음 설계에 재사용된다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. Off-axis compressed encoding microscopy의 깊이 인코딩 구조를 랩 부피 현미경에 적용</h3>
+  <p>OCEM은 조명 패턴과 오프축 다중 라인 검출 구조로 깊이 정보를 2차원 측정에 물리적으로 암호화하는데, 랩의 부피 현미경 설정에도 같은 인코딩 구조를 시뮬레이션으로 적용해볼 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Off-axis compressed encoding microscopy (Advanced Photonics) — 코드/설계도 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 부피 현미경 설정(z-스택 스캐닝 기준 비교군)</li>
+    <li>비교축: 기존 z-스택 스캐닝 대비 같은 깊이 범위에서 촬영 프레임 수 대비 복원 해상도(측방향·축방향)</li>
+    <li>실패해도 남는 결과: 인코딩 구조가 랩 광학계에 안 맞더라도, 현재 z-스택 스캐닝의 깊이별 신호 대 잡음비 프로파일은 다음 설계에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Deep Learning Methods(26편, catch-all)를 제외한 버킷 중 최댓값인 Tomography/3D Imaging(31편) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all, 실제 편수는 라벨에 표시). 0편 버킷도 0% 막대로 표시합니다.</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:3%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:39%"></span></span><span class=n>12편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:48%"></span></span><span class=n>15편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:13%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>31편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:48%"></span></span><span class=n>15편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:16%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>26편</span></div>
+
+<p><small>⚠️ 참고: 버킷별 실질 신호 비율은 위 🔬 도메인 Watch Lens 섹션을 참고하세요 — 대부분의 버킷에서 키워드 오탐이 실질 신호보다 압도적으로 많았습니다(예: Tomography/3D Imaging 31편 중 실질 신호 5편, Meta-Optics/Diffractive 15편 중 실질 신호 0편).</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2040-8986/aebfac" target=_blank>Constraint-guided regularization for robust phase correction in phase shifting interferometry</a></strong> [JNL]<br>
+  왜 주요: 위상천이 간섭계의 진동·비선형성 문제를 물리적 제약(피타고라스 항등식, 직교성)을 정규화 항으로 거는 방식으로 정면 공략.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.72192" target=_blank>Misalignment-Robust Dynamic Cascaded Holography Accelerated by Deep Neural Networks</a></strong> [JNL]<br>
+  왜 주요: 다층 홀로그래피 장치의 정렬 민감도 문제를 학습 단계에서부터 무작위 정렬 오차를 포함시켜 해소.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.asoc.2026.116845" target=_blank>Physics-Guided Triple Neural Network for Electrical Capacitance Tomography</a></strong> [JNL]<br>
+  왜 주요: PDE·순방향 물리 모델을 신경망 구조에 직접 거는 설계로, 랩의 광 회절 단층촬영에도 바로 참고 가능한 구조.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/s26217042" target=_blank>Spatial Physics-Informed Neural Reconstruction for Ultrasound Travel-Time Tomography</a></strong> [JNL]<br>
+  왜 주요: 실측 정답 없이 Eikonal 방정식 기반 합성 데이터만으로 학습하는 물리 기반 복원 파이프라인.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.ap.9.1.016004" target=_blank>Off-axis compressed encoding microscopy for high-resolution, high-throughput, high-contrast volumetric imaging</a></strong> [JNL]<br>
+  왜 주요: 깊이 정보를 2D 측정에 물리적으로 암호화해 고속·고해상도 3D 부피 촬영을 가능케 하는 랩 ROI 핵심 인접 기술.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2632-2153/aebff2" target=_blank>Biology-informed virtual staining enables label-free detection of cell state transitions at the single-cell level</a></strong> [JNL]<br>
+  왜 주요: human-in-the-loop 큐레이션을 결합해 가상 염색의 정량적 신뢰도를 높인 방법론적 확장.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.ap.9.1.014001" target=_blank>Compressed sensing-enabled super-resolution fluorescence microscopy: a comprehensive review</a></strong> [JNL]<br>
+  왜 주요: 랩이 쓰는 압축 센싱 기반 이미징 전략 전반을 정리한 리뷰로, 참고문헌 지도로 바로 활용 가능.
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<p><small>오늘은 저널 abstract 중 명확한 정량적 SOTA 비교 수치(동일 벤치마크·동일 베이스라인 대비 구체적 개선폭)를 제공하는 논문이 없어 신규 벤치마크 결과를 기록하지 않습니다. 대부분의 저널 초록이 "개선되었다"는 정성적 서술에 그치거나 abstract 자체가 제공되지 않았습니다.</small></p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Physics-Guided Triple Neural Network for Electrical Capacitance Tomography with Partial Differential Equation and Forward Constraints — Applied Soft Computing</h3>
+  <div class=tag>[방법전환] [인프라]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 가장 많은 논문(4편)이 모인 "물리 기반 비광학 단층촬영" 클러스터의 대표 논문이며, 랩이 광 회절 단층촬영(ODT)에서 쓰는 물리 제약 내장형 신경망 설계와 구조적으로 가장 가깝게 맞닿아 있어 바로 참고할 수 있다는 점에서 A급입니다.</p>
+  <p><strong>핵심:</strong> 전기용량 단층촬영(ECT)은 전극 쌍 사이의 정전용량 측정값만으로 내부 유전율 분포를 복원하는 대표적인 ill-posed(해가 여러 개이거나 불안정한) 역문제입니다. 기존 딥러닝 기반 ECT 복원은 측정값과 영상 사이의 매핑을 데이터만으로 통째로 학습하는 경우가 많아서, 복잡한 분포나 고해상도 복원에서 경계가 흐려지고 구조가 왜곡되는 문제가 흔했습니다. 이 논문은 이 문제를, 신경망 하나가 아니라 세 개의 신경망을 엮어서 풉니다 — 하나는 전통적인 "측정값→영상" 매핑을 학습하고, 다른 하나는 반대로 "영상→측정값"을 예측하는 순방향 물리 모델 역할을 하며, 세 번째는 전기용량 단층촬영이 따라야 하는 편미분방정식(라플라스 방정식 계열) 제약을 만족하는지 검사합니다. 이렇게 하면 복원된 영상이 단순히 학습 데이터의 패턴을 흉내 내는 게 아니라, 실제 물리 법칙(전기장이 만족해야 하는 방정식)과 측정값 자체를 다시 설명할 수 있는지를 함께 검증받습니다. 저자들은 이 구조가 경계가 흐려지고 구조가 왜곡되는 기존 ECT 복원의 전형적인 약점을 줄인다고 보고합니다. 랩의 관점에서 중요한 이유는, 랩이 광 회절 단층촬영에서 마주치는 문제(빛의 산란 방정식을 만족하면서도 측정값과 일치하는 복원)가 구조적으로 거의 동일하기 때문입니다. "순방향 물리 모델 네트워크 + PDE 제약 네트워크 + 복원 네트워크"라는 삼중 구조를 그대로 광 산란 방정식에 맞게 바꿔볼 수 있습니다.</p>
+  <p><strong>주의:</strong> abstract에 "경계 흐림과 구조 왜곡을 줄인다"는 정성적 서술은 있지만, 어떤 벤치마크·베이스라인 대비 구체적으로 몇 퍼센트 개선됐는지는 명시되어 있지 않아 본문의 실험 표를 확인해야 합니다. 또한 세 신경망을 동시에 학습시키는 과정이 랩이 쓰는 학습 인프라에서 안정적으로 수렴하는지도 별도 검증이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Baseline risk] 오늘은 arXiv가 통째로 빠져 전체 정보량이 평소 daily의 5분의 1 수준이며, Fourier Ptychography/Microscopy·Lensless/Coded Imaging·Meta-Optics/Diffractive 세 핵심 계산광학 버킷은 오늘 실신호가 사실상 0편이라 랩 핵심 ROI 관점에서는 거의 공백일입니다.</p>
+  <p>[Claim risk] 저널(Crossref/OpenAlex) 422편 중 abstract가 제공된 논문은 70편(약 64%)뿐이라, 나머지 39편은 제목만으로 판단했고 그중 상당수가 오늘 클러스터 표에도 포함되어 있습니다.</p>
+  <p>[Dataset risk] 이 리포트는 잠정본입니다. arXiv가 /pastweek에 11/10 섹션으로 올라오면 Calendar Audit이 arXiv 포함 완전판으로 덮어쓸 예정이라, 오늘 보고된 클러스터 구성과 thesis는 최종본과 달라질 수 있습니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] Physics-Guided Triple Neural Network(ECT)의 "경계 흐림·구조 왜곡 감소"는 abstract에 구체적 비교 수치가 없어, 본문의 실험 표를 확인하기 전까지는 어떤 베이스라인 대비 얼마나 개선됐는지 알 수 없습니다.</p>
+  <p>[Claim risk] Misalignment-Robust Cascaded Holography의 "안정적 복원"도 abstract만으로는 정량적 개선폭을 알 수 없어 본문 확인이 필요합니다.</p>
+  <p>[Dataset risk] Biology-informed virtual staining의 human-in-the-loop 큐레이션은 abstract 기준으로는 어떤 규모의 사람 검수가 들어갔는지 불명확해, 재현 가능성 평가 전까지는 보류가 필요합니다.</p>
+  <p>[Claim risk] Light field depth estimation, Aquatic Neuromorphic Optical Flow, Light Field Relighting 세 편 모두 Crossref 초록이 제공되지 않아 제목만으로 방법론을 추정했으며, 실제 성능 비교 수치는 확인되지 않았습니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+<div class=skim>
+  <ul>
+    <li>Meta-Optics/Diffractive 15편 전체 — 전량 통신·에너지·구조공학용 안테나/메타표면으로 랩 ROI(이미징)와 직접 관련이 없습니다.</li>
+    <li>Tomography/3D Imaging 임상 증례 약 26편 — 관상동맥 MRA, 소아 CT 외상, 치과 CBCT, PET 전이암 증례 등 CT/MRI/PET을 "사용"하지만 영상 재구성 방법론에는 기여하지 않는 순수 임상 연구입니다.</li>
+    <li>Virtual Staining/Pathology 비병리 약 12편 — 마케팅의 AI 생성 콘텐츠, 가상화폐, 가상 교육 등 "virtual"/"staining" 단어만 일치하는 완전 무관 논문입니다.</li>
+    <li>Deep Learning Methods 26편 전체 — 베어링 고장 진단, 자율주행 객체 검출, 양자신경망 풍력 예측 등 전산 광학 이미징과 직접 관련이 없는 범용 ML·일반 의료영상 응용입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+<p><small>오늘 109건 전체를 개별 bullet로 쓰는 대신, 오늘의 클러스터 지도에 포함된 대표 논문 중심으로 압축했습니다. 하위 롱테일(각 버킷의 키워드 오탐·일반 임상/범용 ML 논문)은 Watch Lens·Skim-only 섹션에서 버킷/카운트만 표시하고 개별 bullet은 생략합니다.</small></p>
+
+<h3>위상 복원·간섭계가 현장 결함을 계산으로 직접 보정 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.616086" target=_blank>Proximal Guided Filtering for Enhanced Phase Retrieval in Coherent Diffractive Imaging</a></strong> <span class=pill>JNL</span><br>
+  문제: 결맞음 회절 이미징의 위상 복원 과정에서 노이즈·아티팩트가 누적 / 방법: 위상 복원 반복 과정에 유도 필터를 삽입(abstract 미제공, 제목 기준 추정) / 의미: 알고리즘 재설계 없이 기존 복원 루프에 끼워 넣을 수 있는 경량 보정 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2040-8986/aebfac" target=_blank>Constraint-guided regularization for robust phase correction in phase shifting interferometry</a></strong> <span class=pill>JNL</span><br>
+  문제: 위상천이 간섭계가 진동·위상천이 비선형성에 취약해 측정이 틀어짐 / 방법: 피타고라스 항등식·직교성·공간 평활성을 정규화 제약으로 명시적으로 부과 / 의미: 물리적으로 반드시 성립해야 하는 조건을 복원 손실에 직접 거는 접근 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.72192" target=_blank>Misalignment-Robust Dynamic Cascaded Holography Accelerated by Deep Neural Networks</a></strong> <span class=pill>JNL</span><br>
+  문제: 다층 위상 변조기 기반 홀로그래피가 층간 정렬 오차에 극도로 민감함 / 방법: 학습 단계에 무작위 정렬 오차를 파동 전파 모델로 포함시켜 훈련 / 의미: 하드웨어 정밀도 대신 학습으로 강건성을 확보하는 실용적 접근 / 우선순위: Read
+</div>
+
+<h3>비광학 단층촬영 역문제도 물리 기반 신경망 구조로 수렴 (4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/s26217042" target=_blank>Spatial Physics-Informed Neural Reconstruction for Ultrasound Travel-Time Tomography</a></strong> <span class=pill>JNL</span><br>
+  문제: 초음파 단층촬영의 속도장 추정에 실측 정답 데이터가 부족 / 방법: Eikonal 방정식 기반 합성 데이터로만 학습 + 지도 복원 + 잠재 영상 사전 + 물리 조건부 보정 / 의미: 실측 라벨 없이도 물리 기반 합성 데이터만으로 복원 가능성을 보임 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.asoc.2026.116845" target=_blank>Physics-Guided Triple Neural Network for Electrical Capacitance Tomography</a></strong> <span class=pill>JNL</span><br>
+  문제: ECT 복원이 경계 흐림·구조 왜곡에 취약함 / 방법: 순방향 물리 모델+PDE 제약+복원 네트워크 삼중 구조 / 의미: 랩 ODT 파이프라인에 구조적으로 가장 가깝게 맞닿은 설계 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/1361-6501/aebfb5" target=_blank>EPGV-UNet: A measurement-domain feature-guided network for electrical resistance tomography image reconstruction</a></strong> <span class=pill>JNL</span><br>
+  문제: ERT 복원도 경계 흐림·구조 왜곡에 취약함 / 방법: 원시 전압 측정값에서 뽑은 특징을 복원망에 안내 신호로 제공 / 의미: 측정 도메인 정보를 영상 도메인 복원에 직접 연결하는 설계 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/jmse14212117" target=_blank>Sea-Surface Wave Field Reconstruction from X-Band Marine Radar Imagery</a></strong> <span class=pill>JNL</span><br>
+  문제: 레이더 후방산란에서 위상 분해된 해수면 높이를 복원하는 문제가 ill-posed임 / 방법: 3D 푸리에 신경 연산자의 학습 목표에 파동방정식 제약을 명시적으로 추가 / 의미: 구조가 아니라 손실 함수에 물리 제약을 거는 대안적 설계 / 우선순위: Skim-only
+</div>
+
+<h3>라벨 없는 세포·조직 정량화가 생성에서 정량 분석으로 확장 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2632-2153/aebff2" target=_blank>Biology-informed virtual staining enables label-free detection of cell state transitions at the single-cell level</a></strong> <span class=pill>JNL</span><br>
+  문제: 세포 생존/사멸 판정에 쓰는 형광 염색법이 침습적이고 노동 집약적임 / 방법: 위상차 영상 기반 GAN + human-in-the-loop 데이터 큐레이션 / 의미: 가상 염색이 영상 생성을 넘어 세포 상태 정량 판별로 확장 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/boe.620774" target=_blank>Quantitative three-dimensional absorption imaging of pigments and stains with brightfield microscopy</a></strong> <span class=pill>JNL</span><br>
+  문제: 색소·염색 시료의 3차원 흡수량 정량화에 비싼 장비가 필요했음(abstract 미제공, 제목 기준 추정) / 방법: 밝은 시야 현미경만으로 3D 흡수 영상 복원 / 의미: 저비용 장비로도 정량 측정이 가능하다는 실용적 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s11634-026-00710-8" target=_blank>Unmixing of imaging mass spectrometry measurements using microscopy-informed constraints</a></strong> <span class=pill>JNL</span><br>
+  문제: 영상 질량분석의 픽셀 신호가 여러 세포·조직 단위 신호와 섞여 나옴 / 방법: 현미경 영상의 경계 정보를 제약으로 쓴 선형 언믹싱 모델 / 의미: 서로 다른 모달리티(질량분석+현미경)를 결합한 정량 분리 / 우선순위: Read
+</div>
+
+<h3>압축 인코딩 기반 고속 현미경이 해상도를 지키며 처리량을 확장 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.ap.9.1.016004" target=_blank>Off-axis compressed encoding microscopy for high-resolution, high-throughput, high-contrast volumetric imaging</a></strong> <span class=pill>JNL</span><br>
+  문제: 고처리량 3D 형광 현미경이 깊이 정보 보존과 속도를 동시에 만족하기 어려움 / 방법: 깊이별 조명 패턴+오프축 다중 라인 검출로 깊이를 2D 측정에 물리적으로 암호화 / 의미: z-스택 스캐닝 없이 2D 측정만으로 3D 부피를 고속 복원 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.ap.9.1.014001" target=_blank>Compressed sensing-enabled super-resolution fluorescence microscopy: a comprehensive review</a></strong> <span class=pill>JNL</span><br>
+  문제: 초해상도 형광 현미경이 과샘플링으로 느리고 광표백이 심함 / 방법: 압축 센싱 기반 초해상도 방법론을 체계적으로 정리 / 의미: 랩의 압축 이미징 전략 전반을 점검할 수 있는 참고 지도 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optcom.2026.133963" target=_blank>Deep Learning Based Feature-Fusion Encoding Mask Generation Method for Compressed Ultrafast Photography System</a></strong> <span class=pill>JNL</span><br>
+  문제: 압축 초고속 촬영의 인코딩 마스크 설계가 복원 품질을 좌우함(abstract 미제공, 제목 기준 추정) / 방법: 특징 융합 딥러닝으로 인코딩 마스크 자체를 생성 / 의미: 마스크 설계를 수작업에서 학습 기반으로 전환 / 우선순위: Skim-only
+</div>
+
+<h3>광필드·이벤트 기반 센서가 응용을 넓힘 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tvcg.2026.3751264" target=_blank>Light Field Relighting: A Diffusion-Guided 3D Gaussian Splatting Approach</a></strong> <span class=pill>JNL</span><br>
+  문제: 3D 가우시안 스플래팅 장면의 조명을 사후에 바꿔 그리기 어려움(abstract 미제공, 제목 기준 추정) / 방법: 디퓨전 모델을 가이드로 쓴 조명 재현 / 의미: 광필드 렌더링과 생성 모델의 결합 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s11760-026-05775-8" target=_blank>Light field depth estimation framework based on bidirectional spatial transformer and Mamba-like linear attention</a></strong> <span class=pill>JNL</span><br>
+  문제: 광필드 다시점 영상의 깊이 추정이 연산량이 큼(abstract 미제공, 제목 기준 추정) / 방법: Mamba 계열 선형 attention + 양방향 공간 트랜스포머 / 의미: 효율적인 시퀀스 모델을 광필드 깊이 추정에 이식 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/lsp.2026.3751663" target=_blank>Aquatic Neuromorphic Optical Flow</a></strong> <span class=pill>JNL</span><br>
+  문제: 수중 환경에서는 빛 산란·색 왜곡으로 기존 이벤트 카메라 광학 흐름 알고리즘이 통하지 않음(abstract 미제공, 제목 기준 추정) / 방법: 이벤트 카메라 기반 광학 흐름을 수중 환경에 맞게 재설계 / 의미: 이벤트 카메라 응용 범위를 육상에서 수중으로 확장 / 우선순위: Skim-only
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://doi.org/10.1016/j.asoc.2026.116845" target=_blank>Physics-Guided Triple Neural Network for Electrical Capacitance Tomography</a></li>
+  <li><a href="https://doi.org/10.1117/1.ap.9.1.016004" target=_blank>Off-axis compressed encoding microscopy</a></li>
+  <li><a href="2026-11-09.html">2026-11-09 Daily Briefing</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-11-10 저널 전용(journal-only) daily · arXiv 해당일 미발행(0건) · 저널 422편(Crossref/OpenAlex) · 전체 스캔 422건 · ROI 배정 109건 (25.8%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP(arXiv 섹션 미발행)</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

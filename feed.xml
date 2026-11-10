@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 09 Nov 2026 14:23:34 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 14:21:08 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-11-10 (화요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-11-10.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-11-10.html</guid>
+      <pubDate>Tue, 10 Nov 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 arXiv 5개 카테고리는 2026-11-10 05:09 UTC 확인 기준 전부 "Monday, 9 November 2026" listing에 머물러 있어(11/10 신규 제출 0건), Crossref 키워드 질의와 OpenAlex enrich/works로 저널만 422건을 수집·중복 제거해 classify.py로 스캔했습니다. 그 결과 109건(25.8%)이 9개 ROI 버킷에 배정됐는데, 이는 최근 arXiv 포함 daily의 선택 비율(25~35%대)과 비슷한 수준입니다. 다만 버킷별로 직접 열어본 결과 신호 밀도는 버킷마다 크게 갈렸습니다. 랩 핵심 ROI인 Fourier Ptychography/Microscopy(1편)와 Lensless/Coded Imag…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-11-09 (Week 45)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-11-09-weekly.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-10.html</guid>
       <pubDate>Mon, 10 Aug 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[오늘(8/10, 월)은 arXiv /new에 cs.LG 144편, cs.CV 102편, cs.AI 201편, eess.IV 4편, eess.SP 15편(합계 466편)이 잡혔고, 저널 246건을 더한 병합 스캔 623건 중 169건(27.1%)이 ROI로 선정됐습니다. 오늘 가장 뚜렷했던 흐름은 diffusion 모델이 여러 층위에서 "모든 곳에 같은 규칙을 적용한다"는 단순화를 걷어내고 있다는 점입니다. 이미지 복원에서는 LEADer가 diffusion 기반 이미지 복원(DMIR, Diffusion Model-based Image Restoration)이 흔히 쓰는 고정 step size·고정 데이터 제약이 사진의 특정 영역에만 열화가 몰려 있는 경우(공간적으로 불균일…]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Daily Briefing — 2026-08-07 (금요일)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-08-07.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-07.html</guid>
-      <pubDate>Fri, 07 Aug 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘(8/7, 금)은 arXiv /new에 cs.LG 162편, cs.CV 132편, cs.AI 201편, eess.IV 7편, eess.SP 12편(합계 514편)이 잡혔고, 저널 420건을 더한 원천 스캔 838건 중 209건(24.9%)이 ROI로 선정됐습니다. 오늘 가장 뚜렷했던 흐름은 "그동안 별생각 없이 믿어온 신호를 정면으로 감사하는" 논문들이 여러 도메인에서 동시에 나왔다는 점입니다. World model(카메라 행동을 입력하면 미래 상태를 예측하는 모델) 연구에서는 JEPA(Joint-Embedding Predictive Architecture) 계열이 그동안 "잠재표현이 하나의 점으로 뭉개지지만 않으면 학습이 잘 된 것"이라는 기준으로 평가돼 왔는데,…]]></description>
     </item>
   </channel>
 </rss>
