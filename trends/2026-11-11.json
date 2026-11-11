@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-11",
+  "source_listing_date": "2026-11-11",
+  "source_mode": "new",
+  "note": "2026-11-11(수) daily 실행. Date Source Contract 점검에서 추적 5개 카테고리 모두 /new listing이 \"Wednesday, 11 November 2026\"으로 post_date와 정확히 일치해(2.1절 충족) /new를 직접 사용한 완성본이다. arXiv new+cross 합계 670건(cs.LG 235 · cs.CV 149 · cs.AI 248 · eess.IV 12 · eess.SP 26)과 Crossref 저널 416편(OpenAlex enrich 57/416건) + OpenAlex 보충 4편을 합쳐 classify.py가 중복 제거 후 총 941건을 스캔, 292건(31.0%)을 9개 ROI 버킷에 배정했다. 핵심 신호는 3D Gaussian Splatting이 '깨끗한 멀티뷰' 전제를 깨고 저조도·반사·이종카메라·통제 안 된 촬영까지 버티도록 강건화되는 8편(Tomography/3D Imaging), 과학 전반의 역문제 복원이 생성 prior에 물리/최적화 구조를 다시 강제하는 4편(Reconstruction/Inverse Problems), 계산병리가 H&E 한 장에서 유전자 발현까지 복원하려는 3편(Virtual Staining/Pathology, 그중 1편은 Deep Learning Methods catch-all에 묻혀 있던 것을 끌어올림), 의료영상 foundation model의 현장 배포 가치를 네 모달리티가 각자 검증한 4편(Deep Learning Methods), 원격탐사 foundation model의 사전학습·이종센서 정렬 구조화 3편(Deep Learning Methods, 랩 핵심 ROI와는 거리 있는 참고 신호)이다. Fourier Ptychography/Microscopy(1편)와 Lensless/Coded Imaging(1편)은 오늘도 배정 편수 자체는 극소지만 둘 다 저널에서 건진 진짜 신호였고, Meta-Optics/Diffractive(10편)·Phase Imaging/Holography(13편)는 대부분 통신용 메타표면·QCD 물리 논문의 키워드 오탐이었다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 235,
+      "cs.CV": 149,
+      "cs.AI": 248,
+      "eess.IV": 12,
+      "eess.SP": 26
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 416,
+    "journal_window_days": 1
+  },
+  "totals": {
+    "total_scanned": 941,
+    "selected": 292
+  },
+  "classified": {
+    "total_scanned": 941,
+    "selected": 292,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 13,
+      "Meta-Optics/Diffractive": 10,
+      "Light-Field/Novel Sensors": 4,
+      "Tomography/3D Imaging": 41,
+      "Virtual Staining/Pathology": 29,
+      "Reconstruction/Inverse Problems": 31,
+      "Deep Learning Methods": 162
+    }
+  },
+  "daily_thesis": "오늘은 3D Gaussian Splatting이 '깨끗한 멀티뷰 촬영'이라는 전제를 하나씩 허물며 저조도·반사·이종카메라·통제 안 된 촬영까지 버티는 범용 표현으로 다져지는 날이었고, 과학 전반의 역문제 복원은 생성 모델을 통째로 믿기보다 물리 모델과 최적화 구조로 다시 묶어 일관성을 강제하는 쪽으로 넓어졌다. 계산병리는 '믿을 만한가'를 넘어 'H&E 한 장에서 유전자 발현까지 복원할 수 있는가'를 묻기 시작했고, 의료영상 foundation model은 네 모달리티가 각자 독립적으로 배포 가치를 검증했다."
+}

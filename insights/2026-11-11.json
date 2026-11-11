@@ -1,0 +1,159 @@
+{
+  "date": "2026-11-11",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "3D Gaussian Splatting이 '깨끗한 멀티뷰' 전제를 깨고 저조도·반사·이종카메라·통제 안 된 촬영까지 버티는 범용 표현으로 단단해짐",
+      "papers": [
+        {
+          "title": "Camera3R: Feed-Forward 3D Reconstruction from Heterogeneous Camera Models",
+          "arxiv": "https://arxiv.org/abs/2611.13453",
+          "importance_tags": ["[방법전환]", "[표준후보]"]
+        },
+        {
+          "title": "FastWild-GS: Minutes-Scale In-the-Wild Gaussian Splatting via Compact Per-Image Appearance Adaptation",
+          "arxiv": "https://arxiv.org/abs/2611.13808",
+          "importance_tags": ["[실사용전환]"]
+        },
+        {
+          "title": "RetinexGS: Retinex-Inspired Gaussian Splatting for Low-Light RAW Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2611.13280",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "RF3DGS: Reflection-Free 3D Gaussian Splatting with Self-Priors",
+          "arxiv": "https://arxiv.org/abs/2611.13772",
+          "importance_tags": ["[방법전환]", "[표준후보]"]
+        }
+      ],
+      "why": "3DGS는 그동안 여러 카메라로 같은 장면을 밝고 깨끗하게 찍었다는 이상적 조건을 전제로 발전했는데, 오늘 묶인 네 편은 이종 카메라 모델, 통제 안 된 인터넷 사진, 저조도 RAW, 반사라는 서로 다른 '깨진 전제'를 각각 다루면서도 전부 같은 3DGS 표현을 기반으로 삼는다.",
+      "confidence": "High",
+      "lab_action": "Camera3R의 LoRA 어댑터 방식을 랩이 쓰는 비표준 렌즈(어안·현미경 대물렌즈) 영상에 적용 가능한지 검토하고, 전체 재학습 대비 적응 비용과 투시 카메라 성능 유지율을 1주 내 비교한다."
+    },
+    {
+      "cluster": "과학 전반의 역문제 복원이 '생성 모델을 통째로 믿기'에서 '물리 모델·최적화 구조로 다시 묶어 일관성 강제하기'로 넓어짐",
+      "papers": [
+        {
+          "title": "AdjointFlow: Accelerating Scientific Inverse Problems with Physics-Based Transport",
+          "arxiv": "https://arxiv.org/abs/2611.13389",
+          "importance_tags": ["[방법전환]", "[평가축]"]
+        },
+        {
+          "title": "Plug-and-Play ADMM for Inverse Problems with Flow Matching Denoiser",
+          "arxiv": "https://arxiv.org/abs/2611.13742",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Multi-Stage Phase-Aware Self-Supervised Reconstruction for Multi-Echo Gradient-Echo MRI",
+          "arxiv": "https://arxiv.org/abs/2611.13352",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Block-Sparse Gauss-Newton Optimization of Finite Basis Physics-Informed Neural Networks",
+          "arxiv": "https://arxiv.org/abs/2611.13231",
+          "importance_tags": ["[실사용전환]"]
+        }
+      ],
+      "why": "지진 영상, 천체물리(블랙홀 영상), 비파괴 검사, MRI, PINN 최적화라는 서로 다른 응용에서 독립적으로 생성 prior에 물리 법칙·최적화 구조를 다시 강제하는 같은 방향이 나타났다.",
+      "confidence": "High",
+      "lab_action": "AdjointFlow의 adjoint 기반 초기화를 랩이 쓰는 역문제 솔버(위상 복원, 단층촬영 재구성)의 diffusion/flow 기반 버전에 적용해, Plug-and-Play 대비 추론 속도와 복원 오차를 1주 내 비교한다."
+    },
+    {
+      "cluster": "계산병리가 염색·형태 분류를 넘어 H&E 한 장에서 유전자 발현까지 복원하려는 흐름",
+      "papers": [
+        {
+          "title": "Predicting Single-Cell Spatial Gene Expression from H&E using Pathology Foundation Models",
+          "arxiv": "https://arxiv.org/abs/2611.13649",
+          "importance_tags": ["[방법전환]", "[평가축]"]
+        },
+        {
+          "title": "The BRIDGE dataset: paired brightfield whole-slide images of prostate core-needle biopsies",
+          "arxiv": "https://arxiv.org/abs/2611.13883",
+          "importance_tags": ["[인프라]", "[표준후보]"]
+        },
+        {
+          "title": "Continuous 3D Spatial Transcriptomics Reconstruction via Histology-Informed Implicit Neural Representations",
+          "arxiv": "https://arxiv.org/abs/2611.14129",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "세 편 모두 가장 흔하고 저렴한 H&E 염색 영상 한 장에서 원래는 훨씬 비싼 별도 측정이 있어야 알 수 있는 유전자 발현·공간 전사체 정보를 함께 복원하려 한다는 공통 방향을 보인다. 그중 한 편은 키워드 매칭이 어긋나 Deep Learning Methods catch-all에 묻혀 있던 것을 끌어올렸다.",
+      "confidence": "Medium",
+      "lab_action": "Predicting Single-Cell Spatial Gene Expression의 도메인 특화 어댑테이션 전략을 랩의 H&E/가상 염색 파이프라인에 적용 가능한지 검토하고, 공개된 경우 Xenium 등 공간 전사체 데이터로 zero-shot 대비 상관관계 개선폭을 1주 내 재현한다."
+    },
+    {
+      "cluster": "의료영상 foundation model의 '현장 배포 가치'를 네 모달리티가 각자 검증 — 어떤 곳은 해볼 만하고 어떤 곳은 비용 대비 효과가 애매함",
+      "papers": [
+        {
+          "title": "Is a CNN-Transformer Ensemble Worth It When a Chest X-Ray Foundation Model Is Available?",
+          "arxiv": "https://arxiv.org/abs/2611.13014",
+          "importance_tags": ["[평가축]", "[경고신호]"]
+        },
+        {
+          "title": "Medical Image Segmentation: Foundation Model Adaptation versus Task-Specific Training",
+          "arxiv": "https://arxiv.org/abs/2611.14519",
+          "importance_tags": ["[평가축]"]
+        },
+        {
+          "title": "Domain adaptation of a video Foundation model for Heart Failure Diagnosis from Echocardiography",
+          "arxiv": "https://arxiv.org/abs/2611.13297",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Domain-Adversarial Adaptation from MURA to In-House Radiographs for Improved Adult Elbow Fracture Classification",
+          "arxiv": "https://arxiv.org/abs/2611.13308",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "흉부 X-ray·범용 segmentation·심초음파·골절 X-ray라는 서로 다른 네 모달리티에서 독립적으로 'foundation model 도입 효과는 공짜가 아니다'라는 같은 결론에 도달했고, 전부 구체적인 수치 비교를 동반한다.",
+      "confidence": "High",
+      "lab_action": "Is a CNN-Transformer Ensemble Worth It의 patient-level paired bootstrap 평가 프로토콜을 랩이 쓰는 영상 분류/분할 벤치마크에 적용해, 현재 쓰는 앙상블 구성이 단일 도메인 특화 모델 대비 실제로 유의미한 이득이 있는지 1주 내 재검증한다."
+    },
+    {
+      "cluster": "원격탐사 foundation model이 '사전학습 데이터가 뭐냐'와 '이종 센서를 어떻게 하나로 묶나'를 구조적으로 따지기 시작 (랩 핵심 ROI와는 거리 있는 참고 신호)",
+      "papers": [
+        {
+          "title": "Satellite Pretraining Is Not One Thing: A Matched-Pair Study of Generic and Earth-Observation Foundation Models",
+          "arxiv": "https://arxiv.org/abs/2611.13849",
+          "importance_tags": ["[평가축]"]
+        },
+        {
+          "title": "RS-JEPA: Remote Sensing Joint-Embedding Predictive Architecture with Scan-Path Views",
+          "arxiv": "https://arxiv.org/abs/2611.14496",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "CroCoMAE: Cross-modal self-supervised collaborative representation learning for SAR-optical remote sensing data",
+          "arxiv": "https://arxiv.org/abs/2611.14124",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "세 편이 '사전학습 데이터 선택'과 '이종 센서 정렬'을 가정이 아니라 직접 검증의 대상으로 삼기 시작했다는 공통 방향을 보이지만, 랩의 핵심 ROI(계산광학·의료영상)와는 거리가 있다.",
+      "confidence": "Medium",
+      "lab_action": "RS-JEPA/CroCoMAE의 라벨 없는 이종 센서 정렬 아이디어가 랩이 보유한 이종 모달리티(형광-명시야, OCT-현미경) 페어링 데이터에도 적용 가능한지만 간단히 스크리닝한다(본격 비교는 보류)."
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "Camera3R의 LoRA 기반 이종 카메라 적응을 랩의 비표준 렌즈 영상에 이식",
+      "claim": "Camera3R은 투시 카메라로 학습된 feed-forward 3D 복원 모델을 0.5% 추가 파라미터와 1일 미만 학습으로 임의의 카메라 모델에 적응시키며 투시 성능을 완전히 유지한다. 랩이 쓰는 어안·현미경 대물렌즈 영상에도 같은 틀이 통할 수 있다.",
+      "supporting_papers": [
+        {"title": "Camera3R: Feed-Forward 3D Reconstruction from Heterogeneous Camera Models", "arxiv": "https://arxiv.org/abs/2611.13453"}
+      ]
+    },
+    {
+      "title": "AdjointFlow의 adjoint 기반 물리 주입을 랩 역문제 솔버에 적용",
+      "claim": "AdjointFlow는 알려진 물리 모델을 생성적 전송 과정 자체에 심어 Plug-and-Play 대비 최대 5자릿수 빠른 추론을 달성했다. 랩의 위상 복원·단층촬영 재구성 파이프라인에도 같은 adjoint 초기화를 넣어볼 수 있다.",
+      "supporting_papers": [
+        {"title": "AdjointFlow: Accelerating Scientific Inverse Problems with Physics-Based Transport", "arxiv": "https://arxiv.org/abs/2611.13389"}
+      ]
+    },
+    {
+      "title": "Predicting Single-Cell Spatial Gene Expression의 도메인 적응 전략을 랩 병리 파이프라인에 적용",
+      "claim": "H&E 한 장에서 유전자 발현을 예측하는 도메인 특화 어댑테이션이 zero-shot 대비 상관관계를 2.67배 끌어올렸다. 랩이 보유한 H&E/가상 염색 데이터에도 같은 어댑테이션 전략을 시도해볼 수 있다.",
+      "supporting_papers": [
+        {"title": "Predicting Single-Cell Spatial Gene Expression from H&E using Pathology Foundation Models", "arxiv": "https://arxiv.org/abs/2611.13649"}
+      ]
+    }
+  ]
+}

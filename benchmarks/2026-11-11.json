@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-11",
+  "results": [
+    {
+      "benchmark": "Scientific inverse problems (inverse scattering / seismic imaging / black hole imaging) vs Plug-and-Play",
+      "metric": "Inference speedup",
+      "value": 100000,
+      "value_str": "최대 5자릿수(약 10만배) 추론 가속, PnP 대비",
+      "paper": "https://arxiv.org/abs/2611.13389",
+      "paper_title": "AdjointFlow: Accelerating Scientific Inverse Problems with Physics-Based Transport"
+    },
+    {
+      "benchmark": "Chest X-ray 14-label classification (NIH ChestX-ray14, patient-disjoint)",
+      "metric": "Macro-AUROC",
+      "value": 0.828,
+      "value_str": "EVA-X-S 단일모델 0.828 vs 5모델 앙상블 0.814(지연 7.8배·파라미터 10배)",
+      "paper": "https://arxiv.org/abs/2611.13014",
+      "paper_title": "Is a CNN-Transformer Ensemble Worth It When a Chest X-Ray Foundation Model Is Available?"
+    },
+    {
+      "benchmark": "Single-cell spatial gene expression prediction from H&E (paired H&E+Xenium 5K)",
+      "metric": "Gene-wise Pearson correlation / AUROC",
+      "value": 2.67,
+      "value_str": "zero-shot 대비 2.67배 개선, 유전자 검출 AUROC 0.800, 공간가변유전자 r=0.643",
+      "paper": "https://arxiv.org/abs/2611.13649",
+      "paper_title": "Predicting Single-Cell Spatial Gene Expression from H&E using Pathology Foundation Models"
+    },
+    {
+      "benchmark": "In-the-wild Gaussian Splatting novel view synthesis (PhotoTourism)",
+      "metric": "Training time / LPIPS",
+      "value": 8.8,
+      "value_str": "8.8분/장면, 최저 LPIPS, 차순위(AsymGS) 대비 23배 빠름",
+      "paper": "https://arxiv.org/abs/2611.13808",
+      "paper_title": "FastWild-GS: Minutes-Scale In-the-Wild Gaussian Splatting via Compact Per-Image Appearance Adaptation"
+    },
+    {
+      "benchmark": "Heterogeneous camera model feed-forward 3D reconstruction adaptation",
+      "metric": "추가 파라미터 비율 / 적응 시간",
+      "value": 0.5,
+      "value_str": "0.5% 추가 파라미터, 1일 미만 학습으로 투시 카메라 성능 완전 유지",
+      "paper": "https://arxiv.org/abs/2611.13453",
+      "paper_title": "Camera3R: Feed-Forward 3D Reconstruction from Heterogeneous Camera Models"
+    },
+    {
+      "benchmark": "GS-SLAM relocalization/global refinement (self-collected + 5 public sequences)",
+      "metric": "PSNR gain / relocalization success",
+      "value": 9,
+      "value_str": "오프라인 재구성이 온라인 맵 대비 14.3~19.9dB, Gaussian-LIC2 대비 약 9dB 개선, 재위치추정 성공률 86~100%",
+      "paper": "https://arxiv.org/abs/2611.13528",
+      "paper_title": "GEMOR-GS: Global Extrinsic-calibration-refined Mapping and Online Relocalization for 3D Gaussian-Splatting SLAM"
+    },
+    {
+      "benchmark": "Accelerated multi-echo gradient-echo MRI reconstruction (7T AHEAD, R=12)",
+      "metric": "Magnitude NRMSE",
+      "value": 12.09,
+      "value_str": "4번째 echo NRMSE 12.09±0.60% (SSDU 대비 21.55±1.12%)",
+      "paper": "https://arxiv.org/abs/2611.13352",
+      "paper_title": "Multi-Stage Phase-Aware Self-Supervised Reconstruction for Multi-Echo Gradient-Echo MRI"
+    }
+  ]
+}
