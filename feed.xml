@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 11 Nov 2026 14:23:47 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 14:19:59 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-11-12 (목요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-11-12.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-11-12.html</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 arXiv 5개 카테고리는 2026-11-12 확인 기준 전부 "Wednesday, 11 November 2026" listing에 머물러 있어(11/12 신규 제출 0건), Crossref 키워드 질의와 OpenAlex enrich/works로 저널만 418건을 수집해 classify.py로 스캔했습니다. 그 결과 118건(28.2%)이 9개 ROI 버킷에 배정됐는데, 이는 최근 arXiv 포함 daily의 선택 비율과 비슷한 수준입니다. 다만 버킷별로 직접 열어본 결과 신호 밀도는 버킷마다 크게 갈렸습니다. 랩 핵심 ROI인 Fourier Ptychography/Microscopy는 1편뿐이었지만 드물게 그 1편이 실제로 ptychography 거리 보정을 다루…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-11-11 (수요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-11-11.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-11.html</guid>
       <pubDate>Tue, 11 Aug 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[2026-08-11(화)은 arXiv 원본 listing이 실행 시점 기준 이미 다음 날짜로 넘어가 있어서, 정상적인 /new 대신 /pastweek 에서 8/11 날짜 섹션만 따로 추출하는 backfill 절차로 채운 날입니다. cs.LG 320편·cs.CV 313편·cs.AI 486편·eess.IV 18편·eess.SP 44편(합계 1181편)에 저널 154건을 더한 병합 스캔 1424건 중 258건(18.1%)이 ROI로 잡혔는데, 이 비율은 최근 정상 /new 날짜들의 25~33% 밴드보다 뚜렷하게 낮습니다. 원인은 명확합니다 — /pastweek 의 날짜별 섹션에는 abstract가 실려 있지 않고 제목과 주제 분류만 있어서, 분류기가 abstract 문구에서…]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Weekly Retrospective — 2026-08-10 (Week 32)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-08-10-weekly.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-10-weekly.html</guid>
-      <pubDate>Mon, 10 Aug 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[지난주 가장 뜨거웠던 흐름은 "지금까지 검증 없이 믿어온 신호를 하나씩 정량적으로 캐묻는" 감사 였습니다. 화요일 Posterior Variance는 CT 재구성용 3D Gaussian Splatting의 불확실성 지도가 장면 전체로는 실제 오차를 잘 예측하지만, 정작 의사가 읽는 조직 내부 영역으로 좁히면 그 예측력이 거의 사라진다는 걸 보였고(순위 상관 0.11), 같은 날 What Carries the Signal은 병리 파운데이션 모델이 조직 사진에서 유전자 발현까지 맞힌다는 주장의 상당 부분이 세포 개수를 세는 단순한 특징만으로도 따라잡을 수 있다는 걸 환자 단위로 재검증했습니다. 목요일에는 이 감사하는 태도가 로봇·에이전트 시스템으로 옮겨가, WorldCycl…]]></description>
     </item>
   </channel>
 </rss>

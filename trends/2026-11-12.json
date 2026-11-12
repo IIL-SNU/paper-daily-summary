@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-12",
+  "source_listing_date": "2026-11-12",
+  "source_mode": "journal-only",
+  "note": "2026-11-12(목) daily 실행. Date Source Contract 점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 2026-11-12 확인 기준 /new listing이 여전히 \"Wednesday, 11 November 2026\"에 머물러 있어(post_date=2026-11-12 > listing_date=2026-11-11), prompts/instruction.md 2.1의 저널 독립 규칙에 따라 arXiv 섹션 없이 Crossref/OpenAlex 저널만으로 만든 잠정본(source_mode=journal-only)을 발행한다. Crossref 키워드 질의 + OpenAlex enrich/works로 418건을 수집·분류해 scripts/classify.py로 스캔했고, 118건(28.2%)이 9개 ROI 버킷에 배정됐다. Fourier Ptychography/Microscopy는 오늘 드물게 실신호 1건(ptychography Z-calibration)이 있었고, Lensless/Coded Imaging도 1건(다중파장 렌즈리스 홀로그래피 자기보정 신경장)이 있었다. 실신호는 Phase Imaging/Holography(계산현미경 측정·잡음 보정), Virtual Staining/Pathology(라벨 없는 세포 역학 정량화), Reconstruction/Inverse Problems·Tomography/3D Imaging 일부(생성적·압축 prior 기반 CT/OCT/양자 이미징), Meta-Optics/Diffractive(스냅샷 분광·AR 이미징 메타표면), Deep Learning Methods 일부(모달리티 전용 복원 네트워크)에 모여 있었다. 나머지는 통신용 안테나 메타표면, 임상 증례, VR 관광/마케팅처럼 키워드만 겹친 오탐이었다. 이 리포트는 arXiv /pastweek에 2026-11-12 섹션이 생기는 즉시 Calendar Audit이 arXiv+저널 완성본으로 자동 업그레이드한다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 0,
+      "eess.SP": 0
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 418
+  },
+  "totals": {
+    "total_scanned": 418,
+    "selected": 118
+  },
+  "classified": {
+    "total_scanned": 418,
+    "selected": 118,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 12,
+      "Meta-Optics/Diffractive": 16,
+      "Light-Field/Novel Sensors": 1,
+      "Tomography/3D Imaging": 36,
+      "Virtual Staining/Pathology": 21,
+      "Reconstruction/Inverse Problems": 7,
+      "Deep Learning Methods": 23
+    }
+  },
+  "daily_thesis": "오늘은 arXiv 5개 카테고리가 전부 어제(11/11) listing에 머물러 있어 저널만으로 만든 잠정본인데, 저널 신호를 다시 보면 계산광학 쪽에서 공통된 결이 하나 보입니다 — ptychography의 거리 보정부터 CT·OCT의 압축·생성 prior, 라벨 없는 세포 역학 측정까지, 다들 측정이 불완전하거나 깨끗하지 않은 상황을 계산 쪽에서 더 명시적인 구조(물리 제약, 생성 prior, 통계적 샘플링)로 메우는 쪽으로 움직이고 있고, 메타표면 광학은 단일 기능 데모에서 AR 디스플레이·산업용 분광 센서 같은 실제 이미징 하드웨어로 넘어가는 모습입니다. 다만 오늘은 arXiv 500여 건이 통째로 빠진 날이라 정보량 자체는 평소 daily의 5분의 1 수준입니다."
+}

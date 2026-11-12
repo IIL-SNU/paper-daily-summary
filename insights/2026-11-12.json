@@ -1,0 +1,214 @@
+{
+  "date": "2026-11-12",
+  "source_mode": "journal-only",
+  "clusters": [
+    {
+      "cluster": "계산현미경(ptychography·홀로그래피·간섭계)이 측정 보정·잡음 제거를 계산으로 해결",
+      "papers": [
+        {
+          "title": "Spectral-consistency-driven Z-calibration for ptychography",
+          "arxiv": "https://doi.org/10.1016/j.optlastec.2026.116883",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        },
+        {
+          "title": "Label-Free Morphometric Profiling of Renal Cell Carcinoma Using Digital Holographic Microscopy and Machine Learning",
+          "arxiv": "https://doi.org/10.1002/jbio.70379",
+          "importance_tags": [
+            "[방법전환]",
+            "[평가축]"
+          ]
+        },
+        {
+          "title": "A DARU-Net-based method for digital holographic phase denoising",
+          "arxiv": "https://doi.org/10.1016/j.optcom.2026.133979",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        },
+        {
+          "title": "DMD-based parallel single-pixel off-axis interferometry for high-speed wavefront imaging",
+          "arxiv": "https://doi.org/10.1364/oe.615055",
+          "importance_tags": [
+            "[실사용전환]"
+          ]
+        }
+      ],
+      "why": "ptychography나 디지털 홀로그래피 현미경은 측정값 자체에서 위상 정보를 복원해야 하는데, 초점 위치가 조금만 어긋나거나(Z 방향 오차) 복원 과정에서 노이즈가 누적되면 품질이 바로 무너집니다. 오늘 묶인 네 편은 바로 이 지점을 계산으로 공략합니다. Z-calibration 논문은 ptychography에서 샘플까지의 거리(Z) 추정이 틀어지면 복원 영상이 흐려지는 문제를, 여러 스펙트럼 측정값이 서로 일관되게 맞아떨어지는지를 기준으로 거리를 스스로 보정하는 방식으로 풉니다. Label-Free DHM 논문은 신장암 세포주를 염색 없이 디지털 홀로그래피 현미경으로 찍은 뒤 형태학적 특징 38개를 뽑아 머신러닝으로 분류했는데, 교차검증 정확도가 99.5%에 달해 염색 없는 정량 진단이 실제로 쓸 만한 수준에 가까워지고 있음을 보여줍니다. DARU-Net은 디지털 홀로그래피 위상 영상에 낀 잡음을 전용 신경망으로 제거하고, DMD 기반 단일 픽셀 오프축 간섭계는 파형면(빛이 퍼져나가는 모양)을 빠르게 찍기 위한 하드웨어·복원 조합을 다룹니다. 네 편을 합치면, 계산현미경 전반이 '더 좋은 렌즈'보다 '측정 과정에서 생기는 결함을 계산이 스스로 알아채고 보정하는' 쪽으로 계속 움직이고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 저널 네 편이 독립적으로 계산현미경의 측정·잡음 보정을 다루나, 세 편은 abstract가 제공되지 않아 제목 기준 판단이라 검증 수준이 고르지 않습니다.",
+      "lab_action": "Z-calibration 논문의 스펙트럴 일관성 기준 거리 보정 아이디어를 랩의 Fourier ptychography 파이프라인에 적용해, 의도적으로 Z 오차를 준 샘플과 정렬된 샘플에서 복원 해상도를 1주 내 비교한다."
+    },
+    {
+      "cluster": "라벨 없는 세포 역학·상호작용을 광산란·비선형 광학으로 정량화",
+      "papers": [
+        {
+          "title": "Photonic Crystal Cellular Force Microscopy Reveals the Dynamic Mechanical Responses of Colorectal Cancer Cells to Low-Intensity Pulsed Ultrasound",
+          "arxiv": "https://doi.org/10.3390/bios16110645",
+          "importance_tags": [
+            "[방법전환]",
+            "[평가축]"
+          ]
+        },
+        {
+          "title": "Quantitative Label-Free Imaging of Nanoparticle-Cell Interactions Using Light-Scattering-Based Widefield Microscopy",
+          "arxiv": "https://doi.org/10.1021/acsnanomed.6c00205",
+          "importance_tags": [
+            "[방법전환]",
+            "[실사용전환]"
+          ]
+        },
+        {
+          "title": "Coherent Anti-Stokes Raman Scattering-Enhanced Multimodal Nonlinear Microscopy for Label-Free Imaging of Breast Fibroadenoma Boundaries",
+          "arxiv": "https://doi.org/10.1364/boe.614508",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        }
+      ],
+      "why": "세포를 들여다볼 때 형광 염색을 쓰면 염색 자체가 세포의 원래 상태나 표면 화학을 바꿔 버릴 수 있다는 문제가 있습니다. 오늘 묶인 세 편은 전부 염색 없이, 빛이 세포와 부딪히며 생기는 물리적 신호(힘, 산란, 비선형 광학 신호) 자체를 정량적으로 읽어냅니다. Photonic Crystal Cellular Force Microscopy는 초음파 자극을 받은 대장암 세포의 구조색 변화를 시계열로 찍어 세포가 기판을 누르는 힘을 되짚어 계산하고, 세포마다 힘의 크기와 시간에 따른 패턴이 크게 다르다는 것까지 보여줍니다. Quantitative Label-Free Imaging 논문은 나노입자와 세포의 상호작용을 보려고 늘 형광 표지를 붙이던 관행을 깨고, 금 나노입자가 흩뿌리는 빛만으로 표면 화학에 따라 신호가 최대 78배까지 달라지는 것을 일반 광시야 형광현미경에 필터만 바꿔 끼워 구현합니다. CARS 기반 다중모드 비선형 현미경 논문은 유방 섬유선종 경계를 염색 없이 비선형 광학 신호로 구분합니다. 세 편을 합치면, 라벨 없는 세포 영상이 '염색 대체'를 넘어 세포의 역학적·화학적 상태를 직접 재는 센서로 쓰이기 시작했다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 기관·저널 세 편(Biosensors, ACS Nano Medicine, Biomedical Optics Express)이 독립적으로 라벨 없는 물리 신호 기반 세포 정량화를 보였고, 그중 두 편은 abstract에 구체적 수치(78배 신호 증가 등)를 제시합니다.",
+      "lab_action": "Quantitative Label-Free Imaging의 광 필터 큐브 설계를 랩 보유 광시야 형광현미경에 적용해, 금 나노입자 대비 랩에서 주로 쓰는 산란체에서 신호 대비가 어느 정도 나오는지 1주 내 예비 측정한다."
+    },
+    {
+      "cluster": "역문제 복원이 생성적·압축 prior와 양자 잡음 모델로 CT·OCT·수동 이미징까지 확장",
+      "papers": [
+        {
+          "title": "Stochastic Generative Plug-and-Play Priors",
+          "arxiv": "https://doi.org/10.1109/tci.2026.3752402",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        },
+        {
+          "title": "Passive imaging with quantum advantage",
+          "arxiv": "https://doi.org/10.1126/sciadv.aei1896",
+          "importance_tags": [
+            "[방법전환]",
+            "[해부분석]"
+          ]
+        },
+        {
+          "title": "Complex-Domain Compressed Sensing for Phase-Resolved Depth-Range Extension in Full-Field Swept-Source OCT",
+          "arxiv": "https://doi.org/10.1364/ol.611100",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        },
+        {
+          "title": "Photon-Counting Computed Tomography Image Reconstruction With a Low-Dimensional Manifold Model",
+          "arxiv": "https://doi.org/10.1109/tci.2026.3752468",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        }
+      ],
+      "why": "역문제 복원(측정값에서 거꾸로 원본 영상을 복원하는 문제)은 오래전부터 '측정이 부족하거나 잡음이 낀 상황을 어떤 가정(prior)으로 메울 것인가'가 핵심이었는데, 오늘 묶인 네 편은 이 가정을 점점 더 명시적이고 구조적으로 다루는 쪽으로 가고 있습니다. Stochastic Generative Plug-and-Play Priors는 기존 PnP(복원 알고리즘에 학습된 디노이저를 꽂아 넣는 방법) 복원이 하나의 결정론적 답만 내놓던 한계를, 디노이저를 확률적 생성 모델로 바꿔 같은 측정값에 대해 여러 그럴듯한 복원을 샘플링할 수 있게 합니다. Passive imaging with quantum advantage는 먼 거리 광학 이미징이 결국 빛의 양자적 특성 때문에 생기는 샷 노이즈(광자 개수가 적을 때 생기는 통계적 잡음)에 걸린다는 점에 주목해, 푸리에 평면을 여러 영역으로 나눠 따로 측정하는 방식으로 고주파 성분의 신호 대 잡음비를 다섯 배 끌어올립니다. Complex-Domain Compressed Sensing 논문은 스웹트 소스 OCT(파장을 쓸어가며 깊이를 재는 광간섭단층촬영)에서 위상까지 보존한 채 깊이 범위를 압축센싱으로 늘리고, Photon-Counting CT 논문은 광자 하나하나를 세는 최신 CT에서 저차원 매니폴드(영상들이 실제로는 적은 변수로 설명된다는 가정) 모델을 복원에 겁니다. 네 편을 합치면, CT·OCT·일반 광학 이미징·양자 이미징까지 모달리티를 가리지 않고 측정 부족을 어떤 구조적 가정으로 메울지를 점점 더 정교하게 설계하는 흐름으로 보입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 네 모달리티(일반 역문제, 양자/수동 이미징, OCT, 광자계수 CT)가 독립적으로 구조화된 prior를 통한 복원을 보였고, Science Advances 논문은 5배 신호 대 잡음비 개선이라는 구체적 수치를 제시합니다.",
+      "lab_action": "Passive imaging with quantum advantage의 푸리에 평면 분할(FDD) 측정 전략을 랩의 광 회절 단층촬영(ODT) 저조도 촬영 설정에 시뮬레이션으로 적용해, 기존 직접 촬영 대비 고주파 성분의 피셔 정보량 개선폭을 1주 내 비교한다."
+    },
+    {
+      "cluster": "메타표면 광학이 단일 기능 데모를 넘어 스냅샷 분광·AR 이미징 하드웨어로 이동",
+      "papers": [
+        {
+          "title": "Metasurface waveguides for all-day augmented reality glasses",
+          "arxiv": "https://doi.org/10.1038/s41586-026-11277-x",
+          "importance_tags": [
+            "[스케일업]",
+            "[실사용전환]"
+          ]
+        },
+        {
+          "title": "Design of metasurface-encoded snapshot mid-wave infrared hyperspectral imaging for petrochemical gas leak monitoring",
+          "arxiv": "https://doi.org/10.1364/oe.615342",
+          "importance_tags": [
+            "[실사용전환]"
+          ]
+        },
+        {
+          "title": "Broadband complex-amplitude metasurfaces for arbitrary engineering of spatial caustics",
+          "arxiv": "https://doi.org/10.1364/oe.615891",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        }
+      ],
+      "why": "메타표면(빛의 파장보다 작은 나노구조를 패턴화해 빛을 원하는 대로 휘는 평면 광학소자)은 그동안 실험실에서 한 가지 기능만 보여주는 데모가 많았는데, 오늘 묶인 세 편은 실제로 쓸 수 있는 이미징 하드웨어 쪽으로 넘어가는 모습을 보여줍니다. Metasurface waveguides for all-day AR glasses는 증강현실 안경을 햇빛 아래에서도 하루 종일 쓸 수 있을 만큼 밝고 가벼운 도파관을 메타표면으로 구현한 결과를 Nature에 실었습니다. 메타표면 인코딩 스냅샷 중적외선 하이퍼스펙트럴 이미징 논문은 석유화학 공장의 가스 누출을 한 번의 촬영만으로 여러 파장대에서 동시에 감지할 수 있게 메타표면으로 분광 정보를 인코딩합니다. Broadband complex-amplitude metasurface 논문은 빛의 세기와 위상을 동시에 넓은 대역에서 원하는 대로 조절해 임의의 광학 코스틱(빛이 모여 만드는 밝은 무늬) 패턴을 만들어냅니다. 세 편을 합치면, 메타표면이 '한 가지 신기한 효과를 보여주는 소자'에서 'AR 디스플레이·산업용 분광 센서처럼 실제로 배치되는 이미징 하드웨어의 핵심 부품'으로 넘어가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "세 편 모두 abstract가 제공되지 않아 제목 기준 판단이며, AR 디스플레이·산업 분광·코스틱 엔지니어링처럼 서로 다른 응용이라 교차 검증은 없지만 Nature 게재 논문이 포함돼 신호의 질 자체는 높습니다.",
+      "lab_action": "메타표면 인코딩 스냅샷 하이퍼스펙트럴 이미징 논문의 인코딩-복원 설계를 랩이 보유한 하이퍼스펙트럴 측정 장비와 비교해, 스냅샷 방식이 기존 스캐닝 방식 대비 스펙트럼 정확도를 얼마나 희생하는지 시뮬레이션으로 1주 내 확인한다."
+    },
+    {
+      "cluster": "계산 영상 복원이 범용 자연영상에서 하이퍼스펙트럴·편광·광탄성 등 모달리티 전용 네트워크로 세분화",
+      "papers": [
+        {
+          "title": "WFM-Diff: Wavelet-Fourier Mamba Diffusion for Hyperspectral Super-Resolution",
+          "arxiv": "https://doi.org/10.1109/tgrs.2026.3752399",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        },
+        {
+          "title": "SFDiff: Degradation-robust semantic alignment and frequency consistent diffusion for real-world image super-resolution",
+          "arxiv": "https://doi.org/10.1016/j.cviu.2026.105007",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        },
+        {
+          "title": "Pipeline for demosaicing and super-resolution dedicated to polarization images",
+          "arxiv": "https://doi.org/10.1109/tci.2026.3752398",
+          "importance_tags": [
+            "[인프라]"
+          ]
+        },
+        {
+          "title": "FringeCNN: A convolutional neural network for full-field photoelastic fringe order determination using time-series light-intensity evolution at individual pixels",
+          "arxiv": "https://doi.org/10.1016/j.optlaseng.2026.110250",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        }
+      ],
+      "why": "몇 년 전까지만 해도 영상 복원·초해상도 연구는 자연 사진 한 장을 다루는 범용 모델을 설계한 뒤 다른 영상에도 그대로 가져다 쓰는 경우가 많았는데, 오늘 묶인 네 편은 각 모달리티의 물리적 특성을 구조 안에 반영한 전용 네트워크 쪽으로 갈립니다. WFM-Diff는 하이퍼스펙트럴 영상(여러 파장대를 동시에 찍는 영상)의 초해상도를, 웨이블릿과 푸리에 변환을 결합한 Mamba(계산량이 길이에 비례해서만 느는 효율적인 시퀀스 모델) 기반 디퓨전 모델로 풉니다. SFDiff는 실제 환경에서 다양한 방식으로 열화된 영상의 초해상도를, 의미 정보를 정렬하면서 주파수 일관성을 지키는 디퓨전 구조로 접근합니다. 편광 영상 전용 디모자이킹·초해상도 파이프라인은 한 센서로 여러 편광 방향을 동시에 찍을 때 생기는 특유의 모자이크 패턴을 고려한 복원을 설계하고, FringeCNN은 광탄성(투명 재료에 압력을 가하면 생기는 줄무늬 패턴으로 응력을 재는 기법) 줄무늬 순서를 각 픽셀의 시간에 따른 밝기 변화로부터 CNN이 직접 읽어냅니다. 네 편을 합치면, 디퓨전·CNN 같은 범용 생성 모델 도구는 그대로 쓰되, 그 안에 각 모달리티의 측정 방식(파장, 편광, 간섭무늬)을 구조적으로 녹여 넣는 쪽으로 계산 영상 복원이 세분화되고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "네 편 모두 abstract가 제공되지 않아 제목 기준 판단이며, 네 모달리티(하이퍼스펙트럴·범용 SR·편광·광탄성)가 서로 다른 커뮤니티라 직접적 벤치마크 교차 검증은 없습니다.",
+      "lab_action": "FringeCNN의 픽셀별 시계열 밝기 변화 기반 줄무늬 순서 판별 아이디어를 랩의 위상천이 간섭계 줄무늬 분석 단계에 적용해, 기존 공간적 위상언래핑 대비 잡음이 있는 영역에서 오류율을 1주 내 비교한다."
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "Z-calibration의 스펙트럴 일관성 보정을 랩 Fourier ptychography 파이프라인에 적용",
+      "claim": "ptychography의 샘플-검출기 거리(Z) 오차를 스펙트럴 일관성만으로 자가 보정할 수 있다면, 랩 장비의 수동 초점 보정 단계를 줄일 수 있다.",
+      "supporting_papers": [
+        {
+          "title": "Spectral-consistency-driven Z-calibration for ptychography",
+          "arxiv": "https://doi.org/10.1016/j.optlastec.2026.116883"
+        }
+      ]
+    },
+    {
+      "title": "FDD(푸리에 평면 분할) 수동 전처리를 저조도 ODT 촬영에 이식",
+      "claim": "양자/고전 피셔 정보량 분석으로 검증된 FDD 전처리가 랩의 광 회절 단층촬영 저조도 설정에서도 고주파 성분 신호 대 잡음비를 개선할 것이다.",
+      "supporting_papers": [
+        {
+          "title": "Passive imaging with quantum advantage",
+          "arxiv": "https://doi.org/10.1126/sciadv.aei1896"
+        }
+      ]
+    },
+    {
+      "title": "FringeCNN의 픽셀 시계열 기반 줄무늬 판별을 PSI 분석에 적용",
+      "claim": "공간적 위상언래핑 대신 픽셀별 시간에 따른 밝기 변화로 줄무늬 순서를 읽으면, 잡음이 있는 영역에서 더 안정적으로 위상 오차를 줄일 수 있다.",
+      "supporting_papers": [
+        {
+          "title": "FringeCNN: A convolutional neural network for full-field photoelastic fringe order determination",
+          "arxiv": "https://doi.org/10.1016/j.optlaseng.2026.110250"
+        }
+      ]
+    }
+  ]
+}
