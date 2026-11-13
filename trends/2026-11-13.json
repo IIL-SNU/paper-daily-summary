@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-13",
+  "source_listing_date": "2026-11-13",
+  "source_mode": "journal-only",
+  "note": "2026-11-13(금) daily 실행. Date Source Contract 점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 확인 기준 /new listing이 여전히 \"Wednesday, 11 November 2026\"에 머물러 있어(post_date=2026-11-13 > listing_date=2026-11-11), prompts/instruction.md 2.1의 저널 독립 규칙에 따라 arXiv 섹션 없이 Crossref/OpenAlex 저널만으로 만든 잠정본(source_mode=journal-only)을 발행한다. 또한 Calendar Audit에서 2026-11-12 journal-only daily의 업그레이드 가능성을 확인했으나, 5개 카테고리 모두 /pastweek에 2026-11-12 섹션이 아직 없어(fetch_arxiv_pastweek_date.py 모두 \"date section not found: Thu, 12 Nov 2026\") 업그레이드는 보류하고 journal-only로 두었다. Crossref 키워드 질의 + OpenAlex enrich/works로 414건을 수집·분류해 scripts/classify.py로 스캔했고, 82건(19.8%)이 9개 ROI 버킷에 배정됐다. 실질 신호는 라이브셀 광학 측정(T세포 대사 redox 이미징, FluoVolt 염색 부작용 경고, DHM 신장암 분류), 전기·방사선 토모그래피의 딥러닝 prior/inversion 확산, 물리 정보 신경망 기반 간접 상태 추정에 모여 있었다. 메타표면 버킷은 어제와 달리 이미징이 아닌 RF 통신·센서 응용으로 쓰여 랩 쪽에서는 약한 날이었다. 이 리포트는 arXiv /pastweek에 2026-11-12 또는 2026-11-13 섹션이 생기는 즉시 Calendar Audit이 arXiv+저널 완성본으로 자동 업그레이드한다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 0,
+      "eess.SP": 0
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 414
+  },
+  "totals": {
+    "total_scanned": 414,
+    "selected": 82
+  },
+  "classified": {
+    "total_scanned": 414,
+    "selected": 82,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 0,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 5,
+      "Meta-Optics/Diffractive": 7,
+      "Light-Field/Novel Sensors": 1,
+      "Tomography/3D Imaging": 35,
+      "Virtual Staining/Pathology": 16,
+      "Reconstruction/Inverse Problems": 3,
+      "Deep Learning Methods": 15
+    }
+  },
+  "daily_thesis": "오늘도 arXiv 5개 카테고리가 여전히 그제(11/11) listing에 머물러 있어(/pastweek에도 11/12 섹션이 아직 없어 업그레이드도 보류) 저널만으로 만든 잠정본입니다. 저널 신호를 다시 보면 염색 없이 세포 상태를 재는 광학 측정과 염색 부작용 경고가 같은 날 동시에 나왔고, 전기·방사선 토모그래피에서도 광학이 아닌 분야에서 딥러닝 prior 기반 역문제 복원이 독립적으로 재발명되고 있습니다. 다만 메타표면은 어제와 달리 이미징이 아닌 RF 통신·센서 응용으로 쓰여 랩 쪽에서는 어제보다 확연히 약해졌고, arXiv 공백이 이틀째 이어지면서 정보량 자체는 평소 daily의 5분의 1 수준에 머물러 있습니다."
+}
