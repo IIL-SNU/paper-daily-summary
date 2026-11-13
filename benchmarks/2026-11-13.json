@@ -1,4 +1,29 @@
 {
   "date": "2026-11-13",
-  "results": []
+  "results": [
+    {
+      "benchmark": "fastMRI/CC359/CMRxRecon2023/in-house carotid (4 anatomies)",
+      "metric": "PSNR/SSIM vs PromptMR+",
+      "value": null,
+      "value_str": "LoopMR 10.3M params outperforms PromptMR+ 92.9M params at every acceleration factor (p<0.01)",
+      "paper": "https://arxiv.org/abs/2611.14947",
+      "paper_title": "One Block Is Enough: LoopMR for Accelerated MRI Reconstruction"
+    },
+    {
+      "benchmark": "SKM-TEA (3D knee MRI, half resolution, 4x acceleration)",
+      "metric": "PSNR delta vs state-of-the-art 3D CNN",
+      "value": 2.2,
+      "value_str": "+2.2 dB PSNR over SOTA 3D CNN baseline (gains persist at 8x/16x)",
+      "paper": "https://arxiv.org/abs/2611.14979",
+      "paper_title": "Coarse-to-Fine 3D MRI Reconstruction via Resolution-Agnostic Neural Operators (KIR-NO)"
+    },
+    {
+      "benchmark": "Raysemble: 23 held-out patients / 43 CT-derived simulated radiographs (lumbar+pelvic bones)",
+      "metric": "Dice / HD95 / ASSD",
+      "value": 65.24,
+      "value_str": "65.24% Dice, 9.09 mm HD95, 3.32 mm ASSD — leads 15 evaluated methods",
+      "paper": "https://arxiv.org/abs/2611.16869",
+      "paper_title": "Raysemble: Metric 3D Bone Reconstruction from a Single X-ray"
+    }
+  ]
 }

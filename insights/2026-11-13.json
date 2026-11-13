@@ -1,6 +1,6 @@
 {
   "date": "2026-11-13",
-  "source_mode": "journal-only",
+  "source_mode": "new",
   "clusters": [
     {
       "cluster": "라이브셀 광학 측정이 염색을 대체하거나 염색의 부작용을 직접 경고하는 쪽으로 갈라짐",
@@ -8,17 +8,24 @@
         {
           "title": "Protocol-optimized wide-field optical redox imaging for T cell activation and its potential for immunological research",
           "arxiv": "https://doi.org/10.1117/1.jbo.31.11.115002",
-          "importance_tags": ["[방법전환]"]
+          "importance_tags": [
+            "[방법전환]"
+          ]
         },
         {
           "title": "FluoVolt Staining Compromises Cell Viability and Morphology during Live-Cell Voltage Imaging",
           "arxiv": "https://doi.org/10.1021/acsomega.6c06843",
-          "importance_tags": ["[경고신호]"]
+          "importance_tags": [
+            "[경고신호]"
+          ]
         },
         {
           "title": "Label-Free Morphometric Profiling of Renal Cell Carcinoma Using Digital Holographic Microscopy and Machine Learning",
           "arxiv": "https://doi.org/10.1002/jbio.70379",
-          "importance_tags": ["[방법전환]", "[평가축]"]
+          "importance_tags": [
+            "[방법전환]",
+            "[평가축]"
+          ]
         }
       ],
       "why": "면역세포나 암세포를 들여다볼 때 흔히 형광 염색약을 넣어 원하는 구조를 밝게 보이게 만드는데, 이번에 묶인 세 편은 그 염색이라는 전제 자체를 양쪽에서 흔듭니다. Optical redox imaging 논문은 T세포가 활성화될 때 대사 상태가 바뀌는 것을 염색 없이 자체 형광(redox 신호)만으로, 그것도 비싼 두 광자 현미경이 아니라 저렴한 광시야 형광현미경으로 잡아낼 수 있다는 것을 보여줍니다. 반대로 FluoVolt 논문은 세포막 전위를 보려고 흔히 쓰는 전압 감응 염색약(FluoVolt)이 실제로는 세포 생존율과 형태를 눈에 띄게 손상시킨다는 것을 정량적으로 보여주는 경고성 결과입니다. Label-Free DHM 논문은 신장암 세포를 염색 없이 디지털 홀로그래피 현미경으로 찍어 형태 특징만으로 99.5% 정확도로 분류했습니다. 세 편을 합치면, '염색이 당연히 안전하고 편리한 도구'라는 가정이 흔들리면서, 염색 없는 광학 측정이 대안으로 쓰일 수 있는 범위가 세포 대사·형태·전위까지 넓어지고 있다는 뜻입니다.",
@@ -32,17 +39,24 @@
         {
           "title": "Electrical resistance tomography with deep image prior and its application in damage detection of C/SiC composite plates under high temperature",
           "arxiv": "https://doi.org/10.1016/j.compstruct.2026.121111",
-          "importance_tags": ["[방법전환]"]
+          "importance_tags": [
+            "[방법전환]"
+          ]
         },
         {
           "title": "Deep Learning Inversion for Electrical Resistivity Tomography with Dynamic Hybrid Supervision",
           "arxiv": "https://doi.org/10.1109/tgrs.2026.3753294",
-          "importance_tags": ["[방법전환]", "[스케일업]"]
+          "importance_tags": [
+            "[방법전환]",
+            "[스케일업]"
+          ]
         },
         {
           "title": "Quantitative gamma-based evaluation of a novel four-dimensional computed tomography reconstruction algorithm for stack artifact reduction",
           "arxiv": "https://doi.org/10.1016/j.phro.2026.101126",
-          "importance_tags": ["[평가축]"]
+          "importance_tags": [
+            "[평가축]"
+          ]
         }
       ],
       "why": "토모그래피(단층 촬영)는 원래 광학 이미징에서 많이 쓰던 '측정값에서 거꾸로 내부 구조를 복원하는' 역문제인데, 오늘 묶인 세 편은 그 복원 방식이 광학을 벗어난 전기·방사선 분야에서도 똑같은 패턴(학습된 딥러닝 prior 또는 구조화된 재구성 알고리즘)으로 번지고 있음을 보여줍니다. 전기저항 토모그래피(ERT) 논문 두 편은 각각 고온 복합재 손상 탐지와 지구물리 원격탐사에서, 전통적인 정규화 기반 역문제 풀이 대신 '딥 이미지 prior'와 '동적 하이브리드 지도학습'이라는 딥러닝 기반 inversion을 적용합니다. 4차원 CT 재구성 논문은 방사선 치료용 CT에서 호흡 등으로 생기는 stack artifact(여러 시점 영상을 이어붙일 때 생기는 줄무늬)를 새 재구성 알고리즘으로 줄이는 정량 평가를 합니다. 세 편을 합치면, '측정이 부족하거나 잡음이 많을 때 어떤 구조적 가정으로 메울 것인가'라는 광학 역문제의 핵심 질문이 전기 임피던스 영상이나 방사선 치료 CT 같은 완전히 다른 물리 측정 방식에서도 똑같이 반복되고 있다는 뜻입니다.",
@@ -56,17 +70,24 @@
         {
           "title": "Kinematically constrained physics-informed neural networks with Fourier features for falling film interface reconstruction",
           "arxiv": "https://doi.org/10.1016/j.ijmultiphaseflow.2026.105989",
-          "importance_tags": ["[방법전환]"]
+          "importance_tags": [
+            "[방법전환]"
+          ]
         },
         {
           "title": "Physics-informed sparse observations enable spatial-state inference for intelligent photonic alignment",
           "arxiv": "https://doi.org/10.1364/oe.605008",
-          "importance_tags": ["[방법전환]", "[실사용전환]"]
+          "importance_tags": [
+            "[방법전환]",
+            "[실사용전환]"
+          ]
         },
         {
           "title": "A Model-Based Virtual Thermal Sensor for Near-Interface Mold Temperature Estimation Using Convolution and ARX Models",
           "arxiv": "https://doi.org/10.1007/s40962-026-02211-y",
-          "importance_tags": ["[실사용전환]"]
+          "importance_tags": [
+            "[실사용전환]"
+          ]
         }
       ],
       "why": "센서를 직접 꽂을 수 없거나 측정 자체가 드문 상황에서 내부 상태를 어떻게 추정할 것인가는 계산 이미징에서도 반복되는 문제인데, 오늘 묶인 세 편은 이 문제를 물리 법칙을 네트워크 구조 안에 직접 박아 넣는 방식(physics-informed/model-based)으로 풉니다. 낙하 액막(falling film) 계면 복원 논문은 유체의 운동학적 제약과 푸리에 특징을 물리 정보 신경망(PINN)에 결합해 액막 표면 모양을 복원하고, 광자 정렬(photonic alignment) 논문은 드문드문 있는 관측값만으로 광학계 내부의 공간 상태를 물리 정보 기반으로 추론해 정렬 자동화에 씁니다. 가상 열 센서 논문은 금형 내부(실측 불가능한 위치)의 온도를 convolution과 ARX(자기회귀 외생변수) 모델을 결합해 간접 추정합니다. 세 편을 합치면, '센서가 닿지 않는 곳의 상태를 물리 모델과 신경망을 합쳐서 추정한다'는 접근이 유체·광학 정렬·열공정처럼 서로 다른 산업 현장에서 독립적으로 재발명되고 있다는 뜻이고, 랩의 광학계 자동 정렬이나 열 영향 이미징 설정에도 같은 틀을 가져다 쓸 수 있다는 신호입니다.",
@@ -80,23 +101,101 @@
         {
           "title": "Beamforming for Covert Communications Based on Dynamic Metasurface Antennas",
           "arxiv": "https://doi.org/10.1109/lwc.2026.3753028",
-          "importance_tags": ["[위험보류]"]
+          "importance_tags": [
+            "[위험보류]"
+          ]
         },
         {
           "title": "Robust Gridless Two-Dimensional DOA Estimation via Covariance Reconstruction for Programmable Metasurface",
           "arxiv": "https://doi.org/10.1016/j.dsp.2026.106607",
-          "importance_tags": ["[위험보류]"]
+          "importance_tags": [
+            "[위험보류]"
+          ]
         },
         {
           "title": "A novel dynamic near-field focused system with Metasurface",
           "arxiv": "https://doi.org/10.1080/00207217.2026.2759350",
-          "importance_tags": ["[위험보류]"]
+          "importance_tags": [
+            "[위험보류]"
+          ]
         }
       ],
       "why": "어제(11/12)는 메타표면 광학이 AR 안경 도파관(Nature)이나 산업용 스냅샷 분광 센서처럼 실제 이미징 하드웨어로 넘어가는 뚜렷한 신호였는데, 오늘 묶인 세 편은 같은 '프로그래머블 메타표면'이라는 하드웨어를 쓰면서도 목적이 이미징이 아니라 무선통신 빔포밍, 레이더식 도래각(DOA) 추정, 근접장 집속 같은 RF 센싱·통신 응용입니다. 즉 메타표면이라는 부품은 같지만 랩이 보는 '이미징을 더 잘 찍기 위한 광학 부품'이라는 맥락과는 다른 자리입니다. 세 편을 묶어 올린 이유는 이미징 신호가 아니라는 점을 명확히 하고, 어제의 메타표면-이미징 흐름이 오늘은 이어지지 않았다는 것을 기록해 두기 위해서입니다.",
       "confidence": "Low",
       "confidence_note": "세 편 모두 abstract가 제공되지 않아 제목 기준 판단이며, 애초에 이미징 응용이 아니라서 랩 ROI와의 연결성 자체가 약합니다.",
       "lab_action": "랩 메타표면 설계 파이프라인과는 직접 관련이 없으므로 액션 없음 — 다음에 메타표면이 다시 이미징/디스플레이 응용으로 돌아오는지만 계속 관찰한다."
+    },
+    {
+      "cluster": "3D Gaussian Splatting이 RGB 멀티뷰 전제를 넘어 열화상·단일 X선·위상 변화 있는 1인칭 상호작용까지 모달리티를 넓힘",
+      "papers": [
+        {
+          "title": "ThermalSplat: Generalizable Pose-Free Gaussian Splatting for Sparse-View Thermal 3D Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2611.15435",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        },
+        {
+          "title": "Raysemble: Metric 3D Bone Reconstruction from a Single X-ray",
+          "arxiv": "https://arxiv.org/abs/2611.16869",
+          "importance_tags": [
+            "[방법전환]",
+            "[표준후보]"
+          ]
+        },
+        {
+          "title": "Topology-Aware 4D Gaussian Splatting for Egocentric Videos",
+          "arxiv": "https://arxiv.org/abs/2611.16012",
+          "importance_tags": [
+            "[문제정의]",
+            "[인프라]"
+          ]
+        },
+        {
+          "title": "Kosmo-GFM: A Production-Ready Geometry Foundation Model",
+          "arxiv": "https://arxiv.org/abs/2611.16840",
+          "importance_tags": [
+            "[인프라]",
+            "[스케일업]"
+          ]
+        }
+      ],
+      "why": "3D Gaussian Splatting(3DGS, 장면을 수많은 작은 가우시안 덩어리로 표현해 실시간으로 새 시점 영상을 그려내는 기법)은 원래 여러 각도에서 찍은 깨끗한 RGB 사진이 있다는 전제로 발전해 왔는데, 오늘 묶인 네 편은 그 전제 자체가 깨지는 상황을 각각 다룹니다. ThermalSplat은 질감이 거의 없고 재질에 따라 같은 온도도 다르게 찍히는 열화상 카메라 영상만으로, 사진 수가 적어 카메라 위치 추정이 실패하는 상황에서도 3DGS를 복원합니다. Raysemble은 아예 여러 시점이 아니라 X선 사진 한 장만으로 엉덩이뼈 여덟 개의 3차원 형태와 위치를 복원합니다. Topo-4DGS는 자르기·조립·열기처럼 물체가 쪼개지거나 합쳐지는 '위상이 바뀌는' 1인칭 영상에서 기존 4D GS가 깨지는 문제를 다루는 첫 벤치마크를 만듭니다. Kosmo-GFM은 이런 개별 대응을 넘어 카메라 자세·깊이·대응점·동적 3D 점을 한 번에 예측하는 범용 geometry foundation model로 묶어냅니다. 네 편을 합치면, 3DGS가 '좋은 조건의 RGB 멀티뷰 촬영'이라는 원래 전제를 벗어나 열화상·단일 X선·위상 변화가 있는 상호작용까지 적용 범위를 넓히면서, 모달리티별 특수 해법에서 범용 foundation model로 수렴하려는 움직임이 동시에 보인다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 네 팀이 각각 다른 모달리티(열화상/X선/위상변화/통합FM)에서 독립적으로 3DGS 확장을 시도했고, 전부 정량 벤치마크(Dice·HD95 등)를 동반합니다.",
+      "lab_action": "ThermalSplat의 pose-free sparse-view 복원 구조를 랩이 보유한 열화상 또는 근적외선 카메라 데이터에 적용해, 기존 COLMAP 기반 pose 추정 대비 복원 성공률과 소요 시간을 1주 내 비교한다."
+    },
+    {
+      "cluster": "MRI 재구성 가속화가 블록 공유, 해상도 비의존 연산자, 물리 시뮬레이션 스케일업이라는 세 갈래로 동시에 진행",
+      "papers": [
+        {
+          "title": "One Block Is Enough: LoopMR for Accelerated MRI Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2611.14947",
+          "importance_tags": [
+            "[방법전환]"
+          ]
+        },
+        {
+          "title": "Coarse-to-Fine 3D MRI Reconstruction via Resolution-Agnostic Neural Operators",
+          "arxiv": "https://arxiv.org/abs/2611.14979",
+          "importance_tags": [
+            "[방법전환]",
+            "[표준후보]"
+          ]
+        },
+        {
+          "title": "Physics-based simulation unlocks scaling laws for generalizable MRI reconstruction",
+          "arxiv": "https://arxiv.org/abs/2611.15758",
+          "importance_tags": [
+            "[스케일업]",
+            "[인프라]"
+          ]
+        }
+      ],
+      "why": "가속 MRI 재구성(일부러 적게 찍은 k-space 데이터에서 원래 영상을 복원하는 문제)은 그동안 '캐스케이드마다 새 블록을 쌓아 크기를 키우는' 방향과 '임상 데이터를 더 많이 모으는' 방향으로 발전해 왔는데, 오늘 묶인 세 편은 이 두 방향 모두를 반박합니다. LoopMR은 캐스케이드마다 다른 블록을 쓰는 대신 같은 Restormer 블록 하나를 반복 사용하면서도 파라미터는 기존 PromptMR+의 9분의 1만 쓰고 뇌·무릎·심장·경동맥 네 부위 전부에서 더 좋은 성능을 냅니다. KIR-NO(Coarse-to-Fine 논문)는 저해상도에서 싸게 학습한 모델을 재학습 없이 고해상도에 그대로 적용할 수 있는 해상도 비의존 연산자를 제안해, 학습은 저렴하게 하고 배포는 고해상도로 하는 전략을 가능하게 합니다. SIM(세 번째 논문)은 반대로 '임상 데이터가 부족해 일반화가 안 된다'는 병목 자체를 피해, 물리 시뮬레이션으로 만든 학습 데이터와 모델·학습 방식을 계산량 확장에 맞춰 함께 설계해서 7개 기관·5개 제조사·14개 데이터셋에서 재학습 없이 바로 쓰는 복원 모델을 만들었습니다. 세 편을 합치면, MRI 재구성의 다음 경쟁 축이 '더 큰 모델'이나 '더 많은 임상 데이터'가 아니라 '같은 블록을 얼마나 영리하게 재사용할지', '해상도에 얼마나 안 묶일지', '시뮬레이션으로 얼마나 스케일업할지'로 옮겨가고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "같은 날 서로 다른 세 팀이 MRI 재구성의 세 가지 다른 병목(파라미터·해상도·일반화)을 공략했고, 셋 다 표준 벤치마크(fastMRI·SKM-TEA·다기관 임상 데이터)에서 구체적 수치로 비교합니다.",
+      "lab_action": "SIM이 공개한 물리 시뮬레이션 기반 학습 데이터 생성 레시피를 랩의 광 회절 단층촬영(ODT)·홀로그래피 역문제 학습 데이터 증강에 적용 가능한지 검토하고, KIR-NO의 저해상도 학습-고해상도 배포 전략을 랩 3D 복원 파이프라인의 GPU 메모리 병목 완화에 1주 내 시뮬레이션으로 테스트한다."
     }
   ],
   "research_topics": [
@@ -104,21 +203,50 @@
       "title": "FluoVolt 염색 부작용 곡선을 랩 형광 염색 프로토콜에 대입해 재현",
       "claim": "FluoVolt가 보여준 염색 농도-생존율 손상 관계가 랩이 쓰는 다른 전압/형광 염색에도 비슷하게 나타난다면, 염색 없는 대안(광산란·redox) 전환의 우선순위를 더 명확히 정할 수 있다.",
       "supporting_papers": [
-        {"title": "FluoVolt Staining Compromises Cell Viability and Morphology during Live-Cell Voltage Imaging", "arxiv": "https://doi.org/10.1021/acsomega.6c06843"}
+        {
+          "title": "FluoVolt Staining Compromises Cell Viability and Morphology during Live-Cell Voltage Imaging",
+          "arxiv": "https://doi.org/10.1021/acsomega.6c06843"
+        }
       ]
     },
     {
       "title": "ERT deep image prior의 비지도 복원 구조를 랩 ODT 역문제에 이식 가능한지 확인",
       "claim": "전기저항 토모그래피에서 쓰인 비지도 deep image prior가 별도 학습 데이터 없이도 복원이 가능하다면, 랩의 광 회절 단층촬영에서도 학습 데이터 확보 부담을 줄일 수 있다.",
       "supporting_papers": [
-        {"title": "Electrical resistance tomography with deep image prior and its application in damage detection of C/SiC composite plates under high temperature", "arxiv": "https://doi.org/10.1016/j.compstruct.2026.121111"}
+        {
+          "title": "Electrical resistance tomography with deep image prior and its application in damage detection of C/SiC composite plates under high temperature",
+          "arxiv": "https://doi.org/10.1016/j.compstruct.2026.121111"
+        }
       ]
     },
     {
       "title": "광자 정렬 논문의 희소 관측 기반 공간 상태 추론을 랩 광학계 자동 정렬에 적용",
       "claim": "물리 정보 기반 희소 관측 추론이 적은 관측 지점만으로 광학계 내부 상태를 복원할 수 있다면, 랩의 간섭계·현미경 광축 정렬 자동화에 드는 측정 시간을 줄일 수 있다.",
       "supporting_papers": [
-        {"title": "Physics-informed sparse observations enable spatial-state inference for intelligent photonic alignment", "arxiv": "https://doi.org/10.1364/oe.605008"}
+        {
+          "title": "Physics-informed sparse observations enable spatial-state inference for intelligent photonic alignment",
+          "arxiv": "https://doi.org/10.1364/oe.605008"
+        }
+      ]
+    },
+    {
+      "title": "LoopMR의 블록 공유 구조를 랩의 반복형 역문제 복원 네트워크에 적용",
+      "claim": "LoopMR이 보여준 '같은 블록을 반복 재사용해도 성능이 떨어지지 않는다'는 결과가 랩의 다른 반복형 복원 네트워크(ptychography·ODT reconstruction)에도 적용된다면, 파라미터 수를 9분의 1 수준으로 줄이면서 성능을 유지할 수 있다.",
+      "supporting_papers": [
+        {
+          "title": "One Block Is Enough: LoopMR for Accelerated MRI Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2611.14947"
+        }
+      ]
+    },
+    {
+      "title": "SIM의 물리 시뮬레이션 스케일업 레시피를 랩 역문제 학습 데이터 생성에 적용",
+      "claim": "SIM이 보여준 '물리 시뮬레이션 데이터 + 계산량 확장'으로 임상 데이터 부족 병목을 우회하는 전략이 랩의 광학 역문제(ODT·홀로그래피)에도 통한다면, 제한된 실측 데이터로도 일반화 가능한 복원 모델을 만들 수 있다.",
+      "supporting_papers": [
+        {
+          "title": "Physics-based simulation unlocks scaling laws for generalizable MRI reconstruction",
+          "arxiv": "https://arxiv.org/abs/2611.15758"
+        }
       ]
     }
   ]

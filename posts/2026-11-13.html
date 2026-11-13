@@ -82,23 +82,22 @@ html[data-theme=light] body{background-color:#fff}
 <h1>Imaging Intelligence Daily Briefing — 2026-11-13 (금요일)</h1>
 
 <div class=meta>
-  <div>📅 발행일: 2026-11-13 (금요일)</div>
-  <div>📚 소스: journal-only (잠정본) — cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 2026-11-13 확인 기준 /new listing이 "Wednesday, 11 November 2026"에 머물러 있는 것을 Date Source Contract 점검에서 확인했습니다(post_date 2026-11-13 &gt; listing_date 2026-11-11). arXiv가 이틀째 당일 분을 올리지 않아 arXiv 섹션은 발행하지 않습니다. 어제 journal-only였던 2026-11-12도 /pastweek에 해당 날짜 섹션이 아직 없어(5개 카테고리 모두 확인) 업그레이드를 보류했습니다.</div>
-  <div>🔢 arXiv: cs.LG 0 · cs.CV 0 · cs.AI 0 · eess.IV 0 · eess.SP 0 (해당일 arXiv 미발행, 이틀 연속)</div>
-  <div>🔢 저널: Crossref/OpenAlex 414편 수집(2026-11-13 등록분 중심, --days 1) · 스캔 414건 · ROI 배정 82건 (19.8%)</div>
-  <div>⚠️ 이 리포트는 저널만으로 만든 잠정본입니다. arXiv 5개 카테고리가 11/13(또는 밀린 11/12) listing으로 갱신되고 /pastweek에 해당 섹션이 뜨면, Calendar Audit이 다음 실행에서 arXiv 포함 완전판으로 자동 업그레이드합니다.</div>
+  <div>📅 발행일: 2026-11-13 (금요일) · <strong>업그레이드 완성본</strong> (journal-only → arXiv+저널)</div>
+  <div>📚 소스: Date Source Contract 재점검 결과 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 /new listing이 "Friday, 13 November 2026"으로 갱신되어(post_date==listing_date) Backfill 업그레이드 조건을 충족했습니다. 어제 발행했던 journal-only 잠정본을 arXiv /new 재수집 + 기존 저널 분석을 합친 완성본으로 덮어씁니다. 같은 점검에서 2026-11-12(목)은 /pastweek 2000건 윈도우 전체에 해당 날짜 섹션 자체가 없어(Wed 11/11 → Fri 11/13로 직행) arXiv가 그날 listing을 발행하지 않은 것으로 확인, 업그레이드 대상에서 제외하고 journal-only로 최종 확정했습니다.</div>
+  <div>🔢 arXiv(new+cross, replacements 제외): cs.LG 340 · cs.CV 196 · cs.AI 321 · eess.IV 21 · eess.SP 57 (합계 935편)</div>
+  <div>🔢 저널: Crossref/OpenAlex 421편 수집(--days 1) · arXiv+저널 합산 스캔 1173건(dedup 후) · ROI 배정 322건 (27.5%)</div>
 </div>
 
 <h2>📌 오늘의 결론</h2>
 <blockquote>
-오늘도 arXiv 5개 카테고리가 전부 그제(11/11) listing에 머물러 있어 이틀 연속 저널만으로 만든 잠정본입니다. <strong>그런데 저널 쪽 신호를 다시 보면, 세포를 들여다볼 때 염색을 쓸지 말지의 줄다리기가 한쪽에서는 "염색 없이도 대사·형태를 잴 수 있다"는 증거로, 다른 한쪽에서는 "흔히 쓰는 전압 염색약이 세포를 다치게 한다"는 경고로 동시에 나왔습니다.</strong> 한편 전기저항 토모그래피나 4차원 CT처럼 광학이 아닌 분야에서도 "측정이 부족한 곳을 딥러닝 prior로 메운다"는 똑같은 역문제 복원 패턴이 독립적으로 반복되고 있는 게 눈에 띕니다. 다만 어제 메타표면 광학이 보여준 "AR·분광 이미징 하드웨어로 이동" 흐름은 오늘은 이어지지 않았고, 오늘 메타표면은 전부 무선통신·레이더 센싱용이라 랩 ROI 관점에서는 약한 신호로 내려갔습니다. arXiv 공백이 이틀째라 정보량 자체는 평소 daily의 5분의 1 수준입니다.
+오늘은 arXiv가 이틀 만에 복귀하면서 <strong>MRI 재구성이 블록 공유·해상도 비의존 연산자·물리 시뮬레이션 스케일업이라는 세 갈래로 동시에 가속되는 날</strong>이었고, <strong>3D Gaussian Splatting은 깨끗한 RGB 멀티뷰 전제를 벗어나 열화상·단일 X선·위상 변화가 있는 1인칭 상호작용까지 모달리티를 넓혔습니다.</strong> 저널 쪽에서는 이틀째 이어지던 흐름이 그대로 이어졌습니다 — 세포를 들여다볼 때 염색을 쓸지 말지의 줄다리기가 한쪽에서는 "염색 없이도 대사·형태를 잴 수 있다"는 증거로, 다른 한쪽에서는 "흔히 쓰는 전압 염색약이 세포를 다치게 한다"는 경고로 동시에 나왔고, 전기저항 토모그래피나 4차원 CT처럼 광학이 아닌 분야에서도 "측정이 부족한 곳을 딥러닝 prior로 메운다"는 똑같은 역문제 복원 패턴이 독립적으로 반복됐습니다. 다만 메타표면은 오늘도 전부 무선통신·레이더 센싱용이라 랩 ROI 관점에서는 약한 신호로 남았습니다.
 </blockquote>
 
 <h2>🔭 주간 동향</h2>
-<p>오늘 arXiv 5개 카테고리는 2026-11-13 확인 기준 전부 "Wednesday, 11 November 2026" listing에 머물러 있어(11/13 신규 제출 0건), Crossref 키워드 질의와 OpenAlex enrich/works로 저널만 414건을 수집해 classify.py로 스캔했습니다. 그 결과 82건(19.8%)이 9개 ROI 버킷에 배정됐는데, 어제(28.2%)보다 배정 비율은 낮아졌습니다. 버킷별로 직접 열어본 결과 신호 밀도는 역시 버킷마다 크게 갈렸습니다. 랩 핵심 ROI인 Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 오늘 0편으로 완전한 공백이었고, Light-Field/Novel Sensors는 1편(구조광장의 행렬곱 성질을 다루는 기초 광학 논문으로 랩 이미징 ROI와는 거리가 있음)뿐이었습니다. Meta-Optics/Diffractive(7편 중 실신호 0편, 전부 통신·센서·기초 광학)와 Tomography/3D Imaging(35편 중 실질 전산이미징 신호 3편, 나머지는 치과 CBCT·PET 증례 등 순수 임상)은 역시 배정 편수에 비해 전산 이미징 신호가 적었습니다. 실질 신호는 Virtual Staining/Pathology 일부(라이브셀 광학 측정 2편)와 Phase Imaging/Holography 일부(라벨 없는 DHM 분류 1편)가 묶인 "라이브셀 염색 대체·경고" 클러스터, Tomography/3D Imaging 일부(전기저항·4DCT 딥러닝 inversion 3편), Reconstruction/Inverse Problems 전체(물리 정보 기반 간접 상태 추정 3편)에 모여 있었습니다. Virtual Staining/Pathology(16편)는 나머지 약 13편이 VR 관광·수자원·종교 교육처럼 "virtual"/"staining" 단어만 겹친 오탐이었습니다.</p>
+<p>오늘은 2026-11-13 확인 기준 5개 카테고리 모두 /new listing이 "Friday, 13 November 2026"으로 갱신되어 arXiv를 정상적으로 재수집했습니다(new+cross 합계 935편, replacements 제외). 여기에 Crossref/OpenAlex 저널 421편을 더해 classify.py로 합쳐 스캔한 결과(dedup 후 1173건) 322건(27.5%)이 9개 ROI 버킷에 배정됐습니다. 버킷별 신호 밀도는 여전히 크게 갈립니다. 랩 핵심 ROI인 Fourier Ptychography/Microscopy는 1편(제목만 ptychography 연상시킬 뿐 실제로는 GPU 추론 서빙 논문이라 오탐)·Lensless/Coded Imaging은 0편으로 오늘도 공백이었고, Meta-Optics/Diffractive(9편 전부 통신·센서·기초 광학)와 Light-Field/Novel Sensors(3편 중 실질 이미징 신호 0편)도 약했습니다. 반면 Tomography/3D Imaging(47편)과 Reconstruction/Inverse Problems(33편)에서는 어제 이어지던 저널 신호(전기저항·4DCT deep prior, 물리 정보 신경망 간접 추정) 위에 오늘 새로 올라온 arXiv 신호가 겹쳐 두 개의 뚜렷한 새 클러스터가 생겼습니다 — eess.IV에서 같은 날 3편이 동시에 등장한 MRI 재구성 가속화, 그리고 cs.CV에서 열화상·X선·1인칭 상호작용으로 모달리티를 넓힌 3D Gaussian Splatting입니다. Virtual Staining/Pathology(43편)는 실질 신호가 여전히 2~3편뿐이고 나머지는 VR 관광·수자원·종교 교육처럼 "virtual"/"staining" 단어만 겹친 오탐입니다.</p>
 
 <h2>🧭 어제와 달라진 점</h2>
-<p>어제(11/12)도 오늘처럼 arXiv가 통째로 빠진 journal-only 날이었고, 핵심 신호는 계산현미경(ptychography·홀로그래피)의 측정 보정, 라벨 없는 세포 역학 측정, 역문제 복원의 생성적·압축 prior 확장, 메타표면의 AR·분광 하드웨어 이동, 모달리티 전용 복원 네트워크 다섯 갈래였습니다. 오늘은 그 중 "라벨 없는 세포 측정" 흐름이 이어지되 결이 조금 달라졌습니다 — 어제는 세 편 모두 "염색 없이도 잴 수 있다"는 긍정적 증거였다면, 오늘은 거기에 더해 "흔히 쓰는 염색약(FluoVolt)이 세포를 다치게 한다"는 경고가 처음 더해지면서, 염색 대체 논의가 "더 좋은 대안이 있다"에서 "기존 방법도 문제가 있다"는 양쪽 근거로 넓어졌습니다. 반대로 어제 가장 눈에 띄었던 메타표면의 AR·산업용 분광 이미징 하드웨어 이동은 오늘은 전혀 이어지지 않았고, 오늘 메타표면 7편은 전부 무선통신 빔포밍이나 레이더 DOA 추정처럼 이미징과 무관한 RF 응용이었습니다. 또한 어제는 CT·OCT·양자 이미징이라는 광학 중심 모달리티에서 역문제 복원이 확장됐다면, 오늘은 전기저항 토모그래피·4차원 CT처럼 광학 밖 분야에서 비슷한 딥러닝 prior 패턴이 독립적으로 나타났다는 점에서 "같은 질문이 다른 하드웨어에서 반복된다"는 쪽에 더 가깝습니다. 정직하게 말하면, 이틀 연속 arXiv 공백이라 "오늘과 어제가 같은 소스에서 자연스럽게 이어지는 흐름"이라기보다는 "저널이라는 같은 소스 안에서 매일 다른 단면이 드러난다"고 보는 게 맞습니다.</p>
+<p>어제(11/12)는 arXiv가 통째로 빠진 journal-only 날이었고(이후 확인 결과 11/12는 arXiv가 애초에 listing을 발행하지 않은 날로 최종 확정됐습니다), 핵심 신호는 계산현미경의 측정 보정, 라벨 없는 세포 역학 측정, 역문제 복원의 생성적·압축 prior 확장, 메타표면의 AR·분광 하드웨어 이동, 모달리티 전용 복원 네트워크 다섯 갈래였습니다. 오늘은 그 저널 신호들이 거의 그대로 이어지되(라이브셀 측정, 비광학 토모그래피 deep prior, 물리 정보 신경망, 메타표면 약세), "라벨 없는 세포 측정" 흐름에는 "흔히 쓰는 염색약(FluoVolt)이 세포를 다치게 한다"는 경고가 더해져 염색 대체 논의가 "더 좋은 대안이 있다"에서 "기존 방법도 문제가 있다"는 양쪽 근거로 넓어졌습니다. 가장 큰 변화는 arXiv 복귀 자체입니다. 이틀간 저널만 보던 좁은 시야에 935편의 arXiv 신규 제출이 더해지면서, eess.IV에서 MRI 재구성 가속화 3편이 같은 날 동시에 등장하고 cs.CV에서 3D Gaussian Splatting이 열화상·X선·1인칭 상호작용까지 번지는 두 개의 굵은 클러스터가 하루 만에 새로 생겼습니다. 즉 어제까지는 "저널이라는 좁은 창으로 매일 다른 단면을 보는" 상태였다면, 오늘은 랩이 원래 추적하는 방법론 한복판(MRI·3D 복원)의 움직임이 다시 보이기 시작했다는 뜻입니다.</p>
 
 <h2>🧩 오늘의 클러스터 지도</h2>
 <table>
@@ -150,27 +149,49 @@ html[data-theme=light] body{background-color:#fff}
   <td>Low<br><small>세 편 모두 abstract가 제공되지 않아 제목 기준 판단이며, 애초에 이미징 응용이 아니라서 랩 ROI와의 연결성 자체가 약합니다.</small></td>
   <td>랩 메타표면 설계 파이프라인과는 직접 관련이 없으므로 별도 실행 항목 없음 — 다음에 메타표면이 다시 이미징/디스플레이 응용으로 돌아오는지만 계속 관찰한다.</td>
 </tr>
+<tr>
+  <td><strong>3D Gaussian Splatting이 RGB 멀티뷰 전제를 넘어 열화상·단일 X선·위상 변화 있는 1인칭 상호작용까지 모달리티를 넓힘</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.15435" target=_blank>ThermalSplat: Pose-Free Gaussian Splatting for Sparse-View Thermal 3D Reconstruction</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.16869" target=_blank>Raysemble: Metric 3D Bone Reconstruction from a Single X-ray</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.16012" target=_blank>Topology-Aware 4D Gaussian Splatting for Egocentric Videos</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.16840" target=_blank>Kosmo-GFM: A Production-Ready Geometry Foundation Model</a> <span class="pill b">CV</span>
+  </td>
+  <td>3D Gaussian Splatting(3DGS, 장면을 수많은 작은 가우시안 덩어리로 표현해 실시간으로 새 시점 영상을 그려내는 기법)은 원래 여러 각도에서 찍은 깨끗한 RGB 사진이 있다는 전제로 발전해 왔는데, 오늘 묶인 네 편은 그 전제 자체가 깨지는 상황을 각각 다룹니다. ThermalSplat은 질감이 거의 없고 재질에 따라 같은 온도도 다르게 찍히는 열화상 카메라 영상만으로, 사진 수가 적어 카메라 위치 추정이 실패하는 상황에서도 3DGS를 복원합니다. Raysemble은 아예 여러 시점이 아니라 X선 사진 한 장만으로 엉덩이뼈 여덟 개의 3차원 형태와 위치를 복원합니다. Topo-4DGS는 자르기·조립·열기처럼 물체가 쪼개지거나 합쳐지는 "위상이 바뀌는" 1인칭 영상에서 기존 4D GS가 깨지는 문제를 다루는 첫 벤치마크를 만듭니다. Kosmo-GFM은 이런 개별 대응을 넘어 카메라 자세·깊이·대응점·동적 3D 점을 한 번에 예측하는 범용 geometry foundation model로 묶어냅니다. 네 편을 합치면, 3DGS가 "좋은 조건의 RGB 멀티뷰 촬영"이라는 원래 전제를 벗어나 열화상·단일 X선·위상 변화가 있는 상호작용까지 적용 범위를 넓히면서, 모달리티별 특수 해법에서 범용 foundation model로 수렴하려는 움직임이 동시에 보인다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 네 팀이 각각 다른 모달리티(열화상/X선/위상변화/통합FM)에서 독립적으로 3DGS 확장을 시도했고, 전부 정량 벤치마크(Dice·HD95 등)를 동반합니다.</small></td>
+  <td>ThermalSplat의 pose-free sparse-view 복원 구조를 랩이 보유한 열화상 또는 근적외선 카메라 데이터에 적용해, 기존 COLMAP 기반 pose 추정 대비 복원 성공률과 소요 시간을 1주 내 비교한다.</td>
+</tr>
+<tr>
+  <td><strong>MRI 재구성 가속화가 블록 공유, 해상도 비의존 연산자, 물리 시뮬레이션 스케일업이라는 세 갈래로 동시에 진행</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.14947" target=_blank>One Block Is Enough: LoopMR for Accelerated MRI Reconstruction</a> <span class="pill b">IV</span><br>
+    <a href="https://arxiv.org/abs/2611.14979" target=_blank>Coarse-to-Fine 3D MRI Reconstruction via Resolution-Agnostic Neural Operators</a> <span class="pill b">IV</span><br>
+    <a href="https://arxiv.org/abs/2611.15758" target=_blank>Physics-based simulation unlocks scaling laws for generalizable MRI reconstruction</a> <span class="pill a">IV · TIER A</span>
+  </td>
+  <td>가속 MRI 재구성(일부러 적게 찍은 k-space 데이터에서 원래 영상을 복원하는 문제)은 그동안 "캐스케이드마다 새 블록을 쌓아 크기를 키우는" 방향과 "임상 데이터를 더 많이 모으는" 방향으로 발전해 왔는데, 오늘 묶인 세 편은 이 두 방향 모두를 반박합니다. LoopMR은 캐스케이드마다 다른 블록을 쓰는 대신 같은 Restormer 블록 하나를 반복 사용하면서도 파라미터는 기존 PromptMR+의 9분의 1만 쓰고 뇌·무릎·심장·경동맥 네 부위 전부에서 더 좋은 성능을 냅니다. KIR-NO(두 번째 논문)는 저해상도에서 싸게 학습한 모델을 재학습 없이 고해상도에 그대로 적용할 수 있는 해상도 비의존 연산자를 제안해, 학습은 저렴하게 하고 배포는 고해상도로 하는 전략을 가능하게 합니다. SIM(세 번째 논문)은 반대로 "임상 데이터가 부족해 일반화가 안 된다"는 병목 자체를 피해, 물리 시뮬레이션으로 만든 학습 데이터와 모델·학습 방식을 계산량 확장에 맞춰 함께 설계해서 7개 기관·5개 제조사·14개 데이터셋에서 재학습 없이 바로 쓰는 복원 모델을 만들었습니다. 세 편을 합치면, MRI 재구성의 다음 경쟁 축이 "더 큰 모델"이나 "더 많은 임상 데이터"가 아니라 "같은 블록을 얼마나 영리하게 재사용할지", "해상도에 얼마나 안 묶일지", "시뮬레이션으로 얼마나 스케일업할지"로 옮겨가고 있다는 뜻입니다.</td>
+  <td>High<br><small>같은 날 서로 다른 세 팀이 MRI 재구성의 세 가지 다른 병목(파라미터·해상도·일반화)을 공략했고, 셋 다 표준 벤치마크(fastMRI·SKM-TEA·다기관 임상 데이터)에서 구체적 수치로 비교합니다.</small></td>
+  <td>SIM이 공개한 물리 시뮬레이션 기반 학습 데이터 생성 레시피를 랩의 광 회절 단층촬영(ODT)·홀로그래피 역문제 학습 데이터 증강에 적용 가능한지 검토하고, KIR-NO의 저해상도 학습-고해상도 배포 전략을 랩 3D 복원 파이프라인의 GPU 메모리 병목 완화에 1주 내 시뮬레이션으로 테스트한다.</td>
+</tr>
 </tbody>
 </table>
-<p><small>⚠️ 오늘은 근거가 확실한 클러스터가 4개뿐이라 5행을 채우지 못했습니다. Tomography/3D Imaging 35편 중 전산 이미징 신호는 3편(위 클러스터2)뿐이고 나머지는 임상 증례·지구물리라 추가 클러스터로 올릴 근거가 부족했습니다.</small></p>
 
 <h2>🔬 도메인 Watch Lens</h2>
 <div class=skim>
   <ul>
-    <li>Fourier Ptychography/Microscopy: 0편 배정 — 랩 핵심 ROI가 이틀 연속 완전한 공백입니다.</li>
-    <li>Lensless/Coded Imaging: 0편 배정 — 어제 1편(다중파장 렌즈리스 홀로그래피 자기보정)이 있었던 것과 달리 오늘은 공백입니다.</li>
-    <li>Phase Imaging/Holography: 5편 배정, 실신호 1편(Label-Free DHM, 클러스터1 대표) — 나머지 4편은 레이저 거리측정 잡음제거, 메타표면 편광다중화, 고에너지물리 holographic CFT, corrigendum처럼 "phase"/"holography" 단어의 오탐이거나 전산 이미징과 무관한 분야입니다.</li>
-    <li>Meta-Optics/Diffractive: 7편 배정, 실신호 0편 — 전부 무선통신 안테나, 레이더 DOA 추정, 카이랄리티·보텍스빔 기초 광학, 테라헤르츠 바이오센서, 리뷰 논문으로 이미징 응용이 아닙니다(클러스터4 참고).</li>
-    <li>Light-Field/Novel Sensors: 1편 배정, 실신호 0편 — 유일한 배정 논문(구조광장의 행렬곱 성질)은 광학 기초 이론이라 랩의 이미징 복원 ROI와는 결이 다릅니다.</li>
-    <li>Tomography/3D Imaging: 35편 배정, 실신호 3편(ERT 2편 + 4DCT 1편, 클러스터2) — 나머지 약 32편은 치과 CBCT, PET 전이암 증례, OCT 임상 증례, 지진파 토모그래피처럼 순수 임상 증례이거나 완전히 다른 분야입니다.</li>
-    <li>Virtual Staining/Pathology: 16편 배정, 실신호 2편(Optical redox imaging, FluoVolt — 클러스터1 중 2편) — 나머지 약 13편은 VR 관광, 수자원 관리, 종교 교육 같은 "virtual"/"staining" 단어의 완전한 오탐입니다.</li>
-    <li>Reconstruction/Inverse Problems: 3편 배정, 실신호 3편(클러스터3 전체) — 전체가 물리 정보 기반 간접 상태 추정이라는 하나의 결로 묶입니다.</li>
-    <li>Deep Learning Methods: 15편 배정, 실신호 0편(랩 ROI 직결 신호 없음) — 말라리아 현미경 LoRA 미세조정, 가상 피팅, 심장 MRI 뷰 분류처럼 범용 의료영상·ML이 대부분이며, 오늘은 이 중 독립 클러스터로 올릴 만큼 2편 이상 묶이는 랩 ROI 직결 신호가 없었습니다.</li>
+    <li>Fourier Ptychography/Microscopy: 1편 배정, 실신호 0편 — 유일한 배정 논문(UniPipe)은 제목이 추론 서빙 파이프라인이라 ptychography와 무관한 오탐입니다. 랩 핵심 ROI가 사실상 공백입니다.</li>
+    <li>Lensless/Coded Imaging: 0편 배정 — 오늘도 완전한 공백입니다.</li>
+    <li>Phase Imaging/Holography: 6편 배정, 실신호 1편(Label-Free DHM, 클러스터1 대표) — 나머지 5편은 X선 디텍터 gap 보간, 레이저 거리측정 잡음제거, 메타표면 편광다중화, 고에너지물리 holographic CFT, corrigendum처럼 오탐이거나 전산 이미징과 무관합니다.</li>
+    <li>Meta-Optics/Diffractive: 9편 배정, 실신호 0편 — 전부 무선통신 안테나, 레이더 DOA 추정, 카이랄리티·보텍스빔 기초 광학, 테라헤르츠 바이오센서로 이미징 응용이 아닙니다(클러스터4 참고).</li>
+    <li>Light-Field/Novel Sensors: 3편 배정, 실신호 0편 — 배전망 뉴로모픽 보호계전 2편(arXiv eess.SP)과 구조광장의 행렬곱 성질 1편(저널) 모두 랩의 이미징 복원 ROI와는 결이 다릅니다.</li>
+    <li>Tomography/3D Imaging: 47편 배정, 실신호 약 10편 — 저널 쪽 ERT 2편 + 4DCT 1편(클러스터2)에 더해, arXiv cs.CV에서 올라온 ThermalSplat·Raysemble·Topo-4DGS·Kosmo-GFM·MatrixSplat·Distractor-free 4DGS·Multi-View V-JEPA Reconstruction 7편(클러스터5 포함)이 새로 더해졌습니다. 나머지 약 37편은 치과 CBCT, PET 전이암 증례, OCT 임상 증례처럼 순수 임상 증례입니다.</li>
+    <li>Virtual Staining/Pathology: 43편 배정, 실신호 2~3편(Optical redox imaging, FluoVolt — 클러스터1) — 나머지 약 40편은 VR 관광, 수자원 관리, 종교 교육, LLM 에이전트 논문 같은 "virtual"/"staining" 단어의 완전한 오탐입니다.</li>
+    <li>Reconstruction/Inverse Problems: 33편 배정, 실신호 약 6편 — 저널 쪽 물리 정보 신경망 3편(클러스터3)에 더해, arXiv eess.IV에서 올라온 MRI 재구성 가속화 3편(LoopMR·KIR-NO·SIM, 클러스터6)이 오늘의 가장 굵은 신호입니다.</li>
+    <li>Deep Learning Methods: 180편 배정, 실신호 0편(랩 ROI 직결 신호 없음) — cs.LG/cs.AI/cs.CV의 범용 ML·LLM 에이전트·로보틱스 논문이 대부분이며, catch-all 성격상 이미징 ROI와 직결되는 2편 이상 묶음은 없었습니다.</li>
   </ul>
 </div>
 
 <h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
-<p>오늘도 arXiv가 올라오지 않아 이 섹션이 평소와 다르게 작동합니다. 추적 중인 5개 카테고리(cs.LG, cs.CV, cs.AI, eess.IV, eess.SP) 모두 2026-11-13 확인 기준 /new listing이 여전히 "Wednesday, 11 November 2026"을 가리키고 있어, post_date(2026-11-13)와 listing_date(2026-11-11)가 어긋납니다. Date Source Contract(instruction.md 2.1절)에 따라 이 경우 arXiv 섹션은 발행하지 않고, Crossref·OpenAlex 저널 수집은 arXiv listing 유무와 무관하게 독립적으로 수행해 저널만으로 오늘의 리포트를 구성했습니다. 따라서 오늘도 arXiv 전용 신호도, arXiv-저널 공통 키워드 비교도 존재하지 않습니다 — 위 클러스터 네 개가 저널 전용 신호의 전체입니다. arXiv가 /pastweek에 2026-11-12 또는 2026-11-13 섹션으로 올라오는 즉시, Calendar Audit이 밀린 날짜부터 순서대로 arXiv 포함 완전판(source_mode=pastweek-date-section)으로 자동 업그레이드하며, 그때 이틀치 저널이 보여준 "염색 대체/경고"와 "비광학 분야로 번지는 딥러닝 inversion" 흐름에 arXiv 쪽 방법론이 얼마나 이어 붙는지가 관전 포인트입니다.</p>
+<p>오늘은 arXiv가 복귀하면서 이 대비가 다시 의미를 갖습니다. arXiv 쪽(cs.LG/cs.CV/cs.AI/eess.IV/eess.SP)은 "reconstruction", "inverse problem", "neural operator", "Gaussian splatting"처럼 방법론 중심 키워드가 지배했고, 그 결과가 오늘의 두 신규 클러스터(MRI 재구성 가속화, 3DGS 모달리티 확장)입니다. 반대로 저널(Crossref/OpenAlex) 쪽은 "tomography", "staining", "microscopy"처럼 특정 임상·응용 맥락 키워드가 지배했고, 이틀째 이어진 네 클러스터(라이브셀 염색 대체/경고, 전기·방사선 토모그래피 deep prior, 물리 정보 신경망 간접 추정, 메타표면 통신 쏠림)가 그 결과입니다. 공통 키워드는 "tomography"와 "reconstruction"인데, 같은 단어라도 맥락이 갈립니다 — arXiv의 tomography/reconstruction은 MRI·3DGS처럼 방법론 벤치마크(PSNR·Dice)를 동반하는 반면, 저널의 tomography는 전기저항·4DCT처럼 특정 산업·의료 응용에 딥러닝 inversion을 처음 끼워 넣는 사례 보고에 가깝습니다. 즉 오늘은 "같은 역문제 복원이라는 질문을, arXiv는 범용 방법으로 밀어붙이고 저널은 개별 응용에 적용해 보고하는" 전형적인 분업이 그대로 드러난 날입니다.</p>
 
 <h2>💡 오늘의 인사이트</h2>
 
@@ -196,6 +217,18 @@ html[data-theme=light] body{background-color:#fff}
   <h3>4. 메타표면 광학이 오늘은 이미징이 아닌 통신·센싱으로 쏠려 랩 ROI 신호가 약해짐</h3>
   <p>Covert 통신 빔포밍, DOA 추정, 근접장 집속 메타표면 세 편 모두 RF 응용이라, 어제의 AR·분광 이미징 하드웨어 흐름이 오늘은 이어지지 않았습니다.</p>
   <p class=conf-note>Confidence: Low</p>
+</div>
+
+<div class=ins>
+  <h3>5. 3D Gaussian Splatting이 RGB 멀티뷰 전제를 벗어나 열화상·X선·1인칭 상호작용까지 확장</h3>
+  <p>ThermalSplat, Raysemble, Topo-4DGS, Kosmo-GFM 네 편이 각각 열화상, 단일 X선, 위상 변화 있는 1인칭 영상, 통합 geometry foundation model로 3DGS의 적용 범위를 넓힙니다.</p>
+  <p class=conf-note>Confidence: High</p>
+</div>
+
+<div class=ins>
+  <h3>6. MRI 재구성 가속화가 블록 공유·해상도 비의존·물리 시뮬레이션 스케일업 세 갈래로 동시 진행</h3>
+  <p>LoopMR, KIR-NO, SIM 세 편이 같은 날 MRI 재구성의 서로 다른 병목(파라미터·해상도·일반화)을 각각 공략하며, 다음 경쟁 축이 모델 크기가 아니라는 신호를 보입니다.</p>
+  <p class=conf-note>Confidence: High</p>
 </div>
 
 <h2>🔬 추천 연구주제</h2>
@@ -236,20 +269,44 @@ html[data-theme=light] body{background-color:#fff}
   </ul>
 </div>
 
+<div class=dd>
+  <h3>D. LoopMR의 블록 공유 구조를 랩의 반복형 역문제 복원 네트워크에 적용</h3>
+  <p>LoopMR은 캐스케이드마다 다른 블록을 쓰는 대신 같은 블록 하나를 반복 사용하면서도 파라미터를 9분의 1로 줄이고 성능을 유지하는데, 같은 발상을 랩의 ptychography·ODT 같은 반복형 복원 네트워크에 적용해볼 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: One Block Is Enough: LoopMR for Accelerated MRI Reconstruction (arXiv 2611.14947) — 코드 공개 여부 abstract 기준 확인 불가, 본문 확인 필요</li>
+    <li>공통 benchmark: 랩이 쓰는 반복형(unrolled/cascade) 복원 네트워크의 기존 벤치마크 데이터셋</li>
+    <li>비교축: 캐스케이드별 독립 블록 대비 공유 블록의 PSNR/SSIM, 파라미터 수, 추론 속도</li>
+    <li>실패해도 남는 결과: 공유 블록이 성능을 못 따라가더라도, 현재 네트워크가 캐스케이드별로 얼마나 다른 파라미터를 실제로 쓰고 있는지 정리한 ablation은 다음 경량화 설계에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>E. SIM의 물리 시뮬레이션 스케일업 레시피를 랩 역문제 학습 데이터 생성에 적용</h3>
+  <p>SIM은 임상 데이터 부족 병목을 물리 시뮬레이션 데이터와 계산량 확장으로 우회해 재학습 없이 여러 기관·장비에 통하는 MRI 복원 모델을 만들었는데, 같은 전략이 랩의 광학 역문제(ODT·홀로그래피)에도 통하는지 검토할 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Physics-based simulation unlocks scaling laws for generalizable MRI reconstruction (arXiv 2611.15758) — 코드 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩이 보유한 ODT/홀로그래피 물리 시뮬레이터 + 소규모 실측 검증 세트</li>
+    <li>비교축: 시뮬레이션 데이터 양을 늘렸을 때 실측 데이터 일반화 성능이 어떻게 스케일하는지(scaling curve)</li>
+    <li>실패해도 남는 결과: 스케일링 법칙이 재현되지 않더라도, 현재 랩의 시뮬레이터가 실측 분포와 얼마나 떨어져 있는지 정리한 도메인 갭 분석은 다음 시뮬레이터 개선에 재사용 가능하다.</li>
+  </ul>
+</div>
+
 <h2>📊 오늘의 버킷 현황</h2>
-<p><small>막대 너비: Deep Learning Methods(15편, catch-all)를 제외한 버킷 중 최댓값인 Tomography/3D Imaging(35편) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all, 실제 편수는 라벨에 표시). 0편 버킷도 0% 막대로 표시합니다.</small></p>
+<p><small>막대 너비: Deep Learning Methods(180편, catch-all)를 제외한 버킷 중 최댓값인 Tomography/3D Imaging(47편) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all, 실제 편수는 라벨에 표시). 0편 버킷도 0% 막대로 표시합니다.</small></p>
 
-<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
 <div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
-<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:14%"></span></span><span class=n>5편</span></div>
-<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:20%"></span></span><span class=n>7편</span></div>
-<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:3%"></span></span><span class=n>1편</span></div>
-<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>35편</span></div>
-<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:46%"></span></span><span class=n>16편</span></div>
-<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:9%"></span></span><span class=n>3편</span></div>
-<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>15편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:13%"></span></span><span class=n>6편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:19%"></span></span><span class=n>9편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:6%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>47편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:91%"></span></span><span class=n>43편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:70%"></span></span><span class=n>33편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>180편</span></div>
 
-<p><small>⚠️ 참고: 버킷별 실질 신호 비율은 위 🔬 도메인 Watch Lens 섹션을 참고하세요 — 대부분의 버킷에서 키워드 오탐이 실질 신호보다 많았습니다(예: Tomography/3D Imaging 35편 중 실질 신호 3편, Meta-Optics/Diffractive 7편 중 실질 이미징 신호 0편).</small></p>
+<p><small>⚠️ 참고: 버킷별 실질 신호 비율은 위 🔬 도메인 Watch Lens 섹션을 참고하세요 — 대부분의 버킷에서 키워드 오탐이 실질 신호보다 많았습니다(예: Virtual Staining/Pathology 43편 중 실질 신호 2~3편, Meta-Optics/Diffractive 9편 중 실질 이미징 신호 0편). Tomography/3D Imaging과 Reconstruction/Inverse Problems는 오늘 arXiv 신규 신호가 더해지면서 실질 신호 비율이 다른 버킷보다 높습니다.</small></p>
 
 <h2>🗂 버킷별 주요 논문</h2>
 
@@ -266,6 +323,26 @@ html[data-theme=light] body{background-color:#fff}
   왜 주요: 디지털 홀로그래피 현미경 기반 형태 특징으로 신장암 세포를 99.5% 정확도로 분류한 정량 진단 응용.
 </div>
 <div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.15758" target=_blank>Physics-based simulation unlocks scaling laws for generalizable MRI reconstruction (SIM)</a></strong> [IV · TIER A]<br>
+  왜 주요: 7개 기관·5개 제조사·14개 데이터셋에서 재학습 없이 통하는 MRI 복원 모델로, 랩이 데이터 부족 병목을 겪는 모든 역문제에 직접 참고할 수 있는 스케일업 전략.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.14947" target=_blank>One Block Is Enough: LoopMR for Accelerated MRI Reconstruction</a></strong> [IV]<br>
+  왜 주요: 파라미터 9분의 1로 기존 SOTA를 능가하는 블록 공유 구조로, 랩의 반복형 복원 네트워크 경량화에 바로 적용 가능.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.14979" target=_blank>Coarse-to-Fine 3D MRI Reconstruction via Resolution-Agnostic Neural Operators (KIR-NO)</a></strong> [IV]<br>
+  왜 주요: 저해상도 학습-고해상도 배포가 가능한 해상도 비의존 연산자로, 랩의 GPU 메모리 제약이 있는 3D 복원 파이프라인에 직접 참고.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.15435" target=_blank>ThermalSplat: Generalizable Pose-Free Gaussian Splatting for Sparse-View Thermal 3D Reconstruction</a></strong> [CV]<br>
+  왜 주요: 열화상처럼 pose 추정이 실패하는 저질감 모달리티에서도 3DGS를 복원하는 구조로, 랩의 비표준 센서 영상 재구성에 응용 가능.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.16869" target=_blank>Raysemble: Metric 3D Bone Reconstruction from a Single X-ray</a></strong> [CV]<br>
+  왜 주요: 단일 X선 영상만으로 15개 방법을 능가하는 3D 복원 결과를 내는 단일-투사 복원 사례.
+</div>
+<div class=roi-item>
   <strong><a href="https://doi.org/10.1016/j.compstruct.2026.121111" target=_blank>Electrical resistance tomography with deep image prior</a></strong> [JNL]<br>
   왜 주요: 비지도 deep image prior 기반 역문제 복원을 광학 밖 토모그래피에 적용한 사례로, 랩 ODT 파이프라인에 이식 가능한 구조.
 </div>
@@ -273,21 +350,17 @@ html[data-theme=light] body{background-color:#fff}
   <strong><a href="https://doi.org/10.1364/oe.605008" target=_blank>Physics-informed sparse observations enable spatial-state inference for intelligent photonic alignment</a></strong> [JNL]<br>
   왜 주요: 희소 관측만으로 광학계 내부 상태를 물리 정보 기반으로 추론하는 설계로, 랩의 광학계 자동 정렬에 직접 응용 가능.
 </div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1109/tgrs.2026.3753294" target=_blank>Deep Learning Inversion for Electrical Resistivity Tomography with Dynamic Hybrid Supervision</a></strong> [JNL]<br>
-  왜 주요: 동적 하이브리드 지도학습 기반 딥러닝 inversion을 지구물리 토모그래피에 적용한 또 다른 비광학 역문제 사례.
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.phro.2026.101126" target=_blank>Quantitative gamma-based evaluation of a novel four-dimensional computed tomography reconstruction algorithm</a></strong> [JNL]<br>
-  왜 주요: 4차원 CT의 stack artifact를 줄이는 재구성 알고리즘의 정량 평가로, 랩의 시계열 토모그래피 복원과 평가축이 겹침.
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.ijmultiphaseflow.2026.105989" target=_blank>Kinematically constrained physics-informed neural networks with Fourier features for falling film interface reconstruction</a></strong> [JNL]<br>
-  왜 주요: 운동학적 제약과 푸리에 특징을 결합한 PINN으로 유체 계면을 복원하는 물리 정보 기반 구조 설계 사례.
-</div>
 
 <h2>📈 벤치마크 SOTA 추이</h2>
-<p><small>오늘은 저널 abstract 중 명확한 정량적 SOTA 비교 수치(동일 벤치마크·동일 베이스라인 대비 구체적 개선폭)를 제공하는 논문이 없어 신규 벤치마크 결과를 기록하지 않습니다. Label-Free DHM 논문이 "교차검증 정확도 99.5%"라는 수치를 제시하지만, 표준 벤치마크/베이스라인 비교 형식이 아니라 자체 실험(3개 세포주 한정) 수치라 benchmarks.json에는 별도로 기록하지 않았습니다.</small></p>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>Result</th><th>Paper</th></tr></thead>
+<tbody>
+<tr><td>fastMRI/CC359/CMRxRecon2023/carotid (4 anatomies)</td><td>PSNR/SSIM vs PromptMR+</td><td>LoopMR, 파라미터 10.3M(PromptMR+ 92.9M 대비 1/9)로 전 가속배율에서 우위 (p&lt;0.01)</td><td><a href="https://arxiv.org/abs/2611.14947" target=_blank>LoopMR</a></td></tr>
+<tr><td>SKM-TEA (3D knee, half-res, 4x accel.)</td><td>PSNR vs SOTA 3D CNN</td><td>+2.2 dB (8x/16x에서도 우위 유지)</td><td><a href="https://arxiv.org/abs/2611.14979" target=_blank>KIR-NO</a></td></tr>
+<tr><td>Raysemble (23 held-out patients, 43 CT 유래 합성 X선)</td><td>Dice/HD95/ASSD</td><td>65.24% Dice, 9.09mm HD95, 3.32mm ASSD — 평가 대상 15개 방법 중 1위</td><td><a href="https://arxiv.org/abs/2611.16869" target=_blank>Raysemble</a></td></tr>
+</tbody>
+</table>
+<p><small>Label-Free DHM 논문이 "교차검증 정확도 99.5%"를 제시하지만 표준 벤치마크/베이스라인 비교 형식이 아니라 자체 실험(3개 세포주 한정) 수치라 위 표에는 포함하지 않았습니다.</small></p>
 
 <h2>🌟 오늘의 must-read</h2>
 
@@ -299,13 +372,21 @@ html[data-theme=light] body{background-color:#fff}
   <p><strong>주의:</strong> abstract 기준으로 어떤 세포 유형·자극 조건에서 검증됐는지와, 광시야 방식이 두 광자 방식 대비 정량 정확도를 얼마나 희생하는지는 본문 확인이 필요합니다. 또한 "저비용·접근성"이 랩이 보유한 구체적 현미경 플랫폼에서도 그대로 성립하는지는 직접 확인해야 합니다.</p>
 </div>
 
+<div class=dd>
+  <h3>[TIER A] Physics-based simulation unlocks scaling laws for generalizable MRI reconstruction (SIM)</h3>
+  <div class=tag>[스케일업] [인프라]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 arXiv 전체에서 가장 넓은 범위(7개 기관·5개 제조사·0.3~7T·150건 블라인드 방사선의 평가)로 검증된 논문이고, "임상 데이터가 부족하면 일반화가 안 된다"는 의료영상 재구성의 오래된 병목을 데이터 수집이 아니라 시뮬레이션 스케일업으로 우회했다는 점에서 랩의 모든 역문제 파이프라인에 적용 가능한 전략을 제시합니다.</p>
+  <p><strong>핵심:</strong> 딥러닝 기반 MRI 재구성은 학습에 쓰지 않은 스캐너·환자군·신체 부위·촬영 프로토콜에서는 성능이 크게 떨어지는 문제가 있었고, 이를 해결하려면 다양한 임상 데이터를 모아야 하는데 비용·개인정보 문제로 한계가 있었습니다. 이 논문은 실제 임상 데이터를 더 모으는 대신, 물리 법칙을 반영해 시뮬레이션으로 만든 학습 데이터와 모델 구조, 학습 방식을 "계산량을 늘리면 늘릴수록 좋아지도록" 함께 설계했습니다. 그 결과 14개 공개·자체 데이터셋(7개 기관, 5개 제조사, 자기장 세기 0.3~7테슬라, 10개 이상 신체 부위)에서 재학습 없이 바로 적용해도 기존 딥러닝 방식이 실패하는 지점(세부 해부 구조 손실, aliasing 잡음)에서 안정적으로 복원했습니다. attention map 분석 결과 모델이 특정 신체 부위에 맞춘 지름길이 아니라 물리적으로 설명 가능한 복원 원리를 배웠다는 것도 확인했습니다.</p>
+  <p><strong>주의:</strong> "물리 시뮬레이션으로 임상 데이터 부족을 우회한다"는 전략이 MRI만큼 물리 모델이 잘 정립되지 않은 다른 역문제(예: 산란이 심한 생체 조직 이미징)에도 그대로 통하는지는 확인되지 않았고, 시뮬레이터와 실제 스캐너 사이의 도메인 갭이 완전히 사라지는지는 150건 블라인드 평가만으로 확정하기 어렵습니다.</p>
+</div>
+
 <h2>⚠️ 리스크·한계 필터</h2>
 
 <div class=risk>
   <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
-  <p>[Baseline risk] 오늘로 이틀째 arXiv가 통째로 빠져 전체 정보량이 평소 daily의 5분의 1 수준이며, Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 오늘 실신호가 0편이라 랩 핵심 ROI 관점에서는 완전한 공백입니다.</p>
-  <p>[Claim risk] 저널(Crossref/OpenAlex) 414편 중 abstract가 제공된 논문은 전체 선택분(82건) 기준 약 50%뿐이라, 나머지 절반은 제목만으로 판단했고 오늘 클러스터 표 중 2·3·4번 클러스터는 전부 제목 기준입니다.</p>
-  <p>[Dataset risk] 이 리포트는 잠정본입니다. arXiv가 /pastweek에 11/12 또는 11/13 섹션으로 올라오면 Calendar Audit이 arXiv 포함 완전판으로 덮어쓸 예정이라, 오늘 보고된 클러스터 구성과 thesis는 최종본과 달라질 수 있습니다.</p>
+  <p>[Baseline risk] 오늘 ROI 배정 비율은 27.5%(322/1173)로, 저널 414편 중 82건(19.8%)이었던 어제보다는 올랐지만 평소 arXiv 포함 daily의 약 30% 수준에는 못 미칩니다. Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 오늘도 실신호가 사실상 0편이라 랩 핵심 ROI 관점에서는 여전히 약합니다.</p>
+  <p>[Claim risk] 저널(Crossref/OpenAlex) 421편 중 abstract가 제공된 논문은 일부(OpenAlex enrich 기준 34/421)뿐이라, 클러스터 1~4의 저널 대표 논문 중 abstract가 없는 항목은 제목 기준 추정입니다.</p>
+  <p>[Dataset risk] 2026-11-12(목)은 /pastweek 전체 윈도우에 해당 날짜 섹션이 없어(Wed 11/11 → Fri 11/13 직행) arXiv가 그날 listing을 발행하지 않은 것으로 최종 확정했습니다. journal-only로 남기지만, 이는 수집 실패가 아니라 원천 자체의 공백입니다.</p>
 </div>
 
 <div class=risk>
@@ -313,16 +394,18 @@ html[data-theme=light] body{background-color:#fff}
   <p>[Claim risk] FluoVolt 논문의 "생존율·형태 손상" 정도가 어느 염색 농도·노출 시간에서 임계값을 넘는지는 abstract만으로 확정할 수 없어 본문 확인이 필요합니다.</p>
   <p>[Dataset risk] Label-Free Morphometric Profiling of RCC의 99.5% 분류 정확도는 세 개 세포주에 한정된 결과라, 다른 세포주나 임상 샘플로 일반화되는지는 확인되지 않았습니다.</p>
   <p>[Claim risk] 전기저항 토모그래피 2편과 4DCT 재구성 논문 모두 Crossref 초록이 제공되지 않아 제목만으로 방법론을 추정했으며, 실제 성능 비교 수치는 확인되지 않았습니다.</p>
-  <p>[Baseline risk] 물리 정보 신경망 클러스터의 세 논문은 서로 다른 응용 분야(유체·광학 정렬·주조)에서 나와 같은 벤치마크로 비교된 적이 없어, "같은 패턴"이라는 판단이 abstract 부재 상태에서 제목 유사성에 의존하고 있다는 점을 감안해야 합니다.</p>
+  <p>[Baseline risk] LoopMR·KIR-NO·SIM 세 편은 전부 같은 저자 생태계(가속 MRI 재구성) 안에서 제안된 방법이 아니라 독립 연구이지만, 서로 다른 데이터셋·가속 배율 정의를 쓰고 있어 세 방법을 직접 한 표로 비교하려면 재현 실험이 필요합니다.</p>
+  <p>[Claim risk] Raysemble은 23명의 held-out 환자에서 CT로부터 합성한 X선으로 평가했는데, 실제 임상 X선 촬영 조건(노출·산란·자세 변이)에서도 같은 정확도가 유지되는지는 본문 확인이 필요합니다.</p>
 </div>
 
 <h2>🧊 Skim-only 후보</h2>
 <div class=skim>
   <ul>
-    <li>Meta-Optics/Diffractive 7편 전체 — 무선통신 빔포밍, 레이더 DOA 추정, 테라헤르츠 바이오센서, 카이랄리티·보텍스빔 기초 광학 등 랩 ROI(이미징 하드웨어)와 직접 관련이 없는 통신·센싱·기초 광학입니다.</li>
-    <li>Tomography/3D Imaging 임상 증례 약 32편 — 치과 CBCT, PET 전이암 증례, 관상동맥 CT, OCT 황반 증례 등 CT/MRI/PET/OCT를 "사용"하지만 영상 재구성 방법론에는 기여하지 않는 순수 임상 연구입니다.</li>
-    <li>Virtual Staining/Pathology 비병리 약 13편 — VR 관광 콘텐츠, 수자원 관리 시뮬레이션, 종교 교육 등 "virtual"/"staining" 단어만 일치하는 완전 무관 논문입니다.</li>
-    <li>Deep Learning Methods 15편 — 말라리아 현미경 LoRA 미세조정, 가상 피팅(virtual try-on), 심장 MRI 뷰 분류 등 전산 광학 이미징과 직접 관련이 없는 범용 의료영상·범용 ML 응용입니다.</li>
+    <li>Meta-Optics/Diffractive 9편 전체 — 무선통신 빔포밍, 레이더 DOA 추정, 테라헤르츠 바이오센서, 카이랄리티·보텍스빔 기초 광학 등 랩 ROI(이미징 하드웨어)와 직접 관련이 없는 통신·센싱·기초 광학입니다.</li>
+    <li>Tomography/3D Imaging 임상 증례 약 37편 — 치과 CBCT, PET 전이암 증례, 관상동맥 CT, OCT 황반 증례 등 CT/MRI/PET/OCT를 "사용"하지만 영상 재구성 방법론에는 기여하지 않는 순수 임상 연구입니다.</li>
+    <li>Virtual Staining/Pathology 비병리 약 40편 — VR 관광 콘텐츠, 수자원 관리 시뮬레이션, 종교 교육, LLM 에이전트 메모리 등 "virtual"/"staining" 단어만 일치하는 완전 무관 논문입니다.</li>
+    <li>Deep Learning Methods 180편 — CUDA 커널 최적화, LLM 에이전트, 연합학습, 강화학습 이론 등 전산 광학 이미징과 직접 관련이 없는 범용 ML 응용이 대부분입니다.</li>
+    <li>MatrixSplat(2611.15153), BrickFlow(2611.17321) — 3DGS GPU 렌더링 효율화와 LEGO 조립 추론은 흥미롭지만 오늘의 핵심 클러스터(모달리티 확장)와는 결이 달라 우선순위를 낮춥니다.</li>
   </ul>
 </div>
 
@@ -373,11 +456,45 @@ html[data-theme=light] body{background-color:#fff}
   문제: 금형 내부처럼 실측이 불가능한 위치의 온도를 알아야 함(abstract 미제공, 제목 기준 추정) / 방법: convolution과 ARX 모델을 결합한 가상 센서 / 의미: 직접 측정 불가능한 상태를 모델 기반으로 간접 추정하는 또 다른 사례 / 우선순위: Skim-only
 </div>
 
+<h3>3D Gaussian Splatting이 RGB 멀티뷰 전제를 넘어 열화상·X선·1인칭 상호작용까지 확장 (4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.15435" target=_blank>ThermalSplat: Generalizable Pose-Free Gaussian Splatting for Sparse-View Thermal 3D Reconstruction</a></strong> <span class=pill>CV</span><br>
+  문제: 열화상 영상은 질감이 거의 없고 재질별 방사율이 달라 기존 pose 추정기가 실패하고 3DGS가 무너짐 / 방법: pose 없이 작동하는 generalizable 3DGS로 희소 열화상 뷰에서 바로 복원 / 의미: 탐색·구조 점검처럼 RGB가 아닌 열화상이 주력인 응용에 3DGS를 열어줌 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.16869" target=_blank>Raysemble: Metric 3D Bone Reconstruction from a Single X-ray</a></strong> <span class=pill>CV</span><br>
+  문제: 단일 X선에서 3차원 뼈 형태와 위치를 복원하기 어려움 / 방법: 모양과 배치를 분리해 공유 디코더로 정규화된 뼈 모양을 예측하고 깊이·카메라 기하로 재배치 / 의미: 멀티뷰 없이 단일 투사만으로 정량적 3D 복원이 가능함을 보임(15개 방법 중 1위) / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.16012" target=_blank>Topology-Aware 4D Gaussian Splatting for Egocentric Videos</a></strong> <span class=pill>CV</span><br>
+  문제: 자르기·조립처럼 물체가 쪼개지거나 합쳐지는 1인칭 상호작용에서 기존 4DGS가 변형 가정이 깨져 심한 artifact를 냄 / 방법: 위상 변화(fission/fusion/open/close) 전용 벤치마크 TopoEgo와 Topo-4DGS 제안 / 의미: 로봇·AR이 다루는 "물체가 쪼개지는" 상호작용을 4DGS의 정식 평가 대상으로 만듦 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.16840" target=_blank>Kosmo-GFM: A Production-Ready Geometry Foundation Model</a></strong> <span class=pill>CV</span><br>
+  문제: 카메라 자세·깊이·대응점·동적 3D 점 예측이 각각 따로 풀리고 있음 / 방법: 이들을 한 모델(GFM)로 통합하고 재구성 결과로 다시 학습 데이터를 만드는 PoseEngine·KosmoWorld와 결합 / 의미: 모달리티별 특수 해법들이 범용 geometry foundation model로 수렴하는 방향을 제시 / 우선순위: Read
+</div>
+
+<h3>MRI 재구성 가속화가 블록 공유·해상도 비의존·물리 시뮬레이션 스케일업으로 동시 진행 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.14947" target=_blank>One Block Is Enough: LoopMR for Accelerated MRI Reconstruction</a></strong> <span class=pill>IV</span><br>
+  문제: 캐스케이드 unrolled 네트워크는 성능을 올리려 캐스케이드마다 새 블록을 쌓아 파라미터가 계속 커짐 / 방법: Restormer 블록 하나를 모든 iteration에서 공유(looped transformer) / 의미: 파라미터 9분의 1로 기존 SOTA(PromptMR+)를 능가, 미지의 가속배율·데이터셋에서도 우위 유지 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.14979" target=_blank>Coarse-to-Fine 3D MRI Reconstruction via Resolution-Agnostic Neural Operators (KIR-NO)</a></strong> <span class=pill>IV</span><br>
+  문제: 3D MRI는 GPU 메모리 제약으로 2D 슬라이스별 복원 후 쌓는 방식이 흔한데, 이는 슬라이스 간 구조를 무시함 / 방법: 연속 기저로 파라미터화한 컨볼루션 기반 해상도 비의존 neural operator를 k-space와 image space에 결합 / 의미: 저해상도로 싸게 학습해 고해상도에 제로샷 배포(coarse-to-fine)가 가능, SKM-TEA에서 SOTA 3D CNN 대비 +2.2dB / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.15758" target=_blank>Physics-based simulation unlocks scaling laws for generalizable MRI reconstruction (SIM)</a></strong> <span class=pill>IV · TIER A</span><br>
+  문제: 딥러닝 MRI 재구성이 미지의 스캐너·환자군·프로토콜에서 일반화가 안 되는데, 다양한 임상 데이터 수집은 비용·개인정보 문제로 제한됨 / 방법: 물리 시뮬레이션 데이터·모델·학습 방식을 계산량 확장에 맞춰 공동 설계(Scalable Inverse Model) / 의미: 14개 데이터셋·7개 기관·150건 블라인드 평가에서 재학습 없이 제로샷 일반화를 입증 / 우선순위: Must-read
+</div>
+
 <hr>
 
 <h2>🔗 참고 링크</h2>
 <ul>
   <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://arxiv.org/abs/2611.15758" target=_blank>Physics-based simulation unlocks scaling laws for generalizable MRI reconstruction</a></li>
+  <li><a href="https://arxiv.org/abs/2611.14947" target=_blank>One Block Is Enough: LoopMR for Accelerated MRI Reconstruction</a></li>
   <li><a href="https://doi.org/10.1117/1.jbo.31.11.115002" target=_blank>Protocol-optimized wide-field optical redox imaging for T cell activation</a></li>
   <li><a href="https://doi.org/10.1021/acsomega.6c06843" target=_blank>FluoVolt Staining Compromises Cell Viability and Morphology</a></li>
   <li><a href="2026-11-12.html">2026-11-12 Daily Briefing</a></li>
@@ -385,7 +502,7 @@ html[data-theme=light] body{background-color:#fff}
 </ul>
 
 <footer>
-  <p>📚 입력: 2026-11-13 저널 전용(journal-only) daily · arXiv 해당일 미발행(0건, 이틀 연속) · 저널 414편(Crossref/OpenAlex) · 전체 스캔 414건 · ROI 배정 82건 (19.8%) · cs.LG·cs.CV·cs.AI·eess.IV·eess.SP(arXiv 섹션 미발행)</p>
+  <p>📚 입력: 2026-11-13 daily (journal-only → arXiv+저널 업그레이드 완성본) · arXiv new+cross 935편(cs.LG 340·cs.CV 196·cs.AI 321·eess.IV 21·eess.SP 57) · 저널 421편(Crossref/OpenAlex) · 합산 스캔 1173건(dedup) · ROI 배정 322건 (27.5%)</p>
   <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
   <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
   <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
