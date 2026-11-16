@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Weekly Retrospective — 2026-W46</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.7;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+table{border-collapse:collapse;width:100%;margin:1rem 0}
+th,td{border:1px solid #ccc;padding:.5rem .8rem;vertical-align:top}
+th{background:#f0f0f8;font-size:.85rem}
+td{font-size:.88rem}
+blockquote{border-left:4px solid #2a2a6e;padding:.5rem 1rem;margin:1rem 0;background:#f8f8ff}
+.theme-card{border:1px solid #e0e0ff;border-radius:8px;padding:1rem;margin:.8rem 0;background:#f8f8ff}
+.theme-card h3{margin:0 0 .5rem;font-size:1rem;color:#2a2a6e}
+a{color:#2a2a6e}
+.home{display:inline-block;padding:.4rem .9rem;background:#f3f4f6;border:1px solid #d1d5db;border-radius:6px;font-size:.875rem;color:#374151;text-decoration:none;margin:.5rem 0}
+.home:hover{background:#e9ecef}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 6px;border-radius:8px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.hot-cold{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+.hot-box{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:.9rem 1.1rem}
+.cold-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:.9rem 1.1rem}
+.hot-box h3{margin:0 0 .5rem;color:#7f1d1d;font-size:.95rem}
+.cold-box h3{margin:0 0 .5rem;color:#1e3a8a;font-size:.95rem}
+.hot-box ul,.cold-box ul{margin:.4rem 0;padding-left:1.2rem;font-size:.88rem}
+.dd{background:#fefce8;border:1px solid #fde047;border-radius:10px;padding:1.1rem 1.3rem;margin:1rem 0}
+.dd h3{margin:0 0 .5rem;color:#713f12;font-size:1rem}
+.action-card{border:1px solid #d1fae5;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#f0fdf4}
+.action-card h3{margin:0 0 .4rem;font-size:.95rem;color:#14532d}
+.pred-card{border:1px solid #e0e7ff;border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;background:#eef2ff}
+.pred-card h3{margin:0 0 .4rem;font-size:.95rem;color:#3730a3}
+.pred-card .cond{font-size:.82rem;color:#4338ca;margin:.3rem 0}
+.meta{font-size:.85rem;color:#475569;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:4px;padding:.6rem 1rem;margin:.8rem 0}
+ul.plain{padding-left:1.3rem}
+ul.plain li{margin:.3rem 0;font-size:.9rem}
+.review-hit{color:#166534;font-weight:700}
+.review-partial{color:#92400e;font-weight:700}
+.review-miss{color:#7f1d1d;font-weight:700}
+.review-pending{color:#475569;font-weight:700}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Weekly Retrospective — 2026-11-16 (Week 46)</h1>
+<div class=meta>
+  <div>발행: 2026-11-16 (월) &nbsp;|&nbsp; 검토 기간: 2026-11-09 ~ 11-13 (Mon–Fri)</div>
+  <div>지난주 arXiv 신규/교차 약 3,572편 (cs.LG 1,297 · cs.CV 779 · cs.AI 1,268 · eess.IV 63 · eess.SP 165, new+cross) + 저널 약 2,021편(337+429+416+418+421) &nbsp;|&nbsp; 5일치 daily briefing 기반(월·화·금은 arXiv+저널 완전판 source_mode=new, 목요일은 arXiv 공백으로 source_mode=journal-only)</div>
+</div>
+
+<h2>🗓 Executive Summary</h2>
+<ul class=plain>
+  <li><strong>지난주는 역문제 복원이 "생성 모델을 그대로 믿기"에서 "물리 모델·최적화 구조를 다시 명시적으로 강제하기"로 넘어가는 흐름이 닷새 내내(목요일은 저널만) 반복된 한 주</strong>로 기억하면 됩니다. 의료영상(MRI·CT·PET)에서 시작한 이 패턴이 지진 영상·천체물리·전기 토모그래피·감마선 CT까지 번졌습니다.</li>
+  <li>같은 기간 병리·의료영상 foundation model 신뢰성 검증도 한 단계 더 날카로워졌습니다 — 월요일 "편향 지도·불확실성 보류"에서 수요일 "외부 일반화는 좋지만 작은 병변은 여전히 약하다"는 구체적 트레이드오프까지, 지난주(W45) 처음 나온 negative result보다 더 세분화됐습니다.</li>
+  <li>3D Gaussian Splatting은 화·수·금 사흘간 산발적으로 등장해 초음파·SLAM·저조도·반사·열화상·단일 X선까지 "깨끗한 멀티뷰" 전제를 계속 허물었고, 랩 핵심 ROI인 계산광학 하드웨어 코어(Fourier Ptychography·Lensless)는 목요일 arXiv 자체가 공백이었던 날까지 겹치며 4주 연속 실질 신호 2편을 넘기지 못했습니다.</li>
+</ul>
+
+<blockquote>
+<strong>Weekly Thesis.</strong> 지난주는 두 흐름이 거의 매일 번갈아 가장 큰 신호를 냈습니다. 하나는 역문제 복원이 "생성 모델을 통째로 믿는" 대신 물리 모델·최적화 구조를 다시 명시적으로 강제하는 쪽으로, 의료영상을 넘어 지진·천체물리·전기 토모그래피까지 번지며 닷새 내내 반복됐습니다. 다른 하나는 병리·의료영상 foundation model 신뢰성 검증이 월요일 "편향 지도·불확실성 보류"에서 수요일 "외부 코호트에서 작은 병변은 여전히 약하다"는 구체적 트레이드오프까지 한 단계씩 날카로워진 흐름입니다. 그 사이 3D Gaussian Splatting은 화·수·금 사흘간 산발적으로 등장해 초음파·SLAM·저조도·반사·열화상·단일 X선까지 "깨끗한 멀티뷰"라는 전제를 계속 허물었고, 계산광학 하드웨어 코어는 목요일 arXiv 공백까지 겹치며 닷새 내내 실질 신호 2편을 넘기지 못해 4주 연속 "구조적으로 얇은" 기준선을 다시 확인했습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>지난주 가장 꾸준히 쌓인 흐름은 역문제 복원(측정값에서 거꾸로 원래 신호를 되살리는 문제)이 "생성 모델을 통째로 믿기"를 떠나는 모습이었습니다. 월요일(11/9)에는 FANO(diffusion 기반 역문제 solver의 반경 이탈 실패 모드 교정)와 AdaptivePnP(라벨 없이 PnP 하이퍼파라미터 자동 추정)가 서로 다른 방법론 계열에서 같은 방향을 가리켰고, 화요일(11/10)에는 AgentCT(손상 유형별 솔버 라우팅)·STAIRS·P-IMLA가 "솔버가 난이도에 맞춰 스스로 전략을 바꾼다"는 결을 보탰습니다. 수요일(11/11)에는 AdjointFlow가 물리 기반 adjoint 전송을 생성적 전송 과정 자체에 심어 Plug-and-Play 대비 최대 10만배 가속을 지진 영상·천체물리·의료영상을 가로질러 보여줬고, 목요일에는 arXiv가 통째로 빠졌지만 저널 쪽 Stochastic Generative Plug-and-Play Priors와 양자 우위를 쓰는 수동 이미징 논문이 같은 결을 이어갔습니다. 금요일(11/13)에는 LoopMR(블록 공유로 파라미터 9분의 1), KIR-NO(해상도 비의존 신경 연산자), 전기저항 토모그래피 deep image prior, falling film 물리정보신경망까지 다섯 편이 몰려, 의료영상이라는 좁은 틀을 벗어나 역문제 복원 전반의 공통 설계 원칙으로 굳어지는 신호를 남겼습니다.</p>
+<p>같은 기간 병리·의료영상 foundation model 신뢰성 검증도 매일 조금씩 더 구체적으로 좁혀졌습니다. 월요일에는 Health-System-Wide Mapping(125만 WSI 인구통계 편향 지도)과 ProtoCouncil(인코더 불일치 시 판단 보류, 불일치 케이스 정확도 79%→27% 붕괴)이 "정확도"와 "이 예측을 믿을 수 있는가"를 분리했습니다. 화요일에는 SPECTRA(염색·스캐너 편향)·BAPLe++(백도어 전이)·Reliability-Aware Benchmarking(저라벨 환경)이 구체적 위협 모델로 신뢰성 검증을 세분화했고, 수요일에는 이 흐름이 "조건부 트레이드오프"로 한 단계 더 날카로워졌습니다 — Is a CNN-Transformer Ensemble Worth It은 단일 흉부 X-ray FM이 지연 7.8배·파라미터 10배 더 쓰는 5모델 앙상블보다 나을 수 있다는 "공짜 이득"을, Medical Image Segmentation FM Adaptation은 "외부 일반화는 좋지만 작은 병변은 약하다"는 트레이드오프와 공개 폴립 테스트셋 중복이라는 숨은 함정을 동시에 드러냈습니다.</p>
+<p>다음 주 전망: 첫째, 역문제 복원의 "생성 모델 불신 + 물리 강제" 패턴이 닷새 내내 반복된 것이 일시적 집중이었는지, 아니면 상시 기준선으로 자리잡는지가 가장 먼저 확인할 대상입니다. 둘째, 의료영상 신뢰성 검증이 "조건부 트레이드오프"를 더 많은 모달리티·태스크로 넓혀가는지 지켜봐야 합니다. 셋째, 계산광학 하드웨어 코어가 4주 연속(목요일은 arXiv 공백까지 겹쳐) 거의 돌아오지 않았다는 점에서, "구조적으로 얇은 기준선"이라는 판단이 5주차에도 유지되는지가 랩 ROI 관점에서 직접적인 확인 대상입니다.</p>
+
+<h2>⚖️ Hot vs Cold</h2>
+<div class=hot-cold>
+  <div class=hot-box>
+    <h3>⬆ 가속 클러스터</h3>
+    <ul>
+      <li><strong>역문제 복원이 "생성 모델을 통째로 믿기"에서 "물리 모델·최적화 구조를 명시적으로 강제하기"로 — 닷새 내내 반복</strong><br>월~금 모두 최소 2편 이상씩 같은 구조가 등장했고, 의료영상을 넘어 지진·천체물리·전기 토모그래피로도 번졌습니다.</li>
+      <li><strong>병리·의료영상 foundation model 신뢰성 검증이 "편향 지도·불확실성 보류"에서 "외부 코호트 트레이드오프"로</strong><br>월·화·수 사흘, 서로 다른 위협 모델(편향, 백도어, 저라벨, 외부 일반화 vs 작은 병변)이 반복됐습니다.</li>
+      <li><strong>3D Gaussian Splatting이 "깨끗한 멀티뷰" 전제를 계속 허물며 초음파·SLAM·저조도·반사·열화상·단일 X선으로 번짐</strong><br>화·수·금 사흘, 매번 다른 각도(센서·조명·카메라모델·모달리티)에서 같은 결론이 반복됐습니다.</li>
+    </ul>
+  </div>
+  <div class=cold-box>
+    <h3>⬇ 감속 클러스터</h3>
+    <ul>
+      <li><strong>계산광학 하드웨어 코어(Fourier Ptychography·Lensless)가 4주 연속 "구조적으로 얇음" — 목요일은 arXiv 자체가 공백</strong><br>닷새 모두 합산 2편 이하였고, 목요일은 추적 5개 카테고리 전체가 /new 공지를 내지 않았습니다.</li>
+      <li><strong>Meta-Optics/Diffractive 버킷이 거의 매일 통신·레이더·센서 응용으로 쏠리고 이미징 신호는 드묾</strong><br>닷새 배정 54편 중 실질 이미징 신호는 3편 안팎(근접장 역설계, AR 도파관, 스냅샷 분광 센서)뿐이었습니다.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>🧩 주간 클러스터 표</h2>
+<table>
+<thead><tr>
+  <th>Cluster</th>
+  <th>대표 논문</th>
+  <th>왜 중요?</th>
+  <th>Confidence</th>
+  <th>Lab action</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><strong>역문제 복원이 "생성 모델을 통째로 믿기"에서 물리 모델·최적화 구조를 명시적으로 강제하기로 넓어짐 <span class=tag>HOT</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.08923">FANO</a><br>
+    <a href="https://arxiv.org/abs/2611.13389">AdjointFlow</a><br>
+    <a href="https://arxiv.org/abs/2611.14947">LoopMR</a><br>
+    <a href="https://arxiv.org/abs/2611.14979">KIR-NO</a>
+  </td>
+  <td>월요일 FANO와 AdaptivePnP는 서로 다른 방법론 계열(diffusion / 고전 PnP)에서 똑같이 "사람이 손으로 맞추던 값을 알고리즘이 스스로 추정"하는 방향을 취했습니다. 화요일 AgentCT·STAIRS·P-IMLA는 "솔버가 손상 유형이나 난이도에 맞춰 스스로 전략을 바꾼다"는 결을 보탰고, 수요일 AdjointFlow와 Plug-and-Play ADMM은 의료영상을 넘어 지진 영상·천체물리까지 "생성 모델을 통째로 믿지 않고 물리 모델·최적화 구조로 다시 일관성을 강제한다"는 방향을 분명히 했습니다. 목요일에는 arXiv가 빠졌지만 저널 쪽(Stochastic Generative PnP Priors, 양자 우위 수동 이미징)이 같은 결을 이었고, 금요일 LoopMR·KIR-NO·전기저항 토모그래피 deep image prior·falling film 물리정보신경망·SIM까지 닷새 내내 반복됐습니다. 즉 "학습된 이미지 사전을 어떻게 신뢰할 것인가"라는 질문이 의료영상이라는 좁은 틀을 벗어나 역문제 복원 전반의 공통 설계 원칙으로 굳어지고 있다는 뜻입니다.</td>
+  <td>High<br><small>월~금 닷새, 서로 다른 모달리티(MRI·CT·PET·지진·천체물리·전기 토모그래피)에서 같은 설계 원칙이 반복, 가속 배율·파라미터 효율 등 구체 수치 다수 동반</small></td>
+  <td>AdjointFlow의 물리 기반 adjoint 초기화와 LoopMR의 블록 공유 구조를 랩의 위상 복원·단층촬영 재구성 파이프라인에 함께 이식해 Plug-and-Play 대비 추론 속도와 파라미터 수 대비 복원 오차를 1주 내 비교한다</td>
+</tr>
+<tr>
+  <td><strong>병리·의료영상 foundation model 신뢰성 검증이 "편향 지도·불확실성 보류"에서 "외부 코호트 트레이드오프"로 날카로워짐 <span class=tag>HOT</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.09851">Health-System-Wide Mapping</a><br>
+    <a href="https://arxiv.org/abs/2611.09058">ProtoCouncil</a><br>
+    <a href="https://arxiv.org/abs/2611.13014">CNN-Transformer Ensemble</a><br>
+    <a href="https://arxiv.org/abs/2611.14519">Medical Seg FM Adaptation</a>
+  </td>
+  <td>월요일 Health-System-Wide Mapping은 병리 foundation model 표현이 성별·나이대·인종 같은 지름길 정보를 담고 있는지 125만 장 WSI로 지도화했고, ProtoCouncil은 세 인코더가 불일치하는 외부 코호트 사례에서 정확도가 79%에서 27%까지 떨어진다는 것을 보여 "정확도"와 "이 예측을 믿을 수 있는가"를 분리했습니다. 화요일 SPECTRA·BAPLe++·Reliability-Aware Benchmarking은 염색·스캐너 편차, 백도어 전이, 저라벨 환경이라는 구체적 위협 모델로 세분화했습니다. 수요일 Is a CNN-Transformer Ensemble Worth It은 단일 FM이 앙상블보다 나을 수 있다는 "공짜 이득"을, Medical Image Segmentation FM Adaptation은 "외부 일반화는 좋지만 작은 병변은 약하다"는 트레이드오프와 공개 폴립 테스트셋 중복을 동시에 드러냈습니다. 나흘을 합치면 지난주(W45) "처음 나온 명시적 실패 사례"에서 이번 주는 "어떤 조건에서 구체적으로 얼마나 약한가"를 수치로 파고드는 단계로 넘어갔다는 뜻입니다.</td>
+  <td>High<br><small>월·화·수 사흘, 서로 다른 위협 모델(편향·백도어·저라벨·외부 일반화 트레이드오프)에서 같은 방향으로 수렴, 정확도 낙폭·지연 배수 등 구체 수치 동반</small></td>
+  <td>ProtoCouncil의 인코더 불일치 기반 선택적 예측을 랩 다중 foundation model 앙상블에 적용해 외부 코호트 불일치 케이스 비율과 정확도 낙폭을 측정하고, Medical Seg FM Adaptation의 작은 병변 취약점 패턴이 랩 데이터에서도 재현되는지 1주 내 확인한다</td>
+</tr>
+<tr>
+  <td><strong>3D Gaussian Splatting이 "깨끗한 멀티뷰" 전제를 계속 허물며 초음파·SLAM·저조도·반사·열화상·단일 X선으로 번짐 <span class=tag>HOT</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.11951">UltraVoxelGS</a><br>
+    <a href="https://arxiv.org/abs/2611.13453">Camera3R</a><br>
+    <a href="https://arxiv.org/abs/2611.13280">RetinexGS</a><br>
+    <a href="https://arxiv.org/abs/2611.15435">ThermalSplat</a>
+  </td>
+  <td>화요일 UltraVoxelGS·DPGS-SLAM·FastGRT·ClearForm·PLS-GS 다섯 편은 3DGS를 초음파·동적 SLAM·레이 트레이싱·투명체·라이다라는 새 센서/문제로 확장했고, 수요일 Camera3R·FastWild-GS·RetinexGS·RF3DGS 네 편은 "여러 대의 깨끗한 카메라로 밝게 찍는다"는 전제 자체를 이종 카메라·통제 안 된 촬영·저조도·반사로 하나씩 깼습니다. 목요일은 arXiv 공백으로 신호가 없었지만, 금요일 ThermalSplat과 Topo-4DGS(위상 변화가 있는 1인칭 상호작용)가 다시 새 모달리티로 번져, 사흘에 걸쳐 서로 다른 연구팀이 겹치지 않는 각도에서 "더 예쁘게"가 아니라 "더 버티게"라는 같은 결론에 반복적으로 도달했습니다.</td>
+  <td>High<br><small>화·수·금 사흘, 서로 다른 네 각도(센서 종류·조명/반사·카메라 모델·모달리티)에서 구체적 속도·화질 수치 동반, 다만 목요일은 공백</small></td>
+  <td>Camera3R의 LoRA 기반 이종 카메라 적응을 랩의 비표준 렌즈(어안·현미경 대물렌즈) 영상에 적용 가능한지 검토하고, UltraVoxelGS의 voxel-to-Gaussian 구조를 랩의 단면 스캔 영상(OCT·내시경)에 이식해 추론 속도·PSNR/SSIM을 1주 내 비교한다</td>
+</tr>
+<tr>
+  <td><strong>계산병리가 염색 분류를 넘어 H&E 한 장에서 유전자 발현까지 복원하려 함 <span class=tag>WARM</span></strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.09117">PathXAI</a><br>
+    <a href="https://arxiv.org/abs/2611.13649">Predicting Single-Cell Spatial Gene Expression</a><br>
+    <a href="https://arxiv.org/abs/2611.14129">Continuous 3D Spatial Transcriptomics</a>
+  </td>
+  <td>월요일 PathXAI는 H&E 영상과 도메인 지식을 결합해 진단 추론뿐 아니라 근거(조직 구성)를 추적 가능하게 만드는 쪽으로 계산병리를 넓혔고, 수요일 Predicting Single-Cell Spatial Gene Expression과 Continuous 3D Spatial Transcriptomics Reconstruction은 독립적으로 "값싼 H&E 영상 한 장에서 공간 유전자 발현까지 뽑아낼 수 있는가"를 묻기 시작했습니다. 계산병리의 기여 범위가 염색·형태 분류에서 분자 수준 정보 복원으로 확장되고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>월·수 이틀, zero-shot 대비 2.67배 개선 등 구체 수치는 있으나 검증 범위는 본문 확인 필요</small></td>
+  <td>Predicting Single-Cell Spatial Gene Expression의 도메인 적응 전략을 랩 보유 H&E/가상 염색 데이터 중 공간 전사체 짝 데이터가 있는 서브셋에 적용해 유전자별 상관관계 개선폭을 1주 내 재현 측정한다</td>
+</tr>
+<tr>
+  <td><strong>라이브셀 광학 측정이 염색을 대체하거나 염색의 부작용을 직접 경고하는 쪽으로 갈라짐 <span class=tag>WARM</span></strong></td>
+  <td>
+    <a href="https://doi.org/10.1117/1.jbo.31.11.115002">Optical redox imaging</a><br>
+    <a href="https://doi.org/10.1021/acsomega.6c06843">FluoVolt</a><br>
+    <a href="https://doi.org/10.1002/jbio.70379">Label-Free DHM</a>
+  </td>
+  <td>목~금 이틀에 걸쳐 저널 쪽에서 "염색은 당연히 안전하고 편리하다"는 가정이 양쪽에서 흔들렸습니다. Optical redox imaging은 염색 없이 세포 자체 형광만으로 대사 상태를 잡아냈고, Label-Free DHM은 형태 특징만으로 신장암 세포를 99.5% 정확도로 분류했습니다. 반대로 FluoVolt 논문은 흔히 쓰는 전압 감응 염색약이 실제로는 세포 생존율과 형태를 손상시킨다는 경고성 결과를 수치로 보였습니다. 염색 없는 광학 측정이 대안으로 쓰일 범위가 넓어지는 동시에, 기존 염색 프로토콜의 부작용도 같이 드러나는 중입니다.</td>
+  <td>Medium<br><small>목·금 이틀, 서로 다른 저널 세 편이 독립적으로 "염색 대체 vs 부작용"을 다루지만 외부 데이터셋 교차 검증은 아직 부족</small></td>
+  <td>FluoVolt의 염색 농도-생존율 손상 곡선을 랩 형광 염색 프로토콜(해당하는 경우)에 대입해 1주 내 재현 측정하고 염색 없는 대안(광산란·redox)으로 교체 가능한지 점검한다</td>
+</tr>
+</tbody>
+</table>
+
+<h2>📐 arXiv vs 저널 키워드</h2>
+<table>
+<thead><tr><th>채널</th><th>지난주 주요 키워드</th></tr></thead>
+<tbody>
+<tr><td><strong>공통</strong></td><td>physics-constrained reconstruction — arXiv의 의료영상 역문제(FANO·AdjointFlow·LoopMR)와 저널의 비광학 역문제(전기저항 토모그래피, 감마선 CT)가 "학습된 prior를 통째로 믿지 않고 물리/구조를 강제한다"는 같은 설계 원칙을 서로 다른 분야에서 반복합니다.</td></tr>
+<tr><td><strong>arXiv 전용</strong></td><td>3DGS 모달리티 확장(UltraVoxelGS, Camera3R, RetinexGS, ThermalSplat), 병리·의료영상 FM 신뢰성(ProtoCouncil, SPECTRA, BAPLe++, Medical Seg FM Adaptation), H&E 기반 공간 유전자 발현 복원(Predicting Single-Cell Spatial Gene Expression)</td></tr>
+<tr><td><strong>저널 전용</strong></td><td>라이브셀 염색 대체/부작용(optical redox imaging, FluoVolt, Label-Free DHM), AR 안경 도파관 메타표면(Nature), 산업용 스냅샷 중적외선 분광 센서, 양자 우위를 쓰는 수동 이미징, 구조화광·코딩 조리개 자기보정 3D(ptychography Z-calibration + lensless holography 자가보정)</td></tr>
+<tr><td><strong>같은 단어, 다른 맥락</strong></td><td>"reconstruction" — 3DGS scene reconstruction과 MRI/CT/전기저항 토모그래피의 물리 신호 재구성은 같은 단어라도 완전히 다른 문제입니다. "phase" — Phase Imaging/Holography 버킷에는 QCD phase diagram, 뮤온 g-2 같은 입자물리 논문이 매주 반복적으로 오탐으로 걸립니다. "metasurface" — 이미징용 메타표면(AR 도파관, 분광 센서)과 통신·레이더용 메타표면(안테나, DOA 추정)은 같은 단어지만 랩 ROI 관점에서는 완전히 다른 신호입니다.</td></tr>
+</tbody>
+</table>
+
+<h2>🔥 주간 Top 5</h2>
+<ol>
+<li>
+  <strong><a href="https://arxiv.org/abs/2611.09058">ProtoCouncil: Multi-Encoder Anatomical Prototypes for Prostate Cancer Detection in Micro-Ultrasound</a></strong>
+  <span class=tag>[방법전환]</span><br>
+  세 foundation encoder의 불일치를 신뢰도 신호로 바꿔, 외부 코호트에서 csPCa AUROC 82.9%(+4.3점)를 기록하면서도 인코더들이 서로 반대로 판단하는 케이스를 걸러내 정확도 79%→27% 붕괴를 미리 감지합니다. 이번 주 의료영상 신뢰성 검증 클러스터에서 가장 날카로운 수치를 가진 사례입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2611.13389">AdjointFlow: Accelerating Scientific Inverse Problems with Physics-Based Transport</a></strong>
+  <span class=tag>[방법전환]</span><br>
+  알려진 물리 모델을 생성적 전송 과정 자체에 심어 Plug-and-Play 대비 최대 5자릿수(약 10만배) 추론 가속을 달성했고, 지진 영상·천체물리·의료영상을 가로지르며 통합니다. 이번 주를 관통한 "역문제 복원이 물리를 다시 강제한다"는 흐름을 가장 극적인 수치로 보여주는 사례입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2611.13453">Camera3R: Feed-Forward 3D Reconstruction from Heterogeneous Camera Models</a></strong>
+  <span class=tag>[방법전환]</span><br>
+  투시 카메라로만 학습된 feed-forward 3D 복원 모델을 어안렌즈·360도 카메라처럼 전혀 다른 렌즈 모델에도 0.5% 추가 파라미터와 1일 미만 학습으로 적응시키면서 기존 투시 카메라 성능은 그대로 유지했습니다. 3DGS가 "깨끗한 멀티뷰" 전제를 깨는 이번 주 흐름에서 가장 실용적인 적응 비용을 보여준 사례입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2611.14519">Medical Image Segmentation: Foundation Model Adaptation versus Task-Specific Training</a></strong>
+  <span class=tag>[위험보류]</span><br>
+  foundation model 적응이 외부 일반화에서는 유리하지만 작은 병변 분할에서는 여전히 task-specific 학습보다 약하다는 조건부 트레이드오프를 수치로 보였고, 덤으로 널리 쓰이는 폴립 테스트셋이 다른 벤치마크와 이미지가 중복된다는 사실까지 발견했습니다. "FM 도입이 공짜 이득이 아니다"라는 이번 주 클러스터에서 가장 경고성이 짙은 사례입니다.
+</li>
+<li>
+  <strong><a href="https://arxiv.org/abs/2611.14947">One Block Is Enough: LoopMR for Accelerated MRI Reconstruction</a></strong>
+  <span class=tag>[인프라]</span><br>
+  단 하나의 블록을 반복 공유하는 구조로 10.3M 파라미터만 쓰고도 92.9M 파라미터인 PromptMR+를 네 가지 해부학적 부위·모든 가속 배율에서 능가했습니다(p&lt;0.01). 금요일 "물리/구조 강제" 클러스터 중 파라미터 효율성 수치가 가장 뚜렷한 사례입니다.
+</li>
+</ol>
+
+<h2>🌟 Weekly Deep-Dive — 지난주의 대표 논문</h2>
+<div class=dd>
+  <h3>AdjointFlow: Accelerating Scientific Inverse Problems with Physics-Based Transport (2611.13389)</h3>
+  <p><em>왜 주간 대표인가</em>: 지난주를 관통한 가장 큰 흐름은 역문제 복원이 "생성 모델을 그대로 믿기"에서 "물리 모델·최적화 구조를 명시적으로 강제하기"로 넘어간 것이었는데, 이 논문은 그 전환을 가장 극적인 수치와 가장 넓은 적용 범위로 보여줍니다. 수요일 daily must-read로도 다뤘지만, 주간 대표로는 "왜 이 논문이 닷새 내내 이어진 흐름을 가장 포괄적으로 보여주는지"를 기준으로 다시 골랐습니다.</p>
+
+  <p><strong>무엇을 했나</strong>: 생성적 전송(flow matching) 기반 역문제 solver는 보통 무작위 잡음에서 출발해 점진적으로 답에 다가갑니다. 이 논문은 알려진 물리 모델(forward model)을 전송 과정 자체에 adjoint(수반) 방식으로 심어, solver가 물리적으로 말이 되는 경로를 따라가도록 만들었습니다. 그 결과 지진 영상(inverse scattering), 천체물리(black hole imaging), 의료영상 같은 서로 다른 세 분야에서 Plug-and-Play 대비 최대 5자릿수(약 10만배) 추론 가속을 달성했습니다.</p>
+
+  <p><strong>왜 새로운가</strong>: 예전에는 역문제 solver가 "생성 모델이 좋은 이미지를 만드는가"로 경쟁했습니다. 이 논문은 그 경쟁 자체가 가린 질문 — "물리적으로 말이 되는 경로를 알고 있다면, 왜 처음부터 그 경로를 활용하지 않는가"를 구조적으로 물었습니다. 이건 같은 주 월요일 FANO가 "diffusion solver의 숨은 실패 모드(반경 이탈)를 어떻게 교정할 것인가"를 물은 것, 금요일 LoopMR이 "더 적은 파라미터로 같은 복원을 해낼 수 있는가"를 물은 것과 같은 결의 질문입니다 — 셋 다 "생성 모델을 맹신하는 대신 알고 있는 물리/구조를 적극적으로 활용한다"는 방향을 공유합니다.</p>
+
+  <p><strong>랩 관련성</strong>: 랩이 보유한 위상 복원·단층촬영 재구성 파이프라인의 diffusion/flow 기반 버전에도 같은 adjoint 초기화를 넣어볼 수 있습니다. 특히 forward model(광학계의 물리적 촬영 과정)을 이미 알고 있는 랩의 역문제들은 이 논문의 설계를 거의 그대로 가져다 쓸 수 있는 조건에 가깝습니다.</p>
+
+  <p><strong>주의</strong>: "최대 5자릿수 가속"은 PnP의 물리 모델 호출 비용이 큰 세 실험에 한정된 수치이며, 가벼운 forward model에서는 가속 폭이 작을 수 있습니다 [Claim risk]. 다음 주 예측 중 하나로, 이런 "물리/구조를 명시적으로 강제하는" 접근이 역문제 복원의 상시 기준선으로 자리잡는지, 아니면 이번 주만의 집중이었는지를 지켜보고 있습니다.</p>
+</div>
+
+<h2>🧭 주간 테마 3개</h2>
+<div class=theme-card>
+  <h3>1. 역문제 복원이 "생성 모델을 믿기"에서 "물리/구조를 명시적으로 강제하기"로 — 거의 매일, 분야를 가리지 않고</h3>
+  <p>월~금 닷새 내내(목요일은 저널만) 의료영상(MRI·CT·PET)뿐 아니라 지진·천체물리·전기 토모그래피·감마선 CT에서도 같은 설계 원칙(학습된 prior를 통째로 믿지 않고 물리 모델·최적화 구조로 다시 묶는다)이 반복됐습니다. 다음 주에는 이 패턴이 역문제 복원의 "상시 기준선"으로 자리잡는지, 아니면 이번 주만의 우연한 집중이었는지가 관전 포인트입니다.</p>
+  <p><em>Confidence: High — 닷새 연속, 의료영상을 넘어 지진·천체물리·전기 토모그래피까지 서로 다른 분야에서 같은 원칙이 반복, 가속 배율·파라미터 효율 구체 수치 다수 동반</em></p>
+</div>
+<div class=theme-card>
+  <h3>2. 의료영상 foundation model 신뢰성 검증이 "명시적 실패"에서 "조건부 트레이드오프"로 — 한 단계 더 세분화</h3>
+  <p>지난주(W45) 처음 나온 "외부 병원에서 역효과"라는 명시적 negative result에서, 이번 주는 "FM 도입이 공짜 이득인 경우와 트레이드오프가 있는 경우"를 수치로 구분하는 단계로 넘어갔습니다(단일 FM이 앙상블보다 나은 경우 vs 외부 일반화는 좋지만 작은 병변은 약한 경우). 다음 주에는 이런 조건부 평가가 더 많은 모달리티·태스크로 퍼지는지 지켜봅니다.</p>
+  <p><em>Confidence: High — 월·화·수 사흘, 서로 다른 위협 모델(편향·백도어·저라벨·외부 일반화 트레이드오프)이 구체 수치를 동반하며 같은 방향을 가리킴</em></p>
+</div>
+<div class=theme-card>
+  <h3>3. 계산광학 하드웨어 코어, 4주 연속 구조적으로 얇음 — 이번 주는 arXiv 공백일까지 겹침</h3>
+  <p>W43부터 이어진 "계산광학 코어가 구조적으로 얇다"는 판단이 W46에도 유지됐고(닷새 모두 FP+Lensless 실질 신호 2편 이하), 목요일에는 추적 5개 카테고리 전체가 arXiv listing 자체를 내지 않아 저널만으로 발행했습니다. 이는 수집 실패가 아니라 원천 자체의 공백으로 확인했지만, 그만큼 랩 핵심 ROI의 정보량이 더 줄었다는 뜻이기도 합니다. 다음 주에는 arXiv 공백이 반복되는지와, FP+Lensless 실질 신호가 다시 돌아오는지를 함께 지켜봅니다.</p>
+  <p><em>Confidence: High — 4주치(W43~W46) raw count를 확보했고 이번 주는 arXiv 공백일까지 겹쳐 판단이 더 굳어짐</em></p>
+</div>
+
+<h2>🪞 지난 예측 채점 (W45 → W46)</h2>
+<div class=pred-card>
+  <h3><span class=review-hit>✅</span> 3DGS 평가 축 이동이 "제품화 엔지니어링"이라는 구체적 하위 주제로 좁혀지며 다음 주에도 지속된다</h3>
+  <p>적중 조건(5일 중 3일 이상, 제품화·강건성·품질평가 클러스터 1개 이상)을 화요일(초음파·SLAM·라이다로 센서 확장 + DPGS-SLAM provenance-aware 설계), 수요일(이종 카메라·저조도·반사라는 현실 조건 강건성), 금요일(열화상·위상 변화 1인칭이라는 모달리티 강건성) 세 날에서 충족했습니다. 다만 예측이 좁혀 말한 "결함 진단·품질 벤치마크로 수렴"하는 구체적 하위축보다는, 더 넓은 "깨끗한 입력 가정을 계속 깨는" 로버스트니스 축으로 지속됐다는 점에서 완전히 좁은 의미의 적중은 아니지만, 명시된 적중 조건 자체는 충족합니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-hit>✅</span> 의료 영상 신뢰성 검증이 "외부 기관 검증 실패 사례"를 한 건 이상 더 추가한다</h3>
+  <p>적중 조건(5일 중 2일 이상, 외부 기관/분포 변화 검증에서 negative result 또는 경고신호)을 월요일 ProtoCouncil(외부 코호트 인코더 불일치 시 정확도 79%→27% 붕괴)과 수요일 Medical Image Segmentation FM Adaptation(외부 일반화는 좋지만 작은 병변은 약함 + 공개 폴립 테스트셋 중복 발견)에서 충족했습니다. 두 사례 모두 "탐지 방법 제안"이라는 긍정적 프레이밍을 겸하고 있어 순수 negative result로만 보기는 어렵지만, 외부 코호트에서 구체적 약점이 드러났다는 적중 조건의 핵심은 두 날 모두 충족합니다.</p>
+</div>
+<div class=pred-card>
+  <h3><span class=review-hit>✅</span> 계산광학 하드웨어 코어가 3주 연속 "구조적으로 얇음" 패턴을 유지한다</h3>
+  <p>실질 신호 기준 월 0+0, 화 0+0, 수 1+1(둘 다 저널), 목 1+1(저널, arXiv 자체가 공백), 금 0+0으로 닷새 모두 FP+Lensless 합산이 2편 이하였습니다. 적중 조건(4일 이상에서 2편 이하)을 5일 모두 충족했고, 빗나감 조건(단독 3편 이상)은 어느 날도 해당하지 않아 명확한 적중입니다. W43부터 이어진 패턴이 이번 주까지 4주 연속(W43~W46) 반복돼 "구조적으로 얇은 기준선" 판단이 더 굳어졌습니다.</p>
+</div>
+
+<h2>🔮 다음주 예측</h2>
+<div class=pred-card>
+  <h3>1. 역문제 복원의 "생성 모델 불신 + 물리 강제" 패턴이 다음 주에도 4일 이상 지속된다</h3>
+  <p>지난주는 월~금 닷새 모두(목요일은 저널만) 역문제 복원이 생성 prior를 통째로 믿지 않고 물리 모델·최적화 구조를 명시적으로 되돌려 넣는 같은 구조를 반복했습니다. 의료영상을 넘어 지진·천체물리·전기 토모그래피까지 번진 만큼, 이 패턴이 다음 주에도 지속되는 "기준선"으로 자리잡는지 확인합니다.</p>
+  <div class=cond>✅ 적중 조건: 다음 주 5영업일 중 4일 이상에서 역문제 복원 관련 "물리 모델/최적화 구조 강제" 클러스터(Confidence Medium 이상)가 1개 이상 등장한다</div>
+  <div class=cond>✗ 빗나감 조건: 다음 주 5일 중 2일 이하에서만 관련 클러스터가 등장하고 나머지 날은 순수 생성 모델 기반 복원이 주도한다</div>
+</div>
+<div class=pred-card>
+  <h3>2. 계산광학 하드웨어 코어가 5주 연속 "구조적으로 얇음" 패턴을 유지한다</h3>
+  <p>W43부터 이어진 패턴이 지난주(W46)에도 그대로 유지됐습니다(월 0, 화 0, 수 1, 목 1, 금 0 — 닷새 모두 FP+Lensless 실질 신호 합산 2편 이하, 목요일은 arXiv 자체가 공백). 5주 연속이면 "구조적으로 얇은 기준선"이라는 판단이 사실상 랩 ROI의 상시 전제로 굳어진 것으로 봅니다.</p>
+  <div class=cond>✅ 적중 조건: 다음 주 5일 중 4일 이상에서 Fourier Ptychography+Lensless 실질 신호 합산이 2편 이하에 머문다</div>
+  <div class=cond>✗ 빗나감 조건: 다음 주 5일 중 2일 이상에서 Fourier Ptychography 또는 Lensless 중 하나가 실질 신호 기준으로 단독 3편 이상을 기록한다</div>
+</div>
+<div class=pred-card>
+  <h3>3. 의료영상 foundation model 신뢰성 검증에서 "외부 코호트 트레이드오프" 사례가 한 건 이상 더 추가된다</h3>
+  <p>지난주 수요일 Medical Image Segmentation FM Adaptation은 "외부 일반화는 좋지만 작은 병변은 약하다"는 구체적 트레이드오프를 보고했습니다. 다음 주에도 이런 "배포 가치가 조건부로 갈리는" 유형의 논문이 다른 모달리티에서 나오는지 확인합니다.</p>
+  <div class=cond>✅ 적중 조건: 다음 주 5일 중 2일 이상에서 의료 영상 AI의 외부 코호트/분포 변화 검증에서 negative result 또는 조건부 트레이드오프(경고신호 또는 위험보류 태그)가 1편 이상 등장한다</div>
+  <div class=cond>✗ 빗나감 조건: 다음 주 5일 동안 외부 검증 negative result·트레이드오프가 전혀 나오지 않거나, 모든 의료 영상 신뢰성 논문이 긍정적 결과만 보고한다</div>
+</div>
+
+<h2>🧪 다음 주 1주 실행안</h2>
+<div class=action-card>
+  <h3>1. AdjointFlow + LoopMR의 물리/구조 강제 전략을 랩 역문제 솔버에 동시 적용</h3>
+  <p>AdjointFlow(2611.13389)의 물리 기반 adjoint 초기화를 랩이 쓰는 위상 복원 또는 단층촬영 재구성 중 물리 forward model이 이미 구현된 과제 하나에 적용해 Plug-and-Play 대비 추론 속도(배속)·복원 오차(RMSE/SSIM)를 측정하고, LoopMR(2611.14947)의 블록 공유 구조를 랩의 반복형 역문제 복원 네트워크에 이식해 파라미터 수 대비 성능을 비교합니다.</p>
+  <p><em>기대 산출물: 물리 기반 초기화 전/후 추론 속도·복원 오차 비교표, 블록 공유 전/후 파라미터 수 대비 성능 비교표</em></p>
+</div>
+<div class=action-card>
+  <h3>2. ProtoCouncil 선택적 예측 + Medical Seg FM Adaptation 트레이드오프를 랩 FM 파이프라인에 적용</h3>
+  <p>ProtoCouncil(2611.09058)의 인코더 불일치 기반 선택적 예측을 랩이 쓰는 다중 foundation model 앙상블에 적용해 외부 코호트에서 불일치 케이스 비율과 정확도 낙폭을 측정하고, Medical Image Segmentation FM Adaptation(2611.14519)이 보고한 "외부 일반화는 좋지만 작은 병변은 약함" 패턴이 랩 데이터(병변 크기별)에서도 재현되는지 확인합니다.</p>
+  <p><em>기대 산출물: 불일치 케이스 비율·정확도 낙폭 표, 병변 크기별 FM 적응 vs task-specific 성능 비교표</em></p>
+</div>
+<div class=action-card>
+  <h3>3. Camera3R LoRA 적응을 랩 비표준 렌즈 영상에 이식 + 염색 대체 가능성 재현</h3>
+  <p>Camera3R(2611.13453)의 LoRA 기반 이종 카메라 적응을 랩이 쓰는 비표준 렌즈(어안·현미경 대물렌즈) 영상에 적용해 전체 재학습 대비 적응 비용과 투시 카메라 성능 유지율을 비교하고, FluoVolt(염색 부작용) 및 Label-Free DHM(염색 없는 분류) 논문의 프로토콜을 랩 형광 염색 데이터에 대입해 염색 없는 대안으로 교체 가능한지 점검합니다.</p>
+  <p><em>기대 산출물: 비표준 렌즈 적응 비용·성능 유지율 비교표, 염색 vs 레이블-프리 대안 재현 실험 결과</em></p>
+</div>
+
+<h2>🧊 Skim-only / Watch-only 흐름</h2>
+<ul class=plain>
+  <li><strong>[Watch-only] 구조화광·코딩 조리개 자기보정 3D</strong> — 목요일 Z-calibration(ptychography 스펙트럴 보정), 렌즈리스 홀로그래피 자가보정, Optical quasicrystal coding(단일 촬영 3D 복원) 세 편이 "구조화광·코딩 조리개로 자기보정 3D·다중파장 캡처"라는 작은 결을 보였지만 아직 하루짜리 관찰이라 독립 클러스터로 올리지 않았습니다. 다음 주 반복 여부를 지켜봅니다[Confidence Low].</li>
+  <li><strong>[Skim-only] Meta-Optics/Diffractive의 통신·레이더 응용 쏠림</strong> — 닷새 배정 54편 중 대부분이 5G/6G 안테나, THz 바이오센서, 레이더 DOA 추정처럼 이미징과 무관한 통신·센싱 응용이었습니다. 목요일 AR 안경 도파관(Nature)·산업용 스냅샷 분광 센서처럼 이미징 하드웨어로 쓰이는 사례만 예외적으로 주목할 가치가 있습니다[Confidence Medium].</li>
+  <li><strong>[Watch-only] 뇌 MRI 벤치마크 자체의 숨은 함정</strong> — 화요일 Representation Learning for 3D Brain Imaging·Nanopath 두 편이 데이터 중복과 사전학습 소스 선택이라는 벤치마크 신뢰성 문제를 지적했지만, 화요일 하루에 그쳐 후속 확산 여부는 다음 주에 확인합니다[Confidence Low].</li>
+</ul>
+
+<h2>🎧 주간 오디오</h2>
+<p>TTS 환경 미연결 — 이번 주도 텍스트 리포트만 제공합니다.</p>
+
+<h2>🔗 참고 링크</h2>
+<ul class=plain>
+  <li><a href="../posts/2026-11-09.html">2026-11-09 Daily Briefing (Mon)</a></li>
+  <li><a href="../posts/2026-11-10.html">2026-11-10 Daily Briefing (Tue)</a></li>
+  <li><a href="../posts/2026-11-11.html">2026-11-11 Daily Briefing (Wed)</a></li>
+  <li><a href="../posts/2026-11-12.html">2026-11-12 Daily Briefing (Thu, journal-only→upgraded)</a></li>
+  <li><a href="../posts/2026-11-13.html">2026-11-13 Daily Briefing (Fri)</a></li>
+  <li><a href="../posts/2026-11-09-weekly.html">2026-W45 Weekly Retrospective</a></li>
+  <li><a href="../feed.xml">RSS Feed</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-11-09~11-13(월~금) daily briefing 5편 기반 회고(월·화·수·금 source_mode=new, 목요일 source_mode=journal-only) · arXiv new+cross 약 3,572편(cs.LG 1,297·cs.CV 779·cs.AI 1,268·eess.IV 63·eess.SP 165) + 저널 약 2,021편</p>
+  <p>🎧 주간 오디오: TTS 환경 미연결 — 이번 주도 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

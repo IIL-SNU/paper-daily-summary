@@ -1,0 +1,324 @@
+{
+  "date": "2026-11-16",
+  "iso_week": "2026-46",
+  "week_start": "2026-11-09",
+  "week_end": "2026-11-13",
+  "weekly_thesis": "지난주는 두 흐름이 거의 매일 번갈아 가장 큰 신호를 냈습니다. 하나는 역문제 복원(측정값에서 거꾸로 원래 신호를 되살리는 문제)이 '생성 모델을 통째로 믿는' 대신 물리 모델·최적화 구조를 다시 명시적으로 강제하는 쪽으로, 의료영상(MRI·CT·PET)을 넘어 지진·천체물리·전기 토모그래피까지 번지며 닷새 내내 반복됐습니다. 다른 하나는 병리·의료영상 foundation model 신뢰성 검증이 월요일 '편향 지도·불확실성 보류'에서 수요일 '외부 코호트에서 작은 병변은 여전히 약하다'는 구체적 트레이드오프까지 한 단계씩 날카로워진 흐름입니다. 그 사이 3D Gaussian Splatting은 화·수·금 사흘간 산발적으로 등장해 초음파·SLAM·저조도·반사·열화상·단일 X선까지 '깨끗한 멀티뷰'라는 전제를 계속 허물었고, 계산광학 하드웨어 코어(Fourier ptychography·lensless)는 목요일 arXiv 공백(저널만으로 발행)까지 겹치며 닷새 내내 실질 신호 2편을 넘기지 못해 4주 연속 '구조적으로 얇은' 기준선을 다시 확인했습니다.",
+  "hot_vs_cold": {
+    "hot": [
+      {
+        "cluster": "역문제 복원이 '생성 모델을 통째로 믿기'에서 '물리 모델·최적화 구조를 명시적으로 강제하기'로 — 닷새 내내 반복",
+        "why": "월요일 FANO(diffusion anchored forward-noise)·AdaptivePnP(라벨 없이 PnP 파라미터 자동 추정), 화요일 AgentCT(손상 유형별 솔버 라우팅)·STAIRS(admissible-support scheduling)·P-IMLA(non-smooth Bayesian 이미징), 수요일 AdjointFlow(물리 기반 adjoint 전송)·Plug-and-Play ADMM(flow matching denoiser), 목요일 저널 Stochastic Generative PnP Priors·Passive imaging with quantum advantage, 금요일 LoopMR·KIR-NO(해상도 비의존 신경 연산자)·물리정보신경망(falling film)·전기저항 토모그래피 deep image prior·SIM(물리 시뮬레이션 스케일업)까지, 닷새 모두 최소 2편 이상씩 같은 구조(학습된 prior를 그대로 믿지 않고 물리/최적화 구조를 되돌려 넣는다)를 반복했습니다. 의료영상 안에서 시작된 패턴이 지진·천체물리·전기 토모그래피·감마선 CT로도 번졌다는 점에서 모델 하나의 유행이 아니라 역문제 전반의 공통 설계 원칙으로 굳어지는 신호로 읽힙니다.",
+        "papers": [
+          "https://arxiv.org/abs/2611.08923",
+          "https://arxiv.org/abs/2611.13389",
+          "https://arxiv.org/abs/2611.14947",
+          "https://arxiv.org/abs/2611.14979"
+        ]
+      },
+      {
+        "cluster": "병리·의료영상 foundation model 신뢰성 검증이 '편향 지도·불확실성 보류'에서 '외부 코호트 트레이드오프'로 날카로워짐",
+        "why": "월요일 Health-System-Wide Mapping(125만 WSI 인구통계 편향 지도)과 ProtoCouncil(인코더 불일치 시 판단 보류, 외부 코호트에서 불일치 케이스 정확도 79%→27%)이 '얼마나 맞히는가'가 아니라 '이 예측을 믿어도 되는가'를 핵심 기여로 세웠습니다. 화요일 SPECTRA(염색·스캐너 편향 강건화)·BAPLe++(백도어 전이 경고)·Reliability-Aware Benchmarking(저라벨 환경)이 위협 모델을 구체화했고, 수요일 Is a CNN-Transformer Ensemble Worth It(단일 FM이 5모델 앙상블보다 나음)과 Medical Image Segmentation FM Adaptation(외부 일반화는 좋지만 작은 병변에서는 약함)이 'FM 도입이 공짜 이득이 아니다'를 수치로 보였습니다. 나흘(월~목, 목요일은 저널만)을 합치면 의료 영상 AI 신뢰성 검증이 지난주(W45)의 '첫 negative result'에서 더 세분화된 '어떤 조건에서 구체적으로 약한가'로 넘어갔다는 뜻입니다.",
+        "papers": [
+          "https://arxiv.org/abs/2611.09851",
+          "https://arxiv.org/abs/2611.09058",
+          "https://arxiv.org/abs/2611.13014",
+          "https://arxiv.org/abs/2611.14519"
+        ]
+      },
+      {
+        "cluster": "3D Gaussian Splatting이 '깨끗한 멀티뷰' 전제를 계속 허물며 초음파·SLAM·저조도·반사·열화상·단일 X선으로 번짐",
+        "why": "화요일 UltraVoxelGS(초음파 feed-forward)·DPGS-SLAM(동적 SLAM)·FastGRT·ClearForm(투명체)·PLS-GS(라이다 융합) 다섯 편이 센서 확장을 보였고, 수요일 Camera3R(이종 카메라 LoRA 적응)·FastWild-GS(통제 안 된 촬영)·RetinexGS(저조도 RAW)·RF3DGS(반사 제거) 네 편은 '이상적이지 않은 촬영 조건'을 하나씩 깼습니다. 금요일에는 ThermalSplat(열화상)·Topo-4DGS(위상 변화 있는 1인칭 상호작용)가 다시 새 모달리티로 번졌습니다. 사흘이 산발적이라 매일 지속되지는 않았지만, 매번 다른 연구팀이 겹치지 않는 각도(센서·조명·카메라모델·모달리티)에서 같은 결론(더 예쁘게가 아니라 더 버티게)에 도달했다는 점이 핵심입니다.",
+        "papers": [
+          "https://arxiv.org/abs/2611.11951",
+          "https://arxiv.org/abs/2611.13453",
+          "https://arxiv.org/abs/2611.13280",
+          "https://arxiv.org/abs/2611.15435"
+        ]
+      }
+    ],
+    "cold": [
+      {
+        "cluster": "계산광학 하드웨어 코어(Fourier Ptychography·Lensless)가 4주 연속 '구조적으로 얇음' — 목요일은 arXiv 자체가 공백",
+        "why": "월·금 FP 0편+Lensless 0편, 화 FP 0편+Lensless 0편, 수·목 FP 1편+Lensless 1편(둘 다 저널)으로 닷새 모두 합산 2편 이하였습니다. 특히 목요일은 추적 5개 카테고리 전체가 arXiv /new 공지를 내지 않아(수요일 listing에 머묾) 저널만으로 발행한 날이었고, /pastweek 전체 윈도우를 확인해도 해당 날짜 섹션 자체가 없어 '수집 실패'가 아니라 '원천 자체의 공백'으로 최종 확정했습니다. W43부터 이어진 '구조적으로 얇은 기준선' 판단이 4주째 그대로 유지되는 셈입니다."
+      },
+      {
+        "cluster": "Meta-Optics/Diffractive 버킷이 거의 매일 통신·레이더·센서 응용으로 쏠리고 이미징 신호는 드묾",
+        "why": "닷새 배정 총 54편 중 실질적인 이미징 신호는 수요일 근접장 메타표면 역설계 1편, 목요일 AR 안경 도파관(Nature)·산업용 스냅샷 중적외선 분광 센서 2편 정도였고, 나머지는 5G/6G 안테나·THz 바이오센서·레이더 DOA 추정처럼 이미징과 무관한 통신·센싱 응용이었습니다. 메타표면 광학이 랩 ROI(이미징 하드웨어)에서 반복적으로 '약한 신호'로 남는 패턴이 계속됩니다."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "cluster": "역문제 복원이 '생성 모델을 통째로 믿기'에서 '물리 모델·최적화 구조를 명시적으로 강제하기'로 넓어짐",
+      "papers": [
+        {
+          "title": "FANO: Anchored Forward-Noise Optimization for Diffusion Inverse Problems",
+          "arxiv": "https://arxiv.org/abs/2611.08923",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Inverse Problems", "order": "Diffusion Solvers", "genus": "Forward-Noise Anchoring", "confidence": "High", "rationale": "diffusion 기반 역문제 solver의 숨은 반경 이탈 실패 모드를 직접 교정"}
+        },
+        {
+          "title": "AdaptivePnP: Fast Auto-Tuned Plug-and-Play for Deconvolution",
+          "arxiv": "https://arxiv.org/abs/2611.09845",
+          "importance_tags": ["[방법전환]", "[표준후보]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Inverse Problems", "order": "Plug-and-Play", "genus": "Auto-Tuning", "confidence": "High", "rationale": "라벨·정답 노이즈 레벨 없이 PnP 핵심 하이퍼파라미터 두 개를 동시 추정"}
+        },
+        {
+          "title": "AdjointFlow: Accelerating Scientific Inverse Problems with Physics-Based Transport",
+          "arxiv": "https://arxiv.org/abs/2611.13389",
+          "importance_tags": ["[방법전환]", "[스케일업]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Inverse Problems", "order": "Generative Transport", "genus": "Physics-Based Adjoint", "confidence": "High", "rationale": "지진 영상·천체물리·의료영상을 가로지르는 물리 기반 adjoint 초기화로 PnP 대비 최대 10만배 가속"}
+        },
+        {
+          "title": "One Block Is Enough: LoopMR for Accelerated MRI Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2611.14947",
+          "importance_tags": ["[인프라]", "[실사용전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Inverse Problems", "order": "Unrolled Reconstruction", "genus": "Block-Sharing", "confidence": "High", "rationale": "10.3M 파라미터로 92.9M 파라미터 PromptMR+를 모든 가속 배율에서 능가"}
+        },
+        {
+          "title": "Coarse-to-Fine 3D MRI Reconstruction via Resolution-Agnostic Neural Operators (KIR-NO)",
+          "arxiv": "https://arxiv.org/abs/2611.14979",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Inverse Problems", "order": "Neural Operators", "genus": "Resolution-Agnostic", "confidence": "Medium", "rationale": "3D 무릎 MRI에서 해상도 독립적 신경 연산자로 SOTA 3D CNN 대비 +2.2dB"}
+        }
+      ],
+      "why": "월요일 FANO와 AdaptivePnP는 서로 다른 방법론 계열(diffusion / 고전 PnP)에서 똑같이 '사람이 손으로 맞추던 값을 알고리즘이 스스로 추정'하는 방향을 취했습니다. 화요일 AgentCT·STAIRS·P-IMLA는 CT·일반 역문제에서 '솔버가 손상 유형이나 난이도에 맞춰 스스로 전략을 바꾼다'는 같은 결을 보탰고, 수요일 AdjointFlow와 Plug-and-Play ADMM은 의료영상을 넘어 지진 영상·천체물리까지 '생성 모델을 통째로 믿지 않고 물리 모델·최적화 구조로 다시 일관성을 강제한다'는 방향을 명확히 했습니다. 목요일에는 저널 쪽에서 같은 결(Stochastic Generative Plug-and-Play Priors, 양자 우위를 쓰는 수동 이미징)이 arXiv 공백에도 끊기지 않았고, 금요일 LoopMR·KIR-NO·falling film 물리정보신경망·전기저항 토모그래피 deep image prior·SIM까지 닷새 내내 최소 2편 이상씩 반복됐습니다. 즉 '학습된 이미지 사전을 어떻게 신뢰할 것인가'라는 질문이 이번 주에는 의료영상이라는 좁은 틀을 벗어나 역문제 복원 전반(지진, 천체물리, 전기 토모그래피, 감마선 CT)의 공통 설계 원칙으로 굳어지고 있다는 뜻입니다.",
+      "confidence": "High",
+      "lab_action": "AdjointFlow의 물리 기반 adjoint 초기화와 LoopMR의 블록 공유 구조를 랩이 쓰는 위상 복원·단층촬영 재구성 파이프라인(diffusion/flow 기반)에 함께 이식해, Plug-and-Play 대비 추론 속도(배속)와 파라미터 수 대비 복원 오차(RMSE/SSIM)를 1주 내 비교한다"
+    },
+    {
+      "cluster": "병리·의료영상 foundation model 신뢰성 검증이 '편향 지도·불확실성 보류'에서 '외부 코호트 트레이드오프'로 날카로워짐",
+      "papers": [
+        {
+          "title": "Health-System-Wide Mapping of Demographic Information in Routine Clinical Histopathology",
+          "arxiv": "https://arxiv.org/abs/2611.09851",
+          "importance_tags": ["[경고신호]", "[해부분석]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Pathology FM", "order": "Shortcut Learning", "genus": "Demographic Bias Mapping", "confidence": "High", "rationale": "125만 WSI·25만 환자 규모로 진단 무관 지름길 학습을 처음 대규모 정량화"}
+        },
+        {
+          "title": "ProtoCouncil: Multi-Encoder Anatomical Prototypes for Prostate Cancer Detection in Micro-Ultrasound",
+          "arxiv": "https://arxiv.org/abs/2611.09058",
+          "importance_tags": ["[방법전환]", "[평가축]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Reliability", "order": "Selective Prediction", "genus": "Encoder Disagreement", "confidence": "High", "rationale": "외부 코호트 인코더 불일치 케이스에서 정확도 79%→27% 붕괴를 미리 감지"}
+        },
+        {
+          "title": "SPECTRA: Contrastive fine-tuning against stain and scanner bias improves robustness",
+          "arxiv": "https://arxiv.org/abs/2611.10093",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Pathology FM", "order": "Domain Robustness", "genus": "Stain-Scanner Invariance", "confidence": "Medium", "rationale": "세그멘테이션·캘리브레이션 과제에서는 개선폭에 예외가 있다고 abstract에 명시"}
+        },
+        {
+          "title": "Is a CNN-Transformer Ensemble Worth It When a Chest X-Ray Foundation Model Is Available?",
+          "arxiv": "https://arxiv.org/abs/2611.13014",
+          "importance_tags": ["[평가축]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Deployment Value", "order": "FM vs Ensemble", "genus": "Cost-Benefit", "confidence": "High", "rationale": "단일 FM이 5모델 앙상블보다 지연 7.8배·파라미터 10배 적게 쓰고도 우세"}
+        },
+        {
+          "title": "Medical Image Segmentation: Foundation Model Adaptation versus Task-Specific Training",
+          "arxiv": "https://arxiv.org/abs/2611.14519",
+          "importance_tags": ["[위험보류]", "[평가축]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Deployment Value", "order": "FM vs Task-Specific", "genus": "External Generalization Trade-off", "confidence": "High", "rationale": "외부 일반화는 좋지만 작은 병변에서는 약하다는 구체적 트레이드오프, 공개 폴립 테스트셋 중복도 발견"}
+        }
+      ],
+      "why": "월요일 Health-System-Wide Mapping은 병리 foundation model 표현이 성별·나이대·인종 같은 지름길 정보를 담고 있는지를 125만 장 WSI로 지도화했고, ProtoCouncil은 세 인코더가 서로 불일치하는 외부 코호트 사례에서 정확도가 79%에서 27%까지 떨어진다는 것을 보여 '정확도'와 '이 예측을 믿을 수 있는가'를 분리했습니다. 화요일 SPECTRA·BAPLe++·Reliability-Aware Benchmarking은 염색·스캐너 편차, 백도어 전이, 저라벨 환경이라는 구체적 위협 모델로 신뢰성 검증을 세분화했습니다. 수요일 Is a CNN-Transformer Ensemble Worth It은 단일 흉부 X-ray FM이 지연 7.8배·파라미터 10배 더 쓰는 5모델 앙상블보다 나을 수 있다는 '공짜 이득'을, 같은 날 Medical Image Segmentation FM Adaptation은 '외부 일반화는 좋지만 작은 병변은 약하다'는 트레이드오프와 공개 폴립 테스트셋 중복이라는 숨은 함정을 동시에 드러냈습니다. 나흘을 합치면, 지난주(W45) '처음 나온 명시적 실패 사례'에서 이번 주는 '어떤 조건에서 구체적으로 얼마나 약한가'를 수치로 파고드는 단계로 넘어갔다는 뜻입니다.",
+      "confidence": "High",
+      "lab_action": "ProtoCouncil의 인코더 불일치 기반 선택적 예측을 랩이 쓰는 다중 foundation model 앙상블에 적용해 외부 코호트에서 불일치 케이스 비율과 그때의 정확도 낙폭을 1주 내 측정하고, Medical Seg FM Adaptation이 보고한 작은 병변 취약점 패턴이 랩 데이터(작은 병변 비율별)에서도 재현되는지 확인한다"
+    },
+    {
+      "cluster": "3D Gaussian Splatting이 '깨끗한 멀티뷰' 전제를 계속 허물며 초음파·SLAM·저조도·반사·열화상·단일 X선으로 번짐",
+      "papers": [
+        {
+          "title": "UltraVoxelGS: Voxel-First Feed-Forward Gaussian Splatting for 3D Ultrasound Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2611.11951",
+          "importance_tags": ["[실사용전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "3D Representation", "class": "Gaussian Splatting", "order": "Feed-Forward", "genus": "Ultrasound Voxel-to-Gaussian", "confidence": "High", "rationale": "장면별 10~20분 최적화를 약 10초(35배 이상)로 줄여 스캔 중 실시간 피드백 가능"}
+        },
+        {
+          "title": "Camera3R: Feed-Forward 3D Reconstruction from Heterogeneous Camera Models",
+          "arxiv": "https://arxiv.org/abs/2611.13453",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "3D Representation", "class": "Gaussian Splatting", "order": "Camera Generalization", "genus": "LoRA Adaptation", "confidence": "High", "rationale": "0.5% 추가 파라미터·1일 미만 학습으로 임의 카메라 모델 적응, 투시 카메라 성능 완전 유지"}
+        },
+        {
+          "title": "RetinexGS: Retinex-Inspired Gaussian Splatting for Low-Light RAW Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2611.13280",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "3D Representation", "class": "Gaussian Splatting", "order": "Illumination Robustness", "genus": "Low-Light RAW", "confidence": "Medium", "rationale": "어둡고 노이즈 심한 RAW 사진에서도 안정적 장면 복원"}
+        },
+        {
+          "title": "ThermalSplat: Pose-Free Gaussian Splatting for Sparse-View Thermal 3D Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2611.15435",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "3D Representation", "class": "Gaussian Splatting", "order": "Modality Expansion", "genus": "Thermal Sparse-View", "confidence": "Medium", "rationale": "RGB 멀티뷰 전제를 벗어나 열화상 단독 희소 시점으로 3D 복원"}
+        }
+      ],
+      "why": "화요일 UltraVoxelGS·DPGS-SLAM·FastGRT·ClearForm·PLS-GS 다섯 편은 3DGS를 초음파·동적 SLAM·레이 트레이싱·투명체·라이다라는 새 센서/문제로 확장했고, 수요일 Camera3R·FastWild-GS·RetinexGS·RF3DGS 네 편은 '여러 대의 깨끗한 카메라로 밝게 찍는다'는 전제 자체를 이종 카메라·통제 안 된 촬영·저조도·반사로 하나씩 깼습니다. 목요일은 arXiv 공백으로 신호가 없었지만, 금요일 ThermalSplat과 Topo-4DGS(위상 변화가 있는 1인칭 상호작용)가 다시 새 모달리티로 번져, 사흘에 걸쳐 서로 다른 연구팀이 겹치지 않는 각도(센서 종류, 조명/반사, 카메라 모델, 모달리티)에서 '더 예쁘게'가 아니라 '더 버티게'라는 같은 결론에 반복적으로 도달했습니다.",
+      "confidence": "High",
+      "lab_action": "Camera3R의 LoRA 기반 이종 카메라 적응 방식을 랩이 쓰는 비표준 렌즈(어안·현미경 대물렌즈) 영상에 적용 가능한지 검토하고, UltraVoxelGS의 voxel-to-Gaussian feed-forward 구조를 랩의 단면 스캔 영상(OCT·내시경 등)에 이식해 per-scene 최적화 대비 추론 속도·PSNR/SSIM을 1주 내 비교한다"
+    },
+    {
+      "cluster": "계산병리가 염색 분류를 넘어 H&E 한 장에서 유전자 발현까지 복원하려 함",
+      "papers": [
+        {
+          "title": "PathXAI: Evidence-guided structured pathology reporting by transferable tissue segmentation",
+          "arxiv": "https://arxiv.org/abs/2611.09117",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Pathology", "order": "Evidence Traceability", "genus": "Segmentation-Guided Reporting", "confidence": "Medium", "rationale": "진단 결과뿐 아니라 근거를 추적 가능하게 만드는 보고서 생성 구조"}
+        },
+        {
+          "title": "Predicting Single-Cell Spatial Gene Expression from H&E using Pathology Foundation Models",
+          "arxiv": "https://arxiv.org/abs/2611.13649",
+          "importance_tags": ["[방법전환]", "[데이터전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Pathology", "order": "Molecular Inference", "genus": "H&E-to-Transcriptomics", "confidence": "Medium", "rationale": "zero-shot 대비 유전자별 상관관계 2.67배 개선, 공간가변유전자와 비가변 유전자 간 예측력 격차 큼"}
+        },
+        {
+          "title": "Continuous 3D Spatial Transcriptomics Reconstruction via Histology-Informed INR",
+          "arxiv": "https://arxiv.org/abs/2611.14129",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Pathology", "order": "Molecular Inference", "genus": "Implicit Neural Representation", "confidence": "Low", "rationale": "조직 영상 정보로 연속적 3D 공간 전사체를 보간, 검증 범위는 본문 확인 필요"}
+        }
+      ],
+      "why": "월요일 PathXAI는 H&E 영상과 도메인 지식을 결합해 진단 추론뿐 아니라 근거(조직 구성)를 추적 가능하게 만드는 쪽으로 계산병리를 넓혔고, 수요일 Predicting Single-Cell Spatial Gene Expression과 Continuous 3D Spatial Transcriptomics Reconstruction은 독립적으로 '값싼 H&E 영상 한 장에서 공간 유전자 발현까지 뽑아낼 수 있는가'를 묻기 시작했습니다. 계산병리의 기여 범위가 염색·형태 분류에서 분자 수준 정보 복원으로 확장되고 있다는 뜻이지만, 사흘(월·수) 두 날에 그쳐 Confidence는 Medium으로 둡니다.",
+      "confidence": "Medium",
+      "lab_action": "Predicting Single-Cell Spatial Gene Expression의 도메인 적응 전략을 랩이 보유한 H&E/가상 염색 데이터 중 공간 전사체 짝 데이터가 있는 서브셋에 적용해, zero-shot 대비 유전자별 Pearson 상관관계 개선폭을 1주 내 재현 측정한다"
+    },
+    {
+      "cluster": "라이브셀 광학 측정이 염색을 대체하거나 염색의 부작용을 직접 경고하는 쪽으로 갈라짐",
+      "papers": [
+        {
+          "title": "Protocol-optimized wide-field optical redox imaging for T cell activation",
+          "arxiv": "https://doi.org/10.1117/1.jbo.31.11.115002",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Microscopy", "class": "Label-Free Imaging", "order": "Metabolic Sensing", "genus": "Redox Autofluorescence", "confidence": "Medium", "rationale": "염색 없이 저렴한 광시야 형광현미경만으로 T세포 활성화 대사 변화 포착"}
+        },
+        {
+          "title": "FluoVolt Staining Compromises Cell Viability and Morphology during Live-Cell Voltage Imaging",
+          "arxiv": "https://doi.org/10.1021/acsomega.6c06843",
+          "importance_tags": ["[경고신호]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Microscopy", "class": "Label-Free Imaging", "order": "Staining Risk", "genus": "Voltage Dye Toxicity", "confidence": "Medium", "rationale": "흔히 쓰는 전압 감응 염색약이 세포 생존율·형태를 정량적으로 손상시킴을 보고"}
+        },
+        {
+          "title": "Label-Free Morphometric Profiling of Renal Cell Carcinoma Using Digital Holographic Microscopy and Machine Learning",
+          "arxiv": "https://doi.org/10.1002/jbio.70379",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {"source": "CVML", "phylum": "Computational Microscopy", "class": "Phase Imaging", "order": "Digital Holography", "genus": "Label-Free Classification", "confidence": "Low", "rationale": "염색 없이 형태 특징만으로 신장암 세포주 99.5% 분류, 세 세포주 한정이라 일반화는 미확인"}
+        }
+      ],
+      "why": "목~금 이틀에 걸쳐 저널 쪽에서 '염색은 당연히 안전하고 편리하다'는 가정이 양쪽에서 흔들렸습니다. Optical redox imaging은 염색 없이 세포 자체 형광만으로 대사 상태를 잡아냈고, Label-Free DHM은 형태 특징만으로 신장암 세포를 99.5% 정확도로 분류했습니다. 반대로 FluoVolt 논문은 흔히 쓰는 전압 감응 염색약이 실제로는 세포 생존율과 형태를 손상시킨다는 경고성 결과를 수치로 보였습니다. 세 편을 합치면 염색 없는 광학 측정이 세포 대사·형태·전위까지 대안으로 쓰일 범위가 넓어지는 동시에, 기존 염색 프로토콜 자체의 부작용도 같이 드러나는 중이라는 뜻입니다. 다만 목~금 이틀짜리 관찰이라 Confidence는 Medium에 둡니다.",
+      "confidence": "Medium",
+      "lab_action": "FluoVolt 논문이 보고한 염색 농도-생존율 손상 곡선을 랩이 쓰는 형광 염색 프로토콜(해당하는 경우)에 대입해 1주 내 재현 측정하고, 염색 없는 대안(광산란·redox)으로 교체 가능한지 점검한다"
+    }
+  ],
+  "predictions": [
+    {
+      "title": "역문제 복원의 '생성 모델 불신 + 물리 강제' 패턴이 다음 주에도 4일 이상 지속된다",
+      "claim": "지난주는 월~금 닷새 모두(목요일은 저널만) 역문제 복원이 생성 prior를 통째로 믿지 않고 물리 모델·최적화 구조를 명시적으로 되돌려 넣는 같은 구조를 반복했습니다. 의료영상을 넘어 지진·천체물리·전기 토모그래피까지 번진 만큼, 이 패턴이 다음 주에도 지속되는 '기준선'으로 자리잡는지 확인합니다.",
+      "rationale": "닷새 연속이라는 빈도와, 서로 다른 모달리티(MRI·CT·PET·지진·천체물리·전기 토모그래피)에서 같은 설계 원칙이 반복됐다는 점은 일시적 동시 발생이 아니라 역문제 복원 분야 전반의 구조적 전환에 가깝다는 신호입니다.",
+      "hit_condition": "다음 주 5영업일 중 4일 이상에서 역문제 복원 관련 '물리 모델/최적화 구조 강제' 클러스터(Confidence Medium 이상)가 1개 이상 등장한다",
+      "miss_condition": "다음 주 5일 중 2일 이하에서만 관련 클러스터가 등장하고 나머지 날은 순수 생성 모델 기반 복원이 주도한다"
+    },
+    {
+      "title": "계산광학 하드웨어 코어가 5주 연속 '구조적으로 얇음' 패턴을 유지한다",
+      "claim": "W43부터 이어진 패턴이 지난주(W46)에도 그대로 유지됐습니다(월 0, 화 0, 수 1, 목 1, 금 0 — 닷새 모두 FP+Lensless 실질 신호 합산 2편 이하, 목요일은 arXiv 자체가 공백). 5주 연속이면 '구조적으로 얇은 기준선'이라는 판단이 사실상 랩 ROI의 상시 전제로 굳어진 것으로 봅니다.",
+      "rationale": "4주 연속(W43~W46) 같은 패턴이 반복됐고, 그 사이 arXiv 공백일까지 겹쳤다는 점에서 패턴이 더 강하게 재확인됐습니다.",
+      "hit_condition": "다음 주 5일 중 4일 이상에서 Fourier Ptychography+Lensless 실질 신호 합산이 2편 이하에 머문다",
+      "miss_condition": "다음 주 5일 중 2일 이상에서 Fourier Ptychography 또는 Lensless 중 하나가 실질 신호 기준으로 단독 3편 이상을 기록한다"
+    },
+    {
+      "title": "의료영상 foundation model 신뢰성 검증에서 '외부 코호트 트레이드오프' 사례가 한 건 이상 더 추가된다",
+      "claim": "지난주 수요일 Medical Image Segmentation FM Adaptation은 '외부 일반화는 좋지만 작은 병변은 약하다'는 구체적 트레이드오프를 보고했습니다. 다음 주에도 이런 '배포 가치가 조건부로 갈리는' 유형의 논문이 다른 모달리티에서 나오는지 확인합니다.",
+      "rationale": "월~수 사흘 연속 이어진 '신뢰성 검증이 점점 더 구체화된다'는 흐름을 고려하면, 다음 단계는 더 많은 조건부 트레이드오프 사례가 드러나는 쪽일 가능성이 높습니다.",
+      "hit_condition": "다음 주 5일 중 2일 이상에서 의료 영상 AI의 외부 코호트/분포 변화 검증에서 negative result 또는 조건부 트레이드오프(경고신호 또는 위험보류 태그)가 1편 이상 등장한다",
+      "miss_condition": "다음 주 5일 동안 외부 검증 negative result·트레이드오프가 전혀 나오지 않거나, 모든 의료 영상 신뢰성 논문이 긍정적 결과만 보고한다"
+    }
+  ],
+  "prediction_review": [
+    {
+      "title": "[2026-11-09 weekly, W45] 3DGS 평가 축 이동이 '제품화 엔지니어링'이라는 구체적 하위 주제로 좁혀지며 다음 주에도 지속된다",
+      "label": "✅",
+      "reason": "적중 조건(5일 중 3일 이상, 제품화·강건성·품질평가 클러스터 1개 이상)을 화요일(초음파·SLAM·라이다로 센서 확장 + DPGS-SLAM provenance-aware 설계), 수요일(이종 카메라·저조도·반사라는 현실 조건 강건성), 금요일(열화상·위상 변화 1인칭이라는 모달리티 강건성) 세 날에서 충족했습니다. 다만 예측이 좁혀 말한 '결함 진단·품질 벤치마크로 수렴'하는 구체적 하위축보다는, 더 넓은 '깨끗한 입력 가정을 계속 깨는' 로버스트니스 축으로 지속됐다는 점에서 완전히 좁은 의미의 적중은 아니지만, 명시된 적중 조건 자체는 충족합니다."
+    },
+    {
+      "title": "[2026-11-09 weekly, W45] 의료 영상 신뢰성 검증이 '외부 기관 검증 실패 사례'를 한 건 이상 더 추가한다",
+      "label": "✅",
+      "reason": "적중 조건(5일 중 2일 이상, 외부 기관/분포 변화 검증에서 negative result 또는 경고신호)을 월요일 ProtoCouncil(외부 코호트 인코더 불일치 시 정확도 79%→27% 붕괴)과 수요일 Medical Image Segmentation FM Adaptation(외부 일반화는 좋지만 작은 병변은 약함 + 공개 폴립 테스트셋 중복 발견)에서 충족했습니다. 두 사례 모두 '탐지 방법 제안'이라는 긍정적 프레이밍을 겸하고 있어 순수 negative result로만 보기는 어렵지만, 외부 코호트에서 구체적 약점이 드러났다는 적중 조건의 핵심은 두 날 모두 충족합니다."
+    },
+    {
+      "title": "[2026-11-09 weekly, W45] 계산광학 하드웨어 코어가 3주 연속 '구조적으로 얇음' 패턴을 유지한다",
+      "label": "✅",
+      "reason": "실질 신호 기준 월 0+0, 화 0+0, 수 1+1(둘 다 저널), 목 1+1(저널, arXiv 자체가 공백), 금 0+0으로 닷새 모두 FP+Lensless 합산이 2편 이하였습니다. 적중 조건(4일 이상에서 2편 이하)을 5일 모두 충족했고, 빗나감 조건(단독 3편 이상)은 어느 날도 해당하지 않아 명확한 적중입니다. W43부터 이어진 패턴이 이번 주까지 4주 연속(W43~W46) 반복돼 '구조적으로 얇은 기준선' 판단이 더 굳어졌습니다."
+    }
+  ],
+  "themes": [
+    {
+      "title": "역문제 복원이 '생성 모델을 믿기'에서 '물리/구조를 명시적으로 강제하기'로 — 거의 매일, 분야를 가리지 않고",
+      "summary": "월~금 닷새 내내(목요일은 저널만) 의료영상(MRI·CT·PET)뿐 아니라 지진·천체물리·전기 토모그래피·감마선 CT에서도 같은 설계 원칙(학습된 prior를 통째로 믿지 않고 물리 모델·최적화 구조로 다시 묶는다)이 반복됐습니다. 다음 주에는 이 패턴이 역문제 복원의 '상시 기준선'으로 자리잡는지, 아니면 이번 주만의 우연한 집중이었는지가 관전 포인트입니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "의료영상 foundation model 신뢰성 검증이 '명시적 실패'에서 '조건부 트레이드오프'로 — 한 단계 더 세분화",
+      "summary": "지난주(W45) 처음 나온 '외부 병원에서 역효과'라는 명시적 negative result에서, 이번 주는 'FM 도입이 공짜 이득인 경우와 트레이드오프가 있는 경우'를 수치로 구분하는 단계로 넘어갔습니다(단일 FM이 앙상블보다 나은 경우 vs 외부 일반화는 좋지만 작은 병변은 약한 경우). 다음 주에는 이런 조건부 평가가 더 많은 모달리티·태스크로 퍼지는지 지켜봅니다.",
+      "confidence": "High"
+    },
+    {
+      "title": "계산광학 하드웨어 코어, 4주 연속 구조적으로 얇음 — 이번 주는 arXiv 공백일까지 겹침",
+      "summary": "W43부터 이어진 '계산광학 코어가 구조적으로 얇다'는 판단이 W46에도 유지됐고(닷새 모두 FP+Lensless 실질 신호 2편 이하), 목요일에는 추적 5개 카테고리 전체가 arXiv listing 자체를 내지 않아 저널만으로 발행했습니다. 이는 수집 실패가 아니라 원천 자체의 공백으로 확인했지만, 그만큼 랩 핵심 ROI의 정보량이 더 줄었다는 뜻이기도 합니다. 다음 주에는 arXiv 공백이 반복되는지와, FP+Lensless 실질 신호가 다시 돌아오는지를 함께 지켜봅니다.",
+      "confidence": "High"
+    }
+  ],
+  "top5": [
+    {
+      "title": "ProtoCouncil: Multi-Encoder Anatomical Prototypes for Prostate Cancer Detection in Micro-Ultrasound",
+      "arxiv": "https://arxiv.org/abs/2611.09058",
+      "why": "세 foundation encoder의 불일치를 신뢰도 신호로 바꿔, 외부 코호트에서 csPCa AUROC 82.9%(+4.3점)를 기록하면서도 인코더들이 서로 반대로 판단하는 케이스를 걸러내 정확도 79%→27% 붕괴를 미리 감지합니다. 이번 주 의료영상 신뢰성 검증 클러스터에서 가장 날카로운 수치를 가진 사례입니다.",
+      "tag": "[방법전환]",
+      "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Reliability", "order": "Selective Prediction", "genus": "Encoder Disagreement", "confidence": "High", "rationale": "외부 코호트 불일치 케이스 정확도 낙폭을 구체적 수치로 제시"}
+    },
+    {
+      "title": "AdjointFlow: Accelerating Scientific Inverse Problems with Physics-Based Transport",
+      "arxiv": "https://arxiv.org/abs/2611.13389",
+      "why": "알려진 물리 모델을 생성적 전송 과정 자체에 심어 Plug-and-Play 대비 최대 5자릿수(약 10만배) 추론 가속을 달성했고, 지진 영상·천체물리·의료영상을 가로지르며 통합니다. 이번 주를 관통한 '역문제 복원이 물리를 다시 강제한다'는 흐름을 가장 극적인 수치로 보여주는 사례입니다.",
+      "tag": "[방법전환]",
+      "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Inverse Problems", "order": "Generative Transport", "genus": "Physics-Based Adjoint", "confidence": "High", "rationale": "여러 과학 분야 역문제에서 동일 가속 메커니즘 검증"}
+    },
+    {
+      "title": "Camera3R: Feed-Forward 3D Reconstruction from Heterogeneous Camera Models",
+      "arxiv": "https://arxiv.org/abs/2611.13453",
+      "why": "투시 카메라로만 학습된 feed-forward 3D 복원 모델을 어안렌즈·360도 카메라처럼 전혀 다른 렌즈 모델에도 0.5% 추가 파라미터와 1일 미만 학습으로 적응시키면서 기존 투시 카메라 성능은 그대로 유지했습니다. 3DGS가 '깨끗한 멀티뷰' 전제를 깨는 이번 주 흐름에서 가장 실용적인 적응 비용을 보여준 사례입니다.",
+      "tag": "[방법전환]",
+      "phylogeny": {"source": "CVML", "phylum": "3D Representation", "class": "Gaussian Splatting", "order": "Camera Generalization", "genus": "LoRA Adaptation", "confidence": "High", "rationale": "적응 비용과 성능 유지율을 동시에 구체 수치로 제시"}
+    },
+    {
+      "title": "Medical Image Segmentation: Foundation Model Adaptation versus Task-Specific Training",
+      "arxiv": "https://arxiv.org/abs/2611.14519",
+      "why": "foundation model 적응이 외부 일반화에서는 유리하지만 작은 병변 분할에서는 여전히 task-specific 학습보다 약하다는 조건부 트레이드오프를 수치로 보였고, 덤으로 널리 쓰이는 폴립 테스트셋이 다른 벤치마크와 이미지가 중복된다는 사실까지 발견했습니다. 'FM 도입이 공짜 이득이 아니다'라는 이번 주 클러스터에서 가장 경고성이 짙은 사례입니다.",
+      "tag": "[위험보류]",
+      "phylogeny": {"source": "CVML", "phylum": "Medical Imaging", "class": "Deployment Value", "order": "FM vs Task-Specific", "genus": "External Generalization Trade-off", "confidence": "High", "rationale": "조건부 성능 격차와 벤치마크 오염을 동시에 수치로 제시"}
+    },
+    {
+      "title": "One Block Is Enough: LoopMR for Accelerated MRI Reconstruction",
+      "arxiv": "https://arxiv.org/abs/2611.14947",
+      "why": "단 하나의 블록을 반복 공유하는 구조로 10.3M 파라미터만 쓰고도 92.9M 파라미터인 PromptMR+를 네 가지 해부학적 부위·모든 가속 배율에서 능가했습니다(p<0.01). 금요일 '물리/구조 강제' 클러스터 중 파라미터 효율성 수치가 가장 뚜렷한 사례입니다.",
+      "tag": "[인프라]",
+      "phylogeny": {"source": "CVML", "phylum": "Computational Imaging", "class": "Inverse Problems", "order": "Unrolled Reconstruction", "genus": "Block-Sharing", "confidence": "High", "rationale": "4개 해부학적 부위·모든 가속 배율에서 일관된 우위"}
+    }
+  ],
+  "next_week_actions": [
+    {
+      "title": "AdjointFlow + LoopMR의 물리/구조 강제 전략을 랩 역문제 솔버에 동시 적용",
+      "action": "AdjointFlow(2611.13389)의 물리 기반 adjoint 초기화를 랩이 쓰는 위상 복원 또는 단층촬영 재구성 중 물리 forward model이 이미 구현된 과제 하나에 적용해 Plug-and-Play 대비 추론 속도(배속)·복원 오차(RMSE/SSIM)를 측정하고, LoopMR(2611.14947)의 블록 공유 구조를 랩의 반복형 역문제 복원 네트워크에 이식해 파라미터 수 대비 성능을 비교한다.",
+      "expected_output": "물리 기반 초기화 전/후 추론 속도·복원 오차 비교표, 블록 공유 전/후 파라미터 수 대비 성능 비교표"
+    },
+    {
+      "title": "ProtoCouncil 선택적 예측 + Medical Seg FM Adaptation 트레이드오프를 랩 FM 파이프라인에 적용",
+      "action": "ProtoCouncil(2611.09058)의 인코더 불일치 기반 선택적 예측을 랩이 쓰는 다중 foundation model 앙상블에 적용해 외부 코호트에서 불일치 케이스 비율과 정확도 낙폭을 측정하고, Medical Image Segmentation FM Adaptation(2611.14519)이 보고한 '외부 일반화는 좋지만 작은 병변은 약함' 패턴이 랩 데이터(병변 크기별)에서도 재현되는지 확인한다.",
+      "expected_output": "불일치 케이스 비율·정확도 낙폭 표, 병변 크기별 FM 적응 vs task-specific 성능 비교표"
+    },
+    {
+      "title": "Camera3R LoRA 적응을 랩 비표준 렌즈 영상에 이식 + 염색 대체 가능성 재현",
+      "action": "Camera3R(2611.13453)의 LoRA 기반 이종 카메라 적응을 랩이 쓰는 비표준 렌즈(어안·현미경 대물렌즈) 영상에 적용해 전체 재학습 대비 적응 비용과 투시 카메라 성능 유지율을 비교하고, FluoVolt(염색 부작용) 및 Label-Free DHM(염색 없는 분류) 논문의 프로토콜을 랩 형광 염색 데이터에 대입해 염색 없는 대안으로 교체 가능한지 점검한다.",
+      "expected_output": "비표준 렌즈 적응 비용·성능 유지율 비교표, 염색 vs 레이블-프리 대안 재현 실험 결과"
+    }
+  ]
+}
