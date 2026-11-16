@@ -1,5 +1,39 @@
 {
   "date": "2026-11-16",
+  "source_listing_date": "2026-11-16",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 160,
+      "cs.CV": 91,
+      "cs.AI": 164,
+      "eess.IV": 9,
+      "eess.SP": 26
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 286
+  },
+  "totals": {
+    "total_scanned": 647,
+    "selected": 196
+  },
+  "classified": {
+    "total_scanned": 647,
+    "selected": 196,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 0,
+      "Phase Imaging/Holography": 8,
+      "Meta-Optics/Diffractive": 1,
+      "Light-Field/Novel Sensors": 1,
+      "Tomography/3D Imaging": 17,
+      "Virtual Staining/Pathology": 45,
+      "Reconstruction/Inverse Problems": 21,
+      "Deep Learning Methods": 102
+    }
+  },
+  "daily_thesis": "오늘은 역문제 복원이 '학습된 prior를 그대로 믿지 않고 물리 연산자의 불확실성 자체를 모델에 명시적으로 넣는' 방향으로 한 걸음 더 들어간 날입니다 — ECGI는 몸이 숨 쉴 때마다 달라지는 전달 연산자의 오차를 직접 추정하고, BeST는 위상 복원과 토모그래피를 하나의 볼륨으로 묶어 일관성을 강제합니다. 동시에 3D 복원 인프라(EcoVGGT·TetraCoder·Stage-wise Dropout·TelePhysica)는 속도·정확도·물리적 안정성이라는 서로 다른 병목을 각각 구조적으로 재설계하는 쪽으로 갈라졌고, 의료 영상 신뢰성 쪽에서는 지난주의 '외부 코호트에서 갈린다'는 경고 신호와 반대로 외부 사이트 일반화에 성공한 사례(CE-Agent, 뇌미세출혈 임상시험)가 먼저 등장해 이번 주 예측의 첫 반례 후보로 떠올랐습니다.",
+  "note": "2026-11-16(월) Date Source Contract 확인 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 /new listing이 \"Monday, 16 November 2026\"으로 post_date와 일치해 source_mode=new로 정상 처리했다(/new 5개 카테고리 합계 450건, new+cross, replacements 제외). 여기에 Crossref/OpenAlex 저널 286건과 OpenAlex 보충 1건을 더해 classify.py로 합쳐 스캔한 결과 총 647건 중 196건(30.3%)이 9개 ROI 버킷에 배정됐다. 30.3%는 최근 며칠(26~32%) 범위 안에 있어 파서 오류가 아니라 정상 변동으로 본다. 2026-11-12(목)은 여전히 journal-only 잠정 상태로 남아 있다 — 지난 금요일(11/13) Calendar Audit에서 /pastweek 2000건 윈도우 전체에 11/12 날짜 섹션 자체가 존재하지 않음(Wed 11/11 → Fri 11/13 직행)을 5개 카테고리 모두에서 재확인했으므로, 이는 수집 지연이 아니라 arXiv가 그날 listing을 발행하지 않은 영구 공백으로 최종 확정됐다. 오늘 산출물에는 이번 주 월요일 오전(10:00 KST) weekly 실행이 이미 작성한 weekly_retrospective_context(2026-46 회고)가 포함돼 있으며, 이번 daily 실행은 그 블록을 보존한 채 당일 필드만 추가했다.",
   "weekly_retrospective_context": {
     "iso_week": "2026-46",
     "week_start": "2026-11-09",

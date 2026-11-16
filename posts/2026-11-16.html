@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-11-16</title>
+<style>
+
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-11-16 (월요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-11-16 (월요일) · Daily mode (source_mode=new)</div>
+  <div>📚 소스: Date Source Contract 확인 결과 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 /new listing이 "Monday, 16 November 2026"으로 post_date와 일치해 정상적인 당일 daily로 처리했습니다. 참고로 오늘 아침(10:00 KST) 별도의 weekly 실행이 지난주(2026-46, 11/9~11/13) 회고를 이미 발행했습니다 — <a href="2026-11-16-weekly.html">weekly 보기</a>.</div>
+  <div>🔢 arXiv(new+cross, replacements 제외): cs.LG 160 · cs.CV 91 · cs.AI 164 · eess.IV 9 · eess.SP 26 (합계 450편)</div>
+  <div>🔢 저널: Crossref/OpenAlex 286편 + OpenAlex 보충 1편 수집 · arXiv+저널 합산 스캔 647건(dedup 후) · ROI 배정 196건 (30.3%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 <strong>역문제 복원이 "학습된 prior를 그대로 믿기"에서 한 걸음 더 들어가, 측정 장비·신체·수치해석이 가진 물리적 불확실성 자체를 모델 구조 안에 명시적으로 넣는 쪽으로 움직인 날</strong>입니다 — 심장 표면 전위를 복원하는 ECGI는 숨 쉴 때마다 달라지는 몸속 전달 경로의 오차를 직접 추정하고, BeST는 위상 복원과 토모그래피를 하나의 볼륨으로 묶어 일관성을 강제합니다. <strong>3D 장면 복원 인프라는 계산량·과적합·표현 변환·물리적 안정성이라는 서로 다른 병목을 각각 따로 재설계</strong>하는 쪽으로 갈라졌고, <strong>의료 영상 신뢰성 쪽에서는 지난주 weekly가 짚은 "외부 기관에서 깨진다"는 경고와 반대로 외부 사이트 일반화에 성공한 사례가 먼저 등장</strong>해 이번 주 예측의 첫 반례 후보로 떠올랐습니다. 반면 랩 핵심 ROI인 Fourier Ptychography와 Lensless 쪽은 오늘도 실질 신호가 사실상 없어, 5주 연속 "구조적으로 얇은 기준선"이라는 weekly의 판단이 월요일 첫날부터 그대로 재확인됐습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 2026-11-16 확인 기준 5개 카테고리 모두 /new listing이 "Monday, 16 November 2026"으로 post_date와 일치해 정상적인 daily 모드로 arXiv를 수집했습니다(new+cross 합계 450편, replacements 제외). 여기에 Crossref/OpenAlex 저널 286편과 OpenAlex 보충 1편을 더해 classify.py로 합쳐 스캔한 결과(dedup 후 647건) 196건(30.3%)이 9개 ROI 버킷에 배정됐습니다. 지난주 weekly가 "4주 연속 계산광학 하드웨어 코어가 구조적으로 얇다"고 판단한 흐름이 오늘도 그대로입니다 — Fourier Ptychography/Microscopy 1편(실제로는 SAR-광학 변환 논문이라 완전 오탐)·Lensless/Coded Imaging 0편·Meta-Optics/Diffractive 1편(이미징이 아니라 삽입형 혈당 레이더 센서)으로 셋 다 사실상 공백입니다. 반면 Reconstruction/Inverse Problems(21편)와 Tomography/3D Imaging(17편)에서는 서로 다른 모달리티(심전도 영상·X선 토모그래피·PDE 시뮬레이션)가 같은 설계 원칙(물리 연산자의 불확실성을 모델에 직접 반영)을 반복하는 클러스터와, 3D 복원 인프라의 병목을 각각 공략하는 클러스터가 동시에 잡혔습니다. Virtual Staining/Pathology는 45편이 배정됐지만 거의 전부가 "sustainable"·"virtual" 같은 단어만 겹치는 오탐(인적자원관리·수질관리·HR 모델 논문 등)이고, 실질 신호는 라벨 없는 세포 산란 측정 1편뿐이라 오늘은 특히 약했습니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>지난주 금요일(11/13)은 arXiv 복귀 첫날로 MRI 재구성 가속화(블록 공유·해상도 비의존·물리 시뮬레이션 스케일업)와 3D Gaussian Splatting의 모달리티 확장(열화상·X선·위상 변화 1인칭)이 핵심이었고, 저널 쪽은 라이브셀 염색 대체/경고와 비광학 토모그래피 deep prior가 이어졌습니다. 오늘은 그 흐름이 완전히 다른 방향으로 넘어갔습니다. MRI 가속화 대신 ECGI·X선 토모그래피처럼 "측정 연산자 자체가 불확실한" 문제에서 그 불확실성을 직접 모델링하는 쪽이 중심이 됐고, 3DGS 이야기도 모달리티 확장이 아니라 attention 계산량·과적합·표현 변환 같은 인프라 병목 쪽으로 옮겨갔습니다. 가장 눈에 띄는 변화는 의료 영상 신뢰성 논제입니다. 지난주 내내(특히 목·금) "foundation model이 외부 코호트로 가면 성능이 갈린다"는 경고성 사례가 쌓였는데, 오늘은 거꾸로 외부 사이트에서도 버틴 사례(CE-Agent의 다기관 심혈관 위험 예측, 뇌미세출혈 탐지 확증적 임상시험)가 먼저 나와서 이번 주 전체를 봐야 어느 방향이 우세한지 판단할 수 있는 상태입니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>역문제 복원이 "prior를 그대로 믿기"에서 "물리 연산자의 불확실성을 모델에 명시적으로 넣기"로 더 들어감</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.17851" target=_blank>Electrocardiographic Imaging via Posterior Sampling under Operator Discrepancy</a> <span class="pill b">LG</span><br>
+    <a href="https://arxiv.org/abs/2611.17982" target=_blank>BeST: Beta splatted tomography for direct reconstruction from coherent imaging measurements</a> <span class="pill b">IV</span><br>
+    <a href="https://arxiv.org/abs/2611.18409" target=_blank>Fuse-PINN: Combining FEM and Physics-Informed Neural Networks for parallel PDE simulation</a> <span class="pill b">LG</span>
+  </td>
+  <td>심장 표면 전위를 몸 밖 측정값에서 복원하는 ECGI는 원래 diffusion posterior sampler가 학습된 prior와 "측정값이 어떻게 만들어지는지"를 나타내는 전달 연산자를 결합해서 푸는데, 지금까지는 이 연산자가 정확하다고 가정했습니다. 그런데 실제로는 숨을 쉬거나 자세가 바뀌면 몸속 전기 전달 경로 자체가 달라지고, 피하지방량 같은 값은 환자마다 달라서 애초에 정확히 알 수도 없습니다. 오늘 논문은 이 "연산자가 사실 틀렸을 수 있다"는 오차를 모델이 직접 추정하도록 만듭니다. BeST는 같은 문제의식을 X선 위상 복원에 적용해, 투사 하나하나를 따로 복원하면 위치 오차 때문에 서로 안 맞는 단층상이 나오는 문제를, 위상 복원과 토모그래피를 하나의 공통 볼륨으로 묶어 강제로 일관성을 맞춥니다. Fuse-PINN은 물리 정보 신경망만으로는 대형 병렬 컴퓨터에서 비선형 방정식을 못 푸는 한계를 유한요소법과 결합해 풉니다. 세 편을 합치면, 역문제 복원이 "생성 모델이 알아서 그럴듯한 답을 내겠지"라는 기대에서 벗어나 측정 장비·신체·수치해석의 물리적 한계를 모델 구조 안에 계속 다시 집어넣는 쪽으로 가고 있다는 뜻이고, 이는 지난주 weekly가 짚은 "물리 강제" 예측이 월요일부터 바로 이어진 신호이기도 합니다.</td>
+  <td>Medium<br><small>서로 다른 모달리티(ECGI·X선 토모그래피·PDE) 세 편이 같은 날 같은 설계 원칙을 반복했지만, 세 편 모두 abstract 기준이고 서로 다른 벤치마크를 써서 직접 비교는 안 됩니다.</small></td>
+  <td>BeST의 위상 복원-토모그래피 공동 최적화 구조를 랩의 광 회절 단층촬영(ODT) 파이프라인에 시뮬레이션으로 적용하고, ECGI의 연산자 불확실성 추정 방식을 랩 forward model(조명 패턴·PSF) 보정 오차 추정에 1주 내 이식해 복원 RMSE 변화를 비교한다.</td>
+</tr>
+<tr>
+  <td><strong>3D 장면 복원 인프라가 계산량·과적합·표현 변환·물리적 안정성이라는 서로 다른 병목을 각각 구조적으로 재설계</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.18099" target=_blank>EcoVGGT: Pinned-Key Inference for Efficient Feed-Forward 3D Reconstruction</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.17752" target=_blank>Stage-wise Lineage-aware Dropout for Sparse-View 3D Gaussian Splatting</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.18267" target=_blank>TetraCoder: Adaptive Tetrahedral Encoding for Neural Fields</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.18078" target=_blank>TelePhysica: Agentic Reconstruction of Physically Interactive Scenes</a> <span class="pill b">CV</span>
+  </td>
+  <td>VGGT 같은 feed-forward 멀티뷰 트랜스포머는 영상 한 번에 카메라 위치와 3D 구조를 같이 복원하지만, 프레임이 길어질수록 프레임끼리 전부 비교하는 계산량이 제곱으로 늘어 느려지고 정확도도 떨어집니다. EcoVGGT는 영상 내용을 보지 않고도 미리 정한 소수의 키만 재사용해도 성능이 거의 그대로라는 것을 보여 이 문제를 구조적으로 풀었습니다. Stage-wise Dropout은 다른 병목을 겨냥합니다. 사진 몇 장만으로 3D Gaussian Splatting을 복원하면 장면 기하를 충분히 제약하지 못해 과적합되는데, 같은 가우시안에서 복제·분할로 파생된 "혈통" 단위로 묶어 드롭아웃을 걸어 줄입니다. TetraCoder는 표면 샘플링은 explicit 표현이 빠르고 공간 쿼리는 implicit 표현이 빠르다는 오래된 딜레마를, 양쪽을 오가는 변환 비용 없이 사면체 인코딩 하나로 연결합니다. TelePhysica는 아예 다른 축입니다. 영상 생성 모델은 픽셀과 움직임을 한데 섞어 만들기 때문에 물체가 중력에 맞게 버티는지 따질 수 없는데, 한 장의 사진에서 실제로 물리 법칙을 지키며 작동하는 3D 장면을 복원합니다. 네 편을 합치면 3D 복원 연구가 모델을 더 키우기보다 계산량, 적은 뷰에서의 과적합, 표현 변환 비용, 물리적 타당성처럼 서로 다른 병목을 각각 짚어 구조를 바꾸는 단계에 들어섰다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 연구팀 네 편이 같은 날 3D 복원의 서로 다른 병목을 공략했고, 넷 다 구체적 ablation 또는 벤치마크 비교를 동반합니다.</small></td>
+  <td>EcoVGGT의 pinned-key 구조를 랩의 긴 시계열 3D 복원(라이트필드 현미경 시계열 등)에 적용해 프레임 수 대비 추론 시간 곡선을 비교하고, Stage-wise Dropout의 lineage 드롭아웃을 랩 희소 뷰 3DGS 실험에 적용해 held-out PSNR 개선폭을 1주 내 ablation한다.</td>
+</tr>
+<tr>
+  <td><strong>희소·저해상도 센서 신호를 diffusion·flow matching으로 메우는 패턴이 라이다·광장·혈관 영상까지 반복</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.18243" target=_blank>D2ToF: One-Step Diffusion for Depth Super-Resolution from SPL Waveforms</a> <span class="pill b">IV</span><br>
+    <a href="https://arxiv.org/abs/2611.17957" target=_blank>MacroGS: Macro-Pixel Shared Gaussian Primitives for Light Field Super-Resolution</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.17919" target=_blank>Vessel2Brain: Edge-Aware Multi-Scale Flow Matching for 3D Brain Image Generation</a> <span class="pill b">CV</span>
+  </td>
+  <td>세 편 모두 "센서가 원래 주는 정보는 너무 적은데 그 빈틈을 생성모델로 메운다"는 같은 구조를 전혀 다른 센서에 적용합니다. D2ToF는 저가형 단일광자 라이다가 겨우 8×8 화소 거리 정보만 주는 상황에서 한 번의 diffusion 단계만으로 128×128 해상도까지 16배 키우면서도 83밀리초 안에 끝내 실시간 적용이 가능함을 보였습니다. MacroGS는 여러 각도에서 동시에 찍는 라이트필드 카메라의 저해상도 영상을 Gaussian primitive로 임의 배율까지 복원하는데, 시점마다 따로 만들던 기존 방식과 달리 하나의 공유 표현으로 묶어 중복을 없앴습니다. Vessel2Brain은 영상이 아니라 혈관 분포만 주어졌을 때 뇌 전체 3D MRI 볼륨을 flow matching으로 복원합니다. 세 편을 합치면 "정보가 턱없이 부족한 측정에서 그럴듯한 고해상도 영상을 만든다"는 과제가 라이다·라이트필드·혈관 영상처럼 서로 다른 센서 환경에서 각각 생성모델 기반으로 독립적으로 수렴하고 있다는 뜻이고, 랩의 희소 뷰·저조도 계산 이미징 문제에도 같은 틀을 가져다 쓸 여지가 있습니다.</td>
+  <td>Medium<br><small>서로 다른 센서 도메인 세 편이 같은 날 같은 패턴을 반복했지만, 서로 다른 벤치마크를 써서 같은 데이터셋 교차검증은 아직 없습니다.</small></td>
+  <td>D2ToF의 one-step distilled diffusion + 측정 일관성 항 구조를 랩의 저해상도 라이트필드/ToF 센서 데이터에 적용해 보간 전후 PSNR과 추론 지연시간을 1주 내 비교한다.</td>
+</tr>
+<tr>
+  <td><strong>의료 영상 AI 신뢰성 검증이 지난주의 "외부에서 깨짐" 경고와 반대로 "외부에서도 버팀" 사례로 먼저 시작</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.17819" target=_blank>Causally Constrained and Uncertainty-Aware Cardiopulmonary Risk Prediction (CE-Agent)</a> <span class="pill b">AI</span><br>
+    <a href="https://doi.org/10.1038/s41598-026-77551-0" target=_blank>Deep learning-based CAD of cerebral microbleeds in a confirmatory clinical trial</a> <span class=pill>JNL</span><br>
+    <a href="https://arxiv.org/abs/2611.17712" target=_blank>A Tumour-Aware Multimodal Framework for Explainable IDH Mutation Prediction in Gliomas</a> <span class="pill b">IV</span>
+  </td>
+  <td>지난주 weekly가 짚은 패턴은 "의료 영상 foundation model이 외부 기관·장비로 가면 성능이 갈린다"는 쪽이었는데, 오늘 나온 사례들은 거꾸로 그 반대 방향의 증거로 시작합니다. CE-Agent는 폐암 검진 CT에서 심장·혈관 위험을 같이 예측하는데, 기존 임상 공식이 위험도를 1.7배 과대평가하던 것을 보정하면서 한 병원에서 다른 병원·다른 스캐너로 옮겨도 성능이 유지되고 필요한 학습 표본 수도 최대 5배까지 줄었다고 보고합니다. 뇌미세출혈 탐지 모델은 실제로 확증적 임상시험 절차를 거쳐 병변 단위 민감도 88.35%, 환자당 위양성 0.95건으로 사전에 정한 기준을 통과했습니다. IDH 돌연변이 예측 논문도 종양 영역에 집중한 다중 MRI 결합으로 해석 가능성까지 같이 보여줍니다. 세 편을 합치면 오늘 하루만 보면 "외부에서 버티는 사례"가 먼저 나왔다는 뜻이고, 이는 이번 주 예측(negative result·트레이드오프 사례가 추가된다)과 반대 방향의 첫 관측치라 이번 주 나머지 날짜와 함께 판단해야 합니다.</td>
+  <td>Medium<br><small>세 편이 같은 날 동시에 긍정적 검증을 보고했지만 아직 하루치 관측이고, CE-Agent 외에는 abstract에 외부 코호트 실패 사례가 언급되지 않습니다.</small></td>
+  <td>CE-Agent의 "역학적 증거를 사전 제약으로 컴파일 + 사후보정" 구조를 랩이 검증 중인 영상 기반 위험도/품질 예측 모델에 적용 가능한지 검토하고, 뇌미세출혈 임상시험의 사전 정의 성능 기준 방식을 랩 자체 모델 검증 프로토콜에도 1주 내 시범 적용한다.</td>
+</tr>
+<tr>
+  <td><strong>계산광학 하드웨어 코어(FP·Lensless·Meta-Optics)가 월요일 첫날부터 또 공백 — 5주 연속 구조적으로 얇은 기준선 재확인</strong></td>
+  <td>
+    <a href="https://doi.org/10.1038/s41598-026-73580-x" target=_blank>S2O-SARUNet: SAR-to-optical colorization</a> <span class=pill>JNL</span><br>
+    <a href="https://arxiv.org/abs/2611.17760" target=_blank>A passive, battery-free flexible metasurface for implantable mmWave radar glucose sensing</a> <span class="pill b">SP</span>
+  </td>
+  <td>Fourier Ptychography/Microscopy에 배정된 유일한 논문은 제목만 보면 ptychography를 연상시키지만 실제로는 SAR(합성개구레이더) 영상을 광학 영상처럼 색칠하는 원격탐사 논문이라 완전한 오탐입니다. Lensless/Coded Imaging은 오늘도 0편이고, Meta-Optics/Diffractive에 배정된 유일한 논문도 메타표면을 이미징이 아니라 피부밑에 심는 전력 없는 혈당 측정 레이더 센서로 씁니다. 지난주 weekly가 4주 연속(W43~W46) 확인한 "계산광학 하드웨어 코어가 구조적으로 얇다"는 판단이, 이번 주 첫날인 오늘도 똑같이 반복됐다는 뜻입니다. 다만 이는 수집 실패가 아니라 원천 자체의 흐름이라, 랩이 당장 할 일은 추적보다는 다음에 진짜 신호가 뜰 때 놓치지 않는 것입니다.</td>
+  <td>Low<br><small>두 편 모두 abstract 기준으로 제목의 키워드와 실제 응용이 어긋나는 오탐이며, 랩 ROI(이미징 하드웨어)와 직접 관련이 없습니다.</small></td>
+  <td>별도 실행 항목 없음 — 다음에 Fourier Ptychography/Lensless/Meta-Optics가 실제 이미징 응용으로 복귀하는지만 매일 도메인 Watch Lens에서 계속 확인한다.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li>Fourier Ptychography/Microscopy: 1편 배정, 실신호 0편 — 유일한 배정 논문(S2O-SARUNet)은 제목이 광학 변환을 연상시킬 뿐 SAR-광학 색칠 논문이라 ptychography와 무관한 오탐입니다.</li>
+    <li>Lensless/Coded Imaging: 0편 배정 — 오늘도 완전한 공백입니다.</li>
+    <li>Phase Imaging/Holography: 8편 배정, 실신호 1편(BeST, 클러스터1 대표) — 나머지 7편은 담관 누출 MRI 지연영상, 블랙홀 강착류 분광, 가족지속가능성·녹색거버넌스·노동관계 사회학 논문 등 완전 무관입니다.</li>
+    <li>Meta-Optics/Diffractive: 1편 배정, 실신호 0편(이미징 아님) — 삽입형 혈당 측정 레이더 센서로, 메타표면 부품은 쓰지만 목적이 이미징이 아닙니다.</li>
+    <li>Light-Field/Novel Sensors: 1편 배정, 실신호 1편(MacroGS, 클러스터3 대표) — 오늘은 유일한 배정 논문이 그대로 실질 신호였습니다.</li>
+    <li>Tomography/3D Imaging: 17편 배정, 실신호 약 6편 — EcoVGGT·Stage-wise Dropout·TetraCoder·TelePhysica(클러스터2) 4편에 더해 BeST(클러스터1 중복 집계), Cardiopulmonary Risk(클러스터4 인접) 등이 신호이고, 나머지 약 10편은 담낭 종양 증례·경동맥 CTA·소아 뇌 CT 선량 최적화 같은 순수 임상 증례입니다.</li>
+    <li>Virtual Staining/Pathology: 45편 배정, 실신호 1편(confocal scattering microscopy 기반 라벨 없는 나노입자 특성화) — 나머지 44편은 인적자원관리 모델, 지속가능 관광, 이란 사회학 연구처럼 "virtual"/"sustainable" 단어만 일치하는 완전한 오탐입니다.</li>
+    <li>Reconstruction/Inverse Problems: 21편 배정, 실신호 약 4편 — ECGI·Fuse-PINN(클러스터1)에 더해 D2ToF·Vessel2Brain(클러스터3)이 오늘의 핵심이고, 나머지는 DTW 검색·인지모델 시뮬레이션·MIMO-OFDM 통신처럼 이미징과 무관한 일반 ML/통신 논문입니다.</li>
+    <li>Deep Learning Methods: 102편 배정, 실신호 약 5편(랩 ROI 직결) — D2ToF·Vessel2Brain·IDH Mutation·cerebral microbleeds·I-JEPA retinal OCT 정도가 이미징 관련 신호이고, 나머지는 MoE 라우터·양자 GNN·시계열 foundation model 등 catch-all 범용 ML입니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<p>오늘은 이 대비가 평소보다 더 또렷합니다. arXiv 쪽(cs.LG/cs.CV/cs.AI/eess.IV/eess.SP)에서는 "operator discrepancy", "posterior sampling", "feed-forward reconstruction", "flow matching"처럼 방법론 중심 키워드가 지배했고, 그 결과가 오늘의 네 클러스터(물리 연산자 불확실성 모델링, 3D 복원 인프라 재설계, 희소 센서 초해상도, 의료 영상 외부 검증)를 거의 전부 채웠습니다. 저널(Crossref/OpenAlex) 쪽은 오늘 실질 이미징 신호가 유독 약했는데, 286편 중 랩 ROI에 걸린 것은 뇌미세출혈 임상시험과 confocal scattering microscopy 정도이고 나머지는 "sustainable", "virtual"이라는 공통 단어만 겹치는 인적자원관리·사회학·토목공학 논문들이었습니다. 공통 키워드는 "tomography"와 "reconstruction"인데, 오늘은 맥락 차이보다 양적 차이가 더 큽니다 — arXiv는 tomography/reconstruction을 구체적 벤치마크(PSNR·Dice·민감도)로 검증하는 반면, 저널 쪽에는 애초에 광학 이미징 맥락의 tomography/reconstruction 논문 자체가 거의 없었습니다. 즉 오늘은 "저널이 응용을, arXiv가 방법을 담당한다"는 평소 분업이 저널 쪽 공급 부족으로 한쪽에 치우친 날입니다.</p>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 역문제 복원이 물리 연산자의 불확실성 자체를 모델 안에 넣기 시작</h3>
+  <p>ECGI, BeST, Fuse-PINN 세 편이 ECGI·X선 토모그래피·PDE 시뮬레이션에서 각각 측정 장비·신체·수치해석의 물리적 한계를 모델 구조에 직접 반영합니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<div class=ins>
+  <h3>2. 3D 장면 복원 인프라가 계산량·과적합·표현 변환·물리적 안정성을 각각 따로 공략</h3>
+  <p>EcoVGGT, Stage-wise Dropout, TetraCoder, TelePhysica 네 편이 3D 복원의 서로 다른 병목을 구조적으로 재설계하며, 더 큰 모델이 아니라 구조 교정이 다음 경쟁 축임을 보여줍니다.</p>
+  <p class=conf-note>Confidence: High</p>
+</div>
+
+<div class=ins>
+  <h3>3. 희소 센서 신호를 생성모델로 메우는 패턴이 라이다·라이트필드·혈관 영상까지 번짐</h3>
+  <p>D2ToF, MacroGS, Vessel2Brain 세 편이 각각 다른 센서 환경에서 diffusion 또는 flow matching 기반 초해상도/생성 복원으로 수렴합니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<div class=ins>
+  <h3>4. 의료 영상 신뢰성 검증이 "외부에서도 버팀" 사례로 이번 주를 시작</h3>
+  <p>CE-Agent, 뇌미세출혈 확증적 임상시험, IDH 돌연변이 예측 세 편이 지난주 경고성 흐름과 반대로 외부 코호트 일반화 성공 사례를 보고합니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<div class=ins>
+  <h3>5. 계산광학 하드웨어 코어가 5주 연속 공백 — weekly 예측이 월요일 첫날부터 재확인</h3>
+  <p>Fourier Ptychography·Lensless·Meta-Optics 셋 다 오늘 실질 신호가 0편이거나 완전 오탐이라, 지난주 weekly가 짚은 "구조적으로 얇은 기준선"이 그대로 이어졌습니다.</p>
+  <p class=conf-note>Confidence: High</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. BeST의 위상 복원-토모그래피 공동 최적화를 랩 ODT 파이프라인에 이식</h3>
+  <p>BeST는 투사별 위상 복원과 전체 볼륨 토모그래피를 하나의 공통 object로 묶어 위치 오차로 인한 단층상 불일치를 줄이는데, 랩의 광 회절 단층촬영(ODT)도 같은 종류의 투사-볼륨 불일치 문제를 겪고 있어 직접 적용 가능성이 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: BeST (arXiv 2611.17982) — 코드 공개 여부 abstract 기준 확인 불가, 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 ODT 시뮬레이션 데이터셋(위치 오차를 인위적으로 주입한 투사 세트)</li>
+    <li>비교축: 기존 두 단계(위상 복원 후 토모그래피) 방식 대비 공동 최적화 방식의 복원 오차(RMSE)와 계산 시간</li>
+    <li>실패해도 남는 결과: 공동 최적화가 계산량 때문에 비현실적이더라도, 현재 ODT 파이프라인의 위치 오차 민감도를 정량화한 결과는 다음 하드웨어 보정 설계에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. EcoVGGT의 pinned-key 추론을 긴 시계열 3D 복원에 적용</h3>
+  <p>EcoVGGT는 내용을 보지 않고 고정된 소수의 키만 재사용해도 feed-forward 3D 복원 성능이 유지된다는 것을 보였는데, 랩이 다루는 긴 영상 기반 3D 복원(시계열 현미경 영상 등)에서 같은 전략이 통하는지 확인할 가치가 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: EcoVGGT (arXiv 2611.18099) — VGGT 기반 공개 코드 존재 가능성 높음, 본문 확인 필요</li>
+    <li>공통 benchmark: 랩이 보유한 긴 시계열 3D 복원 데이터셋 또는 공개 VGGT 벤치마크</li>
+    <li>비교축: 프레임 수 증가에 따른 추론 시간·메모리 사용량·복원 정확도(카메라 포즈 오차)</li>
+    <li>실패해도 남는 결과: pinned-key가 랩 데이터에서 성능 저하를 일으키더라도, 현재 파이프라인의 프레임 수 대비 계산량 증가 곡선을 정리한 프로파일링 결과는 다음 경량화 설계에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. D2ToF의 one-step diffusion 초해상도를 랩 저해상도 깊이/라이트필드 센서에 적용</h3>
+  <p>D2ToF는 8×8 해상도 ToF 신호를 83ms 만에 128×128로 복원하는데, 랩이 쓰는 저해상도 깊이 센서나 라이트필드 어레이에도 같은 one-step distillation 전략이 실시간 처리에 쓰일 수 있는지 확인할 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: D2ToF (arXiv 2611.18243), MacroGS (arXiv 2611.17957) — 둘 다 코드 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 저해상도 ToF/라이트필드 센서 데이터 + 대조군(전통적 보간)</li>
+    <li>비교축: 초해상도 배율별 PSNR/SSIM, 추론 지연시간(ms), 측정 일관성(측정값 재투영 오차)</li>
+    <li>실패해도 남는 결과: 실시간 기준(수십 ms)을 못 맞추더라도, 배율별 복원 품질 곡선은 다음 센서 하드웨어 선정에 재사용 가능한 기준값이 된다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>D. CE-Agent의 사전 제약 + 사후보정 구조를 랩 모델 검증 프로토콜에 시범 적용</h3>
+  <p>CE-Agent는 역학적 증거를 사전 제약으로 컴파일해 둔 뒤 코호트 데이터로 국소 기준 위험을 추정하는 2단계 구조로 외부 병원·스캐너에서도 성능을 유지했는데, 랩이 검증하려는 영상 기반 품질/위험 예측 모델에도 같은 틀을 시범 적용해볼 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: CE-Agent (arXiv 2611.17819) — 코드 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩이 보유한 다기관/다장비 검증 세트(있는 경우) 또는 시뮬레이션 도메인 시프트</li>
+    <li>비교축: 사전 제약 유무에 따른 외부 사이트 일반화 성능과 필요 학습 표본 수</li>
+    <li>실패해도 남는 결과: 사전 제약이 랩 모델에 안 맞더라도, 현재 모델의 도메인 시프트 민감도를 정리한 분석은 다음 검증 설계에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<h2>🧭 예측 회고 루프</h2>
+<p>오늘은 월요일이지만 daily 실행이라 전체 예측 채점은 생략합니다(지난주 2026-46 전체 회고와 이번 주 예측은 오늘 10:00 KST 별도 weekly 실행이 이미 수행했습니다 — <a href="2026-11-16-weekly.html">weekly 보기</a> 참고). 다만 weekly가 낸 세 예측 중 오늘(이번 주 1일차) 관측치를 짚어두면: (1) "역문제 복원의 물리 강제 패턴이 다음 주에도 4일 이상 지속된다"는 예측은, 오늘 ECGI·BeST·Fuse-PINN 세 편이 같은 날 "학습된 prior 대신 물리 연산자의 불확실성을 직접 모델링"하는 같은 구조를 반복해 hit 방향의 첫 관측치입니다. (2) "계산광학 하드웨어 코어가 5일 중 4일 이상 FP+Lensless 합산 2편 이하에 머문다"는 예측은, 오늘 FP 1편(오탐)+Lensless 0편으로 실질 신호 0편이라 역시 hit 방향에 부합하는 첫 관측치입니다. (3) "의료영상 foundation model 신뢰성 검증에서 외부 코호트 트레이드오프 사례가 한 건 이상 더 추가된다"는 예측은, 오늘은 거꾸로 CE-Agent와 뇌미세출혈 임상시험이 외부에서도 버틴 긍정적 사례를 먼저 보고해 miss 방향에 가까운 관측치입니다(다만 하루치라 아직 단정하기는 이르고, 이번 주 나머지 날짜와 함께 다시 판단합니다). 다음 예측 회고는 2026-11-23(월) weekly가 이번 주(11/16~11/20) 전체를 되돌아보며 수행합니다.</p>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Deep Learning Methods(102편, catch-all)를 제외한 버킷 중 최댓값인 Virtual Staining/Pathology(45편) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all, 실제 편수는 라벨에 표시). 0편 버킷도 0% 막대로 표시합니다.</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:18%"></span></span><span class=n>8편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:2%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:38%"></span></span><span class=n>17편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>45편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:47%"></span></span><span class=n>21편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>102편</span></div>
+
+<p><small>⚠️ 참고: 버킷별 실질 신호 비율은 위 🔬 도메인 Watch Lens 섹션을 참고하세요 — Virtual Staining/Pathology는 45편 중 실질 신호가 1편뿐이라 막대가 가장 길어도 가장 약한 버킷입니다. 반대로 Light-Field/Novel Sensors는 1편뿐이지만 그 1편이 그대로 실질 신호였습니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.17851" target=_blank>Electrocardiographic Imaging via Posterior Sampling under Operator Discrepancy</a></strong> [LG]<br>
+  왜 주요: diffusion posterior sampler가 가정하던 "정확한 전달 연산자"라는 전제를 깨고 그 오차 자체를 추정하는 구조로, 랩의 forward model 보정 문제에 직접 참고할 수 있음.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.17982" target=_blank>BeST: Beta splatted tomography for direct reconstruction from coherent imaging measurements</a></strong> [IV]<br>
+  왜 주요: 위상 복원과 토모그래피를 하나의 볼륨으로 묶어 계산량을 줄이면서 일관성을 강제하는 구조로, 랩 ODT 파이프라인에 가장 가까운 논문.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.18099" target=_blank>EcoVGGT: Pinned-Key Inference for Efficient and Streamable Feed-Forward 3D Reconstruction</a></strong> [CV]<br>
+  왜 주요: 긴 영상에서 feed-forward 3D 복원의 계산량 병목을 pinned-key 구조로 풀어, 랩의 시계열 3D 복원 경량화에 바로 참고 가능.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.17752" target=_blank>Stage-wise Lineage-aware Dropout for Sparse-View 3D Gaussian Splatting</a></strong> [CV]<br>
+  왜 주요: 희소 뷰 3DGS의 과적합을 가우시안 혈통 단위 드롭아웃으로 줄이는 구조로, 랩의 적은 시점 복원 실험에 적용 가능.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.18243" target=_blank>D2ToF: One-Step Diffusion for Depth Super-Resolution from Lightweight Single-Photon LiDAR Waveforms</a></strong> [IV]<br>
+  왜 주요: 8×8 저해상도 라이다 신호를 16배 초해상도로, 그것도 83ms 안에 복원하는 실시간 가능 구조로 랩의 저해상도 센서 복원에 직접 응용 가능.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.17957" target=_blank>MacroGS: Macro-Pixel Shared Gaussian Primitives for Arbitrary-Scale Light Field Super-Resolution</a></strong> [CV]<br>
+  왜 주요: 라이트필드의 시점 간 중복을 없애는 공유 Gaussian 표현으로, 랩의 라이트필드/다중뷰 복원 효율화에 참고할 수 있음.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.17819" target=_blank>Causally Constrained and Uncertainty-Aware Cardiopulmonary Risk Prediction (CE-Agent)</a></strong> [AI]<br>
+  왜 주요: 외부 병원·스캐너에서도 성능이 유지되는 보기 드문 긍정적 일반화 사례로, 랩 모델 검증 프로토콜 설계에 참고 가치가 큼.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41598-026-77551-0" target=_blank>Deep learning-based CAD of cerebral microbleeds in a confirmatory clinical trial</a></strong> [JNL]<br>
+  왜 주요: 사전에 정한 성능 기준(민감도·위양성률)을 통과한 확증적 임상시험 사례로, 랩이 모델 검증 기준을 설계할 때 참고할 수 있는 구체적 수치를 제공.
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>Result</th><th>Paper</th></tr></thead>
+<tbody>
+<tr><td>Single-photon LiDAR depth super-resolution (8×8×100 히스토그램 → 128×128 깊이맵)</td><td>배율/지연시간</td><td>16배 초해상도, one-step diffusion으로 약 83ms/프레임</td><td><a href="https://arxiv.org/abs/2611.18243" target=_blank>D2ToF</a></td></tr>
+<tr><td>33개 병원 5.3만명 폐암 검진 코호트 심혈관 위험 예측 vs Pooled Cohort Equations</td><td>위험도 과대추정 보정 / 표본 효율</td><td>PCE 대비 1.7배 과대추정 보정, 외부 사이트 일반화 시 필요 표본 최대 5배 절감</td><td><a href="https://arxiv.org/abs/2611.17819" target=_blank>CE-Agent</a></td></tr>
+</tbody>
+</table>
+<p><small>뇌미세출혈 탐지 모델의 "병변 단위 민감도 88.35%, 환자당 위양성 0.95건"은 사전 등록된 confirmatory clinical trial 1차 평가지표라 임상적으로는 중요하지만, 표준 공개 벤치마크 비교 형식이 아니라 단일기관 457건 검사 기준 수치라 참고용으로만 본문에 남기고 위 표에는 포함하지 않았습니다.</small></p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Electrocardiographic Imaging via Posterior Sampling under Operator Discrepancy</h3>
+  <div class=tag>[방법전환] [해부분석]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 전체 배치에서 "diffusion 기반 역문제 복원기가 암묵적으로 깔고 있던 가정(전달 연산자가 정확하다)"을 정면으로 문제 삼은 유일한 논문이고, 랩이 쓰는 모든 diffusion posterior sampling 기반 복원 파이프라인에 직접 적용 가능한 교훈을 준다는 점에서 A급입니다.</p>
+  <p><strong>핵심:</strong> 심장 표면의 전기적 활동(전위)을 몸 밖에 붙인 전극의 측정값만으로 복원하는 ECGI는 전형적인 "잘못 정의된(ill-posed)" 역문제입니다. 최근에는 diffusion posterior sampler가 학습된 prior(그럴듯한 심장 전위 패턴이 무엇인지)와 forward operator(심장 전위가 몸을 거쳐 피부 측정값으로 어떻게 바뀌는지를 나타내는 수학적 모델)를 결합해 이 문제를 풉니다. 그런데 이 forward operator는 환자가 숨을 쉬거나 자세를 바꾸면 흉곽 모양이 달라져서 실제로 계속 변하고, 피하지방 두께처럼 환자마다 다른 값은 애초에 정확히 알 방법이 없습니다. 기존 방법들은 이 operator가 정확하다고 가정하고 넘어갔는데, 이 논문은 그 가정이 틀렸을 때 생기는 오차가 무작위가 아니라 구조적이고 예측 가능한 패턴을 갖는다는 것을 보이고, 이 오차 자체를 posterior sampling 과정에서 함께 추정하도록 모델을 다시 짰습니다. 즉 "측정 장비를 완벽하게 안다"는 전제를 버리고 "측정 장비도 어느 정도는 모른다"는 것을 인정한 채로 복원하는 쪽으로 문제 설정 자체를 바꾼 것이 핵심입니다.</p>
+  <p><strong>주의:</strong> abstract 기준으로는 이 오차 모델링이 어떤 데이터(시뮬레이션인지 실제 환자 측정인지)로 검증됐는지, 그리고 오차 추정이 틀렸을 때 전체 복원 품질이 얼마나 나빠지는지는 본문 확인이 필요합니다. 또한 이 구조적 오차 모델이 ECGI 외의 다른 역문제(광학 회절 토모그래피 등)에서도 같은 형태로 나타나는지는 확인되지 않았습니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] EcoVGGT: Pinned-Key Inference for Efficient and Streamable Feed-Forward 3D Reconstruction from Long Videos</h3>
+  <div class=tag>[방법전환] [실사용전환]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 3D 복원 클러스터에서 가장 실용적인 발견("영상 내용을 보지 않고도 고정된 키만으로 충분하다")을 담고 있고, 랩이 쓰는 모든 feed-forward 멀티뷰 복원 파이프라인의 실시간·장시간 처리 가능성을 직접 좌우하는 논문이라는 점에서 A급입니다.</p>
+  <p><strong>핵심:</strong> VGGT 같은 feed-forward 멀티뷰 트랜스포머는 여러 프레임을 한 번에 입력받아 카메라 위치와 3D 구조를 한 번의 순전파로 복원합니다. 문제는 프레임끼리 서로 주의를 기울이는 cross-frame attention의 계산량이 프레임 수의 제곱에 비례해 늘어난다는 것입니다. 기존 해법들은 예산 안에서 모든 프레임에 근사 attention을 걸거나, 각 프레임의 내용을 보고 중요한 키를 골라내는 방식을 썼습니다. 이 논문은 대담한 가설을 세웁니다 — 영상 내용을 전혀 보지 않고 고정된 위치의 키 몇 십 개만 계속 재사용해도 성능이 거의 그대로일 것이라는 가설이고, VGGT와 π³ 두 모델에서 실험으로 이를 뒷받침합니다. 즉 "어떤 키가 중요한지 매번 다시 계산"하는 비용 자체가 불필요했다는 뜻이고, 이는 긴 영상을 스트리밍 방식으로 실시간 처리해야 하는 모든 3D 복원 응용에 바로 적용 가능한 경량화 전략입니다.</p>
+  <p><strong>주의:</strong> "내용과 무관하게 고정된 키가 충분하다"는 결과가 VGGT·π³ 두 모델에서만 확인됐고, 영상이 매우 역동적이거나 장면 전환이 잦은 경우에도 같은 가설이 성립하는지는 abstract만으로 확정하기 어렵습니다. 본문에서 실패 사례(어떤 영상 유형에서 pinned-key가 깨지는지)를 확인할 필요가 있습니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Baseline risk] 오늘 ROI 배정 비율은 30.3%(196/647)로 최근 며칠(26~32%) 범위 안이지만, Virtual Staining/Pathology(45편)와 Tomography/3D Imaging(17편)의 상당수가 키워드 오탐(sustainable, virtual, tomography 단어만 겹침)이라 버킷 막대 그래프만 보면 실제보다 신호가 강해 보일 수 있습니다.</p>
+  <p>[Dataset risk] 랩 핵심 ROI인 Fourier Ptychography/Microscopy와 Lensless/Coded Imaging은 오늘도 실신호가 사실상 0편이라, 5주 연속 공백이 이어지고 있습니다. 이는 수집 실패가 아니라 원천 자체의 공백으로 weekly에서 이미 확인된 패턴입니다.</p>
+  <p>[Claim risk] 저널(Crossref/OpenAlex) 286편 중 abstract가 비어 있는 논문이 다수(뇌미세출혈 논문 제외 상당수)라, 클러스터4의 일부 대표 논문은 abstract 기준 평가가 제한적입니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] ECGI 논문의 "구조적 오차 모델링"이 실제 환자 데이터에서 검증됐는지, 아니면 시뮬레이션 한정 결과인지는 abstract만으로 확정할 수 없어 본문 확인이 필요합니다.</p>
+  <p>[Baseline risk] D2ToF의 "16배 초해상도, 83ms" 수치는 자체 실험 설정(특정 SPL 어레이 해상도) 기준이라, 다른 라이다 하드웨어나 더 극단적인 저해상도 조건에서도 같은 배율이 유지되는지는 확인되지 않았습니다.</p>
+  <p>[Dataset risk] CE-Agent는 33개 미국 병원과 6,814명의 다인종 성인 코호트로 검증했다고 보고하지만, 미국 바깥 인구 집단이나 저선량 CT 프로토콜에서도 같은 보정 효과가 유지되는지는 abstract에 나와 있지 않습니다.</p>
+  <p>[Claim risk] 뇌미세출혈 confirmatory clinical trial은 단일기관 457건 검사라는 비교적 좁은 범위에서 수행됐고, "추가 전문가 판독 검증이 더 넓은 인구집단에서 필요하다"고 스스로 명시하고 있어 다기관 일반화는 아직 확정이 아닙니다.</p>
+  <p>[Metric risk] EcoVGGT의 "pinned-key로 충분하다"는 결과는 abstract 기준 실험 범위(VGGT·π³) 밖의 다른 feed-forward 아키텍처에도 일반화되는지 확인되지 않았습니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+<div class=skim>
+  <ul>
+    <li>Virtual Staining/Pathology 비병리 약 44편 — 인적자원관리 모델, 지속가능 관광, 이란 사회학 연구 등 "virtual"/"sustainable" 단어만 일치하는 완전 무관 논문입니다.</li>
+    <li>Tomography/3D Imaging 임상 증례 약 10편 — 담낭 종양 증례, 경동맥 CTA, 소아 뇌 CT 선량 최적화 등 CT/MRI를 "사용"하지만 영상 재구성 방법론에는 기여하지 않는 순수 임상 연구입니다.</li>
+    <li>Deep Learning Methods 102편 대부분 — MoE 라우터 앙상블, 양자 그래프 신경망, 시계열 foundation model 등 전산 광학 이미징과 직접 관련이 없는 범용 ML 응용입니다.</li>
+    <li>TetraCoder(2611.18267), TelePhysica(2611.18078) — 그래픽스 표현/물리 시뮬레이션 인프라로 흥미롭지만 오늘의 핵심 클러스터(물리 연산자 불확실성)와는 결이 달라 우선순위를 낮춥니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+<p><small>오늘 196건 전체를 개별 bullet로 쓰는 대신, 오늘의 클러스터 지도에 포함된 대표 논문 중심으로 압축했습니다. 하위 롱테일(각 버킷의 키워드 오탐·일반 임상/범용 ML 논문)은 Watch Lens·Skim-only 섹션에서 버킷/카운트만 표시하고 개별 bullet은 생략합니다.</small></p>
+
+<h3>역문제 복원이 물리 연산자의 불확실성을 모델에 직접 반영 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.17851" target=_blank>Electrocardiographic Imaging via Posterior Sampling under Operator Discrepancy</a></strong> <span class=pill>LG</span><br>
+  문제: ECGI diffusion posterior sampler가 전달 연산자를 정확하다고 가정하지만 실제로는 호흡·자세·체형에 따라 계속 달라짐 / 방법: 연산자 오차를 구조적 패턴으로 모델링해 posterior sampling에 함께 추정 / 의미: "측정 장비를 완벽히 안다"는 전제를 버리는 역문제 복원의 다음 단계 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.17982" target=_blank>BeST: Beta splatted tomography for direct reconstruction from coherent imaging measurements</a></strong> <span class=pill>IV</span><br>
+  문제: X선 코히런트 토모그래피에서 투사별 위상 복원이 위치 오차로 서로 안 맞는 단층상을 만듦 / 방법: 위상 복원과 토모그래피를 하나의 공통 볼륨(Beta splatting)으로 묶어 직접 복원 / 의미: 계산량을 줄이면서 일관성을 강제하는 구조로 ODT에도 적용 가능 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.18409" target=_blank>Fuse-PINN: Combining FEM and Physics-Informed Neural Networks</a></strong> <span class=pill>LG</span><br>
+  문제: 물리 정보 신경망만으로는 비선형 방정식을 대형 병렬 컴퓨터에서 확장하기 어려움 / 방법: 유한요소법과 PINN을 결합한 대규모 병렬 시뮬레이션 프레임워크 / 의미: 물리 강제 구조가 PDE 시뮬레이션 스케일업에도 적용되는 사례 / 우선순위: Read
+</div>
+
+<h3>3D 장면 복원 인프라가 서로 다른 병목을 각각 재설계 (4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.18099" target=_blank>EcoVGGT: Pinned-Key Inference for Efficient and Streamable Feed-Forward 3D Reconstruction</a></strong> <span class=pill>CV</span><br>
+  문제: feed-forward 멀티뷰 트랜스포머의 cross-frame attention 계산량이 프레임 수 제곱으로 증가 / 방법: 내용과 무관하게 고정된 소수의 키만 재사용하는 pinned-key 추론 / 의미: 긴 영상 실시간 3D 복원의 계산 병목을 구조적으로 해소 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.17752" target=_blank>Stage-wise Lineage-aware Dropout for Sparse-View 3D Gaussian Splatting</a></strong> <span class=pill>CV</span><br>
+  문제: 희소 뷰 3DGS가 제한된 이미지로 장면 기하를 충분히 제약하지 못해 과적합됨 / 방법: 복제·분할로 파생된 가우시안 혈통 단위 드롭아웃 / 의미: 과적합 억제를 가우시안 구조 자체에 맞춰 설계한 regularization / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.18267" target=_blank>TetraCoder: Adaptive Tetrahedral Encoding for Neural Fields</a></strong> <span class=pill>CV</span><br>
+  문제: explicit·implicit 기하 표현 간 변환 비용이 커 효율적 상호 운용이 어려움 / 방법: 해시 없는 적응형 사면체 인코딩으로 두 표현을 직접 연결 / 의미: 표현 변환 병목을 근본적으로 없애는 인프라적 개선 / 우선순위: Skim-only
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.18078" target=_blank>TelePhysica: Agentic Reconstruction of Physically Interactive Scenes</a></strong> <span class=pill>CV</span><br>
+  문제: 영상 생성 모델이 픽셀과 움직임을 한데 섞어 만들어 물리적 안정성을 보장할 수 없음 / 방법: 단일 사진에서 물리 법칙을 지키는 실행 가능한 3D 장면을 복원하는 폐루프 프레임워크 / 의미: 물리적으로 타당한 3D 복원을 정식 평가 대상으로 만듦 / 우선순위: Skim-only
+</div>
+
+<h3>희소 센서 신호를 생성모델로 메우는 패턴 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.18243" target=_blank>D2ToF: One-Step Diffusion for Depth Super-Resolution from Lightweight Single-Photon LiDAR Waveforms</a></strong> <span class=pill>IV</span><br>
+  문제: 저가형 단일광자 라이다가 8×8 수준의 극히 낮은 공간 해상도만 제공 / 방법: 측정 일관성 항을 포함한 one-step distilled diffusion + 단안 깊이 구조 prior 결합 / 의미: 16배 초해상도를 83ms 만에 달성해 실시간 적용 가능 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.17957" target=_blank>MacroGS: Macro-Pixel Shared Gaussian Primitives for Arbitrary-Scale Light Field Super-Resolution</a></strong> <span class=pill>CV</span><br>
+  문제: 라이트필드 초해상도가 시점마다 따로 Gaussian primitive를 만들어 중복이 시점 수에 비례해 증가 / 방법: 하나의 공유 Gaussian 표현을 예측하는 feed-forward 디코더 / 의미: 다중 시점 복원의 중복 계산을 구조적으로 제거 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.17919" target=_blank>Vessel2Brain: Edge-Aware Multi-Scale Flow Matching for 3D Brain Image Generation from Vessel Masks</a></strong> <span class=pill>CV</span><br>
+  문제: 혈관 라벨만으로 전체 뇌 3D MRI를 복원하는 것은 극도로 불량 정의된 문제 / 방법: 혈관 경계를 강조하는 edge-aware 다중 스케일 조건부 flow matching / 의미: 아주 희소한 구조 정보에서 전체 볼륨을 생성하는 극단적 사례 / 우선순위: Read
+</div>
+
+<h3>의료 영상 AI가 외부 코호트에서도 버틴 사례 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.17819" target=_blank>Causally Constrained and Uncertainty-Aware Cardiopulmonary Risk Prediction (CE-Agent)</a></strong> <span class=pill>AI</span><br>
+  문제: 기존 임상 위험도 계산기는 폐암·심혈관 질환을 따로 평가하고 CT 소견을 무시하며, 학습 기반 모델은 작은 병원 코호트에 과적합됨 / 방법: 역학적 증거를 사전 제약으로 컴파일 + 코호트 기반 국소 위험 추정 + 불확실성 전파 / 의미: 다기관·다장비로 옮겨도 성능이 유지되는 보기 드문 긍정적 사례 / 근거: PCE 대비 1.7배 과대추정 보정, 필요 표본 최대 5배 절감 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s41598-026-77551-0" target=_blank>Deep learning-based CAD of cerebral microbleeds in a confirmatory clinical trial</a></strong> <span class=pill>JNL</span><br>
+  문제: MRI 기술이 발전해도 뇌미세출혈 탐지는 여전히 어려워 자동화 도구가 필요함 / 방법: 2단계 딥러닝 파이프라인(후보 생성 + 위양성 감소)을 457건 MRI로 확증적 임상시험 검증 / 의미: 사전 등록된 성능 기준을 통과한 보기 드문 임상시험 성공 사례 / 근거: 병변 단위 민감도 88.35%, 환자당 위양성 0.95건 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.17712" target=_blank>A Tumour-Aware Multimodal Framework for Explainable Prediction of IDH Mutation in Gliomas</a></strong> <span class=pill>IV</span><br>
+  문제: IDH 돌연변이 예측 모델이 뇌 전체 특징에 의존해 해석 가능성이 낮음 / 방법: 종양 영역 분할 + 방사체학 특징 + 임상 정보를 통합한 다중모달 프레임워크 / 의미: 성능과 해석 가능성(Grad-CAM)을 동시에 보여준 사례 / 우선순위: Read
+</div>
+
+<hr>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+  <li><a href="https://arxiv.org/list/cs.CV/new">arXiv cs.CV /new</a> · <a href="https://arxiv.org/list/cs.LG/new">cs.LG /new</a> · <a href="https://arxiv.org/list/cs.AI/new">cs.AI /new</a> · <a href="https://arxiv.org/list/eess.IV/new">eess.IV /new</a> · <a href="https://arxiv.org/list/eess.SP/new">eess.SP /new</a></li>
+  <li><a href="https://arxiv.org/abs/2611.17851" target=_blank>Electrocardiographic Imaging via Posterior Sampling under Operator Discrepancy</a></li>
+  <li><a href="https://arxiv.org/abs/2611.18099" target=_blank>EcoVGGT: Pinned-Key Inference for Efficient and Streamable Feed-Forward 3D Reconstruction</a></li>
+  <li><a href="https://arxiv.org/abs/2611.18243" target=_blank>D2ToF: One-Step Diffusion for Depth Super-Resolution from Lightweight Single-Photon LiDAR Waveforms</a></li>
+  <li><a href="2026-11-16-weekly.html">2026-11-16 Weekly Retrospective</a></li>
+  <li><a href="2026-11-13.html">2026-11-13 Daily Briefing</a></li>
+  <li><a href="../feed.xml">RSS 피드</a></li>
+</ul>
+
+<footer>
+  <p>📚 입력: 2026-11-16 daily (source_mode=new) · arXiv new+cross 450편(cs.LG 160·cs.CV 91·cs.AI 164·eess.IV 9·eess.SP 26) · 저널 286편(Crossref/OpenAlex) + OpenAlex 보충 1편 · 합산 스캔 647건(dedup) · ROI 배정 196건 (30.3%)</p>
+  <p>🎧 오디오 브리핑: TTS 환경 미연결 — 오늘은 텍스트 리포트만 제공합니다.</p>
+  <p>🛠 생성: IIL paper-daily-summary 자동화 파이프라인 (에이전트 직접 작성)</p>
+  <p>📡 <a href="../feed.xml">RSS /feed.xml</a></p>
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

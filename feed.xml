@@ -6,7 +6,7 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 16 Nov 2026 10:15:57 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 14:23:28 +0900</lastBuildDate>
     <ttl>720</ttl>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-11-16 (Week 46)</title>
@@ -14,6 +14,13 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-11-16-weekly.html</guid>
       <pubDate>Mon, 16 Nov 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[지난주 가장 꾸준히 쌓인 흐름은 역문제 복원(측정값에서 거꾸로 원래 신호를 되살리는 문제)이 "생성 모델을 통째로 믿기"를 떠나는 모습이었습니다. 월요일(11/9)에는 FANO(diffusion 기반 역문제 solver의 반경 이탈 실패 모드 교정)와 AdaptivePnP(라벨 없이 PnP 하이퍼파라미터 자동 추정)가 서로 다른 방법론 계열에서 같은 방향을 가리켰고, 화요일(11/10)에는 AgentCT(손상 유형별 솔버 라우팅)·STAIRS·P-IMLA가 "솔버가 난이도에 맞춰 스스로 전략을 바꾼다"는 결을 보탰습니다. 수요일(11/11)에는 AdjointFlow가 물리 기반 adjoint 전송을 생성적 전송 과정 자체에 심어 Plug-and-Play 대비 최대 10만…]]></description>
+    </item>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-11-16 (월요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-11-16.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-11-16.html</guid>
+      <pubDate>Mon, 16 Nov 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 2026-11-16 확인 기준 5개 카테고리 모두 /new listing이 "Monday, 16 November 2026"으로 post_date와 일치해 정상적인 daily 모드로 arXiv를 수집했습니다(new+cross 합계 450편, replacements 제외). 여기에 Crossref/OpenAlex 저널 286편과 OpenAlex 보충 1편을 더해 classify.py로 합쳐 스캔한 결과(dedup 후 647건) 196건(30.3%)이 9개 ROI 버킷에 배정됐습니다. 지난주 weekly가 "4주 연속 계산광학 하드웨어 코어가 구조적으로 얇다"고 판단한 흐름이 오늘도 그대로입니다 — Fourier Ptychography/Microscopy 1편(실제로는…]]></description>
     </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-11-13 (금요일)</title>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-14.html</guid>
       <pubDate>Fri, 14 Aug 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[오늘(8/14, 금)은 arXiv /new에 cs.LG 157편, cs.CV 107편, cs.AI 204편, eess.IV 4편, eess.SP 23편(합계 495편)이 잡혔고, 저널 426건을 더한 병합 스캔 838건 중 229건(27.3%)이 ROI로 선정됐습니다. 오늘 가장 뚜렷했던 흐름은 3D Gaussian Splatting이 정상적인 다중 시점 사진을 그리는 표현에서, 물리적으로 왜곡되거나 정보가 극히 부족한 측정값을 되살리는 재구성 엔진으로 쓰이기 시작했다는 점입니다. Splat-based Metal Artifact Reduction은 CBCT에서 금속 때문에 생기는 빔 하드닝 왜곡을, X선이 여러 파장이 섞인 다색광이라는 실제 물리를 3DGS 최적화 안에…]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Daily Briefing — 2026-08-13 (목요일)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-08-13.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-13.html</guid>
-      <pubDate>Thu, 13 Aug 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘(8/13, 목)은 arXiv /new에 cs.LG 182편, cs.CV 126편, cs.AI 211편, eess.IV 18편, eess.SP 20편(합계 557편)이 잡혔고, 저널 423건을 더한 병합 스캔 836건 중 224건(26.8%)이 ROI로 선정됐습니다. 오늘 가장 뚜렷했던 흐름은 diffusion과 flow 생성 모델을 "그럴듯한 이미지를 만드는 도구"가 아니라 "실제 측정값과 물리적으로 들어맞아야 하는 inverse solver"로 쓰는 논문이 서로 다른 이미징 응용 세 곳에서 동시에 나왔다는 점입니다. Making Every Step Count는 초해상도·디블러링·인페인팅에 flow 기반 prior를 학습 없이 바로 적용할 때, 지금까지 균등하게 나…]]></description>
     </item>
   </channel>
 </rss>

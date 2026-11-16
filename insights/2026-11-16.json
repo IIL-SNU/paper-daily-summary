@@ -1,0 +1,150 @@
+{
+  "date": "2026-11-16",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "역문제 복원이 '학습된 prior를 그대로 믿기'에서 '물리 연산자 자체의 불확실성을 모델 안에 넣기'로 한 걸음 더 들어감",
+      "papers": [
+        {
+          "title": "Electrocardiographic Imaging via Posterior Sampling under Operator Discrepancy",
+          "arxiv": "https://arxiv.org/abs/2611.17851",
+          "importance_tags": ["[방법전환]", "[해부분석]"]
+        },
+        {
+          "title": "BeST: Beta splatted tomography for direct reconstruction from coherent imaging measurements",
+          "arxiv": "https://arxiv.org/abs/2611.17982",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Fuse-PINN: Combining Finite Element Methods and Physics-Informed Neural Networks to enable massively parallel simulations of non-linear PDEs",
+          "arxiv": "https://arxiv.org/abs/2611.18409",
+          "importance_tags": ["[실사용전환]"]
+        }
+      ],
+      "why": "심장 표면 전위를 몸 밖 측정값에서 복원하는 ECGI 문제는 원래 diffusion posterior sampler가 학습된 prior와 '전달 연산자(forward operator)'를 결합해 푸는데, 지금까지는 그 연산자가 정확하다고 가정했습니다. 그런데 실제로는 숨을 쉬거나 자세가 바뀌면 몸 안의 전기 전달 경로 자체가 달라지고, 피하지방량처럼 환자마다 다른 값은 애초에 알 수도 없습니다. 오늘 논문은 이 '연산자가 사실은 틀렸을 수도 있다'는 오차를 모델에 명시적으로 추정해 넣습니다. BeST는 같은 문제의식을 X선 위상 복원에 적용합니다 — 투사(projection) 하나하나를 따로 복원하면 위치 오차 때문에 서로 안 맞는 단층상이 나오는데, 위상 복원과 토모그래피를 하나의 공통 볼륨으로 묶어 일관성을 강제로 걸었습니다. Fuse-PINN은 비선형 편미분방정식을 풀 때 물리 정보 신경망만으로는 대형 병렬 컴퓨터에서 확장이 안 되던 문제를, 유한요소법과 결합해 풉니다. 세 편을 묶으면, 역문제 복원 분야가 '생성 모델이 알아서 그럴듯한 답을 내놓겠지'라는 기대에서 벗어나, 측정 장비·신체·수치해석의 물리적 한계를 모델 구조 안에 계속 다시 집어넣는 쪽으로 움직이고 있다는 뜻입니다. 이번 주 weekly 예측이 짚은 '물리 강제' 패턴이 월요일부터 바로 이어졌습니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 모달리티(ECGI·X선 토모그래피·PDE 시뮬레이션) 세 편이 같은 날 동시에 같은 설계 원칙을 반복했지만, 세 편 모두 abstract 기준이고 서로 다른 벤치마크를 써서 직접 비교할 수는 없습니다.",
+      "lab_action": "BeST의 위상 복원-토모그래피 공동 최적화 구조를 랩의 광 회절 단층촬영(ODT) 파이프라인에 적용 가능한지 검토하고, ECGI의 연산자 불확실성 추정 방식을 랩이 쓰는 forward model(조명 패턴, PSF 등)의 보정 오차 추정에 1주 내 시뮬레이션으로 이식해 복원 오차(RMSE)가 얼마나 줄어드는지 비교한다."
+    },
+    {
+      "cluster": "3D 장면 복원 인프라가 속도·메모리·물리적 안정성이라는 서로 다른 병목을 각각 구조적으로 재설계",
+      "papers": [
+        {
+          "title": "EcoVGGT: Pinned-Key Inference for Efficient and Streamable Feed-Forward 3D Reconstruction from Long Videos",
+          "arxiv": "https://arxiv.org/abs/2611.18099",
+          "importance_tags": ["[실사용전환]"]
+        },
+        {
+          "title": "Stage-wise Lineage-aware Dropout for Sparse-View 3D Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2611.17752",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "TetraCoder: Adaptive Tetrahedral Encoding for Neural Fields",
+          "arxiv": "https://arxiv.org/abs/2611.18267",
+          "importance_tags": ["[방법전환]", "[인프라]"]
+        },
+        {
+          "title": "TelePhysica: Agentic Reconstruction of Physically Interactive Scenes",
+          "arxiv": "https://arxiv.org/abs/2611.18078",
+          "importance_tags": ["[방법전환]", "[해부분석]"]
+        }
+      ],
+      "why": "VGGT 같은 feed-forward 멀티뷰 트랜스포머는 영상 한 번에 카메라 위치와 3D 구조를 같이 복원하지만, 프레임이 길어질수록 프레임 사이를 전부 비교하는 attention 계산량이 제곱으로 늘어나 긴 영상에서는 느려지고 정확도도 떨어집니다. EcoVGGT는 영상 내용을 보지 않고도 미리 정해둔 소수의 키(key)만 계속 재사용해도 성능이 거의 그대로라는 것을 보여 이 계산량 문제를 구조적으로 풀었습니다. Stage-wise Dropout은 다른 병목을 겨냥합니다 — 사진 몇 장만으로 3D Gaussian Splatting을 복원하면 장면 기하를 충분히 제약하지 못해 과적합되는데, 같은 가우시안에서 복제·분할로 파생된 '혈통(lineage)' 단위로 묶어 드롭아웃을 걸어 과적합을 줄입니다. TetraCoder는 그래픽스에서 오래된 딜레마(표면은 explicit 표현이 빠르고, 공간 쿼리는 implicit 표현이 빠름)를 양쪽을 오가는 비용 없이 사면체 인코딩 하나로 연결합니다. TelePhysica는 아예 다른 축을 공략합니다 — 영상 생성 모델은 픽셀과 움직임을 한데 섞어 만들기 때문에 물체가 중력에 맞게 버티는지, 힘을 가했을 때 어떻게 되는지를 따질 수 없는데, 한 장의 사진에서 실제로 물리 법칙을 지키며 작동하는 3D 장면을 복원합니다. 네 편을 합치면, 3D 복원 연구가 '더 큰 모델 하나'를 밀어붙이기보다 계산량, 적은 뷰에서의 과적합, 표현 변환 비용, 물리적 타당성처럼 서로 다른 병목을 각각 짚어 구조를 바꾸는 단계에 들어섰다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 연구팀 네 편이 같은 날 3D 복원의 서로 다른 병목(attention 비용·과적합·표현 변환·물리적 안정성)을 공략했고, 넷 다 구체적 ablation 또는 벤치마크 비교를 abstract에서 언급합니다.",
+      "lab_action": "EcoVGGT의 pinned-key 추론 구조를 랩이 쓰는 긴 영상 기반 3D 복원(라이트필드 현미경 시계열 등) 파이프라인에 적용해 프레임 수 대비 추론 시간 곡선을 1주 내 비교하고, Stage-wise Dropout의 lineage 드롭아웃을 랩의 희소 뷰 3DGS 복원 실험에 적용해 과적합 지표(held-out PSNR)가 얼마나 개선되는지 ablation한다."
+    },
+    {
+      "cluster": "희소·저해상도 센서 신호를 생성모델(diffusion/flow matching)로 메우는 패턴이 라이다·광장·혈관 영상까지 반복",
+      "papers": [
+        {
+          "title": "D2ToF: One-Step Diffusion for Depth Super-Resolution from Lightweight Single-Photon LiDAR Waveforms",
+          "arxiv": "https://arxiv.org/abs/2611.18243",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "MacroGS: Macro-Pixel Shared Gaussian Primitives for Arbitrary-Scale Light Field Super-Resolution",
+          "arxiv": "https://arxiv.org/abs/2611.17957",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Vessel2Brain: Edge-Aware Multi-Scale Flow Matching for 3D Brain Image Generation from Vessel Masks",
+          "arxiv": "https://arxiv.org/abs/2611.17919",
+          "importance_tags": ["[방법전환]", "[데이터전환]"]
+        }
+      ],
+      "why": "세 편 모두 '센서가 원래 주는 정보는 너무 적은데, 그 빈틈을 생성모델로 메운다'는 같은 구조를 전혀 다른 센서에 적용합니다. D2ToF는 저가형 단일광자 라이다가 겨우 8×8 화소짜리 거리 정보만 주는 상황에서, 한 번의 diffusion 단계만으로 128×128 해상도까지 16배 키우면서도 83밀리초 만에 끝내 실시간 적용이 가능함을 보였습니다. MacroGS는 라이트필드(한 장면을 여러 각도에서 동시에 찍는 카메라 배열)의 저해상도 다중 시점 영상을 Gaussian primitive로 초고해상도 임의 배율로 복원하는데, 기존 방식처럼 시점마다 따로 만들지 않고 하나의 공유 표현으로 묶어 중복을 없앴습니다. Vessel2Brain은 아예 영상이 아니라 혈관 분포만 주어졌을 때 뇌 전체 3D MRI 볼륨을 flow matching으로 복원합니다. 세 편을 합치면, '정보가 턱없이 부족한 측정에서 그럴듯한 고해상도 영상을 만든다'는 과제가 라이다·라이트필드·혈관 영상처럼 서로 다른 센서 환경에서 각각 diffusion 또는 flow matching 기반 생성모델로 독립적으로 수렴하고 있다는 뜻이고, 랩이 다루는 희소 뷰·저조도 계산 이미징 문제에도 같은 틀을 가져다 쓸 여지가 크다는 신호입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 센서 도메인(ToF 라이다·라이트필드·혈관 MRI) 세 편이 같은 날 같은 생성모델 기반 초해상도 패턴을 반복했지만, 세 편 모두 서로 다른 벤치마크를 쓰고 있어 독립 검증(같은 데이터셋에서 교차비교)은 아직 없습니다.",
+      "lab_action": "D2ToF의 one-step distilled diffusion + 측정 일관성 항 구조를 랩의 저해상도 라이트필드 또는 ToF 기반 깊이 센서 데이터에 적용해 보간 전후 PSNR과 추론 지연시간을 1주 내 비교한다."
+    },
+    {
+      "cluster": "의료 영상 AI 신뢰성 검증이 지난주의 '외부에서 깨짐' 경고와 반대로 '외부에서도 버팀'을 보여주는 사례로 먼저 시작",
+      "papers": [
+        {
+          "title": "Causally Constrained and Uncertainty-Aware Cardiopulmonary Risk Prediction",
+          "arxiv": "https://arxiv.org/abs/2611.17819",
+          "importance_tags": ["[방법전환]", "[평가축]"]
+        },
+        {
+          "title": "Deep learning-based computer-aided detection of cerebral microbleeds achieves high sensitivity with a low false-positive rate in a confirmatory clinical trial",
+          "arxiv": "https://doi.org/10.1038/s41598-026-77551-0",
+          "importance_tags": ["[스케일업]", "[실사용전환]"]
+        },
+        {
+          "title": "A Tumour-Aware Multimodal Framework for Explainable Prediction of IDH Mutation in Gliomas from Multi-Sequence MRI",
+          "arxiv": "https://arxiv.org/abs/2611.17712",
+          "importance_tags": ["[해부분석]"]
+        }
+      ],
+      "why": "지난주 weekly가 짚은 패턴은 '의료 영상 foundation model이 외부 기관·장비로 가면 성능이 갈린다'는 쪽이었는데, 오늘 등장한 사례들은 오히려 그 반대 방향의 증거로 시작합니다. CE-Agent는 폐암 검진 CT에서 심장·혈관 위험을 같이 예측하는데, 기존 임상 공식(Pooled Cohort Equations)이 위험도를 1.7배 과대평가하던 것을 보정하면서 한 병원에서 다른 병원·다른 스캐너로 옮겨도 성능이 유지되고, 필요한 학습 표본 수도 최대 5배까지 줄었다고 보고합니다. 뇌미세출혈 탐지 모델은 실제로 확증적 임상시험(confirmatory clinical trial) 절차를 거쳐 병변 단위 민감도 88.35%, 환자당 위양성 0.95건이라는 사전에 정한 기준을 통과했습니다. IDH 돌연변이 예측 논문은 종양 영역에 집중한 다중 MRI 시퀀스 결합으로 해석 가능성(Grad-CAM)까지 같이 보여줍니다. 세 편을 합치면, 오늘 하루만 보면 '외부에서 버티는 사례'가 먼저 나왔다는 뜻이고, 이는 이번 주 weekly 예측(negative result·트레이드오프 사례가 추가된다)과 반대 방향의 관측치라 이번 주 나머지 날짜에서 어느 쪽이 더 많이 나오는지 계속 봐야 합니다.",
+      "confidence": "Medium",
+      "confidence_note": "세 편이 같은 날 동시에 '배포 가능한 긍정적 검증'을 보고했지만, 아직 하루치 관측이고 CE-Agent 외에는 abstract에 외부 코호트 실패 사례가 언급되지 않아 트레이드오프 유무를 단정하기는 이릅니다.",
+      "lab_action": "CE-Agent가 쓴 '역학적 증거를 사전 제약으로 컴파일 + 사후보정' 구조를 랩이 검증하려는 영상 기반 위험도/품질 예측 모델에 적용 가능한지 검토하고, 뇌미세출혈 임상시험이 쓴 사전 정의 성능 기준(민감도/위양성률 임계값) 방식을 랩 자체 모델 검증 프로토콜에도 1주 내 시범 적용해본다."
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "BeST의 위상 복원-토모그래피 공동 최적화를 랩 ODT 파이프라인에 이식",
+      "claim": "BeST는 투사별 위상 복원과 전체 볼륨 토모그래피를 하나의 공통 object로 묶어 위치 오차로 인한 단층상 불일치를 줄이는데, 랩의 광 회절 단층촬영(ODT)도 같은 종류의 투사-볼륨 불일치 문제를 겪고 있어 직접 적용 가능성이 있습니다.",
+      "supporting_papers": [
+        {"title": "BeST: Beta splatted tomography for direct reconstruction from coherent imaging measurements", "arxiv": "https://arxiv.org/abs/2611.17982"}
+      ],
+      "execution_week1": {
+        "target": "BeST (arXiv 2611.17982) — 코드 공개 여부 abstract 기준 확인 불가, 본문 확인 필요",
+        "benchmark": "랩 ODT 시뮬레이션 데이터셋(위치 오차를 인위적으로 주입한 투사 세트)",
+        "comparison_axis": "기존 두 단계(위상 복원 후 토모그래피) 방식 대비 공동 최적화 방식의 복원 오차(RMSE)와 계산 시간",
+        "fallback": "공동 최적화가 계산량 때문에 랩 환경에서 비현실적이더라도, 현재 ODT 파이프라인의 위치 오차 민감도를 정량화한 결과는 다음 하드웨어 보정 설계에 재사용 가능하다"
+      }
+    },
+    {
+      "title": "EcoVGGT의 pinned-key 추론을 긴 시계열 3D 복원에 적용",
+      "claim": "EcoVGGT는 내용을 보지 않고 고정된 소수의 키만 재사용해도 feed-forward 3D 복원 성능이 유지된다는 것을 보였는데, 랩이 다루는 긴 영상 기반 3D 복원(시계열 현미경 영상 등)에서 같은 전략이 통하는지 확인할 가치가 있습니다.",
+      "supporting_papers": [
+        {"title": "EcoVGGT: Pinned-Key Inference for Efficient and Streamable Feed-Forward 3D Reconstruction from Long Videos", "arxiv": "https://arxiv.org/abs/2611.18099"}
+      ],
+      "execution_week1": {
+        "target": "EcoVGGT (arXiv 2611.18099) — VGGT 기반 공개 코드 존재 가능성 높음, 본문 확인 필요",
+        "benchmark": "랩이 보유한 긴 시계열 3D 복원 데이터셋 또는 공개 VGGT 벤치마크",
+        "comparison_axis": "프레임 수 증가에 따른 추론 시간·메모리 사용량·복원 정확도(카메라 포즈 오차)",
+        "fallback": "pinned-key가 랩 데이터에서 성능 저하를 일으키더라도, 현재 파이프라인의 프레임 수 대비 계산량 증가 곡선을 정리한 프로파일링 결과는 다음 경량화 설계에 재사용 가능하다"
+      }
+    },
+    {
+      "title": "D2ToF의 one-step diffusion 초해상도를 랩 저해상도 깊이/라이트필드 센서에 적용",
+      "claim": "D2ToF는 8x8 해상도 ToF 신호를 83ms 만에 128x128로 복원하는데, 랩이 쓰는 저해상도 깊이 센서나 라이트필드 어레이에도 같은 one-step distillation 전략이 실시간 처리에 쓰일 수 있는지 확인할 수 있습니다.",
+      "supporting_papers": [
+        {"title": "D2ToF: One-Step Diffusion for Depth Super-Resolution from Lightweight Single-Photon LiDAR Waveforms", "arxiv": "https://arxiv.org/abs/2611.18243"},
+        {"title": "MacroGS: Macro-Pixel Shared Gaussian Primitives for Arbitrary-Scale Light Field Super-Resolution", "arxiv": "https://arxiv.org/abs/2611.17957"}
+      ],
+      "execution_week1": {
+        "target": "D2ToF (arXiv 2611.18243), MacroGS (arXiv 2611.17957) — 둘 다 코드 공개 여부 본문 확인 필요",
+        "benchmark": "랩 보유 저해상도 ToF/라이트필드 센서 데이터 + 대조군(전통적 보간)",
+        "comparison_axis": "초해상도 배율별 PSNR/SSIM, 추론 지연시간(ms), 측정 일관성(측정값 재투영 오차)",
+        "fallback": "실시간 기준(수십 ms)을 못 맞추더라도, 배율별 복원 품질 곡선은 다음 센서 하드웨어 선정에 재사용 가능한 기준값이 된다"
+      }
+    }
+  ],
+  "phylogeny_tags": []
+}

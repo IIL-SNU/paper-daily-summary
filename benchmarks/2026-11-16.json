@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-16",
+  "results": [
+    {
+      "benchmark": "Single-photon LiDAR depth super-resolution (8x8x100 histogram -> 128x128 depth)",
+      "metric": "scale factor / latency",
+      "value": 16,
+      "value_str": "16x spatial super-resolution, ~83ms/frame one-step diffusion",
+      "paper": "https://arxiv.org/abs/2611.18243",
+      "paper_title": "D2ToF: One-Step Diffusion for Depth Super-Resolution from Lightweight Single-Photon LiDAR Waveforms"
+    },
+    {
+      "benchmark": "Pooled Cohort Equations 대비 심혈관 위험도 보정(33개 병원 폐암 검진 코호트)",
+      "metric": "risk overestimation correction",
+      "value": 1.7,
+      "value_str": "PCE 대비 1.7배 위험도 과대추정 보정, 외부 사이트 일반화 시 필요 표본 수 최대 5배 절감",
+      "paper": "https://arxiv.org/abs/2611.17819",
+      "paper_title": "Causally Constrained and Uncertainty-Aware Cardiopulmonary Risk Prediction (CE-Agent)"
+    }
+  ]
+}
