@@ -1,4 +1,21 @@
 {
   "date": "2026-11-17",
-  "results": []
+  "results": [
+    {
+      "benchmark": "Sparse-view CT (LoDoPaB-CT, 30/60/120 angles, patient-disjoint)",
+      "metric": "PSNR delta vs tuned TV",
+      "value": -0.93,
+      "value_str": "-0.93 to +0.33 dB vs tuned TV (9 조건 중 PSNR 우위 없음, SSIM은 9조건 중 8조건에서 TV보다 낮음)",
+      "paper": "https://arxiv.org/abs/2611.18936",
+      "paper_title": "Learned Regularization for Sparse-View CT: Accuracy, Lesion Detectability and Distribution Shift of a Plug-and-Play Prior against Tuned Total Variation"
+    },
+    {
+      "benchmark": "Sparse-view CT synthetic digit images (sigma=0.05, 20 angles)",
+      "metric": "PSNR gain vs box-constrained TV",
+      "value": 3.4,
+      "value_str": "+3.4 dB vs TV at moderate noise (학습 분포와 일치하는 조건); 분포 밖(Fashion-MNIST, Shepp-Logan)에서는 -3.1~-4.6 dB로 역전",
+      "paper": "https://arxiv.org/abs/2611.18936",
+      "paper_title": "Learned Regularization for Sparse-View CT: Accuracy, Lesion Detectability and Distribution Shift of a Plug-and-Play Prior against Tuned Total Variation"
+    }
+  ]
 }
