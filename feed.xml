@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 16 Nov 2026 14:23:28 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 14:19:18 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-11-17 (화요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-11-17.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-11-17.html</guid>
+      <pubDate>Tue, 17 Nov 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 arXiv 5개 카테고리는 2026-11-17 확인 기준 전부 "Monday, 16 November 2026" listing에 머물러 있어(11/17 신규 제출 0건), Crossref 키워드 질의 9건과 OpenAlex enrich로 저널만 431건을 수집해 classify.py로 스캔했습니다. 그 결과 98건(22.7%)이 9개 ROI 버킷에 배정됐는데, 이는 지난 journal-only 사례(2026-11-12, 28.2%)보다 약간 낮은 수준입니다. 버킷별로 직접 열어본 결과 신호 밀도는 버킷마다 또 크게 갈렸습니다. 랩 핵심 ROI인 Lensless/Coded Imaging은 2편 모두 실제 lensless 이미징 신호(XUV·X선 ghost imaging…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Weekly Retrospective — 2026-11-16 (Week 46)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-11-16-weekly.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-17.html</guid>
       <pubDate>Mon, 17 Aug 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[오늘(8/17, 월)은 arXiv /new에 cs.LG 138편, cs.CV 89편, cs.AI 185편, eess.IV 9편, eess.SP 16편(합계 437편)이 잡혔고, 저널 241건을 더한 병합 스캔 582건 중 168건(28.9%)이 ROI로 선정됐습니다. 오늘 가장 뚜렷했던 흐름은 의료 영상 판독이 픽셀만 보고 곧바로 답을 내는 모델에서, 언어를 판독 과정 한가운데로 끌어들이는 모델로 넘어갔다는 점입니다. MedPlex는 의료 영상 분할이 사실 해부학적 위치·모양·주변 맥락 같은 텍스트 지식을 함께 쓰는 문제라는 데 착안해 언어 신호를 인코더 전 구간에서 시각 표현과 함께 진화시켰고, CMCNet은 갑상선 결절 진단의 TI-RADS 다섯 가지 특징 범주를 텍…]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Daily Briefing — 2026-08-14 (금요일)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-08-14.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-14.html</guid>
-      <pubDate>Fri, 14 Aug 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘(8/14, 금)은 arXiv /new에 cs.LG 157편, cs.CV 107편, cs.AI 204편, eess.IV 4편, eess.SP 23편(합계 495편)이 잡혔고, 저널 426건을 더한 병합 스캔 838건 중 229건(27.3%)이 ROI로 선정됐습니다. 오늘 가장 뚜렷했던 흐름은 3D Gaussian Splatting이 정상적인 다중 시점 사진을 그리는 표현에서, 물리적으로 왜곡되거나 정보가 극히 부족한 측정값을 되살리는 재구성 엔진으로 쓰이기 시작했다는 점입니다. Splat-based Metal Artifact Reduction은 CBCT에서 금속 때문에 생기는 빔 하드닝 왜곡을, X선이 여러 파장이 섞인 다색광이라는 실제 물리를 3DGS 최적화 안에…]]></description>
     </item>
   </channel>
 </rss>

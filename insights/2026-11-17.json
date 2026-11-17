@@ -1,0 +1,349 @@
+{
+  "date": "2026-11-17",
+  "insights": [
+    {
+      "title": "홀로그래피가 신경망·전자현미경·LiDAR까지 모달리티를 넓히며 '일반화'를 핵심 문제로 다시 세움",
+      "claim": "Structurally guided wavefront neural encoder(Nature Communications)가 파장·거리에 묶여 있던 학습 기반 홀로그래피를 물리 회절 모델과 결합해 범용화했고, 같은 날 단일광자 LiDAR·전자현미경·위상단층촬영까지 홀로그래피 계산이 번지고 있다.",
+      "papers": [
+        {
+          "title": "Structurally guided wavefront neural encoder for broad-range generalizable 3D holography",
+          "arxiv": "https://doi.org/10.1038/s41467-026-79408-6",
+          "importance_tags": ["[방법전환]", "[표준후보]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Holography",
+            "order": "Computer-Generated Holography",
+            "genus": "Physics-coupled Neural Encoder",
+            "confidence": "High",
+            "rationale": "Nature Communications, 물리 회절 모델과 신경망을 명시적으로 결합해 파장/거리 일반화를 검증"
+          }
+        },
+        {
+          "title": "Phase-Sensitive Single-Photon LiDAR via Computational Holography",
+          "arxiv": "https://doi.org/10.1364/optica.613716",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Holography",
+            "order": "Computational LiDAR",
+            "genus": "Phase-sensitive Single-photon Detection",
+            "confidence": "Medium",
+            "rationale": "Optica 게재, abstract 미제공으로 제목 기준 추정"
+          }
+        },
+        {
+          "title": "Off-axis electron holography with nanosecond photoelectrons in a retrofitted transmission electron microscope",
+          "arxiv": "https://doi.org/10.1103/6nfx-d6kn",
+          "importance_tags": ["[인프라]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Holography",
+            "order": "Electron Holography",
+            "genus": "Time-resolved TEM Holography",
+            "confidence": "Medium",
+            "rationale": "Physical Review Applied, abstract 미제공으로 제목 기준 추정"
+          }
+        },
+        {
+          "title": "High-speed parallel holographic phase tomography",
+          "arxiv": "https://doi.org/10.1007/s00340-026-08735-9",
+          "importance_tags": ["[실사용전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Holography",
+            "order": "Holographic Tomography",
+            "genus": "Parallelized Acquisition",
+            "confidence": "Medium",
+            "rationale": "Applied Physics B, abstract 미제공으로 제목 기준 추정"
+          }
+        },
+        {
+          "title": "Research on Image Quality Optimisation and Localisation in Digital Holography via Wavefront Modulation Combined With Temporal Phase Shifting",
+          "arxiv": "https://doi.org/10.1049/ipr2.70502",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Holography",
+            "order": "Digital Holography",
+            "genus": "Wavefront Modulation + Phase Shifting",
+            "confidence": "Medium",
+            "rationale": "IET Image Processing, zero-order/twin-image 간섭 억제를 공간 모델로 정량 분석"
+          }
+        }
+      ]
+    },
+    {
+      "title": "역문제 복원이 메타광학 스냅샷 분광·초고속 압축 이미징·혈관 재구성까지, 물리 제약을 명시적으로 건 untrained/학습 네트워크로 계속 번짐",
+      "claim": "어제(11/16) daily가 짚은 '물리적 불확실성을 모델에 명시적으로 넣기'라는 흐름이, 오늘 저널에서는 메타광학 기반 스냅샷 분광 이미징, 압축 초고속 이미징, 관상동맥 3D 재구성처럼 서로 다른 하드웨어 모달리티에서 각각 deep unfolding·untrained network·implicit neural network로 반복된다.",
+      "papers": [
+        {
+          "title": "Low-correlation gradient meta-optics with physics-informed deep unfolding for broadband snapshot spectral imaging",
+          "arxiv": "https://doi.org/10.1364/ol.614849",
+          "importance_tags": ["[방법전환]", "[인프라]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Inverse Problems",
+            "order": "Physics-informed Deep Unfolding",
+            "genus": "Snapshot Spectral Imaging via Meta-optics",
+            "confidence": "Medium",
+            "rationale": "Optics Letters, 메타광학 하드웨어와 deep unfolding 복원을 함께 설계한 교차 버킷 신호"
+          }
+        },
+        {
+          "title": "High performance image reconstruction for snapshot compressive ultrafast imaging with untrained neural network and pre-trained image denoiser",
+          "arxiv": "https://doi.org/10.1016/j.optlastec.2026.117009",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Inverse Problems",
+            "order": "Untrained Networks",
+            "genus": "Snapshot Compressive Ultrafast Imaging",
+            "confidence": "Medium",
+            "rationale": "Optics & Laser Technology, abstract 미제공으로 제목 기준 추정"
+          }
+        },
+        {
+          "title": "Physics-Informed Implicit Neural Networks for 3D Coronary Artery Reconstruction",
+          "arxiv": "https://doi.org/10.1007/s10278-026-02523-9",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Inverse Problems",
+            "order": "Implicit Neural Representation",
+            "genus": "Medical 3D Reconstruction",
+            "confidence": "Medium",
+            "rationale": "Journal of Imaging Informatics in Medicine, abstract 미제공으로 제목 기준 추정"
+          }
+        },
+        {
+          "title": "Photonic multi-synaptic autoencoder for image reconstruction",
+          "arxiv": "https://doi.org/10.1016/j.optlastec.2026.117076",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Inverse Problems",
+            "order": "Photonic Computing",
+            "genus": "Optical Autoencoder",
+            "confidence": "Low",
+            "rationale": "Optics & Laser Technology, abstract 미제공으로 제목 기준 추정, 단발 신호"
+          }
+        }
+      ]
+    },
+    {
+      "title": "광음향(photoacoustic) 영상 복원을 세 ROI 버킷이 각자 다른 방식으로 동시에 공략",
+      "claim": "Tomography, Reconstruction, Deep Learning 세 버킷에서 각각 독립적으로 photoacoustic 영상 복원 논문이 나왔는데, 비지도 prior(다중분광), 기하학적 픽셀화(스캔 기하 모델링), diffusion 기반 희소복원까지 접근 방식이 서로 다르다는 점에서 photoacoustic 영상이 지금 계산 복원 연구의 집중 모달리티가 되고 있다는 뜻이다.",
+      "papers": [
+        {
+          "title": "Deep dual-domain prior for unsupervised sparse multispectral photoacoustic tomography reconstruction",
+          "arxiv": "https://doi.org/10.1016/j.optlastec.2026.116969",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Tomography",
+            "order": "Photoacoustic Tomography",
+            "genus": "Unsupervised Dual-domain Prior",
+            "confidence": "High",
+            "rationale": "서로 다른 세 버킷(Tomography/Reconstruction/Deep Learning)이 독립적으로 photoacoustic 복원을 다룸"
+          }
+        },
+        {
+          "title": "Virtual-element pixelation for elevation-response recovery in linear-array three-dimensional photoacoustic imaging",
+          "arxiv": "https://doi.org/10.1063/5.0361189",
+          "importance_tags": ["[방법전환]", "[해부분석]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Inverse Problems",
+            "order": "Photoacoustic Imaging",
+            "genus": "Elevation-response Geometric Modeling",
+            "confidence": "High",
+            "rationale": "Applied Physics Letters, 128소자 20MHz 선형 어레이의 elevation response를 실측 15점 응답으로 정량화한 구체적 수치 제시"
+          }
+        },
+        {
+          "title": "Sparse Reconstruction for Photoacoustic Tomography Via Dual-Stream Residual Denoising Diffusion Model",
+          "arxiv": "https://doi.org/10.1016/j.pacs.2026.100904",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Deep Learning Methods",
+            "order": "Diffusion Models",
+            "genus": "Photoacoustic Sparse Reconstruction",
+            "confidence": "Medium",
+            "rationale": "Photoacoustics 저널, abstract 미제공으로 제목 기준 추정"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Virtual staining·label-free 현미경이 방법 다양화와 메타 정리(survey)를 동시에 시작",
+      "claim": "Digital Pathology Association의 concept paper가 virtual staining 전체 워크플로를 한 장의 지도로 정리하는 동안, 같은 날 wavelet-정규화 CycleGAN과 7종 아키텍처 비교 벤치마크가 나와 이 분야가 개별 데모에서 '무엇이 표준이 될지'를 따지는 단계로 넘어가고 있음을 보여준다.",
+      "papers": [
+        {
+          "title": "Virtual Staining in Digital Pathology: Image Co-registration, Generative Modeling, and Emerging Workflows—A Concept Paper From the Digital Pathology Association",
+          "arxiv": "https://doi.org/10.5858/arpa.2026-0090-ra",
+          "importance_tags": ["[통합정리]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Virtual Staining",
+            "order": "Survey",
+            "genus": "Workflow Taxonomy",
+            "confidence": "High",
+            "rationale": "Archives of Pathology & Laboratory Medicine, 학회(Digital Pathology Association) 명의의 개념 정리 논문"
+          }
+        },
+        {
+          "title": "Mask-guided wavelet-regularized CycleGAN for virtual staining of photoacoustic histology imaging",
+          "arxiv": "https://doi.org/10.1016/j.optlaseng.2026.110263",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Virtual Staining",
+            "order": "GAN-based Staining",
+            "genus": "Wavelet-regularized CycleGAN",
+            "confidence": "Medium",
+            "rationale": "Optics and Lasers in Engineering, abstract 미제공으로 제목 기준 추정"
+          }
+        },
+        {
+          "title": "A Comparison of Convolutional, Transformer, and State-Space U-Shaped Pipelines for Neuronal Soma Instance Segmentation in Label-Free 3D Microscopy",
+          "arxiv": "https://doi.org/10.3390/bioengineering13111356",
+          "importance_tags": ["[평가축]", "[인프라]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Virtual Staining",
+            "order": "Label-free Microscopy",
+            "genus": "Architecture Benchmark",
+            "confidence": "High",
+            "rationale": "7종 아키텍처(3D U-Net부터 Swin-UMamba-3D까지)를 240개 공개 볼륨에서 동일 조건으로 비교"
+          }
+        }
+      ]
+    },
+    {
+      "title": "광학 계측 DL이 shortcut-learning 경고와 함께 grating·변형센서 같은 새 응용으로 동시에 확장",
+      "claim": "장거리 단일샷 fringe projection profilometry에서 모델이 실제 형상 대신 shape-prior에 의존하는 shortcut-learning을 진단한 논문이, 같은 날 격자 선폭·변형센서처럼 DL을 광학 계측에 적용하는 새 응용 논문들과 함께 나와 '더 쓰기 전에 왜 되는지부터 봐야 한다'는 결을 만든다.",
+      "papers": [
+        {
+          "title": "When deep learning takes shortcuts in optical metrology: Part I – Diagnosing shape-prior reliance in long-range single-shot fringe projection profilometry",
+          "arxiv": "https://doi.org/10.1016/j.optlastec.2026.116951",
+          "importance_tags": ["[경고신호]", "[해부분석]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Deep Learning Methods",
+            "order": "Optical Metrology",
+            "genus": "Shortcut-learning Diagnosis",
+            "confidence": "Medium",
+            "rationale": "Optics & Laser Technology, 제목이 'Part I' 연작임을 명시해 후속 진단 연구가 예고됨"
+          }
+        },
+        {
+          "title": "Retrieval of grating line width and slit width from diffraction using a CNN–Transformer hybrid network",
+          "arxiv": "https://doi.org/10.1364/ao.612676",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Deep Learning Methods",
+            "order": "Optical Metrology",
+            "genus": "Diffraction-based Metrology",
+            "confidence": "Low",
+            "rationale": "Applied Optics, abstract 미제공으로 제목 기준 추정"
+          }
+        },
+        {
+          "title": "Flexible deformation sensing using a red–green gradient PDMS waveguide and deep learning demodulation",
+          "arxiv": "https://doi.org/10.1016/j.optlastec.2026.117046",
+          "importance_tags": ["[실사용전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Deep Learning Methods",
+            "order": "Optical Metrology",
+            "genus": "Waveguide Sensor Demodulation",
+            "confidence": "Low",
+            "rationale": "Optics & Laser Technology, abstract 미제공으로 제목 기준 추정"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Lensless/Coded Imaging이 5주 만에 처음으로 2편 모두 실신호 — XUV·X선 ghost imaging으로 확장",
+      "claim": "랩 핵심 ROI인 Lensless/Coded Imaging은 최근 데일리마다 공백에 가까웠는데, 오늘은 배정된 2편이 모두 실제 lensless 이미징 신호(XUV·X선 ghost imaging)라 드물게 하드웨어 코어 공백이 깨졌다.",
+      "papers": [
+        {
+          "title": "Lensless XUV imaging using ghost imaging on a tabletop platform",
+          "arxiv": "https://doi.org/10.1063/5.0357459",
+          "importance_tags": ["[방법전환]", "[실사용전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Lensless Imaging",
+            "order": "Ghost Imaging",
+            "genus": "Tabletop XUV Source",
+            "confidence": "Medium",
+            "rationale": "APL Photonics, 고조파 발생 소스+상관 기반 ghost imaging을 탁상형으로 구현"
+          }
+        },
+        {
+          "title": "Multiangle lensless imaging with a tabletop x-ray source",
+          "arxiv": "https://doi.org/10.1103/s25c-ljqy",
+          "importance_tags": ["[방법전환]"],
+          "phylogeny": {
+            "source": "CVML",
+            "phylum": "Computational Imaging",
+            "class": "Lensless Imaging",
+            "order": "X-ray Imaging",
+            "genus": "Multiangle Acquisition",
+            "confidence": "Low",
+            "rationale": "Physical Review A, abstract 미제공으로 제목 기준 추정"
+          }
+        }
+      ]
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "SGWN-Encoder류 구조적 회절 정규화를 랩 CGH 파이프라인의 파장/거리 일반화 실험에 적용",
+      "claim": "Structurally guided wavefront neural encoder가 쓰는 '파라미터에 민감한 global phase를 analytical하게 벗겨내는' 구조적 전파 전략을, 랩의 computer-generated holography 모델이 여러 파장·거리 조합에서 재학습 없이 버티는지 검증하는 데 그대로 적용해볼 수 있다.",
+      "supporting_papers": [
+        {"title": "Structurally guided wavefront neural encoder for broad-range generalizable 3D holography", "arxiv": "https://doi.org/10.1038/s41467-026-79408-6", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+      ]
+    },
+    {
+      "title": "Virtual-element pixelation의 elevation-response 모델을 랩 선형 어레이 광음향 스캔 보정에 이식",
+      "claim": "기계 스캔 선형 어레이에서 생기는 elevation 방향 신호 혼합을 실측 15점 응답으로 모델링한 접근을, 랩이 보유한 광음향 선형 어레이 스캔 데이터의 보정 단계에 적용해볼 수 있다.",
+      "supporting_papers": [
+        {"title": "Virtual-element pixelation for elevation-response recovery in linear-array three-dimensional photoacoustic imaging", "arxiv": "https://doi.org/10.1063/5.0361189", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+      ]
+    },
+    {
+      "title": "7종 아키텍처 비교 벤치마크 설계를 랩의 label-free 복원 모델 평가에 적용",
+      "claim": "라벨 없는 3D 현미경 세그멘테이션 비교 논문이 쓴 '동일 파티션·동일 스텝 수·3 seed' 비교 프로토콜을, 랩이 쓰는 label-free 복원/분류 네트워크 비교에도 그대로 적용해 아키텍처 선택의 근거를 표준화할 수 있다.",
+      "supporting_papers": [
+        {"title": "A Comparison of Convolutional, Transformer, and State-Space U-Shaped Pipelines for Neuronal Soma Instance Segmentation in Label-Free 3D Microscopy", "arxiv": "https://doi.org/10.3390/bioengineering13111356", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging"}}
+      ]
+    }
+  ],
+  "phylogeny_tags": [
+    {"paper": "https://doi.org/10.1038/s41467-026-79408-6", "source": "CVML", "lineage": "Computational Imaging > Holography > Computer-Generated Holography > Physics-coupled Neural Encoder"},
+    {"paper": "https://doi.org/10.1364/optica.608431", "source": "CVML", "lineage": "Computational Imaging > Meta-Optics > Light-sheet Microscopy > All-metalens Objective"},
+    {"paper": "https://doi.org/10.1063/5.0361189", "source": "CVML", "lineage": "Computational Imaging > Inverse Problems > Photoacoustic Imaging > Elevation-response Geometric Modeling"}
+  ]
+}

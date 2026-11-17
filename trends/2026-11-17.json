@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-17",
+  "source_listing_date": "2026-11-17",
+  "source_mode": "journal-only",
+  "note": "2026-11-17(화) daily 실행. Date Source Contract 점검 결과 cs.LG/cs.CV/cs.AI/eess.IV/eess.SP 5개 카테고리 모두 /new listing이 여전히 \"Monday, 16 November 2026\"에 머물러 있어(post_date=2026-11-17 > listing_date=2026-11-16), prompts/instruction.md 2.1의 저널 독립 규칙에 따라 arXiv 섹션 없이 Crossref/OpenAlex 저널만으로 만든 잠정본(source_mode=journal-only)을 발행한다. Crossref 키워드 질의 9건(--days 1) + OpenAlex enrich로 431건을 수집·분류해 scripts/classify.py로 스캔했고, 98건(22.7%)이 9개 ROI 버킷에 배정됐다. 실신호는 홀로그래피(Structurally guided wavefront neural encoder, Nature Communications 포함), 역문제 복원의 물리 제약 결합(메타광학 스냅샷 분광용 deep unfolding, 압축 초고속 이미징 untrained NN, 관상동맥 INR), 광음향(photoacoustic) 영상 복원이 Tomography/Reconstruction/Deep Learning 세 버킷에 걸쳐 동시에 등장한 점, virtual staining/label-free 현미경의 방법 다양화+메타 정리, 광학 계측 DL의 shortcut-learning 경고, 그리고 드물게 실신호가 나온 Lensless(XUV/X선 ghost imaging 2편)에 모여 있었다. 나머지는 치과/흉부 CT 임상 증례, 통신용 메타표면 안테나, VR 교육/마케팅처럼 키워드만 겹친 오탐이다. 이 리포트는 arXiv /pastweek에 2026-11-17 섹션이 생기는 즉시 Calendar Audit이 arXiv+저널 완성본으로 자동 업그레이드한다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 0,
+      "cs.CV": 0,
+      "cs.AI": 0,
+      "eess.IV": 0,
+      "eess.SP": 0
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 431
+  },
+  "totals": {
+    "total_scanned": 431,
+    "selected": 98
+  },
+  "classified": {
+    "total_scanned": 431,
+    "selected": 98,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 2,
+      "Phase Imaging/Holography": 10,
+      "Meta-Optics/Diffractive": 9,
+      "Light-Field/Novel Sensors": 1,
+      "Tomography/3D Imaging": 28,
+      "Virtual Staining/Pathology": 17,
+      "Reconstruction/Inverse Problems": 8,
+      "Deep Learning Methods": 22
+    }
+  },
+  "daily_thesis": "오늘은 arXiv 5개 카테고리가 전부 어제(11/16) listing에 머물러 있어 저널만으로 만든 잠정본인데, 저널 신호를 다시 보면 두 가지가 뚜렷합니다 — 첫째 홀로그래피·역문제 복원이 물리 제약과 신경망을 더 명시적으로 결합하는 쪽으로 계속 움직이고 있고(어제 daily의 '물리적 불확실성을 모델에 명시적으로 넣기'와 같은 방향), 둘째 광음향(photoacoustic) 영상 복원이라는 한 모달리티를 두고 Tomography·Reconstruction·Deep Learning 세 버킷이 동시에, 서로 다른 방식(비지도 prior, 기하학적 픽셀화, diffusion 희소복원)으로 공략하고 있다는 점입니다. 랩 핵심 ROI인 Lensless/Coded Imaging도 오늘은 드물게 2편 모두 실신호(XUV·X선 ghost imaging)라 5주 가까이 이어지던 하드웨어 코어 공백이 하루 깨졌습니다. 다만 오늘은 arXiv 500여 건이 통째로 빠진 날이라 정보량 자체는 평소 daily보다 훨씬 적습니다."
+}
