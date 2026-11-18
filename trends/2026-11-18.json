@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-18",
+  "source_listing_date": "2026-11-18",
+  "source_mode": "new",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 211,
+      "cs.CV": 207,
+      "cs.AI": 259,
+      "eess.IV": 5,
+      "eess.SP": 17
+    },
+    "scope": "new+cross; replacements excluded"
+  },
+  "totals": {
+    "total_scanned": 976,
+    "selected": 277
+  }
+}
