@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-11-19</title>
+<style>
+
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-11-19 (목요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-11-19 (목요일) · Daily mode (source_mode=new)</div>
+  <div>📚 소스: Date Source Contract 점검 결과 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 전부 /new listing이 "Thursday, 19 November 2026"을 가리켜(post_date=listing_date) arXiv+저널 완성본으로 발행합니다.</div>
+  <div>🔢 arXiv(new+cross, replacements 없음 확인): cs.LG 218 · cs.CV 223 · cs.AI 230 · eess.IV 10 · eess.SP 29 (합계 710편)</div>
+  <div>🔢 저널: Crossref/OpenAlex 430편 수집(Crossref 422 + OpenAlex 8) · arXiv+저널 합산 스캔 995건 · ROI 배정 308건 (31.0%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 <strong>랩 핵심 ROI인 ptychography 복원에서 그동안 없던 불확실도 정량화와 연산 스케일링 신호가 처음 등장한 날</strong>이면서, 동시에 <strong>Gaussian splatting이 RGB 카메라 렌더링을 넘어 수중광학·편광·전자단층촬영·분광천문학 같은 서로 다른 물리 측정 모델로 직접 이식되는 흐름이 여섯 편으로 뚜렷해진 날</strong>입니다. Fourier Ptychography/Microscopy 버킷 4편 중 2편(4D-TEMPO, Stochastic Optimisation)이 각각 "복원 결과를 얼마나 믿을 수 있는가"와 "현실적인 데이터 크기에서 실제로 돌릴 수 있는가"라는 이 분야의 오래된 두 병목을 정면으로 다뤘고, Tomography/3D Imaging(57편) 안에서는 Gaussian 원시 표현에 물이나 편광, 전자 산란, 방사 전달 같은 실제 물리를 직접 주입하는 여섯 편이 동시에 나왔습니다. 여기에 더해 <strong>의료·병리 영상 AI의 평가축이 정확도 한 숫자에서 근거 기반성과 측정 조건별 불확실도 보정으로 옮겨가는 네 편</strong>, <strong>virtual staining·digital pathology가 분자 예측·위험 인지·해석 가능 근거로 넓어지는 네 편</strong>, <strong>영상 복원이 가산 잡음 가정을 벗어나 곱셈형 잡음·교차 열화·강체 움직임을 명시적으로 모델링하는 세 편</strong>까지 다섯 개 클러스터가 Deep Learning Methods catch-all 버킷 안에서 포착됐습니다. 반대로 Meta-Optics/Diffractive(16편)는 어제에 이어 오늘도 테라헤르츠·통신·화학센서 소자가 거의 전부라 랩이 다루는 이미징용 메타광학과는 여전히 무관했습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 2026-11-19 확인 기준 5개 카테고리 모두 /new listing이 "Thursday, 19 November 2026"으로 post_date와 일치해 arXiv+저널 완성본으로 발행합니다(arXiv new+cross 합계 710편, replacements 없음). 여기에 저널 430편(Crossref 422편, 9개 쿼리 중 6개가 1차 레이트리밋에 걸려 지연 재시도로 복구 + OpenAlex 보충 8편)을 더해 classify.py로 합쳐 스캔한 결과(합산 995건) 308건(31.0%)이 9개 ROI 버킷에 배정됐습니다. 버킷별 논문 목록을 다시 읽어본 결과 오늘 가장 눈에 띄는 변화는 랩 핵심 ROI인 Fourier Ptychography/Microscopy(4편) 안에서 일어났습니다 — 지난 며칠 이 버킷은 1~2편씩만 걸리며 거의 비어 있었는데, 오늘은 전자 ptychography와 X선 ptychography 양쪽에서 각각 불확실도 정량화와 메모리/시간 스케일링이라는 이 분야의 실질적인 병목을 다루는 논문이 나왔습니다. 다른 한 축은 Tomography/3D Imaging(57편) 안에서 Gaussian splatting(장면을 수많은 작은 가우시안으로 표현해 렌더링하는 기법)이 어제의 "배포 환경 확장"을 지나 "RGB가 아닌 물리 측정 모델 자체에 맞게 설계를 다시 하는" 여섯 편으로 넘어간 점입니다. Virtual Staining/Pathology(38편)와 Reconstruction/Inverse Problems(24편)는 여전히 staining·reconstruction 단어만 겹치는 무관 논문이 다수지만, 그 안에서도 분자 예측·위험 인지 병리 신호 네 편과 비가산적 잡음/열화 모델링 신호 세 편을 건질 수 있었습니다. Meta-Optics/Diffractive(16편)는 테라헤르츠 바이오센서·통신용 메타표면·화학 센서 소자가 사실상 전부라 랩 핵심 ROI로서는 오늘도 공백에 가까웠습니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(11/18)는 랩 핵심 ROI(Fourier Ptychography, Lensless, Meta-Optics, Phase/Holography)가 역대급으로 얇았던 날이면서, 3D Gaussian Splatting이 "렌더링을 잘 하는 것"에서 "워크스테이션 밖 엣지 기기·멀티에이전트 SLAM·모바일·위성 영상 등 어디서나 돌아가게 만드는 것"으로 질문을 바꾼 날이었고, feed-forward 3D 복원에 SfM이나 관절 구조를 다시 주입하는 흐름, 모달리티 비의존적 영상 복원, digital pathology의 일반화·강건성 검증이 각각 2~4편씩 등장했습니다. 오늘은 그 중 Gaussian splatting 흐름이 이어지긴 하는데, 어제가 "같은 RGB 렌더링을 어떤 기기에서 돌릴 것인가"였다면 오늘은 "가우시안이라는 표현 자체를 RGB가 아닌 다른 물리(물, 편광, 전자 산란, 방사 전달)에 맞게 다시 설계하는" 쪽으로 질문이 완전히 달라졌습니다 — 대표 논문이 어제와 전혀 겹치지 않습니다. 어제 가장 얇았던 랩 핵심 ROI는 오늘 Fourier Ptychography/Microscopy에서 오히려 실질 신호 2편이 동시에 나오며 반전됐고, 어제 두드러졌던 feed-forward 3D 복원·모달리티 비의존적 복원 클러스터는 오늘 새 논문으로 이어지지 않은 대신, 의료영상 평가축 전환(정확도→근거 기반성·불확실도)과 비가산적 잡음/열화 모델링이라는 두 개의 새로운 축이 처음 등장했습니다. digital pathology는 어제의 "일반화·강건성 검증"에서 오늘 "분자 예측·위험 인지·해석 가능 근거"로 질문이 한 단계 더 구체화됐습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>랩 핵심 ROI인 ptychography 복원에 처음으로 불확실도 정량화와 메모리 스케일링이라는 실질 신호 등장</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.24776" target=_blank>4D-TEMPO: Differentiable 4D-STEM ptychography via fast Physics Optimizers</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.24232" target=_blank>Stochastic Optimisation for Scalable Ptychographic Image Reconstruction</a> <span class="pill b">IV</span>
+  </td>
+  <td>Fourier Ptychography/Microscopy 버킷은 요 며칠 계속 1~2편씩만 걸리던 랩 핵심 ROI인데, 오늘은 두 편 모두 이 분야가 실제로 막혀 있던 두 지점을 정면으로 다룹니다. 전자 ptychography(전자빔을 여러 위치로 스캔해 얻은 회절 패턴으로 원자 구조를 복원하는 기법)는 지금까지 이미지를 먼저 복원한 뒤 원자 위치를 읽거나 L1 손실로 맞추는 방식이라 원자 하나하나의 위치가 얼마나 확실한지 알려주지 않았습니다. 4D-TEMPO는 원자·현미경·검출기를 측정된 전자 수에 직접 맞추는 미분 가능한 물리 렌더러를 만들어, 원자 하나마다 위치와 오차 범위를 포아송 통계와 피셔 정보량으로부터 직접 계산합니다. 그 결과 평면 내 오차를 1/3로 줄이고(3.2 대 4.8 피코미터), 기존 공개 코드 대비 같은 품질을 5분 만에 얻어(기존 최대 20.5시간) 저선량·실시간 3차원 이미징의 길을 열었습니다. X선 ptychography는 반대로 측정을 많이 겹치게 찍을수록 계산량·메모리가 기하급수적으로 늘어나는 문제가 있었는데, Stochastic Optimisation 논문은 일부 측정만 무작위로 뽑아 학습하는 확률적 경사하강을 가져와 20만 장 회절 패턴 데이터셋에서 GPU 메모리를 65%, 복원 시간을 22%까지 줄였습니다. 두 편을 합치면, ptychography 복원이 "더 선명하게 찍기" 경쟁에서 "이 결과를 얼마나 믿을 수 있는지"와 "현실적인 데이터 크기에서 실제로 돌릴 수 있는지"를 묻는 단계로 들어섰다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 두 연구팀이 같은 날 전자/X선이라는 서로 다른 ptychography 양식에서 각각 불확실도 정량화와 메모리·시간 스케일링을 다뤘지만, 2편뿐이고 세부 문제가 달라 하나의 통일된 흐름으로 보기엔 이릅니다.</small></td>
+  <td>4D-TEMPO의 '원자를 3D 가우시안 + 피셔 정보 오차바'로 모델링하는 방식을 랩의 광학 Fourier ptychography 복원 파이프라인에 적용 가능한지 검토하고, Stochastic Optimisation의 변분 축소 확률적 경사하강을 랩 보유 대용량 FOV ptychography 데이터셋에 1주 내 시범 적용해 GPU 메모리·수렴 시간을 비교한다.</td>
+</tr>
+<tr>
+  <td><strong>Gaussian 원시 표현이 RGB 렌더링을 넘어 수중광학·편광·전자단층·분광천문학으로 직접 이식됨</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.23450" target=_blank>NIRJALA: Draining the Sea out of Gaussian Splatting with Three-Path Optics and Reversible Physics</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.24404" target=_blank>RAPID: Reconstruction Accelerated by Polarization-Informed Depth for 2D Gaussian Splatting</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.23444" target=_blank>Gaussian Splatoms: Direct Atomic Structure Identification in Electron Tomography</a> <span class="pill b">IV</span><br>
+    <a href="https://arxiv.org/abs/2611.24723" target=_blank>Multi-Band Galaxy Novel-View Synthesis with Radiative Gaussian Fields</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.23736" target=_blank>GaussLearner: 3D Gaussian Primitives as Self-Regulating Continual Learners</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.24164" target=_blank>Gaussian Primitive Fusion for Any-Resolution Multimodal Images</a> <span class="pill b">CV</span>
+  </td>
+  <td>어제 3DGS 묶음은 "같은 RGB 렌더링을 워크스테이션 밖 어떤 기기에서 돌릴 것인가"였다면, 오늘은 "가우시안이라는 표현 자체를 RGB 카메라가 아닌 다른 물리적 측정 과정에 맞게 다시 설계하는" 여섯 편이 동시에 나왔습니다. NIRJALA는 수중 영상에서 물이 빛을 감쇠·후방산란·전방산란으로 동시에 왜곡한다는 점을 세 갈래 광학 모델로 풀어내 기존 방식이 거리에 따라 보정값이 발산하던 문제를 수학적으로 막았습니다. RAPID는 반사면·저질감 영역에서 편광 정보로부터 표면 깊이 단서를 미리 뽑아 가우시안 초기화에 바로 꽂아 최적화 시간을 21분에서 4분으로 줄였습니다. Gaussian Splatoms는 원자를 복셀이 아니라 위치·크기·세기를 갖는 가우시안으로 직접 표현하고 원자 간 최소 거리 같은 물리 법칙을 모델에 넣어 측정이 부족해도 더 안정적인 복원을 보였습니다. 은하 다중 밴드 영상 논문은 파장마다 전혀 다른 비추는 방식(방사 전달)을 가진 천체 신호를 가우시안에 맞게 다시 설계했고, GaussLearner는 각 가우시안이 스스로 "이 관측을 얼마나 믿어야 하는지" 판단해 과거 복원을 잊지 않게 했으며, Gaussian Primitive Fusion은 해상도가 다른 여러 센서 영상을 리샘플링 없이 연속 가우시안 공간에서 바로 합성합니다. 여섯 편을 합치면, Gaussian splatting이 "사진을 잘 렌더링하는 도구"에서 각 분야의 실제 측정 물리를 반영하는 범용 표현 틀로 번지고 있다는 뜻이고, 랩이 다루는 위상·홀로그램·단층촬영 같은 비-RGB 측정에도 같은 설계 철학을 적용할 수 있다는 신호입니다.</td>
+  <td>High<br><small>서로 다른 여섯 연구팀이 같은 날 수중광학·편광·전자현미경·천문학·연속학습·멀티모달 융합이라는 전혀 다른 도메인에서 '가우시안에 물리 모델을 직접 주입한다'는 같은 설계 원칙을 독립적으로 적용했고, 다수가 구체적 수치를 제시합니다.</small></td>
+  <td>Gaussian Splatoms·NIRJALA가 쓰는 '물리 제약을 가우시안 파라미터에 직접 거는' 설계를 랩이 쓰는 optical diffraction tomography 또는 holography 복원의 forward model에 이식할 수 있는지 검토하고, 기존 복셀/그리드 기반 복원 대비 속도·안정성 차이를 랩 보유 데이터셋으로 1주 내 비교한다.</td>
+</tr>
+<tr>
+  <td><strong>의료영상 AI의 평가 기준이 '정확도 숫자'에서 '근거 기반성'과 '측정 조건별 불확실도 보정'으로 옮겨감</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.23529" target=_blank>ORGANIC3D: Grounding 3D CT Vision Language Models in Organ Level Image Text Coupling</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.23752" target=_blank>ACUS: An Angular Calibrated Uncertainty Score for Incomplete-View CT</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.23344" target=_blank>Beyond Accuracy: Benchmarking Uncertainty Quantification in Retinal Disease Screening</a> <span class="pill b">IV</span><br>
+    <a href="https://arxiv.org/abs/2611.24443" target=_blank>NativeSeg: Native Vision Language Segmentation of 3D Computed Tomography</a> <span class="pill b">CV</span>
+  </td>
+  <td>네 편 모두 "모델이 맞혔다"는 숫자 하나로는 보이지 않던 약점을 드러냅니다. ORGANIC3D는 3D CT를 보는 vision-language 모델들이 분류 정확도는 높아도 장기를 지워보거나 좌우를 바꿔보면 실제로는 엉뚱한 부위를 근거로 답하고 있었다는 걸 보여주고, 좌우 판별 정확도를 기존 최대 66%에서 77%로, 장기 제거 시 관련 소견을 철회하는 비율을 기존 최대 69%에서 96~99%로 끌어올리는 학습 방식을 제안합니다. ACUS는 투영 각도가 일부만 측정된 CT에서, 빈 구간을 채운 영상이 정답과 비슷한지만 재면 그 영상이 측정 각도에서 멀어질수록 모델이 없는 해부 구조를 지어내면서도 점수는 높게 나올 수 있다는 점을 지적하고, 측정 각도로부터의 거리에 따라 예측 구간이 얼마나 벌어지는지를 직접 재는 지표를 제안합니다. Beyond Accuracy는 24만 장 이상의 안저 사진·32개 데이터셋 규모로 6가지 불확실도 정량화 방법을 비교해, 어떤 방법도 모든 질환·모델에서 보편적으로 믿을 만하지 않다는 걸 보여줍니다. NativeSeg는 CT 영역 분할에서 "지금 이 경계를 더 확대해서 봐야 하는지"를 모델 스스로 판단하게 만들어 불확실한 곳만 골라 확대합니다. 네 편을 합치면, 의료영상 AI 평가가 이제는 평균 정확도 한 숫자가 아니라 예측이 실제로 올바른 근거에 기반했는지와 측정 조건이 나빠질수록 불확실도가 올바르게 커지는지를 같이 재야 한다는 쪽으로 분명히 옮겨가고 있다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 네 연구팀이 같은 날 CT·안저사진이라는 서로 다른 영상 양식에서 정확도만으로는 안 보이는 신뢰성 문제를 구체적 수치(좌우 판별 +11pt, 철회율 +27~30pt, 24만 장 규모 벤치마크 등)로 보였습니다.</small></td>
+  <td>ACUS의 '측정 각도로부터의 거리에 따라 예측 구간을 재는' 방식을 랩이 다루는 sparse-view 단층촬영/위상 복원 모델 평가에 적용하고, ORGANIC3D의 장기 제거·좌우 반전 교란 테스트를 랩 자체 의료/생체 영상 모델의 근거 기반성 점검에 1주 내 시범 적용한다.</td>
+</tr>
+<tr>
+  <td><strong>Virtual staining·digital pathology가 '염색 흉내'를 넘어 분자 예측·위험 인지·해석 가능 근거로 넓어짐</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.24104" target=_blank>SCOPE: Single-Cell Omics Prediction from Histology via RNA-Protein Prior Enhancement</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.24366" target=_blank>SCOUT: Risk-Guided Foundation-Model Escalation for Robust Tissue Detection in Whole-Slide Images</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.24363" target=_blank>Transferable Named Sparse Features for Morphology-based Gleason Grading</a> <span class="pill b">IV</span><br>
+    <a href="https://doi.org/10.1088/2050-6120/aec410" target=_blank>Multi-spectral virtual staining for label-free histopathology using deep neural networks</a> <span class=pill>JNL</span>
+  </td>
+  <td>네 편 모두 "염색된 것처럼 보이게 바꾸거나 등급 하나를 매기는" 지금까지의 virtual staining·병리 AI 틀에서 한 걸음씩 더 나아갑니다. SCOPE는 흔한 H&E 영상만으로 세포 하나하나의 RNA와 단백질 양까지 예측하려 하는데, RNA와 단백질이 생물학적으로 연결돼 있다는 점을 이용해 한쪽 학습 데이터가 부족해도 다른 쪽 지식을 빌려와 16개 장기에서 RNA 예측 8.8%, 미학습 단백질 마커 예측 11.9% 성능을 끌어올렸습니다. SCOUT은 조직이 있는 영역을 찾는 기본 단계조차 옅은 조직이나 작은 조각에서 실패할 수 있다는 점을 지적하고, 오류 가능성이 높은 영역만 골라 무거운 foundation model을 추가로 돌려 교정이 필요한 비율을 38.1%에서 18.6%로 줄였습니다. Gleason grading(전립선암 조직 악성도 등급) 논문은 모델이 등급만 뱉는 게 아니라 '체 모양 분비선'처럼 병리학자가 실제로 쓰는 조직 패턴 이름이 붙은 내부 표현으로 판정 근거를 직접 보여주고, 그 근거가 기관·스캐너가 달라도 안정적으로 유지된다는 걸 보였습니다. Multi-spectral virtual staining은 하나의 넓은 파장 대역 대신 여러 좁은 스펙트럼 밴드를 동시에 활용해 같은 가짜 염색 변환에서도 판별력을 ROC 0.78에서 0.98로 끌어올렸습니다. 네 편을 합치면, virtual staining·digital pathology가 그럴듯한 염색 이미지 하나를 만드는 경쟁에서 더 깊은 분자 정보를 추론하고, 실패 가능성이 높은 곳을 스스로 알아채고, 판정 근거를 병리학자가 검증할 수 있는 언어로 제시하는 쪽으로 넓어지고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 네 연구팀이 같은 날 분자 예측·위험 인지 추론·해석 가능 근거·분광 확장이라는 네 가지 다른 축을 보였고 다수가 구체적 수치를 제시하지만, 네 축이 서로 다른 하위 문제라 아직 하나의 벤치마크로 교차검증되지는 않습니다.</small></td>
+  <td>Gleason grading의 '이름 붙은 희소 특징으로 근거를 보여주는' 방식과 SCOPE의 RNA-단백질 상호 보강 학습을 랩의 virtual staining 모델(명시야/위상 기반) 출력에 적용해, 등급·강도 숫자 대신 검증 가능한 조직 패턴 근거를 함께 뽑을 수 있는지 1주 내 시범 설계한다.</td>
+</tr>
+<tr>
+  <td><strong>영상 복원이 가산 잡음 가정을 벗어나 곱셈형 잡음·교차 열화·강체 움직임을 명시적으로 모델링</strong></td>
+  <td>
+    <a href="https://doi.org/10.1137/25m1827396" target=_blank>Unbiased Risk Estimation for Multiplicative Noise Removal</a> <span class=pill>JNL</span><br>
+    <a href="https://arxiv.org/abs/2611.23889" target=_blank>Beyond Additive Composition: Interventional Modeling of State-Dependent Cross-Degradation Responses</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.23788" target=_blank>Geometry-bridge flow matching for blind rigid-motion correction in head cone-beam CT</a> <span class="pill b">CV</span>
+  </td>
+  <td>세 편 모두 "잡음·열화는 입력에 단순히 더해진다"는 흔한 가정이 실제 영상에서는 잘 맞지 않는다는 점을 각자의 방식으로 다룹니다. Unbiased Risk Estimation은 레이저 스페클처럼 신호 세기에 곱해지는 잡음(가산이 아니라 승산 잡음)을 정답 영상 없이 한 장의 입력만으로 제거하면서도 평균제곱오차를 이론적으로 편향 없이 추정하는 식을 유도했습니다. Beyond Additive Composition은 안개·저조도·잡음처럼 여러 열화가 동시에 끼어 있는 영상에서, 기존처럼 각 열화를 독립 성분으로 분해해 따로 보정하는 대신 한 열화의 정도가 다른 열화의 영향을 바꿔버리는 상호작용을 직접 수치로 측정해 복원에 반영합니다. Geometry-bridge flow matching은 CT 촬영 중 머리가 움직여 생기는 흐림을 단순 잡음이 아니라 투영 기하 자체가 어긋나는 문제로 보고, 움직임이 줄어드는 가상의 중간 단계를 지나는 경로를 학습해 자세 추정과 영상 복원을 같이 풀었습니다. 세 편을 합치면, 영상 복원 연구가 잡음이 단순하고 독립적으로 더해진다는 편한 가정에서 벗어나, 실제 측정에서 열화가 서로 얽히거나 기하학적으로 어긋나는 방식 그대로를 수식에 반영하는 쪽으로 가고 있다는 뜻이고, 랩이 다루는 코히런트 스페클 같은 위상·홀로그램 잡음도 같은 승산·비가산 범주에 들어갈 수 있어 지켜볼 가치가 있습니다.</td>
+  <td>Medium<br><small>서로 다른 세 연구팀이 같은 날 승산 잡음·교차 열화 간섭·강체 움직임이라는 세 가지 다른 비가산적 열화를 각각 다뤘고 두 편은 공개 코드/구체적 수치를 제시하지만, 세 편의 응용 영역이 서로 달라 하나의 흐름으로 교차검증되지는 않습니다.</small></td>
+  <td>Unbiased Risk Estimation의 승산 잡음용 비편향 위험 추정 손실을 랩의 홀로그래피/위상 영상에서 흔한 코히런트 스페클 잡음 제거 모델 학습에 단일 영상 자기지도 설정으로 1주 내 시범 적용하고, 기존 가산 가우시안 가정 손실 대비 PSNR/SSIM을 비교한다.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li>Fourier Ptychography/Microscopy: 4편 배정, 실신호 2편(4D-TEMPO, Stochastic Optimisation) — 나머지 2편(JNL, 산소 원자 정렬·결함 클러스터 측정)은 abstract가 없어 title 기준으로만 판단했지만 전자 ptychography 응용 사례로 Watch Lens에 남깁니다. 오늘은 랩 핵심 ROI 중 가장 신호가 뚜렷했던 버킷입니다.</li>
+    <li>Lensless/Coded Imaging: 1편 배정(이중나선 PSF 단일 영상 깊이 추정, JNL) — abstract 없이 title만으로 판단했고, 1편뿐이라 독립 클러스터로 올리지 않았지만 랩 핵심 ROI 신호로 Watch Lens에 남깁니다.</li>
+    <li>Phase Imaging/Holography: 11편 배정, 실신호 2편(동적 wavefront shaping으로 산란 조직 더 깊이 보기, dark-field 편광 약한 측정으로 검출기 포화 없이 label-free 위상 영상) — 나머지 9편은 양자 홀로그래피, 테라헤르츠 메타표면 홀로그래피, 전파망원경 위상 결정법, LoopCache(LLM 디코딩 가속, "wavefront" 키워드 우연 일치) 등으로 랩 ROI와 거리가 있습니다.</li>
+    <li>Meta-Optics/Diffractive: 16편 배정, 실신호 0편 — 테라헤르츠 바이오센서, 5G/위성 통신용 메타표면 안테나, 카이랄 전기화학발광 바이오센싱, DNA 오리가미 나노광학 등 전부 통신·바이오센서·화학 소자이고, 랩이 다루는 이미징용 메타렌즈/메타광학과 직접 관련된 논문은 오늘도 하나도 없었습니다(어제에 이어 2일 연속).</li>
+    <li>Light-Field/Novel Sensors: 1편 배정(ALIVE, 이벤트 기반으로 foundation model feature를 재인코딩 없이 갱신) — 1편뿐이라 독립 클러스터로 올리지 않았지만, event camera를 1차 센서로 쓰는 흐름의 연장선으로 Watch Lens에 남깁니다.</li>
+    <li>Tomography/3D Imaging: 57편 배정, 실신호 약 9편(Gaussian 물리 이식 클러스터 4편 중 arXiv 분 + 의료 근거/불확실도 클러스터 3편 + GaussLearner·Gaussian Primitive Fusion은 Reconstruction/DL 버킷으로 분류) — 나머지 약 48편은 치과 CBCT 증례, 관상동맥 CTA, cryo-EM B-factor 보정 등 CT/MRI/PET/전자현미경을 "사용"하지만 영상 재구성 방법론에 기여하지 않는 순수 임상·물리 증례입니다.</li>
+    <li>Virtual Staining/Pathology: 38편 배정, 실신호 4편(분자 예측·위험 인지·해석 가능 근거 클러스터 전체) — 나머지 약 34편은 HVAC 제어, 중력파 대리모델, 교실 음성 분할, 금융 모델 등 "staining"/"virtual" 단어만 일치하는 완전 무관 논문입니다.</li>
+    <li>Reconstruction/Inverse Problems: 24편 배정, 실신호 약 4편(비가산적 잡음/열화 클러스터 2편 + GaussLearner + 이미지 분해 변분 네트워크 JNL) — 나머지 약 20편은 전력망 디지털 트윈, 추천시스템 빔서치, PDE 연산자 학습 등 이미징과 무관한 일반 ML·물리 시뮬레이션입니다.</li>
+    <li>Deep Learning Methods: 156편 배정, 실신호 약 6편(Beyond Additive Composition, Gaussian Primitive Fusion, Gleason Grading sparse features, Beyond Accuracy UQ retinal, SWIMSS MS 병변 분할) — 나머지 대부분은 diffusion decoding 효율화, 강화학습, LLM 에이전트, 6G 통신 등 전산 광학 이미징과 직접 관련 없는 범용 ML입니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<p>오늘은 이 대비가 평소보다 더 또렷하게 "방법이 먼저, 응용이 뒤따르는" 모양입니다. arXiv 쪽(cs.LG/cs.CV/cs.AI/eess.IV/eess.SP)에서는 "differentiable physics optimizer", "stochastic optimisation", "Gaussian primitive", "calibrated uncertainty"처럼 방법론 중심 키워드가 오늘의 다섯 클러스터 전부를 채웠고, 저널(Crossref/OpenAlex) 쪽은 그 중 둘(ptychography, virtual staining)에서만 짝이 되는 응용 신호를 보탰습니다 — Multi-spectral virtual staining(JNL), DualStainNet 혈액 도말(JNL), Fine-Coarse GCN WSI(JNL), Unbiased Risk Estimation(JNL)이 그렇습니다. 반대로 Gaussian splatting의 물리 이식 클러스터와 의료영상 평가축 전환 클러스터는 오늘 사실상 전부 arXiv 발 논문이었고, 저널 쪽에서는 짝이 되는 임상/하드웨어 검증 사례가 나오지 않았습니다. 공통 키워드는 "uncertainty"인데, arXiv의 uncertainty는 모델 예측의 신뢰도·보정(calibration)을 가리키고, 저널의 uncertainty는(있다면) 측정 장비의 고전적 오차 전파에 가깝습니다. 즉 오늘은 "저널이 응용을, arXiv가 방법을 담당한다"는 평소 분업에서 Meta-Optics/Phase처럼 응용 신호가 아예 랩 ROI와 무관한 쪽으로 쏠린 버킷이 있는 반면, ptychography·virtual staining처럼 방법과 응용이 같은 날 양쪽에서 동시에 짝을 이룬 버킷도 있어 버킷마다 분업 양상이 꽤 갈렸던 날입니다.</p>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. Ptychography 복원이 불확실도 정량화와 연산 스케일링이라는 실질적 병목을 다루기 시작</h3>
+  <p>4D-TEMPO는 전자 ptychography에서 원자 단위 오차바를 피셔 정보로 직접 계산해 평면 내 오차를 1/3로 줄였고, Stochastic Optimisation은 X선 ptychography의 GPU 메모리를 65%, 복원 시간을 22%로 줄여 랩 핵심 ROI에 드물게 실용적인 신호를 제공했습니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<div class=ins>
+  <h3>2. Gaussian 표현이 RGB 렌더링을 넘어 여섯 가지 물리 측정 도메인으로 번짐</h3>
+  <p>NIRJALA(수중), RAPID(편광), Gaussian Splatoms(전자단층), Multi-Band Galaxy GS(천문), GaussLearner(연속학습), Gaussian Primitive Fusion(멀티모달 융합)이 모두 같은 날 물리 모델을 가우시안 파라미터에 직접 주입하는 설계를 보였습니다.</p>
+  <p class=conf-note>Confidence: High</p>
+</div>
+
+<div class=ins>
+  <h3>3. 의료영상 AI 평가축이 정확도에서 근거 기반성·보정된 불확실도로 이동</h3>
+  <p>ORGANIC3D(장기 근거 검증), ACUS(각도별 보정 불확실도), Beyond Accuracy(24만 장 UQ 벤치마크), NativeSeg(불확실 영역만 확대)가 같은 날 "정확도만으로는 안 보이는 신뢰성 문제"를 구체적 수치로 드러냈습니다.</p>
+  <p class=conf-note>Confidence: High</p>
+</div>
+
+<div class=ins>
+  <h3>4. Virtual staining·digital pathology가 분자 예측·위험 인지·해석 가능 근거로 확장</h3>
+  <p>SCOPE(RNA/단백질 예측), SCOUT(위험 인지 추론), Gleason sparse features(해석 가능 근거), Multi-spectral VS(분광 확장)가 각각 다른 축에서 "그럴듯한 염색 이미지 하나"를 넘어선 확장을 보였습니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<div class=ins>
+  <h3>5. 영상 복원이 가산 잡음 가정을 벗어나 비가산적 열화를 명시적으로 모델링</h3>
+  <p>Unbiased Risk Estimation(승산 잡음), Beyond Additive Composition(교차 열화 간섭), Geometry-bridge flow matching(강체 움직임)이 모두 "잡음은 단순히 더해진다"는 가정을 벗어나 실제 물리적 상호작용을 수식에 반영했습니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. 4D-TEMPO식 피셔 정보 기반 오차바를 랩 Fourier ptychography 복원에 적용</h3>
+  <p>4D-TEMPO는 전자 ptychography 복원에서 원자 하나하나의 위치 오차를 피셔 정보로부터 직접 계산해 처음으로 신뢰 가능한 불확실도를 제공하는데, 랩의 광학 Fourier ptychography 복원에도 같은 원리로 픽셀/영역 단위 신뢰도를 매길 수 있는지 확인할 가치가 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: 4D-TEMPO (arXiv 2611.24776) — 코드 공개 여부 abstract 기준 확인 불가, 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 광학 Fourier ptychography 복원 데이터셋(시뮬레이션 + 실측)</li>
+    <li>비교축: 기존 L1/이미지 기반 복원 대비 피셔 정보 기반 오차바의 보정도(실제 오차와 예측 구간의 일치율), 저선량 조건에서의 안정성</li>
+    <li>실패해도 남는 결과: 오차바 보정이 랩 데이터에서 어긋나더라도, 복원 파이프라인의 어느 단계에서 불확실도가 가장 커지는지 프로파일링한 결과는 다음 저선량 이미징 설계에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. 물리 제약을 직접 거는 Gaussian primitive 설계를 랩 단층촬영/홀로그래피 복원에 이식</h3>
+  <p>Gaussian Splatoms와 NIRJALA는 복셀 그리드 대신 물리 법칙(원자 간 최소 거리, 물의 삼중경로 광학)을 가우시안 파라미터에 직접 거는 설계로 더 적은 측정에서도 안정적인 복원을 보였는데, 랩의 위상/단층촬영 복원도 같은 설계로 전환하면 측정이 부족한 조건에서 이득이 있는지 검증할 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Gaussian Splatoms (arXiv 2611.23444), NIRJALA (arXiv 2611.23450) — 둘 다 코드 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 optical diffraction tomography 또는 QPI(정량 위상 영상) held-out 데이터셋</li>
+    <li>비교축: 복셀/그리드 기반 복원 대비 물리 제약 가우시안 표현의 복원 안정성(측정 수를 줄였을 때 성능 저하 폭)과 수렴 속도</li>
+    <li>실패해도 남는 결과: 가우시안 표현이 랩 데이터에서 이득이 없더라도, 어떤 물리 제약이 랩 측정 모델에 대응되는지 정리한 매핑은 다음 forward model 설계에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. ACUS식 각도-거리 보정 불확실도 지표를 랩 sparse-view 복원 평가에 적용</h3>
+  <p>ACUS는 point-estimate PSNR 하나로는 보이지 않던, 측정 각도에서 멀어질수록 모델이 과신하는 문제를 직접 드러내는데, 랩이 쓰는 sparse-view 단층촬영이나 제한각 위상 복원 모델도 같은 방식으로 평가하면 숨어 있던 과신 구간을 찾을 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: ACUS (arXiv 2611.23752) — 코드 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 sparse-view/제한각 단층촬영 또는 위상 복원 held-out 각도 세트</li>
+    <li>비교축: 측정 각도로부터의 거리별 예측 구간 폭과 실제 커버리지, 기존 point-estimate PSNR과의 괴리</li>
+    <li>실패해도 남는 결과: 랩 모델이 ACUS 기준에서 과신을 보이지 않더라도, 각도별 커버리지 곡선 자체는 다음 모델 비교의 표준 평가 자산으로 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>D. Gleason grading의 이름 붙은 희소 특징 방식을 랩 virtual staining 모델의 근거 제시에 적용</h3>
+  <p>Gleason grading 논문은 등급 숫자 대신 병리학자가 쓰는 조직 패턴 이름이 붙은 내부 표현으로 판정 근거를 보여주는데, 랩의 virtual staining 모델 출력에도 같은 희소 코드 방식을 적용하면 변환 품질 점수 대신 검증 가능한 조직 패턴 근거를 제시할 수 있는지 확인할 가치가 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Transferable Named Sparse Features (arXiv 2611.24363), SCOPE (arXiv 2611.24104) — 둘 다 코드 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 virtual staining 출력(명시야/위상 기반) + 병리학자 검증 가능한 조직 패턴 라벨 소량 세트</li>
+    <li>비교축: 기존 변환 품질 점수(SSIM/PSNR) 대비 이름 붙은 희소 특징이 병리학자 판단과 얼마나 일치하는지, 기관/스캐너 간 안정성</li>
+    <li>실패해도 남는 결과: 희소 특징이 랩 데이터에서 안정적이지 않더라도, 어떤 조직 패턴이 랩 변환 모델에서 가장 자주 왜곡되는지 정리한 분석은 다음 품질 관리 설계에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Deep Learning Methods(156편, catch-all)를 제외한 버킷 중 최댓값인 Tomography/3D Imaging(57편) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all, 실제 편수는 라벨에 표시). 0편 버킷은 오늘 없습니다.</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:7.0%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:1.8%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:19.3%"></span></span><span class=n>11편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:28.1%"></span></span><span class=n>16편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:1.8%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>57편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:66.7%"></span></span><span class=n>38편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:42.1%"></span></span><span class=n>24편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>156편</span></div>
+
+<p><small>⚠️ 참고: 버킷별 실질 신호 비율은 위 🔬 도메인 Watch Lens 섹션을 참고하세요 — Meta-Optics/Diffractive(16편 중 실질 신호 0편)와 Virtual Staining/Pathology(38편 중 실질 신호 4편)는 막대가 길어 보여도 실제로는 랩 ROI와 무관한 키워드 오탐이 대부분입니다. 반대로 Fourier Ptychography/Microscopy는 4편 중 2편이 실질 신호라 막대는 가장 짧은 축에 속해도 밀도는 오늘 가장 높은 버킷입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.24776" target=_blank>4D-TEMPO: Differentiable 4D-STEM ptychography via fast Physics Optimizers</a></strong> [CV]<br>
+  왜 주요: 랩 핵심 ROI(Fourier Ptychography/Microscopy)에서 오늘 가장 중요한 신호, 전자 ptychography에 처음으로 원자 단위 오차바를 부여.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.24232" target=_blank>Stochastic Optimisation for Scalable Ptychographic Image Reconstruction</a></strong> [IV]<br>
+  왜 주요: X선 ptychography의 GPU 메모리 65%·복원 시간 22%로 축소, 랩 대용량 FOV 복원에 바로 참고 가능.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optcom.2026.134000" target=_blank>Learning-Based Direct Depth Estimation via Single-Shot Monocular Imaging with Double-Helix PSF Encoding</a></strong> [JNL]<br>
+  왜 주요: 랩 핵심 ROI(Lensless/Coded Imaging)에서 오늘 유일한 신호, 이중나선 PSF로 단일 영상 깊이 추정.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1051/photon/202614051" target=_blank>Seeing deeper with dynamic wavefront shaping in optical microscopy</a></strong> [JNL]<br>
+  왜 주요: Phase Imaging/Holography에서 실제 이미징에 쓸 수 있는 드문 신호, 적응광학으로 조직 산란을 뚫고 더 깊이 보는 사례.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.23529" target=_blank>ORGANIC3D: Grounding 3D CT Vision Language Models in Organ Level Image Text Coupling</a></strong> [CV]<br>
+  왜 주요: 3D CT VLM의 정확도-근거 불일치를 정량적으로 드러낸 오늘의 대표 평가축 전환 논문.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.23444" target=_blank>Gaussian Splatoms: Direct Atomic Structure Identification in Electron Tomography</a></strong> [IV]<br>
+  왜 주요: 복셀 대신 물리 제약 가우시안으로 전자단층촬영을 복원, Tomography 버킷의 물리 이식 클러스터 대표.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.23450" target=_blank>NIRJALA: Draining the Sea out of Gaussian Splatting with Three-Path Optics and Reversible Physics</a></strong> [CV]<br>
+  왜 주요: 수중 광학을 삼중경로 모델로 명시적으로 풀어낸 3DGS, 발산하지 않는 보정을 수학적으로 증명.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.24104" target=_blank>SCOPE: Single-Cell Omics Prediction from Histology via RNA-Protein Prior Enhancement</a></strong> [CV]<br>
+  왜 주요: H&E 영상만으로 RNA/단백질을 예측, 16개 장기에서 8.8~11.9% 개선한 오늘 Virtual Staining/Pathology 대표 신호.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.24366" target=_blank>SCOUT: Risk-Guided Foundation-Model Escalation for Robust Tissue Detection in Whole-Slide Images</a></strong> [CV]<br>
+  왜 주요: 교정 필요 비율을 38.1%→18.6%로 줄인 위험 인지 추론, 공개 패키지로 배포.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.24363" target=_blank>Transferable Named Sparse Features for Morphology-based Gleason Grading</a></strong> [IV]<br>
+  왜 주요: 등급 숫자 대신 병리학자가 검증 가능한 조직 패턴 근거를 제시하는 해석 가능 평가의 대표 사례.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.23889" target=_blank>Beyond Additive Composition: Interventional Modeling of State-Dependent Cross-Degradation Responses</a></strong> [CV]<br>
+  왜 주요: 여러 열화가 동시에 끼어 있을 때의 비가산적 상호작용을 직접 측정, Reconstruction 버킷 대표 신호.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1137/25m1827396" target=_blank>Unbiased Risk Estimation for Multiplicative Noise Removal</a></strong> [JNL]<br>
+  왜 주요: 승산 잡음 제거를 위한 비편향 위험 추정을 수학적으로 뒷받침, 랩 스페클 잡음 제거에 직접 참고 가능.
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>Result</th><th>Paper</th></tr></thead>
+<tbody>
+<tr><td>WSe2 bilayer 시뮬레이션 (4D-STEM 전자 ptychography, published reconstruction 대비)</td><td>In-plane / depth atom position error</td><td>평면 내 오차 3.2pm(기존 4.8pm), 깊이 오차 40~61% 감소</td><td><a href="https://arxiv.org/abs/2611.24776" target=_blank>4D-TEMPO</a></td></tr>
+<tr><td>20만 장 회절 패턴, 128×128 픽셀 (X선 ptychography, 기존 maximum-likelihood 대비)</td><td>Peak GPU memory / reconstruction time</td><td>peak GPU 메모리 65%, 복원 시간 22%로 감소</td><td><a href="https://arxiv.org/abs/2611.24232" target=_blank>Stochastic Optimisation</a></td></tr>
+<tr><td>CTRATE / Merlin / RADChestCT (3D CT VLM, 기존 모델 대비)</td><td>Laterality accuracy / organ-removal retraction rate</td><td>좌우 판별 77%(기존 최대 66%), 소견 철회율 96~99%(기존 최대 69%)</td><td><a href="https://arxiv.org/abs/2611.23529" target=_blank>ORGANIC3D</a></td></tr>
+<tr><td>SAJALA 30-scene 수중 합성 벤치마크 + 실측 SeaThru-NeRF (최강 baseline 대비)</td><td>PSNR / depth AbsRel / LPIPS</td><td>PSNR 24.34→24.76dB, AbsRel 0.109→0.091, LPIPS 0.194→0.175 @44FPS</td><td><a href="https://arxiv.org/abs/2611.23450" target=_blank>NIRJALA</a></td></tr>
+<tr><td>16개 장기 spatial omics (SCOPE, 최강 baseline 대비)</td><td>RNA / protein Pearson correlation 개선폭</td><td>RNA +8.8%, 단백질 +9.7%(학습 마커)·+11.9%(미학습 마커)</td><td><a href="https://arxiv.org/abs/2611.24104" target=_blank>SCOPE</a></td></tr>
+</tbody>
+</table>
+<p><small>오늘은 위 다섯 편 외에도 RAPID(PhyGaP 대비 약 5배 가속, 21분→4분)와 Geometry-bridge flow matching(PSNR 37.1dB, RPE 0.27mm)이 구체적 수치를 제시했지만, 표는 랩 ROI 우선순위(ptychography·의료영상 평가축·병리 분자 예측)에 맞춰 상위 다섯 편만 추렸습니다.</small></p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] 4D-TEMPO: Differentiable 4D-STEM ptychography via fast Physics Optimizers</h3>
+  <div class=tag>[평가축] [방법전환]</div>
+  <p><strong>왜 A급인가:</strong> 랩 핵심 ROI인 Fourier Ptychography/Microscopy 버킷은 최근 며칠 거의 비어 있었는데, 이 논문은 그 분야가 오랫동안 못 풀던 "복원 결과를 얼마나 믿을 수 있는가"라는 질문에 피셔 정보 기반 오차바라는 구체적이고 검증 가능한 답을 줍니다. 시뮬레이션뿐 아니라 실험 데이터에서도 기존 공개 코드 세 개를 모두 이기면서 복원 시간을 수십 배 줄였다는 점에서 A급입니다.</p>
+  <p><strong>핵심:</strong> 전자 ptychography(전자빔을 여러 위치로 스캔해 얻은 회절 패턴들로 원자 구조를 복원하는 기법)는 지금까지 이미지를 먼저 복원한 다음 그 위에서 원자 위치를 읽어내거나, 원자 위치를 L1 손실로 직접 맞추는 두 방식 중 하나를 썼는데, 둘 다 "이 원자 위치가 얼마나 확실한지"는 알려주지 않았습니다. 4D-TEMPO는 원자·현미경의 광학적 특성·검출기 잡음까지 한 번에 측정된 전자 수(카운트)에 직접 맞추는 미분 가능한 물리 렌더러를 만듭니다. 출력은 원자들의 목록인데, 각 원자는 3차원 위치·열 진동 폭을 가진 가우시안 하나로 표현되고, 그 위치의 오차 범위(에러바)는 피셔 정보량(파라미터를 얼마나 정밀하게 추정할 수 있는지 알려주는 통계량)으로부터 직접 계산됩니다. 같은 피셔 정보량이 최적화 과정 자체를 안내하고, 각 파라미터를 얼마나 정밀하게 재려면 전자를 몇 개나 더 쏴야 하는지(선량)도 알려줍니다. 시뮬레이션에서는 깊이 방향으로 10배나 더 가까운 두 원자층을, 직접 빔을 벗어난 미약한 산란(암시야) 신호 안에서 분리해낼 수 있었고, 모델이 잘 맞을 때는 전체 위치 좌표의 69%가 예측한 1-시그마 구간 안에 실제로 들어와 통계적으로 보정돼 있음을 보였습니다. 실험 데이터에서는 기존에 공개된 세 가지 복원 코드보다 더 정확하게 held-out 회절 패턴을 예측했고, 같은 WSe2 기준 데이터에서 기존 최대 20.5시간 걸리던 걸 5분 만에 끝냈습니다.</p>
+  <p><strong>주의:</strong> 69%라는 보정 비율은 "모델이 잘 맞을 때"라는 전제가 붙어 있어, 모델 가정(원자가 등방성 가우시안이라는 것 등)이 어긋나는 실제 재료에서도 같은 보정이 유지되는지는 abstract만으로 확정할 수 없습니다. 또한 코드 공개 여부와, 랩이 다루는 광학 Fourier ptychography(전자가 아니라 가시광/X선 기반)에도 같은 물리 렌더링 방식이 그대로 이식되는지는 본문 확인이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] ORGANIC3D: Grounding 3D CT Vision Language Models in Organ Level Image Text Coupling</h3>
+  <div class=tag>[평가축] [경고신호]</div>
+  <p><strong>왜 A급인가:</strong> "분류 정확도가 높다"와 "올바른 근거로 판단했다"가 서로 다른 질문이라는 걸, 환자 비교·장기 지우기·병변 바꿔치기·좌우 반전이라는 통제된 실험으로 수치까지 제시하며 보여준 평가 방법론 논문입니다. 동시에 공개 데이터만으로 학습해 여러 공개 벤치마크에서 SOTA 분류 성능까지 달성해, "근거를 보게 만들면 성능도 같이 좋아진다"는 흔치 않은 결과를 함께 보여줬다는 점에서 A급입니다.</p>
+  <p><strong>핵심:</strong> 3D CT(컴퓨터단층촬영)를 보는 vision-language 모델(영상과 텍스트를 함께 이해하는 모델)은 분류 정확도가 높아도, 그 예측이 실제로 올바른 해부학적 부위를 근거로 했는지는 따로 검증되지 않았습니다. ORGANIC3D는 같은 환자의 비교 스캔, 특정 장기를 지운 스캔, 병변을 다른 곳으로 옮긴 스캔, 좌우를 뒤바꾼 스캔처럼 통제된 교란을 12개의 vision encoder와 7개의 생성형 VLM에 적용해, 상위권 모델들조차 소견과 실제 근거 영상 사이의 정렬이 심하게 어긋나 있음을 드러냅니다. 이 문제를 고치기 위해 각 소견 문장을 해부학적으로 인식하는 이미지 특징과 직접 맞춘 뒤, 이렇게 교란된 스캔으로도 학습시켜 정렬을 그 장기의 실제 이미지 근거에 단단히 묶습니다. 공개 데이터만으로 학습했는데도 CTRATE·Merlin·held-out RADChestCT에서 SOTA 분류 성능을 냈고, 좌우 판별 정확도는 기존 최대 66%에서 77%로, 장기를 지웠을 때 해당 장기 관련 소견을 스스로 철회하는 비율은 기존 최대 69%에서 96~99%로 끌어올렸습니다. 생성형 VLM으로 확장한 버전은 시각질의응답에서 공개된 다른 모델들과 맞먹거나 앞서고, 보고서 정확도는 가장 높았습니다.</p>
+  <p><strong>주의:</strong> 12개 vision encoder·7개 생성형 VLM 평가가 abstract 기준으로는 포괄적이지만, 교란 유형(장기 삭제·병변 이동·좌우 반전)이 실제 임상에서 흔한 실패 유형을 얼마나 대표하는지는 본문의 교란 설계 세부를 봐야 판단할 수 있습니다. 또한 "공개 데이터만으로 학습"이 랩이 접하는 사설/기관 데이터에도 같은 수준의 근거 정렬을 재현하는지는 별도 검증이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Baseline risk] 오늘 ROI 배정 비율은 31.0%(308/995)로 최근 범위 안이지만, Virtual Staining/Pathology(38편)와 Reconstruction/Inverse Problems(24편)의 상당수가 키워드 오탐(staining, virtual, reconstruction 단어만 겹침)이라 버킷 막대 그래프만 보면 실제보다 신호가 강해 보일 수 있습니다.</p>
+  <p>[Dataset risk] Meta-Optics/Diffractive(16편 중 실신호 0편)는 어제에 이어 오늘도 이미징과 무관한 통신·바이오센서 소자가 사실상 전부였습니다. 이틀 연속 같은 패턴이라, 랩 ROI 키워드 사전이 이 버킷에서는 통신/센서 분야 논문과 구조적으로 겹친다는 점을 다시 확인한 셈입니다.</p>
+  <p>[Claim risk] 오늘의 다섯 클러스터 중 셋(ptychography 불확실도/스케일링, 의료영상 평가축, 비가산적 잡음/열화)은 각 2~4편으로 아직 폭넓은 흐름이라기보다 같은 날 동시에 등장한 초기 신호에 가까워, 다음 며칠 추가 논문으로 이어지는지 계속 지켜봐야 합니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Baseline risk] 4D-TEMPO의 69% 보정 비율은 "모델이 잘 맞을 때"라는 전제가 붙어 있어, 실제 다양한 재료·빔 조건에서도 유지되는지는 본문·재현 확인이 필요합니다.</p>
+  <p>[Claim risk] ORGANIC3D의 "공개 데이터만으로 학습"이 랩이 접하는 기관 데이터에도 같은 근거 정렬 수준을 재현하는지는 abstract만으로 확정할 수 없습니다.</p>
+  <p>[Dataset risk] NIRJALA의 SAJALA 벤치마크는 Blender Cycles로 path-traced한 합성 데이터라, 실제 다양한 수질·조도 조건에서의 일반화는 abstract 기준으로 확인되지 않습니다.</p>
+  <p>[Metric risk] SCOPE의 성능 개선폭(8.8~11.9%)이 특정 장기나 마커 유형에 치우친 결과인지, 어떤 조건에서 개선이 작은지는 abstract만으로 알 수 없습니다.</p>
+  <p>[Claim risk] ACUS가 보고한 77~92% 경험적 커버리지가 다른 해부 부위나 스캐너 조건에서도 비슷한 범위를 유지하는지는 본문 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+<div class=skim>
+  <ul>
+    <li>Virtual Staining/Pathology 비병리 약 34편 — HVAC 엣지 제어, 중력파 대리모델, 교실 음성 분할, 법원 판결 transformer 등 "staining"/"virtual" 단어만 일치하는 완전 무관 논문입니다.</li>
+    <li>Reconstruction/Inverse Problems 임상/일반 ML 약 20편 — 전력망 디지털 트윈, 추천시스템 빔서치, 차량 횡속도 추정, PDE 연산자 학습 등 이미징과 무관한 일반 ML·공학 응용입니다.</li>
+    <li>Tomography/3D Imaging 순수 임상/물리 증례 약 48편 — 치과 CBCT 증례, 관상동맥 CTA, cryo-EM B-factor 보정, 양자 상태 토모그래피 샘플링 등 CT/전자현미경/양자측정을 "사용"하지만 영상 재구성 방법론에는 기여하지 않는 순수 응용·이론 연구입니다.</li>
+    <li>Meta-Optics/Diffractive 16편 전체 — 테라헤르츠 바이오센서, 통신용 메타표면 안테나, 카이랄 전기화학발광 센싱 등 이미징과 무관한 소자라 오늘도 버킷 전체를 Skim-only로 내립니다.</li>
+    <li>Deep Learning Methods 156편 대부분 — diffusion decoding 가속, LLM 에이전트, 6G 네트워크 등 전산 광학 이미징과 직접 관련이 없는 범용 ML·통신 응용입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+<p><small>오늘 308건 전체를 개별 bullet로 쓰는 대신, 오늘의 클러스터 지도에 포함된 대표 논문 중심으로 압축했습니다. 하위 롱테일(각 버킷의 키워드 오탐·일반 임상/범용 ML 논문)은 Watch Lens·Skim-only 섹션에서 버킷/카운트만 표시하고 개별 bullet은 생략합니다.</small></p>
+
+<h3>Ptychography 복원의 불확실도·스케일링 (2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.24776" target=_blank>4D-TEMPO</a></strong> <span class=pill>CV</span><br>
+  문제: 전자 ptychography 복원이 원자 위치만 주고 그 위치가 얼마나 확실한지는 알려주지 않음 / 방법: 원자·현미경·검출기를 전자 카운트에 직접 맞추는 미분 가능 물리 렌더러 + 피셔 정보 오차바 / 의미: 평면 내 오차 1/3 감소, 기존 대비 최대 20.5시간→5분 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.24232" target=_blank>Stochastic Optimisation for Scalable Ptychographic Image Reconstruction</a></strong> <span class=pill>IV</span><br>
+  문제: X선 ptychography는 측정 중복이 늘수록 메모리·시간이 기하급수적으로 증가 / 방법: 대규모 ML의 확률적 경사하강(VR)을 ptychography forward model에 적용 / 의미: 20만 장 데이터셋에서 GPU 메모리 65%·시간 22%로 감소 / 우선순위: Read
+</div>
+
+<h3>Gaussian 원시 표현의 물리 이식 (4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.23450" target=_blank>NIRJALA</a></strong> <span class=pill>CV</span><br>
+  문제: 수중 3DGS가 물의 산란을 단순 지수감쇠로만 봐서 보정이 거리에 따라 발산 / 방법: 감쇠·후방산란·전방산란을 모두 포함한 삼중경로 광학 모델 + 역방향 물리 앵커 / 의미: 발산하지 않는 수중 복원, PSNR·LPIPS 개선 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.24404" target=_blank>RAPID</a></strong> <span class=pill>CV</span><br>
+  문제: 반사면·저질감 영역에서 3DGS 초기화가 느리고 부정확 / 방법: 편광 단서로 표면 깊이를 미리 추정해 가우시안 초기화에 사용 / 의미: PhyGaP 대비 약 5배 가속(21분→4분) / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.23444" target=_blank>Gaussian Splatoms</a></strong> <span class=pill>IV</span><br>
+  문제: 전자단층촬영의 복셀 기반 복원이 측정 부족·저선량에서 불안정 / 방법: 원자를 위치·크기·세기를 갖는 가우시안으로 표현 + 물리적 원자 간 거리 제약 / 의미: 복셀 baseline보다 강건한 원자 구조 복원 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.24723" target=_blank>Multi-Band Galaxy Novel-View Synthesis</a></strong> <span class=pill>CV</span><br>
+  문제: 은하의 다중 밴드 신호는 RGB와 달리 파장마다 다른 방사 전달 과정을 가져 기존 3DGS가 대응 못함 / 방법: 에너지 방출·빛 전파를 반영한 물리 기반 GalaxyGS / 의미: 비교 baseline 전무한 새 응용에서 정확도·물리적 타당성 입증 / 우선순위: Read
+</div>
+
+<h3>의료영상 AI의 근거·불확실도 평가 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.23752" target=_blank>ACUS</a></strong> <span class=pill>CV</span><br>
+  문제: sparse-view CT 평가가 point-estimate 유사도만 재서 측정 각도에서 먼 영역의 과신을 못 잡음 / 방법: 측정 각도로부터의 거리별로 90% 예측구간의 폭·커버리지를 재는 지표 / 의미: 기존 세 방법 모두 far-coverage 0%라는 과신을 드러냄 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.24443" target=_blank>NativeSeg</a></strong> <span class=pill>CV</span><br>
+  문제: 외부 SAM 디코더에 의존하는 CT 분할 VLM은 빈 슬라이스 선별이나 공간 상태 기억이 없음 / 방법: VLM 2D 토큰에서 직접 마스크를 디코딩하고 불확실한 경계만 확대 / 방법: presence/error gate로 91% 이상 구간은 확대 없이 종료 / 의미: Round0 DSC +19.81pt, 성인·소아 zero-shot 모두 86%대 달성 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.23344" target=_blank>Beyond Accuracy</a></strong> <span class=pill>IV</span><br>
+  문제: 망막질환 AI의 불확실도 정량화 전략이 질환·모델 간에 일반화되는지 불명확 / 방법: 24만 장·32개 데이터셋 규모로 6가지 UQ 전략을 판별력·보정·conformal coverage로 비교 / 의미: 보편적으로 우월한 방법 없음, conformal prediction만 상대적으로 안정 / 우선순위: Read
+</div>
+
+<h3>Virtual staining·병리의 분자/위험 인지 확장 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.24366" target=_blank>SCOUT</a></strong> <span class=pill>CV</span><br>
+  문제: WSI 조직 검출의 평균 정확도가 높아도 옅은 조직·작은 조각에서 실패를 숨김 / 방법: 경량 감사 네트워크로 오류 가능 영역만 foundation model에 에스컬레이션 / 의미: 교정 필요 비율 38.1%→18.6%, 공개 패키지 배포 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.24363" target=_blank>Gleason Grading sparse features</a></strong> <span class=pill>IV</span><br>
+  문제: 병리 등급 모델이 등급만 주고 어떤 조직 구조를 근거로 했는지 보여주지 않음 / 방법: 병리 foundation model 토큰 위에 이름 붙인 희소 오토인코더 특징으로 판정 / 의미: 외부 기관/스캐너에서도 안정적인 해석 가능 근거 제공 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/2050-6120/aec410" target=_blank>Multi-spectral virtual staining</a></strong> <span class=pill>JNL</span><br>
+  문제: 단일 광대역 자가형광만으로는 virtual staining의 분자 특이성이 제한됨 / 방법: 여러 좁은 스펙트럼 밴드를 동시에 학습에 활용 / 의미: ROC 0.78→0.98로 판별력 대폭 개선 / 우선순위: Read
+</div>
+
+<h3>비가산적 잡음/열화 모델링 (2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1137/25m1827396" target=_blank>Unbiased Risk Estimation for Multiplicative Noise Removal</a></strong> <span class=pill>JNL</span><br>
+  문제: 곱셈형(승산) 잡음 제거는 비선형성 때문에 자기지도 학습이 어려움 / 방법: 감마·정규 분포 잡음 모델에 대한 비편향 MSE 위험 추정량을 유도 / 의미: 단일 영상 설정에서 기존 방법과 경쟁력 있는 성능, 코드 공개 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.23788" target=_blank>Geometry-bridge flow matching</a></strong> <span class=pill>CV</span><br>
+  문제: head CBCT 촬영 중 움직임이 투영 기하 자체를 어긋나게 해 단순 잡음 제거로는 못 고침 / 방법: 움직임이 줄어드는 중간 단계를 지나는 flow-matching 경로 + 자세 추정·데이터 일치성 루프 / 의미: PSNR 37.1dB, RPE 0.27mm, 기존 learned autofocus 능가 / 우선순위: Read
+</div>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+<li><a href="https://arxiv.org/list/cs.LG/new" target=_blank>arXiv cs.LG /new</a></li>
+<li><a href="https://arxiv.org/list/cs.CV/new" target=_blank>arXiv cs.CV /new</a></li>
+<li><a href="https://arxiv.org/list/cs.AI/new" target=_blank>arXiv cs.AI /new</a></li>
+<li><a href="https://arxiv.org/list/eess.IV/new" target=_blank>arXiv eess.IV /new</a></li>
+<li><a href="https://arxiv.org/list/eess.SP/new" target=_blank>arXiv eess.SP /new</a></li>
+<li><a href="../feed.xml" target=_blank>RSS Feed</a></li>
+</ul>
+
+<footer>
+이미징/계산광학 랩 자동 브리핑. arXiv(cs.LG·cs.CV·cs.AI·eess.IV·eess.SP) + Crossref/OpenAlex 저널 수집 기반.
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+
+</body>
+</html>

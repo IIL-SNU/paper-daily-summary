@@ -1,0 +1,212 @@
+{
+  "date": "2026-11-19",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "랩 핵심 ROI인 ptychography 복원에 처음으로 불확실도 정량화와 메모리 스케일링이라는 실질 신호가 등장",
+      "papers": [
+        {
+          "title": "4D-TEMPO: Differentiable 4D-STEM ptychography via fast Physics Optimizers",
+          "arxiv": "https://arxiv.org/abs/2611.24776",
+          "importance_tags": ["[평가축]", "[방법전환]"]
+        },
+        {
+          "title": "Stochastic Optimisation for Scalable Ptychographic Image Reconstruction",
+          "arxiv": "https://arxiv.org/abs/2611.24232",
+          "importance_tags": ["[실사용전환]", "[방법전환]"]
+        }
+      ],
+      "why": "Fourier Ptychography/Microscopy 버킷은 요 며칠 계속 1~2편씩만 걸리던 랩 핵심 ROI인데, 오늘은 두 편 모두 이 분야가 실제로 막혀 있던 두 지점을 정면으로 다룹니다. 전자 ptychography(전자빔을 여러 위치로 스캔해 얻은 회절 패턴으로 원자 구조를 복원하는 기법)는 지금까지 이미지를 먼저 복원한 뒤 원자 위치를 읽어내거나 L1 손실로 원자를 맞추는 방식이라, 결과가 얼마나 확실한지(원자 하나하나의 위치가 어느 정도 오차를 가지는지)를 알려주지 않았습니다. 4D-TEMPO는 원자·현미경·검출기를 한 번에 측정된 전자 수에 직접 맞추는 미분 가능한 물리 렌더러를 만들어서, 원자 하나마다 3차원 위치와 그 위치의 오차 범위(에러바)를 포아송 통계와 피셔 정보량으로부터 직접 계산합니다. 그 결과 평면 내 오차를 1/3로 줄이고(3.2 대 4.8 피코미터), 깊이 오차도 40~61% 줄였으며, 기존 공개 코드 대비 같은 품질을 5분 만에 얻어(기존 최대 20.5시간) 저선량·실시간 3차원 이미징의 가능성을 보여줬습니다. 반대편에서 X선 ptychography(렌즈 없이 회절 패턴만으로 복원하는 기법)는 복원 품질을 위해 측정을 서로 많이 겹치게 찍을수록 계산량과 메모리가 기하급수적으로 늘어나는 문제가 있었는데, Stochastic Optimisation 논문은 대규모 머신러닝에서 쓰는 확률적 경사하강(일부 측정만 무작위로 뽑아 학습하는 방식)을 가져와, 20만 장의 회절 패턴을 쓰는 실험 데이터셋에서 기존 최대우도 알고리즘 대비 GPU 메모리를 65%, 복원 시간을 22%까지 줄였습니다. 두 편을 합치면, ptychography 복원이 '더 선명하게 찍기' 경쟁에서 '이 복원 결과를 얼마나 믿을 수 있는지'와 '현실적인 데이터 크기에서 실제로 돌릴 수 있는지'를 묻는 단계로 들어섰다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 두 연구팀이 같은 날 전자/X선이라는 서로 다른 ptychography 양식에서 각각 불확실도 정량화와 메모리·시간 스케일링이라는 실용적 병목을 다뤘지만, 2편뿐이고 서로 다른 세부 문제를 풀어 하나의 통일된 흐름으로 보기엔 이릅니다.",
+      "lab_action": "4D-TEMPO의 '원자를 3D 가우시안 + 피셔 정보 기반 오차바'로 모델링하는 방식을 랩의 광학 Fourier ptychography 복원 파이프라인에 적용 가능한지 검토하고, Stochastic Optimisation 논문의 변분 축소(VR) 확률적 경사하강을 랩이 보유한 대용량 FOV(넓은 시야) ptychography 데이터셋에 1주 내 시범 적용해 GPU 메모리·수렴 시간을 기존 최대우도 알고리즘과 비교한다."
+    },
+    {
+      "cluster": "Gaussian 원시(primitive) 표현이 RGB 렌더링을 넘어 수중광학·편광·전자단층·분광천문학 같은 서로 다른 물리 측정 모델로 직접 이식됨",
+      "papers": [
+        {
+          "title": "NIRJALA: Draining the Sea out of Gaussian Splatting with Three-Path Optics and Reversible Physics",
+          "arxiv": "https://arxiv.org/abs/2611.23450",
+          "importance_tags": ["[방법전환]", "[평가축]"]
+        },
+        {
+          "title": "RAPID: Reconstruction Accelerated by Polarization-Informed Depth for 2D Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2611.24404",
+          "importance_tags": ["[실사용전환]"]
+        },
+        {
+          "title": "Gaussian Splatoms: Direct Atomic Structure Identification in Electron Tomography",
+          "arxiv": "https://arxiv.org/abs/2611.23444",
+          "importance_tags": ["[방법전환]", "[인프라]"]
+        },
+        {
+          "title": "Multi-Band Galaxy Novel-View Synthesis with Radiative Gaussian Fields",
+          "arxiv": "https://arxiv.org/abs/2611.24723",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "GaussLearner: 3D Gaussian Primitives as Self-Regulating Continual Learners",
+          "arxiv": "https://arxiv.org/abs/2611.23736",
+          "importance_tags": ["[해부분석]", "[방법전환]"]
+        },
+        {
+          "title": "Gaussian Primitive Fusion for Any-Resolution Multimodal Images",
+          "arxiv": "https://arxiv.org/abs/2611.24164",
+          "importance_tags": ["[방법전환]", "[인프라]"]
+        }
+      ],
+      "why": "어제 3DGS(3D Gaussian Splatting, 장면을 수많은 작은 가우시안 덩어리로 표현해 렌더링하는 기법) 묶음은 '같은 RGB 렌더링을 워크스테이션 밖 어떤 기기에서 돌릴 것인가'였다면, 오늘은 '가우시안이라는 표현 자체를 RGB 카메라가 아닌 다른 물리적 측정 과정에 맞게 다시 설계하는' 여섯 편이 동시에 나왔습니다. NIRJALA는 수중 영상에서 물이 장면 빛을 단순히 흐리게 하는 게 아니라 감쇠·후방산란·전방산란을 동시에 일으킨다는 점을 세 갈래 광학 모델로 명시적으로 풀어내, 기존 방식들이 거리에 따라 보정값이 발산하던 문제를 수학적으로 막아줍니다. RAPID는 색이나 형태만으로는 구분하기 어려운 반사면·저질감 영역에서, 편광(빛의 진동 방향) 정보로부터 표면 깊이 단서를 미리 뽑아 가우시안 초기화에 바로 꽂아 넣어 최적화 시간을 21분에서 4분으로 줄였습니다. Gaussian Splatoms는 원자 하나하나를 복셀(3차원 격자 칸)이 아니라 위치·크기·세기를 갖는 가우시안으로 직접 표현하고, 원자 간 최소 거리나 등방성 같은 물리 법칙을 모델에 그대로 집어넣어 측정이 부족하거나 전자선량이 낮을 때도 더 안정적인 복원을 보였습니다. 은하 다중 밴드 영상 논문은 RGB 세 채널이 아니라 파장마다 전혀 다른 비추는 방식(방사 전달)을 가진 천체 신호를 가우시안에 맞게 다시 설계했고, GaussLearner는 장면이 계속 바뀌는 상황에서 각 가우시안이 스스로 '지금 내가 이 관측을 얼마나 믿어야 하는지'를 판단해 과거에 복원한 부분을 잊지 않게 만들었으며, Gaussian Primitive Fusion은 서로 해상도가 다른 여러 센서 영상을 격자에 맞춰 리샘플링하지 않고 연속적인 가우시안 공간에서 바로 합성합니다. 여섯 편을 합치면, Gaussian splatting이 '사진을 잘 렌더링하는 도구'에서 각 분야의 실제 측정 물리를 반영하는 범용 표현 틀로 번지고 있다는 뜻이고, 이는 랩이 다루는 위상·홀로그램·단층촬영 같은 비-RGB 측정에도 같은 설계 철학을 적용할 수 있다는 신호입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 여섯 연구팀이 같은 날 수중광학·편광·전자현미경·천문학·연속학습·멀티모달 융합이라는 전혀 다른 측정 도메인에서 '가우시안 원시 표현에 물리 모델을 직접 주입한다'는 같은 설계 원칙을 독립적으로 적용했고, 다수가 구체적 수치(PSNR, 속도, 복원 안정성)를 제시합니다.",
+      "lab_action": "Gaussian Splatoms·NIRJALA가 쓰는 '물리 제약을 가우시안 파라미터에 직접 거는' 설계를, 랩이 쓰는 optical diffraction tomography 또는 holography 복원의 forward model에 이식할 수 있는지 검토하고, 기존 복셀/그리드 기반 복원 대비 속도·안정성 차이를 랩 보유 데이터셋으로 1주 내 비교한다."
+    },
+    {
+      "cluster": "의료영상 AI의 평가 기준이 '정확도 숫자'에서 '근거 기반성'과 '측정 조건별 불확실도 보정'으로 옮겨감",
+      "papers": [
+        {
+          "title": "ORGANIC3D: Grounding 3D CT Vision Language Models in Organ Level Image Text Coupling",
+          "arxiv": "https://arxiv.org/abs/2611.23529",
+          "importance_tags": ["[평가축]", "[경고신호]"]
+        },
+        {
+          "title": "ACUS: An Angular Calibrated Uncertainty Score for Incomplete-View CT",
+          "arxiv": "https://arxiv.org/abs/2611.23752",
+          "importance_tags": ["[평가축]"]
+        },
+        {
+          "title": "Beyond Accuracy: Benchmarking Uncertainty Quantification in Retinal Disease Screening",
+          "arxiv": "https://arxiv.org/abs/2611.23344",
+          "importance_tags": ["[평가축]", "[인프라]"]
+        },
+        {
+          "title": "NativeSeg: Native Vision Language Segmentation of 3D Computed Tomography via Spatial Visual Tokens and Verified Local Zoom",
+          "arxiv": "https://arxiv.org/abs/2611.24443",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "네 편 모두 '모델이 맞혔다'는 숫자 하나로는 보이지 않던 약점을 드러냅니다. ORGANIC3D는 3D CT를 보는 vision-language 모델(영상과 텍스트를 함께 이해하는 모델)들이 분류 정확도는 높아도, 장기를 지워보거나 좌우를 바꿔보는 식으로 흔들어보면 실제로는 엉뚱한 부위를 근거로 답하고 있었다는 걸 보여주고, 좌우 판별 정확도를 기존 최대 66%에서 77%로, 장기 제거 시 관련 소견을 철회하는 비율을 기존 최대 69%에서 96~99%로 끌어올리는 학습 방식을 함께 제안합니다. ACUS는 투영 각도가 일부만 측정된 CT에서, 기존에는 '빈 구간을 채운 영상이 정답과 얼마나 비슷한가'만 쟀는데, 그 영상이 측정된 각도에서 멀어질수록 실제로는 모델이 없는 해부 구조를 지어내면서도 점수는 높게 나올 수 있다는 점을 지적하고, 측정 각도로부터의 거리에 따라 예측 구간이 얼마나 벌어지는지를 직접 재는 지표를 제안합니다. Beyond Accuracy는 24만 장 이상의 안저 사진·32개 데이터셋이라는 보기 드문 규모로 6가지 불확실도 정량화 방법을 비교해, 어떤 방법도 모든 질환·모델에서 보편적으로 믿을 만하지 않으며 계산이 복잡한 방법이 단순한 신뢰도 점수보다 항상 낫지는 않다는 걸 보여줍니다. NativeSeg는 CT 영역 분할에서 '지금 이 경계를 더 확대해서 봐야 하는지'를 모델 스스로 판단하게 만들어, 무작정 모든 슬라이스를 정밀하게 보는 대신 불확실한 곳만 골라 확대합니다. 네 편을 합치면, 의료영상 AI를 평가할 때 이제는 평균 정확도 한 숫자가 아니라 '이 예측이 실제로 올바른 근거에 기반했는가'와 '측정 조건이 나빠질수록 불확실도가 올바르게 커지는가'를 같이 재야 한다는 압력이 분명해졌다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 네 연구팀이 같은 날 CT·안저사진이라는 서로 다른 영상 양식에서 '정확도만으로는 안 보이는 신뢰성 문제'를 구체적 수치(좌우 판별 +11pt, 철회율 +27~30pt, 24만 장 규모 벤치마크 등)로 보였습니다.",
+      "lab_action": "ACUS의 '측정 각도로부터의 거리에 따라 예측 구간을 재는' 방식을 랩이 다루는 sparse-view 단층촬영/위상 복원 모델 평가에 적용하고, ORGANIC3D의 장기 제거·좌우 반전 같은 통제된 교란 테스트를 랩 자체 의료/생체 영상 모델의 근거 기반성 점검에 1주 내 시범 적용한다."
+    },
+    {
+      "cluster": "Virtual staining·digital pathology가 '염색 흉내'를 넘어 새로운 측정 양식·분자 타깃·근거 제시 쪽으로 넓어짐",
+      "papers": [
+        {
+          "title": "SCOPE: Single-Cell Omics Prediction from Histology via RNA-Protein Prior Enhancement",
+          "arxiv": "https://arxiv.org/abs/2611.24104",
+          "importance_tags": ["[데이터전환]", "[인프라]"]
+        },
+        {
+          "title": "SCOUT: Risk-Guided Foundation-Model Escalation for Robust Tissue Detection in Whole-Slide Images",
+          "arxiv": "https://arxiv.org/abs/2611.24366",
+          "importance_tags": ["[실사용전환]", "[인프라]"]
+        },
+        {
+          "title": "Transferable Named Sparse Features for Morphology-based Gleason Grading",
+          "arxiv": "https://arxiv.org/abs/2611.24363",
+          "importance_tags": ["[해부분석]", "[표준후보]"]
+        },
+        {
+          "title": "Multi-spectral virtual staining for label-free histopathology using deep neural networks",
+          "arxiv": "https://doi.org/10.1088/2050-6120/aec410",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "네 편 모두 '염색된 것처럼 보이게 바꾸거나 등급 하나를 매기는' 지금까지의 virtual staining·병리 AI 틀에서 한 걸음씩 더 나아갑니다. SCOPE는 흔한 H&E(헤마톡실린-에오신, 가장 널리 쓰이는 조직 염색) 영상만으로 세포 하나하나의 RNA와 단백질 양까지 예측하려 하는데, RNA와 단백질이 서로 다른 분자지만 생물학적으로 연결돼 있다는 점을 이용해 한쪽 학습 데이터가 부족해도 다른 쪽 지식을 빌려와, 16개 장기에서 RNA 예측은 8.8%, 단백질 예측은 학습에 없던 마커에서도 11.9% 성능을 끌어올렸습니다. SCOUT은 전체 슬라이드에서 조직이 있는 영역을 찾는 기본 단계조차 옅은 조직이나 작은 조각에서 실패할 수 있다는 점을 지적하고, 모든 영역을 똑같이 정밀하게 보는 대신 오류 가능성이 높은 영역만 골라 무거운 foundation model을 추가로 돌리는 방식으로 교정이 필요한 비율을 38.1%에서 18.6%로 줄였습니다. Gleason grading(전립선암 조직의 악성도를 등급으로 매기는 기준) 논문은 모델이 등급만 뱉어내는 게 아니라, '체(cribriform) 모양 분비선'처럼 병리학자가 실제로 쓰는 조직 패턴 이름이 붙은 내부 표현을 통해 등급 판정의 근거를 직접 보여주고, 그 근거가 기관이나 스캐너가 달라도 안정적으로 유지된다는 걸 보였습니다. Multi-spectral virtual staining은 기존에 하나의 넓은 파장 대역만 보던 방식 대신 여러 좁은 스펙트럼 밴드를 동시에 활용해, 같은 가짜 염색 변환에서도 판별력을 ROC 0.78에서 0.98로 크게 끌어올렸습니다. 네 편을 합치면, virtual staining·digital pathology가 '그럴듯한 염색 이미지 하나'를 만드는 경쟁에서, 더 깊은 분자 정보를 추론하고, 실패 가능성이 높은 곳을 스스로 알아채고, 판정 근거를 병리학자가 검증할 수 있는 언어로 제시하는 쪽으로 넓어지고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 네 연구팀이 같은 날 분자 예측·위험 인지 추론·해석 가능 근거·분광 확장이라는 네 가지 다른 확장 축을 보였고 다수가 구체적 수치를 제시하지만, 네 축이 서로 다른 하위 문제라 아직 하나의 벤치마크로 묶여 교차검증되지는 않습니다.",
+      "lab_action": "Gleason grading 논문의 '이름 붙은 희소 특징으로 근거를 보여주는' 방식과 SCOPE의 RNA-단백질 상호 보강 학습을, 랩의 virtual staining 모델(명시야/위상 기반) 출력에 적용해 등급·강도 숫자 대신 검증 가능한 조직 패턴 근거를 함께 뽑을 수 있는지 1주 내 시범 설계한다."
+    },
+    {
+      "cluster": "영상 복원이 단일 잡음 가정을 벗어나 곱셈형 잡음·교차 열화 간섭·강체 움직임 같은 실제 물리 간섭을 명시적으로 모델링",
+      "papers": [
+        {
+          "title": "Unbiased Risk Estimation for Multiplicative Noise Removal",
+          "arxiv": "https://doi.org/10.1137/25m1827396",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Beyond Additive Composition: Interventional Modeling of State-Dependent Cross-Degradation Responses for Composite Image Restoration",
+          "arxiv": "https://arxiv.org/abs/2611.23889",
+          "importance_tags": ["[평가축]", "[인프라]"]
+        },
+        {
+          "title": "Geometry-bridge flow matching for blind rigid-motion correction in head cone-beam CT",
+          "arxiv": "https://arxiv.org/abs/2611.23788",
+          "importance_tags": ["[방법전환]"]
+        }
+      ],
+      "why": "세 편 모두 '잡음·열화는 입력에 단순히 더해진다'는 흔한 가정이 실제 영상에서는 잘 맞지 않는다는 점을 각자의 방식으로 정면으로 다룹니다. Unbiased Risk Estimation은 레이저 스페클처럼 신호 세기에 곱해지는 형태의 잡음(가산이 아니라 승산 잡음)을 정답 영상 없이 한 장의 입력만으로 제거하면서도, 평균제곱오차를 이론적으로 편향 없이 추정하는 식을 감마·정규분포 두 가지 잡음 모델과 그 혼합까지 유도해 수학적으로 뒷받침합니다. Beyond Additive Composition은 안개·저조도·잡음처럼 여러 열화가 동시에 끼어 있는 영상에서, 기존 방식들이 각 열화를 독립된 성분으로 분해해 따로 보정하던 것과 달리, 한 열화의 정도가 다른 열화의 영향을 바꿔버리는(가산적이지 않은) 상호작용을 직접 수치로 측정해 복원에 반영합니다. Geometry-bridge flow matching은 CT 촬영 중 환자 머리가 움직이면 생기는 흐림을 단순 잡음이 아니라 투영 기하 자체가 어긋나는 문제로 보고, 움직임이 점점 줄어드는 가상의 중간 단계들을 지나는 경로를 학습해 자세 추정과 영상 복원을 같이 풀어 평균 PSNR 37.1dB, 재투영 오차 0.27mm를 달성했습니다. 세 편을 합치면, 영상 복원 연구가 '잡음은 단순하고 독립적으로 더해진다'는 편한 가정에서 벗어나, 실제 측정에서 열화가 서로 얽히거나 기하학적으로 어긋나는 방식 그대로를 수식에 반영하는 쪽으로 가고 있다는 뜻이고, 랩이 다루는 위상·홀로그램 잡음(코히런트 스페클 등)도 같은 '승산·비가산 잡음' 범주에 들어갈 수 있어 지켜볼 가치가 있습니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 세 연구팀이 같은 날 승산 잡음·교차 열화 간섭·강체 움직임이라는 세 가지 다른 비가산적 열화를 각각 다뤘고 그중 두 편은 공개 코드/구체적 수치를 제시하지만, 세 편의 응용 영역(일반 잡음 제거, 복합 열화 복원, CT 움직임 보정)이 서로 달라 하나의 흐름으로 교차검증되지는 않습니다.",
+      "lab_action": "Unbiased Risk Estimation의 승산 잡음용 비편향 위험 추정 손실을, 랩의 홀로그래피/위상 영상에서 흔한 코히런트 스페클 잡음 제거 모델 학습에 단일 영상 자기지도 설정으로 1주 내 시범 적용하고, 기존 가산 가우시안 가정 손실 대비 PSNR/SSIM을 비교한다."
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "4D-TEMPO식 피셔 정보 기반 원자/픽셀 단위 오차바를 랩 Fourier ptychography 복원에 적용",
+      "claim": "4D-TEMPO는 전자 ptychography 복원에서 원자 하나하나의 위치 오차를 피셔 정보로부터 직접 계산해 처음으로 신뢰 가능한 불확실도를 제공하는데, 랩의 광학 Fourier ptychography 복원에도 같은 원리로 픽셀/영역 단위 신뢰도를 매길 수 있는지 확인할 가치가 있습니다.",
+      "supporting_papers": [
+        {"title": "4D-TEMPO: Differentiable 4D-STEM ptychography via fast Physics Optimizers", "arxiv": "https://arxiv.org/abs/2611.24776", "phylogeny": {"source": "CVML", "phylum": "Computational Imaging > Ptychography > Uncertainty Quantification"}}
+      ],
+      "execution_week1": {
+        "target": "4D-TEMPO (arXiv 2611.24776) — 코드 공개 여부 abstract 기준 확인 불가, 본문 확인 필요",
+        "benchmark": "랩 보유 광학 Fourier ptychography 복원 데이터셋(시뮬레이션 + 실측)",
+        "comparison_axis": "기존 L1/이미지 기반 복원 대비 피셔 정보 기반 오차바의 보정도(실제 오차와 예측 구간의 일치율), 저선량 조건에서의 안정성",
+        "fallback": "오차바 보정이 랩 데이터에서 어긋나더라도, 복원 파이프라인의 어느 단계에서 불확실도가 가장 커지는지 프로파일링한 결과는 다음 저선량 이미징 설계에 재사용 가능하다"
+      }
+    },
+    {
+      "title": "물리 제약을 직접 거는 Gaussian primitive 설계를 랩 optical diffraction tomography/holography 복원에 이식",
+      "claim": "Gaussian Splatoms와 NIRJALA는 복셀 그리드 대신 물리 법칙(원자 간 최소 거리, 물의 삼중경로 광학)을 가우시안 파라미터에 직접 거는 설계로 더 적은 측정에서도 안정적인 복원을 보였는데, 랩의 위상/단층촬영 복원도 같은 설계로 전환하면 측정이 부족한 조건에서 이득이 있는지 검증할 수 있습니다.",
+      "supporting_papers": [
+        {"title": "Gaussian Splatoms: Direct Atomic Structure Identification in Electron Tomography", "arxiv": "https://arxiv.org/abs/2611.23444", "phylogeny": {"source": "CVML", "phylum": "3D Representation > Gaussian Splatting > Physics-constrained Primitives > Atomic Tomography"}},
+        {"title": "NIRJALA: Draining the Sea out of Gaussian Splatting with Three-Path Optics and Reversible Physics", "arxiv": "https://arxiv.org/abs/2611.23450", "phylogeny": {"source": "CVML", "phylum": "3D Representation > Gaussian Splatting > Physics-constrained Primitives > Underwater Imaging"}}
+      ],
+      "execution_week1": {
+        "target": "Gaussian Splatoms (arXiv 2611.23444), NIRJALA (arXiv 2611.23450) — 둘 다 코드 공개 여부 본문 확인 필요",
+        "benchmark": "랩 보유 optical diffraction tomography 또는 QPI(정량 위상 영상) held-out 데이터셋",
+        "comparison_axis": "복셀/그리드 기반 복원 대비 물리 제약 가우시안 표현의 복원 안정성(측정 수를 줄였을 때 성능 저하 폭)과 수렴 속도",
+        "fallback": "가우시안 표현이 랩 데이터에서 이득이 없더라도, 어떤 물리 제약(최소 거리·등방성 등)이 랩 측정 모델에 대응되는지 정리한 매핑은 다음 forward model 설계에 재사용 가능하다"
+      }
+    },
+    {
+      "title": "ACUS식 각도-거리 보정 불확실도 지표를 랩 sparse-view 단층촬영/위상 복원 평가에 적용",
+      "claim": "ACUS는 point-estimate PSNR 하나로는 보이지 않던, 측정 각도에서 멀어질수록 모델이 과신하는 문제를 직접 드러내는데, 랩이 쓰는 sparse-view 단층촬영이나 제한각 위상 복원 모델도 같은 방식으로 평가하면 숨어 있던 과신 구간을 찾을 수 있습니다.",
+      "supporting_papers": [
+        {"title": "ACUS: An Angular Calibrated Uncertainty Score for Incomplete-View CT", "arxiv": "https://arxiv.org/abs/2611.23752", "phylogeny": {"source": "CVML", "phylum": "Medical Imaging > Sparse-view Reconstruction > Calibrated Uncertainty"}}
+      ],
+      "execution_week1": {
+        "target": "ACUS (arXiv 2611.23752) — 코드 공개 여부 본문 확인 필요",
+        "benchmark": "랩 보유 sparse-view/제한각 단층촬영 또는 위상 복원 held-out 각도 세트",
+        "comparison_axis": "측정 각도로부터의 거리별 예측 구간 폭과 실제 커버리지(coverage), 기존 point-estimate PSNR과의 괴리",
+        "fallback": "랩 모델이 ACUS 기준에서 과신을 보이지 않더라도, 각도별 커버리지 곡선 자체는 다음 모델 비교의 표준 평가 자산으로 재사용 가능하다"
+      }
+    },
+    {
+      "title": "Gleason grading의 이름 붙은 희소 특징 방식을 랩 virtual staining 모델의 근거 제시에 적용",
+      "claim": "Gleason grading 논문은 등급 숫자 대신 병리학자가 쓰는 조직 패턴 이름이 붙은 내부 표현으로 판정 근거를 보여주는데, 랩의 virtual staining 모델 출력에도 같은 희소 코드 방식을 적용하면 변환 품질 점수 대신 검증 가능한 조직 패턴 근거를 제시할 수 있는지 확인할 가치가 있습니다.",
+      "supporting_papers": [
+        {"title": "Transferable Named Sparse Features for Morphology-based Gleason Grading", "arxiv": "https://arxiv.org/abs/2611.24363", "phylogeny": {"source": "CVML", "phylum": "Computational Pathology > Interpretable Grading > Named Sparse Features"}},
+        {"title": "SCOPE: Single-Cell Omics Prediction from Histology via RNA-Protein Prior Enhancement", "arxiv": "https://arxiv.org/abs/2611.24104", "phylogeny": {"source": "CVML", "phylum": "Computational Pathology > Molecular Prediction > Cross-omics Transfer"}}
+      ],
+      "execution_week1": {
+        "target": "Transferable Named Sparse Features (arXiv 2611.24363), SCOPE (arXiv 2611.24104) — 둘 다 코드 공개 여부 본문 확인 필요",
+        "benchmark": "랩 보유 virtual staining 출력(명시야/위상 기반) + 병리학자 검증 가능한 조직 패턴 라벨 소량 세트",
+        "comparison_axis": "기존 변환 품질 점수(SSIM/PSNR) 대비 이름 붙은 희소 특징이 병리학자 판단과 얼마나 일치하는지, 기관/스캐너 간 안정성",
+        "fallback": "희소 특징이 랩 데이터에서 안정적이지 않더라도, 어떤 조직 패턴이 랩 변환 모델에서 가장 자주 왜곡되는지 정리한 분석은 다음 품질 관리 설계에 재사용 가능하다"
+      }
+    }
+  ],
+  "phylogeny_tags": [
+    {"paper": "https://arxiv.org/abs/2611.24776", "source": "CVML", "lineage": "Computational Imaging > Ptychography > Uncertainty Quantification"},
+    {"paper": "https://arxiv.org/abs/2611.24232", "source": "CVML", "lineage": "Computational Imaging > Ptychography > Scalable Optimization"},
+    {"paper": "https://arxiv.org/abs/2611.23450", "source": "CVML", "lineage": "3D Representation > Gaussian Splatting > Physics-constrained Primitives > Underwater Imaging"},
+    {"paper": "https://arxiv.org/abs/2611.23444", "source": "CVML", "lineage": "3D Representation > Gaussian Splatting > Physics-constrained Primitives > Atomic Tomography"},
+    {"paper": "https://arxiv.org/abs/2611.23529", "source": "CVML", "lineage": "Medical Imaging > 3D CT VLM > Evidence Grounding"},
+    {"paper": "https://arxiv.org/abs/2611.23752", "source": "CVML", "lineage": "Medical Imaging > Sparse-view Reconstruction > Calibrated Uncertainty"},
+    {"paper": "https://arxiv.org/abs/2611.24104", "source": "CVML", "lineage": "Computational Pathology > Molecular Prediction > Cross-omics Transfer"},
+    {"paper": "https://arxiv.org/abs/2611.24363", "source": "CVML", "lineage": "Computational Pathology > Interpretable Grading > Named Sparse Features"}
+  ]
+}

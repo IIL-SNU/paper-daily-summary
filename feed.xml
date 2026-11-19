@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 18 Nov 2026 14:22:32 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 14:22:15 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-11-19 (목요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-11-19.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-11-19.html</guid>
+      <pubDate>Thu, 19 Nov 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 2026-11-19 확인 기준 5개 카테고리 모두 /new listing이 "Thursday, 19 November 2026"으로 post_date와 일치해 arXiv+저널 완성본으로 발행합니다(arXiv new+cross 합계 710편, replacements 없음). 여기에 저널 430편(Crossref 422편, 9개 쿼리 중 6개가 1차 레이트리밋에 걸려 지연 재시도로 복구 + OpenAlex 보충 8편)을 더해 classify.py로 합쳐 스캔한 결과(합산 995건) 308건(31.0%)이 9개 ROI 버킷에 배정됐습니다. 버킷별 논문 목록을 다시 읽어본 결과 오늘 가장 눈에 띄는 변화는 랩 핵심 ROI인 Fourier Ptychography/Microsc…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-11-18 (수요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-11-18.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-18.html</guid>
       <pubDate>Tue, 18 Aug 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[오늘은 어제(8/18 실행 시점) journal-only로 낸 잠정본을 arXiv 포함 완전판으로 업그레이드하는 날입니다. cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 2026-08-18 listing이 정상적으로 올라와 있는 것을 재확인했고, new+cross 기준 1192편이 새로 잡혔습니다. 여기에 어제와 마찬가지로 Crossref/OpenAlex 저널 426편을 더해 arXiv+저널 통합 스캔 1357건(cross-listing 중복 제거 후) 중 424건(31.2%)이 랩 ROI 버킷에 배정됐습니다.]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Weekly Retrospective — 2026-08-17 (Week 33)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-08-17-weekly.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-17-weekly.html</guid>
-      <pubDate>Mon, 17 Aug 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[지난주 가장 뜨거웠던 흐름은 3D Gaussian Splatting이 렌더링 도구를 넘어 매일 다른 문제 설정을 흡수하는 범용 표현으로 확장 된 것입니다. 화요일(backfill)에는 EndoMD-SLAM처럼 내시경 광학 열화나 압축, event stream처럼 입력이 이미 망가진 상태에서도 버티는 3DGS 재구성 5편이 몰렸고, 수요일에는 축이 완전히 바뀌어 Gaussian Sculpting이 3DGS를 표면 추출 엔진으로, GS-CPE가 카메라 자세 추정 백엔드로 쓰기 시작했습니다 — 렌더링에서 다른 문제를 푸는 표현으로 넘어간 겁니다. 목요일에는 Seed2GS가 카메라 자세나 재학습 없이 3DGS 장면에서 원하는 물체를 뽑아내는 방법을 냈고(LERF-MASK 92.…]]></description>
     </item>
   </channel>
 </rss>

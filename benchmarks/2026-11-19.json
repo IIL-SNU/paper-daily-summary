@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-19",
+  "results": [
+    {
+      "benchmark": "WSe2 bilayer 시뮬레이션 (4D-STEM 전자 ptychography, published reconstruction 대비)",
+      "metric": "In-plane / depth atom position error",
+      "value": 3.2,
+      "value_str": "평면 내 오차 3.2pm(기존 4.8pm), 깊이 오차 40~61% 감소, 68% 신뢰구간 69% 보정",
+      "paper": "https://arxiv.org/abs/2611.24776",
+      "paper_title": "4D-TEMPO: Differentiable 4D-STEM ptychography via fast Physics Optimizers"
+    },
+    {
+      "benchmark": "20만 장 회절 패턴, 128x128 픽셀 (X선 ptychography, 기존 maximum-likelihood 대비)",
+      "metric": "Peak GPU memory / reconstruction time",
+      "value": 65,
+      "value_str": "peak GPU 메모리 65%, 복원 시간 22%로 감소",
+      "paper": "https://arxiv.org/abs/2611.24232",
+      "paper_title": "Stochastic Optimisation for Scalable Ptychographic Image Reconstruction"
+    },
+    {
+      "benchmark": "CTRATE / Merlin / RADChestCT (3D CT VLM, 기존 모델 대비)",
+      "metric": "Laterality accuracy / organ-removal retraction rate",
+      "value": 77,
+      "value_str": "좌우 판별 정확도 77%(기존 최대 66%), 장기 제거 시 소견 철회율 96~99%(기존 최대 69%)",
+      "paper": "https://arxiv.org/abs/2611.23529",
+      "paper_title": "ORGANIC3D: Grounding 3D CT Vision Language Models in Organ Level Image Text Coupling"
+    },
+    {
+      "benchmark": "SAJALA 30-scene 수중 합성 벤치마크 + 실측 SeaThru-NeRF (최강 baseline 대비)",
+      "metric": "PSNR / depth AbsRel / LPIPS",
+      "value": 24.76,
+      "value_str": "PSNR 24.34→24.76dB, depth AbsRel 0.109→0.091, 실측 LPIPS 0.194→0.175 @44FPS",
+      "paper": "https://arxiv.org/abs/2611.23450",
+      "paper_title": "NIRJALA: Draining the Sea out of Gaussian Splatting with Three-Path Optics and Reversible Physics"
+    },
+    {
+      "benchmark": "16개 장기 spatial omics (SCOPE, 최강 baseline 대비)",
+      "metric": "RNA / protein Pearson correlation 개선폭",
+      "value": 8.8,
+      "value_str": "RNA Pearson +8.8%, 단백질 예측 +9.7%(학습 마커)·+11.9%(미학습 마커)",
+      "paper": "https://arxiv.org/abs/2611.24104",
+      "paper_title": "SCOPE: Single-Cell Omics Prediction from Histology via RNA-Protein Prior Enhancement"
+    },
+    {
+      "benchmark": "공개 multi-source/multi-stain WSI 조직 검출 벤치마크 (최강 공개 detector 대비)",
+      "metric": "교정 필요 case-group 비율",
+      "value": 18.6,
+      "value_str": "교정 필요 비율 38.1%→18.6%(면역조직화학에서 특히 큰 개선)",
+      "paper": "https://arxiv.org/abs/2611.24366",
+      "paper_title": "SCOUT: Risk-Guided Foundation-Model Escalation for Robust Tissue Detection in Whole-Slide Images"
+    },
+    {
+      "benchmark": "PISR dataset, 2D Gaussian Splatting 표면 복원 (PhyGaP 대비)",
+      "metric": "최적화 시간",
+      "value": 4,
+      "value_str": "PhyGaP 약 21분 대비 RAPID 약 4분, 동급 렌더링/메쉬 품질 유지(~5배 가속)",
+      "paper": "https://arxiv.org/abs/2611.24404",
+      "paper_title": "RAPID: Reconstruction Accelerated by Polarization-Informed Depth for 2D Gaussian Splatting"
+    },
+    {
+      "benchmark": "CQ500 held-out 30명, 360-view 시뮬레이션 head CBCT (learned autofocus/diffusion joint reconstruction 대비)",
+      "metric": "PSNR / reprojection error",
+      "value": 37.1,
+      "value_str": "평균 PSNR 37.1dB, RPE 0.27mm, image-linear training 대비 PSNR +1.6dB·RPE -33%",
+      "paper": "https://arxiv.org/abs/2611.23788",
+      "paper_title": "Geometry-bridge flow matching for blind rigid-motion correction in head cone-beam CT"
+    }
+  ]
+}

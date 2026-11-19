@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-19",
+  "source_listing_date": "2026-11-19",
+  "source_mode": "new",
+  "note": "2026-11-19(목) daily 정기 실행. Date Source Contract 재점검 결과 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 전부 /new listing이 \"Thursday, 19 November 2026\"을 가리켜 post_date와 일치했다. arXiv new+cross 710편(cs.LG 218·cs.CV 223·cs.AI 230·eess.IV 10·eess.SP 29, replacements 없음 확인)에 저널 422편(Crossref 9개 쿼리 중 6개가 1차 429 Too Many Requests로 실패해 지연 재시도로 복구, 중복 제거 후 422)·OpenAlex 보충 8편을 더해 scripts/classify.py로 병합·재분류했다. 전체 스캔 995건 중 308건(31.0%)이 9개 ROI 버킷에 배정됐다. 오늘의 핵심은 랩 핵심 ROI인 Fourier Ptychography/Microscopy(4편)에서 드물게 arXiv 2편이 동시에 불확실도 정량화(4D-TEMPO)와 메모리/시간 스케일링(Stochastic Optimisation)이라는 실질적 병목을 다뤘다는 점, Tomography/3D Imaging(57편) 안에서 Gaussian splatting 표현이 RGB 렌더링을 넘어 수중광학·편광·전자단층·천문학으로 이식되는 6편짜리 클러스터가 형성된 점, Deep Learning Methods·Tomography 전반에서 의료영상 AI 평가축이 정확도에서 근거 기반성·보정된 불확실도로 이동한 점, Virtual Staining/Pathology(38편)가 분자 예측·위험 인지·해석 가능 근거로 넓어진 점, Reconstruction/Inverse Problems(24편)에서 비가산적 잡음/열화 모델링이 세 편 등장한 점이다. Meta-Optics/Diffractive(16편)는 어제에 이어 오늘도 테라헤르츠·통신·화학센서 소자 위주로 이미징 신호가 사실상 없었다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 218,
+      "cs.CV": 223,
+      "cs.AI": 230,
+      "eess.IV": 10,
+      "eess.SP": 29
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 422
+  },
+  "totals": {
+    "total_scanned": 995,
+    "selected": 308
+  },
+  "classified": {
+    "total_scanned": 995,
+    "selected": 308,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 4,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 11,
+      "Meta-Optics/Diffractive": 16,
+      "Light-Field/Novel Sensors": 1,
+      "Tomography/3D Imaging": 57,
+      "Virtual Staining/Pathology": 38,
+      "Reconstruction/Inverse Problems": 24,
+      "Deep Learning Methods": 156
+    }
+  },
+  "daily_thesis": "오늘은 랩 핵심 ROI인 ptychography 복원에서 그동안 없던 불확실도 정량화와 연산 스케일링이라는 실질적 신호가 처음 등장한 날이면서, 동시에 Gaussian splatting이 RGB 카메라 렌더링을 넘어 수중광학·편광·전자단층촬영·분광천문학 같은 서로 다른 물리 측정 모델로 직접 이식되는 흐름이 여섯 편으로 뚜렷해진 날입니다. 또 의료·병리 영상 AI 전반에서는 평균 정확도 한 숫자보다 예측이 실제 해부학적 근거에 기반했는지와 측정 조건이 나빠질 때 불확실도가 올바르게 커지는지를 같이 재는 쪽으로 평가 기준이 옮겨가고 있습니다."
+}
