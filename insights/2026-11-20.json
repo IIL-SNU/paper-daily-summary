@@ -1,0 +1,175 @@
+{
+  "date": "2026-11-20",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "3D 재구성이 단일광자 라이다·cryo-EM·대규모 멀티뷰까지 각 분야의 측정 물리에 맞춰 표현을 다시 설계",
+      "papers": [
+        {
+          "title": "FirstCross: Convex Single-Photon 3D Reconstruction from Sparse Views",
+          "arxiv": "https://arxiv.org/abs/2611.26321",
+          "importance_tags": ["[방법전환]", "[평가축]"]
+        },
+        {
+          "title": "CryoGaussian: Heterogeneous Cryo-EM Reconstruction Made Explicit with Gaussian Splatting",
+          "arxiv": "https://arxiv.org/abs/2611.26128",
+          "importance_tags": ["[방법전환]", "[인프라]"]
+        },
+        {
+          "title": "SGAR: Feed-Forward 3D Reconstruction via Sparse Geometry-Guided Attention",
+          "arxiv": "https://arxiv.org/abs/2611.26493",
+          "importance_tags": ["[실사용전환]"]
+        }
+      ],
+      "why": "어제 보고서에서 본 \"가우시안 표현이 RGB 렌더링을 넘어 물리 측정 모델로 이식\"되는 흐름이 오늘은 다른 각도에서 두 번 더 확인됐습니다. CryoGaussian은 저온전자현미경(cryo-EM, 시료를 얼린 채로 전자빔을 쏴서 단백질 같은 생체 분자의 3차원 구조를 복원하는 기법) 복원에 Gaussian splatting(장면을 수많은 작은 가우시안 입자로 표현해 렌더링하는 기법)을 적용했는데, RGB 카메라용 렌더러를 그대로 가져다 쓴 게 아니라 전자현미경이 실제로 측정하는 물리량(대조도 전달 함수가 변조된 직교 투영 선적분)에 맞춰 렌더러 자체를 다시 설계했습니다. 그 결과 전체 입자의 1.3%만 차지하는 희귀한 리보솜 상태와 스플라이세오좀의 연속적인 움직임까지 구분해 포착했고, 학습 시간도 12.8~28배 줄였습니다. FirstCross는 다른 쪽에서 신경망 기반 3D 복원을 \"볼록 최적화 문제\"로 되돌렸습니다 — 단일광자 라이다(빛 알갱이 하나하나의 도착 시간을 기록해 적은 측정으로도 3D를 복원하는 센서)에서 기존 신경망 방법(Transientangelo)은 장면 하나당 한 시간 넘게 걸리는 비볼록 최적화가 필요했는데, FirstCross는 \"광자가 물체 표면을 처음 통과하는 지점\"이라는 물리적 사실 하나로 문제를 볼록하게 만들어 같은 정확도를 1분 만에, 심지어 광자를 100배 적게 쓰고도 더 낮은 깊이 오차로 복원했습니다. SGAR은 수백~수천 장의 뷰를 한 번에 쓰는 feed-forward 3D 복원에서, 모든 뷰 조각을 서로 비교하는 기존의 비싼 전역 attention 대신 \"3D 구조는 결국 2D에서 기하학적으로 매칭되는 영역에서 나온다\"는 구조-기반-움직임(SfM)의 오래된 직관을 다시 불러와 1,000개 뷰에서 12배 빠른 속도로 더 완전한 기하를 복원했습니다. 세 편을 합치면, 3D 재구성 연구가 신경망을 범용 블랙박스로 던져 넣기보다 각 센서·측정 방식이 가진 고유한 물리(광자 통계, 대조도 전달 함수, 에피폴라 기하)를 명시적으로 모델에 새겨 넣는 쪽으로 다시 움직이고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 세 연구팀이 완전히 다른 센싱 모달리티(단일광자 라이다, cryo-EM, 멀티뷰 카메라)에서 독립적으로 \"물리를 직접 모델에 새긴다\"는 같은 설계 철학을 적용했고, 셋 다 기존 SOTA 대비 구체적 수치로 우위를 입증했습니다.",
+      "lab_action": "CryoGaussian의 \"대조도 전달 함수를 가우시안 렌더러에 직접 반영\"하는 설계와 FirstCross의 \"광자 첫 통과 지점\" 볼록 정식화를 랩의 optical diffraction tomography/holography forward model에 이식할 수 있는지 검토하고, 기존 비볼록 신경망 복원 대비 수렴 시간·저선량 안정성을 랩 보유 데이터셋으로 1주 내 비교한다."
+    },
+    {
+      "cluster": "VLA/World-Action Model 실행 스택이 온디바이스 효율과 공격 내성을 함께 다룸",
+      "papers": [
+        {
+          "title": "TuringPAI: A Foundation for On-Device Physical AI",
+          "arxiv": "https://arxiv.org/abs/2611.25474",
+          "importance_tags": ["[실사용전환]"]
+        },
+        {
+          "title": "LoopedWAM: Looped World Action Models for Elastic Inference",
+          "arxiv": "https://arxiv.org/abs/2611.25595",
+          "importance_tags": ["[방법전환]", "[실사용전환]"]
+        },
+        {
+          "title": "Don't Lose the Future: Latent-Aware 4-Bit Quantization of World Action Models",
+          "arxiv": "https://arxiv.org/abs/2611.25614",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "DMT-Attack: Diffusion-Prior Texture Search for Closed-Loop Vision-Language-Action Policies",
+          "arxiv": "https://arxiv.org/abs/2611.25695",
+          "importance_tags": ["[경고신호]"]
+        }
+      ],
+      "why": "VLA(vision-language-action, 영상·언어를 보고 바로 로봇 행동을 만들어내는 모델)/WAM(world-action model, 영상이 어떻게 변할지 예측하면서 그 예측에 맞춰 행동까지 만드는 모델) 쪽에서 오늘 다섯 편이 동시에 나왔는데, 네 편은 \"로봇 위 저전력 칩에서 실제로 돌아가게 만들기\"를, 한 편은 \"그렇게 배포된 모델을 공격하면 어떻게 되는지\"를 다뤄 같은 LIBERO/RoboTwin 벤치마크 가족을 공유합니다. TuringPAI는 0.65B(6.5억 파라미터)짜리 비전-언어 백본 하나로 자율주행과 로봇 조작을 동시에 지원하면서 LIBERO 4개 스위트 평균 96.8% 성공률을 내고, 차량용 Orin-X 칩 한 장에서 초당 12프레임으로 경로를 생성합니다. LoopedWAM은 세계모델과 행동모델에 쓰는 30개 트랜스포머 층을 저장은 12개 블록만 하고 반복 재사용하는 방식으로 압축해, 기존 모델보다 GPU 메모리를 7.4배 줄이면서도 LIBERO 96.1%·RoboTwin 91.9%를 유지합니다. LAQ(4비트 양자화 논문)는 지금까지의 양자화 방법들이 \"지금 당장 나오는 행동\"만 보호해 그 행동이 기반한 \"예측된 미래\"가 조용히 깨지는 문제를 지적하고, 미래 예측이 실제로 읽히는 지점까지 추적해 정밀도를 배분해 16비트 모델과 1.2%p 차이로 LIBERO-Plus 76.4~83.3%를 유지하면서 모델을 3.8배 압축했습니다. 반대쪽에서 DMT-Attack은 바로 이런 폐루프 VLA 정책이 눈에 띄지 않는 자연스러운 질감 패턴(예: 식탁보 무늬)만으로도 57.9%의 공격 성공률로 흔들릴 수 있다는 걸 보여줘, 효율화 못지않게 보안도 같이 챙겨야 한다는 숙제를 던집니다. 네 편을 합치면, VLA/WAM 연구가 \"클라우드 GPU에서 얼마나 잘 되는가\"를 넘어 \"실제 로봇 위 저전력 칩에서 안전하고 효율적으로 돌아가는가\"를 묻는 배포 단계로 확실히 들어섰다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 연구팀들이 같은 날 같은 LIBERO/RoboTwin 벤치마크 가족에서 효율화(메모리·양자화)와 공격이라는 양방향 신호를 구체적 수치로 제시했습니다.",
+      "lab_action": "LAQ의 \"미래가 실제로 읽히는 지점을 추적해 정밀도를 배분\"하는 아이디어를 랩이 쓰는 저지연 영상 복원 파이프라인의 양자화 경량화에 적용할 수 있는지 검토하고, DMT-Attack 스타일의 자연스러운 텍스처 교란이 랩의 영상 기반 로봇/제어 파이프라인에도 통하는지 LIBERO 환경에서 1주 내 재현해본다."
+    },
+    {
+      "cluster": "Diffusion/flow 생성의 추론 가속이 캐싱·스케줄링/검증기 세 갈래로 분화",
+      "papers": [
+        {
+          "title": "CalibCache: Cache-to-Full Feature Dynamics Calibration for Diffusion Transformers",
+          "arxiv": "https://arxiv.org/abs/2611.25296",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Text Lives in the Guidance: Preventing Silent Text Rewriting in Cached Diffusion Transformers",
+          "arxiv": "https://arxiv.org/abs/2611.25382",
+          "importance_tags": ["[평가축]", "[경고신호]"]
+        },
+        {
+          "title": "D3-Cache: Accelerating Diffusion Models with Dynamic Mode Decomposition",
+          "arxiv": "https://arxiv.org/abs/2611.25689",
+          "importance_tags": ["[방법전환]"]
+        },
+        {
+          "title": "Keystone: Judging Previews at Key Steps for Test-Time Search in Diffusion Models",
+          "arxiv": "https://arxiv.org/abs/2611.25530",
+          "importance_tags": ["[평가축]", "[방법전환]"]
+        }
+      ],
+      "why": "diffusion/flow 모델(노이즈에서 시작해 여러 단계를 거쳐 이미지를 만들어내는 생성모델)은 단계마다 전체 신경망을 다시 돌려야 해서 느린데, 오늘은 이 문제를 줄이는 서로 다른 접근이 한꺼번에 나왔습니다. CalibCache는 캐시가 예측한 결과와 실제 전체 계산 결과 사이의 체계적인 오차를 미리 한 번 재서 보정해두는 방식으로 FLUX.1-dev의 LPIPS(이미지가 원본과 얼마나 다른지 재는 지표, 낮을수록 좋음)를 0.563에서 0.429로 낮추면서 2.86배 빠르게 만들었습니다. GuideCache(Text Lives in the Guidance)는 더 구체적인 문제를 짚었는데, 글자를 그리는 이미지 생성 모델을 캐싱으로 가속하면 ImageReward 같은 전체 이미지 품질 점수는 거의 그대로인데 실제로 그려지는 글자 내용이 조용히 틀려진다는 걸 발견했습니다(단어 정확도 62%→46%). 원인을 추적해보니 classifier-free guidance(조건을 준 예측과 안 준 예측의 차이로 생성 방향을 정하는 기법)의 오차가 글자 부분에서 특히 크게 번진다는 걸 밝혀내, 그 부분만 다시 계산하는 방식으로 글자 정확도를 거의 원래대로 복원했습니다. D3-Cache는 동적 모드 분해(시계열 데이터에서 반복되는 패턴을 찾아내는 수학적 기법)를 가져와 몇 단계의 실제 계산만 보고 다음에 필요한 값을 예측하면서, 예측이 틀리기 시작하면 바로 다시 실제 계산으로 돌아가는 방식으로 4개 모델에서 모델별 보정 없이 2.6~3.8배 가속했습니다. Keystone은 test-time search(여러 후보를 생성해 가장 좋은 걸 고르는 방식)에서 쓰는 채점 모델(reward model)이 사실 완성된 이미지용으로 만들어져서 덜 완성된 중간 미리보기는 잘 못 읽는다는 점을 지적하고, 프롬프트를 \"물체가 몇 개인지\", \"위치가 어디인지\" 같은 구체적 질문으로 바꿔 멀티모달 모델에게 중간 미리보기째로 직접 묻는 방식으로 best-of-8보다 절반도 안 되는 계산으로 더 나은 결과를 냈습니다. 네 편을 합치면, diffusion/flow 가속 연구가 \"일단 빠르게 만들고 품질은 평균적으로 유지\"에서 \"어디서 정보가 새는지(글자, 중간 미리보기)를 정확히 짚어서 그 부분만 고친다\"는 훨씬 더 세밀한 단계로 들어섰다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 네 연구팀이 캐싱·검증기라는 다른 메커니즘으로 접근했지만 모두 FLUX/Qwen-Image/Z-Image/DiT 계열의 같은 diffusion transformer 벤치마크에서 구체적 수치 우위를 보였습니다.",
+      "lab_action": "GuideCache의 \"classifier-free guidance 오차가 특정 영역(글자)에 집중된다\"는 진단 방식을 랩이 쓰는 생성형 복원/인페인팅 모델의 캐싱 가속에 적용해, 위상·구조가 중요한 영역에서 캐싱이 정보를 조용히 왜곡하는지 1주 내 점검한다."
+    },
+    {
+      "cluster": "표준 평가 관행에 대한 재검증이 네 개 서로 다른 도메인에서 동시에 나옴",
+      "papers": [
+        {
+          "title": "Does It Depend on the Split? Frozen Satellite Features vs. Fine-Tuned CNNs for Tree Species Mapping",
+          "arxiv": "https://arxiv.org/abs/2611.25902",
+          "importance_tags": ["[경고신호]", "[평가축]"]
+        },
+        {
+          "title": "Explainable AI for Solar PV Power Forecasting: From Model Selection to Trustworthy, Reproducible Deployment",
+          "arxiv": "https://arxiv.org/abs/2611.25894",
+          "importance_tags": ["[경고신호]"]
+        },
+        {
+          "title": "Falsifiable Compositional Reasoning in Time Series Forecasting",
+          "arxiv": "https://arxiv.org/abs/2611.25388",
+          "importance_tags": ["[평가축]", "[경고신호]"]
+        },
+        {
+          "title": "Beyond Single-Split Performance: A Rigorous Assessment of Statistical Reliability and Generalisability in Deep Learning-Based SARS-CoV-2 Computed Tomography Classification",
+          "doi": "https://doi.org/10.71129/ijaci.v3i1.pp53-67",
+          "importance_tags": ["[경고신호]", "[평가축]"]
+        }
+      ],
+      "why": "오늘은 전혀 관련 없어 보이는 네 분야 — 위성영상 수종 분류, 태양광 발전량 예측, 시계열 예측, 흉부 CT 기반 코로나19 분류 — 에서 독립적으로 \"표준 평가 방법이 실제 일반화 성능을 부풀린다\"는 같은 결론에 도달한 논문이 동시에 나왔습니다. Does It Depend on the Split?은 위성영상에서 나무 수종 20종을 분류할 때, 공식 테스트 분할의 패치 중 28.8%가 학습/검증 패치와 공간적으로 겹쳐 있어서 단순히 가장 가까운 패치의 라벨을 복사하기만 해도 83.6%가 맞는다는 걸 보여주고, 겹치지 않게 공간 분할을 다시 하면 \"고정된 특징만 쓰는 모델\"과 \"끝까지 미세조정한 모델\"의 차이가 사실상 사라진다는 걸 보였습니다(매크로 F1 0.764 대 0.685 → 0.648 대 0.640). Explainable AI for Solar PV Power Forecasting는 무작위로 섞은 교차검증이 실제보다 약간 낙관적인 결과를 준다는 걸 확인했고, 더 중요하게는 SHAP(어떤 입력이 예측에 얼마나 기여했는지 보여주는 설명 기법) 순위가 서로 연관된 입력 변수를 하나 빼기만 해도 바뀐다는 걸 보여줘, 그 설명이 발전소의 실제 물리가 아니라 그 특정 모델의 습관을 보여주는 것일 수 있다고 경고합니다. Falsifiable Compositional Reasoning in Time Series Forecasting는 한 발 더 나아가, \"과거 데이터로 검증했을 때 1등\"인 모델이나 아키텍처 탐색을 더 넓게 할수록 오히려 상황이 바뀌는 구간에서 더 잘 틀린다는 걸 이론과 실험으로 보이고, 검증을 \"사후에 제일 잘 맞는 걸 고르는 경쟁\"이 아니라 \"미리 정해둔 가설을 반증 가능한 방식으로 시험하는 것\"으로 바꿔야 한다고 제안합니다. Beyond Single-Split Performance는 코로나19 흉부 CT 분류에서 흔히 보고되는 99% 정확도가 같은 환자의 슬라이스가 학습/테스트에 함께 섞여 있는 단일 분할에서 나온 숫자라는 걸 지적하고, 환자 단위로 분리하면 F1이 6~8점 떨어지고, 아예 다른 병원 데이터로 검증하면 성능이 다수결 베이스라인 수준까지 떨어진다는 걸 보였습니다. 네 편을 합치면, 분야를 막론하고 표준 분할·무작위 교차검증·과거 데이터 백테스트로 1등을 가리는 지금까지의 평가 방식이 실제로는 공간적·환자 단위·상황 변화라는 숨은 상관관계를 재는 것일 수 있다는 경고가 오늘 가장 넓게 퍼진 메시지입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 무관한 네 분야에서 독립적으로 같은 메타적 결론(표준 평가가 과대평가)에 도달했고, 모두 구체적 수치(83.6% 라벨 복사 정확도, SHAP 순위 변화, 6~8점 F1 하락, 다수결 수준 붕괴)로 뒷받침합니다.",
+      "lab_action": "랩이 쓰는 영상 복원/분류 모델의 학습-테스트 분할이 같은 촬영 세션·같은 시료·인접 패치끼리 겹치지 않는지 Does It Depend on the Split?의 공간 분할 기준으로 1주 내 재검사하고, Beyond Single-Split Performance의 \"환자/시료 단위 분리 + 외부 코호트 zero-shot\" 프로토콜을 랩의 주요 벤치마크 하나에 시범 적용해 보고된 정확도가 유지되는지 확인한다."
+    },
+    {
+      "cluster": "생성모델 post-training이 \"실제로 무엇을 바꾸는지\"에 대한 회의적 재검증",
+      "papers": [
+        {
+          "title": "RL Post-Training in Diffusion Transformers Is Activation Steering",
+          "arxiv": "https://arxiv.org/abs/2611.26627",
+          "importance_tags": ["[해부분석]", "[경고신호]"]
+        },
+        {
+          "title": "The Price of an Explanation: What Demanding Verifiable Artifacts Costs, and What It Buys Back",
+          "arxiv": "https://arxiv.org/abs/2611.25896",
+          "importance_tags": ["[해부분석]", "[경고신호]"]
+        }
+      ],
+      "why": "두 편 모두 \"생성형 모델을 post-training(사전학습 이후 추가로 더 학습시키는 단계)으로 개선했다\"는 흔한 주장을 뜯어봤을 때 생각보다 단순한 메커니즘이 숨어 있다는 걸 보여줍니다. RL Post-Training Is Activation Steering은 diffusion transformer(이미지를 여러 단계에 걸쳐 생성하는 트랜스포머 기반 생성모델)를 강화학습(RL)으로 추가 학습시키면 글자를 더 정확히 그리거나 여러 물체를 더 잘 구성하게 되는데, 이게 프롬프트마다 다른 복잡한 계산을 새로 배운 게 아니라 프롬프트와 무관하게 항상 같은 고정된 방향으로 중간 표현을 밀어주는 것만으로도 설명될 수 있다는 걸 보여줍니다. 실제로 LoRA(추가 학습 파라미터를 적게 쓰는 미세조정 기법)보다 65배 적은 파라미터를 가진 고정 벡터를 모델 블록 출력에 더하기만 해도, 6개의 이미지 생성 모델에서 RL이 얻은 성능 향상의 90.0~96.3%, 2개의 영상 생성 모델에서는 89.8~111.9%를 그대로 재현했습니다. Price of an Explanation은 다른 각도에서, 큰 언어모델에게 정답만 내놓게 하는 대신 \"검증 가능한 프로그램(실행하면 답을 확인할 수 있는 코드)\"을 요구하면 ARC-AGI-2(120개 과제로 구성된 추상 추론 벤치마크)에서 정답률이 93개에서 68개(77%→57%)로 떨어진다는 걸 보였는데, 더 흥미로운 건 정답만 요구했을 때만 풀렸던 과제 28개 중 27개는 프로그램 방식에서도 학습 예시를 전부 맞히는 프로그램을 찾아냈는데도 정작 테스트에서는 틀렸다는 점입니다 — 즉 병목은 \"설명(프로그램)을 찾는 것\"이 아니라 \"그 설명이 진짜로 일반화되는지\"에 있었습니다. 두 편을 합치면, 생성모델을 더 똑똑하게 만드는 여러 사후 학습·검증 기법들이 겉보기엔 복잡해 보여도 실제로는 \"이미 할 수 있는 계산을 어느 방향으로 밀어줄 뿐\"이거나 \"설명을 찾아내는 능력과 그 설명이 진짜로 맞는지는 서로 다른 문제\"라는 훨씬 단순하고 비관적인 그림을 드러내고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "두 편 모두 같은 날 RL/post-training을 회의적으로 재검증했다는 공통점은 있지만, 하나는 diffusion 이미지/영상 생성, 다른 하나는 LLM 추론이라는 전혀 다른 과제를 다뤄 아직 하나의 통일된 메커니즘으로 보기는 이릅니다.",
+      "lab_action": "랩이 RL이나 선호도 학습으로 fine-tuning한 생성형 복원 모델이 있다면, Activation Steering 논문의 \"고정 벡터로 대체했을 때 성능이 얼마나 재현되는지\" 테스트를 1주 내 적용해 실제로 입력-조건부 계산을 배운 것인지 단순 방향 이동인지 확인한다."
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "CryoGaussian·FirstCross식 물리 반영 가우시안/볼록 정식화를 랩 optical diffraction tomography/holography 복원에 이식",
+      "claim": "두 논문 모두 신경망을 범용 블랙박스로 쓰는 대신 센서가 실제로 측정하는 물리량(대조도 전달 함수, 광자 첫 통과 지점)을 모델에 직접 새겨 넣어 적은 측정·짧은 시간에도 안정적인 복원을 얻었는데, 랩의 비-RGB 측정(위상·홀로그램·단층촬영)에도 같은 설계 철학이 통하는지 확인할 가치가 있습니다.",
+      "supporting_papers": [
+        {"title": "CryoGaussian", "arxiv": "https://arxiv.org/abs/2611.26128"},
+        {"title": "FirstCross", "arxiv": "https://arxiv.org/abs/2611.26321"}
+      ]
+    },
+    {
+      "title": "LAQ의 미래-인지 정밀도 배분을 랩 저지연 영상 복원 양자화에 적용",
+      "claim": "LAQ는 모델을 4비트로 낮출 때 당장의 출력이 아니라 그 출력이 기반한 예측된 미래가 실제로 읽히는 지점을 추적해 정밀도를 배분하는데, 랩의 실시간 복원 파이프라인을 경량화할 때도 같은 원리로 어떤 중간 표현이 다음 단계에서 실제로 읽히는지 추적해 정밀도를 배분하면 품질 손실 없이 압축할 수 있는지 검증할 수 있습니다.",
+      "supporting_papers": [
+        {"title": "Don't Lose the Future (LAQ)", "arxiv": "https://arxiv.org/abs/2611.25614"}
+      ]
+    },
+    {
+      "title": "GuideCache의 영역별 오차 진단을 랩 생성형 복원 모델의 캐싱 가속에 적용",
+      "claim": "GuideCache는 diffusion 캐싱이 전체 품질 점수에는 안 보이지만 글자처럼 특정 영역에서 조용히 정보를 왜곡한다는 걸 classifier-free guidance 오차 분해로 짚어냈는데, 랩의 위상 복원이나 인페인팅 모델도 같은 분해로 캐싱이 구조/위상 정보가 중요한 영역을 조용히 틀리게 하는지 확인할 가치가 있습니다.",
+      "supporting_papers": [
+        {"title": "Text Lives in the Guidance (GuideCache)", "arxiv": "https://arxiv.org/abs/2611.25382"}
+      ]
+    },
+    {
+      "title": "Does It Depend on the Split?/Beyond Single-Split Performance의 분할 재검사 프로토콜을 랩 핵심 벤치마크에 적용",
+      "claim": "두 논문 모두 공간적·환자 단위로 겹치지 않는 분할을 쓰면 보고된 성능 격차가 크게 줄거나 사라진다는 걸 보였는데, 랩이 자주 인용하는 벤치마크 성능도 같은 방식으로 재검사하면 실제 일반화 성능을 더 정확히 알 수 있습니다.",
+      "supporting_papers": [
+        {"title": "Does It Depend on the Split?", "arxiv": "https://arxiv.org/abs/2611.25902"},
+        {"title": "Beyond Single-Split Performance", "doi": "https://doi.org/10.71129/ijaci.v3i1.pp53-67"}
+      ]
+    },
+    {
+      "title": "Activation Steering 테스트를 랩의 RL/선호도 기반 fine-tuning 모델에 적용",
+      "claim": "RL Post-Training Is Activation Steering은 RL로 얻은 성능 향상의 대부분이 프롬프트와 무관한 고정 벡터 하나로 재현된다는 걸 보였는데, 랩이 선호도 학습이나 RL로 fine-tuning한 생성형 모델이 있다면 같은 테스트로 그 학습이 실제로 입력-조건부 계산을 추가했는지 확인할 수 있습니다.",
+      "supporting_papers": [
+        {"title": "RL Post-Training in Diffusion Transformers Is Activation Steering", "arxiv": "https://arxiv.org/abs/2611.26627"}
+      ]
+    }
+  ]
+}

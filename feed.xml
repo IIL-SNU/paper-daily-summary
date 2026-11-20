@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 19 Nov 2026 14:22:15 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 14:31:10 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-11-20 (금요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-11-20.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-11-20.html</guid>
+      <pubDate>Fri, 20 Nov 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 2026-11-20 확인 기준 5개 카테고리 모두 /new listing이 "Friday, 20 November 2026"으로 post_date와 일치해 arXiv+저널 완성본으로 발행합니다(arXiv new+cross 합계 723편, replacements 없음). 여기에 저널 364편(Crossref 361편, OpenAlex 보충 3편)을 더해 classify.py로 합쳐 스캔한 결과(합산 966건) 251건(26.0%)이 9개 ROI 버킷에 배정됐습니다. 버킷별 논문 목록을 다시 읽어본 결과 오늘 가장 눈에 띄는 변화는 Tomography/3D Imaging(39편) 안에서 일어났습니다 — FirstCross와 CryoGaussian이 같은 날 각각 라이다…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-11-19 (목요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-11-19.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-19.html</guid>
       <pubDate>Wed, 19 Aug 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[오늘 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 2026-08-19 listing이 정상적으로 올라온 것을 확인했습니다. new+cross 기준 446편이 새로 잡혔고, 어제(8/18, 1192편)에 비해 절대량은 크게 줄었지만 이는 요일별 등록 변동 폭 안에 있는 수치입니다. 여기에 Crossref/OpenAlex 저널 427편을 더해 arXiv+저널 통합 스캔 797건(cross-listing 중복 제거 후) 중 231건(29.0%)이 랩 ROI 버킷에 배정됐습니다.]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Daily Briefing — 2026-08-18 (화요일)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-08-18.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-18.html</guid>
-      <pubDate>Tue, 18 Aug 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘은 어제(8/18 실행 시점) journal-only로 낸 잠정본을 arXiv 포함 완전판으로 업그레이드하는 날입니다. cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 2026-08-18 listing이 정상적으로 올라와 있는 것을 재확인했고, new+cross 기준 1192편이 새로 잡혔습니다. 여기에 어제와 마찬가지로 Crossref/OpenAlex 저널 426편을 더해 arXiv+저널 통합 스캔 1357건(cross-listing 중복 제거 후) 중 424건(31.2%)이 랩 ROI 버킷에 배정됐습니다.]]></description>
     </item>
   </channel>
 </rss>

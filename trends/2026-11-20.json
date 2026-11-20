@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-20",
+  "source_listing_date": "2026-11-20",
+  "source_mode": "new",
+  "note": "2026-11-20(금) daily 정기 실행. Date Source Contract 재점검 결과 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 전부 /new listing이 \"Friday, 20 November 2026\"을 가리켜 post_date와 일치했다(arXiv+저널 완성본 발행). arXiv new+cross 723편(cs.LG 213·cs.CV 213·cs.AI 252·eess.IV 15·eess.SP 30, replacements 제외 확인)에 저널 364편(Crossref 361편 수집 + OpenAlex 보충 3편)을 더해 scripts/classify.py로 병합·재분류했다. 전체 스캔 966건 중 251건(26.0%)이 9개 ROI 버킷에 배정됐다. 오늘의 핵심은 (1) Tomography/3D Imaging 버킷 안에서 3D 재구성 표현이 단일광자 라이다(FirstCross)·cryo-EM 구조생물학(CryoGaussian)·대규모 feed-forward 복원(SGAR)까지 서로 다른 측정 물리에 맞춰 세분화된 점, (2) VLA/world-action model 실행 스택이 온디바이스 효율(TuringPAI·LoopedWAM·LAQ·TCR)과 공격 내성(DMT-Attack) 양쪽에서 같은 LIBERO/RoboTwin 벤치마크를 공유하며 묶인 점, (3) 원격탐사·태양광 예측·시계열·흉부 CT 네 개 서로 다른 도메인에서 독립적으로 표준 평가 관행의 허점을 지적한 점, (4) diffusion/flow 생성의 추론 가속이 캐싱·스케줄링/검증기 세 갈래로 분화되며 캐싱이 특정 영역(글자)에서 조용히 정보를 왜곡한다는 진단이 나온 점이다. 계산광학 핵심 ROI(Fourier Ptychography/Lensless/Phase Imaging/Meta-Optics/Light-Field, 합산 10편)는 오늘도 신호가 얇아(실질 신호 4편) 도메인 Watch Lens에서 별도로 다뤘다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 213,
+      "cs.CV": 213,
+      "cs.AI": 252,
+      "eess.IV": 15,
+      "eess.SP": 30
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 364
+  },
+  "totals": {
+    "total_scanned": 966,
+    "selected": 251
+  },
+  "classified": {
+    "total_scanned": 966,
+    "selected": 251,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 2,
+      "Lensless/Coded Imaging": 2,
+      "Phase Imaging/Holography": 5,
+      "Meta-Optics/Diffractive": 1,
+      "Light-Field/Novel Sensors": 0,
+      "Tomography/3D Imaging": 39,
+      "Virtual Staining/Pathology": 38,
+      "Reconstruction/Inverse Problems": 20,
+      "Deep Learning Methods": 144
+    }
+  },
+  "daily_thesis": "오늘은 3D 재구성이 단일광자 라이다·cryo-EM·대규모 멀티뷰까지 서로 다른 측정 물리에 맞춰 표현을 다시 설계하는 흐름이 뚜렷해진 날이면서, 동시에 VLA/world-action model 배포가 온디바이스 효율과 공격 내성을 함께 묻는 단계로 들어섰고, 원격탐사·태양광·시계열·흉부 CT 네 분야가 약속 없이 같은 날 \"표준 평가가 성능을 부풀린다\"는 경고를 내놓은 날입니다."
+}

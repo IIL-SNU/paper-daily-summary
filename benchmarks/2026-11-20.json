@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-20",
+  "results": [
+    {
+      "benchmark": "실측 room-scale 단일광자 라이다 캡처, 1% 광자 (TransientNeRF 대비)",
+      "metric": "Mean object depth error",
+      "value": 1.0,
+      "value_str": "3개 뷰·100배 적은 광자로도 평균 깊이 오차가 TransientNeRF 전체 광자 사용 대비 1/2.8~1/7.7",
+      "paper": "https://arxiv.org/abs/2611.26321",
+      "paper_title": "FirstCross: Convex Single-Photon 3D Reconstruction from Sparse Views"
+    },
+    {
+      "benchmark": "CryoBench 이형 cryo-EM 복원 벤치마크 (기존 신경망 방법 대비)",
+      "metric": "Reconstruction accuracy / training time",
+      "value": 20.0,
+      "value_str": "조성·형태 이형성 모두 SOTA 정확도, 학습 시간 12.8~28.0배 단축",
+      "paper": "https://arxiv.org/abs/2611.26128",
+      "paper_title": "CryoGaussian: Heterogeneous Cryo-EM Reconstruction Made Explicit with Gaussian Splatting"
+    },
+    {
+      "benchmark": "969장 다기관 H&E WSI, Barrett's 식도 이형성 등급 (held-out n=130)",
+      "metric": "Macro-averaged AUC / sensitivity / specificity",
+      "value": 0.96,
+      "value_str": "macro-AUC 0.96(95% CI 0.93-0.98), 민감도 98%, 특이도 81%, 염색 정규화 없이 4개 기관 일관 성능",
+      "paper": "https://arxiv.org/abs/2611.26562",
+      "paper_title": "Multi-institutional grading of Barrett's esophagus dysplasia without stain normalization using a pathology foundation model and multiple instance learning"
+    },
+    {
+      "benchmark": "LIBERO 4개 스위트 평균 (로봇 조작 성공률)",
+      "metric": "Success rate",
+      "value": 96.8,
+      "value_str": "0.65B 공유 비전-언어 백본으로 LIBERO 평균 96.8%, Orin-X 1장에서 12Hz 경로 생성",
+      "paper": "https://arxiv.org/abs/2611.25474",
+      "paper_title": "TuringPAI: A Foundation for On-Device Physical AI"
+    },
+    {
+      "benchmark": "FLUX.1-dev/Qwen-Image, DrawBench (TaylorSeer 대비, 20-step)",
+      "metric": "LPIPS / denoising speedup",
+      "value": 2.86,
+      "value_str": "LPIPS 0.563→0.429, 2.86배 가속(DiT-XL/2 FID 16.39→10.37)",
+      "paper": "https://arxiv.org/abs/2611.25296",
+      "paper_title": "CalibCache: Cache-to-Full Feature Dynamics Calibration for Diffusion Transformers"
+    }
+  ]
+}

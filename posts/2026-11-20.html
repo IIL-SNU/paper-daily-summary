@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-11-20</title>
+<style>
+
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+
+<a class=home href="../index.html">← 홈</a>
+
+<h1>Imaging Intelligence Daily Briefing — 2026-11-20 (금요일)</h1>
+
+<div class=meta>
+  <div>📅 발행일: 2026-11-20 (금요일) · Daily mode (source_mode=new)</div>
+  <div>📚 소스: Date Source Contract 점검 결과 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 전부 /new listing이 "Friday, 20 November 2026"을 가리켜(post_date=listing_date) arXiv+저널 완성본으로 발행합니다.</div>
+  <div>🔢 arXiv(new+cross, replacements 없음 확인): cs.LG 213 · cs.CV 213 · cs.AI 252 · eess.IV 15 · eess.SP 30 (합계 723편)</div>
+  <div>🔢 저널: Crossref/OpenAlex 364편 수집(Crossref 361 + OpenAlex 3) · arXiv+저널 합산 스캔 966건 · ROI 배정 251건 (26.0%)</div>
+</div>
+
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘은 <strong>3D 재구성이 단일광자 라이다·cryo-EM(저온전자현미경)·대규모 멀티뷰 카메라까지 서로 다른 측정 물리에 맞춰 표현을 다시 설계하는 흐름이 뚜렷해진 날</strong>이면서, 동시에 <strong>VLA/world-action model 배포가 온디바이스 효율과 공격 내성을 함께 묻는 단계로 들어선 날</strong>입니다. Tomography/3D Imaging 버킷(39편) 안에서 FirstCross(단일광자 라이다를 볼록 최적화로 되돌림)와 CryoGaussian(Gaussian splatting을 cryo-EM 물리에 맞게 재설계)이 같은 날 나왔고, SGAR까지 더하면 "신경망을 범용 블랙박스로 쓰기"보다 "각 센서의 물리를 모델에 직접 새기기"로 되돌아가는 신호가 세 편으로 모였습니다. 로봇 쪽에서는 TuringPAI·LoopedWAM·LAQ·TCR 네 편이 같은 LIBERO/RoboTwin 벤치마크에서 온디바이스 효율을 다퉜고, DMT-Attack이 그 반대편에서 눈에 띄지 않는 자연스러운 텍스처만으로 폐루프 VLA 정책을 57.9% 확률로 흔들 수 있음을 보여 효율 경쟁에 보안이라는 숙제를 끼얹었습니다. 또 하나 눈에 띄는 건 <strong>원격탐사·태양광 예측·시계열·흉부 CT라는 네 개의 전혀 무관한 분야가 약속 없이 같은 날 "표준 평가가 성능을 부풀린다"는 경고를 냈다는 점</strong>이고, diffusion/flow 추론 가속 쪽에서는 캐싱이 전체 품질 점수에는 안 보이지만 글자처럼 특정 영역을 조용히 왜곡한다는 진단(GuideCache)이 나와 가속 연구가 한 단계 더 세밀해졌습니다. 반대로 랩 핵심 ROI(Fourier Ptychography·Lensless·Phase Imaging·Meta-Optics·Light-Field, 합산 10편)는 오늘도 신호가 얇아 실질 신호는 4편에 그쳤습니다.
+</blockquote>
+
+<h2>🔭 주간 동향</h2>
+<p>오늘 2026-11-20 확인 기준 5개 카테고리 모두 /new listing이 "Friday, 20 November 2026"으로 post_date와 일치해 arXiv+저널 완성본으로 발행합니다(arXiv new+cross 합계 723편, replacements 없음). 여기에 저널 364편(Crossref 361편, OpenAlex 보충 3편)을 더해 classify.py로 합쳐 스캔한 결과(합산 966건) 251건(26.0%)이 9개 ROI 버킷에 배정됐습니다. 버킷별 논문 목록을 다시 읽어본 결과 오늘 가장 눈에 띄는 변화는 Tomography/3D Imaging(39편) 안에서 일어났습니다 — FirstCross와 CryoGaussian이 같은 날 각각 라이다 센서와 전자현미경이라는 완전히 다른 측정 장비의 물리를 복원 모델에 직접 반영해, 어제 보고서가 짚었던 "Gaussian 표현이 RGB를 넘어 물리 측정 모델로 이식되는 흐름"이 이틀 연속 다른 형태로 이어졌습니다. 또 다른 축은 Deep Learning Methods(144편, catch-all) 안에서 VLA/world-action model 다섯 편이 온디바이스 효율과 공격이라는 양면으로 LIBERO/RoboTwin 벤치마크를 공유했고, diffusion/flow 추론 가속 네 편이 캐싱·스케줄링/검증기로 갈라진 점입니다. Virtual Staining/Pathology(38편)와 Reconstruction/Inverse Problems(20편)는 여전히 staining·reconstruction 단어만 겹치는 무관 논문이 다수지만, 그 안에서도 Barrett's 식도 이형성 등급(다기관 검증)·C-LiTE(경량 병리 foundation model) 같은 랩 ROI 신호를 건질 수 있었습니다. 계산광학 핵심 ROI 5개 버킷(합산 10편)은 SAAS-FPM 보정 논문과 achromatic 메타표면 논문 등 4편만 실질 신호였고, 나머지는 SAR 레이더·순수 수학 증명·교육공학 연구처럼 키워드만 겹치는 무관 논문이었습니다.</p>
+
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(11/19)는 랩 핵심 ROI인 ptychography 복원에서 처음으로 불확실도 정량화·메모리 스케일링 신호가 나왔고, Gaussian splatting이 수중광학·편광·전자단층·분광천문학 등 여섯 개 물리 도메인으로 번진 날이었으며, 의료영상 평가축 전환(정확도→근거 기반성)과 virtual staining의 분자 예측 확장도 함께 포착됐습니다. 오늘은 ptychography 쪽의 실질 신호가 다시 사라졌지만(Fourier Ptychography/Microscopy 2편 중 실질 신호는 SAAS-FPM 보정 논문 1편뿐), Gaussian splatting 확장 흐름은 꺼지지 않고 오히려 더 멀리 — RGB도 아니고 어제의 수중/편광/천문학도 아닌 cryo-EM 구조생물학(CryoGaussian)과 단일광자 라이다(FirstCross, 가우시안은 아니지만 같은 "물리를 직접 새긴다"는 설계 철학)로 — 번졌습니다. 어제 가장 두드러존던 "의료영상 평가축 전환"은 오늘 "원격탐사·태양광·시계열·흉부 CT의 표준 평가 관행 재검증"이라는 훨씬 넓은 범위로 확장돼, 하루 사이에 "정확도 숫자를 믿을 수 있는가"라는 질문이 의료영상이라는 한 도메인을 넘어 거의 모든 ML 응용 분야로 퍼진 모습입니다. 완전히 새로 등장한 축은 VLA/world-action model의 온디바이스 효율+공격 내성 클러스터로, 어제는 보이지 않았던 로봇 배포 단계의 양면(효율화 vs 보안)이 오늘 다섯 편으로 한꺼번에 나타났습니다.</p>
+
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>3D 재구성이 단일광자 라이다·cryo-EM·대규모 멀티뷰까지 각 분야의 측정 물리에 맞춰 표현을 다시 설계</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.26321" target=_blank>FirstCross: Convex Single-Photon 3D Reconstruction from Sparse Views</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.26128" target=_blank>CryoGaussian: Heterogeneous Cryo-EM Reconstruction Made Explicit with Gaussian Splatting</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.26493" target=_blank>SGAR: Feed-Forward 3D Reconstruction via Sparse Geometry-Guided Attention</a> <span class="pill b">CV</span>
+  </td>
+  <td>어제 보고서에서 본 "가우시안 표현이 RGB 렌더링을 넘어 물리 측정 모델로 이식"되는 흐름이 오늘은 다른 각도에서 두 번 더 확인됐습니다. CryoGaussian은 저온전자현미경(cryo-EM, 시료를 얼린 채로 전자빔을 쏴서 단백질 같은 생체 분자의 3차원 구조를 복원하는 기법) 복원에 Gaussian splatting(장면을 수많은 작은 가우시안 입자로 표현해 렌더링하는 기법)을 적용했는데, RGB 카메라용 렌더러를 그대로 가져다 쓴 게 아니라 전자현미경이 실제로 측정하는 물리량(대조도 전달 함수가 변조된 직교 투영 선적분)에 맞춰 렌더러 자체를 다시 설계했습니다. 그 결과 전체 입자의 1.3%만 차지하는 희귀한 리보솜 상태와 스플라이세오좀의 연속적인 움직임까지 구분해 포착했고, 학습 시간도 12.8~28배 줄였습니다. FirstCross는 다른 쪽에서 신경망 기반 3D 복원을 "볼록 최적화 문제"로 되돌렸습니다 — 단일광자 라이다(빛 알갱이 하나하나의 도착 시간을 기록해 적은 측정으로도 3D를 복원하는 센서)에서 기존 신경망 방법(Transientangelo)은 장면 하나당 한 시간 넘게 걸리는 비볼록 최적화가 필요했는데, FirstCross는 "광자가 물체 표면을 처음 통과하는 지점"이라는 물리적 사실 하나로 문제를 볼록하게 만들어 같은 정확도를 1분 만에, 심지어 광자를 100배 적게 쓰고도 더 낮은 깊이 오차로 복원했습니다. SGAR은 수백~수천 장의 뷰를 한 번에 쓰는 feed-forward 3D 복원에서, 모든 뷰 조각을 서로 비교하는 기존의 비싼 전역 attention 대신 "3D 구조는 결국 2D에서 기하학적으로 매칭되는 영역에서 나온다"는 구조-기반-움직임(SfM)의 오래된 직관을 다시 불러와 1,000개 뷰에서 12배 빠른 속도로 더 완전한 기하를 복원했습니다. 세 편을 합치면, 3D 재구성 연구가 신경망을 범용 블랙박스로 던져 넣기보다 각 센서·측정 방식이 가진 고유한 물리(광자 통계, 대조도 전달 함수, 에피폴라 기하)를 명시적으로 모델에 새겨 넣는 쪽으로 다시 움직이고 있다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 세 연구팀이 완전히 다른 센싱 모달리티(단일광자 라이다, cryo-EM, 멀티뷰 카메라)에서 독립적으로 "물리를 직접 모델에 새긴다"는 같은 설계 철학을 적용했고, 셋 다 기존 SOTA 대비 구체적 수치로 우위를 입증했습니다.</small></td>
+  <td>CryoGaussian의 "대조도 전달 함수를 가우시안 렌더러에 직접 반영"하는 설계와 FirstCross의 "광자 첫 통과 지점" 볼록 정식화를 랩의 optical diffraction tomography/holography forward model에 이식할 수 있는지 검토하고, 기존 비볼록 신경망 복원 대비 수렴 시간·저선량 안정성을 랩 보유 데이터셋으로 1주 내 비교한다.</td>
+</tr>
+<tr>
+  <td><strong>VLA/World-Action Model 실행 스택이 온디바이스 효율과 공격 내성을 함께 다룸</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.25474" target=_blank>TuringPAI: A Foundation for On-Device Physical AI</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.25595" target=_blank>LoopedWAM: Looped World Action Models for Elastic Inference</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.25614" target=_blank>Don't Lose the Future: Latent-Aware 4-Bit Quantization of World Action Models</a> <span class="pill b">AI</span><br>
+    <a href="https://arxiv.org/abs/2611.25695" target=_blank>DMT-Attack: Diffusion-Prior Texture Search for Closed-Loop VLA Policies</a> <span class="pill b">AI</span>
+  </td>
+  <td>VLA(vision-language-action, 영상·언어를 보고 바로 로봇 행동을 만들어내는 모델)/WAM(world-action model, 영상이 어떻게 변할지 예측하면서 그 예측에 맞춰 행동까지 만드는 모델) 쪽에서 오늘 다섯 편이 동시에 나왔는데, 네 편은 "로봇 위 저전력 칩에서 실제로 돌아가게 만들기"를, 한 편은 "그렇게 배포된 모델을 공격하면 어떻게 되는지"를 다뤄 같은 LIBERO/RoboTwin 벤치마크 가족을 공유합니다. TuringPAI는 0.65B(6.5억 파라미터)짜리 비전-언어 백본 하나로 자율주행과 로봇 조작을 동시에 지원하면서 LIBERO 4개 스위트 평균 96.8% 성공률을 내고, 차량용 Orin-X 칩 한 장에서 초당 12프레임으로 경로를 생성합니다. LoopedWAM은 세계모델과 행동모델에 쓰는 30개 트랜스포머 층을 저장은 12개 블록만 하고 반복 재사용하는 방식으로 압축해, 기존 모델보다 GPU 메모리를 7.4배 줄이면서도 LIBERO 96.1%·RoboTwin 91.9%를 유지합니다. LAQ(4비트 양자화 논문)는 지금까지의 양자화 방법들이 "지금 당장 나오는 행동"만 보호해 그 행동이 기반한 "예측된 미래"가 조용히 깨지는 문제를 지적하고, 미래 예측이 실제로 읽히는 지점까지 추적해 정밀도를 배분해 16비트 모델과 1.2%p 차이로 LIBERO-Plus 76.4~83.3%를 유지하면서 모델을 3.8배 압축했습니다. 반대쪽에서 DMT-Attack은 바로 이런 폐루프 VLA 정책이 눈에 띄지 않는 자연스러운 질감 패턴(예: 식탁보 무늬)만으로도 57.9%의 공격 성공률로 흔들릴 수 있다는 걸 보여줘, 효율화 못지않게 보안도 같이 챙겨야 한다는 숙제를 던집니다. 다섯 편을 합치면, VLA/WAM 연구가 "클라우드 GPU에서 얼마나 잘 되는가"를 넘어 "실제 로봇 위 저전력 칩에서 안전하고 효율적으로 돌아가는가"를 묻는 배포 단계로 확실히 들어섰다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 연구팀들이 같은 날 같은 LIBERO/RoboTwin 벤치마크 가족에서 효율화(메모리·양자화·병합)와 공격이라는 양방향 신호를 구체적 수치로 제시했습니다.</small></td>
+  <td>LAQ의 "미래가 실제로 읽히는 지점을 추적해 정밀도를 배분"하는 아이디어를 랩이 쓰는 저지연 영상 복원 파이프라인의 양자화 경량화에 적용할 수 있는지 검토하고, DMT-Attack 스타일의 자연스러운 텍스처 교란이 랩의 영상 기반 로봇/제어 파이프라인에도 통하는지 LIBERO 환경에서 1주 내 재현해본다.</td>
+</tr>
+<tr>
+  <td><strong>Diffusion/flow 생성의 추론 가속이 캐싱·스케줄링/검증기 세 갈래로 분화</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.25296" target=_blank>CalibCache: Cache-to-Full Feature Dynamics Calibration for Diffusion Transformers</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.25382" target=_blank>Text Lives in the Guidance (GuideCache)</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.25689" target=_blank>D3-Cache: Accelerating Diffusion Models with Dynamic Mode Decomposition</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.25530" target=_blank>Keystone: Judging Previews at Key Steps for Test-Time Search</a> <span class="pill b">AI</span>
+  </td>
+  <td>diffusion/flow 모델(노이즈에서 시작해 여러 단계를 거쳐 이미지를 만들어내는 생성모델)은 단계마다 전체 신경망을 다시 돌려야 해서 느린데, 오늘은 이 문제를 줄이는 서로 다른 접근이 한꺼번에 나왔습니다. CalibCache는 캐시가 예측한 결과와 실제 전체 계산 결과 사이의 체계적인 오차를 미리 한 번 재서 보정해두는 방식으로 FLUX.1-dev의 LPIPS(이미지가 원본과 얼마나 다른지 재는 지표, 낮을수록 좋음)를 0.563에서 0.429로 낮추면서 2.86배 빠르게 만들었습니다. GuideCache(Text Lives in the Guidance)는 더 구체적인 문제를 짚었는데, 글자를 그리는 이미지 생성 모델을 캐싱으로 가속하면 ImageReward 같은 전체 이미지 품질 점수는 거의 그대로인데 실제로 그려지는 글자 내용이 조용히 틀려진다는 걸 발견했습니다(단어 정확도 62%→46%). 원인을 추적해보니 classifier-free guidance(조건을 준 예측과 안 준 예측의 차이로 생성 방향을 정하는 기법)의 오차가 글자 부분에서 특히 크게 번진다는 걸 밝혀내, 그 부분만 다시 계산하는 방식으로 글자 정확도를 거의 원래대로 복원했습니다. D3-Cache는 동적 모드 분해(시계열 데이터에서 반복되는 패턴을 찾아내는 수학적 기법)를 가져와 몇 단계의 실제 계산만 보고 다음에 필요한 값을 예측하면서, 예측이 틀리기 시작하면 바로 다시 실제 계산으로 돌아가는 방식으로 4개 모델에서 모델별 보정 없이 2.6~3.8배 가속했습니다. Keystone은 test-time search(여러 후보를 생성해 가장 좋은 걸 고르는 방식)에서 쓰는 채점 모델(reward model)이 사실 완성된 이미지용으로 만들어져서 덜 완성된 중간 미리보기는 잘 못 읽는다는 점을 지적하고, 프롬프트를 "물체가 몇 개인지", "위치가 어디인지" 같은 구체적 질문으로 바꿔 멀티모달 모델에게 중간 미리보기째로 직접 묻는 방식으로 best-of-8보다 절반도 안 되는 계산으로 더 나은 결과를 냈습니다. 네 편을 합치면, diffusion/flow 가속 연구가 "일단 빠르게 만들고 품질은 평균적으로 유지"에서 "어디서 정보가 새는지(글자, 중간 미리보기)를 정확히 짚어서 그 부분만 고친다"는 훨씬 더 세밀한 단계로 들어섰다는 뜻입니다.</td>
+  <td>High<br><small>서로 다른 네 연구팀이 캐싱·검증기라는 다른 메커니즘으로 접근했지만 모두 FLUX/Qwen-Image/Z-Image/DiT 계열의 같은 diffusion transformer 벤치마크에서 구체적 수치 우위를 보였습니다.</small></td>
+  <td>GuideCache의 "classifier-free guidance 오차가 특정 영역(글자)에 집중된다"는 진단 방식을 랩이 쓰는 생성형 복원/인페인팅 모델의 캐싱 가속에 적용해, 위상·구조가 중요한 영역에서 캐싱이 정보를 조용히 왜곡하는지 1주 내 점검한다.</td>
+</tr>
+<tr>
+  <td><strong>표준 평가 관행에 대한 재검증이 네 개 서로 다른 도메인에서 동시에 나옴</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.25902" target=_blank>Does It Depend on the Split?</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.25894" target=_blank>Explainable AI for Solar PV Power Forecasting</a> <span class="pill b">AI</span><br>
+    <a href="https://arxiv.org/abs/2611.25388" target=_blank>Falsifiable Compositional Reasoning in Time Series Forecasting</a> <span class="pill b">AI</span><br>
+    <a href="https://doi.org/10.71129/ijaci.v3i1.pp53-67" target=_blank>Beyond Single-Split Performance (SARS-CoV-2 CT)</a> <span class=pill>JNL</span>
+  </td>
+  <td>오늘은 전혀 관련 없어 보이는 네 분야 — 위성영상 수종 분류, 태양광 발전량 예측, 시계열 예측, 흉부 CT 기반 코로나19 분류 — 에서 독립적으로 "표준 평가 방법이 실제 일반화 성능을 부풀린다"는 같은 결론에 도달한 논문이 동시에 나왔습니다. Does It Depend on the Split?은 위성영상에서 나무 수종 20종을 분류할 때, 공식 테스트 분할의 패치 중 28.8%가 학습/검증 패치와 공간적으로 겹쳐 있어서 단순히 가장 가까운 패치의 라벨을 복사하기만 해도 83.6%가 맞는다는 걸 보여주고, 겹치지 않게 공간 분할을 다시 하면 "고정된 특징만 쓰는 모델"과 "끝까지 미세조정한 모델"의 차이가 사실상 사라진다는 걸 보였습니다(매크로 F1 0.764 대 0.685 → 0.648 대 0.640). Explainable AI for Solar PV Power Forecasting는 무작위로 섞은 교차검증이 실제보다 약간 낙관적인 결과를 준다는 걸 확인했고, 더 중요하게는 SHAP(어떤 입력이 예측에 얼마나 기여했는지 보여주는 설명 기법) 순위가 서로 연관된 입력 변수를 하나 빼기만 해도 바뀐다는 걸 보여줘, 그 설명이 발전소의 실제 물리가 아니라 그 특정 모델의 습관을 보여주는 것일 수 있다고 경고합니다. Falsifiable Compositional Reasoning in Time Series Forecasting는 한 발 더 나아가, "과거 데이터로 검증했을 때 1등"인 모델이나 아키텍처 탐색을 더 넓게 할수록 오히려 상황이 바뀌는 구간에서 더 잘 틀린다는 걸 이론과 실험으로 보이고, 검증을 "사후에 제일 잘 맞는 걸 고르는 경쟁"이 아니라 "미리 정해둔 가설을 반증 가능한 방식으로 시험하는 것"으로 바꿔야 한다고 제안합니다. Beyond Single-Split Performance는 코로나19 흉부 CT 분류에서 흔히 보고되는 99% 정확도가 같은 환자의 슬라이스가 학습/테스트에 함께 섞여 있는 단일 분할에서 나온 숫자라는 걸 지적하고, 환자 단위로 분리하면 F1이 6~8점 떨어지고, 아예 다른 병원 데이터로 검증하면 성능이 다수결 베이스라인 수준까지 떨어진다는 걸 보였습니다. 네 편을 합치면, 분야를 막론하고 표준 분할·무작위 교차검증·과거 데이터 백테스트로 1등을 가리는 지금까지의 평가 방식이 실제로는 공간적·환자 단위·상황 변화라는 숨은 상관관계를 재는 것일 수 있다는 경고가 오늘 가장 넓게 퍼진 메시지입니다.</td>
+  <td>High<br><small>서로 무관한 네 분야에서 독립적으로 같은 메타적 결론(표준 평가가 과대평가)에 도달했고, 모두 구체적 수치(83.6% 라벨 복사 정확도, SHAP 순위 변화, 6~8점 F1 하락, 다수결 수준 붕괴)로 뒷받침합니다.</small></td>
+  <td>랩이 쓰는 영상 복원/분류 모델의 학습-테스트 분할이 같은 촬영 세션·같은 시료·인접 패치끼리 겹치지 않는지 Does It Depend on the Split?의 공간 분할 기준으로 1주 내 재검사하고, Beyond Single-Split Performance의 "환자/시료 단위 분리 + 외부 코호트 zero-shot" 프로토콜을 랩의 주요 벤치마크 하나에 시범 적용해 보고된 정확도가 유지되는지 확인한다.</td>
+</tr>
+<tr>
+  <td><strong>생성모델 post-training이 "실제로 무엇을 바꾸는지"에 대한 회의적 재검증</strong></td>
+  <td>
+    <a href="https://arxiv.org/abs/2611.26627" target=_blank>RL Post-Training in Diffusion Transformers Is Activation Steering</a> <span class="pill b">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.25896" target=_blank>The Price of an Explanation</a> <span class="pill b">AI</span>
+  </td>
+  <td>두 편 모두 "생성형 모델을 post-training(사전학습 이후 추가로 더 학습시키는 단계)으로 개선했다"는 흔한 주장을 뜯어봤을 때 생각보다 단순한 메커니즘이 숨어 있다는 걸 보여줍니다. RL Post-Training Is Activation Steering은 diffusion transformer(이미지를 여러 단계에 걸쳐 생성하는 트랜스포머 기반 생성모델)를 강화학습(RL)으로 추가 학습시키면 글자를 더 정확히 그리거나 여러 물체를 더 잘 구성하게 되는데, 이게 프롬프트마다 다른 복잡한 계산을 새로 배운 게 아니라 프롬프트와 무관하게 항상 같은 고정된 방향으로 중간 표현을 밀어주는 것만으로도 설명될 수 있다는 걸 보여줍니다. 실제로 LoRA(추가 학습 파라미터를 적게 쓰는 미세조정 기법)보다 65배 적은 파라미터를 가진 고정 벡터를 모델 블록 출력에 더하기만 해도, 6개의 이미지 생성 모델에서 RL이 얻은 성능 향상의 90.0~96.3%, 2개의 영상 생성 모델에서는 89.8~111.9%를 그대로 재현했습니다. Price of an Explanation은 다른 각도에서, 큰 언어모델에게 정답만 내놓게 하는 대신 "검증 가능한 프로그램(실행하면 답을 확인할 수 있는 코드)"을 요구하면 ARC-AGI-2(120개 과제로 구성된 추상 추론 벤치마크)에서 정답률이 93개에서 68개(77%→57%)로 떨어진다는 걸 보였는데, 더 흥미로운 건 정답만 요구했을 때만 풀렸던 과제 28개 중 27개는 프로그램 방식에서도 학습 예시를 전부 맞히는 프로그램을 찾아냈는데도 정작 테스트에서는 틀렸다는 점입니다 — 즉 병목은 "설명(프로그램)을 찾는 것"이 아니라 "그 설명이 진짜로 일반화되는지"에 있었습니다. 두 편을 합치면, 생성모델을 더 똑똑하게 만드는 여러 사후 학습·검증 기법들이 겉보기엔 복잡해 보여도 실제로는 "이미 할 수 있는 계산을 어느 방향으로 밀어줄 뿐"이거나 "설명을 찾아내는 능력과 그 설명이 진짜로 맞는지는 서로 다른 문제"라는 훨씬 단순하고 비관적인 그림을 드러내고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>두 편 모두 같은 날 RL/post-training을 회의적으로 재검증했다는 공통점은 있지만, 하나는 diffusion 이미지/영상 생성, 다른 하나는 LLM 추론이라는 전혀 다른 과제를 다뤄 아직 하나의 통일된 메커니즘으로 보기는 이릅니다.</small></td>
+  <td>랩이 RL이나 선호도 학습으로 fine-tuning한 생성형 복원 모델이 있다면, Activation Steering 논문의 "고정 벡터로 대체했을 때 성능이 얼마나 재현되는지" 테스트를 1주 내 적용해 실제로 입력-조건부 계산을 배운 것인지 단순 방향 이동인지 확인한다.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+  <ul>
+    <li>Fourier Ptychography/Microscopy: 2편 배정, 실신호 1편(SAAS-FPM, LED 위치 보정 프레임워크로 계산 시간 14.2%·탐색 오차 51.1% 감소) — 나머지 1편(Cloude/van Zyl SAR 편광 분해)은 "Fourier"라는 단어만 겹치는 레이더 논문으로 완전 무관합니다.</li>
+    <li>Lensless/Coded Imaging: 2편 배정, 실신호 추정 1편(코드화 조리개 스냅샷 분광 영상 리뷰, JNL, abstract 없이 title 기준) — 나머지 1편(Real Cameras are Radiometric)은 방사측정 카메라 모델 논문으로 lensless/coded-aperture와는 거리가 있어 Watch Lens에만 남깁니다.</li>
+    <li>Phase Imaging/Holography: 5편 배정, 실신호 추정 2편(정량 위상 영상 Optics Letters 논문, Gabor holography 기반 3D 검사 논문 — 둘 다 abstract 없이 title 기준) — 나머지 3편은 비디오 인코더(MV-JEPA), "holographic"이라는 정보이론적 비유만 빌린 순수 수학(유한체 위의 분수 푸리에 변환) 증명, 교육공학(EFL 교실 홀로그램 피드백)으로 "holographic/holography" 단어만 겹치는 완전 무관 논문입니다.</li>
+    <li>Meta-Optics/Diffractive: 1편 배정, 실신호 1편(achromatic 계산 영상용 광대역 메타표면, 850-1300nm에서 평균 회절효율 70.0%) — 오늘은 랩 핵심 ROI 중 유일하게 1편 전부가 실질 신호인 버킷입니다.</li>
+    <li>Light-Field/Novel Sensors: 0편 배정 — 오늘은 완전히 비어 있습니다.</li>
+    <li>Tomography/3D Imaging: 39편 배정, 실신호 약 3편(FirstCross·CryoGaussian·SGAR, 3D 재구성 클러스터 전체) — 나머지 약 36편은 치과 CBCT 증례, 관상동맥 CTA, 법의학 PMI 추정 등 CT/MRI/전자현미경을 "사용"하지만 영상 재구성 방법론에 기여하지 않는 순수 임상·법의학 증례입니다.</li>
+    <li>Virtual Staining/Pathology: 38편 배정, 실신호 2편(Barrett's 식도 이형성 등급, C-LiTE 경량 세포 foundation model) — 나머지 약 36편은 수의학 정액 염색 프로토콜, 치과 재료 미백 연구 등 "staining"/"virtual" 단어만 겹치는 완전 무관 논문입니다(가장 많이 인용된 논문 하나는 소 정액 염색법 수의학 논문으로, 인용수와 랩 ROI 관련성이 반비례하는 사례입니다).</li>
+    <li>Reconstruction/Inverse Problems: 20편 배정, 실신호 약 3편(MR elastography 물리 informed DL, DAWN 블라인드 디컨볼루션, diffusion-prior 역문제) — 나머지 약 17편은 WiFi 센싱, 전력망·소재 시뮬레이션 등 이미징과 무관한 일반 역문제 연구입니다.</li>
+    <li>Deep Learning Methods: 144편 배정, 실질 ROI 연계 신호는 오늘의 다섯 클러스터에 포함된 논문들(3D 재구성 1편 교차 포함, VLA/WAM 4편, diffusion 가속 4편, 평가 재검증 3편, post-training 재검증 2편) 외 대부분은 LLM 에이전트, 통신, 금융 모델 등 전산 광학 이미징과 직접 관련 없는 범용 ML입니다.</li>
+  </ul>
+</div>
+
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<p>오늘은 이 대비가 "방법이 거의 전부를 차지하고, 응용은 몇 안 되는 계산광학 코어 버킷에서만 짝을 이루는" 모양입니다. arXiv 쪽(cs.LG/cs.CV/cs.AI/eess.IV/eess.SP)에서는 "feature caching", "activation steering", "quantization", "sparse attention", "falsifiable"처럼 방법론 중심 키워드가 오늘 다섯 클러스터 전부를 채웠고, 저널(Crossref/OpenAlex) 쪽은 그 중 하나(표준 평가 재검증 클러스터의 COVID-CT 논문)에서만 짝이 되는 응용 신호를 보탰습니다. 계산광학 핵심 ROI에서는 반대로 저널 쪽이 더 많은 신호를 냈습니다 — SAAS-FPM(JNL, FPM 계산 보정), 정량 위상 영상 Optics Letters 논문(JNL), Gabor holography 3D 검사 논문(JNL), achromatic 메타표면 논문(OAX)이 그렇습니다. 공통 키워드는 "reconstruction"인데, arXiv의 reconstruction은 라이다·cryo-EM·멀티뷰 카메라 같은 범용 3D 복원을 가리키고, 저널의 reconstruction은(있다면) FPM·holography·메타표면처럼 특정 광학 장비의 계산 보정을 가리켜 같은 단어가 가리키는 대상 범위(scope)가 다릅니다. 즉 오늘은 "일반 ML 방법은 arXiv, 계산광학 하드웨어 응용은 저널"이라는 평소 분업이 유난히 또렷했던 날로, VLA/WAM·diffusion 가속·평가 재검증 같은 오늘의 주요 클러스터는 사실상 전부 arXiv 발 논문이었습니다.</p>
+
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 3D 재구성이 라이다·cryo-EM·대규모 멀티뷰까지 각 센서의 물리에 맞춰 표현을 재설계</h3>
+  <p>FirstCross는 단일광자 라이다 복원을 볼록 최적화로 되돌려 100배 적은 광자로도 Transientangelo를 능가했고, CryoGaussian은 Gaussian splatting을 cryo-EM의 대조도 전달 함수에 맞춰 재설계해 CryoBench SOTA와 12.8~28배 학습 가속을 동시에 얻었습니다.</p>
+  <p class=conf-note>Confidence: High</p>
+</div>
+
+<div class=ins>
+  <h3>2. VLA/World-Action Model 배포가 온디바이스 효율과 공격 내성을 함께 요구하는 단계로</h3>
+  <p>TuringPAI·LoopedWAM·LAQ·TCR이 같은 LIBERO/RoboTwin 벤치마크에서 메모리·양자화·병합으로 로봇 위 저전력 칩 배포를 다퉜고, DMT-Attack은 바로 그 폐루프 정책이 자연스러운 텍스처 하나로 57.9% 확률로 흔들릴 수 있음을 보였습니다.</p>
+  <p class=conf-note>Confidence: High</p>
+</div>
+
+<div class=ins>
+  <h3>3. Diffusion/flow 추론 가속이 "어디서 정보가 새는지"를 짚는 세밀한 단계로</h3>
+  <p>CalibCache·D3-Cache는 캐싱 자체의 가속폭을 키웠고, GuideCache는 캐싱이 전체 품질 점수엔 안 보이지만 글자를 조용히 틀리게 한다는 걸 classifier-free guidance 오차 분해로 밝혀냈으며, Keystone은 중간 미리보기를 제대로 읽는 검증기로 test-time search 비용을 절반 이하로 줄였습니다.</p>
+  <p class=conf-note>Confidence: High</p>
+</div>
+
+<div class=ins>
+  <h3>4. 표준 평가 관행이 네 개 무관한 도메인에서 동시에 의심받음</h3>
+  <p>위성영상 수종 분류(공간 분할 누락으로 83.6% 라벨 복사 정확도), 태양광 예측(SHAP 순위가 모델 특성일 뿐), 시계열 예측(백테스트가 상황 변화에 취약), 흉부 CT 코로나19 분류(환자 단위 분리 시 다수결 수준으로 붕괴)가 같은 날 같은 메시지를 냈습니다.</p>
+  <p class=conf-note>Confidence: High</p>
+</div>
+
+<div class=ins>
+  <h3>5. 생성모델 post-training이 실제로 무엇을 바꾸는지에 대한 회의적 재검증</h3>
+  <p>RL Post-Training Is Activation Steering은 RL이 얻은 성능 향상의 90% 이상이 프롬프트 무관 고정 벡터 하나로 재현된다는 걸 보였고, Price of an Explanation은 검증 가능한 설명을 요구하면 ARC-AGI-2 정답률이 77%→57%로 떨어지며 병목이 "설명의 일반화"에 있음을 보였습니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. CryoGaussian·FirstCross식 물리 반영 설계를 랩 optical diffraction tomography/holography 복원에 이식</h3>
+  <p>두 논문 모두 신경망을 범용 블랙박스로 쓰는 대신 센서가 실제로 측정하는 물리량(대조도 전달 함수, 광자 첫 통과 지점)을 모델에 직접 새겨 넣어 적은 측정·짧은 시간에도 안정적인 복원을 얻었는데, 랩의 비-RGB 측정(위상·홀로그램·단층촬영)에도 같은 설계 철학이 통하는지 확인할 가치가 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: CryoGaussian (arXiv 2611.26128), FirstCross (arXiv 2611.26321) — 둘 다 코드 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 optical diffraction tomography 또는 QPI(정량 위상 영상) held-out 데이터셋</li>
+    <li>비교축: 기존 비볼록 신경망 복원 대비 수렴 시간, 저선량/희소 측정 조건에서의 복원 안정성</li>
+    <li>실패해도 남는 결과: 랩 데이터에서 이득이 없더라도, 랩 측정 모델의 어떤 물리량이 "대조도 전달 함수"나 "광자 첫 통과 지점"에 대응되는지 정리한 매핑은 다음 forward model 설계에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. LAQ의 미래-인지 정밀도 배분을 랩 저지연 영상 복원 양자화에 적용</h3>
+  <p>LAQ는 모델을 4비트로 낮출 때 당장의 출력이 아니라 그 출력이 기반한 예측된 미래가 실제로 읽히는 지점을 추적해 정밀도를 배분하는데, 랩의 실시간 복원 파이프라인을 경량화할 때도 같은 원리로 어떤 중간 표현이 다음 단계에서 실제로 읽히는지 추적하면 품질 손실 없이 압축할 수 있는지 검증할 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: LAQ (arXiv 2611.25614) — 코드 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 실시간/저지연 영상 복원 파이프라인(시뮬레이션 + 실측)</li>
+    <li>비교축: 균일 4비트 양자화 대비 "읽히는 지점 기반" 정밀도 배분의 PSNR/SSIM 유지율, 압축률·속도 향상폭</li>
+    <li>실패해도 남는 결과: 이득이 없더라도, 랩 파이프라인의 어느 중간 표현이 가장 많이 "다시 읽히는지" 프로파일링한 결과는 다음 경량화 설계에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. GuideCache의 영역별 오차 진단을 랩 생성형 복원 모델의 캐싱 가속에 적용</h3>
+  <p>GuideCache는 diffusion 캐싱이 전체 품질 점수에는 안 보이지만 글자처럼 특정 영역에서 조용히 정보를 왜곡한다는 걸 classifier-free guidance 오차 분해로 짚어냈는데, 랩의 위상 복원이나 인페인팅 모델도 같은 분해로 캐싱이 구조/위상 정보가 중요한 영역을 조용히 틀리게 하는지 확인할 가치가 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Text Lives in the Guidance / GuideCache (arXiv 2611.25382) — 코드 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩이 캐싱 가속을 적용 중이거나 적용 예정인 생성형 복원/인페인팅 모델</li>
+    <li>비교축: 전체 품질 지표(PSNR/SSIM) 대비 위상·구조가 중요한 하위 영역에서의 오차, classifier-free guidance 오차의 공간 분포</li>
+    <li>실패해도 남는 결과: 랩 모델에서 같은 문제가 없더라도, 캐싱 오차의 공간 분포를 분석한 틀은 다음 가속 기법 검증의 표준 진단 도구로 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>D. Does It Depend on the Split?/Beyond Single-Split Performance의 분할 재검사를 랩 핵심 벤치마크에 적용</h3>
+  <p>두 논문 모두 공간적·환자 단위로 겹치지 않는 분할을 쓰면 보고된 성능 격차가 크게 줄거나 사라진다는 걸 보였는데, 랩이 자주 인용하는 벤치마크 성능도 같은 방식으로 재검사하면 실제 일반화 성능을 더 정확히 알 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: Does It Depend on the Split? (arXiv 2611.25902, 공개 코드/분할 명시), Beyond Single-Split Performance (DOI 10.71129/ijaci.v3i1.pp53-67)</li>
+    <li>공통 benchmark: 랩이 논문에서 가장 자주 인용하는 영상 복원/분류 벤치마크 1개</li>
+    <li>비교축: 기존 공식 분할 대비 공간적/시료 단위로 분리한 분할에서의 성능 격차, 최근접 이웃 라벨 복사 베이스라인과의 차이</li>
+    <li>실패해도 남는 결과: 격차가 없더라도, 랩 벤치마크의 분할 겹침 비율을 정량화한 결과는 다음 논문 제출 전 체크리스트로 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>E. Activation Steering 테스트를 랩의 RL/선호도 기반 fine-tuning 모델에 적용</h3>
+  <p>RL Post-Training Is Activation Steering은 RL로 얻은 성능 향상의 대부분이 프롬프트와 무관한 고정 벡터 하나로 재현된다는 걸 보였는데, 랩이 선호도 학습이나 RL로 fine-tuning한 생성형 모델이 있다면 같은 테스트로 그 학습이 실제로 입력-조건부 계산을 추가했는지 확인할 수 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문/코드: RL Post-Training in Diffusion Transformers Is Activation Steering (arXiv 2611.26627) — 코드 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩이 RL/선호도 학습으로 fine-tuning한 생성형 복원 모델(있는 경우)</li>
+    <li>비교축: 고정 steering vector로 대체했을 때 재현되는 성능 비율, 프롬프트/입력별 분산이 실제로 존재하는지</li>
+    <li>실패해도 남는 결과: 랩에 해당 모델이 없더라도, steering vector 추출·적용 파이프라인 자체는 다음 RL fine-tuning 실험의 진단 도구로 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Deep Learning Methods(144편, catch-all)를 제외한 버킷 중 최댓값인 Tomography/3D Imaging(39편) = 100%로 정규화. Deep Learning Methods는 100% 고정(catch-all, 실제 편수는 라벨에 표시). 0편 버킷(Light-Field/Novel Sensors)도 0% 막대로 표시합니다.</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:5.1%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:5.1%"></span></span><span class=n>2편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:12.8%"></span></span><span class=n>5편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:2.6%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>39편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:97.4%"></span></span><span class=n>38편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:51.3%"></span></span><span class=n>20편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>144편</span></div>
+
+<p><small>⚠️ 참고: 버킷별 실질 신호 비율은 위 🔬 도메인 Watch Lens 섹션을 참고하세요 — Virtual Staining/Pathology(38편 중 실질 신호 2편)와 Tomography/3D Imaging(39편 중 실질 신호 3편)는 막대가 가장 길어 보이지만 실제 밀도는 낮습니다. 반대로 Meta-Optics/Diffractive는 1편 전부가 실질 신호라 막대는 가장 짧은 축에 속해도 밀도는 오늘 가장 높은 버킷입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1117/1.jbo.31.11.116501" target=_blank>Robust position-misalignment calibration architecture with spectral decoupling for Fourier ptychographic microscopy (SAAS-FPM)</a></strong> [JNL]<br>
+  왜 주요: 랩 핵심 ROI(Fourier Ptychography/Microscopy)에서 오늘 유일한 실질 신호, LED 위치 보정의 계산 시간·탐색 오차를 동시에 줄임.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3724/ld-0000003" target=_blank>Coded aperture snapshot spectral imaging: A system-oriented review</a></strong> [JNL]<br>
+  왜 주요: Lensless/Coded Imaging에서 오늘 유일하게 제목이 직접 관련된 논문(CASSI 시스템 리뷰), abstract는 확보되지 않아 title 기준 판단.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/ol.615976" target=_blank>Spatial-frequency-extended quantitative phase imaging with complementary wavefront and oblique-illumination intensity measurements</a></strong> [JNL]<br>
+  왜 주요: Phase Imaging/Holography에서 제목상 가장 직접적인 QPI 방법론 논문(Optics Letters), abstract 미확보로 title 기준 판단.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/prj.606863" target=_blank>Metasurface with wideband uniform diffraction efficiency for achromatic computational imaging</a></strong> [OAX]<br>
+  왜 주요: Meta-Optics/Diffractive 1편 전체가 이 논문이며, 850-1300nm 대역에서 평균 회절효율 70.0%로 색수차 없는 계산 영상을 구현.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.26321" target=_blank>FirstCross: Convex Single-Photon 3D Reconstruction from Sparse Views</a></strong> [CV]<br>
+  왜 주요: 신경망 비볼록 최적화를 볼록 문제로 되돌려 100배 적은 광자로 기존 SOTA(Transientangelo)를 능가, 오늘 Tomography 버킷의 대표 신호.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.26128" target=_blank>CryoGaussian: Heterogeneous Cryo-EM Reconstruction Made Explicit with Gaussian Splatting</a></strong> [CV]<br>
+  왜 주요: Gaussian splatting을 cryo-EM 물리에 맞춰 재설계해 CryoBench SOTA와 학습 시간 12.8~28배 단축을 동시에 달성.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.26493" target=_blank>SGAR: Feed-Forward 3D Reconstruction via Sparse Geometry-Guided Attention</a></strong> [CV]<br>
+  왜 주요: 전역 attention을 기하학적 유사도 기반 희소 attention으로 대체해 1,000뷰에서 12배 가속.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.26562" target=_blank>Multi-institutional grading of Barrett's esophagus dysplasia without stain normalization</a></strong> [CV]<br>
+  왜 주요: 4개 기관·969장 WSI에서 염색 정규화 없이 macro-AUC 0.96을 달성, 오늘 Virtual Staining/Pathology의 대표 신호.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.26316" target=_blank>C-LiTE: A Lightweight Foundation Model for Cellular feature learning in Histopathology</a></strong> [CV]<br>
+  왜 주요: 22M 파라미터로 30배 큰 CytoFormer에 근접하는 성능, 6천만 장 세포 단위 데이터셋 공개.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.26111" target=_blank>Physics-Informed Deep Learning for Shear Wave Speed Estimation in MR Elastography</a></strong> [IV]<br>
+  왜 주요: k-space 복원과 파동 역산을 함께 풀어 가속 계수 19까지도 NRMSE를 TV 대비 30% 낮춤, Reconstruction 버킷 대표 신호.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.25621" target=_blank>DAWN: Robust Neural Blind Deconvolution via Alternating Wiener Guidance</a></strong> [CV]<br>
+  왜 주요: Levin 데이터셋 σ=0.1 조건에서 차순위 baseline 대비 최대 +4.5dB.
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>Result</th><th>Paper</th></tr></thead>
+<tbody>
+<tr><td>실측 room-scale 단일광자 라이다 캡처, 1% 광자 (TransientNeRF 대비)</td><td>Mean object depth error</td><td>3개 뷰·100배 적은 광자로도 깊이 오차가 TransientNeRF 전체 광자 사용 대비 1/2.8~1/7.7</td><td><a href="https://arxiv.org/abs/2611.26321" target=_blank>FirstCross</a></td></tr>
+<tr><td>CryoBench 이형 cryo-EM 복원 벤치마크 (기존 신경망 방법 대비)</td><td>Reconstruction accuracy / training time</td><td>조성·형태 이형성 모두 SOTA, 학습 시간 12.8~28.0배 단축</td><td><a href="https://arxiv.org/abs/2611.26128" target=_blank>CryoGaussian</a></td></tr>
+<tr><td>969장 다기관 H&E WSI, Barrett's 식도 이형성 등급 (held-out n=130)</td><td>Macro-averaged AUC / sensitivity / specificity</td><td>macro-AUC 0.96(95% CI 0.93-0.98), 민감도 98%, 특이도 81%</td><td><a href="https://arxiv.org/abs/2611.26562" target=_blank>Barrett's dysplasia grading</a></td></tr>
+<tr><td>LIBERO 4개 스위트 평균 (로봇 조작 성공률)</td><td>Success rate</td><td>0.65B 공유 백본으로 96.8%, Orin-X 1장에서 12Hz 경로 생성</td><td><a href="https://arxiv.org/abs/2611.25474" target=_blank>TuringPAI</a></td></tr>
+<tr><td>FLUX.1-dev/Qwen-Image, DrawBench (TaylorSeer 대비, 20-step)</td><td>LPIPS / denoising speedup</td><td>LPIPS 0.563→0.429, 2.86배 가속(DiT-XL/2 FID 16.39→10.37)</td><td><a href="https://arxiv.org/abs/2611.25296" target=_blank>CalibCache</a></td></tr>
+</tbody>
+</table>
+<p><small>오늘은 위 다섯 편 외에도 SGAR(1,000뷰에서 12배 가속), LAQ(3.8배 압축, LIBERO-Plus 76.4~83.3%), C-LiTE(macro-F1 0.670 vs CytoFormer 0.682, 30배 적은 파라미터)도 구체적 수치를 제시했지만, 표는 랩 ROI 우선순위(3D 재구성 물리·VLA 배포·병리 진단)에 맞춰 상위 다섯 편만 추렸습니다.</small></p>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] CryoGaussian: Heterogeneous Cryo-EM Reconstruction Made Explicit with Gaussian Splatting</h3>
+  <div class=tag>[방법전환] [인프라]</div>
+  <p><strong>왜 A급인가:</strong> 어제 보고서가 짚었던 "Gaussian splatting이 RGB 렌더링을 넘어 다른 물리 측정 모델로 이식된다"는 흐름이 오늘은 생체분자 구조생물학이라는 완전히 새로운 영역에서 다시 확인됐습니다. 단순히 가우시안이라는 표현을 빌려 쓴 게 아니라 전자현미경이 실제로 측정하는 물리(대조도 전달 함수가 변조된 선적분)에 맞춰 렌더러를 재설계했고, 그 결과 기존 방법으로는 놓치던 희귀 구조 상태까지 잡아냈다는 점에서 A급입니다.</p>
+  <p><strong>핵심:</strong> 저온전자현미경(cryo-EM, 시료를 극저온으로 얼려 전자빔을 쏜 뒤 수많은 입자 영상에서 분자 구조를 복원하는 기법)은 드물게 나타나는 조성 변화나 미세한 연속적 구조 변형을 잡아내기 어려웠습니다. CryoGaussian은 Gaussian splatting(장면을 수많은 작은 가우시안 입자로 표현해 미분 가능한 방식으로 렌더링하는 기법)을 가져와, 입자 영상에 직접 맞추는 explicit 가우시안 밀도 표현을 만듭니다. 이때 일반 카메라용 원근 렌더링이 아니라, cryo-EM이 실제로 찍는 직교 투영 선적분에 대조도 전달 함수(현미경의 광학적 왜곡을 설명하는 함수)를 곱한 렌더러를 씁니다. 가우시안 개수는 분자의 추정 공간 범위에서 정하고, 최소 크기는 입자 영상의 나이퀴스트 주파수로 제한합니다. 각 입자 영상과 각 가우시안에 대해 잠재 변수를 학습해 가우시안의 위치·세기·크기를 조건부로 조정하는 방식으로, 조성적/구조적 이형성을 모두 표현합니다. CryoBench 벤치마크에서 조성·형태 이형성 모두 SOTA 복원 정확도를 달성했고, 실제 실험 데이터에서는 전체 입자의 1.3%만 차지하는 50S 리보솜 소단위체의 희귀 조성 상태(중심 돌기 없이 rRNA 나선 68이 도킹된 상태)와 전촉매 스플라이세오좀의 SF3b·헬리케이스 복합체의 연속적인 움직임을 구분해 복원했습니다. 추가로 누적형 투영에 맞춘 레스터라이저 최적화로 학습 시간을 12.8~28.0배 줄였습니다.</p>
+  <p><strong>주의:</strong> 희귀 상태 식별(1.3%)이 이 특정 리보솜 데이터셋에서의 결과라, 다른 분자·다른 현미경 조건에서도 같은 민감도로 희귀 상태를 잡아내는지는 abstract만으로 확정할 수 없습니다. 또한 코드 공개 여부와, 랩이 다루는 광학 단층촬영/홀로그래피의 forward model에도 같은 "측정 물리를 렌더러에 직접 반영"하는 설계가 그대로 이식되는지는 본문 확인이 필요합니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] RL Post-Training in Diffusion Transformers Is Activation Steering</h3>
+  <div class=tag>[해부분석] [경고신호]</div>
+  <p><strong>왜 A급인가:</strong> "RL로 모델을 추가 학습시켜 성능을 올렸다"는, 최근 생성모델 연구에서 가장 흔하게 반복되는 주장 하나를 정면으로 해부해서, 그 효과 대부분이 사실은 입력과 무관한 아주 단순한 조작으로 재현된다는 걸 8개의 서로 다른 공개 모델에서 일관되게 보여줬다는 점에서 A급입니다.</p>
+  <p><strong>핵심:</strong> 강화학습(RL) post-training(사전학습이 끝난 모델을 보상 신호로 추가 학습시키는 단계)은 diffusion transformer(여러 단계를 거쳐 이미지를 생성하는 트랜스포머 기반 생성모델)의 시각적 품질, 글자 렌더링, 여러 물체를 동시에 그리는 구성 능력을 눈에 띄게 끌어올립니다. 이 논문은 "이런 능력은 프롬프트마다 다르게 작동해야 하니 RL이 입력에 따라 달라지는 복잡한 변환을 새로 배웠을 것"이라는 자연스러운 가설을 세우고, 일부러 아주 단순한 대안을 테스트합니다 — 모델의 중간 층 출력에 고정된 벡터(steering vector) 하나를 프롬프트·토큰·샘플링 시드와 무관하게 똑같이 더해보는 것입니다. SD3.5-M 모델 기준으로 이 벡터는 RL로 학습한 LoRA(추가 파라미터를 적게 쓰는 미세조정 기법)보다 65배 적은 파라미터(29만 대 1,880만)를 가지는데도, 공개된 RL 학습 모델 6개(이미지)에서 보상 향상의 90.0~96.3%를, 2개(영상)에서는 89.8%와 111.9%를 그대로 재현했습니다. 심지어 보상 없이 0부터 시작해 온라인 RL로 이 벡터만 학습시켜도, 텍스트 렌더링(OCR)과 사람 선호도(PickScore) 지표에서 가중치 전체를 RL로 학습한 결과를 넘어섰습니다. 즉 프롬프트마다 똑같은 고정된 이동만으로도 RL post-training 성능 향상의 대부분을 설명할 수 있다는 뜻으로, 이는 RL이 "새로운 입력-의존적 계산"을 가르치는 게 아니라 이미 사전학습된 모델이 할 수 있는 계산 쪽으로 방향만 밀어주고 있다는 해석을 뒷받침합니다.</p>
+  <p><strong>주의:</strong> 2개 영상 모델에서 재현율이 100%를 넘는 결과(111.9%)는 측정 변동성이나 평가 지표 자체의 한계를 반영할 수도 있어, 어느 모델/과제에서 이 "고정 벡터 가설"이 깨지는지는 abstract만으로 알 수 없습니다. 또한 이 결과가 diffusion 이미지/영상 생성에 국한된 것인지, 랩이 접할 수 있는 다른 생성형 복원 모델의 RL fine-tuning에도 똑같이 적용되는지는 본문·재현 확인이 필요합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Baseline risk] 오늘 ROI 배정 비율은 26.0%(251/966)로 최근 범위보다 다소 낮습니다. Virtual Staining/Pathology(38편)·Tomography/3D Imaging(39편)의 상당수가 키워드 오탐(staining, tomography 단어만 겹침)이라 버킷 막대 그래프만 보면 실제보다 신호가 강해 보일 수 있습니다.</p>
+  <p>[Dataset risk] 계산광학 핵심 ROI 5개 버킷(합산 10편)은 오늘도 얇았고, 그중 절반 이상(6편)이 SAR 레이더·순수 수학 증명·교육공학처럼 랩 ROI와 무관한 키워드 오탐이었습니다. 특히 Light-Field/Novel Sensors는 0편으로 완전히 비어, 랩 ROI 키워드 사전이 이 버킷에서는 거의 작동하지 않고 있음을 다시 확인했습니다.</p>
+  <p>[Claim risk] 오늘의 다섯 클러스터 중 "표준 평가 재검증" 클러스터는 네 편이 서로 무관한 도메인에서 나왔다는 점에서 흥미롭지만, 네 편이 하나의 공통 벤치마크나 공동 연구로 묶인 건 아니라서 "우연한 동시 발생"인지 "더 넓은 추세의 신호"인지는 다음 며칠 추가 논문으로 이어지는지 지켜봐야 합니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Metric risk] RL Post-Training Is Activation Steering의 재현율이 일부 영상 모델에서 100%를 넘는다는 점(111.9%)은 평가 지표 자체의 변동성을 반영할 수 있어, 어느 조건에서 "고정 벡터 가설"이 깨지는지는 본문 확인이 필요합니다.</p>
+  <p>[Baseline risk] CryoGaussian의 희귀 상태 식별(1.3% 입자)은 특정 리보솜 데이터셋 하나에서의 결과라, 다른 분자·다른 현미경 조건에서도 같은 민감도가 유지되는지는 abstract만으로 확정할 수 없습니다.</p>
+  <p>[Deployment risk] DMT-Attack이 보여준 57.9% 공격 성공률은 역으로 읽으면 현재 VLA 정책 대부분이 이런 자연스러운 텍스처 교란에 대한 방어를 전혀 갖추고 있지 않다는 뜻이라, TuringPAI·LoopedWAM·LAQ·TCR 같은 효율화 연구들도 보안 평가 없이 배포 수치만 강조하고 있다는 공백을 같이 봐야 합니다.</p>
+  <p>[Claim risk] Price of an Explanation의 결론은 ARC-AGI-2라는 특정 추상 추론 벤치마크에서 나온 것이라, "설명을 찾는 것과 그 설명이 일반화되는 것은 다른 문제"라는 주장이 다른 유형의 과제(이미지 복원, 분류)에도 그대로 적용되는지는 별도 검증이 필요합니다.</p>
+  <p>[Dataset risk] Does It Depend on the Split?의 결론은 TreeSatAI라는 특정 원격탐사 데이터셋에서 나왔고, 공간 분할 후에도 가장 희귀한 5개 클래스에서는 고정 특징 모델이 오히려 더 나은 평균 F1을 보여(신뢰구간은 0을 포함) 완전히 "차이 없음"으로 단정하기보다는 클래스별로 다시 봐야 할 여지가 있습니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+<div class=skim>
+  <ul>
+    <li>Virtual Staining/Pathology 비병리 약 36편 — 수의학 정액 염색 프로토콜, 치과 재료 미백 연구 등 "staining"/"virtual" 단어만 일치하는 완전 무관 논문입니다.</li>
+    <li>Tomography/3D Imaging 순수 임상/법의학 증례 약 36편 — 치과 CBCT 증례, 관상동맥 CTA, 법의학 사후경과시간(PMI) 추정 등 CT/MRI를 "사용"하지만 영상 재구성 방법론에는 기여하지 않는 순수 응용 연구입니다.</li>
+    <li>Reconstruction/Inverse Problems 임상/일반 ML 약 17편 — WiFi 행동 인식, 전력망·소재 시뮬레이션 등 이미징과 직접 관련 없는 일반 역문제 응용입니다.</li>
+    <li>Phase Imaging/Holography 완전 무관 3편 — 비디오 인코더(MV-JEPA), "holographic"이라는 정보이론적 비유만 빌린 순수 수학 증명, 교육공학(EFL 교실 홀로그램 피드백)으로 "holographic/holography" 단어만 겹치는 논문입니다.</li>
+    <li>Deep Learning Methods 144편 대부분 — LLM 에이전트, 통신 시스템, 금융 모델 등 전산 광학 이미징과 직접 관련이 없는 범용 ML·공학 응용입니다.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+<p><small>오늘 251건 전체를 개별 bullet로 쓰는 대신, 오늘의 클러스터 지도에 포함된 대표 논문 중심으로 압축했습니다. 하위 롱테일(각 버킷의 키워드 오탐·일반 임상/범용 ML 논문)은 Watch Lens·Skim-only 섹션에서 버킷/카운트만 표시하고 개별 bullet은 생략합니다.</small></p>
+
+<h3>3D 재구성의 측정 물리 반영 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.26321" target=_blank>FirstCross</a></strong> <span class=pill>CV</span><br>
+  문제: 단일광자 라이다 신경망 복원이 장면당 1시간 넘는 비볼록 최적화가 필요하고 저선량에서 정확도가 떨어짐 / 방법: "광자가 물체 표면을 처음 통과하는 지점"이라는 사실을 이용해 볼록 문제 열로 치환 / 의미: 100배 적은 광자로도 Transientangelo보다 낮은 깊이 오차, 1분 만에 복원 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.26128" target=_blank>CryoGaussian</a></strong> <span class=pill>CV</span><br>
+  문제: cryo-EM이 드문 조성 변화·연속 구조 변형을 잡아내기 어려움 / 방법: 대조도 전달 함수가 반영된 직교 투영 렌더러로 explicit Gaussian 밀도 표현을 입자 영상에 직접 맞춤 / 의미: CryoBench SOTA, 희귀 리보솜 상태(1.3%) 식별, 학습 시간 12.8~28배 단축 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.26493" target=_blank>SGAR</a></strong> <span class=pill>CV</span><br>
+  문제: feed-forward 3D 복원의 전역 attention이 뷰 수에 따라 제곱으로 느려짐 / 방법: 기하학적 근접도를 예측하는 경량 모듈로 희소 attention만 계산 / 의미: 1,000뷰에서 12배 가속, 더 완전한 기하 복원 / 우선순위: Read
+</div>
+
+<h3>VLA/World-Action Model 온디바이스 효율+공격 내성 (4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.25474" target=_blank>TuringPAI</a></strong> <span class=pill>CV</span><br>
+  문제: Physical AI가 제한된 온보드 연산에서 공간/동적 환경 이해를 요구 / 방법: 0.65B 공유 비전-언어 백본 + 멀티스케일 잠재 쿼리로 자율주행·조작 동시 지원 / 의미: LIBERO 평균 96.8%, Orin-X 1장에서 12Hz / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.25595" target=_blank>LoopedWAM</a></strong> <span class=pill>CV</span><br>
+  문제: world-action model이 큰 비디오·행동 트랜스포머를 요구해 배포 효율이 낮음 / 방법: 6블록 공유 코어를 반복 적용(30층 실행, 12블록만 저장) / 의미: Fast-WAM 대비 GPU 메모리 7.4배 절감, LIBERO 96.1%·RoboTwin 91.9% 유지 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.25614" target=_blank>LAQ</a></strong> <span class=pill>AI</span><br>
+  문제: 기존 4비트 양자화가 "지금의 행동"만 보호해 그 행동이 기반한 예측된 미래가 조용히 깨짐 / 방법: 미래가 실제로 읽히는 지점을 추적하는 reader metric으로 정밀도 배분 / 의미: 16비트 대비 1.2%p 차이로 3.8배 압축, LIBERO-Plus 76.4~83.3% / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.25695" target=_blank>DMT-Attack</a></strong> <span class=pill>AI</span><br>
+  문제: 폐루프 VLA 정책이 눈에 띄는 패치 공격에는 강해졌지만 자연스러운 질감 공격은 평가되지 않음 / 방법: diffusion prior로 자연스러운 텍스처 탐색 + 폐루프 피드백으로 과제 방해 후보 선별 / 의미: cASR 57.9%(기존 44.7%), 탐지율은 오히려 더 낮음(45% vs 97.5~100%) / 우선순위: Must-read
+</div>
+
+<h3>Diffusion/flow 추론 가속의 세분화 (4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.25296" target=_blank>CalibCache</a></strong> <span class=pill>CV</span><br>
+  문제: 짧은 샘플링 스케줄에서 feature caching의 근사 오차가 더 커짐 / 방법: 캐시-전체 계산 간 가속도(2차 유한차분) 오차를 오프라인에서 한 번 보정 / 의미: FLUX.1-dev LPIPS 0.563→0.429, 2.86배 가속 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.25382" target=_blank>GuideCache (Text Lives in the Guidance)</a></strong> <span class=pill>CV</span><br>
+  문제: 캐싱이 이미지 품질 점수는 유지하면서 렌더링된 글자 내용을 조용히 틀리게 함 / 방법: classifier-free guidance 오차가 큰 토큰만 선택적으로 재계산 / 의미: 2.4배 가속에서 글자 정확도 거의 완전 복원 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.25689" target=_blank>D3-Cache</a></strong> <span class=pill>CV</span><br>
+  문제: 기존 캐싱이 모델별 보정 곡선이나 층별 기록을 요구 / 방법: 동적 모드 분해로 짧은 속도 이력에서 다음 값을 예측, 오차가 커지면 즉시 재계산 / 의미: 모델별 보정 없이 4개 모델에서 2.6~3.8배 가속 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.25530" target=_blank>Keystone</a></strong> <span class=pill>AI</span><br>
+  문제: test-time search의 채점 모델이 완성된 이미지용이라 중간 미리보기를 잘 못 읽음 / 방법: 프롬프트를 타입이 있는 질문으로 바꿔 멀티모달 모델이 중간 미리보기에 직접 답하게 함 / 의미: best-of-8보다 절반 이하 계산으로 더 나은 결과 / 우선순위: Read
+</div>
+
+<h3>표준 평가 관행 재검증 (4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.25902" target=_blank>Does It Depend on the Split?</a></strong> <span class=pill>CV</span><br>
+  문제: 고정 특징 모델이 미세조정 모델보다 라벨 효율이 좋다는 주장이 분할 누설에 의존할 수 있음 / 방법: 공식 분할과 공간적으로 겹치지 않는 분할을 모두 테스트 / 의미: 공식 분할에서의 우위(0.764 대 0.685)가 공간 분할에서는 사실상 사라짐(0.648 대 0.640) / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.25894" target=_blank>Explainable AI for Solar PV Power Forecasting</a></strong> <span class=pill>AI</span><br>
+  문제: 태양광 예측 ML 연구의 정확도·설명이 재현 불가능하게 보고되는 경우가 많음 / 방법: 재현 가능한 모델 탐색 + 설명가능 AI 워크플로를 1년치 실측 데이터로 검증 / 의미: 셔플 교차검증이 낙관적, SHAP 순위가 상관 입력 제거 시 바뀜 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.25388" target=_blank>Falsifiable Compositional Reasoning in Time Series Forecasting</a></strong> <span class=pill>AI</span><br>
+  문제: 과거 데이터 백테스트로 모델을 고르는 방식이 상황이 바뀌면 깨짐 / 방법: 반증 가능한 조합적 가설(신경 원시 인코더 + 결합 제약 + 사전 검증)로 재구성 제안 / 의미: 검증 탐색을 넓혀도 상황 변화 구간 정확도는 개선 안 됨 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.71129/ijaci.v3i1.pp53-67" target=_blank>Beyond Single-Split Performance (SARS-CoV-2 CT)</a></strong> <span class=pill>JNL</span><br>
+  문제: 흉부 CT 코로나19 분류의 99% 정확도가 단일 분할·슬라이스 단위 평가에서 나온 숫자 / 방법: 5시드 McNemar 검정 + 환자 단위 분리 + 외부 코호트 zero-shot 세 가지를 함께 적용 / 의미: 환자 단위 분리 시 F1 6~8점 하락, 외부 코호트에서는 다수결 수준으로 붕괴 / 우선순위: Must-read
+</div>
+
+<h3>생성모델 post-training 메커니즘 재검증 (2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.26627" target=_blank>RL Post-Training Is Activation Steering</a></strong> <span class=pill>CV</span><br>
+  문제: RL post-training이 diffusion transformer에 입력-의존적인 새 계산을 가르치는지 불명확 / 방법: 프롬프트 무관 고정 steering vector로 RL 결과를 재현 시도 / 의미: LoRA보다 65배 적은 파라미터로 보상 향상의 90% 이상 재현 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.25896" target=_blank>The Price of an Explanation</a></strong> <span class=pill>AI</span><br>
+  문제: 검증 가능한 프로그램을 요구하면 정답률이 떨어지는데 그 원인이 "설명 발견"인지 "설명 일반화"인지 불명확 / 방법: ARC-AGI-2에서 정답만 요구 vs 프로그램 요구를 비교 분석 / 의미: 정답률 77%→57%, 병목은 설명의 일반화에 있음을 확인 / 우선순위: Read
+</div>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+<li><a href="https://arxiv.org/list/cs.LG/new" target=_blank>arXiv cs.LG /new</a></li>
+<li><a href="https://arxiv.org/list/cs.CV/new" target=_blank>arXiv cs.CV /new</a></li>
+<li><a href="https://arxiv.org/list/cs.AI/new" target=_blank>arXiv cs.AI /new</a></li>
+<li><a href="https://arxiv.org/list/eess.IV/new" target=_blank>arXiv eess.IV /new</a></li>
+<li><a href="https://arxiv.org/list/eess.SP/new" target=_blank>arXiv eess.SP /new</a></li>
+<li><a href="../feed.xml" target=_blank>RSS Feed</a></li>
+</ul>
+
+<footer>
+이미징/계산광학 랩 자동 브리핑. arXiv(cs.LG·cs.CV·cs.AI·eess.IV·eess.SP) + Crossref/OpenAlex 저널 수집 기반.
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>
