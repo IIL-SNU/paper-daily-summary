@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-23",
+  "results": [
+    {
+      "benchmark": "NoPeBench, 6개 공개 world model 평균 (물리 법칙 위반율)",
+      "metric": "Physical violation rate",
+      "value": 16.0,
+      "value_str": "frozen diffusion transformer 내부 상태에 예측 head만 추가해 위반율 74%에서 16%로 감소",
+      "paper": "https://arxiv.org/abs/2611.27963",
+      "paper_title": "Non-penetrating World Models"
+    },
+    {
+      "benchmark": "40개 held-out 3D 해부 볼륨, 초음파 world model 해부학적 제어 (Action-Following Index)",
+      "metric": "Action-Following Index (liver / macro-organ)",
+      "value": 0.428,
+      "value_str": "간 AFI 0.428·거대 장기 AFI 0.262, 비교 방법들은 최대 0.117·0.038에 그침",
+      "paper": "https://arxiv.org/abs/2611.26867",
+      "paper_title": "SonoAtlasWorld: Anatomy-Grounded Ultrasound World Models for Wide-Range Scanning"
+    },
+    {
+      "benchmark": "7개 내비게이션/조작 과제, latent world model 계획 압축 (dense 대비)",
+      "metric": "Success rate retention at speedup",
+      "value": 2.5,
+      "value_str": "2.3배 가속에서 dense planning과 동일 성공률, 2.5배 가속에서도 98% 유지",
+      "paper": "https://arxiv.org/abs/2611.27639",
+      "paper_title": "SOAR: Training-Free Rank-Consistent Rollout Compression for Latent World Model Planning"
+    },
+    {
+      "benchmark": "유방암 병리 보고서 질문 189개, frontier 모델의 질의응답 정확도",
+      "metric": "Answer accuracy",
+      "value": 0.79,
+      "value_str": "슬라이드 전체 열람 0.50~0.66(다수결 0.67보다 낮음)에서 타입 질문 인터페이스로 0.78~0.79",
+      "paper": "https://arxiv.org/abs/2611.27102",
+      "paper_title": "One state, many questions: Opsis gives a frontier model typed eyes for pathology"
+    },
+    {
+      "benchmark": "4개 공개 longitudinal CT 데이터셋, 암 진행 오판정 (56회 추적관찰)",
+      "metric": "False progression calls",
+      "value": 16.0,
+      "value_str": "고정 규칙 체인 33/56회 오판정 대비 에이전트 구조로 약 절반 수준으로 감소, DeepLesion 학습 추적기보다 높은 병변 검출율(89.0% vs 87.4%)",
+      "paper": "https://arxiv.org/abs/2611.27876",
+      "paper_title": "LesionAgent: Training-Free Agentic Tumor Tracking and Response Assessment in Longitudinal CT"
+    },
+    {
+      "benchmark": "10,712장 TCGA 범암종 슬라이드 질의응답, EchoAlign 10개 외부 데이터셋",
+      "metric": "Mean AUROC / quadratic weighted kappa",
+      "value": 0.89,
+      "value_str": "EchoAlign 평균 AUROC 0.890(95% CI 0.881-0.897), 중증도 등급 quadratic weighted kappa 0.530으로 공개 foundation model 5개 중 최고",
+      "paper": "https://arxiv.org/abs/2611.27517",
+      "paper_title": "EchoAlign: Echocardiography foundation model with multilevel report alignment"
+    }
+  ]
+}

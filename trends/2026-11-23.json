@@ -1,5 +1,39 @@
 {
   "date": "2026-11-23",
+  "source_listing_date": "2026-11-23",
+  "source_mode": "new",
+  "note": "2026-11-23(월) daily 정기 실행. Date Source Contract 점검 결과 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 전부 /new listing이 \"Monday, 23 November 2026\"을 가리켜 post_date와 일치했다(arXiv+저널 완성본 발행). arXiv new+cross 583편(cs.LG 171·cs.CV 171·cs.AI 214·eess.IV 10·eess.SP 17, replacements 제외 확인)에 저널 262편(Crossref 257편 수집 + OpenAlex 보충 5편)을 더해 scripts/classify.py로 병합·재분류했다. 전체 스캔 721건 중 196건(27.2%)이 9개 ROI 버킷에 배정됐다. 오늘의 핵심은 (1) Deep Learning Methods catch-all 안에서 world model 다섯 편(ViewDreamer·PhysForce·Non-penetrating World Models·SonoAtlasWorld·SOAR)이 로봇 조작·의료 초음파라는 서로 다른 응용에서 독립적으로 생성 결과의 물리·해부학적 일관성을 검증하는 흐름을 보인 점, (2) 의료·병리 foundation model 네 편(Opsis·HERMES·EchoAlign·DermKG)이 정답률보다 검증 가능한 근거 구조에 답을 묶어두는 설계로 모인 점, (3) 영상 생성 네 편(Refrain·Hindsight Forcing·GameScrub·Ego2Ego)이 한 장면 품질을 넘어 멀티샷/멀티뷰/장기 롤아웃 일관성을 다룬 점, (4) 영상 진단·복원 에이전트 두 편(LesionAgent·SIR-Agent)이 재학습 대신 frozen 도구의 agentic 호출로 이동한 점이다. 오늘 아침에는 지난주(11/16~11/20) weekly 회고를 별도 실행(mode=weekly)으로 이미 발행했으며, 이 trends 레코드는 그 weekly_retrospective_context를 보존한 채 당일 daily 필드를 추가한 것이다. 계산광학 핵심 ROI(Fourier Ptychography/Lensless/Phase Imaging/Meta-Optics/Light-Field, 합산 15편)는 오늘 특히 신호가 얇아 실질 신호를 찾기 어려웠다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 171,
+      "cs.CV": 171,
+      "cs.AI": 214,
+      "eess.IV": 10,
+      "eess.SP": 17
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 262
+  },
+  "totals": {
+    "total_scanned": 721,
+    "selected": 196
+  },
+  "classified": {
+    "total_scanned": 721,
+    "selected": 196,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 1,
+      "Lensless/Coded Imaging": 3,
+      "Phase Imaging/Holography": 5,
+      "Meta-Optics/Diffractive": 2,
+      "Light-Field/Novel Sensors": 4,
+      "Tomography/3D Imaging": 14,
+      "Virtual Staining/Pathology": 22,
+      "Reconstruction/Inverse Problems": 18,
+      "Deep Learning Methods": 127
+    }
+  },
+  "daily_thesis": "오늘은 world model 연구의 기준이 그럴듯한 영상에서 물리·해부학 법칙을 실제로 지키는가로 넘어간 날이면서, 의료·병리 foundation model들이 정답률보다 검증 가능한 근거 구조를 먼저 확보하기 시작한 날입니다. 영상 생성의 일관성 평가는 한 장면을 넘어 여러 샷·시점·시간으로 확장됐고, 영상 진단·복원 에이전트는 재학습 대신 frozen 도구의 agentic 호출로 무게중심을 옮겼습니다.",
   "weekly_retrospective_context": {
     "iso_week": "2026-47",
     "week_start": "2026-11-16",
