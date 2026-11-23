@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 20 Nov 2026 14:31:10 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 10:12:24 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Weekly Retrospective — 2026-11-23 (Week 47)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-11-23-weekly.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-11-23-weekly.html</guid>
+      <pubDate>Mon, 23 Nov 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[지난주 가장 넓게 번진 흐름은 "정확도라는 숫자 하나를 믿어도 되는가"라는 질문이었습니다. 월요일(11/16)에는 CE-Agent와 뇌미세출혈 확증적 임상시험이 외부 병원·스캐너로 옮겨도 성능이 유지되는 긍정적 사례를 먼저 보고했는데, 화요일(11/17)에는 Learned Regularization for Sparse-View CT가 "학습된 plug-and-play prior가 PSNR은 비슷해도 병변 탐지 능력(AUC)은 9개 조건 전부에서 Total Variation보다 나쁘다"는 조건부 함정을 수치로 보여 방향이 한 번 꺾였습니다. 목요일(11/19)에는 ACUS와 Beyond Accuracy가 "정확도 한 숫자로는 모델이 측정 조건이 나빠질수록 과신하는지 잡아낼…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-11-20 (금요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-11-20.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-20.html</guid>
       <pubDate>Thu, 20 Aug 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[오늘 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 2026-08-20 listing이 정상적으로 올라온 것을 확인했습니다. new+cross 기준 467편이 새로 잡혔고, 어제(8/19, 446편)와 비슷한 수준을 유지했습니다. 여기에 Crossref/OpenAlex 저널 415편을 더해 arXiv+저널 통합 스캔 780건(cross-listing 중복 제거 후) 중 211건(27.1%)이 랩 ROI 버킷에 배정됐습니다.]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Daily Briefing — 2026-08-19 (수요일)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-08-19.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-19.html</guid>
-      <pubDate>Wed, 19 Aug 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 모두 2026-08-19 listing이 정상적으로 올라온 것을 확인했습니다. new+cross 기준 446편이 새로 잡혔고, 어제(8/18, 1192편)에 비해 절대량은 크게 줄었지만 이는 요일별 등록 변동 폭 안에 있는 수치입니다. 여기에 Crossref/OpenAlex 저널 427편을 더해 arXiv+저널 통합 스캔 797건(cross-listing 중복 제거 후) 중 231건(29.0%)이 랩 ROI 버킷에 배정됐습니다.]]></description>
     </item>
   </channel>
 </rss>
