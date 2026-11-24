@@ -1,143 +1,117 @@
 {
   "date": "2026-11-24",
-  "source_mode": "journal-only",
+  "source_mode": "new",
   "clusters": [
     {
-      "cluster": "메타표면/광자구조 설계가 고정 형상 최적화에서 재구성 가능한 소자와 데이터 기반 역설계로 이동",
+      "cluster": "3D Gaussian Splatting가 '보기 좋은 렌더링'에서 '믿을 수 있는 기하·자산'으로 무게중심 이동",
       "papers": [
-        {
-          "title": "SAL-SMART: A Smart Metasurface Absorber for Robust Terahertz Control",
-          "url": "https://doi.org/10.1007/s11468-026-03548-0",
-          "importance_tags": ["[방법전환]"]
-        },
-        {
-          "title": "Zero-State-Maintenance-Power Reconfigurable Reflective Metasurface Using Non-Volatile Mechanical Switches",
-          "url": "https://doi.org/10.1109/jiot.2026.3756638",
-          "importance_tags": ["[실사용전환]"]
-        },
-        {
-          "title": "A graphene-based tunable metasurface for on-demand terahertz beam-number switching with joint amplitude-phase optimization",
-          "url": "https://doi.org/10.1063/5.0356527",
-          "importance_tags": ["[방법전환]"]
-        },
-        {
-          "title": "A physics-informed data-driven inverse design framework for PCF-SPR biosensing structures using Taguchi-ANN-GA integration",
-          "url": "https://doi.org/10.1016/j.rio.2026.101214",
-          "importance_tags": ["[방법전환]", "[인프라]"]
-        }
+        {"title": "Not All Directions Are Flat: Decomposed-Gradient Flatness for Sparse-View 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2611.28802", "importance_tags": ["[해부분석]", "[방법전환]"]},
+        {"title": "Complementary Geometry in Gaussian Splatting (REVEAL)", "arxiv": "https://arxiv.org/abs/2611.29236", "importance_tags": ["[평가축]", "[인프라]"]},
+        {"title": "LMnOP: Pruning 3D Gaussian Splatting via Leave-Many-Out Importance", "arxiv": "https://arxiv.org/abs/2611.30102", "importance_tags": ["[방법전환]"]},
+        {"title": "WildAnySplat: Feed-Forward 3D Gaussian Splatting in the Wild", "arxiv": "https://arxiv.org/abs/2611.31023", "importance_tags": ["[실사용전환]", "[데이터전환]"]},
+        {"title": "SemGuard: Semantics-Decoupled Watermarking for Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2611.28636", "importance_tags": ["[경고신호]", "[인프라]"]}
       ],
-      "why": "예전에는 메타표면(빛의 파장보다 작은 나노 구조를 평면에 배열해 렌즈나 흡수체 역할을 하게 만든 인공 광학 소재) 설계가 한 번 고정된 형상을 어떻게 최적화할지에 머물렀는데, 오늘 저널에서 동시에 나온 네 편은 모두 그 형상 자체를 상황에 따라 바꾸거나(재구성), 형상을 사람이 직접 고르는 대신 AI·최적화 알고리즘이 거꾸로 찾아내게 만드는(역설계) 쪽으로 넘어갔습니다. SAL-SMART와 Zero-State-Maintenance-Power 메타표면은 둘 다 테라헤르츠(THz, 적외선과 마이크로파 사이 주파수 대역) 신호를 흡수하거나 반사하는 소자를 전력을 거의 안 쓰면서도 상태를 바꿀 수 있게 만들었는데, 특히 후자는 기계식 비휘발성 스위치를 써서 한 번 상태를 바꾼 뒤에는 전력 공급 없이도 그 상태를 유지한다는 점에서 배터리가 제한된 실내 사물인터넷(IoT) 환경에 실제로 쓸 수 있는 설계입니다. 그래핀 기반 THz 빔개수 스위칭 메타표면은 진폭과 위상을 동시에 최적화하는 입자군집 알고리즘으로 몇 개의 빔을 켜고 끌지를 전자적으로 바꿀 수 있게 했고, PCF-SPR(광자결정 광섬유 기반 표면 플라즈몬 공명) 생체센서 논문은 다구치 실험설계·인공신경망·유전 알고리즘을 통합해 센서 구조 자체를 데이터 기반으로 역설계했습니다. 네 편을 합치면, 메타표면·광자구조 설계의 무게중심이 '한 번 잘 만든 고정 형상'에서 '상황에 따라 상태를 바꿀 수 있는 소자'와 '사람이 아니라 알고리즘이 찾아낸 형상'으로 옮겨가고 있다는 뜻입니다.",
-      "confidence": "Medium",
-      "confidence_note": "서로 다른 저널(Plasmonics, IEEE Internet of Things Journal, Journal of Applied Physics, Results in Optics)에 실린 4편이 독립적으로 재구성형 소자 또는 역설계를 택했지만, Crossref에 abstract가 등록되지 않은 경우가 많아 제목·저널 정보 기준 판단이라 본문 확인 전까지는 Medium으로 둡니다.",
-      "lab_action": "랩의 메타표면/메타렌즈 설계 파이프라인에 그래핀 기반 THz 빔스위칭 논문의 진폭-위상 동시 최적화(PSO) 방식과 PCF-SPR 논문의 Taguchi-ANN-GA 통합 역설계 절차를 적용해, 현재 쓰는 단일 목적함수 최적화 대비 재구성 가능성(여러 상태 전환)과 역설계 탐색 효율을 1주 내 소규모 벤치마크로 비교한다."
+      "why": "3D Gaussian Splatting(점 대신 반투명한 타원체 '가우시안'을 장면 위에 흩뿌려 실시간으로 사실적인 영상을 렌더링하는 기법, 3DGS)은 지금까지 주로 얼마나 선명하고 그럴듯하게 보이느냐를 두고 경쟁했는데, 오늘 arXiv에서는 같은 3DGS를 놓고 다섯 편이 전부 그 결과를 실제로 믿고 써도 되는가를 따집니다. Not All Directions Are Flat은 사진을 몇 장 안 찍고도 3DGS를 학습시키는 상황(sparse-view)에서 모델이 학습에 쓴 시점만 외워버리는 과적합 문제를, 여러 시점의 학습 신호가 서로 동의하는 방향과 동의하지 않는 방향을 구분해 동의하지 않는 방향으로만 일부러 흔들어주는 방법으로 줄였습니다. REVEAL은 3DGS가 만들어내는 색은 그럴듯해도 그 뒤에 숨은 깊이(장면 표면까지의 거리) 정보는 부정확할 수 있다는 점을 짚고, 같은 장면을 다른 각도에서 봤을 때 나오는 깊이 추정값들을 서로 교차 검증해 틀린 추정을 골라내는 틀을 제안했습니다. LMnOP는 렌더링에 쓰는 가우시안 수를 90~99%까지 줄이는 상황에서, 기존에는 하나씩 빼보며 중요도를 매기다 보니 '혼자서는 중요하지 않지만 다른 것들과 묶이면 꼭 필요한' 가우시안을 놓치는 문제를, 여러 개를 한꺼번에 빼보는 방식으로 고쳤습니다. WildAnySplat은 실제 야외 촬영처럼 조명이 바뀌고 지나가는 사람이 찍히는 '지저분한' 입력에서도 안정적인 3D 장면을 복원하도록 깨끗한 영상으로 학습한 교사 모델이 지저분한 입력을 처리하는 학생 모델을 지도하는 구조를 썼고, SemGuard는 아예 3DGS 결과물의 저작권을 보호하는 워터마크 기법을 다룹니다. 다섯 편을 합치면, 3DGS 연구가 '얼마나 예쁘게 보이는가'를 넘어 '그 기하가 정확한가, 실제 환경에서도 버티는가, 자산으로서 보호·관리할 수 있는가'를 동시에 묻기 시작했다는 뜻이고, 이는 3DGS가 연구용 데모를 지나 실제 파이프라인에 들어갈 준비를 하고 있다는 신호입니다.",
+      "confidence": "High",
+      "confidence_note": "오늘 Tomography/3D Imaging 버킷에서만 3DGS 관련 논문이 9편(서로 다른 세부 문제: sparse-view 일반화, 깊이 정확도, pruning, 실외 강건성, 워터마킹) 나왔고, 그중 5편을 대표로 뽑았습니다. 서로 다른 저자군이 서로 다른 신뢰성 축을 다뤄 단발성 우연이라기보다 구조적 흐름으로 보입니다.",
+      "lab_action": "REVEAL의 다중 시점 교차검증 깊이 보정과 LMnOP의 leave-many-out pruning을 랩의 Gaussian splatting/NeRF 기반 3D 복원 결과물에 적용해, 기존 단일 뷰 깊이맵 대비 교차검증된 깊이맵이 실제 측정 기하와 더 잘 맞는지, 또 90% 이상 압축해도 복원 정확도가 유지되는지 1주 내 소규모 벤치마크로 비교한다."
     },
     {
-      "cluster": "위상/파면 복원이 광학 홀로그래피를 넘어 X-ray·전자현미경·나노간섭계·적응광학으로 동시다발적으로 번짐",
+      "cluster": "병리 Whole-Slide VLM이 정답률 대신 '그 확신을 믿어도 되는가'를 검증하기 시작",
       "papers": [
-        {
-          "title": "Highly Robust Aberration Correction via Sequential Shifts and Differential Fitting in Digital Holographic Microscopy of Live Specimens",
-          "url": "https://doi.org/10.1364/ao.618454",
-          "importance_tags": ["[방법전환]"]
-        },
-        {
-          "title": "Phase retrieval with high fidelity and reduced measurements in in-line phase contrast X-ray ghost imaging",
-          "url": "https://doi.org/10.1016/j.optlaseng.2026.110274",
-          "importance_tags": ["[방법전환]"]
-        },
-        {
-          "title": "Fast Patchwise Modal Fitting for Direct Wavefront Reconstruction",
-          "url": "https://doi.org/10.1364/oe.620467",
-          "importance_tags": ["[방법전환]", "[실사용전환]"]
-        },
-        {
-          "title": "Full vectorial reconstruction of tightly focused fields via Mie-scattering nanointerferometry",
-          "url": "https://doi.org/10.1364/oe.618748",
-          "importance_tags": ["[방법전환]"]
-        }
+        {"title": "Diagnosing Verbalized Confidence in a Medical Vision-Language Model for Selective Prediction on Colorectal Histopathology Patches", "arxiv": "https://arxiv.org/abs/2611.28993", "importance_tags": ["[경고신호]", "[평가축]"]},
+        {"title": "Elicitation format changes zero-shot classification accuracy in a medical vision-language model", "arxiv": "https://arxiv.org/abs/2611.28997", "importance_tags": ["[경고신호]", "[방법전환]"]},
+        {"title": "Can an Agent Trust Its Own Zoom? Cross-Magnification Provenance Verification for Whole-Slide Images", "arxiv": "https://arxiv.org/abs/2611.29150", "importance_tags": ["[인프라]", "[표준후보]"]},
+        {"title": "CLASP: Deciding Structure and Claims Before Decoding for Whole-Slide Pathology Report Generation", "arxiv": "https://arxiv.org/abs/2611.28576", "importance_tags": ["[방법전환]"]},
+        {"title": "DARE: Dual-Level Adversarial Learning with Domain-Aware Regularization for Whole Slide Image Classification", "arxiv": "https://arxiv.org/abs/2611.30589", "importance_tags": ["[방법전환]"]}
       ],
-      "why": "예전에는 위상/파면 복원(빛의 세기만 측정 가능한 센서로부터 눈에 안 보이는 위상 정보를 계산으로 되살리는 기법) 연구가 디지털 홀로그래피라는 한 가지 광학 모달리티에 집중되는 경우가 많았는데, 오늘 저널에서는 같은 문제의식이 서로 다른 네 가지 영상 모달리티에서 동시에 다듬어졌습니다. Highly Robust Aberration Correction은 살아있는 시료를 디지털 홀로그래피 현미경으로 찍을 때 생기는 광학계 왜곡(수차)을, 영상을 조금씩 이동시키며 찍고 그 차이를 맞춰보는 방식으로 보정했습니다. X-ray ghost imaging 위상 복원 논문은 같은 위상 복원 문제를 가시광이 아니라 X-ray 영역에서, 더 적은 측정 횟수로도 정확하게 푸는 방법을 다뤘습니다. Fast Patchwise Modal Fitting은 넓은 시야를 작은 조각(patch)으로 나눠 각 조각의 파면(빛이 진행하면서 생기는 위상의 공간적 분포)을 빠르게 추정하는 방법을 적응광학(관측 중 실시간으로 광학계를 보정하는 기술) 맥락에서 제안했고, Mie-scattering nanointerferometry는 나노 입자에 의한 빛의 산란을 간섭계로 측정해 강하게 집속된 빛의 장 전체를 벡터 성분까지 복원했습니다. 네 편을 합치면, 위상/파면 복원이라는 계산 기법 자체는 공유하면서도 그 적용 대상이 가시광 홀로그래피·X-ray·나노간섭계·적응광학으로 동시에 번지고 있다는 뜻이고, 서로 다른 하드웨어를 쓰는 연구팀들이 같은 계산 아이디어에 독립적으로 도달하고 있다는 신호입니다.",
-      "confidence": "Medium",
-      "confidence_note": "서로 다른 네 저널(Applied Optics, Optics and Lasers in Engineering, Optics Express x2)에서 독립적으로 위상/파면 복원을 다뤘지만, 대부분 Crossref에 abstract가 없어 제목 기준 판단이고 본문 확인 전까지는 Medium으로 둡니다.",
-      "lab_action": "랩의 FPM·홀로그램 복원 파이프라인에 Fast Patchwise Modal Fitting의 조각 단위 모달 피팅 방식을 적용해, 넓은 시야를 한 번에 복원할 때보다 조각별로 나눠 병렬 복원할 때 속도·정확도가 어떻게 달라지는지 1주 내 작은 시야로 프로토타입 비교한다."
+      "why": "병리 영상을 보고 답하는 거대 비전-언어 모델(VLM, 이미지와 텍스트를 함께 이해하는 모델)을 평가할 때 지금까지는 주로 정답을 몇 퍼센트 맞혔는지만 봤는데, 오늘 arXiv에서는 같은 모델이 내놓는 '확신(confidence)'이나 '근거'를 믿어도 되는지를 직접 검증하는 논문이 한꺼번에 나왔습니다. Diagnosing Verbalized Confidence는 대장암 조직 영상에서 MedGemma라는 의료 특화 VLM에게 답과 함께 확신도도 말하게 시켜봤더니, 정확도 자체가 40.6%로 이미 낮은데 그 확신도는 환자 1만여 장 중 96%가 똑같은 값 하나로 쏠려 있었고(맞을 때와 틀릴 때를 구분하는 능력을 나타내는 AUROC가 0.499로 사실상 동전 던지기 수준), 오히려 일반 모델(Gemma-3)의 확신도가 더 쓸만했다는(AUROC 0.70) 역설을 보였습니다. Elicitation format 논문은 같은 모델에게 '어떤 형식으로 답하라고 요청하느냐'만 바꿔도 정확도가 최대 14.8%p나 요동친다는 걸 보여, 모델의 능력 자체보다 질문을 어떻게 포장하느냐가 평가 결과를 좌우하고 있다는 문제를 드러냈습니다. Can an Agent Trust Its Own Zoom은 병리 슬라이드를 자동으로 확대·탐색하는 에이전트가 '내가 지금 보고 있다고 주장하는 위치가 실제로 거기서 온 게 맞는지'를 검증하는 문제를 아예 새로 정의하고, 220만 장 규모 벤치마크에서 기존 방법(AUROC 0.903) 대비 훨씬 높은 AUROC 0.987을 달성하는 검증기를 내놨습니다. CLASP와 DARE는 각각 보고서 생성과 병원 간 염색 차이 적응이라는 다른 각도에서, 모델의 최종 출력이 실제로 확인 가능한 근거(수용체 상태 등)와 어긋나지 않는지를 구조적으로 통제하려 합니다. 다섯 편을 합치면, 병리 VLM 연구가 '정답을 맞혔는가'에서 '그 모델이 말하는 확신과 근거를 실제로 신뢰할 근거가 있는가'로 평가축이 넘어가고 있고, 그 신뢰도는 지금까지 생각보다 훨씬 더 불안정하다는 경고가 함께 나온 날입니다.",
+      "confidence": "High",
+      "confidence_note": "서로 다른 다섯 연구팀이 확신도 보정, 프롬프트 민감도, 위치 출처 검증, 보고서 근거, 도메인 적응이라는 다른 하위 문제에서 독립적으로 '신뢰 가능성'을 평가축으로 삼았고, 모두 구체적 수치(AUROC 0.499~0.987, 정확도 변동폭 14.8%p)로 뒷받침됩니다.",
+      "lab_action": "Diagnosing Verbalized Confidence의 확신도-정확도 분리 진단(AUROC, 선택적 예측 정확도 곡선)을 랩이 영상 해석 보조로 쓰는 VLM 도구에 적용해, 모델이 내놓는 확신 표현을 그대로 믿기 전에 맞음/틀림을 실제로 구분하는지 1주 내 소규모로 먼저 점검한다."
     },
     {
-      "cluster": "AI가 광통신 링크의 실시간 손상 보정을 구체적 수치로 맡기 시작",
+      "cluster": "Event 카메라가 단일 특수 센서에서 저조도·고속·연속시간 재구성의 범용 신호원으로 확장",
       "papers": [
-        {
-          "title": "AI-assisted atmospheric turbulence mitigation for reliable free-space optical communication",
-          "url": "https://doi.org/10.1515/joc-2026-0436",
-          "importance_tags": ["[방법전환]", "[실사용전환]"]
-        },
-        {
-          "title": "Artificial intelligence-assisted signal recovery and link optimization for next-generation optical fiber communication systems",
-          "url": "https://doi.org/10.1515/joc-2026-0456",
-          "importance_tags": ["[방법전환]", "[실사용전환]"]
-        }
+        {"title": "eSPG: The Unreasonable Effectiveness of Event Speckle Plethysmography", "arxiv": "https://arxiv.org/abs/2611.28275", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "Dual-Stream Event-to-Video Reconstruction (EvDualDiff)", "arxiv": "https://arxiv.org/abs/2611.28656", "importance_tags": ["[방법전환]"]},
+        {"title": "Continuous-time 4D Reconstruction via Event-guided Latent Feature Interpolation", "arxiv": "https://arxiv.org/abs/2611.29838", "importance_tags": ["[방법전환]", "[평가축]"]},
+        {"title": "LiquidGazeNet: Towards Event-Based Near-Eye Gaze Estimation under Low-Light Conditions", "arxiv": "https://arxiv.org/abs/2611.30392", "importance_tags": ["[실사용전환]"]},
+        {"title": "A high-speed and high-resolution 3D velocity map imaging system with a neuromorphic camera", "arxiv": "https://arxiv.org/abs/2611.28768", "importance_tags": ["[스케일업]", "[실사용전환]"]}
       ],
-      "why": "예전에는 광통신 링크에서 대기 난류나 광섬유의 색분산 같은 손상을 보정할 때 정해진 수식 기반 디지털 신호처리(DSP)를 썼는데, 오늘 저널 두 편은 모두 그 보정 과정을 심층신경망(DNN)에게 직접 학습시켜 구체적인 수치로 개선폭을 보였습니다. 자유공간 광통신(FSO, 레이저를 공기 중으로 쏴서 통신하는 방식) 논문은 대기 난류로 신호가 흔들릴 때 기존 보정 방식(Q-factor 14.5dB)과 무보정(10dB)에 비해 DNN 기반 보정이 Q-factor 18.5dB를 달성했고, 10km 거리에서 비트오류율(BER, 전송 중 틀리게 수신되는 비트의 비율)을 기존 2.5x10^-2·무보정 1x10^-1 대비 3x10^-3까지 낮췄습니다. 광섬유 통신 논문은 색분산·비선형성·감쇠 같은 손상을 받은 신호를 복원하면서 동시에 송신 전력 같은 링크 변수까지 최적화하는 AI-SRLO 방식을 제안했는데, 800km 거리에서 기존 DSP(1.05x10^-3)·DNN 단독(1.65x10^-4)보다 낮은 7.20x10^-5의 BER을 달성했습니다. 두 편을 합치면, 광통신 손상 보정이 정해진 수식을 적용하는 단계에서 데이터로부터 손상-신호 관계 자체를 학습하는 단계로 넘어가고 있다는 뜻입니다.",
+      "why": "Event 카메라(한 화면 전체를 일정 간격으로 찍는 대신, 밝기가 변하는 픽셀만 마이크로초 단위로 보고하는 센서)는 원래 고속·고동적범위가 필요한 특수 상황에서만 쓰이는 틈새 센서로 다뤄졌는데, 오늘 나온 다섯 편은 이 센서를 완전히 다른 다섯 가지 문제에 범용 신호원으로 끌어다 씁니다. eSPG는 레이저로 피부를 비추고 거기서 반사되는 미세한 반점 패턴(스펙클)의 흔들림을 event 카메라로 잡아 접촉 없이 심박수를 재는 방법을 보였고, Dual-Stream Event-to-Video는 event 카메라가 밝기 변화만 기록해 절대 밝기를 모른다는 근본적인 한계를, 사람 시각의 두 경로(색·형태를 보는 경로와 움직임을 보는 경로)에서 착안한 두 갈래 네트워크로 보완해 영상을 복원했습니다. Continuous-time 4D Reconstruction은 기존 영상 기반 3D 복원이 촬영된 프레임 사이 순간은 예측하지 못한다는 한계를, event 신호가 그 사이 틈을 마이크로초 단위로 메워준다는 점을 이용해 임의 시점의 3D 구조를 복원하도록 확장했습니다. LiquidGazeNet은 야간처럼 빛이 거의 없는 상황에서 일반 카메라의 시선 추적이 무너지는 문제를, 밝기 변화 신호만으로도 작동하는 event 전용 네트워크로 풀었고, 고속 3D 속도 지도 이미징 논문은 event 카메라를 이용해 이온 하나하나를 검출하는 지연시간을 2마이크로초까지 줄여 기존 프레임 카메라(수 kHz)보다 100kHz 이상 빠른 속도로 이미징했습니다. 다섯 편을 합치면, event 카메라가 '움직임이 빠른 특수 상황에서만 쓰는 센서'에서 '생체 신호, 영상 복원, 4D 기하, 야간 시선 추적, 초고속 과학 이미징까지 아우르는 범용 재구성 신호원'으로 활용 범위가 넓어지고 있다는 뜻입니다.",
       "confidence": "Medium",
-      "confidence_note": "두 편 모두 Journal of Optical Communications에 실려 동일 저널 내 동시 흐름일 가능성이 있어, 서로 다른 독립 기관으로 폭넓게 퍼진 추세인지는 확인이 더 필요합니다. 다만 둘 다 Q-factor·BER 같은 구체적 수치로 뒷받침됩니다.",
-      "lab_action": "랩이 다루는 비-RGB 측정(위상, 홀로그램) 신호에도 같은 구조(DNN이 손상-신호 관계를 직접 학습해 보정)를 적용해, 기존 결정론적 보정 알고리즘 대비 MSE·BER류 지표로 1주 내 소규모 비교 실험을 설계한다."
+      "confidence_note": "같은 Light-Field/Novel Sensors 버킷 안에서 서로 다른 다섯 응용(생체신호, 영상 복원, 4D 기하, 시선 추적, 초고속 이미징)에 event 카메라가 쓰였지만, 모두 cs.CV 단일 카테고리 중심이라 cs.LG/eess 쪽 독립 검증은 아직 부족합니다.",
+      "lab_action": "eSPG의 레이저 스펙클 + event 카메라 조합과 Dual-Stream Event-to-Video의 두 갈래 복원 구조를 랩이 보유한 event 카메라/레이저 광원 플랫폼에 적용해, 기존 프레임 카메라 기반 계측 대비 생체 신호나 미세 표면 변형 측정의 시간 분해능이 얼마나 개선되는지 1주 내 소규모로 비교한다."
+    },
+    {
+      "cluster": "메타표면·광자구조 설계가 고정 형상 최적화에서 재구성 가능한 소자와 데이터 기반 역설계로 이동",
+      "papers": [
+        {"title": "SAL-SMART: A Smart Metasurface Absorber for Robust Terahertz Control", "arxiv": "https://doi.org/10.1007/s11468-026-03548-0", "importance_tags": ["[방법전환]"]},
+        {"title": "Zero-State-Maintenance-Power Reconfigurable Reflective Metasurface", "arxiv": "https://doi.org/10.1109/jiot.2026.3756638", "importance_tags": ["[실사용전환]"]},
+        {"title": "A graphene-based tunable metasurface for on-demand THz beam-number switching", "arxiv": "https://doi.org/10.1063/5.0356527", "importance_tags": ["[방법전환]"]},
+        {"title": "A physics-informed data-driven inverse design framework for PCF-SPR biosensing structures", "arxiv": "https://doi.org/10.1016/j.rio.2026.101214", "importance_tags": ["[방법전환]", "[데이터전환]"]}
+      ],
+      "why": "메타표면(빛의 파장보다 작은 나노 구조를 평면에 배열해 렌즈나 흡수체 역할을 하게 만든 인공 광학 소재) 설계는 예전에는 한 번 고정된 형상을 어떻게 최적화할지에 머물렀는데, 오늘 저널에서 동시에 나온 네 편은 모두 그 형상 자체를 상황에 따라 바꾸거나(재구성), 형상을 사람이 직접 고르는 대신 알고리즘이 거꾸로 찾아내게 만드는(역설계) 쪽으로 넘어갔습니다. SAL-SMART와 Zero-State-Maintenance-Power 메타표면은 테라헤르츠(THz, 적외선과 마이크로파 사이 주파수 대역) 신호를 흡수·반사하는 소자를 전력을 거의 안 쓰면서도 상태를 바꿀 수 있게 만들었는데, 특히 후자는 기계식 비휘발성 스위치로 한 번 상태를 바꾼 뒤에는 전력 공급 없이도 그 상태를 유지해 배터리가 제한된 실내 IoT 환경에 실제로 쓸 수 있습니다. 그래핀 기반 THz 빔개수 스위칭 메타표면은 진폭과 위상을 동시에 최적화하는 입자군집 알고리즘으로 몇 개의 빔을 켜고 끌지를 전자적으로 바꿀 수 있게 했고, PCF-SPR 생체센서 논문은 다구치 실험설계·인공신경망·유전 알고리즘을 통합해 센서 구조 자체를 데이터 기반으로 역설계했습니다. 네 편을 합치면, 메타표면·광자구조 설계의 무게중심이 '한 번 잘 만든 고정 형상'에서 '상황에 따라 상태를 바꿀 수 있는 소자'와 '사람이 아니라 알고리즘이 찾아낸 형상'으로 옮겨가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 저널(Plasmonics, IEEE IoT Journal, J. Appl. Phys., Results in Optics) 4편이 독립적으로 재구성형/역설계를 택했지만, Crossref에 abstract가 없는 경우가 많아 제목 기준 판단입니다.",
+      "lab_action": "그래핀 THz 빔스위칭 메타표면의 진폭-위상 동시 PSO 최적화와 PCF-SPR의 Taguchi-ANN-GA 역설계 절차를 랩의 메타표면/메타렌즈 설계에 적용해, 기존 단일 목적함수 최적화 대비 재구성 가능 상태 수와 탐색 효율을 1주 내 소규모 벤치마크로 비교한다."
     },
     {
       "cluster": "OCT-angiography가 안과 진단을 넘어 전신 자가면역질환의 비침습 바이오마커로 확장",
       "papers": [
-        {
-          "title": "Human retinal capillary network analysis using vascular interconnectivity optical coherence tomography angiography (NAVI-OCTA)",
-          "url": "https://doi.org/10.1073/pnas.2616213123",
-          "importance_tags": ["[방법전환]", "[표준후보]"]
-        },
-        {
-          "title": "Optical Coherence Tomography Angiography Metrics as Non-invasive Biomarkers for Lupus Nephritis — A Systematic Review and Meta-Analysis",
-          "url": "https://doi.org/10.1142/s2661341726740391",
-          "importance_tags": ["[통합정리]"]
-        },
-        {
-          "title": "Beyond the Joints: Early Retinal Capillary Loss in Rheumatoid Arthritis Detected by Optical Coherence Tomography Angiography",
-          "url": "https://doi.org/10.1142/s2661341726740573",
-          "importance_tags": ["[평가축]"]
-        },
-        {
-          "title": "Automated Quantification of Macular Perfusion in Behcet's Uveitis Using Optical Coherence Tomography Angiography",
-          "url": "https://doi.org/10.1080/02713683.2026.2765591",
-          "importance_tags": ["[방법전환]"]
-        }
+        {"title": "NAVI-OCTA: Human retinal capillary network analysis using vascular interconnectivity OCTA", "arxiv": "https://doi.org/10.1073/pnas.2616213123", "importance_tags": ["[방법전환]", "[표준후보]"]},
+        {"title": "OCTA Metrics as Non-invasive Biomarkers for Lupus Nephritis (Systematic Review)", "arxiv": "https://doi.org/10.1142/s2661341726740391", "importance_tags": ["[통합정리]"]},
+        {"title": "Early Retinal Capillary Loss in Rheumatoid Arthritis Detected by OCTA", "arxiv": "https://doi.org/10.1142/s2661341726740573", "importance_tags": ["[평가축]"]},
+        {"title": "Automated Quantification of Macular Perfusion in Behcet's Uveitis Using OCTA", "arxiv": "https://doi.org/10.1080/02713683.2026.2765591", "importance_tags": ["[방법전환]"]}
       ],
-      "why": "예전에는 OCT-angiography(OCTA, 빛의 간섭을 이용해 망막의 미세혈관을 비침습적으로 촬영하는 기법)가 주로 안과 질환(당뇨망막병증, 황반변성 등) 진단에만 쓰였는데, 오늘 저널에서는 같은 기법이 눈이 아니라 몸 전체의 자가면역질환을 들여다보는 창으로 쓰이는 사례가 한꺼번에 나왔습니다. 루푸스신염(전신홍반루푸스가 신장을 침범하는 중증 합병증) 체계적 문헌고찰은 눈과 신장의 미세혈관이 비슷한 병리를 공유한다는 점에 착안해, 기존에 소변 검사나 신장 조직검사로만 확인하던 루푸스신염을 OCTA로 비침습적으로 선별할 수 있는지를 검토했습니다. 류마티스관절염 논문은 관절 증상이 뚜렷해지기 전에도 망막 모세혈관이 먼저 소실된다는 걸 보여 전신 미세혈관 염증의 조기 지표로 OCTA를 제안했고, 베체트병 포도막염 논문은 황반 관류(혈류가 황반 조직에 도달하는 정도)를 OCTA로 자동 정량화하는 방법을 다뤘습니다. 이 흐름을 방법론 쪽에서 뒷받침하는 논문이 NAVI-OCTA(Network Analysis using Vascular Interconnectivity OCTA)인데, 기존 2차원 영상만으로는 망막의 세 겹 모세혈관총 사이 연결 관계를 제대로 측정하기 어려웠던 문제를 1만 개 이상의 혈관 분절을 포함하는 3차원 네트워크로 재구성해, 당뇨망막병증 초기에 얕은층-중간층 연결은 줄고 중간층-깊은층 연결은 늘어나는 패턴을 실제 사람 눈에서 정량적으로 처음 측정했습니다. 네 편을 합치면, OCTA가 안과 전용 진단 도구에서 전신 자가면역질환의 비침습 바이오마커 후보로 번지고 있고, 그 번짐을 뒷받침할 정밀한 정량 분석 방법도 같이 나오고 있다는 뜻입니다.",
+      "why": "OCT-angiography(OCTA, 빛의 간섭을 이용해 망막의 미세혈관을 비침습적으로 촬영하는 기법)는 주로 안과 질환(당뇨망막병증, 황반변성 등) 진단에만 쓰였는데, 오늘 저널에서는 같은 기법이 눈이 아니라 몸 전체의 자가면역질환을 들여다보는 창으로 쓰이는 사례가 한꺼번에 나왔습니다. 루푸스신염(전신홍반루푸스가 신장을 침범하는 중증 합병증) 체계적 문헌고찰은 눈과 신장의 미세혈관이 비슷한 병리를 공유한다는 점에 착안해, 소변 검사나 신장 조직검사로만 확인하던 루푸스신염을 OCTA로 비침습적으로 선별할 수 있는지를 검토했습니다. 류마티스관절염 논문은 관절 증상이 뚜렷해지기 전에도 망막 모세혈관이 먼저 소실된다는 걸 보여 전신 미세혈관 염증의 조기 지표로 OCTA를 제안했고, 베체트병 포도막염 논문은 황반 관류(혈류가 황반 조직에 도달하는 정도)를 OCTA로 자동 정량화했습니다. 이 흐름을 방법론 쪽에서 뒷받침하는 NAVI-OCTA는 기존 2차원 영상만으로는 망막의 세 겹 모세혈관총 사이 연결 관계를 제대로 측정하기 어려웠던 문제를, 1만 개 이상의 혈관 분절을 포함하는 3차원 네트워크로 재구성해 당뇨망막병증 초기에 얕은층-중간층 연결은 줄고 중간층-깊은층 연결은 늘어나는 패턴을 사람 눈에서 처음 정량 측정했습니다. 네 편을 합치면, OCTA가 안과 전용 진단 도구에서 전신 자가면역질환의 비침습 바이오마커 후보로 번지고 있고, 그 번짐을 뒷받침할 정밀한 정량 분석 방법도 같이 나오고 있다는 뜻입니다.",
       "confidence": "High",
-      "confidence_note": "서로 다른 자가면역질환(루푸스신염, 류마티스관절염, 베체트병)을 다루는 임상 논문 3편과 이를 가능하게 하는 정량 분석 방법론 논문(PNAS)이 같은 수집 창에 동시에 나왔고, NAVI-OCTA는 1만 개 이상 혈관 분절 재구성이라는 구체적 규모로 뒷받침됩니다.",
-      "lab_action": "NAVI-OCTA의 네트워크 기반 연결성 분석(픽셀 단위 지표 대신 그래프의 연결 패턴으로 구조를 정량화) 틀을 랩의 위상/홀로그램 3D 복원 결과에도 적용해, 기존 복셀·픽셀 단위 오차 지표 대신 구조를 그래프로 변환했을 때 드러나는 연결성 지표가 복원 품질 평가에 추가 정보를 주는지 1주 내 점검한다."
+      "confidence_note": "서로 다른 자가면역질환(루푸스신염, 류마티스관절염, 베체트병) 임상 논문 3편과 이를 뒷받침하는 정량 분석 방법론 논문(PNAS)이 동시에 나왔고, NAVI-OCTA는 1만 개 이상 혈관 분절 재구성이라는 구체적 규모로 뒷받침됩니다.",
+      "lab_action": "NAVI-OCTA의 네트워크 기반 연결성 분석(픽셀 단위 지표 대신 그래프의 연결 패턴으로 구조를 정량화) 틀을 랩의 위상/홀로그램 3D 복원 결과에도 적용해, 기존 복셀·픽셀 단위 오차 지표가 놓치는 구조적 정보를 잡아낼 수 있는지 1주 내 점검한다."
     }
   ],
   "research_topics": [
     {
-      "title": "그래핀 THz 빔스위칭 메타표면의 진폭-위상 동시 최적화와 PCF-SPR의 Taguchi-ANN-GA 역설계를 랩 메타표면 설계에 적용",
-      "claim": "두 논문 모두 메타표면 형상을 사람이 고르는 대신 알고리즘이 데이터 기반으로 탐색하게 만들었는데, 랩의 메타렌즈/메타표면 설계도 같은 역설계 절차로 재구성 가능성과 탐색 효율을 동시에 얻을 수 있는지 확인할 가치가 있습니다.",
+      "title": "DecoFlat의 방향-분해 flatness 교정을 랩의 sparse-view 복원(FPM/단층촬영)에 적용",
+      "claim": "이 논문은 sparse-view 3DGS에서 여러 시점이 동의하지 않는 방향으로만 선택적으로 흔들어주면 일반화가 좋아진다는 걸 보였는데, 랩의 Fourier ptychography나 단층촬영처럼 제한된 측정 수로 복원하는 파이프라인도 같은 방향-분해 정규화를 적용하면 보지 못한 조명각/투영각에서의 복원 품질이 좋아지는지 확인할 가치가 있습니다.",
       "supporting_papers": [
-        {"title": "A graphene-based tunable metasurface for on-demand terahertz beam-number switching", "url": "https://doi.org/10.1063/5.0356527"},
-        {"title": "A physics-informed data-driven inverse design framework for PCF-SPR biosensing structures", "url": "https://doi.org/10.1016/j.rio.2026.101214"}
+        {"title": "Not All Directions Are Flat: Decomposed-Gradient Flatness for Sparse-View 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2611.28802"}
       ]
     },
     {
-      "title": "Fast Patchwise Modal Fitting의 조각 단위 파면 복원을 랩 FPM/홀로그램 파이프라인에 적용",
-      "claim": "이 논문은 넓은 시야를 통째로 복원하는 대신 조각으로 나눠 각각의 파면을 빠르게 추정했는데, 랩의 Fourier ptychography·홀로그램 복원도 같은 조각 단위 전략으로 속도와 정확도를 동시에 얻을 수 있는지 검증할 가치가 있습니다.",
+      "title": "ZoomTrace의 교차-배율 출처 검증을 랩의 다중 배율 현미경/병리 파이프라인에 적용",
+      "claim": "ZoomTrace는 에이전트가 주장하는 관찰 위치가 실제로 거기서 왔는지를 검증해 AUPRC 0.969를 달성했는데, 랩의 다중 배율 디지털 병리/현미경 파이프라인에서도 같은 출처 검증 층을 추가하면 배율 전환 시 생기는 위치 오류를 조기에 걸러낼 수 있는지 검증할 가치가 있습니다.",
       "supporting_papers": [
-        {"title": "Fast Patchwise Modal Fitting for Direct Wavefront Reconstruction", "url": "https://doi.org/10.1364/oe.620467"}
+        {"title": "Can an Agent Trust Its Own Zoom? Cross-Magnification Provenance Verification for Whole-Slide Images", "arxiv": "https://arxiv.org/abs/2611.29150"}
       ]
     },
     {
-      "title": "광통신 AI 보정(DNN 기반 손상-신호 학습)을 랩 비-RGB 측정 신호 보정에 적용",
-      "claim": "두 논문은 정해진 수식 기반 보정 대신 DNN이 손상-신호 관계를 직접 학습해 Q-factor·BER을 구체적으로 개선했는데, 랩이 다루는 위상/홀로그램 신호의 잡음 보정에도 같은 학습 기반 접근이 기존 결정론적 알고리즘보다 나은지 확인할 가치가 있습니다.",
+      "title": "Diagnosing Verbalized Confidence의 확신도-정확도 분리 진단을 랩이 쓰는 VLM 기반 영상 해석 도구에 적용",
+      "claim": "이 논문은 의료 VLM이 말하는 확신도가 실제 정답 여부와 거의 무관할 수 있다는 걸(AUROC 0.499) 구체적으로 보였는데, 랩이 복원 영상 해석에 VLM을 보조로 쓴다면 그 모델이 내놓는 확신도 표현을 그대로 신뢰하기 전에 같은 방식(AUROC, 선택적 예측 정확도)으로 먼저 진단할 가치가 있습니다.",
       "supporting_papers": [
-        {"title": "AI-assisted atmospheric turbulence mitigation for reliable free-space optical communication", "url": "https://doi.org/10.1515/joc-2026-0436"},
-        {"title": "Artificial intelligence-assisted signal recovery and link optimization for next-generation optical fiber communication systems", "url": "https://doi.org/10.1515/joc-2026-0456"}
+        {"title": "Diagnosing Verbalized Confidence in a Medical Vision-Language Model for Selective Prediction on Colorectal Histopathology Patches", "arxiv": "https://arxiv.org/abs/2611.28993"}
       ]
     },
     {
-      "title": "NAVI-OCTA의 네트워크 기반 연결성 분석을 랩 3D 복원 결과 평가에 적용",
-      "claim": "이 논문은 픽셀 단위 지표 대신 구조를 그래프로 바꿔 연결 패턴을 정량화해 기존에 못 보던 변화를 찾아냈는데, 랩의 위상/홀로그램 3D 복원 결과도 같은 그래프 기반 분석으로 기존 복셀 단위 오차 지표가 놓치는 구조적 정보를 잡아낼 수 있는지 검증할 가치가 있습니다.",
+      "title": "eSPG의 레이저 스펙클 + event 카메라 비접촉 생체신호 측정을 랩의 광학 계측 플랫폼에 시험 적용",
+      "claim": "eSPG는 저출력 레이저와 event 카메라만으로 접촉 없이 심박수를 측정했는데, 랩이 보유한 event 카메라나 레이저 광원을 조합해 같은 스펙클-event 원리로 생체 신호 외의 미세 진동·표면 변형 측정에도 적용할 수 있는지 확인할 가치가 있습니다.",
       "supporting_papers": [
-        {"title": "Human retinal capillary network analysis using vascular interconnectivity optical coherence tomography angiography", "url": "https://doi.org/10.1073/pnas.2616213123"}
+        {"title": "eSPG: The Unreasonable Effectiveness of Event Speckle Plethysmography", "arxiv": "https://arxiv.org/abs/2611.28275"}
+      ]
+    },
+    {
+      "title": "그래핀 THz 빔스위칭 메타표면의 진폭-위상 동시 최적화를 랩 메타표면 설계에 적용",
+      "claim": "이 논문은 메타표면 형상을 사람이 고르는 대신 진폭-위상을 동시에 최적화하는 PSO 알고리즘으로 탐색했는데, 랩의 메타렌즈/메타표면 설계도 같은 역설계 절차로 재구성 가능성과 탐색 효율을 동시에 얻을 수 있는지 확인할 가치가 있습니다.",
+      "supporting_papers": [
+        {"title": "A graphene-based tunable metasurface for on-demand THz beam-number switching", "arxiv": "https://doi.org/10.1063/5.0356527"}
+      ]
+    },
+    {
+      "title": "NAVI-OCTA의 네트워크 기반 연결성 분석을 랩의 3D 복원 결과 평가에 적용",
+      "claim": "이 논문은 픽셀 단위 지표 대신 구조를 그래프로 바꿔 연결 패턴을 정량화해 기존에 못 보던 층간 변화를 찾아냈는데, 랩의 위상/홀로그램 3D 복원 결과도 같은 그래프 기반 분석으로 기존 복셀 단위 오차 지표가 놓치는 구조적 정보를 잡아낼 수 있는지 검증할 가치가 있습니다.",
+      "supporting_papers": [
+        {"title": "Human retinal capillary network analysis using vascular interconnectivity OCTA (NAVI-OCTA)", "arxiv": "https://doi.org/10.1073/pnas.2616213123"}
       ]
     }
   ]

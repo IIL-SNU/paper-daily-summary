@@ -1,44 +1,43 @@
 {
   "date": "2026-11-24",
   "source_listing_date": "2026-11-24",
-  "source_mode": "journal-only",
-  "note": "2026-11-24(화) daily 정기 실행. Date Source Contract 점검 결과 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 전부 /new listing이 여전히 \"Monday, 23 November 2026\"을 가리켜(post_date=2026-11-24 > listing_date=2026-11-23, 아직 화요일자 공지가 올라오지 않음) arXiv 섹션은 발행하지 않는다. 실제로 fetch_arxiv.py new 결과도 cs.LG 171·cs.CV 171·cs.AI 214·eess.IV 10·eess.SP 17로 어제 발행한 2026-11-23.json과 완전히 동일한 카운트였다(같은 Monday 배치 재노출 확인, out/arxiv_gated_2026-11-23/에 격리 보관하고 classify에서 제외). Crossref/OpenAlex 저널 수집은 arXiv listing과 무관하게 항상 수행하므로(Fourier ptychography/lensless imaging/computational microscopy/quantitative phase imaging/computer-generated holography/metasurface optics/light field microscopy/optical diffraction tomography/virtual staining 9개 쿼리, --days 1) 정상 수집했고(Crossref 491편 + OpenAlex 보충 10편, 429 rate-limit 쿼리는 3초 간격 재시도로 복구), journal-only daily로 발행한다. 저널만 classify.py에 투입해 스캔 442건(중복 제거) 중 107건(24.2%)이 9개 ROI 버킷에 배정됐다. 오늘의 핵심은 (1) 메타표면/광자구조 설계가 고정 형상 최적화에서 재구성 가능한 소자 + 데이터 기반 역설계로 넘어가는 신호(THz 흡수체/빔스위칭 메타표면 4편 + PCF-SPR 역설계 바이오센서), (2) 위상/파면 복원이 광학 홀로그래피를 넘어 X-ray·전자현미경·나노간섭계로 동시다발적으로 번지는 신호(5편), (3) AI가 광통신 링크의 실시간 손상 보정을 구체적 수치로 맡기 시작한 신호(대기난류 보정 FSO, 광섬유 신호 복원 2편), (4) OCT-angiography가 안과를 넘어 루푸스신염·류마티스관절염 같은 전신 자가면역질환의 비침습 바이오마커로 확장되는 신호(NAVI-OCTA 포함 5편)다. 계산광학 핵심 ROI 중 Fourier Ptychography/Microscopy는 오늘 0편으로 완전히 비었고, Lensless·Light-Field도 각 1편뿐이며 그마저 랩 ROI와 거리가 있는 키워드 오탐(Euclid 망원경 defocus, 광결정 형광센싱)이었다. 이 daily는 journal-only 잠정 상태이며, arXiv /pastweek에 2026-11-24 섹션이 생기면 Calendar Audit이 Backfill로 덮어써 arXiv+저널 완성본(source_mode=pastweek-date-section)으로 업그레이드해야 한다.",
+  "source_mode": "new",
+  "note": "2026-11-24(화) daily 업그레이드 실행. 오전에 journal-only로 잠정 발행했던 2026-11-24 daily를 arXiv+저널 완성본으로 덮어썼다. Date Source Contract 재점검 결과 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 전부 /new listing이 \"Tuesday, 24 November 2026\"으로 갱신되어 post_date와 일치했다(/pastweek이 아니라 /new 기준, source_mode=new). arXiv new+cross 1490편(cs.LG 431·cs.CV 494·cs.AI 485·eess.IV 23·eess.SP 57, replacements 제외 확인, arxiv id YYMM=2611로 2026년 11월과 일치)에 저널 433편(Crossref 수집 + OpenAlex 보충 10편)을 더해 scripts/classify.py로 병합·재분류했다. 전체 스캔 1635건 중 508건(31.1%, 과거 27~31% 범위 안)이 9개 ROI 버킷에 배정됐다. 오늘의 핵심은 (1) 3D Gaussian Splatting 관련 논문 9편이 '보기 좋은 렌더링'에서 sparse-view 일반화·깊이 정확도·pruning·실외 강건성·워터마킹 같은 '믿을 수 있는 기하·자산' 문제로 동시에 이동한 점, (2) 병리 whole-slide VLM 5편이 정답률 대신 모델이 말하는 확신·근거를 실제로 신뢰할 수 있는지(AUROC 0.499~0.987)를 검증하기 시작한 점, (3) event 카메라 5편이 생체신호·영상복원·4D기하·야간 시선추적·초고속 이미징까지 범용 재구성 신호원으로 확장된 점이다. 아침에 journal-only로 먼저 짚었던 저널 전용 두 흐름(메타표면 재구성형/역설계 전환, OCT-angiography의 전신 자가면역질환 바이오마커 확장)은 오늘 저널 데이터가 그대로 유효해 클러스터 표에 유지했고, 광통신 AI 보정·위상복원 다중모달리티 확장 두 클러스터는 arXiv발 3개 클러스터에 자리를 내주며 버킷별 주요 논문/부록으로 이동했다. 계산광학 핵심 ROI(Fourier Ptychography=4편, 전부 키워드 오탐으로 실질 신호 없음; Lensless=1편)는 오늘도 신호가 얇았다.",
   "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 0,
-      "cs.CV": 0,
-      "cs.AI": 0,
-      "eess.IV": 0,
-      "eess.SP": 0
+      "cs.LG": 431,
+      "cs.CV": 494,
+      "cs.AI": 485,
+      "eess.IV": 23,
+      "eess.SP": 57
     },
     "scope": "new+cross; replacements excluded",
-    "journal_count": 501
+    "journal_count": 443
   },
   "totals": {
-    "total_scanned": 442,
-    "selected": 107
+    "total_scanned": 1635,
+    "selected": 508
   },
   "classified": {
-    "total_scanned": 442,
-    "selected": 107,
+    "total_scanned": 1635,
+    "selected": 508,
     "by_bucket": {
-      "Fourier Ptychography/Microscopy": 0,
+      "Fourier Ptychography/Microscopy": 4,
       "Lensless/Coded Imaging": 1,
-      "Phase Imaging/Holography": 11,
-      "Meta-Optics/Diffractive": 19,
-      "Light-Field/Novel Sensors": 1,
-      "Tomography/3D Imaging": 32,
-      "Virtual Staining/Pathology": 14,
-      "Reconstruction/Inverse Problems": 5,
-      "Deep Learning Methods": 24
+      "Phase Imaging/Holography": 14,
+      "Meta-Optics/Diffractive": 22,
+      "Light-Field/Novel Sensors": 10,
+      "Tomography/3D Imaging": 57,
+      "Virtual Staining/Pathology": 64,
+      "Reconstruction/Inverse Problems": 44,
+      "Deep Learning Methods": 292
     }
   },
-  "daily_thesis": "오늘은 arXiv 화요일자 공지가 아직 올라오지 않아(/new가 여전히 월요일 배치) 저널(Crossref/OpenAlex) 수집만으로 발행하는 journal-only 날입니다. 전체 신호는 얇지만 그 안에서 메타표면 설계가 고정 형상 최적화에서 재구성 가능한 소자·데이터 기반 역설계로 넘어가는 흐름, 위상/파면 복원이 여러 영상 모달리티에서 동시에 다듬어지는 흐름, AI가 광통신 링크 보정을 구체적 수치로 맡기 시작한 흐름, 그리고 OCT-angiography가 안과를 넘어 전신 자가면역질환 바이오마커로 번지는 흐름이 뚜렷합니다.",
+  "daily_thesis": "오늘은 3D Gaussian Splatting 연구의 무게중심이 '얼마나 예쁘게 보이는가'에서 '그 기하와 자산을 실제로 믿고 쓸 수 있는가'로 넘어간 날이고, 병리 whole-slide VLM들이 정답률보다 모델이 내놓는 확신·근거를 신뢰할 수 있는지를 먼저 검증하기 시작한 날입니다. Event 카메라는 틈새 고속 센서를 넘어 생체신호부터 초고속 과학 이미징까지 아우르는 범용 재구성 신호원으로 확장됐고, 저널 쪽에서는 메타표면의 재구성형·역설계 전환과 OCT-angiography의 전신 자가면역질환 바이오마커 확장이 계속 이어졌습니다.",
   "arxiv_gate": {
-    "status": "post_date_after_listing_date",
+    "status": "ok",
     "checked_categories": ["cs.LG", "cs.CV", "cs.AI", "eess.IV", "eess.SP"],
-    "listing_date_observed": "2026-11-23",
-    "post_date": "2026-11-24",
-    "action": "arXiv 섹션 미발행, 저널만으로 journal-only 발행. 격리된 /new 원본은 out/arxiv_gated_2026-11-23/에 보관(커밋 대상 아님)."
+    "listing_date_observed": "2026-11-24",
+    "post_date": "2026-11-24"
   }
 }

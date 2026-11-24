@@ -2,6 +2,54 @@
   "date": "2026-11-24",
   "results": [
     {
+      "benchmark": "ZoomTrace, PyraFault 벤치마크 50만여 테스트 예시 (TCGA 5개 코호트, 220만 장 규모)",
+      "metric": "AUPRC / AUROC",
+      "value": 0.969,
+      "value_str": "ZoomTrace AUPRC 0.969·AUROC 0.987, 기존 Efficient LoFTR는 AUPRC 0.789·AUROC 0.903에 그침",
+      "paper": "https://arxiv.org/abs/2611.29150",
+      "paper_title": "Can an Agent Trust Its Own Zoom? Cross-Magnification Provenance Verification for Whole-Slide Images"
+    },
+    {
+      "benchmark": "MedGemma-27b-it, 대장암 조직 1만여 장(PathMNIST 검증 세트 + 외부 기관 7,180장)",
+      "metric": "확신도-정확도 AUROC / 정확도",
+      "value": 0.499,
+      "value_str": "정확도 40.6%(외부 기관 35.5%)에 더해, 말로 표현한 확신도가 맞음/틀림을 구분하는 AUROC가 0.499(외부 0.528)로 사실상 무작위 수준; 같은 설정에서 Gemma-3-27b-it는 AUROC 0.70",
+      "paper": "https://arxiv.org/abs/2611.28993",
+      "paper_title": "Diagnosing Verbalized Confidence in a Medical Vision-Language Model for Selective Prediction on Colorectal Histopathology Patches"
+    },
+    {
+      "benchmark": "MedGemma-27b-it, 대장암 조직 9클래스 분류 질문 형식 변경 (검증 1만여 장 + 외부 7,180장)",
+      "metric": "정확도 변동폭",
+      "value": 14.8,
+      "value_str": "확률 분포로 답하게 요청하면 순위 top-3로 답하게 할 때보다 정확도가 검증 세트 14.8%p, 외부 기관 13.4%p 하락(우연 정확도 11.11% 기준)",
+      "paper": "https://arxiv.org/abs/2611.28997",
+      "paper_title": "Elicitation format changes zero-shot classification accuracy in a medical vision-language model"
+    },
+    {
+      "benchmark": "LMnOP, 3개 데이터셋 3D Gaussian Splatting 90%/99% pruning",
+      "metric": "SSIM/LPIPS 개선 항목 수",
+      "value": 16,
+      "value_str": "미세조정 없이 18개 지표 중 16개에서 최고 성능, 기존 leave-one-out 기반 GaussianPOP 대비 13개 장면 전체에서 SSIM·LPIPS 동시 개선",
+      "paper": "https://arxiv.org/abs/2611.30102",
+      "paper_title": "LMnOP: Pruning 3D Gaussian Splatting via Leave-Many-Out Importance"
+    },
+    {
+      "benchmark": "CLASP, PathText-BRCA 유방암 병리 보고서 생성 벤치마크 (35M 파라미터)",
+      "metric": "임상 기록과의 모순 감소율",
+      "value": 23,
+      "value_str": "수용체 상태처럼 H&E 영상만으로 확인 불가능한 소견은 밝히지 않도록 결정해, 같은 구조의 결정 없는 네트워크 대비 임상 기록과의 모순이 23% 적음; 최대 7B 파라미터 슬라이드 LLM과 동급 성능",
+      "paper": "https://arxiv.org/abs/2611.28576",
+      "paper_title": "CLASP: Deciding Structure and Claims Before Decoding for Whole-Slide Pathology Report Generation"
+    },
+    {
+      "benchmark": "고속 3D 속도 지도 이미징(VMI) 시스템, 뉴로모픽(event) 카메라 vs 기존 프레임 카메라",
+      "metric": "검출 지연시간 / 이미징 속도",
+      "value": 100,
+      "value_str": "이온/전자 단일 입자 검출 지연시간 2마이크로초 달성, 이미징 속도 100kHz 이상(기존 프레임 카메라는 수 kHz 수준에 그침)",
+      "paper": "https://arxiv.org/abs/2611.28768",
+      "paper_title": "A high-speed and high-resolution 3D velocity map imaging system with a neuromorphic camera"
+    },
+    {
       "benchmark": "자유공간 광통신(FSO) 링크, Cn^2=8x10^-17 m^-2/3 난류 강도, 10km 거리",
       "metric": "Q-factor / BER",
       "value": 18.5,
