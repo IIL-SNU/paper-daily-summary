@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-24",
+  "results": [
+    {
+      "benchmark": "자유공간 광통신(FSO) 링크, Cn^2=8x10^-17 m^-2/3 난류 강도, 10km 거리",
+      "metric": "Q-factor / BER",
+      "value": 18.5,
+      "value_str": "DNN 기반 보정 Q-factor 18.5dB(기존 보정 14.5dB, 무보정 10dB), 10km에서 BER 3x10^-3(기존 2.5x10^-2, 무보정 1x10^-1)",
+      "paper": "https://doi.org/10.1515/joc-2026-0436",
+      "paper_title": "AI-assisted atmospheric turbulence mitigation for reliable free-space optical communication"
+    },
+    {
+      "benchmark": "차세대 광섬유 통신 링크, 800km 전송거리, 1dBm 송신전력",
+      "metric": "BER (DSP vs DNN vs AI-SRLO)",
+      "value": 0.0000720,
+      "value_str": "AI-SRLO BER 7.20x10^-5, DNN 단독 1.65x10^-4, 기존 DSP 1.05x10^-3",
+      "paper": "https://doi.org/10.1515/joc-2026-0456",
+      "paper_title": "Artificial intelligence-assisted signal recovery and link optimization for next-generation optical fiber communication systems"
+    },
+    {
+      "benchmark": "사람 망막 황반 전역, 3중 모세혈관총(SVP/ICP/DCP) 3D 재구성",
+      "metric": "재구성된 혈관 분절 수",
+      "value": 10000,
+      "value_str": "황반 전역에서 1만 개 이상 혈관 분절 재구성, 당뇨망막병증 초기 얕은층-중간층 연결 감소·중간층-깊은층 연결 증가 패턴을 생체 내에서 정량 측정",
+      "paper": "https://doi.org/10.1073/pnas.2616213123",
+      "paper_title": "Human retinal capillary network analysis using vascular interconnectivity optical coherence tomography angiography (NAVI-OCTA)"
+    }
+  ]
+}
