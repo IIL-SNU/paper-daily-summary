@@ -1,44 +1,44 @@
 {
   "date": "2026-11-25",
   "source_listing_date": "2026-11-25",
-  "source_mode": "journal-only",
-  "note": "2026-11-25(수) daily 정기 실행. Date Source Contract 점검 결과 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 전부 /new listing이 여전히 \"Tuesday, 24 November 2026\"을 가리켜(post_date=2026-11-25 > listing_date=2026-11-24, 수요일자 공지가 아직 올라오지 않음) arXiv 섹션은 발행하지 않는다. fetch_arxiv.py new를 5개 카테고리 전부 독립적으로 재실행했는데 어제 발행한 카운트(cs.LG 431·cs.CV 494·cs.AI 485·eess.IV 23·eess.SP 57)와 바이트 단위로 완전히 동일해, 새 화요일 배치가 아니라 같은 화요일 배치가 그대로 재노출된 것임을 확인했다(격리 보관, classify에서 제외). Crossref/OpenAlex 저널 수집은 arXiv listing과 무관하게 항상 수행하므로(Fourier ptychography/lensless imaging/computational microscopy/quantitative phase imaging/computer-generated holography/metasurface optics/light field microscopy/optical diffraction tomography/virtual staining 9개 쿼리, --days 1) 오늘도 정상 수행했다. Crossref 쿼리 9개 중 2개는 1차 시도에서 성공했고 나머지 7개는 HTTP 429 rate-limit에 걸려 3초 간격으로 개별 재시도해 모두 복구했다. OpenAlex enrich 패스는 병합된 Crossref 저널 집합 중 21/417편에 인용수·초록을 보강했고, OpenAlex works 보충 수집(computational imaging/Fourier ptychography/metasurface optics, --days 1)으로 14편을 추가 확보했다. 병합·중복 제거 후 classify.py가 431건을 스캔해 121건(28.1%)을 9개 ROI 버킷에 배정했다. 오늘의 핵심은 (1) 메타표면 설계가 고정 형상 최적화에서 다기능 통합·재구성 가능한 소자로 넘어가는 신호(MOPSO 역설계 THz 필터 Q-factor 49.33·FWHM 0.018THz, Risley-prism 스핀 선택적 양방향 빔스캐닝, 그래핀-VO2 다중모드 흡수+센싱, 4채널 회절 신경망, RGB-achromatic 바이레이어 메타렌즈 등 5편 — 어제의 대표 4편(SAL-SMART·Zero-State-Maintenance-Power·그래핀 THz 빔스위칭·PCF-SPR)과는 완전히 다른 논문 집합), (2) 위상/파면 복원이 대구경 간섭계 진동 보정·적응광학 조각 단위 피팅·나노간섭계 벡터장 복원·확장 물체 파면 분리라는 네 가지 서로 다른 하드웨어에서 동시에 다듬어지는 신호(4편), (3) OCT-angiography가 어제 짚은 자가면역질환(루푸스신염·류마티스관절염) 바이오마커 확장에 더해 오늘은 황반 OCTA 기반 비당뇨 신장질환 진단모델이 새로 나와 적용 범위가 신장질환으로 한 걸음 더 넓어진 신호(3편)다. 계산광학 핵심 ROI 중 Fourier Ptychography/Microscopy는 2편뿐이고(그나마 1편은 현미경 객체 탐지 어블레이션으로 FP 본류와는 간접 연결), Lensless/Coded Imaging은 오늘도 완전히 비었다. Virtual Staining/Pathology(19편)와 Reconstruction/Inverse Problems(9편)는 오늘 거의 전부가 키워드만 겹치는 무관 논문이라 클러스터 후보 자체가 나오지 않았다. 이 daily는 journal-only 잠정 상태이며, arXiv /pastweek에 2026-11-25 섹션이 생기면 Calendar Audit이 Backfill로 덮어써 arXiv+저널 완성본(source_mode=pastweek-date-section)으로 업그레이드해야 한다.",
+  "source_mode": "new",
+  "note": "2026-11-25(수) daily 업그레이드 실행. 오전에 journal-only로 잠정 발행했던 2026-11-25 daily를 arXiv+저널 완성본으로 덮어썼다. Date Source Contract 재점검 결과 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 전부 /new listing이 \"Wednesday, 25 November 2026\"으로 갱신되어 post_date와 일치했다(/pastweek이 아니라 /new 기준, source_mode=new). arXiv new+cross 874편(cs.LG 233·cs.CV 302·cs.AI 300·eess.IV 9·eess.SP 30, replacements 제외 확인, arxiv id YYMM=2611로 2026년 11월과 일치)에 저널 423편(Crossref) + OpenAlex 보충 14편을 더해 scripts/classify.py로 병합·재분류했다. 전체 스캔 1143건(out/classified.json total 필드 기준, arXiv 874건 + 저널/OpenAlex 병합 후 269건) 중 350건(30.6%, 과거 27~31% 범위 안)이 9개 ROI 버킷에 배정됐다. 오늘의 핵심은 (1) Tomography/3D Imaging 버킷(72편, release gate 기준 10편 이상) 안에서 3D Gaussian Splatting/SLAM/SfM 직결 논문 9편이 어제의 '기하를 믿을 수 있는가' 검증에서 한 걸음 더 나아가 '실시간·온라인 시스템 제약(메모리, 프레임 시간, SLAM 결합) 안에서 버틸 수 있는가'로 이동한 점, (2) event 카메라 4편이 틈새 응용 확장을 넘어 깊이·추적·분할·데이터생성 같은 표준 RGB 비전 태스크 전체를 재현하기 시작한 점, (3) 핵심 ROI인 Fourier Ptychography/Microscopy에서 PtychoFM이라는 실시간(초당 200프레임) foundation model 논문이 나와 반복계산 중심이던 계산 현미경 재구성이 학습 기반 추론으로 이동하는 직접 신호를 보인 점이다. 저널 쪽은 메타표면 다기능 통합·재구성형 전환(대표 논문 5편 전량 교체, DOI 중복 0)과 위상/파면 복원의 하드웨어 확산(대표 4편이 어제와 완전히 동일 재노출 — Crossref --days 1 수집 창 중첩으로 confidence를 Medium에서 Low로 하향) 두 흐름이 이어졌다. OCT-angiography 신장질환 확장 클러스터는 오늘 수집분에서 재현되지 않아(Crossref 수집 창 밖으로 벗어남) 클러스터 표에서 내리고 버킷별 주요 논문으로만 다뤘다. 계산광학 핵심 ROI는 Fourier Ptychography=4편(그중 2편이 arXiv 직격, PtychoFM 포함 — 최근 며칠 중 가장 강한 신호), Lensless/Coded Imaging=1편(VOS adversarial attack 논문으로 키워드 오탐)이었다.",
   "daily_new_counts": {
     "by_cat": {
-      "cs.LG": 0,
-      "cs.CV": 0,
-      "cs.AI": 0,
-      "eess.IV": 0,
-      "eess.SP": 0
+      "cs.LG": 233,
+      "cs.CV": 302,
+      "cs.AI": 300,
+      "eess.IV": 9,
+      "eess.SP": 30
     },
     "scope": "new+cross; replacements excluded",
-    "journal_count": 431
+    "journal_count": 423
   },
   "totals": {
-    "total_scanned": 431,
-    "selected": 121
+    "total_scanned": 1143,
+    "selected": 350
   },
   "classified": {
-    "total_scanned": 431,
-    "selected": 121,
+    "total_scanned": 1143,
+    "selected": 350,
     "by_bucket": {
-      "Fourier Ptychography/Microscopy": 2,
-      "Lensless/Coded Imaging": 0,
-      "Phase Imaging/Holography": 8,
-      "Meta-Optics/Diffractive": 9,
-      "Light-Field/Novel Sensors": 1,
-      "Tomography/3D Imaging": 45,
-      "Virtual Staining/Pathology": 19,
-      "Reconstruction/Inverse Problems": 9,
-      "Deep Learning Methods": 28
+      "Fourier Ptychography/Microscopy": 4,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 10,
+      "Meta-Optics/Diffractive": 10,
+      "Light-Field/Novel Sensors": 6,
+      "Tomography/3D Imaging": 72,
+      "Virtual Staining/Pathology": 38,
+      "Reconstruction/Inverse Problems": 25,
+      "Deep Learning Methods": 184
     }
   },
-  "daily_thesis": "오늘도 arXiv 수요일자 공지가 아직 올라오지 않아(/new가 여전히 화요일 배치) 저널(Crossref/OpenAlex) 수집만으로 발행하는 journal-only 날입니다. 계산광학 핵심 버킷은 여전히 얇지만(Fourier Ptychography 2편, Lensless 0편), 메타표면 설계가 어제와는 다른 대표 논문 집합으로 다기능 통합·재구성형 소자 전환을 다시 보여줬고, 위상/파면 복원이 간섭계·적응광학·나노광학 네 가지 하드웨어에서 동시에 다듬어지는 흐름, 그리고 OCT-angiography가 당뇨망막병증·자가면역질환을 넘어 신장질환 진단모델로 한 걸음 더 확장되는 흐름이 뚜렷합니다.",
+  "daily_thesis": "오늘은 3D Gaussian Splatting/SLAM 재구성이 어제의 '기하를 믿을 수 있는가' 검증을 지나 '실시간·온라인 시스템 제약 안에서 버틸 수 있는가'로 한 걸음 더 나아간 날이고, event 카메라가 틈새 응용을 넘어 깊이·추적·분할·데이터생성 같은 표준 RGB 비전 태스크 전체를 재현하기 시작한 날입니다. 핵심 ROI인 Fourier ptychography에서는 PtychoFM이 반복계산 중심이던 계산 현미경 재구성을 실시간 foundation model 추론으로 바꾸는 직접 신호를 보였고, 저널 쪽에서는 메타표면의 다기능 통합·재구성형 전환이 완전히 새로운 논문 집합으로 다시 확인됐습니다.",
   "arxiv_gate": {
-    "status": "post_date_after_listing_date",
+    "status": "ok",
     "checked_categories": ["cs.LG", "cs.CV", "cs.AI", "eess.IV", "eess.SP"],
-    "listing_date_observed": "2026-11-24",
+    "listing_date_observed": "2026-11-25",
     "post_date": "2026-11-25",
-    "action": "arXiv 섹션 미발행, 저널만으로 journal-only 발행. 재실행한 fetch_arxiv.py new 결과가 어제 발행본과 카운트가 완전히 동일해(cs.LG 431·cs.CV 494·cs.AI 485·eess.IV 23·eess.SP 57) 같은 화요일 배치 재노출로 확인, out/arxiv_gated_2026-11-24/에 격리 보관(커밋 대상 아님)."
+    "action": "오전에는 5개 카테고리 /new listing이 여전히 화요일(11/24) 배치를 가리켜 journal-only로 먼저 발행했으나, 이후 재점검에서 전부 \"Wednesday, 25 November 2026\"으로 갱신된 것을 확인해 arXiv+저널 완성본으로 업그레이드했다."
   }
 }

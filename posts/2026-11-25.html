@@ -82,22 +82,22 @@ html[data-theme=light] body{background-color:#fff}
 <h1>Imaging Intelligence Daily Briefing — 2026-11-25 (수요일)</h1>
 
 <div class=meta>
-  <div>📅 발행일: 2026-11-25 (수요일) · Journal-only mode (source_mode=journal-only)</div>
-  <div>📚 소스: Date Source Contract 점검 결과 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 전부 /new listing이 여전히 "Tuesday, 24 November 2026"을 가리킵니다(post_date=2026-11-25 &gt; listing_date=2026-11-24, 수요일자 공지가 아직 올라오지 않음). fetch_arxiv.py new를 5개 카테고리 전부 독립적으로 재실행했는데 어제 발행한 카운트(cs.LG 431·cs.CV 494·cs.AI 485·eess.IV 23·eess.SP 57)와 바이트 단위로 완전히 동일해, 새 화요일 배치가 아니라 같은 화요일 배치가 그대로 재노출된 것으로 확인했습니다. 따라서 arXiv 섹션은 발행하지 않습니다. Crossref/OpenAlex 저널 수집은 arXiv listing과 무관하게 항상 수행하므로(랩 키워드 9개, --days 1) 오늘도 저널만으로 발행합니다. Crossref 쿼리 9개 중 2개는 1차 시도에서 성공했고 나머지 7개는 HTTP 429 rate-limit에 걸려 3초 간격으로 개별 재시도해 모두 복구했습니다. OpenAlex enrich 패스는 병합된 Crossref 저널 집합 중 21/417편에 인용수·초록을 보강했고, OpenAlex works 보충 수집(computational imaging/Fourier ptychography/metasurface optics, --days 1)으로 14편을 추가 확보했습니다. 이 daily는 잠정 상태이며, arXiv /pastweek에 2026-11-25 섹션이 생기면 다음 Calendar Audit이 Backfill로 덮어써 arXiv+저널 완성본으로 업그레이드할 예정입니다.</div>
-  <div>🔢 arXiv: 오늘 미발행(0편, 화요일 배치 재노출로 확인돼 제외)</div>
-  <div>🔢 저널: 병합·중복 제거 후 스캔 431건 → ROI 배정 121건 (28.1%)</div>
+  <div>📅 발행일: 2026-11-25 (수요일) · arXiv+저널 완성본으로 업그레이드(source_mode=new) — 오전에 발행했던 journal-only 잠정본을 덮어씀</div>
+  <div>📚 소스: 오전 Date Source Contract 점검 때는 5개 카테고리 /new listing이 여전히 화요일(11/24) 배치를 가리켜 저널만으로 먼저 발행했는데, 이후 재점검에서 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 전부 "Wednesday, 25 November 2026"으로 갱신된 것을 확인(post_date == listing_date, /new 기준). arXiv new+cross 874편(cs.LG 233·cs.CV 302·cs.AI 300·eess.IV 9·eess.SP 30)에 저널 423편(Crossref) + OpenAlex 보충 14편을 더해 재분류했습니다.</div>
+  <div>🔢 arXiv: 874편(new+cross, replacements 제외) · 저널: 437편(Crossref 423 + OpenAlex 14, 중복 제거 전)</div>
+  <div>🔢 전체 스캔 1,143건(arXiv 874 + 저널/OpenAlex 병합 후 269건 고유) → ROI 배정 350건 (30.6%)</div>
 </div>
 
 <h2>📌 오늘의 결론</h2>
 <blockquote>
-오늘도 <strong>arXiv 수요일자 공지가 아직 올라오지 않아 저널(Crossref/OpenAlex) 수집만으로 발행하는 journal-only 날</strong>입니다. 계산광학 핵심 버킷 중 Fourier Ptychography/Microscopy는 2편뿐이고 Lensless/Coded Imaging은 완전히 비었지만, 그 안에서 두 가지 흐름이 뚜렷합니다. 메타표면 설계는 어제와는 다른 대표 논문 집합으로 다시 한번 "고정 형상"에서 "재구성 가능한 소자"로 넘어가는 신호를 보였는데, 오늘은 특히 MOPSO 기반 역설계로 Q-factor 49.33·FWHM 0.018THz를 달성한 테라헤르츠 필터와 스핀 선택적 양방향 빔 스캐닝 메타표면처럼 하나의 소자가 여러 기능을 동시에 수행하는 다기능 통합 쪽이 두드러집니다. 위상/파면 복원 쪽은 간섭계의 진동 보정, 적응광학의 조각 단위 파면 추정과 신경망 기반 파면 분리, 나노 입자 산란의 벡터장 복원까지 네 가지 하드웨어 맥락에서 동시에 다듬어지고 있습니다. OCT-angiography는 어제 짚었던 자가면역질환 바이오마커 확장에 더해, 오늘은 망막 미세혈관 영상을 당뇨병이 아닌 콩팥(신장)질환 진단모델에 직접 연결하는 새 논문이 나와 적용 범위가 한 걸음 더 넓어졌습니다. 반대로 Virtual Staining/Pathology(19편)와 Reconstruction/Inverse Problems(9편)는 오늘 거의 전부가 "staining"·"reconstruction" 단어만 겹치는 무관 논문이라 실질 신호가 거의 없었습니다.
+오늘은 <strong>3D Gaussian Splatting(점 대신 반투명한 타원체를 장면에 흩뿌려 실시간 렌더링하는 기법, 3DGS)/SLAM 재구성이 어제의 "기하를 믿을 수 있는가" 검증을 지나, "실시간·온라인 시스템 제약 안에서 버틸 수 있는가"로 한 걸음 더 들어간 날</strong>입니다. Tomography/3D Imaging 버킷(72편)에서만 3DGS/SLAM/SfM 직결 논문이 9편 나왔는데, 메모리 예산 안에서 가지치기하기, 복잡한 타일 하나가 전체 프레임 속도를 좌우하지 않게 구조를 나누기, LiDAR와 파노라마 카메라의 시야 불일치 속에서도 안정적으로 추적하기처럼 전부 '실제 시스템에 넣었을 때의 제약'을 다룹니다. 동시에 event 카메라 4편은 생체신호·초고속 이미징 같은 틈새 응용을 넘어, 깊이 추정·점 추적·영상 분할·데이터 생성처럼 RGB 카메라가 이미 잘 풀던 표준 비전 태스크 전체를 event 신호로 다시 세우기 시작했습니다. 가장 반가운 신호는 핵심 ROI인 Fourier Ptychography/Microscopy에서 나왔는데, PtychoFM이라는 논문이 방사광가속기 현장에서 회절 패턴을 초당 200프레임으로 실시간 복원하는 foundation model(대규모로 미리 학습해 여러 상황에 두루 쓰는 모델)을 보여, 실험이 끝난 뒤에야 알 수 있던 복원 결과를 측정 중에 바로 확인할 수 있게 됐습니다. 저널 쪽에서는 메타표면의 다기능 통합·재구성형 전환이 어제와는 전혀 다른 논문 5편으로 다시 확인됐고, 위상/파면 복원 클러스터는 어제와 완전히 동일한 4편이 재노출된 것이라(Crossref 수집 창 중첩) confidence를 한 단계 낮춰 과장하지 않았습니다. Lensless/Coded Imaging은 오늘도 실질 신호가 거의 없었습니다.
 </blockquote>
 
 <h2>🔭 주간 동향</h2>
-<p>오늘 2026-11-25 확인 기준 5개 추적 카테고리 전부 /new listing이 여전히 "Tuesday, 24 November 2026"을 가리켜(post_date가 listing_date보다 하루 앞서 있음) arXiv 섹션은 발행하지 않고, Crossref/OpenAlex 저널 수집만으로 classify.py를 돌렸습니다. Crossref 9개 쿼리는 2개만 1차 성공, 나머지 7개는 429 rate-limit에 걸려 3초 간격 재시도로 복구했고, OpenAlex enrich가 21/417편에 인용수·초록을 보강했으며, OpenAlex works 보충 수집으로 14편을 추가했습니다. 병합·중복 제거 후 스캔 431건 중 121건(28.1%)이 9개 ROI 버킷에 배정됐는데, 버킷 분포는 Tomography/3D Imaging(45편)과 Deep Learning Methods catch-all(28편)이 가장 크고, 그 안의 상당수는 순수 임상 증례(심장 OCT 증례보고, 치과 CBCT 등)나 "tomography"라는 단어만 겹치는 무관 논문(토양 전기비저항 탐사, 은하 분광 등)이라 버킷 크기가 실질 신호 밀도를 뜻하지는 않습니다. 버킷별 논문을 다시 읽어본 결과 오늘 가장 뚜렷한 신호는 세 갈래입니다 — (1) 메타표면 설계가 여전히 재구성 가능한 소자·다기능 통합으로 이동 중이되 오늘은 어제와 완전히 다른 9편(Risley-prism 양방향 빔스캐닝, 그래핀-VO₂ 다중모드 흡수, 4채널 메타표면 회절 신경망, MOPSO 역설계 THz 필터, RGB-achromatic 바이레이어 메타렌즈 등)이 대표합니다. (2) 위상/파면 복원이 간섭계·적응광학·나노간섭계로 동시에 번지고 있습니다(4편). (3) OCT-angiography가 어제의 자가면역질환 바이오마커 확장에 더해 오늘은 신장질환 진단모델로 한 걸음 더 넓어졌습니다. 반대로 Fourier Ptychography/Microscopy는 2편뿐이고 그나마 하나는 순수 현미경 객체 탐지 어블레이션이라 FP 자체와는 간접적으로만 연결되며, Lensless/Coded Imaging은 오늘도 완전히 비었습니다.</p>
+<p>오늘 2026-11-25 arXiv 5개 추적 카테고리 전부 /new listing이 수요일자로 갱신되어(post_date == listing_date) arXiv+저널 완성본을 발행합니다. arXiv new+cross 874편에 저널 437편(Crossref 423 + OpenAlex 14)을 병합·중복 제거한 뒤 전체 1,143건을 스캔했고, 350건(30.6%)이 9개 ROI 버킷에 배정됐습니다. 버킷 분포는 Tomography/3D Imaging(72편)과 Virtual Staining/Pathology(38편)이 가장 크고, Deep Learning Methods catch-all이 184편입니다. 버킷별 논문을 다시 훑어본 결과 오늘 가장 뚜렷한 신호는 세 갈래입니다 — (1) 3D Gaussian Splatting/SLAM이 어제의 '기하 신뢰성' 검증에서 한 걸음 더 나아가 메모리·프레임 시간·SLAM 결합이라는 실제 시스템 제약을 겨냥하고 있고, (2) event 카메라가 생체신호·초고속 이미징 같은 틈새 응용을 넘어 깊이·추적·분할·데이터생성이라는 RGB 비전 생태계 전체를 재현하기 시작했으며, (3) 핵심 ROI인 Fourier ptychography에서 PtychoFM이 반복계산 중심 복원을 실시간 foundation model 추론으로 바꾸는 직접 신호를 보였습니다. 저널 쪽은 메타표면 다기능 통합·재구성형 전환이 어제와 DOI가 하나도 겹치지 않는 완전히 새로운 5편으로 다시 확인됐고, 반면 위상/파면 복원 클러스터 4편은 어제와 완전히 동일한 논문이 재노출된 것이라(Crossref `--days 1` 수집 창이 매일 겹치는 기간을 일부 포함하기 때문) 새로운 독립 evidence로 보기 어려워 confidence를 낮췄습니다. OCT-angiography의 신장질환 확장 클러스터는 오늘 수집 창에서 대표 논문이 재현되지 않아 상단 클러스터에서는 내리고 버킷별 주요 논문으로만 다뤘습니다. 계산광학 핵심 ROI 중 Fourier Ptychography/Microscopy는 4편(그중 PtychoFM·전자현미경 자가개선 2편이 arXiv 직격)으로 최근 며칠 중 가장 강한 신호였고, Lensless/Coded Imaging은 1편뿐(VOS adversarial attack 논문으로 "lensless"와는 무관)이라 여전히 얇습니다.</p>
 
 <h2>🧭 어제와 달라진 점</h2>
-<p>어제(11/24)는 arXiv+저널 완성본으로, 3D Gaussian Splatting의 신뢰성 전환과 병리 whole-slide VLM의 확신도 검증이라는 arXiv 중심의 두꺼운 클러스터가 핵심이었습니다. 오늘은 arXiv가 다시 발행되지 않아(같은 화요일 배치 재노출 확인) 그 두 arXiv 클러스터는 오늘 이어볼 수 없고, 저널만으로 발행합니다. 메타표면 재구성형·역설계 클러스터는 어제도 오늘도 등장하지만 속을 들여다보면 다릅니다 — 어제는 SAL-SMART·Zero-State-Maintenance-Power·그래핀 THz 빔스위칭·PCF-SPR 역설계라는 4편이 대표였는데, 오늘 저널 수집분에는 이 4편이 전혀 다시 잡히지 않았고 대신 Risley-prism 빔스캐닝·그래핀-VO₂ 흡수체·4채널 회절 신경망·MOPSO THz 필터·RGB 바이레이어 메타렌즈라는 완전히 새로운 9편이 나왔습니다. 즉 "메타표면이 재구성형으로 간다"는 큰 방향은 같지만, 오늘은 그중에서도 하나의 소자가 여러 기능(스핀 선택 + 빔스캐닝, 다중모드 흡수 + 센싱)을 동시에 수행하려는 다기능 통합 경향이 더 뚜렷합니다. OCT-angiography 클러스터도 마찬가지로 어제의 루푸스신염·류마티스관절염 2편은 오늘도 다시 잡혔지만(Crossref --days 1 수집 창이 겹치기 때문), 어제의 핵심 방법론 논문이었던 NAVI-OCTA와 베체트병 포도막염 논문은 오늘 수집분에 없고, 대신 황반 OCTA 기반 신장질환 감별진단 모델이라는 새 논문이 나와 "안과 진단 도구가 전신질환으로 번진다"는 흐름이 당뇨망막병증·자가면역질환에서 신장질환까지 한 겹 더 넓어졌습니다. 완전히 새로 등장한 축은 위상/파면 복원이 간섭계 진동 보정·적응광학 파면 분리·나노간섭계로 번지는 흐름이고, 어제 짚었던 광통신 AI 보정 클러스터는 오늘 수집분에서 재현되지 않아 쉬어가는 모습입니다.</p>
+<p>어제(11/24)는 arXiv+저널 완성본으로, 3D Gaussian Splatting의 신뢰성 전환(기하가 정확한가, 실외 환경에서 버티는가)과 병리 whole-slide VLM의 확신도 검증이라는 arXiv 중심의 두꺼운 클러스터가 핵심이었습니다. 오늘은 완전히 다른 arXiv 논문 배치(874편, 어제의 1,490편과 겹치지 않는 11/25 공지분)를 기반으로 하는데, 3DGS 클러스터는 어제와 제목은 다르지만 사실상 이어지는 질문입니다 — 어제는 "이 3DGS 결과의 기하가 정확한가"를 물었다면, 오늘은 그 정확한 기하를 "실시간 예산과 메모리 제약 안에서, SLAM처럼 실제 시스템에 넣었을 때도 유지할 수 있는가"를 묻습니다. 즉 품질 검증에서 시스템 설계로 질문 자체가 한 단계 더 나아갔습니다. 반대로 어제의 병리 VLM 확신도 검증 클러스터는 오늘 수집분에서 재현되지 않아 쉬어가는 모습이고, 대신 event 카메라 클러스터의 성격이 바뀌었습니다 — 어제는 event 카메라가 생체신호·야간 시선추적·초고속 과학 이미징 같은 '기존에 없던 새 응용'으로 확장되는 이야기였다면, 오늘은 event 카메라가 깊이·추적·분할·데이터생성처럼 'RGB 카메라가 이미 잘 풀던 표준 문제'를 재현하는 이야기라 같은 센서를 보는 각도가 다릅니다. 완전히 새로 등장한 축은 핵심 ROI에서 나온 PtychoFM으로, 어제는 이쪽 신호가 전혀 없었습니다. 저널 쪽 메타표면 클러스터는 어제도 오늘도 등장하지만 대표 논문 DOI가 완전히 교체됐고, 반대로 위상/파면 복원 클러스터는 어제와 논문이 완전히 똑같아 confidence를 낮춰 반영했습니다.</p>
 
 <h2>🧩 오늘의 클러스터 지도</h2>
 <table>
@@ -106,267 +106,362 @@ html[data-theme=light] body{background-color:#fff}
 </thead>
 <tbody>
 <tr>
-  <td><strong>메타표면 설계가 고정 형상 최적화에서 다기능 통합·재구성 가능한 소자로 이동</strong></td>
+  <td><strong>3D Gaussian Splatting/SLAM 재구성이 '렌더링 속도'에서 '온라인 시스템으로서 버틸 수 있는가'로 이동</strong></td>
   <td>
-    <a href="https://doi.org/10.1088/1361-6463/aec60f" target=_blank>MOPSO-enabled ultra-narrowband mechanically reconfigurable metasurface filter</a> <span class="pill">JNL</span><br>
-    <a href="https://doi.org/10.1016/j.optlastec.2026.117023" target=_blank>Risley-prism-inspired transmission-reflection integrated metasurface</a> <span class="pill">JNL</span><br>
-    <a href="https://doi.org/10.1364/ao.617900" target=_blank>Reconfigurable graphene–VO₂ terahertz metasurface</a> <span class="pill">JNL</span><br>
-    <a href="https://doi.org/10.1364/oe.618969" target=_blank>Orthogonal frequency-polarization multiplexing in a four-channel cascaded-metasurface diffractive neural network</a> <span class="pill">JNL</span><br>
-    <a href="https://doi.org/10.1002/adom.72066" target=_blank>Wide-Field-of-View RGB-Achromatic Bilayer Metalens</a> <span class="pill">JNL</span>
+    <a href="https://arxiv.org/abs/2611.31428" target=_blank>Enhancing Sparse-View Gaussian Splatting with Feed-Forward Priors</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.31918" target=_blank>HiGS: A Hierarchical Architecture for Fast Differentiable 3DGS</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.32025" target=_blank>View Management with Gaussian Placement and Opacity Regularization</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.32335" target=_blank>GOLD-SLAM: Gaussian-splatting Omnidirectional LiDAR-Depth SLAM</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.32735" target=_blank>AnyPrune: Optimization-Free Pruning for Feedforward 3DGS</a> <span class="pill">CV</span>
   </td>
-  <td>메타표면(빛의 파장보다 작은 나노 구조를 평면에 배열해 렌즈나 흡수체 역할을 하게 만든 인공 광학 소재) 설계는 예전에는 한 가지 기능에 맞춰 형상을 한 번 고정하고 그 형상을 최적화하는 데 머물렀는데, 오늘 저널에서 동시에 나온 다섯 편은 모두 한 소자가 여러 기능을 동시에 수행하거나 상황에 따라 형상 자체를 바꾸는 쪽으로 넘어갔습니다. MOPSO 논문은 사람이 하나씩 파라미터를 바꿔가며 찾던 기존 설계 방식 대신, 두 겹 금속 배열의 기하 치수와 층간 간격을 동시에 최적화하는 다목적 입자군집 알고리즘으로 테라헤르츠 필터를 역설계해서, 최소 FWHM(반치전폭, 공진 선폭) 0.018THz에 Q-factor(공진의 날카로움을 나타내는 지표) 49.33을 넘는 초협대역 필터를 실제로 제작·측정까지 마쳤습니다. Risley-prism 메타표면은 원래 두 개의 회전 프리즘으로만 가능하던 빔 스캐닝을, 빛의 회전 방향(스핀)에 따라 투과·반사를 따로 제어하는 평면 소자 하나로 양방향에서 독립적으로 수행하게 만들었고, 그래핀-VO₂ 메타표면은 테라헤르츠 흡수와 농약 잔류물 센싱이라는 서로 다른 두 기능을 전기적으로 전환 가능한 상태 하나로 통합했습니다. 4채널 회절 신경망 메타표면은 주파수와 편광이라는 두 개의 독립된 채널을 동시에 다중화해서 하나의 광학 소자가 여러 입력 신호를 동시에 처리하게 했고, RGB-achromatic 바이레이어 메타렌즈는 색수차(파장마다 초점이 어긋나는 문제)와 시야각에 따른 왜곡을 동시에 두 겹 구조로 교정해 30도 시야각의 OLED 디스플레이 이미징 시스템까지 시제품으로 보였습니다. 다섯 편을 합치면, 메타표면 설계의 무게중심이 '하나의 기능을 위한 고정 형상'에서 '여러 기능을 동시에 수행하거나 알고리즘이 거꾸로 찾아낸 다기능 재구성형 소자'로 옮겨가고 있다는 뜻입니다.</td>
-  <td>Medium<br><small>서로 다른 저널(J. Phys. D, Optics &amp; Laser Technology, Applied Optics, Optics Express, Advanced Optical Materials) 5편이 독립적으로 다기능 통합·재구성형을 택했지만, 대부분 abstract가 짧거나 없어 수치가 확인되는 건 MOPSO 논문 1편뿐입니다.</small></td>
-  <td>MOPSO 논문의 다목적 입자군집 동시 최적화(기하 치수 + 층간 간격)와 RGB-achromatic 바이레이어 메타렌즈의 위상-투과율 라이브러리 기반 2겹 적층 설계를 랩의 메타표면/메타렌즈 설계에 적용해, 기존 단일 파라미터 스윕 대비 동시 최적화가 탐색 효율과 다기능 동시 달성률에서 얼마나 나은지 1주 내 소규모 벤치마크로 비교한다.</td>
+  <td>어제는 3DGS(점 대신 반투명한 타원체를 장면에 흩뿌려 실시간 렌더링하는 기법)가 '그 기하를 믿을 수 있는가'를 따지는 날이었다면, 오늘 나온 다섯 편은 질문이 한 단계 더 나아가 '이 기법을 실시간·온라인 시스템 안에 넣었을 때도 버티는가'를 묻습니다. Enhancing Sparse-View Gaussian Splatting는 사진을 적게 찍고 학습하면 학습 시점 근처는 잘 나오지만 멀리 떨어진 시점은 품질이 급격히 떨어지는 문제를, 느리지만 강력한 별도 모델의 결과와 빠른 3DGS 결과를 주파수 대역별로(저주파는 느린 모델이, 고주파는 3DGS가 더 정확하다는 관찰에 기반) 나눠 합치는 방식으로 풀었습니다. HiGS는 화면을 나누는 기준, 가우시안을 나누는 기준, 병렬 계산 단위가 전부 같은 '화면 타일' 하나로 묶여 가장 복잡한 타일 하나가 전체 프레임 속도를 좌우하던 문제를, 이 세 기준을 서로 다른 단위로 분리해서 풀었습니다. View Management와 GOLD-SLAM은 둘 다 3DGS를 SLAM(카메라가 스스로 돌아다니며 위치를 추정하고 동시에 지도를 만드는 기술)과 결합할 때 생기는 문제를 다루는데, 전자는 실시간 예산 안에서 어떤 장면을 더 학습할지 우선순위를 정하고, 후자는 파노라마 카메라와 LiDAR의 시야각이 서로 어긋나는 상황에서도 안정적으로 추적·지도작성을 합니다. AnyPrune은 한 번에 장면을 만들어내는 3DGS 파이프라인이 필요 이상으로 많은 가우시안을 만들어 메모리를 낭비하는 문제를, 재학습 없이 바로 가지치기하는 모듈로 풀었습니다. 다섯 편을 합치면, 3DGS 연구가 '한 장면을 얼마나 잘 재구성하는가'를 넘어 '그 재구성을 실시간 예산과 메모리 제약, SLAM 같은 실제 시스템 제약 안에서 계속 돌릴 수 있는가'를 동시에 묻기 시작했다는 뜻이고, 이는 3DGS가 연구용 벤치마크를 넘어 로봇·AR 기기 같은 실제 제품 파이프라인에 들어갈 준비 단계로 접어들고 있다는 신호입니다.</td>
+  <td>High<br><small>Tomography/3D Imaging 버킷(72편)에서만 3DGS/SLAM/SfM 직결 논문이 9편(서로 다른 시스템 제약: 렌더링 구조·메모리·SLAM 결합·초기화) 나왔고, 서로 다른 저자군이 독립적으로 다뤘습니다.</small></td>
+  <td>HiGS의 타일 단위 역할 분리(파티셔닝/래스터화/병렬처리 granularity 분리)와 AnyPrune의 재학습 없는 가지치기를 랩의 3D 복원/실시간 시각화 파이프라인 프로토타입에 적용해, 기존 단일 타일 구조 대비 불균일하게 복잡한 장면에서 프레임 시간이 얼마나 안정적으로 유지되는지, 재최적화 없이 가지치기해도 복원 품질이 유지되는지 1주 내 벤치마크로 비교한다.</td>
 </tr>
 <tr>
-  <td><strong>위상/파면 복원이 간섭계·적응광학·나노광학으로 동시 확산</strong></td>
+  <td><strong>Event 카메라가 깊이·추적·분할·데이터생성까지 RGB 비전 태스크 전체를 재현하기 시작</strong></td>
   <td>
-    <a href="https://doi.org/10.1016/j.optlaseng.2026.110280" target=_blank>Non-iterative anti-vibration phase retrieval for large-aperture interferometry</a> <span class="pill">JNL</span><br>
-    <a href="https://doi.org/10.1364/oe.620467" target=_blank>Fast Patchwise Modal Fitting for Direct Wavefront Reconstruction</a> <span class="pill">JNL</span><br>
-    <a href="https://doi.org/10.1364/oe.618748" target=_blank>Full vectorial reconstruction via Mie-scattering nanointerferometry</a> <span class="pill">JNL</span><br>
-    <a href="https://doi.org/10.1016/j.measurement.2026.123969" target=_blank>Neural network-driven wavefront decoupling for extended objects in adaptive optics</a> <span class="pill">JNL</span>
+    <a href="https://arxiv.org/abs/2611.31720" target=_blank>EventSSM: Causal Spatial-State Modelling for Event-Depth Estimation</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.32883" target=_blank>3D Tracking Any Point with Events and Frames (TrackAnyMotion)</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.33017" target=_blank>E-MAPS: Event-Based Promptable Video Segmentation</a> <span class="pill">CV</span><br>
+    <a href="https://arxiv.org/abs/2611.33096" target=_blank>EventDiffusion: Learning Native Event Stream Distribution</a> <span class="pill">CV</span>
   </td>
-  <td>위상/파면 복원(빛의 세기만 측정 가능한 센서로부터 눈에 안 보이는 위상 정보를 계산으로 되살리는 기법)은 보통 한 가지 하드웨어 맥락에 집중해서 다뤄지는 경우가 많은데, 오늘 저널에서는 같은 계산 문제의식이 서로 다른 네 가지 광학 하드웨어에서 동시에 다듬어졌습니다. Non-iterative anti-vibration 논문은 대형 망원경 거울처럼 큰 구경을 간섭계로 측정할 때 바닥 진동 때문에 반복 계산(iteration) 중에 간섭무늬가 흔들려버리는 문제를, 반복 없이 한 번에 위상을 복원하는 방법으로 풀었습니다. Fast Patchwise Modal Fitting은 넓은 시야를 한꺼번에 복원하는 대신 작은 조각으로 나눠 각 조각의 파면(빛이 진행하면서 생기는 위상의 공간적 분포)을 빠르게 추정하는 방법을 적응광학(대기 왜곡을 실시간으로 보정하는 망원경 기술) 맥락에서 제안했습니다. Mie-scattering nanointerferometry는 나노 입자가 빛을 산란시키는 패턴을 간섭계로 측정해서, 강하게 집속된 빛의 장(field) 전체를 방향 성분(벡터)까지 복원했습니다. Neural network-driven wavefront decoupling은 적응광학에서 별처럼 점 하나가 아니라 퍼져 있는 넓은 물체(태양 표면 등)를 관측할 때 물체 자체의 밝기 분포와 대기로 인한 파면 왜곡이 뒤섞여 버리는 문제를, 신경망으로 둘을 분리해 풀었습니다. 네 편을 합치면, 위상/파면 복원이라는 계산 아이디어가 대구경 간섭계·조각 단위 적응광학·나노간섭계·확장 물체 적응광학이라는 서로 다른 네 하드웨어에서 독립적으로 다듬어지고 있고, 각 그룹이 계산으로 풀려는 문제(진동, 속도, 벡터 정보, 물체-왜곡 분리)는 다르지만 공유하는 수학적 뼈대는 같다는 뜻입니다.</td>
-  <td>Medium<br><small>서로 다른 네 저널(Optics and Lasers in Engineering, Optics Express x2, Measurement)에서 독립적으로 다뤘지만, 전부 abstract가 짧거나 없어 제목과 저널 맥락 기준 판단입니다.</small></td>
-  <td>Fast Patchwise Modal Fitting의 조각 단위 모달 피팅과 Non-iterative anti-vibration의 비반복 위상 복원 전략을 랩의 FPM·홀로그램 복원 파이프라인에 적용해, 통째 복원 대비 조각별 병렬 복원의 속도와, 반복 알고리즘 대비 비반복 복원의 진동 강건성을 1주 내 소규모 프로토타입으로 비교한다.</td>
+  <td>어제는 event 카메라(화면 전체를 일정 간격으로 찍는 대신 밝기가 변하는 픽셀만 마이크로초 단위로 보고하는 센서)가 생체신호·야간 시선추적·초고속 과학 이미징처럼 '기존에 없던 새 응용'으로 확장되는 이야기였다면, 오늘 나온 네 편은 결이 다릅니다 — 이미 RGB 카메라로 잘 풀던 깊이 추정, 점 추적, 영상 속 물체 분리(세그멘테이션)라는 표준 비전 태스크를 event 카메라만으로, 또는 RGB와 결합해서 다시 풉니다. EventSSM은 event 신호가 불규칙한 시간 간격으로 들어온다는 특성을 프레임 단위로 뭉개지 않고 시간 순서를 그대로 유지하는 순환 메모리 구조로 깊이를 추정합니다. TrackAnyMotion은 RGB 영상이 흐릿하거나 프레임 간격이 너무 벌어져 빠르게 움직이는 점을 추적하지 못하는 순간을, 그 사이를 채우는 event 신호로 보완해 2D뿐 아니라 3D 공간에서도 임의의 점을 계속 추적합니다. E-MAPS는 사용자가 특정 시점에 물체를 가리키면 그 물체를 이후 영상에서 계속 분리해내는 '프롬프트 가능한 영상 분할' 문제를 event 카메라 환경에서 처음으로 공식화했는데, 기존 방법은 한 구간만 처리할 수 있었던 반면 이 논문은 임의의 시점에 새 프롬프트를 주거나 기존 프롬프트를 교정할 수 있게 했습니다. EventDiffusion은 event 카메라 데이터 자체가 부족하다는 문제를, RGB 동영상으로부터 그럴듯한 event 스트림을 직접 생성하는 모델로 풀어 학습 데이터를 늘립니다. 네 편을 합치면, event 카메라 연구의 초점이 '이 센서로만 풀 수 있는 틈새 문제 찾기'에서 '기존 RGB 비전 생태계 전체(깊이, 추적, 분할, 데이터 생성)를 event 신호로 다시 세우기'로 옮겨가고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>Light-Field/Novel Sensors 버킷 안에서 서로 다른 네 가지 표준 비전 태스크에 event 카메라가 쓰였지만, 모두 cs.CV 단일 카테고리 중심이라 cs.LG/eess 쪽 독립 검증은 아직 부족합니다.</small></td>
+  <td>EventSSM의 비동기 순환 메모리 구조와 TrackAnyMotion의 RGB-event 결합 추적을 랩이 보유한 event 카메라 플랫폼에 적용해, 기존 프레임 기반 깊이·추적 파이프라인 대비 빠른 움직임 구간에서의 깊이 오차와 추적 유지율을 1주 내 비교한다.</td>
 </tr>
 <tr>
-  <td><strong>OCT-angiography가 당뇨망막병증·자가면역질환을 넘어 신장질환 진단모델로 확장</strong></td>
+  <td><strong>계산 현미경 재구성이 '실험별 반복계산'에서 '실시간 foundation model 추론'으로 이동</strong></td>
   <td>
-    <a href="https://doi.org/10.21037/qims-2026-0946" target=_blank>Development and validation of a macular OCTA-based diagnostic model for differentiating non-diabetic kidney disease</a> <span class="pill">JNL</span><br>
-    <a href="https://doi.org/10.1142/s2661341726740391" target=_blank>OCTA Metrics as Non-invasive Biomarkers for Lupus Nephritis (Systematic Review)</a> <span class="pill">JNL</span><br>
-    <a href="https://doi.org/10.1142/s2661341726740573" target=_blank>Early Retinal Capillary Loss in Rheumatoid Arthritis Detected by OCTA</a> <span class="pill">JNL</span>
+    <a href="https://arxiv.org/abs/2611.32830" target=_blank>PtychoFM: A Foundation Model for Ptychographic Imaging</a> <span class="pill">LG</span><br>
+    <a href="https://arxiv.org/abs/2611.32325" target=_blank>A recursive self-improvement framework for electron microscopy (PhyEvo-Mic-RSI)</a> <span class="pill">CV</span><br>
+    <a href="https://doi.org/10.1016/j.optlaseng.2026.110279" target=_blank>Fast Fourier ptychographic microscopy via bright-dark field multiplexing</a> <span class="pill b">JNL</span>
   </td>
-  <td>OCT-angiography(OCTA, 빛의 간섭을 이용해 망막의 미세혈관을 비침습적으로 촬영하는 기법)는 어제도 루푸스신염·류마티스관절염 같은 자가면역질환의 비침습 바이오마커로 번지는 흐름을 짚었는데, 오늘은 그 적용 범위가 자가면역질환을 넘어 신장질환 자체로 한 걸음 더 넓어졌습니다. 오늘 새로 나온 황반 OCTA 기반 진단모델 논문은 당뇨병이 없는 환자에서 신장질환의 종류를 구분하는 데 망막 미세혈관 영상을 직접 활용하는 진단모델을 개발·검증했는데, 이는 기존에 소변 검사나 신장 조직검사로만 가능했던 감별진단에 비침습적인 눈 영상 하나를 추가하려는 시도입니다. 어제도 짚었던 루푸스신염 체계적 문헌고찰은 눈과 신장의 미세혈관이 비슷한 병리를 공유한다는 점에 착안해 OCTA 지표(특히 전층 깊은층 모세혈관총 혈관밀도)가 루푸스신염을 비침습적으로 선별할 후보 지표가 될 수 있는지를 메타분석으로 검토했고, 류마티스관절염 논문은 관절 증상이 뚜렷해지기 전에도 망막 모세혈관이 먼저 소실된다는 걸 메타분석으로 보여 전신 미세혈관 염증의 조기 지표로 OCTA를 제안했습니다. 세 편을 합치면, OCTA가 안과 전용 진단 도구에서 당뇨망막병증 하나를 넘어 자가면역질환과 신장질환까지 아우르는 전신질환 비침습 바이오마커 후보로 계속 번지고 있다는 뜻이고, 그 번짐의 다음 정류장이 매일 조금씩 다른 장기로 옮겨가고 있다는 뜻이기도 합니다.</td>
-  <td>Medium<br><small>신장질환 진단모델 논문은 abstract가 없어 제목 기준 판단이고, 루푸스신염·류마티스관절염 2편은 둘 다 메타분석이라 저자 자신의 새 임상 데이터가 아니라 기존 연구를 종합한 결과입니다. 서로 다른 세 저널에서 독립적으로 나왔다는 점은 신호로 볼 수 있습니다.</small></td>
-  <td>황반 OCTA 기반 신장질환 진단모델의 평가 지표 설계(어떤 OCTA 파라미터를 입력으로 썼는지, AUC 등 판별 성능)를 본문에서 확인해, 랩의 위상/홀로그램 3D 미세혈관 복원 결과에도 같은 방식으로 질환별 판별 모델을 얹을 수 있는지 1주 내 점검한다.</td>
+  <td>Ptychography(물체를 조금씩 옮겨가며 여러 번 찍은 회절 패턴으로부터 눈에 안 보이는 위상 정보까지 복원하는 렌즈리스 현미경 기법)는 지금까지 측정이 끝난 뒤 그 데이터에 맞춰 매번 반복 계산을 새로 돌려야 했는데, 핵심 ROI에서 나온 PtychoFM은 이 과정 자체를 미리 학습된 foundation model(대규모 데이터로 미리 훈련해 여러 상황에 두루 쓰는 모델)로 바꿨습니다. 한 시료의 계단식 스캔 데이터로 학습한 모델이 다른 시료의 연속 스캔 측정, 심지어 크기·형태·굴절률이 전혀 다른 물체에도 그대로 적용됐고, 방사광가속기 현장에서 검출기로부터 회절 패턴을 실시간으로 받아 초당 200프레임 속도로 즉시 복원·시각화까지 해냈습니다. 이는 기존에 실험이 끝난 뒤에야 알 수 있었던 복원 결과를, 측정이 진행되는 동안 바로바로 확인하면서 실험 조건을 조정할 수 있게 해준다는 뜻입니다. PhyEvo-Mic-RSI는 비슷한 문제의식을 전자현미경 분석에 적용해, 연구자가 한 번 고쳐준 분석 방법을 그다음부터는 시스템이 스스로 재사용하고 개선하도록 만들어, 완전히 새로운 소재의 경계면 인식 커버리지를 5.13%에서 72.11%까지 끌어올렸습니다. Fast FP 논문은 비슷한 실시간 지향성을, 측정 자체를 밝은 시야·어두운 시야로 나눠 다중화함으로써 촬영 횟수를 줄이는 하드웨어 쪽에서 접근했습니다. 세 편을 합치면, 계산 현미경 연구의 무게중심이 '측정 후 반복 계산으로 품질을 짜내는 것'에서 '미리 학습된 모델이나 자가개선 시스템으로 실시간에 가깝게 결과를 내는 것'으로 옮겨가고 있다는 뜻이고, 특히 PtychoFM은 랩의 핵심 ROI인 Fourier ptychography 자체에서 나온 가장 직접적인 신호입니다.</td>
+  <td>Medium<br><small>핵심 ROI 버킷(Fourier Ptychography/Microscopy) 안에서 arXiv 2편과 저널 1편이 모두 같은 방향을 가리키지만, 버킷 크기 자체가 4편뿐이라 더 넓은 검증은 다음 주 신호를 더 봐야 합니다.</small></td>
+  <td>PtychoFM의 differentiable forward model 기반 사전학습 전략을 랩의 FPM 복원 파이프라인에 적용해, 기존 iterative phase retrieval 대비 미학습 시료에 대한 일반화 성능과 초당 처리 프레임 수를 1주 내 소규모 프로토타입으로 비교한다.</td>
+</tr>
+<tr>
+  <td><strong>메타표면 설계가 고정 형상 최적화에서 다기능 통합·재구성 가능한 소자로 이동(대표 논문 전량 교체)</strong></td>
+  <td>
+    <a href="https://doi.org/10.1088/1361-6463/aec60f" target=_blank>MOPSO-enabled ultra-narrowband reconfigurable metasurface filter</a> <span class="pill b">JNL</span><br>
+    <a href="https://doi.org/10.1016/j.optlastec.2026.117023" target=_blank>Risley-prism-inspired transmission-reflection integrated metasurface</a> <span class="pill b">JNL</span><br>
+    <a href="https://doi.org/10.1364/ao.617900" target=_blank>Reconfigurable graphene–VO₂ terahertz metasurface</a> <span class="pill b">JNL</span><br>
+    <a href="https://doi.org/10.1039/d6cp03802f" target=_blank>All-Dielectric Chiral Metasurface Based on BIC</a> <span class="pill b">JNL</span><br>
+    <a href="https://doi.org/10.1002/adom.72066" target=_blank>Wide-Field-of-View RGB-Achromatic Bilayer Metalens</a> <span class="pill b">JNL</span>
+  </td>
+  <td>메타표면(빛의 파장보다 작은 나노 구조를 평면에 배열해 렌즈나 흡수체 역할을 하게 만든 인공 광학 소재) 설계가 '한 가지 기능을 위한 고정 형상'에서 '여러 기능을 동시에 수행하거나 상황에 따라 바뀌는 소자'로 넘어가는 흐름은 그제·어제에 이어 오늘도 이어지는데, 대표 논문 집합은 어제 5편과 DOI가 하나도 겹치지 않는 완전히 새로운 저널 수집분입니다. MOPSO 필터는 사람이 하나씩 파라미터를 조절하던 설계를 다목적 입자군집 알고리즘으로 자동화해 FWHM 0.018THz·Q-factor 49.33의 초협대역 필터를 실제 제작·측정까지 검증했습니다. Risley-prism 메타표면은 회전 프리즘 두 개가 필요했던 빔 스캐닝을 평면 소자 하나로 양방향 독립 수행하게 했고, 그래핀-VO₂ 메타표면은 테라헤르츠 흡수와 화학물질 센싱을 전기적으로 전환 가능한 하나의 소자로 통합했습니다. All-Dielectric Chiral Metasurface는 빛의 회전 성질(편광)을 변환하는 기능과 센싱 기능을 BIC(연속체 속 속박상태, 공진을 매우 날카롭게 만드는 광학 현상)라는 같은 물리 원리로 동시에 구현했고, RGB-Achromatic Bilayer Metalens는 색수차(파장마다 초점이 어긋나는 문제)와 시야각 왜곡을 두 겹 구조로 동시에 교정해 실제 OLED 디스플레이 이미징 시스템까지 시제품으로 만들었습니다. 다섯 편을 합치면, 메타표면 설계가 매일 다른 저자군·다른 저널에서 반복적으로 '하나의 소자, 여러 기능'이라는 같은 방향으로 수렴하고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>서로 다른 저널(J. Phys. D, Optics &amp; Laser Technology, Applied Optics, Phys. Chem. Chem. Phys., Advanced Optical Materials) 5편이 독립적으로 다기능 통합·재구성형을 택했고, 이틀 연속 다른 논문 집합에서 같은 방향이 반복돼 패턴 신뢰도는 올라갔지만 개별 수치가 확인되는 건 MOPSO 1편뿐입니다.</small></td>
+  <td>MOPSO의 다목적 입자군집 동시 최적화와 RGB-Achromatic Bilayer Metalens의 위상-투과율 라이브러리 기반 2겹 적층 설계를 랩의 메타표면/메타렌즈 설계에 적용해, 기존 단일 파라미터 스윕 대비 탐색 효율과 다기능 동시 달성률을 1주 내 벤치마크로 비교한다.</td>
+</tr>
+<tr>
+  <td><strong>위상/파면 복원이 간섭계·적응광학·나노광학으로 동시 확산(어제와 동일 논문 재노출, Confidence 하향)</strong></td>
+  <td>
+    <a href="https://doi.org/10.1016/j.optlaseng.2026.110280" target=_blank>Non-iterative anti-vibration phase retrieval for interferometry</a> <span class="pill b">JNL</span><br>
+    <a href="https://doi.org/10.1364/oe.620467" target=_blank>Fast Patchwise Modal Fitting for Direct Wavefront Reconstruction</a> <span class="pill b">JNL</span><br>
+    <a href="https://doi.org/10.1364/oe.618748" target=_blank>Full vectorial reconstruction via Mie-scattering nanointerferometry</a> <span class="pill b">JNL</span><br>
+    <a href="https://doi.org/10.1016/j.measurement.2026.123969" target=_blank>Neural network-driven wavefront decoupling for adaptive optics</a> <span class="pill b">JNL</span>
+  </td>
+  <td>위상/파면 복원(빛의 세기만 측정 가능한 센서로부터 눈에 안 보이는 위상 정보를 계산으로 되살리는 기법)이 대구경 간섭계·조각 단위 적응광학·나노간섭계·확장 물체 적응광학이라는 서로 다른 네 하드웨어에서 동시에 다듬어지는 흐름을 어제도 짚었는데, 오늘 수집분을 확인해보니 같은 논문 4편이 그대로 다시 잡힌 것이었습니다(Crossref `--days 1` 수집 창이 매일 겹치는 기간을 일부 포함하기 때문). Non-iterative anti-vibration 논문은 대형 망원경 거울의 큰 구경을 간섭계로 측정할 때 바닥 진동으로 간섭무늬가 흔들리는 문제를 반복 없이 한 번에 위상을 복원하는 방법으로 풀고, Fast Patchwise Modal Fitting은 넓은 시야를 조각으로 나눠 빠르게 파면을 추정하며, Mie-scattering nanointerferometry는 나노 입자 산란 패턴으로 빛의 장을 방향 성분까지 복원하고, Neural network-driven wavefront decoupling은 확장 물체의 밝기 분포와 대기 왜곡을 신경망으로 분리합니다. 다만 오늘은 새로운 독립 evidence가 전혀 추가되지 않았으므로, 이 흐름 자체가 식었다고 볼 수는 없지만 "오늘 새로 확인된 신호"로 과장해서 읽으면 안 됩니다.</td>
+  <td>Low<br><small>오늘 수집분에서 이 4편이 어제와 완전히 동일하게 재노출됐습니다. 새로운 독립 evidence가 없어 어제의 Medium에서 Low로 하향합니다.</small></td>
+  <td>이 클러스터는 신규 evidence 없이 재노출된 것이므로 이번 주는 추가 lab action 없이 관찰만 유지하고, 내일 수집분에서 새 논문이 더해지는지 먼저 확인한다.</td>
 </tr>
 </tbody>
 </table>
-<p><small>⚠️ 오늘은 자료 부족으로 3행만 표시합니다. 4번째 후보로 Tomography/3D Imaging의 X-SLAM(거치형 갠트리 없이 손으로 X선 소스를 움직이며 촬영하는 휴대형 CT)을 검토했지만 단발 논문이라 클러스터로 묶을 근거가 부족해 "관찰 중"으로 내리고, 아래 🗂 버킷별 주요 논문에서 개별적으로만 다룹니다. Virtual Staining/Pathology(19편)와 Reconstruction/Inverse Problems(9편)는 오늘 거의 전부가 키워드만 겹치는 무관 논문이라 클러스터 후보 자체가 나오지 않았습니다.</small></p>
+<p><small>⚠️ <strong>3D/Scene gate 메모</strong>: Tomography/3D Imaging 버킷이 오늘 72편(≥10편 기준 충족)으로, 위 1번 클러스터(3DGS/SLAM 시스템 제약)를 geometry/SLAM/3D-reconstruction 대표 행으로 상단에 명시적으로 포함했습니다. 같은 버킷의 나머지는 대부분 OCT/CT 순수 임상 증례(심장 OCT 증례보고, 치과 CBCT 등)이거나 "tomography"라는 단어만 겹치는 무관 논문(토양 전기비저항 탐사 등)이라 별도 클러스터로 묶을 근거가 부족해 아래 🗂 버킷별 주요 논문에서 개별적으로만 다룹니다. OCT-angiography의 신장질환 확장 클러스터(어제 짚음)는 오늘 수집 창에서 대표 논문이 재현되지 않아 상단 클러스터에서 내리고 버킷별 주요 논문으로만 유지했습니다.</small></p>
 
 <h2>🔬 도메인 Watch Lens</h2>
 <div class=skim>
   <ul>
-    <li>Fourier Ptychography/Microscopy: 2편 배정. "Fast Fourier ptychographic microscopy based on differentiated hybrid multiplexing of bright-dark field"(abstract 없음, 밝은 시야·어두운 시야 조명을 섞어 측정 횟수를 줄이려는 FP 본류 논문으로 추정)와 "A Lightweight Attention-Enhanced Framework for Tiny Object Detection in High-Resolution Microscopy Images"(BCCD 혈액세포 현미경 영상에서 어텐션 블록으로 작은 객체 탐지를 개선했지만 가장 작은 혈소판 클래스는 두 모델 모두 평균정밀도 0을 기록). 핵심 ROI 중 하나지만 오늘은 신호가 2편뿐이라 클러스터로 묶지 못했습니다.</li>
-    <li>Lensless/Coded Imaging: 0편. 오늘 저널 수집에서 이 핵심 ROI를 겨냥한 논문이 전혀 없었습니다. 어제도 OAX 1편(Euclid 망원경 defocus 추정, 랩 ROI와 무관)뿐이었던 걸 생각하면 이틀 연속 실질 신호가 없는 셈입니다.</li>
-    <li>Light-Field/Novel Sensors: 1편 배정 — "Valley-controlled nonlocal Andreev reflection in a superconducting junction based on light-irradiated 8-Pmmn borophene"로, 원형 편광 빛으로 초전도 접합의 전자 수송을 제어하는 응집물질물리 논문입니다. "light-irradiated"라는 표현만 겹치는 논문으로 light-field 영상·플레놉틱 촬영과는 무관합니다.</li>
-    <li>Meta-Optics/Diffractive: 9편 중 상당수가 THz 센싱·흡수체처럼 통신/레이더 응용이라 계산 영상(computational imaging) 맥락과는 거리가 있지만, 오늘의 클러스터 1(다기능 통합·재구성형)로 묶일 만큼 그 자체로 광학 설계 방법론 신호는 뚜렷합니다.</li>
+    <li>Fourier Ptychography/Microscopy: 4편 배정됐고, 그중 PtychoFM(arXiv)·전자현미경 자가개선 프레임워크(arXiv)·Fast Fourier ptychographic microscopy(JNL) 3편이 FP 본류와 직접 연결됩니다. 핵심 ROI치고 최근 며칠 중 가장 강한 신호입니다. 나머지 1편(BCCD 혈액세포 어텐션 블록)은 혈소판 클래스는 두 모델 모두 평균정밀도 0에 그치는 한계를 솔직히 보고했습니다.</li>
+    <li>Lensless/Coded Imaging: 1편뿐 — "Attack-Inference Aligned Universal Adversarial Attacks on Video Object Segmentation". 영상 분할 모델에 대한 적대적 공격 논문으로, "lensless"라는 핵심 ROI 키워드와는 전혀 무관한 오탐입니다. 오늘도 핵심 ROI가 사실상 비었습니다.</li>
+    <li>Light-Field/Novel Sensors: 6편 중 4편(CV)이 event 카메라 관련으로 위 클러스터 2번에서 다뤘고, 나머지 2편(스파이킹 신경망 가속 하드웨어, 초전도 접합 응집물질물리)은 "light-field"·"event"라는 단어만 간접적으로 겹칩니다. 묻히기 쉬운 버킷이지만 오늘은 상단 클러스터로 끌어올렸습니다.</li>
+    <li>Virtual Staining/Pathology: 38편 중 핵심 신호는 FewRef-5(가상 염색 test-time adaptation)와 조직 단백체-형태 멀티모달 foundation model 단 2편뿐이고, 나머지 대다수는 "staining"/"virtual" 단어만 겹치는 무관 논문(세포막 염색 시약, 지속가능 발전 리뷰, 건설폐기물 평가 등)입니다.</li>
   </ul>
 </div>
 
 <h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
-<p>오늘은 arXiv가 발행되지 않아 이 대비 자체를 할 수 없는 날입니다. 평소 이 섹션은 arXiv의 방법론 중심 키워드와 저널의 응용 중심 키워드가 어떻게 겹치고 갈라지는지를 비교하는데, 오늘은 저널 데이터만 있어 비교 대상이 없습니다. 참고로 오늘 저널 내부에서는 "reconfigurable"(재구성 가능한)이라는 단어가 메타표면 클러스터(하드웨어 상태 전환)와 Zero-State 류 소자 설명(어제 자료 기준)에서 반복적으로 등장했는데, 둘 다 전력·기계적 상태를 바꾼다는 하드웨어적 의미로 일관되게 쓰여 저널 내부에서는 이 단어의 의미가 비교적 안정적입니다. arXiv가 다시 올라오면 내일부터는 방법론 쪽 키워드와의 대비를 재개합니다.</p>
+<p>오늘은 arXiv와 저널이 모두 있어 이 대비가 다시 의미 있어졌습니다. arXiv 쪽 방법론 키워드는 "feed-forward", "online", "pruning", "asynchronous"처럼 기존 방법이 실시간·메모리 제약 안에서도 버티는지를 겨냥하는 경우가 많았고, 저널 쪽 응용 키워드는 "reconfigurable", "multimode", "biosensing"처럼 특정 하드웨어·센싱 문제를 바로 푸는 데 집중했습니다. 흥미로운 지점은 "online"이라는 단어가 arXiv 쪽(3DGS/SLAM 클러스터)에서는 카메라가 실시간으로 움직이며 지도를 갱신하는 상황을 뜻했다면, 같은 날 저널 쪽의 "reconfigurable"은 메타표면이 전력 공급 아래 상태를 바꾸는 하드웨어적 의미로 쓰였다는 점입니다 — 둘 다 "상황에 따라 계속 바뀐다"는 공통점은 있지만, 하나는 소프트웨어 알고리즘이 실시간으로 적응하는 뜻이고 다른 하나는 물리적 소자가 상태를 전환하는 뜻이라 같은 단어가 가리키는 "변화"의 종류 자체가 다릅니다. 반대로 "foundation model"이라는 단어는 arXiv의 PtychoFM 클러스터에서는 명시적으로 쓰였지만 저널 쪽 메타표면/위상복원 논문에는 전혀 등장하지 않아, 대규모 사전학습이라는 접근이 아직 계산광학 하드웨어 설계 쪽 저널 커뮤니티에는 본격적으로 넘어가지 않았다는 뜻일 수 있습니다.</p>
 
 <h2>💡 오늘의 인사이트</h2>
 
 <div class=ins>
-  <h3>1. 메타표면 설계가 고정 형상 최적화에서 다기능 통합·재구성형 소자로</h3>
-  <p>MOPSO 역설계 THz 필터는 사람이 하나씩 바꿔보던 단일 파라미터 스윕 대신 다목적 입자군집 최적화로 FWHM 0.018THz·Q-factor 49.33의 초협대역 필터를 실제로 제작·측정했고, Risley-prism 메타표면은 평면 소자 하나로 스핀 선택적 양방향 빔 스캐닝을 구현했습니다.</p>
+  <h3>1. 3D Gaussian Splatting/SLAM이 '기하 신뢰성'을 넘어 '실시간 시스템 제약'을 겨냥</h3>
+  <p>HiGS는 파티셔닝·래스터화·병렬처리 단위를 분리해 가장 복잡한 타일이 전체 프레임 시간을 좌우하지 않게 했고, AnyPrune은 재학습 없이 feed-forward 3DGS의 불필요한 가우시안을 가지치기했습니다.</p>
+  <p class=conf-note>Confidence: High</p>
+</div>
+
+<div class=ins>
+  <h3>2. Event 카메라가 깊이·추적·분할·데이터생성 같은 표준 RGB 비전 태스크를 재현</h3>
+  <p>TrackAnyMotion은 RGB 프레임이 비어있는 순간에도 event 신호로 2D/3D 점 추적을 이어갔고, E-MAPS는 임의 시점에 새 프롬프트를 줄 수 있는 event 기반 영상 분할 문제를 처음 공식화했습니다.</p>
   <p class=conf-note>Confidence: Medium</p>
 </div>
 
 <div class=ins>
-  <h3>2. 위상/파면 복원이 간섭계·적응광학·나노광학으로 동시 확산</h3>
-  <p>같은 위상 복원 문제의식이 대구경 간섭계의 비반복 진동 보정, 적응광학의 조각 단위 파면 추정과 확장 물체 파면 분리, 나노 입자 산란의 벡터장 복원이라는 네 가지 서로 다른 하드웨어 맥락에서 동시에 나왔습니다.</p>
+  <h3>3. 핵심 ROI Fourier ptychography에서 PtychoFM이 실시간 foundation model 추론을 선보임</h3>
+  <p>PtychoFM은 한 시료로 학습한 모델을 전혀 다른 형태·굴절률의 시료에 전이시켰고, 방사광가속기 현장에서 초당 200프레임으로 실시간 복원·시각화를 완료했습니다.</p>
   <p class=conf-note>Confidence: Medium</p>
 </div>
 
 <div class=ins>
-  <h3>3. OCT-angiography가 당뇨망막병증·자가면역질환을 넘어 신장질환 진단모델로 확장</h3>
-  <p>오늘 새로 나온 황반 OCTA 기반 진단모델은 당뇨병이 없는 환자의 신장질환 감별진단에 망막 미세혈관 영상을 직접 활용했고, 어제부터 이어진 루푸스신염·류마티스관절염 메타분석 2편이 같은 전신질환 바이오마커 확장 흐름을 뒷받침합니다.</p>
+  <h3>4. 메타표면 설계가 다기능 통합·재구성형으로, 대표 논문 전량 교체되며 신호 반복</h3>
+  <p>MOPSO 역설계 필터는 FWHM 0.018THz·Q-factor 49.33의 초협대역 THz 필터를 실제 제작까지 마쳤고, RGB-Achromatic Bilayer Metalens는 색수차와 시야각 왜곡을 동시에 교정한 OLED 이미징 시제품을 선보였습니다.</p>
   <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<div class=ins>
+  <h3>5. 위상/파면 복원 클러스터는 어제와 동일 논문 재노출 — 신규 evidence 없음</h3>
+  <p>간섭계·적응광학·나노광학 네 편이 어제와 완전히 같은 DOI로 다시 수집되어, Crossref 수집 창 중첩에 의한 재노출임을 확인하고 confidence를 Low로 낮췄습니다.</p>
+  <p class=conf-note>Confidence: Low</p>
 </div>
 
 <h2>🔬 추천 연구주제</h2>
 
 <div class=dd>
-  <h3>A. MOPSO 다목적 입자군집 동시 최적화를 랩 메타표면/메타렌즈 역설계에 적용</h3>
+  <h3>A. HiGS의 타일 단위 역할 분리를 랩의 실시간 3D 디스플레이/렌더링 파이프라인에 적용</h3>
+  <p>이 논문은 3DGS 렌더링에서 파티셔닝·래스터화·병렬처리를 모두 같은 화면 타일 하나로 묶었던 구조를 분리해 프레임 시간이 가장 복잡한 타일에 묶이는 문제를 풀었는데, 랩의 3D 복원 결과를 실시간으로 시각화하는 파이프라인에도 같은 역할 분리를 적용하면 불균일하게 복잡한 장면에서 프레임 시간이 더 안정적으로 유지되는지 확인할 가치가 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문: HiGS (arXiv 2611.31918) — 코드 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 3D 복원 결과를 불균일 밀도 장면(일부만 조밀한 복원) 조건으로 재현한 테스트 세트</li>
+    <li>비교축: 기존 단일 타일 구조 대비 프레임 시간 분산(표준편차), 최악 프레임 시간</li>
+    <li>실패해도 남는 결과: 이득이 없더라도, 랩 렌더링 파이프라인의 타일 단위 프로파일링 코드는 다음 최적화 작업에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. PtychoFM의 differentiable forward model 사전학습을 랩 FPM 복원에 적용</h3>
+  <p>이 논문은 한 시료로 학습한 모델이 전혀 다른 형태·굴절률의 시료에도 전이되고, 실시간(초당 200프레임)으로 복원 결과를 보여줬는데, 랩의 Fourier ptychography 복원도 같은 사전학습 전략을 적용하면 미학습 시료에 대한 일반화와 처리 속도가 동시에 개선되는지 검증할 가치가 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문: PtychoFM (arXiv 2611.32830) — 코드 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 FPM 측정 데이터 중 학습에 쓰지 않은 held-out 시료 세트</li>
+    <li>비교축: 기존 iterative phase retrieval 대비 미학습 시료 일반화 품질(PSNR/SSIM), 초당 처리 프레임 수</li>
+    <li>실패해도 남는 결과: 이득이 없더라도, differentiable forward model 구현 코드는 다음 실시간 복원 설계에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. EventSSM의 비동기 순환 메모리 구조를 랩 event 카메라 기반 계측에 적용</h3>
+  <p>이 논문은 event 신호를 프레임 단위로 뭉개지 않고 시간 순서를 그대로 유지하는 순환 메모리로 깊이를 추정했는데, 랩이 보유한 event 카메라 기반 계측 파이프라인도 같은 비동기 모델링 방식을 적용하면 빠른 움직임 구간에서의 깊이·거리 추정 정확도가 개선되는지 확인할 가치가 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문: EventSSM (arXiv 2611.31720) — 코드 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 event 카메라로 촬영한 빠른 움직임 샘플(알려진 거리/속도)</li>
+    <li>비교축: 기존 프레임 기반 깊이 추정 대비 빠른 움직임 구간에서의 깊이 오차, 지연시간</li>
+    <li>실패해도 남는 결과: 이득이 없더라도, event 스트림을 비동기 순서로 처리하는 전처리 코드는 다음 event 기반 계측 실험에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>D. MOPSO 다목적 입자군집 동시 최적화를 랩 메타표면/메타렌즈 역설계에 적용</h3>
   <p>이 논문은 기하 치수와 층간 간격을 동시에 최적화하는 다목적 입자군집 알고리즘으로 FWHM 0.018THz·Q-factor 49.33의 초협대역 필터를 실제로 제작까지 마쳤는데, 랩의 메타표면/메타렌즈 설계도 같은 동시 최적화 절차를 적용하면 기존 단일 파라미터 스윕 대비 탐색 효율과 다기능 동시 달성률이 얼마나 개선되는지 확인할 가치가 있습니다.</p>
   <p><strong>실행 1주차:</strong></p>
   <ul>
-    <li>대상 논문: MOPSO-enabled ultra-narrowband mechanically reconfigurable metasurface filter (DOI 10.1088/1361-6463/aec60f) — 코드 공개 여부 본문 확인 필요</li>
+    <li>대상 논문: MOPSO-enabled ultra-narrowband reconfigurable metasurface filter (DOI 10.1088/1361-6463/aec60f) — 코드 공개 여부 본문 확인 필요</li>
     <li>공통 benchmark: 랩이 보유한 메타표면 순방향 시뮬레이터(FDTD/RCWA)의 기존 설계 과제 1~2개</li>
     <li>비교축: 기존 단일 파라미터 스윕 대비 다목적 PSO 동시 최적화의 수렴 속도, 탐색된 설계 수, 다기능 동시 달성 여부</li>
     <li>실패해도 남는 결과: 이득이 없더라도, 랩 메타표면 설계 변수에 맞춘 다목적 PSO 탐색 파이프라인 템플릿은 다음 설계 과제에 재사용 가능하다.</li>
   </ul>
 </div>
 
-<div class=dd>
-  <h3>B. Fast Patchwise Modal Fitting의 조각 단위 파면 복원을 랩 FPM/홀로그램 파이프라인에 적용</h3>
-  <p>이 논문은 넓은 시야를 통째로 복원하는 대신 조각으로 나눠 각각의 파면을 빠르게 추정했는데, 랩의 Fourier ptychography·홀로그램 복원도 같은 조각 단위 전략으로 속도와 정확도를 동시에 얻을 수 있는지 검증할 가치가 있습니다.</p>
-  <p><strong>실행 1주차:</strong></p>
-  <ul>
-    <li>대상 논문: Fast Patchwise Modal Fitting for Direct Wavefront Reconstruction (DOI 10.1364/oe.620467) — 코드 공개 여부 본문 확인 필요</li>
-    <li>공통 benchmark: 랩 보유 FPM/홀로그램 복원 파이프라인의 held-out 시야 세트</li>
-    <li>비교축: 통째 복원 대비 조각 단위 병렬 복원의 처리 속도, 조각 경계에서의 복원 오차</li>
-    <li>실패해도 남는 결과: 이득이 없더라도, 랩 시야를 조각 단위로 나누는 기준(조각 크기, 겹침 비율)은 다음 실시간 복원 설계에 재사용 가능하다.</li>
-  </ul>
-</div>
-
-<div class=dd>
-  <h3>C. 황반 OCTA 기반 신장질환 진단모델의 평가 설계를 랩 3D 복원 결과의 질환 판별 응용에 적용</h3>
-  <p>이 논문은 당뇨병이 없는 환자에서도 망막 미세혈관 영상만으로 신장질환을 감별하는 진단모델을 검증했는데, 랩의 위상/홀로그램 3D 미세구조 복원 결과도 같은 방식(복원된 구조에서 판별 지표를 뽑아 분류 모델에 넣는 절차)으로 응용별 판별 성능을 얻을 수 있는지 확인할 가치가 있습니다.</p>
-  <p><strong>실행 1주차:</strong></p>
-  <ul>
-    <li>대상 논문: Development and validation of a macular OCTA-based diagnostic model for differentiating non-diabetic kidney disease (DOI 10.21037/qims-2026-0946) — 본문에서 입력 OCTA 파라미터·평가지표(AUC 등) 확인 필요</li>
-    <li>공통 benchmark: 랩 보유 3D 복원 결과(위상/홀로그램 기반 미세구조) held-out 세트 + 레이블된 분류 과제 1개</li>
-    <li>비교축: 복원 구조에서 추출한 지표 기반 분류기의 AUC/정확도, 기존 픽셀 단위 지표 기반 분류와의 차이</li>
-    <li>실패해도 남는 결과: 이득이 없더라도, 랩 3D 복원 결과에서 판별 지표를 추출하는 전처리 파이프라인은 다음 분류 과제 설계에 재사용 가능하다.</li>
-  </ul>
-</div>
-
 <h2>📊 오늘의 버킷 현황</h2>
-<p><small>막대 너비: Deep Learning Methods(28편, catch-all)를 제외한 버킷 중 최댓값인 Tomography/3D Imaging(45편)을 100%로 정규화. Deep Learning Methods는 catch-all이라 100% 고정(라벨엔 실제 편수 표시). 0편 버킷(Lensless/Coded Imaging)은 0% 막대로 표시합니다.</small></p>
+<p><small>막대 너비: Deep Learning Methods(184편, catch-all)를 제외한 버킷 중 최댓값인 Tomography/3D Imaging(72편)을 100%로 정규화. Deep Learning Methods는 catch-all이라 100% 고정(라벨엔 실제 편수 표시).</small></p>
 
-<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:4.4%"></span></span><span class=n>2편</span></div>
-<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
-<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:17.8%"></span></span><span class=n>8편</span></div>
-<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:20%"></span></span><span class=n>9편</span></div>
-<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:2.2%"></span></span><span class=n>1편</span></div>
-<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>45편</span></div>
-<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:42.2%"></span></span><span class=n>19편</span></div>
-<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:20%"></span></span><span class=n>9편</span></div>
-<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>28편</span></div>
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:5.6%"></span></span><span class=n>4편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:1.4%"></span></span><span class=n>1편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:13.9%"></span></span><span class=n>10편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:13.9%"></span></span><span class=n>10편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:8.3%"></span></span><span class=n>6편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>72편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:52.8%"></span></span><span class=n>38편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:34.7%"></span></span><span class=n>25편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>184편</span></div>
 
-<p><small>⚠️ 참고: Tomography/3D Imaging(45편)은 막대가 가장 길지만 대부분이 순수 임상 증례(심장 OCT 증례보고, 치과 CBCT, 관상동맥 석회화 점수 등)이거나 "tomography"라는 단어만 겹치는 무관 논문(토양 전기비저항 탐사, 은하 분광 재구성 등)이고 실질 신호는 OCTA 신장질환 클러스터와 X-SLAM 휴대형 CT 정도입니다. Virtual Staining/Pathology(19편)는 사실상 전부가 "staining"/"virtual" 단어만 겹치는 무관 논문(치아 복합레진 색안정성, 가상 발전소 리뷰 등)이라 실질 신호가 없습니다. 반대로 Meta-Optics/Diffractive(9편)와 Phase Imaging/Holography(8편)는 막대 길이 대비 실질 신호 비율이 오늘 가장 높은 버킷입니다.</small></p>
+<p><small>⚠️ 참고: Tomography/3D Imaging(72편)이 가장 길지만 핵심 신호는 3DGS/SLAM 클러스터 9편에 집중돼 있고, 나머지 상당수는 순수 임상 OCT/CT 증례(심장 OCT 증례보고, 치과 CBCT, 관상동맥 석회화 점수 등)이거나 "tomography"라는 단어만 겹치는 무관 논문(토양 전기비저항 탐사 등)입니다. Virtual Staining/Pathology(38편)는 가장 길지만 실질 신호는 가상 염색 TTA·조직 단백체 foundation model 2편뿐이고, 나머지 대다수는 "staining"/"virtual" 단어만 겹치는 무관 논문입니다. 반대로 Light-Field/Novel Sensors(6편)는 편수는 작지만 event 카메라 클러스터로 묶이며 막대 길이 대비 실질 신호 비율이 가장 높습니다.</small></p>
 
 <h2>🗂 버킷별 주요 논문</h2>
 
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110279" target=_blank>Fast Fourier ptychographic microscopy based on differentiated hybrid multiplexing of bright-dark field</a></strong> [JNL]<br>
-  왜 주요: Fourier Ptychography/Microscopy의 오늘 유일한 핵심 ROI 직격 논문. 밝은 시야·어두운 시야 조명을 구분해서 섞는 다중화 방식으로 측정 횟수를 줄이려는 FP 본류 연구로 추정(abstract 없음, 제목 기준).
+  <strong><a href="https://arxiv.org/abs/2611.32830" target=_blank>PtychoFM: A Foundation Model for Ptychographic Imaging</a></strong> [LG]<br>
+  왜 주요: Fourier Ptychography/Microscopy의 오늘 must-read, 핵심 ROI에서 나온 실시간(초당 200프레임) foundation model로 반복계산 중심 복원 패러다임에 가장 직접적인 도전.
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1364/oe.620467" target=_blank>Fast Patchwise Modal Fitting for Direct Wavefront Reconstruction</a></strong> [JNL]<br>
-  왜 주요: Phase Imaging/Holography에서 오늘 가장 방법론적으로 새로운 신호, 적응광학 맥락에서 조각 단위 파면 추정으로 속도 개선을 겨냥(abstract 없음, 제목 기준).
+  <strong><a href="https://arxiv.org/abs/2611.32325" target=_blank>A recursive self-improvement framework for electron microscopy analysis</a></strong> [CV]<br>
+  왜 주요: 전자현미경 분석에서 연구자 교정을 재사용 가능한 역량으로 누적시켜, 미학습 소재 경계면 인식 커버리지를 5.13%에서 72.11%로 끌어올림.
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1088/1361-6463/aec60f" target=_blank>MOPSO-enabled ultra-narrowband mechanically reconfigurable metasurface filter for terahertz applications</a></strong> [JNL]<br>
-  왜 주요: Meta-Optics/Diffractive의 오늘 must-read, 다목적 입자군집 최적화 역설계로 FWHM 0.018THz·Q-factor 49.33의 초협대역 필터를 실제 제작·측정까지 완료.
+  <strong><a href="https://arxiv.org/abs/2611.31918" target=_blank>HiGS: A Hierarchical Architecture for Fast Differentiable 3D Gaussian Splatting</a></strong> [CV]<br>
+  왜 주요: Tomography/3D Imaging에서 오늘 가장 방법론적으로 새로운 신호, 파티셔닝/래스터화/병렬처리 단위를 분리해 3DGS 실시간 렌더링의 구조적 병목을 해소.
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1002/adom.72066" target=_blank>Wide-Field-of-View RGB-Achromatic Bilayer Metalens for Compact Imaging Systems</a></strong> [JNL]<br>
-  왜 주요: 색수차와 시야각 왜곡을 동시에 교정하는 바이레이어 메타렌즈로 30도 시야각의 OLED 디스플레이 이미징 시스템까지 시제품 구현(abstract 확인).
+  <strong><a href="https://arxiv.org/abs/2611.32335" target=_blank>GOLD-SLAM: Gaussian-splatting Omnidirectional LiDAR-Depth SLAM</a></strong> [CV]<br>
+  왜 주요: 파노라마 카메라와 LiDAR의 시야 불일치 문제를 구면 도메인에서 직접 풀어 실시간 SLAM-3DGS 결합의 실사용 가능성을 높임.
 </div>
 <div class=roi-item>
   <strong><a href="https://doi.org/10.21037/qims-2026-0946" target=_blank>Development and validation of a macular OCTA-based diagnostic model for differentiating non-diabetic kidney disease</a></strong> [JNL]<br>
-  왜 주요: Tomography/3D Imaging의 오늘 must-read, 망막 미세혈관 OCTA 영상을 당뇨병 없는 환자의 신장질환 감별진단에 직접 활용(abstract 없음, 제목 기준).
+  왜 주요: 어제 짚었던 OCTA 신장질환 확장 흐름의 대표 논문, 오늘 수집 창에서는 재현되지 않았지만 여전히 망막 미세혈관 영상의 전신질환 응용 확장을 보여주는 사례로 유효.
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.3390/tomography12120167" target=_blank>X-SLAM: A Novel Freehand Portable X-Ray Computed Tomography Technology</a></strong> [JNL]<br>
-  왜 주요: 거치형 갠트리 없이 손으로 X선 소스를 움직이며 촬영하고 SLAM(동시 위치추정·지도작성) 방식으로 촬영 기하를 스스로 추정해, GPU·클라우드 없이 노트북에서도 분 단위로 희소뷰 재구성을 완료. 작은 금속 물체(지름 3mm) 위치 오차 3mm 미만으로 현장 응급 CT 가능성을 보임.
+  <strong><a href="https://arxiv.org/abs/2611.32591" target=_blank>FewRef-5: Fixed-Reference Test-Time Adaptation for Virtual Staining</a></strong> [CV]<br>
+  왜 주요: Virtual Staining/Pathology의 오늘 유일한 핵심 ROI 직격 논문, 재학습 없이 참조 영상만으로 가상 염색 결과를 배포 시점에 교정.
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.17762/jidmis.v3.5572" target=_blank>A Lightweight Attention-Enhanced Framework for Tiny Object Detection in High-Resolution Microscopy Images</a></strong> [JNL]<br>
-  왜 주요: BCCD 혈액세포 현미경 영상에서 SE 채널-어텐션 블록(파라미터 1.2%만 추가)으로 mAP를 0.218→0.250, F1을 0.275→0.416으로 개선했지만, 가장 작은 혈소판 클래스는 두 모델 모두 평균정밀도 0에 그쳐 해상도 축소 후 객체 크기가 수용영역보다 작아지는 근본 한계를 솔직히 보고.
+  <strong><a href="https://arxiv.org/abs/2611.31451" target=_blank>A multimodal foundation model for tissue proteomics and morphology in cancer</a></strong> [CV]<br>
+  왜 주요: H&E 형태 정보와 공간 단백체 정보를 하나의 프레임워크로 통합해, 고심도 분자 프로파일링이 없는 대다수 환자에게도 적용 가능한 멀티모달 병리 foundation model.
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.31720" target=_blank>EventSSM: Causal Spatial-State Modelling for Asynchronous Events Event-Depth Estimation</a></strong> [CV]<br>
+  왜 주요: Light-Field/Novel Sensors의 대표 논문, event 신호의 비동기성을 프레임으로 뭉개지 않고 순환 메모리로 직접 모델링.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1088/1361-6463/aec60f" target=_blank>MOPSO-enabled ultra-narrowband mechanically reconfigurable metasurface filter</a></strong> [JNL]<br>
+  왜 주요: Meta-Optics/Diffractive의 오늘 must-read, 다목적 입자군집 최적화 역설계로 FWHM 0.018THz·Q-factor 49.33의 초협대역 필터를 실제 제작·측정까지 완료.
 </div>
 <div class=roi-item>
   <strong><a href="https://doi.org/10.1016/j.rio.2026.101214" target=_blank>A physics-informed data-driven inverse design framework for PCF-SPR biosensing structures</a></strong> [JNL]<br>
-  왜 주요: Reconstruction/Inverse Problems(9편) 중 유일하게 계산광학 역설계와 직접 연결되는 논문(나머지는 초음파 빔포머·양자 상태 단층촬영·압축센싱 비교분석 등 간접 신호이거나 무관).
+  왜 주요: Reconstruction/Inverse Problems(25편) 중 계산광학 역설계와 직접 연결되는 몇 안 되는 논문(나머지는 초음파 빔포머·양자 상태 단층촬영·시계열 이상탐지 등 간접 신호이거나 무관).
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.measurement.2026.123969" target=_blank>Neural network-driven wavefront decoupling for extended objects in adaptive optics</a></strong> [JNL]<br>
-  왜 주요: Deep Learning Methods catch-all 중 계산광학과 가장 직접 연결되는 신호, 신경망으로 확장 물체의 밝기 분포와 파면 왜곡을 분리(catch-all 과대표 방지를 위해 1편으로 제한).
+  <strong><a href="https://arxiv.org/abs/2611.32672" target=_blank>Text Is Just Another Shot in Vision-Language Models</a></strong> [CV]<br>
+  왜 주요: Deep Learning Methods catch-all의 오늘 대표 신호, 동결된 인코더 위에 간단한 프로브만으로 텍스트를 멀티샷 중 하나로 통합(catch-all 과대표 방지를 위해 1편으로 제한).
 </div>
 
 <h2>📈 벤치마크 SOTA 추이</h2>
 <table>
 <thead><tr><th>Benchmark</th><th>Metric</th><th>Result</th><th>Paper</th></tr></thead>
 <tbody>
+<tr><td>PtychoFM, 방사광가속기 빔라인 실시간 추론(스텝스캔 학습 → 플라이스캔 측정 전이)</td><td>추론 속도</td><td>검출기 스트리밍 회절 프레임을 단일 GPU에서 초당 최대 200프레임 속도로 실시간 복원·시각화</td><td><a href="https://arxiv.org/abs/2611.32830" target=_blank>PtychoFM</a></td></tr>
+<tr><td>PhyEvo-Mic-RSI, 미학습 소재 전자현미경 경계면 인식(10% 면적 예산 내)</td><td>경계면 인식 커버리지</td><td>5.13%에서 72.11%로 상승</td><td><a href="https://arxiv.org/abs/2611.32325" target=_blank>A recursive self-improvement framework</a></td></tr>
 <tr><td>MOPSO 역설계 바이레이어 THz 메타표면 필터, 3개 층간 간격 조건</td><td>FWHM / Q-factor / 피크 투과율</td><td>최소 FWHM 0.018THz, Q-factor 49.33 초과, 피크 투과율 0.993(THz-TDS 실측-FDTD 시뮬레이션 일치)</td><td><a href="https://doi.org/10.1088/1361-6463/aec60f" target=_blank>MOPSO-enabled ultra-narrowband metasurface filter</a></td></tr>
-<tr><td>BCCD 혈액세포 현미경 영상, SE 채널-어텐션 블록(파라미터 1.2%만 증가)</td><td>mAP / F1</td><td>mAP 0.218→0.250, F1 0.275→0.416, 적혈구 AP 0.115→0.268(혈소판 클래스는 두 모델 모두 AP 0)</td><td><a href="https://doi.org/10.17762/jidmis.v3.5572" target=_blank>Lightweight Attention-Enhanced Framework</a></td></tr>
-<tr><td>X-SLAM 휴대형 자유형 X선 CT, 소형 금속물체(지름 3mm) 위치추정</td><td>최대 상대 위치 오차</td><td>3mm 미만, 거치형 갠트리·GPU/클라우드 없이 노트북에서 분 단위 재구성</td><td><a href="https://doi.org/10.3390/tomography12120167" target=_blank>X-SLAM</a></td></tr>
 </tbody>
 </table>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] PtychoFM: A Foundation Model for Ptychographic Imaging</h3>
+  <div class=tag>[방법전환] [스케일업]</div>
+  <p><strong>왜 A급인가:</strong> 랩의 핵심 ROI인 Fourier ptychography/computational microscopy에서 나온 가장 직접적인 신호로, 측정 후 반복 계산에 의존하던 복원 패러다임을 실시간 foundation model 추론으로 바꿀 가능성을 실제 방사광가속기 환경에서 보였다는 점에서 오늘 ROI 전체를 통틀어 랩 파이프라인에 가장 큰 영향을 줄 수 있는 논문입니다.</p>
+  <p><strong>핵심:</strong> Ptychography는 물체를 조금씩 옮겨가며 찍은 여러 회절 패턴으로부터 빛의 세기만으로는 알 수 없는 위상 정보까지 복원하는 렌즈리스 현미경 기법인데, 지금까지는 측정이 끝난 뒤 그 데이터에 맞춰 계산량이 큰 반복 계산(iterative phase retrieval)을 매번 새로 돌려야 했고, 실험 조건이 바뀌면 그 계산도 처음부터 다시 조정해야 했습니다. 이 논문은 그 반복 계산을 미리 학습된 하나의 물리 인식(physics-aware) foundation model로 대체합니다. 저자들은 측정 과정을 그대로 흉내 내는 미분 가능한 순방향 모델(differentiable forward model)을 이용해 물체 공간의 정답 라벨 없이도 모델을 대규모로 사전학습시켰고, 이렇게 학습된 모델이 한 시료를 계단식으로 스캔한 데이터로 배운 내용을, 전혀 다른 시료를 연속적으로 스캔한 측정에도, 심지어 크기·형태·굴절률이 완전히 다른 물체에도 그대로 전이해서 적용할 수 있음을 보였습니다. 실제 방사광가속기(synchrotron) 빔라인에서는 검출기로부터 회절 프레임이 스트리밍되는 동안 단일 GPU 위에서 초당 최대 200프레임 속도로 복원하고 곧바로 시각화까지 완료했습니다. 이는 실험이 다 끝난 뒤에야 복원 품질을 확인할 수 있었던 기존 워크플로를, 측정이 진행되는 바로 그 순간 복원 결과를 보면서 실험 조건(노출 시간, 스캔 패턴 등)을 즉석에서 조정할 수 있는 워크플로로 바꾼다는 뜻입니다.</p>
+  <p><strong>약점:</strong> abstract 기준으로는 "fly-scan으로의 전이"와 "200프레임/초"라는 두 핵심 수치가 어떤 복원 품질(오차율, 해상도 손실 등) 하에서 달성됐는지가 명시되지 않아, 속도와 품질 사이에 어떤 trade-off가 있는지는 본문 확인이 필요합니다. 또한 X-ray/electron/optical microscopy 전반에 적용 가능하다고 주장하지만 abstract에 등장하는 실제 검증 사례는 synchrotron beamline(X-ray로 추정) 중심이라, 광학 현미경(랩이 주로 다루는 가시광 영역)에서도 같은 전이 성능이 나오는지는 확인되지 않았습니다.</p>
+  <p><strong>우리 랩 파이프라인 영향:</strong> 랩이 Fourier ptychography 기반 복원을 수행한다면, 이 논문의 differentiable forward model 사전학습 전략을 그대로 이식해 미학습 시료에 대한 일반화 성능과 실시간 처리 가능성을 동시에 검증할 구체적인 실행 경로를 제공합니다. 성공하면 랩의 FPM 실험 자체를 "찍고 나중에 복원"에서 "찍으면서 바로 보는" 방식으로 바꿀 잠재력이 있습니다.</p>
+</div>
 
 <h2>⚠️ 리스크·한계 필터</h2>
 
 <div class=risk>
   <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
-  <p>[Dataset risk] 오늘도 arXiv가 발행되지 않아 journal-only로 발행했습니다. 전체 스캔 431건 대비 선택 121건(28.1%)이라는 배정 비율 자체는 평소 범위 안이지만, 그중 상당수(특히 Tomography/3D Imaging 45편, Virtual Staining/Pathology 19편)는 계산 영상 방법론이 아니라 순수 임상 증례이거나 키워드만 겹치는 완전 무관 논문입니다.</p>
-  <p>[Metric risk] Crossref 메타데이터에 abstract가 등록되지 않은 논문이 많아(오늘 클러스터 1·2의 대표 논문 9편 중 abstract로 수치가 확인되는 건 MOPSO 1편뿐), 대부분의 판단이 제목·저널 정보 기준이라 abstract 기반 판단보다 불확실성이 큽니다.</p>
-  <p>[Claim risk] 오늘의 메타표면 클러스터는 어제와 대표 논문이 완전히 바뀌었는데, 이는 Crossref `--days 1` 수집 창이 매일 다른 논문을 잡기 때문일 수 있어 "메타표면이 재구성형으로 간다"는 큰 방향성 자체는 이틀 연속 다른 논문들로 반복 관찰되지만, 특정 하위 기술(다기능 통합 vs 전력 효율)이 뜨고 있다고 단정하긴 이릅니다.</p>
+  <p>[Dataset risk] 전체 스캔 1,143건 대비 선택 350건(30.6%)이라는 배정 비율은 과거 범위(27~31%) 안이지만, Tomography/3D Imaging(72편)과 Virtual Staining/Pathology(38편)의 상당수는 키워드만 겹치는 순수 임상 증례이거나 완전 무관 논문입니다.</p>
+  <p>[Metric risk] 저널 메타표면 클러스터의 대표 논문 상당수는 Crossref에 abstract가 등록되지 않아 제목·저널 정보 기준 판단이고, abstract 기반 판단보다 불확실성이 큽니다.</p>
+  <p>[Claim risk] 위상/파면 복원 클러스터는 어제와 완전히 동일한 논문 4편이 재노출된 것으로 확인돼, 오늘 리포트에서는 confidence를 낮춰 반영했지만 이런 재노출이 Crossref `--days 1` 수집 창 설계상 계속 발생할 수 있어 향후에도 "새로 나온 논문인지" 교차 확인이 필요합니다.</p>
 </div>
 
 <div class=risk>
   <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Claim risk] PtychoFM은 abstract 기준으로 전이 성능이 어떤 복원 품질 하에서 달성됐는지 구체적 오차 수치가 없어, "실시간"과 "전이 가능"이라는 주장이 본문의 정량 평가로 얼마나 뒷받침되는지 확인이 필요합니다.</p>
   <p>[Baseline risk] 메타표면 다기능 통합 클러스터 5편 중 MOPSO를 제외한 4편은 abstract가 없어 비교 기준(기존 단일 기능 설계 대비 개선폭)이 구체적으로 어느 정도인지 확인되지 않았습니다.</p>
-  <p>[Dataset risk] 루푸스신염·류마티스관절염 OCTA 논문 2편은 모두 체계적 문헌고찰·메타분석으로, 저자 자신의 새 임상 데이터가 아니라 기존 연구를 종합한 것이라 원 연구들의 표본 크기·대조군 설계 편차가 결론에 그대로 반영됩니다.</p>
-  <p>[Deployment risk] 황반 OCTA 기반 신장질환 진단모델은 abstract가 없어 판별 성능(AUC 등)과 외부 검증 코호트 존재 여부를 확인할 수 없고, X-SLAM 휴대형 CT는 작은 금속 물체 위치 정확도만 검증됐을 뿐 실제 임상 진단 영상 품질(연조직 대조도 등)은 본문 확인이 필요합니다.</p>
+  <p>[Deployment risk] GOLD-SLAM·View Management 등 3DGS-SLAM 결합 논문들은 실험실 벤치마크에서는 우수했지만, 랩이 다루는 비정형 광학 장비 환경에서도 같은 실시간 성능이 유지되는지는 본문 확인이 필요합니다.</p>
+  <p>[Dataset risk] EventDiffusion은 RGB 동영상으로부터 event 스트림을 생성하는 방식이라, 실제 센서로 촬영한 event 데이터와 생성된 데이터 사이의 분포 차이가 다운스트림 학습에 어떤 영향을 주는지 본문 확인이 필요합니다.</p>
 </div>
 
 <h2>🧊 Skim-only 후보</h2>
 <div class=skim>
   <ul>
-    <li>Virtual Staining/Pathology 19편 전부 — 치아 복합레진 색안정성, 세포막 염색 시약 개발, 가상 발전소 리뷰, AI 생성 콘텐츠의 환경영향 평가 등 "staining"/"virtual" 단어만 겹치는 완전 무관 논문입니다.</li>
-    <li>Tomography/3D Imaging 순수 임상 증례 다수 — 심장 OCT 증례보고(승모판 수술 후 관상동맥 압박, 급성 심근경색 플라크 형태 등), 치과 CBCT, 코뼈 형태 계측 등 CT/OCT를 "사용"하지만 영상 재구성 방법론에는 기여하지 않는 순수 임상 응용입니다.</li>
-    <li>Reconstruction/Inverse Problems 무관 다수 — 초음파 빔포머, 압축센싱 알고리즘 비교분석, LLM 생성 콘텐츠 탐지 등 "reconstruction"/"inverse" 단어만 겹치는 논문입니다.</li>
-    <li>Deep Learning Methods 28편 중 다수 — 재생에너지 가상발전소 리뷰, 은하 분광 재구성, 미세 드론 탐지 YOLO 등 전산 광학 이미징과 직접 관련 없는 응용입니다.</li>
+    <li>Virtual Staining/Pathology 38편 중 다수 — 세포막 염색 시약 개발, 지속가능 발전 교육자원, 건설폐기물 평가, AI 생성 콘텐츠 환경영향 평가 등 "staining"/"virtual" 단어만 겹치는 무관 논문입니다.</li>
+    <li>Tomography/3D Imaging 순수 임상 증례 다수 — 심장 OCT 증례보고, 치과 CBCT, 관상동맥 석회화 점수, 코뼈 형태 계측 등 CT/OCT를 "사용"하지만 영상 재구성 방법론에는 기여하지 않는 순수 임상 응용입니다.</li>
+    <li>Reconstruction/Inverse Problems 25편 중 다수 — 초음파 빔포머, 양자 상태 단층촬영, 시계열 이상탐지, LLM 생성 콘텐츠 탐지 등 "reconstruction"/"inverse" 단어만 겹치는 논문입니다.</li>
+    <li>Deep Learning Methods 184편 중 다수 — 웨이퍼 맵 결함 예측, EEG 수면 단계 분류, 로봇 정책 학습 등 전산 광학 이미징과 직접 관련 없는 응용입니다.</li>
   </ul>
 </div>
 
 <h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
-<p><small>오늘 121건 전체를 개별 bullet로 쓰는 대신, 클러스터 지도의 대표 논문과 버킷별 주요 논문 중심으로 압축했습니다. 하위 롱테일(키워드 오탐·순수 임상/범용 응용)은 Watch Lens·Skim-only 섹션에서 버킷/카운트만 표시하고 개별 bullet은 생략합니다.</small></p>
+<p><small>오늘 350건 전체를 개별 bullet로 쓰는 대신, 클러스터 지도의 대표 논문과 버킷별 주요 논문 중심으로 압축했습니다. 하위 롱테일(키워드 오탐·순수 임상/범용 응용)은 Watch Lens·Skim-only 섹션에서 버킷/카운트만 표시하고 개별 bullet은 생략합니다.</small></p>
+
+<h3>3D Gaussian Splatting/SLAM의 시스템 제약 대응 (5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.31428" target=_blank>Enhancing Sparse-View Gaussian Splatting with Feed-Forward Priors</a></strong> <span class=pill>CV</span><br>
+  문제: sparse-view 3DGS가 학습 시점에서 먼 시점에서 품질이 급격히 떨어짐 / 방법: feed-forward 모델과 3DGS를 주파수 대역별로 나눠 보완 / 의미: 플러그인 방식으로 기존 3DGS 파이프라인에 바로 적용 가능 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.31918" target=_blank>HiGS: A Hierarchical Architecture for Fast Differentiable 3DGS</a></strong> <span class=pill>CV</span><br>
+  문제: 파티셔닝·래스터화·병렬처리 단위가 모두 같은 타일에 묶여 가장 복잡한 타일이 프레임 시간을 좌우 / 방법: 세 단위를 서로 다른 granularity로 분리 / 의미: 밀도 불균일 장면에서도 안정적인 프레임 시간 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.32025" target=_blank>View Management with Gaussian Placement and Opacity Regularization</a></strong> <span class=pill>CV</span><br>
+  문제: 3DGS-SLAM 결합이 키프레임만 학습해 맵이 희소 입력에 과적합 / 방법: 실시간 예산 안에서 뷰·가우시안 배치 우선순위 관리 / 의미: 온라인 3DGS 맵 품질 개선 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.32335" target=_blank>GOLD-SLAM: Gaussian-splatting Omnidirectional LiDAR-Depth SLAM</a></strong> <span class=pill>CV</span><br>
+  문제: 파노라마 카메라와 LiDAR 시야 불일치가 SLAM 성능을 저해 / 방법: 구면 도메인에서 추적·매핑, 시각 특징으로 LiDAR 공백 보완 / 의미: 실사용 파노라마 SLAM-3DGS 결합 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.32735" target=_blank>AnyPrune: Optimization-Free Pruning for Feedforward 3DGS</a></strong> <span class=pill>CV</span><br>
+  문제: feed-forward 3DGS가 필요 이상으로 많은 가우시안을 생성해 메모리 낭비 / 방법: 재학습 없는 transformer 기반 가지치기 모듈 / 의미: 단일 forward pass의 효율성을 유지한 채 압축 / 우선순위: Read
+</div>
+
+<h3>Event 카메라의 표준 비전 태스크 재현 (4편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.31720" target=_blank>EventSSM: Causal Spatial-State Modelling for Event-Depth Estimation</a></strong> <span class=pill>CV</span><br>
+  문제: event 신호를 프레임으로 뭉개면 미세한 시간 구조가 사라짐 / 방법: 비동기 event 패킷으로 갱신되는 순환 메모리 / 의미: 비동기성을 유지한 채 깊이 추정 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.32883" target=_blank>3D Tracking Any Point with Events and Frames (TrackAnyMotion)</a></strong> <span class=pill>CV</span><br>
+  문제: RGB 프레임이 흐릿하거나 간격이 넓으면 빠른 점 추적이 불가능 / 방법: event 신호로 프레임 사이 공백을 보완 / 의미: 2D/3D 임의 점의 연속 추적 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.33017" target=_blank>E-MAPS: Event-Based Promptable Video Segmentation</a></strong> <span class=pill>CV</span><br>
+  문제: 기존 promptable 분할은 단일 구간만 처리 가능 / 방법: 메모리를 프롬프트로 활용해 임의 시점 교정 지원 / 의미: event 기반 promptable 분할 문제를 최초 공식화 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.33096" target=_blank>EventDiffusion: Learning Native Event Stream Distribution from Videos</a></strong> <span class=pill>CV</span><br>
+  문제: event 데이터가 부족해 데이터 기반 연구가 제약됨 / 방법: RGB 동영상에서 그럴듯한 event 스트림을 직접 생성 / 의미: event 데이터 증강의 새로운 경로 / 우선순위: Read
+</div>
+
+<h3>계산 현미경의 실시간 foundation model 전환 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.32830" target=_blank>PtychoFM: A Foundation Model for Ptychographic Imaging</a></strong> <span class=pill>LG</span><br>
+  문제: ptychography 복원이 매번 실험별 반복 계산에 의존 / 방법: differentiable forward model 기반 대규모 사전학습 / 의미: 실시간(초당 200프레임) 복원과 미학습 시료 전이 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://arxiv.org/abs/2611.32325" target=_blank>A recursive self-improvement framework for electron microscopy analysis</a></strong> <span class=pill>CV</span><br>
+  문제: 전자현미경 결함/경계면 분석이 연구자 개별 판단에 의존 / 방법: 한 번의 교정을 재사용 가능한 역량으로 누적하는 자가개선 시스템 / 의미: 미학습 소재 경계면 인식 커버리지 5.13%→72.11% / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110279" target=_blank>Fast Fourier ptychographic microscopy via bright-dark field multiplexing</a></strong> <span class=pill>JNL</span><br>
+  문제: FP 측정 횟수가 많아 실시간 적용이 어려움 / 방법: 밝은 시야·어두운 시야 조명 다중화로 측정 횟수 축소(abstract 없음, 제목 기준) / 의미: 하드웨어 쪽에서의 실시간 지향 보완 / 우선순위: Read
+</div>
 
 <h3>메타표면의 다기능 통합·재구성형 전환 (5편)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1088/1361-6463/aec60f" target=_blank>MOPSO-enabled ultra-narrowband mechanically reconfigurable metasurface filter</a></strong> <span class=pill>JNL</span><br>
-  문제: THz 협대역 필터 설계가 단일 파라미터 스윕에 의존해 효율-성능 trade-off를 다루기 어려움 / 방법: 기하 치수와 층간 간격을 동시에 최적화하는 다목적 입자군집 역설계 / 의미: FWHM 0.018THz·Q-factor 49.33을 실제 제작·측정으로 검증 / 우선순위: Must-read
+  <strong><a href="https://doi.org/10.1088/1361-6463/aec60f" target=_blank>MOPSO-enabled ultra-narrowband reconfigurable metasurface filter</a></strong> <span class=pill>JNL</span><br>
+  문제: THz 협대역 필터 설계가 단일 파라미터 스윕에 의존 / 방법: 기하 치수와 층간 간격을 동시에 최적화하는 다목적 입자군집 역설계 / 의미: FWHM 0.018THz·Q-factor 49.33을 실제 제작·측정으로 검증 / 우선순위: Must-read
 </div>
 <div class=roi-item>
   <strong><a href="https://doi.org/10.1016/j.optlastec.2026.117023" target=_blank>Risley-prism-inspired transmission-reflection integrated metasurface</a></strong> <span class=pill>JNL</span><br>
-  문제: 기존 Risley-prism 빔스캐닝은 회전 프리즘 두 개가 필요해 부피가 큼 / 방법: 빛의 회전 방향(스핀)에 따라 투과·반사를 독립 제어하는 평면 메타표면 / 의미: 양방향 빔 스캐닝을 평면 소자 하나로 통합 / 우선순위: Read
+  문제: 기존 Risley-prism 빔스캐닝은 회전 프리즘 두 개가 필요해 부피가 큼 / 방법: 스핀 선택적 투과·반사 독립 제어 평면 메타표면 / 의미: 양방향 빔 스캐닝을 평면 소자 하나로 통합 / 우선순위: Read
 </div>
 <div class=roi-item>
   <strong><a href="https://doi.org/10.1364/ao.617900" target=_blank>Reconfigurable graphene–VO₂ terahertz metasurface</a></strong> <span class=pill>JNL</span><br>
-  문제: THz 흡수와 센싱을 각각 다른 소자로 구현해야 했음 / 방법: 그래핀-VO₂ 조합으로 전기적 상태 전환이 가능한 다중모드 메타표면 / 의미: 흡수+농약 잔류물 센싱을 한 소자에서 전환 / 우선순위: Read
+  문제: THz 흡수와 센싱을 각각 다른 소자로 구현해야 했음 / 방법: 전기적 상태 전환이 가능한 다중모드 메타표면 / 의미: 흡수+농약 잔류물 센싱을 한 소자에서 전환 / 우선순위: Read
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1364/oe.618969" target=_blank>Orthogonal frequency-polarization multiplexing in a four-channel cascaded-metasurface diffractive neural network</a></strong> <span class=pill>JNL</span><br>
-  문제: 회절 신경망이 보통 단일 채널 입력만 처리 / 방법: 4채널 메타표면을 캐스케이드해 주파수-편광을 직교 다중화 / 의미: 하나의 광학 소자가 여러 독립 신호를 동시 처리 / 우선순위: Read
+  <strong><a href="https://doi.org/10.1039/d6cp03802f" target=_blank>All-Dielectric Chiral Metasurface Based on BIC</a></strong> <span class=pill>JNL</span><br>
+  문제: 편광 변환과 센싱을 동시에 고성능으로 구현하기 어려움 / 방법: BIC(연속체 속 속박상태)를 이용한 올디일렉트릭 키랄 메타표면 / 의미: 같은 물리 원리로 두 기능 동시 달성(abstract 없음, 제목 기준) / 우선순위: Read
 </div>
 <div class=roi-item>
   <strong><a href="https://doi.org/10.1002/adom.72066" target=_blank>Wide-Field-of-View RGB-Achromatic Bilayer Metalens</a></strong> <span class=pill>JNL</span><br>
-  문제: 메타렌즈가 색수차와 시야각 왜곡을 동시에 교정하기 어려움 / 방법: 위상-투과율 라이브러리 기반 바이레이어 적층 + 순차 정렬 공정 / 의미: 30도 시야각 RGB-achromatic OLED 이미징 시스템 시제품 / 우선순위: Read
+  문제: 메타렌즈가 색수차와 시야각 왜곡을 동시에 교정하기 어려움 / 방법: 위상-투과율 라이브러리 기반 바이레이어 적층 / 의미: 30도 시야각 RGB-achromatic OLED 이미징 시제품 / 우선순위: Read
 </div>
 
-<h3>위상/파면 복원의 하드웨어 확산 (4편)</h3>
+<h3>기타 주목 논문 (Virtual Staining/Pathology, 2편)</h3>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110280" target=_blank>Non-iterative anti-vibration phase retrieval for large-aperture interferometry</a></strong> <span class=pill>JNL</span><br>
-  문제: 대구경 간섭계 측정 중 바닥 진동이 반복 계산 과정의 간섭무늬를 흔듦 / 방법: 반복 없이 한 번에 위상을 복원하는 비반복 알고리즘 / 의미: 진동 환경에서도 안정적인 대구경 위상 복원 / 우선순위: Read
+  <strong><a href="https://arxiv.org/abs/2611.32591" target=_blank>FewRef-5: Fixed-Reference Test-Time Adaptation for Virtual Staining</a></strong> <span class=pill>CV</span><br>
+  문제: 가상 염색이 고정된 추론 규칙에 의존해 배포 시점의 실제 참조 영상을 활용하지 못함 / 방법: StainPromptInversion 기반 test-time adaptation / 의미: 재학습 없이 query별 염색 보정 / 우선순위: Read
 </div>
 <div class=roi-item>
-  <strong><a href="https://doi.org/10.1364/oe.620467" target=_blank>Fast Patchwise Modal Fitting for Direct Wavefront Reconstruction</a></strong> <span class=pill>JNL</span><br>
-  문제: 넓은 시야의 파면을 통째로 복원하면 속도가 느림 / 방법: 시야를 조각으로 나눠 각각 빠르게 모달 피팅 / 의미: 적응광학 실시간 파면 추정 속도 개선 / 우선순위: Read
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1364/oe.618748" target=_blank>Full vectorial reconstruction via Mie-scattering nanointerferometry</a></strong> <span class=pill>JNL</span><br>
-  문제: 강하게 집속된 빛의 장을 세기만으로는 방향 성분까지 복원하기 어려움 / 방법: 나노 입자의 Mie 산란 패턴을 간섭계로 측정해 벡터 성분 복원 / 의미: 나노 스케일 광학장의 완전한 벡터 복원 / 우선순위: Read
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1016/j.measurement.2026.123969" target=_blank>Neural network-driven wavefront decoupling for extended objects in adaptive optics</a></strong> <span class=pill>JNL</span><br>
-  문제: 확장된 물체(점 광원이 아닌)를 볼 때 물체의 밝기 분포와 대기 파면 왜곡이 뒤섞임 / 방법: 신경망으로 물체 밝기 분포와 파면 왜곡을 분리 추정 / 의미: 확장 물체 적응광학의 파면 보정 정확도 개선 / 우선순위: Read
-</div>
-
-<h3>OCT-angiography의 전신질환 확장 (3편)</h3>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.21037/qims-2026-0946" target=_blank>Macular OCTA-based diagnostic model for non-diabetic kidney disease</a></strong> <span class=pill>JNL</span><br>
-  문제: 비당뇨 신장질환 감별진단이 침습적 검사(소변·조직검사)에 의존 / 방법: 황반 OCTA 영상 기반 진단모델 개발·검증(abstract 없음, 제목 기준) / 의미: 신장질환 비침습 선별에 안과 영상을 직접 연결 / 우선순위: Must-read
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1142/s2661341726740391" target=_blank>OCTA Metrics for Lupus Nephritis (Systematic Review)</a></strong> <span class=pill>JNL</span><br>
-  문제: 루푸스신염 진단이 소변 검사·신장 조직검사 같은 침습적 방법에 의존 / 방법: 눈-신장 미세혈관 병리 유사성에 착안한 OCTA 바이오마커 메타분석 / 의미: 전층 DCP 혈관밀도·FD300이 후보 지표로 유의미 / 우선순위: Read
-</div>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.1142/s2661341726740573" target=_blank>Early Retinal Capillary Loss in Rheumatoid Arthritis</a></strong> <span class=pill>JNL</span><br>
-  문제: 류마티스관절염의 전신 미세혈관 염증이 관절 증상보다 먼저 나타나는지 평가할 방법 부족 / 방법: 임상 안증상이 없는 RA 환자의 황반 혈관밀도를 메타분석 / 의미: 조기 전신 염증 지표 후보 제시 / 우선순위: Read
-</div>
-
-<h3>기타 주목 논문 (1편)</h3>
-<div class=roi-item>
-  <strong><a href="https://doi.org/10.3390/tomography12120167" target=_blank>X-SLAM: A Novel Freehand Portable X-Ray Computed Tomography Technology</a></strong> <span class=pill>JNL</span><br>
-  문제: 기존 CT가 거치형 갠트리에 묶여 응급·현장·점소 진료 환경에서 쓰기 어려움 / 방법: 손으로 움직이는 X선 소스 + 모바일 평판 검출기, SLAM 방식으로 촬영 기하 자가 추정 / 의미: GPU/클라우드 없이 분 단위로 극희소뷰 재구성, 가방 크기 휴대형 CT 가능성 / 우선순위: Read
+  <strong><a href="https://arxiv.org/abs/2611.31451" target=_blank>A multimodal foundation model for tissue proteomics and morphology in cancer</a></strong> <span class=pill>CV</span><br>
+  문제: 형태 정보와 공간 단백체 정보가 각각 다른 모델로 분리돼 있고, 대다수 환자는 고심도 분자 프로파일링이 없음 / 방법: H&E 형태와 다중 단백체 패널을 하나의 프레임워크로 통합 / 의미: 분자 프로파일링 없는 환자에게도 적용 가능한 멀티모달 병리 모델 / 우선순위: Read
 </div>
 
 <h2>🔗 참고 링크</h2>
@@ -380,7 +475,7 @@ html[data-theme=light] body{background-color:#fff}
 </ul>
 
 <footer>
-이미징/계산광학 랩 자동 브리핑. arXiv(cs.LG·cs.CV·cs.AI·eess.IV·eess.SP) + Crossref/OpenAlex 저널 수집 기반. 오늘은 arXiv 수요일자 공지가 아직 올라오지 않아 저널(Crossref/OpenAlex)만으로 발행하는 journal-only 잠정본입니다.
+이미징/계산광학 랩 자동 브리핑. arXiv(cs.LG·cs.CV·cs.AI·eess.IV·eess.SP) + Crossref/OpenAlex 저널 수집 기반. 오늘은 오전 journal-only 잠정본을 arXiv 공지 확인 후 arXiv+저널 완성본으로 업그레이드했습니다.
 </footer>
 
 <a class=home href="../index.html">← 홈</a>
