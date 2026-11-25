@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-25",
+  "source_mode": "journal-only",
+  "clusters": [
+    {
+      "cluster": "메타표면 설계가 고정 형상 최적화에서 다기능 통합·재구성 가능한 소자로 이동",
+      "papers": [
+        {"title": "MOPSO-enabled ultra-narrowband mechanically reconfigurable metasurface filter for terahertz applications", "url": "https://doi.org/10.1088/1361-6463/aec60f", "importance_tags": ["[방법전환]", "[표준후보]"]},
+        {"title": "Risley-prism-inspired transmission-reflection integrated metasurface for spin-selective independent bidirectional beam scanning", "url": "https://doi.org/10.1016/j.optlastec.2026.117023", "importance_tags": ["[방법전환]"]},
+        {"title": "Reconfigurable graphene–VO₂ terahertz metasurface for multimode absorption and pesticide residue sensing", "url": "https://doi.org/10.1364/ao.617900", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "Orthogonal frequency-polarization multiplexing in a four-channel cascaded-metasurface diffractive neural network", "url": "https://doi.org/10.1364/oe.618969", "importance_tags": ["[방법전환]"]},
+        {"title": "Wide-Field-of-View RGB-Achromatic Bilayer Metalens for Compact Imaging Systems", "url": "https://doi.org/10.1002/adom.72066", "importance_tags": ["[실사용전환]"]}
+      ],
+      "why": "메타표면(빛의 파장보다 작은 나노 구조를 평면에 배열해 렌즈나 흡수체 역할을 하게 만든 인공 광학 소재) 설계는 예전에는 한 가지 기능에 맞춰 형상을 한 번 고정하고 그 형상을 최적화하는 데 머물렀는데, 오늘 저널에서 동시에 나온 다섯 편은 모두 한 소자가 여러 기능을 동시에 수행하거나 상황에 따라 형상 자체를 바꾸는 쪽으로 넘어갔습니다. MOPSO 논문은 사람이 하나씩 파라미터를 바꿔가며 찾던 기존 설계 방식 대신, 두 겹 금속 배열의 기하 치수와 층간 간격을 동시에 최적화하는 다목적 입자군집 알고리즘으로 테라헤르츠 필터를 역설계해서, 최소 FWHM(반치전폭, 공진 선폭) 0.018THz에 Q-factor(공진의 날카로움을 나타내는 지표) 49.33을 넘는 초협대역 필터를 실제로 제작·측정까지 마쳤습니다. Risley-prism 메타표면은 원래 두 개의 회전 프리즘으로만 가능하던 빔 스캐닝을, 빛의 회전 방향(스핀)에 따라 투과·반사를 따로 제어하는 평면 소자 하나로 양방향에서 독립적으로 수행하게 만들었고, 그래핀-VO₂ 메타표면은 테라헤르츠 흡수와 농약 잔류물 센싱이라는 서로 다른 두 기능을 전기적으로 전환 가능한 상태 하나로 통합했습니다. 4채널 회절 신경망 메타표면은 주파수와 편광이라는 두 개의 독립된 채널을 동시에 다중화해서 하나의 광학 소자가 여러 입력 신호를 동시에 처리하게 했고, RGB-achromatic 바이레이어 메타렌즈는 색수차(파장마다 초점이 어긋나는 문제)와 시야각에 따른 왜곡을 동시에 두 겹 구조로 교정해 30도 시야각의 OLED 디스플레이 이미징 시스템까지 시제품으로 보였습니다. 다섯 편을 합치면, 메타표면 설계의 무게중심이 '하나의 기능을 위한 고정 형상'에서 '여러 기능을 동시에 수행하거나 알고리즘이 거꾸로 찾아낸 다기능 재구성형 소자'로 옮겨가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 저널(J. Phys. D, Optics & Laser Technology, Applied Optics, Optics Express, Advanced Optical Materials) 5편이 독립적으로 다기능 통합·재구성형을 택했지만, 대부분 abstract가 짧거나 없어 수치가 확인되는 건 MOPSO 논문 1편뿐입니다. 어제 발행본의 같은 제목 클러스터(SAL-SMART·Zero-State-Maintenance-Power·그래핀 THz 빔스위칭·PCF-SPR 대표)와는 대표 논문이 전부 교체됐습니다.",
+      "lab_action": "MOPSO 논문의 다목적 입자군집 동시 최적화(기하 치수 + 층간 간격)와 RGB-achromatic 바이레이어 메타렌즈의 위상-투과율 라이브러리 기반 2겹 적층 설계를 랩의 메타표면/메타렌즈 설계에 적용해, 기존 단일 파라미터 스윕 대비 동시 최적화가 탐색 효율과 다기능 동시 달성률에서 얼마나 나은지 1주 내 소규모 벤치마크로 비교한다."
+    },
+    {
+      "cluster": "위상/파면 복원이 간섭계·적응광학·나노광학으로 동시 확산",
+      "papers": [
+        {"title": "Non-iterative anti-vibration phase retrieval for large-aperture interferometry", "url": "https://doi.org/10.1016/j.optlaseng.2026.110280", "importance_tags": ["[방법전환]"]},
+        {"title": "Fast Patchwise Modal Fitting for Direct Wavefront Reconstruction", "url": "https://doi.org/10.1364/oe.620467", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "Full vectorial reconstruction of tightly focused fields via Mie-scattering nanointerferometry", "url": "https://doi.org/10.1364/oe.618748", "importance_tags": ["[방법전환]"]},
+        {"title": "Neural network-driven wavefront decoupling for extended objects in adaptive optics", "url": "https://doi.org/10.1016/j.measurement.2026.123969", "importance_tags": ["[방법전환]", "[해부분석]"]}
+      ],
+      "why": "위상/파면 복원(빛의 세기만 측정 가능한 센서로부터 눈에 안 보이는 위상 정보를 계산으로 되살리는 기법)은 보통 한 가지 하드웨어 맥락에 집중해서 다뤄지는 경우가 많은데, 오늘 저널에서는 같은 계산 문제의식이 서로 다른 네 가지 광학 하드웨어에서 동시에 다듬어졌습니다. Non-iterative anti-vibration 논문은 대형 망원경 거울처럼 큰 구경을 간섭계로 측정할 때 바닥 진동 때문에 반복 계산(iteration) 중에 간섭무늬가 흔들려버리는 문제를, 반복 없이 한 번에 위상을 복원하는 방법으로 풀었습니다. Fast Patchwise Modal Fitting은 넓은 시야를 한꺼번에 복원하는 대신 작은 조각으로 나눠 각 조각의 파면(빛이 진행하면서 생기는 위상의 공간적 분포)을 빠르게 추정하는 방법을 적응광학(대기 왜곡을 실시간으로 보정하는 망원경 기술) 맥락에서 제안했습니다. Mie-scattering nanointerferometry는 나노 입자가 빛을 산란시키는 패턴을 간섭계로 측정해서, 강하게 집속된 빛의 장(field) 전체를 방향 성분(벡터)까지 복원했습니다. Neural network-driven wavefront decoupling은 적응광학에서 별처럼 점 하나가 아니라 퍼져 있는 넓은 물체(태양 표면 등)를 관측할 때 물체 자체의 밝기 분포와 대기로 인한 파면 왜곡이 뒤섞여 버리는 문제를, 신경망으로 둘을 분리해 풀었습니다. 네 편을 합치면, 위상/파면 복원이라는 계산 아이디어가 대구경 간섭계·조각 단위 적응광학·나노간섭계·확장 물체 적응광학이라는 서로 다른 네 하드웨어에서 독립적으로 다듬어지고 있고, 각 그룹이 계산으로 풀려는 문제(진동, 속도, 벡터 정보, 물체-왜곡 분리)는 다르지만 공유하는 수학적 뼈대는 같다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 네 저널(Optics and Lasers in Engineering, Optics Express x2, Measurement)에서 독립적으로 다뤘지만, 전부 abstract가 짧거나 없어 제목과 저널 맥락 기준 판단입니다.",
+      "lab_action": "Fast Patchwise Modal Fitting의 조각 단위 모달 피팅과 Non-iterative anti-vibration의 비반복 위상 복원 전략을 랩의 FPM·홀로그램 복원 파이프라인에 적용해, 통째 복원 대비 조각별 병렬 복원의 속도와, 반복 알고리즘 대비 비반복 복원의 진동 강건성을 1주 내 소규모 프로토타입으로 비교한다."
+    },
+    {
+      "cluster": "OCT-angiography가 당뇨망막병증·자가면역질환을 넘어 신장질환 진단모델로 확장",
+      "papers": [
+        {"title": "Development and validation of a macular optical coherence tomography angiography-based diagnostic model for differentiating non-diabetic kidney disease", "url": "https://doi.org/10.21037/qims-2026-0946", "importance_tags": ["[방법전환]", "[표준후보]"]},
+        {"title": "Optical Coherence Tomography Angiography Metrics as Non-invasive Biomarkers for Lupus Nephritis — A Systematic Review and Meta-Analysis", "url": "https://doi.org/10.1142/s2661341726740391", "importance_tags": ["[통합정리]"]},
+        {"title": "Beyond the Joints: Early Retinal Capillary Loss in Rheumatoid Arthritis Detected by Optical Coherence Tomography Angiography", "url": "https://doi.org/10.1142/s2661341726740573", "importance_tags": ["[평가축]"]}
+      ],
+      "why": "OCT-angiography(OCTA, 빛의 간섭을 이용해 망막의 미세혈관을 비침습적으로 촬영하는 기법)는 어제도 루푸스신염·류마티스관절염 같은 자가면역질환의 비침습 바이오마커로 번지는 흐름을 짚었는데, 오늘은 그 적용 범위가 자가면역질환을 넘어 신장질환 자체로 한 걸음 더 넓어졌습니다. 오늘 새로 나온 황반 OCTA 기반 진단모델 논문은 당뇨병이 없는 환자에서 신장질환의 종류를 구분하는 데 망막 미세혈관 영상을 직접 활용하는 진단모델을 개발·검증했는데, 이는 기존에 소변 검사나 신장 조직검사로만 가능했던 감별진단에 비침습적인 눈 영상 하나를 추가하려는 시도입니다. 어제도 짚었던 루푸스신염 체계적 문헌고찰은 눈과 신장의 미세혈관이 비슷한 병리를 공유한다는 점에 착안해 OCTA 지표(특히 전층 깊은층 모세혈관총 혈관밀도)가 루푸스신염을 비침습적으로 선별할 후보 지표가 될 수 있는지를 메타분석으로 검토했고, 류마티스관절염 논문은 관절 증상이 뚜렷해지기 전에도 망막 모세혈관이 먼저 소실된다는 걸 메타분석으로 보여 전신 미세혈관 염증의 조기 지표로 OCTA를 제안했습니다. 세 편을 합치면, OCTA가 안과 전용 진단 도구에서 당뇨망막병증 하나를 넘어 자가면역질환과 신장질환까지 아우르는 전신질환 비침습 바이오마커 후보로 계속 번지고 있다는 뜻이고, 그 번짐의 다음 정류장이 매일 조금씩 다른 장기로 옮겨가고 있다는 뜻이기도 합니다.",
+      "confidence": "Medium",
+      "confidence_note": "신장질환 진단모델 논문은 abstract가 없어 제목 기준 판단이고, 루푸스신염·류마티스관절염 2편은 둘 다 메타분석이라 저자 자신의 새 임상 데이터가 아니라 기존 연구를 종합한 결과입니다. 서로 다른 세 저널에서 독립적으로 나왔다는 점은 신호로 볼 수 있습니다. 어제 클러스터의 핵심 방법론 논문이었던 NAVI-OCTA와 베체트병 포도막염 논문은 오늘 수집분에 없어 대표 논문을 신장질환 진단모델 중심으로 다시 구성했습니다.",
+      "lab_action": "황반 OCTA 기반 신장질환 진단모델의 평가 지표 설계(어떤 OCTA 파라미터를 입력으로 썼는지, AUC 등 판별 성능)를 본문에서 확인해, 랩의 위상/홀로그램 3D 미세혈관 복원 결과에도 같은 방식으로 질환별 판별 모델을 얹을 수 있는지 1주 내 점검한다."
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "MOPSO 다목적 입자군집 동시 최적화를 랩 메타표면/메타렌즈 역설계에 적용",
+      "claim": "이 논문은 기하 치수와 층간 간격을 동시에 최적화하는 다목적 입자군집 알고리즘으로 FWHM 0.018THz·Q-factor 49.33의 초협대역 필터를 실제로 제작까지 마쳤는데, 랩의 메타표면/메타렌즈 설계도 같은 동시 최적화 절차를 적용하면 기존 단일 파라미터 스윕 대비 탐색 효율과 다기능 동시 달성률이 얼마나 개선되는지 확인할 가치가 있습니다.",
+      "supporting_papers": [
+        {"title": "MOPSO-enabled ultra-narrowband mechanically reconfigurable metasurface filter for terahertz applications", "url": "https://doi.org/10.1088/1361-6463/aec60f"}
+      ]
+    },
+    {
+      "title": "Fast Patchwise Modal Fitting의 조각 단위 파면 복원을 랩 FPM/홀로그램 파이프라인에 적용",
+      "claim": "이 논문은 넓은 시야를 통째로 복원하는 대신 조각으로 나눠 각각의 파면을 빠르게 추정했는데, 랩의 Fourier ptychography·홀로그램 복원도 같은 조각 단위 전략으로 속도와 정확도를 동시에 얻을 수 있는지 검증할 가치가 있습니다.",
+      "supporting_papers": [
+        {"title": "Fast Patchwise Modal Fitting for Direct Wavefront Reconstruction", "url": "https://doi.org/10.1364/oe.620467"}
+      ]
+    },
+    {
+      "title": "황반 OCTA 기반 신장질환 진단모델의 평가 설계를 랩 3D 복원 결과의 질환 판별 응용에 적용",
+      "claim": "이 논문은 당뇨병이 없는 환자에서도 망막 미세혈관 영상만으로 신장질환을 감별하는 진단모델을 검증했는데, 랩의 위상/홀로그램 3D 미세구조 복원 결과도 같은 방식(복원된 구조에서 판별 지표를 뽑아 분류 모델에 넣는 절차)으로 응용별 판별 성능을 얻을 수 있는지 확인할 가치가 있습니다.",
+      "supporting_papers": [
+        {"title": "Development and validation of a macular optical coherence tomography angiography-based diagnostic model for differentiating non-diabetic kidney disease", "url": "https://doi.org/10.21037/qims-2026-0946"}
+      ]
+    }
+  ]
+}

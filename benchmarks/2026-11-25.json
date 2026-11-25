@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-25",
+  "results": [
+    {
+      "benchmark": "MOPSO 역설계 바이레이어 테라헤르츠 메타표면 필터, 기계적 재구성(3개 층간 간격 조건)",
+      "metric": "FWHM / Q-factor / 피크 투과율",
+      "value": 0.018,
+      "value_str": "최소 FWHM 0.018THz, Q-factor 49.33 초과, 피크 투과율 0.993까지 달성(THz-TDS 실측으로 FDTD 시뮬레이션과 일치 확인)",
+      "paper": "https://doi.org/10.1088/1361-6463/aec60f",
+      "paper_title": "MOPSO-enabled ultra-narrowband mechanically reconfigurable metasurface filter for terahertz applications"
+    },
+    {
+      "benchmark": "BCCD 혈액세포 현미경 영상, SE 채널-어텐션 블록 추가(파라미터 1.2%만 증가)",
+      "metric": "mAP / F1 (baseline → attention-enhanced)",
+      "value": 0.25,
+      "value_str": "mAP 0.218→0.250, F1 0.275→0.416, 적혈구 AP는 0.115→0.268로 2배 이상 개선되었으나 혈소판 클래스는 두 모델 모두 AP 0",
+      "paper": "https://doi.org/10.17762/jidmis.v3.5572",
+      "paper_title": "A Lightweight Attention-Enhanced Framework for Tiny Object Detection in High-Resolution Microscopy Images"
+    },
+    {
+      "benchmark": "X-SLAM 휴대형 자유형 X선 CT, 소형 금속물체(지름 3mm) 위치추정",
+      "metric": "최대 상대 위치 오차",
+      "value": 3,
+      "value_str": "최대 상대 위치 오차 3mm 미만, 거치형 갠트리나 GPU/클라우드 없이 노트북/태블릿에서 분 단위로 재구성 완료",
+      "paper": "https://doi.org/10.3390/tomography12120167",
+      "paper_title": "X-SLAM: A Novel Freehand Portable X-Ray Computed Tomography Technology"
+    }
+  ]
+}
