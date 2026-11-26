@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-26",
+  "source_listing_date": "2026-11-26",
+  "source_mode": "new",
+  "note": "2026-11-26(목) daily. Date Source Contract 점검 결과 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 전부 /new listing이 \"Thursday, 26 November 2026\"을 가리켜 post_date와 일치(source_mode=new). arXiv new+cross 841편(cs.LG 271·cs.CV 288·cs.AI 248·eess.IV 13·eess.SP 21, replacements 제외, arxiv id YYMM=2611로 2026년 11월과 일치)에 저널 431편(Crossref, 1차 수집에서 6개 질의가 429 레이트리밋에 걸려 재시도로 복구) + OpenAlex 보충 13편을 더해 scripts/classify.py로 병합·재분류했다. 전체 스캔 1,108건(dedupe 후) 중 323건(29.2%, 과거 27~31% 범위 안)이 9개 ROI 버킷에 배정됐다. 오늘의 핵심은 (1) Tomography/3D Imaging(59편)에서 3DGS/SLAM/SfM/NeRF 직결 논문이 약 17편 나왔는데, 그중 LinearVGGT가 스트리밍 온라인 geometry transformer로 1024프레임에 걸쳐 거의 일정한 27ms/프레임 지연시간과 teacher 대비 12배 속도·2.7배 메모리 절감을 보여 오늘 가장 강한 방법론적 신호였던 점, (2) 핵심 ROI Watch Lens 버킷 중 Phase Imaging/Holography(8편 중 6편 진짜 신호)가 오늘 가장 두꺼운 핵심 ROI 신호였고, 홀로그래피와 메타표면이 변조 소자 설계 자체에서 수렴하는 흐름(다중레벨 상변화 메타표면 홀로그래피, lens-free holography + CRISPR 바이오센싱)을 보인 점, (3) Light-Field/Novel Sensors에서 스파이크 카메라 논문 2편(SPIRE, TIDE-Flow, 동일 저자군)이 노출 극한 조건에서 표준 비전 태스크에 도전한 점이다. 반대로 Fourier Ptychography/Microscopy(3편)는 전부 SAR(합성개구레이더) 딥러닝 논문으로 \"synthetic aperture\"/\"aperture synthesis\" 키워드 충돌에 의한 완전 오탐이었고, Lensless/Coded Imaging(1편)도 단안 4D 재구성 논문으로 핵심 ROI와 무관해 두 핵심 버킷 모두 오늘 실질 신호가 0건이었다. Reconstruction/Inverse Problems(36편)도 지질학적 역산·무선 채널추정 등 인접 분야뿐이라 핵심 영상 복원 신호가 사실상 없었던 반면, Deep Learning Methods catch-all에서 나온 diffusion guidance 이론 논문 2편(Guidance as Variance Matching, Understanding Mode Collapse in CFG)이 오히려 복원 파이프라인에 더 직접적으로 연결되는 역설적인 하루였다.",
+  "daily_new_counts": {
+    "by_cat": {
+      "cs.LG": 271,
+      "cs.CV": 288,
+      "cs.AI": 248,
+      "eess.IV": 13,
+      "eess.SP": 21
+    },
+    "scope": "new+cross; replacements excluded",
+    "journal_count": 431
+  },
+  "totals": {
+    "total_scanned": 1108,
+    "selected": 323
+  },
+  "classified": {
+    "total_scanned": 1108,
+    "selected": 323,
+    "by_bucket": {
+      "Fourier Ptychography/Microscopy": 3,
+      "Lensless/Coded Imaging": 1,
+      "Phase Imaging/Holography": 8,
+      "Meta-Optics/Diffractive": 6,
+      "Light-Field/Novel Sensors": 4,
+      "Tomography/3D Imaging": 59,
+      "Virtual Staining/Pathology": 33,
+      "Reconstruction/Inverse Problems": 36,
+      "Deep Learning Methods": 173
+    }
+  },
+  "daily_thesis": "오늘은 3D Gaussian Splatting 연구가 '한 장면을 얼마나 잘 재구성하는가'를 넘어 '시간에 따라 움직이는 장면, 끊임없이 들어오는 스트림을 실시간으로 계속 따라갈 수 있는가'로 넘어간 날이고, 핵심 ROI인 Phase Imaging/Holography에서는 홀로그래피와 메타표면이 변조 소자 설계 자체에서 수렴하는 흐름이 가장 두꺼운 신호였다. 반면 Fourier Ptychography/Lensless 두 핵심 버킷은 키워드 충돌로 오늘 실질 신호가 0건이었고, Reconstruction/Inverse Problems 버킷도 사실상 비어 있어 아이러니하게도 Deep Learning Methods catch-all에서 나온 diffusion guidance 이론이 복원 파이프라인에 더 직접적으로 연결되는 하루였다.",
+  "arxiv_gate": {
+    "status": "ok",
+    "checked_categories": ["cs.LG", "cs.CV", "cs.AI", "eess.IV", "eess.SP"],
+    "listing_date_observed": "2026-11-26",
+    "post_date": "2026-11-26",
+    "action": "5개 카테고리 모두 /new listing이 \"Thursday, 26 November 2026\"으로 post_date와 일치해 daily mode(source_mode=new)로 정상 발행."
+  }
+}

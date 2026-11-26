@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-26",
+  "source_mode": "new",
+  "clusters": [
+    {
+      "cluster": "3D Gaussian Splatting이 '한 장면을 잘 재구성하는가'에서 '시간에 따라 움직이는 장면을 실시간으로 계속 따라가는가'로 이동",
+      "papers": [
+        {"title": "Linear-Time Online Visual Geometry Transformer with Hybrid Architecture (LinearVGGT)", "arxiv": "https://arxiv.org/abs/2611.33650", "importance_tags": ["[방법전환]", "[스케일업]"]},
+        {"title": "A Mesh for Every Moment (MEMO)", "arxiv": "https://arxiv.org/abs/2611.34939", "importance_tags": ["[방법전환]"]},
+        {"title": "AnyCam4D: Ray-Based 4D Gaussian Rendering for Arbitrary Camera Models", "arxiv": "https://arxiv.org/abs/2611.34223", "importance_tags": ["[방법전환]"]},
+        {"title": "BreathSplat: Grounding One Smooth Motion in the Breathing Phase for 4D Cone-Beam CT", "arxiv": "https://arxiv.org/abs/2611.33392", "importance_tags": ["[방법전환]", "[실사용전환]"]},
+        {"title": "VersionGS: Compact and Motion-Robust Dynamic Gaussian Splatting via Versioned Gaussians", "arxiv": "https://arxiv.org/abs/2611.33374", "importance_tags": ["[해부분석]", "[방법전환]"]}
+      ],
+      "why": "어제까지 이 랩이 지켜보던 3DGS(점 대신 반투명한 타원체를 장면에 흩뿌려 실시간 렌더링하는 기법) 논문들은 '한 장면을 한 번 찍어서 얼마나 정확하게 재구성하는가'를 다퉜는데, 오늘 Tomography/3D Imaging 버킷에서 나온 다섯 편은 질문 자체가 시간 축으로 넘어갔습니다. LinearVGGT는 영상이 실시간으로 계속 들어오는 온라인 스트리밍 상황에서 카메라 위치·깊이·점구름을 매 프레임 추정하는 모델인데, 기존 방식은 과거 프레임을 전부 기억하려다 보니 계산량이 스트림 길이에 비례해 제곱으로 늘어나거나(캐주얼 어텐션 방식), 반대로 고정 크기 메모리만 쓰다 보니 오래된 장면을 서서히 잊어버리는 문제가 있었습니다. 이 논문은 네 개 층 중 세 개를 Mamba2(순서가 있는 데이터를 일정한 메모리로 처리하는 순환 구조)로 바꾸고 나머지 한 개 층만 과거의 중요한 몇 프레임을 골라 참조하는 희소 어텐션으로 남겨, 1024프레임을 처리하는 내내 프레임당 27밀리초라는 거의 일정한 속도를 유지하면서도 teacher 모델보다 12배 빠르고 메모리는 2.7배 줄였습니다. MEMO는 여러 대의 카메라로 동시에 찍은 장면에서, 물체를 따로 떼어내지 않고 장면 전체의 메쉬(삼각형 격자로 이루어진 표면)를 매 프레임마다 뽑아내는 방법을 제안했는데, 기존 방식이 격자 해상도가 고정된 TSDF 융합에 의존했던 것과 달리 가우시안 하나하나가 시간에 따라 어떻게 움직이는지를 직접 모델링합니다. AnyCam4D는 어안·광각처럼 핀홀 카메라가 아닌 실제 카메라로 찍은 영상을 왜곡 보정 없이 그대로 4D(3D+시간) 가우시안 학습에 쓸 수 있게 했고, BreathSplat은 환자의 호흡처럼 반복되는 움직임을 가진 4D 콘빔 CT 재구성에서 호흡 위상 자체를 매끄러운 하나의 움직임으로 묶어 투영 데이터를 여러 위상에 걸쳐 공유했습니다. VersionGS는 빠르게 움직이는 춤 동작처럼 고속 장면에서 기존 동적 3DGS의 화질이 1.1~4.0dB씩 떨어지는 문제를, 프레임마다 가우시안 상태를 직접 저장하고 변하지 않은 가우시안은 그대로 재사용하는 방식으로 해결했습니다. 다섯 편을 합치면, 3DGS 연구의 무게중심이 '정적인 한 장면을 잘 복원하는 것'에서 '계속 움직이고 계속 들어오는 데이터를 실시간으로 따라가는 것'으로 확실히 옮겨가고 있다는 뜻입니다.",
+      "confidence": "High",
+      "confidence_note": "Tomography/3D Imaging 버킷(59편) 안에서 3DGS/SLAM/SfM/NeRF 직결 논문만 17편 가량 나왔고, 그중 동적·스트리밍 재구성에 집중한 서로 다른 저자군 5편을 추렸습니다.",
+      "lab_action": "LinearVGGT의 Mamba2+희소 어텐션 하이브리드 구조를 랩의 실시간 3D 복원/SLAM 프로토타입에 적용해, 기존 캐주얼 어텐션 스트리밍 모델 대비 프레임당 지연시간 분산과 1000프레임 이상 장시간 추적 시 메모리 사용량을 1주 내 비교한다."
+    },
+    {
+      "cluster": "홀로그래피가 복원 알고리즘을 넘어 메타표면이라는 변조 소자 설계 자체로 번지는 흐름",
+      "papers": [
+        {"title": "Reconfigurable Multi-Channel Holography Based on Multi-Level Phase-Change Metasurfaces", "arxiv": "https://doi.org/10.1002/lpor.72265", "importance_tags": ["[방법전환]", "[표준후보]"]},
+        {"title": "High-Efficiency Synthesis of Vector Vortex Beams via a Single Tensor Impedance Holographic Aperture", "arxiv": "https://doi.org/10.1364/ol.619476", "importance_tags": ["[방법전환]"]},
+        {"title": "Volumetric Digital Microsphere Assay Coupling CbAgo-CRISPR/Cas12a and Lens-Free Holography for Salmonella typhimurium Detection", "arxiv": "https://doi.org/10.1021/acssensors.6c04275", "importance_tags": ["[실사용전환]", "[인프라]"]}
+      ],
+      "why": "위상/파면 복원(빛의 세기만 측정 가능한 센서로부터 눈에 안 보이는 위상 정보를 계산으로 되살리는 기법)이 최근 며칠 간섭계·적응광학 같은 하드웨어 응용으로 확산되는 모습을 보였는데, 오늘 Phase Imaging/Holography 버킷(8편 중 6편이 핵심 ROI 직격)에서는 결이 다른 신호가 나왔습니다 — 홀로그래피가 복원 '알고리즘'이 아니라 빛을 변조하는 '소자' 자체의 설계 문제로 번지고 있다는 점입니다. Reconfigurable Multi-Channel Holography는 상변화 메타표면(온도나 전기 자극으로 비정질·결정질 상태가 바뀌는 나노구조 소자)을 이용한 홀로그래피가 지금까지 두 가지 상태(켜짐/꺼짐)만 써서 담을 수 있는 정보량이 제한적이었던 문제를, 결정화 중간 단계까지 여러 단계로 나눠 쓰고 여러 장의 메타표면을 겹쳐 쓰는 구조로 풀었습니다. 소자의 물리적 동작 자체를 미분 가능한 최적화 과정에 포함시켜, 겹친 메타표면들의 조합마다 서로 다른 홀로그램 이미지를 선명하게 복원할 수 있음을 수치 시뮬레이션으로 보였습니다. High-Efficiency Synthesis of Vector Vortex Beams는 회전하는 빛(벡터 보텍스 빔, 레이저 가공이나 광통신에 쓰이는 특수한 편광 분포를 가진 빛)을 만들 때 복잡한 광학계 대신 텐서 임피던스 홀로그래픽 애퍼처(빛의 위상과 편광을 동시에 제어하도록 설계된 단일 평면 소자) 하나로 고효율 생성이 가능함을 보였습니다. Volumetric Digital Microsphere Assay는 렌즈 없는 홀로그래피(렌즈 대신 계산으로 초점을 맞추는 홀로그래피 방식)와 CRISPR 기반 유전자 증폭 기술을 결합해, 살모넬라균을 리터당 12마리까지 검출하는 생체 센서를 만들었는데, 이는 홀로그래피가 복원 알고리즘을 넘어 실제 현장 진단 장비의 핵심 광학 요소로 쓰이고 있다는 뜻입니다. 세 편을 합치면, 핵심 ROI인 홀로그래피/위상복원 연구가 '찍은 뒤 어떻게 계산으로 복원할 것인가'를 넘어 '애초에 빛을 어떻게 변조하는 소자를 만들 것인가'까지 끌어안고 있다는 신호입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 저널(Laser & Photonics Reviews, Optics Letters, ACS Sensors) 3편이 독립적으로 홀로그래피-소자 설계 수렴을 보였지만, abstract가 없는 메타표면 쪽 저널 논문이 많아(오늘 Meta-Optics/Diffractive 6편 중 abstract 보유 0편) 수치 기반 비교 검증은 제한적입니다.",
+      "lab_action": "Reconfigurable Multi-Channel Holography의 다중레벨 상변화 메타표면 + end-to-end differentiable 최적화 프레임워크를 랩의 메타표면 홀로그래피 설계에 적용해, 기존 이진(켜짐/꺼짐) 설계 대비 채널 수(인코딩 가능한 독립 홀로그램 개수)와 채널 간 crosstalk을 1주 내 시뮬레이션으로 비교한다."
+    },
+    {
+      "cluster": "스파이크 카메라가 극단 조명·초고속 움직임 조건에서 표준 비전 태스크에 도전",
+      "papers": [
+        {"title": "Beyond Feature Fusion: Sensor-Grounded Semantic-Spiking Learning for Robust Object Detection (SPIRE)", "arxiv": "https://arxiv.org/abs/2611.34828", "importance_tags": ["[방법전환]", "[평가축]"]},
+        {"title": "TIDE-Flow: Fine-Grained Temporal Evidence and Structured Displacement Matching for Spike Optical Flow", "arxiv": "https://arxiv.org/abs/2611.34854", "importance_tags": ["[방법전환]"]}
+      ],
+      "why": "어제까지 짚었던 event 카메라(밝기가 변하는 픽셀만 마이크로초 단위로 보고하는 센서)가 깊이·추적·분할 같은 표준 비전 태스크를 재현하는 이야기였다면, 오늘 Light-Field/Novel Sensors 버킷에서는 결이 다른 센서인 스파이크 카메라(매 픽셀이 빛을 받은 누적량이 문턱값을 넘을 때마다 1비트 스파이크를 발생시키는 초고속 센서)가 등장했습니다. SPIRE는 역광이나 과노출처럼 조명 조건이 극단적일 때 RGB 카메라로는 물체의 경계나 디테일이 뭉개지는 문제를, 스파이크를 누적하는 구간(윈도우) 길이를 점점 늘려가며 여러 장의 누적 관찰을 만들고 짧은 구간에서는 발화율 변화를, 긴 구간에서는 안정적인 외형 정보를 뽑아 결합하는 방식으로 풀었습니다. 시뮬레이션 데이터셋에서 노출 조건 네 가지 전부에서 기존 최강 baseline보다 검출 정확도(AP50)가 4~5.5점 높았고, 실제 스파이크 카메라로 찍은 영상에서도 67점을 넘겼습니다. TIDE-Flow는 같은 저자군이 만든 후속 논문으로, 스파이크 신호가 순간적인 밝기가 아니라 누적된 광량을 인코딩한다는 특성 때문에 빠르게 움직이는 물체의 광학 흐름(영상 속 각 점이 다음 프레임에서 어디로 이동했는지 추정하는 문제)을 추정하기 어렵다는 문제를, 시간적으로 세밀한 누적 증거와 후보 변위들의 공간 분포를 명시적으로 함께 활용하는 구조로 풀었습니다. 두 편을 합치면, 스파이크 카메라 연구의 초점이 '이 센서가 빠른 움직임을 담을 수 있다'는 것을 보여주는 단계에서 '조명이 극단적이거나 움직임이 매우 빠른, RGB 카메라가 아예 실패하는 조건에서 표준 비전 태스크를 대신 수행할 수 있다'는 단계로 넘어가고 있다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "두 편 모두 같은 저자군(Hanwen Liang 등)의 연속 작업이라 독립적인 외부 검증은 아직 없고, 두 편 다 cs.CV 단일 카테고리입니다.",
+      "lab_action": "SPIRE의 누적 윈도우 기반 발화율/엣지맵 추출과 TIDE-Flow의 시간적 누적 증거 인코딩을 랩이 보유한 이벤트/스파이크 계열 센서 데이터에 적용해, 기존 프레임 기반 파이프라인 대비 극단 노출·고속 움직임 조건에서의 검출·추적 정확도를 1주 내 비교한다."
+    },
+    {
+      "cluster": "Reconstruction 버킷은 비었는데, Diffusion guidance 이론이 오히려 복원 파이프라인에 더 직접 연결됨",
+      "papers": [
+        {"title": "Guidance as Variance Matching", "arxiv": "https://arxiv.org/abs/2611.34801", "importance_tags": ["[해부분석]", "[평가축]"]},
+        {"title": "Understanding Mode Collapse in Diffusion Models under Classifier-Free Guidance", "arxiv": "https://arxiv.org/abs/2611.33719", "importance_tags": ["[해부분석]"]},
+        {"title": "Structured Noise Diffusion for Echocardiography Haze Removal", "arxiv": "https://arxiv.org/abs/2611.33860", "importance_tags": ["[방법전환]", "[실사용전환]"]}
+      ],
+      "why": "Reconstruction/Inverse Problems 버킷(36편)은 오늘 지질학적 역산, 무선 채널 추정 같은 인접 분야뿐이라 핵심 영상 복원 신호가 사실상 비어 있었는데, 역설적으로 더 직접적인 신호는 Deep Learning Methods catch-all에서 나왔습니다. Guidance as Variance Matching은 디퓨전 모델(노이즈를 점점 제거해가며 이미지를 생성하는 모델)에서 널리 쓰는 classifier-free guidance(조건 없는 예측과 조건부 예측의 차이를 증폭해 품질을 높이는 기법)가 사실은 '정답에 가장 가까운 평균 예측'을 더 정확하게 만드는 게 아니라, 오히려 그 평균 예측을 일부러 틀리게 만들면서 샘플이 원래 데이터만큼의 다양성(분산)을 되찾도록 보정하는 역할을 한다는 것을 보였습니다. 이로부터 저자들은 가이던스 세기를 따로 손으로 튜닝하지 않고 생성된 샘플의 분산을 실제 데이터 분산과 맞추기만 하면 되는 닫힌 형태의 공식(variance-matched guidance)을 제안했고, 이 공식이 이미지·영상·오디오·동작 생성 등 11개 기존 모델이 사람이 직접 고른 가이던스 세기를 별도 튜닝 없이 거의 그대로 재현한다는 것을 보였습니다. Understanding Mode Collapse in Diffusion Models는 비슷한 문제의식으로, 같은 가이던스 기법이 때때로 다양성을 잃고 비슷한 샘플만 계속 만들어내는 모드 붕괴 현상을, 조건부 분포와 무조건부 분포가 표현할 수 있는 복잡도 차이로 설명하는 이론적 모델을 제시했습니다. Structured Noise Diffusion for Echocardiography Haze Removal은 이 두 이론 논문과 직접 연결되지는 않지만 같은 결의 통찰을 실제 의료영상에 적용한 사례로, 초음파 영상에 생기는 뿌연 잡음(haze)이 화면 전체에 고르게 퍼진 게 아니라 초음파 부채꼴 모양을 따라 공간적으로 뭉쳐서 생긴다는 물리적 사실을, 디퓨전 모델의 순방향(노이즈를 더하는) 과정 자체를 그 모양에 맞게 다시 설계해서 반영했습니다. 세 편을 합치면, 가이던스 세기를 감으로 튜닝하거나 노이즈를 그냥 가우시안으로 가정하는 대신, 모델·노이즈가 실제 데이터·측정 과정의 통계적 구조와 맞아떨어지는지를 직접 확인하고 맞추는 쪽으로 디퓨전 기반 복원 연구가 움직이고 있다는 뜻이고, 이는 랩이 쓰는 디퓨전 기반 역문제 solver의 가이던스 스케일 선택이나 노이즈 모델 설계에도 바로 적용할 수 있는 통찰입니다.",
+      "confidence": "Medium",
+      "confidence_note": "서로 다른 저자군 3편(가이던스 이론 2편 + 의료영상 응용 1편)이 '모델 내부를 실제 데이터/측정 구조에 맞춘다'는 같은 방향을 가리키지만, 세 편이 직접 서로를 인용하거나 같은 벤치마크를 쓰지는 않아 독립 검증이라기보다 같은 시기 수렴으로 보는 편이 정확합니다.",
+      "lab_action": "Guidance as Variance Matching의 variance-matched guidance 공식과 Structured Noise Diffusion의 측정 기하 기반 노이즈 구조화를 랩의 디퓨전 기반 역문제 solver(sparse-view 복원 등)에 적용해, 기존 수동 튜닝 가이던스 스케일 대비 복원 품질과 하이퍼파라미터 탐색 시간을 1주 내 비교한다."
+    },
+    {
+      "cluster": "3DGS/INR 학습 자체의 속도 — 래스터화·2차 최적화·옵티마이저 구조를 각각 다른 지점에서 공략",
+      "papers": [
+        {"title": "SprintGS: Eliminating Redundancy for Fast 3D Gaussian Splatting Training", "arxiv": "https://arxiv.org/abs/2611.33796", "importance_tags": ["[실사용전환]"]},
+        {"title": "Efficient Scene-Distribution-Aware Second-Order Optimization for 3D Gaussian Splatting", "arxiv": "https://arxiv.org/abs/2611.33698", "importance_tags": ["[방법전환]"]},
+        {"title": "ProPolar: Progressive Polar Decomposition for Implicit Neural Representations", "arxiv": "https://arxiv.org/abs/2611.33567", "importance_tags": ["[해부분석]", "[방법전환]"]}
+      ],
+      "why": "3DGS/INR(암묵적 신경 표현) 연구에서 '실시간으로 무엇을 보여줄 것인가'와는 별개로, '애초에 이 모델을 얼마나 빨리 학습시킬 것인가'를 다루는 논문 세 편이 오늘 같이 나왔습니다. SprintGS는 FastGS 같은 기존 고속 학습 기법이 가우시안 개수를 줄여도 래스터화(가우시안을 화면에 그리는 연산) 자체의 중복 연산과, 가우시안 수와 무관하게 줄지 않는 손실 계산 비용이 여전히 병목이라는 것을 프로파일링으로 확인하고 이 두 지점을 직접 공략했습니다. Efficient Scene-Distribution-Aware Second-Order Optimization은 3DGS 학습이 보통 한 번에 한 시점(view)씩 파라미터를 갱신하는데, 여러 시점을 한꺼번에 묶어 뉴턴 방법 같은 2차 최적화를 쓰면 갱신 횟수를 줄일 수 있다는 아이디어를, 비용이 비싼 다중 시점 2차 갱신을 장면 분포를 고려한 샘플링으로 감당 가능하게 만들었습니다. ProPolar는 3DGS가 아니라 INR 전반의 학습 특성(처음엔 전체적인 저주파 구조를, 나중엔 세부적인 고주파 디테일을 학습하는 경향)을 기존 옵티마이저가 전혀 고려하지 않는다는 문제를, 학습 단계에 따라 점점 커지는 랭크 스케줄러로 풀었습니다. 세 편을 합치면, 3DGS/INR 연구에서 '실시간 추론/렌더링'과 '학습 자체의 속도'가 서로 다른 축의 문제라는 게 분명해지고 있고, 오늘은 후자 쪽에서 래스터화·손실계산·최적화 알고리즘 구조라는 세 가지 서로 다른 지점을 공략하는 논문이 동시에 나왔다는 뜻입니다.",
+      "confidence": "Medium",
+      "confidence_note": "3편 모두 Tomography/3D Imaging 버킷 안에서 학습 효율화라는 같은 방향을 가리키지만, 세 논문이 공략하는 병목(래스터화, 2차 최적화, INR 옵티마이저)이 서로 달라 하나의 공통 벤치마크로 직접 비교되지는 않습니다.",
+      "lab_action": "SprintGS의 래스터화 중복 제거와 ProPolar의 랭크 스케줄 기반 옵티마이저를 랩의 3DGS/INR 학습 파이프라인에 적용해, 기존 학습 시간 대비 수렴까지 걸리는 시간과 최종 복원 품질(PSNR/SSIM)을 1주 내 비교한다."
+    }
+  ],
+  "research_topics": [
+    {
+      "title": "LinearVGGT의 Mamba2+희소 어텐션 하이브리드 구조를 랩의 실시간 3D 복원/스트리밍 SLAM 파이프라인에 적용",
+      "claim": "이 논문은 온라인 스트리밍 geometry transformer의 어텐션 레이어 대부분을 Mamba2(순환 상태공간 모델)로 바꾸고 일부만 희소 어텐션으로 남겨, 1024프레임 내내 거의 일정한 27ms 지연시간과 teacher 대비 12배 속도·2.7배 메모리 절감을 달성했는데, 랩의 실시간 3D 복원/SLAM 파이프라인도 같은 하이브리드 구조를 적용하면 긴 시퀀스에서 기존 캐주얼 어텐션 스트리밍 모델 대비 지연시간 증가 없이 장시간 추적이 가능한지 검증할 가치가 있습니다.",
+      "supporting_papers": [
+        {"title": "Linear-Time Online Visual Geometry Transformer with Hybrid Architecture", "arxiv": "https://arxiv.org/abs/2611.33650"}
+      ]
+    },
+    {
+      "title": "Reconfigurable Multi-Channel Holography의 다중레벨 상변화 메타표면 설계를 랩 메타표면 홀로그래피 파이프라인에 적용",
+      "claim": "이 논문은 상변화 메타표면 홀로그래피를 이진 상태에서 다중레벨 결정화 상태로 확장하고 소자 물리를 미분 가능한 최적화에 통합해 채널 용량을 늘렸는데, 랩의 메타표면 홀로그래피 설계도 같은 다중레벨 인코딩과 end-to-end 최적화를 적용하면 기존 이진 설계 대비 독립 채널 수와 crosstalk이 얼마나 개선되는지 시뮬레이션으로 검증할 가치가 있습니다.",
+      "supporting_papers": [
+        {"title": "Reconfigurable Multi-Channel Holography Based on Multi-Level Phase-Change Metasurfaces", "arxiv": "https://doi.org/10.1002/lpor.72265"}
+      ]
+    },
+    {
+      "title": "AnchoredFM의 selective anchoring을 랩의 sparse-view/불완전 측정 복원 파이프라인에 적용",
+      "claim": "이 논문은 생성 모델 기반 복원이 측정값이 확실한 부분까지 사전(prior)이 멋대로 바꿔버려 병변 같은 중요한 구조를 지워버리는 문제를, 신뢰할 수 있는 측정 성분은 보호하고 불확실한 부분만 생성 모델이 복원하게 하는 selective anchoring으로 풀어 가속 MRI 종양 검출 AUROC를 78.4%에서 84.6%로 올렸는데, 랩의 sparse-view 또는 불완전 측정 복원 파이프라인에도 같은 anchoring 원칙을 적용하면 기존 생성 사전 기반 복원 대비 중요 구조 보존율과 불확실성 신뢰도가 개선되는지 검증할 가치가 있습니다.",
+      "supporting_papers": [
+        {"title": "Do Not Let the Prior Heal the Anomaly: Selective Anchoring for Detection from Incomplete Measurements", "arxiv": "https://arxiv.org/abs/2611.33331"}
+      ]
+    },
+    {
+      "title": "DeepBlur의 blind PSF 추정을 랩 형광현미경/FPM 디콘볼루션 파이프라인에 적용",
+      "claim": "이 논문은 사용자가 광학 파라미터를 입력하지 않아도 생물 구조 이미지 한 장만으로 공간적으로 변하는 PSF를 추정하는 신경망을 물리 시뮬레이션만으로 학습시켜, 실측 1,290장 이미지에서 독립 참조값과 잘 맞는 결과를 보였는데, 랩의 형광현미경/Fourier ptychography 디콘볼루션 파이프라인에도 같은 blind PSF 추정을 적용하면 기존 수동 보정 대비 디콘볼루션 품질과 초해상도 복원 품질이 개선되는지 검증할 가치가 있습니다.",
+      "supporting_papers": [
+        {"title": "Blind spatially varying PSF estimation for fluorescence microscopy", "arxiv": "https://arxiv.org/abs/2611.34607"}
+      ]
+    }
+  ]
+}

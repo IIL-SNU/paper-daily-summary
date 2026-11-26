@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-26",
+  "results": [
+    {
+      "benchmark": "LinearVGGT, 1024프레임 스트리밍 온라인 geometry transformer(카메라·깊이·점지도 추정)",
+      "metric": "프레임당 지연시간 / teacher 대비 속도·메모리",
+      "value": 27,
+      "value_str": "1,024프레임 전체에 걸쳐 거의 일정한 27ms/프레임 지연시간 유지, teacher(StreamVGGT) 대비 평균 12배 빠르고 SOTA(LingBot-Map) 대비 2.5배 빠르면서 메모리 2.7배 절감",
+      "paper": "https://arxiv.org/abs/2611.33650",
+      "paper_title": "Linear-Time Online Visual Geometry Transformer with Hybrid Architecture"
+    },
+    {
+      "benchmark": "AnchoredFM, sparse-view CT·가속 MRI·광음향 단층촬영 불완전 측정 복원(병변 보존)",
+      "metric": "종양 검출 AUROC / 민감도",
+      "value": 84.6,
+      "value_str": "건강 참조영상을 측정값만으로 추정한 가속 MRI 종양 검출에서 mean AUROC 78.4%→84.6%, 민감도 20.2%→44.1%로 상승(여러 샘플러 평균)",
+      "paper": "https://arxiv.org/abs/2611.33331",
+      "paper_title": "Do Not Let the Prior Heal the Anomaly: Selective Anchoring for Detection from Incomplete Measurements"
+    },
+    {
+      "benchmark": "lens-free holography + CbAgo-CRISPR/Cas12a, Salmonella typhimurium 정량검출",
+      "metric": "검출한계(LOD) / 선형 구간",
+      "value": 12,
+      "value_str": "검출한계 12 CFU/mL, 20~10^7 CFU/mL 구간에서 선형 반응, 닭고기·계란·생선·우유 매트릭스에서도 평판배양법과 일치하는 정량 결과",
+      "paper": "https://doi.org/10.1021/acssensors.6c04275",
+      "paper_title": "Volumetric Digital Microsphere Assay Coupling CbAgo-CRISPR/Cas12a and Lens-Free Holography for Salmonella typhimurium Detection"
+    },
+    {
+      "benchmark": "SPIRE, 스파이크 카메라 기반 저조도/과노출 물체 검출(VOC/COCO 시뮬레이션 + 실측 PKU-Vidar-DVS)",
+      "metric": "AP50",
+      "value": 67.07,
+      "value_str": "시뮬레이션 4가지 노출 조건 전부에서 최강 baseline 대비 AP50 4.00~5.50점 상승, 실제 PKU-Vidar-DVS 녹화에서 AP50 67.07·AP75 40.10 달성",
+      "paper": "https://arxiv.org/abs/2611.34828",
+      "paper_title": "Beyond Feature Fusion: Sensor-Grounded Semantic-Spiking Learning for Robust Object Detection (SPIRE)"
+    }
+  ]
+}
