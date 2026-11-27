@@ -1,0 +1,53 @@
+{
+ "date": "2026-11-27",
+ "results": [
+  {
+   "benchmark": "HoloRecNet, 수중 미세플랑크톤 홀로그램 복원(FISTA 기반 학습형 proximal 모듈)",
+   "metric": "PSNR / SSIM / 모델 크기",
+   "value": 28.9,
+   "value_str": "28.9 dB PSNR, 0.94 SSIM, 2.96M 파라미터, 3.8 GFLOPs로 기존 SOTA 대비 개선",
+   "paper": "https://doi.org/10.1016/j.optlastec.2026.117119",
+   "paper_title": "Holographic reconstruction for microplankton imaging using FISTA-inspired neural network with adaptive modulation"
+  },
+  {
+   "benchmark": "GPT-5.6 Sol 생성 골밀도 추정치 vs 정량 CT(QCT) 측정값, 450명 후향 연구",
+   "metric": "상관계수(r) / MAE / AUC(고관절 골다공증 판별)",
+   "value": 0.7,
+   "value_str": "요추 r=0.383·MAE=1.256, 고관절 r=0.262·MAE=0.941, 고관절 골다공증 판별 AUC=0.700(민감도 27.7%·특이도 90.2%)",
+   "paper": "https://doi.org/10.3390/diagnostics16233939",
+   "paper_title": "Accuracy and Agreement of GPT-5.6 Sol-Generated Bone Density Estimates with Quantitative Computed Tomography Measurements"
+  },
+  {
+   "benchmark": "AI 기반 OCT(OCT-AID), 무증상 1형 당뇨병 환자 관상동맥 취약 플라크 검출",
+   "metric": "고위험군 내 TCFA(취약 플라크) 비율",
+   "value": 41.38,
+   "value_str": "189명 중 고위험군 29명(15.3%)에서 41.38%(95% CI 25.51-59.26)가 취약 플라크(thin-cap fibroatheroma) 보유",
+   "paper": "https://doi.org/10.1186/s12933-026-03449-w",
+   "paper_title": "Artificial intelligence-derived coronary plaque vulnerability by optical coherence tomography in type 1 diabetes with subclinical atherosclerosis"
+  },
+  {
+   "benchmark": "생성형 AI 챗봇 5종, 흉통 환자 TRO-CTA 환자교육 안전성 비교(260개 응답)",
+   "metric": "안전 응답 비율",
+   "value": 94.2,
+   "value_str": "Claude 94.2% ~ Doubao 86.5%, 모델 간 유의한 차이 없음(Cochran's Q=2.273, P=0.686), 정확도·공감도는 Claude가 최고",
+   "paper": "https://doi.org/10.21037/qims-2026-1424",
+   "paper_title": "Evaluating generative artificial intelligence chatbots for patient education on triple-rule-out computed tomography angiography in chest pain"
+  },
+  {
+   "benchmark": "Ki67 면역조직화학 염색, 저장 기간에 따른 H-Score 변화(480건 조직마이크로어레이)",
+   "metric": "유의성(P-value), 종양 vs 정상조직",
+   "value": 0.042,
+   "value_str": "정상조직(편도·충수)은 5년 내 유의한 감소 없음, 종양조직은 유의하게 감소(유방암 P=0.042, 대장암 P=0.009)",
+   "paper": "https://doi.org/10.3389/fmolb.2026.1930256",
+   "paper_title": "Impact of storage time on Ki67 immunohistochemical staining results in normal and tumor paraffin-embedded tissues"
+  },
+  {
+   "benchmark": "Multifunctional Integrated Metasurface, 밀리미터파(24.25-29.5GHz) 동적+정적 빔 통합",
+   "metric": "빔 조향 범위 / 반사 이득",
+   "value": 55,
+   "value_str": "동적 모드 빔 조향 범위 ±55도 이상, 정적 모드 반사 이득 21.8dBi 초과, 단일 조리개에서 이중 편광으로 통합 달성",
+   "paper": "https://doi.org/10.1002/lpor.72273",
+   "paper_title": "Multifunctional Integrated Metasurface Enabling Unified Dynamic and Stationary Millimeter-Wave Electromagnetic Manipulation"
+  }
+ ]
+}

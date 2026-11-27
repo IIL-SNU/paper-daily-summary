@@ -1,0 +1,50 @@
+{
+ "date": "2026-11-27",
+ "source_listing_date": "2026-11-27",
+ "source_mode": "journal-only",
+ "note": "2026-11-27(금) daily 정기 실행. Date Source Contract 점검 결과 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 전부 /new listing이 여전히 \"Thursday, 26 November 2026\"을 가리켜(post_date=2026-11-27 > listing_date=2026-11-26, 금요일자 공지가 아직 올라오지 않음) arXiv 섹션은 발행하지 않는다. fetch_arxiv.py new를 5개 카테고리 전부 독립적으로 재실행했는데 어제 발행한 카운트(cs.LG 271·cs.CV 288·cs.AI 248·eess.IV 13·eess.SP 21)와 5개 카테고리 전부 편수가 완전히 동일하고, arxiv.org 원본 h3 헤더 자체가 \"Thursday, 26 November 2026\"이라고 명시하고 있어, 새 금요일 배치가 아니라 같은 목요일 배치가 그대로 재노출된 것임을 확인했다(2026-11-26이 미국 추수감사절이라 arXiv 공지 주기가 밀린 것으로 추정, out/arxiv_stale_backup/에 격리 보관, classify에서 제외, 커밋 대상 아님). Crossref/OpenAlex 저널 수집은 arXiv listing과 무관하게 항상 수행하므로(랩 키워드 9개), 오늘은 arXiv 공백일이라 --days 3으로 넓혀 재수집했다. Crossref 쿼리 9개 중 5개는 1차 시도에서 성공했고 나머지 4개는 HTTP 429 rate-limit에 걸려 5초 간격으로 개별 재시도해 모두 복구했다(병합 후 중복 제거 전 총 486건). OpenAlex enrich 패스는 병합된 Crossref 저널 집합 중 320/486편에 인용수·개념·초록을 보강했고, OpenAlex works 보충 수집(computational imaging/Fourier ptychography/metasurface optics, --days 3)으로 77편을 추가 확보했다. 병합·중복 제거 후 classify.py가 551건을 스캔해 184건(33.4%)을 9개 ROI 버킷에 배정했다. 오늘의 핵심은 (1) 메타표면 설계가 광학 이미징을 넘어 레이더·무선통신 하드웨어(프로그래머블 레이더 표적 합성기, 밀리미터파 다기능 통합 메타표면 등)로 번지는 신호(5편), (2) 딥 언폴딩/물리 기반 신경망이 홀로그램 현미경·스냅샷 분광·광섬유 영상이라는 서로 다른 세 장비에서 동시에 재구성 속도를 공략하는 신호(3편, HoloRecNet 28.9dB PSNR), (3) OCT/OCTA가 눈 질환을 넘어 심혈관(1형 당뇨 취약 플라크 41.4%)·환경노출 위험 평가로 번지는 신호(3편), (4) 생성형 AI/LLM이 영상 판독·환자 소통 보조로 들어오되 정량 판독(GPT-5.6 골밀도 r=0.38, Merlin VLM 판독 오류)에서는 아직 못 미더운 결과가 같이 쌓이는 신호(5편)다. 계산광학 핵심 ROI 중 Fourier Ptychography/Microscopy는 3편뿐이고 (유전자 서열분석에 FPM을 적용한 응용 논문 1편 포함), Lensless/Coded Imaging과 Light-Field/Novel Sensors는 오늘도 완전히 비었다. 이 daily는 journal-only 잠정 상태이며, arXiv /pastweek에 2026-11-27 섹션이 생기면 Calendar Audit이 Backfill로 덮어써 arXiv+저널 완성본(source_mode=pastweek-date-section)으로 업그레이드해야 한다.",
+ "daily_new_counts": {
+  "by_cat": {
+   "cs.LG": 0,
+   "cs.CV": 0,
+   "cs.AI": 0,
+   "eess.IV": 0,
+   "eess.SP": 0
+  },
+  "scope": "new+cross; replacements excluded",
+  "journal_count": 551
+ },
+ "totals": {
+  "total_scanned": 551,
+  "selected": 184
+ },
+ "classified": {
+  "total_scanned": 551,
+  "selected": 184,
+  "by_bucket": {
+   "Fourier Ptychography/Microscopy": 3,
+   "Lensless/Coded Imaging": 0,
+   "Phase Imaging/Holography": 11,
+   "Meta-Optics/Diffractive": 26,
+   "Light-Field/Novel Sensors": 0,
+   "Tomography/3D Imaging": 55,
+   "Virtual Staining/Pathology": 29,
+   "Reconstruction/Inverse Problems": 17,
+   "Deep Learning Methods": 43
+  }
+ },
+ "daily_thesis": "오늘도 arXiv 금요일자 공지가 아직 올라오지 않아(/new가 여전히 목요일 배치, 추수감사절 영향으로 추정) 저널(Crossref/OpenAlex) 수집만으로 발행하는 journal-only 날입니다. 계산광학 핵심 버킷은 여전히 얇지만(Fourier Ptychography 3편, Lensless 0편), 메타표면 설계가 광학 이미징을 넘어 레이더·무선통신 하드웨어로 번지는 흐름과, 딥 언폴딩/물리 기반 신경망이 홀로그램·분광·광섬유라는 서로 다른 장비에서 동시에 재구성 속도를 공략하는 흐름이 가장 뚜렷했고, OCT/OCTA가 심혈관·환경노출 위험 평가로, 생성형 AI/LLM이 영상 판독·환자 소통 보조로 번지되 정량 판독에서는 아직 실패 사례가 같이 쌓이는 모습도 함께 보였습니다.",
+ "arxiv_gate": {
+  "status": "post_date_after_listing_date",
+  "checked_categories": [
+   "cs.LG",
+   "cs.CV",
+   "cs.AI",
+   "eess.IV",
+   "eess.SP"
+  ],
+  "listing_date_observed": "2026-11-26",
+  "post_date": "2026-11-27",
+  "action": "arXiv 섹션 미발행, 저널만으로 journal-only 발행. 재실행한 fetch_arxiv.py new 결과가 어제 발행본과 카운트가 완전히 동일해(cs.LG 271·cs.CV 288·cs.AI 248·eess.IV 13·eess.SP 21) 같은 목요일 배치 재노출로 확인, out/arxiv_stale_backup/에 격리 보관(커밋 대상 아님)."
+ }
+}

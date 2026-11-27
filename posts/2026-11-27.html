@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content='width=device-width,initial-scale=1'>
+<title>Daily Briefing — 2026-11-27</title>
+<style>
+
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:900px;padding:1rem 1.5rem;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;color:#1a1a1a;font-size:15px;word-break:keep-all}
+h1{font-size:1.4rem;border-bottom:2px solid #333;padding-bottom:.4rem;margin-top:1rem}
+h2{font-size:1.1rem;margin-top:2rem;color:#2a2a6e;padding-bottom:.3rem;border-bottom:1px solid #e0e0f0}
+h3{font-size:1rem;margin-top:1.2rem;color:#0d1117}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.87rem}
+th,td{border:1px solid #ccc;padding:.55rem .8rem;vertical-align:top;text-align:left}
+th{background:#f0f0f8;font-size:.83rem;font-weight:600}
+blockquote{border-left:4px solid #2a2a6e;padding:.6rem 1.1rem;margin:1rem 0;background:#f8f8ff;border-radius:0 6px 6px 0;color:#0c0c3a;font-size:.95rem}
+a{color:#2a2a6e}
+a:hover{text-decoration:underline}
+.home{display:inline-block;padding:6px 12px;background:#f3f4f6;color:#374151;border:1px solid #d1d5db;border-radius:7px;font-size:13px;font-weight:500;margin:0 0 14px;text-decoration:none}
+.meta{font-size:13px;color:#3b434d;padding:11px 16px;background:#f6f8fa;border-left:3px solid #7c3aed;border-radius:6px;margin:12px 0 20px}
+.meta div{margin:2px 0}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#854d0e;border:1px solid #fde68a;margin-left:4px}
+.pill.a{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.pill.b{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.ins{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 18px;margin:10px 0}
+.ins h3{margin-top:0;color:#14532d}
+.ins .conf-note{font-size:12.5px;color:#166534;margin-top:4px}
+.dd{background:#fef9c3;border:1px solid #fde047;border-radius:10px;padding:18px 24px;margin:14px 0}
+.dd h3{margin-top:0;color:#713f12}
+.tag{font-weight:600;color:#854d0e;text-transform:uppercase;letter-spacing:.04em;font-size:11.5px;margin:12px 0 3px}
+.risk{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:13px 17px;margin:10px 0;font-size:13.5px;color:#7c2d12}
+.risk p{margin:.4rem 0}
+.bucket-bar{font-family:monospace;display:flex;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.bucket-bar .nm{flex:0 0 250px;color:#475569}
+.bucket-bar .bar{flex:1;height:13px;background:#eef2ff;border-radius:3px;overflow:hidden}
+.bucket-bar .fill{height:100%;background:linear-gradient(90deg,#0ea5e9,#7c3aed)}
+.bucket-bar .n{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums}
+.skim{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:7px;padding:11px 16px;margin:8px 0;font-size:13.5px;color:#555}
+.roi-item{margin:.7rem 0;font-size:.88rem;padding:.5rem .8rem;border-left:3px solid #c7d2fe;background:#fafbff}
+.roi-item strong{color:#2a2a6e}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid #e5e7eb;color:#666;font-size:12.5px;line-height:1.7}
+hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+</style>
+<style id=dark-theme>
+html[data-theme=dark] body{background:#0d1117;color:#c9d1d9}
+html[data-theme=dark] .container{background:#161b22;box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme=dark] h1,html[data-theme=dark] h2,html[data-theme=dark] h3,html[data-theme=dark] h4{color:#e6edf3}
+html[data-theme=dark] a{color:#58a6ff}
+html[data-theme=dark] hr{border-color:#30363d}
+html[data-theme=dark] .lead,html[data-theme=dark] .cats,html[data-theme=dark] .sub,html[data-theme=dark] .footer,html[data-theme=dark] .conf-note,html[data-theme=dark] small,html[data-theme=dark] .entry .d,html[data-theme=dark] .entry .s,html[data-theme=dark] .br .nm,html[data-theme=dark] .bucket-bar .nm{color:#8b949e}
+html[data-theme=dark] .entry,html[data-theme=dark] .entry .t{color:#e6edf3}
+/* neutral light surfaces -> dark slate */
+html[data-theme=dark] .meta,html[data-theme=dark] .home,html[data-theme=dark] .skim,html[data-theme=dark] .roi-item,html[data-theme=dark] .tc,html[data-theme=dark] blockquote,html[data-theme=dark] .thesis,html[data-theme=dark] th,html[data-theme=dark] table.cl th,html[data-theme=dark] .entry,html[data-theme=dark] pre,html[data-theme=dark] code{background:#1c2330;border-color:#30363d;color:#c9d1d9}
+html[data-theme=dark] .home:hover,html[data-theme=dark] .entry:hover{background:#222b3a;border-color:#3d4759}
+html[data-theme=dark] table,html[data-theme=dark] th,html[data-theme=dark] td{border-color:#30363d}
+html[data-theme=dark] .br .bar,html[data-theme=dark] .bucket-bar .bar{background:#21304a}
+/* semantic tinted boxes -> dark tint + readable accent text */
+html[data-theme=dark] .ins,html[data-theme=dark] .action-card{background:#13241b;border-color:#1f3b2a}
+html[data-theme=dark] .hot,html[data-theme=dark] .hot-box{background:#291719;border-color:#4a2327}
+html[data-theme=dark] .cold,html[data-theme=dark] .cold-box,html[data-theme=dark] .pred-card{background:#15212f;border-color:#243a52}
+html[data-theme=dark] .dd,html[data-theme=dark] .theme-card{background:#272110;border-color:#473c14}
+html[data-theme=dark] .risk{background:#271d10;border-color:#473414}
+html[data-theme=dark] .pill{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .tag{background:#272110;color:#fcd34d;border-color:#473c14}
+html[data-theme=dark] .pill.a{background:#291719;color:#fca5a5;border-color:#4a2327}
+html[data-theme=dark] .pill.b{background:#15212f;color:#93c5fd;border-color:#243a52}
+html[data-theme=dark] .entry.wk{background:#272110;border-color:#5c4d1a}
+/* floating toggle button */
+#themeToggle{position:fixed;top:14px;right:14px;z-index:99;width:38px;height:38px;border-radius:50%;border:1px solid #d0d7de;background:#fff;cursor:pointer;font-size:17px;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform .15s}
+#themeToggle:hover{transform:scale(1.08)}
+html[data-theme=dark] #themeToggle{background:#21262d;border-color:#30363d;color:#e6edf3}
+@media print{#themeToggle{display:none}}
+html[data-theme=light] body{background-color:#fff}
+</style>
+<script>(function(){try{var k='theme',s=localStorage.getItem(k);if(!s)s=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+<body>
+<a class=home href="../index.html">← 홈</a>
+<h1>Imaging Intelligence Daily Briefing — 2026-11-27 (금요일)</h1>
+<div class=meta>
+  <div>📅 발행일: 2026-11-27 (금요일) · Journal-only mode (source_mode=journal-only)</div>
+  <div>📚 소스: Date Source Contract 점검 결과 cs.LG·cs.CV·cs.AI·eess.IV·eess.SP 5개 카테고리 전부 /new listing이 여전히 "Thursday, 26 November 2026"을 가리킵니다(post_date=2026-11-27 &gt; listing_date=2026-11-26, 금요일자 공지가 아직 올라오지 않음). fetch_arxiv.py new를 5개 카테고리 전부 독립적으로 재실행했는데 어제 발행한 카운트(cs.LG 271·cs.CV 288·cs.AI 248·eess.IV 13·eess.SP 21)와 편수가 완전히 동일하고, arxiv.org 원본 h3 헤더 자체가 여전히 목요일을 가리키고 있어 같은 목요일 배치가 그대로 재노출된 것으로 확인했습니다(2026-11-26 미국 추수감사절 영향으로 추정). 따라서 arXiv 섹션은 발행하지 않습니다. Crossref/OpenAlex 저널 수집은 arXiv listing과 무관하게 항상 수행하므로, 오늘은 arXiv 공백일이라 --days 3으로 넓혀 재수집했습니다(랩 키워드 9개). Crossref 쿼리 9개 중 5개는 1차 시도에서 성공했고 나머지 4개는 HTTP 429 rate-limit에 걸려 5초 간격으로 개별 재시도해 모두 복구했습니다(병합 전 486건). OpenAlex enrich 패스는 320/486편에 인용수·개념·초록을 보강했고, OpenAlex works 보충 수집(computational imaging/Fourier ptychography/metasurface optics, --days 3)으로 77편을 추가 확보했습니다. 이 daily는 잠정 상태이며, arXiv /pastweek에 2026-11-27 섹션이 생기면 다음 Calendar Audit이 Backfill로 덮어써 arXiv+저널 완성본으로 업그레이드할 예정입니다.</div>
+  <div>🔢 arXiv: 오늘 미발행(0편, 목요일 배치 재노출로 확인돼 제외)</div>
+  <div>🔢 저널: 병합·중복 제거 후 스캔 551건 → ROI 배정 184건 (33.4%)</div>
+</div>
+<h2>📌 오늘의 결론</h2>
+<blockquote>
+오늘도 <strong>arXiv 금요일자 공지가 아직 올라오지 않아(추수감사절 다음날 배치 지연으로 추정) 저널(Crossref/OpenAlex) 수집만으로 발행하는 journal-only 날</strong>입니다. 계산광학 핵심 버킷은 여전히 얇지만(Fourier Ptychography/Microscopy 3편, Lensless/Coded Imaging·Light-Field/Novel Sensors는 오늘도 0편), 그 안에서 네 가지 흐름이 뚜렷합니다. 메타표면 설계가 광학 이미징을 넘어 레이더 표적 합성·밀리미터파 통신 하드웨어로 번지는 신호(5편, 밀리미터파 대역 ±55도 빔 조향과 21.8dBi 이득을 동시에 달성한 다기능 통합 메타표면이 대표), 딥 언폴딩/물리 기반 신경망이 홀로그램 현미경·스냅샷 분광·광섬유 영상이라는 서로 다른 세 장비에서 동시에 재구성 속도를 공략하는 신호(HoloRecNet이 2.96M 파라미터로 28.9dB PSNR 달성), OCT/OCTA가 눈 질환을 넘어 심혈관·환경노출 위험 평가로 번지는 신호(무증상 1형 당뇨 고위험군의 41.4%에서 AI가 취약 관상동맥 플라크를 찾아냄), 그리고 생성형 AI/LLM이 영상 판독·환자 소통 보조로 들어오되 정량 판독에서는 아직 못 미더운 결과가 같이 쌓이는 신호(GPT-5.6의 골밀도 추정이 고전적 선형회귀보다도 부정확했던 사례)입니다.
+</blockquote>
+<h2>🔭 주간 동향</h2>
+<p>오늘 2026-11-27 확인 기준 5개 추적 카테고리 전부 /new listing이 여전히 "Thursday, 26 November 2026"을 가리켜(post_date가 listing_date보다 하루 앞서 있고, 바로 전날인 2026-11-26이 미국 추수감사절이라 arXiv 공지 주기가 밀린 것으로 추정) arXiv 섹션은 발행하지 않고, Crossref/OpenAlex 저널 수집만으로 classify.py를 돌렸습니다. Crossref 9개 쿼리는 5개만 1차 성공, 나머지 4개는 429 rate-limit에 걸려 5초 간격 재시도로 복구했고, --days를 평소 1에서 3으로 넓혀 총 486건을 모았습니다. OpenAlex enrich가 320/486편에 인용수·개념·초록을 보강했고, OpenAlex works 보충 수집으로 77편을 추가했습니다. 병합·중복 제거 후 스캔 551건 중 184건(33.4%)이 9개 ROI 버킷에 배정됐는데, 버킷 분포는 Tomography/3D Imaging(55편)과 Deep Learning Methods catch-all(43편)이 가장 크지만 그 안의 상당수는 순수 임상 증례(갑상선암 다중모달 영상, 사후 CT 공기색전 증례 등)나 "tomography"/"deep learning" 단어만 겹치는 응용 논문이라 버킷 크기가 실질 신호 밀도를 뜻하지는 않습니다. 버킷별 논문을 다시 읽어본 결과 오늘 가장 뚜렷한 신호는 네 갈래입니다 — (1) 메타표면 설계가 광학 이미징을 넘어 레이더 표적 합성·밀리미터파 통신 하드웨어로 번지는 흐름(5편), (2) 딥 언폴딩/물리 기반 신경망이 홀로그램·분광·광섬유 영상에서 동시에 재구성 속도를 공략하는 흐름(3~4편, HoloRecNet 28.9dB PSNR), (3) OCT/OCTA가 심혈관·환경노출 위험 평가로 번지는 흐름(3편, AI 기반 관상동맥 취약 플라크 검출이 대표), (4) 생성형 AI/LLM이 영상 판독·환자 소통 보조로 들어오되 정량 판독에서는 실패 사례가 같이 쌓이는 흐름(5편, GPT-5.6 골밀도 추정 실패와 Merlin VLM 판독 오류가 경고 신호). 반대로 Fourier Ptychography/Microscopy는 3편뿐이고(그나마 1편은 유전자 서열분석 응용으로 FP 본류에서 한 걸음 비껴남), Lensless/Coded Imaging과 Light-Field/Novel Sensors는 오늘도 완전히 비었습니다.</p>
+<h2>🧭 어제와 달라진 점</h2>
+<p>어제(11/26)는 arXiv+저널 완성본으로, 3D Gaussian Splatting이 정적 장면 복원에서 실시간 스트리밍 추적으로 넘어가는 흐름과 홀로그래피가 메타표면이라는 변조 소자 설계로 번지는 흐름이 arXiv 중심의 두꺼운 클러스터였습니다. 오늘은 arXiv가 다시 발행되지 않아(같은 목요일 배치 재노출 확인) 그 흐름들을 arXiv 데이터로는 이어볼 수 없고, 저널만으로 발행합니다. 메타표면 클러스터는 어제도 오늘도 등장하지만 속을 들여다보면 완전히 다릅니다 — 어제는 홀로그래피 변조 소자(다중 채널 홀로그램, 벡터 보텍스빔 생성)라는 광학 이미징 맥락이 대표였는데, 오늘 저널 수집분에는 그 대표 논문들이 다시 잡히지 않았고 대신 레이더 표적 합성기·밀리미터파 다기능 통합 메타표면 같은 전혀 다른 전자기파 대역(RF/레이더)의 논문 5편이 나왔습니다. 즉 "메타표면이 변조 소자 설계 자체로 번진다"는 큰 방향은 이어지지만, 오늘은 그 번짐의 방향이 광학 이미징이 아니라 통신·레이더 하드웨어 쪽입니다. 완전히 새로 등장한 축은 딥 언폴딩/물리 기반 신경망이 홀로그램·분광·광섬유 세 장비에서 동시에 재구성 속도를 공략하는 흐름과, 생성형 AI/LLM이 영상 판독·환자 소통에 들어오되 정량 판독에서는 실패 사례가 쌓이는 흐름입니다. 어제 짚었던 스파이크 카메라 저조도 검출 클러스터는 arXiv 기반이라 오늘 수집분에서 재현되지 않아 쉬어가는 모습입니다.</p>
+<h2>🧩 오늘의 클러스터 지도</h2>
+<table>
+<thead>
+<tr><th>Cluster</th><th>대표 논문</th><th>왜 중요?</th><th>Confidence</th><th>Lab action</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>메타표면이 광학 이미징을 넘어 레이더·무선통신 하드웨어로 번짐</strong></td>
+  <td>
+    <a href="https://doi.org/10.1109/twc.2026.3757417" target=_blank>Dynamic Metasurface Antennas for AFDM: Channel Shaping and Low-Complexity Detection</a> <span class="pill">JNL</span><br>
+    <a href="https://doi.org/10.1002/lpor.72270" target=_blank>Programmable Radar Target Synthesizer Based on Information Metasurface</a> <span class="pill">JNL</span><br>
+    <a href="https://doi.org/10.1364/prj.614845" target=_blank>Programmable hybrid-coding metasurface for SSPP decoupling and leaky-wave radiation</a> <span class="pill">JNL</span><br>
+    <a href="https://doi.org/10.1002/lpor.72273" target=_blank>Multifunctional Integrated Metasurface for Unified Dynamic/Stationary mmWave EM Manipulation</a> <span class="pill">JNL</span><br>
+    <a href="https://doi.org/10.1007/s11468-026-03560-4" target=_blank>Dynamically Tunable EIT in a Vanadium-Dioxide-Based Terahertz Metasurface</a> <span class="pill">JNL</span>
+  </td>
+  <td>메타표면(빛의 파장보다 작은 나노 구조를 평면에 배열해 전자기파의 위상·진폭을 원하는 대로 바꾸는 인공 소재)은 그동안 이 랩이 주로 가시광·적외선 영역에서 렌즈나 홀로그램 같은 '이미징' 용도로 지켜봐 왔는데, 오늘 저널에서는 같은 설계 사고방식이 레이더·무선통신이라는 전혀 다른 전자기파 대역(마이크로파·밀리미터파)으로 번지는 신호가 다섯 편이나 동시에 나왔습니다. Programmable Radar Target Synthesizer는 기존처럼 수신한 레이더 신호를 디지털로 저장했다가 다시 만들어내는 방식(DRFM) 대신, 정보 메타표면이 입사 신호를 반사하면서 그 자리에서 바로 변조해 레이더가 마치 특정 거리·속도·방위각의 가짜 표적을 보는 것처럼 착각하게 만드는 장비를 제시했고, 변조 주파수로 표적 거리를, 변조 파형의 시간 지연으로 표적 속도·방위각을 대응시키는 명확한 설계 규칙까지 세웠습니다. Multifunctional Integrated Metasurface 는 그동안 서로 다른 소자가 나눠 맡아야 했던 '동적으로 빔을 조향하는 기능'과 '고정된 방향으로 고효율 반사하는 기능'을 이중 편광을 이용해 한 장의 평면 소자(단일 조리개)에 통합해, 실제 시제품에서 ±55도 이상의 빔 조향 범위와 21.8dBi를 넘는 반사 이득을 24.25~29.5GHz 대역에서 동시에 달성했습니다. 나머지 세 편(AFDM 채널 성형 안테나, SSPP 탈결합·광각 누설파 방사, VO2 기반 THz 전자기유도투명도)도 전부 통신·레이더 하드웨어 맥락입니다. 다섯 편을 합치면, 메타표면 설계 커뮤니티의 관심이 '빛을 어떻게 이미지로 바꿀 것인가'에서 '전파를 어떻게 프로그래밍 가능한 하드웨어로 직접 제어할 것인가'로 넓어지고 있다는 뜻이고, 랩이 이미징용으로 쌓아온 위상 설계·메타아톰 라이브러리 노하우가 차세대 무선망·레이더 하드웨어 설계에도 그대로 재사용될 수 있다는 뜻이기도 합니다.</td>
+  <td>Medium<br><small>서로 다른 저널(IEEE Trans. Wireless Commun., Laser &amp; Photonics Reviews x2, Photonics Research, Plasmonics) 5편이 각각 통신·레이더 맥락에서 독립적으로 나왔지만, abstract가 확인되는 건 Radar Target Synthesizer와 Multifunctional Integrated Metasurface 2편뿐입니다.</small></td>
+  <td>랩이 보유한 메타표면 위상 설계·메타아톰 시뮬레이터(FDTD/RCWA)를 광학 대역이 아닌 마이크로파/밀리미터파 대역(24~30GHz)으로 재매개변수화해, Multifunctional Integrated Metasurface의 이중 편광 공유 조리개 설계를 1주 내 소규모로 재현해보고 기존 이미징용 설계 파이프라인이 통신 대역에도 그대로 이식되는지 확인한다.</td>
+</tr>
+<tr>
+  <td><strong>딥 언폴딩/물리 기반 신경망이 홀로그램·분광·광섬유 영상에서 동시에 재구성 속도를 공략</strong></td>
+  <td>
+    <a href="https://doi.org/10.1016/j.optlastec.2026.117119" target=_blank>Holographic reconstruction for microplankton imaging using FISTA-inspired neural network (HoloRecNet)</a> <span class="pill">JNL</span><br>
+    <a href="https://doi.org/10.1016/j.optlaseng.2026.110281" target=_blank>HyperBMU-Net: Broadband mask-guided unfolding network for snapshot hyperspectral image reconstruction</a> <span class="pill">JNL</span><br>
+    <a href="https://doi.org/10.1016/j.optcom.2026.134015" target=_blank>Image reconstruction through a multimode fiber under the small-data regime</a> <span class="pill">JNL</span>
+  </td>
+  <td>복원(계산으로 원래 신호나 영상을 되살리는 작업) 알고리즘은 보통 한 가지 영상 장비에 맞춰 따로 설계되는 경우가 많은데, 오늘 저널에서는 '반복 알고리즘의 수학적 구조를 신경망 층으로 풀어내는' 같은 설계 방식이 홀로그램 현미경, 스냅샷 분광 영상, 광섬유 영상이라는 서로 다른 세 장비에서 동시에 쓰였습니다. HoloRecNet은 수중 미세플랑크톤을 홀로그램으로 찍을 때 생기는 잡음과 미세 구조 손실 문제를, FISTA(반복적으로 신호를 성기게 다듬어가는 고전 알고리즘)의 수학적 구조를 그대로 신경망으로 풀어내고 학습 가능한 proximal(근접) 모듈을 더해서 풀었고, 28.9dB PSNR·0.94 SSIM을 2.96M 파라미터·3.8GFLOPs라는 가벼운 모델로 달성했습니다. HyperBMU-Net은 스냅샷 하이퍼스펙트럴(한 번의 노출로 여러 파장 대역을 동시에 찍는) 영상에서, 코드화된 마스크가 만든 압축 측정값을 역시 반복 알고리즘을 신경망으로 풀어내는 '언폴딩' 방식으로 복원했습니다. 멀티모드 광섬유 논문은 광섬유를 통과하며 완전히 흐트러진 패턴에서 원래 영상을 복원하는 문제를, 데이터가 적은 상황(small-data regime)에서도 되는 전역 행렬 인코딩과 벡터 메모리 구조로 풀었습니다. 세 편을 합치면, '반복 알고리즘을 신경망으로 풀어내 물리 모델과 데이터 기반 학습을 동시에 쓰는' 설계 패턴이 홀로그램·분광·광섬유라는 서로 다른 세 하드웨어에서 독립적으로 재발견되고 있다는 뜻이고, 한 장비에서 검증된 언폴딩 구조를 다른 장비로 옮기는 일이 생각보다 수월할 수 있다는 뜻이기도 합니다.</td>
+  <td>Medium<br><small>세 광학 저널(Optics &amp; Laser Technology, Optics and Lasers in Engineering, Optics Communications)에서 독립적으로 언폴딩/물리 기반 신경망 구조를 택했지만, 수치가 확인되는 건 HoloRecNet 1편뿐입니다(HyperBMU-Net·멀티모드 광섬유 논문은 abstract 없음, 제목 기준).</small></td>
+  <td>HoloRecNet의 FISTA 기반 학습형 proximal 모듈 구조를 랩의 FPM/홀로그램 복원 네트워크에 이식해, 기존 순수 반복 알고리즘·순수 end-to-end 신경망 대비 PSNR/SSIM과 파라미터 수·연산량(FLOPs) 3축으로 1주 내 벤치마크 비교한다.</td>
+</tr>
+<tr>
+  <td><strong>OCT/OCTA가 눈 질환을 넘어 심혈관·환경노출 위험 평가 도구로 번짐</strong></td>
+  <td>
+    <a href="https://doi.org/10.1016/j.ihj.2026.11.054" target=_blank>OCTA Biomarkers as Indicators of Cardiovascular Disease (Prospective Observational Study)</a> <span class="pill">JNL</span><br>
+    <a href="https://doi.org/10.1186/s12933-026-03449-w" target=_blank>AI-derived coronary plaque vulnerability by OCT in type 1 diabetes with subclinical atherosclerosis</a> <span class="pill">JNL</span><br>
+    <a href="https://doi.org/10.1097/01.ee9.0001292916.21228.4b" target=_blank>Proximity to Petrol Stations and Retinal Neurodegeneration Assessed by OCT (ALIENOR Study)</a> <span class="pill">JNL</span>
+  </td>
+  <td>OCT/OCTA(빛의 간섭으로 망막이나 혈관 단면·미세혈관을 비침습적으로 촬영하는 기법)는 원래 눈 자체의 질환(황반변성, 녹내장 등)을 들여다보는 용도로 시작됐는데, 오늘 저널에서는 그 쓰임이 심혈관 위험 평가와 환경 노출 평가로 또 한 걸음 번지는 신호가 보였습니다. 오늘 가장 눈에 띄는 논문은 1형 당뇨병 환자를 대상으로, OCT-AID라는 AI 모델이 관상동맥을 찍은 OCT 영상에서 픽셀 단위로 지질·석회화·플라크 부담을 자동으로 정량화해 겉보기엔 증상이 없어도 속으로는 위험한 취약 플라크(thin-cap fibroatheroma)를 찾아낸 연구인데, 무증상 1형 당뇨 189명 중 고위험군으로 분류된 29명의 41.4%에서 이런 취약 플라크가 실제로 발견됐습니다. 즉 눈이 아니라 혈관(관상동맥) 안을 들여다보는 데 쓰는 OCT에, 사람이 일일이 판독하던 플라크 정량화를 AI가 대신 수행하기 시작했다는 뜻입니다. 같은 날 나온 OCTA 심혈관질환 바이오마커 논문(제목 기준)은 망막의 미세혈관 영상을 조직검사 없이도 전신 심혈관 위험을 가늠하는 지표로 쓸 수 있는지 전향적으로 관찰했고, 주유소 근접성과 망막 신경퇴행 논문(ALIENOR 코호트)은 한 걸음 더 나아가 대기오염 같은 환경 노출이 망막 신경섬유층 두께 변화로 먼저 나타나는지를 OCT로 추적했습니다. 세 편을 합치면, OCT/OCTA가 '눈 질환 진단 도구'에서 '몸 전체의 혈관·신경 건강 상태를 비침습적으로 엿보는 창'으로 계속 넓어지고 있다는 뜻이고, 그 다음 정류장이 매번 조금씩 다른 장기·위험요인으로 옮겨가고 있다는 뜻이기도 합니다.</td>
+  <td>Medium<br><small>AI-OCT 관상동맥 플라크 논문은 실제 숫자(189명 중 29명 고위험, 41.4% TCFA)가 확인되는 전향적 임상연구지만, 나머지 두 편(OCTA 심혈관 바이오마커, 주유소-망막신경퇴행)은 abstract가 없어 제목과 저널 맥락 기준 판단입니다.</small></td>
+  <td>OCT-AID 모델의 픽셀 단위 지질·석회화·플라크 부담 정량화 파이프라인(세그멘테이션→정량화→TCFA 판별) 구조를 본문에서 확인해, 랩이 보유한 위상/OCT 기반 3D 복원 결과에도 같은 '복원→자동 정량화→위험군 분류' 구조를 얹을 수 있는지 1주 내 점검한다.</td>
+</tr>
+<tr>
+  <td><strong>생성형 AI/LLM이 영상 판독·환자 소통 보조로 들어오되, 정량 판독에서는 아직 못 미더운 결과가 같이 나옴</strong></td>
+  <td>
+    <a href="https://doi.org/10.3390/diagnostics16233939" target=_blank>GPT-5.6 Sol-Generated Bone Density Estimates vs Quantitative CT (450 Adults)</a> <span class="pill">JNL</span><br>
+    <a href="https://doi.org/10.21037/qims-2026-1424" target=_blank>Evaluating generative AI chatbots for patient education on triple-rule-out CTA</a> <span class="pill">JNL</span><br>
+    <a href="https://doi.org/10.2214/ajr.26.36057" target=_blank>Clinical Errors Within Radiology Reports Generated Using the Merlin Abdominal CT VLM</a> <span class="pill">JNL</span><br>
+    <a href="https://doi.org/10.3389/fmolb.2026.1930256" target=_blank>Impact of storage time on Ki67 IHC staining results (AI-assisted image analysis)</a> <span class="pill">JNL</span><br>
+    <a href="https://doi.org/10.1007/s44163-026-02759-y" target=_blank>Automated detection of hyper-reflective foci in OCT (two-stage DL + gradient boosting)</a> <span class="pill">JNL</span>
+  </td>
+  <td>오늘 저널에서는 생성형 AI/LLM이 영상 판독·환자 설명 보조로 들어오는 사례가 유난히 많이 모였는데, 그 성적표는 용도에 따라 극명하게 갈렸습니다. GPT-5.6 Sol에게 나이·검사 수치 같은 비영상 정보만 주고 요추·고관절의 골밀도 점수를 추정하게 한 연구는, 실제 정량 CT 측정값과의 상관관계가 r=0.383(요추)·0.262(고관절)에 그치고 고관절 골다공증 판별 민감도도 27.7%에 불과해, 영상 없이 글자 정보만으로 정량적인 뼈 밀도를 맞히는 용도로는 아직 쓸 수 없다는 점을 숫자로 보여줬습니다. 같은 맥락에서 Merlin이라는 복부 CT 비전-언어 파운데이션 모델이 생성한 판독 소견에 임상적 오류가 있었다는 논문도 나와, 생성형 모델이 실제 영상을 보고 판독문을 쓰는 과제에서도 아직 조심해야 한다는 경고 신호를 더합니다. 반대로 환자에게 검사(TRO-CTA, 흉통 환자의 관상동맥·폐색전·대동맥 질환을 한 번에 보는 CT)를 설명해주는 챗봇 비교 연구는 다섯 개 모델 전부 86~94%의 응답이 '안전'하다고 평가됐고(모델 간 유의한 차이는 없었음), 정보 보조 용도로는 쓸 만하다는 쪽에 가까운 결과를 보였습니다. Ki67 면역조직화학 염색 연구는 AI를 '판독을 대신하는 주체'가 아니라 '저장 기간에 따라 염색 결과(H-Score)가 바뀌는 것을 정밀하게 정량화하는 도구'로만 썼고, 종양 조직은 5년 안에도 저장 기간에 따라 염색 강도가 유의하게 떨어진다는(P=0.042~0.009) 품질관리 지침을 끌어냈습니다. 다섯 편을 합치면, 생성형 AI가 '환자 소통 보조'나 '정량화 도구'로는 이미 쓸 만한 수준에 가까워졌지만, '영상을 직접 보고 정량적 판독을 대신하는' 과제에서는 아직 숫자로 검증된 실패 사례가 같이 쌓이고 있다는 뜻입니다.</td>
+  <td>Medium<br><small>GPT-5.6 골밀도·챗봇 환자교육·Ki67 저장기간 3편은 abstract에 구체적 수치가 있어 신뢰도가 높지만, Merlin VLM 판독 오류와 hyper-reflective foci 검출 2편은 abstract가 없어 제목 기준입니다.</small></td>
+  <td>GPT-5.6 골밀도 추정 실패 사례(r=0.383, AUC=0.700)를 랩의 'LLM을 영상 판독 보조로 쓰는' 파이프라인 설계에 반영해, 비영상 정보만 주는 과제와 실제 영상을 함께 주는 과제를 분리한 1주 내 실패 사례 벤치마크(어떤 입력 조건에서 LLM 판독이 믿을 만한지/아닌지)를 설계한다.</td>
+</tr>
+<tr>
+  <td><strong>구조광(편광·OAM) 기반 광통신이 물리 기반 신경망으로 인코딩·복원을 동시에 공략 (관찰 중)</strong></td>
+  <td>
+    <a href="https://doi.org/10.1038/s42005-026-02971-3" target=_blank>High-dimensional polarization encoding with random higher-order Poincare-sphere beams</a> <span class="pill">JNL</span><br>
+    <a href="https://doi.org/10.1038/s42005-026-02920-0" target=_blank>Accurate recognition of fractional orbital angular momentum via physics-informed deep learning</a> <span class="pill">JNL</span>
+  </td>
+  <td>구조광(빛의 편광이나 궤도각운동량처럼 세기 외의 물리적 자유도에 정보를 실어 보내는 기법)을 이용한 광통신은 보통 '얼마나 많은 정보를 실을 것인가'와 '그 정보를 다시 읽어낼 것인가'를 따로 다루는데, 오늘 Communications Physics에 나란히 실린 두 논문은 둘 다 물리 모델을 신경망 구조에 직접 녹이는 쪽으로 접근했습니다. 고차 푸앵카레 구 편광 인코딩 논문은 부분 간섭성 벡터장의 편광 상태에 정보를 실어 산란·가림이 심한 환경에서도 적응광학 보정 없이 안정적으로 전송되는 걸 보였고, 신경망은 그 편광 상태를 읽어내는 역할만 맡아 '물리적 정보량 자체를 신경망이 바꾸지 않는다'는 점을 강조했습니다. 분수 궤도각운동량(FOAM) 인식 논문은 반대로, 시간에 따라 바뀌는 산란 매질을 통과한 단일 픽셀 세기 신호들로부터 물리 기반 비지도(untrained) 신경망이 FOAM 패턴 자체를 복원한 뒤 극좌표 매핑으로 분리 간격 0.05까지도 모드를 구분해냈습니다. 두 편만으로 흐름이라 부르기는 이르지만, 둘 다 '신경망에 데이터를 더 많이 먹이는' 대신 '빛의 물리적 특성을 신경망 구조 안에 못박아 두는' 쪽을 택했다는 공통점이 있어, 구조광 통신을 복잡한 환경에서도 안정적으로 동작시키는 다음 단계로 물리 기반 설계를 주목할 만합니다.</td>
+  <td>Low<br><small>같은 저널(Communications Physics)에 실린 2편뿐이고, 두 논문이 서로를 인용하거나 벤치마크를 공유하지는 않아 독립적인 흐름인지는 추가 확인이 필요합니다.</small></td>
+  <td>두 논문의 '물리 모델을 신경망 구조에 직접 인코딩' 설계(편광 읽기 전용 CNN, FOAM 복원용 physics-informed UNN)를 랩의 산란매질 통과 영상 복원·구조광 센싱 실험에 참고용으로 검토하되, 아직 2편뿐이라 바로 실험을 배정하기보다 다음 주 저널 수집에서 같은 주제가 반복되는지부터 관찰한다.</td>
+</tr>
+</tbody>
+</table>
+<h2>🔬 도메인 Watch Lens</h2>
+<div class=skim>
+<ul>
+<li>Fourier Ptychography/Microscopy: 3편 배정. 유전자 서열분석에 FPM을 적용한 "Pattern-illuminated FPM for High-throughput Gene Sequencing"(abstract 없음, 새 응용 도메인)과 밝은/어두운 시야 다중화로 속도를 높인 "Fast FP" 논문이 FP 본류 신호, 나머지 1편(현미경 미소 객체 탐지)은 간접 연결입니다. 핵심 ROI 중 하나지만 오늘도 신호가 얇습니다.</li>
+<li>Lensless/Coded Imaging: 0편. 오늘 저널 수집에서 이 핵심 ROI를 겨냥한 논문이 전혀 없었습니다. 최근 며칠째 이 ROI는 저널 쪽에서 실질 신호가 거의 보이지 않고 있습니다.</li>
+<li>Light-Field/Novel Sensors: 0편. 오늘도 완전히 비었습니다.</li>
+<li>Meta-Optics/Diffractive: 26편 중 상당수(9편 이상)가 THz·마이크로파·밀리미터파 통신/레이더 응용이라 계산 이미징(computational imaging) 맥락과는 거리가 있지만, 오늘 클러스터1(광학→RF 확장)로 묶일 만큼 그 자체로 광학 설계 방법론 신호는 뚜렷합니다.</li>
+</ul>
+</div>
+<h2>📐 arXiv(방법) vs 저널(응용) 대비</h2>
+<p>오늘은 arXiv가 발행되지 않아 이 대비 자체를 할 수 없는 날입니다. 평소 이 섹션은 arXiv의 방법론 중심 키워드와 저널의 응용 중심 키워드가 어떻게 겹치고 갈라지는지를 비교하는데, 오늘은 저널 데이터만 있어 비교 대상이 없습니다. 참고로 오늘 저널 내부에서는 "reconfigurable"(재구성 가능한)과 "programmable"(프로그래밍 가능한)이라는 단어가 메타표면 클러스터 전체(광학·RF 구분 없이)에서 반복적으로 등장했는데, 광학 쪽에서는 홀로그램 채널 전환처럼 '빛의 모양을 바꾸는' 의미로, RF 쪽에서는 '레이더가 보는 표적 자체를 바꾸는' 의미로 쓰여 같은 단어가 가리키는 대상이 분야에 따라 달라진다는 점이 흥미로웠습니다. arXiv가 다시 올라오면 내일부터는 방법론 쪽 키워드와의 대비를 재개합니다.</p>
+<h2>💡 오늘의 인사이트</h2>
+
+<div class=ins>
+  <h3>1. 메타표면이 광학 이미징을 넘어 레이더·무선통신 하드웨어로 번짐</h3>
+  <p>프로그래머블 정보 메타표면이 디지털 신호처리 없이 아날로그 반사만으로 다중 레이더 표적을 합성했고, 이중 편광 공유 조리개를 쓴 다기능 메타표면은 밀리미터파 대역에서 ±55도 빔 조향과 21.8dBi 이득을 한 소자에서 동시에 달성했습니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<div class=ins>
+  <h3>2. 딥 언폴딩/물리 기반 신경망이 홀로그램·분광·광섬유 영상에서 동시에 재구성 속도를 공략</h3>
+  <p>FISTA 반복 구조를 신경망 층으로 풀어낸 HoloRecNet이 2.96M 파라미터로 28.9dB PSNR·0.94 SSIM을 달성했고, 같은 언폴딩 설계 사고가 스냅샷 하이퍼스펙트럴·멀티모드 광섬유 영상에서도 독립적으로 재발견됐습니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<div class=ins>
+  <h3>3. OCT/OCTA가 눈 질환을 넘어 심혈관·환경노출 위험 평가 도구로 번짐</h3>
+  <p>AI 기반 OCT(OCT-AID)가 무증상 1형 당뇨 고위험군 29명 중 41.4%에서 취약 관상동맥 플라크를 자동으로 찾아냈고, 같은 흐름이 OCTA 심혈관 바이오마커와 환경노출-망막신경퇴행 연구로도 이어졌습니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<div class=ins>
+  <h3>4. 생성형 AI/LLM이 영상 판독·환자 소통 보조로 들어오되 정량 판독에서는 아직 못 미더움</h3>
+  <p>GPT-5.6이 비영상 정보만으로 추정한 골밀도는 고전적 선형회귀보다도 부정확했고(r=0.38, 민감도 27.7%), Merlin VLM의 CT 판독문에도 임상 오류가 보고된 반면, 챗봇 환자교육과 Ki67 저장기간 품질관리 같은 보조 용도에서는 쓸 만한 결과가 나왔습니다.</p>
+  <p class=conf-note>Confidence: Medium</p>
+</div>
+
+<div class=ins>
+  <h3>5. 구조광(편광·OAM) 기반 광통신이 물리 기반 신경망으로 인코딩·복원을 동시에 공략 (관찰 중)</h3>
+  <p>고차 푸앵카레 구 편광 인코딩과 분수 궤도각운동량 인식 2편이 모두 '신경망에 물리 모델을 직접 못박는' 설계를 택해 산란·가림 환경에서의 강건성을 확보했습니다.</p>
+  <p class=conf-note>Confidence: Low</p>
+</div>
+
+<h2>🔬 추천 연구주제</h2>
+
+<div class=dd>
+  <h3>A. SWAG/S2WAG 저복잡도 비선형 프리웨이트 빔포머를 랩 복원 파이프라인에 적용</h3>
+  <p>이 논문은 핸드헬드 초음파에서 기존 delay-and-sum 빔포머 대비 해상도·대조도를 높이면서도 연산 복잡도를 O(M) 수준으로 유지하는 SWAG/S2WAG 빔포머를 제안하고 FPGA 구현까지 검증했는데, 랩의 저전력·실시간 복원 파이프라인(코드 조리개, 렌즈리스)에도 같은 저복잡도 비선형 가중 전략을 적용할 수 있는지 확인할 가치가 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문: A Low-complexity Nonlinear Pre-weighted Beamformer (DOI 10.1109/tci.2026.3757243) — 코드/하드웨어 설계 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 코드 조리개/렌즈리스 복원 파이프라인의 held-out 영상 세트</li>
+    <li>비교축: 기존 선형 빔포머·DAS 대비 SWAG/S2WAG 스타일 비선형 가중의 해상도·대조도·연산량(FLOPs)</li>
+    <li>실패해도 남는 결과: 이득이 없더라도, 저복잡도 비선형 가중 전략의 구현 템플릿은 다음 저전력 복원 설계에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>B. HoloRecNet의 FISTA 기반 학습형 proximal 모듈을 랩 홀로그램/FP 복원에 이식</h3>
+  <p>이 논문은 반복 알고리즘(FISTA)의 수학적 구조를 신경망으로 풀어내고 학습 가능한 proximal 모듈을 추가해 2.96M 파라미터라는 가벼운 모델로 28.9dB PSNR을 달성했는데, 랩의 Fourier ptychography·홀로그램 복원 네트워크도 같은 하이브리드(물리 알고리즘 구조 + 학습형 모듈) 설계로 더 적은 파라미터에서 비슷한 성능을 낼 수 있는지 검증할 가치가 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문: HoloRecNet (DOI 10.1016/j.optlastec.2026.117119) — 코드 공개 여부 본문 확인 필요</li>
+    <li>공통 benchmark: 랩 보유 FPM/홀로그램 복원 파이프라인의 held-out 시야 세트</li>
+    <li>비교축: 순수 반복 알고리즘·순수 end-to-end 신경망 대비 PSNR/SSIM과 파라미터 수·연산량(FLOPs)</li>
+    <li>실패해도 남는 결과: 이득이 없더라도, FISTA 구조를 신경망 층으로 펼치는 구현 템플릿은 다음 복원 네트워크 설계에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<div class=dd>
+  <h3>C. GPT-5.6 골밀도 추정 실패 사례를 랩의 LLM-판독-보조 품질 게이트 설계에 반영</h3>
+  <p>이 논문은 비영상 정보만으로 정량 CT 골밀도를 추정시켰을 때 상관계수 0.38 수준의 낮은 정확도를 숫자로 보여준 negative result인데, 랩이 향후 LLM을 영상 판독 보조로 쓸 때 '영상 없이 글자 정보만 주는 과제'와 '실제 영상을 함께 주는 과제'를 구분해 신뢰 가능한 입력 조건을 먼저 정의하는 품질 게이트를 설계할 근거로 쓸 가치가 있습니다.</p>
+  <p><strong>실행 1주차:</strong></p>
+  <ul>
+    <li>대상 논문: GPT-5.6 Sol Bone Density Estimates (DOI 10.3390/diagnostics16233939) — 프롬프트 설계 본문 확인 필요</li>
+    <li>공통 benchmark: 랩이 LLM 판독 보조를 검토 중인 과제(있다면)의 비영상 vs 영상-포함 입력 조건 2종</li>
+    <li>비교축: 비영상 정보만 줬을 때와 실제 영상(또는 영상에서 추출한 정량 feature)을 함께 줬을 때의 상관계수·AUC 차이</li>
+    <li>실패해도 남는 결과: 이득이 없더라도, '입력 조건별 LLM 신뢰도 벤치마크' 틀 자체는 다음 LLM 평가에 재사용 가능하다.</li>
+  </ul>
+</div>
+
+<h2>📊 오늘의 버킷 현황</h2>
+<p><small>막대 너비: Deep Learning Methods(43편, catch-all)를 제외한 버킷 중 최댓값인 Tomography/3D Imaging(55편)을 100%로 정규화. Deep Learning Methods는 catch-all이라 100% 고정(라벨엔 실제 편수 표시). 0편 버킷(Lensless/Coded Imaging, Light-Field/Novel Sensors)은 0% 막대로 표시합니다.</small></p>
+
+<div class=bucket-bar><span class=nm>Fourier Ptychography/Microscopy</span><span class=bar><span class=fill style="width:5.5%"></span></span><span class=n>3편</span></div>
+<div class=bucket-bar><span class=nm>Lensless/Coded Imaging</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Phase Imaging/Holography</span><span class=bar><span class=fill style="width:20%"></span></span><span class=n>11편</span></div>
+<div class=bucket-bar><span class=nm>Meta-Optics/Diffractive</span><span class=bar><span class=fill style="width:47.3%"></span></span><span class=n>26편</span></div>
+<div class=bucket-bar><span class=nm>Light-Field/Novel Sensors</span><span class=bar><span class=fill style="width:0%"></span></span><span class=n>0편</span></div>
+<div class=bucket-bar><span class=nm>Tomography/3D Imaging</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>55편</span></div>
+<div class=bucket-bar><span class=nm>Virtual Staining/Pathology</span><span class=bar><span class=fill style="width:52.7%"></span></span><span class=n>29편</span></div>
+<div class=bucket-bar><span class=nm>Reconstruction/Inverse Problems</span><span class=bar><span class=fill style="width:30.9%"></span></span><span class=n>17편</span></div>
+<div class=bucket-bar><span class=nm>Deep Learning Methods (catch-all)</span><span class=bar><span class=fill style="width:100%"></span></span><span class=n>43편</span></div>
+
+<p><small>⚠️ 참고: Tomography/3D Imaging(55편)은 막대가 가장 길지만 대부분이 순수 임상 증례(갑상선암 다중모달 영상, 사후 CT 공기색전 증례, PET/CT 증례 등)이거나 "tomography" 단어만 겹치는 논문이고, 실질 신호는 OCT/OCTA 전신질환 확장 클러스터와 X-SLAM 휴대형 CT 정도입니다. Virtual Staining/Pathology(29편)는 치아 미백·염료 개발·식물 염색체 염색 같은 "staining" 단어만 겹치는 무관 논문이 대다수라 실질 신호가 Ki67 저장기간 AI 논문 1편 정도입니다. 반대로 Meta-Optics/Diffractive(26편)와 Reconstruction/Inverse Problems(17편)는 막대 길이 대비 실질 신호 비율이 오늘 가장 높은 버킷입니다.</small></p>
+
+<h2>🗂 버킷별 주요 논문</h2>
+
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/boe.621049" target=_blank>Pattern-illuminated Fourier Ptychographic Microscopy for High-throughput Gene Sequencing</a></strong> [JNL]<br>
+  왜 주요: Fourier Ptychography/Microscopy의 오늘 유일한 핵심 ROI 직격 응용 논문. FPM을 유전자 서열분석이라는 새 응용 도메인에 직접 연결(abstract 없음, 제목 기준).
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/optica.616833" target=_blank>Chebyshev self-imaging from inverse-sampled angular spectra</a></strong> [JNL]<br>
+  왜 주요: Phase Imaging/Holography에서 오늘 유일하게 기초 이론을 다루는 논문. Talbot 자기 결상(주기적인 파동이 일정 거리마다 똑같은 패턴으로 되살아나는 현상)의 덧셈적 구조를 곱셈적으로 일반화해, 샘플링 방식을 바꾸면 자기 결상 거리를 더 자유롭게 조절할 수 있음을 이론적으로 보임(Optica).
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.72273" target=_blank>Multifunctional Integrated Metasurface Enabling Unified Dynamic and Stationary Millimeter-Wave EM Manipulation</a></strong> [JNL]<br>
+  왜 주요: Meta-Optics/Diffractive의 오늘 must-read. 이중 편광 공유 조리개로 동적 빔 조향(±55도)과 정적 고이득 반사(21.8dBi)를 한 소자에서 동시에 달성.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.72270" target=_blank>Programmable Radar Target Synthesizer Based on Information Metasurface</a></strong> [JNL]<br>
+  왜 주요: 정보 메타표면이 디지털 신호처리 없이 입사 레이더 신호를 그 자리에서 변조해 다중 가짜 표적을 합성, 레이더 시스템 테스트·보정용 플랫폼으로 제시.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1186/s12933-026-03449-w" target=_blank>Artificial intelligence-derived coronary plaque vulnerability by OCT in type 1 diabetes</a></strong> [JNL]<br>
+  왜 주요: Tomography/3D Imaging의 오늘 must-read. OCT-AID AI 모델이 무증상 1형 당뇨 고위험군 29명 중 41.4%에서 취약 관상동맥 플라크를 자동 검출.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.ihj.2026.11.054" target=_blank>Optical Coherence Tomography Angiography (OCTA) Biomarkers as Indicators of Cardiovascular Disease</a></strong> [JNL]<br>
+  왜 주요: 망막 OCTA 지표를 조직검사 없이 전신 심혈관 위험을 가늠하는 지표로 전향적으로 평가(abstract 없음, 제목 기준).
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3389/fmolb.2026.1930256" target=_blank>Impact of storage time on Ki67 immunohistochemical staining results</a></strong> [JNL]<br>
+  왜 주요: Virtual Staining/Pathology의 오늘 유일한 실질 신호. AI 보조 이미지 분석으로 480건 조직을 분석해, 종양조직은 5년 내에도 저장 기간에 따라 Ki67 염색 강도가 유의하게 감소한다는 품질관리 지침 도출.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tci.2026.3757243" target=_blank>A Low-complexity Nonlinear Pre-weighted Beamformer for High-resolution Ultrasound Image Reconstruction</a></strong> [JNL]<br>
+  왜 주요: Reconstruction/Inverse Problems의 오늘 must-read. 저복잡도 O(M) 비선형 프리웨이트 빔포머(SWAG/S2WAG)로 핸드헬드 초음파의 해상도·대조도를 개선하고 Artix-7 FPGA 구현까지 검증.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.117119" target=_blank>Holographic reconstruction for microplankton imaging using FISTA-inspired neural network (HoloRecNet)</a></strong> [JNL]<br>
+  왜 주요: FISTA 반복 구조를 신경망으로 풀어내고 학습형 proximal 모듈을 더해 2.96M 파라미터로 28.9dB PSNR·0.94 SSIM 달성.
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/diagnostics16233939" target=_blank>Accuracy and Agreement of GPT-5.6 Sol-Generated Bone Density Estimates with Quantitative CT Measurements</a></strong> [JNL]<br>
+  왜 주요: Deep Learning Methods catch-all 중 오늘 가장 중요한 경고 신호. 비영상 정보만으로 추정한 골밀도가 고전적 선형회귀보다도 부정확(r=0.38, 민감도 27.7%)해 LLM의 정량 판독 대체 불가를 숫자로 확인(catch-all 과대표 방지를 위해 2편으로 제한).
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.2214/ajr.26.36057" target=_blank>Clinical Errors Within Radiology Reports Generated Using the Merlin Abdominal CT VLM</a></strong> [JNL]<br>
+  왜 주요: Deep Learning Methods catch-all 중 두 번째 경고 신호. 생성형 비전-언어 모델이 쓴 복부 CT 판독문에서 임상 오류가 보고됨(abstract 없음, 제목 기준).
+</div>
+
+<h2>📈 벤치마크 SOTA 추이</h2>
+<table>
+<thead><tr><th>Benchmark</th><th>Metric</th><th>Result</th><th>Paper</th></tr></thead>
+<tbody>
+<tr><td>HoloRecNet, 수중 미세플랑크톤 홀로그램 복원(FISTA 기반 학습형 proximal 모듈)</td><td>PSNR / SSIM / 모델 크기</td><td>28.9 dB PSNR, 0.94 SSIM, 2.96M 파라미터, 3.8 GFLOPs로 기존 SOTA 대비 개선</td><td><a href="https://doi.org/10.1016/j.optlastec.2026.117119" target=_blank>HoloRecNet</a></td></tr>
+<tr><td>GPT-5.6 Sol 생성 골밀도 추정치 vs 정량 CT(QCT) 측정값, 450명 후향 연구</td><td>상관계수(r) / MAE / AUC(고관절 골다공증 판별)</td><td>요추 r=0.383·MAE=1.256, 고관절 r=0.262·MAE=0.941, 고관절 골다공증 판별 AUC=0.700(민감도 27.7%·특이도 90.2%)</td><td><a href="https://doi.org/10.3390/diagnostics16233939" target=_blank>GPT-5.6 Sol Bone Density</a></td></tr>
+<tr><td>AI 기반 OCT(OCT-AID), 무증상 1형 당뇨병 환자 관상동맥 취약 플라크 검출</td><td>고위험군 내 TCFA(취약 플라크) 비율</td><td>189명 중 고위험군 29명(15.3%)에서 41.38%(95% CI 25.51-59.26)가 취약 플라크(thin-cap fibroatheroma) 보유</td><td><a href="https://doi.org/10.1186/s12933-026-03449-w" target=_blank>AI-OCT Coronary Plaque (T1D)</a></td></tr>
+<tr><td>생성형 AI 챗봇 5종, 흉통 환자 TRO-CTA 환자교육 안전성 비교(260개 응답)</td><td>안전 응답 비율</td><td>Claude 94.2% ~ Doubao 86.5%, 모델 간 유의한 차이 없음(Cochran's Q=2.273, P=0.686), 정확도·공감도는 Claude가 최고</td><td><a href="https://doi.org/10.21037/qims-2026-1424" target=_blank>Chatbot TRO-CTA Education</a></td></tr>
+<tr><td>Multifunctional Integrated Metasurface, 밀리미터파(24.25-29.5GHz) 동적+정적 빔 통합</td><td>빔 조향 범위 / 반사 이득</td><td>동적 모드 빔 조향 범위 ±55도 이상, 정적 모드 반사 이득 21.8dBi 초과, 단일 조리개에서 이중 편광으로 통합 달성</td><td><a href="https://doi.org/10.1002/lpor.72273" target=_blank>Multifunctional Integrated Metasurface</a></td></tr>
+</tbody>
+</table>
+
+<h2>🌟 오늘의 must-read</h2>
+
+<div class=dd>
+  <h3>[TIER A] Holographic reconstruction for microplankton imaging using FISTA-inspired neural network with adaptive modulation (HoloRecNet)</h3>
+  <div class=tag>[방법전환]</div>
+  <p><strong>왜 A급인가:</strong> 오늘 클러스터2(딥 언폴딩/물리 기반 신경망의 하드웨어 확산)의 대표 논문이자, 유일하게 abstract에서 구체적 수치(PSNR/SSIM/파라미터 수)가 확인되는 저널 논문이라 수중 미세플랑크톤 홀로그램 복원이라는 niche 응용을 넘어 계산 이미징 복원 설계 전반에 참고할 만한 레시피를 제공합니다.</p>
+  <p><strong>핵심:</strong> 수중 미세플랑크톤을 홀로그램으로 찍으면 물속 산란과 조명 잡음 때문에 복원된 영상에서 미세한 형태 구조가 자주 뭉개지는데, 반복 알고리즘(FISTA, 신호를 한 단계씩 성기게 다듬어가며 원래 신호를 복원하는 고전적 최적화 기법)은 물리적으로는 안정적이지만 반복 횟수가 많아 느립니다. HoloRecNet은 FISTA의 반복 구조(기울기 하강 + 근접 연산자 적용을 여러 번 되풀이하는 구조)를 그대로 신경망의 층으로 펼쳐놓고, 매 층마다 고정된 수식 대신 데이터로부터 학습되는 '적응형 변조' 모듈을 끼워 넣어 반복 때마다 조금씩 다른 방식으로 신호를 다듬게 했습니다. 손실 함수도 데이터 일치도(복원 결과가 측정값과 맞는지) + perceptual supervision(사람이 보기에 그럴듯한지) + total variation 정규화(영상이 너무 울퉁불퉁해지지 않게 하는 항)를 섞어서 구조적 선명도를 같이 챙겼습니다. 그 결과 수중 미세플랑크톤 데이터셋에서 기존 최신 복원 방법들보다 뚜렷하게 나은 28.9dB PSNR·0.94 SSIM을 달성했는데, 모델 크기는 2.96M 파라미터·3.8GFLOPs로 가벼운 축에 속합니다.</p>
+  <p><strong>약점:</strong> abstract 기준으로는 '기존 state-of-art 대비 상당한 개선'이라고만 적혀 있어 비교 대상 베이스라인이 구체적으로 어떤 모델인지, 그리고 테스트 데이터가 학습 데이터와 얼마나 다른 조건(탁도, 조명)을 포함하는지는 본문 확인이 필요합니다. 또한 미세플랑크톤이라는 특정 응용에 맞춰 손실 함수를 튜닝했기 때문에, 다른 홀로그램 응용(예: 세포, 공기중 입자)에 그대로 전이될지는 검증되지 않았습니다.</p>
+  <p><strong>우리 랩 파이프라인 영향:</strong> 랩의 홀로그램/FPM 복원 네트워크에 FISTA 구조를 신경망 층으로 펼치고 학습형 proximal 모듈을 추가하는 설계를, 기존 순수 반복 알고리즘·순수 end-to-end 신경망과 함께 PSNR/SSIM·파라미터 수 3축으로 비교해볼 가치가 있습니다.</p>
+</div>
+
+<div class=dd>
+  <h3>[TIER A] Accuracy and Agreement of GPT-5.6 Sol-Generated Bone Density Estimates with Quantitative Computed Tomography Measurements</h3>
+  <div class=tag>[경고신호] [평가축]</div>
+  <p><strong>왜 A급인가:</strong> 생성형 AI/LLM이 영상 판독에 들어오는 오늘의 클러스터4를 대표하는 논문이자, 드물게 abstract에 구체적 수치(상관계수, MAE, AUC, 민감도·특이도)가 전부 공개된 negative result라서 'LLM이 어디까지는 안 되는지'를 숫자로 명확히 보여줍니다. 랩이 향후 LLM을 판독 보조 도구로 도입할 때 바로 참고할 수 있는 실패 경계선입니다.</p>
+  <p><strong>핵심:</strong> 이 연구는 GPT-5.6 Sol이라는 LLM에게 환자의 영상 자체가 아니라 나이·성별·검사 수치 같은 비영상 임상 정보만 표준화된 프롬프트로 제공하고, 요추·고관절의 정량 골밀도 점수(T-/Z-score)를 추정하게 했습니다. 450명의 성인을 대상으로 실제 QCT(정량 전산화단층촬영) 측정값과 비교한 결과, 요추 추정치의 상관계수는 r=0.383, 고관절은 r=0.262에 그쳤고 평균절대오차(MAE)도 요추 1.256·고관절 0.941로 상당히 컸습니다. 고관절 골다공증(T-score ≤ -2.5) 판별에서는 AUC 0.700을 보였지만 민감도가 27.7%에 불과해, 실제 골다공증 환자의 72% 이상을 놓치는 수준이었습니다. 더구나 같은 데이터로 돌린 단순한 5-fold 교차검증 선형회귀가 GPT-5.6 Sol보다 오차가 더 작았다는 점이, '최신 LLM이 정교한 추론을 한다'는 인상과 달리 이 과제에서는 고전적인 통계 모델보다도 못하다는 걸 보여줍니다.</p>
+  <p><strong>약점:</strong> 단일 기관·단일 모델(GPT-5.6 Sol) 평가라 다른 LLM이나 다른 프롬프트 전략에서도 같은 결과가 나올지는 알 수 없고, 94.2%가 여성 환자라는 표본 편향도 결과 일반화에 영향을 줄 수 있습니다.</p>
+  <p><strong>우리 랩 파이프라인 영향:</strong> 랩이 LLM을 영상 관련 판독·보고 보조로 쓸 계획이 있다면, 이 논문처럼 '영상 없이 비영상 정보만으로 정량값을 추정시키는' 과제는 아직 신뢰하기 어렵다는 경계선을 설계에 반영하고, LLM에게 실제 영상(또는 영상에서 추출한 정량 feature)을 함께 줬을 때의 성능과 분리해서 벤치마크해야 합니다.</p>
+</div>
+
+<h2>⚠️ 리스크·한계 필터</h2>
+
+<div class=risk>
+  <p><strong>[오늘 리포트 자체의 구조적 한계]</strong></p>
+  <p>[Dataset risk] 오늘도 arXiv가 발행되지 않아 journal-only로 발행했습니다. 전체 스캔 551건 대비 선택 184건(33.4%)이라는 배정 비율은 평소 범위 안이지만, 그중 상당수(특히 Tomography/3D Imaging 55편, Virtual Staining/Pathology 29편)는 계산 영상 방법론이 아니라 순수 임상 증례이거나 키워드만 겹치는 완전 무관 논문입니다.</p>
+  <p>[Metric risk] Crossref 메타데이터에 abstract가 등록되지 않은 논문이 많아(오늘 클러스터 대표 논문 19편 중 abstract로 수치가 확인되는 건 8편 정도), 대부분의 판단이 제목·저널 정보 기준이라 abstract 기반 판단보다 불확실성이 큽니다.</p>
+  <p>[Claim risk] GPT-5.6 Sol·Merlin처럼 특정 상용 모델 1회 평가에 기반한 결과는 모델 버전이나 프롬프트가 바뀌면 재현되지 않을 수 있어, '생성형 AI가 정량 판독에 약하다'는 결론을 모든 LLM/VLM으로 일반화하기에는 이릅니다.</p>
+</div>
+
+<div class=risk>
+  <p><strong>[개별 논문 리스크]</strong></p>
+  <p>[Baseline risk] 챗봇 환자교육 비교 연구는 챗봇 5종 사이의 상대 비교일 뿐, 전문의가 직접 작성한 설명 자료와의 절대 비교는 포함하지 않아 '전문가 대비 얼마나 못한지/나은지'는 알 수 없습니다.</p>
+  <p>[Dataset risk] OCT-AID 관상동맥 플라크 연구는 단일 기관·189명 규모의 전향적 연구라 외부 코호트 검증이 필요하고, OCTA 심혈관 바이오마커·주유소-망막신경퇴행 2편은 abstract가 없어 표본 크기·보정 변수를 확인할 수 없습니다.</p>
+  <p>[Deployment risk] 메타표면 RF/레이더 클러스터 5편 중 abstract가 확인되는 2편(Radar Target Synthesizer, Multifunctional Integrated Metasurface)도 실험실 시제품 단계이고, 실제 레이더·통신 시스템에 통합했을 때의 신뢰성·내구성은 본문과 후속 연구 확인이 필요합니다.</p>
+</div>
+
+<h2>🧊 Skim-only 후보</h2>
+<div class=skim>
+<ul>
+<li>Virtual Staining/Pathology 29편 중 대다수 — 치아 복합레진 색안정성, 철분시럽에 의한 유치 착색, 식물 염색체 염색, 세포막 염색 시약 개발, 자일렌 대체 세척제 평가 등 "staining" 단어만 겹치는 완전 무관 논문입니다.</li>
+<li>Tomography/3D Imaging 순수 임상 증례 다수 — 갑상선암 다중모달 영상 증례, 사후 CT 공기색전 증례, PET/CT 우연 발견 증례, 림프부종 림프신티그래피 가이드 등 CT/PET를 "사용"하지만 영상 재구성 방법론에는 기여하지 않는 순수 임상 응용입니다.</li>
+<li>Reconstruction/Inverse Problems 내 무관 다수 — 양자 상태 단층촬영 정규화, 양자 오류 완화, 양자 전산유체역학, LLM 생성 콘텐츠 탐지 등 "reconstruction"/"inverse" 단어만 겹치는 논문입니다.</li>
+<li>Deep Learning Methods 43편 중 다수 — Fourier Neural Operator를 홍수 라우팅·지하수 물질 이동·양자 알고리즘 등 범용 과학계산에 적용한 논문 6~7편은 계산 영상 재구성과는 거리가 있어 메모만 남깁니다.</li>
+</ul>
+</div>
+
+<h2>📄 부록 — 전체 ROI 논문 압축 목록</h2>
+<p><small>오늘 184건 전체를 개별 bullet로 쓰는 대신, 클러스터 지도의 대표 논문과 버킷별 주요 논문 중심으로 압축했습니다. 하위 롱테일(키워드 오탐·순수 임상/범용 응용)은 Watch Lens·Skim-only 섹션에서 버킷/카운트만 표시하고 개별 bullet은 생략합니다.</small></p>
+
+<h3>메타표면의 광학→RF/레이더 확장 (5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/twc.2026.3757417" target=_blank>Dynamic Metasurface Antennas for AFDM: Channel Shaping and Low-Complexity Detection</a></strong> <span class=pill>JNL</span><br>
+  문제: OFDM 대비 간섭에 강한 AFDM 변조를 실제 안테나 하드웨어로 구현하는 방법이 부재 / 방법: 동적 메타표면 안테나로 채널 자체를 성형해 저복잡도 검출을 가능하게 함(abstract 없음, 제목 기준) / 의미: 메타표면이 안테나의 신호처리 특성 자체를 바꾸는 하드웨어로 기능 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.72270" target=_blank>Programmable Radar Target Synthesizer Based on Information Metasurface</a></strong> <span class=pill>JNL</span><br>
+  문제: 레이더 시스템 테스트·보정용 표적 신호 생성이 기존엔 디지털 저장-재생(DRFM) 방식에 의존 / 방법: 정보 메타표면이 입사 신호를 그 자리에서 변조해 가짜 표적 생성, 변조 주파수/시간지연으로 거리·속도·방위각 제어 / 의미: 디지털 신호처리 없이 아날로그 반사만으로 다중 표적 합성 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1364/prj.614845" target=_blank>Programmable hybrid-coding metasurface for SSPP decoupling and leaky-wave radiation</a></strong> <span class=pill>JNL</span><br>
+  문제: 표면파(SSPP)를 방사파로 바꾸는 기존 설계는 각도 튜닝 범위가 제한적 / 방법: 프로그래머블 하이브리드 코딩 메타표면으로 SSPP 탈결합과 모드 변환을 결합(abstract 없음) / 의미: 넓은 각도 범위의 누설파 방사를 프로그래밍 가능하게 제어 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1002/lpor.72273" target=_blank>Multifunctional Integrated Metasurface for Unified Dynamic/Stationary mmWave EM Manipulation</a></strong> <span class=pill>JNL</span><br>
+  문제: 동적 빔 조향과 정적 고효율 반사를 한 소자에 통합하기 어려움 / 방법: 이중 편광 공유 조리개로 두 기능을 분리 제어 / 의미: 밀리미터파 대역에서 ±55도 조향 + 21.8dBi 이득 동시 달성(시제품 검증) / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s11468-026-03560-4" target=_blank>Dynamically Tunable EIT in a Vanadium-Dioxide-Based Terahertz Metasurface</a></strong> <span class=pill>JNL</span><br>
+  문제: THz 전자기유도투명도(EIT)를 동적으로 튜닝하기 어려움 / 방법: 바나듐다이옥사이드(VO2) 기반 메타표면으로 결합모드 튜닝(abstract 없음) / 의미: 열/전기 자극으로 투명 창 위치를 바꾸는 재구성형 THz 소자 / 우선순위: Read
+</div>
+
+<h3>딥 언폴딩/물리 기반 신경망의 하드웨어 확산 (3편 + 보조 1편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlastec.2026.117119" target=_blank>Holographic reconstruction for microplankton imaging using FISTA-inspired neural network (HoloRecNet)</a></strong> <span class=pill>JNL</span><br>
+  문제: 수중 미세플랑크톤 홀로그램 복원이 잡음·미세구조 손실에 취약 / 방법: FISTA 반복구조를 신경망으로 풀어내고 학습형 proximal 모듈 추가 / 의미: 2.96M 파라미터로 28.9dB PSNR·0.94 SSIM 달성 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optlaseng.2026.110281" target=_blank>HyperBMU-Net: Broadband mask-guided unfolding network for snapshot hyperspectral image reconstruction</a></strong> <span class=pill>JNL</span><br>
+  문제: 스냅샷 하이퍼스펙트럴 영상의 압축 측정값 복원이 느리거나 구조 정보가 손실됨 / 방법: 광대역 마스크 가이드 언폴딩 네트워크(abstract 없음, 제목 기준) / 의미: 코드화 마스크 기반 분광 영상에도 언폴딩 설계가 적용 가능함을 시사 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.optcom.2026.134015" target=_blank>Image reconstruction through a multimode fiber under the small-data regime</a></strong> <span class=pill>JNL</span><br>
+  문제: 광섬유 통과 후 완전히 흐트러진 패턴에서 영상 복원이 대량의 보정 데이터를 요구 / 방법: 전역 행렬 인코딩 + 벡터 메모리로 적은 데이터로도 복원(abstract 없음) / 의미: small-data 환경에서의 산란매질 영상화 가능성 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1109/tci.2026.3757243" target=_blank>A Low-complexity Nonlinear Pre-weighted Beamformer for High-resolution Ultrasound Image Reconstruction</a></strong> <span class=pill>JNL</span><br>
+  문제: 핸드헬드 초음파의 저전력 제약 속에서 고해상도 재구성이 어려움 / 방법: 저복잡도 O(M) 비선형 프리웨이트 빔포머, FPGA 구현 검증 / 의미: DAS 대비 측면 해상도·사이드로브 억제 개선, 실시간 배포 가능성 / 우선순위: Must-read
+</div>
+
+<h3>OCT/OCTA의 전신질환 확장 (3편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1186/s12933-026-03449-w" target=_blank>AI-derived coronary plaque vulnerability by OCT in type 1 diabetes</a></strong> <span class=pill>JNL</span><br>
+  문제: 무증상 1형 당뇨 환자의 취약 관상동맥 플라크를 비침습적으로 찾기 어려움 / 방법: OCT-AID AI 모델이 OCT 영상에서 픽셀 단위로 지질/석회화/플라크 부담 자동 정량화 / 의미: 고위험군 29명 중 41.4%에서 취약 플라크 확인 / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1016/j.ihj.2026.11.054" target=_blank>OCTA Biomarkers as Indicators of Cardiovascular Disease</a></strong> <span class=pill>JNL</span><br>
+  문제: 심혈관질환 위험을 비침습적으로 조기에 가늠할 지표 부족 / 방법: 망막 OCTA 지표를 전향적 관찰연구로 평가(abstract 없음, 제목 기준) / 의미: 눈 영상이 전신 심혈관 위험 평가로 확장 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1097/01.ee9.0001292916.21228.4b" target=_blank>Proximity to Petrol Stations and Retinal Neurodegeneration Assessed by OCT (ALIENOR Study)</a></strong> <span class=pill>JNL</span><br>
+  문제: 환경 노출(대기오염 등)이 신경퇴행에 미치는 영향을 비침습적으로 추적하기 어려움 / 방법: ALIENOR 코호트에서 주유소 근접성과 망막 OCT 지표 연관성 분석(abstract 없음) / 의미: OCT가 환경역학 노출 평가 도구로도 쓰일 수 있음을 시사 / 우선순위: Read
+</div>
+
+<h3>생성형 AI/LLM의 영상 판독·환자소통 성적표 (5편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3390/diagnostics16233939" target=_blank>Accuracy and Agreement of GPT-5.6 Sol-Generated Bone Density Estimates with Quantitative CT Measurements</a></strong> <span class=pill>JNL</span><br>
+  문제: 비영상 정보만으로 정량적 골밀도를 LLM이 추정할 수 있는지 불확실 / 방법: GPT-5.6 Sol에 임상/검사 정보만 제공해 QCT 골밀도 점수 추정, 450명 후향 비교 / 의미: r=0.38 수준의 낮은 상관관계, 영상 대체 불가를 숫자로 확인(negative result) / 우선순위: Must-read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.21037/qims-2026-1424" target=_blank>Evaluating generative AI chatbots for patient education on triple-rule-out CTA</a></strong> <span class=pill>JNL</span><br>
+  문제: 환자가 챗봇에 의존해 검사 정보를 얻을 때 안전성이 불확실 / 방법: 5개 챗봇의 TRO-CTA 환자교육 답변을 안전성·정확성·가독성으로 비교 / 의미: 86~94% 안전 응답, Claude가 정확도·공감도 최고 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.2214/ajr.26.36057" target=_blank>Clinical Errors Within Radiology Reports Generated Using the Merlin Abdominal CT VLM</a></strong> <span class=pill>JNL</span><br>
+  문제: 복부 CT 비전-언어 파운데이션 모델이 생성한 판독문의 임상적 신뢰성이 불확실 / 방법: Merlin 모델 생성 판독 소견의 임상 오류 분석(abstract 없음, 제목 기준) / 의미: 생성형 영상 판독 모델의 임상 배치 전 위험 신호 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.3389/fmolb.2026.1930256" target=_blank>Impact of storage time on Ki67 immunohistochemical staining results</a></strong> <span class=pill>JNL</span><br>
+  문제: 장기 보관된 파라핀 조직의 Ki67 염색 결과 신뢰도가 불분명 / 방법: AI 보조 이미지 분석(APTime)으로 480건 H-Score를 저장기간별 정량화 / 의미: 종양조직은 5년 내에도 유의하게 염색강도 저하(품질관리 지침 도출) / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1007/s44163-026-02759-y" target=_blank>Automated detection of hyper-reflective foci in OCT (two-stage DL + gradient boosting)</a></strong> <span class=pill>JNL</span><br>
+  문제: OCT에서 작고 대조도 낮은 hyper-reflective foci를 안정적으로 검출하기 어려움 / 방법: 2단계 딥러닝+gradient boosting 파이프라인(abstract 없음, 제목 기준) / 의미: 소규모 병변 자동 검출의 정밀도 개선 시도 / 우선순위: Read
+</div>
+
+<h3>기타 관찰 중 (2편)</h3>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s42005-026-02971-3" target=_blank>High-dimensional polarization encoding with random higher-order Poincare-sphere beams</a></strong> <span class=pill>JNL</span><br>
+  문제: 산란·가림 환경에서 구조광 통신의 강건성 확보가 어려움 / 방법: 고차 푸앵카레 구 편광 인코딩, 신경망은 읽기 전용 / 의미: 적응광학 보정 없이 안정적 전송 / 우선순위: Read
+</div>
+<div class=roi-item>
+  <strong><a href="https://doi.org/10.1038/s42005-026-02920-0" target=_blank>Accurate recognition of fractional orbital angular momentum via physics-informed deep learning</a></strong> <span class=pill>JNL</span><br>
+  문제: 시간에 따라 변하는 산란매질을 통과한 분수 OAM 빔 인식이 어려움 / 방법: 물리기반 비지도 신경망 + 극좌표 매핑 / 의미: 분리간격 0.05까지 모드 구분 가능 / 우선순위: Read
+</div>
+
+<h2>🔗 참고 링크</h2>
+<ul>
+<li><a href="https://arxiv.org/list/cs.LG/new" target=_blank>arXiv cs.LG /new</a></li>
+<li><a href="https://arxiv.org/list/cs.CV/new" target=_blank>arXiv cs.CV /new</a></li>
+<li><a href="https://arxiv.org/list/cs.AI/new" target=_blank>arXiv cs.AI /new</a></li>
+<li><a href="https://arxiv.org/list/eess.IV/new" target=_blank>arXiv eess.IV /new</a></li>
+<li><a href="https://arxiv.org/list/eess.SP/new" target=_blank>arXiv eess.SP /new</a></li>
+<li><a href="../feed.xml" target=_blank>RSS Feed</a></li>
+</ul>
+
+<footer>
+이미징/계산광학 랩 자동 브리핑. arXiv(cs.LG·cs.CV·cs.AI·eess.IV·eess.SP) + Crossref/OpenAlex 저널 수집 기반. 오늘은 arXiv 금요일자 공지가 아직 올라오지 않아 저널(Crossref/OpenAlex)만으로 발행하는 journal-only 잠정본입니다.
+</footer>
+
+<a class=home href="../index.html">← 홈</a>
+
+<a class=home href="../index.html">← 홈</a>
+
+<button id=themeToggle type=button aria-label="다크 모드 전환">🌙</button>
+<script>(function(){var k='theme',r=document.documentElement,b=document.getElementById('themeToggle');function u(){b.textContent=r.dataset.theme==='dark'?'☀️':'🌙';}u();b.addEventListener('click',function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}u();});})();</script>
+</body>
+</html>

@@ -6,8 +6,15 @@
     <atom:link href="https://iilab.io/paper-daily-summary/feed.xml" rel="self" type="application/rss+xml" />
     <description>cs.LG · cs.CV · cs.AI · eess.IV · eess.SP arXiv new submissions and Crossref journal articles, bucketed by lab ROI (Fourier Ptychography/Microscopy, Lensless/Coded Imaging, Phase Imaging/Holography, Meta-Optics/Diffractive, Light-Field/Novel Sensors, Tomography/3D Imaging, Virtual Staining/Pathology, Reconstruction/Inverse Problems, Deep Learning Methods). Daily briefing with insights.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 26 Nov 2026 14:25:14 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 14:24:43 +0900</lastBuildDate>
     <ttl>720</ttl>
+    <item>
+      <title>Imaging Intelligence Daily Briefing — 2026-11-27 (금요일)</title>
+      <link>https://iilab.io/paper-daily-summary/posts/2026-11-27.html</link>
+      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-11-27.html</guid>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 +0900</pubDate>
+      <description><![CDATA[오늘 2026-11-27 확인 기준 5개 추적 카테고리 전부 /new listing이 여전히 "Thursday, 26 November 2026"을 가리켜(post_date가 listing_date보다 하루 앞서 있고, 바로 전날인 2026-11-26이 미국 추수감사절이라 arXiv 공지 주기가 밀린 것으로 추정) arXiv 섹션은 발행하지 않고, Crossref/OpenAlex 저널 수집만으로 classify.py를 돌렸습니다. Crossref 9개 쿼리는 5개만 1차 성공, 나머지 4개는 429 rate-limit에 걸려 5초 간격 재시도로 복구했고, --days를 평소 1에서 3으로 넓혀 총 486건을 모았습니다. OpenAlex enrich가 320/486편에 인용…]]></description>
+    </item>
     <item>
       <title>Imaging Intelligence Daily Briefing — 2026-11-26 (목요일)</title>
       <link>https://iilab.io/paper-daily-summary/posts/2026-11-26.html</link>
@@ -420,13 +427,6 @@
       <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-26.html</guid>
       <pubDate>Wed, 26 Aug 2026 09:00:00 +0900</pubDate>
       <description><![CDATA[오늘(8/26, 수) arXiv 5개 카테고리 listing이 정상적으로 수요일 치로 갱신되어 518편(new+cross)을 새로 확보했습니다. 어제(8/25)는 확산모델을 CT·홀로그램 역문제의 재사용 사전으로 쓰는 응용 논문과 그 이론을 분석하는 논문이 나란히 나왔고, 이벤트 카메라·단층촬영·수중 3D 복원 같은 계산광학 코어 신호가 5개 클러스터에 걸쳐 뚜렷했습니다. 오늘은 정반대로, 계산광학 코어 버킷 대부분이 실제로 열어보면 무관한 논문(임상 사례 보고, 통신 안테나, 지진파 단층촬영, 지속가능성 논문 등)이었고, 실 신호는 diffusion model 이론 5편에 집중됐습니다.]]></description>
-    </item>
-    <item>
-      <title>Imaging Intelligence Daily Briefing — 2026-08-25 (화요일)</title>
-      <link>https://iilab.io/paper-daily-summary/posts/2026-08-25.html</link>
-      <guid isPermaLink="true">https://iilab.io/paper-daily-summary/posts/2026-08-25.html</guid>
-      <pubDate>Tue, 25 Aug 2026 09:00:00 +0900</pubDate>
-      <description><![CDATA[오늘(8/25, 화)은 arXiv 5개 카테고리 listing이 정상적으로 화요일 치로 넘어와, 944편(new+cross)을 새로 확보했습니다. 어제(8/24)는 2D 비전 파운데이션 모델을 3D 기하 파이프라인에 어떻게 이식할지, 의료 파운데이션 모델이 도메인 시프트에서 정확히 어디서 무너지는지가 중심이었는데, 계산광학 핵심 버킷 자체는 조용한 편이었습니다. 오늘은 그 흐름과는 결이 다른, 계산광학 코어에 더 가까운 방법론 신호가 나왔습니다 — 확산모델을 촬영 역문제의 범용 사전으로 쓰려는 시도(CT), 그 사전의 이론적 동작 원리를 분석하는 논문 두 편, 그리고 이벤트 카메라를 로봇 비전 바깥의 계산 이미징 문제(야간 복원·PIV·이종 센서 정렬)로 계속 확장하는…]]></description>
     </item>
   </channel>
 </rss>

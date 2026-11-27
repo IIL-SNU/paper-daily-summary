@@ -1,0 +1,214 @@
+{
+ "date": "2026-11-27",
+ "source_mode": "journal-only",
+ "clusters": [
+  {
+   "cluster": "메타표면이 광학 이미징을 넘어 레이더·무선통신 하드웨어로 번짐",
+   "papers": [
+    {
+     "title": "Dynamic Metasurface Antennas for AFDM: Channel Shaping and Low-Complexity Detection",
+     "url": "https://doi.org/10.1109/twc.2026.3757417",
+     "importance_tags": [
+      "[방법전환]"
+     ]
+    },
+    {
+     "title": "Programmable Radar Target Synthesizer Based on Information Metasurface",
+     "url": "https://doi.org/10.1002/lpor.72270",
+     "importance_tags": [
+      "[방법전환]",
+      "[실사용전환]"
+     ]
+    },
+    {
+     "title": "Programmable hybrid-coding metasurface for decoupling and mode conversion from SSPPs to tunable wide-angle leaky-wave radiation",
+     "url": "https://doi.org/10.1364/prj.614845",
+     "importance_tags": [
+      "[방법전환]"
+     ]
+    },
+    {
+     "title": "Multifunctional Integrated Metasurface Enabling Unified Dynamic and Stationary Millimeter-Wave Electromagnetic Manipulation",
+     "url": "https://doi.org/10.1002/lpor.72273",
+     "importance_tags": [
+      "[방법전환]",
+      "[실사용전환]"
+     ]
+    },
+    {
+     "title": "Dynamically Tunable Electromagnetically Induced Transparency in a Vanadium-Dioxide-Based Terahertz Metasurface",
+     "url": "https://doi.org/10.1007/s11468-026-03560-4",
+     "importance_tags": [
+      "[방법전환]"
+     ]
+    }
+   ],
+   "why": "메타표면(빛의 파장보다 작은 나노 구조를 평면에 배열해 전자기파의 위상·진폭을 원하는 대로 바꾸는 인공 소재)은 그동안 이 랩이 주로 가시광·적외선 영역에서 렌즈나 홀로그램 같은 '이미징' 용도로 지켜봐 왔는데, 오늘 저널에서는 같은 설계 사고방식이 레이더·무선통신이라는 전혀 다른 전자기파 대역(마이크로파·밀리미터파)으로 번지는 신호가 다섯 편이나 동시에 나왔습니다. Programmable Radar Target Synthesizer는 기존처럼 수신한 레이더 신호를 디지털로 저장했다가 다시 만들어내는 방식(DRFM) 대신, 정보 메타표면이 입사 신호를 반사하면서 그 자리에서 바로 변조해 레이더가 마치 특정 거리·속도·방위각의 가짜 표적을 보는 것처럼 착각하게 만드는 장비를 제시했고, 변조 주파수로 표적 거리를, 변조 파형의 시간 지연으로 표적 속도·방위각을 대응시키는 명확한 설계 규칙까지 세웠습니다. Multifunctional Integrated Metasurface는 그동안 서로 다른 소자가 나눠 맡아야 했던 '동적으로 빔을 조향하는 기능'과 '고정된 방향으로 고효율 반사하는 기능'을 이중 편광을 이용해 한 장의 평면 소자(단일 조리개)에 통합해, 실제 시제품에서 ±55도 이상의 빔 조향 범위와 21.8dBi를 넘는 반사 이득을 24.25~29.5GHz 대역에서 동시에 달성했습니다. 나머지 세 편(AFDM 채널 성형 안테나, SSPP 탈결합·광각 누설파 방사, VO2 기반 THz 전자기유도투명도)도 전부 통신·레이더 하드웨어 맥락입니다. 다섯 편을 합치면, 메타표면 설계 커뮤니티의 관심이 '빛을 어떻게 이미지로 바꿀 것인가'에서 '전파를 어떻게 프로그래밍 가능한 하드웨어로 직접 제어할 것인가'로 넓어지고 있다는 뜻이고, 랩이 이미징용으로 쌓아온 위상 설계·메타아톰 라이브러리 노하우가 차세대 무선망·레이더 하드웨어 설계에도 그대로 재사용될 수 있다는 뜻이기도 합니다.",
+   "confidence": "Medium",
+   "confidence_note": "서로 다른 저널(IEEE Trans. Wireless Commun., Laser & Photonics Reviews x2, Photonics Research, Plasmonics) 5편이 각각 통신·레이더 맥락에서 독립적으로 나왔지만, abstract가 확인되는 건 Radar Target Synthesizer와 Multifunctional Integrated Metasurface 2편뿐입니다.",
+   "lab_action": "랩이 보유한 메타표면 위상 설계·메타아톰 시뮬레이터(FDTD/RCWA)를 광학 대역이 아닌 마이크로파/밀리미터파 대역(24~30GHz)으로 재매개변수화해, Multifunctional Integrated Metasurface의 이중 편광 공유 조리개 설계를 1주 내 소규모로 재현해보고 기존 이미징용 설계 파이프라인이 통신 대역에도 그대로 이식되는지 확인한다."
+  },
+  {
+   "cluster": "딥 언폴딩/물리 기반 신경망이 홀로그램·분광·광섬유 영상에서 동시에 재구성 속도를 공략",
+   "papers": [
+    {
+     "title": "Holographic reconstruction for microplankton imaging using FISTA-inspired neural network with adaptive modulation",
+     "url": "https://doi.org/10.1016/j.optlastec.2026.117119",
+     "importance_tags": [
+      "[방법전환]"
+     ]
+    },
+    {
+     "title": "HyperBMU-Net: Broadband mask-guided unfolding network for snapshot hyperspectral image reconstruction",
+     "url": "https://doi.org/10.1016/j.optlaseng.2026.110281",
+     "importance_tags": [
+      "[방법전환]"
+     ]
+    },
+    {
+     "title": "Image reconstruction through a multimode fiber under the small-data regime using global matrix encoding and vector memory",
+     "url": "https://doi.org/10.1016/j.optcom.2026.134015",
+     "importance_tags": [
+      "[방법전환]",
+      "[데이터전환]"
+     ]
+    }
+   ],
+   "why": "복원(계산으로 원래 신호나 영상을 되살리는 작업) 알고리즘은 보통 한 가지 영상 장비에 맞춰 따로 설계되는 경우가 많은데, 오늘 저널에서는 '반복 알고리즘의 수학적 구조를 신경망 층으로 풀어내는' 같은 설계 방식이 홀로그램 현미경, 스냅샷 분광 영상, 광섬유 영상이라는 서로 다른 세 장비에서 동시에 쓰였습니다. HoloRecNet은 수중 미세플랑크톤을 홀로그램으로 찍을 때 생기는 잡음과 미세 구조 손실 문제를, FISTA(반복적으로 신호를 성기게 다듬어가는 고전 알고리즘)의 수학적 구조를 그대로 신경망으로 풀어내고 학습 가능한 proximal(근접) 모듈을 더해서 풀었고, 28.9dB PSNR·0.94 SSIM을 2.96M 파라미터·3.8GFLOPs라는 가벼운 모델로 달성했습니다. HyperBMU-Net은 스냅샷 하이퍼스펙트럴(한 번의 노출로 여러 파장 대역을 동시에 찍는) 영상에서, 코드화된 마스크가 만든 압축 측정값을 역시 반복 알고리즘을 신경망으로 풀어내는 '언폴딩' 방식으로 복원했습니다. 멀티모드 광섬유 논문은 광섬유를 통과하며 완전히 흐트러진 패턴에서 원래 영상을 복원하는 문제를, 데이터가 적은 상황(small-data regime)에서도 되는 전역 행렬 인코딩과 벡터 메모리 구조로 풀었습니다. 세 편을 합치면, '반복 알고리즘을 신경망으로 풀어내 물리 모델과 데이터 기반 학습을 동시에 쓰는' 설계 패턴이 홀로그램·분광·광섬유라는 서로 다른 세 하드웨어에서 독립적으로 재발견되고 있다는 뜻이고, 한 장비에서 검증된 언폴딩 구조를 다른 장비로 옮기는 일이 생각보다 수월할 수 있다는 뜻이기도 합니다.",
+   "confidence": "Medium",
+   "confidence_note": "세 광학 저널(Optics & Laser Technology, Optics and Lasers in Engineering, Optics Communications)에서 독립적으로 언폴딩/물리 기반 신경망 구조를 택했지만, 수치가 확인되는 건 HoloRecNet 1편뿐입니다(HyperBMU-Net·멀티모드 광섬유 논문은 abstract 없음, 제목 기준).",
+   "lab_action": "HoloRecNet의 FISTA 기반 학습형 proximal 모듈 구조를 랩의 FPM/홀로그램 복원 네트워크에 이식해, 기존 순수 반복 알고리즘·순수 end-to-end 신경망 대비 PSNR/SSIM과 파라미터 수·연산량(FLOPs) 3축으로 1주 내 벤치마크 비교한다."
+  },
+  {
+   "cluster": "OCT/OCTA가 눈 질환을 넘어 심혈관·환경노출 위험 평가 도구로 번짐",
+   "papers": [
+    {
+     "title": "Optical Coherence Tomography Angiography (OCTA) Biomarkers as Indicators of Cardiovascular Disease: A Prospective Cross-Sectional Observational Study",
+     "url": "https://doi.org/10.1016/j.ihj.2026.11.054",
+     "importance_tags": [
+      "[평가축]"
+     ]
+    },
+    {
+     "title": "Artificial intelligence-derived coronary plaque vulnerability by optical coherence tomography in type 1 diabetes with subclinical atherosclerosis",
+     "url": "https://doi.org/10.1186/s12933-026-03449-w",
+     "importance_tags": [
+      "[방법전환]",
+      "[표준후보]"
+     ]
+    },
+    {
+     "title": "TO17-04: Proximity to Petrol Stations and Retinal Neurodegeneration Assessed by Optical Coherence Tomography: The Prospective ALIENOR Study",
+     "url": "https://doi.org/10.1097/01.ee9.0001292916.21228.4b",
+     "importance_tags": [
+      "[평가축]"
+     ]
+    }
+   ],
+   "why": "OCT/OCTA(빛의 간섭으로 망막이나 혈관 단면·미세혈관을 비침습적으로 촬영하는 기법)는 원래 눈 자체의 질환(황반변성, 녹내장 등)을 들여다보는 용도로 시작됐는데, 오늘 저널에서는 그 쓰임이 심혈관 위험 평가와 환경 노출 평가로 또 한 걸음 번지는 신호가 보였습니다. 오늘 가장 눈에 띄는 논문은 1형 당뇨병 환자를 대상으로, OCT-AID라는 AI 모델이 관상동맥을 찍은 OCT 영상에서 픽셀 단위로 지질·석회화·플라크 부담을 자동으로 정량화해 겉보기엔 증상이 없어도 속으로는 위험한 취약 플라크(thin-cap fibroatheroma)를 찾아낸 연구인데, 무증상 1형 당뇨 189명 중 고위험군으로 분류된 29명의 41.4%에서 이런 취약 플라크가 실제로 발견됐습니다. 즉 눈이 아니라 혈관(관상동맥) 안을 들여다보는 데 쓰는 OCT에, 사람이 일일이 판독하던 플라크 정량화를 AI가 대신 수행하기 시작했다는 뜻입니다. 같은 날 나온 OCTA 심혈관질환 바이오마커 논문(제목 기준)은 망막의 미세혈관 영상을 조직검사 없이도 전신 심혈관 위험을 가늠하는 지표로 쓸 수 있는지 전향적으로 관찰했고, 주유소 근접성과 망막 신경퇴행 논문(ALIENOR 코호트)은 한 걸음 더 나아가 대기오염 같은 환경 노출이 망막 신경섬유층 두께 변화로 먼저 나타나는지를 OCT로 추적했습니다. 세 편을 합치면, OCT/OCTA가 '눈 질환 진단 도구'에서 '몸 전체의 혈관·신경 건강 상태를 비침습적으로 엿보는 창'으로 계속 넓어지고 있다는 뜻이고, 그 다음 정류장이 매번 조금씩 다른 장기·위험요인으로 옮겨가고 있다는 뜻이기도 합니다.",
+   "confidence": "Medium",
+   "confidence_note": "AI-OCT 관상동맥 플라크 논문은 실제 숫자(189명 중 29명 고위험, 41.4% TCFA)가 확인되는 전향적 임상연구지만, 나머지 두 편(OCTA 심혈관 바이오마커, 주유소-망막신경퇴행)은 abstract가 없어 제목과 저널 맥락 기준 판단입니다.",
+   "lab_action": "OCT-AID 모델의 픽셀 단위 지질·석회화·플라크 부담 정량화 파이프라인(세그멘테이션→정량화→TCFA 판별) 구조를 본문에서 확인해, 랩이 보유한 위상/OCT 기반 3D 복원 결과에도 같은 '복원→자동 정량화→위험군 분류' 구조를 얹을 수 있는지 1주 내 점검한다."
+  },
+  {
+   "cluster": "생성형 AI/LLM이 영상 판독·환자 소통 보조로 들어오되, 정량 판독에서는 아직 못 미더운 결과가 같이 나옴",
+   "papers": [
+    {
+     "title": "Accuracy and Agreement of GPT-5.6 Sol-Generated Bone Density Estimates with Quantitative Computed Tomography Measurements",
+     "url": "https://doi.org/10.3390/diagnostics16233939",
+     "importance_tags": [
+      "[경고신호]",
+      "[평가축]"
+     ]
+    },
+    {
+     "title": "Evaluating generative artificial intelligence chatbots for patient education on triple-rule-out CT angiography in chest pain",
+     "url": "https://doi.org/10.21037/qims-2026-1424",
+     "importance_tags": [
+      "[평가축]"
+     ]
+    },
+    {
+     "title": "Clinical Errors Within Radiology Reports Generated Using the Merlin Abdominal CT Vision-Language Foundation Model",
+     "url": "https://doi.org/10.2214/ajr.26.36057",
+     "importance_tags": [
+      "[경고신호]"
+     ]
+    },
+    {
+     "title": "Impact of storage time on Ki67 immunohistochemical staining results: a cross-sectional study based on AI-assisted image analysis",
+     "url": "https://doi.org/10.3389/fmolb.2026.1930256",
+     "importance_tags": [
+      "[표준후보]"
+     ]
+    },
+    {
+     "title": "Automated detection of small low-contrast hyper-reflective foci in optical coherence tomography using a two-stage deep learning and gradient boosting pipeline",
+     "url": "https://doi.org/10.1007/s44163-026-02759-y",
+     "importance_tags": [
+      "[방법전환]"
+     ]
+    }
+   ],
+   "why": "오늘 저널에서는 생성형 AI/LLM이 영상 판독·환자 설명 보조로 들어오는 사례가 유난히 많이 모였는데, 그 성적표는 용도에 따라 극명하게 갈렸습니다. GPT-5.6 Sol에게 나이·검사 수치 같은 비영상 정보만 주고 요추·고관절의 골밀도 점수를 추정하게 한 연구는, 실제 정량 CT 측정값과의 상관관계가 r=0.383(요추)·0.262(고관절)에 그치고 고관절 골다공증 판별 민감도도 27.7%에 불과해, 영상 없이 글자 정보만으로 정량적인 뼈 밀도를 맞히는 용도로는 아직 쓸 수 없다는 점을 숫자로 보여줬습니다. 같은 맥락에서 Merlin이라는 복부 CT 비전-언어 파운데이션 모델이 생성한 판독 소견에 임상적 오류가 있었다는 논문도 나와, 생성형 모델이 실제 영상을 보고 판독문을 쓰는 과제에서도 아직 조심해야 한다는 경고 신호를 더합니다. 반대로 환자에게 검사(TRO-CTA, 흉통 환자의 관상동맥·폐색전·대동맥 질환을 한 번에 보는 CT)를 설명해주는 챗봇 비교 연구는 다섯 개 모델 전부 86~94%의 응답이 '안전'하다고 평가됐고(모델 간 유의한 차이는 없었음), 정보 보조 용도로는 쓸 만하다는 쪽에 가까운 결과를 보였습니다. Ki67 면역조직화학 염색 연구는 AI를 '판독을 대신하는 주체'가 아니라 '저장 기간에 따라 염색 결과(H-Score)가 바뀌는 것을 정밀하게 정량화하는 도구'로만 썼고, 종양 조직은 5년 안에도 저장 기간에 따라 염색 강도가 유의하게 떨어진다는(P=0.042~0.009) 품질관리 지침을 끌어냈습니다. 다섯 편을 합치면, 생성형 AI가 '환자 소통 보조'나 '정량화 도구'로는 이미 쓸 만한 수준에 가까워졌지만, '영상을 직접 보고 정량적 판독을 대신하는' 과제에서는 아직 숫자로 검증된 실패 사례가 같이 쌓이고 있다는 뜻입니다.",
+   "confidence": "Medium",
+   "confidence_note": "GPT-5.6 골밀도·챗봇 환자교육·Ki67 저장기간 3편은 abstract에 구체적 수치가 있어 신뢰도가 높지만, Merlin VLM 판독 오류와 hyper-reflective foci 검출 2편은 abstract가 없어 제목 기준입니다.",
+   "lab_action": "GPT-5.6 골밀도 추정 실패 사례(r=0.383, AUC=0.700)를 랩의 'LLM을 영상 판독 보조로 쓰는' 파이프라인 설계에 반영해, 비영상 정보만 주는 과제와 실제 영상을 함께 주는 과제를 분리한 1주 내 실패 사례 벤치마크(어떤 입력 조건에서 LLM 판독이 믿을 만한지/아닌지)를 설계한다."
+  },
+  {
+   "cluster": "구조광(편광·OAM) 기반 광통신이 물리 기반 신경망으로 인코딩·복원을 동시에 공략 (관찰 중)",
+   "papers": [
+    {
+     "title": "High-dimensional polarization encoding with random higher-order Poincare-sphere beams for robust optical communication",
+     "url": "https://doi.org/10.1038/s42005-026-02971-3",
+     "importance_tags": [
+      "[방법전환]"
+     ]
+    },
+    {
+     "title": "Accurate recognition of fractional orbital angular momentum of light in complex scenarios using physics-informed deep learning",
+     "url": "https://doi.org/10.1038/s42005-026-02920-0",
+     "importance_tags": [
+      "[방법전환]"
+     ]
+    }
+   ],
+   "why": "구조광(빛의 편광이나 궤도각운동량처럼 세기 외의 물리적 자유도에 정보를 실어 보내는 기법)을 이용한 광통신은 보통 '얼마나 많은 정보를 실을 것인가'와 '그 정보를 다시 읽어낼 것인가'를 따로 다루는데, 오늘 Communications Physics에 나란히 실린 두 논문은 둘 다 물리 모델을 신경망 구조에 직접 녹이는 쪽으로 접근했습니다. 고차 푸앵카레 구 편광 인코딩 논문은 부분 간섭성 벡터장의 편광 상태에 정보를 실어 산란·가림이 심한 환경에서도 적응광학 보정 없이 안정적으로 전송되는 걸 보였고, 신경망은 그 편광 상태를 읽어내는 역할만 맡아 '물리적 정보량 자체를 신경망이 바꾸지 않는다'는 점을 강조했습니다. 분수 궤도각운동량(FOAM) 인식 논문은 반대로, 시간에 따라 바뀌는 산란 매질을 통과한 단일 픽셀 세기 신호들로부터 물리 기반 비지도(untrained) 신경망이 FOAM 패턴 자체를 복원한 뒤 극좌표 매핑으로 분리 간격 0.05까지도 모드를 구분해냈습니다. 두 편만으로 흐름이라 부르기는 이르지만, 둘 다 '신경망에 데이터를 더 많이 먹이는' 대신 '빛의 물리적 특성을 신경망 구조 안에 못박아 두는' 쪽을 택했다는 공통점이 있어, 구조광 통신을 복잡한 환경에서도 안정적으로 동작시키는 다음 단계로 물리 기반 설계를 주목할 만합니다.",
+   "confidence": "Low",
+   "confidence_note": "같은 저널(Communications Physics)에 실린 2편뿐이고, 두 논문이 서로를 인용하거나 벤치마크를 공유하지는 않아 독립적인 흐름인지는 추가 확인이 필요합니다.",
+   "lab_action": "두 논문의 '물리 모델을 신경망 구조에 직접 인코딩' 설계(편광 읽기 전용 CNN, FOAM 복원용 physics-informed UNN)를 랩의 산란매질 통과 영상 복원·구조광 센싱 실험에 참고용으로 검토하되, 아직 2편뿐이라 바로 실험을 배정하기보다 다음 주 저널 수집에서 같은 주제가 반복되는지부터 관찰한다."
+  }
+ ],
+ "research_topics": [
+  {
+   "title": "SWAG/S2WAG 저복잡도 비선형 프리웨이트 빔포머를 랩 복원 파이프라인에 적용",
+   "claim": "이 논문은 핸드헬드 초음파에서 기존 delay-and-sum 빔포머 대비 해상도·대조도를 높이면서도 연산 복잡도를 O(M) 수준으로 유지하는 SWAG/S2WAG 빔포머를 제안하고 FPGA 구현까지 검증했는데, 랩의 저전력·실시간 복원 파이프라인(코드 조리개, 렌즈리스)에도 같은 저복잡도 비선형 가중 전략을 적용할 수 있는지 확인할 가치가 있습니다.",
+   "supporting_papers": [
+    {
+     "title": "A Low-complexity Nonlinear Pre-weighted Beamformer for High-resolution Ultrasound Image Reconstruction",
+     "url": "https://doi.org/10.1109/tci.2026.3757243"
+    }
+   ]
+  },
+  {
+   "title": "HoloRecNet의 FISTA 기반 학습형 proximal 모듈을 랩 홀로그램/FP 복원에 이식",
+   "claim": "이 논문은 반복 알고리즘(FISTA)의 수학적 구조를 신경망으로 풀어내고 학습 가능한 proximal 모듈을 추가해 2.96M 파라미터라는 가벼운 모델로 28.9dB PSNR을 달성했는데, 랩의 Fourier ptychography·홀로그램 복원 네트워크도 같은 하이브리드(물리 알고리즘 구조 + 학습형 모듈) 설계로 더 적은 파라미터에서 비슷한 성능을 낼 수 있는지 검증할 가치가 있습니다.",
+   "supporting_papers": [
+    {
+     "title": "Holographic reconstruction for microplankton imaging using FISTA-inspired neural network with adaptive modulation",
+     "url": "https://doi.org/10.1016/j.optlastec.2026.117119"
+    }
+   ]
+  },
+  {
+   "title": "GPT-5.6 골밀도 추정 실패 사례를 랩의 LLM-판독-보조 품질 게이트 설계에 반영",
+   "claim": "이 논문은 비영상 정보만으로 정량 CT 골밀도를 추정시켰을 때 상관계수 0.38 수준의 낮은 정확도를 숫자로 보여준 negative result인데, 랩이 향후 LLM을 영상 판독 보조로 쓸 때 '영상 없이 글자 정보만 주는 과제'와 '실제 영상을 함께 주는 과제'를 구분해 신뢰 가능한 입력 조건을 먼저 정의하는 품질 게이트를 설계할 근거로 쓸 가치가 있습니다.",
+   "supporting_papers": [
+    {
+     "title": "Accuracy and Agreement of GPT-5.6 Sol-Generated Bone Density Estimates with Quantitative Computed Tomography Measurements",
+     "url": "https://doi.org/10.3390/diagnostics16233939"
+    }
+   ]
+  }
+ ]
+}
